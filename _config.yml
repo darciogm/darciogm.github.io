@@ -23,7 +23,7 @@ repository               : "darciogm/darciogm.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Short Bio"
+  name             : 
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "São Paulo, Brazil"
