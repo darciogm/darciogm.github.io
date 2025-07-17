@@ -27,8 +27,8 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "São Paulo, Brazil"
-  employer         : "Insper Institute of Education and Research"
-  uri              : # URL
+  employer         : "Insper"
+  uri              : "https://www.insper.edu.br/en/docentes/darcio-genicolo-martins"
   email            : "darciogm1@insper.edu.br" 
 
   # Academic websites
