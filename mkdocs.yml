@@ -45,6 +45,12 @@ nav:
       - Results: research/bitter-pills/results.md
       - Replication: research/bitter-pills/replication.md
       - Authors: research/bitter-pills/authors.md
+    - SME Public:
+      - Summary: research/sme-public/index.md
+      - Content: research/sme-public/paper.md
+      - Results: research/sme-public/results.md
+      - Replication: research/sme-public/replication.md
+      - Authors: research/sme-public/autores.md
   - Teaching:
     - Insper Institute of Education and Research:
       - Intermediate Microeconomics (Micro II): teaching/intermediate-microeconomics.md
