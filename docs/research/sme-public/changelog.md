@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Changelog
 
 ## March 2026 (Current Version)

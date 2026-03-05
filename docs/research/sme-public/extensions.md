@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Extensions
 
 ## IPCA-Deflated Real Prices

@@ -1,6 +1,7 @@
 ---
 hide:
   - navigation
+paper: sme-public
 ---
 
 <div class="hero-section" markdown>

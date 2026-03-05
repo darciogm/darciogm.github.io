@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Changelog
 
 ## v8 (2026-02-28)

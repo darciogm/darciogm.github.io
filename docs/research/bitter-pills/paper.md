@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # The Paper
 
 ## Bitter Pills to Swallow: The Enforcement Costs of Health Litigation

@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Main Results
 
 ## Event Study: Log Prices

@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Geographic Distribution Maps
 
 ## Comparison Panel: All Purchase Types

@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Advanced Methods
 
 This page documents five advanced econometric methods that complement the main DiDiR analysis. Each method addresses a specific concern or deepens the understanding of the treatment effect.

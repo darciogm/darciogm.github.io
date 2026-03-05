@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Manuscript
 
 This page summarizes the contribution, institutional setting, data, and empirical strategy of the paper.

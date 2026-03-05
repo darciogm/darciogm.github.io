@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if paper_nav %}
+    <div class="paper-layout">
+      <div class="paper-content">
+        {{ super() }}
+      </div>
+      <div class="paper-nav-col">
+        {% include "partials/paper-sidebar.html" %}
+      </div>
+    </div>
+    <style>
+      .paper-layout {
+        display: flex;
+        gap: 2rem;
+      }
+      .paper-content {
+        flex: 1;
+        min-width: 0;
+      }
+      .paper-nav-col {
+        width: 180px;
+        flex-shrink: 0;
+      }
+      @media (max-width: 76.1875em) {
+        .paper-nav-col { display: none; }
+      }
+    </style>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}

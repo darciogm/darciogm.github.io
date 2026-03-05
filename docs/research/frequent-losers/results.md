@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Main Results
 
 This page presents the core empirical findings: OLS price regressions, CADE validation, IV estimates, network-split analysis, and Bajari--Ye tests.

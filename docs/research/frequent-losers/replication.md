@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Replication
 
 This page describes how to replicate the results presented in the paper.

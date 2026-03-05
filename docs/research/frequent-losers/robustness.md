@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Robustness
 
 This page summarizes the six groups of robustness checks and extensions reported in the paper.

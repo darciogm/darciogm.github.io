@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Extensions
 
 This page presents additional analyses: IV robustness, Bajari--Ye with tender FE, year-by-year stability, FL definition variants, and network diagnostics.

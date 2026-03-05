@@ -1,6 +1,7 @@
 ---
 hide:
   - navigation
+paper: bitter-pills
 ---
 
 <div class="hero-section" markdown>

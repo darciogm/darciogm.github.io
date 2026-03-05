@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Manuscript
 
 ## Contribution

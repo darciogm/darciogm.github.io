@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Authors
 
 ---

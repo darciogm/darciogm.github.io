@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Autores
 
 <div class="authors-grid">
