@@ -18,3 +18,7 @@
 ## v6 (2026-02-26)
 
 - Initial public version with replication package, MkDocs website, and complete v4 analysis pipeline.
+
+---
+
+[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

@@ -36,3 +36,7 @@ The panel below shows the geographic distribution of purchases per 1,000 inhabit
 - **Population:** IBGE SIDRA table 6579, 2009-2019 average
 - **Shapefile:** IBGE via `geobr` R package (2010 municipal boundaries)
 - **Color palette:** Sequential grayscale (5 levels), print-friendly
+
+---
+
+[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

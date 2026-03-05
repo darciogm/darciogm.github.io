@@ -47,3 +47,7 @@ A back-of-the-envelope calculation using the estimated price effect and the tota
 </div>
 
 The calculation applies the percentage price effect ($e^{\beta} - 1$) to the total procurement value of group 65 completed items in the pre-period (Sep 2016--Feb 2018). This is a conservative estimate as it considers only one product group; extrapolating to all groups subject to SME restrictions would yield substantially larger figures. These fiscal costs reinforce the conclusion that policymakers should carefully weigh the benefits of SME promotion against the efficiency losses in public procurement.
+
+---
+
+[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

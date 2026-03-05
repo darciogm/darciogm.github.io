@@ -1,7 +1,4 @@
 ---
-hide:
-  - navigation
----
 
 <div class="hero-section" markdown>
 
@@ -63,8 +60,20 @@ Public health procurement is shaped not only by administrative decisions but als
 
 [**Results** <br> Main tables, figures, and coefficient plots](results.md)
 
+[**Maps** <br> Geographic distribution of litigation](maps.md)
+
 [**Replication** <br> Code, data, and software requirements](replication.md)
 
 [**Authors** <br> About the research team](authors.md)
 
+[**Changelog** <br> Version history](changelog.md)
+
 </div>
+
+---
+
+## See Also
+
+- [:material-file-document: **SMEs and Public Procurement** — The Costs of Restricting Tenders](../sme-public/index.md)
+- [:material-file-document: **Frequent Losers as Cover Bidders** — Screening for Bid Rigging](../frequent-losers/index.md)
+- [:material-book-open-variant: **All Working Papers**](../working-papers.md)

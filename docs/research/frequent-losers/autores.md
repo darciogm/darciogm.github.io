@@ -58,3 +58,7 @@
 </div>
 
 </div>
+
+---
+
+[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

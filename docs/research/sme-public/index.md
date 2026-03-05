@@ -1,7 +1,4 @@
 ---
-hide:
-  - navigation
----
 
 <div class="hero-section" markdown>
 
@@ -68,6 +65,22 @@ While there are numerous examples of policies that benefit small and medium-size
 
 [**Robustness** <br> Placebo tests, alternative clustering, permutation inference](robustness.md)
 
+[**Extensions** <br> Additional analyses and extensions](extensions.md)
+
+[**Advanced** <br> Advanced econometric methods](advanced.md)
+
 [**Replication** <br> Code, data, and software requirements](replication.md)
 
+[**Authors** <br> About the research team](autores.md)
+
+[**Changelog** <br> Version history](changelog.md)
+
 </div>
+
+---
+
+## See Also
+
+- [:material-file-document: **Bitter Pills to Swallow** — The Enforcement Costs of Health Litigation](../bitter-pills/index.md)
+- [:material-file-document: **Frequent Losers as Cover Bidders** — Screening for Bid Rigging](../frequent-losers/index.md)
+- [:material-book-open-variant: **All Working Papers**](../working-papers.md)

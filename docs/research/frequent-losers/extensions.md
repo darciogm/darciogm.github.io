@@ -64,3 +64,7 @@ The empirical bid spread distribution of FL firms matches the simulated Regime 1
   <img src="../assets/figures/fig_05_regime_boxplot.png" alt="Regime boxplot">
   <figcaption><strong>Figure 15.</strong> Bid spread comparison across simulated regimes and empirical FL data.</figcaption>
 </figure>
+
+---
+
+[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

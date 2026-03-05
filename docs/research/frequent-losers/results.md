@@ -131,3 +131,7 @@ Three mechanism tests jointly narrow the space of alternative explanations:
   <img src="../assets/figures/fig_regime_densities.png" alt="Regime densities">
   <figcaption><strong>Figure 6.</strong> Bid spread densities: simulated Regime 1 (complementary), simulated Regime 2 (coordinated), and empirical FL distribution. The empirical pattern matches Regime 1.</figcaption>
 </figure>
+
+---
+
+[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)
