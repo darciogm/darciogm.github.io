@@ -39,6 +39,12 @@ nav:
       - Works in Progress: research/works-in-progress.md
       - Policy Papers: research/policy-papers.md
       - Media: research/media.md
+    - Bitter Pills:
+      - Summary: research/bitter-pills/index.md
+      - Content: research/bitter-pills/paper.md
+      - Results: research/bitter-pills/results.md
+      - Replication: research/bitter-pills/replication.md
+      - Authors: research/bitter-pills/authors.md
   - Teaching:
     - Insper Institute of Education and Research:
       - Intermediate Microeconomics (Micro II): teaching/intermediate-microeconomics.md
