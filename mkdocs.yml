@@ -39,24 +39,9 @@ nav:
       - Works in Progress: research/works-in-progress.md
       - Policy Papers: research/policy-papers.md
       - Media: research/media.md
-    - Bitter Pills:
-      - Summary: research/bitter-pills/index.md
-      - Content: research/bitter-pills/paper.md
-      - Results: research/bitter-pills/results.md
-      - Replication: research/bitter-pills/replication.md
-      - Authors: research/bitter-pills/authors.md
-    - SME Public:
-      - Summary: research/sme-public/index.md
-      - Content: research/sme-public/paper.md
-      - Results: research/sme-public/results.md
-      - Replication: research/sme-public/replication.md
-      - Authors: research/sme-public/autores.md
-    - Frequent Losers:
-      - Summary: research/frequent-losers/index.md
-      - Content: research/frequent-losers/paper.md
-      - Results: research/frequent-losers/results.md
-      - Replication: research/frequent-losers/replication.md
-      - Authors: research/frequent-losers/autores.md
+    - Bitter Pills: research/bitter-pills/index.md
+    - SME Public: research/sme-public/index.md
+    - Frequent Losers: research/frequent-losers/index.md
   - Teaching:
     - Insper Institute of Education and Research:
       - Intermediate Microeconomics (Micro II): teaching/intermediate-microeconomics.md
