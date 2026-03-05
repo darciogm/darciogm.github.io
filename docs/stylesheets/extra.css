@@ -335,26 +335,30 @@ figcaption {
   flex: 1;
 }
 
-.social-links {
+.social-links p {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 0;
 }
 
 .social-links a {
-  font-size: 0.85rem;
   color: #C8102E !important;
   text-decoration: none;
-  border: 1px solid #C8102E;
-  border-radius: 4px;
-  padding: 0.25rem 0.7rem;
-  transition: background 0.2s, color 0.2s;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: color 0.2s, transform 0.15s;
 }
 
 .social-links a:hover {
-  background: #C8102E;
-  color: #ffffff !important;
+  color: #9a0c23 !important;
+  transform: scale(1.15);
+}
+
+.social-links .twemoji svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 @media (max-width: 768px) {

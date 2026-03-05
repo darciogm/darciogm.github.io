@@ -23,14 +23,14 @@ Darcio is affiliated with Insper's [Center for Regulation and Democracy (CRD)](h
 
 <div class="social-links" markdown>
 
-[:material-email: Email](mailto:darciogm1@insper.edu.br)
-[:material-school: Scholar](https://scholar.google.com/citations?user=ywp2nq0AAAAJ&hl=en&oi=ao)
-[:simple-orcid: ORCID](https://orcid.org/0000-0003-2223-6930)
-[:material-share-variant: RePEc](https://ideas.repec.org/f/pge367.html)
-[:material-github: GitHub](https://github.com/darciogm)
-[:material-twitter: Twitter](https://twitter.com/darcio_martins)
-[:material-linkedin: LinkedIn](https://www.linkedin.com/in/darcio-genicolo-martins-a7a3b7)
-[:material-file-document: Lattes](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4742119E2)
-[:material-file-pdf-box: CV (PDF)](assets/Darcio_Genicolo_Martins_CV.pdf)
+[:material-email:](mailto:darciogm1@insper.edu.br "Email")
+[:material-school:](https://scholar.google.com/citations?user=ywp2nq0AAAAJ&hl=en&oi=ao "Google Scholar")
+[:simple-orcid:](https://orcid.org/0000-0003-2223-6930 "ORCID")
+[:material-share-variant:](https://ideas.repec.org/f/pge367.html "RePEc")
+[:material-github:](https://github.com/darciogm "GitHub")
+[:material-twitter:](https://twitter.com/darcio_martins "Twitter")
+[:material-linkedin:](https://www.linkedin.com/in/darcio-genicolo-martins-a7a3b7 "LinkedIn")
+[:material-file-document:](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4742119E2 "Lattes")
+[:material-file-pdf-box:](assets/Darcio_Genicolo_Martins_CV.pdf "CV")
 
 </div>

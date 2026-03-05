@@ -32,40 +32,17 @@ theme:
 nav:
   - Home: index.md
   - Research:
-    - Overview: research/index.md
-    - Bitter Pills:
-      - research/bitter-pills/index.md
-      - Autores: research/bitter-pills/autores.md
-      - Authors: research/bitter-pills/authors.md
-      - Manuscript: research/bitter-pills/paper.md
-      - Results: research/bitter-pills/results.md
-      - Adm vs Ordinary: research/bitter-pills/results_adm_vs_ord.md
-      - Maps: research/bitter-pills/maps.md
-      - Replication: research/bitter-pills/replication.md
-      - Changelog: research/bitter-pills/changelog.md
-    - SME Public:
-      - research/sme-public/index.md
-      - Autores: research/sme-public/autores.md
-      - Manuscript: research/sme-public/paper.md
-      - Results: research/sme-public/results.md
-      - Robustness: research/sme-public/robustness.md
-      - Extensions: research/sme-public/extensions.md
-      - Advanced: research/sme-public/advanced.md
-      - Replication: research/sme-public/replication.md
-      - Changelog: research/sme-public/changelog.md
-    - Frequent Losers:
-      - research/frequent-losers/index.md
-      - Autores: research/frequent-losers/autores.md
-      - Manuscript: research/frequent-losers/paper.md
-      - Mind Map: research/frequent-losers/mindmap.md
-      - Results: research/frequent-losers/results.md
-      - Robustness: research/frequent-losers/robustness.md
-      - Extensions: research/frequent-losers/extensions.md
-      - Replication: research/frequent-losers/replication.md
-      - Changelog: research/frequent-losers/changelog.md
-  - Teaching: teaching.md
+    - Overview:
+      - Working Papers: research/working-papers.md
+      - Works in Progress: research/works-in-progress.md
+      - Policy Papers: research/policy-papers.md
+      - Media: research/media.md
+  - Teaching:
+    - Insper Institute of Education and Research:
+      - Intermediate Microeconomics (Micro II): teaching/intermediate-microeconomics.md
+      - Microeconomics 101 for Lawyers: teaching/microeconomics-101-lawyers.md
+      - Good Economics for Hard Times (DEDP - J-Pal / Insper): teaching/good-economics-hard-times.md
   - Code: code.md
-  - Personal: personal.md
 
 plugins:
   - search
@@ -94,6 +71,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.critic
   - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - md_in_html
   - tables
@@ -106,6 +86,27 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:darciogm1@insper.edu.br
+      name: Email
+    - icon: fontawesome/brands/google-scholar
+      link: https://scholar.google.com/citations?user=ywp2nq0AAAAJ&hl=en&oi=ao
+      name: Google Scholar
+    - icon: simple/orcid
+      link: https://orcid.org/0000-0003-2223-6930
+      name: ORCID
+    - icon: fontawesome/brands/github
+      link: https://github.com/darciogm
+      name: GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/darcio_martins
+      name: Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/darcio-genicolo-martins-a7a3b7
+      name: LinkedIn
 
 extra_css:
   - stylesheets/extra.css
