@@ -37,7 +37,3 @@ This analysis compares **administrative** purchases (urgency without judicial sa
 
 !!! success "Key Takeaway"
     The gradient of effects across comparison groups—largest for litigated vs ordinary, moderate for urgent (pooled), and **reversed** for admin vs ordinary—confirms that **judicial sanctions, not urgency per se**, drive the procurement cost premium.
-
----
-
-[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

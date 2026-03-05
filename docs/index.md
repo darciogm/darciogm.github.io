@@ -34,15 +34,3 @@ Darcio is affiliated with Insper's [Center for Regulation and Democracy (CRD)](h
 [:material-file-pdf-box:](assets/Darcio_Genicolo_Martins_CV.pdf "CV")
 
 </div>
-
----
-
-<div class="quick-links" markdown>
-
-[**:material-flask: Research** <br> Working papers, policy papers, and media](research/working-papers.md)
-
-[**:material-school: Teaching** <br> Courses at Insper](teaching/intermediate-microeconomics.md)
-
-[**:material-github: Code** <br> Software and replication packages](code.md)
-
-</div>

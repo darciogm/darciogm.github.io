@@ -95,7 +95,3 @@ A negative coefficient on the administrative indicator means that **litigated pu
 - **Legacy analysis (v2/v3):** Stata/SE with `reghdfe` and `ftools`
 - **Winsorization:** 1st/99th percentiles (baseline); robustness at 0% and 5th/95th
 - **Clustering:** PBU (primary); item and two-way PBU x Item (robustness)
-
----
-
-[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

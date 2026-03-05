@@ -33,7 +33,3 @@ Professor Furquim de Azevedo has served as an advisor to government agencies and
 ## About Insper
 
 [Insper Institute of Education and Research](https://www.insper.edu.br/en/) is a leading independent, non-profit institution of higher education and research based in Sao Paulo, Brazil. Insper is consistently ranked among the top business schools and economics departments in Latin America, with a strong emphasis on applied research that informs public policy and business practice.
-
----
-
-[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

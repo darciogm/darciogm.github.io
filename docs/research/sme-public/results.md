@@ -149,7 +149,3 @@ This represents about **12% of total procurement value** for group 65. The estim
   <img src="../assets/figures/fig_10_sme_share.png" alt="SME participation share">
   <figcaption>Figure A.9. SME Participation Share Among Firms by Month</figcaption>
 </figure>
-
----
-
-[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

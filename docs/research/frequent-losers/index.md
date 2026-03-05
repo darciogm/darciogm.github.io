@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+---
 
 <div class="hero-section" markdown>
 
@@ -75,22 +78,6 @@ records.
 
 [**Robustness** <br> Sensitivity checks and extensions](robustness.md)
 
-[**Extensions** <br> Additional analyses](extensions.md)
-
 [**Replication** <br> Code, data, and pipeline](replication.md)
 
-[**Authors** <br> About the research team](autores.md)
-
-[**Mind Map** <br> Interactive paper structure](mindmap.md)
-
-[**Changelog** <br> Version history](changelog.md)
-
 </div>
-
----
-
-## See Also
-
-- [:material-file-document: **Bitter Pills to Swallow** — The Enforcement Costs of Health Litigation](../bitter-pills/index.md)
-- [:material-file-document: **SMEs and Public Procurement** — The Costs of Restricting Tenders](../sme-public/index.md)
-- [:material-book-open-variant: **All Working Papers**](../working-papers.md)

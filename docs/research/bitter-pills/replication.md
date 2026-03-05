@@ -172,7 +172,3 @@ The analysis was developed and tested on the following system:
 
 !!! note "Runtime"
     The full v4 pipeline (`run_all.R`) takes approximately 5 minutes on the reference system. The most time-intensive step is the robustness analysis (`06_robustness.R`), which estimates 120+ regressions across three winsorization levels.
-
----
-
-[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

@@ -63,7 +63,3 @@
 - Leave-one-out instrumental variable
 - 18 tables, 6 figures
 - Threshold sensitivity and cross-fitting robustness
-
----
-
-[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

@@ -164,7 +164,3 @@ The results can be decomposed into two main channels through which judicial mand
 1. **Competition channel:** Litigated purchases attract fewer bidders (-5.5%), reducing competitive pressure and leading to higher prices. This channel accounts for the difference between the "total" and "direct" price effects.
 
 2. **Sanction channel ("under the gun"):** Even controlling for reduced competition, the threat of judicial sanctions induces procurement officials to accept higher prices. This is the dominant channel, accounting for the 23--30% premium identified in the urgent-subsample analysis.
-
----
-
-[:material-arrow-left: Back to Bitter Pills Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

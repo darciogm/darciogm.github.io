@@ -177,7 +177,3 @@ pdflatex paper_v4.tex
 
 !!! tip "Caching"
     Intermediate data is cached at `/tmp/` for fast reload. The prepared dataset (`/tmp/p3_prepared.rds`, ~800 MB) is created by `01_data_prep.R` and reused by all subsequent scripts.
-
----
-
-[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

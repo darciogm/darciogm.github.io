@@ -100,7 +100,3 @@ pdflatex main.tex
 - **Parquet cache:** The first run reads the 6.4 GB CSV file and creates a parquet cache (~73 columns). Subsequent runs load directly from parquet (~5 seconds vs. ~5 minutes).
 
 - **Thread configuration:** Both `fixest` and `data.table` use 16 threads by default. Adjust in `scripts/utils.R` if running on a machine with fewer cores.
-
----
-
-[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

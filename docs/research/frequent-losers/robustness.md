@@ -134,7 +134,3 @@ The pattern is broadly consistent with the prediction that detection probability
   <img src="../assets/figures/fig_14_oversight_heterogeneity.png" alt="Oversight heterogeneity">
   <figcaption><strong>Figure 11.</strong> FL price coefficient by oversight proxy (PBU size quartile and procedure type).</figcaption>
 </figure>
-
----
-
-[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

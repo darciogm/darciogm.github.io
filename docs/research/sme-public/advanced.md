@@ -101,7 +101,3 @@ The Gelbach (2016) decomposition partitions the total price effect into contribu
 
 !!! info "Interpretation"
     The competition and composition channels operate as partially offsetting mechanisms. Open tenders increase competition (lowering prices), but also attract non-SME winners whose conditional pricing effects partially offset the competition gains. The large unexplained component (-0.123) indicates that most of the price effect operates through channels not captured by these two mediators.
-
----
-
-[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

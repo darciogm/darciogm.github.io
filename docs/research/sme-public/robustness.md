@@ -44,7 +44,3 @@ Winsorizing the dependent variables at the 1st/99th and 5th/95th percentiles pro
 
 !!! success "Results not driven by outliers"
     Both the price and distance effects are robust to winsorization at multiple thresholds.
-
----
-
-[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

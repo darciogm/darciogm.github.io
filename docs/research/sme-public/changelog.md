@@ -21,7 +21,3 @@
 - Initial manuscript with core DiDiR results
 - 4 main outcome variables: prices, firms, bids, distance
 - 3 time windows with baseline and PBU-controlled specifications
-
----
-
-[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

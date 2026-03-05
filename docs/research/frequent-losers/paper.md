@@ -137,7 +137,3 @@ Three-step procedure using bid residuals:
 | **Figures** | `ggplot2` |
 | **Clustering** | Item level (baseline); PBU and two-way robustness |
 | **Pipeline** | 13 R scripts via `00_master.R` (~8 min on 16 cores) |
-
----
-
-[:material-arrow-left: Back to Frequent Losers Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)

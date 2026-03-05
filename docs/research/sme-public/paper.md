@@ -73,7 +73,3 @@ The coefficient $\beta$ captures the pre-switch-period effect of the SME policy 
 | **Clustering** | Item-level (main), group-level (event study) |
 | **Figures** | `ggplot2` with `cairo_pdf`, grayscale theme |
 | **Threads** | 16 (fixest and data.table) |
-
----
-
-[:material-arrow-left: Back to SME Public Summary](index.md) · [:material-book-open-variant: Back to Research](../working-papers.md)
