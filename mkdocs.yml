@@ -39,7 +39,7 @@ nav:
       - Works in Progress: research/works-in-progress.md
       - Policy Papers: research/policy-papers.md
       - Media: research/media.md
-    - Bitter Pills:
+    - "Bitter Pills to Swallow: the Enforcement Costs of Health Litigation":
       - Summary: research/bitter-pills/index.md
       - Paper: research/bitter-pills/paper.md
       - Results: research/bitter-pills/results.md
@@ -48,7 +48,7 @@ nav:
       - Replication: research/bitter-pills/replication.md
       - Authors: research/bitter-pills/authors.md
       - Changelog: research/bitter-pills/changelog.md
-    - SME Public:
+    - "SMEs and Public Procurement: the Costs of Restricting Tenders":
       - Summary: research/sme-public/index.md
       - Paper: research/sme-public/paper.md
       - Results: research/sme-public/results.md
@@ -58,7 +58,7 @@ nav:
       - Replication: research/sme-public/replication.md
       - Authors: research/sme-public/autores.md
       - Changelog: research/sme-public/changelog.md
-    - Frequent Losers:
+    - "Frequent Losers in Public Tenders: Anticompetitive Behavior or Bad Luck?":
       - Summary: research/frequent-losers/index.md
       - Paper: research/frequent-losers/paper.md
       - Results: research/frequent-losers/results.md
