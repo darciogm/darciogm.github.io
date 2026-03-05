@@ -1,0 +1,111 @@
+site_name: "Darcio Genicolo-Martins"
+site_url: https://darciogm.github.io/
+site_description: "Academic website — Darcio Genicolo-Martins, Assistant Professor of Economics at Insper"
+site_author: "Darcio Genicolo-Martins"
+
+theme:
+  name: material
+  font: false
+  palette:
+    - scheme: default
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+  icon:
+    logo: material/school
+
+nav:
+  - Home: index.md
+  - Research:
+    - Overview: research/index.md
+    - Bitter Pills:
+      - research/bitter-pills/index.md
+      - Autores: research/bitter-pills/autores.md
+      - Authors: research/bitter-pills/authors.md
+      - Manuscript: research/bitter-pills/paper.md
+      - Results: research/bitter-pills/results.md
+      - Adm vs Ordinary: research/bitter-pills/results_adm_vs_ord.md
+      - Maps: research/bitter-pills/maps.md
+      - Replication: research/bitter-pills/replication.md
+      - Changelog: research/bitter-pills/changelog.md
+    - SME Public:
+      - research/sme-public/index.md
+      - Autores: research/sme-public/autores.md
+      - Manuscript: research/sme-public/paper.md
+      - Results: research/sme-public/results.md
+      - Robustness: research/sme-public/robustness.md
+      - Extensions: research/sme-public/extensions.md
+      - Advanced: research/sme-public/advanced.md
+      - Replication: research/sme-public/replication.md
+      - Changelog: research/sme-public/changelog.md
+    - Frequent Losers:
+      - research/frequent-losers/index.md
+      - Autores: research/frequent-losers/autores.md
+      - Manuscript: research/frequent-losers/paper.md
+      - Mind Map: research/frequent-losers/mindmap.md
+      - Results: research/frequent-losers/results.md
+      - Robustness: research/frequent-losers/robustness.md
+      - Extensions: research/frequent-losers/extensions.md
+      - Replication: research/frequent-losers/replication.md
+      - Changelog: research/frequent-losers/changelog.md
+  - Teaching: teaching.md
+  - Code: code.md
+  - Personal: personal.md
+
+plugins:
+  - search
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: "100%"
+      height: auto
+      zoomable: true
+      draggable: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
