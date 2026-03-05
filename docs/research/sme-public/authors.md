@@ -2,7 +2,7 @@
 paper: sme-public
 ---
 
-# Autores
+# Authors
 
 <div class="authors-grid">
 
@@ -13,16 +13,16 @@ paper: sme-public
   <div class="author-info">
     <h3>Darcio Genicolo Martins</h3>
     <p class="author-title">
-      Professor Assistente &middot; Doutor em Economia dos Negocios<br>
+      Assistant Professor &middot; PhD in Business Economics<br>
       <strong>Insper</strong>
     </p>
     <p class="author-bio">
-      Pesquisador no Centro de Regulacao e Democracia no Insper,
-      coordenador do Nucleo de Compras e Contratos Governamentais
-      e da trilha de Microeconomia. Graduado em Administracao Publica
-      (EAESP/FGV), Mestre em Economia Politica (PUC-SP) e Doutor em
-      Business Economics (Insper). Premio de Melhor Tese 2020 e
-      Mencao Honrosa Premio Capes de Teses 2021.
+      Researcher at the Center for Regulation and Democracy at Insper,
+      coordinator of the Government Procurement and Contracts Unit
+      and the Microeconomics track. BA in Public Administration
+      (EAESP/FGV), MA in Political Economy (PUC-SP), and PhD in
+      Business Economics (Insper). Best Dissertation Award 2020 and
+      Honorable Mention CAPES Dissertation Prize 2021.
     </p>
     <div class="author-links">
       <a href="https://www.insper.edu.br/pt/docentes/darcio-genicolo-martins" target="_blank">Insper</a>

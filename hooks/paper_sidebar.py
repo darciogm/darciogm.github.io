@@ -7,7 +7,6 @@ PAPER_NAVS = {
         {"title": "Admin vs Ordinary", "url": "/research/bitter-pills/results_adm_vs_ord/"},
         {"title": "Replication",       "url": "/research/bitter-pills/replication/"},
         {"title": "Authors",           "url": "/research/bitter-pills/authors/"},
-        {"title": "Autores",           "url": "/research/bitter-pills/autores/"},
         {"title": "Changelog",         "url": "/research/bitter-pills/changelog/"},
     ],
     "sme-public": [
@@ -18,7 +17,7 @@ PAPER_NAVS = {
         {"title": "Extensions",  "url": "/research/sme-public/extensions/"},
         {"title": "Advanced",    "url": "/research/sme-public/advanced/"},
         {"title": "Replication", "url": "/research/sme-public/replication/"},
-        {"title": "Autores",     "url": "/research/sme-public/autores/"},
+        {"title": "Authors",     "url": "/research/sme-public/authors/"},
         {"title": "Changelog",   "url": "/research/sme-public/changelog/"},
     ],
     "frequent-losers": [
@@ -28,7 +27,7 @@ PAPER_NAVS = {
         {"title": "Robustness",  "url": "/research/frequent-losers/robustness/"},
         {"title": "Extensions",  "url": "/research/frequent-losers/extensions/"},
         {"title": "Replication", "url": "/research/frequent-losers/replication/"},
-        {"title": "Autores",     "url": "/research/frequent-losers/autores/"},
+        {"title": "Authors",     "url": "/research/frequent-losers/authors/"},
         {"title": "Mind Map",    "url": "/research/frequent-losers/mindmap/"},
         {"title": "Changelog",   "url": "/research/frequent-losers/changelog/"},
     ],
