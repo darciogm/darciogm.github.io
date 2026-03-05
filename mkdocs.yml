@@ -8,11 +8,13 @@ theme:
   font: false
   palette:
     - scheme: default
+      primary: custom
       accent: red
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
+      primary: custom
       accent: red
       toggle:
         icon: material/brightness-4
