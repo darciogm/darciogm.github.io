@@ -53,7 +53,7 @@ A verificação empírica em economia enfrenta desafios particulares:
 - **Problemas de identificação**: distinguir correlação de causalidade.
 - **Expectativas e reflexividade**: os agentes econômicos reagem às próprias previsões dos modelos.
 
-A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses problemas, incluindo variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos naturais.
+A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses problemas, incluindo variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos naturais. No Brasil, pesquisas domiciliares como a **PNAD Contínua** (Pesquisa Nacional por Amostra de Domicílios) do IBGE fornecem dados fundamentais para testar modelos microeconômicos — desde a estimação de elasticidades de oferta de trabalho até a avaliação do impacto de programas como o Bolsa Família sobre decisões de consumo das famílias.
 
 ---
 
@@ -179,7 +179,7 @@ A microeconomia contemporânea expandiu-se em várias direções, relaxando as s
 
 - **Teoria dos jogos**: modelagem de interações estratégicas entre agentes, quando as decisões de cada um afetam os resultados dos demais (Nash, 1950; Mas-Colell et al., 1995, parte IV).
 - **Economia da informação**: análise de mercados com informação assimétrica — seleção adversa (Akerlof, 1970), risco moral e sinalização (Spence, 1973).
-- **Economia comportamental**: incorporação de insights da psicologia — racionalidade limitada, vieses cognitivos, preferências dependentes de referência (Kahneman & Tversky, 1979).
+- **Economia comportamental**: incorporação de insights da psicologia — racionalidade limitada, vieses cognitivos, preferências dependentes de referência (Kahneman & Tversky, 1979). No Brasil, princípios comportamentais vêm sendo aplicados em políticas públicas, como o uso de *nudges* (arquitetura de escolhas) na simplificação de formulários de acesso a benefícios sociais e na comunicação sobre educação financeira pelo Banco Central.
 - **Teoria dos mecanismos**: desenho de instituições e regras que alinham incentivos individuais com objetivos sociais (Hurwicz, Maskin, Myerson).
 - **Economia experimental**: uso de experimentos controlados em laboratório para testar previsões teóricas.
 
@@ -289,6 +289,145 @@ Portanto, a condição de segunda ordem exige que o **custo marginal seja cresce
 
 ---
 
+## Box Brasil: Modelos de projeção do Banco Central
+
+!!! example "Box Brasil — COPOM e os modelos de projeção da inflação"
+
+    O **Comitê de Política Monetária (COPOM)** do Banco Central do Brasil decide, a cada 45 dias, a taxa básica de juros (**Selic**) com base em projeções geradas por modelos econômicos. O principal instrumento é o **SAMBA** (*Stochastic Analytical Model with a Bayesian Approach*), um modelo de equilíbrio geral dinâmico estocástico (DSGE) que representa a economia brasileira por meio de equações descrevendo o comportamento de famílias, firmas, governo e setor externo (Castro et al., 2015). [VERIFICAR ano exato da publicação do Working Paper BCB]
+
+    **A lógica do modelo.** O SAMBA contém variáveis exógenas (choques de oferta, variações cambiais, preços internacionais de commodities) e variáveis endógenas (inflação, produto, taxa de juros). A partir de suposições sobre o comportamento otimizador dos agentes — exatamente como descrito na Seção 1.3 — e de uma regra de política monetária (regra de Taylor), o modelo projeta trajetórias de inflação 6 a 8 trimestres à frente.
+
+    **Modelos como "mapas".** O BCB não utiliza apenas o SAMBA. Emprega também modelos semi-estruturais, VARs (vetores autorregressivos) e modelos de fatores. Cada modelo é um "mapa" diferente da mesma economia — como discutido na Seção 1.1, a escolha do modelo depende da pergunta: o SAMBA é útil para análise de política monetária, enquanto os VARs capturam melhor dinâmicas de curto prazo.
+
+    **Verificação.** O BCB publica trimestralmente o *Relatório de Inflação*, no qual confronta suas projeções passadas com os dados realizados — um exercício de verificação indireta de seus modelos, exatamente no espírito da Seção 1.2. Quando as projeções se desviam sistematicamente da realidade, os modelos são recalibrados.
+
+    Este caso ilustra que modelos econômicos não são exercícios acadêmicos abstratos: são ferramentas operacionais que orientam decisões com impacto direto sobre a vida de milhões de brasileiros.
+
+---
+
+## Exercícios Resolvidos
+
+??? success "Exercício Resolvido 1.1 — Análise positiva versus normativa"
+
+    **Enunciado.** Classifique cada afirmação como positiva ou normativa e justifique:
+
+    (a) A taxa de desemprego no Brasil em 2023 foi de 7,8%.
+
+    (b) O governo deveria reduzir impostos sobre a cesta básica para combater a desigualdade.
+
+    (c) Um aumento de 10% na tarifa de importação de aço eleva o preço doméstico em aproximadamente 5%.
+
+    (d) A política de cotas raciais nas universidades é justa.
+
+    **Solução.**
+
+    **(a) Positiva.** Trata-se de uma afirmação descritiva sobre um fato observável, verificável por dados da PNAD Contínua/IBGE. Não envolve julgamento de valor.
+
+    **(b) Normativa.** Contém o verbo "deveria", indicando prescrição baseada em julgamento de valor sobre o que é desejável. Duas pessoas podem concordar sobre o efeito positivo da medida (análise positiva) e discordar sobre se ela *deve* ser adotada (análise normativa).
+
+    **(c) Positiva.** É uma previsão quantitativa testável empiricamente — por exemplo, via modelos de equilíbrio parcial ou métodos econométricos. Não envolve juízo sobre se o aumento tarifário é bom ou ruim.
+
+    **(d) Normativa.** O conceito de "justiça" envolve julgamento de valor — diferentes concepções de equidade (rawlsiana, utilitarista, libertária) conduziriam a conclusões distintas sobre a mesma política.
+
+??? success "Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
+
+    **Enunciado.** Considere o seguinte modelo simplificado do mercado de café no Brasil:
+
+    - Demanda: \(Q^d = 200 - 4P + 2Y\), onde \(P\) é o preço e \(Y\) é a renda dos consumidores.
+    - Oferta: \(Q^s = -20 + 6P - 3C\), onde \(C\) é o custo dos insumos agrícolas.
+
+    (a) Identifique as variáveis exógenas e endógenas.
+
+    (b) Encontre o preço e a quantidade de equilíbrio como funções dos parâmetros exógenos.
+
+    (c) Se \(Y = 50\) e \(C = 10\), calcule \(P^*\) e \(Q^*\).
+
+    (d) Realize estática comparativa: qual o efeito de um aumento da renda sobre o preço de equilíbrio?
+
+    **Solução.**
+
+    **(a)** **Exógenas:** \(Y\) (renda) e \(C\) (custo dos insumos) — determinadas fora do modelo. **Endógenas:** \(P^*\) (preço) e \(Q^*\) (quantidade) — determinadas pelo equilíbrio do modelo.
+
+    **(b)** No equilíbrio, \(Q^d = Q^s\):
+
+    \[
+    200 - 4P + 2Y = -20 + 6P - 3C
+    \]
+
+    \[
+    220 + 2Y + 3C = 10P
+    \]
+
+    \[
+    P^* = 22 + 0{,}2Y + 0{,}3C
+    \]
+
+    Substituindo na função de demanda:
+
+    \[
+    Q^* = 200 - 4(22 + 0{,}2Y + 0{,}3C) + 2Y = 112 + 1{,}2Y - 1{,}2C
+    \]
+
+    **(c)** \(P^* = 22 + 0{,}2 \times 50 + 0{,}3 \times 10 = 22 + 10 + 3 = 35\)
+
+    \(Q^* = 112 + 1{,}2 \times 50 - 1{,}2 \times 10 = 112 + 60 - 12 = 160\)
+
+    **(d)** \(\dfrac{\partial P^*}{\partial Y} = 0{,}2 > 0\). Um aumento da renda eleva o preço de equilíbrio. Intuitivamente, mais renda desloca a curva de demanda para a direita (a cada preço dado, a quantidade demandada aumenta), pressionando o preço para cima. Este é um exercício de estática comparativa como descrito na Seção 1.4: variamos uma variável exógena (\(Y\)) e observamos o efeito sobre a variável endógena (\(P^*\)).
+
+??? success "Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
+
+    **Enunciado.** Uma firma competitiva tem função de custo total \(CT(q) = 50 + 8q + 0{,}5q^2\). O preço de mercado é \(P = 28\).
+
+    (a) Determine o custo marginal e o custo médio.
+
+    (b) Encontre a quantidade que maximiza o lucro usando a condição \(P = CMg\).
+
+    (c) Verifique a condição de segunda ordem.
+
+    (d) Calcule o lucro máximo.
+
+    (e) Identifique as variáveis exógenas e endógenas neste modelo.
+
+    **Solução.**
+
+    **(a)**
+
+    \[
+    CMg(q) = \frac{dCT}{dq} = 8 + q
+    \]
+
+    \[
+    CMe(q) = \frac{CT(q)}{q} = \frac{50}{q} + 8 + 0{,}5q
+    \]
+
+    **(b)** Pela condição de primeira ordem (\(P = CMg\)):
+
+    \[
+    28 = 8 + q \implies q^* = 20
+    \]
+
+    **(c)** A condição de segunda ordem exige \(\dfrac{dCMg}{dq}\bigg|_{q^*} > 0\):
+
+    \[
+    \frac{dCMg}{dq} = 1 > 0 \quad \checkmark
+    \]
+
+    O custo marginal é crescente em todo o domínio, confirmando que \(q^* = 20\) é um máximo do lucro.
+
+    **(d)**
+
+    \[
+    \pi^* = P \cdot q^* - CT(q^*) = 28 \times 20 - (50 + 8 \times 20 + 0{,}5 \times 400)
+    \]
+
+    \[
+    \pi^* = 560 - 50 - 160 - 200 = 150
+    \]
+
+    **(e)** **Exógenas:** preço de mercado \(P\), parâmetros da função de custo (50, 8, 0,5). **Endógena:** quantidade ótima \(q^*\) (e, por consequência, o lucro \(\pi^*\)).
+
+---
+
 ## Exercícios
 
 **Exercício 1.1.** Explique, usando a analogia do mapa, por que um modelo econômico que inclui todas as variáveis relevantes de uma economia real não seria necessariamente superior a um modelo mais simples. Em que sentido a simplificação pode ser uma virtude epistêmica?
@@ -331,10 +470,96 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ---
 
-## Referências
+## Vem, ANPEC!
 
-- FRIEDMAN, M. The Methodology of Positive Economics. In: *Essays in Positive Economics*. Chicago: University of Chicago Press, 1953.
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995.
-- NICHOLSON, W.; SNYDER, C. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017.
-- PINDYCK, R. S.; RUBINFELD, D. L. *Microeconomia*. 8. ed. São Paulo: Pearson, 2013.
-- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015.
+!!! question "ANPEC 2019 — Microeconomia — Questão 05"
+    Com relação aos fundamentos da Microeconomia, julgue como verdadeiros ou falsos os itens a seguir:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Os preços relativos \(P_Y/P_X\) livres de mercado dos bens \(Y\) e \(X\) refletem as taxas às quais a sociedade está disposta a sacrificar o bem \(Y\) em troca de uma unidade marginal de \(X\). |
+    | 1 | No curto prazo, um fator de produção é fixo apenas por razões tecnológicas, nunca porque seja simplesmente mais barato mantê-lo fixo do que ajustá-lo às novas condições de mercado. |
+    | 2 | Na ausência de externalidades marginais, os custos marginais privados podem ser interpretados como o valor que a sociedade atribui aos recursos deslocados da economia para a produção da unidade marginal. |
+    | 3 | Num mercado competitivo, com custos marginais constantes e capacidade máxima limitada, se a demanda agregada é grande o suficiente para fazer a firma atingir sua capacidade máxima, então o preço de equilíbrio é o custo marginal da última unidade acrescido do preço-sombra da capacidade máxima. |
+    | 4 | Suponha que o preço de um bem \(X\) cai marginalmente de \(P_0\) para \(P_1\). Ao se defrontar com o preço marginalmente mais baixo, o consumidor realiza uma economia de gastos relativamente à quantidade que usualmente comprava ao preço inicial. Se ele usa uma parte dessa economia para comprar mais unidades desse bem \(X\), mas aproveita outra parte dela para comprar outros bens, então, para esse consumidor, a demanda pelo bem \(X\) é preço-elástica. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V V F**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Em um mercado competitivo sem distorções, os preços relativos refletem tanto a taxa marginal de substituição dos consumidores quanto a taxa marginal de transformação da economia. O preço relativo \(P_Y/P_X\) indica quantas unidades de \(Y\) a sociedade precisa sacrificar para obter uma unidade adicional de \(X\), refletindo o custo de oportunidade social.
+        - **Item 1 — F:** Um fator pode ser fixo no curto prazo não apenas por impossibilidade tecnológica de ajuste, mas também porque os custos de ajustamento tornam mais barato mantê-lo fixo. Por exemplo, uma firma pode manter maquinário ocioso porque o custo de vendê-lo e readquiri-lo excede o custo de mantê-lo parado.
+        - **Item 2 — V:** Na ausência de externalidades, o custo marginal privado coincide com o custo marginal social. Assim, o \(CMg\) privado pode ser interpretado como o valor que a sociedade atribui aos recursos deslocados de outros usos para a produção da unidade marginal — é o custo de oportunidade social.
+        - **Item 3 — V:** Quando a firma opera na capacidade máxima, a restrição de capacidade se torna ativa. O preço de equilíbrio deve compensar não apenas o custo marginal de produção, mas também o valor-sombra (*shadow price*) da capacidade escassa. Esse preço-sombra mede o valor marginal de relaxar a restrição de capacidade em uma unidade.
+        - **Item 4 — F:** Se o consumidor usa apenas *parte* da economia para comprar mais de \(X\) e desvia o restante para outros bens, então o gasto total com \(X\) *diminui* após a queda de preço. Quando o gasto total cai com a redução do preço, a demanda é **inelástica** (\(|\varepsilon| < 1\)), não elástica.
+
+!!! question "ANPEC 2024 — Microeconomia — Questão 05"
+    Com base na lei de oferta e demanda e na determinação dos preços no mercado, julgue as afirmativas abaixo como verdadeiras ou falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | No centro urbano de uma grande cidade não se permite, por razões arquitetônicas e políticas, a expansão da quantidade de imóveis residenciais. Considere a seguinte afirmação: "O aluguel de mercado do imóvel não é um pagamento para produção de imóveis (primeiro ponto); mas é um pagamento para obter o uso do imóvel (segundo ponto)". Pode-se afirmar que, do primeiro ponto de vista, o aluguel é uma renda pura e, do segundo ponto de vista, é um custo. |
+    | 1 | A decisão de manter alguma capacidade ociosa nunca é uma decisão racional viável da empresa para lidar com a incerteza quanto a variações aleatórias de demanda. |
+    | 2 | O preço-sombra da capacidade de produção máxima que a firma acrescenta ao custo marginal é uma medida monetária do valor que o mercado, na figura dos demandantes, está disposto a pagar pela expansão da capacidade máxima em uma unidade marginal. |
+    | 3 | Algumas empresas anunciam que seus produtos são mais baratos que os dos concorrentes porque elas compram diretamente dos fornecedores, eliminando integralmente o papel dos intermediários. Esse tipo de propaganda pressupõe que a intermediação é sem custos. |
+    | 4 | Custos quase-fixos não desaparecem no longo prazo. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V F V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Quando a oferta de imóveis é perfeitamente inelástica (fixa), o aluguel é inteiramente determinado pela demanda e constitui uma **renda pura** do ponto de vista da oferta — o pagamento não induz produção adicional. Do ponto de vista do demandante, porém, o aluguel é um custo necessário para obter o uso do imóvel. Essa dualidade remete à distinção ricardiana entre renda e custo (Seção 1.5).
+        - **Item 1 — F:** Manter capacidade ociosa pode ser perfeitamente racional quando a demanda é incerta: a firma mantém uma reserva de capacidade para atender picos de demanda sem perder clientes. Trata-se de uma decisão de otimização sob incerteza.
+        - **Item 2 — V:** O preço-sombra de uma restrição de capacidade mede o aumento no lucro (ou, equivalentemente, o valor para o mercado) que resultaria de relaxar a restrição em uma unidade marginal. É o valor que os demandantes estão dispostos a pagar acima do custo marginal de produção pela expansão da capacidade.
+        - **Item 3 — F:** A propaganda que alega preços mais baixos pela eliminação de intermediários pressupõe o contrário: que a intermediação **tem custos** (margens, logística) repassados ao consumidor. Se a intermediação fosse sem custos, eliminá-la não reduziria o preço. O que a propaganda ignora é que intermediários frequentemente geram valor real (informação, gestão de estoques, distribuição).
+        - **Item 4 — V:** Custos quase-fixos são custos que independem do nível de produção mas que só existem quando a firma produz (\(q > 0\)). Diferentemente dos custos fixos tradicionais (como aluguéis contratuais), os custos quase-fixos persistem no longo prazo: sempre que a firma decide operar, ela os incorre, independentemente do horizonte temporal. Exemplos incluem custos mínimos de aquecimento de um forno industrial ou equipe mínima de operação.
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+### A revolução da credibilidade na economia empírica
+
+> **Referência completa:** Angrist, Joshua D.; Pischke, Jörn-Steffen. "The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics." *Journal of Economic Perspectives*, 24(2): 3-30, 2010. DOI: 10.1257/jep.24.2.3
+
+**A pergunta**
+Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.
+
+**Como os autores responderam**
+Angrist e Pischke documentam a "revolução da credibilidade" que transformou a economia empírica a partir dos anos 1990. A ideia central é que a identificação causal — o problema de isolar o efeito de uma variável sobre outra, *ceteris paribus* — pode ser alcançada por meio de estratégias de pesquisa que exploram variações quase-experimentais nos dados: variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos aleatorizados.
+
+**O que descobriram**
+Os autores mostram que a adoção dessas técnicas elevou substancialmente a qualidade da evidência empírica em economia. Estudos sobre retornos da educação, efeito do salário mínimo sobre o emprego e impacto de programas sociais passaram a produzir resultados mais robustos e replicáveis. A "revolução" consistiu em levar a sério a cláusula *ceteris paribus*: em vez de apenas supô-la, os pesquisadores passaram a construir desenhos de pesquisa que a aproximam na prática.
+
+**Conexão com este capítulo**
+O artigo conecta diretamente a Seção 1.2 (verificação de modelos) e a Seção 1.3 (*ceteris paribus*). A cláusula *ceteris paribus*, apresentada como recurso teórico neste capítulo, é também o objetivo prático da econometria moderna. A revolução da credibilidade mostra que a microeconomia empírica não se limita a testar modelos — ela os refina, revelando quais suposições são empiricamente sustentáveis e quais precisam ser revisadas. Joshua Angrist recebeu o Prêmio Nobel de Economia em 2021, em grande parte por essas contribuições metodológicas.
+
+---
+
+### Economia comportamental: dos modelos clássicos às decisões reais
+
+> **Referência completa:** Thaler, Richard H. "Behavioral Economics: Past, Present, and Future." *American Economic Review*, 106(7): 1577-1600, 2016. DOI: 10.1257/aer.106.7.1577
+
+**A pergunta**
+Até que ponto a hipótese de otimização racional — fundamento dos modelos microeconômicos discutidos na Seção 1.3 — descreve adequadamente o comportamento humano? E quando os desvios da racionalidade são sistemáticos, como devemos modificar nossos modelos?
+
+**Como o autor respondeu**
+Thaler, em seu discurso presidencial na American Economic Association, traça a trajetória da economia comportamental desde seus precursores (Simon, Kahneman, Tversky) até sua consolidação como subdisciplina influente. O argumento central é que os agentes econômicos reais (*Humans*) diferem sistematicamente dos agentes perfeitamente racionais dos modelos (*Econs*): exibem racionalidade limitada, autocontrole imperfeito e preferências sociais.
+
+**O que descobriu**
+Thaler documenta vieses comportamentais robustos — efeito dotação, aversão à perda, desconto hiperbólico, contabilidade mental — e mostra como eles podem ser incorporados a modelos econômicos formais sem abandonar o arcabouço de otimização. A abordagem "as if" de Friedman (Seção 1.2) funciona bem em muitos contextos, mas falha sistematicamente em outros — especialmente em decisões intertemporais, escolhas sob incerteza e situações com baixa experiência.
+
+**Conexão com este capítulo**
+O artigo dialoga diretamente com as Seções 1.3 e 1.6: a hipótese de otimização não é uma descrição literal do comportamento humano, mas uma aproximação cuja qualidade varia conforme o contexto. A economia comportamental não rejeita a modelagem — pelo contrário, propõe modelos alternativos (teoria do prospecto, preferências dependentes de referência) que preservam o rigor formal enquanto incorporam regularidades empíricas. Thaler recebeu o Prêmio Nobel de Economia em 2017, consolidando a economia comportamental como parte do *mainstream* microeconômico.
+
+---
+
+## Leituras Recomendadas
+
+- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Cap. 1.
+- Varian, H. *Microeconomia: uma abordagem moderna*, Cap. 1.
+- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Cap. 1.
+- Friedman, M. "The Methodology of Positive Economics." In: *Essays in Positive Economics*. Chicago: University of Chicago Press, 1953.
+- Pindyck, R. S. & Rubinfeld, D. L. *Microeconomia*, Cap. 1-2.
