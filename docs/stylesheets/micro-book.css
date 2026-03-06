@@ -57,30 +57,16 @@
 .md-typeset span.arithmatex {
   background: transparent !important;
   background-color: transparent !important;
-  padding: 0 !important;
   border: none !important;
   box-shadow: none !important;
-  overflow: visible !important;
-  margin: 0 !important;
   display: inline !important;
 }
-.md-typeset span.arithmatex > *,
-.md-typeset span.arithmatex mjx-container,
-.md-typeset span.arithmatex mjx-container * {
-  background: transparent !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  width: auto !important;
-}
 
-/* MathJax inline containers */
-.md-typeset mjx-container:not([display="true"]),
-.md-typeset mjx-container:not([display="true"]) * {
+/* MathJax inline — only reset visual decoration, never structural props */
+.md-typeset span.arithmatex mjx-container,
+.md-typeset mjx-container:not([display="true"]) {
   background: transparent !important;
-  background-color: transparent !important;
   box-shadow: none !important;
-  padding: 0 !important;
 }
 
 /* Box Brasil */
