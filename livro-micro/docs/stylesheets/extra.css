@@ -145,8 +145,8 @@ code, pre, kbd, .highlight {
   color: #1565c0;
 }
 
-/* Equações em bloco — fundo destacado */
-.md-typeset .arithmatex {
+/* Equações em bloco (div.arithmatex) — fundo destacado */
+.md-typeset div.arithmatex {
   overflow-x: auto;
   padding: 1rem;
   background: var(--md-code-bg-color);
@@ -154,34 +154,20 @@ code, pre, kbd, .highlight {
   margin: 1.5em 0;
 }
 
-/* Equações inline — background transparente em todos os contextos */
+/* Equações inline (span.arithmatex) — sempre transparente */
+.md-typeset span.arithmatex {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* MathJax inline containers — transparente em todos os contextos */
 .md-typeset mjx-container:not([display="true"]),
 .md-typeset mjx-container:not([display="true"]) * {
   background: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
-}
-
-/* Garante que th e td também sejam cobertos */
-.md-typeset th mjx-container:not([display="true"]),
-.md-typeset td mjx-container:not([display="true"]) {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-/* Wrapper .arithmatex inline — sem fundo nem borda */
-.md-typeset p > .arithmatex,
-.md-typeset li > .arithmatex,
-.md-typeset td > .arithmatex,
-.md-typeset th > .arithmatex,
-.md-typeset dd > .arithmatex,
-.md-typeset .admonition .arithmatex {
-  background: transparent !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  display: inline !important;
 }
 
 /* Box Brasil */
