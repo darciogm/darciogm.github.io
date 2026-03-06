@@ -353,6 +353,253 @@ h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u})).
 
 ---
 
+## 4.10 Demandas por Tipo de Função Utilidade
+
+Nesta seção, derivamos as demandas marshallianas e hicksianas para as quatro formas funcionais mais utilizadas em microeconomia. Para cada tipo, apresentamos o problema de otimização completo, o Lagrangeano, as condições de primeira ordem e as soluções fechadas.
+
+### 4.10.1 Cobb-Douglas: \(U(x_1,x_2)=x_1^a x_2^b\)
+
+A função Cobb-Douglas é o caso mais tratável e serve de *benchmark* para as demais.
+
+**Demanda Marshalliana.** O consumidor resolve:
+
+\[
+\max_{x_1,x_2} \; x_1^a x_2^b \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = I
+\]
+
+O Lagrangeano é:
+
+\[
+\mathcal{L} = x_1^a x_2^b + \lambda(I - p_1 x_1 - p_2 x_2)
+\]
+
+Condições de primeira ordem (CPOs):
+
+\[
+\frac{\partial \mathcal{L}}{\partial x_1} = a x_1^{a-1} x_2^b - \lambda p_1 = 0
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial x_2} = b x_1^a x_2^{b-1} - \lambda p_2 = 0
+\]
+
+Dividindo a primeira CPO pela segunda, eliminamos \(\lambda\):
+
+\[
+\frac{a x_2}{b x_1} = \frac{p_1}{p_2} \quad \Longrightarrow \quad x_2 = \frac{b\, p_1}{a\, p_2}\, x_1
+\]
+
+Substituindo na restrição orçamentária:
+
+\[
+p_1 x_1 + p_2 \cdot \frac{b\, p_1}{a\, p_2}\, x_1 = I \quad \Longrightarrow \quad p_1 x_1 \left(1 + \frac{b}{a}\right) = I \quad \Longrightarrow \quad p_1 x_1 \cdot \frac{a+b}{a} = I
+\]
+
+Portanto, as **demandas marshallianas** são:
+
+\[
+\boxed{x_1^* = \frac{a}{a+b}\,\frac{I}{p_1}, \qquad x_2^* = \frac{b}{a+b}\,\frac{I}{p_2}}
+\]
+
+O consumidor gasta a fração \(a/(a+b)\) da renda no bem 1 e \(b/(a+b)\) no bem 2. Quando \(a+b=1\), as frações coincidem com os expoentes.
+
+**Utilidade indireta.** Substituindo as demandas na função utilidade:
+
+\[
+V(p_1,p_2,I) = \left(\frac{a}{a+b}\right)^a \left(\frac{b}{a+b}\right)^b \frac{I^{a+b}}{p_1^a\, p_2^b}
+\]
+
+**Demanda Hicksiana.** O consumidor resolve o dual:
+
+\[
+\min_{x_1,x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad x_1^a x_2^b = \bar{u}
+\]
+
+O Lagrangeano é \(\mathcal{L} = p_1 x_1 + p_2 x_2 + \mu(\bar{u} - x_1^a x_2^b)\). As CPOs fornecem a mesma condição de tangência \(a x_2/(b x_1) = p_1/p_2\). Substituindo na restrição de utilidade:
+
+\[
+x_1^a \left(\frac{b\, p_1}{a\, p_2}\, x_1\right)^b = \bar{u} \quad \Longrightarrow \quad x_1^{a+b} \left(\frac{b\, p_1}{a\, p_2}\right)^b = \bar{u}
+\]
+
+Resolvendo para \(x_1\):
+
+\[
+\boxed{h_1 = \bar{u}^{\,1/(a+b)} \left(\frac{a\, p_2}{b\, p_1}\right)^{b/(a+b)}, \qquad h_2 = \bar{u}^{\,1/(a+b)} \left(\frac{b\, p_1}{a\, p_2}\right)^{a/(a+b)}}
+\]
+
+**Função dispêndio.** Avaliando o gasto mínimo:
+
+\[
+E(\mathbf{p}, \bar{u}) = p_1 h_1 + p_2 h_2 = \bar{u}^{\,1/(a+b)} \left(\frac{a+b}{a^a b^b}\right)^{1/(a+b)} p_1^{a/(a+b)}\, p_2^{b/(a+b)}
+\]
+
+*Verificação pelo Lema de Shephard*: \(\partial E/\partial p_1 = h_1\) ✓
+
+### 4.10.2 Preferências Lineares (Substitutos Perfeitos): \(U = ax_1 + bx_2\)
+
+Com preferências lineares, as curvas de indiferença são retas com inclinação \(-a/b\), e a TMS é constante. A elasticidade de substituição é \(\sigma \to \infty\).
+
+**Demanda Marshalliana.** O consumidor compara a TMS com a razão de preços:
+
+- Se \(\dfrac{a}{b} > \dfrac{p_1}{p_2}\): o bem 1 oferece mais utilidade por real gasto → solução de canto em \(x_1\)
+- Se \(\dfrac{a}{b} < \dfrac{p_1}{p_2}\): o bem 2 é mais vantajoso → solução de canto em \(x_2\)
+- Se \(\dfrac{a}{b} = \dfrac{p_1}{p_2}\): qualquer combinação sobre a reta orçamentária é ótima
+
+Formalmente:
+
+\[
+\boxed{x_1^* = \begin{cases} I/p_1 & \text{se } a/b > p_1/p_2 \\ 0 & \text{se } a/b < p_1/p_2 \\ \text{qualquer } x_1 \in [0, I/p_1] & \text{se } a/b = p_1/p_2 \end{cases}}
+\]
+
+A demanda é descontínua: uma pequena mudança em preços pode fazer o consumidor saltar de consumir apenas o bem 1 para apenas o bem 2.
+
+**Utilidade indireta.**
+
+\[
+V(\mathbf{p}, I) = \max\left\{\frac{a\, I}{p_1},\; \frac{b\, I}{p_2}\right\} = I \cdot \max\left\{\frac{a}{p_1},\; \frac{b}{p_2}\right\}
+\]
+
+**Demanda Hicksiana.** Para minimizar o gasto atingindo \(\bar{u}\), o consumidor escolhe o bem mais barato por unidade de utilidade:
+
+\[
+\boxed{h_1 = \begin{cases} \bar{u}/a & \text{se } p_1/a < p_2/b \\ 0 & \text{se } p_1/a > p_2/b \end{cases}}
+\]
+
+**Função dispêndio.**
+
+\[
+E(\mathbf{p}, \bar{u}) = \bar{u} \cdot \min\left\{\frac{p_1}{a},\; \frac{p_2}{b}\right\}
+\]
+
+### 4.10.3 Preferências Leontief (Complementares Perfeitos): \(U = \min\{x_1/a,\; x_2/b\}\)
+
+Com preferências Leontief, as curvas de indiferença têm formato de "L" com vértice na reta \(x_1/a = x_2/b\). A elasticidade de substituição é \(\sigma = 0\): não há margem para substituição entre os bens.
+
+**Demanda Marshalliana.** No ótimo, o consumidor sempre consome no vértice da curva de indiferença, onde \(x_1/a = x_2/b\). Caso contrário, estaria desperdiçando renda com excesso de um dos bens. Da condição de vértice:
+
+\[
+x_2 = \frac{b}{a}\, x_1
+\]
+
+Substituindo na restrição orçamentária:
+
+\[
+p_1 x_1 + p_2 \cdot \frac{b}{a}\, x_1 = I \quad \Longrightarrow \quad x_1 \left(p_1 + \frac{b}{a}\, p_2\right) = I
+\]
+
+\[
+\boxed{x_1^* = \frac{a\, I}{a\, p_1 + b\, p_2}, \qquad x_2^* = \frac{b\, I}{a\, p_1 + b\, p_2}}
+\]
+
+Note que a demanda depende de *ambos* os preços — uma redução em \(p_1\) aumenta a demanda por *ambos* os bens, pois eles são sempre consumidos juntos na proporção \(a:b\).
+
+**Utilidade indireta.**
+
+\[
+V(\mathbf{p}, I) = \frac{I}{a\, p_1 + b\, p_2}
+\]
+
+**Demanda Hicksiana.** Para atingir utilidade \(\bar{u}\), o consumidor precisa exatamente \(x_1 = a\bar{u}\) e \(x_2 = b\bar{u}\). Qualquer outra combinação ou não atinge \(\bar{u}\) ou gasta mais. Portanto:
+
+\[
+\boxed{h_1 = a\,\bar{u}, \qquad h_2 = b\,\bar{u}}
+\]
+
+As demandas hicksianas são **independentes dos preços** — o efeito substituição é zero, coerente com \(\sigma = 0\).
+
+**Função dispêndio.**
+
+\[
+E(\mathbf{p}, \bar{u}) = (a\, p_1 + b\, p_2)\,\bar{u}
+\]
+
+A função dispêndio é linear nos preços — não há curvatura porque não há substituição.
+
+### 4.10.4 CES: \(U(x_1,x_2) = (a\, x_1^\rho + b\, x_2^\rho)^{1/\rho}\)
+
+A função CES (*Constant Elasticity of Substitution*) generaliza os três casos anteriores. O parâmetro \(\rho \in (-\infty, 1]\setminus\{0\}\) determina a elasticidade de substituição \(\sigma = 1/(1-\rho)\):
+
+| \(\rho\) | \(\sigma\) | Caso limite |
+|-----------|-----------|-------------|
+| \(\rho \to 1\) | \(\sigma \to \infty\) | Substitutos perfeitos |
+| \(\rho \to 0\) | \(\sigma \to 1\) | Cobb-Douglas |
+| \(\rho \to -\infty\) | \(\sigma \to 0\) | Complementares perfeitos |
+
+**Demanda Marshalliana.** O consumidor resolve:
+
+\[
+\max_{x_1,x_2} \; (a\, x_1^\rho + b\, x_2^\rho)^{1/\rho} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = I
+\]
+
+O Lagrangeano é:
+
+\[
+\mathcal{L} = (a\, x_1^\rho + b\, x_2^\rho)^{1/\rho} + \lambda(I - p_1 x_1 - p_2 x_2)
+\]
+
+As CPOs são:
+
+\[
+\frac{\partial \mathcal{L}}{\partial x_i} = \frac{1}{\rho}(a\, x_1^\rho + b\, x_2^\rho)^{1/\rho - 1} \cdot \rho\, c_i\, x_i^{\rho-1} - \lambda p_i = 0
+\]
+
+onde \(c_1 = a\) e \(c_2 = b\). Simplificando e dividindo a CPO de \(x_1\) pela de \(x_2\):
+
+\[
+\frac{a\, x_1^{\rho-1}}{b\, x_2^{\rho-1}} = \frac{p_1}{p_2} \quad \Longrightarrow \quad \left(\frac{x_1}{x_2}\right)^{\rho-1} = \frac{p_1\, b}{p_2\, a}
+\]
+
+Como \(\rho - 1 = -1/\sigma\), elevando ambos os lados a \(-\sigma\):
+
+\[
+\frac{x_1}{x_2} = \left(\frac{a\, p_2}{b\, p_1}\right)^\sigma = \left(\frac{a}{b}\right)^\sigma \left(\frac{p_1}{p_2}\right)^{-\sigma}
+\]
+
+Portanto \(x_1 = x_2 \cdot (a/b)^\sigma \cdot (p_1/p_2)^{-\sigma}\). Substituindo na restrição orçamentária e resolvendo, definimos o **índice de preços CES**:
+
+\[
+P \equiv \left(a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}\right)^{1/(1-\sigma)}
+\]
+
+As **demandas marshallianas** podem ser escritas de forma compacta:
+
+\[
+\boxed{x_i^* = \frac{a_i^\sigma\, p_i^{-\sigma}}{P^{1-\sigma}}\, I = a_i^\sigma\, p_i^{-\sigma}\, P^{\sigma-1}\, I}
+\]
+
+onde \(a_1 = a\), \(a_2 = b\). Equivalentemente:
+
+\[
+x_1^* = \frac{a^\sigma\, p_1^{-\sigma}\, I}{a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}}, \qquad x_2^* = \frac{b^\sigma\, p_2^{-\sigma}\, I}{a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}}
+\]
+
+**Utilidade indireta.**
+
+\[
+V(\mathbf{p}, I) = \frac{I}{P} = I \cdot \left(a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}\right)^{-1/(1-\sigma)}
+\]
+
+**Demanda Hicksiana.** Pelo Lema de Shephard aplicado à função dispêndio:
+
+\[
+\boxed{h_i = a_i^\sigma\, p_i^{-\sigma}\, P^{\sigma-1}\, \bar{u}}
+\]
+
+As demandas hicksianas têm a mesma estrutura das marshallianas, com \(\bar{u}\) substituindo \(I/P\).
+
+**Função dispêndio.**
+
+\[
+E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}\right)^{1/(1-\sigma)}
+\]
+
+!!! info "Casos limite da CES"
+    - Quando \(\rho \to 0\) (\(\sigma \to 1\)), a CES converge para a Cobb-Douglas com expoentes proporcionais a \(a\) e \(b\). O índice \(P\) converge para \(\text{const} \cdot p_1^{a/(a+b)} p_2^{b/(a+b)}\).
+    - Quando \(\rho \to 1\) (\(\sigma \to \infty\)), o consumidor substitui perfeitamente entre os bens e consome apenas o mais barato por unidade de utilidade.
+    - Quando \(\rho \to -\infty\) (\(\sigma \to 0\)), não há substituição e o consumidor consome na proporção fixa \(a:b\).
+
+---
+
 ## Box Brasil: O Impacto do Bolsa Família na Restrição Orçamentária
 
 !!! example "Box Brasil — Transferências condicionadas e escolhas de consumo"

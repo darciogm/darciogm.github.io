@@ -334,6 +334,184 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ---
 
+## 10.8 Demandas Condicionais e Função Custo por Tipo de Função de Produção
+
+Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(r\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
+
+### 10.8.1 Cobb-Douglas: \(q = K^\alpha L^\beta\)
+
+**Demandas condicionais (minimização de custo).** A firma resolve:
+
+\[
+\min_{K,L} \; rK + wL \quad \text{s.a.} \quad K^\alpha L^\beta = q
+\]
+
+O Lagrangeano é:
+
+\[
+\mathcal{L} = rK + wL + \mu(q - K^\alpha L^\beta)
+\]
+
+Condições de primeira ordem:
+
+\[
+\frac{\partial \mathcal{L}}{\partial K} = r - \mu \alpha K^{\alpha-1} L^\beta = 0
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial L} = w - \mu \beta K^\alpha L^{\beta-1} = 0
+\]
+
+Dividindo a primeira CPO pela segunda:
+
+\[
+\frac{r}{w} = \frac{\alpha L}{\beta K} \quad \Longrightarrow \quad K = \frac{\alpha\, w}{\beta\, r}\, L
+\]
+
+Substituindo na restrição tecnológica:
+
+\[
+\left(\frac{\alpha\, w}{\beta\, r}\right)^\alpha L^{\alpha+\beta} = q \quad \Longrightarrow \quad L^c = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{-\alpha/(\alpha+\beta)}
+\]
+
+\[
+\boxed{L^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\beta\, r}{\alpha\, w}\right)^{\alpha/(\alpha+\beta)}}
+\]
+
+\[
+\boxed{K^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{\beta/(\alpha+\beta)}}
+\]
+
+**Função custo.** Avaliando o gasto mínimo \(C = rK^c + wL^c\):
+
+\[
+\boxed{C(w,r,q) = q^{1/(\alpha+\beta)} \cdot \frac{\alpha+\beta}{\alpha^\alpha \beta^\beta} \cdot \frac{w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)}}{(\alpha+\beta)^{(\alpha+\beta)/(\alpha+\beta)}} \cdot (\alpha+\beta) \left(\frac{w}{\beta}\right)^{\beta/(\alpha+\beta)} \left(\frac{r}{\alpha}\right)^{\alpha/(\alpha+\beta)}}
+\]
+
+Simplificando, a função custo Cobb-Douglas tem a forma:
+
+\[
+C(w,r,q) = \kappa \cdot w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}
+\]
+
+onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\alpha+\beta)}\) é uma constante.
+
+**Retornos de escala e custos:**
+
+- Se \(\alpha+\beta = 1\) (retornos constantes): \(C\) é linear em \(q\) → CMg constante
+- Se \(\alpha+\beta > 1\) (retornos crescentes): \(C\) é côncava em \(q\) → CMg decrescente
+- Se \(\alpha+\beta < 1\) (retornos decrescentes): \(C\) é convexa em \(q\) → CMg crescente
+
+*Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
+
+**Demandas por insumos (maximização de lucro).** Com retornos decrescentes (\(\alpha+\beta < 1\)), a firma maximiza \(\pi = pq - wL - rK\). Substituindo \(q = K^\alpha L^\beta\) e derivando:
+
+\[
+p\alpha K^{\alpha-1}L^\beta = r, \qquad p\beta K^\alpha L^{\beta-1} = w
+\]
+
+Resolvendo o sistema (detalhes em Cap. 11):
+
+\[
+\boxed{L^*(w,r,p) = \left(\frac{p\,\alpha^\alpha\,\beta^{1-\alpha}}{w^{1-\alpha}\,r^\alpha}\right)^{1/(1-\alpha-\beta)}, \quad K^*(w,r,p) = \left(\frac{p\,\alpha^{1-\beta}\,\beta^\beta}{w^\beta\,r^{1-\beta}}\right)^{1/(1-\alpha-\beta)}}
+\]
+
+Estas demandas só existem com retornos decrescentes. Com retornos constantes ou crescentes, o lucro não tem máximo finito.
+
+### 10.8.2 Tecnologia Linear (Substitutos Perfeitos): \(q = \alpha K + \beta L\)
+
+Com tecnologia linear, os insumos são perfeitamente substituíveis. As isoquantas são retas com inclinação \(-\beta/\alpha\).
+
+**Demandas condicionais.** A firma compara o custo por unidade de produto de cada insumo:
+
+- Custo de uma unidade de produto via capital: \(r/\alpha\)
+- Custo de uma unidade de produto via trabalho: \(w/\beta\)
+
+\[
+\boxed{K^c = \begin{cases} q/\alpha & \text{se } r/\alpha < w/\beta \\ 0 & \text{se } r/\alpha > w/\beta \end{cases}, \qquad L^c = \begin{cases} 0 & \text{se } r/\alpha < w/\beta \\ q/\beta & \text{se } r/\alpha > w/\beta \end{cases}}
+\]
+
+Se \(r/\alpha = w/\beta\), qualquer combinação sobre a isoquanta é ótima.
+
+**Função custo.**
+
+\[
+\boxed{C(w,r,q) = q \cdot \min\left\{\frac{r}{\alpha},\; \frac{w}{\beta}\right\}}
+\]
+
+Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg constante igual a \(\min\{r/\alpha, w/\beta\}\).
+
+**Demandas por insumos (maximização de lucro).** Com retornos constantes de escala, o lucro é linear em \(q\). Se \(p > \min\{r/\alpha, w/\beta\}\), a firma deseja produzir infinito; se \(p < \min\{r/\alpha, w/\beta\}\), a firma produz zero. O problema de maximização de lucro só tem solução interior com rendimentos decrescentes.
+
+### 10.8.3 Tecnologia Leontief (Proporções Fixas): \(q = \min\{K/\alpha,\; L/\beta\}\)
+
+Com tecnologia Leontief, os insumos são usados em proporções fixas \(\alpha:\beta\). As isoquantas têm formato de "L".
+
+**Demandas condicionais.** No ótimo, a firma opera no vértice da isoquanta: \(K/\alpha = L/\beta = q\). Qualquer outro ponto desperdiça insumos. Portanto:
+
+\[
+\boxed{K^c = \alpha\, q, \qquad L^c = \beta\, q}
+\]
+
+As demandas condicionais são **independentes dos preços dos insumos** — não há margem para substituição.
+
+**Função custo.**
+
+\[
+\boxed{C(w,r,q) = (\alpha\, r + \beta\, w)\, q}
+\]
+
+O custo é linear em \(q\), com CMg constante igual a \(\alpha r + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
+
+**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seria necessário retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
+
+### 10.8.4 CES: \(q = (\alpha K^\rho + \beta L^\rho)^{1/\rho}\)
+
+A função CES generaliza os três casos anteriores. O parâmetro \(\rho\) determina a elasticidade de substituição entre insumos: \(\sigma = 1/(1-\rho)\).
+
+**Demandas condicionais.** A firma resolve:
+
+\[
+\min_{K,L} \; rK + wL \quad \text{s.a.} \quad (\alpha K^\rho + \beta L^\rho)^{1/\rho} = q
+\]
+
+O Lagrangeano é \(\mathcal{L} = rK + wL + \mu[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
+
+\[
+\frac{r}{w} = \frac{\alpha K^{\rho-1}}{\beta L^{\rho-1}} \quad \Longrightarrow \quad \frac{K}{L} = \left(\frac{\alpha\, w}{\beta\, r}\right)^\sigma
+\]
+
+Definimos o **índice de preços de insumos CES**:
+
+\[
+W \equiv \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}
+\]
+
+As demandas condicionais ficam:
+
+\[
+\boxed{K^c = \alpha^\sigma\, r^{-\sigma}\, W^{\sigma-1}\, q, \qquad L^c = \beta^\sigma\, w^{-\sigma}\, W^{\sigma-1}\, q}
+\]
+
+**Função custo.**
+
+\[
+\boxed{C(w,r,q) = W \cdot q = q \cdot \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}}
+\]
+
+A função custo é linear em \(q\) (retornos constantes de escala) e tem a estrutura de um índice de preços CES.
+
+*Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
+
+**Demandas por insumos (maximização de lucro).** Com retornos constantes, o lucro é linear em \(q\) e o problema não tem solução finita a menos que \(p = W\). Para uma versão com retornos decrescentes, \(q = (\alpha K^\rho + \beta L^\rho)^{\gamma/\rho}\) com \(\gamma < 1\), a função custo torna-se \(C = W \cdot q^{1/\gamma}\), convexa em \(q\), e as demandas não condicionais podem ser obtidas via \(\max_q \; pq - W q^{1/\gamma}\).
+
+!!! info "Casos limite da CES na produção"
+    - \(\rho \to 0\) (\(\sigma \to 1\)): converge para Cobb-Douglas \(q = K^\alpha L^\beta\) (com \(\alpha + \beta = 1\) sob CRS)
+    - \(\rho \to 1\) (\(\sigma \to \infty\)): converge para tecnologia linear \(q = \alpha K + \beta L\)
+    - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K/\alpha, L/\beta\}\)
+
+---
+
 ## Exercícios
 
 !!! tip "Exercícios do Capítulo 10"
