@@ -232,6 +232,7 @@ As **elasticidades** medem a sensibilidade percentual da demanda a variações e
 ### 5.7.1 Elasticidade-preço da demanda
 
 !!! definition "Elasticidade-preço da demanda"
+
     \[
     \varepsilon_{x_i, p_i} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i}
     \]

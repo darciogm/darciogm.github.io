@@ -85,9 +85,11 @@ S(p) = \sum_{j=1}^{m} S_j(p)
 
 !!! definition "Equilíbrio de curto prazo"
     O **equilíbrio competitivo de curto prazo** ocorre ao preço \(p^*\) tal que a quantidade demandada pelo mercado iguala a quantidade ofertada:
+
     \[
     X(p^*) = S(p^*)
     \]
+
     A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
 
 ### Estabilidade do equilíbrio
@@ -419,6 +421,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 !!! note "Perda de peso morto"
     A perda de peso morto (PPM), também chamada de *deadweight loss* ou triângulo de Harberger, representa a perda de bem-estar social que não é capturada por nenhum agente — nem consumidores, nem produtores, nem governo. Para um imposto com curvas lineares:
+
     \[
     PPM = \frac{1}{2} \cdot t^2 \cdot \frac{|\varepsilon_D| \cdot \varepsilon_S}{|\varepsilon_D| + \varepsilon_S} \cdot \frac{Q_0}{p_0}
     \]

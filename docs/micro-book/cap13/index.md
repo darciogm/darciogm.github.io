@@ -16,9 +16,11 @@ Em uma economia com \(n\) bens, os preços \(p_1, p_2, \ldots, p_n\) são determ
 
 !!! definition "Equilíbrio geral competitivo"
     Um **equilíbrio geral competitivo** (ou equilíbrio walrasiano) é um vetor de preços \(\mathbf{p}^* = (p_1^*, p_2^*, \ldots, p_n^*)\) tal que todos os mercados se equilibram simultaneamente: para cada bem \(k\),
+
     \[
     \sum_{i=1}^{I} x_i^k(\mathbf{p}^*) = \sum_{j=1}^{J} y_j^k(\mathbf{p}^*) + \sum_{i=1}^{I} \omega_i^k
     \]
+
     onde \(x_i^k\) é a demanda do consumidor \(i\) pelo bem \(k\), \(y_j^k\) é a oferta líquida da firma \(j\) do bem \(k\), e \(\omega_i^k\) é a dotação inicial do consumidor \(i\) do bem \(k\).
 
 ### Homogeneidade e normalização
@@ -77,9 +79,11 @@ O conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth forma
 
 !!! definition "Curva de contrato"
     A **curva de contrato** é o conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth. Formalmente, é o conjunto de alocações \((x_A, x_B)\) tais que:
+
     \[
     TMS_A^{12}(x_A) = TMS_B^{12}(x_B)
     \]
+
     sujeito à factibilidade \(x_A + x_B = \bar{x}\).
 
 ### O núcleo da economia
@@ -261,6 +265,7 @@ As funções de excesso de demanda agregado satisfazem:
 
 !!! abstract "Lei de Walras"
     Para qualquer vetor de preços \(\mathbf{p}\), o valor total do excesso de demanda é identicamente zero:
+
     \[
     \sum_{k=1}^{n} p_k \cdot Z^k(\mathbf{p}) \equiv 0
     \]
@@ -288,6 +293,7 @@ Somando sobre todos os consumidores:
 
 !!! abstract "Teorema do Ponto Fixo de Brouwer"
     Seja \(f: \Delta \to \Delta\) uma função contínua de um conjunto convexo e compacto \(\Delta \subset \mathbb{R}^n\) nele mesmo. Então existe pelo menos um ponto \(\mathbf{x}^* \in \Delta\) tal que:
+
     \[
     f(\mathbf{x}^*) = \mathbf{x}^*
     \]
@@ -347,6 +353,7 @@ onde \(\pi_j(\mathbf{p}) = \mathbf{p} \cdot \mathbf{y}_j^*(\mathbf{p})\) é o lu
     1. Cada consumidor \(i\) maximiza utilidade sujeito à restrição orçamentária ao preço \(\mathbf{p}^*\).
     2. Cada firma \(j\) maximiza lucro ao preço \(\mathbf{p}^*\).
     3. Todos os mercados se equilibram:
+
     \[
     \sum_{i=1}^{I} \mathbf{x}_i^* = \sum_{i=1}^{I} \boldsymbol{\omega}_i + \sum_{j=1}^{J} \mathbf{y}_j^*
     \]

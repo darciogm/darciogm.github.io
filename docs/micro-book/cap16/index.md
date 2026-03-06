@@ -21,9 +21,11 @@ O indivíduo recebe um **salário por hora** \(w\) e pode ter uma **renda não-s
 
 !!! definition "Restrição orçamentária do tempo"
     A restrição orçamentária do indivíduo é:
+
     \[
     C = w(T - L) + V = wh + V
     \]
+
     onde \(C\) é o consumo, \(w\) é o salário-hora, \(T\) é a dotação total de tempo, \(L\) é o lazer, \(h = T - L\) são as horas trabalhadas e \(V\) é a renda não-salarial.
 
 ### Renda plena (full income)
@@ -74,6 +76,7 @@ O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamen
 
 !!! abstract "Problema de Otimização do Trabalhador"
     O indivíduo resolve:
+
     \[
     \max_{C, L} \; U(C, L) \quad \text{sujeito a} \quad C + wL = wT + V, \quad 0 \leq L \leq T
     \]
@@ -212,9 +215,11 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
 !!! definition "Equilíbrio competitivo no mercado de trabalho"
     O equilíbrio competitivo ocorre no par \((w^*, H^*)\) tal que:
+
     \[
     H^s(w^*) = H^d(w^*) = H^*
     \]
+
     Nesse equilíbrio, todo trabalhador que deseja trabalhar ao salário \(w^*\) encontra emprego, e toda firma que deseja contratar ao salário \(w^*\) encontra trabalhadores.
 
 ### Deslocamentos das curvas

@@ -74,9 +74,11 @@ O modelo de Irving Fisher é a pedra angular da teoria do consumo intertemporal.
 
 !!! definition "Restrição orçamentária intertemporal"
     A restrição orçamentária intertemporal é:
+
     \[
     C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r} \equiv W
     \]
+
     onde \(W\) é a **riqueza intertemporal** — o valor presente de toda a renda futura. A inclinação da reta orçamentária intertemporal é \(-(1+r)\).
 
 ### Otimização
@@ -95,9 +97,11 @@ TMS_{C_1, C_2} = 1 + r
 
 !!! definition "Taxa de preferência intertemporal"
     A **taxa de preferência intertemporal** (ou taxa de desconto subjetiva) \(\rho\) é definida implicitamente por:
+
     \[
     TMS_{C_1, C_2} = 1 + \rho
     \]
+
     No ótimo, \(\rho = r\): a taxa de desconto subjetiva se iguala à taxa de juros de mercado. Se \(\rho > r\), o consumidor é "impaciente" e toma empréstimo; se \(\rho < r\), ele poupa.
 
 ### Efeitos de uma variação na taxa de juros
@@ -189,9 +193,11 @@ A demanda por capital é decrescente na taxa de juros: quando \(r\) sobe, \(c_K\
 
 !!! definition "Valor Presente Líquido (VPL)"
     O **Valor Presente Líquido** de um projeto de investimento que gera fluxos de caixa \(\{F_0, F_1, F_2, \ldots, F_n\}\) é:
+
     \[
     VPL = \sum_{t=0}^{n} \frac{F_t}{(1+r)^t} = F_0 + \frac{F_1}{1+r} + \frac{F_2}{(1+r)^2} + \cdots + \frac{F_n}{(1+r)^n}
     \]
+
     onde \(r\) é a taxa de desconto (custo de oportunidade do capital) e \(F_0 < 0\) representa o investimento inicial.
 
 ### Regra de decisão
@@ -210,9 +216,11 @@ O VPL é uma função decrescente de \(r\). Projetos com fluxos de caixa mais di
 
 !!! definition "Taxa Interna de Retorno (TIR)"
     A **Taxa Interna de Retorno** é a taxa de desconto \(r^*\) que torna o VPL igual a zero:
+
     \[
     \sum_{t=0}^{n} \frac{F_t}{(1+r^*)^t} = 0
     \]
+
     A regra de decisão é: aceitar o projeto se \(TIR > r\) (custo de oportunidade do capital).
 
 ### Limitações da TIR
@@ -292,9 +300,11 @@ Se o preço do recurso é \(P_t\), o custo marginal de extração é \(c\) (cons
 
 !!! abstract "Regra de Hotelling"
     Em equilíbrio competitivo, o preço líquido (preço menos custo marginal de extração) de um recurso natural exaurível cresce à taxa de juros:
+
     \[
     \frac{\dot{R}}{R} = r \quad \text{(em tempo contínuo)} \qquad \text{ou} \qquad \frac{R_{t+1} - R_t}{R_t} = r \quad \text{(em tempo discreto)}
     \]
+
     onde \(R = P - c\) é a renda de escassez do recurso.
 
 ### Implicações

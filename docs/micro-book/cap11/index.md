@@ -57,6 +57,7 @@ A condição de primeira ordem (CPO) é:
 
 !!! abstract "Regra de maximização de lucro"
     A firma maximiza lucro produzindo a quantidade \(q^*\) em que a **receita marginal** iguala o **custo marginal**:
+
     \[
     \mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)
     \]
@@ -116,6 +117,7 @@ Para uma firma com **poder de mercado**, \(dp/dq < 0\), logo \(\mathrm{RMg} < p\
 
 !!! definition "Receita marginal e elasticidade"
     A receita marginal pode ser expressa em função da elasticidade-preço da demanda \(\varepsilon_d\) (definida como negativa, i.e., \(\varepsilon_d < 0\)):
+
     \[
     \mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = p\left(1 - \frac{1}{|\varepsilon_d|}\right)
     \]
@@ -173,15 +175,18 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
 !!! definition "Curva de oferta de curto prazo"
     A **curva de oferta de curto prazo** da firma tomadora de preços é o trecho da curva de custo marginal que está **acima** do custo variável médio mínimo:
+
     \[
     q^s(p) = \begin{cases} \mathrm{CMg}^{-1}(p) & \text{se } p \geq \mathrm{CVMe}_{\min} \\ 0 & \text{se } p < \mathrm{CVMe}_{\min} \end{cases}
     \]
 
 !!! note "O excedente do produtor"
     O **excedente do produtor** no curto prazo é a diferença entre a receita total e o custo variável:
+
     \[
     EP = RT - CV = p \cdot q - CV(q) = \pi + CF
     \]
+
     Graficamente, é a área acima da curva de oferta (CMg) e abaixo do preço. O excedente do produtor é a medida apropriada de bem-estar do lado da oferta no curto prazo, pois mede a contribuição da produção para cobrir os custos fixos e gerar lucro.
 
 ---
@@ -192,10 +197,13 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
 !!! definition "Função lucro"
     A **função lucro** \(\pi(p, w, r)\) é o lucro máximo que a firma pode obter dados o preço do produto \(p\) e os preços dos insumos \(w\) e \(r\):
+
     \[
     \pi(p, w, r) = \max_{q} \{p \cdot q - C(w, r, q)\}
     \]
+
     ou, equivalentemente:
+
     \[
     \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
     \]
@@ -211,28 +219,34 @@ A função lucro possui propriedades notáveis:
 
 !!! proof "Demonstração: Lema de Hotelling"
     **Enunciado.** Se \(\pi(p, w, r)\) é diferenciável, então:
+
     \[
     \frac{\partial \pi(p, w, r)}{\partial p} = q^*(p, w, r) \quad \text{(função de oferta)}
     \]
+
     \[
     \frac{\partial \pi(p, w, r)}{\partial w} = -L^*(p, w, r) \quad \text{(negativo da demanda por trabalho)}
     \]
+
     \[
     \frac{\partial \pi(p, w, r)}{\partial r} = -K^*(p, w, r) \quad \text{(negativo da demanda por capital)}
     \]
 
     **Demonstração.**
     Considere o problema de maximização de lucro com escolha de insumos:
+
     \[
     \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
     \]
 
     Seja \((K^*, L^*)\) a solução ótima. Defina a função objetivo como:
+
     \[
     g(K, L; p, w, r) = p \cdot f(K, L) - wL - rK
     \]
 
     Pelo **teorema da envoltória**, a derivada da função valor em relação a um parâmetro é igual à derivada parcial da função objetivo avaliada no ótimo:
+
     \[
     \frac{\partial \pi}{\partial p} = \frac{\partial g}{\partial p}\bigg|_{(K^*, L^*)} = f(K^*, L^*) = q^*
     \]
@@ -246,11 +260,13 @@ A função lucro possui propriedades notáveis:
     \]
 
     **Verificação com Cobb-Douglas.** Considere \(q = K^{1/2}L^{1/2}\), com preços \((p, w, r)\). As CPOs são:
+
     \[
     p \cdot \frac{1}{2}K^{-1/2}L^{1/2} = r \qquad \text{e} \qquad p \cdot \frac{1}{2}K^{1/2}L^{-1/2} = w
     \]
 
     Resolvendo:
+
     \[
     K^* = \frac{p^2}{4wr}, \qquad L^* = \frac{p^2}{4w^2} \cdot \frac{w}{r} = \frac{p^2}{4wr}  \cdot \frac{r}{w}
     \]

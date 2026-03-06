@@ -126,11 +126,13 @@ Considere dois níveis de esforço: alto (\(e_H\)) e baixo (\(e_L\)), com \(c(e_
 O principal deseja induzir esforço alto. O contrato especifica pagamentos \(w_H\) (se \(x = x_H\)) e \(w_L\) (se \(x = x_L\)). As restrições são:
 
 **Restrição de Participação (RP):**
+
 \[
 p_H \, U(w_H) + (1 - p_H) \, U(w_L) - c(e_H) \geq \bar{U}
 \]
 
 **Restrição de Compatibilidade de Incentivos (RCI):**
+
 \[
 p_H \, U(w_H) + (1 - p_H) \, U(w_L) - c(e_H) \geq p_L \, U(w_H) + (1 - p_L) \, U(w_L) - c(e_L)
 \]

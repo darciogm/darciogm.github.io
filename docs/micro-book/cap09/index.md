@@ -29,10 +29,13 @@ onde \(\mathrm{TP}(L)\) é o produto total do trabalho.
 
 !!! definition "Produto marginal"
     O **produto marginal do trabalho** é a variação do produto total decorrente de uma unidade adicional de trabalho, mantido o capital constante:
+
     \[
     \mathrm{PMg}_L = \frac{\partial f(K, L)}{\partial L}
     \]
+
     Analogamente, o **produto marginal do capital** é:
+
     \[
     \mathrm{PMg}_K = \frac{\partial f(K, L)}{\partial K}
     \]
@@ -49,6 +52,7 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 !!! abstract "Lei dos rendimentos marginais decrescentes"
     Se um insumo variável é adicionado a um insumo fixo, a partir de certo ponto o produto marginal do insumo variável torna-se decrescente. Formalmente, existe \(L^*\) tal que para \(L > L^*\):
+
     \[
     \frac{\partial^2 f(\bar{K}, L)}{\partial L^2} < 0
     \]
@@ -71,6 +75,7 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 !!! definition "Isoquanta"
     Uma **isoquanta** é o conjunto de todas as combinações de insumos \((K, L)\) que geram o mesmo nível de produto \(q_0\):
+
     \[
     \{(K, L) \mid f(K, L) = q_0\}
     \]
@@ -86,6 +91,7 @@ As isoquantas são o análogo, na teoria da produção, das curvas de indiferen�
 
 !!! definition "TMST"
     A **taxa marginal de substituição técnica** de \(L\) por \(K\) mede a taxa à qual a firma pode substituir capital por trabalho mantendo o produto constante:
+
     \[
     \mathrm{TMST}_{L,K} = -\frac{dK}{dL}\bigg|_{q = q_0} = \frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{f_L}{f_K}
     \]
@@ -199,6 +205,7 @@ onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em r
 
 !!! definition "Elasticidade de substituição"
     A **elasticidade de substituição** \(\sigma\) mede a facilidade com que a firma pode substituir um insumo por outro ao longo de uma isoquanta. Formalmente:
+
     \[
     \sigma = \frac{d \ln(K/L)}{d \ln(\mathrm{TMST}_{L,K})} = \frac{d \ln(K/L)}{d \ln(f_L / f_K)}
     \]
@@ -215,26 +222,31 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
 !!! proof "Demonstração: \(\sigma = 1\) para a função Cobb-Douglas"
     Considere a função de produção Cobb-Douglas:
+
     \[
     q = A K^{\alpha} L^{\beta}
     \]
 
     **Passo 1.** Calculamos os produtos marginais:
+
     \[
     f_K = \alpha A K^{\alpha - 1} L^{\beta}, \qquad f_L = \beta A K^{\alpha} L^{\beta - 1}
     \]
 
     **Passo 2.** A TMST é:
+
     \[
     \mathrm{TMST}_{L,K} = \frac{f_L}{f_K} = \frac{\beta A K^{\alpha} L^{\beta - 1}}{\alpha A K^{\alpha - 1} L^{\beta}} = \frac{\beta}{\alpha} \cdot \frac{K}{L}
     \]
 
     **Passo 3.** Portanto:
+
     \[
     \ln\left(\frac{K}{L}\right) = \ln\left(\frac{\alpha}{\beta}\right) + \ln(\mathrm{TMST}_{L,K})
     \]
 
     **Passo 4.** Diferenciando:
+
     \[
     \sigma = \frac{d \ln(K/L)}{d \ln(\mathrm{TMST}_{L,K})} = 1
     \]
@@ -430,6 +442,7 @@ Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
 **Exercício 9.2.**
 Uma firma opera com a tecnologia CES:
+
 \[
 q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}
 \]

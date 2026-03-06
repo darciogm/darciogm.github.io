@@ -53,6 +53,7 @@ Um resultado central é que a **maximização de lucro implica minimização de 
 
 !!! abstract "Proposição: Maximização de lucro implica minimização de custos"
     Se \((K^*, L^*)\) resolve o problema de maximização de lucro \(\max_{K,L} \; pf(K,L) - wL - rK\) com produto \(q^* = f(K^*, L^*)\), então \((K^*, L^*)\) também resolve o problema de minimização de custos para o nível de produto \(q^*\):
+
     \[
     \min_{K, L} \; wL + rK \quad \text{s.a.} \quad f(K, L) \geq q^*
     \]
@@ -108,10 +109,13 @@ Igualando:
 
 !!! abstract "Condição de minimização de custos"
     No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
+
     \[
     \mathrm{TMST}_{L,K} = \frac{w}{r}
     \]
+
     Equivalentemente, o valor do produto marginal por unidade monetária gasta deve ser igual para todos os insumos:
+
     \[
     \frac{f_L}{w} = \frac{f_K}{r}
     \]
@@ -134,6 +138,7 @@ Estas funções expressam as quantidades ótimas de cada insumo como funções d
 
 !!! definition "Função custo"
     A **função custo** \(C(w, r, q)\) é o valor mínimo do custo de produzir \(q\) unidades, dados os preços dos insumos \(w\) e \(r\):
+
     \[
     C(w, r, q) = wL^c(w, r, q) + rK^c(w, r, q)
     \]
@@ -149,6 +154,7 @@ A função custo possui as seguintes propriedades:
 
 !!! proof "Demonstração: Lema de Shephard"
     **Enunciado.** Se \(C(w, r, q)\) é a função custo e é diferenciável em \((w, r)\), então as demandas condicionadas por insumos são obtidas pela derivada parcial da função custo em relação ao preço do respectivo insumo:
+
     \[
     \frac{\partial C(w, r, q)}{\partial w} = L^c(w, r, q), \qquad \frac{\partial C(w, r, q)}{\partial r} = K^c(w, r, q)
     \]
@@ -157,28 +163,35 @@ A função custo possui as seguintes propriedades:
     Considere o problema de minimização de custos. Pelo teorema da envoltória, a derivada da função valor (custo mínimo) em relação a um parâmetro é igual à derivada parcial do lagrangeano avaliado no ótimo.
 
     O lagrangeano é:
+
     \[
     \mathcal{L}(K, L, \lambda; w, r, q) = wL + rK + \lambda[q - f(K, L)]
     \]
 
     Pelo teorema da envoltória:
+
     \[
     \frac{\partial C}{\partial w} = \frac{\partial \mathcal{L}}{\partial w}\bigg|_{(K^c, L^c, \lambda^*)} = L^c(w, r, q)
     \]
 
     Analogamente:
+
     \[
     \frac{\partial C}{\partial r} = K^c(w, r, q)
     \]
 
     **Verificação com Cobb-Douglas.** Para \(q = K^{\alpha}L^{1-\alpha}\), a função custo é:
+
     \[
     C(w, r, q) = q \cdot \kappa \cdot w^{1-\alpha} \cdot r^{\alpha}
     \]
+
     onde \(\kappa = \left(\frac{\alpha}{1-\alpha}\right)^{-(1-\alpha)} + \left(\frac{\alpha}{1-\alpha}\right)^{\alpha}\) é uma constante. Derivando em relação a \(w\):
+
     \[
     \frac{\partial C}{\partial w} = q \cdot \kappa \cdot (1-\alpha) \cdot w^{-\alpha} \cdot r^{\alpha} = L^c(w, r, q)
     \]
+
     o que confirma o lema. \(\blacksquare\)
 
 !!! tip "Significado econômico do Lema de Shephard"
@@ -285,9 +298,11 @@ CT_{LP}(q) = \min_{K, L} \{wL + rK \mid f(K, L) = q\}
 
 !!! abstract "Teorema da curva envoltória"
     A curva de custo médio de longo prazo (\(\mathrm{CMe}_{LP}\)) é a **envoltória** das curvas de custo médio de curto prazo. Para cada nível de produto \(q\):
+
     \[
     \mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}) \quad \text{para todo } \bar{K}
     \]
+
     com igualdade quando \(\bar{K} = K^*(q)\), o nível ótimo de capital de longo prazo para produzir \(q\).
 
 Intuitivamente, no longo prazo a firma tem mais flexibilidade (pode ajustar todos os insumos), de modo que seus custos nunca podem exceder os de curto prazo. A curva de CMe de longo prazo "tangencia" cada curva de CMe de curto prazo no ponto em que o nível de capital fixo é ótimo para aquele nível de produto.

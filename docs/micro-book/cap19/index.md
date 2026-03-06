@@ -114,11 +114,13 @@ Formalizemos o problema usando um modelo de equilíbrio parcial com duas firmas.
 **Equilíbrio privado**: cada firma maximiza seu próprio lucro, ignorando o efeito sobre a outra.
 
 Firma 1:
+
 \[
 \max_{q_1} \; p_1 q_1 - C_1(q_1) \implies p_1 = C_1'(q_1)
 \]
 
 **Ótimo social**: o planejador maximiza o lucro conjunto:
+
 \[
 \max_{q_1, q_2} \; p_1 q_1 - C_1(q_1) + p_2 q_2 - C_2(q_2, e(q_1))
 \]
