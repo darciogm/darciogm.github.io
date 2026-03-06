@@ -5,6 +5,7 @@ site_author: "Darcio Genicolo-Martins"
 
 hooks:
   - hooks/paper_sidebar.py
+  - hooks/book_version.py
 
 theme:
   name: material
