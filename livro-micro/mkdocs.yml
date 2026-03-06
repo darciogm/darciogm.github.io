@@ -10,11 +10,13 @@ theme:
   font: false
   palette:
     - scheme: default
+      primary: custom
       accent: red
       toggle:
         icon: material/brightness-7
         name: Alternar para modo escuro
     - scheme: slate
+      primary: custom
       accent: red
       toggle:
         icon: material/brightness-4
