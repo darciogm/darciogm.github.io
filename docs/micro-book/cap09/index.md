@@ -68,9 +68,9 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 !!! example "Box Brasil: Produtividade do trabalho na indústria brasileira"
 
-    A **Pesquisa Industrial Anual (PIA)** do IBGE permite acompanhar a produtividade do trabalho na indústria de transformação brasileira. Segundo dados do IBGE/PIA, o valor da transformação industrial (VTI) por trabalhador — uma medida de produto médio do trabalho (\(\mathrm{PMe}_L\)) — variou significativamente entre setores em 2022: enquanto a indústria de refino de petróleo registrou VTI por trabalhador superior a R$ 1,5 milhão, a indústria de confecções ficou em torno de R$ 40 mil por trabalhador [VERIFICAR valores exatos PIA/IBGE 2022].
+    A produtividade do trabalho — medida como valor adicionado por hora trabalhada — é uma aplicação direta do conceito de produto médio do trabalho (\(\mathrm{PMe}_L\)). Dados das Contas Nacionais do IBGE e da PNAD Contínua, compilados pelo FGV/IBRE, mostram que a produtividade por hora trabalhada no Brasil cresceu em média **+1,6% ao ano entre 2000 e 2010**, mas desacelerou para apenas **+0,3% ao ano entre 2010 e 2023** — e a média de longo prazo (1981–2023) é de modestos **+0,5% ao ano**.
 
-    Essa diferença reflete, em grande parte, a **intensidade de capital** (\(K/L\)): setores com maior relação capital-trabalho tendem a apresentar produto médio do trabalho mais elevado. A **Confederação Nacional da Indústria (CNI)** documenta que a produtividade industrial brasileira cresceu em média 0,5% ao ano entre 2010 e 2022 — ritmo inferior ao de economias asiáticas no mesmo período. A teoria da produção ajuda a explicar esse padrão: com investimento em capital (\(K\)) crescendo lentamente, o produto marginal e o produto médio do trabalho avançam de forma modesta.
+    A teoria da produção ajuda a explicar esse padrão. Com investimento em capital (\(K\)) crescendo lentamente, o produto marginal e o produto médio do trabalho avançam de forma modesta. A **intensidade de capital** (\(K/L\)) varia enormemente entre setores: a PIA/IBGE mostra que setores intensivos em capital (como refino de petróleo e extração mineral) apresentam VTI por trabalhador ordens de grandeza acima de setores intensivos em trabalho (como confecções e calçados). Essa dispersão setorial é uma consequência direta da função de produção: para dado nível tecnológico, mais capital por trabalhador implica maior produto médio do trabalho.
 
 ---
 
@@ -493,7 +493,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 !!! example "Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
 
-    Os dados do **IBGE/SIDRA** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 45,6 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados CONAB). A produtividade média passou de 2.403 para 3.390 kg/ha [VERIFICAR valores exatos CONAB 2023].
+    Os dados do **IBGE/SIDRA** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 44,1 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados CONAB, safra 2022/23). A produtividade média passou de 2.403 para 3.509 kg/ha.
 
     Uma decomposição simples do crescimento à la Solow revela que:
 
@@ -739,7 +739,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ### Produtividade agrícola e rendimentos de escala no Brasil
 
-> **Referência completa:** Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. "Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários." *A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*, IPEA, Cap. 1: 19-44, 2010. [VERIFICAR DOI]
+> **Referência completa:** Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. "Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários." In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). *A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*. Brasília: IPEA, Cap. 1: 19-44, 2010. ISBN: 978-85-7811-050-5
 
 **A pergunta**
 Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 9.6.

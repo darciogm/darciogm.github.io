@@ -86,11 +86,11 @@ Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor q
 
     **Alguns valores estimados para o Brasil:**
 
-    | Bem/Serviço | Elasticidade-preço (curto prazo) | Fonte |
+    | Bem/Serviço | Elasticidade-preço | Fonte |
     |---|---|---|
-    | Gasolina | \(-0{,}26\) a \(-0{,}35\) | Cardoso & Bittencourt (2013) [VERIFICAR] |
-    | Energia elétrica residencial | \(-0{,}06\) a \(-0{,}15\) | Mattos & Lima (2005) [VERIFICAR] |
-    | Cigarros | \(-0{,}2\) a \(-0{,}5\) | Iglesias et al. (2007) [VERIFICAR] |
+    | Gasolina | \(-0{,}20\) a \(-0{,}33\) (curto prazo) | Alves & Bueno (2003); Burnquist & Bacchi (2002) |
+    | Energia elétrica residencial | \(-0{,}06\) a \(-0{,}26\) (curto/longo prazo) | Schmidt & Lima (2004); Mattos & Lima (2005) |
+    | Cigarros | \(-0{,}13\) a \(-0{,}48\) (curto/longo prazo) | Iglesias et al. (2007) |
 
     A demanda inelástica por gasolina (\(|\varepsilon| < 1\)) explica por que aumentos nos impostos sobre combustíveis geram receita significativa com perda de bem-estar relativamente baixa. A elasticidade também é crucial para a estática comparativa discutida nesta seção: pelo teorema da função implícita, a magnitude do ajuste do preço de equilíbrio a um choque de oferta depende diretamente das elasticidades de oferta e demanda.
 
@@ -817,7 +817,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ### Estatísticas suficientes e o teorema do envelope na avaliação de políticas públicas
 
-> **Referência completa:** Chetty, Raj. "Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods." *Annual Review of Economics*, 1: 451-488, 2009. DOI: 10.1146/annurev.economics.050708.142910 [VERIFICAR DOI]
+> **Referência completa:** Chetty, Raj. "Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods." *Annual Review of Economics*, 1: 451-488, 2009. DOI: 10.1146/annurev.economics.050708.142910
 
 **A pergunta**
 Como avaliar o impacto de uma política pública sobre o bem-estar social sem precisar estimar um modelo estrutural completo da economia? A estimação de modelos estruturais é custosa e depende de suposições sobre formas funcionais e distribuições — será possível responder a perguntas de política usando apenas algumas "estatísticas suficientes"?
@@ -838,7 +838,7 @@ O artigo é uma aplicação magistral do teorema do envelope (Seções 2.4 e 2.6
 
 ### Estática comparativa monotônica e a matemática da previsão econômica
 
-> **Referência completa:** Milgrom, Paul; Shannon, Chris. "Monotone Comparative Statics." *Econometrica*, 62(1): 157-180, 1994. DOI: 10.2307/2951479 [VERIFICAR DOI]
+> **Referência completa:** Milgrom, Paul; Shannon, Chris. "Monotone Comparative Statics." *Econometrica*, 62(1): 157-180, 1994. DOI: 10.2307/2951479
 
 **A pergunta**
 Quando podemos afirmar que a solução ótima de um problema de maximização é *monotonamente crescente* em um parâmetro? A estática comparativa clássica — "se o preço sobe, a quantidade cai" — depende de condições sobre derivadas segundas (concavidade, condições de segunda ordem). Será possível obter resultados de estática comparativa sem essas condições?
