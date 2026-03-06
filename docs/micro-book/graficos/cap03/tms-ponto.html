@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <!--
+  TMS Visualization — Interactive Graph (Chapter 3)
   Library: JSXGraph
-  Reason: JSXGraph provides precise geometric construction — tangent lines, slopes,
-  and draggable constrained points — making it ideal for visualizing the marginal
-  rate of substitution as the slope of the tangent to an indifference curve.
+  Function types: Cobb-Douglas, Linear, Leontief, CES
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visualizacao da TMS</title>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
-
   <script>
     window.MathJax = {
       tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
@@ -21,81 +18,25 @@
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
-
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'CMU Serif', Georgia, serif;
-      background: #ffffff;
-      color: #333;
-      padding: 1rem;
-    }
-    .graph-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #C8102E;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    .graph-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    #jxgbox {
-      width: 520px;
-      height: 420px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-    .controls {
-      width: 300px;
-      padding: 1rem;
-      background: #f8f8f8;
-      border-radius: 6px;
-      border: 1px solid #eee;
-    }
-    .controls h3 {
-      font-size: 0.95rem;
-      color: #C8102E;
-      margin-bottom: 0.8rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.4rem;
-    }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .fn-btn.active { background: #C8102E; color: #fff; }
+    .fn-btn:hover:not(.active) { background: rgba(200,16,46,0.08); }
     .slider-group { margin-bottom: 0.8rem; }
-    .slider-group label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      margin-bottom: 0.2rem;
-    }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
     .slider-group label .val { font-weight: 700; color: #C8102E; }
     input[type="range"] { width: 100%; accent-color: #C8102E; }
-    .info-box {
-      margin-top: 0.8rem;
-      padding: 0.8rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      line-height: 1.8;
-    }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; line-height: 1.8; }
     .info-box .eq { text-align: center; margin: 0.3rem 0; color: #333; }
-    .btn-reset {
-      display: block;
-      width: 100%;
-      margin-top: 0.8rem;
-      padding: 0.5rem;
-      background: #C8102E;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-family: inherit;
-    }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     .highlight { color: #C8102E; font-weight: 700; }
     @media (max-width: 860px) {
@@ -110,18 +51,26 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros Cobb-Douglas</h3>
-
+      <h3>Funcao Utilidade</h3>
+      <div class="fn-selector">
+        <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
+        <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
+        <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
+        <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+      </div>
+      <h3>Parametros</h3>
       <div class="slider-group">
         <label>\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
         <input type="range" id="slider-alpha" min="0.1" max="2" step="0.05" value="0.5">
       </div>
-
       <div class="slider-group">
         <label>\(\beta\): <span class="val" id="val-beta">0.50</span></label>
         <input type="range" id="slider-beta" min="0.1" max="2" step="0.05" value="0.5">
       </div>
-
+      <div class="slider-group" id="rho-group" style="display:none;">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">-1.00</span></label>
+        <input type="range" id="slider-rho" min="-5" max="0.9" step="0.1" value="-1">
+      </div>
       <div class="info-box" id="info">
         <div class="eq" id="eq-func"></div>
         <div class="eq" id="eq-tms-formula"></div>
@@ -135,15 +84,12 @@
   </div>
 
   <script>
+    var currentFn = 'cd';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
       boundingbox: [-0.5, 10.5, 10.5, -0.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepAspectRatio: false
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
-    // Axes
     board.create('axis', [[0,0],[10,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
       name: '\\(x_1\\)', withLabel: true,
@@ -155,13 +101,9 @@
       label: { position: 'rt', offset: [-25, -5], fontSize: 14 }
     });
 
-    var alpha = 0.5, beta = 0.5;
     var icCurves = [];
-    var tangent = null;
-    var tmsDot = null;
     var annotations = [];
 
-    // Draggable point
     var dragPt = board.create('point', [3, 4], {
       name: 'P', size: 5, color: '#C8102E',
       strokeColor: '#C8102E', fillColor: '#C8102E',
@@ -170,35 +112,79 @@
 
     function getAlpha() { return parseFloat(document.getElementById('slider-alpha').value); }
     function getBeta() { return parseFloat(document.getElementById('slider-beta').value); }
+    function getRho() { return parseFloat(document.getElementById('slider-rho').value); }
 
-    function solveX2(x1, U, a, b) {
+    function setFn(fn) {
+      currentFn = fn;
+      document.querySelectorAll('.fn-btn').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.fn === fn);
+      });
+      document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      update();
+    }
+
+    function utilVal(x1, x2, a, b) {
+      if (x1 <= 0 || x2 <= 0) return 0;
+      switch (currentFn) {
+        case 'cd': return Math.pow(x1, a) * Math.pow(x2, b);
+        case 'linear': return a * x1 + b * x2;
+        case 'leontief': return Math.min(x1 / a, x2 / b);
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) return Math.pow(x1, a/(a+b)) * Math.pow(x2, b/(a+b));
+          return Math.pow(a * Math.pow(x1, r) + b * Math.pow(x2, r), 1/r);
+      }
+    }
+
+    function icX2(x1, U, a, b) {
       if (x1 <= 0.01 || U <= 0) return NaN;
-      var val = U / Math.pow(x1, a);
-      if (val <= 0) return NaN;
-      return Math.pow(val, 1/b);
+      switch (currentFn) {
+        case 'cd': return Math.pow(U / Math.pow(x1, a), 1/b);
+        case 'linear':
+          var v = (U - a * x1) / b;
+          return v >= 0 ? v : NaN;
+        case 'leontief': return NaN;
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) {
+            var wa = a/(a+b), wb = b/(a+b);
+            return Math.pow(U / Math.pow(x1, wa), 1/wb);
+          }
+          var s = Math.pow(U, r) - a * Math.pow(x1, r);
+          if (s <= 0) return NaN;
+          return Math.pow(s / b, 1/r);
+      }
+    }
+
+    function tmsVal(x1, x2, a, b) {
+      if (x1 <= 0.01 || x2 <= 0.01) return NaN;
+      switch (currentFn) {
+        case 'cd': return (a * x2) / (b * x1);
+        case 'linear': return a / b;
+        case 'leontief':
+          var r1 = x1/a, r2 = x2/b;
+          if (Math.abs(r1 - r2) < 0.15) return NaN;
+          return r1 < r2 ? 9999 : 0;
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) return (a * x2) / (b * x1);
+          return (a/b) * Math.pow(x1/x2, r - 1);
+      }
     }
 
     function clearDynamic() {
-      for (var i = annotations.length - 1; i >= 0; i--) {
-        board.removeObject(annotations[i]);
-      }
+      for (var i = annotations.length - 1; i >= 0; i--) board.removeObject(annotations[i]);
       annotations = [];
-      for (var i = icCurves.length - 1; i >= 0; i--) {
-        board.removeObject(icCurves[i]);
-      }
+      for (var i = icCurves.length - 1; i >= 0; i--) board.removeObject(icCurves[i]);
       icCurves = [];
     }
 
     function drawAll() {
       clearDynamic();
       var a = getAlpha(), b = getBeta();
-      var px = dragPt.X(), py = dragPt.Y();
-      if (px < 0.1) px = 0.1;
-      if (py < 0.1) py = 0.1;
+      var px = Math.max(dragPt.X(), 0.1), py = Math.max(dragPt.Y(), 0.1);
 
-      var U0 = Math.pow(px, a) * Math.pow(py, b);
-
-      // Draw 3 indifference curves: one through P, one above, one below
+      var U0 = utilVal(px, py, a, b);
       var levels = [U0 * 0.5, U0, U0 * 1.8];
       var colors = ['#1565c0', '#C8102E', '#1565c0'];
       var widths = [1.5, 2.5, 1.5];
@@ -206,93 +192,145 @@
 
       for (var k = 0; k < levels.length; k++) {
         var Uk = levels[k];
-        var c = board.create('curve', [
-          function(Uval, ak, bk) {
-            return function(t) { return t; };
-          }(Uk, a, b),
-          function(Uval, ak, bk) {
-            return function(t) {
-              return solveX2(t, Uval, ak, bk);
-            };
-          }(Uk, a, b),
-          0.05, 10.5
+        if (currentFn === 'leontief') {
+          var vx = a * Uk, vy = b * Uk;
+          icCurves.push(board.create('segment', [[vx, vy], [vx, 10.5]], {
+            strokeColor: colors[k], strokeWidth: widths[k], dash: dashes[k]
+          }));
+          icCurves.push(board.create('segment', [[vx, vy], [10.5, vy]], {
+            strokeColor: colors[k], strokeWidth: widths[k], dash: dashes[k]
+          }));
+          icCurves.push(board.create('point', [vx, vy], {
+            size: 2, strokeColor: colors[k], fillColor: colors[k], fixed: true, name: '', withLabel: false
+          }));
+        } else {
+          icCurves.push(board.create('curve', [
+            function(t) { return t; },
+            (function(Uval, ak, bk) {
+              return function(t) {
+                var v = icX2(t, Uval, ak, bk);
+                return (v > 0 && v < 12) ? v : NaN;
+              };
+            })(Uk, a, b),
+            0.05, 10.5
+          ], { strokeColor: colors[k], strokeWidth: widths[k], dash: dashes[k], numberPointsHigh: 300 }));
+        }
+      }
+
+      // TMS and tangent line
+      var tms = tmsVal(px, py, a, b);
+      var tmsFinite = isFinite(tms) && !isNaN(tms);
+
+      if (tmsFinite && tms < 9000) {
+        var slope = -tms;
+        var tLine = board.create('line', [
+          [px, py], [px + 1, py - tms]
         ], {
-          strokeColor: colors[k], strokeWidth: widths[k],
-          dash: dashes[k], numberPointsHigh: 300
+          strokeColor: '#00897b', strokeWidth: 2, dash: 3,
+          straightFirst: true, straightLast: true, fixed: true,
+          point1: { visible: false }, point2: { visible: false }
         });
-        icCurves.push(c);
+        annotations.push(tLine);
+
+        var labelX = Math.min(9, px + 1.5);
+        var labelY = py + slope * 1.5;
+        if (labelY > 0.5 && labelY < 10) {
+          annotations.push(board.create('text', [labelX, labelY, 'inclinacao = -TMS'], {
+            fontSize: 11, color: '#00897b', fixed: true, anchorX: 'left'
+          }));
+        }
+
+        // Trade-off arrows
+        var dx1 = 1, dx2 = -tms * dx1;
+        if (px + dx1 < 10 && py + dx2 > 0.3) {
+          annotations.push(board.create('arrow', [[px, py], [px + dx1, py]], {
+            strokeColor: '#1565c0', strokeWidth: 2, fixed: true, lastArrow: { type: 2, size: 6 }
+          }));
+          annotations.push(board.create('arrow', [[px + dx1, py], [px + dx1, py + dx2]], {
+            strokeColor: '#C8102E', strokeWidth: 2, fixed: true, lastArrow: { type: 2, size: 6 }
+          }));
+          annotations.push(board.create('text', [px + dx1/2, py + 0.3, '\\(\\Delta x_1 = 1\\)'], {
+            fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle'
+          }));
+          annotations.push(board.create('text', [px + dx1 + 0.4, py + dx2/2, '\\(\\Delta x_2\\)'], {
+            fontSize: 10, color: '#C8102E', fixed: true, anchorX: 'left'
+          }));
+        }
+      } else if (currentFn === 'leontief') {
+        // At vertex or near it: show vertex marker
+        var r1 = px/a, r2 = py/b;
+        if (r1 < r2) {
+          // Vertical arm: TMS → ∞
+          annotations.push(board.create('line', [[px, py], [px, py+1]], {
+            strokeColor: '#00897b', strokeWidth: 2, dash: 3,
+            straightFirst: true, straightLast: true, fixed: true,
+            point1: { visible: false }, point2: { visible: false }
+          }));
+        } else if (r1 > r2) {
+          // Horizontal arm: TMS = 0
+          annotations.push(board.create('line', [[px, py], [px+1, py]], {
+            strokeColor: '#00897b', strokeWidth: 2, dash: 3,
+            straightFirst: true, straightLast: true, fixed: true,
+            point1: { visible: false }, point2: { visible: false }
+          }));
+        }
       }
 
-      // TMS computation
-      var umg1 = a * Math.pow(px, a - 1) * Math.pow(py, b);
-      var umg2 = b * Math.pow(px, a) * Math.pow(py, b - 1);
-      var tms = umg1 / umg2; // = (a * py) / (b * px)
+      // Info panel
+      updateInfoPanel(a, b, px, py, U0, tms);
+    }
 
-      // Tangent line through P with slope = -tms
-      var slope = -tms;
-      var p1x = Math.max(0.1, px - 3);
-      var p1y = py + slope * (p1x - px);
-      var p2x = Math.min(10, px + 3);
-      var p2y = py + slope * (p2x - px);
+    function updateInfoPanel(a, b, px, py, U0, tms) {
+      var funcStr, tmsFormulaStr, umgStr, tmsStr;
 
-      var tLine = board.create('line', [
-        [px, py],
-        [px + 1, py - tms]
-      ], {
-        strokeColor: '#00897b', strokeWidth: 2, dash: 3,
-        straightFirst: true, straightLast: true, fixed: true,
-        point1: { visible: false }, point2: { visible: false }
-      });
-      annotations.push(tLine);
-
-      // Slope label on tangent
-      var labelX = Math.min(9, px + 1.5);
-      var labelY = py + slope * 1.5;
-      if (labelY > 0.5 && labelY < 10) {
-        var slopeLabel = board.create('text', [
-          labelX, labelY,
-          'inclinacao = -TMS'
-        ], {
-          fontSize: 11, color: '#00897b', fixed: true, anchorX: 'left'
-        });
-        annotations.push(slopeLabel);
+      switch (currentFn) {
+        case 'cd':
+          funcStr = '\\(u(x_1, x_2) = x_1^{' + a.toFixed(2) + '} \\cdot x_2^{' + b.toFixed(2) + '}\\)';
+          tmsFormulaStr = '\\(\\text{TMS}_{12} = \\frac{\\alpha \\cdot x_2}{\\beta \\cdot x_1}\\)';
+          var umg1 = a * Math.pow(px, a-1) * Math.pow(py, b);
+          var umg2 = b * Math.pow(px, a) * Math.pow(py, b-1);
+          umgStr = '\\(\\text{UMg}_1 = ' + umg1.toFixed(4) + '\\)<br>\\(\\text{UMg}_2 = ' + umg2.toFixed(4) + '\\)';
+          tmsStr = '<span class="highlight">\\(\\text{TMS}_{12} = ' + tms.toFixed(4) + '\\)</span>';
+          break;
+        case 'linear':
+          funcStr = '\\(u(x_1, x_2) = ' + a.toFixed(2) + ' x_1 + ' + b.toFixed(2) + ' x_2\\)';
+          tmsFormulaStr = '\\(\\text{TMS}_{12} = \\frac{\\alpha}{\\beta}\\) (constante)';
+          umgStr = '\\(\\text{UMg}_1 = \\alpha = ' + a.toFixed(2) + '\\)<br>\\(\\text{UMg}_2 = \\beta = ' + b.toFixed(2) + '\\)';
+          tmsStr = '<span class="highlight">\\(\\text{TMS}_{12} = ' + (a/b).toFixed(4) + '\\)</span>';
+          break;
+        case 'leontief':
+          funcStr = '\\(u(x_1, x_2) = \\min\\!\\left(\\frac{x_1}{\\alpha},\\; \\frac{x_2}{\\beta}\\right)\\)';
+          var r1 = px/a, r2 = py/b;
+          if (Math.abs(r1 - r2) < 0.15) {
+            tmsFormulaStr = 'TMS <b>indefinida</b> no vertice';
+            tmsStr = '<span class="highlight">Ponto no vertice da CI</span>';
+          } else if (r1 < r2) {
+            tmsFormulaStr = 'Braco vertical: \\(\\text{TMS} \\to \\infty\\)';
+            tmsStr = '<span class="highlight">\\(\\text{TMS} \\to \\infty\\)</span>';
+          } else {
+            tmsFormulaStr = 'Braco horizontal: \\(\\text{TMS} = 0\\)';
+            tmsStr = '<span class="highlight">\\(\\text{TMS} = 0\\)</span>';
+          }
+          umgStr = 'Vertice: \\((' + (a*U0).toFixed(2) + ',\\; ' + (b*U0).toFixed(2) + ')\\)';
+          break;
+        case 'ces':
+          var rho = getRho();
+          var sigma = 1 / (1 - rho);
+          funcStr = '\\(u = (\\alpha x_1^{\\rho} + \\beta x_2^{\\rho})^{1/\\rho}\\)';
+          tmsFormulaStr = '\\(\\text{TMS} = \\frac{\\alpha}{\\beta}\\left(\\frac{x_1}{x_2}\\right)^{\\rho-1}\\),&ensp;\\(\\sigma = ' + sigma.toFixed(2) + '\\)';
+          var umg1c = a * Math.pow(px, rho-1) * Math.pow(U0, 1-rho);
+          var umg2c = b * Math.pow(py, rho-1) * Math.pow(U0, 1-rho);
+          umgStr = '\\(\\text{UMg}_1 = ' + umg1c.toFixed(4) + '\\)<br>\\(\\text{UMg}_2 = ' + umg2c.toFixed(4) + '\\)';
+          tmsStr = '<span class="highlight">\\(\\text{TMS}_{12} = ' + tms.toFixed(4) + '\\)</span>';
+          break;
       }
 
-      // dx1, dx2 arrows to show the trade-off
-      var dx1 = 1;
-      var dx2 = -tms * dx1;
-      if (px + dx1 < 10 && py + dx2 > 0.3) {
-        var arr1 = board.create('arrow', [[px, py], [px + dx1, py]], {
-          strokeColor: '#1565c0', strokeWidth: 2, fixed: true,
-          lastArrow: { type: 2, size: 6 }
-        });
-        var arr2 = board.create('arrow', [[px + dx1, py], [px + dx1, py + dx2]], {
-          strokeColor: '#C8102E', strokeWidth: 2, fixed: true,
-          lastArrow: { type: 2, size: 6 }
-        });
-        var lbl1 = board.create('text', [px + dx1/2, py + 0.3, '\\(\\Delta x_1 = 1\\)'], {
-          fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle'
-        });
-        var lbl2 = board.create('text', [px + dx1 + 0.4, py + dx2/2, '\\(\\Delta x_2\\)'], {
-          fontSize: 10, color: '#C8102E', fixed: true, anchorX: 'left'
-        });
-        annotations.push(arr1, arr2, lbl1, lbl2);
-      }
-
-      // Update info panel
-      document.getElementById('eq-func').innerHTML =
-        '\\(u(x_1, x_2) = x_1^{' + a.toFixed(2) + '} \\cdot x_2^{' + b.toFixed(2) + '}\\)';
-      document.getElementById('eq-tms-formula').innerHTML =
-        '\\(\\text{TMS}_{12} = \\frac{\\alpha \\cdot x_2}{\\beta \\cdot x_1}\\)';
-      document.getElementById('info-umg').innerHTML =
-        '\\(\\text{UMg}_1 = ' + umg1.toFixed(4) + '\\)<br>' +
-        '\\(\\text{UMg}_2 = ' + umg2.toFixed(4) + '\\)';
-      document.getElementById('info-tms').innerHTML =
-        '<span class="highlight">\\(\\text{TMS}_{12} = \\frac{\\text{UMg}_1}{\\text{UMg}_2} = \\frac{' +
-        umg1.toFixed(4) + '}{' + umg2.toFixed(4) + '} = ' + tms.toFixed(4) + '\\)</span>';
+      document.getElementById('eq-func').innerHTML = funcStr;
+      document.getElementById('eq-tms-formula').innerHTML = tmsFormulaStr;
+      document.getElementById('info-umg').innerHTML = umgStr;
+      document.getElementById('info-tms').innerHTML = tmsStr;
       document.getElementById('info-slope').innerHTML =
-        'Ponto: \\((' + px.toFixed(2) + ',\\; ' + py.toFixed(2) + ')\\)<br>' +
-        'Utilidade: \\(U = ' + U0.toFixed(4) + '\\)';
+        'Ponto: \\((' + px.toFixed(2) + ',\\; ' + py.toFixed(2) + ')\\)<br>Utilidade: \\(U = ' + U0.toFixed(4) + '\\)';
 
       if (window.MathJax && MathJax.typesetPromise) {
         MathJax.typesetPromise([document.getElementById('info')]);
@@ -302,6 +340,7 @@
     function update() {
       document.getElementById('val-alpha').textContent = getAlpha().toFixed(2);
       document.getElementById('val-beta').textContent = getBeta().toFixed(2);
+      if (currentFn === 'ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
       drawAll();
       board.update();
     }
@@ -309,14 +348,18 @@
     function resetAll() {
       document.getElementById('slider-alpha').value = 0.5;
       document.getElementById('slider-beta').value = 0.5;
+      document.getElementById('slider-rho').value = -1;
       dragPt.moveTo([3, 4]);
+      currentFn = 'cd';
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === 'cd'); });
+      document.getElementById('rho-group').style.display = 'none';
       update();
     }
 
-    document.getElementById('slider-alpha').addEventListener('input', update);
-    document.getElementById('slider-beta').addEventListener('input', update);
+    ['slider-alpha', 'slider-beta', 'slider-rho'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
     dragPt.on('drag', function() { drawAll(); });
-
     update();
   </script>
 </body>

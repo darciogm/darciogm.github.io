@@ -2,19 +2,15 @@
 <!--
   Consumer Equilibrium (Tangency) — Interactive Graph (Chapter 4)
   Library: JSXGraph
-  Reason: JSXGraph excels at plotting implicit curves (indifference curves)
-  and budget lines simultaneously, with real-time updates from sliders.
-  The tangency point is computed analytically for Cobb-Douglas preferences.
+  Function types: Cobb-Douglas, Linear, Leontief, CES
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equilibrio do Consumidor</title>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
-
   <script>
     window.MathJax = {
       tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
@@ -22,81 +18,25 @@
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
-
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'CMU Serif', Georgia, serif;
-      background: #ffffff;
-      color: #333;
-      padding: 1rem;
-    }
-    .graph-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #C8102E;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    .graph-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: flex-start;
-      justify-content: center;
-    }
-    #jxgbox {
-      width: 520px;
-      height: 420px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-    .controls {
-      width: 280px;
-      padding: 1rem;
-      background: #f8f8f8;
-      border-radius: 6px;
-      border: 1px solid #eee;
-    }
-    .controls h3 {
-      font-size: 0.95rem;
-      color: #C8102E;
-      margin-bottom: 0.8rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.4rem;
-    }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .fn-btn.active { background: #C8102E; color: #fff; }
+    .fn-btn:hover:not(.active) { background: rgba(200,16,46,0.08); }
     .slider-group { margin-bottom: 0.8rem; }
-    .slider-group label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      margin-bottom: 0.2rem;
-    }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
     .slider-group label .val { font-weight: 700; color: #C8102E; }
     input[type="range"] { width: 100%; accent-color: #C8102E; }
-    .info-box {
-      margin-top: 0.8rem;
-      padding: 0.8rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 0.82rem;
-      line-height: 1.7;
-    }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
     .info-box .eq { text-align: center; margin: 0.3rem 0; color: #333; }
-    .btn-reset {
-      display: block;
-      width: 100%;
-      margin-top: 0.8rem;
-      padding: 0.5rem;
-      background: #C8102E;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-family: inherit;
-    }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) {
       .graph-container { flex-direction: column; align-items: center; }
@@ -110,6 +50,13 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
+      <h3>Funcao Utilidade</h3>
+      <div class="fn-selector">
+        <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
+        <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
+        <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
+        <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+      </div>
       <h3>Parametros</h3>
       <div class="slider-group">
         <label>Renda \(M\): <span class="val" id="val-M">60</span></label>
@@ -124,10 +71,13 @@
         <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="3">
       </div>
       <div class="slider-group">
-        <label>\(\alpha\) (Cobb-Douglas): <span class="val" id="val-alpha">0.50</span></label>
+        <label>\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
         <input type="range" id="slider-alpha" min="0.05" max="0.95" step="0.05" value="0.50">
       </div>
-
+      <div class="slider-group" id="rho-group" style="display:none;">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">-1.00</span></label>
+        <input type="range" id="slider-rho" min="-5" max="0.9" step="0.1" value="-1">
+      </div>
       <div class="info-box" id="info">
         <div class="eq" id="eq-utility"></div>
         <div class="eq" id="eq-optimal"></div>
@@ -139,12 +89,10 @@
   </div>
 
   <script>
+    var currentFn = 'cd';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
       boundingbox: [-1, 25, 25, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepAspectRatio: false
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     board.create('axis', [[0,0],[1,0]], {
@@ -164,65 +112,123 @@
         a: parseFloat(document.getElementById('slider-alpha').value)
       };
     }
+    function getRho() { return parseFloat(document.getElementById('slider-rho').value); }
+
+    function setFn(fn) {
+      currentFn = fn;
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === fn); });
+      document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      updateAll();
+    }
+
+    function utilVal(x1, x2, a) {
+      var b = 1 - a;
+      if (x1 <= 0 || x2 <= 0) {
+        if (currentFn === 'linear') return a * Math.max(x1,0) + b * Math.max(x2,0);
+        return 0;
+      }
+      switch (currentFn) {
+        case 'cd': return Math.pow(x1, a) * Math.pow(x2, b);
+        case 'linear': return a * x1 + b * x2;
+        case 'leontief': return Math.min(x1 / a, x2 / b);
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) return Math.pow(x1, a) * Math.pow(x2, b);
+          return Math.pow(a * Math.pow(x1, r) + b * Math.pow(x2, r), 1/r);
+      }
+    }
+
+    function icX2(x1, U, a) {
+      var b = 1 - a;
+      switch (currentFn) {
+        case 'cd':
+          if (x1 <= 0.01 || U <= 0) return NaN;
+          return Math.pow(U / Math.pow(x1, a), 1/b);
+        case 'linear':
+          var v = (U - a * x1) / b;
+          return v >= 0 ? v : NaN;
+        case 'leontief': return NaN;
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) {
+            if (x1 <= 0.01 || U <= 0) return NaN;
+            return Math.pow(U / Math.pow(x1, a), 1/b);
+          }
+          if (x1 <= 0.01) return NaN;
+          var s = Math.pow(U, r) - a * Math.pow(x1, r);
+          if (s <= 0) return NaN;
+          return Math.pow(s / b, 1/r);
+      }
+    }
 
     function optimal() {
       var p = getP();
-      var x1s = p.a * p.M / p.p1;
-      var x2s = (1 - p.a) * p.M / p.p2;
-      var Us = Math.pow(x1s, p.a) * Math.pow(x2s, 1 - p.a);
+      var a = p.a, b = 1 - a;
+      var x1s, x2s, Us;
+
+      switch (currentFn) {
+        case 'cd':
+          x1s = a * p.M / p.p1;
+          x2s = b * p.M / p.p2;
+          break;
+        case 'linear':
+          var bang1 = a / p.p1, bang2 = b / p.p2;
+          if (Math.abs(bang1 - bang2) < 0.0001) {
+            x1s = p.M / p.p1 / 2; x2s = p.M / p.p2 / 2;
+          } else if (bang1 > bang2) {
+            x1s = p.M / p.p1; x2s = 0;
+          } else {
+            x1s = 0; x2s = p.M / p.p2;
+          }
+          break;
+        case 'leontief':
+          x1s = a * p.M / (a * p.p1 + b * p.p2);
+          x2s = b * p.M / (a * p.p1 + b * p.p2);
+          break;
+        case 'ces':
+          var rho = getRho();
+          if (Math.abs(rho) < 0.05) {
+            x1s = a * p.M / p.p1;
+            x2s = b * p.M / p.p2;
+          } else {
+            var sigma = 1 / (1 - rho);
+            var R = Math.pow((b/a) * (p.p1/p.p2), sigma);
+            if (!isFinite(R) || R < 0) {
+              if (R > 1e10) { x1s = 0.01; x2s = p.M / p.p2; }
+              else { x1s = p.M / p.p1; x2s = 0.01; }
+            } else {
+              x1s = p.M / (p.p1 + p.p2 * R);
+              x2s = R * x1s;
+            }
+          }
+          break;
+      }
+
+      x1s = Math.max(x1s, 0.001);
+      x2s = Math.max(x2s, 0.001);
+      Us = utilVal(x1s, x2s, a);
       return { x1: x1s, x2: x2s, U: Us };
     }
 
-    // Budget line
+    // Budget line (static)
     var blA = board.create('point', [function() { return getP().M / getP().p1; }, 0], { visible: false });
     var blB = board.create('point', [0, function() { return getP().M / getP().p2; }], { visible: false });
-    var budgetLine = board.create('segment', [blA, blB], {
-      strokeColor: '#C8102E', strokeWidth: 3
-    });
+    board.create('segment', [blA, blB], { strokeColor: '#C8102E', strokeWidth: 3 });
 
-    // Indifference curves — optimal level and two others
-    function makeIC(uFactor, color, dash) {
-      return board.create('curve', [
-        function(t) { return t; },
-        function(t) {
-          var p = getP();
-          var o = optimal();
-          var Utarget = o.U * uFactor;
-          if (t <= 0.01) return NaN;
-          // U = x1^a * x2^(1-a) => x2 = (U / x1^a)^(1/(1-a))
-          var x2val = Math.pow(Utarget / Math.pow(t, p.a), 1 / (1 - p.a));
-          return (x2val > 0 && x2val < 50) ? x2val : NaN;
-        },
-        0.05, 25
-      ], { strokeColor: color, strokeWidth: 2, dash: dash });
-    }
-
-    makeIC(0.6, '#1565c0', 2);  // lower IC
-    makeIC(1.0, '#1565c0', 0);  // optimal IC
-    makeIC(1.3, '#1565c0', 2);  // higher IC (unattainable)
-
-    // Tangency point
+    // Tangency point (static, position from optimal())
     var tangPt = board.create('point', [
       function() { return optimal().x1; },
       function() { return optimal().x2; }
-    ], {
-      name: '',
-      size: 5,
-      strokeColor: '#00897b',
-      fillColor: '#00897b'
-    });
+    ], { name: '', size: 5, strokeColor: '#00897b', fillColor: '#00897b' });
 
     // Dashed lines to axes
-    board.create('segment', [
-      tangPt,
-      [function() { return optimal().x1; }, 0]
-    ], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
-    board.create('segment', [
-      tangPt,
-      [0, function() { return optimal().x2; }]
-    ], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
+    board.create('segment', [tangPt, [function() { return optimal().x1; }, 0]], {
+      strokeColor: '#00897b', dash: 2, strokeWidth: 1
+    });
+    board.create('segment', [tangPt, [0, function() { return optimal().x2; }]], {
+      strokeColor: '#00897b', dash: 2, strokeWidth: 1
+    });
 
-    // Labels on axes for optimal point
     board.create('text', [
       function() { return optimal().x1; }, -0.8,
       function() { return '\\(x_1^*\\)'; }
@@ -231,35 +237,98 @@
       -0.3, function() { return optimal().x2 + 0.3; },
       function() { return '\\(x_2^*\\)'; }
     ], { fontSize: 12, color: '#00897b', anchorX: 'right', useMathJax: true });
-
-    // Tangency label
     board.create('text', [
       function() { return optimal().x1 + 0.8; },
       function() { return optimal().x2 + 1.0; },
-      function() {
-        var o = optimal();
-        return '(' + o.x1.toFixed(2) + ', ' + o.x2.toFixed(2) + ')';
-      }
+      function() { var o = optimal(); return '(' + o.x1.toFixed(2) + ', ' + o.x2.toFixed(2) + ')'; }
     ], { fontSize: 13, color: '#00897b', fontWeight: 'bold' });
 
-    function updateInfo() {
+    // Dynamic ICs
+    var icObjs = [];
+    function drawICs() {
+      icObjs.forEach(function(o) { board.removeObject(o); });
+      icObjs = [];
+      var p = getP();
+      var o = optimal();
+      var levels = [o.U * 0.6, o.U, o.U * 1.3];
+      var dashes = [2, 0, 2];
+      var widths = [1.5, 2.5, 1.5];
+
+      for (var k = 0; k < levels.length; k++) {
+        var Uk = levels[k];
+        if (currentFn === 'leontief') {
+          var vx = p.a * Uk, vy = (1-p.a) * Uk;
+          icObjs.push(board.create('segment', [[vx, vy], [vx, 50]], {
+            strokeColor: '#1565c0', strokeWidth: widths[k], dash: dashes[k]
+          }));
+          icObjs.push(board.create('segment', [[vx, vy], [50, vy]], {
+            strokeColor: '#1565c0', strokeWidth: widths[k], dash: dashes[k]
+          }));
+        } else {
+          icObjs.push(board.create('curve', [
+            function(t) { return t; },
+            (function(U, a) {
+              return function(t) {
+                var v = icX2(t, U, a);
+                return (v > 0 && v < 50) ? v : NaN;
+              };
+            })(Uk, p.a),
+            0.05, 25
+          ], { strokeColor: '#1565c0', strokeWidth: widths[k], dash: dashes[k] }));
+        }
+      }
+    }
+
+    function updateAll() {
       var p = getP();
       var o = optimal();
       document.getElementById('val-M').textContent = p.M.toFixed(0);
       document.getElementById('val-p1').textContent = p.p1.toFixed(1);
       document.getElementById('val-p2').textContent = p.p2.toFixed(1);
       document.getElementById('val-alpha').textContent = p.a.toFixed(2);
+      if (currentFn === 'ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
 
-      document.getElementById('eq-utility').innerHTML =
-        '\\(U = x_1^{' + p.a.toFixed(2) + '} \\cdot x_2^{' + (1 - p.a).toFixed(2) + '}\\)';
-      document.getElementById('eq-optimal').innerHTML =
-        '\\(x_1^* = \\frac{\\alpha M}{p_1} = ' + o.x1.toFixed(2) +
-        ',\\; x_2^* = \\frac{(1-\\alpha)M}{p_2} = ' + o.x2.toFixed(2) + '\\)';
-      document.getElementById('eq-tangency').innerHTML =
-        'Tangencia: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1 / p.p2).toFixed(3) + '\\)';
-      document.getElementById('eq-ustar').innerHTML =
-        '\\(U^* = ' + o.U.toFixed(3) + '\\)';
+      var uStr, oStr, tStr, usStr;
+      switch (currentFn) {
+        case 'cd':
+          uStr = '\\(U = x_1^{' + p.a.toFixed(2) + '} \\cdot x_2^{' + (1-p.a).toFixed(2) + '}\\)';
+          oStr = '\\(x_1^* = \\frac{\\alpha M}{p_1} = ' + o.x1.toFixed(2) + ',\\; x_2^* = \\frac{(1\\!-\\!\\alpha)M}{p_2} = ' + o.x2.toFixed(2) + '\\)';
+          tStr = 'Tangencia: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1/p.p2).toFixed(3) + '\\)';
+          break;
+        case 'linear':
+          uStr = '\\(U = ' + p.a.toFixed(2) + ' x_1 + ' + (1-p.a).toFixed(2) + ' x_2\\)';
+          var b1 = p.a/p.p1, b2 = (1-p.a)/p.p2;
+          if (b1 > b2 + 0.0001) {
+            oStr = 'Solucao de canto: \\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = 0\\)';
+            tStr = '\\(\\frac{\\alpha}{p_1} = ' + b1.toFixed(4) + ' > \\frac{1-\\alpha}{p_2} = ' + b2.toFixed(4) + '\\)';
+          } else if (b2 > b1 + 0.0001) {
+            oStr = 'Solucao de canto: \\(x_1^* = 0,\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
+            tStr = '\\(\\frac{1-\\alpha}{p_2} = ' + b2.toFixed(4) + ' > \\frac{\\alpha}{p_1} = ' + b1.toFixed(4) + '\\)';
+          } else {
+            oStr = 'Multiplos otimos ao longo da reta orcamentaria';
+            tStr = '\\(\\frac{\\alpha}{p_1} = \\frac{1-\\alpha}{p_2}\\)';
+          }
+          break;
+        case 'leontief':
+          uStr = '\\(U = \\min\\!\\left(\\frac{x_1}{\\alpha},\\; \\frac{x_2}{1-\\alpha}\\right)\\)';
+          oStr = '\\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
+          tStr = 'Otimo no vertice: \\(\\frac{x_1}{\\alpha} = \\frac{x_2}{1-\\alpha}\\)';
+          break;
+        case 'ces':
+          var rho = getRho(), sigma = 1/(1-rho);
+          uStr = '\\(U = (\\alpha x_1^{\\rho} + (1\\!-\\!\\alpha) x_2^{\\rho})^{1/\\rho}\\),&ensp;\\(\\sigma = ' + sigma.toFixed(2) + '\\)';
+          oStr = '\\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
+          tStr = 'Tangencia: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1/p.p2).toFixed(3) + '\\)';
+          break;
+      }
+      usStr = '\\(U^* = ' + o.U.toFixed(3) + '\\)';
 
+      document.getElementById('eq-utility').innerHTML = uStr;
+      document.getElementById('eq-optimal').innerHTML = oStr;
+      document.getElementById('eq-tangency').innerHTML = tStr;
+      document.getElementById('eq-ustar').innerHTML = usStr;
+
+      drawICs();
       board.update();
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
@@ -269,14 +338,17 @@
       document.getElementById('slider-p1').value = 4;
       document.getElementById('slider-p2').value = 3;
       document.getElementById('slider-alpha').value = 0.50;
-      updateInfo();
+      document.getElementById('slider-rho').value = -1;
+      currentFn = 'cd';
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === 'cd'); });
+      document.getElementById('rho-group').style.display = 'none';
+      updateAll();
     }
 
-    ['slider-M', 'slider-p1', 'slider-p2', 'slider-alpha'].forEach(function(id) {
-      document.getElementById(id).addEventListener('input', updateInfo);
+    ['slider-M', 'slider-p1', 'slider-p2', 'slider-alpha', 'slider-rho'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', updateAll);
     });
-
-    updateInfo();
+    updateAll();
   </script>
 </body>
 </html>

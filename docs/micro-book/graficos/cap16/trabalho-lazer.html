@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
   Trabalho-Lazer: Escolha otima — Interactive Graph
-  Library: JSXGraph
-  Chapter 16 — Microeconomia
+  Library: JSXGraph — Chapter 16
+  Function types: Cobb-Douglas, Linear, Leontief, CES
 -->
 <html lang="pt-BR">
 <head>
@@ -26,6 +26,10 @@
     .jxgbox { width: 480px; height: 400px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .fn-btn.active { background: #C8102E; color: #fff; }
+    .fn-btn:hover:not(.active) { background: rgba(200,16,46,0.08); }
     .slider-group { margin-bottom: 0.8rem; }
     .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
     .slider-group label .val { font-weight: 700; color: #C8102E; }
@@ -45,6 +49,13 @@
   <div class="graph-container">
     <div id="jxgbox1" class="jxgbox"></div>
     <div class="controls">
+      <h3>Funcao Utilidade</h3>
+      <div class="fn-selector">
+        <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
+        <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
+        <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
+        <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+      </div>
       <h3>Parametros</h3>
       <div class="slider-group">
         <label>Salario \(w\): <span class="val" id="val-w">10</span></label>
@@ -62,6 +73,10 @@
         <label>\(T\) (horas disponiveis): <span class="val" id="val-T">24</span></label>
         <input type="range" id="slider-T" min="12" max="24" step="1" value="24">
       </div>
+      <div class="slider-group" id="rho-group" style="display:none;">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">-1.00</span></label>
+        <input type="range" id="slider-rho" min="-5" max="0.9" step="0.1" value="-1">
+      </div>
       <div class="info-box" id="info"></div>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
@@ -69,18 +84,16 @@
 
   <script>
     /*
-      Cobb-Douglas: U(C,L) = C^alpha * L^(1-alpha)
-      Budget: C + wL = wT + V  =>  C = w(T-L) + V
-      Optimal: L* = (1-alpha)(wT + V)/w, h* = T - L* = alpha*T - (1-alpha)*V/w
-      C* = alpha*(wT + V)
+      U(C,L): utility over Consumption and Leisure
+      Budget: C + wL = wT + V => C = w(T-L) + V
+      Full income: M* = wT + V
     */
-    var T_MAX = 24;
+    var currentFn = 'cd';
 
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
       boundingbox: [-2, 320, 28, -15],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
-
     board.create('axis', [[0,0],[26,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
       name: 'L (lazer)', withLabel: true, label: { position: 'rt', offset: [-20, 15], fontSize: 12 }
@@ -90,65 +103,6 @@
       name: 'C (consumo)', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
     });
 
-    // Budget line: C = w(T-L) + V = wT + V - wL
-    var budgetLine = board.create('segment', [
-      function() { var s = getState(); return [0, s.w * s.T + s.V]; },
-      function() { var s = getState(); return [s.T + s.V / s.w, 0]; }
-    ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
-
-    // Endowment point (T, V) — if works 0 hours
-    var endowPt = board.create('point', [
-      function() { return getState().T; },
-      function() { return getState().V; }
-    ], { size: 4, fillColor: '#666', strokeColor: '#666', name: '(T, V)', fixed: true,
-         label: { fontSize: 10, offset: [8, -8] } });
-
-    // Optimal point
-    var optPt = board.create('point', [
-      function() {
-        var s = getState();
-        var Ls = (1 - s.alpha) * (s.w * s.T + s.V) / s.w;
-        return Math.min(Math.max(Ls, 0), s.T);
-      },
-      function() {
-        var s = getState();
-        var Ls = (1 - s.alpha) * (s.w * s.T + s.V) / s.w;
-        Ls = Math.min(Math.max(Ls, 0), s.T);
-        return s.w * (s.T - Ls) + s.V;
-      }
-    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(L^*, C^*)', fixed: true,
-         label: { fontSize: 11, offset: [10, 5] } });
-
-    // Indifference curve through optimal
-    var indiffCurve = board.create('curve', [
-      function(t) { return t; },
-      function(t) {
-        var s = getState();
-        var Ls = Math.min(Math.max((1 - s.alpha) * (s.w * s.T + s.V) / s.w, 0), s.T);
-        var Cs = s.w * (s.T - Ls) + s.V;
-        var U = Math.pow(Math.max(Cs, 0.01), s.alpha) * Math.pow(Math.max(Ls, 0.01), 1 - s.alpha);
-        if (t <= 0.1) return 9999;
-        var val = U / Math.pow(t, 1 - s.alpha);
-        return Math.pow(val, 1 / s.alpha);
-      },
-      0.2, 27
-    ], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
-
-    // Dashed lines to axes from optimal point
-    board.create('segment', [
-      function() { var s = getState(); var Ls = Math.min(Math.max((1-s.alpha)*(s.w*s.T+s.V)/s.w,0),s.T); return [Ls, 0]; },
-      function() { var s = getState(); var Ls = Math.min(Math.max((1-s.alpha)*(s.w*s.T+s.V)/s.w,0),s.T); return [Ls, s.w*(s.T-Ls)+s.V]; }
-    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
-    board.create('segment', [
-      function() { var s = getState(); var Ls = Math.min(Math.max((1-s.alpha)*(s.w*s.T+s.V)/s.w,0),s.T); return [0, s.w*(s.T-Ls)+s.V]; },
-      function() { var s = getState(); var Ls = Math.min(Math.max((1-s.alpha)*(s.w*s.T+s.V)/s.w,0),s.T); return [Ls, s.w*(s.T-Ls)+s.V]; }
-    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
-
-    // Slope label
-    board.create('text', [1, function() { var s = getState(); return s.w * s.T + s.V - 15; },
-      function() { return '<span style="font-size:10px;color:#1565c0;">incl. = -w</span>'; }
-    ], { fontSize: 10, anchorX: 'left', useMathJax: false });
-
     function getState() {
       return {
         w: parseFloat(document.getElementById('slider-w').value),
@@ -157,6 +111,170 @@
         T: parseFloat(document.getElementById('slider-T').value)
       };
     }
+    function getRho() { return parseFloat(document.getElementById('slider-rho').value); }
+
+    function setFn(fn) {
+      currentFn = fn;
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === fn); });
+      document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      update();
+    }
+
+    // U(C, L) with alpha = weight on C, (1-alpha) = weight on L
+    function utilVal(C, L, a) {
+      var b = 1-a;
+      if (C <= 0 || L <= 0) {
+        if (currentFn === 'linear') return a*Math.max(C,0) + b*Math.max(L,0);
+        return 0;
+      }
+      switch (currentFn) {
+        case 'cd': return Math.pow(C, a) * Math.pow(L, b);
+        case 'linear': return a*C + b*L;
+        case 'leontief': return Math.min(C/a, L/b);
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r)<0.05) return Math.pow(C,a)*Math.pow(L,b);
+          return Math.pow(a*Math.pow(C,r)+b*Math.pow(L,r), 1/r);
+      }
+    }
+
+    // Solve C on IC at utility U given L
+    function icC(L, U, a) {
+      var b = 1-a;
+      switch (currentFn) {
+        case 'cd':
+          if (L<=0.01||U<=0) return NaN;
+          return Math.pow(U/Math.pow(L,b), 1/a);
+        case 'linear':
+          var v = (U - b*L)/a; return v>=0?v:NaN;
+        case 'leontief': return NaN;
+        case 'ces':
+          var r=getRho();
+          if (Math.abs(r)<0.05) { if(L<=0.01||U<=0) return NaN; return Math.pow(U/Math.pow(L,b),1/a); }
+          if (L<=0.01) return NaN;
+          var s=Math.pow(U,r)-b*Math.pow(L,r);
+          if (s<=0) return NaN;
+          return Math.pow(s/a, 1/r);
+      }
+    }
+
+    // Optimal (L*, C*) given budget C = w(T-L)+V, i.e. C + wL = wT+V = M*
+    function optimalLC(s) {
+      var a=s.alpha, b=1-a;
+      var M = s.w*s.T + s.V; // full income
+      // Budget: C + wL = M, so p_C=1, p_L=w
+      var Ls, Cs;
+
+      switch (currentFn) {
+        case 'cd':
+          // L* = b*M/w, C* = a*M
+          Ls = b * M / s.w;
+          Cs = a * M;
+          break;
+        case 'linear':
+          // U = a*C + b*L; "bang for buck": a/1 vs b/w
+          if (b/s.w > a + 0.0001) { Ls = M/s.w; Cs = 0.01; }
+          else if (a > b/s.w + 0.0001) { Ls = 0.01; Cs = M; }
+          else { Ls = M/s.w/2; Cs = M/2; }
+          break;
+        case 'leontief':
+          // U = min(C/a, L/b); optimal: C/a = L/b, C + wL = M
+          // C = a*M/(a + b*w), L = b*M/(a*w + b*w^2)... let me redo
+          // C/a = L/b => C = (a/b)*L; sub into budget: (a/b)*L + wL = M
+          // L*(a/b + w) = M => L* = b*M/(a + b*w)
+          Ls = b*M/(a + b*s.w);
+          Cs = (a/b)*Ls;
+          break;
+        case 'ces':
+          var rho = getRho();
+          if (Math.abs(rho)<0.05) {
+            Ls = b*M/s.w; Cs = a*M;
+          } else {
+            // TMS_CL = UMgC/UMgL = (a/b)*(C/L)^(rho-1) = p_C/p_L = 1/w
+            // (C/L)^(rho-1) = (b/a)/w ... wait
+            // Actually: (a/b)*(C/L)^(rho-1) = 1/w
+            // (C/L)^(rho-1) = b/(a*w)
+            // C/L = [b/(a*w)]^(1/(rho-1))
+            var sigma = 1/(1-rho);
+            // C/L = [b/(a*w)]^(-sigma) = [(a*w)/b]^sigma
+            var CLratio = Math.pow((a*s.w)/b, sigma);
+            if (!isFinite(CLratio) || CLratio < 0) {
+              Ls = M/s.w; Cs = 0.01;
+            } else {
+              // C + wL = M, C = CLratio*L
+              // CLratio*L + w*L = M
+              Ls = M/(CLratio + s.w);
+              Cs = CLratio * Ls;
+            }
+          }
+          break;
+      }
+
+      Ls = Math.min(Math.max(Ls, 0.01), s.T);
+      Cs = Math.max(Cs, 0.01);
+      return { L: Ls, C: Cs };
+    }
+
+    // Dynamic objects
+    var dynObjs = [];
+    function clearDyn() { dynObjs.forEach(function(o){board.removeObject(o);}); dynObjs=[]; }
+
+    function drawAll(s) {
+      clearDyn();
+      var fullIncome = s.w*s.T + s.V;
+
+      // Budget line: C = w(T-L)+V = wT+V - wL
+      dynObjs.push(board.create('segment', [
+        [0, fullIncome], [s.T + s.V/s.w, 0]
+      ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+
+      // Endowment point
+      dynObjs.push(board.create('point', [s.T, s.V], {
+        size:4, fillColor:'#666', strokeColor:'#666', name:'(T, V)', fixed:true,
+        label: { fontSize:10, offset:[8,-8] }
+      }));
+
+      // Optimal
+      var opt = optimalLC(s);
+      var U = utilVal(opt.C, opt.L, s.alpha);
+
+      // Optimal point
+      dynObjs.push(board.create('point', [opt.L, opt.C], {
+        size:5, fillColor:'#C8102E', strokeColor:'#C8102E', name:'(L*, C*)', fixed:true,
+        label: { fontSize:11, offset:[10,5] }
+      }));
+
+      // IC through optimal
+      if (currentFn === 'leontief') {
+        var vL = (1-s.alpha)*U, vC = s.alpha*U;
+        dynObjs.push(board.create('segment', [[vL, vC], [vL, fullIncome*1.2]], {
+          strokeColor:'#00897b', strokeWidth:2, dash:3
+        }));
+        dynObjs.push(board.create('segment', [[vL, vC], [s.T+5, vC]], {
+          strokeColor:'#00897b', strokeWidth:2, dash:3
+        }));
+      } else {
+        dynObjs.push(board.create('curve', [
+          function(t){return t;},
+          (function(Uval, a){
+            return function(t){
+              var v=icC(t,Uval,a);
+              return (v>0 && v<fullIncome*1.5)?v:NaN;
+            };
+          })(U, s.alpha),
+          0.1, s.T+5
+        ], { strokeColor:'#00897b', strokeWidth:2, dash:3 }));
+      }
+
+      // Dashed lines to axes
+      dynObjs.push(board.create('segment', [[opt.L, 0], [opt.L, opt.C]], { strokeColor:'#aaa', strokeWidth:1, dash:3 }));
+      dynObjs.push(board.create('segment', [[0, opt.C], [opt.L, opt.C]], { strokeColor:'#aaa', strokeWidth:1, dash:3 }));
+
+      // Slope label
+      dynObjs.push(board.create('text', [1, fullIncome-15,
+        '<span style="font-size:10px;color:#1565c0;">incl. = -w</span>'
+      ], { fontSize:10, anchorX:'left', useMathJax:false }));
+    }
 
     function update() {
       var s = getState();
@@ -164,26 +282,43 @@
       document.getElementById('val-V').textContent = s.V.toFixed(0);
       document.getElementById('val-alpha').textContent = s.alpha.toFixed(2);
       document.getElementById('val-T').textContent = s.T.toFixed(0);
+      if (currentFn==='ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
 
-      var fullIncome = s.w * s.T + s.V;
-      var Ls = (1 - s.alpha) * fullIncome / s.w;
-      Ls = Math.min(Math.max(Ls, 0), s.T);
-      var hs = s.T - Ls;
-      var Cs = s.w * hs + s.V;
+      var fullIncome = s.w*s.T + s.V;
+      var maxC = Math.max(fullIncome*1.1, 100);
+      board.setBoundingBox([-2, maxC, s.T+4, -maxC*0.05]);
 
-      // Update bounding box dynamically
-      var maxC = Math.max(fullIncome * 1.1, 100);
-      board.setBoundingBox([-2, maxC, s.T + 4, -maxC * 0.05]);
+      var opt = optimalLC(s);
+      var hs = s.T - opt.L;
+      var U = utilVal(opt.C, opt.L, s.alpha);
 
-      var html = '<div style="text-align:center;">\\(U(C,L) = C^{\\alpha} L^{1-\\alpha}\\)</div>';
+      var html = '<div style="text-align:center;">';
+      switch (currentFn) {
+        case 'cd': html += '\\(U(C,L) = C^{\\alpha} L^{1-\\alpha}\\)'; break;
+        case 'linear': html += '\\(U(C,L) = \\alpha C + (1\\!-\\!\\alpha) L\\)'; break;
+        case 'leontief': html += '\\(U(C,L) = \\min(C/\\alpha,\\; L/(1\\!-\\!\\alpha))\\)'; break;
+        case 'ces':
+          var rho=getRho(), sigma=1/(1-rho);
+          html += '\\(U = (\\alpha C^{\\rho} + (1\\!-\\!\\alpha) L^{\\rho})^{1/\\rho}\\)';
+          html += '<br><span style="font-size:0.78rem;">\\(\\sigma = '+sigma.toFixed(2)+'\\)</span>';
+          break;
+      }
+      html += '</div>';
       html += '<div style="margin-top:0.4rem;">';
-      html += 'Renda plena: \\(M^* = wT + V = ' + fullIncome.toFixed(0) + '\\)<br>';
-      html += '\\(L^* = ' + Ls.toFixed(1) + '\\) horas de lazer<br>';
-      html += '\\(h^* = T - L^* = ' + hs.toFixed(1) + '\\) horas de trabalho<br>';
-      html += '\\(C^* = wh^* + V = ' + Cs.toFixed(1) + '\\)';
+      html += 'Renda plena: \\(M^* = wT + V = '+fullIncome.toFixed(0)+'\\)<br>';
+      html += '\\(L^* = '+opt.L.toFixed(1)+'\\) horas de lazer<br>';
+      html += '\\(h^* = T - L^* = '+hs.toFixed(1)+'\\) horas de trabalho<br>';
+      html += '\\(C^* = wh^* + V = '+opt.C.toFixed(1)+'\\)';
+      if (currentFn === 'linear') {
+        var bangC = s.alpha, bangL = (1-s.alpha)/s.w;
+        if (bangC > bangL + 0.001) html += '<br><em>Solucao de canto: so trabalho</em>';
+        else if (bangL > bangC + 0.001) html += '<br><em>Solucao de canto: so lazer</em>';
+      }
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;
+
+      drawAll(s);
       board.update();
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
@@ -193,10 +328,14 @@
       document.getElementById('slider-V').value = 0;
       document.getElementById('slider-alpha').value = 0.50;
       document.getElementById('slider-T').value = 24;
+      document.getElementById('slider-rho').value = -1;
+      currentFn = 'cd';
+      document.querySelectorAll('.fn-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.fn==='cd'); });
+      document.getElementById('rho-group').style.display = 'none';
       update();
     }
 
-    ['slider-w','slider-V','slider-alpha','slider-T'].forEach(function(id) {
+    ['slider-w','slider-V','slider-alpha','slider-T','slider-rho'].forEach(function(id) {
       document.getElementById(id).addEventListener('input', update);
     });
     update();
