@@ -55,13 +55,16 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 É crucial observar que esta "lei" é uma regularidade empírica, não um resultado lógico necessário. Ela se aplica ao **curto prazo**, quando pelo menos um fator é fixo. Não deve ser confundida com rendimentos decrescentes de escala, que dizem respeito à variação simultânea de todos os insumos.
 
+!!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
+    Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
+
 ---
 
 ## 9.2 Isoquantas e a Taxa Marginal de Substituição Técnica
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinacao de insumos.</figcaption>
+  <figcaption><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
 </figure>
 
 ### Isoquantas
@@ -95,13 +98,48 @@ f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
 
 A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema — um fenômeno intuitivamente análogo à taxa marginal de substituição decrescente no consumo.
 
+!!! example "Exercício Resolvido 9.1"
+    **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
+
+    **Dados:** \(A = 20\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(K = 25\), \(L = 16\).
+
+    **Resolução:**
+
+    **Passo 1 — Produto total**
+
+    \[
+    q = 20 \cdot 25^{0,5} \cdot 16^{0,5} = 20 \times 5 \times 4 = 400
+    \]
+
+    **Passo 2 — Produtos marginais**
+
+    \[
+    \mathrm{PMg}_L = \beta A K^{\alpha} L^{\beta - 1} = 0{,}5 \times 20 \times 25^{0,5} \times 16^{-0,5} = 0{,}5 \times 20 \times 5 \times 0{,}25 = 12{,}5
+    \]
+
+    \[
+    \mathrm{PMg}_K = \alpha A K^{\alpha - 1} L^{\beta} = 0{,}5 \times 20 \times 25^{-0,5} \times 16^{0,5} = 0{,}5 \times 20 \times 0{,}2 \times 4 = 8
+    \]
+
+    **Passo 3 — TMST**
+
+    \[
+    \mathrm{TMST}_{L,K} = \frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{12{,}5}{8} = 1{,}5625
+    \]
+
+    Verificação pela fórmula direta: \(\mathrm{TMST} = \dfrac{\beta}{\alpha} \cdot \dfrac{K}{L} = \dfrac{0{,}5}{0{,}5} \cdot \dfrac{25}{16} = 1{,}5625\) ✓
+
+    **Resultado:** \(q = 400\), \(\mathrm{PMg}_L = 12{,}5\), \(\mathrm{PMg}_K = 8\), \(\mathrm{TMST} = 1{,}5625\).
+
+    **Interpretação econômica:** A TMST de 1,56 indica que, nessa combinação, a firma pode substituir 1 unidade de capital por aproximadamente 1,56 unidades de trabalho sem alterar o produto. O trabalho é relativamente mais produtivo na margem porque a firma opera com proporção capital-trabalho elevada (\(K/L = 1{,}56\)), o que torna cada trabalhador adicional mais valioso.
+
 ---
 
 ## 9.3 Rendimentos de Escala
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espacamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
+  <figcaption><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
 </figure>
 
 !!! definition "Rendimentos de escala"
@@ -118,6 +156,42 @@ e = \frac{\partial \ln f(tK, tL)}{\partial \ln t}\bigg|_{t=1} = \frac{f_K \cdot 
 \]
 
 onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em relação a cada insumo. Se \(e = 1\), rendimentos constantes; se \(e > 1\), crescentes; se \(e < 1\), decrescentes.
+
+!!! example "Exemplo: Economias de escala na indústria automobilística brasileira"
+    A indústria automobilística ilustra rendimentos crescentes de escala na faixa relevante de produção. Uma linha de montagem exige investimento fixo elevado em robôs, estamparia e pintura, independentemente do volume produzido. Estudos setoriais indicam que a escala mínima eficiente de uma planta de montagem situa-se entre 100 e 200 mil veículos/ano (Ebert, 2013) — abaixo desse patamar, o custo médio por veículo é significativamente mais alto. Essa lógica de rendimentos crescentes explica a concentração geográfica da produção automotiva brasileira no ABC paulista e em polos como Betim (MG) e Camaçari (BA), onde a escala viabiliza custos competitivos.
+
+!!! example "Exercício Resolvido 9.2"
+    **Enunciado:** Classifique os rendimentos de escala das seguintes funções de produção: (a) \(q = 3K + 7L\); (b) \(q = K^{0,4}L^{0,8}\); (c) \(q = \min\{2K, 5L\}\).
+
+    **Resolução:**
+
+    **Passo 1 — Função linear \(q = 3K + 7L\)**
+
+    \[
+    f(tK, tL) = 3tK + 7tL = t(3K + 7L) = t \cdot f(K, L)
+    \]
+
+    A função é homogênea de grau 1. Rendimentos **constantes** de escala.
+
+    **Passo 2 — Cobb-Douglas \(q = K^{0,4}L^{0,8}\)**
+
+    \[
+    f(tK, tL) = (tK)^{0,4}(tL)^{0,8} = t^{0,4 + 0,8} K^{0,4}L^{0,8} = t^{1,2} \cdot f(K, L)
+    \]
+
+    Como \(t^{1,2} > t\) para \(t > 1\), os rendimentos são **crescentes**. A elasticidade de escala é \(e = \alpha + \beta = 0{,}4 + 0{,}8 = 1{,}2\).
+
+    **Passo 3 — Leontief \(q = \min\{2K, 5L\}\)**
+
+    \[
+    f(tK, tL) = \min\{2tK, 5tL\} = t \cdot \min\{2K, 5L\} = t \cdot f(K, L)
+    \]
+
+    Rendimentos **constantes** de escala.
+
+    **Resultado:** (a) constantes; (b) crescentes (\(e = 1{,}2\)); (c) constantes.
+
+    **Interpretação econômica:** Na função (b), dobrar ambos os insumos aumenta o produto em \(2^{1,2} \approx 2{,}30\) vezes — quase 15% a mais do que o dobro. Em setores com essa tecnologia, há incentivo natural à concentração em firmas maiores, como ocorre na siderurgia e na petroquímica brasileiras.
 
 ---
 
@@ -167,11 +241,16 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
     Portanto, a elasticidade de substituição da função Cobb-Douglas é unitária, independentemente dos valores de \(\alpha\) e \(\beta\). \(\blacksquare\)
 
+!!! example "Exemplo: Elasticidade de substituição na indústria brasileira"
+    A elasticidade de substituição tem implicações diretas para o mercado de trabalho. Quando \(\sigma\) é alto, as firmas substituem trabalho por capital (automação) com relativa facilidade. A literatura empírica aponta valores de \(\sigma\) entre 0,4 e 0,6 para o setor manufatureiro em diversas economias (Chirinko, 2008), e estudos com dados brasileiros encontram valores consistentemente abaixo de 1. Isso indica que capital e trabalho são complementares — mas não tanto quanto no caso Leontief puro (\(\sigma = 0\)). Esse grau intermediário de complementaridade ajuda a explicar por que a automação industrial desloca trabalhadores de forma menos abrupta do que ocorreria com \(\sigma\) mais elevado, mas ainda assim gera pressão sobre ocupações de baixa qualificação.
+
 ---
 
 ## 9.5 Funções de Produção Clássicas
 
 ### Função de produção linear
+
+A função linear captura situações em que os insumos realizam a mesma tarefa de forma intercambiável — por exemplo, uma linha de produção que pode ser operada por robôs ou por trabalhadores com resultado idêntico.
 
 \[
 q = aK + bL, \qquad a, b > 0
@@ -181,13 +260,17 @@ Os insumos são **substitutos perfeitos**. A TMST é constante e igual a \(b/a\)
 
 ### Função de produção de proporções fixas (Leontief)
 
+No extremo oposto, a função Leontief descreve processos em que os insumos devem ser combinados em proporções rígidas — como receitas químicas ou postos de trabalho que exigem uma máquina por operador.
+
 \[
 q = \min\left\{\frac{K}{a}, \frac{L}{b}\right\}, \qquad a, b > 0
 \]
 
-Os insumos são **complementares perfeitos**: devem ser utilizados na proporção fixa \(K/L = a/b\). A TMST não é definida no vértice, e \(\sigma = 0\). Rendimentos de escala constantes.
+Os insumos são **complementares perfeitos**: devem ser utilizados na proporção fixa \(K/L = a/b\). A TMST não é definida no vértice, e \(\sigma = 0\). Os rendimentos de escala são constantes.
 
 ### Função de produção Cobb-Douglas
+
+A Cobb-Douglas é a forma funcional mais utilizada em trabalhos empíricos, pela combinação de flexibilidade e tratabilidade analítica. Foi proposta por Charles Cobb e Paul Douglas em 1928 para descrever a produção industrial nos EUA.
 
 \[
 q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0
@@ -196,6 +279,8 @@ q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0
 As propriedades dependem dos parâmetros: rendimentos constantes se \(\alpha + \beta = 1\), crescentes se \(\alpha + \beta > 1\), decrescentes se \(\alpha + \beta < 1\). A TMST é \((\beta/\alpha)(K/L)\) e \(\sigma = 1\).
 
 ### Função de produção CES (Elasticidade de Substituição Constante)
+
+A função CES, introduzida por Arrow, Chenery, Minhas e Solow (1961), generaliza todas as formas anteriores ao permitir que a elasticidade de substituição assuma qualquer valor positivo.
 
 \[
 q = A\left[\delta K^{\rho} + (1 - \delta) L^{\rho}\right]^{\gamma/\rho}, \qquad \rho \leq 1, \; \rho \neq 0, \; 0 < \delta < 1
@@ -224,22 +309,24 @@ A CES **generaliza** as três funções anteriores:
 | **Isoquantas** | Retas | Ângulos retos | Hipérboles convexas | Curvas convexas |
 | **Casos especiais** | — | — | CES com \(\rho \to 0\) | Generaliza todas |
 
+As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
+
 ---
 
 ## 9.6 Progresso Técnico
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 9.3</strong> — Progresso tecnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessarios para o mesmo produto).</figcaption>
+  <figcaption><strong>Figura 9.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
 </figure>
 
-O progresso técnico desloca a função de produção, permitindo obter mais produto com os mesmos insumos. Formalmente, introduzimos o tempo \(t\) na função de produção:
+O progresso técnico desloca a função de produção, permitindo obter mais produto com os mesmos insumos. Formalmente, introduzimos o tempo \(t\) na função de produção. A formulação mais simples é:
 
 \[
 q = A(t) \cdot f(K, L)
 \]
 
-quando o progresso é **neutro de Hicks**: ele aumenta o produto na mesma proporção para qualquer combinação de insumos, sem alterar a TMST para uma dada razão \(K/L\).
+Essa especificação corresponde ao progresso **neutro de Hicks**: o parâmetro \(A(t)\) aumenta o produto na mesma proporção para qualquer combinação de insumos, sem alterar a TMST para uma dada razão \(K/L\).
 
 ### Classificações do progresso técnico
 
@@ -267,6 +354,38 @@ A taxa de crescimento do produto pode ser decomposta como:
 \]
 
 O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**. Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
+
+!!! example "Exercício Resolvido 9.3"
+    **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
+
+    **Dados:** \(\alpha = 0{,}3\), \(\beta = 0{,}7\), \(\dot{A}/A = 0{,}02\), \(\dot{K}/K = 0{,}04\), \(\dot{L}/L = 0{,}01\).
+
+    **Resolução:**
+
+    **Passo 1 — Aplicar a decomposição do crescimento**
+
+    \[
+    \frac{\dot{q}}{q} = \frac{\dot{A}}{A} + \alpha \frac{\dot{K}}{K} + \beta \frac{\dot{L}}{L}
+    \]
+
+    **Passo 2 — Substituir os valores**
+
+    \[
+    \frac{\dot{q}}{q} = 0{,}02 + 0{,}3 \times 0{,}04 + 0{,}7 \times 0{,}01 = 0{,}02 + 0{,}012 + 0{,}007 = 0{,}039
+    \]
+
+    **Passo 3 — Decomposição percentual**
+
+    | Fonte | Contribuição | % do total |
+    |---|---|---|
+    | PTF (progresso técnico) | 2,0 p.p. | 51,3% |
+    | Capital | 1,2 p.p. | 30,8% |
+    | Trabalho | 0,7 p.p. | 17,9% |
+    | **Total** | **3,9 p.p.** | **100%** |
+
+    **Resultado:** O produto cresce a 3,9% ao ano, com mais da metade explicada pelo progresso técnico.
+
+    **Interpretação econômica:** A predominância da PTF no crescimento é consistente com o padrão observado na agricultura brasileira pós-Embrapa (ver Box Brasil a seguir), onde a inovação tecnológica respondeu por parcela majoritária dos ganhos de produtividade. Como a função é Cobb-Douglas, o progresso técnico é simultaneamente neutro no sentido de Hicks, Harrod e Solow — as três classificações convergem (Seção 9.6).
 
 ---
 
