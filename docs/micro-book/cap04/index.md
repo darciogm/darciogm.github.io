@@ -6,7 +6,7 @@ No Capítulo 3, descrevemos **o que** o consumidor deseja por meio das preferên
 
 Este capítulo desenvolve as ferramentas analíticas fundamentais da teoria do consumidor: a demanda marshalliana (ou walrasiana), a função de utilidade indireta, o problema dual de minimização do dispêndio, a função dispêndio, a demanda hicksiana (ou compensada) e os resultados de dualidade que conectam essas funções. A Identidade de Roy e o Lema de Shephard aparecem como consequências naturais dessa estrutura dual.
 
-A exposição segue Nicholson e Snyder (2017, Cap. 4), complementada por Varian (2015, Caps. 5-7) e Mas-Colell, Whinston e Green (1995, Caps. 2-3).
+A exposição segue Nicholson e Snyder (2017, Cap. 4), complementada por Varian (2015, Caps. 5-7) e Mas-Colell, Whinston e Green (1995, Caps. 2-3). Perloff (2017, Caps. 3–5) oferece equilíbrio entre rigor matemático e aplicações empíricas, sendo referência complementar para a Equação de Slutsky e suas implicações.
 
 ---
 

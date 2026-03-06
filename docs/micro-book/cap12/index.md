@@ -280,6 +280,8 @@ W = EC + EP
 
     Isso é satisfeito, pois a demanda inversa é decrescente (\(dp_D/dQ < 0\)) e a oferta inversa é crescente (\(dp_S/dQ > 0\)). Portanto, \(Q^*\) é de fato um máximo de bem-estar. \(\blacksquare\)
 
+Perloff (2017, Cap. 9) apresenta aplicações empíricas do conceito de excedente em análise de políticas públicas, ilustrando como quantificar perdas de peso morto em mercados reais.
+
 ---
 
 ## 12.10 Controles de Preços e Escassez

@@ -50,7 +50,7 @@ onde \(x_A^k\) é o consumo do bem \(k\) pelo indivíduo \(A\).
 
 ## 19.2 Externalidades e Ineficiência Alocativa
 
-A presença de externalidades implica que as decisões privadas dos agentes divergem do ótimo social. A razão fundamental é que os agentes não incorporam em seus cálculos os efeitos que suas ações impõem sobre terceiros.
+A presença de externalidades implica que as decisões privadas dos agentes divergem do ótimo social. A razão fundamental é que os agentes não incorporam em seus cálculos os efeitos que suas ações impõem sobre terceiros (Browning & Zupan, 2014, Cap. 20, apresentam aplicações detalhadas).
 
 ### Externalidade negativa de produção
 
@@ -292,7 +292,7 @@ A combinação dessas duas propriedades gera uma classificação de bens em quat
 | **Rival** | **Bem privado** (alimento, vestuário, combustível) | **Recurso comum** (cardume no oceano, pasto comunitário, água de aquífero) |
 | **Não-rival** | **Bem de clube** (TV a cabo, pedágio, parque com entrada paga) | **Bem público puro** (defesa nacional, iluminação pública, ar limpo) |
 
-A tabela abaixo apresenta exemplos brasileiros para cada categoria:
+A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos & Garcia, 2014):
 
 | Categoria | Propriedades | Exemplos Brasileiros |
 |---|---|---|
@@ -394,7 +394,7 @@ O comportamento de carona é mais severo quando:
 
 ## 19.9 Votação e Alocação de Recursos
 
-Na ausência de mecanismos de mercado eficientes para bens públicos, as sociedades recorrem a processos políticos — especialmente a **votação** — para decidir o nível de provisão.
+Na ausência de mecanismos de mercado eficientes para bens públicos (Giambiagi & Além, 2016, oferecem análise detalhada para o caso brasileiro), as sociedades recorrem a processos políticos — especialmente a **votação** — para decidir o nível de provisão.
 
 ### Votação por maioria simples
 

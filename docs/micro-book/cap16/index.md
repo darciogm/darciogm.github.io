@@ -365,7 +365,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     *Fonte: PNAD Contínua/IBGE; DIEESE; elaboração didática.*
 
-    A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (cerca de 39%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal.
+    A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (cerca de 39%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal. Browning & Zupan (2014, Cap. 15) oferecem análise comparativa de políticas de salário mínimo e seus efeitos sobre emprego e informalidade em diferentes contextos institucionais.
 
 ---
 

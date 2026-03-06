@@ -74,7 +74,7 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
     Em palavras: nenhum jogador pode melhorar unilateralmente seu payoff desviando de \(s_i^*\), dado que os demais jogadores mantêm suas estratégias de equilíbrio.
 
-O equilíbrio de Nash é um conceito de **consistência mútua de expectativas**: se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
+O equilíbrio de Nash é um conceito de **consistência mútua de expectativas** (Gibbons, 2004, Cap. 1): se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
 
 ### Exemplos clássicos
 
@@ -264,7 +264,7 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 
 ### Forma extensiva e indução retroativa
 
-Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores posteriores podem observar (pelo menos parcialmente) as ações dos anteriores. O conceito de solução apropriado é a **indução retroativa** (*backward induction*): resolve-se o jogo "de trás para frente", determinando as ações ótimas nos últimos nós de decisão e retrocedendo até o início.
+Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores posteriores podem observar (pelo menos parcialmente) as ações dos anteriores. O conceito de solução apropriado é a **indução retroativa** (*backward induction*) (Gibbons, 2004, Cap. 2): resolve-se o jogo "de trás para frente", determinando as ações ótimas nos últimos nós de decisão e retrocedendo até o início.
 
 !!! definition "Equilíbrio perfeito em subjogos (EPS)"
     Um perfil de estratégias constitui um **Equilíbrio Perfeito em Subjogos** se induz um equilíbrio de Nash em **todo subjogo** do jogo na forma extensiva.
@@ -289,7 +289,7 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
 
 ## 8.8 Jogos Repetidos
 
-Quando um jogo é jogado repetidamente entre os mesmos jogadores, a possibilidade de **punição futura** pode sustentar a cooperação em equilíbrio, mesmo quando o jogo de estágio tem um único equilíbrio não cooperativo.
+Quando um jogo é jogado repetidamente entre os mesmos jogadores (Gibbons, 2004, Cap. 2), a possibilidade de **punição futura** pode sustentar a cooperação em equilíbrio, mesmo quando o jogo de estágio tem um único equilíbrio não cooperativo.
 
 ### Jogos finitamente repetidos
 
@@ -327,7 +327,7 @@ onde \(T > R > P > S\) são os payoffs do jogo de estágio. O fator de desconto 
 ## 8.9 Jogos com Informação Incompleta (Bayesianos)
 
 !!! definition "Jogo Bayesiano"
-    Um **jogo Bayesiano** (ou jogo com informação incompleta) é um jogo em que pelo menos um jogador possui informação privada sobre algum parâmetro relevante (seu "tipo"). Formalmente:
+    Um **jogo Bayesiano** (ou jogo com informação incompleta) (Gibbons, 2004, Cap. 3) é um jogo em que pelo menos um jogador possui informação privada sobre algum parâmetro relevante (seu "tipo"). Formalmente:
 
     \[
     \Gamma^B = \langle N, (S_i)_{i \in N}, (\Theta_i)_{i \in N}, (u_i)_{i \in N}, p \rangle

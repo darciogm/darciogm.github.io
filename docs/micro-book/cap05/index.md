@@ -402,6 +402,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
     **Implicações de política**: a inelasticidade da demanda por gasolina no curto prazo implica que aumentos de impostos sobre combustíveis (como a CIDE) geram receita tributária substancial, mas com custo de bem-estar significativo — especialmente para famílias de baixa renda, para as quais a variação compensatória pode representar parcela relevante do orçamento mensal.
 
+    Goolsbee, Levitt & Syverson (2020, Cap. 2) documentam estimativas análogas para o mercado estadunidense, permitindo comparações metodológicas e de magnitude.
+
     *Fontes: ANP — Levantamento de Preços de Combustíveis; IPEA — Texto para Discussão n.º 1.898 (2013); Santos (2013); Cardoso et al. (2019).*
 
 ---

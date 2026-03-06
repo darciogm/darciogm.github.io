@@ -4,7 +4,7 @@
 
 Por que um consumidor escolhe arroz em vez de macarrão? Por que alguém prefere gastar mais com lazer do que com roupas? A teoria das preferências e da utilidade constitui o alicerce da microeconomia do consumidor. Neste capítulo, formalizamos as preferências individuais por meio de axiomas, mostramos sob quais condições essas preferências podem ser representadas por uma função de utilidade, e exploramos as ferramentas analíticas que nos permitem descrever e comparar cestas de consumo: curvas de indiferença, taxa marginal de substituição e famílias específicas de funções de utilidade.
 
-O capítulo segue a abordagem axiomática presente em Mas-Colell, Whinston e Green (1995), complementada pela exposição mais intuitiva de Varian (2015) e Nicholson e Snyder (2017). Ao final, o leitor estará preparado para resolver o problema de otimização do consumidor — tema do Capítulo 4.
+O capítulo segue a abordagem axiomática presente em Mas-Colell, Whinston e Green (1995), complementada pela exposição mais intuitiva de Varian (2015) e Nicholson e Snyder (2017). Para uma abordagem particularmente acessível, com ênfase em intuição econômica e exemplos aplicados, ver Besanko & Braeutigam (2014, Caps. 3–4). Ao final, o leitor estará preparado para resolver o problema de otimização do consumidor — tema do Capítulo 4.
 
 ---
 
@@ -263,6 +263,8 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
     - **POF 2017-18**: a tendência de diversificação se manteve, com crescimento expressivo dos gastos com comunicação (telefonia móvel) e transporte.
 
     Do ponto de vista da teoria das preferências, a estabilização monetária não apenas alterou a **restrição orçamentária** (via ganho de renda real, sobretudo para os mais pobres), mas também as **preferências reveladas** — ou, mais precisamente, permitiu que as preferências subjacentes se manifestassem sem a distorção imposta pelo imposto inflacionário. O conceito de TMS decrescente ganha concretude: à medida que cestas de alimentação básica se tornaram acessíveis com menor fração da renda, os consumidores puderam mover-se ao longo de suas curvas de indiferença em direção a cestas mais diversificadas.
+
+    Vasconcellos & Garcia (2014) contextualizam os ciclos econômicos brasileiros que moldaram essas transformações nas escolhas de consumo.
 
     **Fonte**: IBGE, Pesquisa de Orçamentos Familiares (várias edições); Barros, R. P. de; Foguel, M. N.; Ulyssea, G. (orgs.). *Desigualdade de renda no Brasil: uma análise da queda recente*. Brasília: IPEA, 2007.
 

@@ -4,7 +4,7 @@
 
 O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.
 
-Este capítulo examina as causas do monopólio, a lógica de sua maximização de lucro, as perdas de eficiência decorrentes do poder de mercado, as estratégias de discriminação de preços e os mecanismos de regulação. A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira, como energia elétrica, saneamento e telecomunicações.
+Este capítulo examina as causas do monopólio, a lógica de sua maximização de lucro, as perdas de eficiência decorrentes do poder de mercado, as estratégias de discriminação de preços e os mecanismos de regulação. A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira, como energia elétrica, saneamento e telecomunicações. Besanko & Braeutigam (2014, Caps. 11–12) oferecem tratamento acessível da teoria do monopólio com aplicações a mercados regulados.
 
 ---
 
@@ -350,7 +350,7 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
     | Universalização | ~99,8% de acesso | ~98% de cobertura 4G |
     | Principal desafio atual | Transição energética e tarifas | 5G e competição em banda larga |
 
-    Ambos os setores ilustram o dilema fundamental da regulação de monopólios naturais: garantir eficiência produtiva e preços acessíveis sem eliminar os incentivos ao investimento.
+    Ambos os setores ilustram o dilema fundamental da regulação de monopólios naturais: garantir eficiência produtiva e preços acessíveis sem eliminar os incentivos ao investimento. Para o contexto institucional e fiscal da regulação de monopólios naturais no Brasil, ver Giambiagi & Além (2016).
 
 ---
 
