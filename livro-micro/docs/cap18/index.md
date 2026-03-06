@@ -114,6 +114,11 @@ onde \(W_0\) é a riqueza inicial, \(q\) é o prêmio do seguro, \(L\) é a perd
 
 Com seguro completo (\(I = L\)), o segurado recebe \(W_0 - q\) em qualquer estado, eliminando todo incentivo para esforço preventivo. Por isso, seguros com **franquias** e **coparticipação** são mecanismos para mitigar o risco moral, fazendo com que o segurado assuma parte do risco e mantenha incentivos para prevenção.
 
+<figure>
+  <iframe src="../graficos/cap18/principal-agente.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 18.2</strong> — Modelo principal-agente com risco moral. O grafico mostra a restricao de participacao (RP) e a restricao de compatibilidade de incentivos (RCI) no espaco de salarios. O ponto verde indica o contrato otimo que induz esforco alto.</figcaption>
+</figure>
+
 ### 18.3.3 O problema do esforço não-observável: modelo formal
 
 Considere dois níveis de esforço: alto (\(e_H\)) e baixo (\(e_L\)), com \(c(e_H) > c(e_L)\). O resultado pode ser bom (\(x_H\)) ou ruim (\(x_L\)). Sob esforço alto, a probabilidade de \(x_H\) é \(p_H\); sob esforço baixo, é \(p_L\), com \(p_H > p_L\).
@@ -167,6 +172,11 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 !!! note "Resultado de Akerlof"
     Em casos extremos, a seleção adversa pode provocar o **desaparecimento completo** do mercado (market unraveling), mesmo quando ganhos de troca existiriam sob informação simétrica. Esse resultado mostra que a informação assimétrica é uma genuína **falha de mercado**.
+
+<figure>
+  <iframe src="../graficos/cap18/mercado-limoes.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 18.1</strong> — Mercado de limoes (Akerlof, 1970). Ajuste a fracao de limoes e observe como a selecao adversa leva ao colapso do mercado quando a disposicao a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.</figcaption>
+</figure>
 
 ### 18.4.2 Precificação não-linear: menus de contratos
 
@@ -280,6 +290,11 @@ Considere dois tipos de trabalhadores:
 
 com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\): a educação custa menos ao trabalhador mais produtivo (hipótese de **single-crossing**).
 
+<figure>
+  <iframe src="../graficos/cap18/sinalizacao.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 18.3</strong> — Sinalizacao por educacao (Spence, 1973). Visualize as curvas de custo de educacao para ambos os tipos, o salario de equilibrio e a condicao de single-crossing. A regiao azul indica o intervalo de niveis de educacao que sustentam um equilibrio separador.</figcaption>
+</figure>
+
 ### 18.5.2 Equilíbrio separador vs. equilíbrio agregador
 
 !!! definition "Equilíbrio Separador e Agregador"
@@ -308,6 +323,11 @@ O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separ
     No modelo de Spence, a sinalização envolve um **custo social** real: recursos são gastos em educação apenas para sinalizar tipo, sem ganho de produtividade. O equilíbrio separador pode ser Pareto-inferior ao equilíbrio agregador se a perda de bem-estar do sinal superar o ganho informacional. Esse resultado ilustra que a revelação de informação nem sempre é socialmente desejável.
 
 ---
+
+<figure>
+  <iframe src="../graficos/cap18/seguros-rs.html" width="100%" height="660" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 18.4</strong> — Modelo de seguros de Rothschild-Stiglitz. No espaco de riqueza contingente, observe o equilibrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferenca refletem as diferentes probabilidades de sinistro.</figcaption>
+</figure>
 
 ## 18.6 Screening (Triagem pelo Principal)
 

@@ -59,6 +59,11 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 ## 9.2 Isoquantas e a Taxa Marginal de Substituição Técnica
 
+<figure markdown="span">
+  <iframe src="../graficos/cap09/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinacao de insumos.</figcaption>
+</figure>
+
 ### Isoquantas
 
 !!! definition "Isoquanta"
@@ -93,6 +98,11 @@ A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo o
 ---
 
 ## 9.3 Rendimentos de Escala
+
+<figure markdown="span">
+  <iframe src="../graficos/cap09/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espacamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
+</figure>
 
 !!! definition "Rendimentos de escala"
     Considere a função de produção \(f(K, L)\) e um escalar \(t > 1\). Os **rendimentos de escala** classificam-se em:
@@ -217,6 +227,11 @@ A CES **generaliza** as três funções anteriores:
 ---
 
 ## 9.6 Progresso Técnico
+
+<figure markdown="span">
+  <iframe src="../graficos/cap09/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 9.3</strong> — Progresso tecnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessarios para o mesmo produto).</figcaption>
+</figure>
 
 O progresso técnico desloca a função de produção, permitindo obter mais produto com os mesmos insumos. Formalmente, introduzimos o tempo \(t\) na função de produção:
 

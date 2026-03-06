@@ -56,6 +56,11 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 !!! note "Relevância do Dilema dos Prisioneiros"
     O Dilema dos Prisioneiros aparece em inúmeros contextos econômicos: corrida armamentista entre nações, concorrência predatória entre firmas, tragédia dos comuns na exploração de recursos naturais e guerra fiscal entre entes federativos (como veremos no Box Brasil deste capítulo). A compreensão desse jogo é fundamental para o desenho de mecanismos e instituições que alinhem incentivos individuais e coletivos.
 
+<figure markdown="span">
+  <iframe src="../graficos/cap08/matriz-payoffs.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 8.1</strong> — Matriz de payoffs e equilibrio de Nash. Edite os payoffs ou selecione um jogo classico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estrategias dominantes, equilibrios de Nash em puras e mistas.</figcaption>
+</figure>
+
 ---
 
 ## 8.3 Equilíbrio de Nash
@@ -140,6 +145,11 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
     \]
 
     Logo, o equilíbrio em estratégias mistas é \(\sigma_1 = (3/4, 1/4)\), \(\sigma_2 = (1/4, 3/4)\). O payoff esperado de cada jogador é \(3/4\), inferior ao payoff em qualquer dos dois equilíbrios puros — a incerteza sobre a coordenação é custosa.
+
+<figure markdown="span">
+  <iframe src="../graficos/cap08/estrategias-mistas.html" width="100%" height="820" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 8.2</strong> — Equilibrio em estrategias mistas. Para um jogo 2x2, os graficos mostram o payoff esperado de cada jogador em funcao da probabilidade de mistura do oponente. O ponto de interseccao determina a probabilidade de equilibrio (principio da indiferenca). Edite os payoffs e selecione jogos pre-definidos.</figcaption>
+</figure>
 
 ---
 
@@ -243,6 +253,11 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 !!! tip "Cournot vs. Bertrand"
     A diferença entre os modelos de Cournot e Bertrand ilustra como a escolha da variável estratégica (quantidade vs. preço) afeta radicalmente o equilíbrio. Na prática, a escolha entre os modelos depende da natureza da indústria: setores com capacidade comprometida antecipadamente (petróleo, aço) são melhor descritos por Cournot; setores com custos de produção flexíveis e catálogos de preços (varejo, serviços) se aproximam de Bertrand.
 
+<figure markdown="span">
+  <iframe src="../graficos/cap08/cournot-reacao.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 8.3</strong> — Funcoes de reacao de Cournot. Ajuste os parametros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) de cada firma. O equilibrio de Nash e a interseccao das funcoes de melhor resposta. Clique em "Animar convergencia" para visualizar a dinamica de melhores respostas alternadas.</figcaption>
+</figure>
+
 ---
 
 ## 8.7 Jogos Sequenciais
@@ -264,6 +279,11 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
     Payoffs: Se E não entra: \((0, 2)\). Se E entra e I acomoda: \((1, 1)\). Se E entra e I luta: \((-1, -1)\).
 
     **Equilíbrios de Nash**: (Não entra, Luta) e (Entra, Acomoda). Porém, no primeiro equilíbrio a ameaça de I de lutar **não é crível**: no subjogo que começa após a entrada, Lutar dá payoff \(-1\) a I, enquanto Acomodar dá \(1\). Logo, por indução retroativa, o único EPS é **(Entra, Acomoda)**.
+
+<figure markdown="span">
+  <iframe src="../graficos/cap08/jogo-sequencial.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 8.4</strong> — Jogo sequencial na forma extensiva. Selecione um jogo pre-definido (Deterrencia de Entrada ou Stackelberg), edite os payoffs nos nos terminais e resolva por inducao retroativa. O caminho do equilibrio perfeito em subjogos e destacado em vermelho.</figcaption>
+</figure>
 
 ---
 

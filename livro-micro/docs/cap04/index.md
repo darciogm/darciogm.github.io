@@ -31,6 +31,9 @@ onde \(p_1, p_2 > 0\) são os preços dos bens e \(I > 0\) é a renda nominal do
 
 Sob monotonicidade das preferências, a restrição orçamentária é satisfeita com igualdade na solução ótima: o consumidor gasta toda a renda.
 
+<iframe src="../graficos/cap04/restricao-orcamentaria.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
+*Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.*
+
 ---
 
 ## 4.2 Análise Gráfica com Dois Bens
@@ -54,6 +57,9 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
 
 !!! tip "Soluções de canto"
     Nem todas as soluções são interiores. Para substitutos perfeitos, por exemplo, o consumidor tipicamente consome apenas o bem com maior razão \(a_i/p_i\). Soluções de canto ocorrem quando a TMS no ponto \(x_i = 0\) já é inferior (ou superior) à razão de preços, de modo que a condição de tangência não se verifica em nenhum ponto interior.
+
+<iframe src="../graficos/cap04/equilibrio-consumidor.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
+*Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.*
 
 ---
 
@@ -156,6 +162,9 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
 !!! note "Limitações do princípio"
     O resultado pressupõe informação perfeita, ausência de custos administrativos e que o imposto *lump sum* seja viável. Na prática, impostos *lump sum* são frequentemente considerados injustos ou politicamente inviáveis. A tributação ótima (Ramsey, Mirrlees) busca conciliar eficiência e equidade sob restrições informacionais.
 
+<iframe src="../graficos/cap04/lump-sum-principle.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
+*Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.*
+
 ---
 
 ## 4.6 Minimização do Dispêndio — O Problema Dual
@@ -253,6 +262,9 @@ E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a u
 \]
 
 Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)\) são **inversas** uma da outra (fixados os preços).
+
+<iframe src="../graficos/cap04/dualidade.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
+*Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.*
 
 Além disso, as demandas marshalliana e hicksiana estão relacionadas:
 

@@ -58,6 +58,14 @@ Nesse ponto, não há trocas mutuamente benéficas possíveis — a alocação �
 
 ---
 
+### Gráfico interativo: Caixa de Edgeworth
+
+Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação X para verificar se ele representa uma melhoria de Pareto em relação à dotação inicial e se está sobre a curva de contrato (eficiência). As curvas de indiferença tracejadas passam pela dotação E; as contínuas passam pela alocação X.
+
+<iframe src="../../graficos/cap13/caixa-edgeworth.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 13.3 Troca Pura: Curva de Contrato e Núcleo
 
 ### Eficiência de Pareto na troca
@@ -133,6 +141,14 @@ A tabela abaixo sintetiza as três condições marginais para a eficiência de P
 
 ---
 
+### Gráfico interativo: Fronteira de Possibilidades de Produção (FPP)
+
+Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
+
+<iframe src="../../graficos/cap13/fpp.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 13.5 O Primeiro Teorema do Bem-Estar
 
 !!! abstract "Primeiro Teorema do Bem-Estar"
@@ -204,6 +220,14 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 
 !!! note "Limitação prática"
     Na prática, transferências *lump-sum* perfeitas são difíceis de implementar, pois requerem informação sobre características dos agentes que geralmente são privadas. A tributação factível (imposto de renda, IVA) introduz distorções e gera perda de peso morto — um *trade-off* entre eficiência e equidade que é central na economia do setor público.
+
+---
+
+### Gráfico interativo: Equilíbrio Geral Walrasiano
+
+Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda resultante. O equilíbrio walrasiano ocorre quando o excesso de demanda é zero -- o gráfico indica o preço de equilíbrio e sinaliza a direção de ajuste necessária.
+
+<iframe src="../../graficos/cap13/equilibrio-geral.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 ---
 

@@ -95,6 +95,11 @@ onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser em
 
 ## 11.3 Receita Marginal e Elasticidade
 
+<figure markdown="span">
+  <iframe src="../graficos/cap11/receita-marginal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinacao da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitaria). Mova o slider \(q\) para ver a relacao \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
+</figure>
+
 ### Receita marginal
 
 A **receita total** é \(RT = p(q) \cdot q\). A **receita marginal** é:
@@ -135,6 +140,11 @@ onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preç
 ---
 
 ## 11.4 Oferta de Curto Prazo da Firma Tomadora de Preços
+
+<figure markdown="span">
+  <iframe src="../graficos/cap11/maximizacao-lucro.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 11.1</strong> — Maximizacao de lucro para firma tomadora de precos. Ajuste o preco \(p\) e os parametros de custo. O grafico mostra a quantidade otima \(q^*\) onde \(p = CMg\), o retangulo de lucro (ou prejuizo) sombreado e a condicao de fechamento (\(p < CVMe_{\min}\)).</figcaption>
+</figure>
 
 ### A decisão de produção no curto prazo
 

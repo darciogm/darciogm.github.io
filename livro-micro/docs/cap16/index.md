@@ -60,6 +60,14 @@ Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
 ---
 
+### Gráfico interativo: Escolha Trabalho-Lazer
+
+O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não-salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
+
+<iframe src="../graficos/cap16/trabalho-lazer.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 16.2 Análise Matemática da Oferta de Trabalho
 
 ### O problema de maximização
@@ -159,6 +167,14 @@ Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso
 
 !!! tip "Evidência empírica"
     A evidência empírica sugere que a oferta de trabalho masculina é relativamente **inelástica** (elasticidade próxima de zero ou levemente negativa), enquanto a oferta feminina tende a ser mais elástica, especialmente para mulheres casadas. Isso é consistente com uma curva backward-bending para homens em faixas salariais observadas.
+
+---
+
+### Gráfico interativo: Curva de Oferta Backward-Bending
+
+O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibilidade de backward-bending. No painel superior, veja a escolha lazer-consumo para o salário selecionado. No painel inferior, a curva de oferta de trabalho \(h^*(w)\). Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
+
+<iframe src="../graficos/cap16/oferta-trabalho.html" width="100%" height="800" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
@@ -275,6 +291,14 @@ A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de
 
 !!! tip "Monopsônio e salário mínimo"
     Uma implicação surpreendente do modelo de monopsônio é que a imposição de um **salário mínimo** pode, sob certas condições, aumentar **simultaneamente** o salário e o emprego. Isso ocorre porque o salário mínimo transforma a curva de custo marginal do trabalho em uma linha horizontal até o ponto em que a oferta de trabalho ao salário mínimo se esgota, eliminando o incentivo do monopsonista a restringir contratações.
+
+---
+
+### Gráfico interativo: Monopsônio no Mercado de Trabalho
+
+O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (MCL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
+
+<iframe src="../graficos/cap16/monopsonio.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
 
 ---
 

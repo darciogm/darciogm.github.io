@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+  Bem Composto (Teorema de Hicks) — Interactive Graph
+  Library: JSXGraph
+  Chapter 6 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem Composto de Hicks</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .jxgbox { width: 480px; height: 400px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { width: 100%; max-width: 480px; }
+      .controls { width: 100%; max-width: 480px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Teorema do Bem Composto de Hicks</div>
+  <div class="graph-container">
+    <div id="jxgbox1" class="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>\(\alpha\) (preco proporcional do composto): <span class="val" id="val-alpha">1.00</span></label>
+        <input type="range" id="slider-alpha" min="0.30" max="3.00" step="0.05" value="1.00">
+      </div>
+      <div class="slider-group">
+        <label>\(p_1\) (preco do bem 1): <span class="val" id="val-p1">2.00</span></label>
+        <input type="range" id="slider-p1" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Renda \(I\): <span class="val" id="val-I">120</span></label>
+        <input type="range" id="slider-I" min="40" max="200" step="5" value="120">
+      </div>
+      <div class="slider-group">
+        <label>\(\beta\) (preferencia por \(x_1\)): <span class="val" id="val-beta">0.40</span></label>
+        <input type="range" id="slider-beta" min="0.10" max="0.90" step="0.05" value="0.40">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    /*
+      Model: 3 goods (x1, x2, x3) where goods 2 and 3 have prices that move proportionally.
+      Base prices: p2_bar = 1, p3_bar = 1.5. Actual: p2 = alpha * p2_bar, p3 = alpha * p3_bar.
+      Composite good: y = p2_bar * x2 + p3_bar * x3, with price = alpha.
+      Budget: p1 * x1 + alpha * y = I
+      Cobb-Douglas preferences over (x1, y): U = x1^beta * y^(1-beta)
+    */
+
+    var board = JXG.JSXGraph.initBoard('jxgbox1', {
+      boundingbox: [-5, 130, 70, -5],
+      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+    });
+
+    board.create('axis', [[0,0],[65,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
+      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
+    });
+    board.create('axis', [[0,0],[0,125]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 },
+      name: 'y (composto)', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 11 }
+    });
+
+    // Budget line: p1*x1 + alpha*y = I  =>  y = (I - p1*x1)/alpha
+    var budgetLine = board.create('segment', [
+      function() { var s = getState(); return [s.I / s.p1, 0]; },
+      function() { var s = getState(); return [0, s.I / s.alpha]; }
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+    // Ghost budget line at alpha=1 for reference
+    var budgetRef = board.create('segment', [
+      function() { var s = getState(); return [s.I / s.p1, 0]; },
+      function() { var s = getState(); return [0, s.I / 1.0]; }
+    ], { strokeColor: '#ccc', strokeWidth: 1, dash: 2 });
+
+    // Optimal point: Cobb-Douglas => x1* = beta*I/p1, y* = (1-beta)*I/alpha
+    var optPt = board.create('point', [
+      function() { var s = getState(); return s.beta * s.I / s.p1; },
+      function() { var s = getState(); return (1 - s.beta) * s.I / s.alpha; }
+    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(x_1^*, y^*)', fixed: true,
+         label: { fontSize: 11, offset: [10, -5] } });
+
+    // Indifference curve through optimal
+    var indiffCurve = board.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var s = getState();
+        var x1s = s.beta * s.I / s.p1;
+        var ys = (1 - s.beta) * s.I / s.alpha;
+        var U = Math.pow(x1s, s.beta) * Math.pow(ys, 1 - s.beta);
+        if (t <= 0.1) return 999;
+        var val = U / Math.pow(t, s.beta);
+        return Math.pow(val, 1 / (1 - s.beta));
+      },
+      0.2, 68
+    ], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
+
+    // Second indifference curve (lower)
+    var indiffCurve2 = board.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var s = getState();
+        var x1s = s.beta * s.I / s.p1;
+        var ys = (1 - s.beta) * s.I / s.alpha;
+        var U = Math.pow(x1s, s.beta) * Math.pow(ys, 1 - s.beta) * 0.65;
+        if (t <= 0.1) return 999;
+        var val = U / Math.pow(t, s.beta);
+        return Math.pow(val, 1 / (1 - s.beta));
+      },
+      0.2, 68
+    ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3, strokeOpacity: 0.4 });
+
+    // Third indifference curve (higher)
+    var indiffCurve3 = board.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var s = getState();
+        var x1s = s.beta * s.I / s.p1;
+        var ys = (1 - s.beta) * s.I / s.alpha;
+        var U = Math.pow(x1s, s.beta) * Math.pow(ys, 1 - s.beta) * 1.4;
+        if (t <= 0.1) return 999;
+        var val = U / Math.pow(t, s.beta);
+        return Math.pow(val, 1 / (1 - s.beta));
+      },
+      0.2, 68
+    ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3, strokeOpacity: 0.4 });
+
+    // Dashed lines to axes
+    board.create('segment', [
+      function() { var s = getState(); return [s.beta * s.I / s.p1, 0]; },
+      function() { var s = getState(); return [s.beta * s.I / s.p1, (1 - s.beta) * s.I / s.alpha]; }
+    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
+    board.create('segment', [
+      function() { var s = getState(); return [0, (1 - s.beta) * s.I / s.alpha]; },
+      function() { var s = getState(); return [s.beta * s.I / s.p1, (1 - s.beta) * s.I / s.alpha]; }
+    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
+
+    // Label for budget slope
+    board.create('text', [3, function() { var s = getState(); return s.I / s.alpha - 5; },
+      function() { return '<span style="font-size:11px;color:#1565c0;">incl. = -p_1/\\(\\alpha\\)</span>'; }
+    ], { fontSize: 10, anchorX: 'left', useMathJax: false });
+
+    function getState() {
+      return {
+        alpha: parseFloat(document.getElementById('slider-alpha').value),
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        I: parseFloat(document.getElementById('slider-I').value),
+        beta: parseFloat(document.getElementById('slider-beta').value)
+      };
+    }
+
+    function update() {
+      var s = getState();
+      document.getElementById('val-alpha').textContent = s.alpha.toFixed(2);
+      document.getElementById('val-p1').textContent = s.p1.toFixed(2);
+      document.getElementById('val-I').textContent = s.I.toFixed(0);
+      document.getElementById('val-beta').textContent = s.beta.toFixed(2);
+
+      var x1s = s.beta * s.I / s.p1;
+      var ys = (1 - s.beta) * s.I / s.alpha;
+
+      var html = '<div style="text-align:center;">\\(U(x_1, y) = x_1^{\\beta} y^{1-\\beta}\\)</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += 'Restricao: \\(p_1 x_1 + \\alpha \\cdot y = I\\)<br>';
+      html += '\\(x_1^* = ' + x1s.toFixed(2) + '\\), \\(y^* = ' + ys.toFixed(2) + '\\)<br>';
+      html += 'Gasto com composto: \\(\\alpha y^* = ' + (s.alpha * ys).toFixed(2) + '\\)<br>';
+      html += 'Gasto com \\(x_1\\): \\(p_1 x_1^* = ' + (s.p1 * x1s).toFixed(2) + '\\)';
+      html += '</div>';
+      html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+      if (s.alpha > 1.05) {
+        html += 'O preco do composto subiu (\\(\\alpha > 1\\)): a restricao gira para dentro no eixo \\(y\\). O consumidor substitui em direcao a \\(x_1\\).';
+      } else if (s.alpha < 0.95) {
+        html += 'O preco do composto caiu (\\(\\alpha < 1\\)): a restricao gira para fora no eixo \\(y\\). O consumidor compra mais do composto.';
+      } else {
+        html += 'Precos-base (\\(\\alpha = 1\\)): situacao de referencia.';
+      }
+      html += ' <span style="color:#ccc;">Linha cinza tracejada = restricao com \\(\\alpha=1\\).</span>';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-alpha').value = 1.0;
+      document.getElementById('slider-p1').value = 2;
+      document.getElementById('slider-I').value = 120;
+      document.getElementById('slider-beta').value = 0.40;
+      update();
+    }
+
+    ['slider-alpha','slider-p1','slider-I','slider-beta'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

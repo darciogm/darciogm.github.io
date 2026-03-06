@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+  Interactive Rothschild-Stiglitz Insurance Model — Chapter 18
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguros — Rothschild-Stiglitz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 480px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 340px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .8rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Modelo de Seguros de Rothschild-Stiglitz</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Prob. sinistro alto risco (\(p_H\)): <span class="val" id="val-pH">0.40</span></label>
+        <input type="range" id="sl-pH" min="0.20" max="0.70" step="0.01" value="0.40">
+      </div>
+      <div class="slider-group">
+        <label>Prob. sinistro baixo risco (\(p_L\)): <span class="val" id="val-pL">0.10</span></label>
+        <input type="range" id="sl-pL" min="0.02" max="0.30" step="0.01" value="0.10">
+      </div>
+      <div class="slider-group">
+        <label>Riqueza (\(W\)): <span class="val" id="val-W">100</span></label>
+        <input type="range" id="sl-W" min="50" max="200" step="5" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Perda (\(d\)): <span class="val" id="val-d">80</span></label>
+        <input type="range" id="sl-d" min="20" max="150" step="5" value="80">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // State-contingent wealth space: (W_good, W_bad)
+    // Endowment: E = (W, W-d)
+    // Full insurance on 45-degree line: W_good = W_bad
+    // Zero-profit line for type i: slope = -(1-p_i)/p_i
+    // Indifference curve for type i through (Wg, Wb):
+    //   (1-p_i)*ln(Wg) + p_i*ln(Wb) = const
+
+    var pH = 0.40, pL = 0.10, W = 100, d = 80;
+    var maxAx = 200;
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-10, maxAx+10, maxAx+10, -10],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[maxAx+5,0]], {
+      ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:10} },
+      name: 'W_bom (sem sinistro)', withLabel: true,
+      label: { position: 'rt', offset: [-80, 15], fontSize: 11 }
+    });
+    board.create('axis', [[0,0],[0,maxAx+5]], {
+      ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:10} },
+      name: 'W_mau (com sinistro)', withLabel: true,
+      label: { position: 'rt', offset: [10, -5], fontSize: 11 }
+    });
+
+    // 45-degree line (full insurance)
+    var line45 = board.create('line', [[0,0],[1,1]], {
+      strokeColor: '#aaa', strokeWidth: 1, dash: 2, fixed: true
+    });
+    board.create('text', [maxAx*0.85, maxAx*0.88, 'Seguro completo'], { fontSize: 9, cssStyle: 'color:#999;' });
+
+    // Endowment point
+    var endow = board.create('point', [
+      function(){ return W; },
+      function(){ return W - d; }
+    ], { name: 'E', size: 5, fillColor: '#333', strokeColor: '#333', fixed: true,
+         label: { offset: [8, -8], fontSize: 12, cssStyle: 'font-weight:700;' } });
+
+    // Zero-profit line for high risk through endowment
+    // Slope: -(1-pH)/pH
+    // W_bad - (W-d) = -(1-pH)/pH * (W_good - W)
+    var zpH = board.create('functiongraph', [
+      function(wg) {
+        return (W - d) - ((1-pH)/pH) * (wg - W);
+      }
+    ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 3 });
+
+    // Zero-profit line for low risk through endowment
+    var zpL = board.create('functiongraph', [
+      function(wg) {
+        return (W - d) - ((1-pL)/pL) * (wg - W);
+      }
+    ], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3 });
+
+    // Contract for high risk: full insurance on zero-profit line
+    // Full insurance: W_good = W_bad = W - p_H*d
+    var cH = board.create('point', [
+      function(){ return W - pH*d; },
+      function(){ return W - pH*d; }
+    ], { name: 'C_H', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [8, 5], fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    // Contract for low risk: partial insurance on zero-profit line
+    // Find beta_L such that type H is indifferent between C_H and C_L
+    // EU_H(C_H) = ln(W - pH*d)
+    // EU_H(C_L) = (1-pH)*ln(W - pL*beta_L) + pH*ln(W - d + beta_L - pL*beta_L)
+    // We solve numerically
+    function findBetaL() {
+      var target = Math.log(W - pH * d); // EU_H at C_H
+      var lo = 0, hi = d, mid;
+      for (var iter = 0; iter < 100; iter++) {
+        mid = (lo + hi) / 2;
+        var wg = W - pL * mid;
+        var wb = W - d + mid - pL * mid;
+        if (wg <= 0 || wb <= 0) { hi = mid; continue; }
+        var euH = (1 - pH) * Math.log(wg) + pH * Math.log(wb);
+        if (euH > target) { hi = mid; } else { lo = mid; }
+      }
+      return mid;
+    }
+
+    var cL = board.create('point', [
+      function(){ var b = findBetaL(); return W - pL * b; },
+      function(){ var b = findBetaL(); return W - d + b - pL * b; }
+    ], { name: 'C_L', size: 5, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true,
+         label: { offset: [8, -8], fontSize: 11, cssStyle: 'color:#1565c0;font-weight:700;' } });
+
+    // Indifference curves through contracts
+    // For type i at contract (wg0, wb0): (1-pi)*ln(Wg) + pi*ln(Wb) = const
+    // => Wb = exp((const - (1-pi)*ln(Wg)) / pi)
+    function icCurve(pi, wg0, wb0) {
+      var c = (1 - pi) * Math.log(wg0) + pi * Math.log(wb0);
+      return function(wg) {
+        if (wg <= 0) return -10;
+        var val = (c - (1 - pi) * Math.log(wg)) / pi;
+        return Math.exp(val);
+      };
+    }
+
+    // IC for high risk through C_H
+    var icHatCH = board.create('functiongraph', [
+      function(wg) {
+        var wg0 = W - pH * d, wb0 = W - pH * d;
+        return icCurve(pH, wg0, wb0)(wg);
+      }
+    ], { strokeColor: '#C8102E', strokeWidth: 2, name: 'IC alto risco', withLabel: true,
+         label: { position: 'lft', offset: [0, -10], fontSize: 10 } });
+
+    // IC for low risk through C_L
+    var icLatCL = board.create('functiongraph', [
+      function(wg) {
+        var b = findBetaL();
+        var wg0 = W - pL * b, wb0 = W - d + b - pL * b;
+        return icCurve(pL, wg0, wb0)(wg);
+      }
+    ], { strokeColor: '#1565c0', strokeWidth: 2, name: 'IC baixo risco', withLabel: true,
+         label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // IC for high risk through C_L (to show it passes through or above C_H)
+    var icHatCL = board.create('functiongraph', [
+      function(wg) {
+        var b = findBetaL();
+        var wg0 = W - pL * b, wb0 = W - d + b - pL * b;
+        return icCurve(pH, wg0, wb0)(wg);
+      }
+    ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 4 });
+
+    // Labels for zero-profit lines
+    board.create('text', [15, function(){ return (W-d) - ((1-pH)/pH)*(15-W); },
+      'ZP_H'], { fontSize: 10, cssStyle: 'color:#C8102E;', anchorX: 'left' });
+    board.create('text', [function(){ return W - 20; }, function(){ return (W-d) - ((1-pL)/pL)*(-20) + 5; },
+      'ZP_L'], { fontSize: 10, cssStyle: 'color:#1565c0;', anchorX: 'left' });
+
+    function updateInfo() {
+      var betaL = findBetaL();
+      var wgH = W - pH * d, wbH = W - pH * d;
+      var wgL = W - pL * betaL, wbL = W - d + betaL - pL * betaL;
+      var euH_H = Math.log(wgH);
+      var euL_L = (1 - pL) * Math.log(wgL) + pL * Math.log(wbL);
+      var premH = pH * d, premL = pL * betaL;
+
+      var html = '<b>Equilibrio Separador:</b><br>';
+      html += '<span style="color:#C8102E;font-weight:700;">Tipo H (alto risco):</span><br>';
+      html += 'Seguro completo: \\(\\beta_H = d = ' + d + '\\)<br>';
+      html += 'Premio: \\(\\alpha_H = p_H d = ' + premH.toFixed(1) + '\\)<br>';
+      html += 'Riqueza: \\(' + wgH.toFixed(1) + '\\) em ambos os estados<br>';
+      html += 'EU = ' + euH_H.toFixed(3) + '<br>';
+      html += '<span style="color:#1565c0;font-weight:700;">Tipo L (baixo risco):</span><br>';
+      html += 'Seguro parcial: \\(\\beta_L = ' + betaL.toFixed(1) + ' < d\\)<br>';
+      html += 'Premio: \\(\\alpha_L = ' + premL.toFixed(1) + '\\)<br>';
+      html += '\\(W_{bom} = ' + wgL.toFixed(1) + '\\), \\(W_{mau} = ' + wbL.toFixed(1) + '\\)<br>';
+      html += 'EU = ' + euL_L.toFixed(3) + '<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<span style="font-size:.78rem;color:#666;">Tipo H recebe seguro completo (sobre linha 45°).<br>Tipo L recebe seguro parcial (distorcao pela assimetria de informacao).</span>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      pH = parseFloat(document.getElementById('sl-pH').value);
+      pL = parseFloat(document.getElementById('sl-pL').value);
+      W = parseFloat(document.getElementById('sl-W').value);
+      d = parseFloat(document.getElementById('sl-d').value);
+      document.getElementById('val-pH').textContent = pH.toFixed(2);
+      document.getElementById('val-pL').textContent = pL.toFixed(2);
+      document.getElementById('val-W').textContent = W.toFixed(0);
+      document.getElementById('val-d').textContent = d.toFixed(0);
+
+      maxAx = Math.max(W + 20, 150);
+      board.setBoundingBox([-10, maxAx+10, maxAx+10, -10]);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-pH').value = 0.40;
+      document.getElementById('sl-pL').value = 0.10;
+      document.getElementById('sl-W').value = 100;
+      document.getElementById('sl-d').value = 80;
+      update();
+    }
+
+    ['sl-pH','sl-pL','sl-W','sl-d'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

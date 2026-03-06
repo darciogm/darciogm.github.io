@@ -91,6 +91,14 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
 ---
 
+### Gráfico interativo: Substitutos e Complementos
+
+O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
+
+<iframe src="../graficos/cap06/substitutos-complementos.html" width="100%" height="780" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 6.4 Substituibilidade com Muitos Bens
 
 Com \(n > 2\) bens, a análise se torna mais rica e complexa. A **matriz de substituição de Slutsky** \(\mathbf{S}\), com elementos:
@@ -178,6 +186,14 @@ Em modelos aplicados, frequentemente trabalhamos com centenas ou milhares de ben
 
 !!! tip "Aplicação prática"
     O Teorema do Bem Composto justifica o uso frequente, em exercícios e modelos aplicados, de um "bem 1" versus "todos os outros bens" (representados pelo gasto restante). Para que a agregação seja válida, é necessário que os preços relativos dentro do grupo permaneçam aproximadamente constantes. Quando um choque afeta apenas um subgrupo (por exemplo, uma seca que encarece frutas mas não cereais), o teorema perde validade para o grupo "alimentos" como um todo.
+
+---
+
+### Gráfico interativo: Bem Composto de Hicks
+
+O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
+
+<iframe src="../graficos/cap06/bem-composto.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
 ---
 

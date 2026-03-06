@@ -139,6 +139,11 @@ DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
 
 ---
 
+<figure>
+  <iframe src="../graficos/cap19/externalidade-negativa.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.1</strong> — Externalidade negativa e imposto pigouviano. A curva vermelha (CMg social) inclui o custo externo. A area sombreada representa a perda de peso morto da sobreproducao. O imposto pigouviano otimo iguala o custo marginal externo no otimo social.</figcaption>
+</figure>
+
 ## 19.4 Soluções para Externalidades Negativas
 
 ### 19.4.1 Imposto Pigouviano
@@ -219,6 +224,11 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 !!! tip "Subsídio Pigouviano"
     De forma simétrica, para externalidades positivas, o instrumento pigouviano é um **subsídio** por unidade igual ao benefício marginal externo: \(s^* = B'^{ext}(q^{soc})\). Isso eleva a quantidade produzida/consumida até o nível socialmente eficiente.
+
+<figure>
+  <iframe src="../graficos/cap19/teorema-coase.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.2</strong> — Teorema de Coase. Alterne entre atribuir o direito de propriedade ao poluidor ou a vitima. Em ambos os casos, a negociacao leva ao mesmo nivel eficiente de poluicao onde BMg = DMg. Apenas a direcao da transferencia muda.</figcaption>
+</figure>
 
 ### 19.4.2 O Teorema de Coase
 
@@ -315,6 +325,11 @@ Para um bem privado, a eficiência requer que todos os consumidores se deparem c
 
 Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para cada \(i\) individualmente (não a soma).
 
+<figure>
+  <iframe src="../graficos/cap19/bem-publico.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.3</strong> — Provisao otima de bem publico. A soma vertical dos beneficios marginais individuais determina o beneficio marginal social. O nivel otimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os precos de Lindahl mostram a contribuicao personalizada de cada consumidor.</figcaption>
+</figure>
+
 ### Subprovisão pelo mercado
 
 O mercado tende a **subprover** bens públicos porque cada indivíduo, ao decidir sua contribuição voluntária, considera apenas **seu** benefício marginal, ignorando o benefício que gera para os demais.
@@ -349,6 +364,11 @@ Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/
 O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar truthfully**, conforme discutiremos na seção sobre o problema do carona.
 
 ---
+
+<figure>
+  <iframe src="../graficos/cap19/tragedia-comuns.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.4</strong> — Tragedia dos comuns. Cada usuario iguala o produto medio ao custo (equilibrio privado), enquanto o otimo social requer igualar o produto marginal ao custo. A area sombreada indica a regiao de sobreuso do recurso comum.</figcaption>
+</figure>
 
 ## 19.8 O Problema do Carona (Free Rider)
 

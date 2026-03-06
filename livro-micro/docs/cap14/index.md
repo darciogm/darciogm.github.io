@@ -46,6 +46,16 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 ---
 
+## Gráfico interativo: Equilíbrio de monopólio
+
+<iframe src="../graficos/cap14/monopolio.html" width="100%" height="550" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 14.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.</em>
+</p>
+
+---
+
 ## 14.2 Maximização de lucro do monopolista
 
 ### O problema do monopolista
@@ -344,6 +354,16 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
 ---
 
+## Gráfico interativo: Discriminação de preços
+
+<iframe src="../graficos/cap14/discriminacao-precos.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 14.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.</em>
+</p>
+
+---
+
 ## 14.8 Tarifas em duas partes
 
 Uma tarifa em duas partes consiste em uma **taxa de entrada** (tarifa fixa \(T\)) e um **preço por unidade** (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\).
@@ -408,6 +428,16 @@ pq - wL - rK \leq (s - r)K
 \]
 
 Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinvestir em capital** para inflar a base de remuneração — o chamado **efeito Averch-Johnson**. A firma substitui trabalho por capital além do socialmente ótimo, resultando em ineficiência produtiva.
+
+---
+
+## Gráfico interativo: Regulação de monopólio natural
+
+<iframe src="../graficos/cap14/regulacao-monopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 14.3 — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.</em>
+</p>
 
 ---
 

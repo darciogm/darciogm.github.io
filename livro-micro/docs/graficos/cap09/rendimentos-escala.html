@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+  Cap. 9 — Rendimentos de Escala (Returns to Scale)
+  Library: JSXGraph
+  Slider: scale factor t (1 to 3)
+  Toggle: CRS / IRS / DRS
+  Shows isoquant at q and at f(tK, tL), visual spacing comparison
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rendimentos de Escala</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: .8rem; }
+    .toggle-group label { display: inline-block; margin-right: .3rem; font-size: .82rem; cursor: pointer; padding: .3rem .5rem; border: 1px solid #ccc; border-radius: 4px; margin-bottom: .3rem; }
+    .toggle-group input[type="radio"] { display: none; }
+    .toggle-group input[type="radio"]:checked + span { background: #C8102E; color: #fff; border-radius: 3px; padding: .15rem .4rem; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 520px; } .controls { width: 100%; max-width: 520px; } }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Rendimentos de Escala</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Tipo de Rendimento</h3>
+      <div class="toggle-group">
+        <label><input type="radio" name="rtype" value="crs" checked><span>CRS (\(\alpha+\beta=1\))</span></label>
+        <label><input type="radio" name="rtype" value="irs"><span>IRS (\(\alpha+\beta>1\))</span></label>
+        <label><input type="radio" name="rtype" value="drs"><span>DRS (\(\alpha+\beta<1\))</span></label>
+      </div>
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Fator de escala \(t\): <span class="val" id="val-t">1.50</span></label>
+        <input type="range" id="sl-t" min="1" max="3" step="0.1" value="1.5">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.5, 15, 15, -0.5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[15,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,15]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('text', [14.3, -0.4, 'L'], { fontSize: 14, anchorX: 'middle' });
+    board.create('text', [-0.4, 14.3, 'K'], { fontSize: 14, anchorX: 'middle' });
+
+    var objs = [];
+
+    function getParams() {
+      var rtype = document.querySelector('input[name="rtype"]:checked').value;
+      var alpha, beta;
+      if (rtype === 'crs') { alpha = 0.5; beta = 0.5; }
+      else if (rtype === 'irs') { alpha = 0.6; beta = 0.6; }
+      else { alpha = 0.3; beta = 0.3; }
+      return { rtype: rtype, alpha: alpha, beta: beta };
+    }
+
+    function isoK_cd(L, q, alpha, beta) {
+      if (L <= 0.01) return NaN;
+      var num = q / Math.pow(L, alpha);
+      if (num <= 0) return NaN;
+      return Math.pow(num, 1.0 / beta);
+    }
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var p = getParams();
+      var t = parseFloat(document.getElementById('sl-t').value);
+      document.getElementById('val-t').textContent = t.toFixed(2);
+
+      var alpha = p.alpha, beta = p.beta;
+      var q0 = 3;
+      // Base point
+      var L0 = 3, K0 = isoK_cd(L0, q0, alpha, beta);
+
+      // Scaled point
+      var Ls = t * L0, Ks = t * K0;
+      var qs = Math.pow(Ls, alpha) * Math.pow(Ks, beta);
+
+      // Reference: what t*q0 would be (CRS benchmark)
+      var qCRS = t * q0;
+
+      // Draw several isoquant levels
+      var levels = [q0, qs];
+      if (Math.abs(qs - qCRS) > 0.1) levels.push(qCRS);
+      levels.sort(function(a,b){return a-b;});
+
+      var colors_iso = ['#1565c0', '#C8102E', '#00897b'];
+      for (var li = 0; li < levels.length; li++) {
+        var q = levels[li];
+        var xs = [], ys = [];
+        for (var L = 0.05; L <= 15; L += 0.05) {
+          var K = isoK_cd(L, q, alpha, beta);
+          if (!isNaN(K) && K >= 0 && K <= 15) { xs.push(L); ys.push(K); }
+        }
+        if (xs.length > 0) {
+          var c = board.create('curve', [xs, ys], { strokeColor: colors_iso[li % 3], strokeWidth: 2 });
+          objs.push(c);
+          var idx = Math.min(xs.length - 1, Math.floor(xs.length * 0.7));
+          var lbl = board.create('text', [xs[idx] + 0.3, ys[idx] + 0.3, 'q=' + q.toFixed(2)],
+            { fontSize: 10, color: colors_iso[li % 3] });
+          objs.push(lbl);
+        }
+      }
+
+      // Ray from origin through (L0, K0)
+      var ray = board.create('line', [[0,0],[L0, K0]], {
+        strokeColor: '#999', dash: 3, strokeWidth: 1, straightFirst: false, straightLast: true
+      });
+      objs.push(ray);
+
+      // Points
+      var pt0 = board.create('point', [L0, K0], { name: '(L,K)', size: 4, color: '#1565c0', fixed: true });
+      objs.push(pt0);
+      var pts = board.create('point', [Ls, Ks], { name: '(tL,tK)', size: 4, color: '#C8102E', fixed: true });
+      objs.push(pts);
+
+      // Info
+      var info = document.getElementById('info');
+      var html = '<div class="eq">\\(q = L^{' + alpha.toFixed(1) + '} K^{' + beta.toFixed(1) + '}\\)</div>';
+      html += '<div>\\(\\alpha + \\beta = ' + (alpha + beta).toFixed(1) + '\\)</div>';
+      html += '<hr style="margin:.4rem 0">';
+      html += '<div>Produto base: \\(q_0 = ' + q0.toFixed(2) + '\\)</div>';
+      html += '<div>Produto escalado: \\(f(tL,tK) = ' + qs.toFixed(2) + '\\)</div>';
+      html += '<div>Referencia CRS: \\(t \\cdot q_0 = ' + qCRS.toFixed(2) + '\\)</div>';
+      html += '<hr style="margin:.4rem 0">';
+
+      if (Math.abs(qs - qCRS) < 0.05) {
+        html += '<div style="color:#00897b;font-weight:700">Rendimentos Constantes (CRS)</div>';
+        html += '<div>\\(f(tK,tL) = t \\cdot f(K,L)\\)</div>';
+      } else if (qs > qCRS) {
+        html += '<div style="color:#C8102E;font-weight:700">Rendimentos Crescentes (IRS)</div>';
+        html += '<div>\\(f(tK,tL) > t \\cdot f(K,L)\\)</div>';
+        html += '<div>Isoquantas mais proximas entre si</div>';
+      } else {
+        html += '<div style="color:#1565c0;font-weight:700">Rendimentos Decrescentes (DRS)</div>';
+        html += '<div>\\(f(tK,tL) < t \\cdot f(K,L)\\)</div>';
+        html += '<div>Isoquantas mais afastadas entre si</div>';
+      }
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-t').value = 1.5;
+      document.querySelector('input[name="rtype"][value="crs"]').checked = true;
+      draw();
+    }
+
+    document.getElementById('sl-t').addEventListener('input', draw);
+    document.querySelectorAll('input[name="rtype"]').forEach(function(r) { r.addEventListener('change', draw); });
+    draw();
+  </script>
+</body>
+</html>

@@ -59,6 +59,14 @@ Se a demanda se desloca, todo o ajuste ocorre via preço. Em mercados de bens pe
 
 ---
 
+### Gráfico interativo: Equilíbrio de Oferta e Demanda
+
+Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio de mercado. Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor (azul) e do produtor (verde).
+
+<iframe src="../../graficos/cap12/oferta-demanda.html" width="100%" height="500" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 12.3 Determinação de Preço no Curto Prazo
 
 ### Equilíbrio parcial marshalliano
@@ -151,6 +159,14 @@ No longo prazo, todos os fatores de produção são variáveis e há livre entra
     3. Oferta iguala demanda: \(X(p^*) = m^* \cdot q^*\)
 
     onde \(m^*\) é o número de firmas de equilíbrio.
+
+---
+
+### Gráfico interativo: Equilíbrio de Longo Prazo
+
+Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero). O painel esquerdo mostra a firma (CMg e CMe) e o direito mostra o mercado (S e D).
+
+<iframe src="../../graficos/cap12/equilibrio-longo-prazo.html" width="100%" height="620" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
@@ -292,6 +308,14 @@ Quando o governo estabelece um preço mínimo \(\underline{p} > p^*\), a quantid
 
 ---
 
+### Gráfico interativo: Controles de Preços
+
+Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do preço controlado para observar a escassez ou excedente criados, a variação nos excedentes do consumidor e do produtor, e a perda de peso morto resultante.
+
+<iframe src="../../graficos/cap12/controles-precos.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 12.11 Incidência Tributária: Quem Realmente Paga o Imposto?
 
 ### Imposto por unidade
@@ -369,6 +393,14 @@ X(p_c) = S(p_p) = S(p_c - t)
 
 !!! note "Irrelevância do lado legal"
     A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
+
+---
+
+### Gráfico interativo: Incidência Tributária
+
+Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária entre comprador e vendedor, a receita do governo e a perda de peso morto. Alterne entre imposto sobre o vendedor e sobre o comprador para verificar a irrelevância do lado legal.
+
+<iframe src="../../graficos/cap12/incidencia-tributaria.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
 ---
 

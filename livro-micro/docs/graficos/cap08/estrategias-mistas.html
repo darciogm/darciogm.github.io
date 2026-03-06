@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph
+  Reason: Mixed strategy equilibrium visualization for 2x2 games showing
+  expected payoff lines and indifference conditions.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilibrio em Estrategias Mistas</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .board-wrap { text-align: center; }
+    .board-wrap h4 { font-size: 0.9rem; color: #333; margin-bottom: 0.3rem; }
+    .jxgbox { width: 400px; height: 320px; border: 1px solid #ddd; border-radius: 6px; display: inline-block; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .payoff-grid { display: grid; grid-template-columns: auto 1fr 1fr; gap: 0.2rem; margin-bottom: 0.8rem; font-size: 0.82rem; }
+    .payoff-grid .hdr { font-weight: 700; text-align: center; background: #eee; padding: 0.2rem; border-radius: 3px; }
+    .payoff-grid input { width: 40px; text-align: center; border: 1px solid #ccc; border-radius: 3px; font-family: inherit; font-size: 0.82rem; padding: 0.15rem; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .preset-group { margin-bottom: 0.8rem; }
+    .preset-group button { padding: 0.25rem 0.5rem; margin: 0.15rem; font-size: 0.75rem; font-family: inherit; border: 1px solid #1565c0; border-radius: 3px; cursor: pointer; background: #fff; color: #1565c0; }
+    .preset-group button:hover { background: #1565c0; color: #fff; }
+    @media (max-width: 1100px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { width: 100%; max-width: 400px; }
+      .controls { width: 100%; max-width: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Equilibrio em Estrategias Mistas (2x2)</div>
+  <div class="graph-container">
+    <div class="board-wrap">
+      <h4>Payoff esperado de J2 em funcao de \(p\) (prob. J1 jogar A)</h4>
+      <div class="jxgbox" id="board1"></div>
+      <h4 style="margin-top:1rem;">Payoff esperado de J1 em funcao de \(q\) (prob. J2 jogar A)</h4>
+      <div class="jxgbox" id="board2"></div>
+    </div>
+    <div class="controls">
+      <h3>Payoffs do jogo</h3>
+      <div class="payoff-grid">
+        <div></div><div class="hdr">J2: A</div><div class="hdr">J2: B</div>
+        <div class="hdr">J1: A</div>
+        <div>(<input id="a00" value="3">,<input id="b00" value="1">)</div>
+        <div>(<input id="a01" value="0">,<input id="b01" value="0">)</div>
+        <div class="hdr">J1: B</div>
+        <div>(<input id="a10" value="0">,<input id="b10" value="0">)</div>
+        <div>(<input id="a11" value="1">,<input id="b11" value="3">)</div>
+      </div>
+      <div class="preset-group">
+        <button onclick="loadP('bos')">Batalha dos Sexos</button>
+        <button onclick="loadP('mp')">Matching Pennies</button>
+        <button onclick="loadP('hd')">Hawk-Dove</button>
+      </div>
+      <button class="btn-reset" style="background:#1565c0;margin-bottom:0.5rem;" onclick="update()">Atualizar</button>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board1 = JXG.JSXGraph.initBoard('board1', {
+      boundingbox: [-0.08, 5, 1.08, -2],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+    var board2 = JXG.JSXGraph.initBoard('board2', {
+      boundingbox: [-0.08, 5, 1.08, -2],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+
+    function addAxes(brd, xName, yName) {
+      brd.create('axis', [[0,0],[1,0]], {
+        ticks: { drawLabels: true, label: { fontSize: 10 }, ticksDistance: 0.25 },
+        name: xName, withLabel: true,
+        label: { position: 'rt', offset: [-15, -18], fontSize: 12 }
+      });
+      brd.create('axis', [[0,0],[0,5]], {
+        ticks: { drawLabels: true, label: { fontSize: 10 } },
+        name: yName, withLabel: true,
+        label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
+      });
+    }
+    addAxes(board1, '\\(p\\)', '\\(E[u_2]\\)');
+    addAxes(board2, '\\(q\\)', '\\(E[u_1]\\)');
+
+    var draw1 = [], draw2 = [];
+
+    // Draggable point on board1
+    var dragP = board1.create('point', [0.5, 0], {
+      name: 'p', size: 5, color: '#C8102E', fillColor: '#C8102E',
+      strokeColor: '#C8102E', label: { fontSize: 12, offset: [5, 10] }
+    });
+    dragP.on('drag', function() {
+      var x = Math.max(0, Math.min(1, dragP.X()));
+      dragP.moveTo([x, 0]);
+      updateInfo();
+    });
+
+    // Draggable point on board2
+    var dragQ = board2.create('point', [0.5, 0], {
+      name: 'q', size: 5, color: '#1565c0', fillColor: '#1565c0',
+      strokeColor: '#1565c0', label: { fontSize: 12, offset: [5, 10] }
+    });
+    dragQ.on('drag', function() {
+      var x = Math.max(0, Math.min(1, dragQ.X()));
+      dragQ.moveTo([x, 0]);
+      updateInfo();
+    });
+
+    function getPayoffs() {
+      return {
+        a00: parseFloat(document.getElementById('a00').value)||0,
+        a01: parseFloat(document.getElementById('a01').value)||0,
+        a10: parseFloat(document.getElementById('a10').value)||0,
+        a11: parseFloat(document.getElementById('a11').value)||0,
+        b00: parseFloat(document.getElementById('b00').value)||0,
+        b01: parseFloat(document.getElementById('b01').value)||0,
+        b10: parseFloat(document.getElementById('b10').value)||0,
+        b11: parseFloat(document.getElementById('b11').value)||0,
+      };
+    }
+
+    function clearBoard(brd, arr) {
+      for (var i = arr.length-1; i >= 0; i--) brd.removeObject(arr[i]);
+      arr.length = 0;
+    }
+
+    function update() {
+      clearBoard(board1, draw1);
+      clearBoard(board2, draw2);
+
+      var g = getPayoffs();
+
+      // Board 1: E[u2] for J2's strategies as function of p
+      // If J2 plays A: E[u2] = p*b00 + (1-p)*b10
+      // If J2 plays B: E[u2] = p*b01 + (1-p)*b11
+      var line2A = board1.create('functiongraph', [function(p) { return p*g.b00 + (1-p)*g.b10; }, 0, 1], {
+        strokeColor: '#1565c0', strokeWidth: 2.5
+      });
+      var line2B = board1.create('functiongraph', [function(p) { return p*g.b01 + (1-p)*g.b11; }, 0, 1], {
+        strokeColor: '#00897b', strokeWidth: 2.5
+      });
+      draw1.push(line2A, line2B);
+
+      // Labels
+      var lbl2A = board1.create('text', [0.02, g.b10 + 0.15, 'J2: A'], { fontSize: 11, color: '#1565c0', fixed: true });
+      var lbl2B = board1.create('text', [0.02, g.b11 + 0.15, 'J2: B'], { fontSize: 11, color: '#00897b', fixed: true });
+      draw1.push(lbl2A, lbl2B);
+
+      // Equilibrium p*: where J2 is indifferent
+      var denomP = g.b00 - g.b10 - g.b01 + g.b11;
+      var pStar = null;
+      if (Math.abs(denomP) > 1e-10) {
+        pStar = (g.b11 - g.b10) / denomP;
+        if (pStar >= 0 && pStar <= 1) {
+          var eu2Star = pStar * g.b00 + (1-pStar) * g.b10;
+          var vline1 = board1.create('segment', [[pStar, -5], [pStar, 8]], {
+            strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2, fixed: true
+          });
+          var pt1 = board1.create('point', [pStar, eu2Star], {
+            size: 5, color: '#C8102E', fixed: true, name: 'p*',
+            label: { fontSize: 12, offset: [8, 5] }
+          });
+          draw1.push(vline1, pt1);
+        }
+      }
+
+      // Board 2: E[u1] for J1's strategies as function of q
+      // If J1 plays A: E[u1] = q*a00 + (1-q)*a01
+      // If J1 plays B: E[u1] = q*a10 + (1-q)*a11
+      var line1A = board2.create('functiongraph', [function(q) { return q*g.a00 + (1-q)*g.a01; }, 0, 1], {
+        strokeColor: '#C8102E', strokeWidth: 2.5
+      });
+      var line1B = board2.create('functiongraph', [function(q) { return q*g.a10 + (1-q)*g.a11; }, 0, 1], {
+        strokeColor: '#00897b', strokeWidth: 2.5
+      });
+      draw2.push(line1A, line1B);
+
+      var lbl1A = board2.create('text', [0.02, g.a01 + 0.15, 'J1: A'], { fontSize: 11, color: '#C8102E', fixed: true });
+      var lbl1B = board2.create('text', [0.02, g.a11 + 0.15, 'J1: B'], { fontSize: 11, color: '#00897b', fixed: true });
+      draw2.push(lbl1A, lbl1B);
+
+      // Equilibrium q*
+      var denomQ = g.a00 - g.a01 - g.a10 + g.a11;
+      var qStar = null;
+      if (Math.abs(denomQ) > 1e-10) {
+        qStar = (g.a11 - g.a10) / denomQ;
+        if (qStar >= 0 && qStar <= 1) {
+          var eu1Star = qStar * g.a00 + (1-qStar) * g.a01;
+          var vline2 = board2.create('segment', [[qStar, -5], [qStar, 8]], {
+            strokeColor: '#1565c0', strokeWidth: 1.5, dash: 2, fixed: true
+          });
+          var pt2 = board2.create('point', [qStar, eu1Star], {
+            size: 5, color: '#1565c0', fixed: true, name: 'q*',
+            label: { fontSize: 12, offset: [8, 5] }
+          });
+          draw2.push(vline2, pt2);
+        }
+      }
+
+      // Adjust bounding boxes
+      var allVals = [g.a00, g.a01, g.a10, g.a11, g.b00, g.b01, g.b10, g.b11];
+      var ymin = Math.min.apply(null, allVals) - 0.5;
+      var ymax = Math.max.apply(null, allVals) + 0.8;
+      board1.setBoundingBox([-0.08, ymax, 1.08, ymin]);
+      board2.setBoundingBox([-0.08, ymax, 1.08, ymin]);
+
+      // Move drag points to equilibrium if found
+      if (pStar !== null && pStar >= 0 && pStar <= 1) dragP.moveTo([pStar, 0]);
+      if (qStar !== null && qStar >= 0 && qStar <= 1) dragQ.moveTo([qStar, 0]);
+
+      board1.update();
+      board2.update();
+      updateInfo();
+    }
+
+    function updateInfo() {
+      var g = getPayoffs();
+      var p = dragP.X(), q = dragQ.X();
+      var eu1 = p*(q*g.a00 + (1-q)*g.a01) + (1-p)*(q*g.a10 + (1-q)*g.a11);
+      var eu2 = q*(p*g.b00 + (1-p)*g.b10) + (1-q)*(p*g.b01 + (1-p)*g.b11);
+
+      var denomP = g.b00 - g.b10 - g.b01 + g.b11;
+      var denomQ = g.a00 - g.a01 - g.a10 + g.a11;
+      var pS = Math.abs(denomP) > 1e-10 ? ((g.b11 - g.b10)/denomP) : null;
+      var qS = Math.abs(denomQ) > 1e-10 ? ((g.a11 - g.a10)/denomQ) : null;
+
+      var html = '';
+      if (pS !== null && pS >= 0 && pS <= 1 && qS !== null && qS >= 0 && qS <= 1) {
+        html += '<strong>EN misto:</strong><br>' +
+          '\\(p^* = ' + pS.toFixed(3) + '\\), \\(q^* = ' + qS.toFixed(3) + '\\)<br>';
+      }
+      html += 'Atual: \\(p = ' + p.toFixed(2) + '\\), \\(q = ' + q.toFixed(2) + '\\)<br>' +
+        '\\(E[u_1] = ' + eu1.toFixed(3) + '\\), \\(E[u_2] = ' + eu2.toFixed(3) + '\\)';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('info')]);
+      }
+    }
+
+    var presetsM = {
+      bos: {a00:3,a01:0,a10:0,a11:1,b00:1,b01:0,b10:0,b11:3},
+      mp:  {a00:1,a01:-1,a10:-1,a11:1,b00:-1,b01:1,b10:1,b11:-1},
+      hd:  {a00:-1,a01:4,a10:0,a11:2,b00:-1,b01:0,b10:4,b11:2}
+    };
+
+    function loadP(key) {
+      var p = presetsM[key];
+      document.getElementById('a00').value = p.a00;
+      document.getElementById('a01').value = p.a01;
+      document.getElementById('a10').value = p.a10;
+      document.getElementById('a11').value = p.a11;
+      document.getElementById('b00').value = p.b00;
+      document.getElementById('b01').value = p.b01;
+      document.getElementById('b10').value = p.b10;
+      document.getElementById('b11').value = p.b11;
+      update();
+    }
+
+    function resetAll() {
+      loadP('bos');
+    }
+
+    update();
+  </script>
+</body>
+</html>

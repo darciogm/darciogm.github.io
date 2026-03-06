@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+  General Equilibrium 2x2 — Chapter 13
+  Library: JSXGraph
+  Features: Edgeworth box with price line, relative price slider,
+            budget line through endowment, excess demand, Walrasian equilibrium
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilíbrio Geral 2x2</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 480px; height: 480px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .8rem; margin-bottom: .1rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .7rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .8rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 480px; height: auto; aspect-ratio: 1; }
+      .controls { width: 100%; max-width: 480px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Equilíbrio Geral Walrasiano</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Preço relativo (\(p_1/p_2\)): <span class="val" id="val-p">1.00</span></label>
+        <input type="range" id="sl-p" min="0.2" max="4" step="0.02" value="1">
+      </div>
+      <div class="slider-group">
+        <label>Dotação A bem 1 (\(\omega_1^A\)): <span class="val" id="val-w1A">8</span></label>
+        <input type="range" id="sl-w1A" min="2" max="10" step="0.5" value="8">
+      </div>
+      <div class="slider-group">
+        <label>Dotação A bem 2 (\(\omega_2^A\)): <span class="val" id="val-w2A">3</span></label>
+        <input type="range" id="sl-w2A" min="2" max="10" step="0.5" value="3">
+      </div>
+      <div class="slider-group">
+        <label>Parâmetro A (\(\alpha\)): <span class="val" id="val-aA">0.50</span></label>
+        <input type="range" id="sl-aA" min="0.2" max="0.8" step="0.05" value="0.5">
+      </div>
+      <div class="slider-group">
+        <label>Parâmetro B (\(\beta\)): <span class="val" id="val-aB">0.50</span></label>
+        <input type="range" id="sl-aB" min="0.2" max="0.8" step="0.05" value="0.5">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var W1 = 12, W2 = 12;
+    var w1A = 8, w2A = 3, alphaA = 0.5, alphaB = 0.5;
+    var priceRatio = 1; // p1/p2
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.8, W2 + 0.8, W1 + 0.8, -0.8],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: true
+    });
+
+    // Box
+    board.create('polygon', [[0,0],[W1,0],[W1,W2],[0,W2]], {
+      fillColor: '#fafafa', fillOpacity: 1, borders: { strokeColor: '#333', strokeWidth: 1.5 },
+      vertices: { visible: false }, hasInnerPoints: false, highlight: false, fixed: true
+    });
+    board.create('text', [-0.5, -0.5, 'A'], { fontSize: 14, cssStyle: 'font-weight:700;color:#1565c0;' });
+    board.create('text', [W1 + 0.3, W2 + 0.5, 'B'], { fontSize: 14, cssStyle: 'font-weight:700;color:#00897b;' });
+
+    // Cobb-Douglas demands:
+    // A: x1A = alpha * mA / p1, x2A = (1-alpha) * mA / p2
+    // mA = p1*w1A + p2*w2A. With p2=1: mA = p*w1A + w2A
+    // x1A = alpha*(p*w1A + w2A)/p, x2A = (1-alpha)*(p*w1A + w2A)
+    function demandA() {
+      var mA = priceRatio * w1A + w2A;
+      return [alphaA * mA / priceRatio, (1 - alphaA) * mA];
+    }
+    function demandB() {
+      var w1B = W1 - w1A, w2B = W2 - w2A;
+      var mB = priceRatio * w1B + w2B;
+      return [alphaB * mB / priceRatio, (1 - alphaB) * mB];
+    }
+    function excessDemand() {
+      var dA = demandA(), dB = demandB();
+      return [dA[0] + dB[0] - W1, dA[1] + dB[1] - W2];
+    }
+
+    // Walrasian eq price: Z1(p) = 0
+    // alpha*(p*w1A+w2A)/p + beta*(p*w1B+w2B)/p - W1 = 0
+    // [alpha*w1A + alpha*w2A/p + beta*w1B + beta*w2B/p] = W1
+    // alpha*w2A/p + beta*w2B/p = W1 - alpha*w1A - beta*w1B
+    // (alpha*w2A + beta*w2B)/p = W1 - alpha*w1A - beta*(W1-w1A)
+    // p* = (alpha*w2A + beta*w2B) / (W1 - alpha*w1A - beta*w1B)
+    // = (alpha*w2A + beta*(W2-w2A)) / ((1-alpha)*w1A + (1-beta)*(W1-w1A))
+    // Wait: let me redo. Z1 = x1A + x1B - W1
+    // = alpha*(p*w1A+w2A)/p + alphaB*(p*(W1-w1A)+(W2-w2A))/p - W1
+    // = alphaA*w1A + alphaA*w2A/p + alphaB*(W1-w1A) + alphaB*(W2-w2A)/p - W1
+    // = [alphaA*w2A + alphaB*(W2-w2A)]/p + alphaA*w1A + alphaB*(W1-w1A) - W1 = 0
+    // => p* = [alphaA*w2A + alphaB*(W2-w2A)] / [W1 - alphaA*w1A - alphaB*(W1-w1A)]
+    function walrasPrice() {
+      var w1B = W1 - w1A, w2B = W2 - w2A;
+      var num = alphaA * w2A + alphaB * w2B;
+      var den = W1 - alphaA * w1A - alphaB * w1B;
+      return den > 0.01 ? num / den : 10;
+    }
+
+    // Endowment
+    var endowPt = board.create('point', [
+      function(){ return w1A; }, function(){ return w2A; }
+    ], { name: 'E', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [8,5], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    // Budget line through endowment: p1*x1 + p2*x2 = p1*w1A + p2*w2A
+    // x2 = mA - p*x1 (with p2=1)
+    var budgetLine = board.create('functiongraph', [
+      function(x1) {
+        var mA = priceRatio * w1A + w2A;
+        return mA - priceRatio * x1;
+      }
+    , -1, W1 + 1], { strokeColor: '#C8102E', strokeWidth: 2, dash: 4 });
+
+    board.create('text', [0.5, function(){
+      var mA = priceRatio * w1A + w2A;
+      return Math.min(mA - 0.5, W2 + 0.3);
+    }, function(){ return 'p₁/p₂ = ' + priceRatio.toFixed(2); }],
+    { fontSize: 10, cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    // Contract curve
+    board.create('functiongraph', [
+      function(x1A) {
+        if (x1A <= 0.01 || x1A >= W1 - 0.01) return -10;
+        var rA = alphaA / (1 - alphaA);
+        var rB = alphaB / (1 - alphaB);
+        var num = rB * W2 * x1A;
+        var den = rA * (W1 - x1A) + rB * x1A;
+        return num / den;
+      }
+    , 0.01, W1 - 0.01], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+    // Optimal demands A (green dot)
+    var optA = board.create('point', [
+      function(){ return demandA()[0]; },
+      function(){ return demandA()[1]; }
+    ], { name: 'A*', size: 4, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true,
+         label: { offset: [8,5], fontSize: 11, cssStyle: 'color:#1565c0;font-weight:700;' } });
+
+    // ICs through optimal demands
+    board.create('functiongraph', [
+      function(x1) {
+        if (x1 <= 0.01) return W2 + 10;
+        var dA = demandA();
+        var u = Math.pow(dA[0], alphaA) * Math.pow(dA[1], 1 - alphaA);
+        return Math.pow(u / Math.pow(x1, alphaA), 1 / (1 - alphaA));
+      }
+    , 0.01, W1], { strokeColor: '#1565c0', strokeWidth: 1.2, dash: 0 });
+
+    board.create('functiongraph', [
+      function(x1A) {
+        var dB = demandB();
+        var u = Math.pow(dB[0], alphaB) * Math.pow(dB[1], 1 - alphaB);
+        var x1B = W1 - x1A;
+        if (x1B <= 0.01) return -10;
+        var x2B = Math.pow(u / Math.pow(x1B, alphaB), 1 / (1 - alphaB));
+        return W2 - x2B;
+      }
+    , 0.01, W1 - 0.01], { strokeColor: '#00897b', strokeWidth: 1.2, dash: 0 });
+
+    // Walrasian equilibrium marker
+    var walrPt = board.create('point', [
+      function(){
+        var wp = walrasPrice();
+        var mA = wp * w1A + w2A;
+        return alphaA * mA / wp;
+      },
+      function(){
+        var wp = walrasPrice();
+        var mA = wp * w1A + w2A;
+        return (1 - alphaA) * mA;
+      }
+    ], { name: 'W*', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         visible: function(){ return Math.abs(priceRatio - walrasPrice()) < 0.08; },
+         label: { offset: [8,-10], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    function updateInfo() {
+      var dA = demandA(), dB = demandB();
+      var ed = excessDemand();
+      var wp = walrasPrice();
+      var isEq = Math.abs(priceRatio - wp) < 0.08;
+
+      var html = '<b>Demanda A:</b> (' + dA[0].toFixed(2) + ', ' + dA[1].toFixed(2) + ')<br>';
+      html += '<b>Demanda B:</b> (' + dB[0].toFixed(2) + ', ' + dB[1].toFixed(2) + ')<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<b>Excesso de demanda:</b><br>';
+      html += '\\(Z_1 = ' + ed[0].toFixed(3) + '\\), \\(Z_2 = ' + ed[1].toFixed(3) + '\\)<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<b>Preço walrasiano:</b> \\(p_1/p_2 = ' + wp.toFixed(3) + '\\)<br>';
+      if (isEq) {
+        html += '<span style="color:#C8102E;font-weight:700;">Equilíbrio walrasiano atingido!</span>';
+      } else if (ed[0] > 0) {
+        html += '<span style="color:#1565c0;">Excesso de demanda por bem 1: p₁ deve subir</span>';
+      } else {
+        html += '<span style="color:#00897b;">Excesso de oferta do bem 1: p₁ deve cair</span>';
+      }
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      priceRatio = parseFloat(document.getElementById('sl-p').value);
+      w1A = parseFloat(document.getElementById('sl-w1A').value);
+      w2A = parseFloat(document.getElementById('sl-w2A').value);
+      alphaA = parseFloat(document.getElementById('sl-aA').value);
+      alphaB = parseFloat(document.getElementById('sl-aB').value);
+      document.getElementById('val-p').textContent = priceRatio.toFixed(2);
+      document.getElementById('val-w1A').textContent = w1A.toFixed(1);
+      document.getElementById('val-w2A').textContent = w2A.toFixed(1);
+      document.getElementById('val-aA').textContent = alphaA.toFixed(2);
+      document.getElementById('val-aB').textContent = alphaB.toFixed(2);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-p').value = 1;
+      document.getElementById('sl-w1A').value = 8;
+      document.getElementById('sl-w2A').value = 3;
+      document.getElementById('sl-aA').value = 0.5;
+      document.getElementById('sl-aB').value = 0.5;
+      update();
+    }
+
+    ['sl-p','sl-w1A','sl-w2A','sl-aA','sl-aB'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

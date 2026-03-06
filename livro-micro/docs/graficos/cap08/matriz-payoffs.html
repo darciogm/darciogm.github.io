@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph + HTML
+  Reason: Normal form game solver with editable payoff matrix, Nash equilibrium
+  detection (pure and mixed), preset classic games.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriz de Payoffs e Equilibrio de Nash</title>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .main-container { max-width: 750px; margin: 0 auto; }
+
+    .size-toggle { text-align: center; margin-bottom: 0.8rem; }
+    .size-toggle button {
+      padding: 0.4rem 1rem; margin: 0 0.3rem; font-family: inherit; font-size: 0.85rem;
+      border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff;
+    }
+    .size-toggle button.active { background: #C8102E; color: #fff; border-color: #C8102E; }
+
+    .preset-group { text-align: center; margin-bottom: 0.8rem; }
+    .preset-group button {
+      padding: 0.3rem 0.6rem; margin: 0.2rem; font-family: inherit; font-size: 0.78rem;
+      border: 1px solid #1565c0; border-radius: 4px; cursor: pointer;
+      background: #fff; color: #1565c0;
+    }
+    .preset-group button:hover { background: #1565c0; color: #fff; }
+
+    table.payoff-matrix {
+      border-collapse: collapse; margin: 0 auto 1rem auto;
+    }
+    table.payoff-matrix th, table.payoff-matrix td {
+      border: 1px solid #ccc; padding: 0.3rem; text-align: center; min-width: 80px;
+    }
+    table.payoff-matrix th { background: #f0f0f0; font-size: 0.85rem; }
+    table.payoff-matrix td { position: relative; }
+    table.payoff-matrix td.ne-cell { background: #fff3cd; }
+    table.payoff-matrix td.dom-cell { background: #e8f5e9; }
+    .payoff-input {
+      width: 32px; text-align: center; border: 1px solid #ddd; border-radius: 3px;
+      font-family: inherit; font-size: 0.85rem; padding: 0.2rem;
+    }
+    .payoff-pair { font-size: 0.85rem; }
+    .p1-val { color: #C8102E; font-weight: 700; }
+    .p2-val { color: #1565c0; font-weight: 700; }
+
+    .info-box {
+      padding: 0.8rem; background: #f8f8f8; border: 1px solid #ddd; border-radius: 4px;
+      font-size: 0.85rem; line-height: 1.8; margin-top: 0.5rem;
+    }
+    .btn-solve {
+      display: block; width: 200px; margin: 0.8rem auto;
+      padding: 0.5rem; background: #C8102E; color: #fff; border: none;
+      border-radius: 4px; cursor: pointer; font-size: 0.9rem; font-family: inherit;
+    }
+    .btn-solve:hover { background: #9a0c23; }
+    .btn-reset {
+      display: block; width: 200px; margin: 0.3rem auto;
+      padding: 0.4rem; background: #666; color: #fff; border: none;
+      border-radius: 4px; cursor: pointer; font-size: 0.82rem; font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Matriz de Payoffs e Equilibrio de Nash</div>
+  <div class="main-container">
+
+    <div class="size-toggle">
+      <button class="active" id="btn-2x2" onclick="setSize(2)">2 x 2</button>
+      <button id="btn-3x3" onclick="setSize(3)">3 x 3</button>
+    </div>
+
+    <div class="preset-group">
+      <button onclick="loadPreset('pd')">Dilema dos Prisioneiros</button>
+      <button onclick="loadPreset('bos')">Batalha dos Sexos</button>
+      <button onclick="loadPreset('hd')">Hawk-Dove</button>
+      <button onclick="loadPreset('mp')">Matching Pennies</button>
+    </div>
+
+    <div id="matrix-container"></div>
+
+    <button class="btn-solve" onclick="solve()">Resolver</button>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+
+    <div class="info-box" id="info">Clique em <strong>Resolver</strong> para encontrar equilibrios.</div>
+  </div>
+
+  <script>
+    var N = 2; // matrix size
+    var payoffs = []; // payoffs[i][j] = {a: p1payoff, b: p2payoff}
+
+    var presets = {
+      pd: {
+        n: 2,
+        names1: ['Cooperar', 'Trair'], names2: ['Cooperar', 'Trair'],
+        data: [[{a:-1,b:-1},{a:-10,b:0}],[{a:0,b:-10},{a:-5,b:-5}]]
+      },
+      bos: {
+        n: 2,
+        names1: ['Futebol', 'Cinema'], names2: ['Futebol', 'Cinema'],
+        data: [[{a:3,b:1},{a:0,b:0}],[{a:0,b:0},{a:1,b:3}]]
+      },
+      hd: {
+        n: 2,
+        names1: ['Hawk', 'Dove'], names2: ['Hawk', 'Dove'],
+        data: [[{a:-1,b:-1},{a:4,b:0}],[{a:0,b:4},{a:2,b:2}]]
+      },
+      mp: {
+        n: 2,
+        names1: ['Cara', 'Coroa'], names2: ['Cara', 'Coroa'],
+        data: [[{a:1,b:-1},{a:-1,b:1}],[{a:-1,b:1},{a:1,b:-1}]]
+      }
+    };
+
+    var stratNames1 = [], stratNames2 = [];
+
+    function setSize(n) {
+      N = n;
+      document.getElementById('btn-2x2').classList.toggle('active', n===2);
+      document.getElementById('btn-3x3').classList.toggle('active', n===3);
+      initMatrix();
+    }
+
+    function initMatrix() {
+      payoffs = [];
+      stratNames1 = []; stratNames2 = [];
+      for (var i = 0; i < N; i++) {
+        payoffs[i] = [];
+        stratNames1[i] = 'E' + (i+1);
+        stratNames2[i] = 'E' + (i+1);
+        for (var j = 0; j < N; j++) {
+          payoffs[i][j] = {a: 0, b: 0};
+        }
+      }
+      renderMatrix();
+    }
+
+    function renderMatrix() {
+      var html = '<table class="payoff-matrix"><tr><th></th>';
+      for (var j = 0; j < N; j++) {
+        html += '<th>J2: ' + stratNames2[j] + '</th>';
+      }
+      html += '</tr>';
+      for (var i = 0; i < N; i++) {
+        html += '<tr><th>J1: ' + stratNames1[i] + '</th>';
+        for (var j = 0; j < N; j++) {
+          html += '<td id="cell-' + i + '-' + j + '">' +
+            '(<input class="payoff-input p1-val" id="a-' + i + '-' + j + '" value="' + payoffs[i][j].a + '">, ' +
+            '<input class="payoff-input p2-val" id="b-' + i + '-' + j + '" value="' + payoffs[i][j].b + '">)' +
+            '</td>';
+        }
+        html += '</tr>';
+      }
+      html += '</table>';
+      document.getElementById('matrix-container').innerHTML = html;
+    }
+
+    function readMatrix() {
+      for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+          payoffs[i][j].a = parseFloat(document.getElementById('a-' + i + '-' + j).value) || 0;
+          payoffs[i][j].b = parseFloat(document.getElementById('b-' + i + '-' + j).value) || 0;
+        }
+      }
+    }
+
+    function loadPreset(key) {
+      var p = presets[key];
+      N = p.n;
+      document.getElementById('btn-2x2').classList.toggle('active', N===2);
+      document.getElementById('btn-3x3').classList.toggle('active', N===3);
+      stratNames1 = p.names1.slice();
+      stratNames2 = p.names2.slice();
+      payoffs = [];
+      for (var i = 0; i < N; i++) {
+        payoffs[i] = [];
+        for (var j = 0; j < N; j++) {
+          payoffs[i][j] = {a: p.data[i][j].a, b: p.data[i][j].b};
+        }
+      }
+      renderMatrix();
+      document.getElementById('info').innerHTML = 'Jogo carregado. Clique em <strong>Resolver</strong>.';
+    }
+
+    function solve() {
+      readMatrix();
+
+      // Clear highlights
+      for (var i = 0; i < N; i++)
+        for (var j = 0; j < N; j++)
+          document.getElementById('cell-' + i + '-' + j).className = '';
+
+      // Find dominant strategies
+      var dom1 = findDominant(1);
+      var dom2 = findDominant(2);
+
+      // Find pure strategy Nash equilibria
+      var pureNE = [];
+      for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+          if (isBR1(i, j) && isBR2(i, j)) {
+            pureNE.push([i, j]);
+            document.getElementById('cell-' + i + '-' + j).className = 'ne-cell';
+          }
+        }
+      }
+
+      var html = '';
+
+      // Dominant strategies
+      if (dom1 !== null) {
+        html += '<strong>Estrategia dominante J1:</strong> ' + stratNames1[dom1] + '<br>';
+      } else {
+        html += 'J1 nao possui estrategia dominante.<br>';
+      }
+      if (dom2 !== null) {
+        html += '<strong>Estrategia dominante J2:</strong> ' + stratNames2[dom2] + '<br>';
+      } else {
+        html += 'J2 nao possui estrategia dominante.<br>';
+      }
+
+      html += '<hr style="margin:0.5rem 0">';
+
+      // Pure NE
+      if (pureNE.length === 0) {
+        html += 'Nenhum EN em estrategias puras.<br>';
+      } else {
+        html += '<strong>EN em estrategias puras:</strong><br>';
+        for (var k = 0; k < pureNE.length; k++) {
+          var ne = pureNE[k];
+          html += '(' + stratNames1[ne[0]] + ', ' + stratNames2[ne[1]] + ') com payoffs (' +
+            payoffs[ne[0]][ne[1]].a + ', ' + payoffs[ne[0]][ne[1]].b + ')<br>';
+        }
+      }
+
+      // Mixed strategy NE for 2x2
+      if (N === 2) {
+        html += '<hr style="margin:0.5rem 0">';
+        html += '<strong>EN em estrategias mistas (2x2):</strong><br>';
+
+        // Player 1 mixes with prob p on row 0
+        // Player 2 indifferent: p*b[0][j] + (1-p)*b[1][j] equal for j=0,1
+        // p*(b00 - b10) + b10 = p*(b01 - b11) + b11
+        // p*(b00-b10-b01+b11) = b11-b10
+        var b00 = payoffs[0][0].b, b01 = payoffs[0][1].b;
+        var b10 = payoffs[1][0].b, b11 = payoffs[1][1].b;
+        var denom_p = b00 - b10 - b01 + b11;
+
+        var a00 = payoffs[0][0].a, a01 = payoffs[0][1].a;
+        var a10 = payoffs[1][0].a, a11 = payoffs[1][1].a;
+        var denom_q = a00 - a01 - a10 + a11;
+
+        if (Math.abs(denom_p) > 1e-10 && Math.abs(denom_q) > 1e-10) {
+          var p = (b11 - b10) / denom_p;
+          var q = (a11 - a10) / denom_q;
+
+          if (p >= 0 && p <= 1 && q >= 0 && q <= 1) {
+            var eu1 = p * (q * a00 + (1-q) * a01) + (1-p) * (q * a10 + (1-q) * a11);
+            var eu2 = q * (p * b00 + (1-p) * b10) + (1-q) * (p * b01 + (1-p) * b11);
+
+            html += '\\(\\sigma_1^* = (' + p.toFixed(3) + ',\\; ' + (1-p).toFixed(3) + ')\\)<br>';
+            html += '\\(\\sigma_2^* = (' + q.toFixed(3) + ',\\; ' + (1-q).toFixed(3) + ')\\)<br>';
+            html += '\\(E[u_1] = ' + eu1.toFixed(3) + '\\), \\(E[u_2] = ' + eu2.toFixed(3) + '\\)';
+          } else {
+            html += 'Nao existe EN completamente misto (probabilidades fora de [0,1]).';
+          }
+        } else {
+          html += 'Jogo possui estrategia dominante; EN misto degenera.';
+        }
+      }
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('info')]);
+      }
+    }
+
+    function isBR1(i, j) {
+      var val = payoffs[i][j].a;
+      for (var ii = 0; ii < N; ii++) {
+        if (payoffs[ii][j].a > val) return false;
+      }
+      return true;
+    }
+
+    function isBR2(i, j) {
+      var val = payoffs[i][j].b;
+      for (var jj = 0; jj < N; jj++) {
+        if (payoffs[i][jj].b > val) return false;
+      }
+      return true;
+    }
+
+    function findDominant(player) {
+      if (player === 1) {
+        for (var i = 0; i < N; i++) {
+          var dominant = true;
+          for (var ii = 0; ii < N; ii++) {
+            if (ii === i) continue;
+            for (var j = 0; j < N; j++) {
+              if (payoffs[i][j].a <= payoffs[ii][j].a) { dominant = false; break; }
+            }
+            if (!dominant) break;
+          }
+          if (dominant) return i;
+        }
+      } else {
+        for (var j = 0; j < N; j++) {
+          var dominant = true;
+          for (var jj = 0; jj < N; jj++) {
+            if (jj === j) continue;
+            for (var i = 0; i < N; i++) {
+              if (payoffs[i][j].b <= payoffs[i][jj].b) { dominant = false; break; }
+            }
+            if (!dominant) break;
+          }
+          if (dominant) return j;
+        }
+      }
+      return null;
+    }
+
+    function resetAll() {
+      N = 2;
+      document.getElementById('btn-2x2').classList.add('active');
+      document.getElementById('btn-3x3').classList.remove('active');
+      initMatrix();
+      document.getElementById('info').innerHTML = 'Clique em <strong>Resolver</strong> para encontrar equilibrios.';
+    }
+
+    initMatrix();
+  </script>
+</body>
+</html>

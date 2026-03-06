@@ -61,6 +61,11 @@ Um resultado central é que a **maximização de lucro implica minimização de 
 
 ## 10.3 Minimização de Custos: Isocusto e Tangência
 
+<figure markdown="span">
+  <iframe src="../graficos/cap10/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 10.1</strong> — Minimizacao de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto otimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinacao otima de insumos e o custo minimo se alteram.</figcaption>
+</figure>
+
 ### O problema de minimização de custos
 
 O problema dual ao da maximização do produto sujeito a um orçamento é a **minimização do custo** de atingir um dado nível de produto:
@@ -183,6 +188,11 @@ A função custo possui as seguintes propriedades:
 
 ## 10.5 Curvas de Custo
 
+<figure markdown="span">
+  <iframe src="../graficos/cap10/curvas-custo.html" width="100%" height="600" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 10.2</strong> — Curvas de custo total, medio e marginal. Ajuste os parametros da funcao cubica de custo e observe as relacoes entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg e arrastavel. Destaque para o ponto de fechamento (min CVMe) e o cruzamento CMg-CMe no minimo do CMe.</figcaption>
+</figure>
+
 ### Custo total, custo médio e custo marginal
 
 !!! definition "Curvas de custo"
@@ -247,6 +257,11 @@ Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um impos
 ---
 
 ## 10.7 Curto Prazo versus Longo Prazo: A Curva Envoltória
+
+<figure markdown="span">
+  <iframe src="../graficos/cap10/curto-longo-prazo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 10.3</strong> — Curva envoltoria: CMe de curto e longo prazo. Cada curva cinza e um SRAC para um nivel fixo de capital; a curva azul (LRAC) e a envoltoria. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangencia.</figcaption>
+</figure>
 
 ### Custos de curto prazo
 

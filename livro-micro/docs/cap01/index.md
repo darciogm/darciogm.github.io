@@ -188,6 +188,26 @@ A microeconomia contemporânea expandiu-se em várias direções, relaxando as s
 
 ---
 
+## Gráficos interativos
+
+### Maximização de lucro da firma competitiva
+
+<iframe src="../graficos/cap01/maximizacao-lucro.html" width="100%" height="920" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<strong>Figura 1.1</strong> — Receita, custo total e lucro de uma firma competitiva com \(CT(q)=10+2q+0{,}5q^2\). Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
+</p>
+
+### Fluxo circular da renda
+
+<iframe src="../graficos/cap01/fluxo-circular.html" width="100%" height="720" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<strong>Figura 1.2</strong> — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores. Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
+</p>
+
+---
+
 ## Demonstração: Condição de maximização de lucro \(P = CMg\)
 
 !!! abstract "Teorema: Condição de Primeira Ordem para Maximização de Lucro"

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+  Cap. 10 — Minimizacao de Custo (Cost Minimization)
+  Library: JSXGraph
+  Isoquant + isocost lines, tangency point
+  Sliders: w, r, q, alpha
+  Shows TMST = w/r, optimal L*, K*, total cost
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimizacao de Custo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 520px; } .controls { width: 100%; max-width: 520px; } }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Minimizacao de Custo: Isoquanta e Isocusto</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Salario \(w\): <span class="val" id="val-w">2.00</span></label>
+        <input type="range" id="sl-w" min="0.5" max="6" step="0.25" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Custo capital \(r\): <span class="val" id="val-r">2.00</span></label>
+        <input type="range" id="sl-r" min="0.5" max="6" step="0.25" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Produto \(q\): <span class="val" id="val-q">4.00</span></label>
+        <input type="range" id="sl-q" min="1" max="8" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
+        <input type="range" id="sl-alpha" min="0.1" max="0.9" step="0.05" value="0.5">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.5, 12, 12, -0.5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[12,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,12]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('text', [11.5, -0.4, 'L'], { fontSize: 14, anchorX: 'middle' });
+    board.create('text', [-0.4, 11.5, 'K'], { fontSize: 14, anchorX: 'middle' });
+
+    var objs = [];
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var w = parseFloat(document.getElementById('sl-w').value);
+      var r = parseFloat(document.getElementById('sl-r').value);
+      var q = parseFloat(document.getElementById('sl-q').value);
+      var al = parseFloat(document.getElementById('sl-alpha').value);
+      var be = 1 - al; // CRS for simplicity
+
+      document.getElementById('val-w').textContent = w.toFixed(2);
+      document.getElementById('val-r').textContent = r.toFixed(2);
+      document.getElementById('val-q').textContent = q.toFixed(2);
+      document.getElementById('val-alpha').textContent = al.toFixed(2);
+
+      // Cobb-Douglas: q = K^alpha * L^beta (CRS: alpha + beta = 1)
+      // Optimal: TMST = w/r => (beta/alpha)*(K/L) = w/r => K/L = (alpha*w)/(beta*r)
+      // From f(K,L)=q: K^alpha * L^beta = q
+      // K = (alpha*w)/(beta*r) * L
+      // Substituting: ((alpha*w)/(beta*r))^alpha * L^(alpha+beta) = q
+      // L* = q / ((alpha*w/(beta*r))^alpha)
+      var ratio = (al * w) / (be * r);
+      var Lstar = q / Math.pow(ratio, al);
+      var Kstar = ratio * Lstar;
+      var Cstar = w * Lstar + r * Kstar;
+
+      // Draw isoquant
+      var xs = [], ys = [];
+      for (var L = 0.05; L <= 12; L += 0.05) {
+        var K = Math.pow(q / Math.pow(L, be), 1.0 / al);
+        if (!isNaN(K) && K > 0 && K < 12) { xs.push(L); ys.push(K); }
+      }
+      if (xs.length > 0) {
+        objs.push(board.create('curve', [xs, ys], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        var idx = Math.min(xs.length-1, Math.floor(xs.length*0.8));
+        objs.push(board.create('text', [xs[idx]+0.2, ys[idx]+0.3, 'q='+q.toFixed(1)], { fontSize: 10, color: '#1565c0' }));
+      }
+
+      // Draw optimal isocost (tangent)
+      // C = wL + rK => K = C/r - (w/r)L
+      var Kint = Cstar / r;
+      var Lint = Cstar / w;
+      if (Kint < 12 && Lint < 12) {
+        objs.push(board.create('line', [[0, Kint], [Lint, 0]], {
+          strokeColor: '#C8102E', strokeWidth: 2, straightFirst: false, straightLast: false
+        }));
+        objs.push(board.create('text', [Lint * 0.5, Kint * 0.5 + 0.5, 'C*=' + Cstar.toFixed(2)],
+          { fontSize: 10, color: '#C8102E' }));
+      }
+
+      // Draw a higher isocost (non-optimal)
+      var Chigh = Cstar * 1.4;
+      var Kh = Chigh / r, Lh = Chigh / w;
+      if (Kh < 14 && Lh < 14) {
+        objs.push(board.create('line', [[0, Math.min(Kh,12)], [Math.min(Lh,12), 0]], {
+          strokeColor: '#ddd', strokeWidth: 1.5, dash: 2, straightFirst: false, straightLast: false
+        }));
+      }
+
+      // Optimal point
+      if (Lstar > 0 && Lstar < 12 && Kstar > 0 && Kstar < 12) {
+        objs.push(board.create('point', [Lstar, Kstar], {
+          name: '', size: 5, color: '#C8102E', fixed: true
+        }));
+        // Dashed lines to axes
+        objs.push(board.create('segment', [[Lstar, 0], [Lstar, Kstar]], { strokeColor: '#999', dash: 3, strokeWidth: 1 }));
+        objs.push(board.create('segment', [[0, Kstar], [Lstar, Kstar]], { strokeColor: '#999', dash: 3, strokeWidth: 1 }));
+        objs.push(board.create('text', [Lstar, -0.35, 'L*'], { fontSize: 11, color: '#C8102E', anchorX: 'middle' }));
+        objs.push(board.create('text', [-0.35, Kstar, 'K*'], { fontSize: 11, color: '#C8102E', anchorX: 'right' }));
+      }
+
+      // Info
+      var tmst = (be / al) * (Kstar / Lstar);
+      var info = document.getElementById('info');
+      var html = '<div class="eq">\\(q = K^{' + al.toFixed(2) + '} L^{' + be.toFixed(2) + '}\\)</div>';
+      html += '<hr style="margin:.4rem 0">';
+      html += '<div>\\(L^* = ' + Lstar.toFixed(2) + '\\)</div>';
+      html += '<div>\\(K^* = ' + Kstar.toFixed(2) + '\\)</div>';
+      html += '<div>\\(C^* = wL^* + rK^* = ' + Cstar.toFixed(2) + '\\)</div>';
+      html += '<hr style="margin:.4rem 0">';
+      html += '<div class="eq">\\(\\mathrm{TMST} = \\frac{w}{r} = ' + (w/r).toFixed(3) + '\\)</div>';
+      html += '<div class="eq">\\(\\frac{\\mathrm{PMg}_L}{\\mathrm{PMg}_K} = ' + tmst.toFixed(3) + '\\)</div>';
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-w').value = 2;
+      document.getElementById('sl-r').value = 2;
+      document.getElementById('sl-q').value = 4;
+      document.getElementById('sl-alpha').value = 0.5;
+      draw();
+    }
+
+    ['sl-w','sl-r','sl-q','sl-alpha'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  </script>
+</body>
+</html>

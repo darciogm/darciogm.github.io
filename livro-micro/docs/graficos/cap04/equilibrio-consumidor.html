@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+  Consumer Equilibrium (Tangency) — Interactive Graph (Chapter 4)
+  Library: JSXGraph
+  Reason: JSXGraph excels at plotting implicit curves (indifference curves)
+  and budget lines simultaneously, with real-time updates from sliders.
+  The tangency point is computed analytically for Cobb-Douglas preferences.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilibrio do Consumidor</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      width: 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    .info-box .eq { text-align: center; margin: 0.3rem 0; color: #333; }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Equilibrio do Consumidor — Tangencia</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Renda \(M\): <span class="val" id="val-M">60</span></label>
+        <input type="range" id="slider-M" min="10" max="100" step="1" value="60">
+      </div>
+      <div class="slider-group">
+        <label>Preco \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>Preco \(p_2\): <span class="val" id="val-p2">3</span></label>
+        <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="3">
+      </div>
+      <div class="slider-group">
+        <label>\(\alpha\) (Cobb-Douglas): <span class="val" id="val-alpha">0.50</span></label>
+        <input type="range" id="slider-alpha" min="0.05" max="0.95" step="0.05" value="0.50">
+      </div>
+
+      <div class="info-box" id="info">
+        <div class="eq" id="eq-utility"></div>
+        <div class="eq" id="eq-optimal"></div>
+        <div class="eq" id="eq-tangency"></div>
+        <div class="eq" id="eq-ustar"></div>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1, 25, 25, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepAspectRatio: false
+    });
+
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '\\(x_1\\)', withLabel: true, label: { position: 'rt', offset: [-15, 15] }
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '\\(x_2\\)', withLabel: true, label: { position: 'rt', offset: [15, -5] }
+    });
+
+    function getP() {
+      return {
+        M: parseFloat(document.getElementById('slider-M').value),
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        p2: parseFloat(document.getElementById('slider-p2').value),
+        a: parseFloat(document.getElementById('slider-alpha').value)
+      };
+    }
+
+    function optimal() {
+      var p = getP();
+      var x1s = p.a * p.M / p.p1;
+      var x2s = (1 - p.a) * p.M / p.p2;
+      var Us = Math.pow(x1s, p.a) * Math.pow(x2s, 1 - p.a);
+      return { x1: x1s, x2: x2s, U: Us };
+    }
+
+    // Budget line
+    var blA = board.create('point', [function() { return getP().M / getP().p1; }, 0], { visible: false });
+    var blB = board.create('point', [0, function() { return getP().M / getP().p2; }], { visible: false });
+    var budgetLine = board.create('segment', [blA, blB], {
+      strokeColor: '#C8102E', strokeWidth: 3
+    });
+
+    // Indifference curves — optimal level and two others
+    function makeIC(uFactor, color, dash) {
+      return board.create('curve', [
+        function(t) { return t; },
+        function(t) {
+          var p = getP();
+          var o = optimal();
+          var Utarget = o.U * uFactor;
+          if (t <= 0.01) return NaN;
+          // U = x1^a * x2^(1-a) => x2 = (U / x1^a)^(1/(1-a))
+          var x2val = Math.pow(Utarget / Math.pow(t, p.a), 1 / (1 - p.a));
+          return (x2val > 0 && x2val < 50) ? x2val : NaN;
+        },
+        0.05, 25
+      ], { strokeColor: color, strokeWidth: 2, dash: dash });
+    }
+
+    makeIC(0.6, '#1565c0', 2);  // lower IC
+    makeIC(1.0, '#1565c0', 0);  // optimal IC
+    makeIC(1.3, '#1565c0', 2);  // higher IC (unattainable)
+
+    // Tangency point
+    var tangPt = board.create('point', [
+      function() { return optimal().x1; },
+      function() { return optimal().x2; }
+    ], {
+      name: '',
+      size: 5,
+      strokeColor: '#00897b',
+      fillColor: '#00897b'
+    });
+
+    // Dashed lines to axes
+    board.create('segment', [
+      tangPt,
+      [function() { return optimal().x1; }, 0]
+    ], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
+    board.create('segment', [
+      tangPt,
+      [0, function() { return optimal().x2; }]
+    ], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
+
+    // Labels on axes for optimal point
+    board.create('text', [
+      function() { return optimal().x1; }, -0.8,
+      function() { return '\\(x_1^*\\)'; }
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', useMathJax: true });
+    board.create('text', [
+      -0.3, function() { return optimal().x2 + 0.3; },
+      function() { return '\\(x_2^*\\)'; }
+    ], { fontSize: 12, color: '#00897b', anchorX: 'right', useMathJax: true });
+
+    // Tangency label
+    board.create('text', [
+      function() { return optimal().x1 + 0.8; },
+      function() { return optimal().x2 + 1.0; },
+      function() {
+        var o = optimal();
+        return '(' + o.x1.toFixed(2) + ', ' + o.x2.toFixed(2) + ')';
+      }
+    ], { fontSize: 13, color: '#00897b', fontWeight: 'bold' });
+
+    function updateInfo() {
+      var p = getP();
+      var o = optimal();
+      document.getElementById('val-M').textContent = p.M.toFixed(0);
+      document.getElementById('val-p1').textContent = p.p1.toFixed(1);
+      document.getElementById('val-p2').textContent = p.p2.toFixed(1);
+      document.getElementById('val-alpha').textContent = p.a.toFixed(2);
+
+      document.getElementById('eq-utility').innerHTML =
+        '\\(U = x_1^{' + p.a.toFixed(2) + '} \\cdot x_2^{' + (1 - p.a).toFixed(2) + '}\\)';
+      document.getElementById('eq-optimal').innerHTML =
+        '\\(x_1^* = \\frac{\\alpha M}{p_1} = ' + o.x1.toFixed(2) +
+        ',\\; x_2^* = \\frac{(1-\\alpha)M}{p_2} = ' + o.x2.toFixed(2) + '\\)';
+      document.getElementById('eq-tangency').innerHTML =
+        'Tangencia: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1 / p.p2).toFixed(3) + '\\)';
+      document.getElementById('eq-ustar').innerHTML =
+        '\\(U^* = ' + o.U.toFixed(3) + '\\)';
+
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-M').value = 60;
+      document.getElementById('slider-p1').value = 4;
+      document.getElementById('slider-p2').value = 3;
+      document.getElementById('slider-alpha').value = 0.50;
+      updateInfo();
+    }
+
+    ['slider-M', 'slider-p1', 'slider-p2', 'slider-alpha'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', updateInfo);
+    });
+
+    updateInfo();
+  </script>
+</body>
+</html>

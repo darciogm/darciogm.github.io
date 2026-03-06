@@ -113,6 +113,14 @@ Para um poupador, o efeito líquido sobre \(C_1\) é ambíguo (semelhante à cur
 
 ---
 
+### Gráfico interativo: Modelo de Fisher
+
+O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A reta orçamentária intertemporal tem inclinação \(-(1+r)\) e passa pelo ponto de dotação \((Y_1, Y_2)\). O consumidor escolhe o ponto de tangência com a curva de indiferença. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta e a classificação do agente como poupador ou devedor.
+
+<iframe src="../graficos/cap17/consumo-intertemporal.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+
+---
+
 ## 17.4 Precificação de Ativos Arriscados
 
 ### O CAPM básico
@@ -216,6 +224,14 @@ A TIR apresenta problemas conhecidos:
 3. **Escala**: a TIR não leva em conta o tamanho do investimento.
 
 Por essas razões, o VPL é considerado o critério superior para avaliação de investimentos.
+
+---
+
+### Gráfico interativo: VPL e TIR
+
+O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desconto. Edite os fluxos de caixa \(F_0\) a \(F_5\) e ajuste a taxa de desconto \(r\) com o slider. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR). Projetos com VPL positivo (acima da linha zero) devem ser aceitos.
+
+<iframe src="../graficos/cap17/vpl-tir.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
 
 ---
 

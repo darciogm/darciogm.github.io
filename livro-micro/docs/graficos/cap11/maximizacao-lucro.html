@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--
+  Cap. 11 — Maximizacao de Lucro para Firma Tomadora de Precos
+  Library: JSXGraph
+  Sliders: price p, cost parameters
+  Shows CMg, CMe, CVMe, optimal q where p=CMg
+  Shaded profit/loss rectangle, shutdown condition
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximizacao de Lucro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.5; }
+    .legend { margin-top: .5rem; font-size: .78rem; line-height: 1.8; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 880px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 540px; } .controls { width: 100%; max-width: 540px; } }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Maximizacao de Lucro: Firma Tomadora de Precos</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Preco \(p\): <span class="val" id="val-p">18.00</span></label>
+        <input type="range" id="sl-p" min="2" max="40" step="0.5" value="18">
+      </div>
+      <div class="slider-group">
+        <label>CF \(a\): <span class="val" id="val-a">50</span></label>
+        <input type="range" id="sl-a" min="10" max="100" step="5" value="50">
+      </div>
+      <div class="slider-group">
+        <label>\(b\): <span class="val" id="val-b">20</span></label>
+        <input type="range" id="sl-b" min="5" max="30" step="1" value="20">
+      </div>
+      <div class="slider-group">
+        <label>\(c\): <span class="val" id="val-c">3.00</span></label>
+        <input type="range" id="sl-c" min="0.5" max="5" step="0.25" value="3">
+      </div>
+      <div class="slider-group">
+        <label>\(d\): <span class="val" id="val-d">0.20</span></label>
+        <input type="range" id="sl-d" min="0.05" max="0.5" step="0.01" value="0.2">
+      </div>
+      <div class="legend">
+        <span style="background:#C8102E"></span>CMg &nbsp;
+        <span style="background:#1565c0"></span>CMe &nbsp;
+        <span style="background:#00897b"></span>CVMe &nbsp;
+        <span style="background:#e65100;height:1px;border-top:2px dashed #e65100"></span>p
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1, 50, 22, -5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,50]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('text', [21, -2, 'q'], { fontSize: 12 });
+    board.create('text', [-0.7, 48, '$'], { fontSize: 12 });
+
+    var objs = [];
+
+    function CT(q, p) { return p.a + p.b*q - p.c*q*q + p.d*q*q*q; }
+    function CV(q, p) { return p.b*q - p.c*q*q + p.d*q*q*q; }
+    function CMg(q, p) { return p.b - 2*p.c*q + 3*p.d*q*q; }
+    function CMe(q, p) { return q > 0.1 ? CT(q, p) / q : NaN; }
+    function CVMe(q, p) { return q > 0.1 ? CV(q, p) / q : NaN; }
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var pr = parseFloat(document.getElementById('sl-p').value);
+      var pp = {
+        a: parseFloat(document.getElementById('sl-a').value),
+        b: parseFloat(document.getElementById('sl-b').value),
+        c: parseFloat(document.getElementById('sl-c').value),
+        d: parseFloat(document.getElementById('sl-d').value)
+      };
+
+      document.getElementById('val-p').textContent = pr.toFixed(2);
+      document.getElementById('val-a').textContent = pp.a.toFixed(0);
+      document.getElementById('val-b').textContent = pp.b.toFixed(0);
+      document.getElementById('val-c').textContent = pp.c.toFixed(2);
+      document.getElementById('val-d').textContent = pp.d.toFixed(2);
+
+      var qmax = 20, ymax = 48;
+
+      // CMg
+      var xs = [], ys = [];
+      for (var q = 0.1; q <= qmax; q += 0.1) {
+        var v = CMg(q, pp);
+        if (v >= -3 && v <= ymax) { xs.push(q); ys.push(v); }
+      }
+      objs.push(board.create('curve', [xs, ys], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
+
+      // CMe
+      xs = []; ys = [];
+      for (var q = 0.3; q <= qmax; q += 0.1) {
+        var v = CMe(q, pp);
+        if (!isNaN(v) && v > 0 && v < ymax) { xs.push(q); ys.push(v); }
+      }
+      objs.push(board.create('curve', [xs, ys], { strokeColor: '#1565c0', strokeWidth: 2 }));
+
+      // CVMe
+      xs = []; ys = [];
+      for (var q = 0.3; q <= qmax; q += 0.1) {
+        var v = CVMe(q, pp);
+        if (!isNaN(v) && v > 0 && v < ymax) { xs.push(q); ys.push(v); }
+      }
+      objs.push(board.create('curve', [xs, ys], { strokeColor: '#00897b', strokeWidth: 2 }));
+
+      // Labels
+      objs.push(board.create('text', [18, CMg(18, pp)+1.5, 'CMg'], { fontSize: 10, color: '#C8102E' }));
+      objs.push(board.create('text', [18, CMe(18, pp)+1.5, 'CMe'], { fontSize: 10, color: '#1565c0' }));
+      objs.push(board.create('text', [18, CVMe(18, pp)-2, 'CVMe'], { fontSize: 10, color: '#00897b' }));
+
+      // Price line
+      objs.push(board.create('line', [[0, pr], [qmax, pr]], {
+        strokeColor: '#e65100', dash: 2, strokeWidth: 2, straightFirst: false, straightLast: false
+      }));
+      objs.push(board.create('text', [qmax - 1.5, pr + 1.5, 'p=' + pr.toFixed(1)], { fontSize: 10, color: '#e65100' }));
+
+      // Shutdown point
+      var qSD = pp.c / (2 * pp.d);
+      var cvmeMin = CVMe(qSD, pp);
+
+      // Min CMe (Newton's method)
+      var qMinCMe = qSD + 1;
+      for (var iter = 0; iter < 50; iter++) {
+        var f = 2*pp.d*qMinCMe*qMinCMe*qMinCMe - pp.c*qMinCMe*qMinCMe - pp.a;
+        var fp = 6*pp.d*qMinCMe*qMinCMe - 2*pp.c*qMinCMe;
+        if (Math.abs(fp) < 1e-10) break;
+        qMinCMe = qMinCMe - f / fp;
+        if (qMinCMe < 0.5) qMinCMe = 0.5;
+      }
+      var cmeMinVal = CMe(qMinCMe, pp);
+
+      // Find q* where p = CMg (on rising part)
+      // CMg = b - 2cq + 3dq^2 = p => 3dq^2 - 2cq + (b-p) = 0
+      var A3 = 3 * pp.d, B3 = -2 * pp.c, C3 = pp.b - pr;
+      var disc = B3 * B3 - 4 * A3 * C3;
+      var qStar = NaN;
+      if (disc >= 0) {
+        var q1 = (-B3 + Math.sqrt(disc)) / (2 * A3);
+        var q2 = (-B3 - Math.sqrt(disc)) / (2 * A3);
+        // Pick the one on rising part (q > c/(3d))
+        var qInflect = pp.c / (3 * pp.d);
+        if (q1 >= qInflect && q1 > 0) qStar = q1;
+        else if (q2 >= qInflect && q2 > 0) qStar = q2;
+        else if (q1 > 0) qStar = q1;
+      }
+
+      var shutdown = (pr < cvmeMin);
+      var profit = 0;
+      var status = '';
+
+      if (shutdown) {
+        status = 'FECHAR';
+        profit = -pp.a;
+        objs.push(board.create('text', [qmax/2, ymax*0.8, 'FIRMA FECHA: p < CVMe min'],
+          { fontSize: 13, color: '#C8102E', anchorX: 'middle' }));
+      } else if (!isNaN(qStar) && qStar > 0 && qStar < qmax) {
+        var cmeAt = CMe(qStar, pp);
+        profit = (pr - cmeAt) * qStar;
+
+        // Optimal point
+        objs.push(board.create('point', [qStar, pr], { name: '', size: 5, color: '#C8102E', fixed: true }));
+        objs.push(board.create('segment', [[qStar, 0], [qStar, pr]], { strokeColor: '#999', dash: 3, strokeWidth: 1 }));
+        objs.push(board.create('text', [qStar, -1.5, 'q*'], { fontSize: 11, color: '#C8102E', anchorX: 'middle' }));
+
+        // Profit/loss rectangle
+        var rectColor = profit >= 0 ? 'rgba(0,137,123,0.15)' : 'rgba(200,16,46,0.15)';
+        var rectBorder = profit >= 0 ? '#00897b' : '#C8102E';
+        var yTop = Math.max(pr, cmeAt);
+        var yBot = Math.min(pr, cmeAt);
+        var poly = board.create('polygon', [[0, yBot],[qStar, yBot],[qStar, yTop],[0, yTop]], {
+          fillColor: rectColor, fillOpacity: 1, borders: { strokeColor: rectBorder, strokeWidth: 1 },
+          vertices: { visible: false }
+        });
+        objs.push(poly);
+
+        // CMe at q*
+        objs.push(board.create('segment', [[0, cmeAt], [qStar, cmeAt]], { strokeColor: '#1565c0', dash: 3, strokeWidth: 1 }));
+
+        status = profit >= 0 ? 'LUCRO' : 'PREJUIZO (opera)';
+      }
+
+      // Mark shutdown point
+      if (qSD > 0 && qSD < qmax && cvmeMin > 0 && cvmeMin < ymax) {
+        objs.push(board.create('point', [qSD, cvmeMin], { name: '', size: 3, color: '#00897b', fixed: true }));
+        objs.push(board.create('text', [qSD + 0.3, cvmeMin - 2, 'Fecham.'], { fontSize: 8, color: '#00897b' }));
+      }
+
+      // Info
+      var info = document.getElementById('info');
+      var html = '<div class="eq">\\(CT = ' + pp.a + ' + ' + pp.b + 'q - ' + pp.c.toFixed(2) + 'q^2 + ' + pp.d.toFixed(2) + 'q^3\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+
+      if (shutdown) {
+        html += '<div style="color:#C8102E;font-weight:700">Decisao: FECHAR</div>';
+        html += '<div>\\(p = ' + pr.toFixed(2) + ' < \\mathrm{CVMe}_{\\min} = ' + cvmeMin.toFixed(2) + '\\)</div>';
+        html += '<div>\\(\\pi = -CF = -' + pp.a + '\\)</div>';
+      } else if (!isNaN(qStar)) {
+        html += '<div style="font-weight:700;color:' + (profit >= 0 ? '#00897b' : '#C8102E') + '">' + status + '</div>';
+        html += '<div>\\(q^* = ' + qStar.toFixed(2) + '\\) (onde \\(p = CMg\\))</div>';
+        html += '<div>\\(CMe(q^*) = ' + CMe(qStar, pp).toFixed(2) + '\\)</div>';
+        html += '<div class="eq">\\(\\pi = (p - CMe) \\times q = ' + profit.toFixed(2) + '\\)</div>';
+      }
+
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div style="font-size:.75rem;color:#666">Ponto de fechamento: \\(p = ' + cvmeMin.toFixed(2) + '\\)<br>Break-even: \\(p = ' + cmeMinVal.toFixed(2) + '\\)</div>';
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-p').value = 18;
+      document.getElementById('sl-a').value = 50;
+      document.getElementById('sl-b').value = 20;
+      document.getElementById('sl-c').value = 3;
+      document.getElementById('sl-d').value = 0.2;
+      draw();
+    }
+
+    ['sl-p','sl-a','sl-b','sl-c','sl-d'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  </script>
+</body>
+</html>

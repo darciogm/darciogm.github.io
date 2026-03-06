@@ -76,6 +76,16 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 
 ---
 
+## Gráfico interativo: Competição de Bertrand
+
+<iframe src="../graficos/cap15/bertrand.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 15.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.</em>
+</p>
+
+---
+
 ## 15.3 Modelo de Cournot: concorrência em quantidades
 
 ### O modelo duopolístico
@@ -123,6 +133,16 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 \pi_1^* = \pi_2^* = \frac{(a-c)^2}{9b}
 \]
 
+## Gráfico interativo: Duopólio de Cournot
+
+<iframe src="../graficos/cap15/cournot.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 15.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.</em>
+</p>
+
+---
+
 ### O modelo de Stackelberg
 
 No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) **primeiro**, e a firma 2 (seguidora) observa \(q_1\) e depois escolhe \(q_2\). O jogo é resolvido por **indução retroativa**.
@@ -146,6 +166,16 @@ Q^{St} = \frac{3(a-c)}{4b}, \quad p^{St} = \frac{a+3c}{4}
 \]
 
 O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e lucra menos. A **vantagem do primeiro movimento** (first-mover advantage) decorre do compromisso crível com uma quantidade elevada.
+
+---
+
+## Gráfico interativo: Liderança de Stackelberg
+
+<iframe src="../graficos/cap15/stackelberg.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 15.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).</em>
+</p>
 
 ---
 
@@ -479,6 +509,16 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     **Fintechs e contestabilidade**
 
     A partir de 2018, o Banco Central adotou medidas para aumentar a competição bancária, incluindo a agenda BC# (posteriormente Agenda BC+), o open banking (Sistema Financeiro Aberto) e a regulamentação de fintechs. O crescimento de instituições digitais como Nubank, Inter e C6 Bank introduziu elementos de contestabilidade que pressionam as margens dos incumbentes, embora a participação dessas instituições nos estoques de crédito ainda seja modesta.
+
+---
+
+## Gráfico interativo: Comparação de estruturas de mercado
+
+<iframe src="../graficos/cap15/comparacao-oligopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 15.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.</em>
+</p>
 
 ---
 

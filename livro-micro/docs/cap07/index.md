@@ -97,6 +97,11 @@ Intuitivamente, o agente avesso ao risco prefere receber o valor esperado de uma
 
 Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando dois pontos na curva de utilidade fica **abaixo** da própria curva — ou seja, a utilidade esperada da loteria (ponto na corda) é inferior à utilidade do valor esperado (ponto na curva).
 
+<figure markdown="span">
+  <iframe src="../graficos/cap07/aversao-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 7.1</strong> — Aversao ao risco e funcao de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A area sombreada indica o premio de risco.</figcaption>
+</figure>
+
 ---
 
 ## 7.4 Medidas de Aversão ao Risco (Arrow-Pratt)
@@ -206,6 +211,11 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 
     **Interpretação**: O prêmio de risco é (aproximadamente) proporcional a dois fatores: (i) a medida de aversão absoluta ao risco \(A(W)\), que captura a curvatura da função de utilidade; e (ii) a variância \(\sigma^2\) do risco, que captura a magnitude da incerteza. Para riscos multiplicativos (proporcionais à riqueza), uma derivação análoga mostra que \(\pi/W \approx \frac{1}{2}R(W)\sigma_r^2\), onde \(\sigma_r^2\) é a variância do retorno relativo.
 
+<figure markdown="span">
+  <iframe src="../graficos/cap07/premio-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 7.2</strong> — Premio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variancia \(\sigma^2\) e a curvatura da funcao de utilidade. Alterne entre CARA, CRRA e quadratica para comparar o premio de risco exato com a aproximacao \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
+</figure>
+
 ---
 
 ## 7.6 Métodos para Reduzir o Risco
@@ -219,6 +229,11 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 
 !!! abstract "Teorema: Seguro total sob prêmio atuarialmente justo"
     Se o prêmio do seguro é atuarialmente justo e o agente é estritamente avesso ao risco, então o contrato ótimo é de **cobertura total** (\(q^* = d\)), onde \(q\) é a indenização contratada.
+
+<figure markdown="span">
+  <iframe src="../graficos/cap07/seguro.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+  <figcaption><strong>Figura 7.3</strong> — Mercado de seguros no espaco estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura otima se move em direcao a linha de 45 graus (seguro total) quando o premio e atuarialmente justo (\(\lambda = 0\)).</figcaption>
+</figure>
 
 ### 7.6.2 Diversificação
 

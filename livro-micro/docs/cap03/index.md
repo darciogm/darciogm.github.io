@@ -70,6 +70,9 @@ A demonstração completa pode ser encontrada em Mas-Colell, Whinston e Green (1
 
 O **mapa de indiferença** é a família de todas as curvas de indiferença. Ele oferece uma representação visual completa das preferências do consumidor no espaço bidimensional.
 
+<iframe src="../graficos/cap03/curvas-indiferenca.html" width="100%" height="520" style="border:none; border-radius:8px;"></iframe>
+*Arraste o ponto sobre a curva para ver a TMS. Use os sliders para alterar os parâmetros e o menu para trocar o tipo de preferência.*
+
 !!! tip "Convexidade estrita"
     Se as preferências forem **estritamente convexas** — isto é, se \(\mathbf{x} \sim \mathbf{y}\) e \(\mathbf{x} \neq \mathbf{y}\) implicarem \(t\mathbf{x} + (1-t)\mathbf{y} \succ \mathbf{x}\) para todo \(t \in (0,1)\) — então as curvas de indiferença são estritamente convexas em relação à origem. Isso reflete a ideia de que consumidores preferem variedade.
 
@@ -131,6 +134,9 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
     \[
     \text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{\text{UMg}_1}{\text{UMg}_2}. \qquad \blacksquare
     \]
+
+<iframe src="../graficos/cap03/tms-ponto.html" width="100%" height="520" style="border:none; border-radius:8px;"></iframe>
+*Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da TMS = UMg₁/UMg₂ atualizado em tempo real. Ajuste α e β nos sliders.*
 
 ---
 
@@ -219,6 +225,12 @@ As curvas de indiferença são **translações verticais** umas das outras: poss
 | Complementos perfeitos | \(\min\{ax_1, bx_2\}\) | Indefinida no vértice | Ângulo reto (L) | \(0\) |
 | CES | \((x_1^{\rho}+x_2^{\rho})^{1/\rho}\) | \(\left(\frac{x_1}{x_2}\right)^{\rho-1}\) | Convexa (curvatura varia com \(\rho\)) | \(\dfrac{1}{1-\rho}\) |
 | Quase-linear | \(v(x_1) + x_2\) | \(v'(x_1)\) | Translações verticais | Variável |
+
+<iframe src="../graficos/cap03/tipos-preferencias.html" width="100%" height="750" style="border:none; border-radius:8px;"></iframe>
+*Comparação visual dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).*
+
+<iframe src="../graficos/cap03/funcoes-utilidade.html" width="100%" height="560" style="border:none; border-radius:8px;"></iframe>
+*Superfície 3D da função de utilidade. Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, CES e quase-linear, e ajuste os parâmetros nos sliders.*
 
 ---
 

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--
+  Interactive Principal-Agent / Moral Hazard — Chapter 18
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principal-Agente — Risco Moral</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 340px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .high-effort { color: #1565c0; font-weight: 700; }
+    .low-effort { color: #C8102E; font-weight: 700; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Modelo Principal-Agente: Risco Moral</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Prob. sucesso (esforco alto) \(p_H\): <span class="val" id="val-pH">0.80</span></label>
+        <input type="range" id="sl-pH" min="0.50" max="0.95" step="0.01" value="0.80">
+      </div>
+      <div class="slider-group">
+        <label>Prob. sucesso (esforco baixo) \(p_L\): <span class="val" id="val-pL">0.30</span></label>
+        <input type="range" id="sl-pL" min="0.05" max="0.49" step="0.01" value="0.30">
+      </div>
+      <div class="slider-group">
+        <label>Custo esforco alto \(c_H\): <span class="val" id="val-cH">2.0</span></label>
+        <input type="range" id="sl-cH" min="0.5" max="5" step="0.1" value="2.0">
+      </div>
+      <div class="slider-group">
+        <label>Custo esforco baixo \(c_L\): <span class="val" id="val-cL">0.5</span></label>
+        <input type="range" id="sl-cL" min="0" max="2" step="0.1" value="0.5">
+      </div>
+      <div class="slider-group">
+        <label>Utilidade de reserva \(\bar{U}\): <span class="val" id="val-Ubar">3.0</span></label>
+        <input type="range" id="sl-Ubar" min="1" max="6" step="0.1" value="3.0">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Model: U = sqrt(w) - c(e)
+    // Two outcomes: x_H (good) with prob p, x_L (bad) with prob (1-p)
+    // Payments: w_H (if good), w_L (if bad)
+    // PC: p_H*sqrt(w_H) + (1-p_H)*sqrt(w_L) - c_H >= Ubar
+    // IC: (p_H - p_L)*(sqrt(w_H) - sqrt(w_L)) >= c_H - c_L
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-5, 110, 110, -5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[105,0]], {
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10} },
+      name: 'w_L (salario ruim)', withLabel: true,
+      label: { position: 'rt', offset: [-60, 15], fontSize: 11 }
+    });
+    board.create('axis', [[0,0],[0,105]], {
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10} },
+      name: 'w_H (salario bom)', withLabel: true,
+      label: { position: 'rt', offset: [10, -5], fontSize: 11 }
+    });
+
+    var pH=0.80, pL=0.30, cH=2.0, cL=0.5, Ubar=3.0;
+
+    // Solve for optimal contract:
+    // IC binding: (pH-pL)*(sqrt(wH)-sqrt(wL)) = cH - cL
+    // PC binding: pH*sqrt(wH) + (1-pH)*sqrt(wL) - cH = Ubar
+    // Let a = sqrt(wL), b = sqrt(wH)
+    // From IC: b - a = (cH - cL)/(pH - pL) = deltaC/deltaP
+    // From PC: pH*b + (1-pH)*a = Ubar + cH
+    // => pH*(a + deltaC/deltaP) + (1-pH)*a = Ubar + cH
+    // => a + pH*deltaC/deltaP = Ubar + cH
+    // => a = Ubar + cH - pH*deltaC/deltaP
+
+    function solve() {
+      var dc = cH - cL;
+      var dp = pH - pL;
+      if (dp <= 0) return null;
+      var ratio = dc / dp;
+      var a = Ubar + cH - pH * ratio; // sqrt(wL)
+      var b = a + ratio; // sqrt(wH)
+      if (a < 0 || b < 0) return null;
+      var wL = a * a;
+      var wH = b * b;
+      return { wL: wL, wH: wH, sqrtWL: a, sqrtWH: b };
+    }
+
+    // IC curve: (pH-pL)*(sqrt(wH)-sqrt(wL)) = cH-cL
+    // => sqrt(wH) = sqrt(wL) + (cH-cL)/(pH-pL)
+    // => wH = (sqrt(wL) + (cH-cL)/(pH-pL))^2
+    var icCurve = board.create('functiongraph', [
+      function(wl) {
+        var dp = pH - pL;
+        if (dp <= 0) return -10;
+        var ratio = (cH - cL) / dp;
+        var sq = Math.sqrt(Math.max(wl, 0)) + ratio;
+        return sq * sq;
+      }
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'RCI', withLabel: true,
+         label: { position: 'rt', offset: [5, 0], fontSize: 11 } });
+
+    // PC curve: pH*sqrt(wH) + (1-pH)*sqrt(wL) = Ubar + cH
+    // => sqrt(wH) = (Ubar + cH - (1-pH)*sqrt(wL)) / pH
+    // => wH = ((Ubar + cH - (1-pH)*sqrt(wL)) / pH)^2
+    var pcCurve = board.create('functiongraph', [
+      function(wl) {
+        var rhs = Ubar + cH;
+        var sq = (rhs - (1-pH)*Math.sqrt(Math.max(wl, 0))) / pH;
+        if (sq < 0) return -10;
+        return sq * sq;
+      }
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'RP', withLabel: true,
+         label: { position: 'rt', offset: [5, 0], fontSize: 11 } });
+
+    // 45-degree line (equal pay => no incentive)
+    var line45 = board.create('functiongraph', [
+      function(x) { return x; }
+    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 2 });
+
+    var lbl45 = board.create('text', [85, 88, 'w_H = w_L'], { fontSize: 10, cssStyle: 'color:#999;' });
+
+    // Optimal contract point
+    var optPt = board.create('point', [
+      function() { var s = solve(); return s ? s.wL : 0; },
+      function() { var s = solve(); return s ? s.wH : 0; }
+    ], { name: 'Contrato*', size: 5, fillColor: '#00897b', strokeColor: '#00897b', fixed: true,
+         label: { offset: [8, -5], fontSize: 11, cssStyle: 'color:#00897b;font-weight:700;' } });
+
+    // Dashed lines from optimal to axes
+    board.create('segment', [
+      [function(){ var s=solve(); return s?s.wL:0; }, function(){ var s=solve(); return s?s.wH:0; }],
+      [function(){ var s=solve(); return s?s.wL:0; }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [
+      [function(){ var s=solve(); return s?s.wL:0; }, function(){ var s=solve(); return s?s.wH:0; }],
+      [0, function(){ var s=solve(); return s?s.wH:0; }]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    function updateInfo() {
+      var s = solve();
+      var dc = cH - cL;
+      var dp = pH - pL;
+      var bonus = dp > 0 ? dc / dp : Infinity;
+
+      var html = '<b>Modelo:</b> \\(U = \\sqrt{w} - c(e)\\)<br>';
+      html += '<b>\\(\\Delta c = c_H - c_L = ' + dc.toFixed(1) + '\\)</b><br>';
+      html += '<b>\\(\\Delta p = p_H - p_L = ' + dp.toFixed(2) + '\\)</b><br>';
+      html += '<b>Bonus minimo \\(\\sqrt{w_H}-\\sqrt{w_L}\\):</b> ' + bonus.toFixed(2) + '<br><hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+
+      if (s) {
+        html += '<span class="high-effort">Contrato otimo (esforco alto):</span><br>';
+        html += '\\(w_L^* = ' + s.wL.toFixed(1) + '\\), \\(w_H^* = ' + s.wH.toFixed(1) + '\\)<br>';
+        var EUhigh = pH * s.sqrtWH + (1-pH) * s.sqrtWL - cH;
+        var EUlow = pL * s.sqrtWH + (1-pL) * s.sqrtWL - cL;
+        var Ecost = pH * s.wH + (1-pH) * s.wL;
+        html += '<span class="high-effort">EU(alto) = ' + EUhigh.toFixed(2) + '</span><br>';
+        html += '<span class="low-effort">EU(baixo) = ' + EUlow.toFixed(2) + '</span><br>';
+        html += '<b>Custo esperado:</b> ' + Ecost.toFixed(1) + '<br>';
+        html += '<b>Agente escolhe:</b> ' + (EUhigh >= EUlow ? '<span class="high-effort">Esforco alto</span>' : '<span class="low-effort">Esforco baixo</span>');
+      } else {
+        html += '<span class="low-effort">Contrato inviavel com estes parametros</span>';
+      }
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      pH = parseFloat(document.getElementById('sl-pH').value);
+      pL = parseFloat(document.getElementById('sl-pL').value);
+      cH = parseFloat(document.getElementById('sl-cH').value);
+      cL = parseFloat(document.getElementById('sl-cL').value);
+      Ubar = parseFloat(document.getElementById('sl-Ubar').value);
+      document.getElementById('val-pH').textContent = pH.toFixed(2);
+      document.getElementById('val-pL').textContent = pL.toFixed(2);
+      document.getElementById('val-cH').textContent = cH.toFixed(1);
+      document.getElementById('val-cL').textContent = cL.toFixed(1);
+      document.getElementById('val-Ubar').textContent = Ubar.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-pH').value = 0.80;
+      document.getElementById('sl-pL').value = 0.30;
+      document.getElementById('sl-cH').value = 2.0;
+      document.getElementById('sl-cL').value = 0.5;
+      document.getElementById('sl-Ubar').value = 3.0;
+      update();
+    }
+
+    ['sl-pH','sl-pL','sl-cH','sl-cL','sl-Ubar'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>
