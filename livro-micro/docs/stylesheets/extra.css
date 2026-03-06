@@ -154,47 +154,34 @@ code, pre, kbd, .highlight {
   margin: 1.5em 0;
 }
 
-/* Equações inline — remover background cinza herdado de code */
-.md-typeset .arithmatex > .MathJax,
-.md-typeset .arithmatex > .MathJax_Preview,
-.md-typeset .arithmatex > span.MathJax,
-.md-typeset .arithmatex > mjx-container,
-.md-typeset p > .arithmatex {
+/* Equações inline — background transparente em todos os contextos */
+.md-typeset mjx-container:not([display="true"]),
+.md-typeset mjx-container:not([display="true"]) * {
   background: transparent !important;
+  box-shadow: none !important;
   padding: 0 !important;
-  border: none !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
 }
 
-/* Garantir que spans inline do arithmatex não herdem estilo de code */
+/* Garante que th e td também sejam cobertos */
+.md-typeset th mjx-container:not([display="true"]),
+.md-typeset td mjx-container:not([display="true"]) {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Wrapper .arithmatex inline — sem fundo nem borda */
 .md-typeset p > .arithmatex,
 .md-typeset li > .arithmatex,
 .md-typeset td > .arithmatex,
 .md-typeset th > .arithmatex,
-.md-typeset .admonition .arithmatex:not([class*="display"]) {
-  background-color: transparent !important;
+.md-typeset dd > .arithmatex,
+.md-typeset .admonition .arithmatex {
+  background: transparent !important;
   padding: 0 !important;
   border: none !important;
+  box-shadow: none !important;
   display: inline !important;
-}
-
-/* Equações e code dentro de cabeçalhos de tabela */
-.md-typeset th .arithmatex,
-.md-typeset th mjx-container,
-.md-typeset th code {
-  background: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Equações e code dentro de células normais de tabela */
-.md-typeset td .arithmatex,
-.md-typeset td mjx-container,
-.md-typeset td code {
-  background: transparent !important;
-  padding: 0 !important;
-  box-shadow: none !important;
 }
 
 /* Box Brasil */
