@@ -1,0 +1,107 @@
+site_name: "Microeconomia: Do Zero ao Equilíbrio (e Além)"
+site_url: https://darciogm.github.io/livro-micro/
+site_description: "Livro didático interativo de Microeconomia em português"
+site_author: "Darcio GM"
+docs_dir: docs
+
+theme:
+  name: material
+  language: pt-BR
+  font: false
+  palette:
+    - scheme: default
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    - scheme: slate
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+  icon:
+    logo: material/book-open-page-variant
+
+nav:
+  - Início: index.md
+  - Notação: notacao.md
+  - "Parte I — Introdução":
+    - "Cap. 1 — Modelos Econômicos: A Arte de Simplificar o Mundo": cap01/index.md
+    - "Cap. 2 — A Caixa de Ferramentas Matemática do Economista": cap02/index.md
+  - "Parte II — Escolha e Demanda":
+    - "Cap. 3 — Por Que Você Compra o Que Compra": cap03/index.md
+    - "Cap. 4 — O Consumidor Racional": cap04/index.md
+    - "Cap. 5 — Quando o Preço Muda: Os Dois Lados da Moeda": cap05/index.md
+    - "Cap. 6 — Bens que Amamos, Bens que Odiamos": cap06/index.md
+  - "Parte III — Incerteza e Estratégia":
+    - "Cap. 7 — Decidindo no Escuro: A Economia da Incerteza": cap07/index.md
+    - "Cap. 8 — Teoria dos Jogos: Pensando Estrategicamente": cap08/index.md
+  - "Parte IV — Produção e Oferta":
+    - "Cap. 9 — A Alquimia da Produção": cap09/index.md
+    - "Cap. 10 — Quanto Custa Produzir? A Anatomia dos Custos": cap10/index.md
+    - "Cap. 11 — A Empresa por Dentro: Lucro, Receita e a Arte de Sobreviver": cap11/index.md
+  - "Parte V — Mercados Competitivos":
+    - "Cap. 12 — O Mercado em Ação": cap12/index.md
+    - "Cap. 13 — Quando Tudo se Encaixa: Equilíbrio Geral": cap13/index.md
+  - "Parte VI — Poder de Mercado":
+    - "Cap. 14 — O Rei do Mercado: Poder, Preço e Monopólio": cap14/index.md
+    - "Cap. 15 — Entre o Monopólio e a Concorrência: Oligopólios": cap15/index.md
+  - "Parte VII — Mercados de Insumos":
+    - "Cap. 16 — O Preço do Suor: Economia do Trabalho": cap16/index.md
+    - "Cap. 17 — Capital, Juros e o Valor do Amanhã": cap17/index.md
+  - "Parte VIII — Falhas de Mercado":
+    - "Cap. 18 — O Que Você Sabe e Eu Não: Informação Assimétrica": cap18/index.md
+    - "Cap. 19 — Quando o Mercado Falha: Externalidades e Bens Públicos": cap19/index.md
+  - Glossário: glossario.md
+  - Referências: referencias.md
+
+plugins:
+  - search:
+      lang: pt
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: "100%"
+      height: auto
+      zoomable: true
+      draggable: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+  - assets/extra.css

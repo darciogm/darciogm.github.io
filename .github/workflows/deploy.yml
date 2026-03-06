@@ -22,7 +22,14 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install mkdocs-material mkdocs-glightbox
+
+      # Build main site
       - run: mkdocs build
+
+      # Build livro-micro and merge into main site
+      - run: cd livro-micro && mkdocs build
+      - run: cp -r livro-micro/site site/livro-micro
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
