@@ -73,13 +73,13 @@ code, pre, kbd, .highlight {
   background-color: #C8102E !important;
 }
 
-/* Tabs de navegação — fonte reduzida para caber todos os itens */
+/* Tabs de navegação — 6 abas confortáveis */
 .md-tabs {
   background-color: #9a0c23 !important;
 }
 .md-tabs__link {
-  font-size: 0.68rem !important;
-  padding: 0 0.5rem !important;
+  font-size: 0.78rem !important;
+  padding: 0 0.8rem !important;
   white-space: nowrap;
 }
 .md-tabs__link--active,
@@ -188,4 +188,135 @@ code, pre, kbd, .highlight {
 /* Box Brasil */
 .md-typeset .admonition.example {
   border-left: 4px solid #009c3b;
+}
+
+
+/* ================================================================
+   4. HUB — Cards de navegação na página inicial
+   ================================================================ */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.hub-card {
+  display: block;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-left: 4px solid #ccc;
+  background: var(--md-code-bg-color, #f5f5f5);
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.hub-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+.hub-card__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+}
+.hub-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.hub-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+.hub-card__caps {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+/* Color accents per macro-section */
+.hub-card--fund  { border-left-color: #1565c0; }
+.hub-card--merc  { border-left-color: #00897b; }
+.hub-card--poder { border-left-color: #C8102E; }
+.hub-card--front { border-left-color: #7c4dff; }
+
+.hub-card--fund  .hub-card__title { color: #1565c0; }
+.hub-card--merc  .hub-card__title { color: #00897b; }
+.hub-card--poder .hub-card__title { color: #C8102E; }
+.hub-card--front .hub-card__title { color: #7c4dff; }
+
+/* Reference links row */
+.hub-ref-links {
+  text-align: center;
+  margin: 1rem 0;
+}
+.hub-ref-links .md-button {
+  margin: 0.3rem;
+}
+
+/* Hero features list */
+.hero-features ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.hero-features li {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+.hero-features li::before {
+  content: "—  ";
+  color: #C8102E;
+  font-weight: 700;
+}
+
+/* ================================================================
+   5. SECTION INDEX PAGES — Part cards
+   ================================================================ */
+.section-overview {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(200, 16, 46, 0.04);
+  border-radius: 6px;
+  border-left: 3px solid #C8102E;
+}
+.part-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin: 1rem 0;
+}
+.part-card {
+  padding: 1.2rem;
+  background: var(--md-code-bg-color, #f5f5f5);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.part-card h3 {
+  font-size: 1rem;
+  color: #C8102E;
+  margin-top: 0;
+}
+.part-card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+.part-card li {
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .hub-grid { grid-template-columns: 1fr; }
+  .part-grid { grid-template-columns: 1fr; }
+  .hero-features ul { flex-direction: column; gap: 0.3rem; }
 }

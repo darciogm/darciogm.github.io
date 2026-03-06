@@ -21,10 +21,13 @@ theme:
         name: Alternar para modo claro
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.prune
     - navigation.top
-    - navigation.expand
-    - toc.integrate
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -32,37 +35,48 @@ theme:
     logo: material/book-open-page-variant
 
 nav:
-  - Início: index.md
-  - Notação: notacao.md
-  - "Parte I — Introdução":
-    - "Cap. 1 — Modelos Econômicos: A Arte de Simplificar o Mundo": cap01/index.md
-    - "Cap. 2 — A Caixa de Ferramentas Matemática do Economista": cap02/index.md
-  - "Parte II — Escolha e Demanda":
-    - "Cap. 3 — Por Que Você Compra o Que Compra": cap03/index.md
-    - "Cap. 4 — O Consumidor Racional": cap04/index.md
-    - "Cap. 5 — Quando o Preço Muda: Os Dois Lados da Moeda": cap05/index.md
-    - "Cap. 6 — Bens que Amamos, Bens que Odiamos": cap06/index.md
-  - "Parte III — Incerteza e Estratégia":
-    - "Cap. 7 — Decidindo no Escuro: A Economia da Incerteza": cap07/index.md
-    - "Cap. 8 — Teoria dos Jogos: Pensando Estrategicamente": cap08/index.md
-  - "Parte IV — Produção e Oferta":
-    - "Cap. 9 — A Alquimia da Produção": cap09/index.md
-    - "Cap. 10 — Quanto Custa Produzir? A Anatomia dos Custos": cap10/index.md
-    - "Cap. 11 — A Empresa por Dentro: Lucro, Receita e a Arte de Sobreviver": cap11/index.md
-  - "Parte V — Mercados Competitivos":
-    - "Cap. 12 — O Mercado em Ação": cap12/index.md
-    - "Cap. 13 — Quando Tudo se Encaixa: Equilíbrio Geral": cap13/index.md
-  - "Parte VI — Poder de Mercado":
-    - "Cap. 14 — O Rei do Mercado: Poder, Preço e Monopólio": cap14/index.md
-    - "Cap. 15 — Entre o Monopólio e a Concorrência: Oligopólios": cap15/index.md
-  - "Parte VII — Mercados de Insumos":
-    - "Cap. 16 — O Preço do Suor: Economia do Trabalho": cap16/index.md
-    - "Cap. 17 — Capital, Juros e o Valor do Amanhã": cap17/index.md
-  - "Parte VIII — Falhas de Mercado":
-    - "Cap. 18 — O Que Você Sabe e Eu Não: Informação Assimétrica": cap18/index.md
-    - "Cap. 19 — Quando o Mercado Falha: Externalidades e Bens Públicos": cap19/index.md
-  - Glossário: glossario.md
-  - Referências: referencias.md
+  - Início:
+    - index.md
+  - Fundamentos:
+    - fundamentos/index.md
+    - "Parte I — Introdução":
+      - "Cap. 1 — Modelos Econômicos": cap01/index.md
+      - "Cap. 2 — Ferramentas Matemáticas": cap02/index.md
+    - "Parte II — Escolha e Demanda":
+      - "Cap. 3 — Por Que Você Compra o Que Compra": cap03/index.md
+      - "Cap. 4 — O Consumidor Racional": cap04/index.md
+      - "Cap. 5 — Quando o Preço Muda": cap05/index.md
+      - "Cap. 6 — Bens que Amamos, Bens que Odiamos": cap06/index.md
+  - Mercados:
+    - mercados/index.md
+    - "Parte III — Incerteza e Estratégia":
+      - "Cap. 7 — Decidindo no Escuro": cap07/index.md
+      - "Cap. 8 — Teoria dos Jogos": cap08/index.md
+    - "Parte IV — Produção e Oferta":
+      - "Cap. 9 — A Alquimia da Produção": cap09/index.md
+      - "Cap. 10 — Anatomia dos Custos": cap10/index.md
+      - "Cap. 11 — Lucro, Receita e Sobrevivência": cap11/index.md
+    - "Parte V — Mercados Competitivos":
+      - "Cap. 12 — O Mercado em Ação": cap12/index.md
+      - "Cap. 13 — Equilíbrio Geral": cap13/index.md
+  - Poder & Insumos:
+    - poder/index.md
+    - "Parte VI — Poder de Mercado":
+      - "Cap. 14 — Monopólio": cap14/index.md
+      - "Cap. 15 — Oligopólios": cap15/index.md
+    - "Parte VII — Mercados de Insumos":
+      - "Cap. 16 — Economia do Trabalho": cap16/index.md
+      - "Cap. 17 — Capital, Juros e o Valor do Amanhã": cap17/index.md
+  - Fronteiras:
+    - fronteiras/index.md
+    - "Parte VIII — Falhas de Mercado":
+      - "Cap. 18 — Informação Assimétrica": cap18/index.md
+      - "Cap. 19 — Externalidades e Bens Públicos": cap19/index.md
+  - Referência:
+    - referencia/index.md
+    - Notação: notacao.md
+    - Glossário: glossario.md
+    - Referências: referencias.md
 
 plugins:
   - search:
