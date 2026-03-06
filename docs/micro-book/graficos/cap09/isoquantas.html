@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!--
+  Cap. 9 — Mapa de Isoquantas Interativo
+  Library: JSXGraph
+  Toggles: Cobb-Douglas, Leontief, Linear, CES
+  Sliders: alpha, beta (rho for CES), output level q
+  Draggable point showing TMST = PMgL/PMgK
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Isoquantas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: .8rem; }
+    .toggle-group label { display: inline-block; margin-right: .5rem; font-size: .82rem; cursor: pointer; padding: .3rem .6rem; border: 1px solid #ccc; border-radius: 4px; }
+    .toggle-group input[type="radio"] { display: none; }
+    .toggle-group input[type="radio"]:checked + span { background: #C8102E; color: #fff; border-radius: 3px; padding: .15rem .4rem; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 520px; } .controls { width: 100%; max-width: 520px; } }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Mapa de Isoquantas</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Tipo de Funcao</h3>
+      <div class="toggle-group" id="funcType">
+        <label><input type="radio" name="ftype" value="cd" checked><span>Cobb-Douglas</span></label>
+        <label><input type="radio" name="ftype" value="leontief"><span>Leontief</span></label>
+        <label><input type="radio" name="ftype" value="linear"><span>Linear</span></label>
+        <label><input type="radio" name="ftype" value="ces"><span>CES</span></label>
+      </div>
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label id="lbl-alpha">\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
+        <input type="range" id="sl-alpha" min="0.1" max="0.9" step="0.05" value="0.5">
+      </div>
+      <div class="slider-group">
+        <label id="lbl-beta">\(\beta\): <span class="val" id="val-beta">0.50</span></label>
+        <input type="range" id="sl-beta" min="0.1" max="0.9" step="0.05" value="0.5">
+      </div>
+      <div class="slider-group">
+        <label>\(q\) (nivel): <span class="val" id="val-q">4.00</span></label>
+        <input type="range" id="sl-q" min="1" max="10" step="0.5" value="4">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.5, 12, 12, -0.5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[12,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,12]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('text', [11.5, -0.4, 'L'], { fontSize: 14, anchorX: 'middle' });
+    board.create('text', [-0.4, 11.5, 'K'], { fontSize: 14, anchorX: 'middle' });
+
+    var colors = ['#C8102E', '#1565c0', '#00897b', '#e65100', '#6a1b9a'];
+
+    // Store curve objects
+    var isoquants = [];
+    var tangentLine = null;
+    var dragPoint = null;
+    var tmstText = null;
+
+    function getType() {
+      return document.querySelector('input[name="ftype"]:checked').value;
+    }
+    function getAlpha() { return parseFloat(document.getElementById('sl-alpha').value); }
+    function getBeta() { return parseFloat(document.getElementById('sl-beta').value); }
+    function getQ() { return parseFloat(document.getElementById('sl-q').value); }
+
+    // Production function value
+    function fProd(L, K, type, a, b) {
+      if (type === 'cd') return Math.pow(L, a) * Math.pow(K, b);
+      if (type === 'leontief') return Math.min(L / a, K / b);
+      if (type === 'linear') return a * L + b * K;
+      if (type === 'ces') {
+        var rho = b; // beta slider used as rho for CES
+        if (Math.abs(rho) < 0.01) return Math.pow(L, 0.5) * Math.pow(K, 0.5);
+        var val = 0.5 * Math.pow(L, rho) + 0.5 * Math.pow(K, rho);
+        if (val <= 0) return 0;
+        return Math.pow(val, 1.0 / rho);
+      }
+      return 0;
+    }
+
+    // K as function of L for isoquant at level q
+    function isoK(L, q, type, a, b) {
+      if (L <= 0.01) return NaN;
+      if (type === 'cd') {
+        var num = q / Math.pow(L, a);
+        if (num <= 0) return NaN;
+        return Math.pow(num, 1.0 / b);
+      }
+      if (type === 'leontief') {
+        // q = min(L/a, K/b): K = b*q if L/a >= q, else vertical at L = a*q
+        if (L / a >= q) return b * q;
+        return NaN; // will draw the vertical part separately
+      }
+      if (type === 'linear') {
+        var K = (q - a * L) / b;
+        return K >= 0 ? K : NaN;
+      }
+      if (type === 'ces') {
+        var rho = b;
+        if (Math.abs(rho) < 0.01) {
+          var num = q / Math.pow(L, 0.5);
+          return num > 0 ? num * num : NaN;
+        }
+        var qr = Math.pow(q, rho);
+        var rest = (qr - 0.5 * Math.pow(L, rho)) / 0.5;
+        if (rest <= 0) return NaN;
+        return Math.pow(rest, 1.0 / rho);
+      }
+      return NaN;
+    }
+
+    // TMST = PMgL / PMgK
+    function getTMST(L, K, type, a, b) {
+      if (L <= 0.01 || K <= 0.01) return NaN;
+      if (type === 'cd') return (a / b) * (K / L);
+      if (type === 'leontief') return NaN;
+      if (type === 'linear') return a / b;
+      if (type === 'ces') {
+        var rho = b;
+        if (Math.abs(rho) < 0.01) return K / L;
+        return Math.pow(K / L, 1 - rho);
+      }
+      return NaN;
+    }
+
+    function drawIsoquants() {
+      // Remove old curves
+      for (var i = 0; i < isoquants.length; i++) board.removeObject(isoquants[i]);
+      isoquants = [];
+      if (tangentLine) { board.removeObject(tangentLine); tangentLine = null; }
+      if (dragPoint) { board.removeObject(dragPoint); dragPoint = null; }
+      if (tmstText) { board.removeObject(tmstText); tmstText = null; }
+
+      var type = getType();
+      var a = getAlpha();
+      var b = getBeta();
+      var q0 = getQ();
+      var levels = [q0 * 0.5, q0 * 0.75, q0, q0 * 1.25, q0 * 1.5];
+
+      for (var li = 0; li < levels.length; li++) {
+        var q = levels[li];
+        var ci = li;
+        if (type === 'leontief') {
+          // L-shaped: horizontal part at K = b*q, vertical part at L = a*q
+          var Lv = a * q;
+          var Kh = b * q;
+          var hLine = board.create('curve', [
+            function(qq, Lv, Kh) { return function(t) { return Lv + t; }; }(q, Lv, Kh),
+            function(Kh) { return function(t) { return Kh; }; }(Kh)
+          ], { strokeColor: colors[ci % colors.length], strokeWidth: 2, curveType: 'plot' });
+          // Actually use parametric plot
+          board.removeObject(hLine);
+
+          // horizontal segment
+          var pts_h = [];
+          for (var xx = Lv; xx <= 12; xx += 0.1) pts_h.push([xx, Kh]);
+          var c1 = board.create('curve', [pts_h.map(function(p){return p[0];}), pts_h.map(function(p){return p[1];})],
+            { strokeColor: colors[ci % colors.length], strokeWidth: 2 });
+          isoquants.push(c1);
+
+          // vertical segment
+          var pts_v = [];
+          for (var yy = Kh; yy <= 12; yy += 0.1) pts_v.push([Lv, yy]);
+          var c2 = board.create('curve', [pts_v.map(function(p){return p[0];}), pts_v.map(function(p){return p[1];})],
+            { strokeColor: colors[ci % colors.length], strokeWidth: 2 });
+          isoquants.push(c2);
+
+          // Label
+          var lbl = board.create('text', [Lv + 1.5, Kh + 0.3, 'q=' + q.toFixed(1)],
+            { fontSize: 10, color: colors[ci % colors.length] });
+          isoquants.push(lbl);
+        } else {
+          var pts_x = [], pts_y = [];
+          for (var L = 0.05; L <= 12; L += 0.05) {
+            var K = isoK(L, q, type, a, b);
+            if (!isNaN(K) && K >= 0 && K <= 12) {
+              pts_x.push(L);
+              pts_y.push(K);
+            }
+          }
+          if (pts_x.length > 0) {
+            var c = board.create('curve', [pts_x, pts_y],
+              { strokeColor: colors[ci % colors.length], strokeWidth: 2 });
+            isoquants.push(c);
+            // Label near right end
+            var idx = Math.min(pts_x.length - 1, Math.floor(pts_x.length * 0.8));
+            var lbl = board.create('text', [pts_x[idx] + 0.2, pts_y[idx] + 0.3, 'q=' + q.toFixed(1)],
+              { fontSize: 10, color: colors[ci % colors.length] });
+            isoquants.push(lbl);
+          }
+        }
+      }
+
+      // Draggable point on the main isoquant (q0)
+      if (type !== 'leontief') {
+        var initL = 3;
+        var initK = isoK(initL, q0, type, a, b);
+        if (isNaN(initK) || initK > 11) { initL = 5; initK = isoK(initL, q0, type, a, b); }
+
+        dragPoint = board.create('point', [initL, isNaN(initK) ? 3 : initK], {
+          name: '', size: 5, color: '#C8102E', fixed: false,
+          attractors: [], snatchDistance: 0
+        });
+        isoquants.push(dragPoint);
+
+        // Constrain drag to isoquant
+        dragPoint.on('drag', function() {
+          var L = Math.max(0.1, this.X());
+          var K = isoK(L, q0, type, a, b);
+          if (!isNaN(K) && K > 0 && K < 12) {
+            this.moveTo([L, K]);
+          }
+        });
+
+        // Tangent line
+        tangentLine = board.create('line', [
+          function() { return [dragPoint.X(), dragPoint.Y()]; },
+          function() {
+            var tmst = getTMST(dragPoint.X(), dragPoint.Y(), type, a, b);
+            if (isNaN(tmst)) return [dragPoint.X() + 1, dragPoint.Y()];
+            return [dragPoint.X() + 1, dragPoint.Y() - tmst];
+          }
+        ], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 2, straightFirst: true, straightLast: true });
+        isoquants.push(tangentLine);
+      }
+
+      updateInfo();
+    }
+
+    function updateInfo() {
+      var type = getType();
+      var a = getAlpha();
+      var b = getBeta();
+      var q0 = getQ();
+      var info = document.getElementById('info');
+
+      var html = '';
+      if (type === 'cd') {
+        html += '<div class="eq">\\(q = L^{' + a.toFixed(2) + '} K^{' + b.toFixed(2) + '}\\)</div>';
+      } else if (type === 'leontief') {
+        html += '<div class="eq">\\(q = \\min\\{L/' + a.toFixed(2) + ',\\; K/' + b.toFixed(2) + '\\}\\)</div>';
+      } else if (type === 'linear') {
+        html += '<div class="eq">\\(q = ' + a.toFixed(2) + 'L + ' + b.toFixed(2) + 'K\\)</div>';
+      } else if (type === 'ces') {
+        html += '<div class="eq">\\(q = [0{,}5 L^{\\rho} + 0{,}5 K^{\\rho}]^{1/\\rho}\\)</div>';
+        html += '<div class="eq">\\(\\rho = ' + b.toFixed(2) + ',\\; \\sigma = ' + (1/(1-b)).toFixed(2) + '\\)</div>';
+      }
+
+      if (dragPoint && type !== 'leontief') {
+        var tmst = getTMST(dragPoint.X(), dragPoint.Y(), type, a, b);
+        html += '<hr style="margin:.5rem 0">';
+        html += '<div>Ponto: \\(L=' + dragPoint.X().toFixed(2) + ',\\; K=' + dragPoint.Y().toFixed(2) + '\\)</div>';
+        if (!isNaN(tmst)) {
+          html += '<div class="eq">\\(\\mathrm{TMST}_{L,K} = \\frac{\\mathrm{PMg}_L}{\\mathrm{PMg}_K} = ' + tmst.toFixed(3) + '\\)</div>';
+        }
+      }
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+    }
+
+    function updateLabels() {
+      var type = getType();
+      var a = getAlpha();
+      var b = getBeta();
+      var q0 = getQ();
+
+      document.getElementById('val-alpha').textContent = a.toFixed(2);
+      document.getElementById('val-beta').textContent = b.toFixed(2);
+      document.getElementById('val-q').textContent = q0.toFixed(2);
+
+      var lblA = document.getElementById('lbl-alpha');
+      var lblB = document.getElementById('lbl-beta');
+      if (type === 'cd') {
+        lblA.firstChild.textContent = '\\(\\alpha\\): ';
+        lblB.firstChild.textContent = '\\(\\beta\\): ';
+      } else if (type === 'leontief' || type === 'linear') {
+        lblA.firstChild.textContent = 'a: ';
+        lblB.firstChild.textContent = 'b: ';
+      } else if (type === 'ces') {
+        lblA.firstChild.textContent = '\\(\\alpha\\): ';
+        lblB.firstChild.textContent = '\\(\\rho\\): ';
+      }
+    }
+
+    function update() {
+      updateLabels();
+      drawIsoquants();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-alpha').value = 0.5;
+      document.getElementById('sl-beta').value = 0.5;
+      document.getElementById('sl-q').value = 4;
+      document.querySelector('input[name="ftype"][value="cd"]').checked = true;
+      update();
+    }
+
+    document.getElementById('sl-alpha').addEventListener('input', update);
+    document.getElementById('sl-beta').addEventListener('input', update);
+    document.getElementById('sl-q').addEventListener('input', update);
+    document.querySelectorAll('input[name="ftype"]').forEach(function(r) {
+      r.addEventListener('change', update);
+    });
+
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--
+  Excedente do Consumidor, Variacao Compensatoria e Variacao Equivalente — Interactive Graph
+  Library: JSXGraph
+  Reason: Shaded areas, sliders, and dynamic welfare measure calculations.
+  Chapter 5 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excedente do Consumidor, VC e VE</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      width: 520px;
+      height: 440px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      width: 310px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .toggle-group {
+      margin-bottom: 0.8rem;
+    }
+    .toggle-group label {
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .toggle-group input[type="checkbox"],
+    .toggle-group input[type="radio"] {
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+    .legend-swatch {
+      width: 20px;
+      height: 12px;
+      display: inline-block;
+      border-radius: 2px;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 900px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Excedente do Consumidor, VC e VE</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+
+      <div class="slider-group">
+        <label>Preco inicial \(p_0\): <span class="val" id="val-p0">5.00</span></label>
+        <input type="range" id="slider-p0" min="1" max="8" step="0.1" value="5">
+      </div>
+
+      <div class="slider-group">
+        <label>Preco final \(p_1\): <span class="val" id="val-p1">2.00</span></label>
+        <input type="range" id="slider-p1" min="0.5" max="8" step="0.1" value="2">
+      </div>
+
+      <div class="slider-group">
+        <label>Intercepto da demanda \(a\): <span class="val" id="val-a">10.00</span></label>
+        <input type="range" id="slider-a" min="5" max="20" step="0.5" value="10">
+      </div>
+
+      <div class="slider-group">
+        <label>Inclinacao \(b\): <span class="val" id="val-b">1.00</span></label>
+        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+      </div>
+
+      <div class="slider-group">
+        <label>Renda \(M\) (para VC/VE): <span class="val" id="val-M">100</span></label>
+        <input type="range" id="slider-M" min="40" max="200" step="5" value="100">
+      </div>
+
+      <div class="slider-group">
+        <label>\(\alpha\) (Cobb-Douglas): <span class="val" id="val-alpha">0.40</span></label>
+        <input type="range" id="slider-alpha" min="0.10" max="0.90" step="0.05" value="0.40">
+      </div>
+
+      <div class="toggle-group">
+        <strong style="font-size:0.85rem;">Exibir:</strong>
+        <label><input type="checkbox" id="show-cs" checked> EC (Excedente do Consumidor)</label>
+        <label><input type="checkbox" id="show-cv"> VC (Variacao Compensatoria)</label>
+        <label><input type="checkbox" id="show-ev"> VE (Variacao Equivalente)</label>
+      </div>
+
+      <div style="margin-bottom:0.6rem;">
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(200,16,46,0.2);"></span> EC (marshalliano)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(21,101,192,0.2);"></span> VC (hicksiana em U0)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(0,137,123,0.2);"></span> VE (hicksiana em U1)</div>
+      </div>
+
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var p2 = 1;
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1, 12, 25, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: false
+    });
+
+    board.create('axis', [[0,0],[24,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 5 },
+      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
+    });
+    board.create('axis', [[0,0],[0,11]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 2 },
+      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
+    });
+
+    function getState() {
+      return {
+        p0: parseFloat(document.getElementById('slider-p0').value),
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        a: parseFloat(document.getElementById('slider-a').value),
+        b: parseFloat(document.getElementById('slider-b').value),
+        M: parseFloat(document.getElementById('slider-M').value),
+        alpha: parseFloat(document.getElementById('slider-alpha').value),
+        showCS: document.getElementById('show-cs').checked,
+        showCV: document.getElementById('show-cv').checked,
+        showEV: document.getElementById('show-ev').checked
+      };
+    }
+
+    // Linear Marshallian demand: x = a - b*p => inverse: p = (a - x)/b
+    // For Cobb-Douglas welfare: x1* = alpha*M/p1
+    // U(p1) = (alpha*M/p1)^alpha * ((1-alpha)*M/p2)^(1-alpha)
+    // E(p1, U) = U * (p1/alpha)^alpha * (p2/(1-alpha))^(1-alpha)
+
+    function marshX(a, b, p) {
+      return Math.max(0, a - b * p);
+    }
+
+    function invDemand(a, b, x) {
+      return (a - x) / b;
+    }
+
+    function cdUtility(alpha, M, p1) {
+      var x1 = alpha * M / p1;
+      var x2 = (1 - alpha) * M / p2;
+      return Math.pow(x1, alpha) * Math.pow(x2, 1 - alpha);
+    }
+
+    function cdExpenditure(alpha, p1, U) {
+      return U * Math.pow(p1 / alpha, alpha) * Math.pow(p2 / (1 - alpha), 1 - alpha);
+    }
+
+    function cdHicksian(alpha, p1, U) {
+      return U * Math.pow(alpha * p2 / ((1 - alpha) * p1), 1 - alpha);
+    }
+
+    // Marshallian demand curve (linear)
+    board.create('curve', [
+      function(t) { var s = getState(); return marshX(s.a, s.b, t); },
+      function(t) { return t; },
+      0.1, 11
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5, name: '' });
+
+    // Hicksian at U0 (blue)
+    board.create('curve', [
+      function(t) {
+        var s = getState();
+        var U0 = cdUtility(s.alpha, s.M, s.p0);
+        return cdHicksian(s.alpha, t, U0);
+      },
+      function(t) { return t; },
+      0.1, 11
+    ], { strokeColor: '#1565c0', strokeWidth: 2, dash: 2,
+         visible: function() { return getState().showCV; } });
+
+    // Hicksian at U1 (green)
+    board.create('curve', [
+      function(t) {
+        var s = getState();
+        var U1 = cdUtility(s.alpha, s.M, s.p1);
+        return cdHicksian(s.alpha, t, U1);
+      },
+      function(t) { return t; },
+      0.1, 11
+    ], { strokeColor: '#00897b', strokeWidth: 2, dash: 2,
+         visible: function() { return getState().showEV; } });
+
+    // Price lines
+    board.create('segment', [
+      function() { return [0, getState().p0]; },
+      function() { var s = getState(); return [marshX(s.a, s.b, s.p0) + 2, s.p0]; }
+    ], { strokeColor: '#666', strokeWidth: 1, dash: 3 });
+
+    board.create('segment', [
+      function() { return [0, getState().p1]; },
+      function() { var s = getState(); return [marshX(s.a, s.b, s.p1) + 2, s.p1]; }
+    ], { strokeColor: '#666', strokeWidth: 1, dash: 3 });
+
+    // Labels for p0 and p1
+    board.create('text', [
+      -0.8, function() { return getState().p0; }, function() { return 'p_0'; }
+    ], { fontSize: 11, color: '#666' });
+
+    board.create('text', [
+      -0.8, function() { return getState().p1; }, function() { return 'p_1'; }
+    ], { fontSize: 11, color: '#666' });
+
+    // CS shaded area (between p0 and p1 under Marshallian)
+    // Using inequality/polygon approach with curve approximation
+    var csArea = board.create('curve', [[], []], {
+      strokeWidth: 0, fillColor: 'rgba(200,16,46,0.18)', fillOpacity: 1
+    });
+
+    var cvArea = board.create('curve', [[], []], {
+      strokeWidth: 0, fillColor: 'rgba(21,101,192,0.18)', fillOpacity: 1
+    });
+
+    var evArea = board.create('curve', [[], []], {
+      strokeWidth: 0, fillColor: 'rgba(0,137,123,0.18)', fillOpacity: 1
+    });
+
+    function buildAreaData(demandFn, pLow, pHigh, nSteps) {
+      // Build polygon: left edge at x=0, then demand curve from pHigh to pLow, then back
+      var xs = [0];
+      var ys = [pHigh];
+      var dp = (pHigh - pLow) / nSteps;
+      for (var i = 0; i <= nSteps; i++) {
+        var p = pHigh - i * dp;
+        var x = demandFn(p);
+        xs.push(x);
+        ys.push(p);
+      }
+      xs.push(0);
+      ys.push(pLow);
+      return { xs: xs, ys: ys };
+    }
+
+    function updateAreas() {
+      var s = getState();
+      var pLow = Math.min(s.p0, s.p1);
+      var pHigh = Math.max(s.p0, s.p1);
+
+      // CS area
+      if (s.showCS) {
+        var csData = buildAreaData(function(p) { return marshX(s.a, s.b, p); }, pLow, pHigh, 50);
+        csArea.dataX = csData.xs;
+        csArea.dataY = csData.ys;
+      } else {
+        csArea.dataX = [];
+        csArea.dataY = [];
+      }
+
+      // CV area
+      if (s.showCV) {
+        var U0 = cdUtility(s.alpha, s.M, s.p0);
+        var cvData = buildAreaData(function(p) { return cdHicksian(s.alpha, p, U0); }, pLow, pHigh, 50);
+        cvArea.dataX = cvData.xs;
+        cvArea.dataY = cvData.ys;
+      } else {
+        cvArea.dataX = [];
+        cvArea.dataY = [];
+      }
+
+      // EV area
+      if (s.showEV) {
+        var U1 = cdUtility(s.alpha, s.M, s.p1);
+        var evData = buildAreaData(function(p) { return cdHicksian(s.alpha, p, U1); }, pLow, pHigh, 50);
+        evArea.dataX = evData.xs;
+        evArea.dataY = evData.ys;
+      } else {
+        evArea.dataX = [];
+        evArea.dataY = [];
+      }
+    }
+
+    function numericalIntegral(fn, a, b, n) {
+      var sum = 0;
+      var dx = (b - a) / n;
+      for (var i = 0; i < n; i++) {
+        var x = a + (i + 0.5) * dx;
+        sum += fn(x) * dx;
+      }
+      return sum;
+    }
+
+    function update() {
+      var s = getState();
+      document.getElementById('val-p0').textContent = s.p0.toFixed(2);
+      document.getElementById('val-p1').textContent = s.p1.toFixed(2);
+      document.getElementById('val-a').textContent = s.a.toFixed(2);
+      document.getElementById('val-b').textContent = s.b.toFixed(2);
+      document.getElementById('val-M').textContent = s.M.toFixed(0);
+      document.getElementById('val-alpha').textContent = s.alpha.toFixed(2);
+
+      var pLow = Math.min(s.p0, s.p1);
+      var pHigh = Math.max(s.p0, s.p1);
+      var sign = s.p1 < s.p0 ? 1 : -1; // gain if price drops
+
+      // CS = integral of marshallian demand from pLow to pHigh
+      var csVal = numericalIntegral(function(p) { return marshX(s.a, s.b, p); }, pLow, pHigh, 200);
+
+      // CV = E(p1, U0) - M  (using Cobb-Douglas)
+      var U0 = cdUtility(s.alpha, s.M, s.p0);
+      var U1 = cdUtility(s.alpha, s.M, s.p1);
+      var cvVal = cdExpenditure(s.alpha, s.p1, U0) - s.M;
+      // For price drop: CV = M - E(p1, U0) is the gain; convention: CV > 0 means consumer gains
+      // Actually: CV = E(p1,U0) - E(p0,U0) = E(p1,U0) - M
+      // For price drop p1 < p0: E(p1,U0) < M, so CV < 0 meaning consumer needs less money => gain = -CV
+      var cvDisplay = -cvVal; // positive = gain from price drop
+
+      // EV = M - E(p0, U1)
+      var evVal = s.M - cdExpenditure(s.alpha, s.p0, U1);
+      // For price drop: U1 > U0, E(p0,U1) > M, so EV < 0? No:
+      // EV = E(p1,U1) - E(p0,U1) = M - E(p0,U1)
+      // For price drop: E(p0,U1) > M so EV = M - E(p0,U1) < 0
+      // Convention: we want the welfare gain, so display |EV| with correct sign
+      var evDisplay = evVal; // M - E(p0,U1)
+      // Actually for a price decrease of good 1: welfare gain
+      // CV (gain) = M - E(p_new, U_old) ... let me recalculate properly
+
+      // Standard definitions for price decrease (p0 -> p1 where p1 < p0):
+      // CV: amount taken away after change to keep U at U0: CV = M - E(p1, U0) > 0
+      // EV: amount given before change to achieve U1: EV = E(p0, U1) - M > 0
+      if (s.p1 < s.p0) {
+        cvDisplay = s.M - cdExpenditure(s.alpha, s.p1, U0);
+        evDisplay = cdExpenditure(s.alpha, s.p0, U1) - s.M;
+      } else {
+        // Price increase: loss
+        // CV = E(p1, U0) - M (need this much more to stay at U0)
+        cvDisplay = -(cdExpenditure(s.alpha, s.p1, U0) - s.M);
+        // EV = M - E(p0, U1) (would accept losing this much instead of price rise)
+        evDisplay = -(s.M - cdExpenditure(s.alpha, s.p0, U1));
+      }
+
+      updateAreas();
+
+      var priceDir = s.p1 < s.p0 ? 'queda' : (s.p1 > s.p0 ? 'aumento' : 'sem variacao');
+      var html = '<strong>Variacao de preco (' + priceDir + '):</strong><br>';
+      html += '\\(p_0 = ' + s.p0.toFixed(2) + ' \\to p_1 = ' + s.p1.toFixed(2) + '\\)<br>';
+      html += '<div style="margin:0.3rem 0;">';
+      if (s.showCS) html += '<span style="color:#C8102E;">\\(\\Delta EC = ' + (sign * csVal).toFixed(2) + '\\)</span><br>';
+      if (s.showCV) html += '<span style="color:#1565c0;">\\(VC = ' + cvDisplay.toFixed(2) + '\\)</span><br>';
+      if (s.showEV) html += '<span style="color:#00897b;">\\(VE = ' + evDisplay.toFixed(2) + '\\)</span><br>';
+      html += '</div>';
+
+      if (s.p1 < s.p0 && s.showCS && s.showCV && s.showEV) {
+        html += '<div style="font-size:0.78rem;color:#555;margin-top:0.3rem;">Para queda de preco de bem normal:<br>';
+        html += '\\(VC < \\Delta EC < VE\\)<br>';
+        html += '(' + cvDisplay.toFixed(2) + ' < ' + (csVal).toFixed(2) + ' < ' + evDisplay.toFixed(2) + ')</div>';
+      }
+
+      html += '<div style="font-size:0.75rem;color:#888;margin-top:0.3rem;">EC: demanda marshalliana (linear)<br>VC/VE: demanda hicksiana (Cobb-Douglas)</div>';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-p0').value = 5;
+      document.getElementById('slider-p1').value = 2;
+      document.getElementById('slider-a').value = 10;
+      document.getElementById('slider-b').value = 1;
+      document.getElementById('slider-M').value = 100;
+      document.getElementById('slider-alpha').value = 0.40;
+      document.getElementById('show-cs').checked = true;
+      document.getElementById('show-cv').checked = false;
+      document.getElementById('show-ev').checked = false;
+      update();
+    }
+
+    ['slider-p0', 'slider-p1', 'slider-a', 'slider-b', 'slider-M', 'slider-alpha'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    ['show-cs', 'show-cv', 'show-ev'].forEach(function(id) {
+      document.getElementById(id).addEventListener('change', update);
+    });
+
+    update();
+  </script>
+</body>
+</html>

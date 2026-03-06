@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+  Interactive Public Good Provision — Chapter 19
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provisao de Bem Publico</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 320px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Provisao Otima de Bem Publico (Samuelson)</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>BMg consumidor 1 (\(a_1\)): <span class="val" id="val-a1">10</span></label>
+        <input type="range" id="sl-a1" min="3" max="20" step="0.5" value="10">
+      </div>
+      <div class="slider-group">
+        <label>BMg consumidor 2 (\(a_2\)): <span class="val" id="val-a2">6</span></label>
+        <input type="range" id="sl-a2" min="2" max="15" step="0.5" value="6">
+      </div>
+      <div class="slider-group">
+        <label>Custo marginal (\(c\)): <span class="val" id="val-c">8</span></label>
+        <input type="range" id="sl-c" min="2" max="20" step="0.5" value="8">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Consumer 1: MB_1(G) = a1 - G (linear, decreasing)
+    // Consumer 2: MB_2(G) = a2 - G (linear, decreasing)
+    // Social MB = MB_1 + MB_2 (vertical sum)
+    // MC = c (constant)
+    // Samuelson condition: MB_1 + MB_2 = MC
+    // Private provision: max(MB_1, MB_2) = MC => underprovision
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.5, 22, 14, -1],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[13,0]], {
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      name: 'G (bem publico)', withLabel: true,
+      label: { position: 'rt', offset: [-60, 15], fontSize: 11 }
+    });
+    board.create('axis', [[0,0],[0,21]], {
+      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:10} },
+      name: '$', withLabel: true,
+      label: { position: 'rt', offset: [15, -5], fontSize: 13 }
+    });
+
+    var a1 = 10, a2 = 6, c = 8;
+
+    function mb1(g) { return Math.max(a1 - g, 0); }
+    function mb2(g) { return Math.max(a2 - g, 0); }
+    function smb(g) { return mb1(g) + mb2(g); }
+
+    // Optimal: a1 - G + a2 - G = c => G* = (a1 + a2 - c) / 2
+    function gStar() { return Math.max((a1 + a2 - c) / 2, 0); }
+    // Private (highest individual): a1 - G = c => G_priv = a1 - c (if a1 > c)
+    function gPriv() { return Math.max(Math.max(a1, a2) - c, 0); }
+
+    // MB_1
+    board.create('functiongraph', [function(g){ return mb1(g); }],
+      { strokeColor: '#1565c0', strokeWidth: 2, dash: 3, name: 'BMg_1', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // MB_2
+    board.create('functiongraph', [function(g){ return mb2(g); }],
+      { strokeColor: '#00897b', strokeWidth: 2, dash: 3, name: 'BMg_2', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // Social MB (vertical sum)
+    board.create('functiongraph', [function(g){ return smb(g); }],
+      { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'ΣBMg', withLabel: true,
+        label: { position: 'rt', offset: [5, 5], fontSize: 11 } });
+
+    // MC horizontal line
+    board.create('functiongraph', [function(g){ return c; }],
+      { strokeColor: '#333', strokeWidth: 2, name: 'CMg', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 11 } });
+
+    // Optimal point
+    board.create('point', [
+      function(){ return gStar(); },
+      function(){ return c; }
+    ], { name: 'G*', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [8, 8], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    // Private provision point
+    board.create('point', [
+      function(){ return gPriv(); },
+      function(){ return c; }
+    ], { name: 'G_priv', size: 4, fillColor: '#999', strokeColor: '#999', fixed: true,
+         label: { offset: [5, -12], fontSize: 10, cssStyle: 'color:#999;font-weight:700;' } });
+
+    // Dashed lines
+    board.create('segment', [
+      [function(){ return gStar(); }, function(){ return c; }],
+      [function(){ return gStar(); }, 0]
+    ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 2, fixed: true });
+
+    board.create('segment', [
+      [function(){ return gPriv(); }, function(){ return c; }],
+      [function(){ return gPriv(); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    // Lindahl prices: tau_1 = MB_1(G*), tau_2 = MB_2(G*)
+    // Show as horizontal dashed lines at G*
+    board.create('segment', [
+      [0, function(){ return mb1(gStar()); }],
+      [function(){ return gStar(); }, function(){ return mb1(gStar()); }]
+    ], { strokeColor: '#1565c0', strokeWidth: 1, dash: 4, fixed: true });
+
+    board.create('segment', [
+      [0, function(){ return mb2(gStar()); }],
+      [function(){ return gStar(); }, function(){ return mb2(gStar()); }]
+    ], { strokeColor: '#00897b', strokeWidth: 1, dash: 4, fixed: true });
+
+    var lblT1 = board.create('text', [-0.3, function(){ return mb1(gStar()) + 0.3; },
+      function(){ return 'τ₁=' + mb1(gStar()).toFixed(1); }
+    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;' });
+
+    var lblT2 = board.create('text', [-0.3, function(){ return mb2(gStar()) + 0.3; },
+      function(){ return 'τ₂=' + mb2(gStar()).toFixed(1); }
+    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#00897b;font-weight:700;' });
+
+    // Underprovision region
+    board.create('segment', [
+      [function(){ return gPriv(); }, -0.3],
+      [function(){ return gStar(); }, -0.3]
+    ], { strokeColor: '#C8102E', strokeWidth: 3, fixed: true, lastArrow: true });
+
+    board.create('text', [
+      function(){ return (gPriv() + gStar()) / 2; }, -0.7,
+      'Subprovisao'
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;' });
+
+    function updateInfo() {
+      var gs = gStar(), gp = gPriv();
+      var t1 = mb1(gs), t2 = mb2(gs);
+
+      var html = '<b>Condicao de Samuelson:</b><br>';
+      html += '\\(\\sum BMg_i = CMg\\)<br>';
+      html += '\\(' + t1.toFixed(1) + ' + ' + t2.toFixed(1) + ' = ' + c.toFixed(1) + '\\)<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<span style="color:#C8102E;font-weight:700;">Provisao otima: \\(G^* = ' + gs.toFixed(2) + '\\)</span><br>';
+      html += '<span style="color:#999;font-weight:700;">Provisao privada: \\(G_{priv} = ' + gp.toFixed(2) + '\\)</span><br>';
+      html += '<b>Subprovisao:</b> \\(\\Delta G = ' + (gs - gp).toFixed(2) + '\\)<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<b>Precos de Lindahl:</b><br>';
+      html += '<span style="color:#1565c0;">\\(\\tau_1 = ' + t1.toFixed(2) + '\\)</span><br>';
+      html += '<span style="color:#00897b;">\\(\\tau_2 = ' + t2.toFixed(2) + '\\)</span><br>';
+      html += '\\(\\tau_1 + \\tau_2 = ' + (t1+t2).toFixed(2) + ' = CMg\\)';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      a1 = parseFloat(document.getElementById('sl-a1').value);
+      a2 = parseFloat(document.getElementById('sl-a2').value);
+      c = parseFloat(document.getElementById('sl-c').value);
+      document.getElementById('val-a1').textContent = a1.toFixed(1);
+      document.getElementById('val-a2').textContent = a2.toFixed(1);
+      document.getElementById('val-c').textContent = c.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-a1').value = 10;
+      document.getElementById('sl-a2').value = 6;
+      document.getElementById('sl-c').value = 8;
+      update();
+    }
+
+    ['sl-a1','sl-a2','sl-c'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

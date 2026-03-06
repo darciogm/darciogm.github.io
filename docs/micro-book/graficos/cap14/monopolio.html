@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+  Monopoly Equilibrium — Interactive Graph (Chapter 14)
+  Library: JSXGraph
+  Shows: demand, MR, MC, monopoly equilibrium, profit, CS, DWL, competitive comparison
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilibrio de Monopolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .info-box .section-title { font-weight: 700; color: #1565c0; margin-top: 0.4rem; }
+    .info-box .section-title:first-child { margin-top: 0; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Equilibrio de Monopolio</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Intercepto da demanda \(a\): <span class="val" id="val-a">100</span></label>
+        <input type="range" id="slider-a" min="40" max="150" step="1" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Inclinacao da demanda \(b\): <span class="val" id="val-b">1.0</span></label>
+        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider-group">
+        <label>Custo marginal \(c\): <span class="val" id="val-c">20</span></label>
+        <input type="range" id="slider-c" min="0" max="80" step="1" value="20">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-8, 120, 110, -10],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+      name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] }
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+      name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] }
+    });
+
+    function gp() {
+      return {
+        a: parseFloat(document.getElementById('slider-a').value),
+        b: parseFloat(document.getElementById('slider-b').value),
+        c: parseFloat(document.getElementById('slider-c').value)
+      };
+    }
+
+    // DWL triangle (draw first so it's behind)
+    var dwlPoly = board.create('polygon', [
+      [function(){ var p=gp(); var qm=(p.a-p.c)/(2*p.b); return qm; }, function(){ var p=gp(); return (p.a+p.c)/2; }],
+      [function(){ var p=gp(); return (p.a-p.c)/p.b; }, function(){ return gp().c; }],
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return gp().c; }]
+    ], {
+      fillColor: '#ff9800', fillOpacity: 0.25,
+      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+    });
+
+    // Profit rectangle
+    var profitPoly = board.create('polygon', [
+      [0, function(){ return gp().c; }],
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return gp().c; }],
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return (gp().a+gp().c)/2; }],
+      [0, function(){ return (gp().a+gp().c)/2; }]
+    ], {
+      fillColor: '#00897b', fillOpacity: 0.18,
+      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+    });
+
+    // CS triangle
+    var csPoly = board.create('polygon', [
+      [0, function(){ return gp().a; }],
+      [0, function(){ return (gp().a+gp().c)/2; }],
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return (gp().a+gp().c)/2; }]
+    ], {
+      fillColor: '#1565c0', fillOpacity: 0.18,
+      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+    });
+
+    // Demand curve
+    board.create('functiongraph', [function(q) { var p=gp(); return p.a - p.b*q; }], {
+      strokeColor: '#1565c0', strokeWidth: 2.5, name: 'Demanda'
+    });
+    board.create('text', [function(){ return gp().a/gp().b - 5; }, function(){ return 4; }], {
+      name: '', anchorX: 'middle', fontSize: 13, color: '#1565c0',
+      getText: function(){ return 'D'; }
+    });
+
+    // MR curve
+    board.create('functiongraph', [function(q) { var p=gp(); return p.a - 2*p.b*q; }], {
+      strokeColor: '#C8102E', strokeWidth: 2, dash: 2, name: 'RMg'
+    });
+    board.create('text', [function(){ return gp().a/(2*gp().b) - 3; }, function(){ return 4; }], {
+      name: '', anchorX: 'middle', fontSize: 13, color: '#C8102E',
+      getText: function(){ return 'RMg'; }
+    });
+
+    // MC line
+    board.create('functiongraph', [function(q) { return gp().c; }], {
+      strokeColor: '#00897b', strokeWidth: 2.5, name: 'CMg'
+    });
+    board.create('text', [function(){ return gp().a/gp().b - 5; }, function(){ return gp().c + 3; }], {
+      name: '', anchorX: 'middle', fontSize: 13, color: '#00897b',
+      getText: function(){ return 'CMg'; }
+    });
+
+    // Monopoly point
+    var ptQm = board.create('point', [
+      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); },
+      function(){ return 0; }
+    ], { visible: false });
+
+    var ptMon = board.create('point', [
+      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); },
+      function(){ var p=gp(); return (p.a+p.c)/2; }
+    ], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E' });
+
+    // Dashed lines from monopoly point
+    board.create('segment', [
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return (gp().a+gp().c)/2; }],
+      [0, function(){ return (gp().a+gp().c)/2; }]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+    board.create('segment', [
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return (gp().a+gp().c)/2; }],
+      [function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+
+    // Monopoly labels
+    board.create('text', [
+      -6, function(){ return (gp().a+gp().c)/2; },
+      function(){ return '\\(P^m\\)'; }
+    ], { fontSize: 13, color: '#C8102E', anchorX: 'right', useMathJax: true });
+    board.create('text', [
+      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, -4,
+      function(){ return '\\(Q^m\\)'; }
+    ], { fontSize: 13, color: '#C8102E', anchorX: 'middle', useMathJax: true });
+
+    // Competitive point
+    var ptComp = board.create('point', [
+      function(){ var p=gp(); return (p.a-p.c)/p.b; },
+      function(){ return gp().c; }
+    ], { name: '', size: 3, strokeColor: '#00897b', fillColor: '#00897b', strokeOpacity: 0.6, fillOpacity: 0.6 });
+
+    board.create('segment', [
+      [function(){ var p=gp(); return (p.a-p.c)/p.b; }, function(){ return gp().c; }],
+      [function(){ var p=gp(); return (p.a-p.c)/p.b; }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+    board.create('text', [
+      function(){ var p=gp(); return (p.a-p.c)/p.b; }, -4,
+      function(){ return '\\(Q^c\\)'; }
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', useMathJax: true });
+
+    // Area labels
+    board.create('text', [
+      function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
+      function(){ var p=gp(); return (p.a+p.c)/2 + (p.a - (p.a+p.c)/2)/3; },
+      'EC'
+    ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold' });
+
+    board.create('text', [
+      function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
+      function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)/2; },
+      function(){ return '\\(\\pi\\)'; }
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', useMathJax: true });
+
+    board.create('text', [
+      function(){ var p=gp(); var qm=(p.a-p.c)/(2*p.b); var qc=(p.a-p.c)/p.b; return qm + (qc-qm)*0.4; },
+      function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)*0.3; },
+      'PPM'
+    ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold' });
+
+    function updateInfo() {
+      var p = gp();
+      document.getElementById('val-a').textContent = p.a.toFixed(0);
+      document.getElementById('val-b').textContent = p.b.toFixed(1);
+      document.getElementById('val-c').textContent = p.c.toFixed(0);
+
+      var qm = (p.a - p.c) / (2 * p.b);
+      var pm = (p.a + p.c) / 2;
+      var profit = (pm - p.c) * qm;
+      var cs = 0.5 * (p.a - pm) * qm;
+      var qc = (p.a - p.c) / p.b;
+      var dwl = 0.5 * (pm - p.c) * (qc - qm);
+      var lerner = (pm - p.c) / pm;
+
+      var bb = [-8, p.a * 1.1, (p.a / p.b) * 1.1, -10];
+      board.setBoundingBox(bb);
+
+      var html = '<div class="section-title">Monopolio</div>';
+      html += '\\(Q^m = ' + qm.toFixed(2) + '\\), \\(P^m = ' + pm.toFixed(2) + '\\)<br>';
+      html += '\\(\\pi = ' + profit.toFixed(1) + '\\)<br>';
+      html += '\\(EC = ' + cs.toFixed(1) + '\\), \\(PPM = ' + dwl.toFixed(1) + '\\)<br>';
+      html += '\\(L = \\frac{P-CMg}{P} = ' + lerner.toFixed(3) + '\\)';
+      html += '<div class="section-title">Concorrencia Perfeita</div>';
+      html += '\\(Q^c = ' + qc.toFixed(2) + '\\), \\(P^c = ' + p.c.toFixed(0) + '\\)<br>';
+      var csComp = 0.5 * (p.a - p.c) * qc;
+      html += '\\(EC^c = ' + csComp.toFixed(1) + '\\), \\(PPM = 0\\)';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-a').value = 100;
+      document.getElementById('slider-b').value = 1;
+      document.getElementById('slider-c').value = 20;
+      updateInfo();
+    }
+
+    ['slider-a','slider-b','slider-c'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', updateInfo);
+    });
+    updateInfo();
+  </script>
+</body>
+</html>

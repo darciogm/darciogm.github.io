@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+  Interactive Supply & Demand Equilibrium — Chapter 12
+  Library: JSXGraph
+  Features: Sliders for demand/supply intercepts & slopes, equilibrium point,
+            consumer/producer surplus shading, numerical values
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta e Demanda — Equilíbrio de Mercado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.7; }
+    .info-box .eq { text-align: center; margin: .2rem 0; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Equilíbrio de Oferta e Demanda</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Intercepto da Demanda (\(a_D\)): <span class="val" id="val-aD">20</span></label>
+        <input type="range" id="sl-aD" min="10" max="30" step="0.5" value="20">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação da Demanda (\(b_D\)): <span class="val" id="val-bD">2.0</span></label>
+        <input type="range" id="sl-bD" min="0.5" max="4" step="0.1" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Intercepto da Oferta (\(a_S\)): <span class="val" id="val-aS">2</span></label>
+        <input type="range" id="sl-aS" min="0" max="10" step="0.5" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação da Oferta (\(b_S\)): <span class="val" id="val-bS">1.5</span></label>
+        <input type="range" id="sl-bS" min="0.5" max="4" step="0.1" value="1.5">
+      </div>
+      <div class="info-box" id="info">
+        <div class="eq">\(D(p) = a_D - b_D \cdot p\)</div>
+        <div class="eq">\(S(p) = -a_S + b_S \cdot p\)</div>
+        <hr style="margin:.4rem 0;border:none;border-top:1px solid #ddd;">
+        <div id="eq-vals"></div>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1, 16, 16, -1],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[16,0]], {
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 },
+      name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 14 }
+    });
+    board.create('axis', [[0,0],[0,16]], {
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 },
+      name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 14 }
+    });
+
+    // State
+    var aD = 20, bD = 2, aS = 2, bS = 1.5;
+
+    function pStar() { return (aD + aS) / (bD + bS); }
+    function qStar() { return aD - bD * pStar(); }
+    function pDemandMax() { return aD / bD; }
+
+    // Demand: Q = aD - bD*p  =>  p = (aD - Q)/bD  for Q in [0, aD]
+    // Supply: Q = -aS + bS*p  =>  p = (Q + aS)/bS  for Q >= 0, p >= aS/bS
+
+    // Consumer surplus polygon
+    var csPoly = board.create('polygon', [
+      [function(){ return 0; }, function(){ return pDemandMax(); }],
+      [function(){ return qStar(); }, function(){ return pStar(); }],
+      [function(){ return 0; }, function(){ return pStar(); }]
+    ], {
+      fillColor: '#1565c0', fillOpacity: 0.25, borders: {strokeWidth: 0},
+      vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // Producer surplus polygon
+    var pSupplyMin = function(){ return aS / bS; };
+    var psPoly = board.create('polygon', [
+      [function(){ return 0; }, function(){ return pStar(); }],
+      [function(){ return qStar(); }, function(){ return pStar(); }],
+      [function(){ return 0; }, function(){ return pSupplyMin(); }]
+    ], {
+      fillColor: '#00897b', fillOpacity: 0.25, borders: {strokeWidth: 0},
+      vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // Demand curve
+    var demandCurve = board.create('functiongraph', [
+      function(q) { return (aD - q) / bD; }
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D', withLabel: true,
+         label: { position: 'rt', offset: [5, 0], fontSize: 13 } });
+
+    // Supply curve
+    var supplyCurve = board.create('functiongraph', [
+      function(q) { return (q + aS) / bS; }
+    ], { strokeColor: '#00897b', strokeWidth: 2.5, name: 'S', withLabel: true,
+         label: { position: 'rt', offset: [5, 0], fontSize: 13 } });
+
+    // Equilibrium point
+    var eqPt = board.create('point', [
+      function(){ return qStar(); },
+      function(){ return pStar(); }
+    ], { name: '', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true });
+
+    // Dashed lines to axes
+    board.create('segment', [
+      [function(){ return qStar(); }, function(){ return pStar(); }],
+      [function(){ return qStar(); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [
+      [function(){ return qStar(); }, function(){ return pStar(); }],
+      [0, function(){ return pStar(); }]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    // Labels at axes
+    var lblQ = board.create('text', [
+      function(){ return qStar(); }, -0.6,
+      function(){ return 'Q*=' + qStar().toFixed(1); }
+    ], { fontSize: 11, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+    var lblP = board.create('text', [
+      -0.1, function(){ return pStar() + 0.3; },
+      function(){ return 'P*=' + pStar().toFixed(1); }
+    ], { fontSize: 11, anchorX: 'right', cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    function computeCS() { return 0.5 * qStar() * (pDemandMax() - pStar()); }
+    function computePS() { return 0.5 * qStar() * (pStar() - aS / bS); }
+
+    function updateInfo() {
+      var ps = pStar(), qs = qStar();
+      var cs = computeCS(), psurp = computePS();
+      document.getElementById('eq-vals').innerHTML =
+        '<b>Equilíbrio:</b> \\(p^* = ' + ps.toFixed(2) + '\\), \\(Q^* = ' + qs.toFixed(2) + '\\)<br>' +
+        '<span style="color:#1565c0;font-weight:700;">EC = ' + cs.toFixed(2) + '</span><br>' +
+        '<span style="color:#00897b;font-weight:700;">EP = ' + psurp.toFixed(2) + '</span><br>' +
+        '<b>Bem-estar total:</b> ' + (cs + psurp).toFixed(2);
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      aD = parseFloat(document.getElementById('sl-aD').value);
+      bD = parseFloat(document.getElementById('sl-bD').value);
+      aS = parseFloat(document.getElementById('sl-aS').value);
+      bS = parseFloat(document.getElementById('sl-bS').value);
+      document.getElementById('val-aD').textContent = aD.toFixed(1);
+      document.getElementById('val-bD').textContent = bD.toFixed(1);
+      document.getElementById('val-aS').textContent = aS.toFixed(1);
+      document.getElementById('val-bS').textContent = bS.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-aD').value = 20;
+      document.getElementById('sl-bD').value = 2;
+      document.getElementById('sl-aS').value = 2;
+      document.getElementById('sl-bS').value = 1.5;
+      update();
+    }
+
+    ['sl-aD','sl-bD','sl-aS','sl-bS'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

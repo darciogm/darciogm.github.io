@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maximização de Lucro — Firma Competitiva</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f9fa; color: #222; }
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+  h2 { text-align: center; margin-bottom: 0.3rem; color: #333; font-size: 1.3rem; }
+  .subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+  #board { width: 100%; height: 480px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1rem 0; justify-content: center; }
+  .controls label { font-weight: 600; font-size: 0.95rem; }
+  .controls input[type=range] { width: 220px; accent-color: #C8102E; }
+  .controls span { font-family: 'Courier New', monospace; min-width: 2.5rem; }
+  .info-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+  .info-card { background: #fff; border-radius: 8px; padding: 0.8rem 1rem; border-left: 4px solid #1565c0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .info-card.profit { border-left-color: #00897b; }
+  .info-card.condition { border-left-color: #C8102E; }
+  .info-card .label { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-card .value { font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 0.8rem; font-size: 0.85rem; }
+  .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+  .legend-swatch { width: 24px; height: 4px; border-radius: 2px; }
+  button.reset { background: #C8102E; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
+  button.reset:hover { background: #a00d24; }
+  .note { text-align: center; font-size: 0.82rem; color: #666; margin-top: 0.6rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Maximização de Lucro da Firma Competitiva</h2>
+  <p class="subtitle">\(CT(q) = 10 + 2q + 0{,}5q^2\) &mdash; Condição: \(P = CMg(q^*)\)</p>
+
+  <div class="controls">
+    <label for="priceSlider">Preço \(P\):</label>
+    <input type="range" id="priceSlider" min="5" max="50" value="20" step="0.5">
+    <span id="priceValue">20</span>
+    <button class="reset" onclick="resetGraph()">Reset</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Receita \(R = Pq\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Custo Total \(CT(q)\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#00897b"></div> Lucro \(\pi(q)\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#ff9800; height:2px; border-top: 2px dashed #ff9800;"></div> Custo Marginal \(CMg\)</div>
+  </div>
+
+  <div class="info-panel">
+    <div class="info-card">
+      <div class="label">Quantidade ótima \(q^*\)</div>
+      <div class="value" id="qStar">—</div>
+    </div>
+    <div class="info-card profit">
+      <div class="label">Lucro máximo \(\pi^*\)</div>
+      <div class="value" id="piStar">—</div>
+    </div>
+    <div class="info-card condition">
+      <div class="label">CMg em \(q^*\)</div>
+      <div class="value" id="mcStar">—</div>
+    </div>
+    <div class="info-card condition">
+      <div class="label">Condição \(d\pi/dq = 0\)</div>
+      <div class="value" id="foc">—</div>
+    </div>
+    <div class="info-card">
+      <div class="label">\(dq^*/dP\)</div>
+      <div class="value" id="dqdp">—</div>
+    </div>
+    <div class="info-card profit">
+      <div class="label">Oferta inclina para cima?</div>
+      <div class="value" id="slopeUp">—</div>
+    </div>
+  </div>
+  <p class="note">Como \(CMg(q)=2+q\) é crescente, \(dq^*/dP = 1 > 0\): a curva de oferta tem inclinação positiva.</p>
+</div>
+
+<script>
+var board, revCurve, costCurve, profitCurve, mcLine, optPoint, optProfitPoint, optVertLine;
+var price = 20;
+
+function CT(q) { return 10 + 2*q + 0.5*q*q; }
+function MC(q) { return 2 + q; }
+function R(q) { return price * q; }
+function profit(q) { return R(q) - CT(q); }
+function qStar() { return price - 2; } // from P = 2 + q => q* = P - 2
+
+function initBoard() {
+  board = JXG.JSXGraph.initBoard('board', {
+    boundingbox: [-2, 600, 55, -200],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 14 } },
+      y: { name: '$', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 14 } }
+    }
+  });
+
+  // Revenue
+  revCurve = board.create('functiongraph', [function(q){ return price*q; }, 0, 52], {
+    strokeColor: '#1565c0', strokeWidth: 2.5, name: 'R(q)'
+  });
+
+  // Cost
+  costCurve = board.create('functiongraph', [CT, 0, 52], {
+    strokeColor: '#C8102E', strokeWidth: 2.5, name: 'CT(q)'
+  });
+
+  // Profit
+  profitCurve = board.create('functiongraph', [profit, 0, 52], {
+    strokeColor: '#00897b', strokeWidth: 2.5, name: 'π(q)'
+  });
+
+  // MC line (dashed)
+  mcLine = board.create('functiongraph', [MC, 0, 52], {
+    strokeColor: '#ff9800', strokeWidth: 2, dash: 3, name: 'CMg(q)'
+  });
+
+  // Zero line
+  board.create('functiongraph', [function(){ return 0; }, -2, 55], {
+    strokeColor: '#999', strokeWidth: 0.8, dash: 2
+  });
+
+  // Optimal point on profit curve
+  var qs = qStar();
+  optProfitPoint = board.create('point', [function(){ return Math.max(qStar(),0); }, function(){ return profit(Math.max(qStar(),0)); }], {
+    size: 5, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true
+  });
+
+  // Optimal point on revenue/cost intersection marker
+  optPoint = board.create('point', [function(){ return Math.max(qStar(),0); }, function(){ return R(Math.max(qStar(),0)); }], {
+    size: 4, fillColor: '#1565c0', strokeColor: '#1565c0', name: '', fixed: true
+  });
+
+  // Vertical dashed line at q*
+  optVertLine = board.create('segment', [
+    [function(){ return Math.max(qStar(),0); }, 0],
+    [function(){ return Math.max(qStar(),0); }, function(){ return R(Math.max(qStar(),0)); }]
+  ], { strokeColor: '#999', dash: 2, strokeWidth: 1 });
+
+  updateInfo();
+}
+
+function updateInfo() {
+  var qs = Math.max(qStar(), 0);
+  var pi = profit(qs);
+  var mc = MC(qs);
+  var dpi = price - mc; // should be ≈ 0
+
+  document.getElementById('qStar').textContent = qs.toFixed(2);
+  document.getElementById('piStar').textContent = pi.toFixed(2);
+  document.getElementById('mcStar').textContent = mc.toFixed(2) + ' = P';
+  document.getElementById('foc').textContent = 'P − CMg = ' + dpi.toFixed(2) + ' = 0';
+  document.getElementById('dqdp').textContent = '1 (= 1/CMg\')';
+  document.getElementById('slopeUp').textContent = 'Sim (dq*/dP = 1 > 0)';
+  document.getElementById('slopeUp').style.color = '#00897b';
+}
+
+function updateGraph() {
+  price = parseFloat(document.getElementById('priceSlider').value);
+  document.getElementById('priceValue').textContent = price;
+
+  // Adjust bounding box dynamically
+  var qs = Math.max(qStar(), 0);
+  var maxY = Math.max(R(qs), CT(qs), 300) * 1.15;
+  var minY = Math.min(profit(0), -50);
+  var maxX = Math.max(qs + 10, 30);
+  board.setBoundingBox([-2, maxY, maxX, minY]);
+
+  board.update();
+  updateInfo();
+}
+
+function resetGraph() {
+  document.getElementById('priceSlider').value = 20;
+  price = 20;
+  updateGraph();
+}
+
+document.getElementById('priceSlider').addEventListener('input', updateGraph);
+
+initBoard();
+</script>
+</body>
+</html>

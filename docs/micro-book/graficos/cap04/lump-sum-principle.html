@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--
+  Lump Sum Principle — Interactive Graph (Chapter 4)
+  Library: JSXGraph
+  Reason: JSXGraph handles multiple budget lines and indifference curves
+  efficiently with function-based coordinates, enabling clear visual
+  comparison of per-unit vs lump-sum taxation effects on consumer welfare.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principio do Montante Fixo</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      width: 300px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+    .info-box .eq { text-align: center; margin: 0.2rem 0; color: #333; }
+    .legend { font-size: 0.8rem; margin-top: 0.5rem; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Principio do Montante Fixo (<em>Lump Sum</em>)</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Renda \(M\): <span class="val" id="val-M">80</span></label>
+        <input type="range" id="slider-M" min="20" max="100" step="1" value="80">
+      </div>
+      <div class="slider-group">
+        <label>Preco \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>Preco \(p_2\): <span class="val" id="val-p2">4</span></label>
+        <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>Imposto unitario \(t\): <span class="val" id="val-t">2.0</span></label>
+        <input type="range" id="slider-t" min="0.5" max="10" step="0.5" value="2">
+      </div>
+
+      <div class="legend">
+        <span style="background:#C8102E;"></span> Original &nbsp;
+        <span style="background:#1565c0;"></span> Imposto unitario &nbsp;
+        <span style="background:#00897b;"></span> <em>Lump sum</em>
+      </div>
+
+      <div class="info-box" id="info">
+        <div class="eq" id="eq-rev"></div>
+        <div class="eq" id="eq-ut"></div>
+        <div class="eq" id="eq-ul"></div>
+        <div class="eq" id="eq-diff"></div>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Cobb-Douglas with alpha = 0.5
+    var ALPHA = 0.5;
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1, 25, 25, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepAspectRatio: false
+    });
+
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '\\(x_1\\)', withLabel: true, label: { position: 'rt', offset: [-15, 15] }
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '\\(x_2\\)', withLabel: true, label: { position: 'rt', offset: [15, -5] }
+    });
+
+    function getP() {
+      return {
+        M: parseFloat(document.getElementById('slider-M').value),
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        p2: parseFloat(document.getElementById('slider-p2').value),
+        t: parseFloat(document.getElementById('slider-t').value)
+      };
+    }
+
+    function computeAll() {
+      var p = getP();
+      // Original optimum
+      var x1o = ALPHA * p.M / p.p1;
+      var x2o = (1 - ALPHA) * p.M / p.p2;
+      var Uo = Math.pow(x1o, ALPHA) * Math.pow(x2o, 1 - ALPHA);
+
+      // Per-unit tax on good 1: new price = p1 + t
+      var p1t = p.p1 + p.t;
+      var x1t = ALPHA * p.M / p1t;
+      var x2t = (1 - ALPHA) * p.M / p.p2;
+      var Ut = Math.pow(x1t, ALPHA) * Math.pow(x2t, 1 - ALPHA);
+      var Rev = p.t * x1t;
+
+      // Lump sum tax with same revenue
+      var Ml = p.M - Rev;
+      var x1l = ALPHA * Ml / p.p1;
+      var x2l = (1 - ALPHA) * Ml / p.p2;
+      var Ul = Math.pow(x1l, ALPHA) * Math.pow(x2l, 1 - ALPHA);
+
+      return {
+        x1o: x1o, x2o: x2o, Uo: Uo,
+        x1t: x1t, x2t: x2t, Ut: Ut,
+        x1l: x1l, x2l: x2l, Ul: Ul,
+        Rev: Rev, p1t: p1t, Ml: Ml
+      };
+    }
+
+    // --- Original budget line (red) ---
+    var oA = board.create('point', [function() { return getP().M / getP().p1; }, 0], { visible: false });
+    var oB = board.create('point', [0, function() { return getP().M / getP().p2; }], { visible: false });
+    board.create('segment', [oA, oB], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    // --- Per-unit tax budget line (blue) ---
+    var tA = board.create('point', [function() { return getP().M / computeAll().p1t; }, 0], { visible: false });
+    var tB = board.create('point', [0, function() { return getP().M / getP().p2; }], { visible: false });
+    board.create('segment', [tA, tB], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+    // --- Lump sum budget line (teal) ---
+    var lA = board.create('point', [function() { return computeAll().Ml / getP().p1; }, 0], { visible: false });
+    var lB = board.create('point', [0, function() { return computeAll().Ml / getP().p2; }], { visible: false });
+    board.create('segment', [lA, lB], { strokeColor: '#00897b', strokeWidth: 2.5 });
+
+    // --- Indifference curves ---
+    function makeIC(getU, color) {
+      return board.create('curve', [
+        function(x) { return x; },
+        function(x) {
+          if (x <= 0.01) return NaN;
+          var U = getU();
+          var x2 = Math.pow(U / Math.pow(x, ALPHA), 1 / (1 - ALPHA));
+          return (x2 > 0 && x2 < 50) ? x2 : NaN;
+        },
+        0.05, 25
+      ], { strokeColor: color, strokeWidth: 2, dash: 0 });
+    }
+
+    makeIC(function() { return computeAll().Ut; }, '#1565c0');
+    makeIC(function() { return computeAll().Ul; }, '#00897b');
+
+    // Optimal points
+    board.create('point', [
+      function() { return computeAll().x1t; },
+      function() { return computeAll().x2t; }
+    ], { name: '', size: 4, strokeColor: '#1565c0', fillColor: '#1565c0' });
+
+    board.create('point', [
+      function() { return computeAll().x1l; },
+      function() { return computeAll().x2l; }
+    ], { name: '', size: 4, strokeColor: '#00897b', fillColor: '#00897b' });
+
+    // Labels for optimal points
+    board.create('text', [
+      function() { return computeAll().x1t + 0.5; },
+      function() { return computeAll().x2t + 0.8; },
+      function() { return 'Tax'; }
+    ], { fontSize: 11, color: '#1565c0', fontWeight: 'bold' });
+
+    board.create('text', [
+      function() { return computeAll().x1l + 0.5; },
+      function() { return computeAll().x2l + 0.8; },
+      function() { return 'LS'; }
+    ], { fontSize: 11, color: '#00897b', fontWeight: 'bold' });
+
+    function updateInfo() {
+      var p = getP();
+      var c = computeAll();
+      document.getElementById('val-M').textContent = p.M.toFixed(0);
+      document.getElementById('val-p1').textContent = p.p1.toFixed(1);
+      document.getElementById('val-p2').textContent = p.p2.toFixed(1);
+      document.getElementById('val-t').textContent = p.t.toFixed(1);
+
+      document.getElementById('eq-rev').innerHTML =
+        'Receita: \\(R = t \\cdot x_1^t = ' + c.Rev.toFixed(2) + '\\)';
+      document.getElementById('eq-ut').innerHTML =
+        'Utilidade (imposto unitario): \\(U^t = ' + c.Ut.toFixed(3) + '\\)';
+      document.getElementById('eq-ul').innerHTML =
+        'Utilidade (<em>lump sum</em>): \\(U^{LS} = ' + c.Ul.toFixed(3) + '\\)';
+      document.getElementById('eq-diff').innerHTML =
+        '\\(U^{LS} - U^t = ' + (c.Ul - c.Ut).toFixed(3) + ' \\geq 0\\) &#10003;';
+
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-M').value = 80;
+      document.getElementById('slider-p1').value = 4;
+      document.getElementById('slider-p2').value = 4;
+      document.getElementById('slider-t').value = 2;
+      updateInfo();
+    }
+
+    ['slider-M', 'slider-p1', 'slider-p2', 'slider-t'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', updateInfo);
+    });
+
+    updateInfo();
+  </script>
+</body>
+</html>

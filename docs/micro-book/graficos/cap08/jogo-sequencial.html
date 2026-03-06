@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--
+  Library: D3.js
+  Reason: D3 provides flexible SVG tree rendering for extensive form game trees
+  with editable payoffs, backward induction highlighting, and presets.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Sequencial — Forma Extensiva</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #tree-svg { border: 1px solid #ddd; border-radius: 6px; background: #fafafa; }
+    .controls { width: 320px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .preset-group { margin-bottom: 0.8rem; }
+    .preset-group button {
+      padding: 0.35rem 0.7rem; margin: 0.2rem; font-family: inherit; font-size: 0.8rem;
+      border: 1px solid #1565c0; border-radius: 4px; cursor: pointer; background: #fff; color: #1565c0;
+    }
+    .preset-group button:hover { background: #1565c0; color: #fff; }
+    .payoff-editor { margin-bottom: 0.8rem; font-size: 0.82rem; }
+    .payoff-editor table { width: 100%; border-collapse: collapse; }
+    .payoff-editor th, .payoff-editor td { padding: 0.25rem 0.3rem; text-align: center; border: 1px solid #ddd; }
+    .payoff-editor th { background: #eee; font-size: 0.78rem; }
+    .payoff-editor input { width: 36px; text-align: center; border: 1px solid #ccc; border-radius: 3px; font-family: inherit; font-size: 0.82rem; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .btn-solve { display: block; width: 100%; margin-top: 0.5rem; padding: 0.5rem; background: #00897b; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .node-circle { cursor: default; }
+    .edge-label { font-size: 13px; font-family: 'CMU Serif', Georgia, serif; }
+    .payoff-label { font-size: 12px; font-family: 'CMU Serif', Georgia, serif; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #tree-svg { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Jogo Sequencial — Forma Extensiva e Inducao Retroativa</div>
+  <div class="graph-container">
+    <svg id="tree-svg" width="520" height="420"></svg>
+    <div class="controls">
+      <h3>Jogos pre-definidos</h3>
+      <div class="preset-group">
+        <button onclick="loadPreset('entry')">Entrada/Deterrencia</button>
+        <button onclick="loadPreset('stackelberg')">Stackelberg</button>
+      </div>
+
+      <h3>Payoffs nos nos terminais</h3>
+      <div class="payoff-editor" id="payoff-editor"></div>
+
+      <button class="btn-solve" onclick="solveAndDraw()">Resolver (inducao retroativa)</button>
+
+      <div class="info-box" id="info">Escolha um jogo e clique em <strong>Resolver</strong>.</div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Game tree data structure
+    // Each node: { id, player, label, children: [{action, node}], payoffs: [p1, p2] (terminal only) }
+    var games = {
+      entry: {
+        name: 'Deterrencia de Entrada',
+        tree: {
+          id: 'root', player: 'Entrante', label: 'E',
+          children: [
+            { action: 'Nao Entrar', node: { id: 't1', payoffs: [0, 2] } },
+            { action: 'Entrar', node: {
+              id: 'n2', player: 'Incumbente', label: 'I',
+              children: [
+                { action: 'Acomodar', node: { id: 't2', payoffs: [1, 1] } },
+                { action: 'Lutar', node: { id: 't3', payoffs: [-1, -1] } }
+              ]
+            }}
+          ]
+        }
+      },
+      stackelberg: {
+        name: 'Stackelberg (simplificado)',
+        tree: {
+          id: 'root', player: 'Lider', label: 'L',
+          children: [
+            { action: 'Alta', node: {
+              id: 'n2a', player: 'Seguidor', label: 'S',
+              children: [
+                { action: 'Alta', node: { id: 't1', payoffs: [4, 4] } },
+                { action: 'Baixa', node: { id: 't2', payoffs: [2, 5] } }
+              ]
+            }},
+            { action: 'Baixa', node: {
+              id: 'n2b', player: 'Seguidor', label: 'S',
+              children: [
+                { action: 'Alta', node: { id: 't3', payoffs: [5, 2] } },
+                { action: 'Baixa', node: { id: 't4', payoffs: [3, 3] } }
+              ]
+            }}
+          ]
+        }
+      }
+    };
+
+    var currentGame = null;
+    var terminalNodes = [];
+    var biPath = []; // backward induction optimal path (edge ids)
+
+    function loadPreset(key) {
+      currentGame = JSON.parse(JSON.stringify(games[key]));
+      biPath = [];
+      buildPayoffEditor();
+      drawTree();
+      document.getElementById('info').innerHTML = '<strong>' + currentGame.name + '</strong> carregado. Edite payoffs e clique em <strong>Resolver</strong>.';
+    }
+
+    function collectTerminals(node, path) {
+      if (node.payoffs !== undefined) {
+        terminalNodes.push({ node: node, path: path });
+        return;
+      }
+      if (node.children) {
+        for (var i = 0; i < node.children.length; i++) {
+          collectTerminals(node.children[i].node, path + ' > ' + node.children[i].action);
+        }
+      }
+    }
+
+    function buildPayoffEditor() {
+      terminalNodes = [];
+      collectTerminals(currentGame.tree, currentGame.tree.label);
+
+      var html = '<table><tr><th>Caminho</th><th>J1</th><th>J2</th></tr>';
+      for (var i = 0; i < terminalNodes.length; i++) {
+        var tn = terminalNodes[i];
+        html += '<tr><td style="text-align:left;font-size:0.75rem">' + tn.path + '</td>' +
+          '<td><input id="pay1-' + i + '" value="' + tn.node.payoffs[0] + '"></td>' +
+          '<td><input id="pay2-' + i + '" value="' + tn.node.payoffs[1] + '"></td></tr>';
+      }
+      html += '</table>';
+      document.getElementById('payoff-editor').innerHTML = html;
+    }
+
+    function readPayoffs() {
+      for (var i = 0; i < terminalNodes.length; i++) {
+        terminalNodes[i].node.payoffs[0] = parseFloat(document.getElementById('pay1-' + i).value) || 0;
+        terminalNodes[i].node.payoffs[1] = parseFloat(document.getElementById('pay2-' + i).value) || 0;
+      }
+    }
+
+    // Backward induction
+    function backwardInduction(node, depth) {
+      if (node.payoffs !== undefined) {
+        return { payoffs: node.payoffs, path: [] };
+      }
+
+      var playerIdx = depth % 2; // simple alternating player assumption
+      var best = null;
+      var bestAction = -1;
+
+      for (var i = 0; i < node.children.length; i++) {
+        var result = backwardInduction(node.children[i].node, depth + 1);
+        if (best === null || result.payoffs[playerIdx] > best.payoffs[playerIdx]) {
+          best = result;
+          bestAction = i;
+        }
+      }
+
+      return {
+        payoffs: best.payoffs,
+        path: [{ nodeId: node.id, actionIdx: bestAction }].concat(best.path)
+      };
+    }
+
+    function solveAndDraw() {
+      readPayoffs();
+      var result = backwardInduction(currentGame.tree, 0);
+      biPath = result.path;
+
+      drawTree();
+
+      var pathStr = '';
+      for (var i = 0; i < biPath.length; i++) {
+        var node = findNodeById(currentGame.tree, biPath[i].nodeId);
+        if (node && node.children) {
+          pathStr += node.label + ': ' + node.children[biPath[i].actionIdx].action;
+          if (i < biPath.length - 1) pathStr += ' -> ';
+        }
+      }
+
+      document.getElementById('info').innerHTML =
+        '<strong>Equilibrio Perfeito em Subjogos:</strong><br>' +
+        pathStr + '<br>' +
+        'Payoffs: (' + result.payoffs[0] + ', ' + result.payoffs[1] + ')';
+    }
+
+    function findNodeById(node, id) {
+      if (node.id === id) return node;
+      if (node.children) {
+        for (var i = 0; i < node.children.length; i++) {
+          var found = findNodeById(node.children[i].node, id);
+          if (found) return found;
+        }
+      }
+      return null;
+    }
+
+    // Drawing with D3
+    function layoutTree(node, x, y, dx, depth) {
+      var positions = [];
+      var pos = { node: node, x: x, y: y, depth: depth };
+      positions.push(pos);
+
+      if (node.children) {
+        var n = node.children.length;
+        var startX = x - dx * (n - 1) / 2;
+        for (var i = 0; i < n; i++) {
+          var childX = startX + dx * i;
+          var childY = y + 100;
+          var childPositions = layoutTree(node.children[i].node, childX, childY, dx / 2.2, depth + 1);
+          positions = positions.concat(childPositions);
+        }
+      }
+      return positions;
+    }
+
+    function drawTree() {
+      var svg = d3.select('#tree-svg');
+      svg.selectAll('*').remove();
+
+      var width = 520, height = 420;
+      var positions = layoutTree(currentGame.tree, width / 2, 40, width / 4, 0);
+
+      var posMap = {};
+      positions.forEach(function(p) { posMap[p.node.id] = p; });
+
+      // Build BI path set
+      var biSet = {};
+      for (var i = 0; i < biPath.length; i++) {
+        biSet[biPath[i].nodeId + '-' + biPath[i].actionIdx] = true;
+      }
+
+      // Draw edges
+      positions.forEach(function(p) {
+        if (p.node.children) {
+          p.node.children.forEach(function(child, idx) {
+            var cp = posMap[child.node.id];
+            if (!cp) return;
+            var isBI = biSet[p.node.id + '-' + idx];
+
+            svg.append('line')
+              .attr('x1', p.x).attr('y1', p.y)
+              .attr('x2', cp.x).attr('y2', cp.y)
+              .attr('stroke', isBI ? '#C8102E' : '#999')
+              .attr('stroke-width', isBI ? 3.5 : 1.5)
+              .attr('stroke-dasharray', isBI ? '' : '');
+
+            // Action label
+            var mx = (p.x + cp.x) / 2;
+            var my = (p.y + cp.y) / 2;
+            var offsetX = cp.x < p.x ? -10 : 10;
+            svg.append('text')
+              .attr('x', mx + offsetX - 15)
+              .attr('y', my - 5)
+              .attr('class', 'edge-label')
+              .attr('fill', isBI ? '#C8102E' : '#555')
+              .attr('font-weight', isBI ? '700' : '400')
+              .text(child.action);
+          });
+        }
+      });
+
+      // Draw nodes
+      positions.forEach(function(p) {
+        if (p.node.payoffs !== undefined) {
+          // Terminal node - rectangle
+          var isOnPath = false;
+          for (var i = 0; i < biPath.length; i++) {
+            var parentNode = findNodeById(currentGame.tree, biPath[i].nodeId);
+            if (parentNode && parentNode.children && parentNode.children[biPath[i].actionIdx].node.id === p.node.id) {
+              isOnPath = true; break;
+            }
+          }
+
+          svg.append('rect')
+            .attr('x', p.x - 28).attr('y', p.y - 12)
+            .attr('width', 56).attr('height', 24)
+            .attr('rx', 4)
+            .attr('fill', isOnPath ? '#fff3cd' : '#f5f5f5')
+            .attr('stroke', isOnPath ? '#C8102E' : '#999')
+            .attr('stroke-width', isOnPath ? 2 : 1);
+
+          svg.append('text')
+            .attr('x', p.x).attr('y', p.y + 4)
+            .attr('text-anchor', 'middle')
+            .attr('class', 'payoff-label')
+            .attr('fill', '#333')
+            .attr('font-weight', isOnPath ? '700' : '400')
+            .text('(' + p.node.payoffs[0] + ', ' + p.node.payoffs[1] + ')');
+
+        } else {
+          // Decision node - circle
+          var isBI = biSet.hasOwnProperty(p.node.id + '-0') || biSet.hasOwnProperty(p.node.id + '-1');
+
+          svg.append('circle')
+            .attr('cx', p.x).attr('cy', p.y)
+            .attr('r', 18)
+            .attr('fill', isBI ? '#C8102E' : '#1565c0')
+            .attr('stroke', '#fff')
+            .attr('stroke-width', 2)
+            .attr('class', 'node-circle');
+
+          svg.append('text')
+            .attr('x', p.x).attr('y', p.y + 5)
+            .attr('text-anchor', 'middle')
+            .attr('fill', '#fff')
+            .attr('font-size', '14px')
+            .attr('font-weight', '700')
+            .attr('font-family', "'CMU Serif', Georgia, serif")
+            .text(p.node.label);
+
+          // Player label above
+          svg.append('text')
+            .attr('x', p.x).attr('y', p.y - 24)
+            .attr('text-anchor', 'middle')
+            .attr('fill', '#555')
+            .attr('font-size', '11px')
+            .attr('font-family', "'CMU Serif', Georgia, serif")
+            .text(p.node.player);
+        }
+      });
+    }
+
+    function resetAll() {
+      loadPreset('entry');
+    }
+
+    // Initial load
+    loadPreset('entry');
+  </script>
+</body>
+</html>

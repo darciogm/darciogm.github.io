@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+  Market Structure Comparison — Interactive Graph (Chapter 15)
+  Library: JSXGraph
+  Shows: competitive, Cournot, Stackelberg, monopoly/collusion on same (Q, P) diagram
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparacao de Estruturas de Mercado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 440px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 340px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.83rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.6rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.78rem; line-height: 1.6; }
+    table.results { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin-top: 0.3rem; }
+    table.results th { background: #f0f0f0; padding: 0.25rem 0.3rem; border: 1px solid #ddd; font-weight: 700; text-align: center; }
+    table.results td { padding: 0.25rem 0.3rem; border: 1px solid #ddd; text-align: center; }
+    .dot-legend { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 900px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Comparacao de Estruturas de Mercado</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros</h3>
+      <div class="slider-group">
+        <label>Intercepto \(a\): <span class="val" id="val-a">100</span></label>
+        <input type="range" id="slider-a" min="40" max="200" step="1" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Inclinacao \(b\): <span class="val" id="val-b">1.0</span></label>
+        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider-group">
+        <label>Custo marginal \(c\): <span class="val" id="val-c">20</span></label>
+        <input type="range" id="slider-c" min="0" max="80" step="1" value="20">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-8, 120, 110, -10],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+
+    function rebuildBoard() {
+      JXG.JSXGraph.freeBoard(board);
+      board = JXG.JSXGraph.initBoard('jxgbox', {
+        boundingbox: [-8, 120, 110, -10],
+        axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+      });
+    }
+
+    function gp() {
+      return {
+        a: parseFloat(document.getElementById('slider-a').value),
+        b: parseFloat(document.getElementById('slider-b').value),
+        c: parseFloat(document.getElementById('slider-c').value)
+      };
+    }
+
+    function updateGraph() {
+      var p = gp();
+      document.getElementById('val-a').textContent = p.a.toFixed(0);
+      document.getElementById('val-b').textContent = p.b.toFixed(1);
+      document.getElementById('val-c').textContent = p.c.toFixed(0);
+
+      rebuildBoard();
+
+      var maxQ = (p.a - p.c) / p.b * 1.15;
+      board.setBoundingBox([-maxQ * 0.08, p.a * 1.1, maxQ, -p.a * 0.08]);
+
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] } });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] } });
+
+      // Demand
+      board.create('functiongraph', [function(q){ return p.a - p.b*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+      board.create('text', [maxQ * 0.9, 4, 'D'], { fontSize: 13, color: '#1565c0' });
+
+      // MR
+      board.create('functiongraph', [function(q){ return p.a - 2*p.b*q; }], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
+
+      // MC
+      board.create('functiongraph', [function(q){ return p.c; }], { strokeColor: '#00897b', strokeWidth: 2 });
+      board.create('text', [maxQ * 0.9, p.c + 3, 'CMg'], { fontSize: 12, color: '#00897b' });
+
+      // Compute all outcomes (symmetric duopoly, costs c)
+      var am = p.a - p.c; // a - c
+
+      // Competitive (Bertrand): P = c, Q = (a-c)/b
+      var qComp = am / p.b;
+      var pComp = p.c;
+      var piComp = 0;
+      var csComp = 0.5 * am * qComp;
+
+      // Cournot: Q = 2(a-c)/(3b), P = (a+2c)/3
+      var qCour = 2 * am / (3 * p.b);
+      var pCour = (p.a + 2 * p.c) / 3;
+      var piCour = 2 * am * am / (9 * p.b);
+      var csCour = 0.5 * (p.a - pCour) * qCour;
+
+      // Stackelberg: Q = 3(a-c)/(4b), P = (a+3c)/4
+      var qStack = 3 * am / (4 * p.b);
+      var pStack = (p.a + 3 * p.c) / 4;
+      var piStack = 3 * am * am / (16 * p.b); // total profit (leader + follower)
+      var csStack = 0.5 * (p.a - pStack) * qStack;
+
+      // Monopoly/Collusion: Q = (a-c)/(2b), P = (a+c)/2
+      var qMon = am / (2 * p.b);
+      var pMon = (p.a + p.c) / 2;
+      var piMon = am * am / (4 * p.b);
+      var csMon = 0.5 * (p.a - pMon) * qMon;
+
+      // Plot points on demand curve
+      var colors = { comp: '#00897b', stack: '#ff9800', cour: '#9c27b0', mon: '#C8102E' };
+
+      board.create('point', [qComp, pComp], { name: 'Competitivo', size: 5, strokeColor: colors.comp, fillColor: colors.comp, label: { fontSize: 12, color: colors.comp, offset: [5, -15] } });
+      board.create('point', [qStack, pStack], { name: 'Stackelberg', size: 5, strokeColor: colors.stack, fillColor: colors.stack, label: { fontSize: 12, color: colors.stack, offset: [5, 10] } });
+      board.create('point', [qCour, pCour], { name: 'Cournot', size: 5, strokeColor: colors.cour, fillColor: colors.cour, label: { fontSize: 12, color: colors.cour, offset: [5, 10] } });
+      board.create('point', [qMon, pMon], { name: 'Colusao', size: 5, strokeColor: colors.mon, fillColor: colors.mon, label: { fontSize: 12, color: colors.mon, offset: [5, 10] } });
+
+      // Dashed lines to axes for each
+      var pts = [[qComp, pComp, colors.comp], [qStack, pStack, colors.stack], [qCour, pCour, colors.cour], [qMon, pMon, colors.mon]];
+      pts.forEach(function(pt) {
+        board.create('segment', [[pt[0], pt[1]], [pt[0], 0]], { strokeColor: pt[2], strokeWidth: 1, dash: 3 });
+        board.create('segment', [[pt[0], pt[1]], [0, pt[1]]], { strokeColor: pt[2], strokeWidth: 1, dash: 3 });
+      });
+
+      // Welfare calculations
+      var dwlCour = csComp - csCour - piCour + piComp; // = total surplus comp - total surplus cournot
+      var wComp = csComp + piComp;
+      var wCour = csCour + piCour;
+      var wStack = csStack + piStack;
+      var wMon = csMon + piMon;
+
+      var html = '<table class="results">';
+      html += '<tr><th>Estrutura</th><th>\\(Q\\)</th><th>\\(P\\)</th><th>\\(\\pi\\)</th><th>\\(EC\\)</th><th>\\(W\\)</th></tr>';
+      html += '<tr><td><span class="dot-legend" style="background:'+colors.comp+'"></span>Compet.</td><td>' + qComp.toFixed(1) + '</td><td>' + pComp.toFixed(1) + '</td><td>' + piComp.toFixed(0) + '</td><td>' + csComp.toFixed(0) + '</td><td>' + wComp.toFixed(0) + '</td></tr>';
+      html += '<tr><td><span class="dot-legend" style="background:'+colors.stack+'"></span>Stackelb.</td><td>' + qStack.toFixed(1) + '</td><td>' + pStack.toFixed(1) + '</td><td>' + piStack.toFixed(0) + '</td><td>' + csStack.toFixed(0) + '</td><td>' + wStack.toFixed(0) + '</td></tr>';
+      html += '<tr><td><span class="dot-legend" style="background:'+colors.cour+'"></span>Cournot</td><td>' + qCour.toFixed(1) + '</td><td>' + pCour.toFixed(1) + '</td><td>' + piCour.toFixed(0) + '</td><td>' + csCour.toFixed(0) + '</td><td>' + wCour.toFixed(0) + '</td></tr>';
+      html += '<tr><td><span class="dot-legend" style="background:'+colors.mon+'"></span>Colusao</td><td>' + qMon.toFixed(1) + '</td><td>' + pMon.toFixed(1) + '</td><td>' + piMon.toFixed(0) + '</td><td>' + csMon.toFixed(0) + '</td><td>' + wMon.toFixed(0) + '</td></tr>';
+      html += '</table>';
+      html += '<div style="margin-top:0.5rem;font-size:0.78rem;color:#666;">\\(W = EC + \\pi\\). Ordenacao por eficiencia: Compet. \\(\\geq\\) Stack. \\(\\geq\\) Cournot \\(\\geq\\) Colusao.</div>';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-a').value = 100;
+      document.getElementById('slider-b').value = 1;
+      document.getElementById('slider-c').value = 20;
+      updateGraph();
+    }
+
+    document.querySelectorAll('input[type="range"]').forEach(function(el) {
+      el.addEventListener('input', updateGraph);
+    });
+    updateGraph();
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otimização com Restrição — Lagrangeano</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f9fa; color: #222; }
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+  h2 { text-align: center; margin-bottom: 0.3rem; color: #333; font-size: 1.3rem; }
+  .subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+  #board { width: 100%; height: 520px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1rem 0; justify-content: center; }
+  .controls label { font-weight: 600; font-size: 0.95rem; }
+  .controls input[type=range] { width: 220px; accent-color: #C8102E; }
+  .controls span { font-family: 'Courier New', monospace; min-width: 2.5rem; }
+  .info-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+  .info-card { background: #fff; border-radius: 8px; padding: 0.8rem 1rem; border-left: 4px solid #1565c0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .info-card.opt { border-left-color: #C8102E; }
+  .info-card.lambda { border-left-color: #00897b; }
+  .info-card .label { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-card .value { font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 0.8rem; font-size: 0.85rem; }
+  .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+  .legend-swatch { width: 24px; height: 4px; border-radius: 2px; }
+  button.reset { background: #C8102E; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
+  button.reset:hover { background: #a00d24; }
+  .note { text-align: center; font-size: 0.82rem; color: #666; margin-top: 0.6rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Otimização com Restrição: Método de Lagrange</h2>
+  <p class="subtitle">\(\max f(x,y) = xy\) sujeito a \(g(x,y) = x + y = c\) &mdash; Condição: \(\nabla f = \lambda \nabla g\)</p>
+
+  <div class="controls">
+    <label>Restrição \(c\):</label>
+    <input type="range" id="sliderC" min="2" max="20" value="10" step="0.5">
+    <span id="valC">10.0</span>
+    <button class="reset" onclick="resetGraph()">Reset</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Curvas de nível \(f(x,y)=k\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Restrição \(x+y=c\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#00897b; border-radius:50%; width:12px; height:12px;"></div> Ótimo (tangência)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#ff9800"></div> \(\nabla f\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#7b1fa2"></div> \(\lambda \nabla g\)</div>
+  </div>
+
+  <div class="info-panel">
+    <div class="info-card opt">
+      <div class="label">Ótimo \((x^*, y^*)\)</div>
+      <div class="value" id="optXY">—</div>
+    </div>
+    <div class="info-card opt">
+      <div class="label">Valor ótimo \(f^*\)</div>
+      <div class="value" id="fStar">—</div>
+    </div>
+    <div class="info-card lambda">
+      <div class="label">Multiplicador \(\lambda^*\)</div>
+      <div class="value" id="lambdaStar">—</div>
+    </div>
+    <div class="info-card">
+      <div class="label">\(\nabla f\) no ótimo</div>
+      <div class="value" id="gradF">—</div>
+    </div>
+    <div class="info-card">
+      <div class="label">\(\lambda \nabla g\) no ótimo</div>
+      <div class="value" id="lambdaGradG">—</div>
+    </div>
+    <div class="info-card lambda">
+      <div class="label">Condição \(\nabla f = \lambda \nabla g\)</div>
+      <div class="value" id="condition">—</div>
+    </div>
+  </div>
+  <p class="note">O ponto ótimo ocorre onde a curva de nível de \(f\) é tangente à restrição. Os gradientes são paralelos.</p>
+</div>
+
+<script>
+var board;
+var cVal = 10;
+var contourCurves = [];
+var constraintLine, optPoint, gradFArrow, gradGArrow;
+
+// f(x,y) = xy, g(x,y) = x + y = c
+// Optimal: x* = y* = c/2, f* = c²/4, lambda* = c/2
+// grad f = (y, x), grad g = (1, 1)
+
+function optX() { return cVal / 2; }
+function optY() { return cVal / 2; }
+function fStar() { return cVal * cVal / 4; }
+function lambdaStar() { return cVal / 2; }
+
+function initBoard() {
+  var maxCoord = 14;
+  board = JXG.JSXGraph.initBoard('board', {
+    boundingbox: [-1, maxCoord, maxCoord, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 14 } },
+      y: { name: 'y', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 14 } }
+    }
+  });
+
+  drawContours();
+  drawConstraint();
+  drawOptimal();
+  updateInfo();
+}
+
+function drawContours() {
+  // Remove old contours
+  contourCurves.forEach(function(c) { board.removeObject(c); });
+  contourCurves = [];
+
+  // Draw level curves f(x,y) = xy = k => y = k/x (hyperbolas)
+  var fOpt = fStar();
+  var levels = [];
+  for (var i = 1; i <= 8; i++) {
+    levels.push(fOpt * i / 5);
+  }
+
+  levels.forEach(function(k, idx) {
+    var isOpt = Math.abs(k - fOpt) < 0.01;
+    var c = board.create('functiongraph', [
+      function(x) { return k / x; }.bind(null),
+      0.1, 20
+    ], {
+      strokeColor: isOpt ? '#00897b' : '#1565c0',
+      strokeWidth: isOpt ? 2.8 : 1.2,
+      strokeOpacity: isOpt ? 0.9 : 0.3 + 0.05 * idx,
+      dash: isOpt ? 0 : 1
+    });
+    // Bind k properly
+    (function(kk) {
+      board.removeObject(c);
+      c = board.create('functiongraph', [
+        function(x) { return kk / x; },
+        0.05, 20
+      ], {
+        strokeColor: Math.abs(kk - fOpt) < 0.5 ? '#00897b' : '#1565c0',
+        strokeWidth: Math.abs(kk - fOpt) < 0.5 ? 2.8 : 1.2,
+        strokeOpacity: Math.abs(kk - fOpt) < 0.5 ? 0.9 : 0.25 + 0.06 * idx,
+        dash: Math.abs(kk - fOpt) < 0.5 ? 0 : 1
+      });
+    })(k);
+    contourCurves.push(c);
+  });
+}
+
+function drawConstraint() {
+  if (constraintLine) board.removeObject(constraintLine);
+  constraintLine = board.create('functiongraph', [
+    function(x) { return cVal - x; },
+    0, cVal
+  ], {
+    strokeColor: '#C8102E', strokeWidth: 2.8
+  });
+}
+
+function drawOptimal() {
+  if (optPoint) board.removeObject(optPoint);
+  if (gradFArrow) { board.removeObject(gradFArrow); }
+  if (gradGArrow) { board.removeObject(gradGArrow); }
+
+  var ox = optX(), oy = optY();
+
+  optPoint = board.create('point', [ox, oy], {
+    size: 6, fillColor: '#00897b', strokeColor: '#00897b', name: '',
+    fixed: true
+  });
+
+  // Gradient of f at optimal: grad f = (y*, x*) = (c/2, c/2)
+  var scale = 0.15; // scale arrows for visibility
+  var gfx = oy * scale, gfy = ox * scale;
+
+  gradFArrow = board.create('arrow', [
+    [ox, oy], [ox + gfx, oy + gfy]
+  ], { strokeColor: '#ff9800', strokeWidth: 2.5, lastArrow: { type: 2, size: 6 } });
+
+  // lambda * grad g = lambda * (1,1) = (c/2)(1,1)
+  var lam = lambdaStar();
+  var lgx = lam * scale, lgy = lam * scale;
+
+  gradGArrow = board.create('arrow', [
+    [ox, oy], [ox + lgx, oy + lgy]
+  ], { strokeColor: '#7b1fa2', strokeWidth: 2.5, dash: 2, lastArrow: { type: 2, size: 6 } });
+}
+
+function updateInfo() {
+  var ox = optX(), oy = optY(), fs = fStar(), lam = lambdaStar();
+  document.getElementById('optXY').textContent = '(' + ox.toFixed(2) + ', ' + oy.toFixed(2) + ')';
+  document.getElementById('fStar').textContent = fs.toFixed(2);
+  document.getElementById('lambdaStar').textContent = lam.toFixed(2);
+  document.getElementById('gradF').textContent = '(' + oy.toFixed(2) + ', ' + ox.toFixed(2) + ')';
+  document.getElementById('lambdaGradG').textContent = lam.toFixed(2) + ' \u00D7 (1, 1) = (' + lam.toFixed(2) + ', ' + lam.toFixed(2) + ')';
+  document.getElementById('condition').textContent = '\u2207f = \u03BB\u2207g  \u2713 (paralelos)';
+  document.getElementById('condition').style.color = '#00897b';
+}
+
+function updateGraph() {
+  cVal = parseFloat(document.getElementById('sliderC').value);
+  document.getElementById('valC').textContent = cVal.toFixed(1);
+
+  // Clear and redraw
+  board.suspendUpdate();
+
+  // Redraw contours
+  contourCurves.forEach(function(c) { board.removeObject(c); });
+  contourCurves = [];
+  var fOpt = fStar();
+  var levels = [];
+  for (var i = 1; i <= 8; i++) { levels.push(fOpt * i / 5); }
+
+  levels.forEach(function(k, idx) {
+    var isOpt = Math.abs(k - fOpt) < 0.5;
+    var c = board.create('functiongraph', [
+      function(x) { return k / x; },
+      0.05, 25
+    ], {
+      strokeColor: isOpt ? '#00897b' : '#1565c0',
+      strokeWidth: isOpt ? 2.8 : 1.2,
+      strokeOpacity: isOpt ? 0.9 : 0.25 + 0.06 * idx,
+      dash: isOpt ? 0 : 1
+    });
+    contourCurves.push(c);
+  });
+
+  // Redraw constraint
+  if (constraintLine) board.removeObject(constraintLine);
+  constraintLine = board.create('functiongraph', [
+    function(x) { return cVal - x; }, 0, cVal
+  ], { strokeColor: '#C8102E', strokeWidth: 2.8 });
+
+  // Redraw optimal + arrows
+  if (optPoint) board.removeObject(optPoint);
+  if (gradFArrow) board.removeObject(gradFArrow);
+  if (gradGArrow) board.removeObject(gradGArrow);
+
+  var ox = optX(), oy = optY();
+  optPoint = board.create('point', [ox, oy], {
+    size: 6, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true
+  });
+
+  var scale = 0.15;
+  gradFArrow = board.create('arrow', [
+    [ox, oy], [ox + oy*scale, oy + ox*scale]
+  ], { strokeColor: '#ff9800', strokeWidth: 2.5, lastArrow: { type: 2, size: 6 } });
+
+  var lam = lambdaStar();
+  gradGArrow = board.create('arrow', [
+    [ox, oy], [ox + lam*scale, oy + lam*scale]
+  ], { strokeColor: '#7b1fa2', strokeWidth: 2.5, dash: 2, lastArrow: { type: 2, size: 6 } });
+
+  // Adjust bounding box
+  var bb = Math.max(cVal * 0.8, 8);
+  board.setBoundingBox([-1, bb, bb, -1]);
+
+  board.unsuspendUpdate();
+  updateInfo();
+}
+
+function resetGraph() {
+  document.getElementById('sliderC').value = 10;
+  cVal = 10;
+  updateGraph();
+}
+
+document.getElementById('sliderC').addEventListener('input', updateGraph);
+
+initBoard();
+</script>
+</body>
+</html>

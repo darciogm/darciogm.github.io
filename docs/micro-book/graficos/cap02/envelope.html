@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teorema do Envelope</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f9fa; color: #222; }
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+  h2 { text-align: center; margin-bottom: 0.3rem; color: #333; font-size: 1.3rem; }
+  .subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+  #board { width: 100%; height: 480px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1rem 0; justify-content: center; }
+  .controls label { font-weight: 600; font-size: 0.95rem; }
+  .controls input[type=range] { width: 240px; accent-color: #C8102E; }
+  .controls span { font-family: 'Courier New', monospace; min-width: 2.5rem; }
+  .info-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+  .info-card { background: #fff; border-radius: 8px; padding: 0.8rem 1rem; border-left: 4px solid #1565c0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .info-card.env { border-left-color: #C8102E; }
+  .info-card.thm { border-left-color: #00897b; }
+  .info-card .label { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-card .value { font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 0.8rem; font-size: 0.85rem; }
+  .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+  .legend-swatch { width: 24px; height: 4px; border-radius: 2px; }
+  button.reset { background: #C8102E; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
+  button.reset:hover { background: #a00d24; }
+  .note { text-align: center; font-size: 0.82rem; color: #666; margin-top: 0.6rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Teorema do Envelope</h2>
+  <p class="subtitle">\(f(x, \alpha) = -(x - \alpha)^2 + 2\alpha\) &mdash; \(V(\alpha) = \max_x f(x,\alpha)\) &mdash; \(dV/d\alpha = \partial f/\partial \alpha \big|_{x^*}\)</p>
+
+  <div class="controls">
+    <label>Parâmetro \(\alpha\):</label>
+    <input type="range" id="sliderAlpha" min="0.5" max="6" value="3" step="0.1">
+    <span id="valAlpha">3.0</span>
+    <button class="reset" onclick="resetGraph()">Reset</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#1565c0; opacity:0.35"></div> Família \(f(x, \alpha_i)\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Curva ativa \(f(x, \alpha)\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Envelope \(V(\alpha)\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#00897b; border-radius:50%; width:12px; height:12px;"></div> Máximo atual</div>
+  </div>
+
+  <div class="info-panel">
+    <div class="info-card">
+      <div class="label">Parâmetro \(\alpha\)</div>
+      <div class="value" id="alphaVal">—</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Ótimo \(x^*(\alpha) = \alpha\)</div>
+      <div class="value" id="xStarVal">—</div>
+    </div>
+    <div class="info-card env">
+      <div class="label">Valor ótimo \(V(\alpha) = 2\alpha\)</div>
+      <div class="value" id="vAlpha">—</div>
+    </div>
+    <div class="info-card thm">
+      <div class="label">\(dV/d\alpha\) (via envelope)</div>
+      <div class="value" id="dvda">—</div>
+    </div>
+    <div class="info-card thm">
+      <div class="label">\(\partial f/\partial \alpha\) em \(x^*\)</div>
+      <div class="value" id="pf_pa">—</div>
+    </div>
+    <div class="info-card thm">
+      <div class="label">Teorema do Envelope</div>
+      <div class="value" id="envCheck">—</div>
+    </div>
+  </div>
+  <p class="note">\(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular \(x^*(\alpha)\).</p>
+</div>
+
+<script>
+// f(x, alpha) = -(x - alpha)^2 + 2*alpha
+// x*(alpha) = alpha (from FOC: -2(x-alpha) = 0)
+// V(alpha) = f(alpha, alpha) = 0 + 2*alpha = 2*alpha
+// dV/dalpha = 2
+// partial f / partial alpha = 2(x - alpha) + 2, evaluated at x* = alpha: = 0 + 2 = 2. Checks out!
+
+var board;
+var alpha = 3;
+var familyCurves = [];
+
+function f(x, a) { return -(x - a)*(x - a) + 2*a; }
+function xStar(a) { return a; }
+function V(a) { return 2*a; }
+// partial f / partial alpha at x*: d/dalpha [-(x-a)^2 + 2a] = 2(x-a) + 2, at x=a => 2
+function dV_da() { return 2; }
+function pf_pa_at_xstar() { return 2; }
+
+function initBoard() {
+  board = JXG.JSXGraph.initBoard('board', {
+    boundingbox: [-2, 16, 10, -6],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 14 } },
+      y: { name: 'f / V', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 14 } }
+    }
+  });
+
+  drawAll();
+}
+
+function drawAll() {
+  board.suspendUpdate();
+
+  // Remove old family curves
+  familyCurves.forEach(function(c) { board.removeObject(c); });
+  familyCurves = [];
+
+  // Draw family of curves for different alpha values
+  var alphas = [];
+  for (var a = 0.5; a <= 6.5; a += 0.5) { alphas.push(a); }
+
+  alphas.forEach(function(a) {
+    var isActive = Math.abs(a - alpha) < 0.05;
+    var c = board.create('functiongraph', [
+      function(x) { return f(x, a); },
+      -2, 10
+    ], {
+      strokeColor: '#1565c0',
+      strokeWidth: isActive ? 2.8 : 1,
+      strokeOpacity: isActive ? 1 : 0.2
+    });
+    familyCurves.push(c);
+  });
+
+  // Active curve (on top)
+  var activeCurve = board.create('functiongraph', [
+    function(x) { return f(x, alpha); },
+    -2, 10
+  ], {
+    strokeColor: '#1565c0', strokeWidth: 2.8
+  });
+  familyCurves.push(activeCurve);
+
+  // Envelope curve V(alpha) = 2*alpha, plotted as locus of maxima
+  // The locus is the set of points (x*(a), V(a)) = (a, 2a) for a in range
+  // This is a straight line y = 2x in (x, y) space
+  var envCurve = board.create('functiongraph', [
+    function(x) { return 2*x; },
+    0, 8
+  ], {
+    strokeColor: '#C8102E', strokeWidth: 3, dash: 0
+  });
+  familyCurves.push(envCurve);
+
+  // Plot dots at maxima for all alpha
+  alphas.forEach(function(a) {
+    var pt = board.create('point', [xStar(a), V(a)], {
+      size: 2, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true,
+      withLabel: false
+    });
+    familyCurves.push(pt);
+  });
+
+  // Current maximum point (larger)
+  var curMax = board.create('point', [xStar(alpha), V(alpha)], {
+    size: 6, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true
+  });
+  familyCurves.push(curMax);
+
+  // Vertical dashed line at x*
+  var vLine = board.create('segment', [
+    [xStar(alpha), 0], [xStar(alpha), V(alpha)]
+  ], { strokeColor: '#00897b', dash: 3, strokeWidth: 1.2 });
+  familyCurves.push(vLine);
+
+  // Horizontal dashed line at V(alpha)
+  var hLine = board.create('segment', [
+    [0, V(alpha)], [xStar(alpha), V(alpha)]
+  ], { strokeColor: '#00897b', dash: 3, strokeWidth: 1.2 });
+  familyCurves.push(hLine);
+
+  board.unsuspendUpdate();
+  updateInfo();
+}
+
+function updateInfo() {
+  document.getElementById('alphaVal').textContent = alpha.toFixed(2);
+  document.getElementById('xStarVal').textContent = xStar(alpha).toFixed(2);
+  document.getElementById('vAlpha').textContent = V(alpha).toFixed(2);
+  document.getElementById('dvda').textContent = dV_da().toFixed(2);
+  document.getElementById('pf_pa').textContent = pf_pa_at_xstar().toFixed(2);
+  document.getElementById('envCheck').textContent = 'dV/d\u03B1 = \u2202f/\u2202\u03B1 = ' + dV_da() + '  \u2713';
+  document.getElementById('envCheck').style.color = '#00897b';
+}
+
+function updateGraph() {
+  alpha = parseFloat(document.getElementById('sliderAlpha').value);
+  document.getElementById('valAlpha').textContent = alpha.toFixed(1);
+  drawAll();
+}
+
+function resetGraph() {
+  document.getElementById('sliderAlpha').value = 3;
+  alpha = 3;
+  updateGraph();
+}
+
+document.getElementById('sliderAlpha').addEventListener('input', updateGraph);
+
+initBoard();
+</script>
+</body>
+</html>

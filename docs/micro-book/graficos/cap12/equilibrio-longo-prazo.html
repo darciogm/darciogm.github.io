@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+  Long-Run Equilibrium — Chapter 12
+  Library: JSXGraph
+  Features: Side-by-side firm/market panels, entry/exit, p = min ATC
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilíbrio de Longo Prazo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .panels { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+    .panel-label { text-align: center; font-size: .9rem; font-weight: 700; color: #333; margin-bottom: .3rem; }
+    #firmbox, #marketbox { width: 340px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 100%; max-width: 700px; margin: .8rem auto 0; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+    .controls h3 { width: 100%; font-size: .95rem; color: #C8102E; margin-bottom: .4rem; border-bottom: 1px solid #ddd; padding-bottom: .3rem; }
+    .slider-group { flex: 1; min-width: 200px; margin-bottom: .5rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { width: 100%; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: inline-block; margin-top: .5rem; padding: .5rem 2rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 760px) {
+      #firmbox, #marketbox { width: 100%; max-width: 340px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Equilíbrio de Longo Prazo: Firma e Mercado</div>
+  <div class="panels">
+    <div>
+      <div class="panel-label">Firma Individual</div>
+      <div id="firmbox"></div>
+    </div>
+    <div>
+      <div class="panel-label">Mercado</div>
+      <div id="marketbox"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <h3>Parâmetros</h3>
+    <div class="slider-group">
+      <label>Número de firmas (\(m\)): <span class="val" id="val-m">10</span></label>
+      <input type="range" id="sl-m" min="3" max="25" step="1" value="10">
+    </div>
+    <div class="slider-group">
+      <label>Deslocamento da Demanda (\(\Delta D\)): <span class="val" id="val-dD">0</span></label>
+      <input type="range" id="sl-dD" min="-30" max="30" step="1" value="0">
+    </div>
+    <div class="info-box" id="info"></div>
+    <div style="width:100%;text-align:center;">
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Firm cost: TC(q) = q^3 - 6q^2 + 15q + 10 (for nice U-shaped ATC)
+    // MC(q) = 3q^2 - 12q + 15
+    // ATC(q) = q^2 - 6q + 15 + 10/q
+    // Min ATC: dATC/dq = 2q - 6 - 10/q^2 = 0 => approx q*~3.68, ATC~6.17
+    // Simpler: TC = 0.5*q^2 + 2*q + 8 => MC = q + 2, ATC = 0.5*q + 2 + 8/q
+    // Min ATC: -8/q^2 + 0.5 = 0 => q = 4, ATC = 2+2+2 = 6, MC(4) = 6.
+    // Use this simpler version.
+
+    function MC(q) { return q + 2; }
+    function ATC(q) { return q > 0.1 ? 0.5 * q + 2 + 8 / q : 100; }
+    var qMinATC = 4, pMinATC = 6;
+
+    // Firm supply: q(p) = p - 2 for p >= 6 (min ATC)
+    function firmSupply(p) { return p >= pMinATC ? p - 2 : 0; }
+
+    var numFirms = 10, deltaD = 0;
+    // Market demand: Q = 80 + deltaD - 5*p
+    function marketDemand(p) { return Math.max(0, 80 + deltaD - 5 * p); }
+    // Market supply: Q = m * firmSupply(p) = m*(p-2) for p >= 6
+    function marketSupply(p) { return numFirms * firmSupply(p); }
+
+    // Equilibrium: 80 + dD - 5p = m*(p-2) => p = (80 + dD + 2m)/(5+m)
+    function pMarket() { return (80 + deltaD + 2 * numFirms) / (5 + numFirms); }
+    function qMarket() { return marketDemand(pMarket()); }
+    function qFirm() { return firmSupply(pMarket()); }
+    function profit() {
+      var q = qFirm(), p = pMarket();
+      if (q <= 0) return 0;
+      return (p - ATC(q)) * q;
+    }
+    // Long-run equilibrium number of firms: p = 6 => 80+dD-30 = m*4 => m = (50+dD)/4
+    function mLongRun() { return Math.max(1, (50 + deltaD) / 4); }
+
+    // Firm panel
+    var firmBoard = JXG.JSXGraph.initBoard('firmbox', {
+      boundingbox: [-0.5, 14, 10, -0.5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    firmBoard.create('axis', [[0,0],[10,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label: { fontSize: 10 } }, name: 'q', withLabel: true, label: { position: 'rt', offset: [-12,12], fontSize: 12 } });
+    firmBoard.create('axis', [[0,0],[0,14]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label: { fontSize: 10 } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [12,-5], fontSize: 12 } });
+
+    // MC curve
+    firmBoard.create('functiongraph', [function(q) { return MC(q); }, 0, 10],
+      { strokeColor: '#C8102E', strokeWidth: 2, name: 'CMg', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 11 } });
+    // ATC curve
+    firmBoard.create('functiongraph', [function(q) { return ATC(q); }, 0.3, 10],
+      { strokeColor: '#1565c0', strokeWidth: 2, name: 'CMe', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 11 } });
+
+    // Price line on firm
+    firmBoard.create('line', [
+      [0, function(){ return pMarket(); }],
+      [1, function(){ return pMarket(); }]
+    ], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 3, fixed: true, point1: { visible: false }, point2: { visible: false } });
+
+    // Min ATC line
+    firmBoard.create('line', [
+      [0, pMinATC], [1, pMinATC]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 5, fixed: true, point1: { visible: false }, point2: { visible: false } });
+    firmBoard.create('text', [8, pMinATC + 0.4, 'CMe min'], { fontSize: 9, cssStyle: 'color:#999;' });
+
+    // Profit shading
+    var profitPoly = firmBoard.create('polygon', [
+      [0, function(){ return pMarket(); }],
+      [function(){ return Math.max(0, qFirm()); }, function(){ return pMarket(); }],
+      [function(){ return Math.max(0, qFirm()); }, function(){ var q = qFirm(); return q > 0.1 ? ATC(q) : pMarket(); }],
+      [0, function(){ var q = qFirm(); return q > 0.1 ? ATC(q) : pMarket(); }]
+    ], { fillColor: function(){ return profit() >= 0 ? '#00897b' : '#C8102E'; },
+         fillOpacity: 0.15, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // Firm production point
+    firmBoard.create('point', [
+      function(){ return Math.max(0, qFirm()); },
+      function(){ return pMarket(); }
+    ], { name: '', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true });
+
+    // Market panel
+    var mktBoard = JXG.JSXGraph.initBoard('marketbox', {
+      boundingbox: [-2, 14, 60, -0.5],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    mktBoard.create('axis', [[0,0],[60,0]], { ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 0, label: { fontSize: 10 } }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-12,12], fontSize: 12 } });
+    mktBoard.create('axis', [[0,0],[0,14]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label: { fontSize: 10 } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [12,-5], fontSize: 12 } });
+
+    // Market demand
+    mktBoard.create('functiongraph', [function(Q) { return (80 + deltaD - Q) / 5; }, 0, 60],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 11 } });
+
+    // Market supply (short-run with current m)
+    mktBoard.create('functiongraph', [function(Q) { return Q / numFirms + 2; }, 0, 60],
+      { strokeColor: '#00897b', strokeWidth: 2.5, name: 'S', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 11 } });
+
+    // Long-run supply (horizontal at p=6)
+    mktBoard.create('line', [[0, pMinATC], [1, pMinATC]],
+      { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 4, fixed: true, point1: { visible: false }, point2: { visible: false } });
+    mktBoard.create('text', [50, pMinATC + 0.5, 'S(LP)'], { fontSize: 10, cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    // Market equilibrium
+    mktBoard.create('point', [
+      function(){ return qMarket(); },
+      function(){ return pMarket(); }
+    ], { name: '', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true });
+
+    // Dashed to axes
+    mktBoard.create('segment', [
+      [function(){ return qMarket(); }, function(){ return pMarket(); }],
+      [function(){ return qMarket(); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    mktBoard.create('segment', [
+      [function(){ return qMarket(); }, function(){ return pMarket(); }],
+      [0, function(){ return pMarket(); }]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    function updateInfo() {
+      var p = pMarket(), qm = qMarket(), qf = qFirm(), pi = profit();
+      var mLR = mLongRun();
+      var status = '';
+      if (Math.abs(p - pMinATC) < 0.15) status = 'Equilíbrio de longo prazo (lucro zero)';
+      else if (p > pMinATC) status = 'Lucro positivo: firmas entram (m deve subir para ' + mLR.toFixed(1) + ')';
+      else status = 'Prejuízo: firmas saem (m deve cair para ' + mLR.toFixed(1) + ')';
+
+      document.getElementById('info').innerHTML =
+        '<b>Preço de mercado:</b> \\(p = ' + p.toFixed(2) + '\\) | ' +
+        '<b>Quantidade total:</b> \\(Q = ' + qm.toFixed(1) + '\\) | ' +
+        '<b>Quantidade firma:</b> \\(q = ' + qf.toFixed(2) + '\\)<br>' +
+        '<b>Lucro por firma:</b> \\(\\pi = ' + pi.toFixed(2) + '\\) | ' +
+        '<b>CMe min:</b> \\(' + pMinATC.toFixed(2) + '\\)<br>' +
+        '<span style="color:#C8102E;font-weight:700;">' + status + '</span>';
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      numFirms = parseInt(document.getElementById('sl-m').value);
+      deltaD = parseInt(document.getElementById('sl-dD').value);
+      document.getElementById('val-m').textContent = numFirms;
+      document.getElementById('val-dD').textContent = deltaD;
+      firmBoard.update();
+      mktBoard.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-m').value = 10;
+      document.getElementById('sl-dD').value = 0;
+      update();
+    }
+
+    ['sl-m','sl-dD'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

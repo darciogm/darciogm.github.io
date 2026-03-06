@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otimização de uma Variável</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f9fa; color: #222; }
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+  h2 { text-align: center; margin-bottom: 0.3rem; color: #333; font-size: 1.3rem; }
+  .subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+  #board { width: 100%; height: 480px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1rem 0; justify-content: center; }
+  .controls label { font-weight: 600; font-size: 0.95rem; }
+  .controls input[type=range] { width: 200px; accent-color: #C8102E; }
+  .controls span { font-family: 'Courier New', monospace; min-width: 2.5rem; }
+  .info-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+  .info-card { background: #fff; border-radius: 8px; padding: 0.8rem 1rem; border-left: 4px solid #1565c0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .info-card.opt { border-left-color: #C8102E; }
+  .info-card.soc { border-left-color: #00897b; }
+  .info-card .label { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-card .value { font-size: 1.1rem; font-weight: 700; margin-top: 0.2rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 0.8rem; font-size: 0.85rem; }
+  .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+  .legend-swatch { width: 24px; height: 4px; border-radius: 2px; }
+  button.reset { background: #C8102E; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
+  button.reset:hover { background: #a00d24; }
+  .note { text-align: center; font-size: 0.82rem; color: #666; margin-top: 0.6rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Otimização de Função de Uma Variável</h2>
+  <p class="subtitle">\(f(x) = -(x - a)^2 \cdot b + c\) &mdash; CPO: \(f'(x^*)=0\), CSO: \(f''(x^*) < 0\)</p>
+
+  <div class="controls">
+    <label>Curvatura \(b\):</label>
+    <input type="range" id="sliderB" min="0.2" max="3" value="1" step="0.1">
+    <span id="valB">1.0</span>
+    <label style="margin-left:1rem;">Centro \(a\):</label>
+    <input type="range" id="sliderA" min="-3" max="5" value="2" step="0.1">
+    <span id="valA">2.0</span>
+    <button class="reset" onclick="resetGraph()">Reset</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> \(f(x)\)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#ff9800"></div> Tangente (inclinação = \(f'(x)\))</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#C8102E; border-radius:50%; width:12px; height:12px;"></div> Máximo</div>
+  </div>
+
+  <div class="info-panel">
+    <div class="info-card">
+      <div class="label">Ponto arrastável \(x\)</div>
+      <div class="value" id="xDrag">—</div>
+    </div>
+    <div class="info-card">
+      <div class="label">\(f(x)\)</div>
+      <div class="value" id="fxDrag">—</div>
+    </div>
+    <div class="info-card">
+      <div class="label">\(f'(x)\) (inclinação)</div>
+      <div class="value" id="fpDrag">—</div>
+    </div>
+    <div class="info-card opt">
+      <div class="label">Máximo: \(x^*\), \(f(x^*)\)</div>
+      <div class="value" id="optInfo">—</div>
+    </div>
+    <div class="info-card opt">
+      <div class="label">CPO: \(f'(x^*)=0\)</div>
+      <div class="value" id="cpoInfo">—</div>
+    </div>
+    <div class="info-card soc">
+      <div class="label">CSO: \(f''(x^*)\)</div>
+      <div class="value" id="csoInfo">—</div>
+    </div>
+  </div>
+  <p class="note">Arraste o ponto azul sobre a curva para explorar a derivada. A tangente mostra \(f'(x)\) em tempo real.</p>
+</div>
+
+<script>
+var board, fCurve, tangentLine, dragPoint, maxPoint;
+var paramA = 2, paramB = 1, paramC = 5;
+
+function f(x) { return -paramB * (x - paramA) * (x - paramA) + paramC; }
+function fp(x) { return -2 * paramB * (x - paramA); }
+function fpp(x) { return -2 * paramB; }
+
+function initBoard() {
+  board = JXG.JSXGraph.initBoard('board', {
+    boundingbox: [-5, 10, 8, -8],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 14 } },
+      y: { name: 'f(x)', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 14 } }
+    }
+  });
+
+  // Function curve
+  fCurve = board.create('functiongraph', [f, -6, 9], {
+    strokeColor: '#1565c0', strokeWidth: 2.8
+  });
+
+  // Draggable point on curve
+  dragPoint = board.create('glider', [0, f(0), fCurve], {
+    size: 5, fillColor: '#1565c0', strokeColor: '#1565c0', name: ''
+  });
+
+  // Tangent line
+  tangentLine = board.create('line', [
+    function() {
+      var xd = dragPoint.X();
+      return [f(xd) - fp(xd)*xd, fp(xd)]; // line: y = fp(xd)*(x - xd) + f(xd) => ax + b form: [b, a] for JXG std form
+    }
+  ], {
+    strokeColor: '#ff9800', strokeWidth: 2, dash: 2,
+    straightFirst: true, straightLast: true,
+    point1: { visible: false }, point2: { visible: false }
+  });
+
+  // Actually, let's use a segment-based tangent for clarity
+  board.removeObject(tangentLine);
+  tangentLine = board.create('segment', [
+    [function(){ return dragPoint.X() - 2; }, function(){ return f(dragPoint.X()) + fp(dragPoint.X())*(-2); }],
+    [function(){ return dragPoint.X() + 2; }, function(){ return f(dragPoint.X()) + fp(dragPoint.X())*(2); }]
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  // Maximum point
+  maxPoint = board.create('point', [
+    function(){ return paramA; },
+    function(){ return f(paramA); }
+  ], {
+    size: 6, fillColor: '#C8102E', strokeColor: '#C8102E', name: 'max', label: { offset: [8, 12], fontSize: 12, color: '#C8102E' }, fixed: true
+  });
+
+  // Vertical dashed at max
+  board.create('segment', [
+    [function(){ return paramA; }, 0],
+    [function(){ return paramA; }, function(){ return f(paramA); }]
+  ], { strokeColor: '#C8102E', dash: 3, strokeWidth: 1 });
+
+  dragPoint.on('drag', updateInfo);
+  updateInfo();
+}
+
+function updateInfo() {
+  var xd = dragPoint.X();
+  document.getElementById('xDrag').textContent = xd.toFixed(2);
+  document.getElementById('fxDrag').textContent = f(xd).toFixed(2);
+  document.getElementById('fpDrag').textContent = fp(xd).toFixed(3);
+  document.getElementById('optInfo').textContent = 'x*=' + paramA.toFixed(2) + ', f=' + f(paramA).toFixed(2);
+  document.getElementById('cpoInfo').textContent = "f'(" + paramA.toFixed(1) + ") = 0  ✓";
+  var fppVal = fpp(paramA);
+  document.getElementById('csoInfo').textContent = fppVal.toFixed(2) + ' < 0  ✓ (maximo)';
+  document.getElementById('csoInfo').style.color = fppVal < 0 ? '#00897b' : '#C8102E';
+}
+
+function updateParams() {
+  paramA = parseFloat(document.getElementById('sliderA').value);
+  paramB = parseFloat(document.getElementById('sliderB').value);
+  document.getElementById('valA').textContent = paramA.toFixed(1);
+  document.getElementById('valB').textContent = paramB.toFixed(1);
+  board.update();
+  updateInfo();
+}
+
+function resetGraph() {
+  document.getElementById('sliderA').value = 2;
+  document.getElementById('sliderB').value = 1;
+  paramA = 2; paramB = 1;
+  updateParams();
+}
+
+document.getElementById('sliderA').addEventListener('input', updateParams);
+document.getElementById('sliderB').addEventListener('input', updateParams);
+
+initBoard();
+</script>
+</body>
+</html>
