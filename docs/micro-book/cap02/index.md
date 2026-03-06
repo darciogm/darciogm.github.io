@@ -80,6 +80,20 @@ Este resultado é fundamental em estática comparativa: permite calcular como um
 
 Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio.
 
+!!! example "Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
+
+    A **elasticidade-preço da demanda** — definida como \(\varepsilon = \frac{\partial Q}{\partial P} \cdot \frac{P}{Q}\) — é uma aplicação direta de derivadas parciais ao problema do consumidor. No Brasil, estimativas empíricas dessas elasticidades fundamentam decisões de política tributária, regulação de tarifas e política comercial.
+
+    **Alguns valores estimados para o Brasil:**
+
+    | Bem/Serviço | Elasticidade-preço (curto prazo) | Fonte |
+    |---|---|---|
+    | Gasolina | \(-0{,}26\) a \(-0{,}35\) | Cardoso & Bittencourt (2013) [VERIFICAR] |
+    | Energia elétrica residencial | \(-0{,}06\) a \(-0{,}15\) | Mattos & Lima (2005) [VERIFICAR] |
+    | Cigarros | \(-0{,}2\) a \(-0{,}5\) | Iglesias et al. (2007) [VERIFICAR] |
+
+    A demanda inelástica por gasolina (\(|\varepsilon| < 1\)) explica por que aumentos nos impostos sobre combustíveis geram receita significativa com perda de bem-estar relativamente baixa. A elasticidade também é crucial para a estática comparativa discutida nesta seção: pelo teorema da função implícita, a magnitude do ajuste do preço de equilíbrio a um choque de oferta depende diretamente das elasticidades de oferta e demanda.
+
 ---
 
 ## 2.3 Maximização com várias variáveis
@@ -315,6 +329,20 @@ As condições KKT são:
 !!! tip "Interpretação econômica"
     As condições KKT generalizam o método de Lagrange para situações em que o agente pode estar em uma "solução de canto". Por exemplo, um consumidor pode decidir não consumir nenhuma quantidade de um bem (solução \(x_i = 0\)), caso a utilidade marginal por unidade monetária desse bem seja inferior à dos demais bens, mesmo ao nível zero de consumo.
 
+!!! example "Box Brasil — O teto de gastos e a otimização sob restrições de desigualdade"
+
+    A **Emenda Constitucional nº 95/2016** (posteriormente substituída pelo novo arcabouço fiscal da EC 126/2022) impôs um **teto para os gastos primários** da União: a despesa primária total de um exercício não poderia exceder a despesa do exercício anterior corrigida pela inflação (IPCA).
+
+    **Formalização como problema de Kuhn-Tucker.** O governo maximiza uma função de bem-estar social \(W(g_1, g_2, \ldots, g_n)\) — onde \(g_i\) é o gasto na área \(i\) (saúde, educação, defesa, etc.) — sujeito à restrição de desigualdade:
+
+    \[
+    \sum_{i=1}^{n} g_i \leq \bar{G}
+    \]
+
+    onde \(\bar{G}\) é o teto fiscal. As condições de Kuhn-Tucker (Seção 2.7) implicam que, se o teto é ativo (\(\sum g_i = \bar{G}\)), o multiplicador \(\lambda > 0\) mede o **custo social marginal** da restrição fiscal — quanto de bem-estar a sociedade sacrifica por não poder gastar uma unidade adicional. Se o teto não é ativo, \(\lambda = 0\) e a restrição fiscal é irrelevante.
+
+    **Folga complementar na prática.** Na maioria dos exercícios fiscais desde 2017, o teto foi uma restrição ativa (vinculante), com \(\lambda > 0\). A transição para o novo arcabouço fiscal em 2023 modificou os parâmetros da restrição, mas preservou a lógica de otimização sob restrição de desigualdade. As pressões por ampliação do teto revelam, na prática, que o multiplicador \(\lambda\) é percebido como significativamente positivo — o custo social da restrição é elevado.
+
 ---
 
 ## 2.8 Condições de segunda ordem e curvatura
@@ -525,6 +553,120 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
 ---
 
+## Exercícios Resolvidos
+
+!!! example "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
+
+    **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(m = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
+
+    **Dados:** \(U = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\), \(m = 100\).
+
+    **Resolução:**
+
+    **Passo 1 — Montar o Lagrangeano**
+
+    \[
+    \mathcal{L} = x_1^{1/2} x_2^{1/2} + \lambda(100 - 4x_1 - x_2)
+    \]
+
+    **Passo 2 — Condições de primeira ordem**
+
+    \[
+    \frac{\partial \mathcal{L}}{\partial x_1} = \frac{1}{2} x_1^{-1/2} x_2^{1/2} - 4\lambda = 0 \quad \Rightarrow \quad \frac{x_2^{1/2}}{2x_1^{1/2}} = 4\lambda
+    \]
+
+    \[
+    \frac{\partial \mathcal{L}}{\partial x_2} = \frac{1}{2} x_1^{1/2} x_2^{-1/2} - \lambda = 0 \quad \Rightarrow \quad \frac{x_1^{1/2}}{2x_2^{1/2}} = \lambda
+    \]
+
+    \[
+    \frac{\partial \mathcal{L}}{\partial \lambda} = 100 - 4x_1 - x_2 = 0
+    \]
+
+    **Passo 3 — Resolver o sistema**
+
+    Dividindo a primeira CPO pela segunda: \(\frac{x_2}{x_1} = 4\), logo \(x_2 = 4x_1\).
+
+    Substituindo na restrição: \(4x_1 + 4x_1 = 100 \implies x_1^* = 12{,}5\) e \(x_2^* = 50\).
+
+    Da segunda CPO: \(\lambda^* = \frac{(12{,}5)^{1/2}}{2(50)^{1/2}} = \frac{\sqrt{12{,}5}}{2\sqrt{50}} = \frac{1}{4\sqrt{4}} = \frac{1}{8} = 0{,}125\).
+
+    **Resultado:** Cesta ótima: \((x_1^*, x_2^*) = (12{,}5;\ 50)\). Multiplicador: \(\lambda^* = 0{,}125\).
+
+    **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}125\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,125 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
+
+!!! example "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
+
+    **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
+
+    **Dados:** \(P = a - Q\), \(CT = cQ\), parâmetros \(a, c > 0\).
+
+    **Resolução:**
+
+    **Passo 1 — Encontrar a solução ótima**
+
+    Lucro: \(\pi(Q, c) = (a - Q)Q - cQ = aQ - Q^2 - cQ = (a - c)Q - Q^2\).
+
+    CPO: \(\frac{\partial \pi}{\partial Q} = a - c - 2Q = 0 \implies Q^*(c) = \frac{a - c}{2}\).
+
+    Lucro máximo: \(\pi^*(c) = \frac{(a - c)^2}{4}\).
+
+    **Passo 2 — Aplicar o teorema do envelope**
+
+    Pelo teorema do envelope (Seção 2.4):
+
+    \[
+    \frac{d\pi^*}{dc} = \frac{\partial \pi}{\partial c}\bigg|_{Q = Q^*} = -Q^* = -\frac{a - c}{2}
+    \]
+
+    **Passo 3 — Verificar por diferenciação direta**
+
+    \[
+    \frac{d\pi^*}{dc} = \frac{d}{dc}\left[\frac{(a-c)^2}{4}\right] = \frac{2(a-c)(-1)}{4} = -\frac{a-c}{2} \quad \checkmark
+    \]
+
+    **Resultado:** \(\frac{d\pi^*}{dc} = -\frac{a-c}{2} < 0\).
+
+    **Interpretação econômica:** Um aumento unitário no custo marginal reduz o lucro máximo em \(\frac{a-c}{2}\), que é exatamente a quantidade ótima produzida. A elegância do teorema do envelope está em dispensar o cálculo de como \(Q^*\) se ajusta: basta a derivada parcial direta do lucro em relação a \(c\), avaliada no ótimo. No Brasil, quando a Petrobras eleva o preço dos derivados (aumento de \(c\) para distribuidoras), o teorema do envelope permite estimar rapidamente o impacto sobre o lucro do setor sem recalcular toda a cadeia de ajustes de quantidade.
+
+!!! example "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
+
+    **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(m\). Encontre a cesta ótima para \(m = 20\) e \(m = 0{,}5\), identificando soluções interiores e de canto.
+
+    **Dados:** \(U = 2x_1^{1/2} + x_2\), \(p_1 = 4\), \(p_2 = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Montar o Lagrangeano e condições KKT**
+
+    \[
+    \mathcal{L} = 2\sqrt{x_1} + x_2 + \lambda(m - 4x_1 - x_2)
+    \]
+
+    Condições KKT:
+
+    - \(\frac{\partial \mathcal{L}}{\partial x_1} = x_1^{-1/2} - 4\lambda \leq 0\), com igualdade se \(x_1 > 0\)
+    - \(\frac{\partial \mathcal{L}}{\partial x_2} = 1 - \lambda \leq 0\), com igualdade se \(x_2 > 0\)
+    - \(4x_1 + x_2 \leq m\), com igualdade se \(\lambda > 0\)
+
+    **Passo 2 — Caso \(m = 20\) (solução interior)**
+
+    Se \(x_2 > 0\): da segunda condição, \(\lambda = 1\). Da primeira: \(x_1^{-1/2} = 4 \implies x_1^* = 1/16\). Gasto em \(x_1\): \(4 \times 1/16 = 1/4\). Sobra: \(x_2^* = 20 - 1/4 = 19{,}75\).
+
+    Verificação: \(x_1 > 0\), \(x_2 > 0\), restrição ativa. Todas as condições KKT satisfeitas.
+
+    **Passo 3 — Caso \(m = 0{,}5\) (solução de canto)**
+
+    Se \(x_2 > 0\), então \(\lambda = 1\) e \(x_1 = 1/16\), exigindo gasto de \(4 \times 1/16 = 0{,}25\). Sobraria \(x_2 = 0{,}25\). Mas verifiquemos: com \(m = 0{,}5\), o consumidor pode alocar tudo em \(x_1\): \(x_1 = 0{,}5/4 = 0{,}125\), obtendo \(U = 2\sqrt{0{,}125} \approx 0{,}707\). Ou alocar como na solução interior: \(U = 2\sqrt{1/16} + 0{,}25 = 0{,}5 + 0{,}25 = 0{,}75\). A solução interior é melhor.
+
+    De fato, com \(m = 0{,}5\), a solução interior \(x_1 = 1/16\), \(x_2 = 0{,}25\) é viável e satisfaz as KKT. A solução de canto (\(x_2 = 0\)) só ocorreria se a renda fosse menor que \(0{,}25\), pois o gasto mínimo em \(x_1\) na solução interior é \(1/4\).
+
+    **Resultado:** Para \(m = 20\): \((x_1^*, x_2^*) = (1/16,\ 19{,}75)\). Para \(m = 0{,}5\): \((x_1^*, x_2^*) = (1/16,\ 0{,}25)\). A solução de canto (\(x_2 = 0\)) ocorre para \(m < 0{,}25\).
+
+    **Interpretação econômica:** A utilidade quase-linear implica que a demanda por \(x_1\) é independente da renda (quando a solução é interior): \(x_1^* = 1/16\) para qualquer \(m \geq 0{,}25\). Todo aumento de renda é absorvido por \(x_2\). Isso é uma propriedade importante: com preferências quase-lineares, não há efeito-renda sobre o bem \(x_1\), simplificando a análise de bem-estar — o excedente do consumidor é uma medida exata da variação de utilidade.
+
+---
+
 ## Exercícios
 
 **Exercício 2.1.** Considere a função \(f(x) = 12x - 3x^2 + 2x^3 - \frac{1}{4}x^4\).
@@ -581,10 +723,144 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ---
 
-## Referências
+## Vem, ANPEC! 🏆
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995.
-- NICHOLSON, W.; SNYDER, C. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017.
-- PINDYCK, R. S.; RUBINFELD, D. L. *Microeconomia*. 8. ed. São Paulo: Pearson, 2013.
-- SIMON, C. P.; BLUME, L. *Mathematics for Economists*. New York: W. W. Norton, 1994.
-- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015.
+### Prova de Matemática
+
+!!! question "ANPEC 2010 — Matemática — Questão 02"
+    Seja \(f: \mathbb{R}^2 \to \mathbb{R}\) diferenciável e homogênea de grau 4, tal que \(f(1,1) = 2\). Julgue os itens abaixo:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | A soma das derivadas parciais de \(f\) no ponto \((2,2)\) é igual a 32. |
+    | 1 | Em um ponto crítico \((x_0, y_0)\) de \(f\) temos que \(f(x_0, y_0) = 0\). |
+    | 2 | As derivadas parciais de primeira ordem de \(f\) são também funções homogêneas de grau 4. |
+    | 3 | As identidades \(x f_{xx}(x,y) + y f_{yx}(x,y) = 3f_x(x,y)\) e \(x f_{xy}(x,y) + y f_{yy}(x,y) = 3f_y(x,y)\) são válidas para todo ponto \((x,y) \in \mathbb{R}^2\). |
+    | 4 | Se \(p = (x_0, y_0)\) e o gradiente de \(f\) em \(p\) são ortogonais, então \(f(p) = 0\). |
+
+    ??? success "Gabarito"
+        **Respostas: F V F V V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** Por homogeneidade de grau 4: \(f(2,2) = 2^4 \cdot f(1,1) = 16 \times 2 = 32\). Pelo Teorema de Euler: \(x f_x + y f_y = 4f\). Em \((2,2)\): \(2(f_x + f_y) = 4 \times 32 = 128\), logo \(f_x + f_y = 64 \neq 32\).
+        - **Item 1 — V:** Se \((x_0, y_0)\) é ponto crítico, \(f_x = f_y = 0\). Pelo Teorema de Euler: \(x_0 \cdot 0 + y_0 \cdot 0 = 4f(x_0,y_0)\), portanto \(f(x_0,y_0) = 0\).
+        - **Item 2 — F:** Se \(f\) é homogênea de grau \(k\), suas derivadas parciais de primeira ordem são homogêneas de grau \(k - 1 = 3\), não de grau 4.
+        - **Item 3 — V:** Diferenciando a identidade de Euler \(xf_x + yf_y = 4f\) em relação a \(x\): \(f_x + xf_{xx} + yf_{yx} = 4f_x\), donde \(xf_{xx} + yf_{yx} = 3f_x\). Analogamente em relação a \(y\): \(xf_{xy} + yf_{yy} = 3f_y\).
+        - **Item 4 — V:** Se \(p\) e \(\nabla f(p)\) são ortogonais: \(x_0 f_x + y_0 f_y = 0\). Pelo Teorema de Euler, \(x_0 f_x + y_0 f_y = 4f(p)\), logo \(4f(p) = 0 \implies f(p) = 0\).
+
+        **Conexão com o capítulo:** Esta questão testa diretamente o Teorema de Euler (Seção 2.9) e suas consequências para funções homogêneas — incluindo propriedades das derivadas parciais, comportamento em pontos críticos e relação entre o vetor posição e o gradiente.
+
+!!! question "ANPEC 2018 — Matemática — Questão 13"
+    Seja \(f(x,y) = xy\) e \(g(x,y) = \alpha x + \beta y\), em que \(\alpha\) e \(\beta\) são estritamente maiores que zero. Seja \(a > 0\) e considere o problema de otimização:
+
+    \[
+    \max_{x,y} f(x,y) \quad \text{s.a.} \quad x \geq 0, \; y \geq 0, \; g(x,y) \leq a
+    \]
+
+    Identifique abaixo quais são as questões verdadeiras e quais são falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Podemos garantir que a restrição \(g(x,y) \leq a\) é inativa para a solução do problema acima, para quaisquer valores estritamente positivos de \(a\), \(\alpha\) e \(\beta\). |
+    | 1 | Podemos garantir que a restrição \(x \geq 0\) é inativa para a solução do problema acima, para quaisquer valores estritamente positivos de \(a\), \(\alpha\) e \(\beta\). |
+    | 2 | Se \(g(x,y) = 2x + y\), então a solução é \((x^*, y^*) = \left(\frac{a}{4}, \frac{a}{2}\right)\). |
+    | 3 | Se \(g(x,y) = 2x + y\), então \(\frac{d}{da} f(x^*(a), y^*(a)) = \frac{a}{8}\). |
+    | 4 | Se a solução do problema satisfizer \(g(x^*, y^*) - a = 0\), então os gradientes de \(f\) e de \(g\) em \((x^*, y^*)\) são perpendiculares. |
+
+    ??? success "Gabarito"
+        **Respostas: F V V F F**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** Como \(f(x,y) = xy\) é crescente em ambos os argumentos (para \(x, y > 0\)), a solução ótima sempre esgota o orçamento: \(\alpha x + \beta y = a\). A restrição é ativa, com \(\lambda > 0\).
+        - **Item 1 — V:** A solução do Lagrangeano é \(x^* = \frac{a}{2\alpha} > 0\) e \(y^* = \frac{a}{2\beta} > 0\) para quaisquer \(\alpha, \beta, a > 0\). Portanto, a restrição \(x \geq 0\) nunca é ativa (é de folga).
+        - **Item 2 — V:** Com \(\alpha = 2\), \(\beta = 1\): as CPOs do Lagrangeano dão \(y = 2\lambda\) e \(x = \lambda\), logo \(y = 2x\). Substituindo na restrição \(2x + 2x = a\): \(x^* = a/4\), \(y^* = a/2\).
+        - **Item 3 — F:** O valor ótimo é \(f^* = (a/4)(a/2) = a^2/8\). Derivando: \(df^*/da = a/4\). Pelo teorema do envelope: \(df^*/da = \lambda^*\). Das CPOs: \(\lambda = x = a/4\). A afirmação diz \(a/8\), que está incorreta.
+        - **Item 4 — F:** Pela condição de Lagrange, \(\nabla f = \lambda \nabla g\), ou seja, os gradientes são **paralelos** (proporcionais), não perpendiculares. Gradientes perpendiculares significariam que a curva de nível de \(f\) cruza a restrição transversalmente — o oposto de uma tangência.
+
+        **Conexão com o capítulo:** Questão central para as Seções 2.5 (Lagrange), 2.6 (envelope restrito) e 2.7 (Kuhn-Tucker). Testa simultaneamente: atividade de restrições, folga complementar, cálculo do multiplicador e o significado geométrico da condição de tangência.
+
+!!! question "ANPEC 2024 — Matemática — Questão 02"
+    Sejam os números \(a \in \mathbb{R}\) e \(b \in \mathbb{R}\) parâmetros do problema de maximizar a função \(f: \mathbb{R}^2 \to \mathbb{R}\) definida por:
+
+    \[
+    f(x_1, x_2) = -x_1^4 + x_1^2 - \frac{x_2^2}{2} + 2x_2
+    \]
+
+    sujeito às restrições \(ax_1 + x_2 = b\), \(x_1 \geq 0\) e \(x_2 \geq 0\). Chamamos esse problema de P. Julgue as afirmativas abaixo:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | A matriz Hessiana da função \(f\) em qualquer ponto \(\mathbf{x} \in \mathbb{R}^2\) é negativa definida. |
+    | 1 | Quaisquer que sejam os valores de \(a\) e \(b\), se o gradiente \(\nabla f(x_1^*, x_2^*) = (0,0)\), então \((x_1^*, x_2^*)\) resolve o problema P. |
+    | 2 | Quando \(a = b = 0\), o problema P não tem solução. |
+    | 3 | Quando \(a > 0\) e \(b = 0\), qualquer solução \((x_1^*, x_2^*)\) do problema P satisfaz \(x_2^* = 2x_1^*\). |
+    | 4 | Quando \(a = b = 1\), em qualquer solução \((x_1^*, x_2^*)\) do problema P, o gradiente satisfaz \(\nabla f(x_1^*, x_2^*) \neq (0,0)\). |
+
+    ??? success "Gabarito"
+        **Respostas: F F F V V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A Hessiana é \(H = \begin{pmatrix} -12x_1^2 + 2 & 0 \\ 0 & -1 \end{pmatrix}\). Em \(x_1 = 0\): \(H_{11} = 2 > 0\), logo \(H\) não é negativa definida (tem autovalor positivo). A função \(f\) não é globalmente côncava — isso complica a verificação das CSO (Seção 2.8).
+        - **Item 1 — F:** Mesmo que \(\nabla f = \mathbf{0}\), o ponto pode não satisfazer as restrições de P (pode violar \(ax_1 + x_2 = b\), \(x_1 \geq 0\) ou \(x_2 \geq 0\)). Além disso, como \(f\) não é côncava, um ponto com gradiente nulo pode ser um mínimo ou ponto de sela.
+        - **Item 2 — F:** Com \(a = b = 0\): a restrição \(x_2 = 0\), \(x_1 \geq 0\). O problema reduz-se a \(\max_{x_1 \geq 0} (-x_1^4 + x_1^2)\), que tem máximo em \(x_1 = 1/\sqrt{2}\). O problema tem solução.
+        - **Item 3 — V:** Com \(b = 0\) e \(a > 0\): a restrição \(ax_1 + x_2 = 0\) com \(x_1, x_2 \geq 0\) força \(x_1 = x_2 = 0\). Portanto \(x_2^* = 0 = 2 \times 0 = 2x_1^*\).
+        - **Item 4 — V:** Com \(a = b = 1\): a restrição \(x_1 + x_2 = 1\). Na solução restrita, as condições de Lagrange exigem \(\nabla f = \lambda \nabla g\), ou seja, \(\nabla f = \lambda(1, 1)\). Se \(\nabla f = (0,0)\), então \(\lambda = 0\), mas a segunda componente exige \(-x_2 + 2 = 0\), ou seja, \(x_2 = 2\). Isso violaria \(x_1 + x_2 = 1\) com \(x_1 \geq 0\). Contradição. Logo \(\nabla f \neq (0,0)\) em qualquer solução.
+
+        **Conexão com o capítulo:** Integra vários temas: análise da Hessiana e concavidade (Seção 2.8), relação entre solução irrestrita e restrita (Seção 2.5), condições KKT com restrições de igualdade e não-negatividade (Seção 2.7), e o papel da concavidade na garantia de soluções globais (Seção 2.3).
+
+---
+
+## Apêndice: A Pesquisa em Ação 🔬
+
+### Estatísticas suficientes e o teorema do envelope na avaliação de políticas públicas
+
+> **Referência completa:** Chetty, Raj. "Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods." *Annual Review of Economics*, 1: 451-488, 2009. DOI: 10.1146/annurev.economics.050708.142910 [VERIFICAR DOI]
+
+**A pergunta**
+Como avaliar o impacto de uma política pública sobre o bem-estar social sem precisar estimar um modelo estrutural completo da economia? A estimação de modelos estruturais é custosa e depende de suposições sobre formas funcionais e distribuições — será possível responder a perguntas de política usando apenas algumas "estatísticas suficientes"?
+
+**Como o autor respondeu**
+Chetty mostra que, para uma ampla classe de problemas de política pública — tributação, seguro-desemprego, regulação —, o impacto sobre o bem-estar pode ser expresso como função de um pequeno número de **estatísticas suficientes**, tipicamente elasticidades comportamentais estimáveis. A chave é o **teorema do envelope**: como os agentes estão otimizando, os efeitos de primeira ordem de mudanças comportamentais sobre a utilidade são nulos. O único efeito relevante é o efeito **direto** da política sobre a restrição — exatamente o resultado das Seções 2.4 e 2.6.
+
+**O que descobriu**
+Chetty demonstra que a perda de peso morto (*deadweight loss*) de um imposto pode ser expressa como \(DWL \approx \frac{1}{2} \varepsilon \cdot t^2 \cdot p \cdot Q\), onde \(\varepsilon\) é a elasticidade compensada da demanda, \(t\) é a alíquota e \(pQ\) é a receita base. O ponto crucial: não é necessário conhecer a função utilidade, a distribuição de renda ou a heterogeneidade dos agentes — basta a elasticidade. Analogamente, o nível ótimo de seguro-desemprego depende essencialmente de duas estatísticas: a elasticidade da duração do desemprego em relação ao benefício e a queda no consumo durante o desemprego.
+
+**Por que isso importa**
+A abordagem de estatísticas suficientes tornou-se um dos paradigmas dominantes em economia pública empírica. No Brasil, ela é aplicável à avaliação do Simples Nacional, à calibração de alíquotas do ICMS e ao desenho do seguro-desemprego — bastam estimativas de elasticidades comportamentais, sem necessidade de modelos estruturais complexos.
+
+**Conexão com este capítulo**
+O artigo é uma aplicação magistral do teorema do envelope (Seções 2.4 e 2.6): ao reconhecer que agentes otimizadores "já fizeram o melhor possível", Chetty transforma problemas aparentemente intratáveis em expressões simples envolvendo derivadas parciais avaliadas no ótimo. A mensagem é que as ferramentas matemáticas deste capítulo — derivadas parciais, multiplicadores de Lagrange, teorema do envelope — não são mero formalismo: são a base de uma revolução metodológica na economia empírica.
+
+---
+
+### Estática comparativa monotônica e a matemática da previsão econômica
+
+> **Referência completa:** Milgrom, Paul; Shannon, Chris. "Monotone Comparative Statics." *Econometrica*, 62(1): 157-180, 1994. DOI: 10.2307/2951479 [VERIFICAR DOI]
+
+**A pergunta**
+Quando podemos afirmar que a solução ótima de um problema de maximização é *monotonamente crescente* em um parâmetro? A estática comparativa clássica — "se o preço sobe, a quantidade cai" — depende de condições sobre derivadas segundas (concavidade, condições de segunda ordem). Será possível obter resultados de estática comparativa sem essas condições?
+
+**Como os autores responderam**
+Milgrom e Shannon desenvolveram a teoria da **estática comparativa monotônica** usando conceitos de teoria dos reticulados (*lattice theory*). A ideia central é substituir as condições tradicionais de segunda ordem (hessiana negativa definida, concavidade) por uma condição mais fraca: **supermodularidade** da função objetivo. Uma função é supermodular quando "fazer mais de uma coisa aumenta o retorno de fazer mais de outra" — uma forma de complementaridade.
+
+**O que descobriram**
+Os autores provaram que, se a função objetivo satisfaz a **condição de cruzamento único** (*single crossing property*) no par (variável de escolha, parâmetro), então a solução ótima é monotonamente crescente no parâmetro — sem necessidade de diferenciabilidade, concavidade ou condições de segunda ordem. Esse resultado unifica e generaliza numerosos teoremas de estática comparativa em microeconomia: demanda crescente em renda (para bens normais), oferta crescente em preço, investimento crescente em produtividade.
+
+**Por que isso importa**
+A contribuição de Milgrom e Shannon é metodológica: mostra que muitas previsões qualitativas da microeconomia ("mais de X leva a mais de Y") são mais robustas do que se pensava — não dependem das formas funcionais específicas usadas nos modelos. Em aplicações empíricas, isso justifica o uso de previsões de sinais (positivo/negativo) mesmo quando a forma funcional exata é desconhecida.
+
+**Conexão com este capítulo**
+O artigo dialoga com as Seções 2.2 (função implícita e estática comparativa), 2.3 (condições de segunda ordem) e 2.8 (concavidade e curvatura). As ferramentas clássicas deste capítulo — derivar a CPO, verificar a CSO, aplicar o teorema da função implícita — produzem resultados de estática comparativa sob condições de regularidade. Milgrom e Shannon mostram que esses resultados sobrevivem sob hipóteses muito mais gerais, sugerindo que a estrutura matemática da otimização é mais profunda do que a maquinaria de cálculo diferencial captura.
+
+---
+
+## Leituras Recomendadas
+
+- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Apêndice Matemático.
+- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Apêndice Matemático.
+- Simon, C. P. & Blume, L. *Mathematics for Economists*. New York: W. W. Norton, 1994.
+- Varian, H. *Microeconomic Analysis*, Cap. 27 (Apêndice Matemático).
+- Chiang, A. & Wainwright, K. *Fundamental Methods of Mathematical Economics*. 4. ed. McGraw-Hill, 2005.
