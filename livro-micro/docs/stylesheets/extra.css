@@ -157,15 +157,30 @@ code, pre, kbd, .highlight {
 /* Equações inline (span.arithmatex) — sempre transparente */
 .md-typeset span.arithmatex {
   background: transparent !important;
+  background-color: transparent !important;
   padding: 0 !important;
   border: none !important;
   box-shadow: none !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  display: inline !important;
+}
+.md-typeset span.arithmatex > *,
+.md-typeset span.arithmatex mjx-container,
+.md-typeset span.arithmatex mjx-container * {
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
 }
 
 /* MathJax inline containers — transparente em todos os contextos */
 .md-typeset mjx-container:not([display="true"]),
 .md-typeset mjx-container:not([display="true"]) * {
   background: transparent !important;
+  background-color: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
