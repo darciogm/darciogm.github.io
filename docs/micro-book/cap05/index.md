@@ -50,6 +50,17 @@ Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto
 
 Exemplos clássicos de bens inferiores no contexto brasileiro incluem a farinha de mandioca e o transporte público em certas faixas de renda — à medida que a renda familiar cresce, o consumo desses itens tende a ser substituído por alternativas de maior qualidade percebida.
 
+!!! example "Box Brasil — Farinha de mandioca: um bem inferior em números"
+    A farinha de mandioca é talvez o exemplo mais emblemático de bem inferior no Brasil. Dados do IBGE mostram uma queda expressiva no consumo domiciliar per capita: de 7,76 kg/ano na POF 2002–2003 para 2,33 kg/ano na POF 2017–2018, uma redução de 70% em quinze anos.
+
+    **Padrão por faixa de renda:** tanto a frequência de consumo quanto a quantidade média per capita diária de farinha de mandioca são maiores nos quartis de renda mais baixos. A diferença entre o primeiro e o último quartil de renda é acentuada, confirmando o comportamento de bem inferior (\(\varepsilon_{x,I} < 0\)).
+
+    **Heterogeneidade regional:** o padrão de bem inferior manifesta-se com intensidade diferente entre as regiões. A frequência de consumo atinge 40,6% na Região Norte e 20,1% no Nordeste, mas não passa de 4% no Sul, Sudeste e Centro-Oeste. A queda no consumo foi mais intensa no Nordeste (−75%) e no Norte (−68%), precisamente as regiões que experimentaram os maiores ganhos reais de renda no período.
+
+    **Interpretação econômica:** à medida que a renda cresce, as famílias substituem a farinha de mandioca por alimentos de maior valor nutricional percebido — arroz, massas, proteínas animais —, refletindo o deslocamento ao longo da curva de Engel descendente.
+
+    **Fontes**: IBGE, Pesquisa de Orçamentos Familiares 2002–2003 e 2017–2018. IBGE, *Análise do Consumo Alimentar Pessoal no Brasil*, 2020.
+
 ### 5.2.3 Bens de luxo e bens de necessidade
 
 A distinção entre luxo e necessidade depende da **elasticidade-renda** (que formalizaremos na Seção 5.7):
@@ -91,10 +102,21 @@ Na abordagem de **Slutsky**, o efeito substituição é definido mantendo-se o *
 \Delta I^S = x_i^* \cdot \Delta p_i
 \]
 
-Ambas as decomposições convergem para variações infinitesimais de preço, e resultam na mesma equação fundamental — a Equação de Slutsky.
+Ambas as decomposições convergem para variações infinitesimais de preço e resultam na mesma equação fundamental — a Equação de Slutsky.
 
 !!! tip "Intuição"
     Imagine que a gasolina ficou 10% mais barata. O efeito substituição faz você trocar um pouco de transporte público por carro. O efeito renda faz você "se sentir mais rico", podendo aumentar o consumo de diversos bens. Se a gasolina for um bem normal, ambos os efeitos reforçam a maior demanda. Se for inferior (implausível neste caso), os efeitos se opõem.
+
+!!! example "Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
+    No Brasil, diversos preços são fixados ou regulados por agências governamentais — os chamados **preços administrados**, que representam cerca de 25% do IPCA. A energia elétrica é um caso particularmente interessante para a teoria do consumidor, pois o sistema de **bandeiras tarifárias** (verde, amarela e vermelha) funciona como uma variação exógena de preço com periodicidade mensal.
+
+    **Mecanismo:** quando a bandeira muda de verde para vermelha (patamar 2), a tarifa residencial pode subir mais de R$ 0,07/kWh, o que equivale a um aumento de 8–10% no custo da energia. Essa variação é exógena ao consumidor (depende de condições hidrológicas), criando um experimento natural para observar efeitos substituição e renda.
+
+    **Efeito substituição:** quando a bandeira vermelha é ativada, famílias reduzem o uso de chuveiro elétrico, ar-condicionado e máquina de lavar em horários de pico — substituindo eletricidade por gás (aquecimento), ventilação natural ou deslocamento temporal do consumo. A tarifa média de energia residencial subiu em média 5,6% a 6,9% em 2023, segundo a ANEEL.
+
+    **Efeito renda:** para famílias de baixa renda, em que a conta de luz pode representar 10–15% do orçamento mensal, o efeito renda do aumento tarifário é significativo, reduzindo o consumo de outros bens.
+
+    **Fontes**: ANEEL — Tarifas e Bandeiras Tarifárias; BCB — Relatório de Inflação; Agência Brasil (2022).
 
 <figure markdown="span">
   <iframe src="../../graficos/cap05/efeito-renda-substituicao.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
@@ -167,9 +189,12 @@ Da Equação de Slutsky, extraímos consequências cruciais:
 
 1. **Para o próprio preço** (\(i = j\)): \(\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - x_i \frac{\partial x_i}{\partial I}\). O efeito substituição é sempre não-positivo (pela concavidade da função dispêndio). Logo, se o bem for normal (\(\frac{\partial x_i}{\partial I} > 0\)), a demanda cai quando o preço sobe — a **Lei da Demanda** vale sem ambiguidade.
 
-2. **Bens de Giffen**: se o bem for inferior e o efeito renda dominar o efeito substituição, \(\frac{\partial x_i}{\partial p_i} > 0\), e temos um **bem de Giffen**. Esses casos são raros e exigem que o bem represente parcela significativa do orçamento.
+2. **Bens de Giffen**: se o bem for inferior e o efeito renda dominar o efeito substituição, \(\frac{\partial x_i}{\partial p_i} > 0\), e temos um **bem de Giffen**. Esses casos são raros e exigem que o bem represente parcela significativa do orçamento — condição necessária para que o efeito renda seja suficientemente forte.
 
 3. **Simetria de Slutsky**: \(\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}\). Os efeitos substituição cruzados são simétricos.
+
+!!! note "Giffen na prática: arroz na China"
+    Bens de Giffen são raríssimos empiricamente. A evidência mais robusta foi documentada por Jensen e Miller (2008), que identificaram comportamento de Giffen para o arroz entre famílias extremamente pobres na província de Hunan, na China. Nessas famílias, o arroz representava parcela tão grande do orçamento que o efeito renda de um aumento de preço dominava o efeito substituição. Voltaremos a esse estudo no Apêndice.
 
 ---
 
@@ -187,7 +212,7 @@ Pela Equação de Slutsky, sua inclinação combina efeitos substituição e ren
 
 ### 5.5.2 Demanda hicksiana (compensada)
 
-A curva de demanda hicksiana mantém a **utilidade** constante. É uma construção teórica, mas fundamental para análise de bem-estar.
+A curva de demanda hicksiana mantém a **utilidade** constante. É uma construção teórica, mas fundamental para a análise de bem-estar.
 
 \[
 h_i = h_i(p_i; \bar{p}_{-i}, \bar{U})
@@ -299,10 +324,46 @@ A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-r
 | Eletrodomésticos | \(-1{,}15\) | \(1{,}52\) | Elástica; luxo |
 | Cigarros e tabaco | \(-0{,}35\) | \(0{,}25\) | Inelástica; necessidade |
 
-*Fontes: POF/IBGE (2017-2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.*
+*Fontes: POF/IBGE (2017–2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.*
 
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.
+
+!!! example "Exercício Resolvido 5.1"
+    **Enunciado:** Considere uma economia com dois bens: alimentação (bem 1) e serviços (bem 2). A parcela orçamentária da alimentação é \(w_1 = 0{,}35\) e a dos serviços é \(w_2 = 0{,}65\). A elasticidade-renda da alimentação é \(\varepsilon_{1,I} = 0{,}42\), e a elasticidade-preço própria da alimentação é \(\varepsilon_{1,p_1} = -0{,}55\). (a) Calcule a elasticidade-renda dos serviços. (b) Classifique cada bem. (c) Calcule a elasticidade-preço cruzada da alimentação em relação ao preço dos serviços.
+
+    **Dados:** \(w_1 = 0{,}35\), \(w_2 = 0{,}65\), \(\varepsilon_{1,I} = 0{,}42\), \(\varepsilon_{1,p_1} = -0{,}55\).
+
+    **Resolução:**
+
+    **Passo 1 — Elasticidade-renda dos serviços (Agregação de Engel)**
+
+    \[
+    w_1 \varepsilon_{1,I} + w_2 \varepsilon_{2,I} = 1 \quad \Longrightarrow \quad 0{,}35 \times 0{,}42 + 0{,}65 \times \varepsilon_{2,I} = 1
+    \]
+
+    \[
+    0{,}147 + 0{,}65 \, \varepsilon_{2,I} = 1 \quad \Longrightarrow \quad \varepsilon_{2,I} = \frac{1 - 0{,}147}{0{,}65} = \frac{0{,}853}{0{,}65} \approx 1{,}31
+    \]
+
+    **Passo 2 — Classificação**
+
+    - Alimentação: \(\varepsilon_{1,I} = 0{,}42 \in (0, 1)\) → **bem normal de necessidade**.
+    - Serviços: \(\varepsilon_{2,I} \approx 1{,}31 > 1\) → **bem normal de luxo**.
+
+    **Passo 3 — Elasticidade-preço cruzada (Condição de Homogeneidade)**
+
+    \[
+    \varepsilon_{1,p_1} + \varepsilon_{1,p_2} + \varepsilon_{1,I} = 0 \quad \Longrightarrow \quad -0{,}55 + \varepsilon_{1,p_2} + 0{,}42 = 0
+    \]
+
+    \[
+    \varepsilon_{1,p_2} = 0{,}55 - 0{,}42 = 0{,}13
+    \]
+
+    **Resultado:** \(\varepsilon_{2,I} \approx 1{,}31\), e \(\varepsilon_{1,p_2} = 0{,}13\).
+
+    **Interpretação econômica:** a alimentação é um bem de necessidade (consistente com a Lei de Engel) e os serviços são um bem de luxo — padrão coerente com os dados brasileiros da POF 2017–2018, em que famílias de maior renda gastam proporcionalmente menos com alimentação e mais com serviços. A elasticidade cruzada positiva indica que alimentação e serviços são **substitutos brutos**: quando serviços ficam mais caros, a demanda por alimentação aumenta ligeiramente (famílias comem mais em casa em vez de contratar serviços de alimentação fora).
 
 ---
 
@@ -357,6 +418,46 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
     - **VE** é apropriada para avaliar quanto o consumidor pagaria para obter uma mudança.
     - **EC** marshalliano é uma aproximação prática, amplamente usada em análise de políticas públicas pela sua facilidade de cálculo.
 
+!!! example "Exercício Resolvido 5.2"
+    **Enunciado:** Um consumidor possui utilidade quase-linear \(U(x,y) = 2\sqrt{x} + y\), com \(p_y = 1\) e renda \(I = 10\). O preço de \(x\) sobe de \(p_x = 1\) para \(p_x' = 4\). Calcule a VC, a VE e a variação no EC. Confirme que as três medidas coincidem.
+
+    **Dados:** \(U = 2\sqrt{x} + y\), \(p_y = 1\), \(I = 10\), \(p_x^0 = 1\), \(p_x^1 = 4\).
+
+    **Resolução:**
+
+    **Passo 1 — Demandas marshallianas**
+
+    CPO (interior): \(\frac{1}{\sqrt{x}} = \frac{p_x}{p_y} = p_x\). Logo \(x = \frac{1}{p_x^2}\) e \(y = I - p_x \cdot x = I - \frac{1}{p_x}\).
+
+    - Situação inicial: \(x_0 = 1\), \(y_0 = 10 - 1 = 9\). \(U_0 = 2 + 9 = 11\).
+    - Situação final: \(x_1 = 1/16\), \(y_1 = 10 - 4/16 = 10 - 0{,}25 = 9{,}75\). \(U_1 = 2 \times 0{,}25 + 9{,}75 = 10{,}25\).
+
+    **Passo 2 — Função dispêndio**
+
+    Para utilidade quase-linear, a demanda hicksiana por \(x\) é \(h_x = 1/p_x^2\) (independente de \(\bar{U}\)), e \(h_y = \bar{U} - 2/p_x\). Logo:
+
+    \[
+    E(p_x, p_y, \bar{U}) = p_x \cdot \frac{1}{p_x^2} + 1 \cdot \left(\bar{U} - \frac{2}{p_x}\right) = \frac{1}{p_x} + \bar{U} - \frac{2}{p_x} = \bar{U} - \frac{1}{p_x}
+    \]
+
+    **Passo 3 — VC, VE e \(\Delta EC\)**
+
+    \[
+    VC = E(p_x^1, U_0) - I = \left(11 - \frac{1}{4}\right) - 10 = 10{,}75 - 10 = 0{,}75
+    \]
+
+    \[
+    VE = I - E(p_x^0, U_1) = 10 - \left(10{,}25 - 1\right) = 10 - 9{,}25 = 0{,}75
+    \]
+
+    \[
+    \Delta EC = \int_{p_x^0}^{p_x^1} x(p) \, dp = \int_{1}^{4} \frac{1}{p^2} \, dp = \left[-\frac{1}{p}\right]_1^4 = -\frac{1}{4} + 1 = 0{,}75
+    \]
+
+    **Resultado:** \(VC = VE = \Delta EC = 0{,}75\).
+
+    **Interpretação econômica:** as três medidas coincidem porque a utilidade é quase-linear — o efeito renda sobre \(x\) é zero, e as curvas marshalliana e hicksiana de \(x\) são idênticas. Em aplicações práticas, quando o bem em questão representa parcela pequena do orçamento (como um produto específico), o efeito renda é negligível e o EC marshalliano é uma boa aproximação das medidas exatas de bem-estar.
+
 <figure markdown="span">
   <iframe src="../../graficos/cap05/excedente-consumidor.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
   <figcaption><strong>Figura 5.4</strong> — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE). Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).</figcaption>
@@ -386,7 +487,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Box Brasil: Elasticidade-preço da gasolina no Brasil
 
-!!! example "Elasticidade-preço da gasolina no Brasil"
+!!! example "Box Brasil — Elasticidade-preço da gasolina no Brasil"
     A gasolina é um dos bens mais estudados empiricamente no Brasil, tanto pela relevância fiscal (ICMS, CIDE, PIS/COFINS) quanto pelo impacto no custo de vida. A Agência Nacional do Petróleo (ANP) coleta semanalmente preços em postos de todo o país, fornecendo uma base de dados rica para estimações econométricas.
 
     **Principais achados empíricos:**
@@ -403,9 +504,54 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
     **Implicações de política**: a inelasticidade da demanda por gasolina no curto prazo implica que aumentos de impostos sobre combustíveis (como a CIDE) geram receita tributária substancial, mas com custo de bem-estar significativo — especialmente para famílias de baixa renda, para as quais a variação compensatória pode representar parcela relevante do orçamento mensal.
 
-    Goolsbee, Levitt & Syverson (2020, Cap. 2) documentam estimativas análogas para o mercado estadunidense, permitindo comparações metodológicas e de magnitude.
-
     *Fontes: ANP — Levantamento de Preços de Combustíveis; IPEA — Texto para Discussão n.º 1.898 (2013); Santos (2013); Cardoso et al. (2019).*
+
+---
+
+## Exercícios Resolvidos
+
+!!! example "Exercício Resolvido 5.3"
+    **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
+
+    **Dados:** Cobb-Douglas com \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 80\), \(p_1' = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Cestas ótimas**
+
+    Demandas marshallianas para Cobb-Douglas: \(x_i^* = \frac{a_i}{a_1 + a_2} \cdot \frac{I}{p_i}\). Com \(a_1 = a_2 = 1/2\):
+
+    - Antes: \(x_1^0 = \frac{1}{2} \cdot \frac{80}{4} = 10\), \(x_2^0 = \frac{1}{2} \cdot \frac{80}{1} = 40\). \(U_0 = \sqrt{10 \times 40} = 20\).
+    - Depois: \(x_1^1 = \frac{1}{2} \cdot \frac{80}{1} = 40\), \(x_2^1 = 40\). \(U_1 = \sqrt{40 \times 40} = 40\).
+
+    Efeito total: \(\Delta x_1 = 40 - 10 = +30\).
+
+    **Passo 2 — Decomposição de Hicks**
+
+    Demanda hicksiana: \(h_1 = \bar{U} \sqrt{p_2/p_1}\).
+
+    - Com \(\bar{U} = U_0 = 20\) e preço novo \(p_1' = 1\): \(h_1 = 20 \sqrt{1/1} = 20\).
+
+    Efeito substituição: \(ES = h_1(p_1', U_0) - x_1^0 = 20 - 10 = +10\).
+
+    Efeito renda: \(ER = x_1^1 - h_1(p_1', U_0) = 40 - 20 = +20\).
+
+    Verificação: \(ES + ER = 10 + 20 = 30 = \Delta x_1\). ✓
+
+    **Passo 3 — Verificação pela Equação de Slutsky**
+
+    \[
+    \frac{\partial x_1}{\partial p_1} = \frac{\partial h_1}{\partial p_1} - x_1 \frac{\partial x_1}{\partial I}
+    \]
+
+    - \(\frac{\partial x_1}{\partial p_1} = -\frac{I}{2p_1^2} = -\frac{80}{2 \times 16} = -2{,}5\)
+    - \(\frac{\partial h_1}{\partial p_1} = -\frac{\bar{U}}{2} p_2^{1/2} p_1^{-3/2} = -\frac{20}{2} \times 1 \times 4^{-3/2} = -10 \times \frac{1}{8} = -1{,}25\)
+    - \(x_1 \frac{\partial x_1}{\partial I} = 10 \times \frac{1}{2 \times 4} = 10 \times 0{,}125 = 1{,}25\)
+    - Verificação: \(-1{,}25 - 1{,}25 = -2{,}5\) ✓
+
+    **Resultado:** o efeito total (+30 unidades) decompõe-se em efeito substituição (+10) e efeito renda (+20). O efeito renda é o dobro do efeito substituição.
+
+    **Interpretação econômica:** a forte queda de preço (de 4 para 1) gera um expressivo aumento de poder de compra. Como o bem é normal e a queda de preço é grande, o efeito renda domina. Em termos brasileiros, pense em uma redução drástica no preço da energia elétrica: parte do aumento no consumo viria da substituição de gás por eletricidade (ES), mas a maior parte viria do aumento no poder de compra permitindo consumir mais de tudo (ER).
 
 ---
 
@@ -454,3 +600,160 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 (b) Estime a variação percentual na demanda por etanol.
 
 (c) Discuta as limitações dessa análise estática e como ela poderia subestimar ou superestimar os efeitos de longo prazo.
+
+---
+
+## Vem, ANPEC!
+
+!!! question "ANPEC 2010 — Microeconomia — Questão 03"
+    Com relação à classificação dos bens (em normal, de luxo, necessário, inferior, comum e de Giffen) e às demandas por esses bens, julgue as questões a seguir:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Se um bem é normal, então ele não pode ser um bem de Giffen. |
+    | 1    | Se um bem é de Giffen, então ele deve ser um bem inferior. |
+    | 2    | Suponha que existam apenas dois bens, cujas demandas são denotadas por \(x\) e \(y\). Se \(x\) apresenta elasticidade-renda unitária e o consumidor gasta uma fração positiva de sua renda em cada bem, então \(y\) também apresenta elasticidade-renda unitária. |
+    | 3    | Suponha que existam apenas dois bens, 1 e 2. Suponha ainda que o bem 1 é um bem comum e que sua demanda é elástica relativamente ao seu próprio preço. Se o bem 1 é um complementar bruto do bem 2, então o bem 1 é um bem normal necessário. |
+    | 4    | Suponha que existam apenas dois bens, 1 e 2. Suponha ainda que o consumidor gasta metade de sua renda em cada bem e que o bem 1 é um bem normal de luxo, com elasticidade-renda estritamente maior que 2. Então o bem 2 deve ser um bem inferior. |
+
+    ??? success "Gabarito"
+        **Respostas: 11001**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Pela Equação de Slutsky, \(\frac{\partial x}{\partial p} = \underbrace{\frac{\partial h}{\partial p}}_{\leq 0} - x \underbrace{\frac{\partial x}{\partial I}}_{> 0 \text{ (normal)}}\). Ambos os termos são não-positivos, logo \(\frac{\partial x}{\partial p} \leq 0\) — impossível ser Giffen.
+
+        - **Item 1 — V:** Pela Equação de Slutsky, se \(\frac{\partial x}{\partial p} > 0\) (Giffen), dado que \(\frac{\partial h}{\partial p} \leq 0\), é necessário que \(-x \frac{\partial x}{\partial I} > 0\), ou seja, \(\frac{\partial x}{\partial I} < 0\): o bem é inferior.
+
+        - **Item 2 — V:** Pela Agregação de Engel: \(w_x \varepsilon_{x,I} + w_y \varepsilon_{y,I} = 1\). Com \(\varepsilon_{x,I} = 1\): \(w_x + w_y \varepsilon_{y,I} = 1\). Como \(w_x + w_y = 1\), segue que \(w_y \varepsilon_{y,I} = w_y\), logo \(\varepsilon_{y,I} = 1\).
+
+        - **Item 3 — F:** Pela Condição de Homogeneidade: \(\varepsilon_{1,p_1} + \varepsilon_{1,p_2} + \varepsilon_{1,I} = 0\). O bem 1 é comum (\(\varepsilon_{1,p_1} < 0\)) e elástico (\(\varepsilon_{1,p_1} < -1\)). É complementar bruto de 2 (\(\varepsilon_{1,p_2} < 0\)). Então \(\varepsilon_{1,I} = -(\varepsilon_{1,p_1} + \varepsilon_{1,p_2}) > 1\). O bem 1 é de **luxo** (não necessidade).
+
+        - **Item 4 — V:** Pela Agregação de Engel: \(0{,}5 \cdot \varepsilon_{1,I} + 0{,}5 \cdot \varepsilon_{2,I} = 1\), logo \(\varepsilon_{1,I} + \varepsilon_{2,I} = 2\). Se \(\varepsilon_{1,I} > 2\), então \(\varepsilon_{2,I} < 0\): o bem 2 é inferior.
+
+!!! question "ANPEC 2017 — Microeconomia — Questão 04"
+    Um consumidor, cuja função utilidade é dada por \(U(x, y) = \sqrt{x} + y\), possui renda \(R = \$2{,}50\). O preço do bem \(y\) é unitário e \(P\) representa o preço de \(x\). O preço \(P\) inicialmente é vinte e cinco centavos e passa em um segundo momento para cinquenta centavos. Avalie as proposições:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Na situação inicial o consumidor alcança utilidade \(U = 3\). |
+    | 1    | No segundo momento a cesta consumida será \((x,y) = (1,3)\). |
+    | 2    | A variação compensadora (VC) é igual a vinte e cinco centavos, que devem ser dados ao consumidor após a mudança no preço. |
+    | 3    | A variação equivalente (VE) requer que se tire dinheiro do consumidor antes da variação no preço para que, neste caso, a utilidade se reduza em meia unidade. |
+    | 4    | Neste caso, as variações compensadora e equivalente são iguais ao excedente do consumidor. |
+
+    ??? success "Gabarito"
+        **Respostas: 00011**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** CPO: \(\frac{1}{2\sqrt{x}} = P\), logo \(x = \frac{1}{4P^2}\). Com \(P_0 = 0{,}25\): \(x_0 = \frac{1}{4 \times 0{,}0625} = 4\), \(y_0 = 2{,}5 - 0{,}25 \times 4 = 1{,}5\). \(U_0 = \sqrt{4} + 1{,}5 = 2 + 1{,}5 = 3{,}5\). Não é 3.
+
+        - **Item 1 — F:** Com \(P_1 = 0{,}50\): \(x_1 = \frac{1}{4 \times 0{,}25} = 1\), \(y_1 = 2{,}5 - 0{,}5 \times 1 = 2{,}0\). A cesta é \((1; 2)\), não \((1; 3)\).
+
+        - **Item 2 — F:** Função dispêndio (quase-linear): \(E(P, \bar{U}) = \bar{U} - \frac{1}{4P}\). \(VC = E(P_1, U_0) - R = (3{,}5 - 0{,}5) - 2{,}5 = 0{,}5\), não 0,25.
+
+        - **Item 3 — V:** \(VE = R - E(P_0, U_1) = 2{,}5 - (3{,}0 - 1) = 0{,}5\). A utilidade original era 3,5 e a final é 3,0 — uma redução de meia unidade. Tirar \(\$0{,}50\) do consumidor aos preços iniciais produz utilidade \(3{,}5 - 0{,}5 = 3{,}0 = U_1\). ✓
+
+        - **Item 4 — V:** Para utilidade quase-linear, \(VC = VE = \Delta EC\). Neste caso, \(\Delta EC = \int_{0{,}25}^{0{,}50} \frac{1}{4P^2}\,dP = \left[-\frac{1}{4P}\right]_{0{,}25}^{0{,}50} = (-0{,}5) - (-1) = 0{,}5\). As três medidas coincidem em \(\$0{,}50\). ✓
+
+!!! question "ANPEC 2025 — Microeconomia — Questão 08"
+    Considere uma utilidade \(U(X,Y) = \sqrt{XY}\), \(p_0 = \$9\) o preço inicial de \(X\), \(q_0 = \$1\) o preço inicial de \(Y\) e \(r_0 = \$576\) a renda do indivíduo. Posteriormente, o preço de \(X\) sobe para \(p_1 = \$16\). Esta questão trata da decomposição de Slutsky e, em particular, do efeito-preço de Slutsky, mas trata também do chamado efeito-preço puro, no sentido de Gary Becker. O efeito-preço puro é determinado do seguinte modo: dada a mudança de preço do bem \(X\), considera-se o incremento de renda precisamente suficiente para tornar factível novamente a cesta marshalliana inicial; sob essa nova linha orçamentária, determina-se a demanda marshalliana \(X_b\) pelo bem \(X\); se \(X_0\) denota a demanda marshalliana inicial, então o efeito-preço puro é \(EP_{\text{puro}} = X_b - X_0\). Julgue:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | A demanda marshalliana inicial é \((X_0, Y_0) = (32, 288)\). |
+    | 1    | Dada a mudança de preço, a renda necessária para o indivíduo manter o nível de utilidade anterior é \(\$768\). |
+    | 2    | O efeito-preço de Slutsky (sobre o bem \(X\)) decorrente da mudança de preço é \(EP = -16\), ou seja, uma redução de 16 unidades no consumo de \(X\). |
+    | 3    | O efeito-substituição de Slutsky (sobre o bem \(X\)) é \(ES = -6\), ou seja, uma redução de 6 unidades no consumo de \(X\). |
+    | 4    | O efeito-preço puro (sobre o bem \(X\)) é \(EP_{\text{puro}} = -7\), ou seja, uma redução de 7 unidades no consumo de \(X\). |
+
+    ??? success "Gabarito"
+        **Respostas: 11001**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Para \(U = \sqrt{XY}\) (Cobb-Douglas com \(a = b = 1/2\)): \(X_0 = r/(2p_0) = 576/18 = 32\), \(Y_0 = r/(2q_0) = 576/2 = 288\). ✓
+
+        - **Item 1 — V:** \(U_0 = \sqrt{32 \times 288} = \sqrt{9216} = 96\). Função dispêndio: \(E = 2U_0\sqrt{p_1 q_0} = 2 \times 96 \times \sqrt{16} = 192 \times 4 = 768\). ✓
+
+        - **Item 2 — F:** O efeito total (efeito-preço) é: \(X_1 = r/(2p_1) = 576/32 = 18\). \(EP = X_1 - X_0 = 18 - 32 = -14\), não \(-16\).
+
+        - **Item 3 — F:** Compensação de Slutsky: a renda que torna a cesta original acessível é \(r_S = p_1 X_0 + q_0 Y_0 = 16 \times 32 + 288 = 800\). Demanda sob compensação: \(X_S = r_S/(2p_1) = 800/32 = 25\). \(ES = X_S - X_0 = 25 - 32 = -7\), não \(-6\).
+
+        - **Item 4 — V:** O efeito-preço puro (Becker) segue o mesmo procedimento da compensação de Slutsky: incrementa-se a renda para que a cesta original seja factível (\(r_S = 800\)), e calcula-se a nova demanda marshalliana. \(X_b = 800/32 = 25\). \(EP_{\text{puro}} = 25 - 32 = -7\). ✓
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+### Bens de Giffen existem? Evidência experimental na China
+
+> **Referência completa:** Jensen, Robert T.; Miller, Nolan H. "Giffen Behavior and Subsistence Consumption."
+> *The American Economic Review*, 98(4): 1553–1577, 2008.
+> DOI: 10.1257/aer.98.4.1553
+
+**A pergunta**
+
+Bens de Giffen — aqueles cuja demanda aumenta quando o preço sobe — são uma curiosidade teórica ou existem de fato? Desde que Alfred Marshall popularizou a ideia no século XIX atribuindo-a a Sir Robert Giffen, nenhum estudo havia conseguido documentar convincentemente esse comportamento com dados de campo.
+
+**Como os autores responderam**
+
+Jensen e Miller conduziram um experimento de campo randomizado em duas províncias chinesas: Hunan (onde o alimento básico é o arroz) e Gansu (onde é o trigo). O experimento subsidiou aleatoriamente o preço do alimento básico para famílias extremamente pobres e mediu as variações na quantidade demandada. O desenho experimental permitiu identificar a curva de demanda de forma causal, evitando problemas de endogeneidade comuns em estudos observacionais.
+
+**O que descobriram**
+
+Os autores encontraram evidência forte de comportamento de Giffen para o arroz em Hunan: quando o subsídio reduzia o preço do arroz, as famílias passavam a consumir *menos* arroz e *mais* alimentos de maior qualidade (carne, vegetais). Ou seja, o subsídio (redução de preço) diminuiu a demanda — o oposto do que a Lei da Demanda prevê para bens comuns. Para o trigo em Gansu, a evidência foi mais fraca, mas na mesma direção.
+
+**Por que isso importa**
+
+O resultado confirma que bens de Giffen podem surgir em contextos de subsistência, onde o alimento básico domina o orçamento. A mecânica é exatamente a prevista pela Equação de Slutsky: o efeito renda é tão forte (porque o bem representa parcela enorme do gasto) e o bem é tão inferior (porque com mais poder de compra as famílias migram para alimentos melhores) que domina o efeito substituição.
+
+**Conexão com este capítulo**
+
+O estudo é a ilustração empírica mais rigorosa das Seções 5.3–5.4. Ele demonstra que a Equação de Slutsky não é apenas uma identidade matemática: suas implicações qualitativas — em particular, que um bem de Giffen deve ser inferior e representar parcela substancial do orçamento — encontram confirmação nos dados. O caso também ilumina a discussão sobre bens inferiores no Brasil (farinha de mandioca), embora o contexto brasileiro contemporâneo não seja de subsistência pura, tornando o surgimento de Giffen improvável.
+
+### Medindo o bem-estar do consumidor com precisão
+
+> **Referência completa:** Hausman, Jerry A. "Exact Consumer's Surplus and Deadweight Loss."
+> *The American Economic Review*, 71(4): 662–676, 1981.
+
+**A pergunta**
+
+O excedente do consumidor marshalliano, calculado a partir da curva de demanda observável, é uma boa medida da variação de bem-estar causada por mudanças de preço? Ou é necessário recorrer às medidas exatas — variação compensatória (VC) e variação equivalente (VE) — baseadas nas demandas hicksianas não-observáveis?
+
+**Como o autor respondeu**
+
+Hausman desenvolveu um procedimento para calcular a VC e a VE exatas a partir de estimativas econométricas da demanda marshalliana observada. O método explora a Equação de Slutsky e a dualidade entre problema primal e dual para recuperar a demanda hicksiana a partir da marshalliana, permitindo calcular as medidas exatas de bem-estar sem precisar estimar diretamente a função dispêndio.
+
+**O que descobriu**
+
+Aplicando o método à tributação do trabalho nos EUA, Hausman mostrou que o peso morto (perda de bem-estar) calculado com o EC marshalliano pode subestimar a perda real em 30% ou mais. A diferença entre EC e VC/VE é tanto maior quanto maior o efeito renda e quanto maior a variação de preço — exatamente o que a teoria das Seções 5.8.2–5.8.4 prevê.
+
+**Por que isso importa**
+
+O artigo é fundamental para a avaliação de políticas públicas no Brasil. Quando o governo altera alíquotas de ICMS sobre bens essenciais ou implementa tarifas de energia elétrica escalonadas, a diferença entre usar o EC marshalliano e a VC exata pode ser substancial, especialmente para famílias de baixa renda (para as quais o efeito renda é proporcionalmente maior).
+
+**Conexão com este capítulo**
+
+Hausman operacionaliza a relação \(VC < EC < VE\) (Seção 5.8.4), mostrando que essa desigualdade tem consequências quantitativas relevantes. O método ilustra também a utilidade prática da Equação de Slutsky: ela não apenas decompõe efeitos, mas permite reconstruir a curva de demanda compensada a partir da observável — ponte entre teoria e política.
+
+---
+
+## Referências do Capítulo
+
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulos 2–3.
+- NICHOLSON, W.; SNYDER, C. M. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017. Capítulo 5.
+- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 8–9, 14.
+- PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulos 4–5.
+- JENSEN, R. T.; MILLER, N. H. Giffen Behavior and Subsistence Consumption. *The American Economic Review*, v. 98, n. 4, p. 1553–1577, 2008.
+- HAUSMAN, J. A. Exact Consumer's Surplus and Deadweight Loss. *The American Economic Review*, v. 71, n. 4, p. 662–676, 1981.
+- IBGE. *Pesquisa de Orçamentos Familiares 2017–2018: análise do consumo alimentar pessoal no Brasil*. Rio de Janeiro: IBGE, 2020.
+- CARDOSO, B. F.; AZEVEDO, M. T.; CASSUCE, F. C. C. Estimação da elasticidade-preço da demanda, da elasticidade-renda e da elasticidade preço-cruzada no Brasil. *Análise Econômica*, v. 37, n. 74, p. 7–30, 2019.
+- ALMEIDA, A. N.; AZZONI, C. R. Custo de vida comparativo das regiões metropolitanas brasileiras: 1996–2014. *Estudos Econômicos*, v. 46, n. 1, p. 253–276, 2016.
