@@ -99,7 +99,7 @@ Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando 
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/aversao-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 7.1</strong> — Aversao ao risco e funcao de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A area sombreada indica o premio de risco.</figcaption>
+  <figcaption><strong>Figura 7.1</strong> — Aversão ao risco e função de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.</figcaption>
 </figure>
 
 ---
@@ -213,7 +213,7 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/premio-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 7.2</strong> — Premio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variancia \(\sigma^2\) e a curvatura da funcao de utilidade. Alterne entre CARA, CRRA e quadratica para comparar o premio de risco exato com a aproximacao \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
+  <figcaption><strong>Figura 7.2</strong> — Prêmio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
 </figure>
 
 ---
@@ -232,7 +232,7 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/seguro.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 7.3</strong> — Mercado de seguros no espaco estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura otima se move em direcao a linha de 45 graus (seguro total) quando o premio e atuarialmente justo (\(\lambda = 0\)).</figcaption>
+  <figcaption><strong>Figura 7.3</strong> — Mercado de seguros no espaço estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).</figcaption>
 </figure>
 
 ### 7.6.2 Diversificação
@@ -376,6 +376,224 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ---
 
+## Box Brasil: A Mega-Sena e a Economia da Loteria
+
+!!! example "Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
+    A **Mega-Sena**, operada pela Caixa Econômica Federal, é a maior loteria do Brasil e ilustra de maneira contundente o contraste entre valor esperado e comportamento observado.
+
+    **Os números da Mega-Sena**
+
+    A probabilidade de acertar as 6 dezenas em um jogo simples (6 números) é de \(1/50.063.860\) — ou aproximadamente 0,000002%. Pela legislação brasileira, 43,35% da arrecadação bruta é destinada ao pagamento de prêmios (incluindo quadra, quina e sena). Para a faixa principal (sena), a parcela é de cerca de 35% da arrecadação.
+
+    **Valor esperado negativo**
+
+    Para uma aposta simples de R\$ 5,00, o retorno esperado — considerando todas as faixas de premiação — é tipicamente inferior a R\$ 2,20. Isso implica um retorno esperado líquido de aproximadamente **−R\$ 2,80 por aposta**, ou uma "sinistralidade" de cerca de 44% para a Caixa. Do ponto de vista da utilidade esperada, um agente estritamente avesso ao risco *jamais* compraria um bilhete de loteria.
+
+    **Por que as pessoas apostam?**
+
+    A teoria econômica oferece duas explicações complementares:
+
+    1. **Hipótese de Friedman-Savage (1948)**: a função de utilidade pode ser côncava para níveis baixos e altos de riqueza, mas **convexa** em uma faixa intermediária, correspondente à região onde um "grande prêmio" faria o indivíduo mudar de classe social. Nessa faixa, o agente se comporta como propenso ao risco.
+
+    2. **Teoria dos prospectos**: os agentes *sobreponderaram* probabilidades muito pequenas. Assim, a probabilidade subjetiva atribuída ao prêmio máximo é muito maior do que a probabilidade objetiva.
+
+    **Conexão com este capítulo**
+
+    A Mega-Sena demonstra que o critério do valor esperado (Seção 7.1) é insuficiente para explicar o comportamento observado. A disposição de milhões de brasileiros a aceitar uma loteria com valor esperado negativo desafia a hipótese de aversão ao risco universal e motiva os refinamentos teóricos discutidos nas Seções 7.2–7.3.
+
+    **Fonte**: Caixa Econômica Federal, regulamento da Mega-Sena; Lei 13.756/2018 (destinação da arrecadação de loterias).
+
+---
+
+## Box Brasil: O Seguro Agrícola e o PSR
+
+!!! example "Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
+    O setor agropecuário brasileiro — responsável por cerca de 24% do PIB quando considerada toda a cadeia — está intrinsecamente exposto a riscos climáticos, fitossanitários e de preços. O **Programa de Subvenção ao Prêmio do Seguro Rural (PSR)**, criado em 2003, é a principal política pública de gestão de risco agrícola no país.
+
+    **Como funciona**
+
+    O governo federal subsidia parte do prêmio do seguro rural pago pelo produtor. Em 2024, o orçamento do PSR foi de **R\$ 1,15 bilhão**, permitindo a cobertura de mais de 62 atividades agropecuárias. O percentual de subvenção varia por cultura: em média cerca de 40%, mas para culturas como soja o subsídio gira em torno de 20%.
+
+    **Justificativa econômica**
+
+    O subsídio se justifica por três razões microeconômicas:
+
+    1. **Completude de mercados**: sem subvenção, muitos produtores — especialmente pequenos e médios — não teriam acesso ao seguro, deixando o mercado de risco incompleto (Seção 7.7).
+
+    2. **Externalidades positivas**: a estabilidade da renda agrícola reduz a inadimplência no crédito rural e suaviza o consumo em regiões dependentes do agronegócio.
+
+    3. **Seleção adversa**: sem incentivo, apenas os produtores de maior risco contratariam seguro, elevando o prêmio e expulsando os de baixo risco — o clássico problema de Akerlof (Seção 7.8).
+
+    **Desafios**
+
+    O PSR enfrenta limitações: orçamento frequentemente insuficiente para atender toda a demanda, concentração das apólices em grandes produtores do Centro-Oeste e Sul, e dificuldades na precificação atuarial de eventos climáticos extremos (que estão se tornando mais frequentes).
+
+    **Fonte**: Ministério da Agricultura e Pecuária, Relatório do PSR 2023/2024; Atlas do Seguro Rural (Embrapa).
+
+---
+
+## Exercícios Resolvidos
+
+!!! example "Exercício Resolvido 7.1"
+    **Enunciado:** Um investidor com função de utilidade \(u(W) = \ln(W)\) possui riqueza inicial \(W_0 = 10.000\). Ele é convidado a participar de uma loteria que paga \(+6.000\) com probabilidade \(0{,}4\) e \(-4.000\) com probabilidade \(0{,}6\). Calcule o equivalente de certeza, o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
+
+    **Dados:** \(u(W) = \ln(W)\), \(W_0 = 10.000\), \(L = \{(+6.000,\; 0{,}4);\; (-4.000,\; 0{,}6)\}\).
+
+    **Resolução:**
+
+    **Passo 1 — Resultados possíveis e valor esperado**
+
+    - Estado favorável: \(W_1 = 10.000 + 6.000 = 16.000\) com \(p_1 = 0{,}4\)
+    - Estado desfavorável: \(W_2 = 10.000 - 4.000 = 6.000\) com \(p_2 = 0{,}6\)
+    - Valor esperado: \(E[W] = 0{,}4 \times 16.000 + 0{,}6 \times 6.000 = 6.400 + 3.600 = 10.000\)
+
+    Note que \(E[W] = W_0\): trata-se de um risco justo (\(E[\tilde{\varepsilon}] = 0\)).
+
+    **Passo 2 — Utilidade esperada**
+
+    \[
+    E[u(W)] = 0{,}4 \times \ln(16.000) + 0{,}6 \times \ln(6.000)
+    \]
+
+    \[
+    = 0{,}4 \times 9{,}6803 + 0{,}6 \times 8{,}6995 = 3{,}8721 + 5{,}2197 = 9{,}0918
+    \]
+
+    **Passo 3 — Equivalente de certeza**
+
+    \[
+    u(W_{EC}) = E[u(W)] \implies \ln(W_{EC}) = 9{,}0918 \implies W_{EC} = e^{9{,}0918} \approx 8.879
+    \]
+
+    **Passo 4 — Prêmio de risco exato**
+
+    \[
+    \pi = E[W] - W_{EC} = 10.000 - 8.879 = \text{R\$ } 1.121
+    \]
+
+    **Passo 5 — Aproximação de Arrow-Pratt**
+
+    Para \(u(W) = \ln(W)\): \(A(W) = 1/W\). Em \(W_0 = 10.000\): \(A = 1/10.000 = 0{,}0001\).
+
+    A variância do risco: \(\sigma^2 = 0{,}4 \times (6.000)^2 + 0{,}6 \times (-4.000)^2 = 14.400.000 + 9.600.000 = 24.000.000\).
+
+    \[
+    \pi_{AP} \approx \frac{1}{2} \times 0{,}0001 \times 24.000.000 = \text{R\$ } 1.200
+    \]
+
+    **Resultado:** \(\pi_{\text{exato}} = \text{R\$ } 1.121\) vs. \(\pi_{AP} \approx \text{R\$ } 1.200\). A aproximação superestima em cerca de 7%.
+
+    **Interpretação econômica:** O investidor exigiria pelo menos R\$ 1.121 para aceitar esse risco justo — equivalente a 11,2% de sua riqueza. A discrepância entre o valor exato e a aproximação reflete que o risco não é "pequeno" em relação à riqueza (desvio padrão de R\$ 4.899 ≈ 49% de \(W_0\)), o que compromete a precisão da expansão de Taylor.
+
+!!! example "Exercício Resolvido 7.2"
+    **Enunciado:** Uma produtora de café no Sul de Minas possui riqueza de R\$ 500.000 e enfrenta risco de geada que, com probabilidade \(0{,}2\), causa perda de R\$ 200.000. Sua utilidade é \(u(W) = \sqrt{W}\). (a) Calcule o prêmio atuarialmente justo. (b) Verifique que a produtora contrata cobertura total. (c) Se a seguradora cobra carregamento \(\lambda = 0{,}3\), qual o prêmio de risco máximo que a produtora aceita pagar?
+
+    **Dados:** \(W = 500.000\), \(d = 200.000\), \(p = 0{,}2\), \(u(W) = \sqrt{W}\).
+
+    **Resolução:**
+
+    **Passo 1 — Prêmio atuarialmente justo**
+
+    \[
+    P_{justo} = p \times d = 0{,}2 \times 200.000 = \text{R\$ } 40.000
+    \]
+
+    **Passo 2 — Cobertura total sob prêmio justo**
+
+    Sem seguro: \(E[u] = 0{,}8 \times \sqrt{500.000} + 0{,}2 \times \sqrt{300.000} = 0{,}8 \times 707{,}11 + 0{,}2 \times 547{,}72 = 565{,}69 + 109{,}54 = 675{,}23\).
+
+    Com seguro total (\(P = 40.000\)): riqueza certa = \(500.000 - 40.000 = 460.000\).
+
+    \(u(460.000) = \sqrt{460.000} = 678{,}23\).
+
+    Como \(678{,}23 > 675{,}23\), a produtora prefere o seguro total. De fato, para agente avesso ao risco, seguro total é ótimo sob prêmio justo (Seção 7.6.1).
+
+    **Passo 3 — Prêmio máximo que aceita pagar**
+
+    O prêmio máximo \(P_{max}\) satisfaz \(u(W - P_{max}) = E[u]\) sem seguro:
+
+    \[
+    \sqrt{500.000 - P_{max}} = 675{,}23 \implies 500.000 - P_{max} = 675{,}23^2 = 455.936
+    \]
+
+    \[
+    P_{max} = 500.000 - 455.936 = \text{R\$ } 44.064
+    \]
+
+    **Passo 4 — Decisão com carregamento**
+
+    Prêmio com carregamento: \(P_\lambda = (1 + 0{,}3) \times 40.000 = \text{R\$ } 52.000\).
+
+    Como \(P_\lambda = 52.000 > P_{max} = 44.064\), a produtora **não contrata** cobertura total a esse preço.
+
+    **Resultado:** O prêmio atuarialmente justo é R\$ 40.000, e a produtora pagaria até R\$ 44.064 (prêmio de risco de R\$ 4.064). O carregamento de 30% torna a cobertura total inviável.
+
+    **Interpretação econômica:** A diferença \(P_{max} - P_{justo} = \text{R\$ } 4.064\) é o prêmio de risco da produtora — o valor monetário da sua aversão ao risco. Com carregamento de 30%, a seguradora cobra mais do que a produtora está disposta a pagar por cobertura total, o que pode levar à contratação de cobertura parcial (franquia elevada). Este é precisamente o mecanismo que explica por que pequenos produtores brasileiros, com baixa capacidade de absorção de risco, dependem do subsídio do PSR para viabilizar o seguro.
+
+!!! example "Exercício Resolvido 7.3"
+    **Enunciado:** Um investidor aloca sua riqueza entre dois ativos: ações de uma empresa de energia (\(\mu_1 = 12\%\), \(\sigma_1 = 20\%\)) e títulos do agronegócio (\(\mu_2 = 8\%\), \(\sigma_2 = 15\%\)). A correlação entre os retornos é \(\rho = -0{,}3\). (a) Calcule o retorno e a variância da carteira para \(w = 0{,}5\). (b) Encontre o peso \(w^*\) que minimiza a variância. (c) Compare o desvio padrão da carteira de variância mínima com os desvios individuais.
+
+    **Dados:** \(\mu_1 = 0{,}12\), \(\sigma_1 = 0{,}20\), \(\mu_2 = 0{,}08\), \(\sigma_2 = 0{,}15\), \(\rho = -0{,}3\).
+
+    **Resolução:**
+
+    **Passo 1 — Carteira igualmente ponderada (\(w = 0{,}5\))**
+
+    \[
+    \mu_p = 0{,}5 \times 0{,}12 + 0{,}5 \times 0{,}08 = 0{,}10 = 10\%
+    \]
+
+    \[
+    \sigma_p^2 = (0{,}5)^2(0{,}20)^2 + (0{,}5)^2(0{,}15)^2 + 2(0{,}5)(0{,}5)(-0{,}3)(0{,}20)(0{,}15)
+    \]
+
+    \[
+    = 0{,}01 + 0{,}005625 + (-0{,}0045) = 0{,}011125
+    \]
+
+    \[
+    \sigma_p = \sqrt{0{,}011125} = 0{,}1055 = 10{,}55\%
+    \]
+
+    **Passo 2 — Peso de variância mínima**
+
+    \[
+    w^* = \frac{\sigma_2^2 - \rho\sigma_1\sigma_2}{\sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2}
+    \]
+
+    \[
+    = \frac{0{,}0225 - (-0{,}3)(0{,}20)(0{,}15)}{0{,}04 + 0{,}0225 - 2(-0{,}3)(0{,}20)(0{,}15)} = \frac{0{,}0225 + 0{,}009}{0{,}0625 + 0{,}018} = \frac{0{,}0315}{0{,}0805} = 0{,}3913
+    \]
+
+    **Passo 3 — Variância mínima e comparação**
+
+    \[
+    \sigma_p^2(w^*) = (0{,}3913)^2(0{,}04) + (0{,}6087)^2(0{,}0225) + 2(0{,}3913)(0{,}6087)(-0{,}009)
+    \]
+
+    \[
+    = 0{,}006125 + 0{,}008337 - 0{,}004288 = 0{,}010174
+    \]
+
+    \[
+    \sigma_p(w^*) = \sqrt{0{,}010174} = 0{,}1009 = 10{,}09\%
+    \]
+
+    O retorno desta carteira: \(\mu_p(w^*) = 0{,}3913 \times 12\% + 0{,}6087 \times 8\% = 9{,}57\%\).
+
+    **Resultado:**
+
+    | Carteira | Retorno | Desvio padrão |
+    |:---------|:--------|:-------------|
+    | Ativo 1 puro | 12,00% | 20,00% |
+    | Ativo 2 puro | 8,00% | 15,00% |
+    | Igualmente ponderada | 10,00% | 10,55% |
+    | Variância mínima | 9,57% | 10,09% |
+
+    **Interpretação econômica:** A correlação negativa (\(\rho = -0{,}3\)) gera um forte benefício de diversificação. O desvio padrão da carteira de variância mínima (10,09%) é **menor** que o de ambos os ativos individuais — um resultado impossível quando \(\rho = 1\). Essa é a essência do resultado de Markowitz: combinando ativos com correlação imperfeita, um investidor brasileiro pode reduzir o risco total sem sacrificar proporcionalmente o retorno.
+
+---
+
 ## Exercícios
 
 **Exercício 7.1.** Um investidor com função de utilidade \(u(W) = \ln(W)\) e riqueza inicial \(W_0 = 10.000\) pode participar de uma loteria que paga \(+5.000\) com probabilidade \(0{,}5\) e \(-5.000\) com probabilidade \(0{,}5\).
@@ -421,3 +639,158 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 (b) Compare o prêmio de risco (aproximado) que cada um exigiria para aceitar uma loteria com valor esperado zero e desvio padrão de R\$ 1.000.
 
 (c) Como o prêmio de risco de cada agente se altera se a riqueza aumenta para \(W = 50.000\)? Discuta a relação com DARA e CARA.
+
+---
+
+## Vem, ANPEC!
+
+!!! question "ANPEC 2018 — Microeconomia — Questão 06"
+    A função utilidade \(U\) em termos da renda \(w\) de um consumidor é dada por \(U(w) = w^3\). Tal consumidor se encontra diante de uma loteria na qual possui \(w = \$0\) com probabilidade \(p = 0{,}5\) e \(w = \$4\) com probabilidade \(p = 0{,}5\). Avalie as seguintes proposições a respeito da escolha sob incerteza:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Como a função utilidade é convexa em relação à origem, o consumidor é avesso ao risco. |
+    | 1    | A utilidade esperada da loteria é igual a trinta e dois. |
+    | 2    | A utilidade do valor esperado dessa loteria é superior à utilidade esperada da loteria. |
+    | 3    | O equivalente certeza é igual a 2,5. |
+    | 4    | O coeficiente absoluto de aversão ao risco é constante. |
+
+    ??? success "Gabarito"
+        **Respostas: 01000**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** Função utilidade convexa (\(u''(w) = 6w > 0\)) implica **propensão** ao risco, não aversão. A aversão ao risco requer concavidade (\(u'' < 0\)).
+
+        - **Item 1 — V:** \(E[U] = 0{,}5 \times U(0) + 0{,}5 \times U(4) = 0{,}5 \times 0 + 0{,}5 \times 64 = 32\). Correto.
+
+        - **Item 2 — F:** O valor esperado da loteria é \(E[w] = 0{,}5 \times 0 + 0{,}5 \times 4 = 2\). A utilidade do valor esperado é \(U(2) = 2^3 = 8\). Como \(U(E[w]) = 8 < 32 = E[U]\), a utilidade do valor esperado é *inferior* à utilidade esperada. Isso é precisamente a propriedade de um agente propenso ao risco (desigualdade de Jensen invertida para funções convexas).
+
+        - **Item 3 — F:** O equivalente de certeza satisfaz \(U(EC) = E[U]\), ou seja, \(EC^3 = 32\). Portanto, \(EC = \sqrt[3]{32} = 2\sqrt[3]{4} \approx 3{,}17\), não 2,5.
+
+        - **Item 4 — F:** \(A(w) = -u''(w)/u'(w) = -6w/(3w^2) = -2/w\). O coeficiente é negativo (confirmando propensão ao risco) e depende de \(w\) — portanto, não é constante.
+
+!!! question "ANPEC 2020 — Microeconomia — Questão 11"
+    Com relação à teoria de decisão sob incerteza, julgue os itens abaixo:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Suponha que um indivíduo tem utilidade Von Neumann-Morgenstern \(U(W) = \ln(W+1)\). Então sua medida relativa de aversão ao risco de Pratt \(R(W)\) satisfaz \(\lim_{W \to \infty} R(W) = 1\). |
+    | 1    | Considere um indivíduo avesso ao risco, com utilidade Von Neumann-Morgenstern e que investe em um ativo arriscado. Se o rendimento do ativo arriscado é taxado, então o consumidor tem um incentivo para investir menos nesse ativo. |
+    | 2    | Suponha que o \(\beta\) de um ativo é igual a 1,25, que o retorno de mercado é de 10,5% e que o retorno do ativo sem risco é de 4,5%. O valor esperado do ativo é de \$56. Então, de acordo com o Modelo CAPM, o preço que esse ativo deveria ser vendido hoje é de \$50. |
+    | 3    | Considere o Modelo Média-Variância e um indivíduo avesso ao risco. Suponha que o retorno de mercado é de 11%, que o retorno do ativo sem risco é de 5% e que a variância do ativo arriscado é de 25%. Então o preço do risco é \(p = 0{,}24\). |
+    | 4    | Suponha que um indivíduo tem utilidade Von Neumann-Morgenstern e é neutro ao risco. Se sua riqueza é aleatória, então a utilidade esperada da riqueza é maior que a utilidade da riqueza esperada. |
+
+    ??? success "Gabarito"
+        **Respostas: 10110**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Para \(U(W) = \ln(W+1)\): \(U'(W) = 1/(W+1)\), \(U''(W) = -1/(W+1)^2\). A medida relativa de aversão ao risco é \(R(W) = -W \cdot U''(W)/U'(W) = W/(W+1)\). Calculando o limite: \(\lim_{W \to \infty} W/(W+1) = 1\). Correto.
+
+        - **Item 1 — F:** Pelo resultado clássico de Domar-Musgrave, um imposto proporcional sobre o retorno do ativo arriscado (com compensação simétrica de perdas) faz o governo "compartilhar" o risco com o investidor. O investidor pode restaurar sua exposição original ao risco aumentando a posição no ativo arriscado. O efeito líquido depende das propriedades da função de utilidade (DARA/IARA), mas a afirmação de que *sempre* há incentivo para investir menos é incorreta.
+
+        - **Item 2 — V:** Pelo CAPM, o retorno esperado do ativo é \(E[r] = r_f + \beta(E[r_m] - r_f) = 4{,}5\% + 1{,}25 \times (10{,}5\% - 4{,}5\%) = 4{,}5\% + 7{,}5\% = 12\%\). Se o valor esperado do ativo é \$56, o preço hoje deve ser \(P_0 = 56/1{,}12 = \$50\). Correto.
+
+        - **Item 3 — V:** No modelo média-variância, o preço do risco é definido como \(p = (E[r_m] - r_f)/\sigma^2 = (11\% - 5\%)/25\% = 0{,}06/0{,}25 = 0{,}24\). Correto.
+
+        - **Item 4 — F:** Um indivíduo neutro ao risco possui função de utilidade linear. Pela linearidade, \(E[U(W)] = U(E[W])\) — a utilidade esperada é *igual* à utilidade da riqueza esperada, não maior.
+
+!!! question "ANPEC 2025 — Microeconomia — Questão 02"
+    Considere uma aposta na qual, pagando \$15, você pode ganhar \$5 se sair um número ímpar ou \$20 se sair um número par, no lançamento de um dado não viciado. Julgue as afirmativas abaixo como verdadeiras ou falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | O valor esperado do retorno da aposta é \$15. |
+    | 1    | Trata-se de uma aposta justa. |
+    | 2    | Uma aposta justa não possui risco. |
+    | 3    | Se o custo da aposta fosse de \$12,50, um indivíduo com aversão ao risco aceitaria jogar. |
+    | 4    | Uma função de utilidade estritamente côncava é associada a um comportamento de aversão ao risco. |
+
+    ??? success "Gabarito"
+        **Respostas: 00001**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** Os resultados da aposta são \$5 (se ímpar, \(p = 1/2\)) e \$20 (se par, \(p = 1/2\)). O valor esperado do retorno bruto é \(E[R] = 0{,}5 \times 5 + 0{,}5 \times 20 = 12{,}50\), não \$15.
+
+        - **Item 1 — F:** Uma aposta justa tem retorno esperado líquido igual a zero. Aqui, o retorno líquido esperado é \(12{,}50 - 15 = -2{,}50\). Como \(E[\text{líquido}] < 0\), a aposta é desfavorável ao apostador.
+
+        - **Item 2 — F:** Uma aposta justa tem valor esperado zero, mas ainda apresenta variância positiva — logo, possui risco. "Justo" refere-se ao valor esperado, não à ausência de incerteza.
+
+        - **Item 3 — F:** Se o custo fosse \$12,50, teríamos \(E[\text{líquido}] = 12{,}50 - 12{,}50 = 0\): aposta justa. Um indivíduo avesso ao risco **rejeita** apostas justas (ou, no máximo, é indiferente), pois \(u(E[W]) > E[u(W)]\).
+
+        - **Item 4 — V:** Concavidade estrita de \(u\) (\(u'' < 0\)) implica, pela desigualdade de Jensen, que \(u(E[X]) > E[u(X)]\) para toda variável aleatória não degenerada — definição de aversão ao risco.
+
+---
+
+## Apêndice: A Pesquisa em Ação 🔬
+
+### Informação assimétrica funciona na prática? O teste de Chiappori-Salanié
+
+> **Referência completa:** Chiappori, Pierre-André; Salanié, Bernard. "Testing for Asymmetric Information in Insurance Markets."
+> *Journal of Political Economy*, 108(1): 56–78, 2000.
+> DOI: 10.1086/262111
+
+**A pergunta**
+
+A teoria prevê que, sob informação assimétrica, indivíduos de maior risco escolhem contratos com mais cobertura (seleção adversa) e/ou reduzem seus cuidados após a contratação (risco moral). Mas essas previsões se verificam empiricamente? Existe, de fato, uma correlação positiva entre cobertura e sinistralidade nos dados reais de seguros?
+
+**Como os autores responderam**
+
+Chiappori e Salanié propuseram um teste empírico geral: se há informação assimétrica (seja por seleção adversa, risco moral ou ambos), deve existir uma correlação positiva condicional entre a cobertura contratada e a ocorrência de sinistros, mesmo após controlar todas as variáveis observáveis usadas pelas seguradoras na precificação. Utilizaram dados detalhados do mercado francês de seguros de automóvel, com informações sobre contratos, prêmios, características dos condutores e histórico de acidentes.
+
+**O que descobriram**
+
+Surpreendentemente, os autores **não encontraram** evidência estatisticamente significativa de correlação positiva entre cobertura e sinistralidade para motoristas jovens e inexperientes — o grupo mais sujeito a assimetria informacional. Esse resultado sugere que as seguradoras são eficazes em usar variáveis observáveis (idade, bônus/malus, localização) para classificar os riscos, reduzindo o escopo residual da informação assimétrica.
+
+**Por que isso importa**
+
+O artigo inaugurou uma ampla literatura empírica de testes de informação assimétrica em mercados de seguros, saúde, crédito e trabalho. Para o Brasil, a metodologia é diretamente aplicável ao mercado de seguros de automóvel (Box Brasil acima) e ao sistema de saúde suplementar, onde o desenho de contratos com franquias e copagamentos busca mitigar tanto seleção adversa quanto risco moral.
+
+**Conexão com este capítulo**
+
+O artigo testa empiricamente as previsões teóricas da Seção 7.8. A correlação positiva entre cobertura e risco é uma implicação testável da teoria de informação assimétrica. A ausência dessa correlação em alguns mercados sugere que os mecanismos de triagem (*screening*) e sinalização funcionam razoavelmente bem — ou que as fontes de heterogeneidade são mais complexas do que o modelo básico prevê.
+
+### O enigma do prêmio de risco: aversão ao risco é suficiente?
+
+> **Referência completa:** Mehra, Rajnish; Prescott, Edward C. "The Equity Premium: A Puzzle."
+> *Journal of Monetary Economics*, 15(2): 145–161, 1985.
+> DOI: 10.1016/0304-3932(85)90061-3
+
+**A pergunta**
+
+Historicamente, ações renderam cerca de 6 pontos percentuais a mais por ano do que títulos públicos nos Estados Unidos. Essa diferença — o *equity premium* — pode ser racionalizada pelo modelo padrão de utilidade esperada com aversão ao risco (CRRA)?
+
+**Como os autores responderam**
+
+Mehra e Prescott calibraram um modelo de equilíbrio geral com agente representativo, utilidade CRRA e consumo estocástico baseado em dados macroeconômicos americanos de 1889 a 1978. Calcularam qual coeficiente de aversão relativa ao risco \(\gamma\) seria necessário para gerar o prêmio de risco observado nos dados.
+
+**O que descobriram**
+
+Para reproduzir o *equity premium* observado de aproximadamente 6%, o modelo exigia um coeficiente \(\gamma\) superior a 30 — muito acima das estimativas empíricas plausíveis (tipicamente entre 1 e 10). Com valores razoáveis de \(\gamma\), o modelo previa um prêmio de risco de no máximo 0,35%. Esse hiato entre teoria e dados ficou conhecido como o **enigma do prêmio de risco** (*equity premium puzzle*).
+
+**Por que isso importa**
+
+O puzzle motivou décadas de pesquisa em finanças e macroeconomia, incluindo modelos com formação de hábito, perdas mais salientes que ganhos (aversão à perda), custos de participação no mercado acionário e mercados incompletos. No Brasil, estudos usando dados do Ibovespa e da taxa Selic encontram um *equity premium* ainda mais elevado do que nos EUA, tornando o enigma ainda mais agudo no contexto brasileiro.
+
+**Conexão com este capítulo**
+
+O artigo demonstra que as medidas de Arrow-Pratt (Seção 7.4) — em particular o coeficiente de aversão relativa constante \(\gamma\) da utilidade CRRA — têm implicações quantitativas testáveis para os preços dos ativos financeiros. O *puzzle* revela os limites do modelo VNM padrão (Seção 7.2) e motiva extensões teóricas que relaxam os axiomas clássicos.
+
+---
+
+## Referências do Capítulo
+
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulo 6.
+- NICHOLSON, W.; SNYDER, C. M. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017. Capítulo 7.
+- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulo 12.
+- PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulo 17.
+- VON NEUMANN, J.; MORGENSTERN, O. *Theory of Games and Economic Behavior*. Princeton: Princeton University Press, 1944.
+- ARROW, K. J. The Role of Securities in the Optimal Allocation of Risk-Bearing. *The Review of Economic Studies*, v. 31, n. 2, p. 91–96, 1964.
+- PRATT, J. W. Risk Aversion in the Small and in the Large. *Econometrica*, v. 32, n. 1–2, p. 122–136, 1964.
+- AKERLOF, G. A. The Market for "Lemons": Quality Uncertainty and the Market Mechanism. *The Quarterly Journal of Economics*, v. 84, n. 3, p. 488–500, 1970.
+- CHIAPPORI, P.-A.; SALANIÉ, B. Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, v. 108, n. 1, p. 56–78, 2000.
+- MEHRA, R.; PRESCOTT, E. C. The Equity Premium: A Puzzle. *Journal of Monetary Economics*, v. 15, n. 2, p. 145–161, 1985.
+- FRIEDMAN, M.; SAVAGE, L. J. The Utility Analysis of Choices Involving Risk. *Journal of Political Economy*, v. 56, n. 4, p. 279–304, 1948.
+- KAHNEMAN, D.; TVERSKY, A. Prospect Theory: An Analysis of Decision under Risk. *Econometrica*, v. 47, n. 2, p. 263–292, 1979.
