@@ -153,6 +153,27 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ---
 
+## Box Brasil: Mercosul-UE e os Ganhos de Troca
+
+!!! example "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
+    Em dezembro de 2024, após 25 anos de negociação, o **Mercosul** e a **União Europeia** assinaram um acordo de parceria comercial que cria uma das maiores zonas de livre comércio do mundo, reunindo **718 milhões de pessoas** e um PIB conjunto de US$ 22,4 trilhões.
+
+    **Os ganhos de troca na linguagem da Caixa de Edgeworth**
+
+    O acordo pode ser interpretado como um movimento ao longo da "caixa de Edgeworth" entre dois blocos: o Mercosul (dotação abundante em commodities agrícolas e minerais) e a UE (dotação abundante em bens industrializados e serviços). Antes do acordo, tarifas de importação impediam que os preços relativos igualassem as TMS dos dois blocos — a alocação estava dentro da caixa, mas fora da curva de contrato. A eliminação de tarifas aproxima os preços relativos dos custos marginais, movendo a alocação em direção à eficiência de Pareto.
+
+    **Estimativas de equilíbrio geral**
+
+    Estudos do **IPEA** utilizando modelos CGE estimam que o acordo elevará o PIB brasileiro em **0,46%** (US$ 9,3 bilhões) até 2040 e aumentará o fluxo comercial bilateral em **R$ 94,2 bilhões** — com R$ 52,1 bilhões em exportações brasileiras adicionais. As exportações do agronegócio brasileiro para a UE poderiam crescer até 26%.
+
+    **Por que equilíbrio parcial subestima os ganhos?**
+
+    Uma análise mercado a mercado (equilíbrio parcial) capturaria apenas os ganhos diretos da redução tarifária em cada setor. O modelo CGE captura adicionalmente: (i) realocação de trabalho e capital entre setores; (ii) efeitos sobre a taxa de câmbio real; (iii) ganhos de produtividade via maior concorrência e acesso a insumos importados mais baratos; (iv) efeitos sobre a receita do governo e consequentes ajustes fiscais.
+
+    **Fonte**: IPEA; Ministério das Relações Exteriores; Agência Brasil (dez/2024).
+
+---
+
 ## 13.5 O Primeiro Teorema do Bem-Estar
 
 !!! abstract "Primeiro Teorema do Bem-Estar"
@@ -224,6 +245,29 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 
 !!! note "Limitação prática"
     Na prática, transferências *lump-sum* perfeitas são difíceis de implementar, pois requerem informação sobre características dos agentes que geralmente são privadas. A tributação factível (imposto de renda, IVA) introduz distorções e gera perda de peso morto — um *trade-off* entre eficiência e equidade que é central na economia do setor público.
+
+---
+
+## Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
+
+!!! example "Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
+    A **Reforma Tributária** brasileira (EC 132/2023, regulamentada pela LC 214/2025) é, do ponto de vista da teoria do equilíbrio geral, uma das maiores intervenções sobre o sistema de preços relativos já realizadas no país. Ela substitui cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por dois: a **CBS** (federal) e o **IBS** (estadual/municipal), formando um IVA dual com alíquota estimada entre 26,5% e 28%.
+
+    **Por que a reforma é um problema de equilíbrio geral?**
+
+    O sistema tributário anterior introduzia distorções em múltiplos mercados simultaneamente: cumulatividade (tributo sobre tributo), guerra fiscal entre estados (alíquotas diferentes de ICMS), e tratamentos setoriais desiguais. Essas distorções violavam as condições de eficiência de Pareto — em particular, impediam que os preços relativos refletissem os custos marginais reais (condição \(\mathrm{TMT} = \mathrm{TMS}\)).
+
+    A análise de equilíbrio parcial subestima os ganhos da reforma porque ignora os efeitos cruzados entre mercados. Quando o tributo sobre o setor têxtil muda, isso afeta o mercado de algodão, o de vestuário, o de mão de obra e assim por diante — exatamente o tipo de interdependência que o modelo walrasiano captura.
+
+    **O que dizem os modelos CGE?**
+
+    Estudos do IPEA, da FGV e do Ministério da Fazenda utilizando modelos de equilíbrio geral computável (Seção 13.10) estimam que a reforma pode elevar o **PIB potencial em até 10% a 20%** ao longo de 15 anos, primordialmente via ganhos de produtividade total dos fatores e aumento do estoque de capital. A reforma tributária aparece consistentemente como o cenário de maior ganho de bem-estar nos modelos CGE brasileiros — acima de acordos comerciais ou liberalização unilateral.
+
+    **Conexão com o Segundo Teorema**
+
+    O Segundo Teorema do Bem-Estar (Seção 13.6) afirma que qualquer alocação eficiente pode ser sustentada por mercados competitivos, desde que as transferências sejam *lump-sum*. A reforma tributária brasileira caminha nessa direção: ao substituir tributos cumulativos (distorcivos) por um IVA não cumulativo (menos distorcivo), ela aproxima o sistema tributário de uma transferência *lump-sum*, reduzindo a perda de peso morto. Não é uma transferência *lump-sum* perfeita — o IVA ainda distorce a margem consumo-lazer —, mas é substancialmente menos distorcivo que o sistema anterior.
+
+    **Fonte**: Ministério da Fazenda; IFI/Senado, Estudo Especial nº 19 (2024); IBRE/FGV.
 
 ---
 
@@ -300,7 +344,7 @@ Somando sobre todos os consumidores:
 
 ### Aplicação à existência de equilíbrio
 
-A ideia central é construir uma função que mapeia preços em preços e cuja ponto fixo corresponda a um equilíbrio walrasiano. Normalizamos os preços no **simplex unitário**:
+A ideia central é construir uma função que mapeia preços em preços e cujo ponto fixo corresponda a um equilíbrio walrasiano. Normalizamos os preços no **simplex unitário**:
 
 \[
 \Delta = \left\{ \mathbf{p} \in \mathbb{R}^n_+ : \sum_{k=1}^{n} p_k = 1 \right\}
@@ -425,6 +469,148 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
+## Exercícios Resolvidos
+
+!!! example "Exercício Resolvido 13.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+    **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
+
+    **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
+
+    **Resolução:**
+
+    **Passo 1 — Demandas marshallianas**
+
+    Normalizando \(p_2 = 1\) e denotando \(p = p_1\):
+
+    *Consumidor A* (\(U_A = x_1 x_2\), Cobb-Douglas com \(\alpha = 1/2\)):
+
+    \[
+    x_1^A = \frac{m_A}{2p}, \qquad x_2^A = \frac{m_A}{2}, \qquad m_A = 8p + 2
+    \]
+
+    *Consumidor B* (\(U_B = x_1^{1/3} x_2^{2/3}\), Cobb-Douglas com \(\alpha = 1/3\)):
+
+    \[
+    x_1^B = \frac{m_B}{3p}, \qquad x_2^B = \frac{2m_B}{3}, \qquad m_B = 2p + 8
+    \]
+
+    **Passo 2 — Equilíbrio de mercado (bem 1)**
+
+    \[
+    \frac{8p + 2}{2p} + \frac{2p + 8}{3p} = 10
+    \]
+
+    Multiplicando por \(6p\):
+
+    \[
+    3(8p + 2) + 2(2p + 8) = 60p \implies 28p + 22 = 60p \implies p^* = \frac{22}{32} = \frac{11}{16}
+    \]
+
+    **Passo 3 — Alocações de equilíbrio**
+
+    \[
+    m_A = 8 \cdot \frac{11}{16} + 2 = \frac{120}{16} = \frac{15}{2}
+    \]
+
+    \[
+    x_1^A = \frac{15/2}{2 \cdot 11/16} = \frac{15/2}{11/8} = \frac{60}{11} \approx 5{,}45, \qquad x_2^A = \frac{15}{4} = 3{,}75
+    \]
+
+    \[
+    m_B = 2 \cdot \frac{11}{16} + 8 = \frac{150}{16} = \frac{75}{8}
+    \]
+
+    \[
+    x_1^B = \frac{75/8}{3 \cdot 11/16} = \frac{75/8}{33/16} = \frac{50}{11} \approx 4{,}55, \qquad x_2^B = \frac{2 \cdot 75/8}{3} = \frac{25}{4} = 6{,}25
+    \]
+
+    Verificação: \(60/11 + 50/11 = 110/11 = 10\) ✓ e \(15/4 + 25/4 = 40/4 = 10\) ✓
+
+    **Passo 4 — Verificação da Lei de Walras**
+
+    A preços arbitrários \(p = 1\): \(m_A = 10\), \(m_B = 10\).
+
+    \[
+    Z^1 = \frac{10}{2} + \frac{10}{3} - 10 = \frac{-5}{3}, \qquad Z^2 = \frac{10}{2} + \frac{20}{3} - 10 = \frac{5}{3}
+    \]
+
+    \[
+    p_1 Z^1 + p_2 Z^2 = 1 \cdot \left(-\frac{5}{3}\right) + 1 \cdot \frac{5}{3} = 0 \;\checkmark
+    \]
+
+    **Passo 5 — Verificação da eficiência de Pareto**
+
+    \[
+    TMS_A = \frac{x_2^A}{x_1^A} = \frac{15/4}{60/11} = \frac{15 \cdot 11}{4 \cdot 60} = \frac{11}{16} = p^* \;\checkmark
+    \]
+
+    \[
+    TMS_B = \frac{(1/3)\,x_2^B}{(2/3)\,x_1^B} = \frac{x_2^B}{2\,x_1^B} = \frac{25/4}{2 \cdot 50/11} = \frac{25 \cdot 11}{4 \cdot 100} = \frac{11}{16} = p^* \;\checkmark
+    \]
+
+    **Resultado:** \(p^* = 11/16\), \(\mathbf{x}_A^* = (60/11,\; 15/4)\), \(\mathbf{x}_B^* = (50/11,\; 25/4)\). O equilíbrio é Pareto-eficiente: \(TMS_A = TMS_B = p^*\).
+
+    **Interpretação econômica:** A troca melhora ambos os agentes: A, que tinha mais do bem 1 do que do bem 2, vende parte de sua dotação do bem 1 e compra bem 2. B faz o oposto. O Primeiro Teorema do Bem-Estar garante que o resultado é eficiente — não há recomposição das cestas que beneficie um sem prejudicar o outro. Na analogia com o comércio internacional, A é como o Brasil (abundante em commodities) e B como a UE (abundante em manufaturas): a troca beneficia ambos.
+
+---
+
+!!! example "Exercício Resolvido 13.2 — Segundo Teorema e transferências lump-sum"
+    **Enunciado:** Na mesma economia do ER 13.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
+
+    **Dados:** Mesmas preferências e dotações do ER 13.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
+
+    **Resolução:**
+
+    **Passo 1 — Verificar eficiência de Pareto**
+
+    \[
+    TMS_A = \frac{x_2^A}{x_1^A} = \frac{10/3}{5} = \frac{2}{3}
+    \]
+
+    \[
+    TMS_B = \frac{x_2^B}{2\,x_1^B} = \frac{20/3}{2 \cdot 5} = \frac{2}{3}
+    \]
+
+    \(TMS_A = TMS_B = 2/3\) ✓ — a alocação está na curva de contrato (Pareto-eficiente).
+
+    **Passo 2 — Preço relativo que sustenta o equilíbrio**
+
+    No equilíbrio competitivo: \(p_1/p_2 = TMS = 2/3\). Normalizando \(p_2 = 1\): \(p_1 = 2/3\).
+
+    **Passo 3 — Renda necessária para cada consumidor**
+
+    \[
+    m_A^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{10}{3} = \frac{10}{3} + \frac{10}{3} = \frac{20}{3}
+    \]
+
+    \[
+    m_B^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{20}{3} = \frac{10}{3} + \frac{20}{3} = 10
+    \]
+
+    **Passo 4 — Renda original ao novo preço**
+
+    \[
+    m_A^{\text{original}} = \frac{2}{3} \cdot 8 + 1 \cdot 2 = \frac{16}{3} + 2 = \frac{22}{3}
+    \]
+
+    \[
+    m_B^{\text{original}} = \frac{2}{3} \cdot 2 + 1 \cdot 8 = \frac{4}{3} + 8 = \frac{28}{3}
+    \]
+
+    **Passo 5 — Transferência lump-sum**
+
+    \[
+    T_A = m_A^{\text{necessária}} - m_A^{\text{original}} = \frac{20}{3} - \frac{22}{3} = -\frac{2}{3}
+    \]
+
+    A paga uma transferência de \(2/3\) unidades do numerário para B. Após a transferência, os mercados competitivos geram exatamente a alocação desejada.
+
+    **Resultado:** Transferência *lump-sum* de \(T = 2/3\) do consumidor A para o consumidor B, ao preço \(p^* = 2/3\).
+
+    **Interpretação econômica:** O Segundo Teorema demonstra que eficiência e equidade são objetivos separáveis: basta redistribuir a riqueza inicial e deixar os mercados funcionarem. No Brasil, o **Bolsa Família** e o **BPC** (Benefício de Prestação Continuada) são exemplos de transferências diretas que buscam alterar a distribuição sem distorcer preços relativos — embora, na prática, nenhuma transferência seja perfeitamente *lump-sum* (sempre há custos administrativos e incentivos adversos).
+
+---
+
 ## Exercícios
 
 **Exercício 13.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
@@ -486,3 +672,156 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 (c) Discuta como um modelo CGE capturaria esses efeitos intersetoriais e quais dados seriam necessários para calibrá-lo.
 
 (d) Quais hipóteses do modelo CGE padrão (concorrência perfeita, retornos constantes, pleno emprego) são mais problemáticas para a análise da economia brasileira? Justifique.
+
+---
+
+## Vem, ANPEC! 🏆
+
+!!! question "ANPEC 2019 — Microeconomia — Questão 10"
+    Considere o modelo da Caixa de Edgeworth. O consumidor A tem utilidade linear \(U_A(X,Y) = X + Y\) e dotação inicial \(\mathbf{e}_A = (1, 9)\). O consumidor B tem utilidade Cobb-Douglas \(U_B(X,Y) = X^{1/2}Y^{1/2}\) e dotação inicial \(\mathbf{e}_B = (9, 1)\). Julgue como verdadeiros ou falsos os itens abaixo:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O conjunto de alocações factíveis na Caixa de Edgeworth é \([0,10] \times [0,10]\). |
+    | 1 | A curva de contrato é dada por \(Y = 10X/(20-X)\), com \(0 \leq X \leq 10\). |
+    | 2 | O Equilíbrio de Walras é o par alocação-preço dado por \(\{(X_A,Y_A),(X_B,Y_B);(p,q)\} = \{(5,5),(5,5);(p,q)\}\), com \(p/q = 1\). |
+    | 3 | O Equilíbrio de Walras é Pareto-eficiente. |
+    | 4 | O valor do vetor de excesso de demanda é positivo. |
+
+    ??? success "Gabarito"
+        **Respostas: 10110**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Os totais da economia são \(\bar{X} = 1 + 9 = 10\) e \(\bar{Y} = 9 + 1 = 10\). A Caixa de Edgeworth tem dimensões \(10 \times 10\), e cada alocação factível é um ponto em \([0,10]^2\).
+        - **Item 1 — F:** Com utilidade linear para A, \(TMS_A = 1\) em todos os pontos. Para B (Cobb-Douglas simétrica), \(TMS_B = Y_B/X_B\). A eficiência de Pareto requer \(TMS_A = TMS_B\), i.e., \(Y_B/X_B = 1 \implies Y_B = X_B\). Nas coordenadas de A: \(10 - Y = 10 - X \implies Y = X\). A curva de contrato é a diagonal \(Y = X\), e não a função \(Y = 10X/(20-X)\).
+        - **Item 2 — V:** Com \(p/q = 1\): \(m_A = 1 + 9 = 10\), A é indiferente entre X e Y (utilidade linear), podendo escolher \((5, 5)\). Para B: \(m_B = 9 + 1 = 10\), \(X_B = 10/2 = 5\), \(Y_B = 10/2 = 5\). Mercados se equilibram: \(5 + 5 = 10\). É um equilíbrio walrasiano.
+        - **Item 3 — V:** Pelo Primeiro Teorema do Bem-Estar, todo equilíbrio walrasiano é Pareto-eficiente. Verificação direta: \(TMS_B = 5/5 = 1 = TMS_A\).
+        - **Item 4 — F:** No equilíbrio, o excesso de demanda é zero em todos os mercados (\(Z^X = Z^Y = 0\)). Pela Lei de Walras, \(p \cdot Z^X + q \cdot Z^Y = 0\) para quaisquer preços — e no equilíbrio ambos os termos são zero.
+
+---
+
+!!! question "ANPEC 2018 — Microeconomia — Questão 13"
+    Em uma economia, o agente A possui as dez unidades do bem 1 e o agente B possui as dez unidades do bem 2. As funções utilidades de A e B são descritas por \(U_A = x_1^{1/2} \cdot x_2^{1/2}\) e \(U_B = x_1 \cdot x_2\), respectivamente. Em uma economia de trocas sob equilíbrio geral competitivo, tome o segundo bem como numerário, isto é, \(p_2 = \$1\), e denomine \(p\) o preço do outro bem. Avalie:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Em equilíbrio, \(p = \$2\). |
+    | 1 | A função de bem-estar utilitarista (benthamita) com pesos unitários para os dois agentes assume o valor \(W = 30\). |
+    | 2 | A alocação final não é justa, pois embora eficiente, não é equitativa. |
+    | 3 | É possível atingir via mercados competitivos a alocação eficiente \((x_1^A, x_2^A) = (2{,}5;\; 2{,}5)\), \((x_1^B, x_2^B) = (7{,}5;\; 7{,}5)\) se realocarmos metade da dotação inicial de A, transferindo-a para B. |
+    | 4 | Utilizando a mesma função de bem-estar do item 1, a alocação final descrita no item 3 é socialmente preferível àquela descrita inicialmente. |
+
+    ??? success "Gabarito"
+        **Respostas: 01011**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** Demandas de A: \(x_1^A = 10p/(2p) = 5\), \(x_2^A = 10p/2 = 5p\). Demandas de B: \(x_1^B = 10/(2p) = 5/p\), \(x_2^B = 10/2 = 5\). Equilíbrio no bem 1: \(5 + 5/p = 10 \implies p = 1\), e não \(p = 2\).
+        - **Item 1 — V:** Com \(p = 1\): \(\mathbf{x}_A = (5, 5)\), \(\mathbf{x}_B = (5, 5)\). \(U_A = \sqrt{5}\cdot\sqrt{5} = 5\), \(U_B = 5 \cdot 5 = 25\). \(W = 5 + 25 = 30\).
+        - **Item 2 — F:** A alocação \((5,5)\) para ambos os agentes é uma **divisão igualitária** dos bens. Ambos recebem cestas idênticas, portanto não há inveja: A avalia a cesta de B em \(U_A(5,5) = 5\), igual à própria utilidade, e B avalia a cesta de A em \(U_B(5,5) = 25\), igual à própria. A alocação é justa (equitativa e *envy-free*).
+        - **Item 3 — V:** Transferindo metade da dotação de A para B: \(\boldsymbol{\omega}_A' = (5, 0)\), \(\boldsymbol{\omega}_B' = (5, 10)\). No equilíbrio com \(p = 1\): \(x_1^A = 5/2 = 2{,}5\), \(x_2^A = 5/2 = 2{,}5\); \(x_1^B = 15/2 = 7{,}5\), \(x_2^B = 15/2 = 7{,}5\). A alocação desejada é alcançada como equilíbrio competitivo — ilustração direta do Segundo Teorema do Bem-Estar.
+        - **Item 4 — V:** Nova função de bem-estar: \(W' = U_A(2{,}5;\, 2{,}5) + U_B(7{,}5;\, 7{,}5) = 2{,}5 + 56{,}25 = 58{,}75 > 30 = W\). A nova alocação é socialmente preferível sob o critério utilitarista.
+
+---
+
+!!! question "ANPEC 2015 — Microeconomia — Questão 11"
+    Com relação à Teoria do Equilíbrio Geral, indique as afirmativas corretas:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | A Lei de Walras afirma que o valor da demanda agregada é zero para todas as escolhas de preços possíveis, e não apenas para os preços de equilíbrio. |
+    | 1 | O pressuposto de que a função de demanda excedente agregada seja uma função contínua não é indispensável à demonstração da existência do equilíbrio nos modelos de equilíbrio geral. |
+    | 2 | Mesmo que as demandas individuais sejam descontínuas, desde que os consumidores sejam pequenos, a função de demanda agregada será contínua. |
+    | 3 | Pelo primeiro teorema do bem-estar, todos os equilíbrios em mercados competitivos serão Pareto-eficientes. |
+    | 4 | Se as preferências não forem convexas, algumas alocações Pareto-eficientes não serão alcançadas por mercados competitivos. |
+
+    ??? success "Gabarito"
+        **Respostas: 00111**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A Lei de Walras afirma que o valor do **excesso de demanda** (não da "demanda agregada") é zero para todos os preços: \(\sum_k p_k Z^k(\mathbf{p}) \equiv 0\). O valor da demanda agregada \(\mathbf{p} \cdot \mathbf{x}(\mathbf{p})\) é igual ao valor das dotações \(\mathbf{p} \cdot \boldsymbol{\omega}\), que geralmente não é zero. A imprecisão no enunciado torna a afirmação falsa.
+        - **Item 1 — F:** A continuidade da função de excesso de demanda agregada é essencial para a aplicação do Teorema do Ponto Fixo de Brouwer (Seção 13.8). Sem continuidade (ou pelo menos semi-continuidade superior no caso de correspondências, via Teorema de Kakutani), a existência de equilíbrio não pode ser demonstrada.
+        - **Item 2 — V:** Resultado clássico de agregação (Aumann, 1966): com um grande número de consumidores "pequenos" (cada um com participação negligível no mercado), descontinuidades individuais nas demandas se "suavizam" na agregação, e a demanda agregada torna-se contínua — mesmo que cada demanda individual seja descontínua.
+        - **Item 3 — V:** Este é o enunciado direto do Primeiro Teorema do Bem-Estar: sob tomada de preço, mercados completos e não saciedade local, todo equilíbrio competitivo é Pareto-eficiente.
+        - **Item 4 — V:** O Segundo Teorema do Bem-Estar requer convexidade das preferências. Sem essa hipótese, pode não existir um hiperplano de suporte que separe os conjuntos preferidos, e certas alocações Pareto-eficientes não podem ser descentralizadas como equilíbrios competitivos.
+
+---
+
+## Apêndice: A Pesquisa em Ação 🔬
+
+### Liberalização Comercial e Dinâmica do Mercado de Trabalho
+
+> **Referência completa:** Dix-Carneiro, Rafael. "Trade Liberalization and Labor Market Dynamics."
+> *Econometrica*, 82(3): 825–885, 2014.
+> DOI: 10.3982/ECTA10457
+
+**A pergunta**
+
+Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
+
+**Como o autor respondeu**
+
+O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
+
+**O que descobriram**
+
+Os custos medianos de mobilidade setorial variam de **1,4 a 2,7 vezes o salário anual** — são substanciais. As transições após liberalização comercial levam vários anos para se completar. Os ganhos agregados de bem-estar são significativamente reduzidos pelo processo de ajuste lento e custoso. Crucialmente, os efeitos de bem-estar dependem fortemente do setor inicial de emprego do trabalhador — trabalhadores em setores protegidos sofrem perdas persistentes.
+
+**Por que isso importa**
+
+Para o Brasil, que passou por intensa liberalização nos anos 1990, o artigo quantifica os custos humanos da transição — algo que os modelos CGE estáticos da Seção 13.10 não capturam. Os resultados informam o debate sobre políticas de transição justa (*safety nets*) que acompanhem a abertura comercial.
+
+**Conexão com este capítulo**
+
+O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 13.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
+
+---
+
+### Efeitos Comerciais e de Bem-Estar do NAFTA
+
+> **Referência completa:** Caliendo, Lorenzo, e Fernando Parro. "Estimates of the Trade and Welfare Effects of NAFTA."
+> *Review of Economic Studies*, 82(1): 1–44, 2015.
+> DOI: 10.1093/restud/rdu035
+
+**A pergunta**
+
+Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
+
+**Como os autores responderam**
+
+Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.
+
+**O que descobriram**
+
+O bem-estar do México aumentou **1,31%**, o dos EUA **0,08%** e o do Canadá caiu **0,06%** como resultado do NAFTA. Os efeitos são heterogêneos entre setores: os encadeamentos produtivos via insumos intermediários amplificam os ganhos comerciais em até 40% em relação a um modelo sem bens intermediários. A desagregação setorial é crucial — modelos com apenas um setor subestimam substancialmente os efeitos.
+
+**Por que isso importa**
+
+O artigo é uma referência metodológica para avaliar acordos como o Mercosul-UE. A abordagem pode ser aplicada ao caso brasileiro para estimar os efeitos setoriais e regionais da abertura comercial, complementando os modelos CGE tradicionais (Seção 13.10) com maior rigor na estimação das elasticidades comerciais.
+
+**Conexão com este capítulo**
+
+O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
+
+---
+
+## Referências
+
+- Arrow, Kenneth J., e Gerard Debreu. "Existence of an Equilibrium for a Competitive Economy." *Econometrica*, 22(3): 265–290, 1954.
+- Debreu, Gerard. *Theory of Value: An Axiomatic Analysis of Economic Equilibrium*. New York: Wiley, 1959.
+- Edgeworth, Francis Y. *Mathematical Psychics*. London: C. Kegan Paul, 1881.
+- Walras, Léon. *Éléments d'économie politique pure*. Lausanne: L. Corbaz, 1874.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. *Microeconomic Theory*. New York: Oxford University Press, 1995.
+- Varian, Hal R. *Microeconomic Analysis*. 3rd ed. New York: W. W. Norton, 1992.
+- Dix-Carneiro, Rafael. "Trade Liberalization and Labor Market Dynamics." *Econometrica*, 82(3): 825–885, 2014.
+- Caliendo, Lorenzo, e Fernando Parro. "Estimates of the Trade and Welfare Effects of NAFTA." *Review of Economic Studies*, 82(1): 1–44, 2015.
+- IPEA. Modelos de Equilíbrio Geral Computável Aplicados ao Brasil. Brasília: IPEA, diversos anos.
+- IFI/Senado Federal. "Reforma Tributária: Contexto, Mudanças e Impactos." Estudo Especial nº 19, março 2024.
