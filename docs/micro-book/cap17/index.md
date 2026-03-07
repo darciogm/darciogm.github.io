@@ -1,4 +1,4 @@
-# Capítulo 17 — Capital, Juros e o Valor do Amanhã
+# Capítulo 17 — A Paciência Tem Preço
 
 ## Introdução
 

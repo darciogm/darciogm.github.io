@@ -1,4 +1,4 @@
-# Capítulo 7 — Decidindo no Escuro: A Economia da Incerteza
+# Capítulo 7 — O Preço do Talvez
 
 ## Introdução
 

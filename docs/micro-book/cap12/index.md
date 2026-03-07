@@ -1,4 +1,4 @@
-# Capítulo 12 — O Mercado em Ação: Oferta, Demanda e o Leiloeiro Invisível
+# Capítulo 12 — O Leiloeiro que Ninguém Vê
 
 ## Introdução
 

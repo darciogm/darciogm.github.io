@@ -1,4 +1,4 @@
-# Capítulo 11 — A Empresa por Dentro: Lucro, Receita e a Arte de Sobreviver
+# Capítulo 11 — A Firma Nua: Anatomia do Lucro
 
 ## Introdução
 

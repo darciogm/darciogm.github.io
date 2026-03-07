@@ -1,4 +1,4 @@
-# Capítulo 3 — Por Que Você Compra o Que Compra (e Às Vezes Se Arrepende)
+# Capítulo 3 — Mais É Melhor — Será?
 
 ## Introdução
 

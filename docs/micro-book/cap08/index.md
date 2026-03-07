@@ -1,4 +1,4 @@
-# Capítulo 8 — Teoria dos Jogos: Pensando Estrategicamente
+# Capítulo 8 — Nash no Bar: A Arte do Pensamento Estratégico
 
 ## Introdução
 

@@ -1,4 +1,4 @@
-# Capítulo 14 — O Rei do Mercado: Poder, Preço e Monopólio
+# Capítulo 14 — Sem Concorrente, Sem Piedade
 
 ## Introdução
 

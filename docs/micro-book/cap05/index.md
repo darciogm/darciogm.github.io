@@ -1,4 +1,4 @@
-# Capítulo 5 — Quando o Preço Muda: Os Dois Lados da Moeda
+# Capítulo 5 — Slutsky no Supermercado
 
 > *"Toda variação de preço carrega em si duas forças opostas: uma que empobrece e outra que redireciona."*
 

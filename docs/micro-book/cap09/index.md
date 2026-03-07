@@ -1,4 +1,4 @@
-# Capítulo 9 — A Alquimia da Produção: Transformando Insumos em Produtos
+# Capítulo 9 — Mais Mãos, Mais Máquinas — Mais Produto?
 
 ## Introdução
 

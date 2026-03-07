@@ -1,4 +1,4 @@
-# Capítulo 19 — Quando o Mercado Falha: Externalidades e Bens Públicos
+# Capítulo 19 — Fumaça, Caronas e Tragédias
 
 ## Introdução
 

@@ -1,4 +1,4 @@
-# Capítulo 2 — A Caixa de Ferramentas Matemática do Economista
+# Capítulo 2 — O Manual de Sobrevivência Matemática
 
 ## Introdução
 

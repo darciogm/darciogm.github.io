@@ -1,4 +1,4 @@
-# Capítulo 1 — Modelos Econômicos: A Arte de Simplificar o Mundo
+# Capítulo 1 — Todos os Modelos Estão Errados — Alguns São Úteis
 
 ## Introdução
 

@@ -1,4 +1,4 @@
-# Capítulo 15 — Entre o Monopólio e a Concorrência: O Mundo Real dos Oligopólios
+# Capítulo 15 — Quando Gigantes Competem (ou Combinam)
 
 ## Introdução
 

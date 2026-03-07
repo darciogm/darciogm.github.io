@@ -1,4 +1,4 @@
-# Capítulo 10 — Quanto Custa Produzir? A Anatomia dos Custos
+# Capítulo 10 — Por Que Nada É de Graça
 
 ## Introdução
 

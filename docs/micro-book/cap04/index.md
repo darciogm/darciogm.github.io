@@ -1,4 +1,4 @@
-# Capítulo 4 — O Consumidor Racional: Escolhendo o Melhor Possível
+# Capítulo 4 — Você Quer Tudo. Mas Não Pode.
 
 ## Introdução
 

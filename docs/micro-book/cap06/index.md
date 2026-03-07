@@ -1,4 +1,4 @@
-# Capítulo 6 — Bens que Amamos, Bens que Odiamos
+# Capítulo 6 — Substitutos, Complementos e Relações Complicadas
 
 > *"Nenhum bem é uma ilha: a demanda por cada produto depende dos preços de todos os outros."*
 

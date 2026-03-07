@@ -1,4 +1,4 @@
-# Capítulo 18 — O Que Você Sabe e Eu Não: Informação Assimétrica
+# Capítulo 18 — Limões, Sinais e Contratos
 
 ## Introdução
 
