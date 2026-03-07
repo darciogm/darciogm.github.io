@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--
+  Paradoxo de Ellsberg — Visualização interativa
+  Library: JSXGraph + Canvas
+  Reason: Interactive demonstration of ambiguity aversion
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradoxo de Ellsberg — Visualização</title>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .main-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .urns-row {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .urn-box {
+      text-align: center;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f8f8f8;
+      width: 280px;
+    }
+    .urn-box h4 {
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .urn-visual {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin: 0.8rem 0;
+      min-height: 80px;
+      align-items: center;
+    }
+    .ball {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid #999;
+    }
+    .ball-red { background: #C8102E; border-color: #8b0000; }
+    .ball-black { background: #333; border-color: #000; }
+    .ball-unknown { background: repeating-linear-gradient(45deg, #C8102E, #C8102E 4px, #333 4px, #333 8px); border-color: #666; }
+    .urn-desc {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+    .choices-section {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .choices-section h4 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+    }
+    .choice-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .choice-btn {
+      flex: 1;
+      padding: 0.8rem;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .choice-btn:hover { border-color: #C8102E; background: #fff5f5; }
+    .choice-btn.selected { border-color: #C8102E; background: #fff0f0; font-weight: 700; }
+    .choice-label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+    .result-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .result-ellsberg { background: #fff3e0; border: 1px solid #ff9800; }
+    .result-consistent { background: #e8f5e9; border: 1px solid #4caf50; }
+    .slider-group {
+      margin: 0.8rem 0;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 620px) {
+      .urns-row { flex-direction: column; align-items: center; }
+      .choice-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Paradoxo de Ellsberg — Duas Urnas</div>
+  <div class="main-container">
+    <div class="urns-row">
+      <div class="urn-box">
+        <h4>Urna A (conhecida)</h4>
+        <div class="urn-visual" id="urn-a"></div>
+        <div class="urn-desc">50 bolas vermelhas + 50 bolas pretas</div>
+      </div>
+      <div class="urn-box">
+        <h4>Urna B (ambígua)</h4>
+        <div class="urn-visual" id="urn-b"></div>
+        <div class="urn-desc">100 bolas — proporção desconhecida</div>
+        <div class="slider-group">
+          <label>Composição real (oculta): <span class="val" id="val-comp">50</span>% vermelhas</label>
+          <input type="range" id="slider-comp" min="0" max="100" step="5" value="50">
+        </div>
+      </div>
+    </div>
+
+    <div class="choices-section">
+      <h4>Escolha 1: Apostar em vermelho — prêmio de R$ 100</h4>
+      <div class="choice-row">
+        <button class="choice-btn" id="c1a" onclick="choose(1,'A')">
+          <div class="choice-label">Opção F</div>
+          Apostar em <span style="color:#C8102E">vermelho</span> da <strong>Urna A</strong><br>
+          <small>\(P = 0{,}50\) conhecida</small>
+        </button>
+        <button class="choice-btn" id="c1b" onclick="choose(1,'B')">
+          <div class="choice-label">Opção G</div>
+          Apostar em <span style="color:#C8102E">vermelho</span> da <strong>Urna B</strong><br>
+          <small>\(P = ?\) desconhecida</small>
+        </button>
+      </div>
+
+      <h4>Escolha 2: Apostar em preto — prêmio de R$ 100</h4>
+      <div class="choice-row">
+        <button class="choice-btn" id="c2a" onclick="choose(2,'A')">
+          <div class="choice-label">Opção H</div>
+          Apostar em <span style="color:#333">preto</span> da <strong>Urna A</strong><br>
+          <small>\(P = 0{,}50\) conhecida</small>
+        </button>
+        <button class="choice-btn" id="c2b" onclick="choose(2,'B')">
+          <div class="choice-label">Opção I</div>
+          Apostar em <span style="color:#333">preto</span> da <strong>Urna B</strong><br>
+          <small>\(P = ?\) desconhecida</small>
+        </button>
+      </div>
+    </div>
+
+    <div class="result-box" id="result"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+
+  <script>
+    var choices = { 1: null, 2: null };
+
+    function drawUrns() {
+      var comp = parseInt(document.getElementById('slider-comp').value);
+      document.getElementById('val-comp').textContent = comp;
+
+      // Urn A: 50/50
+      var urnA = document.getElementById('urn-a');
+      urnA.innerHTML = '';
+      for (var i = 0; i < 20; i++) {
+        var ball = document.createElement('div');
+        ball.className = 'ball ' + (i < 10 ? 'ball-red' : 'ball-black');
+        urnA.appendChild(ball);
+      }
+
+      // Urn B: unknown (show striped)
+      var urnB = document.getElementById('urn-b');
+      urnB.innerHTML = '';
+      for (var i = 0; i < 20; i++) {
+        var ball = document.createElement('div');
+        ball.className = 'ball ball-unknown';
+        urnB.appendChild(ball);
+      }
+    }
+
+    function choose(q, urn) {
+      choices[q] = urn;
+      // Visual feedback
+      document.getElementById('c' + q + 'a').className = 'choice-btn' + (urn === 'A' ? ' selected' : '');
+      document.getElementById('c' + q + 'b').className = 'choice-btn' + (urn === 'B' ? ' selected' : '');
+      checkResult();
+    }
+
+    function checkResult() {
+      if (choices[1] === null || choices[2] === null) return;
+      var result = document.getElementById('result');
+      result.style.display = 'block';
+
+      if (choices[1] === 'A' && choices[2] === 'A') {
+        result.className = 'result-box result-ellsberg';
+        result.innerHTML = '<strong>Padrão de Ellsberg!</strong> Você preferiu a Urna A (conhecida) em ambas as apostas. ' +
+          'Isso revela <em>aversão à ambiguidade</em>: você prefere probabilidades conhecidas a desconhecidas, ' +
+          'mesmo que a probabilidade subjetiva de vermelho na Urna B devesse ser complementar à de preto. ' +
+          'Se você acha que a Urna B tem poucas bolas vermelhas (favorecendo F sobre G), deveria achar que tem muitas pretas (favorecendo I sobre H). ' +
+          'A escolha simultânea de F e H <strong>viola a UE de Savage</strong>.';
+      } else if (choices[1] === 'B' && choices[2] === 'B') {
+        result.className = 'result-box result-ellsberg';
+        result.innerHTML = '<strong>Busca de ambiguidade!</strong> Você preferiu a Urna B (desconhecida) em ambas as apostas. ' +
+          'Isso é raro, mas também viola a UE de Savage pela mesma lógica simétrica.';
+      } else {
+        result.className = 'result-box result-consistent';
+        result.innerHTML = '<strong>Consistente com UE!</strong> Sua escolha é compatível com alguma crença subjetiva sobre a Urna B. ' +
+          'Se você acha que a Urna B tem mais vermelhas, faz sentido escolher G e H; ' +
+          'se acha que tem mais pretas, faz sentido escolher F e I.';
+      }
+    }
+
+    function resetAll() {
+      choices = { 1: null, 2: null };
+      ['c1a','c1b','c2a','c2b'].forEach(function(id) {
+        document.getElementById(id).className = 'choice-btn';
+      });
+      document.getElementById('result').style.display = 'none';
+      document.getElementById('slider-comp').value = 50;
+      drawUrns();
+    }
+
+    document.getElementById('slider-comp').addEventListener('input', drawUrns);
+    drawUrns();
+  </script>
+</body>
+</html>
