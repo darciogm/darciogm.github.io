@@ -6,7 +6,7 @@ No capítulo anterior, examinamos a tecnologia da firma — como insumos são tr
 
 A distinção entre custos econômicos e contábeis, o conceito de custo de oportunidade, a relação entre minimização de custos e maximização de lucro, o papel das curvas de custo de curto e longo prazo e o elegante Lema de Shephard — que conecta a função custo às demandas condicionadas por insumos — são os temas centrais deste capítulo.
 
-A compreensão da estrutura de custos é indispensável para a análise da oferta, da formação de preços e da organização industrial. No contexto brasileiro, onde o chamado "custo Brasil" — que engloba carga tributária, deficiências logísticas e burocracia — pesa significativamente sobre a competitividade das empresas, essa análise ganha relevância adicional.
+A compreensão da estrutura de custos é indispensável para a análise da oferta, da formação de preços e da organização industrial. No contexto brasileiro, onde o chamado "custo Brasil" — que engloba carga tributária, deficiências logísticas e burocracia — pesa significativamente sobre a competitividade das empresas, essa análise ganha relevância adicional. Da soja exportada pelo Porto de Santos ao café especial de Minas Gerais, a estrutura de custos determina quais firmas sobrevivem e quais saem do mercado.
 
 ---
 
@@ -31,6 +31,9 @@ A diferença entre lucro econômico e lucro contábil é dada pelos custos impl�
 \]
 
 Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é, remunera todos os fatores de produção, inclusive os próprios, pelo seu custo de oportunidade. Lucro econômico positivo indica **lucro supranormal** (ou econômico puro).
+
+!!! tip "Exemplo: custo de oportunidade na agricultura brasileira"
+    Um produtor rural no Cerrado possui 500 hectares de terra própria e os utiliza para plantar soja. O custo contábil inclui sementes, fertilizantes, mão de obra e depreciação de máquinas. Porém, o custo econômico deve incluir também o **arrendamento** que ele deixa de receber ao não alugar a terra — que, segundo dados da CONAB, pode variar de 8 a 15 sacas de soja por hectare/ano conforme a região. Se o arrendamento médio é de 12 sacas/ha e a saca vale R$ 120, o custo implícito da terra é de R$ 720.000/ano — valor que o lucro contábil ignora completamente.
 
 ### Custos irrecuperáveis (sunk costs)
 
@@ -64,7 +67,7 @@ Um resultado central é que a **maximização de lucro implica minimização de 
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.1</strong> — Minimizacao de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto otimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinacao otima de insumos e o custo minimo se alteram.</figcaption>
+  <figcaption><strong>Figura 10.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
 </figure>
 
 ### O problema de minimização de custos
@@ -74,6 +77,8 @@ O problema dual ao da maximização do produto sujeito a um orçamento é a **mi
 \[
 \min_{K, L} \; C = wL + rK \quad \text{s.a.} \quad f(K, L) = q_0
 \]
+
+A lógica é análoga à do consumidor que minimiza o gasto para atingir um dado nível de utilidade (Capítulo 5). Aqui, a isoquanta substitui a curva de indiferença, e a reta de isocusto substitui a reta orçamentária.
 
 ### A reta de isocusto
 
@@ -114,7 +119,7 @@ Igualando:
     \mathrm{TMST}_{L,K} = \frac{w}{r}
     \]
 
-    Equivalentemente, o valor do produto marginal por unidade monetária gasta deve ser igual para todos os insumos:
+    Equivalentemente, o produto marginal por unidade monetária gasta deve ser igual para todos os insumos:
 
     \[
     \frac{f_L}{w} = \frac{f_K}{r}
@@ -122,7 +127,7 @@ Igualando:
 
 ### Demandas condicionadas por insumos
 
-Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = q_0\), obtemos as **demandas condicionadas** (ou demandas de Hicksian na produção):
+Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = q_0\), obtemos as **demandas condicionadas** (ou demandas hicksianas na produção):
 
 \[
 L^c = L^c(w, r, q), \qquad K^c = K^c(w, r, q)
@@ -203,7 +208,7 @@ A função custo possui as seguintes propriedades:
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/curvas-custo.html" width="100%" height="600" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.2</strong> — Curvas de custo total, medio e marginal. Ajuste os parametros da funcao cubica de custo e observe as relacoes entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg e arrastavel. Destaque para o ponto de fechamento (min CVMe) e o cruzamento CMg-CMe no minimo do CMe.</figcaption>
+  <figcaption><strong>Figura 10.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
 </figure>
 
 ### Custo total, custo médio e custo marginal
@@ -245,6 +250,9 @@ Com rendimentos marginais inicialmente crescentes e depois decrescentes (o forma
 - **CVMe**: formato de U — segue a mesma lógica, mas é mais suave.
 - **CMe**: formato de U — soma de CVMe (U) com CFMe (decrescente). O mínimo do CMe ocorre à direita do mínimo do CVMe.
 
+!!! tip "Intuição: por que CMg e PMg são 'espelhos'"
+    A relação inversa entre custo marginal e produto marginal é central. Se \(q = f(L)\) no curto prazo, então \(\mathrm{CMg} = w / PMg_L\). Quando o produto marginal do trabalho cresce, o custo de produzir uma unidade adicional cai; quando o produto marginal decresce, o custo marginal sobe. As curvas de custo são, portanto, o "reflexo" das curvas de produtividade.
+
 ---
 
 ## 10.6 Deslocamentos nas Curvas de Custo
@@ -263,6 +271,9 @@ O efeito sobre a curva de CMg depende de como a intensidade de trabalho varia co
 
 Uma melhoria tecnológica (aumento de \(A\) na função de produção) permite produzir a mesma quantidade com menos insumos, deslocando todas as curvas de custo para baixo. Se o progresso técnico é enviesado — por exemplo, poupador de trabalho —, ele reduz relativamente mais os custos de firmas intensivas em trabalho.
 
+!!! tip "Exemplo: mecanização na agricultura brasileira"
+    A adoção de colheitadeiras mecanizadas na produção de soja no Cerrado é um exemplo de progresso técnico poupador de trabalho. Segundo dados da EMBRAPA, o número de horas-homem por hectare na cultura da soja caiu de cerca de 25 h/ha nos anos 1980 para menos de 1 h/ha com plantio direto mecanizado. Essa redução desloca a curva de custo para baixo e altera a razão ótima capital/trabalho, tornando a produção mais intensiva em capital.
+
 ### Impostos e regulação
 
 Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um imposto *ad valorem* sobre o trabalho de alíquota \(\tau\) eleva o custo efetivo do trabalho para \(w(1 + \tau)\), deslocando as curvas de custo para cima.
@@ -273,7 +284,7 @@ Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um impos
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/curto-longo-prazo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.3</strong> — Curva envoltoria: CMe de curto e longo prazo. Cada curva cinza e um SRAC para um nivel fixo de capital; a curva azul (LRAC) e a envoltoria. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangencia.</figcaption>
+  <figcaption><strong>Figura 10.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
 </figure>
 
 ### Custos de curto prazo
@@ -335,17 +346,40 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
     | Componente | Impacto estimado | Descrição |
     |:---|:---|:---|
-    | Carga tributária | 25-35% do faturamento | ICMS, PIS/COFINS, IPI, contribuições sobre folha |
-    | Logística e transporte | 12-15% do custo total | Dependência do modal rodoviário, infraestrutura precária |
-    | Energia elétrica | 8-12% dos custos industriais | Tarifas entre as mais altas do mundo |
-    | Burocracia regulatória | 3-5% dos custos | Licenças, fiscalizações, cumprimento de obrigações acessórias |
+    | Carga tributária | 25–35% do faturamento | ICMS, PIS/COFINS, IPI, contribuições sobre folha |
+    | Logística e transporte | 12–15% do custo total | Dependência do modal rodoviário, infraestrutura precária |
+    | Energia elétrica | 8–12% dos custos industriais | Tarifas entre as mais altas do mundo |
+    | Burocracia regulatória | 3–5% dos custos | Licenças, fiscalizações, cumprimento de obrigações acessórias |
     | Custo de capital | Variável | Taxas de juros historicamente elevadas |
 
     **Logística: o gargalo mais visível.**
-    O Brasil transporta cerca de **65% de sua carga** pelo modal rodoviário, contra 25-30% nos EUA e menos de 10% na Europa. Para a indústria de alimentos, que opera com margens estreitas e produtos perecíveis, essa dependência eleva drasticamente os custos de distribuição. O frete de uma tonelada de soja de Sorriso (MT) ao Porto de Santos percorre mais de 2.000 km por estrada, a um custo estimado em US$ 90-120/tonelada — cerca do triplo do custo equivalente nos EUA (dados CNI, 2023).
+    O Brasil transporta cerca de **65% de sua carga** pelo modal rodoviário, contra 25–30% nos EUA e menos de 10% na Europa. Para a indústria de alimentos, que opera com margens estreitas e produtos perecíveis, essa dependência eleva drasticamente os custos de distribuição. O frete de uma tonelada de soja de Sorriso (MT) ao Porto de Santos percorre mais de 2.000 km por estrada, a um custo estimado em US$ 90–120/tonelada — cerca do triplo do custo equivalente nos EUA (dados CNI, 2023).
 
     **Interpretação microeconômica.**
     Em termos da teoria dos custos, o "custo Brasil" representa um deslocamento para cima das curvas de custo das firmas brasileiras em relação a competidores internacionais. Trata-se, em grande parte, de **custos fixos** (burocracia, tributação fixa) e **custos variáveis** elevados (logística, energia). A consequência é que a **escala mínima eficiente** das firmas brasileiras tende a ser maior, dificultando a sobrevivência de empresas menores e reduzindo a competitividade internacional. A reforma tributária de 2023 (EC 132/2023), com a unificação de tributos sobre consumo (CBS e IBS), representa uma tentativa de reduzir uma das principais fontes do custo Brasil.
+
+---
+
+## Box Brasil: Economias de Escala na Agropecuária
+
+!!! example "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
+
+    A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do IBGE (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
+
+    **Por que a escala importa?**
+
+    | Componente de custo | Pequeno produtor (<100 ha) | Grande produtor (>1.000 ha) |
+    |:---|:---:|:---:|
+    | Custo de máquinas/ha | Elevado (subutilização) | Baixo (diluição do CF) |
+    | Custo de insumos/ha | Maior (menor poder de barganha) | Menor (compras em escala) |
+    | Custo logístico/tonelada | Elevado (lotes pequenos) | Menor (contratos de frete) |
+    | Assistência técnica | Custo fixo alto relativo | Diluído na produção |
+
+    Esses dados são consistentes com uma curva de CMe de longo prazo em formato de L: custos médios decrescentes até uma escala mínima eficiente (EME) em torno de 500–1.000 hectares, após a qual os ganhos de escala se estabilizam. A **CONAB** estima que o custo total de produção de soja no Mato Grosso (safra 2023/24) foi de aproximadamente R$ 4.800/ha, com produtividade média de 57 sacas/ha, resultando em custo por saca de cerca de R$ 84 para produtores de grande escala — valor significativamente inferior ao de produtores menores.
+
+    **Implicação para política pública:** programas como o **PRONAF** (Programa Nacional de Fortalecimento da Agricultura Familiar) podem ser interpretados como subsídios que deslocam a curva de custo de pequenos produtores para baixo, compensando parcialmente a desvantagem de escala e permitindo sua permanência no mercado.
+
+    *Fontes: IBGE — Censo Agropecuário 2017; CONAB — Custos de Produção; CEPEA/ESALQ.*
 
 ---
 
@@ -478,7 +512,7 @@ As demandas condicionais são **independentes dos preços dos insumos** — não
 
 O custo é linear em \(q\), com CMg constante igual a \(\alpha r + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
 
-**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seria necessário retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
+**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seriam necessários retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
 
 ### 10.8.4 CES: \(q = (\alpha K^\rho + \beta L^\rho)^{1/\rho}\)
 
@@ -524,6 +558,151 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     - \(\rho \to 0\) (\(\sigma \to 1\)): converge para Cobb-Douglas \(q = K^\alpha L^\beta\) (com \(\alpha + \beta = 1\) sob CRS)
     - \(\rho \to 1\) (\(\sigma \to \infty\)): converge para tecnologia linear \(q = \alpha K + \beta L\)
     - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K/\alpha, L/\beta\}\)
+
+---
+
+## Exercícios Resolvidos
+
+??? success "Exercício Resolvido 10.1 — Custo econômico versus custo contábil"
+
+    **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
+
+    (a) Calcule o lucro contábil.
+
+    (b) Calcule o lucro econômico.
+
+    (c) A proprietária deve manter a confeitaria?
+
+    **Solução.**
+
+    **(a)** Custos contábeis (explícitos) = R$ 120.000 + R$ 60.000 + R$ 96.000 + R$ 48.000 = R$ 324.000.
+
+    \[
+    \pi_{\text{contábil}} = 480.000 - 324.000 = \text{R\$}\; 156.000
+    \]
+
+    **(b)** Custos implícitos:
+
+    - Custo de oportunidade do trabalho da proprietária: R$ 84.000 − R$ 48.000 = R$ 36.000 (diferença entre o que ela poderia ganhar e o pró-labore que já se paga).
+    - Custo de oportunidade do capital: 10% × R$ 200.000 = R$ 20.000.
+
+    Total de custos implícitos = R$ 56.000.
+
+    \[
+    \pi_{\text{econômico}} = 480.000 - 324.000 - 56.000 = \text{R\$}\; 100.000
+    \]
+
+    **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
+
+??? success "Exercício Resolvido 10.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+
+    **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(r = 2\).
+
+    (a) Derive as demandas condicionadas por insumos.
+
+    (b) Obtenha a função custo.
+
+    (c) Verifique o Lema de Shephard.
+
+    (d) Calcule o custo total, o custo médio e o custo marginal para \(q = 10\).
+
+    **Solução.**
+
+    **(a)** Com \(\alpha = 1/3\) e \(\beta = 2/3\) (\(\alpha + \beta = 1\), retornos constantes), a condição de tangência é:
+
+    \[
+    \frac{\alpha}{\beta} \cdot \frac{L}{K} = \frac{r}{w} \implies \frac{1}{2} \cdot \frac{L}{K} = \frac{2}{8} = \frac{1}{4} \implies L = \frac{K}{2}
+    \]
+
+    Substituindo na restrição \(K^{1/3}L^{2/3} = q\):
+
+    \[
+    K^{1/3} \left(\frac{K}{2}\right)^{2/3} = q \implies \frac{K}{2^{2/3}} = q \implies K^c = 2^{2/3} q
+    \]
+
+    \[
+    L^c = \frac{K^c}{2} = \frac{2^{2/3} q}{2} = 2^{-1/3} q
+    \]
+
+    **(b)** Função custo:
+
+    \[
+    C = rK^c + wL^c = 2 \cdot 2^{2/3} q + 8 \cdot 2^{-1/3} q = 2^{5/3} q + 2^{3} \cdot 2^{-1/3} q = 2^{5/3} q + 2^{8/3} q
+    \]
+
+    \[
+    C = (2^{5/3} + 2^{8/3}) q = 2^{5/3}(1 + 2) q = 3 \cdot 2^{5/3} q \approx 9{,}52\, q
+    \]
+
+    **(c)** Verificação:
+
+    \[
+    \frac{\partial C}{\partial w} = \frac{\partial}{\partial w}[wL^c + rK^c]
+    \]
+
+    Precisamos expressar \(C\) em termos de \(w\) e \(r\). Para \(q = K^{1/3}L^{2/3}\), a função custo geral é \(C = \kappa \cdot w^{2/3} r^{1/3} q\), onde \(\kappa = 3/(2^{2/3})\). Então:
+
+    \[
+    \frac{\partial C}{\partial w} = \kappa \cdot \frac{2}{3} w^{-1/3} r^{1/3} q = L^c \quad \checkmark
+    \]
+
+    **(d)** Para \(q = 10\):
+
+    \[
+    CT = 3 \cdot 2^{5/3} \cdot 10 \approx 95{,}2
+    \]
+
+    Como \(\alpha + \beta = 1\) (retornos constantes), \(C\) é linear em \(q\). Logo:
+
+    \[
+    \mathrm{CMe} = \mathrm{CMg} = 3 \cdot 2^{5/3} \approx 9{,}52
+    \]
+
+    O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
+
+??? success "Exercício Resolvido 10.3 — Curto prazo versus longo prazo"
+
+    **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(r = 10\).
+
+    (a) Derive a função custo de longo prazo e mostre que o CMg é crescente.
+
+    (b) No curto prazo, o capital está fixo em \(\bar{K} = 1\). Derive a função custo de curto prazo.
+
+    (c) Mostre que \(CT_{LP}(q) \leq CT_{CP}(q)\) para todo \(q\), com igualdade em um ponto.
+
+    **Solução.**
+
+    **(a)** Com \(\alpha = \beta = 1/4\) e \(\alpha + \beta = 1/2 < 1\) (retornos decrescentes), pela condição de tangência:
+
+    \[
+    \frac{1/4 \cdot L}{1/4 \cdot K} = \frac{r}{w} = 1 \implies K = L
+    \]
+
+    Substituindo: \(K^{1/4} K^{1/4} = q \implies K^{1/2} = q \implies K^c = L^c = q^2\).
+
+    \[
+    CT_{LP} = 10q^2 + 10q^2 = 20q^2
+    \]
+
+    \[
+    \mathrm{CMg}_{LP} = 40q \quad (\text{crescente em } q)
+    \]
+
+    Isso confirma: retornos decrescentes (\(\alpha + \beta < 1\)) geram CMg crescente.
+
+    **(b)** Com \(\bar{K} = 1\): \(q = 1^{1/4} L^{1/4} = L^{1/4} \implies L = q^4\).
+
+    \[
+    CT_{CP} = r\bar{K} + wL = 10 \cdot 1 + 10 \cdot q^4 = 10 + 10q^4
+    \]
+
+    **(c)** Comparando:
+
+    \[
+    CT_{CP} - CT_{LP} = 10 + 10q^4 - 20q^2 = 10(1 - 2q^2 + q^4) = 10(1 - q^2)^2 \geq 0
+    \]
+
+    A diferença é sempre não negativa, com igualdade quando \(q^2 = 1\), ou seja, \(q = 1\). Nesse ponto, \(K^*(q=1) = 1 = \bar{K}\) — o capital fixo coincide com o ótimo de longo prazo. Para qualquer outro nível de produto, o curto prazo é mais caro, pois a firma não pode ajustar o capital.
 
 ---
 
@@ -591,3 +770,120 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 (c) Mostre que, neste caso, \(\mathrm{CMg} = \mathrm{CMe} = c(w, r)\) — o custo marginal é constante e igual ao custo médio.
 
 (d) Interprete economicamente: por que rendimentos constantes de escala implicam custos marginais constantes?
+
+---
+
+## Vem, ANPEC!
+
+!!! question "ANPEC 2020 — Microeconomia — Questão 06"
+    Em um ano, uma empresa apresentou os seguintes dados contábeis: \$ 1 milhão de receitas, \$ 300 mil de compras de matérias primas, \$ 30 mil de despesas com água e energia elétrica, \$ 100 mil de gastos com a folha de salários e \$ 120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$ 200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$ 90 mil e outra com salário anual de \$ 150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O custo contábil anual da empresa é de \$ 550 mil. |
+    | 1 | O custo econômico anual da empresa é de \$ 780 mil. |
+    | 2 | O lucro econômico anual da empresa é de \$ 100 mil. |
+    | 3 | Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo. |
+    | 4 | O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$ 300 mil. |
+
+    ??? success "Gabarito"
+        **Respostas: V V F V F**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Custos contábeis (explícitos) = \$300k (matéria-prima) + \$30k (água/energia) + \$100k (salários) + \$120k (pró-labore) = **\$550k**.
+        - **Item 1 — V:** Custo de oportunidade do trabalho do proprietário: \$150k (melhor oferta) − \$120k (pró-labore já pago) = \$30k adicional implícito. Custo de oportunidade das instalações: \$200k (aluguel). Custos implícitos = \$30k + \$200k = \$230k. Custo econômico = \$550k + \$230k = **\$780k**.
+        - **Item 2 — F:** Lucro econômico = \$1.000k − \$780k = **\$220k**, não \$100k.
+        - **Item 3 — V:** Como o lucro econômico é \$220k > 0, a empresa remunera todos os fatores acima de seu custo de oportunidade. O proprietário deve continuar operando.
+        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua \$220k > 0 independentemente de custos já afundados. A decisão racional é continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva (Seção 10.1).
+
+!!! question "ANPEC 2018 — Microeconomia — Questão 05"
+    Com relação aos custos de produção, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Quando há níveis discretos do fator fixo, a curva de custo marginal de longo prazo será composta por trechos das curvas de custo marginal de curto prazo associados a cada nível de fator fixo. |
+    | 1 | No caso de uma empresa com duas fábricas, a curva de custo marginal de curto prazo da empresa é a soma vertical das curvas de custo marginal de curto prazo das duas fábricas. |
+    | 2 | A função de custo total quadrática do tipo \(CT = aq + bq^2\) resulta em uma curva de custo marginal linear. |
+    | 3 | Uma função de custo total cúbica do tipo \(C = aq + bq^2 + cq^3\) resulta em curvas de custo médio e marginal em forma de U. |
+    | 4 | Custos quase fixos independem do nível de produção, mas só precisam ser pagos se a empresa produzir uma quantidade positiva de bens. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V V V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Quando o capital assume apenas valores discretos (\(\bar{K}_1, \bar{K}_2, \ldots\)), cada nível gera uma curva de CMg de curto prazo. A curva de CMg de longo prazo é obtida selecionando, para cada nível de produto, o trecho da CMg de curto prazo correspondente ao nível de capital que minimiza o custo total — formando uma curva "composta" por segmentos das diversas CMg de curto prazo. Isso é a contrapartida discreta da envoltória contínua (Seção 10.7).
+        - **Item 1 — F:** A soma é **horizontal**, não vertical. Com duas fábricas, a firma aloca produção de modo a igualar os custos marginais entre elas. Para cada nível de CMg, soma-se as quantidades produzidas nas duas fábricas — essa é a soma horizontal. A soma vertical seria somar os custos marginais a cada quantidade, o que não descreve corretamente a agregação de CMg entre plantas.
+        - **Item 2 — V:** \(CT = aq + bq^2 \implies CMg = a + 2bq\), que é uma função linear de \(q\).
+        - **Item 3 — V:** \(CMe = a + bq + cq^2\) e \(CMg = a + 2bq + 3cq^2\). Para os parâmetros convencionais (\(b < 0, c > 0\)), ambas são parábolas com concavidade para cima, gerando o formato de U clássico (Seção 10.5).
+        - **Item 4 — V:** Custos quase fixos são custos que não variam com o nível de produção, mas que só existem quando a firma produz (\(q > 0\)). Diferem dos custos fixos tradicionais, que são incorridos mesmo com \(q = 0\). Exemplos incluem o custo de aquecimento de um forno industrial ou a equipe mínima de operação.
+
+!!! question "ANPEC 2022 — Microeconomia — Questão 05"
+    Com relação à Teoria dos Custos, julgue os itens a seguir:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por \(f_1(K,L) = \min\{K, L/4\}\) e o segundo processo é dado por \(f_2(K,L) = \min\{K/5, L\}\). Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é \(r = 1\) e o do trabalho é \(w = 2\). Então, a função custo da empresa é \(c(Q) = 7Q\). |
+    | 1 | Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por \(r > 0\) e \(w > 0\). Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: \(c(r, w, q) = 2r^{5/8}w^{3/8}\). Suponha que \(r = 1\) e \(w = 256 = 2^8\). Então, a demanda fatorial por capital é \(K = 16\). |
+    | 2 | Uma empresa possui função de produção dada por \(f(K, L) = \sqrt{KL}\), em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \(\bar{K} = 4\). Suponha que o preço fatorial do capital é \(r = 1\) e que o preço fatorial do trabalho é \(w = 4\). Então, a função de custo de curto prazo é \(c(q) = 4 + q^2\). |
+    | 3 | No curto prazo, se o preço do produto é inferior ao custo médio mínimo, então a firma necessariamente não produzirá. |
+    | 4 | Uma firma tem função de produção \(f(K, L) = \min\{K + L, 2L\}\). Sejam \(r, w > 0\) os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que \(r < w\). O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V F V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Processo 1 usa 1K e 4L por unidade: custo unitário = \(1 \cdot 1 + 4 \cdot 2 = 9\). Processo 2 usa 5K e 1L por unidade: custo unitário = \(5 \cdot 1 + 1 \cdot 2 = 7\). Como \(7 < 9\), a firma usa apenas o processo 2 e \(c(Q) = 7Q\).
+        - **Item 1 — F:** Pelo Lema de Shephard: \(K = \partial c / \partial r = 2 \cdot \frac{5}{8} r^{-3/8} w^{3/8} = \frac{5}{4} r^{-3/8} w^{3/8}\). Com \(r = 1\) e \(w = 256\): \(K = \frac{5}{4} \cdot 1 \cdot 256^{3/8} = \frac{5}{4} \cdot (2^8)^{3/8} = \frac{5}{4} \cdot 2^3 = \frac{5}{4} \cdot 8 = 10\), não 16. O Lema de Shephard (Seção 10.4) é a ferramenta para resolver este item.
+        - **Item 2 — V:** \(q = \sqrt{4L} = 2\sqrt{L} \implies L = q^2/4\). Custo de curto prazo: \(c = r\bar{K} + wL = 1 \cdot 4 + 4 \cdot q^2/4 = 4 + q^2\).
+        - **Item 3 — F:** No curto prazo, se \(P < \mathrm{CMe}_{min}\) mas \(P > \mathrm{CVMe}_{min}\), a firma produz — ela cobre seus custos variáveis e parte dos custos fixos. A firma só encerra produção se \(P < \mathrm{CVMe}_{min}\) (ponto de fechamento). A condição é sobre o CVMe, não sobre o CMe (Seção 10.5).
+        - **Item 4 — V:** \(f(K,L) = \min\{K+L, 2L\}\). Com \(r < w\), a firma prefere usar mais K e menos L. Para \(q = \min\{K+L, 2L\}\), no ótimo com \(r < w\): \(K+L \geq 2L\) (i.e., \(K \geq L\)), de modo que \(q = 2L\), logo \(L = q/2\). A restrição \(L \leq 10\) se torna ativa quando \(q/2 > 10\), ou seja, \(q > 20\).
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+### Economias de escala na geração de energia elétrica
+
+> **Referência completa:** Christensen, Laurits R.; Greene, William H. "Economies of Scale in U.S. Electric Power Generation." *Journal of Political Economy*, 84(4, Part 1): 655-676, 1976. DOI: 10.1086/260470
+
+**A pergunta**
+A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
+
+**Como os autores responderam**
+Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
+
+**O que descobriram**
+Os resultados mostraram que a curva de CMe de longo prazo tinha de fato formato de U: economias de escala significativas para firmas pequenas e médias, custos médios aproximadamente constantes para firmas com geração acima de 20 bilhões de kWh, e leves deseconomias para as maiores. Isso contrastava com estimativas anteriores (usando formas funcionais restritivas como a Cobb-Douglas), que encontravam economias de escala ilimitadas — artefato da imposição de retornos crescentes homogêneos.
+
+**Conexão com este capítulo**
+O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
+
+---
+
+### Produtividade agrícola e transformação estrutural no Brasil
+
+> **Referência completa:** Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. "Agricultural Productivity and Structural Transformation: Evidence from Brazil." *American Economic Review*, 106(6): 1320-1365, 2016. DOI: 10.1257/aer.20131061
+
+**A pergunta**
+Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
+
+**Como os autores responderam**
+Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.
+
+**O que descobriram**
+Municípios mais adequados à soja GM experimentaram: (i) aumento da área plantada com soja e redução da área de outras culturas; (ii) queda no emprego agrícola (a soja GM é poupadora de trabalho); (iii) crescimento do emprego industrial nos municípios afetados. Porém, o efeito sobre a indústria dependia do tipo de inovação: tecnologias poupadoras de trabalho (como a soja GM) liberavam mão de obra para a indústria, enquanto tecnologias que aumentavam o valor do produto por hectare (como a cana-de-açúcar para etanol) atraíam mais trabalhadores para a agricultura.
+
+**Conexão com este capítulo**
+O artigo conecta diretamente a Seção 10.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 10.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
+
+---
+
+## Leituras Recomendadas
+
+- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Cap. 10.
+- Varian, H. *Microeconomia: uma abordagem moderna*, Cap. 20-22.
+- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Cap. 5 (Seções 5.C-5.D).
+- Pindyck, R. S. & Rubinfeld, D. L. *Microeconomia*, Cap. 7.
