@@ -58,7 +58,7 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
 <figure markdown="span">
   <iframe src="../graficos/cap08/matriz-payoffs.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 8.1</strong> — Matriz de payoffs e equilibrio de Nash. Edite os payoffs ou selecione um jogo classico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estrategias dominantes, equilibrios de Nash em puras e mistas.</figcaption>
+  <figcaption><strong>Figura 8.1</strong> — Matriz de payoffs e equilíbrio de Nash. Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.</figcaption>
 </figure>
 
 ---
@@ -148,7 +148,7 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
 <figure markdown="span">
   <iframe src="../graficos/cap08/estrategias-mistas.html" width="100%" height="820" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 8.2</strong> — Equilibrio em estrategias mistas. Para um jogo 2x2, os graficos mostram o payoff esperado de cada jogador em funcao da probabilidade de mistura do oponente. O ponto de interseccao determina a probabilidade de equilibrio (principio da indiferenca). Edite os payoffs e selecione jogos pre-definidos.</figcaption>
+  <figcaption><strong>Figura 8.2</strong> — Equilíbrio em estratégias mistas. Para um jogo 2×2, os gráficos mostram o payoff esperado de cada jogador em função da probabilidade de mistura do oponente. O ponto de interseção determina a probabilidade de equilíbrio (princípio da indiferença). Edite os payoffs e selecione jogos predefinidos.</figcaption>
 </figure>
 
 ---
@@ -255,7 +255,7 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 
 <figure markdown="span">
   <iframe src="../graficos/cap08/cournot-reacao.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 8.3</strong> — Funcoes de reacao de Cournot. Ajuste os parametros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) de cada firma. O equilibrio de Nash e a interseccao das funcoes de melhor resposta. Clique em "Animar convergencia" para visualizar a dinamica de melhores respostas alternadas.</figcaption>
+  <figcaption><strong>Figura 8.3</strong> — Funções de reação de Cournot. Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) de cada firma. O equilíbrio de Nash é a interseção das funções de melhor resposta. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.</figcaption>
 </figure>
 
 ---
@@ -282,7 +282,7 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
 
 <figure markdown="span">
   <iframe src="../graficos/cap08/jogo-sequencial.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 8.4</strong> — Jogo sequencial na forma extensiva. Selecione um jogo pre-definido (Deterrencia de Entrada ou Stackelberg), edite os payoffs nos nos terminais e resolva por inducao retroativa. O caminho do equilibrio perfeito em subjogos e destacado em vermelho.</figcaption>
+  <figcaption><strong>Figura 8.4</strong> — Jogo sequencial na forma extensiva. Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do equilíbrio perfeito em subjogos é destacado em vermelho.</figcaption>
 </figure>
 
 ---
@@ -434,6 +434,212 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ---
 
+## Box Brasil: Cartéis de Postos de Combustíveis e o CADE
+
+!!! example "Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
+    O mercado de revenda de combustíveis no Brasil é um dos campos mais ativos de investigação antitruste pelo **CADE** (Conselho Administrativo de Defesa Econômica). A frequência de cartéis nesse setor oferece um laboratório natural para a teoria dos jogos repetidos.
+
+    **Por que o conluio é frequente nesse mercado?**
+
+    A teoria dos jogos repetidos (Seção 8.8) identifica condições que facilitam a sustentação de conluio como equilíbrio: (i) poucas firmas no mercado relevante; (ii) produto homogêneo (gasolina comum é igual em qualquer posto); (iii) preços facilmente observáveis (placas na entrada); (iv) interação repetida entre os mesmos competidores. O mercado de revenda de combustíveis em muitas cidades brasileiras satisfaz todas essas condições.
+
+    **Casos recentes**
+
+    Apenas entre 2024 e 2025, o CADE condenou cartéis de revenda de combustíveis em três estados:
+
+    - **Distrito Federal (2025)**: sete redes de postos condenadas, com multas superiores a **R\$ 150 milhões**. A investigação demonstrou coordenação de preços entre revendedores.
+    - **Paraná (2024)**: 12 postos e 2 pessoas físicas condenados em Francisco Beltrão, com multas de **R\$ 59 milhões**.
+    - **Santa Catarina (2024)**: cartel em Joinville condenado com multas de **R\$ 55 milhões**.
+
+    **Mecanismos de sustentação do cartel**
+
+    Na linguagem da teoria dos jogos, os postos operam uma estratégia do tipo *grim trigger* informal: todos praticam preços elevados e, se algum desviar, os demais retomam a competição. A transparência dos preços (afixados em totens luminosos) funciona como mecanismo de monitoramento — qualquer desvio é imediatamente detectável. A punição por "guerra de preços" reduz os lucros de todos e funciona como ameaça crível.
+
+    **O papel do CADE**
+
+    O CADE atua como um mecanismo institucional que torna o conluio mais custoso: ao impor multas elevadas (até 20% do faturamento bruto), a autoridade antitruste reduz o payoff esperado da cooperação ilícita. O programa de leniência (inspirado na teoria dos jogos) oferece redução de pena ao primeiro membro do cartel que denunciar, explorando a mesma lógica do Dilema dos Prisioneiros: a tentação de trair o cartel em troca de imunidade desestabiliza o acordo.
+
+    **Fonte**: CADE, decisões do Tribunal Administrativo (2024–2025); Agência Brasil; CNN Brasil.
+
+---
+
+## Box Brasil: O Oligopólio Aéreo Brasileiro
+
+!!! example "Box Brasil — Gol, Latam e Azul: competição estratégica a 10.000 metros"
+    O transporte aéreo doméstico no Brasil é um dos mercados mais concentrados do país e ilustra diretamente os modelos de oligopólio do Capítulo 8.
+
+    **Concentração extrema**
+
+    Dados da **ANAC** (Agência Nacional de Aviação Civil) para 2024 mostram que três companhias detêm **98,9%** do mercado doméstico de passageiros:
+
+    | Companhia | Market share (2024) |
+    |:----------|:-------------------|
+    | Latam     | 39,1%              |
+    | Gol       | 30,7%              |
+    | Azul      | 29,7%              |
+    | Outras    | 0,5%               |
+
+    Essa estrutura de triopólio concentrado se encaixa nos modelos de Cournot ou Bertrand com produtos diferenciados, dependendo da rota e do horizonte temporal analisado.
+
+    **Qual modelo se aplica?**
+
+    - Em **rotas com concorrência direta** (São Paulo–Rio, por exemplo), a competição se aproxima de **Bertrand com diferenciação**: preços são a variável estratégica e as empresas competem por passageiros sensíveis a preço, horário e serviço.
+    - Em **rotas com slots limitados** em aeroportos congestionados (Congonhas, Santos Dumont), a competição se aproxima de **Cournot**: a oferta de assentos (capacidade) é decidida antecipadamente e é a variável estratégica efetiva.
+    - A dinâmica de **liderança de preço** observada em promoções e reajustes tarifários evoca o modelo de **Stackelberg**, com a Latam frequentemente agindo como líder.
+
+    **Barreiras à entrada e credibilidade de ameaças**
+
+    A entrada de novas companhias é dificultada por custos afundados (frota, certificação, slots), economias de escala e rede de rotas. A história do setor inclui episódios de guerras de preço que podem ser interpretados como estratégias de deterrência de entrada (Seção 8.7): companhias incumbentes praticaram preços agressivos em rotas disputadas por entrantes, como nos episódios envolvendo a Webjet e a Avianca Brasil antes de suas saídas do mercado.
+
+    **Fonte**: ANAC, Relatório de Demanda e Oferta do Transporte Aéreo 2024; CADE, Cadernos do CADE — Mercado de Transporte Aéreo.
+
+---
+
+## Exercícios Resolvidos
+
+!!! example "Exercício Resolvido 8.1"
+    **Enunciado:** Encontre todos os equilíbrios de Nash (em puras e em mistas) do seguinte jogo simultâneo:
+
+    |  | Jogador 2: E | Jogador 2: D |
+    |:---|:---:|:---:|
+    | **Jogador 1: C** | \((2, 1)\) | \((0, 0)\) |
+    | **Jogador 1: B** | \((0, 0)\) | \((1, 2)\) |
+
+    **Resolução:**
+
+    **Passo 1 — Equilíbrios em estratégias puras**
+
+    Verifique cada perfil:
+
+    - \((C, E)\): J1 obtém 2. Desviar para B dá 0. Não desvia. J2 obtém 1. Desviar para D dá 0. Não desvia. **Nash** ✓
+    - \((C, D)\): J1 obtém 0. Desviar para B dá 1. Desvia. **Não é Nash**.
+    - \((B, E)\): J1 obtém 0. Desviar para C dá 2. Desvia. **Não é Nash**.
+    - \((B, D)\): J1 obtém 1. Desviar para C dá 0. Não desvia. J2 obtém 2. Desviar para E dá 0. Não desvia. **Nash** ✓
+
+    Dois equilíbrios em puras: \((C, E)\) e \((B, D)\). Trata-se de uma **Batalha dos Sexos**.
+
+    **Passo 2 — Equilíbrio em estratégias mistas**
+
+    Seja \(p\) a probabilidade de J1 jogar C e \(q\) a probabilidade de J2 jogar E.
+
+    Para J2 ser indiferente entre E e D:
+
+    \[
+    U_2(E; p) = U_2(D; p) \implies p \cdot 1 + (1-p) \cdot 0 = p \cdot 0 + (1-p) \cdot 2
+    \]
+
+    \[
+    p = 2(1-p) \implies p = 2 - 2p \implies 3p = 2 \implies p = \frac{2}{3}
+    \]
+
+    Para J1 ser indiferente entre C e B:
+
+    \[
+    U_1(C; q) = U_1(B; q) \implies 2q = (1-q) \implies 3q = 1 \implies q = \frac{1}{3}
+    \]
+
+    **Resultado:** Três equilíbrios de Nash: \((C, E)\), \((B, D)\) e o misto \(\sigma_1 = (2/3, 1/3)\), \(\sigma_2 = (1/3, 2/3)\).
+
+    O payoff esperado no equilíbrio misto é \(U_1 = 2/3\) e \(U_2 = 2/3\) — inferior a ambos os equilíbrios puros, evidenciando o custo da falha de coordenação.
+
+    **Interpretação econômica:** Este jogo representa situações em que dois agentes precisam se coordenar mas discordam sobre qual coordenação é preferível — como duas empresas brasileiras decidindo se adotam o padrão tecnológico A ou B. A existência de múltiplos equilíbrios explica por que convenções, normas da ABNT e regulamentações governamentais são valiosas: elas funcionam como "pontos focais" (Schelling, 1960) que resolvem o problema de coordenação.
+
+!!! example "Exercício Resolvido 8.2"
+    **Enunciado:** Duas companhias aéreas competem à la Cournot em uma rota doméstica. A demanda inversa é \(P(Q) = 500 - 2Q\), onde \(Q = q_1 + q_2\) (em milhares de assentos/mês). A companhia 1 (incumbente) tem custo marginal \(c_1 = 100\) e a companhia 2 (entrante) tem custo marginal \(c_2 = 150\). Encontre o equilíbrio de Cournot-Nash.
+
+    **Dados:** \(P = 500 - 2Q\), \(c_1 = 100\), \(c_2 = 150\).
+
+    **Resolução:**
+
+    **Passo 1 — Funções de reação**
+
+    Lucro da firma \(i\): \(\pi_i = (500 - 2q_i - 2q_j - c_i) q_i\).
+
+    CPO da firma 1: \(500 - 4q_1 - 2q_2 - 100 = 0 \implies q_1^*(q_2) = \frac{400 - 2q_2}{4} = 100 - \frac{q_2}{2}\)
+
+    CPO da firma 2: \(500 - 2q_1 - 4q_2 - 150 = 0 \implies q_2^*(q_1) = \frac{350 - 2q_1}{4} = 87{,}5 - \frac{q_1}{2}\)
+
+    **Passo 2 — Equilíbrio (interseção das funções de reação)**
+
+    Substituindo \(q_2^*\) em \(q_1^*\):
+
+    \[
+    q_1 = 100 - \frac{1}{2}\left(87{,}5 - \frac{q_1}{2}\right) = 100 - 43{,}75 + \frac{q_1}{4} = 56{,}25 + \frac{q_1}{4}
+    \]
+
+    \[
+    \frac{3q_1}{4} = 56{,}25 \implies q_1^* = 75
+    \]
+
+    \[
+    q_2^* = 87{,}5 - \frac{75}{2} = 87{,}5 - 37{,}5 = 50
+    \]
+
+    **Passo 3 — Preço e lucros**
+
+    \[
+    Q^* = 125, \quad P^* = 500 - 250 = 250
+    \]
+
+    \[
+    \pi_1 = (250 - 100) \times 75 = 150 \times 75 = 11.250
+    \]
+
+    \[
+    \pi_2 = (250 - 150) \times 50 = 100 \times 50 = 5.000
+    \]
+
+    **Resultado:** \(q_1^* = 75\), \(q_2^* = 50\), \(P^* = 250\), \(\pi_1 = 11.250\), \(\pi_2 = 5.000\) (em milhares de reais).
+
+    **Interpretação econômica:** A firma com menor custo marginal (incumbente) produz mais e obtém lucro maior — uma vantagem competitiva que reflete a importância da eficiência de custos em oligopólios. No setor aéreo brasileiro, a Latam tem historicamente custos por assento-quilômetro menores que concorrentes regionais, o que contribui para sua maior participação de mercado (39,1% em 2024). O modelo de Cournot captura bem a competição por capacidade (assentos) em rotas com limitação de slots aeroportuários.
+
+!!! example "Exercício Resolvido 8.3"
+    **Enunciado:** Dois postos de combustíveis em uma cidade pequena interagem repetidamente. O jogo de estágio é um Dilema dos Prisioneiros com payoffs: se ambos mantêm preço alto (cooperam), cada um lucra R\$ 8.000/mês; se ambos cortam preço (traem), cada um lucra R\$ 2.000/mês; se um corta e outro mantém, o que cortou lucra R\$ 12.000 e o outro lucra R\$ 0. Qual o fator de desconto mínimo para sustentar cooperação com *grim trigger*?
+
+    **Dados:** \(T = 12.000\), \(R = 8.000\), \(P = 2.000\), \(S = 0\), jogo infinitamente repetido.
+
+    **Resolução:**
+
+    **Passo 1 — Condição de cooperação com grim trigger**
+
+    O valor presente de cooperar para sempre:
+
+    \[
+    V_{\text{coop}} = \frac{R}{1 - \delta} = \frac{8.000}{1 - \delta}
+    \]
+
+    O valor presente de desviar hoje e ser punido para sempre:
+
+    \[
+    V_{\text{desvio}} = T + \frac{\delta P}{1 - \delta} = 12.000 + \frac{2.000\delta}{1 - \delta}
+    \]
+
+    **Passo 2 — Resolver a desigualdade**
+
+    \[
+    \frac{8.000}{1 - \delta} \geq 12.000 + \frac{2.000\delta}{1 - \delta}
+    \]
+
+    \[
+    \frac{8.000 - 2.000\delta}{1 - \delta} \geq 12.000
+    \]
+
+    \[
+    8.000 - 2.000\delta \geq 12.000(1 - \delta)= 12.000 - 12.000\delta
+    \]
+
+    \[
+    10.000\delta \geq 4.000 \implies \delta \geq 0{,}4
+    \]
+
+    Verificação pela fórmula direta: \(\delta \geq \frac{T - R}{T - P} = \frac{12.000 - 8.000}{12.000 - 2.000} = \frac{4.000}{10.000} = 0{,}4\). ✓
+
+    **Resultado:** O fator de desconto mínimo é \(\delta^* = 0{,}4\). Se \(\delta \geq 0{,}4\), a cooperação (preço alto) é sustentável como equilíbrio perfeito em subjogos.
+
+    **Interpretação econômica:** O valor \(\delta = 0{,}4\) é relativamente baixo, indicando que a cooperação é fácil de sustentar nesse mercado — consistente com a prevalência de cartéis de combustíveis no Brasil. Com interação diária e horizonte longo, o fator de desconto efetivo entre dois meses consecutivos é próximo de 1, muito acima de 0,4. Isso explica por que o CADE tem condenado cartéis de postos em todo o país (R\$ 150 milhões em multas só no DF em 2025): as condições estruturais do mercado tornam o conluio um equilíbrio estável, e apenas a intervenção da autoridade antitruste — alterando os payoffs via multas — pode desestabilizá-lo.
+
+---
+
 ## Exercícios
 
 **Exercício 8.1.** Considere o seguinte jogo simultâneo com dois jogadores:
@@ -498,3 +704,194 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 (c) Encontre um equilíbrio agregador e discuta por que ele pode ser eliminado pelo critério intuitivo de Cho e Kreps (1987).
 
 (d) A educação gera bem-estar social neste modelo? Discuta a diferença entre o valor privado e o valor social da sinalização.
+
+---
+
+## Vem, ANPEC!
+
+!!! question "ANPEC 2010 — Microeconomia — Questão 10"
+    Considere o jogo conhecido como "caça ao cervo", abaixo:
+
+    |  | Caçador 2: Cervo | Caçador 2: Lebre |
+    |:---|:---:|:---:|
+    | **Caçador 1: Cervo** | \((3, 3)\) | \((x, 1)\) |
+    | **Caçador 1: Lebre** | \((1, x)\) | \((1, 1)\) |
+
+    em que \(0 \leq x < 1\) é constante. Com base nesse jogo, avalie as afirmações abaixo:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Trata-se de um jogo de informação imperfeita. |
+    | 1    | Há dois equilíbrios de Nash. |
+    | 2    | Os dois caçadores possuem estratégias fracamente dominantes. |
+    | 3    | Suponha que \(x = 0\). Então o equilíbrio em estratégias mistas prescreve que cada caçador cace Cervo com probabilidade \(1/3\) e cace Lebre com probabilidade \(2/3\). |
+    | 4    | Suponha que \(0 \leq x < 1\). Se \(x\) converge para 1, então o equilíbrio em estratégias mistas converge para o equilíbrio de Nash Pareto-dominado em estratégias puras. |
+
+    ??? success "Gabarito"
+        **Respostas: 11011**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Jogos simultâneos são jogos de informação imperfeita, pois cada jogador desconhece a ação escolhida pelo outro no momento de sua decisão. Na forma extensiva, isso se representa por conjuntos de informação não unitários.
+
+        - **Item 1 — V:** Dois equilíbrios de Nash em puras: (Cervo, Cervo) com payoffs \((3,3)\) e (Lebre, Lebre) com payoffs \((1,1)\). Em ambos, nenhum jogador desvia unilateralmente (pois \(x < 1 < 3\) e \(1 > x\)).
+
+        - **Item 2 — F:** Nenhum caçador possui estratégia (fracamente) dominante. Cervo é melhor quando o outro joga Cervo (\(3 > 1\)), mas Lebre é melhor quando o outro joga Lebre (\(1 > x\)). A melhor resposta depende da ação do oponente.
+
+        - **Item 3 — V:** Com \(x = 0\), para o caçador 2 ser indiferente: \(U_2(\text{Cervo}; p) = 3p + 0(1-p) = 3p\) e \(U_2(\text{Lebre}; p) = 1\). Igualando: \(3p = 1 \implies p = 1/3\). Por simetria, \(q = 1/3\). Cada caçador joga Cervo com probabilidade \(1/3\).
+
+        - **Item 4 — V:** Para \(x\) genérico, a probabilidade de equilíbrio misto de jogar Cervo é \(p = (1-x)/(3-x)\). Quando \(x \to 1\): \(p \to 0/(3-1) = 0\). Ambos jogam Lebre com probabilidade 1, convergindo para o equilíbrio (Lebre, Lebre), que é Pareto-dominado por (Cervo, Cervo).
+
+!!! question "ANPEC 2021 — Microeconomia — Questão 11"
+    Com relação à Teoria dos Jogos, julgue os itens a seguir:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | A ordem em que estratégias fracamente dominadas são eliminadas é relevante, pois pode afetar o conjunto das estratégias sobreviventes. |
+    | 1    | No jogo abaixo, T (topo), M (meio) e B (baixo) são as estratégias do jogador 1 e E (esquerda), C (centro) e D (direita) são as estratégias do jogador 2. Então as estratégias racionalizáveis são T, M, E. |
+
+    Jogo do Item 1:
+
+    |  | J2: E | J2: C | J2: D |
+    |:---|:---:|:---:|:---:|
+    | **J1: T** | \((2, 0)\) | \((1, 1)\) | \((4, 2)\) |
+    | **J1: M** | \((3, 4)\) | \((1, 2)\) | \((2, 3)\) |
+    | **J1: B** | \((1, 3)\) | \((0, 2)\) | \((3, 0)\) |
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 2    | No equilíbrio de Nash em estratégias mistas do jogo abaixo, o jogador 1 joga T com probabilidade \(1/3\) e B com probabilidade \(2/3\), ao passo que o jogador 2 joga E com probabilidade \(2/3\) e D com probabilidade \(1/3\). |
+
+    Jogo do Item 2:
+
+    |  | J2: E | J2: D |
+    |:---|:---:|:---:|
+    | **J1: T** | \((2, 0)\) | \((4, 2)\) |
+    | **J1: B** | \((3, 4)\) | \((2, 3)\) |
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 3    | No jogo abaixo existe um único equilíbrio de Nash em estratégias puras. |
+
+    Jogo do Item 3:
+
+    |  | J2: E | J2: D |
+    |:---|:---:|:---:|
+    | **J1: T** | \((-1, -1)\) | \((4, 0)\) |
+    | **J1: B** | \((0, 4)\) | \((2, 2)\) |
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 4    | Todo jogo na forma normal possui um equilíbrio de Nash em estratégias mistas. |
+
+    ??? success "Gabarito"
+        **Respostas: 10100**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Resultado clássico. A eliminação iterada de estratégias **estritamente** dominadas independe da ordem, mas para **fracamente** dominadas a ordem pode alterar o conjunto de estratégias sobreviventes. Exemplo: em certos jogos, eliminar uma estratégia fracamente dominada primeiro pode "salvar" outra que seria eliminada em ordem diferente.
+
+        - **Item 1 — F:** Eliminando B (estritamente dominada por T para J1), resta o jogo 2×3. Nele, C é estritamente dominada por uma mistura de E e D para J2 (por exemplo, com \(\alpha = 0{,}4\): payoffs \(0{,}4 \times 0 + 0{,}6 \times 2 = 1{,}2 > 1\) para T e \(0{,}4 \times 4 + 0{,}6 \times 3 = 3{,}4 > 2\) para M). Eliminando C, sobram T, M para J1 e E, D para J2 — nenhuma é dominada. As estratégias racionalizáveis são \(\{T, M\} \times \{E, D\}\), não apenas \(\{T, M, E\}\).
+
+        - **Item 2 — V:** Para J2 ser indiferente: \(U_2(E; p) = 4(1-p)\) e \(U_2(D; p) = 2p + 3(1-p) = 3 - p\). Igualando: \(4 - 4p = 3 - p \implies 1 = 3p \implies p = 1/3\). Para J1: \(U_1(T; q) = 2q + 4(1-q) = 4 - 2q\) e \(U_1(B; q) = 3q + 2(1-q) = 2 + q\). Igualando: \(4 - 2q = 2 + q \implies 2 = 3q \implies q = 2/3\). Correto.
+
+        - **Item 3 — F:** Existem **dois** equilíbrios de Nash em puras: \((T, D)\) com payoffs \((4, 0)\) e \((B, E)\) com payoffs \((0, 4)\). Verificação: em \((T, D)\), J1 não desvia (4 > -1) e J2 não desvia (0 > -1); em \((B, E)\), J1 não desvia (0 > -1) e J2 não desvia (4 > 0).
+
+        - **Item 4 — F:** O Teorema de Nash garante existência para jogos **finitos** (número finito de jogadores e estratégias puras). Jogos com espaços de estratégias infinitos (contínuos) podem não possuir equilíbrio de Nash sem condições adicionais (compacidade e continuidade dos payoffs, pelo teorema de Glicksberg).
+
+!!! question "ANPEC 2022 — Microeconomia — Questão 11"
+    Com relação ao oligopólio, julgue os itens a seguir:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Em um Duopólio de Cournot, os custos das firmas 1 e 2 são, respectivamente, \(c_1(q_1) = q_1^2/2\) e \(c_2(q_2) = q_2^2\). A demanda agregada é \(P(Q) = 11 - Q\), em que \(Q = q_1 + q_2\). Denote por \(P^*\) o preço de equilíbrio de Cournot-Nash. Então o equilíbrio de Cournot-Nash é \((q_1^*, q_2^*; P^*) = (3, 2; 6)\). |
+    | 1    | Ao compararmos os graus de oligopolização de duas indústrias pelos respectivos Índices de Lerner, a indústria mais oligopolizada é necessariamente aquela com maior concentração industrial pelo Índice de Hirschman-Herfindahl. |
+    | 2    | No equilíbrio de Stackelberg, a firma seguidora tem um lucro maior do que aquele que teria no equilíbrio de Cournot. |
+    | 3    | No equilíbrio de Stackelberg, a curva de isolucro da firma líder é tangente à curva de reação da firma seguidora. |
+    | 4    | Duas firmas em um Duopólio de Bertrand, diante da perspectiva de um Jogo de Nash repetido infinitamente, podem se cartelizar. No jogo estático: se elas competem via Bertrand, têm os lucros de Bertrand; se elas se cartelizam, cada uma tem um lucro de \$40; se uma firma decide se desviar da estratégia de cartel enquanto a outra adota a estratégia de cartel, a firma desviante tem lucro de \$200, enquanto a outra tem lucro zero. Então, a menor taxa de desconto intertemporal que implementa o cartel como equilíbrio perfeito de subjogo com estratégia de punição GRIM é \(\delta = 0{,}25\). |
+
+    ??? success "Gabarito"
+        **Respostas: 10010**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Firma 1: \(\pi_1 = (11 - q_1 - q_2)q_1 - q_1^2/2\). CPO: \(11 - 2q_1 - q_2 - q_1 = 0 \implies q_1 = (11 - q_2)/3\). Firma 2: \(\pi_2 = (11 - q_1 - q_2)q_2 - q_2^2\). CPO: \(11 - q_1 - 2q_2 - 2q_2 = 0 \implies q_2 = (11 - q_1)/4\). Resolvendo: \(q_1 = (11 - (11 - q_1)/4)/3 \implies 12q_1 = 44 - 11 + q_1 \implies q_1 = 3\), \(q_2 = (11-3)/4 = 2\), \(P = 11 - 5 = 6\). Correto.
+
+        - **Item 1 — F:** A relação entre o Índice de Lerner e o HHI depende da elasticidade-preço da demanda. No modelo de Cournot, \(L = \text{HHI}/|\varepsilon|\). Duas indústrias com o mesmo HHI podem ter Índices de Lerner diferentes se suas elasticidades de demanda diferem. Portanto, maior Lerner não implica necessariamente maior HHI.
+
+        - **Item 2 — F:** No modelo de Stackelberg, a firma líder se compromete com uma quantidade maior que a de Cournot, e a firma seguidora responde com uma quantidade **menor** que a de Cournot. Com menor produção e preço mais baixo (devido à maior produção total), a firma seguidora obtém lucro **menor** que em Cournot.
+
+        - **Item 3 — V:** No equilíbrio de Stackelberg, a firma líder maximiza seu lucro **ao longo da curva de reação** da firma seguidora. Graficamente, isso corresponde ao ponto onde a curva de isolucro mais alta possível da líder tangencia a curva de reação da seguidora.
+
+        - **Item 4 — F:** Com estratégia GRIM: cooperar dá \(40/(1-\delta)\), desviar dá \(200 + 0 \cdot \delta/(1-\delta) = 200\) (pois o lucro de Bertrand é zero). Condição: \(40/(1-\delta) \geq 200 \implies 40 \geq 200(1-\delta) \implies \delta \geq 160/200 = 0{,}80\). O valor mínimo é \(\delta = 0{,}80\), não \(0{,}25\).
+
+---
+
+## Apêndice: A Pesquisa em Ação 🔬
+
+### Entrada e competição em mercados concentrados
+
+> **Referência completa:** Bresnahan, Timothy F.; Reiss, Peter C. "Entry and Competition in Concentrated Markets."
+> *Journal of Political Economy*, 99(5): 977–1009, 1991.
+> DOI: 10.1086/261786
+
+**A pergunta**
+
+Quantas firmas são necessárias para que um mercado se torne efetivamente competitivo? A teoria dos jogos prevê que Bertrand com dois concorrentes já gera preço competitivo, enquanto Cournot requer muitas firmas. Qual dessas previsões se aproxima mais da realidade?
+
+**Como os autores responderam**
+
+Bresnahan e Reiss desenvolveram um modelo econométrico de entrada em mercados locais geograficamente isolados nos Estados Unidos (cidades pequenas com 1 a 5 firmas). Usando dados de cinco setores — médicos, dentistas, farmácias, encanadores e loja de pneus —, os autores inferiram o nível de competição a partir do tamanho mínimo de mercado necessário para sustentar uma firma adicional. A ideia-chave: se o mercado precisa ser proporcionalmente maior para sustentar 3 firmas do que para sustentar 2, isso significa que a terceira firma reduz as margens — evidência de que a entrada intensifica a competição.
+
+**O que descobriram**
+
+A transição de monopólio para duopólio e de duopólio para triopólio gera reduções significativas nas margens de lucro. A partir de 3 a 5 firmas, o tamanho de mercado por firma se estabiliza, sugerindo que a maior parte dos ganhos competitivos ocorre com a entrada das primeiras concorrentes. O efeito pró-competitivo da terceira entrante é tipicamente menor que o da segunda — ou seja, a competição se intensifica rapidamente com poucas firmas.
+
+**Por que isso importa**
+
+Para o Brasil, os resultados têm implicações diretas para a análise do CADE em atos de concentração. A fusão de duas das três grandes companhias aéreas, por exemplo, reduziria muitas rotas de triopólio para duopólio — precisamente a faixa onde Bresnahan e Reiss encontram os maiores aumentos de margem. A metodologia também é aplicável a mercados de combustíveis, farmácias e serviços de saúde no interior do país.
+
+**Conexão com este capítulo**
+
+O artigo testa empiricamente as previsões dos modelos de Cournot e Bertrand (Seção 8.6) sobre a relação entre número de concorrentes e intensidade da competição. Os resultados são mais consistentes com modelos intermediários (competição monopolística ou Cournot com poucas firmas) do que com os extremos de Bertrand puro (dois bastam) ou competição perfeita (muitos necessários).
+
+### Estabilidade de cartéis: evidência empírica de jogos repetidos
+
+> **Referência completa:** Porter, Robert H. "A Study of Cartel Stability: The Joint Executive Committee, 1880–1886."
+> *The Bell Journal of Economics*, 14(2): 301–314, 1983.
+> DOI: 10.2307/3003634
+
+**A pergunta**
+
+Os modelos teóricos de jogos repetidos preveem que cartéis alternam entre fases de conluio (preços altos) e fases de punição (guerras de preço). Essa dinâmica é observável em dados reais? É possível identificar empiricamente as transições entre cooperação e punição?
+
+**Como os autores responderam**
+
+Porter analisou dados semanais de preços e quantidades do *Joint Executive Committee* (JEC), um cartel de ferrovias nos Estados Unidos entre 1880 e 1886. Usando um modelo econométrico de mudança de regime (*switching regression*), estimou a probabilidade de o cartel estar em fase cooperativa ou em fase de guerra de preços em cada semana. O modelo permite que os parâmetros de demanda e oferta mudem entre os dois regimes.
+
+**O que descobriram**
+
+O cartel ferroviário efetivamente alternava entre dois regimes: períodos de cooperação (preços elevados e quantidades restringidas) e episódios de guerra de preço (preços baixos e quantidades elevadas). Os choques de demanda — como mudanças sazonais no tráfego de grãos nos Grandes Lagos — precipitavam colapsos da cooperação, consistente com o modelo teórico de Green e Porter (1984) no qual choques negativos de demanda são indistinguíveis de desvios, acionando a fase de punição.
+
+**Por que isso importa**
+
+O artigo é um dos primeiros a fornecer evidência econométrica de que a dinâmica dos jogos repetidos (Seção 8.8) possui contrapartida empírica verificável. Para o Brasil, a metodologia é aplicável à investigação do CADE em cartéis de combustíveis e outros setores: padrões de preços que alternam entre "estabilidade coordenada" e "guerras de preço" podem ser evidência de conluio tácito com fases de punição.
+
+**Conexão com este capítulo**
+
+O estudo demonstra empiricamente os conceitos de estratégia de gatilho e fases cooperativa/punitiva dos jogos repetidos (Seção 8.8). A alternância entre conluio e guerra de preços observada nos dados é precisamente o que o modelo teórico com *grim trigger* ou estratégias de punição mais sofisticadas prevê quando há incerteza sobre choques de demanda.
+
+---
+
+## Referências do Capítulo
+
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulos 7–9.
+- GIBBONS, R. *Game Theory for Applied Economists*. Princeton: Princeton University Press, 1992. (Trad. port.: *Um Primeiro Curso em Teoria dos Jogos*. Porto Alegre: Bookman, 2004.)
+- FUDENBERG, D.; TIROLE, J. *Game Theory*. Cambridge, MA: MIT Press, 1991.
+- OSBORNE, M. J.; RUBINSTEIN, A. *A Course in Game Theory*. Cambridge, MA: MIT Press, 1994.
+- NASH, J. F. Equilibrium Points in N-Person Games. *Proceedings of the National Academy of Sciences*, v. 36, n. 1, p. 48–49, 1950.
+- SELTEN, R. Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit. *Zeitschrift für die gesamte Staatswissenschaft*, v. 121, p. 301–324, 1965.
+- SPENCE, M. Job Market Signaling. *The Quarterly Journal of Economics*, v. 87, n. 3, p. 355–374, 1973.
+- BRESNAHAN, T. F.; REISS, P. C. Entry and Competition in Concentrated Markets. *Journal of Political Economy*, v. 99, n. 5, p. 977–1009, 1991.
+- PORTER, R. H. A Study of Cartel Stability: The Joint Executive Committee, 1880–1886. *The Bell Journal of Economics*, v. 14, n. 2, p. 301–314, 1983.
+- AXELROD, R. *The Evolution of Cooperation*. New York: Basic Books, 1984.
