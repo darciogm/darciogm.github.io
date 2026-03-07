@@ -143,7 +143,7 @@ DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
 
 <figure>
   <iframe src="../graficos/cap19/externalidade-negativa.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.1</strong> — Externalidade negativa e imposto pigouviano. A curva vermelha (CMg social) inclui o custo externo. A area sombreada representa a perda de peso morto da sobreproducao. O imposto pigouviano otimo iguala o custo marginal externo no otimo social.</figcaption>
+  <figcaption><strong>Figura 19.1</strong> — Externalidade negativa e imposto pigouviano. A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.</figcaption>
 </figure>
 
 ## 19.4 Soluções para Externalidades Negativas
@@ -229,7 +229,7 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 <figure>
   <iframe src="../graficos/cap19/teorema-coase.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.2</strong> — Teorema de Coase. Alterne entre atribuir o direito de propriedade ao poluidor ou a vitima. Em ambos os casos, a negociacao leva ao mesmo nivel eficiente de poluicao onde BMg = DMg. Apenas a direcao da transferencia muda.</figcaption>
+  <figcaption><strong>Figura 19.2</strong> — Teorema de Coase. Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.</figcaption>
 </figure>
 
 ### 19.4.2 O Teorema de Coase
@@ -329,7 +329,7 @@ Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para c
 
 <figure>
   <iframe src="../graficos/cap19/bem-publico.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.3</strong> — Provisao otima de bem publico. A soma vertical dos beneficios marginais individuais determina o beneficio marginal social. O nivel otimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os precos de Lindahl mostram a contribuicao personalizada de cada consumidor.</figcaption>
+  <figcaption><strong>Figura 19.3</strong> — Provisão ótima de bem público. A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.</figcaption>
 </figure>
 
 ### Subprovisão pelo mercado
@@ -369,7 +369,7 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 <figure>
   <iframe src="../graficos/cap19/tragedia-comuns.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.4</strong> — Tragedia dos comuns. Cada usuario iguala o produto medio ao custo (equilibrio privado), enquanto o otimo social requer igualar o produto marginal ao custo. A area sombreada indica a regiao de sobreuso do recurso comum.</figcaption>
+  <figcaption><strong>Figura 19.4</strong> — Tragédia dos comuns. Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.</figcaption>
 </figure>
 
 ## 19.8 O Problema do Carona (Free Rider)
@@ -468,6 +468,126 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
+!!! example "Box Brasil: Cobrança pelo uso da água e a tragédia dos comuns no semiárido"
+    A água doce é um exemplo clássico de **recurso comum** no Brasil: rival no consumo (a água captada por um irrigante não está disponível para outro) e historicamente de difícil exclusão. A Lei das Águas (Lei n.º 9.433/1997) instituiu a **Política Nacional de Recursos Hídricos**, que reconhece a água como bem público dotado de valor econômico e estabelece a **cobrança pelo uso** como instrumento de gestão.
+
+    **Mecanismo econômico:**
+
+    A cobrança pelo uso da água funciona como um **imposto pigouviano** sobre a externalidade negativa de captação: ao reduzir a disponibilidade hídrica para outros usuários (irrigação, abastecimento, geração de energia), cada captação impõe um custo externo. Sem a cobrança, os usuários igualam seu benefício marginal privado a zero (acesso gratuito), levando ao sobreuso — exatamente a lógica da tragédia dos comuns.
+
+    **Implementação:**
+
+    A cobrança foi implementada inicialmente na Bacia do Rio Paraíba do Sul (2003) e posteriormente estendida a outras bacias federais, como a do São Francisco e a do PCJ (Piracicaba, Capivari e Jundiaí). Os valores cobrados, porém, são baixos em comparação com o custo de escassez: nas bacias do PCJ, o preço da captação era de R$ 0,01 a R$ 0,02 por metro cúbico em 2023, bem abaixo do custo marginal social estimado da escassez hídrica no Sudeste. No semiárido nordestino, onde a escassez é mais aguda, a alocação eficiente entre usos competidores (irrigação, abastecimento humano, dessedentação animal) é um desafio permanente, especialmente durante secas prolongadas.
+
+    **Conexão com a teoria:**
+
+    O caso ilustra simultaneamente: (i) a tragédia dos comuns sem regulação (sobreuso de aquíferos e rios); (ii) a solução pigouviana (cobrança pelo uso); e (iii) os limites práticos — a cobrança é politicamente difícil de calibrar no nível ótimo, e os custos de transação para negociação coaseana entre milhares de usuários são proibitivos.
+
+---
+
+## Exercícios Resolvidos
+
+??? example "Exercício Resolvido 1 — Imposto pigouviano e perda de peso morto"
+    **Enunciado.** Uma siderúrgica produz aço ao preço competitivo \(P = 100\) com custo privado \(C(q) = 10q + q^2\). A produção gera poluição com custo externo \(E(q) = q^2\). (a) Calcule a produção privada e a socialmente ótima. (b) Determine o imposto pigouviano ótimo. (c) Calcule a perda de peso morto sem regulação.
+
+    **Resolução.**
+
+    **(a) Produção privada e ótimo social.**
+
+    *Privada:* \(P = C'(q) \implies 100 = 10 + 2q \implies q^{priv} = 45\).
+
+    *Social:* \(P = C'(q) + E'(q) \implies 100 = 10 + 2q + 2q = 10 + 4q \implies q^{soc} = 22{,}5\).
+
+    A firma produz o dobro do ótimo social.
+
+    **(b) Imposto pigouviano.**
+
+    \[
+    t^* = E'(q^{soc}) = 2 \times 22{,}5 = 45
+    \]
+
+    Verificação: com o imposto, \(P = C'(q) + t^* \implies 100 = 10 + 2q + 45 \implies 2q = 45 \implies q = 22{,}5 = q^{soc}\). ✓
+
+    **(c) Perda de peso morto.**
+
+    A DWL é o triângulo entre CMg social e preço, de \(q^{soc}\) a \(q^{priv}\):
+
+    \[
+    DWL = \int_{22,5}^{45} \left[(10 + 4q) - 100\right] dq = \int_{22,5}^{45} (4q - 90) \, dq
+    \]
+
+    \[
+    = \left[2q^2 - 90q\right]_{22,5}^{45} = (4.050 - 4.050) - (1.012{,}5 - 2.025) = 0 - (-1.012{,}5) = 1.012{,}5
+    \]
+
+    A perda de peso morto é R$ 1.012,50 — o custo social da ausência de regulação.
+
+??? example "Exercício Resolvido 2 — Provisão eficiente de bem público e preços de Lindahl"
+    **Enunciado.** Dois consumidores têm utilidade \(U_1 = 3\ln G + x_1\) e \(U_2 = 2\ln G + x_2\), onde \(G\) é o bem público e \(x_i\) o bem privado. O custo marginal do bem público é \(CMg = 1\). (a) Determine o nível eficiente de \(G\). (b) Calcule os preços de Lindahl. (c) Compare com a provisão voluntária (Nash).
+
+    **Resolução.**
+
+    **(a) Nível eficiente (condição de Samuelson).**
+
+    \(TMS_1 = \frac{\partial U_1/\partial G}{\partial U_1/\partial x_1} = \frac{3/G}{1} = \frac{3}{G}\)
+
+    \(TMS_2 = \frac{2}{G}\)
+
+    Condição de Samuelson: \(\sum TMS_i = CMg\):
+
+    \[
+    \frac{3}{G} + \frac{2}{G} = 1 \implies \frac{5}{G} = 1 \implies G^* = 5
+    \]
+
+    **(b) Preços de Lindahl.**
+
+    \[
+    \tau_1 = TMS_1(G^*) = \frac{3}{5} = 0{,}6, \quad \tau_2 = TMS_2(G^*) = \frac{2}{5} = 0{,}4
+    \]
+
+    Verificação: \(\tau_1 + \tau_2 = 0{,}6 + 0{,}4 = 1 = CMg\). ✓
+
+    O consumidor 1 paga 60% do custo e o consumidor 2 paga 40%, proporcionalmente às suas valorações.
+
+    **(c) Provisão voluntária (equilíbrio de Nash).**
+
+    Cada consumidor \(i\) maximiza \(U_i = a_i \ln(g_i + g_{-i}) + (W_i - g_i)\), onde \(g_i\) é sua contribuição. CPO: \(a_i/(g_i + g_{-i}) = 1\).
+
+    No equilíbrio simétrico interior (se ambos contribuem), cada um resolve tomando a contribuição do outro como dada. Supondo que apenas o consumidor com maior valoração contribui (solução de canto típica): consumidor 1 escolhe \(g_1\) tal que \(3/(g_1 + 0) = 1 \implies g_1 = 3\), consumidor 2 free-rides pois \(2/(3+0) = 2/3 < 1\).
+
+    Resultado: \(G^{Nash} = 3 < 5 = G^*\). O bem público é subprovido em 40%. O consumidor 2 pega carona na contribuição do consumidor 1 — o problema clássico do free rider.
+
+??? example "Exercício Resolvido 3 — Cap-and-trade e custo-efetividade"
+    **Enunciado.** Duas fábricas emitem 50 toneladas cada de \(SO_2\) (total: 100 ton). O regulador quer reduzir as emissões totais para 60 ton (abatimento de 40 ton). Os custos marginais de abatimento são \(CMgA_1 = 4a_1\) e \(CMgA_2 = 2a_2\), onde \(a_i\) é o abatimento da firma \(i\). (a) Encontre a alocação custo-efetiva. (b) Compare com abatimento uniforme. (c) Determine o preço de equilíbrio da permissão em um sistema cap-and-trade.
+
+    **Resolução.**
+
+    **(a) Alocação custo-efetiva.**
+
+    Custo-efetividade requer igualar os custos marginais de abatimento: \(CMgA_1 = CMgA_2\):
+
+    \[
+    4a_1 = 2a_2, \quad a_1 + a_2 = 40
+    \]
+
+    Da primeira: \(a_2 = 2a_1\). Substituindo: \(a_1 + 2a_1 = 40 \implies a_1 = 40/3 \approx 13{,}3\), \(a_2 = 80/3 \approx 26{,}7\).
+
+    A firma com menor custo marginal (firma 2) abate mais.
+
+    Custo total eficiente: \(\int_0^{40/3} 4a \, da + \int_0^{80/3} 2a \, da = 2(40/3)^2 + (80/3)^2 = 3.200/9 + 6.400/9 = 9.600/9 \approx 1.066{,}7\).
+
+    **(b) Abatimento uniforme.**
+
+    Cada firma abate 20 ton. Custo: \(\int_0^{20} 4a \, da + \int_0^{20} 2a \, da = 2(400) + 400 = 800 + 400 = 1.200\).
+
+    **(c) Preço da permissão.**
+
+    No equilíbrio cap-and-trade, o preço iguala os CMgA: \(p_E = 4a_1 = 4 \times 40/3 = 160/3 \approx 53{,}3\) por tonelada.
+
+    A economia do cap-and-trade vs. regulação uniforme: \(1.200 - 1.066{,}7 = 133{,}3\) (redução de 11% no custo). A firma 1 compraria permissões da firma 2 (que abate mais do que sua cota e vende o excedente), gerando ganhos de troca — exatamente como a teoria prevê.
+
+---
+
 ## Exercícios
 
 **Exercício 19.1.** Uma fábrica de celulose produz \(q\) toneladas com custo total \(C(q) = 10q + q^2\) e vende ao preço \(P = 110\). A produção gera poluição com custo externo \(E(q) = 2q^2\).
@@ -518,3 +638,124 @@ O preço do bem privado é 1 e o custo marginal do bem público é \(c\). Cada c
 (b) Determine o nível eficiente \(G^*\) em função de \(W\) e \(c\).
 (c) Se cada consumidor contribui voluntariamente (equilíbrio de Nash em contribuições), determine o nível de \(G\) de equilíbrio.
 (d) Mostre que \(G^{Nash} < G^*\) e interprete economicamente.
+
+---
+
+## Vem, ANPEC!
+
+As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
+
+??? question "ANPEC 2017 — Questão 10"
+    Com relação à Teoria das Externalidades, é correto afirmar:
+
+    **(0)** Quando uma atividade produz externalidades positivas, o nível eficiente de produção é alcançado quando o benefício marginal social é igual ao custo marginal da atividade.
+
+    **(1)** Quando o governo possui informações limitadas sobre os custos e os benefícios resultantes da redução da emissão de um poluente, e quando a curva de custo marginal social for muito inclinada e a curva de custo marginal da redução é plana, a imposição de um limite legal à quantidade de poluente que pode ser emitido é preferível a uma taxa sobre a emissão.
+
+    **(2)** Se as empresas poluidoras possuem processos produtivos diferentes e diferentes custos de redução de emissões, taxas sobre a quantidade de poluente emitida podem ser preferíveis à imposição de um limite.
+
+    **(3)** Externalidades de difusão não geram falhas de mercado.
+
+    **(4)** Mesmo que não haja intervenção governamental para a reciclagem do lixo, alguma reciclagem poderá ocorrer se os preços dos materiais novos forem muito elevados em relação ao material reciclado.
+
+    ??? success "Gabarito"
+        **Respostas: V-V-V-F-V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Na presença de externalidade positiva, o benefício marginal social (= benefício privado + benefício externo) excede o benefício privado. A eficiência requer BMg social = CMg, o que corresponde a um nível de produção superior ao privado.
+
+        - **Item 1 — V:** Este é o resultado de Weitzman (1974). Quando a curva de dano marginal (custo marginal social) é muito inclinada — isto é, pequenos erros na quantidade causam grandes variações no dano — é preferível fixar a quantidade (limite/cap) para evitar grandes desvios do ótimo. Quando o custo de abatimento é plano, erros na quantidade têm pouco efeito no custo, reforçando a preferência pelo instrumento de quantidade.
+
+        - **Item 2 — V:** Com custos de abatimento heterogêneos, uma taxa uniforme sobre emissões induz cada firma a abater até onde seu custo marginal de abatimento iguala a taxa, gerando alocação custo-efetiva automaticamente. Um limite uniforme (mesma quantidade para todas) ignora as diferenças de custo e é ineficiente.
+
+        - **Item 3 — F:** Externalidades de difusão (que afetam muitos agentes de forma dispersa, como poluição atmosférica) são externalidades tecnológicas reais e geram falhas de mercado. A afirmação confunde com externalidades *pecuniárias* (que operam via preços e não geram ineficiência).
+
+        - **Item 4 — V:** Mesmo sem regulação, se o preço de materiais virgens é alto o suficiente, o custo marginal de reciclar torna-se inferior ao custo de produzir com material novo, tornando a reciclagem privadamente lucrativa. A reciclagem ocorre por incentivo de mercado, sem necessidade de intervenção.
+
+??? question "ANPEC 2022 — Questão 08"
+    Com relação à Teoria dos Bens Públicos, indique quais das afirmações a seguir são verdadeiras:
+
+    **(0)** Recursos comuns são bens rivais, mas não excludentes.
+
+    **(1)** Bens de clube são não rivais, e excludentes.
+
+    **(2)** Como o bem público é não rival, para determinar o seu valor temos de somar os benefícios marginais de todas as pessoas que o consomem.
+
+    **(3)** Uma solução para o problema do carona em bens públicos é financiá-los por meio de tributos.
+
+    **(4)** Pode acontecer que um bem público que oferece enorme benefício total a um grupo acabe por não ser fornecido, se o tamanho do seu grupo potencial for grande a ponto de o benefício médio individual ser tão pequeno que não supere o problema do carona.
+
+    ??? success "Gabarito"
+        **Respostas: V-V-V-V-V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Recursos comuns (commons) são rivais no consumo (o peixe capturado por um pescador não está disponível para outro) mas não excludentes (é difícil impedir o acesso). Exemplos: cardumes, pastagens comunitárias, aquíferos.
+
+        - **Item 1 — V:** Bens de clube são não rivais (até o ponto de congestionamento) e excludentes (é possível cobrar pelo acesso). Exemplos: TV por assinatura, rodovias com pedágio, academias.
+
+        - **Item 2 — V:** Como o bem público é não rival, todos consomem a mesma quantidade. O valor social de uma unidade adicional é a soma dos benefícios marginais de todos os consumidores — é a agregação vertical (soma das curvas de demanda), diferente da agregação horizontal dos bens privados.
+
+        - **Item 3 — V:** O financiamento por tributos resolve o problema do carona ao tornar a contribuição compulsória. Cada cidadão paga via impostos, independentemente de sua disposição a pagar voluntariamente, permitindo a provisão do bem público.
+
+        - **Item 4 — V:** Este é o paradoxo do grupo grande (Olson, 1965). Mesmo que o benefício total seja enorme, se o grupo é muito grande, o benefício marginal individual de contribuir é desprezível, e cada membro prefere pegar carona. O bem não é provido apesar de ser socialmente desejável.
+
+??? question "ANPEC 2020 — Questão 12"
+    Com relação à economia do setor público, julgue os itens abaixo:
+
+    **(0)** Considere dois agentes, 1 e 2, em uma economia com um bem público e um bem privado. O agente 1 possui utilidade \(U_1(G, x_1) = 4\ln(G) + x_1\) sobre a quantidade \(G\) do bem público e a quantidade \(x_1\) do bem privado. Para o agente 2, \(U_2(G, x_2) = 6\ln(G) + x_2\). Suas rendas são, respectivamente, \(w_1 = 4\) e \(w_2 = 6\). Seja \(g_i\) a contribuição do agente \(i = 1, 2\) para a produção do bem público e suponha que a função de produção desse bem é \(G = g_1 + g_2\). Se \(\tau_1^*\) e \(\tau_2^*\) denotam as taxas de Lindahl do agente 1 e do agente 2, respectivamente, então \(\tau_1^* = 2/5\) e \(\tau_2^* = 3/5\).
+
+    **(1)** A firma A vende seu produto em um mercado competitivo, no qual a curva de demanda é dada por \(p(x) = 120 - x\). A função de custo privado é \(c(x) = 40x\). Entretanto, a produção de \(x\) unidades do bem gera uma externalidade negativa para a firma B de acordo com a função \(e(x) = x^2\). Então o imposto pigouviano que induz a produção da quantidade socialmente eficiente é de \$ 40.
+
+    **(2)** Suponha que os direitos de propriedade estão bem definidos e que os custos de transação são nulos. Nessas condições, segundo o Teorema de Coase, a negociação privada entre duas firmas envolvidas em uma situação de externalidades levará à alocação socialmente eficiente, desde que os direitos de propriedade estejam alocados em favor do agente que sofre a externalidade.
+
+    **(3)** Suponha que o sindicato dos caminhoneiros de um país dispende recursos para fazer lobby no parlamento e assim implementar escolhas políticas de modo a capturar rendas mediante o subsídio ao preço do diesel. Então o sindicato exerce rent-seeking.
+
+    **(4)** A regra de votação majoritária pode apresentar o paradoxo do voto, mas se as preferências são de pico-único, então a regra de votação majoritária aplicada a questões públicas mensuradas monetariamente (unidimensionais) resultará em políticas preferidas pelo eleitor mediano.
+
+    ??? success "Gabarito"
+        **Respostas: V-F-F-V-V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** As TMS são: \(TMS_1 = 4/G\), \(TMS_2 = 6/G\). Condição de Samuelson: \(4/G + 6/G = 1 \implies G^* = 10\). Preços de Lindahl: \(\tau_1^* = TMS_1(10) = 4/10 = 2/5\) e \(\tau_2^* = 6/10 = 3/5\). Verificação: \(2/5 + 3/5 = 1 = CMg\). ✓
+
+        - **Item 1 — F:** No mercado competitivo, \(p = 120 - x\) é a demanda. Custo social = custo privado + externalidade: \(CS = 40x + x^2\). CMg social = \(40 + 2x\). No ótimo social: \(120 - x = 40 + 2x \implies 80 = 3x \implies x^* = 80/3\). O imposto pigouviano é \(t^* = e'(x^*) = 2 \times 80/3 = 160/3 \approx 53{,}3\), não \$40.
+
+        - **Item 2 — F:** O Teorema de Coase afirma que a negociação leva ao ótimo **independentemente** de qual parte detém o direito de propriedade (desde que os custos de transação sejam nulos e os direitos estejam bem definidos). A condição de que os direitos estejam "em favor do agente que sofre" é uma restrição indevida — o resultado eficiente é obtido em ambos os casos.
+
+        - **Item 3 — V:** Rent-seeking é a atividade de dispender recursos para capturar rendas por meio do processo político. O sindicato gasta recursos (tempo, dinheiro, esforço de lobby) para obter subsídios ao diesel — um caso clássico de rent-seeking.
+
+        - **Item 4 — V:** Com preferências de pico-único (single-peaked) e escolha unidimensional, a votação por maioria não gera ciclos (paradoxo de Condorcet) e seleciona a alternativa preferida pelo eleitor mediano — resultado do Teorema do Eleitor Mediano (Black, 1948).
+
+---
+
+## Leituras Recomendadas
+
+- **Varian, H. R.** *Microeconomia: Uma Abordagem Moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 35–37 (externalidades, bens públicos, informação assimétrica).
+- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** *Microeconomic Theory*. New York: Oxford University Press, 1995. Cap. 11 (externalidades e bens públicos).
+- **Stiglitz, J. E.; Rosengard, J. K.** *Economics of the Public Sector*. 4. ed. New York: W. W. Norton, 2015. Tratamento abrangente de bens públicos, externalidades e escolha coletiva.
+- **Ostrom, E.** *Governing the Commons*. Cambridge: Cambridge University Press, 1990. Análise seminal sobre gestão de recursos comuns sem privatização nem regulação estatal.
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+??? abstract "Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072."
+    **Pergunta central:** Regulações ambientais do tipo command-and-control são eficazes para reduzir a poluição e melhorar a saúde em países em desenvolvimento?
+
+    **Método:** Os autores avaliam o impacto de duas grandes regulações ambientais na Índia: o Programa Nacional de Ação sobre Poluição do Ar (1987) e a regulação de poluição hídrica de distritos designados como "criticamente poluídos". Utilizam dados de monitoramento de qualidade do ar e da água em centenas de estações ao longo de duas décadas, combinados com dados de mortalidade infantil, em uma estratégia de diferenças-em-diferenças.
+
+    **Resultado principal:** As regulações de poluição do ar reduziram os níveis de partículas suspensas em cerca de 20% nas áreas reguladas, com queda significativa da mortalidade infantil. Porém, as regulações de poluição da água tiveram efeito estatisticamente nulo — a qualidade da água continuou se deteriorando mesmo nas áreas reguladas. A diferença deve-se à maior dificuldade de monitoramento e enforcement em poluição hídrica difusa.
+
+    **Relevância para o capítulo:** O artigo ilustra empiricamente a eficácia diferencial da regulação direta (command-and-control) discutida na Seção 19.4.3. A regulação funciona quando o monitoramento é viável (poluição do ar em fontes pontuais), mas falha quando os custos de enforcement são altos (poluição hídrica difusa) — exatamente o que a teoria prevê. Para o Brasil, a lição é direta: a eficácia do Código Florestal e da fiscalização do IBAMA depende criticamente da capacidade de monitoramento (DETER/INPE) e de enforcement.
+
+??? abstract "Assunção, J.; Gandour, C.; Rocha, R. (2023). DETER-ing Deforestation in the Amazon: Environmental Monitoring and Law Enforcement. *American Economic Journal: Applied Economics*, 15(2), 125–156."
+    **Pergunta central:** O sistema de monitoramento por satélite em tempo real (DETER) e o reforço da fiscalização ambiental reduziram efetivamente o desmatamento na Amazônia brasileira?
+
+    **Método:** Os autores exploram a introdução do sistema DETER pelo INPE em 2004 — que permite detecção de desmatamento em tempo quase-real via imagens de satélite — e o consequente aumento das operações de fiscalização do IBAMA. Utilizam dados georeferenciados de desmatamento (PRODES), autos de infração do IBAMA e variação espacial na cobertura do DETER, em uma estratégia de variáveis instrumentais e diferenças-em-diferenças espaciais.
+
+    **Resultado principal:** A combinação de monitoramento (DETER) e enforcement (IBAMA) foi responsável por uma redução de aproximadamente 50% no desmatamento entre 2004 e 2012 — período em que as taxas caíram de quase 28.000 km²/ano para menos de 5.000 km²/ano. O efeito foi concentrado nas áreas com maior probabilidade de detecção pelo DETER, confirmando que o mecanismo opera via dissuasão (deterrence): a expectativa de punição reduz a atividade ilegal.
+
+    **Relevância para o capítulo:** Este é um estudo com dados brasileiros que demonstra empiricamente como a regulação direta (command-and-control) pode ser eficaz quando combinada com monitoramento adequado. O resultado conecta-se diretamente ao Box Brasil sobre desmatamento na Amazônia e mostra que, na prática, o enforcement é tão importante quanto o desenho do instrumento regulatório — um complemento essencial à discussão teórica de impostos pigouvianos e mercados de permissão.
