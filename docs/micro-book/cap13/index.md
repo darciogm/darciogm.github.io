@@ -471,7 +471,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ## Exercícios Resolvidos
 
-!!! example "Exercício Resolvido 13.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+??? example "Exercício Resolvido 13.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
     **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
 
     **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
@@ -554,7 +554,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-!!! example "Exercício Resolvido 13.2 — Segundo Teorema e transferências lump-sum"
+??? example "Exercício Resolvido 13.2 — Segundo Teorema e transferências lump-sum"
     **Enunciado:** Na mesma economia do ER 13.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
 
     **Dados:** Mesmas preferências e dotações do ER 13.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
@@ -675,9 +675,9 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
-!!! question "ANPEC 2019 — Microeconomia — Questão 10"
+??? question "ANPEC 2019 — Questão 10"
     Considere o modelo da Caixa de Edgeworth. O consumidor A tem utilidade linear \(U_A(X,Y) = X + Y\) e dotação inicial \(\mathbf{e}_A = (1, 9)\). O consumidor B tem utilidade Cobb-Douglas \(U_B(X,Y) = X^{1/2}Y^{1/2}\) e dotação inicial \(\mathbf{e}_B = (9, 1)\). Julgue como verdadeiros ou falsos os itens abaixo:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -703,7 +703,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-!!! question "ANPEC 2018 — Microeconomia — Questão 13"
+??? question "ANPEC 2018 — Questão 13"
     Em uma economia, o agente A possui as dez unidades do bem 1 e o agente B possui as dez unidades do bem 2. As funções utilidades de A e B são descritas por \(U_A = x_1^{1/2} \cdot x_2^{1/2}\) e \(U_B = x_1 \cdot x_2\), respectivamente. Em uma economia de trocas sob equilíbrio geral competitivo, tome o segundo bem como numerário, isto é, \(p_2 = \$1\), e denomine \(p\) o preço do outro bem. Avalie:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -729,7 +729,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-!!! question "ANPEC 2015 — Microeconomia — Questão 11"
+??? question "ANPEC 2015 — Questão 11"
     Com relação à Teoria do Equilíbrio Geral, indique as afirmativas corretas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -755,7 +755,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Liberalização Comercial e Dinâmica do Mercado de Trabalho
 

@@ -555,7 +555,7 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
 ## Exercícios Resolvidos
 
-!!! example "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
+??? example "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
 
     **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(m = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
 
@@ -595,7 +595,7 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
     **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}125\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,125 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
 
-!!! example "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
+??? example "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
 
     **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
 
@@ -629,7 +629,7 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
     **Interpretação econômica:** Um aumento unitário no custo marginal reduz o lucro máximo em \(\frac{a-c}{2}\), que é exatamente a quantidade ótima produzida. A elegância do teorema do envelope está em dispensar o cálculo de como \(Q^*\) se ajusta: basta a derivada parcial direta do lucro em relação a \(c\), avaliada no ótimo. No Brasil, quando a Petrobras eleva o preço dos derivados (aumento de \(c\) para distribuidoras), o teorema do envelope permite estimar rapidamente o impacto sobre o lucro do setor sem recalcular toda a cadeia de ajustes de quantidade.
 
-!!! example "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
+??? example "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
 
     **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(m\). Encontre a cesta ótima para \(m = 20\) e \(m = 0{,}5\), identificando soluções interiores e de canto.
 
@@ -723,11 +723,11 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
 ### Prova de Matemática
 
-!!! question "ANPEC 2010 — Matemática — Questão 02"
+??? question "ANPEC 2010 — Questão 02"
     Seja \(f: \mathbb{R}^2 \to \mathbb{R}\) diferenciável e homogênea de grau 4, tal que \(f(1,1) = 2\). Julgue os itens abaixo:
 
     | Item | Afirmação |
@@ -751,7 +751,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
         **Conexão com o capítulo:** Esta questão testa diretamente o Teorema de Euler (Seção 2.9) e suas consequências para funções homogêneas — incluindo propriedades das derivadas parciais, comportamento em pontos críticos e relação entre o vetor posição e o gradiente.
 
-!!! question "ANPEC 2018 — Matemática — Questão 13"
+??? question "ANPEC 2018 — Questão 13"
     Seja \(f(x,y) = xy\) e \(g(x,y) = \alpha x + \beta y\), em que \(\alpha\) e \(\beta\) são estritamente maiores que zero. Seja \(a > 0\) e considere o problema de otimização:
 
     \[
@@ -781,7 +781,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
         **Conexão com o capítulo:** Questão central para as Seções 2.5 (Lagrange), 2.6 (envelope restrito) e 2.7 (Kuhn-Tucker). Testa simultaneamente: atividade de restrições, folga complementar, cálculo do multiplicador e o significado geométrico da condição de tangência.
 
-!!! question "ANPEC 2024 — Matemática — Questão 02"
+??? question "ANPEC 2024 — Questão 02"
     Sejam os números \(a \in \mathbb{R}\) e \(b \in \mathbb{R}\) parâmetros do problema de maximizar a função \(f: \mathbb{R}^2 \to \mathbb{R}\) definida por:
 
     \[
@@ -813,7 +813,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Estatísticas suficientes e o teorema do envelope na avaliação de políticas públicas
 

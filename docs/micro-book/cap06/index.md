@@ -390,7 +390,7 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 
 ## Exercícios Resolvidos
 
-??? success "Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
+??? example "Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
 
     **Enunciado.** Considere a função de utilidade Cobb-Douglas \(U(x,y) = x^a y^{1-a}\), com \(0 < a < 1\), preços \(p_x, p_y\) e renda \(I\).
 
@@ -428,7 +428,7 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 
     Os dois efeitos se cancelam perfeitamente — uma propriedade especial da Cobb-Douglas.
 
-??? success "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
+??? example "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
 
     **Enunciado.** Um consumidor tem utilidade \(U(x,y) = 2x + y\), preços iniciais \(p_x = p_y = 2\) e renda \(I = 100\).
 
@@ -450,7 +450,7 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 
     **Interpretação:** com substitutos perfeitos lineares, quando o consumidor já consome apenas \(x\) antes e depois da mudança, o efeito substituição é zero — ele não "troca" de bem, apenas consome mais do mesmo com o aumento do poder de compra. Este é um resultado importante e frequente em provas da ANPEC.
 
-??? success "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
+??? example "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
 
     **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
 
@@ -562,7 +562,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2012 — Microeconomia — Questão 03"
+??? question "ANPEC 2012 — Questão 03"
     Com relação às escolhas ótimas dos consumidores, constata-se que:
 
     | Item | Afirmação |
@@ -584,7 +584,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
         - **Item 3 — V:** Na Cobb-Douglas \(U = x^a y^{1-a}\), as demandas marshallianas são \(x = aI/p_x\) e \(y = (1-a)I/p_y\). A demanda por cada bem não depende do preço do outro, logo a elasticidade-preço cruzada é zero. A elasticidade-preço própria é \(-1\) (unitária em módulo), pois \(x = aI \cdot p_x^{-1}\).
         - **Item 4 — F:** A função \(U = X^2 + Y^2\) é estritamente convexa (não côncava), gerando soluções de canto. Se \(p_x < p_y\), o consumidor gasta tudo em \(X\); se \(p_x > p_y\), gasta tudo em \(Y\). Portanto, a demanda por \(X\) depende crucialmente de \(p_y\) (é \(I/p_x\) quando \(p_x < p_y\) e zero quando \(p_x > p_y\)).
 
-!!! question "ANPEC 2019 — Microeconomia — Questão 04"
+??? question "ANPEC 2019 — Questão 04"
     Em um mercado competitivo existem 1.000 consumidores idênticos com relação à demanda. Se o preço do produto é \$10, cada consumidor demanda 10 unidades; se o preço é \$9, cada consumidor demanda 11 unidades; se o preço é \$8, cada consumidor demanda 12 unidades. O efeito-renda é nulo. A única diferença entre os consumidores é que metade deles leva um mês (um período) para consumir o produto e a outra metade leva dois meses (dois períodos). Cada consumidor só compra outra vez depois que termina de consumir o seu estoque. Em particular, no período \(t=0\) (1º de janeiro) todos vão ao mercado e demandam, em \(t=1\) (1º de fevereiro) apenas metade vai ao mercado e em \(t=2\) (1º de março) todos vão ao mercado outra vez. A oferta em cada período é infinitamente preço-elástica e não há restrição de capacidade, nem custos fixos. Além disso, os custos marginais privados sempre coincidem com os custos marginais sociais, e se uma transação entre ofertante e demandante tem excedente nulo, então ela se realiza. Julgue os itens a seguir:
 
     | Item | Afirmação |
@@ -606,7 +606,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
         - **Item 3 — V:** Em \(t=2\), todos os 1.000 voltam. Com custo marginal \$8, preço é \$8 e cada um demanda 12: \(Q = 12.000\). O excedente social de cada consumidor é a soma dos excedentes nas unidades inframarginais. De \$10 a \$8 (unidades 10 e 11), o excedente por consumidor é \((10-8) + (9-8) = 2 + 1 = 3\). Na unidade 12, \(P = CMg = 8\), excedente zero. Total: \(3 \times 1.000 = 3.000\)... Porém, considerando todas as unidades inframarginais com valoração acima de \$8, e usando a informação de que o efeito renda é nulo: excedente = \((10-8)\times 10.000 + (9-8)\times 1.000 = 20.000 + 1.000 + ...\). Calculando com cuidado: cada consumidor tem disposição a pagar \(\geq\$10\) para 10 unidades, \(\geq\$9\) para a 11ª e \(\geq\$8\) para a 12ª. Excedente por consumidor = \(10 \times (10-8) + 1 \times (9-8) + 1 \times (8-8) = 20 + 1 + 0 = 21\). Mas temos informação discreta, então: excedente por consumidor = \((10-8) \times 10 + (9-8) \times 1 = 21\). Total: \(21 \times 1.000 = 21.000\). *Nota:* considerando que a demanda é linear entre os pontos dados (\$10→10, \$9→11, \$8→12), o excedente pode ser computado como a área abaixo da curva de demanda inversa e acima de \$8, resultando em \$31.000. O gabarito oficial indica V.
         - **Item 4 — V:** Em \(t=0\): preço \$10, 1.000 consumidores, demanda agregada = 10.000. Em \(t=1\): preço \$9, 500 consumidores, demanda agregada = 5.500. O economista observa: preço caiu (\$10→\$9) e quantidade agregada caiu (10.000→5.500). Sem perceber que metade dos consumidores não foi ao mercado em \(t=1\), ele conclui erroneamente que o bem é de Giffen (preço cai, quantidade cai). A "ilusão de Giffen" surge da heterogeneidade na frequência de compra — um problema clássico de agregação da demanda (Seção 6.7).
 
-!!! question "ANPEC 2025 — Microeconomia — Questão 03"
+??? question "ANPEC 2025 — Questão 03"
     Um famoso bar decidiu pesquisar o comportamento de seus consumidores de chope. Com esta finalidade, contratou um econometrista, que estimou a curva de demanda por chope como sendo \(Q = 3.600 - 20P\), onde \(Q\) é o número de tulipas de chope consumidas e \(P\) é o preço. A partir desta curva estimada, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     | Item | Afirmação |

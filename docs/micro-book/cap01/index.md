@@ -307,7 +307,7 @@ Portanto, a condição de segunda ordem exige que o **custo marginal seja cresce
 
 ## Exercícios Resolvidos
 
-??? success "Exercício Resolvido 1.1 — Análise positiva versus normativa"
+??? example "Exercício Resolvido 1.1 — Análise positiva versus normativa"
 
     **Enunciado.** Classifique cada afirmação como positiva ou normativa e justifique:
 
@@ -329,7 +329,7 @@ Portanto, a condição de segunda ordem exige que o **custo marginal seja cresce
 
     **(d) Normativa.** O conceito de "justiça" envolve julgamento de valor — diferentes concepções de equidade (rawlsiana, utilitarista, libertária) conduziriam a conclusões distintas sobre a mesma política.
 
-??? success "Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
+??? example "Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
 
     **Enunciado.** Considere o seguinte modelo simplificado do mercado de café no Brasil:
 
@@ -374,7 +374,7 @@ Portanto, a condição de segunda ordem exige que o **custo marginal seja cresce
 
     **(d)** \(\dfrac{\partial P^*}{\partial Y} = 0{,}2 > 0\). Um aumento da renda eleva o preço de equilíbrio. Intuitivamente, mais renda desloca a curva de demanda para a direita (a cada preço dado, a quantidade demandada aumenta), pressionando o preço para cima. Este é um exercício de estática comparativa como descrito na Seção 1.4: variamos uma variável exógena (\(Y\)) e observamos o efeito sobre a variável endógena (\(P^*\)).
 
-??? success "Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
+??? example "Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
 
     **Enunciado.** Uma firma competitiva tem função de custo total \(CT(q) = 50 + 8q + 0{,}5q^2\). O preço de mercado é \(P = 28\).
 
@@ -472,7 +472,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2019 — Microeconomia — Questão 05"
+??? question "ANPEC 2019 — Questão 05"
     Com relação aos fundamentos da Microeconomia, julgue como verdadeiros ou falsos os itens a seguir:
 
     | Item | Afirmação |
@@ -494,7 +494,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
         - **Item 3 — V:** Quando a firma opera na capacidade máxima, a restrição de capacidade se torna ativa. O preço de equilíbrio deve compensar não apenas o custo marginal de produção, mas também o valor-sombra (*shadow price*) da capacidade escassa. Esse preço-sombra mede o valor marginal de relaxar a restrição de capacidade em uma unidade.
         - **Item 4 — F:** Se o consumidor usa apenas *parte* da economia para comprar mais de \(X\) e desvia o restante para outros bens, então o gasto total com \(X\) *diminui* após a queda de preço. Quando o gasto total cai com a redução do preço, a demanda é **inelástica** (\(|\varepsilon| < 1\)), não elástica.
 
-!!! question "ANPEC 2024 — Microeconomia — Questão 05"
+??? question "ANPEC 2024 — Questão 05"
     Com base na lei de oferta e demanda e na determinação dos preços no mercado, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     | Item | Afirmação |

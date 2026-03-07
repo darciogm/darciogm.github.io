@@ -152,7 +152,7 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
 <iframe src="../graficos/cap03/tms-ponto.html" width="100%" height="520" style="border:none; border-radius:8px;"></iframe>
 *Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da TMS = UMg₁/UMg₂ atualizado em tempo real. Ajuste α e β nos sliders.*
 
-!!! example "Exercício Resolvido 3.1"
+??? example "Exercício Resolvido 3.1"
     **Enunciado:** Um consumidor tem preferências representadas por \(u(x_1, x_2) = x_1^{2/5} \, x_2^{3/5}\). Calcule a TMS no ponto \((x_1, x_2) = (10, 15)\) e interprete o resultado.
 
     **Dados:** \(a = 2/5\), \(b = 3/5\), \(x_1 = 10\), \(x_2 = 15\).
@@ -294,7 +294,7 @@ As curvas de indiferença são **translações verticais** umas das outras: poss
 
     **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018 — Primeiros Resultados.
 
-!!! example "Exercício Resolvido 3.2"
+??? example "Exercício Resolvido 3.2"
     **Enunciado:** Considere a função CES \(u(x_1, x_2) = (x_1^{\rho} + x_2^{\rho})^{1/\rho}\) com \(\rho = -1\). (a) Calcule a elasticidade de substituição. (b) Derive a TMS. (c) Compare as curvas de indiferença com os casos Cobb-Douglas e complementos perfeitos.
 
     **Dados:** \(\rho = -1\), logo \(u(x_1, x_2) = (x_1^{-1} + x_2^{-1})^{-1}\).
@@ -344,7 +344,7 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
 !!! tip "Implicações práticas da ordinalidade"
     A TMS é invariante sob transformações monotônicas. A utilidade marginal, porém, **não é invariante**: ela muda com a transformação. Por isso, a utilidade marginal não tem significado cardinal — apenas a razão entre utilidades marginais (a TMS) possui significado econômico bem definido.
 
-!!! example "Exercício Resolvido 3.3"
+??? example "Exercício Resolvido 3.3"
     **Enunciado:** Mostre que \(u(x_1, x_2) = \ln x_1 + 2\ln x_2\) e \(v(x_1, x_2) = x_1 \cdot x_2^2\) representam as mesmas preferências, e verifique que ambas produzem a mesma TMS.
 
     **Resolução:**
@@ -444,7 +444,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2019 — Microeconomia — Questão 01"
+??? question "ANPEC 2019 — Questão 01"
     Com relação às preferências do consumidor, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -466,7 +466,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
         - **Item 3 — F:** A função \(U(x,y) = x + y\) é a representação clássica de substitutos perfeitos, com curvas de indiferença retas e TMS constante igual a 1. Complementares perfeitos seriam representados por \(\min\{x, y\}\).
         - **Item 4 — V:** A função \(f(U) = U^2\) tem derivada \(f'(U) = 2U\). Para \(U > 0\), \(f'(U) > 0\) e a transformação é estritamente crescente (monotônica). Para \(U < 0\), \(f'(U) < 0\) e a função é decrescente, invertendo o ordenamento — logo, não é uma transformação monotônica nesse domínio.
 
-!!! question "ANPEC 2021 — Microeconomia — Questão 01"
+??? question "ANPEC 2021 — Questão 01"
     Seja um consumidor com função de utilidade dada por \(U = X^2 + Y^2\), em que \(X\) é a quantidade consumida de entradas de cinema e \(Y\) é a quantidade consumida de pizzas. Com relação a este consumidor, verifique quais das seguintes afirmações são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -488,7 +488,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
         - **Item 3 — F:** Substitutos perfeitos têm curvas de indiferença retas (TMS constante). Aqui, a TMS \(= X/Y\) varia com a composição da cesta e as curvas são circulares, não retas.
         - **Item 4 — F:** \(\text{UMg}_Y = 2Y > 0\) para \(Y > 0\), logo mais pizza aumenta a utilidade. O bem \(Y\) não é um mal.
 
-!!! question "ANPEC 2021 — Microeconomia — Questão 02"
+??? question "ANPEC 2021 — Questão 02"
     Considere a Teoria da Utilidade para responder quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -510,7 +510,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
         - **Item 3 — V:** A inclinação da curva de indiferença é \(dB/dA|_{U=\bar{u}} = -c_1/c_2\). Correto, conforme a Seção 3.6.2.
         - **Item 4 — V:** Uma transformação monotônica \(\hat{u} = f(u)\) preserva as curvas de indiferença (mesmos conjuntos de nível, apenas com rótulos diferentes). Como a TMS depende apenas da inclinação da curva de indiferença, ela é invariante (Proposição 3.3 e Seção 3.7).
 
-!!! question "ANPEC 2023 — Microeconomia — Questão 03"
+??? question "ANPEC 2023 — Questão 03"
     Com relação à Teoria do Consumidor, julgue as afirmações abaixo:
 
     | Item | Afirmação |

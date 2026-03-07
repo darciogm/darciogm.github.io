@@ -497,7 +497,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ## Exercícios Resolvidos
 
-!!! example "Exercício Resolvido 8.1"
+??? example "Exercício Resolvido 8.1"
     **Enunciado:** Encontre todos os equilíbrios de Nash (em puras e em mistas) do seguinte jogo simultâneo:
 
     |  | Jogador 2: E | Jogador 2: D |
@@ -544,7 +544,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
     **Interpretação econômica:** Este jogo representa situações em que dois agentes precisam se coordenar mas discordam sobre qual coordenação é preferível — como duas empresas brasileiras decidindo se adotam o padrão tecnológico A ou B. A existência de múltiplos equilíbrios explica por que convenções, normas da ABNT e regulamentações governamentais são valiosas: elas funcionam como "pontos focais" (Schelling, 1960) que resolvem o problema de coordenação.
 
-!!! example "Exercício Resolvido 8.2"
+??? example "Exercício Resolvido 8.2"
     **Enunciado:** Duas companhias aéreas competem à la Cournot em uma rota doméstica. A demanda inversa é \(P(Q) = 500 - 2Q\), onde \(Q = q_1 + q_2\) (em milhares de assentos/mês). A companhia 1 (incumbente) tem custo marginal \(c_1 = 100\) e a companhia 2 (entrante) tem custo marginal \(c_2 = 150\). Encontre o equilíbrio de Cournot-Nash.
 
     **Dados:** \(P = 500 - 2Q\), \(c_1 = 100\), \(c_2 = 150\).
@@ -593,7 +593,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
     **Interpretação econômica:** A firma com menor custo marginal (incumbente) produz mais e obtém lucro maior — uma vantagem competitiva que reflete a importância da eficiência de custos em oligopólios. No setor aéreo brasileiro, a Latam tem historicamente custos por assento-quilômetro menores que concorrentes regionais, o que contribui para sua maior participação de mercado (39,1% em 2024). O modelo de Cournot captura bem a competição por capacidade (assentos) em rotas com limitação de slots aeroportuários.
 
-!!! example "Exercício Resolvido 8.3"
+??? example "Exercício Resolvido 8.3"
     **Enunciado:** Dois postos de combustíveis em uma cidade pequena interagem repetidamente. O jogo de estágio é um Dilema dos Prisioneiros com payoffs: se ambos mantêm preço alto (cooperam), cada um lucra R\$ 8.000/mês; se ambos cortam preço (traem), cada um lucra R\$ 2.000/mês; se um corta e outro mantém, o que cortou lucra R\$ 12.000 e o outro lucra R\$ 0. Qual o fator de desconto mínimo para sustentar cooperação com *grim trigger*?
 
     **Dados:** \(T = 12.000\), \(R = 8.000\), \(P = 2.000\), \(S = 0\), jogo infinitamente repetido.
@@ -709,7 +709,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2010 — Microeconomia — Questão 10"
+??? question "ANPEC 2010 — Questão 10"
     Considere o jogo conhecido como "caça ao cervo", abaixo:
 
     |  | Caçador 2: Cervo | Caçador 2: Lebre |
@@ -742,7 +742,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
         - **Item 4 — V:** Para \(x\) genérico, a probabilidade de equilíbrio misto de jogar Cervo é \(p = (1-x)/(3-x)\). Quando \(x \to 1\): \(p \to 0/(3-1) = 0\). Ambos jogam Lebre com probabilidade 1, convergindo para o equilíbrio (Lebre, Lebre), que é Pareto-dominado por (Cervo, Cervo).
 
-!!! question "ANPEC 2021 — Microeconomia — Questão 11"
+??? question "ANPEC 2021 — Questão 11"
     Com relação à Teoria dos Jogos, julgue os itens a seguir:
 
     | Item | Afirmação |
@@ -799,7 +799,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
         - **Item 4 — F:** O Teorema de Nash garante existência para jogos **finitos** (número finito de jogadores e estratégias puras). Jogos com espaços de estratégias infinitos (contínuos) podem não possuir equilíbrio de Nash sem condições adicionais (compacidade e continuidade dos payoffs, pelo teorema de Glicksberg).
 
-!!! question "ANPEC 2022 — Microeconomia — Questão 11"
+??? question "ANPEC 2022 — Questão 11"
     Com relação ao oligopólio, julgue os itens a seguir:
 
     | Item | Afirmação |
@@ -827,7 +827,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Entrada e competição em mercados concentrados
 

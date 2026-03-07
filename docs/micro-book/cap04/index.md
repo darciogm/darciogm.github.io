@@ -127,7 +127,7 @@ Essas funções expressam a quantidade ótima de cada bem como função dos pre�
 2. **Lei de Walras**: \(\mathbf{p} \cdot \mathbf{x}(\mathbf{p}, I) = I\). O consumidor gasta toda a renda.
 3. **Negatividade do efeito substituição** (via equação de Slutsky — Capítulo 5).
 
-!!! example "Exercício Resolvido 4.1"
+??? example "Exercício Resolvido 4.1"
     **Enunciado:** Um consumidor tem função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), preços \(p_1 = 6\), \(p_2 = 3\) e renda \(I = 180\). Encontre a cesta ótima e a utilidade máxima.
 
     **Dados:** \(a = 1/3\), \(b = 2/3\), \(p_1 = 6\), \(p_2 = 3\), \(I = 180\).
@@ -222,7 +222,7 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
 
     **Fonte**: Ministério do Desenvolvimento e Assistência Social; Lei nº 14.237/2021 (Auxílio Gás).
 
-!!! example "Exercício Resolvido 4.2"
+??? example "Exercício Resolvido 4.2"
     **Enunciado:** Um consumidor com \(u(x_1, x_2) = x_1^{0{,}5} x_2^{0{,}5}\), \(p_1 = 10\), \(p_2 = 5\) e \(I = 200\) enfrenta um imposto específico de \(t = 10\) sobre o bem 1. Compare o imposto específico com um imposto *lump sum* de mesma receita.
 
     **Dados:** \(a = b = 0{,}5\), \(p_1 = 10\), \(p_2 = 5\), \(I = 200\), \(t = 10\).
@@ -366,7 +366,7 @@ h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u})).
 
 A primeira identidade diz que avaliar a demanda hicksiana no nível de utilidade ótimo reproduz a demanda marshalliana. A segunda diz que avaliar a demanda marshalliana na renda mínima necessária reproduz a demanda hicksiana.
 
-!!! example "Exercício Resolvido 4.3"
+??? example "Exercício Resolvido 4.3"
     **Enunciado:** Para um consumidor com \(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\) e \(I = 100\), verifique as duas identidades de dualidade.
 
     **Dados:** \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 100\).
@@ -715,7 +715,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
     - Quando \(\rho \to 1\) (\(\sigma \to \infty\)), o consumidor substitui perfeitamente entre os bens e consome apenas o mais barato por unidade de utilidade.
     - Quando \(\rho \to -\infty\) (\(\sigma \to 0\)), não há substituição e o consumidor consome na proporção fixa \(a:b\).
 
-!!! example "Exercício Resolvido 4.4"
+??? example "Exercício Resolvido 4.4"
     **Enunciado:** Um consumidor tem preferências Leontief \(u(x_1, x_2) = \min\{2x_1, x_2\}\), com \(p_1 = 4\), \(p_2 = 2\) e \(I = 120\). (a) Encontre a cesta ótima. (b) Suponha que o governo conceda uma transferência de R$ 40. Qual é a nova cesta?
 
     **Dados:** \(a = 2\), \(b = 1\) (na forma \(\min\{ax_1, bx_2\}\)), \(p_1 = 4\), \(p_2 = 2\), \(I = 120\).
@@ -831,9 +831,9 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
-!!! question "ANPEC 2018 — Microeconomia — Questão 03"
+??? question "ANPEC 2018 — Questão 03"
     A maximização da função utilidade \(U(x, y) = \sqrt{xy}\), sujeita à restrição orçamentária \(xp_x + yp_y = R\), sendo \(R\) a renda exógena e \(p_i\), \(i = 1, 2\), os preços dos bens, gera as seguintes funções de demanda marshallianas: \(X(p_x, p_y, R) = \frac{1}{2}\frac{R}{p_x}\) e \(Y(p_x, p_y, R) = \frac{1}{2}\frac{R}{p_y}\). Avalie as assertivas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -861,7 +861,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
 
         - **Item 4 — F:** O efeito substituição (Slutsky) é \(\partial h_x/\partial p_x = -\frac{1}{2}U p_y^{1/2} p_x^{-3/2}\). No ponto de dualidade, \(U = R/(2\sqrt{p_x p_y})\), logo \(\partial h_x/\partial p_x = -\frac{R}{4p_x^2}\). O enunciado diz \(-\frac{1}{4}\frac{R}{p_x^2}\), que coincide. Porém, o efeito substituição de Slutsky é definido como \(s_{xx} = \partial h_x/\partial p_x\), e a questão afirma que é equivalente a essa expressão — mas a expressão dada resulta de avaliar no ponto de dualidade, não é a forma geral. A banca considerou **Falso** porque o efeito substituição puro de Slutsky deve ser expresso em termos de \(U\) (e não de \(R\)), sendo \(\partial h_x/\partial p_x = -\frac{U}{2}\sqrt{p_y} p_x^{-3/2}\).
 
-!!! question "ANPEC 2024 — Microeconomia — Questão 02"
+??? question "ANPEC 2024 — Questão 02"
     Seja \(\mathbf{p} = (p_1, \ldots, p_n)\) o vetor de preços, todos estritamente positivos, seja \(r > 0\) a renda do consumidor e \(\bar{u}\) um nível de utilidade. Denote por \(\mathbf{x}(\mathbf{p}, r)\) o vetor de demandas marshallianas dos \(n\) bens sob o vetor de preços \(\mathbf{p}\) e renda \(r\), por \(v(\mathbf{p}, r)\) a utilidade indireta sob o vetor de preços \(\mathbf{p}\) e renda \(r\), por \(e(\mathbf{p}, \bar{u})\) a função dispêndio sob o vetor de preços \(\mathbf{p}\) e nível de utilidade \(\bar{u}\) e por \(\mathbf{h}(\mathbf{p}, \bar{u})\) o vetor de demandas hicksianas dos \(n\) bens sob o vetor de preços \(\mathbf{p}\) e nível de utilidade \(\bar{u}\). Julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -889,7 +889,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
 
         - **Item 4 — F:** A matriz de Slutsky \(S\) é **simétrica** (não antissimétrica), semidefinida negativa e satisfaz \(S\mathbf{p} = \mathbf{0}_n\). A simetria \(s_{ij} = s_{ji}\) decorre do Teorema de Young aplicado à função dispêndio: \(s_{ij} = \partial^2 E / \partial p_i \partial p_j = \partial^2 E / \partial p_j \partial p_i = s_{ji}\).
 
-!!! question "ANPEC 2023 — Microeconomia — Questão 02"
+??? question "ANPEC 2023 — Questão 02"
     Com base na Teoria do Consumidor, julgue as afirmações abaixo:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -919,7 +919,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Transferências de renda e consumo alimentar no Brasil
 

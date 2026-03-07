@@ -486,7 +486,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ## Exercícios Resolvidos
 
-??? success "Exercício Resolvido 12.1 — Equilíbrio, excedentes e imposto"
+??? example "Exercício Resolvido 12.1 — Equilíbrio, excedentes e imposto"
     **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
 
     ---
@@ -525,7 +525,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
 
-??? success "Exercício Resolvido 12.2 — Preço máximo e escassez"
+??? example "Exercício Resolvido 12.2 — Preço máximo e escassez"
     **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
 
     ---
@@ -578,7 +578,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
 
-??? success "Exercício Resolvido 12.3 — Indústria de custos crescentes e renda ricardiana"
+??? example "Exercício Resolvido 12.3 — Indústria de custos crescentes e renda ricardiana"
     **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
     ---
@@ -675,7 +675,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
-??? note "ANPEC 2017 — Questão 03"
+??? question "ANPEC 2017 — Questão 03"
     Com respeito aos efeitos dos impostos, assinale quais das afirmações abaixo são verdadeiras:
 
     **(0)** Se as curvas de demanda e oferta do mercado forem lineares, sendo \(p\) o preço do produto e \(t\) um imposto específico, então \(dp/dt = \eta/(\eta - \varepsilon)\), em que \(\eta\) é a elasticidade preço da oferta e \(\varepsilon\) é a elasticidade preço da demanda;
@@ -689,7 +689,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **(4)** Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.
 
     ??? success "Gabarito e Resolução"
-        **Gabarito oficial: (0) V; (1) F; (2) F; (3) V; (4) F.**
+        **Gabarito oficial: V-F-F-V-F**
 
         **(0) VERDADEIRO.** Com curvas lineares \(Q_D = a - bp\) e \(Q_S = c + dp\), onde \(\varepsilon = -bp/Q < 0\) e \(\eta = dp/Q > 0\), o imposto gera \(p_c = p_p + t\). No equilíbrio: \(dp_c/dt = d/(b+d)\). Em termos de elasticidades avaliadas no equilíbrio (onde \(Q\) e \(p\) são comuns): \(dp/dt = \eta/(\eta - \varepsilon)\), pois \(\varepsilon < 0\) implica \(\eta - \varepsilon = \eta + |\varepsilon|\).
 
@@ -701,7 +701,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
         **(4) FALSO.** A receita fiscal \(R = t \cdot Q_t\) não compensa a perda total de excedentes de consumidores e produtores. A diferença — o peso morto — é estritamente positiva (\(PPM > 0\)) sempre que \(t > 0\) e ambas as curvas têm inclinações finitas.
 
-??? note "ANPEC 2023 — Questão 01"
+??? question "ANPEC 2023 — Questão 01"
     Suponha que ao preço de equilíbrio no mercado internacional de petróleo de \$80 dólares o barril, a elasticidade-preço da demanda seja \(-0{,}4\), a elasticidade-preço da oferta seja \(0{,}2\), as quantidades ofertada e demandada sejam de 100 milhões de barris/dia. Suponha ainda que as curvas de demanda e oferta são lineares convencionais. Imagine que um embargo econômico a um produtor mundial cause um deslocamento paralelo da curva de oferta para a esquerda em 30 milhões de barris/dia. Julgue as afirmativas a seguir:
 
     **(0)** A função de demanda consistente com o preço e a quantidade antes do embargo é \(D_1(p) = 116 - 0{,}2p\).
@@ -715,7 +715,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **(4)** Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.
 
     ??? success "Gabarito e Resolução"
-        **Gabarito oficial: (0) F; (1) F; (2) V; (3) V; (4) F.**
+        **Gabarito oficial: F-F-V-V-F**
 
         **Derivação das curvas.** Com \(p_0 = 80\), \(Q_0 = 100\):
 
@@ -733,7 +733,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
         **(4) FALSO.** Com demanda reduzida em 20: \(D_2(p) = 120 - 0{,}5p\). Novo equilíbrio: \(120 - 0{,}5p = 50 + 0{,}25p \Rightarrow 70 = 0{,}75p \Rightarrow p \approx 93{,}3\). Como \(93{,}3 > 80\), o preço é *maior* que o original, não menor.
 
-??? note "ANPEC 2025 — Questão 07"
+??? question "ANPEC 2025 — Questão 07"
     Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     **(0)** No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.
@@ -747,7 +747,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **(4)** Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.
 
     ??? success "Gabarito e Resolução"
-        **Gabarito oficial: (0) F; (1) V; (2) F; (3) F; (4) V.**
+        **Gabarito oficial: F-V-F-F-V**
 
         **(0) FALSO.** No curto prazo, o número de firmas é fixo e não há livre entrada/saída. Firmas podem ter lucro positivo, negativo ou zero. A condição de lucro zero é característica do equilíbrio de *longo prazo* com livre entrada.
 

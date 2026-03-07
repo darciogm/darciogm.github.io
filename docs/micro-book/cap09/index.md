@@ -116,7 +116,7 @@ f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
 
 A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema — um fenômeno intuitivamente análogo à taxa marginal de substituição decrescente no consumo.
 
-!!! example "Exercício Resolvido 9.1"
+??? example "Exercício Resolvido 9.1"
     **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
 
     **Dados:** \(A = 20\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(K = 25\), \(L = 16\).
@@ -188,7 +188,7 @@ Note que uma função pode apresentar simultaneamente rendimentos crescentes de 
 
     O CADE aprovou a operação com restrições, exigindo a venda de marcas e ativos em mercados onde a concentração era excessiva. Em termos da teoria da produção, o argumento das empresas equivale a afirmar que a função de produção conjunta apresenta rendimentos crescentes de escala (\(e > 1\)) na faixa relevante — a firma maior produz a um custo médio menor que as duas firmas separadas. O CADE, por sua vez, ponderou que os ganhos de escala precisavam ser contrastados com os riscos de poder de mercado — tema que retomaremos nos capítulos sobre concorrência imperfeita.
 
-!!! example "Exercício Resolvido 9.2"
+??? example "Exercício Resolvido 9.2"
     **Enunciado:** Classifique os rendimentos de escala das seguintes funções de produção: (a) \(q = 3K + 7L\); (b) \(q = K^{0,4}L^{0,8}\); (c) \(q = \min\{2K, 5L\}\).
 
     **Resolução:**
@@ -280,7 +280,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 !!! example "Exemplo: Elasticidade de substituição na indústria brasileira"
     A elasticidade de substituição tem implicações diretas para o mercado de trabalho. Quando \(\sigma\) é alto, as firmas substituem trabalho por capital (automação) com relativa facilidade. A literatura empírica aponta valores de \(\sigma\) entre 0,4 e 0,6 para o setor manufatureiro em diversas economias (Chirinko, 2008), e estudos com dados brasileiros encontram valores consistentemente abaixo de 1. Isso indica que capital e trabalho são complementares — mas não tanto quanto no caso Leontief puro (\(\sigma = 0\)). Esse grau intermediário de complementaridade ajuda a explicar por que a automação industrial desloca trabalhadores de forma menos abrupta do que ocorreria com \(\sigma\) mais elevado, mas ainda assim gera pressão sobre ocupações de baixa qualificação.
 
-!!! example "Exercício Resolvido 9.4"
+??? example "Exercício Resolvido 9.4"
     **Enunciado:** Uma firma opera com a função de produção CES \(q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}\). Calcule a elasticidade de substituição e a TMST quando \(K = 8\) e \(L = 2\).
 
     **Dados:** \(\delta = 0{,}5\), \(\rho = -1\), \(\gamma = 1\).
@@ -374,7 +374,7 @@ A CES **generaliza** as três funções anteriores:
 
 As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
 
-!!! example "Exercício Resolvido 9.5"
+??? example "Exercício Resolvido 9.5"
     **Enunciado:** A função de produção de uma pizzaria é \(Q = 30K^{0,5}L^{0,5}\), com \(K\) fornos fixados em 4 no curto prazo. (a) Escreva a função de produção de curto prazo. (b) Calcule o produto total com 9 trabalhadores. (c) Calcule o produto marginal e o produto médio com 9 trabalhadores. (d) Classifique os rendimentos de escala.
 
     **Dados:** \(A = 30\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(\bar{K} = 4\).
@@ -459,7 +459,7 @@ A taxa de crescimento do produto pode ser decomposta como:
 
 O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**. Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
 
-!!! example "Exercício Resolvido 9.3"
+??? example "Exercício Resolvido 9.3"
     **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
 
     **Dados:** \(\alpha = 0{,}3\), \(\beta = 0{,}7\), \(\dot{A}/A = 0{,}02\), \(\dot{K}/K = 0{,}04\), \(\dot{L}/L = 0{,}01\).
@@ -599,9 +599,9 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
-!!! question "ANPEC 2013 — Microeconomia — Questão 06"
+??? question "ANPEC 2013 — Questão 06"
     Considere a teoria da produção e indique quais das afirmativas abaixo são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -623,7 +623,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — F:** Monotonia (livre descarte) significa exatamente o oposto: se é possível produzir \(q\) com \((K, L)\), então é possível produzir *ao menos* \(q\) com \((K', L')\) onde \(K' \geq K\) e \(L' \geq L\). Mais insumo nunca reduz o produto máximo possível.
         - **Item 4 — V:** Conforme demonstrado na Seção 9.4, a Cobb-Douglas possui \(\sigma = 1\), independentemente dos expoentes \(\alpha\) e \(\beta\).
 
-!!! question "ANPEC 2015 — Microeconomia — Questão 07"
+??? question "ANPEC 2015 — Questão 07"
     Com relação à Teoria da Produção, indique quais das afirmativas abaixo são verdadeiras:
 
     | Item | Afirmação |
@@ -645,7 +645,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — V:** Inclinação ascendente significaria \(dK/dL > 0\) ao longo da isoquanta, ou seja, seria necessário aumentar ambos os insumos para manter o produto constante — o que contradiz a hipótese de produtividades marginais positivas.
         - **Item 4 — V:** TMST decrescente ao longo da isoquanta (em valor absoluto) é a condição que garante convexidade das isoquantas em relação à origem.
 
-!!! question "ANPEC 2016 — Microeconomia — Questão 05"
+??? question "ANPEC 2016 — Questão 05"
     Em relação à teoria da produção, é correto afirmar que:
 
     | Item | Afirmação |
@@ -667,7 +667,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — V:** É um resultado clássico: quando \(\rho = p \to 0\), a CES converge para a Cobb-Douglas (com pesos iguais, neste caso \(Q = K^{0,5}L^{0,5}\)).
         - **Item 4 — V:** Com \(p = 1\), temos \(Q = L + K\) (função linear), cuja elasticidade de substituição é \(\sigma = \infty\) — insumos são substitutos perfeitos.
 
-!!! question "ANPEC 2017 — Microeconomia — Questão 06"
+??? question "ANPEC 2017 — Questão 06"
     Com relação à Teoria da Produção no curto prazo, indique quais entre as afirmações abaixo são verdadeiras:
 
     | Item | Afirmação |
@@ -689,7 +689,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — F:** A lei dos rendimentos marginais decrescentes não resulta de queda na qualidade dos insumos (que são considerados homogêneos). Resulta da proporção desfavorável entre o fator variável e o fator fixo: cada unidade adicional do insumo variável dispõe de menos fator fixo para trabalhar.
         - **Item 4 — F:** Avanços tecnológicos deslocam a função de produção para cima (aumentam \(A\)), mas não eliminam a concavidade no curto prazo. Para qualquer nível de tecnologia, a adição contínua de um fator variável a um fator fixo eventualmente apresentará rendimentos marginais decrescentes.
 
-!!! question "ANPEC 2020 — Microeconomia — Questão 04"
+??? question "ANPEC 2020 — Questão 04"
     Com relação ao comportamento do produtor, indique quais dos itens a seguir são verdadeiros e quais são falsos:
 
     | Item | Afirmação |
@@ -711,7 +711,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — V:** Custos fixos elevados significam que o custo médio cai fortemente com a escala (diluição dos fixos), o que é uma manifestação de rendimentos crescentes de escala.
         - **Item 4 — V:** *Learning by doing* implica que a produtividade aumenta com a experiência acumulada (produção acumulada), gerando efetivamente rendimentos crescentes de escala dinâmicos.
 
-!!! question "ANPEC 2024 — Microeconomia — Questão 03"
+??? question "ANPEC 2024 — Questão 03"
     Com relação à teoria da produção, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     | Item | Afirmação |
@@ -735,7 +735,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Produtividade agrícola e rendimentos de escala no Brasil
 

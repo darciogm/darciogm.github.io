@@ -482,7 +482,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ## Exercícios Resolvidos
 
-??? success "Exercício Resolvido 14.1 — Monopólio com demanda linear: preço, lucro e PPM"
+??? example "Exercício Resolvido 14.1 — Monopólio com demanda linear: preço, lucro e PPM"
     **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
 
     ---
@@ -521,7 +521,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
-??? success "Exercício Resolvido 14.2 — Discriminação de terceiro grau com dois mercados"
+??? example "Exercício Resolvido 14.2 — Discriminação de terceiro grau com dois mercados"
     **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
 
     ---
@@ -554,7 +554,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-??? success "Exercício Resolvido 14.3 — Regulação de monopólio natural"
+??? example "Exercício Resolvido 14.3 — Regulação de monopólio natural"
     **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 5.000 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
 
     ---
@@ -670,7 +670,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
-??? note "ANPEC 2016 — Questão 08"
+??? question "ANPEC 2016 — Questão 08"
     Com relação a poder de mercado, monopólio e monopsônio, é correto afirmar que:
 
     **(0)** Se o custo marginal da empresa em monopólio for constante e igual a \$ 10, e a elasticidade-preço da demanda for igual a \(-2\), o preço do produto será \$ 20;
@@ -684,7 +684,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **(4)** Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.
 
     ??? success "Gabarito e Resolução"
-        **Gabarito oficial: (0) V; (1) V; (2) V; (3) V; (4) V.**
+        **Gabarito oficial: V-V-V-V-V**
 
         **(0) VERDADEIRO.** Pela regra de markup: \(p = CMg/(1 - 1/|\varepsilon|) = 10/(1 - 1/2) = 10/0{,}5 = 20\).
 
@@ -696,7 +696,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
         **(4) VERDADEIRO.** O comportamento descrito — aplicar recursos em lobby para obter ou manter poder de monopólio — corresponde ao conceito de *rent-seeking* (busca/captura de rendas), introduzido por Tullock (1967) e formalizado por Krueger (1974).
 
-??? note "ANPEC 2015 — Questão 09"
+??? question "ANPEC 2015 — Questão 09"
     Julgue as afirmações relativas à Teoria do Monopólio:
 
     **(0)** Uma firma monopolista, que opera com várias fábricas, aloca sua produção entre elas de forma a igualar o custo médio em cada uma das fábricas.
@@ -710,7 +710,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **(4)** Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.
 
     ??? success "Gabarito e Resolução"
-        **Gabarito oficial: (0) F; (1) V; (2) F; (3) F; (4) V.**
+        **Gabarito oficial: F-V-F-F-V**
 
         **(0) FALSO.** A firma multi-planta minimiza custos igualando os **custos marginais** (não os custos médios) entre fábricas: \(CMg_1(q_1) = CMg_2(q_2) = \ldots\). Essa é a condição de Lagrange para a minimização de custo total sujeita a uma meta de produção.
 
@@ -722,7 +722,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
         **(4) VERDADEIRO.** Com discriminação perfeita, o monopolista produz a quantidade eficiente (\(q^c\), onde \(p = CMg\)), eliminando toda a perda de peso morto. A alocação é Pareto-eficiente, embora todo o excedente seja apropriado pelo produtor (\(EC = 0\)).
 
-??? note "ANPEC 2018 — Questão 08"
+??? question "ANPEC 2018 — Questão 08"
     Com relação à análise de discriminação de preços, indique quais das afirmativas a seguir são verdadeiras e quais são falsas:
 
     **(0)** Na discriminação de preços de terceiro grau, a receita marginal deve ser igual para os diferentes grupos de consumidores e igual ao custo marginal;
@@ -736,7 +736,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **(4)** Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.
 
     ??? success "Gabarito e Resolução"
-        **Gabarito oficial: (0) V; (1) F; (2) V; (3) V; (4) F.**
+        **Gabarito oficial: V-F-V-V-F**
 
         **(0) VERDADEIRO.** A condição de ótimo na discriminação de 3º grau é \(RMg_1 = RMg_2 = \ldots = CMg\). O monopolista iguala as receitas marginais de todos os segmentos ao custo marginal.
 

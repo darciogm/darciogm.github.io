@@ -150,7 +150,7 @@ Essa condição exige que a diferença de pagamentos entre os estados bom e ruim
 
 ---
 
-!!! example "Exercício Resolvido 18.1"
+??? example "Exercício Resolvido 18.1"
     **Enunciado:** Um principal contrata um agente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O resultado pode ser bom (\(x_H\)) com probabilidade \(p(e)\) ou ruim (\(x_L\)) caso contrário, onde \(p(1) = 3/4\) e \(p(0) = 1/4\). A utilidade de reserva é \(\bar{U} = 3\). O principal deseja induzir esforço alto (\(e = 1\)).
 
     **Dados:** \(p_H = 3/4\), \(p_L = 1/4\), \(c(1) = 1\), \(c(0) = 0\), \(\bar{U} = 3\).
@@ -237,7 +237,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 ---
 
-!!! example "Exercício Resolvido 18.2"
+??? example "Exercício Resolvido 18.2"
     **Enunciado:** Em um mercado de carros usados à la Akerlof, 40% dos carros são bons e 60% são ruins. Carros bons valem R$ 24.000 para compradores e R$ 20.000 para vendedores. Carros ruins valem R$ 10.000 para compradores e R$ 6.000 para vendedores. (a) O mercado de carros bons funciona? (b) Qual é a perda de bem-estar causada pela assimetria?
 
     **Dados:** \(\lambda = 0{,}4\); \(V_H = 24.000\), \(C_H = 20.000\); \(V_L = 10.000\), \(C_L = 6.000\).
@@ -600,9 +600,9 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
-!!! question "ANPEC 2017 — Microeconomia — Questão 11"
+??? question "ANPEC 2017 — Questão 11"
     Com relação aos problemas de assimetria de informação, indique quais entre as afirmativas abaixo estão corretas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -626,7 +626,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
         - **Item 3 — V:** Correto. Certificações de produtos (como laudos de vistoria, selos de qualidade, garantias de fábrica) reduzem a assimetria de informação entre vendedores e compradores, atenuando o problema dos limões de Akerlof.
         - **Item 4 — V:** Correto. Se o seguro é **universal e obrigatório**, não há autosseleção: todos os tipos (alto e baixo risco) participam do pool. Isso elimina o mecanismo de seleção adversa, no qual os tipos de baixo risco saem do mercado. O SUS brasileiro é um exemplo de cobertura universal que evita a antisseleção.
 
-!!! question "ANPEC 2025 — Microeconomia — Questão 04"
+??? question "ANPEC 2025 — Questão 04"
     Com relação à teoria dos leilões, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -652,7 +652,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Testando Informação Assimétrica no Mercado de Seguros
 

@@ -144,7 +144,7 @@ Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\
 
 ---
 
-!!! example "Exercício Resolvido 16.1"
+??? example "Exercício Resolvido 16.1"
     **Enunciado:** Um trabalhador tem preferências \(U(C,L) = C^{1/2}\, L^{1/2}\), dotação de tempo \(T = 16\) horas e renda não salarial \(V = 32\). O salário-hora é \(w\).
 
     **Dados:** \(T = 16\), \(V = 32\), \(\alpha = 1/2\).
@@ -379,7 +379,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
-!!! example "Exercício Resolvido 16.2"
+??? example "Exercício Resolvido 16.2"
     **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
 
     **Dados:** \(w(H) = 4 + 2H\); \(VPMg_L = 100 - 2H\).
@@ -602,9 +602,9 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
-!!! question "ANPEC 2022 — Microeconomia — Questão 06"
+??? question "ANPEC 2022 — Questão 06"
     Suponha que João possui uma função de utilidade em renda (\(Y\)) e lazer (\(N\)) na forma \(U(Y, N) = U(wh, 24 - h)\), em que \(w\) é a taxa de salário por hora e \(h\) é o número de horas trabalhadas por dia. Indique quais das afirmações a seguir são verdadeiras:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -628,7 +628,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
         - **Item 3 — V:** Correto. Se lazer é normal, o efeito renda de um aumento em \(w\) eleva a demanda por lazer (reduz \(h\)), enquanto o efeito substituição reduz o lazer (eleva \(h\)). Os dois efeitos atuam em sentidos opostos — é a base da curva backward-bending.
         - **Item 4 — V:** Correto. Se lazer é inferior, o efeito renda de um aumento em \(w\) **reduz** a demanda por lazer (mesma direção do efeito substituição). Ambos levam a menos lazer e mais trabalho: a oferta de trabalho é inequivocamente positivamente inclinada.
 
-!!! question "ANPEC 2013 — Microeconomia — Questão 10"
+??? question "ANPEC 2013 — Questão 10"
     Com relação ao mercado de fatores, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -652,7 +652,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
         - **Item 3 — V:** Correto. Para um monopolista, \(RMg < P\), portanto \(PRMg_L = RMg \times PMg_L < P \times PMg_L = VPMg_L\). O produto da receita marginal é menor que o valor do produto marginal.
         - **Item 4 — V:** Correto. Trata-se do problema de **dupla marginalização**: o monopolista upstream aplica um markup sobre seu custo marginal, e o monopolista downstream aplica outro markup sobre o preço de compra, resultando em preço final mais alto e quantidade menor do que se houvesse um monopolista integrado.
 
-!!! question "ANPEC 2017 — Microeconomia — Questão 13"
+??? question "ANPEC 2017 — Questão 13"
     O único agente de uma economia valoriza comida (\(C\)) e tempo de descanso (\(D\)). Suas preferências são representadas pela função \(U(D, C) = D^{1/5}C^{4/5}\), sendo descanso medido em horas diárias. As horas do dia não descansadas são dedicadas ao trabalho (\(L\)) de obter comida, segundo a função de produção \(C = \sqrt{L}\). Apesar da existência de um agente, imagine que temos mercados competitivos com uma firma maximizando lucro, contratando trabalho no mercado de trabalho e um consumidor vendendo sua dotação de tempo, comprando de volta descanso e comida, a "preços de mercado". Fixe em \$1 o preço da hora de trabalho e considere \(P\) o preço da comida.
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -678,7 +678,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Salário Mínimo e Desigualdade no Brasil
 

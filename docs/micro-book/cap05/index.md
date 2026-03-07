@@ -329,7 +329,7 @@ A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-r
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.
 
-!!! example "Exercício Resolvido 5.1"
+??? example "Exercício Resolvido 5.1"
     **Enunciado:** Considere uma economia com dois bens: alimentação (bem 1) e serviços (bem 2). A parcela orçamentária da alimentação é \(w_1 = 0{,}35\) e a dos serviços é \(w_2 = 0{,}65\). A elasticidade-renda da alimentação é \(\varepsilon_{1,I} = 0{,}42\), e a elasticidade-preço própria da alimentação é \(\varepsilon_{1,p_1} = -0{,}55\). (a) Calcule a elasticidade-renda dos serviços. (b) Classifique cada bem. (c) Calcule a elasticidade-preço cruzada da alimentação em relação ao preço dos serviços.
 
     **Dados:** \(w_1 = 0{,}35\), \(w_2 = 0{,}65\), \(\varepsilon_{1,I} = 0{,}42\), \(\varepsilon_{1,p_1} = -0{,}55\).
@@ -418,7 +418,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
     - **VE** é apropriada para avaliar quanto o consumidor pagaria para obter uma mudança.
     - **EC** marshalliano é uma aproximação prática, amplamente usada em análise de políticas públicas pela sua facilidade de cálculo.
 
-!!! example "Exercício Resolvido 5.2"
+??? example "Exercício Resolvido 5.2"
     **Enunciado:** Um consumidor possui utilidade quase-linear \(U(x,y) = 2\sqrt{x} + y\), com \(p_y = 1\) e renda \(I = 10\). O preço de \(x\) sobe de \(p_x = 1\) para \(p_x' = 4\). Calcule a VC, a VE e a variação no EC. Confirme que as três medidas coincidem.
 
     **Dados:** \(U = 2\sqrt{x} + y\), \(p_y = 1\), \(I = 10\), \(p_x^0 = 1\), \(p_x^1 = 4\).
@@ -510,7 +510,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Exercícios Resolvidos
 
-!!! example "Exercício Resolvido 5.3"
+??? example "Exercício Resolvido 5.3"
     **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
 
     **Dados:** Cobb-Douglas com \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 80\), \(p_1' = 1\).
@@ -605,7 +605,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2010 — Microeconomia — Questão 03"
+??? question "ANPEC 2010 — Questão 03"
     Com relação à classificação dos bens (em normal, de luxo, necessário, inferior, comum e de Giffen) e às demandas por esses bens, julgue as questões a seguir:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -633,7 +633,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
         - **Item 4 — V:** Pela Agregação de Engel: \(0{,}5 \cdot \varepsilon_{1,I} + 0{,}5 \cdot \varepsilon_{2,I} = 1\), logo \(\varepsilon_{1,I} + \varepsilon_{2,I} = 2\). Se \(\varepsilon_{1,I} > 2\), então \(\varepsilon_{2,I} < 0\): o bem 2 é inferior.
 
-!!! question "ANPEC 2017 — Microeconomia — Questão 04"
+??? question "ANPEC 2017 — Questão 04"
     Um consumidor, cuja função utilidade é dada por \(U(x, y) = \sqrt{x} + y\), possui renda \(R = \$2{,}50\). O preço do bem \(y\) é unitário e \(P\) representa o preço de \(x\). O preço \(P\) inicialmente é vinte e cinco centavos e passa em um segundo momento para cinquenta centavos. Avalie as proposições:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -661,7 +661,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
         - **Item 4 — V:** Para utilidade quase-linear, \(VC = VE = \Delta EC\). Neste caso, \(\Delta EC = \int_{0{,}25}^{0{,}50} \frac{1}{4P^2}\,dP = \left[-\frac{1}{4P}\right]_{0{,}25}^{0{,}50} = (-0{,}5) - (-1) = 0{,}5\). As três medidas coincidem em \(\$0{,}50\). ✓
 
-!!! question "ANPEC 2025 — Microeconomia — Questão 08"
+??? question "ANPEC 2025 — Questão 08"
     Considere uma utilidade \(U(X,Y) = \sqrt{XY}\), \(p_0 = \$9\) o preço inicial de \(X\), \(q_0 = \$1\) o preço inicial de \(Y\) e \(r_0 = \$576\) a renda do indivíduo. Posteriormente, o preço de \(X\) sobe para \(p_1 = \$16\). Esta questão trata da decomposição de Slutsky e, em particular, do efeito-preço de Slutsky, mas trata também do chamado efeito-preço puro, no sentido de Gary Becker. O efeito-preço puro é determinado do seguinte modo: dada a mudança de preço do bem \(X\), considera-se o incremento de renda precisamente suficiente para tornar factível novamente a cesta marshalliana inicial; sob essa nova linha orçamentária, determina-se a demanda marshalliana \(X_b\) pelo bem \(X\); se \(X_0\) denota a demanda marshalliana inicial, então o efeito-preço puro é \(EP_{\text{puro}} = X_b - X_0\). Julgue:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)

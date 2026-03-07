@@ -563,7 +563,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ## Exercícios Resolvidos
 
-??? success "Exercício Resolvido 10.1 — Custo econômico versus custo contábil"
+??? example "Exercício Resolvido 10.1 — Custo econômico versus custo contábil"
 
     **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
 
@@ -594,7 +594,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
-??? success "Exercício Resolvido 10.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+??? example "Exercício Resolvido 10.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(r = 2\).
 
@@ -660,7 +660,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
-??? success "Exercício Resolvido 10.3 — Curto prazo versus longo prazo"
+??? example "Exercício Resolvido 10.3 — Curto prazo versus longo prazo"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(r = 10\).
 
@@ -775,7 +775,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2020 — Microeconomia — Questão 06"
+??? question "ANPEC 2020 — Questão 06"
     Em um ano, uma empresa apresentou os seguintes dados contábeis: \$ 1 milhão de receitas, \$ 300 mil de compras de matérias primas, \$ 30 mil de despesas com água e energia elétrica, \$ 100 mil de gastos com a folha de salários e \$ 120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$ 200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$ 90 mil e outra com salário anual de \$ 150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -797,7 +797,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
         - **Item 3 — V:** Como o lucro econômico é \$220k > 0, a empresa remunera todos os fatores acima de seu custo de oportunidade. O proprietário deve continuar operando.
         - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua \$220k > 0 independentemente de custos já afundados. A decisão racional é continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva (Seção 10.1).
 
-!!! question "ANPEC 2018 — Microeconomia — Questão 05"
+??? question "ANPEC 2018 — Questão 05"
     Com relação aos custos de produção, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -819,7 +819,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
         - **Item 3 — V:** \(CMe = a + bq + cq^2\) e \(CMg = a + 2bq + 3cq^2\). Para os parâmetros convencionais (\(b < 0, c > 0\)), ambas são parábolas com concavidade para cima, gerando o formato de U clássico (Seção 10.5).
         - **Item 4 — V:** Custos quase fixos são custos que não variam com o nível de produção, mas que só existem quando a firma produz (\(q > 0\)). Diferem dos custos fixos tradicionais, que são incorridos mesmo com \(q = 0\). Exemplos incluem o custo de aquecimento de um forno industrial ou a equipe mínima de operação.
 
-!!! question "ANPEC 2022 — Microeconomia — Questão 05"
+??? question "ANPEC 2022 — Questão 05"
     Com relação à Teoria dos Custos, julgue os itens a seguir:
 
     | Item | Afirmação |

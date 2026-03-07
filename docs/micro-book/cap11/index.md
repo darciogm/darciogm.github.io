@@ -423,7 +423,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ## Exercícios Resolvidos
 
-!!! example "Exercício Resolvido 11.1 — Receita marginal, elasticidade e markup"
+??? example "Exercício Resolvido 11.1 — Receita marginal, elasticidade e markup"
     **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
 
     **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
@@ -466,7 +466,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-!!! example "Exercício Resolvido 11.2 — Decisão de operar ou fechar no curto prazo"
+??? example "Exercício Resolvido 11.2 — Decisão de operar ou fechar no curto prazo"
     **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
 
     **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
@@ -513,7 +513,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-!!! example "Exercício Resolvido 11.3 — Verificação do Lema de Hotelling"
+??? example "Exercício Resolvido 11.3 — Verificação do Lema de Hotelling"
     **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(r = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
 
     **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(r = 1\).
@@ -639,9 +639,9 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-## Vem, ANPEC! 🏆
+## Vem, ANPEC!
 
-!!! question "ANPEC 2013 — Microeconomia — Questão 03"
+??? question "ANPEC 2013 — Questão 03"
     Suponha que a função de produção para um dado produto tem a seguinte forma funcional: \(q = f(x_1) = 2x_1 - 0{,}03\,x_1^2\). Considere também que o preço de uma unidade do bem final é \(p(q) = R\$\,10{,}00\) e o preço unitário do insumo, praticado pelo mercado, é \(p(x_1) = R\$\,8{,}00\).
 
     Dadas essas informações, é correto afirmar que:
@@ -669,7 +669,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-!!! question "ANPEC 2020 — Microeconomia — Questão 06"
+??? question "ANPEC 2020 — Questão 06"
     Em um ano, uma empresa apresentou os seguintes dados contábeis: \$1 milhão de receitas, \$300 mil de compras de matérias-primas, \$30 mil de despesas com água e energia elétrica, \$100 mil de gastos com a folha de salários e \$120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$90 mil e outra com salário anual de \$150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -695,7 +695,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-!!! question "ANPEC 2025 — Microeconomia — Questão 07"
+??? question "ANPEC 2025 — Questão 07"
     Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -721,7 +721,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Firmas, Informalidade e Desenvolvimento no Brasil
 

@@ -434,7 +434,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ## Exercícios Resolvidos
 
-!!! example "Exercício Resolvido 7.1"
+??? example "Exercício Resolvido 7.1"
     **Enunciado:** Um investidor com função de utilidade \(u(W) = \ln(W)\) possui riqueza inicial \(W_0 = 10.000\). Ele é convidado a participar de uma loteria que paga \(+6.000\) com probabilidade \(0{,}4\) e \(-4.000\) com probabilidade \(0{,}6\). Calcule o equivalente de certeza, o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
 
     **Dados:** \(u(W) = \ln(W)\), \(W_0 = 10.000\), \(L = \{(+6.000,\; 0{,}4);\; (-4.000,\; 0{,}6)\}\).
@@ -485,7 +485,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
     **Interpretação econômica:** O investidor exigiria pelo menos R\$ 1.121 para aceitar esse risco justo — equivalente a 11,2% de sua riqueza. A discrepância entre o valor exato e a aproximação reflete que o risco não é "pequeno" em relação à riqueza (desvio padrão de R\$ 4.899 ≈ 49% de \(W_0\)), o que compromete a precisão da expansão de Taylor.
 
-!!! example "Exercício Resolvido 7.2"
+??? example "Exercício Resolvido 7.2"
     **Enunciado:** Uma produtora de café no Sul de Minas possui riqueza de R\$ 500.000 e enfrenta risco de geada que, com probabilidade \(0{,}2\), causa perda de R\$ 200.000. Sua utilidade é \(u(W) = \sqrt{W}\). (a) Calcule o prêmio atuarialmente justo. (b) Verifique que a produtora contrata cobertura total. (c) Se a seguradora cobra carregamento \(\lambda = 0{,}3\), qual o prêmio de risco máximo que a produtora aceita pagar?
 
     **Dados:** \(W = 500.000\), \(d = 200.000\), \(p = 0{,}2\), \(u(W) = \sqrt{W}\).
@@ -530,7 +530,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
     **Interpretação econômica:** A diferença \(P_{max} - P_{justo} = \text{R\$ } 4.064\) é o prêmio de risco da produtora — o valor monetário da sua aversão ao risco. Com carregamento de 30%, a seguradora cobra mais do que a produtora está disposta a pagar por cobertura total, o que pode levar à contratação de cobertura parcial (franquia elevada). Este é precisamente o mecanismo que explica por que pequenos produtores brasileiros, com baixa capacidade de absorção de risco, dependem do subsídio do PSR para viabilizar o seguro.
 
-!!! example "Exercício Resolvido 7.3"
+??? example "Exercício Resolvido 7.3"
     **Enunciado:** Um investidor aloca sua riqueza entre dois ativos: ações de uma empresa de energia (\(\mu_1 = 12\%\), \(\sigma_1 = 20\%\)) e títulos do agronegócio (\(\mu_2 = 8\%\), \(\sigma_2 = 15\%\)). A correlação entre os retornos é \(\rho = -0{,}3\). (a) Calcule o retorno e a variância da carteira para \(w = 0{,}5\). (b) Encontre o peso \(w^*\) que minimiza a variância. (c) Compare o desvio padrão da carteira de variância mínima com os desvios individuais.
 
     **Dados:** \(\mu_1 = 0{,}12\), \(\sigma_1 = 0{,}20\), \(\mu_2 = 0{,}08\), \(\sigma_2 = 0{,}15\), \(\rho = -0{,}3\).
@@ -644,7 +644,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ## Vem, ANPEC!
 
-!!! question "ANPEC 2018 — Microeconomia — Questão 06"
+??? question "ANPEC 2018 — Questão 06"
     A função utilidade \(U\) em termos da renda \(w\) de um consumidor é dada por \(U(w) = w^3\). Tal consumidor se encontra diante de uma loteria na qual possui \(w = \$0\) com probabilidade \(p = 0{,}5\) e \(w = \$4\) com probabilidade \(p = 0{,}5\). Avalie as seguintes proposições a respeito da escolha sob incerteza:
 
     | Item | Afirmação |
@@ -670,7 +670,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
         - **Item 4 — F:** \(A(w) = -u''(w)/u'(w) = -6w/(3w^2) = -2/w\). O coeficiente é negativo (confirmando propensão ao risco) e depende de \(w\) — portanto, não é constante.
 
-!!! question "ANPEC 2020 — Microeconomia — Questão 11"
+??? question "ANPEC 2020 — Questão 11"
     Com relação à teoria de decisão sob incerteza, julgue os itens abaixo:
 
     | Item | Afirmação |
@@ -696,7 +696,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
         - **Item 4 — F:** Um indivíduo neutro ao risco possui função de utilidade linear. Pela linearidade, \(E[U(W)] = U(E[W])\) — a utilidade esperada é *igual* à utilidade da riqueza esperada, não maior.
 
-!!! question "ANPEC 2025 — Microeconomia — Questão 02"
+??? question "ANPEC 2025 — Questão 02"
     Considere uma aposta na qual, pagando \$15, você pode ganhar \$5 se sair um número ímpar ou \$20 se sair um número par, no lançamento de um dado não viciado. Julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     | Item | Afirmação |
@@ -724,7 +724,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## Apêndice: A Pesquisa em Ação
 
 ### Informação assimétrica funciona na prática? O teste de Chiappori-Salanié
 
