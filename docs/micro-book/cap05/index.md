@@ -107,6 +107,13 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 !!! tip "Intuição"
     Imagine que a gasolina ficou 10% mais barata. O efeito substituição faz você trocar um pouco de transporte público por carro. O efeito renda faz você "se sentir mais rico", podendo aumentar o consumo de diversos bens. Se a gasolina for um bem normal, ambos os efeitos reforçam a maior demanda. Se for inferior (implausível neste caso), os efeitos se opõem.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quando um preço muda, duas coisas acontecem ao mesmo tempo: você troca de produto (efeito substituição) e seu poder de compra muda (efeito renda).
+
+    **Pense assim:** Quando o preço da carne bovina sobe no supermercado, você faz duas coisas: troca parte da carne por frango (efeito substituição) e, como seu dinheiro agora compra menos, acaba reduzindo o consumo de outros itens também (efeito renda). A Equação de Slutsky separa matematicamente essas duas forças que, no carrinho de compras, aparecem misturadas.
+
+    **Por que isso importa:** Separar esses efeitos é essencial para política pública — por exemplo, para saber se um aumento no preço da gasolina empurra as pessoas para o etanol (substituição) ou simplesmente as empobrece (renda).
+
 !!! example "Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
     No Brasil, diversos preços são fixados ou regulados por agências governamentais — os chamados **preços administrados**, que representam cerca de 25% do IPCA. A energia elétrica é um caso particularmente interessante para a teoria do consumidor, pois o sistema de **bandeiras tarifárias** (verde, amarela e vermelha) funciona como uma variação exógena de preço com periodicidade mensal.
 
@@ -190,6 +197,13 @@ Da Equação de Slutsky, extraímos consequências cruciais:
 1. **Para o próprio preço** (\(i = j\)): \(\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - x_i \frac{\partial x_i}{\partial I}\). O efeito substituição é sempre não-positivo (pela concavidade da função dispêndio). Logo, se o bem for normal (\(\frac{\partial x_i}{\partial I} > 0\)), a demanda cai quando o preço sobe — a **Lei da Demanda** vale sem ambiguidade.
 
 2. **Bens de Giffen**: se o bem for inferior e o efeito renda dominar o efeito substituição, \(\frac{\partial x_i}{\partial p_i} > 0\), e temos um **bem de Giffen**. Esses casos são raros e exigem que o bem represente parcela significativa do orçamento — condição necessária para que o efeito renda seja suficientemente forte.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Um bem de Giffen é tão essencial e ocupa tanta parte do orçamento que, quando seu preço sobe, o consumidor fica tão mais pobre que acaba comprando *mais* dele, não menos.
+
+    **Pense assim:** Pense numa família muito pobre que gasta quase tudo em farinha de mandioca. Se o preço da farinha sobe, a família não pode mais comprar carne (que já era rara). Ela fica tão mais pobre que precisa comer *ainda mais* farinha para sobreviver — o efeito renda (empobrecimento) domina o efeito substituição. Na prática, esse fenômeno é raríssimo e só foi documentado de forma robusta para o arroz entre famílias extremamente pobres na China.
+
+    **Por que isso importa:** O paradoxo de Giffen mostra por que a Lei da Demanda não é uma lei universal — e por que programas como o Bolsa Família, ao elevar a renda, podem eliminar esse tipo de comportamento extremo.
 
 3. **Simetria de Slutsky**: \(\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}\). Os efeitos substituição cruzados são simétricos.
 
@@ -412,6 +426,13 @@ VC < EC < VE
 \]
 
 As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear), caso em que a curva marshalliana e a hicksiana são idênticas.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A variação compensatória pergunta "quanto dinheiro compensa a perda?"; a variação equivalente pergunta "quanto você pagaria para evitar a perda?" — são dois ângulos da mesma mudança de bem-estar.
+
+    **Pense assim:** Suponha que o preço do gás de cozinha dobre. A VC pergunta: "quanto o governo teria que depositar na sua conta para você ficar tão bem quanto antes?" A VE pergunta: "quanto você toparia pagar hoje para garantir que o preço não suba?" As respostas diferem porque seu poder de compra muda entre os dois cenários.
+
+    **Por que isso importa:** VC e VE são as medidas teoricamente corretas de bem-estar em análises de custo-benefício de políticas públicas, como reajustes tarifários de energia elétrica ou mudanças no ICMS sobre combustíveis.
 
 !!! tip "Quando usar qual medida?"
     - **VC** é apropriada para avaliar se o consumidor aceitaria uma mudança (quanto precisa ser compensado).
@@ -693,58 +714,27 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Apêndice: A Pesquisa em Ação
 
-### Bens de Giffen existem? Evidência experimental na China
+??? abstract "Jensen, R. T.; Miller, N. H. (2008). Giffen Behavior and Subsistence Consumption. *The American Economic Review*, 98(4), 1553–1577."
+    **Pergunta central:** Bens de Giffen — aqueles cuja demanda aumenta quando o preço sobe — são uma curiosidade teórica ou existem de fato? Desde que Alfred Marshall popularizou a ideia no século XIX atribuindo-a a Sir Robert Giffen, nenhum estudo havia conseguido documentar convincentemente esse comportamento com dados de campo.
 
-> **Referência completa:** Jensen, Robert T.; Miller, Nolan H. "Giffen Behavior and Subsistence Consumption."
-> *The American Economic Review*, 98(4): 1553–1577, 2008.
-> DOI: 10.1257/aer.98.4.1553
+    **Método:** Jensen e Miller conduziram um experimento de campo randomizado em duas províncias chinesas: Hunan (onde o alimento básico é o arroz) e Gansu (onde é o trigo). O experimento subsidiou aleatoriamente o preço do alimento básico para famílias extremamente pobres e mediu as variações na quantidade demandada. O desenho experimental permitiu identificar a curva de demanda de forma causal, evitando problemas de endogeneidade comuns em estudos observacionais.
 
-**A pergunta**
+    **Resultado principal:** Os autores encontraram evidência forte de comportamento de Giffen para o arroz em Hunan: quando o subsídio reduzia o preço do arroz, as famílias passavam a consumir *menos* arroz e *mais* alimentos de maior qualidade (carne, vegetais). Ou seja, o subsídio (redução de preço) diminuiu a demanda — o oposto do que a Lei da Demanda prevê para bens comuns. Para o trigo em Gansu, a evidência foi mais fraca, mas na mesma direção.
 
-Bens de Giffen — aqueles cuja demanda aumenta quando o preço sobe — são uma curiosidade teórica ou existem de fato? Desde que Alfred Marshall popularizou a ideia no século XIX atribuindo-a a Sir Robert Giffen, nenhum estudo havia conseguido documentar convincentemente esse comportamento com dados de campo.
+    **Por que isso importa:** O resultado confirma que bens de Giffen podem surgir em contextos de subsistência, onde o alimento básico domina o orçamento. A mecânica é exatamente a prevista pela Equação de Slutsky: o efeito renda é tão forte (porque o bem representa parcela enorme do gasto) e o bem é tão inferior (porque com mais poder de compra as famílias migram para alimentos melhores) que domina o efeito substituição.
 
-**Como os autores responderam**
+    **Relevância para o capítulo:** O estudo é a ilustração empírica mais rigorosa das Seções 5.3–5.4. Ele demonstra que a Equação de Slutsky não é apenas uma identidade matemática: suas implicações qualitativas — em particular, que um bem de Giffen deve ser inferior e representar parcela substancial do orçamento — encontram confirmação nos dados. O caso também ilumina a discussão sobre bens inferiores no Brasil (farinha de mandioca), embora o contexto brasileiro contemporâneo não seja de subsistência pura, tornando o surgimento de Giffen improvável.
 
-Jensen e Miller conduziram um experimento de campo randomizado em duas províncias chinesas: Hunan (onde o alimento básico é o arroz) e Gansu (onde é o trigo). O experimento subsidiou aleatoriamente o preço do alimento básico para famílias extremamente pobres e mediu as variações na quantidade demandada. O desenho experimental permitiu identificar a curva de demanda de forma causal, evitando problemas de endogeneidade comuns em estudos observacionais.
+??? abstract "Hausman, J. A. (1981). Exact Consumer's Surplus and Deadweight Loss. *The American Economic Review*, 71(4), 662–676."
+    **Pergunta central:** O excedente do consumidor marshalliano, calculado a partir da curva de demanda observável, é uma boa medida da variação de bem-estar causada por mudanças de preço? Ou é necessário recorrer às medidas exatas — variação compensatória (VC) e variação equivalente (VE) — baseadas nas demandas hicksianas não-observáveis?
 
-**O que descobriram**
+    **Método:** Hausman desenvolveu um procedimento para calcular a VC e a VE exatas a partir de estimativas econométricas da demanda marshalliana observada. O método explora a Equação de Slutsky e a dualidade entre problema primal e dual para recuperar a demanda hicksiana a partir da marshalliana, permitindo calcular as medidas exatas de bem-estar sem precisar estimar diretamente a função dispêndio.
 
-Os autores encontraram evidência forte de comportamento de Giffen para o arroz em Hunan: quando o subsídio reduzia o preço do arroz, as famílias passavam a consumir *menos* arroz e *mais* alimentos de maior qualidade (carne, vegetais). Ou seja, o subsídio (redução de preço) diminuiu a demanda — o oposto do que a Lei da Demanda prevê para bens comuns. Para o trigo em Gansu, a evidência foi mais fraca, mas na mesma direção.
+    **Resultado principal:** Aplicando o método à tributação do trabalho nos EUA, Hausman mostrou que o peso morto (perda de bem-estar) calculado com o EC marshalliano pode subestimar a perda real em 30% ou mais. A diferença entre EC e VC/VE é tanto maior quanto maior o efeito renda e quanto maior a variação de preço — exatamente o que a teoria das Seções 5.8.2–5.8.4 prevê.
 
-**Por que isso importa**
+    **Por que isso importa:** O artigo é fundamental para a avaliação de políticas públicas no Brasil. Quando o governo altera alíquotas de ICMS sobre bens essenciais ou implementa tarifas de energia elétrica escalonadas, a diferença entre usar o EC marshalliano e a VC exata pode ser substancial, especialmente para famílias de baixa renda (para as quais o efeito renda é proporcionalmente maior).
 
-O resultado confirma que bens de Giffen podem surgir em contextos de subsistência, onde o alimento básico domina o orçamento. A mecânica é exatamente a prevista pela Equação de Slutsky: o efeito renda é tão forte (porque o bem representa parcela enorme do gasto) e o bem é tão inferior (porque com mais poder de compra as famílias migram para alimentos melhores) que domina o efeito substituição.
-
-**Conexão com este capítulo**
-
-O estudo é a ilustração empírica mais rigorosa das Seções 5.3–5.4. Ele demonstra que a Equação de Slutsky não é apenas uma identidade matemática: suas implicações qualitativas — em particular, que um bem de Giffen deve ser inferior e representar parcela substancial do orçamento — encontram confirmação nos dados. O caso também ilumina a discussão sobre bens inferiores no Brasil (farinha de mandioca), embora o contexto brasileiro contemporâneo não seja de subsistência pura, tornando o surgimento de Giffen improvável.
-
-### Medindo o bem-estar do consumidor com precisão
-
-> **Referência completa:** Hausman, Jerry A. "Exact Consumer's Surplus and Deadweight Loss."
-> *The American Economic Review*, 71(4): 662–676, 1981.
-
-**A pergunta**
-
-O excedente do consumidor marshalliano, calculado a partir da curva de demanda observável, é uma boa medida da variação de bem-estar causada por mudanças de preço? Ou é necessário recorrer às medidas exatas — variação compensatória (VC) e variação equivalente (VE) — baseadas nas demandas hicksianas não-observáveis?
-
-**Como o autor respondeu**
-
-Hausman desenvolveu um procedimento para calcular a VC e a VE exatas a partir de estimativas econométricas da demanda marshalliana observada. O método explora a Equação de Slutsky e a dualidade entre problema primal e dual para recuperar a demanda hicksiana a partir da marshalliana, permitindo calcular as medidas exatas de bem-estar sem precisar estimar diretamente a função dispêndio.
-
-**O que descobriu**
-
-Aplicando o método à tributação do trabalho nos EUA, Hausman mostrou que o peso morto (perda de bem-estar) calculado com o EC marshalliano pode subestimar a perda real em 30% ou mais. A diferença entre EC e VC/VE é tanto maior quanto maior o efeito renda e quanto maior a variação de preço — exatamente o que a teoria das Seções 5.8.2–5.8.4 prevê.
-
-**Por que isso importa**
-
-O artigo é fundamental para a avaliação de políticas públicas no Brasil. Quando o governo altera alíquotas de ICMS sobre bens essenciais ou implementa tarifas de energia elétrica escalonadas, a diferença entre usar o EC marshalliano e a VC exata pode ser substancial, especialmente para famílias de baixa renda (para as quais o efeito renda é proporcionalmente maior).
-
-**Conexão com este capítulo**
-
-Hausman operacionaliza a relação \(VC < EC < VE\) (Seção 5.8.4), mostrando que essa desigualdade tem consequências quantitativas relevantes. O método ilustra também a utilidade prática da Equação de Slutsky: ela não apenas decompõe efeitos, mas permite reconstruir a curva de demanda compensada a partir da observável — ponte entre teoria e política.
-
----
+    **Relevância para o capítulo:** Hausman operacionaliza a relação \(VC < EC < VE\) (Seção 5.8.4), mostrando que essa desigualdade tem consequências quantitativas relevantes. O método ilustra também a utilidade prática da Equação de Slutsky: ela não apenas decompõe efeitos, mas permite reconstruir a curva de demanda compensada a partir da observável — ponte entre teoria e política.
 
 ## Referências do Capítulo
 

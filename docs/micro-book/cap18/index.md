@@ -76,6 +76,13 @@ Sob **informação assimétrica**, o principal não observa o tipo ou a ação d
 !!! definition "Risco Moral (Moral Hazard)"
     Problema de informação assimétrica que surge quando uma parte de uma transação pode tomar **ações não observáveis** (ocultas) que afetam o resultado da relação, e a outra parte não consegue monitorar ou verificar essas ações diretamente. O termo refere-se à mudança de comportamento do agente após a celebração do contrato.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quando alguém está protegido contra as consequências de suas ações, tende a se arriscar mais — porque quem paga a conta é outro.
+
+    **Pense assim:** Depois de contratar um seguro completo para o celular, muita gente deixa de usar capinha e película. Afinal, se o aparelho quebrar, a seguradora cobre. Esse "relaxamento" após o contrato é o risco moral em ação — o comportamento muda porque o custo de ser descuidado foi transferido para outra parte.
+
+    **Por que isso importa:** Franquias e coparticipações em planos de saúde e seguros existem justamente para manter o segurado com "pele no jogo", evitando que a proteção gere descuido excessivo.
+
 O risco moral é um problema **pós-contratual**: a assimetria de informação diz respeito a ações tomadas pelo agente *depois* de firmado o acordo.
 
 ### 18.3.1 A relação proprietário-gerente
@@ -229,6 +236,13 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 !!! note "Resultado de Akerlof"
     Em casos extremos, a seleção adversa pode provocar o **desaparecimento completo** do mercado (market unraveling), mesmo quando ganhos de troca existiriam sob informação simétrica. Esse resultado mostra que a informação assimétrica é uma genuína **falha de mercado**.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quando o comprador não consegue distinguir produtos bons de ruins, os bons somem do mercado — porque ninguém paga o preço justo por eles.
+
+    **Pense assim:** No mercado de carros usados no Brasil, quem vende um carro bem cuidado compete com quem vende um carro cheio de problemas escondidos. O comprador, desconfiado, só topa pagar um preço médio. Mas esse preço é baixo demais para quem tem carro bom, que desiste de vender. Sobram só os "abacaxis" — e o comprador, sabendo disso, oferece menos ainda.
+
+    **Por que isso importa:** Plataformas como OLX, laudos de vistoria cautelar e garantias de concessionária existem justamente para quebrar esse ciclo, reduzindo a assimetria de informação e permitindo que transações boas aconteçam.
 
 <figure>
   <iframe src="../graficos/cap18/mercado-limoes.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
@@ -432,6 +446,13 @@ Resolvendo:
 \]
 
 O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separating) ocorre em \(s^* = \theta_L(\theta_H - \theta_L)\).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Um diploma pode funcionar como um "selo de qualidade" do trabalhador, mesmo que a faculdade em si não ensine nada diretamente útil para o cargo.
+
+    **Pense assim:** No Brasil, muitas empresas exigem diploma superior para vagas que não precisam de conhecimento acadêmico. Por que? Porque concluir uma graduação sinaliza disciplina, persistência e capacidade de aprender — qualidades que o empregador não consegue medir numa entrevista. Quem tem alta produtividade acha a faculdade mais fácil, e por isso o sinal é crível.
+
+    **Por que isso importa:** O modelo de Spence levanta uma provocação importante para a política educacional: parte do retorno à educação pode ser sinalização pura, não ganho de produtividade real — o que muda completamente a análise de custo-benefício de expandir o ensino superior.
 
 !!! note "Eficiência da Sinalização"
     No modelo de Spence, a sinalização envolve um **custo social** real: recursos são gastos em educação apenas para sinalizar tipo, sem ganho de produtividade. O equilíbrio separador pode ser Pareto-inferior ao equilíbrio agregador se a perda de bem-estar do sinal superar o ganho informacional. Esse resultado ilustra que a revelação de informação nem sempre é socialmente desejável.
@@ -654,61 +675,27 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ## Apêndice: A Pesquisa em Ação
 
-### Testando Informação Assimétrica no Mercado de Seguros
+??? abstract "Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78."
+    **Pergunta central:** A assimetria de informação é realmente importante nos mercados de seguros, ou é apenas uma elegância teórica? Se seleção adversa ou risco moral estiverem presentes, devemos observar uma **correlação positiva** entre a cobertura do seguro escolhida e a ocorrência de sinistros: pessoas que escolhem mais cobertura deveriam ter mais acidentes (seja porque são mais arriscadas, seja porque se protegem menos). Mas essa correlação existe nos dados?
 
-> **Referência completa:** Chiappori, Pierre-André, e Bernard Salanié. "Testing for Asymmetric Information in Insurance Markets."
-> *Journal of Political Economy*, 108(1): 56–78, 2000.
-> DOI: 10.1086/262111
+    **Método:** Chiappori e Salanié desenvolveram um teste empírico elegante e geral. Usando dados detalhados de seguros de automóveis na França (jovens motoristas iniciantes), compararam a cobertura escolhida com a frequência de acidentes nos anos subsequentes, controlando por todas as variáveis observáveis que as seguradoras usam para precificar (idade, sexo, localização, tipo de veículo). Se, após esses controles, a correlação cobertura-sinistro for positiva, há evidência de informação assimétrica residual.
 
-**A pergunta**
+    **Resultado principal:** Surpreendentemente, os autores **não encontraram** correlação positiva significativa entre cobertura e sinistros para a amostra de jovens motoristas franceses. Isso sugere que as seguradoras já classificam os riscos de forma eficiente usando variáveis observáveis, e que a informação assimétrica residual pode ser pequena — pelo menos nesse mercado específico. O resultado gerou um amplo debate e motivou dezenas de estudos subsequentes em diferentes mercados.
 
-A assimetria de informação é realmente importante nos mercados de seguros, ou é apenas uma elegância teórica? Se seleção adversa ou risco moral estiverem presentes, devemos observar uma **correlação positiva** entre a cobertura do seguro escolhida e a ocorrência de sinistros: pessoas que escolhem mais cobertura deveriam ter mais acidentes (seja porque são mais arriscadas, seja porque se protegem menos). Mas essa correlação existe nos dados?
+    **Por que isso importa:** O teste de Chiappori-Salanié tornou-se o padrão metodológico para avaliar empiricamente a presença de informação assimétrica. No Brasil, onde o mercado de seguros de automóveis é expressivo (prêmios de R$ 45 bilhões em 2024, segundo a Susep) e a regulação é intensa, a aplicação desse teste ajudaria a avaliar se as diferenças de preço entre perfis refletem informação assimétrica ou apenas classificação de risco eficiente.
 
-**Como os autores responderam**
+    **Relevância para o capítulo:** O paper testa diretamente as previsões do modelo de Rothschild-Stiglitz (seção 18.4.3): se há seleção adversa, tipos de alto risco compram mais cobertura. A ausência de correlação sugere que os mecanismos de triagem das seguradoras (seção 18.6) — menus de franquias, bônus por ausência de sinistros, inspeção veicular — podem ser suficientemente eficazes para resolver o problema informacional.
 
-Chiappori e Salanié desenvolveram um teste empírico elegante e geral. Usando dados detalhados de seguros de automóveis na França (jovens motoristas iniciantes), compararam a cobertura escolhida com a frequência de acidentes nos anos subsequentes, controlando por todas as variáveis observáveis que as seguradoras usam para precificar (idade, sexo, localização, tipo de veículo). Se, após esses controles, a correlação cobertura-sinistro for positiva, há evidência de informação assimétrica residual.
+??? abstract "Matoso, R.; Rezende, M. (2014). Asymmetric Information in Oil and Gas Lease Auctions with a National Company. *International Journal of Industrial Organization*, 33, 72–82."
+    **Pergunta central:** A Petrobras, como empresa nacional com décadas de experiência exploratória, possui vantagem informacional sobre concorrentes internacionais nos leilões de blocos de petróleo e gás? Se sim, como essa assimetria se manifesta no comportamento de lances e nos resultados dos leilões?
 
-**O que descobriram**
+    **Método:** Os autores utilizaram dados dos leilões de concessão da ANP (Agência Nacional do Petróleo) para testar as previsões de modelos de leilões com informação assimétrica (Hendricks e Porter, 1988). A identificação explora o fato de que a Petrobras tinha acesso privilegiado a dados geológicos e sísmicos, especialmente em áreas adjacentes a campos já explorados (os chamados *drainage leases*). Compararam o comportamento de lances da Petrobras versus concorrentes estrangeiros em diferentes tipos de blocos.
 
-Surpreendentemente, os autores **não encontraram** correlação positiva significativa entre cobertura e sinistros para a amostra de jovens motoristas franceses. Isso sugere que as seguradoras já classificam os riscos de forma eficiente usando variáveis observáveis, e que a informação assimétrica residual pode ser pequena — pelo menos nesse mercado específico. O resultado gerou um amplo debate e motivou dezenas de estudos subsequentes em diferentes mercados.
+    **Resultado principal:** A Petrobras apresentou comportamento consistente com vantagem informacional: (i) participou mais frequentemente de leilões para blocos que se revelaram mais lucrativos; (ii) ofertou lances maiores para blocos de maior valor; (iii) competiu mais agressivamente por blocos re-ofertados após não receberem lances na primeira rodada. Empresas estrangeiras, por sua vez, enfrentavam maior incerteza e participavam menos de blocos próximos a áreas já exploradas pela Petrobras.
 
-**Por que isso importa**
+    **Por que isso importa:** O resultado tem implicações diretas para o desenho dos leilões do pré-sal. Se a empresa nacional tem vantagem informacional, o formato do leilão pode afetar a eficiência e a receita do governo de formas que o Teorema da Equivalência de Receita não prevê (pois uma de suas condições — simetria dos licitantes — é violada). Isso justifica regras como a participação obrigatória da Petrobras como operadora em certos blocos do pré-sal.
 
-O teste de Chiappori-Salanié tornou-se o padrão metodológico para avaliar empiricamente a presença de informação assimétrica. No Brasil, onde o mercado de seguros de automóveis é expressivo (prêmios de R$ 45 bilhões em 2024, segundo a Susep) e a regulação é intensa, a aplicação desse teste ajudaria a avaliar se as diferenças de preço entre perfis refletem informação assimétrica ou apenas classificação de risco eficiente.
-
-**Conexão com este capítulo**
-
-O paper testa diretamente as previsões do modelo de Rothschild-Stiglitz (seção 18.4.3): se há seleção adversa, tipos de alto risco compram mais cobertura. A ausência de correlação sugere que os mecanismos de triagem das seguradoras (seção 18.6) — menus de franquias, bônus por ausência de sinistros, inspeção veicular — podem ser suficientemente eficazes para resolver o problema informacional.
-
----
-
-### Informação Assimétrica nos Leilões de Petróleo Brasileiros
-
-> **Referência completa:** Matoso, Rafael, e Marcelo Rezende. "Asymmetric Information in Oil and Gas Lease Auctions with a National Company."
-> *International Journal of Industrial Organization*, 33: 72–82, 2014.
-> DOI: 10.1016/j.ijindorg.2014.02.006
-
-**A pergunta**
-
-A Petrobras, como empresa nacional com décadas de experiência exploratória, possui vantagem informacional sobre concorrentes internacionais nos leilões de blocos de petróleo e gás? Se sim, como essa assimetria se manifesta no comportamento de lances e nos resultados dos leilões?
-
-**Como os autores responderam**
-
-Os autores utilizaram dados dos leilões de concessão da ANP (Agência Nacional do Petróleo) para testar as previsões de modelos de leilões com informação assimétrica (Hendricks e Porter, 1988). A identificação explora o fato de que a Petrobras tinha acesso privilegiado a dados geológicos e sísmicos, especialmente em áreas adjacentes a campos já explorados (os chamados *drainage leases*). Compararam o comportamento de lances da Petrobras versus concorrentes estrangeiros em diferentes tipos de blocos.
-
-**O que descobriram**
-
-A Petrobras apresentou comportamento consistente com vantagem informacional: (i) participou mais frequentemente de leilões para blocos que se revelaram mais lucrativos; (ii) ofertou lances maiores para blocos de maior valor; (iii) competiu mais agressivamente por blocos re-ofertados após não receberem lances na primeira rodada. Empresas estrangeiras, por sua vez, enfrentavam maior incerteza e participavam menos de blocos próximos a áreas já exploradas pela Petrobras.
-
-**Por que isso importa**
-
-O resultado tem implicações diretas para o desenho dos leilões do pré-sal. Se a empresa nacional tem vantagem informacional, o formato do leilão pode afetar a eficiência e a receita do governo de formas que o Teorema da Equivalência de Receita não prevê (pois uma de suas condições — simetria dos licitantes — é violada). Isso justifica regras como a participação obrigatória da Petrobras como operadora em certos blocos do pré-sal.
-
-**Conexão com este capítulo**
-
-O paper é uma aplicação empírica direta da teoria de leilões com informação assimétrica (seção 18.7). A vantagem informacional da Petrobras é análoga ao problema de *common value* com licitantes assimétricos: o licitante mais informado pode extrair renda informacional, enquanto os menos informados enfrentam uma versão ampliada da maldição do vencedor. O resultado ilustra que o desenho do leilão importa — contrariando a equivalência de receita quando suas condições são violadas.
-
----
+    **Relevância para o capítulo:** O paper é uma aplicação empírica direta da teoria de leilões com informação assimétrica (seção 18.7). A vantagem informacional da Petrobras é análoga ao problema de *common value* com licitantes assimétricos: o licitante mais informado pode extrair renda informacional, enquanto os menos informados enfrentam uma versão ampliada da maldição do vencedor. O resultado ilustra que o desenho do leilão importa — contrariando a equivalência de receita quando suas condições são violadas.
 
 ## Referências
 

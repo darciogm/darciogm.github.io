@@ -92,6 +92,13 @@ S(p) = \sum_{j=1}^{m} S_j(p)
 
     A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O preço de equilíbrio é aquele em que ninguém está frustrado — todo mundo que quer comprar a esse preço consegue, e todo mundo que quer vender encontra comprador.
+
+    **Pense assim:** Na feira livre do seu bairro, se o quilo do tomate está caro demais, sobra tomate na barraca e o feirante baixa o preço. Se está barato demais, falta tomate e os consumidores competem entre si, puxando o preço para cima. O equilíbrio é o ponto em que a pilha de tomates na barraca "dá certo" com a fila de compradores — sem sobra nem falta.
+
+    **Por que isso importa:** A formação de preços por oferta e demanda é o mecanismo central que coordena decisões descentralizadas de milhões de agentes — e entender esse processo é essencial para avaliar qualquer intervenção de política pública nos mercados.
+
 ### Estabilidade do equilíbrio
 
 O equilíbrio marshalliano é estável quando, a preços acima do equilíbrio, há excesso de oferta (pressionando o preço para baixo) e, a preços abaixo, há excesso de demanda (pressionando o preço para cima). Formalmente, a condição de estabilidade walrasiana requer:
@@ -288,6 +295,13 @@ W = EC + EP
 !!! tip "Intuição: por que o equilíbrio competitivo maximiza o bem-estar?"
     A cada unidade transacionada, o benefício marginal do consumidor (dado pela curva de demanda) supera o custo marginal do produtor (dado pela curva de oferta). Enquanto essa condição valer, produzir e vender mais uma unidade gera ganho líquido para a sociedade. No equilíbrio competitivo, a última unidade transacionada tem benefício marginal *exatamente igual* ao custo marginal — não há mais ganhos a explorar. Qualquer quantidade menor desperdiça trocas mutuamente vantajosas; qualquer quantidade maior força trocas cujo custo supera o benefício.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O excedente do consumidor mede o "desconto" que ele sente por pagar menos do que estaria disposto, e o excedente do produtor mede o "bônus" por receber mais do que o mínimo necessário para vender.
+
+    **Pense assim:** Você pagaria até R$ 50 por um ingresso de cinema, mas a bilheteria cobra R$ 30. Os R$ 20 de "alívio" que você sente são seu excedente de consumidor. Do outro lado, o cinema aceitaria vender a partir de R$ 15 (seu custo marginal), mas recebe R$ 30 — os R$ 15 de "folga" são o excedente do produtor. Somando os dois, temos o ganho total que aquela troca gerou para a sociedade.
+
+    **Por que isso importa:** Qualquer política que distorce preços — tabelamento, imposto, subsídio — redistribui ou destrói esses excedentes, e a perda de peso morto é justamente a parte que ninguém aproveita.
+
 ---
 
 ## 12.10 Controles de Preços e Escassez
@@ -414,6 +428,13 @@ X(p_c) = S(p_p) = S(p_c - t)
 !!! note "Irrelevância do lado legal"
     A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quem realmente paga o imposto não é quem o governo manda pagar — é quem tem menos flexibilidade para escapar dele.
+
+    **Pense assim:** Quando o governo aumenta o ICMS da gasolina e cobra do posto, o posto repassa quase tudo ao consumidor no preço da bomba. Por quê? Porque o motorista *precisa* de gasolina (demanda inelástica) e não tem muita alternativa, enquanto o posto pode ajustar a oferta. O lado mais "preso" ao mercado é quem absorve a maior fatia do imposto, independentemente de quem assina a guia de recolhimento.
+
+    **Por que isso importa:** Esse princípio é central para avaliar reformas tributárias no Brasil — saber quem de fato arca com o ônus de cada tributo é essencial para analisar impactos distributivos.
+
 !!! example "Incidência tributária no Brasil: ICMS sobre combustíveis"
     Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do IPEA) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba (ANP, Boletim de Preços).
 
@@ -444,6 +465,13 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
     \[
     PPM = \frac{1}{2} \cdot t^2 \cdot \frac{|\varepsilon_D| \cdot \varepsilon_S}{|\varepsilon_D| + \varepsilon_S} \cdot \frac{Q_0}{p_0}
     \]
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A perda de peso morto é o valor das trocas que deixaram de acontecer — um prejuízo que ninguém embolsa.
+
+    **Pense assim:** Imagine que um imposto sobre o cafezinho faz o preço subir de R$ 5 para R$ 6. Alguns clientes que compravam a R$ 5 desistem, e o dono do café perde essas vendas. O governo arrecada sobre os cafés que ainda são vendidos, mas o valor das transações que sumiram — aquele cafezinho que o cliente queria e o vendedor podia oferecer — evaporou. Esse "triângulo" de valor perdido é a perda de peso morto.
+
+    **Por que isso importa:** A fórmula mostra que a perda de peso morto cresce com o *quadrado* do imposto — dobrar o imposto quadruplica a ineficiência — o que fundamenta a recomendação de bases tributárias amplas com alíquotas baixas, como a reforma do IBS/CBS no Brasil.
 
 ---
 
@@ -772,7 +800,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## Apêndice: A Pesquisa em Ação
 
-??? info "Roberts, M. J. & Schlenker, W. (2013). Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate. *American Economic Review*, 103(6), 2265–2295."
+??? abstract "Roberts, M. J. & Schlenker, W. (2013). Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate. *American Economic Review*, 103(6), 2265–2295."
     **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)
 
     **Contexto.** A estimação de elasticidades de oferta e demanda é central para a análise de equilíbrio parcial, mas enfrenta o clássico problema de identificação: variações observadas em preços e quantidades refletem simultaneamente deslocamentos de oferta e demanda. Roberts e Schlenker enfrentam esse desafio no mercado de commodities agrícolas — exatamente o tipo de mercado competitivo analisado neste capítulo.
@@ -783,7 +811,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Conexão com o capítulo.** O artigo é uma aplicação direta da análise de estática comparativa (Seção 12.4) e da discussão sobre elasticidades de oferta e demanda (Seções 12.1 e 12.7) em mercados competitivos reais. Também dialoga com o Box Brasil sobre a soja, cujas elasticidades estimadas pelo IPEA e CONAB são comparáveis às encontradas no estudo.
 
-??? info "Weyl, E. G. & Fabinger, M. (2013). Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition. *Journal of Political Economy*, 121(3), 528–583."
+??? abstract "Weyl, E. G. & Fabinger, M. (2013). Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition. *Journal of Political Economy*, 121(3), 528–583."
     **DOI:** [10.1086/670401](https://doi.org/10.1086/670401)
 
     **Contexto.** A Seção 12.11 demonstra que, em concorrência perfeita, a incidência de um imposto específico depende das elasticidades relativas de oferta e demanda. Mas o que acontece quando os mercados não são perfeitamente competitivos? Weyl e Fabinger desenvolvem uma teoria unificada de *pass-through* (repasse) que generaliza os resultados clássicos de incidência para estruturas de mercado imperfeitas.

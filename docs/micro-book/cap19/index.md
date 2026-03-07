@@ -46,6 +46,13 @@ onde \(x_A^k\) é o consumo do bem \(k\) pelo indivíduo \(A\).
 !!! note "Externalidades Pecuniárias vs. Tecnológicas"
     É importante distinguir **externalidades tecnológicas** (reais) de **externalidades pecuniárias**. Externalidades pecuniárias operam *via preços*: quando uma firma expande sua produção e reduz o preço do produto, prejudicando concorrentes. Essas não são verdadeiras externalidades no sentido econômico, pois são mediadas pelo mercado e não geram ineficiência. Apenas externalidades tecnológicas — que afetam diretamente funções de produção ou utilidade — constituem falhas de mercado.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Uma externalidade existe quando o preço de um produto não reflete todo o custo (ou benefício) que sua produção ou consumo impõe à sociedade.
+
+    **Pense assim:** Quando uma fábrica em Cubatão polui o rio, o preço do produto que ela vende não inclui o custo da água contaminada para os pescadores e moradores rio abaixo. A fábrica "exporta" parte do seu custo para a sociedade sem pagar por isso. Da mesma forma, quem se vacina protege não só a si mesmo, mas também quem está ao redor — um benefício que não entra no cálculo individual.
+
+    **Por que isso importa:** Externalidades são a principal justificativa econômica para intervenção do governo via impostos, subsídios ou regulação — do controle de emissões ao financiamento público da vacinação.
+
 ---
 
 ## 19.2 Externalidades e Ineficiência Alocativa
@@ -173,6 +180,13 @@ p_1 = C_1'(q_1) + t^*
 
 Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{soc}\).
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O imposto pigouviano faz o poluidor pagar exatamente pelo dano que causa, transformando um custo "invisível" para a sociedade em um custo real para a empresa.
+
+    **Pense assim:** Se uma usina termelétrica paga R$ 0 pela fumaça que emite, ela polui sem pensar duas vezes. Mas se o governo cobra um imposto por tonelada de CO₂ igual ao dano ambiental causado, a usina passa a incluir essa conta no seu cálculo de custos. Poluir vira caro, e a produção se ajusta ao nível que a sociedade realmente quer.
+
+    **Por que isso importa:** O mercado regulado de carbono aprovado no Brasil em 2024 segue essa lógica — precificar o carbono para que empresas internalizem o custo climático de suas emissões.
+
 !!! proof "Demonstração: O Imposto Pigouviano Ótimo Restaura a Eficiência"
     **Objetivo**: Mostrar que um imposto \(t^*\) igual ao custo marginal externo no ótimo social induz a firma poluidora a escolher o nível de produção socialmente eficiente.
 
@@ -236,6 +250,13 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 !!! abstract "Teorema de Coase (Coase, 1960)"
     Se os **direitos de propriedade** estão claramente definidos e os **custos de transação** são nulos, a barganha privada entre as partes levará à alocação eficiente de recursos, **independentemente** de qual parte detém o direito de propriedade. A distribuição dos direitos afeta apenas a distribuição de riqueza, não a eficiência.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Se as partes afetadas conseguem sentar e negociar sem custos, elas mesmas resolvem o problema da externalidade — sem precisar de governo.
+
+    **Pense assim:** Um bar com música alta no Leblon incomoda os moradores do prédio ao lado. Se o direito é do bar, os moradores podem se juntar e pagar para ele reduzir o volume. Se o direito é dos moradores, o bar pode compensá-los financeiramente. Nos dois casos, chegam ao mesmo nível de som — o que muda é quem paga.
+
+    **Por que isso importa:** Na prática, custos de transação são altos (imagine negociar com milhões de afetados pela poluição do ar), e por isso o Teorema de Coase funciona mais como um alerta sobre os limites da solução privada do que como uma receita prática.
 
 Formalmente, suponha que a firma poluidora e a firma afetada podem negociar. Se a firma afetada tem o direito a um ambiente limpo, a poluidora deve compensá-la pelo dano. Se a poluidora tem o direito de poluir, a firma afetada paga para que ela reduza a produção. Em ambos os casos, a produção converge para \(q^{soc}\) onde:
 
@@ -376,6 +397,13 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 !!! definition "Problema do Carona"
     Ocorre quando indivíduos racionais subinvestem na provisão de um bem público (ou na revelação de suas preferências) porque esperam se beneficiar das contribuições alheias sem pagar por elas. O bem público é não-excludente: mesmo quem não paga pode consumir.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Se você pode usufruir de algo sem pagar, por que pagar? Esse raciocínio individual, repetido por todos, faz com que ninguém contribua — e o bem público não sai do papel.
+
+    **Pense assim:** Em um condomínio, todos querem uma piscina reformada, mas cada morador prefere que os outros paguem a obra. Se a contribuição fosse voluntária, muitos "pegariam carona" nos vizinhos generosos. Por isso condomínios usam rateio obrigatório — e, por analogia, o governo cobra impostos para financiar iluminação pública, defesa nacional e saneamento.
+
+    **Por que isso importa:** O problema do carona é a razão econômica fundamental para a existência de impostos e provisão pública de bens como segurança, infraestrutura e pesquisa científica básica.
 
 No contexto do equilíbrio de Lindahl, cada indivíduo tem incentivo para subreportar sua valoração pelo bem público, pagando um preço de Lindahl menor e deixando que outros financiem a provisão. Formalmente, se o preço de Lindahl é determinado pela valoração reportada \(\hat{\tau}_i\):
 

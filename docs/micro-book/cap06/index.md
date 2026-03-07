@@ -51,6 +51,13 @@ A classificação mais intuitiva — e a que se observa diretamente nos dados �
 !!! note "Assimetria da classificação bruta"
     A classificação marshalliana **não é necessariamente simétrica**: pode ocorrer que \(\frac{\partial x_1}{\partial p_2} > 0\) enquanto \(\frac{\partial x_2}{\partial p_1} < 0\). Isso decorre da interferência do efeito renda, que contamina a relação cruzada de forma assimétrica. Essa é uma das razões pelas quais a classificação hicksiana é teoricamente preferida.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Substitutos são bens que competem pela sua escolha; complementos são bens que andam juntos — e a classificação muda conforme você isole ou não o efeito renda.
+
+    **Pense assim:** No posto de gasolina, gasolina e etanol são substitutos — se um encarece, você abastece com o outro. Já arroz e feijão são complementos: ninguém pede "só arroz" no prato feito. A classificação "bruta" (marshalliana) mistura o efeito renda; a "líquida" (hicksiana) isola a substituição pura. Dois bens podem parecer complementos nos dados, mas ser substitutos puros quando se desconta o empobrecimento.
+
+    **Por que isso importa:** Saber se dois bens são substitutos ou complementos é essencial para prever os efeitos de impostos seletivos — por exemplo, tributar refrigerante aumenta a demanda por água mineral (substitutos), mas não por copos descartáveis (complementos).
+
 **Exemplos para o contexto brasileiro:**
 
 - **Carne bovina e frango**: substitutos brutos — quando a carne bovina encarece, a demanda por frango tende a subir. Dados do CEPEA/ESALQ mostram que, entre 2019 e 2021, a arroba do boi gordo subiu cerca de 80% em termos reais, período em que o consumo per capita de frango cresceu significativamente.
@@ -95,6 +102,13 @@ Se \(x_i\) é um bem normal (\(\frac{\partial x_i}{\partial I} > 0\)), o efeito 
 \]
 
 Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito renda negativo exceder o efeito substituição positivo.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A classificação hicksiana (líquida) é a "verdadeira" relação de substituição entre bens, porque remove a contaminação do efeito renda.
+
+    **Pense assim:** Imagine que o preço do plano de saúde sobe. Nos dados brutos, você pode observar que as famílias também reduzem o consumo de educação privada — parecendo complementos. Mas, na verdade, ambos caíram porque a família ficou mais pobre (efeito renda). Isolando esse empobrecimento (análise hicksiana), descobre-se que saúde e educação privada na verdade competem pelo mesmo orçamento — são substitutos líquidos.
+
+    **Por que isso importa:** Políticas que subsidiam um bem (como isenção de IR para planos de saúde) podem afetar a demanda por outros bens de formas que só a decomposição de Slutsky revela corretamente.
 
 ---
 
@@ -295,6 +309,13 @@ Quando a condição de Gorman não é satisfeita, a demanda de mercado depende d
     O programa Bolsa Família, que em 2024 atendia cerca de 21 milhões de famílias, ilustra por que a condição de Gorman importa na prática. As famílias beneficiárias têm propensões marginais a consumir alimentos, gás de cozinha e vestuário muito superiores às das famílias de renda mais alta. Segundo dados da POF/IBGE 2017-2018, famílias com renda per capita de até 1 salário mínimo destinam cerca de 22% do orçamento a alimentação, enquanto famílias com renda acima de 15 salários mínimos destinam cerca de 7,6%.
 
     Se as curvas de Engel fossem lineares e paralelas (condição de Gorman), transferir R$ 1 de uma família rica para uma pobre não alteraria a demanda agregada por nenhum bem — apenas a composição individual mudaria. Mas como as curvas de Engel diferem entre classes de renda, a redistribuição aumenta a demanda agregada por alimentos básicos e reduz a demanda por bens de luxo, mesmo com renda total constante. A elasticidade-renda da demanda por alimentos é substancialmente maior nas classes de renda mais baixa.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A demanda de mercado não depende só da renda total do país, mas de como essa renda é distribuída entre as famílias.
+
+    **Pense assim:** Se o Brasil tem um PIB de R$ 10 trilhões, a demanda agregada por arroz e feijão seria muito diferente caso essa renda estivesse dividida igualmente entre todos ou concentrada em poucos milionários. Famílias de baixa renda gastam proporcionalmente mais com alimentos básicos. Por isso, programas como o Bolsa Família alteram a composição da demanda agregada mesmo sem mudar a renda total — redistribuir é realocar demanda.
+
+    **Por que isso importa:** Ignorar a distribuição de renda ao prever a demanda de mercado pode levar a erros graves em planejamento de produção agrícola, política tributária e avaliação de programas sociais.
 
 ### 6.7.3 Propriedades da demanda de mercado
 
@@ -632,41 +653,23 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ## Apêndice: A Pesquisa em Ação
 
-### Um sistema quase ideal de demanda
+??? abstract "Deaton, Angus; Muellbauer, John. (1980). An Almost Ideal Demand System. *American Economic Review*, 70(3), 312-326."
+    **Pergunta central:** Como estimar empiricamente um sistema completo de equações de demanda — com vários bens e interações cruzadas — de modo que seja consistente com a teoria do consumidor (homogeneidade, simetria de Slutsky, agregação) e ao mesmo tempo flexível o bastante para capturar padrões reais dos dados?
 
-> **Referência completa:** Deaton, Angus; Muellbauer, John. "An Almost Ideal Demand System." *American Economic Review*, 70(3): 312-326, 1980.
+    **Método:** Deaton e Muellbauer propuseram o **AIDS** (*Almost Ideal Demand System*), um modelo em que as parcelas orçamentárias de cada bem são funções lineares dos logaritmos dos preços e do logaritmo da renda real. O modelo assume uma forma funcional específica para a função dispêndio (da família PIGLOG — *Price-Independent Generalized Logarithmic*), que garante consistência com a teoria da escolha do consumidor. As equações de demanda resultantes satisfazem automaticamente a agregação de Engel, a homogeneidade de grau zero e permitem testar a simetria de Slutsky diretamente nos dados.
 
-**A pergunta**
-Como estimar empiricamente um sistema completo de equações de demanda — com vários bens e interações cruzadas — de modo que seja consistente com a teoria do consumidor (homogeneidade, simetria de Slutsky, agregação) e ao mesmo tempo flexível o bastante para capturar padrões reais dos dados?
+    **Resultado principal:** Aplicando o modelo a dados de consumo britânicos (1954-1974), os autores estimaram elasticidades-preço próprias e cruzadas para oito categorias de bens (alimentos, vestuário, habitação, combustível, bebidas, transporte, serviços e outros). Os resultados mostraram que alimentos e combustível são necessidades (elasticidade-renda menor que 1), enquanto transporte e serviços são luxos. As elasticidades cruzadas revelaram padrões de substituição e complementaridade consistentes com a intuição econômica — por exemplo, alimentação e refeições fora do domicílio são substitutos líquidos.
 
-**Como os autores responderam**
-Deaton e Muellbauer propuseram o **AIDS** (*Almost Ideal Demand System*), um modelo em que as parcelas orçamentárias de cada bem são funções lineares dos logaritmos dos preços e do logaritmo da renda real. O modelo assume uma forma funcional específica para a função dispêndio (da família PIGLOG — *Price-Independent Generalized Logarithmic*), que garante consistência com a teoria da escolha do consumidor. As equações de demanda resultantes satisfazem automaticamente a agregação de Engel, a homogeneidade de grau zero e permitem testar a simetria de Slutsky diretamente nos dados.
+    **Relevância para o capítulo:** O AIDS é uma das ferramentas empíricas mais utilizadas para estimar as relações cruzadas de demanda discutidas nas Seções 6.1 a 6.4. A forma PIGLOG garante que a condição de Gorman (Seção 6.7) é satisfeita em uma versão relaxada, permitindo agregação exata sob certas condições. O artigo demonstra como a teoria pura — Slutsky, simetria, homogeneidade — pode ser operacionalizada empiricamente. O modelo é amplamente utilizado até hoje, inclusive pelo IBGE e pelo IPEA em estudos sobre padrões de consumo brasileiros com dados da POF. Angus Deaton recebeu o Prêmio Nobel de Economia em 2015.
 
-**O que descobriram**
-Aplicando o modelo a dados de consumo britânicos (1954-1974), os autores estimaram elasticidades-preço próprias e cruzadas para oito categorias de bens (alimentos, vestuário, habitação, combustível, bebidas, transporte, serviços e outros). Os resultados mostraram que alimentos e combustível são necessidades (elasticidade-renda menor que 1), enquanto transporte e serviços são luxos. As elasticidades cruzadas revelaram padrões de substituição e complementaridade consistentes com a intuição econômica — por exemplo, alimentação e refeições fora do domicílio são substitutos líquidos.
+??? abstract "Berry, Steven; Levinsohn, James; Pakes, Ariel. (1995). Automobile Prices in Market Equilibrium. *Econometrica*, 63(4), 841-890. DOI: 10.2307/2171802"
+    **Pergunta central:** Como estimar a demanda por produtos diferenciados — bens que são substitutos imperfeitos entre si, diferindo em múltiplos atributos — quando os dados disponíveis são agregados (participações de mercado e preços) e os preços são endógenos?
 
-**Conexão com este capítulo**
-O AIDS é uma das ferramentas empíricas mais utilizadas para estimar as relações cruzadas de demanda discutidas nas Seções 6.1 a 6.4. A forma PIGLOG garante que a condição de Gorman (Seção 6.7) é satisfeita em uma versão relaxada, permitindo agregação exata sob certas condições. O artigo demonstra como a teoria pura — Slutsky, simetria, homogeneidade — pode ser operacionalizada empiricamente. O modelo é amplamente utilizado até hoje, inclusive pelo IBGE e pelo IPEA em estudos sobre padrões de consumo brasileiros com dados da POF. Angus Deaton recebeu o Prêmio Nobel de Economia em 2015.
+    **Método:** Berry, Levinsohn e Pakes (BLP) desenvolveram um modelo estrutural de demanda que combina a abordagem de Lancaster (Seção 6.6) com heterogeneidade de preferências entre consumidores. Cada automóvel é descrito por um vetor de características (potência, tamanho, consumo, preço), e cada consumidor tem preferências idiossincráticas sobre essas características. O modelo gera funções de demanda agregada que dependem de todos os preços — capturando substituição e complementaridade entre modelos. Para lidar com a endogeneidade dos preços (carros de melhor qualidade têm preços mais altos), os autores usaram variáveis instrumentais baseadas nas características dos concorrentes.
 
----
+    **Resultado principal:** Aplicando o modelo ao mercado americano de automóveis (1971-1990), os autores estimaram elasticidades-preço próprias e cruzadas para centenas de modelos. Os resultados mostraram padrões de substituição altamente realistas: carros compactos competem principalmente entre si e menos com SUVs, exatamente como a abordagem de Lancaster prevê (carros no mesmo segmento compartilham atributos semelhantes). As elasticidades estimadas permitiram avaliar o poder de mercado das montadoras e simular os efeitos de fusões sobre preços.
 
-### Preços, produtos e o poder de mercado: demanda por automóveis
-
-> **Referência completa:** Berry, Steven; Levinsohn, James; Pakes, Ariel. "Automobile Prices in Market Equilibrium." *Econometrica*, 63(4): 841-890, 1995. DOI: 10.2307/2171802
-
-**A pergunta**
-Como estimar a demanda por produtos diferenciados — bens que são substitutos imperfeitos entre si, diferindo em múltiplos atributos — quando os dados disponíveis são agregados (participações de mercado e preços) e os preços são endógenos?
-
-**Como os autores responderam**
-Berry, Levinsohn e Pakes (BLP) desenvolveram um modelo estrutural de demanda que combina a abordagem de Lancaster (Seção 6.6) com heterogeneidade de preferências entre consumidores. Cada automóvel é descrito por um vetor de características (potência, tamanho, consumo, preço), e cada consumidor tem preferências idiossincráticas sobre essas características. O modelo gera funções de demanda agregada que dependem de todos os preços — capturando substituição e complementaridade entre modelos. Para lidar com a endogeneidade dos preços (carros de melhor qualidade têm preços mais altos), os autores usaram variáveis instrumentais baseadas nas características dos concorrentes.
-
-**O que descobriram**
-Aplicando o modelo ao mercado americano de automóveis (1971-1990), os autores estimaram elasticidades-preço próprias e cruzadas para centenas de modelos. Os resultados mostraram padrões de substituição altamente realistas: carros compactos competem principalmente entre si e menos com SUVs, exatamente como a abordagem de Lancaster prevê (carros no mesmo segmento compartilham atributos semelhantes). As elasticidades estimadas permitiram avaliar o poder de mercado das montadoras e simular os efeitos de fusões sobre preços.
-
-**Conexão com este capítulo**
-O modelo BLP é uma implementação empírica direta do modelo de Lancaster (Seção 6.6): os consumidores derivam utilidade dos *atributos* dos automóveis, não dos veículos em si. A estrutura de substituição entre produtos emerge endogenamente da proximidade no espaço de atributos, em vez de ser imposta *ad hoc*. Além disso, a agregação da demanda individual (Seção 6.7) é central no modelo — a demanda de mercado resulta da soma de escolhas heterogêneas, e a heterogeneidade de preferências (violação da condição de Gorman) é uma *feature*, não um bug. O artigo é um dos mais citados em organização industrial e tornou-se referência para a análise antitruste de fusões pelo CADE no Brasil e por autoridades concorrenciais no mundo todo.
-
----
+    **Relevância para o capítulo:** O modelo BLP é uma implementação empírica direta do modelo de Lancaster (Seção 6.6): os consumidores derivam utilidade dos *atributos* dos automóveis, não dos veículos em si. A estrutura de substituição entre produtos emerge endogenamente da proximidade no espaço de atributos, em vez de ser imposta *ad hoc*. Além disso, a agregação da demanda individual (Seção 6.7) é central no modelo — a demanda de mercado resulta da soma de escolhas heterogêneas, e a heterogeneidade de preferências (violação da condição de Gorman) é uma *feature*, não um bug. O artigo é um dos mais citados em organização industrial e tornou-se referência para a análise antitruste de fusões pelo CADE no Brasil e por autoridades concorrenciais no mundo todo.
 
 ## Leituras Recomendadas
 

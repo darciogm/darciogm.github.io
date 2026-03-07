@@ -19,6 +19,13 @@ Mas antes de mergulhar na análise formal, vale perguntar: **por que existem fir
 
 A firma, portanto, é uma resposta institucional à existência de custos de transação. Sua fronteira — isto é, quais atividades são realizadas internamente e quais são contratadas no mercado — é determinada pela comparação entre custos de transação e custos de organização interna.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Firmas existem porque negociar tudo no mercado tem um custo — e às vezes sai mais barato resolver as coisas "dentro de casa".
+
+    **Pense assim:** Imagine um dono de restaurante em São Paulo. Ele poderia, todo dia, ir à CEAGESP negociar preço de cada verdura com um fornecedor diferente. Mas o tempo gasto, o risco de levar gato por lebre e a burocracia dos contratos tornam mais eficiente ter um fornecedor fixo ou até uma horta própria. Essa é a lógica dos custos de transação.
+
+    **Por que isso importa:** Entender custos de transação ajuda a explicar por que empresas como a JBS se integram verticalmente e por que políticas de simplificação burocrática (como o MEI) podem alterar a fronteira da firma.
+
 **Oliver Williamson** (1975, 1985) expandiu a análise de Coase, identificando três atributos das transações que determinam a forma organizacional mais eficiente:
 
 1. **Especificidade de ativos**: quando investimentos são específicos a uma relação (ex.: uma máquina que só serve para produzir um componente para um único cliente), o risco de comportamento oportunista (*hold-up*) favorece a integração vertical.
@@ -61,6 +68,13 @@ A condição de primeira ordem (CPO) é:
     \[
     \mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)
     \]
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A firma produz até o ponto em que o ganho da próxima unidade vendida empata com o custo de produzi-la.
+
+    **Pense assim:** Pense em uma barraquinha de açaí na praia. Cada copo extra rende R$ 10, mas o custo dos insumos vai subindo (mais polpa, mais gelo, mais copos). Enquanto o próximo copo custar menos de R$ 10 para fazer, vale a pena produzir. Quando o custo do próximo copo alcançar R$ 10, é hora de parar. Esse é o ponto em que receita marginal iguala custo marginal.
+
+    **Por que isso importa:** A regra RMg = CMg é a bússola de qualquer decisão de produção — de uma microempresa a uma multinacional — e é a base da construção da curva de oferta.
 
 ### Condição de segunda ordem
 
@@ -188,6 +202,13 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
     \]
 
     Graficamente, é a área acima da curva de oferta (CMg) e abaixo do preço. O excedente do produtor é a medida apropriada de bem-estar do lado da oferta no curto prazo, pois mede a contribuição da produção para cobrir os custos fixos e gerar lucro.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Uma firma com prejuízo pode racionalmente continuar operando, desde que a receita cubra pelo menos os custos variáveis.
+
+    **Pense assim:** Imagine um quiosque na praia que paga R$ 3.000 de aluguel por mês (custo fixo). Se fechar, perde os R$ 3.000 de qualquer jeito. Se abrir e faturar o suficiente para pagar funcionários, insumos e ainda sobrar R$ 500, é melhor abrir — mesmo com prejuízo. O aluguel já é "dinheiro perdido" no curto prazo. Fechar só vale a pena quando nem os custos variáveis se pagam.
+
+    **Por que isso importa:** Essa lógica explica por que tantas MPEs brasileiras operam com prejuízo por meses antes de fechar — e por que o SEBRAE monitora a taxa de mortalidade empresarial nos primeiros cinco anos.
 
 ---
 
@@ -322,6 +343,13 @@ A função lucro possui propriedades notáveis:
 
 !!! tip "Significado econômico do Lema de Hotelling"
     O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Conhecendo apenas o lucro máximo da firma em função dos preços, conseguimos deduzir quanto ela produz e quanto usa de cada insumo.
+
+    **Pense assim:** É como se você olhasse apenas o extrato bancário de um feirante — quanto ele lucra a cada combinação de preço da banana e custo do transporte — e, só com essa informação, conseguisse descobrir quantas bananas ele vende e quantas viagens de caminhão ele faz. O Lema de Hotelling diz que a função lucro já carrega toda essa informação, bastando derivá-la.
+
+    **Por que isso importa:** Essa propriedade é usada pelo IPEA em modelos de equilíbrio geral computável para calibrar funções de oferta setorial da economia brasileira a partir de dados de lucro.
 
 ---
 
@@ -723,61 +751,27 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ## Apêndice: A Pesquisa em Ação
 
-### Firmas, Informalidade e Desenvolvimento no Brasil
+??? abstract "Ulyssea, G. (2018). Firms, Informality, and Development: Theory and Evidence from Brazil. *American Economic Review*, 108(8), 2015–2047."
+    **Pergunta central:** Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
 
-> **Referência completa:** Ulyssea, Gabriel. "Firms, Informality, and Development: Theory and Evidence from Brazil."
-> *American Economic Review*, 108(8): 2015–2047, 2018.
-> DOI: 10.1257/aer.20141745
+    **Método:** O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
 
-**A pergunta**
+    **Resultado principal:** O resultado central é surpreendente: as duas margens de informalidade podem mover-se em **direções opostas**. Políticas que reduzem a informalidade empresarial (mais firmas se registrando) não necessariamente reduzem a informalidade trabalhista — e podem até piorá-la. Nem sempre há ganhos de produtividade, produto ou bem-estar. A heterogeneidade das firmas é crucial: firmas muito pequenas que se formalizam enfrentam custos regulatórios que reduzem sua eficiência.
 
-Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
+    **Por que isso importa:** Para o Brasil, onde o Simples Nacional e programas como o MEI (Microempreendedor Individual) buscam reduzir a informalidade, o artigo oferece um alerta: formalizar a empresa não é o mesmo que formalizar o emprego. Políticas públicas precisam considerar ambas as margens simultaneamente.
 
-**Como o autor respondeu**
+    **Relevância para o capítulo:** O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
 
-O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
+??? abstract "Dix-Carneiro, R.; Kovak, B. K. (2017). Trade Liberalization and Regional Dynamics. *American Economic Review*, 107(10), 2908–2946."
+    **Pergunta central:** Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
 
-**O que descobriram**
+    **Método:** Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.
 
-O resultado central é surpreendente: as duas margens de informalidade podem mover-se em **direções opostas**. Políticas que reduzem a informalidade empresarial (mais firmas se registrando) não necessariamente reduzem a informalidade trabalhista — e podem até piorá-la. Nem sempre há ganhos de produtividade, produto ou bem-estar. A heterogeneidade das firmas é crucial: firmas muito pequenas que se formalizam enfrentam custos regulatórios que reduzem sua eficiência.
+    **Resultado principal:** O impacto negativo sobre emprego formal e salários foi **persistente e crescente**: após 20 anos, regiões mais afetadas apresentavam queda de emprego formal cerca de três vezes maior do que após 10 anos. O mecanismo envolve mobilidade imperfeita do trabalho, ajuste lento do capital e perda de economias de aglomeração. Firmas em regiões expostas reduziram a produção e a demanda por trabalho de forma prolongada — contrariando modelos que preveem ajuste rápido.
 
-**Por que isso importa**
+    **Por que isso importa:** O estudo demonstra empiricamente que a "curva de oferta de longo prazo" — que a teoria descreve como perfeitamente elástica — pode levar décadas para se materializar em economias reais com fricções. Para o Brasil, os resultados informam debates sobre política comercial e proteção a setores vulneráveis.
 
-Para o Brasil, onde o Simples Nacional e programas como o MEI (Microempreendedor Individual) buscam reduzir a informalidade, o artigo oferece um alerta: formalizar a empresa não é o mesmo que formalizar o emprego. Políticas públicas precisam considerar ambas as margens simultaneamente.
-
-**Conexão com este capítulo**
-
-O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
-
----
-
-### Liberalização Comercial e Dinâmica Regional
-
-> **Referência completa:** Dix-Carneiro, Rafael, e Brian K. Kovak. "Trade Liberalization and Regional Dynamics."
-> *American Economic Review*, 107(10): 2908–2946, 2017.
-> DOI: 10.1257/aer.20161214
-
-**A pergunta**
-
-Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
-
-**Como os autores responderam**
-
-Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.
-
-**O que descobriram**
-
-O impacto negativo sobre emprego formal e salários foi **persistente e crescente**: após 20 anos, regiões mais afetadas apresentavam queda de emprego formal cerca de três vezes maior do que após 10 anos. O mecanismo envolve mobilidade imperfeita do trabalho, ajuste lento do capital e perda de economias de aglomeração. Firmas em regiões expostas reduziram a produção e a demanda por trabalho de forma prolongada — contrariando modelos que preveem ajuste rápido.
-
-**Por que isso importa**
-
-O estudo demonstra empiricamente que a "curva de oferta de longo prazo" — que a teoria descreve como perfeitamente elástica — pode levar décadas para se materializar em economias reais com fricções. Para o Brasil, os resultados informam debates sobre política comercial e proteção a setores vulneráveis.
-
-**Conexão com este capítulo**
-
-O artigo ilustra a distinção entre **curto e longo prazo** da Seção 11.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 11.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
-
----
+    **Relevância para o capítulo:** O artigo ilustra a distinção entre **curto e longo prazo** da Seção 11.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 11.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
 
 ## Referências
 

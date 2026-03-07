@@ -65,6 +65,13 @@ q_1(p_1, p_2) = \begin{cases} D(p_1) & \text{se } p_1 < p_2 \\ \frac{D(p_1)}{2} 
 
 O resultado é paradoxal: bastam **duas firmas** para reproduzir o resultado competitivo. Isso contrasta fortemente com a evidência empírica, na qual mercados duopolísticos tipicamente apresentam lucros positivos. O paradoxo de Bertrand motivou diversas extensões do modelo.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Se duas empresas vendem o mesmo produto, a guerra de preços pode eliminar todo o lucro — mesmo que sejam apenas duas.
+
+    **Pense assim:** Imagine duas barracas de água mineral idêntica na saída de um show no Maracanã. Se uma cobra R$ 6 e a outra R$ 5, todo mundo vai na mais barata. A rival baixa para R$ 4,50, e a guerra continua até que ambas cobrem o custo — e ninguém lucra nada.
+
+    **Por que isso importa:** O paradoxo mostra que concorrência em preços com produtos idênticos é brutal, e ajuda a entender por que empresas investem tanto em diferenciação de marca e fidelização de clientes.
+
 ### Resoluções do paradoxo
 
 O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóteses:
@@ -133,6 +140,13 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 \pi_1^* = \pi_2^* = \frac{(a-c)^2}{9b}
 \]
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** No equilíbrio de Cournot, cada empresa produz menos do que faria sozinha, mas o mercado como um todo produz mais do que um monopólio.
+
+    **Pense assim:** Pense em duas redes de postos de gasolina decidindo quantos postos abrir numa cidade. Cada uma sabe que, se abrir postos demais, o preço da gasolina cai para todo mundo. Então cada uma modera a expansão — mas, juntas, atendem mais consumidores do que um monopolista faria.
+
+    **Por que isso importa:** O modelo de Cournot mostra que bastam poucas empresas para gerar alguma concorrência, e que o resultado melhora para o consumidor conforme o número de competidores aumenta.
+
 ## Gráfico interativo: Duopólio de Cournot
 
 <iframe src="../graficos/cap15/cournot.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
@@ -166,6 +180,13 @@ Q^{St} = \frac{3(a-c)}{4b}, \quad p^{St} = \frac{a+3c}{4}
 \]
 
 O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e lucra menos. A **vantagem do primeiro movimento** (first-mover advantage) decorre do compromisso crível com uma quantidade elevada.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quem se compromete primeiro com uma decisão grande e irreversível pode forçar os concorrentes a se acomodarem.
+
+    **Pense assim:** Quando a Ambev inaugura uma fábrica gigante em uma região, cervejarias menores sabem que competir ali será duro. A capacidade já instalada é um "fato consumado" que muda o jogo — a líder produz muito, e a seguidora aceita uma fatia menor do mercado.
+
+    **Por que isso importa:** Essa lógica explica por que grandes empresas investem agressivamente em capacidade e infraestrutura antes dos rivais — o compromisso crível vira vantagem estratégica.
 
 ---
 
@@ -331,6 +352,13 @@ Com \(n\) firmas simétricas, a condição torna-se:
 \]
 
 Quanto maior o número de firmas, mais difícil sustentar a colusão.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Cartéis são tentadores mas instáveis — cada participante ganha mais se trair o acordo enquanto os outros cooperam.
+
+    **Pense assim:** Imagine um grupo de feirantes combinando o preço do tomate. Cada um tem a tentação de baixar o preço escondido e roubar os clientes dos vizinhos. Quanto mais feirantes no acordo, mais fácil alguém furar sem ser notado — e o combinado desmorona.
+
+    **Por que isso importa:** Programas de leniência do CADE exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
 
 ### Fatores que facilitam a colusão
 
@@ -686,7 +714,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ## Exercícios
 
-!!! example "Exercício 1"
+??? example "Exercício 1"
     Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
 
     a) Encontre as funções de reação de cada firma.
@@ -695,7 +723,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Compare com o resultado que seria obtido se ambas as firmas tivessem \(c = 20\). A assimetria de custos aumenta ou reduz o excedente total?
 
-!!! example "Exercício 2"
+??? example "Exercício 2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
     a) Encontre as funções de reação em preços.
@@ -704,7 +732,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Mostre que os preços de equilíbrio são superiores ao custo marginal (resolvendo o paradoxo de Bertrand).
 
-!!! example "Exercício 3"
+??? example "Exercício 3"
     Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
 
     a) Encontre preço, quantidade por firma e lucro por firma em função de \(n\).
@@ -713,7 +741,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Calcule o número socialmente ótimo de firmas (que maximiza o excedente total menos os custos fixos totais). Há excesso de entrada?
 
-!!! example "Exercício 4"
+??? example "Exercício 4"
     Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
 
     a) Calcule o preço de monopólio e o lucro de monopólio dividido.
@@ -722,7 +750,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Como o resultado se altera se há três firmas ao invés de duas?
 
-!!! example "Exercício 5"
+??? example "Exercício 5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 
     a) Encontre a função de reação da seguidora.

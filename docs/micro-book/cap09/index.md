@@ -63,6 +63,13 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 É crucial observar que esta "lei" é uma regularidade empírica, não um resultado lógico necessário. Ela se aplica ao **curto prazo**, quando pelo menos um fator é fixo. Não deve ser confundida com rendimentos decrescentes de escala, que dizem respeito à variação simultânea de todos os insumos — uma distinção frequentemente cobrada em provas da ANPEC.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Cada trabalhador a mais produz menos que o anterior quando o espaço e os equipamentos são fixos.
+
+    **Pense assim:** Em uma cozinha de restaurante com quatro bocas de fogão, o primeiro cozinheiro é muito produtivo. O segundo ajuda bastante. O terceiro já começa a esbarrar nos outros. O quarto fica esperando uma boca liberar. O fogão não mudou — é o trabalhador extra que rende menos.
+
+    **Por que isso importa:** Esse princípio explica por que simplesmente contratar mais gente sem investir em equipamentos não resolve o problema de produtividade da economia brasileira.
+
 !!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
     Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
 
@@ -115,6 +122,13 @@ f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
 \]
 
 A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema — um fenômeno intuitivamente análogo à taxa marginal de substituição decrescente no consumo.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A TMST mede quantas unidades de um insumo a firma pode trocar por uma unidade do outro sem perder produção.
+
+    **Pense assim:** Numa fazenda de café altamente mecanizada, cada colheitadeira a menos exige muitos trabalhadores extras para compensar. Mas numa fazenda com muita mão de obra e pouca máquina, dispensar um trabalhador custa pouca mecanização adicional. A troca fica mais difícil conforme a firma se torna mais "desequilibrada".
+
+    **Por que isso importa:** Quando o salário mínimo sobe no Brasil, a TMST indica o quanto as firmas conseguem substituir trabalho por máquinas — e em setores com baixa substituibilidade, o impacto no emprego é menor.
 
 ??? example "Exercício Resolvido 9.1"
     **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
@@ -179,6 +193,13 @@ onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em r
 
 Note que uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Rendimentos de escala respondem à pergunta: se a firma dobrar tudo — máquinas, trabalhadores, espaço —, o produto mais que dobra, dobra exatamente ou menos que dobra?
+
+    **Pense assim:** Uma padaria de bairro que abre uma segunda unidade idêntica produz o dobro de pães (rendimentos constantes). Já uma siderúrgica que duplica o alto-forno produz mais que o dobro de aço, porque o volume do forno cresce com o cubo do raio enquanto o custo do material cresce com o quadrado (rendimentos crescentes). É a lógica que explica por que usinas são enormes e padarias são pequenas.
+
+    **Por que isso importa:** Rendimentos crescentes de escala justificam a existência de grandes empresas e são o principal argumento usado em fusões analisadas pelo CADE.
+
 !!! example "Exemplo: Economias de escala na indústria automobilística brasileira"
     A indústria automobilística ilustra rendimentos crescentes de escala na faixa relevante de produção. Uma linha de montagem exige investimento fixo elevado em robôs, estamparia e pintura, independentemente do volume produzido. Estudos setoriais indicam que a escala mínima eficiente de uma planta de montagem situa-se entre 100 e 200 mil veículos/ano — abaixo desse patamar, o custo médio por veículo é significativamente mais alto. Essa lógica de rendimentos crescentes explica a concentração geográfica da produção automotiva brasileira no ABC paulista e em polos como Betim (MG) e Camaçari (BA), onde a escala viabiliza custos competitivos.
 
@@ -241,6 +262,13 @@ Intuitivamente, \(\sigma\) capta a curvatura da isoquanta:
 - Se \(\sigma = 1\), temos o caso intermediário da **Cobb-Douglas**.
 
 A elasticidade de substituição é um parâmetro central na análise da distribuição funcional da renda, pois determina como mudanças nos preços relativos dos fatores afetam as participações do capital e do trabalho na renda total.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A elasticidade de substituição mede o quão fácil é trocar máquinas por pessoas (ou vice-versa) sem perder produção.
+
+    **Pense assim:** Em um call center, substituir atendentes humanos por chatbots de IA é relativamente fácil (elasticidade alta). Já em uma cirurgia cardíaca, trocar o cirurgião por um robô é muito mais difícil (elasticidade baixa). Quanto mais rígida a receita de produção, menor a elasticidade.
+
+    **Por que isso importa:** A elasticidade de substituição determina quem ganha e quem perde quando o salário mínimo sobe ou quando a automação avança — questões centrais no debate sobre desigualdade e futuro do trabalho no Brasil.
 
 ### Demonstração: Elasticidade de substituição para Cobb-Douglas
 
@@ -737,47 +765,27 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ## Apêndice: A Pesquisa em Ação
 
-### Produtividade agrícola e rendimentos de escala no Brasil
+??? abstract "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). *A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*. Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
+    **Pergunta central:** Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 9.6.
 
-> **Referência completa:** Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. "Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários." In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). *A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*. Brasília: IPEA, Cap. 1: 19-44, 2010. ISBN: 978-85-7811-050-5
+    **Método:** Gasques et al. utilizam dados dos Censos Agropecuários do IBGE para construir índices de produtividade total dos fatores na agropecuária brasileira entre 1970 e 2006. A metodologia consiste em calcular índices de Törnqvist para produto e insumos agregados (terra, trabalho, capital, materiais) e obter a PTF como resíduo — o mesmo conceito do resíduo de Solow, agora aplicado a dados censitários reais.
 
-**A pergunta**
-Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 9.6.
+    **Resultado principal:** A PTF agropecuária cresceu a uma taxa média de 3,3% ao ano entre 1970 e 2006, respondendo por mais de dois terços do crescimento do produto no período. A terra cultivada cresceu modestamente, o trabalho rural *declinou*, e o capital e os insumos intermediários cresceram — mas a maior parte do crescimento veio da produtividade. A taxa de crescimento da PTF acelerou após os anos 1990, coincidindo com a intensificação da pesquisa da Embrapa e a abertura comercial.
 
-**Como os autores responderam**
-Gasques et al. utilizam dados dos Censos Agropecuários do IBGE para construir índices de produtividade total dos fatores na agropecuária brasileira entre 1970 e 2006. A metodologia consiste em calcular índices de Törnqvist para produto e insumos agregados (terra, trabalho, capital, materiais) e obter a PTF como resíduo — o mesmo conceito do resíduo de Solow, agora aplicado a dados censitários reais.
+    **Por que isso importa:** O resultado tem implicações diretas para a política agrícola: investimento em pesquisa e extensão rural gera retornos sociais elevados, pois desloca a função de produção agregada da agricultura. Em um país onde a agropecuária responde por cerca de 25% do PIB (considerando toda a cadeia), a PTF agrícola é um dos principais motores do crescimento econômico.
 
-**O que descobriram**
-A PTF agropecuária cresceu a uma taxa média de 3,3% ao ano entre 1970 e 2006, respondendo por mais de dois terços do crescimento do produto no período. A terra cultivada cresceu modestamente, o trabalho rural *declinou*, e o capital e os insumos intermediários cresceram — mas a maior parte do crescimento veio da produtividade. A taxa de crescimento da PTF acelerou após os anos 1990, coincidindo com a intensificação da pesquisa da Embrapa e a abertura comercial.
+    **Relevância para o capítulo:** O estudo é uma aplicação empírica da decomposição do crescimento apresentada na Seção 9.6. O parâmetro \(A(t)\) da função de produção não é uma abstração teórica: é medido, acompanhado e influenciado por políticas públicas. O caso da agricultura brasileira mostra que o progresso técnico — capturado pelo resíduo de Solow — pode ser a força dominante do crescimento, exatamente como previsto pela teoria quando a PTF cresce mais rápido que os insumos.
 
-**Por que isso importa**
-O resultado tem implicações diretas para a política agrícola: investimento em pesquisa e extensão rural gera retornos sociais elevados, pois desloca a função de produção agregada da agricultura. Em um país onde a agropecuária responde por cerca de 25% do PIB (considerando toda a cadeia), a PTF agrícola é um dos principais motores do crescimento econômico.
+??? abstract "Oberfield, Ezra; Raval, Devesh. (2021). Micro Data and Macro Technology. *Econometrica*, 89(2), 703-732. DOI: 10.3982/ECTA12807"
+    **Pergunta central:** Qual é a elasticidade de substituição entre capital e trabalho na economia? Esse parâmetro — o \(\sigma\) da função CES discutido na Seção 9.4 — é crucial para entender se a participação do capital na renda aumenta ou diminui quando o capital se torna mais abundante. Piketty (2014) argumentou que \(\sigma > 1\) explicaria o aumento da desigualdade; outros pesquisadores contestaram essa estimativa.
 
-**Conexão com este capítulo**
-O estudo é uma aplicação empírica da decomposição do crescimento apresentada na Seção 9.6. O parâmetro \(A(t)\) da função de produção não é uma abstração teórica: é medido, acompanhado e influenciado por políticas públicas. O caso da agricultura brasileira mostra que o progresso técnico — capturado pelo resíduo de Solow — pode ser a força dominante do crescimento, exatamente como previsto pela teoria quando a PTF cresce mais rápido que os insumos.
+    **Método:** Oberfield e Raval propõem uma abordagem que usa microdados de plantas industriais (Census of Manufactures dos EUA) para estimar a elasticidade de substituição agregada. A ideia-chave é que a elasticidade agregada depende de dois componentes: a elasticidade de substituição *dentro* de cada planta (entre capital e trabalho) e a elasticidade de substituição *entre* plantas (realocação de recursos de plantas intensivas em trabalho para plantas intensivas em capital). Os autores estimam ambas separadamente.
 
----
+    **Resultado principal:** A elasticidade de substituição dentro das plantas é de aproximadamente 0,5 a 0,7 — abaixo de 1, consistente com a complementaridade entre capital e trabalho. Porém, a elasticidade agregada pode ser maior que a elasticidade no nível da planta devido à realocação entre plantas. Para a manufatura americana, a elasticidade agregada estimada situa-se em torno de 0,7, ainda abaixo de 1. Isso sugere que capital e trabalho são complementares brutos e que a participação do capital na renda *cai* quando o capital se torna relativamente mais abundante.
 
-### Elasticidade de substituição e distribuição de renda: a controvérsia do capital
+    **Por que isso importa:** O resultado tem implicações diretas para o debate sobre desigualdade e para a calibração de modelos macroeconômicos. Se \(\sigma < 1\), a automação e a acumulação de capital não levam necessariamente a um aumento da participação do capital na renda — contrariando uma versão simplificada da tese de Piketty.
 
-> **Referência completa:** Oberfield, Ezra; Raval, Devesh. "Micro Data and Macro Technology." *Econometrica*, 89(2): 703-732, 2021. DOI: 10.3982/ECTA12807
-
-**A pergunta**
-Qual é a elasticidade de substituição entre capital e trabalho na economia? Esse parâmetro — o \(\sigma\) da função CES discutido na Seção 9.4 — é crucial para entender se a participação do capital na renda aumenta ou diminui quando o capital se torna mais abundante. Piketty (2014) argumentou que \(\sigma > 1\) explicaria o aumento da desigualdade; outros pesquisadores contestaram essa estimativa.
-
-**Como os autores responderam**
-Oberfield e Raval propõem uma abordagem que usa microdados de plantas industriais (Census of Manufactures dos EUA) para estimar a elasticidade de substituição agregada. A ideia-chave é que a elasticidade agregada depende de dois componentes: a elasticidade de substituição *dentro* de cada planta (entre capital e trabalho) e a elasticidade de substituição *entre* plantas (realocação de recursos de plantas intensivas em trabalho para plantas intensivas em capital). Os autores estimam ambas separadamente.
-
-**O que descobriram**
-A elasticidade de substituição dentro das plantas é de aproximadamente 0,5 a 0,7 — abaixo de 1, consistente com a complementaridade entre capital e trabalho. Porém, a elasticidade agregada pode ser maior que a elasticidade no nível da planta devido à realocação entre plantas. Para a manufatura americana, a elasticidade agregada estimada situa-se em torno de 0,7, ainda abaixo de 1. Isso sugere que capital e trabalho são complementares brutos e que a participação do capital na renda *cai* quando o capital se torna relativamente mais abundante.
-
-**Por que isso importa**
-O resultado tem implicações diretas para o debate sobre desigualdade e para a calibração de modelos macroeconômicos. Se \(\sigma < 1\), a automação e a acumulação de capital não levam necessariamente a um aumento da participação do capital na renda — contrariando uma versão simplificada da tese de Piketty.
-
-**Conexão com este capítulo**
-O artigo demonstra que a elasticidade de substituição \(\sigma\) — apresentada na Seção 9.4 como um parâmetro abstrato da CES — é um objeto empiricamente estimável e economicamente consequente. A distinção entre a CES no nível da planta e no nível agregado mostra que a escolha da forma funcional (Seção 9.5) tem implicações que vão muito além do exercício de sala de aula: ela determina previsões sobre distribuição de renda, política fiscal e futuro do trabalho.
-
----
+    **Relevância para o capítulo:** O artigo demonstra que a elasticidade de substituição \(\sigma\) — apresentada na Seção 9.4 como um parâmetro abstrato da CES — é um objeto empiricamente estimável e economicamente consequente. A distinção entre a CES no nível da planta e no nível agregado mostra que a escolha da forma funcional (Seção 9.5) tem implicações que vão muito além do exercício de sala de aula: ela determina previsões sobre distribuição de renda, política fiscal e futuro do trabalho.
 
 ## Leituras Recomendadas
 

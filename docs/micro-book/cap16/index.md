@@ -38,6 +38,13 @@ C + wL = wT + V \equiv M^*
 
 onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo obteria se trabalhasse todas as \(T\) horas. O preço do lazer é o salário \(w\), pois cada hora de lazer tem um custo de oportunidade igual ao salário que se deixa de receber.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O salário não é apenas o que você ganha por trabalhar — é também o preço que você paga por cada hora de lazer.
+
+    **Pense assim:** Quando um motorista de aplicativo decide tirar um domingo de folga para assistir ao jogo do Flamengo, o "preço" desse lazer não é só o ingresso — inclui as corridas que ele deixou de fazer. Se o salário-hora dele sobe, o churrasco de domingo fica mais "caro" em termos do que ele abre mão.
+
+    **Por que isso importa:** Entender que o lazer tem preço ajuda a explicar por que profissionais com salários muito altos frequentemente trabalham jornadas longas — o custo de oportunidade de cada hora livre é enorme.
+
 ### Preferências
 
 As preferências do indivíduo são representadas por uma função de utilidade \(U(C, L)\), com as propriedades usuais:
@@ -215,6 +222,13 @@ Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso
 2. A elasticidade-renda do lazer é elevada;
 3. O efeito substituição compensado é pequeno.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A partir de certo salário, ganhar mais faz a pessoa querer trabalhar menos, não mais — porque ela já pode "se dar ao luxo" de curtir a vida.
+
+    **Pense assim:** Um médico recém-formado aceita plantões extras para pagar as contas. Mas um cirurgião sênior que já ganha muito bem prefere reduzir a carga e passar mais tempo com a família ou viajando. O dinheiro extra não compensa a perda de lazer — a curva de oferta "volta para trás".
+
+    **Por que isso importa:** Esse fenômeno explica por que aumentar impostos sobre altas rendas nem sempre reduz o esforço de trabalho tanto quanto se imagina — e por que cortes de impostos para ricos nem sempre geram mais horas trabalhadas.
+
 !!! tip "Evidência empírica"
     A evidência empírica sugere que a oferta de trabalho masculina é relativamente **inelástica** (elasticidade próxima de zero ou levemente negativa), enquanto a oferta feminina tende a ser mais elástica, especialmente para mulheres casadas. Isso é consistente com uma curva backward-bending para homens em faixas salariais observadas.
 
@@ -365,6 +379,13 @@ Isso resulta em:
 - **Salário menor** do que no equilíbrio competitivo.
 
 A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de Joan Robinson).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quando há um único grande empregador na região, ele pode pagar salários abaixo da produtividade dos trabalhadores porque eles não têm para onde ir.
+
+    **Pense assim:** Em muitas cidades pequenas do interior do Brasil, a prefeitura ou uma única fábrica é praticamente a única empregadora formal. Se o trabalhador pede aumento, não tem concorrente para onde migrar. O empregador sabe disso e mantém salários baixos, mesmo que o trabalhador produza muito mais do que recebe.
+
+    **Por que isso importa:** Em mercados monopsonísticos, um salário mínimo bem calibrado pode, paradoxalmente, aumentar emprego e salário ao mesmo tempo — uma das conclusões mais contraintuitivas da economia do trabalho.
 
 !!! tip "Monopsônio e salário mínimo"
     Uma implicação surpreendente do modelo de monopsônio é que a imposição de um **salário mínimo** pode, sob certas condições, aumentar **simultaneamente** o salário e o emprego. Isso ocorre porque o salário mínimo transforma a curva de custo marginal do trabalho em uma linha horizontal até o ponto em que a oferta de trabalho ao salário mínimo se esgota, eliminando o incentivo do monopsonista a restringir contratações.
@@ -680,61 +701,27 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ## Apêndice: A Pesquisa em Ação
 
-### Salário Mínimo e Desigualdade no Brasil
+??? abstract "Engbom, N.; Moser, C. (2022). Earnings Inequality and the Minimum Wage: Evidence from Brazil. *American Economic Review*, 112(12), 3803–3847."
+    **Pergunta central:** O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.
 
-> **Referência completa:** Engbom, Niklas, e Christian Moser. "Earnings Inequality and the Minimum Wage: Evidence from Brazil."
-> *American Economic Review*, 112(12): 3803–3847, 2022.
-> DOI: 10.1257/aer.20181506
+    **Método:** Engbom e Moser combinaram dados administrativos de empregadores e empregados (RAIS) com pesquisas domiciliares (PNAD) cobrindo mais de duas décadas. Para isolar o efeito causal do salário mínimo, desenvolveram um modelo de equilíbrio com firmas e trabalhadores heterogêneos, estimado estruturalmente nos dados brasileiros. O modelo permite que o salário mínimo afete não apenas os trabalhadores que recebem exatamente o piso, mas também aqueles acima dele — os chamados *spillover effects*.
 
-**A pergunta**
+    **Resultado principal:** O aumento real do salário mínimo explica aproximadamente **45% da substancial queda na desigualdade salarial** no Brasil no período. Os efeitos de spillover são grandes: salários bem acima do mínimo também foram comprimidos em direção à média. Surpreendentemente, os efeitos sobre emprego e produto agregado foram **modestos**, pois o salário mínimo induziu a realocação de trabalhadores de firmas menos produtivas para firmas mais produtivas — um efeito de seleção positivo.
 
-O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.
+    **Por que isso importa:** O resultado desafia a visão de livro-texto de que aumentos expressivos do salário mínimo necessariamente geram desemprego significativo. No contexto brasileiro, o SM funcionou como um instrumento redistributivo poderoso, com custos de eficiência limitados. Isso tem implicações diretas para a política de valorização do salário mínimo retomada a partir de 2023.
 
-**Como os autores responderam**
+    **Relevância para o capítulo:** O paper conecta-se diretamente com as seções 16.5 (equilíbrio competitivo) e 16.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
 
-Engbom e Moser combinaram dados administrativos de empregadores e empregados (RAIS) com pesquisas domiciliares (PNAD) cobrindo mais de duas décadas. Para isolar o efeito causal do salário mínimo, desenvolveram um modelo de equilíbrio com firmas e trabalhadores heterogêneos, estimado estruturalmente nos dados brasileiros. O modelo permite que o salário mínimo afete não apenas os trabalhadores que recebem exatamente o piso, mas também aqueles acima dele — os chamados *spillover effects*.
+??? abstract "Meghir, C.; Narita, R.; Robin, J.-M. (2015). Wages and Informality in Developing Countries. *American Economic Review*, 105(4), 1509–1546."
+    **Pergunta central:** Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
 
-**O que descobriram**
+    **Método:** Os autores — entre eles a brasileira Renata Narita — construíram um modelo de equilíbrio com *wage-posting* (firmas fixam salários), busca sequencial por emprego (trabalhadores procuram empregos estando empregados ou desempregados) e escolha endógena do setor (formal ou informal) por firmas heterogêneas. O modelo foi estimado com dados da Pesquisa Mensal de Emprego (PME/IBGE) do Brasil.
 
-O aumento real do salário mínimo explica aproximadamente **45% da substancial queda na desigualdade salarial** no Brasil no período. Os efeitos de spillover são grandes: salários bem acima do mínimo também foram comprimidos em direção à média. Surpreendentemente, os efeitos sobre emprego e produto agregado foram **modestos**, pois o salário mínimo induziu a realocação de trabalhadores de firmas menos produtivas para firmas mais produtivas — um efeito de seleção positivo.
+    **Resultado principal:** Firmas de produtividade similar podem se localizar em setores diferentes — algumas no formal, outras no informal —, gerando **diferenciais compensatórios** entre os setores. Os salários formais incorporam um "prêmio" que compensa os custos da formalização (impostos, encargos), mas os trabalhadores informais enfrentam maior rotatividade e menor proteção. O resultado mais importante: **aumentar a fiscalização** trabalhista não eleva o desemprego. Ao contrário, melhora a alocação de trabalhadores para firmas mais produtivas e intensifica a competição no setor formal, elevando salários, produto e bem-estar agregados.
 
-**Por que isso importa**
+    **Por que isso importa:** O paper fornece base teórica e empírica para políticas de combate à informalidade. No Brasil, a Reforma Trabalhista de 2017 seguiu uma direção oposta (flexibilização), e a taxa de informalidade permanece elevada (38,1% em 2025). O modelo sugere que o caminho para reduzir a informalidade sem causar desemprego passa por melhorar a fiscalização e reduzir os custos de formalização — e não por enfraquecer a legislação trabalhista.
 
-O resultado desafia a visão de livro-texto de que aumentos expressivos do salário mínimo necessariamente geram desemprego significativo. No contexto brasileiro, o SM funcionou como um instrumento redistributivo poderoso, com custos de eficiência limitados. Isso tem implicações diretas para a política de valorização do salário mínimo retomada a partir de 2023.
-
-**Conexão com este capítulo**
-
-O paper conecta-se diretamente com as seções 16.5 (equilíbrio competitivo) e 16.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
-
----
-
-### Informalidade e Salários em Países em Desenvolvimento
-
-> **Referência completa:** Meghir, Costas, Renata Narita, e Jean-Marc Robin. "Wages and Informality in Developing Countries."
-> *American Economic Review*, 105(4): 1509–1546, 2015.
-> DOI: 10.1257/aer.20121110
-
-**A pergunta**
-
-Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
-
-**Como os autores responderam**
-
-Os autores — entre eles a brasileira Renata Narita — construíram um modelo de equilíbrio com *wage-posting* (firmas fixam salários), busca sequencial por emprego (trabalhadores procuram empregos estando empregados ou desempregados) e escolha endógena do setor (formal ou informal) por firmas heterogêneas. O modelo foi estimado com dados da Pesquisa Mensal de Emprego (PME/IBGE) do Brasil.
-
-**O que descobriram**
-
-Firmas de produtividade similar podem se localizar em setores diferentes — algumas no formal, outras no informal —, gerando **diferenciais compensatórios** entre os setores. Os salários formais incorporam um "prêmio" que compensa os custos da formalização (impostos, encargos), mas os trabalhadores informais enfrentam maior rotatividade e menor proteção. O resultado mais importante: **aumentar a fiscalização** trabalhista não eleva o desemprego. Ao contrário, melhora a alocação de trabalhadores para firmas mais produtivas e intensifica a competição no setor formal, elevando salários, produto e bem-estar agregados.
-
-**Por que isso importa**
-
-O paper fornece base teórica e empírica para políticas de combate à informalidade. No Brasil, a Reforma Trabalhista de 2017 seguiu uma direção oposta (flexibilização), e a taxa de informalidade permanece elevada (38,1% em 2025). O modelo sugere que o caminho para reduzir a informalidade sem causar desemprego passa por melhorar a fiscalização e reduzir os custos de formalização — e não por enfraquecer a legislação trabalhista.
-
-**Conexão com este capítulo**
-
-O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 16.5–16.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
-
----
+    **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 16.5–16.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
 
 ## Referências
 

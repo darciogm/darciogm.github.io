@@ -76,6 +76,13 @@ A formalização moderna da teoria da utilidade esperada foi apresentada por Joh
 
 O axioma mais controverso é o de **independência**. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979).
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A utilidade esperada diz que pessoas racionais avaliam apostas pela "felicidade média" que elas proporcionam, não pelo dinheiro médio.
+
+    **Pense assim:** Imagine que você concorre a um sorteio de R$ 10.000 com 50% de chance. O valor esperado é R$ 5.000, mas a alegria que R$ 10.000 trazem não é o dobro da alegria de R$ 5.000 — assim como o segundo prato de comida no rodízio nunca é tão bom quanto o primeiro.
+
+    **Por que isso importa:** Toda a regulação de seguros, previdência e mercados financeiros no Brasil se apoia na ideia de que as pessoas transformam dinheiro em bem-estar de forma não linear.
+
 ---
 
 ## 7.3 Aversão ao Risco
@@ -96,6 +103,13 @@ u(E[\tilde{x}]) > E[u(\tilde{x})]
 Intuitivamente, o agente avesso ao risco prefere receber o valor esperado de uma loteria com certeza a participar da loteria. A curvatura de \(u\) captura a intensidade dessa preferência: quanto mais côncava a função, maior a aversão ao risco.
 
 Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando dois pontos na curva de utilidade fica **abaixo** da própria curva — ou seja, a utilidade esperada da loteria (ponto na corda) é inferior à utilidade do valor esperado (ponto na curva).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Aversão ao risco significa preferir o certo ao duvidoso, mesmo quando o valor médio é igual.
+
+    **Pense assim:** Um trabalhador brasileiro prefere um salário fixo de R$ 3.000 a um emprego que paga R$ 6.000 em meses bons e zero em meses ruins — mesmo que a média seja a mesma. A dor de ficar sem renda pesa mais do que a alegria do mês gordo.
+
+    **Por que isso importa:** É por isso que existem seguros, previdência e CLT — instituições que transferem risco de quem não quer carregar para quem consegue absorvê-lo melhor.
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/aversao-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
@@ -159,6 +173,13 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
     \]
 
     Para um agente avesso ao risco, \(\pi > 0\); para um neutro, \(\pi = 0\).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O equivalente certo é o "preço de saída" de uma aposta — quanto você aceitaria receber para não ter que jogar.
+
+    **Pense assim:** Se você tem um bilhete de rifa que vale R$ 1.000 com 50% de chance (valor esperado = R$ 500), mas toparia vendê-lo por R$ 350, então R$ 350 é seu equivalente certo e os R$ 150 de diferença são o prêmio de risco — o desconto que você dá só para dormir tranquilo.
+
+    **Por que isso importa:** O prêmio de risco explica por que títulos do Tesouro pagam menos que ações na Bolsa — investidores exigem compensação para aceitar incerteza.
 
 ### Aproximação de Arrow-Pratt para o prêmio de risco
 
@@ -255,6 +276,13 @@ Quando \(\rho < 1\), existe um peso \(w^*\) que minimiza \(\sigma_p^2\), gerando
 
 !!! note "Risco diversificável vs. risco sistemático"
     Em uma economia com muitos ativos, a diversificação elimina o **risco idiossincrático** (específico de cada ativo), mas não elimina o **risco sistemático** (que afeta todos os ativos simultaneamente). Essa distinção é central no modelo CAPM (Capital Asset Pricing Model), no qual apenas o risco sistemático — medido pelo coeficiente beta — é remunerado pelo mercado.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Diversificar é não colocar todos os ovos na mesma cesta — o risco total cai mesmo sem reduzir o retorno esperado.
+
+    **Pense assim:** Um pequeno agricultor do Paraná que planta só soja fica à mercê da seca ou da queda de preço. Se ele divide a terra entre soja, milho e feijão, uma safra ruim de um produto pode ser compensada pela boa safra de outro. O retorno médio pode ser parecido, mas o risco de "quebrar" cai muito.
+
+    **Por que isso importa:** A diversificação é o princípio por trás dos fundos de investimento, dos planos de previdência e até da política de crédito agrícola do Banco do Brasil, que incentiva a rotação de culturas.
 
 ### 7.6.3 Flexibilidade e valor da opção
 
@@ -726,59 +754,27 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ## Apêndice: A Pesquisa em Ação
 
-### Informação assimétrica funciona na prática? O teste de Chiappori-Salanié
+??? abstract "Chiappori, Pierre-André; Salanié, Bernard. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78. DOI: 10.1086/262111"
+    **Pergunta central:** A teoria prevê que, sob informação assimétrica, indivíduos de maior risco escolhem contratos com mais cobertura (seleção adversa) e/ou reduzem seus cuidados após a contratação (risco moral). Mas essas previsões se verificam empiricamente? Existe, de fato, uma correlação positiva entre cobertura e sinistralidade nos dados reais de seguros?
 
-> **Referência completa:** Chiappori, Pierre-André; Salanié, Bernard. "Testing for Asymmetric Information in Insurance Markets."
-> *Journal of Political Economy*, 108(1): 56–78, 2000.
-> DOI: 10.1086/262111
+    **Método:** Chiappori e Salanié propuseram um teste empírico geral: se há informação assimétrica (seja por seleção adversa, risco moral ou ambos), deve existir uma correlação positiva condicional entre a cobertura contratada e a ocorrência de sinistros, mesmo após controlar todas as variáveis observáveis usadas pelas seguradoras na precificação. Utilizaram dados detalhados do mercado francês de seguros de automóvel, com informações sobre contratos, prêmios, características dos condutores e histórico de acidentes.
 
-**A pergunta**
+    **Resultado principal:** Surpreendentemente, os autores **não encontraram** evidência estatisticamente significativa de correlação positiva entre cobertura e sinistralidade para motoristas jovens e inexperientes — o grupo mais sujeito a assimetria informacional. Esse resultado sugere que as seguradoras são eficazes em usar variáveis observáveis (idade, bônus/malus, localização) para classificar os riscos, reduzindo o escopo residual da informação assimétrica.
 
-A teoria prevê que, sob informação assimétrica, indivíduos de maior risco escolhem contratos com mais cobertura (seleção adversa) e/ou reduzem seus cuidados após a contratação (risco moral). Mas essas previsões se verificam empiricamente? Existe, de fato, uma correlação positiva entre cobertura e sinistralidade nos dados reais de seguros?
+    **Por que isso importa:** O artigo inaugurou uma ampla literatura empírica de testes de informação assimétrica em mercados de seguros, saúde, crédito e trabalho. Para o Brasil, a metodologia é diretamente aplicável ao mercado de seguros de automóvel (Box Brasil acima) e ao sistema de saúde suplementar, onde o desenho de contratos com franquias e copagamentos busca mitigar tanto seleção adversa quanto risco moral.
 
-**Como os autores responderam**
+    **Relevância para o capítulo:** O artigo testa empiricamente as previsões teóricas da Seção 7.8. A correlação positiva entre cobertura e risco é uma implicação testável da teoria de informação assimétrica. A ausência dessa correlação em alguns mercados sugere que os mecanismos de triagem (*screening*) e sinalização funcionam razoavelmente bem — ou que as fontes de heterogeneidade são mais complexas do que o modelo básico prevê.
 
-Chiappori e Salanié propuseram um teste empírico geral: se há informação assimétrica (seja por seleção adversa, risco moral ou ambos), deve existir uma correlação positiva condicional entre a cobertura contratada e a ocorrência de sinistros, mesmo após controlar todas as variáveis observáveis usadas pelas seguradoras na precificação. Utilizaram dados detalhados do mercado francês de seguros de automóvel, com informações sobre contratos, prêmios, características dos condutores e histórico de acidentes.
+??? abstract "Mehra, Rajnish; Prescott, Edward C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161. DOI: 10.1016/0304-3932(85)90061-3"
+    **Pergunta central:** Historicamente, ações renderam cerca de 6 pontos percentuais a mais por ano do que títulos públicos nos Estados Unidos. Essa diferença — o *equity premium* — pode ser racionalizada pelo modelo padrão de utilidade esperada com aversão ao risco (CRRA)?
 
-**O que descobriram**
+    **Método:** Mehra e Prescott calibraram um modelo de equilíbrio geral com agente representativo, utilidade CRRA e consumo estocástico baseado em dados macroeconômicos americanos de 1889 a 1978. Calcularam qual coeficiente de aversão relativa ao risco \(\gamma\) seria necessário para gerar o prêmio de risco observado nos dados.
 
-Surpreendentemente, os autores **não encontraram** evidência estatisticamente significativa de correlação positiva entre cobertura e sinistralidade para motoristas jovens e inexperientes — o grupo mais sujeito a assimetria informacional. Esse resultado sugere que as seguradoras são eficazes em usar variáveis observáveis (idade, bônus/malus, localização) para classificar os riscos, reduzindo o escopo residual da informação assimétrica.
+    **Resultado principal:** Para reproduzir o *equity premium* observado de aproximadamente 6%, o modelo exigia um coeficiente \(\gamma\) superior a 30 — muito acima das estimativas empíricas plausíveis (tipicamente entre 1 e 10). Com valores razoáveis de \(\gamma\), o modelo previa um prêmio de risco de no máximo 0,35%. Esse hiato entre teoria e dados ficou conhecido como o **enigma do prêmio de risco** (*equity premium puzzle*).
 
-**Por que isso importa**
+    **Por que isso importa:** O puzzle motivou décadas de pesquisa em finanças e macroeconomia, incluindo modelos com formação de hábito, perdas mais salientes que ganhos (aversão à perda), custos de participação no mercado acionário e mercados incompletos. No Brasil, estudos usando dados do Ibovespa e da taxa Selic encontram um *equity premium* ainda mais elevado do que nos EUA, tornando o enigma ainda mais agudo no contexto brasileiro.
 
-O artigo inaugurou uma ampla literatura empírica de testes de informação assimétrica em mercados de seguros, saúde, crédito e trabalho. Para o Brasil, a metodologia é diretamente aplicável ao mercado de seguros de automóvel (Box Brasil acima) e ao sistema de saúde suplementar, onde o desenho de contratos com franquias e copagamentos busca mitigar tanto seleção adversa quanto risco moral.
-
-**Conexão com este capítulo**
-
-O artigo testa empiricamente as previsões teóricas da Seção 7.8. A correlação positiva entre cobertura e risco é uma implicação testável da teoria de informação assimétrica. A ausência dessa correlação em alguns mercados sugere que os mecanismos de triagem (*screening*) e sinalização funcionam razoavelmente bem — ou que as fontes de heterogeneidade são mais complexas do que o modelo básico prevê.
-
-### O enigma do prêmio de risco: aversão ao risco é suficiente?
-
-> **Referência completa:** Mehra, Rajnish; Prescott, Edward C. "The Equity Premium: A Puzzle."
-> *Journal of Monetary Economics*, 15(2): 145–161, 1985.
-> DOI: 10.1016/0304-3932(85)90061-3
-
-**A pergunta**
-
-Historicamente, ações renderam cerca de 6 pontos percentuais a mais por ano do que títulos públicos nos Estados Unidos. Essa diferença — o *equity premium* — pode ser racionalizada pelo modelo padrão de utilidade esperada com aversão ao risco (CRRA)?
-
-**Como os autores responderam**
-
-Mehra e Prescott calibraram um modelo de equilíbrio geral com agente representativo, utilidade CRRA e consumo estocástico baseado em dados macroeconômicos americanos de 1889 a 1978. Calcularam qual coeficiente de aversão relativa ao risco \(\gamma\) seria necessário para gerar o prêmio de risco observado nos dados.
-
-**O que descobriram**
-
-Para reproduzir o *equity premium* observado de aproximadamente 6%, o modelo exigia um coeficiente \(\gamma\) superior a 30 — muito acima das estimativas empíricas plausíveis (tipicamente entre 1 e 10). Com valores razoáveis de \(\gamma\), o modelo previa um prêmio de risco de no máximo 0,35%. Esse hiato entre teoria e dados ficou conhecido como o **enigma do prêmio de risco** (*equity premium puzzle*).
-
-**Por que isso importa**
-
-O puzzle motivou décadas de pesquisa em finanças e macroeconomia, incluindo modelos com formação de hábito, perdas mais salientes que ganhos (aversão à perda), custos de participação no mercado acionário e mercados incompletos. No Brasil, estudos usando dados do Ibovespa e da taxa Selic encontram um *equity premium* ainda mais elevado do que nos EUA, tornando o enigma ainda mais agudo no contexto brasileiro.
-
-**Conexão com este capítulo**
-
-O artigo demonstra que as medidas de Arrow-Pratt (Seção 7.4) — em particular o coeficiente de aversão relativa constante \(\gamma\) da utilidade CRRA — têm implicações quantitativas testáveis para os preços dos ativos financeiros. O *puzzle* revela os limites do modelo VNM padrão (Seção 7.2) e motiva extensões teóricas que relaxam os axiomas clássicos.
-
----
+    **Relevância para o capítulo:** O artigo demonstra que as medidas de Arrow-Pratt (Seção 7.4) — em particular o coeficiente de aversão relativa constante \(\gamma\) da utilidade CRRA — têm implicações quantitativas testáveis para os preços dos ativos financeiros. O *puzzle* revela os limites do modelo VNM padrão (Seção 7.2) e motiva extensões teóricas que relaxam os axiomas clássicos.
 
 ## Referências do Capítulo
 

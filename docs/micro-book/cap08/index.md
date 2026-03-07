@@ -53,6 +53,13 @@ A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R
 
 Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbrio (Trair, Trair) com payoffs \((-5, -5)\) é o único equilíbrio de Nash, mas é **Pareto-dominado** pelo resultado (Cooperar, Cooperar) com payoffs \((-1, -1)\). Essa tensão entre racionalidade individual e eficiência coletiva é o cerne do dilema.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** No Dilema dos Prisioneiros, cada um faz o melhor para si e o resultado é ruim para todos.
+
+    **Pense assim:** Dois quiosques vizinhos na praia de Copacabana poderiam manter preços altos e lucrar bem. Mas cada um pensa: "se eu baixar o preço, roubo os clientes do vizinho". Ambos baixam, ambos lucram menos — e nenhum consegue voltar atrás sozinho.
+
+    **Por que isso importa:** A guerra fiscal entre estados brasileiros, os cartéis de postos de gasolina e o desmatamento da Amazônia são versões reais desse dilema — situações em que o interesse individual corrói o bem coletivo.
+
 !!! note "Relevância do Dilema dos Prisioneiros"
     O Dilema dos Prisioneiros aparece em inúmeros contextos econômicos: corrida armamentista entre nações, concorrência predatória entre firmas, tragédia dos comuns na exploração de recursos naturais e guerra fiscal entre entes federativos (como veremos no Box Brasil deste capítulo). A compreensão desse jogo é fundamental para o desenho de mecanismos e instituições que alinhem incentivos individuais e coletivos.
 
@@ -75,6 +82,13 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
     Em palavras: nenhum jogador pode melhorar unilateralmente seu payoff desviando de \(s_i^*\), dado que os demais jogadores mantêm suas estratégias de equilíbrio.
 
 O equilíbrio de Nash é um conceito de **consistência mútua de expectativas** (Gibbons, 2004, Cap. 1): se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** No equilíbrio de Nash, ninguém se arrepende da própria escolha depois de ver o que os outros fizeram.
+
+    **Pense assim:** Pense no trânsito de São Paulo: se todo mundo usa o Waze e escolhe a rota mais rápida, nenhum motorista individual consegue melhorar seu tempo mudando de caminho — porque todas as alternativas já estão igualmente congestionadas. Isso é um equilíbrio de Nash do trânsito.
+
+    **Por que isso importa:** O conceito de equilíbrio de Nash é a pedra angular da regulação de mercados, do desenho de leilões (como os de espectro da Anatel) e da política antitruste do CADE.
 
 ### Exemplos clássicos
 
@@ -124,6 +138,13 @@ Em um equilíbrio em estratégias mistas, cada jogador randomiza de tal forma qu
 \[
 U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_i^l \text{ com } \sigma_i^*(s_i^l) > 0
 \]
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Jogar de forma imprevisível pode ser a melhor estratégia quando qualquer padrão fixo seria explorado pelo adversário.
+
+    **Pense assim:** Um cobrador de pênaltis que sempre chuta no mesmo canto será facilmente defendido. Por isso, os melhores batedores variam entre esquerda, direita e centro de forma quase aleatória — e a proporção ideal é exatamente aquela que deixa o goleiro indiferente entre os lados.
+
+    **Por que isso importa:** Estratégias mistas aparecem em fiscalizações da Receita Federal (auditar aleatoriamente para que ninguém saiba se será fiscalizado) e em blitz de trânsito — a imprevisibilidade é o que gera o efeito dissuasório.
 
 !!! example "Cálculo de equilíbrio misto: Batalha dos Sexos"
     Na Batalha dos Sexos, suponha que o jogador 1 joga F com probabilidade \(p\) e C com probabilidade \(1-p\), enquanto o jogador 2 joga F com probabilidade \(q\) e C com probabilidade \(1-q\).
@@ -272,6 +293,13 @@ Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores 
     Formalmente, um subjogo é qualquer parte do jogo que: (i) começa em um nó de decisão que é um conjunto de informação unitário (singleton); (ii) contém todos os sucessores desse nó; (iii) não "corta" nenhum conjunto de informação.
 
 O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio de Nash, mas nem todo equilíbrio de Nash é perfeito em subjogos. O EPS elimina equilíbrios sustentados por **ameaças não críveis** em subjogos fora do caminho de equilíbrio.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Indução retroativa significa pensar "de trás para frente" — primeiro o que acontece no final, depois o que é racional fazer no início.
+
+    **Pense assim:** Quando uma grande rede de supermercados ameaça derrubar preços para expulsar um mercadinho de bairro, o mercadinho precisa avaliar: essa ameaça é crível? Se a guerra de preços der prejuízo também para a rede, ela não vai cumprir a ameaça. Pensar de trás para frente revela quais ameaças são blefe.
+
+    **Por que isso importa:** O CADE usa essa lógica ao analisar se barreiras à entrada são reais ou apenas ameaças vazias de empresas dominantes.
 
 !!! example "Jogo de entrada (Stackelberg simplificado)"
     Considere um jogo de entrada em um mercado. A firma entrante (E) decide se entra ou não. Se E entra, a firma incumbente (I) decide se luta (L) ou acomoda (A).
@@ -829,59 +857,27 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ## Apêndice: A Pesquisa em Ação
 
-### Entrada e competição em mercados concentrados
+??? abstract "Bresnahan, Timothy F.; Reiss, Peter C. (1991). Entry and Competition in Concentrated Markets. *Journal of Political Economy*, 99(5), 977–1009. DOI: 10.1086/261786"
+    **Pergunta central:** Quantas firmas são necessárias para que um mercado se torne efetivamente competitivo? A teoria dos jogos prevê que Bertrand com dois concorrentes já gera preço competitivo, enquanto Cournot requer muitas firmas. Qual dessas previsões se aproxima mais da realidade?
 
-> **Referência completa:** Bresnahan, Timothy F.; Reiss, Peter C. "Entry and Competition in Concentrated Markets."
-> *Journal of Political Economy*, 99(5): 977–1009, 1991.
-> DOI: 10.1086/261786
+    **Método:** Bresnahan e Reiss desenvolveram um modelo econométrico de entrada em mercados locais geograficamente isolados nos Estados Unidos (cidades pequenas com 1 a 5 firmas). Usando dados de cinco setores — médicos, dentistas, farmácias, encanadores e loja de pneus —, os autores inferiram o nível de competição a partir do tamanho mínimo de mercado necessário para sustentar uma firma adicional. A ideia-chave: se o mercado precisa ser proporcionalmente maior para sustentar 3 firmas do que para sustentar 2, isso significa que a terceira firma reduz as margens — evidência de que a entrada intensifica a competição.
 
-**A pergunta**
+    **Resultado principal:** A transição de monopólio para duopólio e de duopólio para triopólio gera reduções significativas nas margens de lucro. A partir de 3 a 5 firmas, o tamanho de mercado por firma se estabiliza, sugerindo que a maior parte dos ganhos competitivos ocorre com a entrada das primeiras concorrentes. O efeito pró-competitivo da terceira entrante é tipicamente menor que o da segunda — ou seja, a competição se intensifica rapidamente com poucas firmas.
 
-Quantas firmas são necessárias para que um mercado se torne efetivamente competitivo? A teoria dos jogos prevê que Bertrand com dois concorrentes já gera preço competitivo, enquanto Cournot requer muitas firmas. Qual dessas previsões se aproxima mais da realidade?
+    **Por que isso importa:** Para o Brasil, os resultados têm implicações diretas para a análise do CADE em atos de concentração. A fusão de duas das três grandes companhias aéreas, por exemplo, reduziria muitas rotas de triopólio para duopólio — precisamente a faixa onde Bresnahan e Reiss encontram os maiores aumentos de margem. A metodologia também é aplicável a mercados de combustíveis, farmácias e serviços de saúde no interior do país.
 
-**Como os autores responderam**
+    **Relevância para o capítulo:** O artigo testa empiricamente as previsões dos modelos de Cournot e Bertrand (Seção 8.6) sobre a relação entre número de concorrentes e intensidade da competição. Os resultados são mais consistentes com modelos intermediários (competição monopolística ou Cournot com poucas firmas) do que com os extremos de Bertrand puro (dois bastam) ou competição perfeita (muitos necessários).
 
-Bresnahan e Reiss desenvolveram um modelo econométrico de entrada em mercados locais geograficamente isolados nos Estados Unidos (cidades pequenas com 1 a 5 firmas). Usando dados de cinco setores — médicos, dentistas, farmácias, encanadores e loja de pneus —, os autores inferiram o nível de competição a partir do tamanho mínimo de mercado necessário para sustentar uma firma adicional. A ideia-chave: se o mercado precisa ser proporcionalmente maior para sustentar 3 firmas do que para sustentar 2, isso significa que a terceira firma reduz as margens — evidência de que a entrada intensifica a competição.
+??? abstract "Porter, Robert H. (1983). A Study of Cartel Stability: The Joint Executive Committee, 1880–1886. *The Bell Journal of Economics*, 14(2), 301–314. DOI: 10.2307/3003634"
+    **Pergunta central:** Os modelos teóricos de jogos repetidos preveem que cartéis alternam entre fases de conluio (preços altos) e fases de punição (guerras de preço). Essa dinâmica é observável em dados reais? É possível identificar empiricamente as transições entre cooperação e punição?
 
-**O que descobriram**
+    **Método:** Porter analisou dados semanais de preços e quantidades do *Joint Executive Committee* (JEC), um cartel de ferrovias nos Estados Unidos entre 1880 e 1886. Usando um modelo econométrico de mudança de regime (*switching regression*), estimou a probabilidade de o cartel estar em fase cooperativa ou em fase de guerra de preços em cada semana. O modelo permite que os parâmetros de demanda e oferta mudem entre os dois regimes.
 
-A transição de monopólio para duopólio e de duopólio para triopólio gera reduções significativas nas margens de lucro. A partir de 3 a 5 firmas, o tamanho de mercado por firma se estabiliza, sugerindo que a maior parte dos ganhos competitivos ocorre com a entrada das primeiras concorrentes. O efeito pró-competitivo da terceira entrante é tipicamente menor que o da segunda — ou seja, a competição se intensifica rapidamente com poucas firmas.
+    **Resultado principal:** O cartel ferroviário efetivamente alternava entre dois regimes: períodos de cooperação (preços elevados e quantidades restringidas) e episódios de guerra de preço (preços baixos e quantidades elevadas). Os choques de demanda — como mudanças sazonais no tráfego de grãos nos Grandes Lagos — precipitavam colapsos da cooperação, consistente com o modelo teórico de Green e Porter (1984) no qual choques negativos de demanda são indistinguíveis de desvios, acionando a fase de punição.
 
-**Por que isso importa**
+    **Por que isso importa:** O artigo é um dos primeiros a fornecer evidência econométrica de que a dinâmica dos jogos repetidos (Seção 8.8) possui contrapartida empírica verificável. Para o Brasil, a metodologia é aplicável à investigação do CADE em cartéis de combustíveis e outros setores: padrões de preços que alternam entre "estabilidade coordenada" e "guerras de preço" podem ser evidência de conluio tácito com fases de punição.
 
-Para o Brasil, os resultados têm implicações diretas para a análise do CADE em atos de concentração. A fusão de duas das três grandes companhias aéreas, por exemplo, reduziria muitas rotas de triopólio para duopólio — precisamente a faixa onde Bresnahan e Reiss encontram os maiores aumentos de margem. A metodologia também é aplicável a mercados de combustíveis, farmácias e serviços de saúde no interior do país.
-
-**Conexão com este capítulo**
-
-O artigo testa empiricamente as previsões dos modelos de Cournot e Bertrand (Seção 8.6) sobre a relação entre número de concorrentes e intensidade da competição. Os resultados são mais consistentes com modelos intermediários (competição monopolística ou Cournot com poucas firmas) do que com os extremos de Bertrand puro (dois bastam) ou competição perfeita (muitos necessários).
-
-### Estabilidade de cartéis: evidência empírica de jogos repetidos
-
-> **Referência completa:** Porter, Robert H. "A Study of Cartel Stability: The Joint Executive Committee, 1880–1886."
-> *The Bell Journal of Economics*, 14(2): 301–314, 1983.
-> DOI: 10.2307/3003634
-
-**A pergunta**
-
-Os modelos teóricos de jogos repetidos preveem que cartéis alternam entre fases de conluio (preços altos) e fases de punição (guerras de preço). Essa dinâmica é observável em dados reais? É possível identificar empiricamente as transições entre cooperação e punição?
-
-**Como os autores responderam**
-
-Porter analisou dados semanais de preços e quantidades do *Joint Executive Committee* (JEC), um cartel de ferrovias nos Estados Unidos entre 1880 e 1886. Usando um modelo econométrico de mudança de regime (*switching regression*), estimou a probabilidade de o cartel estar em fase cooperativa ou em fase de guerra de preços em cada semana. O modelo permite que os parâmetros de demanda e oferta mudem entre os dois regimes.
-
-**O que descobriram**
-
-O cartel ferroviário efetivamente alternava entre dois regimes: períodos de cooperação (preços elevados e quantidades restringidas) e episódios de guerra de preço (preços baixos e quantidades elevadas). Os choques de demanda — como mudanças sazonais no tráfego de grãos nos Grandes Lagos — precipitavam colapsos da cooperação, consistente com o modelo teórico de Green e Porter (1984) no qual choques negativos de demanda são indistinguíveis de desvios, acionando a fase de punição.
-
-**Por que isso importa**
-
-O artigo é um dos primeiros a fornecer evidência econométrica de que a dinâmica dos jogos repetidos (Seção 8.8) possui contrapartida empírica verificável. Para o Brasil, a metodologia é aplicável à investigação do CADE em cartéis de combustíveis e outros setores: padrões de preços que alternam entre "estabilidade coordenada" e "guerras de preço" podem ser evidência de conluio tácito com fases de punição.
-
-**Conexão com este capítulo**
-
-O estudo demonstra empiricamente os conceitos de estratégia de gatilho e fases cooperativa/punitiva dos jogos repetidos (Seção 8.8). A alternância entre conluio e guerra de preços observada nos dados é precisamente o que o modelo teórico com *grim trigger* ou estratégias de punição mais sofisticadas prevê quando há incerteza sobre choques de demanda.
-
----
+    **Relevância para o capítulo:** O estudo demonstra empiricamente os conceitos de estratégia de gatilho e fases cooperativa/punitiva dos jogos repetidos (Seção 8.8). A alternância entre conluio e guerra de preços observada nos dados é precisamente o que o modelo teórico com *grim trigger* ou estratégias de punição mais sofisticadas prevê quando há incerteza sobre choques de demanda.
 
 ## Referências do Capítulo
 

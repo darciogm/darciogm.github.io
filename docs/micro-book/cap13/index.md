@@ -48,6 +48,13 @@ A **Caixa de Edgeworth** é um retângulo com dimensões \(\bar{x}_1 \times \bar
 !!! definition "Caixa de Edgeworth"
     A **Caixa de Edgeworth** é uma representação gráfica de todas as alocações factíveis em uma economia de troca pura com dois consumidores e dois bens. Cada ponto no retângulo especifica simultaneamente as cestas de consumo de ambos os consumidores.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A Caixa de Edgeworth é um mapa de todas as formas possíveis de dividir os recursos de uma economia entre duas pessoas.
+
+    **Pense assim:** Imagine dois colegas de república dividindo o que sobrou na geladeira: 6 fatias de pizza e 4 latas de refrigerante. Qualquer combinação que dê o total — 4 fatias para um e 2 para outro, por exemplo — é um ponto na caixa. Movendo o ponto, você redistribui pizza e refrigerante entre os dois. A mágica da caixa é mostrar, num só diagrama, se existe uma redistribuição que deixe ambos mais felizes.
+
+    **Por que isso importa:** A Caixa de Edgeworth é a ferramenta visual fundamental para entender trocas voluntárias, eficiência e os ganhos do comércio — inclusive entre países, como no acordo Mercosul-UE.
+
 ### Curvas de indiferença na caixa
 
 As curvas de indiferença do consumidor A são desenhadas normalmente (convexas em relação à origem inferior esquerda). As curvas de indiferença do consumidor B são desenhadas invertidas (convexas em relação ao canto superior direito). Quando duas curvas de indiferença se tangenciam, as taxas marginais de substituição são iguais:
@@ -74,6 +81,13 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 
 !!! definition "Eficiência de Pareto"
     Uma alocação é **eficiente no sentido de Pareto** (ou um **ótimo de Pareto**) se não existe outra alocação factível que melhore a situação de pelo menos um agente sem piorar a de nenhum outro.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Uma situação é eficiente no sentido de Pareto quando não dá mais para melhorar a vida de alguém sem prejudicar outra pessoa.
+
+    **Pense assim:** Pense em uma partilha de bolo de aniversário. Se dá para refattiar o bolo de modo que alguém ganhe um pedaço maior sem que ninguém fique com um pedaço menor, a divisão original era ineficiente. Eficiência de Pareto é quando todo o bolo já foi distribuído da melhor forma possível — qualquer mudança que beneficie alguém necessariamente tira de outro.
+
+    **Por que isso importa:** Eficiência de Pareto é o critério mínimo de "bom funcionamento" de uma economia, mas não diz nada sobre justiça — uma sociedade onde uma pessoa tem tudo e as demais nada pode ser Pareto-eficiente, o que mostra por que eficiência e equidade são questões distintas.
 
 O conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth forma a **curva de contrato** — o locus dos pontos de tangência entre as curvas de indiferença dos dois consumidores.
 
@@ -229,6 +243,13 @@ Este é o resultado formal que dá substância à intuição da "mão invisível
 !!! tip "Hipóteses cruciais"
     O Primeiro Teorema requer: (i) comportamento tomador de preço; (ii) mercados completos (sem externalidades nem bens públicos); (iii) não saciedade local das preferências. A violação de qualquer uma dessas hipóteses abre espaço para **falhas de mercado** — tema dos próximos capítulos.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Quando os mercados funcionam bem (sem monopólios, externalidades ou informação assimétrica), o interesse próprio de cada agente leva, como que por mágica, a um resultado eficiente para todos.
+
+    **Pense assim:** Ninguém coordena os milhares de caminhões que levam comida de Mato Grosso aos supermercados de São Paulo. Cada motorista, cada atacadista e cada varejista age por interesse próprio — mas o sistema de preços funciona como um "maestro invisível", sinalizando onde falta e onde sobra produto. O Primeiro Teorema formaliza essa ideia: se os preços são livres e ninguém tem poder de mercado, o resultado é eficiente.
+
+    **Por que isso importa:** Esse teorema é o fundamento teórico para políticas pró-concorrência e contra monopólios — mas também alerta que, quando as hipóteses falham (externalidades, bens públicos), a intervenção governamental pode ser justificada.
+
 ---
 
 ## 13.6 O Segundo Teorema do Bem-Estar
@@ -245,6 +266,13 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 
 !!! note "Limitação prática"
     Na prática, transferências *lump-sum* perfeitas são difíceis de implementar, pois requerem informação sobre características dos agentes que geralmente são privadas. A tributação factível (imposto de renda, IVA) introduz distorções e gera perda de peso morto — um *trade-off* entre eficiência e equidade que é central na economia do setor público.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A sociedade pode escolher qualquer distribuição de bem-estar que considere justa e, em princípio, alcançá-la usando mercados competitivos — basta redistribuir as dotações iniciais.
+
+    **Pense assim:** Imagine que o governo quer reduzir a desigualdade sem destruir a eficiência da economia. O Segundo Teorema diz que, em teoria, bastaria redistribuir a "riqueza inicial" (terra, capital) e depois deixar os mercados funcionarem livremente. É como reorganizar as fichas antes de começar o jogo, em vez de mudar as regras durante a partida. O problema é que, na prática, redistribuir sem distorcer é quase impossível — o Bolsa Família, por exemplo, é eficiente mas ainda gera algum custo administrativo.
+
+    **Por que isso importa:** Esse teorema fundamenta a separação entre política de eficiência (deixar mercados funcionar) e política de equidade (redistribuir renda), e é a base teórica de programas de transferência de renda como o Bolsa Família.
 
 ---
 
@@ -757,61 +785,27 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ## Apêndice: A Pesquisa em Ação
 
-### Liberalização Comercial e Dinâmica do Mercado de Trabalho
+??? abstract "Dix-Carneiro, R. (2014). Trade Liberalization and Labor Market Dynamics. *Econometrica*, 82(3), 825–885."
+    **Pergunta central:** Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
 
-> **Referência completa:** Dix-Carneiro, Rafael. "Trade Liberalization and Labor Market Dynamics."
-> *Econometrica*, 82(3): 825–885, 2014.
-> DOI: 10.3982/ECTA10457
+    **Método:** O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
 
-**A pergunta**
+    **Resultado principal:** Os custos medianos de mobilidade setorial variam de **1,4 a 2,7 vezes o salário anual** — são substanciais. As transições após liberalização comercial levam vários anos para se completar. Os ganhos agregados de bem-estar são significativamente reduzidos pelo processo de ajuste lento e custoso. Crucialmente, os efeitos de bem-estar dependem fortemente do setor inicial de emprego do trabalhador — trabalhadores em setores protegidos sofrem perdas persistentes.
 
-Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
+    **Por que isso importa:** Para o Brasil, que passou por intensa liberalização nos anos 1990, o artigo quantifica os custos humanos da transição — algo que os modelos CGE estáticos da Seção 13.10 não capturam. Os resultados informam o debate sobre políticas de transição justa (*safety nets*) que acompanhem a abertura comercial.
 
-**Como o autor respondeu**
+    **Relevância para o capítulo:** O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 13.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
 
-O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
+??? abstract "Caliendo, L.; Parro, F. (2015). Estimates of the Trade and Welfare Effects of NAFTA. *Review of Economic Studies*, 82(1), 1–44."
+    **Pergunta central:** Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
 
-**O que descobriram**
+    **Método:** Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.
 
-Os custos medianos de mobilidade setorial variam de **1,4 a 2,7 vezes o salário anual** — são substanciais. As transições após liberalização comercial levam vários anos para se completar. Os ganhos agregados de bem-estar são significativamente reduzidos pelo processo de ajuste lento e custoso. Crucialmente, os efeitos de bem-estar dependem fortemente do setor inicial de emprego do trabalhador — trabalhadores em setores protegidos sofrem perdas persistentes.
+    **Resultado principal:** O bem-estar do México aumentou **1,31%**, o dos EUA **0,08%** e o do Canadá caiu **0,06%** como resultado do NAFTA. Os efeitos são heterogêneos entre setores: os encadeamentos produtivos via insumos intermediários amplificam os ganhos comerciais em até 40% em relação a um modelo sem bens intermediários. A desagregação setorial é crucial — modelos com apenas um setor subestimam substancialmente os efeitos.
 
-**Por que isso importa**
+    **Por que isso importa:** O artigo é uma referência metodológica para avaliar acordos como o Mercosul-UE. A abordagem pode ser aplicada ao caso brasileiro para estimar os efeitos setoriais e regionais da abertura comercial, complementando os modelos CGE tradicionais (Seção 13.10) com maior rigor na estimação das elasticidades comerciais.
 
-Para o Brasil, que passou por intensa liberalização nos anos 1990, o artigo quantifica os custos humanos da transição — algo que os modelos CGE estáticos da Seção 13.10 não capturam. Os resultados informam o debate sobre políticas de transição justa (*safety nets*) que acompanhem a abertura comercial.
-
-**Conexão com este capítulo**
-
-O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 13.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
-
----
-
-### Efeitos Comerciais e de Bem-Estar do NAFTA
-
-> **Referência completa:** Caliendo, Lorenzo, e Fernando Parro. "Estimates of the Trade and Welfare Effects of NAFTA."
-> *Review of Economic Studies*, 82(1): 1–44, 2015.
-> DOI: 10.1093/restud/rdu035
-
-**A pergunta**
-
-Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
-
-**Como os autores responderam**
-
-Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.
-
-**O que descobriram**
-
-O bem-estar do México aumentou **1,31%**, o dos EUA **0,08%** e o do Canadá caiu **0,06%** como resultado do NAFTA. Os efeitos são heterogêneos entre setores: os encadeamentos produtivos via insumos intermediários amplificam os ganhos comerciais em até 40% em relação a um modelo sem bens intermediários. A desagregação setorial é crucial — modelos com apenas um setor subestimam substancialmente os efeitos.
-
-**Por que isso importa**
-
-O artigo é uma referência metodológica para avaliar acordos como o Mercosul-UE. A abordagem pode ser aplicada ao caso brasileiro para estimar os efeitos setoriais e regionais da abertura comercial, complementando os modelos CGE tradicionais (Seção 13.10) com maior rigor na estimação das elasticidades comerciais.
-
-**Conexão com este capítulo**
-
-O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
-
----
+    **Relevância para o capítulo:** O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
 
 ## Referências
 

@@ -33,6 +33,13 @@ onde \(p_1, p_2 > 0\) são os preços dos bens e \(I > 0\) é a renda nominal do
 
 Sob monotonicidade das preferências, a restrição orçamentária é satisfeita com igualdade na solução ótima: o consumidor gasta toda a renda.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A restrição orçamentária diz que toda escolha tem um custo de oportunidade — comprar mais de um bem significa abrir mão de outro.
+
+    **Pense assim:** Imagine que você tem R$ 300 para gastar no mês entre carne e transporte. Cada real a mais gasto em carne é um real a menos em passagem de ônibus. A inclinação da reta orçamentária (\(-p_1/p_2\)) é exatamente esse "preço" da troca: se a carne custa R$ 40/kg e a passagem R$ 5, cada quilo de carne "custa" 8 passagens.
+
+    **Por que isso importa:** Todo debate sobre política de preços — subsídios ao gás de cozinha, tarifa zero no transporte público — é, no fundo, sobre como deslocar ou rotacionar essa reta orçamentária das famílias.
+
 <iframe src="../graficos/cap04/restricao-orcamentaria.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
 *Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.*
 
@@ -65,6 +72,13 @@ A condição de tangência pode ser reescrita em termos de utilidade marginal po
 \]
 
 Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última unidade monetária gasta em cada bem produz o mesmo incremento de utilidade.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** No ponto ótimo, o último real gasto em qualquer bem deve render a mesma satisfação — senão, valeria a pena realocar.
+
+    **Pense assim:** Suponha que o último real gasto em café no supermercado te dá mais prazer que o último real gasto em pão. Então faz sentido comprar menos pão e mais café, até que a satisfação marginal por real se iguale nos dois. É como distribuir água entre vasos: você para quando o nível está igual em todos.
+
+    **Por que isso importa:** Essa condição de tangência (TMS = razão de preços) é a base de toda a análise de demanda — dela derivamos as curvas de demanda e avaliamos o impacto de mudanças de preços.
 
 !!! tip "Soluções de canto"
     Nem todas as soluções são interiores. Para substitutos perfeitos, por exemplo, o consumidor tipicamente consome apenas o bem com maior razão \(a_i/p_i\). Soluções de canto ocorrem quando a TMS no ponto \(x_i = 0\) já é inferior (ou superior) à razão de preços, de modo que a condição de tangência não se verifica em nenhum ponto interior.
@@ -351,6 +365,13 @@ E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a u
 
 Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)\) são **inversas** uma da outra (fixados os preços).
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Maximizar a felicidade com um orçamento fixo e minimizar o gasto para atingir uma felicidade fixa são dois lados da mesma moeda.
+
+    **Pense assim:** Pense em um estudante que quer montar a melhor marmita possível com R$ 15 (problema primal). Ou, alternativamente, quer gastar o mínimo para montar uma marmita tão boa quanto a que comeu ontem (problema dual). Nos dois casos, ele escolhe os mesmos ingredientes no mesmo ponto de tangência — só muda a pergunta.
+
+    **Por que isso importa:** A dualidade permite construir medidas de bem-estar (variação compensatória e equivalente) que são essenciais para avaliar políticas públicas como reajustes de tarifas ou mudanças tributárias.
+
 <iframe src="../graficos/cap04/dualidade.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
 *Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.*
 
@@ -433,6 +454,13 @@ A Identidade de Roy permite recuperar as demandas marshallianas diretamente da f
     \[
     x_i(\mathbf{p}, I) = -\frac{\partial V / \partial p_i}{\partial V / \partial I}. \qquad \blacksquare
     \]
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A Identidade de Roy diz que, se você sabe como a satisfação máxima reage a preços e renda, já consegue recuperar a demanda — sem resolver o problema de otimização de novo.
+
+    **Pense assim:** É como se o extrato bancário (utilidade indireta) já contivesse toda a informação sobre o que você comprou. A Identidade de Roy é a "fórmula de engenharia reversa" que recupera o carrinho de compras a partir do extrato. O Lema de Shephard faz o mesmo truque partindo da função dispêndio.
+
+    **Por que isso importa:** Na prática empírica, muitas vezes o pesquisador estima primeiro a função de utilidade indireta ou a função dispêndio, e depois usa Roy ou Shephard para obter as demandas — é mais fácil do que resolver o problema de otimização diretamente.
 
 !!! tip "Verificação: caso Cobb-Douglas"
     Para \(u = x_1^a x_2^b\) com \(a + b = 1\), temos \(V = (a/p_1)^a (b/p_2)^b \cdot I\). Então:
@@ -921,58 +949,27 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
 
 ## Apêndice: A Pesquisa em Ação
 
-### Transferências de renda e consumo alimentar no Brasil
+??? abstract "Attanasio, O.; Battistin, E.; Mesnard, A. (2012). Food and Cash Transfers: Evidence from Colombia. *The Economic Journal*, 122(559), 92–124."
+    **Pergunta central:** Transferências de renda em dinheiro são mais eficientes do que transferências em espécie (como cestas básicas) para melhorar o consumo alimentar das famílias pobres? A teoria do consumidor prevê que, se o valor da transferência em espécie é inferior ao que a família gastaria voluntariamente com alimentação, os dois tipos de transferência deveriam ter efeitos idênticos — o que é conhecido como o "teorema da fungibilidade" da renda.
 
-> **Referência completa:** Attanasio, Orazio; Battistin, Erich; Mesnard, Alice. "Food and Cash Transfers: Evidence from Colombia."
-> *The Economic Journal*, 122(559): 92–124, 2012.
-> DOI: 10.1111/j.1468-0297.2011.02473.x
+    **Método:** O estudo explora uma característica do programa colombiano *Familias en Acción*, que oferecia transferências em dinheiro condicionadas à frequência escolar e a visitas de saúde. Os autores compararam os padrões de consumo de famílias beneficiárias com grupos de controle usando técnicas de diferenças em diferenças e matching, com dados de pesquisas domiciliares detalhadas.
 
-**A pergunta**
+    **Resultado principal:** As transferências em dinheiro aumentaram significativamente o consumo alimentar das famílias beneficiárias — em particular proteínas animais e alimentos de alto valor nutricional. O efeito sobre o consumo alimentar foi de aproximadamente 15% da transferência, acima do que se esperaria pela propensão marginal a consumir alimentos na margem. Isso sugere que as condicionalidades e o *labeling* (rotulação) da transferência como "para os filhos" influenciam as decisões intradomiciliares de alocação.
 
-Transferências de renda em dinheiro são mais eficientes do que transferências em espécie (como cestas básicas) para melhorar o consumo alimentar das famílias pobres? A teoria do consumidor prevê que, se o valor da transferência em espécie é inferior ao que a família gastaria voluntariamente com alimentação, os dois tipos de transferência deveriam ter efeitos idênticos — o que é conhecido como o "teorema da fungibilidade" da renda.
+    **Por que isso importa:** Esses resultados são diretamente relevantes para o debate brasileiro sobre a eficácia do Bolsa Família versus programas de distribuição de cestas básicas. A evidência sugere que transferências em dinheiro são eficientes e que os beneficiários alocam os recursos de forma racional, consistente com a teoria da maximização da utilidade, ao mesmo tempo em que o *framing* das condicionalidades pode influenciar a composição do consumo.
 
-**Como os autores responderam**
+    **Relevância para o capítulo:** O estudo ilustra o princípio do montante fixo na prática: transferências em dinheiro (análogas a *lump sum*) permitem ao consumidor reotimizar livremente sua cesta de consumo, enquanto transferências em espécie impõem uma composição específica que pode não corresponder às preferências individuais. A superioridade teórica do *lump sum* (Seção 4.5) encontra respaldo empírico, embora fatores comportamentais (como o *labeling*) adicionem nuances à previsão do modelo padrão.
 
-O estudo explora uma característica do programa colombiano *Familias en Acción*, que oferecia transferências em dinheiro condicionadas à frequência escolar e a visitas de saúde. Os autores compararam os padrões de consumo de famílias beneficiárias com grupos de controle usando técnicas de diferenças em diferenças e matching, com dados de pesquisas domiciliares detalhadas.
+??? abstract "Deaton, A.; Muellbauer, J. (1980). An Almost Ideal Demand System. *The American Economic Review*, 70(3), 312–326."
+    **Pergunta central:** Como estimar empiricamente um sistema completo de demanda do consumidor que seja consistente com a teoria microeconômica — satisfazendo homogeneidade, simetria de Slutsky e a restrição orçamentária — e ao mesmo tempo suficientemente flexível para capturar padrões reais de consumo?
 
-**O que descobriram**
+    **Método:** Deaton e Muellbauer derivaram o *Almost Ideal Demand System* (AIDS) a partir de uma forma funcional específica para a função dispêndio. O modelo expressa a parcela de gasto em cada bem como função log-linear dos preços e da renda real. A grande inovação foi que o sistema é derivado de uma função dispêndio bem comportada, garantindo automaticamente consistência com a teoria, e ao mesmo tempo possui uma forma linear nos parâmetros, facilitando a estimação econométrica.
 
-As transferências em dinheiro aumentaram significativamente o consumo alimentar das famílias beneficiárias — em particular proteínas animais e alimentos de alto valor nutricional. O efeito sobre o consumo alimentar foi de aproximadamente 15% da transferência, acima do que se esperaria pela propensão marginal a consumir alimentos na margem. Isso sugere que as condicionalidades e o *labeling* (rotulação) da transferência como "para os filhos" influenciam as decisões intradomiciliares de alocação.
+    **Resultado principal:** Usando dados de consumo britânicos (1954–1974), os autores estimaram elasticidades-preço e elasticidades-renda para grandes categorias de gastos (alimentação, habitação, vestuário, transporte, outros bens). Alimentos se mostraram um bem necessário (elasticidade-renda < 1), enquanto transporte e bens duráveis se mostraram bens de luxo (elasticidade-renda > 1). O modelo AIDS se tornou o padrão da literatura empírica de demanda.
 
-**Por que isso importa**
+    **Por que isso importa:** O modelo AIDS é amplamente utilizado no Brasil para estimar sistemas de demanda a partir dos dados da POF. Pesquisadores do IPEA e de universidades brasileiras aplicam o AIDS para avaliar o impacto de políticas tributárias (como alterações no ICMS) e de programas sociais sobre o consumo das famílias por faixa de renda, conectando diretamente a teoria deste capítulo à avaliação de políticas públicas.
 
-Esses resultados são diretamente relevantes para o debate brasileiro sobre a eficácia do Bolsa Família versus programas de distribuição de cestas básicas. A evidência sugere que transferências em dinheiro são eficientes e que os beneficiários alocam os recursos de forma racional, consistente com a teoria da maximização da utilidade, ao mesmo tempo em que o *framing* das condicionalidades pode influenciar a composição do consumo.
-
-**Conexão com este capítulo**
-
-O estudo ilustra o princípio do montante fixo na prática: transferências em dinheiro (análogas a *lump sum*) permitem ao consumidor reotimizar livremente sua cesta de consumo, enquanto transferências em espécie impõem uma composição específica que pode não corresponder às preferências individuais. A superioridade teórica do *lump sum* (Seção 4.5) encontra respaldo empírico, embora fatores comportamentais (como o *labeling*) adicionem nuances à previsão do modelo padrão.
-
-### Como salários e preços afetam a estrutura do consumo familiar
-
-> **Referência completa:** Deaton, Angus; Muellbauer, John. "An Almost Ideal Demand System."
-> *The American Economic Review*, 70(3): 312–326, 1980.
-
-**A pergunta**
-
-Como estimar empiricamente um sistema completo de demanda do consumidor que seja consistente com a teoria microeconômica — satisfazendo homogeneidade, simetria de Slutsky e a restrição orçamentária — e ao mesmo tempo suficientemente flexível para capturar padrões reais de consumo?
-
-**Como os autores responderam**
-
-Deaton e Muellbauer derivaram o *Almost Ideal Demand System* (AIDS) a partir de uma forma funcional específica para a função dispêndio. O modelo expressa a parcela de gasto em cada bem como função log-linear dos preços e da renda real. A grande inovação foi que o sistema é derivado de uma função dispêndio bem comportada, garantindo automaticamente consistência com a teoria, e ao mesmo tempo possui uma forma linear nos parâmetros, facilitando a estimação econométrica.
-
-**O que descobriram**
-
-Usando dados de consumo britânicos (1954–1974), os autores estimaram elasticidades-preço e elasticidades-renda para grandes categorias de gastos (alimentação, habitação, vestuário, transporte, outros bens). Alimentos se mostraram um bem necessário (elasticidade-renda < 1), enquanto transporte e bens duráveis se mostraram bens de luxo (elasticidade-renda > 1). O modelo AIDS se tornou o padrão da literatura empírica de demanda.
-
-**Por que isso importa**
-
-O modelo AIDS é amplamente utilizado no Brasil para estimar sistemas de demanda a partir dos dados da POF. Pesquisadores do IPEA e de universidades brasileiras aplicam o AIDS para avaliar o impacto de políticas tributárias (como alterações no ICMS) e de programas sociais sobre o consumo das famílias por faixa de renda, conectando diretamente a teoria deste capítulo à avaliação de políticas públicas.
-
-**Conexão com este capítulo**
-
-O AIDS é construído diretamente sobre a função dispêndio (Seção 4.7) e o Lema de Shephard. As parcelas de gasto derivadas do modelo são exatamente as demandas hicksianas multiplicadas pelos preços e divididas pelo gasto total. Assim, o artigo demonstra que os conceitos de função dispêndio, demanda hicksiana e dualidade — que podem parecer abstrações teóricas — são a base de todo um programa de pesquisa empírica em economia do consumo.
-
----
+    **Relevância para o capítulo:** O AIDS é construído diretamente sobre a função dispêndio (Seção 4.7) e o Lema de Shephard. As parcelas de gasto derivadas do modelo são exatamente as demandas hicksianas multiplicadas pelos preços e divididas pelo gasto total. Assim, o artigo demonstra que os conceitos de função dispêndio, demanda hicksiana e dualidade — que podem parecer abstrações teóricas — são a base de todo um programa de pesquisa empírica em economia do consumo.
 
 ## Referências do Capítulo
 

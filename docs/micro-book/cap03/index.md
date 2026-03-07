@@ -39,6 +39,13 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
 !!! info "Exemplo — Racionalidade nas escolhas de consumo no Brasil"
     Os axiomas de completude e transitividade podem parecer abstratos, mas refletem exigências mínimas de consistência nas escolhas cotidianas. A Pesquisa de Orçamentos Familiares (POF 2017-2018) do IBGE mostra que famílias brasileiras, mesmo as de baixa renda, alocam seus orçamentos de forma estável e internamente consistente: quando a renda aumenta, a participação relativa da alimentação cai de maneira suave e previsível (de 22% para famílias com renda até R$ 1.908 a 7,6% para famílias acima de R$ 23.850). Essa regularidade empírica é compatível com preferências que satisfazem os axiomas acima — especialmente transitividade e monotonicidade — e justifica o uso do arcabouço axiomático como ponto de partida para modelar o consumidor.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Os axiomas de preferência são apenas regras mínimas de coerência — exigem que o consumidor saiba comparar opções e não se contradiga.
+
+    **Pense assim:** Quando você vai à feira e decide que prefere banana a maçã, e maçã a pera, seria estranho voltar e dizer que prefere pera a banana. Completude é conseguir comparar qualquer par de frutas; transitividade é não entrar em contradição. A monotonicidade diz que, entre dois sacos de frutas, você prefere o maior — desde que goste de todas.
+
+    **Por que isso importa:** Sem essas regras mínimas, não seria possível prever o comportamento do consumidor nem formular políticas públicas baseadas em escolhas racionais.
+
 ---
 
 ## 3.2 Relações de Preferência e Função de Utilidade
@@ -60,6 +67,13 @@ A demonstração completa pode ser encontrada em Mas-Colell, Whinston e Green (1
 
 !!! note "Utilidade é ordinal, não cardinal"
     A função de utilidade atribui números a cestas apenas para preservar o **ordenamento**. Os valores absolutos não têm significado econômico intrínseco. Se \(u(\mathbf{x}) = 10\) e \(u(\mathbf{y}) = 5\), sabemos apenas que \(\mathbf{x} \succ \mathbf{y}\), **não** que \(\mathbf{x}\) é "duas vezes melhor" que \(\mathbf{y}\).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Os números da utilidade funcionam como a ordem de chegada numa corrida — só importa quem chegou antes, não por quantos segundos.
+
+    **Pense assim:** Imagine que você dá nota 10 para um prato de feijoada e nota 5 para uma salada. Isso não significa que a feijoada é "duas vezes mais gostosa" — apenas que você a prefere. Se um amigo desse nota 100 e 50, as preferências seriam as mesmas. O ranking é o que importa, não o placar.
+
+    **Por que isso importa:** Essa propriedade ordinal nos liberta de medir "felicidade" em unidades absolutas — basta saber o que o consumidor prefere para analisar suas escolhas.
 
 ---
 
@@ -103,6 +117,13 @@ As curvas de indiferença nos dizem *quais* cestas o consumidor considera equiva
 **Interpretação econômica**: A TMS é a **taxa de troca subjetiva** do consumidor. Se \(\text{TMS}_{12} = 3\), o consumidor está disposto a trocar até 3 unidades do bem 2 por 1 unidade adicional do bem 1.
 
 **TMS decrescente**: Sob preferências estritamente convexas, a TMS é decrescente ao longo da curva de indiferença. À medida que o consumidor adquire mais do bem 1, cada unidade adicional torna-se relativamente menos valiosa, e ele está disposto a sacrificar cada vez menos do bem 2. Esta propriedade é equivalente à convexidade estrita das curvas de indiferença.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A TMS mede "quanto do bem 2 você toparia trocar por mais uma unidade do bem 1" — é o seu preço pessoal de troca.
+
+    **Pense assim:** Imagine que você tem muito arroz e pouco feijão em casa. Você toparia trocar bastante arroz por um pouco de feijão. Mas à medida que ganha feijão e perde arroz, cada porção adicional de feijão vale menos para você, e cada porção de arroz que abre mão dói mais. Essa "taxa de troca pessoal" que vai caindo é a TMS decrescente.
+
+    **Por que isso importa:** No capítulo seguinte veremos que o consumidor otimiza quando sua TMS iguala a razão de preços do mercado — é o ponto onde o "preço pessoal" coincide com o "preço de mercado".
 
 !!! info "Exemplo — TMS e escolhas alimentares no Brasil"
     Considere um consumidor brasileiro escolhendo entre alimentação dentro de casa (\(x_1\)) e alimentação fora de casa (\(x_2\)). Segundo a POF 2017-2018 do IBGE, a despesa média per capita com alimentação no domicílio era de aproximadamente R\$ 136 mensais, contra R\$ 73 com alimentação fora. Uma família com muito gasto em alimentação domiciliar (cesta "extrema") teria uma TMS alta: estaria disposta a abrir mão de várias refeições caseiras por uma refeição fora. À medida que aumenta a alimentação fora de casa, a TMS diminui — o consumidor valoriza cada vez menos uma refeição adicional fora. Essa TMS decrescente é a manifestação empírica da convexidade estrita das preferências.
@@ -336,6 +357,13 @@ Vimos que a utilidade é ordinal: apenas o ordenamento das cestas importa, não 
 
 A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}) \geq u(\mathbf{y})\) se e somente se \(f(u(\mathbf{x})) \geq f(u(\mathbf{y}))\).
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Você pode trocar a "régua" que mede a utilidade sem alterar as preferências — qualquer escala que preserve a ordem serve.
+
+    **Pense assim:** É como converter temperatura de Celsius para Fahrenheit: os números mudam, mas a água continua fervendo antes do metal derreter. Da mesma forma, se você aplica logaritmo na utilidade Cobb-Douglas para facilitar as contas, o consumidor continua preferindo as mesmas cestas de antes.
+
+    **Por que isso importa:** Isso dá ao economista liberdade para escolher a forma funcional que facilite os cálculos — por exemplo, trabalhar com \(\ln u\) em vez de \(u\) — sem perder informação econômica.
+
 **Exemplos de transformações monotônicas úteis**:
 
 - A Cobb-Douglas \(u = x_1^a x_2^b\) pode ser transformada em \(\hat{u} = a \ln x_1 + b \ln x_2\) via \(f(u) = \ln(u)\), o que simplifica os cálculos.
@@ -536,47 +564,27 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ## Apêndice: A Pesquisa em Ação
 
-### Preferências econômicas ao redor do mundo — e no Brasil
+??? abstract "Falk, A.; Becker, A.; Dohmen, T.; Enke, B.; Huffman, D.; Sunde, U. (2018). Global Evidence on Economic Preferences. *Quarterly Journal of Economics*, 133(4), 1645–1692."
+    **Pergunta central:** Os axiomas de preferência apresentados na Seção 3.1 são abstrações teóricas — mas como as preferências reais dos indivíduos variam entre países e dentro de cada sociedade? Existem padrões sistemáticos que conectem preferências a características demográficas, culturais e econômicas? Este artigo é o maior esforço empírico já realizado para responder a essas perguntas.
 
-> **Referência completa:** Falk, Armin; Becker, Anke; Dohmen, Thomas; Enke, Benjamin; Huffman, David; Sunde, Uwe. "Global Evidence on Economic Preferences." *Quarterly Journal of Economics*, 133(4): 1645-1692, 2018. DOI: 10.1093/qje/qjy013
+    **Método:** Falk e coautores construíram o *Global Preference Survey* (GPS), um instrumento de pesquisa experimentalmente validado, aplicado a amostras representativas de 80.000 pessoas em 76 países — incluindo o Brasil. O GPS mede seis dimensões de preferências: paciência (preferência temporal), disposição a assumir riscos, reciprocidade positiva e negativa, altruísmo e confiança. A validação experimental foi realizada comparando as respostas da pesquisa com escolhas em experimentos com incentivos monetários reais.
 
-**A pergunta**
-Os axiomas de preferência apresentados na Seção 3.1 são abstrações teóricas — mas como as preferências reais dos indivíduos variam entre países e dentro de cada sociedade? Existem padrões sistemáticos que conectem preferências a características demográficas, culturais e econômicas? Este artigo é o maior esforço empírico já realizado para responder a essas perguntas.
+    **Resultado principal:** Há substancial heterogeneidade de preferências entre países, mas a variação *dentro* de cada país é ainda maior. Globalmente, preferências variam sistematicamente com idade, gênero e habilidade cognitiva — porém essas relações são parcialmente específicas de cada país. O Brasil apresenta níveis intermediários de paciência e disposição ao risco na comparação internacional, com heterogeneidade interna significativa — consistente com a elevada desigualdade socioeconômica do país.
 
-**Como os autores responderam**
-Falk e coautores construíram o *Global Preference Survey* (GPS), um instrumento de pesquisa experimentalmente validado, aplicado a amostras representativas de 80.000 pessoas em 76 países — incluindo o Brasil. O GPS mede seis dimensões de preferências: paciência (preferência temporal), disposição a assumir riscos, reciprocidade positiva e negativa, altruísmo e confiança. A validação experimental foi realizada comparando as respostas da pesquisa com escolhas em experimentos com incentivos monetários reais.
+    **Por que isso importa:** O estudo demonstra que as preferências — fundamento de toda a teoria do consumidor — não são uniformes nem entre nem dentro de países. Diferenças de preferência ajudam a explicar variações em poupança, investimento em educação e comportamento de consumo, complementando os modelos baseados apenas em diferenças de renda e preços.
 
-**O que descobriram**
-Há substancial heterogeneidade de preferências entre países, mas a variação *dentro* de cada país é ainda maior. Globalmente, preferências variam sistematicamente com idade, gênero e habilidade cognitiva — porém essas relações são parcialmente específicas de cada país. O Brasil apresenta níveis intermediários de paciência e disposição ao risco na comparação internacional, com heterogeneidade interna significativa — consistente com a elevada desigualdade socioeconômica do país.
+    **Relevância para o capítulo:** O artigo conecta diretamente os axiomas da Seção 3.1 com evidências empíricas: se as preferências variam sistematicamente entre indivíduos, as funções de utilidade que as representam também diferem — o que justifica a diversidade de formas funcionais apresentadas na Seção 3.6. Além disso, a heterogeneidade de preferências dentro do Brasil reforça a importância de modelos que permitam diferenças individuais, como a análise por faixa de renda da POF discutida no Box Brasil sobre Cobb-Douglas.
 
-**Por que isso importa**
-O estudo demonstra que as preferências — fundamento de toda a teoria do consumidor — não são uniformes nem entre nem dentro de países. Diferenças de preferência ajudam a explicar variações em poupança, investimento em educação e comportamento de consumo, complementando os modelos baseados apenas em diferenças de renda e preços.
+??? abstract "Choi, S.; Kariv, S.; Müller, W.; Silverman, D. (2014). Who Is (More) Rational? *American Economic Review*, 104(6), 1518–1550."
+    **Pergunta central:** Os axiomas de preferência — especialmente a transitividade e a completude — são *de fato* satisfeitos pelas escolhas dos consumidores reais? E se houver variação na "racionalidade" das decisões, ela está correlacionada com resultados econômicos importantes, como a acumulação de riqueza?
 
-**Conexão com este capítulo**
-O artigo conecta diretamente os axiomas da Seção 3.1 com evidências empíricas: se as preferências variam sistematicamente entre indivíduos, as funções de utilidade que as representam também diferem — o que justifica a diversidade de formas funcionais apresentadas na Seção 3.6. Além disso, a heterogeneidade de preferências dentro do Brasil reforça a importância de modelos que permitam diferenças individuais, como a análise por faixa de renda da POF discutida no Box Brasil sobre Cobb-Douglas.
+    **Método:** Choi e coautores conduziram um experimento em larga escala com uma amostra representativa da população holandesa (painel CentERpanel). Cada participante tomou 25 decisões de alocação entre dois bens sob restrições orçamentárias variadas. Os autores testaram se as escolhas observadas satisfazem o GARP (*Generalized Axiom of Revealed Preference*) — a condição necessária e suficiente para que os dados sejam consistentes com a maximização de alguma função de utilidade bem comportada (Teorema 3.1).
 
----
+    **Resultado principal:** A consistência com GARP varia substancialmente entre indivíduos: enquanto muitos participantes fazem escolhas quase perfeitamente racionais, outros violam sistematicamente os axiomas. Crucialmente, a consistência com a maximização de utilidade está fortemente correlacionada com a riqueza: um aumento de um desvio-padrão na consistência está associado a 15-19% a mais de riqueza acumulada. Essa associação é robusta mesmo controlando para renda, educação e outras variáveis.
 
-### Quão racionais somos? Testando os axiomas com escolhas reais
+    **Por que isso importa:** O resultado sugere que a capacidade de tomar decisões consistentes com uma função de utilidade — ou seja, de satisfazer os axiomas da Seção 3.1 na prática — não é apenas uma abstração teórica, mas uma habilidade com consequências econômicas reais e mensuráveis.
 
-> **Referência completa:** Choi, Syngjoo; Kariv, Shachar; Müller, Wieland; Silverman, Dan. "Who Is (More) Rational?" *American Economic Review*, 104(6): 1518-1550, 2014. DOI: 10.1257/aer.104.6.1518
-
-**A pergunta**
-Os axiomas de preferência — especialmente a transitividade e a completude — são *de fato* satisfeitos pelas escolhas dos consumidores reais? E se houver variação na "racionalidade" das decisões, ela está correlacionada com resultados econômicos importantes, como a acumulação de riqueza?
-
-**Como os autores responderam**
-Choi e coautores conduziram um experimento em larga escala com uma amostra representativa da população holandesa (painel CentERpanel). Cada participante tomou 25 decisões de alocação entre dois bens sob restrições orçamentárias variadas. Os autores testaram se as escolhas observadas satisfazem o GARP (*Generalized Axiom of Revealed Preference*) — a condição necessária e suficiente para que os dados sejam consistentes com a maximização de alguma função de utilidade bem comportada (Teorema 3.1).
-
-**O que descobriram**
-A consistência com GARP varia substancialmente entre indivíduos: enquanto muitos participantes fazem escolhas quase perfeitamente racionais, outros violam sistematicamente os axiomas. Crucialmente, a consistência com a maximização de utilidade está fortemente correlacionada com a riqueza: um aumento de um desvio-padrão na consistência está associado a 15-19% a mais de riqueza acumulada. Essa associação é robusta mesmo controlando para renda, educação e outras variáveis.
-
-**Por que isso importa**
-O resultado sugere que a capacidade de tomar decisões consistentes com uma função de utilidade — ou seja, de satisfazer os axiomas da Seção 3.1 na prática — não é apenas uma abstração teórica, mas uma habilidade com consequências econômicas reais e mensuráveis.
-
-**Conexão com este capítulo**
-Este artigo testa empiricamente os fundamentos do Capítulo 3. O GARP é a tradução operacional dos axiomas de completude e transitividade para dados de consumo observados. Os resultados mostram que, embora a maioria dos consumidores se comporte de forma aproximadamente consistente com os axiomas, há variação significativa — o que justifica tanto o uso do arcabouço axiomático como ponto de partida quanto a atenção a seus limites, discutidos na observação sobre preferências lexicográficas (Seção 3.1).
-
----
+    **Relevância para o capítulo:** Este artigo testa empiricamente os fundamentos do Capítulo 3. O GARP é a tradução operacional dos axiomas de completude e transitividade para dados de consumo observados. Os resultados mostram que, embora a maioria dos consumidores se comporte de forma aproximadamente consistente com os axiomas, há variação significativa — o que justifica tanto o uso do arcabouço axiomático como ponto de partida quanto a atenção a seus limites, discutidos na observação sobre preferências lexicográficas (Seção 3.1).
 
 ## Referências do Capítulo
 

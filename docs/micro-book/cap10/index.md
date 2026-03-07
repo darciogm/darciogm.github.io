@@ -32,6 +32,13 @@ A diferença entre lucro econômico e lucro contábil é dada pelos custos impl�
 
 Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é, remunera todos os fatores de produção, inclusive os próprios, pelo seu custo de oportunidade. Lucro econômico positivo indica **lucro supranormal** (ou econômico puro).
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O custo de oportunidade é o valor daquilo que você deixou de fazer ao escolher o que fez.
+
+    **Pense assim:** Um engenheiro que larga o emprego de R$ 15.000/mês para abrir uma hamburgueria precisa contar esse salário perdido como custo do negócio. Se a hamburgueria lucra R$ 12.000 por mês no papel, na verdade ele está "perdendo" R$ 3.000 em relação ao que poderia ganhar — o lucro econômico é negativo.
+
+    **Por que isso importa:** Ignorar o custo de oportunidade é o erro mais comum de pequenos empreendedores no Brasil e explica por que muitos negócios parecem lucrativos no extrato bancário, mas não compensam economicamente.
+
 !!! tip "Exemplo: custo de oportunidade na agricultura brasileira"
     Um produtor rural no Cerrado possui 500 hectares de terra própria e os utiliza para plantar soja. O custo contábil inclui sementes, fertilizantes, mão de obra e depreciação de máquinas. Porém, o custo econômico deve incluir também o **arrendamento** que ele deixa de receber ao não alugar a terra — que, segundo dados da CONAB, pode variar de 8 a 15 sacas de soja por hectare/ano conforme a região. Se o arrendamento médio é de 12 sacas/ha e a saca vale R$ 120, o custo implícito da terra é de R$ 720.000/ano — valor que o lucro contábil ignora completamente.
 
@@ -202,6 +209,13 @@ A função custo possui as seguintes propriedades:
 !!! tip "Significado econômico do Lema de Shephard"
     O Lema de Shephard é a contraparte, na teoria da produção, da **identidade de Roy** na teoria do consumidor. Ele permite recuperar as demandas condicionadas por insumos a partir de informações sobre custos — que são frequentemente mais fáceis de observar empiricamente do que as tecnologias de produção subjacentes. É uma ferramenta central na estimação empírica de funções de custo.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O Lema de Shephard diz que, se você sabe como o custo total muda quando o salário sobe um pouquinho, você já sabe quanta mão de obra a firma usa.
+
+    **Pense assim:** Se o preço da energia sobe R$ 0,01 por kWh e a conta de luz da fábrica sobe R$ 500, você sabe que a fábrica consome 50.000 kWh. O lema formaliza essa ideia simples: a sensibilidade do custo ao preço de um insumo revela a quantidade usada desse insumo.
+
+    **Por que isso importa:** Na prática, é muito mais fácil observar custos e preços do que medir diretamente a tecnologia de produção. O Lema de Shephard permite que economistas estimem demandas por insumos a partir de dados contábeis — algo essencial para política tributária e regulação no Brasil.
+
 ---
 
 ## 10.5 Curvas de Custo
@@ -241,6 +255,13 @@ A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
 \]
 
 Portanto, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O custo marginal "puxa" o custo médio — se produzir uma unidade a mais custa menos que a média, a média cai; se custa mais, a média sobe.
+
+    **Pense assim:** Pense na sua média de notas na faculdade. Se você tira 9 na próxima prova e sua média é 7, a média sobe. Se tira 5, a média cai. A nota marginal (a próxima prova) sempre arrasta a média na sua direção. Com custos é igual: o CMg cruza o CMe exatamente no ponto de mínimo do CMe.
+
+    **Por que isso importa:** Essa relação determina a escala ótima de produção das firmas e é a base para entender por que empresas brasileiras em setores com altos custos fixos (como telecomunicações) precisam de escala grande para serem viáveis.
 
 ### Formato típico das curvas de custo
 
@@ -333,6 +354,13 @@ A forma da curva \(\mathrm{CMe}_{LP}\) reflete os rendimentos de escala:
 - **Rendimentos decrescentes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) crescente \(\Leftrightarrow\) **deseconomias de escala**.
 
 A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o CMe de longo prazo atinge seu mínimo. A EME tem implicações diretas para a estrutura de mercado: se a EME é grande em relação ao tamanho do mercado, o setor tende a ter poucas firmas (oligopólio ou monopólio natural).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Economias de escala significam que produzir mais sai mais barato por unidade — o custo médio cai conforme a firma cresce.
+
+    **Pense assim:** Uma fábrica de cerveja artesanal paga quase o mesmo aluguel, energia e licença sanitária que uma grande cervejaria, mas produz muito menos garrafas para diluir esses custos. Por isso a Ambev consegue vender a R$ 3 a lata enquanto a artesanal cobra R$ 15 — a escala mínima eficiente do setor é alta.
+
+    **Por que isso importa:** Economias de escala explicam a concentração em setores como aviação, telecomunicações e siderurgia no Brasil, e são o principal argumento em análises de fusões pelo CADE.
 
 ---
 
@@ -845,41 +873,23 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ## Apêndice: A Pesquisa em Ação
 
-### Economias de escala na geração de energia elétrica
+??? abstract "Christensen, Laurits R.; Greene, William H. (1976). Economies of Scale in U.S. Electric Power Generation. *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: 10.1086/260470"
+    **Pergunta central:** A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
 
-> **Referência completa:** Christensen, Laurits R.; Greene, William H. "Economies of Scale in U.S. Electric Power Generation." *Journal of Political Economy*, 84(4, Part 1): 655-676, 1976. DOI: 10.1086/260470
+    **Método:** Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
 
-**A pergunta**
-A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
+    **Resultado principal:** Os resultados mostraram que a curva de CMe de longo prazo tinha de fato formato de U: economias de escala significativas para firmas pequenas e médias, custos médios aproximadamente constantes para firmas com geração acima de 20 bilhões de kWh, e leves deseconomias para as maiores. Isso contrastava com estimativas anteriores (usando formas funcionais restritivas como a Cobb-Douglas), que encontravam economias de escala ilimitadas — artefato da imposição de retornos crescentes homogêneos.
 
-**Como os autores responderam**
-Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
+    **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
 
-**O que descobriram**
-Os resultados mostraram que a curva de CMe de longo prazo tinha de fato formato de U: economias de escala significativas para firmas pequenas e médias, custos médios aproximadamente constantes para firmas com geração acima de 20 bilhões de kWh, e leves deseconomias para as maiores. Isso contrastava com estimativas anteriores (usando formas funcionais restritivas como a Cobb-Douglas), que encontravam economias de escala ilimitadas — artefato da imposição de retornos crescentes homogêneos.
+??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). Agricultural Productivity and Structural Transformation: Evidence from Brazil. *American Economic Review*, 106(6), 1320-1365. DOI: 10.1257/aer.20131061"
+    **Pergunta central:** Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
 
-**Conexão com este capítulo**
-O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
+    **Método:** Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.
 
----
+    **Resultado principal:** Municípios mais adequados à soja GM experimentaram: (i) aumento da área plantada com soja e redução da área de outras culturas; (ii) queda no emprego agrícola (a soja GM é poupadora de trabalho); (iii) crescimento do emprego industrial nos municípios afetados. Porém, o efeito sobre a indústria dependia do tipo de inovação: tecnologias poupadoras de trabalho (como a soja GM) liberavam mão de obra para a indústria, enquanto tecnologias que aumentavam o valor do produto por hectare (como a cana-de-açúcar para etanol) atraíam mais trabalhadores para a agricultura.
 
-### Produtividade agrícola e transformação estrutural no Brasil
-
-> **Referência completa:** Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. "Agricultural Productivity and Structural Transformation: Evidence from Brazil." *American Economic Review*, 106(6): 1320-1365, 2016. DOI: 10.1257/aer.20131061
-
-**A pergunta**
-Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
-
-**Como os autores responderam**
-Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.
-
-**O que descobriram**
-Municípios mais adequados à soja GM experimentaram: (i) aumento da área plantada com soja e redução da área de outras culturas; (ii) queda no emprego agrícola (a soja GM é poupadora de trabalho); (iii) crescimento do emprego industrial nos municípios afetados. Porém, o efeito sobre a indústria dependia do tipo de inovação: tecnologias poupadoras de trabalho (como a soja GM) liberavam mão de obra para a indústria, enquanto tecnologias que aumentavam o valor do produto por hectare (como a cana-de-açúcar para etanol) atraíam mais trabalhadores para a agricultura.
-
-**Conexão com este capítulo**
-O artigo conecta diretamente a Seção 10.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 10.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
-
----
+    **Relevância para o capítulo:** O artigo conecta diretamente a Seção 10.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 10.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
 
 ## Leituras Recomendadas
 

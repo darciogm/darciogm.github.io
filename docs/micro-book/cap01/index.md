@@ -19,6 +19,13 @@ Da mesma forma, um modelo econômico é uma representação simplificada da real
 !!! definition "Modelo Econômico"
     Um **modelo econômico** é uma representação simplificada de uma situação econômica real, expressa por meio de relações lógicas (frequentemente matemáticas) entre variáveis, construída com o objetivo de explicar fenômenos observados e gerar previsões testáveis (Nicholson & Snyder, 2017, p. 3).
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Um modelo econômico é uma receita que deixa de fora os ingredientes que não fazem diferença no sabor.
+
+    **Pense assim:** Quando o Waze calcula sua rota em São Paulo, ele ignora a cor dos prédios, o nome das padarias e se está chovendo na Bahia. Ele simplifica o mundo para resolver *seu* problema. Um modelo econômico faz o mesmo: descarta o que não importa para a pergunta que você está fazendo.
+
+    **Por que isso importa:** Toda política pública — do Bolsa Família à Selic — nasce de um modelo. Saber o que ele ignora é tão importante quanto saber o que ele inclui.
+
 ### Elementos de um modelo
 
 Todo modelo econômico contém:
@@ -66,6 +73,13 @@ A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses pr
 
 Esse princípio é análogo ao controle de variáveis em um experimento de laboratório. Embora na realidade "tudo o mais" raramente permaneça constante, a análise *ceteris paribus* permite identificar relações causais parciais que, combinadas, fornecem uma compreensão do sistema como um todo.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** *Ceteris paribus* é o "muda só uma coisa por vez" da economia.
+
+    **Pense assim:** Se você quer saber se sal melhora o feijão, não muda a panela, o fogo e o tipo de feijão ao mesmo tempo. Você muda *só* o sal e compara. Economistas fazem o mesmo: perguntam "o que acontece se o preço da gasolina subir, mas a renda, o preço do etanol e tudo mais ficarem iguais?"
+
+    **Por que isso importa:** Sem essa disciplina mental, é impossível separar causa de coincidência — e políticas públicas baseadas em coincidências costumam fracassar.
+
 ### A hipótese de otimização
 
 A maior parte da microeconomia repousa sobre a premissa de que os agentes econômicos são **otimizadores**:
@@ -75,6 +89,13 @@ A maior parte da microeconomia repousa sobre a premissa de que os agentes econô
 - **Governo** (em modelos normativos) maximiza bem-estar social sujeito a restrições de informação e incentivos.
 
 Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentido psicológico. Basta que se **comportem como se** otimizassem — a chamada abordagem "as if" de Friedman.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A microeconomia não diz que as pessoas fazem contas — diz que elas *agem como se* fizessem.
+
+    **Pense assim:** Um jogador de sinuca experiente não resolve equações de física antes de cada tacada, mas suas jogadas se aproximam da trajetória que a física prevê. Da mesma forma, um consumidor no Mercado Municipal não calcula derivadas, mas tende a escolher uma cesta que se parece com a solução do problema de otimização.
+
+    **Por que isso importa:** A hipótese "como se" é o que permite à microeconomia gerar previsões testáveis sobre o comportamento de milhões de pessoas, sem precisar abrir a cabeça de cada uma.
 
 ### Distinção entre análise positiva e normativa
 
@@ -162,6 +183,13 @@ A década de 1870 assistiu a uma revolução no pensamento econômico, protagoni
 - **Léon Walras** (Suíça, 1874)
 
 Os três chegaram à mesma conclusão fundamental: o valor de um bem é determinado não pela quantidade total de utilidade que ele proporciona, mas pela **utilidade marginal** — a utilidade da última unidade consumida. Isso resolve o paradoxo da água e do diamante: a água é abundante, logo sua utilidade marginal é baixa; o diamante é escasso, logo sua utilidade marginal é alta.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O valor de um bem não depende de quanto você precisa dele no total, mas de quanto precisa da *próxima* unidade.
+
+    **Pense assim:** No sertão nordestino, o primeiro litro de água do dia vale ouro. O centésimo litro serve para lavar a calçada. A água não mudou — o que mudou foi a *margem*. O diamante é caro não porque é mais útil que a água, mas porque você quase nunca tem um sobrando.
+
+    **Por que isso importa:** Essa ideia — pensar na margem — é a revolução que separou a economia moderna da clássica. Todo preço, todo custo, toda decisão se resolve na margem, não no total.
 
 ### Marshall e a síntese neoclássica
 
@@ -520,41 +548,23 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ## Apêndice: A Pesquisa em Ação
 
-### A revolução da credibilidade na economia empírica
+??? abstract "Angrist, J. D.; Pischke, J.-S. (2010). The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics. *Journal of Economic Perspectives*, 24(2), 3–30."
+    **Pergunta central:** Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.
 
-> **Referência completa:** Angrist, Joshua D.; Pischke, Jörn-Steffen. "The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics." *Journal of Economic Perspectives*, 24(2): 3-30, 2010. DOI: 10.1257/jep.24.2.3
+    **Método:** Angrist e Pischke documentam a "revolução da credibilidade" que transformou a economia empírica a partir dos anos 1990. A ideia central é que a identificação causal — o problema de isolar o efeito de uma variável sobre outra, *ceteris paribus* — pode ser alcançada por meio de estratégias de pesquisa que exploram variações quase-experimentais nos dados: variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos aleatorizados.
 
-**A pergunta**
-Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.
+    **Resultado principal:** Os autores mostram que a adoção dessas técnicas elevou substancialmente a qualidade da evidência empírica em economia. Estudos sobre retornos da educação, efeito do salário mínimo sobre o emprego e impacto de programas sociais passaram a produzir resultados mais robustos e replicáveis. A "revolução" consistiu em levar a sério a cláusula *ceteris paribus*: em vez de apenas supô-la, os pesquisadores passaram a construir desenhos de pesquisa que a aproximam na prática.
 
-**Como os autores responderam**
-Angrist e Pischke documentam a "revolução da credibilidade" que transformou a economia empírica a partir dos anos 1990. A ideia central é que a identificação causal — o problema de isolar o efeito de uma variável sobre outra, *ceteris paribus* — pode ser alcançada por meio de estratégias de pesquisa que exploram variações quase-experimentais nos dados: variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos aleatorizados.
+    **Relevância para o capítulo:** O artigo conecta diretamente a Seção 1.2 (verificação de modelos) e a Seção 1.3 (*ceteris paribus*). A cláusula *ceteris paribus*, apresentada como recurso teórico neste capítulo, é também o objetivo prático da econometria moderna. A revolução da credibilidade mostra que a microeconomia empírica não se limita a testar modelos — ela os refina, revelando quais suposições são empiricamente sustentáveis e quais precisam ser revisadas. Joshua Angrist recebeu o Prêmio Nobel de Economia em 2021, em grande parte por essas contribuições metodológicas.
 
-**O que descobriram**
-Os autores mostram que a adoção dessas técnicas elevou substancialmente a qualidade da evidência empírica em economia. Estudos sobre retornos da educação, efeito do salário mínimo sobre o emprego e impacto de programas sociais passaram a produzir resultados mais robustos e replicáveis. A "revolução" consistiu em levar a sério a cláusula *ceteris paribus*: em vez de apenas supô-la, os pesquisadores passaram a construir desenhos de pesquisa que a aproximam na prática.
+??? abstract "Thaler, R. H. (2016). Behavioral Economics: Past, Present, and Future. *American Economic Review*, 106(7), 1577–1600."
+    **Pergunta central:** Até que ponto a hipótese de otimização racional — fundamento dos modelos microeconômicos discutidos na Seção 1.3 — descreve adequadamente o comportamento humano? E quando os desvios da racionalidade são sistemáticos, como devemos modificar nossos modelos?
 
-**Conexão com este capítulo**
-O artigo conecta diretamente a Seção 1.2 (verificação de modelos) e a Seção 1.3 (*ceteris paribus*). A cláusula *ceteris paribus*, apresentada como recurso teórico neste capítulo, é também o objetivo prático da econometria moderna. A revolução da credibilidade mostra que a microeconomia empírica não se limita a testar modelos — ela os refina, revelando quais suposições são empiricamente sustentáveis e quais precisam ser revisadas. Joshua Angrist recebeu o Prêmio Nobel de Economia em 2021, em grande parte por essas contribuições metodológicas.
+    **Método:** Thaler, em seu discurso presidencial na American Economic Association, traça a trajetória da economia comportamental desde seus precursores (Simon, Kahneman, Tversky) até sua consolidação como subdisciplina influente. O argumento central é que os agentes econômicos reais (*Humans*) diferem sistematicamente dos agentes perfeitamente racionais dos modelos (*Econs*): exibem racionalidade limitada, autocontrole imperfeito e preferências sociais.
 
----
+    **Resultado principal:** Thaler documenta vieses comportamentais robustos — efeito dotação, aversão à perda, desconto hiperbólico, contabilidade mental — e mostra como eles podem ser incorporados a modelos econômicos formais sem abandonar o arcabouço de otimização. A abordagem "as if" de Friedman (Seção 1.2) funciona bem em muitos contextos, mas falha sistematicamente em outros — especialmente em decisões intertemporais, escolhas sob incerteza e situações com baixa experiência.
 
-### Economia comportamental: dos modelos clássicos às decisões reais
-
-> **Referência completa:** Thaler, Richard H. "Behavioral Economics: Past, Present, and Future." *American Economic Review*, 106(7): 1577-1600, 2016. DOI: 10.1257/aer.106.7.1577
-
-**A pergunta**
-Até que ponto a hipótese de otimização racional — fundamento dos modelos microeconômicos discutidos na Seção 1.3 — descreve adequadamente o comportamento humano? E quando os desvios da racionalidade são sistemáticos, como devemos modificar nossos modelos?
-
-**Como o autor respondeu**
-Thaler, em seu discurso presidencial na American Economic Association, traça a trajetória da economia comportamental desde seus precursores (Simon, Kahneman, Tversky) até sua consolidação como subdisciplina influente. O argumento central é que os agentes econômicos reais (*Humans*) diferem sistematicamente dos agentes perfeitamente racionais dos modelos (*Econs*): exibem racionalidade limitada, autocontrole imperfeito e preferências sociais.
-
-**O que descobriu**
-Thaler documenta vieses comportamentais robustos — efeito dotação, aversão à perda, desconto hiperbólico, contabilidade mental — e mostra como eles podem ser incorporados a modelos econômicos formais sem abandonar o arcabouço de otimização. A abordagem "as if" de Friedman (Seção 1.2) funciona bem em muitos contextos, mas falha sistematicamente em outros — especialmente em decisões intertemporais, escolhas sob incerteza e situações com baixa experiência.
-
-**Conexão com este capítulo**
-O artigo dialoga diretamente com as Seções 1.3 e 1.6: a hipótese de otimização não é uma descrição literal do comportamento humano, mas uma aproximação cuja qualidade varia conforme o contexto. A economia comportamental não rejeita a modelagem — pelo contrário, propõe modelos alternativos (teoria do prospecto, preferências dependentes de referência) que preservam o rigor formal enquanto incorporam regularidades empíricas. Thaler recebeu o Prêmio Nobel de Economia em 2017, consolidando a economia comportamental como parte do *mainstream* microeconômico.
-
----
+    **Relevância para o capítulo:** O artigo dialoga diretamente com as Seções 1.3 e 1.6: a hipótese de otimização não é uma descrição literal do comportamento humano, mas uma aproximação cuja qualidade varia conforme o contexto. A economia comportamental não rejeita a modelagem — pelo contrário, propõe modelos alternativos (teoria do prospecto, preferências dependentes de referência) que preservam o rigor formal enquanto incorporam regularidades empíricas. Thaler recebeu o Prêmio Nobel de Economia em 2017, consolidando a economia comportamental como parte do *mainstream* microeconômico.
 
 ## Leituras Recomendadas
 

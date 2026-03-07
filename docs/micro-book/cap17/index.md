@@ -50,6 +50,13 @@ S(r) = I(r)
 
 onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de juros \(r^*\) que iguala oferta e demanda de fundos é a **taxa de juros de equilíbrio**.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A taxa de juros é o preço do tempo — quanto custa trazer dinheiro do futuro para o presente, ou quanto se ganha por abrir mão do consumo hoje.
+
+    **Pense assim:** Quando você parcela uma compra no cartão com juros, está pagando pela impaciência de ter o produto agora. Quando coloca dinheiro na poupança, está sendo recompensado por esperar. A taxa de juros equilibra os impacientes (que querem gastar hoje) com os pacientes (que preferem poupar).
+
+    **Por que isso importa:** Com a Selic historicamente elevada no Brasil, o "preço da impaciência" é muito alto, desestimulando investimentos de longo prazo e encarecendo o crédito para famílias e empresas.
+
 ### Fatores que afetam a taxa de juros
 
 | Fator | Efeito sobre \(r^*\) | Mecanismo |
@@ -206,6 +213,13 @@ A demanda por capital é decrescente na taxa de juros: quando \(r\) sobe, \(c_K\
 - Se \(VPL < 0\): o projeto destrói valor; deve ser rejeitado.
 - Se \(VPL = 0\): o projeto remunera exatamente o custo de oportunidade; indiferente.
 
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O VPL responde à pergunta mais importante de qualquer investimento: "Vale mais a pena colocar meu dinheiro aqui ou deixar rendendo no banco?"
+
+    **Pense assim:** Um dono de padaria em Belo Horizonte avalia comprar um forno novo por R$ 50 mil que vai gerar R$ 15 mil de lucro extra por ano durante 5 anos. Mas ele poderia deixar os R$ 50 mil no CDB a 10% ao ano. O VPL calcula se o forno supera o CDB, trazendo todos os lucros futuros para "reais de hoje".
+
+    **Por que isso importa:** No Brasil, onde a taxa de juros real é alta, muitos projetos produtivos que seriam viáveis em outros países apresentam VPL negativo — o dinheiro rende mais parado no banco do que investido na economia real.
+
 ### Sensibilidade à taxa de desconto
 
 O VPL é uma função decrescente de \(r\). Projetos com fluxos de caixa mais distantes no tempo são mais sensíveis a variações na taxa de desconto.
@@ -306,6 +320,13 @@ Se o preço do recurso é \(P_t\), o custo marginal de extração é \(c\) (cons
     \]
 
     onde \(R = P - c\) é a renda de escassez do recurso.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O preço de um recurso que vai acabar precisa subir ao longo do tempo à mesma taxa dos juros — senão, o dono preferiria extrair tudo hoje e aplicar o dinheiro.
+
+    **Pense assim:** Imagine um fazendeiro no Pará com mogno nativo na propriedade. Se o preço da madeira não estiver subindo pelo menos tanto quanto o rendimento de um CDB, ele corta tudo agora e coloca o dinheiro no banco. Mas se o mogno está valorizando mais que os juros, compensa deixar a árvore crescendo. No equilíbrio, as duas opções se equivalem.
+
+    **Por que isso importa:** A regra de Hotelling é a base para pensar a exploração sustentável de petróleo, minérios e outros recursos finitos — e ajuda a entender por que juros altos aceleram o desmatamento e a extração mineral.
 
 ### Implicações
 
