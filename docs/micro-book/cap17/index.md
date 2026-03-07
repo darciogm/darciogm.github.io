@@ -433,6 +433,107 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
+## Exercícios Resolvidos
+
+??? example "Exercício Resolvido 1 — Consumo intertemporal e classificação poupador/devedor"
+    **Enunciado.** Um consumidor vive dois períodos com renda \(Y_1 = 80\) e \(Y_2 = 66\). Suas preferências são \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1}\ln C_2\). A taxa de juros é \(r = 10\%\). (a) Calcule a riqueza intertemporal. (b) Encontre o consumo ótimo em cada período. (c) O consumidor é poupador ou devedor?
+
+    **Resolução.**
+
+    **(a) Riqueza intertemporal.**
+
+    \[
+    W = Y_1 + \frac{Y_2}{1+r} = 80 + \frac{66}{1{,}1} = 80 + 60 = 140
+    \]
+
+    **(b) Consumo ótimo.**
+
+    Com preferências Cobb-Douglas intertemporais \(U = \ln C_1 + \beta \ln C_2\), onde \(\beta = 1/1{,}1\), o consumidor aloca uma fração \(\frac{1}{1+\beta}\) da riqueza para \(C_1\):
+
+    \[
+    C_1^* = \frac{1}{1 + 1/1{,}1} \cdot W = \frac{1}{1 + 10/11} \cdot 140 = \frac{11}{21} \cdot 140 = \frac{1.540}{21} \approx 73{,}3
+    \]
+
+    Para \(C_2\), usamos a restrição orçamentária:
+
+    \[
+    C_2^* = (1+r)(W - C_1^*) = 1{,}1 \times (140 - 73{,}3) = 1{,}1 \times 66{,}7 \approx 73{,}3
+    \]
+
+    Verificação pela condição de ótimo: \(TMS = C_2/(C_1 \cdot \beta) = 73{,}3/(73{,}3 \times 10/11) = 11/10 = 1{,}1 = 1+r\). ✓
+
+    **(c) Poupador ou devedor?**
+
+    Poupança: \(S = Y_1 - C_1^* = 80 - 73{,}3 = 6{,}7 > 0\).
+
+    O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
+
+??? example "Exercício Resolvido 2 — VPL, TIR e decisão de investimento"
+    **Enunciado.** Uma empresa avalia instalar painéis solares por R$ 200.000, com economia anual de R$ 55.000 durante 5 anos. O custo de oportunidade do capital é 12% a.a. (a) Calcule o VPL. (b) Calcule a TIR por interpolação. (c) O projeto deve ser aceito?
+
+    **Resolução.**
+
+    **(a) VPL a 12%.**
+
+    \[
+    VPL = -200.000 + 55.000 \times \frac{1 - (1{,}12)^{-5}}{0{,}12}
+    \]
+
+    O fator de anuidade é:
+
+    \[
+    \frac{1 - (1{,}12)^{-5}}{0{,}12} = \frac{1 - 0{,}5674}{0{,}12} = \frac{0{,}4326}{0{,}12} = 3{,}6048
+    \]
+
+    \[
+    VPL = -200.000 + 55.000 \times 3{,}6048 = -200.000 + 198.264 = -1.736
+    \]
+
+    **(b) TIR por interpolação.**
+
+    A 11%: fator de anuidade = \(\frac{1-(1{,}11)^{-5}}{0{,}11} = 3{,}6959\). VPL = \(-200.000 + 55.000 \times 3{,}6959 = 3.275\).
+
+    A 12%: VPL = \(-1.736\) (calculado acima).
+
+    Por interpolação linear:
+
+    \[
+    TIR \approx 11\% + \frac{3.275}{3.275 + 1.736} \times 1\% = 11\% + 0{,}65\% \approx 11{,}65\%
+    \]
+
+    **(c) Decisão.**
+
+    Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
+
+??? example "Exercício Resolvido 3 — Regra de Hotelling e trajetória de preços"
+    **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(P_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
+
+    **Resolução.**
+
+    **(a) Renda de escassez inicial.**
+
+    \[
+    R_0 = P_0 - c = 80 - 20 = 60 \text{ mil reais/tonelada}
+    \]
+
+    **(b) Preços futuros pela regra de Hotelling.**
+
+    A renda de escassez cresce à taxa de juros: \(R_t = R_0(1+r)^t\).
+
+    Em 10 anos: \(R_{10} = 60 \times (1{,}04)^{10} = 60 \times 1{,}4802 = 88{,}81\). Logo \(P_{10} = 88{,}81 + 20 = 108{,}81\) mil reais.
+
+    Em 20 anos: \(R_{20} = 60 \times (1{,}04)^{20} = 60 \times 2{,}1911 = 131{,}47\). Logo \(P_{20} = 131{,}47 + 20 = 151{,}47\) mil reais.
+
+    **(c) Efeito do substituto (backstop technology).**
+
+    Se em \(t = 15\) surge um substituto perfeito a R$ 100 mil, o preço do lítio não pode ultrapassar esse teto (ninguém pagaria mais pelo lítio do que pelo substituto). Portanto, o preço terminal é \(P_{15} = 100\), o que implica \(R_{15} = 80\).
+
+    A renda de escassez inicial se ajusta: \(R_0' = R_{15}/(1{,}04)^{15} = 80/1{,}8009 = 44{,}42\). Logo o preço inicial cairia para \(P_0' = 44{,}42 + 20 = 64{,}42\) mil reais — menor que os R$ 80 mil originais.
+
+    **Interpretação:** A perspectiva de um substituto futuro reduz o valor presente do recurso e acelera sua extração. Isso é relevante para o Brasil, maior produtor de nióbio e com reservas significativas de lítio no Vale do Jequitinhonha (MG): o desenvolvimento de tecnologias alternativas para baterias afeta diretamente a estratégia ótima de exploração desses recursos.
+
+---
+
 ## Exercícios
 
 !!! note "Exercícios do Capítulo 17"
@@ -496,3 +597,94 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 (c) Um governo que deseja incentivar investimentos em infraestrutura de longo prazo (com payback de 20-30 anos) deve se preocupar mais com a taxa de juros real ou com a estabilidade regulatória? Justifique usando os conceitos de VPL e prêmio de risco.
 
 ---
+
+## Vem, ANPEC!
+
+As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
+
+??? question "ANPEC 2021 — Questão 12"
+    Com relação à análise econômica de investimento, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+
+    **(0)** A análise do valor presente líquido incorpora o valor presente com taxa de desconto tanto dos custos quanto dos benefícios de um investimento.
+
+    **(1)** O prazo de retorno também proporciona um modo de determinar os benefícios líquidos de um investimento.
+
+    **(2)** O prazo de retorno desconta fluxos futuros de dinheiro, assim como a análise do valor presente líquido.
+
+    **(3)** O valor da opção de espera de um investimento é o incentivo que o risco cria para adiar a decisão de investir e coletar informação.
+
+    **(4)** Um indivíduo avesso ao risco ganha mais utilidade a partir de uma determinada quantidade de renda, do que a partir de uma quantidade equivalente em valor esperado decorrente de uma renda incerta.
+
+    ??? success "Gabarito"
+        **Respostas: V-V-F-V-V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** O VPL calcula o valor presente de todos os fluxos de caixa — custos (fluxos negativos) e benefícios (fluxos positivos) — descontados a uma taxa apropriada. É exatamente a definição: \(VPL = \sum F_t/(1+r)^t\).
+
+        - **Item 1 — V:** O prazo de retorno (payback) indica em quantos períodos o investimento inicial é recuperado. Embora seja um critério simplificado, ele proporciona uma medida dos benefícios líquidos ao indicar a velocidade de recuperação do capital.
+
+        - **Item 2 — F:** O prazo de retorno simples (payback) **não** desconta os fluxos futuros — simplesmente soma os fluxos nominais até igualar o investimento inicial. Essa é uma de suas principais limitações em relação ao VPL. (Existe o payback descontado, mas o payback padrão não desconta.)
+
+        - **Item 3 — V:** A opção de espera (real option) tem valor positivo quando existe incerteza: ao adiar o investimento, o agente pode coletar informação adicional e evitar investimentos que se revelem inviáveis. Quanto maior o risco, maior o incentivo a esperar.
+
+        - **Item 4 — V:** Pela definição de aversão ao risco (concavidade de \(u\)): \(u(E[W]) > E[u(W)]\). Ou seja, o indivíduo prefere receber o valor esperado com certeza a enfrentar a loteria — a utilidade da renda certa supera a utilidade esperada da renda incerta.
+
+??? question "ANPEC 2010 — Questão 05"
+    Avalie as afirmações abaixo:
+
+    **(0)** Seja \(u(W) = -e^{-\beta W}\) uma utilidade von Neumann-Morgenstern, em que \(\beta > 0\) é uma constante e \(W\) é a riqueza. Então \(\beta\) denota a medida de aversão relativa ao risco.
+
+    **(1)** Suponha que uma carteira de ativos arriscados possui retorno esperado \(r_e = 21\%\) e variância \(\sigma^2 = 0{,}09\). O ativo sem risco oferece um retorno \(r_f = 3\%\). Então, de acordo com o modelo média-variância, o preço do risco da carteira é \(p = 2\).
+
+    **(2)** Suponha que o retorno de mercado é \(r_m = 12\%\) e a taxa de retorno do ativo sem risco é \(r_f = 8\%\). A variância da carteira eficiente é \(\sigma_e^2 = 0{,}01\) e a covariância entre o retorno de um ativo A e a carteira eficiente é \(\sigma_{A,e} = 0{,}5\). De acordo com o modelo CAPM, se o valor esperado do ativo A é \$64, então o preço do ativo A é \$50.
+
+    **(3)** De acordo com o modelo média-variância, se a taxa marginal de substituição (TMS) entre retorno esperado da carteira e seu desvio-padrão é \(TMS = 0{,}3\), se a variância do retorno da carteira é \(\sigma_m^2 = 0{,}04\) e a taxa de retorno do ativo sem risco é \(r_f = 12\%\), então o retorno esperado da carteira é \(r_m = 18\%\).
+
+    **(4)** Um indivíduo possui utilidade von Neumann-Morgenstern \(u(x) = \sqrt{x}\) e possui riqueza \(W = \$100\). Ele está sujeito a uma perda monetária aleatória \(X\), com distribuição uniforme contínua no intervalo \([0, 100]\). Se ao indivíduo for oferecido, ao preço de \(G = \$55\), um seguro total contra essa perda aleatória, então ele comprará o seguro.
+
+    ??? success "Gabarito"
+        **Respostas: F-F-F-V-V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** Para \(u(W) = -e^{-\beta W}\), temos \(u'(W) = \beta e^{-\beta W}\) e \(u''(W) = -\beta^2 e^{-\beta W}\). A medida de aversão absoluta ao risco de Arrow-Pratt é \(r_A = -u''/u' = \beta\). Portanto, \(\beta\) é a medida de aversão **absoluta** ao risco, não relativa. A medida de aversão relativa seria \(r_R = \beta W\), que depende da riqueza.
+
+        - **Item 1 — F:** O preço do risco no modelo média-variância é \(p = (r_e - r_f)/\sigma\), onde \(\sigma\) é o desvio-padrão (não a variância). Como \(\sigma = \sqrt{0{,}09} = 0{,}3\), temos \(p = (0{,}21 - 0{,}03)/0{,}3 = 0{,}6\), não 2. (Se usássemos a variância no denominador: \(0{,}18/0{,}09 = 2\), mas a fórmula correta usa o desvio-padrão.)
+
+        - **Item 2 — F:** O \(\beta\) do ativo A é \(\beta_A = \sigma_{A,e}/\sigma_e^2 = 0{,}5/0{,}01 = 50\). O retorno esperado pelo CAPM seria \(E[r_A] = 8\% + 50 \times (12\% - 8\%) = 208\%\). Preço: \(P_A = 64/(1 + 2{,}08) = 64/3{,}08 \approx 20{,}8\), não \$50.
+
+        - **Item 3 — V:** No modelo média-variância, \(TMS = (r_m - r_f)/\sigma_m\). Com \(\sigma_m = \sqrt{0{,}04} = 0{,}2\): \(r_m = r_f + TMS \times \sigma_m = 12\% + 0{,}3 \times 20\% = 12\% + 6\% = 18\%\). ✓
+
+        - **Item 4 — V:** A utilidade esperada sem seguro é \(E[u] = \int_0^{100} \sqrt{100 - x} \cdot \frac{1}{100}dx = \frac{1}{100}\int_0^{100}\sqrt{y}\,dy = \frac{1}{100} \cdot \frac{2}{3} \cdot 100^{3/2} = \frac{2000}{300} = \frac{20}{3} \approx 6{,}67\). Com seguro a \$55: \(u(100-55) = \sqrt{45} \approx 6{,}71 > 6{,}67\). Portanto, o indivíduo compra o seguro. ✓
+
+---
+
+## Leituras Recomendadas
+
+- **Varian, H. R.** *Microeconomia: Uma Abordagem Moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 10–11 (escolha intertemporal e mercados de ativos).
+- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** *Microeconomic Theory*. New York: Oxford University Press, 1995. Cap. 20 (equilíbrio intertemporal e mercados de capital).
+- **Dixit, A. K.; Pindyck, R. S.** *Investment under Uncertainty*. Princeton: Princeton University Press, 1994. Referência sobre valor da opção de espera e investimento irreversível.
+- **Hotelling, H.** "The Economics of Exhaustible Resources." *Journal of Political Economy*, 39(2): 137–175, 1931. O artigo seminal sobre a precificação de recursos naturais.
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+??? abstract "Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004."
+    **Pergunta central:** Como a reforma da lei de falências brasileira (Lei 11.101/2005) afetou o custo de crédito e o investimento das empresas?
+
+    **Método:** Os autores exploram a reforma de 2005 como um experimento natural. A nova lei introduziu mecanismos de recuperação judicial mais eficientes e aumentou a prioridade dos credores com garantia real na ordem de pagamento. Os autores comparam o custo do crédito corporativo e os spreads bancários antes e depois da reforma, usando dados do Banco Central do Brasil e controlando por variáveis macroeconômicas.
+
+    **Resultado principal:** Após a reforma, houve redução significativa do spread bancário para empresas — especialmente para aquelas com ativos tangíveis que podiam servir como garantia. A redução estimada foi da ordem de 10 a 20% dos spreads para empréstimos garantidos. O resultado é consistente com a teoria: ao aumentar a taxa de recuperação esperada pelos credores em caso de falência, a lei reduziu o prêmio de risco embutido nos juros cobrados.
+
+    **Relevância para o capítulo:** O artigo conecta diretamente a estrutura institucional ao custo de uso do capital \(c_K = p_K(r + \delta)\). A taxa de juros \(r\) que as firmas enfrentam inclui um prêmio de risco que depende da qualidade do arcabouço legal de recuperação de crédito. A reforma da lei de falências reduziu esse prêmio, diminuindo o custo de capital e potencialmente viabilizando projetos de investimento que antes tinham VPL negativo — exatamente o mecanismo discutido na Seção 17.6.
+
+??? abstract "Mehra, R.; Prescott, E. C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161."
+    **Pergunta central:** O prêmio de risco histórico das ações sobre títulos públicos pode ser explicado por modelos padrão de consumo intertemporal com níveis razoáveis de aversão ao risco?
+
+    **Método:** Mehra e Prescott calibram um modelo de troca pura com utilidade CRRA (aversão relativa ao risco constante) usando dados históricos dos EUA (1889–1978). No modelo, o fator de desconto estocástico é \(m = \beta(C_{t+1}/C_t)^{-\gamma}\), onde \(\gamma\) é o coeficiente de aversão ao risco. Os autores verificam quais combinações de \(\beta\) e \(\gamma\) reproduzem o prêmio de risco observado (~6% a.a.) e a taxa livre de risco (~1% a.a.).
+
+    **Resultado principal:** Para gerar o prêmio de risco observado, o modelo exigiria um coeficiente de aversão ao risco \(\gamma > 30\), valor considerado absurdamente alto (estimativas experimentais sugerem \(\gamma\) entre 1 e 5). Com \(\gamma\) razoável, o modelo prevê um prêmio de risco de apenas ~0,35%, muito inferior ao observado. Este é o **enigma do prêmio de risco das ações** (*equity premium puzzle*).
+
+    **Relevância para o capítulo:** O artigo é uma aplicação direta do fator de desconto estocástico apresentado na Seção 17.4. Ele demonstra que a fórmula \(m = \beta \cdot U'(C_2)/U'(C_1)\) — elegante na teoria — enfrenta dificuldades empíricas sérias. O puzzle motivou décadas de pesquisa em finanças e macroeconomia, incluindo modelos com hábito, aversão a perdas (prospect theory), aversão à ambiguidade e mercados incompletos. Para o Brasil, onde o prêmio de risco das ações é ainda mais elevado devido ao risco-país, o puzzle é particularmente agudo.
