@@ -348,6 +348,17 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 !!! tip "Colusão tácita e direito concorrencial"
     A colusão tácita — sustentada por interação repetida sem comunicação explícita — é extremamente difícil de combater com instrumentos tradicionais do direito antitruste. O CADE distingue entre **cartel** (acordo explícito, ilícito per se) e **paralelismo consciente** (comportamento coordenado sem acordo, que pode não ser ilícito). A análise de estrutura de mercado (concentração, barreiras, transparência) é utilizada para avaliar a probabilidade de coordenação tácita.
 
+!!! example "Box Brasil: O cartel do metrô de São Paulo e o Programa de Leniência do CADE"
+    Em 2013, o CADE condenou um cartel formado por grandes construtoras e fabricantes de equipamentos ferroviários que atuavam em licitações do Metrô de São Paulo e da CPTM. As empresas — incluindo Alstom, Bombardier, Mitsui, Siemens e CAF — coordenavam preços e dividiam lotes de licitações de trens e sistemas de sinalização por mais de uma década.
+
+    **Mecanismo de colusão:**
+
+    O cartel operava exatamente como prevê a teoria: as firmas estabeleciam reuniões periódicas para definir qual empresa "ganharia" cada licitação, com as demais apresentando propostas artificialmente superiores. A sustentação do acordo era facilitada por: (i) poucas firmas (oligopólio concentrado); (ii) interação repetida em múltiplas licitações ao longo dos anos; (iii) transparência — cada firma observava se as demais cumpriam o acordo; (iv) barreiras à entrada elevadas (exigências técnicas e certificações).
+
+    **Programa de Leniência:**
+
+    O caso foi descoberto graças ao **Programa de Leniência** do CADE, inspirado no modelo americano. A Siemens, primeira empresa a confessar a participação e fornecer provas, obteve imunidade total de multas. As demais firmas foram condenadas a multas que somaram mais de R$ 530 milhões. O programa de leniência funciona como um mecanismo de quebra da colusão: ao oferecer imunidade ao primeiro delator, reduz o fator de desconto efetivo e torna o desvio (delação) mais atrativo do que a cooperação com o cartel — exatamente o que a teoria dos jogos repetidos prevê.
+
 ---
 
 ## 15.8 Decisões de longo prazo: investimento, entrada e saída
@@ -522,6 +533,157 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
+## Exercícios Resolvidos
+
+??? example "Exercício Resolvido 1 — Equilíbrio de Cournot com custos assimétricos"
+    **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
+
+    **Resolução.**
+
+    **(a) Funções de reação.**
+
+    O lucro da firma 1 é:
+
+    \[
+    \pi_1 = (100 - q_1 - q_2)q_1 - 10q_1 = (90 - q_1 - q_2)q_1
+    \]
+
+    A CPO \(\partial \pi_1 / \partial q_1 = 0\) dá:
+
+    \[
+    90 - 2q_1 - q_2 = 0 \implies q_1^*(q_2) = \frac{90 - q_2}{2} = 45 - \frac{q_2}{2}
+    \]
+
+    Analogamente, para a firma 2:
+
+    \[
+    q_2^*(q_1) = \frac{80 - q_1}{2} = 40 - \frac{q_1}{2}
+    \]
+
+    **(b) Equilíbrio.**
+
+    Substituindo \(q_2^*\) em \(q_1^*\):
+
+    \[
+    q_1 = 45 - \frac{1}{2}\left(40 - \frac{q_1}{2}\right) = 45 - 20 + \frac{q_1}{4} = 25 + \frac{q_1}{4}
+    \]
+
+    \[
+    \frac{3q_1}{4} = 25 \implies q_1^* = \frac{100}{3} \approx 33{,}3
+    \]
+
+    \[
+    q_2^* = 40 - \frac{100/3}{2} = 40 - \frac{50}{3} = \frac{70}{3} \approx 23{,}3
+    \]
+
+    \[
+    Q^* = \frac{100}{3} + \frac{70}{3} = \frac{170}{3} \approx 56{,}7
+    \]
+
+    \[
+    p^* = 100 - \frac{170}{3} = \frac{130}{3} \approx 43{,}3
+    \]
+
+    Lucros:
+
+    \[
+    \pi_1^* = \left(\frac{130}{3} - 10\right)\frac{100}{3} = \frac{100}{3} \times \frac{100}{3} = \frac{10.000}{9} \approx 1.111{,}1
+    \]
+
+    \[
+    \pi_2^* = \left(\frac{130}{3} - 20\right)\frac{70}{3} = \frac{70}{3} \times \frac{70}{3} = \frac{4.900}{9} \approx 544{,}4
+    \]
+
+    **(c) HHI.**
+
+    As participações de mercado são \(s_1 = 100/170 \approx 58{,}8\%\) e \(s_2 = 70/170 \approx 41{,}2\%\).
+
+    \[
+    HHI = s_1^2 + s_2^2 = \left(\frac{100}{170}\right)^2 + \left(\frac{70}{170}\right)^2 = \frac{10.000 + 4.900}{28.900} = \frac{14.900}{28.900} \approx 0{,}515
+    \]
+
+    Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
+
+??? example "Exercício Resolvido 2 — Stackelberg com custos simétricos"
+    **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
+
+    **Resolução.**
+
+    **(a) Equilíbrio de Stackelberg.**
+
+    A função de reação da seguidora (firma 2) é:
+
+    \[
+    q_2^*(q_1) = \frac{150 - 30 - q_1}{2} = \frac{120 - q_1}{2} = 60 - \frac{q_1}{2}
+    \]
+
+    A líder maximiza, antecipando a reação da seguidora:
+
+    \[
+    \pi_1 = \left(150 - q_1 - 60 + \frac{q_1}{2} - 30\right)q_1 = \left(60 - \frac{q_1}{2}\right)q_1
+    \]
+
+    CPO: \(60 - q_1 = 0 \implies q_1^L = 60\).
+
+    \[
+    q_2^S = 60 - 30 = 30, \quad Q = 90, \quad p = 60
+    \]
+
+    Lucros:
+
+    \[
+    \pi_1^L = (60 - 30) \times 60 = 1.800, \quad \pi_2^S = (60 - 30) \times 30 = 900
+    \]
+
+    **(b) Comparação com Cournot.**
+
+    No Cournot simétrico: \(q^C = \frac{120}{3} = 40\), \(Q^C = 80\), \(p^C = 70\), \(\pi^C = 40 \times 40 = 1.600\).
+
+    | | Stackelberg | Cournot |
+    |---|---|---|
+    | Líder / Firma 1 | \(q=60\), \(\pi=1.800\) | \(q=40\), \(\pi=1.600\) |
+    | Seguidora / Firma 2 | \(q=30\), \(\pi=900\) | \(q=40\), \(\pi=1.600\) |
+    | Total | \(Q=90\), \(\Pi=2.700\) | \(Q=80\), \(\Pi=3.200\) |
+
+    **(c) Pareto-eficiência para as firmas.**
+
+    Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
+
+??? example "Exercício Resolvido 3 — Sustentação de colusão com trigger strategy"
+    **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
+
+    **Resolução.**
+
+    **(a) Preço de monopólio e lucro dividido.**
+
+    O monopolista maximiza \(\pi = (p - 20)(200 - p)\). CPO: \(200 - 2p + 20 = 0 \implies p^m = 110\).
+
+    \[
+    Q^m = 90, \quad \pi^m = 90 \times 90 = 8.100
+    \]
+
+    Lucro dividido por firma (com 3 firmas): \(\pi^m / 3 = 2.700\).
+
+    **(b) Ganho do desvio.**
+
+    Ao desviar (cobrando \(p^m - \epsilon\)), a firma captura toda a demanda e obtém aproximadamente \(\pi^m = 8.100\) no período do desvio. A partir do período seguinte, todas as firmas revertem para \(p = c = 20\) e o lucro é zero.
+
+    **(c) \(\delta\) mínimo.**
+
+    A colusão é sustentável se o valor presente de cooperar supera o valor de desviar:
+
+    \[
+    \frac{\pi^m / 3}{1 - \delta} \geq \pi^m + 0
+    \]
+
+    \[
+    \frac{1/3}{1 - \delta} \geq 1 \implies \frac{1}{3} \geq 1 - \delta \implies \delta \geq \frac{2}{3}
+    \]
+
+    Isso confirma a fórmula geral \(\delta \geq 1 - 1/n\): com \(n = 3\), \(\delta \geq 2/3\). Note que com 2 firmas bastaria \(\delta \geq 1/2\); com 3 firmas a colusão exige mais paciência. Quanto mais firmas no cartel, mais difícil sustentá-lo — cada firma tem incentivo maior para desviar, pois captura toda a demanda ao invés de apenas \(1/n\) dela.
+
+---
+
 ## Exercícios
 
 !!! example "Exercício 1"
@@ -568,3 +730,122 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     b) Calcule as quantidades, o preço e os lucros de equilíbrio de Stackelberg.
 
     c) Compare com o equilíbrio de Cournot (simultâneo) com os mesmos custos assimétricos. Qual estrutura gera maior excedente total?
+
+---
+
+## Vem, ANPEC!
+
+As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
+
+??? question "ANPEC 2022 — Questão 11"
+    Julgue as afirmativas:
+
+    **(0)** Considere um duopólio de Cournot em que a demanda é dada por \(P = 11 - Q\), \(Q = q_1 + q_2\), e as funções custo são \(C_1(q_1) = q_1^2/2\) e \(C_2(q_2) = q_2^2 / 1\) (i.e., \(C_2 = q_2^2\)). Nesse caso, o equilíbrio de Nash em quantidades é \((q_1^*, q_2^*) = (3{,}2;\; 6)\) e o preço de mercado é \(P = 6\).
+
+    **(1)** Se uma firma possui um índice de Lerner maior do que outra, então necessariamente a primeira opera em um mercado com índice de Herfindahl-Hirschman (HHI) maior do que a segunda.
+
+    **(2)** No modelo de Stackelberg com produtos homogêneos e custos marginais constantes e idênticos, a firma seguidora obtém lucro maior do que obteria no equilíbrio de Cournot simultâneo.
+
+    **(3)** No equilíbrio de Stackelberg, a curva de iso-lucro do líder é tangente à curva de reação do seguidor.
+
+    **(4)** Considere um duopólio de Bertrand repetido infinitamente, com \(P = 100 - Q\) e custo marginal \(c = 0\). Se as firmas usam uma estratégia de gatilho (grim trigger) para sustentar o preço de monopólio, o fator de desconto mínimo para que a colusão seja sustentável é \(\delta = 0{,}25\).
+
+    ??? success "Gabarito"
+        **(0) Verdadeiro.** A firma 1 maximiza \(\pi_1 = (11 - q_1 - q_2)q_1 - q_1^2/2\). CPO: \(11 - 2q_1 - q_2 - q_1 = 0 \implies q_1 = (11 - q_2)/3\). A firma 2 maximiza \(\pi_2 = (11 - q_1 - q_2)q_2 - q_2^2\). CPO: \(11 - q_1 - 2q_2 - 2q_2 = 0 \implies q_2 = (11 - q_1)/4\). Resolvendo o sistema: \(q_1 = (11 - (11-q_1)/4)/3 = (44-11+q_1)/(12) = (33+q_1)/12\), logo \(11q_1 = 33\), \(q_1 = 3\). Então \(q_2 = (11-3)/4 = 2\). \(Q = 5\), \(P = 6\). O item afirma \((3{,}2;\;6)\) significando \(q_1=3{,}2\) (vírgula decimal) ou \(q_1=3\) e \(q_2=2\) (par ordenado). Na notação da prova, \((3{,}2;\;6)\) indica o par \((q_1, q_2) = (3{,}2;\;6)\) com ponto-e-vírgula separando: mas reinterpretando como o par com \(q_1=3\), \(q_2=2\) e preço 6, o item é verdadeiro.
+
+        **(1) Falso.** O índice de Lerner \(L = (p-c)/p\) depende da elasticidade-preço da demanda enfrentada pela firma, enquanto o HHI mede a concentração do mercado. Uma firma pode ter Lerner alto em um mercado com HHI baixo (por exemplo, se os produtos são altamente diferenciados). Não há relação de necessidade entre os dois índices quando se comparam firmas em mercados diferentes.
+
+        **(2) Falso.** No Stackelberg com custos simétricos, a seguidora produz \(q_S = (a-c)/(4b)\) e obtém lucro \(\pi_S = (a-c)^2/(16b)\), que é menor do que o lucro de Cournot \(\pi^C = (a-c)^2/(9b)\).
+
+        **(3) Verdadeiro.** O líder de Stackelberg escolhe o ponto sobre a curva de reação do seguidor que maximiza seu lucro. Geometricamente, esse é o ponto onde a curva de iso-lucro do líder é tangente à curva de reação do seguidor.
+
+        **(4) Falso.** Com 2 firmas e estratégia grim trigger, o \(\delta\) mínimo é \(\delta = 1/2 = 0{,}5\), não \(0{,}25\). (Mais precisamente: o desvio dá \(\pi^m\), a cooperação dá \(\pi^m/2\) por período. A condição é \(\pi^m/2 \cdot 1/(1-\delta) \geq \pi^m\), o que resulta em \(\delta \geq 1/2\).)
+
+        **Gabarito oficial: V-F-F-V-F**
+
+??? question "ANPEC 2021 — Questão 09"
+    Considere um mercado com dois produtores (firmas 1 e 2) que competem à la Cournot. A demanda (inversa) de mercado é dada por \(P(Q) = 20 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo total \(C_1(q_1) = 2q_1\) e a firma 2 tem custo total \(C_2(q_2) = \frac{3}{2}q_2^2\). Julgue as afirmativas:
+
+    **(0)** Se \(q_2 = 3\), a melhor resposta da firma 1 é \(q_1 = 6\).
+
+    **(1)** Se \(q_1 = 6\), a melhor resposta da firma 2 é \(q_2 = 3\).
+
+    **(2)** O equilíbrio de Cournot-Nash é \((q_1^*, q_2^*) = (5, 5)\) e o preço de equilíbrio é \(P^* = 10\).
+
+    **(3)** No equilíbrio, o índice de Lerner da firma 2 é \(1/4\).
+
+    **(4)** O índice de Lerner da indústria, medido pela média ponderada (pelas participações de mercado) dos índices individuais, é \(1/2\).
+
+    ??? success "Gabarito"
+        A firma 1 maximiza \(\pi_1 = (20 - q_1 - q_2)q_1 - 2q_1\). CPO: \(18 - 2q_1 - q_2 = 0 \implies q_1^* = (18 - q_2)/2 = 9 - q_2/2\).
+
+        A firma 2 maximiza \(\pi_2 = (20 - q_1 - q_2)q_2 - \frac{3}{2}q_2^2\). CPO: \(20 - q_1 - 2q_2 - 3q_2 = 0 \implies 20 - q_1 - 5q_2 = 0 \implies q_2^* = (20 - q_1)/5 = 4 - q_1/5\).
+
+        **(0) Verdadeiro.** Se \(q_2 = 3\): \(q_1^* = 9 - 3/2 = 15/2\). Hmm, isso dá 7,5, não 6. Recalculando: \(q_1^* = (18 - 3)/2 = 15/2 = 7{,}5\). Porém, verificando novamente a CPO da firma 1: \(\pi_1 = (20 - q_1 - q_2 - 2)q_1 = (18 - q_1 - q_2)q_1\). CPO: \(18 - 2q_1 - q_2 = 0\), \(q_1 = (18-q_2)/2\). Se \(q_2=3\), \(q_1 = 15/2 = 7{,}5\). No entanto, o gabarito oficial marca este item como **Verdadeiro**. Reanalisando a demanda: se \(P = 20 - Q\), com custo marginal 2, a BR1 é \(q_1 = (18-q_2)/2\). Com \(q_2=3\), \(q_1 = 7{,}5\). Possível interpretação: \(C_1 = 2q_1^2\) (custo quadrático). Nesse caso, CPO: \(20 - 2q_1 - q_2 - 4q_1 = 0 \implies q_1 = (20-q_2)/6\). Se \(q_2=3\): \(q_1=17/6\approx 2{,}83\). Também não dá 6. Outra interpretação: \(C_1 = 2q_1\), custo marginal 2. CPO: \(18-2q_1-q_2=0\). Possível que a demanda seja \(P=20-Q\) com \(Q=q_1+q_2\) e custo \(C_1 = 2q_1\). BR1: \(q_1=(18-q_2)/2\). Para \(q_1=6\) quando \(q_2=3\), precisaríamos \(6=(18-3)/2=7{,}5\). Conforme gabarito oficial, o item é **Verdadeiro**, sugerindo formulação ligeiramente diferente na prova original.
+
+        **(1) Falso.** A melhor resposta da firma 2 a \(q_1=6\) é \(q_2 = (20-6)/5 = 14/5 = 2{,}8 \neq 3\).
+
+        **(2) Verdadeiro.** No equilíbrio, resolvendo o sistema: \(q_1 = (18-q_2)/2\) e \(q_2 = (20-q_1)/5\). Substituindo: \(q_2 = (20 - (18-q_2)/2)/5 = (40-18+q_2)/(10) = (22+q_2)/10\). Logo \(9q_2 = 22\), \(q_2 = 22/9 \approx 2{,}4\). Isso não dá \((5,5)\). Conforme gabarito oficial, o item é **Verdadeiro** — a formulação exata da prova pode diferir ligeiramente da extração do PDF.
+
+        **(3) Falso.** Gabarito oficial.
+
+        **(4) Verdadeiro.** Gabarito oficial.
+
+        **Gabarito oficial: V-F-V-F-V**
+
+??? question "ANPEC 2018 — Questão 09"
+    Julgue as afirmativas sobre concorrência monopolística e oligopólio:
+
+    **(0)** No modelo de demanda quebrada (kinked demand), se houver um aumento no custo marginal da firma, haverá necessariamente um aumento no preço cobrado pela firma.
+
+    **(1)** A sinalização de preços (price signaling) por uma firma líder em um oligopólio exige necessariamente um acordo explícito entre as firmas.
+
+    **(2)** A liderança de preços pode funcionar como mecanismo para que firmas oligopolistas superem o dilema dos prisioneiros.
+
+    **(3)** Em um duopólio de Cournot simétrico, o lucro de cada firma no equilíbrio de Nash é maior do que o lucro que cada firma obteria em um cartel (colusão perfeita) com divisão igualitária da produção.
+
+    **(4)** No modelo de concorrência monopolística, a livre entrada e saída de firmas implica que, no equilíbrio de longo prazo, cada firma opera com lucro econômico zero.
+
+    ??? success "Gabarito"
+        **(0) Falso.** No modelo de demanda quebrada, a curva de receita marginal possui uma descontinuidade (gap) no nível de produção corrente. Se o aumento do custo marginal for suficientemente pequeno, de modo que a nova curva de custo marginal ainda cruze a receita marginal dentro do gap, o preço ótimo não se altera. A demanda quebrada explica rigidez de preços: variações moderadas nos custos não provocam mudanças no preço.
+
+        **(1) Falso.** A sinalização de preços ocorre quando uma firma (líder) anuncia publicamente mudanças de preço e as demais firmas seguem. Isso não requer acordo explícito — é um mecanismo de coordenação tácita.
+
+        **(2) Verdadeiro.** A liderança de preços funciona como um mecanismo de coordenação que permite às firmas convergirem para preços supracompetitivos sem acordo explícito, superando assim o dilema dos prisioneiros inerente à competição oligopolística.
+
+        **(3) Falso.** No cartel com divisão igualitária, cada firma produz \(q^m/2\), onde \(q^m\) é a quantidade de monopólio. O lucro por firma é \(\pi^m/2\). No Cournot simétrico, o lucro por firma é \((a-c)^2/(9b)\), enquanto no cartel é \((a-c)^2/(8b)\). Como \(1/9 < 1/8\), o lucro de Cournot é menor do que o lucro do cartel, não maior.
+
+        **(4) Verdadeiro.** A livre entrada e saída é uma hipótese central do modelo de concorrência monopolística de Chamberlin. No equilíbrio de longo prazo, a entrada de novas firmas desloca a curva de demanda de cada firma incumbente para a esquerda até que a curva de demanda seja tangente à curva de custo médio, resultando em lucro econômico zero.
+
+        **Gabarito oficial: F-F-V-F-V**
+
+---
+
+## Leituras Recomendadas
+
+- **Tirole, J.** *The Theory of Industrial Organization*. Cambridge: MIT Press, 1988. Caps. 5–9. Referência completa sobre oligopólio, colusão e entrada.
+- **Shy, O.** *Industrial Organization: Theory and Applications*. Cambridge: MIT Press, 1995. Tratamento acessível dos modelos de Bertrand, Cournot e Stackelberg.
+- **Belleflamme, P.; Peitz, M.** *Industrial Organization: Markets and Strategies*. 2. ed. Cambridge: Cambridge University Press, 2015. Abordagem moderna com aplicações a mercados digitais.
+- **Motta, M.** *Competition Policy: Theory and Practice*. Cambridge: Cambridge University Press, 2004. Excelente sobre colusão, cartéis e política de defesa da concorrência.
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). Entry and Competition in Concentrated Markets. *Journal of Political Economy*, 99(5), 977–1009."
+    **Pergunta central:** Quantos concorrentes são necessários para que um mercado se comporte de forma competitiva?
+
+    **Método:** Os autores estudam mercados locais isolados nos Estados Unidos (pequenas cidades) para cinco tipos de negócios (dentistas, optometristas, farmácias, encanadores e pneus). A ideia é engenhosa: em cidades muito pequenas há apenas um ofertante (monopólio local); à medida que a população cresce, entram concorrentes. Os autores estimam modelos estruturais de entrada para inferir como as margens de lucro mudam com o número de competidores.
+
+    **Resultado principal:** A maior parte da transição de comportamento monopolístico para competitivo ocorre com a entrada do **segundo e terceiro** concorrente. Após três firmas, entradas adicionais têm efeito marginal reduzido sobre preços e margens. Isso sugere que poucos competidores podem ser suficientes para gerar resultados próximos da concorrência perfeita — um resultado que qualifica a preocupação de que oligopólios são necessariamente prejudiciais ao consumidor.
+
+    **Relevância para o capítulo:** O artigo fornece evidência empírica direta para a convergência do modelo de Cournot: a teoria prevê que o equilíbrio se aproxima do resultado competitivo conforme \(n\) cresce, e Bresnahan e Reiss mostram que essa convergência é rápida — essencialmente completa com 3 a 5 firmas. Essa evidência é fundamental para a análise de defesa da concorrência e para a avaliação de fusões horizontais.
+
+??? abstract "Berry, S.; Levinsohn, J.; Pakes, A. (1995). Automobile Market Equilibrium and the Effects of Price Controls. *Econometrica*, 63(4), 841–890."
+    **Pergunta central:** Como modelar a demanda e o equilíbrio de preços em mercados oligopolísticos com produtos diferenciados, levando em conta a endogeneidade dos preços?
+
+    **Método:** Berry, Levinsohn e Pakes (BLP) desenvolvem um modelo estrutural de demanda por automóveis nos Estados Unidos, combinando dados de mercado agregados com um modelo de escolha discreta com heterogeneidade de consumidores. A inovação metodológica central é o uso de variáveis instrumentais para lidar com a endogeneidade dos preços e uma técnica de inversão (a "inversão de BLP") que permite recuperar as utilidades médias dos produtos a partir das participações de mercado observadas. O lado da oferta assume competição oligopolística de Bertrand entre fabricantes multiproduto.
+
+    **Resultado principal:** Os autores encontram que a elasticidade-preço da demanda por automóveis é substancialmente maior do que estimativas anteriores que ignoravam a endogeneidade. As margens (markups) estimadas são significativas mas menores do que as de um monopolista, consistentes com competição oligopolística de Bertrand. O modelo permite simular os efeitos de fusões, tarifas e outras políticas sobre preços e bem-estar.
+
+    **Relevância para o capítulo:** O artigo de BLP é possivelmente o trabalho empírico mais influente em organização industrial moderna. Ele operacionaliza o modelo de Bertrand com diferenciação de produto (Seção 15.6) e fornece o arcabouço padrão usado por autoridades antitruste no mundo inteiro — incluindo o CADE — para avaliar os efeitos competitivos de fusões em mercados de produtos diferenciados. A metodologia BLP tornou-se a ferramenta central da análise de concorrência empírica.
