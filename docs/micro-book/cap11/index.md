@@ -98,7 +98,7 @@ onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser em
 
 <figure markdown="span">
   <iframe src="../graficos/cap11/receita-marginal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinacao da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitaria). Mova o slider \(q\) para ver a relacao \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
+  <figcaption><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
 </figure>
 
 ### Receita marginal
@@ -145,7 +145,7 @@ onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preç
 
 <figure markdown="span">
   <iframe src="../graficos/cap11/maximizacao-lucro.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 11.1</strong> — Maximizacao de lucro para firma tomadora de precos. Ajuste o preco \(p\) e os parametros de custo. O grafico mostra a quantidade otima \(q^*\) onde \(p = CMg\), o retangulo de lucro (ou prejuizo) sombreado e a condicao de fechamento (\(p < CVMe_{\min}\)).</figcaption>
+  <figcaption><strong>Figura 11.1</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
 </figure>
 
 ### A decisão de produção no curto prazo
@@ -188,6 +188,34 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
     \]
 
     Graficamente, é a área acima da curva de oferta (CMg) e abaixo do preço. O excedente do produtor é a medida apropriada de bem-estar do lado da oferta no curto prazo, pois mede a contribuição da produção para cobrir os custos fixos e gerar lucro.
+
+---
+
+## Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
+
+!!! example "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
+    O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 11.4.
+
+    **Dados da CONAB (Companhia Nacional de Abastecimento):**
+
+    | Safra | Área plantada (milhões de ha) | Variação anual |
+    |:---|:---|:---|
+    | 2022/23 | 44,1 | — |
+    | 2023/24 | 46,1 | +4,5% |
+    | 2024/25 | 47,5 | +3,0% |
+    | 2025/26 (est.) | 48,9 | +2,9% |
+
+    Entre as safras 2022/23 e 2025/26, a área plantada expandiu cerca de **4,8 milhões de hectares** — equivalente a mais de duas vezes a área do estado de Sergipe. Essa expansão acompanhou um período de preços internacionais atrativos da soja, com a cotação em Chicago superando US$ 14/bushel em 2022.
+
+    **Interpretação via teoria da firma**
+
+    O produtor rural é, em boa aproximação, um **tomador de preços** (o preço é determinado em bolsa). Quando o preço da soja sobe acima do custo variável médio mínimo de terras marginais (cerrado ainda não convertido, áreas de segunda safra), a decisão de ofertar é racional: cada hectare adicional gera receita que supera o custo variável.
+
+    No curto prazo, a oferta é relativamente inelástica — a safra já está plantada e a produção depende do clima. No longo prazo, porém, a resposta é substancial: abertura de novas áreas, conversão de pastagens, investimento em irrigação e tecnologia de sementes. A elasticidade-preço da oferta de longo prazo da soja brasileira é estimada entre 0,3 e 0,8, dependendo da região.
+
+    A decisão de **fechar** também é observável: quando o preço cai abaixo do custo variável (como ocorreu em algumas regiões na safra 2023/24 devido a quebra climática e custos elevados de fertilizantes), produtores optam por não plantar a segunda safra — exatamente como prevê a condição \(p < \mathrm{CVMe}_{\min}\).
+
+    **Fonte**: CONAB, Acompanhamento da Safra Brasileira de Grãos (2023–2026); CEPEA/ESALQ.
 
 ---
 
@@ -259,25 +287,38 @@ A função lucro possui propriedades notáveis:
     \frac{\partial \pi}{\partial r} = \frac{\partial g}{\partial r}\bigg|_{(K^*, L^*)} = -K^*
     \]
 
-    **Verificação com Cobb-Douglas.** Considere \(q = K^{1/2}L^{1/2}\), com preços \((p, w, r)\). As CPOs são:
+    **Verificação com Cobb-Douglas.** Para que a maximização de lucro tenha solução interior finita, a função de produção deve exibir retornos decrescentes de escala. Considere \(q = K^{1/3}L^{1/3}\) (\(\alpha + \beta = 2/3 < 1\)), com preços \((p, w, r)\). As CPOs são:
 
     \[
-    p \cdot \frac{1}{2}K^{-1/2}L^{1/2} = r \qquad \text{e} \qquad p \cdot \frac{1}{2}K^{1/2}L^{-1/2} = w
+    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w, \qquad \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r
     \]
 
-    Resolvendo:
+    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w\), logo \(L = (r/w)\,K\). Substituindo em \(\text{CPO}_K\):
 
     \[
-    K^* = \frac{p^2}{4wr}, \qquad L^* = \frac{p^2}{4w^2} \cdot \frac{w}{r} = \frac{p^2}{4wr}  \cdot \frac{r}{w}
+    \frac{p}{3}\,K^{-2/3}\left(\frac{r}{w}\,K\right)^{1/3} = r \implies \frac{p}{3}\left(\frac{r}{w}\right)^{1/3} = r \cdot K^{1/3}
     \]
-
-    Mais precisamente, \(K^* = \frac{p^2 w}{4r^2 \cdot ??}\)... Seja mais cuidadoso. Da CPO 1: \(pL^{1/2}/(2K^{1/2}) = r\) e CPO 2: \(pK^{1/2}/(2L^{1/2}) = w\). Dividindo CPO2 por CPO1: \(K/L = w/r\), logo \(K = (w/r)L\). Substituindo na função de produção e na CPO 2:
 
     \[
-    q = (w/r)^{1/2} L, \qquad p(w/r)^{1/2}/(2) = w \implies L^* = p/(2(wr)^{1/2}) \cdot (w/r)^{1/2} \cdot ...
+    K^{1/3} = \frac{p}{3\,r}\left(\frac{r}{w}\right)^{1/3} \implies K^* = \frac{p^3}{27\,r^3}\cdot\frac{r}{w} = \frac{p^3}{27\,r^2\,w}
     \]
 
-    O cálculo detalhado confirma que \(\partial \pi / \partial p = q^*\) e \(\partial \pi / \partial w = -L^*\). \(\blacksquare\)
+    De forma análoga, \(L^* = \frac{p^3}{27\,w^2\,r}\). A produção ótima é:
+
+    \[
+    q^* = (K^*)^{1/3}(L^*)^{1/3} = \left(\frac{p^3}{27\,r^2 w}\right)^{1/3}\left(\frac{p^3}{27\,w^2 r}\right)^{1/3} = \frac{p^2}{9\,wr}
+    \]
+
+    O lucro máximo é \(\pi^* = p\,q^* - w\,L^* - r\,K^* = \frac{p^3}{9wr} - \frac{p^3}{27wr} - \frac{p^3}{27wr} = \frac{p^3}{27wr}\). Verificando o Lema:
+
+    \[
+    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark \qquad \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2 r} = -L^* \;\checkmark
+    \]
+
+    \(\blacksquare\)
+
+    !!! note "Por que retornos constantes não funcionam"
+        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p^2 = 4wr\); \(-\infty\) se \(p^2 < 4wr\) (firma não produz); e \(+\infty\) se \(p^2 > 4wr\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
 
 !!! tip "Significado econômico do Lema de Hotelling"
     O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
@@ -325,6 +366,31 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
+## Box Brasil: JBS e a Integração Vertical na Agroindústria
+
+!!! example "Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
+    A **JBS S.A.** é a maior processadora de proteína animal do mundo, com receita líquida trimestral recorde de **R$ 110,5 bilhões** no 3º trimestre de 2024 e presença em mais de 20 países. Sua trajetória ilustra de forma notável a teoria dos custos de transação de **Coase** e **Williamson** (Seção 11.1).
+
+    **A lógica da integração vertical**
+
+    A JBS não se limita ao abate: opera em toda a cadeia — da criação de animais (confinamento próprio) ao processamento, embalagem, logística refrigerada e distribuição com marcas próprias (Friboi, Seara, Swift). Na linguagem de Williamson, isso se explica por três fatores:
+
+    | Atributo da transação | Manifestação na cadeia de carne | Governança escolhida |
+    |:---|:---|:---|
+    | **Especificidade de ativos** | Plantas frigoríficas, câmaras frias, caminhões refrigerados — ativos com baixo valor fora da cadeia | Integração vertical |
+    | **Frequência** | Abate diário de milhares de cabeças; transações contínuas | Hierarquia interna |
+    | **Incerteza** | Volatilidade de preços do boi gordo; exigências sanitárias mutáveis; riscos de embargo internacional | Controle direto |
+
+    Se a JBS dependesse exclusivamente do mercado para cada etapa — comprando serviços de transporte refrigerado, terceirizando o abate, contratando distribuidores independentes —, os custos de transação (negociação de contratos, risco de *hold-up*, problemas de qualidade) seriam proibitivos. A integração vertical reduz esses custos ao internalizar transações com alta especificidade de ativos.
+
+    **Terceirização pós-reforma trabalhista**
+
+    Na direção oposta, a **Reforma Trabalhista de 2017** (Lei 13.467/17) liberou a terceirização de atividade-fim no Brasil. Em termos coaseanos, a legislação reduziu os custos de transação de contratar no mercado (ao simplificar contratos e reduzir riscos jurídicos), deslocando a fronteira ótima da firma. Atividades com **baixa especificidade de ativos** — limpeza, segurança, TI — passaram a ser mais eficientemente contratadas no mercado, enquanto atividades com **alta especificidade** permanecem internalizadas.
+
+    **Fonte**: JBS, Relatório de Resultados 3T2024; InfoMoney; Câmara dos Deputados.
+
+---
+
 ## Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
 
 !!! example "Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
@@ -352,6 +418,149 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
     A alta mortalidade das MPEs pode ser entendida como o resultado de firmas que operam com \(p < \mathrm{CMe}_{\min}\) no longo prazo. No curto prazo, muitas continuam operando enquanto \(p > \mathrm{CVMe}_{\min}\) (cobrindo custos variáveis e parte dos fixos), mas quando os custos fixos (aluguéis, financiamentos) vencem, a firma é forçada a fechar. A decisão de Coase — fazer internamente ou comprar no mercado — também é relevante: muitas MPEs fracassam por tentarem internalizar atividades que seriam mais eficientes se terceirizadas, incorrendo em custos organizacionais que superam os custos de transação do mercado.
 
     Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
+
+---
+
+## Exercícios Resolvidos
+
+!!! example "Exercício Resolvido 11.1 — Receita marginal, elasticidade e markup"
+    **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
+
+    **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
+
+    **Resolução:**
+
+    **Passo 1 — Receita marginal**
+    \[
+    RT = p \cdot q = (100 - 2q)q = 100q - 2q^2 \implies \mathrm{RMg} = 100 - 4q
+    \]
+
+    **Passo 2 — Quantidade e preço ótimos**
+    \[
+    \mathrm{RMg} = \mathrm{CMg} \implies 100 - 4q = 20 \implies q^* = 20
+    \]
+    \[
+    p^* = 100 - 2(20) = 60
+    \]
+
+    **Passo 3 — Elasticidade no ponto ótimo**
+
+    A elasticidade-preço da demanda é \(\varepsilon_d = \frac{dq}{dp}\cdot\frac{p}{q}\). Da demanda inversa, \(dq/dp = -1/2\), logo:
+
+    \[
+    \varepsilon_d = -\frac{1}{2}\cdot\frac{60}{20} = -1{,}5
+    \]
+
+    Verificação: \(\mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = 60\left(1 - \frac{1}{1{,}5}\right) = 60 \cdot \frac{1}{3} = 20 = \mathrm{CMg}\) ✓
+
+    **Passo 4 — Índice de Lerner**
+    \[
+    L = \frac{p^* - \mathrm{CMg}}{p^*} = \frac{60 - 20}{60} = \frac{2}{3} \approx 0{,}67
+    \]
+
+    Pela relação teórica: \(L = \frac{1}{|\varepsilon_d|} = \frac{1}{1{,}5} = \frac{2}{3}\) ✓
+
+    **Resultado:** \(q^* = 20\), \(p^* = 60\), \(|\varepsilon_d| = 1{,}5\), \(L = 2/3\).
+
+    **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 11.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o CADE utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
+
+---
+
+!!! example "Exercício Resolvido 11.2 — Decisão de operar ou fechar no curto prazo"
+    **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
+
+    **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
+
+    **Resolução:**
+
+    **Passo 1 — Funções de custo**
+    \[
+    \mathrm{CVMe}(q) = 10 + 0{,}5q, \qquad \mathrm{CMg}(q) = 10 + q
+    \]
+    \[
+    \mathrm{CMe}(q) = \frac{72}{q} + 10 + 0{,}5q
+    \]
+
+    **Passo 2 — Ponto de fechamento**
+
+    Como \(\mathrm{CVMe} = 10 + 0{,}5q\) é crescente para \(q > 0\), o custo variável médio mínimo é atingido quando \(q \to 0^+\), com \(\mathrm{CVMe}_{\min} = 10\). Logo, a firma opera se \(p \geq 10\).
+
+    **Passo 3 — Quantidade ótima**
+    \[
+    p = \mathrm{CMg} \implies 16 = 10 + q \implies q^* = 6
+    \]
+
+    **Passo 4 — Lucro**
+    \[
+    RT = 16 \times 6 = 96, \qquad CT = 72 + 60 + 18 = 150
+    \]
+    \[
+    \pi = 96 - 150 = -54
+    \]
+
+    **Passo 5 — Comparação: operar vs. fechar**
+
+    | Decisão | Lucro |
+    |:---|:---|
+    | Operar (\(q = 6\)) | \(\pi = -54\) |
+    | Fechar (\(q = 0\)) | \(\pi = -CF = -72\) |
+
+    A receita (\(96\)) cobre todo o custo variável (\(78\)) e ainda gera \(18\) para abater parte dos custos fixos. Operar é racional mesmo com prejuízo.
+
+    **Resultado:** A firma deve operar, produzindo \(q^* = 6\) com prejuízo de \(\pi = -54\), que é menor do que o prejuízo de \(-72\) caso fechasse.
+
+    **Interpretação econômica:** Este é o dilema enfrentado por muitas MPEs brasileiras: operar com prejuízo no curto prazo para cobrir custos variáveis (salários, insumos) enquanto os custos fixos (aluguel, financiamentos) são parcialmente absorvidos. A pesquisa do SEBRAE mostra que empresas nessa faixa (\(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\)) sobrevivem por algum tempo, mas fecham quando os contratos fixos vencem — exatamente como prevê a teoria.
+
+---
+
+!!! example "Exercício Resolvido 11.3 — Verificação do Lema de Hotelling"
+    **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(r = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
+
+    **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(r = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Condições de primeira ordem**
+    \[
+    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w \implies 4\,K^{1/3}L^{-2/3} = 1
+    \]
+    \[
+    \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r \implies 4\,K^{-2/3}L^{1/3} = 1
+    \]
+
+    **Passo 2 — Razão ótima de insumos**
+
+    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w = 1\), logo \(L = K\).
+
+    Substituindo em \(\text{CPO}_K\): \(4\,K^{-2/3}\,K^{1/3} = 1 \implies 4\,K^{-1/3} = 1 \implies K^{1/3} = 4 \implies K^* = 64\).
+
+    Portanto: \(K^* = L^* = 64\) e \(q^* = 64^{1/3}\cdot 64^{1/3} = 4 \times 4 = 16\).
+
+    **Passo 3 — Lucro máximo**
+    \[
+    \pi^* = 12 \times 16 - 1 \times 64 - 1 \times 64 = 192 - 128 = 64
+    \]
+
+    **Passo 4 — Função lucro geral**
+
+    Para preços genéricos \((p, w, r)\), as soluções são \(K^* = \frac{p^3}{27\,r^2\,w}\) e \(L^* = \frac{p^3}{27\,w^2\,r}\), com \(q^* = \frac{p^2}{9\,wr}\) e:
+
+    \[
+    \pi(p, w, r) = \frac{p^3}{27\,wr}
+    \]
+
+    **Passo 5 — Verificação do Lema de Hotelling**
+    \[
+    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark
+    \]
+    \[
+    \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2r} = -L^* \;\checkmark \qquad
+    \frac{\partial \pi}{\partial r} = -\frac{p^3}{27wr^2} = -K^* \;\checkmark
+    \]
+
+    **Resultado:** \(K^* = L^* = 64\), \(q^* = 16\), \(\pi^* = 64\). O Lema de Hotelling é verificado: as derivadas da função lucro recuperam a oferta e as demandas por insumos.
+
+    **Interpretação econômica:** A função lucro \(\pi = p^3/(27wr)\) é homogênea de grau 1 em \((p, w, r)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wr) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
 
 ---
 
@@ -427,3 +636,157 @@ Explique, usando a teoria vista neste capítulo, por que:
 (d) A relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) implica que um monopolista nunca opera na região inelástica da demanda. Explique intuitivamente.
 
 (e) Segundo Coase, qual o limite para o crescimento da firma? Relacione com deseconomias de escala e custos de monitoramento.
+
+---
+
+## Vem, ANPEC! 🏆
+
+!!! question "ANPEC 2013 — Microeconomia — Questão 03"
+    Suponha que a função de produção para um dado produto tem a seguinte forma funcional: \(q = f(x_1) = 2x_1 - 0{,}03\,x_1^2\). Considere também que o preço de uma unidade do bem final é \(p(q) = R\$\,10{,}00\) e o preço unitário do insumo, praticado pelo mercado, é \(p(x_1) = R\$\,8{,}00\).
+
+    Dadas essas informações, é correto afirmar que:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O nível de utilização do insumo que maximiza o nível de produção é \(x_1 = 33{,}33\). |
+    | 1 | O nível de utilização do insumo que maximiza o lucro da firma é \(x_1 = 19{,}5\). |
+    | 2 | O nível de produção economicamente ótimo é \(q = 28\). |
+    | 3 | O lucro máximo \((\pi)\) obtenível pela firma é \(\pi = R\$\,120{,}00\). |
+    | 4 | A produtividade marginal do fator é crescente. |
+
+    ??? success "Gabarito"
+        **Respostas: 10110**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Para maximizar a produção, \(f'(x_1) = 2 - 0{,}06\,x_1 = 0 \implies x_1 = 33{,}33\). Correto.
+        - **Item 1 — F:** A condição de maximização de lucro é \(p \cdot f'(x_1) = p_{x_1}\), ou seja, \(10(2 - 0{,}06\,x_1) = 8 \implies 20 - 0{,}6\,x_1 = 8 \implies x_1 = 20\), e não 19,5.
+        - **Item 2 — V:** \(q(20) = 2(20) - 0{,}03(400) = 40 - 12 = 28\). Correto.
+        - **Item 3 — V:** \(\pi = 10 \times 28 - 8 \times 20 = 280 - 160 = 120\). Correto.
+        - **Item 4 — F:** \(\mathrm{PMg} = 2 - 0{,}06\,x_1\), que é **decrescente** em \(x_1\) (rendimentos marginais decrescentes).
+
+---
+
+!!! question "ANPEC 2020 — Microeconomia — Questão 06"
+    Em um ano, uma empresa apresentou os seguintes dados contábeis: \$1 milhão de receitas, \$300 mil de compras de matérias-primas, \$30 mil de despesas com água e energia elétrica, \$100 mil de gastos com a folha de salários e \$120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$90 mil e outra com salário anual de \$150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O custo contábil anual da empresa é de \$550 mil. |
+    | 1 | O custo econômico anual da empresa é de \$780 mil. |
+    | 2 | O lucro econômico anual da empresa é de \$100 mil. |
+    | 3 | Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo. |
+    | 4 | O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$300 mil. |
+
+    ??? success "Gabarito"
+        **Respostas: 11010**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Custo contábil = matérias-primas (300) + água/energia (30) + salários funcionários (100) + salário proprietário (120) = **\$550 mil**. Correto.
+        - **Item 1 — V:** Custo econômico inclui todos os custos de oportunidade: matérias-primas (300) + água/energia (30) + salários funcionários (100) + custo de oportunidade do proprietário (max{90, 150} = 150) + custo de oportunidade das instalações (200) = **\$780 mil**. Correto.
+        - **Item 2 — F:** Lucro econômico = receita − custo econômico = 1.000 − 780 = **\$220 mil**, e não \$100 mil. O erro comum é calcular o custo de oportunidade do proprietário como 150 − 120 = 30 e do capital como 200, obtendo custo eco = 550 + 30 + 200 = 780 e lucro = 220 — o resultado é o mesmo por qualquer caminho correto.
+        - **Item 3 — V:** Como o lucro econômico é positivo (\$220 mil \(>\) 0), é racional continuar operando. Correto.
+        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) não devem afetar decisões presentes e futuras. O proprietário deve considerar apenas os custos e receitas prospectivos. A existência de um custo irrecuperável passado de \$300 mil é irrelevante para a decisão de continuar ou fechar.
+
+---
+
+!!! question "ANPEC 2025 — Microeconomia — Questão 07"
+    Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero. |
+    | 1 | No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado. |
+    | 2 | Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo. |
+    | 3 | Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor. |
+    | 4 | Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo. |
+
+    ??? success "Gabarito"
+        **Respostas: 01001**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** No equilíbrio de **curto prazo**, firmas podem ter lucro positivo, negativo ou zero — a condição de lucro zero vale apenas no **longo prazo** com livre entrada e saída.
+        - **Item 1 — V:** No equilíbrio de longo prazo com livre entrada e saída, todos os fatores são remunerados a preços de mercado, pois o lucro econômico é zero — nenhum fator é sub ou super-remunerado em relação ao seu custo de oportunidade.
+        - **Item 2 — F:** Um fator fixo (como terra fértil ou licença) gera **renda econômica** para o detentor desse fator. O lucro econômico das firmas permanece zero, pois a renda é capitalizada no preço do fator fixo (ou no aluguel). O "lucro" aparente é na verdade remuneração do fator escasso.
+        - **Item 3 — F:** A causalidade é inversa: é o **preço de equilíbrio** (determinado por oferta e demanda) que determina a renda econômica, e não o contrário. Este é o princípio ricardiano clássico: "o milho não é caro porque paga-se renda; paga-se renda porque o milho é caro."
+        - **Item 4 — V:** Com livre entrada/saída e custos constantes (sem economias ou deseconomias externas), firmas entram até que \(p = \mathrm{CMe}_{\min}\). A curva de oferta de longo prazo é perfeitamente elástica (horizontal) nesse preço.
+
+---
+
+## Apêndice: A Pesquisa em Ação 🔬
+
+### Firmas, Informalidade e Desenvolvimento no Brasil
+
+> **Referência completa:** Ulyssea, Gabriel. "Firms, Informality, and Development: Theory and Evidence from Brazil."
+> *American Economic Review*, 108(8): 2015–2047, 2018.
+> DOI: 10.1257/aer.20141745
+
+**A pergunta**
+
+Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
+
+**Como o autor respondeu**
+
+O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
+
+**O que descobriram**
+
+O resultado central é surpreendente: as duas margens de informalidade podem mover-se em **direções opostas**. Políticas que reduzem a informalidade empresarial (mais firmas se registrando) não necessariamente reduzem a informalidade trabalhista — e podem até piorá-la. Nem sempre há ganhos de produtividade, produto ou bem-estar. A heterogeneidade das firmas é crucial: firmas muito pequenas que se formalizam enfrentam custos regulatórios que reduzem sua eficiência.
+
+**Por que isso importa**
+
+Para o Brasil, onde o Simples Nacional e programas como o MEI (Microempreendedor Individual) buscam reduzir a informalidade, o artigo oferece um alerta: formalizar a empresa não é o mesmo que formalizar o emprego. Políticas públicas precisam considerar ambas as margens simultaneamente.
+
+**Conexão com este capítulo**
+
+O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
+
+---
+
+### Liberalização Comercial e Dinâmica Regional
+
+> **Referência completa:** Dix-Carneiro, Rafael, e Brian K. Kovak. "Trade Liberalization and Regional Dynamics."
+> *American Economic Review*, 107(10): 2908–2946, 2017.
+> DOI: 10.1257/aer.20161214
+
+**A pergunta**
+
+Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
+
+**Como os autores responderam**
+
+Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.
+
+**O que descobriram**
+
+O impacto negativo sobre emprego formal e salários foi **persistente e crescente**: após 20 anos, regiões mais afetadas apresentavam queda de emprego formal cerca de três vezes maior do que após 10 anos. O mecanismo envolve mobilidade imperfeita do trabalho, ajuste lento do capital e perda de economias de aglomeração. Firmas em regiões expostas reduziram a produção e a demanda por trabalho de forma prolongada — contrariando modelos que preveem ajuste rápido.
+
+**Por que isso importa**
+
+O estudo demonstra empiricamente que a "curva de oferta de longo prazo" — que a teoria descreve como perfeitamente elástica — pode levar décadas para se materializar em economias reais com fricções. Para o Brasil, os resultados informam debates sobre política comercial e proteção a setores vulneráveis.
+
+**Conexão com este capítulo**
+
+O artigo ilustra a distinção entre **curto e longo prazo** da Seção 11.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 11.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
+
+---
+
+## Referências
+
+- Coase, Ronald H. "The Nature of the Firm." *Economica*, 4(16): 386–405, 1937.
+- Williamson, Oliver E. *Markets and Hierarchies: Analysis and Antitrust Implications*. New York: Free Press, 1975.
+- Williamson, Oliver E. *The Economic Institutions of Capitalism*. New York: Free Press, 1985.
+- Varian, Hal R. *Microeconomic Analysis*. 3rd ed. New York: W. W. Norton, 1992.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. *Microeconomic Theory*. New York: Oxford University Press, 1995.
+- Ulyssea, Gabriel. "Firms, Informality, and Development: Theory and Evidence from Brazil." *American Economic Review*, 108(8): 2015–2047, 2018.
+- Dix-Carneiro, Rafael, e Brian K. Kovak. "Trade Liberalization and Regional Dynamics." *American Economic Review*, 107(10): 2908–2946, 2017.
+- SEBRAE. *Sobrevivência das Empresas no Brasil*. Brasília: SEBRAE, 2020.
+- CONAB. *Acompanhamento da Safra Brasileira de Grãos*. Brasília: CONAB, 2023–2026.
