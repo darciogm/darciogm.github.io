@@ -550,6 +550,72 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
     **Interpretação microeconômica.**
     Em termos da teoria da produção, a atuação da Embrapa representa um deslocamento da função de produção agrícola — um aumento do parâmetro \(A(t)\). Trata-se predominantemente de progresso técnico **aumentador de terra** (análogo ao neutro de Solow aplicado ao fator terra), pois a inovação principal foi tornar produtivos solos antes imprestáveis, equivalendo a multiplicar o fator terra efetivo disponível. A elasticidade de substituição entre terra e outros insumos (fertilizantes, maquinário) aumentou, refletindo a maior flexibilidade tecnológica na produção agrícola moderna. Goolsbee, Levitt & Syverson (2020, Cap. 6) documentam padrões similares de adoção tecnológica e ganhos de produtividade na agricultura estadunidense.
 
+## 9.7 Funções de Produção Homotéticas
+
+Uma função de produção \(f(K, L)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
+
+\[
+f(K, L) = g\!\big(h(K, L)\big), \quad g' > 0, \quad h(\lambda K, \lambda L) = \lambda \, h(K, L).
+\]
+
+**Propriedade fundamental.** Para funções homotéticas, a TMST depende apenas da **razão capital-trabalho** \(K/L\):
+
+\[
+\text{TMST}_{LK}(K, L) = \phi\!\left(\frac{K}{L}\right).
+\]
+
+Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As isoquantas são **expansões radiais** umas das outras.
+
+!!! abstract "Proposição — Propriedades de funções de produção homotéticas"
+    Se \(f(K, L)\) é homotética, então:
+
+    1. **Caminho de expansão linear**: para preços dos fatores \((w, r)\) fixos, a combinação ótima de insumos que minimiza custos satisfaz \(K^*/L^* = \psi(w/r)\), constante para todos os níveis de produto \(q\).
+    2. **Custo médio de longo prazo constante em escala**: a função custo pode ser escrita como \(C(w, r, q) = c(w, r) \cdot \gamma(q)\), onde \(c\) depende apenas dos preços e \(\gamma\) apenas do produto.
+    3. **Função custo separável**: consequência direta da propriedade 2 — os preços dos fatores afetam o nível de custos, mas não a forma como o custo varia com \(q\).
+
+**Exemplos.**
+
+- **Cobb-Douglas** \(f = K^\alpha L^\beta\): homotética (homogênea de grau \(\alpha + \beta\)). Caminho de expansão: \(K/L = (\alpha w)/(\beta r)\).
+- **CES** \(f = [\delta K^\rho + (1-\delta)L^\rho]^{\gamma/\rho}\): homotética (transformação monotônica de uma função homogênea de grau 1).
+- **Leontief** \(f = \min\{aK, bL\}\): homotética (homogênea de grau 1). Caminho de expansão fixo em \(K/L = b/a\).
+
+!!! warning "Contraexemplo"
+    A função \(f(K, L) = K + L + KL\) **não** é homotética: a TMST \(= (1 + L)/(1 + K)\) depende dos níveis absolutos de \(K\) e \(L\), não apenas da razão \(K/L\). As isoquantas mudam de forma conforme o nível de produto aumenta.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Com tecnologia homotética, firmas grandes e pequenas usam a mesma "receita" — a proporção de insumos depende apenas dos preços relativos, não da escala de produção.
+
+    **Pense assim:** Uma padaria que usa 2 kg de farinha para cada litro de leite manterá essa proporção se produzir 100 ou 10.000 pães por dia — desde que os preços dos insumos não mudem. Isso é o caminho de expansão linear: "escalar" a produção é como dar zoom na mesma combinação ótima.
+
+    **Por que isso importa:** A hipótese de homoteticidade simplifica enormemente a análise de custos. Se a tecnologia não for homotética, a proporção ótima de insumos muda com a escala, e a função custo não se separa em um componente de preços e outro de quantidade.
+
+??? example "Exercício Resolvido 9.4"
+    **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = r\). (c) Calcule a TMST ao longo do raio \(K = L\).
+
+    **Resolução:**
+
+    **Passo 1 — Verificar homoteticidade**
+
+    Defina \(h(K, L) = K^{0,5} L^{0,5}\), que é homogênea de grau 1: \(h(\lambda K, \lambda L) = \lambda K^{0,5} L^{0,5} = \lambda h(K, L)\). Então \(f = \ln(1 + h) = g(h)\), onde \(g(z) = \ln(1 + z)\) é estritamente crescente. Logo \(f\) é homotética.
+
+    **Passo 2 — Caminho de expansão com \(w = r\)**
+
+    A TMST é:
+
+    \[
+    \text{TMST}_{LK} = \frac{\partial f / \partial L}{\partial f / \partial K} = \frac{0{,}5 K^{0,5} L^{-0,5}}{0{,}5 K^{-0,5} L^{0,5}} = \frac{K}{L}
+    \]
+
+    No ótimo, \(\text{TMST} = w/r = 1\), logo \(K/L = 1\). O caminho de expansão é a reta \(K = L\).
+
+    **Passo 3 — TMST ao longo de \(K = L\)**
+
+    Se \(K = L\), então \(\text{TMST} = K/L = 1\) — constante ao longo do raio, confirmando a propriedade homotética.
+
+    **Resultado:** A função é homotética (log de Cobb-Douglas). Com \(w = r\), a firma usa quantidades iguais de capital e trabalho em qualquer escala.
+
+---
+
 ---
 
 ## Exercícios

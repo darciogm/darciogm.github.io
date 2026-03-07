@@ -42,6 +42,18 @@ Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto
 !!! definition "Curva de Engel"
     A **curva de Engel** para o bem \(i\) é a função \(x_i^*(I)\) obtida fixando-se todos os preços e variando apenas a renda. Formalmente, é o gráfico do mapeamento \(I \mapsto x_i^*(p_1, \ldots, p_n, I)\).
 
+!!! abstract "Proposição — Curvas de Engel para preferências homotéticas"
+    Se as preferências são **homotéticas** (Cap. 3, §3.6.6), então:
+
+    - O caminho de expansão da renda é uma **reta passando pela origem**.
+    - As curvas de Engel são **lineares**: \(x_i^*(I) = \alpha_i(\mathbf{p}) \cdot I\).
+    - A **elasticidade-renda** é unitária para todos os bens: \(\varepsilon_{x_i, I} = 1\).
+
+    Se as preferências são **quase-lineares** \(u = v(x_1) + x_2\) (Cap. 3, §3.6.5), então:
+
+    - O caminho de expansão da renda é uma **reta vertical** (\(x_1\) fixo).
+    - A curva de Engel de \(x_1\) é **horizontal** (elasticidade-renda zero); a de \(x_2\) é linear com inclinação \(1/p_2\).
+
 ### 5.2.2 Bens normais e bens inferiores
 
 !!! definition "Bens normais e bens inferiores"
@@ -424,6 +436,15 @@ Para uma queda de preço de um bem normal:
 \[
 VC < EC < VE
 \]
+
+!!! abstract "Proposição — Equivalência das medidas de bem-estar (quase-linear)"
+    Se \(u(x_1, x_2) = v(x_1) + x_2\) (utilidade quase-linear), então para qualquer variação de preços:
+
+    \[
+    VC = VE = \Delta EC = \int_{p_1^0}^{p_1^1} x_1^*(p_1)\, dp_1.
+    \]
+
+    **Demonstração:** a demanda hicksiana por \(x_1\) é \(h_1(\mathbf{p}, \bar{u}) = (v')^{-1}(p_1/p_2)\), independente de \(\bar{u}\). Logo a integral de \(h_1\) entre \(p_1^0\) e \(p_1^1\) é a mesma para qualquer nível de utilidade de referência, e coincide com a integral da demanda marshalliana (que também é \((v')^{-1}(p_1/p_2)\)).
 
 As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear), caso em que a curva marshalliana e a hicksiana são idênticas.
 

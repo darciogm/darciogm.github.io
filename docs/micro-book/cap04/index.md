@@ -743,6 +743,64 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
     - Quando \(\rho \to 1\) (\(\sigma \to \infty\)), o consumidor substitui perfeitamente entre os bens e consome apenas o mais barato por unidade de utilidade.
     - Quando \(\rho \to -\infty\) (\(\sigma \to 0\)), não há substituição e o consumidor consome na proporção fixa \(a:b\).
 
+### 4.10.5 Quase-linear: \(U(x_1,x_2) = v(x_1) + x_2\)
+
+A utilidade quase-linear combina uma função côncava \(v(x_1)\) com um termo linear em \(x_2\). O bem 2 funciona como numerário (Seção 3.6.5).
+
+**Demanda Marshalliana.** O consumidor resolve:
+
+\[
+\max_{x_1,x_2} \; v(x_1) + x_2 \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = I
+\]
+
+A CPO para solução interior é:
+
+\[
+v'(x_1) = \frac{p_1}{p_2}
+\]
+
+Como \(v'' < 0\), a CPO define implicitamente \(x_1^* = (v')^{-1}(p_1/p_2)\), que **não depende da renda**. O bem 2 absorve toda a variação de renda:
+
+\[
+\boxed{x_1^* = (v')^{-1}\!\left(\frac{p_1}{p_2}\right), \qquad x_2^* = \frac{I - p_1 x_1^*}{p_2}}
+\]
+
+!!! warning "Condição de solução interior"
+    A solução interior requer \(x_2^* > 0\), ou seja, \(I > p_1 x_1^*\). Se a renda for insuficiente, a solução de canto é \(x_2 = 0\) e \(x_1 = I/p_1\).
+
+**Exemplo: \(v(x_1) = 2\sqrt{x_1}\).** A CPO é \(1/\sqrt{x_1} = p_1/p_2\), logo:
+
+\[
+x_1^* = \frac{p_2^2}{p_1^2}, \qquad x_2^* = \frac{I}{p_2} - \frac{p_2}{p_1}
+\]
+
+**Utilidade indireta.**
+
+\[
+V(\mathbf{p}, I) = v(x_1^*) + x_2^* = v\!\left((v')^{-1}\!\left(\frac{p_1}{p_2}\right)\right) + \frac{I - p_1 (v')^{-1}(p_1/p_2)}{p_2}
+\]
+
+Note que \(V\) é **linear** em \(I\): \(\partial V / \partial I = 1/p_2\), a utilidade marginal da renda é constante.
+
+**Demanda Hicksiana.** A minimização do dispêndio gera a mesma CPO para \(x_1\), logo:
+
+\[
+\boxed{h_1 = (v')^{-1}\!\left(\frac{p_1}{p_2}\right) = x_1^*, \qquad h_2 = \bar{u} - v(h_1)}
+\]
+
+As demandas marshalliana e hicksiana do bem 1 são **idênticas** — consequência direta do efeito renda nulo.
+
+**Função dispêndio.**
+
+\[
+E(\mathbf{p}, \bar{u}) = p_1 h_1 + p_2 h_2 = p_1 h_1 + p_2[\bar{u} - v(h_1)] = p_2 \bar{u} + p_1 h_1 - p_2 v(h_1)
+\]
+
+A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar{u} = p_2\).
+
+!!! info "Caminho de expansão da renda"
+    Na utilidade quase-linear, o caminho de expansão da renda é uma **reta vertical** no espaço \((x_1, x_2)\): \(x_1\) permanece fixo em \((v')^{-1}(p_1/p_2)\) enquanto \(x_2\) cresce linearmente com \(I\). Contraste com as preferências homotéticas (§3.6.6), cujo caminho de expansão é uma reta passando pela **origem**.
+
 ??? example "Exercício Resolvido 4.4"
     **Enunciado:** Um consumidor tem preferências Leontief \(u(x_1, x_2) = \min\{2x_1, x_2\}\), com \(p_1 = 4\), \(p_2 = 2\) e \(I = 120\). (a) Encontre a cesta ótima. (b) Suponha que o governo conceda uma transferência de R$ 40. Qual é a nova cesta?
 

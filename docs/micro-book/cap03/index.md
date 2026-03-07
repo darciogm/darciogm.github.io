@@ -288,6 +288,65 @@ A TMS depende apenas de \(x_1\):
 
 As curvas de indiferença são **translações verticais** umas das outras: possuem a mesma forma, apenas deslocadas paralelamente ao eixo \(x_2\). Isso implica que não há efeito renda sobre o bem 1 (para soluções interiores). A utilidade quase-linear é particularmente útil em análises de equilíbrio parcial e em modelos de organização industrial.
 
+!!! abstract "Proposição — Propriedades da utilidade quase-linear"
+    Seja \(u(x_1, x_2) = v(x_1) + x_2\) com \(v' > 0\) e \(v'' < 0\). Então, para soluções interiores:
+
+    1. **Efeito renda nulo sobre \(x_1\)**: a demanda marshalliana por \(x_1\) depende apenas de \(p_1/p_2\), não da renda \(I\).
+    2. **Translação vertical**: fixado \(x_1\), a curva de indiferença de nível \(\bar{u}\) é \(x_2 = \bar{u} - v(x_1)\). Ao passar para o nível \(\bar{u}' > \bar{u}\), a curva se desloca verticalmente em \(\bar{u}' - \bar{u}\).
+    3. **Medidas de bem-estar coincidem**: variação compensatória, variação equivalente e variação do excedente do consumidor são iguais — \(VC = VE = \Delta EC\) — porque a demanda hicksiana por \(x_1\) independe do nível de utilidade (ver Cap. 5, §5.8.4).
+    4. **Função dispêndio**: \(E(\mathbf{p}, \bar{u}) = c(p_1, p_2) + p_2 \bar{u}\), onde \(c(\cdot)\) é uma função apenas dos preços. A função dispêndio é **linear** em \(\bar{u}\).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Na utilidade quase-linear, o bem 2 funciona como "dinheiro" — todo aumento de renda vai para \(x_2\), sem afetar a escolha de \(x_1\).
+
+    **Pense assim:** Imagine que você decide quanto café tomar por dia baseado apenas no preço do café, e todo o resto do seu orçamento vai para "outros gastos" (\(x_2\)). Se você ganha um aumento de salário, continua tomando a mesma quantidade de café — a renda extra vai toda para os outros gastos. Essa é a essência da quase-linearidade.
+
+    **Por que isso importa:** Essa propriedade torna a utilidade quase-linear a preferida em modelos de organização industrial e análises de equilíbrio parcial: como \(VC = VE = \Delta EC\), a medida de bem-estar é única e não ambígua.
+
+**Quase-linear vs. homotética.** A utilidade quase-linear **não** é homotética (exceto no caso trivial em que \(v\) é linear). As curvas de indiferença se deslocam por translação vertical, não por expansão radial a partir da origem. A razão \(x_1/x_2\) muda com a renda (todo o aumento vai para \(x_2\)), violando a condição das funções homotéticas (ver §3.6.6).
+
+### 3.6.6 Funções homotéticas
+
+Uma classe de preferências com propriedades simétricas — e distintas — das quase-lineares são as **homotéticas**.
+
+!!! definition "Função homotética"
+    Uma função de utilidade \(u(x_1, x_2)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
+
+    \[
+    u(x_1, x_2) = g\!\big(h(x_1, x_2)\big), \quad g' > 0, \quad h(\lambda x_1, \lambda x_2) = \lambda \, h(x_1, x_2) \;\;\forall\, \lambda > 0.
+    \]
+
+**Propriedade fundamental.** Para preferências homotéticas, a TMS depende apenas da **razão** \(x_1/x_2\):
+
+\[
+\text{TMS}_{12}(x_1, x_2) = \phi\!\left(\frac{x_1}{x_2}\right).
+\]
+
+Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdot x_1\)), a TMS é constante. Geometricamente, as curvas de indiferença são **expansões radiais** umas das outras — ao escalar uma curva de indiferença a partir da origem, obtemos outra curva de indiferença.
+
+!!! abstract "Proposição — Propriedades das preferências homotéticas"
+    Se \(u\) é homotética, então:
+
+    1. **Caminho de expansão da renda linear**: a reta que passa pela origem e pela cesta ótima contém todas as cestas ótimas para diferentes níveis de renda (preços fixos). A razão \(x_1^*/x_2^*\) é constante em \(I\).
+    2. **Curvas de Engel lineares**: \(x_i^*(I) = \alpha_i(\mathbf{p}) \cdot I\), onde \(\alpha_i\) depende apenas dos preços.
+    3. **Elasticidade-renda unitária**: \(\varepsilon_{x_i, I} = 1\) para todo bem \(i\). Todos os bens são normais e nem de luxo nem de necessidade.
+    4. **Participação constante na despesa**: \(p_i x_i^* / I\) é constante para variações da renda.
+    5. **Função dispêndio separável**: \(E(\mathbf{p}, \bar{u}) = b(\mathbf{p}) \cdot e(\bar{u})\), onde \(b\) depende apenas dos preços e \(e\) apenas da utilidade.
+
+**Exemplos.**
+
+- **Cobb-Douglas** \(u = x_1^a x_2^b\): é homotética, pois é homogênea de grau \(a+b\). A razão ótima é \(x_1^*/x_2^* = (a p_2)/(b p_1)\), constante em \(I\).
+- **CES** \(u = (x_1^\rho + x_2^\rho)^{1/\rho}\): homotética (homogênea de grau 1). A razão ótima depende apenas de \(p_1/p_2\) e \(\rho\).
+- **Substitutos perfeitos** e **complementos perfeitos**: ambos são homotéticos (homogêneos de grau 1).
+- **Quase-linear** \(u = v(x_1) + x_2\): **não** é homotética. A TMS depende de \(x_1\) isoladamente, não de \(x_1/x_2\). A razão ótima \(x_1^*/x_2^*\) varia com a renda.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Com preferências homotéticas, ricos e pobres gastam a mesma *proporção* da renda em cada bem — só a escala muda.
+
+    **Pense assim:** Uma família homotética que gasta 30% da renda com alimentação e 70% com outros bens manterá essa proporção se sua renda dobrar, triplicar ou cair pela metade. O caminho de expansão da renda é uma reta que sai da origem — escalar a cesta ótima é como "dar zoom" na mesma cesta.
+
+    **Por que isso importa:** Essa propriedade permite agregar consumidores com rendas diferentes em um "consumidor representativo" — base de grande parte dos modelos macroeconômicos. Contudo, os dados da POF (ver Box Brasil, §3.6.4) mostram que preferências reais raramente são homotéticas: a participação da alimentação cai com a renda (Lei de Engel), evidenciando preferências não homotéticas na prática.
+
 ### Tabela comparativa das funções de utilidade
 
 | Tipo | Função \(u(x_1, x_2)\) | TMS\(_{12}\) | Curvas de indiferença | Elasticidade de substituição (\(\sigma\)) |
@@ -297,12 +356,16 @@ As curvas de indiferença são **translações verticais** umas das outras: poss
 | Complementos perfeitos | \(\min\{ax_1, bx_2\}\) | Indefinida no vértice | Ângulo reto (L) | \(0\) |
 | CES | \((x_1^{\rho}+x_2^{\rho})^{1/\rho}\) | \(\left(\frac{x_1}{x_2}\right)^{\rho-1}\) | Convexa (curvatura varia com \(\rho\)) | \(\dfrac{1}{1-\rho}\) |
 | Quase-linear | \(v(x_1) + x_2\) | \(v'(x_1)\) | Translações verticais | Variável |
+| Homotética (geral) | \(g(h(x_1,x_2))\), \(h\) homogênea grau 1 | \(\phi(x_1/x_2)\) | Expansões radiais | Depende de \(h\) |
 
 <iframe src="../graficos/cap03/tipos-preferencias.html" width="100%" height="750" style="border:none; border-radius:8px;"></iframe>
 *Comparação visual dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).*
 
 <iframe src="../graficos/cap03/funcoes-utilidade.html" width="100%" height="560" style="border:none; border-radius:8px;"></iframe>
 *Superfície 3D da função de utilidade. Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, CES e quase-linear, e ajuste os parâmetros nos sliders.*
+
+<iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" width="100%" height="560" style="border:none; border-radius:8px;"></iframe>
+*Homotética vs quase-linear: compare a expansão da renda. À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.*
 
 !!! example "Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
     A propriedade mais marcante da função Cobb-Douglas é que a **participação de cada bem na despesa total é constante**, independente do nível de renda. Os dados da Pesquisa de Orçamentos Familiares (POF 2017-2018, IBGE) permitem confrontar essa previsão teórica com a realidade brasileira.
