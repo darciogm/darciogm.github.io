@@ -773,14 +773,14 @@ Explique, usando a teoria vista neste capítulo, por que:
 
     **Relevância para o capítulo:** O artigo ilustra a distinção entre **curto e longo prazo** da Seção 11.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 11.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
 
-## Referências
+## Referências do Capítulo
 
-- Coase, Ronald H. "The Nature of the Firm." *Economica*, 4(16): 386–405, 1937.
-- Williamson, Oliver E. *Markets and Hierarchies: Analysis and Antitrust Implications*. New York: Free Press, 1975.
-- Williamson, Oliver E. *The Economic Institutions of Capitalism*. New York: Free Press, 1985.
-- Varian, Hal R. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3rd ed. New York: W. W. Norton, 1992.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995.
-- Ulyssea, Gabriel. "Firms, Informality, and Development: Theory and Evidence from Brazil." *American Economic Review*, 108(8): 2015–2047, 2018.
-- Dix-Carneiro, Rafael, e Brian K. Kovak. "Trade Liberalization and Regional Dynamics." *American Economic Review*, 107(10): 2908–2946, 2017.
-- SEBRAE. *Sobrevivência das Empresas no Brasil*. Brasília: SEBRAE, 2020.
-- CONAB. *Acompanhamento da Safra Brasileira de Grãos*. Brasília: CONAB, 2023–2026.
+- Coase, Ronald H. 1937. ["The Nature of the Firm."](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) *Economica* 4 (16): 386–405.
+- CONAB. 2023–2026. [*Acompanhamento da Safra Brasileira de Grãos*](https://www.conab.gov.br). Brasília: CONAB.
+- Dix-Carneiro, Rafael, e Brian K. Kovak. 2017. ["Trade Liberalization and Regional Dynamics."](https://doi.org/10.1257/aer.20161214) *American Economic Review* 107 (10): 2908–2946.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press.
+- SEBRAE. 2020. [*Sobrevivência das Empresas no Brasil*](https://www.sebrae.com.br). Brasília: SEBRAE.
+- Ulyssea, Gabriel. 2018. ["Firms, Informality, and Development: Theory and Evidence from Brazil."](https://doi.org/10.1257/aer.20141745) *American Economic Review* 108 (8): 2015–2047.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
+- Williamson, Oliver E. 1975. [*Markets and Hierarchies: Analysis and Antitrust Implications*](https://books.google.com.br/books?id=pg-wAAAAIAAJ). New York: Free Press.
+- Williamson, Oliver E. 1985. [*The Economic Institutions of Capitalism*](https://books.google.com.br/books?id=MqyvAAAAIAAJ). New York: Free Press.

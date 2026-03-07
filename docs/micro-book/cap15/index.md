@@ -200,7 +200,7 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 ---
 
-## 15.4 Demonstração: Equilíbrio de Cournot com \(n\) firmas
+## 15.4 Demonstração: Equilíbrio de Cournot com n firmas
 
 !!! proof "Demonstração"
     Considere \(n\) firmas idênticas com custo marginal constante \(c\). A demanda inversa é \(p = a - bQ\), onde \(Q = \sum_{i=1}^n q_i\).
@@ -849,15 +849,6 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Leituras Recomendadas
-
-- **Tirole, J.** [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press, 1988. Caps. 5–9. Referência completa sobre oligopólio, colusão e entrada.
-- **Shy, O.** *Industrial Organization: Theory and Applications*. Cambridge: MIT Press, 1995. Tratamento acessível dos modelos de Bertrand, Cournot e Stackelberg.
-- **Belleflamme, P.; Peitz, M.** *Industrial Organization: Markets and Strategies*. 2. ed. Cambridge: Cambridge University Press, 2015. Abordagem moderna com aplicações a mercados digitais.
-- **Motta, M.** *Competition Policy: Theory and Practice*. Cambridge: Cambridge University Press, 2004. Excelente sobre colusão, cartéis e política de defesa da concorrência.
-
----
-
 ## Apêndice: A Pesquisa em Ação
 
 ??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
@@ -877,3 +868,12 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
     **Resultado principal:** Os autores encontram que a elasticidade-preço da demanda por automóveis é substancialmente maior do que estimativas anteriores que ignoravam a endogeneidade. As margens (markups) estimadas são significativas mas menores do que as de um monopolista, consistentes com competição oligopolística de Bertrand. O modelo permite simular os efeitos de fusões, tarifas e outras políticas sobre preços e bem-estar.
 
     **Relevância para o capítulo:** O artigo de BLP é possivelmente o trabalho empírico mais influente em organização industrial moderna. Ele operacionaliza o modelo de Bertrand com diferenciação de produto (Seção 15.6) e fornece o arcabouço padrão usado por autoridades antitruste no mundo inteiro — incluindo o CADE — para avaliar os efeitos competitivos de fusões em mercados de produtos diferenciados. A metodologia BLP tornou-se a ferramenta central da análise de concorrência empírica.
+
+---
+
+## Referências do Capítulo
+
+- Belleflamme, Paul, e Martin Peitz. 2015. [*Industrial Organization: Markets and Strategies*](https://books.google.com.br/books?id=dtRuBgAAQBAJ). 2ª ed. Cambridge: Cambridge University Press.
+- Motta, Massimo. 2004. [*Competition Policy: Theory and Practice*](https://books.google.com.br/books?id=R8kTDAAAQBAJ). Cambridge: Cambridge University Press.
+- Shy, Oz. 1995. [*Industrial Organization: Theory and Applications*](https://books.google.com.br/books?id=Rz0BAAAAQBAJ). Cambridge: MIT Press.
+- Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press.

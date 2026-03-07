@@ -681,15 +681,6 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Leituras Recomendadas
-
-- **Varian, H. R.** [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 10–11 (escolha intertemporal e mercados de ativos).
-- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press, 1995. Cap. 20 (equilíbrio intertemporal e mercados de capital).
-- **Dixit, A. K.; Pindyck, R. S.** [*Investment under Uncertainty*](https://books.google.com.br/books?id=8op0btN4mKEC). Princeton: Princeton University Press, 1994. Referência sobre valor da opção de espera e investimento irreversível.
-- **Hotelling, H.** "The Economics of Exhaustible Resources." *Journal of Political Economy*, 39(2): 137–175, 1931. O artigo seminal sobre a precificação de recursos naturais.
-
----
-
 ## Apêndice: A Pesquisa em Ação
 
 ??? abstract "[Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004.](https://doi.org/10.1016/j.jcorpfin.2012.03.001)"
@@ -709,3 +700,12 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
     **Resultado principal:** Para gerar o prêmio de risco observado, o modelo exigiria um coeficiente de aversão ao risco \(\gamma > 30\), valor considerado absurdamente alto (estimativas experimentais sugerem \(\gamma\) entre 1 e 5). Com \(\gamma\) razoável, o modelo prevê um prêmio de risco de apenas ~0,35%, muito inferior ao observado. Este é o **enigma do prêmio de risco das ações** (*equity premium puzzle*).
 
     **Relevância para o capítulo:** O artigo é uma aplicação direta do fator de desconto estocástico apresentado na Seção 17.4. Ele demonstra que a fórmula \(m = \beta \cdot U'(C_2)/U'(C_1)\) — elegante na teoria — enfrenta dificuldades empíricas sérias. O puzzle motivou décadas de pesquisa em finanças e macroeconomia, incluindo modelos com hábito, aversão a perdas (prospect theory), aversão à ambiguidade e mercados incompletos. Para o Brasil, onde o prêmio de risco das ações é ainda mais elevado devido ao risco-país, o puzzle é particularmente agudo.
+
+---
+
+## Referências do Capítulo
+
+- Dixit, Avinash K., e Robert S. Pindyck. 1994. [*Investment under Uncertainty*](https://books.google.com.br/books?id=8op0btN4mKEC). Princeton: Princeton University Press.
+- Hotelling, Harold. 1931. "[The Economics of Exhaustible Resources](https://doi.org/10.1086/254195)." *Journal of Political Economy* 39 (2): 137–175.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press.
+- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier.

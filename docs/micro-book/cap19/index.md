@@ -759,15 +759,6 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Leituras Recomendadas
-
-- **Varian, H. R.** [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 35–37 (externalidades, bens públicos, informação assimétrica).
-- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press, 1995. Cap. 11 (externalidades e bens públicos).
-- **Stiglitz, J. E.; Rosengard, J. K.** [*Economics of the Public Sector*](https://books.google.com.br/books?id=miPeCgAAQBAJ). 4. ed. New York: W. W. Norton, 2015. Tratamento abrangente de bens públicos, externalidades e escolha coletiva.
-- **Ostrom, E.** *Governing the Commons*. Cambridge: Cambridge University Press, 1990. Análise seminal sobre gestão de recursos comuns sem privatização nem regulação estatal.
-
----
-
 ## Apêndice: A Pesquisa em Ação
 
 ??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1146/annurev-resource-100913-012610)"
@@ -787,3 +778,12 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
     **Resultado principal:** A combinação de monitoramento (DETER) e enforcement (IBAMA) foi responsável por uma redução de aproximadamente 50% no desmatamento entre 2004 e 2012 — período em que as taxas caíram de quase 28.000 km²/ano para menos de 5.000 km²/ano. O efeito foi concentrado nas áreas com maior probabilidade de detecção pelo DETER, confirmando que o mecanismo opera via dissuasão (deterrence): a expectativa de punição reduz a atividade ilegal.
 
     **Relevância para o capítulo:** Este é um estudo com dados brasileiros que demonstra empiricamente como a regulação direta (command-and-control) pode ser eficaz quando combinada com monitoramento adequado. O resultado conecta-se diretamente ao Box Brasil sobre desmatamento na Amazônia e mostra que, na prática, o enforcement é tão importante quanto o desenho do instrumento regulatório — um complemento essencial à discussão teórica de impostos pigouvianos e mercados de permissão.
+
+---
+
+## Referências do Capítulo
+
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press.
+- Ostrom, Elinor. 1990. [*Governing the Commons*](https://books.google.com.br/books?id=4xg6oUobMz4C). Cambridge: Cambridge University Press.
+- Stiglitz, Joseph E., e Jay K. Rosengard. 2015. [*Economics of the Public Sector*](https://books.google.com.br/books?id=miPeCgAAQBAJ). 4ª ed. New York: W. W. Norton.
+- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier.

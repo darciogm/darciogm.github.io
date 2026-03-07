@@ -778,16 +778,6 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Leituras Recomendadas
-
-- **Nicholson, W. E. & Snyder, C. M.** [*Microeconomic Theory: Basic Principles and Extensions.*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ) 12ª ed. Cengage, 2017. Caps. 14–15.
-- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** [*Microeconomic Theory.*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC) Oxford University Press, 1995. Cap. 12.
-- **Tirole, J.** [*The Theory of Industrial Organization.*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C) MIT Press, 1988. Caps. 1–3.
-- **Besanko, D. & Braeutigam, R.** *Microeconomics.* 5ª ed. Wiley, 2014. Caps. 11–12.
-- **Varian, H. R.** [*Microeconomic Analysis.*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ) 3ª ed. W. W. Norton, 1992. Caps. 14, 24.
-
----
-
 ## Apêndice: A Pesquisa em Ação
 
 ??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
@@ -811,3 +801,13 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **Resultados.** O artigo demonstra que os efeitos de bem-estar da discriminação de preços dependem crucialmente da informação disponível ao monopolista. A produção total pode subir, cair ou permanecer constante conforme a segmentação. Isso contrasta com o resultado clássico de Pigou (1920) para demandas lineares, em que a discriminação de 3º grau não altera a quantidade total.
 
     **Conexão com o capítulo.** O paper aprofunda a análise de discriminação de preços das Seções 14.7.1–14.7.3, mostrando que a distinção entre 1º, 2º e 3º grau é apenas uma parte de um espectro muito mais rico de possibilidades informacionais. Para estudantes que desejam entender os limites teóricos do poder de mercado na extração de excedente, este é um ponto de partida essencial.
+
+---
+
+## Referências do Capítulo
+
+- Besanko, David, e Ronald Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. New York: Wiley. Caps. 11–12.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 12.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 14–15.
+- Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press. Caps. 1–3.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 14, 24.

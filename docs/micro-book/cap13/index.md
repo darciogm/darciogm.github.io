@@ -807,15 +807,15 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
     **Relevância para o capítulo:** O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
 
-## Referências
+## Referências do Capítulo
 
-- Arrow, Kenneth J., e Gerard Debreu. "Existence of an Equilibrium for a Competitive Economy." *Econometrica*, 22(3): 265–290, 1954.
-- Debreu, Gerard. *Theory of Value: An Axiomatic Analysis of Economic Equilibrium*. New York: Wiley, 1959.
-- Edgeworth, Francis Y. *Mathematical Psychics*. London: C. Kegan Paul, 1881.
-- Walras, Léon. *Éléments d'économie politique pure*. Lausanne: L. Corbaz, 1874.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995.
-- Varian, Hal R. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3rd ed. New York: W. W. Norton, 1992.
-- Dix-Carneiro, Rafael. "Trade Liberalization and Labor Market Dynamics." *Econometrica*, 82(3): 825–885, 2014.
-- Caliendo, Lorenzo, e Fernando Parro. "Estimates of the Trade and Welfare Effects of NAFTA." *Review of Economic Studies*, 82(1): 1–44, 2015.
-- IPEA. Modelos de Equilíbrio Geral Computável Aplicados ao Brasil. Brasília: IPEA, diversos anos.
-- IFI/Senado Federal. "Reforma Tributária: Contexto, Mudanças e Impactos." Estudo Especial nº 19, março 2024.
+- Arrow, Kenneth J., e Gerard Debreu. 1954. ["Existence of an Equilibrium for a Competitive Economy."](https://doi.org/10.2307/1907353) *Econometrica* 22 (3): 265–290.
+- Caliendo, Lorenzo, e Fernando Parro. 2015. ["Estimates of the Trade and Welfare Effects of NAFTA."](https://doi.org/10.1093/restud/rdv007) *Review of Economic Studies* 82 (1): 1–44.
+- Debreu, Gerard. 1959. [*Theory of Value: An Axiomatic Analysis of Economic Equilibrium*](https://books.google.com.br/books?id=bIaCAAAAIAAJ). New York: Wiley.
+- Dix-Carneiro, Rafael. 2014. ["Trade Liberalization and Labor Market Dynamics."](https://doi.org/10.3982/ECTA10457) *Econometrica* 82 (3): 825–885.
+- Edgeworth, Francis Y. 1881. [*Mathematical Psychics*](https://books.google.com.br/books?id=CElYAAAAcAAJ). London: C. Kegan Paul.
+- IFI/Senado Federal. 2024. ["Reforma Tributária: Contexto, Mudanças e Impactos."](https://www12.senado.leg.br/ifi/publicacoes-1/estudos-especiais/2024/marco/estudo-especial-no-19-reforma-tributaria-contexto-mudancas-e-impactos-mar-2024) Estudo Especial nº 19.
+- [IPEA](https://www.ipea.gov.br). Diversos anos. *Modelos de Equilíbrio Geral Computável Aplicados ao Brasil*. Brasília: IPEA.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
+- Walras, Léon. 1874. [*Éléments d'économie politique pure*](https://books.google.com.br/books?id=crUEAAAAMAAJ). Lausanne: L. Corbaz.

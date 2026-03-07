@@ -778,15 +778,15 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulo 6.
-- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 7.
-- VARIAN, H. R. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulo 12.
-- PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulo 17.
-- VON NEUMANN, J.; MORGENSTERN, O. *Theory of Games and Economic Behavior*. Princeton: Princeton University Press, 1944.
-- ARROW, K. J. The Role of Securities in the Optimal Allocation of Risk-Bearing. *The Review of Economic Studies*, v. 31, n. 2, p. 91–96, 1964.
-- PRATT, J. W. Risk Aversion in the Small and in the Large. *Econometrica*, v. 32, n. 1–2, p. 122–136, 1964.
-- AKERLOF, G. A. The Market for "Lemons": Quality Uncertainty and the Market Mechanism. *The Quarterly Journal of Economics*, v. 84, n. 3, p. 488–500, 1970.
-- CHIAPPORI, P.-A.; SALANIÉ, B. Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, v. 108, n. 1, p. 56–78, 2000.
-- MEHRA, R.; PRESCOTT, E. C. The Equity Premium: A Puzzle. *Journal of Monetary Economics*, v. 15, n. 2, p. 145–161, 1985.
-- FRIEDMAN, M.; SAVAGE, L. J. The Utility Analysis of Choices Involving Risk. *Journal of Political Economy*, v. 56, n. 4, p. 279–304, 1948.
-- KAHNEMAN, D.; TVERSKY, A. Prospect Theory: An Analysis of Decision under Risk. *Econometrica*, v. 47, n. 2, p. 263–292, 1979.
+- Akerlof, George A. 1970. "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *The Quarterly Journal of Economics* 84 (3): 488–500. [DOI](https://doi.org/10.2307/1879431)
+- Arrow, Kenneth J. 1964. "The Role of Securities in the Optimal Allocation of Risk-Bearing." *The Review of Economic Studies* 31 (2): 91–96. [DOI](https://doi.org/10.2307/2296612)
+- Chiappori, Pierre-André, e Bernard Salanié. 2000. "Testing for Asymmetric Information in Insurance Markets." *Journal of Political Economy* 108 (1): 56–78. [DOI](https://doi.org/10.1086/317671)
+- Friedman, Milton, e Leonard J. Savage. 1948. "The Utility Analysis of Choices Involving Risk." *Journal of Political Economy* 56 (4): 279–304. [DOI](https://doi.org/10.1086/256692)
+- Kahneman, Daniel, e Amos Tversky. 1979. "Prospect Theory: An Analysis of Decision under Risk." *Econometrica* 47 (2): 263–292. [DOI](https://doi.org/10.2307/1914185)
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulo 6.
+- Mehra, Rajnish, e Edward C. Prescott. 1985. "The Equity Premium: A Puzzle." *Journal of Monetary Economics* 15 (2): 145–161. [DOI](https://doi.org/10.1016/0304-3932(85)90061-3)
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 7.
+- Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. Boston: Pearson. Capítulo 17.
+- Pratt, John W. 1964. "Risk Aversion in the Small and in the Large." *Econometrica* 32 (1–2): 122–136. [DOI](https://doi.org/10.2307/1913738)
+- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Capítulo 12.
+- Von Neumann, John, e Oskar Morgenstern. 1944. [*Theory of Games and Economic Behavior*](https://books.google.com.br/books?id=jCN5aN20MjcC). Princeton: Princeton University Press.

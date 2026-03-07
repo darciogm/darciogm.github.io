@@ -881,13 +881,13 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulos 7–9.
-- GIBBONS, R. [*Game Theory for Applied Economists*](https://books.google.com/books?id=8ygxf2WunAIC). Princeton: Princeton University Press, 1992. (Trad. port.: *Um Primeiro Curso em Teoria dos Jogos*. Porto Alegre: Bookman, 2004.)
-- FUDENBERG, D.; TIROLE, J. [*Game Theory*](https://books.google.com/books/about/Game_Theory.html?id=pFPHKwXro3QC). Cambridge, MA: MIT Press, 1991.
-- OSBORNE, M. J.; RUBINSTEIN, A. [*A Course in Game Theory*](https://books.google.com/books/about/A_Course_in_Game_Theory.html?id=k-WLoAEACAAJ). Cambridge, MA: MIT Press, 1994.
-- NASH, J. F. Equilibrium Points in N-Person Games. *Proceedings of the National Academy of Sciences*, v. 36, n. 1, p. 48–49, 1950.
-- SELTEN, R. Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit. *Zeitschrift für die gesamte Staatswissenschaft*, v. 121, p. 301–324, 1965.
-- SPENCE, M. Job Market Signaling. *The Quarterly Journal of Economics*, v. 87, n. 3, p. 355–374, 1973.
-- BRESNAHAN, T. F.; REISS, P. C. Entry and Competition in Concentrated Markets. *Journal of Political Economy*, v. 99, n. 5, p. 977–1009, 1991.
-- PORTER, R. H. A Study of Cartel Stability: The Joint Executive Committee, 1880–1886. *The Bell Journal of Economics*, v. 14, n. 2, p. 301–314, 1983.
-- AXELROD, R. *The Evolution of Cooperation*. New York: Basic Books, 1984.
+- Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com.br/books?id=KFf2HXzVO58C). New York: Basic Books.
+- Bresnahan, Timothy F., e Peter C. Reiss. 1991. "Entry and Competition in Concentrated Markets." *Journal of Political Economy* 99 (5): 977–1009. [DOI](https://doi.org/10.1086/261786)
+- Fudenberg, Drew, e Jean Tirole. 1991. [*Game Theory*](https://books.google.com/books/about/Game_Theory.html?id=pFPHKwXro3QC). Cambridge, MA: MIT Press.
+- Gibbons, Robert. 1992. [*Game Theory for Applied Economists*](https://books.google.com/books?id=8ygxf2WunAIC). Princeton: Princeton University Press. (Trad. port.: *Um Primeiro Curso em Teoria dos Jogos*. Porto Alegre: Bookman, 2004.)
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulos 7–9.
+- Nash, John F. 1950. "Equilibrium Points in N-Person Games." *Proceedings of the National Academy of Sciences* 36 (1): 48–49. [DOI](https://doi.org/10.1073/pnas.36.1.48)
+- Osborne, Martin J., e Ariel Rubinstein. 1994. [*A Course in Game Theory*](https://books.google.com/books/about/A_Course_in_Game_Theory.html?id=k-WLoAEACAAJ). Cambridge, MA: MIT Press.
+- Porter, Robert H. 1983. "A Study of Cartel Stability: The Joint Executive Committee, 1880–1886." *The Bell Journal of Economics* 14 (2): 301–314. [DOI](https://doi.org/10.2307/3003634)
+- Selten, Reinhard. 1965. "Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit." *Zeitschrift für die gesamte Staatswissenschaft* 121: 301–324. [JSTOR](https://www.jstor.org/stable/40748908)
+- Spence, Michael. 1973. "Job Market Signaling." *The Quarterly Journal of Economics* 87 (3): 355–374. [DOI](https://doi.org/10.2307/1882010)

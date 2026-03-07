@@ -723,16 +723,16 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 16.5–16.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
 
-## Referências
+## Referências do Capítulo
 
-- Becker, G. S. (1957). *The Economics of Discrimination*. University of Chicago Press.
-- Becker, G. S. (1964). *Human Capital*. Columbia University Press.
-- Card, D., e A. B. Krueger (1994). "Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania." *American Economic Review*, 84(4): 772–793.
-- Corseuil, C. H., e F. G. Carneiro (2001). "Os Impactos do Salário Mínimo sobre Emprego e Salários no Brasil." *Pesquisa e Planejamento Econômico*, 31(3).
-- Engbom, N., e C. Moser (2022). "[Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506)." *American Economic Review*, 112(12): 3803–3847.
-- Lemos, S. (2009). "Minimum Wage Effects in a Developing Country." *Labour Economics*, 16(2): 224–237.
-- McDonald, I. M., e R. M. Solow (1981). "Wage Bargaining and Employment." *American Economic Review*, 71(5): 896–908.
-- Meghir, C., R. Narita, e J.-M. Robin (2015). "[Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110)." *American Economic Review*, 105(4): 1509–1546.
-- Neri, M., G. Gonzaga, e J. M. Camargo (2001). "Efeitos Informais do Salário Mínimo e Pobreza." *Texto para Discussão*, IPEA.
-- Saboia, J. (2007). "O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil." In: *Desigualdade de Renda no Brasil*. IPEA.
-- Schultz, T. W. (1961). "Investment in Human Capital." *American Economic Review*, 51(1): 1–17.
+- Becker, Gary S. 1957. [*The Economics of Discrimination*](https://books.google.com.br/books?id=MbNTcgAACAAJ). Chicago: University of Chicago Press.
+- Becker, Gary S. 1964. [*Human Capital*](https://books.google.com.br/books?id=9t69iICmrZ0C). New York: Columbia University Press.
+- Card, David, e Alan B. Krueger. 1994. "[Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania](https://doi.org/10.1257/aer.84.4.772)." *American Economic Review* 84 (4): 772–793.
+- Corseuil, C. H., e F. G. Carneiro. 2001. "[Os Impactos do Salário Mínimo sobre Emprego e Salários no Brasil](https://www.ipea.gov.br)." *Pesquisa e Planejamento Econômico* 31 (3).
+- Engbom, Niklas, e Christian Moser. 2022. "[Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506)." *American Economic Review* 112 (12): 3803–3847.
+- Lemos, Sara. 2009. "[Minimum Wage Effects in a Developing Country](https://doi.org/10.1016/j.labeco.2008.07.002)." *Labour Economics* 16 (2): 224–237.
+- McDonald, Ian M., e Robert M. Solow. 1981. "[Wage Bargaining and Employment](https://doi.org/10.2307/1803906)." *American Economic Review* 71 (5): 896–908.
+- Meghir, C., R. Narita, e J.-M. Robin. 2015. "[Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110)." *American Economic Review* 105 (4): 1509–1546.
+- Neri, M., G. Gonzaga, e J. M. Camargo. 2001. "[Efeitos Informais do Salário Mínimo e Pobreza](https://www.ipea.gov.br)." *Texto para Discussão*, IPEA.
+- Saboia, J. 2007. "[O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil](https://www.ipea.gov.br)." In: *Desigualdade de Renda no Brasil*. IPEA.
+- Schultz, Theodore W. 1961. "[Investment in Human Capital](https://www.jstor.org/stable/1818907)." *American Economic Review* 51 (1): 1–17.

@@ -858,10 +858,10 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
     **Relevância para o capítulo:** O artigo dialoga com as Seções 2.2 (função implícita e estática comparativa), 2.3 (condições de segunda ordem) e 2.8 (concavidade e curvatura). As ferramentas clássicas deste capítulo — derivar a CPO, verificar a CSO, aplicar o teorema da função implícita — produzem resultados de estática comparativa sob condições de regularidade. Milgrom e Shannon mostram que esses resultados sobrevivem sob hipóteses muito mais gerais, sugerindo que a estrutura matemática da otimização é mais profunda do que a maquinaria de cálculo diferencial captura.
 
-## Leituras Recomendadas
+## Referências do Capítulo
 
-- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Apêndice Matemático.
-- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Apêndice Matemático.
-- Simon, C. P. & Blume, L. *Mathematics for Economists*. New York: W. W. Norton, 1994.
-- Varian, H. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ), Cap. 27 (Apêndice Matemático).
-- Chiang, A. & Wainwright, K. *Fundamental Methods of Mathematical Economics*. 4. ed. McGraw-Hill, 2005.
+- Chiang, Alpha C., e Kevin Wainwright. 2005. [*Fundamental Methods of Mathematical Economics*](https://books.google.com.br/books?id=0S1JnwEACAAJ). 4ª ed. New York: McGraw-Hill.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Apêndice Matemático.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Apêndice Matemático.
+- Simon, Carl P., e Lawrence Blume. 1994. [*Mathematics for Economists*](https://books.google.com.br/books?id=C6GGkAa_qlEC). New York: W. W. Norton.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Cap. 27 (Apêndice Matemático).

@@ -415,7 +415,7 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(r\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
 
-### 10.8.1 Cobb-Douglas: \(q = K^\alpha L^\beta\)
+### 10.8.1 Cobb-Douglas: q = Kᵅ Lᵝ
 
 **Demandas condicionais (minimização de custo).** A firma resolve:
 
@@ -495,7 +495,7 @@ Resolvendo o sistema (detalhes em Cap. 11):
 
 Estas demandas só existem com retornos decrescentes. Com retornos constantes ou crescentes, o lucro não tem máximo finito.
 
-### 10.8.2 Tecnologia Linear (Substitutos Perfeitos): \(q = \alpha K + \beta L\)
+### 10.8.2 Tecnologia Linear (Substitutos Perfeitos): q = αK + βL
 
 Com tecnologia linear, os insumos são perfeitamente substituíveis. As isoquantas são retas com inclinação \(-\beta/\alpha\).
 
@@ -520,7 +520,7 @@ Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg
 
 **Demandas por insumos (maximização de lucro).** Com retornos constantes de escala, o lucro é linear em \(q\). Se \(p > \min\{r/\alpha, w/\beta\}\), a firma deseja produzir infinito; se \(p < \min\{r/\alpha, w/\beta\}\), a firma produz zero. O problema de maximização de lucro só tem solução interior com rendimentos decrescentes.
 
-### 10.8.3 Tecnologia Leontief (Proporções Fixas): \(q = \min\{K/\alpha,\; L/\beta\}\)
+### 10.8.3 Tecnologia Leontief (Proporções Fixas): q = min{K/α, L/β}
 
 Com tecnologia Leontief, os insumos são usados em proporções fixas \(\alpha:\beta\). As isoquantas têm formato de "L".
 
@@ -542,7 +542,7 @@ O custo é linear em \(q\), com CMg constante igual a \(\alpha r + \beta w\). Um
 
 **Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seriam necessários retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
 
-### 10.8.4 CES: \(q = (\alpha K^\rho + \beta L^\rho)^{1/\rho}\)
+### 10.8.4 CES: q = (αKᵖ + βLᵖ)¹ᐟᵖ
 
 A função CES generaliza os três casos anteriores. O parâmetro \(\rho\) determina a elasticidade de substituição entre insumos: \(\sigma = 1/(1-\rho)\).
 
@@ -891,9 +891,9 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
     **Relevância para o capítulo:** O artigo conecta diretamente a Seção 10.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 10.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
 
-## Leituras Recomendadas
+## Referências do Capítulo
 
-- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 10.
-- Varian, H. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ), Cap. 20-22.
-- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 5 (Seções 5.C-5.D).
-- Pindyck, R. S. & Rubinfeld, D. L. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ), Cap. 7.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5 (Seções 5.C–5.D).
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 10.
+- Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ). 8ª ed. São Paulo: Pearson. Cap. 7.
+- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Cap. 20–22.

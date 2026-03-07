@@ -88,7 +88,7 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
 
 ---
 
-## 4.3 O Caso com \(n\) Bens — O Lagrangeano
+## 4.3 O Caso com n Bens — O Lagrangeano
 
 Para generalizar a análise a \(n\) bens, precisamos de uma técnica de otimização mais poderosa. O **método de Lagrange** permite resolver problemas de maximização com restrições de igualdade.
 
@@ -502,7 +502,7 @@ A Identidade de Roy permite recuperar as demandas marshallianas diretamente da f
 
 Nesta seção, derivamos as demandas marshallianas e hicksianas para as quatro formas funcionais mais utilizadas em microeconomia. Para cada tipo, apresentamos o problema de otimização completo, o lagrangeano, as condições de primeira ordem e as soluções fechadas.
 
-### 4.10.1 Cobb-Douglas: \(U(x_1,x_2)=x_1^a x_2^b\)
+### 4.10.1 Cobb-Douglas: U(x₁, x₂) = x₁ᵃ x₂ᵇ
 
 A função Cobb-Douglas é o caso mais tratável e serve de *benchmark* para as demais.
 
@@ -580,7 +580,7 @@ E(\mathbf{p}, \bar{u}) = p_1 h_1 + p_2 h_2 = \bar{u}^{\,1/(a+b)} \left(\frac{a+b
 
 *Verificação pelo Lema de Shephard*: \(\partial E/\partial p_1 = h_1\) ✓
 
-### 4.10.2 Preferências Lineares (Substitutos Perfeitos): \(U = ax_1 + bx_2\)
+### 4.10.2 Preferências Lineares (Substitutos Perfeitos): U = ax₁ + bx₂
 
 Com preferências lineares, as curvas de indiferença são retas com inclinação \(-a/b\), e a TMS é constante. A elasticidade de substituição é \(\sigma \to \infty\).
 
@@ -616,7 +616,7 @@ V(\mathbf{p}, I) = \max\left\{\frac{a\, I}{p_1},\; \frac{b\, I}{p_2}\right\} = I
 E(\mathbf{p}, \bar{u}) = \bar{u} \cdot \min\left\{\frac{p_1}{a},\; \frac{p_2}{b}\right\}
 \]
 
-### 4.10.3 Preferências Leontief (Complementares Perfeitos): \(U = \min\{x_1/a,\; x_2/b\}\)
+### 4.10.3 Preferências Leontief (Complementares Perfeitos): U = min{x₁/a, x₂/b}
 
 Com preferências Leontief, as curvas de indiferença têm formato de "L" com vértice na reta \(x_1/a = x_2/b\). A elasticidade de substituição é \(\sigma = 0\): não há margem para substituição entre os bens.
 
@@ -660,7 +660,7 @@ E(\mathbf{p}, \bar{u}) = (a\, p_1 + b\, p_2)\,\bar{u}
 
 A função dispêndio é linear nos preços — não há curvatura porque não há substituição.
 
-### 4.10.4 CES: \(U(x_1,x_2) = (a\, x_1^\rho + b\, x_2^\rho)^{1/\rho}\)
+### 4.10.4 CES: U(x₁, x₂) = (a x₁ᵖ + b x₂ᵖ)¹ᐟᵖ
 
 A função CES (*Constant Elasticity of Substitution*) generaliza os três casos anteriores. O parâmetro \(\rho \in (-\infty, 1]\setminus\{0\}\) determina a elasticidade de substituição \(\sigma = 1/(1-\rho)\):
 
@@ -743,7 +743,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
     - Quando \(\rho \to 1\) (\(\sigma \to \infty\)), o consumidor substitui perfeitamente entre os bens e consome apenas o mais barato por unidade de utilidade.
     - Quando \(\rho \to -\infty\) (\(\sigma \to 0\)), não há substituição e o consumidor consome na proporção fixa \(a:b\).
 
-### 4.10.5 Quase-linear: \(U(x_1,x_2) = v(x_1) + x_2\)
+### 4.10.5 Quase-linear: U(x₁, x₂) = v(x₁) + x₂
 
 A utilidade quase-linear combina uma função côncava \(v(x_1)\) com um termo linear em \(x_2\). O bem 2 funciona como numerário (Seção 3.6.5).
 
@@ -1031,11 +1031,11 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulos 2–3.
-- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 4.
-- VARIAN, H. R. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 5–7.
-- PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulos 3–5.
-- SOARES, F. V.; SÁTYRO, N. *O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*. Texto para Discussão IPEA, n. 1424, 2009.
-- RESENDE, A. C. C.; OLIVEIRA, A. M. H. C. Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras. *Estudos Econômicos*, v. 38, n. 2, p. 235–265, 2008.
-- ATTANASIO, O.; BATTISTIN, E.; MESNARD, A. Food and Cash Transfers: Evidence from Colombia. *The Economic Journal*, v. 122, n. 559, p. 92–124, 2012.
-- DEATON, A.; MUELLBAUER, J. An Almost Ideal Demand System. *The American Economic Review*, v. 70, n. 3, p. 312–326, 1980.
+- Attanasio, Orazio, Erich Battistin, e Alice Mesnard. 2012. "[Food and Cash Transfers: Evidence from Colombia.](https://doi.org/10.1111/j.1468-0297.2011.02501.x)" *The Economic Journal* 122 (559): 92–124.
+- Deaton, Angus, e John Muellbauer. 1980. "[An Almost Ideal Demand System.](https://www.jstor.org/stable/1805222)" *The American Economic Review* 70 (3): 312–326.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulos 2–3.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 4.
+- Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. Boston: Pearson. Capítulos 3–5.
+- Resende, Aline Cristine Côrtes, e Ana Maria Hermeto Camilo de Oliveira. 2008. "[Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras.](https://doi.org/10.1590/S0101-41612008000200002)" *Estudos Econômicos* 38 (2): 235–265.
+- Soares, Fábio Veras, e Natália Sátyro. 2009. [*O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*](https://repositorio.ipea.gov.br/handle/11058/1482). Texto para Discussão IPEA, n. 1424. Brasília: IPEA.
+- Varian, Hal R. 2015. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Capítulos 5–7.

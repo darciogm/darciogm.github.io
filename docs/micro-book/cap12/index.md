@@ -789,15 +789,6 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Leituras Recomendadas
-
-- **Nicholson, W. E. & Snyder, C. M.** [*Microeconomic Theory: Basic Principles and Extensions.*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ) 12ª ed. Cengage, 2017. Caps. 12–13.
-- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** [*Microeconomic Theory.*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC) Oxford University Press, 1995. Cap. 10.
-- **Varian, H. R.** [*Microeconomic Analysis.*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ) 3ª ed. W. W. Norton, 1992. Caps. 13–14.
-- **Perloff, J. M.** *Microeconomics: Theory and Applications with Calculus.* 4ª ed. Pearson, 2017. Caps. 8–9.
-
----
-
 ## Apêndice: A Pesquisa em Ação
 
 ??? abstract "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
@@ -821,3 +812,12 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
     **Resultados centrais.** A fórmula unificada de incidência mostra que \(\rho = \varepsilon_S / (\varepsilon_S + |\varepsilon_D| \cdot \theta)\), onde \(\theta\) captura o grau de conduta competitiva (\(\theta = 1\) em concorrência perfeita, \(\theta > 1\) com poder de mercado). O artigo também demonstra que a PPM de um imposto pode ser expressa como função do repasse, independentemente da estrutura de mercado.
 
     **Conexão com o capítulo.** O artigo generaliza os resultados de incidência tributária da Seção 12.11, mostrando que a fórmula competitiva é um caso especial de um princípio mais amplo. A leitura é recomendada para estudantes que desejam compreender como a análise de equilíbrio parcial se estende para além da concorrência perfeita.
+
+---
+
+## Referências do Capítulo
+
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 10.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 12–13.
+- Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. New York: Pearson. Caps. 8–9.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 13–14.

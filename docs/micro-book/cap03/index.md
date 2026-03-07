@@ -651,12 +651,12 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ## Referências do Capítulo
 
-- BESANKO, D.; BRAEUTIGAM, R. R. *Microeconomics*. 5. ed. Hoboken: Wiley, 2014. Capítulos 3-4.
-- CHOI, S.; KARIV, S.; MÜLLER, W.; SILVERMAN, D. Who Is (More) Rational? *American Economic Review*, v. 104, n. 6, p. 1518-1550, 2014.
-- DEBREU, G. Representation of a preference ordering by a numerical function. In: THRALL, R. M.; COOMBS, C. H.; DAVIS, R. L. (eds.). *Decision Processes*. New York: Wiley, 1954. p. 159-165.
-- FALK, A.; BECKER, A.; DOHMEN, T.; ENKE, B.; HUFFMAN, D.; SUNDE, U. Global Evidence on Economic Preferences. *Quarterly Journal of Economics*, v. 133, n. 4, p. 1645-1692, 2018.
-- IBGE. *Pesquisa de Orçamentos Familiares* (POF) 2017-2018: Primeiros Resultados. Rio de Janeiro: IBGE, 2019.
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulo 3.
-- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 3.
-- VARIAN, H. R. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 3-5.
-- BARROS, R. P. de; FOGUEL, M. N.; ULYSSEA, G. (orgs.). *Desigualdade de renda no Brasil: uma análise da queda recente*. Brasília: IPEA, 2007.
+- Barros, Ricardo Paes de, Miguel Nathan Foguel, e Gabriel Ulyssea, orgs. 2007. [*Desigualdade de renda no Brasil: uma análise da queda recente*](https://repositorio.ipea.gov.br/handle/11058/3249). Brasília: IPEA.
+- Besanko, David, e Ronald R. Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. Hoboken: Wiley. Capítulos 3–4.
+- Choi, Syngjoo, Shachar Kariv, Wieland Müller, e Dan Silverman. 2014. "[Who Is (More) Rational?](https://doi.org/10.1257/aer.104.6.1518)" *American Economic Review* 104 (6): 1518–1550.
+- Debreu, Gerard. 1954. "[Representation of a preference ordering by a numerical function](https://www.cambridge.org/core/books/abs/mathematical-economics/representation-of-a-preference-ordering-by-a-numerical-function/009AEFFF2E07235C5BBFFEF226353FE8)." In *Decision Processes*, editado por Robert M. Thrall, Clyde H. Coombs, e Robert L. Davis, 159–165. New York: Wiley.
+- Falk, Armin, Anke Becker, Thomas Dohmen, Benjamin Enke, David Huffman, e Uwe Sunde. 2018. "[Global Evidence on Economic Preferences.](https://doi.org/10.1093/qje/qjx003)" *Quarterly Journal of Economics* 133 (4): 1645–1692.
+- IBGE — Instituto Brasileiro de Geografia e Estatística. 2019. [*Pesquisa de Orçamentos Familiares (POF) 2017–2018: Primeiros Resultados*](https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html). Rio de Janeiro: IBGE.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulo 3.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 3.
+- Varian, Hal R. 2015. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Capítulos 3–5.

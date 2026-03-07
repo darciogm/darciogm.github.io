@@ -236,7 +236,7 @@ A microeconomia contemporânea expandiu-se em várias direções, relaxando as s
 
 ---
 
-## Demonstração: Condição de maximização de lucro \(P = CMg\)
+## Demonstração: Condição de maximização de lucro P = CMg
 
 !!! abstract "Teorema: Condição de Primeira Ordem para Maximização de Lucro"
     Considere uma firma tomadora de preços (*price taker*) em um mercado competitivo. Se a firma produz uma quantidade positiva \(q^* > 0\) que maximiza seu lucro, então o preço de mercado deve ser igual ao custo marginal avaliado nessa quantidade:
@@ -566,10 +566,10 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
     **Relevância para o capítulo:** O artigo dialoga diretamente com as Seções 1.3 e 1.6: a hipótese de otimização não é uma descrição literal do comportamento humano, mas uma aproximação cuja qualidade varia conforme o contexto. A economia comportamental não rejeita a modelagem — pelo contrário, propõe modelos alternativos (teoria do prospecto, preferências dependentes de referência) que preservam o rigor formal enquanto incorporam regularidades empíricas. Thaler recebeu o Prêmio Nobel de Economia em 2017, consolidando a economia comportamental como parte do *mainstream* microeconômico.
 
-## Leituras Recomendadas
+## Referências do Capítulo
 
-- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 1.
-- Varian, H. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ), Cap. 1.
-- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 1.
-- Friedman, M. "The Methodology of Positive Economics." In: *Essays in Positive Economics*. Chicago: University of Chicago Press, 1953.
-- Pindyck, R. S. & Rubinfeld, D. L. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ), Cap. 1-2.
+- Friedman, Milton. 1953. "The Methodology of Positive Economics." In [*Essays in Positive Economics*](https://books.google.com.br/books?id=mMbJAgAAQBAJ). Chicago: University of Chicago Press.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 1.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 1.
+- Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ). 8ª ed. São Paulo: Pearson. Cap. 1–2.
+- Varian, Hal R. 2015. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Cap. 1.

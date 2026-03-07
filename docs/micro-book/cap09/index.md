@@ -853,8 +853,8 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
     **Relevância para o capítulo:** O artigo demonstra que a elasticidade de substituição \(\sigma\) — apresentada na Seção 9.4 como um parâmetro abstrato da CES — é um objeto empiricamente estimável e economicamente consequente. A distinção entre a CES no nível da planta e no nível agregado mostra que a escolha da forma funcional (Seção 9.5) tem implicações que vão muito além do exercício de sala de aula: ela determina previsões sobre distribuição de renda, política fiscal e futuro do trabalho.
 
-## Leituras Recomendadas
+## Referências do Capítulo
 
-- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 9.
-- Varian, H. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ), Cap. 1-4 (teoria da produção).
-- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 5.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 9.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Cap. 1–4 (teoria da produção).

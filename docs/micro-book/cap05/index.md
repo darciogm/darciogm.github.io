@@ -759,12 +759,12 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulos 2–3.
-- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 5.
-- VARIAN, H. R. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 8–9, 14.
-- PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulos 4–5.
-- JENSEN, R. T.; MILLER, N. H. Giffen Behavior and Subsistence Consumption. *The American Economic Review*, v. 98, n. 4, p. 1553–1577, 2008.
-- HAUSMAN, J. A. Exact Consumer's Surplus and Deadweight Loss. *The American Economic Review*, v. 71, n. 4, p. 662–676, 1981.
-- IBGE. *Pesquisa de Orçamentos Familiares 2017–2018: análise do consumo alimentar pessoal no Brasil*. Rio de Janeiro: IBGE, 2020.
-- CARDOSO, B. F.; AZEVEDO, M. T.; CASSUCE, F. C. C. Estimação da elasticidade-preço da demanda, da elasticidade-renda e da elasticidade preço-cruzada no Brasil. *Análise Econômica*, v. 37, n. 74, p. 7–30, 2019.
-- ALMEIDA, A. N.; AZZONI, C. R. Custo de vida comparativo das regiões metropolitanas brasileiras: 1996–2014. *Estudos Econômicos*, v. 46, n. 1, p. 253–276, 2016.
+- Almeida, Alexandre Nunes de, e Carlos Roberto Azzoni. 2016. "[Custo de vida comparativo das regiões metropolitanas brasileiras: 1996–2014.](https://doi.org/10.1590/0101-416146163aac)" *Estudos Econômicos* 46 (1): 253–276.
+- Cardoso, Breno Ferreira, Marcelo Tavares de Azevedo, e Francisco Carlos da Cunha Cassuce. 2019. "[Estimação da elasticidade-preço da demanda, da elasticidade-renda e da elasticidade preço-cruzada no Brasil.](https://doi.org/10.22456/2176-5456.71934)" *Análise Econômica* 37 (74): 7–30.
+- Hausman, Jerry A. 1981. "[Exact Consumer's Surplus and Deadweight Loss.](https://www.jstor.org/stable/1806997)" *The American Economic Review* 71 (4): 662–676.
+- IBGE — Instituto Brasileiro de Geografia e Estatística. 2020. [*Pesquisa de Orçamentos Familiares 2017–2018: análise do consumo alimentar pessoal no Brasil*](https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html). Rio de Janeiro: IBGE.
+- Jensen, Robert T., e Nolan H. Miller. 2008. "[Giffen Behavior and Subsistence Consumption.](https://doi.org/10.1257/aer.98.4.1553)" *The American Economic Review* 98 (4): 1553–1577.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulos 2–3.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 5.
+- Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. Boston: Pearson. Capítulos 4–5.
+- Varian, Hal R. 2015. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Capítulos 8–9, 14.

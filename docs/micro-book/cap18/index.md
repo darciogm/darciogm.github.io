@@ -697,14 +697,14 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
     **Relevância para o capítulo:** O paper é uma aplicação empírica direta da teoria de leilões com informação assimétrica (seção 18.7). A vantagem informacional da Petrobras é análoga ao problema de *common value* com licitantes assimétricos: o licitante mais informado pode extrair renda informacional, enquanto os menos informados enfrentam uma versão ampliada da maldição do vencedor. O resultado ilustra que o desenho do leilão importa — contrariando a equivalência de receita quando suas condições são violadas.
 
-## Referências
+## Referências do Capítulo
 
-- Akerlof, G. A. (1970). "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *Quarterly Journal of Economics*, 84(3): 488–500.
-- [Chiappori, P.-A., e B. Salanié (2000). "Testing for Asymmetric Information in Insurance Markets." *Journal of Political Economy*, 108(1): 56–78.](https://doi.org/10.1086/317671)
-- Holmström, B. (1979). "Moral Hazard and Observability." *Bell Journal of Economics*, 10(1): 74–91.
-- [Matoso, R., e M. Rezende (2014). "Asymmetric Information in Oil and Gas Lease Auctions with a National Company." *International Journal of Industrial Organization*, 33: 72–82.](https://doi.org/10.1016/j.ijindorg.2014.02.006)
-- Mirrlees, J. A. (1971). "An Exploration in the Theory of Optimum Income Taxation." *Review of Economic Studies*, 38(2): 175–208.
-- Myerson, R. B. (1981). "Optimal Auction Design." *Mathematics of Operations Research*, 6(1): 58–73.
-- [Rothschild, M., e J. Stiglitz (1976). "Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information." *Quarterly Journal of Economics*, 90(4): 629–649.](https://doi.org/10.2307/1885326)
-- Spence, M. (1973). "Job Market Signaling." *Quarterly Journal of Economics*, 87(3): 355–374.
-- Vickrey, W. (1961). "Counterspeculation, Auctions, and Competitive Sealed Tenders." *Journal of Finance*, 16(1): 8–37.
+- Akerlof, George A. 1970. "[The Market for 'Lemons': Quality Uncertainty and the Market Mechanism](https://doi.org/10.2307/1879431)." *Quarterly Journal of Economics* 84 (3): 488–500.
+- Chiappori, Pierre-André, e Bernard Salanié. 2000. "[Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/317671)." *Journal of Political Economy* 108 (1): 56–78.
+- Holmström, Bengt. 1979. "[Moral Hazard and Observability](https://doi.org/10.2307/3003320)." *Bell Journal of Economics* 10 (1): 74–91.
+- Matoso, R., e M. Rezende. 2014. "[Asymmetric Information in Oil and Gas Lease Auctions with a National Company](https://doi.org/10.1016/j.ijindorg.2014.02.006)." *International Journal of Industrial Organization* 33: 72–82.
+- Mirrlees, James A. 1971. "[An Exploration in the Theory of Optimum Income Taxation](https://doi.org/10.2307/2296779)." *Review of Economic Studies* 38 (2): 175–208.
+- Myerson, Roger B. 1981. "[Optimal Auction Design](https://doi.org/10.1287/moor.6.1.58)." *Mathematics of Operations Research* 6 (1): 58–73.
+- Rothschild, Michael, e Joseph E. Stiglitz. 1976. "[Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information](https://doi.org/10.2307/1885326)." *Quarterly Journal of Economics* 90 (4): 629–649.
+- Spence, Michael. 1973. "[Job Market Signaling](https://doi.org/10.2307/1882010)." *Quarterly Journal of Economics* 87 (3): 355–374.
+- Vickrey, William. 1961. "[Counterspeculation, Auctions, and Competitive Sealed Tenders](https://doi.org/10.1111/j.1540-6261.1961.tb02789.x)." *Journal of Finance* 16 (1): 8–37.
