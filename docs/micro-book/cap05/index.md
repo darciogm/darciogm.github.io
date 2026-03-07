@@ -63,7 +63,7 @@ Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto
 Exemplos clássicos de bens inferiores no contexto brasileiro incluem a farinha de mandioca e o transporte público em certas faixas de renda — à medida que a renda familiar cresce, o consumo desses itens tende a ser substituído por alternativas de maior qualidade percebida.
 
 !!! example "Box Brasil — Farinha de mandioca: um bem inferior em números"
-    A farinha de mandioca é talvez o exemplo mais emblemático de bem inferior no Brasil. Dados do IBGE mostram uma queda expressiva no consumo domiciliar per capita: de 7,76 kg/ano na POF 2002–2003 para 2,33 kg/ano na POF 2017–2018, uma redução de 70% em quinze anos.
+    A farinha de mandioca é talvez o exemplo mais emblemático de bem inferior no Brasil. Dados do [IBGE](https://www.ibge.gov.br) mostram uma queda expressiva no consumo domiciliar per capita: de 7,76 kg/ano na POF 2002–2003 para 2,33 kg/ano na POF 2017–2018, uma redução de 70% em quinze anos.
 
     **Padrão por faixa de renda:** tanto a frequência de consumo quanto a quantidade média per capita diária de farinha de mandioca são maiores nos quartis de renda mais baixos. A diferença entre o primeiro e o último quartil de renda é acentuada, confirmando o comportamento de bem inferior (\(\varepsilon_{x,I} < 0\)).
 
@@ -131,7 +131,7 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
     **Mecanismo:** quando a bandeira muda de verde para vermelha (patamar 2), a tarifa residencial pode subir mais de R$ 0,07/kWh, o que equivale a um aumento de 8–10% no custo da energia. Essa variação é exógena ao consumidor (depende de condições hidrológicas), criando um experimento natural para observar efeitos substituição e renda.
 
-    **Efeito substituição:** quando a bandeira vermelha é ativada, famílias reduzem o uso de chuveiro elétrico, ar-condicionado e máquina de lavar em horários de pico — substituindo eletricidade por gás (aquecimento), ventilação natural ou deslocamento temporal do consumo. A tarifa média de energia residencial subiu em média 5,6% a 6,9% em 2023, segundo a ANEEL.
+    **Efeito substituição:** quando a bandeira vermelha é ativada, famílias reduzem o uso de chuveiro elétrico, ar-condicionado e máquina de lavar em horários de pico — substituindo eletricidade por gás (aquecimento), ventilação natural ou deslocamento temporal do consumo. A tarifa média de energia residencial subiu em média 5,6% a 6,9% em 2023, segundo a [ANEEL](https://www.aneel.gov.br).
 
     **Efeito renda:** para famílias de baixa renda, em que a conta de luz pode representar 10–15% do orçamento mensal, o efeito renda do aumento tarifário é significativo, reduzindo o consumo de outros bens.
 
@@ -220,7 +220,7 @@ Da Equação de Slutsky, extraímos consequências cruciais:
 3. **Simetria de Slutsky**: \(\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}\). Os efeitos substituição cruzados são simétricos.
 
 !!! note "Giffen na prática: arroz na China"
-    Bens de Giffen são raríssimos empiricamente. A evidência mais robusta foi documentada por Jensen e Miller (2008), que identificaram comportamento de Giffen para o arroz entre famílias extremamente pobres na província de Hunan, na China. Nessas famílias, o arroz representava parcela tão grande do orçamento que o efeito renda de um aumento de preço dominava o efeito substituição. Voltaremos a esse estudo no Apêndice.
+    Bens de Giffen são raríssimos empiricamente. A evidência mais robusta foi documentada por [Jensen e Miller (2008)](https://doi.org/10.1257/aer.98.4.1553), que identificaram comportamento de Giffen para o arroz entre famílias extremamente pobres na província de Hunan, na China. Nessas famílias, o arroz representava parcela tão grande do orçamento que o efeito renda de um aumento de preço dominava o efeito substituição. Voltaremos a esse estudo no Apêndice.
 
 ---
 
@@ -735,7 +735,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Jensen, R. T.; Miller, N. H. (2008). Giffen Behavior and Subsistence Consumption. *The American Economic Review*, 98(4), 1553–1577."
+??? abstract "Jensen, R. T.; Miller, N. H. (2008). [Giffen Behavior and Subsistence Consumption](https://doi.org/10.1257/aer.98.4.1553). *The American Economic Review*, 98(4), 1553–1577."
     **Pergunta central:** Bens de Giffen — aqueles cuja demanda aumenta quando o preço sobe — são uma curiosidade teórica ou existem de fato? Desde que Alfred Marshall popularizou a ideia no século XIX atribuindo-a a Sir Robert Giffen, nenhum estudo havia conseguido documentar convincentemente esse comportamento com dados de campo.
 
     **Método:** Jensen e Miller conduziram um experimento de campo randomizado em duas províncias chinesas: Hunan (onde o alimento básico é o arroz) e Gansu (onde é o trigo). O experimento subsidiou aleatoriamente o preço do alimento básico para famílias extremamente pobres e mediu as variações na quantidade demandada. O desenho experimental permitiu identificar a curva de demanda de forma causal, evitando problemas de endogeneidade comuns em estudos observacionais.
@@ -746,7 +746,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
     **Relevância para o capítulo:** O estudo é a ilustração empírica mais rigorosa das Seções 5.3–5.4. Ele demonstra que a Equação de Slutsky não é apenas uma identidade matemática: suas implicações qualitativas — em particular, que um bem de Giffen deve ser inferior e representar parcela substancial do orçamento — encontram confirmação nos dados. O caso também ilumina a discussão sobre bens inferiores no Brasil (farinha de mandioca), embora o contexto brasileiro contemporâneo não seja de subsistência pura, tornando o surgimento de Giffen improvável.
 
-??? abstract "Hausman, J. A. (1981). Exact Consumer's Surplus and Deadweight Loss. *The American Economic Review*, 71(4), 662–676."
+??? abstract "Hausman, J. A. (1981). [Exact Consumer's Surplus and Deadweight Loss](https://www.jstor.org/stable/1805921). *The American Economic Review*, 71(4), 662–676."
     **Pergunta central:** O excedente do consumidor marshalliano, calculado a partir da curva de demanda observável, é uma boa medida da variação de bem-estar causada por mudanças de preço? Ou é necessário recorrer às medidas exatas — variação compensatória (VC) e variação equivalente (VE) — baseadas nas demandas hicksianas não-observáveis?
 
     **Método:** Hausman desenvolveu um procedimento para calcular a VC e a VE exatas a partir de estimativas econométricas da demanda marshalliana observada. O método explora a Equação de Slutsky e a dualidade entre problema primal e dual para recuperar a demanda hicksiana a partir da marshalliana, permitindo calcular as medidas exatas de bem-estar sem precisar estimar diretamente a função dispêndio.
@@ -759,9 +759,9 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulos 2–3.
-- NICHOLSON, W.; SNYDER, C. M. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017. Capítulo 5.
-- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 8–9, 14.
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulos 2–3.
+- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 5.
+- VARIAN, H. R. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 8–9, 14.
 - PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulos 4–5.
 - JENSEN, R. T.; MILLER, N. H. Giffen Behavior and Subsistence Consumption. *The American Economic Review*, v. 98, n. 4, p. 1553–1577, 2008.
 - HAUSMAN, J. A. Exact Consumer's Surplus and Deadweight Loss. *The American Economic Review*, v. 71, n. 4, p. 662–676, 1981.

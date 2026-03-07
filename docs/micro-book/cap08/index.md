@@ -88,7 +88,7 @@ O equilíbrio de Nash é um conceito de **consistência mútua de expectativas**
 
     **Pense assim:** Pense no trânsito de São Paulo: se todo mundo usa o Waze e escolhe a rota mais rápida, nenhum motorista individual consegue melhorar seu tempo mudando de caminho — porque todas as alternativas já estão igualmente congestionadas. Isso é um equilíbrio de Nash do trânsito.
 
-    **Por que isso importa:** O conceito de equilíbrio de Nash é a pedra angular da regulação de mercados, do desenho de leilões (como os de espectro da Anatel) e da política antitruste do CADE.
+    **Por que isso importa:** O conceito de equilíbrio de Nash é a pedra angular da regulação de mercados, do desenho de leilões (como os de espectro da [Anatel](https://www.anatel.gov.br)) e da política antitruste do [CADE](https://www.gov.br/cade).
 
 ### Exemplos clássicos
 
@@ -498,7 +498,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
     **Concentração extrema**
 
-    Dados da **ANAC** (Agência Nacional de Aviação Civil) para 2024 mostram que três companhias detêm **98,9%** do mercado doméstico de passageiros:
+    Dados da **[ANAC](https://www.anac.gov.br)** (Agência Nacional de Aviação Civil) para 2024 mostram que três companhias detêm **98,9%** do mercado doméstico de passageiros:
 
     | Companhia | Market share (2024) |
     |:----------|:-------------------|
@@ -857,7 +857,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Bresnahan, Timothy F.; Reiss, Peter C. (1991). Entry and Competition in Concentrated Markets. *Journal of Political Economy*, 99(5), 977–1009. DOI: 10.1086/261786"
+??? abstract "Bresnahan, Timothy F.; Reiss, Peter C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009. DOI: [10.1086/261786](https://doi.org/10.1086/261786)"
     **Pergunta central:** Quantas firmas são necessárias para que um mercado se torne efetivamente competitivo? A teoria dos jogos prevê que Bertrand com dois concorrentes já gera preço competitivo, enquanto Cournot requer muitas firmas. Qual dessas previsões se aproxima mais da realidade?
 
     **Método:** Bresnahan e Reiss desenvolveram um modelo econométrico de entrada em mercados locais geograficamente isolados nos Estados Unidos (cidades pequenas com 1 a 5 firmas). Usando dados de cinco setores — médicos, dentistas, farmácias, encanadores e loja de pneus —, os autores inferiram o nível de competição a partir do tamanho mínimo de mercado necessário para sustentar uma firma adicional. A ideia-chave: se o mercado precisa ser proporcionalmente maior para sustentar 3 firmas do que para sustentar 2, isso significa que a terceira firma reduz as margens — evidência de que a entrada intensifica a competição.
@@ -868,7 +868,7 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
     **Relevância para o capítulo:** O artigo testa empiricamente as previsões dos modelos de Cournot e Bertrand (Seção 8.6) sobre a relação entre número de concorrentes e intensidade da competição. Os resultados são mais consistentes com modelos intermediários (competição monopolística ou Cournot com poucas firmas) do que com os extremos de Bertrand puro (dois bastam) ou competição perfeita (muitos necessários).
 
-??? abstract "Porter, Robert H. (1983). A Study of Cartel Stability: The Joint Executive Committee, 1880–1886. *The Bell Journal of Economics*, 14(2), 301–314. DOI: 10.2307/3003634"
+??? abstract "Porter, Robert H. (1983). [A Study of Cartel Stability: The Joint Executive Committee, 1880–1886](https://doi.org/10.2307/3003634). *The Bell Journal of Economics*, 14(2), 301–314. DOI: [10.2307/3003634](https://doi.org/10.2307/3003634)"
     **Pergunta central:** Os modelos teóricos de jogos repetidos preveem que cartéis alternam entre fases de conluio (preços altos) e fases de punição (guerras de preço). Essa dinâmica é observável em dados reais? É possível identificar empiricamente as transições entre cooperação e punição?
 
     **Método:** Porter analisou dados semanais de preços e quantidades do *Joint Executive Committee* (JEC), um cartel de ferrovias nos Estados Unidos entre 1880 e 1886. Usando um modelo econométrico de mudança de regime (*switching regression*), estimou a probabilidade de o cartel estar em fase cooperativa ou em fase de guerra de preços em cada semana. O modelo permite que os parâmetros de demanda e oferta mudem entre os dois regimes.
@@ -881,10 +881,10 @@ A tabela a seguir resume as propriedades dos jogos clássicos mais estudados na 
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulos 7–9.
-- GIBBONS, R. *Game Theory for Applied Economists*. Princeton: Princeton University Press, 1992. (Trad. port.: *Um Primeiro Curso em Teoria dos Jogos*. Porto Alegre: Bookman, 2004.)
-- FUDENBERG, D.; TIROLE, J. *Game Theory*. Cambridge, MA: MIT Press, 1991.
-- OSBORNE, M. J.; RUBINSTEIN, A. *A Course in Game Theory*. Cambridge, MA: MIT Press, 1994.
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulos 7–9.
+- GIBBONS, R. [*Game Theory for Applied Economists*](https://books.google.com/books?id=8ygxf2WunAIC). Princeton: Princeton University Press, 1992. (Trad. port.: *Um Primeiro Curso em Teoria dos Jogos*. Porto Alegre: Bookman, 2004.)
+- FUDENBERG, D.; TIROLE, J. [*Game Theory*](https://books.google.com/books/about/Game_Theory.html?id=pFPHKwXro3QC). Cambridge, MA: MIT Press, 1991.
+- OSBORNE, M. J.; RUBINSTEIN, A. [*A Course in Game Theory*](https://books.google.com/books/about/A_Course_in_Game_Theory.html?id=k-WLoAEACAAJ). Cambridge, MA: MIT Press, 1994.
 - NASH, J. F. Equilibrium Points in N-Person Games. *Proceedings of the National Academy of Sciences*, v. 36, n. 1, p. 48–49, 1950.
 - SELTEN, R. Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit. *Zeitschrift für die gesamte Staatswissenschaft*, v. 121, p. 301–324, 1965.
 - SPENCE, M. Job Market Signaling. *The Quarterly Journal of Economics*, v. 87, n. 3, p. 355–374, 1973.

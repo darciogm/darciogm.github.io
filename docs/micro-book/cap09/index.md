@@ -6,7 +6,7 @@ A teoria da produção constitui o alicerce sobre o qual se ergue toda a anális
 
 A **função de produção** é o instrumento analítico que sintetiza a tecnologia disponível para a firma. A partir dela, derivamos conceitos fundamentais — produtividade marginal, isoquantas, taxa marginal de substituição técnica (TMST), rendimentos de escala e elasticidade de substituição — que serão mobilizados nos capítulos seguintes para construir as curvas de custo e de oferta.
 
-O capítulo está organizado em seis seções. Começamos pela produtividade marginal e pelas relações entre produto total, médio e marginal (Seção 9.1). Em seguida, introduzimos as isoquantas e a TMST (Seção 9.2), o conceito de rendimentos de escala (Seção 9.3) e a elasticidade de substituição (Seção 9.4). A Seção 9.5 apresenta quatro famílias de funções de produção clássicas — linear, Leontief, Cobb-Douglas e CES — e a Seção 9.6 incorpora o progresso técnico. Um Box Brasil dedicado à revolução agrícola impulsionada pela Embrapa ilustra como a teoria encontra expressão concreta na transformação produtiva do país.
+O capítulo está organizado em seis seções. Começamos pela produtividade marginal e pelas relações entre produto total, médio e marginal (Seção 9.1). Em seguida, introduzimos as isoquantas e a TMST (Seção 9.2), o conceito de rendimentos de escala (Seção 9.3) e a elasticidade de substituição (Seção 9.4). A Seção 9.5 apresenta quatro famílias de funções de produção clássicas — linear, Leontief, Cobb-Douglas e CES — e a Seção 9.6 incorpora o progresso técnico. Um Box Brasil dedicado à revolução agrícola impulsionada pela [Embrapa](https://www.embrapa.br) ilustra como a teoria encontra expressão concreta na transformação produtiva do país.
 
 ---
 
@@ -198,7 +198,7 @@ Note que uma função pode apresentar simultaneamente rendimentos crescentes de 
 
     **Pense assim:** Uma padaria de bairro que abre uma segunda unidade idêntica produz o dobro de pães (rendimentos constantes). Já uma siderúrgica que duplica o alto-forno produz mais que o dobro de aço, porque o volume do forno cresce com o cubo do raio enquanto o custo do material cresce com o quadrado (rendimentos crescentes). É a lógica que explica por que usinas são enormes e padarias são pequenas.
 
-    **Por que isso importa:** Rendimentos crescentes de escala justificam a existência de grandes empresas e são o principal argumento usado em fusões analisadas pelo CADE.
+    **Por que isso importa:** Rendimentos crescentes de escala justificam a existência de grandes empresas e são o principal argumento usado em fusões analisadas pelo [CADE](https://www.gov.br/cade).
 
 !!! example "Exemplo: Economias de escala na indústria automobilística brasileira"
     A indústria automobilística ilustra rendimentos crescentes de escala na faixa relevante de produção. Uma linha de montagem exige investimento fixo elevado em robôs, estamparia e pintura, independentemente do volume produzido. Estudos setoriais indicam que a escala mínima eficiente de uma planta de montagem situa-se entre 100 e 200 mil veículos/ano — abaixo desse patamar, o custo médio por veículo é significativamente mais alto. Essa lógica de rendimentos crescentes explica a concentração geográfica da produção automotiva brasileira no ABC paulista e em polos como Betim (MG) e Camaçari (BA), onde a escala viabiliza custos competitivos.
@@ -521,7 +521,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 !!! example "Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
 
-    Os dados do **IBGE/SIDRA** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 44,1 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados CONAB, safra 2022/23). A produtividade média passou de 2.403 para 3.509 kg/ha.
+    Os dados do **[IBGE/SIDRA](https://sidra.ibge.gov.br)** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 44,1 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados [CONAB](https://www.conab.gov.br), safra 2022/23). A produtividade média passou de 2.403 para 3.509 kg/ha.
 
     Uma decomposição simples do crescimento à la Solow revela que:
 
@@ -831,7 +831,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). *A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*. Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
+??? abstract "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). [*A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*](https://repositorio.ipea.gov.br). Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
     **Pergunta central:** Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 9.6.
 
     **Método:** Gasques et al. utilizam dados dos Censos Agropecuários do IBGE para construir índices de produtividade total dos fatores na agropecuária brasileira entre 1970 e 2006. A metodologia consiste em calcular índices de Törnqvist para produto e insumos agregados (terra, trabalho, capital, materiais) e obter a PTF como resíduo — o mesmo conceito do resíduo de Solow, agora aplicado a dados censitários reais.
@@ -842,7 +842,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
     **Relevância para o capítulo:** O estudo é uma aplicação empírica da decomposição do crescimento apresentada na Seção 9.6. O parâmetro \(A(t)\) da função de produção não é uma abstração teórica: é medido, acompanhado e influenciado por políticas públicas. O caso da agricultura brasileira mostra que o progresso técnico — capturado pelo resíduo de Solow — pode ser a força dominante do crescimento, exatamente como previsto pela teoria quando a PTF cresce mais rápido que os insumos.
 
-??? abstract "Oberfield, Ezra; Raval, Devesh. (2021). Micro Data and Macro Technology. *Econometrica*, 89(2), 703-732. DOI: 10.3982/ECTA12807"
+??? abstract "Oberfield, Ezra; Raval, Devesh. (2021). [Micro Data and Macro Technology](https://doi.org/10.3982/ECTA12807). *Econometrica*, 89(2), 703-732. DOI: [10.3982/ECTA12807](https://doi.org/10.3982/ECTA12807)"
     **Pergunta central:** Qual é a elasticidade de substituição entre capital e trabalho na economia? Esse parâmetro — o \(\sigma\) da função CES discutido na Seção 9.4 — é crucial para entender se a participação do capital na renda aumenta ou diminui quando o capital se torna mais abundante. Piketty (2014) argumentou que \(\sigma > 1\) explicaria o aumento da desigualdade; outros pesquisadores contestaram essa estimativa.
 
     **Método:** Oberfield e Raval propõem uma abordagem que usa microdados de plantas industriais (Census of Manufactures dos EUA) para estimar a elasticidade de substituição agregada. A ideia-chave é que a elasticidade agregada depende de dois componentes: a elasticidade de substituição *dentro* de cada planta (entre capital e trabalho) e a elasticidade de substituição *entre* plantas (realocação de recursos de plantas intensivas em trabalho para plantas intensivas em capital). Os autores estimam ambas separadamente.
@@ -855,6 +855,6 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ## Leituras Recomendadas
 
-- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Cap. 9.
-- Varian, H. *Microeconomic Analysis*, Cap. 1-4 (teoria da produção).
-- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Cap. 5.
+- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 9.
+- Varian, H. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ), Cap. 1-4 (teoria da produção).
+- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 5.

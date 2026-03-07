@@ -37,7 +37,7 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
     As preferências lexicográficas satisfazem completude, transitividade e monotonicidade, mas **não** satisfazem continuidade. Por isso, não podem ser representadas por uma função de utilidade contínua. Este é um caso clássico que ilustra a importância do axioma de continuidade.
 
 !!! info "Exemplo — Racionalidade nas escolhas de consumo no Brasil"
-    Os axiomas de completude e transitividade podem parecer abstratos, mas refletem exigências mínimas de consistência nas escolhas cotidianas. A Pesquisa de Orçamentos Familiares (POF 2017-2018) do IBGE mostra que famílias brasileiras, mesmo as de baixa renda, alocam seus orçamentos de forma estável e internamente consistente: quando a renda aumenta, a participação relativa da alimentação cai de maneira suave e previsível (de 22% para famílias com renda até R$ 1.908 a 7,6% para famílias acima de R$ 23.850). Essa regularidade empírica é compatível com preferências que satisfazem os axiomas acima — especialmente transitividade e monotonicidade — e justifica o uso do arcabouço axiomático como ponto de partida para modelar o consumidor.
+    Os axiomas de completude e transitividade podem parecer abstratos, mas refletem exigências mínimas de consistência nas escolhas cotidianas. A Pesquisa de Orçamentos Familiares (POF 2017-2018) do [IBGE](https://www.ibge.gov.br) mostra que famílias brasileiras, mesmo as de baixa renda, alocam seus orçamentos de forma estável e internamente consistente: quando a renda aumenta, a participação relativa da alimentação cai de maneira suave e previsível (de 22% para famílias com renda até R$ 1.908 a 7,6% para famílias acima de R$ 23.850). Essa regularidade empírica é compatível com preferências que satisfazem os axiomas acima — especialmente transitividade e monotonicidade — e justifica o uso do arcabouço axiomático como ponto de partida para modelar o consumidor.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Os axiomas de preferência são apenas regras mínimas de coerência — exigem que o consumidor saiba comparar opções e não se contradiga.
@@ -374,7 +374,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
     Em termos formais, a lei de Engel — que afirma que a participação da alimentação no orçamento cai com a renda — implica que a elasticidade-renda da alimentação é menor que 1 (bem necessário). Uma função Cobb-Douglas, por ter elasticidade-renda unitária para todos os bens, não consegue capturar esse padrão.
 
-    **Implicação para a modelagem:** Em estudos aplicados sobre o consumidor brasileiro, a função CES ou especificações não homotéticas (como o sistema Almost Ideal Demand System, de Deaton e Muellbauer) frequentemente oferecem ajuste superior à Cobb-Douglas, especialmente quando a análise envolve comparações entre faixas de renda.
+    **Implicação para a modelagem:** Em estudos aplicados sobre o consumidor brasileiro, a função CES ou especificações não homotéticas (como o sistema Almost Ideal Demand System, de [Deaton e Muellbauer](https://doi.org/10.2307/1805222)) frequentemente oferecem ajuste superior à Cobb-Douglas, especialmente quando a análise envolve comparações entre faixas de renda.
 
     **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018 — Primeiros Resultados.
 
@@ -627,7 +627,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Falk, A.; Becker, A.; Dohmen, T.; Enke, B.; Huffman, D.; Sunde, U. (2018). Global Evidence on Economic Preferences. *Quarterly Journal of Economics*, 133(4), 1645–1692."
+??? abstract "Falk, A.; Becker, A.; Dohmen, T.; Enke, B.; Huffman, D.; Sunde, U. (2018). [Global Evidence on Economic Preferences](https://doi.org/10.1093/qje/qjy013). *Quarterly Journal of Economics*, 133(4), 1645–1692."
     **Pergunta central:** Os axiomas de preferência apresentados na Seção 3.1 são abstrações teóricas — mas como as preferências reais dos indivíduos variam entre países e dentro de cada sociedade? Existem padrões sistemáticos que conectem preferências a características demográficas, culturais e econômicas? Este artigo é o maior esforço empírico já realizado para responder a essas perguntas.
 
     **Método:** Falk e coautores construíram o *Global Preference Survey* (GPS), um instrumento de pesquisa experimentalmente validado, aplicado a amostras representativas de 80.000 pessoas em 76 países — incluindo o Brasil. O GPS mede seis dimensões de preferências: paciência (preferência temporal), disposição a assumir riscos, reciprocidade positiva e negativa, altruísmo e confiança. A validação experimental foi realizada comparando as respostas da pesquisa com escolhas em experimentos com incentivos monetários reais.
@@ -638,7 +638,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
     **Relevância para o capítulo:** O artigo conecta diretamente os axiomas da Seção 3.1 com evidências empíricas: se as preferências variam sistematicamente entre indivíduos, as funções de utilidade que as representam também diferem — o que justifica a diversidade de formas funcionais apresentadas na Seção 3.6. Além disso, a heterogeneidade de preferências dentro do Brasil reforça a importância de modelos que permitam diferenças individuais, como a análise por faixa de renda da POF discutida no Box Brasil sobre Cobb-Douglas.
 
-??? abstract "Choi, S.; Kariv, S.; Müller, W.; Silverman, D. (2014). Who Is (More) Rational? *American Economic Review*, 104(6), 1518–1550."
+??? abstract "Choi, S.; Kariv, S.; Müller, W.; Silverman, D. (2014). [Who Is (More) Rational?](https://doi.org/10.1257/aer.104.6.1518) *American Economic Review*, 104(6), 1518–1550."
     **Pergunta central:** Os axiomas de preferência — especialmente a transitividade e a completude — são *de fato* satisfeitos pelas escolhas dos consumidores reais? E se houver variação na "racionalidade" das decisões, ela está correlacionada com resultados econômicos importantes, como a acumulação de riqueza?
 
     **Método:** Choi e coautores conduziram um experimento em larga escala com uma amostra representativa da população holandesa (painel CentERpanel). Cada participante tomou 25 decisões de alocação entre dois bens sob restrições orçamentárias variadas. Os autores testaram se as escolhas observadas satisfazem o GARP (*Generalized Axiom of Revealed Preference*) — a condição necessária e suficiente para que os dados sejam consistentes com a maximização de alguma função de utilidade bem comportada (Teorema 3.1).
@@ -656,7 +656,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 - DEBREU, G. Representation of a preference ordering by a numerical function. In: THRALL, R. M.; COOMBS, C. H.; DAVIS, R. L. (eds.). *Decision Processes*. New York: Wiley, 1954. p. 159-165.
 - FALK, A.; BECKER, A.; DOHMEN, T.; ENKE, B.; HUFFMAN, D.; SUNDE, U. Global Evidence on Economic Preferences. *Quarterly Journal of Economics*, v. 133, n. 4, p. 1645-1692, 2018.
 - IBGE. *Pesquisa de Orçamentos Familiares* (POF) 2017-2018: Primeiros Resultados. Rio de Janeiro: IBGE, 2019.
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulo 3.
-- NICHOLSON, W.; SNYDER, C. M. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017. Capítulo 3.
-- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 3-5.
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulo 3.
+- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 3.
+- VARIAN, H. R. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 3-5.
 - BARROS, R. P. de; FOGUEL, M. N.; ULYSSEA, G. (orgs.). *Desigualdade de renda no Brasil: uma análise da queda recente*. Brasília: IPEA, 2007.

@@ -178,7 +178,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
     **Estimativas de equilíbrio geral**
 
-    Estudos do **IPEA** utilizando modelos CGE estimam que o acordo elevará o PIB brasileiro em **0,46%** (US$ 9,3 bilhões) até 2040 e aumentará o fluxo comercial bilateral em **R$ 94,2 bilhões** — com R$ 52,1 bilhões em exportações brasileiras adicionais. As exportações do agronegócio brasileiro para a UE poderiam crescer até 26%.
+    Estudos do **[IPEA](https://www.ipea.gov.br)** utilizando modelos CGE estimam que o acordo elevará o PIB brasileiro em **0,46%** (US$ 9,3 bilhões) até 2040 e aumentará o fluxo comercial bilateral em **R$ 94,2 bilhões** — com R$ 52,1 bilhões em exportações brasileiras adicionais. As exportações do agronegócio brasileiro para a UE poderiam crescer até 26%.
 
     **Por que equilíbrio parcial subestima os ganhos?**
 
@@ -785,7 +785,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Dix-Carneiro, R. (2014). Trade Liberalization and Labor Market Dynamics. *Econometrica*, 82(3), 825–885."
+??? abstract "Dix-Carneiro, R. (2014). [Trade Liberalization and Labor Market Dynamics](https://doi.org/10.3982/ECTA10457). *Econometrica*, 82(3), 825–885."
     **Pergunta central:** Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
 
     **Método:** O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
@@ -796,7 +796,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
     **Relevância para o capítulo:** O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 13.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
 
-??? abstract "Caliendo, L.; Parro, F. (2015). Estimates of the Trade and Welfare Effects of NAFTA. *Review of Economic Studies*, 82(1), 1–44."
+??? abstract "Caliendo, L.; Parro, F. (2015). [Estimates of the Trade and Welfare Effects of NAFTA](https://doi.org/10.1093/restud/rdu035). *Review of Economic Studies*, 82(1), 1–44."
     **Pergunta central:** Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
 
     **Método:** Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.
@@ -813,8 +813,8 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 - Debreu, Gerard. *Theory of Value: An Axiomatic Analysis of Economic Equilibrium*. New York: Wiley, 1959.
 - Edgeworth, Francis Y. *Mathematical Psychics*. London: C. Kegan Paul, 1881.
 - Walras, Léon. *Éléments d'économie politique pure*. Lausanne: L. Corbaz, 1874.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. *Microeconomic Theory*. New York: Oxford University Press, 1995.
-- Varian, Hal R. *Microeconomic Analysis*. 3rd ed. New York: W. W. Norton, 1992.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995.
+- Varian, Hal R. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3rd ed. New York: W. W. Norton, 1992.
 - Dix-Carneiro, Rafael. "Trade Liberalization and Labor Market Dynamics." *Econometrica*, 82(3): 825–885, 2014.
 - Caliendo, Lorenzo, e Fernando Parro. "Estimates of the Trade and Welfare Effects of NAFTA." *Review of Economic Studies*, 82(1): 1–44, 2015.
 - IPEA. Modelos de Equilíbrio Geral Computável Aplicados ao Brasil. Brasília: IPEA, diversos anos.

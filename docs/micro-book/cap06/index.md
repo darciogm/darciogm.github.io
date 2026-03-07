@@ -60,9 +60,9 @@ A classificação mais intuitiva — e a que se observa diretamente nos dados �
 
 **Exemplos para o contexto brasileiro:**
 
-- **Carne bovina e frango**: substitutos brutos — quando a carne bovina encarece, a demanda por frango tende a subir. Dados do CEPEA/ESALQ mostram que, entre 2019 e 2021, a arroba do boi gordo subiu cerca de 80% em termos reais, período em que o consumo per capita de frango cresceu significativamente.
+- **Carne bovina e frango**: substitutos brutos — quando a carne bovina encarece, a demanda por frango tende a subir. Dados do [CEPEA/ESALQ](https://www.cepea.esalq.usp.br) mostram que, entre 2019 e 2021, a arroba do boi gordo subiu cerca de 80% em termos reais, período em que o consumo per capita de frango cresceu significativamente.
 - **Automóvel e gasolina**: complementos brutos — se o preço do automóvel sobe, as vendas caem e, consequentemente, a demanda por gasolina também.
-- **Arroz e feijão**: complementos brutos — o par arroz-feijão forma a base da alimentação brasileira e o consumo tende a se mover na mesma direção. Segundo a POF/IBGE 2017-2018, o arroz e feijão estão presentes em mais de 70% dos domicílios brasileiros.
+- **Arroz e feijão**: complementos brutos — o par arroz-feijão forma a base da alimentação brasileira e o consumo tende a se mover na mesma direção. Segundo a POF/[IBGE](https://www.ibge.gov.br) 2017-2018, o arroz e feijão estão presentes em mais de 70% dos domicílios brasileiros.
 
 ---
 
@@ -216,7 +216,7 @@ Em modelos aplicados, frequentemente trabalhamos com centenas ou milhares de ben
     - **Funciona (aproximadamente):** dentro do grupo "alimentos in natura", os preços tendem a flutuar em resposta a choques climáticos comuns (seca, geada), mantendo os preços relativos razoavelmente estáveis. Podemos tratá-los como um bem composto "alimentos".
     - **Falha:** quando a Petrobras reajusta o preço da gasolina (preço administrado) enquanto os preços de alimentos e serviços seguem trajetórias distintas, os preços relativos entre os grupos mudam substancialmente. Nesse caso, não se pode agregar "gasolina + alimentos" em um único bem composto.
 
-    Segundo dados do BCB, entre 2000 e 2023 os preços administrados acumularam alta de cerca de 530%, enquanto os preços livres subiram cerca de 350% — uma divergência persistente que viola a hipótese de proporcionalidade e exige análise desagregada.
+    Segundo dados do [BCB](https://www.bcb.gov.br), entre 2000 e 2023 os preços administrados acumularam alta de cerca de 530%, enquanto os preços livres subiram cerca de 350% — uma divergência persistente que viola a hipótese de proporcionalidade e exige análise desagregada.
 
 ---
 
@@ -359,7 +359,7 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 !!! example "Gasolina versus etanol: substitutos na bomba"
     O Brasil possui a maior frota *flex-fuel* do mundo: segundo a Anfavea, mais de 90% dos automóveis leves vendidos desde 2010 são bicombustíveis. Isso torna a escolha entre gasolina e etanol um caso quase puro de substituição, em que o consumidor compara preços a cada abastecimento.
 
-    **A regra dos 70%:** como o etanol possui menor conteúdo energético que a gasolina (cerca de 70%), o consumidor racional abastece com etanol quando seu preço é inferior a 70% do preço da gasolina. Dados do levantamento semanal da ANP (Agência Nacional do Petróleo) mostram que essa regra é amplamente seguida na prática.
+    **A regra dos 70%:** como o etanol possui menor conteúdo energético que a gasolina (cerca de 70%), o consumidor racional abastece com etanol quando seu preço é inferior a 70% do preço da gasolina. Dados do levantamento semanal da [ANP](https://www.gov.br/anp) (Agência Nacional do Petróleo) mostram que essa regra é amplamente seguida na prática.
 
     **Variação regional:** em março de 2024, segundo a ANP, o preço médio do etanol variava de R$ 3,49/litro em São Paulo (estado produtor de cana-de-açúcar) a R$ 5,19/litro no Amapá. Enquanto isso, a gasolina variava de R$ 5,72/litro (SP) a R$ 7,10/litro (AC). A razão etanol/gasolina ficava em torno de 61% em SP (favorável ao etanol) e 73% no AP (desfavorável).
 
@@ -653,7 +653,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Deaton, Angus; Muellbauer, John. (1980). An Almost Ideal Demand System. *American Economic Review*, 70(3), 312-326."
+??? abstract "Deaton, Angus; Muellbauer, John. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *American Economic Review*, 70(3), 312-326."
     **Pergunta central:** Como estimar empiricamente um sistema completo de equações de demanda — com vários bens e interações cruzadas — de modo que seja consistente com a teoria do consumidor (homogeneidade, simetria de Slutsky, agregação) e ao mesmo tempo flexível o bastante para capturar padrões reais dos dados?
 
     **Método:** Deaton e Muellbauer propuseram o **AIDS** (*Almost Ideal Demand System*), um modelo em que as parcelas orçamentárias de cada bem são funções lineares dos logaritmos dos preços e do logaritmo da renda real. O modelo assume uma forma funcional específica para a função dispêndio (da família PIGLOG — *Price-Independent Generalized Logarithmic*), que garante consistência com a teoria da escolha do consumidor. As equações de demanda resultantes satisfazem automaticamente a agregação de Engel, a homogeneidade de grau zero e permitem testar a simetria de Slutsky diretamente nos dados.
@@ -662,19 +662,19 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
     **Relevância para o capítulo:** O AIDS é uma das ferramentas empíricas mais utilizadas para estimar as relações cruzadas de demanda discutidas nas Seções 6.1 a 6.4. A forma PIGLOG garante que a condição de Gorman (Seção 6.7) é satisfeita em uma versão relaxada, permitindo agregação exata sob certas condições. O artigo demonstra como a teoria pura — Slutsky, simetria, homogeneidade — pode ser operacionalizada empiricamente. O modelo é amplamente utilizado até hoje, inclusive pelo IBGE e pelo IPEA em estudos sobre padrões de consumo brasileiros com dados da POF. Angus Deaton recebeu o Prêmio Nobel de Economia em 2015.
 
-??? abstract "Berry, Steven; Levinsohn, James; Pakes, Ariel. (1995). Automobile Prices in Market Equilibrium. *Econometrica*, 63(4), 841-890. DOI: 10.2307/2171802"
+??? abstract "Berry, Steven; Levinsohn, James; Pakes, Ariel. (1995). [Automobile Prices in Market Equilibrium](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841-890. DOI: [10.2307/2171802](https://doi.org/10.2307/2171802)"
     **Pergunta central:** Como estimar a demanda por produtos diferenciados — bens que são substitutos imperfeitos entre si, diferindo em múltiplos atributos — quando os dados disponíveis são agregados (participações de mercado e preços) e os preços são endógenos?
 
     **Método:** Berry, Levinsohn e Pakes (BLP) desenvolveram um modelo estrutural de demanda que combina a abordagem de Lancaster (Seção 6.6) com heterogeneidade de preferências entre consumidores. Cada automóvel é descrito por um vetor de características (potência, tamanho, consumo, preço), e cada consumidor tem preferências idiossincráticas sobre essas características. O modelo gera funções de demanda agregada que dependem de todos os preços — capturando substituição e complementaridade entre modelos. Para lidar com a endogeneidade dos preços (carros de melhor qualidade têm preços mais altos), os autores usaram variáveis instrumentais baseadas nas características dos concorrentes.
 
     **Resultado principal:** Aplicando o modelo ao mercado americano de automóveis (1971-1990), os autores estimaram elasticidades-preço próprias e cruzadas para centenas de modelos. Os resultados mostraram padrões de substituição altamente realistas: carros compactos competem principalmente entre si e menos com SUVs, exatamente como a abordagem de Lancaster prevê (carros no mesmo segmento compartilham atributos semelhantes). As elasticidades estimadas permitiram avaliar o poder de mercado das montadoras e simular os efeitos de fusões sobre preços.
 
-    **Relevância para o capítulo:** O modelo BLP é uma implementação empírica direta do modelo de Lancaster (Seção 6.6): os consumidores derivam utilidade dos *atributos* dos automóveis, não dos veículos em si. A estrutura de substituição entre produtos emerge endogenamente da proximidade no espaço de atributos, em vez de ser imposta *ad hoc*. Além disso, a agregação da demanda individual (Seção 6.7) é central no modelo — a demanda de mercado resulta da soma de escolhas heterogêneas, e a heterogeneidade de preferências (violação da condição de Gorman) é uma *feature*, não um bug. O artigo é um dos mais citados em organização industrial e tornou-se referência para a análise antitruste de fusões pelo CADE no Brasil e por autoridades concorrenciais no mundo todo.
+    **Relevância para o capítulo:** O modelo BLP é uma implementação empírica direta do modelo de Lancaster (Seção 6.6): os consumidores derivam utilidade dos *atributos* dos automóveis, não dos veículos em si. A estrutura de substituição entre produtos emerge endogenamente da proximidade no espaço de atributos, em vez de ser imposta *ad hoc*. Além disso, a agregação da demanda individual (Seção 6.7) é central no modelo — a demanda de mercado resulta da soma de escolhas heterogêneas, e a heterogeneidade de preferências (violação da condição de Gorman) é uma *feature*, não um bug. O artigo é um dos mais citados em organização industrial e tornou-se referência para a análise antitruste de fusões pelo [CADE](https://www.gov.br/cade) no Brasil e por autoridades concorrenciais no mundo todo.
 
 ## Leituras Recomendadas
 
-- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Cap. 5-6.
-- Varian, H. *Microeconomia: uma abordagem moderna*, Cap. 6 e 8.
-- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Cap. 3 (Seções 3.G-3.I) e Cap. 4.
-- Deaton, A. & Muellbauer, J. *Economics and Consumer Behavior*. Cambridge University Press, 1980.
-- Pindyck, R. S. & Rubinfeld, D. L. *Microeconomia*, Cap. 4.
+- Nicholson, W. & Snyder, C. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 5-6.
+- Varian, H. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ), Cap. 6 e 8.
+- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 3 (Seções 3.G-3.I) e Cap. 4.
+- Deaton, A. & Muellbauer, J. [*Economics and Consumer Behavior*](https://books.google.com/books/about/Economics_and_Consumer_Behavior.html?id=B81RYQsx2l0C). Cambridge University Press, 1980.
+- Pindyck, R. S. & Rubinfeld, D. L. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ), Cap. 4.

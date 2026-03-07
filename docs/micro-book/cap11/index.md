@@ -217,7 +217,7 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 !!! example "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
     O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 11.4.
 
-    **Dados da CONAB (Companhia Nacional de Abastecimento):**
+    **Dados da [CONAB](https://www.conab.gov.br) (Companhia Nacional de Abastecimento):**
 
     | Safra | Área plantada (milhões de ha) | Variação anual |
     |:---|:---|:---|
@@ -236,7 +236,7 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
     A decisão de **fechar** também é observável: quando o preço cai abaixo do custo variável (como ocorreu em algumas regiões na safra 2023/24 devido a quebra climática e custos elevados de fertilizantes), produtores optam por não plantar a segunda safra — exatamente como prevê a condição \(p < \mathrm{CVMe}_{\min}\).
 
-    **Fonte**: CONAB, Acompanhamento da Safra Brasileira de Grãos (2023–2026); CEPEA/ESALQ.
+    **Fonte**: CONAB, Acompanhamento da Safra Brasileira de Grãos (2023–2026); [CEPEA/ESALQ](https://www.cepea.esalq.usp.br).
 
 ---
 
@@ -349,7 +349,7 @@ A função lucro possui propriedades notáveis:
 
     **Pense assim:** É como se você olhasse apenas o extrato bancário de um feirante — quanto ele lucra a cada combinação de preço da banana e custo do transporte — e, só com essa informação, conseguisse descobrir quantas bananas ele vende e quantas viagens de caminhão ele faz. O Lema de Hotelling diz que a função lucro já carrega toda essa informação, bastando derivá-la.
 
-    **Por que isso importa:** Essa propriedade é usada pelo IPEA em modelos de equilíbrio geral computável para calibrar funções de oferta setorial da economia brasileira a partir de dados de lucro.
+    **Por que isso importa:** Essa propriedade é usada pelo [IPEA](https://www.ipea.gov.br) em modelos de equilíbrio geral computável para calibrar funções de oferta setorial da economia brasileira a partir de dados de lucro.
 
 ---
 
@@ -490,7 +490,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
     **Resultado:** \(q^* = 20\), \(p^* = 60\), \(|\varepsilon_d| = 1{,}5\), \(L = 2/3\).
 
-    **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 11.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o CADE utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
+    **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 11.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o [CADE](https://www.gov.br/cade) utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
 
 ---
 
@@ -751,7 +751,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Ulyssea, G. (2018). Firms, Informality, and Development: Theory and Evidence from Brazil. *American Economic Review*, 108(8), 2015–2047."
+??? abstract "Ulyssea, G. (2018). [Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745). *American Economic Review*, 108(8), 2015–2047."
     **Pergunta central:** Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
 
     **Método:** O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
@@ -762,7 +762,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
     **Relevância para o capítulo:** O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
 
-??? abstract "Dix-Carneiro, R.; Kovak, B. K. (2017). Trade Liberalization and Regional Dynamics. *American Economic Review*, 107(10), 2908–2946."
+??? abstract "Dix-Carneiro, R.; Kovak, B. K. (2017). [Trade Liberalization and Regional Dynamics](https://doi.org/10.1257/aer.20161214). *American Economic Review*, 107(10), 2908–2946."
     **Pergunta central:** Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
 
     **Método:** Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.
@@ -778,8 +778,8 @@ Explique, usando a teoria vista neste capítulo, por que:
 - Coase, Ronald H. "The Nature of the Firm." *Economica*, 4(16): 386–405, 1937.
 - Williamson, Oliver E. *Markets and Hierarchies: Analysis and Antitrust Implications*. New York: Free Press, 1975.
 - Williamson, Oliver E. *The Economic Institutions of Capitalism*. New York: Free Press, 1985.
-- Varian, Hal R. *Microeconomic Analysis*. 3rd ed. New York: W. W. Norton, 1992.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. *Microeconomic Theory*. New York: Oxford University Press, 1995.
+- Varian, Hal R. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3rd ed. New York: W. W. Norton, 1992.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995.
 - Ulyssea, Gabriel. "Firms, Informality, and Development: Theory and Evidence from Brazil." *American Economic Review*, 108(8): 2015–2047, 2018.
 - Dix-Carneiro, Rafael, e Brian K. Kovak. "Trade Liberalization and Regional Dynamics." *American Economic Review*, 107(10): 2908–2946, 2017.
 - SEBRAE. *Sobrevivência das Empresas no Brasil*. Brasília: SEBRAE, 2020.

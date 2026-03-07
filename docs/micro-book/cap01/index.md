@@ -60,7 +60,7 @@ A verificação empírica em economia enfrenta desafios particulares:
 - **Problemas de identificação**: distinguir correlação de causalidade.
 - **Expectativas e reflexividade**: os agentes econômicos reagem às próprias previsões dos modelos.
 
-A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses problemas, incluindo variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos naturais. No Brasil, pesquisas domiciliares como a **PNAD Contínua** (Pesquisa Nacional por Amostra de Domicílios) do IBGE fornecem dados fundamentais para testar modelos microeconômicos — desde a estimação de elasticidades de oferta de trabalho até a avaliação do impacto de programas como o Bolsa Família sobre decisões de consumo das famílias.
+A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses problemas, incluindo variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos naturais. No Brasil, pesquisas domiciliares como a **[PNAD Contínua](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html)** (Pesquisa Nacional por Amostra de Domicílios) do [IBGE](https://www.ibge.gov.br) fornecem dados fundamentais para testar modelos microeconômicos — desde a estimação de elasticidades de oferta de trabalho até a avaliação do impacto de programas como o Bolsa Família sobre decisões de consumo das famílias.
 
 ---
 
@@ -548,7 +548,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Angrist, J. D.; Pischke, J.-S. (2010). The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics. *Journal of Economic Perspectives*, 24(2), 3–30."
+??? abstract "Angrist, J. D.; Pischke, J.-S. (2010). [The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics](https://doi.org/10.1257/jep.24.2.3). *Journal of Economic Perspectives*, 24(2), 3–30."
     **Pergunta central:** Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.
 
     **Método:** Angrist e Pischke documentam a "revolução da credibilidade" que transformou a economia empírica a partir dos anos 1990. A ideia central é que a identificação causal — o problema de isolar o efeito de uma variável sobre outra, *ceteris paribus* — pode ser alcançada por meio de estratégias de pesquisa que exploram variações quase-experimentais nos dados: variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos aleatorizados.
@@ -557,7 +557,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
     **Relevância para o capítulo:** O artigo conecta diretamente a Seção 1.2 (verificação de modelos) e a Seção 1.3 (*ceteris paribus*). A cláusula *ceteris paribus*, apresentada como recurso teórico neste capítulo, é também o objetivo prático da econometria moderna. A revolução da credibilidade mostra que a microeconomia empírica não se limita a testar modelos — ela os refina, revelando quais suposições são empiricamente sustentáveis e quais precisam ser revisadas. Joshua Angrist recebeu o Prêmio Nobel de Economia em 2021, em grande parte por essas contribuições metodológicas.
 
-??? abstract "Thaler, R. H. (2016). Behavioral Economics: Past, Present, and Future. *American Economic Review*, 106(7), 1577–1600."
+??? abstract "Thaler, R. H. (2016). [Behavioral Economics: Past, Present, and Future](https://doi.org/10.1257/aer.106.7.1577). *American Economic Review*, 106(7), 1577–1600."
     **Pergunta central:** Até que ponto a hipótese de otimização racional — fundamento dos modelos microeconômicos discutidos na Seção 1.3 — descreve adequadamente o comportamento humano? E quando os desvios da racionalidade são sistemáticos, como devemos modificar nossos modelos?
 
     **Método:** Thaler, em seu discurso presidencial na American Economic Association, traça a trajetória da economia comportamental desde seus precursores (Simon, Kahneman, Tversky) até sua consolidação como subdisciplina influente. O argumento central é que os agentes econômicos reais (*Humans*) diferem sistematicamente dos agentes perfeitamente racionais dos modelos (*Econs*): exibem racionalidade limitada, autocontrole imperfeito e preferências sociais.
@@ -568,8 +568,8 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ## Leituras Recomendadas
 
-- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Cap. 1.
-- Varian, H. *Microeconomia: uma abordagem moderna*, Cap. 1.
-- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Cap. 1.
+- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 1.
+- Varian, H. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ), Cap. 1.
+- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 1.
 - Friedman, M. "The Methodology of Positive Economics." In: *Essays in Positive Economics*. Chicago: University of Chicago Press, 1953.
-- Pindyck, R. S. & Rubinfeld, D. L. *Microeconomia*, Cap. 1-2.
+- Pindyck, R. S. & Rubinfeld, D. L. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ), Cap. 1-2.

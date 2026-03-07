@@ -24,7 +24,7 @@ Exemplos de contratos complexos que emergem como resposta à assimetria de infor
 - **Garantias** oferecidas pelo vendedor de um produto (sinalização de qualidade);
 - **Menus de contratos** com diferentes combinações preço-qualidade (triagem de tipos).
 
-A análise econômica desses arranjos contratuais constitui o campo da **teoria dos contratos** e da **economia da informação**, que se desenvolveu a partir dos trabalhos seminais de Akerlof (1970), Spence (1973), Rothschild e Stiglitz (1976), Mirrlees (1971) e Holmström (1979).
+A análise econômica desses arranjos contratuais constitui o campo da **teoria dos contratos** e da **economia da informação**, que se desenvolveu a partir dos trabalhos seminais de Akerlof (1970), Spence (1973), [Rothschild e Stiglitz (1976)](https://doi.org/10.2307/1885326), Mirrlees (1971) e Holmström (1979).
 
 ---
 
@@ -311,14 +311,14 @@ A solução ótima envolve: (i) o tipo baixo recebe quantidade **distorcida para
 
 ### 18.4.3 Seleção adversa em seguros: o modelo de Rothschild-Stiglitz
 
-Rothschild e Stiglitz (1976) analisaram o mercado de seguros competitivo com dois tipos de consumidores: alto risco (\(p_H\)) e baixo risco (\(p_L\)), com \(p_H > p_L\). As seguradoras não observam o tipo de cada consumidor.
+[Rothschild e Stiglitz (1976)](https://doi.org/10.2307/1885326) analisaram o mercado de seguros competitivo com dois tipos de consumidores: alto risco (\(p_H\)) e baixo risco (\(p_L\)), com \(p_H > p_L\). As seguradoras não observam o tipo de cada consumidor.
 
 Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde \(\alpha_1\) é o prêmio pago e \(\alpha_2\) é a indenização líquida em caso de sinistro.
 
-!!! abstract "Resultado de Rothschild-Stiglitz"
+!!! abstract "Resultado de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
     Em equilíbrio competitivo com informação assimétrica: (a) não existe equilíbrio agregador (pooling) — um contrato único para ambos os tipos é sempre destruído por um contrato desviante; (b) um equilíbrio separador existe somente se a proporção de tipos de alto risco for suficientemente grande; (c) no equilíbrio separador, o tipo de alto risco recebe seguro completo (atuarialmente justo para ele) e o tipo de baixo risco recebe seguro parcial (distorção para baixo).
 
-!!! proof "Demonstração: Condição de Incentivo-Compatibilidade no Modelo de Rothschild-Stiglitz"
+!!! proof "Demonstração: Condição de Incentivo-Compatibilidade no Modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
     Considere dois tipos de consumidores, \(i \in \{L, H\}\), com probabilidades de sinistro \(p_L < p_H\). Cada consumidor possui riqueza inicial \(W\) e enfrenta perda potencial \(d\). Um contrato de seguro \(C_i = (\alpha_i, \beta_i)\) especifica um prêmio \(\alpha_i\) e uma cobertura \(\beta_i\), de modo que a riqueza nos dois estados é:
 
     \[
@@ -383,7 +383,7 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
 ## Box Brasil: Seleção Adversa nos Planos de Saúde
 
-!!! example "Antisseleção e regulação por faixas etárias (ANS)"
+!!! example "Antisseleção e regulação por faixas etárias ([ANS](https://www.gov.br/ans))"
     O mercado brasileiro de saúde suplementar, com cerca de 51 milhões de beneficiários, é um caso emblemático de seleção adversa. Pessoas mais doentes (alto risco) têm maior incentivo para contratar planos de saúde, enquanto jovens saudáveis (baixo risco) tendem a considerar os prêmios elevados e permanecer sem plano — o clássico mecanismo de antisseleção.
 
     **Regulação por faixas etárias:**
@@ -396,7 +396,7 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
     **Conexão com a teoria:**
 
-    O modelo de Rothschild-Stiglitz (seção 18.4.3) prevê que, sem intervenção, o equilíbrio separador oferece seguro parcial ao tipo de baixo risco — exatamente o que se observa nos planos com coparticipação e franquias maiores voltados para jovens. A regulação da ANS, ao limitar a diferenciação por faixa etária, impõe um equilíbrio parcialmente agregador (pooling), usando a lei para evitar o unraveling do mercado.
+    O modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326) (seção 18.4.3) prevê que, sem intervenção, o equilíbrio separador oferece seguro parcial ao tipo de baixo risco — exatamente o que se observa nos planos com coparticipação e franquias maiores voltados para jovens. A regulação da ANS, ao limitar a diferenciação por faixa etária, impõe um equilíbrio parcialmente agregador (pooling), usando a lei para evitar o unraveling do mercado.
 
     *Fonte: ANS, Dados Gerais do Setor, 2025; Resolução Normativa ANS n.º 63/2003.*
 
@@ -461,7 +461,7 @@ O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separ
 
 <figure>
   <iframe src="../graficos/cap18/seguros-rs.html" width="100%" height="660" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 18.4</strong> — Modelo de seguros de Rothschild-Stiglitz. No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.</figcaption>
+  <figcaption><strong>Figura 18.4</strong> — Modelo de seguros de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326). No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.</figcaption>
 </figure>
 
 ## 18.6 Screening (Triagem pelo Principal)
@@ -486,7 +486,7 @@ A diferença fundamental entre sinalização e triagem é quem toma a iniciativa
 - **Sinalização**: a parte informada age primeiro, escolhendo um sinal custoso.
 - **Triagem**: a parte desinformada age primeiro, desenhando um menu de contratos.
 
-Em equilíbrio, os dois mecanismos podem levar a alocações equivalentes (como nos modelos de Rothschild-Stiglitz), mas o timing e a distribuição de excedentes podem diferir.
+Em equilíbrio, os dois mecanismos podem levar a alocações equivalentes (como nos modelos de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)), mas o timing e a distribuição de excedentes podem diferir.
 
 ---
 
@@ -529,11 +529,11 @@ Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, 
 !!! example "Do pré-sal ao 5G: informação assimétrica e desenho de leilões"
     O Brasil tem sido um laboratório de formatos de leilão em setores estratégicos. Dois casos ilustram como o desenho do mecanismo afeta os resultados em presença de informação assimétrica.
 
-    **Leilões do pré-sal (ANP):**
+    **Leilões do pré-sal ([ANP](https://www.gov.br/anp)):**
 
     Os blocos exploratórios do pré-sal são leiloados pela Agência Nacional do Petróleo (ANP) no formato de **partilha da produção**: o consórcio vencedor é aquele que oferece a maior parcela do "óleo-excedente" ao governo. Esse formato enfrenta o problema da **maldição do vencedor** (*winner's curse*): como o valor do bloco é parcialmente comum (depende das reservas geológicas), o licitante que vence tende a ser aquele que **superestimou** o valor do recurso. Licitantes sofisticados, como a Petrobras, ajustam seus lances para baixo — exatamente como prevê a teoria (seção 18.7). Em 2025, o 3.º Ciclo de Oferta Permanente de Partilha arrecadou R$ 452 milhões em bônus de assinatura, com ágio médio de 91%.
 
-    **Leilão do espectro 5G (Anatel, 2021):**
+    **Leilão do espectro 5G ([Anatel](https://www.gov.br/anatel), 2021):**
 
     O leilão das faixas de frequência para a tecnologia 5G utilizou formato de **lance selado de primeiro preço** com preço de reserva e arrecadou **R$ 4,8 bilhões**. Cada operadora possuía informação privada sobre o valor estratégico de cada faixa para sua rede. O Teorema da Equivalência de Receita sugere que, sob condições ideais, o formato não deveria importar — mas as assimetrias de informação entre incumbentes (Vivo, Claro, TIM) e entrantes justificaram a escolha de regras específicas, como lotes exclusivos para novos competidores.
 
@@ -573,13 +573,13 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
     **Evidência empírica**: Dados do Banco Central do Brasil documentam diferenças substanciais de taxas de juros entre as modalidades. Em 2025, a taxa do consignado para servidores públicos situava-se entre 1,3% e 1,8% ao mês (cerca de 17–24% a.a.), enquanto a taxa do crédito pessoal não consignado superava 80% ao ano — uma diferença que reflete em grande parte a redução da assimetria de informação.
 
-    **Expansão e impacto**: Regulamentado pela Lei n.º 10.820/2003, o crédito consignado expandiu-se rapidamente, atingindo saldo superior a R$ 600 bilhões. A modalidade foi estendida a aposentados e pensionistas do INSS, trabalhadores do setor privado com carteira assinada e beneficiários do Bolsa Família e BPC (a partir de 2023).
+    **Expansão e impacto**: Regulamentado pela Lei n.º 10.820/2003, o crédito consignado expandiu-se rapidamente, atingindo saldo superior a R$ 600 bilhões. A modalidade foi estendida a aposentados e pensionistas do [INSS](https://www.gov.br/inss), trabalhadores do setor privado com carteira assinada e beneficiários do Bolsa Família e BPC (a partir de 2023).
 
     **Limitações**: O consignado não elimina todos os problemas. A margem consignável (até 35% da renda para empréstimos + 5% para cartão consignado) pode levar ao superendividamento. Além disso, práticas predatórias de intermediários e a concessão a públicos vulneráveis (como idosos com baixa literacia financeira) levantam questões regulatórias importantes.
 
     Este caso ilustra como o desenho institucional e contratual pode mitigar problemas de informação assimétrica, com efeitos quantitativamente expressivos sobre preços e volumes de mercado.
 
-    *Fonte: BCB, Relatório de Economia Bancária, 2024; Lei n.º 10.820/2003.*
+    *Fonte: [BCB](https://www.bcb.gov.br), Relatório de Economia Bancária, 2024; Lei n.º 10.820/2003.*
 
 ---
 
@@ -675,18 +675,18 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78."
+??? abstract "[Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78.](https://doi.org/10.1086/317671)"
     **Pergunta central:** A assimetria de informação é realmente importante nos mercados de seguros, ou é apenas uma elegância teórica? Se seleção adversa ou risco moral estiverem presentes, devemos observar uma **correlação positiva** entre a cobertura do seguro escolhida e a ocorrência de sinistros: pessoas que escolhem mais cobertura deveriam ter mais acidentes (seja porque são mais arriscadas, seja porque se protegem menos). Mas essa correlação existe nos dados?
 
-    **Método:** Chiappori e Salanié desenvolveram um teste empírico elegante e geral. Usando dados detalhados de seguros de automóveis na França (jovens motoristas iniciantes), compararam a cobertura escolhida com a frequência de acidentes nos anos subsequentes, controlando por todas as variáveis observáveis que as seguradoras usam para precificar (idade, sexo, localização, tipo de veículo). Se, após esses controles, a correlação cobertura-sinistro for positiva, há evidência de informação assimétrica residual.
+    **Método:** [Chiappori e Salanié](https://doi.org/10.1086/317671) desenvolveram um teste empírico elegante e geral. Usando dados detalhados de seguros de automóveis na França (jovens motoristas iniciantes), compararam a cobertura escolhida com a frequência de acidentes nos anos subsequentes, controlando por todas as variáveis observáveis que as seguradoras usam para precificar (idade, sexo, localização, tipo de veículo). Se, após esses controles, a correlação cobertura-sinistro for positiva, há evidência de informação assimétrica residual.
 
     **Resultado principal:** Surpreendentemente, os autores **não encontraram** correlação positiva significativa entre cobertura e sinistros para a amostra de jovens motoristas franceses. Isso sugere que as seguradoras já classificam os riscos de forma eficiente usando variáveis observáveis, e que a informação assimétrica residual pode ser pequena — pelo menos nesse mercado específico. O resultado gerou um amplo debate e motivou dezenas de estudos subsequentes em diferentes mercados.
 
-    **Por que isso importa:** O teste de Chiappori-Salanié tornou-se o padrão metodológico para avaliar empiricamente a presença de informação assimétrica. No Brasil, onde o mercado de seguros de automóveis é expressivo (prêmios de R$ 45 bilhões em 2024, segundo a Susep) e a regulação é intensa, a aplicação desse teste ajudaria a avaliar se as diferenças de preço entre perfis refletem informação assimétrica ou apenas classificação de risco eficiente.
+    **Por que isso importa:** O teste de [Chiappori-Salanié](https://doi.org/10.1086/317671) tornou-se o padrão metodológico para avaliar empiricamente a presença de informação assimétrica. No Brasil, onde o mercado de seguros de automóveis é expressivo (prêmios de R$ 45 bilhões em 2024, segundo a Susep) e a regulação é intensa, a aplicação desse teste ajudaria a avaliar se as diferenças de preço entre perfis refletem informação assimétrica ou apenas classificação de risco eficiente.
 
-    **Relevância para o capítulo:** O paper testa diretamente as previsões do modelo de Rothschild-Stiglitz (seção 18.4.3): se há seleção adversa, tipos de alto risco compram mais cobertura. A ausência de correlação sugere que os mecanismos de triagem das seguradoras (seção 18.6) — menus de franquias, bônus por ausência de sinistros, inspeção veicular — podem ser suficientemente eficazes para resolver o problema informacional.
+    **Relevância para o capítulo:** O paper testa diretamente as previsões do modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326) (seção 18.4.3): se há seleção adversa, tipos de alto risco compram mais cobertura. A ausência de correlação sugere que os mecanismos de triagem das seguradoras (seção 18.6) — menus de franquias, bônus por ausência de sinistros, inspeção veicular — podem ser suficientemente eficazes para resolver o problema informacional.
 
-??? abstract "Matoso, R.; Rezende, M. (2014). Asymmetric Information in Oil and Gas Lease Auctions with a National Company. *International Journal of Industrial Organization*, 33, 72–82."
+??? abstract "[Matoso, R.; Rezende, M. (2014). Asymmetric Information in Oil and Gas Lease Auctions with a National Company. *International Journal of Industrial Organization*, 33, 72–82.](https://doi.org/10.1016/j.ijindorg.2014.02.006)"
     **Pergunta central:** A Petrobras, como empresa nacional com décadas de experiência exploratória, possui vantagem informacional sobre concorrentes internacionais nos leilões de blocos de petróleo e gás? Se sim, como essa assimetria se manifesta no comportamento de lances e nos resultados dos leilões?
 
     **Método:** Os autores utilizaram dados dos leilões de concessão da ANP (Agência Nacional do Petróleo) para testar as previsões de modelos de leilões com informação assimétrica (Hendricks e Porter, 1988). A identificação explora o fato de que a Petrobras tinha acesso privilegiado a dados geológicos e sísmicos, especialmente em áreas adjacentes a campos já explorados (os chamados *drainage leases*). Compararam o comportamento de lances da Petrobras versus concorrentes estrangeiros em diferentes tipos de blocos.
@@ -700,11 +700,11 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 ## Referências
 
 - Akerlof, G. A. (1970). "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *Quarterly Journal of Economics*, 84(3): 488–500.
-- Chiappori, P.-A., e B. Salanié (2000). "Testing for Asymmetric Information in Insurance Markets." *Journal of Political Economy*, 108(1): 56–78.
+- [Chiappori, P.-A., e B. Salanié (2000). "Testing for Asymmetric Information in Insurance Markets." *Journal of Political Economy*, 108(1): 56–78.](https://doi.org/10.1086/317671)
 - Holmström, B. (1979). "Moral Hazard and Observability." *Bell Journal of Economics*, 10(1): 74–91.
-- Matoso, R., e M. Rezende (2014). "Asymmetric Information in Oil and Gas Lease Auctions with a National Company." *International Journal of Industrial Organization*, 33: 72–82.
+- [Matoso, R., e M. Rezende (2014). "Asymmetric Information in Oil and Gas Lease Auctions with a National Company." *International Journal of Industrial Organization*, 33: 72–82.](https://doi.org/10.1016/j.ijindorg.2014.02.006)
 - Mirrlees, J. A. (1971). "An Exploration in the Theory of Optimum Income Taxation." *Review of Economic Studies*, 38(2): 175–208.
 - Myerson, R. B. (1981). "Optimal Auction Design." *Mathematics of Operations Research*, 6(1): 58–73.
-- Rothschild, M., e J. Stiglitz (1976). "Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information." *Quarterly Journal of Economics*, 90(4): 629–649.
+- [Rothschild, M., e J. Stiglitz (1976). "Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information." *Quarterly Journal of Economics*, 90(4): 629–649.](https://doi.org/10.2307/1885326)
 - Spence, M. (1973). "Job Market Signaling." *Quarterly Journal of Economics*, 87(3): 355–374.
 - Vickrey, W. (1961). "Counterspeculation, Auctions, and Competitive Sealed Tenders." *Journal of Finance*, 16(1): 8–37.

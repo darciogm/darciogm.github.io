@@ -44,9 +44,9 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
 *Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.*
 
 !!! example "Box Brasil — Combustíveis e a reta orçamentária das famílias brasileiras"
-    Um exemplo concreto de como preços afetam a restrição orçamentária vem do mercado de combustíveis no Brasil. Segundo dados da ANP (Agência Nacional do Petróleo), o preço médio da gasolina comum ao consumidor passou de cerca de R$ 4,50/litro no início de 2020 para R$ 7,26/litro em março de 2022 — um aumento superior a 60%. Esse aumento expressivo alterou significativamente a reta orçamentária das famílias, especialmente as de renda mais baixa.
+    Um exemplo concreto de como preços afetam a restrição orçamentária vem do mercado de combustíveis no Brasil. Segundo dados da [ANP](https://www.gov.br/anp) (Agência Nacional do Petróleo), o preço médio da gasolina comum ao consumidor passou de cerca de R$ 4,50/litro no início de 2020 para R$ 7,26/litro em março de 2022 — um aumento superior a 60%. Esse aumento expressivo alterou significativamente a reta orçamentária das famílias, especialmente as de renda mais baixa.
 
-    De acordo com a POF 2017–2018 (IBGE), famílias com renda de até 2 salários mínimos destinavam cerca de 3,5% de seus gastos a combustíveis, enquanto famílias com renda acima de 25 salários mínimos destinavam 6,1%. Porém, como proporção da renda disponível para outros bens, o impacto é relativamente maior para as famílias mais pobres.
+    De acordo com a POF 2017–2018 ([IBGE](https://www.ibge.gov.br)), famílias com renda de até 2 salários mínimos destinavam cerca de 3,5% de seus gastos a combustíveis, enquanto famílias com renda acima de 25 salários mínimos destinavam 6,1%. Porém, como proporção da renda disponível para outros bens, o impacto é relativamente maior para as famílias mais pobres.
 
     Em termos do modelo, se \(x_1\) = litros de gasolina e \(x_2\) = cesta de demais bens (com preço normalizado), o aumento de \(p_1\) de 4,59 para 7,39 **rotaciona** a reta orçamentária para dentro ao longo do eixo \(x_1\): a quantidade máxima de gasolina que a família pode comprar (intercepto horizontal \(I/p_1\)) cai drasticamente, enquanto o intercepto vertical \(I/p_2\) permanece inalterado.
 
@@ -228,7 +228,7 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
 *Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.*
 
 !!! example "Box Brasil — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
-    O debate entre transferência direta e subsídio a preços tem um exemplo emblemático no Brasil: o gás de cozinha (GLP). Durante anos, o governo subsidiou o preço do GLP diretamente, o que beneficiava todos os consumidores, inclusive os de alta renda. A partir de 2016, com o programa Gás para Todos (e depois o Auxílio Gás, criado em 2021), o governo passou a adotar uma transferência monetária direta às famílias inscritas no Cadastro Único.
+    O debate entre transferência direta e subsídio a preços tem um exemplo emblemático no Brasil: o gás de cozinha (GLP). Durante anos, o governo subsidiou o preço do GLP diretamente, o que beneficiava todos os consumidores, inclusive os de alta renda. A partir de 2016, com o programa Gás para Todos (e depois o Auxílio Gás, criado em 2021), o governo passou a adotar uma transferência monetária direta às famílias inscritas no [Cadastro Único](https://www.gov.br/mds).
 
     Do ponto de vista do princípio do montante fixo, a mudança vai na direção correta. O subsídio ao preço distorce preços relativos, incentivando consumo excessivo de GLP em relação a outras fontes de energia. A transferência direta, por não alterar o preço relativo do gás, permite que a família aloque os recursos conforme suas preferências, gerando utilidade pelo menos igual — e tipicamente maior — para a mesma despesa pública.
 
@@ -837,19 +837,19 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
     **Evidências empíricas sobre padrões de consumo**:
 
-    - Estudos do IPEA mostram que famílias beneficiárias gastam proporcionalmente mais com **alimentação** (especialmente alimentos de maior qualidade nutricional) e **material escolar** do que famílias com renda similar não beneficiárias (Soares e Sátyro, 2009).
+    - Estudos do [IPEA](https://www.ipea.gov.br) mostram que famílias beneficiárias gastam proporcionalmente mais com **alimentação** (especialmente alimentos de maior qualidade nutricional) e **material escolar** do que famílias com renda similar não beneficiárias (Soares e Sátyro, 2009).
     - Evidências de Resende e Oliveira (2008) indicam que a propensão marginal a consumir dos beneficiários é elevada (acima de 0,80), consistente com a teoria microeconômica para famílias na faixa de renda onde a utilidade marginal da renda é alta.
     - A **diversificação da cesta de consumo** aumentou significativamente: famílias beneficiárias passaram a incluir frutas, verduras e proteínas animais com maior frequência, refletindo um deslocamento ao longo de curvas de indiferença em direção a cestas mais balanceadas.
     - Dados do Cadastro Único e da POF 2017–2018 mostram que a parcela de gastos com alimentação diminuiu de cerca de 45% para 38% entre beneficiários entre 2008 e 2018, indicando movimento ao longo da curva de Engel.
 
     Do ponto de vista da teoria do consumidor, o PBF exemplifica de forma concreta os conceitos de deslocamento da restrição orçamentária, eficiência de transferências *lump sum* e a relação entre renda e composição da cesta de consumo.
 
-    **Fontes**: SOARES, F. V.; SÁTYRO, N. *O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*. Texto para Discussão IPEA, n. 1424, 2009. RESENDE, A. C. C.; OLIVEIRA, A. M. H. C. Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras. *Estudos Econômicos*, v. 38, n. 2, p. 235–265, 2008. MDS — Ministério do Desenvolvimento Social, dados administrativos.
+    **Fontes**: SOARES, F. V.; SÁTYRO, N. *O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*. Texto para Discussão IPEA, n. 1424, 2009. RESENDE, A. C. C.; OLIVEIRA, A. M. H. C. Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras. *Estudos Econômicos*, v. 38, n. 2, p. 235–265, 2008. [MDS](https://www.gov.br/mds) — Ministério do Desenvolvimento Social, dados administrativos.
 
 !!! example "Box Brasil — Endividamento das famílias e a restrição orçamentária intertemporal"
-    O crédito permite que famílias consumam além de sua renda corrente, expandindo a restrição orçamentária no presente à custa de contraí-la no futuro. No Brasil, o endividamento das famílias cresceu expressivamente nas últimas décadas. Segundo o Banco Central do Brasil (BCB), o nível de endividamento das famílias — medido pela razão entre o saldo de dívidas com o Sistema Financeiro Nacional e a renda acumulada em 12 meses — alcançou 53,1% em meados de 2022, o maior patamar da série histórica.
+    O crédito permite que famílias consumam além de sua renda corrente, expandindo a restrição orçamentária no presente à custa de contraí-la no futuro. No Brasil, o endividamento das famílias cresceu expressivamente nas últimas décadas. Segundo o [Banco Central do Brasil](https://www.bcb.gov.br) (BCB), o nível de endividamento das famílias — medido pela razão entre o saldo de dívidas com o Sistema Financeiro Nacional e a renda acumulada em 12 meses — alcançou 53,1% em meados de 2022, o maior patamar da série histórica.
 
-    Do ponto de vista da teoria do consumidor, o acesso ao crédito modifica o conjunto orçamentário. Sem crédito, a restrição é \(p_1 x_1 + p_2 x_2 \leq I\). Com crédito a uma taxa de juros \(r\), a família pode consumir no presente um valor superior a \(I\), desde que o valor presente dos pagamentos futuros não exceda o valor presente da renda futura. A Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC/CNC) indicou que, em 2022, 77,9% das famílias brasileiras possuíam algum tipo de dívida, sendo o cartão de crédito a principal modalidade.
+    Do ponto de vista da teoria do consumidor, o acesso ao crédito modifica o conjunto orçamentário. Sem crédito, a restrição é \(p_1 x_1 + p_2 x_2 \leq I\). Com crédito a uma taxa de juros \(r\), a família pode consumir no presente um valor superior a \(I\), desde que o valor presente dos pagamentos futuros não exceda o valor presente da renda futura. A Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC/[CNC](https://www.portaldocomercio.org.br)) indicou que, em 2022, 77,9% das famílias brasileiras possuíam algum tipo de dívida, sendo o cartão de crédito a principal modalidade.
 
     A elevada taxa de juros brasileira — com o cartão de crédito rotativo superando 440% ao ano em 2023 (BCB) — implica que o preço intertemporal do consumo presente é muito alto no Brasil comparado a outros países, estreitando severamente a restrição orçamentária futura das famílias endividadas.
 
@@ -1007,7 +1007,7 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Attanasio, O.; Battistin, E.; Mesnard, A. (2012). Food and Cash Transfers: Evidence from Colombia. *The Economic Journal*, 122(559), 92–124."
+??? abstract "Attanasio, O.; Battistin, E.; Mesnard, A. (2012). [Food and Cash Transfers: Evidence from Colombia](https://doi.org/10.1111/j.1468-0297.2011.02473.x). *The Economic Journal*, 122(559), 92–124."
     **Pergunta central:** Transferências de renda em dinheiro são mais eficientes do que transferências em espécie (como cestas básicas) para melhorar o consumo alimentar das famílias pobres? A teoria do consumidor prevê que, se o valor da transferência em espécie é inferior ao que a família gastaria voluntariamente com alimentação, os dois tipos de transferência deveriam ter efeitos idênticos — o que é conhecido como o "teorema da fungibilidade" da renda.
 
     **Método:** O estudo explora uma característica do programa colombiano *Familias en Acción*, que oferecia transferências em dinheiro condicionadas à frequência escolar e a visitas de saúde. Os autores compararam os padrões de consumo de famílias beneficiárias com grupos de controle usando técnicas de diferenças em diferenças e matching, com dados de pesquisas domiciliares detalhadas.
@@ -1018,7 +1018,7 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
     **Relevância para o capítulo:** O estudo ilustra o princípio do montante fixo na prática: transferências em dinheiro (análogas a *lump sum*) permitem ao consumidor reotimizar livremente sua cesta de consumo, enquanto transferências em espécie impõem uma composição específica que pode não corresponder às preferências individuais. A superioridade teórica do *lump sum* (Seção 4.5) encontra respaldo empírico, embora fatores comportamentais (como o *labeling*) adicionem nuances à previsão do modelo padrão.
 
-??? abstract "Deaton, A.; Muellbauer, J. (1980). An Almost Ideal Demand System. *The American Economic Review*, 70(3), 312–326."
+??? abstract "Deaton, A.; Muellbauer, J. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *The American Economic Review*, 70(3), 312–326."
     **Pergunta central:** Como estimar empiricamente um sistema completo de demanda do consumidor que seja consistente com a teoria microeconômica — satisfazendo homogeneidade, simetria de Slutsky e a restrição orçamentária — e ao mesmo tempo suficientemente flexível para capturar padrões reais de consumo?
 
     **Método:** Deaton e Muellbauer derivaram o *Almost Ideal Demand System* (AIDS) a partir de uma forma funcional específica para a função dispêndio. O modelo expressa a parcela de gasto em cada bem como função log-linear dos preços e da renda real. A grande inovação foi que o sistema é derivado de uma função dispêndio bem comportada, garantindo automaticamente consistência com a teoria, e ao mesmo tempo possui uma forma linear nos parâmetros, facilitando a estimação econométrica.
@@ -1031,9 +1031,9 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulos 2–3.
-- NICHOLSON, W.; SNYDER, C. M. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017. Capítulo 4.
-- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 5–7.
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulos 2–3.
+- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 4.
+- VARIAN, H. R. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulos 5–7.
 - PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulos 3–5.
 - SOARES, F. V.; SÁTYRO, N. *O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*. Texto para Discussão IPEA, n. 1424, 2009.
 - RESENDE, A. C. C.; OLIVEIRA, A. M. H. C. Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras. *Estudos Econômicos*, v. 38, n. 2, p. 235–265, 2008.

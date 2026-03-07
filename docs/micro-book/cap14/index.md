@@ -40,7 +40,7 @@ Exemplos clássicos incluem redes de distribuição de água, gás, eletricidade
 
     **Pense assim:** Pense na rede de água encanada do seu bairro. Faz sentido ter uma empresa com uma rede de canos, não duas redes paralelas competindo na mesma rua. O custo fixo de enterrar a tubulação é tão alto que, quanto mais casas uma única rede atende, menor o custo por casa. Construir uma segunda rede seria jogar dinheiro fora — literalmente cavar buracos à toa.
 
-    **Por que isso importa:** É por isso que setores como saneamento, distribuição de energia e ferrovias são regulados por agências como ANEEL e ANA, em vez de simplesmente liberados à concorrência.
+    **Por que isso importa:** É por isso que setores como saneamento, distribuição de energia e ferrovias são regulados por agências como [ANEEL](https://www.aneel.gov.br) e [ANA](https://www.gov.br/ana), em vez de simplesmente liberados à concorrência.
 
 ### Barreiras estratégicas
 
@@ -121,7 +121,7 @@ O monopolista aplica um **markup** sobre o custo marginal que é inversamente pr
 
     **Pense assim:** Compare o preço de uma garrafa d'água no supermercado (R$ 2) com o preço no estádio de futebol (R$ 10). No estádio, você não pode sair para comprar em outro lugar — sua demanda é inelástica — e o vendedor explora isso cobrando um markup enorme. No supermercado, com dez marcas na prateleira, ninguém consegue cobrar muito acima do custo. O índice de Lerner mede exatamente esse "poder de espremer" o consumidor.
 
-    **Por que isso importa:** O CADE usa medidas como o índice de Lerner para avaliar se fusões e aquisições criarão poder de mercado excessivo — como na análise da fusão que criou a Ambev.
+    **Por que isso importa:** O [CADE](https://www.gov.br/cade) usa medidas como o índice de Lerner para avaliar se fusões e aquisições criarão poder de mercado excessivo — como na análise da fusão que criou a Ambev.
 
 ---
 
@@ -334,7 +334,7 @@ Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de inc
     - Descontos por quantidade em supermercados.
 
 !!! example "Box Brasil: Discriminação de preços nas passagens aéreas"
-    O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da ANAC), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
+    O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da [ANAC](https://www.anac.gov.br)), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
 
     **Discriminação de segundo grau (autosseleção):**
 
@@ -384,7 +384,7 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
     **Telecomunicações**
 
-    A privatização do Sistema Telebrás em 1998 transferiu ao setor privado o monopólio estatal de telecomunicações. A ANATEL (Agência Nacional de Telecomunicações), criada pela Lei 9.472/1997, regula concessões e autorizações. Na telefonia fixa, as concessionárias originais (Oi, Telefônica/Vivo, Embratel) enfrentaram obrigações de universalização e controle tarifário (price cap com fator X de produtividade). A telefonia móvel, operando em regime de autorização, desenvolveu-se em um oligopólio com quatro operadoras principais (Vivo, Claro, TIM, Oi). A venda dos ativos móveis da Oi em 2022 para Vivo, Claro e TIM reduziu o mercado a três grandes operadoras, levantando preocupações concorrenciais analisadas pelo CADE.
+    A privatização do Sistema Telebrás em 1998 transferiu ao setor privado o monopólio estatal de telecomunicações. A [ANATEL](https://www.anatel.gov.br) (Agência Nacional de Telecomunicações), criada pela Lei 9.472/1997, regula concessões e autorizações. Na telefonia fixa, as concessionárias originais (Oi, Telefônica/Vivo, Embratel) enfrentaram obrigações de universalização e controle tarifário (price cap com fator X de produtividade). A telefonia móvel, operando em regime de autorização, desenvolveu-se em um oligopólio com quatro operadoras principais (Vivo, Claro, TIM, Oi). A venda dos ativos móveis da Oi em 2022 para Vivo, Claro e TIM reduziu o mercado a três grandes operadoras, levantando preocupações concorrenciais analisadas pelo CADE.
 
     | Indicador | Setor Elétrico | Telecomunicações |
     |---|---|---|
@@ -780,17 +780,17 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## Leituras Recomendadas
 
-- **Nicholson, W. E. & Snyder, C. M.** *Microeconomic Theory: Basic Principles and Extensions.* 12ª ed. Cengage, 2017. Caps. 14–15.
-- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** *Microeconomic Theory.* Oxford University Press, 1995. Cap. 12.
-- **Tirole, J.** *The Theory of Industrial Organization.* MIT Press, 1988. Caps. 1–3.
+- **Nicholson, W. E. & Snyder, C. M.** [*Microeconomic Theory: Basic Principles and Extensions.*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ) 12ª ed. Cengage, 2017. Caps. 14–15.
+- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** [*Microeconomic Theory.*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC) Oxford University Press, 1995. Cap. 12.
+- **Tirole, J.** [*The Theory of Industrial Organization.*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C) MIT Press, 1988. Caps. 1–3.
 - **Besanko, D. & Braeutigam, R.** *Microeconomics.* 5ª ed. Wiley, 2014. Caps. 11–12.
-- **Varian, H. R.** *Microeconomic Analysis.* 3ª ed. W. W. Norton, 1992. Caps. 14, 24.
+- **Varian, H. R.** [*Microeconomic Analysis.*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ) 3ª ed. W. W. Norton, 1992. Caps. 14, 24.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). The Rise of Market Power and the Macroeconomic Implications. *Quarterly Journal of Economics*, 135(2), 561–644."
+??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
     **DOI:** [10.1093/qje/qjz041](https://doi.org/10.1093/qje/qjz041)
 
     **Contexto.** O Capítulo 14 analisa o monopólio como estrutura de mercado, mas até que ponto o poder de mercado é um fenômeno relevante empiricamente? De Loecker, Eeckhout e Unger (2020) respondem a essa pergunta com uma análise abrangente do *markup* praticado pelas firmas nos Estados Unidos ao longo de seis décadas.
@@ -801,7 +801,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Conexão com o capítulo.** O artigo fornece evidência empírica maciça sobre o índice de Lerner (Seção 14.3) em escala agregada. Os *markups* estimados podem ser diretamente interpretados como \(1/(1 - L)\), conectando a teoria do monopólio à mensuração empírica do poder de mercado. A tendência ascendente documentada sugere que o modelo de concorrência perfeita se torna progressivamente menos adequado como descrição da economia moderna.
 
-??? abstract "Bergemann, D., Brooks, B. & Morris, S. (2015). The Limits of Price Discrimination. *American Economic Review*, 105(3), 921–957."
+??? abstract "Bergemann, D., Brooks, B. & Morris, S. (2015). [The Limits of Price Discrimination](https://doi.org/10.1257/aer.20130848). *American Economic Review*, 105(3), 921–957."
     **DOI:** [10.1257/aer.20130848](https://doi.org/10.1257/aer.20130848)
 
     **Contexto.** A Seção 14.7 classifica a discriminação de preços em três graus, mas essa taxonomia assume que sabemos exatamente quanta informação o monopolista possui sobre os consumidores. Bergemann, Brooks e Morris (2015) fazem uma pergunta mais fundamental: dada uma demanda de mercado, quais são os **limites** do que a discriminação de preços pode alcançar, considerando toda estrutura de informação possível?

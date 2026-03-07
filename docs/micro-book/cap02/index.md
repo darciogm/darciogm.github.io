@@ -422,7 +422,7 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
     **Pense assim:** Imagine uma padaria onde dobrar todos os insumos (farinha, forno, padeiros) dobra exatamente a produção de pães. Se cada insumo recebe o valor dos pães extras que ele produz, a conta fecha redondinha: todo pão é "explicado" por algum insumo. Não há lucro econômico puro.
 
-    **Por que isso importa:** Esse resultado é a base teórica da distribuição funcional da renda — quanto vai para o trabalho e quanto vai para o capital. No Brasil, onde a participação do trabalho na renda caiu de ~48% para ~43% entre 2000 e 2015 (Contas Nacionais/IBGE), o teorema de Euler ajuda a entender as forças por trás dessa mudança.
+    **Por que isso importa:** Esse resultado é a base teórica da distribuição funcional da renda — quanto vai para o trabalho e quanto vai para o capital. No Brasil, onde a participação do trabalho na renda caiu de ~48% para ~43% entre 2000 e 2015 (Contas Nacionais/[IBGE](https://www.ibge.gov.br)), o teorema de Euler ajuda a entender as forças por trás dessa mudança.
 
 ---
 
@@ -836,7 +836,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Chetty, R. (2009). Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods. *Annual Review of Economics*, 1, 451–488."
+??? abstract "Chetty, R. (2009). [Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods](https://doi.org/10.1146/annurev.economics.050708.142910). *Annual Review of Economics*, 1, 451–488."
     **Pergunta central:** Como avaliar o impacto de uma política pública sobre o bem-estar social sem precisar estimar um modelo estrutural completo da economia? A estimação de modelos estruturais é custosa e depende de suposições sobre formas funcionais e distribuições — será possível responder a perguntas de política usando apenas algumas "estatísticas suficientes"?
 
     **Método:** Chetty mostra que, para uma ampla classe de problemas de política pública — tributação, seguro-desemprego, regulação —, o impacto sobre o bem-estar pode ser expresso como função de um pequeno número de **estatísticas suficientes**, tipicamente elasticidades comportamentais estimáveis. A chave é o **teorema do envelope**: como os agentes estão otimizando, os efeitos de primeira ordem de mudanças comportamentais sobre a utilidade são nulos. O único efeito relevante é o efeito **direto** da política sobre a restrição — exatamente o resultado das Seções 2.4 e 2.6.
@@ -847,7 +847,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
     **Relevância para o capítulo:** O artigo é uma aplicação magistral do teorema do envelope (Seções 2.4 e 2.6): ao reconhecer que agentes otimizadores "já fizeram o melhor possível", Chetty transforma problemas aparentemente intratáveis em expressões simples envolvendo derivadas parciais avaliadas no ótimo. A mensagem é que as ferramentas matemáticas deste capítulo — derivadas parciais, multiplicadores de Lagrange, teorema do envelope — não são mero formalismo: são a base de uma revolução metodológica na economia empírica.
 
-??? abstract "Milgrom, P.; Shannon, C. (1994). Monotone Comparative Statics. *Econometrica*, 62(1), 157–180."
+??? abstract "Milgrom, P.; Shannon, C. (1994). [Monotone Comparative Statics](https://www.econometricsociety.org/publications/econometrica/1994/01/01/monotone-comparative-statics). *Econometrica*, 62(1), 157–180."
     **Pergunta central:** Quando podemos afirmar que a solução ótima de um problema de maximização é *monotonamente crescente* em um parâmetro? A estática comparativa clássica — "se o preço sobe, a quantidade cai" — depende de condições sobre derivadas segundas (concavidade, condições de segunda ordem). Será possível obter resultados de estática comparativa sem essas condições?
 
     **Método:** Milgrom e Shannon desenvolveram a teoria da **estática comparativa monotônica** usando conceitos de teoria dos reticulados (*lattice theory*). A ideia central é substituir as condições tradicionais de segunda ordem (hessiana negativa definida, concavidade) por uma condição mais fraca: **supermodularidade** da função objetivo. Uma função é supermodular quando "fazer mais de uma coisa aumenta o retorno de fazer mais de outra" — uma forma de complementaridade.
@@ -860,8 +860,8 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ## Leituras Recomendadas
 
-- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Apêndice Matemático.
-- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Apêndice Matemático.
+- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Apêndice Matemático.
+- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Apêndice Matemático.
 - Simon, C. P. & Blume, L. *Mathematics for Economists*. New York: W. W. Norton, 1994.
-- Varian, H. *Microeconomic Analysis*, Cap. 27 (Apêndice Matemático).
+- Varian, H. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ), Cap. 27 (Apêndice Matemático).
 - Chiang, A. & Wainwright, K. *Fundamental Methods of Mathematical Economics*. 4. ed. McGraw-Hill, 2005.

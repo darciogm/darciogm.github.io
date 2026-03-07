@@ -40,7 +40,7 @@ Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é
     **Por que isso importa:** Ignorar o custo de oportunidade é o erro mais comum de pequenos empreendedores no Brasil e explica por que muitos negócios parecem lucrativos no extrato bancário, mas não compensam economicamente.
 
 !!! tip "Exemplo: custo de oportunidade na agricultura brasileira"
-    Um produtor rural no Cerrado possui 500 hectares de terra própria e os utiliza para plantar soja. O custo contábil inclui sementes, fertilizantes, mão de obra e depreciação de máquinas. Porém, o custo econômico deve incluir também o **arrendamento** que ele deixa de receber ao não alugar a terra — que, segundo dados da CONAB, pode variar de 8 a 15 sacas de soja por hectare/ano conforme a região. Se o arrendamento médio é de 12 sacas/ha e a saca vale R$ 120, o custo implícito da terra é de R$ 720.000/ano — valor que o lucro contábil ignora completamente.
+    Um produtor rural no Cerrado possui 500 hectares de terra própria e os utiliza para plantar soja. O custo contábil inclui sementes, fertilizantes, mão de obra e depreciação de máquinas. Porém, o custo econômico deve incluir também o **arrendamento** que ele deixa de receber ao não alugar a terra — que, segundo dados da [CONAB](https://www.conab.gov.br), pode variar de 8 a 15 sacas de soja por hectare/ano conforme a região. Se o arrendamento médio é de 12 sacas/ha e a saca vale R$ 120, o custo implícito da terra é de R$ 720.000/ano — valor que o lucro contábil ignora completamente.
 
 ### Custos irrecuperáveis (sunk costs)
 
@@ -360,7 +360,7 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
     **Pense assim:** Uma fábrica de cerveja artesanal paga quase o mesmo aluguel, energia e licença sanitária que uma grande cervejaria, mas produz muito menos garrafas para diluir esses custos. Por isso a Ambev consegue vender a R$ 3 a lata enquanto a artesanal cobra R$ 15 — a escala mínima eficiente do setor é alta.
 
-    **Por que isso importa:** Economias de escala explicam a concentração em setores como aviação, telecomunicações e siderurgia no Brasil, e são o principal argumento em análises de fusões pelo CADE.
+    **Por que isso importa:** Economias de escala explicam a concentração em setores como aviação, telecomunicações e siderurgia no Brasil, e são o principal argumento em análises de fusões pelo [CADE](https://www.gov.br/cade).
 
 ---
 
@@ -392,7 +392,7 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 !!! example "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
 
-    A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do IBGE (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
+    A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do [IBGE](https://www.ibge.gov.br) (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
 
     **Por que a escala importa?**
 
@@ -407,7 +407,7 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
     **Implicação para política pública:** programas como o **PRONAF** (Programa Nacional de Fortalecimento da Agricultura Familiar) podem ser interpretados como subsídios que deslocam a curva de custo de pequenos produtores para baixo, compensando parcialmente a desvantagem de escala e permitindo sua permanência no mercado.
 
-    *Fontes: IBGE — Censo Agropecuário 2017; CONAB — Custos de Produção; CEPEA/ESALQ.*
+    *Fontes: IBGE — Censo Agropecuário 2017; CONAB — Custos de Produção; [CEPEA/ESALQ](https://www.cepea.esalq.usp.br).*
 
 ---
 
@@ -873,7 +873,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Christensen, Laurits R.; Greene, William H. (1976). Economies of Scale in U.S. Electric Power Generation. *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: 10.1086/260470"
+??? abstract "Christensen, Laurits R.; Greene, William H. (1976). [Economies of Scale in U.S. Electric Power Generation](https://doi.org/10.1086/260470). *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: [10.1086/260470](https://doi.org/10.1086/260470)"
     **Pergunta central:** A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
 
     **Método:** Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
@@ -882,7 +882,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
     **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
 
-??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). Agricultural Productivity and Structural Transformation: Evidence from Brazil. *American Economic Review*, 106(6), 1320-1365. DOI: 10.1257/aer.20131061"
+??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). [Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061). *American Economic Review*, 106(6), 1320-1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
     **Pergunta central:** Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
 
     **Método:** Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.
@@ -893,7 +893,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ## Leituras Recomendadas
 
-- Nicholson, W. & Snyder, C. *Microeconomic Theory: Basic Principles and Extensions*, Cap. 10.
-- Varian, H. *Microeconomia: uma abordagem moderna*, Cap. 20-22.
-- Mas-Colell, A., Whinston, M. & Green, J. *Microeconomic Theory*, Cap. 5 (Seções 5.C-5.D).
-- Pindyck, R. S. & Rubinfeld, D. L. *Microeconomia*, Cap. 7.
+- Nicholson, W. & Snyder, C. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ), Cap. 10.
+- Varian, H. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ), Cap. 20-22.
+- Mas-Colell, A., Whinston, M. & Green, J. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC), Cap. 5 (Seções 5.C-5.D).
+- Pindyck, R. S. & Rubinfeld, D. L. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ), Cap. 7.

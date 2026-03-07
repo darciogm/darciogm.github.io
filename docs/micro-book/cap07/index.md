@@ -367,7 +367,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 ## Box Brasil: O Mercado de Seguros de Automóvel no Brasil
 
 !!! example "Box Brasil — Seguros de automóvel: risco, precificação e regulação"
-    O mercado de seguros de automóvel no Brasil é um campo fértil para a aplicação dos conceitos de incerteza e aversão ao risco. Regulado pela **SUSEP** (Superintendência de Seguros Privados), esse mercado apresenta características que ilustram os desafios teóricos discutidos neste capítulo.
+    O mercado de seguros de automóvel no Brasil é um campo fértil para a aplicação dos conceitos de incerteza e aversão ao risco. Regulado pela **[SUSEP](https://www.susep.gov.br)** (Superintendência de Seguros Privados), esse mercado apresenta características que ilustram os desafios teóricos discutidos neste capítulo.
 
     **Estrutura de mercado e concentração**
 
@@ -456,7 +456,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
     O PSR enfrenta limitações: orçamento frequentemente insuficiente para atender toda a demanda, concentração das apólices em grandes produtores do Centro-Oeste e Sul, e dificuldades na precificação atuarial de eventos climáticos extremos (que estão se tornando mais frequentes).
 
-    **Fonte**: Ministério da Agricultura e Pecuária, Relatório do PSR 2023/2024; Atlas do Seguro Rural (Embrapa).
+    **Fonte**: Ministério da Agricultura e Pecuária, Relatório do PSR 2023/2024; Atlas do Seguro Rural ([Embrapa](https://www.embrapa.br)).
 
 ---
 
@@ -754,7 +754,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Chiappori, Pierre-André; Salanié, Bernard. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78. DOI: 10.1086/262111"
+??? abstract "Chiappori, Pierre-André; Salanié, Bernard. (2000). [Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/262111). *Journal of Political Economy*, 108(1), 56–78. DOI: [10.1086/262111](https://doi.org/10.1086/262111)"
     **Pergunta central:** A teoria prevê que, sob informação assimétrica, indivíduos de maior risco escolhem contratos com mais cobertura (seleção adversa) e/ou reduzem seus cuidados após a contratação (risco moral). Mas essas previsões se verificam empiricamente? Existe, de fato, uma correlação positiva entre cobertura e sinistralidade nos dados reais de seguros?
 
     **Método:** Chiappori e Salanié propuseram um teste empírico geral: se há informação assimétrica (seja por seleção adversa, risco moral ou ambos), deve existir uma correlação positiva condicional entre a cobertura contratada e a ocorrência de sinistros, mesmo após controlar todas as variáveis observáveis usadas pelas seguradoras na precificação. Utilizaram dados detalhados do mercado francês de seguros de automóvel, com informações sobre contratos, prêmios, características dos condutores e histórico de acidentes.
@@ -765,7 +765,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
     **Relevância para o capítulo:** O artigo testa empiricamente as previsões teóricas da Seção 7.8. A correlação positiva entre cobertura e risco é uma implicação testável da teoria de informação assimétrica. A ausência dessa correlação em alguns mercados sugere que os mecanismos de triagem (*screening*) e sinalização funcionam razoavelmente bem — ou que as fontes de heterogeneidade são mais complexas do que o modelo básico prevê.
 
-??? abstract "Mehra, Rajnish; Prescott, Edward C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161. DOI: 10.1016/0304-3932(85)90061-3"
+??? abstract "Mehra, Rajnish; Prescott, Edward C. (1985). [The Equity Premium: A Puzzle](https://doi.org/10.1016/0304-3932(85)90061-3). *Journal of Monetary Economics*, 15(2), 145–161. DOI: [10.1016/0304-3932(85)90061-3](https://doi.org/10.1016/0304-3932(85)90061-3)"
     **Pergunta central:** Historicamente, ações renderam cerca de 6 pontos percentuais a mais por ano do que títulos públicos nos Estados Unidos. Essa diferença — o *equity premium* — pode ser racionalizada pelo modelo padrão de utilidade esperada com aversão ao risco (CRRA)?
 
     **Método:** Mehra e Prescott calibraram um modelo de equilíbrio geral com agente representativo, utilidade CRRA e consumo estocástico baseado em dados macroeconômicos americanos de 1889 a 1978. Calcularam qual coeficiente de aversão relativa ao risco \(\gamma\) seria necessário para gerar o prêmio de risco observado nos dados.
@@ -778,9 +778,9 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ## Referências do Capítulo
 
-- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995. Capítulo 6.
-- NICHOLSON, W.; SNYDER, C. M. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017. Capítulo 7.
-- VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulo 12.
+- MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press, 1995. Capítulo 6.
+- NICHOLSON, W.; SNYDER, C. M. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12. ed. Boston: Cengage Learning, 2017. Capítulo 7.
+- VARIAN, H. R. [*Microeconomia*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Capítulo 12.
 - PERLOFF, J. M. *Microeconomics: Theory and Applications with Calculus*. 4. ed. Boston: Pearson, 2017. Capítulo 17.
 - VON NEUMANN, J.; MORGENSTERN, O. *Theory of Games and Economic Behavior*. Princeton: Princeton University Press, 1944.
 - ARROW, K. J. The Role of Securities in the Optimal Allocation of Risk-Bearing. *The Review of Economic Studies*, v. 31, n. 2, p. 91–96, 1964.

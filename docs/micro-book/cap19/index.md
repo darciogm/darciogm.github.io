@@ -476,7 +476,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 !!! example "Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
     O desmatamento na Amazônia brasileira é um caso emblemático de **externalidade negativa de escala global**. A remoção da floresta gera custos externos que incluem emissões de CO₂ (contribuindo para a mudança climática), perda de biodiversidade, alteração do ciclo hidrológico (inclusive os "rios voadores" que transportam umidade para o Centro-Sul do Brasil) e erosão do solo.
 
-    **Dimensão do problema**: Segundo dados do INPE/PRODES, o desmatamento acumulado na Amazônia Legal superou 85 milhões de hectares até 2023 (cerca de 17% da floresta original). Após queda expressiva entre 2004 e 2012 (de 27.772 km² para 4.571 km² anuais), as taxas voltaram a subir, atingindo 13.235 km² em 2021, antes de recuar para cerca de 9.001 km² em 2023 com o reforço de políticas de fiscalização.
+    **Dimensão do problema**: Segundo dados do [INPE](https://www.gov.br/inpe)/PRODES, o desmatamento acumulado na Amazônia Legal superou 85 milhões de hectares até 2023 (cerca de 17% da floresta original). Após queda expressiva entre 2004 e 2012 (de 27.772 km² para 4.571 km² anuais), as taxas voltaram a subir, atingindo 13.235 km² em 2021, antes de recuar para cerca de 9.001 km² em 2023 com o reforço de políticas de fiscalização.
 
     **Análise econômica**: O desmatamento persiste porque os **benefícios privados** (expansão da pecuária, agricultura, extração madeireira) excedem os **custos privados** para os agentes locais, embora os **custos sociais** — incluindo danos climáticos globais — superem largamente os benefícios. Trata-se de uma externalidade negativa clássica: o preço de mercado dos produtos agropecuários não incorpora o custo ambiental da destruição florestal.
 
@@ -761,16 +761,16 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## Leituras Recomendadas
 
-- **Varian, H. R.** *Microeconomia: Uma Abordagem Moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 35–37 (externalidades, bens públicos, informação assimétrica).
-- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** *Microeconomic Theory*. New York: Oxford University Press, 1995. Cap. 11 (externalidades e bens públicos).
-- **Stiglitz, J. E.; Rosengard, J. K.** *Economics of the Public Sector*. 4. ed. New York: W. W. Norton, 2015. Tratamento abrangente de bens públicos, externalidades e escolha coletiva.
+- **Varian, H. R.** [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 35–37 (externalidades, bens públicos, informação assimétrica).
+- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press, 1995. Cap. 11 (externalidades e bens públicos).
+- **Stiglitz, J. E.; Rosengard, J. K.** [*Economics of the Public Sector*](https://books.google.com.br/books?id=miPeCgAAQBAJ). 4. ed. New York: W. W. Norton, 2015. Tratamento abrangente de bens públicos, externalidades e escolha coletiva.
 - **Ostrom, E.** *Governing the Commons*. Cambridge: Cambridge University Press, 1990. Análise seminal sobre gestão de recursos comuns sem privatização nem regulação estatal.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072."
+??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1146/annurev-resource-100913-012610)"
     **Pergunta central:** Regulações ambientais do tipo command-and-control são eficazes para reduzir a poluição e melhorar a saúde em países em desenvolvimento?
 
     **Método:** Os autores avaliam o impacto de duas grandes regulações ambientais na Índia: o Programa Nacional de Ação sobre Poluição do Ar (1987) e a regulação de poluição hídrica de distritos designados como "criticamente poluídos". Utilizam dados de monitoramento de qualidade do ar e da água em centenas de estações ao longo de duas décadas, combinados com dados de mortalidade infantil, em uma estratégia de diferenças-em-diferenças.
@@ -779,7 +779,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo ilustra empiricamente a eficácia diferencial da regulação direta (command-and-control) discutida na Seção 19.4.3. A regulação funciona quando o monitoramento é viável (poluição do ar em fontes pontuais), mas falha quando os custos de enforcement são altos (poluição hídrica difusa) — exatamente o que a teoria prevê. Para o Brasil, a lição é direta: a eficácia do Código Florestal e da fiscalização do IBAMA depende criticamente da capacidade de monitoramento (DETER/INPE) e de enforcement.
 
-??? abstract "Assunção, J.; Gandour, C.; Rocha, R. (2023). DETER-ing Deforestation in the Amazon: Environmental Monitoring and Law Enforcement. *American Economic Journal: Applied Economics*, 15(2), 125–156."
+??? abstract "[Assunção, J.; Gandour, C.; Rocha, R. (2023). DETER-ing Deforestation in the Amazon: Environmental Monitoring and Law Enforcement. *American Economic Journal: Applied Economics*, 15(2), 125–156.](https://doi.org/10.1257/app.20200196)"
     **Pergunta central:** O sistema de monitoramento por satélite em tempo real (DETER) e o reforço da fiscalização ambiental reduziram efetivamente o desmatamento na Amazônia brasileira?
 
     **Método:** Os autores exploram a introdução do sistema DETER pelo INPE em 2004 — que permite detecção de desmatamento em tempo quase-real via imagens de satélite — e o consequente aumento das operações de fiscalização do IBAMA. Utilizam dados georeferenciados de desmatamento (PRODES), autos de infração do IBAMA e variação espacial na cobertura do DETER, em uma estratégia de variáveis instrumentais e diferenças-em-diferenças espaciais.

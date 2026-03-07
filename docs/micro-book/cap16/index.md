@@ -330,11 +330,11 @@ Diferenças salariais também podem refletir **discriminação** por gênero, ra
 
     **Prêmio salarial do ensino superior:**
 
-    Segundo a PNAD Contínua/IBGE (2.º trimestre de 2024), trabalhadores com ensino superior completo recebem, em média, **126% a mais** do que aqueles com ensino médio completo ou superior incompleto. Esse diferencial, embora ainda elevado, caiu 26 pontos percentuais em 12 anos, refletindo a expansão do acesso ao ensino superior.
+    Segundo a PNAD Contínua/[IBGE](https://www.ibge.gov.br) (2.º trimestre de 2024), trabalhadores com ensino superior completo recebem, em média, **126% a mais** do que aqueles com ensino médio completo ou superior incompleto. Esse diferencial, embora ainda elevado, caiu 26 pontos percentuais em 12 anos, refletindo a expansão do acesso ao ensino superior.
 
     **Desigualdade por gênero:**
 
-    O 3.º Relatório de Transparência Salarial do MTE (2025) mostra que as mulheres recebem, em média, **20,7% a menos** que os homens. Quando se adiciona o recorte racial, o hiato se amplia: mulheres negras ganham **53% a menos** que homens brancos.
+    O 3.º Relatório de Transparência Salarial do [MTE](https://www.gov.br/trabalho) (2025) mostra que as mulheres recebem, em média, **20,7% a menos** que os homens. Quando se adiciona o recorte racial, o hiato se amplia: mulheres negras ganham **53% a menos** que homens brancos.
 
     **Desigualdade por raça:**
 
@@ -515,7 +515,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     O modelo de monopólio sindical (seção 16.8) prevê que sindicatos mais fortes elevam salários acima do nível competitivo, ao custo de menor emprego. A drástica redução do poder sindical após 2017 representa um "experimento natural" que permite testar essa previsão: se o modelo está correto, o enfraquecimento sindical deveria aproximar os salários negociados do equilíbrio competitivo.
 
-    *Fonte: PNAD Contínua/IBGE; IPEA, Nota Técnica sobre Reforma Trabalhista, 2023.*
+    *Fonte: PNAD Contínua/IBGE; [IPEA](https://www.ipea.gov.br), Nota Técnica sobre Reforma Trabalhista, 2023.*
 
 ---
 
@@ -536,7 +536,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     - Estudos como Corseuil e Carneiro (2001) encontraram efeitos negativos pequenos sobre o emprego formal, mas significativos sobre a informalidade.
     - Lemos (2009) mostrou que o efeito compressão salarial (redução da desigualdade) domina o efeito desemprego.
-    - Engbom e Moser (2022) estimam que a alta real de 128% do SM entre 1996 e 2018 explica **45% da queda da desigualdade salarial** no período, com efeitos limitados sobre o emprego total.
+    - [Engbom e Moser (2022)](https://doi.org/10.1257/aer.20181506) estimam que a alta real de 128% do SM entre 1996 e 2018 explica **45% da queda da desigualdade salarial** no período, com efeitos limitados sobre o emprego total.
     - Dados do CAGED/MTE e da PNAD indicam que a elevação do SM tende a aumentar a proporção de trabalhadores na informalidade, pois empregadores que não conseguem pagar o novo piso migram para relações informais.
 
     **Tabela: Composição do mercado de trabalho brasileiro**
@@ -553,7 +553,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
     | Salário médio real mensal habitual | R$ 3.652 |
     | Salário mínimo vigente (2025) | R$ 1.518 |
 
-    *Fonte: PNAD Contínua/IBGE, média anual 2025; DIEESE.*
+    *Fonte: PNAD Contínua/IBGE, média anual 2025; [DIEESE](https://www.dieese.org.br).*
 
     A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (38,1%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal.
 
@@ -701,7 +701,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Engbom, N.; Moser, C. (2022). Earnings Inequality and the Minimum Wage: Evidence from Brazil. *American Economic Review*, 112(12), 3803–3847."
+??? abstract "Engbom, N.; Moser, C. (2022). [Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506). *American Economic Review*, 112(12), 3803–3847."
     **Pergunta central:** O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.
 
     **Método:** Engbom e Moser combinaram dados administrativos de empregadores e empregados (RAIS) com pesquisas domiciliares (PNAD) cobrindo mais de duas décadas. Para isolar o efeito causal do salário mínimo, desenvolveram um modelo de equilíbrio com firmas e trabalhadores heterogêneos, estimado estruturalmente nos dados brasileiros. O modelo permite que o salário mínimo afete não apenas os trabalhadores que recebem exatamente o piso, mas também aqueles acima dele — os chamados *spillover effects*.
@@ -712,7 +712,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     **Relevância para o capítulo:** O paper conecta-se diretamente com as seções 16.5 (equilíbrio competitivo) e 16.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
 
-??? abstract "Meghir, C.; Narita, R.; Robin, J.-M. (2015). Wages and Informality in Developing Countries. *American Economic Review*, 105(4), 1509–1546."
+??? abstract "Meghir, C.; Narita, R.; Robin, J.-M. (2015). [Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110). *American Economic Review*, 105(4), 1509–1546."
     **Pergunta central:** Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
 
     **Método:** Os autores — entre eles a brasileira Renata Narita — construíram um modelo de equilíbrio com *wage-posting* (firmas fixam salários), busca sequencial por emprego (trabalhadores procuram empregos estando empregados ou desempregados) e escolha endógena do setor (formal ou informal) por firmas heterogêneas. O modelo foi estimado com dados da Pesquisa Mensal de Emprego (PME/IBGE) do Brasil.
@@ -729,10 +729,10 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 - Becker, G. S. (1964). *Human Capital*. Columbia University Press.
 - Card, D., e A. B. Krueger (1994). "Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania." *American Economic Review*, 84(4): 772–793.
 - Corseuil, C. H., e F. G. Carneiro (2001). "Os Impactos do Salário Mínimo sobre Emprego e Salários no Brasil." *Pesquisa e Planejamento Econômico*, 31(3).
-- Engbom, N., e C. Moser (2022). "Earnings Inequality and the Minimum Wage: Evidence from Brazil." *American Economic Review*, 112(12): 3803–3847.
+- Engbom, N., e C. Moser (2022). "[Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506)." *American Economic Review*, 112(12): 3803–3847.
 - Lemos, S. (2009). "Minimum Wage Effects in a Developing Country." *Labour Economics*, 16(2): 224–237.
 - McDonald, I. M., e R. M. Solow (1981). "Wage Bargaining and Employment." *American Economic Review*, 71(5): 896–908.
-- Meghir, C., R. Narita, e J.-M. Robin (2015). "Wages and Informality in Developing Countries." *American Economic Review*, 105(4): 1509–1546.
+- Meghir, C., R. Narita, e J.-M. Robin (2015). "[Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110)." *American Economic Review*, 105(4): 1509–1546.
 - Neri, M., G. Gonzaga, e J. M. Camargo (2001). "Efeitos Informais do Salário Mínimo e Pobreza." *Texto para Discussão*, IPEA.
 - Saboia, J. (2007). "O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil." In: *Desigualdade de Renda no Brasil*. IPEA.
 - Schultz, T. W. (1961). "Investment in Human Capital." *American Economic Review*, 51(1): 1–17.

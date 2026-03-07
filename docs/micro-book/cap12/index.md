@@ -229,7 +229,7 @@ No curto prazo, o excedente do produtor é a diferença entre a receita total e 
 Esse excedente de longo prazo reflete a **renda ricardiana** — pagamentos a fatores de produção cujos preços são elevados pela expansão da indústria. Por exemplo, quando a entrada de firmas agrícolas eleva o preço da terra, os proprietários de terras mais férteis (inframarginais) obtêm rendas que constituem o excedente do produtor de longo prazo.
 
 !!! example "Renda ricardiana na agricultura brasileira"
-    No Cerrado, a expansão da fronteira agrícola para a produção de soja elevou significativamente o preço das terras com melhor aptidão agrícola (topografia plana, solo corrigido, proximidade logística). Segundo dados do CEPEA/ESALQ e da FNP, o hectare em regiões consolidadas como Sorriso (MT) valorizou mais de 300% entre 2005 e 2023, refletindo a renda ricardiana apropriada pelos proprietários de terras inframarginais. Produtores em terras menos férteis (marginais) operam com lucro próximo de zero — exatamente como o modelo prevê.
+    No Cerrado, a expansão da fronteira agrícola para a produção de soja elevou significativamente o preço das terras com melhor aptidão agrícola (topografia plana, solo corrigido, proximidade logística). Segundo dados do [CEPEA/ESALQ](https://www.cepea.esalq.usp.br) e da FNP, o hectare em regiões consolidadas como Sorriso (MT) valorizou mais de 300% entre 2005 e 2023, refletindo a renda ricardiana apropriada pelos proprietários de terras inframarginais. Produtores em terras menos férteis (marginais) operam com lucro próximo de zero — exatamente como o modelo prevê.
 
 !!! definition "Renda ricardiana"
     A **renda ricardiana** (ou renda econômica) é o pagamento a um fator de produção acima do mínimo necessário para mantê-lo em seu uso corrente. No longo prazo competitivo, o excedente do produtor da indústria reflete exclusivamente essas rendas.
@@ -436,7 +436,7 @@ X(p_c) = S(p_p) = S(p_c - t)
     **Por que isso importa:** Esse princípio é central para avaliar reformas tributárias no Brasil — saber quem de fato arca com o ônus de cada tributo é essencial para analisar impactos distributivos.
 
 !!! example "Incidência tributária no Brasil: ICMS sobre combustíveis"
-    Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do IPEA) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba (ANP, Boletim de Preços).
+    Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do [IPEA](https://www.ipea.gov.br)) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba ([ANP](https://www.gov.br/anp), Boletim de Preços).
 
 ---
 
@@ -478,7 +478,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 ## Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
 
 !!! example "Box Brasil: Soja brasileira e o leiloeiro global"
-    O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 (CONAB). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
+    O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 ([CONAB](https://www.conab.gov.br)). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
 
     **Formação de preços internos:**
 
@@ -791,16 +791,16 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## Leituras Recomendadas
 
-- **Nicholson, W. E. & Snyder, C. M.** *Microeconomic Theory: Basic Principles and Extensions.* 12ª ed. Cengage, 2017. Caps. 12–13.
-- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** *Microeconomic Theory.* Oxford University Press, 1995. Cap. 10.
-- **Varian, H. R.** *Microeconomic Analysis.* 3ª ed. W. W. Norton, 1992. Caps. 13–14.
+- **Nicholson, W. E. & Snyder, C. M.** [*Microeconomic Theory: Basic Principles and Extensions.*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ) 12ª ed. Cengage, 2017. Caps. 12–13.
+- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** [*Microeconomic Theory.*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC) Oxford University Press, 1995. Cap. 10.
+- **Varian, H. R.** [*Microeconomic Analysis.*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ) 3ª ed. W. W. Norton, 1992. Caps. 13–14.
 - **Perloff, J. M.** *Microeconomics: Theory and Applications with Calculus.* 4ª ed. Pearson, 2017. Caps. 8–9.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Roberts, M. J. & Schlenker, W. (2013). Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate. *American Economic Review*, 103(6), 2265–2295."
+??? abstract "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
     **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)
 
     **Contexto.** A estimação de elasticidades de oferta e demanda é central para a análise de equilíbrio parcial, mas enfrenta o clássico problema de identificação: variações observadas em preços e quantidades refletem simultaneamente deslocamentos de oferta e demanda. Roberts e Schlenker enfrentam esse desafio no mercado de commodities agrícolas — exatamente o tipo de mercado competitivo analisado neste capítulo.
@@ -811,7 +811,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Conexão com o capítulo.** O artigo é uma aplicação direta da análise de estática comparativa (Seção 12.4) e da discussão sobre elasticidades de oferta e demanda (Seções 12.1 e 12.7) em mercados competitivos reais. Também dialoga com o Box Brasil sobre a soja, cujas elasticidades estimadas pelo IPEA e CONAB são comparáveis às encontradas no estudo.
 
-??? abstract "Weyl, E. G. & Fabinger, M. (2013). Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition. *Journal of Political Economy*, 121(3), 528–583."
+??? abstract "Weyl, E. G. & Fabinger, M. (2013). [Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition](https://doi.org/10.1086/670401). *Journal of Political Economy*, 121(3), 528–583."
     **DOI:** [10.1086/670401](https://doi.org/10.1086/670401)
 
     **Contexto.** A Seção 12.11 demonstra que, em concorrência perfeita, a incidência de um imposto específico depende das elasticidades relativas de oferta e demanda. Mas o que acontece quando os mercados não são perfeitamente competitivos? Weyl e Fabinger desenvolvem uma teoria unificada de *pass-through* (repasse) que generaliza os resultados clássicos de incidência para estruturas de mercado imperfeitas.

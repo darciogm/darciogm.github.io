@@ -358,7 +358,7 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
     **Pense assim:** Imagine um grupo de feirantes combinando o preço do tomate. Cada um tem a tentação de baixar o preço escondido e roubar os clientes dos vizinhos. Quanto mais feirantes no acordo, mais fácil alguém furar sem ser notado — e o combinado desmorona.
 
-    **Por que isso importa:** Programas de leniência do CADE exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
+    **Por que isso importa:** Programas de leniência do [CADE](https://www.gov.br/cade) exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
 
 ### Fatores que facilitam a colusão
 
@@ -385,7 +385,7 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
     **Programa de Leniência:**
 
-    O caso foi descoberto graças ao **Programa de Leniência** do CADE, inspirado no modelo americano. A Siemens, primeira empresa a confessar a participação e fornecer provas, obteve imunidade total de multas. As demais firmas foram condenadas a multas que somaram mais de R$ 530 milhões. O programa de leniência funciona como um mecanismo de quebra da colusão: ao oferecer imunidade ao primeiro delator, reduz o fator de desconto efetivo e torna o desvio (delação) mais atrativo do que a cooperação com o cartel — exatamente o que a teoria dos jogos repetidos prevê.
+    O caso foi descoberto graças ao **Programa de Leniência** do [CADE](https://www.gov.br/cade/pt-br/assuntos/noticias/cade-multa-em-r-535-1-milhoes-cartel-de-trens-e-metros), inspirado no modelo americano. A Siemens, primeira empresa a confessar a participação e fornecer provas, obteve imunidade total de multas. As demais firmas foram condenadas a multas que somaram mais de R$ 530 milhões. O programa de leniência funciona como um mecanismo de quebra da colusão: ao oferecer imunidade ao primeiro delator, reduz o fator de desconto efetivo e torna o desvio (delação) mais atrativo do que a cooperação com o cartel — exatamente o que a teoria dos jogos repetidos prevê.
 
 ---
 
@@ -519,7 +519,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     - **Cunha tributária** e depósitos compulsórios elevados.
     - **Assimetria de informação** e fragilidades institucionais na recuperação de crédito.
 
-    A literatura empírica debate a importância relativa desses fatores. Estudos do BCB sugerem que o poder de mercado explica parcela significativa, mas não majoritária, do spread.
+    A literatura empírica debate a importância relativa desses fatores. Estudos do [BCB](https://www.bcb.gov.br) sugerem que o poder de mercado explica parcela significativa, mas não majoritária, do spread.
 
     **Fusões analisadas pelo CADE**
 
@@ -851,7 +851,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## Leituras Recomendadas
 
-- **Tirole, J.** *The Theory of Industrial Organization*. Cambridge: MIT Press, 1988. Caps. 5–9. Referência completa sobre oligopólio, colusão e entrada.
+- **Tirole, J.** [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press, 1988. Caps. 5–9. Referência completa sobre oligopólio, colusão e entrada.
 - **Shy, O.** *Industrial Organization: Theory and Applications*. Cambridge: MIT Press, 1995. Tratamento acessível dos modelos de Bertrand, Cournot e Stackelberg.
 - **Belleflamme, P.; Peitz, M.** *Industrial Organization: Markets and Strategies*. 2. ed. Cambridge: Cambridge University Press, 2015. Abordagem moderna com aplicações a mercados digitais.
 - **Motta, M.** *Competition Policy: Theory and Practice*. Cambridge: Cambridge University Press, 2004. Excelente sobre colusão, cartéis e política de defesa da concorrência.
@@ -860,7 +860,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). Entry and Competition in Concentrated Markets. *Journal of Political Economy*, 99(5), 977–1009."
+??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
     **Pergunta central:** Quantos concorrentes são necessários para que um mercado se comporte de forma competitiva?
 
     **Método:** Os autores estudam mercados locais isolados nos Estados Unidos (pequenas cidades) para cinco tipos de negócios (dentistas, optometristas, farmácias, encanadores e pneus). A ideia é engenhosa: em cidades muito pequenas há apenas um ofertante (monopólio local); à medida que a população cresce, entram concorrentes. Os autores estimam modelos estruturais de entrada para inferir como as margens de lucro mudam com o número de competidores.
@@ -869,7 +869,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo fornece evidência empírica direta para a convergência do modelo de Cournot: a teoria prevê que o equilíbrio se aproxima do resultado competitivo conforme \(n\) cresce, e Bresnahan e Reiss mostram que essa convergência é rápida — essencialmente completa com 3 a 5 firmas. Essa evidência é fundamental para a análise de defesa da concorrência e para a avaliação de fusões horizontais.
 
-??? abstract "Berry, S.; Levinsohn, J.; Pakes, A. (1995). Automobile Market Equilibrium and the Effects of Price Controls. *Econometrica*, 63(4), 841–890."
+??? abstract "Berry, S.; Levinsohn, J.; Pakes, A. (1995). [Automobile Market Equilibrium and the Effects of Price Controls](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841–890."
     **Pergunta central:** Como modelar a demanda e o equilíbrio de preços em mercados oligopolísticos com produtos diferenciados, levando em conta a endogeneidade dos preços?
 
     **Método:** Berry, Levinsohn e Pakes (BLP) desenvolvem um modelo estrutural de demanda por automóveis nos Estados Unidos, combinando dados de mercado agregados com um modelo de escolha discreta com heterogeneidade de consumidores. A inovação metodológica central é o uso de variáveis instrumentais para lidar com a endogeneidade dos preços e uma técnica de inversão (a "inversão de BLP") que permite recuperar as utilidades médias dos produtos a partir das participações de mercado observadas. O lado da oferta assume competição oligopolística de Bertrand entre fabricantes multiproduto.

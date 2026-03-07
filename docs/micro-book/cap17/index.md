@@ -167,7 +167,7 @@ m = \beta \frac{U'(C_2)}{U'(C_1)}
 onde \(\beta = \frac{1}{1+\rho}\) é o fator de desconto subjetivo. Ativos que pagam mais em estados de escassez (quando \(U'(C_2)\) é alto) são mais valiosos.
 
 !!! note "Equity premium puzzle"
-    O **enigma do prêmio de risco das ações** (Mehra e Prescott, 1985) refere-se ao fato de que o prêmio de risco histórico das ações sobre títulos públicos (~6% ao ano nos EUA) é muito maior do que modelos padrão de consumo intertemporal conseguem explicar com níveis razoáveis de aversão ao risco.
+    O **enigma do prêmio de risco das ações** ([Mehra e Prescott, 1985](https://doi.org/10.1016/0304-3932(85)90061-3)) refere-se ao fato de que o prêmio de risco histórico das ações sobre títulos públicos (~6% ao ano nos EUA) é muito maior do que modelos padrão de consumo intertemporal conseguem explicar com níveis razoáveis de aversão ao risco.
 
 ---
 
@@ -421,7 +421,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 ## Box Brasil: Taxa Selic e o Custo de Capital no Brasil
 
 !!! example "Por que os juros brasileiros são historicamente altos?"
-    O Brasil é conhecido internacionalmente por praticar uma das taxas de juros reais mais elevadas do mundo. A taxa Selic — a taxa básica de juros definida pelo Comitê de Política Monetária (Copom) do Banco Central do Brasil — atingiu níveis estratosféricos ao longo das últimas décadas.
+    O Brasil é conhecido internacionalmente por praticar uma das taxas de juros reais mais elevadas do mundo. A taxa Selic — a taxa básica de juros definida pelo Comitê de Política Monetária (Copom) do [Banco Central do Brasil](https://www.bcb.gov.br) — atingiu níveis estratosféricos ao longo das últimas décadas.
 
     **Evolução histórica da Selic:**
 
@@ -432,9 +432,9 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     **Por que os juros são tão altos? Principais hipóteses:**
 
-    1. **Dominância fiscal**: a elevada dívida pública e a percepção de risco fiscal exigem prêmios de risco maiores para financiamento do governo. Quanto maior a desconfiança sobre a sustentabilidade fiscal, maiores os juros que o Tesouro Nacional precisa oferecer.
+    1. **Dominância fiscal**: a elevada dívida pública e a percepção de risco fiscal exigem prêmios de risco maiores para financiamento do governo. Quanto maior a desconfiança sobre a sustentabilidade fiscal, maiores os juros que o [Tesouro Nacional](https://www.tesouronacional.fazenda.gov.br) precisa oferecer.
 
-    2. **Crédito direcionado e segmentação**: uma parcela significativa do crédito no Brasil é direcionada (BNDES, crédito rural, habitacional) a taxas subsidiadas. Isso reduz a eficácia da política monetária, exigindo uma Selic mais alta para atingir o mesmo efeito contracionista sobre a parcela livre do crédito.
+    2. **Crédito direcionado e segmentação**: uma parcela significativa do crédito no Brasil é direcionada ([BNDES](https://www.bndes.gov.br), crédito rural, habitacional) a taxas subsidiadas. Isso reduz a eficácia da política monetária, exigindo uma Selic mais alta para atingir o mesmo efeito contracionista sobre a parcela livre do crédito.
 
     3. **Inércia inflacionária e indexação**: a memória inflacionária do período de hiperinflação (1980-1994) e mecanismos de indexação residuais tornam as expectativas de inflação mais resistentes, exigindo juros mais altos para ancorar expectativas.
 
@@ -683,16 +683,16 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## Leituras Recomendadas
 
-- **Varian, H. R.** *Microeconomia: Uma Abordagem Moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 10–11 (escolha intertemporal e mercados de ativos).
-- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** *Microeconomic Theory*. New York: Oxford University Press, 1995. Cap. 20 (equilíbrio intertemporal e mercados de capital).
-- **Dixit, A. K.; Pindyck, R. S.** *Investment under Uncertainty*. Princeton: Princeton University Press, 1994. Referência sobre valor da opção de espera e investimento irreversível.
+- **Varian, H. R.** [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9. ed. Rio de Janeiro: Elsevier, 2015. Caps. 10–11 (escolha intertemporal e mercados de ativos).
+- **Mas-Colell, A.; Whinston, M. D.; Green, J. R.** [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press, 1995. Cap. 20 (equilíbrio intertemporal e mercados de capital).
+- **Dixit, A. K.; Pindyck, R. S.** [*Investment under Uncertainty*](https://books.google.com.br/books?id=8op0btN4mKEC). Princeton: Princeton University Press, 1994. Referência sobre valor da opção de espera e investimento irreversível.
 - **Hotelling, H.** "The Economics of Exhaustible Resources." *Journal of Political Economy*, 39(2): 137–175, 1931. O artigo seminal sobre a precificação de recursos naturais.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004."
+??? abstract "[Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004.](https://doi.org/10.1016/j.jcorpfin.2012.03.001)"
     **Pergunta central:** Como a reforma da lei de falências brasileira (Lei 11.101/2005) afetou o custo de crédito e o investimento das empresas?
 
     **Método:** Os autores exploram a reforma de 2005 como um experimento natural. A nova lei introduziu mecanismos de recuperação judicial mais eficientes e aumentou a prioridade dos credores com garantia real na ordem de pagamento. Os autores comparam o custo do crédito corporativo e os spreads bancários antes e depois da reforma, usando dados do Banco Central do Brasil e controlando por variáveis macroeconômicas.
@@ -701,10 +701,10 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo conecta diretamente a estrutura institucional ao custo de uso do capital \(c_K = p_K(r + \delta)\). A taxa de juros \(r\) que as firmas enfrentam inclui um prêmio de risco que depende da qualidade do arcabouço legal de recuperação de crédito. A reforma da lei de falências reduziu esse prêmio, diminuindo o custo de capital e potencialmente viabilizando projetos de investimento que antes tinham VPL negativo — exatamente o mecanismo discutido na Seção 17.6.
 
-??? abstract "Mehra, R.; Prescott, E. C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161."
+??? abstract "[Mehra, R.; Prescott, E. C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161.](https://doi.org/10.1016/0304-3932(85)90061-3)"
     **Pergunta central:** O prêmio de risco histórico das ações sobre títulos públicos pode ser explicado por modelos padrão de consumo intertemporal com níveis razoáveis de aversão ao risco?
 
-    **Método:** Mehra e Prescott calibram um modelo de troca pura com utilidade CRRA (aversão relativa ao risco constante) usando dados históricos dos EUA (1889–1978). No modelo, o fator de desconto estocástico é \(m = \beta(C_{t+1}/C_t)^{-\gamma}\), onde \(\gamma\) é o coeficiente de aversão ao risco. Os autores verificam quais combinações de \(\beta\) e \(\gamma\) reproduzem o prêmio de risco observado (~6% a.a.) e a taxa livre de risco (~1% a.a.).
+    **Método:** [Mehra e Prescott](https://doi.org/10.1016/0304-3932(85)90061-3) calibram um modelo de troca pura com utilidade CRRA (aversão relativa ao risco constante) usando dados históricos dos EUA (1889–1978). No modelo, o fator de desconto estocástico é \(m = \beta(C_{t+1}/C_t)^{-\gamma}\), onde \(\gamma\) é o coeficiente de aversão ao risco. Os autores verificam quais combinações de \(\beta\) e \(\gamma\) reproduzem o prêmio de risco observado (~6% a.a.) e a taxa livre de risco (~1% a.a.).
 
     **Resultado principal:** Para gerar o prêmio de risco observado, o modelo exigiria um coeficiente de aversão ao risco \(\gamma > 30\), valor considerado absurdamente alto (estimativas experimentais sugerem \(\gamma\) entre 1 e 5). Com \(\gamma\) razoável, o modelo prevê um prêmio de risco de apenas ~0,35%, muito inferior ao observado. Este é o **enigma do prêmio de risco das ações** (*equity premium puzzle*).
 
