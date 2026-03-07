@@ -17,7 +17,7 @@ Cada indivíduo dispõe de um estoque fixo de tempo — convencionalmente \(T\) 
 - **Lazer** (\(L\)): horas dedicadas a atividades que geram utilidade diretamente (descanso, convívio familiar, entretenimento).
 - **Trabalho** (\(h\)): horas dedicadas à atividade remunerada, com \(h = T - L\).
 
-O indivíduo recebe um **salário por hora** \(w\) e pode ter uma **renda não-salarial** \(V\) (aluguéis, transferências, dividendos). Sua renda total é gasta em um bem composto de **consumo** \(C\), cujo preço é normalizado para 1.
+O indivíduo recebe um **salário por hora** \(w\) e pode ter uma **renda não salarial** \(V\) (aluguéis, transferências, dividendos). Sua renda total é gasta em um bem composto de **consumo** \(C\), cujo preço é normalizado para 1.
 
 !!! definition "Restrição orçamentária do tempo"
     A restrição orçamentária do indivíduo é:
@@ -26,7 +26,7 @@ O indivíduo recebe um **salário por hora** \(w\) e pode ter uma **renda não-s
     C = w(T - L) + V = wh + V
     \]
 
-    onde \(C\) é o consumo, \(w\) é o salário-hora, \(T\) é a dotação total de tempo, \(L\) é o lazer, \(h = T - L\) são as horas trabalhadas e \(V\) é a renda não-salarial.
+    onde \(C\) é o consumo, \(w\) é o salário-hora, \(T\) é a dotação total de tempo, \(L\) é o lazer, \(h = T - L\) são as horas trabalhadas e \(V\) é a renda não salarial.
 
 ### Renda plena (full income)
 
@@ -64,7 +64,7 @@ Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
 ### Gráfico interativo: Escolha Trabalho-Lazer
 
-O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não-salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
+O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
 
 <iframe src="../graficos/cap16/trabalho-lazer.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
@@ -141,6 +141,53 @@ L^* = \frac{(1-\alpha)(wT + V)}{w}, \qquad h^* = T - L^* = \alpha T - \frac{(1-\
 \]
 
 Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\). Os efeitos renda e substituição se cancelam exatamente — uma propriedade conhecida das preferências Cobb-Douglas.
+
+---
+
+!!! example "Exercício Resolvido 16.1"
+    **Enunciado:** Um trabalhador tem preferências \(U(C,L) = C^{1/2}\, L^{1/2}\), dotação de tempo \(T = 16\) horas e renda não salarial \(V = 32\). O salário-hora é \(w\).
+
+    **Dados:** \(T = 16\), \(V = 32\), \(\alpha = 1/2\).
+
+    **Resolução:**
+
+    **Passo 1 — Demandas ótimas**
+
+    Com Cobb-Douglas \(U = C^\alpha L^{1-\alpha}\), as demandas marshallianas são:
+
+    \[
+    L^* = \frac{(1-\alpha)(wT + V)}{w} = \frac{1}{2}\cdot\frac{16w + 32}{w} = 8 + \frac{16}{w}
+    \]
+
+    \[
+    h^* = T - L^* = 16 - 8 - \frac{16}{w} = 8 - \frac{16}{w}
+    \]
+
+    \[
+    C^* = w\,h^* + V = w\!\left(8 - \frac{16}{w}\right) + 32 = 8w + 16
+    \]
+
+    **Passo 2 — Salário de reserva**
+
+    O trabalhador só oferta horas positivas se \(h^* > 0\):
+
+    \[
+    8 - \frac{16}{w} > 0 \;\Rightarrow\; w > 2
+    \]
+
+    O **salário de reserva** é \(w_R = 2\). Para \(w \leq 2\), o indivíduo não trabalha e consome apenas \(V = 32\).
+
+    **Passo 3 — Inclinação da oferta**
+
+    \[
+    \frac{\partial h^*}{\partial w} = \frac{16}{w^2} > 0
+    \]
+
+    A oferta é sempre positivamente inclinada (não há backward-bending).
+
+    **Resultado:** Para \(w = 4\), temos \(h^* = 8 - 4 = 4\) horas, \(L^* = 12\) horas e \(C^* = 48\).
+
+    **Interpretação econômica:** Quando \(V = 0\), a Cobb-Douglas gera oferta perfeitamente inelástica (\(h^* = \alpha T = 8\)). A renda não salarial \(V > 0\) quebra essa propriedade: com \(V = 32\), o trabalhador pode "se dar ao luxo" de trabalhar menos em salários baixos, mas aumenta suas horas à medida que o salário sobe — o efeito substituição domina o efeito renda da variação em \(w\).
 
 ---
 
@@ -228,7 +275,7 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 |---|---|---|---|
 | Aumento da produtividade | — | Desloca \(H^d\) para a direita | \(w^*\) sobe |
 | Imigração | Desloca \(H^s\) para a direita | — | \(w^*\) cai |
-| Aumento da renda não-salarial | Desloca \(H^s\) para a esquerda | — | \(w^*\) sobe |
+| Aumento da renda não salarial | Desloca \(H^s\) para a esquerda | — | \(w^*\) sobe |
 | Progresso tecnológico poupador de trabalho | — | Desloca \(H^d\) para a esquerda | \(w^*\) cai |
 
 ---
@@ -254,11 +301,36 @@ onde \(S\) é anos de escolaridade, \(X\) é experiência (ou idade − escolari
 
 ### Diferenciais compensatórios
 
-Adam Smith já observava que trabalhos mais desagradáveis, perigosos ou insalubres tendem a pagar salários mais altos. No equilíbrio, diferenças salariais refletem diferenças nas **características não-pecuniárias** dos empregos: risco de acidente, condições ambientais, horário, localização, estabilidade etc.
+Adam Smith já observava que trabalhos mais desagradáveis, perigosos ou insalubres tendem a pagar salários mais altos. No equilíbrio, diferenças salariais refletem diferenças nas **características não pecuniárias** dos empregos: risco de acidente, condições ambientais, horário, localização, estabilidade etc.
 
 ### Discriminação
 
 Diferenças salariais também podem refletir **discriminação** por gênero, raça, etnia ou outras características. Modelos como o de Becker (1957) e o de discriminação estatística ajudam a explicar por que a discriminação pode persistir em equilíbrio.
+
+---
+
+## Box Brasil: Retorno à Educação e Desigualdade Salarial
+
+!!! example "O prêmio salarial da educação e os hiatos de gênero e raça"
+    A equação de Mincer aplicada ao Brasil revela um dos maiores retornos à educação do mundo — e, ao mesmo tempo, uma desigualdade que persiste mesmo após o controle por escolaridade.
+
+    **Prêmio salarial do ensino superior:**
+
+    Segundo a PNAD Contínua/IBGE (2.º trimestre de 2024), trabalhadores com ensino superior completo recebem, em média, **126% a mais** do que aqueles com ensino médio completo ou superior incompleto. Esse diferencial, embora ainda elevado, caiu 26 pontos percentuais em 12 anos, refletindo a expansão do acesso ao ensino superior.
+
+    **Desigualdade por gênero:**
+
+    O 3.º Relatório de Transparência Salarial do MTE (2025) mostra que as mulheres recebem, em média, **20,7% a menos** que os homens. Quando se adiciona o recorte racial, o hiato se amplia: mulheres negras ganham **53% a menos** que homens brancos.
+
+    **Desigualdade por raça:**
+
+    Mesmo entre trabalhadores com diploma universitário, o rendimento médio de negros (R$ 4.798) é **32% inferior** ao de não negros (R$ 7.030), segundo a PNAD Contínua 2024. Essa diferença sugere que fatores além do capital humano — como discriminação no mercado de trabalho e segregação ocupacional — desempenham papel relevante.
+
+    **Conexão com a teoria:**
+
+    A teoria do capital humano (seção 16.6) explica parte substancial dos diferenciais salariais observados: mais educação → maior produtividade → salário mais alto. Contudo, os hiatos persistentes de gênero e raça, mesmo controlando por escolaridade, apontam para a relevância dos modelos de discriminação (Becker, 1957) e de barreiras estruturais no acesso a ocupações de alta remuneração.
+
+    *Fonte: PNAD Contínua/IBGE, 2.º tri 2024; MTE, 3.º Relatório de Transparência Salarial, 2025.*
 
 ---
 
@@ -307,6 +379,65 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
+!!! example "Exercício Resolvido 16.2"
+    **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
+
+    **Dados:** \(w(H) = 4 + 2H\); \(VPMg_L = 100 - 2H\).
+
+    **Resolução:**
+
+    **Passo 1 — Equilíbrio competitivo**
+
+    No equilíbrio competitivo, \(VPMg_L = w\):
+
+    \[
+    100 - 2H = 4 + 2H \;\Rightarrow\; 96 = 4H \;\Rightarrow\; H_c = 24, \quad w_c = 4 + 2(24) = 52
+    \]
+
+    **Passo 2 — Equilíbrio monopsonístico**
+
+    O custo total do trabalho é \(CT_L = w \cdot H = (4 + 2H)H = 4H + 2H^2\).
+
+    O custo marginal do trabalho é:
+
+    \[
+    CMg_L = \frac{dCT_L}{dH} = 4 + 4H
+    \]
+
+    Igualando \(VPMg_L = CMg_L\):
+
+    \[
+    100 - 2H = 4 + 4H \;\Rightarrow\; 96 = 6H \;\Rightarrow\; H_m = 16
+    \]
+
+    O salário pago é determinado pela curva de oferta:
+
+    \[
+    w_m = 4 + 2(16) = 36
+    \]
+
+    O valor do produto marginal no ponto de emprego monopsonístico é:
+
+    \[
+    VPMg_L(16) = 100 - 32 = 68
+    \]
+
+    **Exploração monopsonística:** \(VPMg_L - w_m = 68 - 36 = 32\).
+
+    **Passo 3 — Salário mínimo no monopsônio**
+
+    Com \(w_{\min} = 52\), o custo marginal do trabalho torna-se horizontal em 52 até \(H = 24\) (quando a oferta se iguala a 52):
+
+    \[
+    VPMg_L = w_{\min}:\quad 100 - 2H = 52 \;\Rightarrow\; H = 24
+    \]
+
+    **Resultado:** O salário mínimo eleva o emprego de 16 para 24 (+50%) e o salário de 36 para 52 (+44%), restaurando o equilíbrio competitivo.
+
+    **Interpretação econômica:** O salário mínimo elimina o poder monopsonístico ao tornar o custo marginal do trabalho constante. Este resultado contrasta com o modelo competitivo, no qual o salário mínimo sempre reduz o emprego — e ajuda a entender por que estudos empíricos (como Card e Krueger, 1994) encontram efeitos nulos ou positivos do salário mínimo sobre o emprego em mercados com concentração de empregadores.
+
+---
+
 ## 16.8 Sindicatos
 
 ### Objetivos dos sindicatos
@@ -334,15 +465,48 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
+## Box Brasil: Informalidade e Reforma Trabalhista
+
+!!! example "A informalidade estrutural e os efeitos da Reforma Trabalhista de 2017"
+    O mercado de trabalho brasileiro é marcado por uma taxa de informalidade persistentemente elevada, que condiciona a eficácia de políticas salariais e trabalhistas.
+
+    **Informalidade em números (PNAD Contínua/IBGE):**
+
+    | Indicador | 2024 | 2025 |
+    |---|---|---|
+    | Taxa de informalidade | 39,0% | 38,1% |
+    | Empregados com carteira (CLT) | 38,4 milhões | 39,4 milhões |
+    | Empregados sem carteira | 13,2 milhões | 13,4 milhões |
+    | Trabalhadores por conta própria | 25,4 milhões | 26,2 milhões |
+    | Rendimento real médio habitual | R$ 3.470 | R$ 3.652 |
+    | Taxa de desocupação | 6,6% | 5,6% |
+
+    *Fonte: PNAD Contínua/IBGE, médias anuais 2024-2025.*
+
+    **Reforma Trabalhista de 2017:**
+
+    A Lei 13.467/2017 promoveu ampla flexibilização das relações de trabalho, com destaque para o fim da contribuição sindical obrigatória. Os efeitos sobre os sindicatos foram imediatos e profundos:
+
+    - A **taxa de sindicalização** caiu de 16,1% (2012) para **8,4%** (2023), o menor patamar da série histórica do IBGE.
+    - A receita dos sindicatos despencou cerca de **90%** no primeiro ano após a reforma, comprometendo a capacidade de negociação coletiva e de fiscalização em regiões remotas.
+
+    **Conexão com a teoria:**
+
+    O modelo de monopólio sindical (seção 16.8) prevê que sindicatos mais fortes elevam salários acima do nível competitivo, ao custo de menor emprego. A drástica redução do poder sindical após 2017 representa um "experimento natural" que permite testar essa previsão: se o modelo está correto, o enfraquecimento sindical deveria aproximar os salários negociados do equilíbrio competitivo.
+
+    *Fonte: PNAD Contínua/IBGE; IPEA, Nota Técnica sobre Reforma Trabalhista, 2023.*
+
+---
+
 ## Box Brasil: Salário Mínimo no Brasil
 
 !!! example "O salário mínimo e o debate sobre o 'efeito-farol'"
-    O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de piso salarial para trabalhadores formais com carteira assinada. Ele serve como **referência** (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.
+    O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de um piso salarial para trabalhadores formais com carteira assinada. Ele serve como **referência** (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.
 
     **Fatos estilizados:**
 
     - O SM real cresceu significativamente entre 2003 e 2014, acumulando ganho real superior a 70% no período. A política de valorização do SM adotada a partir de 2007 previa reajustes pela inflação acumulada mais o crescimento do PIB.
-    - Segundo a PNAD Contínua/IBGE, cerca de 30 milhões de trabalhadores no Brasil recebem renda próxima de 1 SM, tornando-o o piso salarial efetivo de uma parcela enorme da força de trabalho.
+    - Em 2025, o SM atingiu **R$ 1.518**, beneficiando diretamente cerca de 59,9 milhões de brasileiros entre trabalhadores formais, informais, aposentados e pensionistas.
     - O **efeito-farol**, documentado em estudos do IPEA (Neri, Gonzaga e Camargo, 2001; Saboia, 2007), mostra que aumentos no SM elevam salários não apenas no setor formal, mas também no informal, e até afetam rendimentos de trabalhadores por conta própria e aposentadorias/pensões (que são indexadas ao SM).
 
     **Impactos sobre emprego e informalidade:**
@@ -351,26 +515,26 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     - Estudos como Corseuil e Carneiro (2001) encontraram efeitos negativos pequenos sobre o emprego formal, mas significativos sobre a informalidade.
     - Lemos (2009) mostrou que o efeito compressão salarial (redução da desigualdade) domina o efeito desemprego.
+    - Engbom e Moser (2022) estimam que a alta real de 128% do SM entre 1996 e 2018 explica **45% da queda da desigualdade salarial** no período, com efeitos limitados sobre o emprego total.
     - Dados do CAGED/MTE e da PNAD indicam que a elevação do SM tende a aumentar a proporção de trabalhadores na informalidade, pois empregadores que não conseguem pagar o novo piso migram para relações informais.
 
-    **Tabela: Composição do mercado de trabalho brasileiro (dados estilizados)**
+    **Tabela: Composição do mercado de trabalho brasileiro**
 
-    | Indicador | Valores aproximados (2023) |
+    | Indicador | Valores aproximados (2025) |
     |---|---|
-    | População ocupada total | 100 milhões |
-    | Trabalhadores com carteira (CLT) | 37 milhões |
-    | Trabalhadores sem carteira | 13 milhões |
-    | Trabalhadores por conta própria | 25 milhões |
+    | População ocupada total | 103 milhões |
+    | Trabalhadores com carteira (CLT) | 39,4 milhões |
+    | Trabalhadores sem carteira | 13,4 milhões |
+    | Trabalhadores por conta própria | 26,2 milhões |
     | Empregadores | 4 milhões |
     | Setor público (estatutários) | 12 milhões |
-    | Taxa de informalidade (IBGE) | ~39% |
-    | Salário médio real mensal habitual | ~R$ 3.000 |
-    | Salário mínimo vigente (2023) | R$ 1.320 |
-    | Rendimento mediano mensal | ~R$ 1.800 |
+    | Taxa de informalidade (IBGE) | 38,1% |
+    | Salário médio real mensal habitual | R$ 3.652 |
+    | Salário mínimo vigente (2025) | R$ 1.518 |
 
-    *Fonte: PNAD Contínua/IBGE; DIEESE; elaboração didática.*
+    *Fonte: PNAD Contínua/IBGE, média anual 2025; DIEESE.*
 
-    A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (cerca de 39%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal. Browning & Zupan (2014, Cap. 15) oferecem análise comparativa de políticas de salário mínimo e seus efeitos sobre emprego e informalidade em diferentes contextos institucionais.
+    A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (38,1%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal.
 
 ---
 
@@ -379,8 +543,8 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 | Variação | Efeito Substituição | Efeito Renda | Resultado sobre \(h^*\) |
 |---|---|---|---|
 | \(\uparrow w\) (salário sobe) | \(h\) sobe (lazer mais caro) | \(h\) cai (mais rico, quer mais lazer) | Ambíguo |
-| \(\uparrow V\) (renda não-salarial sobe) | Nenhum | \(h\) cai (mais rico) | \(h\) cai |
-| \(\uparrow p\) (preço do consumo sobe) | \(h\) sobe (consumo mais caro, substitui por lazer... mas lazer relativamente barato) | Depende | Ambíguo |
+| \(\uparrow V\) (renda não salarial sobe) | Nenhum | \(h\) cai (mais rico) | \(h\) cai |
+| \(\uparrow p\) (preço do consumo sobe) | Depende (o efeito sobre o preço relativo do lazer varia com a cesta) | Depende | Ambíguo |
 
 ---
 
@@ -388,7 +552,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 !!! note "Exercícios do Capítulo 16"
 
-**Exercício 16.1.** Um trabalhador tem preferências representadas por \(U(C,L) = \ln C + 2\ln L\). Sua dotação de tempo é \(T = 24\) horas por dia, a renda não-salarial é \(V = 0\) e o salário é \(w\).
+**Exercício 16.1.** Um trabalhador tem preferências representadas por \(U(C,L) = \ln C + 2\ln L\). Sua dotação de tempo é \(T = 24\) horas por dia, a renda não salarial é \(V = 0\) e o salário é \(w\).
 
 (a) Derive as demandas ótimas \(C^*(w)\) e \(L^*(w)\).
 
@@ -437,3 +601,151 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 (c) Quais são os principais canais pelos quais o aumento do salário mínimo pode afetar a distribuição de renda no Brasil?
 
 ---
+
+## Vem, ANPEC! 🏆
+
+!!! question "ANPEC 2022 — Microeconomia — Questão 06"
+    Suponha que João possui uma função de utilidade em renda (\(Y\)) e lazer (\(N\)) na forma \(U(Y, N) = U(wh, 24 - h)\), em que \(w\) é a taxa de salário por hora e \(h\) é o número de horas trabalhadas por dia. Indique quais das afirmações a seguir são verdadeiras:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Se João está trabalhando um número de horas por dia tal que a utilidade marginal da renda é 4 e a utilidade marginal do lazer é 2, sendo que a taxa de salário é 2, então João está maximizando a sua utilidade. |
+    | 1    | A curva de oferta de trabalho de João é construída subtraindo de 24 (o número de horas de um dia) a demanda por lazer, para cada taxa de salário. |
+    | 2    | O efeito substituição tem de ser negativo: um aumento na taxa de salário leva João a escolher um número menor de horas de lazer e um número maior de horas de trabalho. |
+    | 3    | Se lazer é um bem normal para João, o efeito substituição e o efeito renda atuam em direções opostas. O efeito que vai predominar dependerá do tamanho relativo dos dois efeitos. |
+    | 4    | Se João considerar lazer como um bem inferior, o seu efeito substituição e o seu efeito renda atuam na mesma direção, de tal forma que uma elevação no salário reduzirá suas horas de lazer. |
+
+    ??? success "Gabarito"
+        **Respostas: 01111**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A condição de ótimo exige \(UMg_N / UMg_Y = w\), ou seja, \(2/4 = 0{,}5\). Como \(w = 2 \neq 0{,}5\), João **não** está no ótimo. Ele deveria trabalhar mais horas (a utilidade marginal da renda ponderada pelo salário supera a utilidade marginal do lazer).
+        - **Item 1 — V:** Correto. A oferta de trabalho é \(h^*(w) = 24 - N^*(w)\), onde \(N^*(w)\) é a demanda marshalliana por lazer ao salário \(w\).
+        - **Item 2 — V:** Correto. O efeito substituição compensado do lazer em relação ao seu preço (\(w\)) é sempre negativo: um aumento em \(w\) encarece o lazer, levando a menos lazer e mais trabalho (pela convexidade das preferências).
+        - **Item 3 — V:** Correto. Se lazer é normal, o efeito renda de um aumento em \(w\) eleva a demanda por lazer (reduz \(h\)), enquanto o efeito substituição reduz o lazer (eleva \(h\)). Os dois efeitos atuam em sentidos opostos — é a base da curva backward-bending.
+        - **Item 4 — V:** Correto. Se lazer é inferior, o efeito renda de um aumento em \(w\) **reduz** a demanda por lazer (mesma direção do efeito substituição). Ambos levam a menos lazer e mais trabalho: a oferta de trabalho é inequivocamente positivamente inclinada.
+
+!!! question "ANPEC 2013 — Microeconomia — Questão 10"
+    Com relação ao mercado de fatores, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | A demanda de um setor por determinado insumo é a soma horizontal das demandas desse insumo por todas as empresas do setor. |
+    | 1    | A curva de oferta de trabalho pode apresentar um trecho com inclinação negativa se o efeito-renda associado a uma remuneração mais elevada for maior que o efeito-substituição. |
+    | 2    | Quando o comprador de um insumo tem poder de monopsônio, a curva de despesa marginal se situa abaixo da curva de despesa média. |
+    | 3    | Para um monopolista o produto da receita marginal será sempre menor do que o valor do produto marginal. |
+    | 4    | Se um monopolista upstream vender um fator de produção para um monopolista downstream, o preço final do produto será afetado por um mark-up duplo. |
+
+    ??? success "Gabarito"
+        **Respostas: 01011**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A demanda do setor por um insumo **não** é a simples soma horizontal das demandas individuais. Quando todas as firmas de um setor expandem o uso do insumo e aumentam a produção, o preço do produto cai, deslocando para baixo a curva de \(VPMg\) de cada firma. A curva de demanda setorial é mais inclinada do que a soma horizontal.
+        - **Item 1 — V:** Correto. A curva backward-bending ocorre quando o efeito renda (que leva o trabalhador a demandar mais lazer) supera o efeito substituição (que encarece o lazer). É exatamente a condição formalizada na seção 16.3.
+        - **Item 2 — F:** A curva de despesa marginal situa-se **acima** da curva de despesa média (oferta), não abaixo. Como \(CMg_L = w + H \cdot w'(H) > w\), o custo marginal de contratar um trabalhador adicional excede o salário pago.
+        - **Item 3 — V:** Correto. Para um monopolista, \(RMg < P\), portanto \(PRMg_L = RMg \times PMg_L < P \times PMg_L = VPMg_L\). O produto da receita marginal é menor que o valor do produto marginal.
+        - **Item 4 — V:** Correto. Trata-se do problema de **dupla marginalização**: o monopolista upstream aplica um markup sobre seu custo marginal, e o monopolista downstream aplica outro markup sobre o preço de compra, resultando em preço final mais alto e quantidade menor do que se houvesse um monopolista integrado.
+
+!!! question "ANPEC 2017 — Microeconomia — Questão 13"
+    O único agente de uma economia valoriza comida (\(C\)) e tempo de descanso (\(D\)). Suas preferências são representadas pela função \(U(D, C) = D^{1/5}C^{4/5}\), sendo descanso medido em horas diárias. As horas do dia não descansadas são dedicadas ao trabalho (\(L\)) de obter comida, segundo a função de produção \(C = \sqrt{L}\). Apesar da existência de um agente, imagine que temos mercados competitivos com uma firma maximizando lucro, contratando trabalho no mercado de trabalho e um consumidor vendendo sua dotação de tempo, comprando de volta descanso e comida, a "preços de mercado". Fixe em \$1 o preço da hora de trabalho e considere \(P\) o preço da comida.
+
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Em equilíbrio, o lucro da firma será \$15. |
+    | 1    | Em equilíbrio, \(P = \$10\). |
+    | 2    | O consumidor escolhe quatro unidades de comida. |
+    | 3    | A renda nominal do consumidor, composta do valor da dotação de tempo mais o lucro da firma, é igual a \$40. |
+    | 4    | Se \(P\) cair pela metade do valor de equilíbrio, haverá excesso de oferta de trabalho, mas a somatória dos valores dos excessos de demanda pelos dois bens será nula. |
+
+    ??? success "Gabarito"
+        **Respostas: 00111**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A firma maximiza \(\pi = P\sqrt{L} - L\). A CPO é \(P/(2\sqrt{L}) = 1\), logo \(L = P^2/4\) e \(\pi = P \cdot P/2 - P^2/4 = P^2/4\). Em equilíbrio (ver item 1), \(P = 8\), então \(\pi = 64/4 = 16 \neq 15\).
+        - **Item 1 — F:** O consumidor com Cobb-Douglas \(U = D^{1/5}C^{4/5}\) gasta \(1/5\) da renda em descanso e \(4/5\) em comida. Renda = \(24 + \pi = 24 + P^2/4\). Demanda por descanso: \(D = (24 + P^2/4)/5\). Oferta de trabalho: \(L^s = 24 - D\). Demanda por trabalho: \(L^d = P^2/4\). Equilíbrio: \(24 - (24 + P^2/4)/5 = P^2/4\). Resolvendo: \(120 - 24 - P^2/4 = 5P^2/4\), ou seja, \(96 = 6P^2/4 = 3P^2/2\), logo \(P^2 = 64\) e \(P = 8 \neq 10\).
+        - **Item 2 — V:** Com \(P = 8\): \(L = 64/4 = 16\), \(C = \sqrt{16} = 4\). Correto.
+        - **Item 3 — V:** Renda = dotação de tempo + lucro = \(24 \times 1 + 16 = 40\). Correto.
+        - **Item 4 — V:** Pela **Lei de Walras**, a soma dos valores dos excessos de demanda em todos os mercados é identicamente nula, independentemente dos preços. Se \(P = 4\): a firma demanda \(L^d = 4\), o consumidor oferta \(L^s = 18{,}4\), excesso de oferta de trabalho = \(14{,}4\); a firma oferta \(C^s = 2\), o consumidor demanda \(C^d = 5{,}6\), excesso de demanda de comida = \(3{,}6\). Valor: \(1 \times (-14{,}4) + 4 \times 3{,}6 = -14{,}4 + 14{,}4 = 0\). Correto.
+
+---
+
+## Apêndice: A Pesquisa em Ação 🔬
+
+### Salário Mínimo e Desigualdade no Brasil
+
+> **Referência completa:** Engbom, Niklas, e Christian Moser. "Earnings Inequality and the Minimum Wage: Evidence from Brazil."
+> *American Economic Review*, 112(12): 3803–3847, 2022.
+> DOI: 10.1257/aer.20181506
+
+**A pergunta**
+
+O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.
+
+**Como os autores responderam**
+
+Engbom e Moser combinaram dados administrativos de empregadores e empregados (RAIS) com pesquisas domiciliares (PNAD) cobrindo mais de duas décadas. Para isolar o efeito causal do salário mínimo, desenvolveram um modelo de equilíbrio com firmas e trabalhadores heterogêneos, estimado estruturalmente nos dados brasileiros. O modelo permite que o salário mínimo afete não apenas os trabalhadores que recebem exatamente o piso, mas também aqueles acima dele — os chamados *spillover effects*.
+
+**O que descobriram**
+
+O aumento real do salário mínimo explica aproximadamente **45% da substancial queda na desigualdade salarial** no Brasil no período. Os efeitos de spillover são grandes: salários bem acima do mínimo também foram comprimidos em direção à média. Surpreendentemente, os efeitos sobre emprego e produto agregado foram **modestos**, pois o salário mínimo induziu a realocação de trabalhadores de firmas menos produtivas para firmas mais produtivas — um efeito de seleção positivo.
+
+**Por que isso importa**
+
+O resultado desafia a visão de livro-texto de que aumentos expressivos do salário mínimo necessariamente geram desemprego significativo. No contexto brasileiro, o SM funcionou como um instrumento redistributivo poderoso, com custos de eficiência limitados. Isso tem implicações diretas para a política de valorização do salário mínimo retomada a partir de 2023.
+
+**Conexão com este capítulo**
+
+O paper conecta-se diretamente com as seções 16.5 (equilíbrio competitivo) e 16.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
+
+---
+
+### Informalidade e Salários em Países em Desenvolvimento
+
+> **Referência completa:** Meghir, Costas, Renata Narita, e Jean-Marc Robin. "Wages and Informality in Developing Countries."
+> *American Economic Review*, 105(4): 1509–1546, 2015.
+> DOI: 10.1257/aer.20121110
+
+**A pergunta**
+
+Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
+
+**Como os autores responderam**
+
+Os autores — entre eles a brasileira Renata Narita — construíram um modelo de equilíbrio com *wage-posting* (firmas fixam salários), busca sequencial por emprego (trabalhadores procuram empregos estando empregados ou desempregados) e escolha endógena do setor (formal ou informal) por firmas heterogêneas. O modelo foi estimado com dados da Pesquisa Mensal de Emprego (PME/IBGE) do Brasil.
+
+**O que descobriram**
+
+Firmas de produtividade similar podem se localizar em setores diferentes — algumas no formal, outras no informal —, gerando **diferenciais compensatórios** entre os setores. Os salários formais incorporam um "prêmio" que compensa os custos da formalização (impostos, encargos), mas os trabalhadores informais enfrentam maior rotatividade e menor proteção. O resultado mais importante: **aumentar a fiscalização** trabalhista não eleva o desemprego. Ao contrário, melhora a alocação de trabalhadores para firmas mais produtivas e intensifica a competição no setor formal, elevando salários, produto e bem-estar agregados.
+
+**Por que isso importa**
+
+O paper fornece base teórica e empírica para políticas de combate à informalidade. No Brasil, a Reforma Trabalhista de 2017 seguiu uma direção oposta (flexibilização), e a taxa de informalidade permanece elevada (38,1% em 2025). O modelo sugere que o caminho para reduzir a informalidade sem causar desemprego passa por melhorar a fiscalização e reduzir os custos de formalização — e não por enfraquecer a legislação trabalhista.
+
+**Conexão com este capítulo**
+
+O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 16.5–16.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
+
+---
+
+## Referências
+
+- Becker, G. S. (1957). *The Economics of Discrimination*. University of Chicago Press.
+- Becker, G. S. (1964). *Human Capital*. Columbia University Press.
+- Card, D., e A. B. Krueger (1994). "Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania." *American Economic Review*, 84(4): 772–793.
+- Corseuil, C. H., e F. G. Carneiro (2001). "Os Impactos do Salário Mínimo sobre Emprego e Salários no Brasil." *Pesquisa e Planejamento Econômico*, 31(3).
+- Engbom, N., e C. Moser (2022). "Earnings Inequality and the Minimum Wage: Evidence from Brazil." *American Economic Review*, 112(12): 3803–3847.
+- Lemos, S. (2009). "Minimum Wage Effects in a Developing Country." *Labour Economics*, 16(2): 224–237.
+- McDonald, I. M., e R. M. Solow (1981). "Wage Bargaining and Employment." *American Economic Review*, 71(5): 896–908.
+- Meghir, C., R. Narita, e J.-M. Robin (2015). "Wages and Informality in Developing Countries." *American Economic Review*, 105(4): 1509–1546.
+- Neri, M., G. Gonzaga, e J. M. Camargo (2001). "Efeitos Informais do Salário Mínimo e Pobreza." *Texto para Discussão*, IPEA.
+- Saboia, J. (2007). "O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil." In: *Desigualdade de Renda no Brasil*. IPEA.
+- Schultz, T. W. (1961). "Investment in Human Capital." *American Economic Review*, 51(1): 1–17.
