@@ -62,7 +62,7 @@ A ancoragem tem implicações importantes para a economia: negociações salaria
 
 O **excesso de confiança** (*overconfidence*) manifesta-se de várias formas: superestimação das próprias habilidades, calibração inadequada de intervalos de confiança e a ilusão de controle sobre eventos aleatórios. Quando perguntados, a maioria dos motoristas se declara "acima da média" — uma impossibilidade estatística. Investidores excessivamente confiantes tendem a negociar com frequência excessiva, reduzindo seus retornos líquidos (Barber e Odean 2001).
 
-!!! tip "Box Brasil — Efeito disposição na B3"
+!!! example "Box Brasil — Efeito disposição na B3"
     O **efeito disposição** — a tendência a vender ações vencedoras cedo demais e manter ações perdedoras por tempo demais — é uma manifestação conjunta de aversão à perda e excesso de confiança. Estudos com dados de investidores pessoa física na B3 (antiga BM&FBovespa) documentam esse padrão de forma robusta. Estudos empíricos usando dados de corretoras brasileiras encontraram que investidores individuais realizam ganhos com frequência significativamente maior do que realizam perdas. Esse comportamento é custoso: as ações vendidas (vencedoras) tendem a ter desempenho futuro superior ao das ações mantidas (perdedoras), gerando retornos líquidos menores para o investidor.
 
 Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a análise da decisão sob risco incorporando esses fenômenos de forma estruturada.
@@ -170,7 +170,7 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma = 0{,}61\).
 !!! idea "Intuição Econômica 💡"
     A ponderação de probabilidades resolve um paradoxo do comportamento humano: **a mesma pessoa** compra bilhete de loteria (sobrevalorizando uma probabilidade minúscula de ganho) **e** contrata seguro contra catástrofe (sobrevalorizando uma probabilidade minúscula de perda). Sob utilidade esperada linear em probabilidades, essas duas atitudes são inconsistentes. Sob a Teoria do Prospecto, ambas decorrem naturalmente da sobrevalorização de eventos raros combinada com a assimetria da função valor.
 
-!!! tip "Box Brasil — A Mega-Sena e a sobrevalorização de probabilidades pequenas"
+!!! example "Box Brasil — A Mega-Sena e a sobrevalorização de probabilidades pequenas"
     A probabilidade de acertar as seis dezenas da Mega-Sena é de aproximadamente 1 em 50 milhões. Mesmo assim, milhões de brasileiros apostam regularmente. O valor esperado de uma aposta de R\$ 5,00 é tipicamente negativo (parte da arrecadação financia programas sociais via Caixa Econômica Federal). Sob utilidade esperada com probabilidades lineares, apostar seria irracional para qualquer agente avesso ao risco. A Teoria do Prospecto oferece uma explicação: a função de ponderação transforma a probabilidade objetiva minúscula (\(p \approx 0{,}00000002\)) em um peso decisório substancialmente maior, tornando a aposta subjetivamente atraente. O prazer antecipatório de imaginar o ganho faz parte do "produto" consumido — algo que o modelo neoclássico não captura.
 
 ### 8.2.4 Efeito dotação e efeito framing
@@ -182,7 +182,7 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 !!! example "Canecas de Kahneman, Knetsch e Thaler"
     No experimento clássico de Kahneman, Knetsch e Thaler (1990), metade dos participantes recebeu uma caneca de café da universidade. Quando questionados sobre o preço mínimo para vendê-la, os "donos" pediram em média US\$ 7,12. Os "compradores" (que não receberam a caneca) ofereceram em média US\$ 2,87. A simples posse — a dotação — mais que dobrou a valoração do objeto.
 
-!!! tip "Box Brasil — Efeito dotação no mercado imobiliário"
+!!! example "Box Brasil — Efeito dotação no mercado imobiliário"
     O mercado imobiliário brasileiro oferece uma ilustração vívida do efeito dotação. Dados do índice FipeZap mostram que, em períodos de desaceleração econômica, os preços de venda de imóveis residenciais resistem a cair mesmo quando o volume de transações despenca. Proprietários que compraram seus imóveis a preços elevados relutam em vender abaixo do preço de aquisição — o ponto de referência —, preferindo manter o imóvel fora do mercado por meses ou anos. Essa rigidez de preços para baixo é difícil de explicar pela teoria neoclássica pura, mas é uma previsão natural da aversão à perda: vender abaixo do preço de compra é codificado como "perda", e a dor dessa perda supera o benefício racional de liquidar o ativo e realocar o capital.
 
 **Efeito framing.** A forma como uma decisão é apresentada afeta sistematicamente as escolhas, mesmo quando as opções são logicamente equivalentes.
@@ -309,7 +309,7 @@ Essa tensão entre o eu presente e o eu futuro pode ser modelada como um **jogo 
 
 Agentes que reconhecem sua inconsistência temporal são chamados **sofisticados**; agentes que (erroneamente) acreditam que suas preferências futuras serão consistentes são chamados **ingênuos** (*naïfs*). Sofisticados buscam compromissos; ingênuos procrastinam repetidamente.
 
-!!! tip "Box Brasil — Crédito rotativo e viés do presente"
+!!! example "Box Brasil — Crédito rotativo e viés do presente"
     O crédito rotativo do cartão de crédito no Brasil cobra taxas de juros que figuram entre as mais altas do mundo — segundo dados do Banco Central do Brasil, a taxa média do rotativo superou 400% ao ano em diversos momentos recentes. Muitos consumidores, ao optar por pagar apenas o valor mínimo da fatura, subestimam o custo total acumulado das parcelas futuras. Esse comportamento é consistente com o desconto quasi-hiperbólico: o alívio imediato de não pagar a fatura integral (benefício no período \(t = 0\)) é sobrevalorizado em relação ao custo dos juros compostos nos períodos seguintes (descontados por \(\beta\delta^t\) com \(\beta < 1\)). A Lei do Superendividamento (Lei nº 14.181/2021) reconheceu implicitamente esse padrão ao criar mecanismos de renegociação e preservação do mínimo existencial.
 
 ---
@@ -371,12 +371,12 @@ A economia comportamental e os nudges não são panaceias:
 - **Persistência.** Muitos nudges perdem eficácia com o tempo, à medida que os agentes se habituam.
 - **Problemas estruturais.** Nudges são complementos, não substitutos, de políticas públicas robustas. Nenhum nudge compensa salários insuficientes ou ausência de acesso a serviços financeiros.
 
-!!! tip "Box Brasil — Nudges em políticas públicas federais"
+!!! example "Box Brasil — Nudges em políticas públicas federais"
     O governo federal brasileiro tem incorporado gradualmente princípios de economia comportamental em políticas públicas. A rotulagem frontal com **lupa de advertência** da Anvisa (2022), para alimentos ricos em açúcar, gordura saturada e sódio, é um nudge clássico de saliência: destaca a informação mais relevante no momento da decisão de compra. O Programa Nacional de Imunizações (PNI) utiliza lembretes por SMS e notificações via aplicativo do SUS para aumentar a adesão a campanhas de vacinação — um exemplo de feedback e saliência. No sistema financeiro, o *Open Finance* do Banco Central (implementado a partir de 2021) facilita a comparação de produtos financeiros entre instituições, reduzindo a ancoragem ao banco de relacionamento e combatendo a inércia do *status quo* via portabilidade simplificada de crédito.
 
 ---
 
-!!! note "Exercícios do Capítulo 8"
+!!! tip "Exercícios do Capítulo 8"
 
     **Exercício 8.1.** Um investidor avalia duas opções: (A) ganhar R\$ 500 com certeza; (B) ganhar R\$ 1.000 com probabilidade \(0{,}50\). Sob utilidade esperada com função de utilidade côncava, o investidor prefere A. Agora considere: (C) perder R\$ 500 com certeza; (D) perder R\$ 1.000 com probabilidade \(0{,}50\). Sob a Teoria do Prospecto, qual a escolha provável em cada par? Explique usando as propriedades da função valor.
 
@@ -401,87 +401,71 @@ A economia comportamental e os nudges não são panaceias:
 
 ## Apêndice: A Pesquisa em Ação 🔬
 
-### Teoria do Prospecto: o artigo que mudou a economia
+??? abstract "Kahneman, Daniel; Tversky, Amos. (1979). [Prospect Theory: An Analysis of Decision under Risk](https://doi.org/10.2307/1914185). *Econometrica*, 47(2): 263–291. DOI: [10.2307/1914185](https://doi.org/10.2307/1914185)"
 
-> **Referência completa:** Kahneman, Daniel, e Amos Tversky. "Prospect Theory: An Analysis of Decision under Risk."
-> *Econometrica*, 47(2): 263–291, 1979.
-> DOI: [10.2307/1914185](https://doi.org/10.2307/1914185)
+    **A pergunta**
 
-**A pergunta**
+    O modelo de utilidade esperada de Von Neumann e Morgenstern era, até os anos 1970, o arcabouço dominante para analisar decisões sob risco. Mas uma série de experimentos revelava violações sistemáticas de seus axiomas — o paradoxo de Allais, o efeito certeza, a sensibilidade à forma de apresentação dos problemas. Kahneman e Tversky perguntaram: é possível construir um modelo alternativo que descreva melhor o comportamento observado, preservando poder preditivo?
 
-O modelo de utilidade esperada de Von Neumann e Morgenstern era, até os anos 1970, o arcabouço dominante para analisar decisões sob risco. Mas uma série de experimentos revelava violações sistemáticas de seus axiomas — o paradoxo de Allais, o efeito certeza, a sensibilidade à forma de apresentação dos problemas. Kahneman e Tversky perguntaram: é possível construir um modelo alternativo que descreva melhor o comportamento observado, preservando poder preditivo?
+    **Como os autores responderam**
 
-**Como os autores responderam**
+    O artigo combina evidência experimental com construção teórica. Kahneman e Tversky apresentaram uma série de problemas de escolha a estudantes e docentes universitários, documentando padrões robustos de violação da utilidade esperada: o efeito certeza (sobrevalorização de resultados certos), o efeito reflexão (reversão de atitudes em relação ao risco entre ganhos e perdas) e o efeito isolamento (sensibilidade ao framing). A partir desses padrões, propuseram a Teoria do Prospecto — um modelo em que os agentes avaliam resultados como ganhos ou perdas relativos a um ponto de referência, usando uma função valor côncava para ganhos e convexa para perdas, com inclinação maior no domínio das perdas (aversão à perda). As probabilidades são transformadas por uma função de ponderação não linear.
 
-O artigo combina evidência experimental com construção teórica. Kahneman e Tversky apresentaram uma série de problemas de escolha a estudantes e docentes universitários, documentando padrões robustos de violação da utilidade esperada: o efeito certeza (sobrevalorização de resultados certos), o efeito reflexão (reversão de atitudes em relação ao risco entre ganhos e perdas) e o efeito isolamento (sensibilidade ao framing). A partir desses padrões, propuseram a Teoria do Prospecto — um modelo em que os agentes avaliam resultados como ganhos ou perdas relativos a um ponto de referência, usando uma função valor côncava para ganhos e convexa para perdas, com inclinação maior no domínio das perdas (aversão à perda). As probabilidades são transformadas por uma função de ponderação não linear.
+    **O que descobriram**
 
-**O que descobriram**
+    Os experimentos confirmaram três fenômenos centrais. Primeiro, a maioria dos participantes preferiu um ganho certo de 3.000 a uma loteria com valor esperado superior (4.000 com 80% de chance), mas inverteu a preferência no domínio das perdas (arriscando para evitar uma perda certa). Segundo, a função valor exibiu sensibilidade decrescente tanto para ganhos quanto para perdas — o impacto marginal de cada unidade adicional diminui à medida que nos afastamos do ponto de referência. Terceiro, a ponderação de probabilidades mostrou-se consistentemente não linear: probabilidades pequenas são sobrevalorizadas e probabilidades altas, subvalorizadas.
 
-Os experimentos confirmaram três fenômenos centrais. Primeiro, a maioria dos participantes preferiu um ganho certo de 3.000 a uma loteria com valor esperado superior (4.000 com 80% de chance), mas inverteu a preferência no domínio das perdas (arriscando para evitar uma perda certa). Segundo, a função valor exibiu sensibilidade decrescente tanto para ganhos quanto para perdas — o impacto marginal de cada unidade adicional diminui à medida que nos afastamos do ponto de referência. Terceiro, a ponderação de probabilidades mostrou-se consistentemente não linear: probabilidades pequenas são sobrevalorizadas e probabilidades altas, subvalorizadas.
+    **Por que isso importa**
 
-**Por que isso importa**
+    O artigo é um dos mais citados na história da economia (mais de 80.000 citações no Google Scholar). Inaugurou o campo da economia comportamental e rendeu a Kahneman o Prêmio Nobel de Economia em 2002 (Tversky havia falecido em 1996). A Teoria do Prospecto transformou áreas como finanças comportamentais, economia da saúde, direito e economia e desenho de políticas públicas.
 
-O artigo é um dos mais citados na história da economia (mais de 80.000 citações no Google Scholar). Inaugurou o campo da economia comportamental e rendeu a Kahneman o Prêmio Nobel de Economia em 2002 (Tversky havia falecido em 1996). A Teoria do Prospecto transformou áreas como finanças comportamentais, economia da saúde, direito e economia e desenho de políticas públicas.
+    **Conexão com este capítulo**
 
-**Conexão com este capítulo**
+    O artigo fornece os fundamentos teóricos e experimentais das Seções 8.2.1 a 8.2.4: a função valor em S, a aversão à perda, a ponderação de probabilidades e os efeitos de dotação e framing. Toda a estrutura analítica do capítulo sobre decisão sob risco se apoia neste trabalho seminal.
 
-O artigo fornece os fundamentos teóricos e experimentais das Seções 8.2.1 a 8.2.4: a função valor em S, a aversão à perda, a ponderação de probabilidades e os efeitos de dotação e framing. Toda a estrutura analítica do capítulo sobre decisão sob risco se apoia neste trabalho seminal.
+??? abstract "Madrian, Brigitte C.; Shea, Dennis F. (2001). [The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior](https://doi.org/10.1162/003355301753265543). *Quarterly Journal of Economics*, 116(4): 1149–1187. DOI: [10.1162/003355301753265543](https://doi.org/10.1162/003355301753265543)"
 
----
+    **A pergunta**
 
-### O poder do *default*: inércia e poupança previdenciária
+    Os planos de poupança previdenciária nos Estados Unidos (401(k)) oferecem vantagens fiscais substanciais, mas muitos trabalhadores elegíveis simplesmente não aderem. A teoria da escolha racional prevê que, diante de incentivos tão generosos, a adesão deveria ser quase universal. Por que não é? E o que acontece quando a arquitetura de escolha muda?
 
-> **Referência completa:** Madrian, Brigitte C., e Dennis F. Shea. "The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior."
-> *Quarterly Journal of Economics*, 116(4): 1149–1187, 2001.
-> DOI: [10.1162/003355301753265543](https://doi.org/10.1162/003355301753265543)
+    **Como os autores responderam**
 
-**A pergunta**
+    Madrian e Shea analisaram uma mudança natural de política em uma grande empresa americana que, em 1998, passou da adesão voluntária (*opt-in*) para a adesão automática (*opt-out*) em seu plano 401(k). Sob o novo regime, todos os novos funcionários eram automaticamente inscritos com uma contribuição de 3% do salário e investimento no fundo conservador padrão, podendo optar por sair ou alterar a configuração a qualquer momento. Os autores compararam coortes de funcionários contratados antes e depois da mudança, controlando por características observáveis.
 
-Os planos de poupança previdenciária nos Estados Unidos (401(k)) oferecem vantagens fiscais substanciais, mas muitos trabalhadores elegíveis simplesmente não aderem. A teoria da escolha racional prevê que, diante de incentivos tão generosos, a adesão deveria ser quase universal. Por que não é? E o que acontece quando a arquitetura de escolha muda?
+    **O que descobriram**
 
-**Como os autores responderam**
+    A taxa de participação no 401(k) saltou de **49% para 86%** entre funcionários com 3 a 15 meses de empresa. A adesão automática teve impacto particularmente forte entre grupos historicamente sub-representados: trabalhadores jovens, de menor renda e minorias étnicas. No entanto, os autores também identificaram um efeito colateral: muitos funcionários permaneceram na taxa de contribuição *default* de 3% e no fundo de investimento *default* — mesmo que uma análise individualizada pudesse sugerir contribuições maiores ou alocações diferentes. A inércia que promove a adesão é a mesma que impede a personalização.
 
-Madrian e Shea analisaram uma mudança natural de política em uma grande empresa americana que, em 1998, passou da adesão voluntária (*opt-in*) para a adesão automática (*opt-out*) em seu plano 401(k). Sob o novo regime, todos os novos funcionários eram automaticamente inscritos com uma contribuição de 3% do salário e investimento no fundo conservador padrão, podendo optar por sair ou alterar a configuração a qualquer momento. Os autores compararam coortes de funcionários contratados antes e depois da mudança, controlando por características observáveis.
+    **Por que isso importa**
 
-**O que descobriram**
+    O estudo demonstrou que a **arquitetura de escolha** — e não apenas os incentivos econômicos — pode ter impacto de primeira ordem sobre decisões financeiras de longo prazo. Inspirou o programa *Save More Tomorrow* (Thaler e Benartzi 2004) e influenciou legislações ao redor do mundo, incluindo a adesão automática na Funpresp (previdência complementar de servidores públicos federais brasileiros).
 
-A taxa de participação no 401(k) saltou de **49% para 86%** entre funcionários com 3 a 15 meses de empresa. A adesão automática teve impacto particularmente forte entre grupos historicamente sub-representados: trabalhadores jovens, de menor renda e minorias étnicas. No entanto, os autores também identificaram um efeito colateral: muitos funcionários permaneceram na taxa de contribuição *default* de 3% e no fundo de investimento *default* — mesmo que uma análise individualizada pudesse sugerir contribuições maiores ou alocações diferentes. A inércia que promove a adesão é a mesma que impede a personalização.
+    **Conexão com este capítulo**
 
-**Por que isso importa**
+    O artigo é a demonstração empírica central dos conceitos da Seção 8.4: o poder do *default*, o viés do *status quo* e os limites dos nudges. Mostra que a inércia é uma faca de dois gumes — resolve o problema da não adesão, mas pode travar os participantes em configurações subótimas.
 
-O estudo demonstrou que a **arquitetura de escolha** — e não apenas os incentivos econômicos — pode ter impacto de primeira ordem sobre decisões financeiras de longo prazo. Inspirou o programa *Save More Tomorrow* (Thaler e Benartzi 2004) e influenciou legislações ao redor do mundo, incluindo a adesão automática na Funpresp (previdência complementar de servidores públicos federais brasileiros).
+??? abstract "Laibson, David. (1997). [Golden Eggs and Hyperbolic Discounting](https://doi.org/10.1162/003355397555253). *Quarterly Journal of Economics*, 112(2): 443–478. DOI: [10.1162/003355397555253](https://doi.org/10.1162/003355397555253)"
 
-**Conexão com este capítulo**
+    **A pergunta**
 
-O artigo é a demonstração empírica central dos conceitos da Seção 8.4: o poder do *default*, o viés do *status quo* e os limites dos nudges. Mostra que a inércia é uma faca de dois gumes — resolve o problema da não adesão, mas pode travar os participantes em configurações subótimas.
+    Por que tantas pessoas poupam menos do que gostariam? Por que existem instrumentos financeiros ilíquidos — como planos de previdência com penalidade por resgate antecipado — que os consumidores voluntariamente escolhem, mesmo quando opções líquidas com retornos semelhantes estão disponíveis? A teoria do desconto exponencial não consegue explicar por que os agentes demandam restrições à sua própria liberdade futura.
 
----
+    **Como os autores responderam**
 
-### Ovos de ouro e desconto hiperbólico
+    Laibson construiu um modelo de consumo intertemporal em que os agentes descontam o futuro de forma quasi-hiperbólica (usando a estrutura \(\beta, \delta\)), em vez de exponencial. Nesse modelo, o agente em cada período tem um viés em favor do consumo presente, mas é sofisticado — reconhece que seus "eus futuros" terão o mesmo viés. Isso cria uma demanda endógena por **mecanismos de compromisso**: ativos ilíquidos funcionam como "algemas douradas" (*golden eggs*) que protegem a poupança da tentação de consumir.
 
-> **Referência completa:** Laibson, David. "Golden Eggs and Hyperbolic Discounting."
-> *Quarterly Journal of Economics*, 112(2): 443–478, 1997.
-> DOI: [10.1162/003355397555253](https://doi.org/10.1162/003355397555253)
+    **O que descobriram**
 
-**A pergunta**
+    O modelo explica simultaneamente vários fatos estilizados: (i) a baixa poupança observada em relação às previsões do modelo de ciclo de vida padrão; (ii) a coexistência de ativos líquidos (com baixa remuneração) e ilíquidos (com retornos maiores) nos portfólios dos consumidores; (iii) a queda abrupta do consumo na aposentadoria (o "enigma da aposentadoria"); e (iv) a alta sensibilidade do consumo a variações previsíveis de renda, incompatível com a suavização perfeita prevista pelo modelo padrão.
 
-Por que tantas pessoas poupam menos do que gostariam? Por que existem instrumentos financeiros ilíquidos — como planos de previdência com penalidade por resgate antecipado — que os consumidores voluntariamente escolhem, mesmo quando opções líquidas com retornos semelhantes estão disponíveis? A teoria do desconto exponencial não consegue explicar por que os agentes demandam restrições à sua própria liberdade futura.
+    **Por que isso importa**
 
-**Como os autores responderam**
+    O artigo formalizou a ideia de que a demanda por iliquidez é racional em um mundo de agentes com viés do presente. Tornou-se a referência central para o uso do modelo \((\beta, \delta)\) em macroeconomia e finanças domésticas, e influenciou o desenho de produtos financeiros e políticas previdenciárias.
 
-Laibson construiu um modelo de consumo intertemporal em que os agentes descontam o futuro de forma quasi-hiperbólica (usando a estrutura \(\beta, \delta\)), em vez de exponencial. Nesse modelo, o agente em cada período tem um viés em favor do consumo presente, mas é sofisticado — reconhece que seus "eus futuros" terão o mesmo viés. Isso cria uma demanda endógena por **mecanismos de compromisso**: ativos ilíquidos funcionam como "algemas douradas" (*golden eggs*) que protegem a poupança da tentação de consumir.
+    **Conexão com este capítulo**
 
-**O que descobriram**
-
-O modelo explica simultaneamente vários fatos estilizados: (i) a baixa poupança observada em relação às previsões do modelo de ciclo de vida padrão; (ii) a coexistência de ativos líquidos (com baixa remuneração) e ilíquidos (com retornos maiores) nos portfólios dos consumidores; (iii) a queda abrupta do consumo na aposentadoria (o "enigma da aposentadoria"); e (iv) a alta sensibilidade do consumo a variações previsíveis de renda, incompatível com a suavização perfeita prevista pelo modelo padrão.
-
-**Por que isso importa**
-
-O artigo formalizou a ideia de que a demanda por iliquidez é racional em um mundo de agentes com viés do presente. Tornou-se a referência central para o uso do modelo \((\beta, \delta)\) em macroeconomia e finanças domésticas, e influenciou o desenho de produtos financeiros e políticas previdenciárias.
-
-**Conexão com este capítulo**
-
-O modelo de Laibson é a formalização teórica direta do desconto quasi-hiperbólico apresentado na Seção 8.3.3. O conceito de "ovos de ouro" conecta a teoria do viés do presente à demanda por instrumentos de compromisso discutida na Seção 8.3.4 e ao Box Brasil sobre crédito rotativo.
+    O modelo de Laibson é a formalização teórica direta do desconto quasi-hiperbólico apresentado na Seção 8.3.3. O conceito de "ovos de ouro" conecta a teoria do viés do presente à demanda por instrumentos de compromisso discutida na Seção 8.3.4 e ao Box Brasil sobre crédito rotativo.
 
 ---
 
