@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+  Cooperação e Fator de Desconto δ — Jogos Repetidos
+  Library: JSXGraph
+  Reason: Interactive visualization of cooperation threshold in repeated PD
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooperação e Fator de Desconto</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 290px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .stat-row { display: flex; justify-content: space-between; margin: 0.2rem 0; font-size: 0.82rem; }
+    .stat-label { color: #666; }
+    .stat-val { font-weight: 700; color: #C8102E; }
+    .result-box { margin-top: 0.8rem; padding: 0.6rem; border-radius: 4px; font-size: 0.9rem; font-weight: 700; text-align: center; }
+    .result-coop { background: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
+    .result-defect { background: #ffebee; border: 1px solid #f44336; color: #c62828; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 520px; } .controls { width: 100%; max-width: 520px; } }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Cooperação no Dilema dos Prisioneiros Repetido</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Payoffs do Jogo de Estágio</h3>
+      <div class="slider-group">
+        <label>\(T\) (tentação): <span class="val" id="val-T">5</span></label>
+        <input type="range" id="slider-T" min="2" max="20" step="0.5" value="5">
+      </div>
+      <div class="slider-group">
+        <label>\(R\) (recompensa mútua): <span class="val" id="val-R">3</span></label>
+        <input type="range" id="slider-R" min="1" max="15" step="0.5" value="3">
+      </div>
+      <div class="slider-group">
+        <label>\(P\) (punição mútua): <span class="val" id="val-P">1</span></label>
+        <input type="range" id="slider-P" min="0" max="10" step="0.5" value="1">
+      </div>
+      <div class="slider-group">
+        <label>\(\delta\) (fator de desconto): <span class="val" id="val-delta">0.70</span></label>
+        <input type="range" id="slider-delta" min="0.00" max="0.99" step="0.01" value="0.70">
+      </div>
+      <div class="info-box">
+        <div class="stat-row"><span class="stat-label">\(\delta^* = \frac{T-R}{T-P}\):</span><span class="stat-val" id="st-dstar">0.50</span></div>
+        <div class="stat-row"><span class="stat-label">\(V_{\text{coop}} = R/(1-\delta)\):</span><span class="stat-val" id="st-vcoop">10.0</span></div>
+        <div class="stat-row"><span class="stat-label">\(V_{\text{desvio}} = T + \delta P/(1-\delta)\):</span><span class="stat-val" id="st-vdev">7.3</span></div>
+      </div>
+      <div class="result-box result-coop" id="result-box">
+        \(\delta \geq \delta^*\) → Cooperação sustentável!
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.08, 55, 1.08, -5],
+      showCopyright: false, showNavigation: false,
+      defaultAxes: {
+        x: { name: '\\(\\delta\\)', withLabel: true, label: { position: 'rt', offset: [-20, 15] },
+             ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11 } } },
+        y: { name: 'VP', withLabel: true, label: { position: 'rt', offset: [15, -5] },
+             ticks: { insertTicks: false, ticksDistance: 10, minorTicks: 0, label: { fontSize: 11 } } }
+      }
+    });
+
+    var T = 5, R = 3, P = 1;
+
+    var coopCurve = board.create('functiongraph', [
+      function(d) { return d >= 1 ? NaN : R / (1 - d); }, 0, 0.99
+    ], { strokeColor: '#2a7f2a', strokeWidth: 2.5 });
+
+    var devCurve = board.create('functiongraph', [
+      function(d) { return d >= 1 ? NaN : T + d * P / (1 - d); }, 0, 0.99
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    var dstar = (T - R) / (T - P);
+    var threshLine = board.create('line', [[dstar, 0], [dstar, 1]], {
+      strokeColor: '#333', strokeWidth: 1.5, dash: 2, fixed: true
+    });
+    var threshLabel = board.create('text', [dstar, -3, function() { return '\\(\\delta^*\\)'; }], {
+      fontSize: 12, anchorX: 'middle', fixed: true, color: '#333'
+    });
+
+    // Cooperation region shading
+    var coopLabel = board.create('text', [0.85, 45, 'Cooperar'], {
+      fontSize: 12, color: '#2a7f2a', fontWeight: 'bold', fixed: true
+    });
+    var devLabel = board.create('text', [0.15, 10, 'Desviar'], {
+      fontSize: 12, color: '#C8102E', fontWeight: 'bold', fixed: true
+    });
+
+    // Current delta point
+    var curDelta = 0.70;
+    var ptCoop = board.create('point', [0.70, R/(1-0.70)], {
+      size: 4, color: '#2a7f2a', fixed: true, withLabel: false
+    });
+
+    function update() {
+      T = parseFloat(document.getElementById('slider-T').value);
+      R = parseFloat(document.getElementById('slider-R').value);
+      P = parseFloat(document.getElementById('slider-P').value);
+      curDelta = parseFloat(document.getElementById('slider-delta').value);
+
+      // Enforce T > R > P
+      if (R >= T) R = T - 0.5;
+      if (P >= R) P = R - 0.5;
+
+      document.getElementById('val-T').textContent = T.toFixed(1);
+      document.getElementById('val-R').textContent = R.toFixed(1);
+      document.getElementById('val-P').textContent = P.toFixed(1);
+      document.getElementById('val-delta').textContent = curDelta.toFixed(2);
+
+      dstar = (T - R) / (T - P);
+      var vcoop = curDelta < 1 ? R / (1 - curDelta) : Infinity;
+      var vdev = curDelta < 1 ? T + curDelta * P / (1 - curDelta) : Infinity;
+
+      document.getElementById('st-dstar').textContent = dstar.toFixed(3);
+      document.getElementById('st-vcoop').textContent = vcoop.toFixed(1);
+      document.getElementById('st-vdev').textContent = vdev.toFixed(1);
+
+      coopCurve.Y = function(d) { return d >= 1 ? NaN : R / (1 - d); };
+      devCurve.Y = function(d) { return d >= 1 ? NaN : T + d * P / (1 - d); };
+
+      threshLine.point1.moveTo([dstar, 0]);
+      threshLine.point2.moveTo([dstar, 50]);
+      threshLabel.moveTo([dstar, -3]);
+
+      ptCoop.moveTo([curDelta, vcoop < 100 ? vcoop : 50]);
+
+      var maxY = Math.min(Math.max(R / (1 - 0.95), T + 0.95 * P / 0.05, 30), 100);
+      board.setBoundingBox([-0.08, maxY * 1.1, 1.08, -maxY * 0.08]);
+
+      var rb = document.getElementById('result-box');
+      if (curDelta >= dstar) {
+        rb.className = 'result-box result-coop';
+        rb.innerHTML = '\\(\\delta \\geq \\delta^*\\) → Cooperação sustentável!';
+      } else {
+        rb.className = 'result-box result-defect';
+        rb.innerHTML = '\\(\\delta < \\delta^*\\) → Cooperação não sustentável';
+      }
+      if (window.MathJax) MathJax.typeset([rb]);
+
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-T').value = 5;
+      document.getElementById('slider-R').value = 3;
+      document.getElementById('slider-P').value = 1;
+      document.getElementById('slider-delta').value = 0.70;
+      update();
+    }
+
+    ['slider-T','slider-R','slider-P','slider-delta'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

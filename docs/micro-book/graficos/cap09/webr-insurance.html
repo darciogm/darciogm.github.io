@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+  R Interativo — Seleção Adversa em Seguros
+  Library: WebR
+  Baseado em Adams (2025), Cap. 13
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Interativo — Seleção Adversa</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .main-container { max-width: 780px; margin: 0 auto; }
+    .status-bar { padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 1rem; text-align: center; }
+    .status-loading { background: #fff3e0; border: 1px solid #ff9800; color: #e65100; }
+    .status-ready { background: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
+    .editor-container { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; margin-bottom: 1rem; }
+    .editor-header { background: #f5f5f5; padding: 0.4rem 1rem; font-size: 0.8rem; color: #666; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; }
+    .editor-header .lang-tag { background: #C8102E; color: #fff; padding: 0.15rem 0.5rem; border-radius: 3px; font-size: 0.75rem; font-weight: 700; }
+    textarea#r-code { width: 100%; min-height: 320px; padding: 0.8rem 1rem; font-family: 'Fira Code','Consolas',monospace; font-size: 0.82rem; border: none; outline: none; resize: vertical; background: #fafafa; color: #333; line-height: 1.5; tab-size: 2; }
+    .btn-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .btn-run { padding: 0.5rem 1.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 700; }
+    .btn-run:hover { background: #9a0c23; }
+    .btn-run:disabled { background: #ccc; cursor: not-allowed; }
+    .btn-reset { padding: 0.5rem 1.5rem; background: #fff; color: #666; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .output-container { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
+    .output-header { background: #f5f5f5; padding: 0.4rem 1rem; font-size: 0.8rem; color: #666; border-bottom: 1px solid #ddd; }
+    #r-output { padding: 0.8rem 1rem; font-family: 'Fira Code','Consolas',monospace; font-size: 0.82rem; background: #1e1e1e; color: #d4d4d4; min-height: 100px; max-height: 350px; overflow-y: auto; white-space: pre-wrap; }
+    #r-plot { text-align: center; padding: 0.5rem; background: #fff; }
+    #r-plot img { max-width: 100%; border-radius: 4px; }
+    .info-box { margin-top: 1rem; padding: 0.8rem; background: #f8f8f8; border: 1px solid #eee; border-radius: 4px; font-size: 0.8rem; color: #666; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="graph-title">R Interativo — Seleção Adversa no Mercado de Seguros</div>
+  <div class="main-container">
+    <div class="status-bar status-loading" id="status">Carregando WebR (~10s)...</div>
+    <div class="editor-container">
+      <div class="editor-header"><span>Simule o colapso do mercado — edite e execute</span><span class="lang-tag">R</span></div>
+      <textarea id="r-code">
+# Seleção Adversa em Seguros (Adams 2025, Cap.13)
+# Akerlof (1970) aplicado ao mercado de saúde
+
+set.seed(42)
+n <- 1000  # agentes no mercado
+
+# Tipos: custo esperado de saúde
+# Baixo risco: custo ~ N(1000, 300)
+# Alto risco:  custo ~ N(5000, 800)
+p_high <- 0.40  # proporção de alto risco (altere!)
+
+type <- sample(c("Low","High"), n, replace = TRUE,
+               prob = c(1 - p_high, p_high))
+cost <- ifelse(type == "Low",
+               rnorm(n, 1000, 300),
+               rnorm(n, 5000, 800))
+cost <- pmax(cost, 0)
+
+# Disposição a pagar: custo esperado + aversão ao risco
+wtp <- cost * 1.1 + ifelse(type == "High", 500, 100)
+
+# Simular dinâmica de prêmio
+cat("=== Dinâmica de Seleção Adversa ===\n")
+premium <- mean(cost)  # prêmio atuarialmente justo para todos
+for (round in 1:6) {
+  buyers <- wtp >= premium
+  if (sum(buyers) == 0) {
+    cat(sprintf("Rodada %d: Prêmio R$ %.0f → MERCADO COLAPSA\n",
+        round, premium))
+    break
+  }
+  pct_high <- mean(type[buyers] == "High")
+  avg_cost <- mean(cost[buyers])
+  n_buy <- sum(buyers)
+  cat(sprintf("Rodada %d: Prêmio R$ %5.0f | %d compradores | %.0f%% alto risco | Custo médio R$ %.0f\n",
+      round, premium, n_buy, pct_high*100, avg_cost))
+  premium <- avg_cost  # ajuste atuarial
+}
+
+# Gráfico: distribuição de custos por tipo
+par(mar = c(4, 4, 3, 1))
+hist(cost[type=="Low"], breaks = 30,
+     col = rgb(0.17,0.5,0.17,0.5), border = NA,
+     main = "Distribuição de Custos por Tipo",
+     xlab = "Custo esperado (R$)", ylab = "Frequência",
+     xlim = c(0, 8000), ylim = c(0, 80))
+hist(cost[type=="High"], breaks = 30,
+     col = rgb(0.78,0.06,0.18,0.5), border = NA, add = TRUE)
+abline(v = mean(cost), lty = 2, lwd = 2, col = "#333")
+legend("topright",
+  legend = c(sprintf("Baixo risco (%.0f%%)", (1-p_high)*100),
+             sprintf("Alto risco (%.0f%%)", p_high*100),
+             "Prêmio médio"),
+  fill = c(rgb(0.17,0.5,0.17,0.5), rgb(0.78,0.06,0.18,0.5), NA),
+  border = NA, lty = c(NA, NA, 2), lwd = c(NA, NA, 2),
+  col = c(NA, NA, "#333"), cex = 0.8)
+</textarea>
+    </div>
+    <div class="btn-row">
+      <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+      <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+    </div>
+    <div class="output-container">
+      <div class="output-header">Saída do R</div>
+      <div id="r-output">Aguardando execução...</div>
+      <div id="r-plot"></div>
+    </div>
+    <div class="info-box">Altere <code>p_high</code> (proporção de alto risco) para ver quando o mercado colapsa. Com <code>p_high = 0.1</code>, o mercado funciona. Com <code>p_high = 0.6</code>, a espiral adversa se acelera.</div>
+  </div>
+  <script type="module">
+    import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
+    const webR = new WebR(); const statusEl = document.getElementById('status'); const btnRun = document.getElementById('btn-run'); const outputEl = document.getElementById('r-output'); const plotEl = document.getElementById('r-plot'); const originalCode = document.getElementById('r-code').value; window._originalCode = originalCode;
+    async function initWebR() { try { await webR.init(); statusEl.textContent = 'WebR pronto!'; statusEl.className = 'status-bar status-ready'; btnRun.disabled = false; } catch(e) { statusEl.textContent='Erro: '+e.message; statusEl.className='status-bar status-error'; } }
+    window.runCode = async function() { const code=document.getElementById('r-code').value; btnRun.disabled=true; outputEl.textContent='Executando...'; plotEl.innerHTML=''; try { const s=await new webR.Shelter(); await webR.evalRVoid('if(dev.cur()>1)dev.off()'); await webR.evalRVoid('png(tf<-tempfile(fileext=".png"),width=520,height=380,res=96)'); const r=await s.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true}); let t=''; for(const o of r.output){if(o.type==='stdout'||o.type==='stderr')t+=o.data+'\n';} outputEl.textContent=t||'(sem saída)'; try{await webR.evalRVoid('dev.off()');const pd=await webR.evalR('readBin(tf,"raw",file.info(tf)$size)');const pb=await pd.toArray();if(pb.length>0){const b=new Blob([new Uint8Array(pb)],{type:'image/png'});plotEl.innerHTML='<img src="'+URL.createObjectURL(b)+'" alt="R plot">';}}catch(e){} await s.purge(); } catch(e){outputEl.textContent='Erro: '+e.message;} btnRun.disabled=false; };
+    window.resetCode = function() { document.getElementById('r-code').value = window._originalCode; };
+    initWebR();
+  </script>
+</body>
+</html>

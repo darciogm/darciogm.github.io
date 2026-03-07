@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  R Interativo — Modelo de Spence (Sinalização Educacional)
+  Library: WebR
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Interativo — Modelo de Spence</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
+    .main-container { max-width: 780px; margin: 0 auto; }
+    .status-bar { padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 1rem; text-align: center; }
+    .status-loading { background: #fff3e0; border: 1px solid #ff9800; color: #e65100; }
+    .status-ready { background: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
+    .editor-container { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; margin-bottom: 1rem; }
+    .editor-header { background: #f5f5f5; padding: 0.4rem 1rem; font-size: 0.8rem; color: #666; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; }
+    .editor-header .lang-tag { background: #C8102E; color: #fff; padding: 0.15rem 0.5rem; border-radius: 3px; font-size: 0.75rem; font-weight: 700; }
+    textarea#r-code { width: 100%; min-height: 300px; padding: 0.8rem 1rem; font-family: 'Fira Code','Consolas',monospace; font-size: 0.82rem; border: none; outline: none; resize: vertical; background: #fafafa; color: #333; line-height: 1.5; tab-size: 2; }
+    .btn-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .btn-run { padding: 0.5rem 1.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 700; }
+    .btn-run:hover { background: #9a0c23; }
+    .btn-run:disabled { background: #ccc; cursor: not-allowed; }
+    .btn-reset { padding: 0.5rem 1.5rem; background: #fff; color: #666; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .output-container { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
+    .output-header { background: #f5f5f5; padding: 0.4rem 1rem; font-size: 0.8rem; color: #666; border-bottom: 1px solid #ddd; }
+    #r-output { padding: 0.8rem 1rem; font-family: 'Fira Code','Consolas',monospace; font-size: 0.82rem; background: #1e1e1e; color: #d4d4d4; min-height: 100px; max-height: 350px; overflow-y: auto; white-space: pre-wrap; }
+    #r-plot { text-align: center; padding: 0.5rem; background: #fff; }
+    #r-plot img { max-width: 100%; border-radius: 4px; }
+    .info-box { margin-top: 1rem; padding: 0.8rem; background: #f8f8f8; border: 1px solid #eee; border-radius: 4px; font-size: 0.8rem; color: #666; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="graph-title">R Interativo — Modelo de Spence: Sinalização Educacional</div>
+  <div class="main-container">
+    <div class="status-bar status-loading" id="status">Carregando WebR (~10s)...</div>
+    <div class="editor-container">
+      <div class="editor-header"><span>Explore o equilíbrio separador — edite e execute</span><span class="lang-tag">R</span></div>
+      <textarea id="r-code">
+# Modelo de Spence — Equilíbrio Separador
+# Altere theta_H, theta_L para ver como o equilíbrio muda
+
+theta_H <- 2    # produtividade tipo alto
+theta_L <- 1    # produtividade tipo baixo
+p_H <- 0.5      # proporção tipo alto
+
+# Custo da educação: c(e, theta) = e / theta
+cost_H <- function(e) e / theta_H
+cost_L <- function(e) e / theta_L
+
+# Equilíbrio separador: e_L = 0, e_H = e*
+# IC tipo L: theta_L >= theta_H - e*/theta_L => e* >= theta_L*(theta_H - theta_L)
+e_min <- theta_L * (theta_H - theta_L)
+# IC tipo H: theta_H - e*/theta_H >= theta_L => e* <= theta_H*(theta_H - theta_L)
+e_max <- theta_H * (theta_H - theta_L)
+
+cat("=== Equilíbrio Separador de Spence ===\n")
+cat(sprintf("theta_H = %.1f, theta_L = %.1f\n", theta_H, theta_L))
+cat(sprintf("e* mínimo (least-cost separating): %.2f\n", e_min))
+cat(sprintf("e* máximo: %.2f\n", e_max))
+cat(sprintf("\nPayoffs no equilíbrio (e* = %.2f):\n", e_min))
+cat(sprintf("  Tipo H: w_H - c(e*) = %.2f - %.2f = %.2f\n",
+    theta_H, cost_H(e_min), theta_H - cost_H(e_min)))
+cat(sprintf("  Tipo L: w_L = %.2f\n", theta_L))
+cat(sprintf("  Custo social da sinalização: %.2f × %.2f = %.2f\n",
+    p_H, cost_H(e_min), p_H * cost_H(e_min)))
+
+# Gráfico
+e_seq <- seq(0, e_max * 1.5, length.out = 200)
+par(mar = c(4, 4, 3, 1))
+plot(e_seq, theta_L + cost_L(e_seq), type = "n",
+     xlim = c(0, max(e_seq)), ylim = c(0, theta_H * 1.3),
+     xlab = "Educação (e)", ylab = "Salário / Utilidade",
+     main = "Spence: Condições de Separação")
+
+# Curvas de indiferença
+# Tipo L em (0, theta_L): w - e/theta_L = theta_L => w = theta_L + e/theta_L
+lines(e_seq, theta_L + e_seq/theta_L, col = "#999", lwd = 2, lty = 2)
+# Tipo H em (e*, theta_H): w - e/theta_H = theta_H - e*/theta_H
+u_H <- theta_H - e_min/theta_H
+lines(e_seq, u_H + e_seq/theta_H, col = "#C8102E", lwd = 2, lty = 2)
+
+# Salário schedule
+segments(0, theta_L, e_min - 0.01, theta_L, col = "#2a7f2a", lwd = 3)
+segments(e_min, theta_H, max(e_seq), theta_H, col = "#2a7f2a", lwd = 3)
+segments(e_min, theta_L, e_min, theta_H, col = "#2a7f2a", lwd = 1, lty = 3)
+
+# Pontos de equilíbrio
+points(0, theta_L, pch = 19, col = "#999", cex = 1.5)
+points(e_min, theta_H, pch = 19, col = "#C8102E", cex = 1.5)
+
+# Região de separação
+rect(e_min, -0.1, e_max, theta_H + 0.3,
+     col = rgb(0.78, 0.06, 0.18, 0.08), border = NA)
+
+legend("topleft",
+  legend = c("Salário", "Indif. tipo L", "Indif. tipo H", "Região separadora"),
+  col = c("#2a7f2a", "#999", "#C8102E", rgb(0.78,0.06,0.18,0.3)),
+  lwd = c(3, 2, 2, 8), lty = c(1, 2, 2, 1), cex = 0.75)
+text(e_min, theta_H + 0.2, sprintf("e* = %.2f", e_min),
+     col = "#C8102E", cex = 0.8, pos = 4)
+</textarea>
+    </div>
+    <div class="btn-row">
+      <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+      <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+    </div>
+    <div class="output-container">
+      <div class="output-header">Saída do R</div>
+      <div id="r-output">Aguardando execução...</div>
+      <div id="r-plot"></div>
+    </div>
+    <div class="info-box">Altere <code>theta_H</code> e <code>theta_L</code> para ver como a diferença de produtividade afeta o custo da sinalização. Quando <code>theta_H</code> se aproxima de <code>theta_L</code>, o custo por unidade de sinal sobe.</div>
+  </div>
+  <script type="module">
+    import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
+    const webR = new WebR(); const statusEl = document.getElementById('status'); const btnRun = document.getElementById('btn-run'); const outputEl = document.getElementById('r-output'); const plotEl = document.getElementById('r-plot'); const originalCode = document.getElementById('r-code').value; window._originalCode = originalCode;
+    async function initWebR() { try { await webR.init(); statusEl.textContent = 'WebR pronto!'; statusEl.className = 'status-bar status-ready'; btnRun.disabled = false; } catch(e) { statusEl.textContent='Erro: '+e.message; statusEl.className='status-bar status-error'; } }
+    window.runCode = async function() { const code=document.getElementById('r-code').value; btnRun.disabled=true; outputEl.textContent='Executando...'; plotEl.innerHTML=''; try { const s=await new webR.Shelter(); await webR.evalRVoid('if(dev.cur()>1)dev.off()'); await webR.evalRVoid('png(tf<-tempfile(fileext=".png"),width=520,height=400,res=96)'); const r=await s.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true}); let t=''; for(const o of r.output){if(o.type==='stdout'||o.type==='stderr')t+=o.data+'\n';} outputEl.textContent=t||'(sem saída)'; try{await webR.evalRVoid('dev.off()');const pd=await webR.evalR('readBin(tf,"raw",file.info(tf)$size)');const pb=await pd.toArray();if(pb.length>0){const b=new Blob([new Uint8Array(pb)],{type:'image/png'});plotEl.innerHTML='<img src="'+URL.createObjectURL(b)+'" alt="R plot">';}}catch(e){} await s.purge(); } catch(e){outputEl.textContent='Erro: '+e.message;} btnRun.disabled=false; };
+    window.resetCode = function() { document.getElementById('r-code').value = window._originalCode; };
+    initWebR();
+  </script>
+</body>
+</html>

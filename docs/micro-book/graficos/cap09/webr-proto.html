@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+  Protótipo WebR — Cournot Duopólio com dados simulados
+  Library: WebR (R via WebAssembly)
+  Reason: Interactive R code execution in browser, no server needed
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Interativo — Cournot Duopólio</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .main-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .status-bar {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .status-loading { background: #fff3e0; border: 1px solid #ff9800; color: #e65100; }
+    .status-ready { background: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
+    .status-error { background: #ffebee; border: 1px solid #f44336; color: #c62828; }
+    .editor-container {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .editor-header {
+      background: #f5f5f5;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: #666;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .editor-header .lang-tag {
+      background: #C8102E;
+      color: #fff;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    textarea#r-code {
+      width: 100%;
+      min-height: 260px;
+      padding: 0.8rem 1rem;
+      font-family: 'Fira Code', 'Consolas', monospace;
+      font-size: 0.85rem;
+      border: none;
+      outline: none;
+      resize: vertical;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.5;
+      tab-size: 2;
+    }
+    .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .btn-run {
+      padding: 0.5rem 1.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+      font-weight: 700;
+    }
+    .btn-run:hover { background: #9a0c23; }
+    .btn-run:disabled { background: #ccc; cursor: not-allowed; }
+    .btn-reset {
+      padding: 0.5rem 1.5rem;
+      background: #fff;
+      color: #666;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #f5f5f5; }
+    .output-container {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .output-header {
+      background: #f5f5f5;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: #666;
+      border-bottom: 1px solid #ddd;
+    }
+    #r-output {
+      padding: 0.8rem 1rem;
+      font-family: 'Fira Code', 'Consolas', monospace;
+      font-size: 0.82rem;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      min-height: 120px;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    #r-plot {
+      text-align: center;
+      padding: 0.5rem;
+      background: #fff;
+    }
+    #r-plot img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .info-box {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: #f8f8f8;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">R Interativo — Equilíbrio de Cournot com Dados Simulados</div>
+  <div class="main-container">
+    <div class="status-bar status-loading" id="status">
+      Carregando WebR (~10s na primeira vez)...
+    </div>
+
+    <div class="editor-container">
+      <div class="editor-header">
+        <span>Edite o código e clique "Executar"</span>
+        <span class="lang-tag">R</span>
+      </div>
+      <textarea id="r-code">
+# Cournot Duopólio — Simulação e Equilíbrio
+# Baseado em Adams (2025), Cap. 3
+
+# Parâmetros do mercado (altere e re-execute!)
+a  <- 100   # intercepto da demanda inversa
+b  <- 1     # inclinação da demanda
+c1 <- 20    # custo marginal firma 1
+c2 <- 20    # custo marginal firma 2
+
+# Equilíbrio de Nash-Cournot analítico
+q1_star <- (a - 2*c1 + c2) / (3*b)
+q2_star <- (a - 2*c2 + c1) / (3*b)
+P_star  <- a - b*(q1_star + q2_star)
+
+cat("=== Equilíbrio de Cournot ===\n")
+cat(sprintf("q1* = %.2f,  q2* = %.2f\n", q1_star, q2_star))
+cat(sprintf("P*  = %.2f\n", P_star))
+cat(sprintf("π1  = %.2f,  π2  = %.2f\n",
+    (P_star - c1)*q1_star, (P_star - c2)*q2_star))
+
+# Funções de reação
+q1_range <- seq(0, (a - c2)/b, length.out = 200)
+R2 <- pmax(0, (a - c2 - b*q1_range) / (2*b))
+
+q2_range <- seq(0, (a - c1)/b, length.out = 200)
+R1 <- pmax(0, (a - c1 - b*q2_range) / (2*b))
+
+# Gráfico
+plot(q1_range, R2, type = "l", col = "#C8102E", lwd = 2,
+     xlab = "q1", ylab = "q2",
+     main = "Funções de Reação — Cournot",
+     xlim = c(0, 90), ylim = c(0, 90))
+lines(R1, q2_range, col = "#2a7f2a", lwd = 2)
+points(q1_star, q2_star, pch = 19, col = "#C8102E", cex = 1.5)
+text(q1_star + 3, q2_star + 3,
+     sprintf("EN (%.0f, %.0f)", q1_star, q2_star),
+     col = "#C8102E", font = 2, cex = 0.9)
+legend("topright",
+       legend = c("R2(q1) — Firma 2", "R1(q2) — Firma 1"),
+       col = c("#C8102E", "#2a7f2a"), lwd = 2, cex = 0.8)
+abline(0, 1, lty = 3, col = "gray")
+</textarea>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+      <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+    </div>
+
+    <div class="output-container">
+      <div class="output-header">Saída do R</div>
+      <div id="r-output">Aguardando execução...</div>
+      <div id="r-plot"></div>
+    </div>
+
+    <div class="info-box">
+      <strong>WebR</strong> executa R diretamente no navegador via WebAssembly — sem servidor.
+      Altere os parâmetros (a, b, c1, c2) e re-execute para ver o impacto no equilíbrio.
+    </div>
+  </div>
+
+  <script type="module">
+    import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
+
+    const webR = new WebR();
+    const statusEl = document.getElementById('status');
+    const btnRun = document.getElementById('btn-run');
+    const outputEl = document.getElementById('r-output');
+    const plotEl = document.getElementById('r-plot');
+    const originalCode = document.getElementById('r-code').value;
+
+    window._originalCode = originalCode;
+
+    async function initWebR() {
+      try {
+        await webR.init();
+        statusEl.textContent = 'WebR pronto!';
+        statusEl.className = 'status-bar status-ready';
+        btnRun.disabled = false;
+
+        // Set up canvas graphics device
+        await webR.evalRVoid(`
+          options(device = function(...) {
+            png(tf <- tempfile(fileext = ".png"), width = 520, height = 400, res = 96, ...)
+            dev.control("enable")
+            tf
+          })
+        `);
+      } catch (e) {
+        statusEl.textContent = 'Erro ao carregar WebR: ' + e.message;
+        statusEl.className = 'status-bar status-error';
+      }
+    }
+
+    window.runCode = async function() {
+      const code = document.getElementById('r-code').value;
+      btnRun.disabled = true;
+      outputEl.textContent = 'Executando...';
+      plotEl.innerHTML = '';
+
+      try {
+        // Capture text output
+        const shelter = await new webR.Shelter();
+
+        // Use canvas-based approach for plot capture
+        await webR.evalRVoid('if (dev.cur() > 1) dev.off()');
+        await webR.evalRVoid('png(tf <- tempfile(fileext=".png"), width=520, height=400, res=96)');
+
+        const result = await shelter.captureR(code, {
+          withAutoprint: true,
+          captureStreams: true,
+          captureConditions: true
+        });
+
+        // Collect text output
+        let textOut = '';
+        for (const out of result.output) {
+          if (out.type === 'stdout' || out.type === 'stderr') {
+            textOut += out.data + '\n';
+          }
+        }
+        outputEl.textContent = textOut || '(sem saída de texto)';
+
+        // Try to capture plot
+        try {
+          await webR.evalRVoid('dev.off()');
+          const plotData = await webR.evalR('readBin(tf, "raw", file.info(tf)$size)');
+          const plotBytes = await plotData.toArray();
+
+          if (plotBytes.length > 0) {
+            const blob = new Blob([new Uint8Array(plotBytes)], { type: 'image/png' });
+            const url = URL.createObjectURL(blob);
+            plotEl.innerHTML = '<img src="' + url + '" alt="R plot">';
+          }
+        } catch (plotErr) {
+          // No plot generated, that's fine
+        }
+
+        await shelter.purge();
+      } catch (e) {
+        outputEl.textContent = 'Erro: ' + e.message;
+      }
+
+      btnRun.disabled = false;
+    };
+
+    window.resetCode = function() {
+      document.getElementById('r-code').value = window._originalCode;
+    };
+
+    initWebR();
+  </script>
+</body>
+</html>

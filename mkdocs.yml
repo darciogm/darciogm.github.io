@@ -65,7 +65,11 @@ nav:
       - micro-book/mercados/index.md
       - "Cap. 7 — O Preço do Talvez": micro-book/cap07/index.md
       - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
-      - "Cap. 9 — Nash no Bar": micro-book/cap09/index.md
+      - "Cap. 9 — Nash no Bar":
+        - "9a — Jogos Estáticos": micro-book/cap09a/index.md
+        - "9b — Jogos Dinâmicos": micro-book/cap09b/index.md
+        - "9c — Informação Incompleta": micro-book/cap09c/index.md
+        - "9d — Sinais e Contratos": micro-book/cap09d/index.md
       - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap10/index.md
       - "Cap. 11 — Por Que Nada É de Graça": micro-book/cap11/index.md
       - "Cap. 12 — A Firma Nua": micro-book/cap12/index.md
