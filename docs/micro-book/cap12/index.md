@@ -27,7 +27,7 @@ X(p) = \sum_{i=1}^{n} x_i(p)
 
 A curva de demanda de mercado herda propriedades das demandas individuais:
 
-1. **Inclinação negativa**: Se todas as demandas individuais são decrescentes no preço (bens normais ou bens de Giffen excluídos), a demanda de mercado também será decrescente.
+1. **Inclinação negativa**: Se todas as demandas individuais são decrescentes no preço (excluindo-se os raros casos de bens de Giffen), a demanda de mercado também será decrescente.
 2. **Elasticidade-preço**: A elasticidade-preço da demanda de mercado é uma média ponderada das elasticidades individuais, com pesos dados pelas participações de cada consumidor na demanda total:
 
 \[
@@ -221,6 +221,9 @@ No curto prazo, o excedente do produtor é a diferença entre a receita total e 
 
 Esse excedente de longo prazo reflete a **renda ricardiana** — pagamentos a fatores de produção cujos preços são elevados pela expansão da indústria. Por exemplo, quando a entrada de firmas agrícolas eleva o preço da terra, os proprietários de terras mais férteis (inframarginais) obtêm rendas que constituem o excedente do produtor de longo prazo.
 
+!!! example "Renda ricardiana na agricultura brasileira"
+    No Cerrado, a expansão da fronteira agrícola para a produção de soja elevou significativamente o preço das terras com melhor aptidão agrícola (topografia plana, solo corrigido, proximidade logística). Segundo dados do CEPEA/ESALQ e da FNP, o hectare em regiões consolidadas como Sorriso (MT) valorizou mais de 300% entre 2005 e 2023, refletindo a renda ricardiana apropriada pelos proprietários de terras inframarginais. Produtores em terras menos férteis (marginais) operam com lucro próximo de zero — exatamente como o modelo prevê.
+
 !!! definition "Renda ricardiana"
     A **renda ricardiana** (ou renda econômica) é o pagamento a um fator de produção acima do mínimo necessário para mantê-lo em seu uso corrente. No longo prazo competitivo, o excedente do produtor da indústria reflete exclusivamente essas rendas.
 
@@ -282,7 +285,8 @@ W = EC + EP
 
     Isso é satisfeito, pois a demanda inversa é decrescente (\(dp_D/dQ < 0\)) e a oferta inversa é crescente (\(dp_S/dQ > 0\)). Portanto, \(Q^*\) é de fato um máximo de bem-estar. \(\blacksquare\)
 
-Perloff (2017, Cap. 9) apresenta aplicações empíricas do conceito de excedente em análise de políticas públicas, ilustrando como quantificar perdas de peso morto em mercados reais.
+!!! tip "Intuição: por que o equilíbrio competitivo maximiza o bem-estar?"
+    A cada unidade transacionada, o benefício marginal do consumidor (dado pela curva de demanda) supera o custo marginal do produtor (dado pela curva de oferta). Enquanto essa condição valer, produzir e vender mais uma unidade gera ganho líquido para a sociedade. No equilíbrio competitivo, a última unidade transacionada tem benefício marginal *exatamente igual* ao custo marginal — não há mais ganhos a explorar. Qualquer quantidade menor desperdiça trocas mutuamente vantajosas; qualquer quantidade maior força trocas cujo custo supera o benefício.
 
 ---
 
@@ -309,6 +313,18 @@ Quando o governo estabelece um preço mínimo \(\underline{p} > p^*\), a quantid
 !!! tip "Exemplos de controles de preços"
     - **Preço máximo**: controle de aluguéis, tabelamento de medicamentos, congelamento de preços (como no Plano Cruzado, 1986).
     - **Preço mínimo**: salário mínimo, preços mínimos agrícolas (PGPM — Política de Garantia de Preços Mínimos no Brasil).
+
+!!! example "Box Brasil: O Plano Cruzado e os limites do tabelamento"
+    Em fevereiro de 1986, o governo brasileiro lançou o Plano Cruzado, que impôs um congelamento generalizado de preços como estratégia anti-inflacionária. A inflação, que acumulava cerca de 235% em 12 meses (IGP-DI/FGV), caiu abruptamente para próximo de zero nos meses seguintes.
+
+    No entanto, os efeitos colaterais ilustram perfeitamente a análise de preços máximos:
+
+    - **Escassez generalizada**: com os preços congelados abaixo do equilíbrio, a quantidade demandada superou a ofertada. Prateleiras de supermercados ficaram vazias, especialmente para carne bovina e leite.
+    - **Mercado paralelo (ágio)**: produtores exigiam "ágio" para vender a preços acima do tabelado, sinalizando que o preço de equilíbrio de mercado era superior ao teto imposto.
+    - **Deterioração da qualidade**: firmas reduziram a qualidade dos produtos ou alteraram embalagens para manter margens — uma forma de ajuste não-preço que o modelo básico não captura.
+    - **Perda de peso morto**: a redução na quantidade transacionada gerou ineficiência alocativa substancial.
+
+    O episódio é uma das ilustrações mais dramáticas, na história econômica brasileira, de que tabelamentos abaixo do preço de equilíbrio geram escassez e distorções — exatamente como prevê a teoria.
 
 ---
 
@@ -398,6 +414,9 @@ X(p_c) = S(p_p) = S(p_c - t)
 !!! note "Irrelevância do lado legal"
     A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
 
+!!! example "Incidência tributária no Brasil: ICMS sobre combustíveis"
+    Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do IPEA) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba (ANP, Boletim de Preços).
+
 ---
 
 ### Gráfico interativo: Incidência Tributária
@@ -465,6 +484,145 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
+## Exercícios Resolvidos
+
+??? success "Exercício Resolvido 12.1 — Equilíbrio, excedentes e imposto"
+    **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
+
+    ---
+
+    **(a)** Equilíbrio: \(Q_D = Q_S\).
+
+    \[
+    120 - 2p = 3p - 30 \implies 150 = 5p \implies p^* = 30, \quad Q^* = 120 - 60 = 60
+    \]
+
+    **(b)** A demanda inversa é \(p_D = 60 - Q/2\) e a oferta inversa é \(p_S = 10 + Q/3\).
+
+    \[
+    EC = \frac{1}{2}(60 - 30) \times 60 = \frac{1}{2} \times 30 \times 60 = 900
+    \]
+
+    \[
+    EP = \frac{1}{2}(30 - 10) \times 60 = \frac{1}{2} \times 20 \times 60 = 600
+    \]
+
+    **(c)** Com imposto, \(p_c = p_p + 10\). No equilíbrio:
+
+    \[
+    120 - 2p_c = 3(p_c - 10) - 30 \implies 120 - 2p_c = 3p_c - 60 \implies 180 = 5p_c \implies p_c = 36
+    \]
+
+    \[
+    p_p = 36 - 10 = 26, \quad Q_t = 120 - 72 = 48
+    \]
+
+    O consumidor paga R\$ 6 a mais (de 30 para 36) e o produtor recebe R\$ 4 a menos (de 30 para 26), consistente com \(\varepsilon_S / (\varepsilon_S + |\varepsilon_D|) = (3 \cdot 30/60) / (1{,}5 + 1{,}0) = 0{,}6\).
+
+    Receita do governo: \(R = t \times Q_t = 10 \times 48 = 480\).
+
+    PPM: \(\frac{1}{2} \times t \times \Delta Q = \frac{1}{2} \times 10 \times 12 = 60\).
+
+    **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
+
+??? success "Exercício Resolvido 12.2 — Preço máximo e escassez"
+    **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
+
+    ---
+
+    **(a)** Equilíbrio livre:
+
+    \[
+    500 - 10p = 20p - 100 \implies 600 = 30p \implies p^* = 20, \quad Q^* = 300
+    \]
+
+    **(b)** Com \(\bar{p} = 15 < 20\):
+
+    \[
+    Q_D(15) = 500 - 150 = 350, \quad Q_S(15) = 300 - 100 = 200
+    \]
+
+    Escassez: \(350 - 200 = 150\) unidades.
+
+    A quantidade efetivamente transacionada é \(Q_t = \min(Q_D, Q_S) = 200\).
+
+    Sem intervenção: \(EC_0 = \frac{1}{2}(50 - 20)(300) = 4.500\) e \(EP_0 = \frac{1}{2}(20 - 5)(300) = 2.250\).
+
+    Com teto: os consumidores que conseguem comprar pagam 15 em vez de 20. O EC tem dois componentes: o retângulo de transferência do produtor (\((20-15) \times 200 = 1.000\)) e a perda do triângulo superior. Usando a demanda inversa \(p_D = 50 - Q/10\) e a oferta inversa \(p_S = 5 + Q/20\):
+
+    \[
+    EC_1 = \frac{1}{2}(50 - 15)(200) + 0 \text{ (sem racionamento eficiente)}
+    \]
+
+    Com racionamento eficiente: \(EC_1 = \frac{1}{2}(50-15) \times 200 = 3.500\).
+
+    \(EP_1 = \frac{1}{2}(15 - 5) \times 200 = 1.000\).
+
+    \(W_1 = 3.500 + 1.000 = 4.500\). \(W_0 = 4.500 + 2.250 = 6.750\).
+
+    \(PPM = W_0 - W_1 = 6.750 - 4.500 = 2.250\).
+
+    Alternativamente, o triângulo de Harberger: \(\frac{1}{2}(20-15)(300-200) = \frac{1}{2} \times 5 \times 100 = 250\). Mas note que a PPM total com racionamento ineficiente pode ser maior. Com racionamento eficiente, \(PPM = 250\).
+
+    **Correção com racionamento eficiente:** \(EC_1 = (20-15) \times 200 + \frac{1}{2}(50-20)(200) - [\frac{1}{2}(50-20)(300) - \frac{1}{2}(50-20)(200)]...\)
+
+    Método direto: \(W_0 = \int_0^{300}[(50 - Q/10) - (5 + Q/20)] dQ = \int_0^{300}[45 - 3Q/20] dQ = [45Q - 3Q^2/40]_0^{300} = 13.500 - 6.750 = 6.750\).
+
+    \(W_1 = \int_0^{200}[(50 - Q/10) - (5 + Q/20)] dQ = [45Q - 3Q^2/40]_0^{200} = 9.000 - 3.000 = 6.000\).
+
+    \(PPM = 6.750 - 6.000 = 750\). Isso coincide com o triângulo: \(\frac{1}{2} \times (p^* - \bar{p} + p_D(200) - p^*) \times (Q^* - Q_t)\)... Usando a fórmula do triângulo entre as curvas:
+
+    \[
+    PPM = \frac{1}{2}[p_D(200) - p_S(200)] \times (300 - 200) = \frac{1}{2}(30 - 15)(100) = 750
+    \]
+
+    **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
+
+??? success "Exercício Resolvido 12.3 — Indústria de custos crescentes e renda ricardiana"
+    **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
+
+    ---
+
+    **(a)** Substituindo a oferta na demanda:
+
+    \[
+    Q = 800 - 10(20 + 0{,}05Q) = 800 - 200 - 0{,}5Q \implies 1{,}5Q = 600 \implies Q^* = 400
+    \]
+
+    \[
+    p^* = 20 + 0{,}05 \times 400 = 40
+    \]
+
+    **(b)** A renda ricardiana é a área acima da curva de oferta de LP e abaixo do preço:
+
+    \[
+    RR = \int_0^{400}[40 - (20 + 0{,}05Q)] dQ = \int_0^{400}[20 - 0{,}05Q] dQ = \left[20Q - 0{,}025Q^2\right]_0^{400}
+    \]
+
+    \[
+    RR = 8.000 - 4.000 = 4.000
+    \]
+
+    Alternativamente, como a oferta é linear: \(RR = \frac{1}{2}(p^* - p_{\min}) \times Q^* = \frac{1}{2}(40 - 20)(400) = 4.000\). ✓
+
+    **(c)** Com a nova demanda:
+
+    \[
+    Q' = 1000 - 10(20 + 0{,}05Q') = 1000 - 200 - 0{,}5Q' \implies 1{,}5Q' = 800 \implies Q'^* = 533{,}3
+    \]
+
+    \[
+    p'^* = 20 + 0{,}05 \times 533{,}3 = 46{,}67
+    \]
+
+    \[
+    RR' = \frac{1}{2}(46{,}67 - 20)(533{,}3) = \frac{1}{2}(26{,}67)(533{,}3) \approx 7.111
+    \]
+
+    A renda ricardiana aumentou de 4.000 para 7.111 — um acréscimo de **3.111**, refletindo a valorização dos fatores inframarginais (como terras mais produtivas) em resposta à expansão da demanda. Note que o preço de equilíbrio subiu (de 40 para 46,67) porque se trata de uma indústria de custos crescentes.
+
+---
+
 ## Exercícios
 
 **Exercício 12.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
@@ -510,3 +668,128 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 (b) Discuta as implicações distributivas e de eficiência dessa política, considerando que diesel é um insumo essencial para o transporte de cargas no Brasil.
 
 (c) Calcule a perda de peso morto em termos do subsídio, das elasticidades e do preço e quantidade iniciais.
+
+---
+
+## Vem, ANPEC!
+
+Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
+
+??? note "ANPEC 2017 — Questão 03"
+    Com respeito aos efeitos dos impostos, assinale quais das afirmações abaixo são verdadeiras:
+
+    **(0)** Se as curvas de demanda e oferta do mercado forem lineares, sendo \(p\) o preço do produto e \(t\) um imposto específico, então \(dp/dt = \eta/(\eta - \varepsilon)\), em que \(\eta\) é a elasticidade preço da oferta e \(\varepsilon\) é a elasticidade preço da demanda;
+
+    **(1)** No caso de um imposto específico \(t\), o equilíbrio do mercado será diferente se o imposto for cobrado dos vendedores ou dos compradores;
+
+    **(2)** Se a elasticidade preço da demanda for 0 (zero) e a elasticidade preço da oferta for 1, o custo do imposto específico recairá totalmente sobre os produtores;
+
+    **(3)** O peso morto decorrente da introdução de um imposto específico em um mercado com curvas de oferta e demanda lineares não depende do preço antes da incidência do imposto;
+
+    **(4)** Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: (0) V; (1) F; (2) F; (3) V; (4) F.**
+
+        **(0) VERDADEIRO.** Com curvas lineares \(Q_D = a - bp\) e \(Q_S = c + dp\), onde \(\varepsilon = -bp/Q < 0\) e \(\eta = dp/Q > 0\), o imposto gera \(p_c = p_p + t\). No equilíbrio: \(dp_c/dt = d/(b+d)\). Em termos de elasticidades avaliadas no equilíbrio (onde \(Q\) e \(p\) são comuns): \(dp/dt = \eta/(\eta - \varepsilon)\), pois \(\varepsilon < 0\) implica \(\eta - \varepsilon = \eta + |\varepsilon|\).
+
+        **(1) FALSO.** Pela irrelevância do lado legal da incidência, o equilíbrio econômico (preços pagos por consumidores e recebidos por produtores, quantidade transacionada) é idêntico independentemente de sobre quem recai a obrigação legal de recolhimento.
+
+        **(2) FALSO.** Se \(|\varepsilon_D| = 0\) (demanda perfeitamente inelástica), o consumidor absorve 100% do imposto, pois \(dp_c/dt = \eta/(\eta + 0) = 1\). O custo recai integralmente sobre os consumidores, não sobre os produtores.
+
+        **(3) VERDADEIRO.** Com curvas lineares, \(PPM = \frac{1}{2} \cdot \frac{bd}{b+d} \cdot t^2\), onde \(b\) e \(d\) são as inclinações (em valor absoluto) das curvas de demanda e oferta. A fórmula não contém o preço de equilíbrio pré-imposto.
+
+        **(4) FALSO.** A receita fiscal \(R = t \cdot Q_t\) não compensa a perda total de excedentes de consumidores e produtores. A diferença — o peso morto — é estritamente positiva (\(PPM > 0\)) sempre que \(t > 0\) e ambas as curvas têm inclinações finitas.
+
+??? note "ANPEC 2023 — Questão 01"
+    Suponha que ao preço de equilíbrio no mercado internacional de petróleo de \$80 dólares o barril, a elasticidade-preço da demanda seja \(-0{,}4\), a elasticidade-preço da oferta seja \(0{,}2\), as quantidades ofertada e demandada sejam de 100 milhões de barris/dia. Suponha ainda que as curvas de demanda e oferta são lineares convencionais. Imagine que um embargo econômico a um produtor mundial cause um deslocamento paralelo da curva de oferta para a esquerda em 30 milhões de barris/dia. Julgue as afirmativas a seguir:
+
+    **(0)** A função de demanda consistente com o preço e a quantidade antes do embargo é \(D_1(p) = 116 - 0{,}2p\).
+
+    **(1)** A função de oferta que é consistente com o equilíbrio antes do embargo é \(S_1(p) = 60 + 0{,}5p\).
+
+    **(2)** A função de oferta após o embargo é \(S_2(p) = 50 + 0{,}25p\).
+
+    **(3)** Após o embargo, o preço de equilíbrio será de \$120 dólares, e a quantidade de equilíbrio será de 80 milhões de barris/dia.
+
+    **(4)** Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: (0) F; (1) F; (2) V; (3) V; (4) F.**
+
+        **Derivação das curvas.** Com \(p_0 = 80\), \(Q_0 = 100\):
+
+        - Demanda: \(\varepsilon_D = -0{,}4 = (dQ_D/dp)(80/100)\), logo \(dQ_D/dp = -0{,}5\). Assim \(D(p) = a - 0{,}5p\), e \(100 = a - 40 \Rightarrow a = 140\). Portanto \(D_1(p) = 140 - 0{,}5p\).
+
+        - Oferta: \(\varepsilon_S = 0{,}2 = (dQ_S/dp)(80/100)\), logo \(dQ_S/dp = 0{,}25\). Assim \(S(p) = c + 0{,}25p\), e \(100 = c + 20 \Rightarrow c = 80\). Portanto \(S_1(p) = 80 + 0{,}25p\).
+
+        **(0) FALSO.** A demanda correta é \(D_1(p) = 140 - 0{,}5p\), não \(116 - 0{,}2p\).
+
+        **(1) FALSO.** A oferta correta é \(S_1(p) = 80 + 0{,}25p\), não \(60 + 0{,}5p\).
+
+        **(2) VERDADEIRO.** Deslocamento paralelo de 30 milhões para a esquerda: \(S_2(p) = 80 - 30 + 0{,}25p = 50 + 0{,}25p\). ✓
+
+        **(3) VERDADEIRO.** Novo equilíbrio: \(140 - 0{,}5p = 50 + 0{,}25p \Rightarrow 90 = 0{,}75p \Rightarrow p = 120\). \(Q = 140 - 60 = 80\). ✓
+
+        **(4) FALSO.** Com demanda reduzida em 20: \(D_2(p) = 120 - 0{,}5p\). Novo equilíbrio: \(120 - 0{,}5p = 50 + 0{,}25p \Rightarrow 70 = 0{,}75p \Rightarrow p \approx 93{,}3\). Como \(93{,}3 > 80\), o preço é *maior* que o original, não menor.
+
+??? note "ANPEC 2025 — Questão 07"
+    Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
+
+    **(0)** No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.
+
+    **(1)** No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.
+
+    **(2)** Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.
+
+    **(3)** Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.
+
+    **(4)** Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: (0) F; (1) V; (2) F; (3) F; (4) V.**
+
+        **(0) FALSO.** No curto prazo, o número de firmas é fixo e não há livre entrada/saída. Firmas podem ter lucro positivo, negativo ou zero. A condição de lucro zero é característica do equilíbrio de *longo prazo* com livre entrada.
+
+        **(1) VERDADEIRO.** Com livre entrada e saída, o lucro econômico é zero no longo prazo. Isso implica que todos os fatores de produção — incluindo o capital do empresário — são remunerados exatamente pelo seu custo de oportunidade (preço de mercado).
+
+        **(2) FALSO.** A existência de um fator fixo (por exemplo, terra de qualidade superior) gera renda econômica para o proprietário desse fator. Porém, quando essa renda é adequadamente contabilizada como custo de oportunidade, o lucro econômico da firma é zero. A renda do fator fixo não se confunde com lucro positivo da firma.
+
+        **(3) FALSO.** A causalidade é inversa ao que o item afirma. É o preço de equilíbrio do produto — determinado pela interação de oferta e demanda — que determina a renda econômica dos fatores. Como argumentou Ricardo: "não é porque os aluguéis são altos que o trigo é caro; é porque o trigo é caro que os aluguéis são altos."
+
+        **(4) VERDADEIRO.** Em uma indústria de custos constantes, a entrada de novas firmas não altera os preços dos insumos, de modo que as curvas de custo das firmas individuais permanecem inalteradas. O preço de equilíbrio de longo prazo é \(p = CMe_{\min}\) para qualquer nível de demanda, resultando em uma curva de oferta de longo prazo perfeitamente elástica (horizontal).
+
+---
+
+## Leituras Recomendadas
+
+- **Nicholson, W. E. & Snyder, C. M.** *Microeconomic Theory: Basic Principles and Extensions.* 12ª ed. Cengage, 2017. Caps. 12–13.
+- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** *Microeconomic Theory.* Oxford University Press, 1995. Cap. 10.
+- **Varian, H. R.** *Microeconomic Analysis.* 3ª ed. W. W. Norton, 1992. Caps. 13–14.
+- **Perloff, J. M.** *Microeconomics: Theory and Applications with Calculus.* 4ª ed. Pearson, 2017. Caps. 8–9.
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+??? info "Roberts, M. J. & Schlenker, W. (2013). Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate. *American Economic Review*, 103(6), 2265–2295."
+    **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)
+
+    **Contexto.** A estimação de elasticidades de oferta e demanda é central para a análise de equilíbrio parcial, mas enfrenta o clássico problema de identificação: variações observadas em preços e quantidades refletem simultaneamente deslocamentos de oferta e demanda. Roberts e Schlenker enfrentam esse desafio no mercado de commodities agrícolas — exatamente o tipo de mercado competitivo analisado neste capítulo.
+
+    **Metodologia.** Os autores utilizam variáveis instrumentais baseadas em choques climáticos (rendimentos agrícolas exógenos determinados pelo clima) para identificar separadamente as curvas de oferta e demanda de quatro commodities (milho, soja, trigo e arroz) no mercado mundial. A estratégia empírica explora o fato de que variações climáticas deslocam a curva de oferta sem afetar diretamente a demanda, permitindo traçar a curva de demanda ao longo de diferentes pontos de equilíbrio.
+
+    **Resultados.** As estimativas indicam elasticidades-preço da demanda entre \(-0{,}05\) e \(-0{,}10\) no curto prazo — demanda extremamente inelástica, consistente com o uso das commodities como insumos essenciais na alimentação e ração animal. A elasticidade-preço da oferta, condicional ao clima, situa-se entre \(0{,}10\) e \(0{,}15\). Essas estimativas têm implicações diretas para a estática comparativa: choques de oferta (como secas) provocam grandes variações de preço, precisamente porque ambas as curvas são inelásticas.
+
+    **Conexão com o capítulo.** O artigo é uma aplicação direta da análise de estática comparativa (Seção 12.4) e da discussão sobre elasticidades de oferta e demanda (Seções 12.1 e 12.7) em mercados competitivos reais. Também dialoga com o Box Brasil sobre a soja, cujas elasticidades estimadas pelo IPEA e CONAB são comparáveis às encontradas no estudo.
+
+??? info "Weyl, E. G. & Fabinger, M. (2013). Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition. *Journal of Political Economy*, 121(3), 528–583."
+    **DOI:** [10.1086/670401](https://doi.org/10.1086/670401)
+
+    **Contexto.** A Seção 12.11 demonstra que, em concorrência perfeita, a incidência de um imposto específico depende das elasticidades relativas de oferta e demanda. Mas o que acontece quando os mercados não são perfeitamente competitivos? Weyl e Fabinger desenvolvem uma teoria unificada de *pass-through* (repasse) que generaliza os resultados clássicos de incidência para estruturas de mercado imperfeitas.
+
+    **Contribuição teórica.** Os autores mostram que a taxa de repasse (*pass-through rate*) — a fração de um choque de custo repassada ao consumidor — é a variável-chave que conecta incidência tributária, análise de bem-estar e poder de mercado. Em concorrência perfeita, o repasse depende apenas das elasticidades, como demonstrado neste capítulo. Em monopólio e oligopólio, a curvatura da demanda (convexidade ou concavidade) torna-se crucial: com demanda log-côncava (como a linear), o repasse é inferior a 100%; com demanda log-convexa (como a de elasticidade constante), o repasse pode superar 100%.
+
+    **Resultados centrais.** A fórmula unificada de incidência mostra que \(\rho = \varepsilon_S / (\varepsilon_S + |\varepsilon_D| \cdot \theta)\), onde \(\theta\) captura o grau de conduta competitiva (\(\theta = 1\) em concorrência perfeita, \(\theta > 1\) com poder de mercado). O artigo também demonstra que a PPM de um imposto pode ser expressa como função do repasse, independentemente da estrutura de mercado.
+
+    **Conexão com o capítulo.** O artigo generaliza os resultados de incidência tributária da Seção 12.11, mostrando que a fórmula competitiva é um caso especial de um princípio mais amplo. A leitura é recomendada para estudantes que desejam compreender como a análise de equilíbrio parcial se estende para além da concorrência perfeita.
