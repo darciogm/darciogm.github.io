@@ -1,813 +1,821 @@
-# Capítulo 14 — Sem Concorrente, Sem Piedade
+# Capítulo 14 — Quando Tudo se Encaixa (ou Quase Isso): Equilíbrio Geral
 
 ## Introdução
 
-O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.
+No capítulo anterior, analisamos mercados isolados — o chamado equilíbrio parcial marshalliano. Mas os mercados não existem no vácuo: o preço do milho afeta a demanda por soja; o salário dos engenheiros influencia o custo de construção civil; uma política comercial que protege a indústria têxtil altera os preços relativos em toda a economia. A análise de **equilíbrio geral** busca compreender a interdependência simultânea de todos os mercados.
 
-Este capítulo examina as causas do monopólio, a lógica de sua maximização de lucro, as perdas de eficiência decorrentes do poder de mercado, as estratégias de discriminação de preços e os mecanismos de regulação. A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira, como energia elétrica, saneamento e telecomunicações. Besanko & Braeutigam (2014, Caps. 11–12) oferecem tratamento acessível da teoria do monopólio com aplicações a mercados regulados.
+Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a intuição gráfica da Caixa de Edgeworth até a formalização matemática via funções de excesso de demanda e a prova de existência pelo Teorema do Ponto Fixo de Brouwer. Estabeleceremos os dois teoremas fundamentais do bem-estar, que conectam eficiência de Pareto e concorrência perfeita, e concluiremos com uma visão dos modelos computáveis de equilíbrio geral (CGE), que permitem aplicar essa teoria à avaliação de políticas públicas.
 
 ---
 
-## 14.1 Barreiras à entrada
+## 14.1 O Sistema de Preços Competitivo
 
-O monopólio só persiste se existirem **barreiras à entrada** que impeçam outras firmas de ingressar no mercado e contestar os lucros extraordinários do incumbente. Essas barreiras podem ser classificadas em três categorias.
+### Interdependência de mercados
 
-### Barreiras legais
+Em uma economia com \(n\) bens, os preços \(p_1, p_2, \ldots, p_n\) são determinados simultaneamente pela interação de todos os consumidores e produtores em todos os mercados. Uma mudança em qualquer mercado pode reverberar por toda a economia.
 
-O Estado pode conceder a uma firma o direito exclusivo de operar em um mercado. Exemplos incluem:
-
-- **Patentes**: conferem ao inventor o monopólio temporário sobre a exploração de uma inovação. No Brasil, a Lei de Propriedade Industrial (Lei 9.279/1996) estabelece prazo de 20 anos para patentes de invenção.
-- **Concessões e licenças**: o poder público pode restringir o número de operadores em um mercado, como ocorre nos serviços de distribuição de energia elétrica.
-- **Direitos autorais**: protegem obras intelectuais contra reprodução não autorizada.
-
-### Barreiras naturais
-
-Em alguns mercados, as condições tecnológicas tornam ineficiente a presença de mais de uma firma. Isso ocorre quando há **economias de escala** significativas ao longo de toda a faixa relevante de produção.
-
-!!! definition "Monopólio Natural"
-    Um mercado constitui um **monopólio natural** quando a função de custo é **subaditiva**, isto é, quando uma única firma pode produzir qualquer quantidade a um custo total menor do que duas ou mais firmas produzindo conjuntamente a mesma quantidade:
+!!! definition "Equilíbrio geral competitivo"
+    Um **equilíbrio geral competitivo** (ou equilíbrio walrasiano) é um vetor de preços \(\mathbf{p}^* = (p_1^*, p_2^*, \ldots, p_n^*)\) tal que todos os mercados se equilibram simultaneamente: para cada bem \(k\),
 
     \[
-    C(q) < C(q_1) + C(q_2), \quad \text{para todo } q_1, q_2 > 0 \text{ com } q_1 + q_2 = q
+    \sum_{i=1}^{I} x_i^k(\mathbf{p}^*) = \sum_{j=1}^{J} y_j^k(\mathbf{p}^*) + \sum_{i=1}^{I} \omega_i^k
     \]
 
-    No caso de um único produto, a subaditividade é implicada por economias de escala ao longo de toda a faixa relevante de produção — ou seja, o custo médio é decrescente.
+    onde \(x_i^k\) é a demanda do consumidor \(i\) pelo bem \(k\), \(y_j^k\) é a oferta líquida da firma \(j\) do bem \(k\), e \(\omega_i^k\) é a dotação inicial do consumidor \(i\) do bem \(k\).
 
-Exemplos clássicos incluem redes de distribuição de água, gás, eletricidade e telecomunicações fixas, nas quais a duplicação da infraestrutura seria socialmente custosa.
+### Homogeneidade e normalização
+
+Em um sistema competitivo, apenas os **preços relativos** importam. As funções de demanda e oferta são homogêneas de grau zero nos preços: se todos os preços dobram, as quantidades demandadas e ofertadas não se alteram. Isso permite normalizar os preços, fixando um bem como **numerário** com preço igual a 1:
+
+\[
+p_n = 1 \quad \Rightarrow \quad \text{sistema com } n-1 \text{ preços relativos a determinar}
+\]
+
+---
+
+## 14.2 Modelo Gráfico: A Caixa de Edgeworth
+
+### Construção
+
+Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações totais da economia são:
+
+\[
+\bar{x}_1 = \omega_A^1 + \omega_B^1, \qquad \bar{x}_2 = \omega_A^2 + \omega_B^2
+\]
+
+A **Caixa de Edgeworth** é um retângulo com dimensões \(\bar{x}_1 \times \bar{x}_2\). O consumidor A é medido a partir do canto inferior esquerdo e o consumidor B a partir do canto superior direito. Cada ponto na caixa representa uma alocação factível que esgota todos os recursos.
+
+!!! definition "Caixa de Edgeworth"
+    A **Caixa de Edgeworth** é uma representação gráfica de todas as alocações factíveis em uma economia de troca pura com dois consumidores e dois bens. Cada ponto no retângulo especifica simultaneamente as cestas de consumo de ambos os consumidores.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Em um monopólio natural, uma única empresa atende todo o mercado a um custo menor do que duas ou mais fariam — duplicar a infraestrutura seria desperdício.
+    **Em uma frase:** A Caixa de Edgeworth é um mapa de todas as formas possíveis de dividir os recursos de uma economia entre duas pessoas.
 
-    **Pense assim:** Pense na rede de água encanada do seu bairro. Faz sentido ter uma empresa com uma rede de canos, não duas redes paralelas competindo na mesma rua. O custo fixo de enterrar a tubulação é tão alto que, quanto mais casas uma única rede atende, menor o custo por casa. Construir uma segunda rede seria jogar dinheiro fora — literalmente cavar buracos à toa.
+    **Pense assim:** Imagine dois colegas de república dividindo o que sobrou na geladeira: 6 fatias de pizza e 4 latas de refrigerante. Qualquer combinação que dê o total — 4 fatias para um e 2 para outro, por exemplo — é um ponto na caixa. Movendo o ponto, você redistribui pizza e refrigerante entre os dois. A mágica da caixa é mostrar, num só diagrama, se existe uma redistribuição que deixe ambos mais felizes.
 
-    **Por que isso importa:** É por isso que setores como saneamento, distribuição de energia e ferrovias são regulados por agências como [ANEEL](https://www.aneel.gov.br) e [ANA](https://www.gov.br/ana), em vez de simplesmente liberados à concorrência.
+    **Por que isso importa:** A Caixa de Edgeworth é a ferramenta visual fundamental para entender trocas voluntárias, eficiência e os ganhos do comércio — inclusive entre países, como no acordo Mercosul-UE.
 
-### Barreiras estratégicas
+### Curvas de indiferença na caixa
 
-Firmas incumbentes podem adotar comportamentos deliberados para dificultar a entrada de rivais:
+As curvas de indiferença do consumidor A são desenhadas normalmente (convexas em relação à origem inferior esquerda). As curvas de indiferença do consumidor B são desenhadas invertidas (convexas em relação ao canto superior direito). Quando duas curvas de indiferença se tangenciam, as taxas marginais de substituição são iguais:
 
-- **Excesso de capacidade instalada**: sinaliza que o incumbente pode expandir a produção rapidamente em resposta à entrada, tornando-a não lucrativa.
-- **Preços predatórios**: fixar preços temporariamente abaixo do custo para expulsar ou dissuadir concorrentes (prática ilícita no direito concorrencial brasileiro, conforme a Lei 12.529/2011).
-- **Proliferação de marcas**: ocupar nichos de mercado para reduzir o espaço disponível para entrantes.
-- **Controle de insumos essenciais**: adquirir ou controlar o acesso a recursos sem os quais rivais não podem operar.
+\[
+TMS_A^{12} = TMS_B^{12}
+\]
+
+Nesse ponto, não há trocas mutuamente benéficas possíveis — a alocação é **eficiente no sentido de Pareto**.
 
 ---
 
-## Gráfico interativo: Equilíbrio de monopólio
+### Gráfico interativo: Caixa de Edgeworth
 
-<iframe src="../graficos/cap14/monopolio.html" width="100%" height="550" style="border:none;border-radius:8px;"></iframe>
+Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação X para verificar se ele representa uma melhoria de Pareto em relação à dotação inicial e se está sobre a curva de contrato (eficiência). As curvas de indiferença tracejadas passam pela dotação E; as contínuas passam pela alocação X.
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 14.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.</em>
-</p>
+<iframe src="../../graficos/cap14/caixa-edgeworth.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
-## 14.2 Maximização de lucro do monopolista
+## 14.3 Troca Pura: Curva de Contrato e Núcleo
 
-### O problema do monopolista
+### Eficiência de Pareto na troca
 
-O monopolista enfrenta toda a curva de demanda do mercado. Se a demanda inversa é \(p(q)\), o problema de maximização é:
+!!! definition "Eficiência de Pareto"
+    Uma alocação é **eficiente no sentido de Pareto** (ou um **ótimo de Pareto**) se não existe outra alocação factível que melhore a situação de pelo menos um agente sem piorar a de nenhum outro.
 
-\[
-\max_q \; \pi(q) = p(q) \cdot q - C(q)
-\]
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Uma situação é eficiente no sentido de Pareto quando não dá mais para melhorar a vida de alguém sem prejudicar outra pessoa.
 
-A condição de primeira ordem é:
+    **Pense assim:** Pense em uma partilha de bolo de aniversário. Se dá para refattiar o bolo de modo que alguém ganhe um pedaço maior sem que ninguém fique com um pedaço menor, a divisão original era ineficiente. Eficiência de Pareto é quando todo o bolo já foi distribuído da melhor forma possível — qualquer mudança que beneficie alguém necessariamente tira de outro.
 
-\[
-\frac{d\pi}{dq} = \underbrace{p(q) + q \cdot p'(q)}_{\text{Receita Marginal (RMg)}} - \underbrace{C'(q)}_{\text{Custo Marginal (CMg)}} = 0
-\]
+    **Por que isso importa:** Eficiência de Pareto é o critério mínimo de "bom funcionamento" de uma economia, mas não diz nada sobre justiça — uma sociedade onde uma pessoa tem tudo e as demais nada pode ser Pareto-eficiente, o que mostra por que eficiência e equidade são questões distintas.
 
-Portanto, a regra de maximização é:
+O conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth forma a **curva de contrato** — o locus dos pontos de tangência entre as curvas de indiferença dos dois consumidores.
 
-\[
-\boxed{RMg(q^m) = CMg(q^m)}
-\]
-
-A condição de segunda ordem exige que \(\frac{d^2\pi}{dq^2} < 0\), ou seja, que a receita marginal corte o custo marginal "de cima para baixo".
-
-### Receita marginal e elasticidade
-
-A receita marginal pode ser expressa em termos da elasticidade-preço da demanda \(\varepsilon_{p}\) (definida como valor negativo, \(\varepsilon_p < 0\)):
-
-\[
-RMg = p\left(1 + \frac{1}{\varepsilon_p}\right) = p\left(1 - \frac{1}{|\varepsilon_p|}\right)
-\]
-
-Como o monopolista opera onde \(RMg > 0\), ele necessariamente produz na faixa **elástica** da demanda (\(|\varepsilon_p| > 1\)). Na faixa inelástica, a receita marginal seria negativa, e o monopolista poderia aumentar a receita (e o lucro) reduzindo a produção.
-
-### A regra de markup
-
-Da condição \(RMg = CMg\), obtemos:
-
-\[
-p\left(1 - \frac{1}{|\varepsilon_p|}\right) = CMg \implies p = \frac{CMg}{1 - \frac{1}{|\varepsilon_p|}}
-\]
-
-O monopolista aplica um **markup** sobre o custo marginal que é inversamente proporcional à elasticidade-preço da demanda. Quanto mais inelástica a demanda, maior o markup e maior o poder de mercado.
-
-!!! definition "Índice de Lerner"
-    O **índice de Lerner** mede o poder de mercado de uma firma como a diferença percentual entre preço e custo marginal:
+!!! definition "Curva de contrato"
+    A **curva de contrato** é o conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth. Formalmente, é o conjunto de alocações \((x_A, x_B)\) tais que:
 
     \[
-    L = \frac{p - CMg}{p}
+    TMS_A^{12}(x_A) = TMS_B^{12}(x_B)
     \]
 
-    Para uma firma em concorrência perfeita, \(L = 0\). Para um monopolista, \(L = \frac{1}{|\varepsilon_p|}\). O índice varia entre 0 e 1.
+    sujeito à factibilidade \(x_A + x_B = \bar{x}\).
 
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O markup do monopolista é maior quando os consumidores têm poucas alternativas — quanto mais "preso" o cliente, mais caro o produto.
+### O núcleo da economia
 
-    **Pense assim:** Compare o preço de uma garrafa d'água no supermercado (R$ 2) com o preço no estádio de futebol (R$ 10). No estádio, você não pode sair para comprar em outro lugar — sua demanda é inelástica — e o vendedor explora isso cobrando um markup enorme. No supermercado, com dez marcas na prateleira, ninguém consegue cobrar muito acima do custo. O índice de Lerner mede exatamente esse "poder de espremer" o consumidor.
+O **núcleo** é um subconjunto da curva de contrato: inclui apenas as alocações Pareto-eficientes que são individualmente racionais, ou seja, que dão a cada consumidor utilidade pelo menos tão alta quanto a obtida com suas dotações iniciais:
 
-    **Por que isso importa:** O [CADE](https://www.gov.br/cade) usa medidas como o índice de Lerner para avaliar se fusões e aquisições criarão poder de mercado excessivo — como na análise da fusão que criou a Ambev.
+\[
+U_A(x_A) \geq U_A(\omega_A) \quad \text{e} \quad U_B(x_B) \geq U_B(\omega_B)
+\]
+
+O equilíbrio walrasiano pertence ao núcleo. Além disso, à medida que a economia é "replicada" (duplicando o número de consumidores de cada tipo), o núcleo se contrai, convergindo para o equilíbrio walrasiano no limite — este é o **Teorema do Limite do Núcleo** de Debreu e Scarf.
 
 ---
 
-## 14.3 Demonstração: derivação do índice de Lerner
+## 14.4 Produção e Troca: Fronteira de Possibilidades de Produção
+
+### Eficiência na produção
+
+Quando introduzimos produção na análise, precisamos considerar a eficiência na alocação de insumos entre setores. Com dois insumos (trabalho L e capital K) e dois bens, podemos construir uma segunda Caixa de Edgeworth para a produção. O locus de tangências entre as isoquantas dos dois setores forma a **curva de contrato na produção**:
+
+\[
+TMST_1^{LK} = TMST_2^{LK}
+\]
+
+### Fronteira de possibilidades de produção (FPP)
+
+A curva de contrato na produção mapeia-se na **fronteira de possibilidades de produção** (FPP), que mostra as combinações máximas dos dois bens que a economia pode produzir dados seus recursos.
+
+A inclinação da FPP é a **taxa marginal de transformação** (TMT):
+
+\[
+TMT = -\frac{dX_2}{dX_1} = \frac{CMg_1}{CMg_2}
+\]
+
+### Eficiência no mix de produtos
+
+A eficiência econômica plena requer que a TMT iguale a TMS comum aos consumidores:
+
+\[
+TMT = TMS_A^{12} = TMS_B^{12}
+\]
+
+Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis.
+
+---
+
+## Tabela: Condições de Eficiência de Pareto
+
+A tabela abaixo sintetiza as três condições marginais para a eficiência de Pareto em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
+
+| Tipo de eficiência | Condição marginal | Interpretação |
+|---|---|---|
+| **Eficiência na troca** | \(TMS_A^{12} = TMS_B^{12}\) | Os consumidores valorizam os bens na mesma proporção marginal; não há trocas mutuamente benéficas. |
+| **Eficiência na produção** | \(TMST_1^{LK} = TMST_2^{LK}\) | Os insumos são alocados entre setores de modo que é impossível aumentar a produção de um bem sem reduzir a do outro. |
+| **Eficiência no mix de produtos** | \(TMT^{12} = TMS_A^{12} = TMS_B^{12}\) | A combinação de bens produzida corresponde às preferências dos consumidores; o custo de oportunidade social iguala a valoração marginal. |
+
+!!! note "Concorrência perfeita e eficiência"
+    Em concorrência perfeita, o sistema de preços descentraliza automaticamente todas essas condições. Os consumidores igualam suas TMS à razão de preços (\(TMS = p_1/p_2\)); as firmas igualam suas TMST à razão de preços dos insumos (\(TMST = w/r\)); e a maximização de lucro garante que \(CMg_1/CMg_2 = p_1/p_2\). Portanto, \(TMS = TMT\).
+
+---
+
+### Gráfico interativo: Fronteira de Possibilidades de Produção (FPP)
+
+Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
+
+<iframe src="../../graficos/cap14/fpp.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+
+---
+
+## Box Brasil: Mercosul-UE e os Ganhos de Troca
+
+!!! example "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
+    Em dezembro de 2024, após 25 anos de negociação, o **Mercosul** e a **União Europeia** assinaram um acordo de parceria comercial que cria uma das maiores zonas de livre comércio do mundo, reunindo **718 milhões de pessoas** e um PIB conjunto de US$ 22,4 trilhões.
+
+    **Os ganhos de troca na linguagem da Caixa de Edgeworth**
+
+    O acordo pode ser interpretado como um movimento ao longo da "caixa de Edgeworth" entre dois blocos: o Mercosul (dotação abundante em commodities agrícolas e minerais) e a UE (dotação abundante em bens industrializados e serviços). Antes do acordo, tarifas de importação impediam que os preços relativos igualassem as TMS dos dois blocos — a alocação estava dentro da caixa, mas fora da curva de contrato. A eliminação de tarifas aproxima os preços relativos dos custos marginais, movendo a alocação em direção à eficiência de Pareto.
+
+    **Estimativas de equilíbrio geral**
+
+    Estudos do **[IPEA](https://www.ipea.gov.br)** utilizando modelos CGE estimam que o acordo elevará o PIB brasileiro em **0,46%** (US$ 9,3 bilhões) até 2040 e aumentará o fluxo comercial bilateral em **R$ 94,2 bilhões** — com R$ 52,1 bilhões em exportações brasileiras adicionais. As exportações do agronegócio brasileiro para a UE poderiam crescer até 26%.
+
+    **Por que equilíbrio parcial subestima os ganhos?**
+
+    Uma análise mercado a mercado (equilíbrio parcial) capturaria apenas os ganhos diretos da redução tarifária em cada setor. O modelo CGE captura adicionalmente: (i) realocação de trabalho e capital entre setores; (ii) efeitos sobre a taxa de câmbio real; (iii) ganhos de produtividade via maior concorrência e acesso a insumos importados mais baratos; (iv) efeitos sobre a receita do governo e consequentes ajustes fiscais.
+
+    **Fonte**: IPEA; Ministério das Relações Exteriores; Agência Brasil (dez/2024).
+
+---
+
+## 14.5 O Primeiro Teorema do Bem-Estar
+
+!!! abstract "Primeiro Teorema do Bem-Estar"
+    Se todos os consumidores e firmas são tomadores de preço, e se existe um mercado completo para cada bem, então o equilíbrio competitivo (walrasiano) é **eficiente no sentido de Pareto**.
+
+Este é o resultado formal que dá substância à intuição da "mão invisível" de Adam Smith: sob concorrência perfeita, o interesse próprio dos agentes, guiado pelos preços de mercado, conduz a uma alocação eficiente sem necessidade de planejamento centralizado.
 
 !!! proof "Demonstração"
-    Seja \(p(q)\) a demanda inversa do mercado e \(C(q)\) a função de custo do monopolista. O problema de maximização de lucro é:
+    **Demonstração do Primeiro Teorema do Bem-Estar** (economia de troca pura)
+
+    Considere uma economia com \(I\) consumidores e \(n\) bens. Seja \((\mathbf{x}^*, \mathbf{p}^*)\) um equilíbrio walrasiano, onde \(\mathbf{x}_i^*\) é a cesta escolhida pelo consumidor \(i\) e \(\mathbf{p}^*\) é o vetor de preços de equilíbrio.
+
+    **Suposição:** As preferências de cada consumidor são localmente não saciadas (para qualquer cesta e qualquer vizinhança, existe uma cesta preferida naquela vizinhança).
+
+    Suponha, por contradição, que \(\mathbf{x}^*\) não seja Pareto-eficiente. Então existe uma alocação factível \(\hat{\mathbf{x}} = (\hat{\mathbf{x}}_1, \ldots, \hat{\mathbf{x}}_I)\) tal que:
 
     \[
-    \max_q \; \pi(q) = p(q) \cdot q - C(q)
+    \hat{\mathbf{x}}_i \succsim_i \mathbf{x}_i^* \quad \forall\, i, \qquad \text{e} \qquad \hat{\mathbf{x}}_j \succ_j \mathbf{x}_j^* \quad \text{para algum } j
     \]
 
-    A condição de primeira ordem é:
+    **Passo 1:** Se \(\hat{\mathbf{x}}_j \succ_j \mathbf{x}_j^*\), então \(\hat{\mathbf{x}}_j\) não pertence ao conjunto orçamentário de \(j\) no equilíbrio (caso contrário, \(j\) teria escolhido \(\hat{\mathbf{x}}_j\) em vez de \(\mathbf{x}_j^*\)). Portanto:
 
     \[
-    \frac{d\pi}{dq} = p(q) + q \cdot p'(q) - C'(q) = 0
+    \mathbf{p}^* \cdot \hat{\mathbf{x}}_j > \mathbf{p}^* \cdot \boldsymbol{\omega}_j \tag{1}
     \]
 
-    Reescrevendo:
+    **Passo 2:** Para todo \(i\) tal que \(\hat{\mathbf{x}}_i \succsim_i \mathbf{x}_i^*\), a não saciedade local implica que:
 
     \[
-    p + q \cdot p'(q) = CMg
+    \mathbf{p}^* \cdot \hat{\mathbf{x}}_i \geq \mathbf{p}^* \cdot \boldsymbol{\omega}_i \tag{2}
     \]
 
-    Multiplicamos e dividimos o segundo termo por \(p\):
+    (Se \(\hat{\mathbf{x}}_i\) custasse estritamente menos, por não saciedade local, existiria uma cesta ainda melhor e acessível, contradizendo a otimalidade de \(\mathbf{x}_i^*\).)
+
+    **Passo 3:** Somando (1) e (2) sobre todos os consumidores:
 
     \[
-    p + p \cdot \frac{q \cdot p'(q)}{p} = CMg
+    \sum_{i=1}^{I} \mathbf{p}^* \cdot \hat{\mathbf{x}}_i > \sum_{i=1}^{I} \mathbf{p}^* \cdot \boldsymbol{\omega}_i
     \]
-
-    Observe que a elasticidade-preço da demanda é definida como:
 
     \[
-    \varepsilon_p = \frac{dq}{dp} \cdot \frac{p}{q}
+    \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \hat{\mathbf{x}}_i \right) > \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \boldsymbol{\omega}_i \right)
     \]
 
-    Portanto:
+    Mas factibilidade de \(\hat{\mathbf{x}}\) exige \(\sum_i \hat{\mathbf{x}}_i \leq \sum_i \boldsymbol{\omega}_i\). Com \(\mathbf{p}^* > 0\) (consequência da não saciedade local), isso implica:
 
     \[
-    \frac{q \cdot p'(q)}{p} = \frac{q}{p} \cdot \frac{dp}{dq} = \frac{1}{\varepsilon_p}
+    \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \hat{\mathbf{x}}_i \right) \leq \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \boldsymbol{\omega}_i \right)
     \]
 
-    Substituindo:
+    **Contradição.** Portanto, \(\mathbf{x}^*\) é Pareto-eficiente. \(\blacksquare\)
 
-    \[
-    p\left(1 + \frac{1}{\varepsilon_p}\right) = CMg
-    \]
-
-    Rearranjando:
-
-    \[
-    p - CMg = -\frac{p}{\varepsilon_p}
-    \]
-
-    Dividindo ambos os lados por \(p\):
-
-    \[
-    \frac{p - CMg}{p} = -\frac{1}{\varepsilon_p} = \frac{1}{|\varepsilon_p|}
-    \]
-
-    Portanto:
-
-    \[
-    \boxed{L = \frac{p - CMg}{p} = \frac{1}{|\varepsilon_p|}}
-    \]
-
-    O índice de Lerner é igual ao inverso do valor absoluto da elasticidade-preço da demanda. Quanto mais inelástica a demanda (menor \(|\varepsilon_p|\)), maior o poder de mercado. Em concorrência perfeita, a firma enfrenta demanda perfeitamente elástica (\(|\varepsilon_p| \to \infty\)), de modo que \(L = 0\). \(\blacksquare\)
-
----
-
-## 14.4 Ineficiência do monopólio
-
-### Perda de peso morto
-
-O monopolista produz menos e cobra mais do que o resultado competitivo. Essa distorção gera uma **perda de peso morto** (PPM) — uma redução no excedente total que não é capturada por nenhum agente.
-
-Considere um mercado com demanda linear \(p = a - bq\) e custo marginal constante \(CMg = c\).
-
-**Resultado competitivo** (\(p = CMg\)):
-
-\[
-q^c = \frac{a - c}{b}, \quad p^c = c
-\]
-
-**Resultado monopolístico** (\(RMg = CMg\)):
-
-\[
-RMg = a - 2bq = c \implies q^m = \frac{a - c}{2b}, \quad p^m = \frac{a + c}{2}
-\]
-
-O monopolista produz **metade** da quantidade competitiva e cobra um preço **acima** do custo marginal.
-
-### O triângulo de Harberger
-
-A perda de peso morto corresponde à área do triângulo entre a curva de demanda e o custo marginal, entre \(q^m\) e \(q^c\):
-
-\[
-PPM = \frac{1}{2}(p^m - c)(q^c - q^m) = \frac{(a-c)^2}{8b}
-\]
-
-Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0,1% do PIB, um valor surpreendentemente pequeno. Estimativas posteriores, incorporando *rent-seeking* e ineficiências organizacionais, sugerem valores significativamente maiores.
-
-!!! example "Poder de mercado e o CADE"
-    O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória.
-
-### Comparação concorrência perfeita versus monopólio
-
-| Variável | Concorrência Perfeita | Monopólio | Variação |
-|---|---|---|---|
-| **Preço** | \(p^c = c\) | \(p^m = \frac{a+c}{2}\) | \(\uparrow\) |
-| **Quantidade** | \(q^c = \frac{a-c}{b}\) | \(q^m = \frac{a-c}{2b}\) | \(\downarrow\) |
-| **Excedente do Consumidor** | \(\frac{(a-c)^2}{2b}\) | \(\frac{(a-c)^2}{8b}\) | \(\downarrow\) |
-| **Excedente do Produtor** | \(0\) | \(\frac{(a-c)^2}{4b}\) | \(\uparrow\) |
-| **Excedente Total** | \(\frac{(a-c)^2}{2b}\) | \(\frac{3(a-c)^2}{8b}\) | \(\downarrow\) |
-| **Perda de Peso Morto** | \(0\) | \(\frac{(a-c)^2}{8b}\) | — |
-
-!!! tip "Interpretação"
-    A passagem de concorrência perfeita para monopólio envolve duas transferências: (i) parte do excedente do consumidor é capturada pelo monopolista (retângulo de transferência); (ii) parte do excedente total simplesmente desaparece (triângulo de Harberger). A PPM representa uma perda **líquida** de bem-estar social.
+!!! tip "Hipóteses cruciais"
+    O Primeiro Teorema requer: (i) comportamento tomador de preço; (ii) mercados completos (sem externalidades nem bens públicos); (iii) não saciedade local das preferências. A violação de qualquer uma dessas hipóteses abre espaço para **falhas de mercado** — tema dos próximos capítulos.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O monopólio produz menos e cobra mais do que um mercado competitivo, e a diferença de bem-estar que se perde no caminho não vai para ninguém — simplesmente evapora.
+    **Em uma frase:** Quando os mercados funcionam bem (sem monopólios, externalidades ou informação assimétrica), o interesse próprio de cada agente leva, como que por mágica, a um resultado eficiente para todos.
 
-    **Pense assim:** Imagine que, em vez de vários postos de gasolina no bairro, houvesse apenas um. Ele reduziria a quantidade vendida e aumentaria o preço. Parte do que os consumidores perdem vai para o bolso do dono do posto (lucro de monopólio), mas outra parte — os litros que deixaram de ser vendidos porque o preço ficou alto demais — é pura perda. É como se alguém queimasse dinheiro: nem o consumidor nem o produtor ficam com ele.
+    **Pense assim:** Ninguém coordena os milhares de caminhões que levam comida de Mato Grosso aos supermercados de São Paulo. Cada motorista, cada atacadista e cada varejista age por interesse próprio — mas o sistema de preços funciona como um "maestro invisível", sinalizando onde falta e onde sobra produto. O Primeiro Teorema formaliza essa ideia: se os preços são livres e ninguém tem poder de mercado, o resultado é eficiente.
 
-    **Por que isso importa:** A perda de peso morto do monopólio é o principal argumento econômico para a existência de órgãos como o CADE, que combatem concentração excessiva de mercado para proteger o bem-estar dos consumidores brasileiros.
-
----
-
-## 14.5 Estática comparativa do monopólio
-
-### Efeito de um imposto unitário
-
-Suponha que o governo impõe um imposto unitário \(t\) sobre cada unidade produzida. O novo custo marginal efetivo é \(CMg + t\). Com demanda linear:
-
-\[
-q^m(t) = \frac{a - c - t}{2b}, \quad p^m(t) = \frac{a + c + t}{2}
-\]
-
-Observe que \(\frac{dp^m}{dt} = \frac{1}{2}\): o monopolista repassa apenas **metade** do imposto ao consumidor. Isso contrasta com a concorrência perfeita, na qual, com oferta perfeitamente elástica, o repasse é integral.
-
-!!! note "Repasse imperfeito"
-    O fato de o monopolista absorver parte do imposto decorre da curvatura da curva de demanda que ele enfrenta. A incidência do imposto depende crucialmente da forma funcional da demanda: com demanda isoelástica, por exemplo, o repasse pode exceder 100%.
-
-### Deslocamento da demanda
-
-Um aumento na demanda (deslocamento paralelo de \(a\) para \(a + \Delta\)) eleva tanto o preço quanto a quantidade de monopólio:
-
-\[
-\Delta p^m = \frac{\Delta}{2}, \quad \Delta q^m = \frac{\Delta}{2b}
-\]
-
-O lucro do monopolista é crescente e convexo na demanda, o que implica que o monopolista tem incentivos fortes para investir em publicidade ou atividades que expandam a demanda.
+    **Por que isso importa:** Esse teorema é o fundamento teórico para políticas pró-concorrência e contra monopólios — mas também alerta que, quando as hipóteses falham (externalidades, bens públicos), a intervenção governamental pode ser justificada.
 
 ---
 
-## 14.6 Qualidade do produto sob monopólio
+## 14.6 O Segundo Teorema do Bem-Estar
 
-O monopolista também escolhe a **qualidade** \(s\) do produto. Se a demanda é \(p(q, s)\) e o custo é \(C(q, s)\), o problema torna-se:
+!!! abstract "Segundo Teorema do Bem-Estar"
+    Se as preferências dos consumidores são convexas e localmente não saciadas, e se os conjuntos de produção das firmas são convexos, então qualquer alocação Pareto-eficiente pode ser alcançada como um equilíbrio competitivo, desde que se realizem transferências lump-sum apropriadas das dotações iniciais.
 
-\[
-\max_{q, s} \; \pi(q, s) = p(q, s) \cdot q - C(q, s)
-\]
+### Importância normativa
 
-A condição para a escolha ótima de qualidade é:
+O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio, a sociedade pode escolher qualquer ponto da curva de contrato (qualquer distribuição de bem-estar) e implementá-lo via mercados competitivos, bastando redistribuir as dotações iniciais por meio de transferências fixas (*lump-sum*). Isso significa que:
 
-\[
-\frac{\partial p}{\partial s} \cdot q = \frac{\partial C}{\partial s}
-\]
+1. A concorrência perfeita não está vinculada a uma única distribuição de renda.
+2. Objetivos de equidade podem ser perseguidos sem sacrificar eficiência, desde que os instrumentos redistributivos sejam do tipo *lump-sum*.
 
-O monopolista iguala a receita marginal da qualidade ao custo marginal da qualidade. A receita marginal da qualidade é avaliada no **consumidor marginal** (o último a adquirir o bem), não no consumidor médio. Como o consumidor marginal tipicamente valora a qualidade menos do que o consumidor médio, o monopolista pode subprover ou superprover qualidade em relação ao ótimo social, dependendo da distribuição de preferências.
-
-!!! note "Qualidade e bem-estar"
-    Spence (1975) demonstrou que o monopolista provê qualidade eficiente quando o consumidor marginal tem a mesma valoração de qualidade que o consumidor médio. Em geral, não há resultado inequívoco: o monopolista pode oferecer qualidade excessiva ou insuficiente.
-
----
-
-## 14.7 Discriminação de preços
-
-O monopolista pode aumentar seus lucros se conseguir cobrar preços diferentes de consumidores diferentes (ou pela mesma unidade adicional). A discriminação de preços exige duas condições: (i) algum grau de poder de mercado e (ii) impossibilidade de revenda (arbitragem) entre consumidores.
-
-### 14.7.1 Discriminação de primeiro grau (perfeita)
-
-Na discriminação perfeita, o monopolista cobra de cada consumidor exatamente sua **disposição a pagar**. Cada unidade é vendida a um preço diferente.
-
-!!! definition "Discriminação de Primeiro Grau"
-    Na **discriminação de preços de primeiro grau**, o monopolista extrai todo o excedente do consumidor, cobrando o preço máximo que cada consumidor está disposto a pagar por cada unidade.
-
-Resultado:
-
-- A quantidade produzida é **eficiente**: \(q = q^c\) (idêntica à concorrência perfeita).
-- Não há perda de peso morto.
-- Todo o excedente é capturado pelo produtor: \(EC = 0\), \(EP = \frac{(a-c)^2}{2b}\).
-
-A discriminação perfeita é um caso limite teórico. Na prática, o monopolista raramente conhece as disposições a pagar individuais.
-
-### 14.7.2 Discriminação de segundo grau (não-linear)
-
-Quando o monopolista não observa as características dos consumidores, ele pode oferecer um **menu de contratos** (combinações preço-quantidade) e permitir que os consumidores se **autosselecionem**. Consumidores com alta disposição a pagar escolhem o pacote premium; consumidores com baixa disposição escolhem o pacote básico.
-
-A estrutura ótima envolve:
-
-- O tipo de **alta valoração** recebe a quantidade eficiente, mas paga um preço que lhe deixa algum excedente (renda informacional).
-- O tipo de **baixa valoração** recebe uma quantidade **distorcida para baixo** (abaixo do eficiente) e extrai exatamente zero de excedente.
-
-Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de incentivos**: é necessário tornar o pacote básico suficientemente pouco atrativo para que o tipo alto não queira "imitar" o tipo baixo.
-
-!!! tip "Exemplos práticos"
-    - Passagens aéreas com classes tarifárias (econômica, executiva, primeira classe).
-    - Versões de software (básica, profissional, enterprise).
-    - Descontos por quantidade em supermercados.
-
-!!! example "Box Brasil: Discriminação de preços nas passagens aéreas"
-    O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da [ANAC](https://www.anac.gov.br)), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
-
-    **Discriminação de segundo grau (autosseleção):**
-
-    As companhias oferecem múltiplas classes tarifárias para o mesmo voo — desde tarifas promocionais sem direito a bagagem ou remarcação até tarifas flexíveis com reembolso integral. Passageiros corporativos, com alta disposição a pagar e demanda inelástica (viagens de última hora), autosselecionam-se para tarifas mais caras. Passageiros a lazer, com demanda elástica e flexibilidade de datas, escolhem as tarifas promocionais. Essa estrutura replica o menu de contratos descrito na teoria: o tipo de alta valoração paga mais, mas recebe serviços adicionais.
-
-    **Discriminação de terceiro grau (segmentação observável):**
-
-    Companhias oferecem tarifas diferenciadas para idosos (desconto de 5% obrigatório pela ANAC), estudantes e militares. A segmentação por antecedência de compra (preços mais baixos para compras com 30-60 dias de antecedência) também funciona como discriminação de terceiro grau, separando viajantes a lazer (antecedência) de viajantes corporativos (última hora).
-
-    Segundo dados da ANAC, a tarifa aérea média doméstica por km variou entre R$ 0,35 e R$ 0,55 em 2023, mas a dispersão de preços dentro de um mesmo voo pode facilmente superar 300% — evidência direta de discriminação de preços.
-
-### 14.7.3 Discriminação de terceiro grau (segmentação de mercados)
-
-Na discriminação de terceiro grau, o monopolista divide os consumidores em **grupos observáveis** (por exemplo, por idade, localização, status profissional) e cobra preços diferentes de cada grupo.
-
-Se há dois mercados com demandas \(p_1(q_1)\) e \(p_2(q_2)\), o monopolista resolve:
-
-\[
-\max_{q_1, q_2} \; p_1(q_1) \cdot q_1 + p_2(q_2) \cdot q_2 - C(q_1 + q_2)
-\]
-
-As condições de primeira ordem são:
-
-\[
-RMg_1(q_1) = RMg_2(q_2) = CMg(q_1 + q_2)
-\]
-
-O monopolista iguala as receitas marginais em todos os mercados ao custo marginal. O mercado com demanda **mais inelástica** paga o preço **mais alto**:
-
-\[
-\frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}
-\]
+!!! note "Limitação prática"
+    Na prática, transferências *lump-sum* perfeitas são difíceis de implementar, pois requerem informação sobre características dos agentes que geralmente são privadas. A tributação factível (imposto de renda, IVA) introduz distorções e gera perda de peso morto — um *trade-off* entre eficiência e equidade que é central na economia do setor público.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Discriminar preços significa cobrar mais de quem está mais disposto a pagar e menos de quem é mais sensível ao preço.
+    **Em uma frase:** A sociedade pode escolher qualquer distribuição de bem-estar que considere justa e, em princípio, alcançá-la usando mercados competitivos — basta redistribuir as dotações iniciais.
 
-    **Pense assim:** Pense nas passagens aéreas da Latam ou Gol. O executivo que compra na véspera paga R$ 2.000 porque *precisa* viajar (demanda inelástica). O estudante que compra com dois meses de antecedência paga R$ 400 porque tem flexibilidade (demanda elástica). A companhia aérea não está sendo "generosa" com o estudante — está maximizando lucro ao extrair mais de quem pode pagar mais e ainda assim vender para quem pagaria menos.
+    **Pense assim:** Imagine que o governo quer reduzir a desigualdade sem destruir a eficiência da economia. O Segundo Teorema diz que, em teoria, bastaria redistribuir a "riqueza inicial" (terra, capital) e depois deixar os mercados funcionarem livremente. É como reorganizar as fichas antes de começar o jogo, em vez de mudar as regras durante a partida. O problema é que, na prática, redistribuir sem distorcer é quase impossível — o Bolsa Família, por exemplo, é eficiente mas ainda gera algum custo administrativo.
 
-    **Por que isso importa:** A discriminação de preços pode, em alguns casos, aumentar a quantidade total vendida e até reduzir a perda de peso morto — o que complica o juízo de política concorrencial e exige análise caso a caso pelo CADE.
-
-!!! example "Box Brasil: Monopólios naturais regulados — o setor elétrico e telecomunicações pós-privatização"
-    O Brasil passou por extenso processo de privatização e regulação de monopólios naturais nos anos 1990. Dois casos emblemáticos ilustram os desafios da regulação:
-
-    **Setor Elétrico**
-
-    A reestruturação do setor elétrico brasileiro, iniciada em 1995 (Lei 8.987/1995 e Lei 9.074/1995), separou as atividades de geração, transmissão e distribuição. A distribuição de energia — um monopólio natural em cada área de concessão — é regulada pela ANEEL (Agência Nacional de Energia Elétrica), criada em 1996. A ANEEL realiza revisões tarifárias periódicas (a cada 4 ou 5 anos) utilizando o modelo de **empresa de referência** e aplica reajustes anuais baseados no IGP-M. Segundo dados da ANEEL, o Brasil possui 53 distribuidoras reguladas, atendendo mais de 90 milhões de unidades consumidoras. A tarifa média residencial brasileira, em 2024, situava-se entre R$ 0,60 e R$ 0,90 por kWh (com tributos), uma das mais altas do mundo em proporção à renda.
-
-    **Telecomunicações**
-
-    A privatização do Sistema Telebrás em 1998 transferiu ao setor privado o monopólio estatal de telecomunicações. A [ANATEL](https://www.anatel.gov.br) (Agência Nacional de Telecomunicações), criada pela Lei 9.472/1997, regula concessões e autorizações. Na telefonia fixa, as concessionárias originais (Oi, Telefônica/Vivo, Embratel) enfrentaram obrigações de universalização e controle tarifário (price cap com fator X de produtividade). A telefonia móvel, operando em regime de autorização, desenvolveu-se em um oligopólio com quatro operadoras principais (Vivo, Claro, TIM, Oi). A venda dos ativos móveis da Oi em 2022 para Vivo, Claro e TIM reduziu o mercado a três grandes operadoras, levantando preocupações concorrenciais analisadas pelo CADE.
-
-    | Indicador | Setor Elétrico | Telecomunicações |
-    |---|---|---|
-    | Agência reguladora | ANEEL (1996) | ANATEL (1997) |
-    | Modelo regulatório | Empresa de referência + price cap | Price cap com fator X |
-    | Nº de distribuidoras/operadoras | 53 distribuidoras | 3 grandes operadoras (móvel) |
-    | Universalização | ~99,8% de acesso | ~98% de cobertura 4G |
-    | Principal desafio atual | Transição energética e tarifas | 5G e competição em banda larga |
-
-    Ambos os setores ilustram o dilema fundamental da regulação de monopólios naturais: garantir eficiência produtiva e preços acessíveis sem eliminar os incentivos ao investimento. Para o contexto institucional e fiscal da regulação de monopólios naturais no Brasil, ver Giambiagi & Além (2016).
+    **Por que isso importa:** Esse teorema fundamenta a separação entre política de eficiência (deixar mercados funcionar) e política de equidade (redistribuir renda), e é a base teórica de programas de transferência de renda como o Bolsa Família.
 
 ---
 
-## Gráfico interativo: Discriminação de preços
+## Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
 
-<iframe src="../graficos/cap14/discriminacao-precos.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+!!! example "Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
+    A **Reforma Tributária** brasileira (EC 132/2023, regulamentada pela LC 214/2025) é, do ponto de vista da teoria do equilíbrio geral, uma das maiores intervenções sobre o sistema de preços relativos já realizadas no país. Ela substitui cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por dois: a **CBS** (federal) e o **IBS** (estadual/municipal), formando um IVA dual com alíquota estimada entre 26,5% e 28%.
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 14.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.</em>
-</p>
+    **Por que a reforma é um problema de equilíbrio geral?**
 
----
+    O sistema tributário anterior introduzia distorções em múltiplos mercados simultaneamente: cumulatividade (tributo sobre tributo), guerra fiscal entre estados (alíquotas diferentes de ICMS), e tratamentos setoriais desiguais. Essas distorções violavam as condições de eficiência de Pareto — em particular, impediam que os preços relativos refletissem os custos marginais reais (condição \(\mathrm{TMT} = \mathrm{TMS}\)).
 
-## 14.8 Tarifas em duas partes
+    A análise de equilíbrio parcial subestima os ganhos da reforma porque ignora os efeitos cruzados entre mercados. Quando o tributo sobre o setor têxtil muda, isso afeta o mercado de algodão, o de vestuário, o de mão de obra e assim por diante — exatamente o tipo de interdependência que o modelo walrasiano captura.
 
-Uma tarifa em duas partes consiste em uma **taxa de entrada** (tarifa fixa \(T\)) e um **preço por unidade** (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\).
+    **O que dizem os modelos CGE?**
 
-### Consumidores homogêneos
+    Estudos do IPEA, da FGV e do Ministério da Fazenda utilizando modelos de equilíbrio geral computável (Seção 14.10) estimam que a reforma pode elevar o **PIB potencial em até 10% a 20%** ao longo de 15 anos, primordialmente via ganhos de produtividade total dos fatores e aumento do estoque de capital. A reforma tributária aparece consistentemente como o cenário de maior ganho de bem-estar nos modelos CGE brasileiros — acima de acordos comerciais ou liberalização unilateral.
 
-Se todos os consumidores são idênticos, a estratégia ótima é simples:
+    **Conexão com o Segundo Teorema**
 
-1. Fixar \(p = CMg\) (preço eficiente).
-2. Fixar \(T = EC\) (capturar todo o excedente do consumidor).
+    O Segundo Teorema do Bem-Estar (Seção 14.6) afirma que qualquer alocação eficiente pode ser sustentada por mercados competitivos, desde que as transferências sejam *lump-sum*. A reforma tributária brasileira caminha nessa direção: ao substituir tributos cumulativos (distorcivos) por um IVA não cumulativo (menos distorcivo), ela aproxima o sistema tributário de uma transferência *lump-sum*, reduzindo a perda de peso morto. Não é uma transferência *lump-sum* perfeita — o IVA ainda distorce a margem consumo-lazer —, mas é substancialmente menos distorcivo que o sistema anterior.
 
-Isso replica o resultado da discriminação de primeiro grau: quantidade eficiente e extração completa do excedente.
-
-### Consumidores heterogêneos
-
-Com consumidores heterogêneos, o problema é mais complexo. Se a taxa de entrada for muito alta, consumidores com baixa demanda deixam o mercado. O monopolista enfrenta um trade-off entre:
-
-- Cobrar uma taxa alta e perder consumidores marginais.
-- Cobrar uma taxa baixa e atender mais consumidores, mas extrair menos excedente de cada um.
-
-A solução ótima tipicamente envolve \(p > CMg\) e \(T < EC\) do consumidor com menor demanda.
-
-!!! tip "Exemplos de tarifas em duas partes"
-    - Clubes de compras (anuidade + preço por produto).
-    - Parques de diversões (entrada + valor por brinquedo).
-    - Planos telefônicos (assinatura mensal + tarifa por minuto/dados).
-    - Serviços de streaming (assinatura fixa com acesso ao catálogo).
+    **Fonte**: Ministério da Fazenda; IFI/Senado, Estudo Especial nº 19 (2024); IBRE/FGV.
 
 ---
 
-## 14.9 Regulação de monopólios
+### Gráfico interativo: Equilíbrio Geral Walrasiano
 
-Quando o monopólio não pode ser eliminado (como no caso de monopólios naturais), a regulação busca aproximar o resultado de mercado do ótimo social. O dilema central é: como induzir a firma a produzir mais e cobrar menos, sem eliminar seus incentivos ao investimento e à eficiência?
+Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda resultante. O equilíbrio walrasiano ocorre quando o excesso de demanda é zero -- o gráfico indica o preço de equilíbrio e sinaliza a direção de ajuste necessária.
 
-### Regulação pelo custo marginal (first-best)
+<iframe src="../../graficos/cap14/equilibrio-geral.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-A solução ideal seria impor \(p = CMg\). Entretanto, em um monopólio natural com custos médios decrescentes, \(CMg < CMe\), de modo que \(p = CMg\) gera **prejuízo**. O governo precisaria subsidiar a firma, o que acarreta distorções em outros mercados (custo dos fundos públicos).
+---
 
-### Regulação pelo custo médio (second-best)
+## 14.7 Modelo Matemático de Troca
 
-A alternativa mais comum é impor \(p = CMe\), garantindo lucro zero. A firma produz mais do que o monopólio sem regulação, mas menos do que o first-best. Há uma PPM residual, menor que a do monopólio não regulado.
+### Funções de excesso de demanda
 
-### Regulação por teto de preços (price cap)
-
-O regulador fixa um teto de preço que é reajustado periodicamente pela inflação menos um fator de produtividade:
+Defina a **demanda líquida** (ou excesso de demanda) do consumidor \(i\) pelo bem \(k\) como:
 
 \[
-\Delta p \leq \text{inflação} - X
+z_i^k(\mathbf{p}) = x_i^k(\mathbf{p}) - \omega_i^k
 \]
 
-O fator \(X\) captura ganhos de eficiência esperados. A firma retém ganhos de produtividade acima de \(X\) até a próxima revisão, o que incentiva a redução de custos.
-
-!!! note "Vantagem do price cap"
-    O sistema de price cap, introduzido no Reino Unido por Stephen Littlechild (1983), possui vantagens informacionais sobre a regulação por taxa de retorno: o regulador não precisa conhecer detalhadamente a estrutura de custos da firma. Em contrapartida, pode induzir redução de qualidade se os padrões de serviço não forem adequadamente monitorados.
-
-### Regulação por taxa de retorno (rate of return)
-
-O regulador permite que a firma obtenha uma taxa de retorno "justa" \(s\) sobre o capital investido \(K\):
+O **excesso de demanda agregado** pelo bem \(k\) é:
 
 \[
-pq - wL - rK \leq (s - r)K
+Z^k(\mathbf{p}) = \sum_{i=1}^{I} z_i^k(\mathbf{p}) = \sum_{i=1}^{I} x_i^k(\mathbf{p}) - \bar{\omega}^k
 \]
 
-Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinvestir em capital** para inflar a base de remuneração — o chamado **efeito Averch-Johnson**. A firma substitui trabalho por capital além do socialmente ótimo, resultando em ineficiência produtiva.
+O equilíbrio walrasiano requer \(Z^k(\mathbf{p}^*) = 0\) para todo \(k = 1, \ldots, n\) (ou, mais geralmente, \(Z^k(\mathbf{p}^*) \leq 0\) com igualdade se \(p_k^* > 0\)).
+
+### Propriedades das funções de excesso de demanda
+
+As funções de excesso de demanda agregado satisfazem:
+
+1. **Homogeneidade de grau zero**: \(Z^k(\lambda \mathbf{p}) = Z^k(\mathbf{p})\) para todo \(\lambda > 0\).
+2. **Continuidade**: sob hipóteses adequadas sobre preferências (contínuas, convexas, localmente não saciadas).
+3. **Lei de Walras** (ver abaixo).
+
+### Lei de Walras
+
+!!! abstract "Lei de Walras"
+    Para qualquer vetor de preços \(\mathbf{p}\), o valor total do excesso de demanda é identicamente zero:
+
+    \[
+    \sum_{k=1}^{n} p_k \cdot Z^k(\mathbf{p}) \equiv 0
+    \]
+
+A Lei de Walras decorre diretamente do fato de que cada consumidor satisfaz sua restrição orçamentária com igualdade (pela não saciedade local):
+
+\[
+\mathbf{p} \cdot \mathbf{x}_i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}_i \quad \forall\, i
+\]
+
+Somando sobre todos os consumidores:
+
+\[
+\sum_{i} \mathbf{p} \cdot \mathbf{x}_i(\mathbf{p}) = \sum_{i} \mathbf{p} \cdot \boldsymbol{\omega}_i \quad \Longrightarrow \quad \mathbf{p} \cdot \mathbf{Z}(\mathbf{p}) = 0
+\]
+
+!!! tip "Consequência importante"
+    A Lei de Walras implica que, em um sistema com \(n\) mercados, se \(n - 1\) deles estão em equilíbrio, o \(n\)-ésimo mercado também estará necessariamente em equilíbrio. Portanto, há apenas \(n - 1\) equações de equilíbrio independentes — exatamente o número de preços relativos a determinar (após normalização).
 
 ---
 
-## Gráfico interativo: Regulação de monopólio natural
+## 14.8 Existência de Equilíbrio
 
-<iframe src="../graficos/cap14/regulacao-monopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+### O Teorema do Ponto Fixo de Brouwer
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 14.3 — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.</em>
-</p>
+!!! abstract "Teorema do Ponto Fixo de Brouwer"
+    Seja \(f: \Delta \to \Delta\) uma função contínua de um conjunto convexo e compacto \(\Delta \subset \mathbb{R}^n\) nele mesmo. Então existe pelo menos um ponto \(\mathbf{x}^* \in \Delta\) tal que:
+
+    \[
+    f(\mathbf{x}^*) = \mathbf{x}^*
+    \]
+
+### Aplicação à existência de equilíbrio
+
+A ideia central é construir uma função que mapeia preços em preços e cujo ponto fixo corresponda a um equilíbrio walrasiano. Normalizamos os preços no **simplex unitário**:
+
+\[
+\Delta = \left\{ \mathbf{p} \in \mathbb{R}^n_+ : \sum_{k=1}^{n} p_k = 1 \right\}
+\]
+
+Definimos uma função de ajuste de preços \(g: \Delta \to \Delta\):
+
+\[
+g_k(\mathbf{p}) = \frac{p_k + \max\{0, Z^k(\mathbf{p})\}}{1 + \sum_{j=1}^{n} \max\{0, Z^j(\mathbf{p})\}}
+\]
+
+Esta função eleva o preço de bens com excesso de demanda positivo e reduz (relativamente) o de bens com excesso de oferta. Verifica-se que:
+
+- \(g\) mapeia \(\Delta\) em \(\Delta\) (os novos preços são não negativos e somam 1).
+- \(g\) é contínua (pois \(Z\) é contínua e \(\max\) preserva continuidade).
+
+Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \mathbf{p}^*\). Pode-se mostrar, usando a Lei de Walras, que isso implica \(Z^k(\mathbf{p}^*) \leq 0\) para todo \(k\), com igualdade se \(p_k^* > 0\) — exatamente as condições de equilíbrio walrasiano.
+
+!!! abstract "Teorema de Existência do Equilíbrio Walrasiano (Arrow-Debreu, 1954)"
+    Se as preferências dos consumidores são contínuas, convexas e localmente não saciadas, e se as dotações agregadas são estritamente positivas, então existe pelo menos um equilíbrio walrasiano.
+
+!!! note "Unicidade e estabilidade"
+    O Teorema de Brouwer garante existência, mas não unicidade. Resultados de unicidade requerem condições adicionais sobre as funções de excesso de demanda (por exemplo, a condição de substitutibilidade bruta). Da mesma forma, a estabilidade do equilíbrio sob processos de ajuste *tâtonnement* requer hipóteses adicionais.
 
 ---
 
-## 14.10 Visões dinâmicas do monopólio
+## 14.9 Modelo Matemático de Produção e Troca
 
-### Schumpeter e a destruição criativa
+### Extensão com produção
 
-Joseph Schumpeter (1942) argumentou que o monopólio pode ser socialmente benéfico quando considerado em perspectiva dinâmica. Segundo essa visão:
+Quando incluímos firmas na economia, o modelo se generaliza. Com \(J\) firmas, cada firma \(j\) escolhe um plano de produção \(\mathbf{y}_j \in Y_j\) (seu conjunto de produção) para maximizar lucro:
 
-- Lucros de monopólio são a **recompensa pela inovação** e constituem o incentivo fundamental para o progresso tecnológico.
-- A concorrência relevante não é a concorrência de preços estática, mas a **concorrência por inovação** — a "destruição criativa" pela qual novos produtos e processos tornam obsoletos os anteriores.
-- Firmas com poder de mercado têm maiores recursos para investir em P&D.
+\[
+\max_{\mathbf{y}_j \in Y_j} \mathbf{p} \cdot \mathbf{y}_j
+\]
 
-A hipótese schumpeteriana gerou extensa literatura empírica, com resultados ambíguos. A relação entre concentração de mercado e inovação parece seguir uma curva em U invertido (Aghion et al., 2005): algum grau de poder de mercado estimula a inovação, mas poder excessivo a inibe.
+Os consumidores possuem ações \(\theta_{ij}\) nas firmas, de modo que a renda do consumidor \(i\) inclui os lucros distribuídos:
 
-### Mercados contestáveis
+\[
+m_i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}_i + \sum_{j=1}^{J} \theta_{ij} \cdot \pi_j(\mathbf{p})
+\]
 
-Baumol, Panzar e Willig (1982) propuseram a teoria dos **mercados contestáveis**: se a entrada e a saída do mercado são livres e sem custos irrecuperáveis (sunk costs), a mera **ameaça** de entrada é suficiente para disciplinar o monopolista. Mesmo um monopolista cobraria preços competitivos se a entrada fosse perfeitamente livre.
+onde \(\pi_j(\mathbf{p}) = \mathbf{p} \cdot \mathbf{y}_j^*(\mathbf{p})\) é o lucro maximizado da firma \(j\).
 
-!!! definition "Mercado Contestável"
-    Um mercado é **perfeitamente contestável** se: (i) não há custos irrecuperáveis de entrada e saída; (ii) entrantes potenciais têm acesso à mesma tecnologia do incumbente; (iii) consumidores respondem instantaneamente a diferenças de preço. Nessas condições, a ameaça de "hit-and-run" — entrada para capturar lucros seguida de saída — disciplina o incumbente.
+### Equilíbrio com produção
 
-Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irrecuperáveis são a norma, não a exceção. Ainda assim, a teoria da contestabilidade fornece um benchmark útil e lembra que barreiras à entrada — não a estrutura de mercado per se — são o determinante fundamental do poder de mercado.
+!!! definition "Equilíbrio walrasiano com produção"
+    Um equilíbrio walrasiano com produção é um vetor de preços \(\mathbf{p}^*\), alocações de consumo \(\{\mathbf{x}_i^*\}\) e planos de produção \(\{\mathbf{y}_j^*\}\) tais que:
+
+    1. Cada consumidor \(i\) maximiza utilidade sujeito à restrição orçamentária ao preço \(\mathbf{p}^*\).
+    2. Cada firma \(j\) maximiza lucro ao preço \(\mathbf{p}^*\).
+    3. Todos os mercados se equilibram:
+
+    \[
+    \sum_{i=1}^{I} \mathbf{x}_i^* = \sum_{i=1}^{I} \boldsymbol{\omega}_i + \sum_{j=1}^{J} \mathbf{y}_j^*
+    \]
+
+A Lei de Walras generaliza-se naturalmente: o valor do excesso de demanda (agora incorporando produção) é identicamente zero. O teorema de existência de Arrow-Debreu aplica-se com hipóteses adicionais de convexidade sobre os conjuntos de produção.
+
+---
+
+## 14.10 Modelos Computáveis de Equilíbrio Geral (CGE)
+
+### Da teoria à prática
+
+Os modelos de equilíbrio geral computável (CGE, do inglês *Computable General Equilibrium*) são implementações numéricas da teoria walrasiana. Eles especificam:
+
+1. **Formas funcionais** para preferências (geralmente CES — elasticidade de substituição constante) e tecnologias (funções de produção Leontief, Cobb-Douglas ou CES aninhadas).
+2. **Calibração** com dados de uma Matriz de Insumo-Produto ou de uma SAM (Matriz de Contabilidade Social).
+3. **Solução numérica** do sistema de equações de equilíbrio via algoritmos iterativos.
+
+### Estrutura típica
+
+Um modelo CGE típico contém:
+
+- Blocos de demanda: sistema de demanda derivado da maximização de utilidade.
+- Blocos de oferta: funções de custo derivadas da minimização de custos.
+- Condições de equilíbrio em mercados de bens, fatores e comércio exterior.
+- Regras de fechamento: hipóteses sobre quais variáveis são endógenas e quais são exógenas (desemprego, balança comercial, receita do governo etc.).
+
+### Tipos de análise
+
+Modelos CGE são usados para simulações de **estática comparativa**: comparam o equilíbrio antes e depois de um choque de política (reforma tributária, acordo comercial, choque de preços de commodities). Os modelos **dinâmicos** incorporam acumulação de capital e crescimento.
+
+!!! tip "Software"
+    Os modelos CGE mais conhecidos utilizam o software GAMS (General Algebraic Modeling System) ou GEMPACK. Modelos globais como o GTAP (Global Trade Analysis Project) permitem análise de comércio internacional com desagregação por país e setor.
+
+---
+
+## Box Brasil: Modelos CGE Aplicados ao Brasil
+
+!!! example "Box Brasil: Equilíbrio geral computável e políticas comerciais"
+    O Brasil tem uma tradição relevante no desenvolvimento e aplicação de modelos de equilíbrio geral computável para avaliação de políticas públicas. Diversas instituições — como o IPEA (Instituto de Pesquisa Econômica Aplicada), a FGV (Fundação Getulio Vargas), a ESALQ/USP e universidades federais — mantêm modelos CGE calibrados para a economia brasileira.
+
+    **Principais modelos brasileiros:**
+
+    - **TERM-BR** (The Enormous Regional Model - Brasil): desenvolvido com base no modelo australiano TERM, é um CGE multiregional que desagrega a economia brasileira por unidade federativa. Utilizado para analisar impactos regionais de políticas fiscais e choques de infraestrutura.
+    - **BeGreen**: modelo dinâmico CGE desenvolvido pelo CEDEPLAR/UFMG, voltado para análise ambiental e energética.
+    - **Modelos GTAP com extensão brasileira**: utilizados para avaliar acordos comerciais como o Mercosul-União Europeia.
+
+    **Análise de políticas comerciais:**
+
+    Estudos do IPEA utilizando modelos CGE avaliaram os impactos de diferentes cenários de liberalização comercial sobre a economia brasileira. Resultados típicos incluem:
+
+    | Cenário de política | PIB (var. %) | Exportações (var. %) | Importações (var. %) | Bem-estar (var. equiv., R\$ bi) |
+    |---|---|---|---|---|
+    | Acordo Mercosul-UE (cenário base) | +0,3 a +0,5 | +3,0 a +6,0 | +4,0 a +8,0 | +5 a +15 |
+    | Liberalização unilateral (50% tarifas) | +0,5 a +1,2 | +5,0 a +10,0 | +8,0 a +15,0 | +10 a +25 |
+    | Reforma tributária (IVA nacional) | +2,0 a +3,5 | +2,0 a +5,0 | +3,0 a +6,0 | +30 a +60 |
+
+    *Nota: intervalos refletem diferentes especificações e fechamentos dos modelos.*
+
+    **Lições dos modelos CGE para o Brasil:**
+
+    1. **Efeitos setoriais heterogêneos**: A liberalização comercial tende a expandir setores com vantagem comparativa (agropecuária, mineração) e contrair setores protegidos (indústria automotiva, eletrônicos). O modelo CGE permite quantificar esses efeitos de recomposição setorial que a análise de equilíbrio parcial ignora.
+
+    2. **Efeitos regionais**: Dada a heterogeneidade produtiva regional do Brasil, políticas comerciais afetam de forma desigual as unidades da federação. Modelos como o TERM-BR mostram que a liberalização comercial tende a beneficiar mais as regiões Centro-Oeste e Sul (agroexportadoras) e menos o Sudeste industrial.
+
+    3. **Interações fiscais**: A reforma tributária é o cenário com maiores ganhos de bem-estar nos modelos CGE, pois o sistema tributário brasileiro introduz distorções que afetam múltiplos mercados simultaneamente — exatamente o tipo de fenômeno que a análise de equilíbrio geral captura e a parcial subestima.
+
+    4. **Limitações**: Os modelos CGE baseiam-se em hipóteses de concorrência perfeita (na maioria das versões), retornos constantes de escala e pleno emprego de fatores. Extensões incorporando economias de escala, concorrência imperfeita e desemprego (modelos "novos CGE") são áreas ativas de pesquisa no Brasil.
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 14.1 — Monopólio com demanda linear: preço, lucro e PPM"
-    **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
+??? example "Exercício Resolvido 13.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+    **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
 
-    ---
+    **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
 
-    **(a)** A receita marginal é \(RMg = 80 - 4q\). Igualando ao custo marginal \(CMg = 8\):
+    **Resolução:**
+
+    **Passo 1 — Demandas marshallianas**
+
+    Normalizando \(p_2 = 1\) e denotando \(p = p_1\):
+
+    *Consumidor A* (\(U_A = x_1 x_2\), Cobb-Douglas com \(\alpha = 1/2\)):
 
     \[
-    80 - 4q = 8 \implies q^m = 18, \quad p^m = 80 - 36 = 44
+    x_1^A = \frac{m_A}{2p}, \qquad x_2^A = \frac{m_A}{2}, \qquad m_A = 8p + 2
     \]
 
-    Lucro: \(\pi = 44 \times 18 - (200 + 8 \times 18) = 792 - 344 = 448\).
-
-    **(b)** Índice de Lerner: \(L = (p - CMg)/p = (44 - 8)/44 = 36/44 \approx 0{,}818\).
-
-    Verificação pela elasticidade: no ponto de monopólio, \(\varepsilon_p = (dq/dp)(p/q) = (-1/2)(44/18) \approx -1{,}222\). Logo \(L = 1/|\varepsilon_p| = 1/1{,}222 \approx 0{,}818\). ✓
-
-    **(c)** Resultado competitivo: \(p^c = CMg = 8\), \(q^c = (80-8)/2 = 36\).
+    *Consumidor B* (\(U_B = x_1^{1/3} x_2^{2/3}\), Cobb-Douglas com \(\alpha = 1/3\)):
 
     \[
-    PPM = \frac{1}{2}(p^m - CMg)(q^c - q^m) = \frac{1}{2}(44 - 8)(36 - 18) = \frac{1}{2} \times 36 \times 18 = 324
+    x_1^B = \frac{m_B}{3p}, \qquad x_2^B = \frac{2m_B}{3}, \qquad m_B = 2p + 8
     \]
 
-    Excedente total sob monopólio: \(W^m = EC^m + EP^m\).
-
-    \(EC^m = \frac{1}{2}(80 - 44)(18) = \frac{1}{2} \times 36 \times 18 = 324\).
-
-    \(EP^m = (44 - 8)(18) = 648\) (inclui lucro + parte do custo fixo absorvido).
-
-    Na verdade, \(EP^m = \pi + CF = 448 + 200 = 648\)? Não — o EP é a área acima do CMg: \(EP^m = (p^m - CMg) \times q^m = 36 \times 18 = 648\).
-
-    \(W^m = 324 + 648 = 972\).
-
-    **(d)** Sob concorrência perfeita: \(EC^c = \frac{1}{2}(80-8)(36) = 1.296\), \(EP^c = 0\) (com CMg constante). \(W^c = 1.296\).
-
-    \(PPM = W^c - W^m = 1.296 - 972 = 324\). ✓
-
-    **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
-
-??? example "Exercício Resolvido 14.2 — Discriminação de terceiro grau com dois mercados"
-    **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
-
-    ---
-
-    **(a)** Receitas marginais: \(RMg_1 = 120 - 4q_1\) e \(RMg_2 = 80 - 2q_2\).
-
-    Igualando ao CMg:
+    **Passo 2 — Equilíbrio de mercado (bem 1)**
 
     \[
-    120 - 4q_1 = 20 \implies q_1 = 25, \quad p_1 = 120 - 50 = 70
+    \frac{8p + 2}{2p} + \frac{2p + 8}{3p} = 10
+    \]
+
+    Multiplicando por \(6p\):
+
+    \[
+    3(8p + 2) + 2(2p + 8) = 60p \implies 28p + 22 = 60p \implies p^* = \frac{22}{32} = \frac{11}{16}
+    \]
+
+    **Passo 3 — Alocações de equilíbrio**
+
+    \[
+    m_A = 8 \cdot \frac{11}{16} + 2 = \frac{120}{16} = \frac{15}{2}
     \]
 
     \[
-    80 - 2q_2 = 20 \implies q_2 = 30, \quad p_2 = 80 - 30 = 50
-    \]
-
-    **(b)** Lerner no mercado 1: \(L_1 = (70-20)/70 = 50/70 \approx 0{,}714\).
-
-    Elasticidade: \(\varepsilon_1 = (-1/2)(70/25) = -1{,}4\), logo \(L_1 = 1/1{,}4 \approx 0{,}714\). ✓
-
-    Lerner no mercado 2: \(L_2 = (50-20)/50 = 30/50 = 0{,}60\).
-
-    Elasticidade: \(\varepsilon_2 = (-1)(50/30) = -1{,}667\), logo \(L_2 = 1/1{,}667 = 0{,}60\). ✓
-
-    O mercado 1 tem demanda mais inelástica (\(|\varepsilon_1| = 1{,}4 < |\varepsilon_2| = 1{,}667\)) e paga o preço mais alto (\(p_1 = 70 > p_2 = 50\)). Isso confirma a regra: o monopolista cobra mais do segmento com demanda mais inelástica.
-
-    **(c)** Lucro total:
-
-    \[
-    \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
-    \]
-
-??? example "Exercício Resolvido 14.3 — Regulação de monopólio natural"
-    **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 5.000 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
-
-    ---
-
-    **(a) Monopólio não regulado:**
-
-    \(RMg = 60 - q\), \(CMg = 10\).
-
-    \[
-    60 - q = 10 \implies q^m = 50, \quad p^m = 60 - 25 = 35
-    \]
-
-    \(\pi^m = 35 \times 50 - (5.000 + 500) = 1.750 - 5.500 = -3.750\).
-
-    Hmm, lucro negativo! Isso ocorre porque o custo fixo é muito alto. Vamos verificar: \(\pi = (p-CMg)q - CF = (35-10)(50) - 5.000 = 1.250 - 5.000 = -3.750\). De fato, o monopolista não produz se o lucro é negativo. Vamos recalcular com \(C(q) = 500 + 10q\):
-
-    \(\pi^m = (35-10)(50) - 500 = 1.250 - 500 = 750\). Usemos \(CF = 500\).
-
-    \[
-    q^m = 50, \quad p^m = 35, \quad \pi^m = 750
-    \]
-
-    **(b) Regulação first-best (\(p = CMg = 10\)):**
-
-    \[
-    10 = 60 - 0{,}5q \implies q^{fb} = 100, \quad p^{fb} = 10
-    \]
-
-    \(\pi^{fb} = 10 \times 100 - (500 + 1.000) = 1.000 - 1.500 = -500\).
-
-    O prejuízo de R$ 500 corresponde exatamente ao custo fixo: com \(p = CMg\), a receita cobre apenas o custo variável. O governo precisaria subsidiar R$ 500 para manter a firma no mercado.
-
-    **(c) Regulação second-best (\(p = CMe\)):**
-
-    \(CMe = 500/q + 10\). Igualando à demanda inversa:
-
-    \[
-    60 - 0{,}5q = \frac{500}{q} + 10 \implies 50 - 0{,}5q = \frac{500}{q}
+    x_1^A = \frac{15/2}{2 \cdot 11/16} = \frac{15/2}{11/8} = \frac{60}{11} \approx 5{,}45, \qquad x_2^A = \frac{15}{4} = 3{,}75
     \]
 
     \[
-    50q - 0{,}5q^2 = 500 \implies 0{,}5q^2 - 50q + 500 = 0 \implies q^2 - 100q + 1.000 = 0
+    m_B = 2 \cdot \frac{11}{16} + 8 = \frac{150}{16} = \frac{75}{8}
     \]
 
     \[
-    q = \frac{100 \pm \sqrt{10.000 - 4.000}}{2} = \frac{100 \pm \sqrt{6.000}}{2} = \frac{100 \pm 77{,}46}{2}
+    x_1^B = \frac{75/8}{3 \cdot 11/16} = \frac{75/8}{33/16} = \frac{50}{11} \approx 4{,}55, \qquad x_2^B = \frac{2 \cdot 75/8}{3} = \frac{25}{4} = 6{,}25
     \]
 
-    Tomando a raiz maior (mais produção): \(q^{sb} \approx 88{,}7\), \(p^{sb} = 60 - 44{,}4 = 15{,}6\).
+    Verificação: \(60/11 + 50/11 = 110/11 = 10\) ✓ e \(15/4 + 25/4 = 40/4 = 10\) ✓
 
-    Lucro: \(\pi^{sb} = 0\) (por construção). A PPM residual é a área do triângulo entre \(q^{sb}\) e \(q^{fb}\):
+    **Passo 4 — Verificação da Lei de Walras**
+
+    A preços arbitrários \(p = 1\): \(m_A = 10\), \(m_B = 10\).
 
     \[
-    PPM^{sb} = \frac{1}{2}(p^{sb} - CMg)(q^{fb} - q^{sb}) = \frac{1}{2}(15{,}6 - 10)(100 - 88{,}7) = \frac{1}{2}(5{,}6)(11{,}3) \approx 31{,}6
+    Z^1 = \frac{10}{2} + \frac{10}{3} - 10 = \frac{-5}{3}, \qquad Z^2 = \frac{10}{2} + \frac{20}{3} - 10 = \frac{5}{3}
     \]
 
-    Compare: \(PPM^m = \frac{1}{2}(35-10)(100-50) = 625\). A regulação *second-best* reduz a PPM de 625 para apenas 31,6 — uma melhoria de 95%.
+    \[
+    p_1 Z^1 + p_2 Z^2 = 1 \cdot \left(-\frac{5}{3}\right) + 1 \cdot \frac{5}{3} = 0 \;\checkmark
+    \]
 
-    **Interpretação:** A regulação por custo médio é o modelo adotado pela ANEEL para distribuidoras de energia no Brasil. Ela garante lucro zero para a concessionária enquanto expande significativamente o acesso, a um custo de eficiência relativamente baixo.
+    **Passo 5 — Verificação da eficiência de Pareto**
+
+    \[
+    TMS_A = \frac{x_2^A}{x_1^A} = \frac{15/4}{60/11} = \frac{15 \cdot 11}{4 \cdot 60} = \frac{11}{16} = p^* \;\checkmark
+    \]
+
+    \[
+    TMS_B = \frac{(1/3)\,x_2^B}{(2/3)\,x_1^B} = \frac{x_2^B}{2\,x_1^B} = \frac{25/4}{2 \cdot 50/11} = \frac{25 \cdot 11}{4 \cdot 100} = \frac{11}{16} = p^* \;\checkmark
+    \]
+
+    **Resultado:** \(p^* = 11/16\), \(\mathbf{x}_A^* = (60/11,\; 15/4)\), \(\mathbf{x}_B^* = (50/11,\; 25/4)\). O equilíbrio é Pareto-eficiente: \(TMS_A = TMS_B = p^*\).
+
+    **Interpretação econômica:** A troca melhora ambos os agentes: A, que tinha mais do bem 1 do que do bem 2, vende parte de sua dotação do bem 1 e compra bem 2. B faz o oposto. O Primeiro Teorema do Bem-Estar garante que o resultado é eficiente — não há recomposição das cestas que beneficie um sem prejudicar o outro. Na analogia com o comércio internacional, A é como o Brasil (abundante em commodities) e B como a UE (abundante em manufaturas): a troca beneficia ambos.
+
+---
+
+??? example "Exercício Resolvido 13.2 — Segundo Teorema e transferências lump-sum"
+    **Enunciado:** Na mesma economia do ER 13.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
+
+    **Dados:** Mesmas preferências e dotações do ER 13.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
+
+    **Resolução:**
+
+    **Passo 1 — Verificar eficiência de Pareto**
+
+    \[
+    TMS_A = \frac{x_2^A}{x_1^A} = \frac{10/3}{5} = \frac{2}{3}
+    \]
+
+    \[
+    TMS_B = \frac{x_2^B}{2\,x_1^B} = \frac{20/3}{2 \cdot 5} = \frac{2}{3}
+    \]
+
+    \(TMS_A = TMS_B = 2/3\) ✓ — a alocação está na curva de contrato (Pareto-eficiente).
+
+    **Passo 2 — Preço relativo que sustenta o equilíbrio**
+
+    No equilíbrio competitivo: \(p_1/p_2 = TMS = 2/3\). Normalizando \(p_2 = 1\): \(p_1 = 2/3\).
+
+    **Passo 3 — Renda necessária para cada consumidor**
+
+    \[
+    m_A^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{10}{3} = \frac{10}{3} + \frac{10}{3} = \frac{20}{3}
+    \]
+
+    \[
+    m_B^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{20}{3} = \frac{10}{3} + \frac{20}{3} = 10
+    \]
+
+    **Passo 4 — Renda original ao novo preço**
+
+    \[
+    m_A^{\text{original}} = \frac{2}{3} \cdot 8 + 1 \cdot 2 = \frac{16}{3} + 2 = \frac{22}{3}
+    \]
+
+    \[
+    m_B^{\text{original}} = \frac{2}{3} \cdot 2 + 1 \cdot 8 = \frac{4}{3} + 8 = \frac{28}{3}
+    \]
+
+    **Passo 5 — Transferência lump-sum**
+
+    \[
+    T_A = m_A^{\text{necessária}} - m_A^{\text{original}} = \frac{20}{3} - \frac{22}{3} = -\frac{2}{3}
+    \]
+
+    A paga uma transferência de \(2/3\) unidades do numerário para B. Após a transferência, os mercados competitivos geram exatamente a alocação desejada.
+
+    **Resultado:** Transferência *lump-sum* de \(T = 2/3\) do consumidor A para o consumidor B, ao preço \(p^* = 2/3\).
+
+    **Interpretação econômica:** O Segundo Teorema demonstra que eficiência e equidade são objetivos separáveis: basta redistribuir a riqueza inicial e deixar os mercados funcionarem. No Brasil, o **Bolsa Família** e o **BPC** (Benefício de Prestação Continuada) são exemplos de transferências diretas que buscam alterar a distribuição sem distorcer preços relativos — embora, na prática, nenhuma transferência seja perfeitamente *lump-sum* (sempre há custos administrativos e incentivos adversos).
 
 ---
 
 ## Exercícios
 
-??? example "Exercício 1"
-    Considere um monopolista com custo total \(C(q) = 100 + 10q\) enfrentando demanda \(p = 50 - 2q\).
+**Exercício 13.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
 
-    a) Encontre o preço, a quantidade e o lucro de monopólio.
+(a) Derive a curva de contrato.
 
-    b) Calcule o índice de Lerner e a elasticidade-preço da demanda no ponto de equilíbrio.
+(b) Encontre o equilíbrio walrasiano (preços e alocações), normalizando \(p_2 = 1\).
 
-    c) Calcule a perda de peso morto e compare com o excedente total sob concorrência perfeita.
+(c) Verifique a Lei de Walras.
 
-??? example "Exercício 2"
-    Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
+(d) Verifique que o equilíbrio pertence ao núcleo.
 
-    a) Encontre os preços e quantidades ótimos em cada mercado com discriminação de terceiro grau.
+---
 
-    b) Calcule os índices de Lerner em cada mercado e relacione com as elasticidades.
+**Exercício 13.2.** Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
 
-    c) Compare o lucro com discriminação ao lucro sem discriminação (preço uniforme ótimo).
+(a) \(TMS_A^{12} = TMS_B^{12}\) (eficiência na troca).
 
-??? example "Exercício 3"
-    O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
+(b) \(TMST_1^{LK} = TMST_2^{LK}\) (eficiência na produção).
 
-    a) Calcule preço, quantidade e lucro antes e depois do imposto.
+(c) \(TMT^{12} = TMS^{12}\) (eficiência no mix de produtos).
 
-    b) Qual fração do imposto é repassada ao consumidor?
+Explique por que cada condição é necessária, usando argumentos de contradição.
 
-    c) Compare a receita fiscal com a variação na perda de peso morto.
+---
 
-??? example "Exercício 4"
-    Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
+**Exercício 13.3.** Considere uma economia com três bens (\(k = 1, 2, 3\)) e funções de excesso de demanda:
 
-    a) Calcule o resultado do monopólio não regulado.
+\[
+Z^1(\mathbf{p}) = 3\frac{p_2}{p_1} + 2\frac{p_3}{p_1} - 5
+\]
 
-    b) Calcule o resultado sob regulação de custo marginal (\(p = CMg\)). Mostre que a firma tem prejuízo.
+\[
+Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
+\]
 
-    c) Calcule o resultado sob regulação de custo médio (\(p = CMe\)) e a PPM residual.
+(a) Verifique que essas funções são homogêneas de grau zero.
 
-??? example "Exercício 5"
-    Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
+(b) Use a Lei de Walras para derivar \(Z^3(\mathbf{p})\).
 
-    a) Se o monopolista usa preço uniforme, qual é o preço ótimo?
+(c) Normalizando \(p_1 = 1\), encontre os preços de equilíbrio walrasiano.
 
-    b) Se usa tarifa em duas partes atendendo ambos os tipos, encontre \((T^*, p^*)\).
+---
 
-    c) Se usa tarifa em duas partes atendendo apenas o tipo 1 (excluindo o tipo 2), encontre \((T^*, p^*)\) e compare os lucros.
+**Exercício 13.4.** Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
+
+- Consumidores igualam \(TMS = p_1/p_2\)
+- Produtores igualam \(TMST = w/r\)
+- Maximização de lucro implica \(p = CMg\)
+
+---
+
+**Exercício 13.5.** Um país negocia um acordo de livre comércio que eliminará tarifas de importação sobre produtos industrializados. Usando a estrutura conceitual de equilíbrio geral:
+
+(a) Explique por que a análise de equilíbrio parcial (mercado por mercado) pode subestimar ou superestimar os efeitos do acordo.
+
+(b) Liste três canais pelos quais a eliminação de tarifas em um setor afeta outros setores da economia.
+
+(c) Discuta como um modelo CGE capturaria esses efeitos intersetoriais e quais dados seriam necessários para calibrá-lo.
+
+(d) Quais hipóteses do modelo CGE padrão (concorrência perfeita, retornos constantes, pleno emprego) são mais problemáticas para a análise da economia brasileira? Justifique.
 
 ---
 
 ## Vem, ANPEC!
 
-Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
+??? question "ANPEC 2019 — Questão 10"
+    Considere o modelo da Caixa de Edgeworth. O consumidor A tem utilidade linear \(U_A(X,Y) = X + Y\) e dotação inicial \(\mathbf{e}_A = (1, 9)\). O consumidor B tem utilidade Cobb-Douglas \(U_B(X,Y) = X^{1/2}Y^{1/2}\) e dotação inicial \(\mathbf{e}_B = (9, 1)\). Julgue como verdadeiros ou falsos os itens abaixo:
 
-??? question "ANPEC 2016 — Questão 08"
-    Com relação a poder de mercado, monopólio e monopsônio, é correto afirmar que:
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-    **(0)** Se o custo marginal da empresa em monopólio for constante e igual a \$ 10, e a elasticidade-preço da demanda for igual a \(-2\), o preço do produto será \$ 20;
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O conjunto de alocações factíveis na Caixa de Edgeworth é \([0,10] \times [0,10]\). |
+    | 1 | A curva de contrato é dada por \(Y = 10X/(20-X)\), com \(0 \leq X \leq 10\). |
+    | 2 | O Equilíbrio de Walras é o par alocação-preço dado por \(\{(X_A,Y_A),(X_B,Y_B);(p,q)\} = \{(5,5),(5,5);(p,q)\}\), com \(p/q = 1\). |
+    | 3 | O Equilíbrio de Walras é Pareto-eficiente. |
+    | 4 | O valor do vetor de excesso de demanda é positivo. |
 
-    **(1)** Quanto menos elástica for a curva de demanda de uma empresa, maior poder de monopólio ela terá;
+    ??? success "Gabarito"
+        **Respostas: 10110**
 
-    **(2)** O poder de monopsônio permite à empresa compradora adquirir o produto por um preço inferior ao competitivo;
+        **Justificativa por item:**
 
-    **(3)** Quanto menos elástica for a curva de oferta, maior será a diferença entre a despesa marginal e a despesa média, e maior será o poder de monopsônio do comprador;
+        - **Item 0 — V:** Os totais da economia são \(\bar{X} = 1 + 9 = 10\) e \(\bar{Y} = 9 + 1 = 10\). A Caixa de Edgeworth tem dimensões \(10 \times 10\), e cada alocação factível é um ponto em \([0,10]^2\).
+        - **Item 1 — F:** Com utilidade linear para A, \(TMS_A = 1\) em todos os pontos. Para B (Cobb-Douglas simétrica), \(TMS_B = Y_B/X_B\). A eficiência de Pareto requer \(TMS_A = TMS_B\), i.e., \(Y_B/X_B = 1 \implies Y_B = X_B\). Nas coordenadas de A: \(10 - Y = 10 - X \implies Y = X\). A curva de contrato é a diagonal \(Y = X\), e não a função \(Y = 10X/(20-X)\).
+        - **Item 2 — V:** Com \(p/q = 1\): \(m_A = 1 + 9 = 10\), A é indiferente entre X e Y (utilidade linear), podendo escolher \((5, 5)\). Para B: \(m_B = 9 + 1 = 10\), \(X_B = 10/2 = 5\), \(Y_B = 10/2 = 5\). Mercados se equilibram: \(5 + 5 = 10\). É um equilíbrio walrasiano.
+        - **Item 3 — V:** Pelo Primeiro Teorema do Bem-Estar, todo equilíbrio walrasiano é Pareto-eficiente. Verificação direta: \(TMS_B = 5/5 = 1 = TMS_A\).
+        - **Item 4 — F:** No equilíbrio, o excesso de demanda é zero em todos os mercados (\(Z^X = Z^Y = 0\)). Pela Lei de Walras, \(p \cdot Z^X + q \cdot Z^Y = 0\) para quaisquer preços — e no equilíbrio ambos os termos são zero.
 
-    **(4)** Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.
+---
 
-    ??? success "Gabarito e Resolução"
-        **Gabarito oficial: V-V-V-V-V**
+??? question "ANPEC 2018 — Questão 13"
+    Em uma economia, o agente A possui as dez unidades do bem 1 e o agente B possui as dez unidades do bem 2. As funções utilidades de A e B são descritas por \(U_A = x_1^{1/2} \cdot x_2^{1/2}\) e \(U_B = x_1 \cdot x_2\), respectivamente. Em uma economia de trocas sob equilíbrio geral competitivo, tome o segundo bem como numerário, isto é, \(p_2 = \$1\), e denomine \(p\) o preço do outro bem. Avalie:
 
-        **(0) VERDADEIRO.** Pela regra de markup: \(p = CMg/(1 - 1/|\varepsilon|) = 10/(1 - 1/2) = 10/0{,}5 = 20\).
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-        **(1) VERDADEIRO.** O índice de Lerner é \(L = 1/|\varepsilon|\). Quanto menos elástica (menor \(|\varepsilon|\)), maior o Lerner e maior o poder de monopólio.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Em equilíbrio, \(p = \$2\). |
+    | 1 | A função de bem-estar utilitarista (benthamita) com pesos unitários para os dois agentes assume o valor \(W = 30\). |
+    | 2 | A alocação final não é justa, pois embora eficiente, não é equitativa. |
+    | 3 | É possível atingir via mercados competitivos a alocação eficiente \((x_1^A, x_2^A) = (2{,}5;\; 2{,}5)\), \((x_1^B, x_2^B) = (7{,}5;\; 7{,}5)\) se realocarmos metade da dotação inicial de A, transferindo-a para B. |
+    | 4 | Utilizando a mesma função de bem-estar do item 1, a alocação final descrita no item 3 é socialmente preferível àquela descrita inicialmente. |
 
-        **(2) VERDADEIRO.** O monopsonista iguala a despesa marginal (que excede o preço de oferta) ao valor do produto marginal do insumo, contratando menos unidades a um preço inferior ao que prevaleceria em concorrência.
+    ??? success "Gabarito"
+        **Respostas: 01011**
 
-        **(3) VERDADEIRO.** Com oferta \(w = w(L)\), a despesa marginal é \(DM = w + L \cdot dw/dL\). A diferença \(DM - w = L \cdot dw/dL\) é maior quanto mais inclinada (menos elástica) for a curva de oferta, pois \(dw/dL\) é maior.
+        **Justificativa por item:**
 
-        **(4) VERDADEIRO.** O comportamento descrito — aplicar recursos em lobby para obter ou manter poder de monopólio — corresponde ao conceito de *rent-seeking* (busca/captura de rendas), introduzido por Tullock (1967) e formalizado por Krueger (1974).
+        - **Item 0 — F:** Demandas de A: \(x_1^A = 10p/(2p) = 5\), \(x_2^A = 10p/2 = 5p\). Demandas de B: \(x_1^B = 10/(2p) = 5/p\), \(x_2^B = 10/2 = 5\). Equilíbrio no bem 1: \(5 + 5/p = 10 \implies p = 1\), e não \(p = 2\).
+        - **Item 1 — V:** Com \(p = 1\): \(\mathbf{x}_A = (5, 5)\), \(\mathbf{x}_B = (5, 5)\). \(U_A = \sqrt{5}\cdot\sqrt{5} = 5\), \(U_B = 5 \cdot 5 = 25\). \(W = 5 + 25 = 30\).
+        - **Item 2 — F:** A alocação \((5,5)\) para ambos os agentes é uma **divisão igualitária** dos bens. Ambos recebem cestas idênticas, portanto não há inveja: A avalia a cesta de B em \(U_A(5,5) = 5\), igual à própria utilidade, e B avalia a cesta de A em \(U_B(5,5) = 25\), igual à própria. A alocação é justa (equitativa e *envy-free*).
+        - **Item 3 — V:** Transferindo metade da dotação de A para B: \(\boldsymbol{\omega}_A' = (5, 0)\), \(\boldsymbol{\omega}_B' = (5, 10)\). No equilíbrio com \(p = 1\): \(x_1^A = 5/2 = 2{,}5\), \(x_2^A = 5/2 = 2{,}5\); \(x_1^B = 15/2 = 7{,}5\), \(x_2^B = 15/2 = 7{,}5\). A alocação desejada é alcançada como equilíbrio competitivo — ilustração direta do Segundo Teorema do Bem-Estar.
+        - **Item 4 — V:** Nova função de bem-estar: \(W' = U_A(2{,}5;\, 2{,}5) + U_B(7{,}5;\, 7{,}5) = 2{,}5 + 56{,}25 = 58{,}75 > 30 = W\). A nova alocação é socialmente preferível sob o critério utilitarista.
 
-??? question "ANPEC 2015 — Questão 09"
-    Julgue as afirmações relativas à Teoria do Monopólio:
+---
 
-    **(0)** Uma firma monopolista, que opera com várias fábricas, aloca sua produção entre elas de forma a igualar o custo médio em cada uma das fábricas.
+??? question "ANPEC 2015 — Questão 11"
+    Com relação à Teoria do Equilíbrio Geral, indique as afirmativas corretas:
 
-    **(1)** Uma firma capaz de discriminação de preços de terceiro grau obtém lucro maior ou igual, em comparação com a situação na qual ela não fosse capaz de discriminar.
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-    **(2)** Uma firma monopolista, que se depara com curva de demanda com elasticidade constante, é indiferente sobre a quantidade produzida.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | A Lei de Walras afirma que o valor da demanda agregada é zero para todas as escolhas de preços possíveis, e não apenas para os preços de equilíbrio. |
+    | 1 | O pressuposto de que a função de demanda excedente agregada seja uma função contínua não é indispensável à demonstração da existência do equilíbrio nos modelos de equilíbrio geral. |
+    | 2 | Mesmo que as demandas individuais sejam descontínuas, desde que os consumidores sejam pequenos, a função de demanda agregada será contínua. |
+    | 3 | Pelo primeiro teorema do bem-estar, todos os equilíbrios em mercados competitivos serão Pareto-eficientes. |
+    | 4 | Se as preferências não forem convexas, algumas alocações Pareto-eficientes não serão alcançadas por mercados competitivos. |
 
-    **(3)** Para obter eficiência econômica, o regulador de um monopólio natural deve escolher a alocação que minimiza o custo médio unitário da firma.
+    ??? success "Gabarito"
+        **Respostas: 00111**
 
-    **(4)** Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.
+        **Justificativa por item:**
 
-    ??? success "Gabarito e Resolução"
-        **Gabarito oficial: F-V-F-F-V**
-
-        **(0) FALSO.** A firma multi-planta minimiza custos igualando os **custos marginais** (não os custos médios) entre fábricas: \(CMg_1(q_1) = CMg_2(q_2) = \ldots\). Essa é a condição de Lagrange para a minimização de custo total sujeita a uma meta de produção.
-
-        **(1) VERDADEIRO.** A capacidade de discriminar nunca reduz o lucro, pois o monopolista pode sempre replicar o preço uniforme como caso especial (cobrando o mesmo preço em todos os segmentos). Logo, \(\pi_{\text{discriminação}} \geq \pi_{\text{uniforme}}\).
-
-        **(2) FALSO.** Com demanda isoelástica (\(q = Ap^{\varepsilon}\)) e custo marginal positivo, a regra de markup \(p = CMg/(1 - 1/|\varepsilon|)\) determina univocamente o preço e a quantidade ótimos. O monopolista não é indiferente.
-
-        **(3) FALSO.** Eficiência econômica requer \(p = CMg\) (*first-best*), que é a condição em que o benefício marginal do consumidor iguala o custo marginal da produção. Minimizar o custo médio gera uma alocação diferente e, em geral, ineficiente.
-
-        **(4) VERDADEIRO.** Com discriminação perfeita, o monopolista produz a quantidade eficiente (\(q^c\), onde \(p = CMg\)), eliminando toda a perda de peso morto. A alocação é Pareto-eficiente, embora todo o excedente seja apropriado pelo produtor (\(EC = 0\)).
-
-??? question "ANPEC 2018 — Questão 08"
-    Com relação à análise de discriminação de preços, indique quais das afirmativas a seguir são verdadeiras e quais são falsas:
-
-    **(0)** Na discriminação de preços de terceiro grau, a receita marginal deve ser igual para os diferentes grupos de consumidores e igual ao custo marginal;
-
-    **(1)** Na discriminação de preços de terceiro grau, o preço mais elevado será cobrado dos consumidores com demanda mais elástica;
-
-    **(2)** A discriminação de preços intertemporal cobra preços mais elevados dos consumidores mais impacientes, reduzindo o preço mais tarde para incentivar o consumo de massa;
-
-    **(3)** A tarifa em duas partes é eficaz quando as demandas dos consumidores são relativamente homogêneas;
-
-    **(4)** Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.
-
-    ??? success "Gabarito e Resolução"
-        **Gabarito oficial: V-F-V-V-F**
-
-        **(0) VERDADEIRO.** A condição de ótimo na discriminação de 3º grau é \(RMg_1 = RMg_2 = \ldots = CMg\). O monopolista iguala as receitas marginais de todos os segmentos ao custo marginal.
-
-        **(1) FALSO.** O preço mais elevado é cobrado do grupo com demanda **mais inelástica** (menor \(|\varepsilon|\)), não mais elástica. Pela relação \(p_i = CMg/(1 - 1/|\varepsilon_i|)\), menor elasticidade implica maior preço.
-
-        **(2) VERDADEIRO.** Na discriminação intertemporal, consumidores impacientes (alta disposição a pagar, demanda inelástica no tempo) compram imediatamente ao preço alto. O preço cai ao longo do tempo para capturar consumidores com menor disposição a pagar. Exemplos: livros em capa dura seguidos de edição de bolso, eletrônicos no lançamento.
-
-        **(3) VERDADEIRO.** Com consumidores homogêneos, a tarifa em duas partes é particularmente eficaz: fixa-se \(p = CMg\) e \(T = EC\) do consumidor representativo, extraindo todo o excedente com eficiência alocativa plena.
-
-        **(4) FALSO.** O *bundling* (venda em pacote) é mais eficaz quando as demandas dos bens estão **negativamente** correlacionadas, pois isso reduz a dispersão da disposição a pagar pelo pacote, permitindo melhor extração de excedente. Com correlação positiva, o pacote não reduz a heterogeneidade e o *bundling* é pouco eficaz.
+        - **Item 0 — F:** A Lei de Walras afirma que o valor do **excesso de demanda** (não da "demanda agregada") é zero para todos os preços: \(\sum_k p_k Z^k(\mathbf{p}) \equiv 0\). O valor da demanda agregada \(\mathbf{p} \cdot \mathbf{x}(\mathbf{p})\) é igual ao valor das dotações \(\mathbf{p} \cdot \boldsymbol{\omega}\), que geralmente não é zero. A imprecisão no enunciado torna a afirmação falsa.
+        - **Item 1 — F:** A continuidade da função de excesso de demanda agregada é essencial para a aplicação do Teorema do Ponto Fixo de Brouwer (Seção 14.8). Sem continuidade (ou pelo menos semi-continuidade superior no caso de correspondências, via Teorema de Kakutani), a existência de equilíbrio não pode ser demonstrada.
+        - **Item 2 — V:** Resultado clássico de agregação (Aumann, 1966): com um grande número de consumidores "pequenos" (cada um com participação negligível no mercado), descontinuidades individuais nas demandas se "suavizam" na agregação, e a demanda agregada torna-se contínua — mesmo que cada demanda individual seja descontínua.
+        - **Item 3 — V:** Este é o enunciado direto do Primeiro Teorema do Bem-Estar: sob tomada de preço, mercados completos e não saciedade local, todo equilíbrio competitivo é Pareto-eficiente.
+        - **Item 4 — V:** O Segundo Teorema do Bem-Estar requer convexidade das preferências. Sem essa hipótese, pode não existir um hiperplano de suporte que separe os conjuntos preferidos, e certas alocações Pareto-eficientes não podem ser descentralizadas como equilíbrios competitivos.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
-    **DOI:** [10.1093/qje/qjz041](https://doi.org/10.1093/qje/qjz041)
+??? abstract "Dix-Carneiro, R. (2014). [Trade Liberalization and Labor Market Dynamics](https://doi.org/10.3982/ECTA10457). *Econometrica*, 82(3), 825–885."
+    **Pergunta central:** Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
 
-    **Contexto.** O Capítulo 14 analisa o monopólio como estrutura de mercado, mas até que ponto o poder de mercado é um fenômeno relevante empiricamente? De Loecker, Eeckhout e Unger (2020) respondem a essa pergunta com uma análise abrangente do *markup* praticado pelas firmas nos Estados Unidos ao longo de seis décadas.
+    **Método:** O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
 
-    **Metodologia.** Os autores estimam *markups* firma a firma usando dados contábeis (Compustat) e a abordagem de produção de Hall (1988), que infere o *markup* como a razão entre a elasticidade-produto de um insumo variável e a participação desse insumo na receita. A grande inovação é aplicar esse método a um painel de milhares de firmas de 1955 a 2016, permitindo documentar a evolução do poder de mercado agregado.
+    **Resultado principal:** Os custos medianos de mobilidade setorial variam de **1,4 a 2,7 vezes o salário anual** — são substanciais. As transições após liberalização comercial levam vários anos para se completar. Os ganhos agregados de bem-estar são significativamente reduzidos pelo processo de ajuste lento e custoso. Crucialmente, os efeitos de bem-estar dependem fortemente do setor inicial de emprego do trabalhador — trabalhadores em setores protegidos sofrem perdas persistentes.
 
-    **Resultados.** O *markup* médio na economia americana era relativamente estável em torno de 1,21 (21% acima do custo marginal) até 1980, mas subiu para 1,61 em 2016 — um aumento de 33%. Esse aumento é concentrado nas firmas do topo da distribuição: as 10% mais lucrativas elevaram seus *markups* de 1,5 para mais de 2,5. Os autores documentam que essa tendência está associada a menor participação do trabalho na renda, menor dinamismo empresarial e maior desigualdade.
+    **Por que isso importa:** Para o Brasil, que passou por intensa liberalização nos anos 1990, o artigo quantifica os custos humanos da transição — algo que os modelos CGE estáticos da Seção 14.10 não capturam. Os resultados informam o debate sobre políticas de transição justa (*safety nets*) que acompanhem a abertura comercial.
 
-    **Conexão com o capítulo.** O artigo fornece evidência empírica maciça sobre o índice de Lerner (Seção 14.3) em escala agregada. Os *markups* estimados podem ser diretamente interpretados como \(1/(1 - L)\), conectando a teoria do monopólio à mensuração empírica do poder de mercado. A tendência ascendente documentada sugere que o modelo de concorrência perfeita se torna progressivamente menos adequado como descrição da economia moderna.
+    **Relevância para o capítulo:** O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 14.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
 
-??? abstract "Bergemann, D., Brooks, B. & Morris, S. (2015). [The Limits of Price Discrimination](https://doi.org/10.1257/aer.20130848). *American Economic Review*, 105(3), 921–957."
-    **DOI:** [10.1257/aer.20130848](https://doi.org/10.1257/aer.20130848)
+??? abstract "Caliendo, L.; Parro, F. (2015). [Estimates of the Trade and Welfare Effects of NAFTA](https://doi.org/10.1093/restud/rdu035). *Review of Economic Studies*, 82(1), 1–44."
+    **Pergunta central:** Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
 
-    **Contexto.** A Seção 14.7 classifica a discriminação de preços em três graus, mas essa taxonomia assume que sabemos exatamente quanta informação o monopolista possui sobre os consumidores. Bergemann, Brooks e Morris (2015) fazem uma pergunta mais fundamental: dada uma demanda de mercado, quais são os **limites** do que a discriminação de preços pode alcançar, considerando toda estrutura de informação possível?
+    **Método:** Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.
 
-    **Contribuição teórica.** Os autores mostram que, para qualquer segmentação de mercado (qualquer partição informacional dos consumidores), o resultado da discriminação de preços deve satisfazer duas restrições: (i) o lucro do monopolista deve ser pelo menos tão grande quanto o lucro de preço uniforme; (ii) o excedente do consumidor agregado não pode ser negativo. O resultado central é que **qualquer** par (lucro, excedente do consumidor) satisfazendo essas duas restrições é alcançável por alguma segmentação. Em particular, existe uma segmentação que gera eficiência plena (como discriminação de 1º grau) e outra que maximiza o excedente do consumidor sujeito ao monopolista obter pelo menos o lucro de preço uniforme.
+    **Resultado principal:** O bem-estar do México aumentou **1,31%**, o dos EUA **0,08%** e o do Canadá caiu **0,06%** como resultado do NAFTA. Os efeitos são heterogêneos entre setores: os encadeamentos produtivos via insumos intermediários amplificam os ganhos comerciais em até 40% em relação a um modelo sem bens intermediários. A desagregação setorial é crucial — modelos com apenas um setor subestimam substancialmente os efeitos.
 
-    **Resultados.** O artigo demonstra que os efeitos de bem-estar da discriminação de preços dependem crucialmente da informação disponível ao monopolista. A produção total pode subir, cair ou permanecer constante conforme a segmentação. Isso contrasta com o resultado clássico de Pigou (1920) para demandas lineares, em que a discriminação de 3º grau não altera a quantidade total.
+    **Por que isso importa:** O artigo é uma referência metodológica para avaliar acordos como o Mercosul-UE. A abordagem pode ser aplicada ao caso brasileiro para estimar os efeitos setoriais e regionais da abertura comercial, complementando os modelos CGE tradicionais (Seção 14.10) com maior rigor na estimação das elasticidades comerciais.
 
-    **Conexão com o capítulo.** O paper aprofunda a análise de discriminação de preços das Seções 14.7.1–14.7.3, mostrando que a distinção entre 1º, 2º e 3º grau é apenas uma parte de um espectro muito mais rico de possibilidades informacionais. Para estudantes que desejam entender os limites teóricos do poder de mercado na extração de excedente, este é um ponto de partida essencial.
-
----
+    **Relevância para o capítulo:** O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
 
 ## Referências do Capítulo
 
-- Besanko, David, e Ronald Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. New York: Wiley. Caps. 11–12.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 12.
-- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 14–15.
-- Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press. Caps. 1–3.
-- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 14, 24.
+- Arrow, Kenneth J., e Gerard Debreu. 1954. ["Existence of an Equilibrium for a Competitive Economy."](https://doi.org/10.2307/1907353) *Econometrica* 22 (3): 265–290.
+- Caliendo, Lorenzo, e Fernando Parro. 2015. ["Estimates of the Trade and Welfare Effects of NAFTA."](https://doi.org/10.1093/restud/rdv007) *Review of Economic Studies* 82 (1): 1–44.
+- Debreu, Gerard. 1959. [*Theory of Value: An Axiomatic Analysis of Economic Equilibrium*](https://books.google.com.br/books?id=bIaCAAAAIAAJ). New York: Wiley.
+- Dix-Carneiro, Rafael. 2014. ["Trade Liberalization and Labor Market Dynamics."](https://doi.org/10.3982/ECTA10457) *Econometrica* 82 (3): 825–885.
+- Edgeworth, Francis Y. 1881. [*Mathematical Psychics*](https://books.google.com.br/books?id=CElYAAAAcAAJ). London: C. Kegan Paul.
+- IFI/Senado Federal. 2024. ["Reforma Tributária: Contexto, Mudanças e Impactos."](https://www12.senado.leg.br/ifi/publicacoes-1/estudos-especiais/2024/marco/estudo-especial-no-19-reforma-tributaria-contexto-mudancas-e-impactos-mar-2024) Estudo Especial nº 19.
+- [IPEA](https://www.ipea.gov.br). Diversos anos. *Modelos de Equilíbrio Geral Computável Aplicados ao Brasil*. Brasília: IPEA.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
+- Walras, Léon. 1874. [*Éléments d'économie politique pure*](https://books.google.com.br/books?id=crUEAAAAMAAJ). Lausanne: L. Corbaz.

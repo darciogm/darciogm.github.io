@@ -1,823 +1,786 @@
-# Capítulo 12 — O Leiloeiro que Ninguém Vê
+# Capítulo 12 — A Firma Nua: Anatomia do Lucro
 
 ## Introdução
 
-Nos capítulos anteriores, construímos separadamente a teoria do consumidor e a teoria da firma. Agora é hora de reunir essas peças e examinar como compradores e vendedores interagem nos mercados competitivos para determinar preços e quantidades de equilíbrio. Este capítulo desenvolve a análise de equilíbrio parcial marshalliano — o estudo de um mercado individual tomando os demais como dados — e suas aplicações à análise de bem-estar e políticas públicas.
+Os capítulos anteriores construíram os dois pilares sobre os quais repousa a teoria da firma: a **tecnologia** (função de produção) e os **custos** (função custo). Neste capítulo, reunimos esses elementos para analisar o comportamento da firma como unidade de decisão. A questão central é: **como a firma escolhe quanto produzir?**
 
-A metáfora do "leiloeiro walrasiano" — uma entidade fictícia que anuncia preços e ajusta-os até que oferta e demanda se igualem — nos ajuda a compreender o mecanismo de formação de preços. Embora nenhum leiloeiro real exista na maioria dos mercados, o resultado competitivo se assemelha ao que tal mecanismo produziria.
+A resposta padrão da microeconomia — maximização de lucro — exige que examinemos as condições de primeira e segunda ordem, a relação entre receita marginal e elasticidade da demanda, a decisão de operar ou fechar no curto prazo e as propriedades da função lucro. O elegante Lema de Hotelling, análogo ao Lema de Shephard nos custos, conecta a função lucro diretamente às funções de oferta e demanda por insumos.
 
-Ao longo do capítulo, analisaremos: a agregação de demandas individuais em demanda de mercado; a determinação de preços no curtíssimo, curto e longo prazos; estática comparativa; eficiência econômica; controles de preços; e incidência tributária.
-
----
-
-## 12.1 Demanda de Mercado
-
-### Agregação de demandas individuais
-
-A demanda de mercado é obtida pela soma horizontal das demandas individuais de todos os consumidores. Se existem \(n\) consumidores e cada um possui uma função de demanda \(x_i(p)\), a demanda de mercado é:
-
-\[
-X(p) = \sum_{i=1}^{n} x_i(p)
-\]
-
-!!! definition "Demanda de mercado"
-    A **demanda de mercado** por um bem é a quantidade total demandada por todos os consumidores a cada nível de preço, ou seja, a soma horizontal das curvas de demanda individuais.
-
-### Propriedades da demanda de mercado
-
-A curva de demanda de mercado herda propriedades das demandas individuais:
-
-1. **Inclinação negativa**: Se todas as demandas individuais são decrescentes no preço (excluindo-se os raros casos de bens de Giffen), a demanda de mercado também será decrescente.
-2. **Elasticidade-preço**: A elasticidade-preço da demanda de mercado é uma média ponderada das elasticidades individuais, com pesos dados pelas participações de cada consumidor na demanda total:
-
-\[
-\varepsilon_{X,p} = \sum_{i=1}^{n} \frac{x_i}{X} \cdot \varepsilon_{x_i, p}
-\]
-
-3. **Efeitos renda e substituição**: Deslocamentos na demanda de mercado refletem mudanças na renda agregada, na distribuição de renda, nos preços de bens relacionados e nas preferências dos consumidores.
-
-!!! tip "Agregação e heterogeneidade"
-    Mesmo que demandas individuais apresentem descontinuidades ou formas peculiares, a demanda de mercado tende a ser mais "suave" quando o número de consumidores é grande, devido à diversidade de preferências e rendas.
+Mas antes de mergulhar na análise formal, vale perguntar: **por que existem firmas?** A resposta pioneira de Ronald Coase — custos de transação — permanece central e nos lembra que a "caixa-preta" da firma esconde uma rica estrutura organizacional. No contexto brasileiro, onde micro e pequenas empresas (MPEs) representam a esmagadora maioria dos negócios e enfrentam taxas de mortalidade empresarial elevadas, a teoria da firma ganha contornos particularmente concretos.
 
 ---
 
-## 12.2 Determinação de Preço no Curtíssimo Prazo
+## 12.1 A Natureza e o Comportamento das Firmas
 
-No curtíssimo prazo (ou período de mercado), a quantidade ofertada é fixa — os produtores já trouxeram seus bens ao mercado e não podem alterar a produção. A curva de oferta é perfeitamente inelástica (vertical).
+### Por que firmas existem?
 
-\[
-S = \bar{Q}
-\]
+!!! definition "Custos de transação (Coase)"
+    Segundo **Ronald Coase** (1937), firmas existem porque a utilização do mecanismo de mercado (sistema de preços) envolve **custos de transação**: custos de busca, negociação, elaboração e execução de contratos. Quando esses custos são suficientemente elevados, torna-se mais eficiente organizar a produção dentro de uma firma — sob uma hierarquia administrativa — do que coordenar tudo via transações de mercado.
 
-Neste caso, o preço de equilíbrio é determinado exclusivamente pela demanda:
-
-\[
-p^* \text{ tal que } X(p^*) = \bar{Q}
-\]
-
-Se a demanda se desloca, todo o ajuste ocorre via preço. Em mercados de bens perecíveis — como peixes frescos ou flores —, esta análise é particularmente relevante: o vendedor aceita qualquer preço que o mercado determine, pois a alternativa é perder a mercadoria.
-
----
-
-### Gráfico interativo: Equilíbrio de Oferta e Demanda
-
-Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio de mercado. Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor (azul) e do produtor (verde).
-
-<iframe src="../../graficos/cap12/oferta-demanda.html" width="100%" height="500" style="border:none;border-radius:8px;"></iframe>
-
----
-
-## 12.3 Determinação de Preço no Curto Prazo
-
-### Equilíbrio parcial marshalliano
-
-No curto prazo, as firmas podem ajustar a produção variando insumos variáveis, mas o capital é fixo e o número de firmas no mercado é dado. A oferta de curto prazo de cada firma é dada por sua curva de custo marginal acima do custo variável médio mínimo:
-
-\[
-S_j(p) = \begin{cases} q_j \text{ tal que } CMg_j(q_j) = p, & \text{se } p \geq CVMe_{\min} \\ 0, & \text{se } p < CVMe_{\min} \end{cases}
-\]
-
-A oferta de mercado de curto prazo é a soma horizontal das ofertas individuais das \(m\) firmas:
-
-\[
-S(p) = \sum_{j=1}^{m} S_j(p)
-\]
-
-!!! definition "Equilíbrio de curto prazo"
-    O **equilíbrio competitivo de curto prazo** ocorre ao preço \(p^*\) tal que a quantidade demandada pelo mercado iguala a quantidade ofertada:
-
-    \[
-    X(p^*) = S(p^*)
-    \]
-
-    A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
+A firma, portanto, é uma resposta institucional à existência de custos de transação. Sua fronteira — isto é, quais atividades são realizadas internamente e quais são contratadas no mercado — é determinada pela comparação entre custos de transação e custos de organização interna.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O preço de equilíbrio é aquele em que ninguém está frustrado — todo mundo que quer comprar a esse preço consegue, e todo mundo que quer vender encontra comprador.
+    **Em uma frase:** Firmas existem porque negociar tudo no mercado tem um custo — e às vezes sai mais barato resolver as coisas "dentro de casa".
 
-    **Pense assim:** Na feira livre do seu bairro, se o quilo do tomate está caro demais, sobra tomate na barraca e o feirante baixa o preço. Se está barato demais, falta tomate e os consumidores competem entre si, puxando o preço para cima. O equilíbrio é o ponto em que a pilha de tomates na barraca "dá certo" com a fila de compradores — sem sobra nem falta.
+    **Pense assim:** Imagine um dono de restaurante em São Paulo. Ele poderia, todo dia, ir à CEAGESP negociar preço de cada verdura com um fornecedor diferente. Mas o tempo gasto, o risco de levar gato por lebre e a burocracia dos contratos tornam mais eficiente ter um fornecedor fixo ou até uma horta própria. Essa é a lógica dos custos de transação.
 
-    **Por que isso importa:** A formação de preços por oferta e demanda é o mecanismo central que coordena decisões descentralizadas de milhões de agentes — e entender esse processo é essencial para avaliar qualquer intervenção de política pública nos mercados.
+    **Por que isso importa:** Entender custos de transação ajuda a explicar por que empresas como a JBS se integram verticalmente e por que políticas de simplificação burocrática (como o MEI) podem alterar a fronteira da firma.
 
-### Estabilidade do equilíbrio
+**Oliver Williamson** (1975, 1985) expandiu a análise de Coase, identificando três atributos das transações que determinam a forma organizacional mais eficiente:
 
-O equilíbrio marshalliano é estável quando, a preços acima do equilíbrio, há excesso de oferta (pressionando o preço para baixo) e, a preços abaixo, há excesso de demanda (pressionando o preço para cima). Formalmente, a condição de estabilidade walrasiana requer:
+1. **Especificidade de ativos**: quando investimentos são específicos a uma relação (ex.: uma máquina que só serve para produzir um componente para um único cliente), o risco de comportamento oportunista (*hold-up*) favorece a integração vertical.
+2. **Frequência**: transações recorrentes justificam estruturas de governança mais sofisticadas.
+3. **Incerteza**: quanto maior a incerteza, mais difícil redigir contratos completos, favorecendo a organização interna.
+
+### O objetivo da firma: maximização de lucro
+
+Na análise microeconômica padrão, assume-se que a firma busca **maximizar o lucro**:
 
 \[
-\frac{dX}{dp} - \frac{dS}{dp} < 0
+\pi = RT - CT = p \cdot q - C(q)
 \]
 
-o que é satisfeito sempre que a demanda é negativamente inclinada e a oferta é positivamente inclinada.
+Embora existam teorias alternativas — maximização de receita (Baumol), maximização da utilidade gerencial (Williamson), satisfação (*satisficing*, Simon) —, a maximização de lucro permanece como a hipótese de trabalho dominante por sua tratabilidade analítica e por gerar predições empiricamente testáveis.
 
 ---
 
-## 12.4 Estática Comparativa
+## 12.2 Maximização de Lucro
 
-### Deslocamentos de oferta e demanda
+### Condições de primeira ordem
 
-A análise de estática comparativa examina como o equilíbrio muda em resposta a choques exógenos. Considere o equilíbrio definido implicitamente por:
-
-\[
-X(p, \alpha) = S(p, \beta)
-\]
-
-onde \(\alpha\) é um parâmetro de demanda (por exemplo, renda) e \(\beta\) é um parâmetro de oferta (por exemplo, custo de um insumo).
-
-Diferenciando totalmente:
+A firma escolhe \(q\) para maximizar:
 
 \[
-\frac{\partial X}{\partial p} dp + \frac{\partial X}{\partial \alpha} d\alpha = \frac{\partial S}{\partial p} dp + \frac{\partial S}{\partial \beta} d\beta
+\pi(q) = p(q) \cdot q - C(q) = RT(q) - CT(q)
 \]
 
-Rearranjando:
+onde \(p(q)\) é a função de demanda inversa (no caso de tomadora de preços, \(p\) é constante).
+
+A condição de primeira ordem (CPO) é:
 
 \[
-\frac{dp}{d\alpha} = \frac{\partial X / \partial \alpha}{\partial S / \partial p - \partial X / \partial p} > 0
+\frac{d\pi}{dq} = \frac{dRT}{dq} - \frac{dCT}{dq} = 0 \implies \mathrm{RMg}(q) = \mathrm{CMg}(q)
 \]
 
-se um aumento em \(\alpha\) desloca a demanda para a direita (\(\partial X / \partial \alpha > 0\)) e as curvas têm inclinações convencionais.
-
-Analogamente, um aumento no custo de insumos (\(\beta\)):
-
-\[
-\frac{dp}{d\beta} = \frac{-\partial S / \partial \beta}{\partial S / \partial p - \partial X / \partial p} > 0
-\]
-
-se o aumento em \(\beta\) reduz a oferta (\(\partial S / \partial \beta < 0\)).
-
-!!! note "Magnitude dos efeitos"
-    A magnitude da variação de preço depende das elasticidades relativas de oferta e demanda. Quanto mais inelástica a demanda (ou a oferta), maior a variação de preço decorrente de um deslocamento da outra curva.
-
----
-
-## 12.5 Análise de Longo Prazo
-
-### Entrada, saída e lucro zero
-
-No longo prazo, todos os fatores de produção são variáveis e há livre entrada e saída de firmas no mercado. Se as firmas existentes obtêm lucro econômico positivo (\(\pi > 0\)), novas firmas entram, deslocando a oferta para a direita e reduzindo o preço. Se há prejuízo (\(\pi < 0\)), firmas saem, deslocando a oferta para a esquerda e elevando o preço. No equilíbrio de longo prazo:
-
-\[
-\pi = 0 \quad \Longrightarrow \quad p = CMe_{\min}
-\]
-
-!!! definition "Equilíbrio competitivo de longo prazo"
-    No **equilíbrio competitivo de longo prazo**, três condições são satisfeitas simultaneamente:
-
-    1. Cada firma maximiza lucro: \(p = CMg(q^*)\)
-    2. Nenhuma firma deseja entrar ou sair: \(\pi = 0 \Rightarrow p = CMe(q^*)\)
-    3. Oferta iguala demanda: \(X(p^*) = m^* \cdot q^*\)
-
-    onde \(m^*\) é o número de firmas de equilíbrio.
-
----
-
-### Gráfico interativo: Equilíbrio de Longo Prazo
-
-Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero). O painel esquerdo mostra a firma (CMg e CMe) e o direito mostra o mercado (S e D).
-
-<iframe src="../../graficos/cap12/equilibrio-longo-prazo.html" width="100%" height="620" style="border:none;border-radius:8px;"></iframe>
-
----
-
-## 12.6 Equilíbrio de Longo Prazo: Custos Constantes, Crescentes e Decrescentes
-
-### Indústria de custos constantes
-
-Se a entrada de novas firmas não altera os preços dos insumos, as curvas de custo das firmas permanecem inalteradas. A curva de oferta de longo prazo da indústria é **horizontal** ao nível \(p = CMe_{\min}\).
-
-Um aumento na demanda leva à entrada de firmas, aumento na quantidade total, mas o preço retorna ao mesmo nível original.
-
-### Indústria de custos crescentes
-
-Quando a entrada de novas firmas eleva os preços dos insumos (por exemplo, terra para agricultura, mão de obra especializada), as curvas de custo se deslocam para cima. A curva de oferta de longo prazo é **positivamente inclinada**.
-
-O preço de equilíbrio de longo prazo será mais alto após o aumento na demanda.
-
-### Indústria de custos decrescentes
-
-Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**.
-
-| Tipo de indústria | Efeito da entrada sobre custos | Inclinação da oferta de LP | Efeito de ↑D sobre preço de LP |
-|---|---|---|---|
-| Custos constantes | Nenhum | Horizontal | Preço inalterado |
-| Custos crescentes | Custos sobem | Positiva | Preço sobe |
-| Custos decrescentes | Custos caem | Negativa | Preço cai |
-
----
-
-## 12.7 Elasticidade de Oferta de Longo Prazo
-
-A elasticidade de oferta de longo prazo mede a responsividade da quantidade ofertada de longo prazo a variações no preço:
-
-\[
-\varepsilon_{S}^{LP} = \frac{\Delta Q / Q}{\Delta p / p} = \frac{dQ}{dp} \cdot \frac{p}{Q}
-\]
-
-!!! definition "Elasticidade de oferta de longo prazo"
-    A **elasticidade de oferta de longo prazo** reflete não apenas o ajuste de produção das firmas existentes, mas também a entrada/saída de firmas e o ajuste dos preços dos insumos.
-
-Para uma indústria de custos constantes, \(\varepsilon_S^{LP} = \infty\) (oferta perfeitamente elástica). Para indústrias de custos crescentes, \(\varepsilon_S^{LP}\) é positiva e finita. Empiricamente, a elasticidade de oferta de longo prazo é maior do que a de curto prazo, pois no longo prazo há mais margens de ajuste disponíveis.
-
----
-
-## 12.8 Excedente do Produtor no Longo Prazo
-
-### Renda ricardiana
-
-No curto prazo, o excedente do produtor é a diferença entre a receita total e o custo variável total. No longo prazo, com lucro zero, o excedente do produtor de cada firma individual é zero. No entanto, o excedente do produtor **da indústria** pode ser positivo em indústrias de custos crescentes.
-
-Esse excedente de longo prazo reflete a **renda ricardiana** — pagamentos a fatores de produção cujos preços são elevados pela expansão da indústria. Por exemplo, quando a entrada de firmas agrícolas eleva o preço da terra, os proprietários de terras mais férteis (inframarginais) obtêm rendas que constituem o excedente do produtor de longo prazo.
-
-!!! example "Renda ricardiana na agricultura brasileira"
-    No Cerrado, a expansão da fronteira agrícola para a produção de soja elevou significativamente o preço das terras com melhor aptidão agrícola (topografia plana, solo corrigido, proximidade logística). Segundo dados do [CEPEA/ESALQ](https://www.cepea.esalq.usp.br) e da FNP, o hectare em regiões consolidadas como Sorriso (MT) valorizou mais de 300% entre 2005 e 2023, refletindo a renda ricardiana apropriada pelos proprietários de terras inframarginais. Produtores em terras menos férteis (marginais) operam com lucro próximo de zero — exatamente como o modelo prevê.
-
-!!! definition "Renda ricardiana"
-    A **renda ricardiana** (ou renda econômica) é o pagamento a um fator de produção acima do mínimo necessário para mantê-lo em seu uso corrente. No longo prazo competitivo, o excedente do produtor da indústria reflete exclusivamente essas rendas.
-
-Formalmente, o excedente do produtor de longo prazo é a área acima da curva de oferta de longo prazo e abaixo do preço de equilíbrio:
-
-\[
-EP_{LP} = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
-\]
-
-onde \(p_S(Q)\) é a curva de oferta inversa de longo prazo.
-
----
-
-## 12.9 Eficiência Econômica e Análise de Bem-Estar Aplicada
-
-### Excedente do consumidor e excedente do produtor
-
-O **excedente do consumidor** (EC) mede o ganho líquido dos consumidores, sendo a diferença entre a disposição a pagar e o preço efetivamente pago:
-
-\[
-EC = \int_0^{Q^*} \left[ p_D(Q) - p^* \right] dQ
-\]
-
-O **excedente do produtor** (EP) mede o ganho líquido dos produtores:
-
-\[
-EP = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
-\]
-
-O **bem-estar social** (W) na análise de equilíbrio parcial é:
-
-\[
-W = EC + EP
-\]
-
-!!! abstract "Teorema: Eficiência do equilíbrio competitivo (equilíbrio parcial)"
-    O equilíbrio competitivo maximiza o bem-estar social \(W = EC + EP\). Qualquer desvio da quantidade de equilíbrio competitivo — seja por intervenção governamental ou por poder de mercado — gera uma **perda de peso morto** (PPM), ou seja, uma redução líquida do bem-estar total.
-
-!!! proof "Demonstração"
-    No equilíbrio competitivo, a quantidade transacionada \(Q^*\) é determinada por \(p_D(Q^*) = p_S(Q^*)\). O bem-estar social é:
+!!! abstract "Regra de maximização de lucro"
+    A firma maximiza lucro produzindo a quantidade \(q^*\) em que a **receita marginal** iguala o **custo marginal**:
 
     \[
-    W(Q) = \int_0^{Q} \left[ p_D(t) - p_S(t) \right] dt
-    \]
-
-    Para maximizar \(W\), tomamos a condição de primeira ordem:
-
-    \[
-    \frac{dW}{dQ} = p_D(Q) - p_S(Q) = 0
-    \]
-
-    o que implica \(p_D(Q^*) = p_S(Q^*)\), exatamente a condição de equilíbrio competitivo.
-
-    A condição de segunda ordem é:
-
-    \[
-    \frac{d^2 W}{dQ^2} = \frac{dp_D}{dQ} - \frac{dp_S}{dQ} < 0
-    \]
-
-    Isso é satisfeito, pois a demanda inversa é decrescente (\(dp_D/dQ < 0\)) e a oferta inversa é crescente (\(dp_S/dQ > 0\)). Portanto, \(Q^*\) é de fato um máximo de bem-estar. \(\blacksquare\)
-
-!!! tip "Intuição: por que o equilíbrio competitivo maximiza o bem-estar?"
-    A cada unidade transacionada, o benefício marginal do consumidor (dado pela curva de demanda) supera o custo marginal do produtor (dado pela curva de oferta). Enquanto essa condição valer, produzir e vender mais uma unidade gera ganho líquido para a sociedade. No equilíbrio competitivo, a última unidade transacionada tem benefício marginal *exatamente igual* ao custo marginal — não há mais ganhos a explorar. Qualquer quantidade menor desperdiça trocas mutuamente vantajosas; qualquer quantidade maior força trocas cujo custo supera o benefício.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O excedente do consumidor mede o "desconto" que ele sente por pagar menos do que estaria disposto, e o excedente do produtor mede o "bônus" por receber mais do que o mínimo necessário para vender.
-
-    **Pense assim:** Você pagaria até R$ 50 por um ingresso de cinema, mas a bilheteria cobra R$ 30. Os R$ 20 de "alívio" que você sente são seu excedente de consumidor. Do outro lado, o cinema aceitaria vender a partir de R$ 15 (seu custo marginal), mas recebe R$ 30 — os R$ 15 de "folga" são o excedente do produtor. Somando os dois, temos o ganho total que aquela troca gerou para a sociedade.
-
-    **Por que isso importa:** Qualquer política que distorce preços — tabelamento, imposto, subsídio — redistribui ou destrói esses excedentes, e a perda de peso morto é justamente a parte que ninguém aproveita.
-
----
-
-## 12.10 Controles de Preços e Escassez
-
-### Preço máximo (teto de preço)
-
-Quando o governo estabelece um preço máximo \(\bar{p} < p^*\), a quantidade ofertada cai e a quantidade demandada aumenta, gerando **escassez**:
-
-\[
-\text{Escassez} = X(\bar{p}) - S(\bar{p}) > 0
-\]
-
-O preço máximo gera perda de peso morto, pois unidades que seriam eficientes de produzir e consumir deixam de ser transacionadas.
-
-### Preço mínimo (piso de preço)
-
-Quando o governo estabelece um preço mínimo \(\underline{p} > p^*\), a quantidade ofertada excede a quantidade demandada, gerando **excedente**:
-
-\[
-\text{Excedente} = S(\underline{p}) - X(\underline{p}) > 0
-\]
-
-!!! tip "Exemplos de controles de preços"
-    - **Preço máximo**: controle de aluguéis, tabelamento de medicamentos, congelamento de preços (como no Plano Cruzado, 1986).
-    - **Preço mínimo**: salário mínimo, preços mínimos agrícolas (PGPM — Política de Garantia de Preços Mínimos no Brasil).
-
-!!! example "Box Brasil: O Plano Cruzado e os limites do tabelamento"
-    Em fevereiro de 1986, o governo brasileiro lançou o Plano Cruzado, que impôs um congelamento generalizado de preços como estratégia anti-inflacionária. A inflação, que acumulava cerca de 235% em 12 meses (IGP-DI/FGV), caiu abruptamente para próximo de zero nos meses seguintes.
-
-    No entanto, os efeitos colaterais ilustram perfeitamente a análise de preços máximos:
-
-    - **Escassez generalizada**: com os preços congelados abaixo do equilíbrio, a quantidade demandada superou a ofertada. Prateleiras de supermercados ficaram vazias, especialmente para carne bovina e leite.
-    - **Mercado paralelo (ágio)**: produtores exigiam "ágio" para vender a preços acima do tabelado, sinalizando que o preço de equilíbrio de mercado era superior ao teto imposto.
-    - **Deterioração da qualidade**: firmas reduziram a qualidade dos produtos ou alteraram embalagens para manter margens — uma forma de ajuste não-preço que o modelo básico não captura.
-    - **Perda de peso morto**: a redução na quantidade transacionada gerou ineficiência alocativa substancial.
-
-    O episódio é uma das ilustrações mais dramáticas, na história econômica brasileira, de que tabelamentos abaixo do preço de equilíbrio geram escassez e distorções — exatamente como prevê a teoria.
-
----
-
-### Gráfico interativo: Controles de Preços
-
-Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do preço controlado para observar a escassez ou excedente criados, a variação nos excedentes do consumidor e do produtor, e a perda de peso morto resultante.
-
-<iframe src="../../graficos/cap12/controles-precos.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-
----
-
-## 12.11 Incidência Tributária: Quem Realmente Paga o Imposto?
-
-### Imposto por unidade
-
-Considere um imposto específico de \(t\) reais por unidade vendida. No equilíbrio com imposto, o preço pago pelo consumidor (\(p_c\)) e o preço recebido pelo produtor (\(p_p\)) diferem exatamente pelo valor do imposto:
-
-\[
-p_c = p_p + t
-\]
-
-O novo equilíbrio satisfaz:
-
-\[
-X(p_c) = S(p_p) = S(p_c - t)
-\]
-
-!!! abstract "Teorema: Incidência tributária e elasticidades"
-    A divisão da carga tributária entre consumidores e produtores depende das elasticidades relativas de oferta e demanda. A fração do imposto absorvida pelo consumidor é:
-
-    \[
-    \frac{dp_c}{dt} = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|}
-    \]
-
-    e a fração absorvida pelo produtor é:
-
-    \[
-    \frac{-dp_p}{dt} = \frac{|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}
-    \]
-
-    onde \(\varepsilon_S\) é a elasticidade-preço da oferta e \(|\varepsilon_D|\) é o valor absoluto da elasticidade-preço da demanda.
-
-!!! proof "Demonstração"
-    Partimos da condição de equilíbrio com imposto: \(X(p_c) = S(p_c - t)\). Diferenciando em relação a \(t\):
-
-    \[
-    \frac{dX}{dp_c} \cdot \frac{dp_c}{dt} = \frac{dS}{dp_p} \cdot \left( \frac{dp_c}{dt} - 1 \right)
-    \]
-
-    Denotando \(X' = dX/dp_c\) e \(S' = dS/dp_p\):
-
-    \[
-    X' \cdot \frac{dp_c}{dt} = S' \cdot \frac{dp_c}{dt} - S'
-    \]
-
-    \[
-    \frac{dp_c}{dt} (X' - S') = -S'
-    \]
-
-    \[
-    \frac{dp_c}{dt} = \frac{-S'}{X' - S'} = \frac{S'}{S' - X'}
-    \]
-
-    Multiplicando numerador e denominador por \(p/Q\):
-
-    \[
-    \frac{dp_c}{dt} = \frac{S' \cdot (p/Q)}{S' \cdot (p/Q) - X' \cdot (p/Q)} = \frac{\varepsilon_S}{\varepsilon_S - \varepsilon_D} = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|}
-    \]
-
-    onde usamos \(\varepsilon_D < 0\), logo \(-\varepsilon_D = |\varepsilon_D|\).
-
-    Para o produtor: \(p_p = p_c - t\), então:
-
-    \[
-    \frac{dp_p}{dt} = \frac{dp_c}{dt} - 1 = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|} - 1 = \frac{-|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}
-    \]
-
-    Portanto, \(\frac{-dp_p}{dt} = \frac{|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}\). \(\blacksquare\)
-
-**Casos-limite:**
-
-- Se a demanda é perfeitamente inelástica (\(|\varepsilon_D| = 0\)): o consumidor absorve 100% do imposto.
-- Se a oferta é perfeitamente inelástica (\(\varepsilon_S = 0\)): o produtor absorve 100% do imposto.
-- Se a demanda é perfeitamente elástica (\(|\varepsilon_D| \to \infty\)): o produtor absorve 100%.
-- Se a oferta é perfeitamente elástica (\(\varepsilon_S \to \infty\)): o consumidor absorve 100%.
-
-!!! note "Irrelevância do lado legal"
-    A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Quem realmente paga o imposto não é quem o governo manda pagar — é quem tem menos flexibilidade para escapar dele.
-
-    **Pense assim:** Quando o governo aumenta o ICMS da gasolina e cobra do posto, o posto repassa quase tudo ao consumidor no preço da bomba. Por quê? Porque o motorista *precisa* de gasolina (demanda inelástica) e não tem muita alternativa, enquanto o posto pode ajustar a oferta. O lado mais "preso" ao mercado é quem absorve a maior fatia do imposto, independentemente de quem assina a guia de recolhimento.
-
-    **Por que isso importa:** Esse princípio é central para avaliar reformas tributárias no Brasil — saber quem de fato arca com o ônus de cada tributo é essencial para analisar impactos distributivos.
-
-!!! example "Incidência tributária no Brasil: ICMS sobre combustíveis"
-    Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do [IPEA](https://www.ipea.gov.br)) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba ([ANP](https://www.gov.br/anp), Boletim de Preços).
-
----
-
-### Gráfico interativo: Incidência Tributária
-
-Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária entre comprador e vendedor, a receita do governo e a perda de peso morto. Alterne entre imposto sobre o vendedor e sobre o comprador para verificar a irrelevância do lado legal.
-
-<iframe src="../../graficos/cap12/incidencia-tributaria.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-
----
-
-## Tabela: Efeitos de Políticas sobre EC, EP e PPM
-
-A tabela abaixo resume os efeitos das principais políticas de intervenção em um mercado competitivo.
-
-| Política | Efeito sobre EC | Efeito sobre EP | Receita/Gasto Gov. | PPM |
-|---|---|---|---|---|
-| **Imposto por unidade** (\(t\)) | Diminui: \(-\Delta EC\) | Diminui: \(-\Delta EP\) | Receita: \(R = t \cdot Q_t\) | \(PPM = \frac{1}{2} t \cdot \Delta Q > 0\) |
-| **Subsídio por unidade** (\(s\)) | Aumenta | Aumenta | Gasto: \(G = s \cdot Q_s\) | \(PPM = \frac{1}{2} s \cdot \Delta Q > 0\) |
-| **Preço máximo** (\(\bar{p} < p^*\)) | Ambíguo (↑ preço menor, ↓ quantidade) | Diminui | — | \(PPM > 0\) (escassez) |
-| **Preço mínimo** (\(\underline{p} > p^*\)) | Diminui | Ambíguo (↑ preço maior, ↓ quantidade vendida) | Custo se gov. compra excedente | \(PPM > 0\) (excesso) |
-
-!!! note "Perda de peso morto"
-    A perda de peso morto (PPM), também chamada de *deadweight loss* ou triângulo de Harberger, representa a perda de bem-estar social que não é capturada por nenhum agente — nem consumidores, nem produtores, nem governo. Para um imposto com curvas lineares:
-
-    \[
-    PPM = \frac{1}{2} \cdot t^2 \cdot \frac{|\varepsilon_D| \cdot \varepsilon_S}{|\varepsilon_D| + \varepsilon_S} \cdot \frac{Q_0}{p_0}
+    \mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)
     \]
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** A perda de peso morto é o valor das trocas que deixaram de acontecer — um prejuízo que ninguém embolsa.
+    **Em uma frase:** A firma produz até o ponto em que o ganho da próxima unidade vendida empata com o custo de produzi-la.
 
-    **Pense assim:** Imagine que um imposto sobre o cafezinho faz o preço subir de R$ 5 para R$ 6. Alguns clientes que compravam a R$ 5 desistem, e o dono do café perde essas vendas. O governo arrecada sobre os cafés que ainda são vendidos, mas o valor das transações que sumiram — aquele cafezinho que o cliente queria e o vendedor podia oferecer — evaporou. Esse "triângulo" de valor perdido é a perda de peso morto.
+    **Pense assim:** Pense em uma barraquinha de açaí na praia. Cada copo extra rende R$ 10, mas o custo dos insumos vai subindo (mais polpa, mais gelo, mais copos). Enquanto o próximo copo custar menos de R$ 10 para fazer, vale a pena produzir. Quando o custo do próximo copo alcançar R$ 10, é hora de parar. Esse é o ponto em que receita marginal iguala custo marginal.
 
-    **Por que isso importa:** A fórmula mostra que a perda de peso morto cresce com o *quadrado* do imposto — dobrar o imposto quadruplica a ineficiência — o que fundamenta a recomendação de bases tributárias amplas com alíquotas baixas, como a reforma do IBS/CBS no Brasil.
+    **Por que isso importa:** A regra RMg = CMg é a bússola de qualquer decisão de produção — de uma microempresa a uma multinacional — e é a base da construção da curva de oferta.
+
+### Condição de segunda ordem
+
+Para que \(q^*\) seja um máximo (e não um mínimo), exige-se:
+
+\[
+\frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \implies \frac{d\mathrm{RMg}}{dq}\bigg|_{q^*} < \frac{d\mathrm{CMg}}{dq}\bigg|_{q^*}
+\]
+
+Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**.
+
+### Maximização de lucro com dois insumos
+
+Alternativamente, a firma pode escolher diretamente as quantidades de insumos. O problema é:
+
+\[
+\max_{K, L} \; \pi = p \cdot f(K, L) - wL - rK
+\]
+
+As condições de primeira ordem são:
+
+\[
+p \cdot f_L = w \implies \text{VPMg}_L = w
+\]
+
+\[
+p \cdot f_K = r \implies \text{VPMg}_K = r
+\]
+
+onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser empregado até o ponto em que o valor de sua contribuição marginal ao produto iguala seu preço.
 
 ---
 
-## Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
+## 12.3 Receita Marginal e Elasticidade
 
-!!! example "Box Brasil: Soja brasileira e o leiloeiro global"
-    O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 ([CONAB](https://www.conab.gov.br)). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
+<figure markdown="span">
+  <iframe src="../graficos/cap12/receita-marginal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
+</figure>
 
-    **Formação de preços internos:**
+### Receita marginal
 
-    O preço doméstico da soja é determinado pela paridade de exportação:
+A **receita total** é \(RT = p(q) \cdot q\). A **receita marginal** é:
+
+\[
+\mathrm{RMg} = \frac{dRT}{dq} = p + q \frac{dp}{dq}
+\]
+
+Para uma firma **tomadora de preços** (mercado perfeitamente competitivo), \(dp/dq = 0\), logo \(\mathrm{RMg} = p\).
+
+Para uma firma com **poder de mercado**, \(dp/dq < 0\), logo \(\mathrm{RMg} < p\).
+
+### Relação entre RMg e elasticidade-preço da demanda
+
+!!! definition "Receita marginal e elasticidade"
+    A receita marginal pode ser expressa em função da elasticidade-preço da demanda \(\varepsilon_d\) (definida como negativa, i.e., \(\varepsilon_d < 0\)):
 
     \[
-    p_{\text{interno}} = p_{\text{CBOT}} \times e + \text{prêmio de exportação} - \text{custos logísticos}
+    \mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = p\left(1 - \frac{1}{|\varepsilon_d|}\right)
     \]
 
-    onde \(e\) é a taxa de câmbio (R\$/US\$). O indicador CEPEA/ESALQ (Centro de Estudos Avançados em Economia Aplicada, da ESALQ/USP) é a principal referência de preços domésticos, calculado diariamente com base em transações efetivas no mercado físico.
+A derivação é direta:
 
-    **Elasticidades e estática comparativa:**
+\[
+\mathrm{RMg} = p + q\frac{dp}{dq} = p\left(1 + \frac{q}{p}\frac{dp}{dq}\right) = p\left(1 + \frac{1}{\varepsilon_d}\right)
+\]
 
-    Estudos do IPEA e da CONAB estimam que a elasticidade-preço da oferta de soja no Brasil no longo prazo situa-se entre 0,3 e 0,8, refletindo as possibilidades de expansão de área (conversão de pastagens degradadas) e intensificação tecnológica. A demanda global é relativamente inelástica no curto prazo, dado o uso da soja como insumo essencial na ração animal e na indústria de óleos.
+onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preço da demanda.
 
-    **Implicações para o modelo competitivo:**
+**Implicações:**
 
-    O mercado de soja é um caso quase ideal de concorrência perfeita: produto homogêneo, milhares de produtores, informação transparente sobre preços (CBOT em tempo real), e livre entrada/saída. A PGPM (Política de Garantia de Preços Mínimos) atua como um piso de preço, embora nos últimos anos os preços internacionais tenham se mantido muito acima dos preços mínimos fixados pelo governo, tornando a política pouco efetiva neste mercado específico.
+- Se \(|\varepsilon_d| > 1\) (demanda elástica): \(\mathrm{RMg} > 0\) — aumentar a produção eleva a receita total.
+- Se \(|\varepsilon_d| = 1\) (elasticidade unitária): \(\mathrm{RMg} = 0\) — receita total é máxima.
+- Se \(|\varepsilon_d| < 1\) (demanda inelástica): \(\mathrm{RMg} < 0\) — aumentar a produção reduz a receita total.
 
-    **Dados ilustrativos (CEPEA/ESALQ e CONAB):**
+!!! note "Implicação para precificação"
+    Uma firma maximizadora de lucro com poder de mercado **nunca** opera na porção inelástica da curva de demanda (onde \(|\varepsilon_d| < 1\)), pois nessa região \(\mathrm{RMg} < 0\), enquanto \(\mathrm{CMg} > 0\). Reduzir a produção elevaria simultaneamente a receita e reduziria os custos, aumentando o lucro.
 
-    | Safra | Produção (milhões t) | Preço médio anual (R\$/saca) | Exportação (milhões t) |
-    |---|---|---|---|
-    | 2019/20 | 124,8 | 89,50 | 82,9 |
-    | 2020/21 | 135,9 | 155,30 | 86,1 |
-    | 2021/22 | 125,5 | 183,60 | 78,7 |
-    | 2022/23 | 154,6 | 142,80 | 97,3 |
-    | 2023/24 | 155,3 | 120,50 | 101,2 |
+---
 
-    Observe a estática comparativa em ação: na safra 2020/21, choques positivos de demanda global (recuperação pós-pandemia, recomposição de estoques chineses) combinados com câmbio depreciado elevaram drasticamente o preço interno. Nas safras seguintes, a resposta da oferta (expansão de área) gradualmente pressionou os preços para baixo — uma ilustração da dinâmica de ajuste de longo prazo em indústria de custos crescentes.
+## 12.4 Oferta de Curto Prazo da Firma Tomadora de Preços
+
+<figure markdown="span">
+  <iframe src="../graficos/cap12/maximizacao-lucro.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 11.1</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
+</figure>
+
+### A decisão de produção no curto prazo
+
+Para uma firma tomadora de preços (\(\mathrm{RMg} = p\)), a condição de maximização é \(p = \mathrm{CMg}(q)\). Contudo, essa condição não é suficiente — é preciso verificar se a firma deve **operar** ou **fechar**.
+
+No curto prazo, a firma incorre em custos fixos independentemente de produzir ou não. Portanto:
+
+- Se **opera**, o lucro é: \(\pi = p \cdot q - CV(q) - CF\)
+- Se **fecha**, o lucro é: \(\pi = -CF\)
+
+A firma deve operar se e somente se:
+
+\[
+p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \mathrm{CVMe}(q)
+\]
+
+### Condições de oferta no curto prazo
+
+| Condição de preço | Decisão | Lucro econômico |
+|:---|:---|:---|
+| \(p > \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Lucro positivo \((\pi > 0)\) |
+| \(p = \mathrm{CMe}_{\min}\) | Produzir no ponto de lucro zero | Lucro zero (ponto de *break-even*) |
+| \(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Prejuízo, mas menor que \(CF\) |
+| \(p = \mathrm{CVMe}_{\min}\) | Indiferente entre operar e fechar | Prejuízo igual a \(CF\) (ponto de fechamento) |
+| \(p < \mathrm{CVMe}_{\min}\) | Fechar (produção zero) | Prejuízo igual a \(CF\) |
+
+!!! definition "Curva de oferta de curto prazo"
+    A **curva de oferta de curto prazo** da firma tomadora de preços é o trecho da curva de custo marginal que está **acima** do custo variável médio mínimo:
+
+    \[
+    q^s(p) = \begin{cases} \mathrm{CMg}^{-1}(p) & \text{se } p \geq \mathrm{CVMe}_{\min} \\ 0 & \text{se } p < \mathrm{CVMe}_{\min} \end{cases}
+    \]
+
+!!! note "O excedente do produtor"
+    O **excedente do produtor** no curto prazo é a diferença entre a receita total e o custo variável:
+
+    \[
+    EP = RT - CV = p \cdot q - CV(q) = \pi + CF
+    \]
+
+    Graficamente, é a área acima da curva de oferta (CMg) e abaixo do preço. O excedente do produtor é a medida apropriada de bem-estar do lado da oferta no curto prazo, pois mede a contribuição da produção para cobrir os custos fixos e gerar lucro.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Uma firma com prejuízo pode racionalmente continuar operando, desde que a receita cubra pelo menos os custos variáveis.
+
+    **Pense assim:** Imagine um quiosque na praia que paga R$ 3.000 de aluguel por mês (custo fixo). Se fechar, perde os R$ 3.000 de qualquer jeito. Se abrir e faturar o suficiente para pagar funcionários, insumos e ainda sobrar R$ 500, é melhor abrir — mesmo com prejuízo. O aluguel já é "dinheiro perdido" no curto prazo. Fechar só vale a pena quando nem os custos variáveis se pagam.
+
+    **Por que isso importa:** Essa lógica explica por que tantas MPEs brasileiras operam com prejuízo por meses antes de fechar — e por que o SEBRAE monitora a taxa de mortalidade empresarial nos primeiros cinco anos.
+
+---
+
+## Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
+
+!!! example "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
+    O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 12.4.
+
+    **Dados da [CONAB](https://www.conab.gov.br) (Companhia Nacional de Abastecimento):**
+
+    | Safra | Área plantada (milhões de ha) | Variação anual |
+    |:---|:---|:---|
+    | 2022/23 | 44,1 | — |
+    | 2023/24 | 46,1 | +4,5% |
+    | 2024/25 | 47,5 | +3,0% |
+    | 2025/26 (est.) | 48,9 | +2,9% |
+
+    Entre as safras 2022/23 e 2025/26, a área plantada expandiu cerca de **4,8 milhões de hectares** — equivalente a mais de duas vezes a área do estado de Sergipe. Essa expansão acompanhou um período de preços internacionais atrativos da soja, com a cotação em Chicago superando US$ 14/bushel em 2022.
+
+    **Interpretação via teoria da firma**
+
+    O produtor rural é, em boa aproximação, um **tomador de preços** (o preço é determinado em bolsa). Quando o preço da soja sobe acima do custo variável médio mínimo de terras marginais (cerrado ainda não convertido, áreas de segunda safra), a decisão de ofertar é racional: cada hectare adicional gera receita que supera o custo variável.
+
+    No curto prazo, a oferta é relativamente inelástica — a safra já está plantada e a produção depende do clima. No longo prazo, porém, a resposta é substancial: abertura de novas áreas, conversão de pastagens, investimento em irrigação e tecnologia de sementes. A elasticidade-preço da oferta de longo prazo da soja brasileira é estimada entre 0,3 e 0,8, dependendo da região.
+
+    A decisão de **fechar** também é observável: quando o preço cai abaixo do custo variável (como ocorreu em algumas regiões na safra 2023/24 devido a quebra climática e custos elevados de fertilizantes), produtores optam por não plantar a segunda safra — exatamente como prevê a condição \(p < \mathrm{CVMe}_{\min}\).
+
+    **Fonte**: CONAB, Acompanhamento da Safra Brasileira de Grãos (2023–2026); [CEPEA/ESALQ](https://www.cepea.esalq.usp.br).
+
+---
+
+## 12.5 A Função Lucro e o Lema de Hotelling
+
+### A função lucro
+
+!!! definition "Função lucro"
+    A **função lucro** \(\pi(p, w, r)\) é o lucro máximo que a firma pode obter dados o preço do produto \(p\) e os preços dos insumos \(w\) e \(r\):
+
+    \[
+    \pi(p, w, r) = \max_{q} \{p \cdot q - C(w, r, q)\}
+    \]
+
+    ou, equivalentemente:
+
+    \[
+    \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
+    \]
+
+A função lucro possui propriedades notáveis:
+
+1. **Não decrescente** em \(p\): um aumento no preço do produto nunca reduz o lucro máximo.
+2. **Não crescente** em \(w\) e \(r\): um aumento no preço de qualquer insumo nunca aumenta o lucro máximo.
+3. **Homogênea de grau 1** em \((p, w, r)\): se todos os preços (do produto e dos insumos) são multiplicados por \(t > 0\), o lucro máximo também é multiplicado por \(t\).
+4. **Convexa** em \((p, w, r)\): a firma pode ajustar suas decisões em resposta a mudanças de preços, de modo que o lucro responde mais que proporcionalmente (é "mais sensível") a grandes mudanças de preços.
+
+### Lema de Hotelling
+
+!!! proof "Demonstração: Lema de Hotelling"
+    **Enunciado.** Se \(\pi(p, w, r)\) é diferenciável, então:
+
+    \[
+    \frac{\partial \pi(p, w, r)}{\partial p} = q^*(p, w, r) \quad \text{(função de oferta)}
+    \]
+
+    \[
+    \frac{\partial \pi(p, w, r)}{\partial w} = -L^*(p, w, r) \quad \text{(negativo da demanda por trabalho)}
+    \]
+
+    \[
+    \frac{\partial \pi(p, w, r)}{\partial r} = -K^*(p, w, r) \quad \text{(negativo da demanda por capital)}
+    \]
+
+    **Demonstração.**
+    Considere o problema de maximização de lucro com escolha de insumos:
+
+    \[
+    \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
+    \]
+
+    Seja \((K^*, L^*)\) a solução ótima. Defina a função objetivo como:
+
+    \[
+    g(K, L; p, w, r) = p \cdot f(K, L) - wL - rK
+    \]
+
+    Pelo **teorema da envoltória**, a derivada da função valor em relação a um parâmetro é igual à derivada parcial da função objetivo avaliada no ótimo:
+
+    \[
+    \frac{\partial \pi}{\partial p} = \frac{\partial g}{\partial p}\bigg|_{(K^*, L^*)} = f(K^*, L^*) = q^*
+    \]
+
+    \[
+    \frac{\partial \pi}{\partial w} = \frac{\partial g}{\partial w}\bigg|_{(K^*, L^*)} = -L^*
+    \]
+
+    \[
+    \frac{\partial \pi}{\partial r} = \frac{\partial g}{\partial r}\bigg|_{(K^*, L^*)} = -K^*
+    \]
+
+    **Verificação com Cobb-Douglas.** Para que a maximização de lucro tenha solução interior finita, a função de produção deve exibir retornos decrescentes de escala. Considere \(q = K^{1/3}L^{1/3}\) (\(\alpha + \beta = 2/3 < 1\)), com preços \((p, w, r)\). As CPOs são:
+
+    \[
+    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w, \qquad \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r
+    \]
+
+    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w\), logo \(L = (r/w)\,K\). Substituindo em \(\text{CPO}_K\):
+
+    \[
+    \frac{p}{3}\,K^{-2/3}\left(\frac{r}{w}\,K\right)^{1/3} = r \implies \frac{p}{3}\left(\frac{r}{w}\right)^{1/3} = r \cdot K^{1/3}
+    \]
+
+    \[
+    K^{1/3} = \frac{p}{3\,r}\left(\frac{r}{w}\right)^{1/3} \implies K^* = \frac{p^3}{27\,r^3}\cdot\frac{r}{w} = \frac{p^3}{27\,r^2\,w}
+    \]
+
+    De forma análoga, \(L^* = \frac{p^3}{27\,w^2\,r}\). A produção ótima é:
+
+    \[
+    q^* = (K^*)^{1/3}(L^*)^{1/3} = \left(\frac{p^3}{27\,r^2 w}\right)^{1/3}\left(\frac{p^3}{27\,w^2 r}\right)^{1/3} = \frac{p^2}{9\,wr}
+    \]
+
+    O lucro máximo é \(\pi^* = p\,q^* - w\,L^* - r\,K^* = \frac{p^3}{9wr} - \frac{p^3}{27wr} - \frac{p^3}{27wr} = \frac{p^3}{27wr}\). Verificando o Lema:
+
+    \[
+    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark \qquad \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2 r} = -L^* \;\checkmark
+    \]
+
+    \(\blacksquare\)
+
+    !!! note "Por que retornos constantes não funcionam"
+        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p^2 = 4wr\); \(-\infty\) se \(p^2 < 4wr\) (firma não produz); e \(+\infty\) se \(p^2 > 4wr\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
+
+!!! tip "Significado econômico do Lema de Hotelling"
+    O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Conhecendo apenas o lucro máximo da firma em função dos preços, conseguimos deduzir quanto ela produz e quanto usa de cada insumo.
+
+    **Pense assim:** É como se você olhasse apenas o extrato bancário de um feirante — quanto ele lucra a cada combinação de preço da banana e custo do transporte — e, só com essa informação, conseguisse descobrir quantas bananas ele vende e quantas viagens de caminhão ele faz. O Lema de Hotelling diz que a função lucro já carrega toda essa informação, bastando derivá-la.
+
+    **Por que isso importa:** Essa propriedade é usada pelo [IPEA](https://www.ipea.gov.br) em modelos de equilíbrio geral computável para calibrar funções de oferta setorial da economia brasileira a partir de dados de lucro.
+
+---
+
+## 12.6 Maximização de Lucro e Demanda por Insumos
+
+### Demanda incondicional por insumos
+
+A **demanda incondicional** (ou marshalliana) por insumos é obtida diretamente das condições de primeira ordem da maximização de lucro:
+
+\[
+L^*(p, w, r): \quad p \cdot f_L(K^*, L^*) = w
+\]
+
+\[
+K^*(p, w, r): \quad p \cdot f_K(K^*, L^*) = r
+\]
+
+Estas demandas diferem das demandas condicionadas (Capítulo 11) porque não fixam o nível de produto — ele é determinado endogenamente pela maximização de lucro.
+
+### Propriedades da demanda por insumos
+
+A partir da convexidade da função lucro e do Lema de Hotelling, obtemos:
+
+\[
+\frac{\partial L^*}{\partial w} = -\frac{\partial^2 \pi}{\partial w^2} \leq 0
+\]
+
+A demanda por um insumo é **não crescente** em seu próprio preço — a "lei da demanda" para fatores de produção. Isso decorre da convexidade da função lucro (que implica que \(\partial^2 \pi / \partial w^2 \geq 0\)).
+
+### Relação entre demanda condicionada e incondicional
+
+A demanda incondicional por trabalho pode ser decomposta:
+
+\[
+\frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição}} + \underbrace{\frac{\partial L^c}{\partial q} \cdot \frac{\partial q^*}{\partial w}}_{\text{efeito produto}}
+\]
+
+O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho por capital ao longo da isoquanta quando \(w\) sobe. O **efeito produto** também é negativo: \(w\) maior eleva o CMg, o que reduz \(q^*\), o que reduz a demanda por trabalho. Ambos os efeitos operam na mesma direção — diferentemente do caso do consumidor, onde efeito substituição e efeito renda podem ter sinais opostos (bem de Giffen).
+
+!!! abstract "Proposição: Inexistência de 'insumo de Giffen'"
+    Na teoria da firma maximizadora de lucro, a demanda por um insumo é sempre não crescente em seu próprio preço. Não existe o análogo de um "bem de Giffen" para insumos, pois tanto o efeito substituição quanto o efeito produto reduzem a demanda quando o preço do insumo aumenta.
+
+---
+
+## Box Brasil: JBS e a Integração Vertical na Agroindústria
+
+!!! example "Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
+    A **JBS S.A.** é a maior processadora de proteína animal do mundo, com receita líquida trimestral recorde de **R$ 110,5 bilhões** no 3º trimestre de 2024 e presença em mais de 20 países. Sua trajetória ilustra de forma notável a teoria dos custos de transação de **Coase** e **Williamson** (Seção 12.1).
+
+    **A lógica da integração vertical**
+
+    A JBS não se limita ao abate: opera em toda a cadeia — da criação de animais (confinamento próprio) ao processamento, embalagem, logística refrigerada e distribuição com marcas próprias (Friboi, Seara, Swift). Na linguagem de Williamson, isso se explica por três fatores:
+
+    | Atributo da transação | Manifestação na cadeia de carne | Governança escolhida |
+    |:---|:---|:---|
+    | **Especificidade de ativos** | Plantas frigoríficas, câmaras frias, caminhões refrigerados — ativos com baixo valor fora da cadeia | Integração vertical |
+    | **Frequência** | Abate diário de milhares de cabeças; transações contínuas | Hierarquia interna |
+    | **Incerteza** | Volatilidade de preços do boi gordo; exigências sanitárias mutáveis; riscos de embargo internacional | Controle direto |
+
+    Se a JBS dependesse exclusivamente do mercado para cada etapa — comprando serviços de transporte refrigerado, terceirizando o abate, contratando distribuidores independentes —, os custos de transação (negociação de contratos, risco de *hold-up*, problemas de qualidade) seriam proibitivos. A integração vertical reduz esses custos ao internalizar transações com alta especificidade de ativos.
+
+    **Terceirização pós-reforma trabalhista**
+
+    Na direção oposta, a **Reforma Trabalhista de 2017** (Lei 13.467/17) liberou a terceirização de atividade-fim no Brasil. Em termos coaseanos, a legislação reduziu os custos de transação de contratar no mercado (ao simplificar contratos e reduzir riscos jurídicos), deslocando a fronteira ótima da firma. Atividades com **baixa especificidade de ativos** — limpeza, segurança, TI — passaram a ser mais eficientemente contratadas no mercado, enquanto atividades com **alta especificidade** permanecem internalizadas.
+
+    **Fonte**: JBS, Relatório de Resultados 3T2024; InfoMoney; Câmara dos Deputados.
+
+---
+
+## Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
+
+!!! example "Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
+
+    As **micro e pequenas empresas (MPEs)** são o coração do tecido empresarial brasileiro. Segundo dados do **SEBRAE** e da **Receita Federal**:
+
+    - As MPEs representam **99% dos estabelecimentos** formais no Brasil.
+    - Respondem por cerca de **55% dos empregos formais** e **30% do PIB**.
+    - Aproximadamente **29% das MPEs fecham nos primeiros 5 anos** de atividade (taxa de mortalidade apurada pelo SEBRAE para empresas constituídas em 2017).
+
+    **Causas da mortalidade empresarial:**
+
+    | Fator | Frequência citada | Interpretação microeconômica |
+    |:---|:---|:---|
+    | Falta de planejamento/gestão | ~25% | Incapacidade de minimizar custos (ineficiência produtiva) |
+    | Dificuldade de acesso a crédito | ~20% | Custo de capital elevado (\(r\) alto), restrição de liquidez |
+    | Carga tributária excessiva | ~18% | Deslocamento para cima das curvas de custo |
+    | Concorrência intensa | ~15% | Preço de mercado abaixo do CMe mínimo da firma |
+    | Falta de demanda | ~12% | Receita insuficiente para cobrir custos |
+    | Problemas pessoais/societários | ~10% | Custos de transação internos (governança) |
+
+    **O Simples Nacional** (LC 123/2006, reformulado pela LC 155/2016) é uma política pública que busca reduzir a carga tributária e a complexidade burocrática para MPEs, unificando tributos em uma guia única com alíquotas progressivas. Em termos microeconômicos, o Simples desloca para baixo as curvas de custo das MPEs, reduzindo o **ponto de fechamento** (\(\mathrm{CVMe}_{\min}\)) e permitindo que firmas menos eficientes sobrevivam.
+
+    **Interpretação via teoria da firma.**
+    A alta mortalidade das MPEs pode ser entendida como o resultado de firmas que operam com \(p < \mathrm{CMe}_{\min}\) no longo prazo. No curto prazo, muitas continuam operando enquanto \(p > \mathrm{CVMe}_{\min}\) (cobrindo custos variáveis e parte dos fixos), mas quando os custos fixos (aluguéis, financiamentos) vencem, a firma é forçada a fechar. A decisão de Coase — fazer internamente ou comprar no mercado — também é relevante: muitas MPEs fracassam por tentarem internalizar atividades que seriam mais eficientes se terceirizadas, incorrendo em custos organizacionais que superam os custos de transação do mercado.
+
+    Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 12.1 — Equilíbrio, excedentes e imposto"
-    **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
+??? example "Exercício Resolvido 11.1 — Receita marginal, elasticidade e markup"
+    **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
 
-    ---
+    **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
 
-    **(a)** Equilíbrio: \(Q_D = Q_S\).
+    **Resolução:**
 
+    **Passo 1 — Receita marginal**
     \[
-    120 - 2p = 3p - 30 \implies 150 = 5p \implies p^* = 30, \quad Q^* = 120 - 60 = 60
+    RT = p \cdot q = (100 - 2q)q = 100q - 2q^2 \implies \mathrm{RMg} = 100 - 4q
     \]
 
-    **(b)** A demanda inversa é \(p_D = 60 - Q/2\) e a oferta inversa é \(p_S = 10 + Q/3\).
-
+    **Passo 2 — Quantidade e preço ótimos**
     \[
-    EC = \frac{1}{2}(60 - 30) \times 60 = \frac{1}{2} \times 30 \times 60 = 900
+    \mathrm{RMg} = \mathrm{CMg} \implies 100 - 4q = 20 \implies q^* = 20
+    \]
+    \[
+    p^* = 100 - 2(20) = 60
     \]
 
-    \[
-    EP = \frac{1}{2}(30 - 10) \times 60 = \frac{1}{2} \times 20 \times 60 = 600
-    \]
+    **Passo 3 — Elasticidade no ponto ótimo**
 
-    **(c)** Com imposto, \(p_c = p_p + 10\). No equilíbrio:
+    A elasticidade-preço da demanda é \(\varepsilon_d = \frac{dq}{dp}\cdot\frac{p}{q}\). Da demanda inversa, \(dq/dp = -1/2\), logo:
 
     \[
-    120 - 2p_c = 3(p_c - 10) - 30 \implies 120 - 2p_c = 3p_c - 60 \implies 180 = 5p_c \implies p_c = 36
+    \varepsilon_d = -\frac{1}{2}\cdot\frac{60}{20} = -1{,}5
     \]
+
+    Verificação: \(\mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = 60\left(1 - \frac{1}{1{,}5}\right) = 60 \cdot \frac{1}{3} = 20 = \mathrm{CMg}\) ✓
+
+    **Passo 4 — Índice de Lerner**
+    \[
+    L = \frac{p^* - \mathrm{CMg}}{p^*} = \frac{60 - 20}{60} = \frac{2}{3} \approx 0{,}67
+    \]
+
+    Pela relação teórica: \(L = \frac{1}{|\varepsilon_d|} = \frac{1}{1{,}5} = \frac{2}{3}\) ✓
+
+    **Resultado:** \(q^* = 20\), \(p^* = 60\), \(|\varepsilon_d| = 1{,}5\), \(L = 2/3\).
+
+    **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 12.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o [CADE](https://www.gov.br/cade) utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
+
+---
+
+??? example "Exercício Resolvido 11.2 — Decisão de operar ou fechar no curto prazo"
+    **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
+
+    **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
+
+    **Resolução:**
+
+    **Passo 1 — Funções de custo**
+    \[
+    \mathrm{CVMe}(q) = 10 + 0{,}5q, \qquad \mathrm{CMg}(q) = 10 + q
+    \]
+    \[
+    \mathrm{CMe}(q) = \frac{72}{q} + 10 + 0{,}5q
+    \]
+
+    **Passo 2 — Ponto de fechamento**
+
+    Como \(\mathrm{CVMe} = 10 + 0{,}5q\) é crescente para \(q > 0\), o custo variável médio mínimo é atingido quando \(q \to 0^+\), com \(\mathrm{CVMe}_{\min} = 10\). Logo, a firma opera se \(p \geq 10\).
+
+    **Passo 3 — Quantidade ótima**
+    \[
+    p = \mathrm{CMg} \implies 16 = 10 + q \implies q^* = 6
+    \]
+
+    **Passo 4 — Lucro**
+    \[
+    RT = 16 \times 6 = 96, \qquad CT = 72 + 60 + 18 = 150
+    \]
+    \[
+    \pi = 96 - 150 = -54
+    \]
+
+    **Passo 5 — Comparação: operar vs. fechar**
+
+    | Decisão | Lucro |
+    |:---|:---|
+    | Operar (\(q = 6\)) | \(\pi = -54\) |
+    | Fechar (\(q = 0\)) | \(\pi = -CF = -72\) |
+
+    A receita (\(96\)) cobre todo o custo variável (\(78\)) e ainda gera \(18\) para abater parte dos custos fixos. Operar é racional mesmo com prejuízo.
+
+    **Resultado:** A firma deve operar, produzindo \(q^* = 6\) com prejuízo de \(\pi = -54\), que é menor do que o prejuízo de \(-72\) caso fechasse.
+
+    **Interpretação econômica:** Este é o dilema enfrentado por muitas MPEs brasileiras: operar com prejuízo no curto prazo para cobrir custos variáveis (salários, insumos) enquanto os custos fixos (aluguel, financiamentos) são parcialmente absorvidos. A pesquisa do SEBRAE mostra que empresas nessa faixa (\(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\)) sobrevivem por algum tempo, mas fecham quando os contratos fixos vencem — exatamente como prevê a teoria.
+
+---
+
+??? example "Exercício Resolvido 11.3 — Verificação do Lema de Hotelling"
+    **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(r = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
+
+    **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(r = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Condições de primeira ordem**
+    \[
+    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w \implies 4\,K^{1/3}L^{-2/3} = 1
+    \]
+    \[
+    \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r \implies 4\,K^{-2/3}L^{1/3} = 1
+    \]
+
+    **Passo 2 — Razão ótima de insumos**
+
+    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w = 1\), logo \(L = K\).
+
+    Substituindo em \(\text{CPO}_K\): \(4\,K^{-2/3}\,K^{1/3} = 1 \implies 4\,K^{-1/3} = 1 \implies K^{1/3} = 4 \implies K^* = 64\).
+
+    Portanto: \(K^* = L^* = 64\) e \(q^* = 64^{1/3}\cdot 64^{1/3} = 4 \times 4 = 16\).
+
+    **Passo 3 — Lucro máximo**
+    \[
+    \pi^* = 12 \times 16 - 1 \times 64 - 1 \times 64 = 192 - 128 = 64
+    \]
+
+    **Passo 4 — Função lucro geral**
+
+    Para preços genéricos \((p, w, r)\), as soluções são \(K^* = \frac{p^3}{27\,r^2\,w}\) e \(L^* = \frac{p^3}{27\,w^2\,r}\), com \(q^* = \frac{p^2}{9\,wr}\) e:
 
     \[
-    p_p = 36 - 10 = 26, \quad Q_t = 120 - 72 = 48
+    \pi(p, w, r) = \frac{p^3}{27\,wr}
     \]
 
-    O consumidor paga R\$ 6 a mais (de 30 para 36) e o produtor recebe R\$ 4 a menos (de 30 para 26), consistente com \(\varepsilon_S / (\varepsilon_S + |\varepsilon_D|) = (3 \cdot 30/60) / (1{,}5 + 1{,}0) = 0{,}6\).
-
-    Receita do governo: \(R = t \times Q_t = 10 \times 48 = 480\).
-
-    PPM: \(\frac{1}{2} \times t \times \Delta Q = \frac{1}{2} \times 10 \times 12 = 60\).
-
-    **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
-
-??? example "Exercício Resolvido 12.2 — Preço máximo e escassez"
-    **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
-
-    ---
-
-    **(a)** Equilíbrio livre:
-
+    **Passo 5 — Verificação do Lema de Hotelling**
     \[
-    500 - 10p = 20p - 100 \implies 600 = 30p \implies p^* = 20, \quad Q^* = 300
+    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark
     \]
-
-    **(b)** Com \(\bar{p} = 15 < 20\):
-
     \[
-    Q_D(15) = 500 - 150 = 350, \quad Q_S(15) = 300 - 100 = 200
+    \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2r} = -L^* \;\checkmark \qquad
+    \frac{\partial \pi}{\partial r} = -\frac{p^3}{27wr^2} = -K^* \;\checkmark
     \]
 
-    Escassez: \(350 - 200 = 150\) unidades.
+    **Resultado:** \(K^* = L^* = 64\), \(q^* = 16\), \(\pi^* = 64\). O Lema de Hotelling é verificado: as derivadas da função lucro recuperam a oferta e as demandas por insumos.
 
-    A quantidade efetivamente transacionada é \(Q_t = \min(Q_D, Q_S) = 200\).
-
-    Sem intervenção: \(EC_0 = \frac{1}{2}(50 - 20)(300) = 4.500\) e \(EP_0 = \frac{1}{2}(20 - 5)(300) = 2.250\).
-
-    Com teto: os consumidores que conseguem comprar pagam 15 em vez de 20. O EC tem dois componentes: o retângulo de transferência do produtor (\((20-15) \times 200 = 1.000\)) e a perda do triângulo superior. Usando a demanda inversa \(p_D = 50 - Q/10\) e a oferta inversa \(p_S = 5 + Q/20\):
-
-    \[
-    EC_1 = \frac{1}{2}(50 - 15)(200) + 0 \text{ (sem racionamento eficiente)}
-    \]
-
-    Com racionamento eficiente: \(EC_1 = \frac{1}{2}(50-15) \times 200 = 3.500\).
-
-    \(EP_1 = \frac{1}{2}(15 - 5) \times 200 = 1.000\).
-
-    \(W_1 = 3.500 + 1.000 = 4.500\). \(W_0 = 4.500 + 2.250 = 6.750\).
-
-    \(PPM = W_0 - W_1 = 6.750 - 4.500 = 2.250\).
-
-    Alternativamente, o triângulo de Harberger: \(\frac{1}{2}(20-15)(300-200) = \frac{1}{2} \times 5 \times 100 = 250\). Mas note que a PPM total com racionamento ineficiente pode ser maior. Com racionamento eficiente, \(PPM = 250\).
-
-    **Correção com racionamento eficiente:** \(EC_1 = (20-15) \times 200 + \frac{1}{2}(50-20)(200) - [\frac{1}{2}(50-20)(300) - \frac{1}{2}(50-20)(200)]...\)
-
-    Método direto: \(W_0 = \int_0^{300}[(50 - Q/10) - (5 + Q/20)] dQ = \int_0^{300}[45 - 3Q/20] dQ = [45Q - 3Q^2/40]_0^{300} = 13.500 - 6.750 = 6.750\).
-
-    \(W_1 = \int_0^{200}[(50 - Q/10) - (5 + Q/20)] dQ = [45Q - 3Q^2/40]_0^{200} = 9.000 - 3.000 = 6.000\).
-
-    \(PPM = 6.750 - 6.000 = 750\). Isso coincide com o triângulo: \(\frac{1}{2} \times (p^* - \bar{p} + p_D(200) - p^*) \times (Q^* - Q_t)\)... Usando a fórmula do triângulo entre as curvas:
-
-    \[
-    PPM = \frac{1}{2}[p_D(200) - p_S(200)] \times (300 - 200) = \frac{1}{2}(30 - 15)(100) = 750
-    \]
-
-    **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
-
-??? example "Exercício Resolvido 12.3 — Indústria de custos crescentes e renda ricardiana"
-    **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
-
-    ---
-
-    **(a)** Substituindo a oferta na demanda:
-
-    \[
-    Q = 800 - 10(20 + 0{,}05Q) = 800 - 200 - 0{,}5Q \implies 1{,}5Q = 600 \implies Q^* = 400
-    \]
-
-    \[
-    p^* = 20 + 0{,}05 \times 400 = 40
-    \]
-
-    **(b)** A renda ricardiana é a área acima da curva de oferta de LP e abaixo do preço:
-
-    \[
-    RR = \int_0^{400}[40 - (20 + 0{,}05Q)] dQ = \int_0^{400}[20 - 0{,}05Q] dQ = \left[20Q - 0{,}025Q^2\right]_0^{400}
-    \]
-
-    \[
-    RR = 8.000 - 4.000 = 4.000
-    \]
-
-    Alternativamente, como a oferta é linear: \(RR = \frac{1}{2}(p^* - p_{\min}) \times Q^* = \frac{1}{2}(40 - 20)(400) = 4.000\). ✓
-
-    **(c)** Com a nova demanda:
-
-    \[
-    Q' = 1000 - 10(20 + 0{,}05Q') = 1000 - 200 - 0{,}5Q' \implies 1{,}5Q' = 800 \implies Q'^* = 533{,}3
-    \]
-
-    \[
-    p'^* = 20 + 0{,}05 \times 533{,}3 = 46{,}67
-    \]
-
-    \[
-    RR' = \frac{1}{2}(46{,}67 - 20)(533{,}3) = \frac{1}{2}(26{,}67)(533{,}3) \approx 7.111
-    \]
-
-    A renda ricardiana aumentou de 4.000 para 7.111 — um acréscimo de **3.111**, refletindo a valorização dos fatores inframarginais (como terras mais produtivas) em resposta à expansão da demanda. Note que o preço de equilíbrio subiu (de 40 para 46,67) porque se trata de uma indústria de custos crescentes.
+    **Interpretação econômica:** A função lucro \(\pi = p^3/(27wr)\) é homogênea de grau 1 em \((p, w, r)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wr) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
 
 ---
 
 ## Exercícios
 
-**Exercício 12.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
+!!! tip "Exercícios do Capítulo 12"
 
-(a) Derive a demanda e a oferta de mercado.
+**Exercício 11.1.**
+Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(q) = 50 + 2q + 0{,}5q^2\).
 
-(b) Encontre o preço e a quantidade de equilíbrio.
+(a) Determine CF, CV(q), CMe(q), CVMe(q) e CMg(q).
 
-(c) Calcule o excedente do consumidor e o excedente do produtor.
+(b) Encontre o ponto de fechamento (mínimo do CVMe).
 
-(d) Se o governo impõe um imposto de \(t = 2\) por unidade, encontre o novo equilíbrio, a receita tributária e a perda de peso morto.
+(c) Encontre o ponto de *break-even* (mínimo do CMe).
 
----
+(d) Derive a curva de oferta de curto prazo \(q^s(p)\).
 
-**Exercício 12.2.** Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
-
-(a) Encontre o equilíbrio.
-
-(b) Suponha que o governo fixe um preço máximo de \(p = 10\). Calcule a escassez resultante e a perda de peso morto.
-
-(c) Compare graficamente o EC antes e depois do controle de preço.
+(e) Se o preço de mercado é \(p = 12\), qual a quantidade produzida e o lucro?
 
 ---
 
-**Exercício 12.3.** Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
+**Exercício 11.2.**
+Demonstre que, para uma firma com poder de mercado enfrentando uma curva de demanda linear \(p = a - bq\):
+
+(a) A receita marginal é \(\mathrm{RMg} = a - 2bq\) (inclinação é o dobro da da demanda).
+
+(b) A receita total é máxima quando \(q = a/(2b)\).
+
+(c) Verifique que no ponto de receita máxima \(|\varepsilon_d| = 1\).
+
+(d) Se o custo marginal é \(\mathrm{CMg} = c\) (constante), derive a quantidade e o preço de maximização de lucro. Mostre que o preço é um *markup* sobre o custo marginal.
 
 ---
 
-**Exercício 12.4.** Considere uma indústria de custos crescentes com curva de oferta de longo prazo \(p = 10 + 0{,}01Q\). A demanda é \(Q = 2000 - 50p\).
+**Exercício 11.3.**
+Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentando preços \(p = 27\), \(w = 2\) e \(r = 1\).
 
-(a) Encontre o equilíbrio de longo prazo.
+(a) Derive as condições de primeira ordem para maximização de lucro.
 
-(b) Calcule o excedente do produtor de longo prazo (renda ricardiana).
+(b) Encontre as quantidades ótimas de \(K^*\), \(L^*\) e \(q^*\).
 
-(c) Se a demanda se desloca para \(Q' = 2500 - 50p\), encontre o novo equilíbrio e a variação na renda ricardiana.
+(c) Calcule o lucro máximo.
+
+(d) Verifique o Lema de Hotelling calculando a função lucro \(\pi(p, w, r)\) e suas derivadas parciais.
 
 ---
 
-**Exercício 12.5.** No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
+**Exercício 11.4.**
+Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de produção \(q = \bar{K}^{1/2} L^{1/2} = 4L^{1/2}\). O salário é \(w = 8\) e o custo do capital é \(r = 2\).
 
-(a) Qual fração do subsídio beneficia o consumidor e qual fração beneficia o produtor?
+(a) Derive a função de custo total de curto prazo \(CT(q)\).
 
-(b) Discuta as implicações distributivas e de eficiência dessa política, considerando que diesel é um insumo essencial para o transporte de cargas no Brasil.
+(b) Derive CMg(q) e CVMe(q).
 
-(c) Calcule a perda de peso morto em termos do subsídio, das elasticidades e do preço e quantidade iniciais.
+(c) Determine o preço mínimo para que a firma opere (ponto de fechamento).
+
+(d) Se \(p = 16\), qual a quantidade ofertada e o lucro?
+
+(e) Compare com a decisão de longo prazo (quando \(K\) também pode ser ajustado).
+
+---
+
+**Exercício 11.5.**
+Explique, usando a teoria vista neste capítulo, por que:
+
+(a) Uma firma com prejuízo pode racionalmente continuar operando no curto prazo. Dê um exemplo numérico.
+
+(b) A função lucro é convexa nos preços. Qual a implicação econômica dessa propriedade?
+
+(c) Não existe "insumo de Giffen" na teoria da firma. Compare com o caso do consumidor.
+
+(d) A relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) implica que um monopolista nunca opera na região inelástica da demanda. Explique intuitivamente.
+
+(e) Segundo Coase, qual o limite para o crescimento da firma? Relacione com deseconomias de escala e custos de monitoramento.
 
 ---
 
 ## Vem, ANPEC!
 
-Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
+??? question "ANPEC 2013 — Questão 03"
+    Suponha que a função de produção para um dado produto tem a seguinte forma funcional: \(q = f(x_1) = 2x_1 - 0{,}03\,x_1^2\). Considere também que o preço de uma unidade do bem final é \(p(q) = R\$\,10{,}00\) e o preço unitário do insumo, praticado pelo mercado, é \(p(x_1) = R\$\,8{,}00\).
 
-??? question "ANPEC 2017 — Questão 03"
-    Com respeito aos efeitos dos impostos, assinale quais das afirmações abaixo são verdadeiras:
+    Dadas essas informações, é correto afirmar que:
 
-    **(0)** Se as curvas de demanda e oferta do mercado forem lineares, sendo \(p\) o preço do produto e \(t\) um imposto específico, então \(dp/dt = \eta/(\eta - \varepsilon)\), em que \(\eta\) é a elasticidade preço da oferta e \(\varepsilon\) é a elasticidade preço da demanda;
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-    **(1)** No caso de um imposto específico \(t\), o equilíbrio do mercado será diferente se o imposto for cobrado dos vendedores ou dos compradores;
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O nível de utilização do insumo que maximiza o nível de produção é \(x_1 = 33{,}33\). |
+    | 1 | O nível de utilização do insumo que maximiza o lucro da firma é \(x_1 = 19{,}5\). |
+    | 2 | O nível de produção economicamente ótimo é \(q = 28\). |
+    | 3 | O lucro máximo \((\pi)\) obtenível pela firma é \(\pi = R\$\,120{,}00\). |
+    | 4 | A produtividade marginal do fator é crescente. |
 
-    **(2)** Se a elasticidade preço da demanda for 0 (zero) e a elasticidade preço da oferta for 1, o custo do imposto específico recairá totalmente sobre os produtores;
+    ??? success "Gabarito"
+        **Respostas: 10110**
 
-    **(3)** O peso morto decorrente da introdução de um imposto específico em um mercado com curvas de oferta e demanda lineares não depende do preço antes da incidência do imposto;
+        **Justificativa por item:**
 
-    **(4)** Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.
+        - **Item 0 — V:** Para maximizar a produção, \(f'(x_1) = 2 - 0{,}06\,x_1 = 0 \implies x_1 = 33{,}33\). Correto.
+        - **Item 1 — F:** A condição de maximização de lucro é \(p \cdot f'(x_1) = p_{x_1}\), ou seja, \(10(2 - 0{,}06\,x_1) = 8 \implies 20 - 0{,}6\,x_1 = 8 \implies x_1 = 20\), e não 19,5.
+        - **Item 2 — V:** \(q(20) = 2(20) - 0{,}03(400) = 40 - 12 = 28\). Correto.
+        - **Item 3 — V:** \(\pi = 10 \times 28 - 8 \times 20 = 280 - 160 = 120\). Correto.
+        - **Item 4 — F:** \(\mathrm{PMg} = 2 - 0{,}06\,x_1\), que é **decrescente** em \(x_1\) (rendimentos marginais decrescentes).
 
-    ??? success "Gabarito e Resolução"
-        **Gabarito oficial: V-F-F-V-F**
+---
 
-        **(0) VERDADEIRO.** Com curvas lineares \(Q_D = a - bp\) e \(Q_S = c + dp\), onde \(\varepsilon = -bp/Q < 0\) e \(\eta = dp/Q > 0\), o imposto gera \(p_c = p_p + t\). No equilíbrio: \(dp_c/dt = d/(b+d)\). Em termos de elasticidades avaliadas no equilíbrio (onde \(Q\) e \(p\) são comuns): \(dp/dt = \eta/(\eta - \varepsilon)\), pois \(\varepsilon < 0\) implica \(\eta - \varepsilon = \eta + |\varepsilon|\).
+??? question "ANPEC 2020 — Questão 06"
+    Em um ano, uma empresa apresentou os seguintes dados contábeis: \$1 milhão de receitas, \$300 mil de compras de matérias-primas, \$30 mil de despesas com água e energia elétrica, \$100 mil de gastos com a folha de salários e \$120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$90 mil e outra com salário anual de \$150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
-        **(1) FALSO.** Pela irrelevância do lado legal da incidência, o equilíbrio econômico (preços pagos por consumidores e recebidos por produtores, quantidade transacionada) é idêntico independentemente de sobre quem recai a obrigação legal de recolhimento.
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-        **(2) FALSO.** Se \(|\varepsilon_D| = 0\) (demanda perfeitamente inelástica), o consumidor absorve 100% do imposto, pois \(dp_c/dt = \eta/(\eta + 0) = 1\). O custo recai integralmente sobre os consumidores, não sobre os produtores.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O custo contábil anual da empresa é de \$550 mil. |
+    | 1 | O custo econômico anual da empresa é de \$780 mil. |
+    | 2 | O lucro econômico anual da empresa é de \$100 mil. |
+    | 3 | Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo. |
+    | 4 | O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$300 mil. |
 
-        **(3) VERDADEIRO.** Com curvas lineares, \(PPM = \frac{1}{2} \cdot \frac{bd}{b+d} \cdot t^2\), onde \(b\) e \(d\) são as inclinações (em valor absoluto) das curvas de demanda e oferta. A fórmula não contém o preço de equilíbrio pré-imposto.
+    ??? success "Gabarito"
+        **Respostas: 11010**
 
-        **(4) FALSO.** A receita fiscal \(R = t \cdot Q_t\) não compensa a perda total de excedentes de consumidores e produtores. A diferença — o peso morto — é estritamente positiva (\(PPM > 0\)) sempre que \(t > 0\) e ambas as curvas têm inclinações finitas.
+        **Justificativa por item:**
 
-??? question "ANPEC 2023 — Questão 01"
-    Suponha que ao preço de equilíbrio no mercado internacional de petróleo de \$80 dólares o barril, a elasticidade-preço da demanda seja \(-0{,}4\), a elasticidade-preço da oferta seja \(0{,}2\), as quantidades ofertada e demandada sejam de 100 milhões de barris/dia. Suponha ainda que as curvas de demanda e oferta são lineares convencionais. Imagine que um embargo econômico a um produtor mundial cause um deslocamento paralelo da curva de oferta para a esquerda em 30 milhões de barris/dia. Julgue as afirmativas a seguir:
+        - **Item 0 — V:** Custo contábil = matérias-primas (300) + água/energia (30) + salários funcionários (100) + salário proprietário (120) = **\$550 mil**. Correto.
+        - **Item 1 — V:** Custo econômico inclui todos os custos de oportunidade: matérias-primas (300) + água/energia (30) + salários funcionários (100) + custo de oportunidade do proprietário (max{90, 150} = 150) + custo de oportunidade das instalações (200) = **\$780 mil**. Correto.
+        - **Item 2 — F:** Lucro econômico = receita − custo econômico = 1.000 − 780 = **\$220 mil**, e não \$100 mil. O erro comum é calcular o custo de oportunidade do proprietário como 150 − 120 = 30 e do capital como 200, obtendo custo eco = 550 + 30 + 200 = 780 e lucro = 220 — o resultado é o mesmo por qualquer caminho correto.
+        - **Item 3 — V:** Como o lucro econômico é positivo (\$220 mil \(>\) 0), é racional continuar operando. Correto.
+        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) não devem afetar decisões presentes e futuras. O proprietário deve considerar apenas os custos e receitas prospectivos. A existência de um custo irrecuperável passado de \$300 mil é irrelevante para a decisão de continuar ou fechar.
 
-    **(0)** A função de demanda consistente com o preço e a quantidade antes do embargo é \(D_1(p) = 116 - 0{,}2p\).
-
-    **(1)** A função de oferta que é consistente com o equilíbrio antes do embargo é \(S_1(p) = 60 + 0{,}5p\).
-
-    **(2)** A função de oferta após o embargo é \(S_2(p) = 50 + 0{,}25p\).
-
-    **(3)** Após o embargo, o preço de equilíbrio será de \$120 dólares, e a quantidade de equilíbrio será de 80 milhões de barris/dia.
-
-    **(4)** Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.
-
-    ??? success "Gabarito e Resolução"
-        **Gabarito oficial: F-F-V-V-F**
-
-        **Derivação das curvas.** Com \(p_0 = 80\), \(Q_0 = 100\):
-
-        - Demanda: \(\varepsilon_D = -0{,}4 = (dQ_D/dp)(80/100)\), logo \(dQ_D/dp = -0{,}5\). Assim \(D(p) = a - 0{,}5p\), e \(100 = a - 40 \Rightarrow a = 140\). Portanto \(D_1(p) = 140 - 0{,}5p\).
-
-        - Oferta: \(\varepsilon_S = 0{,}2 = (dQ_S/dp)(80/100)\), logo \(dQ_S/dp = 0{,}25\). Assim \(S(p) = c + 0{,}25p\), e \(100 = c + 20 \Rightarrow c = 80\). Portanto \(S_1(p) = 80 + 0{,}25p\).
-
-        **(0) FALSO.** A demanda correta é \(D_1(p) = 140 - 0{,}5p\), não \(116 - 0{,}2p\).
-
-        **(1) FALSO.** A oferta correta é \(S_1(p) = 80 + 0{,}25p\), não \(60 + 0{,}5p\).
-
-        **(2) VERDADEIRO.** Deslocamento paralelo de 30 milhões para a esquerda: \(S_2(p) = 80 - 30 + 0{,}25p = 50 + 0{,}25p\). ✓
-
-        **(3) VERDADEIRO.** Novo equilíbrio: \(140 - 0{,}5p = 50 + 0{,}25p \Rightarrow 90 = 0{,}75p \Rightarrow p = 120\). \(Q = 140 - 60 = 80\). ✓
-
-        **(4) FALSO.** Com demanda reduzida em 20: \(D_2(p) = 120 - 0{,}5p\). Novo equilíbrio: \(120 - 0{,}5p = 50 + 0{,}25p \Rightarrow 70 = 0{,}75p \Rightarrow p \approx 93{,}3\). Como \(93{,}3 > 80\), o preço é *maior* que o original, não menor.
+---
 
 ??? question "ANPEC 2025 — Questão 07"
     Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
-    **(0)** No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-    **(1)** No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero. |
+    | 1 | No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado. |
+    | 2 | Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo. |
+    | 3 | Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor. |
+    | 4 | Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo. |
 
-    **(2)** Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.
+    ??? success "Gabarito"
+        **Respostas: 01001**
 
-    **(3)** Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.
+        **Justificativa por item:**
 
-    **(4)** Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.
-
-    ??? success "Gabarito e Resolução"
-        **Gabarito oficial: F-V-F-F-V**
-
-        **(0) FALSO.** No curto prazo, o número de firmas é fixo e não há livre entrada/saída. Firmas podem ter lucro positivo, negativo ou zero. A condição de lucro zero é característica do equilíbrio de *longo prazo* com livre entrada.
-
-        **(1) VERDADEIRO.** Com livre entrada e saída, o lucro econômico é zero no longo prazo. Isso implica que todos os fatores de produção — incluindo o capital do empresário — são remunerados exatamente pelo seu custo de oportunidade (preço de mercado).
-
-        **(2) FALSO.** A existência de um fator fixo (por exemplo, terra de qualidade superior) gera renda econômica para o proprietário desse fator. Porém, quando essa renda é adequadamente contabilizada como custo de oportunidade, o lucro econômico da firma é zero. A renda do fator fixo não se confunde com lucro positivo da firma.
-
-        **(3) FALSO.** A causalidade é inversa ao que o item afirma. É o preço de equilíbrio do produto — determinado pela interação de oferta e demanda — que determina a renda econômica dos fatores. Como argumentou Ricardo: "não é porque os aluguéis são altos que o trigo é caro; é porque o trigo é caro que os aluguéis são altos."
-
-        **(4) VERDADEIRO.** Em uma indústria de custos constantes, a entrada de novas firmas não altera os preços dos insumos, de modo que as curvas de custo das firmas individuais permanecem inalteradas. O preço de equilíbrio de longo prazo é \(p = CMe_{\min}\) para qualquer nível de demanda, resultando em uma curva de oferta de longo prazo perfeitamente elástica (horizontal).
+        - **Item 0 — F:** No equilíbrio de **curto prazo**, firmas podem ter lucro positivo, negativo ou zero — a condição de lucro zero vale apenas no **longo prazo** com livre entrada e saída.
+        - **Item 1 — V:** No equilíbrio de longo prazo com livre entrada e saída, todos os fatores são remunerados a preços de mercado, pois o lucro econômico é zero — nenhum fator é sub ou super-remunerado em relação ao seu custo de oportunidade.
+        - **Item 2 — F:** Um fator fixo (como terra fértil ou licença) gera **renda econômica** para o detentor desse fator. O lucro econômico das firmas permanece zero, pois a renda é capitalizada no preço do fator fixo (ou no aluguel). O "lucro" aparente é na verdade remuneração do fator escasso.
+        - **Item 3 — F:** A causalidade é inversa: é o **preço de equilíbrio** (determinado por oferta e demanda) que determina a renda econômica, e não o contrário. Este é o princípio ricardiano clássico: "o milho não é caro porque paga-se renda; paga-se renda porque o milho é caro."
+        - **Item 4 — V:** Com livre entrada/saída e custos constantes (sem economias ou deseconomias externas), firmas entram até que \(p = \mathrm{CMe}_{\min}\). A curva de oferta de longo prazo é perfeitamente elástica (horizontal) nesse preço.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
-    **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)
+??? abstract "Ulyssea, G. (2018). [Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745). *American Economic Review*, 108(8), 2015–2047."
+    **Pergunta central:** Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
 
-    **Contexto.** A estimação de elasticidades de oferta e demanda é central para a análise de equilíbrio parcial, mas enfrenta o clássico problema de identificação: variações observadas em preços e quantidades refletem simultaneamente deslocamentos de oferta e demanda. Roberts e Schlenker enfrentam esse desafio no mercado de commodities agrícolas — exatamente o tipo de mercado competitivo analisado neste capítulo.
+    **Método:** O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
 
-    **Metodologia.** Os autores utilizam variáveis instrumentais baseadas em choques climáticos (rendimentos agrícolas exógenos determinados pelo clima) para identificar separadamente as curvas de oferta e demanda de quatro commodities (milho, soja, trigo e arroz) no mercado mundial. A estratégia empírica explora o fato de que variações climáticas deslocam a curva de oferta sem afetar diretamente a demanda, permitindo traçar a curva de demanda ao longo de diferentes pontos de equilíbrio.
+    **Resultado principal:** O resultado central é surpreendente: as duas margens de informalidade podem mover-se em **direções opostas**. Políticas que reduzem a informalidade empresarial (mais firmas se registrando) não necessariamente reduzem a informalidade trabalhista — e podem até piorá-la. Nem sempre há ganhos de produtividade, produto ou bem-estar. A heterogeneidade das firmas é crucial: firmas muito pequenas que se formalizam enfrentam custos regulatórios que reduzem sua eficiência.
 
-    **Resultados.** As estimativas indicam elasticidades-preço da demanda entre \(-0{,}05\) e \(-0{,}10\) no curto prazo — demanda extremamente inelástica, consistente com o uso das commodities como insumos essenciais na alimentação e ração animal. A elasticidade-preço da oferta, condicional ao clima, situa-se entre \(0{,}10\) e \(0{,}15\). Essas estimativas têm implicações diretas para a estática comparativa: choques de oferta (como secas) provocam grandes variações de preço, precisamente porque ambas as curvas são inelásticas.
+    **Por que isso importa:** Para o Brasil, onde o Simples Nacional e programas como o MEI (Microempreendedor Individual) buscam reduzir a informalidade, o artigo oferece um alerta: formalizar a empresa não é o mesmo que formalizar o emprego. Políticas públicas precisam considerar ambas as margens simultaneamente.
 
-    **Conexão com o capítulo.** O artigo é uma aplicação direta da análise de estática comparativa (Seção 12.4) e da discussão sobre elasticidades de oferta e demanda (Seções 12.1 e 12.7) em mercados competitivos reais. Também dialoga com o Box Brasil sobre a soja, cujas elasticidades estimadas pelo IPEA e CONAB são comparáveis às encontradas no estudo.
+    **Relevância para o capítulo:** O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
 
-??? abstract "Weyl, E. G. & Fabinger, M. (2013). [Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition](https://doi.org/10.1086/670401). *Journal of Political Economy*, 121(3), 528–583."
-    **DOI:** [10.1086/670401](https://doi.org/10.1086/670401)
+??? abstract "Dix-Carneiro, R.; Kovak, B. K. (2017). [Trade Liberalization and Regional Dynamics](https://doi.org/10.1257/aer.20161214). *American Economic Review*, 107(10), 2908–2946."
+    **Pergunta central:** Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
 
-    **Contexto.** A Seção 12.11 demonstra que, em concorrência perfeita, a incidência de um imposto específico depende das elasticidades relativas de oferta e demanda. Mas o que acontece quando os mercados não são perfeitamente competitivos? Weyl e Fabinger desenvolvem uma teoria unificada de *pass-through* (repasse) que generaliza os resultados clássicos de incidência para estruturas de mercado imperfeitas.
+    **Método:** Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.
 
-    **Contribuição teórica.** Os autores mostram que a taxa de repasse (*pass-through rate*) — a fração de um choque de custo repassada ao consumidor — é a variável-chave que conecta incidência tributária, análise de bem-estar e poder de mercado. Em concorrência perfeita, o repasse depende apenas das elasticidades, como demonstrado neste capítulo. Em monopólio e oligopólio, a curvatura da demanda (convexidade ou concavidade) torna-se crucial: com demanda log-côncava (como a linear), o repasse é inferior a 100%; com demanda log-convexa (como a de elasticidade constante), o repasse pode superar 100%.
+    **Resultado principal:** O impacto negativo sobre emprego formal e salários foi **persistente e crescente**: após 20 anos, regiões mais afetadas apresentavam queda de emprego formal cerca de três vezes maior do que após 10 anos. O mecanismo envolve mobilidade imperfeita do trabalho, ajuste lento do capital e perda de economias de aglomeração. Firmas em regiões expostas reduziram a produção e a demanda por trabalho de forma prolongada — contrariando modelos que preveem ajuste rápido.
 
-    **Resultados centrais.** A fórmula unificada de incidência mostra que \(\rho = \varepsilon_S / (\varepsilon_S + |\varepsilon_D| \cdot \theta)\), onde \(\theta\) captura o grau de conduta competitiva (\(\theta = 1\) em concorrência perfeita, \(\theta > 1\) com poder de mercado). O artigo também demonstra que a PPM de um imposto pode ser expressa como função do repasse, independentemente da estrutura de mercado.
+    **Por que isso importa:** O estudo demonstra empiricamente que a "curva de oferta de longo prazo" — que a teoria descreve como perfeitamente elástica — pode levar décadas para se materializar em economias reais com fricções. Para o Brasil, os resultados informam debates sobre política comercial e proteção a setores vulneráveis.
 
-    **Conexão com o capítulo.** O artigo generaliza os resultados de incidência tributária da Seção 12.11, mostrando que a fórmula competitiva é um caso especial de um princípio mais amplo. A leitura é recomendada para estudantes que desejam compreender como a análise de equilíbrio parcial se estende para além da concorrência perfeita.
-
----
+    **Relevância para o capítulo:** O artigo ilustra a distinção entre **curto e longo prazo** da Seção 12.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 12.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
 
 ## Referências do Capítulo
 
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 10.
-- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 12–13.
-- Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. New York: Pearson. Caps. 8–9.
-- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 13–14.
+- Coase, Ronald H. 1937. ["The Nature of the Firm."](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) *Economica* 4 (16): 386–405.
+- CONAB. 2023–2026. [*Acompanhamento da Safra Brasileira de Grãos*](https://www.conab.gov.br). Brasília: CONAB.
+- Dix-Carneiro, Rafael, e Brian K. Kovak. 2017. ["Trade Liberalization and Regional Dynamics."](https://doi.org/10.1257/aer.20161214) *American Economic Review* 107 (10): 2908–2946.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press.
+- SEBRAE. 2020. [*Sobrevivência das Empresas no Brasil*](https://www.sebrae.com.br). Brasília: SEBRAE.
+- Ulyssea, Gabriel. 2018. ["Firms, Informality, and Development: Theory and Evidence from Brazil."](https://doi.org/10.1257/aer.20141745) *American Economic Review* 108 (8): 2015–2047.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
+- Williamson, Oliver E. 1975. [*Markets and Hierarchies: Analysis and Antitrust Implications*](https://books.google.com.br/books?id=pg-wAAAAIAAJ). New York: Free Press.
+- Williamson, Oliver E. 1985. [*The Economic Institutions of Capitalism*](https://books.google.com.br/books?id=MqyvAAAAIAAJ). New York: Free Press.

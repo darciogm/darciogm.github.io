@@ -1,557 +1,571 @@
-# Capítulo 17 — A Paciência Tem Preço
+# Capítulo 17 — O Preço do Suor: Economia do Trabalho
 
 ## Introdução
 
-A economia não se resume a decisões instantâneas. Agentes econômicos constantemente fazem escolhas que envolvem o **tempo**: poupar hoje para consumir amanhã, investir em uma fábrica cujos retornos virão ao longo de anos, extrair um recurso natural agora ou preservá-lo para o futuro. Neste capítulo, estudamos a teoria do capital e dos juros, que fornece o arcabouço analítico para compreender essas decisões intertemporais.
+O mercado de trabalho é, provavelmente, o mercado mais importante para a maioria das pessoas. A renda do trabalho representa cerca de dois terços da renda nacional na maioria dos países, e as decisões sobre quanto trabalhar, que carreira seguir e como negociar salários afetam profundamente o bem-estar individual e coletivo. Neste capítulo, aplicamos as ferramentas da microeconomia — teoria do consumidor, equilíbrio de mercado e poder de mercado — ao estudo da oferta e da demanda de trabalho.
 
-Começamos com os conceitos fundamentais de capital e taxa de retorno, passamos pelo elegante modelo de dois períodos de Irving Fisher, discutimos a precificação de ativos arriscados, analisamos os critérios de decisão de investimento (VPL e TIR) e concluímos com a regra de Hotelling para recursos naturais exauríveis. Ao longo do capítulo, conectamos a teoria à experiência brasileira, marcada por décadas de juros reais elevados e seus efeitos sobre o investimento produtivo.
-
----
-
-## 17.1 Capital e Taxa de Retorno
-
-### O conceito de capital
-
-!!! definition "Capital"
-    **Capital** é o estoque de bens produzidos que são utilizados como insumos na produção de outros bens e serviços. Diferentemente do trabalho e da terra, o capital é um **fator de produção produzido** — máquinas, equipamentos, edifícios, infraestrutura, estoques.
-
-É fundamental distinguir entre:
-
-- **Estoque de capital** (\(K\)): o valor total dos bens de capital em um dado momento;
-- **Fluxo de serviços do capital**: a contribuição produtiva do capital por unidade de tempo;
-- **Investimento** (\(I\)): a variação no estoque de capital, \(I = \Delta K + \delta K\), onde \(\delta\) é a taxa de depreciação.
-
-### Taxa de retorno do capital
-
-A **taxa de retorno** (\(r\)) de um investimento mede a remuneração do capital por unidade monetária investida, por período. Se um investimento de \(K_0\) reais gera um fluxo de rendimento líquido \(\pi\) por período, a taxa de retorno é:
-
-\[
-r = \frac{\pi}{K_0}
-\]
-
-No equilíbrio competitivo de longo prazo, a taxa de retorno do capital se iguala à **taxa de juros** do mercado, pois o investidor é indiferente entre aplicar recursos no mercado financeiro e investir em capital físico.
+Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre consumo e lazer, e derivamos rigorosamente a curva de oferta de trabalho. Em seguida, analisamos fenômenos como a curva de oferta backward-bending, o equilíbrio competitivo, os diferenciais salariais, o monopsônio e o papel dos sindicatos. Ao longo do capítulo, conectamos a teoria à realidade brasileira, marcada por elevada informalidade, desigualdade salarial e um debate persistente sobre os efeitos do salário mínimo.
 
 ---
 
-## 17.2 Determinação da Taxa de Retorno
+## 17.1 Alocação do Tempo: o Modelo Trabalho-Lazer
 
-### Equilíbrio intertemporal
+### O problema fundamental
 
-A taxa de juros de equilíbrio é determinada pela interação entre:
+Cada indivíduo dispõe de um estoque fixo de tempo — convencionalmente \(T\) horas por período (por exemplo, \(T = 24\) horas por dia ou \(T = 168\) horas por semana). Esse tempo pode ser alocado entre duas atividades:
 
-- **Oferta de fundos emprestáveis** (poupança): positivamente relacionada à taxa de juros — juros mais altos incentivam a poupança;
-- **Demanda de fundos emprestáveis** (investimento): negativamente relacionada à taxa de juros — juros mais altos encarecem o custo do capital e reduzem o investimento.
+- **Lazer** (\(L\)): horas dedicadas a atividades que geram utilidade diretamente (descanso, convívio familiar, entretenimento).
+- **Trabalho** (\(h\)): horas dedicadas à atividade remunerada, com \(h = T - L\).
 
-No equilíbrio:
+O indivíduo recebe um **salário por hora** \(w\) e pode ter uma **renda não salarial** \(V\) (aluguéis, transferências, dividendos). Sua renda total é gasta em um bem composto de **consumo** \(C\), cujo preço é normalizado para 1.
+
+!!! definition "Restrição orçamentária do tempo"
+    A restrição orçamentária do indivíduo é:
+
+    \[
+    C = w(T - L) + V = wh + V
+    \]
+
+    onde \(C\) é o consumo, \(w\) é o salário-hora, \(T\) é a dotação total de tempo, \(L\) é o lazer, \(h = T - L\) são as horas trabalhadas e \(V\) é a renda não salarial.
+
+### Renda plena (full income)
+
+Podemos reescrever a restrição como:
 
 \[
-S(r) = I(r)
+C + wL = wT + V \equiv M^*
 \]
 
-onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de juros \(r^*\) que iguala oferta e demanda de fundos é a **taxa de juros de equilíbrio**.
+onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo obteria se trabalhasse todas as \(T\) horas. O preço do lazer é o salário \(w\), pois cada hora de lazer tem um custo de oportunidade igual ao salário que se deixa de receber.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** A taxa de juros é o preço do tempo — quanto custa trazer dinheiro do futuro para o presente, ou quanto se ganha por abrir mão do consumo hoje.
+    **Em uma frase:** O salário não é apenas o que você ganha por trabalhar — é também o preço que você paga por cada hora de lazer.
 
-    **Pense assim:** Quando você parcela uma compra no cartão com juros, está pagando pela impaciência de ter o produto agora. Quando coloca dinheiro na poupança, está sendo recompensado por esperar. A taxa de juros equilibra os impacientes (que querem gastar hoje) com os pacientes (que preferem poupar).
+    **Pense assim:** Quando um motorista de aplicativo decide tirar um domingo de folga para assistir ao jogo do Flamengo, o "preço" desse lazer não é só o ingresso — inclui as corridas que ele deixou de fazer. Se o salário-hora dele sobe, o churrasco de domingo fica mais "caro" em termos do que ele abre mão.
 
-    **Por que isso importa:** Com a Selic historicamente elevada no Brasil, o "preço da impaciência" é muito alto, desestimulando investimentos de longo prazo e encarecendo o crédito para famílias e empresas.
+    **Por que isso importa:** Entender que o lazer tem preço ajuda a explicar por que profissionais com salários muito altos frequentemente trabalham jornadas longas — o custo de oportunidade de cada hora livre é enorme.
 
-### Fatores que afetam a taxa de juros
+### Preferências
 
-| Fator | Efeito sobre \(r^*\) | Mecanismo |
-|---|---|---|
-| Aumento da produtividade do capital | \(\uparrow r^*\) | Desloca demanda por investimento para a direita |
-| Aumento da preferência pelo consumo presente | \(\uparrow r^*\) | Reduz oferta de poupança |
-| Aumento da oferta de fundos (ex.: poupança externa) | \(\downarrow r^*\) | Desloca oferta de poupança para a direita |
-| Aumento do risco percebido | \(\uparrow r^*\) | Exige prêmio de risco maior |
+As preferências do indivíduo são representadas por uma função de utilidade \(U(C, L)\), com as propriedades usuais:
+
+- \(U_C > 0\), \(U_L > 0\) (consumo e lazer são bens);
+- \(U_{CC} < 0\), \(U_{LL} < 0\) (utilidade marginal decrescente);
+- Curvas de indiferença convexas em relação à origem.
+
+A **taxa marginal de substituição** entre lazer e consumo é:
+
+\[
+TMS_{L,C} = \frac{U_L}{U_C}
+\]
+
+No ótimo interior, a condição de tangência exige:
+
+\[
+\frac{U_L}{U_C} = w
+\]
+
+Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
 ---
 
-## 17.3 Modelo de Dois Períodos de Fisher
+### Gráfico interativo: Escolha Trabalho-Lazer
 
-### Estrutura do modelo
+O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
 
-O modelo de Irving Fisher é a pedra angular da teoria do consumo intertemporal. Considere um consumidor que vive dois períodos (\(t = 1, 2\)) e deve decidir quanto consumir em cada período.
+<iframe src="../graficos/cap17/trabalho-lazer.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
-- Renda nos períodos 1 e 2: \(Y_1\) e \(Y_2\);
-- Consumo nos períodos 1 e 2: \(C_1\) e \(C_2\);
-- Taxa de juros de mercado: \(r\);
-- O consumidor pode poupar (\(S > 0\)) ou tomar empréstimo (\(S < 0\)).
+---
 
-!!! definition "Restrição orçamentária intertemporal"
-    A restrição orçamentária intertemporal é:
+## 17.2 Análise Matemática da Oferta de Trabalho
+
+### O problema de maximização
+
+!!! abstract "Problema de Otimização do Trabalhador"
+    O indivíduo resolve:
 
     \[
-    C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r} \equiv W
+    \max_{C, L} \; U(C, L) \quad \text{sujeito a} \quad C + wL = wT + V, \quad 0 \leq L \leq T
     \]
 
-    onde \(W\) é a **riqueza intertemporal** — o valor presente de toda a renda futura. A inclinação da reta orçamentária intertemporal é \(-(1+r)\).
-
-### Otimização
-
-O consumidor maximiza \(U(C_1, C_2)\) sujeito à restrição intertemporal. A condição de ótimo é:
+Montando o lagrangeano:
 
 \[
-\frac{U_1}{U_2} = 1 + r
+\mathcal{L} = U(C, L) + \lambda(wT + V - C - wL)
 \]
 
-ou equivalentemente:
+As condições de primeira ordem (CPO) são:
 
 \[
-TMS_{C_1, C_2} = 1 + r
+\frac{\partial \mathcal{L}}{\partial C} = U_C - \lambda = 0 \quad \Rightarrow \quad \lambda = U_C
 \]
 
-!!! definition "Taxa de preferência intertemporal"
-    A **taxa de preferência intertemporal** (ou taxa de desconto subjetiva) \(\rho\) é definida implicitamente por:
+\[
+\frac{\partial \mathcal{L}}{\partial L} = U_L - \lambda w = 0 \quad \Rightarrow \quad U_L = \lambda w
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial \lambda} = wT + V - C - wL = 0
+\]
+
+Combinando as duas primeiras:
+
+\[
+\frac{U_L}{U_C} = w
+\]
+
+### Efeitos de uma variação salarial
+
+!!! proof "Demonstração: Derivação da oferta de trabalho e decomposição de Slutsky"
+    Considere a função de utilidade \(U(C, L)\) e a restrição \(C = w(T - L) + V\). As demandas marshallianas são \(L^*(w, V)\) e \(C^*(w, V)\), de modo que a oferta de trabalho é \(h^*(w, V) = T - L^*(w, V)\).
+
+    Para analisar o efeito de uma variação no salário sobre a oferta de trabalho, aplicamos a **equação de Slutsky** adaptada ao modelo trabalho-lazer. Como o lazer tem um "preço" igual a \(w\), temos:
 
     \[
-    TMS_{C_1, C_2} = 1 + \rho
+    \frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}}_{\text{efeito substituição}} + \underbrace{(T - L^*) \cdot \left(-\frac{\partial L^*}{\partial V}\right)}_{\text{efeito renda}}
     \]
 
-    No ótimo, \(\rho = r\): a taxa de desconto subjetiva se iguala à taxa de juros de mercado. Se \(\rho > r\), o consumidor é "impaciente" e toma empréstimo; se \(\rho < r\), ele poupa.
+    Note que, diferentemente do caso padrão do consumidor, a variação no "preço" do lazer (\(w\)) também altera a renda plena. Por isso, o efeito renda é multiplicado por \((T - L^*) = h^*\), as horas trabalhadas.
 
-### Efeitos de uma variação na taxa de juros
+    **Efeito substituição** (\(\partial L^c / \partial w < 0\)): um aumento no salário encarece o lazer relativamente ao consumo. Mantida a utilidade constante, o indivíduo substitui lazer por consumo, ou seja, trabalha mais. O efeito substituição é sempre negativo sobre o lazer (positivo sobre a oferta de trabalho).
 
-Um aumento em \(r\) tem dois efeitos sobre \(C_1\):
+    **Efeito renda** (\(-h^* \cdot \partial L^* / \partial V\)): se o lazer é um bem normal (\(\partial L^* / \partial V > 0\)), o aumento da renda real causado pelo salário maior leva o indivíduo a demandar mais lazer, ou seja, trabalhar menos. O efeito renda é negativo sobre a oferta de trabalho.
 
-- **Efeito substituição**: consumo presente fica relativamente mais caro (maior custo de oportunidade), reduzindo \(C_1\);
-- **Efeito renda**: depende da posição do consumidor:
-    - Se é **poupador** (\(S > 0\)): fica mais rico, tende a aumentar \(C_1\);
-    - Se é **devedor** (\(S < 0\)): fica mais pobre, tende a reduzir \(C_1\).
-
-Para um poupador, o efeito líquido sobre \(C_1\) é ambíguo (semelhante à curva backward-bending no mercado de trabalho).
-
----
-
-### Gráfico interativo: Modelo de Fisher
-
-O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A reta orçamentária intertemporal tem inclinação \(-(1+r)\) e passa pelo ponto de dotação \((Y_1, Y_2)\). O consumidor escolhe o ponto de tangência com a curva de indiferença. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta e a classificação do agente como poupador ou devedor.
-
-<iframe src="../graficos/cap17/consumo-intertemporal.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
-
----
-
-## 17.4 Precificação de Ativos Arriscados
-
-### O CAPM básico
-
-O **Capital Asset Pricing Model** (Modelo de Precificação de Ativos de Capital) estabelece que o retorno esperado de um ativo arriscado é:
-
-\[
-E[r_i] = r_f + \beta_i \cdot (E[r_m] - r_f)
-\]
-
-onde:
-
-- \(r_f\) é a taxa de retorno livre de risco;
-- \(E[r_m]\) é o retorno esperado do portfólio de mercado;
-- \(\beta_i = \frac{\text{Cov}(r_i, r_m)}{\text{Var}(r_m)}\) é o **beta** do ativo, que mede seu risco sistemático.
-
-O prêmio de risco do ativo \(i\) é proporcional ao seu beta: ativos com maior correlação com o mercado exigem retornos esperados mais altos.
-
-### Fator de desconto estocástico
-
-Uma abordagem mais geral utiliza o **fator de desconto estocástico** (SDF, *stochastic discount factor*). O preço de qualquer ativo satisfaz:
-
-\[
-p_i = E[m \cdot x_i]
-\]
-
-onde \(m\) é o fator de desconto estocástico e \(x_i\) é o payoff do ativo. No modelo de consumo intertemporal com utilidade esperada:
-
-\[
-m = \beta \frac{U'(C_2)}{U'(C_1)}
-\]
-
-onde \(\beta = \frac{1}{1+\rho}\) é o fator de desconto subjetivo. Ativos que pagam mais em estados de escassez (quando \(U'(C_2)\) é alto) são mais valiosos.
-
-!!! note "Equity premium puzzle"
-    O **enigma do prêmio de risco das ações** ([Mehra e Prescott, 1985](https://doi.org/10.1016/0304-3932(85)90061-3)) refere-se ao fato de que o prêmio de risco histórico das ações sobre títulos públicos (~6% ao ano nos EUA) é muito maior do que modelos padrão de consumo intertemporal conseguem explicar com níveis razoáveis de aversão ao risco.
-
----
-
-## 17.5 Demanda da Firma por Capital
-
-A firma demanda capital até que o **valor do produto marginal do capital** iguale o **custo de uso do capital**:
-
-\[
-p \cdot PMg_K = c_K
-\]
-
-O **custo de uso do capital** (user cost of capital, ou custo de Jorgenson) é:
-
-\[
-c_K = p_K(r + \delta)
-\]
-
-onde \(p_K\) é o preço do bem de capital, \(r\) é a taxa de juros real e \(\delta\) é a taxa de depreciação.
-
-!!! definition "Custo de uso do capital"
-    O custo de uso do capital \(c_K = p_K(r + \delta)\) representa o custo por período de utilizar uma unidade de capital. Ele inclui dois componentes: o **custo de oportunidade** do capital (\(p_K \cdot r\), o retorno que se obteria aplicando o valor do capital no mercado financeiro) e o **custo de depreciação** (\(p_K \cdot \delta\), a perda de valor do capital por desgaste ou obsolescência).
-
-A demanda por capital é decrescente na taxa de juros: quando \(r\) sobe, \(c_K\) aumenta e a firma reduz seu estoque de capital desejado.
-
----
-
-## 17.6 Critério do Valor Presente Descontado (VPL)
-
-### Definição
-
-!!! definition "Valor Presente Líquido (VPL)"
-    O **Valor Presente Líquido** de um projeto de investimento que gera fluxos de caixa \(\{F_0, F_1, F_2, \ldots, F_n\}\) é:
+    Portanto, para a oferta de trabalho \(h^* = T - L^*\):
 
     \[
-    VPL = \sum_{t=0}^{n} \frac{F_t}{(1+r)^t} = F_0 + \frac{F_1}{1+r} + \frac{F_2}{(1+r)^2} + \cdots + \frac{F_n}{(1+r)^n}
+    \frac{\partial h^*}{\partial w} = \underbrace{-\frac{\partial L^c}{\partial w}}_{>0} + \underbrace{h^* \cdot \frac{\partial L^*}{\partial V}}_{<0 \text{ (se } L \text{ normal)}}
     \]
 
-    onde \(r\) é a taxa de desconto (custo de oportunidade do capital) e \(F_0 < 0\) representa o investimento inicial.
+    O sinal de \(\partial h^* / \partial w\) é **ambíguo**: depende de qual efeito domina. Para salários baixos, o efeito substituição tende a dominar; para salários altos, o efeito renda pode prevalecer. \(\blacksquare\)
 
-### Regra de decisão
+### Exemplo com Cobb-Douglas
 
-- Se \(VPL > 0\): o projeto gera valor líquido positivo; deve ser aceito.
-- Se \(VPL < 0\): o projeto destrói valor; deve ser rejeitado.
-- Se \(VPL = 0\): o projeto remunera exatamente o custo de oportunidade; indiferente.
+Suponha \(U(C, L) = C^\alpha L^{1-\alpha}\), com \(0 < \alpha < 1\). A solução do problema de maximização gera:
+
+\[
+L^* = \frac{(1-\alpha)(wT + V)}{w}, \qquad h^* = T - L^* = \alpha T - \frac{(1-\alpha)V}{w}
+\]
+
+Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\). Os efeitos renda e substituição se cancelam exatamente — uma propriedade conhecida das preferências Cobb-Douglas.
+
+---
+
+??? example "Exercício Resolvido 17.1"
+    **Enunciado:** Um trabalhador tem preferências \(U(C,L) = C^{1/2}\, L^{1/2}\), dotação de tempo \(T = 16\) horas e renda não salarial \(V = 32\). O salário-hora é \(w\).
+
+    **Dados:** \(T = 16\), \(V = 32\), \(\alpha = 1/2\).
+
+    **Resolução:**
+
+    **Passo 1 — Demandas ótimas**
+
+    Com Cobb-Douglas \(U = C^\alpha L^{1-\alpha}\), as demandas marshallianas são:
+
+    \[
+    L^* = \frac{(1-\alpha)(wT + V)}{w} = \frac{1}{2}\cdot\frac{16w + 32}{w} = 8 + \frac{16}{w}
+    \]
+
+    \[
+    h^* = T - L^* = 16 - 8 - \frac{16}{w} = 8 - \frac{16}{w}
+    \]
+
+    \[
+    C^* = w\,h^* + V = w\!\left(8 - \frac{16}{w}\right) + 32 = 8w + 16
+    \]
+
+    **Passo 2 — Salário de reserva**
+
+    O trabalhador só oferta horas positivas se \(h^* > 0\):
+
+    \[
+    8 - \frac{16}{w} > 0 \;\Rightarrow\; w > 2
+    \]
+
+    O **salário de reserva** é \(w_R = 2\). Para \(w \leq 2\), o indivíduo não trabalha e consome apenas \(V = 32\).
+
+    **Passo 3 — Inclinação da oferta**
+
+    \[
+    \frac{\partial h^*}{\partial w} = \frac{16}{w^2} > 0
+    \]
+
+    A oferta é sempre positivamente inclinada (não há backward-bending).
+
+    **Resultado:** Para \(w = 4\), temos \(h^* = 8 - 4 = 4\) horas, \(L^* = 12\) horas e \(C^* = 48\).
+
+    **Interpretação econômica:** Quando \(V = 0\), a Cobb-Douglas gera oferta perfeitamente inelástica (\(h^* = \alpha T = 8\)). A renda não salarial \(V > 0\) quebra essa propriedade: com \(V = 32\), o trabalhador pode "se dar ao luxo" de trabalhar menos em salários baixos, mas aumenta suas horas à medida que o salário sobe — o efeito substituição domina o efeito renda da variação em \(w\).
+
+---
+
+## 17.3 A Curva Backward-Bending
+
+!!! definition "Curva de oferta de trabalho backward-bending"
+    A curva de oferta de trabalho individual é dita **backward-bending** (voltada para trás) quando, a partir de determinado nível salarial, aumentos adicionais no salário levam o indivíduo a reduzir suas horas trabalhadas. Graficamente, a curva tem formato de "C invertido" no plano \((h, w)\).
+
+### Intuição
+
+- Para salários muito baixos, o indivíduo precisa trabalhar muitas horas para garantir um consumo mínimo. Aumentos salariais permitem que ele trabalhe mais e aumente seu consumo — o **efeito substituição** domina.
+- Para salários muito altos, o indivíduo já dispõe de renda elevada. Um aumento salarial adicional gera um forte **efeito renda**, levando-o a "comprar" mais lazer e reduzir horas de trabalho.
+
+### Formalização
+
+A condição para que a curva se volte para trás é:
+
+\[
+\frac{\partial h^*}{\partial w} < 0 \quad \Leftrightarrow \quad \left| h^* \cdot \frac{\partial L^*}{\partial V} \right| > \left| \frac{\partial L^c}{\partial w} \right|
+\]
+
+Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso é mais provável quando:
+
+1. \(h^*\) é grande (muitas horas trabalhadas);
+2. A elasticidade-renda do lazer é elevada;
+3. O efeito substituição compensado é pequeno.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O VPL responde à pergunta mais importante de qualquer investimento: "Vale mais a pena colocar meu dinheiro aqui ou deixar rendendo no banco?"
+    **Em uma frase:** A partir de certo salário, ganhar mais faz a pessoa querer trabalhar menos, não mais — porque ela já pode "se dar ao luxo" de curtir a vida.
 
-    **Pense assim:** Um dono de padaria em Belo Horizonte avalia comprar um forno novo por R$ 50 mil que vai gerar R$ 15 mil de lucro extra por ano durante 5 anos. Mas ele poderia deixar os R$ 50 mil no CDB a 10% ao ano. O VPL calcula se o forno supera o CDB, trazendo todos os lucros futuros para "reais de hoje".
+    **Pense assim:** Um médico recém-formado aceita plantões extras para pagar as contas. Mas um cirurgião sênior que já ganha muito bem prefere reduzir a carga e passar mais tempo com a família ou viajando. O dinheiro extra não compensa a perda de lazer — a curva de oferta "volta para trás".
 
-    **Por que isso importa:** No Brasil, onde a taxa de juros real é alta, muitos projetos produtivos que seriam viáveis em outros países apresentam VPL negativo — o dinheiro rende mais parado no banco do que investido na economia real.
+    **Por que isso importa:** Esse fenômeno explica por que aumentar impostos sobre altas rendas nem sempre reduz o esforço de trabalho tanto quanto se imagina — e por que cortes de impostos para ricos nem sempre geram mais horas trabalhadas.
 
-### Sensibilidade à taxa de desconto
-
-O VPL é uma função decrescente de \(r\). Projetos com fluxos de caixa mais distantes no tempo são mais sensíveis a variações na taxa de desconto.
-
----
-
-## 17.7 Taxa Interna de Retorno (TIR)
-
-!!! definition "Taxa Interna de Retorno (TIR)"
-    A **Taxa Interna de Retorno** é a taxa de desconto \(r^*\) que torna o VPL igual a zero:
-
-    \[
-    \sum_{t=0}^{n} \frac{F_t}{(1+r^*)^t} = 0
-    \]
-
-    A regra de decisão é: aceitar o projeto se \(TIR > r\) (custo de oportunidade do capital).
-
-### Limitações da TIR
-
-A TIR apresenta problemas conhecidos:
-
-1. **Múltiplas TIRs**: quando os fluxos de caixa mudam de sinal mais de uma vez, pode haver mais de uma TIR (pela regra de Descartes);
-2. **Projetos mutuamente exclusivos**: a TIR pode ordenar projetos de forma diferente do VPL;
-3. **Escala**: a TIR não leva em conta o tamanho do investimento.
-
-Por essas razões, o VPL é considerado o critério superior para avaliação de investimentos.
+!!! tip "Evidência empírica"
+    A evidência empírica sugere que a oferta de trabalho masculina é relativamente **inelástica** (elasticidade próxima de zero ou levemente negativa), enquanto a oferta feminina tende a ser mais elástica, especialmente para mulheres casadas. Isso é consistente com uma curva backward-bending para homens em faixas salariais observadas.
 
 ---
 
-### Gráfico interativo: VPL e TIR
+### Gráfico interativo: Curva de Oferta Backward-Bending
 
-O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desconto. Edite os fluxos de caixa \(F_0\) a \(F_5\) e ajuste a taxa de desconto \(r\) com o slider. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR). Projetos com VPL positivo (acima da linha zero) devem ser aceitos.
+O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibilidade de backward-bending. No painel superior, veja a escolha lazer-consumo para o salário selecionado. No painel inferior, a curva de oferta de trabalho \(h^*(w)\). Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
 
-<iframe src="../graficos/cap17/vpl-tir.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap17/oferta-trabalho.html" width="100%" height="800" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
-## 17.8 Precificação de Recursos Naturais: A Regra de Hotelling
+## 17.4 Curva de Oferta de Trabalho do Mercado
 
-### O problema do recurso exaurível
+A oferta de trabalho do mercado é obtida pela **agregação horizontal** das ofertas individuais. Se existem \(n\) trabalhadores, cada um com oferta \(h_i^*(w)\), a oferta agregada é:
 
-Considere o proprietário de uma mina com estoque finito \(S_0\) de um recurso natural não renovável (petróleo, minério, gás). Em cada período, ele deve decidir quanto extrair (\(q_t\)) e quanto preservar para o futuro.
+\[
+H^s(w) = \sum_{i=1}^{n} h_i^*(w)
+\]
 
-Se o preço do recurso é \(P_t\), o custo marginal de extração é \(c\) (constante) e a taxa de juros é \(r\), o proprietário enfrenta um problema de otimização intertemporal.
+Mesmo que curvas individuais sejam backward-bending, a curva de mercado tende a ser **positivamente inclinada** por duas razões:
 
-!!! proof "Demonstração: Derivação da Regra de Hotelling"
-    O proprietário da mina maximiza o valor presente dos lucros da extração:
+1. **Margem extensiva**: salários mais altos atraem novos trabalhadores ao mercado (pessoas que estavam fora da força de trabalho);
+2. **Heterogeneidade**: diferentes trabalhadores atingem o ponto de inflexão em salários diferentes, de modo que a agregação suaviza o efeito.
 
-    \[
-    \max_{\{q_t\}} \sum_{t=0}^{\infty} \frac{(P_t - c) \cdot q_t}{(1+r)^t} \quad \text{sujeito a} \quad \sum_{t=0}^{\infty} q_t \leq S_0, \quad q_t \geq 0
-    \]
+!!! note "Margem intensiva vs. extensiva"
+    A **margem intensiva** refere-se à decisão de quantas horas trabalhar (dado que se está empregado). A **margem extensiva** refere-se à decisão de participar ou não da força de trabalho. A análise do modelo trabalho-lazer captura primariamente a margem intensiva, mas a curva de mercado incorpora ambas.
 
-    O lagrangeano é:
+---
 
-    \[
-    \mathcal{L} = \sum_{t=0}^{\infty} \frac{(P_t - c) q_t}{(1+r)^t} + \lambda \left( S_0 - \sum_{t=0}^{\infty} q_t \right)
-    \]
+## 17.5 Equilíbrio no Mercado de Trabalho
 
-    A condição de primeira ordem para \(q_t > 0\) é:
+### Determinação do salário competitivo
 
-    \[
-    \frac{\partial \mathcal{L}}{\partial q_t} = \frac{P_t - c}{(1+r)^t} - \lambda = 0
-    \]
+No modelo competitivo, o mercado de trabalho funciona como qualquer outro mercado. O salário de equilíbrio \(w^*\) é determinado pela interseção da curva de oferta agregada \(H^s(w)\) com a curva de demanda agregada por trabalho \(H^d(w)\).
 
-    Portanto:
+A **demanda por trabalho** da firma advém da maximização de lucros. No curto prazo, com capital fixo, a firma contrata trabalho até que:
 
-    \[
-    P_t - c = \lambda (1+r)^t
-    \]
+\[
+w = p \cdot PMg_L = VPMg_L
+\]
 
-    Definindo a **renda de escassez** (ou *royalty*) como \(R_t \equiv P_t - c\), temos:
+onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do produto marginal do trabalho**. A curva de demanda por trabalho é, portanto, a curva de \(VPMg_L\), que é decrescente (devido à lei dos rendimentos decrescentes).
 
-    \[
-    R_t = \lambda (1+r)^t = R_0 (1+r)^t
-    \]
-
-    onde \(R_0 = \lambda\) é a renda de escassez no período inicial. Tomando a razão entre dois períodos consecutivos:
+!!! definition "Equilíbrio competitivo no mercado de trabalho"
+    O equilíbrio competitivo ocorre no par \((w^*, H^*)\) tal que:
 
     \[
-    \frac{R_{t+1}}{R_t} = 1 + r
+    H^s(w^*) = H^d(w^*) = H^*
     \]
 
-    Ou, equivalentemente:
+    Nesse equilíbrio, todo trabalhador que deseja trabalhar ao salário \(w^*\) encontra emprego, e toda firma que deseja contratar ao salário \(w^*\) encontra trabalhadores.
 
-    \[
-    \frac{R_{t+1} - R_t}{R_t} = r
-    \]
+### Deslocamentos das curvas
 
-    **Esta é a Regra de Hotelling**: em equilíbrio, a renda de escassez (preço líquido do custo de extração) de um recurso natural exaurível deve crescer à taxa de juros \(r\).
+| Fator | Efeito sobre a oferta | Efeito sobre a demanda | Impacto no salário |
+|---|---|---|---|
+| Aumento da produtividade | — | Desloca \(H^d\) para a direita | \(w^*\) sobe |
+| Imigração | Desloca \(H^s\) para a direita | — | \(w^*\) cai |
+| Aumento da renda não salarial | Desloca \(H^s\) para a esquerda | — | \(w^*\) sobe |
+| Progresso tecnológico poupador de trabalho | — | Desloca \(H^d\) para a esquerda | \(w^*\) cai |
 
-    **Intuição**: se a renda de escassez crescesse a uma taxa superior a \(r\), seria mais lucrativo não extrair hoje e esperar — o proprietário reduziria a extração presente, elevando o preço hoje e reduzindo a taxa de crescimento. Se crescesse a uma taxa inferior a \(r\), seria melhor extrair tudo agora e aplicar no mercado financeiro — a extração presente aumentaria, reduzindo o preço hoje e elevando a taxa de crescimento. No equilíbrio, os dois incentivos se equilibram. \(\blacksquare\)
+---
 
-!!! abstract "Regra de Hotelling"
-    Em equilíbrio competitivo, o preço líquido (preço menos custo marginal de extração) de um recurso natural exaurível cresce à taxa de juros:
+## 17.6 Diferenciais de Salário
 
-    \[
-    \frac{\dot{R}}{R} = r \quad \text{(em tempo contínuo)} \qquad \text{ou} \qquad \frac{R_{t+1} - R_t}{R_t} = r \quad \text{(em tempo discreto)}
-    \]
+Na prática, observamos enormes diferenças salariais entre trabalhadores. A teoria econômica oferece diversas explicações.
 
-    onde \(R = P - c\) é a renda de escassez do recurso.
+### Capital humano
+
+!!! definition "Capital humano"
+    **Capital humano** é o estoque de habilidades, conhecimentos e experiência que um trabalhador acumula ao longo da vida, principalmente por meio da educação formal e do treinamento no trabalho (*on-the-job training*). O conceito foi formalizado por Gary Becker (1964) e Theodore Schultz (1961).
+
+O modelo de capital humano prevê que trabalhadores mais educados recebem salários mais altos porque são mais produtivos. A decisão de investir em educação segue a mesma lógica de qualquer investimento: comparam-se os custos (mensalidades, custo de oportunidade do tempo) com os benefícios (salários futuros mais altos).
+
+A **equação de Mincer** relaciona o logaritmo do salário ao nível de educação e à experiência:
+
+\[
+\ln w = \beta_0 + \beta_1 S + \beta_2 X + \beta_3 X^2 + \varepsilon
+\]
+
+onde \(S\) é anos de escolaridade, \(X\) é experiência (ou idade − escolaridade − 6), e \(\beta_1\) é interpretado como a **taxa de retorno da educação**.
+
+### Diferenciais compensatórios
+
+Adam Smith já observava que trabalhos mais desagradáveis, perigosos ou insalubres tendem a pagar salários mais altos. No equilíbrio, diferenças salariais refletem diferenças nas **características não pecuniárias** dos empregos: risco de acidente, condições ambientais, horário, localização, estabilidade etc.
+
+### Discriminação
+
+Diferenças salariais também podem refletir **discriminação** por gênero, raça, etnia ou outras características. Modelos como o de Becker (1957) e o de discriminação estatística ajudam a explicar por que a discriminação pode persistir em equilíbrio.
+
+---
+
+## Box Brasil: Retorno à Educação e Desigualdade Salarial
+
+!!! example "O prêmio salarial da educação e os hiatos de gênero e raça"
+    A equação de Mincer aplicada ao Brasil revela um dos maiores retornos à educação do mundo — e, ao mesmo tempo, uma desigualdade que persiste mesmo após o controle por escolaridade.
+
+    **Prêmio salarial do ensino superior:**
+
+    Segundo a PNAD Contínua/[IBGE](https://www.ibge.gov.br) (2.º trimestre de 2024), trabalhadores com ensino superior completo recebem, em média, **126% a mais** do que aqueles com ensino médio completo ou superior incompleto. Esse diferencial, embora ainda elevado, caiu 26 pontos percentuais em 12 anos, refletindo a expansão do acesso ao ensino superior.
+
+    **Desigualdade por gênero:**
+
+    O 3.º Relatório de Transparência Salarial do [MTE](https://www.gov.br/trabalho) (2025) mostra que as mulheres recebem, em média, **20,7% a menos** que os homens. Quando se adiciona o recorte racial, o hiato se amplia: mulheres negras ganham **53% a menos** que homens brancos.
+
+    **Desigualdade por raça:**
+
+    Mesmo entre trabalhadores com diploma universitário, o rendimento médio de negros (R$ 4.798) é **32% inferior** ao de não negros (R$ 7.030), segundo a PNAD Contínua 2024. Essa diferença sugere que fatores além do capital humano — como discriminação no mercado de trabalho e segregação ocupacional — desempenham papel relevante.
+
+    **Conexão com a teoria:**
+
+    A teoria do capital humano (seção 17.6) explica parte substancial dos diferenciais salariais observados: mais educação → maior produtividade → salário mais alto. Contudo, os hiatos persistentes de gênero e raça, mesmo controlando por escolaridade, apontam para a relevância dos modelos de discriminação (Becker, 1957) e de barreiras estruturais no acesso a ocupações de alta remuneração.
+
+    *Fonte: PNAD Contínua/IBGE, 2.º tri 2024; MTE, 3.º Relatório de Transparência Salarial, 2025.*
+
+---
+
+## 17.7 Monopsônio no Mercado de Trabalho
+
+!!! definition "Monopsônio"
+    **Monopsônio** é a estrutura de mercado em que existe um único comprador de trabalho (ou poucos compradores com poder de mercado). Nessa situação, a firma não é tomadora de salário: ao contratar mais trabalhadores, ela eleva o salário de mercado.
+
+### Maximização de lucro do monopsonista
+
+Para o monopsonista, a oferta de trabalho é a curva de oferta do mercado: \(w = w(H)\), com \(w'(H) > 0\). O custo total do trabalho é:
+
+\[
+CT_L = w(H) \cdot H
+\]
+
+O **custo marginal do trabalho** (despesa marginal) é:
+
+\[
+CMg_L = \frac{dCT_L}{dH} = w(H) + H \cdot w'(H) > w(H)
+\]
+
+O monopsonista contrata até que:
+
+\[
+VPMg_L = CMg_L
+\]
+
+Isso resulta em:
+
+- **Emprego menor** do que no equilíbrio competitivo;
+- **Salário menor** do que no equilíbrio competitivo.
+
+A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de Joan Robinson).
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O preço de um recurso que vai acabar precisa subir ao longo do tempo à mesma taxa dos juros — senão, o dono preferiria extrair tudo hoje e aplicar o dinheiro.
+    **Em uma frase:** Quando há um único grande empregador na região, ele pode pagar salários abaixo da produtividade dos trabalhadores porque eles não têm para onde ir.
 
-    **Pense assim:** Imagine um fazendeiro no Pará com mogno nativo na propriedade. Se o preço da madeira não estiver subindo pelo menos tanto quanto o rendimento de um CDB, ele corta tudo agora e coloca o dinheiro no banco. Mas se o mogno está valorizando mais que os juros, compensa deixar a árvore crescendo. No equilíbrio, as duas opções se equivalem.
+    **Pense assim:** Em muitas cidades pequenas do interior do Brasil, a prefeitura ou uma única fábrica é praticamente a única empregadora formal. Se o trabalhador pede aumento, não tem concorrente para onde migrar. O empregador sabe disso e mantém salários baixos, mesmo que o trabalhador produza muito mais do que recebe.
 
-    **Por que isso importa:** A regra de Hotelling é a base para pensar a exploração sustentável de petróleo, minérios e outros recursos finitos — e ajuda a entender por que juros altos aceleram o desmatamento e a extração mineral.
+    **Por que isso importa:** Em mercados monopsonísticos, um salário mínimo bem calibrado pode, paradoxalmente, aumentar emprego e salário ao mesmo tempo — uma das conclusões mais contraintuitivas da economia do trabalho.
 
-### Implicações
-
-1. **O preço do recurso tende a subir ao longo do tempo**, refletindo sua crescente escassez;
-2. **Recursos com custo de extração constante** terão preços que convergem assintoticamente para um caminho exponencial;
-3. **A taxa de juros determina a velocidade de exaustão**: juros altos aceleram a extração (o futuro é mais fortemente descontado).
-
-!!! tip "A regra de Hotelling na prática"
-    Empiricamente, os preços de muitos recursos naturais não seguem a trajetória prevista pela regra de Hotelling. Isso pode ser explicado por: (i) descobertas de novas reservas; (ii) progresso tecnológico que reduz custos de extração; (iii) desenvolvimento de substitutos; (iv) poder de mercado (OPEP, por exemplo).
+!!! tip "Monopsônio e salário mínimo"
+    Uma implicação surpreendente do modelo de monopsônio é que a imposição de um **salário mínimo** pode, sob certas condições, aumentar **simultaneamente** o salário e o emprego. Isso ocorre porque o salário mínimo transforma a curva de custo marginal do trabalho em uma linha horizontal até o ponto em que a oferta de trabalho ao salário mínimo se esgota, eliminando o incentivo do monopsonista a restringir contratações.
 
 ---
 
-## 17.9 Juros Compostos e Tempo Contínuo
+### Gráfico interativo: Monopsônio no Mercado de Trabalho
 
-### Juros compostos discretos
+O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (MCL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 
-Com capitalização \(m\) vezes ao ano, um capital \(K_0\) investido à taxa nominal anual \(i\) rende, após \(n\) anos:
-
-\[
-K_n = K_0 \left(1 + \frac{i}{m}\right)^{mn}
-\]
-
-### Capitalização contínua
-
-Quando \(m \to \infty\), obtemos a capitalização contínua:
-
-\[
-K(t) = K_0 \cdot e^{it}
-\]
-
-onde \(e \approx 2{,}71828\) é a base do logaritmo natural. A taxa instantânea de crescimento é \(i\).
-
-### Valor presente em tempo contínuo
-
-O valor presente de um fluxo \(F(t)\) recebido no instante \(t\), descontado à taxa contínua \(r\), é:
-
-\[
-VP = F(t) \cdot e^{-rt}
-\]
-
-Para um fluxo contínuo \(f(t)\) ao longo do tempo:
-
-\[
-VP = \int_0^T f(t) \cdot e^{-rt} \, dt
-\]
-
-### Relação entre taxas discreta e contínua
-
-Se a taxa discreta (anual) é \(r_d\) e a taxa contínua é \(r_c\), então:
-
-\[
-1 + r_d = e^{r_c} \quad \Leftrightarrow \quad r_c = \ln(1 + r_d)
-\]
-
-!!! note "Perpetuidades e anuidades"
-    - **Perpetuidade** (fluxo constante \(F\) para sempre): \(VP = F/r\)
-    - **Anuidade** (fluxo constante \(F\) por \(n\) períodos): \(VP = F \cdot \frac{1 - (1+r)^{-n}}{r}\)
-    - **Perpetuidade crescente** (fluxo crescendo a taxa \(g < r\)): \(VP = F/(r - g)\)
+<iframe src="../graficos/cap17/monopsonio.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
-## Tabela: VPL, Taxa de Desconto e Decisão de Investimento
+??? example "Exercício Resolvido 17.2"
+    **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
 
-Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa anuais conforme a tabela abaixo:
+    **Dados:** \(w(H) = 4 + 2H\); \(VPMg_L = 100 - 2H\).
 
-| Ano | Fluxo de caixa (R$) |
-|---|---|
-| 0 | −100.000 |
-| 1 | 30.000 |
-| 2 | 35.000 |
-| 3 | 40.000 |
-| 4 | 45.000 |
+    **Resolução:**
 
-A TIR deste projeto é aproximadamente 15,2%. A tabela a seguir mostra o VPL para diferentes taxas de desconto:
+    **Passo 1 — Equilíbrio competitivo**
 
-| Taxa de desconto (\(r\)) | VPL (R$) | Decisão |
-|---|---|---|
-| 5% | 35.460 | Aceitar |
-| 8% | 24.689 | Aceitar |
-| 10% | 18.444 | Aceitar |
-| 12% | 12.658 | Aceitar |
-| 15% | 4.474 | Aceitar |
-| 15,2% (TIR) | ≈ 0 | Indiferente |
-| 18% | −5.536 | Rejeitar |
-| 20% | −10.648 | Rejeitar |
-| 25% | −22.560 | Rejeitar |
+    No equilíbrio competitivo, \(VPMg_L = w\):
 
-A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de desconto; (ii) projetos viáveis a juros baixos podem se tornar inviáveis quando a taxa de juros sobe — um problema particularmente relevante no contexto brasileiro de juros historicamente elevados.
+    \[
+    100 - 2H = 4 + 2H \;\Rightarrow\; 96 = 4H \;\Rightarrow\; H_c = 24, \quad w_c = 4 + 2(24) = 52
+    \]
+
+    **Passo 2 — Equilíbrio monopsonístico**
+
+    O custo total do trabalho é \(CT_L = w \cdot H = (4 + 2H)H = 4H + 2H^2\).
+
+    O custo marginal do trabalho é:
+
+    \[
+    CMg_L = \frac{dCT_L}{dH} = 4 + 4H
+    \]
+
+    Igualando \(VPMg_L = CMg_L\):
+
+    \[
+    100 - 2H = 4 + 4H \;\Rightarrow\; 96 = 6H \;\Rightarrow\; H_m = 16
+    \]
+
+    O salário pago é determinado pela curva de oferta:
+
+    \[
+    w_m = 4 + 2(16) = 36
+    \]
+
+    O valor do produto marginal no ponto de emprego monopsonístico é:
+
+    \[
+    VPMg_L(16) = 100 - 32 = 68
+    \]
+
+    **Exploração monopsonística:** \(VPMg_L - w_m = 68 - 36 = 32\).
+
+    **Passo 3 — Salário mínimo no monopsônio**
+
+    Com \(w_{\min} = 52\), o custo marginal do trabalho torna-se horizontal em 52 até \(H = 24\) (quando a oferta se iguala a 52):
+
+    \[
+    VPMg_L = w_{\min}:\quad 100 - 2H = 52 \;\Rightarrow\; H = 24
+    \]
+
+    **Resultado:** O salário mínimo eleva o emprego de 16 para 24 (+50%) e o salário de 36 para 52 (+44%), restaurando o equilíbrio competitivo.
+
+    **Interpretação econômica:** O salário mínimo elimina o poder monopsonístico ao tornar o custo marginal do trabalho constante. Este resultado contrasta com o modelo competitivo, no qual o salário mínimo sempre reduz o emprego — e ajuda a entender por que estudos empíricos (como Card e Krueger, 1994) encontram efeitos nulos ou positivos do salário mínimo sobre o emprego em mercados com concentração de empregadores.
 
 ---
 
-## Box Brasil: Taxa Selic e o Custo de Capital no Brasil
+## 17.8 Sindicatos
 
-!!! example "Por que os juros brasileiros são historicamente altos?"
-    O Brasil é conhecido internacionalmente por praticar uma das taxas de juros reais mais elevadas do mundo. A taxa Selic — a taxa básica de juros definida pelo Comitê de Política Monetária (Copom) do [Banco Central do Brasil](https://www.bcb.gov.br) — atingiu níveis estratosféricos ao longo das últimas décadas.
+### Objetivos dos sindicatos
 
-    **Evolução histórica da Selic:**
+Os sindicatos podem ser modelados como agentes que buscam maximizar alguma função objetivo, como:
 
-    - Nos anos 1990 (pós-Plano Real), a taxa Selic real frequentemente superava 20% ao ano.
-    - Entre 2003 e 2012, houve redução gradual, mas a Selic real ainda oscilava entre 5% e 10% ao ano.
-    - Em 2020, durante a pandemia de COVID-19, a Selic nominal atingiu o mínimo histórico de 2% ao ano (taxa real negativa).
-    - A partir de 2021, o ciclo de aperto monetário elevou a Selic a 13,75% ao ano em 2022, com taxa real em torno de 7-8%.
+- **Maximização do salário** com emprego fixo;
+- **Maximização do emprego** com salário fixo;
+- **Maximização da renda total** dos membros: \(\max_w \; w \cdot H^d(w)\);
+- **Maximização da utilidade** dos membros: \(\max_w \; U(w) \cdot H^d(w)\).
 
-    **Por que os juros são tão altos? Principais hipóteses:**
+### O modelo de monopólio sindical
 
-    1. **Dominância fiscal**: a elevada dívida pública e a percepção de risco fiscal exigem prêmios de risco maiores para financiamento do governo. Quanto maior a desconfiança sobre a sustentabilidade fiscal, maiores os juros que o [Tesouro Nacional](https://www.tesouronacional.fazenda.gov.br) precisa oferecer.
+No modelo mais simples, o sindicato fixa o salário \(w_s > w^*\) e a firma escolhe o nível de emprego ao longo de sua curva de demanda por trabalho. O resultado é:
 
-    2. **Crédito direcionado e segmentação**: uma parcela significativa do crédito no Brasil é direcionada ([BNDES](https://www.bndes.gov.br), crédito rural, habitacional) a taxas subsidiadas. Isso reduz a eficácia da política monetária, exigindo uma Selic mais alta para atingir o mesmo efeito contracionista sobre a parcela livre do crédito.
+\[
+H^d(w_s) < H^d(w^*) = H^*
+\]
 
-    3. **Inércia inflacionária e indexação**: a memória inflacionária do período de hiperinflação (1980-1994) e mecanismos de indexação residuais tornam as expectativas de inflação mais resistentes, exigindo juros mais altos para ancorar expectativas.
+Há um trade-off entre salário e emprego: salários mais altos reduzem o emprego.
 
-    4. **Incerteza jurisdicional**: instabilidade regulatória, mudanças frequentes de regras tributárias e insegurança jurídica elevam o prêmio de risco exigido por investidores.
+### Barganha eficiente
 
-    5. **Baixa taxa de poupança doméstica**: a taxa de poupança bruta do Brasil (~15% do PIB) é significativamente inferior à de outros emergentes como China (~45%) e Índia (~30%), pressionando os juros de equilíbrio para cima.
-
-    **Impacto sobre o investimento privado:**
-
-    A taxa de investimento brasileira (Formação Bruta de Capital Fixo / PIB) oscila em torno de 15-18%, bem abaixo dos ~25% considerados necessários para sustentar crescimento robusto. Juros elevados encarecem o custo de uso do capital (\(c_K = p_K(r + \delta)\)), tornando inviáveis projetos que seriam rentáveis em ambientes de juros mais baixos.
-
-    Dados do BNDES mostram que, historicamente, o banco de desenvolvimento desempenhou um papel de "compensação" parcial, oferecendo crédito de longo prazo a taxas subsidiadas (TJLP, depois TLP). Contudo, a partir de 2017, a substituição da TJLP pela TLP (atrelada a taxas de mercado) reduziu esse subsídio, aproximando o custo do crédito do BNDES ao custo de mercado.
-
-    **Consequências para a avaliação de projetos:**
-
-    Conforme a tabela de VPL apresentada na seção anterior, projetos que seriam viáveis a uma taxa de desconto de 5% (como em muitos países desenvolvidos) tornam-se inviáveis a 15% ou 20% (taxas reais historicamente observadas no Brasil). Isso representa um viés contra investimentos de longo prazo, especialmente em infraestrutura, pesquisa e desenvolvimento, e indústrias capital-intensivas.
+O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicato e firma negociam simultaneamente salário e emprego, atingindo a **curva de contrato** — o conjunto de alocações Pareto-eficientes. Nesse caso, o nível de emprego pode ser maior do que no modelo de monopólio sindical.
 
 ---
 
-## Exercícios Resolvidos
+## Box Brasil: Informalidade e Reforma Trabalhista
 
-??? example "Exercício Resolvido 1 — Consumo intertemporal e classificação poupador/devedor"
-    **Enunciado.** Um consumidor vive dois períodos com renda \(Y_1 = 80\) e \(Y_2 = 66\). Suas preferências são \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1}\ln C_2\). A taxa de juros é \(r = 10\%\). (a) Calcule a riqueza intertemporal. (b) Encontre o consumo ótimo em cada período. (c) O consumidor é poupador ou devedor?
+!!! example "A informalidade estrutural e os efeitos da Reforma Trabalhista de 2017"
+    O mercado de trabalho brasileiro é marcado por uma taxa de informalidade persistentemente elevada, que condiciona a eficácia de políticas salariais e trabalhistas.
 
-    **Resolução.**
+    **Informalidade em números (PNAD Contínua/IBGE):**
 
-    **(a) Riqueza intertemporal.**
+    | Indicador | 2024 | 2025 |
+    |---|---|---|
+    | Taxa de informalidade | 39,0% | 38,1% |
+    | Empregados com carteira (CLT) | 38,4 milhões | 39,4 milhões |
+    | Empregados sem carteira | 13,2 milhões | 13,4 milhões |
+    | Trabalhadores por conta própria | 25,4 milhões | 26,2 milhões |
+    | Rendimento real médio habitual | R$ 3.470 | R$ 3.652 |
+    | Taxa de desocupação | 6,6% | 5,6% |
 
-    \[
-    W = Y_1 + \frac{Y_2}{1+r} = 80 + \frac{66}{1{,}1} = 80 + 60 = 140
-    \]
+    *Fonte: PNAD Contínua/IBGE, médias anuais 2024-2025.*
 
-    **(b) Consumo ótimo.**
+    **Reforma Trabalhista de 2017:**
 
-    Com preferências Cobb-Douglas intertemporais \(U = \ln C_1 + \beta \ln C_2\), onde \(\beta = 1/1{,}1\), o consumidor aloca uma fração \(\frac{1}{1+\beta}\) da riqueza para \(C_1\):
+    A Lei 13.467/2017 promoveu ampla flexibilização das relações de trabalho, com destaque para o fim da contribuição sindical obrigatória. Os efeitos sobre os sindicatos foram imediatos e profundos:
 
-    \[
-    C_1^* = \frac{1}{1 + 1/1{,}1} \cdot W = \frac{1}{1 + 10/11} \cdot 140 = \frac{11}{21} \cdot 140 = \frac{1.540}{21} \approx 73{,}3
-    \]
+    - A **taxa de sindicalização** caiu de 16,1% (2012) para **8,4%** (2023), o menor patamar da série histórica do IBGE.
+    - A receita dos sindicatos despencou cerca de **90%** no primeiro ano após a reforma, comprometendo a capacidade de negociação coletiva e de fiscalização em regiões remotas.
 
-    Para \(C_2\), usamos a restrição orçamentária:
+    **Conexão com a teoria:**
 
-    \[
-    C_2^* = (1+r)(W - C_1^*) = 1{,}1 \times (140 - 73{,}3) = 1{,}1 \times 66{,}7 \approx 73{,}3
-    \]
+    O modelo de monopólio sindical (seção 17.8) prevê que sindicatos mais fortes elevam salários acima do nível competitivo, ao custo de menor emprego. A drástica redução do poder sindical após 2017 representa um "experimento natural" que permite testar essa previsão: se o modelo está correto, o enfraquecimento sindical deveria aproximar os salários negociados do equilíbrio competitivo.
 
-    Verificação pela condição de ótimo: \(TMS = C_2/(C_1 \cdot \beta) = 73{,}3/(73{,}3 \times 10/11) = 11/10 = 1{,}1 = 1+r\). ✓
+    *Fonte: PNAD Contínua/IBGE; [IPEA](https://www.ipea.gov.br), Nota Técnica sobre Reforma Trabalhista, 2023.*
 
-    **(c) Poupador ou devedor?**
+---
 
-    Poupança: \(S = Y_1 - C_1^* = 80 - 73{,}3 = 6{,}7 > 0\).
+## Box Brasil: Salário Mínimo no Brasil
 
-    O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
+!!! example "O salário mínimo e o debate sobre o 'efeito-farol'"
+    O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de um piso salarial para trabalhadores formais com carteira assinada. Ele serve como **referência** (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.
 
-??? example "Exercício Resolvido 2 — VPL, TIR e decisão de investimento"
-    **Enunciado.** Uma empresa avalia instalar painéis solares por R$ 200.000, com economia anual de R$ 55.000 durante 5 anos. O custo de oportunidade do capital é 12% a.a. (a) Calcule o VPL. (b) Calcule a TIR por interpolação. (c) O projeto deve ser aceito?
+    **Fatos estilizados:**
 
-    **Resolução.**
+    - O SM real cresceu significativamente entre 2003 e 2014, acumulando ganho real superior a 70% no período. A política de valorização do SM adotada a partir de 2007 previa reajustes pela inflação acumulada mais o crescimento do PIB.
+    - Em 2025, o SM atingiu **R$ 1.518**, beneficiando diretamente cerca de 59,9 milhões de brasileiros entre trabalhadores formais, informais, aposentados e pensionistas.
+    - O **efeito-farol**, documentado em estudos do IPEA (Neri, Gonzaga e Camargo, 2001; Saboia, 2007), mostra que aumentos no SM elevam salários não apenas no setor formal, mas também no informal, e até afetam rendimentos de trabalhadores por conta própria e aposentadorias/pensões (que são indexadas ao SM).
 
-    **(a) VPL a 12%.**
+    **Impactos sobre emprego e informalidade:**
 
-    \[
-    VPL = -200.000 + 55.000 \times \frac{1 - (1{,}12)^{-5}}{0{,}12}
-    \]
+    O debate empírico sobre os efeitos do SM sobre o emprego no Brasil é rico:
 
-    O fator de anuidade é:
+    - Estudos como Corseuil e Carneiro (2001) encontraram efeitos negativos pequenos sobre o emprego formal, mas significativos sobre a informalidade.
+    - Lemos (2009) mostrou que o efeito compressão salarial (redução da desigualdade) domina o efeito desemprego.
+    - [Engbom e Moser (2022)](https://doi.org/10.1257/aer.20181506) estimam que a alta real de 128% do SM entre 1996 e 2018 explica **45% da queda da desigualdade salarial** no período, com efeitos limitados sobre o emprego total.
+    - Dados do CAGED/MTE e da PNAD indicam que a elevação do SM tende a aumentar a proporção de trabalhadores na informalidade, pois empregadores que não conseguem pagar o novo piso migram para relações informais.
 
-    \[
-    \frac{1 - (1{,}12)^{-5}}{0{,}12} = \frac{1 - 0{,}5674}{0{,}12} = \frac{0{,}4326}{0{,}12} = 3{,}6048
-    \]
+    **Tabela: Composição do mercado de trabalho brasileiro**
 
-    \[
-    VPL = -200.000 + 55.000 \times 3{,}6048 = -200.000 + 198.264 = -1.736
-    \]
+    | Indicador | Valores aproximados (2025) |
+    |---|---|
+    | População ocupada total | 103 milhões |
+    | Trabalhadores com carteira (CLT) | 39,4 milhões |
+    | Trabalhadores sem carteira | 13,4 milhões |
+    | Trabalhadores por conta própria | 26,2 milhões |
+    | Empregadores | 4 milhões |
+    | Setor público (estatutários) | 12 milhões |
+    | Taxa de informalidade (IBGE) | 38,1% |
+    | Salário médio real mensal habitual | R$ 3.652 |
+    | Salário mínimo vigente (2025) | R$ 1.518 |
 
-    **(b) TIR por interpolação.**
+    *Fonte: PNAD Contínua/IBGE, média anual 2025; [DIEESE](https://www.dieese.org.br).*
 
-    A 11%: fator de anuidade = \(\frac{1-(1{,}11)^{-5}}{0{,}11} = 3{,}6959\). VPL = \(-200.000 + 55.000 \times 3{,}6959 = 3.275\).
+    A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (38,1%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal.
 
-    A 12%: VPL = \(-1.736\) (calculado acima).
+---
 
-    Por interpolação linear:
+## Tabela-Resumo: Efeitos Substituição e Renda sobre a Oferta de Trabalho
 
-    \[
-    TIR \approx 11\% + \frac{3.275}{3.275 + 1.736} \times 1\% = 11\% + 0{,}65\% \approx 11{,}65\%
-    \]
-
-    **(c) Decisão.**
-
-    Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
-
-??? example "Exercício Resolvido 3 — Regra de Hotelling e trajetória de preços"
-    **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(P_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
-
-    **Resolução.**
-
-    **(a) Renda de escassez inicial.**
-
-    \[
-    R_0 = P_0 - c = 80 - 20 = 60 \text{ mil reais/tonelada}
-    \]
-
-    **(b) Preços futuros pela regra de Hotelling.**
-
-    A renda de escassez cresce à taxa de juros: \(R_t = R_0(1+r)^t\).
-
-    Em 10 anos: \(R_{10} = 60 \times (1{,}04)^{10} = 60 \times 1{,}4802 = 88{,}81\). Logo \(P_{10} = 88{,}81 + 20 = 108{,}81\) mil reais.
-
-    Em 20 anos: \(R_{20} = 60 \times (1{,}04)^{20} = 60 \times 2{,}1911 = 131{,}47\). Logo \(P_{20} = 131{,}47 + 20 = 151{,}47\) mil reais.
-
-    **(c) Efeito do substituto (backstop technology).**
-
-    Se em \(t = 15\) surge um substituto perfeito a R$ 100 mil, o preço do lítio não pode ultrapassar esse teto (ninguém pagaria mais pelo lítio do que pelo substituto). Portanto, o preço terminal é \(P_{15} = 100\), o que implica \(R_{15} = 80\).
-
-    A renda de escassez inicial se ajusta: \(R_0' = R_{15}/(1{,}04)^{15} = 80/1{,}8009 = 44{,}42\). Logo o preço inicial cairia para \(P_0' = 44{,}42 + 20 = 64{,}42\) mil reais — menor que os R$ 80 mil originais.
-
-    **Interpretação:** A perspectiva de um substituto futuro reduz o valor presente do recurso e acelera sua extração. Isso é relevante para o Brasil, maior produtor de nióbio e com reservas significativas de lítio no Vale do Jequitinhonha (MG): o desenvolvimento de tecnologias alternativas para baterias afeta diretamente a estratégia ótima de exploração desses recursos.
+| Variação | Efeito Substituição | Efeito Renda | Resultado sobre \(h^*\) |
+|---|---|---|---|
+| \(\uparrow w\) (salário sobe) | \(h\) sobe (lazer mais caro) | \(h\) cai (mais rico, quer mais lazer) | Ambíguo |
+| \(\uparrow V\) (renda não salarial sobe) | Nenhum | \(h\) cai (mais rico) | \(h\) cai |
+| \(\uparrow p\) (preço do consumo sobe) | Depende (o efeito sobre o preço relativo do lazer varia com a cesta) | Depende | Ambíguo |
 
 ---
 
@@ -559,153 +573,166 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 !!! note "Exercícios do Capítulo 17"
 
-**Exercício 17.1.** Um consumidor vive dois períodos, com renda \(Y_1 = 100\) e \(Y_2 = 110\), e preferências \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1} \ln C_2\). A taxa de juros é \(r = 10\%\).
+**Exercício 17.1.** Um trabalhador tem preferências representadas por \(U(C,L) = \ln C + 2\ln L\). Sua dotação de tempo é \(T = 24\) horas por dia, a renda não salarial é \(V = 0\) e o salário é \(w\).
 
-(a) Calcule a riqueza intertemporal \(W\).
+(a) Derive as demandas ótimas \(C^*(w)\) e \(L^*(w)\).
 
-(b) Derive as escolhas ótimas \(C_1^*\) e \(C_2^*\).
+(b) Obtenha a oferta de trabalho \(h^*(w)\). Ela depende de \(w\)? Interprete.
 
-(c) O consumidor é poupador ou devedor? Quanto ele poupa/toma emprestado?
-
-(d) Se \(r\) sobe para 20%, como mudam \(C_1^*\) e \(C_2^*\)? Decomponha em efeitos renda e substituição.
+(c) Agora suponha \(V = 48\). Derive \(h^*(w)\) e mostre que a oferta de trabalho agora é decrescente em \(w\). Interprete.
 
 ---
 
-**Exercício 17.2.** Uma firma considera investir em uma máquina que custa R$ 500.000, tem vida útil de 5 anos, deprecia-se linearmente e gera receitas líquidas anuais de R$ 150.000.
+**Exercício 17.2.** Considere um mercado de trabalho competitivo com oferta \(H^s = 100w\) e demanda \(H^d = 4000 - 100w\).
 
-(a) Calcule o VPL do projeto para \(r = 8\%\) e \(r = 15\%\).
+(a) Encontre o salário e o emprego de equilíbrio.
 
-(b) Calcule a TIR do projeto (use método numérico ou interpolação).
+(b) Se o governo impõe um salário mínimo \(w_{min} = 25\), qual é o nível de emprego? E o excesso de oferta (desemprego)?
 
-(c) Se a Selic real é 8% e o prêmio de risco do setor é 4%, o projeto deve ser aceito?
-
----
-
-**Exercício 17.3.** Um recurso natural não renovável tem estoque inicial \(S_0 = 1000\) unidades. O preço de mercado é \(P_0 = 50\) reais por unidade, o custo marginal de extração é \(c = 10\) reais e a taxa de juros é \(r = 5\%\).
-
-(a) Segundo a regra de Hotelling, qual será o preço do recurso daqui a 10 anos?
-
-(b) Se uma nova tecnologia reduzir o custo de extração para \(c = 5\), o que acontece com a trajetória de preços? O recurso será exaurido mais rápido ou mais devagar?
-
-(c) Se a taxa de juros subir para \(r = 10\%\), o que acontece com a velocidade de extração? Explique intuitivamente.
+(c) Calcule a perda de peso morto gerada pelo salário mínimo.
 
 ---
 
-**Exercício 17.4.** Considere dois projetos mutuamente exclusivos:
+**Exercício 17.3.** Uma firma monopsonista enfrenta a oferta de trabalho \(w = 10 + 0{,}5H\) e tem \(VPMg_L = 50 - H\).
 
-| | Projeto A | Projeto B |
-|---|---|---|
-| Investimento inicial | R$ 100.000 | R$ 200.000 |
-| Fluxo anual (5 anos) | R$ 35.000 | R$ 62.000 |
-| TIR | 22,1% | 16,8% |
+(a) Derive o custo marginal do trabalho (despesa marginal).
 
-(a) Calcule o VPL de cada projeto para \(r = 10\%\).
+(b) Encontre o emprego e o salário escolhidos pelo monopsonista.
 
-(b) Qual projeto deve ser escolhido pelo critério do VPL? E pelo critério da TIR?
-
-(c) Encontre a taxa de desconto na qual os dois projetos têm o mesmo VPL (taxa de Fisher).
-
-(d) Explique por que o VPL é considerado o critério superior.
+(c) Compare com o equilíbrio competitivo. Calcule a exploração monopsonística.
 
 ---
 
-**Exercício 17.5.** Discuta as seguintes questões, articulando teoria e evidência empírica:
+**Exercício 17.4.** Um sindicato maximiza a renda total dos seus membros, \(R = w \cdot H^d(w)\), onde a demanda por trabalho é \(H^d(w) = 1000 - 20w\).
 
-(a) "Se o Brasil conseguisse reduzir a taxa de juros real de longo prazo de 6% para 3%, o impacto sobre o investimento produtivo seria enorme." Avalie essa afirmação usando o conceito de custo de uso do capital e a sensibilidade do VPL à taxa de desconto.
+(a) Encontre o salário que maximiza \(R\).
 
-(b) Explique por que a regra de Hotelling pode não ser observada empiricamente para o preço do petróleo.
+(b) Qual é o nível de emprego resultante?
 
-(c) Um governo que deseja incentivar investimentos em infraestrutura de longo prazo (com payback de 20-30 anos) deve se preocupar mais com a taxa de juros real ou com a estabilidade regulatória? Justifique usando os conceitos de VPL e prêmio de risco.
+(c) Compare com o equilíbrio competitivo (supondo oferta perfeitamente elástica a \(w = 15\)).
+
+---
+
+**Exercício 17.5.** Discuta, com base na teoria e na evidência empírica brasileira:
+
+(a) Por que o efeito-farol do salário mínimo é particularmente relevante em economias com alta informalidade?
+
+(b) Em um mercado de trabalho com monopsônio, é possível que um aumento do salário mínimo eleve simultaneamente o emprego e o salário? Ilustre graficamente.
+
+(c) Quais são os principais canais pelos quais o aumento do salário mínimo pode afetar a distribuição de renda no Brasil?
 
 ---
 
 ## Vem, ANPEC!
 
-As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
+??? question "ANPEC 2022 — Questão 06"
+    Suponha que João possui uma função de utilidade em renda (\(Y\)) e lazer (\(N\)) na forma \(U(Y, N) = U(wh, 24 - h)\), em que \(w\) é a taxa de salário por hora e \(h\) é o número de horas trabalhadas por dia. Indique quais das afirmações a seguir são verdadeiras:
 
-??? question "ANPEC 2021 — Questão 12"
-    Com relação à análise econômica de investimento, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-    **(0)** A análise do valor presente líquido incorpora o valor presente com taxa de desconto tanto dos custos quanto dos benefícios de um investimento.
-
-    **(1)** O prazo de retorno também proporciona um modo de determinar os benefícios líquidos de um investimento.
-
-    **(2)** O prazo de retorno desconta fluxos futuros de dinheiro, assim como a análise do valor presente líquido.
-
-    **(3)** O valor da opção de espera de um investimento é o incentivo que o risco cria para adiar a decisão de investir e coletar informação.
-
-    **(4)** Um indivíduo avesso ao risco ganha mais utilidade a partir de uma determinada quantidade de renda, do que a partir de uma quantidade equivalente em valor esperado decorrente de uma renda incerta.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Se João está trabalhando um número de horas por dia tal que a utilidade marginal da renda é 4 e a utilidade marginal do lazer é 2, sendo que a taxa de salário é 2, então João está maximizando a sua utilidade. |
+    | 1    | A curva de oferta de trabalho de João é construída subtraindo de 24 (o número de horas de um dia) a demanda por lazer, para cada taxa de salário. |
+    | 2    | O efeito substituição tem de ser negativo: um aumento na taxa de salário leva João a escolher um número menor de horas de lazer e um número maior de horas de trabalho. |
+    | 3    | Se lazer é um bem normal para João, o efeito substituição e o efeito renda atuam em direções opostas. O efeito que vai predominar dependerá do tamanho relativo dos dois efeitos. |
+    | 4    | Se João considerar lazer como um bem inferior, o seu efeito substituição e o seu efeito renda atuam na mesma direção, de tal forma que uma elevação no salário reduzirá suas horas de lazer. |
 
     ??? success "Gabarito"
-        **Respostas: V-V-F-V-V**
+        **Respostas: 01111**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** O VPL calcula o valor presente de todos os fluxos de caixa — custos (fluxos negativos) e benefícios (fluxos positivos) — descontados a uma taxa apropriada. É exatamente a definição: \(VPL = \sum F_t/(1+r)^t\).
+        - **Item 0 — F:** A condição de ótimo exige \(UMg_N / UMg_Y = w\), ou seja, \(2/4 = 0{,}5\). Como \(w = 2 \neq 0{,}5\), João **não** está no ótimo. Ele deveria trabalhar mais horas (a utilidade marginal da renda ponderada pelo salário supera a utilidade marginal do lazer).
+        - **Item 1 — V:** Correto. A oferta de trabalho é \(h^*(w) = 24 - N^*(w)\), onde \(N^*(w)\) é a demanda marshalliana por lazer ao salário \(w\).
+        - **Item 2 — V:** Correto. O efeito substituição compensado do lazer em relação ao seu preço (\(w\)) é sempre negativo: um aumento em \(w\) encarece o lazer, levando a menos lazer e mais trabalho (pela convexidade das preferências).
+        - **Item 3 — V:** Correto. Se lazer é normal, o efeito renda de um aumento em \(w\) eleva a demanda por lazer (reduz \(h\)), enquanto o efeito substituição reduz o lazer (eleva \(h\)). Os dois efeitos atuam em sentidos opostos — é a base da curva backward-bending.
+        - **Item 4 — V:** Correto. Se lazer é inferior, o efeito renda de um aumento em \(w\) **reduz** a demanda por lazer (mesma direção do efeito substituição). Ambos levam a menos lazer e mais trabalho: a oferta de trabalho é inequivocamente positivamente inclinada.
 
-        - **Item 1 — V:** O prazo de retorno (payback) indica em quantos períodos o investimento inicial é recuperado. Embora seja um critério simplificado, ele proporciona uma medida dos benefícios líquidos ao indicar a velocidade de recuperação do capital.
+??? question "ANPEC 2013 — Questão 10"
+    Com relação ao mercado de fatores, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
 
-        - **Item 2 — F:** O prazo de retorno simples (payback) **não** desconta os fluxos futuros — simplesmente soma os fluxos nominais até igualar o investimento inicial. Essa é uma de suas principais limitações em relação ao VPL. (Existe o payback descontado, mas o payback padrão não desconta.)
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-        - **Item 3 — V:** A opção de espera (real option) tem valor positivo quando existe incerteza: ao adiar o investimento, o agente pode coletar informação adicional e evitar investimentos que se revelem inviáveis. Quanto maior o risco, maior o incentivo a esperar.
-
-        - **Item 4 — V:** Pela definição de aversão ao risco (concavidade de \(u\)): \(u(E[W]) > E[u(W)]\). Ou seja, o indivíduo prefere receber o valor esperado com certeza a enfrentar a loteria — a utilidade da renda certa supera a utilidade esperada da renda incerta.
-
-??? question "ANPEC 2010 — Questão 05"
-    Avalie as afirmações abaixo:
-
-    **(0)** Seja \(u(W) = -e^{-\beta W}\) uma utilidade von Neumann-Morgenstern, em que \(\beta > 0\) é uma constante e \(W\) é a riqueza. Então \(\beta\) denota a medida de aversão relativa ao risco.
-
-    **(1)** Suponha que uma carteira de ativos arriscados possui retorno esperado \(r_e = 21\%\) e variância \(\sigma^2 = 0{,}09\). O ativo sem risco oferece um retorno \(r_f = 3\%\). Então, de acordo com o modelo média-variância, o preço do risco da carteira é \(p = 2\).
-
-    **(2)** Suponha que o retorno de mercado é \(r_m = 12\%\) e a taxa de retorno do ativo sem risco é \(r_f = 8\%\). A variância da carteira eficiente é \(\sigma_e^2 = 0{,}01\) e a covariância entre o retorno de um ativo A e a carteira eficiente é \(\sigma_{A,e} = 0{,}5\). De acordo com o modelo CAPM, se o valor esperado do ativo A é \$64, então o preço do ativo A é \$50.
-
-    **(3)** De acordo com o modelo média-variância, se a taxa marginal de substituição (TMS) entre retorno esperado da carteira e seu desvio-padrão é \(TMS = 0{,}3\), se a variância do retorno da carteira é \(\sigma_m^2 = 0{,}04\) e a taxa de retorno do ativo sem risco é \(r_f = 12\%\), então o retorno esperado da carteira é \(r_m = 18\%\).
-
-    **(4)** Um indivíduo possui utilidade von Neumann-Morgenstern \(u(x) = \sqrt{x}\) e possui riqueza \(W = \$100\). Ele está sujeito a uma perda monetária aleatória \(X\), com distribuição uniforme contínua no intervalo \([0, 100]\). Se ao indivíduo for oferecido, ao preço de \(G = \$55\), um seguro total contra essa perda aleatória, então ele comprará o seguro.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | A demanda de um setor por determinado insumo é a soma horizontal das demandas desse insumo por todas as empresas do setor. |
+    | 1    | A curva de oferta de trabalho pode apresentar um trecho com inclinação negativa se o efeito-renda associado a uma remuneração mais elevada for maior que o efeito-substituição. |
+    | 2    | Quando o comprador de um insumo tem poder de monopsônio, a curva de despesa marginal se situa abaixo da curva de despesa média. |
+    | 3    | Para um monopolista o produto da receita marginal será sempre menor do que o valor do produto marginal. |
+    | 4    | Se um monopolista upstream vender um fator de produção para um monopolista downstream, o preço final do produto será afetado por um mark-up duplo. |
 
     ??? success "Gabarito"
-        **Respostas: F-F-F-V-V**
+        **Respostas: 01011**
 
         **Justificativa por item:**
 
-        - **Item 0 — F:** Para \(u(W) = -e^{-\beta W}\), temos \(u'(W) = \beta e^{-\beta W}\) e \(u''(W) = -\beta^2 e^{-\beta W}\). A medida de aversão absoluta ao risco de Arrow-Pratt é \(r_A = -u''/u' = \beta\). Portanto, \(\beta\) é a medida de aversão **absoluta** ao risco, não relativa. A medida de aversão relativa seria \(r_R = \beta W\), que depende da riqueza.
+        - **Item 0 — F:** A demanda do setor por um insumo **não** é a simples soma horizontal das demandas individuais. Quando todas as firmas de um setor expandem o uso do insumo e aumentam a produção, o preço do produto cai, deslocando para baixo a curva de \(VPMg\) de cada firma. A curva de demanda setorial é mais inclinada do que a soma horizontal.
+        - **Item 1 — V:** Correto. A curva backward-bending ocorre quando o efeito renda (que leva o trabalhador a demandar mais lazer) supera o efeito substituição (que encarece o lazer). É exatamente a condição formalizada na seção 17.3.
+        - **Item 2 — F:** A curva de despesa marginal situa-se **acima** da curva de despesa média (oferta), não abaixo. Como \(CMg_L = w + H \cdot w'(H) > w\), o custo marginal de contratar um trabalhador adicional excede o salário pago.
+        - **Item 3 — V:** Correto. Para um monopolista, \(RMg < P\), portanto \(PRMg_L = RMg \times PMg_L < P \times PMg_L = VPMg_L\). O produto da receita marginal é menor que o valor do produto marginal.
+        - **Item 4 — V:** Correto. Trata-se do problema de **dupla marginalização**: o monopolista upstream aplica um markup sobre seu custo marginal, e o monopolista downstream aplica outro markup sobre o preço de compra, resultando em preço final mais alto e quantidade menor do que se houvesse um monopolista integrado.
 
-        - **Item 1 — F:** O preço do risco no modelo média-variância é \(p = (r_e - r_f)/\sigma\), onde \(\sigma\) é o desvio-padrão (não a variância). Como \(\sigma = \sqrt{0{,}09} = 0{,}3\), temos \(p = (0{,}21 - 0{,}03)/0{,}3 = 0{,}6\), não 2. (Se usássemos a variância no denominador: \(0{,}18/0{,}09 = 2\), mas a fórmula correta usa o desvio-padrão.)
+??? question "ANPEC 2017 — Questão 13"
+    O único agente de uma economia valoriza comida (\(C\)) e tempo de descanso (\(D\)). Suas preferências são representadas pela função \(U(D, C) = D^{1/5}C^{4/5}\), sendo descanso medido em horas diárias. As horas do dia não descansadas são dedicadas ao trabalho (\(L\)) de obter comida, segundo a função de produção \(C = \sqrt{L}\). Apesar da existência de um agente, imagine que temos mercados competitivos com uma firma maximizando lucro, contratando trabalho no mercado de trabalho e um consumidor vendendo sua dotação de tempo, comprando de volta descanso e comida, a "preços de mercado". Fixe em \$1 o preço da hora de trabalho e considere \(P\) o preço da comida.
 
-        - **Item 2 — F:** O \(\beta\) do ativo A é \(\beta_A = \sigma_{A,e}/\sigma_e^2 = 0{,}5/0{,}01 = 50\). O retorno esperado pelo CAPM seria \(E[r_A] = 8\% + 50 \times (12\% - 8\%) = 208\%\). Preço: \(P_A = 64/(1 + 2{,}08) = 64/3{,}08 \approx 20{,}8\), não \$50.
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-        - **Item 3 — V:** No modelo média-variância, \(TMS = (r_m - r_f)/\sigma_m\). Com \(\sigma_m = \sqrt{0{,}04} = 0{,}2\): \(r_m = r_f + TMS \times \sigma_m = 12\% + 0{,}3 \times 20\% = 12\% + 6\% = 18\%\). ✓
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Em equilíbrio, o lucro da firma será \$15. |
+    | 1    | Em equilíbrio, \(P = \$10\). |
+    | 2    | O consumidor escolhe quatro unidades de comida. |
+    | 3    | A renda nominal do consumidor, composta do valor da dotação de tempo mais o lucro da firma, é igual a \$40. |
+    | 4    | Se \(P\) cair pela metade do valor de equilíbrio, haverá excesso de oferta de trabalho, mas a somatória dos valores dos excessos de demanda pelos dois bens será nula. |
 
-        - **Item 4 — V:** A utilidade esperada sem seguro é \(E[u] = \int_0^{100} \sqrt{100 - x} \cdot \frac{1}{100}dx = \frac{1}{100}\int_0^{100}\sqrt{y}\,dy = \frac{1}{100} \cdot \frac{2}{3} \cdot 100^{3/2} = \frac{2000}{300} = \frac{20}{3} \approx 6{,}67\). Com seguro a \$55: \(u(100-55) = \sqrt{45} \approx 6{,}71 > 6{,}67\). Portanto, o indivíduo compra o seguro. ✓
+    ??? success "Gabarito"
+        **Respostas: 00111**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A firma maximiza \(\pi = P\sqrt{L} - L\). A CPO é \(P/(2\sqrt{L}) = 1\), logo \(L = P^2/4\) e \(\pi = P \cdot P/2 - P^2/4 = P^2/4\). Em equilíbrio (ver item 1), \(P = 8\), então \(\pi = 64/4 = 16 \neq 15\).
+        - **Item 1 — F:** O consumidor com Cobb-Douglas \(U = D^{1/5}C^{4/5}\) gasta \(1/5\) da renda em descanso e \(4/5\) em comida. Renda = \(24 + \pi = 24 + P^2/4\). Demanda por descanso: \(D = (24 + P^2/4)/5\). Oferta de trabalho: \(L^s = 24 - D\). Demanda por trabalho: \(L^d = P^2/4\). Equilíbrio: \(24 - (24 + P^2/4)/5 = P^2/4\). Resolvendo: \(120 - 24 - P^2/4 = 5P^2/4\), ou seja, \(96 = 6P^2/4 = 3P^2/2\), logo \(P^2 = 64\) e \(P = 8 \neq 10\).
+        - **Item 2 — V:** Com \(P = 8\): \(L = 64/4 = 16\), \(C = \sqrt{16} = 4\). Correto.
+        - **Item 3 — V:** Renda = dotação de tempo + lucro = \(24 \times 1 + 16 = 40\). Correto.
+        - **Item 4 — V:** Pela **Lei de Walras**, a soma dos valores dos excessos de demanda em todos os mercados é identicamente nula, independentemente dos preços. Se \(P = 4\): a firma demanda \(L^d = 4\), o consumidor oferta \(L^s = 18{,}4\), excesso de oferta de trabalho = \(14{,}4\); a firma oferta \(C^s = 2\), o consumidor demanda \(C^d = 5{,}6\), excesso de demanda de comida = \(3{,}6\). Valor: \(1 \times (-14{,}4) + 4 \times 3{,}6 = -14{,}4 + 14{,}4 = 0\). Correto.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "[Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004.](https://doi.org/10.1016/j.jcorpfin.2012.03.001)"
-    **Pergunta central:** Como a reforma da lei de falências brasileira (Lei 11.101/2005) afetou o custo de crédito e o investimento das empresas?
+??? abstract "Engbom, N.; Moser, C. (2022). [Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506). *American Economic Review*, 112(12), 3803–3847."
+    **Pergunta central:** O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.
 
-    **Método:** Os autores exploram a reforma de 2005 como um experimento natural. A nova lei introduziu mecanismos de recuperação judicial mais eficientes e aumentou a prioridade dos credores com garantia real na ordem de pagamento. Os autores comparam o custo do crédito corporativo e os spreads bancários antes e depois da reforma, usando dados do Banco Central do Brasil e controlando por variáveis macroeconômicas.
+    **Método:** Engbom e Moser combinaram dados administrativos de empregadores e empregados (RAIS) com pesquisas domiciliares (PNAD) cobrindo mais de duas décadas. Para isolar o efeito causal do salário mínimo, desenvolveram um modelo de equilíbrio com firmas e trabalhadores heterogêneos, estimado estruturalmente nos dados brasileiros. O modelo permite que o salário mínimo afete não apenas os trabalhadores que recebem exatamente o piso, mas também aqueles acima dele — os chamados *spillover effects*.
 
-    **Resultado principal:** Após a reforma, houve redução significativa do spread bancário para empresas — especialmente para aquelas com ativos tangíveis que podiam servir como garantia. A redução estimada foi da ordem de 10 a 20% dos spreads para empréstimos garantidos. O resultado é consistente com a teoria: ao aumentar a taxa de recuperação esperada pelos credores em caso de falência, a lei reduziu o prêmio de risco embutido nos juros cobrados.
+    **Resultado principal:** O aumento real do salário mínimo explica aproximadamente **45% da substancial queda na desigualdade salarial** no Brasil no período. Os efeitos de spillover são grandes: salários bem acima do mínimo também foram comprimidos em direção à média. Surpreendentemente, os efeitos sobre emprego e produto agregado foram **modestos**, pois o salário mínimo induziu a realocação de trabalhadores de firmas menos produtivas para firmas mais produtivas — um efeito de seleção positivo.
 
-    **Relevância para o capítulo:** O artigo conecta diretamente a estrutura institucional ao custo de uso do capital \(c_K = p_K(r + \delta)\). A taxa de juros \(r\) que as firmas enfrentam inclui um prêmio de risco que depende da qualidade do arcabouço legal de recuperação de crédito. A reforma da lei de falências reduziu esse prêmio, diminuindo o custo de capital e potencialmente viabilizando projetos de investimento que antes tinham VPL negativo — exatamente o mecanismo discutido na Seção 17.6.
+    **Por que isso importa:** O resultado desafia a visão de livro-texto de que aumentos expressivos do salário mínimo necessariamente geram desemprego significativo. No contexto brasileiro, o SM funcionou como um instrumento redistributivo poderoso, com custos de eficiência limitados. Isso tem implicações diretas para a política de valorização do salário mínimo retomada a partir de 2023.
 
-??? abstract "[Mehra, R.; Prescott, E. C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161.](https://doi.org/10.1016/0304-3932(85)90061-3)"
-    **Pergunta central:** O prêmio de risco histórico das ações sobre títulos públicos pode ser explicado por modelos padrão de consumo intertemporal com níveis razoáveis de aversão ao risco?
+    **Relevância para o capítulo:** O paper conecta-se diretamente com as seções 17.5 (equilíbrio competitivo) e 16.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
 
-    **Método:** [Mehra e Prescott](https://doi.org/10.1016/0304-3932(85)90061-3) calibram um modelo de troca pura com utilidade CRRA (aversão relativa ao risco constante) usando dados históricos dos EUA (1889–1978). No modelo, o fator de desconto estocástico é \(m = \beta(C_{t+1}/C_t)^{-\gamma}\), onde \(\gamma\) é o coeficiente de aversão ao risco. Os autores verificam quais combinações de \(\beta\) e \(\gamma\) reproduzem o prêmio de risco observado (~6% a.a.) e a taxa livre de risco (~1% a.a.).
+??? abstract "Meghir, C.; Narita, R.; Robin, J.-M. (2015). [Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110). *American Economic Review*, 105(4), 1509–1546."
+    **Pergunta central:** Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
 
-    **Resultado principal:** Para gerar o prêmio de risco observado, o modelo exigiria um coeficiente de aversão ao risco \(\gamma > 30\), valor considerado absurdamente alto (estimativas experimentais sugerem \(\gamma\) entre 1 e 5). Com \(\gamma\) razoável, o modelo prevê um prêmio de risco de apenas ~0,35%, muito inferior ao observado. Este é o **enigma do prêmio de risco das ações** (*equity premium puzzle*).
+    **Método:** Os autores — entre eles a brasileira Renata Narita — construíram um modelo de equilíbrio com *wage-posting* (firmas fixam salários), busca sequencial por emprego (trabalhadores procuram empregos estando empregados ou desempregados) e escolha endógena do setor (formal ou informal) por firmas heterogêneas. O modelo foi estimado com dados da Pesquisa Mensal de Emprego (PME/IBGE) do Brasil.
 
-    **Relevância para o capítulo:** O artigo é uma aplicação direta do fator de desconto estocástico apresentado na Seção 17.4. Ele demonstra que a fórmula \(m = \beta \cdot U'(C_2)/U'(C_1)\) — elegante na teoria — enfrenta dificuldades empíricas sérias. O puzzle motivou décadas de pesquisa em finanças e macroeconomia, incluindo modelos com hábito, aversão a perdas (prospect theory), aversão à ambiguidade e mercados incompletos. Para o Brasil, onde o prêmio de risco das ações é ainda mais elevado devido ao risco-país, o puzzle é particularmente agudo.
+    **Resultado principal:** Firmas de produtividade similar podem se localizar em setores diferentes — algumas no formal, outras no informal —, gerando **diferenciais compensatórios** entre os setores. Os salários formais incorporam um "prêmio" que compensa os custos da formalização (impostos, encargos), mas os trabalhadores informais enfrentam maior rotatividade e menor proteção. O resultado mais importante: **aumentar a fiscalização** trabalhista não eleva o desemprego. Ao contrário, melhora a alocação de trabalhadores para firmas mais produtivas e intensifica a competição no setor formal, elevando salários, produto e bem-estar agregados.
 
----
+    **Por que isso importa:** O paper fornece base teórica e empírica para políticas de combate à informalidade. No Brasil, a Reforma Trabalhista de 2017 seguiu uma direção oposta (flexibilização), e a taxa de informalidade permanece elevada (38,1% em 2025). O modelo sugere que o caminho para reduzir a informalidade sem causar desemprego passa por melhorar a fiscalização e reduzir os custos de formalização — e não por enfraquecer a legislação trabalhista.
+
+    **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 17.5–16.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
 
 ## Referências do Capítulo
 
-- Dixit, Avinash K., e Robert S. Pindyck. 1994. [*Investment under Uncertainty*](https://books.google.com.br/books?id=8op0btN4mKEC). Princeton: Princeton University Press.
-- Hotelling, Harold. 1931. "[The Economics of Exhaustible Resources](https://doi.org/10.1086/254195)." *Journal of Political Economy* 39 (2): 137–175.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press.
-- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier.
+- Becker, Gary S. 1957. [*The Economics of Discrimination*](https://books.google.com.br/books?id=MbNTcgAACAAJ). Chicago: University of Chicago Press.
+- Becker, Gary S. 1964. [*Human Capital*](https://books.google.com.br/books?id=9t69iICmrZ0C). New York: Columbia University Press.
+- Card, David, e Alan B. Krueger. 1994. "[Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania](https://doi.org/10.1257/aer.84.4.772)." *American Economic Review* 84 (4): 772–793.
+- Corseuil, C. H., e F. G. Carneiro. 2001. "[Os Impactos do Salário Mínimo sobre Emprego e Salários no Brasil](https://www.ipea.gov.br)." *Pesquisa e Planejamento Econômico* 31 (3).
+- Engbom, Niklas, e Christian Moser. 2022. "[Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506)." *American Economic Review* 112 (12): 3803–3847.
+- Lemos, Sara. 2009. "[Minimum Wage Effects in a Developing Country](https://doi.org/10.1016/j.labeco.2008.07.002)." *Labour Economics* 16 (2): 224–237.
+- McDonald, Ian M., e Robert M. Solow. 1981. "[Wage Bargaining and Employment](https://doi.org/10.2307/1803906)." *American Economic Review* 71 (5): 896–908.
+- Meghir, C., R. Narita, e J.-M. Robin. 2015. "[Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110)." *American Economic Review* 105 (4): 1509–1546.
+- Neri, M., G. Gonzaga, e J. M. Camargo. 2001. "[Efeitos Informais do Salário Mínimo e Pobreza](https://www.ipea.gov.br)." *Texto para Discussão*, IPEA.
+- Saboia, J. 2007. "[O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil](https://www.ipea.gov.br)." In: *Desigualdade de Renda no Brasil*. IPEA.
+- Schultz, Theodore W. 1961. "[Investment in Human Capital](https://www.jstor.org/stable/1818907)." *American Economic Review* 51 (1): 1–17.

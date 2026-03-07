@@ -1,789 +1,710 @@
-# Capítulo 19 — Fumaça, Caronas e Tragédias
+# Capítulo 19 — Limões, Sinais e Contratos
 
 ## Introdução
 
-Nos capítulos anteriores, demonstramos que mercados competitivos com informação completa conduzem a alocações Pareto-eficientes — o resultado central dos Teoremas do Bem-Estar. Entretanto, essa conclusão depende criticamente da hipótese de que todas as interações entre agentes econômicos ocorrem via mecanismo de preços. Quando as ações de um agente afetam diretamente o bem-estar de outros **fora do sistema de preços**, surgem as **externalidades** — e a alocação de mercado deixa de ser eficiente.
+A teoria microeconômica clássica, desenvolvida nos capítulos anteriores, pressupõe que todos os agentes econômicos possuem informação completa e simétrica sobre as características dos bens, os preços vigentes e as ações dos demais participantes do mercado. Essa hipótese, embora analiticamente conveniente, raramente se sustenta na prática. Empregadores não observam perfeitamente o esforço de seus funcionários; compradores de carros usados desconhecem o histórico real de manutenção do veículo; seguradoras não conseguem distinguir com precisão clientes de alto e baixo risco.
 
-Da mesma forma, certos bens possuem características que tornam o mecanismo de mercado inadequado para sua provisão: bens **não-rivais** e **não-excludentes** — os chamados **bens públicos** — tendem a ser subprovidos pelo mercado devido ao problema do **carona** (free rider).
+A **informação assimétrica** — situação em que uma parte de uma transação detém informação relevante que a outra parte não possui — gera consequências profundas para o funcionamento dos mercados. Em casos extremos, mercados inteiros podem deixar de existir. O estudo sistemático dessas questões rendeu o Prêmio Nobel de Economia a George Akerlof, Michael Spence e Joseph Stiglitz em 2001, e permanece como uma das áreas mais férteis da microeconomia moderna.
 
-Este capítulo analisa essas duas importantes **falhas de mercado** e discute as principais soluções propostas pela teoria econômica: impostos pigouvianos, o Teorema de Coase, mercados de permissão de emissão, preços de Lindahl e mecanismos de revelação de preferências. Essas questões assumem importância crescente no debate sobre políticas ambientais, saúde pública e infraestrutura.
+Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, analisamos os dois problemas fundamentais — **risco moral** (ações ocultas) e **seleção adversa** (tipos ocultos) — e discutimos mecanismos de mercado e contratuais que atenuam essas falhas, incluindo **sinalização**, **triagem** e **leilões**.
 
 ---
 
-## 19.1 Definição de Externalidades
+## 19.1 Contratos Complexos como Resposta à Assimetria de Informação
 
-!!! definition "Externalidade"
-    Uma **externalidade** ocorre quando a ação de um agente econômico afeta diretamente a utilidade ou a função de produção de outro agente, sem que essa interação seja mediada pelo sistema de preços. A externalidade representa um efeito **externo ao mercado** que não é capturado nas decisões privadas dos agentes.
+Na presença de informação assimétrica, contratos simples de preço fixo frequentemente não são suficientes para garantir transações eficientes. Os agentes econômicos respondem desenhando **contratos complexos** que buscam alinhar incentivos, revelar informação privada ou mitigar comportamentos oportunistas.
 
-### Classificação das externalidades
+!!! definition "Informação Assimétrica"
+    Situação em que, numa relação econômica entre duas ou mais partes, ao menos uma delas possui informação relevante que as demais não detêm. A parte mais informada é dita ter **informação privada**.
 
-As externalidades podem ser classificadas em duas dimensões:
+Exemplos de contratos complexos que emergem como resposta à assimetria de informação incluem:
 
-**Pelo sinal (efeito sobre terceiros):**
+- **Contratos de trabalho** com bônus vinculados a desempenho (resposta ao risco moral);
+- **Franquias e coparticipações** em seguros (resposta ao risco moral e à seleção adversa);
+- **Garantias** oferecidas pelo vendedor de um produto (sinalização de qualidade);
+- **Menus de contratos** com diferentes combinações preço-qualidade (triagem de tipos).
 
-- **Externalidade negativa**: a ação de um agente prejudica outros (poluição, congestionamento, ruído).
-- **Externalidade positiva**: a ação de um agente beneficia outros (vacinação, pesquisa básica, preservação de paisagem).
+A análise econômica desses arranjos contratuais constitui o campo da **teoria dos contratos** e da **economia da informação**, que se desenvolveu a partir dos trabalhos seminais de Akerlof (1970), Spence (1973), [Rothschild e Stiglitz (1976)](https://doi.org/10.2307/1885326), Mirrlees (1971) e Holmström (1979).
 
-**Pela esfera (produção ou consumo):**
+---
 
-- **Externalidade de produção**: a função de produção de uma firma é afetada pela produção de outra. Exemplo: uma fábrica que polui o rio usado por um pesqueiro.
-- **Externalidade de consumo**: a utilidade de um consumidor é afetada pelo consumo de outro. Exemplo: o prazer (ou desprazer) causado pelo hábito de fumar de um vizinho.
+## 19.2 O Modelo Principal-Agente
 
-Formalmente, uma externalidade de produção existe quando a função de produção da firma \(j\) depende do nível de produção da firma \(i\):
+O **modelo principal-agente** fornece o arcabouço analítico geral para estudar situações de informação assimétrica em relações contratuais.
+
+!!! definition "Relação Principal-Agente"
+    Relação econômica em que uma parte (o **principal**) delega uma tarefa ou decisão a outra parte (o **agente**), que possui informação privada sobre suas características (tipo) ou sobre suas ações (esforço). O principal desenha um contrato para induzir o agente a agir de forma compatível com seus interesses.
+
+### Elementos do modelo
+
+O modelo canônico envolve os seguintes componentes:
+
+1. **Principal**: parte que propõe o contrato (empregador, segurador, comprador).
+2. **Agente**: parte que aceita ou rejeita o contrato e possui informação privada (trabalhador, segurado, vendedor).
+3. **Contrato**: mecanismo que especifica pagamentos contingentes a variáveis observáveis.
+4. **Restrição de participação (RP)**: o agente só aceita o contrato se a utilidade esperada for ao menos igual à sua **utilidade de reserva** \(\bar{U}\).
+5. **Restrição de compatibilidade de incentivos (RCI)**: o contrato deve induzir o agente a escolher a ação ou revelar o tipo desejado pelo principal.
+
+Formalmente, o principal resolve:
 
 \[
-q_j = f_j(L_j, K_j, q_i)
+\max_{w(\cdot)} \; \mathbb{E}[\pi(x) - w(x)]
 \]
 
-Uma externalidade de consumo existe quando a utilidade do indivíduo \(B\) depende do consumo do indivíduo \(A\):
+sujeito a:
 
 \[
-U_B = U_B(x_B^1, x_B^2, \ldots, x_A^k)
+\mathbb{E}[U(w(x), e^*)] \geq \bar{U} \quad \text{(Restrição de Participação)}
 \]
 
-onde \(x_A^k\) é o consumo do bem \(k\) pelo indivíduo \(A\).
+\[
+e^* \in \arg\max_{e} \; \mathbb{E}[U(w(x), e)] \quad \text{(Restrição de Incentivo)}
+\]
 
-!!! note "Externalidades Pecuniárias vs. Tecnológicas"
-    É importante distinguir **externalidades tecnológicas** (reais) de **externalidades pecuniárias**. Externalidades pecuniárias operam *via preços*: quando uma firma expande sua produção e reduz o preço do produto, prejudicando concorrentes. Essas não são verdadeiras externalidades no sentido econômico, pois são mediadas pelo mercado e não geram ineficiência. Apenas externalidades tecnológicas — que afetam diretamente funções de produção ou utilidade — constituem falhas de mercado.
+onde \(w(x)\) é o esquema de pagamento contingente ao resultado observável \(x\), \(e\) é o esforço do agente e \(\pi(x)\) é o lucro bruto do principal.
+
+### Informação completa vs. incompleta
+
+Sob **informação completa** (ou simétrica), o principal observa tanto o tipo quanto a ação do agente. Nesse caso, basta oferecer um contrato que satisfaça a restrição de participação com igualdade — o chamado **first-best** (ótimo de primeiro melhor).
+
+Sob **informação assimétrica**, o principal não observa o tipo ou a ação do agente, e precisa satisfazer adicionalmente a restrição de incentivos. O resultado é o **second-best** (ótimo de segundo melhor), que geralmente envolve uma perda de eficiência em relação ao first-best.
+
+---
+
+## 19.3 Ações Ocultas: Risco Moral
+
+!!! definition "Risco Moral (Moral Hazard)"
+    Problema de informação assimétrica que surge quando uma parte de uma transação pode tomar **ações não observáveis** (ocultas) que afetam o resultado da relação, e a outra parte não consegue monitorar ou verificar essas ações diretamente. O termo refere-se à mudança de comportamento do agente após a celebração do contrato.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Uma externalidade existe quando o preço de um produto não reflete todo o custo (ou benefício) que sua produção ou consumo impõe à sociedade.
+    **Em uma frase:** Quando alguém está protegido contra as consequências de suas ações, tende a se arriscar mais — porque quem paga a conta é outro.
 
-    **Pense assim:** Quando uma fábrica em Cubatão polui o rio, o preço do produto que ela vende não inclui o custo da água contaminada para os pescadores e moradores rio abaixo. A fábrica "exporta" parte do seu custo para a sociedade sem pagar por isso. Da mesma forma, quem se vacina protege não só a si mesmo, mas também quem está ao redor — um benefício que não entra no cálculo individual.
+    **Pense assim:** Depois de contratar um seguro completo para o celular, muita gente deixa de usar capinha e película. Afinal, se o aparelho quebrar, a seguradora cobre. Esse "relaxamento" após o contrato é o risco moral em ação — o comportamento muda porque o custo de ser descuidado foi transferido para outra parte.
 
-    **Por que isso importa:** Externalidades são a principal justificativa econômica para intervenção do governo via impostos, subsídios ou regulação — do controle de emissões ao financiamento público da vacinação.
+    **Por que isso importa:** Franquias e coparticipações em planos de saúde e seguros existem justamente para manter o segurado com "pele no jogo", evitando que a proteção gere descuido excessivo.
 
----
+O risco moral é um problema **pós-contratual**: a assimetria de informação diz respeito a ações tomadas pelo agente *depois* de firmado o acordo.
 
-## 19.2 Externalidades e Ineficiência Alocativa
+### 19.3.1 A relação proprietário-gerente
 
-A presença de externalidades implica que as decisões privadas dos agentes divergem do ótimo social. A razão fundamental é que os agentes não incorporam em seus cálculos os efeitos que suas ações impõem sobre terceiros (Browning & Zupan, 2014, Cap. 20, apresentam aplicações detalhadas).
-
-### Externalidade negativa de produção
-
-Considere uma firma que produz um bem \(q\) com custo privado \(C(q)\) e que gera poluição como subproduto. A poluição impõe um **custo externo** \(E(q)\) sobre a sociedade (danos à saúde, degradação ambiental). O **custo social** é:
+Considere um proprietário (principal) que contrata um gerente (agente) para administrar sua empresa. O lucro \(\pi\) depende do esforço \(e\) do gerente e de um choque aleatório \(\varepsilon\):
 
 \[
-CS(q) = C(q) + E(q)
+\pi = f(e) + \varepsilon, \quad \varepsilon \sim (0, \sigma^2)
 \]
 
-A firma, buscando maximizar lucro, iguala o custo marginal privado ao preço:
+O esforço \(e\) é custoso para o gerente, com custo \(c(e)\), onde \(c'(e) > 0\) e \(c''(e) > 0\). Se o proprietário pudesse observar \(e\), contrataria o nível eficiente \(e^*\) tal que:
 
 \[
-P = C'(q) \quad \text{(CMg privado)}
+f'(e^*) = c'(e^*)
 \]
 
-Mas a condição de eficiência social requer:
+Quando \(e\) não é observável, o proprietário precisa desenhar um esquema de compensação \(w(\pi)\) que dependa do resultado observável \(\pi\). Se o gerente é avesso ao risco com utilidade \(U(w) - c(e)\), o contrato ótimo envolve um **trade-off entre incentivos e seguro**:
+
+- Um salário fixo \(w = \bar{w}\) provê seguro perfeito ao gerente, mas nenhum incentivo para se esforçar.
+- Um contrato puramente variável \(w = \pi - R\) (em que \(R\) é a renda fixa do proprietário) provê incentivos perfeitos, mas transfere todo o risco ao gerente.
+
+!!! abstract "Princípio da Informatividade (Holmström, 1979)"
+    O contrato ótimo deve vincular o pagamento do agente a **qualquer variável** que contenha informação sobre o esforço do agente, e somente a essas variáveis. Formalmente, uma variável \(y\) deve ser incluída no contrato se e somente se a distribuição condicional de \(x\) dado \(e\) muda com \(y\), ou seja, se \(y\) é **informativa** sobre \(e\).
+
+### 19.3.2 Risco moral em seguros
+
+O caso clássico de risco moral ocorre no mercado de seguros. Após contratar um seguro contra roubo, o segurado pode reduzir os cuidados com a prevenção (não trancar o carro, não instalar alarme), aumentando a probabilidade de sinistro.
+
+Seja \(p(e)\) a probabilidade de sinistro, com \(p'(e) < 0\) (mais esforço de prevenção reduz a probabilidade). O segurado escolhe \(e\) para maximizar:
 
 \[
-P = C'(q) + E'(q) \quad \text{(CMg social)}
+\max_{e} \; [1 - p(e)] \cdot U(W_0 - q) + p(e) \cdot U(W_0 - q - L + I) - c(e)
 \]
 
-Como \(E'(q) > 0\), a firma produz **mais do que o ótimo social**: \(q^{priv} > q^{soc}\).
+onde \(W_0\) é a riqueza inicial, \(q\) é o prêmio do seguro, \(L\) é a perda potencial, \(I\) é a indenização e \(c(e)\) é o custo do esforço de prevenção.
 
-### Externalidade positiva de consumo
-
-No caso de uma externalidade positiva — por exemplo, vacinação —, o **benefício social** excede o benefício privado:
-
-\[
-BS(q) = B^{priv}(q) + B^{ext}(q)
-\]
-
-O indivíduo consome até onde seu benefício marginal privado iguala o preço:
-
-\[
-B'^{priv}(q) = P
-\]
-
-Mas a eficiência requer:
-
-\[
-B'^{priv}(q) + B'^{ext}(q) = P
-\]
-
-Como \(B'^{ext}(q) > 0\), o consumo privado fica **aquém do ótimo social**: \(q^{priv} < q^{soc}\).
-
-!!! tip "Regra Geral"
-    - **Externalidade negativa** → produção/consumo privado **excessivo** em relação ao ótimo social.
-    - **Externalidade positiva** → produção/consumo privado **insuficiente** em relação ao ótimo social.
-    - Em ambos os casos, o mercado **falha** em atingir eficiência de Pareto.
-
----
-
-## 19.3 Modelo de Equilíbrio Parcial de Externalidades
-
-Formalizemos o problema usando um modelo de equilíbrio parcial com duas firmas.
-
-**Firma 1** (poluidora): produz \(q_1\) com custo \(C_1(q_1)\) e gera emissões \(e = e(q_1)\), com \(e' > 0\).
-
-**Firma 2** (afetada): produz \(q_2\) com custo \(C_2(q_2, e)\), onde \(\partial C_2 / \partial e > 0\) — a poluição de 1 eleva os custos de 2.
-
-**Equilíbrio privado**: cada firma maximiza seu próprio lucro, ignorando o efeito sobre a outra.
-
-Firma 1:
-
-\[
-\max_{q_1} \; p_1 q_1 - C_1(q_1) \implies p_1 = C_1'(q_1)
-\]
-
-**Ótimo social**: o planejador maximiza o lucro conjunto:
-
-\[
-\max_{q_1, q_2} \; p_1 q_1 - C_1(q_1) + p_2 q_2 - C_2(q_2, e(q_1))
-\]
-
-A condição de primeira ordem para \(q_1\) é:
-
-\[
-p_1 = C_1'(q_1) + \frac{\partial C_2}{\partial e} \cdot e'(q_1)
-\]
-
-O termo \(\frac{\partial C_2}{\partial e} \cdot e'(q_1)\) é o **custo marginal externo** (CME) — o dano marginal imposto pela firma 1 sobre a firma 2. No equilíbrio privado, esse termo é ignorado, levando a \(q_1^{priv} > q_1^{soc}\).
-
-A **perda de peso morto** (deadweight loss) associada à externalidade é a área entre as curvas de custo marginal social e custo marginal privado, entre \(q_1^{soc}\) e \(q_1^{priv}\):
-
-\[
-DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
-\]
-
----
+Com seguro completo (\(I = L\)), o segurado recebe \(W_0 - q\) em qualquer estado, eliminando todo incentivo para esforço preventivo. Por isso, seguros com **franquias** e **coparticipação** são mecanismos para mitigar o risco moral, fazendo com que o segurado assuma parte do risco e mantenha incentivos para prevenção.
 
 <figure>
-  <iframe src="../graficos/cap19/externalidade-negativa.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.1</strong> — Externalidade negativa e imposto pigouviano. A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.</figcaption>
+  <iframe src="../graficos/cap19/principal-agente.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.2</strong> — Modelo principal-agente com risco moral. O gráfico mostra a restrição de participação (RP) e a restrição de compatibilidade de incentivos (RCI) no espaço de salários. O ponto verde indica o contrato ótimo que induz esforço alto.</figcaption>
 </figure>
 
-## 19.4 Soluções para Externalidades Negativas
+### 19.3.3 O problema do esforço não observável: modelo formal
 
-### 19.4.1 Imposto Pigouviano
+Considere dois níveis de esforço: alto (\(e_H\)) e baixo (\(e_L\)), com \(c(e_H) > c(e_L)\). O resultado pode ser bom (\(x_H\)) ou ruim (\(x_L\)). Sob esforço alto, a probabilidade de \(x_H\) é \(p_H\); sob esforço baixo, é \(p_L\), com \(p_H > p_L\).
 
-!!! definition "Imposto Pigouviano"
-    Imposto por unidade de produção (ou de emissão) igual ao **custo marginal externo** avaliado no ótimo social. Nomeado em homenagem a Arthur Cecil Pigou (1920), que primeiro propôs essa correção.
+O principal deseja induzir esforço alto. O contrato especifica pagamentos \(w_H\) (se \(x = x_H\)) e \(w_L\) (se \(x = x_L\)). As restrições são:
 
-O imposto \(t^*\) é definido como:
-
-\[
-t^* = E'(q^{soc}) = \left. \frac{\partial C_2}{\partial e} \cdot e'(q_1) \right|_{q_1 = q_1^{soc}}
-\]
-
-Com o imposto, a firma poluidora resolve:
+**Restrição de Participação (RP):**
 
 \[
-\max_{q_1} \; p_1 q_1 - C_1(q_1) - t^* q_1
+p_H \, U(w_H) + (1 - p_H) \, U(w_L) - c(e_H) \geq \bar{U}
 \]
 
-Condição de primeira ordem:
+**Restrição de Compatibilidade de Incentivos (RCI):**
 
 \[
-p_1 = C_1'(q_1) + t^*
+p_H \, U(w_H) + (1 - p_H) \, U(w_L) - c(e_H) \geq p_L \, U(w_H) + (1 - p_L) \, U(w_L) - c(e_L)
 \]
 
-Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{soc}\).
+Simplificando a RCI:
+
+\[
+(p_H - p_L)[U(w_H) - U(w_L)] \geq c(e_H) - c(e_L)
+\]
+
+Essa condição exige que a diferença de pagamentos entre os estados bom e ruim seja suficientemente grande para compensar o custo adicional do esforço. Como \(p_H > p_L\), precisamos de \(w_H > w_L\): o pagamento deve ser maior quando o resultado é bom.
+
+!!! tip "Intuição Econômica"
+    A RCI nos diz que o "prêmio" por bom desempenho, \(w_H - w_L\), deve ser grande o suficiente para que o agente prefira se esforçar. Quanto maior a diferença \(c(e_H) - c(e_L)\) e menor a diferença \(p_H - p_L\), mais difícil é prover incentivos — e maior o custo de agência.
+
+---
+
+??? example "Exercício Resolvido 19.1"
+    **Enunciado:** Um principal contrata um agente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O resultado pode ser bom (\(x_H\)) com probabilidade \(p(e)\) ou ruim (\(x_L\)) caso contrário, onde \(p(1) = 3/4\) e \(p(0) = 1/4\). A utilidade de reserva é \(\bar{U} = 3\). O principal deseja induzir esforço alto (\(e = 1\)).
+
+    **Dados:** \(p_H = 3/4\), \(p_L = 1/4\), \(c(1) = 1\), \(c(0) = 0\), \(\bar{U} = 3\).
+
+    **Resolução:**
+
+    **Passo 1 — Restrições**
+
+    Defina \(a = \sqrt{w_H}\) e \(b = \sqrt{w_L}\).
+
+    **RP** (com esforço alto):
+
+    \[
+    \frac{3}{4}\,a + \frac{1}{4}\,b - 1 \geq 3 \;\Rightarrow\; \frac{3}{4}\,a + \frac{1}{4}\,b \geq 4
+    \]
+
+    **RCI** (esforço alto ≥ esforço baixo):
+
+    \[
+    \frac{3}{4}\,a + \frac{1}{4}\,b - 1 \geq \frac{1}{4}\,a + \frac{3}{4}\,b - 0
+    \]
+
+    \[
+    \frac{1}{2}(a - b) \geq 1 \;\Rightarrow\; a - b \geq 2
+    \]
+
+    **Passo 2 — Resolução (ambas binding)**
+
+    Da RCI: \(a = b + 2\). Substituindo na RP:
+
+    \[
+    \frac{3}{4}(b + 2) + \frac{1}{4}\,b = 4 \;\Rightarrow\; b + \frac{3}{2} = 4 \;\Rightarrow\; b = \frac{5}{2}
+    \]
+
+    \[
+    a = \frac{9}{2}, \quad w_H = a^2 = \frac{81}{4} = 20{,}25, \quad w_L = b^2 = \frac{25}{4} = 6{,}25
+    \]
+
+    **Passo 3 — Custo esperado e comparação com first-best**
+
+    Custo esperado do contrato (second-best):
+
+    \[
+    \mathbb{E}[w] = \frac{3}{4}(20{,}25) + \frac{1}{4}(6{,}25) = 15{,}1875 + 1{,}5625 = 16{,}75
+    \]
+
+    No first-best (esforço observável), o salário fixo \(w_{FB}\) satisfaz \(\sqrt{w_{FB}} - 1 = 3\), logo \(w_{FB} = 16\).
+
+    **Resultado:** O **custo de agência** é \(16{,}75 - 16 = 0{,}75\). Essa é a perda de eficiência causada pela assimetria de informação.
+
+    **Interpretação econômica:** O principal precisa pagar um "prêmio por bom resultado" (\(w_H - w_L = 14\)) para compensar o custo do esforço. Como o agente é avesso ao risco (\(U = \sqrt{w}\)), expô-lo a essa variabilidade é custoso — o custo esperado do contrato sobe de 16 para 16,75. Esse trade-off entre incentivos e seguro é o cerne do problema de risco moral.
+
+---
+
+## 19.4 Tipos Ocultos: Seleção Adversa
+
+!!! definition "Seleção Adversa (Adverse Selection)"
+    Problema de informação assimétrica que surge quando uma parte de uma transação possui **informação privada sobre suas características** (seu "tipo") antes da celebração do contrato, e essa informação não é observável pela outra parte. A seleção adversa é um problema **pré-contratual**.
+
+### 19.4.1 O mercado de limões (Akerlof, 1970)
+
+George Akerlof demonstrou que a assimetria de informação pode levar ao colapso de mercados inteiros. Considere um mercado de carros usados com dois tipos:
+
+- **Carros bons** ("cerejas"): valor \(V_H\) para o comprador, \(C_H\) para o vendedor, com \(V_H > C_H\).
+- **Carros ruins** ("limões"): valor \(V_L\) para o comprador, \(C_L\) para o vendedor, com \(V_L > C_L\).
+
+Suponha \(V_H > C_H > V_L > C_L\) e que uma fração \(\lambda\) dos carros são bons. O vendedor conhece a qualidade; o comprador, não.
+
+Se o comprador não distingue os tipos, está disposto a pagar no máximo:
+
+\[
+\bar{V} = \lambda V_H + (1 - \lambda) V_L
+\]
+
+Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço médio. Somente carros ruins permanecem no mercado, e o comprador, antecipando isso, oferece no máximo \(V_L\). A **qualidade média do mercado cai**, configurando a seleção adversa: os "bons" saem, os "ruins" ficam.
+
+!!! note "Resultado de Akerlof"
+    Em casos extremos, a seleção adversa pode provocar o **desaparecimento completo** do mercado (market unraveling), mesmo quando ganhos de troca existiriam sob informação simétrica. Esse resultado mostra que a informação assimétrica é uma genuína **falha de mercado**.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O imposto pigouviano faz o poluidor pagar exatamente pelo dano que causa, transformando um custo "invisível" para a sociedade em um custo real para a empresa.
+    **Em uma frase:** Quando o comprador não consegue distinguir produtos bons de ruins, os bons somem do mercado — porque ninguém paga o preço justo por eles.
 
-    **Pense assim:** Se uma usina termelétrica paga R$ 0 pela fumaça que emite, ela polui sem pensar duas vezes. Mas se o governo cobra um imposto por tonelada de CO₂ igual ao dano ambiental causado, a usina passa a incluir essa conta no seu cálculo de custos. Poluir vira caro, e a produção se ajusta ao nível que a sociedade realmente quer.
+    **Pense assim:** No mercado de carros usados no Brasil, quem vende um carro bem cuidado compete com quem vende um carro cheio de problemas escondidos. O comprador, desconfiado, só topa pagar um preço médio. Mas esse preço é baixo demais para quem tem carro bom, que desiste de vender. Sobram só os "abacaxis" — e o comprador, sabendo disso, oferece menos ainda.
 
-    **Por que isso importa:** O mercado regulado de carbono aprovado no Brasil em 2024 segue essa lógica — precificar o carbono para que empresas internalizem o custo climático de suas emissões.
-
-!!! proof "Demonstração: O Imposto Pigouviano Ótimo Restaura a Eficiência"
-    **Objetivo**: Mostrar que um imposto \(t^*\) igual ao custo marginal externo no ótimo social induz a firma poluidora a escolher o nível de produção socialmente eficiente.
-
-    **Configuração**: Considere uma economia com uma firma poluidora que produz \(q\) unidades de um bem ao preço \(P\). O custo privado de produção é \(C(q)\), com \(C'(q) > 0\) e \(C''(q) > 0\). A produção gera um custo externo \(E(q)\), com \(E'(q) > 0\) e \(E''(q) \geq 0\). O benefício social líquido é:
-
-    \[
-    W(q) = Pq - C(q) - E(q)
-    \]
-
-    **Passo 1 — Ótimo social.** O planejador maximiza \(W(q)\):
-
-    \[
-    \frac{dW}{dq} = P - C'(q) - E'(q) = 0
-    \]
-
-    Logo, o nível ótimo \(q^*\) satisfaz:
-
-    \[
-    P = C'(q^*) + E'(q^*) \tag{1}
-    \]
-
-    **Passo 2 — Equilíbrio privado sem imposto.** A firma maximiza \(\pi(q) = Pq - C(q)\):
-
-    \[
-    P = C'(q^{priv}) \tag{2}
-    \]
-
-    Como \(E'(q) > 0\), comparando (1) e (2), e dado que \(C''(q) > 0\), temos \(q^{priv} > q^*\). A firma produz em excesso.
-
-    **Passo 3 — Introdução do imposto pigouviano.** Defina o imposto unitário:
-
-    \[
-    t^* = E'(q^*)
-    \]
-
-    Com o imposto, o lucro da firma é \(\pi^t(q) = Pq - C(q) - t^* q\). A condição de maximização é:
-
-    \[
-    P = C'(q^t) + t^* = C'(q^t) + E'(q^*) \tag{3}
-    \]
-
-    **Passo 4 — Comparação.** Comparando (3) com (1), ambas requerem:
-
-    \[
-    P - E'(q^*) = C'(q)
-    \]
-
-    Como \(C'(\cdot)\) é estritamente crescente (por \(C'' > 0\)), a solução é única: \(q^t = q^*\).
-
-    **Conclusão.** O imposto \(t^* = E'(q^*)\) faz com que a firma internalize o custo marginal externo e produza exatamente o nível socialmente ótimo \(q^*\). A perda de peso morto é eliminada. \(\blacksquare\)
-
-!!! tip "Subsídio Pigouviano"
-    De forma simétrica, para externalidades positivas, o instrumento pigouviano é um **subsídio** por unidade igual ao benefício marginal externo: \(s^* = B'^{ext}(q^{soc})\). Isso eleva a quantidade produzida/consumida até o nível socialmente eficiente.
+    **Por que isso importa:** Plataformas como OLX, laudos de vistoria cautelar e garantias de concessionária existem justamente para quebrar esse ciclo, reduzindo a assimetria de informação e permitindo que transações boas aconteçam.
 
 <figure>
-  <iframe src="../graficos/cap19/teorema-coase.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.2</strong> — Teorema de Coase. Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.</figcaption>
+  <iframe src="../graficos/cap19/mercado-limoes.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.1</strong> — Mercado de limões (Akerlof, 1970). Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.</figcaption>
 </figure>
 
-### 19.4.2 O Teorema de Coase
-
-!!! abstract "Teorema de Coase (Coase, 1960)"
-    Se os **direitos de propriedade** estão claramente definidos e os **custos de transação** são nulos, a barganha privada entre as partes levará à alocação eficiente de recursos, **independentemente** de qual parte detém o direito de propriedade. A distribuição dos direitos afeta apenas a distribuição de riqueza, não a eficiência.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Se as partes afetadas conseguem sentar e negociar sem custos, elas mesmas resolvem o problema da externalidade — sem precisar de governo.
-
-    **Pense assim:** Um bar com música alta no Leblon incomoda os moradores do prédio ao lado. Se o direito é do bar, os moradores podem se juntar e pagar para ele reduzir o volume. Se o direito é dos moradores, o bar pode compensá-los financeiramente. Nos dois casos, chegam ao mesmo nível de som — o que muda é quem paga.
-
-    **Por que isso importa:** Na prática, custos de transação são altos (imagine negociar com milhões de afetados pela poluição do ar), e por isso o Teorema de Coase funciona mais como um alerta sobre os limites da solução privada do que como uma receita prática.
-
-Formalmente, suponha que a firma poluidora e a firma afetada podem negociar. Se a firma afetada tem o direito a um ambiente limpo, a poluidora deve compensá-la pelo dano. Se a poluidora tem o direito de poluir, a firma afetada paga para que ela reduza a produção. Em ambos os casos, a produção converge para \(q^{soc}\) onde:
-
-\[
-C'(q) + E'(q) = P
-\]
-
-**Limites do Teorema de Coase:**
-
-1. **Custos de transação**: na prática, negociar é custoso, especialmente quando há muitas partes envolvidas.
-2. **Externalidades difusas**: quando a poluição afeta milhões de pessoas, a barganha bilateral é inviável.
-3. **Assimetria de informação**: as partes podem ter incentivos estratégicos para não revelar verdadeiramente seus custos e benefícios.
-4. **Efeitos riqueza**: com utilidade marginal da renda decrescente, a atribuição inicial dos direitos pode afetar a alocação final.
-5. **Problemas de hold-up**: investimentos específicos à relação podem gerar comportamento oportunista.
-
-### 19.4.3 Regulação direta (command and control)
-
-A regulação direta consiste em impor limites quantitativos de emissão ou padrões tecnológicos às firmas poluidoras. Exemplos incluem:
-
-- Limites máximos de emissão de poluentes (ex.: padrão CONAMA para emissões veiculares);
-- Obrigatoriedade de uso de tecnologia de controle (ex.: catalisadores);
-- Zoneamento industrial (restrições de localização).
-
-A principal desvantagem da regulação direta é que ela tipicamente não é **custo-efetiva**: ao impor o mesmo padrão a todas as firmas, não explora as diferenças nos custos marginais de abatimento. Firmas com custos de abatimento baixos deveriam reduzir mais emissões, e firmas com custos altos, menos — algo que um imposto ou mercado de permissões faz automaticamente.
-
-### 19.4.4 Mercados de permissão de emissão (cap and trade)
-
-!!! definition "Mercado de Permissões de Emissão (Cap and Trade)"
-    Sistema em que o regulador fixa um **teto** (cap) total de emissões e distribui **permissões negociáveis** entre as firmas. As firmas podem comprar e vender permissões no mercado. Em equilíbrio, o preço da permissão iguala o custo marginal de abatimento entre todas as firmas, garantindo **custo-efetividade**.
-
-Se o teto é fixado no nível socialmente ótimo de emissões \(\bar{E}\), e o mercado de permissões é competitivo, o preço de equilíbrio da permissão é exatamente igual ao imposto pigouviano ótimo:
-
-\[
-p_E = t^* = E'(q^{soc})
-\]
-
-A equivalência entre imposto e cap-and-trade sob certeza (Weitzman, 1974) é um resultado fundamental. Sob **incerteza**, porém, os instrumentos diferem: o imposto fixa o preço e deixa a quantidade flutuar; o cap fixa a quantidade e deixa o preço flutuar. A escolha ótima depende das elasticidades relativas dos custos de abatimento e dos danos marginais.
-
 ---
 
-## 19.5 Atributos dos Bens Públicos
+??? example "Exercício Resolvido 19.2"
+    **Enunciado:** Em um mercado de carros usados à la Akerlof, 40% dos carros são bons e 60% são ruins. Carros bons valem R$ 24.000 para compradores e R$ 20.000 para vendedores. Carros ruins valem R$ 10.000 para compradores e R$ 6.000 para vendedores. (a) O mercado de carros bons funciona? (b) Qual é a perda de bem-estar causada pela assimetria?
 
-!!! definition "Bem Público"
-    Um **bem público puro** é aquele que possui simultaneamente duas propriedades:
+    **Dados:** \(\lambda = 0{,}4\); \(V_H = 24.000\), \(C_H = 20.000\); \(V_L = 10.000\), \(C_L = 6.000\).
 
-    1. **Não-rivalidade**: o consumo do bem por um indivíduo não reduz a quantidade disponível para outros. Formalmente, se \(G\) é a quantidade provida, cada consumidor pode consumir \(G\) integralmente: \(g_i = G\) para todo \(i\).
+    **Resolução:**
 
-    2. **Não-exclusão**: não é possível (ou é excessivamente custoso) impedir indivíduos de consumir o bem, mesmo que não paguem por ele.
-
-### Classificação de bens
-
-A combinação dessas duas propriedades gera uma classificação de bens em quatro categorias:
-
-| | **Excludente** | **Não-excludente** |
-|---|---|---|
-| **Rival** | **Bem privado** (alimento, vestuário, combustível) | **Recurso comum** (cardume no oceano, pasto comunitário, água de aquífero) |
-| **Não-rival** | **Bem de clube** (TV a cabo, pedágio, parque com entrada paga) | **Bem público puro** (defesa nacional, iluminação pública, ar limpo) |
-
-A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos & Garcia, 2014):
-
-| Categoria | Propriedades | Exemplos Brasileiros |
-|---|---|---|
-| **Bem privado** | Rival e excludente | Pão de queijo, gasolina, corte de cabelo, ingresso de cinema |
-| **Bem público puro** | Não-rival e não-excludente | Defesa nacional (Forças Armadas), iluminação de via pública, sinal de rádio aberto, conhecimento científico básico |
-| **Bem de clube** | Não-rival (até congestionamento) e excludente | Netflix, rodovia com pedágio (Via Dutra, Rodovia dos Bandeirantes), clube recreativo, sistema de streaming de futebol |
-| **Recurso comum** | Rival e não-excludente | Peixes no rio Amazonas, pastagem no semiárido, água do Aquífero Guarani, vagas de estacionamento público |
-
-!!! note "Bens Públicos Locais e Globais"
-    A provisão de bens públicos pode ter escala local (iluminação de uma rua), regional (defesa costeira), nacional (sistema judiciário) ou global (estabilidade climática, erradicação de doenças). A escala determina qual nível de governo (ou cooperação internacional) é mais adequado para a provisão.
-
----
-
-## 19.6 Bens Públicos e Alocação de Recursos
-
-### Condição de eficiência (Samuelson, 1954)
-
-Para um bem privado, a eficiência requer que todos os consumidores se deparem com o mesmo preço, que iguala o custo marginal. Para um bem público, a condição de eficiência é fundamentalmente diferente.
-
-!!! abstract "Condição de Samuelson para Bens Públicos"
-    A provisão eficiente de um bem público requer que a **soma das taxas marginais de substituição** de todos os indivíduos iguale a **taxa marginal de transformação** (custo marginal de produção):
+    **Passo 1 — Preço máximo do comprador desinformado**
 
     \[
-    \sum_{i=1}^{N} TMS_i^{G,x} = TMT^{G,x}
+    \bar{V} = 0{,}4 \times 24.000 + 0{,}6 \times 10.000 = 9.600 + 6.000 = 15.600
     \]
 
-    onde \(TMS_i^{G,x} = \frac{\partial U_i / \partial G}{\partial U_i / \partial x_i}\) é a taxa marginal de substituição entre o bem público \(G\) e o bem privado \(x\) para o indivíduo \(i\).
+    **Passo 2 — Teste de viabilidade**
 
-**Intuição**: Como o bem público é não-rival, todos consomem a mesma quantidade \(G\). O benefício social marginal de uma unidade adicional é a soma dos benefícios marginais de todos os indivíduos. Eficiência requer que esse benefício agregado iguale o custo marginal.
+    Como \(\bar{V} = 15.600 < C_H = 20.000\), os vendedores de carros bons **não aceitam** o preço médio. Apenas carros ruins são ofertados.
 
-Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para cada \(i\) individualmente (não a soma).
+    O comprador, antecipando que só restam limões, oferece no máximo \(V_L = 10.000\). O mercado de carros bons **colapsa** por seleção adversa.
 
-<figure>
-  <iframe src="../graficos/cap19/bem-publico.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.3</strong> — Provisão ótima de bem público. A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.</figcaption>
-</figure>
+    **Passo 3 — Perda de bem-estar**
 
-### Subprovisão pelo mercado
+    Sob informação simétrica, haveria ganhos de troca em ambos os tipos:
 
-O mercado tende a **subprover** bens públicos porque cada indivíduo, ao decidir sua contribuição voluntária, considera apenas **seu** benefício marginal, ignorando o benefício que gera para os demais.
+    - Carros bons: \(V_H - C_H = 4.000\) por carro
+    - Carros ruins: \(V_L - C_L = 4.000\) por carro
 
-Considere \(N\) indivíduos idênticos com utilidade \(U_i = u(x_i) + v(G)\), onde \(G = \sum g_i\) é a contribuição total ao bem público. Cada indivíduo escolhe \(g_i\) para maximizar:
+    Com seleção adversa, os ganhos dos carros bons (40% do mercado) são completamente perdidos.
 
-\[
-u(W_i - g_i) + v\!\left(g_i + \sum_{j \neq i} g_j\right)
-\]
+    **Resultado:** A perda de bem-estar é de **R$ 4.000 por carro bom** que deixa de ser transacionado, ou \(0{,}4 \times 4.000 = \text{R\$}\, 1.600\) por carro em média.
 
-A condição de primeira ordem é:
-
-\[
-u'(W_i - g_i) = v'(G) \implies TMS_i = 1
-\]
-
-Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/N\) para indivíduos idênticos. Como \(1 > 1/N\), cada indivíduo demanda benefício marginal excessivamente alto, resultando em \(G^{priv} < G^*\): o bem público é **subprovido**.
+    **Interpretação econômica:** No Brasil, o mercado de veículos usados movimentou mais de 15 milhões de unidades em 2024. Plataformas como OLX e Webmotors, laudos de vistoria cautelar e o sistema Denatran de consulta de histórico veicular funcionam como mecanismos de redução da assimetria de informação, atenuando o "problema dos limões" e viabilizando transações que, de outra forma, não ocorreriam.
 
 ---
 
-## 19.7 Preços de Lindahl
+### 19.4.2 Precificação não linear: menus de contratos
 
-!!! definition "Equilíbrio de Lindahl"
-    Mecanismo hipotético de provisão de bens públicos em que cada indivíduo paga um **preço personalizado** (\(\tau_i\)) pelo bem público, igual à sua taxa marginal de substituição. A soma dos preços de Lindahl iguala o custo marginal de produção:
+Uma forma de lidar com a seleção adversa é oferecer um **menu de contratos** desenhado para que cada tipo de agente selecione voluntariamente o contrato destinado a ele. Esse é o princípio da **autosseleção** (self-selection) ou **triagem** (screening).
+
+Considere um monopolista vendendo um bem a consumidores de dois tipos: alta valoração (\(\theta_H\)) e baixa valoração (\(\theta_L\)), com proporções \(\mu\) e \(1-\mu\), respectivamente. O monopolista oferece dois pacotes \((q_L, T_L)\) e \((q_H, T_H)\), onde \(q\) é a quantidade e \(T\) o pagamento total.
+
+As restrições de autosseleção (incentivo-compatibilidade) são:
+
+\[
+\theta_H v(q_H) - T_H \geq \theta_H v(q_L) - T_L \quad \text{(RCI do tipo alto)}
+\]
+
+\[
+\theta_L v(q_L) - T_L \geq \theta_L v(q_H) - T_H \quad \text{(RCI do tipo baixo)}
+\]
+
+E as restrições de participação:
+
+\[
+\theta_i v(q_i) - T_i \geq 0 \quad \text{para } i \in \{L, H\}
+\]
+
+A solução ótima envolve: (i) o tipo baixo recebe quantidade **distorcida para baixo** (\(q_L < q_L^*\)); (ii) o tipo alto recebe a quantidade eficiente (\(q_H = q_H^*\)); (iii) o tipo alto obtém uma **renda informacional** positiva; (iv) o tipo baixo fica na fronteira de participação (renda zero).
+
+### 19.4.3 Seleção adversa em seguros: o modelo de Rothschild-Stiglitz
+
+[Rothschild e Stiglitz (1976)](https://doi.org/10.2307/1885326) analisaram o mercado de seguros competitivo com dois tipos de consumidores: alto risco (\(p_H\)) e baixo risco (\(p_L\)), com \(p_H > p_L\). As seguradoras não observam o tipo de cada consumidor.
+
+Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde \(\alpha_1\) é o prêmio pago e \(\alpha_2\) é a indenização líquida em caso de sinistro.
+
+!!! abstract "Resultado de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
+    Em equilíbrio competitivo com informação assimétrica: (a) não existe equilíbrio agregador (pooling) — um contrato único para ambos os tipos é sempre destruído por um contrato desviante; (b) um equilíbrio separador existe somente se a proporção de tipos de alto risco for suficientemente grande; (c) no equilíbrio separador, o tipo de alto risco recebe seguro completo (atuarialmente justo para ele) e o tipo de baixo risco recebe seguro parcial (distorção para baixo).
+
+!!! proof "Demonstração: Condição de Incentivo-Compatibilidade no Modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
+    Considere dois tipos de consumidores, \(i \in \{L, H\}\), com probabilidades de sinistro \(p_L < p_H\). Cada consumidor possui riqueza inicial \(W\) e enfrenta perda potencial \(d\). Um contrato de seguro \(C_i = (\alpha_i, \beta_i)\) especifica um prêmio \(\alpha_i\) e uma cobertura \(\beta_i\), de modo que a riqueza nos dois estados é:
 
     \[
-    \sum_{i=1}^{N} \tau_i = CMg(G)
+    W_i^{NS} = W - \alpha_i \quad \text{(sem sinistro)}
     \]
 
-    Cada indivíduo, enfrentando seu preço personalizado, demanda a mesma quantidade \(G^*\), e a condição de Samuelson é satisfeita.
+    \[
+    W_i^{S} = W - d + \beta_i - \alpha_i \quad \text{(com sinistro)}
+    \]
 
-O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar truthfully**, conforme discutiremos na seção sobre o problema do carona.
+    A utilidade esperada do tipo \(i\) com o contrato \(C_j\) é:
 
----
+    \[
+    EU_i(C_j) = (1 - p_i) \, U(W_j^{NS}) + p_i \, U(W_j^{S})
+    \]
 
-<figure>
-  <iframe src="../graficos/cap19/tragedia-comuns.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 19.4</strong> — Tragédia dos comuns. Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.</figcaption>
-</figure>
+    **Condições de incentivo-compatibilidade** requerem que cada tipo prefira seu próprio contrato:
 
-## 19.8 O Problema do Carona (Free Rider)
+    \[
+    EU_H(C_H) \geq EU_H(C_L) \quad \text{(o tipo H prefere } C_H \text{)}
+    \]
 
-!!! definition "Problema do Carona"
-    Ocorre quando indivíduos racionais subinvestem na provisão de um bem público (ou na revelação de suas preferências) porque esperam se beneficiar das contribuições alheias sem pagar por elas. O bem público é não-excludente: mesmo quem não paga pode consumir.
+    \[
+    EU_L(C_L) \geq EU_L(C_H) \quad \text{(o tipo L prefere } C_L \text{)}
+    \]
 
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Se você pode usufruir de algo sem pagar, por que pagar? Esse raciocínio individual, repetido por todos, faz com que ninguém contribua — e o bem público não sai do papel.
+    **Passo 1.** Em equilíbrio competitivo com lucro zero, cada contrato é atuarialmente justo para o tipo que o escolhe:
 
-    **Pense assim:** Em um condomínio, todos querem uma piscina reformada, mas cada morador prefere que os outros paguem a obra. Se a contribuição fosse voluntária, muitos "pegariam carona" nos vizinhos generosos. Por isso condomínios usam rateio obrigatório — e, por analogia, o governo cobra impostos para financiar iluminação pública, defesa nacional e saneamento.
+    \[
+    \alpha_H = p_H \beta_H, \quad \alpha_L = p_L \beta_L
+    \]
 
-    **Por que isso importa:** O problema do carona é a razão econômica fundamental para a existência de impostos e provisão pública de bens como segurança, infraestrutura e pesquisa científica básica.
+    **Passo 2.** Mostramos que \(C_H\) oferece seguro completo, ou seja, \(\beta_H = d\). Como a seguradora oferece contrato atuarialmente justo ao tipo \(H\), a condição de ótimo do consumidor avesso ao risco com preço justo implica equalização da riqueza nos dois estados:
 
-No contexto do equilíbrio de Lindahl, cada indivíduo tem incentivo para subreportar sua valoração pelo bem público, pagando um preço de Lindahl menor e deixando que outros financiem a provisão. Formalmente, se o preço de Lindahl é determinado pela valoração reportada \(\hat{\tau}_i\):
+    \[
+    W_H^{NS} = W_H^{S} \implies W - \alpha_H = W - d + \beta_H - \alpha_H \implies \beta_H = d
+    \]
 
-\[
-\hat{\tau}_i < \tau_i^{verdadeiro} = TMS_i
-\]
+    Logo, \(\alpha_H = p_H d\) e \(W_H^{NS} = W_H^{S} = W - p_H d\).
 
-O comportamento de carona é mais severo quando:
+    **Passo 3.** Para que o tipo \(H\) não desvie para \(C_L\), precisamos de:
 
-- O grupo é **grande** (a contribuição individual tem efeito desprezível sobre \(G\));
-- O bem é **puramente não-excludente** (não há como punir quem não contribui);
-- Não há **interação repetida** ou mecanismos de reputação.
+    \[
+    U(W - p_H d) \geq (1 - p_H) \, U(W - p_L \beta_L) + p_H \, U(W - d + \beta_L - p_L \beta_L)
+    \]
 
-!!! note "Evidência Experimental"
-    Experimentos de bens públicos (jogos de contribuição voluntária) mostram que as contribuições iniciais são tipicamente 40-60% do ótimo social, mas declinam ao longo do tempo para 10-20%, convergindo para a previsão teórica de subprovisão. Mecanismos de punição entre pares (peer punishment) e comunicação face a face aumentam significativamente as contribuições.
+    **Passo 4.** Para que o tipo \(L\) não desvie para \(C_H\), precisamos de:
 
----
+    \[
+    (1 - p_L) \, U(W - p_L \beta_L) + p_L \, U(W - d + \beta_L - p_L \beta_L) \geq U(W - p_H d)
+    \]
 
-## 19.9 Votação e Alocação de Recursos
+    **Passo 5.** Combinando as duas condições, a RCI do tipo \(H\) impõe um **limite superior** sobre a cobertura \(\beta_L\) do tipo de baixo risco. Se \(\beta_L = d\) (seguro completo para L), então o lado direito da RCI de \(H\) seria \(U(W - p_L d) > U(W - p_H d)\) (pois \(p_L < p_H\)), violando a restrição. Portanto, em equilíbrio separador, necessariamente:
 
-Na ausência de mecanismos de mercado eficientes para bens públicos (Giambiagi & Além, 2016, oferecem análise detalhada para o caso brasileiro), as sociedades recorrem a processos políticos — especialmente a **votação** — para decidir o nível de provisão.
+    \[
+    \beta_L < d
+    \]
 
-### Votação por maioria simples
-
-Considere uma comunidade de \(N\) cidadãos que deve decidir o nível de gastos \(G\) com um bem público, financiado por imposto uniforme \(T = CMg(G)/N\) por pessoa. Cada cidadão \(i\) tem nível preferido \(G_i^*\) que maximiza \(U_i(G) - T\).
-
-!!! abstract "Teorema do Eleitor Mediano"
-    Se as preferências dos eleitores são **unimodais** (single-peaked) e a escolha é unidimensional, a regra de maioria simples seleciona o nível preferido pelo **eleitor mediano** — aquele cujo nível preferido \(G_m^*\) é tal que metade dos eleitores prefere mais e metade prefere menos.
-
-    Formalmente, se \(G_1^* \leq G_2^* \leq \cdots \leq G_N^*\), o resultado da votação por maioria é \(G_m^* = G_{(N+1)/2}^*\) (para \(N\) ímpar).
-
-**Relação com eficiência**: O nível escolhido pelo eleitor mediano geralmente **não** coincide com o nível eficiente de Samuelson, exceto por coincidência. A provisão pode ser excessiva ou insuficiente dependendo da distribuição de preferências e renda na população.
-
-**Paradoxo de Condorcet**: Quando as preferências não são unimodais ou a escolha é multidimensional, a votação por maioria pode produzir **ciclos** (A vence B, B vence C, C vence A), não existindo um vencedor de Condorcet.
-
-!!! abstract "Teorema da Impossibilidade de Arrow"
-    Não existe regra de agregação de preferências (com três ou mais alternativas e dois ou mais indivíduos) que satisfaça simultaneamente: (i) domínio irrestrito; (ii) princípio de Pareto; (iii) independência de alternativas irrelevantes; (iv) não-ditadura.
+    O tipo de baixo risco recebe **seguro parcial** — uma distorção que é o "custo" da assimetria de informação. A cobertura \(\beta_L^*\) é determinada pela RCI do tipo \(H\) com igualdade (binding), garantindo que o tipo de alto risco seja indiferente entre os dois contratos. \(\blacksquare\)
 
 ---
 
-## 19.10 Mecanismos de Revelação de Preferências
+## Box Brasil: Seleção Adversa nos Planos de Saúde
 
-O desafio central na provisão de bens públicos é induzir os indivíduos a **revelar truthfully** suas preferências. O mecanismo de Vickrey-Clarke-Groves (VCG) fornece uma solução elegante.
+!!! example "Antisseleção e regulação por faixas etárias ([ANS](https://www.gov.br/ans))"
+    O mercado brasileiro de saúde suplementar, com cerca de 51 milhões de beneficiários, é um caso emblemático de seleção adversa. Pessoas mais doentes (alto risco) têm maior incentivo para contratar planos de saúde, enquanto jovens saudáveis (baixo risco) tendem a considerar os prêmios elevados e permanecer sem plano — o clássico mecanismo de antisseleção.
 
-!!! definition "Mecanismo VCG (Vickrey-Clarke-Groves)"
-    Classe de mecanismos de revelação de preferências em que cada indivíduo paga um imposto igual ao **custo externo** que sua participação impõe sobre os demais membros do grupo. Sob esse mecanismo, é estratégia dominante para cada indivíduo revelar sua verdadeira valoração.
+    **Regulação por faixas etárias:**
 
-### Funcionamento do mecanismo de Clarke (imposto pivotal)
+    A ANS (Agência Nacional de Saúde Suplementar) estabelece 10 faixas etárias para os reajustes dos planos individuais e familiares: 0–18, 19–23, 24–28, 29–33, 34–38, 39–43, 44–48, 49–53, 54–58 e 59 anos ou mais. A regra-chave: a mensalidade da última faixa não pode ser superior a **6 vezes** a mensalidade da primeira.
 
-1. Cada indivíduo \(i\) reporta sua valoração \(\hat{v}_i\) pelo bem público.
-2. O bem é provido se \(\sum_i \hat{v}_i \geq C\) (custo de provisão).
-3. O indivíduo \(i\) é **pivotal** se sua presença altera a decisão (o bem é provido com ele mas não sem ele).
-4. Se \(i\) é pivotal, paga um imposto igual a:
+    Essa regulação funciona como um **subsídio cruzado** entre faixas etárias: jovens pagam mais do que seu risco atuarial justificaria, subsidiando os idosos, cujo risco é maior. O objetivo é evitar a espiral de seleção adversa: se os preços refletissem fielmente o risco de cada faixa, as mensalidades para idosos seriam proibitivas, expulsando-os do mercado e elevando o risco médio do pool restante.
 
-\[
-t_i = C - \sum_{j \neq i} \hat{v}_j
-\]
-
-Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os demais (que precisam financiar a diferença).
-
-**Por que funciona**: Se \(i\) reporta \(\hat{v}_i > v_i\), pode tornar-se pivotal quando não deveria, e pagar um imposto superior ao seu benefício real. Se reporta \(\hat{v}_i < v_i\), pode impedir a provisão de um bem que lhe seria benéfico. Em ambos os casos, o desvio não é lucrativo, e a verdade é estratégia dominante.
-
-!!! note "Limitações do VCG"
-    O mecanismo VCG não é equilibrado orçamentariamente (os impostos pivotais não cobrem o custo total), pode ser vulnerável a coalizões, e requer que as valorações sejam **quase-lineares** (utilidade transferível). Na prática, sua aplicação direta é rara, mas o princípio inspira mecanismos em leilões (como o leilão de Vickrey) e em design de mercados.
-
----
-
-## Box Brasil: Desmatamento na Amazônia e Precificação de Carbono
-
-!!! example "Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
-    O desmatamento na Amazônia brasileira é um caso emblemático de **externalidade negativa de escala global**. A remoção da floresta gera custos externos que incluem emissões de CO₂ (contribuindo para a mudança climática), perda de biodiversidade, alteração do ciclo hidrológico (inclusive os "rios voadores" que transportam umidade para o Centro-Sul do Brasil) e erosão do solo.
-
-    **Dimensão do problema**: Segundo dados do [INPE](https://www.gov.br/inpe)/PRODES, o desmatamento acumulado na Amazônia Legal superou 85 milhões de hectares até 2023 (cerca de 17% da floresta original). Após queda expressiva entre 2004 e 2012 (de 27.772 km² para 4.571 km² anuais), as taxas voltaram a subir, atingindo 13.235 km² em 2021, antes de recuar para cerca de 9.001 km² em 2023 com o reforço de políticas de fiscalização.
-
-    **Análise econômica**: O desmatamento persiste porque os **benefícios privados** (expansão da pecuária, agricultura, extração madeireira) excedem os **custos privados** para os agentes locais, embora os **custos sociais** — incluindo danos climáticos globais — superem largamente os benefícios. Trata-se de uma externalidade negativa clássica: o preço de mercado dos produtos agropecuários não incorpora o custo ambiental da destruição florestal.
-
-    **Instrumentos de política**:
-
-    - **Fundo Amazônia**: Criado em 2008, o Fundo Amazônia funciona como um mecanismo de pagamento por resultados na redução do desmatamento. A Noruega e a Alemanha foram os principais doadores, com aportes superiores a R$ 3,4 bilhões até 2023. O Fundo financia projetos de prevenção, monitoramento e combate ao desmatamento, e de promoção do desenvolvimento sustentável. O mecanismo pode ser interpretado como um **subsídio pigouviano**: pagamento pela externalidade positiva de manter a floresta em pé.
-
-    - **REDD+ (Redução de Emissões por Desmatamento e Degradação Florestal)**: Mecanismo internacional que busca atribuir valor econômico ao carbono estocado nas florestas, criando incentivos para a conservação. O Brasil é um dos principais participantes, com programas de REDD+ em vários estados amazônicos. O princípio é coaseano: criar um "direito de propriedade" sobre o carbono florestal e permitir transações de mercado.
-
-    - **Mercado regulado de carbono**: O Brasil aprovou em 2024 a regulamentação do seu Sistema Brasileiro de Comércio de Emissões (SBCE), um sistema de cap-and-trade. O mercado abrange inicialmente grandes emissores (acima de 25 mil toneladas de CO₂e por ano) e prevê a comercialização de permissões de emissão. A precificação do carbono internaliza parte do custo externo das emissões, alinhando incentivos privados e sociais conforme a lógica pigouviana.
-
-    - **Comando e controle**: O Código Florestal (Lei n.º 12.651/2012) impõe a manutenção de Reserva Legal (80% em áreas de floresta amazônica) e Áreas de Preservação Permanente (APPs). A fiscalização é exercida pelo IBAMA com apoio do sistema de monitoramento por satélite (DETER/INPE).
-
-    **Desafios**: A eficácia das políticas depende de fiscalização (governance), que enfrenta restrições orçamentárias e políticas. A valoração do carbono florestal envolve incertezas científicas sobre taxas de absorção e emissão. Além disso, a soberania sobre a Amazônia adiciona uma dimensão de economia política internacional ao problema.
-
-    Este caso ilustra a aplicação integrada dos instrumentos discutidos no capítulo: imposto/subsídio pigouviano (Fundo Amazônia), mercado de permissões (SBCE, REDD+), regulação direta (Código Florestal) e os limites do Teorema de Coase quando os custos de transação são elevados e as externalidades são difusas e globais.
-
----
-
-!!! example "Box Brasil: Cobrança pelo uso da água e a tragédia dos comuns no semiárido"
-    A água doce é um exemplo clássico de **recurso comum** no Brasil: rival no consumo (a água captada por um irrigante não está disponível para outro) e historicamente de difícil exclusão. A Lei das Águas (Lei n.º 9.433/1997) instituiu a **Política Nacional de Recursos Hídricos**, que reconhece a água como bem público dotado de valor econômico e estabelece a **cobrança pelo uso** como instrumento de gestão.
-
-    **Mecanismo econômico:**
-
-    A cobrança pelo uso da água funciona como um **imposto pigouviano** sobre a externalidade negativa de captação: ao reduzir a disponibilidade hídrica para outros usuários (irrigação, abastecimento, geração de energia), cada captação impõe um custo externo. Sem a cobrança, os usuários igualam seu benefício marginal privado a zero (acesso gratuito), levando ao sobreuso — exatamente a lógica da tragédia dos comuns.
-
-    **Implementação:**
-
-    A cobrança foi implementada inicialmente na Bacia do Rio Paraíba do Sul (2003) e posteriormente estendida a outras bacias federais, como a do São Francisco e a do PCJ (Piracicaba, Capivari e Jundiaí). Os valores cobrados, porém, são baixos em comparação com o custo de escassez: nas bacias do PCJ, o preço da captação era de R$ 0,01 a R$ 0,02 por metro cúbico em 2023, bem abaixo do custo marginal social estimado da escassez hídrica no Sudeste. No semiárido nordestino, onde a escassez é mais aguda, a alocação eficiente entre usos competidores (irrigação, abastecimento humano, dessedentação animal) é um desafio permanente, especialmente durante secas prolongadas.
+    **Reajuste 2025:** A ANS limitou o reajuste dos planos individuais e familiares a **6,06%**, abaixo da inflação médica. Para planos coletivos, os reajustes são negociados livremente e costumam ser superiores.
 
     **Conexão com a teoria:**
 
-    O caso ilustra simultaneamente: (i) a tragédia dos comuns sem regulação (sobreuso de aquíferos e rios); (ii) a solução pigouviana (cobrança pelo uso); e (iii) os limites práticos — a cobrança é politicamente difícil de calibrar no nível ótimo, e os custos de transação para negociação coaseana entre milhares de usuários são proibitivos.
+    O modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326) (seção 19.4.3) prevê que, sem intervenção, o equilíbrio separador oferece seguro parcial ao tipo de baixo risco — exatamente o que se observa nos planos com coparticipação e franquias maiores voltados para jovens. A regulação da ANS, ao limitar a diferenciação por faixa etária, impõe um equilíbrio parcialmente agregador (pooling), usando a lei para evitar o unraveling do mercado.
+
+    *Fonte: ANS, Dados Gerais do Setor, 2025; Resolução Normativa ANS n.º 63/2003.*
 
 ---
 
-## Exercícios Resolvidos
+## 19.5 Sinalização no Mercado
 
-??? example "Exercício Resolvido 1 — Imposto pigouviano e perda de peso morto"
-    **Enunciado.** Uma siderúrgica produz aço ao preço competitivo \(P = 100\) com custo privado \(C(q) = 10q + q^2\). A produção gera poluição com custo externo \(E(q) = q^2\). (a) Calcule a produção privada e a socialmente ótima. (b) Determine o imposto pigouviano ótimo. (c) Calcule a perda de peso morto sem regulação.
+!!! definition "Sinalização (Signaling)"
+    Mecanismo pelo qual a parte informada (agente) toma uma **ação custosa e observável** para transmitir credibilmente sua informação privada à parte desinformada (principal). Para que o sinal seja efetivo, ele deve ser **diferencialmente custoso** entre os tipos.
 
-    **Resolução.**
+### 19.5.1 Educação como sinal (Spence, 1973)
 
-    **(a) Produção privada e ótimo social.**
+Michael Spence propôs que a educação pode funcionar como sinal de produtividade, mesmo que não aumente diretamente as habilidades do trabalhador. A ideia central é que adquirir educação é **menos custoso** para trabalhadores de alta produtividade.
 
-    *Privada:* \(P = C'(q) \implies 100 = 10 + 2q \implies q^{priv} = 45\).
+Considere dois tipos de trabalhadores:
 
-    *Social:* \(P = C'(q) + E'(q) \implies 100 = 10 + 2q + 2q = 10 + 4q \implies q^{soc} = 22{,}5\).
+- **Alta produtividade** (\(\theta_H\)): produção \(\theta_H\), custo de educação \(c_H(s) = s / \theta_H\)
+- **Baixa produtividade** (\(\theta_L\)): produção \(\theta_L\), custo de educação \(c_L(s) = s / \theta_L\)
 
-    A firma produz o dobro do ótimo social.
+com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\): a educação custa menos ao trabalhador mais produtivo (hipótese de **single-crossing**).
 
-    **(b) Imposto pigouviano.**
+<figure>
+  <iframe src="../graficos/cap19/sinalizacao.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.3</strong> — Sinalização por educação (Spence, 1973). Visualize as curvas de custo de educação para ambos os tipos, o salário de equilíbrio e a condição de single-crossing. A região azul indica o intervalo de níveis de educação que sustentam um equilíbrio separador.</figcaption>
+</figure>
 
-    \[
-    t^* = E'(q^{soc}) = 2 \times 22{,}5 = 45
-    \]
+### 19.5.2 Equilíbrio separador vs. equilíbrio agregador
 
-    Verificação: com o imposto, \(P = C'(q) + t^* \implies 100 = 10 + 2q + 45 \implies 2q = 45 \implies q = 22{,}5 = q^{soc}\). ✓
+!!! definition "Equilíbrio Separador e Agregador"
+    - **Equilíbrio separador**: os diferentes tipos escolhem sinais distintos, permitindo que a parte desinformada identifique cada tipo. Cada tipo recebe um salário igual à sua produtividade.
+    - **Equilíbrio agregador (pooling)**: todos os tipos escolhem o mesmo nível de sinal, e a parte desinformada não consegue distingui-los. O salário ofertado é a produtividade média.
 
-    **(c) Perda de peso morto.**
+No **equilíbrio separador**, o tipo \(H\) escolhe nível de educação \(s^*\) e o tipo \(L\) escolhe \(s = 0\). O nível \(s^*\) deve satisfazer simultaneamente:
 
-    A DWL é o triângulo entre CMg social e preço, de \(q^{soc}\) a \(q^{priv}\):
+\[
+\theta_H - \frac{s^*}{\theta_H} \geq \theta_L \quad \text{(tipo H prefere sinalizar)}
+\]
 
-    \[
-    DWL = \int_{22,5}^{45} \left[(10 + 4q) - 100\right] dq = \int_{22,5}^{45} (4q - 90) \, dq
-    \]
+\[
+\theta_L \geq \theta_H - \frac{s^*}{\theta_L} \quad \text{(tipo L prefere não sinalizar)}
+\]
 
-    \[
-    = \left[2q^2 - 90q\right]_{22,5}^{45} = (4.050 - 4.050) - (1.012{,}5 - 2.025) = 0 - (-1.012{,}5) = 1.012{,}5
-    \]
+Resolvendo:
 
-    A perda de peso morto é R$ 1.012,50 — o custo social da ausência de regulação.
+\[
+\theta_L(\theta_H - \theta_L) \leq s^* \leq \theta_H(\theta_H - \theta_L)
+\]
 
-??? example "Exercício Resolvido 2 — Provisão eficiente de bem público e preços de Lindahl"
-    **Enunciado.** Dois consumidores têm utilidade \(U_1 = 3\ln G + x_1\) e \(U_2 = 2\ln G + x_2\), onde \(G\) é o bem público e \(x_i\) o bem privado. O custo marginal do bem público é \(CMg = 1\). (a) Determine o nível eficiente de \(G\). (b) Calcule os preços de Lindahl. (c) Compare com a provisão voluntária (Nash).
+O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separating) ocorre em \(s^* = \theta_L(\theta_H - \theta_L)\).
 
-    **Resolução.**
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Um diploma pode funcionar como um "selo de qualidade" do trabalhador, mesmo que a faculdade em si não ensine nada diretamente útil para o cargo.
 
-    **(a) Nível eficiente (condição de Samuelson).**
+    **Pense assim:** No Brasil, muitas empresas exigem diploma superior para vagas que não precisam de conhecimento acadêmico. Por que? Porque concluir uma graduação sinaliza disciplina, persistência e capacidade de aprender — qualidades que o empregador não consegue medir numa entrevista. Quem tem alta produtividade acha a faculdade mais fácil, e por isso o sinal é crível.
 
-    \(TMS_1 = \frac{\partial U_1/\partial G}{\partial U_1/\partial x_1} = \frac{3/G}{1} = \frac{3}{G}\)
+    **Por que isso importa:** O modelo de Spence levanta uma provocação importante para a política educacional: parte do retorno à educação pode ser sinalização pura, não ganho de produtividade real — o que muda completamente a análise de custo-benefício de expandir o ensino superior.
 
-    \(TMS_2 = \frac{2}{G}\)
+!!! note "Eficiência da Sinalização"
+    No modelo de Spence, a sinalização envolve um **custo social** real: recursos são gastos em educação apenas para sinalizar tipo, sem ganho de produtividade. O equilíbrio separador pode ser Pareto-inferior ao equilíbrio agregador se a perda de bem-estar do sinal superar o ganho informacional. Esse resultado ilustra que a revelação de informação nem sempre é socialmente desejável.
 
-    Condição de Samuelson: \(\sum TMS_i = CMg\):
+---
 
-    \[
-    \frac{3}{G} + \frac{2}{G} = 1 \implies \frac{5}{G} = 1 \implies G^* = 5
-    \]
+<figure>
+  <iframe src="../graficos/cap19/seguros-rs.html" width="100%" height="660" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 19.4</strong> — Modelo de seguros de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326). No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.</figcaption>
+</figure>
 
-    **(b) Preços de Lindahl.**
+## 19.6 Screening (Triagem pelo Principal)
 
-    \[
-    \tau_1 = TMS_1(G^*) = \frac{3}{5} = 0{,}6, \quad \tau_2 = TMS_2(G^*) = \frac{2}{5} = 0{,}4
-    \]
+Enquanto a sinalização é iniciativa da parte informada, a **triagem** (screening) é desenhada pela parte desinformada para extrair informação privada da parte informada.
 
-    Verificação: \(\tau_1 + \tau_2 = 0{,}6 + 0{,}4 = 1 = CMg\). ✓
+!!! definition "Triagem (Screening)"
+    Mecanismo pelo qual a parte desinformada (principal) oferece um **menu de opções** desenhado de forma que cada tipo de agente revele voluntariamente sua informação privada ao escolher a opção mais adequada ao seu tipo.
 
-    O consumidor 1 paga 60% do custo e o consumidor 2 paga 40%, proporcionalmente às suas valorações.
+Exemplos práticos:
 
-    **(c) Provisão voluntária (equilíbrio de Nash).**
+| Contexto | Mecanismo de Triagem |
+|----------|---------------------|
+| Seguros | Menu de apólices com diferentes combinações de prêmio/franquia |
+| Mercado de trabalho | Oferta de contratos com diferentes combinações salário fixo/bônus |
+| Companhias aéreas | Classes tarifárias com diferentes restrições (antecedência, reembolso) |
+| Telecomunicações | Planos com diferentes volumes de dados e preços por unidade |
+| Educação | Programas com diferentes graus de seletividade e rigor |
 
-    Cada consumidor \(i\) maximiza \(U_i = a_i \ln(g_i + g_{-i}) + (W_i - g_i)\), onde \(g_i\) é sua contribuição. CPO: \(a_i/(g_i + g_{-i}) = 1\).
+A diferença fundamental entre sinalização e triagem é quem toma a iniciativa:
 
-    No equilíbrio simétrico interior (se ambos contribuem), cada um resolve tomando a contribuição do outro como dada. Supondo que apenas o consumidor com maior valoração contribui (solução de canto típica): consumidor 1 escolhe \(g_1\) tal que \(3/(g_1 + 0) = 1 \implies g_1 = 3\), consumidor 2 free-rides pois \(2/(3+0) = 2/3 < 1\).
+- **Sinalização**: a parte informada age primeiro, escolhendo um sinal custoso.
+- **Triagem**: a parte desinformada age primeiro, desenhando um menu de contratos.
 
-    Resultado: \(G^{Nash} = 3 < 5 = G^*\). O bem público é subprovido em 40%. O consumidor 2 pega carona na contribuição do consumidor 1 — o problema clássico do free rider.
+Em equilíbrio, os dois mecanismos podem levar a alocações equivalentes (como nos modelos de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)), mas o timing e a distribuição de excedentes podem diferir.
 
-??? example "Exercício Resolvido 3 — Cap-and-trade e custo-efetividade"
-    **Enunciado.** Duas fábricas emitem 50 toneladas cada de \(SO_2\) (total: 100 ton). O regulador quer reduzir as emissões totais para 60 ton (abatimento de 40 ton). Os custos marginais de abatimento são \(CMgA_1 = 4a_1\) e \(CMgA_2 = 2a_2\), onde \(a_i\) é o abatimento da firma \(i\). (a) Encontre a alocação custo-efetiva. (b) Compare com abatimento uniforme. (c) Determine o preço de equilíbrio da permissão em um sistema cap-and-trade.
+---
 
-    **Resolução.**
+## 19.7 Leilões
 
-    **(a) Alocação custo-efetiva.**
+Leilões são mecanismos de venda particularmente interessantes sob informação assimétrica, pois cada licitante possui informação privada sobre sua valoração do objeto.
 
-    Custo-efetividade requer igualar os custos marginais de abatimento: \(CMgA_1 = CMgA_2\):
+!!! definition "Leilão"
+    Mecanismo de mercado para alocação de bens em que os participantes submetem lances, e o bem é alocado (e o preço determinado) de acordo com regras predefinidas. O desenho de leilões é uma aplicação central da teoria de mecanismos.
 
-    \[
-    4a_1 = 2a_2, \quad a_1 + a_2 = 40
-    \]
+### Tipos de leilões
 
-    Da primeira: \(a_2 = 2a_1\). Substituindo: \(a_1 + 2a_1 = 40 \implies a_1 = 40/3 \approx 13{,}3\), \(a_2 = 80/3 \approx 26{,}7\).
+| Tipo de Leilão | Descrição | Lance | Preço pago |
+|----------------|-----------|-------|------------|
+| **Inglês** (ascendente) | Preço sobe até restar um único licitante | Aberto, sequencial | Segundo maior valor |
+| **Holandês** (descendente) | Preço cai até alguém aceitar | Fechado (estrategicamente) | Valor do lance aceito |
+| **Primeiro preço** (selado) | Lances simultâneos em envelope fechado | Fechado, simultâneo | Maior lance |
+| **Segundo preço** (Vickrey) | Lances simultâneos; vencedor paga o segundo maior lance | Fechado, simultâneo | Segundo maior lance |
 
-    A firma com menor custo marginal (firma 2) abate mais.
+### O leilão de segundo preço (Vickrey)
 
-    Custo total eficiente: \(\int_0^{40/3} 4a \, da + \int_0^{80/3} 2a \, da = 2(40/3)^2 + (80/3)^2 = 3.200/9 + 6.400/9 = 9.600/9 \approx 1.066{,}7\).
+No leilão de segundo preço, cada licitante tem uma **estratégia dominante**: ofertar sua verdadeira valoração.
 
-    **(b) Abatimento uniforme.**
+!!! abstract "Proposição: Estratégia Dominante no Leilão de Vickrey"
+    No leilão de segundo preço com valores privados independentes, é estratégia fracamente dominante para cada licitante ofertar \(b_i = v_i\) (lance igual à valoração verdadeira).
 
-    Cada firma abate 20 ton. Custo: \(\int_0^{20} 4a \, da + \int_0^{20} 2a \, da = 2(400) + 400 = 800 + 400 = 1.200\).
+**Intuição da prova**: Se \(b_i > v_i\), o licitante pode vencer e pagar mais que sua valoração; se \(b_i < v_i\), pode perder uma oportunidade lucrativa. Em ambos os casos, desviar de \(b_i = v_i\) não melhora o payoff esperado.
 
-    **(c) Preço da permissão.**
+### O Teorema da Equivalência de Receita
 
-    No equilíbrio cap-and-trade, o preço iguala os CMgA: \(p_E = 4a_1 = 4 \times 40/3 = 160/3 \approx 53{,}3\) por tonelada.
+!!! abstract "Teorema da Equivalência de Receita (Revenue Equivalence Theorem)"
+    Sob as seguintes condições: (i) valores privados independentes; (ii) licitantes neutros ao risco; (iii) distribuição de valorações simétrica e contínua; (iv) o licitante com valoração mínima obtém excedente zero — **todos os quatro formatos de leilão geram a mesma receita esperada para o vendedor**.
 
-    A economia do cap-and-trade vs. regulação uniforme: \(1.200 - 1.066{,}7 = 133{,}3\) (redução de 11% no custo). A firma 1 compraria permissões da firma 2 (que abate mais do que sua cota e vende o excedente), gerando ganhos de troca — exatamente como a teoria prevê.
+Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, sob as condições do teorema, a escolha do formato de leilão é irrelevante para a receita. As diferenças surgem quando as condições são violadas — por exemplo, com aversão ao risco dos licitantes (favorece o primeiro preço) ou com valores correlacionados (favorece o inglês).
+
+---
+
+## Box Brasil: Leilões de Concessão no Brasil
+
+!!! example "Do pré-sal ao 5G: informação assimétrica e desenho de leilões"
+    O Brasil tem sido um laboratório de formatos de leilão em setores estratégicos. Dois casos ilustram como o desenho do mecanismo afeta os resultados em presença de informação assimétrica.
+
+    **Leilões do pré-sal ([ANP](https://www.gov.br/anp)):**
+
+    Os blocos exploratórios do pré-sal são leiloados pela Agência Nacional do Petróleo (ANP) no formato de **partilha da produção**: o consórcio vencedor é aquele que oferece a maior parcela do "óleo-excedente" ao governo. Esse formato enfrenta o problema da **maldição do vencedor** (*winner's curse*): como o valor do bloco é parcialmente comum (depende das reservas geológicas), o licitante que vence tende a ser aquele que **superestimou** o valor do recurso. Licitantes sofisticados, como a Petrobras, ajustam seus lances para baixo — exatamente como prevê a teoria (seção 19.7). Em 2025, o 3.º Ciclo de Oferta Permanente de Partilha arrecadou R$ 452 milhões em bônus de assinatura, com ágio médio de 91%.
+
+    **Leilão do espectro 5G ([Anatel](https://www.gov.br/anatel), 2021):**
+
+    O leilão das faixas de frequência para a tecnologia 5G utilizou formato de **lance selado de primeiro preço** com preço de reserva e arrecadou **R$ 4,8 bilhões**. Cada operadora possuía informação privada sobre o valor estratégico de cada faixa para sua rede. O Teorema da Equivalência de Receita sugere que, sob condições ideais, o formato não deveria importar — mas as assimetrias de informação entre incumbentes (Vivo, Claro, TIM) e entrantes justificaram a escolha de regras específicas, como lotes exclusivos para novos competidores.
+
+    **Conexão com a teoria:**
+
+    Esses dois casos ilustram como o formato do leilão deve ser adaptado ao tipo de informação assimétrica. Quando o valor é **comum** (pré-sal), o leilão inglês tende a gerar maior receita (reduz a maldição do vencedor). Quando o valor é **privado** (espectro), formatos de lance selado podem ser mais adequados. A teoria de Vickrey e Myerson (seção 19.7) fornece as ferramentas para esse desenho institucional.
+
+    *Fonte: ANP, Boletim de Rodadas de Licitações, 2025; Anatel, Resultado do Leilão 5G, 2021.*
+
+---
+
+## 19.8 Taxonomia dos Problemas de Informação Assimétrica
+
+A tabela a seguir resume os principais tipos de problemas de informação assimétrica, suas características e os mecanismos de resposta.
+
+| Tipo de Assimetria | Timing | O que é oculto | Exemplos | Soluções de Mercado |
+|---|---|---|---|---|
+| **Risco moral** | Pós-contratual | Ação do agente | Seguro e prevenção; empregador e esforço do empregado; credor e comportamento do devedor | Contratos de incentivo, monitoramento, franquias, bônus por desempenho |
+| **Seleção adversa** | Pré-contratual | Tipo/característica do agente | Mercado de carros usados; seguros (risco do segurado); crédito (qualidade do tomador) | Menu de contratos, triagem, sinalização, garantias, certificação |
+| **Sinalização** | Pré-contratual | Tipo do agente (revelado pela ação) | Educação e produtividade; garantias e qualidade; dividendos e lucratividade | Ações custosas e observáveis com custo diferencial entre tipos |
+| **Triagem (screening)** | Pré-contratual | Tipo do agente (revelado pela escolha) | Classes tarifárias; menus de planos de saúde; versões de software | Menus autosseletivos, discriminação de preços de 2.º grau |
+| **Leilões** | Pré-contratual | Valoração dos licitantes | Leilões de arte, espectro, títulos públicos, concessões | Formatos de leilão (Vickrey, inglês, etc.), preço de reserva |
+
+---
+
+## Box Brasil: Crédito Consignado e Seleção Adversa no Brasil
+
+!!! example "Box Brasil: Crédito Consignado e Seleção Adversa"
+    O **crédito consignado** — modalidade em que as parcelas são descontadas diretamente da folha de pagamento ou do benefício previdenciário — é um exemplo notável de como um desenho contratual pode reduzir drasticamente os problemas de informação assimétrica no mercado de crédito.
+
+    **O problema da seleção adversa no crédito**: No mercado de crédito pessoal convencional, o banco não observa perfeitamente o risco de inadimplência do tomador. Como resultado, cobra taxas de juros que refletem o risco médio da carteira. Tomadores de baixo risco (bons pagadores) consideram a taxa elevada e deixam de tomar empréstimos, enquanto tomadores de alto risco (potenciais inadimplentes) aceitam as condições — um mecanismo clássico de seleção adversa à la Akerlof.
+
+    **O mecanismo do consignado**: A vinculação do pagamento à folha de pagamento atua sobre dois canais:
+
+    1. **Redução do risco moral**: o tomador não pode escolher deixar de pagar, pois o desconto é automático. Isso elimina grande parte do problema de ação oculta pós-contratual.
+    2. **Redução da seleção adversa**: como o risco de crédito é drasticamente reduzido pelo mecanismo de desconto em folha, a diferença entre bons e maus pagadores torna-se muito menos relevante. O banco consegue efetivamente "observar" a capacidade de pagamento.
+
+    **Evidência empírica**: Dados do Banco Central do Brasil documentam diferenças substanciais de taxas de juros entre as modalidades. Em 2025, a taxa do consignado para servidores públicos situava-se entre 1,3% e 1,8% ao mês (cerca de 17–24% a.a.), enquanto a taxa do crédito pessoal não consignado superava 80% ao ano — uma diferença que reflete em grande parte a redução da assimetria de informação.
+
+    **Expansão e impacto**: Regulamentado pela Lei n.º 10.820/2003, o crédito consignado expandiu-se rapidamente, atingindo saldo superior a R$ 600 bilhões. A modalidade foi estendida a aposentados e pensionistas do [INSS](https://www.gov.br/inss), trabalhadores do setor privado com carteira assinada e beneficiários do Bolsa Família e BPC (a partir de 2023).
+
+    **Limitações**: O consignado não elimina todos os problemas. A margem consignável (até 35% da renda para empréstimos + 5% para cartão consignado) pode levar ao superendividamento. Além disso, práticas predatórias de intermediários e a concessão a públicos vulneráveis (como idosos com baixa literacia financeira) levantam questões regulatórias importantes.
+
+    Este caso ilustra como o desenho institucional e contratual pode mitigar problemas de informação assimétrica, com efeitos quantitativamente expressivos sobre preços e volumes de mercado.
+
+    *Fonte: [BCB](https://www.bcb.gov.br), Relatório de Economia Bancária, 2024; Lei n.º 10.820/2003.*
 
 ---
 
 ## Exercícios
 
-**Exercício 19.1.** Uma fábrica de celulose produz \(q\) toneladas com custo total \(C(q) = 10q + q^2\) e vende ao preço \(P = 110\). A produção gera poluição com custo externo \(E(q) = 2q^2\).
+**Exercício 19.1.** Considere um mercado de carros usados no modelo de Akerlof. Há dois tipos de carros: bons (valor de \(R\$ 30.000\) para compradores, \(R\$ 25.000\) para vendedores) e ruins (valor de \(R\$ 15.000\) para compradores, \(R\$ 10.000\) para vendedores). Metade dos carros são bons.
 
-(a) Determine a quantidade produzida pela firma na ausência de regulação.
-(b) Determine a quantidade socialmente ótima.
-(c) Calcule o imposto pigouviano ótimo \(t^*\) e verifique que ele induz a firma a produzir a quantidade eficiente.
-(d) Calcule a perda de peso morto associada à ausência de regulação.
+(a) Calcule o preço máximo que um comprador desinformado estaria disposto a pagar.
+(b) Quais tipos de carros serão transacionados?
+(c) Qual seria o resultado sob informação simétrica?
+(d) Proponha um mecanismo institucional para atenuar a seleção adversa nesse mercado.
 
-**Exercício 19.2.** Considere três indivíduos (\(A\), \(B\), \(C\)) com as seguintes valorações marginais por um bem público \(G\) (medido em unidades):
+**Exercício 19.2.** Um proprietário contrata um gerente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O lucro é \(\pi_H = 200\) com probabilidade \(p(e)\) e \(\pi_L = 50\) caso contrário, onde \(p(1) = 0{,}8\) e \(p(0) = 0{,}3\). A utilidade de reserva é \(\bar{U} = 5\).
 
-| \(G\) | \(BMg_A\) | \(BMg_B\) | \(BMg_C\) | \(CMg\) |
-|-------|-----------|-----------|-----------|---------|
-| 1     | 40        | 30        | 20        | 60      |
-| 2     | 35        | 25        | 15        | 60      |
-| 3     | 25        | 20        | 10        | 60      |
-| 4     | 15        | 10        | 5         | 60      |
-| 5     | 5         | 5         | 2         | 60      |
+(a) Escreva as restrições de participação e de incentivo para induzir \(e = 1\).
+(b) Resolva para os pagamentos ótimos \(w_H^*\) e \(w_L^*\).
+(c) Compare o custo esperado do contrato com o first-best (em que o esforço é observável).
 
-(a) Determine o nível eficiente de provisão do bem público.
-(b) Calcule os preços de Lindahl para cada indivíduo no nível eficiente.
-(c) Explique por que a provisão voluntária (contribuição individual) resultaria em \(G < G^*\).
-(d) Verifique se os preços de Lindahl são equilibrados orçamentariamente.
+**Exercício 19.3.** No modelo de Spence, há dois tipos de trabalhadores. O tipo H tem produtividade \(\theta_H = 100\) e custo de educação \(c_H(s) = s/2\). O tipo L tem produtividade \(\theta_L = 50\) e custo de educação \(c_L(s) = s\).
 
-**Exercício 19.3.** Duas firmas emitem poluentes. A firma 1 tem custo de abatimento \(CA_1(a_1) = 2a_1^2\) e a firma 2, \(CA_2(a_2) = a_2^2\), onde \(a_i\) é o abatimento em toneladas. Cada firma emite 100 toneladas sem regulação. O regulador deseja reduzir as emissões totais em 60 toneladas.
+(a) Determine o intervalo de níveis de educação \(s^*\) que sustentam um equilíbrio separador.
+(b) Qual é o equilíbrio separador de menor custo?
+(c) Existe um equilíbrio agregador estável neste modelo? Justifique.
+(d) Discuta se a sinalização por educação é socialmente eficiente neste contexto.
 
-(a) Qual é a alocação custo-efetiva de abatimento entre as duas firmas?
-(b) Qual seria o custo total se o regulador impusesse abatimento uniforme (30 toneladas cada)?
-(c) Compare com o custo da solução custo-efetiva e calcule a economia.
-(d) Se for utilizado um mercado de permissões (cap-and-trade), qual será o preço de equilíbrio da permissão?
+**Exercício 19.4.** Em um leilão de segundo preço com três licitantes cujas valorações são i.i.d. com distribuição uniforme em \([0, 100]\):
 
-**Exercício 19.4.** Uma comunidade com 100 moradores deve decidir se constrói uma praça pública (bem público discreto) ao custo de \(R\$ 50.000\). Cada morador \(i\) tem valoração \(v_i\) pela praça, distribuída uniformemente entre \(R\$ 200\) e \(R\$ 800\).
+(a) Qual é a estratégia ótima de cada licitante?
+(b) Calcule a receita esperada do vendedor.
+(c) Usando o Teorema da Equivalência de Receita, qual seria a receita esperada em um leilão de primeiro preço?
+(d) No leilão de primeiro preço, qual é a estratégia de equilíbrio simétrico de cada licitante?
 
-(a) A praça deve ser construída? (Compare a soma das valorações esperadas com o custo.)
-(b) Se a construção for financiada por contribuição voluntária uniforme de \(R\$ 500\) por morador, quantos moradores estariam dispostos a contribuir?
-(c) Explique o problema do carona nesta situação.
-(d) Descreva como um mecanismo de imposto pivotal (Clarke) funcionaria neste contexto.
+**Exercício 19.5.** Uma seguradora opera num mercado com dois tipos de consumidores. O tipo A tem probabilidade de sinistro \(p_A = 0{,}1\) e o tipo B tem \(p_B = 0{,}4\). Ambos têm riqueza \(W = 100\) e perda potencial \(d = 80\). A proporção de tipo A é \(60\%\). A utilidade é \(U(W) = \ln(W)\).
 
-**Exercício 19.5.** Considere uma economia com dois bens — um privado (\(x\)) e um público (\(G\)) — e dois consumidores com utilidades:
-
-\[
-U_1 = \ln(x_1) + 2\ln(G), \quad U_2 = \ln(x_2) + \ln(G)
-\]
-
-O preço do bem privado é 1 e o custo marginal do bem público é \(c\). Cada consumidor tem renda \(W\).
-
-(a) Derive a condição de Samuelson para a provisão eficiente de \(G\).
-(b) Determine o nível eficiente \(G^*\) em função de \(W\) e \(c\).
-(c) Se cada consumidor contribui voluntariamente (equilíbrio de Nash em contribuições), determine o nível de \(G\) de equilíbrio.
-(d) Mostre que \(G^{Nash} < G^*\) e interprete economicamente.
+(a) Calcule os contratos de seguro completo atuarialmente justos para cada tipo.
+(b) Mostre que um contrato agregador (pooling) com seguro completo à taxa média não é um equilíbrio.
+(c) No equilíbrio separador, o tipo B recebe seguro completo. Escreva a condição de incentivo-compatibilidade que determina a cobertura máxima para o tipo A.
+(d) Discuta qualitativamente como a proporção de tipos afeta a existência do equilíbrio separador.
 
 ---
 
 ## Vem, ANPEC!
 
-As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
+??? question "ANPEC 2017 — Questão 11"
+    Com relação aos problemas de assimetria de informação, indique quais entre as afirmativas abaixo estão corretas:
 
-??? question "ANPEC 2017 — Questão 10"
-    Com relação à Teoria das Externalidades, é correto afirmar:
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-    **(0)** Quando uma atividade produz externalidades positivas, o nível eficiente de produção é alcançado quando o benefício marginal social é igual ao custo marginal da atividade.
-
-    **(1)** Quando o governo possui informações limitadas sobre os custos e os benefícios resultantes da redução da emissão de um poluente, e quando a curva de custo marginal social for muito inclinada e a curva de custo marginal da redução é plana, a imposição de um limite legal à quantidade de poluente que pode ser emitido é preferível a uma taxa sobre a emissão.
-
-    **(2)** Se as empresas poluidoras possuem processos produtivos diferentes e diferentes custos de redução de emissões, taxas sobre a quantidade de poluente emitida podem ser preferíveis à imposição de um limite.
-
-    **(3)** Externalidades de difusão não geram falhas de mercado.
-
-    **(4)** Mesmo que não haja intervenção governamental para a reciclagem do lixo, alguma reciclagem poderá ocorrer se os preços dos materiais novos forem muito elevados em relação ao material reciclado.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Seleção adversa diz respeito a uma ação não observável. |
+    | 1    | Problemas morais dizem respeito a características não observáveis. |
+    | 2    | Quando empresas de seguros reúnem informações sobre demandantes de seguros, diz-se que elas estão fazendo screening. |
+    | 3    | Certificações de produtos são uma forma de reduzir o "problema dos limões" decorrente de seleção adversa. |
+    | 4    | Seguros com cobertura universal obrigatória podem ser uma forma de prevenir seleção adversa. |
 
     ??? success "Gabarito"
-        **Respostas: V-V-V-F-V**
+        **Respostas: 00111**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** Na presença de externalidade positiva, o benefício marginal social (= benefício privado + benefício externo) excede o benefício privado. A eficiência requer BMg social = CMg, o que corresponde a um nível de produção superior ao privado.
+        - **Item 0 — F:** Seleção adversa diz respeito a **características** (tipos) não observáveis, não a ações. Ações não observáveis configuram **risco moral**. A seleção adversa é pré-contratual (tipos ocultos); o risco moral é pós-contratual (ações ocultas).
+        - **Item 1 — F:** "Problemas morais" (risco moral / *moral hazard*) dizem respeito a **ações** não observáveis, não a características. O item inverte as definições: quem se refere a características não observáveis é a **seleção adversa**.
+        - **Item 2 — V:** Correto. *Screening* (triagem) é o mecanismo pelo qual a parte desinformada (seguradoras) coleta informações sobre a parte informada (segurados) para classificá-los por risco — exatamente como descrito na seção 19.6.
+        - **Item 3 — V:** Correto. Certificações de produtos (como laudos de vistoria, selos de qualidade, garantias de fábrica) reduzem a assimetria de informação entre vendedores e compradores, atenuando o problema dos limões de Akerlof.
+        - **Item 4 — V:** Correto. Se o seguro é **universal e obrigatório**, não há autosseleção: todos os tipos (alto e baixo risco) participam do pool. Isso elimina o mecanismo de seleção adversa, no qual os tipos de baixo risco saem do mercado. O SUS brasileiro é um exemplo de cobertura universal que evita a antisseleção.
 
-        - **Item 1 — V:** Este é o resultado de Weitzman (1974). Quando a curva de dano marginal (custo marginal social) é muito inclinada — isto é, pequenos erros na quantidade causam grandes variações no dano — é preferível fixar a quantidade (limite/cap) para evitar grandes desvios do ótimo. Quando o custo de abatimento é plano, erros na quantidade têm pouco efeito no custo, reforçando a preferência pelo instrumento de quantidade.
+??? question "ANPEC 2025 — Questão 04"
+    Com relação à teoria dos leilões, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
-        - **Item 2 — V:** Com custos de abatimento heterogêneos, uma taxa uniforme sobre emissões induz cada firma a abater até onde seu custo marginal de abatimento iguala a taxa, gerando alocação custo-efetiva automaticamente. Um limite uniforme (mesma quantidade para todas) ignora as diferenças de custo e é ineficiente.
+    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
 
-        - **Item 3 — F:** Externalidades de difusão (que afetam muitos agentes de forma dispersa, como poluição atmosférica) são externalidades tecnológicas reais e geram falhas de mercado. A afirmação confunde com externalidades *pecuniárias* (que operam via preços e não geram ineficiência).
-
-        - **Item 4 — V:** Mesmo sem regulação, se o preço de materiais virgens é alto o suficiente, o custo marginal de reciclar torna-se inferior ao custo de produzir com material novo, tornando a reciclagem privadamente lucrativa. A reciclagem ocorre por incentivo de mercado, sem necessidade de intervenção.
-
-??? question "ANPEC 2022 — Questão 08"
-    Com relação à Teoria dos Bens Públicos, indique quais das afirmações a seguir são verdadeiras:
-
-    **(0)** Recursos comuns são bens rivais, mas não excludentes.
-
-    **(1)** Bens de clube são não rivais, e excludentes.
-
-    **(2)** Como o bem público é não rival, para determinar o seu valor temos de somar os benefícios marginais de todas as pessoas que o consomem.
-
-    **(3)** Uma solução para o problema do carona em bens públicos é financiá-los por meio de tributos.
-
-    **(4)** Pode acontecer que um bem público que oferece enorme benefício total a um grupo acabe por não ser fornecido, se o tamanho do seu grupo potencial for grande a ponto de o benefício médio individual ser tão pequeno que não supere o problema do carona.
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | O leilão holandês e o leilão de Vickrey geram resultados Pareto-eficientes. |
+    | 1    | O leilão inglês com preço de reserva igual a zero não gera resultados eficientes de Pareto. |
+    | 2    | Os resultados do leilão de lance fechado são Pareto-eficientes, mesmo que as crenças de cada participante acerca das avaliações dos demais estejam incorretas. |
+    | 3    | Declarar o verdadeiro valor é a estratégia ótima de cada participante no leilão de Vickrey. |
+    | 4    | Em um leilão de valor comum, em que os participantes têm estimativas diferentes deste valor, a estratégia ótima é oferecer um lance menor do que o valor estimado, que deverá ser tão mais baixo quanto maior for o número de participantes. |
 
     ??? success "Gabarito"
-        **Respostas: V-V-V-V-V**
+        **Respostas: 10011**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** Recursos comuns (commons) são rivais no consumo (o peixe capturado por um pescador não está disponível para outro) mas não excludentes (é difícil impedir o acesso). Exemplos: cardumes, pastagens comunitárias, aquíferos.
-
-        - **Item 1 — V:** Bens de clube são não rivais (até o ponto de congestionamento) e excludentes (é possível cobrar pelo acesso). Exemplos: TV por assinatura, rodovias com pedágio, academias.
-
-        - **Item 2 — V:** Como o bem público é não rival, todos consomem a mesma quantidade. O valor social de uma unidade adicional é a soma dos benefícios marginais de todos os consumidores — é a agregação vertical (soma das curvas de demanda), diferente da agregação horizontal dos bens privados.
-
-        - **Item 3 — V:** O financiamento por tributos resolve o problema do carona ao tornar a contribuição compulsória. Cada cidadão paga via impostos, independentemente de sua disposição a pagar voluntariamente, permitindo a provisão do bem público.
-
-        - **Item 4 — V:** Este é o paradoxo do grupo grande (Olson, 1965). Mesmo que o benefício total seja enorme, se o grupo é muito grande, o benefício marginal individual de contribuir é desprezível, e cada membro prefere pegar carona. O bem não é provido apesar de ser socialmente desejável.
-
-??? question "ANPEC 2020 — Questão 12"
-    Com relação à economia do setor público, julgue os itens abaixo:
-
-    **(0)** Considere dois agentes, 1 e 2, em uma economia com um bem público e um bem privado. O agente 1 possui utilidade \(U_1(G, x_1) = 4\ln(G) + x_1\) sobre a quantidade \(G\) do bem público e a quantidade \(x_1\) do bem privado. Para o agente 2, \(U_2(G, x_2) = 6\ln(G) + x_2\). Suas rendas são, respectivamente, \(w_1 = 4\) e \(w_2 = 6\). Seja \(g_i\) a contribuição do agente \(i = 1, 2\) para a produção do bem público e suponha que a função de produção desse bem é \(G = g_1 + g_2\). Se \(\tau_1^*\) e \(\tau_2^*\) denotam as taxas de Lindahl do agente 1 e do agente 2, respectivamente, então \(\tau_1^* = 2/5\) e \(\tau_2^* = 3/5\).
-
-    **(1)** A firma A vende seu produto em um mercado competitivo, no qual a curva de demanda é dada por \(p(x) = 120 - x\). A função de custo privado é \(c(x) = 40x\). Entretanto, a produção de \(x\) unidades do bem gera uma externalidade negativa para a firma B de acordo com a função \(e(x) = x^2\). Então o imposto pigouviano que induz a produção da quantidade socialmente eficiente é de \$ 40.
-
-    **(2)** Suponha que os direitos de propriedade estão bem definidos e que os custos de transação são nulos. Nessas condições, segundo o Teorema de Coase, a negociação privada entre duas firmas envolvidas em uma situação de externalidades levará à alocação socialmente eficiente, desde que os direitos de propriedade estejam alocados em favor do agente que sofre a externalidade.
-
-    **(3)** Suponha que o sindicato dos caminhoneiros de um país dispende recursos para fazer lobby no parlamento e assim implementar escolhas políticas de modo a capturar rendas mediante o subsídio ao preço do diesel. Então o sindicato exerce rent-seeking.
-
-    **(4)** A regra de votação majoritária pode apresentar o paradoxo do voto, mas se as preferências são de pico-único, então a regra de votação majoritária aplicada a questões públicas mensuradas monetariamente (unidimensionais) resultará em políticas preferidas pelo eleitor mediano.
-
-    ??? success "Gabarito"
-        **Respostas: V-F-F-V-V**
-
-        **Justificativa por item:**
-
-        - **Item 0 — V:** As TMS são: \(TMS_1 = 4/G\), \(TMS_2 = 6/G\). Condição de Samuelson: \(4/G + 6/G = 1 \implies G^* = 10\). Preços de Lindahl: \(\tau_1^* = TMS_1(10) = 4/10 = 2/5\) e \(\tau_2^* = 6/10 = 3/5\). Verificação: \(2/5 + 3/5 = 1 = CMg\). ✓
-
-        - **Item 1 — F:** No mercado competitivo, \(p = 120 - x\) é a demanda. Custo social = custo privado + externalidade: \(CS = 40x + x^2\). CMg social = \(40 + 2x\). No ótimo social: \(120 - x = 40 + 2x \implies 80 = 3x \implies x^* = 80/3\). O imposto pigouviano é \(t^* = e'(x^*) = 2 \times 80/3 = 160/3 \approx 53{,}3\), não \$40.
-
-        - **Item 2 — F:** O Teorema de Coase afirma que a negociação leva ao ótimo **independentemente** de qual parte detém o direito de propriedade (desde que os custos de transação sejam nulos e os direitos estejam bem definidos). A condição de que os direitos estejam "em favor do agente que sofre" é uma restrição indevida — o resultado eficiente é obtido em ambos os casos.
-
-        - **Item 3 — V:** Rent-seeking é a atividade de dispender recursos para capturar rendas por meio do processo político. O sindicato gasta recursos (tempo, dinheiro, esforço de lobby) para obter subsídios ao diesel — um caso clássico de rent-seeking.
-
-        - **Item 4 — V:** Com preferências de pico-único (single-peaked) e escolha unidimensional, a votação por maioria não gera ciclos (paradoxo de Condorcet) e seleciona a alternativa preferida pelo eleitor mediano — resultado do Teorema do Eleitor Mediano (Black, 1948).
+        - **Item 0 — V:** Tanto o leilão holandês (estrategicamente equivalente ao primeiro preço selado) quanto o leilão de Vickrey (segundo preço) alocam o bem ao licitante com maior valoração em equilíbrio, gerando resultados Pareto-eficientes no modelo padrão com valores privados independentes.
+        - **Item 1 — F:** O leilão inglês (ascendente) com preço de reserva zero **gera** resultados eficientes. O licitante com maior valoração vence e paga um preço igual à segunda maior valoração. A afirmação de que não é eficiente é falsa.
+        - **Item 2 — F:** No leilão de **primeiro preço** selado, a estratégia ótima de *bid shading* (reduzir o lance abaixo da valoração) depende das crenças sobre as valorações dos demais. Se essas crenças estiverem incorretas, os lances serão subótimos e o licitante de maior valoração pode não vencer — comprometendo a eficiência. Diferentemente do Vickrey, o lance fechado de primeiro preço **não** é robusto a crenças incorretas.
+        - **Item 3 — V:** Correto. No leilão de Vickrey, declarar a verdadeira valoração (\(b_i = v_i\)) é estratégia fracamente dominante, independentemente das ações dos demais licitantes — conforme demonstrado na seção 19.7.
+        - **Item 4 — V:** Correto. Em leilões de **valor comum**, o vencedor tende a ser quem mais superestimou o valor — a chamada **maldição do vencedor** (*winner's curse*). Licitantes racionais ajustam seus lances para baixo. Quanto maior o número de participantes, mais extrema é a estimativa do vencedor e maior deve ser o desconto — exatamente a correção para a maldição do vencedor.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1146/annurev-resource-100913-012610)"
-    **Pergunta central:** Regulações ambientais do tipo command-and-control são eficazes para reduzir a poluição e melhorar a saúde em países em desenvolvimento?
+??? abstract "[Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78.](https://doi.org/10.1086/317671)"
+    **Pergunta central:** A assimetria de informação é realmente importante nos mercados de seguros, ou é apenas uma elegância teórica? Se seleção adversa ou risco moral estiverem presentes, devemos observar uma **correlação positiva** entre a cobertura do seguro escolhida e a ocorrência de sinistros: pessoas que escolhem mais cobertura deveriam ter mais acidentes (seja porque são mais arriscadas, seja porque se protegem menos). Mas essa correlação existe nos dados?
 
-    **Método:** Os autores avaliam o impacto de duas grandes regulações ambientais na Índia: o Programa Nacional de Ação sobre Poluição do Ar (1987) e a regulação de poluição hídrica de distritos designados como "criticamente poluídos". Utilizam dados de monitoramento de qualidade do ar e da água em centenas de estações ao longo de duas décadas, combinados com dados de mortalidade infantil, em uma estratégia de diferenças-em-diferenças.
+    **Método:** [Chiappori e Salanié](https://doi.org/10.1086/317671) desenvolveram um teste empírico elegante e geral. Usando dados detalhados de seguros de automóveis na França (jovens motoristas iniciantes), compararam a cobertura escolhida com a frequência de acidentes nos anos subsequentes, controlando por todas as variáveis observáveis que as seguradoras usam para precificar (idade, sexo, localização, tipo de veículo). Se, após esses controles, a correlação cobertura-sinistro for positiva, há evidência de informação assimétrica residual.
 
-    **Resultado principal:** As regulações de poluição do ar reduziram os níveis de partículas suspensas em cerca de 20% nas áreas reguladas, com queda significativa da mortalidade infantil. Porém, as regulações de poluição da água tiveram efeito estatisticamente nulo — a qualidade da água continuou se deteriorando mesmo nas áreas reguladas. A diferença deve-se à maior dificuldade de monitoramento e enforcement em poluição hídrica difusa.
+    **Resultado principal:** Surpreendentemente, os autores **não encontraram** correlação positiva significativa entre cobertura e sinistros para a amostra de jovens motoristas franceses. Isso sugere que as seguradoras já classificam os riscos de forma eficiente usando variáveis observáveis, e que a informação assimétrica residual pode ser pequena — pelo menos nesse mercado específico. O resultado gerou um amplo debate e motivou dezenas de estudos subsequentes em diferentes mercados.
 
-    **Relevância para o capítulo:** O artigo ilustra empiricamente a eficácia diferencial da regulação direta (command-and-control) discutida na Seção 19.4.3. A regulação funciona quando o monitoramento é viável (poluição do ar em fontes pontuais), mas falha quando os custos de enforcement são altos (poluição hídrica difusa) — exatamente o que a teoria prevê. Para o Brasil, a lição é direta: a eficácia do Código Florestal e da fiscalização do IBAMA depende criticamente da capacidade de monitoramento (DETER/INPE) e de enforcement.
+    **Por que isso importa:** O teste de [Chiappori-Salanié](https://doi.org/10.1086/317671) tornou-se o padrão metodológico para avaliar empiricamente a presença de informação assimétrica. No Brasil, onde o mercado de seguros de automóveis é expressivo (prêmios de R$ 45 bilhões em 2024, segundo a Susep) e a regulação é intensa, a aplicação desse teste ajudaria a avaliar se as diferenças de preço entre perfis refletem informação assimétrica ou apenas classificação de risco eficiente.
 
-??? abstract "[Assunção, J.; Gandour, C.; Rocha, R. (2023). DETER-ing Deforestation in the Amazon: Environmental Monitoring and Law Enforcement. *American Economic Journal: Applied Economics*, 15(2), 125–156.](https://doi.org/10.1257/app.20200196)"
-    **Pergunta central:** O sistema de monitoramento por satélite em tempo real (DETER) e o reforço da fiscalização ambiental reduziram efetivamente o desmatamento na Amazônia brasileira?
+    **Relevância para o capítulo:** O paper testa diretamente as previsões do modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326) (seção 19.4.3): se há seleção adversa, tipos de alto risco compram mais cobertura. A ausência de correlação sugere que os mecanismos de triagem das seguradoras (seção 19.6) — menus de franquias, bônus por ausência de sinistros, inspeção veicular — podem ser suficientemente eficazes para resolver o problema informacional.
 
-    **Método:** Os autores exploram a introdução do sistema DETER pelo INPE em 2004 — que permite detecção de desmatamento em tempo quase-real via imagens de satélite — e o consequente aumento das operações de fiscalização do IBAMA. Utilizam dados georeferenciados de desmatamento (PRODES), autos de infração do IBAMA e variação espacial na cobertura do DETER, em uma estratégia de variáveis instrumentais e diferenças-em-diferenças espaciais.
+??? abstract "[Matoso, R.; Rezende, M. (2014). Asymmetric Information in Oil and Gas Lease Auctions with a National Company. *International Journal of Industrial Organization*, 33, 72–82.](https://doi.org/10.1016/j.ijindorg.2014.02.006)"
+    **Pergunta central:** A Petrobras, como empresa nacional com décadas de experiência exploratória, possui vantagem informacional sobre concorrentes internacionais nos leilões de blocos de petróleo e gás? Se sim, como essa assimetria se manifesta no comportamento de lances e nos resultados dos leilões?
 
-    **Resultado principal:** A combinação de monitoramento (DETER) e enforcement (IBAMA) foi responsável por uma redução de aproximadamente 50% no desmatamento entre 2004 e 2012 — período em que as taxas caíram de quase 28.000 km²/ano para menos de 5.000 km²/ano. O efeito foi concentrado nas áreas com maior probabilidade de detecção pelo DETER, confirmando que o mecanismo opera via dissuasão (deterrence): a expectativa de punição reduz a atividade ilegal.
+    **Método:** Os autores utilizaram dados dos leilões de concessão da ANP (Agência Nacional do Petróleo) para testar as previsões de modelos de leilões com informação assimétrica (Hendricks e Porter, 1988). A identificação explora o fato de que a Petrobras tinha acesso privilegiado a dados geológicos e sísmicos, especialmente em áreas adjacentes a campos já explorados (os chamados *drainage leases*). Compararam o comportamento de lances da Petrobras versus concorrentes estrangeiros em diferentes tipos de blocos.
 
-    **Relevância para o capítulo:** Este é um estudo com dados brasileiros que demonstra empiricamente como a regulação direta (command-and-control) pode ser eficaz quando combinada com monitoramento adequado. O resultado conecta-se diretamente ao Box Brasil sobre desmatamento na Amazônia e mostra que, na prática, o enforcement é tão importante quanto o desenho do instrumento regulatório — um complemento essencial à discussão teórica de impostos pigouvianos e mercados de permissão.
+    **Resultado principal:** A Petrobras apresentou comportamento consistente com vantagem informacional: (i) participou mais frequentemente de leilões para blocos que se revelaram mais lucrativos; (ii) ofertou lances maiores para blocos de maior valor; (iii) competiu mais agressivamente por blocos re-ofertados após não receberem lances na primeira rodada. Empresas estrangeiras, por sua vez, enfrentavam maior incerteza e participavam menos de blocos próximos a áreas já exploradas pela Petrobras.
 
----
+    **Por que isso importa:** O resultado tem implicações diretas para o desenho dos leilões do pré-sal. Se a empresa nacional tem vantagem informacional, o formato do leilão pode afetar a eficiência e a receita do governo de formas que o Teorema da Equivalência de Receita não prevê (pois uma de suas condições — simetria dos licitantes — é violada). Isso justifica regras como a participação obrigatória da Petrobras como operadora em certos blocos do pré-sal.
+
+    **Relevância para o capítulo:** O paper é uma aplicação empírica direta da teoria de leilões com informação assimétrica (seção 19.7). A vantagem informacional da Petrobras é análoga ao problema de *common value* com licitantes assimétricos: o licitante mais informado pode extrair renda informacional, enquanto os menos informados enfrentam uma versão ampliada da maldição do vencedor. O resultado ilustra que o desenho do leilão importa — contrariando a equivalência de receita quando suas condições são violadas.
 
 ## Referências do Capítulo
 
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press.
-- Ostrom, Elinor. 1990. [*Governing the Commons*](https://books.google.com.br/books?id=4xg6oUobMz4C). Cambridge: Cambridge University Press.
-- Stiglitz, Joseph E., e Jay K. Rosengard. 2015. [*Economics of the Public Sector*](https://books.google.com.br/books?id=miPeCgAAQBAJ). 4ª ed. New York: W. W. Norton.
-- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier.
+- Akerlof, George A. 1970. "[The Market for 'Lemons': Quality Uncertainty and the Market Mechanism](https://doi.org/10.2307/1879431)." *Quarterly Journal of Economics* 84 (3): 488–500.
+- Chiappori, Pierre-André, e Bernard Salanié. 2000. "[Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/317671)." *Journal of Political Economy* 108 (1): 56–78.
+- Holmström, Bengt. 1979. "[Moral Hazard and Observability](https://doi.org/10.2307/3003320)." *Bell Journal of Economics* 10 (1): 74–91.
+- Matoso, R., e M. Rezende. 2014. "[Asymmetric Information in Oil and Gas Lease Auctions with a National Company](https://doi.org/10.1016/j.ijindorg.2014.02.006)." *International Journal of Industrial Organization* 33: 72–82.
+- Mirrlees, James A. 1971. "[An Exploration in the Theory of Optimum Income Taxation](https://doi.org/10.2307/2296779)." *Review of Economic Studies* 38 (2): 175–208.
+- Myerson, Roger B. 1981. "[Optimal Auction Design](https://doi.org/10.1287/moor.6.1.58)." *Mathematics of Operations Research* 6 (1): 58–73.
+- Rothschild, Michael, e Joseph E. Stiglitz. 1976. "[Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information](https://doi.org/10.2307/1885326)." *Quarterly Journal of Economics* 90 (4): 629–649.
+- Spence, Michael. 1973. "[Job Market Signaling](https://doi.org/10.2307/1882010)." *Quarterly Journal of Economics* 87 (3): 355–374.
+- Vickrey, William. 1961. "[Counterspeculation, Auctions, and Competitive Sealed Tenders](https://doi.org/10.1111/j.1540-6261.1961.tb02789.x)." *Journal of Finance* 16 (1): 8–37.

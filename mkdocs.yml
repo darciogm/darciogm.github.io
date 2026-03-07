@@ -64,22 +64,23 @@ nav:
     - Mercados:
       - micro-book/mercados/index.md
       - "Cap. 7 — O Preço do Talvez": micro-book/cap07/index.md
-      - "Cap. 8 — Nash no Bar": micro-book/cap08/index.md
-      - "Cap. 9 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap09/index.md
-      - "Cap. 10 — Por Que Nada É de Graça": micro-book/cap10/index.md
-      - "Cap. 11 — A Firma Nua": micro-book/cap11/index.md
-      - "Cap. 12 — O Leiloeiro que Ninguém Vê": micro-book/cap12/index.md
-      - "Cap. 13 — Equilíbrio Geral": micro-book/cap13/index.md
+      - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
+      - "Cap. 9 — Nash no Bar": micro-book/cap09/index.md
+      - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap10/index.md
+      - "Cap. 11 — Por Que Nada É de Graça": micro-book/cap11/index.md
+      - "Cap. 12 — A Firma Nua": micro-book/cap12/index.md
+      - "Cap. 13 — O Leiloeiro que Ninguém Vê": micro-book/cap13/index.md
+      - "Cap. 14 — Equilíbrio Geral": micro-book/cap14/index.md
     - Poder & Insumos:
       - micro-book/poder/index.md
-      - "Cap. 14 — Sem Concorrente, Sem Piedade": micro-book/cap14/index.md
-      - "Cap. 15 — Quando Gigantes Competem": micro-book/cap15/index.md
-      - "Cap. 16 — Economia do Trabalho": micro-book/cap16/index.md
-      - "Cap. 17 — A Paciência Tem Preço": micro-book/cap17/index.md
+      - "Cap. 15 — Sem Concorrente, Sem Piedade": micro-book/cap15/index.md
+      - "Cap. 16 — Quando Gigantes Competem": micro-book/cap16/index.md
+      - "Cap. 17 — Economia do Trabalho": micro-book/cap17/index.md
+      - "Cap. 18 — A Paciência Tem Preço": micro-book/cap18/index.md
     - Fronteiras:
       - micro-book/fronteiras/index.md
-      - "Cap. 18 — Limões, Sinais e Contratos": micro-book/cap18/index.md
-      - "Cap. 19 — Fumaça, Caronas e Tragédias": micro-book/cap19/index.md
+      - "Cap. 19 — Limões, Sinais e Contratos": micro-book/cap19/index.md
+      - "Cap. 20 — Fumaça, Caronas e Tragédias": micro-book/cap20/index.md
     - Referência:
       - micro-book/referencia/index.md
       - Notação: micro-book/notacao.md

@@ -1,736 +1,620 @@
-# Capítulo 10 — Por Que Nada É de Graça
+# Capítulo 10 — Mais Mãos, Mais Máquinas — Mais Produto?
 
 ## Introdução
 
-No capítulo anterior, examinamos a tecnologia da firma — como insumos são transformados em produtos. Agora, damos o passo seguinte e perguntamos: **quanto custa** realizar essa transformação? A teoria dos custos conecta a esfera da produção à esfera dos preços, traduzindo as possibilidades tecnológicas em termos monetários.
+A teoria da produção constitui o alicerce sobre o qual se ergue toda a análise da oferta em microeconomia. Enquanto os capítulos anteriores trataram das decisões dos consumidores — agentes que buscam maximizar utilidade —, voltamos agora a atenção para as **firmas**, agentes cuja razão de existir é transformar insumos (trabalho, capital, terra, materiais) em produtos e serviços. Compreender *como* essa transformação ocorre, quais são suas regularidades empíricas e como representá-la matematicamente é o objetivo central deste capítulo.
 
-A distinção entre custos econômicos e contábeis, o conceito de custo de oportunidade, a relação entre minimização de custos e maximização de lucro, o papel das curvas de custo de curto e longo prazo e o elegante Lema de Shephard — que conecta a função custo às demandas condicionadas por insumos — são os temas centrais deste capítulo.
+A **função de produção** é o instrumento analítico que sintetiza a tecnologia disponível para a firma. A partir dela, derivamos conceitos fundamentais — produtividade marginal, isoquantas, taxa marginal de substituição técnica (TMST), rendimentos de escala e elasticidade de substituição — que serão mobilizados nos capítulos seguintes para construir as curvas de custo e de oferta.
 
-A compreensão da estrutura de custos é indispensável para a análise da oferta, da formação de preços e da organização industrial. No contexto brasileiro, onde o chamado "custo Brasil" — que engloba carga tributária, deficiências logísticas e burocracia — pesa significativamente sobre a competitividade das empresas, essa análise ganha relevância adicional. Da soja exportada pelo Porto de Santos ao café especial de Minas Gerais, a estrutura de custos determina quais firmas sobrevivem e quais saem do mercado.
-
----
-
-## 10.1 Definições de Custos
-
-### Custo econômico versus custo contábil
-
-!!! definition "Custo econômico"
-    O **custo econômico** (ou custo de oportunidade) de utilizar um recurso na produção é o valor desse recurso em seu **melhor uso alternativo**. Inclui tanto os custos explícitos (pagamentos efetivos) quanto os custos implícitos (remuneração do capital próprio, salário do proprietário, etc.).
-
-!!! definition "Custo contábil"
-    O **custo contábil** registra apenas os desembolsos efetivamente realizados — custos explícitos. Não considera o custo de oportunidade dos recursos próprios da firma.
-
-A diferença entre lucro econômico e lucro contábil é dada pelos custos implícitos:
-
-\[
-\pi_{\text{econômico}} = \text{Receita total} - \text{Custos explícitos} - \text{Custos implícitos}
-\]
-
-\[
-\pi_{\text{contábil}} = \text{Receita total} - \text{Custos explícitos}
-\]
-
-Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é, remunera todos os fatores de produção, inclusive os próprios, pelo seu custo de oportunidade. Lucro econômico positivo indica **lucro supranormal** (ou econômico puro).
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O custo de oportunidade é o valor daquilo que você deixou de fazer ao escolher o que fez.
-
-    **Pense assim:** Um engenheiro que larga o emprego de R$ 15.000/mês para abrir uma hamburgueria precisa contar esse salário perdido como custo do negócio. Se a hamburgueria lucra R$ 12.000 por mês no papel, na verdade ele está "perdendo" R$ 3.000 em relação ao que poderia ganhar — o lucro econômico é negativo.
-
-    **Por que isso importa:** Ignorar o custo de oportunidade é o erro mais comum de pequenos empreendedores no Brasil e explica por que muitos negócios parecem lucrativos no extrato bancário, mas não compensam economicamente.
-
-!!! tip "Exemplo: custo de oportunidade na agricultura brasileira"
-    Um produtor rural no Cerrado possui 500 hectares de terra própria e os utiliza para plantar soja. O custo contábil inclui sementes, fertilizantes, mão de obra e depreciação de máquinas. Porém, o custo econômico deve incluir também o **arrendamento** que ele deixa de receber ao não alugar a terra — que, segundo dados da [CONAB](https://www.conab.gov.br), pode variar de 8 a 15 sacas de soja por hectare/ano conforme a região. Se o arrendamento médio é de 12 sacas/ha e a saca vale R$ 120, o custo implícito da terra é de R$ 720.000/ano — valor que o lucro contábil ignora completamente.
-
-### Custos irrecuperáveis (sunk costs)
-
-!!! note "Custos irrecuperáveis"
-    **Custos irrecuperáveis** (*sunk costs*) são despesas já realizadas e que não podem ser recuperadas. Do ponto de vista da tomada de decisão racional, custos irrecuperáveis **não devem influenciar** decisões correntes e futuras — apenas custos evitáveis (prospectivos) são relevantes. Contudo, a economia comportamental documenta extensamente o viés dos custos irrecuperáveis (*sunk cost fallacy*), pelo qual agentes continuam investindo em projetos fracassados para "justificar" gastos passados.
+O capítulo está organizado em seis seções. Começamos pela produtividade marginal e pelas relações entre produto total, médio e marginal (Seção 10.1). Em seguida, introduzimos as isoquantas e a TMST (Seção 10.2), o conceito de rendimentos de escala (Seção 10.3) e a elasticidade de substituição (Seção 10.4). A Seção 10.5 apresenta quatro famílias de funções de produção clássicas — linear, Leontief, Cobb-Douglas e CES — e a Seção 10.6 incorpora o progresso técnico. Um Box Brasil dedicado à revolução agrícola impulsionada pela [Embrapa](https://www.embrapa.br) ilustra como a teoria encontra expressão concreta na transformação produtiva do país.
 
 ---
 
-## 10.2 Maximização de Lucro e Minimização de Custos
+## 10.1 Produtividade Marginal
 
-A firma maximizadora de lucro resolve:
+### A função de produção
+
+Por que algumas firmas produzem mais que outras com quantidades semelhantes de insumos? A resposta está na **tecnologia** — o conjunto de conhecimentos e processos que determinam como insumos são combinados para gerar produto. A função de produção é a representação matemática dessa tecnologia.
+
+!!! definition "Função de produção"
+    A **função de produção** \(q = f(K, L)\) descreve a quantidade máxima de produto \(q\) que pode ser obtida a partir de quantidades de capital \(K\) e trabalho \(L\), dada a tecnologia disponível.
+
+Quando um dos insumos é mantido fixo — por exemplo, o capital no curto prazo —, obtemos a **função de produção de curto prazo**:
 
 \[
-\max_{K, L} \; \pi = p \cdot f(K, L) - wL - rK
+q = f(\bar{K}, L) \equiv \mathrm{TP}(L)
 \]
 
-onde \(p\) é o preço do produto, \(w\) é o salário e \(r\) é o custo de aluguel do capital.
+onde \(\mathrm{TP}(L)\) é o produto total do trabalho. Essa distinção entre curto e longo prazo será fundamental para a análise de custos no próximo capítulo.
 
-Um resultado central é que a **maximização de lucro implica minimização de custos**: se a firma escolhe quantidades de insumos que maximizam o lucro, então, para o nível de produto resultante, ela necessariamente minimiza o custo de produção. A recíproca, contudo, não é verdadeira — minimizar custos é condição necessária, mas não suficiente, para maximizar lucro, pois a firma ainda precisa escolher o nível ótimo de produção.
+### Produto marginal e produto médio
 
-!!! abstract "Proposição: Maximização de lucro implica minimização de custos"
-    Se \((K^*, L^*)\) resolve o problema de maximização de lucro \(\max_{K,L} \; pf(K,L) - wL - rK\) com produto \(q^* = f(K^*, L^*)\), então \((K^*, L^*)\) também resolve o problema de minimização de custos para o nível de produto \(q^*\):
+A partir da função de produção, derivamos duas medidas essenciais de produtividade: o produto marginal e o produto médio.
+
+!!! definition "Produto marginal"
+    O **produto marginal do trabalho** é a variação do produto total decorrente de uma unidade adicional de trabalho, mantido o capital constante:
 
     \[
-    \min_{K, L} \; wL + rK \quad \text{s.a.} \quad f(K, L) \geq q^*
+    \mathrm{PMg}_L = \frac{\partial f(K, L)}{\partial L}
     \]
+
+    Analogamente, o **produto marginal do capital** é:
+
+    \[
+    \mathrm{PMg}_K = \frac{\partial f(K, L)}{\partial K}
+    \]
+
+O **produto médio do trabalho** é definido como:
+
+\[
+\mathrm{PMe}_L = \frac{f(K, L)}{L}
+\]
+
+A relação entre produto marginal e produto médio é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo. A intuição é direta: se o trabalhador adicional produz mais do que a média dos anteriores, ele "puxa" a média para cima.
+
+### Lei dos rendimentos marginais decrescentes
+
+!!! abstract "Lei dos rendimentos marginais decrescentes"
+    Se um insumo variável é adicionado a um insumo fixo, a partir de certo ponto o produto marginal do insumo variável torna-se decrescente. Formalmente, existe \(L^*\) tal que para \(L > L^*\):
+
+    \[
+    \frac{\partial^2 f(\bar{K}, L)}{\partial L^2} < 0
+    \]
+
+É crucial observar que esta "lei" é uma regularidade empírica, não um resultado lógico necessário. Ela se aplica ao **curto prazo**, quando pelo menos um fator é fixo. Não deve ser confundida com rendimentos decrescentes de escala, que dizem respeito à variação simultânea de todos os insumos — uma distinção frequentemente cobrada em provas da ANPEC.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Cada trabalhador a mais produz menos que o anterior quando o espaço e os equipamentos são fixos.
+
+    **Pense assim:** Em uma cozinha de restaurante com quatro bocas de fogão, o primeiro cozinheiro é muito produtivo. O segundo ajuda bastante. O terceiro já começa a esbarrar nos outros. O quarto fica esperando uma boca liberar. O fogão não mudou — é o trabalhador extra que rende menos.
+
+    **Por que isso importa:** Esse princípio explica por que simplesmente contratar mais gente sem investir em equipamentos não resolve o problema de produtividade da economia brasileira.
+
+!!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
+    Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
+
+!!! example "Box Brasil: Produtividade do trabalho na indústria brasileira"
+
+    A produtividade do trabalho — medida como valor adicionado por hora trabalhada — é uma aplicação direta do conceito de produto médio do trabalho (\(\mathrm{PMe}_L\)). Dados das Contas Nacionais do IBGE e da PNAD Contínua, compilados pelo FGV/IBRE, mostram que a produtividade por hora trabalhada no Brasil cresceu em média **+1,6% ao ano entre 2000 e 2010**, mas desacelerou para apenas **+0,3% ao ano entre 2010 e 2023** — e a média de longo prazo (1981–2023) é de modestos **+0,5% ao ano**.
+
+    A teoria da produção ajuda a explicar esse padrão. Com investimento em capital (\(K\)) crescendo lentamente, o produto marginal e o produto médio do trabalho avançam de forma modesta. A **intensidade de capital** (\(K/L\)) varia enormemente entre setores: a PIA/IBGE mostra que setores intensivos em capital (como refino de petróleo e extração mineral) apresentam VTI por trabalhador ordens de grandeza acima de setores intensivos em trabalho (como confecções e calçados). Essa dispersão setorial é uma consequência direta da função de produção: para dado nível tecnológico, mais capital por trabalhador implica maior produto médio do trabalho.
 
 ---
 
-## 10.3 Minimização de Custos: Isocusto e Tangência
+## 10.2 Isoquantas e a Taxa Marginal de Substituição Técnica
+
+Até aqui, analisamos a produção variando um insumo por vez. Agora, consideramos a possibilidade de substituir um insumo por outro mantendo o nível de produção constante. As isoquantas e a TMST são as ferramentas para essa análise.
 
 <figure markdown="span">
-  <iframe src="../graficos/cap10/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
+  <iframe src="../graficos/cap10/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
 </figure>
 
-### O problema de minimização de custos
+### Isoquantas
 
-O problema dual ao da maximização do produto sujeito a um orçamento é a **minimização do custo** de atingir um dado nível de produto:
+!!! definition "Isoquanta"
+    Uma **isoquanta** é o conjunto de todas as combinações de insumos \((K, L)\) que geram o mesmo nível de produto \(q_0\):
+
+    \[
+    \{(K, L) \mid f(K, L) = q_0\}
+    \]
+
+As isoquantas são o análogo, na teoria da produção, das curvas de indiferença na teoria do consumidor. Suas propriedades são:
+
+1. **Completude**: para cada nível de produto existe uma isoquanta.
+2. **Não se cruzam**: se duas isoquantas se cruzassem, a mesma combinação de insumos geraria dois níveis distintos de produto, contradizendo a definição de função.
+3. **Inclinação negativa**: sob a hipótese de que os produtos marginais são positivos, aumentar um insumo exige reduzir o outro para manter o mesmo produto.
+4. **Convexidade**: a TMST é decrescente ao longo da isoquanta (as isoquantas são convexas em relação à origem).
+
+### Taxa marginal de substituição técnica (TMST)
+
+!!! definition "TMST"
+    A **taxa marginal de substituição técnica** de \(L\) por \(K\) mede a taxa à qual a firma pode substituir capital por trabalho mantendo o produto constante:
+
+    \[
+    \mathrm{TMST}_{L,K} = -\frac{dK}{dL}\bigg|_{q = q_0} = \frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{f_L}{f_K}
+    \]
+
+A derivação segue da diferenciação total da isoquanta \(f(K, L) = q_0\):
 
 \[
-\min_{K, L} \; C = wL + rK \quad \text{s.a.} \quad f(K, L) = q_0
+f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
 \]
 
-A lógica é análoga à do consumidor que minimiza o gasto para atingir um dado nível de utilidade (Capítulo 5). Aqui, a isoquanta substitui a curva de indiferença, e a reta de isocusto substitui a reta orçamentária.
-
-### A reta de isocusto
-
-A **reta de isocusto** representa todas as combinações de insumos que geram o mesmo custo total \(C_0\):
-
-\[
-C_0 = wL + rK \implies K = \frac{C_0}{r} - \frac{w}{r}L
-\]
-
-A inclinação da isocusto é \(-w/r\), a razão dos preços dos insumos.
-
-### Condição de tangência
-
-Pelo método de Lagrange, a condição de primeira ordem para a minimização de custos é:
-
-\[
-\mathcal{L} = wL + rK + \lambda[q_0 - f(K, L)]
-\]
-
-\[
-\frac{\partial \mathcal{L}}{\partial L} = w - \lambda f_L = 0 \implies \lambda = \frac{w}{f_L}
-\]
-
-\[
-\frac{\partial \mathcal{L}}{\partial K} = r - \lambda f_K = 0 \implies \lambda = \frac{r}{f_K}
-\]
-
-Igualando:
-
-\[
-\frac{w}{f_L} = \frac{r}{f_K} \implies \frac{f_L}{f_K} = \frac{w}{r} \implies \mathrm{TMST}_{L,K} = \frac{w}{r}
-\]
-
-!!! abstract "Condição de minimização de custos"
-    No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
-
-    \[
-    \mathrm{TMST}_{L,K} = \frac{w}{r}
-    \]
-
-    Equivalentemente, o produto marginal por unidade monetária gasta deve ser igual para todos os insumos:
-
-    \[
-    \frac{f_L}{w} = \frac{f_K}{r}
-    \]
-
-### Demandas condicionadas por insumos
-
-Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = q_0\), obtemos as **demandas condicionadas** (ou demandas hicksianas na produção):
-
-\[
-L^c = L^c(w, r, q), \qquad K^c = K^c(w, r, q)
-\]
-
-Estas funções expressam as quantidades ótimas de cada insumo como funções dos preços dos insumos e do nível de produto desejado.
-
----
-
-## 10.4 A Função Custo e o Lema de Shephard
-
-### A função custo
-
-!!! definition "Função custo"
-    A **função custo** \(C(w, r, q)\) é o valor mínimo do custo de produzir \(q\) unidades, dados os preços dos insumos \(w\) e \(r\):
-
-    \[
-    C(w, r, q) = wL^c(w, r, q) + rK^c(w, r, q)
-    \]
-
-A função custo possui as seguintes propriedades:
-
-1. **Não decrescente** em \(w\), \(r\) e \(q\).
-2. **Homogênea de grau 1** nos preços dos insumos: \(C(tw, tr, q) = tC(w, r, q)\). Se todos os preços dos insumos dobram, o custo mínimo dobra.
-3. **Côncava** nos preços dos insumos: a firma substitui o insumo que ficou mais caro pelo mais barato, de modo que o custo cresce menos que proporcionalmente ao aumento do preço de um insumo.
-4. **Contínua** nos preços dos insumos.
-
-### Lema de Shephard
-
-!!! proof "Demonstração: Lema de Shephard"
-    **Enunciado.** Se \(C(w, r, q)\) é a função custo e é diferenciável em \((w, r)\), então as demandas condicionadas por insumos são obtidas pela derivada parcial da função custo em relação ao preço do respectivo insumo:
-
-    \[
-    \frac{\partial C(w, r, q)}{\partial w} = L^c(w, r, q), \qquad \frac{\partial C(w, r, q)}{\partial r} = K^c(w, r, q)
-    \]
-
-    **Demonstração.**
-    Considere o problema de minimização de custos. Pelo teorema da envoltória, a derivada da função valor (custo mínimo) em relação a um parâmetro é igual à derivada parcial do lagrangeano avaliado no ótimo.
-
-    O lagrangeano é:
-
-    \[
-    \mathcal{L}(K, L, \lambda; w, r, q) = wL + rK + \lambda[q - f(K, L)]
-    \]
-
-    Pelo teorema da envoltória:
-
-    \[
-    \frac{\partial C}{\partial w} = \frac{\partial \mathcal{L}}{\partial w}\bigg|_{(K^c, L^c, \lambda^*)} = L^c(w, r, q)
-    \]
-
-    Analogamente:
-
-    \[
-    \frac{\partial C}{\partial r} = K^c(w, r, q)
-    \]
-
-    **Verificação com Cobb-Douglas.** Para \(q = K^{\alpha}L^{1-\alpha}\), a função custo é:
-
-    \[
-    C(w, r, q) = q \cdot \kappa \cdot w^{1-\alpha} \cdot r^{\alpha}
-    \]
-
-    onde \(\kappa = \left(\frac{\alpha}{1-\alpha}\right)^{-(1-\alpha)} + \left(\frac{\alpha}{1-\alpha}\right)^{\alpha}\) é uma constante. Derivando em relação a \(w\):
-
-    \[
-    \frac{\partial C}{\partial w} = q \cdot \kappa \cdot (1-\alpha) \cdot w^{-\alpha} \cdot r^{\alpha} = L^c(w, r, q)
-    \]
-
-    o que confirma o lema. \(\blacksquare\)
-
-!!! tip "Significado econômico do Lema de Shephard"
-    O Lema de Shephard é a contraparte, na teoria da produção, da **identidade de Roy** na teoria do consumidor. Ele permite recuperar as demandas condicionadas por insumos a partir de informações sobre custos — que são frequentemente mais fáceis de observar empiricamente do que as tecnologias de produção subjacentes. É uma ferramenta central na estimação empírica de funções de custo.
+A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema — um fenômeno intuitivamente análogo à taxa marginal de substituição decrescente no consumo.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O Lema de Shephard diz que, se você sabe como o custo total muda quando o salário sobe um pouquinho, você já sabe quanta mão de obra a firma usa.
+    **Em uma frase:** A TMST mede quantas unidades de um insumo a firma pode trocar por uma unidade do outro sem perder produção.
 
-    **Pense assim:** Se o preço da energia sobe R$ 0,01 por kWh e a conta de luz da fábrica sobe R$ 500, você sabe que a fábrica consome 50.000 kWh. O lema formaliza essa ideia simples: a sensibilidade do custo ao preço de um insumo revela a quantidade usada desse insumo.
+    **Pense assim:** Numa fazenda de café altamente mecanizada, cada colheitadeira a menos exige muitos trabalhadores extras para compensar. Mas numa fazenda com muita mão de obra e pouca máquina, dispensar um trabalhador custa pouca mecanização adicional. A troca fica mais difícil conforme a firma se torna mais "desequilibrada".
 
-    **Por que isso importa:** Na prática, é muito mais fácil observar custos e preços do que medir diretamente a tecnologia de produção. O Lema de Shephard permite que economistas estimem demandas por insumos a partir de dados contábeis — algo essencial para política tributária e regulação no Brasil.
+    **Por que isso importa:** Quando o salário mínimo sobe no Brasil, a TMST indica o quanto as firmas conseguem substituir trabalho por máquinas — e em setores com baixa substituibilidade, o impacto no emprego é menor.
+
+??? example "Exercício Resolvido 9.1"
+    **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
+
+    **Dados:** \(A = 20\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(K = 25\), \(L = 16\).
+
+    **Resolução:**
+
+    **Passo 1 — Produto total**
+
+    \[
+    q = 20 \cdot 25^{0,5} \cdot 16^{0,5} = 20 \times 5 \times 4 = 400
+    \]
+
+    **Passo 2 — Produtos marginais**
+
+    \[
+    \mathrm{PMg}_L = \beta A K^{\alpha} L^{\beta - 1} = 0{,}5 \times 20 \times 25^{0,5} \times 16^{-0,5} = 0{,}5 \times 20 \times 5 \times 0{,}25 = 12{,}5
+    \]
+
+    \[
+    \mathrm{PMg}_K = \alpha A K^{\alpha - 1} L^{\beta} = 0{,}5 \times 20 \times 25^{-0,5} \times 16^{0,5} = 0{,}5 \times 20 \times 0{,}2 \times 4 = 8
+    \]
+
+    **Passo 3 — TMST**
+
+    \[
+    \mathrm{TMST}_{L,K} = \frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{12{,}5}{8} = 1{,}5625
+    \]
+
+    Verificação pela fórmula direta: \(\mathrm{TMST} = \dfrac{\beta}{\alpha} \cdot \dfrac{K}{L} = \dfrac{0{,}5}{0{,}5} \cdot \dfrac{25}{16} = 1{,}5625\) ✓
+
+    **Resultado:** \(q = 400\), \(\mathrm{PMg}_L = 12{,}5\), \(\mathrm{PMg}_K = 8\), \(\mathrm{TMST} = 1{,}5625\).
+
+    **Interpretação econômica:** A TMST de 1,56 indica que, nessa combinação, a firma pode substituir 1 unidade de capital por aproximadamente 1,56 unidades de trabalho sem alterar o produto. O trabalho é relativamente mais produtivo na margem porque a firma opera com proporção capital-trabalho elevada (\(K/L = 1{,}56\)), o que torna cada trabalhador adicional mais valioso.
 
 ---
 
-## 10.5 Curvas de Custo
+## 10.3 Rendimentos de Escala
+
+A lei dos rendimentos marginais decrescentes descreve o que acontece quando variamos um insumo mantendo o outro fixo. Mas o que ocorre quando a firma aumenta **todos** os insumos proporcionalmente? A resposta define os rendimentos de escala — um conceito de longo prazo.
 
 <figure markdown="span">
-  <iframe src="../graficos/cap10/curvas-custo.html" width="100%" height="600" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
+  <iframe src="../graficos/cap10/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
 </figure>
 
-### Custo total, custo médio e custo marginal
+!!! definition "Rendimentos de escala"
+    Considere a função de produção \(f(K, L)\) e um escalar \(t > 1\). Os **rendimentos de escala** classificam-se em:
 
-!!! definition "Curvas de custo"
-    Para uma função custo \(C(q)\) (com preços de insumos fixos):
+    - **Constantes** (CRS): \(f(tK, tL) = t \cdot f(K, L)\) — a função é homogênea de grau 1.
+    - **Crescentes** (IRS): \(f(tK, tL) > t \cdot f(K, L)\) — dobrar os insumos mais que dobra o produto.
+    - **Decrescentes** (DRS): \(f(tK, tL) < t \cdot f(K, L)\) — dobrar os insumos menos que dobra o produto.
 
-    - **Custo Total**: \(CT(q) = CF + CV(q)\), onde \(CF\) é o custo fixo e \(CV(q)\) é o custo variável.
-    - **Custo Médio**: \(\mathrm{CMe}(q) = \frac{CT(q)}{q} = \frac{CF}{q} + \frac{CV(q)}{q} = \mathrm{CFMe} + \mathrm{CVMe}\)
-    - **Custo Variável Médio**: \(\mathrm{CVMe}(q) = \frac{CV(q)}{q}\)
-    - **Custo Marginal**: \(\mathrm{CMg}(q) = \frac{dCT(q)}{dq} = \frac{dCV(q)}{dq}\)
-
-### Relações entre as curvas de custo
-
-| Relação | Expressão | Implicação |
-|:---|:---|:---|
-| CMg e CMe | Se \(\mathrm{CMg} < \mathrm{CMe}\), CMe é decrescente | CMg "puxa" CMe para baixo |
-| CMg e CMe | Se \(\mathrm{CMg} > \mathrm{CMe}\), CMe é crescente | CMg "puxa" CMe para cima |
-| CMg e CMe | Se \(\mathrm{CMg} = \mathrm{CMe}\), CMe é mínimo | CMg cruza CMe no ponto mínimo |
-| CMg e CVMe | Se \(\mathrm{CMg} < \mathrm{CVMe}\), CVMe é decrescente | Mesma lógica do CMe |
-| CMg e CVMe | Se \(\mathrm{CMg} = \mathrm{CVMe}\), CVMe é mínimo | CMg cruza CVMe no ponto mínimo |
-| CMe e CVMe | \(\mathrm{CMe} = \mathrm{CVMe} + \mathrm{CFMe}\) | CMe está sempre acima de CVMe |
-| CMe e CVMe | \(\mathrm{CMe} - \mathrm{CVMe} = CF/q \to 0\) | As curvas convergem quando \(q \to \infty\) |
-| Área sob CMg | \(\int_0^q \mathrm{CMg}(x)\,dx = CV(q)\) | Custo variável = área sob CMg |
-
-A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
+Uma medida local dos rendimentos de escala é dada pela **elasticidade de escala** \(e\):
 
 \[
-\frac{d(\mathrm{CMe})}{dq} = \frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{\mathrm{CMg} \cdot q - CT}{q^2} = \frac{\mathrm{CMg} - \mathrm{CMe}}{q}
+e = \frac{\partial \ln f(tK, tL)}{\partial \ln t}\bigg|_{t=1} = \frac{f_K \cdot K + f_L \cdot L}{f(K, L)} = \varepsilon_K + \varepsilon_L
 \]
 
-Portanto, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).
+onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em relação a cada insumo. Se \(e = 1\), rendimentos constantes; se \(e > 1\), crescentes; se \(e < 1\), decrescentes.
+
+Note que uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** O custo marginal "puxa" o custo médio — se produzir uma unidade a mais custa menos que a média, a média cai; se custa mais, a média sobe.
+    **Em uma frase:** Rendimentos de escala respondem à pergunta: se a firma dobrar tudo — máquinas, trabalhadores, espaço —, o produto mais que dobra, dobra exatamente ou menos que dobra?
 
-    **Pense assim:** Pense na sua média de notas na faculdade. Se você tira 9 na próxima prova e sua média é 7, a média sobe. Se tira 5, a média cai. A nota marginal (a próxima prova) sempre arrasta a média na sua direção. Com custos é igual: o CMg cruza o CMe exatamente no ponto de mínimo do CMe.
+    **Pense assim:** Uma padaria de bairro que abre uma segunda unidade idêntica produz o dobro de pães (rendimentos constantes). Já uma siderúrgica que duplica o alto-forno produz mais que o dobro de aço, porque o volume do forno cresce com o cubo do raio enquanto o custo do material cresce com o quadrado (rendimentos crescentes). É a lógica que explica por que usinas são enormes e padarias são pequenas.
 
-    **Por que isso importa:** Essa relação determina a escala ótima de produção das firmas e é a base para entender por que empresas brasileiras em setores com altos custos fixos (como telecomunicações) precisam de escala grande para serem viáveis.
+    **Por que isso importa:** Rendimentos crescentes de escala justificam a existência de grandes empresas e são o principal argumento usado em fusões analisadas pelo [CADE](https://www.gov.br/cade).
 
-### Formato típico das curvas de custo
+!!! example "Exemplo: Economias de escala na indústria automobilística brasileira"
+    A indústria automobilística ilustra rendimentos crescentes de escala na faixa relevante de produção. Uma linha de montagem exige investimento fixo elevado em robôs, estamparia e pintura, independentemente do volume produzido. Estudos setoriais indicam que a escala mínima eficiente de uma planta de montagem situa-se entre 100 e 200 mil veículos/ano — abaixo desse patamar, o custo médio por veículo é significativamente mais alto. Essa lógica de rendimentos crescentes explica a concentração geográfica da produção automotiva brasileira no ABC paulista e em polos como Betim (MG) e Camaçari (BA), onde a escala viabiliza custos competitivos.
 
-Com rendimentos marginais inicialmente crescentes e depois decrescentes (o formato clássico), as curvas de custo apresentam:
+!!! example "Box Brasil: Economias de escala e fusões no CADE"
 
-- **CMg**: formato de U — inicialmente decrescente (quando o produto marginal é crescente) e depois crescente (quando o produto marginal é decrescente).
-- **CVMe**: formato de U — segue a mesma lógica, mas é mais suave.
-- **CMe**: formato de U — soma de CVMe (U) com CFMe (decrescente). O mínimo do CMe ocorre à direita do mínimo do CVMe.
+    O **Conselho Administrativo de Defesa Econômica (CADE)** avalia rotineiramente alegações de economias de escala em processos de fusão e aquisição. Um caso emblemático foi a fusão entre **Sadia e Perdigão** (2009), que criou a BRF — uma das maiores empresas de alimentos do mundo. As partes argumentaram que a fusão geraria ganhos de eficiência por meio de economias de escala na produção de aves e suínos, na logística de distribuição refrigerada e na diluição de custos fixos de P&D.
 
-!!! tip "Intuição: por que CMg e PMg são 'espelhos'"
-    A relação inversa entre custo marginal e produto marginal é central. Se \(q = f(L)\) no curto prazo, então \(\mathrm{CMg} = w / PMg_L\). Quando o produto marginal do trabalho cresce, o custo de produzir uma unidade adicional cai; quando o produto marginal decresce, o custo marginal sobe. As curvas de custo são, portanto, o "reflexo" das curvas de produtividade.
+    O CADE aprovou a operação com restrições, exigindo a venda de marcas e ativos em mercados onde a concentração era excessiva. Em termos da teoria da produção, o argumento das empresas equivale a afirmar que a função de produção conjunta apresenta rendimentos crescentes de escala (\(e > 1\)) na faixa relevante — a firma maior produz a um custo médio menor que as duas firmas separadas. O CADE, por sua vez, ponderou que os ganhos de escala precisavam ser contrastados com os riscos de poder de mercado — tema que retomaremos nos capítulos sobre concorrência imperfeita.
 
----
+??? example "Exercício Resolvido 9.2"
+    **Enunciado:** Classifique os rendimentos de escala das seguintes funções de produção: (a) \(q = 3K + 7L\); (b) \(q = K^{0,4}L^{0,8}\); (c) \(q = \min\{2K, 5L\}\).
 
-## 10.6 Deslocamentos nas Curvas de Custo
+    **Resolução:**
 
-### Mudanças nos preços dos insumos
-
-Um aumento no salário \(w\) desloca para cima as curvas de custo. Pelo Lema de Shephard, o impacto é proporcional à quantidade de trabalho utilizada:
-
-\[
-\frac{\partial C}{\partial w} = L^c > 0
-\]
-
-O efeito sobre a curva de CMg depende de como a intensidade de trabalho varia com o nível de produto. Se a produção é intensiva em trabalho, o deslocamento será proporcionalmente maior.
-
-### Progresso técnico
-
-Uma melhoria tecnológica (aumento de \(A\) na função de produção) permite produzir a mesma quantidade com menos insumos, deslocando todas as curvas de custo para baixo. Se o progresso técnico é enviesado — por exemplo, poupador de trabalho —, ele reduz relativamente mais os custos de firmas intensivas em trabalho.
-
-!!! tip "Exemplo: mecanização na agricultura brasileira"
-    A adoção de colheitadeiras mecanizadas na produção de soja no Cerrado é um exemplo de progresso técnico poupador de trabalho. Segundo dados da EMBRAPA, o número de horas-homem por hectare na cultura da soja caiu de cerca de 25 h/ha nos anos 1980 para menos de 1 h/ha com plantio direto mecanizado. Essa redução desloca a curva de custo para baixo e altera a razão ótima capital/trabalho, tornando a produção mais intensiva em capital.
-
-### Impostos e regulação
-
-Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um imposto *ad valorem* sobre o trabalho de alíquota \(\tau\) eleva o custo efetivo do trabalho para \(w(1 + \tau)\), deslocando as curvas de custo para cima.
-
----
-
-## 10.7 Curto Prazo versus Longo Prazo: A Curva Envoltória
-
-<figure markdown="span">
-  <iframe src="../graficos/cap10/curto-longo-prazo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
-</figure>
-
-### Custos de curto prazo
-
-No **curto prazo**, o capital é fixo em \(\bar{K}\). A firma só pode ajustar o trabalho. O custo total de curto prazo é:
-
-\[
-CT_{CP}(q; \bar{K}) = r\bar{K} + w \cdot L(q, \bar{K})
-\]
-
-onde \(L(q, \bar{K})\) é a quantidade de trabalho necessária para produzir \(q\) dado \(\bar{K}\), obtida invertendo a função de produção de curto prazo.
-
-### Custos de longo prazo
-
-No **longo prazo**, todos os insumos são variáveis. A firma escolhe simultaneamente \(K\) e \(L\) para minimizar custos:
-
-\[
-CT_{LP}(q) = \min_{K, L} \{wL + rK \mid f(K, L) = q\}
-\]
-
-### A curva envoltória
-
-!!! abstract "Teorema da curva envoltória"
-    A curva de custo médio de longo prazo (\(\mathrm{CMe}_{LP}\)) é a **envoltória** das curvas de custo médio de curto prazo. Para cada nível de produto \(q\):
+    **Passo 1 — Função linear \(q = 3K + 7L\)**
 
     \[
-    \mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}) \quad \text{para todo } \bar{K}
+    f(tK, tL) = 3tK + 7tL = t(3K + 7L) = t \cdot f(K, L)
     \]
 
-    com igualdade quando \(\bar{K} = K^*(q)\), o nível ótimo de capital de longo prazo para produzir \(q\).
+    A função é homogênea de grau 1. Rendimentos **constantes** de escala.
 
-Intuitivamente, no longo prazo a firma tem mais flexibilidade (pode ajustar todos os insumos), de modo que seus custos nunca podem exceder os de curto prazo. A curva de CMe de longo prazo "tangencia" cada curva de CMe de curto prazo no ponto em que o nível de capital fixo é ótimo para aquele nível de produto.
+    **Passo 2 — Cobb-Douglas \(q = K^{0,4}L^{0,8}\)**
 
-Propriedade importante: no ponto de tangência, o CMg de curto prazo é igual ao CMg de longo prazo:
+    \[
+    f(tK, tL) = (tK)^{0,4}(tL)^{0,8} = t^{0,4 + 0,8} K^{0,4}L^{0,8} = t^{1,2} \cdot f(K, L)
+    \]
 
-\[
-\mathrm{CMg}_{CP}(q^*; \bar{K}^*) = \mathrm{CMg}_{LP}(q^*)
-\]
+    Como \(t^{1,2} > t\) para \(t > 1\), os rendimentos são **crescentes**. A elasticidade de escala é \(e = \alpha + \beta = 0{,}4 + 0{,}8 = 1{,}2\).
 
-### Economias e deseconomias de escala
+    **Passo 3 — Leontief \(q = \min\{2K, 5L\}\)**
 
-A forma da curva \(\mathrm{CMe}_{LP}\) reflete os rendimentos de escala:
+    \[
+    f(tK, tL) = \min\{2tK, 5tL\} = t \cdot \min\{2K, 5L\} = t \cdot f(K, L)
+    \]
 
-- **Rendimentos crescentes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) decrescente \(\Leftrightarrow\) **economias de escala**.
-- **Rendimentos constantes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) constante.
-- **Rendimentos decrescentes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) crescente \(\Leftrightarrow\) **deseconomias de escala**.
+    Rendimentos **constantes** de escala.
 
-A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o CMe de longo prazo atinge seu mínimo. A EME tem implicações diretas para a estrutura de mercado: se a EME é grande em relação ao tamanho do mercado, o setor tende a ter poucas firmas (oligopólio ou monopólio natural).
+    **Resultado:** (a) constantes; (b) crescentes (\(e = 1{,}2\)); (c) constantes.
 
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Economias de escala significam que produzir mais sai mais barato por unidade — o custo médio cai conforme a firma cresce.
-
-    **Pense assim:** Uma fábrica de cerveja artesanal paga quase o mesmo aluguel, energia e licença sanitária que uma grande cervejaria, mas produz muito menos garrafas para diluir esses custos. Por isso a Ambev consegue vender a R$ 3 a lata enquanto a artesanal cobra R$ 15 — a escala mínima eficiente do setor é alta.
-
-    **Por que isso importa:** Economias de escala explicam a concentração em setores como aviação, telecomunicações e siderurgia no Brasil, e são o principal argumento em análises de fusões pelo [CADE](https://www.gov.br/cade).
+    **Interpretação econômica:** Na função (b), dobrar ambos os insumos aumenta o produto em \(2^{1,2} \approx 2{,}30\) vezes — quase 15% a mais do que o dobro. Em setores com essa tecnologia, há incentivo natural à concentração em firmas maiores, como ocorre na siderurgia e na petroquímica brasileiras.
 
 ---
 
-## Box Brasil: Estrutura de Custos e o "Custo Brasil"
+## 10.4 Elasticidade de Substituição
 
-!!! example "Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
+Os rendimentos de escala medem como o produto responde à variação conjunta dos insumos. Já a **elasticidade de substituição** mede quão facilmente a firma pode trocar um insumo por outro ao longo de uma isoquanta. Esse conceito é central para entender como as firmas reagem a mudanças nos preços relativos dos fatores.
 
-    O termo **"custo Brasil"** designa o conjunto de ineficiências sistêmicas que elevam os custos de produção no país acima dos padrões internacionais. Segundo levantamentos da **Confederação Nacional da Indústria (CNI)** e da **FIESP**, o custo Brasil representava, em estimativas recentes, um sobrecusto de cerca de **R$ 1,7 trilhão por ano** para a economia brasileira — equivalente a aproximadamente 20% do PIB.
+!!! definition "Elasticidade de substituição"
+    A **elasticidade de substituição** \(\sigma\) mede a facilidade com que a firma pode substituir um insumo por outro ao longo de uma isoquanta. Formalmente:
 
-    **Componentes do custo Brasil na indústria de alimentos:**
+    \[
+    \sigma = \frac{d \ln(K/L)}{d \ln(\mathrm{TMST}_{L,K})} = \frac{d \ln(K/L)}{d \ln(f_L / f_K)}
+    \]
 
-    | Componente | Impacto estimado | Descrição |
-    |:---|:---|:---|
-    | Carga tributária | 25–35% do faturamento | ICMS, PIS/COFINS, IPI, contribuições sobre folha |
-    | Logística e transporte | 12–15% do custo total | Dependência do modal rodoviário, infraestrutura precária |
-    | Energia elétrica | 8–12% dos custos industriais | Tarifas entre as mais altas do mundo |
-    | Burocracia regulatória | 3–5% dos custos | Licenças, fiscalizações, cumprimento de obrigações acessórias |
-    | Custo de capital | Variável | Taxas de juros historicamente elevadas |
+Intuitivamente, \(\sigma\) capta a curvatura da isoquanta:
 
-    **Logística: o gargalo mais visível.**
-    O Brasil transporta cerca de **65% de sua carga** pelo modal rodoviário, contra 25–30% nos EUA e menos de 10% na Europa. Para a indústria de alimentos, que opera com margens estreitas e produtos perecíveis, essa dependência eleva drasticamente os custos de distribuição. O frete de uma tonelada de soja de Sorriso (MT) ao Porto de Santos percorre mais de 2.000 km por estrada, a um custo estimado em US$ 90–120/tonelada — cerca do triplo do custo equivalente nos EUA (dados CNI, 2023).
+- Se \(\sigma \to \infty\), os insumos são **substitutos perfeitos** (isoquanta linear).
+- Se \(\sigma \to 0\), os insumos são **complementares perfeitos** (isoquanta em L, Leontief).
+- Se \(\sigma = 1\), temos o caso intermediário da **Cobb-Douglas**.
+
+A elasticidade de substituição é um parâmetro central na análise da distribuição funcional da renda, pois determina como mudanças nos preços relativos dos fatores afetam as participações do capital e do trabalho na renda total.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A elasticidade de substituição mede o quão fácil é trocar máquinas por pessoas (ou vice-versa) sem perder produção.
+
+    **Pense assim:** Em um call center, substituir atendentes humanos por chatbots de IA é relativamente fácil (elasticidade alta). Já em uma cirurgia cardíaca, trocar o cirurgião por um robô é muito mais difícil (elasticidade baixa). Quanto mais rígida a receita de produção, menor a elasticidade.
+
+    **Por que isso importa:** A elasticidade de substituição determina quem ganha e quem perde quando o salário mínimo sobe ou quando a automação avança — questões centrais no debate sobre desigualdade e futuro do trabalho no Brasil.
+
+### Demonstração: Elasticidade de substituição para Cobb-Douglas
+
+!!! proof "Demonstração: \(\sigma = 1\) para a função Cobb-Douglas"
+    Considere a função de produção Cobb-Douglas:
+
+    \[
+    q = A K^{\alpha} L^{\beta}
+    \]
+
+    **Passo 1.** Calculamos os produtos marginais:
+
+    \[
+    f_K = \alpha A K^{\alpha - 1} L^{\beta}, \qquad f_L = \beta A K^{\alpha} L^{\beta - 1}
+    \]
+
+    **Passo 2.** A TMST é:
+
+    \[
+    \mathrm{TMST}_{L,K} = \frac{f_L}{f_K} = \frac{\beta A K^{\alpha} L^{\beta - 1}}{\alpha A K^{\alpha - 1} L^{\beta}} = \frac{\beta}{\alpha} \cdot \frac{K}{L}
+    \]
+
+    **Passo 3.** Portanto:
+
+    \[
+    \ln\left(\frac{K}{L}\right) = \ln\left(\frac{\alpha}{\beta}\right) + \ln(\mathrm{TMST}_{L,K})
+    \]
+
+    **Passo 4.** Diferenciando:
+
+    \[
+    \sigma = \frac{d \ln(K/L)}{d \ln(\mathrm{TMST}_{L,K})} = 1
+    \]
+
+    Portanto, a elasticidade de substituição da função Cobb-Douglas é unitária, independentemente dos valores de \(\alpha\) e \(\beta\). \(\blacksquare\)
+
+!!! example "Exemplo: Elasticidade de substituição na indústria brasileira"
+    A elasticidade de substituição tem implicações diretas para o mercado de trabalho. Quando \(\sigma\) é alto, as firmas substituem trabalho por capital (automação) com relativa facilidade. A literatura empírica aponta valores de \(\sigma\) entre 0,4 e 0,6 para o setor manufatureiro em diversas economias (Chirinko, 2008), e estudos com dados brasileiros encontram valores consistentemente abaixo de 1. Isso indica que capital e trabalho são complementares — mas não tanto quanto no caso Leontief puro (\(\sigma = 0\)). Esse grau intermediário de complementaridade ajuda a explicar por que a automação industrial desloca trabalhadores de forma menos abrupta do que ocorreria com \(\sigma\) mais elevado, mas ainda assim gera pressão sobre ocupações de baixa qualificação.
+
+??? example "Exercício Resolvido 9.4"
+    **Enunciado:** Uma firma opera com a função de produção CES \(q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}\). Calcule a elasticidade de substituição e a TMST quando \(K = 8\) e \(L = 2\).
+
+    **Dados:** \(\delta = 0{,}5\), \(\rho = -1\), \(\gamma = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Elasticidade de substituição**
+
+    Para a CES, \(\sigma = \frac{1}{1 - \rho} = \frac{1}{1 - (-1)} = \frac{1}{2} = 0{,}5\).
+
+    **Passo 2 — Produto total**
+
+    \[
+    q = \left[0{,}5 \cdot 8^{-1} + 0{,}5 \cdot 2^{-1}\right]^{-1} = \left[0{,}5 \cdot 0{,}125 + 0{,}5 \cdot 0{,}5\right]^{-1} = \left[0{,}0625 + 0{,}25\right]^{-1} = (0{,}3125)^{-1} = 3{,}2
+    \]
+
+    **Passo 3 — TMST**
+
+    Para a CES: \(\mathrm{TMST}_{L,K} = \frac{1 - \delta}{\delta} \left(\frac{K}{L}\right)^{1-\rho} = \frac{0{,}5}{0{,}5} \left(\frac{8}{2}\right)^{1-(-1)} = 1 \cdot 4^{2} = 16\)
+
+    **Resultado:** \(\sigma = 0{,}5\), \(q = 3{,}2\), \(\mathrm{TMST} = 16\).
+
+    **Interpretação econômica:** Com \(\sigma = 0{,}5 < 1\), capital e trabalho são mais complementares do que na Cobb-Douglas. A TMST de 16 indica que, nessa combinação capital-intensiva (\(K/L = 4\)), a firma precisaria de 16 unidades adicionais de trabalho para compensar a perda de 1 unidade de capital — a substituição é muito difícil, justamente porque a baixa elasticidade torna os insumos pouco intercambiáveis. Esse padrão é compatível com setores industriais brasileiros como a petroquímica, onde a substituição entre trabalho e capital é limitada pela natureza dos processos produtivos.
+
+---
+
+## 10.5 Funções de Produção Clássicas
+
+Apresentamos agora quatro famílias de funções de produção que cobrem todo o espectro de substituibilidade entre insumos. Cada uma captura um padrão tecnológico distinto, e a escolha da forma funcional adequada depende do setor e do problema em análise.
+
+### Função de produção linear
+
+A função linear captura situações em que os insumos realizam a mesma tarefa de forma intercambiável — por exemplo, uma linha de produção que pode ser operada por robôs ou por trabalhadores com resultado idêntico.
+
+\[
+q = aK + bL, \qquad a, b > 0
+\]
+
+Os insumos são **substitutos perfeitos**. A TMST é constante e igual a \(b/a\). A elasticidade de substituição é \(\sigma = \infty\). Os rendimentos de escala são constantes (a função é homogênea de grau 1).
+
+### Função de produção de proporções fixas (Leontief)
+
+No extremo oposto, a função Leontief descreve processos em que os insumos devem ser combinados em proporções rígidas — como receitas químicas ou postos de trabalho que exigem uma máquina por operador.
+
+\[
+q = \min\left\{\frac{K}{a}, \frac{L}{b}\right\}, \qquad a, b > 0
+\]
+
+Os insumos são **complementares perfeitos**: devem ser utilizados na proporção fixa \(K/L = a/b\). A TMST não é definida no vértice, e \(\sigma = 0\). Os rendimentos de escala são constantes.
+
+### Função de produção Cobb-Douglas
+
+A Cobb-Douglas é a forma funcional mais utilizada em trabalhos empíricos, pela combinação de flexibilidade e tratabilidade analítica. Foi proposta por Charles Cobb e Paul Douglas em 1928 para descrever a produção industrial nos EUA.
+
+\[
+q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0
+\]
+
+As propriedades dependem dos parâmetros: rendimentos constantes se \(\alpha + \beta = 1\), crescentes se \(\alpha + \beta > 1\), decrescentes se \(\alpha + \beta < 1\). A TMST é \((\beta/\alpha)(K/L)\) e \(\sigma = 1\).
+
+### Função de produção CES (Elasticidade de Substituição Constante)
+
+A função CES, introduzida por Arrow, Chenery, Minhas e Solow (1961), generaliza todas as formas anteriores ao permitir que a elasticidade de substituição assuma qualquer valor positivo.
+
+\[
+q = A\left[\delta K^{\rho} + (1 - \delta) L^{\rho}\right]^{\gamma/\rho}, \qquad \rho \leq 1, \; \rho \neq 0, \; 0 < \delta < 1
+\]
+
+onde:
+
+- \(\sigma = \frac{1}{1 - \rho}\) é a elasticidade de substituição,
+- \(\gamma\) é o parâmetro de rendimentos de escala (constantes se \(\gamma = 1\)),
+- \(\delta\) é o parâmetro de distribuição.
+
+A CES **generaliza** as três funções anteriores:
+
+- \(\rho \to 0 \Rightarrow\) Cobb-Douglas \((\sigma = 1)\),
+- \(\rho = 1 \Rightarrow\) Linear \((\sigma = \infty)\),
+- \(\rho \to -\infty \Rightarrow\) Leontief \((\sigma = 0)\).
+
+### Tabela comparativa das funções de produção
+
+| Propriedade | Linear | Leontief | Cobb-Douglas | CES |
+|:---|:---|:---|:---|:---|
+| **Fórmula** | \(aK + bL\) | \(\min\{K/a, L/b\}\) | \(AK^{\alpha}L^{\beta}\) | \(A[\delta K^{\rho} + (1-\delta)L^{\rho}]^{\gamma/\rho}\) |
+| **TMST** | \(b/a\) (constante) | Indefinida no vértice | \((\beta/\alpha)(K/L)\) | \(\frac{1-\delta}{\delta}\left(\frac{K}{L}\right)^{1-\rho}\) |
+| **Elasticidade de substituição \(\sigma\)** | \(\infty\) | \(0\) | \(1\) | \(\frac{1}{1-\rho}\) |
+| **Rendimentos de escala** | Constantes | Constantes | Depende de \(\alpha + \beta\) | Depende de \(\gamma\) |
+| **Isoquantas** | Retas | Ângulos retos | Hipérboles convexas | Curvas convexas |
+| **Casos especiais** | — | — | CES com \(\rho \to 0\) | Generaliza todas |
+
+As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
+
+??? example "Exercício Resolvido 9.5"
+    **Enunciado:** A função de produção de uma pizzaria é \(Q = 30K^{0,5}L^{0,5}\), com \(K\) fornos fixados em 4 no curto prazo. (a) Escreva a função de produção de curto prazo. (b) Calcule o produto total com 9 trabalhadores. (c) Calcule o produto marginal e o produto médio com 9 trabalhadores. (d) Classifique os rendimentos de escala.
+
+    **Dados:** \(A = 30\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(\bar{K} = 4\).
+
+    **Resolução:**
+
+    **Passo 1 — Função de curto prazo**
+
+    \[
+    Q = 30 \cdot 4^{0,5} \cdot L^{0,5} = 30 \times 2 \times L^{0,5} = 60L^{0,5}
+    \]
+
+    **Passo 2 — Produto total com \(L = 9\)**
+
+    \[
+    Q = 60 \times 9^{0,5} = 60 \times 3 = 180 \text{ pizzas}
+    \]
+
+    **Passo 3 — Produto marginal e produto médio**
+
+    \[
+    \mathrm{PMg}_L = 60 \times 0{,}5 \times L^{-0,5} = 30L^{-0,5} = \frac{30}{3} = 10
+    \]
+
+    \[
+    \mathrm{PMe}_L = \frac{Q}{L} = \frac{180}{9} = 20
+    \]
+
+    Como \(\mathrm{PMg}_L = 10 < 20 = \mathrm{PMe}_L\), o produto médio é decrescente — cada trabalhador adicional puxa a média para baixo.
+
+    **Passo 4 — Rendimentos de escala**
+
+    \(\alpha + \beta = 0{,}5 + 0{,}5 = 1\): rendimentos **constantes** de escala.
+
+    **Resultado:** (a) \(Q = 60L^{0,5}\); (b) 180 pizzas; (c) \(\mathrm{PMg}_L = 10\), \(\mathrm{PMe}_L = 20\); (d) CRS.
+
+    **Interpretação econômica:** Embora os rendimentos de escala sejam constantes (dobrar fornos e trabalhadores dobra a produção), no curto prazo, com fornos fixos, cada trabalhador adicional produz menos que o anterior — os rendimentos marginais são decrescentes. Esse exemplo ilustra a diferença entre rendimentos de escala (conceito de longo prazo) e rendimentos marginais decrescentes (curto prazo), uma distinção muito explorada pela ANPEC.
+
+---
+
+## 10.6 Progresso Técnico
+
+As funções de produção vistas até aqui descrevem a tecnologia em um ponto fixo do tempo. Mas a tecnologia evolui, e essa evolução é a principal fonte de crescimento econômico no longo prazo. O progresso técnico desloca a função de produção, permitindo obter mais produto com os mesmos insumos.
+
+<figure markdown="span">
+  <iframe src="../graficos/cap10/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 9.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
+</figure>
+
+Formalmente, introduzimos o tempo \(t\) na função de produção. A formulação mais simples é:
+
+\[
+q = A(t) \cdot f(K, L)
+\]
+
+Essa especificação corresponde ao progresso **neutro de Hicks**: o parâmetro \(A(t)\) aumenta o produto na mesma proporção para qualquer combinação de insumos, sem alterar a TMST para uma dada razão \(K/L\).
+
+### Classificações do progresso técnico
+
+!!! definition "Tipos de progresso técnico"
+    - **Neutro de Hicks**: \(q = A(t) \cdot f(K, L)\). A TMST depende apenas de \(K/L\), não de \(t\). As isoquantas se contraem homoteticamente em direção à origem.
+
+    - **Neutro de Harrod** (aumentador de trabalho): \(q = f(K, A(t) \cdot L)\). O progresso técnico equivale a um aumento na quantidade efetiva de trabalho. A razão capital-produto \(K/q\) permanece constante quando a razão \(K/(AL)\) é constante. Este é o tipo de progresso técnico compatível com crescimento equilibrado no modelo de Solow.
+
+    - **Neutro de Solow** (aumentador de capital): \(q = f(A(t) \cdot K, L)\). O progresso técnico equivale a um aumento na quantidade efetiva de capital. A razão trabalho-produto \(L/q\) permanece constante quando \(L\) é constante.
+
+Na função Cobb-Douglas \(q = A(t) K^{\alpha} L^{1-\alpha}\), os três tipos de neutralidade são equivalentes, pois:
+
+\[
+A(t) K^{\alpha} L^{1-\alpha} = K^{\alpha} [A(t)^{1/(1-\alpha)} L]^{1-\alpha} = [A(t)^{1/\alpha} K]^{\alpha} L^{1-\alpha}
+\]
+
+Para funções de produção mais gerais (como a CES com \(\sigma \neq 1\)), as três classificações geram resultados distintos, e a escolha do tipo de progresso técnico tem implicações importantes para a dinâmica de crescimento e a distribuição funcional da renda.
+
+### Medindo o progresso técnico: o resíduo de Solow
+
+A taxa de crescimento do produto pode ser decomposta como:
+
+\[
+\frac{\dot{q}}{q} = \frac{\dot{A}}{A} + \alpha \frac{\dot{K}}{K} + \beta \frac{\dot{L}}{L}
+\]
+
+O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**. Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
+
+??? example "Exercício Resolvido 9.3"
+    **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
+
+    **Dados:** \(\alpha = 0{,}3\), \(\beta = 0{,}7\), \(\dot{A}/A = 0{,}02\), \(\dot{K}/K = 0{,}04\), \(\dot{L}/L = 0{,}01\).
+
+    **Resolução:**
+
+    **Passo 1 — Aplicar a decomposição do crescimento**
+
+    \[
+    \frac{\dot{q}}{q} = \frac{\dot{A}}{A} + \alpha \frac{\dot{K}}{K} + \beta \frac{\dot{L}}{L}
+    \]
+
+    **Passo 2 — Substituir os valores**
+
+    \[
+    \frac{\dot{q}}{q} = 0{,}02 + 0{,}3 \times 0{,}04 + 0{,}7 \times 0{,}01 = 0{,}02 + 0{,}012 + 0{,}007 = 0{,}039
+    \]
+
+    **Passo 3 — Decomposição percentual**
+
+    | Fonte | Contribuição | % do total |
+    |---|---|---|
+    | PTF (progresso técnico) | 2,0 p.p. | 51,3% |
+    | Capital | 1,2 p.p. | 30,8% |
+    | Trabalho | 0,7 p.p. | 17,9% |
+    | **Total** | **3,9 p.p.** | **100%** |
+
+    **Resultado:** O produto cresce a 3,9% ao ano, com mais da metade explicada pelo progresso técnico.
+
+    **Interpretação econômica:** A predominância da PTF no crescimento é consistente com o padrão observado na agricultura brasileira pós-Embrapa (ver Box Brasil a seguir), onde a inovação tecnológica respondeu por parcela majoritária dos ganhos de produtividade. Como a função é Cobb-Douglas, o progresso técnico é simultaneamente neutro no sentido de Hicks, Harrod e Solow — as três classificações convergem (Seção 10.6).
+
+!!! example "Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
+
+    Os dados do **[IBGE/SIDRA](https://sidra.ibge.gov.br)** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 44,1 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados [CONAB](https://www.conab.gov.br), safra 2022/23). A produtividade média passou de 2.403 para 3.509 kg/ha.
+
+    Uma decomposição simples do crescimento à la Solow revela que:
+
+    - O crescimento da **área** (terra) respondeu por aproximadamente 60% do aumento da produção (expansão extensiva).
+    - O crescimento da **produtividade** (PTF + intensificação de insumos) respondeu pelos 40% restantes.
+
+    A parcela atribuída à PTF — novas cultivares, manejo de solo, integração lavoura-pecuária — é o "resíduo de Solow" aplicado à agricultura. Segundo estimativas da Embrapa, a pesquisa agropecuária respondeu por cerca de 60% dos ganhos de PTF na agricultura brasileira entre 1975 e 2020.
+
+---
+
+## Box Brasil: A Revolução Tecnológica da Embrapa e a Produtividade Agrícola
+
+!!! example "Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
+
+    A agropecuária brasileira vivenciou, nas últimas cinco décadas, uma das mais impressionantes transformações produtivas do mundo. O protagonista dessa revolução foi a **Empresa Brasileira de Pesquisa Agropecuária (Embrapa)**, fundada em 1973, cuja atuação é um caso emblemático de progresso técnico aplicado à produção.
+
+    **Soja: de cultura marginal a líder mundial.**
+    Na safra 1976/77, o Brasil produzia cerca de 12 milhões de toneladas de soja em 7 milhões de hectares (produtividade de ~1.700 kg/ha). Na safra 2023/24, a produção superou **150 milhões de toneladas** em 46 milhões de hectares, com produtividade média de **3.300 kg/ha** (dados CONAB). A produtividade praticamente dobrou, enquanto a área expandiu-se aproximadamente 6,5 vezes — evidenciando que o crescimento do produto decorreu tanto da expansão extensiva quanto, crucialmente, do progresso técnico.
+
+    **Milho: ganhos intensivos expressivos.**
+    A produtividade do milho saltou de cerca de 1.600 kg/ha na década de 1970 para mais de **6.000 kg/ha** nas safras recentes, um aumento de quase quatro vezes. Boa parte desse ganho deve-se ao desenvolvimento do milho safrinha (segunda safra) e de cultivares adaptados ao Cerrado.
+
+    **Cerrado: a fronteira tecnológica.**
+    A correção da acidez dos solos do Cerrado (calagem), o desenvolvimento de cultivares tropicais e técnicas de plantio direto permitiram transformar uma região antes considerada improdutiva no maior polo agropecuário do país. A Embrapa estima que a tecnologia gerada pela pesquisa agropecuária foi responsável por cerca de **60% do crescimento da produtividade total dos fatores** na agricultura brasileira entre 1975 e 2020.
 
     **Interpretação microeconômica.**
-    Em termos da teoria dos custos, o "custo Brasil" representa um deslocamento para cima das curvas de custo das firmas brasileiras em relação a competidores internacionais. Trata-se, em grande parte, de **custos fixos** (burocracia, tributação fixa) e **custos variáveis** elevados (logística, energia). A consequência é que a **escala mínima eficiente** das firmas brasileiras tende a ser maior, dificultando a sobrevivência de empresas menores e reduzindo a competitividade internacional. A reforma tributária de 2023 (EC 132/2023), com a unificação de tributos sobre consumo (CBS e IBS), representa uma tentativa de reduzir uma das principais fontes do custo Brasil.
+    Em termos da teoria da produção, a atuação da Embrapa representa um deslocamento da função de produção agrícola — um aumento do parâmetro \(A(t)\). Trata-se predominantemente de progresso técnico **aumentador de terra** (análogo ao neutro de Solow aplicado ao fator terra), pois a inovação principal foi tornar produtivos solos antes imprestáveis, equivalendo a multiplicar o fator terra efetivo disponível. A elasticidade de substituição entre terra e outros insumos (fertilizantes, maquinário) aumentou, refletindo a maior flexibilidade tecnológica na produção agrícola moderna. Goolsbee, Levitt & Syverson (2020, Cap. 6) documentam padrões similares de adoção tecnológica e ganhos de produtividade na agricultura estadunidense.
+
+## 10.7 Funções de Produção Homotéticas
+
+Uma função de produção \(f(K, L)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
+
+\[
+f(K, L) = g\!\big(h(K, L)\big), \quad g' > 0, \quad h(\lambda K, \lambda L) = \lambda \, h(K, L).
+\]
+
+**Propriedade fundamental.** Para funções homotéticas, a TMST depende apenas da **razão capital-trabalho** \(K/L\):
+
+\[
+\text{TMST}_{LK}(K, L) = \phi\!\left(\frac{K}{L}\right).
+\]
+
+Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As isoquantas são **expansões radiais** umas das outras.
+
+!!! abstract "Proposição — Propriedades de funções de produção homotéticas"
+    Se \(f(K, L)\) é homotética, então:
+
+    1. **Caminho de expansão linear**: para preços dos fatores \((w, r)\) fixos, a combinação ótima de insumos que minimiza custos satisfaz \(K^*/L^* = \psi(w/r)\), constante para todos os níveis de produto \(q\).
+    2. **Custo médio de longo prazo constante em escala**: a função custo pode ser escrita como \(C(w, r, q) = c(w, r) \cdot \gamma(q)\), onde \(c\) depende apenas dos preços e \(\gamma\) apenas do produto.
+    3. **Função custo separável**: consequência direta da propriedade 2 — os preços dos fatores afetam o nível de custos, mas não a forma como o custo varia com \(q\).
+
+**Exemplos.**
+
+- **Cobb-Douglas** \(f = K^\alpha L^\beta\): homotética (homogênea de grau \(\alpha + \beta\)). Caminho de expansão: \(K/L = (\alpha w)/(\beta r)\).
+- **CES** \(f = [\delta K^\rho + (1-\delta)L^\rho]^{\gamma/\rho}\): homotética (transformação monotônica de uma função homogênea de grau 1).
+- **Leontief** \(f = \min\{aK, bL\}\): homotética (homogênea de grau 1). Caminho de expansão fixo em \(K/L = b/a\).
+
+!!! warning "Contraexemplo"
+    A função \(f(K, L) = K + L + KL\) **não** é homotética: a TMST \(= (1 + L)/(1 + K)\) depende dos níveis absolutos de \(K\) e \(L\), não apenas da razão \(K/L\). As isoquantas mudam de forma conforme o nível de produto aumenta.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Com tecnologia homotética, firmas grandes e pequenas usam a mesma "receita" — a proporção de insumos depende apenas dos preços relativos, não da escala de produção.
+
+    **Pense assim:** Uma padaria que usa 2 kg de farinha para cada litro de leite manterá essa proporção se produzir 100 ou 10.000 pães por dia — desde que os preços dos insumos não mudem. Isso é o caminho de expansão linear: "escalar" a produção é como dar zoom na mesma combinação ótima.
+
+    **Por que isso importa:** A hipótese de homoteticidade simplifica enormemente a análise de custos. Se a tecnologia não for homotética, a proporção ótima de insumos muda com a escala, e a função custo não se separa em um componente de preços e outro de quantidade.
+
+??? example "Exercício Resolvido 9.4"
+    **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = r\). (c) Calcule a TMST ao longo do raio \(K = L\).
+
+    **Resolução:**
+
+    **Passo 1 — Verificar homoteticidade**
+
+    Defina \(h(K, L) = K^{0,5} L^{0,5}\), que é homogênea de grau 1: \(h(\lambda K, \lambda L) = \lambda K^{0,5} L^{0,5} = \lambda h(K, L)\). Então \(f = \ln(1 + h) = g(h)\), onde \(g(z) = \ln(1 + z)\) é estritamente crescente. Logo \(f\) é homotética.
+
+    **Passo 2 — Caminho de expansão com \(w = r\)**
+
+    A TMST é:
+
+    \[
+    \text{TMST}_{LK} = \frac{\partial f / \partial L}{\partial f / \partial K} = \frac{0{,}5 K^{0,5} L^{-0,5}}{0{,}5 K^{-0,5} L^{0,5}} = \frac{K}{L}
+    \]
+
+    No ótimo, \(\text{TMST} = w/r = 1\), logo \(K/L = 1\). O caminho de expansão é a reta \(K = L\).
+
+    **Passo 3 — TMST ao longo de \(K = L\)**
+
+    Se \(K = L\), então \(\text{TMST} = K/L = 1\) — constante ao longo do raio, confirmando a propriedade homotética.
+
+    **Resultado:** A função é homotética (log de Cobb-Douglas). Com \(w = r\), a firma usa quantidades iguais de capital e trabalho em qualquer escala.
 
 ---
-
-## Box Brasil: Economias de Escala na Agropecuária
-
-!!! example "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
-
-    A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do [IBGE](https://www.ibge.gov.br) (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
-
-    **Por que a escala importa?**
-
-    | Componente de custo | Pequeno produtor (<100 ha) | Grande produtor (>1.000 ha) |
-    |:---|:---:|:---:|
-    | Custo de máquinas/ha | Elevado (subutilização) | Baixo (diluição do CF) |
-    | Custo de insumos/ha | Maior (menor poder de barganha) | Menor (compras em escala) |
-    | Custo logístico/tonelada | Elevado (lotes pequenos) | Menor (contratos de frete) |
-    | Assistência técnica | Custo fixo alto relativo | Diluído na produção |
-
-    Esses dados são consistentes com uma curva de CMe de longo prazo em formato de L: custos médios decrescentes até uma escala mínima eficiente (EME) em torno de 500–1.000 hectares, após a qual os ganhos de escala se estabilizam. A **CONAB** estima que o custo total de produção de soja no Mato Grosso (safra 2023/24) foi de aproximadamente R$ 4.800/ha, com produtividade média de 57 sacas/ha, resultando em custo por saca de cerca de R$ 84 para produtores de grande escala — valor significativamente inferior ao de produtores menores.
-
-    **Implicação para política pública:** programas como o **PRONAF** (Programa Nacional de Fortalecimento da Agricultura Familiar) podem ser interpretados como subsídios que deslocam a curva de custo de pequenos produtores para baixo, compensando parcialmente a desvantagem de escala e permitindo sua permanência no mercado.
-
-    *Fontes: IBGE — Censo Agropecuário 2017; CONAB — Custos de Produção; [CEPEA/ESALQ](https://www.cepea.esalq.usp.br).*
-
----
-
-## 10.8 Demandas Condicionais e Função Custo por Tipo de Função de Produção
-
-Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(r\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
-
-### 10.8.1 Cobb-Douglas: q = Kᵅ Lᵝ
-
-**Demandas condicionais (minimização de custo).** A firma resolve:
-
-\[
-\min_{K,L} \; rK + wL \quad \text{s.a.} \quad K^\alpha L^\beta = q
-\]
-
-O Lagrangeano é:
-
-\[
-\mathcal{L} = rK + wL + \mu(q - K^\alpha L^\beta)
-\]
-
-Condições de primeira ordem:
-
-\[
-\frac{\partial \mathcal{L}}{\partial K} = r - \mu \alpha K^{\alpha-1} L^\beta = 0
-\]
-
-\[
-\frac{\partial \mathcal{L}}{\partial L} = w - \mu \beta K^\alpha L^{\beta-1} = 0
-\]
-
-Dividindo a primeira CPO pela segunda:
-
-\[
-\frac{r}{w} = \frac{\alpha L}{\beta K} \quad \Longrightarrow \quad K = \frac{\alpha\, w}{\beta\, r}\, L
-\]
-
-Substituindo na restrição tecnológica:
-
-\[
-\left(\frac{\alpha\, w}{\beta\, r}\right)^\alpha L^{\alpha+\beta} = q \quad \Longrightarrow \quad L^c = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{-\alpha/(\alpha+\beta)}
-\]
-
-\[
-\boxed{L^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\beta\, r}{\alpha\, w}\right)^{\alpha/(\alpha+\beta)}}
-\]
-
-\[
-\boxed{K^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{\beta/(\alpha+\beta)}}
-\]
-
-**Função custo.** Avaliando o gasto mínimo \(C = rK^c + wL^c\):
-
-\[
-\boxed{C(w,r,q) = q^{1/(\alpha+\beta)} \cdot \frac{\alpha+\beta}{\alpha^\alpha \beta^\beta} \cdot \frac{w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)}}{(\alpha+\beta)^{(\alpha+\beta)/(\alpha+\beta)}} \cdot (\alpha+\beta) \left(\frac{w}{\beta}\right)^{\beta/(\alpha+\beta)} \left(\frac{r}{\alpha}\right)^{\alpha/(\alpha+\beta)}}
-\]
-
-Simplificando, a função custo Cobb-Douglas tem a forma:
-
-\[
-C(w,r,q) = \kappa \cdot w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}
-\]
-
-onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\alpha+\beta)}\) é uma constante.
-
-**Retornos de escala e custos:**
-
-- Se \(\alpha+\beta = 1\) (retornos constantes): \(C\) é linear em \(q\) → CMg constante
-- Se \(\alpha+\beta > 1\) (retornos crescentes): \(C\) é côncava em \(q\) → CMg decrescente
-- Se \(\alpha+\beta < 1\) (retornos decrescentes): \(C\) é convexa em \(q\) → CMg crescente
-
-*Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
-
-**Demandas por insumos (maximização de lucro).** Com retornos decrescentes (\(\alpha+\beta < 1\)), a firma maximiza \(\pi = pq - wL - rK\). Substituindo \(q = K^\alpha L^\beta\) e derivando:
-
-\[
-p\alpha K^{\alpha-1}L^\beta = r, \qquad p\beta K^\alpha L^{\beta-1} = w
-\]
-
-Resolvendo o sistema (detalhes em Cap. 11):
-
-\[
-\boxed{L^*(w,r,p) = \left(\frac{p\,\alpha^\alpha\,\beta^{1-\alpha}}{w^{1-\alpha}\,r^\alpha}\right)^{1/(1-\alpha-\beta)}, \quad K^*(w,r,p) = \left(\frac{p\,\alpha^{1-\beta}\,\beta^\beta}{w^\beta\,r^{1-\beta}}\right)^{1/(1-\alpha-\beta)}}
-\]
-
-Estas demandas só existem com retornos decrescentes. Com retornos constantes ou crescentes, o lucro não tem máximo finito.
-
-### 10.8.2 Tecnologia Linear (Substitutos Perfeitos): q = αK + βL
-
-Com tecnologia linear, os insumos são perfeitamente substituíveis. As isoquantas são retas com inclinação \(-\beta/\alpha\).
-
-**Demandas condicionais.** A firma compara o custo por unidade de produto de cada insumo:
-
-- Custo de uma unidade de produto via capital: \(r/\alpha\)
-- Custo de uma unidade de produto via trabalho: \(w/\beta\)
-
-\[
-\boxed{K^c = \begin{cases} q/\alpha & \text{se } r/\alpha < w/\beta \\ 0 & \text{se } r/\alpha > w/\beta \end{cases}, \qquad L^c = \begin{cases} 0 & \text{se } r/\alpha < w/\beta \\ q/\beta & \text{se } r/\alpha > w/\beta \end{cases}}
-\]
-
-Se \(r/\alpha = w/\beta\), qualquer combinação sobre a isoquanta é ótima.
-
-**Função custo.**
-
-\[
-\boxed{C(w,r,q) = q \cdot \min\left\{\frac{r}{\alpha},\; \frac{w}{\beta}\right\}}
-\]
-
-Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg constante igual a \(\min\{r/\alpha, w/\beta\}\).
-
-**Demandas por insumos (maximização de lucro).** Com retornos constantes de escala, o lucro é linear em \(q\). Se \(p > \min\{r/\alpha, w/\beta\}\), a firma deseja produzir infinito; se \(p < \min\{r/\alpha, w/\beta\}\), a firma produz zero. O problema de maximização de lucro só tem solução interior com rendimentos decrescentes.
-
-### 10.8.3 Tecnologia Leontief (Proporções Fixas): q = min{K/α, L/β}
-
-Com tecnologia Leontief, os insumos são usados em proporções fixas \(\alpha:\beta\). As isoquantas têm formato de "L".
-
-**Demandas condicionais.** No ótimo, a firma opera no vértice da isoquanta: \(K/\alpha = L/\beta = q\). Qualquer outro ponto desperdiça insumos. Portanto:
-
-\[
-\boxed{K^c = \alpha\, q, \qquad L^c = \beta\, q}
-\]
-
-As demandas condicionais são **independentes dos preços dos insumos** — não há margem para substituição.
-
-**Função custo.**
-
-\[
-\boxed{C(w,r,q) = (\alpha\, r + \beta\, w)\, q}
-\]
-
-O custo é linear em \(q\), com CMg constante igual a \(\alpha r + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
-
-**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seriam necessários retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
-
-### 10.8.4 CES: q = (αKᵖ + βLᵖ)¹ᐟᵖ
-
-A função CES generaliza os três casos anteriores. O parâmetro \(\rho\) determina a elasticidade de substituição entre insumos: \(\sigma = 1/(1-\rho)\).
-
-**Demandas condicionais.** A firma resolve:
-
-\[
-\min_{K,L} \; rK + wL \quad \text{s.a.} \quad (\alpha K^\rho + \beta L^\rho)^{1/\rho} = q
-\]
-
-O Lagrangeano é \(\mathcal{L} = rK + wL + \mu[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
-
-\[
-\frac{r}{w} = \frac{\alpha K^{\rho-1}}{\beta L^{\rho-1}} \quad \Longrightarrow \quad \frac{K}{L} = \left(\frac{\alpha\, w}{\beta\, r}\right)^\sigma
-\]
-
-Definimos o **índice de preços de insumos CES**:
-
-\[
-W \equiv \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}
-\]
-
-As demandas condicionais ficam:
-
-\[
-\boxed{K^c = \alpha^\sigma\, r^{-\sigma}\, W^{\sigma-1}\, q, \qquad L^c = \beta^\sigma\, w^{-\sigma}\, W^{\sigma-1}\, q}
-\]
-
-**Função custo.**
-
-\[
-\boxed{C(w,r,q) = W \cdot q = q \cdot \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}}
-\]
-
-A função custo é linear em \(q\) (retornos constantes de escala) e tem a estrutura de um índice de preços CES.
-
-*Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
-
-**Demandas por insumos (maximização de lucro).** Com retornos constantes, o lucro é linear em \(q\) e o problema não tem solução finita a menos que \(p = W\). Para uma versão com retornos decrescentes, \(q = (\alpha K^\rho + \beta L^\rho)^{\gamma/\rho}\) com \(\gamma < 1\), a função custo torna-se \(C = W \cdot q^{1/\gamma}\), convexa em \(q\), e as demandas não condicionais podem ser obtidas via \(\max_q \; pq - W q^{1/\gamma}\).
-
-!!! info "Casos limite da CES na produção"
-    - \(\rho \to 0\) (\(\sigma \to 1\)): converge para Cobb-Douglas \(q = K^\alpha L^\beta\) (com \(\alpha + \beta = 1\) sob CRS)
-    - \(\rho \to 1\) (\(\sigma \to \infty\)): converge para tecnologia linear \(q = \alpha K + \beta L\)
-    - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K/\alpha, L/\beta\}\)
-
----
-
-## Exercícios Resolvidos
-
-??? example "Exercício Resolvido 10.1 — Custo econômico versus custo contábil"
-
-    **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
-
-    (a) Calcule o lucro contábil.
-
-    (b) Calcule o lucro econômico.
-
-    (c) A proprietária deve manter a confeitaria?
-
-    **Solução.**
-
-    **(a)** Custos contábeis (explícitos) = R$ 120.000 + R$ 60.000 + R$ 96.000 + R$ 48.000 = R$ 324.000.
-
-    \[
-    \pi_{\text{contábil}} = 480.000 - 324.000 = \text{R\$}\; 156.000
-    \]
-
-    **(b)** Custos implícitos:
-
-    - Custo de oportunidade do trabalho da proprietária: R$ 84.000 − R$ 48.000 = R$ 36.000 (diferença entre o que ela poderia ganhar e o pró-labore que já se paga).
-    - Custo de oportunidade do capital: 10% × R$ 200.000 = R$ 20.000.
-
-    Total de custos implícitos = R$ 56.000.
-
-    \[
-    \pi_{\text{econômico}} = 480.000 - 324.000 - 56.000 = \text{R\$}\; 100.000
-    \]
-
-    **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
-
-??? example "Exercício Resolvido 10.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
-
-    **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(r = 2\).
-
-    (a) Derive as demandas condicionadas por insumos.
-
-    (b) Obtenha a função custo.
-
-    (c) Verifique o Lema de Shephard.
-
-    (d) Calcule o custo total, o custo médio e o custo marginal para \(q = 10\).
-
-    **Solução.**
-
-    **(a)** Com \(\alpha = 1/3\) e \(\beta = 2/3\) (\(\alpha + \beta = 1\), retornos constantes), a condição de tangência é:
-
-    \[
-    \frac{\alpha}{\beta} \cdot \frac{L}{K} = \frac{r}{w} \implies \frac{1}{2} \cdot \frac{L}{K} = \frac{2}{8} = \frac{1}{4} \implies L = \frac{K}{2}
-    \]
-
-    Substituindo na restrição \(K^{1/3}L^{2/3} = q\):
-
-    \[
-    K^{1/3} \left(\frac{K}{2}\right)^{2/3} = q \implies \frac{K}{2^{2/3}} = q \implies K^c = 2^{2/3} q
-    \]
-
-    \[
-    L^c = \frac{K^c}{2} = \frac{2^{2/3} q}{2} = 2^{-1/3} q
-    \]
-
-    **(b)** Função custo:
-
-    \[
-    C = rK^c + wL^c = 2 \cdot 2^{2/3} q + 8 \cdot 2^{-1/3} q = 2^{5/3} q + 2^{3} \cdot 2^{-1/3} q = 2^{5/3} q + 2^{8/3} q
-    \]
-
-    \[
-    C = (2^{5/3} + 2^{8/3}) q = 2^{5/3}(1 + 2) q = 3 \cdot 2^{5/3} q \approx 9{,}52\, q
-    \]
-
-    **(c)** Verificação:
-
-    \[
-    \frac{\partial C}{\partial w} = \frac{\partial}{\partial w}[wL^c + rK^c]
-    \]
-
-    Precisamos expressar \(C\) em termos de \(w\) e \(r\). Para \(q = K^{1/3}L^{2/3}\), a função custo geral é \(C = \kappa \cdot w^{2/3} r^{1/3} q\), onde \(\kappa = 3/(2^{2/3})\). Então:
-
-    \[
-    \frac{\partial C}{\partial w} = \kappa \cdot \frac{2}{3} w^{-1/3} r^{1/3} q = L^c \quad \checkmark
-    \]
-
-    **(d)** Para \(q = 10\):
-
-    \[
-    CT = 3 \cdot 2^{5/3} \cdot 10 \approx 95{,}2
-    \]
-
-    Como \(\alpha + \beta = 1\) (retornos constantes), \(C\) é linear em \(q\). Logo:
-
-    \[
-    \mathrm{CMe} = \mathrm{CMg} = 3 \cdot 2^{5/3} \approx 9{,}52
-    \]
-
-    O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
-
-??? example "Exercício Resolvido 10.3 — Curto prazo versus longo prazo"
-
-    **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(r = 10\).
-
-    (a) Derive a função custo de longo prazo e mostre que o CMg é crescente.
-
-    (b) No curto prazo, o capital está fixo em \(\bar{K} = 1\). Derive a função custo de curto prazo.
-
-    (c) Mostre que \(CT_{LP}(q) \leq CT_{CP}(q)\) para todo \(q\), com igualdade em um ponto.
-
-    **Solução.**
-
-    **(a)** Com \(\alpha = \beta = 1/4\) e \(\alpha + \beta = 1/2 < 1\) (retornos decrescentes), pela condição de tangência:
-
-    \[
-    \frac{1/4 \cdot L}{1/4 \cdot K} = \frac{r}{w} = 1 \implies K = L
-    \]
-
-    Substituindo: \(K^{1/4} K^{1/4} = q \implies K^{1/2} = q \implies K^c = L^c = q^2\).
-
-    \[
-    CT_{LP} = 10q^2 + 10q^2 = 20q^2
-    \]
-
-    \[
-    \mathrm{CMg}_{LP} = 40q \quad (\text{crescente em } q)
-    \]
-
-    Isso confirma: retornos decrescentes (\(\alpha + \beta < 1\)) geram CMg crescente.
-
-    **(b)** Com \(\bar{K} = 1\): \(q = 1^{1/4} L^{1/4} = L^{1/4} \implies L = q^4\).
-
-    \[
-    CT_{CP} = r\bar{K} + wL = 10 \cdot 1 + 10 \cdot q^4 = 10 + 10q^4
-    \]
-
-    **(c)** Comparando:
-
-    \[
-    CT_{CP} - CT_{LP} = 10 + 10q^4 - 20q^2 = 10(1 - 2q^2 + q^4) = 10(1 - q^2)^2 \geq 0
-    \]
-
-    A diferença é sempre não negativa, com igualdade quando \(q^2 = 1\), ou seja, \(q = 1\). Nesse ponto, \(K^*(q=1) = 1 = \bar{K}\) — o capital fixo coincide com o ótimo de longo prazo. Para qualquer outro nível de produto, o curto prazo é mais caro, pois a firma não pode ajustar o capital.
 
 ---
 
@@ -738,162 +622,239 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 !!! tip "Exercícios do Capítulo 10"
 
-**Exercício 10.1.**
-Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(r = 1\).
+**Exercício 9.1.**
+Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
-(a) Derive as demandas condicionadas por insumos \(K^c(w, r, q)\) e \(L^c(w, r, q)\).
+(a) Calcule os produtos marginais \(\mathrm{PMg}_K\) e \(\mathrm{PMg}_L\).
 
-(b) Obtenha a função custo \(C(w, r, q)\).
+(b) Verifique que os produtos marginais são decrescentes (i.e., \(\partial^2 q / \partial K^2 < 0\) e \(\partial^2 q / \partial L^2 < 0\)).
 
-(c) Verifique o Lema de Shephard calculando \(\partial C / \partial w\) e \(\partial C / \partial r\).
+(c) Determine a TMST e mostre que ela é decrescente ao longo de uma isoquanta.
 
-(d) Calcule o custo total para produzir \(q = 10\).
+(d) Classifique os rendimentos de escala.
 
-(e) Determine o custo marginal e o custo médio e mostre que são constantes. Explique por que isso ocorre (dica: relacione com rendimentos de escala).
-
----
-
-**Exercício 10.2.**
-Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + q^3/3\).
-
-(a) Identifique o custo fixo e o custo variável.
-
-(b) Derive as expressões de CMe, CVMe e CMg.
-
-(c) Encontre o nível de produção que minimiza o CMe e o nível que minimiza o CVMe.
-
-(d) Verifique que o CMg cruza o CMe e o CVMe nos respectivos pontos de mínimo.
+(e) Confirme que \(\sigma = 1\).
 
 ---
 
-**Exercício 10.3.**
-Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 8\) e \(w = 2\).
+**Exercício 9.2.**
+Uma firma opera com a tecnologia CES:
 
-(a) Derive a função custo \(C(q)\).
+\[
+q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}
+\]
 
-(b) Calcule CMe e CMg. São constantes? Justifique.
+(a) Identifique os parâmetros \(\delta\), \(\rho\) e \(\gamma\).
 
-(c) Compare com o caso de uma Cobb-Douglas com rendimentos constantes. Em que se assemelham os custos?
+(b) Calcule a elasticidade de substituição \(\sigma\).
 
----
+(c) Mostre que os rendimentos de escala são constantes.
 
-**Exercício 10.4.**
-Explique graficamente e algebricamente por que a curva de custo médio de longo prazo é a envoltória das curvas de custo médio de curto prazo. Use o caso de uma firma com função de produção \(q = K^{1/3}L^{1/3}\) e preços de insumos \(w = r = 1\) para:
-
-(a) Derivar a função custo de longo prazo.
-
-(b) Fixar \(\bar{K} = 4\) e derivar a função custo de curto prazo.
-
-(c) Mostrar que \(\mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}=4)\) para todo \(q\), com igualdade em um ponto específico.
+(d) Compare a forma das isoquantas desta função com as da Cobb-Douglas.
 
 ---
 
-**Exercício 10.5.**
-Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + \beta = 1\) (rendimentos constantes de escala).
+**Exercício 9.3.**
+Considere a função de produção Leontief \(q = \min\{2K, 3L\}\).
 
-(a) Mostre que a função custo é linear em \(q\): \(C(w, r, q) = c(w, r) \cdot q\), onde \(c(w, r)\) é o custo unitário.
+(a) Qual a proporção ótima de uso dos insumos?
 
-(b) Derive a expressão de \(c(w, r)\) e mostre que ele é homogêneo de grau 1 nos preços dos insumos.
+(b) Se a firma deseja produzir \(q = 60\), quais as quantidades mínimas de \(K\) e \(L\)?
 
-(c) Mostre que, neste caso, \(\mathrm{CMg} = \mathrm{CMe} = c(w, r)\) — o custo marginal é constante e igual ao custo médio.
+(c) Qual o efeito de dobrar apenas o trabalho, mantendo o capital constante? Interprete em termos de rendimentos marginais.
 
-(d) Interprete economicamente: por que rendimentos constantes de escala implicam custos marginais constantes?
+---
+
+**Exercício 9.4.**
+Uma função de produção é dada por \(q = K^{0,6} L^{0,8}\).
+
+(a) Classifique os rendimentos de escala.
+
+(b) Calcule a elasticidade de escala \(e\) e interprete.
+
+(c) Se a firma dobrar ambos os insumos, por qual fator o produto aumentará?
+
+(d) Explique por que rendimentos crescentes de escala podem existir mesmo com produtos marginais decrescentes em cada fator individualmente.
+
+---
+
+**Exercício 9.5.**
+Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\), com \(A(t) = e^{0,02t}\).
+
+(a) Qual a taxa de crescimento da PTF?
+
+(b) Se \(K\) cresce a 3% ao ano e \(L\) cresce a 1% ao ano, qual a taxa de crescimento do produto?
+
+(c) Decomponha o crescimento do produto nas contribuições do capital, do trabalho e da PTF.
+
+(d) Este progresso técnico é neutro no sentido de Hicks, Harrod ou Solow? Justifique.
+
+(e) Calcule a produtividade total dos fatores em \(t = 0\) e \(t = 10\). Se em \(t = 0\) a firma utiliza \(K = 100\) e \(L = 200\), qual o produto em \(t = 0\) e em \(t = 10\) (supondo que os insumos cresçam às taxas indicadas)?
 
 ---
 
 ## Vem, ANPEC!
 
-??? question "ANPEC 2020 — Questão 06"
-    Em um ano, uma empresa apresentou os seguintes dados contábeis: \$ 1 milhão de receitas, \$ 300 mil de compras de matérias primas, \$ 30 mil de despesas com água e energia elétrica, \$ 100 mil de gastos com a folha de salários e \$ 120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$ 200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$ 90 mil e outra com salário anual de \$ 150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+??? question "ANPEC 2013 — Questão 06"
+    Considere a teoria da produção e indique quais das afirmativas abaixo são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
     |------|-----------|
-    | 0 | O custo contábil anual da empresa é de \$ 550 mil. |
-    | 1 | O custo econômico anual da empresa é de \$ 780 mil. |
-    | 2 | O lucro econômico anual da empresa é de \$ 100 mil. |
-    | 3 | Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo. |
-    | 4 | O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$ 300 mil. |
+    | 0 | Se a função de produção for \(f(K, L) = [K^a + L^a]^{v/a}\), com \(a \leq 1\), \(a \neq 0\) e \(v > 1\), ela apresenta retornos crescentes de escala. |
+    | 1 | O coeficiente de elasticidade de substituição \(\sigma\) de uma função de produção como \(f(K, L) = [K^a + L^a]^{v/a}\), com \(a < 1\), \(a \neq 0\) e \(v > 1\), é \(\sigma = 1/(1-a)\). |
+    | 2 | Funções de produção com elasticidade de substituição \(\sigma = 0\) possuem isoquantas em formato de L. |
+    | 3 | Se a tecnologia for monotônica, isso significa que não é possível produzir ao menos a mesma quantidade aumentando a quantidade de um dos insumos. |
+    | 4 | Funções de produção do tipo Cobb-Douglas possuem elasticidade de substituição \(\sigma = 1\). |
 
     ??? success "Gabarito"
-        **Respostas: V V F V F**
+        **Respostas: V V V F V**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** Custos contábeis (explícitos) = \$300k (matéria-prima) + \$30k (água/energia) + \$100k (salários) + \$120k (pró-labore) = **\$550k**.
-        - **Item 1 — V:** Custo de oportunidade do trabalho do proprietário: \$150k (melhor oferta) − \$120k (pró-labore já pago) = \$30k adicional implícito. Custo de oportunidade das instalações: \$200k (aluguel). Custos implícitos = \$30k + \$200k = \$230k. Custo econômico = \$550k + \$230k = **\$780k**.
-        - **Item 2 — F:** Lucro econômico = \$1.000k − \$780k = **\$220k**, não \$100k.
-        - **Item 3 — V:** Como o lucro econômico é \$220k > 0, a empresa remunera todos os fatores acima de seu custo de oportunidade. O proprietário deve continuar operando.
-        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua \$220k > 0 independentemente de custos já afundados. A decisão racional é continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva (Seção 10.1).
+        - **Item 0 — V:** \(f(tK, tL) = [t^a K^a + t^a L^a]^{v/a} = t^v [K^a + L^a]^{v/a} = t^v f(K,L)\). Como \(v > 1\), temos \(t^v > t\) para \(t > 1\), logo rendimentos crescentes.
+        - **Item 1 — V:** Trata-se de uma CES com \(\rho = a\). A elasticidade de substituição é \(\sigma = 1/(1-\rho) = 1/(1-a)\). O parâmetro \(v\) (rendimentos de escala) não afeta \(\sigma\).
+        - **Item 2 — V:** \(\sigma = 0\) corresponde ao caso Leontief (\(\rho \to -\infty\)), cujas isoquantas têm formato de L (ângulos retos).
+        - **Item 3 — F:** Monotonia (livre descarte) significa exatamente o oposto: se é possível produzir \(q\) com \((K, L)\), então é possível produzir *ao menos* \(q\) com \((K', L')\) onde \(K' \geq K\) e \(L' \geq L\). Mais insumo nunca reduz o produto máximo possível.
+        - **Item 4 — V:** Conforme demonstrado na Seção 10.4, a Cobb-Douglas possui \(\sigma = 1\), independentemente dos expoentes \(\alpha\) e \(\beta\).
 
-??? question "ANPEC 2018 — Questão 05"
-    Com relação aos custos de produção, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
+??? question "ANPEC 2015 — Questão 07"
+    Com relação à Teoria da Produção, indique quais das afirmativas abaixo são verdadeiras:
 
     | Item | Afirmação |
     |------|-----------|
-    | 0 | Quando há níveis discretos do fator fixo, a curva de custo marginal de longo prazo será composta por trechos das curvas de custo marginal de curto prazo associados a cada nível de fator fixo. |
-    | 1 | No caso de uma empresa com duas fábricas, a curva de custo marginal de curto prazo da empresa é a soma vertical das curvas de custo marginal de curto prazo das duas fábricas. |
-    | 2 | A função de custo total quadrática do tipo \(CT = aq + bq^2\) resulta em uma curva de custo marginal linear. |
-    | 3 | Uma função de custo total cúbica do tipo \(C = aq + bq^2 + cq^3\) resulta em curvas de custo médio e marginal em forma de U. |
-    | 4 | Custos quase fixos independem do nível de produção, mas só precisam ser pagos se a empresa produzir uma quantidade positiva de bens. |
+    | 0 | Se o produto médio do fator variável é crescente, o seu produto marginal é maior do que o seu produto médio. |
+    | 1 | A produtividade da mão de obra pode aumentar se houver progresso técnico, mesmo que o processo produtivo apresente rendimentos marginais decrescentes. |
+    | 2 | Quando o processo produtivo apresenta retornos constantes de escala, se a produção aumentar proporcionalmente, o espaço entre as isoquantas aumenta progressivamente. |
+    | 3 | Uma isoquanta nunca pode apresentar uma inclinação ascendente, se todos os insumos apresentam produtividades marginais positivas. |
+    | 4 | As isoquantas são convexas se a taxa marginal de substituição técnica for decrescente. |
+
+    ??? success "Gabarito"
+        **Respostas: V V F V V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Se \(\mathrm{PMe}_L\) é crescente, então \(\frac{d}{dL}\left(\frac{q}{L}\right) > 0\), o que requer \(\mathrm{PMg}_L > \mathrm{PMe}_L\). Essa é a relação padrão entre marginal e médio (Seção 10.1).
+        - **Item 1 — V:** O progresso técnico desloca toda a função de produção para cima (aumento de \(A(t)\)), elevando a produtividade mesmo que os rendimentos marginais do trabalho sejam decrescentes para cada nível de \(A\).
+        - **Item 2 — F:** Com retornos constantes de escala (CRS), dobrar os insumos dobra o produto. As isoquantas para \(q = 1, 2, 3, \ldots\) ficam **igualmente espaçadas** ao longo de raios partindo da origem, não progressivamente mais distantes.
+        - **Item 3 — V:** Inclinação ascendente significaria \(dK/dL > 0\) ao longo da isoquanta, ou seja, seria necessário aumentar ambos os insumos para manter o produto constante — o que contradiz a hipótese de produtividades marginais positivas.
+        - **Item 4 — V:** TMST decrescente ao longo da isoquanta (em valor absoluto) é a condição que garante convexidade das isoquantas em relação à origem.
+
+??? question "ANPEC 2016 — Questão 05"
+    Em relação à teoria da produção, é correto afirmar que:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | A elasticidade de substituição para uma função de produção \(Q = AL^a K^b\) é \(a/b\). |
+    | 1 | Uma função de produção do tipo \(Q = (L^p + K^p)^{1/p}\), com \(p > 0\), apresenta no limite uma taxa marginal de substituição igual a \(-K/L\), quando \(p\) tende a zero. |
+    | 2 | Quando a função de produção da empresa consegue produzir mais do que antes, com a quantidade de insumos na mesma proporção, diz-se que ela experimentou progresso técnico neutro. |
+    | 3 | Uma função de produção do tipo \(Q = (L^p + K^p)^{1/p}\), com \(p > 0\), no limite tende a uma Cobb-Douglas, quando \(p\) tende a zero. |
+    | 4 | Uma função de produção do tipo \(Q = (L^p + K^p)^{1/p}\), com \(p > 0\), apresenta uma elasticidade de substituição infinita, quando \(p = 1\). |
+
+    ??? success "Gabarito"
+        **Respostas: F V V V V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — F:** A elasticidade de substituição da Cobb-Douglas é sempre \(\sigma = 1\), independentemente dos valores de \(a\) e \(b\) (Seção 10.4). A razão \(a/b\) aparece na TMST, não em \(\sigma\).
+        - **Item 1 — V:** Para a CES com \(\delta = 0{,}5\), a TMST é \((K/L)^{1-p}\). Quando \(p \to 0\), a TMST tende a \(K/L\), e a inclinação da isoquanta (com sinal negativo) é \(-K/L\).
+        - **Item 2 — V:** Essa é a definição de progresso técnico neutro de Hicks: mais produto com os mesmos insumos, sem alterar a TMST para uma dada razão \(K/L\) (Seção 10.6).
+        - **Item 3 — V:** É um resultado clássico: quando \(\rho = p \to 0\), a CES converge para a Cobb-Douglas (com pesos iguais, neste caso \(Q = K^{0,5}L^{0,5}\)).
+        - **Item 4 — V:** Com \(p = 1\), temos \(Q = L + K\) (função linear), cuja elasticidade de substituição é \(\sigma = \infty\) — insumos são substitutos perfeitos.
+
+??? question "ANPEC 2017 — Questão 06"
+    Com relação à Teoria da Produção no curto prazo, indique quais entre as afirmações abaixo são verdadeiras:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | O produto marginal é zero quando o volume produzido é máximo. |
+    | 1 | O produto médio é decrescente quando o produto marginal é maior do que o produto médio. |
+    | 2 | O produto marginal deve ser igual ao produto médio quando este último é máximo. |
+    | 3 | A lei dos rendimentos marginais decrescentes resulta da queda na qualidade de unidades adicionais do insumo variável. |
+    | 4 | Avanços tecnológicos anulam a operação da lei dos rendimentos marginais decrescentes. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V F F**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** No curto prazo, o produto total \(\mathrm{TP}(L)\) atinge seu máximo quando \(\mathrm{PMg}_L = \frac{\partial \mathrm{TP}}{\partial L} = 0\).
+        - **Item 1 — F:** É o contrário. Quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é *crescente*, não decrescente. O marginal "puxa" a média para cima quando está acima dela.
+        - **Item 2 — V:** A condição de primeira ordem para o máximo do produto médio é \(\frac{d(\mathrm{PMe}_L)}{dL} = 0\), que implica \(\mathrm{PMg}_L = \mathrm{PMe}_L\).
+        - **Item 3 — F:** A lei dos rendimentos marginais decrescentes não resulta de queda na qualidade dos insumos (que são considerados homogêneos). Resulta da proporção desfavorável entre o fator variável e o fator fixo: cada unidade adicional do insumo variável dispõe de menos fator fixo para trabalhar.
+        - **Item 4 — F:** Avanços tecnológicos deslocam a função de produção para cima (aumentam \(A\)), mas não eliminam a concavidade no curto prazo. Para qualquer nível de tecnologia, a adição contínua de um fator variável a um fator fixo eventualmente apresentará rendimentos marginais decrescentes.
+
+??? question "ANPEC 2020 — Questão 04"
+    Com relação ao comportamento do produtor, indique quais dos itens a seguir são verdadeiros e quais são falsos:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Em uma função de produção do tipo \(Q = Af(K, L)\), o parâmetro "A" representa o nível de produtividade total dos fatores. |
+    | 1 | Uma empresa emprega 100 trabalhadores e 50 unidades de capital. O preço do trabalho é \$15/hora e o do capital é \$30/hora. O produto marginal do trabalho é 60 e o produto marginal do capital é 90. A empresa está minimizando seus custos. |
+    | 2 | Se a taxa marginal de substituição técnica de uma empresa não varia ao longo da isoquanta, sendo sempre igual a \(-1\), os insumos são substitutos perfeitos. |
+    | 3 | Custos fixos como proporção importante dos custos totais é uma fonte de retornos crescentes de escala. |
+    | 4 | A presença de "aprender fazendo" (*learning by doing*) de forma significativa no processo produtivo de uma empresa é uma fonte de retornos crescentes de escala. |
 
     ??? success "Gabarito"
         **Respostas: V F V V V**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** Quando o capital assume apenas valores discretos (\(\bar{K}_1, \bar{K}_2, \ldots\)), cada nível gera uma curva de CMg de curto prazo. A curva de CMg de longo prazo é obtida selecionando, para cada nível de produto, o trecho da CMg de curto prazo correspondente ao nível de capital que minimiza o custo total — formando uma curva "composta" por segmentos das diversas CMg de curto prazo. Isso é a contrapartida discreta da envoltória contínua (Seção 10.7).
-        - **Item 1 — F:** A soma é **horizontal**, não vertical. Com duas fábricas, a firma aloca produção de modo a igualar os custos marginais entre elas. Para cada nível de CMg, soma-se as quantidades produzidas nas duas fábricas — essa é a soma horizontal. A soma vertical seria somar os custos marginais a cada quantidade, o que não descreve corretamente a agregação de CMg entre plantas.
-        - **Item 2 — V:** \(CT = aq + bq^2 \implies CMg = a + 2bq\), que é uma função linear de \(q\).
-        - **Item 3 — V:** \(CMe = a + bq + cq^2\) e \(CMg = a + 2bq + 3cq^2\). Para os parâmetros convencionais (\(b < 0, c > 0\)), ambas são parábolas com concavidade para cima, gerando o formato de U clássico (Seção 10.5).
-        - **Item 4 — V:** Custos quase fixos são custos que não variam com o nível de produção, mas que só existem quando a firma produz (\(q > 0\)). Diferem dos custos fixos tradicionais, que são incorridos mesmo com \(q = 0\). Exemplos incluem o custo de aquecimento de um forno industrial ou a equipe mínima de operação.
+        - **Item 0 — V:** Na formulação \(Q = Af(K,L)\), o parâmetro \(A\) é o nível de PTF (produtividade total dos fatores), conforme definido na Seção 10.6.
+        - **Item 1 — F:** Para minimizar custos, a firma deve igualar a TMST à razão de preços: \(\frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{w}{r}\). Aqui, \(\frac{60}{90} = 0{,}667\) e \(\frac{15}{30} = 0{,}5\). Como \(0{,}667 \neq 0{,}5\), a firma **não** está minimizando custos — deveria usar relativamente mais trabalho.
+        - **Item 2 — V:** TMST constante e igual a \(-1\) significa isoquantas lineares com inclinação \(-1\), ou seja, \(q = aK + aL\) — os insumos são substitutos perfeitos (trocáveis na proporção 1:1).
+        - **Item 3 — V:** Custos fixos elevados significam que o custo médio cai fortemente com a escala (diluição dos fixos), o que é uma manifestação de rendimentos crescentes de escala.
+        - **Item 4 — V:** *Learning by doing* implica que a produtividade aumenta com a experiência acumulada (produção acumulada), gerando efetivamente rendimentos crescentes de escala dinâmicos.
 
-??? question "ANPEC 2022 — Questão 05"
-    Com relação à Teoria dos Custos, julgue os itens a seguir:
+??? question "ANPEC 2024 — Questão 03"
+    Com relação à teoria da produção, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     | Item | Afirmação |
     |------|-----------|
-    | 0 | Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por \(f_1(K,L) = \min\{K, L/4\}\) e o segundo processo é dado por \(f_2(K,L) = \min\{K/5, L\}\). Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é \(r = 1\) e o do trabalho é \(w = 2\). Então, a função custo da empresa é \(c(Q) = 7Q\). |
-    | 1 | Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por \(r > 0\) e \(w > 0\). Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: \(c(r, w, q) = 2r^{5/8}w^{3/8}\). Suponha que \(r = 1\) e \(w = 256 = 2^8\). Então, a demanda fatorial por capital é \(K = 16\). |
-    | 2 | Uma empresa possui função de produção dada por \(f(K, L) = \sqrt{KL}\), em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \(\bar{K} = 4\). Suponha que o preço fatorial do capital é \(r = 1\) e que o preço fatorial do trabalho é \(w = 4\). Então, a função de custo de curto prazo é \(c(q) = 4 + q^2\). |
-    | 3 | No curto prazo, se o preço do produto é inferior ao custo médio mínimo, então a firma necessariamente não produzirá. |
-    | 4 | Uma firma tem função de produção \(f(K, L) = \min\{K + L, 2L\}\). Sejam \(r, w > 0\) os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que \(r < w\). O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto. |
+    | 0 | Seja \(f(z_1,\ldots,z_m) = \gamma(\delta_1 z_1^{-\rho} + \cdots + \delta_m z_m^{-\rho})^{-\nu/\rho}\) uma função de produção CES, em que \(\gamma, \nu, \delta_1,\ldots,\delta_m > 0\), \(\sum_{i=1}^{m} \delta_i = 1\) e \(\rho \geq -1\). Então o limite da CES quando a elasticidade de substituição diverge para \(+\infty\) é uma função de produção Leontief, independentemente do grau de homogeneidade de \(f\). |
+    | 1 | Seja \(Q(t) = \gamma(t)K(t)^{\alpha}L(t)^{1-\alpha}\), com \(0 < \alpha < 1\), uma função de produção Cobb-Douglas que varia continuamente no tempo. Suponha que as elasticidades-produto do capital e do trabalho são, respectivamente, 0,5 e 0,5. Se o produto cresce 2% ao ano, o capital cresce 1,8% ao ano e o trabalho cresce 1% ao ano, então o resíduo de Solow é de 0,6% ao ano. |
+    | 2 | Seja \(Q = \min\{K/2, L\}\) uma função de produção Leontief. Suponha que \(L\) está fixo e defina \(q = Q/L\) e \(k = K/L\). Defina \(\varphi(k) = \min\{k/2, 1\}\). Se \(k \in [0, 2)\), então a produção é tecnologicamente ineficiente. |
+    | 3 | Considere \(f(K,L) = (K-L)^2\) se \(K \leq L\), e \(f(K,L) = (K-L)^3\) se \(K > L\). Então, ao longo de linhas retas que partem da origem, a taxa técnica de substituição é constante, mas a função não é homotética. |
+    | 4 | Uma firma produz de acordo com dois processos de Leontief: \(\min\{K/3, L/2\}\) e \(\min\{K, L/3\}\). Suponha que \(K = 5\) e \(L = 8\). Se o trabalhador adicional custa 70 e o preço da unidade do produto é 210, então não vale a pena contratar o trabalhador adicional. |
 
     ??? success "Gabarito"
-        **Respostas: V F V F V**
+        **Respostas: F V V V V**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** Processo 1 usa 1K e 4L por unidade: custo unitário = \(1 \cdot 1 + 4 \cdot 2 = 9\). Processo 2 usa 5K e 1L por unidade: custo unitário = \(5 \cdot 1 + 1 \cdot 2 = 7\). Como \(7 < 9\), a firma usa apenas o processo 2 e \(c(Q) = 7Q\).
-        - **Item 1 — F:** Pelo Lema de Shephard: \(K = \partial c / \partial r = 2 \cdot \frac{5}{8} r^{-3/8} w^{3/8} = \frac{5}{4} r^{-3/8} w^{3/8}\). Com \(r = 1\) e \(w = 256\): \(K = \frac{5}{4} \cdot 1 \cdot 256^{3/8} = \frac{5}{4} \cdot (2^8)^{3/8} = \frac{5}{4} \cdot 2^3 = \frac{5}{4} \cdot 8 = 10\), não 16. O Lema de Shephard (Seção 10.4) é a ferramenta para resolver este item.
-        - **Item 2 — V:** \(q = \sqrt{4L} = 2\sqrt{L} \implies L = q^2/4\). Custo de curto prazo: \(c = r\bar{K} + wL = 1 \cdot 4 + 4 \cdot q^2/4 = 4 + q^2\).
-        - **Item 3 — F:** No curto prazo, se \(P < \mathrm{CMe}_{min}\) mas \(P > \mathrm{CVMe}_{min}\), a firma produz — ela cobre seus custos variáveis e parte dos custos fixos. A firma só encerra produção se \(P < \mathrm{CVMe}_{min}\) (ponto de fechamento). A condição é sobre o CVMe, não sobre o CMe (Seção 10.5).
-        - **Item 4 — V:** \(f(K,L) = \min\{K+L, 2L\}\). Com \(r < w\), a firma prefere usar mais K e menos L. Para \(q = \min\{K+L, 2L\}\), no ótimo com \(r < w\): \(K+L \geq 2L\) (i.e., \(K \geq L\)), de modo que \(q = 2L\), logo \(L = q/2\). A restrição \(L \leq 10\) se torna ativa quando \(q/2 > 10\), ou seja, \(q > 20\).
+        - **Item 0 — F:** Quando \(\sigma \to +\infty\) (ou seja, \(\rho \to 1\) na parametrização com \(\sigma = 1/(1+\rho)\), ou equivalentemente \(\rho \to 1\) com \(\sigma = 1/(1-\rho)\) dependendo da convenção de sinal), a CES converge para a função *linear* (substitutos perfeitos), não para a Leontief. A Leontief é o limite quando \(\sigma \to 0\).
+        - **Item 1 — V:** Resíduo de Solow: \(\dot{\gamma}/\gamma = \dot{Q}/Q - \alpha \dot{K}/K - (1-\alpha)\dot{L}/L = 0{,}02 - 0{,}5 \times 0{,}018 - 0{,}5 \times 0{,}01 = 0{,}02 - 0{,}009 - 0{,}005 = 0{,}006 = 0{,}6\%\).
+        - **Item 2 — V:** Se \(k < 2\), temos \(k/2 < 1\), logo \(q = \varphi(k) = k/2 < 1\). Mas com o mesmo \(L\), a firma poderia atingir \(q = 1\) se tivesse \(k \geq 2\). Como \(k/2 < 1 = \min\{k'/2, 1\}\) para \(k' \geq 2\), a firma está usando capital insuficiente: há excesso relativo de trabalho, e a produção está abaixo da fronteira eficiente.
+        - **Item 3 — V:** Ao longo de raios da origem, \(K = cL\), e a TMST depende apenas de \(c\), não do nível de \(L\) — logo é constante ao longo de raios. Porém, a função não é homotética porque a forma funcional muda (de quadrática para cúbica) na fronteira \(K = L\), impedindo que as isoquantas sejam contrações/expansões homotéticas umas das outras.
+        - **Item 4 — V:** Com \(K = 5\) e \(L = 8\), a produção ótima combina os dois processos. No processo 1: \(\min\{5/3, 8/2\} = \min\{1{,}67;\ 4\} = 1{,}67\). No processo 2: \(\min\{5, 8/3\} = \min\{5;\ 2{,}67\} = 2{,}67\). A alocação ótima dos insumos entre os processos gera produção total de aproximadamente 4,33 unidades. Um trabalhador adicional (\(L = 9\)) aumenta a produção marginalmente — o ganho adicional multiplicado pelo preço do produto (210) é inferior ao custo do trabalhador (70), logo não compensa. [Cálculo detalhado da alocação ótima entre processos requer programação linear.]
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Christensen, Laurits R.; Greene, William H. (1976). [Economies of Scale in U.S. Electric Power Generation](https://doi.org/10.1086/260470). *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: [10.1086/260470](https://doi.org/10.1086/260470)"
-    **Pergunta central:** A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
+??? abstract "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). [*A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*](https://repositorio.ipea.gov.br). Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
+    **Pergunta central:** Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 10.6.
 
-    **Método:** Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
+    **Método:** Gasques et al. utilizam dados dos Censos Agropecuários do IBGE para construir índices de produtividade total dos fatores na agropecuária brasileira entre 1970 e 2006. A metodologia consiste em calcular índices de Törnqvist para produto e insumos agregados (terra, trabalho, capital, materiais) e obter a PTF como resíduo — o mesmo conceito do resíduo de Solow, agora aplicado a dados censitários reais.
 
-    **Resultado principal:** Os resultados mostraram que a curva de CMe de longo prazo tinha de fato formato de U: economias de escala significativas para firmas pequenas e médias, custos médios aproximadamente constantes para firmas com geração acima de 20 bilhões de kWh, e leves deseconomias para as maiores. Isso contrastava com estimativas anteriores (usando formas funcionais restritivas como a Cobb-Douglas), que encontravam economias de escala ilimitadas — artefato da imposição de retornos crescentes homogêneos.
+    **Resultado principal:** A PTF agropecuária cresceu a uma taxa média de 3,3% ao ano entre 1970 e 2006, respondendo por mais de dois terços do crescimento do produto no período. A terra cultivada cresceu modestamente, o trabalho rural *declinou*, e o capital e os insumos intermediários cresceram — mas a maior parte do crescimento veio da produtividade. A taxa de crescimento da PTF acelerou após os anos 1990, coincidindo com a intensificação da pesquisa da Embrapa e a abertura comercial.
 
-    **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
+    **Por que isso importa:** O resultado tem implicações diretas para a política agrícola: investimento em pesquisa e extensão rural gera retornos sociais elevados, pois desloca a função de produção agregada da agricultura. Em um país onde a agropecuária responde por cerca de 25% do PIB (considerando toda a cadeia), a PTF agrícola é um dos principais motores do crescimento econômico.
 
-??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). [Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061). *American Economic Review*, 106(6), 1320-1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
-    **Pergunta central:** Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
+    **Relevância para o capítulo:** O estudo é uma aplicação empírica da decomposição do crescimento apresentada na Seção 10.6. O parâmetro \(A(t)\) da função de produção não é uma abstração teórica: é medido, acompanhado e influenciado por políticas públicas. O caso da agricultura brasileira mostra que o progresso técnico — capturado pelo resíduo de Solow — pode ser a força dominante do crescimento, exatamente como previsto pela teoria quando a PTF cresce mais rápido que os insumos.
 
-    **Método:** Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.
+??? abstract "Oberfield, Ezra; Raval, Devesh. (2021). [Micro Data and Macro Technology](https://doi.org/10.3982/ECTA12807). *Econometrica*, 89(2), 703-732. DOI: [10.3982/ECTA12807](https://doi.org/10.3982/ECTA12807)"
+    **Pergunta central:** Qual é a elasticidade de substituição entre capital e trabalho na economia? Esse parâmetro — o \(\sigma\) da função CES discutido na Seção 10.4 — é crucial para entender se a participação do capital na renda aumenta ou diminui quando o capital se torna mais abundante. Piketty (2014) argumentou que \(\sigma > 1\) explicaria o aumento da desigualdade; outros pesquisadores contestaram essa estimativa.
 
-    **Resultado principal:** Municípios mais adequados à soja GM experimentaram: (i) aumento da área plantada com soja e redução da área de outras culturas; (ii) queda no emprego agrícola (a soja GM é poupadora de trabalho); (iii) crescimento do emprego industrial nos municípios afetados. Porém, o efeito sobre a indústria dependia do tipo de inovação: tecnologias poupadoras de trabalho (como a soja GM) liberavam mão de obra para a indústria, enquanto tecnologias que aumentavam o valor do produto por hectare (como a cana-de-açúcar para etanol) atraíam mais trabalhadores para a agricultura.
+    **Método:** Oberfield e Raval propõem uma abordagem que usa microdados de plantas industriais (Census of Manufactures dos EUA) para estimar a elasticidade de substituição agregada. A ideia-chave é que a elasticidade agregada depende de dois componentes: a elasticidade de substituição *dentro* de cada planta (entre capital e trabalho) e a elasticidade de substituição *entre* plantas (realocação de recursos de plantas intensivas em trabalho para plantas intensivas em capital). Os autores estimam ambas separadamente.
 
-    **Relevância para o capítulo:** O artigo conecta diretamente a Seção 10.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 10.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
+    **Resultado principal:** A elasticidade de substituição dentro das plantas é de aproximadamente 0,5 a 0,7 — abaixo de 1, consistente com a complementaridade entre capital e trabalho. Porém, a elasticidade agregada pode ser maior que a elasticidade no nível da planta devido à realocação entre plantas. Para a manufatura americana, a elasticidade agregada estimada situa-se em torno de 0,7, ainda abaixo de 1. Isso sugere que capital e trabalho são complementares brutos e que a participação do capital na renda *cai* quando o capital se torna relativamente mais abundante.
+
+    **Por que isso importa:** O resultado tem implicações diretas para o debate sobre desigualdade e para a calibração de modelos macroeconômicos. Se \(\sigma < 1\), a automação e a acumulação de capital não levam necessariamente a um aumento da participação do capital na renda — contrariando uma versão simplificada da tese de Piketty.
+
+    **Relevância para o capítulo:** O artigo demonstra que a elasticidade de substituição \(\sigma\) — apresentada na Seção 10.4 como um parâmetro abstrato da CES — é um objeto empiricamente estimável e economicamente consequente. A distinção entre a CES no nível da planta e no nível agregado mostra que a escolha da forma funcional (Seção 10.5) tem implicações que vão muito além do exercício de sala de aula: ela determina previsões sobre distribuição de renda, política fiscal e futuro do trabalho.
 
 ## Referências do Capítulo
 
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5 (Seções 5.C–5.D).
-- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 10.
-- Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ). 8ª ed. São Paulo: Pearson. Cap. 7.
-- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Cap. 20–22.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 9.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Cap. 1–4 (teoria da produção).

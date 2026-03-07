@@ -19,8 +19,8 @@ O que acontece quando firmas têm poder de mercado? E como se determinam os pre�
 
 Do monopolista maximizador ao oligopólio estratégico: discriminação de preços, Cournot, Bertrand, Stackelberg e concorrência monopolística.
 
-- [Cap. 14 — O Rei do Mercado: Poder, Preço e Monopólio](../cap14/index.md)
-- [Cap. 15 — Entre o Monopólio e a Concorrência: Oligopólios](../cap15/index.md)
+- [Cap. 15 — O Rei do Mercado: Poder, Preço e Monopólio](../cap15/index.md)
+- [Cap. 16 — Entre o Monopólio e a Concorrência: Oligopólios](../cap16/index.md)
 
 </div>
 
@@ -30,8 +30,8 @@ Do monopolista maximizador ao oligopólio estratégico: discriminação de preç
 
 Demanda derivada por trabalho, capital humano, taxa de juros e a decisão intertemporal de poupança e investimento.
 
-- [Cap. 16 — O Preço do Suor: Economia do Trabalho](../cap16/index.md)
-- [Cap. 17 — Capital, Juros e o Valor do Amanhã](../cap17/index.md)
+- [Cap. 17 — O Preço do Suor: Economia do Trabalho](../cap17/index.md)
+- [Cap. 18 — Capital, Juros e o Valor do Amanhã](../cap18/index.md)
 
 </div>
 

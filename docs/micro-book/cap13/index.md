@@ -1,821 +1,823 @@
-# Capítulo 13 — Quando Tudo se Encaixa (ou Quase Isso): Equilíbrio Geral
+# Capítulo 13 — O Leiloeiro que Ninguém Vê
 
 ## Introdução
 
-No capítulo anterior, analisamos mercados isolados — o chamado equilíbrio parcial marshalliano. Mas os mercados não existem no vácuo: o preço do milho afeta a demanda por soja; o salário dos engenheiros influencia o custo de construção civil; uma política comercial que protege a indústria têxtil altera os preços relativos em toda a economia. A análise de **equilíbrio geral** busca compreender a interdependência simultânea de todos os mercados.
+Nos capítulos anteriores, construímos separadamente a teoria do consumidor e a teoria da firma. Agora é hora de reunir essas peças e examinar como compradores e vendedores interagem nos mercados competitivos para determinar preços e quantidades de equilíbrio. Este capítulo desenvolve a análise de equilíbrio parcial marshalliano — o estudo de um mercado individual tomando os demais como dados — e suas aplicações à análise de bem-estar e políticas públicas.
 
-Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a intuição gráfica da Caixa de Edgeworth até a formalização matemática via funções de excesso de demanda e a prova de existência pelo Teorema do Ponto Fixo de Brouwer. Estabeleceremos os dois teoremas fundamentais do bem-estar, que conectam eficiência de Pareto e concorrência perfeita, e concluiremos com uma visão dos modelos computáveis de equilíbrio geral (CGE), que permitem aplicar essa teoria à avaliação de políticas públicas.
+A metáfora do "leiloeiro walrasiano" — uma entidade fictícia que anuncia preços e ajusta-os até que oferta e demanda se igualem — nos ajuda a compreender o mecanismo de formação de preços. Embora nenhum leiloeiro real exista na maioria dos mercados, o resultado competitivo se assemelha ao que tal mecanismo produziria.
+
+Ao longo do capítulo, analisaremos: a agregação de demandas individuais em demanda de mercado; a determinação de preços no curtíssimo, curto e longo prazos; estática comparativa; eficiência econômica; controles de preços; e incidência tributária.
 
 ---
 
-## 13.1 O Sistema de Preços Competitivo
+## 13.1 Demanda de Mercado
 
-### Interdependência de mercados
+### Agregação de demandas individuais
 
-Em uma economia com \(n\) bens, os preços \(p_1, p_2, \ldots, p_n\) são determinados simultaneamente pela interação de todos os consumidores e produtores em todos os mercados. Uma mudança em qualquer mercado pode reverberar por toda a economia.
+A demanda de mercado é obtida pela soma horizontal das demandas individuais de todos os consumidores. Se existem \(n\) consumidores e cada um possui uma função de demanda \(x_i(p)\), a demanda de mercado é:
 
-!!! definition "Equilíbrio geral competitivo"
-    Um **equilíbrio geral competitivo** (ou equilíbrio walrasiano) é um vetor de preços \(\mathbf{p}^* = (p_1^*, p_2^*, \ldots, p_n^*)\) tal que todos os mercados se equilibram simultaneamente: para cada bem \(k\),
+\[
+X(p) = \sum_{i=1}^{n} x_i(p)
+\]
+
+!!! definition "Demanda de mercado"
+    A **demanda de mercado** por um bem é a quantidade total demandada por todos os consumidores a cada nível de preço, ou seja, a soma horizontal das curvas de demanda individuais.
+
+### Propriedades da demanda de mercado
+
+A curva de demanda de mercado herda propriedades das demandas individuais:
+
+1. **Inclinação negativa**: Se todas as demandas individuais são decrescentes no preço (excluindo-se os raros casos de bens de Giffen), a demanda de mercado também será decrescente.
+2. **Elasticidade-preço**: A elasticidade-preço da demanda de mercado é uma média ponderada das elasticidades individuais, com pesos dados pelas participações de cada consumidor na demanda total:
+
+\[
+\varepsilon_{X,p} = \sum_{i=1}^{n} \frac{x_i}{X} \cdot \varepsilon_{x_i, p}
+\]
+
+3. **Efeitos renda e substituição**: Deslocamentos na demanda de mercado refletem mudanças na renda agregada, na distribuição de renda, nos preços de bens relacionados e nas preferências dos consumidores.
+
+!!! tip "Agregação e heterogeneidade"
+    Mesmo que demandas individuais apresentem descontinuidades ou formas peculiares, a demanda de mercado tende a ser mais "suave" quando o número de consumidores é grande, devido à diversidade de preferências e rendas.
+
+---
+
+## 13.2 Determinação de Preço no Curtíssimo Prazo
+
+No curtíssimo prazo (ou período de mercado), a quantidade ofertada é fixa — os produtores já trouxeram seus bens ao mercado e não podem alterar a produção. A curva de oferta é perfeitamente inelástica (vertical).
+
+\[
+S = \bar{Q}
+\]
+
+Neste caso, o preço de equilíbrio é determinado exclusivamente pela demanda:
+
+\[
+p^* \text{ tal que } X(p^*) = \bar{Q}
+\]
+
+Se a demanda se desloca, todo o ajuste ocorre via preço. Em mercados de bens perecíveis — como peixes frescos ou flores —, esta análise é particularmente relevante: o vendedor aceita qualquer preço que o mercado determine, pois a alternativa é perder a mercadoria.
+
+---
+
+### Gráfico interativo: Equilíbrio de Oferta e Demanda
+
+Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio de mercado. Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor (azul) e do produtor (verde).
+
+<iframe src="../../graficos/cap13/oferta-demanda.html" width="100%" height="500" style="border:none;border-radius:8px;"></iframe>
+
+---
+
+## 13.3 Determinação de Preço no Curto Prazo
+
+### Equilíbrio parcial marshalliano
+
+No curto prazo, as firmas podem ajustar a produção variando insumos variáveis, mas o capital é fixo e o número de firmas no mercado é dado. A oferta de curto prazo de cada firma é dada por sua curva de custo marginal acima do custo variável médio mínimo:
+
+\[
+S_j(p) = \begin{cases} q_j \text{ tal que } CMg_j(q_j) = p, & \text{se } p \geq CVMe_{\min} \\ 0, & \text{se } p < CVMe_{\min} \end{cases}
+\]
+
+A oferta de mercado de curto prazo é a soma horizontal das ofertas individuais das \(m\) firmas:
+
+\[
+S(p) = \sum_{j=1}^{m} S_j(p)
+\]
+
+!!! definition "Equilíbrio de curto prazo"
+    O **equilíbrio competitivo de curto prazo** ocorre ao preço \(p^*\) tal que a quantidade demandada pelo mercado iguala a quantidade ofertada:
 
     \[
-    \sum_{i=1}^{I} x_i^k(\mathbf{p}^*) = \sum_{j=1}^{J} y_j^k(\mathbf{p}^*) + \sum_{i=1}^{I} \omega_i^k
+    X(p^*) = S(p^*)
     \]
 
-    onde \(x_i^k\) é a demanda do consumidor \(i\) pelo bem \(k\), \(y_j^k\) é a oferta líquida da firma \(j\) do bem \(k\), e \(\omega_i^k\) é a dotação inicial do consumidor \(i\) do bem \(k\).
-
-### Homogeneidade e normalização
-
-Em um sistema competitivo, apenas os **preços relativos** importam. As funções de demanda e oferta são homogêneas de grau zero nos preços: se todos os preços dobram, as quantidades demandadas e ofertadas não se alteram. Isso permite normalizar os preços, fixando um bem como **numerário** com preço igual a 1:
-
-\[
-p_n = 1 \quad \Rightarrow \quad \text{sistema com } n-1 \text{ preços relativos a determinar}
-\]
-
----
-
-## 13.2 Modelo Gráfico: A Caixa de Edgeworth
-
-### Construção
-
-Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações totais da economia são:
-
-\[
-\bar{x}_1 = \omega_A^1 + \omega_B^1, \qquad \bar{x}_2 = \omega_A^2 + \omega_B^2
-\]
-
-A **Caixa de Edgeworth** é um retângulo com dimensões \(\bar{x}_1 \times \bar{x}_2\). O consumidor A é medido a partir do canto inferior esquerdo e o consumidor B a partir do canto superior direito. Cada ponto na caixa representa uma alocação factível que esgota todos os recursos.
-
-!!! definition "Caixa de Edgeworth"
-    A **Caixa de Edgeworth** é uma representação gráfica de todas as alocações factíveis em uma economia de troca pura com dois consumidores e dois bens. Cada ponto no retângulo especifica simultaneamente as cestas de consumo de ambos os consumidores.
+    A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** A Caixa de Edgeworth é um mapa de todas as formas possíveis de dividir os recursos de uma economia entre duas pessoas.
+    **Em uma frase:** O preço de equilíbrio é aquele em que ninguém está frustrado — todo mundo que quer comprar a esse preço consegue, e todo mundo que quer vender encontra comprador.
 
-    **Pense assim:** Imagine dois colegas de república dividindo o que sobrou na geladeira: 6 fatias de pizza e 4 latas de refrigerante. Qualquer combinação que dê o total — 4 fatias para um e 2 para outro, por exemplo — é um ponto na caixa. Movendo o ponto, você redistribui pizza e refrigerante entre os dois. A mágica da caixa é mostrar, num só diagrama, se existe uma redistribuição que deixe ambos mais felizes.
+    **Pense assim:** Na feira livre do seu bairro, se o quilo do tomate está caro demais, sobra tomate na barraca e o feirante baixa o preço. Se está barato demais, falta tomate e os consumidores competem entre si, puxando o preço para cima. O equilíbrio é o ponto em que a pilha de tomates na barraca "dá certo" com a fila de compradores — sem sobra nem falta.
 
-    **Por que isso importa:** A Caixa de Edgeworth é a ferramenta visual fundamental para entender trocas voluntárias, eficiência e os ganhos do comércio — inclusive entre países, como no acordo Mercosul-UE.
+    **Por que isso importa:** A formação de preços por oferta e demanda é o mecanismo central que coordena decisões descentralizadas de milhões de agentes — e entender esse processo é essencial para avaliar qualquer intervenção de política pública nos mercados.
 
-### Curvas de indiferença na caixa
+### Estabilidade do equilíbrio
 
-As curvas de indiferença do consumidor A são desenhadas normalmente (convexas em relação à origem inferior esquerda). As curvas de indiferença do consumidor B são desenhadas invertidas (convexas em relação ao canto superior direito). Quando duas curvas de indiferença se tangenciam, as taxas marginais de substituição são iguais:
-
-\[
-TMS_A^{12} = TMS_B^{12}
-\]
-
-Nesse ponto, não há trocas mutuamente benéficas possíveis — a alocação é **eficiente no sentido de Pareto**.
-
----
-
-### Gráfico interativo: Caixa de Edgeworth
-
-Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação X para verificar se ele representa uma melhoria de Pareto em relação à dotação inicial e se está sobre a curva de contrato (eficiência). As curvas de indiferença tracejadas passam pela dotação E; as contínuas passam pela alocação X.
-
-<iframe src="../../graficos/cap13/caixa-edgeworth.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
-
----
-
-## 13.3 Troca Pura: Curva de Contrato e Núcleo
-
-### Eficiência de Pareto na troca
-
-!!! definition "Eficiência de Pareto"
-    Uma alocação é **eficiente no sentido de Pareto** (ou um **ótimo de Pareto**) se não existe outra alocação factível que melhore a situação de pelo menos um agente sem piorar a de nenhum outro.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Uma situação é eficiente no sentido de Pareto quando não dá mais para melhorar a vida de alguém sem prejudicar outra pessoa.
-
-    **Pense assim:** Pense em uma partilha de bolo de aniversário. Se dá para refattiar o bolo de modo que alguém ganhe um pedaço maior sem que ninguém fique com um pedaço menor, a divisão original era ineficiente. Eficiência de Pareto é quando todo o bolo já foi distribuído da melhor forma possível — qualquer mudança que beneficie alguém necessariamente tira de outro.
-
-    **Por que isso importa:** Eficiência de Pareto é o critério mínimo de "bom funcionamento" de uma economia, mas não diz nada sobre justiça — uma sociedade onde uma pessoa tem tudo e as demais nada pode ser Pareto-eficiente, o que mostra por que eficiência e equidade são questões distintas.
-
-O conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth forma a **curva de contrato** — o locus dos pontos de tangência entre as curvas de indiferença dos dois consumidores.
-
-!!! definition "Curva de contrato"
-    A **curva de contrato** é o conjunto de todas as alocações Pareto-eficientes na Caixa de Edgeworth. Formalmente, é o conjunto de alocações \((x_A, x_B)\) tais que:
-
-    \[
-    TMS_A^{12}(x_A) = TMS_B^{12}(x_B)
-    \]
-
-    sujeito à factibilidade \(x_A + x_B = \bar{x}\).
-
-### O núcleo da economia
-
-O **núcleo** é um subconjunto da curva de contrato: inclui apenas as alocações Pareto-eficientes que são individualmente racionais, ou seja, que dão a cada consumidor utilidade pelo menos tão alta quanto a obtida com suas dotações iniciais:
+O equilíbrio marshalliano é estável quando, a preços acima do equilíbrio, há excesso de oferta (pressionando o preço para baixo) e, a preços abaixo, há excesso de demanda (pressionando o preço para cima). Formalmente, a condição de estabilidade walrasiana requer:
 
 \[
-U_A(x_A) \geq U_A(\omega_A) \quad \text{e} \quad U_B(x_B) \geq U_B(\omega_B)
+\frac{dX}{dp} - \frac{dS}{dp} < 0
 \]
 
-O equilíbrio walrasiano pertence ao núcleo. Além disso, à medida que a economia é "replicada" (duplicando o número de consumidores de cada tipo), o núcleo se contrai, convergindo para o equilíbrio walrasiano no limite — este é o **Teorema do Limite do Núcleo** de Debreu e Scarf.
+o que é satisfeito sempre que a demanda é negativamente inclinada e a oferta é positivamente inclinada.
 
 ---
 
-## 13.4 Produção e Troca: Fronteira de Possibilidades de Produção
+## 13.4 Estática Comparativa
 
-### Eficiência na produção
+### Deslocamentos de oferta e demanda
 
-Quando introduzimos produção na análise, precisamos considerar a eficiência na alocação de insumos entre setores. Com dois insumos (trabalho L e capital K) e dois bens, podemos construir uma segunda Caixa de Edgeworth para a produção. O locus de tangências entre as isoquantas dos dois setores forma a **curva de contrato na produção**:
+A análise de estática comparativa examina como o equilíbrio muda em resposta a choques exógenos. Considere o equilíbrio definido implicitamente por:
 
 \[
-TMST_1^{LK} = TMST_2^{LK}
+X(p, \alpha) = S(p, \beta)
 \]
 
-### Fronteira de possibilidades de produção (FPP)
+onde \(\alpha\) é um parâmetro de demanda (por exemplo, renda) e \(\beta\) é um parâmetro de oferta (por exemplo, custo de um insumo).
 
-A curva de contrato na produção mapeia-se na **fronteira de possibilidades de produção** (FPP), que mostra as combinações máximas dos dois bens que a economia pode produzir dados seus recursos.
-
-A inclinação da FPP é a **taxa marginal de transformação** (TMT):
+Diferenciando totalmente:
 
 \[
-TMT = -\frac{dX_2}{dX_1} = \frac{CMg_1}{CMg_2}
+\frac{\partial X}{\partial p} dp + \frac{\partial X}{\partial \alpha} d\alpha = \frac{\partial S}{\partial p} dp + \frac{\partial S}{\partial \beta} d\beta
 \]
 
-### Eficiência no mix de produtos
-
-A eficiência econômica plena requer que a TMT iguale a TMS comum aos consumidores:
+Rearranjando:
 
 \[
-TMT = TMS_A^{12} = TMS_B^{12}
+\frac{dp}{d\alpha} = \frac{\partial X / \partial \alpha}{\partial S / \partial p - \partial X / \partial p} > 0
 \]
 
-Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis.
+se um aumento em \(\alpha\) desloca a demanda para a direita (\(\partial X / \partial \alpha > 0\)) e as curvas têm inclinações convencionais.
+
+Analogamente, um aumento no custo de insumos (\(\beta\)):
+
+\[
+\frac{dp}{d\beta} = \frac{-\partial S / \partial \beta}{\partial S / \partial p - \partial X / \partial p} > 0
+\]
+
+se o aumento em \(\beta\) reduz a oferta (\(\partial S / \partial \beta < 0\)).
+
+!!! note "Magnitude dos efeitos"
+    A magnitude da variação de preço depende das elasticidades relativas de oferta e demanda. Quanto mais inelástica a demanda (ou a oferta), maior a variação de preço decorrente de um deslocamento da outra curva.
 
 ---
 
-## Tabela: Condições de Eficiência de Pareto
+## 13.5 Análise de Longo Prazo
 
-A tabela abaixo sintetiza as três condições marginais para a eficiência de Pareto em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
+### Entrada, saída e lucro zero
 
-| Tipo de eficiência | Condição marginal | Interpretação |
-|---|---|---|
-| **Eficiência na troca** | \(TMS_A^{12} = TMS_B^{12}\) | Os consumidores valorizam os bens na mesma proporção marginal; não há trocas mutuamente benéficas. |
-| **Eficiência na produção** | \(TMST_1^{LK} = TMST_2^{LK}\) | Os insumos são alocados entre setores de modo que é impossível aumentar a produção de um bem sem reduzir a do outro. |
-| **Eficiência no mix de produtos** | \(TMT^{12} = TMS_A^{12} = TMS_B^{12}\) | A combinação de bens produzida corresponde às preferências dos consumidores; o custo de oportunidade social iguala a valoração marginal. |
+No longo prazo, todos os fatores de produção são variáveis e há livre entrada e saída de firmas no mercado. Se as firmas existentes obtêm lucro econômico positivo (\(\pi > 0\)), novas firmas entram, deslocando a oferta para a direita e reduzindo o preço. Se há prejuízo (\(\pi < 0\)), firmas saem, deslocando a oferta para a esquerda e elevando o preço. No equilíbrio de longo prazo:
 
-!!! note "Concorrência perfeita e eficiência"
-    Em concorrência perfeita, o sistema de preços descentraliza automaticamente todas essas condições. Os consumidores igualam suas TMS à razão de preços (\(TMS = p_1/p_2\)); as firmas igualam suas TMST à razão de preços dos insumos (\(TMST = w/r\)); e a maximização de lucro garante que \(CMg_1/CMg_2 = p_1/p_2\). Portanto, \(TMS = TMT\).
+\[
+\pi = 0 \quad \Longrightarrow \quad p = CMe_{\min}
+\]
 
----
+!!! definition "Equilíbrio competitivo de longo prazo"
+    No **equilíbrio competitivo de longo prazo**, três condições são satisfeitas simultaneamente:
 
-### Gráfico interativo: Fronteira de Possibilidades de Produção (FPP)
+    1. Cada firma maximiza lucro: \(p = CMg(q^*)\)
+    2. Nenhuma firma deseja entrar ou sair: \(\pi = 0 \Rightarrow p = CMe(q^*)\)
+    3. Oferta iguala demanda: \(X(p^*) = m^* \cdot q^*\)
 
-Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
-
-<iframe src="../../graficos/cap13/fpp.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+    onde \(m^*\) é o número de firmas de equilíbrio.
 
 ---
 
-## Box Brasil: Mercosul-UE e os Ganhos de Troca
+### Gráfico interativo: Equilíbrio de Longo Prazo
 
-!!! example "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
-    Em dezembro de 2024, após 25 anos de negociação, o **Mercosul** e a **União Europeia** assinaram um acordo de parceria comercial que cria uma das maiores zonas de livre comércio do mundo, reunindo **718 milhões de pessoas** e um PIB conjunto de US$ 22,4 trilhões.
+Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero). O painel esquerdo mostra a firma (CMg e CMe) e o direito mostra o mercado (S e D).
 
-    **Os ganhos de troca na linguagem da Caixa de Edgeworth**
-
-    O acordo pode ser interpretado como um movimento ao longo da "caixa de Edgeworth" entre dois blocos: o Mercosul (dotação abundante em commodities agrícolas e minerais) e a UE (dotação abundante em bens industrializados e serviços). Antes do acordo, tarifas de importação impediam que os preços relativos igualassem as TMS dos dois blocos — a alocação estava dentro da caixa, mas fora da curva de contrato. A eliminação de tarifas aproxima os preços relativos dos custos marginais, movendo a alocação em direção à eficiência de Pareto.
-
-    **Estimativas de equilíbrio geral**
-
-    Estudos do **[IPEA](https://www.ipea.gov.br)** utilizando modelos CGE estimam que o acordo elevará o PIB brasileiro em **0,46%** (US$ 9,3 bilhões) até 2040 e aumentará o fluxo comercial bilateral em **R$ 94,2 bilhões** — com R$ 52,1 bilhões em exportações brasileiras adicionais. As exportações do agronegócio brasileiro para a UE poderiam crescer até 26%.
-
-    **Por que equilíbrio parcial subestima os ganhos?**
-
-    Uma análise mercado a mercado (equilíbrio parcial) capturaria apenas os ganhos diretos da redução tarifária em cada setor. O modelo CGE captura adicionalmente: (i) realocação de trabalho e capital entre setores; (ii) efeitos sobre a taxa de câmbio real; (iii) ganhos de produtividade via maior concorrência e acesso a insumos importados mais baratos; (iv) efeitos sobre a receita do governo e consequentes ajustes fiscais.
-
-    **Fonte**: IPEA; Ministério das Relações Exteriores; Agência Brasil (dez/2024).
+<iframe src="../../graficos/cap13/equilibrio-longo-prazo.html" width="100%" height="620" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
-## 13.5 O Primeiro Teorema do Bem-Estar
+## 13.6 Equilíbrio de Longo Prazo: Custos Constantes, Crescentes e Decrescentes
 
-!!! abstract "Primeiro Teorema do Bem-Estar"
-    Se todos os consumidores e firmas são tomadores de preço, e se existe um mercado completo para cada bem, então o equilíbrio competitivo (walrasiano) é **eficiente no sentido de Pareto**.
+### Indústria de custos constantes
 
-Este é o resultado formal que dá substância à intuição da "mão invisível" de Adam Smith: sob concorrência perfeita, o interesse próprio dos agentes, guiado pelos preços de mercado, conduz a uma alocação eficiente sem necessidade de planejamento centralizado.
+Se a entrada de novas firmas não altera os preços dos insumos, as curvas de custo das firmas permanecem inalteradas. A curva de oferta de longo prazo da indústria é **horizontal** ao nível \(p = CMe_{\min}\).
+
+Um aumento na demanda leva à entrada de firmas, aumento na quantidade total, mas o preço retorna ao mesmo nível original.
+
+### Indústria de custos crescentes
+
+Quando a entrada de novas firmas eleva os preços dos insumos (por exemplo, terra para agricultura, mão de obra especializada), as curvas de custo se deslocam para cima. A curva de oferta de longo prazo é **positivamente inclinada**.
+
+O preço de equilíbrio de longo prazo será mais alto após o aumento na demanda.
+
+### Indústria de custos decrescentes
+
+Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**.
+
+| Tipo de indústria | Efeito da entrada sobre custos | Inclinação da oferta de LP | Efeito de ↑D sobre preço de LP |
+|---|---|---|---|
+| Custos constantes | Nenhum | Horizontal | Preço inalterado |
+| Custos crescentes | Custos sobem | Positiva | Preço sobe |
+| Custos decrescentes | Custos caem | Negativa | Preço cai |
+
+---
+
+## 13.7 Elasticidade de Oferta de Longo Prazo
+
+A elasticidade de oferta de longo prazo mede a responsividade da quantidade ofertada de longo prazo a variações no preço:
+
+\[
+\varepsilon_{S}^{LP} = \frac{\Delta Q / Q}{\Delta p / p} = \frac{dQ}{dp} \cdot \frac{p}{Q}
+\]
+
+!!! definition "Elasticidade de oferta de longo prazo"
+    A **elasticidade de oferta de longo prazo** reflete não apenas o ajuste de produção das firmas existentes, mas também a entrada/saída de firmas e o ajuste dos preços dos insumos.
+
+Para uma indústria de custos constantes, \(\varepsilon_S^{LP} = \infty\) (oferta perfeitamente elástica). Para indústrias de custos crescentes, \(\varepsilon_S^{LP}\) é positiva e finita. Empiricamente, a elasticidade de oferta de longo prazo é maior do que a de curto prazo, pois no longo prazo há mais margens de ajuste disponíveis.
+
+---
+
+## 13.8 Excedente do Produtor no Longo Prazo
+
+### Renda ricardiana
+
+No curto prazo, o excedente do produtor é a diferença entre a receita total e o custo variável total. No longo prazo, com lucro zero, o excedente do produtor de cada firma individual é zero. No entanto, o excedente do produtor **da indústria** pode ser positivo em indústrias de custos crescentes.
+
+Esse excedente de longo prazo reflete a **renda ricardiana** — pagamentos a fatores de produção cujos preços são elevados pela expansão da indústria. Por exemplo, quando a entrada de firmas agrícolas eleva o preço da terra, os proprietários de terras mais férteis (inframarginais) obtêm rendas que constituem o excedente do produtor de longo prazo.
+
+!!! example "Renda ricardiana na agricultura brasileira"
+    No Cerrado, a expansão da fronteira agrícola para a produção de soja elevou significativamente o preço das terras com melhor aptidão agrícola (topografia plana, solo corrigido, proximidade logística). Segundo dados do [CEPEA/ESALQ](https://www.cepea.esalq.usp.br) e da FNP, o hectare em regiões consolidadas como Sorriso (MT) valorizou mais de 300% entre 2005 e 2023, refletindo a renda ricardiana apropriada pelos proprietários de terras inframarginais. Produtores em terras menos férteis (marginais) operam com lucro próximo de zero — exatamente como o modelo prevê.
+
+!!! definition "Renda ricardiana"
+    A **renda ricardiana** (ou renda econômica) é o pagamento a um fator de produção acima do mínimo necessário para mantê-lo em seu uso corrente. No longo prazo competitivo, o excedente do produtor da indústria reflete exclusivamente essas rendas.
+
+Formalmente, o excedente do produtor de longo prazo é a área acima da curva de oferta de longo prazo e abaixo do preço de equilíbrio:
+
+\[
+EP_{LP} = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
+\]
+
+onde \(p_S(Q)\) é a curva de oferta inversa de longo prazo.
+
+---
+
+## 13.9 Eficiência Econômica e Análise de Bem-Estar Aplicada
+
+### Excedente do consumidor e excedente do produtor
+
+O **excedente do consumidor** (EC) mede o ganho líquido dos consumidores, sendo a diferença entre a disposição a pagar e o preço efetivamente pago:
+
+\[
+EC = \int_0^{Q^*} \left[ p_D(Q) - p^* \right] dQ
+\]
+
+O **excedente do produtor** (EP) mede o ganho líquido dos produtores:
+
+\[
+EP = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
+\]
+
+O **bem-estar social** (W) na análise de equilíbrio parcial é:
+
+\[
+W = EC + EP
+\]
+
+!!! abstract "Teorema: Eficiência do equilíbrio competitivo (equilíbrio parcial)"
+    O equilíbrio competitivo maximiza o bem-estar social \(W = EC + EP\). Qualquer desvio da quantidade de equilíbrio competitivo — seja por intervenção governamental ou por poder de mercado — gera uma **perda de peso morto** (PPM), ou seja, uma redução líquida do bem-estar total.
 
 !!! proof "Demonstração"
-    **Demonstração do Primeiro Teorema do Bem-Estar** (economia de troca pura)
-
-    Considere uma economia com \(I\) consumidores e \(n\) bens. Seja \((\mathbf{x}^*, \mathbf{p}^*)\) um equilíbrio walrasiano, onde \(\mathbf{x}_i^*\) é a cesta escolhida pelo consumidor \(i\) e \(\mathbf{p}^*\) é o vetor de preços de equilíbrio.
-
-    **Suposição:** As preferências de cada consumidor são localmente não saciadas (para qualquer cesta e qualquer vizinhança, existe uma cesta preferida naquela vizinhança).
-
-    Suponha, por contradição, que \(\mathbf{x}^*\) não seja Pareto-eficiente. Então existe uma alocação factível \(\hat{\mathbf{x}} = (\hat{\mathbf{x}}_1, \ldots, \hat{\mathbf{x}}_I)\) tal que:
+    No equilíbrio competitivo, a quantidade transacionada \(Q^*\) é determinada por \(p_D(Q^*) = p_S(Q^*)\). O bem-estar social é:
 
     \[
-    \hat{\mathbf{x}}_i \succsim_i \mathbf{x}_i^* \quad \forall\, i, \qquad \text{e} \qquad \hat{\mathbf{x}}_j \succ_j \mathbf{x}_j^* \quad \text{para algum } j
+    W(Q) = \int_0^{Q} \left[ p_D(t) - p_S(t) \right] dt
     \]
 
-    **Passo 1:** Se \(\hat{\mathbf{x}}_j \succ_j \mathbf{x}_j^*\), então \(\hat{\mathbf{x}}_j\) não pertence ao conjunto orçamentário de \(j\) no equilíbrio (caso contrário, \(j\) teria escolhido \(\hat{\mathbf{x}}_j\) em vez de \(\mathbf{x}_j^*\)). Portanto:
+    Para maximizar \(W\), tomamos a condição de primeira ordem:
 
     \[
-    \mathbf{p}^* \cdot \hat{\mathbf{x}}_j > \mathbf{p}^* \cdot \boldsymbol{\omega}_j \tag{1}
+    \frac{dW}{dQ} = p_D(Q) - p_S(Q) = 0
     \]
 
-    **Passo 2:** Para todo \(i\) tal que \(\hat{\mathbf{x}}_i \succsim_i \mathbf{x}_i^*\), a não saciedade local implica que:
+    o que implica \(p_D(Q^*) = p_S(Q^*)\), exatamente a condição de equilíbrio competitivo.
+
+    A condição de segunda ordem é:
 
     \[
-    \mathbf{p}^* \cdot \hat{\mathbf{x}}_i \geq \mathbf{p}^* \cdot \boldsymbol{\omega}_i \tag{2}
+    \frac{d^2 W}{dQ^2} = \frac{dp_D}{dQ} - \frac{dp_S}{dQ} < 0
     \]
 
-    (Se \(\hat{\mathbf{x}}_i\) custasse estritamente menos, por não saciedade local, existiria uma cesta ainda melhor e acessível, contradizendo a otimalidade de \(\mathbf{x}_i^*\).)
+    Isso é satisfeito, pois a demanda inversa é decrescente (\(dp_D/dQ < 0\)) e a oferta inversa é crescente (\(dp_S/dQ > 0\)). Portanto, \(Q^*\) é de fato um máximo de bem-estar. \(\blacksquare\)
 
-    **Passo 3:** Somando (1) e (2) sobre todos os consumidores:
-
-    \[
-    \sum_{i=1}^{I} \mathbf{p}^* \cdot \hat{\mathbf{x}}_i > \sum_{i=1}^{I} \mathbf{p}^* \cdot \boldsymbol{\omega}_i
-    \]
-
-    \[
-    \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \hat{\mathbf{x}}_i \right) > \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \boldsymbol{\omega}_i \right)
-    \]
-
-    Mas factibilidade de \(\hat{\mathbf{x}}\) exige \(\sum_i \hat{\mathbf{x}}_i \leq \sum_i \boldsymbol{\omega}_i\). Com \(\mathbf{p}^* > 0\) (consequência da não saciedade local), isso implica:
-
-    \[
-    \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \hat{\mathbf{x}}_i \right) \leq \mathbf{p}^* \cdot \left( \sum_{i=1}^{I} \boldsymbol{\omega}_i \right)
-    \]
-
-    **Contradição.** Portanto, \(\mathbf{x}^*\) é Pareto-eficiente. \(\blacksquare\)
-
-!!! tip "Hipóteses cruciais"
-    O Primeiro Teorema requer: (i) comportamento tomador de preço; (ii) mercados completos (sem externalidades nem bens públicos); (iii) não saciedade local das preferências. A violação de qualquer uma dessas hipóteses abre espaço para **falhas de mercado** — tema dos próximos capítulos.
+!!! tip "Intuição: por que o equilíbrio competitivo maximiza o bem-estar?"
+    A cada unidade transacionada, o benefício marginal do consumidor (dado pela curva de demanda) supera o custo marginal do produtor (dado pela curva de oferta). Enquanto essa condição valer, produzir e vender mais uma unidade gera ganho líquido para a sociedade. No equilíbrio competitivo, a última unidade transacionada tem benefício marginal *exatamente igual* ao custo marginal — não há mais ganhos a explorar. Qualquer quantidade menor desperdiça trocas mutuamente vantajosas; qualquer quantidade maior força trocas cujo custo supera o benefício.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Quando os mercados funcionam bem (sem monopólios, externalidades ou informação assimétrica), o interesse próprio de cada agente leva, como que por mágica, a um resultado eficiente para todos.
+    **Em uma frase:** O excedente do consumidor mede o "desconto" que ele sente por pagar menos do que estaria disposto, e o excedente do produtor mede o "bônus" por receber mais do que o mínimo necessário para vender.
 
-    **Pense assim:** Ninguém coordena os milhares de caminhões que levam comida de Mato Grosso aos supermercados de São Paulo. Cada motorista, cada atacadista e cada varejista age por interesse próprio — mas o sistema de preços funciona como um "maestro invisível", sinalizando onde falta e onde sobra produto. O Primeiro Teorema formaliza essa ideia: se os preços são livres e ninguém tem poder de mercado, o resultado é eficiente.
+    **Pense assim:** Você pagaria até R$ 50 por um ingresso de cinema, mas a bilheteria cobra R$ 30. Os R$ 20 de "alívio" que você sente são seu excedente de consumidor. Do outro lado, o cinema aceitaria vender a partir de R$ 15 (seu custo marginal), mas recebe R$ 30 — os R$ 15 de "folga" são o excedente do produtor. Somando os dois, temos o ganho total que aquela troca gerou para a sociedade.
 
-    **Por que isso importa:** Esse teorema é o fundamento teórico para políticas pró-concorrência e contra monopólios — mas também alerta que, quando as hipóteses falham (externalidades, bens públicos), a intervenção governamental pode ser justificada.
+    **Por que isso importa:** Qualquer política que distorce preços — tabelamento, imposto, subsídio — redistribui ou destrói esses excedentes, e a perda de peso morto é justamente a parte que ninguém aproveita.
 
 ---
 
-## 13.6 O Segundo Teorema do Bem-Estar
+## 13.10 Controles de Preços e Escassez
 
-!!! abstract "Segundo Teorema do Bem-Estar"
-    Se as preferências dos consumidores são convexas e localmente não saciadas, e se os conjuntos de produção das firmas são convexos, então qualquer alocação Pareto-eficiente pode ser alcançada como um equilíbrio competitivo, desde que se realizem transferências lump-sum apropriadas das dotações iniciais.
+### Preço máximo (teto de preço)
 
-### Importância normativa
+Quando o governo estabelece um preço máximo \(\bar{p} < p^*\), a quantidade ofertada cai e a quantidade demandada aumenta, gerando **escassez**:
 
-O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio, a sociedade pode escolher qualquer ponto da curva de contrato (qualquer distribuição de bem-estar) e implementá-lo via mercados competitivos, bastando redistribuir as dotações iniciais por meio de transferências fixas (*lump-sum*). Isso significa que:
+\[
+\text{Escassez} = X(\bar{p}) - S(\bar{p}) > 0
+\]
 
-1. A concorrência perfeita não está vinculada a uma única distribuição de renda.
-2. Objetivos de equidade podem ser perseguidos sem sacrificar eficiência, desde que os instrumentos redistributivos sejam do tipo *lump-sum*.
+O preço máximo gera perda de peso morto, pois unidades que seriam eficientes de produzir e consumir deixam de ser transacionadas.
 
-!!! note "Limitação prática"
-    Na prática, transferências *lump-sum* perfeitas são difíceis de implementar, pois requerem informação sobre características dos agentes que geralmente são privadas. A tributação factível (imposto de renda, IVA) introduz distorções e gera perda de peso morto — um *trade-off* entre eficiência e equidade que é central na economia do setor público.
+### Preço mínimo (piso de preço)
+
+Quando o governo estabelece um preço mínimo \(\underline{p} > p^*\), a quantidade ofertada excede a quantidade demandada, gerando **excedente**:
+
+\[
+\text{Excedente} = S(\underline{p}) - X(\underline{p}) > 0
+\]
+
+!!! tip "Exemplos de controles de preços"
+    - **Preço máximo**: controle de aluguéis, tabelamento de medicamentos, congelamento de preços (como no Plano Cruzado, 1986).
+    - **Preço mínimo**: salário mínimo, preços mínimos agrícolas (PGPM — Política de Garantia de Preços Mínimos no Brasil).
+
+!!! example "Box Brasil: O Plano Cruzado e os limites do tabelamento"
+    Em fevereiro de 1986, o governo brasileiro lançou o Plano Cruzado, que impôs um congelamento generalizado de preços como estratégia anti-inflacionária. A inflação, que acumulava cerca de 235% em 12 meses (IGP-DI/FGV), caiu abruptamente para próximo de zero nos meses seguintes.
+
+    No entanto, os efeitos colaterais ilustram perfeitamente a análise de preços máximos:
+
+    - **Escassez generalizada**: com os preços congelados abaixo do equilíbrio, a quantidade demandada superou a ofertada. Prateleiras de supermercados ficaram vazias, especialmente para carne bovina e leite.
+    - **Mercado paralelo (ágio)**: produtores exigiam "ágio" para vender a preços acima do tabelado, sinalizando que o preço de equilíbrio de mercado era superior ao teto imposto.
+    - **Deterioração da qualidade**: firmas reduziram a qualidade dos produtos ou alteraram embalagens para manter margens — uma forma de ajuste não-preço que o modelo básico não captura.
+    - **Perda de peso morto**: a redução na quantidade transacionada gerou ineficiência alocativa substancial.
+
+    O episódio é uma das ilustrações mais dramáticas, na história econômica brasileira, de que tabelamentos abaixo do preço de equilíbrio geram escassez e distorções — exatamente como prevê a teoria.
+
+---
+
+### Gráfico interativo: Controles de Preços
+
+Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do preço controlado para observar a escassez ou excedente criados, a variação nos excedentes do consumidor e do produtor, e a perda de peso morto resultante.
+
+<iframe src="../../graficos/cap13/controles-precos.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+---
+
+## 13.11 Incidência Tributária: Quem Realmente Paga o Imposto?
+
+### Imposto por unidade
+
+Considere um imposto específico de \(t\) reais por unidade vendida. No equilíbrio com imposto, o preço pago pelo consumidor (\(p_c\)) e o preço recebido pelo produtor (\(p_p\)) diferem exatamente pelo valor do imposto:
+
+\[
+p_c = p_p + t
+\]
+
+O novo equilíbrio satisfaz:
+
+\[
+X(p_c) = S(p_p) = S(p_c - t)
+\]
+
+!!! abstract "Teorema: Incidência tributária e elasticidades"
+    A divisão da carga tributária entre consumidores e produtores depende das elasticidades relativas de oferta e demanda. A fração do imposto absorvida pelo consumidor é:
+
+    \[
+    \frac{dp_c}{dt} = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|}
+    \]
+
+    e a fração absorvida pelo produtor é:
+
+    \[
+    \frac{-dp_p}{dt} = \frac{|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}
+    \]
+
+    onde \(\varepsilon_S\) é a elasticidade-preço da oferta e \(|\varepsilon_D|\) é o valor absoluto da elasticidade-preço da demanda.
+
+!!! proof "Demonstração"
+    Partimos da condição de equilíbrio com imposto: \(X(p_c) = S(p_c - t)\). Diferenciando em relação a \(t\):
+
+    \[
+    \frac{dX}{dp_c} \cdot \frac{dp_c}{dt} = \frac{dS}{dp_p} \cdot \left( \frac{dp_c}{dt} - 1 \right)
+    \]
+
+    Denotando \(X' = dX/dp_c\) e \(S' = dS/dp_p\):
+
+    \[
+    X' \cdot \frac{dp_c}{dt} = S' \cdot \frac{dp_c}{dt} - S'
+    \]
+
+    \[
+    \frac{dp_c}{dt} (X' - S') = -S'
+    \]
+
+    \[
+    \frac{dp_c}{dt} = \frac{-S'}{X' - S'} = \frac{S'}{S' - X'}
+    \]
+
+    Multiplicando numerador e denominador por \(p/Q\):
+
+    \[
+    \frac{dp_c}{dt} = \frac{S' \cdot (p/Q)}{S' \cdot (p/Q) - X' \cdot (p/Q)} = \frac{\varepsilon_S}{\varepsilon_S - \varepsilon_D} = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|}
+    \]
+
+    onde usamos \(\varepsilon_D < 0\), logo \(-\varepsilon_D = |\varepsilon_D|\).
+
+    Para o produtor: \(p_p = p_c - t\), então:
+
+    \[
+    \frac{dp_p}{dt} = \frac{dp_c}{dt} - 1 = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|} - 1 = \frac{-|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}
+    \]
+
+    Portanto, \(\frac{-dp_p}{dt} = \frac{|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}\). \(\blacksquare\)
+
+**Casos-limite:**
+
+- Se a demanda é perfeitamente inelástica (\(|\varepsilon_D| = 0\)): o consumidor absorve 100% do imposto.
+- Se a oferta é perfeitamente inelástica (\(\varepsilon_S = 0\)): o produtor absorve 100% do imposto.
+- Se a demanda é perfeitamente elástica (\(|\varepsilon_D| \to \infty\)): o produtor absorve 100%.
+- Se a oferta é perfeitamente elástica (\(\varepsilon_S \to \infty\)): o consumidor absorve 100%.
+
+!!! note "Irrelevância do lado legal"
+    A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** A sociedade pode escolher qualquer distribuição de bem-estar que considere justa e, em princípio, alcançá-la usando mercados competitivos — basta redistribuir as dotações iniciais.
+    **Em uma frase:** Quem realmente paga o imposto não é quem o governo manda pagar — é quem tem menos flexibilidade para escapar dele.
 
-    **Pense assim:** Imagine que o governo quer reduzir a desigualdade sem destruir a eficiência da economia. O Segundo Teorema diz que, em teoria, bastaria redistribuir a "riqueza inicial" (terra, capital) e depois deixar os mercados funcionarem livremente. É como reorganizar as fichas antes de começar o jogo, em vez de mudar as regras durante a partida. O problema é que, na prática, redistribuir sem distorcer é quase impossível — o Bolsa Família, por exemplo, é eficiente mas ainda gera algum custo administrativo.
+    **Pense assim:** Quando o governo aumenta o ICMS da gasolina e cobra do posto, o posto repassa quase tudo ao consumidor no preço da bomba. Por quê? Porque o motorista *precisa* de gasolina (demanda inelástica) e não tem muita alternativa, enquanto o posto pode ajustar a oferta. O lado mais "preso" ao mercado é quem absorve a maior fatia do imposto, independentemente de quem assina a guia de recolhimento.
 
-    **Por que isso importa:** Esse teorema fundamenta a separação entre política de eficiência (deixar mercados funcionar) e política de equidade (redistribuir renda), e é a base teórica de programas de transferência de renda como o Bolsa Família.
+    **Por que isso importa:** Esse princípio é central para avaliar reformas tributárias no Brasil — saber quem de fato arca com o ônus de cada tributo é essencial para analisar impactos distributivos.
 
----
-
-## Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
-
-!!! example "Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
-    A **Reforma Tributária** brasileira (EC 132/2023, regulamentada pela LC 214/2025) é, do ponto de vista da teoria do equilíbrio geral, uma das maiores intervenções sobre o sistema de preços relativos já realizadas no país. Ela substitui cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por dois: a **CBS** (federal) e o **IBS** (estadual/municipal), formando um IVA dual com alíquota estimada entre 26,5% e 28%.
-
-    **Por que a reforma é um problema de equilíbrio geral?**
-
-    O sistema tributário anterior introduzia distorções em múltiplos mercados simultaneamente: cumulatividade (tributo sobre tributo), guerra fiscal entre estados (alíquotas diferentes de ICMS), e tratamentos setoriais desiguais. Essas distorções violavam as condições de eficiência de Pareto — em particular, impediam que os preços relativos refletissem os custos marginais reais (condição \(\mathrm{TMT} = \mathrm{TMS}\)).
-
-    A análise de equilíbrio parcial subestima os ganhos da reforma porque ignora os efeitos cruzados entre mercados. Quando o tributo sobre o setor têxtil muda, isso afeta o mercado de algodão, o de vestuário, o de mão de obra e assim por diante — exatamente o tipo de interdependência que o modelo walrasiano captura.
-
-    **O que dizem os modelos CGE?**
-
-    Estudos do IPEA, da FGV e do Ministério da Fazenda utilizando modelos de equilíbrio geral computável (Seção 13.10) estimam que a reforma pode elevar o **PIB potencial em até 10% a 20%** ao longo de 15 anos, primordialmente via ganhos de produtividade total dos fatores e aumento do estoque de capital. A reforma tributária aparece consistentemente como o cenário de maior ganho de bem-estar nos modelos CGE brasileiros — acima de acordos comerciais ou liberalização unilateral.
-
-    **Conexão com o Segundo Teorema**
-
-    O Segundo Teorema do Bem-Estar (Seção 13.6) afirma que qualquer alocação eficiente pode ser sustentada por mercados competitivos, desde que as transferências sejam *lump-sum*. A reforma tributária brasileira caminha nessa direção: ao substituir tributos cumulativos (distorcivos) por um IVA não cumulativo (menos distorcivo), ela aproxima o sistema tributário de uma transferência *lump-sum*, reduzindo a perda de peso morto. Não é uma transferência *lump-sum* perfeita — o IVA ainda distorce a margem consumo-lazer —, mas é substancialmente menos distorcivo que o sistema anterior.
-
-    **Fonte**: Ministério da Fazenda; IFI/Senado, Estudo Especial nº 19 (2024); IBRE/FGV.
+!!! example "Incidência tributária no Brasil: ICMS sobre combustíveis"
+    Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do [IPEA](https://www.ipea.gov.br)) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba ([ANP](https://www.gov.br/anp), Boletim de Preços).
 
 ---
 
-### Gráfico interativo: Equilíbrio Geral Walrasiano
+### Gráfico interativo: Incidência Tributária
 
-Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda resultante. O equilíbrio walrasiano ocorre quando o excesso de demanda é zero -- o gráfico indica o preço de equilíbrio e sinaliza a direção de ajuste necessária.
+Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária entre comprador e vendedor, a receita do governo e a perda de peso morto. Alterne entre imposto sobre o vendedor e sobre o comprador para verificar a irrelevância do lado legal.
 
-<iframe src="../../graficos/cap13/equilibrio-geral.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../../graficos/cap13/incidencia-tributaria.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
 ---
 
-## 13.7 Modelo Matemático de Troca
+## Tabela: Efeitos de Políticas sobre EC, EP e PPM
 
-### Funções de excesso de demanda
+A tabela abaixo resume os efeitos das principais políticas de intervenção em um mercado competitivo.
 
-Defina a **demanda líquida** (ou excesso de demanda) do consumidor \(i\) pelo bem \(k\) como:
+| Política | Efeito sobre EC | Efeito sobre EP | Receita/Gasto Gov. | PPM |
+|---|---|---|---|---|
+| **Imposto por unidade** (\(t\)) | Diminui: \(-\Delta EC\) | Diminui: \(-\Delta EP\) | Receita: \(R = t \cdot Q_t\) | \(PPM = \frac{1}{2} t \cdot \Delta Q > 0\) |
+| **Subsídio por unidade** (\(s\)) | Aumenta | Aumenta | Gasto: \(G = s \cdot Q_s\) | \(PPM = \frac{1}{2} s \cdot \Delta Q > 0\) |
+| **Preço máximo** (\(\bar{p} < p^*\)) | Ambíguo (↑ preço menor, ↓ quantidade) | Diminui | — | \(PPM > 0\) (escassez) |
+| **Preço mínimo** (\(\underline{p} > p^*\)) | Diminui | Ambíguo (↑ preço maior, ↓ quantidade vendida) | Custo se gov. compra excedente | \(PPM > 0\) (excesso) |
 
-\[
-z_i^k(\mathbf{p}) = x_i^k(\mathbf{p}) - \omega_i^k
-\]
-
-O **excesso de demanda agregado** pelo bem \(k\) é:
-
-\[
-Z^k(\mathbf{p}) = \sum_{i=1}^{I} z_i^k(\mathbf{p}) = \sum_{i=1}^{I} x_i^k(\mathbf{p}) - \bar{\omega}^k
-\]
-
-O equilíbrio walrasiano requer \(Z^k(\mathbf{p}^*) = 0\) para todo \(k = 1, \ldots, n\) (ou, mais geralmente, \(Z^k(\mathbf{p}^*) \leq 0\) com igualdade se \(p_k^* > 0\)).
-
-### Propriedades das funções de excesso de demanda
-
-As funções de excesso de demanda agregado satisfazem:
-
-1. **Homogeneidade de grau zero**: \(Z^k(\lambda \mathbf{p}) = Z^k(\mathbf{p})\) para todo \(\lambda > 0\).
-2. **Continuidade**: sob hipóteses adequadas sobre preferências (contínuas, convexas, localmente não saciadas).
-3. **Lei de Walras** (ver abaixo).
-
-### Lei de Walras
-
-!!! abstract "Lei de Walras"
-    Para qualquer vetor de preços \(\mathbf{p}\), o valor total do excesso de demanda é identicamente zero:
+!!! note "Perda de peso morto"
+    A perda de peso morto (PPM), também chamada de *deadweight loss* ou triângulo de Harberger, representa a perda de bem-estar social que não é capturada por nenhum agente — nem consumidores, nem produtores, nem governo. Para um imposto com curvas lineares:
 
     \[
-    \sum_{k=1}^{n} p_k \cdot Z^k(\mathbf{p}) \equiv 0
+    PPM = \frac{1}{2} \cdot t^2 \cdot \frac{|\varepsilon_D| \cdot \varepsilon_S}{|\varepsilon_D| + \varepsilon_S} \cdot \frac{Q_0}{p_0}
     \]
 
-A Lei de Walras decorre diretamente do fato de que cada consumidor satisfaz sua restrição orçamentária com igualdade (pela não saciedade local):
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** A perda de peso morto é o valor das trocas que deixaram de acontecer — um prejuízo que ninguém embolsa.
 
-\[
-\mathbf{p} \cdot \mathbf{x}_i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}_i \quad \forall\, i
-\]
+    **Pense assim:** Imagine que um imposto sobre o cafezinho faz o preço subir de R$ 5 para R$ 6. Alguns clientes que compravam a R$ 5 desistem, e o dono do café perde essas vendas. O governo arrecada sobre os cafés que ainda são vendidos, mas o valor das transações que sumiram — aquele cafezinho que o cliente queria e o vendedor podia oferecer — evaporou. Esse "triângulo" de valor perdido é a perda de peso morto.
 
-Somando sobre todos os consumidores:
-
-\[
-\sum_{i} \mathbf{p} \cdot \mathbf{x}_i(\mathbf{p}) = \sum_{i} \mathbf{p} \cdot \boldsymbol{\omega}_i \quad \Longrightarrow \quad \mathbf{p} \cdot \mathbf{Z}(\mathbf{p}) = 0
-\]
-
-!!! tip "Consequência importante"
-    A Lei de Walras implica que, em um sistema com \(n\) mercados, se \(n - 1\) deles estão em equilíbrio, o \(n\)-ésimo mercado também estará necessariamente em equilíbrio. Portanto, há apenas \(n - 1\) equações de equilíbrio independentes — exatamente o número de preços relativos a determinar (após normalização).
+    **Por que isso importa:** A fórmula mostra que a perda de peso morto cresce com o *quadrado* do imposto — dobrar o imposto quadruplica a ineficiência — o que fundamenta a recomendação de bases tributárias amplas com alíquotas baixas, como a reforma do IBS/CBS no Brasil.
 
 ---
 
-## 13.8 Existência de Equilíbrio
+## Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
 
-### O Teorema do Ponto Fixo de Brouwer
+!!! example "Box Brasil: Soja brasileira e o leiloeiro global"
+    O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 ([CONAB](https://www.conab.gov.br)). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
 
-!!! abstract "Teorema do Ponto Fixo de Brouwer"
-    Seja \(f: \Delta \to \Delta\) uma função contínua de um conjunto convexo e compacto \(\Delta \subset \mathbb{R}^n\) nele mesmo. Então existe pelo menos um ponto \(\mathbf{x}^* \in \Delta\) tal que:
+    **Formação de preços internos:**
+
+    O preço doméstico da soja é determinado pela paridade de exportação:
 
     \[
-    f(\mathbf{x}^*) = \mathbf{x}^*
+    p_{\text{interno}} = p_{\text{CBOT}} \times e + \text{prêmio de exportação} - \text{custos logísticos}
     \]
 
-### Aplicação à existência de equilíbrio
+    onde \(e\) é a taxa de câmbio (R\$/US\$). O indicador CEPEA/ESALQ (Centro de Estudos Avançados em Economia Aplicada, da ESALQ/USP) é a principal referência de preços domésticos, calculado diariamente com base em transações efetivas no mercado físico.
 
-A ideia central é construir uma função que mapeia preços em preços e cujo ponto fixo corresponda a um equilíbrio walrasiano. Normalizamos os preços no **simplex unitário**:
+    **Elasticidades e estática comparativa:**
 
-\[
-\Delta = \left\{ \mathbf{p} \in \mathbb{R}^n_+ : \sum_{k=1}^{n} p_k = 1 \right\}
-\]
+    Estudos do IPEA e da CONAB estimam que a elasticidade-preço da oferta de soja no Brasil no longo prazo situa-se entre 0,3 e 0,8, refletindo as possibilidades de expansão de área (conversão de pastagens degradadas) e intensificação tecnológica. A demanda global é relativamente inelástica no curto prazo, dado o uso da soja como insumo essencial na ração animal e na indústria de óleos.
 
-Definimos uma função de ajuste de preços \(g: \Delta \to \Delta\):
+    **Implicações para o modelo competitivo:**
 
-\[
-g_k(\mathbf{p}) = \frac{p_k + \max\{0, Z^k(\mathbf{p})\}}{1 + \sum_{j=1}^{n} \max\{0, Z^j(\mathbf{p})\}}
-\]
+    O mercado de soja é um caso quase ideal de concorrência perfeita: produto homogêneo, milhares de produtores, informação transparente sobre preços (CBOT em tempo real), e livre entrada/saída. A PGPM (Política de Garantia de Preços Mínimos) atua como um piso de preço, embora nos últimos anos os preços internacionais tenham se mantido muito acima dos preços mínimos fixados pelo governo, tornando a política pouco efetiva neste mercado específico.
 
-Esta função eleva o preço de bens com excesso de demanda positivo e reduz (relativamente) o de bens com excesso de oferta. Verifica-se que:
+    **Dados ilustrativos (CEPEA/ESALQ e CONAB):**
 
-- \(g\) mapeia \(\Delta\) em \(\Delta\) (os novos preços são não negativos e somam 1).
-- \(g\) é contínua (pois \(Z\) é contínua e \(\max\) preserva continuidade).
+    | Safra | Produção (milhões t) | Preço médio anual (R\$/saca) | Exportação (milhões t) |
+    |---|---|---|---|
+    | 2019/20 | 124,8 | 89,50 | 82,9 |
+    | 2020/21 | 135,9 | 155,30 | 86,1 |
+    | 2021/22 | 125,5 | 183,60 | 78,7 |
+    | 2022/23 | 154,6 | 142,80 | 97,3 |
+    | 2023/24 | 155,3 | 120,50 | 101,2 |
 
-Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \mathbf{p}^*\). Pode-se mostrar, usando a Lei de Walras, que isso implica \(Z^k(\mathbf{p}^*) \leq 0\) para todo \(k\), com igualdade se \(p_k^* > 0\) — exatamente as condições de equilíbrio walrasiano.
-
-!!! abstract "Teorema de Existência do Equilíbrio Walrasiano (Arrow-Debreu, 1954)"
-    Se as preferências dos consumidores são contínuas, convexas e localmente não saciadas, e se as dotações agregadas são estritamente positivas, então existe pelo menos um equilíbrio walrasiano.
-
-!!! note "Unicidade e estabilidade"
-    O Teorema de Brouwer garante existência, mas não unicidade. Resultados de unicidade requerem condições adicionais sobre as funções de excesso de demanda (por exemplo, a condição de substitutibilidade bruta). Da mesma forma, a estabilidade do equilíbrio sob processos de ajuste *tâtonnement* requer hipóteses adicionais.
-
----
-
-## 13.9 Modelo Matemático de Produção e Troca
-
-### Extensão com produção
-
-Quando incluímos firmas na economia, o modelo se generaliza. Com \(J\) firmas, cada firma \(j\) escolhe um plano de produção \(\mathbf{y}_j \in Y_j\) (seu conjunto de produção) para maximizar lucro:
-
-\[
-\max_{\mathbf{y}_j \in Y_j} \mathbf{p} \cdot \mathbf{y}_j
-\]
-
-Os consumidores possuem ações \(\theta_{ij}\) nas firmas, de modo que a renda do consumidor \(i\) inclui os lucros distribuídos:
-
-\[
-m_i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}_i + \sum_{j=1}^{J} \theta_{ij} \cdot \pi_j(\mathbf{p})
-\]
-
-onde \(\pi_j(\mathbf{p}) = \mathbf{p} \cdot \mathbf{y}_j^*(\mathbf{p})\) é o lucro maximizado da firma \(j\).
-
-### Equilíbrio com produção
-
-!!! definition "Equilíbrio walrasiano com produção"
-    Um equilíbrio walrasiano com produção é um vetor de preços \(\mathbf{p}^*\), alocações de consumo \(\{\mathbf{x}_i^*\}\) e planos de produção \(\{\mathbf{y}_j^*\}\) tais que:
-
-    1. Cada consumidor \(i\) maximiza utilidade sujeito à restrição orçamentária ao preço \(\mathbf{p}^*\).
-    2. Cada firma \(j\) maximiza lucro ao preço \(\mathbf{p}^*\).
-    3. Todos os mercados se equilibram:
-
-    \[
-    \sum_{i=1}^{I} \mathbf{x}_i^* = \sum_{i=1}^{I} \boldsymbol{\omega}_i + \sum_{j=1}^{J} \mathbf{y}_j^*
-    \]
-
-A Lei de Walras generaliza-se naturalmente: o valor do excesso de demanda (agora incorporando produção) é identicamente zero. O teorema de existência de Arrow-Debreu aplica-se com hipóteses adicionais de convexidade sobre os conjuntos de produção.
-
----
-
-## 13.10 Modelos Computáveis de Equilíbrio Geral (CGE)
-
-### Da teoria à prática
-
-Os modelos de equilíbrio geral computável (CGE, do inglês *Computable General Equilibrium*) são implementações numéricas da teoria walrasiana. Eles especificam:
-
-1. **Formas funcionais** para preferências (geralmente CES — elasticidade de substituição constante) e tecnologias (funções de produção Leontief, Cobb-Douglas ou CES aninhadas).
-2. **Calibração** com dados de uma Matriz de Insumo-Produto ou de uma SAM (Matriz de Contabilidade Social).
-3. **Solução numérica** do sistema de equações de equilíbrio via algoritmos iterativos.
-
-### Estrutura típica
-
-Um modelo CGE típico contém:
-
-- Blocos de demanda: sistema de demanda derivado da maximização de utilidade.
-- Blocos de oferta: funções de custo derivadas da minimização de custos.
-- Condições de equilíbrio em mercados de bens, fatores e comércio exterior.
-- Regras de fechamento: hipóteses sobre quais variáveis são endógenas e quais são exógenas (desemprego, balança comercial, receita do governo etc.).
-
-### Tipos de análise
-
-Modelos CGE são usados para simulações de **estática comparativa**: comparam o equilíbrio antes e depois de um choque de política (reforma tributária, acordo comercial, choque de preços de commodities). Os modelos **dinâmicos** incorporam acumulação de capital e crescimento.
-
-!!! tip "Software"
-    Os modelos CGE mais conhecidos utilizam o software GAMS (General Algebraic Modeling System) ou GEMPACK. Modelos globais como o GTAP (Global Trade Analysis Project) permitem análise de comércio internacional com desagregação por país e setor.
-
----
-
-## Box Brasil: Modelos CGE Aplicados ao Brasil
-
-!!! example "Box Brasil: Equilíbrio geral computável e políticas comerciais"
-    O Brasil tem uma tradição relevante no desenvolvimento e aplicação de modelos de equilíbrio geral computável para avaliação de políticas públicas. Diversas instituições — como o IPEA (Instituto de Pesquisa Econômica Aplicada), a FGV (Fundação Getulio Vargas), a ESALQ/USP e universidades federais — mantêm modelos CGE calibrados para a economia brasileira.
-
-    **Principais modelos brasileiros:**
-
-    - **TERM-BR** (The Enormous Regional Model - Brasil): desenvolvido com base no modelo australiano TERM, é um CGE multiregional que desagrega a economia brasileira por unidade federativa. Utilizado para analisar impactos regionais de políticas fiscais e choques de infraestrutura.
-    - **BeGreen**: modelo dinâmico CGE desenvolvido pelo CEDEPLAR/UFMG, voltado para análise ambiental e energética.
-    - **Modelos GTAP com extensão brasileira**: utilizados para avaliar acordos comerciais como o Mercosul-União Europeia.
-
-    **Análise de políticas comerciais:**
-
-    Estudos do IPEA utilizando modelos CGE avaliaram os impactos de diferentes cenários de liberalização comercial sobre a economia brasileira. Resultados típicos incluem:
-
-    | Cenário de política | PIB (var. %) | Exportações (var. %) | Importações (var. %) | Bem-estar (var. equiv., R\$ bi) |
-    |---|---|---|---|---|
-    | Acordo Mercosul-UE (cenário base) | +0,3 a +0,5 | +3,0 a +6,0 | +4,0 a +8,0 | +5 a +15 |
-    | Liberalização unilateral (50% tarifas) | +0,5 a +1,2 | +5,0 a +10,0 | +8,0 a +15,0 | +10 a +25 |
-    | Reforma tributária (IVA nacional) | +2,0 a +3,5 | +2,0 a +5,0 | +3,0 a +6,0 | +30 a +60 |
-
-    *Nota: intervalos refletem diferentes especificações e fechamentos dos modelos.*
-
-    **Lições dos modelos CGE para o Brasil:**
-
-    1. **Efeitos setoriais heterogêneos**: A liberalização comercial tende a expandir setores com vantagem comparativa (agropecuária, mineração) e contrair setores protegidos (indústria automotiva, eletrônicos). O modelo CGE permite quantificar esses efeitos de recomposição setorial que a análise de equilíbrio parcial ignora.
-
-    2. **Efeitos regionais**: Dada a heterogeneidade produtiva regional do Brasil, políticas comerciais afetam de forma desigual as unidades da federação. Modelos como o TERM-BR mostram que a liberalização comercial tende a beneficiar mais as regiões Centro-Oeste e Sul (agroexportadoras) e menos o Sudeste industrial.
-
-    3. **Interações fiscais**: A reforma tributária é o cenário com maiores ganhos de bem-estar nos modelos CGE, pois o sistema tributário brasileiro introduz distorções que afetam múltiplos mercados simultaneamente — exatamente o tipo de fenômeno que a análise de equilíbrio geral captura e a parcial subestima.
-
-    4. **Limitações**: Os modelos CGE baseiam-se em hipóteses de concorrência perfeita (na maioria das versões), retornos constantes de escala e pleno emprego de fatores. Extensões incorporando economias de escala, concorrência imperfeita e desemprego (modelos "novos CGE") são áreas ativas de pesquisa no Brasil.
+    Observe a estática comparativa em ação: na safra 2020/21, choques positivos de demanda global (recuperação pós-pandemia, recomposição de estoques chineses) combinados com câmbio depreciado elevaram drasticamente o preço interno. Nas safras seguintes, a resposta da oferta (expansão de área) gradualmente pressionou os preços para baixo — uma ilustração da dinâmica de ajuste de longo prazo em indústria de custos crescentes.
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 13.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
-    **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
+??? example "Exercício Resolvido 12.1 — Equilíbrio, excedentes e imposto"
+    **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
 
-    **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
+    ---
 
-    **Resolução:**
-
-    **Passo 1 — Demandas marshallianas**
-
-    Normalizando \(p_2 = 1\) e denotando \(p = p_1\):
-
-    *Consumidor A* (\(U_A = x_1 x_2\), Cobb-Douglas com \(\alpha = 1/2\)):
+    **(a)** Equilíbrio: \(Q_D = Q_S\).
 
     \[
-    x_1^A = \frac{m_A}{2p}, \qquad x_2^A = \frac{m_A}{2}, \qquad m_A = 8p + 2
+    120 - 2p = 3p - 30 \implies 150 = 5p \implies p^* = 30, \quad Q^* = 120 - 60 = 60
     \]
 
-    *Consumidor B* (\(U_B = x_1^{1/3} x_2^{2/3}\), Cobb-Douglas com \(\alpha = 1/3\)):
+    **(b)** A demanda inversa é \(p_D = 60 - Q/2\) e a oferta inversa é \(p_S = 10 + Q/3\).
 
     \[
-    x_1^B = \frac{m_B}{3p}, \qquad x_2^B = \frac{2m_B}{3}, \qquad m_B = 2p + 8
-    \]
-
-    **Passo 2 — Equilíbrio de mercado (bem 1)**
-
-    \[
-    \frac{8p + 2}{2p} + \frac{2p + 8}{3p} = 10
-    \]
-
-    Multiplicando por \(6p\):
-
-    \[
-    3(8p + 2) + 2(2p + 8) = 60p \implies 28p + 22 = 60p \implies p^* = \frac{22}{32} = \frac{11}{16}
-    \]
-
-    **Passo 3 — Alocações de equilíbrio**
-
-    \[
-    m_A = 8 \cdot \frac{11}{16} + 2 = \frac{120}{16} = \frac{15}{2}
+    EC = \frac{1}{2}(60 - 30) \times 60 = \frac{1}{2} \times 30 \times 60 = 900
     \]
 
     \[
-    x_1^A = \frac{15/2}{2 \cdot 11/16} = \frac{15/2}{11/8} = \frac{60}{11} \approx 5{,}45, \qquad x_2^A = \frac{15}{4} = 3{,}75
+    EP = \frac{1}{2}(30 - 10) \times 60 = \frac{1}{2} \times 20 \times 60 = 600
+    \]
+
+    **(c)** Com imposto, \(p_c = p_p + 10\). No equilíbrio:
+
+    \[
+    120 - 2p_c = 3(p_c - 10) - 30 \implies 120 - 2p_c = 3p_c - 60 \implies 180 = 5p_c \implies p_c = 36
     \]
 
     \[
-    m_B = 2 \cdot \frac{11}{16} + 8 = \frac{150}{16} = \frac{75}{8}
+    p_p = 36 - 10 = 26, \quad Q_t = 120 - 72 = 48
+    \]
+
+    O consumidor paga R\$ 6 a mais (de 30 para 36) e o produtor recebe R\$ 4 a menos (de 30 para 26), consistente com \(\varepsilon_S / (\varepsilon_S + |\varepsilon_D|) = (3 \cdot 30/60) / (1{,}5 + 1{,}0) = 0{,}6\).
+
+    Receita do governo: \(R = t \times Q_t = 10 \times 48 = 480\).
+
+    PPM: \(\frac{1}{2} \times t \times \Delta Q = \frac{1}{2} \times 10 \times 12 = 60\).
+
+    **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
+
+??? example "Exercício Resolvido 12.2 — Preço máximo e escassez"
+    **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
+
+    ---
+
+    **(a)** Equilíbrio livre:
+
+    \[
+    500 - 10p = 20p - 100 \implies 600 = 30p \implies p^* = 20, \quad Q^* = 300
+    \]
+
+    **(b)** Com \(\bar{p} = 15 < 20\):
+
+    \[
+    Q_D(15) = 500 - 150 = 350, \quad Q_S(15) = 300 - 100 = 200
+    \]
+
+    Escassez: \(350 - 200 = 150\) unidades.
+
+    A quantidade efetivamente transacionada é \(Q_t = \min(Q_D, Q_S) = 200\).
+
+    Sem intervenção: \(EC_0 = \frac{1}{2}(50 - 20)(300) = 4.500\) e \(EP_0 = \frac{1}{2}(20 - 5)(300) = 2.250\).
+
+    Com teto: os consumidores que conseguem comprar pagam 15 em vez de 20. O EC tem dois componentes: o retângulo de transferência do produtor (\((20-15) \times 200 = 1.000\)) e a perda do triângulo superior. Usando a demanda inversa \(p_D = 50 - Q/10\) e a oferta inversa \(p_S = 5 + Q/20\):
+
+    \[
+    EC_1 = \frac{1}{2}(50 - 15)(200) + 0 \text{ (sem racionamento eficiente)}
+    \]
+
+    Com racionamento eficiente: \(EC_1 = \frac{1}{2}(50-15) \times 200 = 3.500\).
+
+    \(EP_1 = \frac{1}{2}(15 - 5) \times 200 = 1.000\).
+
+    \(W_1 = 3.500 + 1.000 = 4.500\). \(W_0 = 4.500 + 2.250 = 6.750\).
+
+    \(PPM = W_0 - W_1 = 6.750 - 4.500 = 2.250\).
+
+    Alternativamente, o triângulo de Harberger: \(\frac{1}{2}(20-15)(300-200) = \frac{1}{2} \times 5 \times 100 = 250\). Mas note que a PPM total com racionamento ineficiente pode ser maior. Com racionamento eficiente, \(PPM = 250\).
+
+    **Correção com racionamento eficiente:** \(EC_1 = (20-15) \times 200 + \frac{1}{2}(50-20)(200) - [\frac{1}{2}(50-20)(300) - \frac{1}{2}(50-20)(200)]...\)
+
+    Método direto: \(W_0 = \int_0^{300}[(50 - Q/10) - (5 + Q/20)] dQ = \int_0^{300}[45 - 3Q/20] dQ = [45Q - 3Q^2/40]_0^{300} = 13.500 - 6.750 = 6.750\).
+
+    \(W_1 = \int_0^{200}[(50 - Q/10) - (5 + Q/20)] dQ = [45Q - 3Q^2/40]_0^{200} = 9.000 - 3.000 = 6.000\).
+
+    \(PPM = 6.750 - 6.000 = 750\). Isso coincide com o triângulo: \(\frac{1}{2} \times (p^* - \bar{p} + p_D(200) - p^*) \times (Q^* - Q_t)\)... Usando a fórmula do triângulo entre as curvas:
+
+    \[
+    PPM = \frac{1}{2}[p_D(200) - p_S(200)] \times (300 - 200) = \frac{1}{2}(30 - 15)(100) = 750
+    \]
+
+    **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
+
+??? example "Exercício Resolvido 12.3 — Indústria de custos crescentes e renda ricardiana"
+    **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
+
+    ---
+
+    **(a)** Substituindo a oferta na demanda:
+
+    \[
+    Q = 800 - 10(20 + 0{,}05Q) = 800 - 200 - 0{,}5Q \implies 1{,}5Q = 600 \implies Q^* = 400
     \]
 
     \[
-    x_1^B = \frac{75/8}{3 \cdot 11/16} = \frac{75/8}{33/16} = \frac{50}{11} \approx 4{,}55, \qquad x_2^B = \frac{2 \cdot 75/8}{3} = \frac{25}{4} = 6{,}25
+    p^* = 20 + 0{,}05 \times 400 = 40
     \]
 
-    Verificação: \(60/11 + 50/11 = 110/11 = 10\) ✓ e \(15/4 + 25/4 = 40/4 = 10\) ✓
-
-    **Passo 4 — Verificação da Lei de Walras**
-
-    A preços arbitrários \(p = 1\): \(m_A = 10\), \(m_B = 10\).
+    **(b)** A renda ricardiana é a área acima da curva de oferta de LP e abaixo do preço:
 
     \[
-    Z^1 = \frac{10}{2} + \frac{10}{3} - 10 = \frac{-5}{3}, \qquad Z^2 = \frac{10}{2} + \frac{20}{3} - 10 = \frac{5}{3}
+    RR = \int_0^{400}[40 - (20 + 0{,}05Q)] dQ = \int_0^{400}[20 - 0{,}05Q] dQ = \left[20Q - 0{,}025Q^2\right]_0^{400}
     \]
 
     \[
-    p_1 Z^1 + p_2 Z^2 = 1 \cdot \left(-\frac{5}{3}\right) + 1 \cdot \frac{5}{3} = 0 \;\checkmark
+    RR = 8.000 - 4.000 = 4.000
     \]
 
-    **Passo 5 — Verificação da eficiência de Pareto**
+    Alternativamente, como a oferta é linear: \(RR = \frac{1}{2}(p^* - p_{\min}) \times Q^* = \frac{1}{2}(40 - 20)(400) = 4.000\). ✓
+
+    **(c)** Com a nova demanda:
 
     \[
-    TMS_A = \frac{x_2^A}{x_1^A} = \frac{15/4}{60/11} = \frac{15 \cdot 11}{4 \cdot 60} = \frac{11}{16} = p^* \;\checkmark
-    \]
-
-    \[
-    TMS_B = \frac{(1/3)\,x_2^B}{(2/3)\,x_1^B} = \frac{x_2^B}{2\,x_1^B} = \frac{25/4}{2 \cdot 50/11} = \frac{25 \cdot 11}{4 \cdot 100} = \frac{11}{16} = p^* \;\checkmark
-    \]
-
-    **Resultado:** \(p^* = 11/16\), \(\mathbf{x}_A^* = (60/11,\; 15/4)\), \(\mathbf{x}_B^* = (50/11,\; 25/4)\). O equilíbrio é Pareto-eficiente: \(TMS_A = TMS_B = p^*\).
-
-    **Interpretação econômica:** A troca melhora ambos os agentes: A, que tinha mais do bem 1 do que do bem 2, vende parte de sua dotação do bem 1 e compra bem 2. B faz o oposto. O Primeiro Teorema do Bem-Estar garante que o resultado é eficiente — não há recomposição das cestas que beneficie um sem prejudicar o outro. Na analogia com o comércio internacional, A é como o Brasil (abundante em commodities) e B como a UE (abundante em manufaturas): a troca beneficia ambos.
-
----
-
-??? example "Exercício Resolvido 13.2 — Segundo Teorema e transferências lump-sum"
-    **Enunciado:** Na mesma economia do ER 13.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
-
-    **Dados:** Mesmas preferências e dotações do ER 13.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
-
-    **Resolução:**
-
-    **Passo 1 — Verificar eficiência de Pareto**
-
-    \[
-    TMS_A = \frac{x_2^A}{x_1^A} = \frac{10/3}{5} = \frac{2}{3}
+    Q' = 1000 - 10(20 + 0{,}05Q') = 1000 - 200 - 0{,}5Q' \implies 1{,}5Q' = 800 \implies Q'^* = 533{,}3
     \]
 
     \[
-    TMS_B = \frac{x_2^B}{2\,x_1^B} = \frac{20/3}{2 \cdot 5} = \frac{2}{3}
-    \]
-
-    \(TMS_A = TMS_B = 2/3\) ✓ — a alocação está na curva de contrato (Pareto-eficiente).
-
-    **Passo 2 — Preço relativo que sustenta o equilíbrio**
-
-    No equilíbrio competitivo: \(p_1/p_2 = TMS = 2/3\). Normalizando \(p_2 = 1\): \(p_1 = 2/3\).
-
-    **Passo 3 — Renda necessária para cada consumidor**
-
-    \[
-    m_A^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{10}{3} = \frac{10}{3} + \frac{10}{3} = \frac{20}{3}
+    p'^* = 20 + 0{,}05 \times 533{,}3 = 46{,}67
     \]
 
     \[
-    m_B^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{20}{3} = \frac{10}{3} + \frac{20}{3} = 10
+    RR' = \frac{1}{2}(46{,}67 - 20)(533{,}3) = \frac{1}{2}(26{,}67)(533{,}3) \approx 7.111
     \]
 
-    **Passo 4 — Renda original ao novo preço**
-
-    \[
-    m_A^{\text{original}} = \frac{2}{3} \cdot 8 + 1 \cdot 2 = \frac{16}{3} + 2 = \frac{22}{3}
-    \]
-
-    \[
-    m_B^{\text{original}} = \frac{2}{3} \cdot 2 + 1 \cdot 8 = \frac{4}{3} + 8 = \frac{28}{3}
-    \]
-
-    **Passo 5 — Transferência lump-sum**
-
-    \[
-    T_A = m_A^{\text{necessária}} - m_A^{\text{original}} = \frac{20}{3} - \frac{22}{3} = -\frac{2}{3}
-    \]
-
-    A paga uma transferência de \(2/3\) unidades do numerário para B. Após a transferência, os mercados competitivos geram exatamente a alocação desejada.
-
-    **Resultado:** Transferência *lump-sum* de \(T = 2/3\) do consumidor A para o consumidor B, ao preço \(p^* = 2/3\).
-
-    **Interpretação econômica:** O Segundo Teorema demonstra que eficiência e equidade são objetivos separáveis: basta redistribuir a riqueza inicial e deixar os mercados funcionarem. No Brasil, o **Bolsa Família** e o **BPC** (Benefício de Prestação Continuada) são exemplos de transferências diretas que buscam alterar a distribuição sem distorcer preços relativos — embora, na prática, nenhuma transferência seja perfeitamente *lump-sum* (sempre há custos administrativos e incentivos adversos).
+    A renda ricardiana aumentou de 4.000 para 7.111 — um acréscimo de **3.111**, refletindo a valorização dos fatores inframarginais (como terras mais produtivas) em resposta à expansão da demanda. Note que o preço de equilíbrio subiu (de 40 para 46,67) porque se trata de uma indústria de custos crescentes.
 
 ---
 
 ## Exercícios
 
-**Exercício 13.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
+**Exercício 12.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
 
-(a) Derive a curva de contrato.
+(a) Derive a demanda e a oferta de mercado.
 
-(b) Encontre o equilíbrio walrasiano (preços e alocações), normalizando \(p_2 = 1\).
+(b) Encontre o preço e a quantidade de equilíbrio.
 
-(c) Verifique a Lei de Walras.
+(c) Calcule o excedente do consumidor e o excedente do produtor.
 
-(d) Verifique que o equilíbrio pertence ao núcleo.
-
----
-
-**Exercício 13.2.** Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
-
-(a) \(TMS_A^{12} = TMS_B^{12}\) (eficiência na troca).
-
-(b) \(TMST_1^{LK} = TMST_2^{LK}\) (eficiência na produção).
-
-(c) \(TMT^{12} = TMS^{12}\) (eficiência no mix de produtos).
-
-Explique por que cada condição é necessária, usando argumentos de contradição.
+(d) Se o governo impõe um imposto de \(t = 2\) por unidade, encontre o novo equilíbrio, a receita tributária e a perda de peso morto.
 
 ---
 
-**Exercício 13.3.** Considere uma economia com três bens (\(k = 1, 2, 3\)) e funções de excesso de demanda:
+**Exercício 12.2.** Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
 
-\[
-Z^1(\mathbf{p}) = 3\frac{p_2}{p_1} + 2\frac{p_3}{p_1} - 5
-\]
+(a) Encontre o equilíbrio.
 
-\[
-Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
-\]
+(b) Suponha que o governo fixe um preço máximo de \(p = 10\). Calcule a escassez resultante e a perda de peso morto.
 
-(a) Verifique que essas funções são homogêneas de grau zero.
-
-(b) Use a Lei de Walras para derivar \(Z^3(\mathbf{p})\).
-
-(c) Normalizando \(p_1 = 1\), encontre os preços de equilíbrio walrasiano.
+(c) Compare graficamente o EC antes e depois do controle de preço.
 
 ---
 
-**Exercício 13.4.** Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
-
-- Consumidores igualam \(TMS = p_1/p_2\)
-- Produtores igualam \(TMST = w/r\)
-- Maximização de lucro implica \(p = CMg\)
+**Exercício 12.3.** Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
 
 ---
 
-**Exercício 13.5.** Um país negocia um acordo de livre comércio que eliminará tarifas de importação sobre produtos industrializados. Usando a estrutura conceitual de equilíbrio geral:
+**Exercício 12.4.** Considere uma indústria de custos crescentes com curva de oferta de longo prazo \(p = 10 + 0{,}01Q\). A demanda é \(Q = 2000 - 50p\).
 
-(a) Explique por que a análise de equilíbrio parcial (mercado por mercado) pode subestimar ou superestimar os efeitos do acordo.
+(a) Encontre o equilíbrio de longo prazo.
 
-(b) Liste três canais pelos quais a eliminação de tarifas em um setor afeta outros setores da economia.
+(b) Calcule o excedente do produtor de longo prazo (renda ricardiana).
 
-(c) Discuta como um modelo CGE capturaria esses efeitos intersetoriais e quais dados seriam necessários para calibrá-lo.
+(c) Se a demanda se desloca para \(Q' = 2500 - 50p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
-(d) Quais hipóteses do modelo CGE padrão (concorrência perfeita, retornos constantes, pleno emprego) são mais problemáticas para a análise da economia brasileira? Justifique.
+---
+
+**Exercício 12.5.** No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
+
+(a) Qual fração do subsídio beneficia o consumidor e qual fração beneficia o produtor?
+
+(b) Discuta as implicações distributivas e de eficiência dessa política, considerando que diesel é um insumo essencial para o transporte de cargas no Brasil.
+
+(c) Calcule a perda de peso morto em termos do subsídio, das elasticidades e do preço e quantidade iniciais.
 
 ---
 
 ## Vem, ANPEC!
 
-??? question "ANPEC 2019 — Questão 10"
-    Considere o modelo da Caixa de Edgeworth. O consumidor A tem utilidade linear \(U_A(X,Y) = X + Y\) e dotação inicial \(\mathbf{e}_A = (1, 9)\). O consumidor B tem utilidade Cobb-Douglas \(U_B(X,Y) = X^{1/2}Y^{1/2}\) e dotação inicial \(\mathbf{e}_B = (9, 1)\). Julgue como verdadeiros ou falsos os itens abaixo:
+Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
-    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+??? question "ANPEC 2017 — Questão 03"
+    Com respeito aos efeitos dos impostos, assinale quais das afirmações abaixo são verdadeiras:
 
-    | Item | Afirmação |
-    |------|-----------|
-    | 0 | O conjunto de alocações factíveis na Caixa de Edgeworth é \([0,10] \times [0,10]\). |
-    | 1 | A curva de contrato é dada por \(Y = 10X/(20-X)\), com \(0 \leq X \leq 10\). |
-    | 2 | O Equilíbrio de Walras é o par alocação-preço dado por \(\{(X_A,Y_A),(X_B,Y_B);(p,q)\} = \{(5,5),(5,5);(p,q)\}\), com \(p/q = 1\). |
-    | 3 | O Equilíbrio de Walras é Pareto-eficiente. |
-    | 4 | O valor do vetor de excesso de demanda é positivo. |
+    **(0)** Se as curvas de demanda e oferta do mercado forem lineares, sendo \(p\) o preço do produto e \(t\) um imposto específico, então \(dp/dt = \eta/(\eta - \varepsilon)\), em que \(\eta\) é a elasticidade preço da oferta e \(\varepsilon\) é a elasticidade preço da demanda;
 
-    ??? success "Gabarito"
-        **Respostas: 10110**
+    **(1)** No caso de um imposto específico \(t\), o equilíbrio do mercado será diferente se o imposto for cobrado dos vendedores ou dos compradores;
 
-        **Justificativa por item:**
+    **(2)** Se a elasticidade preço da demanda for 0 (zero) e a elasticidade preço da oferta for 1, o custo do imposto específico recairá totalmente sobre os produtores;
 
-        - **Item 0 — V:** Os totais da economia são \(\bar{X} = 1 + 9 = 10\) e \(\bar{Y} = 9 + 1 = 10\). A Caixa de Edgeworth tem dimensões \(10 \times 10\), e cada alocação factível é um ponto em \([0,10]^2\).
-        - **Item 1 — F:** Com utilidade linear para A, \(TMS_A = 1\) em todos os pontos. Para B (Cobb-Douglas simétrica), \(TMS_B = Y_B/X_B\). A eficiência de Pareto requer \(TMS_A = TMS_B\), i.e., \(Y_B/X_B = 1 \implies Y_B = X_B\). Nas coordenadas de A: \(10 - Y = 10 - X \implies Y = X\). A curva de contrato é a diagonal \(Y = X\), e não a função \(Y = 10X/(20-X)\).
-        - **Item 2 — V:** Com \(p/q = 1\): \(m_A = 1 + 9 = 10\), A é indiferente entre X e Y (utilidade linear), podendo escolher \((5, 5)\). Para B: \(m_B = 9 + 1 = 10\), \(X_B = 10/2 = 5\), \(Y_B = 10/2 = 5\). Mercados se equilibram: \(5 + 5 = 10\). É um equilíbrio walrasiano.
-        - **Item 3 — V:** Pelo Primeiro Teorema do Bem-Estar, todo equilíbrio walrasiano é Pareto-eficiente. Verificação direta: \(TMS_B = 5/5 = 1 = TMS_A\).
-        - **Item 4 — F:** No equilíbrio, o excesso de demanda é zero em todos os mercados (\(Z^X = Z^Y = 0\)). Pela Lei de Walras, \(p \cdot Z^X + q \cdot Z^Y = 0\) para quaisquer preços — e no equilíbrio ambos os termos são zero.
+    **(3)** O peso morto decorrente da introdução de um imposto específico em um mercado com curvas de oferta e demanda lineares não depende do preço antes da incidência do imposto;
 
----
+    **(4)** Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.
 
-??? question "ANPEC 2018 — Questão 13"
-    Em uma economia, o agente A possui as dez unidades do bem 1 e o agente B possui as dez unidades do bem 2. As funções utilidades de A e B são descritas por \(U_A = x_1^{1/2} \cdot x_2^{1/2}\) e \(U_B = x_1 \cdot x_2\), respectivamente. Em uma economia de trocas sob equilíbrio geral competitivo, tome o segundo bem como numerário, isto é, \(p_2 = \$1\), e denomine \(p\) o preço do outro bem. Avalie:
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: V-F-F-V-F**
 
-    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+        **(0) VERDADEIRO.** Com curvas lineares \(Q_D = a - bp\) e \(Q_S = c + dp\), onde \(\varepsilon = -bp/Q < 0\) e \(\eta = dp/Q > 0\), o imposto gera \(p_c = p_p + t\). No equilíbrio: \(dp_c/dt = d/(b+d)\). Em termos de elasticidades avaliadas no equilíbrio (onde \(Q\) e \(p\) são comuns): \(dp/dt = \eta/(\eta - \varepsilon)\), pois \(\varepsilon < 0\) implica \(\eta - \varepsilon = \eta + |\varepsilon|\).
 
-    | Item | Afirmação |
-    |------|-----------|
-    | 0 | Em equilíbrio, \(p = \$2\). |
-    | 1 | A função de bem-estar utilitarista (benthamita) com pesos unitários para os dois agentes assume o valor \(W = 30\). |
-    | 2 | A alocação final não é justa, pois embora eficiente, não é equitativa. |
-    | 3 | É possível atingir via mercados competitivos a alocação eficiente \((x_1^A, x_2^A) = (2{,}5;\; 2{,}5)\), \((x_1^B, x_2^B) = (7{,}5;\; 7{,}5)\) se realocarmos metade da dotação inicial de A, transferindo-a para B. |
-    | 4 | Utilizando a mesma função de bem-estar do item 1, a alocação final descrita no item 3 é socialmente preferível àquela descrita inicialmente. |
+        **(1) FALSO.** Pela irrelevância do lado legal da incidência, o equilíbrio econômico (preços pagos por consumidores e recebidos por produtores, quantidade transacionada) é idêntico independentemente de sobre quem recai a obrigação legal de recolhimento.
 
-    ??? success "Gabarito"
-        **Respostas: 01011**
+        **(2) FALSO.** Se \(|\varepsilon_D| = 0\) (demanda perfeitamente inelástica), o consumidor absorve 100% do imposto, pois \(dp_c/dt = \eta/(\eta + 0) = 1\). O custo recai integralmente sobre os consumidores, não sobre os produtores.
 
-        **Justificativa por item:**
+        **(3) VERDADEIRO.** Com curvas lineares, \(PPM = \frac{1}{2} \cdot \frac{bd}{b+d} \cdot t^2\), onde \(b\) e \(d\) são as inclinações (em valor absoluto) das curvas de demanda e oferta. A fórmula não contém o preço de equilíbrio pré-imposto.
 
-        - **Item 0 — F:** Demandas de A: \(x_1^A = 10p/(2p) = 5\), \(x_2^A = 10p/2 = 5p\). Demandas de B: \(x_1^B = 10/(2p) = 5/p\), \(x_2^B = 10/2 = 5\). Equilíbrio no bem 1: \(5 + 5/p = 10 \implies p = 1\), e não \(p = 2\).
-        - **Item 1 — V:** Com \(p = 1\): \(\mathbf{x}_A = (5, 5)\), \(\mathbf{x}_B = (5, 5)\). \(U_A = \sqrt{5}\cdot\sqrt{5} = 5\), \(U_B = 5 \cdot 5 = 25\). \(W = 5 + 25 = 30\).
-        - **Item 2 — F:** A alocação \((5,5)\) para ambos os agentes é uma **divisão igualitária** dos bens. Ambos recebem cestas idênticas, portanto não há inveja: A avalia a cesta de B em \(U_A(5,5) = 5\), igual à própria utilidade, e B avalia a cesta de A em \(U_B(5,5) = 25\), igual à própria. A alocação é justa (equitativa e *envy-free*).
-        - **Item 3 — V:** Transferindo metade da dotação de A para B: \(\boldsymbol{\omega}_A' = (5, 0)\), \(\boldsymbol{\omega}_B' = (5, 10)\). No equilíbrio com \(p = 1\): \(x_1^A = 5/2 = 2{,}5\), \(x_2^A = 5/2 = 2{,}5\); \(x_1^B = 15/2 = 7{,}5\), \(x_2^B = 15/2 = 7{,}5\). A alocação desejada é alcançada como equilíbrio competitivo — ilustração direta do Segundo Teorema do Bem-Estar.
-        - **Item 4 — V:** Nova função de bem-estar: \(W' = U_A(2{,}5;\, 2{,}5) + U_B(7{,}5;\, 7{,}5) = 2{,}5 + 56{,}25 = 58{,}75 > 30 = W\). A nova alocação é socialmente preferível sob o critério utilitarista.
+        **(4) FALSO.** A receita fiscal \(R = t \cdot Q_t\) não compensa a perda total de excedentes de consumidores e produtores. A diferença — o peso morto — é estritamente positiva (\(PPM > 0\)) sempre que \(t > 0\) e ambas as curvas têm inclinações finitas.
 
----
+??? question "ANPEC 2023 — Questão 01"
+    Suponha que ao preço de equilíbrio no mercado internacional de petróleo de \$80 dólares o barril, a elasticidade-preço da demanda seja \(-0{,}4\), a elasticidade-preço da oferta seja \(0{,}2\), as quantidades ofertada e demandada sejam de 100 milhões de barris/dia. Suponha ainda que as curvas de demanda e oferta são lineares convencionais. Imagine que um embargo econômico a um produtor mundial cause um deslocamento paralelo da curva de oferta para a esquerda em 30 milhões de barris/dia. Julgue as afirmativas a seguir:
 
-??? question "ANPEC 2015 — Questão 11"
-    Com relação à Teoria do Equilíbrio Geral, indique as afirmativas corretas:
+    **(0)** A função de demanda consistente com o preço e a quantidade antes do embargo é \(D_1(p) = 116 - 0{,}2p\).
 
-    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+    **(1)** A função de oferta que é consistente com o equilíbrio antes do embargo é \(S_1(p) = 60 + 0{,}5p\).
 
-    | Item | Afirmação |
-    |------|-----------|
-    | 0 | A Lei de Walras afirma que o valor da demanda agregada é zero para todas as escolhas de preços possíveis, e não apenas para os preços de equilíbrio. |
-    | 1 | O pressuposto de que a função de demanda excedente agregada seja uma função contínua não é indispensável à demonstração da existência do equilíbrio nos modelos de equilíbrio geral. |
-    | 2 | Mesmo que as demandas individuais sejam descontínuas, desde que os consumidores sejam pequenos, a função de demanda agregada será contínua. |
-    | 3 | Pelo primeiro teorema do bem-estar, todos os equilíbrios em mercados competitivos serão Pareto-eficientes. |
-    | 4 | Se as preferências não forem convexas, algumas alocações Pareto-eficientes não serão alcançadas por mercados competitivos. |
+    **(2)** A função de oferta após o embargo é \(S_2(p) = 50 + 0{,}25p\).
 
-    ??? success "Gabarito"
-        **Respostas: 00111**
+    **(3)** Após o embargo, o preço de equilíbrio será de \$120 dólares, e a quantidade de equilíbrio será de 80 milhões de barris/dia.
 
-        **Justificativa por item:**
+    **(4)** Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.
 
-        - **Item 0 — F:** A Lei de Walras afirma que o valor do **excesso de demanda** (não da "demanda agregada") é zero para todos os preços: \(\sum_k p_k Z^k(\mathbf{p}) \equiv 0\). O valor da demanda agregada \(\mathbf{p} \cdot \mathbf{x}(\mathbf{p})\) é igual ao valor das dotações \(\mathbf{p} \cdot \boldsymbol{\omega}\), que geralmente não é zero. A imprecisão no enunciado torna a afirmação falsa.
-        - **Item 1 — F:** A continuidade da função de excesso de demanda agregada é essencial para a aplicação do Teorema do Ponto Fixo de Brouwer (Seção 13.8). Sem continuidade (ou pelo menos semi-continuidade superior no caso de correspondências, via Teorema de Kakutani), a existência de equilíbrio não pode ser demonstrada.
-        - **Item 2 — V:** Resultado clássico de agregação (Aumann, 1966): com um grande número de consumidores "pequenos" (cada um com participação negligível no mercado), descontinuidades individuais nas demandas se "suavizam" na agregação, e a demanda agregada torna-se contínua — mesmo que cada demanda individual seja descontínua.
-        - **Item 3 — V:** Este é o enunciado direto do Primeiro Teorema do Bem-Estar: sob tomada de preço, mercados completos e não saciedade local, todo equilíbrio competitivo é Pareto-eficiente.
-        - **Item 4 — V:** O Segundo Teorema do Bem-Estar requer convexidade das preferências. Sem essa hipótese, pode não existir um hiperplano de suporte que separe os conjuntos preferidos, e certas alocações Pareto-eficientes não podem ser descentralizadas como equilíbrios competitivos.
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: F-F-V-V-F**
+
+        **Derivação das curvas.** Com \(p_0 = 80\), \(Q_0 = 100\):
+
+        - Demanda: \(\varepsilon_D = -0{,}4 = (dQ_D/dp)(80/100)\), logo \(dQ_D/dp = -0{,}5\). Assim \(D(p) = a - 0{,}5p\), e \(100 = a - 40 \Rightarrow a = 140\). Portanto \(D_1(p) = 140 - 0{,}5p\).
+
+        - Oferta: \(\varepsilon_S = 0{,}2 = (dQ_S/dp)(80/100)\), logo \(dQ_S/dp = 0{,}25\). Assim \(S(p) = c + 0{,}25p\), e \(100 = c + 20 \Rightarrow c = 80\). Portanto \(S_1(p) = 80 + 0{,}25p\).
+
+        **(0) FALSO.** A demanda correta é \(D_1(p) = 140 - 0{,}5p\), não \(116 - 0{,}2p\).
+
+        **(1) FALSO.** A oferta correta é \(S_1(p) = 80 + 0{,}25p\), não \(60 + 0{,}5p\).
+
+        **(2) VERDADEIRO.** Deslocamento paralelo de 30 milhões para a esquerda: \(S_2(p) = 80 - 30 + 0{,}25p = 50 + 0{,}25p\). ✓
+
+        **(3) VERDADEIRO.** Novo equilíbrio: \(140 - 0{,}5p = 50 + 0{,}25p \Rightarrow 90 = 0{,}75p \Rightarrow p = 120\). \(Q = 140 - 60 = 80\). ✓
+
+        **(4) FALSO.** Com demanda reduzida em 20: \(D_2(p) = 120 - 0{,}5p\). Novo equilíbrio: \(120 - 0{,}5p = 50 + 0{,}25p \Rightarrow 70 = 0{,}75p \Rightarrow p \approx 93{,}3\). Como \(93{,}3 > 80\), o preço é *maior* que o original, não menor.
+
+??? question "ANPEC 2025 — Questão 07"
+    Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
+
+    **(0)** No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.
+
+    **(1)** No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.
+
+    **(2)** Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.
+
+    **(3)** Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.
+
+    **(4)** Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: F-V-F-F-V**
+
+        **(0) FALSO.** No curto prazo, o número de firmas é fixo e não há livre entrada/saída. Firmas podem ter lucro positivo, negativo ou zero. A condição de lucro zero é característica do equilíbrio de *longo prazo* com livre entrada.
+
+        **(1) VERDADEIRO.** Com livre entrada e saída, o lucro econômico é zero no longo prazo. Isso implica que todos os fatores de produção — incluindo o capital do empresário — são remunerados exatamente pelo seu custo de oportunidade (preço de mercado).
+
+        **(2) FALSO.** A existência de um fator fixo (por exemplo, terra de qualidade superior) gera renda econômica para o proprietário desse fator. Porém, quando essa renda é adequadamente contabilizada como custo de oportunidade, o lucro econômico da firma é zero. A renda do fator fixo não se confunde com lucro positivo da firma.
+
+        **(3) FALSO.** A causalidade é inversa ao que o item afirma. É o preço de equilíbrio do produto — determinado pela interação de oferta e demanda — que determina a renda econômica dos fatores. Como argumentou Ricardo: "não é porque os aluguéis são altos que o trigo é caro; é porque o trigo é caro que os aluguéis são altos."
+
+        **(4) VERDADEIRO.** Em uma indústria de custos constantes, a entrada de novas firmas não altera os preços dos insumos, de modo que as curvas de custo das firmas individuais permanecem inalteradas. O preço de equilíbrio de longo prazo é \(p = CMe_{\min}\) para qualquer nível de demanda, resultando em uma curva de oferta de longo prazo perfeitamente elástica (horizontal).
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Dix-Carneiro, R. (2014). [Trade Liberalization and Labor Market Dynamics](https://doi.org/10.3982/ECTA10457). *Econometrica*, 82(3), 825–885."
-    **Pergunta central:** Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
+??? abstract "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
+    **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)
 
-    **Método:** O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
+    **Contexto.** A estimação de elasticidades de oferta e demanda é central para a análise de equilíbrio parcial, mas enfrenta o clássico problema de identificação: variações observadas em preços e quantidades refletem simultaneamente deslocamentos de oferta e demanda. Roberts e Schlenker enfrentam esse desafio no mercado de commodities agrícolas — exatamente o tipo de mercado competitivo analisado neste capítulo.
 
-    **Resultado principal:** Os custos medianos de mobilidade setorial variam de **1,4 a 2,7 vezes o salário anual** — são substanciais. As transições após liberalização comercial levam vários anos para se completar. Os ganhos agregados de bem-estar são significativamente reduzidos pelo processo de ajuste lento e custoso. Crucialmente, os efeitos de bem-estar dependem fortemente do setor inicial de emprego do trabalhador — trabalhadores em setores protegidos sofrem perdas persistentes.
+    **Metodologia.** Os autores utilizam variáveis instrumentais baseadas em choques climáticos (rendimentos agrícolas exógenos determinados pelo clima) para identificar separadamente as curvas de oferta e demanda de quatro commodities (milho, soja, trigo e arroz) no mercado mundial. A estratégia empírica explora o fato de que variações climáticas deslocam a curva de oferta sem afetar diretamente a demanda, permitindo traçar a curva de demanda ao longo de diferentes pontos de equilíbrio.
 
-    **Por que isso importa:** Para o Brasil, que passou por intensa liberalização nos anos 1990, o artigo quantifica os custos humanos da transição — algo que os modelos CGE estáticos da Seção 13.10 não capturam. Os resultados informam o debate sobre políticas de transição justa (*safety nets*) que acompanhem a abertura comercial.
+    **Resultados.** As estimativas indicam elasticidades-preço da demanda entre \(-0{,}05\) e \(-0{,}10\) no curto prazo — demanda extremamente inelástica, consistente com o uso das commodities como insumos essenciais na alimentação e ração animal. A elasticidade-preço da oferta, condicional ao clima, situa-se entre \(0{,}10\) e \(0{,}15\). Essas estimativas têm implicações diretas para a estática comparativa: choques de oferta (como secas) provocam grandes variações de preço, precisamente porque ambas as curvas são inelásticas.
 
-    **Relevância para o capítulo:** O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 13.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
+    **Conexão com o capítulo.** O artigo é uma aplicação direta da análise de estática comparativa (Seção 13.4) e da discussão sobre elasticidades de oferta e demanda (Seções 13.1 e 13.7) em mercados competitivos reais. Também dialoga com o Box Brasil sobre a soja, cujas elasticidades estimadas pelo IPEA e CONAB são comparáveis às encontradas no estudo.
 
-??? abstract "Caliendo, L.; Parro, F. (2015). [Estimates of the Trade and Welfare Effects of NAFTA](https://doi.org/10.1093/restud/rdu035). *Review of Economic Studies*, 82(1), 1–44."
-    **Pergunta central:** Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
+??? abstract "Weyl, E. G. & Fabinger, M. (2013). [Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition](https://doi.org/10.1086/670401). *Journal of Political Economy*, 121(3), 528–583."
+    **DOI:** [10.1086/670401](https://doi.org/10.1086/670401)
 
-    **Método:** Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.
+    **Contexto.** A Seção 13.11 demonstra que, em concorrência perfeita, a incidência de um imposto específico depende das elasticidades relativas de oferta e demanda. Mas o que acontece quando os mercados não são perfeitamente competitivos? Weyl e Fabinger desenvolvem uma teoria unificada de *pass-through* (repasse) que generaliza os resultados clássicos de incidência para estruturas de mercado imperfeitas.
 
-    **Resultado principal:** O bem-estar do México aumentou **1,31%**, o dos EUA **0,08%** e o do Canadá caiu **0,06%** como resultado do NAFTA. Os efeitos são heterogêneos entre setores: os encadeamentos produtivos via insumos intermediários amplificam os ganhos comerciais em até 40% em relação a um modelo sem bens intermediários. A desagregação setorial é crucial — modelos com apenas um setor subestimam substancialmente os efeitos.
+    **Contribuição teórica.** Os autores mostram que a taxa de repasse (*pass-through rate*) — a fração de um choque de custo repassada ao consumidor — é a variável-chave que conecta incidência tributária, análise de bem-estar e poder de mercado. Em concorrência perfeita, o repasse depende apenas das elasticidades, como demonstrado neste capítulo. Em monopólio e oligopólio, a curvatura da demanda (convexidade ou concavidade) torna-se crucial: com demanda log-côncava (como a linear), o repasse é inferior a 100%; com demanda log-convexa (como a de elasticidade constante), o repasse pode superar 100%.
 
-    **Por que isso importa:** O artigo é uma referência metodológica para avaliar acordos como o Mercosul-UE. A abordagem pode ser aplicada ao caso brasileiro para estimar os efeitos setoriais e regionais da abertura comercial, complementando os modelos CGE tradicionais (Seção 13.10) com maior rigor na estimação das elasticidades comerciais.
+    **Resultados centrais.** A fórmula unificada de incidência mostra que \(\rho = \varepsilon_S / (\varepsilon_S + |\varepsilon_D| \cdot \theta)\), onde \(\theta\) captura o grau de conduta competitiva (\(\theta = 1\) em concorrência perfeita, \(\theta > 1\) com poder de mercado). O artigo também demonstra que a PPM de um imposto pode ser expressa como função do repasse, independentemente da estrutura de mercado.
 
-    **Relevância para o capítulo:** O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
+    **Conexão com o capítulo.** O artigo generaliza os resultados de incidência tributária da Seção 13.11, mostrando que a fórmula competitiva é um caso especial de um princípio mais amplo. A leitura é recomendada para estudantes que desejam compreender como a análise de equilíbrio parcial se estende para além da concorrência perfeita.
+
+---
 
 ## Referências do Capítulo
 
-- Arrow, Kenneth J., e Gerard Debreu. 1954. ["Existence of an Equilibrium for a Competitive Economy."](https://doi.org/10.2307/1907353) *Econometrica* 22 (3): 265–290.
-- Caliendo, Lorenzo, e Fernando Parro. 2015. ["Estimates of the Trade and Welfare Effects of NAFTA."](https://doi.org/10.1093/restud/rdv007) *Review of Economic Studies* 82 (1): 1–44.
-- Debreu, Gerard. 1959. [*Theory of Value: An Axiomatic Analysis of Economic Equilibrium*](https://books.google.com.br/books?id=bIaCAAAAIAAJ). New York: Wiley.
-- Dix-Carneiro, Rafael. 2014. ["Trade Liberalization and Labor Market Dynamics."](https://doi.org/10.3982/ECTA10457) *Econometrica* 82 (3): 825–885.
-- Edgeworth, Francis Y. 1881. [*Mathematical Psychics*](https://books.google.com.br/books?id=CElYAAAAcAAJ). London: C. Kegan Paul.
-- IFI/Senado Federal. 2024. ["Reforma Tributária: Contexto, Mudanças e Impactos."](https://www12.senado.leg.br/ifi/publicacoes-1/estudos-especiais/2024/marco/estudo-especial-no-19-reforma-tributaria-contexto-mudancas-e-impactos-mar-2024) Estudo Especial nº 19.
-- [IPEA](https://www.ipea.gov.br). Diversos anos. *Modelos de Equilíbrio Geral Computável Aplicados ao Brasil*. Brasília: IPEA.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press.
-- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
-- Walras, Léon. 1874. [*Éléments d'économie politique pure*](https://books.google.com.br/books?id=crUEAAAAMAAJ). Lausanne: L. Corbaz.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 10.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 12–13.
+- Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. New York: Pearson. Caps. 8–9.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 13–14.

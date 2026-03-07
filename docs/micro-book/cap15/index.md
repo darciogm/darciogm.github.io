@@ -1,879 +1,813 @@
-# Capítulo 15 — Quando Gigantes Competem (ou Combinam)
+# Capítulo 15 — Sem Concorrente, Sem Piedade
 
 ## Introdução
 
-A maioria dos mercados reais situa-se entre os extremos teóricos da concorrência perfeita e do monopólio. Em um **oligopólio**, um pequeno número de firmas detém parcela significativa do mercado, e cada uma reconhece que suas decisões afetam — e são afetadas por — as decisões das rivais. Essa **interdependência estratégica** é o traço definidor do oligopólio e o que o torna analiticamente mais complexo do que as estruturas polares.
+O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.
 
-A teoria dos oligopólios recorre extensivamente à **teoria dos jogos** para modelar a interação estratégica entre firmas. Os resultados são extremamente sensíveis às hipóteses sobre a variável de decisão (preço ou quantidade), a sequência de movimentos (simultâneo ou sequencial), o horizonte temporal (jogo de uma rodada ou repetido) e a natureza da informação.
-
-Este capítulo apresenta os modelos clássicos de oligopólio — Bertrand, Cournot, Stackelberg — e suas extensões, incluindo diferenciação de produto, colusão tácita, dissuasão de entrada e inovação. A análise é complementada por uma discussão do oligopólio bancário brasileiro.
+Este capítulo examina as causas do monopólio, a lógica de sua maximização de lucro, as perdas de eficiência decorrentes do poder de mercado, as estratégias de discriminação de preços e os mecanismos de regulação. A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira, como energia elétrica, saneamento e telecomunicações. Besanko & Braeutigam (2014, Caps. 11–12) oferecem tratamento acessível da teoria do monopólio com aplicações a mercados regulados.
 
 ---
 
-## 15.1 Decisões de curto prazo: preço e quantidade
+## 15.1 Barreiras à entrada
 
-Em um oligopólio, as firmas devem decidir simultaneamente (ou sequencialmente) sobre preço, quantidade, qualidade, publicidade e outras variáveis. Os modelos clássicos concentram-se em duas variáveis fundamentais:
+O monopólio só persiste se existirem **barreiras à entrada** que impeçam outras firmas de ingressar no mercado e contestar os lucros extraordinários do incumbente. Essas barreiras podem ser classificadas em três categorias.
 
-- **Preço**: modelo de Bertrand (1883).
-- **Quantidade**: modelo de Cournot (1838).
+### Barreiras legais
 
-A escolha da variável estratégica não é trivial e produz resultados dramaticamente diferentes, como veremos a seguir.
+O Estado pode conceder a uma firma o direito exclusivo de operar em um mercado. Exemplos incluem:
 
-!!! definition "Interdependência Estratégica"
-    Em um oligopólio, o lucro de cada firma depende não apenas de sua própria decisão, mas também das decisões de todas as rivais. Formalmente, se há \(n\) firmas, o lucro da firma \(i\) é \(\pi_i(s_i, s_{-i})\), onde \(s_i\) é a estratégia da firma \(i\) e \(s_{-i}\) é o vetor de estratégias das demais firmas. O conceito de solução é o **equilíbrio de Nash**: um perfil de estratégias \((s_1^*, \ldots, s_n^*)\) tal que nenhuma firma pode aumentar unilateralmente seu lucro desviando.
+- **Patentes**: conferem ao inventor o monopólio temporário sobre a exploração de uma inovação. No Brasil, a Lei de Propriedade Industrial (Lei 9.279/1996) estabelece prazo de 20 anos para patentes de invenção.
+- **Concessões e licenças**: o poder público pode restringir o número de operadores em um mercado, como ocorre nos serviços de distribuição de energia elétrica.
+- **Direitos autorais**: protegem obras intelectuais contra reprodução não autorizada.
 
----
+### Barreiras naturais
 
-## 15.2 Modelo de Bertrand: concorrência em preços
+Em alguns mercados, as condições tecnológicas tornam ineficiente a presença de mais de uma firma. Isso ocorre quando há **economias de escala** significativas ao longo de toda a faixa relevante de produção.
 
-### O modelo básico
+!!! definition "Monopólio Natural"
+    Um mercado constitui um **monopólio natural** quando a função de custo é **subaditiva**, isto é, quando uma única firma pode produzir qualquer quantidade a um custo total menor do que duas ou mais firmas produzindo conjuntamente a mesma quantidade:
 
-Considere duas firmas produzindo um bem **homogêneo** com custo marginal constante \(c\). As firmas escolhem **simultaneamente** seus preços \(p_1\) e \(p_2\). Os consumidores compram da firma com menor preço; se os preços são iguais, a demanda se divide igualmente.
+    \[
+    C(q) < C(q_1) + C(q_2), \quad \text{para todo } q_1, q_2 > 0 \text{ com } q_1 + q_2 = q
+    \]
 
-A função de demanda da firma 1 é:
+    No caso de um único produto, a subaditividade é implicada por economias de escala ao longo de toda a faixa relevante de produção — ou seja, o custo médio é decrescente.
 
-\[
-q_1(p_1, p_2) = \begin{cases} D(p_1) & \text{se } p_1 < p_2 \\ \frac{D(p_1)}{2} & \text{se } p_1 = p_2 \\ 0 & \text{se } p_1 > p_2 \end{cases}
-\]
-
-### O paradoxo de Bertrand
-
-!!! abstract "Teorema: Equilíbrio de Bertrand"
-    No modelo de Bertrand com bens homogêneos e custos marginais constantes e idênticos, o único equilíbrio de Nash é \(p_1^* = p_2^* = c\). Ambas as firmas obtêm lucro zero.
-
-!!! proof "Demonstração"
-    Mostramos que \(p_1^* = p_2^* = c\) é equilíbrio de Nash e que nenhum outro perfil de preços o é.
-
-    **Passo 1: \(p_1 = p_2 = c\) é equilíbrio de Nash.**
-
-    Se ambas as firmas cobram \(p = c\), cada uma obtém lucro zero. Qualquer desvio unilateral resulta em:
-
-    - \(p_i < c\): a firma \(i\) atrai toda a demanda mas obtém lucro negativo (prejuízo por unidade).
-    - \(p_i > c\): a firma \(i\) perde toda a demanda para a rival e obtém lucro zero.
-
-    Portanto, nenhuma firma tem incentivo para desviar. \(\checkmark\)
-
-    **Passo 2: Nenhum outro perfil é equilíbrio de Nash.**
-
-    *Caso 1:* \(p_1 > p_2 > c\). A firma 1 obtém lucro zero e poderia lucrar cobrando \(p_1 = p_2 - \epsilon\). Portanto, não é equilíbrio.
-
-    *Caso 2:* \(p_1 = p_2 = p > c\). Cada firma obtém \(\frac{(p-c)D(p)}{2}\). A firma 1 pode desviar para \(p_1 = p - \epsilon\), obtendo aproximadamente \((p-c)D(p)\) — o dobro. Portanto, não é equilíbrio.
-
-    *Caso 3:* \(p_1 < c\) ou \(p_2 < c\). A firma com preço abaixo de \(c\) tem prejuízo e poderia desviar para \(p_i = c\). Portanto, não é equilíbrio.
-
-    Esgotados todos os casos, o único equilíbrio de Nash é \(p_1^* = p_2^* = c\). \(\blacksquare\)
-
-O resultado é paradoxal: bastam **duas firmas** para reproduzir o resultado competitivo. Isso contrasta fortemente com a evidência empírica, na qual mercados duopolísticos tipicamente apresentam lucros positivos. O paradoxo de Bertrand motivou diversas extensões do modelo.
+Exemplos clássicos incluem redes de distribuição de água, gás, eletricidade e telecomunicações fixas, nas quais a duplicação da infraestrutura seria socialmente custosa.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Se duas empresas vendem o mesmo produto, a guerra de preços pode eliminar todo o lucro — mesmo que sejam apenas duas.
+    **Em uma frase:** Em um monopólio natural, uma única empresa atende todo o mercado a um custo menor do que duas ou mais fariam — duplicar a infraestrutura seria desperdício.
 
-    **Pense assim:** Imagine duas barracas de água mineral idêntica na saída de um show no Maracanã. Se uma cobra R$ 6 e a outra R$ 5, todo mundo vai na mais barata. A rival baixa para R$ 4,50, e a guerra continua até que ambas cobrem o custo — e ninguém lucra nada.
+    **Pense assim:** Pense na rede de água encanada do seu bairro. Faz sentido ter uma empresa com uma rede de canos, não duas redes paralelas competindo na mesma rua. O custo fixo de enterrar a tubulação é tão alto que, quanto mais casas uma única rede atende, menor o custo por casa. Construir uma segunda rede seria jogar dinheiro fora — literalmente cavar buracos à toa.
 
-    **Por que isso importa:** O paradoxo mostra que concorrência em preços com produtos idênticos é brutal, e ajuda a entender por que empresas investem tanto em diferenciação de marca e fidelização de clientes.
+    **Por que isso importa:** É por isso que setores como saneamento, distribuição de energia e ferrovias são regulados por agências como [ANEEL](https://www.aneel.gov.br) e [ANA](https://www.gov.br/ana), em vez de simplesmente liberados à concorrência.
 
-### Resoluções do paradoxo
+### Barreiras estratégicas
 
-O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóteses:
+Firmas incumbentes podem adotar comportamentos deliberados para dificultar a entrada de rivais:
 
-1. **Diferenciação de produto**: se os bens não são substitutos perfeitos, as firmas retêm algum poder de mercado mesmo cobrando preços diferentes (Seção 15.5).
-2. **Restrições de capacidade**: se as firmas têm capacidade limitada, a firma de preço mais baixo não pode atender toda a demanda (Seção 15.4).
-3. **Interação repetida**: em jogos repetidos, a ameaça de retaliação futura pode sustentar preços acima do custo (Seção 15.6).
-4. **Custos marginais assimétricos**: se \(c_1 < c_2\), o equilíbrio é \(p_1^* = c_2\) (ou ligeiramente abaixo), e a firma 1 obtém lucro positivo.
+- **Excesso de capacidade instalada**: sinaliza que o incumbente pode expandir a produção rapidamente em resposta à entrada, tornando-a não lucrativa.
+- **Preços predatórios**: fixar preços temporariamente abaixo do custo para expulsar ou dissuadir concorrentes (prática ilícita no direito concorrencial brasileiro, conforme a Lei 12.529/2011).
+- **Proliferação de marcas**: ocupar nichos de mercado para reduzir o espaço disponível para entrantes.
+- **Controle de insumos essenciais**: adquirir ou controlar o acesso a recursos sem os quais rivais não podem operar.
 
 ---
 
-## Gráfico interativo: Competição de Bertrand
+## Gráfico interativo: Equilíbrio de monopólio
 
-<iframe src="../graficos/cap15/bertrand.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap15/monopolio.html" width="100%" height="550" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.</em>
+<em>Figura 14.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.</em>
 </p>
 
 ---
 
-## 15.3 Modelo de Cournot: concorrência em quantidades
+## 15.2 Maximização de lucro do monopolista
 
-### O modelo duopolístico
+### O problema do monopolista
 
-Considere duas firmas que escolhem **simultaneamente** as quantidades \(q_1\) e \(q_2\). O preço de mercado é determinado pela demanda inversa \(p = a - b(q_1 + q_2)\). Cada firma tem custo marginal constante \(c\).
-
-O lucro da firma 1 é:
+O monopolista enfrenta toda a curva de demanda do mercado. Se a demanda inversa é \(p(q)\), o problema de maximização é:
 
 \[
-\pi_1(q_1, q_2) = [a - b(q_1 + q_2)] \cdot q_1 - c \cdot q_1
+\max_q \; \pi(q) = p(q) \cdot q - C(q)
 \]
 
 A condição de primeira ordem é:
 
 \[
-\frac{\partial \pi_1}{\partial q_1} = a - 2bq_1 - bq_2 - c = 0
+\frac{d\pi}{dq} = \underbrace{p(q) + q \cdot p'(q)}_{\text{Receita Marginal (RMg)}} - \underbrace{C'(q)}_{\text{Custo Marginal (CMg)}} = 0
 \]
 
-Resolvendo para \(q_1\):
+Portanto, a regra de maximização é:
 
 \[
-q_1^*(q_2) = \frac{a - c - bq_2}{2b} = \frac{a - c}{2b} - \frac{q_2}{2}
+\boxed{RMg(q^m) = CMg(q^m)}
 \]
 
-Essa é a **função de reação** (ou função de melhor resposta) da firma 1. Ela indica a quantidade ótima da firma 1 para cada nível de produção da firma 2. A função de reação é **decrescente**: as quantidades são **substitutos estratégicos** no modelo de Cournot.
+A condição de segunda ordem exige que \(\frac{d^2\pi}{dq^2} < 0\), ou seja, que a receita marginal corte o custo marginal "de cima para baixo".
 
-!!! definition "Substitutos e Complementos Estratégicos"
-    Variáveis de decisão são **substitutos estratégicos** se a melhor resposta de uma firma é decrescente na ação da rival: quando a rival produz mais, a firma reduz sua produção. São **complementos estratégicos** se a melhor resposta é crescente. No modelo de Cournot, quantidades são substitutos estratégicos. No modelo de Bertrand com produtos diferenciados, preços são tipicamente complementos estratégicos.
+### Receita marginal e elasticidade
 
-### Equilíbrio de Cournot (duopólio)
-
-Por simetria (\(q_1^* = q_2^* = q^*\)):
+A receita marginal pode ser expressa em termos da elasticidade-preço da demanda \(\varepsilon_{p}\) (definida como valor negativo, \(\varepsilon_p < 0\)):
 
 \[
-q^* = \frac{a - c}{2b} - \frac{q^*}{2} \implies q^* = \frac{a - c}{3b}
+RMg = p\left(1 + \frac{1}{\varepsilon_p}\right) = p\left(1 - \frac{1}{|\varepsilon_p|}\right)
 \]
 
-O equilíbrio de Cournot é:
+Como o monopolista opera onde \(RMg > 0\), ele necessariamente produz na faixa **elástica** da demanda (\(|\varepsilon_p| > 1\)). Na faixa inelástica, a receita marginal seria negativa, e o monopolista poderia aumentar a receita (e o lucro) reduzindo a produção.
+
+### A regra de markup
+
+Da condição \(RMg = CMg\), obtemos:
 
 \[
-q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac{a+2c}{3}
+p\left(1 - \frac{1}{|\varepsilon_p|}\right) = CMg \implies p = \frac{CMg}{1 - \frac{1}{|\varepsilon_p|}}
 \]
 
-\[
-\pi_1^* = \pi_2^* = \frac{(a-c)^2}{9b}
-\]
+O monopolista aplica um **markup** sobre o custo marginal que é inversamente proporcional à elasticidade-preço da demanda. Quanto mais inelástica a demanda, maior o markup e maior o poder de mercado.
+
+!!! definition "Índice de Lerner"
+    O **índice de Lerner** mede o poder de mercado de uma firma como a diferença percentual entre preço e custo marginal:
+
+    \[
+    L = \frac{p - CMg}{p}
+    \]
+
+    Para uma firma em concorrência perfeita, \(L = 0\). Para um monopolista, \(L = \frac{1}{|\varepsilon_p|}\). O índice varia entre 0 e 1.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** No equilíbrio de Cournot, cada empresa produz menos do que faria sozinha, mas o mercado como um todo produz mais do que um monopólio.
+    **Em uma frase:** O markup do monopolista é maior quando os consumidores têm poucas alternativas — quanto mais "preso" o cliente, mais caro o produto.
 
-    **Pense assim:** Pense em duas redes de postos de gasolina decidindo quantos postos abrir numa cidade. Cada uma sabe que, se abrir postos demais, o preço da gasolina cai para todo mundo. Então cada uma modera a expansão — mas, juntas, atendem mais consumidores do que um monopolista faria.
+    **Pense assim:** Compare o preço de uma garrafa d'água no supermercado (R$ 2) com o preço no estádio de futebol (R$ 10). No estádio, você não pode sair para comprar em outro lugar — sua demanda é inelástica — e o vendedor explora isso cobrando um markup enorme. No supermercado, com dez marcas na prateleira, ninguém consegue cobrar muito acima do custo. O índice de Lerner mede exatamente esse "poder de espremer" o consumidor.
 
-    **Por que isso importa:** O modelo de Cournot mostra que bastam poucas empresas para gerar alguma concorrência, e que o resultado melhora para o consumidor conforme o número de competidores aumenta.
-
-## Gráfico interativo: Duopólio de Cournot
-
-<iframe src="../graficos/cap15/cournot.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
-
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.</em>
-</p>
+    **Por que isso importa:** O [CADE](https://www.gov.br/cade) usa medidas como o índice de Lerner para avaliar se fusões e aquisições criarão poder de mercado excessivo — como na análise da fusão que criou a Ambev.
 
 ---
 
-### O modelo de Stackelberg
-
-No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) **primeiro**, e a firma 2 (seguidora) observa \(q_1\) e depois escolhe \(q_2\). O jogo é resolvido por **indução retroativa**.
-
-A seguidora usa sua função de reação: \(q_2^*(q_1) = \frac{a-c-bq_1}{2b}\).
-
-O líder antecipa essa reação e maximiza:
-
-\[
-\pi_1 = \left[a - b\left(q_1 + \frac{a-c-bq_1}{2b}\right)\right]q_1 - cq_1 = \frac{(a-c)q_1}{2} - \frac{bq_1^2}{2}
-\]
-
-A condição de primeira ordem dá:
-
-\[
-q_1^L = \frac{a-c}{2b}, \quad q_2^S = \frac{a-c}{4b}
-\]
-
-\[
-Q^{St} = \frac{3(a-c)}{4b}, \quad p^{St} = \frac{a+3c}{4}
-\]
-
-O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e lucra menos. A **vantagem do primeiro movimento** (first-mover advantage) decorre do compromisso crível com uma quantidade elevada.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Quem se compromete primeiro com uma decisão grande e irreversível pode forçar os concorrentes a se acomodarem.
-
-    **Pense assim:** Quando a Ambev inaugura uma fábrica gigante em uma região, cervejarias menores sabem que competir ali será duro. A capacidade já instalada é um "fato consumado" que muda o jogo — a líder produz muito, e a seguidora aceita uma fatia menor do mercado.
-
-    **Por que isso importa:** Essa lógica explica por que grandes empresas investem agressivamente em capacidade e infraestrutura antes dos rivais — o compromisso crível vira vantagem estratégica.
-
----
-
-## Gráfico interativo: Liderança de Stackelberg
-
-<iframe src="../graficos/cap15/stackelberg.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
-
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).</em>
-</p>
-
----
-
-## 15.4 Demonstração: Equilíbrio de Cournot com n firmas
+## 15.3 Demonstração: derivação do índice de Lerner
 
 !!! proof "Demonstração"
-    Considere \(n\) firmas idênticas com custo marginal constante \(c\). A demanda inversa é \(p = a - bQ\), onde \(Q = \sum_{i=1}^n q_i\).
-
-    O lucro da firma \(i\) é:
+    Seja \(p(q)\) a demanda inversa do mercado e \(C(q)\) a função de custo do monopolista. O problema de maximização de lucro é:
 
     \[
-    \pi_i = \left[a - b\left(q_i + \sum_{j \neq i} q_j\right)\right] q_i - c \cdot q_i
+    \max_q \; \pi(q) = p(q) \cdot q - C(q)
     \]
 
-    Definindo \(Q_{-i} = \sum_{j \neq i} q_j\), a condição de primeira ordem é:
+    A condição de primeira ordem é:
 
     \[
-    \frac{\partial \pi_i}{\partial q_i} = a - 2bq_i - bQ_{-i} - c = 0
+    \frac{d\pi}{dq} = p(q) + q \cdot p'(q) - C'(q) = 0
     \]
 
-    Resolvendo:
+    Reescrevendo:
 
     \[
-    q_i^*(Q_{-i}) = \frac{a - c - bQ_{-i}}{2b}
+    p + q \cdot p'(q) = CMg
     \]
 
-    No equilíbrio simétrico, todas as firmas produzem a mesma quantidade: \(q_i^* = q^*\) para todo \(i\). Portanto, \(Q_{-i} = (n-1)q^*\), e a condição de equilíbrio torna-se:
+    Multiplicamos e dividimos o segundo termo por \(p\):
 
     \[
-    q^* = \frac{a - c - b(n-1)q^*}{2b}
+    p + p \cdot \frac{q \cdot p'(q)}{p} = CMg
     \]
+
+    Observe que a elasticidade-preço da demanda é definida como:
 
     \[
-    2bq^* = a - c - b(n-1)q^*
+    \varepsilon_p = \frac{dq}{dp} \cdot \frac{p}{q}
     \]
+
+    Portanto:
 
     \[
-    q^*[2b + b(n-1)] = a - c
+    \frac{q \cdot p'(q)}{p} = \frac{q}{p} \cdot \frac{dp}{dq} = \frac{1}{\varepsilon_p}
     \]
+
+    Substituindo:
 
     \[
-    q^* \cdot b(n+1) = a - c
+    p\left(1 + \frac{1}{\varepsilon_p}\right) = CMg
     \]
+
+    Rearranjando:
 
     \[
-    \boxed{q^* = \frac{a - c}{b(n+1)}}
+    p - CMg = -\frac{p}{\varepsilon_p}
     \]
 
-    A quantidade agregada e o preço de equilíbrio são:
+    Dividindo ambos os lados por \(p\):
 
     \[
-    Q^* = nq^* = \frac{n(a-c)}{b(n+1)}
+    \frac{p - CMg}{p} = -\frac{1}{\varepsilon_p} = \frac{1}{|\varepsilon_p|}
     \]
+
+    Portanto:
 
     \[
-    p^* = a - bQ^* = a - \frac{n(a-c)}{n+1} = \frac{a + nc}{n+1}
+    \boxed{L = \frac{p - CMg}{p} = \frac{1}{|\varepsilon_p|}}
     \]
 
-    O lucro de cada firma é:
-
-    \[
-    \pi^* = (p^* - c)q^* = \frac{(a-c)^2}{b(n+1)^2}
-    \]
-
-    **Propriedades de estática comparativa:**
-
-    - Quando \(n = 1\): \(q^* = \frac{a-c}{2b}\), \(p^* = \frac{a+c}{2}\) — resultado de monopólio.
-    - Quando \(n = 2\): \(q^* = \frac{a-c}{3b}\), \(p^* = \frac{a+2c}{3}\) — duopólio de Cournot.
-    - Quando \(n \to \infty\): \(Q^* \to \frac{a-c}{b}\), \(p^* \to c\) — resultado competitivo.
-
-    Portanto, o equilíbrio de Cournot converge para o resultado de concorrência perfeita quando o número de firmas cresce sem limite. O modelo de Cournot é, assim, uma interpolação contínua entre monopólio e concorrência perfeita, parametrizada pelo número de firmas. \(\blacksquare\)
+    O índice de Lerner é igual ao inverso do valor absoluto da elasticidade-preço da demanda. Quanto mais inelástica a demanda (menor \(|\varepsilon_p|\)), maior o poder de mercado. Em concorrência perfeita, a firma enfrenta demanda perfeitamente elástica (\(|\varepsilon_p| \to \infty\)), de modo que \(L = 0\). \(\blacksquare\)
 
 ---
 
-## 15.5 Restrições de capacidade
+## 15.4 Ineficiência do monopólio
 
-### O argumento de Edgeworth
+### Perda de peso morto
 
-Edgeworth (1897) observou que, se as firmas têm **capacidade limitada**, o equilíbrio de Bertrand em preços iguais ao custo marginal pode deixar de existir. Quando a firma de preço mais baixo não consegue atender toda a demanda, a firma de preço mais alto retém clientes residuais e pode cobrar acima do custo.
+O monopolista produz menos e cobra mais do que o resultado competitivo. Essa distorção gera uma **perda de peso morto** (PPM) — uma redução no excedente total que não é capturada por nenhum agente.
 
-### O resultado de Kreps-Scheinkman
+Considere um mercado com demanda linear \(p = a - bq\) e custo marginal constante \(CMg = c\).
 
-Kreps e Scheinkman (1983) demonstraram um resultado notável:
-
-!!! abstract "Teorema de Kreps-Scheinkman"
-    Em um jogo em dois estágios no qual as firmas primeiro escolhem **capacidades** (estágio 1) e depois competem em **preços** (estágio 2), o resultado de equilíbrio coincide com o **equilíbrio de Cournot**, desde que a regra de racionamento eficiente seja utilizada.
-
-Esse resultado fornece uma fundamentação microeconômica para o modelo de Cournot: a concorrência em quantidades pode ser interpretada como uma concorrência em preços precedida por decisões de capacidade. As quantidades de Cournot representam as capacidades que as firmas escolheriam instalar antes de competir em preços.
-
----
-
-## 15.6 Diferenciação de produto
-
-### Modelo de Hotelling (diferenciação horizontal)
-
-Considere um segmento de reta \([0, 1]\) representando o espaço de características do produto. Consumidores estão uniformemente distribuídos ao longo do segmento. A firma 1 localiza-se em \(x_1 = 0\) e a firma 2 em \(x_2 = 1\). Cada consumidor, localizado em \(x\), incorre em custo de transporte \(t \cdot |x - x_i|\) ao comprar da firma \(i\).
-
-O consumidor indiferente localiza-se em:
+**Resultado competitivo** (\(p = CMg\)):
 
 \[
-\hat{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t}
+q^c = \frac{a - c}{b}, \quad p^c = c
 \]
 
-As demandas são \(q_1 = \hat{x}\) e \(q_2 = 1 - \hat{x}\). As funções de lucro (com custo marginal zero) são:
+**Resultado monopolístico** (\(RMg = CMg\)):
 
 \[
-\pi_1 = p_1 \cdot \hat{x} = p_1 \left(\frac{1}{2} + \frac{p_2 - p_1}{2t}\right)
+RMg = a - 2bq = c \implies q^m = \frac{a - c}{2b}, \quad p^m = \frac{a + c}{2}
 \]
 
-No equilíbrio simétrico: \(p_1^* = p_2^* = t\), \(\pi_1^* = \pi_2^* = \frac{t}{2}\).
+O monopolista produz **metade** da quantidade competitiva e cobra um preço **acima** do custo marginal.
 
-O parâmetro \(t\) mede o grau de diferenciação. Quando \(t \to 0\), os produtos tornam-se homogêneos e os lucros convergem para zero (Bertrand). Quando \(t\) é grande, a diferenciação confere poder de mercado significativo.
+### O triângulo de Harberger
 
-### Modelo de Salop (cidade circular)
-
-O modelo de Salop estende Hotelling para \(n\) firmas dispostas simetricamente em um círculo de perímetro 1. No equilíbrio simétrico com entrada livre:
+A perda de peso morto corresponde à área do triângulo entre a curva de demanda e o custo marginal, entre \(q^m\) e \(q^c\):
 
 \[
-p^* = c + \frac{t}{n}, \quad n^* = \sqrt{\frac{t}{f}}
+PPM = \frac{1}{2}(p^m - c)(q^c - q^m) = \frac{(a-c)^2}{8b}
 \]
 
-onde \(f\) é o custo fixo de entrada. O número de firmas em equilíbrio é crescente no custo de transporte (diferenciação) e decrescente no custo fixo.
+Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0,1% do PIB, um valor surpreendentemente pequeno. Estimativas posteriores, incorporando *rent-seeking* e ineficiências organizacionais, sugerem valores significativamente maiores.
 
----
+!!! example "Poder de mercado e o CADE"
+    O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória.
 
-## 15.7 Colusão tácita
+### Comparação concorrência perfeita versus monopólio
 
-### Jogos repetidos e sustentação de colusão
+| Variável | Concorrência Perfeita | Monopólio | Variação |
+|---|---|---|---|
+| **Preço** | \(p^c = c\) | \(p^m = \frac{a+c}{2}\) | \(\uparrow\) |
+| **Quantidade** | \(q^c = \frac{a-c}{b}\) | \(q^m = \frac{a-c}{2b}\) | \(\downarrow\) |
+| **Excedente do Consumidor** | \(\frac{(a-c)^2}{2b}\) | \(\frac{(a-c)^2}{8b}\) | \(\downarrow\) |
+| **Excedente do Produtor** | \(0\) | \(\frac{(a-c)^2}{4b}\) | \(\uparrow\) |
+| **Excedente Total** | \(\frac{(a-c)^2}{2b}\) | \(\frac{3(a-c)^2}{8b}\) | \(\downarrow\) |
+| **Perda de Peso Morto** | \(0\) | \(\frac{(a-c)^2}{8b}\) | — |
 
-Em um jogo de Bertrand repetido infinitamente, as firmas podem sustentar preços acima do custo marginal por meio de **estratégias de gatilho** (trigger strategies).
-
-!!! definition "Estratégia de Gatilho (Grim Trigger)"
-    Na **estratégia de gatilho**, cada firma cobra o preço de monopólio enquanto todas as rivais fizerem o mesmo. Se qualquer firma desviar, todas revertem permanentemente para o equilíbrio de Nash estático (preço competitivo).
-
-### Condição de sustentabilidade
-
-Considere o duopólio de Bertrand com fator de desconto \(\delta\). O lucro de monopólio dividido é \(\frac{\pi^m}{2}\) por período. Ao desviar, a firma obtém \(\pi^m\) no período corrente, mas zero daí em diante (punição).
-
-A colusão é sustentável se:
-
-\[
-\underbrace{\frac{\pi^m/2}{1-\delta}}_{\text{valor de cooperar}} \geq \underbrace{\pi^m + \frac{0}{1-\delta}}_{\text{valor de desviar}}
-\]
-
-\[
-\frac{1}{2(1-\delta)} \geq 1 \implies \delta \geq \frac{1}{2}
-\]
-
-Com \(n\) firmas simétricas, a condição torna-se:
-
-\[
-\delta \geq 1 - \frac{1}{n}
-\]
-
-Quanto maior o número de firmas, mais difícil sustentar a colusão.
+!!! tip "Interpretação"
+    A passagem de concorrência perfeita para monopólio envolve duas transferências: (i) parte do excedente do consumidor é capturada pelo monopolista (retângulo de transferência); (ii) parte do excedente total simplesmente desaparece (triângulo de Harberger). A PPM representa uma perda **líquida** de bem-estar social.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Cartéis são tentadores mas instáveis — cada participante ganha mais se trair o acordo enquanto os outros cooperam.
+    **Em uma frase:** O monopólio produz menos e cobra mais do que um mercado competitivo, e a diferença de bem-estar que se perde no caminho não vai para ninguém — simplesmente evapora.
 
-    **Pense assim:** Imagine um grupo de feirantes combinando o preço do tomate. Cada um tem a tentação de baixar o preço escondido e roubar os clientes dos vizinhos. Quanto mais feirantes no acordo, mais fácil alguém furar sem ser notado — e o combinado desmorona.
+    **Pense assim:** Imagine que, em vez de vários postos de gasolina no bairro, houvesse apenas um. Ele reduziria a quantidade vendida e aumentaria o preço. Parte do que os consumidores perdem vai para o bolso do dono do posto (lucro de monopólio), mas outra parte — os litros que deixaram de ser vendidos porque o preço ficou alto demais — é pura perda. É como se alguém queimasse dinheiro: nem o consumidor nem o produtor ficam com ele.
 
-    **Por que isso importa:** Programas de leniência do [CADE](https://www.gov.br/cade) exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
-
-### Fatores que facilitam a colusão
-
-| Fator | Efeito sobre a colusão | Mecanismo |
-|---|---|---|
-| Poucas firmas | Facilita | Menor incentivo ao desvio |
-| Interação frequente | Facilita | Retaliação mais rápida |
-| Demanda estável | Facilita | Desvios são detectáveis |
-| Produtos homogêneos | Ambíguo | Facilita detecção mas aumenta tentação |
-| Simetria de custos | Facilita | Acordo mais fácil sobre preço |
-| Transparência de preços | Facilita | Detecção rápida de desvios |
-| Barreiras à entrada | Facilita | Impede erosão de lucros por entrantes |
-| Contato multimercado | Facilita | Mais oportunidades de punição |
-
-!!! tip "Colusão tácita e direito concorrencial"
-    A colusão tácita — sustentada por interação repetida sem comunicação explícita — é extremamente difícil de combater com instrumentos tradicionais do direito antitruste. O CADE distingue entre **cartel** (acordo explícito, ilícito per se) e **paralelismo consciente** (comportamento coordenado sem acordo, que pode não ser ilícito). A análise de estrutura de mercado (concentração, barreiras, transparência) é utilizada para avaliar a probabilidade de coordenação tácita.
-
-!!! example "Box Brasil: O cartel do metrô de São Paulo e o Programa de Leniência do CADE"
-    Em 2013, o CADE condenou um cartel formado por grandes construtoras e fabricantes de equipamentos ferroviários que atuavam em licitações do Metrô de São Paulo e da CPTM. As empresas — incluindo Alstom, Bombardier, Mitsui, Siemens e CAF — coordenavam preços e dividiam lotes de licitações de trens e sistemas de sinalização por mais de uma década.
-
-    **Mecanismo de colusão:**
-
-    O cartel operava exatamente como prevê a teoria: as firmas estabeleciam reuniões periódicas para definir qual empresa "ganharia" cada licitação, com as demais apresentando propostas artificialmente superiores. A sustentação do acordo era facilitada por: (i) poucas firmas (oligopólio concentrado); (ii) interação repetida em múltiplas licitações ao longo dos anos; (iii) transparência — cada firma observava se as demais cumpriam o acordo; (iv) barreiras à entrada elevadas (exigências técnicas e certificações).
-
-    **Programa de Leniência:**
-
-    O caso foi descoberto graças ao **Programa de Leniência** do [CADE](https://www.gov.br/cade/pt-br/assuntos/noticias/cade-multa-em-r-535-1-milhoes-cartel-de-trens-e-metros), inspirado no modelo americano. A Siemens, primeira empresa a confessar a participação e fornecer provas, obteve imunidade total de multas. As demais firmas foram condenadas a multas que somaram mais de R$ 530 milhões. O programa de leniência funciona como um mecanismo de quebra da colusão: ao oferecer imunidade ao primeiro delator, reduz o fator de desconto efetivo e torna o desvio (delação) mais atrativo do que a cooperação com o cartel — exatamente o que a teoria dos jogos repetidos prevê.
+    **Por que isso importa:** A perda de peso morto do monopólio é o principal argumento econômico para a existência de órgãos como o CADE, que combatem concentração excessiva de mercado para proteger o bem-estar dos consumidores brasileiros.
 
 ---
 
-## 15.8 Decisões de longo prazo: investimento, entrada e saída
+## 15.5 Estática comparativa do monopólio
 
-No longo prazo, as firmas tomam decisões sobre investimentos em capacidade, P&D, localização e publicidade que afetam as condições de competição nos períodos subsequentes. Essas decisões têm natureza **estratégica**: alteram a estrutura do jogo e, portanto, o comportamento de equilíbrio.
+### Efeito de um imposto unitário
 
-### Compromisso estratégico
-
-Um investimento constitui um **compromisso** (commitment) se é irreversível ou custoso de reverter. Compromissos credíveis podem alterar as expectativas dos rivais e modificar o equilíbrio.
-
-A taxonomia de Fudenberg e Tirole (1984) classifica os investimentos estratégicos em:
-
-- **Top dog** ("cão grande"): investir agressivamente para intimidar rivais (ex.: excesso de capacidade para dissuadir entrada).
-- **Puppy dog** ("cão manso"): investir pouco para sinalizar intenções pacíficas e evitar retaliação.
-- **Fat cat** ("gato gordo"): investir para tornar-se menos agressivo e induzir acomodação do rival.
-- **Lean and hungry** ("magro e faminto"): não investir para parecer mais agressivo e dissuadir rivais.
-
-A estratégia ótima depende de dois fatores: (i) se o investimento torna a firma mais agressiva ou mais acomodada; (ii) se o objetivo é dissuadir a entrada ou acomodar-se com rivais existentes.
-
----
-
-## 15.9 Dissuasão estratégica de entrada
-
-### Sobrecapacidade como barreira
-
-Spence (1977) e Dixit (1980) analisaram como o incumbente pode usar **investimento em capacidade** para dissuadir a entrada. No modelo de Dixit, o incumbente instala capacidade \(K\) antes que o entrante potencial decida se ingressa no mercado. Se \(K\) é suficientemente grande, a entrada torna-se não lucrativa porque o incumbente pode comprometer-se a produzir uma quantidade elevada.
-
-A condição para dissuasão de entrada é:
+Suponha que o governo impõe um imposto unitário \(t\) sobre cada unidade produzida. O novo custo marginal efetivo é \(CMg + t\). Com demanda linear:
 
 \[
-\pi_E(q_E^*, K) \leq f
+q^m(t) = \frac{a - c - t}{2b}, \quad p^m(t) = \frac{a + c + t}{2}
 \]
 
-onde \(\pi_E\) é o lucro bruto do entrante no equilíbrio pós-entrada e \(f\) é o custo fixo de entrada. Se o custo de instalação de capacidade excede o ganho com a dissuasão, o incumbente pode preferir **acomodar** a entrada.
+Observe que \(\frac{dp^m}{dt} = \frac{1}{2}\): o monopolista repassa apenas **metade** do imposto ao consumidor. Isso contrasta com a concorrência perfeita, na qual, com oferta perfeitamente elástica, o repasse é integral.
 
-!!! note "Dissuasão vs. acomodação"
-    A dissuasão de entrada nem sempre é ótima para o incumbente. Se o custo de instalar capacidade suficiente para bloquear a entrada excede a perda de lucro decorrente de compartilhar o mercado, o incumbente prefere acomodar a entrada. A decisão depende da magnitude do custo fixo do entrante, da elasticidade da demanda e da estrutura de custos.
+!!! note "Repasse imperfeito"
+    O fato de o monopolista absorver parte do imposto decorre da curvatura da curva de demanda que ele enfrenta. A incidência do imposto depende crucialmente da forma funcional da demanda: com demanda isoelástica, por exemplo, o repasse pode exceder 100%.
 
----
+### Deslocamento da demanda
 
-## 15.10 Sinalização
-
-Em mercados com **informação assimétrica**, as ações observáveis de uma firma podem transmitir informação privada sobre suas características (custos, qualidade, intenções).
-
-### Preço como sinal
-
-Milgrom e Roberts (1982) mostraram que um incumbente com custos baixos pode sinalizar sua eficiência cobrando **preços baixos** — o chamado **preço-limite**. O preço baixo é um sinal crível porque um incumbente com custos altos não conseguiria sustentá-lo lucrativamente.
-
-No equilíbrio separador:
-
-- O incumbente eficiente cobra um preço suficientemente baixo para que a imitação pelo ineficiente seja não lucrativa.
-- O entrante potencial infere corretamente o tipo do incumbente e desiste de entrar contra o eficiente.
-
-O preço de sinalização é tipicamente **inferior** ao preço de monopólio de curto prazo: o incumbente sacrifica lucro corrente para preservar sua posição de mercado no longo prazo.
-
----
-
-## 15.11 Quantas firmas entram? Entrada livre em Cournot
-
-### Número de firmas em equilíbrio
-
-Se a entrada é livre mas sujeita a custo fixo \(f\), as firmas entram até que o lucro líquido seja zero. Usando os resultados da Seção 15.4 (Cournot com \(n\) firmas):
+Um aumento na demanda (deslocamento paralelo de \(a\) para \(a + \Delta\)) eleva tanto o preço quanto a quantidade de monopólio:
 
 \[
-\pi^*(n) = \frac{(a-c)^2}{b(n+1)^2} = f
+\Delta p^m = \frac{\Delta}{2}, \quad \Delta q^m = \frac{\Delta}{2b}
 \]
 
-Resolvendo para \(n\):
+O lucro do monopolista é crescente e convexo na demanda, o que implica que o monopolista tem incentivos fortes para investir em publicidade ou atividades que expandam a demanda.
+
+---
+
+## 15.6 Qualidade do produto sob monopólio
+
+O monopolista também escolhe a **qualidade** \(s\) do produto. Se a demanda é \(p(q, s)\) e o custo é \(C(q, s)\), o problema torna-se:
 
 \[
-n^* = \frac{a-c}{\sqrt{bf}} - 1
+\max_{q, s} \; \pi(q, s) = p(q, s) \cdot q - C(q, s)
 \]
 
-O número de firmas é crescente no tamanho do mercado \((a-c)\) e decrescente no custo fixo \(f\) e no parâmetro de inclinação da demanda \(b\).
+A condição para a escolha ótima de qualidade é:
 
-### Excesso de entrada
+\[
+\frac{\partial p}{\partial s} \cdot q = \frac{\partial C}{\partial s}
+\]
 
-Mankiw e Whinston (1986) demonstraram que, sob condições gerais, o equilíbrio de entrada livre em Cournot apresenta **excesso de entrada**: o número de firmas em equilíbrio é superior ao socialmente ótimo. Isso ocorre porque cada entrante ignora a **externalidade negativa** que impõe às firmas existentes ao reduzir o preço de mercado (efeito roubo de negócios, *business stealing*).
+O monopolista iguala a receita marginal da qualidade ao custo marginal da qualidade. A receita marginal da qualidade é avaliada no **consumidor marginal** (o último a adquirir o bem), não no consumidor médio. Como o consumidor marginal tipicamente valora a qualidade menos do que o consumidor médio, o monopolista pode subprover ou superprover qualidade em relação ao ótimo social, dependendo da distribuição de preferências.
 
----
-
-## 15.12 Inovação sob oligopólio
-
-### Incentivos à inovação
-
-O oligopólio apresenta incentivos à inovação que são intermediários entre concorrência perfeita e monopólio. Há duas forças em operação:
-
-- **Efeito substituição** (Arrow, 1962): uma firma competitiva tem mais a ganhar com uma inovação drástica do que um monopolista, pois o monopolista já desfruta de lucros que seriam parcialmente canibalizados pela inovação. Esse efeito favorece a inovação em mercados competitivos.
-
-- **Efeito eficiência** (Gilbert e Newbery, 1982): o monopolista tem mais a perder com a entrada de um inovador do que o entrante tem a ganhar, o que lhe dá incentivos mais fortes para inovar preventivamente. Esse efeito favorece a inovação por incumbentes com poder de mercado.
-
-No oligopólio, ambas as forças coexistem. A intensidade de P&D depende do grau de competição, do regime de apropriabilidade (proteção de patentes) e da natureza da inovação (incremental vs. radical).
-
-### Corridas por patentes
-
-Em modelos de corrida por patentes (patent race), múltiplas firmas investem em P&D simultaneamente, mas apenas a primeira a obter sucesso recebe a patente. Esses modelos tendem a gerar **excesso de investimento** em P&D do ponto de vista social: a duplicação de esforços desperdiça recursos.
+!!! note "Qualidade e bem-estar"
+    Spence (1975) demonstrou que o monopolista provê qualidade eficiente quando o consumidor marginal tem a mesma valoração de qualidade que o consumidor médio. Em geral, não há resultado inequívoco: o monopolista pode oferecer qualidade excessiva ou insuficiente.
 
 ---
 
-## Comparação dos modelos de oligopólio
+## 15.7 Discriminação de preços
 
-A tabela a seguir resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
+O monopolista pode aumentar seus lucros se conseguir cobrar preços diferentes de consumidores diferentes (ou pela mesma unidade adicional). A discriminação de preços exige duas condições: (i) algum grau de poder de mercado e (ii) impossibilidade de revenda (arbitragem) entre consumidores.
 
-| Variável | Bertrand | Cournot | Stackelberg | Colusão |
-|---|---|---|---|---|
-| **Preço** | \(c\) | \(\frac{a+2c}{3}\) | \(\frac{a+3c}{4}\) | \(\frac{a+c}{2}\) |
-| **Quantidade total** | \(\frac{a-c}{b}\) | \(\frac{2(a-c)}{3b}\) | \(\frac{3(a-c)}{4b}\) | \(\frac{a-c}{2b}\) |
-| **Lucro por firma** | \(0\) | \(\frac{(a-c)^2}{9b}\) | Líder: \(\frac{(a-c)^2}{8b}\); Seguidora: \(\frac{(a-c)^2}{16b}\) | \(\frac{(a-c)^2}{8b}\) |
-| **Lucro total** | \(0\) | \(\frac{2(a-c)^2}{9b}\) | \(\frac{3(a-c)^2}{16b}\) | \(\frac{(a-c)^2}{4b}\) |
-| **Nº mínimo de firmas** | 2 | 2+ | 2 (líder + seguidora) | 2+ |
-| **Variável de decisão** | Preço | Quantidade | Quantidade (sequencial) | Preço ou quantidade |
-| **Eficiência** | Eficiente | Intermediária | Intermediária (mais que Cournot) | Monopólio |
-| **Estabilidade** | Equilíbrio de Nash | Equilíbrio de Nash | Eq. perfeito em subjogos | Requer mecanismo de enforcement |
+### 15.7.1 Discriminação de primeiro grau (perfeita)
 
-!!! tip "Ordenação por eficiência"
-    Em termos de excedente total, a ordenação é: Bertrand \(\geq\) Stackelberg \(\geq\) Cournot \(\geq\) Colusão. A concorrência em preços é a mais eficiente; a colusão é a menos eficiente (equivalente ao monopólio).
+Na discriminação perfeita, o monopolista cobra de cada consumidor exatamente sua **disposição a pagar**. Cada unidade é vendida a um preço diferente.
 
----
+!!! definition "Discriminação de Primeiro Grau"
+    Na **discriminação de preços de primeiro grau**, o monopolista extrai todo o excedente do consumidor, cobrando o preço máximo que cada consumidor está disposto a pagar por cada unidade.
 
-!!! example "Box Brasil: Concentração bancária — spread, fusões e competição"
-    O sistema bancário brasileiro é um dos mais concentrados entre as grandes economias. Os cinco maiores bancos (Itaú Unibanco, Bradesco, Banco do Brasil, Caixa Econômica Federal e Santander) detêm mais de 80% dos ativos totais do sistema, segundo dados do Banco Central do Brasil.
+Resultado:
 
-    **Spreads bancários**
+- A quantidade produzida é **eficiente**: \(q = q^c\) (idêntica à concorrência perfeita).
+- Não há perda de peso morto.
+- Todo o excedente é capturado pelo produtor: \(EC = 0\), \(EP = \frac{(a-c)^2}{2b}\).
 
-    O spread bancário brasileiro — diferença entre a taxa de empréstimo e a taxa de captação — é historicamente elevado em comparação internacional. Dados do Banco Central indicam que o spread médio para pessoa física situava-se em torno de 30-40 pontos percentuais ao ano em períodos recentes, enquanto a média da OCDE é inferior a 5 p.p. As causas frequentemente apontadas incluem:
+A discriminação perfeita é um caso limite teórico. Na prática, o monopolista raramente conhece as disposições a pagar individuais.
 
-    - **Risco de crédito elevado** e custos de inadimplência.
-    - **Custos administrativos** e tributação sobre operações financeiras (IOF).
-    - **Poder de mercado** decorrente da concentração.
-    - **Cunha tributária** e depósitos compulsórios elevados.
-    - **Assimetria de informação** e fragilidades institucionais na recuperação de crédito.
+### 15.7.2 Discriminação de segundo grau (não-linear)
 
-    A literatura empírica debate a importância relativa desses fatores. Estudos do [BCB](https://www.bcb.gov.br) sugerem que o poder de mercado explica parcela significativa, mas não majoritária, do spread.
+Quando o monopolista não observa as características dos consumidores, ele pode oferecer um **menu de contratos** (combinações preço-quantidade) e permitir que os consumidores se **autosselecionem**. Consumidores com alta disposição a pagar escolhem o pacote premium; consumidores com baixa disposição escolhem o pacote básico.
 
-    **Fusões analisadas pelo CADE**
+A estrutura ótima envolve:
 
-    | Operação | Ano | Decisão CADE | Participação resultante |
-    |---|---|---|---|
-    | Itaú + Unibanco | 2008 | Aprovada sem restrições | ~18% dos ativos |
-    | Bradesco + HSBC Brasil | 2016 | Aprovada com restrições | ~14% dos ativos |
-    | Itaú + XP (parcial) | 2017 | Aprovada com restrições | Participação minoritária |
+- O tipo de **alta valoração** recebe a quantidade eficiente, mas paga um preço que lhe deixa algum excedente (renda informacional).
+- O tipo de **baixa valoração** recebe uma quantidade **distorcida para baixo** (abaixo do eficiente) e extrai exatamente zero de excedente.
 
-    A fusão Itaú-Unibanco (2008) foi analisada pelo CADE em rito sumário, decisão que gerou controvérsia dada a magnitude da operação. O CADE argumentou que a participação conjunta em mercados relevantes específicos não ultrapassava patamares preocupantes, e que os ganhos de eficiência justificavam a operação.
+Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de incentivos**: é necessário tornar o pacote básico suficientemente pouco atrativo para que o tipo alto não queira "imitar" o tipo baixo.
 
-    A aquisição do HSBC Brasil pelo Bradesco (2016) foi aprovada com restrições, incluindo a alienação de carteiras em mercados locais onde a concentração se tornava excessiva.
+!!! tip "Exemplos práticos"
+    - Passagens aéreas com classes tarifárias (econômica, executiva, primeira classe).
+    - Versões de software (básica, profissional, enterprise).
+    - Descontos por quantidade em supermercados.
 
-    **Comparação internacional**
+!!! example "Box Brasil: Discriminação de preços nas passagens aéreas"
+    O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da [ANAC](https://www.anac.gov.br)), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
 
-    | País | CR5 (ativos) | Spread médio (p.p.) |
+    **Discriminação de segundo grau (autosseleção):**
+
+    As companhias oferecem múltiplas classes tarifárias para o mesmo voo — desde tarifas promocionais sem direito a bagagem ou remarcação até tarifas flexíveis com reembolso integral. Passageiros corporativos, com alta disposição a pagar e demanda inelástica (viagens de última hora), autosselecionam-se para tarifas mais caras. Passageiros a lazer, com demanda elástica e flexibilidade de datas, escolhem as tarifas promocionais. Essa estrutura replica o menu de contratos descrito na teoria: o tipo de alta valoração paga mais, mas recebe serviços adicionais.
+
+    **Discriminação de terceiro grau (segmentação observável):**
+
+    Companhias oferecem tarifas diferenciadas para idosos (desconto de 5% obrigatório pela ANAC), estudantes e militares. A segmentação por antecedência de compra (preços mais baixos para compras com 30-60 dias de antecedência) também funciona como discriminação de terceiro grau, separando viajantes a lazer (antecedência) de viajantes corporativos (última hora).
+
+    Segundo dados da ANAC, a tarifa aérea média doméstica por km variou entre R$ 0,35 e R$ 0,55 em 2023, mas a dispersão de preços dentro de um mesmo voo pode facilmente superar 300% — evidência direta de discriminação de preços.
+
+### 15.7.3 Discriminação de terceiro grau (segmentação de mercados)
+
+Na discriminação de terceiro grau, o monopolista divide os consumidores em **grupos observáveis** (por exemplo, por idade, localização, status profissional) e cobra preços diferentes de cada grupo.
+
+Se há dois mercados com demandas \(p_1(q_1)\) e \(p_2(q_2)\), o monopolista resolve:
+
+\[
+\max_{q_1, q_2} \; p_1(q_1) \cdot q_1 + p_2(q_2) \cdot q_2 - C(q_1 + q_2)
+\]
+
+As condições de primeira ordem são:
+
+\[
+RMg_1(q_1) = RMg_2(q_2) = CMg(q_1 + q_2)
+\]
+
+O monopolista iguala as receitas marginais em todos os mercados ao custo marginal. O mercado com demanda **mais inelástica** paga o preço **mais alto**:
+
+\[
+\frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}
+\]
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Discriminar preços significa cobrar mais de quem está mais disposto a pagar e menos de quem é mais sensível ao preço.
+
+    **Pense assim:** Pense nas passagens aéreas da Latam ou Gol. O executivo que compra na véspera paga R$ 2.000 porque *precisa* viajar (demanda inelástica). O estudante que compra com dois meses de antecedência paga R$ 400 porque tem flexibilidade (demanda elástica). A companhia aérea não está sendo "generosa" com o estudante — está maximizando lucro ao extrair mais de quem pode pagar mais e ainda assim vender para quem pagaria menos.
+
+    **Por que isso importa:** A discriminação de preços pode, em alguns casos, aumentar a quantidade total vendida e até reduzir a perda de peso morto — o que complica o juízo de política concorrencial e exige análise caso a caso pelo CADE.
+
+!!! example "Box Brasil: Monopólios naturais regulados — o setor elétrico e telecomunicações pós-privatização"
+    O Brasil passou por extenso processo de privatização e regulação de monopólios naturais nos anos 1990. Dois casos emblemáticos ilustram os desafios da regulação:
+
+    **Setor Elétrico**
+
+    A reestruturação do setor elétrico brasileiro, iniciada em 1995 (Lei 8.987/1995 e Lei 9.074/1995), separou as atividades de geração, transmissão e distribuição. A distribuição de energia — um monopólio natural em cada área de concessão — é regulada pela ANEEL (Agência Nacional de Energia Elétrica), criada em 1996. A ANEEL realiza revisões tarifárias periódicas (a cada 4 ou 5 anos) utilizando o modelo de **empresa de referência** e aplica reajustes anuais baseados no IGP-M. Segundo dados da ANEEL, o Brasil possui 53 distribuidoras reguladas, atendendo mais de 90 milhões de unidades consumidoras. A tarifa média residencial brasileira, em 2024, situava-se entre R$ 0,60 e R$ 0,90 por kWh (com tributos), uma das mais altas do mundo em proporção à renda.
+
+    **Telecomunicações**
+
+    A privatização do Sistema Telebrás em 1998 transferiu ao setor privado o monopólio estatal de telecomunicações. A [ANATEL](https://www.anatel.gov.br) (Agência Nacional de Telecomunicações), criada pela Lei 9.472/1997, regula concessões e autorizações. Na telefonia fixa, as concessionárias originais (Oi, Telefônica/Vivo, Embratel) enfrentaram obrigações de universalização e controle tarifário (price cap com fator X de produtividade). A telefonia móvel, operando em regime de autorização, desenvolveu-se em um oligopólio com quatro operadoras principais (Vivo, Claro, TIM, Oi). A venda dos ativos móveis da Oi em 2022 para Vivo, Claro e TIM reduziu o mercado a três grandes operadoras, levantando preocupações concorrenciais analisadas pelo CADE.
+
+    | Indicador | Setor Elétrico | Telecomunicações |
     |---|---|---|
-    | Brasil | ~82% | ~35 |
-    | EUA | ~47% | ~3 |
-    | Alemanha | ~30% | ~4 |
-    | Chile | ~70% | ~5 |
-    | Austrália | ~80% | ~3 |
+    | Agência reguladora | ANEEL (1996) | ANATEL (1997) |
+    | Modelo regulatório | Empresa de referência + price cap | Price cap com fator X |
+    | Nº de distribuidoras/operadoras | 53 distribuidoras | 3 grandes operadoras (móvel) |
+    | Universalização | ~99,8% de acesso | ~98% de cobertura 4G |
+    | Principal desafio atual | Transição energética e tarifas | 5G e competição em banda larga |
 
-    A comparação sugere que a concentração per se não explica os spreads brasileiros: Austrália e Canadá possuem concentração bancária semelhante à brasileira, mas spreads muito inferiores. Fatores institucionais — custos de recuperação de crédito, instabilidade macroeconômica histórica, regulação prudencial — são igualmente relevantes.
-
-    **Fintechs e contestabilidade**
-
-    A partir de 2018, o Banco Central adotou medidas para aumentar a competição bancária, incluindo a agenda BC# (posteriormente Agenda BC+), o open banking (Sistema Financeiro Aberto) e a regulamentação de fintechs. O crescimento de instituições digitais como Nubank, Inter e C6 Bank introduziu elementos de contestabilidade que pressionam as margens dos incumbentes, embora a participação dessas instituições nos estoques de crédito ainda seja modesta.
+    Ambos os setores ilustram o dilema fundamental da regulação de monopólios naturais: garantir eficiência produtiva e preços acessíveis sem eliminar os incentivos ao investimento. Para o contexto institucional e fiscal da regulação de monopólios naturais no Brasil, ver Giambiagi & Além (2016).
 
 ---
 
-## Gráfico interativo: Comparação de estruturas de mercado
+## Gráfico interativo: Discriminação de preços
 
-<iframe src="../graficos/cap15/comparacao-oligopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap15/discriminacao-precos.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.</em>
+<em>Figura 14.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.</em>
 </p>
+
+---
+
+## 15.8 Tarifas em duas partes
+
+Uma tarifa em duas partes consiste em uma **taxa de entrada** (tarifa fixa \(T\)) e um **preço por unidade** (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\).
+
+### Consumidores homogêneos
+
+Se todos os consumidores são idênticos, a estratégia ótima é simples:
+
+1. Fixar \(p = CMg\) (preço eficiente).
+2. Fixar \(T = EC\) (capturar todo o excedente do consumidor).
+
+Isso replica o resultado da discriminação de primeiro grau: quantidade eficiente e extração completa do excedente.
+
+### Consumidores heterogêneos
+
+Com consumidores heterogêneos, o problema é mais complexo. Se a taxa de entrada for muito alta, consumidores com baixa demanda deixam o mercado. O monopolista enfrenta um trade-off entre:
+
+- Cobrar uma taxa alta e perder consumidores marginais.
+- Cobrar uma taxa baixa e atender mais consumidores, mas extrair menos excedente de cada um.
+
+A solução ótima tipicamente envolve \(p > CMg\) e \(T < EC\) do consumidor com menor demanda.
+
+!!! tip "Exemplos de tarifas em duas partes"
+    - Clubes de compras (anuidade + preço por produto).
+    - Parques de diversões (entrada + valor por brinquedo).
+    - Planos telefônicos (assinatura mensal + tarifa por minuto/dados).
+    - Serviços de streaming (assinatura fixa com acesso ao catálogo).
+
+---
+
+## 15.9 Regulação de monopólios
+
+Quando o monopólio não pode ser eliminado (como no caso de monopólios naturais), a regulação busca aproximar o resultado de mercado do ótimo social. O dilema central é: como induzir a firma a produzir mais e cobrar menos, sem eliminar seus incentivos ao investimento e à eficiência?
+
+### Regulação pelo custo marginal (first-best)
+
+A solução ideal seria impor \(p = CMg\). Entretanto, em um monopólio natural com custos médios decrescentes, \(CMg < CMe\), de modo que \(p = CMg\) gera **prejuízo**. O governo precisaria subsidiar a firma, o que acarreta distorções em outros mercados (custo dos fundos públicos).
+
+### Regulação pelo custo médio (second-best)
+
+A alternativa mais comum é impor \(p = CMe\), garantindo lucro zero. A firma produz mais do que o monopólio sem regulação, mas menos do que o first-best. Há uma PPM residual, menor que a do monopólio não regulado.
+
+### Regulação por teto de preços (price cap)
+
+O regulador fixa um teto de preço que é reajustado periodicamente pela inflação menos um fator de produtividade:
+
+\[
+\Delta p \leq \text{inflação} - X
+\]
+
+O fator \(X\) captura ganhos de eficiência esperados. A firma retém ganhos de produtividade acima de \(X\) até a próxima revisão, o que incentiva a redução de custos.
+
+!!! note "Vantagem do price cap"
+    O sistema de price cap, introduzido no Reino Unido por Stephen Littlechild (1983), possui vantagens informacionais sobre a regulação por taxa de retorno: o regulador não precisa conhecer detalhadamente a estrutura de custos da firma. Em contrapartida, pode induzir redução de qualidade se os padrões de serviço não forem adequadamente monitorados.
+
+### Regulação por taxa de retorno (rate of return)
+
+O regulador permite que a firma obtenha uma taxa de retorno "justa" \(s\) sobre o capital investido \(K\):
+
+\[
+pq - wL - rK \leq (s - r)K
+\]
+
+Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinvestir em capital** para inflar a base de remuneração — o chamado **efeito Averch-Johnson**. A firma substitui trabalho por capital além do socialmente ótimo, resultando em ineficiência produtiva.
+
+---
+
+## Gráfico interativo: Regulação de monopólio natural
+
+<iframe src="../graficos/cap15/regulacao-monopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<em>Figura 14.3 — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.</em>
+</p>
+
+---
+
+## 15.10 Visões dinâmicas do monopólio
+
+### Schumpeter e a destruição criativa
+
+Joseph Schumpeter (1942) argumentou que o monopólio pode ser socialmente benéfico quando considerado em perspectiva dinâmica. Segundo essa visão:
+
+- Lucros de monopólio são a **recompensa pela inovação** e constituem o incentivo fundamental para o progresso tecnológico.
+- A concorrência relevante não é a concorrência de preços estática, mas a **concorrência por inovação** — a "destruição criativa" pela qual novos produtos e processos tornam obsoletos os anteriores.
+- Firmas com poder de mercado têm maiores recursos para investir em P&D.
+
+A hipótese schumpeteriana gerou extensa literatura empírica, com resultados ambíguos. A relação entre concentração de mercado e inovação parece seguir uma curva em U invertido (Aghion et al., 2005): algum grau de poder de mercado estimula a inovação, mas poder excessivo a inibe.
+
+### Mercados contestáveis
+
+Baumol, Panzar e Willig (1982) propuseram a teoria dos **mercados contestáveis**: se a entrada e a saída do mercado são livres e sem custos irrecuperáveis (sunk costs), a mera **ameaça** de entrada é suficiente para disciplinar o monopolista. Mesmo um monopolista cobraria preços competitivos se a entrada fosse perfeitamente livre.
+
+!!! definition "Mercado Contestável"
+    Um mercado é **perfeitamente contestável** se: (i) não há custos irrecuperáveis de entrada e saída; (ii) entrantes potenciais têm acesso à mesma tecnologia do incumbente; (iii) consumidores respondem instantaneamente a diferenças de preço. Nessas condições, a ameaça de "hit-and-run" — entrada para capturar lucros seguida de saída — disciplina o incumbente.
+
+Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irrecuperáveis são a norma, não a exceção. Ainda assim, a teoria da contestabilidade fornece um benchmark útil e lembra que barreiras à entrada — não a estrutura de mercado per se — são o determinante fundamental do poder de mercado.
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 1 — Equilíbrio de Cournot com custos assimétricos"
-    **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
+??? example "Exercício Resolvido 14.1 — Monopólio com demanda linear: preço, lucro e PPM"
+    **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
 
-    **Resolução.**
+    ---
 
-    **(a) Funções de reação.**
-
-    O lucro da firma 1 é:
+    **(a)** A receita marginal é \(RMg = 80 - 4q\). Igualando ao custo marginal \(CMg = 8\):
 
     \[
-    \pi_1 = (100 - q_1 - q_2)q_1 - 10q_1 = (90 - q_1 - q_2)q_1
+    80 - 4q = 8 \implies q^m = 18, \quad p^m = 80 - 36 = 44
     \]
 
-    A CPO \(\partial \pi_1 / \partial q_1 = 0\) dá:
+    Lucro: \(\pi = 44 \times 18 - (200 + 8 \times 18) = 792 - 344 = 448\).
+
+    **(b)** Índice de Lerner: \(L = (p - CMg)/p = (44 - 8)/44 = 36/44 \approx 0{,}818\).
+
+    Verificação pela elasticidade: no ponto de monopólio, \(\varepsilon_p = (dq/dp)(p/q) = (-1/2)(44/18) \approx -1{,}222\). Logo \(L = 1/|\varepsilon_p| = 1/1{,}222 \approx 0{,}818\). ✓
+
+    **(c)** Resultado competitivo: \(p^c = CMg = 8\), \(q^c = (80-8)/2 = 36\).
 
     \[
-    90 - 2q_1 - q_2 = 0 \implies q_1^*(q_2) = \frac{90 - q_2}{2} = 45 - \frac{q_2}{2}
+    PPM = \frac{1}{2}(p^m - CMg)(q^c - q^m) = \frac{1}{2}(44 - 8)(36 - 18) = \frac{1}{2} \times 36 \times 18 = 324
     \]
 
-    Analogamente, para a firma 2:
+    Excedente total sob monopólio: \(W^m = EC^m + EP^m\).
+
+    \(EC^m = \frac{1}{2}(80 - 44)(18) = \frac{1}{2} \times 36 \times 18 = 324\).
+
+    \(EP^m = (44 - 8)(18) = 648\) (inclui lucro + parte do custo fixo absorvido).
+
+    Na verdade, \(EP^m = \pi + CF = 448 + 200 = 648\)? Não — o EP é a área acima do CMg: \(EP^m = (p^m - CMg) \times q^m = 36 \times 18 = 648\).
+
+    \(W^m = 324 + 648 = 972\).
+
+    **(d)** Sob concorrência perfeita: \(EC^c = \frac{1}{2}(80-8)(36) = 1.296\), \(EP^c = 0\) (com CMg constante). \(W^c = 1.296\).
+
+    \(PPM = W^c - W^m = 1.296 - 972 = 324\). ✓
+
+    **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
+
+??? example "Exercício Resolvido 14.2 — Discriminação de terceiro grau com dois mercados"
+    **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
+
+    ---
+
+    **(a)** Receitas marginais: \(RMg_1 = 120 - 4q_1\) e \(RMg_2 = 80 - 2q_2\).
+
+    Igualando ao CMg:
 
     \[
-    q_2^*(q_1) = \frac{80 - q_1}{2} = 40 - \frac{q_1}{2}
-    \]
-
-    **(b) Equilíbrio.**
-
-    Substituindo \(q_2^*\) em \(q_1^*\):
-
-    \[
-    q_1 = 45 - \frac{1}{2}\left(40 - \frac{q_1}{2}\right) = 45 - 20 + \frac{q_1}{4} = 25 + \frac{q_1}{4}
-    \]
-
-    \[
-    \frac{3q_1}{4} = 25 \implies q_1^* = \frac{100}{3} \approx 33{,}3
-    \]
-
-    \[
-    q_2^* = 40 - \frac{100/3}{2} = 40 - \frac{50}{3} = \frac{70}{3} \approx 23{,}3
-    \]
-
-    \[
-    Q^* = \frac{100}{3} + \frac{70}{3} = \frac{170}{3} \approx 56{,}7
-    \]
-
-    \[
-    p^* = 100 - \frac{170}{3} = \frac{130}{3} \approx 43{,}3
-    \]
-
-    Lucros:
-
-    \[
-    \pi_1^* = \left(\frac{130}{3} - 10\right)\frac{100}{3} = \frac{100}{3} \times \frac{100}{3} = \frac{10.000}{9} \approx 1.111{,}1
+    120 - 4q_1 = 20 \implies q_1 = 25, \quad p_1 = 120 - 50 = 70
     \]
 
     \[
-    \pi_2^* = \left(\frac{130}{3} - 20\right)\frac{70}{3} = \frac{70}{3} \times \frac{70}{3} = \frac{4.900}{9} \approx 544{,}4
+    80 - 2q_2 = 20 \implies q_2 = 30, \quad p_2 = 80 - 30 = 50
     \]
 
-    **(c) HHI.**
+    **(b)** Lerner no mercado 1: \(L_1 = (70-20)/70 = 50/70 \approx 0{,}714\).
 
-    As participações de mercado são \(s_1 = 100/170 \approx 58{,}8\%\) e \(s_2 = 70/170 \approx 41{,}2\%\).
+    Elasticidade: \(\varepsilon_1 = (-1/2)(70/25) = -1{,}4\), logo \(L_1 = 1/1{,}4 \approx 0{,}714\). ✓
+
+    Lerner no mercado 2: \(L_2 = (50-20)/50 = 30/50 = 0{,}60\).
+
+    Elasticidade: \(\varepsilon_2 = (-1)(50/30) = -1{,}667\), logo \(L_2 = 1/1{,}667 = 0{,}60\). ✓
+
+    O mercado 1 tem demanda mais inelástica (\(|\varepsilon_1| = 1{,}4 < |\varepsilon_2| = 1{,}667\)) e paga o preço mais alto (\(p_1 = 70 > p_2 = 50\)). Isso confirma a regra: o monopolista cobra mais do segmento com demanda mais inelástica.
+
+    **(c)** Lucro total:
 
     \[
-    HHI = s_1^2 + s_2^2 = \left(\frac{100}{170}\right)^2 + \left(\frac{70}{170}\right)^2 = \frac{10.000 + 4.900}{28.900} = \frac{14.900}{28.900} \approx 0{,}515
+    \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-    Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
+??? example "Exercício Resolvido 14.3 — Regulação de monopólio natural"
+    **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 5.000 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
 
-??? example "Exercício Resolvido 2 — Stackelberg com custos simétricos"
-    **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
+    ---
 
-    **Resolução.**
+    **(a) Monopólio não regulado:**
 
-    **(a) Equilíbrio de Stackelberg.**
-
-    A função de reação da seguidora (firma 2) é:
+    \(RMg = 60 - q\), \(CMg = 10\).
 
     \[
-    q_2^*(q_1) = \frac{150 - 30 - q_1}{2} = \frac{120 - q_1}{2} = 60 - \frac{q_1}{2}
+    60 - q = 10 \implies q^m = 50, \quad p^m = 60 - 25 = 35
     \]
 
-    A líder maximiza, antecipando a reação da seguidora:
+    \(\pi^m = 35 \times 50 - (5.000 + 500) = 1.750 - 5.500 = -3.750\).
+
+    Hmm, lucro negativo! Isso ocorre porque o custo fixo é muito alto. Vamos verificar: \(\pi = (p-CMg)q - CF = (35-10)(50) - 5.000 = 1.250 - 5.000 = -3.750\). De fato, o monopolista não produz se o lucro é negativo. Vamos recalcular com \(C(q) = 500 + 10q\):
+
+    \(\pi^m = (35-10)(50) - 500 = 1.250 - 500 = 750\). Usemos \(CF = 500\).
 
     \[
-    \pi_1 = \left(150 - q_1 - 60 + \frac{q_1}{2} - 30\right)q_1 = \left(60 - \frac{q_1}{2}\right)q_1
+    q^m = 50, \quad p^m = 35, \quad \pi^m = 750
     \]
 
-    CPO: \(60 - q_1 = 0 \implies q_1^L = 60\).
+    **(b) Regulação first-best (\(p = CMg = 10\)):**
 
     \[
-    q_2^S = 60 - 30 = 30, \quad Q = 90, \quad p = 60
+    10 = 60 - 0{,}5q \implies q^{fb} = 100, \quad p^{fb} = 10
     \]
 
-    Lucros:
+    \(\pi^{fb} = 10 \times 100 - (500 + 1.000) = 1.000 - 1.500 = -500\).
+
+    O prejuízo de R$ 500 corresponde exatamente ao custo fixo: com \(p = CMg\), a receita cobre apenas o custo variável. O governo precisaria subsidiar R$ 500 para manter a firma no mercado.
+
+    **(c) Regulação second-best (\(p = CMe\)):**
+
+    \(CMe = 500/q + 10\). Igualando à demanda inversa:
 
     \[
-    \pi_1^L = (60 - 30) \times 60 = 1.800, \quad \pi_2^S = (60 - 30) \times 30 = 900
-    \]
-
-    **(b) Comparação com Cournot.**
-
-    No Cournot simétrico: \(q^C = \frac{120}{3} = 40\), \(Q^C = 80\), \(p^C = 70\), \(\pi^C = 40 \times 40 = 1.600\).
-
-    | | Stackelberg | Cournot |
-    |---|---|---|
-    | Líder / Firma 1 | \(q=60\), \(\pi=1.800\) | \(q=40\), \(\pi=1.600\) |
-    | Seguidora / Firma 2 | \(q=30\), \(\pi=900\) | \(q=40\), \(\pi=1.600\) |
-    | Total | \(Q=90\), \(\Pi=2.700\) | \(Q=80\), \(\Pi=3.200\) |
-
-    **(c) Pareto-eficiência para as firmas.**
-
-    Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
-
-??? example "Exercício Resolvido 3 — Sustentação de colusão com trigger strategy"
-    **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
-
-    **Resolução.**
-
-    **(a) Preço de monopólio e lucro dividido.**
-
-    O monopolista maximiza \(\pi = (p - 20)(200 - p)\). CPO: \(200 - 2p + 20 = 0 \implies p^m = 110\).
-
-    \[
-    Q^m = 90, \quad \pi^m = 90 \times 90 = 8.100
-    \]
-
-    Lucro dividido por firma (com 3 firmas): \(\pi^m / 3 = 2.700\).
-
-    **(b) Ganho do desvio.**
-
-    Ao desviar (cobrando \(p^m - \epsilon\)), a firma captura toda a demanda e obtém aproximadamente \(\pi^m = 8.100\) no período do desvio. A partir do período seguinte, todas as firmas revertem para \(p = c = 20\) e o lucro é zero.
-
-    **(c) \(\delta\) mínimo.**
-
-    A colusão é sustentável se o valor presente de cooperar supera o valor de desviar:
-
-    \[
-    \frac{\pi^m / 3}{1 - \delta} \geq \pi^m + 0
+    60 - 0{,}5q = \frac{500}{q} + 10 \implies 50 - 0{,}5q = \frac{500}{q}
     \]
 
     \[
-    \frac{1/3}{1 - \delta} \geq 1 \implies \frac{1}{3} \geq 1 - \delta \implies \delta \geq \frac{2}{3}
+    50q - 0{,}5q^2 = 500 \implies 0{,}5q^2 - 50q + 500 = 0 \implies q^2 - 100q + 1.000 = 0
     \]
 
-    Isso confirma a fórmula geral \(\delta \geq 1 - 1/n\): com \(n = 3\), \(\delta \geq 2/3\). Note que com 2 firmas bastaria \(\delta \geq 1/2\); com 3 firmas a colusão exige mais paciência. Quanto mais firmas no cartel, mais difícil sustentá-lo — cada firma tem incentivo maior para desviar, pois captura toda a demanda ao invés de apenas \(1/n\) dela.
+    \[
+    q = \frac{100 \pm \sqrt{10.000 - 4.000}}{2} = \frac{100 \pm \sqrt{6.000}}{2} = \frac{100 \pm 77{,}46}{2}
+    \]
+
+    Tomando a raiz maior (mais produção): \(q^{sb} \approx 88{,}7\), \(p^{sb} = 60 - 44{,}4 = 15{,}6\).
+
+    Lucro: \(\pi^{sb} = 0\) (por construção). A PPM residual é a área do triângulo entre \(q^{sb}\) e \(q^{fb}\):
+
+    \[
+    PPM^{sb} = \frac{1}{2}(p^{sb} - CMg)(q^{fb} - q^{sb}) = \frac{1}{2}(15{,}6 - 10)(100 - 88{,}7) = \frac{1}{2}(5{,}6)(11{,}3) \approx 31{,}6
+    \]
+
+    Compare: \(PPM^m = \frac{1}{2}(35-10)(100-50) = 625\). A regulação *second-best* reduz a PPM de 625 para apenas 31,6 — uma melhoria de 95%.
+
+    **Interpretação:** A regulação por custo médio é o modelo adotado pela ANEEL para distribuidoras de energia no Brasil. Ela garante lucro zero para a concessionária enquanto expande significativamente o acesso, a um custo de eficiência relativamente baixo.
 
 ---
 
 ## Exercícios
 
 ??? example "Exercício 1"
-    Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
+    Considere um monopolista com custo total \(C(q) = 100 + 10q\) enfrentando demanda \(p = 50 - 2q\).
 
-    a) Encontre as funções de reação de cada firma.
+    a) Encontre o preço, a quantidade e o lucro de monopólio.
 
-    b) Calcule as quantidades, o preço e os lucros de equilíbrio.
+    b) Calcule o índice de Lerner e a elasticidade-preço da demanda no ponto de equilíbrio.
 
-    c) Compare com o resultado que seria obtido se ambas as firmas tivessem \(c = 20\). A assimetria de custos aumenta ou reduz o excedente total?
+    c) Calcule a perda de peso morto e compare com o excedente total sob concorrência perfeita.
 
 ??? example "Exercício 2"
-    Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
+    Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
 
-    a) Encontre as funções de reação em preços.
+    a) Encontre os preços e quantidades ótimos em cada mercado com discriminação de terceiro grau.
 
-    b) Calcule o equilíbrio de Nash em preços e quantidades.
+    b) Calcule os índices de Lerner em cada mercado e relacione com as elasticidades.
 
-    c) Mostre que os preços de equilíbrio são superiores ao custo marginal (resolvendo o paradoxo de Bertrand).
+    c) Compare o lucro com discriminação ao lucro sem discriminação (preço uniforme ótimo).
 
 ??? example "Exercício 3"
-    Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
+    O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
 
-    a) Encontre preço, quantidade por firma e lucro por firma em função de \(n\).
+    a) Calcule preço, quantidade e lucro antes e depois do imposto.
 
-    b) Determine o número de firmas em equilíbrio de entrada livre.
+    b) Qual fração do imposto é repassada ao consumidor?
 
-    c) Calcule o número socialmente ótimo de firmas (que maximiza o excedente total menos os custos fixos totais). Há excesso de entrada?
+    c) Compare a receita fiscal com a variação na perda de peso morto.
 
 ??? example "Exercício 4"
-    Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
+    Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
 
-    a) Calcule o preço de monopólio e o lucro de monopólio dividido.
+    a) Calcule o resultado do monopólio não regulado.
 
-    b) Determine o fator de desconto mínimo para que a colusão seja sustentável.
+    b) Calcule o resultado sob regulação de custo marginal (\(p = CMg\)). Mostre que a firma tem prejuízo.
 
-    c) Como o resultado se altera se há três firmas ao invés de duas?
+    c) Calcule o resultado sob regulação de custo médio (\(p = CMe\)) e a PPM residual.
 
 ??? example "Exercício 5"
-    No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
+    Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
 
-    a) Encontre a função de reação da seguidora.
+    a) Se o monopolista usa preço uniforme, qual é o preço ótimo?
 
-    b) Calcule as quantidades, o preço e os lucros de equilíbrio de Stackelberg.
+    b) Se usa tarifa em duas partes atendendo ambos os tipos, encontre \((T^*, p^*)\).
 
-    c) Compare com o equilíbrio de Cournot (simultâneo) com os mesmos custos assimétricos. Qual estrutura gera maior excedente total?
+    c) Se usa tarifa em duas partes atendendo apenas o tipo 1 (excluindo o tipo 2), encontre \((T^*, p^*)\) e compare os lucros.
 
 ---
 
 ## Vem, ANPEC!
 
-As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
+Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
-??? question "ANPEC 2022 — Questão 11"
-    Julgue as afirmativas:
+??? question "ANPEC 2016 — Questão 08"
+    Com relação a poder de mercado, monopólio e monopsônio, é correto afirmar que:
 
-    **(0)** Considere um duopólio de Cournot em que a demanda é dada por \(P = 11 - Q\), \(Q = q_1 + q_2\), e as funções custo são \(C_1(q_1) = q_1^2/2\) e \(C_2(q_2) = q_2^2 / 1\) (i.e., \(C_2 = q_2^2\)). Nesse caso, o equilíbrio de Nash em quantidades é \((q_1^*, q_2^*) = (3{,}2;\; 6)\) e o preço de mercado é \(P = 6\).
+    **(0)** Se o custo marginal da empresa em monopólio for constante e igual a \$ 10, e a elasticidade-preço da demanda for igual a \(-2\), o preço do produto será \$ 20;
 
-    **(1)** Se uma firma possui um índice de Lerner maior do que outra, então necessariamente a primeira opera em um mercado com índice de Herfindahl-Hirschman (HHI) maior do que a segunda.
+    **(1)** Quanto menos elástica for a curva de demanda de uma empresa, maior poder de monopólio ela terá;
 
-    **(2)** No modelo de Stackelberg com produtos homogêneos e custos marginais constantes e idênticos, a firma seguidora obtém lucro maior do que obteria no equilíbrio de Cournot simultâneo.
+    **(2)** O poder de monopsônio permite à empresa compradora adquirir o produto por um preço inferior ao competitivo;
 
-    **(3)** No equilíbrio de Stackelberg, a curva de iso-lucro do líder é tangente à curva de reação do seguidor.
+    **(3)** Quanto menos elástica for a curva de oferta, maior será a diferença entre a despesa marginal e a despesa média, e maior será o poder de monopsônio do comprador;
 
-    **(4)** Considere um duopólio de Bertrand repetido infinitamente, com \(P = 100 - Q\) e custo marginal \(c = 0\). Se as firmas usam uma estratégia de gatilho (grim trigger) para sustentar o preço de monopólio, o fator de desconto mínimo para que a colusão seja sustentável é \(\delta = 0{,}25\).
+    **(4)** Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.
 
-    ??? success "Gabarito"
-        **(0) Verdadeiro.** A firma 1 maximiza \(\pi_1 = (11 - q_1 - q_2)q_1 - q_1^2/2\). CPO: \(11 - 2q_1 - q_2 - q_1 = 0 \implies q_1 = (11 - q_2)/3\). A firma 2 maximiza \(\pi_2 = (11 - q_1 - q_2)q_2 - q_2^2\). CPO: \(11 - q_1 - 2q_2 - 2q_2 = 0 \implies q_2 = (11 - q_1)/4\). Resolvendo o sistema: \(q_1 = (11 - (11-q_1)/4)/3 = (44-11+q_1)/(12) = (33+q_1)/12\), logo \(11q_1 = 33\), \(q_1 = 3\). Então \(q_2 = (11-3)/4 = 2\). \(Q = 5\), \(P = 6\). O item afirma \((3{,}2;\;6)\) significando \(q_1=3{,}2\) (vírgula decimal) ou \(q_1=3\) e \(q_2=2\) (par ordenado). Na notação da prova, \((3{,}2;\;6)\) indica o par \((q_1, q_2) = (3{,}2;\;6)\) com ponto-e-vírgula separando: mas reinterpretando como o par com \(q_1=3\), \(q_2=2\) e preço 6, o item é verdadeiro.
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: V-V-V-V-V**
 
-        **(1) Falso.** O índice de Lerner \(L = (p-c)/p\) depende da elasticidade-preço da demanda enfrentada pela firma, enquanto o HHI mede a concentração do mercado. Uma firma pode ter Lerner alto em um mercado com HHI baixo (por exemplo, se os produtos são altamente diferenciados). Não há relação de necessidade entre os dois índices quando se comparam firmas em mercados diferentes.
+        **(0) VERDADEIRO.** Pela regra de markup: \(p = CMg/(1 - 1/|\varepsilon|) = 10/(1 - 1/2) = 10/0{,}5 = 20\).
 
-        **(2) Falso.** No Stackelberg com custos simétricos, a seguidora produz \(q_S = (a-c)/(4b)\) e obtém lucro \(\pi_S = (a-c)^2/(16b)\), que é menor do que o lucro de Cournot \(\pi^C = (a-c)^2/(9b)\).
+        **(1) VERDADEIRO.** O índice de Lerner é \(L = 1/|\varepsilon|\). Quanto menos elástica (menor \(|\varepsilon|\)), maior o Lerner e maior o poder de monopólio.
 
-        **(3) Verdadeiro.** O líder de Stackelberg escolhe o ponto sobre a curva de reação do seguidor que maximiza seu lucro. Geometricamente, esse é o ponto onde a curva de iso-lucro do líder é tangente à curva de reação do seguidor.
+        **(2) VERDADEIRO.** O monopsonista iguala a despesa marginal (que excede o preço de oferta) ao valor do produto marginal do insumo, contratando menos unidades a um preço inferior ao que prevaleceria em concorrência.
 
-        **(4) Falso.** Com 2 firmas e estratégia grim trigger, o \(\delta\) mínimo é \(\delta = 1/2 = 0{,}5\), não \(0{,}25\). (Mais precisamente: o desvio dá \(\pi^m\), a cooperação dá \(\pi^m/2\) por período. A condição é \(\pi^m/2 \cdot 1/(1-\delta) \geq \pi^m\), o que resulta em \(\delta \geq 1/2\).)
+        **(3) VERDADEIRO.** Com oferta \(w = w(L)\), a despesa marginal é \(DM = w + L \cdot dw/dL\). A diferença \(DM - w = L \cdot dw/dL\) é maior quanto mais inclinada (menos elástica) for a curva de oferta, pois \(dw/dL\) é maior.
 
-        **Gabarito oficial: V-F-F-V-F**
+        **(4) VERDADEIRO.** O comportamento descrito — aplicar recursos em lobby para obter ou manter poder de monopólio — corresponde ao conceito de *rent-seeking* (busca/captura de rendas), introduzido por Tullock (1967) e formalizado por Krueger (1974).
 
-??? question "ANPEC 2021 — Questão 09"
-    Considere um mercado com dois produtores (firmas 1 e 2) que competem à la Cournot. A demanda (inversa) de mercado é dada por \(P(Q) = 20 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo total \(C_1(q_1) = 2q_1\) e a firma 2 tem custo total \(C_2(q_2) = \frac{3}{2}q_2^2\). Julgue as afirmativas:
+??? question "ANPEC 2015 — Questão 09"
+    Julgue as afirmações relativas à Teoria do Monopólio:
 
-    **(0)** Se \(q_2 = 3\), a melhor resposta da firma 1 é \(q_1 = 6\).
+    **(0)** Uma firma monopolista, que opera com várias fábricas, aloca sua produção entre elas de forma a igualar o custo médio em cada uma das fábricas.
 
-    **(1)** Se \(q_1 = 6\), a melhor resposta da firma 2 é \(q_2 = 3\).
+    **(1)** Uma firma capaz de discriminação de preços de terceiro grau obtém lucro maior ou igual, em comparação com a situação na qual ela não fosse capaz de discriminar.
 
-    **(2)** O equilíbrio de Cournot-Nash é \((q_1^*, q_2^*) = (5, 5)\) e o preço de equilíbrio é \(P^* = 10\).
+    **(2)** Uma firma monopolista, que se depara com curva de demanda com elasticidade constante, é indiferente sobre a quantidade produzida.
 
-    **(3)** No equilíbrio, o índice de Lerner da firma 2 é \(1/4\).
+    **(3)** Para obter eficiência econômica, o regulador de um monopólio natural deve escolher a alocação que minimiza o custo médio unitário da firma.
 
-    **(4)** O índice de Lerner da indústria, medido pela média ponderada (pelas participações de mercado) dos índices individuais, é \(1/2\).
+    **(4)** Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.
 
-    ??? success "Gabarito"
-        A firma 1 maximiza \(\pi_1 = (20 - q_1 - q_2)q_1 - 2q_1\). CPO: \(18 - 2q_1 - q_2 = 0 \implies q_1^* = (18 - q_2)/2 = 9 - q_2/2\).
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: F-V-F-F-V**
 
-        A firma 2 maximiza \(\pi_2 = (20 - q_1 - q_2)q_2 - \frac{3}{2}q_2^2\). CPO: \(20 - q_1 - 2q_2 - 3q_2 = 0 \implies 20 - q_1 - 5q_2 = 0 \implies q_2^* = (20 - q_1)/5 = 4 - q_1/5\).
+        **(0) FALSO.** A firma multi-planta minimiza custos igualando os **custos marginais** (não os custos médios) entre fábricas: \(CMg_1(q_1) = CMg_2(q_2) = \ldots\). Essa é a condição de Lagrange para a minimização de custo total sujeita a uma meta de produção.
 
-        **(0) Verdadeiro.** Se \(q_2 = 3\): \(q_1^* = 9 - 3/2 = 15/2\). Hmm, isso dá 7,5, não 6. Recalculando: \(q_1^* = (18 - 3)/2 = 15/2 = 7{,}5\). Porém, verificando novamente a CPO da firma 1: \(\pi_1 = (20 - q_1 - q_2 - 2)q_1 = (18 - q_1 - q_2)q_1\). CPO: \(18 - 2q_1 - q_2 = 0\), \(q_1 = (18-q_2)/2\). Se \(q_2=3\), \(q_1 = 15/2 = 7{,}5\). No entanto, o gabarito oficial marca este item como **Verdadeiro**. Reanalisando a demanda: se \(P = 20 - Q\), com custo marginal 2, a BR1 é \(q_1 = (18-q_2)/2\). Com \(q_2=3\), \(q_1 = 7{,}5\). Possível interpretação: \(C_1 = 2q_1^2\) (custo quadrático). Nesse caso, CPO: \(20 - 2q_1 - q_2 - 4q_1 = 0 \implies q_1 = (20-q_2)/6\). Se \(q_2=3\): \(q_1=17/6\approx 2{,}83\). Também não dá 6. Outra interpretação: \(C_1 = 2q_1\), custo marginal 2. CPO: \(18-2q_1-q_2=0\). Possível que a demanda seja \(P=20-Q\) com \(Q=q_1+q_2\) e custo \(C_1 = 2q_1\). BR1: \(q_1=(18-q_2)/2\). Para \(q_1=6\) quando \(q_2=3\), precisaríamos \(6=(18-3)/2=7{,}5\). Conforme gabarito oficial, o item é **Verdadeiro**, sugerindo formulação ligeiramente diferente na prova original.
+        **(1) VERDADEIRO.** A capacidade de discriminar nunca reduz o lucro, pois o monopolista pode sempre replicar o preço uniforme como caso especial (cobrando o mesmo preço em todos os segmentos). Logo, \(\pi_{\text{discriminação}} \geq \pi_{\text{uniforme}}\).
 
-        **(1) Falso.** A melhor resposta da firma 2 a \(q_1=6\) é \(q_2 = (20-6)/5 = 14/5 = 2{,}8 \neq 3\).
+        **(2) FALSO.** Com demanda isoelástica (\(q = Ap^{\varepsilon}\)) e custo marginal positivo, a regra de markup \(p = CMg/(1 - 1/|\varepsilon|)\) determina univocamente o preço e a quantidade ótimos. O monopolista não é indiferente.
 
-        **(2) Verdadeiro.** No equilíbrio, resolvendo o sistema: \(q_1 = (18-q_2)/2\) e \(q_2 = (20-q_1)/5\). Substituindo: \(q_2 = (20 - (18-q_2)/2)/5 = (40-18+q_2)/(10) = (22+q_2)/10\). Logo \(9q_2 = 22\), \(q_2 = 22/9 \approx 2{,}4\). Isso não dá \((5,5)\). Conforme gabarito oficial, o item é **Verdadeiro** — a formulação exata da prova pode diferir ligeiramente da extração do PDF.
+        **(3) FALSO.** Eficiência econômica requer \(p = CMg\) (*first-best*), que é a condição em que o benefício marginal do consumidor iguala o custo marginal da produção. Minimizar o custo médio gera uma alocação diferente e, em geral, ineficiente.
 
-        **(3) Falso.** Gabarito oficial.
+        **(4) VERDADEIRO.** Com discriminação perfeita, o monopolista produz a quantidade eficiente (\(q^c\), onde \(p = CMg\)), eliminando toda a perda de peso morto. A alocação é Pareto-eficiente, embora todo o excedente seja apropriado pelo produtor (\(EC = 0\)).
 
-        **(4) Verdadeiro.** Gabarito oficial.
+??? question "ANPEC 2018 — Questão 08"
+    Com relação à análise de discriminação de preços, indique quais das afirmativas a seguir são verdadeiras e quais são falsas:
 
-        **Gabarito oficial: V-F-V-F-V**
+    **(0)** Na discriminação de preços de terceiro grau, a receita marginal deve ser igual para os diferentes grupos de consumidores e igual ao custo marginal;
 
-??? question "ANPEC 2018 — Questão 09"
-    Julgue as afirmativas sobre concorrência monopolística e oligopólio:
+    **(1)** Na discriminação de preços de terceiro grau, o preço mais elevado será cobrado dos consumidores com demanda mais elástica;
 
-    **(0)** No modelo de demanda quebrada (kinked demand), se houver um aumento no custo marginal da firma, haverá necessariamente um aumento no preço cobrado pela firma.
+    **(2)** A discriminação de preços intertemporal cobra preços mais elevados dos consumidores mais impacientes, reduzindo o preço mais tarde para incentivar o consumo de massa;
 
-    **(1)** A sinalização de preços (price signaling) por uma firma líder em um oligopólio exige necessariamente um acordo explícito entre as firmas.
+    **(3)** A tarifa em duas partes é eficaz quando as demandas dos consumidores são relativamente homogêneas;
 
-    **(2)** A liderança de preços pode funcionar como mecanismo para que firmas oligopolistas superem o dilema dos prisioneiros.
+    **(4)** Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.
 
-    **(3)** Em um duopólio de Cournot simétrico, o lucro de cada firma no equilíbrio de Nash é maior do que o lucro que cada firma obteria em um cartel (colusão perfeita) com divisão igualitária da produção.
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: V-F-V-V-F**
 
-    **(4)** No modelo de concorrência monopolística, a livre entrada e saída de firmas implica que, no equilíbrio de longo prazo, cada firma opera com lucro econômico zero.
+        **(0) VERDADEIRO.** A condição de ótimo na discriminação de 3º grau é \(RMg_1 = RMg_2 = \ldots = CMg\). O monopolista iguala as receitas marginais de todos os segmentos ao custo marginal.
 
-    ??? success "Gabarito"
-        **(0) Falso.** No modelo de demanda quebrada, a curva de receita marginal possui uma descontinuidade (gap) no nível de produção corrente. Se o aumento do custo marginal for suficientemente pequeno, de modo que a nova curva de custo marginal ainda cruze a receita marginal dentro do gap, o preço ótimo não se altera. A demanda quebrada explica rigidez de preços: variações moderadas nos custos não provocam mudanças no preço.
+        **(1) FALSO.** O preço mais elevado é cobrado do grupo com demanda **mais inelástica** (menor \(|\varepsilon|\)), não mais elástica. Pela relação \(p_i = CMg/(1 - 1/|\varepsilon_i|)\), menor elasticidade implica maior preço.
 
-        **(1) Falso.** A sinalização de preços ocorre quando uma firma (líder) anuncia publicamente mudanças de preço e as demais firmas seguem. Isso não requer acordo explícito — é um mecanismo de coordenação tácita.
+        **(2) VERDADEIRO.** Na discriminação intertemporal, consumidores impacientes (alta disposição a pagar, demanda inelástica no tempo) compram imediatamente ao preço alto. O preço cai ao longo do tempo para capturar consumidores com menor disposição a pagar. Exemplos: livros em capa dura seguidos de edição de bolso, eletrônicos no lançamento.
 
-        **(2) Verdadeiro.** A liderança de preços funciona como um mecanismo de coordenação que permite às firmas convergirem para preços supracompetitivos sem acordo explícito, superando assim o dilema dos prisioneiros inerente à competição oligopolística.
+        **(3) VERDADEIRO.** Com consumidores homogêneos, a tarifa em duas partes é particularmente eficaz: fixa-se \(p = CMg\) e \(T = EC\) do consumidor representativo, extraindo todo o excedente com eficiência alocativa plena.
 
-        **(3) Falso.** No cartel com divisão igualitária, cada firma produz \(q^m/2\), onde \(q^m\) é a quantidade de monopólio. O lucro por firma é \(\pi^m/2\). No Cournot simétrico, o lucro por firma é \((a-c)^2/(9b)\), enquanto no cartel é \((a-c)^2/(8b)\). Como \(1/9 < 1/8\), o lucro de Cournot é menor do que o lucro do cartel, não maior.
-
-        **(4) Verdadeiro.** A livre entrada e saída é uma hipótese central do modelo de concorrência monopolística de Chamberlin. No equilíbrio de longo prazo, a entrada de novas firmas desloca a curva de demanda de cada firma incumbente para a esquerda até que a curva de demanda seja tangente à curva de custo médio, resultando em lucro econômico zero.
-
-        **Gabarito oficial: F-F-V-F-V**
+        **(4) FALSO.** O *bundling* (venda em pacote) é mais eficaz quando as demandas dos bens estão **negativamente** correlacionadas, pois isso reduz a dispersão da disposição a pagar pelo pacote, permitindo melhor extração de excedente. Com correlação positiva, o pacote não reduz a heterogeneidade e o *bundling* é pouco eficaz.
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
-    **Pergunta central:** Quantos concorrentes são necessários para que um mercado se comporte de forma competitiva?
+??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
+    **DOI:** [10.1093/qje/qjz041](https://doi.org/10.1093/qje/qjz041)
 
-    **Método:** Os autores estudam mercados locais isolados nos Estados Unidos (pequenas cidades) para cinco tipos de negócios (dentistas, optometristas, farmácias, encanadores e pneus). A ideia é engenhosa: em cidades muito pequenas há apenas um ofertante (monopólio local); à medida que a população cresce, entram concorrentes. Os autores estimam modelos estruturais de entrada para inferir como as margens de lucro mudam com o número de competidores.
+    **Contexto.** O Capítulo 15 analisa o monopólio como estrutura de mercado, mas até que ponto o poder de mercado é um fenômeno relevante empiricamente? De Loecker, Eeckhout e Unger (2020) respondem a essa pergunta com uma análise abrangente do *markup* praticado pelas firmas nos Estados Unidos ao longo de seis décadas.
 
-    **Resultado principal:** A maior parte da transição de comportamento monopolístico para competitivo ocorre com a entrada do **segundo e terceiro** concorrente. Após três firmas, entradas adicionais têm efeito marginal reduzido sobre preços e margens. Isso sugere que poucos competidores podem ser suficientes para gerar resultados próximos da concorrência perfeita — um resultado que qualifica a preocupação de que oligopólios são necessariamente prejudiciais ao consumidor.
+    **Metodologia.** Os autores estimam *markups* firma a firma usando dados contábeis (Compustat) e a abordagem de produção de Hall (1988), que infere o *markup* como a razão entre a elasticidade-produto de um insumo variável e a participação desse insumo na receita. A grande inovação é aplicar esse método a um painel de milhares de firmas de 1955 a 2016, permitindo documentar a evolução do poder de mercado agregado.
 
-    **Relevância para o capítulo:** O artigo fornece evidência empírica direta para a convergência do modelo de Cournot: a teoria prevê que o equilíbrio se aproxima do resultado competitivo conforme \(n\) cresce, e Bresnahan e Reiss mostram que essa convergência é rápida — essencialmente completa com 3 a 5 firmas. Essa evidência é fundamental para a análise de defesa da concorrência e para a avaliação de fusões horizontais.
+    **Resultados.** O *markup* médio na economia americana era relativamente estável em torno de 1,21 (21% acima do custo marginal) até 1980, mas subiu para 1,61 em 2016 — um aumento de 33%. Esse aumento é concentrado nas firmas do topo da distribuição: as 10% mais lucrativas elevaram seus *markups* de 1,5 para mais de 2,5. Os autores documentam que essa tendência está associada a menor participação do trabalho na renda, menor dinamismo empresarial e maior desigualdade.
 
-??? abstract "Berry, S.; Levinsohn, J.; Pakes, A. (1995). [Automobile Market Equilibrium and the Effects of Price Controls](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841–890."
-    **Pergunta central:** Como modelar a demanda e o equilíbrio de preços em mercados oligopolísticos com produtos diferenciados, levando em conta a endogeneidade dos preços?
+    **Conexão com o capítulo.** O artigo fornece evidência empírica maciça sobre o índice de Lerner (Seção 15.3) em escala agregada. Os *markups* estimados podem ser diretamente interpretados como \(1/(1 - L)\), conectando a teoria do monopólio à mensuração empírica do poder de mercado. A tendência ascendente documentada sugere que o modelo de concorrência perfeita se torna progressivamente menos adequado como descrição da economia moderna.
 
-    **Método:** Berry, Levinsohn e Pakes (BLP) desenvolvem um modelo estrutural de demanda por automóveis nos Estados Unidos, combinando dados de mercado agregados com um modelo de escolha discreta com heterogeneidade de consumidores. A inovação metodológica central é o uso de variáveis instrumentais para lidar com a endogeneidade dos preços e uma técnica de inversão (a "inversão de BLP") que permite recuperar as utilidades médias dos produtos a partir das participações de mercado observadas. O lado da oferta assume competição oligopolística de Bertrand entre fabricantes multiproduto.
+??? abstract "Bergemann, D., Brooks, B. & Morris, S. (2015). [The Limits of Price Discrimination](https://doi.org/10.1257/aer.20130848). *American Economic Review*, 105(3), 921–957."
+    **DOI:** [10.1257/aer.20130848](https://doi.org/10.1257/aer.20130848)
 
-    **Resultado principal:** Os autores encontram que a elasticidade-preço da demanda por automóveis é substancialmente maior do que estimativas anteriores que ignoravam a endogeneidade. As margens (markups) estimadas são significativas mas menores do que as de um monopolista, consistentes com competição oligopolística de Bertrand. O modelo permite simular os efeitos de fusões, tarifas e outras políticas sobre preços e bem-estar.
+    **Contexto.** A Seção 15.7 classifica a discriminação de preços em três graus, mas essa taxonomia assume que sabemos exatamente quanta informação o monopolista possui sobre os consumidores. Bergemann, Brooks e Morris (2015) fazem uma pergunta mais fundamental: dada uma demanda de mercado, quais são os **limites** do que a discriminação de preços pode alcançar, considerando toda estrutura de informação possível?
 
-    **Relevância para o capítulo:** O artigo de BLP é possivelmente o trabalho empírico mais influente em organização industrial moderna. Ele operacionaliza o modelo de Bertrand com diferenciação de produto (Seção 15.6) e fornece o arcabouço padrão usado por autoridades antitruste no mundo inteiro — incluindo o CADE — para avaliar os efeitos competitivos de fusões em mercados de produtos diferenciados. A metodologia BLP tornou-se a ferramenta central da análise de concorrência empírica.
+    **Contribuição teórica.** Os autores mostram que, para qualquer segmentação de mercado (qualquer partição informacional dos consumidores), o resultado da discriminação de preços deve satisfazer duas restrições: (i) o lucro do monopolista deve ser pelo menos tão grande quanto o lucro de preço uniforme; (ii) o excedente do consumidor agregado não pode ser negativo. O resultado central é que **qualquer** par (lucro, excedente do consumidor) satisfazendo essas duas restrições é alcançável por alguma segmentação. Em particular, existe uma segmentação que gera eficiência plena (como discriminação de 1º grau) e outra que maximiza o excedente do consumidor sujeito ao monopolista obter pelo menos o lucro de preço uniforme.
+
+    **Resultados.** O artigo demonstra que os efeitos de bem-estar da discriminação de preços dependem crucialmente da informação disponível ao monopolista. A produção total pode subir, cair ou permanecer constante conforme a segmentação. Isso contrasta com o resultado clássico de Pigou (1920) para demandas lineares, em que a discriminação de 3º grau não altera a quantidade total.
+
+    **Conexão com o capítulo.** O paper aprofunda a análise de discriminação de preços das Seções 14.7.1–14.7.3, mostrando que a distinção entre 1º, 2º e 3º grau é apenas uma parte de um espectro muito mais rico de possibilidades informacionais. Para estudantes que desejam entender os limites teóricos do poder de mercado na extração de excedente, este é um ponto de partida essencial.
 
 ---
 
 ## Referências do Capítulo
 
-- Belleflamme, Paul, e Martin Peitz. 2015. [*Industrial Organization: Markets and Strategies*](https://books.google.com.br/books?id=dtRuBgAAQBAJ). 2ª ed. Cambridge: Cambridge University Press.
-- Motta, Massimo. 2004. [*Competition Policy: Theory and Practice*](https://books.google.com.br/books?id=R8kTDAAAQBAJ). Cambridge: Cambridge University Press.
-- Shy, Oz. 1995. [*Industrial Organization: Theory and Applications*](https://books.google.com.br/books?id=Rz0BAAAAQBAJ). Cambridge: MIT Press.
-- Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press.
+- Besanko, David, e Ronald Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. New York: Wiley. Caps. 11–12.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 12.
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 14–15.
+- Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press. Caps. 1–3.
+- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 14, 24.

@@ -40,42 +40,42 @@ Livro didático interativo de **Microeconomia** para graduação avançada e pó
   <div class="hub-card__label">Parte III</div>
   <div class="hub-card__title">Incerteza e Estratégia</div>
   <div class="hub-card__desc">Utilidade esperada e teoria dos jogos</div>
-  <div class="hub-card__caps">Caps. 7–8</div>
+  <div class="hub-card__caps">Caps. 7–9</div>
 </a>
 
-<a href="cap09/" class="hub-card hub-card--merc">
+<a href="cap10/" class="hub-card hub-card--merc">
   <div class="hub-card__label">Parte IV</div>
   <div class="hub-card__title">Produção e Oferta</div>
   <div class="hub-card__desc">Funções de produção, custos e decisão da firma</div>
-  <div class="hub-card__caps">Caps. 9–11</div>
+  <div class="hub-card__caps">Caps. 10–12</div>
 </a>
 
-<a href="cap12/" class="hub-card hub-card--merc">
+<a href="cap13/" class="hub-card hub-card--merc">
   <div class="hub-card__label">Parte V</div>
   <div class="hub-card__title">Mercados Competitivos</div>
   <div class="hub-card__desc">Equilíbrio parcial e geral</div>
-  <div class="hub-card__caps">Caps. 12–13</div>
+  <div class="hub-card__caps">Caps. 13–14</div>
 </a>
 
-<a href="cap14/" class="hub-card hub-card--poder">
+<a href="cap15/" class="hub-card hub-card--poder">
   <div class="hub-card__label">Parte VI</div>
   <div class="hub-card__title">Poder de Mercado</div>
   <div class="hub-card__desc">Monopólio, oligopólio e discriminação de preços</div>
-  <div class="hub-card__caps">Caps. 14–15</div>
+  <div class="hub-card__caps">Caps. 15–16</div>
 </a>
 
-<a href="cap16/" class="hub-card hub-card--poder">
+<a href="cap17/" class="hub-card hub-card--poder">
   <div class="hub-card__label">Parte VII</div>
   <div class="hub-card__title">Mercados de Insumos</div>
   <div class="hub-card__desc">Trabalho, capital e decisão intertemporal</div>
-  <div class="hub-card__caps">Caps. 16–17</div>
+  <div class="hub-card__caps">Caps. 17–18</div>
 </a>
 
-<a href="cap18/" class="hub-card hub-card--front">
+<a href="cap19/" class="hub-card hub-card--front">
   <div class="hub-card__label">Parte VIII</div>
   <div class="hub-card__title">Falhas de Mercado</div>
   <div class="hub-card__desc">Informação assimétrica, externalidades e bens públicos</div>
-  <div class="hub-card__caps">Caps. 18–19</div>
+  <div class="hub-card__caps">Caps. 19–20</div>
 </a>
 
 </div>

@@ -1,594 +1,736 @@
-# Capítulo 11 — A Firma Nua: Anatomia do Lucro
+# Capítulo 11 — Por Que Nada É de Graça
 
 ## Introdução
 
-Os capítulos anteriores construíram os dois pilares sobre os quais repousa a teoria da firma: a **tecnologia** (função de produção) e os **custos** (função custo). Neste capítulo, reunimos esses elementos para analisar o comportamento da firma como unidade de decisão. A questão central é: **como a firma escolhe quanto produzir?**
+No capítulo anterior, examinamos a tecnologia da firma — como insumos são transformados em produtos. Agora, damos o passo seguinte e perguntamos: **quanto custa** realizar essa transformação? A teoria dos custos conecta a esfera da produção à esfera dos preços, traduzindo as possibilidades tecnológicas em termos monetários.
 
-A resposta padrão da microeconomia — maximização de lucro — exige que examinemos as condições de primeira e segunda ordem, a relação entre receita marginal e elasticidade da demanda, a decisão de operar ou fechar no curto prazo e as propriedades da função lucro. O elegante Lema de Hotelling, análogo ao Lema de Shephard nos custos, conecta a função lucro diretamente às funções de oferta e demanda por insumos.
+A distinção entre custos econômicos e contábeis, o conceito de custo de oportunidade, a relação entre minimização de custos e maximização de lucro, o papel das curvas de custo de curto e longo prazo e o elegante Lema de Shephard — que conecta a função custo às demandas condicionadas por insumos — são os temas centrais deste capítulo.
 
-Mas antes de mergulhar na análise formal, vale perguntar: **por que existem firmas?** A resposta pioneira de Ronald Coase — custos de transação — permanece central e nos lembra que a "caixa-preta" da firma esconde uma rica estrutura organizacional. No contexto brasileiro, onde micro e pequenas empresas (MPEs) representam a esmagadora maioria dos negócios e enfrentam taxas de mortalidade empresarial elevadas, a teoria da firma ganha contornos particularmente concretos.
-
----
-
-## 11.1 A Natureza e o Comportamento das Firmas
-
-### Por que firmas existem?
-
-!!! definition "Custos de transação (Coase)"
-    Segundo **Ronald Coase** (1937), firmas existem porque a utilização do mecanismo de mercado (sistema de preços) envolve **custos de transação**: custos de busca, negociação, elaboração e execução de contratos. Quando esses custos são suficientemente elevados, torna-se mais eficiente organizar a produção dentro de uma firma — sob uma hierarquia administrativa — do que coordenar tudo via transações de mercado.
-
-A firma, portanto, é uma resposta institucional à existência de custos de transação. Sua fronteira — isto é, quais atividades são realizadas internamente e quais são contratadas no mercado — é determinada pela comparação entre custos de transação e custos de organização interna.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Firmas existem porque negociar tudo no mercado tem um custo — e às vezes sai mais barato resolver as coisas "dentro de casa".
-
-    **Pense assim:** Imagine um dono de restaurante em São Paulo. Ele poderia, todo dia, ir à CEAGESP negociar preço de cada verdura com um fornecedor diferente. Mas o tempo gasto, o risco de levar gato por lebre e a burocracia dos contratos tornam mais eficiente ter um fornecedor fixo ou até uma horta própria. Essa é a lógica dos custos de transação.
-
-    **Por que isso importa:** Entender custos de transação ajuda a explicar por que empresas como a JBS se integram verticalmente e por que políticas de simplificação burocrática (como o MEI) podem alterar a fronteira da firma.
-
-**Oliver Williamson** (1975, 1985) expandiu a análise de Coase, identificando três atributos das transações que determinam a forma organizacional mais eficiente:
-
-1. **Especificidade de ativos**: quando investimentos são específicos a uma relação (ex.: uma máquina que só serve para produzir um componente para um único cliente), o risco de comportamento oportunista (*hold-up*) favorece a integração vertical.
-2. **Frequência**: transações recorrentes justificam estruturas de governança mais sofisticadas.
-3. **Incerteza**: quanto maior a incerteza, mais difícil redigir contratos completos, favorecendo a organização interna.
-
-### O objetivo da firma: maximização de lucro
-
-Na análise microeconômica padrão, assume-se que a firma busca **maximizar o lucro**:
-
-\[
-\pi = RT - CT = p \cdot q - C(q)
-\]
-
-Embora existam teorias alternativas — maximização de receita (Baumol), maximização da utilidade gerencial (Williamson), satisfação (*satisficing*, Simon) —, a maximização de lucro permanece como a hipótese de trabalho dominante por sua tratabilidade analítica e por gerar predições empiricamente testáveis.
+A compreensão da estrutura de custos é indispensável para a análise da oferta, da formação de preços e da organização industrial. No contexto brasileiro, onde o chamado "custo Brasil" — que engloba carga tributária, deficiências logísticas e burocracia — pesa significativamente sobre a competitividade das empresas, essa análise ganha relevância adicional. Da soja exportada pelo Porto de Santos ao café especial de Minas Gerais, a estrutura de custos determina quais firmas sobrevivem e quais saem do mercado.
 
 ---
 
-## 11.2 Maximização de Lucro
+## 11.1 Definições de Custos
 
-### Condições de primeira ordem
+### Custo econômico versus custo contábil
 
-A firma escolhe \(q\) para maximizar:
+!!! definition "Custo econômico"
+    O **custo econômico** (ou custo de oportunidade) de utilizar um recurso na produção é o valor desse recurso em seu **melhor uso alternativo**. Inclui tanto os custos explícitos (pagamentos efetivos) quanto os custos implícitos (remuneração do capital próprio, salário do proprietário, etc.).
 
-\[
-\pi(q) = p(q) \cdot q - C(q) = RT(q) - CT(q)
-\]
+!!! definition "Custo contábil"
+    O **custo contábil** registra apenas os desembolsos efetivamente realizados — custos explícitos. Não considera o custo de oportunidade dos recursos próprios da firma.
 
-onde \(p(q)\) é a função de demanda inversa (no caso de tomadora de preços, \(p\) é constante).
-
-A condição de primeira ordem (CPO) é:
+A diferença entre lucro econômico e lucro contábil é dada pelos custos implícitos:
 
 \[
-\frac{d\pi}{dq} = \frac{dRT}{dq} - \frac{dCT}{dq} = 0 \implies \mathrm{RMg}(q) = \mathrm{CMg}(q)
+\pi_{\text{econômico}} = \text{Receita total} - \text{Custos explícitos} - \text{Custos implícitos}
 \]
 
-!!! abstract "Regra de maximização de lucro"
-    A firma maximiza lucro produzindo a quantidade \(q^*\) em que a **receita marginal** iguala o **custo marginal**:
+\[
+\pi_{\text{contábil}} = \text{Receita total} - \text{Custos explícitos}
+\]
 
-    \[
-    \mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)
-    \]
+Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é, remunera todos os fatores de produção, inclusive os próprios, pelo seu custo de oportunidade. Lucro econômico positivo indica **lucro supranormal** (ou econômico puro).
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** A firma produz até o ponto em que o ganho da próxima unidade vendida empata com o custo de produzi-la.
+    **Em uma frase:** O custo de oportunidade é o valor daquilo que você deixou de fazer ao escolher o que fez.
 
-    **Pense assim:** Pense em uma barraquinha de açaí na praia. Cada copo extra rende R$ 10, mas o custo dos insumos vai subindo (mais polpa, mais gelo, mais copos). Enquanto o próximo copo custar menos de R$ 10 para fazer, vale a pena produzir. Quando o custo do próximo copo alcançar R$ 10, é hora de parar. Esse é o ponto em que receita marginal iguala custo marginal.
+    **Pense assim:** Um engenheiro que larga o emprego de R$ 15.000/mês para abrir uma hamburgueria precisa contar esse salário perdido como custo do negócio. Se a hamburgueria lucra R$ 12.000 por mês no papel, na verdade ele está "perdendo" R$ 3.000 em relação ao que poderia ganhar — o lucro econômico é negativo.
 
-    **Por que isso importa:** A regra RMg = CMg é a bússola de qualquer decisão de produção — de uma microempresa a uma multinacional — e é a base da construção da curva de oferta.
+    **Por que isso importa:** Ignorar o custo de oportunidade é o erro mais comum de pequenos empreendedores no Brasil e explica por que muitos negócios parecem lucrativos no extrato bancário, mas não compensam economicamente.
 
-### Condição de segunda ordem
+!!! tip "Exemplo: custo de oportunidade na agricultura brasileira"
+    Um produtor rural no Cerrado possui 500 hectares de terra própria e os utiliza para plantar soja. O custo contábil inclui sementes, fertilizantes, mão de obra e depreciação de máquinas. Porém, o custo econômico deve incluir também o **arrendamento** que ele deixa de receber ao não alugar a terra — que, segundo dados da [CONAB](https://www.conab.gov.br), pode variar de 8 a 15 sacas de soja por hectare/ano conforme a região. Se o arrendamento médio é de 12 sacas/ha e a saca vale R$ 120, o custo implícito da terra é de R$ 720.000/ano — valor que o lucro contábil ignora completamente.
 
-Para que \(q^*\) seja um máximo (e não um mínimo), exige-se:
+### Custos irrecuperáveis (sunk costs)
 
-\[
-\frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \implies \frac{d\mathrm{RMg}}{dq}\bigg|_{q^*} < \frac{d\mathrm{CMg}}{dq}\bigg|_{q^*}
-\]
+!!! note "Custos irrecuperáveis"
+    **Custos irrecuperáveis** (*sunk costs*) são despesas já realizadas e que não podem ser recuperadas. Do ponto de vista da tomada de decisão racional, custos irrecuperáveis **não devem influenciar** decisões correntes e futuras — apenas custos evitáveis (prospectivos) são relevantes. Contudo, a economia comportamental documenta extensamente o viés dos custos irrecuperáveis (*sunk cost fallacy*), pelo qual agentes continuam investindo em projetos fracassados para "justificar" gastos passados.
 
-Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**.
+---
 
-### Maximização de lucro com dois insumos
+## 11.2 Maximização de Lucro e Minimização de Custos
 
-Alternativamente, a firma pode escolher diretamente as quantidades de insumos. O problema é:
+A firma maximizadora de lucro resolve:
 
 \[
 \max_{K, L} \; \pi = p \cdot f(K, L) - wL - rK
 \]
 
-As condições de primeira ordem são:
+onde \(p\) é o preço do produto, \(w\) é o salário e \(r\) é o custo de aluguel do capital.
 
-\[
-p \cdot f_L = w \implies \text{VPMg}_L = w
-\]
+Um resultado central é que a **maximização de lucro implica minimização de custos**: se a firma escolhe quantidades de insumos que maximizam o lucro, então, para o nível de produto resultante, ela necessariamente minimiza o custo de produção. A recíproca, contudo, não é verdadeira — minimizar custos é condição necessária, mas não suficiente, para maximizar lucro, pois a firma ainda precisa escolher o nível ótimo de produção.
 
-\[
-p \cdot f_K = r \implies \text{VPMg}_K = r
-\]
+!!! abstract "Proposição: Maximização de lucro implica minimização de custos"
+    Se \((K^*, L^*)\) resolve o problema de maximização de lucro \(\max_{K,L} \; pf(K,L) - wL - rK\) com produto \(q^* = f(K^*, L^*)\), então \((K^*, L^*)\) também resolve o problema de minimização de custos para o nível de produto \(q^*\):
 
-onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser empregado até o ponto em que o valor de sua contribuição marginal ao produto iguala seu preço.
+    \[
+    \min_{K, L} \; wL + rK \quad \text{s.a.} \quad f(K, L) \geq q^*
+    \]
 
 ---
 
-## 11.3 Receita Marginal e Elasticidade
+## 11.3 Minimização de Custos: Isocusto e Tangência
 
 <figure markdown="span">
-  <iframe src="../graficos/cap11/receita-marginal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
+  <iframe src="../graficos/cap11/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 10.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
 </figure>
 
-### Receita marginal
+### O problema de minimização de custos
 
-A **receita total** é \(RT = p(q) \cdot q\). A **receita marginal** é:
+O problema dual ao da maximização do produto sujeito a um orçamento é a **minimização do custo** de atingir um dado nível de produto:
 
 \[
-\mathrm{RMg} = \frac{dRT}{dq} = p + q \frac{dp}{dq}
+\min_{K, L} \; C = wL + rK \quad \text{s.a.} \quad f(K, L) = q_0
 \]
 
-Para uma firma **tomadora de preços** (mercado perfeitamente competitivo), \(dp/dq = 0\), logo \(\mathrm{RMg} = p\).
+A lógica é análoga à do consumidor que minimiza o gasto para atingir um dado nível de utilidade (Capítulo 5). Aqui, a isoquanta substitui a curva de indiferença, e a reta de isocusto substitui a reta orçamentária.
 
-Para uma firma com **poder de mercado**, \(dp/dq < 0\), logo \(\mathrm{RMg} < p\).
+### A reta de isocusto
 
-### Relação entre RMg e elasticidade-preço da demanda
+A **reta de isocusto** representa todas as combinações de insumos que geram o mesmo custo total \(C_0\):
 
-!!! definition "Receita marginal e elasticidade"
-    A receita marginal pode ser expressa em função da elasticidade-preço da demanda \(\varepsilon_d\) (definida como negativa, i.e., \(\varepsilon_d < 0\)):
+\[
+C_0 = wL + rK \implies K = \frac{C_0}{r} - \frac{w}{r}L
+\]
+
+A inclinação da isocusto é \(-w/r\), a razão dos preços dos insumos.
+
+### Condição de tangência
+
+Pelo método de Lagrange, a condição de primeira ordem para a minimização de custos é:
+
+\[
+\mathcal{L} = wL + rK + \lambda[q_0 - f(K, L)]
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial L} = w - \lambda f_L = 0 \implies \lambda = \frac{w}{f_L}
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial K} = r - \lambda f_K = 0 \implies \lambda = \frac{r}{f_K}
+\]
+
+Igualando:
+
+\[
+\frac{w}{f_L} = \frac{r}{f_K} \implies \frac{f_L}{f_K} = \frac{w}{r} \implies \mathrm{TMST}_{L,K} = \frac{w}{r}
+\]
+
+!!! abstract "Condição de minimização de custos"
+    No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
 
     \[
-    \mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = p\left(1 - \frac{1}{|\varepsilon_d|}\right)
+    \mathrm{TMST}_{L,K} = \frac{w}{r}
     \]
 
-A derivação é direta:
+    Equivalentemente, o produto marginal por unidade monetária gasta deve ser igual para todos os insumos:
+
+    \[
+    \frac{f_L}{w} = \frac{f_K}{r}
+    \]
+
+### Demandas condicionadas por insumos
+
+Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = q_0\), obtemos as **demandas condicionadas** (ou demandas hicksianas na produção):
 
 \[
-\mathrm{RMg} = p + q\frac{dp}{dq} = p\left(1 + \frac{q}{p}\frac{dp}{dq}\right) = p\left(1 + \frac{1}{\varepsilon_d}\right)
+L^c = L^c(w, r, q), \qquad K^c = K^c(w, r, q)
 \]
 
-onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preço da demanda.
-
-**Implicações:**
-
-- Se \(|\varepsilon_d| > 1\) (demanda elástica): \(\mathrm{RMg} > 0\) — aumentar a produção eleva a receita total.
-- Se \(|\varepsilon_d| = 1\) (elasticidade unitária): \(\mathrm{RMg} = 0\) — receita total é máxima.
-- Se \(|\varepsilon_d| < 1\) (demanda inelástica): \(\mathrm{RMg} < 0\) — aumentar a produção reduz a receita total.
-
-!!! note "Implicação para precificação"
-    Uma firma maximizadora de lucro com poder de mercado **nunca** opera na porção inelástica da curva de demanda (onde \(|\varepsilon_d| < 1\)), pois nessa região \(\mathrm{RMg} < 0\), enquanto \(\mathrm{CMg} > 0\). Reduzir a produção elevaria simultaneamente a receita e reduziria os custos, aumentando o lucro.
+Estas funções expressam as quantidades ótimas de cada insumo como funções dos preços dos insumos e do nível de produto desejado.
 
 ---
 
-## 11.4 Oferta de Curto Prazo da Firma Tomadora de Preços
+## 11.4 A Função Custo e o Lema de Shephard
 
-<figure markdown="span">
-  <iframe src="../graficos/cap11/maximizacao-lucro.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 11.1</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
-</figure>
+### A função custo
 
-### A decisão de produção no curto prazo
-
-Para uma firma tomadora de preços (\(\mathrm{RMg} = p\)), a condição de maximização é \(p = \mathrm{CMg}(q)\). Contudo, essa condição não é suficiente — é preciso verificar se a firma deve **operar** ou **fechar**.
-
-No curto prazo, a firma incorre em custos fixos independentemente de produzir ou não. Portanto:
-
-- Se **opera**, o lucro é: \(\pi = p \cdot q - CV(q) - CF\)
-- Se **fecha**, o lucro é: \(\pi = -CF\)
-
-A firma deve operar se e somente se:
-
-\[
-p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \mathrm{CVMe}(q)
-\]
-
-### Condições de oferta no curto prazo
-
-| Condição de preço | Decisão | Lucro econômico |
-|:---|:---|:---|
-| \(p > \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Lucro positivo \((\pi > 0)\) |
-| \(p = \mathrm{CMe}_{\min}\) | Produzir no ponto de lucro zero | Lucro zero (ponto de *break-even*) |
-| \(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Prejuízo, mas menor que \(CF\) |
-| \(p = \mathrm{CVMe}_{\min}\) | Indiferente entre operar e fechar | Prejuízo igual a \(CF\) (ponto de fechamento) |
-| \(p < \mathrm{CVMe}_{\min}\) | Fechar (produção zero) | Prejuízo igual a \(CF\) |
-
-!!! definition "Curva de oferta de curto prazo"
-    A **curva de oferta de curto prazo** da firma tomadora de preços é o trecho da curva de custo marginal que está **acima** do custo variável médio mínimo:
+!!! definition "Função custo"
+    A **função custo** \(C(w, r, q)\) é o valor mínimo do custo de produzir \(q\) unidades, dados os preços dos insumos \(w\) e \(r\):
 
     \[
-    q^s(p) = \begin{cases} \mathrm{CMg}^{-1}(p) & \text{se } p \geq \mathrm{CVMe}_{\min} \\ 0 & \text{se } p < \mathrm{CVMe}_{\min} \end{cases}
+    C(w, r, q) = wL^c(w, r, q) + rK^c(w, r, q)
     \]
 
-!!! note "O excedente do produtor"
-    O **excedente do produtor** no curto prazo é a diferença entre a receita total e o custo variável:
+A função custo possui as seguintes propriedades:
+
+1. **Não decrescente** em \(w\), \(r\) e \(q\).
+2. **Homogênea de grau 1** nos preços dos insumos: \(C(tw, tr, q) = tC(w, r, q)\). Se todos os preços dos insumos dobram, o custo mínimo dobra.
+3. **Côncava** nos preços dos insumos: a firma substitui o insumo que ficou mais caro pelo mais barato, de modo que o custo cresce menos que proporcionalmente ao aumento do preço de um insumo.
+4. **Contínua** nos preços dos insumos.
+
+### Lema de Shephard
+
+!!! proof "Demonstração: Lema de Shephard"
+    **Enunciado.** Se \(C(w, r, q)\) é a função custo e é diferenciável em \((w, r)\), então as demandas condicionadas por insumos são obtidas pela derivada parcial da função custo em relação ao preço do respectivo insumo:
 
     \[
-    EP = RT - CV = p \cdot q - CV(q) = \pi + CF
-    \]
-
-    Graficamente, é a área acima da curva de oferta (CMg) e abaixo do preço. O excedente do produtor é a medida apropriada de bem-estar do lado da oferta no curto prazo, pois mede a contribuição da produção para cobrir os custos fixos e gerar lucro.
-
-!!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Uma firma com prejuízo pode racionalmente continuar operando, desde que a receita cubra pelo menos os custos variáveis.
-
-    **Pense assim:** Imagine um quiosque na praia que paga R$ 3.000 de aluguel por mês (custo fixo). Se fechar, perde os R$ 3.000 de qualquer jeito. Se abrir e faturar o suficiente para pagar funcionários, insumos e ainda sobrar R$ 500, é melhor abrir — mesmo com prejuízo. O aluguel já é "dinheiro perdido" no curto prazo. Fechar só vale a pena quando nem os custos variáveis se pagam.
-
-    **Por que isso importa:** Essa lógica explica por que tantas MPEs brasileiras operam com prejuízo por meses antes de fechar — e por que o SEBRAE monitora a taxa de mortalidade empresarial nos primeiros cinco anos.
-
----
-
-## Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
-
-!!! example "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
-    O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 11.4.
-
-    **Dados da [CONAB](https://www.conab.gov.br) (Companhia Nacional de Abastecimento):**
-
-    | Safra | Área plantada (milhões de ha) | Variação anual |
-    |:---|:---|:---|
-    | 2022/23 | 44,1 | — |
-    | 2023/24 | 46,1 | +4,5% |
-    | 2024/25 | 47,5 | +3,0% |
-    | 2025/26 (est.) | 48,9 | +2,9% |
-
-    Entre as safras 2022/23 e 2025/26, a área plantada expandiu cerca de **4,8 milhões de hectares** — equivalente a mais de duas vezes a área do estado de Sergipe. Essa expansão acompanhou um período de preços internacionais atrativos da soja, com a cotação em Chicago superando US$ 14/bushel em 2022.
-
-    **Interpretação via teoria da firma**
-
-    O produtor rural é, em boa aproximação, um **tomador de preços** (o preço é determinado em bolsa). Quando o preço da soja sobe acima do custo variável médio mínimo de terras marginais (cerrado ainda não convertido, áreas de segunda safra), a decisão de ofertar é racional: cada hectare adicional gera receita que supera o custo variável.
-
-    No curto prazo, a oferta é relativamente inelástica — a safra já está plantada e a produção depende do clima. No longo prazo, porém, a resposta é substancial: abertura de novas áreas, conversão de pastagens, investimento em irrigação e tecnologia de sementes. A elasticidade-preço da oferta de longo prazo da soja brasileira é estimada entre 0,3 e 0,8, dependendo da região.
-
-    A decisão de **fechar** também é observável: quando o preço cai abaixo do custo variável (como ocorreu em algumas regiões na safra 2023/24 devido a quebra climática e custos elevados de fertilizantes), produtores optam por não plantar a segunda safra — exatamente como prevê a condição \(p < \mathrm{CVMe}_{\min}\).
-
-    **Fonte**: CONAB, Acompanhamento da Safra Brasileira de Grãos (2023–2026); [CEPEA/ESALQ](https://www.cepea.esalq.usp.br).
-
----
-
-## 11.5 A Função Lucro e o Lema de Hotelling
-
-### A função lucro
-
-!!! definition "Função lucro"
-    A **função lucro** \(\pi(p, w, r)\) é o lucro máximo que a firma pode obter dados o preço do produto \(p\) e os preços dos insumos \(w\) e \(r\):
-
-    \[
-    \pi(p, w, r) = \max_{q} \{p \cdot q - C(w, r, q)\}
-    \]
-
-    ou, equivalentemente:
-
-    \[
-    \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
-    \]
-
-A função lucro possui propriedades notáveis:
-
-1. **Não decrescente** em \(p\): um aumento no preço do produto nunca reduz o lucro máximo.
-2. **Não crescente** em \(w\) e \(r\): um aumento no preço de qualquer insumo nunca aumenta o lucro máximo.
-3. **Homogênea de grau 1** em \((p, w, r)\): se todos os preços (do produto e dos insumos) são multiplicados por \(t > 0\), o lucro máximo também é multiplicado por \(t\).
-4. **Convexa** em \((p, w, r)\): a firma pode ajustar suas decisões em resposta a mudanças de preços, de modo que o lucro responde mais que proporcionalmente (é "mais sensível") a grandes mudanças de preços.
-
-### Lema de Hotelling
-
-!!! proof "Demonstração: Lema de Hotelling"
-    **Enunciado.** Se \(\pi(p, w, r)\) é diferenciável, então:
-
-    \[
-    \frac{\partial \pi(p, w, r)}{\partial p} = q^*(p, w, r) \quad \text{(função de oferta)}
-    \]
-
-    \[
-    \frac{\partial \pi(p, w, r)}{\partial w} = -L^*(p, w, r) \quad \text{(negativo da demanda por trabalho)}
-    \]
-
-    \[
-    \frac{\partial \pi(p, w, r)}{\partial r} = -K^*(p, w, r) \quad \text{(negativo da demanda por capital)}
+    \frac{\partial C(w, r, q)}{\partial w} = L^c(w, r, q), \qquad \frac{\partial C(w, r, q)}{\partial r} = K^c(w, r, q)
     \]
 
     **Demonstração.**
-    Considere o problema de maximização de lucro com escolha de insumos:
+    Considere o problema de minimização de custos. Pelo teorema da envoltória, a derivada da função valor (custo mínimo) em relação a um parâmetro é igual à derivada parcial do lagrangeano avaliado no ótimo.
+
+    O lagrangeano é:
 
     \[
-    \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
+    \mathcal{L}(K, L, \lambda; w, r, q) = wL + rK + \lambda[q - f(K, L)]
     \]
 
-    Seja \((K^*, L^*)\) a solução ótima. Defina a função objetivo como:
+    Pelo teorema da envoltória:
 
     \[
-    g(K, L; p, w, r) = p \cdot f(K, L) - wL - rK
+    \frac{\partial C}{\partial w} = \frac{\partial \mathcal{L}}{\partial w}\bigg|_{(K^c, L^c, \lambda^*)} = L^c(w, r, q)
     \]
 
-    Pelo **teorema da envoltória**, a derivada da função valor em relação a um parâmetro é igual à derivada parcial da função objetivo avaliada no ótimo:
+    Analogamente:
 
     \[
-    \frac{\partial \pi}{\partial p} = \frac{\partial g}{\partial p}\bigg|_{(K^*, L^*)} = f(K^*, L^*) = q^*
+    \frac{\partial C}{\partial r} = K^c(w, r, q)
     \]
+
+    **Verificação com Cobb-Douglas.** Para \(q = K^{\alpha}L^{1-\alpha}\), a função custo é:
 
     \[
-    \frac{\partial \pi}{\partial w} = \frac{\partial g}{\partial w}\bigg|_{(K^*, L^*)} = -L^*
+    C(w, r, q) = q \cdot \kappa \cdot w^{1-\alpha} \cdot r^{\alpha}
     \]
+
+    onde \(\kappa = \left(\frac{\alpha}{1-\alpha}\right)^{-(1-\alpha)} + \left(\frac{\alpha}{1-\alpha}\right)^{\alpha}\) é uma constante. Derivando em relação a \(w\):
 
     \[
-    \frac{\partial \pi}{\partial r} = \frac{\partial g}{\partial r}\bigg|_{(K^*, L^*)} = -K^*
+    \frac{\partial C}{\partial w} = q \cdot \kappa \cdot (1-\alpha) \cdot w^{-\alpha} \cdot r^{\alpha} = L^c(w, r, q)
     \]
 
-    **Verificação com Cobb-Douglas.** Para que a maximização de lucro tenha solução interior finita, a função de produção deve exibir retornos decrescentes de escala. Considere \(q = K^{1/3}L^{1/3}\) (\(\alpha + \beta = 2/3 < 1\)), com preços \((p, w, r)\). As CPOs são:
+    o que confirma o lema. \(\blacksquare\)
 
-    \[
-    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w, \qquad \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r
-    \]
-
-    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w\), logo \(L = (r/w)\,K\). Substituindo em \(\text{CPO}_K\):
-
-    \[
-    \frac{p}{3}\,K^{-2/3}\left(\frac{r}{w}\,K\right)^{1/3} = r \implies \frac{p}{3}\left(\frac{r}{w}\right)^{1/3} = r \cdot K^{1/3}
-    \]
-
-    \[
-    K^{1/3} = \frac{p}{3\,r}\left(\frac{r}{w}\right)^{1/3} \implies K^* = \frac{p^3}{27\,r^3}\cdot\frac{r}{w} = \frac{p^3}{27\,r^2\,w}
-    \]
-
-    De forma análoga, \(L^* = \frac{p^3}{27\,w^2\,r}\). A produção ótima é:
-
-    \[
-    q^* = (K^*)^{1/3}(L^*)^{1/3} = \left(\frac{p^3}{27\,r^2 w}\right)^{1/3}\left(\frac{p^3}{27\,w^2 r}\right)^{1/3} = \frac{p^2}{9\,wr}
-    \]
-
-    O lucro máximo é \(\pi^* = p\,q^* - w\,L^* - r\,K^* = \frac{p^3}{9wr} - \frac{p^3}{27wr} - \frac{p^3}{27wr} = \frac{p^3}{27wr}\). Verificando o Lema:
-
-    \[
-    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark \qquad \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2 r} = -L^* \;\checkmark
-    \]
-
-    \(\blacksquare\)
-
-    !!! note "Por que retornos constantes não funcionam"
-        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p^2 = 4wr\); \(-\infty\) se \(p^2 < 4wr\) (firma não produz); e \(+\infty\) se \(p^2 > 4wr\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
-
-!!! tip "Significado econômico do Lema de Hotelling"
-    O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
+!!! tip "Significado econômico do Lema de Shephard"
+    O Lema de Shephard é a contraparte, na teoria da produção, da **identidade de Roy** na teoria do consumidor. Ele permite recuperar as demandas condicionadas por insumos a partir de informações sobre custos — que são frequentemente mais fáceis de observar empiricamente do que as tecnologias de produção subjacentes. É uma ferramenta central na estimação empírica de funções de custo.
 
 !!! idea "Intuição Econômica 💡"
-    **Em uma frase:** Conhecendo apenas o lucro máximo da firma em função dos preços, conseguimos deduzir quanto ela produz e quanto usa de cada insumo.
+    **Em uma frase:** O Lema de Shephard diz que, se você sabe como o custo total muda quando o salário sobe um pouquinho, você já sabe quanta mão de obra a firma usa.
 
-    **Pense assim:** É como se você olhasse apenas o extrato bancário de um feirante — quanto ele lucra a cada combinação de preço da banana e custo do transporte — e, só com essa informação, conseguisse descobrir quantas bananas ele vende e quantas viagens de caminhão ele faz. O Lema de Hotelling diz que a função lucro já carrega toda essa informação, bastando derivá-la.
+    **Pense assim:** Se o preço da energia sobe R$ 0,01 por kWh e a conta de luz da fábrica sobe R$ 500, você sabe que a fábrica consome 50.000 kWh. O lema formaliza essa ideia simples: a sensibilidade do custo ao preço de um insumo revela a quantidade usada desse insumo.
 
-    **Por que isso importa:** Essa propriedade é usada pelo [IPEA](https://www.ipea.gov.br) em modelos de equilíbrio geral computável para calibrar funções de oferta setorial da economia brasileira a partir de dados de lucro.
-
----
-
-## 11.6 Maximização de Lucro e Demanda por Insumos
-
-### Demanda incondicional por insumos
-
-A **demanda incondicional** (ou marshalliana) por insumos é obtida diretamente das condições de primeira ordem da maximização de lucro:
-
-\[
-L^*(p, w, r): \quad p \cdot f_L(K^*, L^*) = w
-\]
-
-\[
-K^*(p, w, r): \quad p \cdot f_K(K^*, L^*) = r
-\]
-
-Estas demandas diferem das demandas condicionadas (Capítulo 10) porque não fixam o nível de produto — ele é determinado endogenamente pela maximização de lucro.
-
-### Propriedades da demanda por insumos
-
-A partir da convexidade da função lucro e do Lema de Hotelling, obtemos:
-
-\[
-\frac{\partial L^*}{\partial w} = -\frac{\partial^2 \pi}{\partial w^2} \leq 0
-\]
-
-A demanda por um insumo é **não crescente** em seu próprio preço — a "lei da demanda" para fatores de produção. Isso decorre da convexidade da função lucro (que implica que \(\partial^2 \pi / \partial w^2 \geq 0\)).
-
-### Relação entre demanda condicionada e incondicional
-
-A demanda incondicional por trabalho pode ser decomposta:
-
-\[
-\frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição}} + \underbrace{\frac{\partial L^c}{\partial q} \cdot \frac{\partial q^*}{\partial w}}_{\text{efeito produto}}
-\]
-
-O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho por capital ao longo da isoquanta quando \(w\) sobe. O **efeito produto** também é negativo: \(w\) maior eleva o CMg, o que reduz \(q^*\), o que reduz a demanda por trabalho. Ambos os efeitos operam na mesma direção — diferentemente do caso do consumidor, onde efeito substituição e efeito renda podem ter sinais opostos (bem de Giffen).
-
-!!! abstract "Proposição: Inexistência de 'insumo de Giffen'"
-    Na teoria da firma maximizadora de lucro, a demanda por um insumo é sempre não crescente em seu próprio preço. Não existe o análogo de um "bem de Giffen" para insumos, pois tanto o efeito substituição quanto o efeito produto reduzem a demanda quando o preço do insumo aumenta.
+    **Por que isso importa:** Na prática, é muito mais fácil observar custos e preços do que medir diretamente a tecnologia de produção. O Lema de Shephard permite que economistas estimem demandas por insumos a partir de dados contábeis — algo essencial para política tributária e regulação no Brasil.
 
 ---
 
-## Box Brasil: JBS e a Integração Vertical na Agroindústria
+## 11.5 Curvas de Custo
 
-!!! example "Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
-    A **JBS S.A.** é a maior processadora de proteína animal do mundo, com receita líquida trimestral recorde de **R$ 110,5 bilhões** no 3º trimestre de 2024 e presença em mais de 20 países. Sua trajetória ilustra de forma notável a teoria dos custos de transação de **Coase** e **Williamson** (Seção 11.1).
+<figure markdown="span">
+  <iframe src="../graficos/cap11/curvas-custo.html" width="100%" height="600" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 10.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
+</figure>
 
-    **A lógica da integração vertical**
+### Custo total, custo médio e custo marginal
 
-    A JBS não se limita ao abate: opera em toda a cadeia — da criação de animais (confinamento próprio) ao processamento, embalagem, logística refrigerada e distribuição com marcas próprias (Friboi, Seara, Swift). Na linguagem de Williamson, isso se explica por três fatores:
+!!! definition "Curvas de custo"
+    Para uma função custo \(C(q)\) (com preços de insumos fixos):
 
-    | Atributo da transação | Manifestação na cadeia de carne | Governança escolhida |
+    - **Custo Total**: \(CT(q) = CF + CV(q)\), onde \(CF\) é o custo fixo e \(CV(q)\) é o custo variável.
+    - **Custo Médio**: \(\mathrm{CMe}(q) = \frac{CT(q)}{q} = \frac{CF}{q} + \frac{CV(q)}{q} = \mathrm{CFMe} + \mathrm{CVMe}\)
+    - **Custo Variável Médio**: \(\mathrm{CVMe}(q) = \frac{CV(q)}{q}\)
+    - **Custo Marginal**: \(\mathrm{CMg}(q) = \frac{dCT(q)}{dq} = \frac{dCV(q)}{dq}\)
+
+### Relações entre as curvas de custo
+
+| Relação | Expressão | Implicação |
+|:---|:---|:---|
+| CMg e CMe | Se \(\mathrm{CMg} < \mathrm{CMe}\), CMe é decrescente | CMg "puxa" CMe para baixo |
+| CMg e CMe | Se \(\mathrm{CMg} > \mathrm{CMe}\), CMe é crescente | CMg "puxa" CMe para cima |
+| CMg e CMe | Se \(\mathrm{CMg} = \mathrm{CMe}\), CMe é mínimo | CMg cruza CMe no ponto mínimo |
+| CMg e CVMe | Se \(\mathrm{CMg} < \mathrm{CVMe}\), CVMe é decrescente | Mesma lógica do CMe |
+| CMg e CVMe | Se \(\mathrm{CMg} = \mathrm{CVMe}\), CVMe é mínimo | CMg cruza CVMe no ponto mínimo |
+| CMe e CVMe | \(\mathrm{CMe} = \mathrm{CVMe} + \mathrm{CFMe}\) | CMe está sempre acima de CVMe |
+| CMe e CVMe | \(\mathrm{CMe} - \mathrm{CVMe} = CF/q \to 0\) | As curvas convergem quando \(q \to \infty\) |
+| Área sob CMg | \(\int_0^q \mathrm{CMg}(x)\,dx = CV(q)\) | Custo variável = área sob CMg |
+
+A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
+
+\[
+\frac{d(\mathrm{CMe})}{dq} = \frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{\mathrm{CMg} \cdot q - CT}{q^2} = \frac{\mathrm{CMg} - \mathrm{CMe}}{q}
+\]
+
+Portanto, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O custo marginal "puxa" o custo médio — se produzir uma unidade a mais custa menos que a média, a média cai; se custa mais, a média sobe.
+
+    **Pense assim:** Pense na sua média de notas na faculdade. Se você tira 9 na próxima prova e sua média é 7, a média sobe. Se tira 5, a média cai. A nota marginal (a próxima prova) sempre arrasta a média na sua direção. Com custos é igual: o CMg cruza o CMe exatamente no ponto de mínimo do CMe.
+
+    **Por que isso importa:** Essa relação determina a escala ótima de produção das firmas e é a base para entender por que empresas brasileiras em setores com altos custos fixos (como telecomunicações) precisam de escala grande para serem viáveis.
+
+### Formato típico das curvas de custo
+
+Com rendimentos marginais inicialmente crescentes e depois decrescentes (o formato clássico), as curvas de custo apresentam:
+
+- **CMg**: formato de U — inicialmente decrescente (quando o produto marginal é crescente) e depois crescente (quando o produto marginal é decrescente).
+- **CVMe**: formato de U — segue a mesma lógica, mas é mais suave.
+- **CMe**: formato de U — soma de CVMe (U) com CFMe (decrescente). O mínimo do CMe ocorre à direita do mínimo do CVMe.
+
+!!! tip "Intuição: por que CMg e PMg são 'espelhos'"
+    A relação inversa entre custo marginal e produto marginal é central. Se \(q = f(L)\) no curto prazo, então \(\mathrm{CMg} = w / PMg_L\). Quando o produto marginal do trabalho cresce, o custo de produzir uma unidade adicional cai; quando o produto marginal decresce, o custo marginal sobe. As curvas de custo são, portanto, o "reflexo" das curvas de produtividade.
+
+---
+
+## 11.6 Deslocamentos nas Curvas de Custo
+
+### Mudanças nos preços dos insumos
+
+Um aumento no salário \(w\) desloca para cima as curvas de custo. Pelo Lema de Shephard, o impacto é proporcional à quantidade de trabalho utilizada:
+
+\[
+\frac{\partial C}{\partial w} = L^c > 0
+\]
+
+O efeito sobre a curva de CMg depende de como a intensidade de trabalho varia com o nível de produto. Se a produção é intensiva em trabalho, o deslocamento será proporcionalmente maior.
+
+### Progresso técnico
+
+Uma melhoria tecnológica (aumento de \(A\) na função de produção) permite produzir a mesma quantidade com menos insumos, deslocando todas as curvas de custo para baixo. Se o progresso técnico é enviesado — por exemplo, poupador de trabalho —, ele reduz relativamente mais os custos de firmas intensivas em trabalho.
+
+!!! tip "Exemplo: mecanização na agricultura brasileira"
+    A adoção de colheitadeiras mecanizadas na produção de soja no Cerrado é um exemplo de progresso técnico poupador de trabalho. Segundo dados da EMBRAPA, o número de horas-homem por hectare na cultura da soja caiu de cerca de 25 h/ha nos anos 1980 para menos de 1 h/ha com plantio direto mecanizado. Essa redução desloca a curva de custo para baixo e altera a razão ótima capital/trabalho, tornando a produção mais intensiva em capital.
+
+### Impostos e regulação
+
+Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um imposto *ad valorem* sobre o trabalho de alíquota \(\tau\) eleva o custo efetivo do trabalho para \(w(1 + \tau)\), deslocando as curvas de custo para cima.
+
+---
+
+## 11.7 Curto Prazo versus Longo Prazo: A Curva Envoltória
+
+<figure markdown="span">
+  <iframe src="../graficos/cap11/curto-longo-prazo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+  <figcaption><strong>Figura 10.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
+</figure>
+
+### Custos de curto prazo
+
+No **curto prazo**, o capital é fixo em \(\bar{K}\). A firma só pode ajustar o trabalho. O custo total de curto prazo é:
+
+\[
+CT_{CP}(q; \bar{K}) = r\bar{K} + w \cdot L(q, \bar{K})
+\]
+
+onde \(L(q, \bar{K})\) é a quantidade de trabalho necessária para produzir \(q\) dado \(\bar{K}\), obtida invertendo a função de produção de curto prazo.
+
+### Custos de longo prazo
+
+No **longo prazo**, todos os insumos são variáveis. A firma escolhe simultaneamente \(K\) e \(L\) para minimizar custos:
+
+\[
+CT_{LP}(q) = \min_{K, L} \{wL + rK \mid f(K, L) = q\}
+\]
+
+### A curva envoltória
+
+!!! abstract "Teorema da curva envoltória"
+    A curva de custo médio de longo prazo (\(\mathrm{CMe}_{LP}\)) é a **envoltória** das curvas de custo médio de curto prazo. Para cada nível de produto \(q\):
+
+    \[
+    \mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}) \quad \text{para todo } \bar{K}
+    \]
+
+    com igualdade quando \(\bar{K} = K^*(q)\), o nível ótimo de capital de longo prazo para produzir \(q\).
+
+Intuitivamente, no longo prazo a firma tem mais flexibilidade (pode ajustar todos os insumos), de modo que seus custos nunca podem exceder os de curto prazo. A curva de CMe de longo prazo "tangencia" cada curva de CMe de curto prazo no ponto em que o nível de capital fixo é ótimo para aquele nível de produto.
+
+Propriedade importante: no ponto de tangência, o CMg de curto prazo é igual ao CMg de longo prazo:
+
+\[
+\mathrm{CMg}_{CP}(q^*; \bar{K}^*) = \mathrm{CMg}_{LP}(q^*)
+\]
+
+### Economias e deseconomias de escala
+
+A forma da curva \(\mathrm{CMe}_{LP}\) reflete os rendimentos de escala:
+
+- **Rendimentos crescentes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) decrescente \(\Leftrightarrow\) **economias de escala**.
+- **Rendimentos constantes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) constante.
+- **Rendimentos decrescentes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) crescente \(\Leftrightarrow\) **deseconomias de escala**.
+
+A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o CMe de longo prazo atinge seu mínimo. A EME tem implicações diretas para a estrutura de mercado: se a EME é grande em relação ao tamanho do mercado, o setor tende a ter poucas firmas (oligopólio ou monopólio natural).
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Economias de escala significam que produzir mais sai mais barato por unidade — o custo médio cai conforme a firma cresce.
+
+    **Pense assim:** Uma fábrica de cerveja artesanal paga quase o mesmo aluguel, energia e licença sanitária que uma grande cervejaria, mas produz muito menos garrafas para diluir esses custos. Por isso a Ambev consegue vender a R$ 3 a lata enquanto a artesanal cobra R$ 15 — a escala mínima eficiente do setor é alta.
+
+    **Por que isso importa:** Economias de escala explicam a concentração em setores como aviação, telecomunicações e siderurgia no Brasil, e são o principal argumento em análises de fusões pelo [CADE](https://www.gov.br/cade).
+
+---
+
+## Box Brasil: Estrutura de Custos e o "Custo Brasil"
+
+!!! example "Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
+
+    O termo **"custo Brasil"** designa o conjunto de ineficiências sistêmicas que elevam os custos de produção no país acima dos padrões internacionais. Segundo levantamentos da **Confederação Nacional da Indústria (CNI)** e da **FIESP**, o custo Brasil representava, em estimativas recentes, um sobrecusto de cerca de **R$ 1,7 trilhão por ano** para a economia brasileira — equivalente a aproximadamente 20% do PIB.
+
+    **Componentes do custo Brasil na indústria de alimentos:**
+
+    | Componente | Impacto estimado | Descrição |
     |:---|:---|:---|
-    | **Especificidade de ativos** | Plantas frigoríficas, câmaras frias, caminhões refrigerados — ativos com baixo valor fora da cadeia | Integração vertical |
-    | **Frequência** | Abate diário de milhares de cabeças; transações contínuas | Hierarquia interna |
-    | **Incerteza** | Volatilidade de preços do boi gordo; exigências sanitárias mutáveis; riscos de embargo internacional | Controle direto |
+    | Carga tributária | 25–35% do faturamento | ICMS, PIS/COFINS, IPI, contribuições sobre folha |
+    | Logística e transporte | 12–15% do custo total | Dependência do modal rodoviário, infraestrutura precária |
+    | Energia elétrica | 8–12% dos custos industriais | Tarifas entre as mais altas do mundo |
+    | Burocracia regulatória | 3–5% dos custos | Licenças, fiscalizações, cumprimento de obrigações acessórias |
+    | Custo de capital | Variável | Taxas de juros historicamente elevadas |
 
-    Se a JBS dependesse exclusivamente do mercado para cada etapa — comprando serviços de transporte refrigerado, terceirizando o abate, contratando distribuidores independentes —, os custos de transação (negociação de contratos, risco de *hold-up*, problemas de qualidade) seriam proibitivos. A integração vertical reduz esses custos ao internalizar transações com alta especificidade de ativos.
+    **Logística: o gargalo mais visível.**
+    O Brasil transporta cerca de **65% de sua carga** pelo modal rodoviário, contra 25–30% nos EUA e menos de 10% na Europa. Para a indústria de alimentos, que opera com margens estreitas e produtos perecíveis, essa dependência eleva drasticamente os custos de distribuição. O frete de uma tonelada de soja de Sorriso (MT) ao Porto de Santos percorre mais de 2.000 km por estrada, a um custo estimado em US$ 90–120/tonelada — cerca do triplo do custo equivalente nos EUA (dados CNI, 2023).
 
-    **Terceirização pós-reforma trabalhista**
-
-    Na direção oposta, a **Reforma Trabalhista de 2017** (Lei 13.467/17) liberou a terceirização de atividade-fim no Brasil. Em termos coaseanos, a legislação reduziu os custos de transação de contratar no mercado (ao simplificar contratos e reduzir riscos jurídicos), deslocando a fronteira ótima da firma. Atividades com **baixa especificidade de ativos** — limpeza, segurança, TI — passaram a ser mais eficientemente contratadas no mercado, enquanto atividades com **alta especificidade** permanecem internalizadas.
-
-    **Fonte**: JBS, Relatório de Resultados 3T2024; InfoMoney; Câmara dos Deputados.
+    **Interpretação microeconômica.**
+    Em termos da teoria dos custos, o "custo Brasil" representa um deslocamento para cima das curvas de custo das firmas brasileiras em relação a competidores internacionais. Trata-se, em grande parte, de **custos fixos** (burocracia, tributação fixa) e **custos variáveis** elevados (logística, energia). A consequência é que a **escala mínima eficiente** das firmas brasileiras tende a ser maior, dificultando a sobrevivência de empresas menores e reduzindo a competitividade internacional. A reforma tributária de 2023 (EC 132/2023), com a unificação de tributos sobre consumo (CBS e IBS), representa uma tentativa de reduzir uma das principais fontes do custo Brasil.
 
 ---
 
-## Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
+## Box Brasil: Economias de Escala na Agropecuária
 
-!!! example "Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
+!!! example "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
 
-    As **micro e pequenas empresas (MPEs)** são o coração do tecido empresarial brasileiro. Segundo dados do **SEBRAE** e da **Receita Federal**:
+    A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do [IBGE](https://www.ibge.gov.br) (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
 
-    - As MPEs representam **99% dos estabelecimentos** formais no Brasil.
-    - Respondem por cerca de **55% dos empregos formais** e **30% do PIB**.
-    - Aproximadamente **29% das MPEs fecham nos primeiros 5 anos** de atividade (taxa de mortalidade apurada pelo SEBRAE para empresas constituídas em 2017).
+    **Por que a escala importa?**
 
-    **Causas da mortalidade empresarial:**
+    | Componente de custo | Pequeno produtor (<100 ha) | Grande produtor (>1.000 ha) |
+    |:---|:---:|:---:|
+    | Custo de máquinas/ha | Elevado (subutilização) | Baixo (diluição do CF) |
+    | Custo de insumos/ha | Maior (menor poder de barganha) | Menor (compras em escala) |
+    | Custo logístico/tonelada | Elevado (lotes pequenos) | Menor (contratos de frete) |
+    | Assistência técnica | Custo fixo alto relativo | Diluído na produção |
 
-    | Fator | Frequência citada | Interpretação microeconômica |
-    |:---|:---|:---|
-    | Falta de planejamento/gestão | ~25% | Incapacidade de minimizar custos (ineficiência produtiva) |
-    | Dificuldade de acesso a crédito | ~20% | Custo de capital elevado (\(r\) alto), restrição de liquidez |
-    | Carga tributária excessiva | ~18% | Deslocamento para cima das curvas de custo |
-    | Concorrência intensa | ~15% | Preço de mercado abaixo do CMe mínimo da firma |
-    | Falta de demanda | ~12% | Receita insuficiente para cobrir custos |
-    | Problemas pessoais/societários | ~10% | Custos de transação internos (governança) |
+    Esses dados são consistentes com uma curva de CMe de longo prazo em formato de L: custos médios decrescentes até uma escala mínima eficiente (EME) em torno de 500–1.000 hectares, após a qual os ganhos de escala se estabilizam. A **CONAB** estima que o custo total de produção de soja no Mato Grosso (safra 2023/24) foi de aproximadamente R$ 4.800/ha, com produtividade média de 57 sacas/ha, resultando em custo por saca de cerca de R$ 84 para produtores de grande escala — valor significativamente inferior ao de produtores menores.
 
-    **O Simples Nacional** (LC 123/2006, reformulado pela LC 155/2016) é uma política pública que busca reduzir a carga tributária e a complexidade burocrática para MPEs, unificando tributos em uma guia única com alíquotas progressivas. Em termos microeconômicos, o Simples desloca para baixo as curvas de custo das MPEs, reduzindo o **ponto de fechamento** (\(\mathrm{CVMe}_{\min}\)) e permitindo que firmas menos eficientes sobrevivam.
+    **Implicação para política pública:** programas como o **PRONAF** (Programa Nacional de Fortalecimento da Agricultura Familiar) podem ser interpretados como subsídios que deslocam a curva de custo de pequenos produtores para baixo, compensando parcialmente a desvantagem de escala e permitindo sua permanência no mercado.
 
-    **Interpretação via teoria da firma.**
-    A alta mortalidade das MPEs pode ser entendida como o resultado de firmas que operam com \(p < \mathrm{CMe}_{\min}\) no longo prazo. No curto prazo, muitas continuam operando enquanto \(p > \mathrm{CVMe}_{\min}\) (cobrindo custos variáveis e parte dos fixos), mas quando os custos fixos (aluguéis, financiamentos) vencem, a firma é forçada a fechar. A decisão de Coase — fazer internamente ou comprar no mercado — também é relevante: muitas MPEs fracassam por tentarem internalizar atividades que seriam mais eficientes se terceirizadas, incorrendo em custos organizacionais que superam os custos de transação do mercado.
+    *Fontes: IBGE — Censo Agropecuário 2017; CONAB — Custos de Produção; [CEPEA/ESALQ](https://www.cepea.esalq.usp.br).*
 
-    Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
+---
+
+## 11.8 Demandas Condicionais e Função Custo por Tipo de Função de Produção
+
+Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(r\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
+
+### 11.8.1 Cobb-Douglas: q = Kᵅ Lᵝ
+
+**Demandas condicionais (minimização de custo).** A firma resolve:
+
+\[
+\min_{K,L} \; rK + wL \quad \text{s.a.} \quad K^\alpha L^\beta = q
+\]
+
+O Lagrangeano é:
+
+\[
+\mathcal{L} = rK + wL + \mu(q - K^\alpha L^\beta)
+\]
+
+Condições de primeira ordem:
+
+\[
+\frac{\partial \mathcal{L}}{\partial K} = r - \mu \alpha K^{\alpha-1} L^\beta = 0
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial L} = w - \mu \beta K^\alpha L^{\beta-1} = 0
+\]
+
+Dividindo a primeira CPO pela segunda:
+
+\[
+\frac{r}{w} = \frac{\alpha L}{\beta K} \quad \Longrightarrow \quad K = \frac{\alpha\, w}{\beta\, r}\, L
+\]
+
+Substituindo na restrição tecnológica:
+
+\[
+\left(\frac{\alpha\, w}{\beta\, r}\right)^\alpha L^{\alpha+\beta} = q \quad \Longrightarrow \quad L^c = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{-\alpha/(\alpha+\beta)}
+\]
+
+\[
+\boxed{L^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\beta\, r}{\alpha\, w}\right)^{\alpha/(\alpha+\beta)}}
+\]
+
+\[
+\boxed{K^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{\beta/(\alpha+\beta)}}
+\]
+
+**Função custo.** Avaliando o gasto mínimo \(C = rK^c + wL^c\):
+
+\[
+\boxed{C(w,r,q) = q^{1/(\alpha+\beta)} \cdot \frac{\alpha+\beta}{\alpha^\alpha \beta^\beta} \cdot \frac{w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)}}{(\alpha+\beta)^{(\alpha+\beta)/(\alpha+\beta)}} \cdot (\alpha+\beta) \left(\frac{w}{\beta}\right)^{\beta/(\alpha+\beta)} \left(\frac{r}{\alpha}\right)^{\alpha/(\alpha+\beta)}}
+\]
+
+Simplificando, a função custo Cobb-Douglas tem a forma:
+
+\[
+C(w,r,q) = \kappa \cdot w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}
+\]
+
+onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\alpha+\beta)}\) é uma constante.
+
+**Retornos de escala e custos:**
+
+- Se \(\alpha+\beta = 1\) (retornos constantes): \(C\) é linear em \(q\) → CMg constante
+- Se \(\alpha+\beta > 1\) (retornos crescentes): \(C\) é côncava em \(q\) → CMg decrescente
+- Se \(\alpha+\beta < 1\) (retornos decrescentes): \(C\) é convexa em \(q\) → CMg crescente
+
+*Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
+
+**Demandas por insumos (maximização de lucro).** Com retornos decrescentes (\(\alpha+\beta < 1\)), a firma maximiza \(\pi = pq - wL - rK\). Substituindo \(q = K^\alpha L^\beta\) e derivando:
+
+\[
+p\alpha K^{\alpha-1}L^\beta = r, \qquad p\beta K^\alpha L^{\beta-1} = w
+\]
+
+Resolvendo o sistema (detalhes em Cap. 11):
+
+\[
+\boxed{L^*(w,r,p) = \left(\frac{p\,\alpha^\alpha\,\beta^{1-\alpha}}{w^{1-\alpha}\,r^\alpha}\right)^{1/(1-\alpha-\beta)}, \quad K^*(w,r,p) = \left(\frac{p\,\alpha^{1-\beta}\,\beta^\beta}{w^\beta\,r^{1-\beta}}\right)^{1/(1-\alpha-\beta)}}
+\]
+
+Estas demandas só existem com retornos decrescentes. Com retornos constantes ou crescentes, o lucro não tem máximo finito.
+
+### 11.8.2 Tecnologia Linear (Substitutos Perfeitos): q = αK + βL
+
+Com tecnologia linear, os insumos são perfeitamente substituíveis. As isoquantas são retas com inclinação \(-\beta/\alpha\).
+
+**Demandas condicionais.** A firma compara o custo por unidade de produto de cada insumo:
+
+- Custo de uma unidade de produto via capital: \(r/\alpha\)
+- Custo de uma unidade de produto via trabalho: \(w/\beta\)
+
+\[
+\boxed{K^c = \begin{cases} q/\alpha & \text{se } r/\alpha < w/\beta \\ 0 & \text{se } r/\alpha > w/\beta \end{cases}, \qquad L^c = \begin{cases} 0 & \text{se } r/\alpha < w/\beta \\ q/\beta & \text{se } r/\alpha > w/\beta \end{cases}}
+\]
+
+Se \(r/\alpha = w/\beta\), qualquer combinação sobre a isoquanta é ótima.
+
+**Função custo.**
+
+\[
+\boxed{C(w,r,q) = q \cdot \min\left\{\frac{r}{\alpha},\; \frac{w}{\beta}\right\}}
+\]
+
+Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg constante igual a \(\min\{r/\alpha, w/\beta\}\).
+
+**Demandas por insumos (maximização de lucro).** Com retornos constantes de escala, o lucro é linear em \(q\). Se \(p > \min\{r/\alpha, w/\beta\}\), a firma deseja produzir infinito; se \(p < \min\{r/\alpha, w/\beta\}\), a firma produz zero. O problema de maximização de lucro só tem solução interior com rendimentos decrescentes.
+
+### 11.8.3 Tecnologia Leontief (Proporções Fixas): q = min{K/α, L/β}
+
+Com tecnologia Leontief, os insumos são usados em proporções fixas \(\alpha:\beta\). As isoquantas têm formato de "L".
+
+**Demandas condicionais.** No ótimo, a firma opera no vértice da isoquanta: \(K/\alpha = L/\beta = q\). Qualquer outro ponto desperdiça insumos. Portanto:
+
+\[
+\boxed{K^c = \alpha\, q, \qquad L^c = \beta\, q}
+\]
+
+As demandas condicionais são **independentes dos preços dos insumos** — não há margem para substituição.
+
+**Função custo.**
+
+\[
+\boxed{C(w,r,q) = (\alpha\, r + \beta\, w)\, q}
+\]
+
+O custo é linear em \(q\), com CMg constante igual a \(\alpha r + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
+
+**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seriam necessários retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
+
+### 11.8.4 CES: q = (αKᵖ + βLᵖ)¹ᐟᵖ
+
+A função CES generaliza os três casos anteriores. O parâmetro \(\rho\) determina a elasticidade de substituição entre insumos: \(\sigma = 1/(1-\rho)\).
+
+**Demandas condicionais.** A firma resolve:
+
+\[
+\min_{K,L} \; rK + wL \quad \text{s.a.} \quad (\alpha K^\rho + \beta L^\rho)^{1/\rho} = q
+\]
+
+O Lagrangeano é \(\mathcal{L} = rK + wL + \mu[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
+
+\[
+\frac{r}{w} = \frac{\alpha K^{\rho-1}}{\beta L^{\rho-1}} \quad \Longrightarrow \quad \frac{K}{L} = \left(\frac{\alpha\, w}{\beta\, r}\right)^\sigma
+\]
+
+Definimos o **índice de preços de insumos CES**:
+
+\[
+W \equiv \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}
+\]
+
+As demandas condicionais ficam:
+
+\[
+\boxed{K^c = \alpha^\sigma\, r^{-\sigma}\, W^{\sigma-1}\, q, \qquad L^c = \beta^\sigma\, w^{-\sigma}\, W^{\sigma-1}\, q}
+\]
+
+**Função custo.**
+
+\[
+\boxed{C(w,r,q) = W \cdot q = q \cdot \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}}
+\]
+
+A função custo é linear em \(q\) (retornos constantes de escala) e tem a estrutura de um índice de preços CES.
+
+*Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
+
+**Demandas por insumos (maximização de lucro).** Com retornos constantes, o lucro é linear em \(q\) e o problema não tem solução finita a menos que \(p = W\). Para uma versão com retornos decrescentes, \(q = (\alpha K^\rho + \beta L^\rho)^{\gamma/\rho}\) com \(\gamma < 1\), a função custo torna-se \(C = W \cdot q^{1/\gamma}\), convexa em \(q\), e as demandas não condicionais podem ser obtidas via \(\max_q \; pq - W q^{1/\gamma}\).
+
+!!! info "Casos limite da CES na produção"
+    - \(\rho \to 0\) (\(\sigma \to 1\)): converge para Cobb-Douglas \(q = K^\alpha L^\beta\) (com \(\alpha + \beta = 1\) sob CRS)
+    - \(\rho \to 1\) (\(\sigma \to \infty\)): converge para tecnologia linear \(q = \alpha K + \beta L\)
+    - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K/\alpha, L/\beta\}\)
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 11.1 — Receita marginal, elasticidade e markup"
-    **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
+??? example "Exercício Resolvido 10.1 — Custo econômico versus custo contábil"
 
-    **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
+    **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
 
-    **Resolução:**
+    (a) Calcule o lucro contábil.
 
-    **Passo 1 — Receita marginal**
-    \[
-    RT = p \cdot q = (100 - 2q)q = 100q - 2q^2 \implies \mathrm{RMg} = 100 - 4q
-    \]
+    (b) Calcule o lucro econômico.
 
-    **Passo 2 — Quantidade e preço ótimos**
-    \[
-    \mathrm{RMg} = \mathrm{CMg} \implies 100 - 4q = 20 \implies q^* = 20
-    \]
-    \[
-    p^* = 100 - 2(20) = 60
-    \]
+    (c) A proprietária deve manter a confeitaria?
 
-    **Passo 3 — Elasticidade no ponto ótimo**
+    **Solução.**
 
-    A elasticidade-preço da demanda é \(\varepsilon_d = \frac{dq}{dp}\cdot\frac{p}{q}\). Da demanda inversa, \(dq/dp = -1/2\), logo:
+    **(a)** Custos contábeis (explícitos) = R$ 120.000 + R$ 60.000 + R$ 96.000 + R$ 48.000 = R$ 324.000.
 
     \[
-    \varepsilon_d = -\frac{1}{2}\cdot\frac{60}{20} = -1{,}5
+    \pi_{\text{contábil}} = 480.000 - 324.000 = \text{R\$}\; 156.000
     \]
 
-    Verificação: \(\mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = 60\left(1 - \frac{1}{1{,}5}\right) = 60 \cdot \frac{1}{3} = 20 = \mathrm{CMg}\) ✓
+    **(b)** Custos implícitos:
 
-    **Passo 4 — Índice de Lerner**
-    \[
-    L = \frac{p^* - \mathrm{CMg}}{p^*} = \frac{60 - 20}{60} = \frac{2}{3} \approx 0{,}67
-    \]
+    - Custo de oportunidade do trabalho da proprietária: R$ 84.000 − R$ 48.000 = R$ 36.000 (diferença entre o que ela poderia ganhar e o pró-labore que já se paga).
+    - Custo de oportunidade do capital: 10% × R$ 200.000 = R$ 20.000.
 
-    Pela relação teórica: \(L = \frac{1}{|\varepsilon_d|} = \frac{1}{1{,}5} = \frac{2}{3}\) ✓
-
-    **Resultado:** \(q^* = 20\), \(p^* = 60\), \(|\varepsilon_d| = 1{,}5\), \(L = 2/3\).
-
-    **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 11.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o [CADE](https://www.gov.br/cade) utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
-
----
-
-??? example "Exercício Resolvido 11.2 — Decisão de operar ou fechar no curto prazo"
-    **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
-
-    **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
-
-    **Resolução:**
-
-    **Passo 1 — Funções de custo**
-    \[
-    \mathrm{CVMe}(q) = 10 + 0{,}5q, \qquad \mathrm{CMg}(q) = 10 + q
-    \]
-    \[
-    \mathrm{CMe}(q) = \frac{72}{q} + 10 + 0{,}5q
-    \]
-
-    **Passo 2 — Ponto de fechamento**
-
-    Como \(\mathrm{CVMe} = 10 + 0{,}5q\) é crescente para \(q > 0\), o custo variável médio mínimo é atingido quando \(q \to 0^+\), com \(\mathrm{CVMe}_{\min} = 10\). Logo, a firma opera se \(p \geq 10\).
-
-    **Passo 3 — Quantidade ótima**
-    \[
-    p = \mathrm{CMg} \implies 16 = 10 + q \implies q^* = 6
-    \]
-
-    **Passo 4 — Lucro**
-    \[
-    RT = 16 \times 6 = 96, \qquad CT = 72 + 60 + 18 = 150
-    \]
-    \[
-    \pi = 96 - 150 = -54
-    \]
-
-    **Passo 5 — Comparação: operar vs. fechar**
-
-    | Decisão | Lucro |
-    |:---|:---|
-    | Operar (\(q = 6\)) | \(\pi = -54\) |
-    | Fechar (\(q = 0\)) | \(\pi = -CF = -72\) |
-
-    A receita (\(96\)) cobre todo o custo variável (\(78\)) e ainda gera \(18\) para abater parte dos custos fixos. Operar é racional mesmo com prejuízo.
-
-    **Resultado:** A firma deve operar, produzindo \(q^* = 6\) com prejuízo de \(\pi = -54\), que é menor do que o prejuízo de \(-72\) caso fechasse.
-
-    **Interpretação econômica:** Este é o dilema enfrentado por muitas MPEs brasileiras: operar com prejuízo no curto prazo para cobrir custos variáveis (salários, insumos) enquanto os custos fixos (aluguel, financiamentos) são parcialmente absorvidos. A pesquisa do SEBRAE mostra que empresas nessa faixa (\(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\)) sobrevivem por algum tempo, mas fecham quando os contratos fixos vencem — exatamente como prevê a teoria.
-
----
-
-??? example "Exercício Resolvido 11.3 — Verificação do Lema de Hotelling"
-    **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(r = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
-
-    **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(r = 1\).
-
-    **Resolução:**
-
-    **Passo 1 — Condições de primeira ordem**
-    \[
-    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w \implies 4\,K^{1/3}L^{-2/3} = 1
-    \]
-    \[
-    \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r \implies 4\,K^{-2/3}L^{1/3} = 1
-    \]
-
-    **Passo 2 — Razão ótima de insumos**
-
-    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w = 1\), logo \(L = K\).
-
-    Substituindo em \(\text{CPO}_K\): \(4\,K^{-2/3}\,K^{1/3} = 1 \implies 4\,K^{-1/3} = 1 \implies K^{1/3} = 4 \implies K^* = 64\).
-
-    Portanto: \(K^* = L^* = 64\) e \(q^* = 64^{1/3}\cdot 64^{1/3} = 4 \times 4 = 16\).
-
-    **Passo 3 — Lucro máximo**
-    \[
-    \pi^* = 12 \times 16 - 1 \times 64 - 1 \times 64 = 192 - 128 = 64
-    \]
-
-    **Passo 4 — Função lucro geral**
-
-    Para preços genéricos \((p, w, r)\), as soluções são \(K^* = \frac{p^3}{27\,r^2\,w}\) e \(L^* = \frac{p^3}{27\,w^2\,r}\), com \(q^* = \frac{p^2}{9\,wr}\) e:
+    Total de custos implícitos = R$ 56.000.
 
     \[
-    \pi(p, w, r) = \frac{p^3}{27\,wr}
+    \pi_{\text{econômico}} = 480.000 - 324.000 - 56.000 = \text{R\$}\; 100.000
     \]
 
-    **Passo 5 — Verificação do Lema de Hotelling**
+    **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
+
+??? example "Exercício Resolvido 10.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+
+    **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(r = 2\).
+
+    (a) Derive as demandas condicionadas por insumos.
+
+    (b) Obtenha a função custo.
+
+    (c) Verifique o Lema de Shephard.
+
+    (d) Calcule o custo total, o custo médio e o custo marginal para \(q = 10\).
+
+    **Solução.**
+
+    **(a)** Com \(\alpha = 1/3\) e \(\beta = 2/3\) (\(\alpha + \beta = 1\), retornos constantes), a condição de tangência é:
+
     \[
-    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark
+    \frac{\alpha}{\beta} \cdot \frac{L}{K} = \frac{r}{w} \implies \frac{1}{2} \cdot \frac{L}{K} = \frac{2}{8} = \frac{1}{4} \implies L = \frac{K}{2}
     \]
+
+    Substituindo na restrição \(K^{1/3}L^{2/3} = q\):
+
     \[
-    \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2r} = -L^* \;\checkmark \qquad
-    \frac{\partial \pi}{\partial r} = -\frac{p^3}{27wr^2} = -K^* \;\checkmark
+    K^{1/3} \left(\frac{K}{2}\right)^{2/3} = q \implies \frac{K}{2^{2/3}} = q \implies K^c = 2^{2/3} q
     \]
 
-    **Resultado:** \(K^* = L^* = 64\), \(q^* = 16\), \(\pi^* = 64\). O Lema de Hotelling é verificado: as derivadas da função lucro recuperam a oferta e as demandas por insumos.
+    \[
+    L^c = \frac{K^c}{2} = \frac{2^{2/3} q}{2} = 2^{-1/3} q
+    \]
 
-    **Interpretação econômica:** A função lucro \(\pi = p^3/(27wr)\) é homogênea de grau 1 em \((p, w, r)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wr) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
+    **(b)** Função custo:
+
+    \[
+    C = rK^c + wL^c = 2 \cdot 2^{2/3} q + 8 \cdot 2^{-1/3} q = 2^{5/3} q + 2^{3} \cdot 2^{-1/3} q = 2^{5/3} q + 2^{8/3} q
+    \]
+
+    \[
+    C = (2^{5/3} + 2^{8/3}) q = 2^{5/3}(1 + 2) q = 3 \cdot 2^{5/3} q \approx 9{,}52\, q
+    \]
+
+    **(c)** Verificação:
+
+    \[
+    \frac{\partial C}{\partial w} = \frac{\partial}{\partial w}[wL^c + rK^c]
+    \]
+
+    Precisamos expressar \(C\) em termos de \(w\) e \(r\). Para \(q = K^{1/3}L^{2/3}\), a função custo geral é \(C = \kappa \cdot w^{2/3} r^{1/3} q\), onde \(\kappa = 3/(2^{2/3})\). Então:
+
+    \[
+    \frac{\partial C}{\partial w} = \kappa \cdot \frac{2}{3} w^{-1/3} r^{1/3} q = L^c \quad \checkmark
+    \]
+
+    **(d)** Para \(q = 10\):
+
+    \[
+    CT = 3 \cdot 2^{5/3} \cdot 10 \approx 95{,}2
+    \]
+
+    Como \(\alpha + \beta = 1\) (retornos constantes), \(C\) é linear em \(q\). Logo:
+
+    \[
+    \mathrm{CMe} = \mathrm{CMg} = 3 \cdot 2^{5/3} \approx 9{,}52
+    \]
+
+    O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
+
+??? example "Exercício Resolvido 10.3 — Curto prazo versus longo prazo"
+
+    **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(r = 10\).
+
+    (a) Derive a função custo de longo prazo e mostre que o CMg é crescente.
+
+    (b) No curto prazo, o capital está fixo em \(\bar{K} = 1\). Derive a função custo de curto prazo.
+
+    (c) Mostre que \(CT_{LP}(q) \leq CT_{CP}(q)\) para todo \(q\), com igualdade em um ponto.
+
+    **Solução.**
+
+    **(a)** Com \(\alpha = \beta = 1/4\) e \(\alpha + \beta = 1/2 < 1\) (retornos decrescentes), pela condição de tangência:
+
+    \[
+    \frac{1/4 \cdot L}{1/4 \cdot K} = \frac{r}{w} = 1 \implies K = L
+    \]
+
+    Substituindo: \(K^{1/4} K^{1/4} = q \implies K^{1/2} = q \implies K^c = L^c = q^2\).
+
+    \[
+    CT_{LP} = 10q^2 + 10q^2 = 20q^2
+    \]
+
+    \[
+    \mathrm{CMg}_{LP} = 40q \quad (\text{crescente em } q)
+    \]
+
+    Isso confirma: retornos decrescentes (\(\alpha + \beta < 1\)) geram CMg crescente.
+
+    **(b)** Com \(\bar{K} = 1\): \(q = 1^{1/4} L^{1/4} = L^{1/4} \implies L = q^4\).
+
+    \[
+    CT_{CP} = r\bar{K} + wL = 10 \cdot 1 + 10 \cdot q^4 = 10 + 10q^4
+    \]
+
+    **(c)** Comparando:
+
+    \[
+    CT_{CP} - CT_{LP} = 10 + 10q^4 - 20q^2 = 10(1 - 2q^2 + q^4) = 10(1 - q^2)^2 \geq 0
+    \]
+
+    A diferença é sempre não negativa, com igualdade quando \(q^2 = 1\), ou seja, \(q = 1\). Nesse ponto, \(K^*(q=1) = 1 = \bar{K}\) — o capital fixo coincide com o ótimo de longo prazo. Para qualquer outro nível de produto, o curto prazo é mais caro, pois a firma não pode ajustar o capital.
 
 ---
 
@@ -596,191 +738,162 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 !!! tip "Exercícios do Capítulo 11"
 
-**Exercício 11.1.**
-Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(q) = 50 + 2q + 0{,}5q^2\).
+**Exercício 10.1.**
+Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(r = 1\).
 
-(a) Determine CF, CV(q), CMe(q), CVMe(q) e CMg(q).
+(a) Derive as demandas condicionadas por insumos \(K^c(w, r, q)\) e \(L^c(w, r, q)\).
 
-(b) Encontre o ponto de fechamento (mínimo do CVMe).
+(b) Obtenha a função custo \(C(w, r, q)\).
 
-(c) Encontre o ponto de *break-even* (mínimo do CMe).
+(c) Verifique o Lema de Shephard calculando \(\partial C / \partial w\) e \(\partial C / \partial r\).
 
-(d) Derive a curva de oferta de curto prazo \(q^s(p)\).
+(d) Calcule o custo total para produzir \(q = 10\).
 
-(e) Se o preço de mercado é \(p = 12\), qual a quantidade produzida e o lucro?
-
----
-
-**Exercício 11.2.**
-Demonstre que, para uma firma com poder de mercado enfrentando uma curva de demanda linear \(p = a - bq\):
-
-(a) A receita marginal é \(\mathrm{RMg} = a - 2bq\) (inclinação é o dobro da da demanda).
-
-(b) A receita total é máxima quando \(q = a/(2b)\).
-
-(c) Verifique que no ponto de receita máxima \(|\varepsilon_d| = 1\).
-
-(d) Se o custo marginal é \(\mathrm{CMg} = c\) (constante), derive a quantidade e o preço de maximização de lucro. Mostre que o preço é um *markup* sobre o custo marginal.
+(e) Determine o custo marginal e o custo médio e mostre que são constantes. Explique por que isso ocorre (dica: relacione com rendimentos de escala).
 
 ---
 
-**Exercício 11.3.**
-Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentando preços \(p = 27\), \(w = 2\) e \(r = 1\).
+**Exercício 10.2.**
+Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + q^3/3\).
 
-(a) Derive as condições de primeira ordem para maximização de lucro.
+(a) Identifique o custo fixo e o custo variável.
 
-(b) Encontre as quantidades ótimas de \(K^*\), \(L^*\) e \(q^*\).
+(b) Derive as expressões de CMe, CVMe e CMg.
 
-(c) Calcule o lucro máximo.
+(c) Encontre o nível de produção que minimiza o CMe e o nível que minimiza o CVMe.
 
-(d) Verifique o Lema de Hotelling calculando a função lucro \(\pi(p, w, r)\) e suas derivadas parciais.
-
----
-
-**Exercício 11.4.**
-Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de produção \(q = \bar{K}^{1/2} L^{1/2} = 4L^{1/2}\). O salário é \(w = 8\) e o custo do capital é \(r = 2\).
-
-(a) Derive a função de custo total de curto prazo \(CT(q)\).
-
-(b) Derive CMg(q) e CVMe(q).
-
-(c) Determine o preço mínimo para que a firma opere (ponto de fechamento).
-
-(d) Se \(p = 16\), qual a quantidade ofertada e o lucro?
-
-(e) Compare com a decisão de longo prazo (quando \(K\) também pode ser ajustado).
+(d) Verifique que o CMg cruza o CMe e o CVMe nos respectivos pontos de mínimo.
 
 ---
 
-**Exercício 11.5.**
-Explique, usando a teoria vista neste capítulo, por que:
+**Exercício 10.3.**
+Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 8\) e \(w = 2\).
 
-(a) Uma firma com prejuízo pode racionalmente continuar operando no curto prazo. Dê um exemplo numérico.
+(a) Derive a função custo \(C(q)\).
 
-(b) A função lucro é convexa nos preços. Qual a implicação econômica dessa propriedade?
+(b) Calcule CMe e CMg. São constantes? Justifique.
 
-(c) Não existe "insumo de Giffen" na teoria da firma. Compare com o caso do consumidor.
+(c) Compare com o caso de uma Cobb-Douglas com rendimentos constantes. Em que se assemelham os custos?
 
-(d) A relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) implica que um monopolista nunca opera na região inelástica da demanda. Explique intuitivamente.
+---
 
-(e) Segundo Coase, qual o limite para o crescimento da firma? Relacione com deseconomias de escala e custos de monitoramento.
+**Exercício 10.4.**
+Explique graficamente e algebricamente por que a curva de custo médio de longo prazo é a envoltória das curvas de custo médio de curto prazo. Use o caso de uma firma com função de produção \(q = K^{1/3}L^{1/3}\) e preços de insumos \(w = r = 1\) para:
+
+(a) Derivar a função custo de longo prazo.
+
+(b) Fixar \(\bar{K} = 4\) e derivar a função custo de curto prazo.
+
+(c) Mostrar que \(\mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}=4)\) para todo \(q\), com igualdade em um ponto específico.
+
+---
+
+**Exercício 10.5.**
+Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + \beta = 1\) (rendimentos constantes de escala).
+
+(a) Mostre que a função custo é linear em \(q\): \(C(w, r, q) = c(w, r) \cdot q\), onde \(c(w, r)\) é o custo unitário.
+
+(b) Derive a expressão de \(c(w, r)\) e mostre que ele é homogêneo de grau 1 nos preços dos insumos.
+
+(c) Mostre que, neste caso, \(\mathrm{CMg} = \mathrm{CMe} = c(w, r)\) — o custo marginal é constante e igual ao custo médio.
+
+(d) Interprete economicamente: por que rendimentos constantes de escala implicam custos marginais constantes?
 
 ---
 
 ## Vem, ANPEC!
 
-??? question "ANPEC 2013 — Questão 03"
-    Suponha que a função de produção para um dado produto tem a seguinte forma funcional: \(q = f(x_1) = 2x_1 - 0{,}03\,x_1^2\). Considere também que o preço de uma unidade do bem final é \(p(q) = R\$\,10{,}00\) e o preço unitário do insumo, praticado pelo mercado, é \(p(x_1) = R\$\,8{,}00\).
-
-    Dadas essas informações, é correto afirmar que:
-
-    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
-
-    | Item | Afirmação |
-    |------|-----------|
-    | 0 | O nível de utilização do insumo que maximiza o nível de produção é \(x_1 = 33{,}33\). |
-    | 1 | O nível de utilização do insumo que maximiza o lucro da firma é \(x_1 = 19{,}5\). |
-    | 2 | O nível de produção economicamente ótimo é \(q = 28\). |
-    | 3 | O lucro máximo \((\pi)\) obtenível pela firma é \(\pi = R\$\,120{,}00\). |
-    | 4 | A produtividade marginal do fator é crescente. |
-
-    ??? success "Gabarito"
-        **Respostas: 10110**
-
-        **Justificativa por item:**
-
-        - **Item 0 — V:** Para maximizar a produção, \(f'(x_1) = 2 - 0{,}06\,x_1 = 0 \implies x_1 = 33{,}33\). Correto.
-        - **Item 1 — F:** A condição de maximização de lucro é \(p \cdot f'(x_1) = p_{x_1}\), ou seja, \(10(2 - 0{,}06\,x_1) = 8 \implies 20 - 0{,}6\,x_1 = 8 \implies x_1 = 20\), e não 19,5.
-        - **Item 2 — V:** \(q(20) = 2(20) - 0{,}03(400) = 40 - 12 = 28\). Correto.
-        - **Item 3 — V:** \(\pi = 10 \times 28 - 8 \times 20 = 280 - 160 = 120\). Correto.
-        - **Item 4 — F:** \(\mathrm{PMg} = 2 - 0{,}06\,x_1\), que é **decrescente** em \(x_1\) (rendimentos marginais decrescentes).
-
----
-
 ??? question "ANPEC 2020 — Questão 06"
-    Em um ano, uma empresa apresentou os seguintes dados contábeis: \$1 milhão de receitas, \$300 mil de compras de matérias-primas, \$30 mil de despesas com água e energia elétrica, \$100 mil de gastos com a folha de salários e \$120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$90 mil e outra com salário anual de \$150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
-
-    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+    Em um ano, uma empresa apresentou os seguintes dados contábeis: \$ 1 milhão de receitas, \$ 300 mil de compras de matérias primas, \$ 30 mil de despesas com água e energia elétrica, \$ 100 mil de gastos com a folha de salários e \$ 120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$ 200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$ 90 mil e outra com salário anual de \$ 150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
     |------|-----------|
-    | 0 | O custo contábil anual da empresa é de \$550 mil. |
-    | 1 | O custo econômico anual da empresa é de \$780 mil. |
-    | 2 | O lucro econômico anual da empresa é de \$100 mil. |
+    | 0 | O custo contábil anual da empresa é de \$ 550 mil. |
+    | 1 | O custo econômico anual da empresa é de \$ 780 mil. |
+    | 2 | O lucro econômico anual da empresa é de \$ 100 mil. |
     | 3 | Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo. |
-    | 4 | O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$300 mil. |
+    | 4 | O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$ 300 mil. |
 
     ??? success "Gabarito"
-        **Respostas: 11010**
+        **Respostas: V V F V F**
 
         **Justificativa por item:**
 
-        - **Item 0 — V:** Custo contábil = matérias-primas (300) + água/energia (30) + salários funcionários (100) + salário proprietário (120) = **\$550 mil**. Correto.
-        - **Item 1 — V:** Custo econômico inclui todos os custos de oportunidade: matérias-primas (300) + água/energia (30) + salários funcionários (100) + custo de oportunidade do proprietário (max{90, 150} = 150) + custo de oportunidade das instalações (200) = **\$780 mil**. Correto.
-        - **Item 2 — F:** Lucro econômico = receita − custo econômico = 1.000 − 780 = **\$220 mil**, e não \$100 mil. O erro comum é calcular o custo de oportunidade do proprietário como 150 − 120 = 30 e do capital como 200, obtendo custo eco = 550 + 30 + 200 = 780 e lucro = 220 — o resultado é o mesmo por qualquer caminho correto.
-        - **Item 3 — V:** Como o lucro econômico é positivo (\$220 mil \(>\) 0), é racional continuar operando. Correto.
-        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) não devem afetar decisões presentes e futuras. O proprietário deve considerar apenas os custos e receitas prospectivos. A existência de um custo irrecuperável passado de \$300 mil é irrelevante para a decisão de continuar ou fechar.
+        - **Item 0 — V:** Custos contábeis (explícitos) = \$300k (matéria-prima) + \$30k (água/energia) + \$100k (salários) + \$120k (pró-labore) = **\$550k**.
+        - **Item 1 — V:** Custo de oportunidade do trabalho do proprietário: \$150k (melhor oferta) − \$120k (pró-labore já pago) = \$30k adicional implícito. Custo de oportunidade das instalações: \$200k (aluguel). Custos implícitos = \$30k + \$200k = \$230k. Custo econômico = \$550k + \$230k = **\$780k**.
+        - **Item 2 — F:** Lucro econômico = \$1.000k − \$780k = **\$220k**, não \$100k.
+        - **Item 3 — V:** Como o lucro econômico é \$220k > 0, a empresa remunera todos os fatores acima de seu custo de oportunidade. O proprietário deve continuar operando.
+        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua \$220k > 0 independentemente de custos já afundados. A decisão racional é continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva (Seção 11.1).
 
----
-
-??? question "ANPEC 2025 — Questão 07"
-    Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
-
-    **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
+??? question "ANPEC 2018 — Questão 05"
+    Com relação aos custos de produção, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
     |------|-----------|
-    | 0 | No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero. |
-    | 1 | No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado. |
-    | 2 | Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo. |
-    | 3 | Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor. |
-    | 4 | Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo. |
+    | 0 | Quando há níveis discretos do fator fixo, a curva de custo marginal de longo prazo será composta por trechos das curvas de custo marginal de curto prazo associados a cada nível de fator fixo. |
+    | 1 | No caso de uma empresa com duas fábricas, a curva de custo marginal de curto prazo da empresa é a soma vertical das curvas de custo marginal de curto prazo das duas fábricas. |
+    | 2 | A função de custo total quadrática do tipo \(CT = aq + bq^2\) resulta em uma curva de custo marginal linear. |
+    | 3 | Uma função de custo total cúbica do tipo \(C = aq + bq^2 + cq^3\) resulta em curvas de custo médio e marginal em forma de U. |
+    | 4 | Custos quase fixos independem do nível de produção, mas só precisam ser pagos se a empresa produzir uma quantidade positiva de bens. |
 
     ??? success "Gabarito"
-        **Respostas: 01001**
+        **Respostas: V F V V V**
 
         **Justificativa por item:**
 
-        - **Item 0 — F:** No equilíbrio de **curto prazo**, firmas podem ter lucro positivo, negativo ou zero — a condição de lucro zero vale apenas no **longo prazo** com livre entrada e saída.
-        - **Item 1 — V:** No equilíbrio de longo prazo com livre entrada e saída, todos os fatores são remunerados a preços de mercado, pois o lucro econômico é zero — nenhum fator é sub ou super-remunerado em relação ao seu custo de oportunidade.
-        - **Item 2 — F:** Um fator fixo (como terra fértil ou licença) gera **renda econômica** para o detentor desse fator. O lucro econômico das firmas permanece zero, pois a renda é capitalizada no preço do fator fixo (ou no aluguel). O "lucro" aparente é na verdade remuneração do fator escasso.
-        - **Item 3 — F:** A causalidade é inversa: é o **preço de equilíbrio** (determinado por oferta e demanda) que determina a renda econômica, e não o contrário. Este é o princípio ricardiano clássico: "o milho não é caro porque paga-se renda; paga-se renda porque o milho é caro."
-        - **Item 4 — V:** Com livre entrada/saída e custos constantes (sem economias ou deseconomias externas), firmas entram até que \(p = \mathrm{CMe}_{\min}\). A curva de oferta de longo prazo é perfeitamente elástica (horizontal) nesse preço.
+        - **Item 0 — V:** Quando o capital assume apenas valores discretos (\(\bar{K}_1, \bar{K}_2, \ldots\)), cada nível gera uma curva de CMg de curto prazo. A curva de CMg de longo prazo é obtida selecionando, para cada nível de produto, o trecho da CMg de curto prazo correspondente ao nível de capital que minimiza o custo total — formando uma curva "composta" por segmentos das diversas CMg de curto prazo. Isso é a contrapartida discreta da envoltória contínua (Seção 11.7).
+        - **Item 1 — F:** A soma é **horizontal**, não vertical. Com duas fábricas, a firma aloca produção de modo a igualar os custos marginais entre elas. Para cada nível de CMg, soma-se as quantidades produzidas nas duas fábricas — essa é a soma horizontal. A soma vertical seria somar os custos marginais a cada quantidade, o que não descreve corretamente a agregação de CMg entre plantas.
+        - **Item 2 — V:** \(CT = aq + bq^2 \implies CMg = a + 2bq\), que é uma função linear de \(q\).
+        - **Item 3 — V:** \(CMe = a + bq + cq^2\) e \(CMg = a + 2bq + 3cq^2\). Para os parâmetros convencionais (\(b < 0, c > 0\)), ambas são parábolas com concavidade para cima, gerando o formato de U clássico (Seção 11.5).
+        - **Item 4 — V:** Custos quase fixos são custos que não variam com o nível de produção, mas que só existem quando a firma produz (\(q > 0\)). Diferem dos custos fixos tradicionais, que são incorridos mesmo com \(q = 0\). Exemplos incluem o custo de aquecimento de um forno industrial ou a equipe mínima de operação.
+
+??? question "ANPEC 2022 — Questão 05"
+    Com relação à Teoria dos Custos, julgue os itens a seguir:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por \(f_1(K,L) = \min\{K, L/4\}\) e o segundo processo é dado por \(f_2(K,L) = \min\{K/5, L\}\). Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é \(r = 1\) e o do trabalho é \(w = 2\). Então, a função custo da empresa é \(c(Q) = 7Q\). |
+    | 1 | Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por \(r > 0\) e \(w > 0\). Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: \(c(r, w, q) = 2r^{5/8}w^{3/8}\). Suponha que \(r = 1\) e \(w = 256 = 2^8\). Então, a demanda fatorial por capital é \(K = 16\). |
+    | 2 | Uma empresa possui função de produção dada por \(f(K, L) = \sqrt{KL}\), em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \(\bar{K} = 4\). Suponha que o preço fatorial do capital é \(r = 1\) e que o preço fatorial do trabalho é \(w = 4\). Então, a função de custo de curto prazo é \(c(q) = 4 + q^2\). |
+    | 3 | No curto prazo, se o preço do produto é inferior ao custo médio mínimo, então a firma necessariamente não produzirá. |
+    | 4 | Uma firma tem função de produção \(f(K, L) = \min\{K + L, 2L\}\). Sejam \(r, w > 0\) os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que \(r < w\). O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V F V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** Processo 1 usa 1K e 4L por unidade: custo unitário = \(1 \cdot 1 + 4 \cdot 2 = 9\). Processo 2 usa 5K e 1L por unidade: custo unitário = \(5 \cdot 1 + 1 \cdot 2 = 7\). Como \(7 < 9\), a firma usa apenas o processo 2 e \(c(Q) = 7Q\).
+        - **Item 1 — F:** Pelo Lema de Shephard: \(K = \partial c / \partial r = 2 \cdot \frac{5}{8} r^{-3/8} w^{3/8} = \frac{5}{4} r^{-3/8} w^{3/8}\). Com \(r = 1\) e \(w = 256\): \(K = \frac{5}{4} \cdot 1 \cdot 256^{3/8} = \frac{5}{4} \cdot (2^8)^{3/8} = \frac{5}{4} \cdot 2^3 = \frac{5}{4} \cdot 8 = 10\), não 16. O Lema de Shephard (Seção 11.4) é a ferramenta para resolver este item.
+        - **Item 2 — V:** \(q = \sqrt{4L} = 2\sqrt{L} \implies L = q^2/4\). Custo de curto prazo: \(c = r\bar{K} + wL = 1 \cdot 4 + 4 \cdot q^2/4 = 4 + q^2\).
+        - **Item 3 — F:** No curto prazo, se \(P < \mathrm{CMe}_{min}\) mas \(P > \mathrm{CVMe}_{min}\), a firma produz — ela cobre seus custos variáveis e parte dos custos fixos. A firma só encerra produção se \(P < \mathrm{CVMe}_{min}\) (ponto de fechamento). A condição é sobre o CVMe, não sobre o CMe (Seção 11.5).
+        - **Item 4 — V:** \(f(K,L) = \min\{K+L, 2L\}\). Com \(r < w\), a firma prefere usar mais K e menos L. Para \(q = \min\{K+L, 2L\}\), no ótimo com \(r < w\): \(K+L \geq 2L\) (i.e., \(K \geq L\)), de modo que \(q = 2L\), logo \(L = q/2\). A restrição \(L \leq 10\) se torna ativa quando \(q/2 > 10\), ou seja, \(q > 20\).
 
 ---
 
 ## Apêndice: A Pesquisa em Ação
 
-??? abstract "Ulyssea, G. (2018). [Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745). *American Economic Review*, 108(8), 2015–2047."
-    **Pergunta central:** Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
+??? abstract "Christensen, Laurits R.; Greene, William H. (1976). [Economies of Scale in U.S. Electric Power Generation](https://doi.org/10.1086/260470). *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: [10.1086/260470](https://doi.org/10.1086/260470)"
+    **Pergunta central:** A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
 
-    **Método:** O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
+    **Método:** Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
 
-    **Resultado principal:** O resultado central é surpreendente: as duas margens de informalidade podem mover-se em **direções opostas**. Políticas que reduzem a informalidade empresarial (mais firmas se registrando) não necessariamente reduzem a informalidade trabalhista — e podem até piorá-la. Nem sempre há ganhos de produtividade, produto ou bem-estar. A heterogeneidade das firmas é crucial: firmas muito pequenas que se formalizam enfrentam custos regulatórios que reduzem sua eficiência.
+    **Resultado principal:** Os resultados mostraram que a curva de CMe de longo prazo tinha de fato formato de U: economias de escala significativas para firmas pequenas e médias, custos médios aproximadamente constantes para firmas com geração acima de 20 bilhões de kWh, e leves deseconomias para as maiores. Isso contrastava com estimativas anteriores (usando formas funcionais restritivas como a Cobb-Douglas), que encontravam economias de escala ilimitadas — artefato da imposição de retornos crescentes homogêneos.
 
-    **Por que isso importa:** Para o Brasil, onde o Simples Nacional e programas como o MEI (Microempreendedor Individual) buscam reduzir a informalidade, o artigo oferece um alerta: formalizar a empresa não é o mesmo que formalizar o emprego. Políticas públicas precisam considerar ambas as margens simultaneamente.
+    **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
 
-    **Relevância para o capítulo:** O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
+??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). [Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061). *American Economic Review*, 106(6), 1320-1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
+    **Pergunta central:** Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
 
-??? abstract "Dix-Carneiro, R.; Kovak, B. K. (2017). [Trade Liberalization and Regional Dynamics](https://doi.org/10.1257/aer.20161214). *American Economic Review*, 107(10), 2908–2946."
-    **Pergunta central:** Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
+    **Método:** Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.
 
-    **Método:** Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.
+    **Resultado principal:** Municípios mais adequados à soja GM experimentaram: (i) aumento da área plantada com soja e redução da área de outras culturas; (ii) queda no emprego agrícola (a soja GM é poupadora de trabalho); (iii) crescimento do emprego industrial nos municípios afetados. Porém, o efeito sobre a indústria dependia do tipo de inovação: tecnologias poupadoras de trabalho (como a soja GM) liberavam mão de obra para a indústria, enquanto tecnologias que aumentavam o valor do produto por hectare (como a cana-de-açúcar para etanol) atraíam mais trabalhadores para a agricultura.
 
-    **Resultado principal:** O impacto negativo sobre emprego formal e salários foi **persistente e crescente**: após 20 anos, regiões mais afetadas apresentavam queda de emprego formal cerca de três vezes maior do que após 10 anos. O mecanismo envolve mobilidade imperfeita do trabalho, ajuste lento do capital e perda de economias de aglomeração. Firmas em regiões expostas reduziram a produção e a demanda por trabalho de forma prolongada — contrariando modelos que preveem ajuste rápido.
-
-    **Por que isso importa:** O estudo demonstra empiricamente que a "curva de oferta de longo prazo" — que a teoria descreve como perfeitamente elástica — pode levar décadas para se materializar em economias reais com fricções. Para o Brasil, os resultados informam debates sobre política comercial e proteção a setores vulneráveis.
-
-    **Relevância para o capítulo:** O artigo ilustra a distinção entre **curto e longo prazo** da Seção 11.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 11.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
+    **Relevância para o capítulo:** O artigo conecta diretamente a Seção 11.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 11.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
 
 ## Referências do Capítulo
 
-- Coase, Ronald H. 1937. ["The Nature of the Firm."](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) *Economica* 4 (16): 386–405.
-- CONAB. 2023–2026. [*Acompanhamento da Safra Brasileira de Grãos*](https://www.conab.gov.br). Brasília: CONAB.
-- Dix-Carneiro, Rafael, e Brian K. Kovak. 2017. ["Trade Liberalization and Regional Dynamics."](https://doi.org/10.1257/aer.20161214) *American Economic Review* 107 (10): 2908–2946.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press.
-- SEBRAE. 2020. [*Sobrevivência das Empresas no Brasil*](https://www.sebrae.com.br). Brasília: SEBRAE.
-- Ulyssea, Gabriel. 2018. ["Firms, Informality, and Development: Theory and Evidence from Brazil."](https://doi.org/10.1257/aer.20141745) *American Economic Review* 108 (8): 2015–2047.
-- Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
-- Williamson, Oliver E. 1975. [*Markets and Hierarchies: Analysis and Antitrust Implications*](https://books.google.com.br/books?id=pg-wAAAAIAAJ). New York: Free Press.
-- Williamson, Oliver E. 1985. [*The Economic Institutions of Capitalism*](https://books.google.com.br/books?id=MqyvAAAAIAAJ). New York: Free Press.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5 (Seções 5.C–5.D).
+- Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 10.
+- Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ). 8ª ed. São Paulo: Pearson. Cap. 7.
+- Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Cap. 20–22.
