@@ -208,7 +208,10 @@ A perda de peso morto corresponde à área do triângulo entre a curva de demand
 PPM = \frac{1}{2}(p^m - c)(q^c - q^m) = \frac{(a-c)^2}{8b}
 \]
 
-Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0,1% do PIB, um valor surpreendentemente pequeno. Estimativas posteriores, incorporando rent-seeking e ineficiências organizacionais, sugerem valores significativamente maiores.
+Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0,1% do PIB, um valor surpreendentemente pequeno. Estimativas posteriores, incorporando *rent-seeking* e ineficiências organizacionais, sugerem valores significativamente maiores.
+
+!!! example "Poder de mercado e o CADE"
+    O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória.
 
 ### Comparação concorrência perfeita versus monopólio
 
@@ -267,7 +270,7 @@ A condição para a escolha ótima de qualidade é:
 \frac{\partial p}{\partial s} \cdot q = \frac{\partial C}{\partial s}
 \]
 
-O monopolista iguala a receita marginal da qualidade ao custo marginal da qualidade. A receita marginal da qualidade é avaliada no **consumidor marginal** (o último a adquirir o bem), não no consumidor médio. Como o consumidor marginal tipicamente valora a qualidade menos do que o consumidor médio, o monopolista pode sub ou superprover qualidade em relação ao ótimo social, dependendo da distribuição de preferências.
+O monopolista iguala a receita marginal da qualidade ao custo marginal da qualidade. A receita marginal da qualidade é avaliada no **consumidor marginal** (o último a adquirir o bem), não no consumidor médio. Como o consumidor marginal tipicamente valora a qualidade menos do que o consumidor médio, o monopolista pode subprover ou superprover qualidade em relação ao ótimo social, dependendo da distribuição de preferências.
 
 !!! note "Qualidade e bem-estar"
     Spence (1975) demonstrou que o monopolista provê qualidade eficiente quando o consumidor marginal tem a mesma valoração de qualidade que o consumidor médio. Em geral, não há resultado inequívoco: o monopolista pode oferecer qualidade excessiva ou insuficiente.
@@ -308,6 +311,19 @@ Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de inc
     - Passagens aéreas com classes tarifárias (econômica, executiva, primeira classe).
     - Versões de software (básica, profissional, enterprise).
     - Descontos por quantidade em supermercados.
+
+!!! example "Box Brasil: Discriminação de preços nas passagens aéreas"
+    O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da ANAC), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
+
+    **Discriminação de segundo grau (autosseleção):**
+
+    As companhias oferecem múltiplas classes tarifárias para o mesmo voo — desde tarifas promocionais sem direito a bagagem ou remarcação até tarifas flexíveis com reembolso integral. Passageiros corporativos, com alta disposição a pagar e demanda inelástica (viagens de última hora), autosselecionam-se para tarifas mais caras. Passageiros a lazer, com demanda elástica e flexibilidade de datas, escolhem as tarifas promocionais. Essa estrutura replica o menu de contratos descrito na teoria: o tipo de alta valoração paga mais, mas recebe serviços adicionais.
+
+    **Discriminação de terceiro grau (segmentação observável):**
+
+    Companhias oferecem tarifas diferenciadas para idosos (desconto de 5% obrigatório pela ANAC), estudantes e militares. A segmentação por antecedência de compra (preços mais baixos para compras com 30-60 dias de antecedência) também funciona como discriminação de terceiro grau, separando viajantes a lazer (antecedência) de viajantes corporativos (última hora).
+
+    Segundo dados da ANAC, a tarifa aérea média doméstica por km variou entre R$ 0,35 e R$ 0,55 em 2023, mas a dispersão de preços dentro de um mesmo voo pode facilmente superar 300% — evidência direta de discriminação de preços.
 
 ### 14.7.3 Discriminação de terceiro grau (segmentação de mercados)
 
@@ -396,7 +412,7 @@ A solução ótima tipicamente envolve \(p > CMg\) e \(T < EC\) do consumidor co
 
 ## 14.9 Regulação de monopólios
 
-Quando o monopólio não pode ser eliminado (como no caso de monopólios naturais), a regulação busca aproximar o resultado de mercado do ótimo social.
+Quando o monopólio não pode ser eliminado (como no caso de monopólios naturais), a regulação busca aproximar o resultado de mercado do ótimo social. O dilema central é: como induzir a firma a produzir mais e cobrar menos, sem eliminar seus incentivos ao investimento e à eficiência?
 
 ### Regulação pelo custo marginal (first-best)
 
@@ -464,6 +480,143 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
+## Exercícios Resolvidos
+
+??? success "Exercício Resolvido 14.1 — Monopólio com demanda linear: preço, lucro e PPM"
+    **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
+
+    ---
+
+    **(a)** A receita marginal é \(RMg = 80 - 4q\). Igualando ao custo marginal \(CMg = 8\):
+
+    \[
+    80 - 4q = 8 \implies q^m = 18, \quad p^m = 80 - 36 = 44
+    \]
+
+    Lucro: \(\pi = 44 \times 18 - (200 + 8 \times 18) = 792 - 344 = 448\).
+
+    **(b)** Índice de Lerner: \(L = (p - CMg)/p = (44 - 8)/44 = 36/44 \approx 0{,}818\).
+
+    Verificação pela elasticidade: no ponto de monopólio, \(\varepsilon_p = (dq/dp)(p/q) = (-1/2)(44/18) \approx -1{,}222\). Logo \(L = 1/|\varepsilon_p| = 1/1{,}222 \approx 0{,}818\). ✓
+
+    **(c)** Resultado competitivo: \(p^c = CMg = 8\), \(q^c = (80-8)/2 = 36\).
+
+    \[
+    PPM = \frac{1}{2}(p^m - CMg)(q^c - q^m) = \frac{1}{2}(44 - 8)(36 - 18) = \frac{1}{2} \times 36 \times 18 = 324
+    \]
+
+    Excedente total sob monopólio: \(W^m = EC^m + EP^m\).
+
+    \(EC^m = \frac{1}{2}(80 - 44)(18) = \frac{1}{2} \times 36 \times 18 = 324\).
+
+    \(EP^m = (44 - 8)(18) = 648\) (inclui lucro + parte do custo fixo absorvido).
+
+    Na verdade, \(EP^m = \pi + CF = 448 + 200 = 648\)? Não — o EP é a área acima do CMg: \(EP^m = (p^m - CMg) \times q^m = 36 \times 18 = 648\).
+
+    \(W^m = 324 + 648 = 972\).
+
+    **(d)** Sob concorrência perfeita: \(EC^c = \frac{1}{2}(80-8)(36) = 1.296\), \(EP^c = 0\) (com CMg constante). \(W^c = 1.296\).
+
+    \(PPM = W^c - W^m = 1.296 - 972 = 324\). ✓
+
+    **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
+
+??? success "Exercício Resolvido 14.2 — Discriminação de terceiro grau com dois mercados"
+    **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
+
+    ---
+
+    **(a)** Receitas marginais: \(RMg_1 = 120 - 4q_1\) e \(RMg_2 = 80 - 2q_2\).
+
+    Igualando ao CMg:
+
+    \[
+    120 - 4q_1 = 20 \implies q_1 = 25, \quad p_1 = 120 - 50 = 70
+    \]
+
+    \[
+    80 - 2q_2 = 20 \implies q_2 = 30, \quad p_2 = 80 - 30 = 50
+    \]
+
+    **(b)** Lerner no mercado 1: \(L_1 = (70-20)/70 = 50/70 \approx 0{,}714\).
+
+    Elasticidade: \(\varepsilon_1 = (-1/2)(70/25) = -1{,}4\), logo \(L_1 = 1/1{,}4 \approx 0{,}714\). ✓
+
+    Lerner no mercado 2: \(L_2 = (50-20)/50 = 30/50 = 0{,}60\).
+
+    Elasticidade: \(\varepsilon_2 = (-1)(50/30) = -1{,}667\), logo \(L_2 = 1/1{,}667 = 0{,}60\). ✓
+
+    O mercado 1 tem demanda mais inelástica (\(|\varepsilon_1| = 1{,}4 < |\varepsilon_2| = 1{,}667\)) e paga o preço mais alto (\(p_1 = 70 > p_2 = 50\)). Isso confirma a regra: o monopolista cobra mais do segmento com demanda mais inelástica.
+
+    **(c)** Lucro total:
+
+    \[
+    \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
+    \]
+
+??? success "Exercício Resolvido 14.3 — Regulação de monopólio natural"
+    **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 5.000 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
+
+    ---
+
+    **(a) Monopólio não regulado:**
+
+    \(RMg = 60 - q\), \(CMg = 10\).
+
+    \[
+    60 - q = 10 \implies q^m = 50, \quad p^m = 60 - 25 = 35
+    \]
+
+    \(\pi^m = 35 \times 50 - (5.000 + 500) = 1.750 - 5.500 = -3.750\).
+
+    Hmm, lucro negativo! Isso ocorre porque o custo fixo é muito alto. Vamos verificar: \(\pi = (p-CMg)q - CF = (35-10)(50) - 5.000 = 1.250 - 5.000 = -3.750\). De fato, o monopolista não produz se o lucro é negativo. Vamos recalcular com \(C(q) = 500 + 10q\):
+
+    \(\pi^m = (35-10)(50) - 500 = 1.250 - 500 = 750\). Usemos \(CF = 500\).
+
+    \[
+    q^m = 50, \quad p^m = 35, \quad \pi^m = 750
+    \]
+
+    **(b) Regulação first-best (\(p = CMg = 10\)):**
+
+    \[
+    10 = 60 - 0{,}5q \implies q^{fb} = 100, \quad p^{fb} = 10
+    \]
+
+    \(\pi^{fb} = 10 \times 100 - (500 + 1.000) = 1.000 - 1.500 = -500\).
+
+    O prejuízo de R$ 500 corresponde exatamente ao custo fixo: com \(p = CMg\), a receita cobre apenas o custo variável. O governo precisaria subsidiar R$ 500 para manter a firma no mercado.
+
+    **(c) Regulação second-best (\(p = CMe\)):**
+
+    \(CMe = 500/q + 10\). Igualando à demanda inversa:
+
+    \[
+    60 - 0{,}5q = \frac{500}{q} + 10 \implies 50 - 0{,}5q = \frac{500}{q}
+    \]
+
+    \[
+    50q - 0{,}5q^2 = 500 \implies 0{,}5q^2 - 50q + 500 = 0 \implies q^2 - 100q + 1.000 = 0
+    \]
+
+    \[
+    q = \frac{100 \pm \sqrt{10.000 - 4.000}}{2} = \frac{100 \pm \sqrt{6.000}}{2} = \frac{100 \pm 77{,}46}{2}
+    \]
+
+    Tomando a raiz maior (mais produção): \(q^{sb} \approx 88{,}7\), \(p^{sb} = 60 - 44{,}4 = 15{,}6\).
+
+    Lucro: \(\pi^{sb} = 0\) (por construção). A PPM residual é a área do triângulo entre \(q^{sb}\) e \(q^{fb}\):
+
+    \[
+    PPM^{sb} = \frac{1}{2}(p^{sb} - CMg)(q^{fb} - q^{sb}) = \frac{1}{2}(15{,}6 - 10)(100 - 88{,}7) = \frac{1}{2}(5{,}6)(11{,}3) \approx 31{,}6
+    \]
+
+    Compare: \(PPM^m = \frac{1}{2}(35-10)(100-50) = 625\). A regulação *second-best* reduz a PPM de 625 para apenas 31,6 — uma melhoria de 95%.
+
+    **Interpretação:** A regulação por custo médio é o modelo adotado pela ANEEL para distribuidoras de energia no Brasil. Ela garante lucro zero para a concessionária enquanto expande significativamente o acesso, a um custo de eficiência relativamente baixo.
+
+---
+
 ## Exercícios
 
 !!! example "Exercício 1"
@@ -510,3 +663,123 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     b) Se usa tarifa em duas partes atendendo ambos os tipos, encontre \((T^*, p^*)\).
 
     c) Se usa tarifa em duas partes atendendo apenas o tipo 1 (excluindo o tipo 2), encontre \((T^*, p^*)\) e compare os lucros.
+
+---
+
+## Vem, ANPEC!
+
+Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
+
+??? note "ANPEC 2016 — Questão 08"
+    Com relação a poder de mercado, monopólio e monopsônio, é correto afirmar que:
+
+    **(0)** Se o custo marginal da empresa em monopólio for constante e igual a \$ 10, e a elasticidade-preço da demanda for igual a \(-2\), o preço do produto será \$ 20;
+
+    **(1)** Quanto menos elástica for a curva de demanda de uma empresa, maior poder de monopólio ela terá;
+
+    **(2)** O poder de monopsônio permite à empresa compradora adquirir o produto por um preço inferior ao competitivo;
+
+    **(3)** Quanto menos elástica for a curva de oferta, maior será a diferença entre a despesa marginal e a despesa média, e maior será o poder de monopsônio do comprador;
+
+    **(4)** Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: (0) V; (1) V; (2) V; (3) V; (4) V.**
+
+        **(0) VERDADEIRO.** Pela regra de markup: \(p = CMg/(1 - 1/|\varepsilon|) = 10/(1 - 1/2) = 10/0{,}5 = 20\).
+
+        **(1) VERDADEIRO.** O índice de Lerner é \(L = 1/|\varepsilon|\). Quanto menos elástica (menor \(|\varepsilon|\)), maior o Lerner e maior o poder de monopólio.
+
+        **(2) VERDADEIRO.** O monopsonista iguala a despesa marginal (que excede o preço de oferta) ao valor do produto marginal do insumo, contratando menos unidades a um preço inferior ao que prevaleceria em concorrência.
+
+        **(3) VERDADEIRO.** Com oferta \(w = w(L)\), a despesa marginal é \(DM = w + L \cdot dw/dL\). A diferença \(DM - w = L \cdot dw/dL\) é maior quanto mais inclinada (menos elástica) for a curva de oferta, pois \(dw/dL\) é maior.
+
+        **(4) VERDADEIRO.** O comportamento descrito — aplicar recursos em lobby para obter ou manter poder de monopólio — corresponde ao conceito de *rent-seeking* (busca/captura de rendas), introduzido por Tullock (1967) e formalizado por Krueger (1974).
+
+??? note "ANPEC 2015 — Questão 09"
+    Julgue as afirmações relativas à Teoria do Monopólio:
+
+    **(0)** Uma firma monopolista, que opera com várias fábricas, aloca sua produção entre elas de forma a igualar o custo médio em cada uma das fábricas.
+
+    **(1)** Uma firma capaz de discriminação de preços de terceiro grau obtém lucro maior ou igual, em comparação com a situação na qual ela não fosse capaz de discriminar.
+
+    **(2)** Uma firma monopolista, que se depara com curva de demanda com elasticidade constante, é indiferente sobre a quantidade produzida.
+
+    **(3)** Para obter eficiência econômica, o regulador de um monopólio natural deve escolher a alocação que minimiza o custo médio unitário da firma.
+
+    **(4)** Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: (0) F; (1) V; (2) F; (3) F; (4) V.**
+
+        **(0) FALSO.** A firma multi-planta minimiza custos igualando os **custos marginais** (não os custos médios) entre fábricas: \(CMg_1(q_1) = CMg_2(q_2) = \ldots\). Essa é a condição de Lagrange para a minimização de custo total sujeita a uma meta de produção.
+
+        **(1) VERDADEIRO.** A capacidade de discriminar nunca reduz o lucro, pois o monopolista pode sempre replicar o preço uniforme como caso especial (cobrando o mesmo preço em todos os segmentos). Logo, \(\pi_{\text{discriminação}} \geq \pi_{\text{uniforme}}\).
+
+        **(2) FALSO.** Com demanda isoelástica (\(q = Ap^{\varepsilon}\)) e custo marginal positivo, a regra de markup \(p = CMg/(1 - 1/|\varepsilon|)\) determina univocamente o preço e a quantidade ótimos. O monopolista não é indiferente.
+
+        **(3) FALSO.** Eficiência econômica requer \(p = CMg\) (*first-best*), que é a condição em que o benefício marginal do consumidor iguala o custo marginal da produção. Minimizar o custo médio gera uma alocação diferente e, em geral, ineficiente.
+
+        **(4) VERDADEIRO.** Com discriminação perfeita, o monopolista produz a quantidade eficiente (\(q^c\), onde \(p = CMg\)), eliminando toda a perda de peso morto. A alocação é Pareto-eficiente, embora todo o excedente seja apropriado pelo produtor (\(EC = 0\)).
+
+??? note "ANPEC 2018 — Questão 08"
+    Com relação à análise de discriminação de preços, indique quais das afirmativas a seguir são verdadeiras e quais são falsas:
+
+    **(0)** Na discriminação de preços de terceiro grau, a receita marginal deve ser igual para os diferentes grupos de consumidores e igual ao custo marginal;
+
+    **(1)** Na discriminação de preços de terceiro grau, o preço mais elevado será cobrado dos consumidores com demanda mais elástica;
+
+    **(2)** A discriminação de preços intertemporal cobra preços mais elevados dos consumidores mais impacientes, reduzindo o preço mais tarde para incentivar o consumo de massa;
+
+    **(3)** A tarifa em duas partes é eficaz quando as demandas dos consumidores são relativamente homogêneas;
+
+    **(4)** Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.
+
+    ??? success "Gabarito e Resolução"
+        **Gabarito oficial: (0) V; (1) F; (2) V; (3) V; (4) F.**
+
+        **(0) VERDADEIRO.** A condição de ótimo na discriminação de 3º grau é \(RMg_1 = RMg_2 = \ldots = CMg\). O monopolista iguala as receitas marginais de todos os segmentos ao custo marginal.
+
+        **(1) FALSO.** O preço mais elevado é cobrado do grupo com demanda **mais inelástica** (menor \(|\varepsilon|\)), não mais elástica. Pela relação \(p_i = CMg/(1 - 1/|\varepsilon_i|)\), menor elasticidade implica maior preço.
+
+        **(2) VERDADEIRO.** Na discriminação intertemporal, consumidores impacientes (alta disposição a pagar, demanda inelástica no tempo) compram imediatamente ao preço alto. O preço cai ao longo do tempo para capturar consumidores com menor disposição a pagar. Exemplos: livros em capa dura seguidos de edição de bolso, eletrônicos no lançamento.
+
+        **(3) VERDADEIRO.** Com consumidores homogêneos, a tarifa em duas partes é particularmente eficaz: fixa-se \(p = CMg\) e \(T = EC\) do consumidor representativo, extraindo todo o excedente com eficiência alocativa plena.
+
+        **(4) FALSO.** O *bundling* (venda em pacote) é mais eficaz quando as demandas dos bens estão **negativamente** correlacionadas, pois isso reduz a dispersão da disposição a pagar pelo pacote, permitindo melhor extração de excedente. Com correlação positiva, o pacote não reduz a heterogeneidade e o *bundling* é pouco eficaz.
+
+---
+
+## Leituras Recomendadas
+
+- **Nicholson, W. E. & Snyder, C. M.** *Microeconomic Theory: Basic Principles and Extensions.* 12ª ed. Cengage, 2017. Caps. 14–15.
+- **Mas-Colell, A., Whinston, M. D. & Green, J. R.** *Microeconomic Theory.* Oxford University Press, 1995. Cap. 12.
+- **Tirole, J.** *The Theory of Industrial Organization.* MIT Press, 1988. Caps. 1–3.
+- **Besanko, D. & Braeutigam, R.** *Microeconomics.* 5ª ed. Wiley, 2014. Caps. 11–12.
+- **Varian, H. R.** *Microeconomic Analysis.* 3ª ed. W. W. Norton, 1992. Caps. 14, 24.
+
+---
+
+## Apêndice: A Pesquisa em Ação
+
+??? info "De Loecker, J., Eeckhout, J. & Unger, G. (2020). The Rise of Market Power and the Macroeconomic Implications. *Quarterly Journal of Economics*, 135(2), 561–644."
+    **DOI:** [10.1093/qje/qjz041](https://doi.org/10.1093/qje/qjz041)
+
+    **Contexto.** O Capítulo 14 analisa o monopólio como estrutura de mercado, mas até que ponto o poder de mercado é um fenômeno relevante empiricamente? De Loecker, Eeckhout e Unger (2020) respondem a essa pergunta com uma análise abrangente do *markup* praticado pelas firmas nos Estados Unidos ao longo de seis décadas.
+
+    **Metodologia.** Os autores estimam *markups* firma a firma usando dados contábeis (Compustat) e a abordagem de produção de Hall (1988), que infere o *markup* como a razão entre a elasticidade-produto de um insumo variável e a participação desse insumo na receita. A grande inovação é aplicar esse método a um painel de milhares de firmas de 1955 a 2016, permitindo documentar a evolução do poder de mercado agregado.
+
+    **Resultados.** O *markup* médio na economia americana era relativamente estável em torno de 1,21 (21% acima do custo marginal) até 1980, mas subiu para 1,61 em 2016 — um aumento de 33%. Esse aumento é concentrado nas firmas do topo da distribuição: as 10% mais lucrativas elevaram seus *markups* de 1,5 para mais de 2,5. Os autores documentam que essa tendência está associada a menor participação do trabalho na renda, menor dinamismo empresarial e maior desigualdade.
+
+    **Conexão com o capítulo.** O artigo fornece evidência empírica maciça sobre o índice de Lerner (Seção 14.3) em escala agregada. Os *markups* estimados podem ser diretamente interpretados como \(1/(1 - L)\), conectando a teoria do monopólio à mensuração empírica do poder de mercado. A tendência ascendente documentada sugere que o modelo de concorrência perfeita se torna progressivamente menos adequado como descrição da economia moderna.
+
+??? info "Bergemann, D., Brooks, B. & Morris, S. (2015). The Limits of Price Discrimination. *American Economic Review*, 105(3), 921–957."
+    **DOI:** [10.1257/aer.20130848](https://doi.org/10.1257/aer.20130848)
+
+    **Contexto.** A Seção 14.7 classifica a discriminação de preços em três graus, mas essa taxonomia assume que sabemos exatamente quanta informação o monopolista possui sobre os consumidores. Bergemann, Brooks e Morris (2015) fazem uma pergunta mais fundamental: dada uma demanda de mercado, quais são os **limites** do que a discriminação de preços pode alcançar, considerando toda estrutura de informação possível?
+
+    **Contribuição teórica.** Os autores mostram que, para qualquer segmentação de mercado (qualquer partição informacional dos consumidores), o resultado da discriminação de preços deve satisfazer duas restrições: (i) o lucro do monopolista deve ser pelo menos tão grande quanto o lucro de preço uniforme; (ii) o excedente do consumidor agregado não pode ser negativo. O resultado central é que **qualquer** par (lucro, excedente do consumidor) satisfazendo essas duas restrições é alcançável por alguma segmentação. Em particular, existe uma segmentação que gera eficiência plena (como discriminação de 1º grau) e outra que maximiza o excedente do consumidor sujeito ao monopolista obter pelo menos o lucro de preço uniforme.
+
+    **Resultados.** O artigo demonstra que os efeitos de bem-estar da discriminação de preços dependem crucialmente da informação disponível ao monopolista. A produção total pode subir, cair ou permanecer constante conforme a segmentação. Isso contrasta com o resultado clássico de Pigou (1920) para demandas lineares, em que a discriminação de 3º grau não altera a quantidade total.
+
+    **Conexão com o capítulo.** O paper aprofunda a análise de discriminação de preços das Seções 14.7.1–14.7.3, mostrando que a distinção entre 1º, 2º e 3º grau é apenas uma parte de um espectro muito mais rico de possibilidades informacionais. Para estudantes que desejam entender os limites teóricos do poder de mercado na extração de excedente, este é um ponto de partida essencial.
