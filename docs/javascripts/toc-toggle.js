@@ -1,5 +1,5 @@
-/* TOC colapsável no sidebar — Micro Book
-   Clique no capítulo ativo abre/fecha as seções (TOC) */
+/* TOC colapsável no sidebar — todas as páginas
+   Clique na página ativa abre/fecha as seções (TOC) */
 (function () {
   "use strict";
 
