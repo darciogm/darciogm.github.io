@@ -33,6 +33,9 @@ Ambos os bens têm elasticidade-renda unitária — nem luxo nem necessidade. Is
 
 **Interpretação econômica:** Com Cobb-Douglas, o consumidor sempre aloca frações fixas da renda a cada bem (1/3 e 2/3). Isso implica curvas de Engel lineares passando pela origem — um resultado frequentemente usado como benchmark em análise empírica.
 
+
+↩ [Voltar ao enunciado](../cap05/index.md#ex-5-1)
+
 ---
 
 ## Exercício 5.2 {#ex-5-2}
@@ -69,6 +72,9 @@ Com \(\bar{u}^1 = \ln(1) + I - 1 = I - 1\): \(E = p_x^0 \cdot h_x(p^0) + h_y = 4
 
 **Interpretação econômica:** Com utilidade quase-linear, as três medidas de bem-estar coincidem porque não há efeito-renda. Isso elimina a ambiguidade que existe em preferências gerais, onde VC ≠ VE ≠ EC. É por isso que preferências quase-lineares são tão populares em análise de equilíbrio parcial.
 
+
+↩ [Voltar ao enunciado](../cap05/index.md#ex-5-2)
+
 ---
 
 ## Exercício 5.3 {#ex-5-3}
@@ -97,6 +103,9 @@ A recíproca é **falsa**: nem todo bem inferior é de Giffen. Para que um bem i
 
 **Interpretação econômica:** Bens de Giffen são uma curiosidade teórica, não uma regularidade empírica. O exemplo clássico (batatas na Irlanda durante a Grande Fome) requer que um bem inferior seja tão essencial e ocupe uma parcela tão grande do orçamento que o efeito-renda negativo domine completamente a substituição.
 
+
+↩ [Voltar ao enunciado](../cap05/index.md#ex-5-3)
+
 ---
 
 ## Exercício 5.4 {#ex-5-4}
@@ -121,6 +130,9 @@ Como \(\varepsilon_{x_1,p_2} > 0\), os bens são **substitutos brutos**: um aume
 
 **Interpretação econômica:** As restrições de agregação e homogeneidade são "disciplinadoras" da teoria do consumidor. A Agregação de Engel garante que a soma ponderada das elasticidades-renda iguala 1 — reflexo algébrico do esgotamento da renda. A homogeneidade garante ausência de ilusão monetária. Essas restrições são testáveis empiricamente e frequentemente impostas em estimações de sistemas de demanda.
 
+
+↩ [Voltar ao enunciado](../cap05/index.md#ex-5-4)
+
 ---
 
 ## Exercício 5.5 {#ex-5-5}
@@ -143,3 +155,5 @@ A demanda por etanol aumentaria aproximadamente 16,5%.
 - **Efeitos distributivos:** A elasticidade média esconde heterogeneidade. Consumidores de baixa renda, para os quais o combustível representa maior parcela do orçamento, podem ter elasticidades diferentes.
 
 **Interpretação econômica:** No contexto brasileiro, a forte substituibilidade gasolina-etanol (elevada elasticidade cruzada) reflete a ampla frota flex-fuel. Essa peculiaridade do mercado brasileiro faz com que tributos sobre gasolina tenham efeitos indiretos significativos sobre o setor sucroalcooleiro — uma interdependência que a análise *ceteris paribus* captura parcialmente.
+
+↩ [Voltar ao enunciado](../cap05/index.md#ex-5-5)

@@ -46,6 +46,9 @@ Com dois bens, o efeito substituição cruzado é sempre **positivo** (os bens s
 
 **Interpretação econômica:** A distinção entre substitutos brutos e líquidos é fundamental. Dois bens podem ser complementos brutos (Marshallian) mas substitutos líquidos (Hicksian) — a diferença é o efeito-renda. A classificação hicksiana (líquida) é mais "pura" porque isola o efeito substituição da mudança no poder de compra.
 
+
+↩ [Voltar ao enunciado](../cap06/index.md#ex-6-1)
+
 ---
 
 ## Exercício 6.2 {#ex-6-2}
@@ -69,6 +72,9 @@ Pelo Teorema do Bem Composto (Hicks), podemos tratar "frutas" como um único bem
 **(b)** Um aumento de 15% em \(\alpha\) (todos os preços de frutas sobem 15%) equivale a um aumento de 15% no preço do bem composto \(F\). No modelo de dois bens (\(F, y\)), podemos usar as ferramentas padrão: efeito substituição (consumidor troca frutas por outros bens) e efeito-renda (poder de compra cai). O efeito líquido sobre "todos os outros" (\(y\)) depende de o consumo de frutas ser normal ou inferior.
 
 **(c)** A hipótese de proporcionalidade falharia quando os preços relativos entre as frutas mudam — por exemplo: (i) uma geada em Santa Catarina encarece a maçã mas não a banana; (ii) safra recorde de laranja reduz seu preço enquanto o da banana sobe por custos de transporte; (iii) políticas de subsídio diferenciadas (como isenção de ICMS para frutas regionais). No Brasil, a sazonalidade e os choques climáticos regionais tornam a proporcionalidade improvável para janelas temporais curtas.
+
+
+↩ [Voltar ao enunciado](../cap06/index.md#ex-6-2)
 
 ---
 
@@ -111,6 +117,9 @@ Lado esquerdo: 0 (calculado em (a)).
 Lado direito: \(\frac{\partial h_1}{\partial p_2} - \frac{2I}{3p_2} \cdot \frac{1}{3p_1}\). Substituindo \(\bar{u} = V\) e simplificando, os termos se cancelam e o resultado é 0. ✓
 
 **Interpretação econômica:** Os bens são independentes na classificação marshalliana (bruta) mas substitutos na hicksiana (líquida). Isso ocorre porque, com Cobb-Douglas, o efeito-renda cruzado exatamente compensa o efeito substituição cruzado. A parcela de renda gasta em cada bem é fixa, logo uma mudança em \(p_2\) não libera nem absorve gasto do bem 1.
+
+
+↩ [Voltar ao enunciado](../cap06/index.md#ex-6-3)
 
 ---
 
@@ -167,6 +176,9 @@ Resolvendo o sistema expandido (omitindo álgebra extensa), o ovo tenderia a sub
 
 **Interpretação econômica:** O modelo de Lancaster permite analisar a entrada de novos produtos não por seus preços diretos, mas por seus "preços de atributos". No Brasil, a diversidade de fontes proteicas (frango, ovo, feijão) com diferentes perfis de atributos e preços explica a heterogeneidade dos padrões alimentares entre regiões e classes de renda.
 
+
+↩ [Voltar ao enunciado](../cap06/index.md#ex-6-4)
+
 ---
 
 ## Exercício 6.5 {#ex-6-5}
@@ -195,3 +207,5 @@ X_1 = \frac{50}{20} + \frac{22500}{1000} = 2{,}5 + 22{,}5 = 25
 A demanda **aumentou** de 15 para 25, apesar da renda total permanecer em 200.
 
 **(c)** Quando a condição de Gorman falha, a distribuição de renda afeta a demanda agregada. Políticas de redistribuição como o Bolsa Família alteram a demanda de mercado não apenas pelo efeito mecânico sobre a renda total (que não muda em transferências puras), mas pela diferença nas propensões marginais a consumir entre os beneficiários e os contribuintes. No exemplo, transferir renda para o consumidor B (com demanda convexa na renda) eleva a demanda agregada. Empiricamente, famílias de baixa renda tendem a ter maior propensão marginal a consumir bens básicos — uma violação da condição de Gorman que é relevante para avaliar os efeitos macroeconômicos de programas de transferência.
+
+↩ [Voltar ao enunciado](../cap06/index.md#ex-6-5)

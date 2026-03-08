@@ -50,6 +50,9 @@ Alocações: \(x_1^A = (50/6 + 2)/(10/6) = (62/6)/(10/6) = 6{,}2\), \(x_2^A = (5
 
 **(d)** No núcleo, nenhuma coalizão pode melhorar. Para 2 agentes, o núcleo coincide com a curva de contrato entre as alocações individuais racionais. Verificando: \(U_A(6{,}2; 5{,}17) = 32{,}05 > U_A(10, 2) = 20\). \(U_B(5{,}8; 4{,}83) = 28{,}01 > U_B(2, 8) = 16\). Ambos melhoram. ✓
 
+
+↩ [Voltar ao enunciado](../cap14/index.md#ex-14-1)
+
 ---
 
 ## Exercício 14.2 {#ex-14-2}
@@ -61,6 +64,9 @@ Alocações: \(x_1^A = (50/6 + 2)/(10/6) = (62/6)/(10/6) = 6{,}2\), \(x_2^A = (5
 **(b)** Se \(TMST_1 \neq TMST_2\), pode-se realocar insumos entre os setores para produzir mais de um bem sem produzir menos do outro. Suponha \(TMST_1 > TMST_2\): transferir trabalho do setor 2 para o 1 (e capital na direção oposta) aumenta a produção total. Contradição com eficiência. ✓
 
 **(c)** Se \(TMT \neq TMS\), pode-se realinhar a composição do produto e melhorar o bem-estar. Suponha \(TMS > TMT\): os consumidores valorizam o bem 1 relativamente mais que o custo de produzi-lo. Produzir mais de 1 e menos de 2 melhora o bem-estar. Contradição. ✓
+
+
+↩ [Voltar ao enunciado](../cap14/index.md#ex-14-2)
 
 ---
 
@@ -100,6 +106,9 @@ Substituindo (ii) em (i): \(3p_2 + 2(p_2 - 1) = 5 \implies 5p_2 = 7 \implies p_2
 
 \(\mathbf{p}^* = (1;\ 1{,}4;\ 0{,}4)\).
 
+
+↩ [Voltar ao enunciado](../cap14/index.md#ex-14-3)
+
 ---
 
 ## Exercício 14.4 {#ex-14-4}
@@ -116,6 +125,9 @@ Em concorrência perfeita:
 
 Cada condição emerge naturalmente da otimização individual diante de preços uniformes — a "mão invisível" de Smith formalizada.
 
+
+↩ [Voltar ao enunciado](../cap14/index.md#ex-14-4)
+
 ---
 
 ## Exercício 14.5 {#ex-14-5}
@@ -129,3 +141,5 @@ Cada condição emerge naturalmente da otimização individual diante de preços
 **(c)** Um modelo CGE (Computable General Equilibrium) resolve simultaneamente equilíbrio em todos os mercados. Dados necessários: SAM (Social Accounting Matrix) com fluxos entre setores, elasticidades de substituição (Armington para comércio), parâmetros de funções de produção setoriais, e distribuição de renda entre agentes. No Brasil, o GTAP e modelos do IPEA usam SAMs baseadas nas Contas Nacionais do IBGE.
 
 **(d)** Hipóteses problemáticas para o Brasil: (i) **Pleno emprego:** o Brasil tem desemprego estrutural significativo; a liberalização pode agravar o desemprego em setores protegidos sem absorção imediata em outros. (ii) **Concorrência perfeita:** muitos setores industriais brasileiros são oligopolísticos; a abertura pode afetar comportamento estratégico (não capturado pelo modelo competitivo). (iii) **Retornos constantes:** a indústria brasileira pode ter rendimentos crescentes em alguns setores, onde a proteção permite escala.
+
+↩ [Voltar ao enunciado](../cap14/index.md#ex-14-5)

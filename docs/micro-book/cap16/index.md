@@ -770,6 +770,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ## Exercícios
 
+<a id="ex-16-1"></a>
 ??? example "Exercício 16.1"
     Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
 
@@ -781,6 +782,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-1)
 
+<a id="ex-16-2"></a>
 ??? example "Exercício 16.2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
@@ -792,6 +794,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-2)
 
+<a id="ex-16-3"></a>
 ??? example "Exercício 16.3"
     Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
 
@@ -803,6 +806,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-3)
 
+<a id="ex-16-4"></a>
 ??? example "Exercício 16.4"
     Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
 
@@ -814,6 +818,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-4)
 
+<a id="ex-16-5"></a>
 ??? example "Exercício 16.5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 

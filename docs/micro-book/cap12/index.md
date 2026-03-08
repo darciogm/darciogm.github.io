@@ -638,7 +638,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ## Exercícios
 
-**Exercício 12.1.**
+**Exercício 12.1.** {#ex-12-1}
 Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(q) = 50 + 2q + 0{,}5q^2\).
 
 (a) Determine CF, CV(q), CMe(q), CVMe(q) e CMg(q).
@@ -655,7 +655,7 @@ Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(
 
 ---
 
-**Exercício 12.2.**
+**Exercício 12.2.** {#ex-12-2}
 Demonstre que, para uma firma com poder de mercado enfrentando uma curva de demanda linear \(p = a - bq\):
 
 (a) A receita marginal é \(\mathrm{RMg} = a - 2bq\) (inclinação é o dobro da da demanda).
@@ -670,7 +670,7 @@ Demonstre que, para uma firma com poder de mercado enfrentando uma curva de dema
 
 ---
 
-**Exercício 12.3.**
+**Exercício 12.3.** {#ex-12-3}
 Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentando preços \(p = 27\), \(w = 2\) e \(r = 1\).
 
 (a) Derive as condições de primeira ordem para maximização de lucro.
@@ -688,7 +688,7 @@ Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentand
 
 ---
 
-**Exercício 12.4.**
+**Exercício 12.4.** {#ex-12-4}
 Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de produção \(q = \bar{K}^{1/2} L^{1/2} = 4L^{1/2}\). O salário é \(w = 8\) e o custo do capital é \(r = 2\).
 
 (a) Derive a função de custo total de curto prazo \(CT(q)\).
@@ -705,7 +705,7 @@ Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de p
 
 ---
 
-**Exercício 12.5.**
+**Exercício 12.5.** {#ex-12-5}
 Explique, usando a teoria vista neste capítulo, por que:
 
 (a) Uma firma com prejuízo pode racionalmente continuar operando no curto prazo. Dê um exemplo numérico.

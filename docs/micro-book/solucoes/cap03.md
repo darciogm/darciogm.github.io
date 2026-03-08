@@ -44,6 +44,9 @@ Derivando em relação a \(x_1\):
 
 **Interpretação econômica:** A TMS decrescente reflete a convexidade das preferências: à medida que o consumidor acumula mais de \(x_1\) (e menos de \(x_2\)), cada unidade adicional de \(x_1\) vale menos em termos de \(x_2\). Isso gera curvas de indiferença convexas e fundamenta a existência de soluções interiores no problema do consumidor.
 
+
+↩ [Voltar ao enunciado](../cap03/index.md#ex-3-1)
+
 ---
 
 ## Exercício 3.2 {#ex-3-2}
@@ -71,6 +74,9 @@ Como \(g(u) = e^u\) é estritamente crescente, \(v\) é uma transformação mono
 As TMS são idênticas. \(\blacksquare\)
 
 **Interpretação econômica:** A utilidade ordinal implica que apenas a ordenação das cestas importa, não os valores numéricos. Transformações monotônicas preservam a ordenação e, portanto, a TMS — que é a grandeza observável (via escolhas) e economicamente relevante.
+
+
+↩ [Voltar ao enunciado](../cap03/index.md#ex-3-2)
 
 ---
 
@@ -106,6 +112,9 @@ Com \(\rho = -1\):
 
 **(c)** As curvas de indiferença estão **mais próximas do caso de complementos perfeitos** (Leontief). Com \(\sigma = 1/2 < 1\), a substituibilidade entre os bens é baixa — menor que no caso Cobb-Douglas (\(\sigma = 1\)). As curvas de indiferença são convexas, mas com curvatura mais acentuada que as Cobb-Douglas, aproximando-se da forma em "L" dos complementos perfeitos (\(\sigma \to 0\)). Intuitivamente, com \(\sigma = 1/2\), uma mudança de 1% nos preços relativos induz uma mudança de apenas 0,5% na razão \(x_1/x_2\).
 
+
+↩ [Voltar ao enunciado](../cap03/index.md#ex-3-3)
+
 ---
 
 ## Exercício 3.4 {#ex-3-4}
@@ -132,6 +141,9 @@ A demanda por \(x_1\) depende apenas da razão de preços, não da renda \(m\). 
 
 **Interpretação econômica:** Preferências quase-lineares eliminam o efeito-renda sobre o bem não linear (\(x_1\)). Isso faz com que o excedente do consumidor marshalliano seja uma medida exata de variação de bem-estar, sem a ambiguidade que surge em preferências gerais (onde EC, VC e variação compensadora diferem).
 
+
+↩ [Voltar ao enunciado](../cap03/index.md#ex-3-4)
+
 ---
 
 ## Exercício 3.5 {#ex-3-5}
@@ -151,3 +163,5 @@ Ao longo da curva de indiferença, quando \(x_1\) aumenta, \(x_2\) diminui (para
 **(c)** Essa função **não** satisfaz preferências estritamente convexas. A consequência é que o consumidor nunca escolhe uma cesta interior: a solução do problema de maximização é sempre uma **solução de canto**. O consumidor gasta toda a renda em apenas um dos bens — aquele que oferece maior utilidade marginal por unidade monetária. Geometricamente, como as curvas de indiferença são côncavas, a reta orçamentária tangencia a curva de indiferença nos extremos (eixos), não no interior.
 
 **Interpretação econômica:** Preferências convexas refletem o "gosto pela diversificação" — médias são preferidas a extremos. A função \(u = x_1^2 + x_2^2\) viola essa propriedade: o consumidor prefere extremos a médias (especialização total). Isso pode modelar situações em que há rendimentos crescentes no consumo — por exemplo, um colecionador que prefere 10 selos raros de um tipo a 5 de cada tipo.
+
+↩ [Voltar ao enunciado](../cap03/index.md#ex-3-5)

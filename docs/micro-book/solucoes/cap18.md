@@ -119,6 +119,8 @@ Resumindo:
 
 Para o tomador de empréstimo, o aumento dos juros tem efeito renda negativo e efeito substituição que favorece consumo futuro. O consumo presente cai inequivocamente; o consumo futuro sobe porque o efeito substituição supera o efeito renda neste caso.
 
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-1)
+
 ---
 
 ## Exercício 18.2 {#ex-18-2}
@@ -202,6 +204,8 @@ Como \( \text{VPL} > 0 \) (equivalentemente, \( \text{TIR} = 15{,}24\% > 12\% \)
 
 **Interpretação:** Mesmo incorporando o prêmio de risco setorial, o projeto gera valor econômico positivo de aproximadamente R\$40.720 em termos de valor presente. A TIR de 15,24% supera o custo de capital ajustado ao risco de 12%, confirmando a viabilidade.
 
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-2)
+
 ---
 
 ## Exercício 18.3 {#ex-18-3}
@@ -261,6 +265,8 @@ Com \( r' = 10\% \), a extração se torna **mais rápida**. A intuição é:
 O estoque se esgota em um horizonte menor.
 
 **Interpretação:** Taxas de juros altas favorecem a extração presente e penalizam a conservação. Isso tem implicações profundas para política ambiental: países com altas taxas de juros reais tendem a explorar mais rapidamente seus recursos naturais, uma previsão testável da teoria de Hotelling.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-3)
 
 ---
 
@@ -350,6 +356,8 @@ O VPL é considerado o critério superior ao da TIR por diversas razões:
 4. **Existência e unicidade:** A TIR pode não existir ou não ser única em projetos com fluxos de caixa não convencionais (alternância de sinais). O VPL é sempre bem definido.
 
 5. **Aditividade:** O VPL é aditivo — o VPL de uma carteira é a soma dos VPLs individuais. A TIR não possui essa propriedade.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-4)
 
 ---
 
@@ -441,3 +449,5 @@ Mesmo com taxa real menor, a instabilidade regulatória eleva o custo de capital
 **Além disso**, a instabilidade regulatória afeta não apenas a taxa de desconto, mas os **próprios fluxos de caixa \( R_t \)**. Se o governo pode alterar tarifas, revogar concessões ou mudar regras tributárias, os fluxos esperados se reduzem e sua variância aumenta. Isso constitui um efeito de primeira ordem sobre o VPL.
 
 **Conclusão:** O governo deveria priorizar a estabilidade regulatória. Uma taxa de juros real baixa é condição necessária mas não suficiente para atrair investimento em infraestrutura de longo prazo. O prêmio de risco regulatório, ao ser aplicado sobre fluxos de caixa de 20-30 anos, tem efeito cumulativo devastador sobre o VPL. Marcos regulatórios claros, contratos críveis e instituições sólidas reduzem \( \pi_{\text{reg}} \) e são, portanto, tão ou mais importantes que a política monetária para viabilizar grandes projetos de infraestrutura.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-5)

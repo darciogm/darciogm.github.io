@@ -22,6 +22,9 @@ title: "Soluções — Capítulo 11"
 
 **(e)** \(CMg = dC/dq = 4\). \(CMe = C/q = 4\). Ambos são constantes e iguais. Isso ocorre porque \(\alpha + \beta = 1/2 + 1/2 = 1\) (rendimentos constantes de escala). Com RCE, o custo é linear em \(q\), logo CMg = CMe = constante.
 
+
+↩ [Voltar ao enunciado](../cap11/index.md#ex-11-1)
+
 ---
 
 ## Exercício 11.2 {#ex-11-2}
@@ -44,6 +47,9 @@ Mínimo do CMe: \(\frac{d(CMe)}{dq} = -100/q^2 - 2 + 2q/3 = 0\). Resolvendo nume
 
 CMg no mínimo do CMe: \(CMg(5{,}24) \approx 10 - 20{,}96 + 27{,}46 \approx 16{,}5\). Verificando \(CMe(5{,}24) \approx 19{,}08 + 10 - 10{,}48 + 9{,}15 \approx 27{,}75\)... O cálculo exato requer resolver o cúbico. O princípio é que CMg cruza CMe e CVMe em seus respectivos mínimos porque: se \(CMg < CMe\), o CMe está caindo; se \(CMg > CMe\), o CMe está subindo. Logo, \(CMg = CMe\) no mínimo.
 
+
+↩ [Voltar ao enunciado](../cap11/index.md#ex-11-2)
+
 ---
 
 ## Exercício 11.3 {#ex-11-3}
@@ -59,6 +65,9 @@ C(q) = rK + wL = 8q + 2(q/2) = 8q + q = 9q
 **(b)** \(CMe = 9\), \(CMg = 9\). Ambos constantes. Com Leontief e rendimentos constantes de escala (\(\min\{K, 2L\}\) é homogênea de grau 1), o custo é linear.
 
 **(c)** Tanto a Leontief quanto a Cobb-Douglas com RCE produzem custo linear (\(CMg = CMe = \text{constante}\)). A diferença é que na Cobb-Douglas a razão \(K/L\) responde a mudanças nos preços relativos dos insumos, enquanto na Leontief é fixa. O custo unitário da Cobb-Douglas é \(c(w,r) = \text{função dos preços}\) que depende de \(w/r\), enquanto na Leontief é sempre \(r + w/2 = 9\) para esses parâmetros.
+
+
+↩ [Voltar ao enunciado](../cap11/index.md#ex-11-3)
 
 ---
 
@@ -90,6 +99,9 @@ Para \(q = 2{,}52\): \(CMe_{LP} = 2(2{,}52)^{0,5} \approx 3{,}17\) e \(CMe_{CP} 
 
 Para qualquer outro \(q\), \(CMe_{CP} > CMe_{LP}\) porque o capital está "errado": a firma não pode ajustar \(\bar{K}\) no curto prazo. A envoltória resulta de a firma escolher otimamente \(K\) para cada \(q\) no longo prazo.
 
+
+↩ [Voltar ao enunciado](../cap11/index.md#ex-11-4)
+
 ---
 
 ## Exercício 11.5 {#ex-11-5}
@@ -113,3 +125,5 @@ Verificando homogeneidade: \(c(tw, tr) = t \cdot c(w,r)\) ✓ (grau 1 nos preço
 **(c)** \(CMg = dC/dq = c(w,r)\). \(CMe = C/q = c(w,r)\). Ambos iguais e constantes. ✓
 
 **(d)** Com RCE, dobrar a produção exige exatamente dobrar os insumos, logo dobrar o custo. O custo cresce proporcionalmente ao produto, implicando custo marginal constante. Intuitivamente, a "próxima unidade" custa sempre o mesmo que a anterior porque a tecnologia não apresenta nem economias nem deseconomias de escala.
+
+↩ [Voltar ao enunciado](../cap11/index.md#ex-11-5)

@@ -35,6 +35,9 @@ I investe se \(10 - K > 1\) (payoff sem investimento quando E entra e I acomoda)
 
 **Interpretação econômica:** Este é o modelo de deterrência de entrada por investimento em capacidade (Dixit, 1980). O investimento irreversível altera o jogo subsequente, tornando crível a ameaça de guerra de preços. No Brasil, investimentos em infraestrutura por incumbentes em telecomunicações ou aviação podem servir a esse propósito estratégico.
 
+
+↩ [Voltar ao enunciado](../cap09b/index.md#ex-9b-1)
+
 ---
 
 ## Exercício 9b.2 {#ex-9b-2}
@@ -75,6 +78,9 @@ TFT requer \(\delta^* = 0{,}4 < 0{,}5\) do grim trigger. **TFT sustenta coopera�
 
 **(c)** Nos torneios de Axelrod (1984), TFT venceu por ser: (i) **simpática** (nunca desvia primeiro), (ii) **retaliadora** (pune desvios imediatamente), (iii) **clemente** (perdoa após uma punição) e (iv) **transparente** (fácil de entender pelos rivais). O grim trigger é retaliador mas não clemente — erros ou tremores levam a colapso permanente da cooperação, o que é custoso.
 
+
+↩ [Voltar ao enunciado](../cap09b/index.md#ex-9b-2)
+
 ---
 
 ## Exercício 9b.3 {#ex-9b-3}
@@ -102,6 +108,9 @@ x_B = \frac{1 - 0{,}95}{1 - 0{,}7 \times 0{,}95} = \frac{0{,}05}{0{,}335} = 0{,}
 Sindicato A obtém ~89,6% do excedente vs. ~14,9% para B. O sindicato mais paciente obtém um acordo **6 vezes melhor**.
 
 **Interpretação econômica:** Paciência é poder na barganha. Sindicatos com reservas financeiras para sustentar greves longas (\(\delta\) alto) negociam de posição superior. Isso explica por que categorias com fundos de greve robustos (como metalúrgicos do ABC) historicamente obtêm melhores acordos.
+
+
+↩ [Voltar ao enunciado](../cap09b/index.md#ex-9b-3)
 
 ---
 
@@ -134,3 +143,5 @@ Para \(N = 2\): \(\delta^* = 9/17 \approx 0{,}53\).
 Para \(N = 10\): \(\delta^* \approx 0{,}97\).
 
 Com mais firmas, a cooperação exige paciência quase perfeita. Isso é consistente com a observação empírica de que cartéis são mais estáveis com poucas firmas — e com a atenção do CADE a mercados concentrados.
+
+↩ [Voltar ao enunciado](../cap09b/index.md#ex-9b-4)

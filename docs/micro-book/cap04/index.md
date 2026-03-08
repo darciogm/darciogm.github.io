@@ -901,7 +901,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ## Exercícios
 
-**Exercício 4.1.** Considere um consumidor com função de utilidade \(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), preços \(p_1\) e \(p_2\) e renda \(I\).
+**Exercício 4.1.** {#ex-4-1} Considere um consumidor com função de utilidade \(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), preços \(p_1\) e \(p_2\) e renda \(I\).
 
 (a) Monte o lagrangeano e derive as condições de primeira ordem.
 
@@ -915,7 +915,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ---
 
-**Exercício 4.2.** Para as mesmas preferências do exercício anterior:
+**Exercício 4.2.** {#ex-4-2} Para as mesmas preferências do exercício anterior:
 
 (a) Formule e resolva o problema de minimização do dispêndio.
 
@@ -931,7 +931,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ---
 
-**Exercício 4.3.** Um consumidor tem preferências representadas por \(u(x_1, x_2) = \min\{2x_1, x_2\}\), com \(p_1 = 4\), \(p_2 = 2\) e \(I = 120\).
+**Exercício 4.3.** {#ex-4-3} Um consumidor tem preferências representadas por \(u(x_1, x_2) = \min\{2x_1, x_2\}\), com \(p_1 = 4\), \(p_2 = 2\) e \(I = 120\).
 
 (a) Encontre a cesta ótima. (Dica: no ótimo, \(2x_1 = x_2\).)
 
@@ -943,7 +943,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ---
 
-**Exercício 4.4.** O governo está considerando duas políticas para arrecadar R\$ 100 de um consumidor com \(u(x_1, x_2) = x_1^{0,4} x_2^{0,6}\), \(p_1 = 10\), \(p_2 = 5\) e \(I = 1000\):
+**Exercício 4.4.** {#ex-4-4} O governo está considerando duas políticas para arrecadar R\$ 100 de um consumidor com \(u(x_1, x_2) = x_1^{0,4} x_2^{0,6}\), \(p_1 = 10\), \(p_2 = 5\) e \(I = 1000\):
 
 (a) **Política A**: imposto específico de \(t\) por unidade sobre o bem 1. Encontre \(t\) tal que a receita seja R\$ 100.
 
@@ -955,7 +955,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ---
 
-**Exercício 4.5.** Considere um consumidor com utilidade quase-linear \(u(x_1, x_2) = 2\sqrt{x_1} + x_2\), preços \(p_1, p_2\) e renda \(I\).
+**Exercício 4.5.** {#ex-4-5} Considere um consumidor com utilidade quase-linear \(u(x_1, x_2) = 2\sqrt{x_1} + x_2\), preços \(p_1, p_2\) e renda \(I\).
 
 (a) Derive as demandas marshallianas. Sob quais condições a solução é interior?
 

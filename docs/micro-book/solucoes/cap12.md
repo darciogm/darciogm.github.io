@@ -22,6 +22,9 @@ title: "Soluções — Capítulo 12"
 
 **(e)** \(q^s(12) = 10\). \(\pi = 12 \times 10 - (50 + 20 + 50) = 120 - 120 = 0\). Lucro zero — a firma está no break-even.
 
+
+↩ [Voltar ao enunciado](../cap12/index.md#ex-12-1)
+
 ---
 
 ## Exercício 12.2 {#ex-12-2}
@@ -37,6 +40,9 @@ title: "Soluções — Capítulo 12"
 **(d)** \(\pi = (p-c)q = (a - bq - c)q\). CPO: \(a - 2bq - c = 0 \implies q^M = (a-c)/(2b)\). Preço: \(p^M = a - b(a-c)/(2b) = (a+c)/2\). Markup: \(p^M - c = (a-c)/2 > 0\).
 
 **Interpretação econômica:** O preço de monopólio é a média entre o intercepto da demanda (\(a\)) e o custo marginal (\(c\)). O markup \((a-c)/2\) reflete o poder de mercado: quanto mais inelástica a demanda (menor \(b\)), maior o markup em valor absoluto.
+
+
+↩ [Voltar ao enunciado](../cap12/index.md#ex-12-2)
 
 ---
 
@@ -78,6 +84,9 @@ O problema é que \(\alpha + \beta = 1\) (RCE) e \(p = 27\). Com RCE, a função
 
 Na prática, com RCE e \(p > c\), o lucro cresce sem limite. A firma opera em escala infinita (ou até que os preços se ajustem). Se o exercício requer solução finita, interpretar como \(q = K^{1/3}L^{2/3}\) com rendimentos decrescentes (\(\alpha + \beta = 1\) mas é tomadora de preços). A solução correta é usar a abordagem dual: \(c(w,r) = 3\), e com RCE a firma é indiferente em escala quando \(p = c\), ou quer expansão infinita quando \(p > c\). Com \(p = 27 > 3\), não há solução interior.
 
+
+↩ [Voltar ao enunciado](../cap12/index.md#ex-12-3)
+
 ---
 
 ## Exercício 12.4 {#ex-12-4}
@@ -94,6 +103,9 @@ Na prática, com RCE e \(p > c\), o lucro cresce sem limite. A firma opera em es
 
 **(e)** No longo prazo, a firma pode ajustar \(K\). Com \(q = K^{1/2}L^{1/2}\), \(w = 8\), \(r = 2\): custo unitário \(c = 2(wr)^{1/2} = 2\sqrt{16} = 8\). Se \(p = 16 > 8 = c\), a firma quer escala infinita (RCE). No equilíbrio de longo prazo com livre entrada, \(p = c = 8\) e cada firma é indiferente em escala.
 
+
+↩ [Voltar ao enunciado](../cap12/index.md#ex-12-4)
+
 ---
 
 ## Exercício 12.5 {#ex-12-5}
@@ -109,3 +121,5 @@ Na prática, com RCE e \(p > c\), o lucro cresce sem limite. A firma opera em es
 **(d)** \(RMg = p(1 + 1/\varepsilon_d)\). Se \(|\varepsilon_d| < 1\), então \(1/\varepsilon_d < -1\) e \(RMg < 0\). Como \(CMg > 0\), nunca \(RMg = CMg\) na região inelástica. Intuitivamente, na região inelástica, reduzir a produção **aumenta** a receita (demanda insensível ao preço), então a firma sempre reduz até atingir \(|\varepsilon_d| \geq 1\).
 
 **(e)** Segundo Coase (1937), a firma cresce até que o custo marginal de organizar uma transação internamente iguale o custo de realizá-la no mercado. Deseconomias de escala organizacional (burocracia, custos de monitoramento, perda de informação em hierarquias) limitam o crescimento. Essas deseconomias são análogas aos rendimentos decrescentes de escala na produção, mas operam no nível da gestão.
+
+↩ [Voltar ao enunciado](../cap12/index.md#ex-12-5)

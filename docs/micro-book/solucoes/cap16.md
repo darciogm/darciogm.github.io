@@ -108,6 +108,8 @@ CT_{\text{sim}} = 20 \cdot \frac{200}{3} = \frac{4000}{3} \approx 1333{,}33
 
 A assimetria de custos **reduz o excedente total**. Há dois efeitos negativos: (i) a produção total cai, reduzindo o excedente do consumidor; (ii) a produção é alocada de forma ineficiente — a firma menos eficiente (firma 2) produz uma parcela significativa do total, elevando o custo médio de produção da indústria. A eficiência produtiva exigiria que toda a produção fosse feita pela firma de menor custo.
 
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-1)
+
 ---
 
 ## Exercício 16.2 {#ex-16-2}
@@ -167,6 +169,8 @@ Lucros de equilíbrio:
 No equilíbrio, \( p^* = 40 > 10 = c \). A diferenciação de produtos resolve o **paradoxo de Bertrand**: quando os bens não são substitutos perfeitos, cada firma possui algum poder de mercado sobre seus consumidores. Uma redução de preço pela firma rival atrai apenas parte dos consumidores da concorrente — a demanda não se desloca integralmente como no caso homogêneo. Assim, cortar preços até o custo marginal deixa de ser a estratégia ótima, e as firmas conseguem sustentar margens positivas em equilíbrio.
 
 Note que as funções de reação em preços têm inclinação positiva (\( \partial p_i^*/\partial p_j = 1/4 > 0 \)), característica da competição em preços com bens diferenciados: preços são **complementos estratégicos**. Quando a rival eleva seu preço, a melhor resposta é também elevar o próprio preço.
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-2)
 
 ---
 
@@ -295,6 +299,8 @@ O bem-estar é maximizado com **\( n^{**} = 3 \) firmas** (ou possivelmente 4, a
 
 **Sim, há excesso de entrada.** O equilíbrio de livre entrada produz \( n^* = 8 \) firmas, enquanto o ótimo social requer apenas \( n^{**} = 3 \). Isso ocorre porque firmas entrantes capturam parte do excedente de firmas já instaladas (efeito de "roubo de negócio"), mas cada entrante gera custos fixos adicionais. A contribuição marginal de cada firma para o bem-estar social é decrescente, enquanto o custo fixo é constante. As firmas entram até zerar seus lucros privados, desconsiderando a externalidade negativa que impõem às demais — resultado clássico de **excesso de entrada** em oligopólios com custos fixos.
 
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-3)
+
 ---
 
 ## Exercício 16.4 {#ex-16-4}
@@ -388,6 +394,8 @@ A condição de sustentabilidade:
 Com três firmas, o fator de desconto mínimo sobe para \( \delta^* = \frac{2}{3} \).
 
 **Interpretação:** com mais firmas, a colusão é mais difícil de sustentar. Cada firma recebe uma fatia menor do lucro de monopólio durante a cooperação, mas o ganho do desvio continua sendo a captura de todo o mercado. Assim, a tentação relativa de desviar cresce. Em geral, para \( n \) firmas, \( \delta^* = \frac{n-1}{n} \), convergindo para 1 à medida que \( n \to \infty \) — tornando a colusão praticamente impossível em mercados com muitas firmas.
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-4)
 
 ---
 
@@ -507,3 +515,5 @@ O **Stackelberg gera maior excedente total** por duas razões:
 2. **Melhor alocação produtiva:** no Stackelberg, a firma eficiente (líder, \( c_L = 10 \)) produz uma proporção muito maior do total (50/65 = 76{,}9%) comparada ao Cournot (33{,}33/56{,}67 = 58{,}8%). Como a produção se concentra mais na firma de menor custo, o custo total de produção é menor.
 
 O custo total de produção no Stackelberg é \( 10 \cdot 50 + 20 \cdot 15 = 800 \), enquanto no Cournot é \( 10 \cdot 100/3 + 20 \cdot 70/3 = 1000/3 + 1400/3 = 2400/3 = 800 \). Os custos totais são iguais neste caso, então o ganho de bem-estar do Stackelberg vem inteiramente do maior volume de produção e, consequentemente, do maior excedente do consumidor. A vantagem de primeiro movimento permite à líder expandir sua produção de forma crível, disciplinando a seguidora e aproximando o resultado do competitivo.
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-5)

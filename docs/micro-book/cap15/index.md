@@ -701,6 +701,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ## Exercícios
 
+<a id="ex-15-1"></a>
 ??? example "Exercício 15.1"
     Considere um monopolista com custo total \(C(q) = 100 + 10q\) enfrentando demanda \(p = 50 - 2q\).
 
@@ -712,6 +713,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-1)
 
+<a id="ex-15-2"></a>
 ??? example "Exercício 15.2"
     Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
 
@@ -723,6 +725,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-2)
 
+<a id="ex-15-3"></a>
 ??? example "Exercício 15.3"
     O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
 
@@ -734,6 +737,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-3)
 
+<a id="ex-15-4"></a>
 ??? example "Exercício 15.4"
     Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
 
@@ -745,6 +749,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-4)
 
+<a id="ex-15-5"></a>
 ??? example "Exercício 15.5"
     Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
 

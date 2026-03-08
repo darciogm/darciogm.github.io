@@ -22,6 +22,9 @@ Um modelo que incluísse todas as variáveis relevantes de uma economia real ser
 
 **Interpretação econômica:** A simplificação é uma virtude epistêmica porque é o ato de simplificar que revela a estrutura causal subjacente. Como argumentou Milton Friedman (1953), a qualidade de um modelo não se mede pelo realismo de suas suposições, mas pela capacidade de gerar previsões úteis — e previsões úteis exigem abstração.
 
+
+↩ [Voltar ao enunciado](../cap01/index.md#ex-1-1)
+
 ---
 
 ## Exercício 1.2 {#ex-1-2}
@@ -40,6 +43,9 @@ A analogia de Friedman é instrutiva: um modelo que supõe que jogadores de bilh
 
 **Interpretação econômica:** O modelo de concorrência perfeita é uma idealização útil — como um atrito zero em física. Não descreve nenhum mercado real, mas fornece um benchmark contra o qual desvios (poder de mercado, externalidades, informação assimétrica) podem ser medidos e compreendidos. Sua utilidade reside não na fidedignidade descritiva, mas no poder preditivo e na estrutura analítica que oferece.
 
+
+↩ [Voltar ao enunciado](../cap01/index.md#ex-1-2)
+
 ---
 
 ## Exercício 1.3 {#ex-1-3}
@@ -57,6 +63,9 @@ A analogia de Friedman é instrutiva: um modelo que supõe que jogadores de bilh
 **(e) Positiva.** A afirmação descreve uma relação causal entre uma política (transferência de renda) e um resultado observável (consumo). É testável por métodos como diferenças em diferenças ou regressão descontínua, usando dados de programas como o Bolsa Família.
 
 **Interpretação econômica:** A distinção entre proposições positivas e normativas é fundamental para o debate de política pública. Divergências sobre proposições positivas podem, em princípio, ser resolvidas com mais e melhores dados. Divergências normativas refletem valores diferentes e não são resolúveis empiricamente.
+
+
+↩ [Voltar ao enunciado](../cap01/index.md#ex-1-3)
 
 ---
 
@@ -100,6 +109,9 @@ Como \(CMg(q) = 10 + 2q\) é estritamente crescente em todo o domínio, a condi�
 
 **Interpretação econômica:** A firma produz até o ponto em que o benefício marginal de uma unidade adicional (o preço recebido, \(P = 50\)) iguala o custo marginal de produzi-la (\(CMg = 10 + 2q\)). Unidades com \(CMg < P\) geram lucro marginal positivo; unidades com \(CMg > P\) gerariam prejuízo. O lucro é maximizado exatamente na margem onde \(P = CMg\).
 
+
+↩ [Voltar ao enunciado](../cap01/index.md#ex-1-4)
+
 ---
 
 ## Exercício 1.5 {#ex-1-5}
@@ -126,3 +138,5 @@ Formalmente, se \(U(x)\) é a utilidade total e \(UMg(x) = U'(x)\) é a utilidad
 - No **longo prazo**, a oferta se ajusta, e o preço tende a refletir os custos de produção — portanto, o trabalho e o capital incorporados (perspectiva clássica). O diamante é caro no longo prazo porque seus custos de extração e lapidação são elevados.
 
 **Interpretação econômica:** Marshall mostra que a disputa entre clássicos e marginalistas era um falso dilema. Oferta e demanda são complementares, e o horizonte temporal determina qual das duas "lâminas" exerce maior influência sobre o preço. Essa síntese é o alicerce da análise microeconômica moderna.
+
+↩ [Voltar ao enunciado](../cap01/index.md#ex-1-5)

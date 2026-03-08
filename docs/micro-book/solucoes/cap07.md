@@ -43,6 +43,9 @@ A aproximação (1250) subestima o prêmio de risco exato (1340) porque a fórmu
 
 **Interpretação econômica:** O investidor com utilidade logarítmica exigiria R\$ 1.340 de compensação para aceitar esse risco. Equivalentemente, ele é indiferente entre ter R\$ 10.000 com o risco da loteria e ter R\$ 8.660 com certeza.
 
+
+↩ [Voltar ao enunciado](../cap07/index.md#ex-7-1)
+
 ---
 
 ## Exercício 7.2 {#ex-7-2}
@@ -77,6 +80,9 @@ R(W) = W \cdot A(W) = aW
 - *IRRA:* A fração da riqueza investida no ativo arriscado diminui à medida que a riqueza cresce. O agente fica relativamente mais avesso ao risco conforme enriquece, o que também é discutível empiricamente.
 
 Na prática, a CARA é usada por conveniência analítica (permite soluções explícitas com riscos gaussianos), não por realismo descritivo.
+
+
+↩ [Voltar ao enunciado](../cap07/index.md#ex-7-2)
 
 ---
 
@@ -116,6 +122,9 @@ Como \(374{,}17 < 380{,}13 = E[u]\), o agricultor **não** contrata: ficar sem s
 
 **Interpretação econômica:** Este exemplo ilustra por que seguros agrícolas no Brasil frequentemente requerem subsídios governamentais (como o Programa de Subvenção ao Prêmio do Seguro Rural — PSR). As seguradoras cobram prêmios que incluem custos administrativos, seleção adversa e risco moral, elevando o preço acima do que muitos produtores estão dispostos a pagar.
 
+
+↩ [Voltar ao enunciado](../cap07/index.md#ex-7-3)
+
 ---
 
 ## Exercício 7.4 {#ex-7-4}
@@ -143,6 +152,9 @@ Logo \(c_1^* = c_2^*\). Da restrição: \(0{,}6 c + 0{,}4 c = c = 100\).
 **(c)** O agente consome **exatamente o mesmo** em ambos os estados. Isso é seguro pleno: o risco é completamente eliminado. Esse resultado ocorre porque os preços dos ativos contingentes são "atuarialmente justos" — os preços \(\psi_i\) são iguais às probabilidades \(\pi_i\). Quando os preços de Arrow-Debreu são justos, um agente avesso ao risco equaliza o consumo entre estados, alcançando suavização perfeita.
 
 **Interpretação econômica:** Em mercados completos com preços justos, agentes avessos ao risco se protegem completamente. A existência de mercados de seguros e derivativos permite essa suavização na prática — embora custos de transação, informação assimétrica e mercados incompletos limitem a suavização real.
+
+
+↩ [Voltar ao enunciado](../cap07/index.md#ex-7-4)
 
 ---
 
@@ -189,3 +201,5 @@ O prêmio de A caiu de R\$ 50 para R\$ 10 — ele exibe **DARA** (Decreasing Abs
 O prêmio de B permanece R\$ 500 — ele exibe **CARA**. A riqueza não afeta sua aversão absoluta, o que é pouco realista: um bilionário com CARA se preocuparia tanto com R\$ 1.000 quanto alguém com R\$ 10.000.
 
 **Interpretação econômica:** A evidência empírica favorece DARA: indivíduos mais ricos aceitam mais risco absoluto. A utilidade logarítmica (agente A) captura essa propriedade e é frequentemente usada como especificação padrão em modelos de finanças e macroeconomia. A CARA (agente B) é usada quando a tratabilidade analítica é prioritária.
+
+↩ [Voltar ao enunciado](../cap07/index.md#ex-7-5)

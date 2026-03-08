@@ -28,6 +28,9 @@ Com \(\Pr(\theta_F) = 0{,}5\): \(E[\pi_E] = 0{,}5(-2) + 0{,}5(4) = 1 > 0\). A en
 
 O ponto-chave é que J2 maximiza contra a **distribuição** sobre os tipos de J1, não contra um tipo específico. Isso é o que distingue jogos bayesianos de jogos com informação completa.
 
+
+↩ [Voltar ao enunciado](../cap09c/index.md#ex-9c-1)
+
 ---
 
 ## Exercício 9c.2 {#ex-9c-2}
@@ -59,6 +62,9 @@ CPO: \(v \cdot \frac{1}{2\sqrt{\alpha b}} - 1 = 0 \implies b = v^2/(4\alpha)\). 
 As receitas são **idênticas** (1/3), confirmando o Teorema da Equivalência de Receita.
 
 **Interpretação econômica:** O leilão *all-pay* modela competições onde todos os participantes incorrem em custos (lobbying, P&D, competições esportivas). A equivalência de receita implica que o "desperdício" total é o mesmo que em um leilão convencional — mas a distribuição dos custos é muito diferente (todos pagam, não apenas o vencedor).
+
+
+↩ [Voltar ao enunciado](../cap09c/index.md#ex-9c-2)
 
 ---
 
@@ -95,3 +101,5 @@ b(s_i) = E[V | s_i = \max] = s_i - E[\varepsilon^{(1)} | \varepsilon_i = \max]
 Com 3 licitantes e \(U[-20, 20]\), o ajuste é \(-10\): \(b(s_i) = s_i - 10\).
 
 **Interpretação econômica:** A maldição do vencedor é particularmente relevante em leilões de concessões no Brasil (petróleo, espectro, rodovias). Empresas que não ajustam seus lances para a informação revelada pela vitória tendem a pagar preços excessivos. O pré-sal brasileiro, leiloado sob o regime de partilha, é projetado em parte para mitigar esse problema.
+
+↩ [Voltar ao enunciado](../cap09c/index.md#ex-9c-3)

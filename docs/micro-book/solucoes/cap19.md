@@ -55,6 +55,8 @@ Diversas instituições podem mitigar o problema:
 
 A ideia central é que qualquer mecanismo que permita aos vendedores de carros bons **revelar seu tipo de forma crível** restaura, ao menos parcialmente, a eficiência do mercado.
 
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-1)
+
 ---
 
 ## Exercício 19.2 {#ex-19-2}
@@ -137,6 +139,8 @@ Se o esforço é observável, basta satisfazer a RP. O principal pode oferecer s
 
 A diferença \( 36{,}64 - 36 = 0{,}64 \) é o **custo da assimetria informacional** (ou "custo de agência"). Ele surge porque, para incentivar o agente, o principal precisa expô-lo a risco (\( w_H \neq w_L \)), o que é custoso dado que o agente é avesso ao risco (\( U = \sqrt{w} \) é côncava).
 
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-2)
+
 ---
 
 ## Exercício 19.3 {#ex-19-3}
@@ -199,6 +203,8 @@ No modelo de Spence puro, a educação **não aumenta a produtividade** — serv
 No equilíbrio separador de menor custo, o tipo H gasta \( s^*/2 = 25 \) em sinalização, que é um **custo peso-morto** (deadweight loss). A sinalização é, portanto, **socialmente ineficiente**: consome recursos reais apenas para transmitir informação.
 
 Contudo, na prática, a educação pode ter efeitos produtivos reais (acumulação de capital humano), o que muda parcialmente a análise. Se a educação for parcialmente produtiva e parcialmente sinalizadora, o custo social é menor que no modelo puro, mas ainda há ineficiência na margem.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-3)
 
 ---
 
@@ -267,6 +273,8 @@ b_i(v_i) = \frac{2}{3}\, v_i
 \]
 
 Confirmando a equivalência de receitas.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-4)
 
 ---
 
@@ -370,3 +378,5 @@ Formalmente, existe um limiar \( \bar{\lambda} \) para a proporção de tipo A t
 - Se \( \lambda > \bar{\lambda} \): o equilíbrio separador pode não existir (pois um desvio pooling é lucrativo).
 
 Esse resultado é um dos achados mais importantes de **Rothschild e Stiglitz (1976)**: em mercados competitivos com seleção adversa, o equilíbrio pode simplesmente não existir, dependendo da composição da população. Isso contrasta com o resultado de mercados com informação simétrica, nos quais o equilíbrio competitivo sempre existe sob condições padrão.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-5)

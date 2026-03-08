@@ -512,15 +512,15 @@ Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste cap�
 
 Os exercícios a seguir cobrem os principais temas do capítulo: a lógica da modelagem, a verificação de modelos, os pilares metodológicos da microeconomia e a evolução histórica da teoria do valor. Alguns exercícios são conceituais, outros envolvem cálculos — todos exigem que o leitor articule as ideias discutidas ao longo do texto.
 
-**Exercício 1.1.** Explique, usando a analogia do mapa, por que um modelo econômico que inclui todas as variáveis relevantes de uma economia real não seria necessariamente superior a um modelo mais simples. Em que sentido a simplificação pode ser uma virtude epistêmica?
+**Exercício 1.1.** {#ex-1-1} Explique, usando a analogia do mapa, por que um modelo econômico que inclui todas as variáveis relevantes de uma economia real não seria necessariamente superior a um modelo mais simples. Em que sentido a simplificação pode ser uma virtude epistêmica?
 
 [:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-1)
 
-**Exercício 1.2.** Considere a afirmação: "O modelo de concorrência perfeita é inútil porque nenhum mercado real satisfaz todas as suas premissas." Avalie essa afirmação à luz da metodologia de Friedman (1953) e da distinção entre verificação direta e indireta de modelos.
+**Exercício 1.2.** {#ex-1-2} Considere a afirmação: "O modelo de concorrência perfeita é inútil porque nenhum mercado real satisfaz todas as suas premissas." Avalie essa afirmação à luz da metodologia de Friedman (1953) e da distinção entre verificação direta e indireta de modelos.
 
 [:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-2)
 
-**Exercício 1.3.** Classifique cada uma das proposições abaixo como **positiva** ou **normativa** e justifique:
+**Exercício 1.3.** {#ex-1-3} Classifique cada uma das proposições abaixo como **positiva** ou **normativa** e justifique:
 
 a) Um aumento de 10% no salário mínimo reduz o emprego formal em 2%.
 
@@ -534,7 +534,7 @@ e) Políticas de transferência de renda aumentam o consumo das famílias benefi
 
 [:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-3)
 
-**Exercício 1.4.** Considere o modelo de maximização de lucro de uma firma competitiva com função de custo total \(CT(q) = 100 + 10q + q^2\).
+**Exercício 1.4.** {#ex-1-4} Considere o modelo de maximização de lucro de uma firma competitiva com função de custo total \(CT(q) = 100 + 10q + q^2\).
 
 a) Determine a função de custo marginal \(CMg(q)\).
 
@@ -548,7 +548,7 @@ e) Identifique as variáveis exógenas e endógenas neste modelo.
 
 [:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-4)
 
-**Exercício 1.5.** O paradoxo da água e do diamante foi um dos grandes quebra-cabeças da economia clássica.
+**Exercício 1.5.** {#ex-1-5} O paradoxo da água e do diamante foi um dos grandes quebra-cabeças da economia clássica.
 
 a) Enuncie o paradoxo.
 

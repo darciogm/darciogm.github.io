@@ -50,6 +50,9 @@ O máximo global é \(f(4) = 64\).
 
 **Interpretação econômica:** Este exercício ilustra a importância de verificar as fronteiras do domínio. Em problemas econômicos, restrições como \(q \geq 0\) frequentemente implicam soluções de canto que não são capturadas apenas pela CPO.
 
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-1)
+
 ---
 
 ## Exercício 2.2 {#ex-2-2}
@@ -108,6 +111,9 @@ Analogamente para \(x_2^*\). As demandas são homogêneas de grau 0: dobrar simu
 
 O multiplicador \(\lambda^*\) mede a **utilidade marginal da renda**: o aumento na utilidade máxima quando a renda \(m\) aumenta em uma unidade, mantidos os preços. É o "preço-sombra" da restrição orçamentária — quanto maior \(\lambda^*\), mais "apertada" está a restrição.
 
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-2)
+
 ---
 
 ## Exercício 2.3 {#ex-2-3}
@@ -147,6 +153,9 @@ TMST_{KL} = \frac{PMg_K}{PMg_L} = \frac{\alpha A K^{\alpha-1} L^\beta}{\beta A K
 \]
 
 **Interpretação econômica:** A TMST mede a taxa à qual a firma pode substituir capital por trabalho mantendo o mesmo nível de produto. Se \(\alpha/\beta = 1/2\), por exemplo, uma unidade a menos de capital exige duas unidades adicionais de trabalho. A TMST depende da razão \(L/K\): à medida que a firma usa mais trabalho e menos capital, cada unidade adicional de trabalho substitui menos capital — isso reflete a lei dos rendimentos marginais decrescentes de cada fator.
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-3)
 
 ---
 
@@ -212,6 +221,9 @@ O lucro máximo é:
 
 **Interpretação econômica:** O Teorema do Envelope permite calcular o efeito de mudanças paramétricas sobre o valor ótimo sem re-resolver o problema de otimização. Em economia, isso é extremamente útil para estática comparativa: basta avaliar a derivada parcial da função objetivo no ponto ótimo.
 
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-4)
+
 ---
 
 ## Exercício 2.5 {#ex-2-5}
@@ -271,3 +283,5 @@ De (ii): \(\mu_2 = \lambda - 1 = 7/3 \approx 2{,}33 > 0\) ✓ (confirma \(x_2 = 
 Para \(m \geq 1\), o consumidor compra ambos os bens. Para \(m < 1\), gasta tudo em \(x_1\).
 
 **Interpretação econômica:** Com utilidade quase-linear, a demanda por \(x_1\) é constante (\(x_1^* = 1/2\)) quando a renda é suficiente. Toda variação de renda é absorvida por \(x_2\), que funciona como "numerário". A solução de canto ocorre quando a renda é tão baixa que o consumidor não pode adquirir a quantidade "ideal" de \(x_1\) e ainda sobrar algo para \(x_2\).
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-5)

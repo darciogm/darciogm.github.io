@@ -756,7 +756,7 @@ Os exercícios resolvidos a seguir aplicam as principais ferramentas matemática
 
 Os exercícios abaixo progridem do cálculo diferencial básico (otimização de funções de uma variável) até aplicações mais avançadas (Lagrange, Kuhn-Tucker, teorema do envelope). Procure identificar, em cada exercício, qual ferramenta matemática é a mais adequada e como os resultados admitem interpretação econômica.
 
-**Exercício 2.1.** Considere a função \(f(x) = 12x - 3x^2 + 2x^3 - \frac{1}{4}x^4\).
+**Exercício 2.1.** {#ex-2-1} Considere a função \(f(x) = 12x - 3x^2 + 2x^3 - \frac{1}{4}x^4\).
 
 a) Encontre todos os pontos críticos.
 
@@ -766,7 +766,7 @@ c) Identifique o máximo global no intervalo \([0, 4]\).
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-1)
 
-**Exercício 2.2.** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\) e enfrenta preços \(p_1\) e \(p_2\) com renda \(I\).
+**Exercício 2.2.** {#ex-2-2} Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\) e enfrenta preços \(p_1\) e \(p_2\) com renda \(I\).
 
 a) Formule o Lagrangeano do problema de maximização de utilidade.
 
@@ -780,7 +780,7 @@ e) Interprete economicamente o multiplicador de Lagrange \(\lambda^*\).
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-2)
 
-**Exercício 2.3.** Considere a função de produção Cobb-Douglas \(Q = A K^\alpha L^\beta\) com \(\alpha, \beta > 0\).
+**Exercício 2.3.** {#ex-2-3} Considere a função de produção Cobb-Douglas \(Q = A K^\alpha L^\beta\) com \(\alpha, \beta > 0\).
 
 a) Mostre que \(Q\) é homogênea de grau \(\alpha + \beta\).
 
@@ -792,7 +792,7 @@ d) Calcule a taxa marginal de substituição técnica (\(TMST\)) entre capital e
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-3)
 
-**Exercício 2.4 (Teorema do Envelope).** Uma firma monopolista enfrenta a demanda \(P = a - bQ\) e tem custo total \(CT = cQ\), onde \(a\), \(b\) e \(c\) são parâmetros positivos com \(a > c\).
+**Exercício 2.4 (Teorema do Envelope).** {#ex-2-4} Uma firma monopolista enfrenta a demanda \(P = a - bQ\) e tem custo total \(CT = cQ\), onde \(a\), \(b\) e \(c\) são parâmetros positivos com \(a > c\).
 
 a) Encontre a quantidade ótima \(Q^*(a, b, c)\) e o lucro máximo \(\pi^*(a, b, c)\).
 
@@ -804,7 +804,7 @@ d) Interprete economicamente o sinal de cada derivada.
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-4)
 
-**Exercício 2.5 (Kuhn-Tucker).** Um consumidor tem utilidade \(U(x_1, x_2) = \ln(x_1) + x_2\) (preferências quase-lineares), preços \(p_1 = 2\) e \(p_2 = 1\), e renda \(I\).
+**Exercício 2.5 (Kuhn-Tucker).** {#ex-2-5} Um consumidor tem utilidade \(U(x_1, x_2) = \ln(x_1) + x_2\) (preferências quase-lineares), preços \(p_1 = 2\) e \(p_2 = 1\), e renda \(I\).
 
 a) Formule o problema com restrição de não-negatividade e restrição orçamentária de desigualdade.
 

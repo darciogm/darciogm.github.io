@@ -136,6 +136,8 @@ DWL = \frac{1}{2}(p^M - CMg)(q^{CP} - q^M) = \frac{1}{2}(30 - 10)(20 - 10) = \fr
 
 **Interpretação:** O peso morto do monopólio é igual ao lucro do monopolista neste caso. A perda de bem-estar decorre da restrição de quantidade: o monopolista produz apenas metade da quantidade competitiva (\( q^M = 10 \) vs. \( q^{CP} = 20 \)).
 
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-1)
+
 ---
 
 ## Exercício 15.2 {#ex-15-2}
@@ -266,6 +268,8 @@ O lucro com preço uniforme:
 
 **Interpretação:** A discriminação de preços aumenta o lucro em \( \frac{400}{3} \approx 133{,}33 \). A firma se beneficia ao cobrar preços diferenciados. Note que a quantidade total é a mesma (\( Q = 50 \)) em ambos os casos (resultado geral para demandas lineares), mas a discriminação realoca unidades do mercado 1 (mais valorizado) para o mercado 2, cobrando mais de quem tem menor elasticidade.
 
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-2)
+
 ---
 
 ## Exercício 15.3 {#ex-15-3}
@@ -351,6 +355,8 @@ RF = 32 > \Delta DWL = 22
 \]
 
 **Interpretação:** A receita fiscal (32) excede o aumento no peso morto (22), o que significa que o imposto gera um ganho líquido de bem-estar se a receita fiscal for devolvida à sociedade como transferência lump-sum. Contudo, o DWL total aumentou: a tributação do monopólio agrava a distorção preexistente, pois a quantidade cai de 10 para 8, afastando-se ainda mais do ótimo social (\( q^{CP} = 20 \)).
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-3)
 
 ---
 
@@ -455,6 +461,8 @@ EC^{CMg} = \frac{1}{2}(45 - 5)(40) = 800
 \]
 
 Como \( EC^{CMg} = 800 < 1000 = \text{custo fixo} \), o benefício social não justifica o custo, e a produção é socialmente ineficiente neste caso.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-4)
 
 ---
 
@@ -631,3 +639,5 @@ Lucro:
 | Tarifa 2 partes (só tipo 1) | 2 | 162 | 16.200 |
 
 **Interpretação:** A estratégia mais lucrativa é servir apenas o tipo 1, cobrando preço igual ao custo marginal (\( p = 2 \)) e extraindo todo o excedente via taxa fixa (\( T = 162 \)). Ao excluir o tipo 2, a firma pode fixar a taxa fixa no nível do excedente do tipo 1, que é muito maior. O trade-off da tarifa em duas partes com dois tipos é: servir ambos limita \( T \) ao excedente do tipo com menor disposição a pagar, enquanto excluir o tipo menor permite capturar todo o excedente do tipo maior. Neste caso, a perda de receita dos 100 consumidores do tipo 2 é mais do que compensada pela taxa fixa muito mais alta cobrada dos 100 consumidores do tipo 1.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-5)

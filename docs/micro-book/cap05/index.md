@@ -663,7 +663,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ## Exercícios
 
-**Exercício 5.1.** Considere a função de utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), com preços \(p_1\), \(p_2\) e renda \(I\).
+**Exercício 5.1.** {#ex-5-1} Considere a função de utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), com preços \(p_1\), \(p_2\) e renda \(I\).
 
 (a) Derive as funções de demanda marshalliana \(x_1^*(p_1, p_2, I)\) e \(x_2^*(p_1, p_2, I)\).
 
@@ -675,7 +675,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-**Exercício 5.2.** Um consumidor tem função de utilidade \(U(x, y) = \ln x + y\) (quase-linear), com preços \(p_x\), \(p_y = 1\) e renda \(I\).
+**Exercício 5.2.** {#ex-5-2} Um consumidor tem função de utilidade \(U(x, y) = \ln x + y\) (quase-linear), com preços \(p_x\), \(p_y = 1\) e renda \(I\).
 
 (a) Derive as demandas marshalliana e hicksiana para \(x\).
 
@@ -687,13 +687,13 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-**Exercício 5.3.** Utilizando a Equação de Slutsky, demonstre formalmente que um bem de Giffen deve ser necessariamente um bem inferior. É verdade que todo bem inferior é de Giffen? Justifique.
+**Exercício 5.3.** {#ex-5-3} Utilizando a Equação de Slutsky, demonstre formalmente que um bem de Giffen deve ser necessariamente um bem inferior. É verdade que todo bem inferior é de Giffen? Justifique.
 
 [:material-arrow-right: Ver solução](../solucoes/cap05.md#ex-5-3)
 
 ---
 
-**Exercício 5.4 (Elasticidades e agregação).** Uma economia tem dois bens. As parcelas orçamentárias são \(w_1 = 0{,}4\) e \(w_2 = 0{,}6\). A elasticidade-renda do bem 1 é \(\varepsilon_{x_1, I} = 0{,}5\).
+**Exercício 5.4 (Elasticidades e agregação).** {#ex-5-4} Uma economia tem dois bens. As parcelas orçamentárias são \(w_1 = 0{,}4\) e \(w_2 = 0{,}6\). A elasticidade-renda do bem 1 é \(\varepsilon_{x_1, I} = 0{,}5\).
 
 (a) Calcule a elasticidade-renda do bem 2 usando a Agregação de Engel.
 
@@ -705,7 +705,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-**Exercício 5.5 (Aplicação ao Brasil).** Suponha que a elasticidade-preço da gasolina no Brasil é \(-0{,}40\) e que a elasticidade-preço cruzada gasolina-etanol é \(+1{,}10\). O governo decide aumentar a CIDE de modo que o preço da gasolina suba 15%.
+**Exercício 5.5 (Aplicação ao Brasil).** {#ex-5-5} Suponha que a elasticidade-preço da gasolina no Brasil é \(-0{,}40\) e que a elasticidade-preço cruzada gasolina-etanol é \(+1{,}10\). O governo decide aumentar a CIDE de modo que o preço da gasolina suba 15%.
 
 (a) Estime a variação percentual na demanda por gasolina.
 

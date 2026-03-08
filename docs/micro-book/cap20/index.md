@@ -686,7 +686,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ## Exercícios
 
-**Exercício 20.1.** Uma fábrica de celulose produz \(q\) toneladas com custo total \(C(q) = 10q + q^2\) e vende ao preço \(P = 110\). A produção gera poluição com custo externo \(E(q) = 2q^2\).
+**Exercício 20.1.** {#ex-20-1} Uma fábrica de celulose produz \(q\) toneladas com custo total \(C(q) = 10q + q^2\) e vende ao preço \(P = 110\). A produção gera poluição com custo externo \(E(q) = 2q^2\).
 
 (a) Determine a quantidade produzida pela firma na ausência de regulação.
 (b) Determine a quantidade socialmente ótima.
@@ -695,7 +695,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 [:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-1)
 
-**Exercício 20.2.** Considere três indivíduos (\(A\), \(B\), \(C\)) com as seguintes valorações marginais por um bem público \(G\) (medido em unidades):
+**Exercício 20.2.** {#ex-20-2} Considere três indivíduos (\(A\), \(B\), \(C\)) com as seguintes valorações marginais por um bem público \(G\) (medido em unidades):
 
 | \(G\) | \(BMg_A\) | \(BMg_B\) | \(BMg_C\) | \(CMg\) |
 |-------|-----------|-----------|-----------|---------|
@@ -712,7 +712,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 [:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-2)
 
-**Exercício 20.3.** Duas firmas emitem poluentes. A firma 1 tem custo de abatimento \(CA_1(a_1) = 2a_1^2\) e a firma 2, \(CA_2(a_2) = a_2^2\), onde \(a_i\) é o abatimento em toneladas. Cada firma emite 100 toneladas sem regulação. O regulador deseja reduzir as emissões totais em 60 toneladas.
+**Exercício 20.3.** {#ex-20-3} Duas firmas emitem poluentes. A firma 1 tem custo de abatimento \(CA_1(a_1) = 2a_1^2\) e a firma 2, \(CA_2(a_2) = a_2^2\), onde \(a_i\) é o abatimento em toneladas. Cada firma emite 100 toneladas sem regulação. O regulador deseja reduzir as emissões totais em 60 toneladas.
 
 (a) Qual é a alocação custo-efetiva de abatimento entre as duas firmas?
 (b) Qual seria o custo total se o regulador impusesse abatimento uniforme (30 toneladas cada)?
@@ -721,7 +721,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 [:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-3)
 
-**Exercício 20.4.** Uma comunidade com 100 moradores deve decidir se constrói uma praça pública (bem público discreto) ao custo de \(R\$ 50.000\). Cada morador \(i\) tem valoração \(v_i\) pela praça, distribuída uniformemente entre \(R\$ 200\) e \(R\$ 800\).
+**Exercício 20.4.** {#ex-20-4} Uma comunidade com 100 moradores deve decidir se constrói uma praça pública (bem público discreto) ao custo de \(R\$ 50.000\). Cada morador \(i\) tem valoração \(v_i\) pela praça, distribuída uniformemente entre \(R\$ 200\) e \(R\$ 800\).
 
 (a) A praça deve ser construída? (Compare a soma das valorações esperadas com o custo.)
 (b) Se a construção for financiada por contribuição voluntária uniforme de \(R\$ 500\) por morador, quantos moradores estariam dispostos a contribuir?
@@ -730,7 +730,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 [:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-4)
 
-**Exercício 20.5.** Considere uma economia com dois bens — um privado (\(x\)) e um público (\(G\)) — e dois consumidores com utilidades:
+**Exercício 20.5.** {#ex-20-5} Considere uma economia com dois bens — um privado (\(x\)) e um público (\(G\)) — e dois consumidores com utilidades:
 
 \[
 U_1 = \ln(x_1) + 2\ln(G), \quad U_2 = \ln(x_2) + \ln(G)

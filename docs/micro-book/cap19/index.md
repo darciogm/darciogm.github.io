@@ -647,7 +647,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ## Exercícios
 
-**Exercício 19.1.** Considere um mercado de carros usados no modelo de Akerlof. Há dois tipos de carros: bons (valor de \(R\$ 30.000\) para compradores, \(R\$ 25.000\) para vendedores) e ruins (valor de \(R\$ 15.000\) para compradores, \(R\$ 10.000\) para vendedores). Metade dos carros são bons.
+**Exercício 19.1.** {#ex-19-1} Considere um mercado de carros usados no modelo de Akerlof. Há dois tipos de carros: bons (valor de \(R\$ 30.000\) para compradores, \(R\$ 25.000\) para vendedores) e ruins (valor de \(R\$ 15.000\) para compradores, \(R\$ 10.000\) para vendedores). Metade dos carros são bons.
 
 (a) Calcule o preço máximo que um comprador desinformado estaria disposto a pagar.
 (b) Quais tipos de carros serão transacionados?
@@ -656,7 +656,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 [:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-1)
 
-**Exercício 19.2.** Um proprietário contrata um gerente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O lucro é \(\pi_H = 200\) com probabilidade \(p(e)\) e \(\pi_L = 50\) caso contrário, onde \(p(1) = 0{,}8\) e \(p(0) = 0{,}3\). A utilidade de reserva é \(\bar{U} = 5\).
+**Exercício 19.2.** {#ex-19-2} Um proprietário contrata um gerente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O lucro é \(\pi_H = 200\) com probabilidade \(p(e)\) e \(\pi_L = 50\) caso contrário, onde \(p(1) = 0{,}8\) e \(p(0) = 0{,}3\). A utilidade de reserva é \(\bar{U} = 5\).
 
 (a) Escreva as restrições de participação e de incentivo para induzir \(e = 1\).
 (b) Resolva para os pagamentos ótimos \(w_H^*\) e \(w_L^*\).
@@ -664,7 +664,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 [:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-2)
 
-**Exercício 19.3.** No modelo de Spence, há dois tipos de trabalhadores. O tipo H tem produtividade \(\theta_H = 100\) e custo de educação \(c_H(s) = s/2\). O tipo L tem produtividade \(\theta_L = 50\) e custo de educação \(c_L(s) = s\).
+**Exercício 19.3.** {#ex-19-3} No modelo de Spence, há dois tipos de trabalhadores. O tipo H tem produtividade \(\theta_H = 100\) e custo de educação \(c_H(s) = s/2\). O tipo L tem produtividade \(\theta_L = 50\) e custo de educação \(c_L(s) = s\).
 
 (a) Determine o intervalo de níveis de educação \(s^*\) que sustentam um equilíbrio separador.
 (b) Qual é o equilíbrio separador de menor custo?
@@ -673,7 +673,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 [:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-3)
 
-**Exercício 19.4.** Em um leilão de segundo preço com três licitantes cujas valorações são i.i.d. com distribuição uniforme em \([0, 100]\):
+**Exercício 19.4.** {#ex-19-4} Em um leilão de segundo preço com três licitantes cujas valorações são i.i.d. com distribuição uniforme em \([0, 100]\):
 
 (a) Qual é a estratégia ótima de cada licitante?
 (b) Calcule a receita esperada do vendedor.
@@ -682,7 +682,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 [:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-4)
 
-**Exercício 19.5.** Uma seguradora opera num mercado com dois tipos de consumidores. O tipo A tem probabilidade de sinistro \(p_A = 0{,}1\) e o tipo B tem \(p_B = 0{,}4\). Ambos têm riqueza \(W = 100\) e perda potencial \(d = 80\). A proporção de tipo A é \(60\%\). A utilidade é \(U(W) = \ln(W)\).
+**Exercício 19.5.** {#ex-19-5} Uma seguradora opera num mercado com dois tipos de consumidores. O tipo A tem probabilidade de sinistro \(p_A = 0{,}1\) e o tipo B tem \(p_B = 0{,}4\). Ambos têm riqueza \(W = 100\) e perda potencial \(d = 80\). A proporção de tipo A é \(60\%\). A utilidade é \(U(W) = \ln(W)\).
 
 (a) Calcule os contratos de seguro completo atuarialmente justos para cada tipo.
 (b) Mostre que um contrato agregador (pooling) com seguro completo à taxa média não é um equilíbrio.

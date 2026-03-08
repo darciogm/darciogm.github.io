@@ -695,7 +695,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ## Exercícios
 
-**Exercício 14.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
+**Exercício 14.1.** {#ex-14-1} Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
 
 (a) Derive a curva de contrato.
 
@@ -709,7 +709,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-**Exercício 14.2.** Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
+**Exercício 14.2.** {#ex-14-2} Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
 
 (a) \(TMS_A^{12} = TMS_B^{12}\) (eficiência na troca).
 
@@ -723,7 +723,7 @@ Explique por que cada condição é necessária, usando argumentos de contradiç
 
 ---
 
-**Exercício 14.3.** Considere uma economia com três bens (\(k = 1, 2, 3\)) e funções de excesso de demanda:
+**Exercício 14.3.** {#ex-14-3} Considere uma economia com três bens (\(k = 1, 2, 3\)) e funções de excesso de demanda:
 
 \[
 Z^1(\mathbf{p}) = 3\frac{p_2}{p_1} + 2\frac{p_3}{p_1} - 5
@@ -743,7 +743,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-**Exercício 14.4.** Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
+**Exercício 14.4.** {#ex-14-4} Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
 
 - Consumidores igualam \(TMS = p_1/p_2\)
 - Produtores igualam \(TMST = w/r\)
@@ -753,7 +753,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-**Exercício 14.5.** Um país negocia um acordo de livre comércio que eliminará tarifas de importação sobre produtos industrializados. Usando a estrutura conceitual de equilíbrio geral:
+**Exercício 14.5.** {#ex-14-5} Um país negocia um acordo de livre comércio que eliminará tarifas de importação sobre produtos industrializados. Usando a estrutura conceitual de equilíbrio geral:
 
 (a) Explique por que a análise de equilíbrio parcial (mercado por mercado) pode subestimar ou superestimar os efeitos do acordo.
 

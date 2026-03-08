@@ -30,6 +30,9 @@ EP: Da oferta inversa: \(p = 2{,}5 + Q/200\). \(EP = \frac{1}{2}(6{,}25 - 2{,}5)
 
 PPM: \(\frac{1}{2} \times 2 \times (750 - 550) = 200\).
 
+
+↩ [Voltar ao enunciado](../cap13/index.md#ex-13-1)
+
 ---
 
 ## Exercício 13.2 {#ex-13-2}
@@ -47,6 +50,9 @@ PPM: área do triângulo entre a demanda e a oferta, da quantidade transacionada
 Na verdade, \(PPM = EC_{\text{antes}} + EP_{\text{antes}} - EC_{\text{depois}} - EP_{\text{depois}}\). O resultado exato depende de quem consome as 50 unidades. Assumindo racionamento eficiente: \(PPM = \frac{1}{2}(16-10)(200-50) = \frac{1}{2}(6)(150) = 450\).
 
 **(c)** Antes: \(EC = \frac{1}{2}(20-16)(200) = 400\). Depois (com racionamento eficiente): consumidores que compram a \(p = 10\) ganham excedente, mas os 150 que não conseguem comprar perdem. O EC líquido depende da alocação, mas é menor que o EC original + EP original combinados, com a diferença sendo o PPM.
+
+
+↩ [Voltar ao enunciado](../cap13/index.md#ex-13-2)
 
 ---
 
@@ -82,6 +88,9 @@ Estas fórmulas são **idênticas** às do imposto específico. O lado mais inel
 
 **Interpretação econômica:** A incidência econômica de um imposto depende exclusivamente das elasticidades relativas, não da forma legal (específico vs. *ad valorem*) nem de quem remete o pagamento ao governo (incidência legal vs. econômica).
 
+
+↩ [Voltar ao enunciado](../cap13/index.md#ex-13-3)
+
 ---
 
 ## Exercício 13.4 {#ex-13-4}
@@ -103,6 +112,9 @@ Nova renda ricardiana: \(\frac{1}{2}(23{,}33 - 10)(1333{,}3) = \frac{1}{2}(13{,}
 Variação: \(\Delta EP = 8888{,}9 - 5000 = 3888{,}9\).
 
 **Interpretação econômica:** Em indústrias de custos crescentes, o aumento da demanda eleva o preço e gera renda ricardiana: lucro puro que remunera a escassez de insumos específicos (terra fértil, localização, recursos naturais). No Brasil, o boom de commodities pós-2003 gerou renda ricardiana expressiva no agronegócio.
+
+
+↩ [Voltar ao enunciado](../cap13/index.md#ex-13-4)
 
 ---
 
@@ -131,3 +143,5 @@ PPM = \frac{1}{2} \times 0{,}30 \times Q \times 0{,}3 \times \frac{0{,}30}{p} = 
 \]
 
 Com valores plausíveis (\(p \approx 5{,}50\), \(Q\) em bilhões de litros), o peso morto é relativamente pequeno em percentual — consequência da baixa elasticidade.
+
+↩ [Voltar ao enunciado](../cap13/index.md#ex-13-5)

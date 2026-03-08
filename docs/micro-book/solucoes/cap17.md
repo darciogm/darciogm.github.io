@@ -108,6 +108,8 @@ Para valores baixos de \( w \), o trabalhador pode até não ofertar trabalho. A
 
 Portanto, o salário de reserva é \( w_R = 4 \). Abaixo desse valor, o trabalhador não participa do mercado de trabalho — a renda não-laboral é suficiente para que o custo de oportunidade do lazer não compense.
 
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-1)
+
 ---
 
 ## Exercício 17.2 {#ex-17-2}
@@ -180,6 +182,8 @@ DWL = \frac{1}{2} \times (2000 - 1500) \times (25 - 15) = \frac{1}{2} \times 500
 
 O peso morto do salário mínimo é \( DWL = 2{.}500 \) unidades monetárias. Esse valor representa a perda líquida de bem-estar social — transações mutuamente benéficas que deixam de ocorrer porque o salário mínimo impede que o mercado atinja o equilíbrio.
 
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-2)
+
 ---
 
 ## Exercício 17.3 {#ex-17-3}
@@ -247,6 +251,8 @@ A **exploração monopsonística** é definida como a diferença entre o valor d
 
 Cada trabalhador recebe um salário 10 unidades monetárias abaixo de sua contribuição marginal ao valor da produção. Essa diferença é a medida da exploração monopsonística no sentido de Joan Robinson: o poder de mercado do empregador permite que ele pague menos que a produtividade marginal dos trabalhadores, apropriando-se de parte do excedente.
 
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-3)
+
 ---
 
 ## Exercício 17.4 {#ex-17-4}
@@ -312,6 +318,8 @@ Comparação:
 O sindicato eleva o salário de 15 para 25 (aumento de 66,7%), mas ao custo de reduzir o emprego de 700 para 500 trabalhadores (queda de 28,6%). A folha salarial total aumenta de 10.500 para 12.500.
 
 Esse resultado ilustra o **trade-off fundamental** da ação sindical: o sindicato consegue elevar os salários acima do nível competitivo, porém à custa de desemprego entre seus membros. Os 500 trabalhadores empregados ganham mais, mas 200 trabalhadores que estariam empregados no equilíbrio competitivo ficam desempregados. Há, portanto, um conflito distributivo dentro da própria classe trabalhadora entre insiders (empregados ao salário sindical) e outsiders (desempregados involuntários).
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-4)
 
 ---
 
@@ -379,5 +387,7 @@ Os principais canais são:
 6. **Canal regional**: O Brasil apresenta grandes disparidades regionais de produtividade. Um salário mínimo nacional uniforme tem efeito relativo muito maior em regiões de menor renda per capita (Norte e Nordeste), onde uma parcela maior dos trabalhadores ganha próximo ao mínimo. Isso confere ao salário mínimo um papel de **convergência regional** de renda, mas também pode gerar maior desemprego e informalidade nessas regiões.
 
 Evidências empíricas brasileiras (Firpo e Reis, 2007; Saboia, 2007) sugerem que a política de valorização do salário mínimo adotada a partir de 2004 contribuiu significativamente para a redução da desigualdade de renda no Brasil, principalmente através dos canais 1, 2 e 3. O coeficiente de Gini brasileiro caiu de 0,572 em 2004 para 0,519 em 2014, e estudos de decomposição atribuem parte relevante dessa queda aos efeitos diretos e indiretos do salário mínimo.
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-5)
 
 ---

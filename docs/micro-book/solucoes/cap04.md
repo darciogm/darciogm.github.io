@@ -76,6 +76,9 @@ x_1^* = -\frac{-I/(4p_1^{3/2} p_2^{1/2})}{1/(2(p_1 p_2)^{1/2})} = \frac{I}{4p_1^
 
 **Interpretação econômica:** A Identidade de Roy conecta a utilidade indireta às demandas marshallianas sem necessidade de re-resolver o problema de otimização. É a contraparte "dual" da condição de tangência no problema primal.
 
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-1)
+
 ---
 
 ## Exercício 4.2 {#ex-4-2}
@@ -130,6 +133,9 @@ Identidade 2: \(E(\mathbf{p}, V(\mathbf{p}, I)) = 2 \cdot \frac{I}{2\sqrt{p_1 p_
 
 **Interpretação econômica:** A dualidade entre os problemas primal (maximizar utilidade dado o orçamento) e dual (minimizar dispêndio dado o nível de utilidade) é uma das estruturas mais elegantes da teoria do consumidor. O Lema de Shephard e a Identidade de Roy são "atalhos" que exploram essa dualidade, evitando resolver dois problemas separados.
 
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-2)
+
 ---
 
 ## Exercício 4.3 {#ex-4-3}
@@ -163,6 +169,9 @@ x_2^* = 2 \times 15 = 30
 De fato, com complementos perfeitos, as demandas são lineares na renda: \(x_1^* = I/8\) e \(x_2^* = I/4\), ambas crescentes em \(I\).
 
 **Interpretação econômica:** Com complementos perfeitos, os bens são sempre consumidos em proporção fixa (aqui, \(x_2 = 2x_1\)). Não há substituição entre eles — uma mudança de preços relativos não altera a proporção, apenas a quantidade total consumida. Isso modela bens que devem ser usados juntos (café e açúcar, sapatos direito e esquerdo).
+
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-3)
 
 ---
 
@@ -213,6 +222,9 @@ u_B = 36^{0,4} \cdot 108^{0,6} \approx 4{,}35 \times 25{,}39 \approx 110{,}4
 \(u_B > u_A\): o consumidor prefere o imposto *lump sum*. Isso é consistente com o **princípio do montante fixo**: para uma mesma receita arrecadada, um imposto *lump sum* causa menor perda de bem-estar que um imposto distorcivo, pois não altera os preços relativos. O imposto específico distorce a razão \(p_1/p_2\), levando o consumidor a substituir \(x_1\) por \(x_2\) de forma ineficiente (efeito substituição puro, sem contrapartida em receita).
 
 **Interpretação econômica:** A diferença \(u_B - u_A\) é o custo de eficiência (peso morto) do imposto distorcivo. Em termos monetários, é a perda de excedente do consumidor que não se converte em receita para o governo — uma destruição líquida de bem-estar.
+
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-4)
 
 ---
 
@@ -273,3 +285,5 @@ Que é idêntica à demanda marshalliana \(x_1^* = p_2^2/p_1^2\). Isso ocorre po
 Como \(\partial x_1/\partial I = 0\), o termo de efeito-renda desaparece, e a demanda marshalliana coincide com a hicksiana.
 
 **Interpretação econômica:** Com preferências quase-lineares, toda a resposta a mudanças de preço é efeito substituição puro (Slutsky). Isso torna a análise de bem-estar particularmente simples: o excedente do consumidor marshalliano é uma medida exata da variação compensadora e da variação equivalente — não há ambiguidade entre as três medidas de bem-estar.
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-5)

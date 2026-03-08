@@ -31,6 +31,9 @@ Como R é estritamente dominante para J2, não existe equilíbrio em estratégia
 
 **Interpretação econômica:** Quando um jogador tem estratégia dominante, o jogo se simplifica dramaticamente. Em mercados, isso ocorre quando uma firma tem uma estratégia que é ótima independentemente do comportamento dos rivais.
 
+
+↩ [Voltar ao enunciado](../cap09a/index.md#ex-9a-1)
+
 ---
 
 ## Exercício 9a.2 {#ex-9a-2}
@@ -75,6 +78,9 @@ CPO: \(\frac{90 - 2q_1}{2} = 0 \implies q_1^S = 45\), \(q_2^S = 22{,}5\).
 
 O líder produz mais e lucra mais que no Cournot; o seguidor produz menos e lucra menos. A vantagem do primeiro movimento é substancial.
 
+
+↩ [Voltar ao enunciado](../cap09a/index.md#ex-9a-2)
+
 ---
 
 ## Exercício 9a.3 {#ex-9a-3}
@@ -103,6 +109,9 @@ Lucro positivo porque a diferenciação confere poder de mercado.
 
 Quando \(d \to b\): bens quase homogêneos. \(p^* \to (a + bc)/b = c + a/b\). A competição se intensifica, e os lucros se comprimem em direção ao resultado de Bertrand homogêneo (\(\pi \to 0\)).
 
+
+↩ [Voltar ao enunciado](../cap09a/index.md#ex-9a-3)
+
 ---
 
 ## Exercício 9a.4 {#ex-9a-4}
@@ -122,6 +131,9 @@ E[\pi_E] = 0{,}6 \times (-2) + 0{,}4 \times 4 = -1{,}2 + 1{,}6 = 0{,}4 > 0
 Se \(\Pr(\theta_F) > 2/3\): \(E[\pi_E] = p \cdot (-2) + (1-p) \cdot 4 < 0\) quando \(p > 2/3\), e a entrante não entra.
 
 **(c)** Sim, a incumbente fraca teria incentivo para sinalizar força (por exemplo, investindo em capacidade ou praticando preços agressivos antes da decisão de entrada). Se a sinalização for crível, a entrante atualiza suas crenças para \(\Pr(\theta_F) > 2/3\) e não entra. No entanto, a incumbente forte também gostaria de sinalizar — o que pode gerar equilíbrios pooling (ambos os tipos sinalizam) ou separadores (apenas um tipo sinaliza), dependendo dos custos de sinalização para cada tipo.
+
+
+↩ [Voltar ao enunciado](../cap09a/index.md#ex-9a-4)
 
 ---
 
@@ -148,3 +160,5 @@ No equilíbrio separador, firmas oferecem \(w = 2\) para quem sinaliza \(e \geq 
 - Tipo L desvia para \(e = 1\)? Receberia \(w = 2\), utilidade \(= 2 - 1 = 1 = 1\). Indiferente — mas para dominância estrita, como \(1 \not> 1\), o tipo L não tem incentivo estrito a desviar. ✓
 
 **Interpretação econômica:** A condição de *single-crossing* (\(\partial^2 c/\partial e \partial \theta < 0\): o custo marginal da sinalização é menor para tipos produtivos) é o que permite a separação. O custo social da sinalização (0,5 × 0,5 = 0,25 por trabalhador) é puro desperdício se a educação não aumenta produtividade — motivando intervenções como certificação profissional.
+
+↩ [Voltar ao enunciado](../cap09a/index.md#ex-9a-5)

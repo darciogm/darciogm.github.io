@@ -26,6 +26,9 @@ Sob Teoria do Prospecto: a função valor é **convexa** para perdas (busca por 
 
 **Interpretação econômica:** Esse padrão explica por que investidores seguram ações perdedoras (buscando risco) e vendem ações ganhadoras cedo (aversão ao risco) — o "efeito disposição" documentado por Shefrin e Statman (1985).
 
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-1)
+
 ---
 
 ## Exercício 8.2 {#ex-8-2}
@@ -55,6 +58,9 @@ Verificação: \(|v(-100)| = 129{,}47 > 57{,}54 = v(100)\). ✓
 A dor de perder R\$ 100 (\(|{-129{,}47}|\)) é 2,25 vezes maior que o prazer de ganhar R\$ 100 (57,54). Além disso, \(v(200)/v(100) = 1{,}84 < 2\): a sensibilidade marginal é decrescente para ganhos (concavidade). Analogamente, \(|v(-200)|/|v(-100)| = 1{,}84 < 2\): a sensibilidade também é decrescente para perdas (convexidade).
 
 **Interpretação econômica:** A aversão à perda (\(\lambda = 2{,}25\)) é o parâmetro central da Teoria do Prospecto. Ela explica por que as pessoas rejeitam apostas com valor esperado positivo (como \(+110\) com 50% e \(-100\) com 50%) e por que negociações salariais são tão sensíveis a cortes nominais.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-2)
 
 ---
 
@@ -99,6 +105,9 @@ A utilidade de Y avaliada em \(t = 6\) é **negativa** — o custo imediato domi
 
 **Interpretação econômica:** Essa dinâmica é central para entender a baixa adesão voluntária à previdência complementar no Brasil. Programas como a Funpresp (com adesão automática desde 2013 para novos servidores federais) exploram a inércia para contornar o viés do presente.
 
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-3)
+
 ---
 
 ## Exercício 8.4 {#ex-8-4}
@@ -110,6 +119,9 @@ A utilidade de Y avaliada em \(t = 6\) é **negativa** — o custo imediato domi
 **(ii) Viés do presente:** O plano anual exige um pagamento imediato grande (R\$ 960), enquanto o mensal exige apenas R\$ 100 agora. O desconto quasi-hiperbólico faz com que o custo imediato de R\$ 960 pareça desproporcionalmente alto, mesmo sendo mais barato no acumulado. O \(\beta < 1\) amplifica o custo presente relativamente ao futuro, levando o consumidor a preferir pagamentos menores e frequentes — mesmo que totalizem mais.
 
 **Interpretação econômica:** DellaVigna e Malmendier (2006) mostram que academias lucram precisamente com essa combinação de vieses: cobram mensalidades de clientes que superestimam o próprio uso e subestimam o custo efetivo por visita. É um exemplo de empresa que explora vieses comportamentais na precificação.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-4)
 
 ---
 
@@ -128,6 +140,9 @@ A **adesão automática com *opt-out* (ii)** provavelmente terá maior impacto. 
 4. **Evidência empírica comparada:** Chetty et al. (2014) mostram que mudanças automáticas em contribuições previdenciárias afetam 85% da população, enquanto subsídios fiscais afetam apenas os 15% de contribuintes mais atentos.
 
 **Interpretação econômica:** O subsídio fiscal é a ferramenta correta se os agentes são racionais (modelo padrão). A adesão automática é superior se os agentes sofrem de viés do presente e inércia (modelo comportamental). A evidência favorece esmagadoramente a segunda hipótese.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-5)
 
 ---
 
@@ -168,6 +183,9 @@ As inequações (\(*\)) e (\(**\)) são **contraditórias**. Logo, não existe \
 
 **Interpretação econômica:** O Paradoxo de Allais revela que os agentes sobrepesam a certeza (\(A\) é "certo") relativamente a probabilidades altas (\(B\) tem 0,89 de R\$ 1M, quase certo). Isso viola a linearidade nas probabilidades que a UE exige.
 
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-6)
+
 ---
 
 ## Exercício 8.7 {#ex-8-7}
@@ -184,6 +202,9 @@ Preferências observadas: apostar em vermelho da Urna A ≻ vermelho da Urna B, 
 Se o agente atribui probabilidade subjetiva \(q\) às bolas vermelhas na Urna B, então preferir A em vermelho implica \(0{,}5 > q\), e preferir A em preto implica \(0{,}5 > 1 - q\), ou seja, \(q > 0{,}5\). Contradição: \(q < 0{,}5\) e \(q > 0{,}5\) simultaneamente. Logo, não existe nenhuma probabilidade subjetiva \(q\) compatível com as preferências observadas. \(\blacksquare\)
 
 O axioma violado é o axioma **Sure-Thing Principle** (P2) de Savage, que é a versão do axioma de independência para probabilidades subjetivas. As preferências de Ellsberg revelam **aversão à ambiguidade**: o agente prefere riscos conhecidos a incerteza genuína, independentemente da probabilidade subjetiva que atribua.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-7)
 
 ---
 
@@ -219,6 +240,9 @@ Oferta mínima aceita: **R\$ 85,71** (≈ 42,9% do total).
 
 **(c)** A diferença (R\$ 85,71 vs. ~R\$ 0) reflete a aversão à inequidade desvantajosa. Com \(\alpha_R = 3\), o respondedor sofre intensamente com desigualdade a seu desfavor, preferindo rejeitar (e ficar com zero) a aceitar uma oferta que considere "injusta". Isso explica as taxas de rejeição de 40–60% observadas experimentalmente para ofertas abaixo de 30% em jogos do ultimato.
 
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-8)
+
 ---
 
 ## Exercício 8.9 {#ex-8-9}
@@ -237,6 +261,9 @@ As quatro regras de edição hedônica de Thaler (1985):
 **(b)** Taxa condominial mensal em vez de anual: **integrar perdas**. Se cobrada anualmente, o morador sentiria uma única perda grande. Dividindo em 12 parcelas mensais, cada perda individual é menor — mas pela convexidade de \(v\) para perdas, \(12 \times v(-x/12)\) é mais doloroso que \(v(-x)\) em teoria. Na prática, a regra 2 sugere que o condomínio deveria cobrar tudo de uma vez! A cobrança mensal se justifica mais por restrições de liquidez e por **habituação** (perdas recorrentes se tornam menos salientes, como se incorporadas ao *status quo*).
 
 **(c)** Cashback em vez de desconto: **segregar ganho pequeno de perda grande** (regra 4). O pagamento integral é a perda grande; o cashback é um ganho pequeno posterior. Pela regra 4, sentir a perda do pagamento e depois o ganho do cashback separadamente gera mais satisfação do que simplesmente pagar menos. O cashback cria um momento de "ganho" que atenua psicologicamente a dor do pagamento.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-9)
 
 ---
 
@@ -283,3 +310,5 @@ w(0{,}50) + w(0{,}50) \approx 0{,}421 + 0{,}421 = 0{,}842 < 1 \quad \checkmark
 A propriedade de subcerteza (\(w(p) + w(1-p) < 1\)) implica que os pesos de decisão somam menos que 1. Isso reflete um "pessimismo" generalizado: o agente atua como se a "probabilidade total" fosse menor que 100%, subponderando eventos de probabilidade intermediária.
 
 **Interpretação econômica:** A função de ponderação explica simultaneamente: (i) a compra de bilhetes de loteria (sobreponderação de ganhos improváveis: \(w(0{,}01) \gg 0{,}01\)); e (ii) a compra de seguros contra catástrofes (sobreponderação de perdas improváveis). Esses dois comportamentos são incompatíveis com a utilidade esperada mas naturais na Teoria do Prospecto.
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-10)

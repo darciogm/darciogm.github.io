@@ -351,7 +351,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ## Exercícios
 
-**Exercício 9b.1.** (Credibilidade de ameaças) Considere o jogo de entrada com 3 estágios: (1) E decide se entra; (2) I decide se investe K em capacidade; (3) se E entrou, I decide se luta ou acomoda.
+**Exercício 9b.1.** {#ex-9b-1} (Credibilidade de ameaças) Considere o jogo de entrada com 3 estágios: (1) E decide se entra; (2) I decide se investe K em capacidade; (3) se E entrou, I decide se luta ou acomoda.
 
 Payoffs sem investimento: como no exemplo da Seção 9b.1.
 Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o custo K reduz o payoff de I quando não luta em 1.
@@ -364,7 +364,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ---
 
-**Exercício 9b.2.** (Tit-for-Tat) No Dilema dos Prisioneiros repetido com payoffs \(T = 5\), \(R = 3\), \(P = 1\), \(S = 0\):
+**Exercício 9b.2.** {#ex-9b-2} (Tit-for-Tat) No Dilema dos Prisioneiros repetido com payoffs \(T = 5\), \(R = 3\), \(P = 1\), \(S = 0\):
 
 (a) Mostre que a cooperação com Tit-for-Tat requer \(\delta \geq (T-R)/(T-P) = 2/4 = 1/2\).
 
@@ -376,13 +376,13 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ---
 
-**Exercício 9b.3.** (Barganha) Dois sindicatos negociam com uma empresa. O sindicato A tem \(\delta_A = 0{,}95\) e o sindicato B tem \(\delta_B = 0{,}7\). Qual sindicato obtém um acordo melhor no modelo de Rubinstein? Quantifique.
+**Exercício 9b.3.** {#ex-9b-3} (Barganha) Dois sindicatos negociam com uma empresa. O sindicato A tem \(\delta_A = 0{,}95\) e o sindicato B tem \(\delta_B = 0{,}7\). Qual sindicato obtém um acordo melhor no modelo de Rubinstein? Quantifique.
 
 [:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-3)
 
 ---
 
-**Exercício 9b.4.** (Conluio com N firmas) Mostre que no Cournot repetido infinitamente com \(N\) firmas simétricas, a cooperação requer \(\delta \geq \frac{(N-1)^2(N+1)^2}{(N+1)^4 - 16N^2}\). Para \(N = 2\), qual é \(\delta^*\)? E para \(N = 10\)?
+**Exercício 9b.4.** {#ex-9b-4} (Conluio com N firmas) Mostre que no Cournot repetido infinitamente com \(N\) firmas simétricas, a cooperação requer \(\delta \geq \frac{(N-1)^2(N+1)^2}{(N+1)^4 - 16N^2}\). Para \(N = 2\), qual é \(\delta^*\)? E para \(N = 10\)?
 
 [:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-4)
 

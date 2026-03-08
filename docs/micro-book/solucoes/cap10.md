@@ -34,6 +34,9 @@ Ao longo de uma isoquanta, quando \(L\) aumenta, \(K\) diminui, logo \(K/L\) dim
 
 **(e)** Para Cobb-Douglas, \(\sigma = 1\) sempre (por definição da forma funcional). Confirmação: \(\sigma = \frac{d\ln(K/L)}{d\ln(TMST)} = \frac{d\ln(K/L)}{d\ln(3L/(7K))} = 1\), pois \(\ln(TMST) = \ln(3/7) + \ln(L/K)\), e a relação é linear com coeficiente 1.
 
+
+↩ [Voltar ao enunciado](../cap10/index.md#ex-10-1)
+
 ---
 
 ## Exercício 10.2 {#ex-10-2}
@@ -52,6 +55,9 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 **(d)** Com \(\sigma = 1/2 < 1\), as isoquantas são mais curvas que as Cobb-Douglas (\(\sigma = 1\)), aproximando-se da forma em "L" dos complementos perfeitos. A substituição entre K e L é mais difícil: uma mudança de 1% nos preços relativos induz apenas 0,5% de mudança na razão K/L.
 
+
+↩ [Voltar ao enunciado](../cap10/index.md#ex-10-2)
+
 ---
 
 ## Exercício 10.3 {#ex-10-3}
@@ -66,6 +72,9 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 **Interpretação econômica:** A Leontief modela processos produtivos com proporções fixas (como uma linha de montagem com uma máquina por operador). Não há substituição entre fatores, e o excesso de qualquer fator é puro desperdício.
 
+
+↩ [Voltar ao enunciado](../cap10/index.md#ex-10-3)
+
 ---
 
 ## Exercício 10.4 {#ex-10-4}
@@ -79,6 +88,9 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 **(c)** \(q(2K, 2L) = (2K)^{0,6}(2L)^{0,8} = 2^{0,6+0,8} q = 2^{1,4} q \approx 2{,}64 q\). O produto mais que dobra.
 
 **(d)** Os produtos marginais de cada fator são decrescentes (\(\alpha - 1 < 0\) e \(\beta - 1 < 0\)), significando que adicionar mais de um fator *mantendo o outro fixo* gera retornos decrescentes. Porém, quando ambos os fatores aumentam *simultaneamente*, há complementaridade: mais capital eleva a produtividade marginal do trabalho e vice-versa. Os rendimentos crescentes de escala emergem dessa interação, não do comportamento isolado de cada fator.
+
+
+↩ [Voltar ao enunciado](../cap10/index.md#ex-10-4)
 
 ---
 
@@ -118,3 +130,5 @@ Em \(t = 10\): \(A(10) = e^{0,2} \approx 1{,}221\). \(K(10) = 100 \times 1{,}03^
 \(q(10) = 1{,}221 \times 134{,}4^{0,4} \times 220{,}9^{0,6} \approx 1{,}221 \times 7{,}61 \times 27{,}15 \approx 252{,}3\)
 
 Crescimento total: \(252{,}3/151{,}4 - 1 \approx 66{,}6\%\) em 10 anos, consistente com \((1{,}038)^{10} - 1 \approx 45{,}3\%\). A diferença vem da aproximação contínua vs. discreta.
+
+↩ [Voltar ao enunciado](../cap10/index.md#ex-10-5)

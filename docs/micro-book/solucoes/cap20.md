@@ -108,6 +108,8 @@ DWL = \int_{q^{**}}^{q^*} \left[ CMgS(q) - P \right] dq = \int_{50/3}^{50} (6q -
 
 Interpretação: essa é a perda líquida de bem-estar social provocada pela produção de 50 toneladas em vez das 16,67 toneladas eficientes. A firma ignora o dano ambiental que impõe a terceiros, gerando superprodução significativa.
 
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-1)
+
 ---
 
 ## Exercício 20.2 {#ex-20-2}
@@ -194,6 +196,8 @@ A soma dos preços de Lindahl (75) **excede** o custo marginal (60). Isso ocorre
 
 Para a solução discreta \( G^* = 2 \), os preços de Lindahl geram um **superávit** de \( 75 - 60 = 15 \), que poderia ser redistribuído entre os indivíduos como um desconto proporcional, mantendo a eficiência da provisão.
 
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-2)
+
 ---
 
 ## Exercício 20.3 {#ex-20-3}
@@ -277,6 +281,8 @@ p = CMgA_2(a_2^*) = 2 \cdot 40 = 80 \checkmark
 **O preço de equilíbrio das permissões é \( p = 80 \) por tonelada.**
 
 Interpretação: a firma 1 (custo marginal alto) compraria permissões da firma 2 (custo marginal baixo) até que os custos marginais se igualem. O mercado de permissões atinge automaticamente a alocação custo-efetiva, independentemente da distribuição inicial das permissões (resultado análogo ao Teorema de Coase).
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-3)
 
 ---
 
@@ -362,6 +368,8 @@ S_{-i} = \sum_{j \neq i} (\hat{v}_j - c_j)
 **Propriedade de compatibilidade de incentivos:** O mecanismo de Clarke torna a **declaração verdadeira** (\( \hat{v}_i = v_i \)) uma estratégia dominante para cada morador. Isso ocorre porque o imposto pivotal depende apenas das declarações dos outros, e o morador só afeta a decisão (e seu imposto) quando é pivotal — nesse caso, declarar a verdade maximiza sua utilidade líquida.
 
 **Limitação:** O mecanismo de Clarke não é orçamentariamente equilibrado — a receita dos impostos pivotais é um excedente que não pode ser redistribuído aos participantes sem comprometer os incentivos.
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-4)
 
 ---
 
@@ -541,3 +549,5 @@ Especificamente:
 Cada um "pega carona" parcialmente no outro, e o resultado é que ambos subinvestem no bem público. A condição de Samuelson \( \sum TMS = c \) não é satisfeita no equilíbrio de Nash; em vez disso, cada consumidor individualmente iguala \( TMS^i = c \), o que resulta em \( \sum TMS^i > c \) no equilíbrio — sinalizando que mais bem público seria desejável do ponto de vista social.
 
 Este resultado fundamenta a necessidade de mecanismos coletivos (tributação, mecanismos de revelação) para atingir a provisão eficiente de bens públicos.
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-5)

@@ -41,6 +41,9 @@ Com \(\theta_H = 3\): (i) o sinal necessário é maior (\(e^* = 2\) vs. \(\sqrt{
 
 **Interpretação econômica:** Quanto maior a diferença de produtividade entre tipos, mais custosa a sinalização necessária para separar — mas o retorno líquido também é maior. A eficiência social depende do trade-off entre o custo da sinalização e o ganho informacional para os empregadores.
 
+
+↩ [Voltar ao enunciado](../cap09d/index.md#ex-9d-1)
+
 ---
 
 ## Exercício 9d.2 {#ex-9d-2}
@@ -67,6 +70,9 @@ E[V] = 0{,}5 \times 10 + 0{,}5 \times 0 = 5 < 6
 O comprador **não compra** (valor esperado 5 < preço 6).
 
 Isso é um caso de **cheap talk** não crível: como falar é gratuito e os incentivos do vendedor são óbvios (sempre quer vender), a comunicação não transmite informação. Para que a sinalização funcione, ela precisa ser **custosa** de forma diferencial entre tipos (como no modelo de Spence).
+
+
+↩ [Voltar ao enunciado](../cap09d/index.md#ex-9d-2)
 
 ---
 
@@ -97,6 +103,9 @@ Resultado: o mercado colapsa para baixo risco (desaparece), e alto risco paga pr
 
 **Interpretação econômica:** O mercado brasileiro de planos de saúde individuais sofre desse problema. Antes da regulação da ANS (Lei 9.656/1998), planos individuais eram caros e cobriam predominantemente pessoas de alto risco. A obrigatoriedade de coberturas mínimas e a proibição de diferenciação excessiva por idade são respostas regulatórias ao problema de seleção adversa.
 
+
+↩ [Voltar ao enunciado](../cap09d/index.md#ex-9d-3)
+
 ---
 
 ## Exercício 9d.4 {#ex-9d-4}
@@ -116,3 +125,5 @@ Resultado: o mercado colapsa para baixo risco (desaparece), e alto risco paga pr
 *Limitações:* manipulação de resultados de curto prazo para inflar o preço; *repricing* de opções quando o preço cai (eliminando o incentivo negativo); exposição a risco de mercado (preço pode cair por fatores alheios ao esforço do executivo), violando o princípio de informatividade.
 
 **Interpretação econômica:** Todos os três mecanismos seguem o princípio básico do principal-agente: tornar a remuneração contingente em resultados observáveis que são correlacionados com o esforço. O trade-off central é entre incentivos (alta variabilidade salarial) e seguro (baixa variabilidade), dado que o agente é avesso ao risco.
+
+↩ [Voltar ao enunciado](../cap09d/index.md#ex-9d-4)
