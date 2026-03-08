@@ -399,25 +399,12 @@ figcaption {
    (com toc.integrate ativo)
    ======================================== */
 
-/* Esconder TOC por padrão no desktop */
-@media screen and (min-width: 76.25em) {
-  .md-nav__item--active > #__toc ~ .md-nav--secondary {
-    display: none;
-  }
+/* Estado colapsado — controlado via JS */
+.md-nav--secondary.toc--collapsed {
+  display: none !important;
+}
 
-  /* Mostrar quando checkbox marcado (clique no toggle) */
-  .md-nav__item--active > #__toc:checked ~ .md-nav--secondary {
-    display: block;
-  }
-
-  /* Esconder o <a> do capítulo ativo (só recarrega a mesma página)
-     e mostrar o <label> como toggle clicável */
-  .md-nav__item--active > #__toc ~ a.md-nav__link {
-    display: none;
-  }
-
-  .md-nav__item--active > #__toc ~ label.md-nav__link {
-    display: flex;
-    cursor: pointer;
-  }
+/* Cursor pointer no link do capítulo ativo */
+.md-nav__item--active > a.md-nav__link--active {
+  cursor: pointer;
 }
