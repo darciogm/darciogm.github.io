@@ -1,7 +1,5 @@
 # Capítulo 7 — O Preço do Talvez
 
-## Introdução
-
 A maior parte das decisões econômicas relevantes envolve algum grau de incerteza. Quando um agricultor decide o que plantar, quando um investidor aloca recursos entre ativos financeiros ou quando um consumidor contrata um plano de saúde, nenhum deles conhece com precisão os resultados futuros de suas escolhas. A microeconomia da incerteza fornece o arcabouço analítico para modelar essas decisões, permitindo compreender como agentes racionais avaliam alternativas cujos resultados dependem de estados do mundo que ainda não se materializaram.
 
 Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito de **loteria**, passando pela formulação axiomática da **utilidade esperada** de Von Neumann e Morgenstern, pela caracterização da **aversão ao risco** e suas medidas quantitativas, até os mecanismos institucionais que permitem reduzir ou redistribuir riscos. Ao final, introduzimos a abordagem de **estado-preferência** e oferecemos uma visão preliminar dos problemas de **informação assimétrica** que serão aprofundados em capítulos posteriores.
@@ -670,7 +668,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2018 — Questão 06"
     A função utilidade \(U\) em termos da renda \(w\) de um consumidor é dada por \(U(w) = w^3\). Tal consumidor se encontra diante de uma loteria na qual possui \(w = \$0\) com probabilidade \(p = 0{,}5\) e \(w = \$4\) com probabilidade \(p = 0{,}5\). Avalie as seguintes proposições a respeito da escolha sob incerteza:
@@ -752,7 +750,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Chiappori, Pierre-André; Salanié, Bernard. (2000). [Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/262111). *Journal of Political Economy*, 108(1), 56–78. DOI: [10.1086/262111](https://doi.org/10.1086/262111)"
     **Pergunta central:** A teoria prevê que, sob informação assimétrica, indivíduos de maior risco escolhem contratos com mais cobertura (seleção adversa) e/ou reduzem seus cuidados após a contratação (risco moral). Mas essas previsões se verificam empiricamente? Existe, de fato, uma correlação positiva entre cobertura e sinistralidade nos dados reais de seguros?

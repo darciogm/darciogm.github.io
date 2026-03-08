@@ -1,7 +1,5 @@
 # Capítulo 17 — O Preço do Suor: Economia do Trabalho
 
-## Introdução
-
 O mercado de trabalho é, provavelmente, o mercado mais importante para a maioria das pessoas. A renda do trabalho representa cerca de dois terços da renda nacional na maioria dos países, e as decisões sobre quanto trabalhar, que carreira seguir e como negociar salários afetam profundamente o bem-estar individual e coletivo. Neste capítulo, aplicamos as ferramentas da microeconomia — teoria do consumidor, equilíbrio de mercado e poder de mercado — ao estudo da oferta e da demanda de trabalho.
 
 Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre consumo e lazer, e derivamos rigorosamente a curva de oferta de trabalho. Em seguida, analisamos fenômenos como a curva de oferta backward-bending, o equilíbrio competitivo, os diferenciais salariais, o monopsônio e o papel dos sindicatos. Ao longo do capítulo, conectamos a teoria à realidade brasileira, marcada por elevada informalidade, desigualdade salarial e um debate persistente sobre os efeitos do salário mínimo.
@@ -623,7 +621,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2022 — Questão 06"
     Suponha que João possui uma função de utilidade em renda (\(Y\)) e lazer (\(N\)) na forma \(U(Y, N) = U(wh, 24 - h)\), em que \(w\) é a taxa de salário por hora e \(h\) é o número de horas trabalhadas por dia. Indique quais das afirmações a seguir são verdadeiras:
@@ -699,7 +697,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Engbom, N.; Moser, C. (2022). [Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506). *American Economic Review*, 112(12), 3803–3847."
     **Pergunta central:** O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.

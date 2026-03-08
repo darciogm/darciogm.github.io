@@ -1,7 +1,5 @@
 # Capítulo 15 — Sem Concorrente, Sem Piedade
 
-## Introdução
-
 O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.
 
 Este capítulo examina as causas do monopólio, a lógica de sua maximização de lucro, as perdas de eficiência decorrentes do poder de mercado, as estratégias de discriminação de preços e os mecanismos de regulação. A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira, como energia elétrica, saneamento e telecomunicações. Besanko & Braeutigam (2014, Caps. 11–12) oferecem tratamento acessível da teoria do monopólio com aplicações a mercados regulados.
@@ -694,7 +692,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
@@ -778,7 +776,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
     **DOI:** [10.1093/qje/qjz041](https://doi.org/10.1093/qje/qjz041)

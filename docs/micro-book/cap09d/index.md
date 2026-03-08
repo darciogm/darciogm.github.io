@@ -1,7 +1,5 @@
 # Capítulo 9d — Sinais, Contratos e Credibilidade: Jogos Dinâmicos com Informação Incompleta
 
-## Introdução
-
 No módulo anterior (9c), os jogadores faziam escolhas simultâneas sem observar as ações dos demais. Quando ações são **sequenciais** e a informação é **incompleta**, surge uma nova possibilidade: jogadores informados podem usar suas ações para **sinalizar** informação privada, e jogadores desinformados podem **atualizar crenças** via regra de Bayes.
 
 O conceito de equilíbrio é o **Equilíbrio Bayesiano Perfeito** (PBE), que combina otimalidade sequencial (como no EPS) com consistência bayesiana das crenças (como no BNE). As aplicações centrais são **sinalização** (Spence, 1973), **moral hazard** e **seleção adversa** — os problemas clássicos de informação assimétrica.
@@ -267,7 +265,7 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Spence, Michael (1973). [Job Market Signaling](https://doi.org/10.2307/1882010). *Quarterly Journal of Economics*, 87(3), 355–374."
     **Contribuição:** Spence formalizou a ideia de que a educação pode funcionar como sinal de habilidade, mesmo sem aumentar a produtividade. O modelo introduziu os conceitos de equilíbrio separador, pooling e a condição de single-crossing.

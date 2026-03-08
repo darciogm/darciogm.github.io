@@ -1,7 +1,5 @@
 # Capítulo 16 — Quando Gigantes Competem (ou Combinam)
 
-## Introdução
-
 A maioria dos mercados reais situa-se entre os extremos teóricos da concorrência perfeita e do monopólio. Em um **oligopólio**, um pequeno número de firmas detém parcela significativa do mercado, e cada uma reconhece que suas decisões afetam — e são afetadas por — as decisões das rivais. Essa **interdependência estratégica** é o traço definidor do oligopólio e o que o torna analiticamente mais complexo do que as estruturas polares.
 
 A teoria dos oligopólios recorre extensivamente à **teoria dos jogos** para modelar a interação estratégica entre firmas. Os resultados são extremamente sensíveis às hipóteses sobre a variável de decisão (preço ou quantidade), a sequência de movimentos (simultâneo ou sequencial), o horizonte temporal (jogo de uma rodada ou repetido) e a natureza da informação.
@@ -761,7 +759,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
 
@@ -849,7 +847,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
     **Pergunta central:** Quantos concorrentes são necessários para que um mercado se comporte de forma competitiva?

@@ -1,7 +1,5 @@
 # Capítulo 18 — A Paciência Tem Preço
 
-## Introdução
-
 A economia não se resume a decisões instantâneas. Agentes econômicos constantemente fazem escolhas que envolvem o **tempo**: poupar hoje para consumir amanhã, investir em uma fábrica cujos retornos virão ao longo de anos, extrair um recurso natural agora ou preservá-lo para o futuro. Neste capítulo, estudamos a teoria do capital e dos juros, que fornece o arcabouço analítico para compreender essas decisões intertemporais.
 
 Começamos com os conceitos fundamentais de capital e taxa de retorno, passamos pelo elegante modelo de dois períodos de Irving Fisher, discutimos a precificação de ativos arriscados, analisamos os critérios de decisão de investimento (VPL e TIR) e concluímos com a regra de Hotelling para recursos naturais exauríveis. Ao longo do capítulo, conectamos a teoria à experiência brasileira, marcada por décadas de juros reais elevados e seus efeitos sobre o investimento produtivo.
@@ -619,7 +617,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
 
@@ -681,7 +679,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "[Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004.](https://doi.org/10.1016/j.jcorpfin.2012.03.001)"
     **Pergunta central:** Como a reforma da lei de falências brasileira (Lei 11.101/2005) afetou o custo de crédito e o investimento das empresas?

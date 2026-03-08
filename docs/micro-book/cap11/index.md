@@ -1,7 +1,5 @@
 # Capítulo 11 — Por Que Nada É de Graça
 
-## Introdução
-
 No capítulo anterior, examinamos a tecnologia da firma — como insumos são transformados em produtos. Agora, damos o passo seguinte e perguntamos: **quanto custa** realizar essa transformação? A teoria dos custos conecta a esfera da produção à esfera dos preços, traduzindo as possibilidades tecnológicas em termos monetários.
 
 A distinção entre custos econômicos e contábeis, o conceito de custo de oportunidade, a relação entre minimização de custos e maximização de lucro, o papel das curvas de custo de curto e longo prazo e o elegante Lema de Shephard — que conecta a função custo às demandas condicionadas por insumos — são os temas centrais deste capítulo.
@@ -801,7 +799,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2020 — Questão 06"
     Em um ano, uma empresa apresentou os seguintes dados contábeis: \$ 1 milhão de receitas, \$ 300 mil de compras de matérias primas, \$ 30 mil de despesas com água e energia elétrica, \$ 100 mil de gastos com a folha de salários e \$ 120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$ 200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$ 90 mil e outra com salário anual de \$ 150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
@@ -871,7 +869,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Christensen, Laurits R.; Greene, William H. (1976). [Economies of Scale in U.S. Electric Power Generation](https://doi.org/10.1086/260470). *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: [10.1086/260470](https://doi.org/10.1086/260470)"
     **Pergunta central:** A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.

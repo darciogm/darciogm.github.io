@@ -1,7 +1,5 @@
 # Capítulo 2 — O Manual de Sobrevivência Matemática
 
-## Introdução
-
 A microeconomia moderna é uma disciplina intrinsecamente matemática. Os modelos apresentados no Capítulo 1 — maximização de utilidade, maximização de lucro, equilíbrio de mercado — requerem um aparato formal para serem formulados com precisão e para que suas implicações possam ser derivadas rigorosamente. Este capítulo apresenta as ferramentas matemáticas essenciais para o estudo da microeconomia em nível avançado.
 
 O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida dos resultados e técnicas que serão utilizados ao longo do livro. O leitor familiarizado com cálculo multivariado e álgebra linear pode percorrer este capítulo rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais, como o teorema do envelope e as condições de Kuhn-Tucker.
@@ -744,7 +742,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ### Prova de Matemática
 
@@ -834,7 +832,7 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Chetty, R. (2009). [Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods](https://doi.org/10.1146/annurev.economics.050708.142910). *Annual Review of Economics*, 1, 451–488."
     **Pergunta central:** Como avaliar o impacto de uma política pública sobre o bem-estar social sem precisar estimar um modelo estrutural completo da economia? A estimação de modelos estruturais é custosa e depende de suposições sobre formas funcionais e distribuições — será possível responder a perguntas de política usando apenas algumas "estatísticas suficientes"?

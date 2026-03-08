@@ -1,7 +1,5 @@
 # Capítulo 19 — Limões, Sinais e Contratos
 
-## Introdução
-
 A teoria microeconômica clássica, desenvolvida nos capítulos anteriores, pressupõe que todos os agentes econômicos possuem informação completa e simétrica sobre as características dos bens, os preços vigentes e as ações dos demais participantes do mercado. Essa hipótese, embora analiticamente conveniente, raramente se sustenta na prática. Empregadores não observam perfeitamente o esforço de seus funcionários; compradores de carros usados desconhecem o histórico real de manutenção do veículo; seguradoras não conseguem distinguir com precisão clientes de alto e baixo risco.
 
 A **informação assimétrica** — situação em que uma parte de uma transação detém informação relevante que a outra parte não possui — gera consequências profundas para o funcionamento dos mercados. Em casos extremos, mercados inteiros podem deixar de existir. O estudo sistemático dessas questões rendeu o Prêmio Nobel de Economia a George Akerlof, Michael Spence e Joseph Stiglitz em 2001, e permanece como uma das áreas mais férteis da microeconomia moderna.
@@ -621,7 +619,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2017 — Questão 11"
     Com relação aos problemas de assimetria de informação, indique quais entre as afirmativas abaixo estão corretas:
@@ -673,7 +671,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "[Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78.](https://doi.org/10.1086/317671)"
     **Pergunta central:** A assimetria de informação é realmente importante nos mercados de seguros, ou é apenas uma elegância teórica? Se seleção adversa ou risco moral estiverem presentes, devemos observar uma **correlação positiva** entre a cobertura do seguro escolhida e a ocorrência de sinistros: pessoas que escolhem mais cobertura deveriam ter mais acidentes (seja porque são mais arriscadas, seja porque se protegem menos). Mas essa correlação existe nos dados?

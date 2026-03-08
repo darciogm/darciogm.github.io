@@ -1,7 +1,5 @@
 # Capítulo 1 — Todos os Modelos Estão Errados — Alguns São Úteis
 
-## Introdução
-
 A microeconomia é, antes de tudo, uma disciplina de **modelagem**. O mundo real é extraordinariamente complexo: bilhões de agentes tomam decisões simultâneas, mercados interagem entre si, instituições moldam incentivos e a informação se distribui de forma desigual. Diante dessa complexidade, o economista precisa de ferramentas que permitam isolar os mecanismos essenciais e compreender relações causais. Essas ferramentas são os **modelos econômicos**.
 
 Este capítulo apresenta a lógica da construção de modelos em economia, discute como verificá-los empiricamente, examina suas características fundamentais e traça um panorama histórico do desenvolvimento da teoria do valor — o problema central da microeconomia.
@@ -498,7 +496,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2019 — Questão 05"
     Com relação aos fundamentos da Microeconomia, julgue como verdadeiros ou falsos os itens a seguir:
@@ -546,7 +544,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Angrist, J. D.; Pischke, J.-S. (2010). [The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics](https://doi.org/10.1257/jep.24.2.3). *Journal of Economic Perspectives*, 24(2), 3–30."
     **Pergunta central:** Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.

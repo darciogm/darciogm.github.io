@@ -1,7 +1,5 @@
 # Capítulo 13 — O Leiloeiro que Ninguém Vê
 
-## Introdução
-
 Nos capítulos anteriores, construímos separadamente a teoria do consumidor e a teoria da firma. Agora é hora de reunir essas peças e examinar como compradores e vendedores interagem nos mercados competitivos para determinar preços e quantidades de equilíbrio. Este capítulo desenvolve a análise de equilíbrio parcial marshalliano — o estudo de um mercado individual tomando os demais como dados — e suas aplicações à análise de bem-estar e políticas públicas.
 
 A metáfora do "leiloeiro walrasiano" — uma entidade fictícia que anuncia preços e ajusta-os até que oferta e demanda se igualem — nos ajuda a compreender o mecanismo de formação de preços. Embora nenhum leiloeiro real exista na maioria dos mercados, o resultado competitivo se assemelha ao que tal mecanismo produziria.
@@ -699,7 +697,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
@@ -789,7 +787,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
     **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)

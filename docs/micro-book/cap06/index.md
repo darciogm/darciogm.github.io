@@ -581,7 +581,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2012 — Questão 03"
     Com relação às escolhas ótimas dos consumidores, constata-se que:
@@ -651,7 +651,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Deaton, Angus; Muellbauer, John. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *American Economic Review*, 70(3), 312-326."
     **Pergunta central:** Como estimar empiricamente um sistema completo de equações de demanda — com vários bens e interações cruzadas — de modo que seja consistente com a teoria do consumidor (homogeneidade, simetria de Slutsky, agregação) e ao mesmo tempo flexível o bastante para capturar padrões reais dos dados?

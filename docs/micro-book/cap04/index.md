@@ -1,7 +1,5 @@
 # Capítulo 4 — Você Quer Tudo. Mas Não Pode.
 
-## Introdução
-
 No Capítulo 3, descrevemos **o que** o consumidor deseja por meio das preferências e da função de utilidade. Agora enfrentamos a questão central: **o que ele de fato escolhe**, dados os preços e sua renda?
 
 O problema do consumidor consiste em maximizar a utilidade sujeita à restrição orçamentária — um problema de otimização com restrição de desigualdade que, sob hipóteses padrão, reduz-se a uma igualdade. Em termos concretos, é a formalização de algo que todo brasileiro faz no supermercado: decidir como distribuir um orçamento limitado entre diferentes bens para obter a maior satisfação possível.
@@ -917,7 +915,7 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2018 — Questão 03"
     A maximização da função utilidade \(U(x, y) = \sqrt{xy}\), sujeita à restrição orçamentária \(xp_x + yp_y = R\), sendo \(R\) a renda exógena e \(p_i\), \(i = 1, 2\), os preços dos bens, gera as seguintes funções de demanda marshallianas: \(X(p_x, p_y, R) = \frac{1}{2}\frac{R}{p_x}\) e \(Y(p_x, p_y, R) = \frac{1}{2}\frac{R}{p_y}\). Avalie as assertivas:
@@ -1005,7 +1003,7 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Attanasio, O.; Battistin, E.; Mesnard, A. (2012). [Food and Cash Transfers: Evidence from Colombia](https://doi.org/10.1111/j.1468-0297.2011.02473.x). *The Economic Journal*, 122(559), 92–124."
     **Pergunta central:** Transferências de renda em dinheiro são mais eficientes do que transferências em espécie (como cestas básicas) para melhorar o consumo alimentar das famílias pobres? A teoria do consumidor prevê que, se o valor da transferência em espécie é inferior ao que a família gastaria voluntariamente com alimentação, os dois tipos de transferência deveriam ter efeitos idênticos — o que é conhecido como o "teorema da fungibilidade" da renda.

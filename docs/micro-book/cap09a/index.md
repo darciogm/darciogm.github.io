@@ -1,7 +1,5 @@
 # Capítulo 9a — Nash no Bar: Jogos Estáticos com Informação Completa
 
-## Introdução
-
 Nos capítulos anteriores, os agentes econômicos tomavam decisões considerando preços de mercado como dados — cada consumidor ou firma era suficientemente pequeno para que suas ações individuais não afetassem o ambiente dos demais. Essa hipótese deixa de ser razoável em muitas situações de interesse prático: oligopólios, negociações salariais, leilões, disputas comerciais entre países, competição eleitoral e interações regulatórias. Em todos esses contextos, o resultado para cada agente depende não apenas de suas próprias ações, mas também das ações escolhidas pelos outros agentes.
 
 A **teoria dos jogos** é o ramo da matemática e da economia que estuda a tomada de decisão em ambientes de **interdependência estratégica**. Desenvolvida a partir dos trabalhos seminais de Von Neumann e Morgenstern (1944), John Nash (1950, 1951), Reinhard Selten (1965) e John Harsanyi (1967–68), a teoria dos jogos revolucionou a microeconomia e se tornou ferramenta indispensável em campos tão diversos quanto organização industrial, economia política, relações internacionais e biologia evolutiva.
@@ -585,7 +583,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2021 — Questão 11"
     Com relação à Teoria dos Jogos, julgue os itens a seguir:
@@ -664,7 +662,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Bresnahan, Timothy F.; Reiss, Peter C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
     **Pergunta central:** Quantas firmas são necessárias para que um mercado se torne efetivamente competitivo?

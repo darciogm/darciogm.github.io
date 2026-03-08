@@ -1,7 +1,5 @@
 # Capítulo 3 — Mais É Melhor — Será?
 
-## Introdução
-
 Por que um consumidor escolhe arroz em vez de macarrão? Por que alguém prefere gastar mais com lazer do que com roupas? A teoria das preferências e da utilidade constitui o alicerce da microeconomia do consumidor. Neste capítulo, formalizamos as preferências individuais por meio de axiomas e mostramos sob quais condições essas preferências podem ser representadas por uma função de utilidade.
 
 Em seguida, exploramos as ferramentas analíticas que nos permitem descrever e comparar cestas de consumo: curvas de indiferença, taxa marginal de substituição e famílias específicas de funções de utilidade. O capítulo segue a abordagem axiomática presente em Mas-Colell, Whinston e Green (1995), complementada pela exposição mais intuitiva de Varian (2015) e Nicholson e Snyder (2017). Para uma abordagem particularmente acessível, com ênfase em intuição econômica e exemplos aplicados, ver Besanko e Braeutigam (2014, Caps. 3–4). Ao final, o leitor estará preparado para resolver o problema de otimização do consumidor — tema do Capítulo 4.
@@ -533,7 +531,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2019 — Questão 01"
     Com relação às preferências do consumidor, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
@@ -625,7 +623,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Falk, A.; Becker, A.; Dohmen, T.; Enke, B.; Huffman, D.; Sunde, U. (2018). [Global Evidence on Economic Preferences](https://doi.org/10.1093/qje/qjy013). *Quarterly Journal of Economics*, 133(4), 1645–1692."
     **Pergunta central:** Os axiomas de preferência apresentados na Seção 3.1 são abstrações teóricas — mas como as preferências reais dos indivíduos variam entre países e dentro de cada sociedade? Existem padrões sistemáticos que conectem preferências a características demográficas, culturais e econômicas? Este artigo é o maior esforço empírico já realizado para responder a essas perguntas.

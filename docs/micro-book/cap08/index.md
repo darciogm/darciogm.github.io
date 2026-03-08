@@ -1,7 +1,5 @@
 # Capítulo 8 — Nem Tão Racionais Assim
 
-## Introdução
-
 Nos capítulos anteriores, construímos a teoria da escolha do consumidor sobre dois pilares: preferências racionais (completas e transitivas) e maximização da utilidade esperada sob incerteza. Esses modelos são elegantes, tratáveis e geram previsões poderosas. Mas quão fiéis são ao comportamento real dos seres humanos?
 
 A partir da década de 1970, uma série de experimentos conduzidos por psicólogos e economistas revelou **violações sistemáticas** dos axiomas de racionalidade. Não se trata de erros aleatórios — os desvios seguem padrões previsíveis, enraizados na arquitetura cognitiva humana. Daniel Kahneman e Amos Tversky foram os pioneiros desse programa de pesquisa, que culminou na **Teoria do Prospecto** (Kahneman e Tversky 1979) e rendeu a Kahneman o Prêmio Nobel de Economia em 2002.
@@ -667,14 +665,14 @@ A economia comportamental e os nudges não são panaceias:
 
 ---
 
-## Vem, ANPEC! 🏆
+## 🏆 Vem, ANPEC!
 
 !!! info "Nota sobre questões ANPEC"
     A economia comportamental é um campo relativamente recente na microeconomia e, até o momento, **não aparece como tópico explícito nas provas da ANPEC de Microeconomia** (período 2010–2025). As questões de decisão sob incerteza na ANPEC concentram-se na teoria da utilidade esperada, aversão ao risco e equivalente de certeza — temas tratados no Capítulo 7. Mantemos esta seção como referência para edições futuras, caso o tema passe a ser cobrado.
 
 ---
 
-## Apêndice: A Pesquisa em Ação 🔬
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Kahneman, Daniel; Tversky, Amos. (1979). [Prospect Theory: An Analysis of Decision under Risk](https://doi.org/10.2307/1914185). *Econometrica*, 47(2): 263–291. DOI: [10.2307/1914185](https://doi.org/10.2307/1914185)"
 

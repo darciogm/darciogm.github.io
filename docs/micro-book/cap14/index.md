@@ -1,7 +1,5 @@
 # Capítulo 14 — Quando Tudo se Encaixa (ou Quase Isso): Equilíbrio Geral
 
-## Introdução
-
 No capítulo anterior, analisamos mercados isolados — o chamado equilíbrio parcial marshalliano. Mas os mercados não existem no vácuo: o preço do milho afeta a demanda por soja; o salário dos engenheiros influencia o custo de construção civil; uma política comercial que protege a indústria têxtil altera os preços relativos em toda a economia. A análise de **equilíbrio geral** busca compreender a interdependência simultânea de todos os mercados.
 
 Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a intuição gráfica da Caixa de Edgeworth até a formalização matemática via funções de excesso de demanda e a prova de existência pelo Teorema do Ponto Fixo de Brouwer. Estabeleceremos os dois teoremas fundamentais do bem-estar, que conectam eficiência de Pareto e concorrência perfeita, e concluiremos com uma visão dos modelos computáveis de equilíbrio geral (CGE), que permitem aplicar essa teoria à avaliação de políticas públicas.
@@ -703,7 +701,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2019 — Questão 10"
     Considere o modelo da Caixa de Edgeworth. O consumidor A tem utilidade linear \(U_A(X,Y) = X + Y\) e dotação inicial \(\mathbf{e}_A = (1, 9)\). O consumidor B tem utilidade Cobb-Douglas \(U_B(X,Y) = X^{1/2}Y^{1/2}\) e dotação inicial \(\mathbf{e}_B = (9, 1)\). Julgue como verdadeiros ou falsos os itens abaixo:
@@ -783,7 +781,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Dix-Carneiro, R. (2014). [Trade Liberalization and Labor Market Dynamics](https://doi.org/10.3982/ECTA10457). *Econometrica*, 82(3), 825–885."
     **Pergunta central:** Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?

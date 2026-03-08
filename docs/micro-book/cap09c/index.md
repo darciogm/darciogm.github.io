@@ -1,7 +1,5 @@
 # Capítulo 9c — Jogando no Escuro: Jogos com Informação Incompleta
 
-## Introdução
-
 Nos módulos anteriores, todos os jogadores conheciam perfeitamente a estrutura do jogo — payoffs, estratégias e número de jogadores. Na realidade, informação completa é a exceção. Uma firma entrante não sabe o custo marginal da incumbente; um licitante não conhece os valores dos concorrentes; um regulador não observa a eficiência da firma regulada.
 
 Harsanyi (1967–68) resolveu o problema de modelar jogos com **informação incompleta** ao introduzir a noção de "tipos": cada jogador tem um tipo privado (sorteado pela natureza), e as crenças sobre os tipos dos outros são descritas por uma distribuição de probabilidade (prior comum). O conceito de equilíbrio correspondente é o **Equilíbrio Bayesiano de Nash** (BNE).
@@ -213,7 +211,7 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2018 — Questão 10 (adaptada)"
     Considere um leilão de primeiro preço com dois licitantes cujos valores são sorteados independentemente de \(U[0, 1]\).
@@ -237,7 +235,7 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Athey, Susan, e Philip A. Haile (2007). [Nonparametric Approaches to Auctions](https://doi.org/10.1016/S1573-4412(07)06060-6). In: *Handbook of Econometrics*, Vol. 6A, 3847–3965."
     **Contribuição:** Survey abrangente sobre métodos econométricos para estimar modelos estruturais de leilões. Mostra como recuperar a distribuição de valores privados a partir de dados de lances observados — identificação não paramétrica.

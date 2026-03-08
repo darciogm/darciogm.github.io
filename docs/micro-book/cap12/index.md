@@ -1,7 +1,5 @@
 # Capítulo 12 — A Firma Nua: Anatomia do Lucro
 
-## Introdução
-
 Os capítulos anteriores construíram os dois pilares sobre os quais repousa a teoria da firma: a **tecnologia** (função de produção) e os **custos** (função custo). Neste capítulo, reunimos esses elementos para analisar o comportamento da firma como unidade de decisão. A questão central é: **como a firma escolhe quanto produzir?**
 
 A resposta padrão da microeconomia — maximização de lucro — exige que examinemos as condições de primeira e segunda ordem, a relação entre receita marginal e elasticidade da demanda, a decisão de operar ou fechar no curto prazo e as propriedades da função lucro. O elegante Lema de Hotelling, análogo ao Lema de Shephard nos custos, conecta a função lucro diretamente às funções de oferta e demanda por insumos.
@@ -667,7 +665,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2013 — Questão 03"
     Suponha que a função de produção para um dado produto tem a seguinte forma funcional: \(q = f(x_1) = 2x_1 - 0{,}03\,x_1^2\). Considere também que o preço de uma unidade do bem final é \(p(q) = R\$\,10{,}00\) e o preço unitário do insumo, praticado pelo mercado, é \(p(x_1) = R\$\,8{,}00\).
@@ -749,7 +747,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Ulyssea, G. (2018). [Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745). *American Economic Review*, 108(8), 2015–2047."
     **Pergunta central:** Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).

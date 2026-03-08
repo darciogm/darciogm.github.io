@@ -645,7 +645,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2010 — Questão 03"
     Com relação à classificação dos bens (em normal, de luxo, necessário, inferior, comum e de Giffen) e às demandas por esses bens, julgue as questões a seguir:
@@ -733,7 +733,7 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Jensen, R. T.; Miller, N. H. (2008). [Giffen Behavior and Subsistence Consumption](https://doi.org/10.1257/aer.98.4.1553). *The American Economic Review*, 98(4), 1553–1577."
     **Pergunta central:** Bens de Giffen — aqueles cuja demanda aumenta quando o preço sobe — são uma curiosidade teórica ou existem de fato? Desde que Alfred Marshall popularizou a ideia no século XIX atribuindo-a a Sir Robert Giffen, nenhum estudo havia conseguido documentar convincentemente esse comportamento com dados de campo.

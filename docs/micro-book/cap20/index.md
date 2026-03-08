@@ -1,7 +1,5 @@
 # Capítulo 20 — Fumaça, Caronas e Tragédias
 
-## Introdução
-
 Nos capítulos anteriores, demonstramos que mercados competitivos com informação completa conduzem a alocações Pareto-eficientes — o resultado central dos Teoremas do Bem-Estar. Entretanto, essa conclusão depende criticamente da hipótese de que todas as interações entre agentes econômicos ocorrem via mecanismo de preços. Quando as ações de um agente afetam diretamente o bem-estar de outros **fora do sistema de preços**, surgem as **externalidades** — e a alocação de mercado deixa de ser eficiente.
 
 Da mesma forma, certos bens possuem características que tornam o mecanismo de mercado inadequado para sua provisão: bens **não-rivais** e **não-excludentes** — os chamados **bens públicos** — tendem a ser subprovidos pelo mercado devido ao problema do **carona** (free rider).
@@ -669,7 +667,7 @@ O preço do bem privado é 1 e o custo marginal do bem público é \(c\). Cada c
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia). Cada item deve ser classificado como **Verdadeiro (V)** ou **Falso (F)**.
 
@@ -759,7 +757,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1146/annurev-resource-100913-012610)"
     **Pergunta central:** Regulações ambientais do tipo command-and-control são eficazes para reduzir a poluição e melhorar a saúde em países em desenvolvimento?

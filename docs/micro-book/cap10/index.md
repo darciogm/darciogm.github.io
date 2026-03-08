@@ -1,7 +1,5 @@
 # Capítulo 10 — Mais Mãos, Mais Máquinas — Mais Produto?
 
-## Introdução
-
 A teoria da produção constitui o alicerce sobre o qual se ergue toda a análise da oferta em microeconomia. Enquanto os capítulos anteriores trataram das decisões dos consumidores — agentes que buscam maximizar utilidade —, voltamos agora a atenção para as **firmas**, agentes cuja razão de existir é transformar insumos (trabalho, capital, terra, materiais) em produtos e serviços. Compreender *como* essa transformação ocorre, quais são suas regularidades empíricas e como representá-la matematicamente é o objetivo central deste capítulo.
 
 A **função de produção** é o instrumento analítico que sintetiza a tecnologia disponível para a firma. A partir dela, derivamos conceitos fundamentais — produtividade marginal, isoquantas, taxa marginal de substituição técnica (TMST), rendimentos de escala e elasticidade de substituição — que serão mobilizados nos capítulos seguintes para construir as curvas de custo e de oferta.
@@ -693,7 +691,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2013 — Questão 06"
     Considere a teoria da produção e indique quais das afirmativas abaixo são verdadeiras e quais são falsas:
@@ -829,7 +827,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). [*A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*](https://repositorio.ipea.gov.br). Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
     **Pergunta central:** Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 10.6.

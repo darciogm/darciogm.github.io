@@ -1,7 +1,5 @@
 # Capítulo 9b — Pensando de Trás para Frente: Jogos Dinâmicos com Informação Completa
 
-## Introdução
-
 No módulo anterior (9a), todos os jogadores escolhiam suas ações simultaneamente. Muitas interações econômicas, porém, ocorrem em **sequência**: uma firma investe primeiro e a concorrente reage; um sindicato apresenta uma proposta e a empresa aceita ou recusa; um banco central anuncia uma meta e os agentes privados ajustam expectativas.
 
 Quando as ações são observáveis e o jogo se desenrola ao longo do tempo, o conceito de equilíbrio de Nash pode sustentar resultados baseados em **ameaças não críveis** — promessas de ações que o jogador não teria incentivo para cumprir se o momento chegasse. O remédio é pensar "de trás para frente": a **indução retroativa** e o conceito de **Equilíbrio Perfeito em Subjogos** (EPS).
@@ -324,7 +322,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ---
 
-## Vem, ANPEC!
+## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2010 — Questão 10"
     Considere o jogo "caça ao cervo":
@@ -359,7 +357,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ---
 
-## Apêndice: A Pesquisa em Ação
+## 🔬 Pesquisa em Ação
 
 ??? abstract "Porter, Robert H. (1983). [A Study of Cartel Stability: The Joint Executive Committee, 1880–1886](https://doi.org/10.2307/3003634). *The Bell Journal of Economics*, 14(2), 301–314."
     **Pergunta:** Os modelos de jogos repetidos preveem alternância entre conluio e guerras de preço. Essa dinâmica é observável em dados reais?
