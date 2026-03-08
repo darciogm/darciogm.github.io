@@ -368,7 +368,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
     **Relevância:** Metodologia aplicável à investigação do CADE: padrões de preços que alternam "estabilidade" e "guerra" podem indicar conluio tácito.
 
-??? abstract "Axelrod, Robert (1984). [*The Evolution of Cooperation*](https://books.google.com.br/books?id=KFf2HXzVO58C). New York: Basic Books."
+??? abstract "Axelrod, Robert (1984). [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books."
     **Contribuição:** Axelrod organizou dois torneios de computador onde especialistas submeteram estratégias para o Dilema dos Prisioneiros repetido. A vencedora foi **Tit-for-Tat** (Anatol Rapoport): simples, "nice" (coopera primeiro), retaliadora (pune imediatamente) e "forgiving" (volta a cooperar).
 
     **Resultado:** Estratégias "nice" (que nunca iniciam a traição) dominaram. A cooperação emerge não por altruísmo, mas por auto-interesse esclarecido — a "sombra do futuro" é suficiente.
@@ -386,7 +386,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 - Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 6–8.
 - Andersen, Steffen, Seda Ertaç, Uri Gneezy, Moshe Hoffman, e John A. List. 2011. "Stakes Matter in Ultimatum Games." *American Economic Review* 101 (7): 3427–3439. [DOI](https://doi.org/10.1257/aer.101.7.3427)
-- Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com.br/books?id=KFf2HXzVO58C). New York: Basic Books.
+- Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books.
 - Benoit, Jean-Pierre, e Vijay Krishna. 1985. "Finitely Repeated Games." *Econometrica* 53 (4): 905–922. [DOI](https://doi.org/10.2307/1912660)
 - Clark, Robert, e Jean-François Roos. 2019. "Learning to Coordinate: A Study in Retail Gasoline." Working Paper.
 - Fudenberg, Drew, e Jean Tirole. 1991. [*Game Theory*](https://books.google.com/books/about/Game_Theory.html?id=pFPHKwXro3QC). Cambridge, MA: MIT Press.

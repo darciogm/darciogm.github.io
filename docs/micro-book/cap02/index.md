@@ -865,5 +865,5 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 - Chiang, Alpha C., e Kevin Wainwright. 2005. [*Fundamental Methods of Mathematical Economics*](https://books.google.com.br/books?id=0S1JnwEACAAJ). 4ª ed. New York: McGraw-Hill.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Apêndice Matemático.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Apêndice Matemático.
-- Simon, Carl P., e Lawrence Blume. 1994. [*Mathematics for Economists*](https://books.google.com.br/books?id=C6GGkAa_qlEC). New York: W. W. Norton.
+- Simon, Carl P., e Lawrence Blume. 1994. [*Mathematics for Economists*](https://books.google.com/books?id=l2nWMwEACAAJ). New York: W. W. Norton.
 - Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Cap. 27 (Apêndice Matemático).

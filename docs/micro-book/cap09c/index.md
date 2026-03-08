@@ -256,9 +256,9 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 - Capen, Edward C., Robert V. Clapp, e William M. Campbell. 1971. "Competitive Bidding in High-Risk Situations." *Journal of Petroleum Technology* 23 (6): 641–653.
 - Gibbons, Robert. 1992. [*Game Theory for Applied Economists*](https://books.google.com/books?id=8ygxf2WunAIC). Princeton: Princeton University Press. Cap. 3.
 - Harsanyi, John C. 1967–68. "Games with Incomplete Information Played by 'Bayesian' Players." *Management Science* 14 (3, 5, 7): 159–182, 320–334, 486–502.
-- Krishna, Vijay. 2010. [*Auction Theory*](https://books.google.com/books?id=qW1128ktG5gC). 2nd ed. San Diego: Academic Press.
+- Krishna, Vijay. 2010. [*Auction Theory*](https://books.google.com/books?id=QDnmDVfSyhUC). 2nd ed. San Diego: Academic Press.
 - McAfee, R. Preston, e John McMillan. 1992. "Bidding Rings." *American Economic Review* 82 (3): 579–599.
-- Milgrom, Paul R. 2004. [*Putting Auction Theory to Work*](https://books.google.com/books?id=aF3ynj10y84C). Cambridge: Cambridge University Press.
+- Milgrom, Paul R. 2004. [*Putting Auction Theory to Work*](https://books.google.com/books?id=AkeHTU7XW4kC). Cambridge: Cambridge University Press.
 - Myerson, Roger B. 1981. "Optimal Auction Design." *Mathematics of Operations Research* 6 (1): 58–73. [DOI](https://doi.org/10.1287/moor.6.1.58)
 - Riley, John G., e William F. Samuelson. 1981. "Optimal Auctions." *American Economic Review* 71 (3): 381–392.
 - Vickrey, William. 1961. "Counterspeculation, Auctions, and Competitive Sealed Tenders." *Journal of Finance* 16 (1): 8–37. [DOI](https://doi.org/10.1111/j.1540-6261.1961.tb02789.x)

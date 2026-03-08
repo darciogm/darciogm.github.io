@@ -372,7 +372,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
     Em termos formais, a lei de Engel — que afirma que a participação da alimentação no orçamento cai com a renda — implica que a elasticidade-renda da alimentação é menor que 1 (bem necessário). Uma função Cobb-Douglas, por ter elasticidade-renda unitária para todos os bens, não consegue capturar esse padrão.
 
-    **Implicação para a modelagem:** Em estudos aplicados sobre o consumidor brasileiro, a função CES ou especificações não homotéticas (como o sistema Almost Ideal Demand System, de [Deaton e Muellbauer](https://doi.org/10.2307/1805222)) frequentemente oferecem ajuste superior à Cobb-Douglas, especialmente quando a análise envolve comparações entre faixas de renda.
+    **Implicação para a modelagem:** Em estudos aplicados sobre o consumidor brasileiro, a função CES ou especificações não homotéticas (como o sistema Almost Ideal Demand System, de [Deaton e Muellbauer](https://www.jstor.org/stable/1805222)) frequentemente oferecem ajuste superior à Cobb-Douglas, especialmente quando a análise envolve comparações entre faixas de renda.
 
     **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018 — Primeiros Resultados.
 

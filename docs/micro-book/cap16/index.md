@@ -871,7 +871,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## Referências do Capítulo
 
-- Belleflamme, Paul, e Martin Peitz. 2015. [*Industrial Organization: Markets and Strategies*](https://books.google.com.br/books?id=dtRuBgAAQBAJ). 2ª ed. Cambridge: Cambridge University Press.
-- Motta, Massimo. 2004. [*Competition Policy: Theory and Practice*](https://books.google.com.br/books?id=R8kTDAAAQBAJ). Cambridge: Cambridge University Press.
-- Shy, Oz. 1995. [*Industrial Organization: Theory and Applications*](https://books.google.com.br/books?id=Rz0BAAAAQBAJ). Cambridge: MIT Press.
+- Belleflamme, Paul, e Martin Peitz. 2015. [*Industrial Organization: Markets and Strategies*](https://books.google.com/books?id=fdsLAQAAQBAJ). 2ª ed. Cambridge: Cambridge University Press.
+- Motta, Massimo. 2004. [*Competition Policy: Theory and Practice*](https://books.google.com/books?id=J3xZnDSlfC8C). Cambridge: Cambridge University Press.
+- Shy, Oz. 1995. [*Industrial Organization: Theory and Applications*](https://books.google.com/books?id=tr4CjJ5LlRcC). Cambridge: MIT Press.
 - Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press.

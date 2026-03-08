@@ -680,7 +680,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
     **Relevância:** Os R Boxes interativos deste módulo (9a.1 e 9a.2) são inspirados nos scripts de Adams, adaptados para execução no navegador via WebR. Os dados do pacote `Ecdat` permitem que o leitor reproduza e modifique as análises sem instalar nada.
 
-??? abstract "Chiappori, Pierre-André; Levitt, Steven; Groseclose, Tim (2002). [Testing Mixed-Strategy Equilibria When Players Are Heterogeneous](https://doi.org/10.1162/003355302760193871). *Quarterly Journal of Economics*, 117(4), 1138–1147."
+??? abstract "Chiappori, Pierre-André; Levitt, Steven; Groseclose, Tim (2002). [Testing Mixed-Strategy Equilibria When Players Are Heterogeneous](https://doi.org/10.1257/00028280260344678). *American Economic Review*, 92(4), 1138–1147."
     **Pergunta central:** Os jogadores de futebol profissional jogam estratégias mistas consistentes com a teoria em cobranças de pênalti?
 
     **Método:** Dados de 459 pênaltis da Série A italiana e da liga francesa. Cada cobrança é modelada como um jogo 2×2 (cobrador escolhe lado, goleiro escolhe lado). A teoria prevê que as taxas de sucesso devem ser iguais em todos os lados — caso contrário, o cobrador deveria ajustar suas probabilidades.
@@ -694,10 +694,10 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 ## Referências do Capítulo
 
 - Adams, Brian W. 2025. [*Game Theory for Applied Econometricians: Data Analytics with R*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press.
-- Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com.br/books?id=KFf2HXzVO58C). New York: Basic Books.
+- Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books.
 - Bertrand, Joseph. 1883. "Théorie mathématique de la richesse sociale." *Journal des Savants* 67: 499–508.
 - Bresnahan, Timothy F., e Peter C. Reiss. 1991. "Entry and Competition in Concentrated Markets." *Journal of Political Economy* 99 (5): 977–1009. [DOI](https://doi.org/10.1086/261786)
-- Chiappori, Pierre-André, Steven Levitt, e Tim Groseclose. 2002. "Testing Mixed-Strategy Equilibria When Players Are Heterogeneous." *Quarterly Journal of Economics* 117 (4): 1138–1147. [DOI](https://doi.org/10.1162/003355302760193871)
+- Chiappori, Pierre-André, Steven Levitt, e Tim Groseclose. 2002. "Testing Mixed-Strategy Equilibria When Players Are Heterogeneous." *American Economic Review* 92 (4): 1138–1147. [DOI](https://doi.org/10.1257/00028280260344678)
 - Cournot, Antoine-Augustin. 1838. *Recherches sur les Principes Mathématiques de la Théorie des Richesses*. Paris: Hachette.
 - Fudenberg, Drew, e Jean Tirole. 1991. [*Game Theory*](https://books.google.com/books/about/Game_Theory.html?id=pFPHKwXro3QC). Cambridge, MA: MIT Press.
 - Gibbons, Robert. 1992. [*Game Theory for Applied Economists*](https://books.google.com/books?id=8ygxf2WunAIC). Princeton: Princeton University Press.
@@ -711,4 +711,4 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 - Schelling, Thomas C. 1960. [*The Strategy of Conflict*](https://books.google.com/books?id=7RkL4Z8Yg5AC). Cambridge, MA: Harvard University Press.
 - Selten, Reinhard. 1965. "Spieltheoretische Behandlung eines Oligopolmodells mit Nachfrageträgheit." *Zeitschrift für die gesamte Staatswissenschaft* 121: 301–324.
 - Stackelberg, Heinrich von. 1934. *Marktform und Gleichgewicht*. Vienna: Springer.
-- Von Neumann, John, e Oskar Morgenstern. 1944. [*Theory of Games and Economic Behavior*](https://books.google.com/books?id=jCN5AAAAMAAj). Princeton: Princeton University Press.
+- Von Neumann, John, e Oskar Morgenstern. 1944. [*Theory of Games and Economic Behavior*](https://books.google.com/books?id=jCN5aNJ-n-0C). Princeton: Princeton University Press.

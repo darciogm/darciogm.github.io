@@ -781,4 +781,4 @@ Explique, usando a teoria vista neste capítulo, por que:
 - Ulyssea, Gabriel. 2018. ["Firms, Informality, and Development: Theory and Evidence from Brazil."](https://doi.org/10.1257/aer.20141745) *American Economic Review* 108 (8): 2015–2047.
 - Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton.
 - Williamson, Oliver E. 1975. [*Markets and Hierarchies: Analysis and Antitrust Implications*](https://books.google.com.br/books?id=pg-wAAAAIAAJ). New York: Free Press.
-- Williamson, Oliver E. 1985. [*The Economic Institutions of Capitalism*](https://books.google.com.br/books?id=MqyvAAAAIAAJ). New York: Free Press.
+- Williamson, Oliver E. 1985. [*The Economic Institutions of Capitalism*](https://books.google.com/books?id=ma62AAAAIAAJ). New York: Free Press.

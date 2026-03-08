@@ -809,7 +809,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 - Arrow, Kenneth J., e Gerard Debreu. 1954. ["Existence of an Equilibrium for a Competitive Economy."](https://doi.org/10.2307/1907353) *Econometrica* 22 (3): 265–290.
 - Caliendo, Lorenzo, e Fernando Parro. 2015. ["Estimates of the Trade and Welfare Effects of NAFTA."](https://doi.org/10.1093/restud/rdv007) *Review of Economic Studies* 82 (1): 1–44.
-- Debreu, Gerard. 1959. [*Theory of Value: An Axiomatic Analysis of Economic Equilibrium*](https://books.google.com.br/books?id=bIaCAAAAIAAJ). New York: Wiley.
+- Debreu, Gerard. 1959. [*Theory of Value: An Axiomatic Analysis of Economic Equilibrium*](https://books.google.com/books?id=QkX10epC46cC). New York: Wiley.
 - Dix-Carneiro, Rafael. 2014. ["Trade Liberalization and Labor Market Dynamics."](https://doi.org/10.3982/ECTA10457) *Econometrica* 82 (3): 825–885.
 - Edgeworth, Francis Y. 1881. [*Mathematical Psychics*](https://books.google.com.br/books?id=CElYAAAAcAAJ). London: C. Kegan Paul.
 - IFI/Senado Federal. 2024. ["Reforma Tributária: Contexto, Mudanças e Impactos."](https://www12.senado.leg.br/ifi/publicacoes-1/estudos-especiais/2024/marco/estudo-especial-no-19-reforma-tributaria-contexto-mudancas-e-impactos-mar-2024) Estudo Especial nº 19.

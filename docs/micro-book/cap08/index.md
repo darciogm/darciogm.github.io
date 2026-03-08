@@ -827,13 +827,13 @@ A economia comportamental e os nudges não são panaceias:
 - Barber, Brad M., e Terrance Odean. 2001. "[Boys Will Be Boys: Gender, Overconfidence, and Common Stock Investment](https://doi.org/10.1162/003355301556400)." *Quarterly Journal of Economics* 116 (1): 261–292.
 - Berg, Joyce, John Dickhaut, e Kevin McCabe. 1995. "[Trust, Reciprocity, and Social History](https://doi.org/10.1006/game.1995.1027)." *Games and Economic Behavior* 10 (1): 122–142.
 - Booij, Adam S., Bernard M. S. van Praag, e Gijs van de Kuilen. 2010. "[A Parametric Analysis of Prospect Theory's Functionals for the General Population](https://doi.org/10.1007/s11238-009-9144-4)." *Theory and Decision* 68 (1–2): 115–148.
-- Camerer, Colin F., e Teck-Hua Ho. 1994. "[Violations of the Betweenness Axiom and Nonlinearity in Probability](https://doi.org/10.1006/jrui.1994.1013)." *Journal of Risk and Uncertainty* 8 (2): 167–196.
+- Camerer, Colin F., e Teck-Hua Ho. 1994. "[Violations of the Betweenness Axiom and Nonlinearity in Probability](https://doi.org/10.1007/bf01065371)." *Journal of Risk and Uncertainty* 8 (2): 167–196.
 - DellaVigna, Stefano, e Ulrike Malmendier. 2006. "[Paying Not to Go to the Gym](https://doi.org/10.1257/aer.96.3.694)." *American Economic Review* 96 (3): 694–719.
-- Dhami, Sanjit S. 2016. [*The Foundations of Behavioral Economic Analysis*](https://books.google.com.br/books?id=ALKUDwAAQBAJ). Oxford: Oxford University Press.
+- Dhami, Sanjit S. 2016. [*The Foundations of Behavioral Economic Analysis*](https://books.google.com/books?id=AMBjDQAAQBAJ). Oxford: Oxford University Press.
 - Ellsberg, Daniel. 1961. "[Risk, Ambiguity, and the Savage Axioms](https://doi.org/10.2307/1884324)." *Quarterly Journal of Economics* 75 (4): 643–669.
 - Fehr, Ernst, e Simon Gächter. 2000. "[Cooperation and Punishment in Public Goods Experiments](https://doi.org/10.1257/aer.90.4.980)." *American Economic Review* 90 (4): 980–994.
 - Fehr, Ernst, e Klaus M. Schmidt. 1999. "[A Theory of Fairness, Competition, and Cooperation](https://doi.org/10.1162/003355399556151)." *Quarterly Journal of Economics* 114 (3): 817–868.
-- Fischhoff, Baruch. 1975. "[Hindsight ≠ Foresight: The Effect of Outcome Knowledge on Judgment under Uncertainty](https://doi.org/10.1037/0096-3445.104.3.288)." *Journal of Experimental Psychology: Human Perception and Performance* 1 (3): 288–299.
+- Fischhoff, Baruch. 1975. "[Hindsight ≠ Foresight: The Effect of Outcome Knowledge on Judgment under Uncertainty](https://doi.org/10.1037/0096-1523.1.3.288)." *Journal of Experimental Psychology: Human Perception and Performance* 1 (3): 288–299.
 - Forsythe, Robert, Joel L. Horowitz, N. E. Savin, e Martin Sefton. 1994. "[Fairness in Simple Bargaining Experiments](https://doi.org/10.1006/game.1994.1021)." *Games and Economic Behavior* 6 (3): 347–369.
 - Frederick, Shane, George Loewenstein, e Ted O'Donoghue. 2002. "[Time Discounting and Time Preference: A Critical Review](https://doi.org/10.1257/002205102320161311)." *Journal of Economic Literature* 40 (2): 351–401.
 - Gilboa, Itzhak, e David Schmeidler. 1989. "[Maxmin Expected Utility with Non-Unique Prior](https://doi.org/10.1016/0304-4068(89)90018-9)." *Journal of Mathematical Economics* 18 (2): 141–153.
@@ -849,7 +849,7 @@ A economia comportamental e os nudges não são panaceias:
 - Knight, Frank H. 1921. [*Risk, Uncertainty and Profit*](https://books.google.com.br/books?id=AcBLAAAAMAAJ). Boston: Houghton Mifflin.
 - Laibson, David. 1997. "[Golden Eggs and Hyperbolic Discounting](https://doi.org/10.1162/003355397555253)." *Quarterly Journal of Economics* 112 (2): 443–478.
 - Lichtenstein, Sarah, Baruch Fischhoff, e Lawrence D. Phillips. 1982. "Calibration of Probabilities: The State of the Art to 1980." Em *Judgment under Uncertainty: Heuristics and Biases*, org. Daniel Kahneman, Paul Slovic e Amos Tversky, 306–334. Cambridge: Cambridge University Press.
-- List, John A., e Todd L. Cherry. 2000. "[Learning to Accept in Ultimatum Games: Evidence from an Experimental Design That Generates Low Offers](https://doi.org/10.1023/A:1007885303593)." *Experimental Economics* 3 (1): 11–29.
+- List, John A., e Todd L. Cherry. 2000. "[Learning to Accept in Ultimatum Games: Evidence from an Experimental Design That Generates Low Offers](https://doi.org/10.1023/a:1009989907258)." *Experimental Economics* 3 (1): 11–29.
 - Madrian, Brigitte C., e Dennis F. Shea. 2001. "[The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior](https://doi.org/10.1162/003355301753265543)." *Quarterly Journal of Economics* 116 (4): 1149–1187.
 - Northcraft, Gregory B., e Margaret A. Neale. 1987. "[Experts, Amateurs, and Real Estate: An Anchoring-and-Adjustment Perspective on Property Pricing Decisions](https://doi.org/10.1016/0749-5978(87)90046-X)." *Organizational Behavior and Human Decision Processes* 39 (1): 84–97.
 - O'Donoghue, Ted, e Matthew Rabin. 1999. "[Doing It Now or Later](https://doi.org/10.1257/aer.89.1.103)." *American Economic Review* 89 (1): 103–124.
@@ -868,5 +868,5 @@ A economia comportamental e os nudges não são panaceias:
 - Tversky, Amos, e Daniel Kahneman. 1981. "[The Framing of Decisions and the Psychology of Choice](https://doi.org/10.1126/science.7455683)." *Science* 211 (4481): 453–458.
 - Tversky, Amos, e Daniel Kahneman. 1992. "[Advances in Prospect Theory: Cumulative Representation of Uncertainty](https://doi.org/10.1007/BF00122574)." *Journal of Risk and Uncertainty* 5 (4): 297–323.
 - Wason, Peter C. 1960. "[On the Failure to Eliminate Hypotheses in a Conceptual Task](https://doi.org/10.1080/17470216008416717)." *Quarterly Journal of Experimental Psychology* 12 (3): 129–140.
-- Wilkinson, Nick, e Matthias Klaes. 2012. [*An Introduction to Behavioral Economics*](https://books.google.com.br/books?id=GVr0BwAAQBAJ). 2ª ed. London: Palgrave Macmillan.
+- Wilkinson, Nick, e Matthias Klaes. 2012. [*An Introduction to Behavioral Economics*](https://books.google.com/books?id=qxtHEAAAQBAJ). 2ª ed. London: Palgrave Macmillan.
 - Wu, George, e Richard Gonzalez. 1996. "[Curvature of the Probability Weighting Function](https://doi.org/10.1287/mnsc.42.12.1676)." *Management Science* 42 (12): 1676–1690.

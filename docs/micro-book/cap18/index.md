@@ -705,5 +705,5 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 - Dixit, Avinash K., e Robert S. Pindyck. 1994. [*Investment under Uncertainty*](https://books.google.com.br/books?id=8op0btN4mKEC). Princeton: Princeton University Press.
 - Hotelling, Harold. 1931. "[The Economics of Exhaustible Resources](https://doi.org/10.1086/254195)." *Journal of Political Economy* 39 (2): 137–175.
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books?id=c5-JEQAAQBAJ). New York: Oxford University Press.
 - Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier.

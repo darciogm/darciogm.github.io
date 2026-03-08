@@ -763,8 +763,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 ## Referências do Capítulo
 
-- Almeida, Alexandre Nunes de, e Carlos Roberto Azzoni. 2016. "[Custo de vida comparativo das regiões metropolitanas brasileiras: 1996–2014.](https://doi.org/10.1590/0101-416146163aac)" *Estudos Econômicos* 46 (1): 253–276.
-- Cardoso, Breno Ferreira, Marcelo Tavares de Azevedo, e Francisco Carlos da Cunha Cassuce. 2019. "[Estimação da elasticidade-preço da demanda, da elasticidade-renda e da elasticidade preço-cruzada no Brasil.](https://doi.org/10.22456/2176-5456.71934)" *Análise Econômica* 37 (74): 7–30.
+- Almeida, Alexandre Nunes de, e Carlos Roberto Azzoni. 2016. "[Custo de vida comparativo das regiões metropolitanas brasileiras: 1996–2014.](https://doi.org/10.1590/0101-416146128aaa)" *Estudos Econômicos* 46 (1): 253–276.
+- Cardoso, Breno Ferreira, Marcelo Tavares de Azevedo, e Francisco Carlos da Cunha Cassuce. 2019. "Estimação da elasticidade-preço da demanda, da elasticidade-renda e da elasticidade preço-cruzada no Brasil." *Análise Econômica* 37 (74): 7–30.
 - Hausman, Jerry A. 1981. "[Exact Consumer's Surplus and Deadweight Loss.](https://www.jstor.org/stable/1806997)" *The American Economic Review* 71 (4): 662–676.
 - IBGE — Instituto Brasileiro de Geografia e Estatística. 2020. [*Pesquisa de Orçamentos Familiares 2017–2018: análise do consumo alimentar pessoal no Brasil*](https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html). Rio de Janeiro: IBGE.
 - Jensen, Robert T., e Nolan H. Miller. 2008. "[Giffen Behavior and Subsistence Consumption.](https://doi.org/10.1257/aer.98.4.1553)" *The American Economic Review* 98 (4): 1553–1577.

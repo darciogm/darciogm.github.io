@@ -781,7 +781,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## Referências do Capítulo
 
-- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com.br/books?id=KGtegVzqhMkC). New York: Oxford University Press.
+- Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books?id=c5-JEQAAQBAJ). New York: Oxford University Press.
 - Ostrom, Elinor. 1990. [*Governing the Commons*](https://books.google.com.br/books?id=4xg6oUobMz4C). Cambridge: Cambridge University Press.
 - Stiglitz, Joseph E., e Jay K. Rosengard. 2015. [*Economics of the Public Sector*](https://books.google.com.br/books?id=miPeCgAAQBAJ). 4ª ed. New York: W. W. Norton.
 - Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com.br/books?id=X6s3DwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier.

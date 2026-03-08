@@ -1029,7 +1029,7 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 ## Referências do Capítulo
 
-- Attanasio, Orazio, Erich Battistin, e Alice Mesnard. 2012. "[Food and Cash Transfers: Evidence from Colombia.](https://doi.org/10.1111/j.1468-0297.2011.02501.x)" *The Economic Journal* 122 (559): 92–124.
+- Attanasio, Orazio, Erich Battistin, e Alice Mesnard. 2012. "[Food and Cash Transfers: Evidence from Colombia.](https://doi.org/10.1111/j.1468-0297.2011.02473.x)" *The Economic Journal* 122 (559): 92–124.
 - Deaton, Angus, e John Muellbauer. 1980. "[An Almost Ideal Demand System.](https://www.jstor.org/stable/1805222)" *The American Economic Review* 70 (3): 312–326.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulos 2–3.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 4.

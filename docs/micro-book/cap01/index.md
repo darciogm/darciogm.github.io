@@ -566,7 +566,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ## Referências do Capítulo
 
-- Friedman, Milton. 1953. "The Methodology of Positive Economics." In [*Essays in Positive Economics*](https://books.google.com.br/books?id=mMbJAgAAQBAJ). Chicago: University of Chicago Press.
+- Friedman, Milton. 1953. "The Methodology of Positive Economics." In [*Essays in Positive Economics*](https://books.google.com/books?id=6Uhev5fmBgUC). Chicago: University of Chicago Press.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 1.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 1.
 - Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ). 8ª ed. São Paulo: Pearson. Cap. 1–2.
