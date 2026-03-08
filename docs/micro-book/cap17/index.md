@@ -77,6 +77,8 @@ O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamen
 
 ## 17.2 Análise Matemática da Oferta de Trabalho
 
+A seção anterior apresentou os elementos conceituais do modelo trabalho-lazer: a restrição orçamentária do tempo, o conceito de renda plena e a condição de tangência. Agora, formalizamos rigorosamente o problema de otimização do trabalhador e derivamos os efeitos de variações salariais sobre a oferta de trabalho, utilizando a decomposição de Slutsky adaptada ao contexto da alocação do tempo. Essa derivação é fundamental porque revela por que a oferta de trabalho pode ter inclinação positiva ou negativa — uma ambiguidade com implicações diretas para a política tributária e salarial.
+
 ### O problema de maximização
 
 !!! abstract "Problema de Otimização do Trabalhador"
@@ -198,6 +200,8 @@ Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\
 
 ## 17.3 A Curva Backward-Bending
 
+A análise da seção anterior revelou que o efeito de um aumento salarial sobre a oferta de trabalho é teoricamente ambíguo. Mas essa ambiguidade não é uma mera curiosidade formal — ela se manifesta empiricamente em um dos fenômenos mais intrigantes da economia do trabalho: a curva de oferta de trabalho que "se volta para trás" (*backward-bending*). A partir de certo nível salarial, aumentos adicionais podem levar o trabalhador a trabalhar menos, não mais. Por que isso ocorre, e sob quais condições?
+
 !!! definition "Curva de oferta de trabalho backward-bending"
     A curva de oferta de trabalho individual é dita **backward-bending** (voltada para trás) quando, a partir de determinado nível salarial, aumentos adicionais no salário levam o indivíduo a reduzir suas horas trabalhadas. Graficamente, a curva tem formato de "C invertido" no plano \((h, w)\).
 
@@ -242,6 +246,8 @@ O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibili
 
 ## 17.4 Curva de Oferta de Trabalho do Mercado
 
+Até aqui, analisamos a oferta de trabalho do ponto de vista individual. Mas o mercado de trabalho é composto por milhões de trabalhadores heterogêneos, cada um com suas preferências, sua renda não salarial e seu salário de reserva. Como passamos da oferta individual — que pode ser backward-bending — para a oferta de mercado? A agregação produz uma curva com propriedades distintas, em grande parte porque incorpora não apenas a decisão de quantas horas trabalhar (margem intensiva), mas também a decisão de participar ou não da força de trabalho (margem extensiva).
+
 A oferta de trabalho do mercado é obtida pela **agregação horizontal** das ofertas individuais. Se existem \(n\) trabalhadores, cada um com oferta \(h_i^*(w)\), a oferta agregada é:
 
 \[
@@ -259,6 +265,8 @@ Mesmo que curvas individuais sejam backward-bending, a curva de mercado tende a 
 ---
 
 ## 17.5 Equilíbrio no Mercado de Trabalho
+
+Com a curva de oferta de trabalho em mãos, podemos agora reunir os dois lados do mercado — oferta (trabalhadores) e demanda (firmas) — para determinar o salário de equilíbrio. O mecanismo é análogo ao de qualquer mercado competitivo, mas com uma particularidade importante: a demanda por trabalho é uma demanda derivada, que depende da produtividade marginal do trabalhador e do preço do produto final.
 
 ### Determinação do salário competitivo
 
@@ -294,7 +302,7 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
 ## 17.6 Diferenciais de Salário
 
-Na prática, observamos enormes diferenças salariais entre trabalhadores. A teoria econômica oferece diversas explicações.
+O modelo competitivo da seção anterior prevê um único salário de equilíbrio para trabalhadores homogêneos em um mercado sem fricções. Na prática, porém, observamos diferenças salariais enormes: médicos ganham mais que professores, engenheiros em plataformas de petróleo ganham mais que engenheiros em escritórios, e persistem hiatos significativos de gênero e raça mesmo entre profissionais com qualificações similares. O que explica essa dispersão? A teoria econômica oferece diversas explicações, que podem ser agrupadas em três grandes categorias.
 
 ### Capital humano
 
@@ -360,6 +368,8 @@ Diferenças salariais também podem refletir **discriminação** por gênero, ra
 
 ## 17.7 Monopsônio no Mercado de Trabalho
 
+Até este ponto, a análise pressupôs que o mercado de trabalho é perfeitamente competitivo: trabalhadores e firmas são todos tomadores de salário. Mas o que acontece quando há poder de mercado do lado da demanda — isto é, quando uma firma (ou poucas firmas) é a única compradora de trabalho em uma região ou ocupação? Essa estrutura, conhecida como monopsônio, é o espelho do monopólio no mercado de bens e gera distorções análogas: salários abaixo da produtividade e emprego inferior ao socialmente ótimo.
+
 !!! definition "Monopsônio"
     **Monopsônio** é a estrutura de mercado em que existe um único comprador de trabalho (ou poucos compradores com poder de mercado). Nessa situação, a firma não é tomadora de salário: ao contratar mais trabalhadores, ela eleva o salário de mercado.
 
@@ -404,7 +414,7 @@ A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de
 
 ### Gráfico interativo: Monopsônio no Mercado de Trabalho
 
-O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (MCL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
+O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (CMgL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 
 <iframe src="../graficos/cap17/monopsonio.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
 
@@ -470,6 +480,8 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 ---
 
 ## 17.8 Sindicatos
+
+O monopsônio representa poder de mercado do lado da demanda por trabalho. Do lado da oferta, a contrapartida é o sindicato — uma organização que agrega o poder de barganha dos trabalhadores para negociar coletivamente salários e condições de emprego. Enquanto no mercado competitivo cada trabalhador é individualmente incapaz de influenciar o salário, o sindicato confere aos trabalhadores poder de mercado análogo ao do monopolista no mercado de bens. Como esse poder afeta salários, emprego e eficiência?
 
 ### Objetivos dos sindicatos
 
@@ -576,6 +588,32 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 | \(\uparrow w\) (salário sobe) | \(h\) sobe (lazer mais caro) | \(h\) cai (mais rico, quer mais lazer) | Ambíguo |
 | \(\uparrow V\) (renda não salarial sobe) | Nenhum | \(h\) cai (mais rico) | \(h\) cai |
 | \(\uparrow p\) (preço do consumo sobe) | Depende (o efeito sobre o preço relativo do lazer varia com a cesta) | Depende | Ambíguo |
+
+---
+
+## Resumo do Capítulo
+
+- O mercado de trabalho é analisado pelo modelo trabalho-lazer, no qual o indivíduo aloca seu tempo entre lazer e trabalho, enfrentando o salário como custo de oportunidade do lazer. A condição de ótimo iguala a taxa marginal de substituição entre lazer e consumo ao salário real.
+- Um aumento salarial tem efeitos ambíguos sobre a oferta de trabalho: o efeito substituição (lazer fica mais caro) incentiva mais trabalho, enquanto o efeito renda (maior poder de compra) incentiva mais lazer. Quando o efeito renda domina, a curva de oferta de trabalho se torna backward-bending.
+- O equilíbrio competitivo no mercado de trabalho iguala demanda e oferta de trabalho, com diferenças salariais explicadas por diferenciais compensatórios (risco, desconforto), capital humano (educação, experiência) e discriminação.
+- O monopsônio (único comprador de trabalho) paga salários abaixo do produto marginal do valor do trabalho e emprega menos trabalhadores do que o resultado competitivo, gerando ineficiência análoga ao monopólio no mercado de bens.
+- Sindicatos podem elevar salários acima do nível competitivo, com efeitos sobre emprego que dependem do poder de barganha e da estrutura de mercado. O salário mínimo tem efeitos ambíguos: sob monopsônio pode aumentar emprego, enquanto em mercados competitivos pode reduzi-lo.
+- A realidade brasileira é marcada por elevada informalidade, desigualdade salarial significativa, alto retorno à educação e debates persistentes sobre os efeitos do salário mínimo e da reforma trabalhista.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Renda plena (full income) | Renda máxima que o indivíduo obteria se trabalhasse todas as horas disponíveis: \(M^* = wT + V\) |
+| Custo de oportunidade do lazer | O salário \(w\), pois cada hora de lazer implica renunciar a \(w\) reais de renda |
+| Efeito substituição (trabalho) | Aumento salarial encarece o lazer, incentivando mais horas de trabalho |
+| Efeito renda (trabalho) | Aumento salarial eleva a renda real, incentivando mais lazer (se lazer é bem normal), reduzindo horas de trabalho |
+| Curva backward-bending | Curva de oferta de trabalho que se inclina para trás quando o efeito renda domina o efeito substituição em salários elevados |
+| Diferencial compensatório | Diferença salarial que compensa trabalhadores por características indesejáveis do emprego (risco, insalubridade, localização) |
+| Monopsônio | Estrutura de mercado com um único comprador de trabalho, que paga salário abaixo do produto marginal e emprega menos que o competitivo |
+| Custo marginal do trabalho (monopsônio) | Custo de contratar um trabalhador adicional, que excede o salário pago porque o monopsonista deve elevar o salário de todos os trabalhadores |
+| Salário de reserva | Salário mínimo abaixo do qual o indivíduo prefere não trabalhar (solução de canto com \(h = 0\)) |
+| Capital humano | Estoque de habilidades e conhecimentos adquiridos via educação e experiência que elevam a produtividade e os salários |
 
 ---
 
@@ -730,7 +768,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     **Por que isso importa:** O resultado desafia a visão de livro-texto de que aumentos expressivos do salário mínimo necessariamente geram desemprego significativo. No contexto brasileiro, o SM funcionou como um instrumento redistributivo poderoso, com custos de eficiência limitados. Isso tem implicações diretas para a política de valorização do salário mínimo retomada a partir de 2023.
 
-    **Relevância para o capítulo:** O paper conecta-se diretamente com as seções 17.5 (equilíbrio competitivo) e 16.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
+    **Relevância para o capítulo:** O paper conecta-se diretamente com as seções 17.5 (equilíbrio competitivo) e 17.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
 
 ??? abstract "Meghir, C.; Narita, R.; Robin, J.-M. (2015). [Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110). *American Economic Review*, 105(4), 1509–1546."
     **Pergunta central:** Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
@@ -741,7 +779,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     **Por que isso importa:** O paper fornece base teórica e empírica para políticas de combate à informalidade. No Brasil, a Reforma Trabalhista de 2017 seguiu uma direção oposta (flexibilização), e a taxa de informalidade permanece elevada (38,1% em 2025). O modelo sugere que o caminho para reduzir a informalidade sem causar desemprego passa por melhorar a fiscalização e reduzir os custos de formalização — e não por enfraquecer a legislação trabalhista.
 
-    **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 17.5–16.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
+    **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 17.5–17.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
 
 ## Referências do Capítulo
 

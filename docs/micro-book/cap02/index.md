@@ -4,9 +4,13 @@ A microeconomia moderna é uma disciplina intrinsecamente matemática. Os modelo
 
 O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida dos resultados e técnicas que serão utilizados ao longo do livro. O leitor familiarizado com cálculo multivariado e álgebra linear pode percorrer este capítulo rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais, como o teorema do envelope e as condições de Kuhn-Tucker.
 
+O capítulo segue uma progressão natural: partimos da otimização em uma dimensão (Seção 2.1), avançamos para funções de várias variáveis e o ferramental de estática comparativa (Seções 2.2--2.3), introduzimos o teorema do envelope (Seção 2.4), abordamos a otimização com restrições de igualdade e desigualdade (Seções 2.5--2.7), examinamos propriedades de curvatura e homogeneidade (Seções 2.8--2.9), e encerramos com integração, otimização dinâmica e estatística (Seções 2.10--2.12). Ao final, o leitor disporá de todo o aparato formal necessário para acompanhar os capítulos subsequentes sobre teoria do consumidor, teoria da firma e equilíbrio de mercado.
+
 ---
 
 ## 2.1 Maximização de funções de uma variável
+
+Começamos pelo caso mais simples: maximizar uma função de uma única variável. Embora a maioria dos problemas econômicos envolva múltiplas variáveis, o caso unidimensional é instrutivo porque nele as ideias centrais — condições de primeira ordem, condições de segunda ordem, interpretação econômica — aparecem em sua forma mais transparente.
 
 ### Condições de primeira ordem
 
@@ -20,7 +24,7 @@ A CPO identifica **pontos críticos** (máximos, mínimos ou pontos de inflexão
 
 ### Condições de segunda ordem
 
-Para garantir que o ponto crítico é um máximo (e não um mínimo), exige-se:
+A CPO nos diz *onde* procurar — no ponto em que a curva "achata" — mas não nos diz *o que* encontramos. Um pico (máximo), um vale (mínimo) e um platô (ponto de inflexão) satisfazem igualmente a condição \(f'(x^*) = 0\). Para distingui-los, precisamos examinar a curvatura da função no ponto crítico, o que nos leva à condição de segunda ordem. Para garantir que o ponto crítico é um máximo (e não um mínimo), exige-se:
 
 \[
 f''(x^*) < 0 \quad \text{(condição suficiente de segunda ordem — CSO)}
@@ -41,17 +45,21 @@ Se \(f''(x^*) > 0\), o ponto é um mínimo local. Se \(f''(x^*) = 0\), o teste �
 
     Lucro máximo: \(\pi(15) = 90(15) - 3(225) = 1350 - 675 = 675\).
 
+O caso de uma variável é didático, mas limitado. Na prática, consumidores escolhem cestas com múltiplos bens, firmas combinam vários insumos e governos alocam recursos entre diversas áreas. Para lidar com esses problemas, precisamos estender as ferramentas de otimização para funções de várias variáveis. O primeiro passo é dominar as noções de derivada parcial e diferencial total.
+
 ---
 
 ## 2.2 Funções de várias variáveis
 
 ### Derivadas parciais
 
+Quando o problema envolve múltiplas variáveis — como a utilidade que depende de vários bens, ou a produção que depende de capital e trabalho —, a noção de derivada precisa ser generalizada. A ideia é simples: variamos *uma* variável de cada vez, mantendo as demais fixas, e medimos o efeito sobre o valor da função.
+
 Seja \(f: \mathbb{R}^n \to \mathbb{R}\). A **derivada parcial** de \(f\) em relação a \(x_i\), denotada \(\frac{\partial f}{\partial x_i}\) ou \(f_i\), mede a taxa de variação de \(f\) quando apenas \(x_i\) varia, mantendo todas as demais variáveis constantes — é o equivalente matemático do *ceteris paribus*.
 
 ### Diferencial total
 
-A **diferencial total** de \(f(x_1, x_2, \ldots, x_n)\) é:
+Enquanto a derivada parcial isola o efeito de *uma* variável, mantendo as demais constantes, a diferencial total captura o efeito *combinado* de variações simultâneas em todas as variáveis. A **diferencial total** de \(f(x_1, x_2, \ldots, x_n)\) é:
 
 \[
 df = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \, dx_i = f_1 \, dx_1 + f_2 \, dx_2 + \cdots + f_n \, dx_n
@@ -60,6 +68,8 @@ df = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \, dx_i = f_1 \, dx_1 + f_2 
 A diferencial total expressa a variação aproximada de \(f\) quando todas as variáveis mudam simultaneamente por quantidades infinitesimais.
 
 ### Teorema da função implícita
+
+Em muitos modelos econômicos, as variáveis endógenas não são expressas explicitamente como funções dos parâmetros. Em vez disso, elas são definidas implicitamente por uma condição de equilíbrio — por exemplo, a igualdade entre oferta e demanda. Como, então, calcular o efeito de uma mudança paramétrica sobre a variável endógena? É aqui que entra o teorema da função implícita, uma das ferramentas mais utilizadas em estática comparativa.
 
 !!! definition "Teorema da Função Implícita"
     Seja \(F(x, y) = 0\) uma relação implícita entre \(x\) e \(y\), com \(F\) continuamente diferenciável e \(F_y \neq 0\) em um ponto \((x_0, y_0)\). Então, em uma vizinhança de \((x_0, y_0)\), existe uma função \(y = g(x)\) tal que \(F(x, g(x)) = 0\), e:
@@ -76,7 +86,7 @@ Este resultado é fundamental em estática comparativa: permite calcular como um
 \frac{dP}{dY} = -\frac{\partial D / \partial Y}{\partial D / \partial P - \partial S / \partial P} = -\frac{D_Y}{D_P - S_P}
 \]
 
-Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio.
+Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio. Note a potência do resultado: sem precisar resolver explicitamente o modelo para \(P^*\), o teorema da função implícita nos permite determinar a *direção* do efeito e, com mais informação, sua *magnitude*.
 
 !!! example "Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
 
@@ -95,6 +105,8 @@ Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor q
 ---
 
 ## 2.3 Maximização com várias variáveis
+
+Com as ferramentas de cálculo multivariado em mãos — derivadas parciais, diferencial total e teorema da função implícita —, podemos agora retomar o problema central: como encontrar o máximo de uma função de várias variáveis? Essa é a generalização natural da Seção 2.1 para o caso \(n\)-dimensional.
 
 Para maximizar \(f(x_1, x_2, \ldots, x_n)\) sem restrições, as condições necessárias de primeira ordem são:
 
@@ -119,6 +131,8 @@ onde \(f_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}\).
 
 !!! definition "Condição Suficiente de Segunda Ordem (caso irrestrito)"
     O ponto crítico \(\mathbf{x}^*\) é um **máximo local** se a matriz hessiana \(H(\mathbf{x}^*)\) for **negativa definida**, ou seja, se todos os seus autovalores forem negativos. Equivalentemente, os menores principais líderes devem alternar em sinal: \(f_{11} < 0\), \(f_{11}f_{22} - f_{12}^2 > 0\), etc.
+
+Até aqui, sabemos como *encontrar* o ótimo e *confirmar* que ele é de fato um máximo. Mas em economia, frequentemente a pergunta mais interessante não é "qual é o ótimo?", e sim "como o ótimo muda quando as circunstâncias mudam?" — isto é, estática comparativa. O teorema do envelope oferece um atalho elegante para responder a essa pergunta.
 
 ---
 
@@ -157,6 +171,8 @@ Mas, pela condição de primeira ordem, \(\frac{\partial f}{\partial x}\big|_{x^
 
 \(\blacksquare\)
 
+O que esse resultado nos diz? A demonstração revela por que o teorema funciona: no ponto ótimo, a derivada de \(f\) em relação a \(x\) é zero (pela CPO). Portanto, qualquer ajuste que o agente faça na variável de escolha \(x\) em resposta à mudança do parâmetro \(a\) produz apenas um efeito de segunda ordem sobre o valor da função — negligenciável para variações infinitesimais. Resta, portanto, apenas o efeito direto de \(a\) sobre \(f\).
+
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** No ótimo, o único efeito que importa de uma mudança no parâmetro é o efeito direto — o ajuste indireto via \(x\) é de segunda ordem.
 
@@ -168,6 +184,8 @@ Mas, pela condição de primeira ordem, \(\frac{\partial f}{\partial x}\big|_{x^
 
 ## 2.5 Maximização com restrições: o método de Lagrange
 
+Até agora, tratamos de problemas de otimização sem restrições: o agente pode escolher livremente qualquer valor para as variáveis de decisão. Mas os problemas econômicos quase sempre envolvem restrições. O consumidor deseja maximizar sua satisfação, porém dispõe de renda limitada. A firma quer maximizar o lucro, mas enfrenta restrições tecnológicas. Como incorporar essas limitações ao problema de otimização?
+
 ### Formulação do problema
 
 O problema canônico da microeconomia é:
@@ -176,11 +194,11 @@ O problema canônico da microeconomia é:
 \max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n) \quad \text{sujeito a} \quad g(x_1, \ldots, x_n) = c
 \]
 
-onde \(f\) é a função objetivo e \(g(\mathbf{x}) = c\) é a restrição.
+onde \(f\) é a função objetivo e \(g(\mathbf{x}) = c\) é a restrição. No problema do consumidor, por exemplo, \(f\) é a função utilidade, \(g\) é a função de gasto total e \(c\) é a renda disponível.
 
 ### O Lagrangeano
 
-Define-se a **função de Lagrange** (ou Lagrangeano):
+A ideia central do método de Lagrange é engenhosa: em vez de resolver um problema de otimização *com restrição*, transforma-se o problema em um de otimização *sem restrição* em um espaço ampliado, que inclui uma variável auxiliar — o multiplicador de Lagrange \(\lambda\). Define-se a **função de Lagrange** (ou Lagrangeano):
 
 \[
 \mathcal{L}(x_1, \ldots, x_n, \lambda) = f(x_1, \ldots, x_n) + \lambda \left[c - g(x_1, \ldots, x_n)\right]
@@ -204,7 +222,9 @@ Das primeiras \(n\) condições, obtém-se:
 \frac{f_i}{g_i} = \lambda, \quad \forall \, i
 \]
 
-Isso implica que as **razões das derivadas parciais** da função objetivo e da restrição são iguais para todas as variáveis — um resultado com interpretação econômica profunda.
+Isso implica que as **razões das derivadas parciais** da função objetivo e da restrição são iguais para todas as variáveis — um resultado com interpretação econômica profunda. Geometricamente, essa condição significa que, no ponto ótimo, a curva de nível da função objetivo é tangente à restrição: os gradientes de \(f\) e de \(g\) são paralelos, e a constante de proporcionalidade é precisamente o multiplicador \(\lambda\).
+
+Mas o que, afinal, representa esse multiplicador \(\lambda\)? Sua interpretação é uma das ideias mais importantes da microeconomia.
 
 ### Interpretação do multiplicador de Lagrange
 
@@ -229,7 +249,7 @@ O multiplicador \(\lambda\) é a **utilidade marginal da renda**: mede o aumento
 \frac{UMg_1}{p_1} = \frac{UMg_2}{p_2} = \lambda
 \]
 
-Ou seja, no ótimo, a utilidade marginal por unidade monetária gasta é igual para todos os bens — o famoso princípio da **equimarginalidade**.
+Ou seja, no ótimo, a utilidade marginal por unidade monetária gasta é igual para todos os bens — o famoso princípio da **equimarginalidade**. A lógica é intuitiva: se o último real gasto em café rendesse mais satisfação do que o último real gasto em pão, o consumidor poderia melhorar comprando mais café e menos pão. No ótimo, essa possibilidade de melhoria se esgota.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** O multiplicador de Lagrange λ é o preço-sombra da restrição — quanto a mais você ganharia se a restrição fosse relaxada em uma unidade.
@@ -237,6 +257,8 @@ Ou seja, no ótimo, a utilidade marginal por unidade monetária gasta é igual p
     **Pense assim:** Imagine que você recebe R$ 500 de vale-alimentação por mês e distribui entre feira e supermercado até igualar o "rendimento" de cada real gasto. Se alguém te desse R$ 1 a mais, λ diz exatamente quanto de satisfação extra você obteria. É o valor de um real a mais de orçamento.
 
     **Por que isso importa:** Na prática, λ aparece em toda análise de custo-benefício de política pública — é o custo social de apertar o cinto fiscal ou o benefício de relaxar uma cota de importação.
+
+Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
 
 ---
 
@@ -301,11 +323,13 @@ Substituindo:
 
 \(\blacksquare\)
 
+Note a diferença sutil em relação ao caso irrestrito: aqui, a derivada é do Lagrangeano, não apenas de \(f\). Isso faz sentido intuitivamente: quando há uma restrição, a variação do parâmetro pode afetar tanto o objetivo quanto a restrição, e o Lagrangeano captura ambos os efeitos por meio do termo \(\lambda[c - g]\). Este resultado será utilizado extensivamente nos capítulos seguintes — por exemplo, para mostrar que a utilidade marginal da renda é o multiplicador de Lagrange do problema do consumidor.
+
 ---
 
 ## 2.7 Restrições de desigualdade: condições de Kuhn-Tucker
 
-Em muitos problemas econômicos, as restrições são **desigualdades** (por exemplo, \(x_i \geq 0\), ou restrições orçamentárias do tipo \(\leq\)):
+O método de Lagrange resolve problemas com restrições de *igualdade*: o consumidor gasta exatamente toda a sua renda, a firma usa exatamente a capacidade total de produção. Mas nem sempre a restrição é ativa. O consumidor pode não gastar toda a renda (se tiver preferências saciáveis), ou pode optar por não consumir nenhuma quantidade de um bem cujo preço é muito alto. Para lidar com essas situações, precisamos de uma generalização que admita restrições de desigualdade e soluções de canto. Em muitos problemas econômicos, as restrições são **desigualdades** (por exemplo, \(x_i \geq 0\), ou restrições orçamentárias do tipo \(\leq\)):
 
 \[
 \max_{\mathbf{x}} f(\mathbf{x}) \quad \text{s.a.} \quad g_j(\mathbf{x}) \leq c_j, \quad j = 1, \ldots, m; \quad x_i \geq 0, \quad i = 1, \ldots, n
@@ -363,6 +387,8 @@ As condições KKT são:
 
 ## 2.8 Condições de segunda ordem e curvatura
 
+Nas seções anteriores, as condições de segunda ordem apareceram como requisitos técnicos — a hessiana negativa definida, o custo marginal crescente. Mas qual é o significado mais profundo dessas condições? Elas estão intimamente ligadas à *curvatura* da função objetivo: conceitos como concavidade e convexidade, que determinam se pontos críticos são máximos globais e se as condições de Lagrange são suficientes.
+
 ### Concavidade e convexidade
 
 !!! definition "Concavidade"
@@ -376,9 +402,11 @@ As condições KKT são:
 
 Para funções duas vezes diferenciáveis, a concavidade equivale à condição de que a **hessiana seja negativa semidefinida** em todos os pontos.
 
-Uma função côncava tem a propriedade crucial de que **todo ponto crítico é um máximo global** — o que simplifica enormemente os problemas de otimização.
+Uma função côncava tem a propriedade crucial de que **todo ponto crítico é um máximo global** — o que simplifica enormemente os problemas de otimização. Em termos práticos, isso significa que, para funções côncavas, basta resolver as condições de primeira ordem: se existe solução, ela é automaticamente o máximo global. Não é necessário verificar as condições de segunda ordem nem se preocupar com máximos locais que não sejam globais.
 
 ### Quase-concavidade
+
+A concavidade é uma condição forte: muitas funções utilidade comuns (como a Cobb-Douglas) não são côncavas no sentido estrito, embora produzam curvas de indiferença com o formato "bem-comportado" que esperamos. Para esses casos, uma condição mais fraca é suficiente.
 
 !!! definition "Quase-concavidade"
     Uma função \(f\) é **quase-côncava** se seus **conjuntos de nível superior** \(\{x : f(x) \geq k\}\) são convexos para todo \(k\).
@@ -391,6 +419,8 @@ A quase-concavidade é mais fraca que a concavidade, mas é suficiente para gara
 ---
 
 ## 2.9 Funções homogêneas e Teorema de Euler
+
+Além da curvatura, outra propriedade das funções que desempenha um papel central em microeconomia é a *homogeneidade*. Uma função homogênea possui uma simetria especial: multiplicar todos os argumentos por uma mesma constante produz um efeito previsível sobre o valor da função. Essa propriedade é fundamental para entender retornos de escala em produção e ausência de ilusão monetária em demanda.
 
 !!! definition "Função Homogênea"
     Uma função \(f: \mathbb{R}^n \to \mathbb{R}\) é **homogênea de grau \(k\)** se, para todo escalar \(t > 0\):
@@ -417,7 +447,7 @@ Exemplos em economia:
 K \cdot \frac{\partial F}{\partial K} + L \cdot \frac{\partial F}{\partial L} = F(K, L)
 \]
 
-Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), então \(rK + wL = F(K,L)\) — o produto é exatamente esgotado pela remuneração dos fatores. Este resultado é conhecido como o **problema da exaustão do produto** (Nicholson & Snyder, 2017).
+Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), então \(rK + wL = F(K,L)\) — o produto é exatamente esgotado pela remuneração dos fatores. Este resultado é conhecido como o **problema da exaustão do produto** (Nicholson & Snyder, 2017). A implicação é notável: sob retornos constantes de escala e remuneração competitiva dos fatores, não há "sobra" — nenhum lucro econômico puro. Todo o produto é distribuído entre capital e trabalho segundo suas contribuições marginais.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Se a tecnologia tem retornos constantes de escala, pagar cada fator pela sua produtividade marginal esgota exatamente o produto — não sobra nem falta nada.
@@ -430,7 +460,7 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
 ## 2.10 Integração
 
-Em microeconomia, a integração aparece em diversos contextos:
+As seções anteriores concentraram-se em técnicas de diferenciação e otimização. Mas a operação inversa da diferenciação — a integração — também tem aplicações importantes em microeconomia, especialmente na análise de bem-estar. Quando queremos medir quanto um consumidor ou produtor ganha ou perde com uma mudança de preço, precisamos calcular áreas sob curvas, o que requer integração. Em microeconomia, a integração aparece em diversos contextos:
 
 - **Excedente do consumidor**: \(EC = \int_{0}^{Q^*} D^{-1}(q) \, dq - P^* Q^*\)
 - **Excedente do produtor**: \(EP = P^* Q^* - \int_{0}^{Q^*} CMg(q) \, dq\)
@@ -442,13 +472,13 @@ O **Teorema Fundamental do Cálculo** conecta integração e diferenciação:
 \frac{d}{dx} \int_{a}^{x} f(t) \, dt = f(x)
 \]
 
-Em análise de bem-estar, a integração permite calcular a **variação compensatória** e a **variação equivalente**, medidas exatas de mudança no bem-estar do consumidor.
+Em análise de bem-estar, a integração permite calcular a **variação compensatória** e a **variação equivalente**, medidas exatas de mudança no bem-estar do consumidor. Esses conceitos serão desenvolvidos em detalhe no Capítulo 4, quando estudarmos a teoria do bem-estar do consumidor. Por ora, basta observar que a conexão entre integração e diferenciação — o Teorema Fundamental do Cálculo — é mais do que uma curiosidade matemática: ela garante a coerência entre medidas "marginais" (como o excedente marginal de uma unidade adicional) e medidas "totais" (como o excedente total do mercado).
 
 ---
 
 ## 2.11 Otimização dinâmica: uma breve introdução
 
-Muitos problemas econômicos envolvem decisões ao longo do tempo:
+Todas as técnicas apresentadas até aqui tratam de decisões estáticas: o agente escolhe uma vez, em um único momento. Mas muitas das decisões econômicas mais importantes são *intertemporais* — envolvem trocas entre presente e futuro. Muitos problemas econômicos envolvem decisões ao longo do tempo:
 
 - Quanto consumir hoje versus poupar para amanhã?
 - Quanto investir em capital em cada período?
@@ -470,7 +500,7 @@ A **equação de Euler** resultante é:
 u'(c_t) = \beta(1+r) \, u'(c_{t+1})
 \]
 
-que expressa a condição de que o agente é indiferente entre consumir uma unidade hoje e poupá-la para consumir \((1+r)\) unidades amanhã, descontadas pelo fator \(\beta\).
+que expressa a condição de que o agente é indiferente entre consumir uma unidade hoje e poupá-la para consumir \((1+r)\) unidades amanhã, descontadas pelo fator \(\beta\). Note a analogia com a equimarginalidade do problema do consumidor (Seção 2.5): lá, o agente iguala a utilidade marginal por real gasto entre bens; aqui, iguala a utilidade marginal por real entre períodos.
 
 ### Otimização contínua: cálculo de variações e controle ótimo
 
@@ -480,7 +510,7 @@ Em tempo contínuo, problemas de otimização dinâmica são resolvidos pelo **c
 
 ## 2.12 Estatística matemática: valor esperado e variância
 
-A incerteza é onipresente em decisões econômicas. As ferramentas básicas de probabilidade são essenciais para a análise de escolha sob risco.
+Para encerrar nosso manual de sobrevivência matemática, precisamos abordar o tratamento formal da *incerteza*. Os modelos de otimização apresentados até aqui supõem que o agente conhece com certeza os resultados de suas decisões. Mas na realidade, consumidores não sabem se ficarão doentes, investidores não sabem se o mercado subirá, e agricultores não sabem se choverá. A incerteza é onipresente em decisões econômicas. As ferramentas básicas de probabilidade são essenciais para a análise de escolha sob risco.
 
 ### Valor esperado
 
@@ -511,9 +541,13 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 !!! tip "Conexão com a concavidade"
     A desigualdade de Jensen afirma que, para funções côncavas, \(E[U(W)] \leq U(E[W])\). Isso significa que um agente avesso ao risco prefere a renda esperada com certeza à loteria em si — ele estaria disposto a pagar um prêmio para eliminar o risco.
 
+Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um contexto completamente diferente: a concavidade da função utilidade, que na teoria do consumidor garante curvas de indiferença bem-comportadas, na teoria da escolha sob risco expressa a aversão ao risco do agente. Essa convergência ilustra a economia e a elegância do aparato matemático que percorre todo este capítulo.
+
 ---
 
 ## Gráficos interativos
+
+Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos discutidos neste capítulo. Manipular os parâmetros e observar como as soluções ótimas se ajustam é uma forma eficaz de desenvolver a intuição geométrica por trás das condições formais.
 
 ### Otimização de função de uma variável
 
@@ -576,13 +610,41 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
 ---
 
+## Resumo do Capítulo
+
+- O capítulo fornece o aparato matemático essencial para a microeconomia: **cálculo diferencial** (condições de primeira e segunda ordem), **cálculo multivariado** (derivadas parciais, diferencial total, teorema da função implícita) e **otimização** com e sem restrições.
+- O **teorema da função implícita** é a ferramenta central da estática comparativa: permite calcular como variáveis endógenas (preço de equilíbrio, quantidade) respondem a mudanças em variáveis exógenas (renda, custos) a partir de condições de equilíbrio implícitas.
+- O **teorema do envelope** simplifica a estática comparativa ao mostrar que, no ótimo, o efeito de uma mudança paramétrica sobre o valor ótimo é dado apenas pelo efeito direto — o ajuste indireto via variáveis de escolha é de segunda ordem.
+- O **método de Lagrange** resolve problemas de maximização com restrições de igualdade; o multiplicador \(\lambda\) mede o valor marginal de relaxar a restrição (ex.: utilidade marginal da renda no problema do consumidor).
+- As **condições de Kuhn-Tucker** generalizam o método de Lagrange para restrições de desigualdade e soluções de canto, com as condições de folga complementar determinando quais restrições são ativas.
+- O capítulo também cobre **funções homogêneas** (teorema de Euler e exaustão do produto), **concavidade e quase-concavidade** (condições de segunda ordem), integração (excedentes), otimização dinâmica (equação de Euler) e estatística (valor esperado, variância, utilidade esperada de von Neumann-Morgenstern).
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Condição de primeira ordem (CPO) | Condição necessária para um extremo: a derivada (ou gradiente) da função objetivo é zero no ponto ótimo. |
+| Condição de segunda ordem (CSO) | Condição que distingue máximo de mínimo: exige hessiana negativa definida (máximo) ou positiva definida (mínimo). |
+| Teorema da função implícita | Permite calcular \(dy/dx\) quando a relação entre \(x\) e \(y\) é dada implicitamente por \(F(x,y)=0\); fundamental para estática comparativa. |
+| Teorema do envelope | No ótimo, \(dV/da = \partial \mathcal{L}/\partial a\): o efeito de um parâmetro sobre o valor ótimo é dado pela derivada parcial direta do Lagrangeano. |
+| Multiplicador de Lagrange (\(\lambda\)) | Preço-sombra da restrição; mede o aumento no valor ótimo da função objetivo quando a restrição é relaxada em uma unidade marginal. |
+| Condições de Kuhn-Tucker (KKT) | Generalização do método de Lagrange para restrições de desigualdade, incluindo condições de folga complementar. |
+| Função homogênea de grau \(k\) | Função tal que \(f(t\mathbf{x}) = t^k f(\mathbf{x})\); retornos constantes de escala correspondem a \(k=1\). |
+| Teorema de Euler | Para funções homogêneas de grau \(k\): \(\sum x_i f_i = k \cdot f\); implica a exaustão do produto sob retornos constantes de escala. |
+| Quase-concavidade | Propriedade de funções cujos conjuntos de nível superior são convexos; garante curvas de indiferença convexas e condições de segunda ordem em problemas restritos. |
+| Equação de Euler (intertemporal) | Condição \(u'(c_t) = \beta(1+r)u'(c_{t+1})\) que iguala o custo marginal de consumir hoje ao benefício marginal de poupar e consumir amanhã. |
+
+---
+
 ## Exercícios Resolvidos
+
+Os exercícios resolvidos a seguir aplicam as principais ferramentas matemáticas do capítulo a problemas econômicos concretos. O primeiro resolve um problema de maximização de utilidade via Lagrange, incluindo a interpretação econômica do multiplicador. O segundo demonstra a aplicação do teorema do envelope a uma firma monopolista. O terceiro explora as condições de Kuhn-Tucker em um contexto com soluções de canto. Em cada caso, recomenda-se acompanhar a resolução passo a passo, verificando que cada etapa corresponde às condições formais apresentadas nas seções anteriores.
 
 ??? example "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
 
-    **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(m = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
+    **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(I = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
 
-    **Dados:** \(U = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\), \(m = 100\).
+    **Dados:** \(U = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\), \(I = 100\).
 
     **Resolução:**
 
@@ -612,11 +674,11 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
     Substituindo na restrição: \(4x_1 + 4x_1 = 100 \implies x_1^* = 12{,}5\) e \(x_2^* = 50\).
 
-    Da segunda CPO: \(\lambda^* = \frac{(12{,}5)^{1/2}}{2(50)^{1/2}} = \frac{\sqrt{12{,}5}}{2\sqrt{50}} = \frac{1}{4\sqrt{4}} = \frac{1}{8} = 0{,}125\).
+    Da segunda CPO: \(\lambda^* = \frac{(12{,}5)^{1/2}}{2(50)^{1/2}} = \frac{\sqrt{12{,}5}}{2\sqrt{50}} = \frac{\sqrt{1/4}}{2} = \frac{1}{4} = 0{,}25\).
 
-    **Resultado:** Cesta ótima: \((x_1^*, x_2^*) = (12{,}5;\ 50)\). Multiplicador: \(\lambda^* = 0{,}125\).
+    **Resultado:** Cesta ótima: \((x_1^*, x_2^*) = (12{,}5;\ 50)\). Multiplicador: \(\lambda^* = 0{,}25\).
 
-    **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}125\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,125 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
+    **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}25\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,25 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
 
 ??? example "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
 
@@ -654,7 +716,7 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 
 ??? example "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
 
-    **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(m\). Encontre a cesta ótima para \(m = 20\) e \(m = 0{,}5\), identificando soluções interiores e de canto.
+    **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I\). Encontre a cesta ótima para \(I = 20\) e \(I = 0{,}5\), identificando soluções interiores e de canto.
 
     **Dados:** \(U = 2x_1^{1/2} + x_2\), \(p_1 = 4\), \(p_2 = 1\).
 
@@ -663,34 +725,36 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
     **Passo 1 — Montar o Lagrangeano e condições KKT**
 
     \[
-    \mathcal{L} = 2\sqrt{x_1} + x_2 + \lambda(m - 4x_1 - x_2)
+    \mathcal{L} = 2\sqrt{x_1} + x_2 + \lambda(I - 4x_1 - x_2)
     \]
 
     Condições KKT:
 
     - \(\frac{\partial \mathcal{L}}{\partial x_1} = x_1^{-1/2} - 4\lambda \leq 0\), com igualdade se \(x_1 > 0\)
     - \(\frac{\partial \mathcal{L}}{\partial x_2} = 1 - \lambda \leq 0\), com igualdade se \(x_2 > 0\)
-    - \(4x_1 + x_2 \leq m\), com igualdade se \(\lambda > 0\)
+    - \(4x_1 + x_2 \leq I\), com igualdade se \(\lambda > 0\)
 
-    **Passo 2 — Caso \(m = 20\) (solução interior)**
+    **Passo 2 — Caso \(I = 20\) (solução interior)**
 
     Se \(x_2 > 0\): da segunda condição, \(\lambda = 1\). Da primeira: \(x_1^{-1/2} = 4 \implies x_1^* = 1/16\). Gasto em \(x_1\): \(4 \times 1/16 = 1/4\). Sobra: \(x_2^* = 20 - 1/4 = 19{,}75\).
 
     Verificação: \(x_1 > 0\), \(x_2 > 0\), restrição ativa. Todas as condições KKT satisfeitas.
 
-    **Passo 3 — Caso \(m = 0{,}5\) (solução de canto)**
+    **Passo 3 — Caso \(I = 0{,}5\) (solução de canto)**
 
-    Se \(x_2 > 0\), então \(\lambda = 1\) e \(x_1 = 1/16\), exigindo gasto de \(4 \times 1/16 = 0{,}25\). Sobraria \(x_2 = 0{,}25\). Mas verifiquemos: com \(m = 0{,}5\), o consumidor pode alocar tudo em \(x_1\): \(x_1 = 0{,}5/4 = 0{,}125\), obtendo \(U = 2\sqrt{0{,}125} \approx 0{,}707\). Ou alocar como na solução interior: \(U = 2\sqrt{1/16} + 0{,}25 = 0{,}5 + 0{,}25 = 0{,}75\). A solução interior é melhor.
+    Se \(x_2 > 0\), então \(\lambda = 1\) e \(x_1 = 1/16\), exigindo gasto de \(4 \times 1/16 = 0{,}25\). Sobraria \(x_2 = 0{,}25\). Mas verifiquemos: com \(I = 0{,}5\), o consumidor pode alocar tudo em \(x_1\): \(x_1 = 0{,}5/4 = 0{,}125\), obtendo \(U = 2\sqrt{0{,}125} \approx 0{,}707\). Ou alocar como na solução interior: \(U = 2\sqrt{1/16} + 0{,}25 = 0{,}5 + 0{,}25 = 0{,}75\). A solução interior é melhor.
 
-    De fato, com \(m = 0{,}5\), a solução interior \(x_1 = 1/16\), \(x_2 = 0{,}25\) é viável e satisfaz as KKT. A solução de canto (\(x_2 = 0\)) só ocorreria se a renda fosse menor que \(0{,}25\), pois o gasto mínimo em \(x_1\) na solução interior é \(1/4\).
+    De fato, com \(I = 0{,}5\), a solução interior \(x_1 = 1/16\), \(x_2 = 0{,}25\) é viável e satisfaz as KKT. A solução de canto (\(x_2 = 0\)) só ocorreria se a renda fosse menor que \(0{,}25\), pois o gasto mínimo em \(x_1\) na solução interior é \(1/4\).
 
-    **Resultado:** Para \(m = 20\): \((x_1^*, x_2^*) = (1/16,\ 19{,}75)\). Para \(m = 0{,}5\): \((x_1^*, x_2^*) = (1/16,\ 0{,}25)\). A solução de canto (\(x_2 = 0\)) ocorre para \(m < 0{,}25\).
+    **Resultado:** Para \(I = 20\): \((x_1^*, x_2^*) = (1/16,\ 19{,}75)\). Para \(I = 0{,}5\): \((x_1^*, x_2^*) = (1/16,\ 0{,}25)\). A solução de canto (\(x_2 = 0\)) ocorre para \(I < 0{,}25\).
 
-    **Interpretação econômica:** A utilidade quase-linear implica que a demanda por \(x_1\) é independente da renda (quando a solução é interior): \(x_1^* = 1/16\) para qualquer \(m \geq 0{,}25\). Todo aumento de renda é absorvido por \(x_2\). Isso é uma propriedade importante: com preferências quase-lineares, não há efeito-renda sobre o bem \(x_1\), simplificando a análise de bem-estar — o excedente do consumidor é uma medida exata da variação de utilidade.
+    **Interpretação econômica:** A utilidade quase-linear implica que a demanda por \(x_1\) é independente da renda (quando a solução é interior): \(x_1^* = 1/16\) para qualquer \(I \geq 0{,}25\). Todo aumento de renda é absorvido por \(x_2\). Isso é uma propriedade importante: com preferências quase-lineares, não há efeito-renda sobre o bem \(x_1\), simplificando a análise de bem-estar — o excedente do consumidor é uma medida exata da variação de utilidade.
 
 ---
 
 ## Exercícios
+
+Os exercícios abaixo progridem do cálculo diferencial básico (otimização de funções de uma variável) até aplicações mais avançadas (Lagrange, Kuhn-Tucker, teorema do envelope). Procure identificar, em cada exercício, qual ferramenta matemática é a mais adequada e como os resultados admitem interpretação econômica.
 
 **Exercício 2.1.** Considere a função \(f(x) = 12x - 3x^2 + 2x^3 - \frac{1}{4}x^4\).
 
@@ -702,15 +766,15 @@ c) Identifique o máximo global no intervalo \([0, 4]\).
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-1)
 
-**Exercício 2.2.** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\) e enfrenta preços \(p_1\) e \(p_2\) com renda \(m\).
+**Exercício 2.2.** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\) e enfrenta preços \(p_1\) e \(p_2\) com renda \(I\).
 
 a) Formule o Lagrangeano do problema de maximização de utilidade.
 
 b) Derive as condições de primeira ordem.
 
-c) Obtenha as funções de demanda marshallianas \(x_1^*(p_1, p_2, m)\) e \(x_2^*(p_1, p_2, m)\).
+c) Obtenha as funções de demanda marshallianas \(x_1^*(p_1, p_2, I)\) e \(x_2^*(p_1, p_2, I)\).
 
-d) Verifique que as funções de demanda são homogêneas de grau 0 em \((p_1, p_2, m)\).
+d) Verifique que as funções de demanda são homogêneas de grau 0 em \((p_1, p_2, I)\).
 
 e) Interprete economicamente o multiplicador de Lagrange \(\lambda^*\).
 
@@ -740,17 +804,17 @@ d) Interprete economicamente o sinal de cada derivada.
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-4)
 
-**Exercício 2.5 (Kuhn-Tucker).** Um consumidor tem utilidade \(U(x_1, x_2) = \ln(x_1) + x_2\) (preferências quase-lineares), preços \(p_1 = 2\) e \(p_2 = 1\), e renda \(m\).
+**Exercício 2.5 (Kuhn-Tucker).** Um consumidor tem utilidade \(U(x_1, x_2) = \ln(x_1) + x_2\) (preferências quase-lineares), preços \(p_1 = 2\) e \(p_2 = 1\), e renda \(I\).
 
 a) Formule o problema com restrição de não-negatividade e restrição orçamentária de desigualdade.
 
 b) Escreva as condições de Kuhn-Tucker.
 
-c) Para \(m = 10\), encontre a solução ótima e verifique todas as condições KKT.
+c) Para \(I = 10\), encontre a solução ótima e verifique todas as condições KKT.
 
-d) Para \(m = 0{,}3\), mostre que a solução envolve \(x_2 = 0\) (solução de canto) e encontre \(x_1^*\).
+d) Para \(I = 0{,}3\), mostre que a solução envolve \(x_2 = 0\) (solução de canto) e encontre \(x_1^*\).
 
-e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir quantidades positivas de ambos os bens?
+e) Qual o valor mínimo de \(I\) a partir do qual o consumidor passa a adquirir quantidades positivas de ambos os bens?
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-5)
 

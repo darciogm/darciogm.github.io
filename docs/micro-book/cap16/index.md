@@ -34,6 +34,8 @@ A escolha da variável estratégica não é trivial e produz resultados dramatic
 
 ## 16.2 Modelo de Bertrand: concorrência em preços
 
+Comecemos pela pergunta mais natural: o que acontece quando duas firmas com produtos idênticos competem em preços? O modelo de Bertrand oferece uma resposta surpreendente e, à primeira vista, desconcertante — tão surpreendente que ficou conhecida como o "paradoxo de Bertrand". Como veremos, bastam duas firmas para que o resultado de mercado se assemelhe ao da concorrência perfeita, um resultado com implicações profundas para a teoria da organização industrial.
+
 ### O modelo básico
 
 Considere duas firmas produzindo um bem **homogêneo** com custo marginal constante \(c\). As firmas escolhem **simultaneamente** seus preços \(p_1\) e \(p_2\). Os consumidores compram da firma com menor preço; se os preços são iguais, a demanda se divide igualmente.
@@ -96,12 +98,14 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 <iframe src="../graficos/cap16/bertrand.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.</em>
+<em>Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.</em>
 </p>
 
 ---
 
 ## 16.3 Modelo de Cournot: concorrência em quantidades
+
+O paradoxo de Bertrand sugere que a concorrência em preços é devastadora para as firmas. Mas e se as firmas competissem em quantidades, em vez de preços? Essa é a pergunta que Antoine Augustin Cournot formulou já em 1838, meio século antes de Bertrand. O modelo de Cournot produz resultados radicalmente diferentes: mesmo com apenas duas firmas, o preço de equilíbrio permanece acima do custo marginal, e ambas obtêm lucros positivos. Essa sensibilidade do resultado à variável de decisão é uma das lições centrais da teoria dos oligopólios.
 
 ### O modelo duopolístico
 
@@ -160,12 +164,14 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 <iframe src="../graficos/cap16/cournot.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.</em>
+<em>Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.</em>
 </p>
 
 ---
 
 ### O modelo de Stackelberg
+
+Nos modelos de Bertrand e Cournot, as firmas tomam decisões simultaneamente — nenhuma observa a escolha da rival antes de agir. Mas em muitos mercados reais, uma firma estabelecida decide antes das demais, e sua decisão é observável e irreversível. Será que mover primeiro confere uma vantagem estratégica? O modelo de Stackelberg responde afirmativamente, formalizando a ideia de que o compromisso crível com uma ação agressiva pode disciplinar o comportamento dos concorrentes.
 
 No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) **primeiro**, e a firma 2 (seguidora) observa \(q_1\) e depois escolhe \(q_2\). O jogo é resolvido por **indução retroativa**.
 
@@ -203,12 +209,14 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 <iframe src="../graficos/cap16/stackelberg.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).</em>
+<em>Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).</em>
 </p>
 
 ---
 
 ## 16.4 Demonstração: Equilíbrio de Cournot com n firmas
+
+Os resultados obtidos para o duopólio de Cournot levantam uma questão natural: como o equilíbrio se comporta à medida que o número de firmas aumenta? A generalização para \(n\) firmas revela uma propriedade notável — o modelo de Cournot interpola continuamente entre os extremos de monopólio e concorrência perfeita, com a intensidade da competição crescendo suavemente no número de participantes.
 
 !!! proof "Demonstração"
     Considere \(n\) firmas idênticas com custo marginal constante \(c\). A demanda inversa é \(p = a - bQ\), onde \(Q = \sum_{i=1}^n q_i\).
@@ -281,6 +289,8 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 ## 16.5 Restrições de capacidade
 
+O paradoxo de Bertrand repousa sobre uma hipótese implícita que merece escrutínio: a de que a firma que cobra o menor preço pode atender toda a demanda do mercado. Na prática, firmas operam com capacidade limitada — não podem duplicar sua produção instantaneamente para capturar todos os clientes da rival. Que consequências essa restrição tem para o equilíbrio? A resposta, formalizada por Edgeworth e depois por Kreps e Scheinkman, estabelece uma ponte surpreendente entre os modelos de Bertrand e Cournot.
+
 ### O argumento de Edgeworth
 
 Edgeworth (1897) observou que, se as firmas têm **capacidade limitada**, o equilíbrio de Bertrand em preços iguais ao custo marginal pode deixar de existir. Quando a firma de preço mais baixo não consegue atender toda a demanda, a firma de preço mais alto retém clientes residuais e pode cobrar acima do custo.
@@ -297,6 +307,8 @@ Esse resultado fornece uma fundamentação microeconômica para o modelo de Cour
 ---
 
 ## 16.6 Diferenciação de produto
+
+Outra forma de escapar ao paradoxo de Bertrand é reconhecer que, na maioria dos mercados, os produtos não são idênticos. Consumidores têm preferências distintas por características como sabor, localização, design ou funcionalidades, e essa heterogeneidade confere às firmas algum grau de poder de mercado mesmo na presença de concorrentes. A diferenciação de produto — horizontal (quando os consumidores discordam sobre qual produto é melhor) ou vertical (quando todos concordam, mas diferem na disposição a pagar pela qualidade) — é talvez a resolução empiricamente mais relevante do paradoxo.
 
 ### Modelo de Hotelling (diferenciação horizontal)
 
@@ -331,6 +343,8 @@ onde \(f\) é o custo fixo de entrada. O número de firmas em equilíbrio é cre
 ---
 
 ## 16.7 Colusão tácita
+
+Os modelos analisados até aqui tratam a interação entre firmas como um jogo de uma única rodada: as firmas tomam suas decisões simultaneamente e o jogo termina. Entretanto, firmas reais competem repetidamente no mercado, período após período. Essa repetição abre a possibilidade de cooperação: firmas podem coordenar-se tacitamente para manter preços elevados, sustentando a cooperação pela ameaça de retaliação futura. Como esse mecanismo funciona, e sob que condições ele é sustentável?
 
 ### Jogos repetidos e sustentação de colusão
 
@@ -399,6 +413,8 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
 ## 16.8 Decisões de longo prazo: investimento, entrada e saída
 
+Os modelos de Bertrand, Cournot e Stackelberg concentram-se em decisões de curto prazo — preço ou quantidade em um mercado com estrutura dada. No longo prazo, porém, as firmas podem alterar a própria estrutura do jogo: investir em capacidade, entrar em novos mercados, desenvolver tecnologias ou adotar posicionamentos estratégicos que mudam as regras da competição futura. Essas decisões de longo prazo são frequentemente mais importantes do que as escolhas de curto prazo, pois definem as condições sob as quais a competição se desenrolará.
+
 No longo prazo, as firmas tomam decisões sobre investimentos em capacidade, P&D, localização e publicidade que afetam as condições de competição nos períodos subsequentes. Essas decisões têm natureza **estratégica**: alteram a estrutura do jogo e, portanto, o comportamento de equilíbrio.
 
 ### Compromisso estratégico
@@ -417,6 +433,8 @@ A estratégia ótima depende de dois fatores: (i) se o investimento torna a firm
 ---
 
 ## 16.9 Dissuasão estratégica de entrada
+
+O conceito de compromisso estratégico adquire especial importância quando o incumbente enfrenta a possibilidade de entrada de um novo concorrente. Nesse contexto, a firma estabelecida pode investir de forma a tornar a entrada não lucrativa para o rival potencial — uma prática conhecida como dissuasão estratégica de entrada. A questão central, contudo, é se essa estratégia é ótima para o incumbente: investir em dissuasão tem custos, e em alguns casos pode ser mais lucrativo simplesmente acomodar a entrada.
 
 ### Sobrecapacidade como barreira
 
@@ -454,6 +472,8 @@ O preço de sinalização é tipicamente **inferior** ao preço de monopólio de
 
 ## 16.11 Quantas firmas entram? Entrada livre em Cournot
 
+As seções anteriores trataram o número de firmas como dado. Mas em mercados com entrada livre, o próprio número de competidores é uma variável endógena, determinada pela condição de lucro zero no equilíbrio de longo prazo. Quantas firmas o mercado comporta? E o número de firmas que efetivamente entram é socialmente ótimo, ou há excesso de entrada?
+
 ### Número de firmas em equilíbrio
 
 Se a entrada é livre mas sujeita a custo fixo \(f\), as firmas entram até que o lucro líquido seja zero. Usando os resultados da Seção 16.4 (Cournot com \(n\) firmas):
@@ -477,6 +497,8 @@ Mankiw e Whinston (1986) demonstraram que, sob condições gerais, o equilíbrio
 ---
 
 ## 16.12 Inovação sob oligopólio
+
+Para encerrar a análise do oligopólio, abordamos uma dimensão que transcende as decisões de preço e quantidade: a inovação tecnológica. Será que firmas em mercados concentrados investem mais ou menos em pesquisa e desenvolvimento do que firmas em mercados competitivos? A resposta envolve um confronto entre duas forças opostas, identificadas respectivamente por Arrow e por Gilbert e Newbery, cuja resultante depende das características específicas de cada mercado.
 
 ### Incentivos à inovação
 
@@ -564,14 +586,40 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 <iframe src="../graficos/cap16/comparacao-oligopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.</em>
+<em>Figura 16.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.</em>
 </p>
+
+---
+
+## Resumo do Capítulo
+
+- O oligopólio é caracterizado pela interdependência estratégica: o lucro de cada firma depende das decisões das rivais, exigindo o uso da teoria dos jogos para a análise do equilíbrio.
+- No modelo de Bertrand (concorrência em preços com produtos homogêneos), bastam duas firmas para reproduzir o resultado competitivo (preço igual ao custo marginal e lucro zero) — o paradoxo de Bertrand. A diferenciação de produto, restrições de capacidade e interação repetida resolvem esse paradoxo.
+- No modelo de Cournot (concorrência em quantidades), o equilíbrio produz preços acima do custo marginal, com resultados intermediários entre monopólio e concorrência perfeita. À medida que o número de firmas cresce, o equilíbrio converge para o resultado competitivo.
+- No modelo de Stackelberg (jogo sequencial em quantidades), o líder obtém vantagem do primeiro movimento ao se comprometer com uma quantidade elevada, forçando a seguidora a se acomodar.
+- A colusão tácita pode ser sustentada em jogos repetidos por meio de estratégias de gatilho, desde que o fator de desconto seja suficientemente alto. Fatores como poucas firmas, interação frequente e transparência de preços facilitam a coordenação.
+- Decisões de longo prazo como investimento em capacidade, dissuasão estratégica de entrada e inovação ampliam a análise para além dos modelos estáticos, com a taxonomia de Fudenberg-Tirole orientando a escolha entre estratégias agressivas e acomodatórias.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Interdependência estratégica | Situação em que o lucro de cada firma depende das decisões de todas as rivais, exigindo análise via equilíbrio de Nash |
+| Paradoxo de Bertrand | Resultado de que duas firmas com produtos homogêneos e custos iguais competindo em preços geram preço igual ao custo marginal e lucro zero |
+| Equilíbrio de Cournot | Equilíbrio de Nash em que cada firma escolhe a quantidade que maximiza seu lucro dada a quantidade da rival, com preços acima do custo marginal |
+| Função de reação (melhor resposta) | Função que indica a quantidade (ou preço) ótima de uma firma para cada nível de decisão da rival |
+| Substitutos e complementos estratégicos | Quantidades são substitutos estratégicos (melhor resposta decrescente); preços diferenciados são tipicamente complementos estratégicos (melhor resposta crescente) |
+| Modelo de Stackelberg | Jogo sequencial em que o líder escolhe primeiro e obtém vantagem do primeiro movimento (first-mover advantage) |
+| Colusão tácita | Coordenação de preços acima do competitivo sustentada por interação repetida e ameaça de retaliação, sem acordo explícito |
+| Estratégia de gatilho (grim trigger) | Estratégia em que firmas cooperam enquanto todas cooperam, mas revertem permanentemente ao equilíbrio de Nash se alguém desviar |
+| Modelo de Hotelling | Modelo de diferenciação horizontal em que firmas se localizam em um espaço de características e consumidores incorrem em custos de transporte |
+| Dissuasão estratégica de entrada | Uso de investimento em capacidade ou preços-limite para tornar a entrada de rivais não lucrativa |
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 1 — Equilíbrio de Cournot com custos assimétricos"
+??? example "Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
     **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
 
     **Resolução.**
@@ -640,7 +688,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
 
-??? example "Exercício Resolvido 2 — Stackelberg com custos simétricos"
+??? example "Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
     **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
 
     **Resolução.**
@@ -685,7 +733,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
 
-??? example "Exercício Resolvido 3 — Sustentação de colusão com trigger strategy"
+??? example "Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
     **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
 
     **Resolução.**
@@ -722,7 +770,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ## Exercícios
 
-??? example "Exercício 1"
+??? example "Exercício 16.1"
     Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
 
     a) Encontre as funções de reação de cada firma.
@@ -731,9 +779,9 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Compare com o resultado que seria obtido se ambas as firmas tivessem \(c = 20\). A assimetria de custos aumenta ou reduz o excedente total?
 
-    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-1)
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-1)
 
-??? example "Exercício 2"
+??? example "Exercício 16.2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
     a) Encontre as funções de reação em preços.
@@ -742,9 +790,9 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Mostre que os preços de equilíbrio são superiores ao custo marginal (resolvendo o paradoxo de Bertrand).
 
-    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-2)
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-2)
 
-??? example "Exercício 3"
+??? example "Exercício 16.3"
     Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
 
     a) Encontre preço, quantidade por firma e lucro por firma em função de \(n\).
@@ -753,9 +801,9 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Calcule o número socialmente ótimo de firmas (que maximiza o excedente total menos os custos fixos totais). Há excesso de entrada?
 
-    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-3)
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-3)
 
-??? example "Exercício 4"
+??? example "Exercício 16.4"
     Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
 
     a) Calcule o preço de monopólio e o lucro de monopólio dividido.
@@ -764,9 +812,9 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Como o resultado se altera se há três firmas ao invés de duas?
 
-    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-4)
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-4)
 
-??? example "Exercício 5"
+??? example "Exercício 16.5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 
     a) Encontre a função de reação da seguidora.
@@ -775,7 +823,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Compare com o equilíbrio de Cournot (simultâneo) com os mesmos custos assimétricos. Qual estrutura gera maior excedente total?
 
-    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-5)
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-5)
 
 ---
 
@@ -827,11 +875,11 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
         A firma 2 maximiza \(\pi_2 = (20 - q_1 - q_2)q_2 - \frac{3}{2}q_2^2\). CPO: \(20 - q_1 - 2q_2 - 3q_2 = 0 \implies 20 - q_1 - 5q_2 = 0 \implies q_2^* = (20 - q_1)/5 = 4 - q_1/5\).
 
-        **(0) Verdadeiro.** Se \(q_2 = 3\): \(q_1^* = 9 - 3/2 = 15/2\). Hmm, isso dá 7,5, não 6. Recalculando: \(q_1^* = (18 - 3)/2 = 15/2 = 7{,}5\). Porém, verificando novamente a CPO da firma 1: \(\pi_1 = (20 - q_1 - q_2 - 2)q_1 = (18 - q_1 - q_2)q_1\). CPO: \(18 - 2q_1 - q_2 = 0\), \(q_1 = (18-q_2)/2\). Se \(q_2=3\), \(q_1 = 15/2 = 7{,}5\). No entanto, o gabarito oficial marca este item como **Verdadeiro**. Reanalisando a demanda: se \(P = 20 - Q\), com custo marginal 2, a BR1 é \(q_1 = (18-q_2)/2\). Com \(q_2=3\), \(q_1 = 7{,}5\). Possível interpretação: \(C_1 = 2q_1^2\) (custo quadrático). Nesse caso, CPO: \(20 - 2q_1 - q_2 - 4q_1 = 0 \implies q_1 = (20-q_2)/6\). Se \(q_2=3\): \(q_1=17/6\approx 2{,}83\). Também não dá 6. Outra interpretação: \(C_1 = 2q_1\), custo marginal 2. CPO: \(18-2q_1-q_2=0\). Possível que a demanda seja \(P=20-Q\) com \(Q=q_1+q_2\) e custo \(C_1 = 2q_1\). BR1: \(q_1=(18-q_2)/2\). Para \(q_1=6\) quando \(q_2=3\), precisaríamos \(6=(18-3)/2=7{,}5\). Conforme gabarito oficial, o item é **Verdadeiro**, sugerindo formulação ligeiramente diferente na prova original.
+        **(0) Verdadeiro.** Pela função de melhor resposta da firma 1, \(q_1^* = (18 - q_2)/2\). Com \(q_2 = 3\), obtemos \(q_1^* = 15/2 = 7{,}5\), o que difere do valor 6 indicado no enunciado. Conforme gabarito oficial, o item é **Verdadeiro**; a discrepância sugere diferença na formulação exata da prova original em relação à extração do PDF utilizada aqui.
 
         **(1) Falso.** A melhor resposta da firma 2 a \(q_1=6\) é \(q_2 = (20-6)/5 = 14/5 = 2{,}8 \neq 3\).
 
-        **(2) Verdadeiro.** No equilíbrio, resolvendo o sistema: \(q_1 = (18-q_2)/2\) e \(q_2 = (20-q_1)/5\). Substituindo: \(q_2 = (20 - (18-q_2)/2)/5 = (40-18+q_2)/(10) = (22+q_2)/10\). Logo \(9q_2 = 22\), \(q_2 = 22/9 \approx 2{,}4\). Isso não dá \((5,5)\). Conforme gabarito oficial, o item é **Verdadeiro** — a formulação exata da prova pode diferir ligeiramente da extração do PDF.
+        **(2) Verdadeiro.** Resolvendo o sistema \(q_1 = (18-q_2)/2\) e \(q_2 = (20-q_1)/5\), obtemos \(q_2 = 22/9 \approx 2{,}4\) e \(q_1 = (18 - 22/9)/2 = 70/9 \approx 7{,}8\), o que difere do par \((5, 5)\) indicado no enunciado. Conforme gabarito oficial, o item é **Verdadeiro**; a discrepância decorre de possível diferença na formulação exata da prova original em relação à extração do PDF utilizada aqui.
 
         **(3) Falso.** Gabarito oficial.
 

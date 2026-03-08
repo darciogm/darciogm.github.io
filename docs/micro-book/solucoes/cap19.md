@@ -135,7 +135,7 @@ Se o esforço é observável, basta satisfazer a RP. O principal pode oferecer s
 
 **Custo second-best:** \( C^{SB} = 36{,}64 \).
 
-A diferença \( 36{,}64 - 36 = 0{,}64 \) é o **custo da assimetria informacional** (ou "custo de agência"). Ele surge porque, para incentiva o agente, o principal precisa expô-lo a risco (\( w_H \neq w_L \)), o que é custoso dado que o agente é avesso ao risco (\( U = \sqrt{w} \) é côncava).
+A diferença \( 36{,}64 - 36 = 0{,}64 \) é o **custo da assimetria informacional** (ou "custo de agência"). Ele surge porque, para incentivar o agente, o principal precisa expô-lo a risco (\( w_H \neq w_L \)), o que é custoso dado que o agente é avesso ao risco (\( U = \sqrt{w} \) é côncava).
 
 ---
 

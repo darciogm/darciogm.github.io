@@ -10,6 +10,8 @@ Este módulo cobre jogos bayesianos estáticos e sua principal aplicação: a **
 
 ## 9c.1 Informação Incompleta e Tipos
 
+Como modelar formalmente uma situação em que os jogadores não conhecem as características uns dos outros? A solução engenhosa de Harsanyi consiste em introduzir um novo "jogador" — a natureza — que sorteia, no início do jogo, um perfil de *tipos* para os participantes. Cada jogador observa apenas o próprio tipo, mas conhece a distribuição de probabilidade sobre os tipos dos demais. Com essa reformulação, o jogo com informação incompleta se transforma em um jogo com informação imperfeita, passível de análise com as ferramentas já desenvolvidas.
+
 !!! definition "Jogo Bayesiano"
     Um **jogo Bayesiano** é definido por:
 
@@ -19,11 +21,13 @@ Este módulo cobre jogos bayesianos estáticos e sua principal aplicação: a **
 
     onde \(\Theta_i\) é o conjunto de tipos do jogador \(i\), \(u_i(s, \theta)\) é o payoff, e \(p(\theta)\) é a distribuição conjunta sobre o perfil de tipos (prior comum).
 
-A transformação de Harsanyi converte um jogo com informação incompleta em um jogo com informação imperfeita (mas completa): a "natureza" sorteia os tipos, cada jogador observa apenas o próprio tipo, e o jogo prossegue como um jogo simultâneo em que cada tipo é tratado como um "jogador" separado.
+A transformação de Harsanyi converte um jogo com informação incompleta em um jogo com informação imperfeita (mas completa): a "natureza" sorteia os tipos, cada jogador observa apenas o próprio tipo, e o jogo prossegue como um jogo simultâneo em que cada tipo é tratado como um "jogador" separado. O que antes era genuína ignorância sobre a estrutura do jogo torna-se meramente incerteza sobre um lance aleatório — algo que as ferramentas probabilísticas podem tratar rigorosamente.
 
 ---
 
 ## 9c.2 Equilíbrio Bayesiano de Nash
+
+Com a estrutura do jogo bayesiano definida, qual é o conceito de equilíbrio apropriado? A resposta natural é exigir que cada *tipo* de cada jogador maximize seu payoff esperado, condicionando na sua informação privada e nas estratégias de equilíbrio dos demais. Essa extensão do equilíbrio de Nash ao contexto bayesiano — o Equilíbrio Bayesiano de Nash (BNE) — é a contribuição central de Harsanyi.
 
 !!! definition "Equilíbrio de Nash Bayesiano"
     Um perfil de estratégias \(\sigma^* = (\sigma_1^*, \ldots, \sigma_n^*)\), onde \(\sigma_i^*: \Theta_i \to \Delta(S_i)\), é um BNE se, para todo \(i\) e todo \(\theta_i \in \Theta_i\):
@@ -47,7 +51,7 @@ A transformação de Harsanyi converte um jogo com informação incompleta em um
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Em jogos bayesianos, cada jogador usa sua informação privada para extrair vantagem, mas o equilíbrio incorpora essa assimetria.
 
-    **Pense assim:** Num leilão de arte, você sabe quanto o quadro vale para você, mas não para os outros. Se lancar seu valor verdadeiro num leilão de primeiro preço, paga demais quando ganha. O equilíbrio envolve *bid shading* — lancar abaixo do valor. Mas num leilão de segundo preço (Vickrey), lancar o valor verdadeiro é estratégia dominante!
+    **Pense assim:** Num leilão de arte, você sabe quanto o quadro vale para você, mas não para os outros. Se lançar seu valor verdadeiro num leilão de primeiro preço, paga demais quando ganha. O equilíbrio envolve *bid shading* — lançar abaixo do valor. Mas num leilão de segundo preço (Vickrey), lançar o valor verdadeiro é estratégia dominante!
 
     **Por que isso importa:** O desenho do mecanismo (formato do leilão, regra de pagamento) determina se os participantes revelam informação verdadeira ou estratégica. A ANP e a ANEEL precisam escolher formatos que maximizem receita e eficiência nos leilões de petróleo e energia.
 
@@ -55,11 +59,13 @@ A transformação de Harsanyi converte um jogo com informação incompleta em um
 
 ## 9c.3 Leilões de Valor Privado
 
+A aplicação mais importante dos jogos bayesianos estáticos é a teoria de leilões. Em um leilão, cada participante possui informação privada sobre seu próprio valor pelo objeto e deve decidir quanto oferecer sem conhecer os valores dos concorrentes — um jogo bayesiano por excelência.
+
 ### Modelo básico: IPV (Valores Privados Independentes)
 
 \(N\) licitantes com valores \(v_i\) sorteados independentemente de \(F\) no intervalo \([0, \bar{v}]\). Cada licitante conhece \(v_i\) mas não os valores dos demais.
 
-**Leilão de segundo preço (Vickrey):** O licitante com o maior lance ganha e paga o *segundo* maior lance. Lancar \(b_i = v_i\) é **estratégia fracamente dominante** — não depende das crenças sobre os outros.
+**Leilão de segundo preço (Vickrey):** O licitante com o maior lance ganha e paga o *segundo* maior lance. Lançar \(b_i = v_i\) é **estratégia fracamente dominante** — não depende das crenças sobre os outros.
 
 !!! proof "Demonstração: Verdade é ótimo no leilão de Vickrey"
     Seja \(b_i = v_i\) o lance do jogador \(i\) e \(b_{(1)}^{-i}\) o maior lance dos demais. Se \(b_i > b_{(1)}^{-i}\), \(i\) ganha e paga \(b_{(1)}^{-i}\), obtendo \(v_i - b_{(1)}^{-i} \geq 0\). Suponha que \(i\) desvie:
@@ -69,13 +75,15 @@ A transformação de Harsanyi converte um jogo com informação incompleta em um
 
     Portanto, \(b_i = v_i\) é fracamente dominante. \(\blacksquare\)
 
+No leilão de Vickrey, portanto, a verdade é ótima independentemente do que os outros fazem. Mas e quando o vencedor paga seu *próprio* lance? Nesse caso, lançar o valor verdadeiro seria desastroso, e a estratégia ótima exige *sombreamento*.
+
 **Leilão de primeiro preço:** O vencedor paga seu próprio lance. BNE simétrico com \(v_i \sim U[0, \bar{v}]\):
 
 \[
 b(v) = v \cdot \frac{N-1}{N}
 \]
 
-Cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, o lance é metade do valor; com muitos, converge para o valor verdadeiro.
+Cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, o lance é metade do valor; com muitos, converge para o valor verdadeiro. Com mais concorrentes, o risco de perder o leilão aumenta e o sombreamento diminui — no limite, com infinitos licitantes, cada um lança (quase) seu valor verdadeiro.
 
 **Receita esperada:** Com \(v_i \sim U[0, 1]\):
 
@@ -84,6 +92,8 @@ E[\text{Receita}] = \frac{N-1}{N+1}
 \]
 
 ### Teorema da Equivalência de Receita
+
+Os leilões de primeiro e segundo preço parecem radicalmente distintos. As receitas deveriam diferir, certo? Surpreendentemente, não: sob condições bastante gerais, a receita esperada é *idêntica* em todos os formatos padrão.
 
 !!! abstract "Revenue Equivalence Theorem (Myerson, 1981; Riley e Samuelson, 1981)"
     Com licitantes simétricos, IPV, risco-neutros, e qualquer mecanismo que (i) atribui o objeto ao licitante com maior valor e (ii) dá payoff zero ao tipo mais baixo, a **receita esperada** do leiloeiro é a mesma.
@@ -94,6 +104,8 @@ E[\text{Receita}] = \frac{N-1}{N+1}
     A equivalência de receita falha com: (i) aversão ao risco (1º preço gera mais receita); (ii) assimetria entre licitantes; (iii) valores afiliados/comuns; (iv) colusão. Nesses casos, o formato do leilão importa — e o desenho ótimo de mecanismo (Myerson, 1981) se torna relevante.
 
 ### Leilões de valor comum e a maldição do vencedor
+
+Até aqui, assumimos valores privados. Em muitos contextos, porém, o objeto tem um valor *comum* que ninguém conhece com certeza — em leilões de petróleo, por exemplo, o volume de óleo é o mesmo para qualquer empresa, mas cada uma tem sua estimativa. Essa mudança de premissa introduz um fenômeno perverso.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Em leilões de valor comum, ganhar é uma má notícia — significa que você estimou o valor mais alto que todos.
@@ -108,16 +120,20 @@ E[\text{Receita}] = \frac{N-1}{N+1}
 
 ## 9c.4 Desenho de Mecanismos
 
+A teoria de leilões levanta uma pergunta mais ampla: se a receita depende do formato, qual formato é *ótimo*? Mais geralmente, dado o resultado desejado, qual "jogo" o implementa? Essa inversão — do equilíbrio ao desenho — é o campo do *desenho de mecanismos*.
+
 !!! definition "Princípio da Revelação"
     Para qualquer mecanismo e qualquer BNE desse mecanismo, existe um mecanismo de **revelação direta** (onde cada agente simplesmente reporta seu tipo) em que reportar verdadeiramente é um BNE e que produz o mesmo resultado.
 
     Implicação prática: ao buscar o mecanismo ótimo, basta considerar mecanismos de revelação direta com compatibilidade de incentivos.
 
-O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado o jogo, qual é o equilíbrio?", pergunta-se "dado o resultado desejado, qual jogo gera esse resultado em equilíbrio?"
+O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado o jogo, qual é o equilíbrio?", pergunta-se "dado o resultado desejado, qual jogo gera esse resultado em equilíbrio?" Essa inversão é profundamente prática: o regulador que projeta um leilão, o governo que desenha uma licitação, a empresa que cria um processo seletivo — todos estão fazendo desenho de mecanismos. O Princípio da Revelação simplifica a tarefa ao mostrar que basta considerar mecanismos nos quais os participantes reportam seus tipos — desde que dizer a verdade seja ótimo.
 
 ---
 
 ## Box Brasil: Leilões da ANP e da ANEEL
+
+Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lances, maldição do vencedor e desenho de mecanismos — estão longe de ser abstrações acadêmicas. No Brasil, bilhões de reais são alocados anualmente por meio de leilões cujos formatos refletem diretamente as preocupações da teoria.
 
 !!! example "Box Brasil — Leilões de petróleo e energia: quando o formato importa"
     O Brasil utiliza leilões em setores estratégicos onde a teoria de leilões tem aplicação direta:
@@ -141,6 +157,8 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 ---
 
 ## Box Brasil: Licitações Públicas e Colusão
+
+Se os leilões de petróleo e energia ilustram o lado virtuoso da competição entre licitantes, as licitações públicas revelam o lado sombrio: quando os participantes se coordenam para suprimir a competição, os leilões podem se tornar instrumentos de extração de renda pública — exatamente o oposto do que a teoria prescreve.
 
 !!! example "Box Brasil — Cartéis em licitações: o outro lado dos leilões"
     Leilões de compras governamentais (licitações) são vulneráveis a colusão entre licitantes — o oposto do que a teoria competitiva prevê.
@@ -170,6 +188,31 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
       <iframe src="../graficos/cap09/webr-auction.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
       <figcaption markdown="span"><strong>R Interativo 9c.1</strong> — Simulação Monte Carlo de leilões de 1º e 2º preço. Altere <code>N</code> (licitantes) e <code>n_sim</code> (simulações) para explorar o Teorema da Equivalência de Receita.</figcaption>
     </figure>
+
+---
+
+## Resumo do Capítulo
+
+- Jogos com **informação incompleta** modelam situações em que os jogadores não conhecem plenamente as características dos demais (payoffs, custos, tipo). A transformação de Harsanyi converte essa incerteza em um jogo bayesiano com "tipos" privados sorteados pela natureza.
+- O conceito de equilíbrio é o **Equilíbrio Bayesiano de Nash (BNE)**: cada tipo de cada jogador maximiza seu payoff esperado, condicionando nas crenças sobre os tipos dos outros e nas estratégias de equilíbrio dos demais.
+- Em **leilões de valor privado**, a estratégia ótima depende do formato: no leilão de segundo preço (Vickrey), lançar o valor verdadeiro é estratégia fracamente dominante; no de primeiro preço, licitantes "sombreiam" seus lances por um fator \((N-1)/N\).
+- O **Teorema da Equivalência de Receita** estabelece que, sob hipóteses padrão (simetria, IPV, risco-neutralidade), todos os formatos de leilão que atribuem o objeto ao maior valor geram a mesma receita esperada.
+- Em **leilões de valor comum**, a **maldição do vencedor** faz com que o ganhador tenda a superestimar o valor do objeto, exigindo sombreamento adicional dos lances.
+- O **desenho de mecanismos** inverte a pergunta da teoria dos jogos: dado o resultado desejado, qual jogo o implementa em equilíbrio? O Princípio da Revelação simplifica a busca ao limitar a análise a mecanismos de revelação direta.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Jogo bayesiano | Jogo em que cada jogador possui um tipo privado sorteado pela natureza, com payoffs que dependem do perfil de tipos. |
+| Transformação de Harsanyi | Técnica que converte um jogo com informação incompleta em um jogo com informação imperfeita, introduzindo a natureza como jogador que sorteia tipos. |
+| Equilíbrio Bayesiano de Nash (BNE) | Perfil de estratégias (funções do tipo) em que cada tipo maximiza o payoff esperado, dadas as crenças e estratégias dos demais. |
+| Valores Privados Independentes (IPV) | Modelo em que cada licitante conhece apenas seu próprio valor, sorteado independentemente dos demais. |
+| Leilão de segundo preço (Vickrey) | Leilão em que o vencedor paga o segundo maior lance; lançar o valor verdadeiro é estratégia fracamente dominante. |
+| Leilão de primeiro preço | Leilão em que o vencedor paga seu próprio lance; o BNE envolve sombreamento (\(bid\,shading\)) do lance abaixo do valor. |
+| Teorema da Equivalência de Receita | Sob IPV, simetria e risco-neutralidade, todos os formatos de leilão padrão geram a mesma receita esperada. |
+| Maldição do vencedor | Fenômeno em leilões de valor comum: o vencedor tende a ser o licitante mais otimista, pagando acima do valor real. |
+| Princípio da Revelação | Para qualquer mecanismo e BNE, existe um mecanismo de revelação direta equivalente em que reportar o tipo verdadeiro é equilíbrio. |
 
 ---
 
@@ -221,7 +264,7 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
 ---
 
-**Exercício 9c.3.** (Maldição do vencedor) Três empresas licitam por um bloco de petróleo cujo valor verdadeiro é \(V = 100\). Cada empresa observa um sinal \(s_i = V + \varepsilon_i\), onde \(\varepsilon_i \sim U[-20, 20]\) independentes. Se cada empresa lancar seu sinal, qual é o lucro esperado do vencedor? Como o lance ótimo deveria ser ajustado?
+**Exercício 9c.3.** (Maldição do vencedor) Três empresas licitam por um bloco de petróleo cujo valor verdadeiro é \(V = 100\). Cada empresa observa um sinal \(s_i = V + \varepsilon_i\), onde \(\varepsilon_i \sim U[-20, 20]\) independentes. Se cada empresa lançar seu sinal, qual é o lucro esperado do vencedor? Como o lance ótimo deveria ser ajustado?
 
 [:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-3)
 

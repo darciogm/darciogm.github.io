@@ -15,7 +15,7 @@ Mas antes de mergulhar na análise formal, vale perguntar: **por que existem fir
 !!! definition "Custos de transação (Coase)"
     Segundo **Ronald Coase** (1937), firmas existem porque a utilização do mecanismo de mercado (sistema de preços) envolve **custos de transação**: custos de busca, negociação, elaboração e execução de contratos. Quando esses custos são suficientemente elevados, torna-se mais eficiente organizar a produção dentro de uma firma — sob uma hierarquia administrativa — do que coordenar tudo via transações de mercado.
 
-A firma, portanto, é uma resposta institucional à existência de custos de transação. Sua fronteira — isto é, quais atividades são realizadas internamente e quais são contratadas no mercado — é determinada pela comparação entre custos de transação e custos de organização interna.
+A firma, portanto, é uma resposta institucional à existência de custos de transação. Sua fronteira — isto é, quais atividades são realizadas internamente e quais são contratadas no mercado — é determinada pela comparação entre custos de transação e custos de organização interna. Esse insight simples mas profundo transforma a firma de uma "caixa-preta" que recebe insumos e produz outputs em uma instituição viva, cujas fronteiras se expandem ou se contraem conforme mudam as condições econômicas e regulatórias.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Firmas existem porque negociar tudo no mercado tem um custo — e às vezes sai mais barato resolver as coisas "dentro de casa".
@@ -50,11 +50,13 @@ Na análise microeconômica padrão, assume-se que a firma busca **maximizar o l
 \pi = RT - CT = p \cdot q - C(q)
 \]
 
-Embora existam teorias alternativas — maximização de receita (Baumol), maximização da utilidade gerencial (Williamson), satisfação (*satisficing*, Simon) —, a maximização de lucro permanece como a hipótese de trabalho dominante por sua tratabilidade analítica e por gerar predições empiricamente testáveis.
+Embora existam teorias alternativas — maximização de receita (Baumol), maximização da utilidade gerencial (Williamson), satisfação (*satisficing*, Simon) —, a maximização de lucro permanece como a hipótese de trabalho dominante por sua tratabilidade analítica e por gerar predições empiricamente testáveis. Cabe perguntar: essa hipótese é realista? Em empresas com separação entre propriedade e controle — como as grandes corporações listadas na B3 —, os gerentes podem perseguir seus próprios interesses em vez de maximizar o lucro dos acionistas. Contudo, a pressão competitiva nos mercados de produtos, o mercado de capitais e a ameaça de aquisição hostil tendem a disciplinar os gestores, aproximando o comportamento observado do modelo de maximização de lucro.
 
 ---
 
 ## 12.2 Maximização de Lucro
+
+Tendo estabelecido que a maximização de lucro é o objetivo da firma, precisamos agora traduzir esse objetivo em condições operacionais. Quais são as regras práticas que uma firma deve seguir para encontrar a quantidade que maximiza seu lucro? E como verificar que se trata de fato de um máximo, e não de um mínimo? As condições de primeira e segunda ordem respondem a essas perguntas.
 
 ### Condições de primeira ordem
 
@@ -94,7 +96,7 @@ Para que \(q^*\) seja um máximo (e não um mínimo), exige-se:
 \frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \implies \frac{d\mathrm{RMg}}{dq}\bigg|_{q^*} < \frac{d\mathrm{CMg}}{dq}\bigg|_{q^*}
 \]
 
-Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**.
+Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**. Essa condição é frequentemente negligenciada na resolução de exercícios, mas é essencial: se o CMg cruzar o RMg de cima para baixo, o ponto corresponde a um *mínimo* de lucro, não a um máximo. Em provas da ANPEC, a condição de segunda ordem é cobrada com frequência, especialmente quando a função de custo ou de demanda é não linear.
 
 ### Maximização de lucro com dois insumos
 
@@ -114,15 +116,17 @@ p \cdot f_L = w \implies \text{VPMg}_L = w
 p \cdot f_K = r \implies \text{VPMg}_K = r
 \]
 
-onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser empregado até o ponto em que o valor de sua contribuição marginal ao produto iguala seu preço.
+onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser empregado até o ponto em que o valor de sua contribuição marginal ao produto iguala seu preço. Em termos concretos: a firma contrata trabalhadores enquanto o valor do que cada trabalhador adicional produz (\(p \cdot f_L\)) superar o salário que ela precisa pagar (\(w\)). No ponto ótimo, o último trabalhador contratado gera receita adicional exatamente igual ao seu salário — e o mesmo vale para o capital.
 
 ---
 
 ## 12.3 Receita Marginal e Elasticidade
 
+A condição de maximização de lucro — igualar receita marginal a custo marginal — requer que compreendamos em profundidade o lado da receita. Para uma firma tomadora de preços, a receita marginal é simplesmente o preço de mercado, e a análise é direta. Mas para firmas com poder de mercado — que enfrentam uma curva de demanda negativamente inclinada —, vender uma unidade a mais exige reduzir o preço de *todas* as unidades vendidas, o que torna a receita marginal menor que o preço. A relação entre receita marginal e elasticidade-preço da demanda, que derivamos a seguir, é uma das mais úteis de toda a microeconomia, pois conecta a decisão de produção da firma à sensibilidade dos consumidores ao preço.
+
 <figure markdown="span">
   <iframe src="../graficos/cap12/receita-marginal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
+  <figcaption markdown="span"><strong>Figura 12.1</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
 </figure>
 
 ### Receita marginal
@@ -161,15 +165,17 @@ onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preç
 - Se \(|\varepsilon_d| < 1\) (demanda inelástica): \(\mathrm{RMg} < 0\) — aumentar a produção reduz a receita total.
 
 !!! note "Implicação para precificação"
-    Uma firma maximizadora de lucro com poder de mercado **nunca** opera na porção inelástica da curva de demanda (onde \(|\varepsilon_d| < 1\)), pois nessa região \(\mathrm{RMg} < 0\), enquanto \(\mathrm{CMg} > 0\). Reduzir a produção elevaria simultaneamente a receita e reduziria os custos, aumentando o lucro.
+    Uma firma maximizadora de lucro com poder de mercado **nunca** opera na porção inelástica da curva de demanda (onde \(|\varepsilon_d| < 1\)), pois nessa região \(\mathrm{RMg} < 0\), enquanto \(\mathrm{CMg} > 0\). Reduzir a produção elevaria simultaneamente a receita e reduziria os custos, aumentando o lucro. Esse resultado tem uma implicação prática direta: se um monopolista está operando na região inelástica, ele não está maximizando lucro — um diagnóstico útil em análises de regulação e defesa da concorrência.
 
 ---
 
 ## 12.4 Oferta de Curto Prazo da Firma Tomadora de Preços
 
+A relação entre receita marginal e elasticidade nos permite analisar firmas com poder de mercado. Voltemos agora ao caso competitivo — a firma tomadora de preços —, que é o alicerce da construção da curva de oferta. A pergunta central desta seção é: dada uma determinada estrutura de custos, para quais preços a firma decide produzir, e quanto? A resposta envolve não apenas a condição \(p = \mathrm{CMg}\), mas também uma decisão prévia e frequentemente negligenciada: a firma deve operar ou fechar as portas?
+
 <figure markdown="span">
   <iframe src="../graficos/cap12/maximizacao-lucro.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 11.1</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
+  <figcaption markdown="span"><strong>Figura 12.2</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
 </figure>
 
 ### A decisão de produção no curto prazo
@@ -251,6 +257,8 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 ---
 
 ## 12.5 A Função Lucro e o Lema de Hotelling
+
+No capítulo anterior, vimos como o Lema de Shephard permite recuperar as demandas condicionadas por insumos a partir da função custo. Existe um resultado análogo — e igualmente poderoso — no contexto da maximização de lucro? A resposta é o **Lema de Hotelling**, que mostra que a função lucro carrega em si toda a informação necessária para reconstruir as funções de oferta do produto e de demanda por insumos. Para chegar a esse resultado, precisamos primeiro definir e caracterizar a função lucro.
 
 ### A função lucro
 
@@ -349,7 +357,9 @@ A função lucro possui propriedades notáveis:
     \(\blacksquare\)
 
     !!! note "Por que retornos constantes não funcionam"
-        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p^2 = 4wr\); \(-\infty\) se \(p^2 < 4wr\) (firma não produz); e \(+\infty\) se \(p^2 > 4wr\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
+        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p = c(w,r)\); \(-\infty\) se \(p < c(w,r)\) (firma não produz); e \(+\infty\) se \(p > c(w,r)\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
+
+        **Nota:** A condição \(p^2 = 4wr\) é específica do caso simétrico \(\alpha = \beta = 1/2\). Para o caso geral \(\alpha + \beta = 1\), a condição de lucro zero é \(p = \kappa \cdot w^{\beta} \cdot r^{\alpha}\), onde \(\kappa = \alpha^{-\alpha}\beta^{-\beta}\) depende dos expoentes da função de produção.
 
 !!! tip "Significado econômico do Lema de Hotelling"
     O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
@@ -365,6 +375,8 @@ A função lucro possui propriedades notáveis:
 
 ## 12.6 Maximização de Lucro e Demanda por Insumos
 
+O Lema de Hotelling nos deu uma via dual para obter as demandas por insumos: derivar a função lucro em relação aos preços dos fatores. Nesta seção, examinamos mais detalhadamente as propriedades dessas demandas e, em particular, a decomposição em efeito substituição e efeito produto — análoga à decomposição de Slutsky na teoria do consumidor, mas com uma diferença notável que elimina a possibilidade de "insumos de Giffen".
+
 ### Demanda incondicional por insumos
 
 A **demanda incondicional** (ou marshalliana) por insumos é obtida diretamente das condições de primeira ordem da maximização de lucro:
@@ -377,7 +389,7 @@ L^*(p, w, r): \quad p \cdot f_L(K^*, L^*) = w
 K^*(p, w, r): \quad p \cdot f_K(K^*, L^*) = r
 \]
 
-Estas demandas diferem das demandas condicionadas (Capítulo 11) porque não fixam o nível de produto — ele é determinado endogenamente pela maximização de lucro.
+Estas demandas diferem das demandas condicionadas (Capítulo 11) porque não fixam o nível de produto — ele é determinado endogenamente pela maximização de lucro. A distinção é sutil, mas importante: as demandas condicionadas respondem à pergunta "dado que quero produzir \(q\) unidades, quanto de cada insumo devo usar?", enquanto as demandas incondicionais respondem a "quanto de cada insumo devo usar para maximizar meu lucro?". As primeiras dependem de \((w, r, q)\); as segundas, de \((p, w, r)\).
 
 ### Propriedades da demanda por insumos
 
@@ -457,11 +469,33 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
     Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
 
+## Resumo do Capítulo
+
+- A **firma** existe, segundo Coase, porque os custos de transação do mercado podem ser superiores aos custos de coordenação interna. A teoria microeconômica assume que a firma maximiza lucro ($\pi = RT - CT$), embora existam modelos alternativos (maximização de receita, satisficing, teoria gerencial).
+- A condição fundamental de **maximização de lucro** exige que a receita marginal iguale o custo marginal ($\mathrm{RMg} = \mathrm{CMg}$), com a condição de segunda ordem $\mathrm{RMg}' < \mathrm{CMg}'$. A relação entre receita marginal e elasticidade-preço da demanda é dada por $\mathrm{RMg} = p(1 + 1/\varepsilon_d)$.
+- No **curto prazo**, a firma decide operar se o preço cobre ao menos o custo variável médio mínimo ($p \geq \mathrm{CVMe}_{\min}$); caso contrário, minimiza perdas fechando. No longo prazo, o preço deve cobrir o custo total médio.
+- A **função lucro** $\pi^*(p, w, r)$ possui propriedades de convexidade em preços, e o **Lema de Hotelling** permite derivar as funções de oferta e de demanda por insumos diretamente a partir das derivadas da função lucro.
+- O **índice de Lerner** $L = (p - \mathrm{CMg})/p = -1/\varepsilon_d$ mede o poder de mercado da firma: em concorrência perfeita ele é zero, e cresce à medida que a firma tem mais poder de fixação de preço.
+- No Brasil, a alta taxa de mortalidade das **micro e pequenas empresas** (MPEs) ilustra a teoria: muitas firmas operam com preço abaixo do custo médio no longo prazo, sendo forçadas a encerrar atividades quando os custos fixos vencem.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Custos de transação (Coase) | Custos de busca, negociação e execução de contratos no mercado; sua existência justifica a organização da produção dentro de firmas. |
+| Maximização de lucro | Objetivo da firma: escolher $q$ tal que $\pi = RT(q) - CT(q)$ seja máximo, implicando $\mathrm{RMg} = \mathrm{CMg}$. |
+| Receita marginal | Acréscimo à receita total pela venda de uma unidade adicional: $\mathrm{RMg} = dRT/dq = p(1 + 1/\varepsilon_d)$. |
+| Ponto de fechamento | Nível de preço abaixo do qual a firma prefere produzir zero: $p < \mathrm{CVMe}_{\min}$ no curto prazo. |
+| Índice de Lerner | Medida de poder de mercado: $L = (p - \mathrm{CMg})/p$; igual a zero em concorrência perfeita. |
+| Função lucro | $\pi^*(p, w, r)$: lucro máximo como função dos preços de produto e insumos; convexa e homogênea de grau 1 em preços. |
+| Lema de Hotelling | A oferta do produto é $\partial \pi^*/\partial p = q^*(p)$ e as demandas por insumos são $-\partial \pi^*/\partial w_i = x_i^*(p, \mathbf{w})$. |
+| Lucro econômico vs. lucro contábil | Lucro econômico desconta o custo de oportunidade; lucro contábil registra apenas receitas menos custos explícitos. |
+
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 11.1 — Receita marginal, elasticidade e markup"
+??? example "Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
     **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
 
     **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
@@ -504,7 +538,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? example "Exercício Resolvido 11.2 — Decisão de operar ou fechar no curto prazo"
+??? example "Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
     **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
 
     **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
@@ -551,7 +585,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? example "Exercício Resolvido 11.3 — Verificação do Lema de Hotelling"
+??? example "Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
     **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(r = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
 
     **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(r = 1\).
@@ -604,9 +638,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ## Exercícios
 
-!!! tip "Exercícios do Capítulo 12"
-
-**Exercício 11.1.**
+**Exercício 12.1.**
 Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(q) = 50 + 2q + 0{,}5q^2\).
 
 (a) Determine CF, CV(q), CMe(q), CVMe(q) e CMg(q).
@@ -619,11 +651,11 @@ Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(
 
 (e) Se o preço de mercado é \(p = 12\), qual a quantidade produzida e o lucro?
 
-[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-1)
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-12-1)
 
 ---
 
-**Exercício 11.2.**
+**Exercício 12.2.**
 Demonstre que, para uma firma com poder de mercado enfrentando uma curva de demanda linear \(p = a - bq\):
 
 (a) A receita marginal é \(\mathrm{RMg} = a - 2bq\) (inclinação é o dobro da da demanda).
@@ -634,11 +666,11 @@ Demonstre que, para uma firma com poder de mercado enfrentando uma curva de dema
 
 (d) Se o custo marginal é \(\mathrm{CMg} = c\) (constante), derive a quantidade e o preço de maximização de lucro. Mostre que o preço é um *markup* sobre o custo marginal.
 
-[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-2)
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-12-2)
 
 ---
 
-**Exercício 11.3.**
+**Exercício 12.3.**
 Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentando preços \(p = 27\), \(w = 2\) e \(r = 1\).
 
 (a) Derive as condições de primeira ordem para maximização de lucro.
@@ -649,11 +681,14 @@ Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentand
 
 (d) Verifique o Lema de Hotelling calculando a função lucro \(\pi(p, w, r)\) e suas derivadas parciais.
 
-[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-3)
+!!! warning "Nota pedagógica"
+    Este exercício é *intencionalmente* mal-posto: como \(\alpha + \beta = 1/3 + 2/3 = 1\) (retornos constantes de escala), o custo unitário é \(c(w,r) = 3 < p = 27\), e a firma deseja produzir em escala infinita. Não existe solução interior finita para o problema de maximização de lucro. O objetivo do exercício é que o aluno identifique a indeterminação decorrente de RCE e compreenda por que a teoria da firma competitiva requer retornos decrescentes de escala. Veja a solução para a análise completa.
+
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-12-3)
 
 ---
 
-**Exercício 11.4.**
+**Exercício 12.4.**
 Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de produção \(q = \bar{K}^{1/2} L^{1/2} = 4L^{1/2}\). O salário é \(w = 8\) e o custo do capital é \(r = 2\).
 
 (a) Derive a função de custo total de curto prazo \(CT(q)\).
@@ -666,11 +701,11 @@ Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de p
 
 (e) Compare com a decisão de longo prazo (quando \(K\) também pode ser ajustado).
 
-[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-4)
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-12-4)
 
 ---
 
-**Exercício 11.5.**
+**Exercício 12.5.**
 Explique, usando a teoria vista neste capítulo, por que:
 
 (a) Uma firma com prejuízo pode racionalmente continuar operando no curto prazo. Dê um exemplo numérico.
@@ -683,13 +718,13 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 (e) Segundo Coase, qual o limite para o crescimento da firma? Relacione com deseconomias de escala e custos de monitoramento.
 
-[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-5)
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-12-5)
 
 ---
 
 ## 🏆 Vem, ANPEC!
 
-??? question "ANPEC 2013 — Questão 03"
+??? question "ANPEC 2013 — Questão 3"
     Suponha que a função de produção para um dado produto tem a seguinte forma funcional: \(q = f(x_1) = 2x_1 - 0{,}03\,x_1^2\). Considere também que o preço de uma unidade do bem final é \(p(q) = R\$\,10{,}00\) e o preço unitário do insumo, praticado pelo mercado, é \(p(x_1) = R\$\,8{,}00\).
 
     Dadas essas informações, é correto afirmar que:
@@ -717,7 +752,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-??? question "ANPEC 2020 — Questão 06"
+??? question "ANPEC 2020 — Questão 6"
     Em um ano, uma empresa apresentou os seguintes dados contábeis: \$1 milhão de receitas, \$300 mil de compras de matérias-primas, \$30 mil de despesas com água e energia elétrica, \$100 mil de gastos com a folha de salários e \$120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$90 mil e outra com salário anual de \$150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)
@@ -743,7 +778,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ---
 
-??? question "ANPEC 2025 — Questão 07"
+??? question "ANPEC 2025 — Questão 7"
     Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     **Itens:** (marque 0 para Falso, 1 para Verdadeiro)

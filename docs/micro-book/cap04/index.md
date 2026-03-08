@@ -46,7 +46,7 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
 
     De acordo com a POF 2017–2018 ([IBGE](https://www.ibge.gov.br)), famílias com renda de até 2 salários mínimos destinavam cerca de 3,5% de seus gastos a combustíveis, enquanto famílias com renda acima de 25 salários mínimos destinavam 6,1%. Porém, como proporção da renda disponível para outros bens, o impacto é relativamente maior para as famílias mais pobres.
 
-    Em termos do modelo, se \(x_1\) = litros de gasolina e \(x_2\) = cesta de demais bens (com preço normalizado), o aumento de \(p_1\) de 4,59 para 7,39 **rotaciona** a reta orçamentária para dentro ao longo do eixo \(x_1\): a quantidade máxima de gasolina que a família pode comprar (intercepto horizontal \(I/p_1\)) cai drasticamente, enquanto o intercepto vertical \(I/p_2\) permanece inalterado.
+    Em termos do modelo, se \(x_1\) = litros de gasolina e \(x_2\) = cesta de demais bens (com preço normalizado), o aumento de \(p_1\) de 4,50 para 7,26 **rotaciona** a reta orçamentária para dentro ao longo do eixo \(x_1\): a quantidade máxima de gasolina que a família pode comprar (intercepto horizontal \(I/p_1\)) cai drasticamente, enquanto o intercepto vertical \(I/p_2\) permanece inalterado.
 
     **Fonte**: ANP, Levantamento de Preços de Combustíveis; IBGE, Pesquisa de Orçamentos Familiares 2017–2018.
 
@@ -54,7 +54,7 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
 
 ## 4.2 Análise Gráfica com Dois Bens
 
-Geometricamente, o consumidor busca a curva de indiferença mais alta que ainda toca o conjunto orçamentário. Para uma **solução interior** (\(x_1^* > 0\) e \(x_2^* > 0\)), a condição necessária é a **tangência**:
+Antes de recorrer ao ferramental analítico do Lagrangeano, vale desenvolver a intuição geométrica do problema. A visualização gráfica não é apenas uma ilustração — ela revela a lógica econômica da otimização de forma imediata e permite antecipar resultados que, pela via algébrica, só emergem após algumas manipulações. Geometricamente, o consumidor busca a curva de indiferença mais alta que ainda toca o conjunto orçamentário. Para uma **solução interior** (\(x_1^* > 0\) e \(x_2^* > 0\)), a condição necessária é a **tangência**:
 
 \[
 \text{TMS}_{12} = \frac{p_1}{p_2}.
@@ -88,7 +88,7 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
 
 ## 4.3 O Caso com n Bens — O Lagrangeano
 
-Para generalizar a análise a \(n\) bens, precisamos de uma técnica de otimização mais poderosa. O **método de Lagrange** permite resolver problemas de maximização com restrições de igualdade.
+A análise gráfica da seção anterior é intuitiva e poderosa, mas limitada a dois bens. No mundo real, consumidores escolhem entre dezenas ou centenas de categorias de bens e serviços. Como generalizar a condição de tangência para esse cenário multidimensional? Para isso, precisamos de uma técnica de otimização mais poderosa — o **método de Lagrange** —, que traduz a condição geométrica de tangência em um sistema de equações algébricas resolvível para qualquer número de bens.
 
 Para \(n\) bens, o problema do consumidor é:
 
@@ -118,14 +118,16 @@ Das CPOs, obtemos:
 \frac{\text{UMg}_i}{p_i} = \lambda, \quad \forall \, i.
 \]
 
-O **multiplicador de Lagrange** \(\lambda\) tem interpretação econômica precisa: é a **utilidade marginal da renda**, ou seja, o aumento na utilidade máxima quando a renda aumenta em uma unidade marginal.
+Este resultado merece atenção: ele generaliza para \(n\) bens a condição de igualdade da utilidade marginal por real gasto que derivamos graficamente para dois bens. Em palavras, no ótimo, o último real gasto em *qualquer* bem produz exatamente o mesmo acréscimo de utilidade — e esse acréscimo comum é precisamente \(\lambda\).
+
+O **multiplicador de Lagrange** \(\lambda\) tem, portanto, interpretação econômica precisa: é a **utilidade marginal da renda**, ou seja, o aumento na utilidade máxima quando a renda aumenta em uma unidade marginal. Trata-se de uma das grandezas mais importantes da teoria do consumidor, pois conecta variações na renda a variações no bem-estar.
 
 !!! note "Condições de segunda ordem"
     Para garantir que o ponto encontrado é um máximo, exige-se que a matriz hessiana orlada seja definida negativa sob a restrição. Sob preferências estritamente quase-côncavas (curvas de indiferença estritamente convexas), as condições de segunda ordem são automaticamente satisfeitas.
 
 ### Demanda Marshalliana
 
-A solução do problema de maximização da utilidade define as **funções de demanda marshalliana** (ou walrasiana):
+Resolvido o problema de otimização, as quantidades ótimas de cada bem ficam expressas como funções dos preços e da renda. Essas funções — que encapsulam toda a informação sobre o comportamento do consumidor diante de variações em preços e renda — são as **funções de demanda marshalliana** (ou walrasiana):
 
 \[
 x_i^* = x_i(p_1, p_2, \ldots, p_n, I), \quad i = 1, \ldots, n.
@@ -138,6 +140,34 @@ Essas funções expressam a quantidade ótima de cada bem como função dos pre�
 1. **Homogeneidade de grau zero**: \(x_i(t\mathbf{p}, tI) = x_i(\mathbf{p}, I)\) para todo \(t > 0\). Duplicar todos os preços e a renda não altera as quantidades demandadas — o que importa são preços relativos e renda real.
 2. **Lei de Walras**: \(\mathbf{p} \cdot \mathbf{x}(\mathbf{p}, I) = I\). O consumidor gasta toda a renda.
 3. **Negatividade do efeito substituição** (via equação de Slutsky — Capítulo 5).
+
+As propriedades da demanda marshalliana revelam regularidades profundas do comportamento do consumidor. A homogeneidade de grau zero, por exemplo, expressa o princípio de que consumidores reagem a preços *relativos*, não nominais — um insight fundamental tanto para a teoria quanto para a compreensão de fenômenos como a ilusão monetária. A lei de Walras, por sua vez, confirma que, sob monotonicidade, o consumidor jamais "desperdiça" renda.
+
+## Resumo do Capítulo
+
+- O **problema do consumidor** consiste em maximizar a utilidade sujeita à restrição orçamentária \(p_1 x_1 + p_2 x_2 \leq I\). A solução interior exige **tangência** entre curva de indiferença e reta orçamentária: \(\text{TMS}_{12} = p_1/p_2\), ou equivalentemente, igualdade da utilidade marginal por real gasto em cada bem.
+- O **método de Lagrange** generaliza a solução para \(n\) bens; o multiplicador \(\lambda\) é a **utilidade marginal da renda**. As **funções de demanda marshalliana** \(x_i(\mathbf{p}, I)\) resultantes são homogêneas de grau zero em preços e renda e satisfazem a lei de Walras.
+- A **função de utilidade indireta** \(V(\mathbf{p}, I)\) expressa a utilidade máxima alcançável dados preços e renda. A **Identidade de Roy** recupera as demandas marshallianas a partir de \(V\).
+- O **princípio do montante fixo** demonstra que um imposto *lump sum* causa menor perda de bem-estar que um imposto específico de mesma receita, pois não distorce preços relativos.
+- O **problema dual** (minimização do dispêndio) determina o gasto mínimo para atingir um nível de utilidade \(\bar{u}\), gerando a **função dispêndio** \(E(\mathbf{p}, \bar{u})\) e as **demandas hicksianas** \(h_i(\mathbf{p}, \bar{u})\). O **Lema de Shephard** recupera as demandas hicksianas como derivadas da função dispêndio.
+- A **dualidade** conecta os problemas primal e dual: \(V\) e \(E\) são inversas uma da outra (fixados os preços), e as demandas marshalliana e hicksiana se relacionam pelas identidades \(x_i(\mathbf{p}, I) = h_i(\mathbf{p}, V(\mathbf{p}, I))\).
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Restrição orçamentária | Conjunto de cestas acessíveis dado preços e renda: \(p_1 x_1 + p_2 x_2 \leq I\). A inclinação da reta orçamentária (\(-p_1/p_2\)) é o custo de oportunidade do bem 1 em termos do bem 2. |
+| Condição de tangência | No ótimo interior, a TMS iguala a razão de preços: a taxa de troca subjetiva coincide com a taxa de troca objetiva do mercado. |
+| Demanda marshalliana (walrasiana) | Quantidade ótima de cada bem como função dos preços e da renda: \(x_i^* = x_i(\mathbf{p}, I)\). Homogênea de grau zero em \((\mathbf{p}, I)\). |
+| Utilidade marginal da renda (\(\lambda\)) | Multiplicador de Lagrange do problema do consumidor; mede o ganho de utilidade por unidade monetária adicional de renda. |
+| Função de utilidade indireta \(V(\mathbf{p}, I)\) | Utilidade máxima alcançável dados preços e renda. Não crescente em preços, não decrescente em renda. |
+| Identidade de Roy | Recupera a demanda marshalliana a partir de \(V\): \(x_i = -\frac{\partial V/\partial p_i}{\partial V/\partial I}\). |
+| Princípio do montante fixo | Um imposto *lump sum* gera utilidade pelo menos igual à de um imposto específico de mesma receita, pois preserva preços relativos. |
+| Demanda hicksiana (compensada) | Quantidade que minimiza o gasto para atingir utilidade \(\bar{u}\): \(h_i(\mathbf{p}, \bar{u})\). Satisfaz a lei da demanda compensada (\(\partial h_i/\partial p_i \leq 0\)). |
+| Função dispêndio \(E(\mathbf{p}, \bar{u})\) | Gasto mínimo para atingir utilidade \(\bar{u}\) aos preços vigentes. Homogênea de grau 1 em preços e côncava em preços. |
+| Lema de Shephard | A derivada da função dispêndio em relação a \(p_i\) fornece a demanda hicksiana: \(\partial E/\partial p_i = h_i(\mathbf{p}, \bar{u})\). |
+
+---
 
 ??? example "Exercício Resolvido 4.1"
     **Enunciado:** Um consumidor tem função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), preços \(p_1 = 6\), \(p_2 = 3\) e renda \(I = 180\). Encontre a cesta ótima e a utilidade máxima.
@@ -174,7 +204,7 @@ Essas funções expressam a quantidade ótima de cada bem como função dos pre�
 
 ## 4.4 Função de Utilidade Indireta
 
-Após resolver o problema do consumidor, é natural perguntar: qual o **nível máximo de utilidade** que o consumidor consegue atingir, dados os preços e a renda? A resposta é a função de utilidade indireta.
+As demandas marshallianas nos dizem *o que* o consumidor compra dados preços e renda. Mas há uma pergunta igualmente importante: *quão satisfeito* ele fica? Se os preços sobem ou a renda cai, qual é o impacto sobre o bem-estar máximo alcançável? A resposta a essas perguntas é dada pela **função de utilidade indireta**, que sintetiza em uma única expressão a relação entre as condições de mercado (preços e renda) e o nível ótimo de satisfação do consumidor.
 
 !!! definition "Função de utilidade indireta"
     A **função de utilidade indireta** é o valor ótimo da utilidade como função dos preços e da renda:
@@ -204,7 +234,7 @@ Após resolver o problema do consumidor, é natural perguntar: qual o **nível m
 
 ## 4.5 O Princípio do Montante Fixo (*Lump Sum Principle*)
 
-Antes de apresentar o resultado formal, considere a seguinte pergunta de política pública: se o governo precisa arrecadar uma determinada receita de um consumidor, qual tipo de imposto causa **menor perda de bem-estar**? A resposta revela uma das implicações mais poderosas da teoria do consumidor.
+Com a função de utilidade indireta em mãos, estamos em condições de analisar uma das questões mais relevantes da microeconomia aplicada a políticas públicas. Antes de apresentar o resultado formal, considere a seguinte pergunta de política pública: se o governo precisa arrecadar uma determinada receita de um consumidor, qual tipo de imposto causa **menor perda de bem-estar**? A resposta revela uma das implicações mais poderosas da teoria do consumidor.
 
 !!! abstract "Proposição 4.1 — Princípio do montante fixo"
     Um imposto sobre a renda (montante fixo, *lump sum*) que arrecada a mesma receita que um imposto específico sobre um bem deixa o consumidor em um nível de utilidade **pelo menos tão alto** quanto o imposto específico.
@@ -265,9 +295,9 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
 
 ## 4.6 Minimização do Dispêndio — O Problema Dual
 
-O problema de maximização da utilidade tem um "espelho" matemático: em vez de buscar a maior utilidade dado um orçamento, o consumidor pode perguntar qual é o **menor gasto** necessário para atingir um nível de utilidade pré-especificado. Esse é o problema dual.
+Até aqui, formulamos o problema do consumidor de uma única maneira: dado um orçamento fixo, maximizar a utilidade. Mas existe uma forma alternativa — e igualmente poderosa — de pensar sobre a mesma decisão. Em vez de perguntar "qual a maior satisfação que posso obter com esta renda?", o consumidor pode perguntar: "qual é o **menor gasto** necessário para atingir um nível de satisfação pré-especificado?" Esse é o problema dual, e sua formulação abre caminho para conceitos fundamentais como a demanda hicksiana e a função dispêndio — ferramentas indispensáveis para a análise de bem-estar e a decomposição de efeitos de preço que veremos no Capítulo 5.
 
-O **dual** do problema de maximização da utilidade é o problema de **minimização do dispêndio** (ou minimização do gasto):
+O **dual** do problema de maximização da utilidade é, portanto, o problema de **minimização do dispêndio** (ou minimização do gasto):
 
 \[
 \min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{sujeito a} \quad u(x_1, x_2) \geq \bar{u}, \quad x_1 \geq 0, \quad x_2 \geq 0.
@@ -278,13 +308,13 @@ O consumidor busca a forma mais barata de atingir um nível de utilidade pré-es
 O lagrangeano do problema dual é:
 
 \[
-\mathcal{L} = p_1 x_1 + p_2 x_2 + \mu \left(\bar{u} - u(x_1, x_2)\right).
+\mathcal{L} = p_1 x_1 + p_2 x_2 + \lambda \left(\bar{u} - u(x_1, x_2)\right).
 \]
 
 As CPOs para solução interior são:
 
 \[
-p_i = \mu \frac{\partial u}{\partial x_i}, \quad i = 1, 2,
+p_i = \lambda \frac{\partial u}{\partial x_i}, \quad i = 1, 2,
 \]
 
 \[
@@ -297,7 +327,7 @@ Dividindo as CPOs dos bens 1 e 2:
 \frac{p_1}{p_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \text{TMS}_{12}.
 \]
 
-A condição de tangência é **idêntica** à do problema primal, confirmando a equivalência entre os dois problemas.
+A condição de tangência é **idêntica** à do problema primal, confirmando a equivalência entre os dois problemas. Esse resultado não é uma coincidência: primal e dual são duas perspectivas sobre a mesma decisão ótima, e o ponto de tangência entre a curva de indiferença e a reta orçamentária permanece o mesmo, independentemente de qual dos dois problemas se resolve.
 
 ### Demanda Hicksiana (Compensada)
 
@@ -329,6 +359,8 @@ A demanda hicksiana recebe o nome de "compensada" porque mantém o nível de uti
 
 ## 4.7 Função Dispêndio
 
+Assim como a função de utilidade indireta sintetiza o *valor ótimo* do problema primal (a utilidade máxima dados preços e renda), a **função dispêndio** sintetiza o valor ótimo do problema dual: o gasto mínimo necessário para atingir um determinado nível de utilidade. Juntas, essas duas funções formam um par dual que será a base de toda a análise de bem-estar desenvolvida no Capítulo 5.
+
 !!! definition "Função dispêndio"
     A **função dispêndio** é o custo mínimo de atingir o nível de utilidade \(\bar{u}\) aos preços vigentes:
 
@@ -354,14 +386,14 @@ A demanda hicksiana recebe o nome de "compensada" porque mantém o nível de uti
     As demandas hicksianas obtidas pelo Lema de Shephard são:
 
     \[
-    h_1 = \frac{\partial E}{\partial p_1} = a \left(\frac{p_1}{a}\right)^{a-1} \left(\frac{p_2}{b}\right)^b \cdot \bar{u} \cdot \frac{1}{a} = \left(\frac{p_2}{p_1}\right)^b \cdot \left(\frac{a}{b}\right)^{-b} \cdot \bar{u}.
+    h_1 = \frac{\partial E}{\partial p_1} = a \left(\frac{p_1}{a}\right)^{a-1} \left(\frac{p_2}{b}\right)^b \cdot \bar{u} \cdot \frac{1}{a} = \left(\frac{p_2}{p_1}\right)^b \cdot \left(\frac{a}{b}\right)^{b} \cdot \bar{u}.
     \]
 
 ---
 
 ## 4.8 Dualidade entre Utilidade Indireta e Função Dispêndio
 
-A dualidade é a relação de "inversão" entre os problemas primal e dual. As seguintes identidades conectam \(V\) e \(E\):
+Apresentamos até aqui a função de utilidade indireta \(V\) (que nasce do problema primal) e a função dispêndio \(E\) (que nasce do problema dual). Mas qual é a relação precisa entre essas duas funções? A resposta é uma das ideias mais elegantes da teoria do consumidor: \(V\) e \(E\) são **inversas** uma da outra — e as identidades que formalizam essa relação constituem o elo central de toda a estrutura dual. As seguintes identidades conectam \(V\) e \(E\):
 
 \[
 V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u} \qquad \text{(a renda mínima para atingir } \bar{u} \text{ gera utilidade exatamente } \bar{u}\text{)},
@@ -424,7 +456,7 @@ A primeira identidade diz que avaliar a demanda hicksiana no nível de utilidade
 
 ## 4.9 Identidade de Roy
 
-A Identidade de Roy permite recuperar as demandas marshallianas diretamente da função de utilidade indireta, sem resolver o problema de otimização novamente.
+As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contêm, de forma compacta, *toda* a informação sobre o comportamento do consumidor. Mas será que é possível extrair dessa informação as próprias funções de demanda — sem precisar resolver novamente o problema de otimização? A resposta é afirmativa, e o resultado que formaliza essa "engenharia reversa" é a célebre **Identidade de Roy**. Ela permite recuperar as demandas marshallianas diretamente a partir das derivadas parciais da função de utilidade indireta.
 
 !!! abstract "Teorema 4.1 — Identidade de Roy"
     Se \(V(\mathbf{p}, I)\) é diferenciável em \((\mathbf{p}, I)\) e \(\partial V / \partial I \neq 0\), então a demanda marshalliana do bem \(i\) é dada por:
@@ -508,7 +540,7 @@ A Identidade de Roy permite recuperar as demandas marshallianas diretamente da f
 
 ## 4.10 Demandas por Tipo de Função Utilidade
 
-Nesta seção, derivamos as demandas marshallianas e hicksianas para as quatro formas funcionais mais utilizadas em microeconomia. Para cada tipo, apresentamos o problema de otimização completo, o lagrangeano, as condições de primeira ordem e as soluções fechadas.
+As seções anteriores desenvolveram a teoria geral: o Lagrangeano, a dualidade, as identidades de Roy e Shephard. Agora é hora de colocar essa maquinaria para funcionar. Nesta seção, derivamos as demandas marshallianas e hicksianas para as principais formas funcionais apresentadas no Capítulo 3 — Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES e quase-linear. Para cada tipo, apresentamos o problema de otimização completo, o lagrangeano, as condições de primeira ordem e as soluções em forma fechada. O objetivo é duplo: consolidar o domínio técnico do método e desenvolver a intuição sobre como diferentes estruturas de preferências se traduzem em diferentes padrões de demanda.
 
 ### 4.10.1 Cobb-Douglas: U(x₁, x₂) = x₁ᵃ x₂ᵇ
 
@@ -568,7 +600,7 @@ V(p_1,p_2,I) = \left(\frac{a}{a+b}\right)^a \left(\frac{b}{a+b}\right)^b \frac{I
 \min_{x_1,x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad x_1^a x_2^b = \bar{u}
 \]
 
-O Lagrangeano é \(\mathcal{L} = p_1 x_1 + p_2 x_2 + \mu(\bar{u} - x_1^a x_2^b)\). As CPOs fornecem a mesma condição de tangência \(a x_2/(b x_1) = p_1/p_2\). Substituindo na restrição de utilidade:
+O Lagrangeano é \(\mathcal{L} = p_1 x_1 + p_2 x_2 + \lambda(\bar{u} - x_1^a x_2^b)\). As CPOs fornecem a mesma condição de tangência \(a x_2/(b x_1) = p_1/p_2\). Substituindo na restrição de utilidade:
 
 \[
 x_1^a \left(\frac{b\, p_1}{a\, p_2}\, x_1\right)^b = \bar{u} \quad \Longrightarrow \quad x_1^{a+b} \left(\frac{b\, p_1}{a\, p_2}\right)^b = \bar{u}
@@ -590,7 +622,7 @@ E(\mathbf{p}, \bar{u}) = p_1 h_1 + p_2 h_2 = \bar{u}^{\,1/(a+b)} \left(\frac{a+b
 
 ### 4.10.2 Preferências Lineares (Substitutos Perfeitos): U = ax₁ + bx₂
 
-Com preferências lineares, as curvas de indiferença são retas com inclinação \(-a/b\), e a TMS é constante. A elasticidade de substituição é \(\sigma \to \infty\).
+Passemos agora ao caso diametralmente oposto ao da Cobb-Douglas em termos de substituibilidade. Com preferências lineares, as curvas de indiferença são retas com inclinação \(-a/b\), e a TMS é constante. A elasticidade de substituição é \(\sigma \to \infty\). Esse caso ilustra por que nem sempre o método de Lagrange fornece soluções interiores — e por que o formato das curvas de indiferença importa tanto quanto o método de solução.
 
 **Demanda Marshalliana.** O consumidor compara a TMS com a razão de preços:
 
@@ -626,7 +658,7 @@ E(\mathbf{p}, \bar{u}) = \bar{u} \cdot \min\left\{\frac{p_1}{a},\; \frac{p_2}{b}
 
 ### 4.10.3 Preferências Leontief (Complementares Perfeitos): U = min{x₁/a, x₂/b}
 
-Com preferências Leontief, as curvas de indiferença têm formato de "L" com vértice na reta \(x_1/a = x_2/b\). A elasticidade de substituição é \(\sigma = 0\): não há margem para substituição entre os bens.
+No outro extremo do espectro de substituibilidade, encontramos os complementares perfeitos. Com preferências Leontief, as curvas de indiferença têm formato de "L" com vértice na reta \(x_1/a = x_2/b\). A elasticidade de substituição é \(\sigma = 0\): não há margem para substituição entre os bens. Aqui, o método de Lagrange padrão não se aplica diretamente (a função não é diferenciável no vértice), mas a solução segue de um argumento econômico simples.
 
 **Demanda Marshalliana.** No ótimo, o consumidor sempre consome no vértice da curva de indiferença, onde \(x_1/a = x_2/b\). Caso contrário, estaria desperdiçando renda com excesso de um dos bens. Da condição de vértice:
 
@@ -670,7 +702,7 @@ A função dispêndio é linear nos preços — não há curvatura porque não h
 
 ### 4.10.4 CES: U(x₁, x₂) = (a x₁ᵖ + b x₂ᵖ)¹ᐟᵖ
 
-A função CES (*Constant Elasticity of Substitution*) generaliza os três casos anteriores. O parâmetro \(\rho \in (-\infty, 1]\setminus\{0\}\) determina a elasticidade de substituição \(\sigma = 1/(1-\rho)\):
+Após derivar separadamente os casos Cobb-Douglas, substitutos e complementos perfeitos, estamos em condições de apresentar a família que os unifica. A função CES (*Constant Elasticity of Substitution*) generaliza os três casos anteriores, e suas demandas oferecem uma visão integrada de como o grau de substituibilidade entre bens afeta o comportamento do consumidor. O parâmetro \(\rho \in (-\infty, 1]\setminus\{0\}\) determina a elasticidade de substituição \(\sigma = 1/(1-\rho)\):
 
 | \(\rho\) | \(\sigma\) | Caso limite |
 |-----------|-----------|-------------|
@@ -753,7 +785,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
 
 ### 4.10.5 Quase-linear: U(x₁, x₂) = v(x₁) + x₂
 
-A utilidade quase-linear combina uma função côncava \(v(x_1)\) com um termo linear em \(x_2\). O bem 2 funciona como numerário (Seção 3.6.5).
+Por fim, retornamos à utilidade quase-linear, cuja estrutura singular — a ausência de efeito renda sobre um dos bens — produz simplificações notáveis nas funções de demanda. A utilidade quase-linear combina uma função côncava \(v(x_1)\) com um termo linear em \(x_2\), onde o bem 2 funciona como numerário (Seção 3.6.5).
 
 **Demanda Marshalliana.** O consumidor resolve:
 
@@ -833,6 +865,8 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
     **Interpretação econômica:** Com complementares perfeitos, não há efeito substituição — a transferência se traduz integralmente em efeito renda, expandindo o consumo na mesma proporção fixa. Isso lembra o caso de bens que são naturalmente consumidos em proporções fixas, como arroz e feijão na dieta brasileira tradicional: um aumento de renda leva a família a consumir mais de ambos, sem alterar a proporção. Segundo a POF 2017–2018 do IBGE, a relação entre o consumo domiciliar per capita de arroz e feijão manteve-se relativamente estável em torno de 2:1 entre as diferentes faixas de renda.
 
 ---
+
+Os cinco tipos de função utilidade analisados nesta seção cobrem a grande maioria das aplicações em microeconomia teórica e empírica. Na prática, a escolha da forma funcional envolve um *trade-off* entre tratabilidade analítica e realismo empírico — e os boxes a seguir ilustram como esses modelos se conectam a questões concretas de política pública no Brasil.
 
 ## Box Brasil: O Impacto do Bolsa Família na Restrição Orçamentária
 

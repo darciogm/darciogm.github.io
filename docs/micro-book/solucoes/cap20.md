@@ -106,7 +106,7 @@ DWL = \int_{q^{**}}^{q^*} \left[ CMgS(q) - P \right] dq = \int_{50/3}^{50} (6q -
 
 **O peso morto da ausência de regulação é \( DWL = \frac{10\,000}{3} \approx 3333{,}33 \).**
 
-Interpretação: essa é a perda líquida de bem-estar social provocada pela produção de 50 toneladas em vez das 16,67 toneladas eficientes. A firma ignora o dano ambiental que impõe a terceiros, gerando sobreproduçao significativa.
+Interpretação: essa é a perda líquida de bem-estar social provocada pela produção de 50 toneladas em vez das 16,67 toneladas eficientes. A firma ignora o dano ambiental que impõe a terceiros, gerando superprodução significativa.
 
 ---
 
@@ -328,7 +328,7 @@ O parque público é um bem **não-excludente**: uma vez construído, todos os m
 
 1. **Incentivo individual a não contribuir**: cada morador percebe que sua contribuição individual (R\$500) tem efeito marginal na provisão total, mas o custo é certo. O benefício de "pegar carona" — usufruir do parque sem pagar — domina a decisão individual.
 
-2. **Subrrevelação de preferências**: se a contribuição é voluntária, moradores têm incentivo a declarar valorações menores que as verdadeiras ou simplesmente não contribuir, esperando que outros financiem o bem.
+2. **Sub-revelação de preferências**: se a contribuição é voluntária, moradores têm incentivo a declarar valorações menores que as verdadeiras ou simplesmente não contribuir, esperando que outros financiem o bem.
 
 3. **Resultado ineficiente**: o equilíbrio de Nash da contribuição voluntária resulta em provisão inferior à eficiente (ou provisão nula), mesmo quando a soma das valorações verdadeiras excede o custo.
 

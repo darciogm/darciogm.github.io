@@ -5,10 +5,16 @@
 **Alocação eficiente (de Pareto)**
 : Distribuição de recursos na qual não é possível melhorar a situação de nenhum agente sem piorar a de outro. Também chamada de *ótimo de Pareto*.
 
+**Aversão à perda**
+: Tendência comportamental em que perdas têm impacto psicológico maior que ganhos de mesma magnitude. Na Teoria do Prospecto, o coeficiente de aversão à perda \(\lambda \approx 2{,}25\) implica que uma perda de R\$ 100 "pesa" tanto quanto um ganho de R\$ 225.
+
 **Aversão ao risco**
 : Característica de um agente cuja função de utilidade é côncava na riqueza, preferindo o valor esperado de uma loteria à própria loteria. Formalmente, \(u(E[W]) > E[u(W)]\).
 
 ## B
+
+**Barganha de Rubinstein**
+: Modelo de barganha com ofertas alternadas e desconto temporal. O equilíbrio perfeito em subjogos é único: o primeiro proponente obtém \(x_1^* = (1-\delta_2)/(1-\delta_1\delta_2)\).
 
 **Bem composto**
 : Agregação de bens cujos preços relativos permanecem constantes, permitindo tratá-los como um único bem na análise (Teorema do Bem Composto de Hicks).
@@ -30,6 +36,12 @@
 **Caixa de Edgeworth**
 : Diagrama retangular usado na análise de equilíbrio geral para representar as possibilidades de troca entre dois consumidores e dois bens.
 
+**Carona (free riding)**
+: Comportamento de um agente que se beneficia de um bem público sem contribuir para seu financiamento, explorando a não-excludência.
+
+**Ceteris paribus**
+: Expressão latina ("tudo o mais constante") que designa o método de isolar o efeito de uma variável mantendo todas as demais fixas.
+
 **Coeficiente de aversão absoluta ao risco (Arrow-Pratt)**
 : Medida local de aversão ao risco definida como \(A(W) = -u''(W)/u'(W)\).
 
@@ -44,6 +56,9 @@
 
 **Concorrência perfeita**
 : Estrutura de mercado com muitos compradores e vendedores, produto homogêneo, livre entrada e saída, e informação perfeita. Cada firma é tomadora de preços.
+
+**Condições de Kuhn-Tucker (KKT)**
+: Generalização do método de Lagrange para problemas com restrições de desigualdade; incluem condições de complementaridade: \(\lambda_j \geq 0\) e \(\lambda_j \cdot g_j(\mathbf{x}) = 0\).
 
 **Curva de contrato**
 : Lugar geométrico das alocações eficientes de Pareto na Caixa de Edgeworth.
@@ -71,16 +86,31 @@
 **Demanda marshalliana (não-compensada)**
 : Função de demanda ordinária que relaciona a quantidade ótima aos preços e à renda: \(x_i^*(p_1, p_2, I)\). Obtida a partir da maximização de utilidade.
 
+**Desconto hiperbólico**
+: Modelo de preferências intertemporais em que a taxa de desconto é decrescente no tempo. Na formulação quasi-hiperbólica (\(\beta, \delta\)), o viés de presente é capturado por \(\beta < 1\).
+
+**Dilema dos Prisioneiros**
+: Jogo canônico em que a estratégia dominante de cada jogador leva a um resultado Pareto-inferior à cooperação mútua.
+
 **Discriminação de preços**
 : Prática de cobrar preços diferentes por unidades do mesmo bem. Primeiro grau: preço personalizado. Segundo grau: menus de contratos (autosseleção). Terceiro grau: segmentação de mercados.
 
 ## E
+
+**Economias de escala**
+: Redução do custo médio de longo prazo à medida que a escala de produção aumenta. Presentes quando \(C(q)/q\) é decrescente em \(q\).
+
+**Economias de escopo**
+: Redução de custos obtida pela produção conjunta de dois ou mais bens: \(C(q_1, q_2) < C(q_1, 0) + C(0, q_2)\).
 
 **Efeito renda**
 : Variação na quantidade demandada de um bem causada pela mudança no poder de compra real do consumidor, mantida constante a razão de preços relativos.
 
 **Efeito substituição**
 : Variação na quantidade demandada de um bem causada pela mudança nos preços relativos, mantido constante o nível de utilidade (Hicks) ou o poder de compra (Slutsky).
+
+**Elasticidade de substituição (\(\sigma\))**
+: Medida da facilidade de substituição entre insumos (ou bens), definida como a variação percentual na razão dos insumos dividida pela variação percentual na TMST: \(\sigma = \frac{d\ln(K/L)}{d\ln(TMST)}\).
 
 **Elasticidade-preço da demanda**
 : Variação percentual na quantidade demandada dividida pela variação percentual no preço: \(\varepsilon_{x,p} = \frac{\partial x}{\partial p} \cdot \frac{p}{x}\).
@@ -90,6 +120,12 @@
 
 **Equação de Slutsky**
 : Relação fundamental que decompõe o efeito total de uma variação de preço em efeito substituição e efeito renda: \(\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}\).
+
+**Equilíbrio bayesiano de Nash (EBN)**
+: Equilíbrio de Nash em jogos com informação incompleta, no qual cada jogador maximiza seu payoff esperado dadas suas crenças sobre os tipos dos demais.
+
+**Equilíbrio bayesiano perfeito (EBP)**
+: Refinamento que combina estratégias sequencialmente racionais com crenças consistentes via regra de Bayes em todo conjunto de informação alcançado com probabilidade positiva.
 
 **Equilíbrio de Cournot**
 : Equilíbrio de Nash em um jogo de oligopólio em que as firmas escolhem quantidades simultaneamente. Cada firma maximiza lucro dada a quantidade da rival.
@@ -103,8 +139,23 @@
 **Equilíbrio perfeito em subjogos**
 : Refinamento do equilíbrio de Nash para jogos sequenciais que requer que as estratégias constituam um equilíbrio de Nash em cada subjogo.
 
+**Equilíbrio separador e equilíbrio agrupador**
+: No equilíbrio separador, tipos diferentes escolhem ações distintas, revelando sua informação privada. No agrupador (*pooling*), todos os tipos escolhem a mesma ação.
+
+**Equivalência de receita (Revenue Equivalence)**
+: Teorema que estabelece que, sob certas condições (valores privados independentes, licitantes neutros ao risco), todos os formatos de leilão padrão geram a mesma receita esperada para o vendedor.
+
 **Equivalente de certeza**
 : Quantia certa que proporciona ao agente a mesma utilidade esperada de uma loteria: \(u(EC) = E[u(W)]\).
+
+**Estática comparativa**
+: Método de análise que compara dois equilíbrios — antes e depois da mudança de um parâmetro exógeno — sem modelar a trajetória de transição.
+
+**Estratégia dominante**
+: Estratégia que proporciona ao jogador um payoff estritamente superior a qualquer outra, independentemente das escolhas dos demais jogadores.
+
+**Estratégia mista**
+: Distribuição de probabilidade sobre o conjunto de estratégias puras de um jogador: \(\sigma_i \in \Delta(S_i)\).
 
 **Excedente do consumidor (EC)**
 : Diferença entre o que o consumidor está disposto a pagar e o que efetivamente paga. Área sob a curva de demanda e acima do preço de mercado.
@@ -116,6 +167,9 @@
 : Efeito da ação de um agente sobre o bem-estar de terceiros que não é mediado pelo sistema de preços. Pode ser positiva (benefício externo) ou negativa (custo externo).
 
 ## F
+
+**Folk Theorem**
+: Resultado que estabelece que, em jogos repetidos infinitamente com fator de desconto suficientemente alto, qualquer payoff individualmente racional e factível pode ser sustentado como equilíbrio de Nash.
 
 **Fronteira de possibilidades de produção (FPP)**
 : Conjunto de combinações máximas de bens que uma economia pode produzir dada sua dotação de recursos e tecnologia.
@@ -160,6 +214,9 @@
 **Lei de Walras**
 : Em um modelo de equilíbrio geral, o valor total do excesso de demanda em todos os mercados é identicamente zero: \(\sum_i p_i z_i(\mathbf{p}) \equiv 0\).
 
+**Leilão de Vickrey (segundo preço)**
+: Formato de leilão selado em que o vencedor é o maior lance, mas paga o segundo maior lance. Lançar o valor verdadeiro é estratégia fracamente dominante.
+
 **Lema de Hotelling**
 : A derivada parcial da função lucro em relação ao preço do produto é a oferta ótima; em relação ao preço do insumo, é o negativo da demanda ótima pelo insumo.
 
@@ -167,6 +224,9 @@
 : A derivada parcial da função custo (ou dispêndio) em relação ao preço de um insumo é a demanda condicionada (ou hicksiana) por aquele insumo.
 
 ## M
+
+**Maldição do vencedor (winner's curse)**
+: Fenômeno em leilões de valor comum no qual o vencedor tende a ter superestimado o valor do objeto, levando a pagamentos excessivos se não ajustar o lance para baixo.
 
 **Maximização de lucro**
 : Objetivo da firma de escolher o nível de produção que maximiza \(\pi = R(q) - C(q)\). Condição de primeira ordem: \(RMg = CMg\).
@@ -180,6 +240,11 @@
 **Multiplicador de Lagrange (\(\lambda\))**
 : No problema de otimização restrita, representa o valor marginal (preço-sombra) do relaxamento da restrição.
 
+## N
+
+**Nudge (empurrão)**
+: Intervenção que altera a arquitetura de escolha para direcionar comportamentos sem restringir opções nem alterar incentivos econômicos (Thaler e Sunstein, 2008).
+
 ## O
 
 **Ótimo de Pareto**
@@ -189,6 +254,9 @@
 
 **Perda de peso morto (PPM)**
 : Redução no bem-estar social total (EC + EP) causada por uma distorção no mercado (monopólio, imposto, externalidade). Também chamada *perda de eficiência*.
+
+**Preferências homotéticas**
+: Preferências para as quais as curvas de Engel são retas passando pela origem, implicando que a proporção de gastos entre bens é independente da renda.
 
 **Preferência revelada (axioma fraco — AFPR)**
 : Se a cesta \(\mathbf{x}\) é escolhida quando \(\mathbf{y}\) era acessível, então \(\mathbf{y}\) nunca pode ser escolhida quando \(\mathbf{x}\) é acessível.
@@ -202,8 +270,16 @@
 **Principal-agente (modelo)**
 : Arcabouço teórico para analisar situações em que uma parte (principal) delega uma tarefa a outra (agente) sob informação assimétrica.
 
+**Progresso técnico**
+: Deslocamento da função de produção que permite obter mais produto com os mesmos insumos. Pode ser neutro (Hicks), poupador de trabalho ou poupador de capital.
+
 **Prêmio de risco**
 : Quantia máxima que um agente avesso ao risco está disposto a pagar para eliminar a incerteza. Diferença entre o valor esperado e o equivalente de certeza.
+
+## Q
+
+**Quasi-concavidade**
+: Propriedade de uma função cujos conjuntos de nível superior \(\{x : f(x) \geq c\}\) são convexos para todo \(c\). Garante que curvas de indiferença e isoquantas sejam convexas.
 
 ## R
 
@@ -223,6 +299,9 @@
 : Problema de informação assimétrica em que uma parte (agente) pode tomar ações ocultas que afetam o resultado, após a celebração do contrato.
 
 ## S
+
+**Screening (triagem)**
+: Mecanismo pelo qual a parte desinformada oferece um menu de contratos para induzir a autorrevelação dos tipos pela parte informada. Exemplo: franquias em seguros.
 
 **Segundo Teorema do Bem-Estar**
 : Qualquer alocação eficiente de Pareto pode ser sustentada como equilíbrio competitivo, mediante uma redistribuição adequada das dotações iniciais.
@@ -252,6 +331,9 @@
 
 **Teorema do envelope**
 : O efeito de uma mudança em um parâmetro sobre o valor ótimo de uma função pode ser avaliado considerando apenas o efeito direto, mantendo as variáveis de escolha constantes.
+
+**Teoria do Prospecto**
+: Teoria descritiva de decisão sob risco (Kahneman e Tversky, 1979) que substitui a utilidade esperada por uma função valor definida sobre ganhos e perdas relativos a um ponto de referência, com ponderação não-linear de probabilidades.
 
 **Teoria dos jogos**
 : Ramo da matemática e da economia que estuda a interação estratégica entre agentes racionais.

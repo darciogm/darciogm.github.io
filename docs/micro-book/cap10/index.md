@@ -27,7 +27,7 @@ onde \(\mathrm{TP}(L)\) é o produto total do trabalho. Essa distinção entre c
 
 ### Produto marginal e produto médio
 
-A partir da função de produção, derivamos duas medidas essenciais de produtividade: o produto marginal e o produto médio.
+Definida a função de produção, a pergunta natural é: quanto produto adicional se obtém ao empregar mais uma unidade de trabalho? E como a produtividade por trabalhador evolui à medida que a firma cresce? Essas perguntas são respondidas por duas medidas essenciais de produtividade — o produto marginal e o produto médio —, cuja relação é uma das mais frequentemente cobradas em provas da ANPEC.
 
 !!! definition "Produto marginal"
     O **produto marginal do trabalho** é a variação do produto total decorrente de uma unidade adicional de trabalho, mantido o capital constante:
@@ -55,9 +55,11 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
     **Pense assim:** Numa partida de futebol, se o jogador que entra no segundo tempo faz mais gols que a média do time até ali, a média de gols por jogador sobe. Se ele erra tudo, a média cai. O produto marginal é o "gol do substituto" — e ele determina a direção do produto médio.
 
-    **Por que isso importa:** Essa relação é a base para entender por que firmas contratam até o ponto em que o valor do produto marginal iguala o salário — e por que o produto médio é uma medida enganosa de produtividade quando usado isoladamente.
+    **Por que isso importa:** Essa relação é a base para entender por que firmas contratam até o ponto em que o valor do produto marginal iguala o salário — e por que o produto médio é uma medida enganosa de produtividade quando usada isoladamente.
 
 ### Lei dos rendimentos marginais decrescentes
+
+A relação entre produto marginal e produto médio revela um padrão importante: à medida que a firma emprega mais e mais trabalhadores com capital fixo, a produtividade marginal de cada trabalhador adicional tende a cair. Esse padrão é tão recorrente na prática que recebeu o estatuto de "lei" — embora, como veremos, trate-se de uma regularidade empírica, não de uma necessidade lógica.
 
 !!! abstract "Lei dos rendimentos marginais decrescentes"
     Se um insumo variável é adicionado a um insumo fixo, a partir de certo ponto o produto marginal do insumo variável torna-se decrescente. Formalmente, existe \(L^*\) tal que para \(L > L^*\):
@@ -88,11 +90,13 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 ## 10.2 Isoquantas e a Taxa Marginal de Substituição Técnica
 
-Até aqui, analisamos a produção variando um insumo por vez. Agora, consideramos a possibilidade de substituir um insumo por outro mantendo o nível de produção constante. As isoquantas e a TMST são as ferramentas para essa análise.
+A análise da Seção 10.1 tratou de situações em que apenas um insumo varia enquanto o outro permanece fixo — o cenário típico do curto prazo. Mas na prática, as firmas dispõem de margem para redesenhar seus processos produtivos: podem substituir máquinas por trabalhadores, ou vice-versa, buscando a combinação mais eficiente. Que instrumento analítico nos permite estudar essas possibilidades de troca entre insumos?
+
+A resposta está nas **isoquantas** e na **taxa marginal de substituição técnica (TMST)**, ferramentas que capturam, respectivamente, o conjunto de combinações de insumos que geram o mesmo produto e a "taxa de câmbio" entre um fator e outro ao longo desse conjunto. A analogia com a teoria do consumidor é direta — e proposital: as isoquantas são o equivalente produtivo das curvas de indiferença, e a TMST desempenha papel análogo à taxa marginal de substituição.
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
+  <figcaption markdown="span"><strong>Figura 10.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
 </figure>
 
 ### Isoquantas
@@ -126,7 +130,7 @@ A derivação segue da diferenciação total da isoquanta \(f(K, L) = q_0\):
 f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
 \]
 
-A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema — um fenômeno intuitivamente análogo à taxa marginal de substituição decrescente no consumo.
+O que essa expressão nos diz economicamente? A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema. Quando a firma já emprega muito trabalho e pouco capital, cada unidade adicional de trabalho compensa menos capital perdido — exatamente porque os rendimentos marginais do trabalho são decrescentes. Esse fenômeno é intuitivamente análogo à taxa marginal de substituição decrescente no consumo, e a convexidade das isoquantas é sua expressão geométrica.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A TMST mede quantas unidades de um insumo a firma pode trocar por uma unidade do outro sem perder produção.
@@ -135,7 +139,7 @@ A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo o
 
     **Por que isso importa:** Quando o salário mínimo sobe no Brasil, a TMST indica o quanto as firmas conseguem substituir trabalho por máquinas — e em setores com baixa substituibilidade, o impacto no emprego é menor.
 
-??? example "Exercício Resolvido 9.1"
+??? example "Exercício Resolvido 10.1"
     **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
 
     **Dados:** \(A = 20\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(K = 25\), \(L = 16\).
@@ -174,11 +178,11 @@ A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo o
 
 ## 10.3 Rendimentos de Escala
 
-A lei dos rendimentos marginais decrescentes descreve o que acontece quando variamos um insumo mantendo o outro fixo. Mas o que ocorre quando a firma aumenta **todos** os insumos proporcionalmente? A resposta define os rendimentos de escala — um conceito de longo prazo.
+Até aqui, nossa análise caminhou em duas direções complementares: primeiro, variamos um insumo com o outro fixo (Seção 10.1, rendimentos marginais); depois, trocamos um insumo por outro ao longo de uma isoquanta (Seção 10.2, substituição). Resta uma terceira pergunta, talvez a mais relevante para decisões estratégicas de longo prazo: o que acontece quando a firma aumenta **todos** os insumos proporcionalmente? Se uma empresa duplica suas fábricas, seus trabalhadores e toda a sua estrutura, o produto necessariamente dobra? A resposta, que define os rendimentos de escala, tem implicações profundas para a estrutura de mercado — pois determina se há vantagem em ser grande ou pequeno.
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
+  <figcaption markdown="span"><strong>Figura 10.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
 </figure>
 
 !!! definition "Rendimentos de escala"
@@ -196,7 +200,7 @@ e = \frac{\partial \ln f(tK, tL)}{\partial \ln t}\bigg|_{t=1} = \frac{f_K \cdot 
 
 onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em relação a cada insumo. Se \(e = 1\), rendimentos constantes; se \(e > 1\), crescentes; se \(e < 1\), decrescentes.
 
-Note que uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos.
+Note que uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos. Confundir esses dois conceitos é um erro recorrente — e compreensível, pois ambos tratam de "rendimentos". A distinção é temporal e conceitual: os rendimentos marginais decrescentes são um fenômeno de curto prazo (um fator fixo); os rendimentos de escala são um fenômeno de longo prazo (todos os fatores variáveis). Uma siderúrgica pode ter rendimentos crescentes de escala (produzir mais aço por real investido ao dobrar toda a operação) e, simultaneamente, rendimentos marginais decrescentes do trabalho (cada operário adicional em uma planta fixa produz menos que o anterior).
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Rendimentos de escala respondem à pergunta: se a firma dobrar tudo — máquinas, trabalhadores, espaço —, o produto mais que dobra, dobra exatamente ou menos que dobra?
@@ -214,7 +218,7 @@ Note que uma função pode apresentar simultaneamente rendimentos crescentes de 
 
     O CADE aprovou a operação com restrições, exigindo a venda de marcas e ativos em mercados onde a concentração era excessiva. Em termos da teoria da produção, o argumento das empresas equivale a afirmar que a função de produção conjunta apresenta rendimentos crescentes de escala (\(e > 1\)) na faixa relevante — a firma maior produz a um custo médio menor que as duas firmas separadas. O CADE, por sua vez, ponderou que os ganhos de escala precisavam ser contrastados com os riscos de poder de mercado — tema que retomaremos nos capítulos sobre concorrência imperfeita.
 
-??? example "Exercício Resolvido 9.2"
+??? example "Exercício Resolvido 10.2"
     **Enunciado:** Classifique os rendimentos de escala das seguintes funções de produção: (a) \(q = 3K + 7L\); (b) \(q = K^{0,4}L^{0,8}\); (c) \(q = \min\{2K, 5L\}\).
 
     **Resolução:**
@@ -251,7 +255,9 @@ Note que uma função pode apresentar simultaneamente rendimentos crescentes de 
 
 ## 10.4 Elasticidade de Substituição
 
-Os rendimentos de escala medem como o produto responde à variação conjunta dos insumos. Já a **elasticidade de substituição** mede quão facilmente a firma pode trocar um insumo por outro ao longo de uma isoquanta. Esse conceito é central para entender como as firmas reagem a mudanças nos preços relativos dos fatores.
+Vimos que a TMST mede a taxa à qual a firma pode trocar um insumo por outro ao longo de uma isoquanta. Mas a TMST varia conforme nos movemos ao longo da curva. Surge então uma pergunta natural: quão sensível é a combinação de insumos a mudanças na TMST? Em outras palavras, quando os preços relativos dos fatores se alteram — por exemplo, quando o salário mínimo sobe ou o custo do capital cai —, a firma ajusta significativamente sua proporção capital-trabalho, ou a tecnologia impõe rigidez nessa escolha?
+
+A **elasticidade de substituição** é o parâmetro que responde a essa pergunta. Trata-se de uma medida adimensional que sintetiza a curvatura da isoquanta e, portanto, a facilidade de substituição entre insumos. Esse conceito é central não apenas para a teoria da produção, mas também para a análise da distribuição funcional da renda e o debate contemporâneo sobre automação e desigualdade.
 
 !!! definition "Elasticidade de substituição"
     A **elasticidade de substituição** \(\sigma\) mede a facilidade com que a firma pode substituir um insumo por outro ao longo de uma isoquanta. Formalmente:
@@ -266,7 +272,7 @@ Intuitivamente, \(\sigma\) capta a curvatura da isoquanta:
 - Se \(\sigma \to 0\), os insumos são **complementares perfeitos** (isoquanta em L, Leontief).
 - Se \(\sigma = 1\), temos o caso intermediário da **Cobb-Douglas**.
 
-A elasticidade de substituição é um parâmetro central na análise da distribuição funcional da renda, pois determina como mudanças nos preços relativos dos fatores afetam as participações do capital e do trabalho na renda total.
+A elasticidade de substituição é um parâmetro central na análise da distribuição funcional da renda, pois determina como mudanças nos preços relativos dos fatores afetam as participações do capital e do trabalho na renda total. Quando \(\sigma > 1\), um barateamento relativo do capital leva a uma substituição tão intensa que a participação do capital na renda *aumenta*; quando \(\sigma < 1\), o efeito é o oposto. Esse mecanismo está no centro do debate contemporâneo sobre desigualdade, como argumentou Thomas Piketty em *O Capital no Século XXI* (2014).
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A elasticidade de substituição mede o quão fácil é trocar máquinas por pessoas (ou vice-versa) sem perder produção.
@@ -313,7 +319,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 !!! example "Exemplo: Elasticidade de substituição na indústria brasileira"
     A elasticidade de substituição tem implicações diretas para o mercado de trabalho. Quando \(\sigma\) é alto, as firmas substituem trabalho por capital (automação) com relativa facilidade. A literatura empírica aponta valores de \(\sigma\) entre 0,4 e 0,6 para o setor manufatureiro em diversas economias (Chirinko, 2008), e estudos com dados brasileiros encontram valores consistentemente abaixo de 1. Isso indica que capital e trabalho são complementares — mas não tanto quanto no caso Leontief puro (\(\sigma = 0\)). Esse grau intermediário de complementaridade ajuda a explicar por que a automação industrial desloca trabalhadores de forma menos abrupta do que ocorreria com \(\sigma\) mais elevado, mas ainda assim gera pressão sobre ocupações de baixa qualificação.
 
-??? example "Exercício Resolvido 9.4"
+??? example "Exercício Resolvido 10.4"
     **Enunciado:** Uma firma opera com a função de produção CES \(q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}\). Calcule a elasticidade de substituição e a TMST quando \(K = 8\) e \(L = 2\).
 
     **Dados:** \(\delta = 0{,}5\), \(\rho = -1\), \(\gamma = 1\).
@@ -342,11 +348,11 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
 ## 10.5 Funções de Produção Clássicas
 
-Apresentamos agora quatro famílias de funções de produção que cobrem todo o espectro de substituibilidade entre insumos. Cada uma captura um padrão tecnológico distinto, e a escolha da forma funcional adequada depende do setor e do problema em análise.
+As seções anteriores desenvolveram os conceitos — produtividade marginal, isoquantas, TMST, rendimentos de escala e elasticidade de substituição — que caracterizam qualquer tecnologia de produção. Mas como esses conceitos se materializam em formas funcionais concretas, aplicáveis à modelagem empírica e à resolução de problemas? Apresentamos agora quatro famílias de funções de produção que cobrem todo o espectro de substituibilidade entre insumos, da rigidez absoluta (Leontief) à flexibilidade total (linear). Cada uma captura um padrão tecnológico distinto, e a escolha da forma funcional adequada depende do setor e do problema em análise. O domínio dessas quatro formas é indispensável tanto para provas da ANPEC quanto para trabalhos empíricos.
 
 ### Função de produção linear
 
-A função linear captura situações em que os insumos realizam a mesma tarefa de forma intercambiável — por exemplo, uma linha de produção que pode ser operada por robôs ou por trabalhadores com resultado idêntico.
+Comecemos pelo caso extremo de máxima flexibilidade na substituição entre insumos. A função linear captura situações em que os insumos realizam a mesma tarefa de forma intercambiável — por exemplo, uma linha de produção que pode ser operada por robôs ou por trabalhadores com resultado idêntico, ou uma usina que pode gerar eletricidade queimando gás natural ou óleo combustível.
 
 \[
 q = aK + bL, \qquad a, b > 0
@@ -356,7 +362,7 @@ Os insumos são **substitutos perfeitos**. A TMST é constante e igual a \(b/a\)
 
 ### Função de produção de proporções fixas (Leontief)
 
-No extremo oposto, a função Leontief descreve processos em que os insumos devem ser combinados em proporções rígidas — como receitas químicas ou postos de trabalho que exigem uma máquina por operador.
+No extremo oposto da escala de substituibilidade, encontramos a função Leontief, que descreve processos em que os insumos devem ser combinados em proporções rígidas — como receitas químicas, onde cada molécula de água exige exatamente dois átomos de hidrogênio e um de oxigênio, ou postos de trabalho que exigem uma máquina por operador, como um taxista e seu veículo.
 
 \[
 q = \min\left\{\frac{K}{a}, \frac{L}{b}\right\}, \qquad a, b > 0
@@ -366,7 +372,7 @@ Os insumos são **complementares perfeitos**: devem ser utilizados na proporçã
 
 ### Função de produção Cobb-Douglas
 
-A Cobb-Douglas é a forma funcional mais utilizada em trabalhos empíricos, pela combinação de flexibilidade e tratabilidade analítica. Foi proposta por Charles Cobb e Paul Douglas em 1928 para descrever a produção industrial nos EUA.
+Entre a rigidez total do Leontief e a flexibilidade ilimitada da linear, situa-se a função mais célebre da economia: a **Cobb-Douglas**. Proposta por Charles Cobb e Paul Douglas em 1928 para descrever a produção industrial nos EUA, ela se tornou a forma funcional mais utilizada em trabalhos empíricos — da contabilidade do crescimento à estimação de funções de custo — graças a uma combinação invejável de flexibilidade e tratabilidade analítica.
 
 \[
 q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0
@@ -392,7 +398,7 @@ A CES **generaliza** as três funções anteriores:
 
 - \(\rho \to 0 \Rightarrow\) Cobb-Douglas \((\sigma = 1)\),
 - \(\rho = 1 \Rightarrow\) Linear \((\sigma = \infty)\),
-- \(\rho \to -\infty \Rightarrow\) Leontief \((\sigma = 0)\).
+- \(\rho \to -\infty \Rightarrow\) Leontief \((\sigma = 0)\): \(q \to A\min\{K, L\}\). (Para obter a forma geral \(\min\{K/a, L/b\}\), é necessário colocar os coeficientes dentro da função \(\min\), e não como pesos \(\delta, 1-\delta\) na CES.)
 
 ### Tabela comparativa das funções de produção
 
@@ -407,7 +413,7 @@ A CES **generaliza** as três funções anteriores:
 
 As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
 
-??? example "Exercício Resolvido 9.5"
+??? example "Exercício Resolvido 10.5"
     **Enunciado:** A função de produção de uma pizzaria é \(Q = 30K^{0,5}L^{0,5}\), com \(K\) fornos fixados em 4 no curto prazo. (a) Escreva a função de produção de curto prazo. (b) Calcule o produto total com 9 trabalhadores. (c) Calcule o produto marginal e o produto médio com 9 trabalhadores. (d) Classifique os rendimentos de escala.
 
     **Dados:** \(A = 30\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(\bar{K} = 4\).
@@ -450,11 +456,13 @@ As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a 
 
 ## 10.6 Progresso Técnico
 
-As funções de produção vistas até aqui descrevem a tecnologia em um ponto fixo do tempo. Mas a tecnologia evolui, e essa evolução é a principal fonte de crescimento econômico no longo prazo. O progresso técnico desloca a função de produção, permitindo obter mais produto com os mesmos insumos.
+As quatro funções de produção apresentadas na seção anterior descrevem a tecnologia em um instante do tempo — uma "fotografia" das possibilidades produtivas. Contudo, a história econômica nos ensina que a tecnologia é dinâmica: a mesma quantidade de terra e trabalho que produzia 1.700 kg de soja por hectare na década de 1970 produz mais de 3.300 kg hoje. De onde vem esse ganho, se os insumos não mudaram proporcionalmente?
+
+A resposta reside no **progresso técnico** — o deslocamento da própria função de produção ao longo do tempo. Incorporar essa dimensão temporal é essencial para conectar a microeconomia da produção à macroeconomia do crescimento, e o instrumento-chave para essa conexão é o **resíduo de Solow**, que mede a parcela do crescimento do produto não explicada pela acumulação de fatores.
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 9.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
+  <figcaption markdown="span"><strong>Figura 10.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
 </figure>
 
 Formalmente, introduzimos o tempo \(t\) na função de produção. A formulação mais simples é:
@@ -480,9 +488,11 @@ Na função Cobb-Douglas \(q = A(t) K^{\alpha} L^{1-\alpha}\), os três tipos de
 A(t) K^{\alpha} L^{1-\alpha} = K^{\alpha} [A(t)^{1/(1-\alpha)} L]^{1-\alpha} = [A(t)^{1/\alpha} K]^{\alpha} L^{1-\alpha}
 \]
 
-Para funções de produção mais gerais (como a CES com \(\sigma \neq 1\)), as três classificações geram resultados distintos, e a escolha do tipo de progresso técnico tem implicações importantes para a dinâmica de crescimento e a distribuição funcional da renda.
+Para funções de produção mais gerais (como a CES com \(\sigma \neq 1\)), as três classificações geram resultados distintos, e a escolha do tipo de progresso técnico tem implicações importantes para a dinâmica de crescimento e a distribuição funcional da renda. A razão pela qual a classificação de Harrod é a mais utilizada em modelos de crescimento econômico é que apenas o progresso técnico aumentador de trabalho é compatível com um "estado estacionário" (trajetória de crescimento equilibrado) em que todas as variáveis per capita crescem a taxas constantes — uma propriedade desejável para a modelagem de longo prazo.
 
 ### Medindo o progresso técnico: o resíduo de Solow
+
+As classificações de neutralidade nos dizem *como* o progresso técnico opera, mas não *quanto* dele há. Como medir, em termos quantitativos, a contribuição do progresso técnico para o crescimento do produto? A resposta é a decomposição do crescimento, que permite isolar o **resíduo de Solow** — a parcela do crescimento não explicada pela acumulação de fatores.
 
 A taxa de crescimento do produto pode ser decomposta como:
 
@@ -502,7 +512,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
     **Conexão com este capítulo:**
     A decomposição do crescimento — que atribui parcelas do crescimento do produto a capital, trabalho e PTF — é apresentada neste capítulo como aplicação direta da função de produção Cobb-Douglas. O resíduo de Solow, interpretado como medida de progresso técnico, conecta a teoria da produção à questão central do crescimento econômico.
 
-??? example "Exercício Resolvido 9.3"
+??? example "Exercício Resolvido 10.3"
     **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
 
     **Dados:** \(\alpha = 0{,}3\), \(\beta = 0{,}7\), \(\dot{A}/A = 0{,}02\), \(\dot{K}/K = 0{,}04\), \(\dot{L}/L = 0{,}01\).
@@ -567,6 +577,8 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 ## 10.7 Funções de Produção Homotéticas
 
+Ao longo deste capítulo, notamos que certas propriedades das funções de produção — como o fato de a TMST depender apenas da razão \(K/L\), e não dos níveis absolutos dos insumos — simplificam enormemente a análise. Essas propriedades não são acidentais: elas decorrem de uma estrutura matemática particular chamada **homoteticidade**. Compreender essa estrutura é importante porque ela determina se o caminho de expansão da firma é linear (o que simplifica a função custo) e se firmas de diferentes tamanhos utilizam a mesma "receita" de insumos.
+
 Uma função de produção \(f(K, L)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
 
 \[
@@ -604,7 +616,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
     **Por que isso importa:** A hipótese de homoteticidade simplifica enormemente a análise de custos. Se a tecnologia não for homotética, a proporção ótima de insumos muda com a escala, e a função custo não se separa em um componente de preços e outro de quantidade.
 
-??? example "Exercício Resolvido 9.4"
+??? example "Exercício Resolvido 10.6"
     **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = r\). (c) Calcule a TMST ao longo do raio \(K = L\).
 
     **Resolução:**
@@ -631,13 +643,35 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ---
 
+## Resumo do Capítulo
+
+- A **função de produção** $q = f(K, L)$ descreve a quantidade máxima de produto obtida a partir de capital e trabalho, sintetizando a tecnologia da firma. Dela derivam-se o produto marginal, o produto médio e a lei dos rendimentos marginais decrescentes.
+- As **isoquantas** representam combinações de insumos que geram o mesmo nível de produto, e a **TMST** (taxa marginal de substituição técnica) mede a taxa à qual a firma pode trocar um insumo por outro mantendo a produção constante.
+- Os **rendimentos de escala** classificam a tecnologia segundo o que ocorre com o produto quando todos os insumos são multiplicados por um mesmo fator: crescentes, constantes ou decrescentes. Esse conceito é distinto da lei dos rendimentos marginais decrescentes, que se aplica à variação de um único insumo.
+- A **elasticidade de substituição** ($\sigma$) mede a facilidade com que a firma substitui capital por trabalho ao longo de uma isoquanta, sendo um parâmetro central que diferencia as famílias de funções de produção (linear, Leontief, Cobb-Douglas e CES).
+- As quatro funções de produção clássicas — **linear** ($\sigma = \infty$), **Leontief** ($\sigma = 0$), **Cobb-Douglas** ($\sigma = 1$) e **CES** ($\sigma$ livre) — cobrem todo o espectro de substituibilidade entre insumos e são amplamente utilizadas na análise empírica.
+- O **progresso técnico** desloca a função de produção para cima ao longo do tempo, podendo ser neutro (Hicks, Harrod ou Solow) ou enviesado, e é o principal motor do crescimento da produtividade no longo prazo — como ilustra a revolução agrícola da Embrapa no Brasil.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Função de produção | Relação $q = f(K, L)$ que descreve a quantidade máxima de produto para dadas quantidades de insumos e tecnologia. |
+| Produto marginal | Acréscimo ao produto total resultante de uma unidade adicional de um insumo, mantidos os demais constantes ($\mathrm{PMg}_L = \partial f / \partial L$). |
+| Produto médio | Razão entre o produto total e a quantidade do insumo ($\mathrm{PMe}_L = f(K,L)/L$). |
+| Lei dos rendimentos marginais decrescentes | A partir de certo ponto, cada unidade adicional de um insumo variável (com os demais fixos) gera acréscimos menores ao produto. |
+| Isoquanta | Curva que representa todas as combinações de insumos que geram o mesmo nível de produto. |
+| TMST | Taxa marginal de substituição técnica: razão dos produtos marginais ($\mathrm{PMg}_L / \mathrm{PMg}_K$), indicando a taxa de troca entre insumos ao longo da isoquanta. |
+| Rendimentos de escala | Comportamento do produto quando todos os insumos são multiplicados por $t > 1$: crescentes se $f(tK, tL) > t \cdot f(K,L)$, constantes se igual, decrescentes se menor. |
+| Elasticidade de substituição ($\sigma$) | Mede a variação percentual na razão $K/L$ em resposta a uma variação percentual na TMST, capturando a facilidade de substituição entre insumos. |
+| Função CES | Função de produção com elasticidade de substituição constante, que engloba como casos especiais a linear, a Cobb-Douglas e a Leontief. |
+| Progresso técnico | Deslocamento da função de produção ao longo do tempo, classificado como neutro à Hicks, Harrod ou Solow conforme o viés sobre os insumos. |
+
 ---
 
 ## Exercícios
 
-!!! tip "Exercícios do Capítulo 10"
-
-**Exercício 9.1.**
+**Exercício 10.1.**
 Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
 (a) Calcule os produtos marginais \(\mathrm{PMg}_K\) e \(\mathrm{PMg}_L\).
@@ -650,11 +684,11 @@ Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
 (e) Confirme que \(\sigma = 1\).
 
-[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-1)
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-1)
 
 ---
 
-**Exercício 9.2.**
+**Exercício 10.2.**
 Uma firma opera com a tecnologia CES:
 
 \[
@@ -669,11 +703,11 @@ q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}
 
 (d) Compare a forma das isoquantas desta função com as da Cobb-Douglas.
 
-[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-2)
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-2)
 
 ---
 
-**Exercício 9.3.**
+**Exercício 10.3.**
 Considere a função de produção Leontief \(q = \min\{2K, 3L\}\).
 
 (a) Qual a proporção ótima de uso dos insumos?
@@ -682,11 +716,11 @@ Considere a função de produção Leontief \(q = \min\{2K, 3L\}\).
 
 (c) Qual o efeito de dobrar apenas o trabalho, mantendo o capital constante? Interprete em termos de rendimentos marginais.
 
-[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-3)
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-3)
 
 ---
 
-**Exercício 9.4.**
+**Exercício 10.4.**
 Uma função de produção é dada por \(q = K^{0,6} L^{0,8}\).
 
 (a) Classifique os rendimentos de escala.
@@ -697,11 +731,11 @@ Uma função de produção é dada por \(q = K^{0,6} L^{0,8}\).
 
 (d) Explique por que rendimentos crescentes de escala podem existir mesmo com produtos marginais decrescentes em cada fator individualmente.
 
-[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-4)
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-4)
 
 ---
 
-**Exercício 9.5.**
+**Exercício 10.5.**
 Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\), com \(A(t) = e^{0,02t}\).
 
 (a) Qual a taxa de crescimento da PTF?
@@ -714,13 +748,13 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 (e) Calcule a produtividade total dos fatores em \(t = 0\) e \(t = 10\). Se em \(t = 0\) a firma utiliza \(K = 100\) e \(L = 200\), qual o produto em \(t = 0\) e em \(t = 10\) (supondo que os insumos cresçam às taxas indicadas)?
 
-[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-5)
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-5)
 
 ---
 
 ## 🏆 Vem, ANPEC!
 
-??? question "ANPEC 2013 — Questão 06"
+??? question "ANPEC 2013 — Questão 6"
     Considere a teoria da produção e indique quais das afirmativas abaixo são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -742,7 +776,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — F:** Monotonia (livre descarte) significa exatamente o oposto: se é possível produzir \(q\) com \((K, L)\), então é possível produzir *ao menos* \(q\) com \((K', L')\) onde \(K' \geq K\) e \(L' \geq L\). Mais insumo nunca reduz o produto máximo possível.
         - **Item 4 — V:** Conforme demonstrado na Seção 10.4, a Cobb-Douglas possui \(\sigma = 1\), independentemente dos expoentes \(\alpha\) e \(\beta\).
 
-??? question "ANPEC 2015 — Questão 07"
+??? question "ANPEC 2015 — Questão 7"
     Com relação à Teoria da Produção, indique quais das afirmativas abaixo são verdadeiras:
 
     | Item | Afirmação |
@@ -764,7 +798,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — V:** Inclinação ascendente significaria \(dK/dL > 0\) ao longo da isoquanta, ou seja, seria necessário aumentar ambos os insumos para manter o produto constante — o que contradiz a hipótese de produtividades marginais positivas.
         - **Item 4 — V:** TMST decrescente ao longo da isoquanta (em valor absoluto) é a condição que garante convexidade das isoquantas em relação à origem.
 
-??? question "ANPEC 2016 — Questão 05"
+??? question "ANPEC 2016 — Questão 5"
     Em relação à teoria da produção, é correto afirmar que:
 
     | Item | Afirmação |
@@ -786,7 +820,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — V:** É um resultado clássico: quando \(\rho = p \to 0\), a CES converge para a Cobb-Douglas (com pesos iguais, neste caso \(Q = K^{0,5}L^{0,5}\)).
         - **Item 4 — V:** Com \(p = 1\), temos \(Q = L + K\) (função linear), cuja elasticidade de substituição é \(\sigma = \infty\) — insumos são substitutos perfeitos.
 
-??? question "ANPEC 2017 — Questão 06"
+??? question "ANPEC 2017 — Questão 6"
     Com relação à Teoria da Produção no curto prazo, indique quais entre as afirmações abaixo são verdadeiras:
 
     | Item | Afirmação |
@@ -808,7 +842,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — F:** A lei dos rendimentos marginais decrescentes não resulta de queda na qualidade dos insumos (que são considerados homogêneos). Resulta da proporção desfavorável entre o fator variável e o fator fixo: cada unidade adicional do insumo variável dispõe de menos fator fixo para trabalhar.
         - **Item 4 — F:** Avanços tecnológicos deslocam a função de produção para cima (aumentam \(A\)), mas não eliminam a concavidade no curto prazo. Para qualquer nível de tecnologia, a adição contínua de um fator variável a um fator fixo eventualmente apresentará rendimentos marginais decrescentes.
 
-??? question "ANPEC 2020 — Questão 04"
+??? question "ANPEC 2020 — Questão 4"
     Com relação ao comportamento do produtor, indique quais dos itens a seguir são verdadeiros e quais são falsos:
 
     | Item | Afirmação |
@@ -830,7 +864,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         - **Item 3 — V:** Custos fixos elevados significam que o custo médio cai fortemente com a escala (diluição dos fixos), o que é uma manifestação de rendimentos crescentes de escala.
         - **Item 4 — V:** *Learning by doing* implica que a produtividade aumenta com a experiência acumulada (produção acumulada), gerando efetivamente rendimentos crescentes de escala dinâmicos.
 
-??? question "ANPEC 2024 — Questão 03"
+??? question "ANPEC 2024 — Questão 3"
     Com relação à teoria da produção, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     | Item | Afirmação |

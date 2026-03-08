@@ -20,6 +20,8 @@ Este capítulo apresenta seis pilares da **economia comportamental**:
 
 ## 8.1 Heurísticas e Vieses Cognitivos
 
+Antes de examinar modelos alternativos de decisão, é preciso entender *por que* os agentes se desviam das previsões da teoria neoclássica. A resposta começa pela forma como o cérebro humano processa informações — não como uma calculadora bayesiana perfeita, mas como um sistema adaptativo que economiza recursos cognitivos por meio de atalhos mentais. Esses atalhos funcionam bem na maioria das vezes, mas em contextos específicos produzem erros previsíveis que a teoria econômica não pode ignorar.
+
 O cérebro humano processa informações usando **heurísticas** — regras simplificadas que permitem tomar decisões rápidas com informação limitada. Na maioria das vezes, essas regras produzem resultados satisfatórios. Porém, em contextos específicos, elas geram **vieses** — desvios previsíveis em relação ao julgamento estatisticamente correto.
 
 !!! definition "Heurística"
@@ -41,12 +43,14 @@ Uma consequência importante da representatividade é a **lei dos pequenos núme
 
 ### 8.1.2 Disponibilidade
 
-A heurística da **disponibilidade** consiste em estimar a frequência ou probabilidade de um evento pela facilidade com que exemplos vêm à mente. Eventos vívidos, recentes ou emocionalmente carregados são superestimados; eventos abstratos ou distantes, subestimados.
+Se a representatividade nos engana pela semelhança, a próxima heurística nos engana pela facilidade de recordação. A heurística da **disponibilidade** consiste em estimar a frequência ou probabilidade de um evento pela facilidade com que exemplos vêm à mente. Eventos vívidos, recentes ou emocionalmente carregados são superestimados; eventos abstratos ou distantes, subestimados.
 
 !!! example "Risco de avião vs. carro"
     Após um acidente aéreo amplamente noticiado, a percepção de risco de voar aumenta significativamente — mesmo que, estatisticamente, o transporte aéreo seja muito mais seguro por quilômetro percorrido do que o rodoviário. No Brasil, os dados da ANTT e da ANAC indicam que a taxa de fatalidade por passageiro-quilômetro no transporte rodoviário é dezenas de vezes superior à do transporte aéreo. A cobertura midiática intensa de acidentes aéreos torna esses eventos cognitivamente "disponíveis", distorcendo a avaliação de risco.
 
 ### 8.1.3 Ancoragem
+
+Enquanto representatividade e disponibilidade distorcem o *conteúdo* do julgamento, a ancoragem distorce o *processo* de estimação — mostrando que até números completamente irrelevantes podem exercer influência sobre nossas avaliações.
 
 A **ancoragem** ocorre quando um valor inicial — mesmo que arbitrário e irrelevante — influencia sistematicamente a estimativa final de uma quantidade desconhecida.
 
@@ -64,14 +68,14 @@ A ancoragem tem implicações importantes para a economia: negociações salaria
 
 ### 8.1.4 Excesso de confiança
 
-O **excesso de confiança** (*overconfidence*) manifesta-se de várias formas: superestimação das próprias habilidades, calibração inadequada de intervalos de confiança e a ilusão de controle sobre eventos aleatórios. Quando perguntados, a maioria dos motoristas se declara "acima da média" — uma impossibilidade estatística. Investidores excessivamente confiantes tendem a negociar com frequência excessiva, reduzindo seus retornos líquidos (Barber e Odean 2001).
+As heurísticas anteriores se referem a distorções no julgamento sobre eventos externos. Mas os agentes também cometem erros sistemáticos na avaliação de suas próprias capacidades e conhecimentos. O **excesso de confiança** (*overconfidence*) manifesta-se de várias formas: superestimação das próprias habilidades, calibração inadequada de intervalos de confiança e a ilusão de controle sobre eventos aleatórios. Quando perguntados, a maioria dos motoristas se declara "acima da média" — uma impossibilidade estatística. Investidores excessivamente confiantes tendem a negociar com frequência excessiva, reduzindo seus retornos líquidos (Barber e Odean 2001).
 
 !!! example "Box Brasil — Efeito disposição na B3"
     O **efeito disposição** — a tendência a vender ações vencedoras cedo demais e manter ações perdedoras por tempo demais — é uma manifestação conjunta de aversão à perda e excesso de confiança. Estudos com dados de investidores pessoa física na B3 (antiga BM&FBovespa) documentam esse padrão de forma robusta. Estudos empíricos usando dados de corretoras brasileiras encontraram que investidores individuais realizam ganhos com frequência significativamente maior do que realizam perdas. Esse comportamento é custoso: as ações vendidas (vencedoras) tendem a ter desempenho futuro superior ao das ações mantidas (perdedoras), gerando retornos líquidos menores para o investidor.
 
 ### 8.1.5 Sistema 1 e Sistema 2: a arquitetura dual do pensamento
 
-Kahneman (2011) sintetizou décadas de pesquisa sobre heurísticas em um modelo de **dois sistemas** cognitivos:
+Todas as heurísticas e vieses documentados acima levantam uma questão natural: por que agentes inteligentes cometem erros tão previsíveis? A resposta reside na própria arquitetura do pensamento humano. Kahneman (2011) sintetizou décadas de pesquisa sobre heurísticas em um modelo de **dois sistemas** cognitivos:
 
 - **Sistema 1:** rápido, automático, intuitivo, de baixo esforço. Opera por associação e reconhecimento de padrões. É responsável pelas heurísticas e por grande parte das decisões cotidianas.
 - **Sistema 2:** lento, deliberado, analítico, de alto esforço. Requer atenção consciente e é acionado quando o Sistema 1 encontra uma situação inesperada ou quando precisamos fazer cálculos explícitos.
@@ -104,11 +108,13 @@ Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a 
 
 ## 8.2 Teoria do Prospecto
 
+As heurísticas e vieses mapeados na seção anterior nos dizem *onde* o modelo neoclássico falha, mas não oferecem uma alternativa formal para substituí-lo. Para isso, precisamos de um modelo que preserve o rigor analítico da utilidade esperada, mas incorpore as regularidades empíricas documentadas em laboratório e no mundo real. A Teoria do Prospecto é essa alternativa.
+
 A **utilidade esperada** de Von Neumann e Morgenstern (Capítulo 7) pressupõe que os agentes avaliam resultados em termos de riqueza final e ponderam probabilidades linearmente. A Teoria do Prospecto, proposta por Kahneman e Tversky (1979) e refinada em sua versão cumulativa (Tversky e Kahneman 1992), substitui essas premissas por duas inovações fundamentais: uma **função valor** definida sobre ganhos e perdas relativos a um ponto de referência, e uma **função de ponderação de probabilidades** que distorce probabilidades objetivas.
 
 ### 8.2.1 O Paradoxo de Allais
 
-Antes da Teoria do Prospecto, Maurice Allais (1953) já havia demonstrado uma violação elegante da utilidade esperada. Considere os seguintes problemas de decisão:
+Para motivar as inovações da Teoria do Prospecto, comecemos por um experimento mental que abalou a confiança no axioma da independência — o pilar mais controverso da utilidade esperada de Von Neumann e Morgenstern. Antes da Teoria do Prospecto, Maurice Allais (1953) já havia demonstrado uma violação elegante da utilidade esperada. Considere os seguintes problemas de decisão:
 
 !!! example "Paradoxo de Allais"
     **Problema 1:** Escolha entre:
@@ -124,6 +130,8 @@ Antes da Teoria do Prospecto, Maurice Allais (1953) já havia demonstrado uma vi
     A maioria das pessoas escolhe **A** no Problema 1 e **D** no Problema 2. Mas essa combinação viola o axioma da independência da utilidade esperada. Se \(A \succ B\), então pela UE teríamos \(C \succ D\) — mas o padrão observado é o contrário. A preferência por A reflete o **efeito certeza**: a sobrevalorização de resultados certos em relação a resultados meramente prováveis.
 
 ### 8.2.2 A função valor
+
+O Paradoxo de Allais revelou que as pessoas não tratam as probabilidades de forma linear. Mas há outra dimensão em que a utilidade esperada falha: a forma como os agentes avaliam os *resultados*. A utilidade esperada pressupõe que o que importa é a riqueza final — um investidor com patrimônio de R\$ 1 milhão se sente igualmente bem, independentemente de ter começado com R\$ 500 mil e ganhado R\$ 500 mil, ou de ter começado com R\$ 2 milhões e perdido R\$ 1 milhão. A experiência cotidiana, porém, nos diz que isso não é verdade: o contexto de onde partimos — o **ponto de referência** — importa, e muito.
 
 A Teoria do Prospecto propõe que os agentes avaliam resultados como **ganhos ou perdas** relativos a um **ponto de referência** (tipicamente o *status quo*), e não em termos de riqueza absoluta. A **função valor** \(v(x)\) possui três propriedades fundamentais:
 
@@ -210,6 +218,8 @@ A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto 
 
 ### 8.2.3 Ponderação de probabilidades
 
+A função valor explica *como* os agentes avaliam resultados; falta agora entender *como* avaliam probabilidades. A utilidade esperada assume que uma probabilidade de 10% recebe exatamente um décimo do peso de um evento certo. Mas será que as pessoas processam probabilidades dessa forma? A evidência empírica é inequívoca: não.
+
 Na utilidade esperada, as probabilidades entram linearmente na função objetivo. Na Teoria do Prospecto, as probabilidades objetivas \(p\) são transformadas por uma **função de ponderação** \(w(p)\) com formato de S invertido:
 
 \[
@@ -240,7 +250,7 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
 
 ### 8.2.4 Da PT Original à PT Cumulativa (CPT)
 
-A Teoria do Prospecto original (OPT) de 1979 apresentava uma limitação técnica importante: a ponderação direta de probabilidades isoladas podia levar à violação de dominância estocástica — um agente poderia preferir uma loteria com resultados piores em todos os cenários (Dhami 2016, p. 158). A solução veio em dois passos.
+A combinação de função valor e ponderação de probabilidades confere à Teoria do Prospecto um poder descritivo notável. No entanto, como frequentemente ocorre em ciência, a primeira versão de uma boa teoria carrega imperfeições técnicas que precisam ser corrigidas. A Teoria do Prospecto original (OPT) de 1979 apresentava uma limitação técnica importante: a ponderação direta de probabilidades isoladas podia levar à violação de dominância estocástica — um agente poderia preferir uma loteria com resultados piores em todos os cenários (Dhami 2016, p. 158). A solução veio em dois passos.
 
 **Utilidade Dependente de Rank (RDU).** Quiggin (1982) propôs ponderar **probabilidades acumuladas** em vez de probabilidades isoladas. Na RDU, os resultados são primeiro ordenados do pior ao melhor, e os pesos decisórios \(\pi_i\) são calculados a partir da função de ponderação aplicada às probabilidades acumuladas:
 
@@ -271,6 +281,8 @@ A tabela a seguir compara os quatro modelos:
 
 ### 8.2.5 Efeito dotação e efeito framing
 
+A Teoria do Prospecto não é apenas um modelo abstrato de decisão sob risco — ela gera previsões concretas sobre o comportamento econômico que podem ser testadas em laboratório e observadas nos mercados. Duas dessas previsões são particularmente importantes, pois desafiam pilares fundamentais da teoria neoclássica: o efeito dotação, que questiona a igualdade entre disposição a pagar e disposição a aceitar, e o efeito framing, que questiona a invariância das preferências à forma de apresentação.
+
 Duas consequências diretas da Teoria do Prospecto têm grande relevância econômica:
 
 **Efeito dotação.** A aversão à perda implica que as pessoas exigem mais para abrir mão de um objeto que já possuem do que estariam dispostas a pagar para adquiri-lo. Esse hiato entre a **disposição a aceitar** (WTA) e a **disposição a pagar** (WTP) contradiz a previsão da teoria neoclássica de que WTA \(\approx\) WTP para bens sem efeito renda significativo.
@@ -281,7 +293,7 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 !!! example "Box Brasil — Efeito dotação no mercado imobiliário"
     O mercado imobiliário brasileiro oferece uma ilustração vívida do efeito dotação. Dados do índice FipeZap mostram que, em períodos de desaceleração econômica, os preços de venda de imóveis residenciais resistem a cair mesmo quando o volume de transações despenca. Proprietários que compraram seus imóveis a preços elevados relutam em vender abaixo do preço de aquisição — o ponto de referência —, preferindo manter o imóvel fora do mercado por meses ou anos. Essa rigidez de preços para baixo é difícil de explicar pela teoria neoclássica pura, mas é uma previsão natural da aversão à perda: vender abaixo do preço de compra é codificado como "perda", e a dor dessa perda supera o benefício racional de liquidar o ativo e realocar o capital.
 
-**Efeito framing.** A forma como uma decisão é apresentada afeta sistematicamente as escolhas, mesmo quando as opções são logicamente equivalentes.
+**Efeito framing.** Se o efeito dotação mostra que a posse de um objeto altera sua valoração, o efeito framing revela algo ainda mais perturbador para o modelo neoclássico: a forma como uma decisão é apresentada afeta sistematicamente as escolhas, mesmo quando as opções são logicamente equivalentes. Não é apenas o *conteúdo* da decisão que importa — é a *moldura* em que ela é colocada.
 
 !!! example "O problema das doenças asiáticas"
     Tversky e Kahneman (1981) apresentaram o seguinte cenário: uma doença incomum ameaça matar 600 pessoas. Dois programas são propostos:
@@ -300,12 +312,14 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 
 ### 8.2.6 Contabilidade mental
 
+O efeito framing já nos mostrou que a forma de apresentação importa. A contabilidade mental leva essa ideia um passo adiante: não apenas a apresentação externa, mas a organização interna — a forma como o próprio agente categoriza e acompanha suas transações financeiras — afeta sistematicamente suas decisões.
+
 A **contabilidade mental** (*mental accounting*), conceito introduzido por Thaler (1985, 1999), descreve como as pessoas organizam, avaliam e acompanham suas atividades financeiras usando um sistema de "contas" mentais separadas — em vez de tratar o dinheiro como perfeitamente fungível, conforme prevê a teoria neoclássica.
 
 !!! definition "Contabilidade mental"
     A **contabilidade mental** é o conjunto de operações cognitivas usadas por indivíduos e famílias para organizar, avaliar e acompanhar atividades financeiras (Thaler 1999). Inclui três componentes: (i) como os resultados são percebidos e avaliados; (ii) como as atividades são alocadas a contas específicas; e (iii) a frequência com que as contas são "fechadas" e avaliadas. Dhami (2016, p. 1486–1518) dedica um capítulo inteiro ao tema.
 
-Thaler (1985) identificou quatro **regras de edição hedônica** que descrevem como os agentes combinam ou separam ganhos e perdas:
+Como a contabilidade mental afeta as decisões concretas dos consumidores? Thaler (1985) identificou quatro **regras de edição hedônica** — princípios que descrevem como os agentes combinam ou separam ganhos e perdas para maximizar (ou minimizar) o impacto emocional percebido:
 
 1. **Segregar ganhos:** é melhor apresentar dois ganhos separadamente (dois presentes distintos parecem melhores que um pacote).
 2. **Integrar perdas:** é melhor combinar duas perdas em uma só (uma cobrança única dói menos que duas separadas).
@@ -331,6 +345,8 @@ Essas regras decorrem diretamente da curvatura da função valor da Teoria do Pr
 
 ## 8.3 Ambiguidade e o Paradoxo de Ellsberg
 
+A Teoria do Prospecto desafia a utilidade esperada ao mostrar que os agentes distorcem probabilidades e avaliam resultados relativamente a um ponto de referência. Mas há um desafio ainda mais fundamental: e quando as probabilidades sequer são conhecidas? A distinção entre risco e ambiguidade abre uma nova frente de questionamento que nem a utilidade esperada clássica nem a Teoria do Prospecto, em sua formulação original, conseguem acomodar plenamente.
+
 ### 8.3.1 Risco, incerteza e ambiguidade
 
 O Capítulo 7 tratou de decisões sob **risco** — situações em que as probabilidades dos estados do mundo são conhecidas. Knight (1921) distinguiu o risco da **incerteza** (*uncertainty*), em que as probabilidades são desconhecidas. Ellsberg (1961) identificou um fenômeno ainda mais específico: mesmo quando os agentes poderiam atribuir probabilidades subjetivas (como prescreve a UE de Savage), eles sistematicamente **evitam** situações em que as probabilidades são **ambíguas** — isto é, pouco informadas ou vagas.
@@ -342,6 +358,8 @@ O Capítulo 7 tratou de decisões sob **risco** — situações em que as probab
 | **Ambiguidade** | Formalmente atribuíveis, mas vagas | Urna com composição desconhecida |
 
 ### 8.3.2 O Paradoxo de Ellsberg
+
+Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers* — construiu um experimento mental engenhoso que demonstra a aversão à ambiguidade de forma irrefutável.
 
 !!! example "Paradoxo de Ellsberg — Duas cores"
     Considere duas urnas, cada uma com 100 bolas:
@@ -363,6 +381,8 @@ O Capítulo 7 tratou de decisões sob **risco** — situações em que as probab
 
 ### 8.3.3 Modelos de ambiguidade
 
+O Paradoxo de Ellsberg estabelece o fenômeno empírico — a aversão à ambiguidade é real e robusta. Mas como formalizá-la? Que modelos matemáticos podem acomodar a preferência sistemática por probabilidades conhecidas sem abandonar completamente a estrutura da teoria da decisão? Diversas respostas foram propostas.
+
 A aversão à ambiguidade motivou o desenvolvimento de vários modelos formais alternativos à UE de Savage:
 
 - **Utilidade Esperada de Choquet (CEU):** aplica a RDU com capacidades não aditivas em vez de probabilidades, permitindo que as crenças do agente violem a aditividade (Dhami 2016, p. 324–326).
@@ -379,6 +399,8 @@ A aversão à ambiguidade motivou o desenvolvimento de vários modelos formais a
 ---
 
 ## 8.4 Preferências Sociais
+
+Até aqui, questionamos *como* os agentes avaliam resultados e probabilidades — mostrando que a Teoria do Prospecto e a aversão à ambiguidade descrevem melhor esse processo do que a utilidade esperada clássica. Mas há uma premissa ainda mais fundamental que merece escrutínio: a de que os agentes se preocupam apenas consigo mesmos. Será que as pessoas tomam decisões econômicas ignorando completamente o que acontece com os demais? A evidência experimental é clara: não.
 
 Os modelos neoclássicos tradicionais assumem que os agentes são **autointeressados**: a utilidade de cada agente depende apenas de seu próprio consumo. Contudo, evidências experimentais robustas mostram que as pessoas se importam com a **distribuição** dos resultados e com as **intenções** dos outros jogadores. Essas **preferências sociais** incluem aversão à inequidade, reciprocidade, altruísmo e punição de comportamento injusto.
 
@@ -408,6 +430,8 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
     A alta tolerância à informalidade fiscal no Brasil pode ser interpretada à luz das preferências sociais. Quando os contribuintes percebem que o sistema tributário é **inequitativo** — com altas alíquotas sobre o trabalho formal e baixa tributação sobre lucros e dividendos —, a reciprocidade negativa pode reduzir a disposição a pagar impostos. Pesquisas de opinião do Ipea indicam que a percepção de injustiça fiscal é um dos principais fatores associados à tolerância com a evasão tributária. O modelo de Fehr-Schmidt (Seção 8.4.2) prevê exatamente esse padrão: agentes com alta aversão à desvantagem (\(\alpha_i\) elevado) podem preferir a "punição" de não cooperar a aceitar uma distribuição percebida como injusta.
 
 ### 8.4.2 O modelo de Fehr-Schmidt (aversão à inequidade)
+
+Os experimentos da subseção anterior documentam o fenômeno — as pessoas se importam com a justiça distributiva. Mas como incorporar essas preferências em um modelo formal que gere previsões testáveis? É necessário ir além da observação empírica e construir uma função de utilidade que capture a aversão à desigualdade de forma tratável e elegante.
 
 Fehr e Schmidt (1999) formalizaram as preferências sociais com um modelo elegante de **aversão à inequidade**. Em um grupo de \(n\) jogadores com payoffs \(y_1, y_2, \ldots, y_n\), a utilidade do jogador \(i\) é:
 
@@ -477,6 +501,8 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 
 ### 8.4.3 Reciprocidade e cooperação
 
+O modelo de Fehr-Schmidt é um avanço importante, mas captura apenas a preocupação com a **distribuição final** dos resultados. Na prática, as pessoas também se importam com as *intenções* por trás das ações alheias: reagimos de forma diferente a uma oferta baixa feita por um computador e à mesma oferta feita por uma pessoa que sabemos estar agindo estrategicamente. Essa sensibilidade às intenções é o domínio da reciprocidade.
+
 O modelo de Fehr-Schmidt captura a aversão à **desigualdade de resultados**, mas não explica completamente a **reciprocidade** — a tendência a recompensar comportamento cooperativo e punir comportamento injusto, mesmo a um custo pessoal. Fehr e Gächter (2000) demonstraram o poder da reciprocidade em **jogos de bens públicos com punição**: quando os participantes podem punir (a um custo para si mesmos) jogadores que contribuem pouco, as contribuições ao bem público sobem de níveis baixos e declinantes (sem punição) para níveis altos e estáveis.
 
 Essa disposição à **punição altruísta** — pagar um custo para punir quem viola normas sociais — é difícil de explicar pelo autointeresse, mas emerge naturalmente de modelos que combinam aversão à inequidade com reciprocidade (Dhami 2016, p. 466–478).
@@ -492,6 +518,8 @@ Essa disposição à **punição altruísta** — pagar um custo para punir quem
 
 ## 8.5 Escolha Intertemporal e Desconto Hiperbólico
 
+As seções anteriores examinaram desvios comportamentais no domínio do risco (Teoria do Prospecto), da ambiguidade (Ellsberg) e da interação social (preferências sociais). Mas há uma dimensão fundamental da decisão econômica que ainda não abordamos sob a lente comportamental: o **tempo**. Como as pessoas trocam benefícios presentes por benefícios futuros? O modelo neoclássico oferece uma resposta elegante — o desconto exponencial —, mas a evidência empírica revela anomalias que pedem uma reformulação.
+
 ### 8.5.1 O Modelo de Utilidade Descontada
 
 O modelo padrão de escolha intertemporal — o **Modelo de Utilidade Descontada** (DUM), proposto por Samuelson (1937) — assume que os agentes avaliam fluxos de utilidade futura usando uma taxa de desconto **constante** \(\delta \in (0,1)\):
@@ -500,9 +528,11 @@ O modelo padrão de escolha intertemporal — o **Modelo de Utilidade Descontada
 U_0 = \sum_{t=0}^{T} \delta^t \, u(c_t)
 \]
 
-O desconto exponencial implica **consistência temporal**: se o agente prefere a opção A à B quando ambas ocorrem no futuro, essa preferência se mantém quando o momento da decisão se aproxima. Formalmente, se \(u(A)\) em \(t\) é preferido a \(u(B)\) em \(t+k\), então a mesma preferência vale para qualquer data de avaliação anterior.
+A principal implicação comportamental do desconto exponencial é a **consistência temporal**: se o agente prefere a opção A à B quando ambas ocorrem no futuro, essa preferência se mantém quando o momento da decisão se aproxima. Em outras palavras, um agente exponencial nunca muda de ideia simplesmente porque o tempo passou — seus planos são confiáveis. Formalmente, se \(u(A)\) em \(t\) é preferido a \(u(B)\) em \(t+k\), então a mesma preferência vale para qualquer data de avaliação anterior.
 
 ### 8.5.2 Anomalias do desconto exponencial
+
+A consistência temporal é uma propriedade poderosa — e, como se verifica, frequentemente violada. Você já prometeu a si mesmo que começaria a poupar "no mês que vem", e quando o mês chegou, adiou de novo? Ou que faria exercício pela manhã, mas quando o despertador tocou, preferiu dormir? Esses padrões não são anedóticos: eles refletem regularidades empíricas documentadas em dezenas de estudos.
 
 Wilkinson e Klaes (2012, p. 282–297) e Frederick, Loewenstein e O'Donoghue (2002) documentam diversas anomalias que o desconto exponencial não consegue explicar:
 
@@ -518,6 +548,8 @@ Wilkinson e Klaes (2012, p. 282–297) e Frederick, Loewenstein e O'Donoghue (20
     Richard Thaler propôs o seguinte experimento mental: a maioria das pessoas prefere **1 maçã hoje** a **2 maçãs amanhã**, mas prefere **2 maçãs em 51 dias** a **1 maçã em 50 dias**. Essa inversão de preferência revela uma taxa de desconto decrescente — alta para o presente imediato, baixa para o futuro distante.
 
 ### 8.5.3 Desconto quasi-hiperbólico
+
+Diante dessas anomalias, como construir um modelo que capture o viés do presente mantendo a tratabilidade analítica? A resposta mais influente é o desconto quasi-hiperbólico, que modifica o modelo exponencial de maneira mínima — adicionando um único parâmetro — mas com consequências profundas para as previsões de comportamento.
 
 Para capturar o viés do presente sem abandonar completamente a tratabilidade do modelo exponencial, Laibson (1997) — com base em Phelps e Pollak (1968) — propôs o modelo de desconto **quasi-hiperbólico**.
 
@@ -601,6 +633,8 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 
 ### 8.5.4 Autocontrole e estratégias de compromisso
 
+O desconto quasi-hiperbólico prevê que os agentes tomarão decisões das quais se arrependerão — consumirão demais hoje, pouparão de menos, procrastinarão tarefas importantes. Mas será que os agentes são cegos a esse padrão, ou alguns deles reconhecem sua própria fragilidade e tentam se proteger de si mesmos? A resposta a essa pergunta nos leva ao fascinante tema do autocontrole.
+
 Se os agentes reconhecem seu viés do presente, podem adotar **estratégias de compromisso** (*commitment devices*) para restringir seu comportamento futuro:
 
 - **Poupança automática com desconto em folha:** ao aderir a um plano de previdência com desconto automático, o agente remove a decisão de poupar do âmbito da tentação cotidiana.
@@ -618,9 +652,13 @@ Agentes que reconhecem sua inconsistência temporal são chamados **sofisticados
 
 ## 8.6 Nudges e Arquitetura de Escolhas
 
+Ao longo deste capítulo, construímos um inventário detalhado das limitações da racionalidade humana: heurísticas que distorcem julgamentos, aversão à perda que deforma avaliações, preferências sociais que complicam a interação estratégica e viés do presente que sabota planos de longo prazo. Diante de tantos desvios, uma pergunta de política pública se impõe com urgência: o que fazer? Proibir escolhas ruins? Deixar o mercado agir? Ou existe uma terceira via?
+
 As seções anteriores mostraram que os agentes cometem erros sistemáticos — heurísticas que distorcem julgamentos, aversão à perda que deforma avaliações e viés do presente que sabota planos de longo prazo. Diante desses desvios, surge uma questão de política pública: é possível **ajudar** as pessoas a tomar melhores decisões sem restringir sua liberdade?
 
 ### 8.6.1 Paternalismo libertário
+
+A resposta proposta por Thaler e Sunstein é o **paternalismo libertário** — uma filosofia que aceita os vieses como dado e busca utilizá-los a favor dos próprios agentes. A ferramenta central dessa abordagem é o *nudge*.
 
 !!! definition "Nudge"
     Um **nudge** é qualquer aspecto da **arquitetura de escolha** que altera o comportamento das pessoas de forma previsível, sem proibir nenhuma opção nem alterar significativamente os incentivos econômicos. Para contar como nudge, a intervenção deve ser fácil e barata de evitar (Thaler e Sunstein 2008).
@@ -629,7 +667,7 @@ A filosofia por trás dos nudges é o **paternalismo libertário**: libertário 
 
 ### 8.6.2 Ferramentas de nudging
 
-As principais ferramentas de nudging exploram os vieses documentados nas seções anteriores:
+Como traduzir a filosofia do paternalismo libertário em intervenções concretas? As principais ferramentas de nudging exploram precisamente os vieses documentados nas seções anteriores — a mesma inércia que impede as pessoas de poupar pode ser usada a seu favor, bastando mudar a opção-padrão:
 
 **Default options (opções-padrão).** A inércia e o viés do *status quo* fazem com que a maioria das pessoas aceite a opção pré-selecionada. Mudar o *default* de "opt-in" para "opt-out" pode ter efeitos dramáticos.
 
@@ -681,6 +719,8 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 
 ### 8.6.3 Limites e críticas
 
+Os nudges oferecem um arsenal valioso, mas é essencial evitar o entusiasmo excessivo. Como toda ferramenta, eles têm limitações — e ignorá-las pode comprometer tanto sua eficácia quanto sua legitimidade.
+
 A economia comportamental e os nudges não são panaceias:
 
 - **Heterogeneidade de preferências.** O nudge "certo" para a maioria pode prejudicar uma minoria com preferências legítimas diferentes.
@@ -693,47 +733,73 @@ A economia comportamental e os nudges não são panaceias:
 
 ---
 
-!!! tip "Exercícios do Capítulo 8"
+## Resumo do Capítulo
 
-    **Exercício 8.1.** Um investidor avalia duas opções: (A) ganhar R\$ 500 com certeza; (B) ganhar R\$ 1.000 com probabilidade \(0{,}50\). Sob utilidade esperada com função de utilidade côncava, o investidor prefere A. Agora considere: (C) perder R\$ 500 com certeza; (D) perder R\$ 1.000 com probabilidade \(0{,}50\). Sob a Teoria do Prospecto, qual a escolha provável em cada par? Explique usando as propriedades da função valor.
+- Heurísticas cognitivas (representatividade, disponibilidade, ancoragem, excesso de confiança) são atalhos mentais que produzem vieses previsíveis; o modelo dual de Kahneman (Sistema 1 rápido e intuitivo vs. Sistema 2 lento e deliberado) explica por que esses vieses persistem.
+- A Teoria do Prospecto substitui a utilidade esperada por uma função valor definida sobre ganhos e perdas relativos a um ponto de referência, com três propriedades: concavidade para ganhos, convexidade para perdas e aversão à perda (perdas pesam cerca de 2,25 vezes mais que ganhos equivalentes).
+- A ponderação não-linear de probabilidades sobrevaloriza eventos raros e subvaloriza probabilidades moderadas a altas, explicando simultaneamente a compra de loterias e a contratação de seguros contra catástrofes; a PT Cumulativa corrige a violação de dominância estocástica da versão original.
+- A aversão à ambiguidade (Paradoxo de Ellsberg) mostra que agentes distinguem entre risco (probabilidades conhecidas) e ambiguidade (probabilidades vagas), preferindo sistematicamente o risco conhecido, o que viola a utilidade esperada subjetiva de Savage.
+- Preferências sociais (aversão à inequidade, reciprocidade, punição altruísta) são formalizadas pelo modelo de Fehr-Schmidt e explicam os resultados dos jogos do ultimato, ditador e confiança que contradizem a hipótese de autointeresse puro.
+- O desconto quasi-hiperbólico captura o viés do presente e gera inconsistência temporal, explicando procrastinação e subpoupança; nudges (opções-padrão, framing, normas sociais, compromisso prévio) aproveitam os vieses comportamentais para melhorar decisões sem restringir a liberdade de escolha.
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-1)
+## Conceitos-Chave
 
-    **Exercício 8.2.** Usando a função valor paramétrica \(v(x) = x^{0{,}88}\) para ganhos e \(v(x) = -2{,}25 \cdot (-x)^{0{,}88}\) para perdas, calcule \(v(100)\), \(v(-100)\), \(v(200)\) e \(v(-200)\). Verifique que \(|v(-100)| > v(100)\) e interprete economicamente.
+| Conceito | Definição |
+|----------|-----------|
+| Heurística | Atalho cognitivo que simplifica julgamentos complexos, podendo gerar vieses sistemáticos em contextos específicos. |
+| Sistema 1 e Sistema 2 | Modelo dual de Kahneman: Sistema 1 é rápido, automático e intuitivo; Sistema 2 é lento, deliberado e analítico. |
+| Teoria do Prospecto | Modelo de decisão sob risco em que o valor é definido sobre ganhos e perdas relativos a um ponto de referência, com aversão à perda e ponderação não-linear de probabilidades. |
+| Aversão à perda | Assimetria em que perdas produzem impacto psicológico maior que ganhos de mesma magnitude; o coeficiente \(\lambda\) é tipicamente estimado em torno de 2,25. |
+| Ponderação de probabilidades | Função que transforma probabilidades objetivas em pesos decisórios, sobrevalorizando eventos raros e subvalorizando eventos prováveis. |
+| Aversão à ambiguidade | Preferência sistemática por situações com probabilidades conhecidas em relação a situações com probabilidades vagas ou desconhecidas. |
+| Modelo de Fehr-Schmidt | Modelo de preferências sociais em que a utilidade depende do próprio payoff e das diferenças em relação aos payoffs dos demais, com aversão à inequidade desvantajosa e vantajosa. |
+| Desconto quasi-hiperbólico | Modelo de desconto intertemporal com parâmetros (\(\beta\), \(\delta\)) que captura o viés do presente: um desconto extra aplicado a todos os períodos futuros em relação ao presente. |
+| Contabilidade mental | Tendência de organizar, avaliar e acompanhar atividades financeiras em contas mentais separadas, violando a fungibilidade do dinheiro. |
+| Nudge | Intervenção na arquitetura de escolha que altera o comportamento de forma previsível sem proibir opções nem alterar incentivos econômicos significativos. |
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-2)
+---
 
-    **Exercício 8.3.** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}99)\) avalia dois planos de poupança. O Plano X exige um depósito de R\$ 100 **hoje** e paga R\$ 150 em 1 ano. O Plano Y exige um depósito de R\$ 100 **em 6 meses** e paga R\$ 150 em 18 meses. (a) Calcule a utilidade descontada de cada plano sob desconto quasi-hiperbólico, assumindo \(u(x) = x\). (b) O consumidor prefere Y hoje, mas quando chegar o mês 6, ele vai aderir? Explique a diferença entre agentes sofisticados e ingênuos.
+## Exercícios
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-3)
+**Exercício 8.1.** Um investidor avalia duas opções: (A) ganhar R\$ 500 com certeza; (B) ganhar R\$ 1.000 com probabilidade \(0{,}50\). Sob utilidade esperada com função de utilidade côncava, o investidor prefere A. Agora considere: (C) perder R\$ 500 com certeza; (D) perder R\$ 1.000 com probabilidade \(0{,}50\). Sob a Teoria do Prospecto, qual a escolha provável em cada par? Explique usando as propriedades da função valor.
 
-    **Exercício 8.4.** Uma empresa oferece dois planos de academia: (A) pagamento mensal de R\$ 100; (B) pagamento anual antecipado de R\$ 960 (equivalente a R\$ 80/mês). DellaVigna e Malmendier (2006) mostram que muitos consumidores escolhem (A) e depois frequentam a academia menos de 5 vezes por mês, pagando mais de R\$ 20 por visita — quando poderiam comprar passes avulsos por R\$ 12. Explique esse comportamento usando: (i) excesso de confiança sobre o uso futuro; (ii) viés do presente.
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-1)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-4)
+**Exercício 8.2.** Usando a função valor paramétrica \(v(x) = x^{0{,}88}\) para ganhos e \(v(x) = -2{,}25 \cdot (-x)^{0{,}88}\) para perdas, calcule \(v(100)\), \(v(-100)\), \(v(200)\) e \(v(-200)\). Verifique que \(|v(-100)| > v(100)\) e interprete economicamente.
 
-    **Exercício 8.5.** O governo está considerando duas políticas para aumentar a poupança previdenciária: (i) subsídio fiscal de 10% sobre contribuições voluntárias; (ii) adesão automática com *opt-out*. Com base na literatura comportamental, qual política provavelmente terá maior impacto sobre a taxa de poupança agregada? Justifique.
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-2)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-5)
+**Exercício 8.3.** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}99)\) avalia dois planos de poupança. O Plano X exige um depósito de R\$ 100 **hoje** e paga R\$ 150 em 1 ano. O Plano Y exige um depósito de R\$ 100 **em 6 meses** e paga R\$ 150 em 18 meses. (a) Calcule a utilidade descontada de cada plano sob desconto quasi-hiperbólico, assumindo \(u(x) = x\). (b) O consumidor prefere Y hoje, mas quando chegar o mês 6, ele vai aderir? Explique a diferença entre agentes sofisticados e ingênuos.
 
-    **Exercício 8.6.** Explique por que o Paradoxo de Allais viola o axioma da independência da utilidade esperada. Mostre formalmente que as preferências \(A \succ B\) e \(D \succ C\) são inconsistentes com a existência de uma função de utilidade de Von Neumann–Morgenstern.
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-3)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-6)
+**Exercício 8.4.** Uma empresa oferece dois planos de academia: (A) pagamento mensal de R\$ 100; (B) pagamento anual antecipado de R\$ 960 (equivalente a R\$ 80/mês). DellaVigna e Malmendier (2006) mostram que muitos consumidores escolhem (A) e depois frequentam a academia menos de 5 vezes por mês, pagando mais de R\$ 20 por visita — quando poderiam comprar passes avulsos por R\$ 12. Explique esse comportamento usando: (i) excesso de confiança sobre o uso futuro; (ii) viés do presente.
 
-    **Exercício 8.7.** No Paradoxo de Ellsberg (duas cores), mostre que a preferência simultânea pela Urna A em ambas as apostas (vermelho e preto) é incompatível com qualquer probabilidade subjetiva atribuída à composição da Urna B. Qual axioma da UE de Savage é violado?
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-4)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-7)
+**Exercício 8.5.** O governo está considerando duas políticas para aumentar a poupança previdenciária: (i) subsídio fiscal de 10% sobre contribuições voluntárias; (ii) adesão automática com *opt-out*. Com base na literatura comportamental, qual política provavelmente terá maior impacto sobre a taxa de poupança agregada? Justifique.
 
-    **Exercício 8.8.** Em um jogo do ultimato com \(S = 200\), o respondedor tem parâmetros de Fehr-Schmidt \(\alpha_R = 3\) e \(\beta_R = 0{,}5\). (a) Calcule a oferta mínima aceita. (b) Se o respondedor fosse puramente autointeressado (\(\alpha_R = \beta_R = 0\)), qual seria a oferta mínima? (c) Interprete a diferença à luz da aversão à inequidade.
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-5)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-8)
+**Exercício 8.6.** Explique por que o Paradoxo de Allais viola o axioma da independência da utilidade esperada. Mostre formalmente que as preferências \(A \succ B\) e \(D \succ C\) são inconsistentes com a existência de uma função de utilidade de Von Neumann–Morgenstern.
 
-    **Exercício 8.9.** Usando as quatro regras de edição hedônica de Thaler (1985), explique por que: (a) lojas de departamento anunciam promoções como "20% de desconto + 10% extra" em vez de "28% de desconto"; (b) a cobrança de taxa condominial é mensal (não anual); (c) supermercados oferecem "cashback" em vez de desconto no preço.
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-6)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-9)
+**Exercício 8.7.** No Paradoxo de Ellsberg (duas cores), mostre que a preferência simultânea pela Urna A em ambas as apostas (vermelho e preto) é incompatível com qualquer probabilidade subjetiva atribuída à composição da Urna B. Qual axioma da UE de Savage é violado?
 
-    **Exercício 8.10.** A função de ponderação de probabilidades de Tversky e Kahneman é \(w(p) = p^{\gamma}/(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}\). (a) Mostre que \(w(0) = 0\) e \(w(1) = 1\). (b) Calcule \(w(0{,}01)\), \(w(0{,}50)\) e \(w(0{,}99)\) para \(\gamma = 0{,}61\). (c) Verifique a propriedade de subcerteza: \(w(p) + w(1-p) < 1\) para \(p = 0{,}50\).
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-7)
 
-    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-10)
+**Exercício 8.8.** Em um jogo do ultimato com \(S = 200\), o respondedor tem parâmetros de Fehr-Schmidt \(\alpha_R = 3\) e \(\beta_R = 0{,}5\). (a) Calcule a oferta mínima aceita. (b) Se o respondedor fosse puramente autointeressado (\(\alpha_R = \beta_R = 0\)), qual seria a oferta mínima? (c) Interprete a diferença à luz da aversão à inequidade.
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-8)
+
+**Exercício 8.9.** Usando as quatro regras de edição hedônica de Thaler (1985), explique por que: (a) lojas de departamento anunciam promoções como "20% de desconto + 10% extra" em vez de "28% de desconto"; (b) a cobrança de taxa condominial é mensal (não anual); (c) supermercados oferecem "cashback" em vez de desconto no preço.
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-9)
+
+**Exercício 8.10.** A função de ponderação de probabilidades de Tversky e Kahneman é \(w(p) = p^{\gamma}/(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}\). (a) Mostre que \(w(0) = 0\) e \(w(1) = 1\). (b) Calcule \(w(0{,}01)\), \(w(0{,}50)\) e \(w(0{,}99)\) para \(\gamma = 0{,}61\). (c) Verifique a propriedade de subcerteza: \(w(p) + w(1-p) < 1\) para \(p = 0{,}50\).
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-10)
 
 ---
 

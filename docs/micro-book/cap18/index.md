@@ -33,6 +33,8 @@ No equilíbrio competitivo de longo prazo, a taxa de retorno do capital se igual
 
 ## 18.2 Determinação da Taxa de Retorno
 
+Visto o conceito de capital e sua taxa de retorno, surge naturalmente a questão: o que determina o nível dessa taxa? Em uma economia de mercado, a taxa de retorno do capital não é fixada por decreto — ela emerge da interação entre agentes que desejam poupar (ofertando fundos) e agentes que desejam investir (demandando fundos). Esse equilíbrio no mercado de fundos emprestáveis é a peça central da teoria dos juros.
+
 ### Equilíbrio intertemporal
 
 A taxa de juros de equilíbrio é determinada pela interação entre:
@@ -67,6 +69,8 @@ onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de
 ---
 
 ## 18.3 Modelo de Dois Períodos de Fisher
+
+A seção anterior apresentou os determinantes da taxa de juros de equilíbrio de forma intuitiva. Agora, formalizamos a decisão intertemporal do consumidor por meio do elegante modelo de dois períodos de Irving Fisher. Esse modelo é a pedra angular da teoria do consumo intertemporal e fornece o arcabouço analítico para compreender por que as pessoas poupam, por que tomam empréstimos e como a taxa de juros afeta essas decisões. As ferramentas aqui desenvolvidas — restrição orçamentária intertemporal, riqueza intertemporal, taxa de preferência intertemporal — serão empregadas novamente nos capítulos subsequentes e na macroeconomia.
 
 ### Estrutura do modelo
 
@@ -111,6 +115,8 @@ TMS_{C_1, C_2} = 1 + r
 
 ### Efeitos de uma variação na taxa de juros
 
+A condição de ótimo estabelece que, no equilíbrio, a taxa de preferência intertemporal do consumidor se iguala à taxa de juros de mercado. Mas o que acontece quando a taxa de juros muda? Essa pergunta é central para a política monetária: quando o Banco Central eleva a Selic, por exemplo, espera-se que os agentes poupem mais e consumam menos no presente. O modelo de Fisher permite decompor esse efeito em componentes familiar — os efeitos substituição e renda — revelando que a resposta do consumidor depende crucialmente de sua posição como poupador ou devedor.
+
 Um aumento em \(r\) tem dois efeitos sobre \(C_1\):
 
 - **Efeito substituição**: consumo presente fica relativamente mais caro (maior custo de oportunidade), reduzindo \(C_1\);
@@ -131,6 +137,8 @@ O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A
 ---
 
 ## 18.4 Precificação de Ativos Arriscados
+
+O modelo de Fisher analisa a escolha intertemporal sob certeza — o consumidor conhece com exatidão suas rendas futuras e a taxa de juros. Na realidade, porém, a maioria das decisões de investimento envolve incerteza: retornos futuros são aleatórios, e ativos diferentes carregam níveis distintos de risco. Como precificar ativos cujos retornos são incertos? E qual é a relação entre risco e retorno esperado? Essas perguntas fundamentais são respondidas pelos modelos de precificação de ativos, que estendem a lógica intertemporal de Fisher para um mundo com incerteza.
 
 ### O CAPM básico
 
@@ -171,6 +179,8 @@ onde \(\beta = \frac{1}{1+\rho}\) é o fator de desconto subjetivo. Ativos que p
 
 ## 18.5 Demanda da Firma por Capital
 
+As seções anteriores examinaram a decisão intertemporal do consumidor (poupança) e a precificação de ativos financeiros. Voltamo-nos agora para o lado real da economia: como a firma decide quanto capital empregar? A resposta conecta a teoria da produção — já estudada nos capítulos de firma — à teoria dos juros: a firma investe em capital até que o retorno marginal do investimento iguale seu custo de oportunidade, determinado pela taxa de juros e pela depreciação.
+
 A firma demanda capital até que o **valor do produto marginal do capital** iguale o **custo de uso do capital**:
 
 \[
@@ -193,6 +203,8 @@ A demanda por capital é decrescente na taxa de juros: quando \(r\) sobe, \(c_K\
 ---
 
 ## 18.6 Critério do Valor Presente Descontado (VPL)
+
+A demanda por capital da firma nos diz que ela investe até igualar o retorno marginal ao custo de uso. Mas como uma firma avalia, na prática, se um projeto específico de investimento vale a pena? O critério do Valor Presente Líquido (VPL) traduz a lógica intertemporal em uma regra operacional de decisão: um projeto deve ser aceito se, e somente se, o valor presente de todos os seus fluxos de caixa futuros excede o investimento inicial. Essa regra aparentemente simples é, na verdade, a aplicação direta do conceito de custo de oportunidade do capital.
 
 ### Definição
 
@@ -226,6 +238,8 @@ O VPL é uma função decrescente de \(r\). Projetos com fluxos de caixa mais di
 
 ## 18.7 Taxa Interna de Retorno (TIR)
 
+Enquanto o VPL fornece o valor monetário gerado por um projeto a uma dada taxa de desconto, a Taxa Interna de Retorno (TIR) responde a uma pergunta complementar: qual é a taxa de retorno implícita do projeto? Em outras palavras, a TIR é a taxa de desconto que torna o investimento exatamente neutro — nem criando nem destruindo valor. Embora amplamente utilizada na prática, a TIR apresenta limitações que tornam o VPL o critério teoricamente superior.
+
 !!! definition "Taxa Interna de Retorno (TIR)"
     A **Taxa Interna de Retorno** é a taxa de desconto \(r^*\) que torna o VPL igual a zero:
 
@@ -257,38 +271,40 @@ O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desco
 
 ## 18.8 Precificação de Recursos Naturais: A Regra de Hotelling
 
+Os critérios de VPL e TIR aplicam-se a investimentos em capital produzido — máquinas, fábricas, projetos de infraestrutura. Mas a economia também lida com recursos que não são produzidos: petróleo, minérios, florestas nativas. Esses recursos naturais não renováveis colocam uma questão intertemporal distinta: como o proprietário de um recurso finito decide quanto extrair hoje e quanto preservar para o futuro? A resposta, formalizada por Harold Hotelling em 1931, é uma das proposições mais elegantes da economia dos recursos naturais.
+
 ### O problema do recurso exaurível
 
 Considere o proprietário de uma mina com estoque finito \(S_0\) de um recurso natural não renovável (petróleo, minério, gás). Em cada período, ele deve decidir quanto extrair (\(q_t\)) e quanto preservar para o futuro.
 
-Se o preço do recurso é \(P_t\), o custo marginal de extração é \(c\) (constante) e a taxa de juros é \(r\), o proprietário enfrenta um problema de otimização intertemporal.
+Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (constante) e a taxa de juros é \(r\), o proprietário enfrenta um problema de otimização intertemporal.
 
 !!! proof "Demonstração: Derivação da Regra de Hotelling"
     O proprietário da mina maximiza o valor presente dos lucros da extração:
 
     \[
-    \max_{\{q_t\}} \sum_{t=0}^{\infty} \frac{(P_t - c) \cdot q_t}{(1+r)^t} \quad \text{sujeito a} \quad \sum_{t=0}^{\infty} q_t \leq S_0, \quad q_t \geq 0
+    \max_{\{q_t\}} \sum_{t=0}^{\infty} \frac{(p_t - c) \cdot q_t}{(1+r)^t} \quad \text{sujeito a} \quad \sum_{t=0}^{\infty} q_t \leq S_0, \quad q_t \geq 0
     \]
 
     O lagrangeano é:
 
     \[
-    \mathcal{L} = \sum_{t=0}^{\infty} \frac{(P_t - c) q_t}{(1+r)^t} + \lambda \left( S_0 - \sum_{t=0}^{\infty} q_t \right)
+    \mathcal{L} = \sum_{t=0}^{\infty} \frac{(p_t - c) q_t}{(1+r)^t} + \lambda \left( S_0 - \sum_{t=0}^{\infty} q_t \right)
     \]
 
     A condição de primeira ordem para \(q_t > 0\) é:
 
     \[
-    \frac{\partial \mathcal{L}}{\partial q_t} = \frac{P_t - c}{(1+r)^t} - \lambda = 0
+    \frac{\partial \mathcal{L}}{\partial q_t} = \frac{p_t - c}{(1+r)^t} - \lambda = 0
     \]
 
     Portanto:
 
     \[
-    P_t - c = \lambda (1+r)^t
+    p_t - c = \lambda (1+r)^t
     \]
 
-    Definindo a **renda de escassez** (ou *royalty*) como \(R_t \equiv P_t - c\), temos:
+    Definindo a **renda de escassez** (ou *royalty*) como \(R_t \equiv p_t - c\), temos:
 
     \[
     R_t = \lambda (1+r)^t = R_0 (1+r)^t
@@ -338,6 +354,8 @@ Se o preço do recurso é \(P_t\), o custo marginal de extração é \(c\) (cons
 ---
 
 ## 18.9 Juros Compostos e Tempo Contínuo
+
+Para concluir o arcabouço técnico deste capítulo, apresentamos as ferramentas matemáticas de capitalização e desconto que fundamentam os cálculos de valor presente e futuro. Embora os conceitos de juros compostos e capitalização contínua sejam frequentemente abordados em cursos de matemática financeira, sua compreensão é indispensável para a análise econômica intertemporal — desde a avaliação de projetos de investimento até a modelagem de crescimento econômico.
 
 ### Juros compostos discretos
 
@@ -452,9 +470,35 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
+## Resumo do Capítulo
+
+- A taxa de juros é o preço do tempo, determinada pelo equilíbrio entre oferta de poupança e demanda de investimento no mercado de fundos emprestáveis. A taxa de juros de equilíbrio depende da produtividade do capital, das preferências intertemporais, da oferta de poupança e do risco percebido.
+- O modelo de dois períodos de Fisher formaliza a escolha intertemporal do consumidor: no ótimo, a taxa marginal de substituição entre consumo presente e futuro iguala \(1 + r\). O consumidor é poupador se sua taxa de desconto subjetiva é menor que a taxa de juros, e devedor caso contrário.
+- O CAPM estabelece que o retorno esperado de um ativo arriscado depende de seu beta (risco sistemático), enquanto o fator de desconto estocástico generaliza a precificação para qualquer ativo. O enigma do prêmio de risco (equity premium puzzle) desafia os modelos padrão.
+- A firma demanda capital até que o valor do produto marginal iguale o custo de uso do capital \(c_K = p_K(r + \delta)\). O VPL é o critério superior para avaliação de investimentos: projetos com VPL positivo geram valor acima do custo de oportunidade do capital.
+- A Regra de Hotelling estabelece que o preço líquido de um recurso natural exaurível deve crescer à taxa de juros no equilíbrio, equilibrando o incentivo entre extrair hoje e preservar para o futuro. Juros altos aceleram a extração.
+- No Brasil, a taxa Selic historicamente elevada encarece o custo de capital, torna inviáveis projetos de longo prazo e cria viés contra investimentos produtivos, especialmente em infraestrutura e P&D.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Capital | Estoque de bens produzidos utilizados como insumos na produção; fator de produção produzido (máquinas, equipamentos, infraestrutura) |
+| Taxa de juros de equilíbrio | Taxa que iguala oferta de poupança e demanda de investimento no mercado de fundos emprestáveis |
+| Riqueza intertemporal | Valor presente de toda a renda futura: \(W = Y_1 + Y_2/(1+r)\) |
+| Taxa de preferência intertemporal | Taxa de desconto subjetiva \(\rho\) que mede a impaciência do consumidor; no ótimo, iguala-se à taxa de juros |
+| Custo de uso do capital | Custo por período de utilizar uma unidade de capital: \(c_K = p_K(r + \delta)\), incluindo custo de oportunidade e depreciação |
+| Valor Presente Líquido (VPL) | Soma dos fluxos de caixa descontados a valor presente; critério superior para decisão de investimento |
+| Taxa Interna de Retorno (TIR) | Taxa de desconto que torna o VPL igual a zero; aceitar o projeto se TIR > custo de oportunidade |
+| Regra de Hotelling | Em equilíbrio, o preço líquido de um recurso exaurível cresce à taxa de juros: \(\dot{R}/R = r\) |
+| Beta (CAPM) | Medida de risco sistemático de um ativo: \(\beta_i = \text{Cov}(r_i, r_m)/\text{Var}(r_m)\) |
+| Perpetuidade | Fluxo de pagamentos constante e infinito cujo valor presente é \(VP = F/r\) |
+
+---
+
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 1 — Consumo intertemporal e classificação poupador/devedor"
+??? example "Exercício Resolvido 18.1 — Consumo intertemporal e classificação poupador/devedor"
     **Enunciado.** Um consumidor vive dois períodos com renda \(Y_1 = 80\) e \(Y_2 = 66\). Suas preferências são \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1}\ln C_2\). A taxa de juros é \(r = 10\%\). (a) Calcule a riqueza intertemporal. (b) Encontre o consumo ótimo em cada período. (c) O consumidor é poupador ou devedor?
 
     **Resolução.**
@@ -487,7 +531,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
 
-??? example "Exercício Resolvido 2 — VPL, TIR e decisão de investimento"
+??? example "Exercício Resolvido 18.2 — VPL, TIR e decisão de investimento"
     **Enunciado.** Uma empresa avalia instalar painéis solares por R$ 200.000, com economia anual de R$ 55.000 durante 5 anos. O custo de oportunidade do capital é 12% a.a. (a) Calcule o VPL. (b) Calcule a TIR por interpolação. (c) O projeto deve ser aceito?
 
     **Resolução.**
@@ -524,30 +568,30 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
 
-??? example "Exercício Resolvido 3 — Regra de Hotelling e trajetória de preços"
-    **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(P_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
+??? example "Exercício Resolvido 18.3 — Regra de Hotelling e trajetória de preços"
+    **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(p_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
 
     **Resolução.**
 
     **(a) Renda de escassez inicial.**
 
     \[
-    R_0 = P_0 - c = 80 - 20 = 60 \text{ mil reais/tonelada}
+    R_0 = p_0 - c = 80 - 20 = 60 \text{ mil reais/tonelada}
     \]
 
     **(b) Preços futuros pela regra de Hotelling.**
 
     A renda de escassez cresce à taxa de juros: \(R_t = R_0(1+r)^t\).
 
-    Em 10 anos: \(R_{10} = 60 \times (1{,}04)^{10} = 60 \times 1{,}4802 = 88{,}81\). Logo \(P_{10} = 88{,}81 + 20 = 108{,}81\) mil reais.
+    Em 10 anos: \(R_{10} = 60 \times (1{,}04)^{10} = 60 \times 1{,}4802 = 88{,}81\). Logo \(p_{10} = 88{,}81 + 20 = 108{,}81\) mil reais.
 
-    Em 20 anos: \(R_{20} = 60 \times (1{,}04)^{20} = 60 \times 2{,}1911 = 131{,}47\). Logo \(P_{20} = 131{,}47 + 20 = 151{,}47\) mil reais.
+    Em 20 anos: \(R_{20} = 60 \times (1{,}04)^{20} = 60 \times 2{,}1911 = 131{,}47\). Logo \(p_{20} = 131{,}47 + 20 = 151{,}47\) mil reais.
 
     **(c) Efeito do substituto (backstop technology).**
 
-    Se em \(t = 15\) surge um substituto perfeito a R$ 100 mil, o preço do lítio não pode ultrapassar esse teto (ninguém pagaria mais pelo lítio do que pelo substituto). Portanto, o preço terminal é \(P_{15} = 100\), o que implica \(R_{15} = 80\).
+    Se em \(t = 15\) surge um substituto perfeito a R$ 100 mil, o preço do lítio não pode ultrapassar esse teto (ninguém pagaria mais pelo lítio do que pelo substituto). Portanto, o preço terminal é \(p_{15} = 100\), o que implica \(R_{15} = 80\).
 
-    A renda de escassez inicial se ajusta: \(R_0' = R_{15}/(1{,}04)^{15} = 80/1{,}8009 = 44{,}42\). Logo o preço inicial cairia para \(P_0' = 44{,}42 + 20 = 64{,}42\) mil reais — menor que os R$ 80 mil originais.
+    A renda de escassez inicial se ajusta: \(R_0' = R_{15}/(1{,}04)^{15} = 80/1{,}8009 = 44{,}42\). Logo o preço inicial cairia para \(p_0' = 44{,}42 + 20 = 64{,}42\) mil reais — menor que os R$ 80 mil originais.
 
     **Interpretação:** A perspectiva de um substituto futuro reduz o valor presente do recurso e acelera sua extração. Isso é relevante para o Brasil, maior produtor de nióbio e com reservas significativas de lítio no Vale do Jequitinhonha (MG): o desenvolvimento de tecnologias alternativas para baterias afeta diretamente a estratégia ótima de exploração desses recursos.
 
@@ -583,7 +627,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-**Exercício 18.3.** Um recurso natural não renovável tem estoque inicial \(S_0 = 1000\) unidades. O preço de mercado é \(P_0 = 50\) reais por unidade, o custo marginal de extração é \(c = 10\) reais e a taxa de juros é \(r = 5\%\).
+**Exercício 18.3.** Um recurso natural não renovável tem estoque inicial \(S_0 = 1000\) unidades. O preço de mercado é \(p_0 = 50\) reais por unidade, o custo marginal de extração é \(c = 10\) reais e a taxa de juros é \(r = 5\%\).
 
 (a) Segundo a regra de Hotelling, qual será o preço do recurso daqui a 10 anos?
 

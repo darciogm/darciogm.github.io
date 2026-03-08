@@ -35,9 +35,9 @@ Payoffs:
 - Tipo H: \(3 - 4/6 = 3 - 2/3 = 7/3 \approx 2{,}33\).
 - Tipo L: 1.
 
-**Comparação com \(\theta_H = 2\)** (do Exercício Resolvido): \(e^* = 1\), payoff do tipo H = \(2 - 1/4 = 7/4 = 1{,}75\).
+**Comparação com \(\theta_H = 2\)** (do Exercício Resolvido): \(e^* = \sqrt{2}\), payoff do tipo H = \(2 - (\sqrt{2})^2/(2 \times 2) = 2 - 1/2 = 3/2 = 1{,}5\).
 
-Com \(\theta_H = 3\): (i) o sinal necessário é maior (\(e^* = 2\) vs. 1), porque a diferença de produtividade é maior e o tipo L tem mais incentivo para imitar; (ii) o custo social da sinalização é maior em valor absoluto (\(4/6 = 0{,}67\) vs. \(1/4 = 0{,}25\)), mas menor em fração do salário; (iii) o tipo H captura mais da diferença de produtividade (gap produtividade = 2, custo = 0,67, captura líquida = 1,33).
+Com \(\theta_H = 3\): (i) o sinal necessário é maior (\(e^* = 2\) vs. \(\sqrt{2}\)), porque a diferença de produtividade é maior e o tipo L tem mais incentivo para imitar; (ii) o custo social da sinalização é maior em valor absoluto (\(4/6 = 0{,}67\) vs. \(1/2 = 0{,}5\)), mas menor em fração do salário; (iii) o tipo H captura mais da diferença de produtividade (gap produtividade = 2, custo = 0,67, captura líquida = 1,33).
 
 **Interpretação econômica:** Quanto maior a diferença de produtividade entre tipos, mais custosa a sinalização necessária para separar — mas o retorno líquido também é maior. A eficiência social depende do trade-off entre o custo da sinalização e o ganho informacional para os empregadores.
 

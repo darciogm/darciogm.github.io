@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 16"
 
 ---
 
-## Exercício 1 {#ex-1}
+## Exercício 16.1 {#ex-16-1}
 
 **Duopólio de Cournot com custos assimétricos.**
 
@@ -110,7 +110,7 @@ A assimetria de custos **reduz o excedente total**. Há dois efeitos negativos: 
 
 ---
 
-## Exercício 2 {#ex-2}
+## Exercício 16.2 {#ex-16-2}
 
 **Bertrand com produtos diferenciados.**
 
@@ -170,7 +170,7 @@ Note que as funções de reação em preços têm inclinação positiva (\( \par
 
 ---
 
-## Exercício 3 {#ex-3}
+## Exercício 16.3 {#ex-16-3}
 
 **Cournot com \( n \) firmas idênticas e entrada livre.**
 
@@ -297,7 +297,7 @@ O bem-estar é maximizado com **\( n^{**} = 3 \) firmas** (ou possivelmente 4, a
 
 ---
 
-## Exercício 4 {#ex-4}
+## Exercício 16.4 {#ex-16-4}
 
 **Colusão em Bertrand repetido infinitamente com estratégia de gatilho (grim trigger).**
 
@@ -325,7 +325,7 @@ Q^M = 100 - 70 = 30
 \pi^M = (70 - 40) \cdot 30 = 900
 \]
 
-Com dois firmas dividindo igualmente o mercado, o lucro de cada uma na colusão é:
+Com duas firmas dividindo igualmente o mercado, o lucro de cada uma na colusão é:
 
 \[
 \pi^{\text{col}} = \frac{900}{2} = 450
@@ -391,7 +391,7 @@ Com três firmas, o fator de desconto mínimo sobe para \( \delta^* = \frac{2}{3
 
 ---
 
-## Exercício 5 {#ex-5}
+## Exercício 16.5 {#ex-16-5}
 
 **Stackelberg com custos assimétricos.**
 

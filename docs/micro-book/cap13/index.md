@@ -10,6 +10,8 @@ Ao longo do capítulo, analisaremos: a agregação de demandas individuais em de
 
 ## 13.1 Demanda de Mercado
 
+Antes de analisar o equilíbrio de mercado, precisamos construir seus dois componentes: a demanda de mercado e a oferta de mercado. Começamos pelo lado da demanda. Nos capítulos sobre a teoria do consumidor, derivamos a demanda individual de cada agente. Mas como passar da decisão de um consumidor isolado para o comportamento agregado de milhões de compradores? A operação é surpreendentemente simples, mas suas implicações são ricas.
+
 ### Agregação de demandas individuais
 
 A demanda de mercado é obtida pela soma horizontal das demandas individuais de todos os consumidores. Se existem \(n\) consumidores e cada um possui uma função de demanda \(x_i(p)\), a demanda de mercado é:
@@ -32,7 +34,7 @@ A curva de demanda de mercado herda propriedades das demandas individuais:
 \varepsilon_{X,p} = \sum_{i=1}^{n} \frac{x_i}{X} \cdot \varepsilon_{x_i, p}
 \]
 
-3. **Efeitos renda e substituição**: Deslocamentos na demanda de mercado refletem mudanças na renda agregada, na distribuição de renda, nos preços de bens relacionados e nas preferências dos consumidores.
+3. **Efeitos renda e substituição**: Deslocamentos na demanda de mercado refletem mudanças na renda agregada, na distribuição de renda, nos preços de bens relacionados e nas preferências dos consumidores. Cabe notar que a distribuição de renda importa: uma economia com renda total de R$ 1 trilhão concentrada em poucos indivíduos terá demanda de mercado diferente de outra com a mesma renda total distribuída mais igualitariamente — pois os padrões de consumo diferem entre faixas de renda.
 
 !!! tip "Agregação e heterogeneidade"
     Mesmo que demandas individuais apresentem descontinuidades ou formas peculiares, a demanda de mercado tende a ser mais "suave" quando o número de consumidores é grande, devido à diversidade de preferências e rendas.
@@ -40,6 +42,8 @@ A curva de demanda de mercado herda propriedades das demandas individuais:
 ---
 
 ## 13.2 Determinação de Preço no Curtíssimo Prazo
+
+Com as ferramentas de demanda e oferta de mercado em mãos, podemos agora analisar a formação de preços. A análise ganha profundidade quando distinguimos três horizontes temporais — curtíssimo, curto e longo prazo —, cada um com diferentes graus de ajuste da oferta. Comecemos pelo caso mais simples.
 
 No curtíssimo prazo (ou período de mercado), a quantidade ofertada é fixa — os produtores já trouxeram seus bens ao mercado e não podem alterar a produção. A curva de oferta é perfeitamente inelástica (vertical).
 
@@ -111,6 +115,8 @@ o que é satisfeito sempre que a demanda é negativamente inclinada e a oferta �
 
 ## 13.4 Estática Comparativa
 
+Determinado o equilíbrio, a pergunta natural é: o que acontece quando as condições mudam? Se a renda dos consumidores cresce, se o preço de um insumo se eleva, se uma nova tecnologia reduz os custos de produção — como o preço e a quantidade de equilíbrio se ajustam? A **estática comparativa** é a ferramenta que nos permite responder a essas perguntas de forma rigorosa, comparando dois equilíbrios: o inicial e o que prevalece após a mudança.
+
 ### Deslocamentos de oferta e demanda
 
 A análise de estática comparativa examina como o equilíbrio muda em resposta a choques exógenos. Considere o equilíbrio definido implicitamente por:
@@ -150,6 +156,8 @@ se o aumento em \(\beta\) reduz a oferta (\(\partial S / \partial \beta < 0\)).
 
 ## 13.5 Análise de Longo Prazo
 
+A análise de curto prazo toma como dado o número de firmas no mercado. Mas no longo prazo, essa restrição se dissolve: se as firmas existentes obtêm lucro econômico positivo, novas empresas são atraídas para o setor; se há prejuízo persistente, firmas saem. Esse mecanismo de entrada e saída é o motor fundamental que conduz o mercado ao seu equilíbrio de longo prazo — e compreendê-lo é essencial para entender por que, em concorrência perfeita, o lucro econômico tende a zero.
+
 ### Entrada, saída e lucro zero
 
 No longo prazo, todos os fatores de produção são variáveis e há livre entrada e saída de firmas no mercado. Se as firmas existentes obtêm lucro econômico positivo (\(\pi > 0\)), novas firmas entram, deslocando a oferta para a direita e reduzindo o preço. Se há prejuízo (\(\pi < 0\)), firmas saem, deslocando a oferta para a esquerda e elevando o preço. No equilíbrio de longo prazo:
@@ -179,6 +187,8 @@ Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste 
 
 ## 13.6 Equilíbrio de Longo Prazo: Custos Constantes, Crescentes e Decrescentes
 
+A condição de lucro zero no longo prazo nos diz que \(p = CMe_{\min}\), mas qual será o nível desse preço após um aumento na demanda? A resposta depende de como a entrada de novas firmas afeta os preços dos insumos. Se os preços dos insumos permanecem inalterados, o \(CMe_{\min}\) não muda e o preço retorna ao nível original. Mas se a expansão da indústria pressiona os preços dos insumos para cima, o equilíbrio de longo prazo se estabelece a um preço mais elevado. Essa distinção dá origem a três tipos de indústria, cada um com uma forma diferente de curva de oferta de longo prazo.
+
 ### Indústria de custos constantes
 
 Se a entrada de novas firmas não altera os preços dos insumos, as curvas de custo das firmas permanecem inalteradas. A curva de oferta de longo prazo da indústria é **horizontal** ao nível \(p = CMe_{\min}\).
@@ -193,7 +203,7 @@ O preço de equilíbrio de longo prazo será mais alto após o aumento na demand
 
 ### Indústria de custos decrescentes
 
-Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**.
+Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**. No Brasil, o polo tecnológico de Campinas (SP) é um possível exemplo: a concentração de empresas de TI gerou uma rede de fornecedores, mão de obra especializada e infraestrutura de telecomunicações que reduz os custos de cada firma individual à medida que a indústria cresce.
 
 | Tipo de indústria | Efeito da entrada sobre custos | Inclinação da oferta de LP | Efeito de ↑D sobre preço de LP |
 |---|---|---|---|
@@ -204,6 +214,8 @@ Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, vi
 ---
 
 ## 13.7 Elasticidade de Oferta de Longo Prazo
+
+A distinção entre indústrias de custos constantes, crescentes e decrescentes determina a inclinação da curva de oferta de longo prazo. Para quantificar essa responsividade da oferta ao preço, recorremos à elasticidade de oferta de longo prazo — uma medida que incorpora não apenas o ajuste de produção das firmas existentes, mas também a dinâmica de entrada e saída e o efeito sobre os preços dos insumos.
 
 A elasticidade de oferta de longo prazo mede a responsividade da quantidade ofertada de longo prazo a variações no preço:
 
@@ -221,6 +233,8 @@ Para uma indústria de custos constantes, \(\varepsilon_S^{LP} = \infty\) (ofert
 ## 13.8 Excedente do Produtor no Longo Prazo
 
 ### Renda ricardiana
+
+Se no longo prazo competitivo o lucro econômico de cada firma individual é zero, como pode haver excedente do produtor positivo para a indústria como um todo? A resposta reside na heterogeneidade dos fatores de produção — e nos conduz ao conceito clássico de **renda ricardiana**, que remonta a David Ricardo e sua análise das terras de diferentes fertilidades.
 
 No curto prazo, o excedente do produtor é a diferença entre a receita total e o custo variável total. No longo prazo, com lucro zero, o excedente do produtor de cada firma individual é zero. No entanto, o excedente do produtor **da indústria** pode ser positivo em indústrias de custos crescentes.
 
@@ -243,6 +257,8 @@ onde \(p_S(Q)\) é a curva de oferta inversa de longo prazo.
 ---
 
 ## 13.9 Eficiência Econômica e Análise de Bem-Estar Aplicada
+
+Até aqui, a análise de equilíbrio parcial se concentrou em *como* os preços e quantidades são determinados. Agora, mudamos o foco para uma pergunta normativa: o resultado de mercado é *bom*? O equilíbrio competitivo gera o melhor resultado possível para a sociedade? Para responder, precisamos de critérios de avaliação — e os conceitos de excedente do consumidor e excedente do produtor fornecem as ferramentas para medir o bem-estar gerado pelas trocas de mercado.
 
 ### Excedente do consumidor e excedente do produtor
 
@@ -308,6 +324,8 @@ W = EC + EP
 
 ## 13.10 Controles de Preços e Escassez
 
+A demonstração de que o equilíbrio competitivo maximiza o bem-estar social tem um corolário imediato e poderoso: qualquer intervenção que force o preço para fora do equilíbrio gera perda de peso morto. Governos, no entanto, frequentemente impõem controles de preços — por razões distributivas, políticas ou sociais. Quais são as consequências econômicas dessas intervenções? A experiência brasileira oferece exemplos particularmente vívidos.
+
 ### Preço máximo (teto de preço)
 
 Quando o governo estabelece um preço máximo \(\bar{p} < p^*\), a quantidade ofertada cai e a quantidade demandada aumenta, gerando **escassez**:
@@ -353,6 +371,8 @@ Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do
 ---
 
 ## 13.11 Incidência Tributária: Quem Realmente Paga o Imposto?
+
+Os controles de preços representam uma intervenção direta no mecanismo de mercado. Outra forma de intervenção, onipresente em qualquer economia moderna, é a **tributação**. Quando o governo institui um imposto sobre um bem, quem de fato arca com o ônus? O senso comum sugere que é quem paga formalmente o imposto — o vendedor ou o comprador, conforme a legislação. A análise econômica revela, contudo, que a incidência efetiva do tributo independe completamente do lado legal: ela é determinada pelas elasticidades relativas de oferta e demanda.
 
 ### Imposto por unidade
 
@@ -422,10 +442,12 @@ X(p_c) = S(p_p) = S(p_c - t)
 
 **Casos-limite:**
 
-- Se a demanda é perfeitamente inelástica (\(|\varepsilon_D| = 0\)): o consumidor absorve 100% do imposto.
-- Se a oferta é perfeitamente inelástica (\(\varepsilon_S = 0\)): o produtor absorve 100% do imposto.
-- Se a demanda é perfeitamente elástica (\(|\varepsilon_D| \to \infty\)): o produtor absorve 100%.
-- Se a oferta é perfeitamente elástica (\(\varepsilon_S \to \infty\)): o consumidor absorve 100%.
+A intuição por trás desses resultados é simples e poderosa: o lado mais inelástico do mercado — aquele que tem menos possibilidade de "fugir" do imposto — arca com a maior parcela do ônus. Os quatro casos-limite a seguir ilustram essa lógica em sua forma mais pura.
+
+- Se a demanda é perfeitamente inelástica (\(|\varepsilon_D| = 0\)): o consumidor absorve 100% do imposto. Ele não pode reduzir o consumo, e todo o imposto é repassado ao preço.
+- Se a oferta é perfeitamente inelástica (\(\varepsilon_S = 0\)): o produtor absorve 100% do imposto. Ele não pode reduzir a oferta, e o preço ao consumidor não se altera.
+- Se a demanda é perfeitamente elástica (\(|\varepsilon_D| \to \infty\)): o produtor absorve 100%. Qualquer tentativa de repassar o imposto ao preço levaria a uma queda total na demanda.
+- Se a oferta é perfeitamente elástica (\(\varepsilon_S \to \infty\)): o consumidor absorve 100%. Os produtores simplesmente saem do mercado se o preço cair, forçando todo o ajuste sobre os compradores.
 
 !!! note "Irrelevância do lado legal"
     A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
@@ -512,11 +534,35 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     Observe a estática comparativa em ação: na safra 2020/21, choques positivos de demanda global (recuperação pós-pandemia, recomposição de estoques chineses) combinados com câmbio depreciado elevaram drasticamente o preço interno. Nas safras seguintes, a resposta da oferta (expansão de área) gradualmente pressionou os preços para baixo — uma ilustração da dinâmica de ajuste de longo prazo em indústria de custos crescentes.
 
+## Resumo do Capítulo
+
+- A **demanda de mercado** é obtida pela soma horizontal das demandas individuais, e a **oferta de mercado** pela soma horizontal das curvas de custo marginal das firmas (acima do custo variável médio mínimo). O equilíbrio competitivo ocorre no preço em que quantidade demandada iguala quantidade ofertada.
+- No **curtíssimo prazo**, a oferta é perfeitamente inelástica; no **curto prazo**, as firmas ajustam a produção com planta fixa; no **longo prazo**, há livre entrada e saída, levando o preço ao custo médio mínimo e o lucro econômico a zero.
+- O **excedente do consumidor** (EC) e o **excedente do produtor** (EP) medem os ganhos de bem-estar das trocas voluntárias. A soma EC + EP é maximizada no equilíbrio competitivo, resultado que fundamenta o Primeiro Teorema do Bem-Estar.
+- **Controles de preços** — preços máximos (tetos) e preços mínimos (pisos) — geram, respectivamente, escassez e excedente de oferta, reduzindo o bem-estar total. A perda de peso morto (PPM) mede a ineficiência resultante.
+- A **incidência tributária** depende das elasticidades relativas de oferta e demanda, não de quem formalmente recolhe o imposto: o lado mais inelástico do mercado arca com a maior parcela do tributo. A tributação gera uma cunha entre o preço pago pelo consumidor e o recebido pelo produtor, criando perda de peso morto.
+- Em **indústrias de custos crescentes**, a curva de oferta de longo prazo tem inclinação positiva, e firmas inframarginais auferem **rendas ricardianas** — lucros econômicos devidos a vantagens de custo, como ocorre na agricultura brasileira com terras de diferentes fertilidades.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Demanda de mercado | Soma horizontal das demandas individuais: $X(p) = \sum_i x_i(p)$. |
+| Oferta de mercado | Soma horizontal das curvas de CMg das firmas, acima do ponto de fechamento. |
+| Equilíbrio competitivo | Preço $p^*$ e quantidade $Q^*$ em que $Q_D(p^*) = Q_S(p^*)$. |
+| Excedente do consumidor (EC) | Diferença entre a disposição a pagar e o preço efetivamente pago, somada sobre todas as unidades. |
+| Excedente do produtor (EP) | Diferença entre o preço recebido e o custo marginal, somada sobre todas as unidades produzidas. |
+| Perda de peso morto (PPM) | Redução do bem-estar total (EC + EP) causada por distorções como impostos, subsídios ou controles de preços. |
+| Incidência tributária | Distribuição efetiva do ônus de um imposto entre compradores e vendedores, determinada pelas elasticidades relativas. |
+| Preço máximo (teto) | Preço legalmente fixado abaixo do equilíbrio, gerando escassez ($Q_D > Q_S$). |
+| Preço mínimo (piso) | Preço legalmente fixado acima do equilíbrio, gerando excedente de oferta ($Q_S > Q_D$). |
+| Renda ricardiana | Lucro econômico auferido por firmas com custos inferiores à firma marginal em indústrias de custos crescentes. |
+
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 12.1 — Equilíbrio, excedentes e imposto"
+??? example "Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
     **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
 
     ---
@@ -555,7 +601,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
 
-??? example "Exercício Resolvido 12.2 — Preço máximo e escassez"
+??? example "Exercício Resolvido 13.2 — Preço máximo e escassez"
     **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
 
     ---
@@ -576,39 +622,39 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     A quantidade efetivamente transacionada é \(Q_t = \min(Q_D, Q_S) = 200\).
 
-    Sem intervenção: \(EC_0 = \frac{1}{2}(50 - 20)(300) = 4.500\) e \(EP_0 = \frac{1}{2}(20 - 5)(300) = 2.250\).
+    Usando a demanda inversa \(p_D = 50 - Q/10\) e a oferta inversa \(p_S = 5 + Q/20\):
 
-    Com teto: os consumidores que conseguem comprar pagam 15 em vez de 20. O EC tem dois componentes: o retângulo de transferência do produtor (\((20-15) \times 200 = 1.000\)) e a perda do triângulo superior. Usando a demanda inversa \(p_D = 50 - Q/10\) e a oferta inversa \(p_S = 5 + Q/20\):
+    Sem intervenção: \(EC_0 = \frac{1}{2}(50 - 20)(300) = 4.500\) e \(EP_0 = \frac{1}{2}(20 - 5)(300) = 2.250\). Portanto \(W_0 = 4.500 + 2.250 = 6.750\).
+
+    Com teto e racionamento eficiente (os 200 consumidores com maior disposição a pagar obtêm o bem):
+
+    O \(EC_1\) é o trapézio entre a curva de demanda e o preço \(\bar{p} = 15\), de \(Q = 0\) a \(Q = 200\). A demanda inversa vai de \(p_D(0) = 50\) a \(p_D(200) = 30\):
 
     \[
-    EC_1 = \frac{1}{2}(50 - 15)(200) + 0 \text{ (sem racionamento eficiente)}
+    EC_1 = \frac{1}{2}(50 - 15 + 30 - 15) \times 200 = \frac{1}{2}(35 + 15) \times 200 = 5.000
     \]
 
-    Com racionamento eficiente: \(EC_1 = \frac{1}{2}(50-15) \times 200 = 3.500\).
-
-    \(EP_1 = \frac{1}{2}(15 - 5) \times 200 = 1.000\).
-
-    \(W_1 = 3.500 + 1.000 = 4.500\). \(W_0 = 4.500 + 2.250 = 6.750\).
-
-    \(PPM = W_0 - W_1 = 6.750 - 4.500 = 2.250\).
-
-    Alternativamente, o triângulo de Harberger: \(\frac{1}{2}(20-15)(300-200) = \frac{1}{2} \times 5 \times 100 = 250\). Mas note que a PPM total com racionamento ineficiente pode ser maior. Com racionamento eficiente, \(PPM = 250\).
-
-    **Correção com racionamento eficiente:** \(EC_1 = (20-15) \times 200 + \frac{1}{2}(50-20)(200) - [\frac{1}{2}(50-20)(300) - \frac{1}{2}(50-20)(200)]...\)
-
-    Método direto: \(W_0 = \int_0^{300}[(50 - Q/10) - (5 + Q/20)] dQ = \int_0^{300}[45 - 3Q/20] dQ = [45Q - 3Q^2/40]_0^{300} = 13.500 - 6.750 = 6.750\).
-
-    \(W_1 = \int_0^{200}[(50 - Q/10) - (5 + Q/20)] dQ = [45Q - 3Q^2/40]_0^{200} = 9.000 - 3.000 = 6.000\).
-
-    \(PPM = 6.750 - 6.000 = 750\). Isso coincide com o triângulo: \(\frac{1}{2} \times (p^* - \bar{p} + p_D(200) - p^*) \times (Q^* - Q_t)\)... Usando a fórmula do triângulo entre as curvas:
+    O \(EP_1\) é o triângulo entre \(\bar{p} = 15\) e a curva de oferta, de \(Q = 0\) a \(Q = 200\):
 
     \[
-    PPM = \frac{1}{2}[p_D(200) - p_S(200)] \times (300 - 200) = \frac{1}{2}(30 - 15)(100) = 750
+    EP_1 = \frac{1}{2}(15 - 5) \times 200 = 1.000
+    \]
+
+    Portanto \(W_1 = 5.000 + 1.000 = 6.000\), e a perda de peso morto é:
+
+    \[
+    PPM = W_0 - W_1 = 6.750 - 6.000 = 750
+    \]
+
+    Isso coincide com o triângulo entre as curvas de demanda e oferta, da quantidade com teto à quantidade de equilíbrio:
+
+    \[
+    PPM = \frac{1}{2}[p_D(200) - p_S(200)] \times (Q^* - Q_t) = \frac{1}{2}(30 - 15)(100) = 750
     \]
 
     **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
 
-??? example "Exercício Resolvido 12.3 — Indústria de custos crescentes e renda ricardiana"
+??? example "Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
     **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
     ---
@@ -655,7 +701,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ## Exercícios
 
-**Exercício 12.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
+**Exercício 13.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
 
 (a) Derive a demanda e a oferta de mercado.
 
@@ -665,11 +711,11 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (d) Se o governo impõe um imposto de \(t = 2\) por unidade, encontre o novo equilíbrio, a receita tributária e a perda de peso morto.
 
-[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-1)
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-13-1)
 
 ---
 
-**Exercício 12.2.** Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
+**Exercício 13.2.** Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
 
 (a) Encontre o equilíbrio.
 
@@ -677,17 +723,17 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (c) Compare graficamente o EC antes e depois do controle de preço.
 
-[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-2)
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-13-2)
 
 ---
 
-**Exercício 12.3.** Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
+**Exercício 13.3.** Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
 
-[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-3)
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-13-3)
 
 ---
 
-**Exercício 12.4.** Considere uma indústria de custos crescentes com curva de oferta de longo prazo \(p = 10 + 0{,}01Q\). A demanda é \(Q = 2000 - 50p\).
+**Exercício 13.4.** Considere uma indústria de custos crescentes com curva de oferta de longo prazo \(p = 10 + 0{,}01Q\). A demanda é \(Q = 2000 - 50p\).
 
 (a) Encontre o equilíbrio de longo prazo.
 
@@ -695,11 +741,11 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (c) Se a demanda se desloca para \(Q' = 2500 - 50p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
-[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-4)
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-13-4)
 
 ---
 
-**Exercício 12.5.** No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
+**Exercício 13.5.** No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
 
 (a) Qual fração do subsídio beneficia o consumidor e qual fração beneficia o produtor?
 
@@ -707,7 +753,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (c) Calcule a perda de peso morto em termos do subsídio, das elasticidades e do preço e quantidade iniciais.
 
-[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-5)
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-13-5)
 
 ---
 
@@ -715,7 +761,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
 
-??? question "ANPEC 2017 — Questão 03"
+??? question "ANPEC 2017 — Questão 3"
     Com respeito aos efeitos dos impostos, assinale quais das afirmações abaixo são verdadeiras:
 
     **(0)** Se as curvas de demanda e oferta do mercado forem lineares, sendo \(p\) o preço do produto e \(t\) um imposto específico, então \(dp/dt = \eta/(\eta - \varepsilon)\), em que \(\eta\) é a elasticidade preço da oferta e \(\varepsilon\) é a elasticidade preço da demanda;
@@ -728,7 +774,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **(4)** Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.
 
-    ??? success "Gabarito e Resolução"
+    ??? success "Gabarito"
         **Gabarito oficial: V-F-F-V-F**
 
         **(0) VERDADEIRO.** Com curvas lineares \(Q_D = a - bp\) e \(Q_S = c + dp\), onde \(\varepsilon = -bp/Q < 0\) e \(\eta = dp/Q > 0\), o imposto gera \(p_c = p_p + t\). No equilíbrio: \(dp_c/dt = d/(b+d)\). Em termos de elasticidades avaliadas no equilíbrio (onde \(Q\) e \(p\) são comuns): \(dp/dt = \eta/(\eta - \varepsilon)\), pois \(\varepsilon < 0\) implica \(\eta - \varepsilon = \eta + |\varepsilon|\).
@@ -741,7 +787,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
         **(4) FALSO.** A receita fiscal \(R = t \cdot Q_t\) não compensa a perda total de excedentes de consumidores e produtores. A diferença — o peso morto — é estritamente positiva (\(PPM > 0\)) sempre que \(t > 0\) e ambas as curvas têm inclinações finitas.
 
-??? question "ANPEC 2023 — Questão 01"
+??? question "ANPEC 2023 — Questão 1"
     Suponha que ao preço de equilíbrio no mercado internacional de petróleo de \$80 dólares o barril, a elasticidade-preço da demanda seja \(-0{,}4\), a elasticidade-preço da oferta seja \(0{,}2\), as quantidades ofertada e demandada sejam de 100 milhões de barris/dia. Suponha ainda que as curvas de demanda e oferta são lineares convencionais. Imagine que um embargo econômico a um produtor mundial cause um deslocamento paralelo da curva de oferta para a esquerda em 30 milhões de barris/dia. Julgue as afirmativas a seguir:
 
     **(0)** A função de demanda consistente com o preço e a quantidade antes do embargo é \(D_1(p) = 116 - 0{,}2p\).
@@ -754,7 +800,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **(4)** Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.
 
-    ??? success "Gabarito e Resolução"
+    ??? success "Gabarito"
         **Gabarito oficial: F-F-V-V-F**
 
         **Derivação das curvas.** Com \(p_0 = 80\), \(Q_0 = 100\):
@@ -773,7 +819,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
         **(4) FALSO.** Com demanda reduzida em 20: \(D_2(p) = 120 - 0{,}5p\). Novo equilíbrio: \(120 - 0{,}5p = 50 + 0{,}25p \Rightarrow 70 = 0{,}75p \Rightarrow p \approx 93{,}3\). Como \(93{,}3 > 80\), o preço é *maior* que o original, não menor.
 
-??? question "ANPEC 2025 — Questão 07"
+??? question "ANPEC 2025 — Questão 7"
     Com relação à oferta da indústria, julgue as afirmativas abaixo como verdadeiras ou falsas:
 
     **(0)** No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.
@@ -786,7 +832,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **(4)** Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.
 
-    ??? success "Gabarito e Resolução"
+    ??? success "Gabarito"
         **Gabarito oficial: F-V-F-F-V**
 
         **(0) FALSO.** No curto prazo, o número de firmas é fixo e não há livre entrada/saída. Firmas podem ter lucro positivo, negativo ou zero. A condição de lucro zero é característica do equilíbrio de *longo prazo* com livre entrada.

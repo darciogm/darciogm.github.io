@@ -8,6 +8,8 @@ Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito
 
 ## 7.1 Loterias e Valor Esperado
 
+Para modelar decisões sob incerteza, precisamos primeiro de uma linguagem formal que descreva as alternativas disponíveis ao agente. Essa linguagem é fornecida pelo conceito de **loteria** — uma representação matemática de qualquer situação cujo resultado depende do acaso. De um bilhete de rifa a um investimento em ações, toda escolha arriscada pode ser descrita como uma loteria com resultados e probabilidades bem definidos.
+
 !!! definition "Loteria simples"
     Uma **loteria simples** é uma distribuição de probabilidade sobre um conjunto finito de resultados. Formalmente, uma loteria \(L\) é descrita por:
 
@@ -32,7 +34,9 @@ E[L] = \sum_{i=1}^{n} p_i \, x_i
 
     Um agente que aceita ou rejeita essa loteria em troca de receber \(R\$ 50\) com certeza revela sua atitude em relação ao risco.
 
-Uma **loteria composta** é uma loteria cujos resultados são, eles mesmos, loterias. Sob o axioma de redução de loterias compostas, toda loteria composta pode ser reduzida a uma loteria simples equivalente pela aplicação da regra de probabilidade total.
+Uma **loteria composta** é uma loteria cujos resultados são, eles mesmos, loterias. Sob o axioma de redução de loterias compostas, toda loteria composta pode ser reduzida a uma loteria simples equivalente pela aplicação da regra de probabilidade total. Essa propriedade é conveniente porque nos permite trabalhar apenas com loterias simples sem perda de generalidade.
+
+O valor esperado é um critério natural de avaliação — ele nos diz, em média, quanto a loteria "vale". Mas será que ele é suficiente para guiar as decisões de agentes reais? Um exemplo clássico sugere que não.
 
 ### O Paradoxo de São Petersburgo
 
@@ -42,11 +46,13 @@ O valor esperado, por si só, não é suficiente para descrever o comportamento 
 E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty
 \]
 
-No entanto, nenhuma pessoa racional pagaria uma quantia arbitrariamente alta para participar desse jogo. Daniel Bernoulli (1738) propôs que os agentes avaliam os resultados não pelo seu valor monetário, mas pela **utilidade** que deles extraem — inaugurando a ideia de utilidade esperada.
+No entanto, nenhuma pessoa racional pagaria uma quantia arbitrariamente alta para participar desse jogo. Daniel Bernoulli (1738) propôs que os agentes avaliam os resultados não pelo seu valor monetário, mas pela **utilidade** que deles extraem — inaugurando a ideia de utilidade esperada. Essa intuição genial — a de que o que importa não é o dinheiro em si, mas a satisfação que ele proporciona — é o ponto de partida para a construção axiomática que veremos a seguir.
 
 ---
 
 ## 7.2 Hipótese da Utilidade Esperada (Von Neumann–Morgenstern)
+
+O Paradoxo de São Petersburgo mostrou que o valor esperado, embora intuitivo, não é um critério satisfatório para descrever as decisões dos agentes diante do risco. É necessário um arcabouço mais sofisticado, que leve em conta não apenas os resultados e suas probabilidades, mas também a forma como o agente os avalia subjetivamente. Esse arcabouço é a **Hipótese da Utilidade Esperada**.
 
 A formalização moderna da teoria da utilidade esperada foi apresentada por John von Neumann e Oskar Morgenstern em 1944. Ela estabelece condições sob as quais as preferências de um agente sobre loterias podem ser representadas por uma função de utilidade com propriedade de linearidade nas probabilidades.
 
@@ -72,7 +78,7 @@ A formalização moderna da teoria da utilidade esperada foi apresentada por Joh
 
     Além disso, \(u\) é única a menos de transformações afins positivas: se \(v(x) = a \cdot u(x) + b\), com \(a > 0\), então \(v\) representa as mesmas preferências.
 
-O axioma mais controverso é o de **independência**. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979).
+O axioma mais controverso é o de **independência**. Ele afirma, em essência, que se você prefere a loteria A à loteria B, então misturar ambas com uma mesma terceira loteria não deveria alterar essa preferência — a "adição" de uma alternativa irrelevante não contamina a comparação original. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979), que estudaremos no Capítulo 8.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A utilidade esperada diz que pessoas racionais avaliam apostas pela "felicidade média" que elas proporcionam, não pelo dinheiro médio.
@@ -84,6 +90,8 @@ O axioma mais controverso é o de **independência**. O **Paradoxo de Allais** (
 ---
 
 ## 7.3 Aversão ao Risco
+
+Com o arcabouço da utilidade esperada em mãos, podemos agora investigar uma questão central: como os agentes se posicionam diante do risco? Intuitivamente, sabemos que a maioria das pessoas prefere evitar incertezas desnecessárias — é por isso que existem seguros, contratos de trabalho com salário fixo e fundos de previdência. A teoria formaliza essa intuição por meio da curvatura da função de utilidade, conectando um conceito geométrico (concavidade) a um comportamento econômico observável (a preferência pela estabilidade).
 
 !!! definition "Classificação de atitudes frente ao risco"
     Seja \(u\) uma função de utilidade VNM. Um agente é:
@@ -118,6 +126,8 @@ Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando 
 
 ## 7.4 Medidas de Aversão ao Risco (Arrow-Pratt)
 
+Saber que um agente é avesso ao risco já é informativo, mas para muitas aplicações precisamos ir além: quanto avesso? Mais avesso que outro agente? Mais avesso hoje, com pouca riqueza, do que seria amanhã, se ficasse mais rico? Para responder a essas perguntas, é necessário dispor de uma **medida quantitativa** da aversão ao risco — algo que converta a noção intuitiva de "gostar mais ou menos de risco" em um número comparável entre agentes e entre níveis de riqueza.
+
 Para comparar a aversão ao risco entre agentes ou ao longo de diferentes níveis de riqueza, Kenneth Arrow e John Pratt desenvolveram medidas locais baseadas na curvatura da função de utilidade.
 
 !!! definition "Coeficiente de aversão absoluta ao risco (ARA)"
@@ -136,7 +146,9 @@ Para comparar a aversão ao risco entre agentes ou ao longo de diferentes nívei
     R(W) = -\frac{W \cdot u''(W)}{u'(W)} = W \cdot A(W)
     \]
 
-Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco para apostas de magnitude absoluta fixa, enquanto \(R(W)\) mede a aversão ao risco para apostas proporcionais à riqueza.
+Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco para apostas de magnitude absoluta fixa, enquanto \(R(W)\) mede a aversão ao risco para apostas proporcionais à riqueza. Note que ambas dependem da razão entre a segunda e a primeira derivadas da função de utilidade — a primeira derivada captura a utilidade marginal (quanto vale um real a mais), enquanto a segunda derivada captura como essa utilidade marginal muda (o quanto o agente "satura" à medida que enriquece).
+
+A escolha de qual medida utilizar depende do contexto. Se o risco é de magnitude fixa (por exemplo, uma aposta de R\$ 1.000 independentemente da riqueza do agente), a medida absoluta \(A(W)\) é a mais relevante. Se o risco é proporcional à riqueza (por exemplo, investir 10% do patrimônio em ações), a medida relativa \(R(W)\) é mais informativa.
 
 ### Classes importantes de funções de utilidade
 
@@ -164,6 +176,8 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 ---
 
 ## 7.5 Prêmio de Risco e Equivalente de Certeza
+
+As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura da função de utilidade — uma grandeza matemática. Mas como traduzir essa curvatura em termos econômicos concretos? Quanto, em reais, um agente pagaria para se livrar de um risco? É exatamente isso que os conceitos de **equivalente de certeza** e **prêmio de risco** fazem: eles transformam a informação contida na função de utilidade em valores monetários que podem ser diretamente observados ou estimados no mercado.
 
 !!! definition "Equivalente de certeza e prêmio de risco"
     Seja \(\tilde{W} = W + \tilde{\varepsilon}\) a riqueza aleatória, onde \(\tilde{\varepsilon}\) é um risco justo (isto é, \(E[\tilde{\varepsilon}] = 0\)) com variância \(\sigma^2\).
@@ -240,6 +254,8 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 
     **Interpretação**: O prêmio de risco é (aproximadamente) proporcional a dois fatores: (i) a medida de aversão absoluta ao risco \(A(W)\), que captura a curvatura da função de utilidade; e (ii) a variância \(\sigma^2\) do risco, que captura a magnitude da incerteza. Para riscos multiplicativos (proporcionais à riqueza), uma derivação análoga mostra que \(\pi/W \approx \frac{1}{2}R(W)\sigma_r^2\), onde \(\sigma_r^2\) é a variância do retorno relativo.
 
+A fórmula de Arrow-Pratt é notavelmente elegante: ela decompõe o "preço" que o agente paga pelo risco em dois fatores — um subjetivo (quão avesso ele é) e outro objetivo (quão arriscada é a loteria). Essa decomposição tem implicações práticas imediatas: para um dado nível de risco, agentes mais avessos pagam prêmios maiores; para um dado nível de aversão, riscos mais voláteis custam mais caro. É exatamente essa lógica que as seguradoras utilizam ao precificar apólices, cobrando mais de quem enfrenta riscos maiores e oferecendo descontos a quem demonstra menor exposição.
+
 <figure markdown="span">
   <iframe src="../graficos/cap07/premio-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
   <figcaption markdown="span"><strong>Figura 7.2</strong> — Prêmio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
@@ -248,6 +264,8 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 ---
 
 ## 7.6 Métodos para Reduzir o Risco
+
+Até aqui, tratamos o risco como algo dado — uma propriedade das loterias que o agente enfrenta. Mas, na prática, agentes e instituições desenvolvem mecanismos engenhosos para **reduzir**, **redistribuir** ou **gerenciar** os riscos a que estão expostos. Esses mecanismos não eliminam a incerteza do mundo; eles a realocam para quem pode suportá-la melhor ou a diluem entre muitos agentes. Nesta seção, examinamos quatro estratégias fundamentais: seguros, diversificação, flexibilidade e informação.
 
 ### 7.6.1 Seguros
 
@@ -265,6 +283,8 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 </figure>
 
 ### 7.6.2 Diversificação
+
+Se o seguro transfere risco de um agente para outro, a diversificação opera por um mecanismo diferente: ela **dilui** o risco ao distribuir a exposição entre múltiplas fontes de incerteza. A lógica é simples, mas poderosa: quando os resultados de diferentes ativos não se movem perfeitamente em conjunto, as perdas de uns tendem a ser parcialmente compensadas pelos ganhos de outros.
 
 A diversificação reduz o risco total de uma carteira sem necessariamente reduzir o retorno esperado. Se os retornos dos ativos não são perfeitamente correlacionados, a variância da carteira é menor que a média ponderada das variâncias individuais.
 
@@ -294,6 +314,8 @@ Quando \(\rho < 1\), existe um peso \(w^*\) que minimiza \(\sigma_p^2\), gerando
 
 ### 7.6.3 Flexibilidade e valor da opção
 
+Seguros e diversificação lidam com riscos que já estão presentes. Mas e quando o agente pode **escolher o momento** de se expor ao risco? Existe valor em simplesmente esperar, observar como o mundo se desenrola e decidir depois? A resposta, surpreendentemente rica, é que sim — e esse valor pode ser substancial.
+
 Manter opções abertas tem valor positivo sob incerteza. A possibilidade de adiar uma decisão irreversível até que nova informação se torne disponível é análoga a uma **opção real**, cujo valor cresce com a volatilidade do ambiente.
 
 Formalmente, considere um agente que pode tomar uma decisão irreversível hoje ou esperar um período para obter informação adicional. Se o custo de esperar é baixo e a incerteza é alta, o **valor da opção de espera** pode ser substancial. Esse conceito, desenvolvido por Dixit e Pindyck (1994), tem aplicações importantes em decisões de investimento, exploração de recursos naturais e políticas públicas.
@@ -307,7 +329,7 @@ Formalmente, considere um agente que pode tomar uma decisão irreversível hoje 
 
 ### 7.6.4 Informação
 
-A informação reduz a incerteza e permite decisões mais bem fundamentadas. O **valor da informação** pode ser definido como a diferença entre a utilidade esperada com e sem a informação. Para um agente avesso ao risco, informação completa é sempre (fracamente) valiosa.
+O último mecanismo para lidar com o risco não redistribui nem adia a incerteza — ele a **reduz diretamente**. A informação reduz a incerteza e permite decisões mais bem fundamentadas. O **valor da informação** pode ser definido como a diferença entre a utilidade esperada com e sem a informação. Para um agente avesso ao risco, informação completa é sempre (fracamente) valiosa.
 
 Seja \(\theta\) o estado da natureza desconhecido e \(a\) a ação do agente. Sem informação, o agente maximiza \(E_\theta[u(a, \theta)]\). Com informação perfeita (observa \(\theta\) antes de agir), maximiza \(u(a^*(\theta), \theta)\) para cada realização. O **valor da informação perfeita** é:
 
@@ -320,6 +342,8 @@ Pela desigualdade de Jensen aplicada ao operador \(\max\), temos \(VI \geq 0\): 
 ---
 
 ## 7.7 Abordagem Estado-Preferência (*State-Preference*)
+
+Até aqui, abordamos a incerteza pelo lado do agente individual: como ele avalia loterias, quão avesso ao risco ele é, quanto pagaria por um seguro. Mas existe uma perspectiva complementar e igualmente poderosa, que reconecta a teoria da incerteza à teoria do consumidor que já conhecemos dos capítulos anteriores. Em vez de pensar em "loterias", podemos pensar em "bens contingentes" — bens que existem condicionalmente à ocorrência de determinados estados do mundo. Essa reformulação, devida a Arrow e Debreu, revela uma elegância profunda: escolher sob incerteza é, no fundo, escolher um cesto de consumo, exatamente como no problema do consumidor determinístico.
 
 A abordagem de estado-preferência, desenvolvida por Arrow (1964) e Debreu (1959), oferece uma perspectiva alternativa para modelar a incerteza.
 
@@ -348,7 +372,7 @@ A condição de primeira ordem implica:
 \frac{\pi_s \, u'(c_s)}{\pi_{s'} \, u'(c_{s'})} = \frac{\psi_s}{\psi_{s'}} \quad \forall \; s, s'
 \]
 
-Se os mercados de ativos contingentes são **completos** (existe um ativo para cada estado), todo risco pode ser alocado eficientemente. Se, adicionalmente, o agente é avesso ao risco e os preços são atuarialmente justos (\(\psi_s = \pi_s\) para todo \(s\)), a solução ótima é \(c_s = c_{s'}\) para todo \(s, s'\) — ou seja, **consumo perfeitamente suavizado** entre estados.
+Se os mercados de ativos contingentes são **completos** (existe um ativo para cada estado), todo risco pode ser alocado eficientemente. Se, adicionalmente, o agente é avesso ao risco e os preços são atuarialmente justos (\(\psi_s = \pi_s\) para todo \(s\)), a solução ótima é \(c_s = c_{s'}\) para todo \(s, s'\) — ou seja, **consumo perfeitamente suavizado** entre estados. Esse resultado é a contrapartida, no espaço de estados, do resultado que vimos na Seção 7.6.1: assim como o agente avesso ao risco contrata cobertura total quando o prêmio é justo, ele equaliza o consumo entre todos os estados quando os preços dos ativos contingentes são atuarialmente justos. Em ambos os casos, a aversão ao risco conduz à eliminação completa da incerteza sempre que isso pode ser feito sem custo.
 
 !!! note "Mercados completos e eficiência"
     A completude dos mercados é uma condição forte. Na prática, muitos riscos não são seguráveis (desemprego, saúde futura), o que gera incompletude dos mercados e potenciais ineficiências de Pareto. A incompletude dos mercados é um dos temas centrais da teoria financeira moderna.
@@ -356,6 +380,8 @@ Se os mercados de ativos contingentes são **completos** (existe um ativo para c
 ---
 
 ## 7.8 Introdução à Informação Assimétrica
+
+A análise até aqui pressupôs que todos os agentes compartilham a mesma informação sobre os riscos envolvidos. Mas o que acontece quando uma das partes sabe mais do que a outra? Essa assimetria de informação é, na prática, a regra — não a exceção. O vendedor de um carro usado conhece os defeitos ocultos; o paciente sabe mais sobre seus hábitos de saúde do que a seguradora; o gerente de uma empresa sabe mais sobre o desempenho de sua equipe do que o acionista. Essas assimetrias geram problemas que podem comprometer o funcionamento eficiente dos mercados de risco.
 
 Os problemas de informação assimétrica surgem quando uma das partes de uma transação possui informação relevante que a outra desconhece. Esses problemas são centrais para a compreensão de falhas de mercado e serão tratados em profundidade em capítulos posteriores. Apresentamos aqui uma visão preliminar dos dois tipos fundamentais.
 
@@ -370,12 +396,14 @@ Mecanismos para mitigar a seleção adversa incluem:
 
 ### Risco moral
 
-O **risco moral** ocorre *depois* da celebração do contrato, quando uma das partes pode tomar ações não observáveis que afetam o resultado. Por exemplo, após contratar um seguro, o segurado pode reduzir seus cuidados preventivos. A solução envolve o desenho de contratos com incentivos adequados (franquias, copagamentos, bônus por desempenho).
+Se a seleção adversa é um problema de **informação oculta** (quem é o agente?), o risco moral é um problema de **ação oculta** (o que o agente faz?). O **risco moral** ocorre *depois* da celebração do contrato, quando uma das partes pode tomar ações não observáveis que afetam o resultado. Por exemplo, após contratar um seguro, o segurado pode reduzir seus cuidados preventivos. A solução envolve o desenho de contratos com incentivos adequados (franquias, copagamentos, bônus por desempenho).
 
 !!! tip "Terminologia"
     Em português, o termo consagrado é **risco moral** (tradução de *moral hazard*), e **não** "risco de inadimplência". "Risco moral" refere-se ao problema de incentivos gerado pela impossibilidade de observar as ações do agente após a contratação.
 
 ---
+
+Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade esperada, aversão ao risco, prêmio de risco, diversificação e informação assimétrica — ganham vida quando aplicados a mercados reais. Os boxes a seguir ilustram como a teoria se manifesta em três contextos brasileiros: o mercado de seguros de automóvel, a Mega-Sena e o seguro agrícola.
 
 ## Box Brasil: O Mercado de Seguros de Automóvel no Brasil
 
@@ -436,7 +464,7 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
     1. **Hipótese de Friedman-Savage (1948)**: a função de utilidade pode ser côncava para níveis baixos e altos de riqueza, mas **convexa** em uma faixa intermediária, correspondente à região onde um "grande prêmio" faria o indivíduo mudar de classe social. Nessa faixa, o agente se comporta como propenso ao risco.
 
-    2. **Teoria dos prospectos**: os agentes *sobreponderaram* probabilidades muito pequenas. Assim, a probabilidade subjetiva atribuída ao prêmio máximo é muito maior do que a probabilidade objetiva.
+    2. **Teoria dos prospectos**: os agentes *sobreponderam* probabilidades muito pequenas. Assim, a probabilidade subjetiva atribuída ao prêmio máximo é muito maior do que a probabilidade objetiva.
 
     **Conexão com este capítulo**
 
@@ -470,6 +498,32 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
     O PSR enfrenta limitações: orçamento frequentemente insuficiente para atender toda a demanda, concentração das apólices em grandes produtores do Centro-Oeste e Sul, e dificuldades na precificação atuarial de eventos climáticos extremos (que estão se tornando mais frequentes).
 
     **Fonte**: Ministério da Agricultura e Pecuária, Relatório do PSR 2023/2024; Atlas do Seguro Rural ([Embrapa](https://www.embrapa.br)).
+
+---
+
+## Resumo do Capítulo
+
+- Uma loteria é uma distribuição de probabilidade sobre resultados monetários; o valor esperado é a média ponderada dos payoffs, mas não captura a atitude do agente em relação ao risco.
+- A Hipótese da Utilidade Esperada (Von Neumann-Morgenstern) axiomatiza a escolha sob incerteza: agentes racionais maximizam a esperança de uma função de utilidade, com os axiomas de completude, transitividade, continuidade e independência fundamentando o teorema.
+- A aversão ao risco corresponde à concavidade da função de utilidade (desigualdade de Jensen): o agente prefere o valor esperado com certeza à própria loteria; neutralidade e propensão ao risco correspondem a linearidade e convexidade, respectivamente.
+- As medidas de Arrow-Pratt quantificam a aversão ao risco: a medida absoluta (ARA) determina o comportamento frente a riscos de magnitude fixa, enquanto a medida relativa (RRA) se aplica a riscos proporcionais à riqueza; funções CARA, CRRA e DARA capturam diferentes padrões.
+- O prêmio de risco e o equivalente de certeza conectam a teoria à prática: o prêmio de risco é o valor que o agente pagaria para eliminar a incerteza, e a aproximação de Arrow-Pratt o relaciona à variância da loteria e à curvatura da utilidade.
+- Diversificação, seguros e mercados de ativos contingentes (abordagem estado-preferência) são mecanismos para reduzir ou redistribuir riscos; problemas de informação assimétrica (seleção adversa e risco moral) limitam a eficiência desses mercados.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Loteria | Distribuição de probabilidade sobre um conjunto finito de resultados monetários. |
+| Utilidade esperada (VNM) | Representação de preferências sob incerteza em que o agente maximiza a esperança matemática de uma função de utilidade. |
+| Aversão ao risco | Preferência pelo valor esperado de uma loteria (com certeza) em relação à própria loteria; implica função de utilidade côncava. |
+| Medida de Arrow-Pratt (ARA) | Coeficiente de aversão ao risco absoluta, definido como \(-u''(W)/u'(W)\); mede a curvatura local da utilidade. |
+| Medida de Arrow-Pratt (RRA) | Coeficiente de aversão ao risco relativa, definido como \(-W \cdot u''(W)/u'(W)\); mede a aversão a riscos proporcionais à riqueza. |
+| Equivalente de certeza | Valor certo que proporciona a mesma utilidade esperada de uma loteria; é menor que o valor esperado para agentes avessos ao risco. |
+| Prêmio de risco | Diferença entre o valor esperado da loteria e o equivalente de certeza; mede quanto o agente pagaria para eliminar o risco. |
+| Diversificação | Estratégia de alocação de riqueza entre ativos imperfeitamente correlacionados para reduzir o risco total do portfólio. |
+| Seleção adversa | Problema de informação assimétrica pré-contratual em que a parte menos informada atrai desproporcionalmente agentes de alto risco. |
+| Risco moral | Problema de informação assimétrica pós-contratual em que o agente segurado altera seu comportamento de forma não observável. |
 
 ---
 

@@ -10,6 +10,8 @@ Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Ca
 
 ## 9d.1 Equilíbrio Bayesiano Perfeito (PBE)
 
+Quando combinamos ação sequencial com informação incompleta, precisamos de um conceito de equilíbrio que una as exigências do EPS (otimalidade em cada ponto do jogo) com as do BNE (consistência das crenças). O Equilíbrio Bayesiano Perfeito realiza essa síntese: cada jogador age otimamente em cada conjunto de informação, dado o que acredita sobre os tipos dos demais, e essas crenças são atualizadas pela regra de Bayes sempre que possível.
+
 !!! definition "Equilíbrio Bayesiano Perfeito"
     Um PBE consiste em:
 
@@ -21,11 +23,13 @@ Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Ca
     - **Otimalidade sequencial:** Dado \(\mu\), cada jogador maximiza seu payoff esperado em cada conjunto de informação.
     - **Consistência bayesiana:** Onde possível, \(\mu\) é derivada das estratégias de equilíbrio \(\sigma^*\) pela regra de Bayes.
 
-O PBE refina o BNE ao exigir que as crenças sejam consistentes com as estratégias *em cada ponto do jogo*, não apenas no início. Isso elimina equilíbrios sustentados por crenças arbitrárias em conjuntos de informação fora do caminho de equilíbrio.
+O PBE refina o BNE ao exigir que as crenças sejam consistentes com as estratégias *em cada ponto do jogo*, não apenas no início. Isso elimina equilíbrios sustentados por crenças arbitrárias em conjuntos de informação fora do caminho de equilíbrio. Em termos econômicos, a exigência força o analista a especificar *o que o receptor acreditaria* caso observasse um sinal inesperado, distinguindo equilíbrios robustos daqueles sustentados por suposições arbitrárias.
 
 ---
 
 ## 9d.2 Sinalização: O Modelo de Spence
+
+O PBE encontra sua aplicação mais célebre nos jogos de sinalização. A pergunta central é: pode uma parte informada *revelar credivelmente* sua informação privada por meio de ações observáveis? A resposta de Spence (1973) é que sim, desde que o custo da ação seja diferencialmente menor para os tipos de alta qualidade.
 
 Os jogos de sinalização, formalizados por Spence (1973), são jogos sequenciais com informação incompleta nos quais a parte informada (o "remetente") age primeiro, escolhendo um sinal observável.
 
@@ -40,12 +44,14 @@ Os jogos de sinalização, formalizados por Spence (1973), são jogos sequenciai
     **Andrew Michael Spence** (1943–presente) é um economista americano. Obteve o PhD em Harvard sob orientação de Kenneth Arrow e foi professor em Harvard e Stanford, onde foi também reitor da Graduate School of Business. Dividiu o Nobel com George Akerlof e Joseph Stiglitz.
 
     **Por que ganhou o Nobel:**
-    Premiado por sua análise de mercados com informação assimétrica. Em *Job Market Signaling* (1973), Spence mostrou como um agente mais bem informado pode usar ações custosas e observáveis — como investir em educação — para sinalizar credivamente suas características não observáveis ao mercado. A chave é que o custo do sinal é menor para os tipos de alta qualidade, tornando a imitação não lucrativa.
+    Premiado por sua análise de mercados com informação assimétrica. Em *Job Market Signaling* (1973), Spence mostrou como um agente mais bem informado pode usar ações custosas e observáveis — como investir em educação — para sinalizar credivelmente suas características não observáveis ao mercado. A chave é que o custo do sinal é menor para os tipos de alta qualidade, tornando a imitação não lucrativa.
 
     **Conexão com este capítulo:**
     O modelo de Spence — em que trabalhadores de alta produtividade investem em educação para se distinguir dos de baixa produtividade — é o exemplo central de jogo de sinalização analisado neste capítulo. Os conceitos de equilíbrio separador e agregador, e as condições para que a sinalização funcione como mecanismo de revelação de informação, são desenvolvidos diretamente a partir do framework de Spence.
 
 ### Tipos de equilíbrio
+
+Os jogos de sinalização admitem uma rica variedade de equilíbrios, dependendo de como os diferentes tipos escolhem seus sinais. A classificação a seguir é fundamental para toda a análise subsequente.
 
 - **Separador**: tipos diferentes escolhem sinais diferentes → o sinal revela perfeitamente o tipo.
 - **Agregador** (*pooling*): todos os tipos escolhem o mesmo sinal → o receptor não aprende nada.
@@ -59,7 +65,7 @@ Trabalhadores têm habilidade \(\theta_H\) (alta) ou \(\theta_L\) (baixa). A edu
 c(e, \theta_H) < c(e, \theta_L) \quad \text{para todo } e > 0
 \]
 
-Essa condição de **single-crossing** garante que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
+Essa condição de **single-crossing** é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que cria a possibilidade de separação: o nível de educação que o tipo alto aceita obter é proibitivamente custoso para o tipo baixo, garantindo que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** No modelo de Spence, a educação tem valor de sinalização *mesmo que não aumente a produtividade*.
@@ -72,6 +78,8 @@ Essa condição de **single-crossing** garante que, em equilíbrio separador, tr
 
 ### Equilíbrio separador: derivação
 
+Como encontrar formalmente o equilíbrio? O método consiste em determinar o nível mínimo de educação que separa os tipos, usando duas restrições de compatibilidade de incentivos (IC) que delimitam o intervalo de equilíbrios separadores.
+
 Com \(\theta_H = 2\), \(\theta_L = 1\), \(c(e, \theta) = e/\theta\), e firmas competitivas que pagam salário igual à produtividade esperada:
 
 No equilíbrio separador, o tipo L escolhe \(e_L = 0\) e o tipo H escolhe \(e_H = e^*\), onde \(e^*\) deve satisfazer:
@@ -79,7 +87,7 @@ No equilíbrio separador, o tipo L escolhe \(e_L = 0\) e o tipo H escolhe \(e_H 
 - **Tipo H não desvia para \(e = 0\):** \(2 - e^*/2 \geq 1\), logo \(e^* \leq 2\).
 - **Tipo L não desvia para \(e = e^*\):** \(1 \geq 2 - e^*\), logo \(e^* \geq 1\).
 
-O equilíbrio separador menos custoso (preferred by the informed player) é \(e^* = 1\).
+O equilíbrio separador menos custoso (preferido pelo jogador informado) é \(e^* = 1\). Nesse equilíbrio, o custo da sinalização é puro desperdício social — se os empregadores pudessem observar a habilidade diretamente, nenhum investimento em sinalização seria necessário.
 
 !!! tip "Sinalização vs. Capital Humano"
     No modelo de Spence, a educação tem valor de sinalização **mesmo que não aumente a produtividade**. Isso contrasta com a teoria do capital humano de Becker. Na realidade, a educação provavelmente combina ambos os papéis.
@@ -88,10 +96,14 @@ O equilíbrio separador menos custoso (preferred by the informed player) é \(e^
 
 ## 9d.3 Cheap Talk e Comunicação Estratégica
 
+No modelo de Spence, o sinal é crível porque é custoso. Mas o que acontece quando a comunicação não envolve custo direto? Se falar é gratuito, a credibilidade depende inteiramente do alinhamento de interesses entre as partes.
+
 Quando o sinal é sem custo (*cheap talk*), a sinalização é mais difícil. Crawford e Sobel (1982) mostraram que a quantidade de informação transmitida em equilíbrio depende do **alinhamento de interesses** entre remetente e receptor.
 
 - Se os interesses são perfeitamente alinhados: revelação completa é possível.
 - Se os interesses divergem: a comunicação é parcial — o remetente envia "intervalos" de informação (*partition equilibrium*).
+
+Quanto maior o desalinhamento de interesses, mais grosseira é a partição e menos informação é transmitida — o receptor racionalmente desconta mensagens de um remetente com incentivo para exagerar.
 
 **Aplicação:** Comunicação entre o Banco Central e o mercado (*forward guidance*). O BCB tem incentivo para comunicar claramente suas intenções de política monetária, mas o grau de credibilidade depende do alinhamento percebido entre os objetivos do BCB e do mercado.
 
@@ -99,17 +111,19 @@ Quando o sinal é sem custo (*cheap talk*), a sinalização é mais difícil. Cr
 
 ## 9d.4 Moral Hazard (Risco Moral)
 
+As seções anteriores trataram de informação privada sobre *características* (tipos). Agora passamos a um problema distinto: o que acontece quando a assimetria se refere a *ações* tomadas após a celebração de um contrato? Se o principal não pode observar o esforço do agente, como desenhar incentivos que alinhem os interesses de ambos? Esse é o problema do moral hazard.
+
 !!! definition "Moral Hazard"
     Situação em que uma parte (o **agente**) toma uma ação não observável que afeta o payoff de outra parte (o **principal**). O principal não pode monitorar diretamente o esforço do agente.
 
-O modelo básico de principal-agente:
+O modelo básico de principal-agente formaliza essa situação: o principal oferece um contrato, o agente decide se aceita e, em caso positivo, escolhe seu nível de esforço. O desafio é que o esforço não é verificável — apenas o resultado, que depende tanto do esforço quanto de choques aleatórios, pode ser contratado.
 
-- O principal oferece um contrato \(w(y)\) (pagamento condicionado ao resultado \(y\)).
+- O principal oferece um contrato \(w(q)\) (pagamento condicionado ao resultado \(q\)).
 - O agente escolhe esforço \(e\) (não observável). Esforço é custoso: \(c(e)\).
-- O resultado \(y\) depende de \(e\) e de choque aleatório \(\varepsilon\): \(y = f(e, \varepsilon)\).
-- O principal quer maximizar \(E[y - w(y)]\); o agente quer maximizar \(E[w(y)] - c(e)\).
+- O resultado \(q\) depende de \(e\) e de choque aleatório \(\varepsilon\): \(q = f(e, \varepsilon)\).
+- O principal quer maximizar \(E[q - w(q)]\); o agente quer maximizar \(E[w(q)] - c(e)\).
 
-**Trade-off central:** Para incentivar esforço, o contrato deve vincular pagamento ao resultado. Mas isso expõe o agente (avesso ao risco) a risco — gerando custo de seguro. O contrato ótimo equilibra incentivos e seguro.
+**Trade-off central:** Para incentivar esforço, o contrato deve vincular pagamento ao resultado. Mas isso expõe o agente (avesso ao risco) a risco — gerando custo de seguro. O contrato ótimo equilibra incentivos e seguro. Esse dilema entre risco e incentivos é onipresente na economia.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Quando alguém não arca com as consequências de suas ações, tende a agir de forma mais arriscada.
@@ -124,10 +138,12 @@ O modelo básico de principal-agente:
 
 ## 9d.5 Seleção Adversa
 
+Se o moral hazard é um problema pós-contratual (ações ocultas), a seleção adversa é pré-contratual (características ocultas). Confundir os dois — como fazem os itens 0 e 1 da questão ANPEC ao final deste capítulo — é um erro frequente mas evitável: basta perguntar se a assimetria surge *antes* ou *depois* da celebração do contrato.
+
 !!! definition "Seleção Adversa"
     Situação em que uma parte tem informação privada *antes* de firmar um contrato, e essa informação afeta a qualidade da transação. A parte desinformada atrai desproporcionalmente os tipos "ruins" — o mercado dos limões (Akerlof, 1970).
 
-No mercado de seguros: pessoas de alto risco são mais propensas a comprar seguro (sabem que precisam). Isso eleva o prêmio, afastando pessoas de baixo risco, potencialmente destruindo o mercado.
+No mercado de seguros: pessoas de alto risco são mais propensas a comprar seguro (sabem que precisam). Isso eleva o prêmio, afastando pessoas de baixo risco, potencialmente destruindo o mercado. O mecanismo é cumulativo: à medida que os tipos bons se retiram, a qualidade média do pool se deteriora, o prêmio sobe, e mais tipos bons saem — uma espiral que pode culminar no colapso do mercado.
 
 **Mecanismos de mitigação:**
 
@@ -141,6 +157,8 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 ---
 
 ## Box Brasil: Credibilidade do Banco Central
+
+Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na realidade institucional brasileira. Os dois Boxes a seguir ilustram como a comunicação do Banco Central pode ser analisada como cheap talk e como a regulação de telecomunicações enfrenta informação assimétrica entre regulador e firma.
 
 !!! example "Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
     O **Banco Central do Brasil** comunica suas intenções de política monetária por meio de comunicados, atas do Copom e o Relatório de Inflação. Essa comunicação pode ser analisada como um jogo de sinalização:
@@ -165,6 +183,8 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 ---
 
 ## Box Brasil: Telecom e Regulação sob Informação Assimétrica
+
+O próximo Box ilustra o lado operacional da informação assimétrica na regulação setorial.
 
 !!! example "Box Brasil — Regulação de telecom: quando a Anatel não sabe os custos"
     A regulação de telecomunicações no Brasil enfrenta um problema clássico de informação assimétrica: a **Anatel** precisa fixar tarifas, mas não observa os custos verdadeiros das operadoras (Vivo, Claro, TIM).
@@ -211,6 +231,32 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
 ---
 
+## Resumo do Capítulo
+
+- Jogos dinâmicos com informação incompleta combinam ação sequencial com assimetria informacional. O conceito de equilíbrio é o **Equilíbrio Bayesiano Perfeito (PBE)**, que exige otimalidade sequencial das estratégias e consistência bayesiana das crenças em cada conjunto de informação.
+- No **modelo de sinalização de Spence**, a educação funciona como sinal de habilidade mesmo sem aumentar a produtividade: a condição de single-crossing (custo menor para tipos melhores) permite que o equilíbrio separador revele o tipo do trabalhador.
+- Existem três tipos de equilíbrio em jogos de sinalização: **separador** (tipos revelados), **agregador/pooling** (nenhuma informação revelada) e **semi-separador** (revelação parcial).
+- **Cheap talk** (comunicação sem custo) transmite informação apenas quando os interesses de remetente e receptor estão suficientemente alinhados (Crawford-Sobel, 1982).
+- O **moral hazard** (risco moral) surge quando o agente toma ações não observáveis pelo principal; o contrato ótimo equilibra incentivos ao esforço com seguro contra risco.
+- A **seleção adversa** ocorre quando informação privada pré-contratual atrai desproporcionalmente os tipos "ruins", podendo destruir mercados inteiros. Mecanismos de mitigação incluem sinalização, screening, certificação e regulação obrigatória.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Equilíbrio Bayesiano Perfeito (PBE) | Combinação de estratégias e crenças satisfazendo otimalidade sequencial e consistência bayesiana em cada conjunto de informação. |
+| Jogo de sinalização | Jogo sequencial em que a parte informada (remetente) escolhe um sinal observável antes que a parte desinformada (receptor) tome sua decisão. |
+| Equilíbrio separador | Equilíbrio em que tipos diferentes escolhem sinais diferentes, revelando perfeitamente a informação privada. |
+| Equilíbrio agregador (pooling) | Equilíbrio em que todos os tipos escolhem o mesmo sinal, impedindo o receptor de aprender sobre o tipo. |
+| Condição de single-crossing | O custo marginal do sinal é menor para os tipos de alta qualidade, garantindo que a imitação não seja lucrativa. |
+| Cheap talk | Comunicação sem custo direto; a quantidade de informação transmitida depende do alinhamento de interesses entre remetente e receptor. |
+| Moral hazard (risco moral) | Problema de incentivos em que o agente toma ações não observáveis pelo principal, exigindo contratos que vinculem pagamento a resultados. |
+| Seleção adversa | Situação pré-contratual em que informação privada sobre qualidade leva os piores tipos a se auto-selecionarem para a transação. |
+| Screening | Mecanismo pelo qual a parte desinformada oferece um menu de contratos desenhado para que cada tipo se auto-selecione revelando informação. |
+| Princípio da Revelação | Para qualquer mecanismo e equilíbrio, existe um mecanismo direto equivalente em que reportar o tipo verdadeiro é ótimo. |
+
+---
+
 ## Exercícios Resolvidos
 
 ??? example "Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
@@ -220,9 +266,9 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
     No equilíbrio separador: tipo L escolhe \(e_L = 0\) (salário = 1); tipo H escolhe \(e_H = e^*\) (salário = 2).
 
-    **Restrição IC do tipo L (não imitir H):** \(1 - 0 \geq 2 - e^*/1 \implies e^* \geq 1\)
+    **Restrição IC do tipo L (não imitar H):** \(1 - 0 \geq 2 - e^*/1 \implies e^* \geq 1\)
 
-    **Restrição IC do tipo H (não imitir L):** \(2 - e^*/2 \geq 1 \implies e^* \leq 2\)
+    **Restrição IC do tipo H (não imitar L):** \(2 - e^*/2 \geq 1 \implies e^* \leq 2\)
 
     **Equilíbrio separador menos custoso:** \(e^* = 1\).
 
@@ -245,7 +291,7 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
     **Restrição de participação (IR):** \(0{,}8 w_B + 0{,}2 w_R - 2 \geq 0\)
 
-    Minimizando o custo para o principal: \(w_R = 0\), \(w_B = 4/(0{,}5) = 4\)... Verificando: \(0{,}8 \times 4 + 0{,}2 \times 0 - 2 = 1{,}2 \geq 0\). ✓
+    Minimizando o custo para o principal: \(w_R = 0\), \(w_B = 2/(0{,}5) = 4\)... Verificando: \(0{,}8 \times 4 + 0{,}2 \times 0 - 2 = 1{,}2 \geq 0\). ✓
 
     Mas podemos fazer melhor: com \(w_R = 0\), IC dá \(w_B \geq 4\). IR com \(w_B = 4\): \(3{,}2 - 2 = 1{,}2 > 0\) — renda extra para o agente.
 
@@ -280,6 +326,34 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 **Exercício 9d.4.** (Moral hazard) Discuta como as seguintes instituições brasileiras mitigam problemas de moral hazard: (a) bônus por desempenho de professores (Ceará); (b) DPVAT com franquia; (c) stock options de executivos em empresas listadas na B3.
 
 [:material-arrow-right: Ver solução](../solucoes/cap09d.md#ex-9d-4)
+
+---
+
+## 🏆 Vem, ANPEC!
+
+Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
+
+??? question "ANPEC 2017 — Questão 11"
+    Com relação aos problemas de assimetria de informação, indique quais entre as afirmativas abaixo estão corretas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | Seleção adversa diz respeito a uma ação não observável. |
+    | 1    | Problemas morais dizem respeito a características não observáveis. |
+    | 2    | Quando empresas de seguros reúnem informações sobre demandantes de seguros, diz-se que elas estão fazendo screening. |
+    | 3    | Certificações de produtos são uma forma de reduzir o "problema dos limões" decorrente de seleção adversa. |
+    | 4    | Seguros com cobertura universal obrigatória podem ser uma forma de prevenir seleção adversa. |
+
+    ??? success "Gabarito"
+        **Respostas: 00111**
+
+        - **Item 0 — F:** Seleção adversa diz respeito a **características** (tipos) não observáveis, não a ações. Ações não observáveis configuram **risco moral** (moral hazard). A seleção adversa é pré-contratual (tipos ocultos); o risco moral é pós-contratual (ações ocultas).
+        - **Item 1 — F:** "Problemas morais" (risco moral / *moral hazard*) dizem respeito a **ações** não observáveis, não a características. O item inverte as definições: quem se refere a características não observáveis é a **seleção adversa**.
+        - **Item 2 — V:** *Screening* (triagem) é o mecanismo pelo qual a parte desinformada (seguradoras) coleta informações sobre a parte informada (segurados) para classificá-los por risco.
+        - **Item 3 — V:** Certificações de produtos (como laudos de vistoria, selos de qualidade, garantias de fábrica) reduzem a assimetria de informação entre vendedores e compradores, atenuando o problema dos limões de Akerlof.
+        - **Item 4 — V:** Se o seguro é **universal e obrigatório**, não há autosseleção: todos os tipos (alto e baixo risco) participam do pool. Isso elimina o mecanismo de seleção adversa. O SUS brasileiro é um exemplo de cobertura universal que evita a antisseleção.
+
+        **Nota:** Esta questão também aparece no Capítulo 19 (Limões, Sinais e Contratos), onde é discutida no contexto mais amplo dos mecanismos de mercado para informação assimétrica.
 
 ---
 

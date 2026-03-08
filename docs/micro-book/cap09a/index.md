@@ -20,6 +20,8 @@ Este módulo apresenta os jogos **estáticos** (simultâneos) com **informação
 
 ## 9a.1 Conceitos Básicos
 
+Antes de analisar qualquer jogo específico, é necessário estabelecer a linguagem formal que nos permitirá representar, comparar e resolver situações de interação estratégica. Assim como a teoria do consumidor parte da definição precisa de preferências e restrições, a teoria dos jogos parte da descrição completa do ambiente estratégico — quem são os jogadores, o que cada um pode fazer e como cada combinação de ações afeta o bem-estar de todos. Essa descrição é capturada por duas representações complementares: a forma normal (ou estratégica) e a forma extensiva.
+
 !!! definition "Jogo na forma normal (ou estratégica)"
     Um jogo na **forma normal** é definido pela tripla \(\Gamma = \langle N, (S_i)_{i \in N}, (u_i)_{i \in N} \rangle\), onde:
 
@@ -38,6 +40,8 @@ Este módulo apresenta os jogos **estáticos** (simultâneos) com **informação
 
     A forma extensiva é especialmente útil para jogos **sequenciais** (Módulo 9b) e jogos com **informação imperfeita**.
 
+Com essas duas representações em mãos, podemos definir os conceitos que serão utilizados ao longo de todo o capítulo. Quais são os ingredientes mínimos que um jogador racional precisa considerar ao tomar uma decisão? A resposta passa pelas noções de estratégia, dominância e melhor resposta.
+
 ### Conceitos auxiliares
 
 - **Estratégia pura**: uma escolha determinística de ação, \(s_i \in S_i\).
@@ -48,6 +52,8 @@ Este módulo apresenta os jogos **estáticos** (simultâneos) com **informação
 
 ### Eliminação Iterada de Estratégias Dominadas (EIED)
 
+A noção de dominância já sugere um primeiro método de solução. Se um jogador racional jamais escolheria uma estratégia estritamente dominada, e se todos sabem que todos são racionais, então é possível eliminar essas estratégias e simplificar o jogo. Repetindo esse raciocínio — agora no jogo reduzido — chega-se ao procedimento de Eliminação Iterada de Estratégias Estritamente Dominadas (EIED).
+
 Um procedimento de solução que não requer o conceito de equilíbrio: elimine, iterativamente, as estratégias estritamente dominadas de cada jogador. O conjunto de estratégias que sobrevive a todas as rodadas de eliminação é o conjunto de **estratégias racionalizáveis**.
 
 !!! warning "Ordem de eliminação"
@@ -57,6 +63,8 @@ Um procedimento de solução que não requer o conceito de equilíbrio: elimine,
 
 ## 9a.2 Dilema dos Prisioneiros
 
+Com a linguagem formal estabelecida, podemos agora examinar os jogos que deram forma à teoria. Começamos pelo mais influente de todos — um jogo tão simples que pode ser descrito em uma frase, mas tão profundo que suas implicações permeiam a economia, a ciência política e a biologia.
+
 O **Dilema dos Prisioneiros** é possivelmente o jogo mais célebre da teoria dos jogos. Dois suspeitos são interrogados separadamente e cada um pode cooperar (ficar calado) ou trair (delatar o outro).
 
 |  | Jogador 2: Cooperar | Jogador 2: Trair |
@@ -64,7 +72,7 @@ O **Dilema dos Prisioneiros** é possivelmente o jogo mais célebre da teoria do
 | **Jogador 1: Cooperar** | \((-1, -1)\) | \((-10, 0)\) |
 | **Jogador 1: Trair** | \((0, -10)\) | \((-5, -5)\) |
 
-A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R\) = recompensa mútua, \(P\) = punição, \(S\) = *sucker's payoff*), com a condição adicional \(2R > T + S\).
+A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R\) = recompensa mútua, \(P\) = punição, \(S\) = *sucker's payoff*), com a condição adicional \(2R > T + S\). Essa parametrização não é arbitrária: a desigualdade \(T > R\) garante que trair seja tentador quando o outro coopera; \(R > P\) garante que a cooperação mútua seja preferível à traição mútua; e \(P > S\) garante que ser traído enquanto se coopera é o pior resultado possível. A condição \(2R > T + S\) assegura que a cooperação mútua gera mais valor total do que a alternância entre traição e cooperação.
 
 Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbrio (Trair, Trair) com payoffs \((-5, -5)\) é o único equilíbrio de Nash, mas é **Pareto-dominado** pelo resultado (Cooperar, Cooperar) com payoffs \((-1, -1)\). Essa tensão entre racionalidade individual e eficiência coletiva é o cerne do dilema.
 
@@ -83,6 +91,8 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
   <figcaption markdown="span"><strong>Figura 9a.1</strong> — Matriz de payoffs e equilíbrio de Nash. Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.</figcaption>
 </figure>
 
+O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A tabela abaixo sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
+
 ### Taxonomia dos Jogos Clássicos
 
 | Jogo | Payoffs (genéricos) | EN em puras | EN em mistas | Característica | Aplicação |
@@ -96,6 +106,8 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 ---
 
 ## 9a.3 Equilíbrio de Nash
+
+Os exemplos da seção anterior revelam que nem todo jogo possui estratégias dominantes. Na Batalha dos Sexos, por exemplo, a melhor ação de cada jogador depende do que o outro faz. Como prever o resultado de um jogo quando nenhuma estratégia é obviamente superior? É aqui que entra o conceito mais importante da teoria dos jogos: o equilíbrio de Nash. Em vez de exigir que uma estratégia seja a melhor *contra tudo*, o equilíbrio de Nash exige apenas que seja a melhor *contra o que os outros efetivamente escolhem*. Essa mudança de perspectiva — de dominância absoluta para consistência mútua — é o salto conceitual que permitiu a Nash generalizar a análise para qualquer jogo.
 
 !!! definition "Equilíbrio de Nash (estratégias puras)"
     Um perfil de estratégias \(s^* = (s_1^*, s_2^*, \ldots, s_n^*)\) é um **Equilíbrio de Nash** se, para todo jogador \(i \in N\):
@@ -127,6 +139,8 @@ O equilíbrio de Nash é um conceito de **consistência mútua de expectativas**
 
     **O que Nash *não* garante:** O equilíbrio de Nash não implica eficiência (o Dilema dos Prisioneiros mostra isso), nem unicidade (a Batalha dos Sexos tem três equilíbrios), nem que os jogadores o encontrem de fato. É um conceito de consistência, não de otimalidade.
 
+Para fixar o conceito, vejamos como o equilíbrio de Nash se manifesta em jogos com estruturas distintas. A diferença entre o Dilema dos Prisioneiros (equilíbrio único e ineficiente) e a Batalha dos Sexos (múltiplos equilíbrios e problema de coordenação) ilustra que o conceito de Nash é versátil, mas nem sempre oferece uma previsão única.
+
 ### Exemplos clássicos
 
 **Batalha dos Sexos (BoS)**
@@ -138,7 +152,7 @@ Dois parceiros querem sair juntos, mas um prefere futebol (F) e o outro prefere 
 | **Jogador 1: F** | \((3, 1)\) | \((0, 0)\) |
 | **Jogador 1: C** | \((0, 0)\) | \((1, 3)\) |
 
-Existem **dois equilíbrios de Nash em estratégias puras**: \((F, F)\) e \((C, C)\), e um em estratégias mistas (derivado na Seção 9a.4). O jogo ilustra o problema de **coordenação** quando existem múltiplos equilíbrios.
+Existem **dois equilíbrios de Nash em estratégias puras**: \((F, F)\) e \((C, C)\), e um em estratégias mistas (derivado na Seção 9a.4). O jogo ilustra o problema de **coordenação** quando existem múltiplos equilíbrios. Diferentemente do Dilema dos Prisioneiros, aqui não há conflito entre racionalidade individual e eficiência coletiva — ambos os equilíbrios em puras são Pareto-eficientes. O problema é outro: como os jogadores se coordenam em um dos equilíbrios sem comunicação prévia? É nesse contexto que os "pontos focais" de Schelling (1960) — soluções que se destacam por saliência cultural, histórica ou contextual — desempenham papel crucial.
 
 **Hawk-Dove (Falcão-Pomba)**
 
@@ -149,11 +163,13 @@ Dois animais (ou firmas) disputam um recurso de valor \(V\). Cada um pode ser ag
 | **Jogador 1: H** | \(\left(\frac{V-C}{2}, \frac{V-C}{2}\right)\) | \((V, 0)\) |
 | **Jogador 1: D** | \((0, V)\) | \(\left(\frac{V}{2}, \frac{V}{2}\right)\) |
 
-Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equilíbrios em puras — \((H, D)\) e \((D, H)\) — e um em mistas. A versão biológica desse jogo (Maynard Smith e Price, 1973) está na origem da **teoria dos jogos evolutiva**.
+Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equilíbrios em puras — \((H, D)\) e \((D, H)\) — e um em mistas. Note que, diferentemente da Batalha dos Sexos, o Hawk-Dove é um jogo de **anti-coordenação**: os equilíbrios em puras envolvem jogadores fazendo escolhas *diferentes* (um agressivo, outro passivo). Em mercados, essa estrutura aparece quando firmas segmentam nichos para evitar concorrência destrutiva. A versão biológica desse jogo (Maynard Smith e Price, 1973) está na origem da **teoria dos jogos evolutiva**, que estuda como populações de agentes convertem para padrões estáveis de comportamento sem assumir racionalidade individual.
 
 ---
 
 ## 9a.4 Estratégias Mistas
+
+Os exemplos anteriores mostram que alguns jogos — como o Matching Pennies — não possuem equilíbrio em estratégias puras. Se cada jogador precisa escolher uma ação determinística, qualquer que seja a escolha, o outro terá incentivo para desviar. Mas e se os jogadores pudessem randomizar suas ações? Ao introduzir a possibilidade de aleatorização, Nash não apenas resolveu o problema de inexistência como provou um resultado de abrangência extraordinária: *todo* jogo finito possui pelo menos um equilíbrio. Essa é a contribuição central da estratégia mista.
 
 !!! definition "Estratégia mista"
     Uma **estratégia mista** para o jogador \(i\) é uma distribuição de probabilidade \(\sigma_i \in \Delta(S_i)\) sobre o conjunto de estratégias puras \(S_i\). Se \(S_i = \{s_i^1, s_i^2, \ldots, s_i^{m_i}\}\), então:
@@ -169,6 +185,8 @@ Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equ
     \]
 
 ### Princípio da indiferença
+
+Como encontrar as probabilidades de equilíbrio? A chave é um resultado que, à primeira vista, parece contra-intuitivo: em equilíbrio misto, cada jogador escolhe suas probabilidades não para maximizar seu *próprio* payoff, mas de forma a tornar o *oponente* indiferente entre suas opções. Afinal, se o oponente não fosse indiferente, ele escolheria uma ação com certeza — e não randomizaria.
 
 Em um equilíbrio em estratégias mistas, cada jogador randomiza de tal forma que os outros jogadores ficam **indiferentes** entre as estratégias puras que recebem probabilidade positiva. Formalmente, se \(\sigma_i^*\) atribui probabilidade positiva a \(s_i^k\), então:
 
@@ -211,6 +229,8 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
 ### Existência de Equilíbrio (Teorema de Nash)
 
+O exemplo da Batalha dos Sexos ilustra como calcular o equilíbrio misto em um jogo específico. Mas será que *todo* jogo finito possui ao menos um equilíbrio? A resposta afirmativa — o Teorema de Nash — é um dos resultados mais importantes da matemática aplicada do século XX. Sua demonstração utiliza o Teorema do Ponto Fixo de Kakutani e, embora a apresentação formal possa parecer abstrata, a intuição geométrica é elegante: as correspondências de melhor resposta dos jogadores devem necessariamente se "cruzar" em algum ponto.
+
 !!! abstract "Teorema de Nash (1950)"
     Todo jogo finito (número finito de jogadores e de estratégias puras para cada jogador) possui pelo menos um **equilíbrio de Nash em estratégias mistas**.
 
@@ -248,9 +268,11 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
 ## 9a.5 Jogos com Ações Contínuas: Oligopólio
 
-Muitos jogos de interesse econômico envolvem espaços de estratégias contínuos. Os modelos clássicos de oligopólio são os exemplos paradigmáticos.
+Até agora, analisamos jogos com um número finito de estratégias — cada jogador escolhe entre opções discretas como "cooperar ou trair", "futebol ou cinema". Muitos jogos de interesse econômico, porém, envolvem espaços de estratégias contínuos: firmas que escolhem *quanto* produzir, *que preço* cobrar ou *quanto* investir. Os modelos clássicos de oligopólio — Cournot, Bertrand e Stackelberg — são os exemplos paradigmáticos dessa classe de jogos e constituem a espinha dorsal da organização industrial. A pergunta central é: como a forma da competição (preço vs. quantidade) e a ordem do movimento (simultâneo vs. sequencial) afetam o resultado de mercado?
 
 ### Competição de Cournot (quantidades)
+
+Começamos pelo modelo mais antigo e, em muitos sentidos, mais intuitivo de oligopólio. No modelo de Cournot (1838), cada firma decide *quanto* produzir, e o preço de mercado se ajusta para equilibrar a oferta total com a demanda. A variável estratégica é a quantidade, e o jogo é simultâneo: nenhuma firma observa a decisão da outra antes de se comprometer com sua produção.
 
 Duas firmas escolhem simultaneamente as quantidades \(q_1, q_2 \geq 0\). A demanda inversa é \(P(Q) = a - bQ\), onde \(Q = q_1 + q_2\), e o custo marginal é constante e igual a \(c\) para ambas as firmas.
 
@@ -260,13 +282,13 @@ O lucro da firma \(i\) é:
 \pi_i(q_i, q_j) = (a - b(q_i + q_j) - c) \, q_i
 \]
 
-A condição de primeira ordem gera a **função de reação** (melhor resposta):
+Observe que o lucro de cada firma depende não apenas da própria quantidade, mas também da quantidade produzida pela rival — a interdependência estratégica que motiva toda a teoria dos jogos. Cada firma maximiza seu lucro tomando como dada a quantidade da outra, o que gera a seguinte condição de primeira ordem e a correspondente **função de reação** (melhor resposta):
 
 \[
 q_i^*(q_j) = \frac{a - c - bq_j}{2b}
 \]
 
-O equilíbrio de Nash (Cournot-Nash) é obtido pela interseção das funções de reação:
+A função de reação é decrescente: quanto mais a rival produz, menos é ótimo para a firma produzir. Em linguagem estratégica, as quantidades são **substitutos estratégicos** — o aumento da ação de um jogador reduz a melhor resposta do outro. O equilíbrio de Nash (Cournot-Nash) é obtido pela interseção das funções de reação:
 
 \[
 q_1^* = q_2^* = \frac{a-c}{3b}, \qquad Q^* = \frac{2(a-c)}{3b}, \qquad P^* = \frac{a + 2c}{3}
@@ -284,7 +306,7 @@ O lucro de cada firma no equilíbrio é:
 q_i^* = \frac{a-c}{(N+1)b}, \qquad P^* = \frac{a + Nc}{N+1}
 \]
 
-Quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição perfeita.
+Quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição perfeita. Esse resultado é notável: ele conecta a teoria dos jogos à teoria clássica de mercados competitivos, mostrando que a competição perfeita é o caso limite de um oligopólio de Cournot quando o número de firmas cresce indefinidamente.
 
 **Extensão: Custos assimétricos.** Com custos marginais \(c_1 \neq c_2\):
 
@@ -292,13 +314,15 @@ Quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição p
 q_1^* = \frac{a - 2c_1 + c_2}{3b}, \qquad q_2^* = \frac{a - 2c_2 + c_1}{3b}
 \]
 
-A firma com menor custo produz mais e obtém lucro maior.
+A firma com menor custo produz mais e obtém lucro maior. Esse resultado tem implicação direta para a análise de fusões: se uma fusão reduz custos (gera eficiências), a firma resultante aumenta sua produção e pode até reduzir o preço de mercado. O CADE precisa ponderar esse efeito de eficiência contra o aumento de poder de mercado.
 
 ### Competição de Bertrand (preços)
 
+O que acontece quando as firmas competem em preços em vez de quantidades? A resposta, surpreendente e provocadora, é conhecida como o *paradoxo de Bertrand*: bastam duas firmas para que o preço caia até o custo marginal, eliminando completamente os lucros econômicos. A mudança da variável estratégica — de quantidade para preço — transforma radicalmente a natureza da competição.
+
 Duas firmas com produtos homogêneos e custo marginal constante \(c\) escolhem simultaneamente os preços \(p_1, p_2\). Os consumidores compram da firma com menor preço.
 
-O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\), com lucro zero para ambas as firmas — mesmo com apenas dois concorrentes, o resultado é competitivo.
+O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\), com lucro zero para ambas as firmas — mesmo com apenas dois concorrentes, o resultado é competitivo. Por que isso é paradoxal? Porque contradiz a intuição de que um mercado com apenas duas firmas deveria gerar lucros oligopolísticos substanciais. A razão é a extrema sensibilidade da demanda: com produtos perfeitamente homogêneos, uma diferença infinitesimal de preço desloca *toda* a demanda para a firma mais barata. Essa "competição à navalha" força ambas as firmas ao custo marginal — um resultado idêntico ao de competição perfeita com infinitas firmas.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A variável estratégica da firma — preço ou quantidade — determina radicalmente o equilíbrio do mercado.
@@ -319,6 +343,8 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 </figure>
 
 ### Competição de Stackelberg (líder-seguidora)
+
+Os modelos de Cournot e Bertrand pressupõem decisões simultâneas. Mas em muitos mercados, uma firma estabelecida — por tamanho, reputação ou capacidade instalada — age como líder, tomando sua decisão antes das concorrentes. Existe vantagem em mover primeiro? E como a seguidora deve reagir? O modelo de Stackelberg (1934) responde a essas perguntas, introduzindo a dimensão temporal na competição por quantidades.
 
 No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) *primeiro*, e a firma 2 (seguidora) observa \(q_1\) e escolhe \(q_2\). A solução é por **indução retroativa** (conceito detalhado no Módulo 9b).
 
@@ -349,7 +375,7 @@ q_1^S = \frac{a-c}{2b}, \qquad q_2^S = \frac{a-c}{4b}, \qquad Q^S = \frac{3(a-c)
 | Cournot | \(\frac{2(a-c)}{3b}\) | \(\frac{a+2c}{3}\) | \(\frac{(a-c)^2}{9b}\) | \(\frac{(a-c)^2}{9b}\) |
 | Comp. Perfeita | \(\frac{a-c}{b}\) | \(c\) | 0 | 0 |
 
-A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora produz *menos* e lucra *menos*. A quantidade total é maior e o preço é menor — o consumidor prefere Stackelberg a Cournot.
+A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora produz *menos* e lucra *menos*. A quantidade total é maior e o preço é menor — o consumidor prefere Stackelberg a Cournot. Em termos econômicos, a tabela revela uma hierarquia clara de bem-estar do consumidor: competição perfeita > Stackelberg > Cournot > Monopólio. Quanto mais intensa a competição — seja pelo número de firmas ou pela estrutura do jogo — mais o excedente é transferido dos produtores para os consumidores.
 
 !!! tip "Vantagem do primeiro movimento"
     A vantagem da líder em Stackelberg vem do **comprometimento crível** com uma quantidade alta. Se a líder pudesse mudar de ideia depois de observar \(q_2\), o resultado voltaria a ser Cournot. O comprometimento (ex: investimento irreversível em capacidade) é o que confere poder à líder.
@@ -362,6 +388,8 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 ---
 
 ## Box Brasil: Cartéis de Postos de Combustíveis e o CADE
+
+Os modelos de oligopólio apresentados acima não são meros exercícios teóricos — eles fornecem a estrutura analítica que órgãos reguladores como o CADE utilizam diariamente para avaliar práticas anticompetitivas. O primeiro Box Brasil deste capítulo examina precisamente essa conexão entre teoria e prática regulatória.
 
 !!! example "Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
     O mercado de revenda de combustíveis no Brasil é um dos campos mais ativos de investigação antitruste pelo **CADE** (Conselho Administrativo de Defesa Econômica). A frequência de cartéis nesse setor oferece um laboratório natural para a teoria dos jogos.
@@ -391,6 +419,8 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 ---
 
 ## Box Brasil: O Oligopólio Aéreo Brasileiro
+
+Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais, o transporte aéreo doméstico oferece um panorama complementar: um oligopólio altamente concentrado em escala nacional, no qual coexistem elementos de Cournot, Bertrand e Stackelberg dependendo da rota e do horizonte temporal.
 
 !!! example "Box Brasil — Gol, Latam e Azul: competição estratégica a 10.000 metros"
     O transporte aéreo doméstico no Brasil é um dos mercados mais concentrados do país e ilustra diretamente os modelos de oligopólio.
@@ -445,6 +475,32 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
       <iframe src="../graficos/cap09/webr-proto.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
       <figcaption markdown="span"><strong>R Interativo 9a.2</strong> — Equilíbrio de Cournot com parâmetros editáveis. Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).</figcaption>
     </figure>
+
+---
+
+## Resumo do Capítulo
+
+- A teoria dos jogos estuda a tomada de decisão em ambientes de interdependência estratégica, nos quais o resultado de cada agente depende das ações de todos os demais.
+- Jogos estáticos com informação completa são representados na forma normal (matriz de payoffs) e resolvidos pelo conceito de **equilíbrio de Nash**: um perfil de estratégias em que nenhum jogador pode melhorar unilateralmente seu payoff.
+- O **Dilema dos Prisioneiros** ilustra a tensão central entre racionalidade individual e eficiência coletiva: a estratégia dominante de cada jogador leva a um resultado Pareto-dominado.
+- **Estratégias mistas** garantem a existência de equilíbrio em todo jogo finito (Teorema de Nash) e são determinadas pelo princípio da indiferença — cada jogador randomiza de modo a deixar o oponente indiferente.
+- Os modelos de oligopólio (Cournot, Bertrand e Stackelberg) aplicam o equilíbrio de Nash a mercados com poucos concorrentes, mostrando como a variável estratégica (quantidade vs. preço) e a ordem de movimento alteram radicalmente preços, quantidades e lucros.
+- No Cournot, firmas competem em quantidades e o resultado situa-se entre monopólio e competição perfeita; no Bertrand com produtos homogêneos, duas firmas bastam para reproduzir o resultado competitivo; no Stackelberg, a líder obtém vantagem via comprometimento crível.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Jogo na forma normal | Tripla \(\langle N, (S_i), (u_i) \rangle\) que especifica jogadores, estratégias e payoffs. |
+| Equilíbrio de Nash | Perfil de estratégias em que nenhum jogador pode melhorar seu payoff desviando unilateralmente. |
+| Estratégia dominante | Estratégia que é ótima para um jogador independentemente das ações dos demais. |
+| Estratégia mista | Distribuição de probabilidade sobre as estratégias puras de um jogador. |
+| Princípio da indiferença | Em equilíbrio misto, cada jogador randomiza de forma a tornar o oponente indiferente entre suas estratégias puras. |
+| EIED | Eliminação Iterada de Estratégias Estritamente Dominadas — procedimento de solução que reduz o jogo removendo estratégias que nunca são ótimas. |
+| Modelo de Cournot | Oligopólio em que firmas escolhem quantidades simultaneamente; o equilíbrio é a interseção das funções de reação. |
+| Modelo de Bertrand | Oligopólio em que firmas escolhem preços simultaneamente; com produtos homogêneos, o preço converge para o custo marginal. |
+| Modelo de Stackelberg | Oligopólio sequencial em que a líder se compromete com uma quantidade antes da seguidora, obtendo vantagem de primeiro movimento. |
+| Dilema dos Prisioneiros | Jogo em que a estratégia dominante de cada jogador leva a um resultado coletivamente inferior (Pareto-dominado). |
 
 ---
 
@@ -696,7 +752,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 ??? abstract "Adams, Brian W. (2025). *Game Theory for Applied Econometricians: Data Analytics with R*. Boca Raton: CRC Press. Capítulos 1–5."
     **Escopo:** Parte I do livro cobre jogos estáticos com informação completa — a matéria deste módulo — com ênfase em aplicações empíricas e análise de dados em R.
 
-    **Contribuição pedagógica:** Adams conecta cada conceito teórico a um dataset e um script R. O Capítulo 1 analisa o game show *Friend or Foe* (Dilema dos Prisioneiros com dinheiro real); o Capítulo 2 estuda entrada de firmas no mercado de pneus; o Capítulo 3 modela competição de hamburguers; o Capítulo 5 testa estratégias mistas com dados de pênaltis.
+    **Contribuição pedagógica:** Adams conecta cada conceito teórico a um dataset e um script R. O Capítulo 1 analisa o game show *Friend or Foe* (Dilema dos Prisioneiros com dinheiro real); o Capítulo 2 estuda entrada de firmas no mercado de pneus; o Capítulo 3 modela competição de hambúrgueres; o Capítulo 5 testa estratégias mistas com dados de pênaltis.
 
     **Relevância:** Os R Boxes interativos deste módulo (9a.1 e 9a.2) são inspirados nos scripts de Adams, adaptados para execução no navegador via WebR. Os dados do pacote `Ecdat` permitem que o leitor reproduza e modifique as análises sem instalar nada.
 

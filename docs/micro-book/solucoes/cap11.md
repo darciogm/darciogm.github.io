@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 11"
 
 ---
 
-## Exercício 10.1 {#ex-10-1}
+## Exercício 11.1 {#ex-11-1}
 
 **Solução.**
 
@@ -24,7 +24,7 @@ title: "Soluções — Capítulo 11"
 
 ---
 
-## Exercício 10.2 {#ex-10-2}
+## Exercício 11.2 {#ex-11-2}
 
 **Solução.**
 
@@ -46,7 +46,7 @@ CMg no mínimo do CMe: \(CMg(5{,}24) \approx 10 - 20{,}96 + 27{,}46 \approx 16{,
 
 ---
 
-## Exercício 10.3 {#ex-10-3}
+## Exercício 11.3 {#ex-11-3}
 
 **Solução.**
 
@@ -62,7 +62,7 @@ C(q) = rK + wL = 8q + 2(q/2) = 8q + q = 9q
 
 ---
 
-## Exercício 10.4 {#ex-10-4}
+## Exercício 11.4 {#ex-11-4}
 
 **Solução.**
 
@@ -92,7 +92,7 @@ Para qualquer outro \(q\), \(CMe_{CP} > CMe_{LP}\) porque o capital está "errad
 
 ---
 
-## Exercício 10.5 {#ex-10-5}
+## Exercício 11.5 {#ex-11-5}
 
 **Solução.**
 

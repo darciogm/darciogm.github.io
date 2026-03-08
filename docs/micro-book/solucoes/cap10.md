@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 10"
 
 ---
 
-## Exercício 9.1 {#ex-9-1}
+## Exercício 10.1 {#ex-10-1}
 
 **Solução.**
 
@@ -26,9 +26,9 @@ PMg_L = \frac{\partial q}{\partial L} = 10 \times 0{,}7 K^{0,3}L^{-0,3} = 7K^{0,
 
 \(\frac{\partial^2 q}{\partial L^2} = 7(-0{,}3)K^{0,3}L^{-1,3} = -2{,}1K^{0,3}L^{-1,3} < 0\) ✓
 
-**(c)** \(TMST = \frac{PMg_K}{PMg_L} = \frac{3K^{-0,7}L^{0,7}}{7K^{0,3}L^{-0,3}} = \frac{3}{7}\frac{L}{K}\)
+**(c)** \(TMST_{L,K} = \frac{PMg_L}{PMg_K} = \frac{7K^{0,3}L^{-0,3}}{3K^{-0,7}L^{0,7}} = \frac{7}{3}\frac{K}{L}\)
 
-Ao longo de uma isoquanta, quando \(K\) aumenta, \(L\) diminui, logo \(L/K\) diminui e a TMST decresce. ✓
+Ao longo de uma isoquanta, quando \(L\) aumenta, \(K\) diminui, logo \(K/L\) diminui e a TMST decresce. ✓
 
 **(d)** \(\alpha + \beta = 0{,}3 + 0{,}7 = 1\): **rendimentos constantes de escala**.
 
@@ -36,7 +36,7 @@ Ao longo de uma isoquanta, quando \(K\) aumenta, \(L\) diminui, logo \(L/K\) dim
 
 ---
 
-## Exercício 9.2 {#ex-9-2}
+## Exercício 10.2 {#ex-10-2}
 
 **Solução.**
 
@@ -54,7 +54,7 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 ---
 
-## Exercício 9.3 {#ex-9-3}
+## Exercício 10.3 {#ex-10-3}
 
 **Solução.**
 
@@ -68,7 +68,7 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 ---
 
-## Exercício 9.4 {#ex-9-4}
+## Exercício 10.4 {#ex-10-4}
 
 **Solução.**
 
@@ -82,7 +82,7 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 ---
 
-## Exercício 9.5 {#ex-9-5}
+## Exercício 10.5 {#ex-10-5}
 
 **Solução.**
 

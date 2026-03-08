@@ -12,6 +12,8 @@ Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessári
 
 ## 6.1 O Caso com Dois Bens: Efeitos Cruzados de Preço
 
+Comecemos pelo caso mais simples: uma economia com apenas dois bens. Mesmo nesse cenário estilizado, a análise dos efeitos cruzados de preço revela resultados surpreendentes — e nos prepara para as sutilezas que emergem quando há muitos bens.
+
 Considere um consumidor que maximiza \(U(x_1, x_2)\) sujeito à restrição orçamentária \(p_1 x_1 + p_2 x_2 = I\). As funções de demanda marshalliana \(x_1^*(p_1, p_2, I)\) e \(x_2^*(p_1, p_2, I)\) dependem de ambos os preços. O **efeito cruzado de preço** é a derivada parcial:
 
 \[
@@ -43,7 +45,7 @@ Isso significa que, no sentido hicksiano, **dois bens são sempre substitutos l�
 
 ## 6.2 Substitutos e Complementos Brutos (Marshallianos)
 
-A classificação mais intuitiva — e a que se observa diretamente nos dados — utiliza as derivadas cruzadas da demanda marshalliana.
+O resultado da seção anterior — de que, com dois bens, a substituição líquida é o único fenômeno possível — é teoricamente importante, mas limita a riqueza da análise. Na prática, observamos relações de substituição e complementaridade o tempo todo: quando o preço do café sobe, a demanda por açúcar cai; quando o preço da gasolina sobe, a demanda por etanol cresce. Para capturar essas relações nos dados, precisamos de definições formais. A classificação mais intuitiva — e a que se observa diretamente nos dados — utiliza as derivadas cruzadas da demanda marshalliana.
 
 !!! definition "Substitutos e complementos brutos"
     Dois bens \(i\) e \(j\) são:
@@ -72,7 +74,7 @@ A classificação mais intuitiva — e a que se observa diretamente nos dados �
 
 ## 6.3 Substitutos e Complementos Líquidos (Hicksianos)
 
-Para uma classificação teoricamente mais limpa, utilizamos as derivadas cruzadas da **demanda hicksiana** (compensada), que capturam apenas o efeito substituição, isolando o efeito renda.
+A classificação marshalliana, embora direta e empiricamente acessível, apresenta um problema fundamental: ela mistura o efeito substituição (a verdadeira relação de substituibilidade ou complementaridade entre bens) com o efeito renda (o empobrecimento ou enriquecimento causado pela variação de preço). Essa contaminação pode distorcer a classificação, fazendo bens que são genuinamente substitutos parecerem complementos nos dados brutos. Para obter uma classificação teoricamente mais limpa, utilizamos as derivadas cruzadas da **demanda hicksiana** (compensada), que capturam apenas o efeito substituição, isolando o efeito renda.
 
 !!! definition "Substitutos e complementos líquidos (hicksianos)"
     Dois bens \(i\) e \(j\) são:
@@ -93,7 +95,7 @@ Logo, se o bem \(i\) é substituto líquido de \(j\), então \(j\) é necessaria
 
 ### 6.3.1 Relação entre as classificações
 
-Da Equação de Slutsky:
+Mas qual é exatamente a relação entre as duas classificações? Quando elas concordam e quando divergem? A Equação de Slutsky nos fornece a resposta precisa. Da Equação de Slutsky:
 
 \[
 \frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}
@@ -126,6 +128,8 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 
 ## 6.4 Substituibilidade com Muitos Bens
 
+Até aqui, trabalhamos predominantemente com dois bens — um cenário que, embora didático, impõe restrições fortes sobre as relações de substituição e complementaridade. No mundo real, os consumidores escolhem entre centenas de bens, e as relações cruzadas formam uma teia complexa. O que muda quando passamos de dois para muitos bens? A resposta envolve a **matriz de substituição de Slutsky**, uma ferramenta que organiza todos os efeitos cruzados em uma única estrutura algébrica.
+
 Com \(n > 2\) bens, a análise se torna mais rica e complexa. A **matriz de substituição de Slutsky** \(\mathbf{S}\), com elementos:
 
 \[
@@ -149,13 +153,13 @@ mas os elementos fora da diagonal podem ter qualquer sinal. No entanto, nem todo
 
     Como \(\frac{\partial h_i}{\partial p_i} \leq 0\), pelo menos alguns dos termos cruzados devem ser positivos. Logo, **todo bem deve ter pelo menos um substituto líquido**.
 
-Essa propriedade implica que, embora a complementaridade líquida exista, a substituibilidade é o fenômeno "dominante" no sentido de que não pode haver um bem que seja complemento líquido de todos os outros.
+Essa propriedade implica que, embora a complementaridade líquida exista, a substituibilidade é o fenômeno "dominante" no sentido de que não pode haver um bem que seja complemento líquido de todos os outros. Intuitivamente, se o preço de um bem sobe (mantendo a utilidade constante), o consumidor precisa redistribuir seu consumo em direção a *algum* outro bem — a substituição é, em certo sentido, inevitável.
 
 ---
 
 ## 6.5 Bens Compostos (Teorema do Bem Composto de Hicks)
 
-Em modelos aplicados, frequentemente trabalhamos com centenas ou milhares de bens. Para tornar a análise tratável, agrupamos bens em categorias. O **Teorema do Bem Composto de Hicks** fornece a justificativa teórica para essa prática.
+A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n^2\) elementos — e estimá-los todos empiricamente exigiria uma quantidade enorme de dados. Como proceder na prática? Uma estratégia poderosa é agregar bens em categorias, reduzindo a dimensionalidade do problema. Mas essa agregação é legítima do ponto de vista teórico? Sob que condições podemos tratar um grupo de bens como se fosse um único bem? Em modelos aplicados, frequentemente trabalhamos com centenas ou milhares de bens. Para tornar a análise tratável, agrupamos bens em categorias. O **Teorema do Bem Composto de Hicks** fornece a justificativa teórica para essa prática.
 
 !!! abstract "Teorema do Bem Composto de Hicks"
     Se um grupo de bens tem seus preços variando na mesma proporção, então esse grupo pode ser tratado como um único **bem composto**, cujo "preço" é um índice dos preços do grupo e cuja "quantidade" é o gasto real com o grupo.
@@ -234,9 +238,11 @@ O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o be
 
 ## 6.6 Produção Doméstica, Atributos dos Bens e Preços Implícitos
 
+Até este ponto, tratamos os bens como objetos homogêneos de desejo: o consumidor deseja "arroz", "transporte" ou "moradia". Mas, na realidade, por que alguém deseja um apartamento? Pela metragem? Pela localização? Pela vista? A resposta, naturalmente, é "por tudo isso junto" — o que sugere que talvez os bens não sejam a unidade fundamental de análise. Dois modelos influentes exploram essa ideia, reformulando a teoria do consumidor de maneiras complementares.
+
 ### 6.6.1 O modelo de Lancaster
 
-A teoria tradicional assume que o consumidor obtém utilidade diretamente dos bens. Kelvin **Lancaster** (1966) propôs uma reformulação: os bens são desejados não por si mesmos, mas pelos **atributos** (ou **características**) que contêm.
+A teoria tradicional assume que o consumidor obtém utilidade diretamente dos bens. Kelvin **Lancaster** (1966) propôs uma reformulação provocativa: os bens são desejados não por si mesmos, mas pelos **atributos** (ou **características**) que contêm. Um automóvel não é consumido como "automóvel", mas como um conjunto de atributos — potência, conforto, eficiência, status — que o veículo incorpora.
 
 !!! definition "Modelo de Lancaster"
     Cada bem \(j\) contém quantidades fixas de \(m\) atributos, representadas pela matriz de tecnologia de consumo \(\mathbf{B} = [b_{kj}]\), onde \(b_{kj}\) é a quantidade do atributo \(k\) contida em uma unidade do bem \(j\). A utilidade depende dos atributos:
@@ -253,7 +259,7 @@ A teoria tradicional assume que o consumidor obtém utilidade diretamente dos be
 
     O consumidor maximiza \(U(\mathbf{z})\) sujeito a \(\mathbf{z} = \mathbf{B} \mathbf{x}\), \(\mathbf{p} \cdot \mathbf{x} \leq I\) e \(\mathbf{x} \geq 0\).
 
-Esse modelo gera **preços implícitos** (ou **preços hedônicos**) para os atributos. Se o número de atributos for menor que o de bens (\(m < n\)), o consumidor pode calcular o "custo" de cada unidade de atributo combinando bens de modo eficiente.
+Esse modelo gera **preços implícitos** (ou **preços hedônicos**) para os atributos. Se o número de atributos for menor que o de bens (\(m < n\)), o consumidor pode calcular o "custo" de cada unidade de atributo combinando bens de modo eficiente. Em certo sentido, Lancaster transforma o problema do consumidor em um problema de programação linear: encontrar a combinação de bens que fornece os atributos desejados ao menor custo.
 
 !!! info "🏅 Prêmio Nobel — Daniel McFadden (2000)"
 
@@ -267,7 +273,7 @@ Esse modelo gera **preços implícitos** (ou **preços hedônicos**) para os atr
 
 ### 6.6.2 Implicações
 
-O modelo de Lancaster explica fenômenos que a teoria tradicional não captura com facilidade:
+A reformulação de Lancaster pode parecer uma complicação desnecessária — afinal, por que não trabalhar diretamente com bens? A resposta é que o modelo de Lancaster explica fenômenos que a teoria tradicional não captura com facilidade:
 
 - **Introdução de novos bens**: um novo produto é simplesmente uma nova coluna na matriz \(\mathbf{B}\). Se ele oferece uma combinação de atributos mais eficiente (menor custo por unidade de atributo), substitui bens existentes.
 - **Diferenciação de produto**: marcas diferentes do "mesmo" bem oferecem combinações distintas de atributos (sabor, durabilidade, status).
@@ -282,7 +288,7 @@ O modelo de Lancaster explica fenômenos que a teoria tradicional não captura c
 
 ### 6.6.3 Modelo de produção doméstica de Becker
 
-Gary **Becker** (1965) propôs que as famílias são unidades produtivas que combinam bens de mercado com tempo para gerar **commodities domésticas** que geram utilidade. Por exemplo, uma refeição exige ingredientes (bens) e tempo de preparo (trabalho doméstico). Formalmente:
+Enquanto Lancaster enfatiza os atributos dos bens, Gary **Becker** (1965) chamou atenção para um recurso escasso que a teoria tradicional ignora: o *tempo*. Becker propôs que as famílias são unidades produtivas que combinam bens de mercado com tempo para gerar **commodities domésticas** que geram utilidade. Por exemplo, uma refeição exige ingredientes (bens) e tempo de preparo (trabalho doméstico). Formalmente:
 
 \[
 z_k = f_k(x_k, t_k)
@@ -290,11 +296,13 @@ z_k = f_k(x_k, t_k)
 
 onde \(x_k\) são bens de mercado e \(t_k\) é o tempo dedicado à atividade \(k\). O consumidor maximiza \(U(z_1, \ldots, z_m)\) sujeito a restrições de orçamento monetário e de tempo total.
 
-O preço implícito de cada commodity doméstica incorpora tanto o custo dos bens quanto o custo de oportunidade do tempo, o que explica, por exemplo, por que famílias de renda mais alta tendem a consumir mais refeições fora do domicílio — o custo de oportunidade do tempo de preparo é elevado.
+O preço implícito de cada commodity doméstica incorpora tanto o custo dos bens quanto o custo de oportunidade do tempo, o que explica, por exemplo, por que famílias de renda mais alta tendem a consumir mais refeições fora do domicílio — o custo de oportunidade do tempo de preparo é elevado. No Brasil, esse fenômeno é claramente documentado pela POF: a parcela do orçamento destinada à alimentação fora do domicílio cresce monotonicamente com a renda, passando de cerca de 14% nas classes mais baixas para mais de 40% nas classes mais altas. O modelo de Becker captura essa regularidade de forma natural — não porque os ricos "gostam mais" de comer fora, mas porque seu tempo vale mais.
 
 ---
 
 ## 6.7 Agregação da Demanda: Do Individual ao Mercado
+
+Até aqui, toda a análise concentrou-se no consumidor individual. Mas os mercados são compostos por milhões de consumidores, cada um com preferências, renda e comportamento próprios. Como passamos da demanda individual para a demanda de mercado? A resposta parece trivial — basta somar —, mas as consequências dessa agregação são profundas e nem sempre intuitivas. A demanda de mercado herda todas as propriedades da demanda individual? Podemos nos comportar como se existisse um "consumidor representativo"?
 
 ### 6.7.1 Demanda de mercado
 
@@ -306,7 +314,7 @@ X_i(p_1, \ldots, p_n, I^1, \ldots, I^H) = \sum_{h=1}^H x_i^h(p_1, \ldots, p_n, I
 
 ### 6.7.2 Condições para uma demanda de mercado "bem-comportada"
 
-A simples soma de demandas individuais racionais não garante que a demanda agregada se comporte como se fosse gerada por um "consumidor representativo". Para isso, são necessárias condições adicionais:
+A soma horizontal parece inocente, mas esconde uma armadilha. A simples soma de demandas individuais racionais não garante que a demanda agregada se comporte como se fosse gerada por um "consumidor representativo". Sob que condições podemos ignorar a distribuição de renda e trabalhar apenas com a renda total? Para isso, são necessárias condições adicionais:
 
 !!! definition "Condição de Gorman"
     A demanda de mercado pode ser escrita como função de preços e renda **agregada** \(I = \sum_h I^h\) se, e somente se, todas as curvas de Engel individuais forem lineares e paralelas. Isso ocorre quando as preferências são **quase-homotéticas** (preferências homotéticas mais uma translação) ou, de modo mais geral, quando as funções de utilidade indireta têm a forma de Gorman:
@@ -333,7 +341,7 @@ Quando a condição de Gorman não é satisfeita, a demanda de mercado depende d
 
 ### 6.7.3 Propriedades da demanda de mercado
 
-Mesmo sem um consumidor representativo, a demanda de mercado preserva algumas propriedades:
+Quando a condição de Gorman não é satisfeita — e a evidência empírica sugere que raramente o é —, a demanda de mercado perde a elegância da teoria individual. Ainda assim, mesmo sem um consumidor representativo, a demanda de mercado preserva algumas propriedades:
 
 1. **Homogeneidade de grau zero** em preços e rendas (se cada demanda individual for homogênea de grau zero).
 2. **Agregação de Engel**: \(\sum_i w_i \varepsilon_{X_i, I} = 1\), onde \(w_i\) é a parcela orçamentária agregada.
@@ -346,7 +354,7 @@ Mesmo sem um consumidor representativo, a demanda de mercado preserva algumas pr
 
 ## Tabela: Classificação de Pares de Bens no Contexto Brasileiro
 
-A tabela a seguir classifica pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana).
+Para consolidar as classificações discutidas nas seções anteriores, a tabela a seguir reúne pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana). Note como, em alguns casos, as duas classificações divergem — reflexo direto do efeito renda que a Equação de Slutsky separa.
 
 | Par de Bens | Relação Bruta (Marshalliana) | Relação Líquida (Hicksiana) | Observações |
 |:---|:---:|:---:|:---|
@@ -367,6 +375,8 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
     Note o caso de carne bovina e sal: embora sejam complementos brutos (o sal é usado para temperar a carne), quando isolamos o efeito substituição, a relação é praticamente nula — a "complementaridade" observada nos dados marshallianos decorre em grande parte do efeito renda (famílias mais ricas consomem mais de ambos).
 
 ---
+
+Para ilustrar concretamente as relações de substituição e complementaridade discutidas neste capítulo, apresentamos a seguir dois estudos de caso detalhados do mercado brasileiro — o primeiro sobre combustíveis (substituição quase pura) e o segundo sobre bebidas (um mosaico de relações cruzadas).
 
 ## Box Brasil: Gasolina versus Etanol — Substitutos na Bomba
 
@@ -420,6 +430,31 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
     O Teorema do Bem Composto de Hicks pode ser aplicado aqui: se os preços de cerveja, suco e água variam proporcionalmente entre si (por exemplo, por inflação geral), podemos tratá-los como um bem composto "outras bebidas" e analisar a demanda de refrigerante contra esse composto. Porém, se a tributação incide seletivamente sobre o refrigerante, o teorema exige que apenas a relação refrigerante versus cada um dos outros bens seja analisada separadamente.
 
     *Fontes: ABRAS — Associação Brasileira de Supermercados; POF/IBGE; Euromonitor International — relatórios de bebidas não alcoólicas; análises do IFI/Senado sobre a reforma tributária.*
+
+---
+
+## Resumo do Capítulo
+
+- Os efeitos cruzados de preço medem como a variação no preço de um bem afeta a demanda por outro, e podem ser decompostos pela Equação de Slutsky em efeito substituição cruzado e efeito renda cruzado.
+- Bens são classificados como substitutos ou complementos brutos (marshallianos, baseados na demanda não-compensada) e líquidos (hicksianos, baseados na demanda compensada); a classificação pode diferir entre as duas definições quando o efeito renda é significativo.
+- A matriz de substituição de Slutsky é simétrica e negativa semidefinida; com muitos bens, todo bem deve ter pelo menos um substituto líquido, tornando a substituibilidade o fenômeno dominante.
+- O Teorema do Bem Composto de Hicks permite agregar um grupo de bens cujos preços variam proporcionalmente em um único bem composto, viabilizando a análise com dois bens mesmo em economias complexas.
+- O modelo de Lancaster propõe que os consumidores valorizam atributos dos bens (não os bens em si), gerando preços hedônicos implícitos; o modelo de Becker incorpora o tempo como insumo na produção doméstica de utilidade.
+- A demanda de mercado é a soma horizontal das demandas individuais; a condição de Gorman (curvas de Engel lineares e paralelas) garante a existência de um consumidor representativo.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Efeito cruzado de preço | Variação na demanda de um bem causada pela mudança no preço de outro bem. |
+| Substitutos brutos (marshallianos) | Bens cuja elasticidade-preço cruzada marshalliana é positiva: o aumento no preço de um eleva a demanda pelo outro. |
+| Complementos brutos (marshallianos) | Bens cuja elasticidade-preço cruzada marshalliana é negativa: o aumento no preço de um reduz a demanda pelo outro. |
+| Substitutos líquidos (hicksianos) | Bens cujo efeito substituição cruzado (compensado) é positivo; a classificação líquida é simétrica. |
+| Complementos líquidos (hicksianos) | Bens cujo efeito substituição cruzado (compensado) é negativo; com dois bens, a complementaridade líquida é impossível. |
+| Teorema do Bem Composto de Hicks | Se os preços de um grupo de bens variam na mesma proporção, o grupo pode ser tratado como um único bem composto. |
+| Modelo de Lancaster | Teoria em que a utilidade depende dos atributos dos bens, não dos bens em si, gerando preços hedônicos implícitos. |
+| Condição de Gorman | Condição sob a qual a demanda de mercado depende apenas da renda agregada: curvas de Engel lineares e paralelas para todos os consumidores. |
+| Preços hedônicos | Preços implícitos dos atributos de um bem, estimados pela decomposição do preço de mercado em contribuições de cada característica. |
 
 ---
 
@@ -532,8 +567,6 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 ---
 
 ## Exercícios
-
-!!! tip "Exercícios do Capítulo 6"
 
 **Exercício 6.1.** Considere a função de utilidade CES: \(U(x_1, x_2) = (x_1^\rho + x_2^\rho)^{1/\rho}\), com \(\rho < 1\), preços \(p_1, p_2\) e renda \(I\).
 
@@ -648,7 +681,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
         - **Item 0 — V:** Um "bem comum" (ordinário) é aquele cuja demanda individual cai quando o preço sobe. Como o efeito renda é nulo, o efeito preço coincide com o efeito substituição, que é não positivo. De \$10 para \$9, cada consumidor aumenta a demanda de 10 para 11; de \$9 para \$8, de 11 para 12. O bem é comum (não é de Giffen) para qualquer consumidor individual.
         - **Item 1 — V:** Em \(t=0\), todos os 1.000 consumidores vão ao mercado. Com oferta infinitamente elástica ao custo marginal social de \$10, o preço de equilíbrio é \$10. Cada consumidor demanda 10 unidades, totalizando \(Q = 10.000\). Como \(P = CMg = \$10\), não há excedente do produtor, e os consumidores pagam exatamente sua valoração marginal na última unidade — o excedente social é nulo.
         - **Item 2 — F:** Em \(t=1\), apenas 500 consumidores (os que consomem em 1 mês) vão ao mercado. Com custo marginal de \$9, o preço é \$9 e cada um demanda 11 unidades: \(Q = 500 \times 11 = 5.500\), não 11.000.
-        - **Item 3 — V:** Em \(t=2\), todos os 1.000 voltam. Com custo marginal \$8, preço é \$8 e cada um demanda 12: \(Q = 12.000\). O excedente social de cada consumidor é a soma dos excedentes nas unidades inframarginais. De \$10 a \$8 (unidades 10 e 11), o excedente por consumidor é \((10-8) + (9-8) = 2 + 1 = 3\). Na unidade 12, \(P = CMg = 8\), excedente zero. Total: \(3 \times 1.000 = 3.000\)... Porém, considerando todas as unidades inframarginais com valoração acima de \$8, e usando a informação de que o efeito renda é nulo: excedente = \((10-8)\times 10.000 + (9-8)\times 1.000 = 20.000 + 1.000 + ...\). Calculando com cuidado: cada consumidor tem disposição a pagar \(\geq\$10\) para 10 unidades, \(\geq\$9\) para a 11ª e \(\geq\$8\) para a 12ª. Excedente por consumidor = \(10 \times (10-8) + 1 \times (9-8) + 1 \times (8-8) = 20 + 1 + 0 = 21\). Mas temos informação discreta, então: excedente por consumidor = \((10-8) \times 10 + (9-8) \times 1 = 21\). Total: \(21 \times 1.000 = 21.000\). *Nota:* considerando que a demanda é linear entre os pontos dados (\$10→10, \$9→11, \$8→12), o excedente pode ser computado como a área abaixo da curva de demanda inversa e acima de \$8, resultando em \$31.000. O gabarito oficial indica V.
+        - **Item 3 — V:** Em \(t=2\), todos os 1.000 consumidores voltam ao mercado. Com custo marginal social de \$8, a oferta perfeitamente elástica fixa \(P = 8\) e cada consumidor demanda 12 unidades, totalizando \(Q = 12.000\). Como o efeito renda é nulo, a demanda individual é compensada e pode ser tratada como linear pelos três pontos dados: a demanda inversa individual é \(P = 20 - q\). O excedente do consumidor (= excedente social, pois não há excedente do produtor) é a área entre a demanda inversa e o preço, de \(q = 0\) a \(q = 12\): \(\mathrm{EC} = \tfrac{1}{2}(20-8)\times 12 = 72\). Porém, a questão fornece apenas três pontos discretos e não garante linearidade ao longo de toda a curva. Usando a interpretação discreta com demanda agregada em degraus — 10.000 unidades com valoração \$10, 1.000 com valoração \$9, 1.000 com valoração \$8 — o excedente seria \(10.000 \times 2 + 1.000 \times 1 = 21.000\). O gabarito oficial da ANPEC indica excedente de \$31.000 e classifica o item como verdadeiro.
         - **Item 4 — V:** Em \(t=0\): preço \$10, 1.000 consumidores, demanda agregada = 10.000. Em \(t=1\): preço \$9, 500 consumidores, demanda agregada = 5.500. O economista observa: preço caiu (\$10→\$9) e quantidade agregada caiu (10.000→5.500). Sem perceber que metade dos consumidores não foi ao mercado em \(t=1\), ele conclui erroneamente que o bem é de Giffen (preço cai, quantidade cai). A "ilusão de Giffen" surge da heterogeneidade na frequência de compra — um problema clássico de agregação da demanda (Seção 6.7).
 
 ??? question "ANPEC 2025 — Questão 03"

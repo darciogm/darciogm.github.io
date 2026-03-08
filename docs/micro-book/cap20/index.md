@@ -55,6 +55,8 @@ onde \(x_A^k\) é o consumo do bem \(k\) pelo indivíduo \(A\).
 
 ## 20.2 Externalidades e Ineficiência Alocativa
 
+Definido o conceito de externalidade, podemos agora compreender por que ela constitui uma falha de mercado. A ideia central é que, na presença de externalidades, o preço de mercado transmite informação incompleta: ele reflete apenas os custos e benefícios privados da transação, ignorando os efeitos sobre terceiros. Como resultado, as decisões tomadas individualmente por agentes racionais conduzem a um nível de produção ou consumo que difere do socialmente ótimo — o mercado "erra" sistematicamente.
+
 A presença de externalidades implica que as decisões privadas dos agentes divergem do ótimo social. A razão fundamental é que os agentes não incorporam em seus cálculos os efeitos que suas ações impõem sobre terceiros (Browning & Zupan, 2014, Cap. 20, apresentam aplicações detalhadas).
 
 ### Externalidade negativa de produção
@@ -110,6 +112,8 @@ Como \(B'^{ext}(q) > 0\), o consumo privado fica **aquém do ótimo social**: \(
 
 ## 20.3 Modelo de Equilíbrio Parcial de Externalidades
 
+A seção anterior demonstrou intuitivamente que externalidades negativas levam à sobreprodução e externalidades positivas à subprodução. Agora, formalizamos essa análise em um modelo de equilíbrio parcial com duas firmas, o que nos permitirá derivar rigorosamente a magnitude da ineficiência e, na seção seguinte, calibrar os instrumentos de política necessários para corrigi-la.
+
 Formalizemos o problema usando um modelo de equilíbrio parcial com duas firmas.
 
 **Firma 1** (poluidora): produz \(q_1\) com custo \(C_1(q_1)\) e gera emissões \(e = e(q_1)\), com \(e' > 0\).
@@ -152,6 +156,8 @@ DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
 </figure>
 
 ## 20.4 Soluções para Externalidades Negativas
+
+Identificada a ineficiência causada pelas externalidades, a questão natural que se coloca é: como corrigi-la? A teoria econômica oferece um menu de instrumentos, cada um com suas vantagens e limitações. A solução mais elegante — o imposto pigouviano — ataca o problema diretamente na raiz, alterando os incentivos privados para que a firma internalize o custo externo. Mas soluções alternativas, como a negociação privada (Coase), a regulação direta e os mercados de permissão de emissão, podem ser preferíveis em contextos específicos.
 
 ### 20.4.1 Imposto Pigouviano
 
@@ -246,6 +252,8 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 ### 20.4.2 O Teorema de Coase
 
+O imposto pigouviano é uma solução centralizada: requer que o governo conheça o custo marginal externo e imponha o imposto correto. Mas seria possível resolver o problema sem intervenção governamental? Ronald Coase respondeu afirmativamente, sob certas condições — um resultado que transformou profundamente a análise econômica do direito e das instituições.
+
 !!! abstract "Teorema de Coase (Coase, 1960)"
     Se os **direitos de propriedade** estão claramente definidos e os **custos de transação** são nulos, a barganha privada entre as partes levará à alocação eficiente de recursos, **independentemente** de qual parte detém o direito de propriedade. A distribuição dos direitos afeta apenas a distribuição de riqueza, não a eficiência.
 
@@ -282,6 +290,8 @@ C'(q) + E'(q) = P
 
 ### 20.4.3 Regulação direta (command and control)
 
+Quando os custos de transação são elevados e a informação sobre os custos externos é imperfeita, as soluções de Pigou e Coase podem ser difíceis de implementar. Nesses casos, governos frequentemente recorrem à regulação direta — a abordagem mais antiga e ainda mais utilizada no mundo para lidar com externalidades, embora tipicamente a menos eficiente.
+
 A regulação direta consiste em impor limites quantitativos de emissão ou padrões tecnológicos às firmas poluidoras. Exemplos incluem:
 
 - Limites máximos de emissão de poluentes (ex.: padrão CONAMA para emissões veiculares);
@@ -291,6 +301,8 @@ A regulação direta consiste em impor limites quantitativos de emissão ou padr
 A principal desvantagem da regulação direta é que ela tipicamente não é **custo-efetiva**: ao impor o mesmo padrão a todas as firmas, não explora as diferenças nos custos marginais de abatimento. Firmas com custos de abatimento baixos deveriam reduzir mais emissões, e firmas com custos altos, menos — algo que um imposto ou mercado de permissões faz automaticamente.
 
 ### 20.4.4 Mercados de permissão de emissão (cap and trade)
+
+Uma alternativa que combina a eficiência do imposto pigouviano com a certeza quantitativa da regulação direta é o sistema de mercado de permissões de emissão. Nesse arranjo, o governo define a quantidade total de poluição permitida e cria um mercado em que as firmas podem comprar e vender direitos de emitir. O preço da permissão emerge endogenamente do mercado, igualando o custo marginal de abatimento entre todas as firmas — exatamente a condição de custo-efetividade.
 
 !!! definition "Mercado de Permissões de Emissão (Cap and Trade)"
     Sistema em que o regulador fixa um **teto** (cap) total de emissões e distribui **permissões negociáveis** entre as firmas. As firmas podem comprar e vender permissões no mercado. Em equilíbrio, o preço da permissão iguala o custo marginal de abatimento entre todas as firmas, garantindo **custo-efetividade**.
@@ -306,6 +318,8 @@ A equivalência entre imposto e cap-and-trade sob certeza (Weitzman, 1974) é um
 ---
 
 ## 20.5 Atributos dos Bens Públicos
+
+A primeira metade deste capítulo dedicou-se às externalidades — situações em que ações de um agente afetam outros fora do sistema de preços. Voltamo-nos agora para a segunda grande falha de mercado: os bens públicos. Enquanto as externalidades envolvem efeitos colaterais de atividades privadas, os bens públicos representam um desafio ainda mais fundamental: são bens que, por suas próprias características intrínsecas — não-rivalidade e não-exclusão —, o mercado é incapaz de prover eficientemente. Qual é a natureza desse desafio, e quais são os mecanismos disponíveis para enfrentá-lo?
 
 !!! definition "Bem Público"
     Um **bem público puro** é aquele que possui simultaneamente duas propriedades:
@@ -338,6 +352,8 @@ A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos
 ---
 
 ## 20.6 Bens Públicos e Alocação de Recursos
+
+Estabelecidas as propriedades que definem os bens públicos, passamos à questão central: qual é o nível eficiente de provisão de um bem público, e por que o mercado sistematicamente falha em alcançá-lo? A resposta envolve uma mudança fundamental na lógica da eficiência em relação aos bens privados — uma mudança que Paul Samuelson formalizou em 1954 e que constitui uma das contribuições mais duradouras da economia do setor público.
 
 ### Condição de eficiência (Samuelson, 1954)
 
@@ -383,6 +399,8 @@ Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/
 
 ## 20.7 Preços de Lindahl
 
+Sabemos agora que o mercado subprovê bens públicos porque cada indivíduo ignora o benefício que sua contribuição gera para os demais. Existe algum arranjo institucional que poderia atingir o nível eficiente de provisão? O economista sueco Erik Lindahl propôs, em 1919, um mecanismo engenhoso: cobrar de cada indivíduo um preço personalizado, proporcional ao benefício que ele extrai do bem público. Em teoria, esse mecanismo funciona perfeitamente. Na prática, como veremos, esbarra no problema mais antigo da economia pública.
+
 !!! definition "Equilíbrio de Lindahl"
     Mecanismo hipotético de provisão de bens públicos em que cada indivíduo paga um **preço personalizado** (\(\tau_i\)) pelo bem público, igual à sua taxa marginal de substituição. A soma dos preços de Lindahl iguala o custo marginal de produção:
 
@@ -392,7 +410,7 @@ Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/
 
     Cada indivíduo, enfrentando seu preço personalizado, demanda a mesma quantidade \(G^*\), e a condição de Samuelson é satisfeita.
 
-O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar truthfully**, conforme discutiremos na seção sobre o problema do carona.
+O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar de forma verdadeira**, conforme discutiremos na seção sobre o problema do carona.
 
 ---
 
@@ -412,6 +430,8 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
     A tragédia dos comuns, apresentada neste capítulo como falha de mercado, pressupõe que a ausência de direitos de propriedade leva inevitavelmente à sobre-exploração. Ostrom mostrou que essa conclusão é incompleta: entre a privatização e a regulação estatal, existe um terceiro caminho — a governança comunitária — que funciona quando os usuários conseguem se organizar, monitorar e sancionar coletivamente.
 
 ## 20.8 O Problema do Carona (Free Rider)
+
+O equilíbrio de Lindahl pressupõe que os indivíduos revelam honestamente quanto valorizam o bem público. Mas por que o fariam? Se a contribuição de cada um é baseada em sua valoração declarada, cada indivíduo tem incentivo para subdeclarar — afirmando que valoriza pouco o bem público para pagar menos, mas usufruindo plenamente da provisão financiada pelos demais. Esse comportamento estratégico é o **problema do carona**, uma das falhas de mercado mais persistentes e de difícil solução.
 
 !!! definition "Problema do Carona"
     Ocorre quando indivíduos racionais subinvestem na provisão de um bem público (ou na revelação de suas preferências) porque esperam se beneficiar das contribuições alheias sem pagar por elas. O bem público é não-excludente: mesmo quem não paga pode consumir.
@@ -442,6 +462,8 @@ O comportamento de carona é mais severo quando:
 
 ## 20.9 Votação e Alocação de Recursos
 
+Se o mercado falha na provisão de bens públicos e mecanismos descentralizados como os preços de Lindahl são vulneráveis ao problema do carona, as sociedades recorrem a processos de decisão coletiva — notadamente a **votação** — para determinar quanto gastar com bens públicos e como financiar essa despesa. Mas será que o processo político conduz a resultados eficientes? A teoria da escolha pública analisa essa questão, revelando tanto as virtudes quanto as limitações da democracia como mecanismo de agregação de preferências.
+
 Na ausência de mecanismos de mercado eficientes para bens públicos (Giambiagi & Além, 2016, oferecem análise detalhada para o caso brasileiro), as sociedades recorrem a processos políticos — especialmente a **votação** — para decidir o nível de provisão.
 
 ### Votação por maioria simples
@@ -464,7 +486,9 @@ Considere uma comunidade de \(N\) cidadãos que deve decidir o nível de gastos 
 
 ## 20.10 Mecanismos de Revelação de Preferências
 
-O desafio central na provisão de bens públicos é induzir os indivíduos a **revelar truthfully** suas preferências. O mecanismo de Vickrey-Clarke-Groves (VCG) fornece uma solução elegante.
+O Teorema da Impossibilidade de Arrow e as limitações da votação por maioria mostram que não existe regra de agregação de preferências perfeita. Entretanto, para o caso específico de bens públicos, a teoria de desenho de mecanismos oferece uma solução parcial: mecanismos que tornam a revelação verdadeira das preferências uma estratégia dominante para cada indivíduo, eliminando o incentivo ao comportamento de carona.
+
+O desafio central na provisão de bens públicos é induzir os indivíduos a **revelar de forma verdadeira** suas preferências. O mecanismo de Vickrey-Clarke-Groves (VCG) fornece uma solução elegante.
 
 !!! definition "Mecanismo VCG (Vickrey-Clarke-Groves)"
     Classe de mecanismos de revelação de preferências em que cada indivíduo paga um imposto igual ao **custo externo** que sua participação impõe sobre os demais membros do grupo. Sob esse mecanismo, é estratégia dominante para cada indivíduo revelar sua verdadeira valoração.
@@ -531,9 +555,35 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
+## Resumo do Capítulo
+
+- Externalidades ocorrem quando a ação de um agente afeta diretamente a utilidade ou produção de outro fora do sistema de preços. Externalidades negativas levam à superprodução e externalidades positivas à subprodução em relação ao ótimo social.
+- O imposto pigouviano, igual ao custo marginal externo avaliado no ótimo social, internaliza a externalidade e restaura a eficiência. De forma simétrica, subsídios pigouvianos corrigem externalidades positivas.
+- O Teorema de Coase estabelece que, com direitos de propriedade bem definidos e custos de transação nulos, a barganha privada leva à eficiência independentemente da atribuição inicial dos direitos. Na prática, custos de transação elevados e externalidades difusas limitam essa solução.
+- Mercados de permissões de emissão (cap-and-trade) fixam um teto de emissões e permitem negociação, garantindo custo-efetividade. Sob certeza, são equivalentes ao imposto pigouviano; sob incerteza, diferem na alocação de risco entre preço e quantidade.
+- Bens públicos puros (não-rivais e não-excludentes) são subprovidos pelo mercado devido ao problema do carona. A condição de Samuelson para eficiência requer que a soma das TMS de todos os indivíduos iguale a taxa marginal de transformação.
+- Mecanismos como preços de Lindahl e o mecanismo VCG buscam induzir a revelação verdadeira de preferências para bens públicos, enquanto a votação por maioria tende a selecionar a preferência do eleitor mediano, que geralmente difere do ótimo de Samuelson.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Externalidade | Efeito da ação de um agente sobre a utilidade ou produção de outro, não mediado pelo sistema de preços |
+| Imposto pigouviano | Imposto por unidade de produção/emissão igual ao custo marginal externo no ótimo social, que internaliza a externalidade |
+| Teorema de Coase | Com direitos de propriedade definidos e custos de transação nulos, a barganha privada leva à eficiência independentemente da atribuição dos direitos |
+| Cap-and-trade | Sistema em que o regulador fixa um teto de emissões e distribui permissões negociáveis; o preço de equilíbrio iguala os custos marginais de abatimento entre firmas |
+| Bem público puro | Bem simultaneamente não-rival (consumo por um não reduz disponibilidade para outros) e não-excludente (impossível impedir acesso) |
+| Recurso comum | Bem rival mas não-excludente, sujeito à sobre-exploração (tragédia dos comuns) |
+| Condição de Samuelson | A provisão eficiente de bem público requer \(\sum TMS_i = TMT\): a soma dos benefícios marginais individuais iguala o custo marginal |
+| Problema do carona (free rider) | Incentivo individual a não contribuir para bens públicos, esperando beneficiar-se das contribuições alheias |
+| Preços de Lindahl | Preços personalizados para o bem público, iguais à TMS de cada indivíduo, cuja soma iguala o custo marginal |
+| Teorema do eleitor mediano | Sob preferências unimodais e escolha unidimensional, a regra de maioria seleciona o nível preferido pelo eleitor mediano |
+
+---
+
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 1 — Imposto pigouviano e perda de peso morto"
+??? example "Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
     **Enunciado.** Uma siderúrgica produz aço ao preço competitivo \(P = 100\) com custo privado \(C(q) = 10q + q^2\). A produção gera poluição com custo externo \(E(q) = q^2\). (a) Calcule a produção privada e a socialmente ótima. (b) Determine o imposto pigouviano ótimo. (c) Calcule a perda de peso morto sem regulação.
 
     **Resolução.**
@@ -568,7 +618,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     A perda de peso morto é R$ 1.012,50 — o custo social da ausência de regulação.
 
-??? example "Exercício Resolvido 2 — Provisão eficiente de bem público e preços de Lindahl"
+??? example "Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
     **Enunciado.** Dois consumidores têm utilidade \(U_1 = 3\ln G + x_1\) e \(U_2 = 2\ln G + x_2\), onde \(G\) é o bem público e \(x_i\) o bem privado. O custo marginal do bem público é \(CMg = 1\). (a) Determine o nível eficiente de \(G\). (b) Calcule os preços de Lindahl. (c) Compare com a provisão voluntária (Nash).
 
     **Resolução.**
@@ -603,7 +653,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     Resultado: \(G^{Nash} = 3 < 5 = G^*\). O bem público é subprovido em 40%. O consumidor 2 pega carona na contribuição do consumidor 1 — o problema clássico do free rider.
 
-??? example "Exercício Resolvido 3 — Cap-and-trade e custo-efetividade"
+??? example "Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
     **Enunciado.** Duas fábricas emitem 50 toneladas cada de \(SO_2\) (total: 100 ton). O regulador quer reduzir as emissões totais para 60 ton (abatimento de 40 ton). Os custos marginais de abatimento são \(CMgA_1 = 4a_1\) e \(CMgA_2 = 2a_2\), onde \(a_i\) é o abatimento da firma \(i\). (a) Encontre a alocação custo-efetiva. (b) Compare com abatimento uniforme. (c) Determine o preço de equilíbrio da permissão em um sistema cap-and-trade.
 
     **Resolução.**
@@ -789,7 +839,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1146/annurev-resource-100913-012610)"
+??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1257/aer.104.10.3038)"
     **Pergunta central:** Regulações ambientais do tipo command-and-control são eficazes para reduzir a poluição e melhorar a saúde em países em desenvolvimento?
 
     **Método:** Os autores avaliam o impacto de duas grandes regulações ambientais na Índia: o Programa Nacional de Ação sobre Poluição do Ar (1987) e a regulação de poluição hídrica de distritos designados como "criticamente poluídos". Utilizam dados de monitoramento de qualidade do ar e da água em centenas de estações ao longo de duas décadas, combinados com dados de mortalidade infantil, em uma estratégia de diferenças-em-diferenças.

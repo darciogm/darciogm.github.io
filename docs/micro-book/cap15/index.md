@@ -8,6 +8,8 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 
 ## 15.1 Barreiras à entrada
 
+Antes de analisarmos como o monopolista fixa preços e quantidades, cabe perguntar: por que os lucros extraordinários do monopolista não atraem concorrentes que, ao entrar no mercado, erosionariam seu poder de mercado? A resposta reside nas **barreiras à entrada**. Sem elas, o monopólio seria uma posição transitória, rapidamente contestada por rivais ávidos por lucro. É precisamente a existência de obstáculos à entrada que permite ao monopolista sustentar sua posição privilegiada no longo prazo.
+
 O monopólio só persiste se existirem **barreiras à entrada** que impeçam outras firmas de ingressar no mercado e contestar os lucros extraordinários do incumbente. Essas barreiras podem ser classificadas em três categorias.
 
 ### Barreiras legais
@@ -42,6 +44,8 @@ Exemplos clássicos incluem redes de distribuição de água, gás, eletricidade
 
 ### Barreiras estratégicas
 
+Além das barreiras criadas pela natureza da tecnologia ou pela ação do Estado, as próprias firmas incumbentes podem erguer obstáculos deliberados à entrada de concorrentes. Essas barreiras estratégicas refletem o comportamento racional de uma firma que antecipa a possibilidade de entrada e age preventivamente para torná-la não lucrativa.
+
 Firmas incumbentes podem adotar comportamentos deliberados para dificultar a entrada de rivais:
 
 - **Excesso de capacidade instalada**: sinaliza que o incumbente pode expandir a produção rapidamente em resposta à entrada, tornando-a não lucrativa.
@@ -56,12 +60,14 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 <iframe src="../graficos/cap15/monopolio.html" width="100%" height="550" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 14.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.</em>
+<em>Figura 15.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.</em>
 </p>
 
 ---
 
 ## 15.2 Maximização de lucro do monopolista
+
+Compreendidas as origens do monopólio, podemos agora analisar como o monopolista explora sua posição. A questão central é: dado que o monopolista é o único ofertante, como ele escolhe preço e quantidade para maximizar seu lucro? A resposta exige uma análise cuidadosa da relação entre receita marginal, custo marginal e elasticidade da demanda — relação esta que se tornará um instrumento analítico recorrente ao longo do restante do livro.
 
 ### O problema do monopolista
 
@@ -97,6 +103,8 @@ Como o monopolista opera onde \(RMg > 0\), ele necessariamente produz na faixa *
 
 ### A regra de markup
 
+A relação entre receita marginal e elasticidade nos conduz a um resultado fundamental: o monopolista não fixa preços arbitrariamente, mas obedece a uma regra de markup que conecta o preço cobrado ao custo marginal e à sensibilidade dos consumidores a variações de preço. Quanto menos sensíveis forem os consumidores — isto é, quanto mais inelástica a demanda —, maior a margem que o monopolista consegue extrair.
+
 Da condição \(RMg = CMg\), obtemos:
 
 \[
@@ -124,6 +132,8 @@ O monopolista aplica um **markup** sobre o custo marginal que é inversamente pr
 ---
 
 ## 15.3 Demonstração: derivação do índice de Lerner
+
+A derivação formal a seguir explicita a conexão algébrica entre o poder de mercado do monopolista — medido pelo índice de Lerner — e a elasticidade-preço da demanda que ele enfrenta. Embora o resultado já tenha sido antecipado na seção anterior, a demonstração rigorosa é instrutiva porque revela a estrutura lógica subjacente e prepara o terreno para generalizações em contextos de oligopólio.
 
 !!! proof "Demonstração"
     Seja \(p(q)\) a demanda inversa do mercado e \(C(q)\) a função de custo do monopolista. O problema de maximização de lucro é:
@@ -192,6 +202,8 @@ O monopolista aplica um **markup** sobre o custo marginal que é inversamente pr
 
 ## 15.4 Ineficiência do monopólio
 
+Até aqui, analisamos o monopólio do ponto de vista da firma: como ela maximiza lucro, que preço cobra, que quantidade produz. Mas qual é o custo dessa estrutura de mercado para a sociedade como um todo? Em que medida o poder de mercado do monopolista compromete a eficiência alocativa que os Teoremas do Bem-Estar garantem para mercados competitivos? A resposta a essas perguntas fundamenta a justificativa econômica para a regulação e a política antitruste.
+
 ### Perda de peso morto
 
 O monopolista produz menos e cobra mais do que o resultado competitivo. Essa distorção gera uma **perda de peso morto** (PPM) — uma redução no excedente total que não é capturada por nenhum agente.
@@ -250,6 +262,8 @@ Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0
 
 ## 15.5 Estática comparativa do monopólio
 
+Estabelecido o equilíbrio de monopólio, podemos agora investigar como ele se altera diante de mudanças nos parâmetros exógenos. Que efeito tem um imposto sobre o preço e a quantidade de monopólio? Como o monopolista responde a um deslocamento da demanda? Essas perguntas de estática comparativa são particularmente relevantes para a formulação de políticas públicas, pois revelam como instrumentos tributários e regulatórios interagem com o poder de mercado.
+
 ### Efeito de um imposto unitário
 
 Suponha que o governo impõe um imposto unitário \(t\) sobre cada unidade produzida. O novo custo marginal efetivo é \(CMg + t\). Com demanda linear:
@@ -277,6 +291,8 @@ O lucro do monopolista é crescente e convexo na demanda, o que implica que o mo
 
 ## 15.6 Qualidade do produto sob monopólio
 
+Até este ponto, tratamos o produto do monopolista como dado — variando apenas preço e quantidade. Na prática, porém, o monopolista também decide sobre a **qualidade** do que oferece. Será que um monopolista investe adequadamente em qualidade, ou a ausência de pressão competitiva o leva a oferecer produtos inferiores ao que seria socialmente desejável? A resposta, como veremos, é surpreendentemente ambígua.
+
 O monopolista também escolhe a **qualidade** \(s\) do produto. Se a demanda é \(p(q, s)\) e o custo é \(C(q, s)\), o problema torna-se:
 
 \[
@@ -298,6 +314,8 @@ O monopolista iguala a receita marginal da qualidade ao custo marginal da qualid
 
 ## 15.7 Discriminação de preços
 
+Uma das estratégias mais poderosas à disposição do monopolista consiste em abandonar a prática de preço único. Se o monopolista consegue identificar — ou induzir a autorevelação de — diferentes disposições a pagar entre consumidores, ele pode explorar essa heterogeneidade para extrair mais excedente do que seria possível com um preço uniforme. Essa prática, conhecida como discriminação de preços, é onipresente no mundo real e assume formas sofisticadas que variam de passagens aéreas a planos de software.
+
 O monopolista pode aumentar seus lucros se conseguir cobrar preços diferentes de consumidores diferentes (ou pela mesma unidade adicional). A discriminação de preços exige duas condições: (i) algum grau de poder de mercado e (ii) impossibilidade de revenda (arbitragem) entre consumidores.
 
 ### 15.7.1 Discriminação de primeiro grau (perfeita)
@@ -316,6 +334,8 @@ Resultado:
 A discriminação perfeita é um caso limite teórico. Na prática, o monopolista raramente conhece as disposições a pagar individuais.
 
 ### 15.7.2 Discriminação de segundo grau (não-linear)
+
+A discriminação de primeiro grau é um caso limite que pressupõe informação perfeita sobre cada consumidor — uma hipótese heroica na maioria dos contextos reais. O que acontece quando o monopolista sabe que os consumidores diferem em suas preferências, mas não consegue observar diretamente o "tipo" de cada um? Nesse cenário, o monopolista recorre a uma estratégia engenhosa: em vez de atribuir preços a consumidores, ele oferece um menu de opções e deixa que os próprios consumidores se revelem por meio de suas escolhas.
 
 Quando o monopolista não observa as características dos consumidores, ele pode oferecer um **menu de contratos** (combinações preço-quantidade) e permitir que os consumidores se **autosselecionem**. Consumidores com alta disposição a pagar escolhem o pacote premium; consumidores com baixa disposição escolhem o pacote básico.
 
@@ -401,12 +421,14 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 <iframe src="../graficos/cap15/discriminacao-precos.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 14.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.</em>
+<em>Figura 15.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.</em>
 </p>
 
 ---
 
 ## 15.8 Tarifas em duas partes
+
+A tarifa em duas partes constitui uma das formas mais elegantes e difundidas de precificação não-linear. Diferentemente dos esquemas de discriminação discutidos na seção anterior, que exigem observar ou induzir a revelação de tipos, a tarifa em duas partes combina simplicidade operacional com capacidade de extração de excedente, razão pela qual é amplamente utilizada em setores que vão de telecomunicações a parques de diversões.
 
 Uma tarifa em duas partes consiste em uma **taxa de entrada** (tarifa fixa \(T\)) e um **preço por unidade** (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\).
 
@@ -437,6 +459,8 @@ A solução ótima tipicamente envolve \(p > CMg\) e \(T < EC\) do consumidor co
 ---
 
 ## 15.9 Regulação de monopólios
+
+As seções anteriores documentaram os custos sociais do monopólio — perda de peso morto, distorção de preços e quantidades — e as estratégias que o monopolista utiliza para maximizar a extração de excedente. Diante dessas ineficiências, surge naturalmente a questão: o que a sociedade pode fazer? Em mercados onde o monopólio pode ser eliminado (por exemplo, removendo barreiras legais desnecessárias), a promoção da concorrência é o caminho mais direto. Mas em monopólios naturais — nos quais a tecnologia torna ineficiente a presença de múltiplas firmas — a regulação torna-se o instrumento central de política pública.
 
 Quando o monopólio não pode ser eliminado (como no caso de monopólios naturais), a regulação busca aproximar o resultado de mercado do ótimo social. O dilema central é: como induzir a firma a produzir mais e cobrar menos, sem eliminar seus incentivos ao investimento e à eficiência?
 
@@ -488,12 +512,14 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 <iframe src="../graficos/cap15/regulacao-monopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 14.3 — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.</em>
+<em>Figura 15.3 — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.</em>
 </p>
 
 ---
 
 ## 15.10 Visões dinâmicas do monopólio
+
+A análise conduzida até aqui é predominantemente estática: comparamos o monopólio com a concorrência perfeita em um dado momento do tempo. Entretanto, quando adotamos uma perspectiva dinâmica — incorporando inovação, progresso tecnológico e entrada potencial —, o julgamento sobre os custos e benefícios do monopólio torna-se mais nuançado. Será que o monopólio é sempre prejudicial à sociedade, ou pode ele desempenhar um papel positivo como motor de inovação e progresso técnico?
 
 ### Schumpeter e a destruição criativa
 
@@ -516,9 +542,35 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
+## Resumo do Capítulo
+
+- O monopólio surge quando barreiras à entrada (legais, naturais ou estratégicas) impedem a concorrência, permitindo que uma única firma fixe preços acima do custo marginal e obtenha lucros persistentes.
+- O monopolista maximiza lucro igualando receita marginal ao custo marginal (RMg = CMg), operando sempre na faixa elástica da demanda. O markup sobre o custo marginal é inversamente proporcional à elasticidade-preço, conforme medido pelo índice de Lerner.
+- O monopólio gera ineficiência alocativa: produz menos e cobra mais do que o resultado competitivo, criando uma perda de peso morto (triângulo de Harberger) que não é capturada por nenhum agente.
+- A discriminação de preços (primeiro, segundo e terceiro graus) permite ao monopolista extrair mais excedente do consumidor, podendo, em alguns casos, aumentar a quantidade produzida e reduzir a perda de peso morto.
+- A regulação de monopólios naturais enfrenta um dilema fundamental: a precificação pelo custo marginal gera prejuízos (first-best impraticável), enquanto a precificação pelo custo médio ou por teto de preços (price cap) representa soluções de second-best com trade-offs entre eficiência e incentivos ao investimento.
+- As visões dinâmicas de Schumpeter (destruição criativa) e de Baumol (mercados contestáveis) relativizam os custos do monopólio, sugerindo que lucros de monopólio podem incentivar inovação e que a ameaça de entrada pode disciplinar o incumbente.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Poder de mercado | Capacidade de uma firma fixar preços acima do custo marginal e obter lucros econômicos persistentes |
+| Monopólio natural | Mercado em que a função de custo é subaditiva, de modo que uma única firma produz a qualquer quantidade a custo menor do que duas ou mais firmas |
+| Barreiras à entrada | Fatores (legais, naturais ou estratégicos) que impedem a entrada de concorrentes e protegem os lucros do monopolista |
+| Índice de Lerner | Medida de poder de mercado dada por \(L = (p - CMg)/p = 1/\|\varepsilon_p\|\); varia entre 0 (concorrência perfeita) e 1 |
+| Perda de peso morto (triângulo de Harberger) | Redução no excedente total causada pela restrição de produção do monopolista, que não é capturada por nenhum agente |
+| Discriminação de preços | Prática de cobrar preços diferentes de consumidores diferentes (ou por unidades diferentes), classificada em primeiro, segundo e terceiro graus |
+| Tarifa em duas partes | Esquema de precificação com taxa fixa de entrada mais preço por unidade consumida |
+| Regulação por price cap | Regime regulatório em que o preço é reajustado pela inflação menos um fator de produtividade (X), incentivando redução de custos |
+| Efeito Averch-Johnson | Tendência de firmas reguladas por taxa de retorno a sobreinvestir em capital para inflar a base de remuneração |
+| Mercado contestável | Mercado em que a ameaça de entrada e saída sem custos irrecuperáveis disciplina o incumbente, mesmo que haja apenas uma firma |
+
+---
+
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 14.1 — Monopólio com demanda linear: preço, lucro e PPM"
+??? example "Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
     **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
 
     ---
@@ -545,9 +597,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     \(EC^m = \frac{1}{2}(80 - 44)(18) = \frac{1}{2} \times 36 \times 18 = 324\).
 
-    \(EP^m = (44 - 8)(18) = 648\) (inclui lucro + parte do custo fixo absorvido).
-
-    Na verdade, \(EP^m = \pi + CF = 448 + 200 = 648\)? Não — o EP é a área acima do CMg: \(EP^m = (p^m - CMg) \times q^m = 36 \times 18 = 648\).
+    O excedente do produtor é a área acima do CMg: \(EP^m = (p^m - CMg) \times q^m = (44 - 8)(18) = 648\).
 
     \(W^m = 324 + 648 = 972\).
 
@@ -557,7 +607,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
-??? example "Exercício Resolvido 14.2 — Discriminação de terceiro grau com dois mercados"
+??? example "Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
     **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
 
     ---
@@ -590,8 +640,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-??? example "Exercício Resolvido 14.3 — Regulação de monopólio natural"
-    **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 5.000 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
+??? example "Exercício Resolvido 15.3 — Regulação de monopólio natural"
+    **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 500 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
 
     ---
 
@@ -603,11 +653,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     60 - q = 10 \implies q^m = 50, \quad p^m = 60 - 25 = 35
     \]
 
-    \(\pi^m = 35 \times 50 - (5.000 + 500) = 1.750 - 5.500 = -3.750\).
-
-    Hmm, lucro negativo! Isso ocorre porque o custo fixo é muito alto. Vamos verificar: \(\pi = (p-CMg)q - CF = (35-10)(50) - 5.000 = 1.250 - 5.000 = -3.750\). De fato, o monopolista não produz se o lucro é negativo. Vamos recalcular com \(C(q) = 500 + 10q\):
-
-    \(\pi^m = (35-10)(50) - 500 = 1.250 - 500 = 750\). Usemos \(CF = 500\).
+    \(\pi^m = (p^m - CMg) \times q^m - CF = (35-10)(50) - 500 = 1.250 - 500 = 750\).
 
     \[
     q^m = 50, \quad p^m = 35, \quad \pi^m = 750
@@ -655,7 +701,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ## Exercícios
 
-??? example "Exercício 1"
+??? example "Exercício 15.1"
     Considere um monopolista com custo total \(C(q) = 100 + 10q\) enfrentando demanda \(p = 50 - 2q\).
 
     a) Encontre o preço, a quantidade e o lucro de monopólio.
@@ -664,9 +710,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Calcule a perda de peso morto e compare com o excedente total sob concorrência perfeita.
 
-    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-1)
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-1)
 
-??? example "Exercício 2"
+??? example "Exercício 15.2"
     Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
 
     a) Encontre os preços e quantidades ótimos em cada mercado com discriminação de terceiro grau.
@@ -675,9 +721,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Compare o lucro com discriminação ao lucro sem discriminação (preço uniforme ótimo).
 
-    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-2)
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-2)
 
-??? example "Exercício 3"
+??? example "Exercício 15.3"
     O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
 
     a) Calcule preço, quantidade e lucro antes e depois do imposto.
@@ -686,9 +732,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Compare a receita fiscal com a variação na perda de peso morto.
 
-    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-3)
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-3)
 
-??? example "Exercício 4"
+??? example "Exercício 15.4"
     Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
 
     a) Calcule o resultado do monopólio não regulado.
@@ -697,9 +743,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Calcule o resultado sob regulação de custo médio (\(p = CMe\)) e a PPM residual.
 
-    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-4)
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-4)
 
-??? example "Exercício 5"
+??? example "Exercício 15.5"
     Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
 
     a) Se o monopolista usa preço uniforme, qual é o preço ótimo?
@@ -708,7 +754,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Se usa tarifa em duas partes atendendo apenas o tipo 1 (excluindo o tipo 2), encontre \((T^*, p^*)\) e compare os lucros.
 
-    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-5)
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-5)
 
 ---
 
@@ -729,7 +775,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **(4)** Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.
 
-    ??? success "Gabarito e Resolução"
+    ??? success "Gabarito"
         **Gabarito oficial: V-V-V-V-V**
 
         **(0) VERDADEIRO.** Pela regra de markup: \(p = CMg/(1 - 1/|\varepsilon|) = 10/(1 - 1/2) = 10/0{,}5 = 20\).
@@ -755,7 +801,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **(4)** Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.
 
-    ??? success "Gabarito e Resolução"
+    ??? success "Gabarito"
         **Gabarito oficial: F-V-F-F-V**
 
         **(0) FALSO.** A firma multi-planta minimiza custos igualando os **custos marginais** (não os custos médios) entre fábricas: \(CMg_1(q_1) = CMg_2(q_2) = \ldots\). Essa é a condição de Lagrange para a minimização de custo total sujeita a uma meta de produção.
@@ -781,7 +827,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **(4)** Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.
 
-    ??? success "Gabarito e Resolução"
+    ??? success "Gabarito"
         **Gabarito oficial: V-F-V-V-F**
 
         **(0) VERDADEIRO.** A condição de ótimo na discriminação de 3º grau é \(RMg_1 = RMg_2 = \ldots = CMg\). O monopolista iguala as receitas marginais de todos os segmentos ao custo marginal.
@@ -818,7 +864,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Resultados.** O artigo demonstra que os efeitos de bem-estar da discriminação de preços dependem crucialmente da informação disponível ao monopolista. A produção total pode subir, cair ou permanecer constante conforme a segmentação. Isso contrasta com o resultado clássico de Pigou (1920) para demandas lineares, em que a discriminação de 3º grau não altera a quantidade total.
 
-    **Conexão com o capítulo.** O paper aprofunda a análise de discriminação de preços das Seções 14.7.1–14.7.3, mostrando que a distinção entre 1º, 2º e 3º grau é apenas uma parte de um espectro muito mais rico de possibilidades informacionais. Para estudantes que desejam entender os limites teóricos do poder de mercado na extração de excedente, este é um ponto de partida essencial.
+    **Conexão com o capítulo.** O paper aprofunda a análise de discriminação de preços das Seções 15.7.1–15.7.3, mostrando que a distinção entre 1º, 2º e 3º grau é apenas uma parte de um espectro muito mais rico de possibilidades informacionais. Para estudantes que desejam entender os limites teóricos do poder de mercado na extração de excedente, este é um ponto de partida essencial.
 
 ---
 

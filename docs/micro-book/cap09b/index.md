@@ -19,7 +19,7 @@ Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores 
 
     Formalmente, um subjogo é qualquer parte do jogo que: (i) começa em um nó de decisão que é um conjunto de informação unitário (singleton); (ii) contém todos os sucessores desse nó; (iii) não "corta" nenhum conjunto de informação.
 
-O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio de Nash, mas nem todo equilíbrio de Nash é perfeito em subjogos. O EPS elimina equilíbrios sustentados por **ameaças não críveis** em subjogos fora do caminho de equilíbrio.
+O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio de Nash, mas nem todo equilíbrio de Nash é perfeito em subjogos. O EPS elimina equilíbrios sustentados por **ameaças não críveis** em subjogos fora do caminho de equilíbrio. Por que essa distinção importa? Porque em jogos dinâmicos, o equilíbrio de Nash permite que um jogador "ameace" com ações que nunca seriam racionais caso ele efetivamente precisasse executá-las. A exigência de racionalidade *em cada subjogo* — mesmo naqueles que nunca são alcançados em equilíbrio — é o que confere ao EPS seu poder de seleção.
 
 !!! info "🏅 Prêmio Nobel — Reinhard Selten (1994)"
 
@@ -40,6 +40,8 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
 
     **O paradoxo da credibilidade:** Para que uma ameaça funcione, ela *não* pode ser executada em equilíbrio. Se o rival acredita na ameaça e não entra, a ameaça nunca é testada. Mas se ela não seria executada caso fosse testada, por que o rival acreditaria? Esse é o papel do comprometimento (Schelling, 1960).
 
+Para tornar esses conceitos concretos, considere o problema clássico de deterrência de entrada — uma situação onipresente em mercados concentrados. Uma firma incumbente ameaça "lutar" caso uma rival entre no mercado. Mas essa ameaça é crível? A indução retroativa nos permite responder com rigor.
+
 ### Exemplo: Jogo de entrada
 
 !!! example "Jogo de entrada (deterrência)"
@@ -58,6 +60,8 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
 
 ### Comprometimento e vantagem estratégica
 
+O exemplo anterior mostra que ameaças vazias são descartadas pela indução retroativa. Mas será que a incumbente está condenada a acomodar a entrada? Não necessariamente. Se ela puder tomar ações *antes* do jogo que alterem seus próprios payoffs futuros, a ameaça pode se tornar crível. Esse é o papel do comprometimento — a arte de restringir as próprias opções para ganhar poder estratégico. Parece paradoxal: como se limitar pode ser vantajoso? A resposta é que, ao eliminar a possibilidade de recuar, o jogador torna sua ameaça inevitável aos olhos do rival.
+
 A impossibilidade de ameaças não críveis pode ser contornada pelo **comprometimento**:
 
 - **Investimento irreversível em capacidade**: se I investe em uma fábrica grande *antes* da decisão de entrada, o custo de lutar cai (a capacidade já existe), tornando a ameaça crível.
@@ -68,9 +72,13 @@ A impossibilidade de ameaças não críveis pode ser contornada pelo **compromet
 
 ## 9b.2 Jogos Repetidos
 
+A análise de jogos sequenciais na seção anterior tratou de interações que ocorrem uma única vez. Mas a maioria das relações econômicas de interesse — entre firmas concorrentes, entre empregador e empregado, entre países que comerciam — envolve interações repetidas ao longo do tempo. Essa repetição muda fundamentalmente a lógica estratégica: quando os mesmos jogadores se encontram novamente amanhã, a possibilidade de punição futura cria incentivos que não existem em jogos de uma só rodada. Será que a cooperação pode emergir do puro autointeresse, sem necessidade de contratos ou regulação externa?
+
 Quando um jogo é jogado repetidamente entre os mesmos jogadores, a possibilidade de **punição futura** pode sustentar a cooperação em equilíbrio, mesmo quando o jogo de estágio tem um único equilíbrio não cooperativo.
 
 ### Jogos finitamente repetidos
+
+A primeira pergunta é natural: se o Dilema dos Prisioneiros é jogado repetidamente entre os mesmos jogadores, a cooperação pode emergir? Se o número de repetições é finito e conhecido, a resposta é decepcionantemente negativa. A lógica é a seguinte: no último período \(T\), não há futuro — e portanto nenhuma ameaça de punição futura funciona. Ambos traem em \(T\). Mas então, em \(T-1\), ambos sabem que a traição ocorrerá em \(T\) independentemente do que aconteça em \(T-1\) — logo não há incentivo para cooperar em \(T-1\). O argumento se desenrola até o primeiro período, como um dominó que desmorona de trás para frente.
 
 Se o Dilema dos Prisioneiros é repetido um número finito \(T\) de vezes (e isso é conhecimento comum), a indução retroativa a partir do período \(T\) implica que o único EPS é a repetição do equilíbrio de estágio (Trair, Trair) em todos os períodos.
 
@@ -78,6 +86,8 @@ Se o Dilema dos Prisioneiros é repetido um número finito \(T\) de vezes (e iss
     O resultado de "desvendamento" (*unraveling*) é forte mas depende de hipóteses restritivas: (i) jogo de estágio com equilíbrio único; (ii) horizonte finito conhecido. Se o jogo de estágio tem múltiplos equilíbrios (como BoS), ou se há incerteza sobre o horizonte, a cooperação pode ser sustentada mesmo em jogos finitos (Benoit e Krishna, 1985).
 
 ### Jogos infinitamente repetidos
+
+O resultado de *unraveling* em jogos finitos é desanimador para quem espera cooperação. Mas o que acontece quando o horizonte é infinito — ou, de forma mais realista, quando os jogadores não sabem exatamente quando o jogo terminará? Nesse caso, o argumento de indução retroativa deixa de funcionar (não há "último período" para iniciar o raciocínio), e a cooperação pode emergir como equilíbrio.
 
 Se o jogo é repetido infinitamente (ou com probabilidade de continuação \(\delta\) a cada período), a cooperação pode ser sustentada como equilíbrio.
 
@@ -90,7 +100,7 @@ No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta
 \frac{R}{1 - \delta} \geq T + \frac{\delta P}{1 - \delta} \quad \Longleftrightarrow \quad \delta \geq \frac{T - R}{T - P} \equiv \delta^*
 \]
 
-O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue.
+O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue. A condição é intuitivamente clara: a cooperação exige que o ganho imediato de trair (\(T - R\)) seja compensado pela perda futura de ser punido (diferença entre \(R\) e \(P\), descontada por \(\delta\)). Quanto mais pacientes os jogadores (maior \(\delta\)), mais fácil é sustentar a cooperação.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Cooperação emerge quando a sombra do futuro é longa o suficiente para que a punição por trair supere o ganho imediato.
@@ -105,6 +115,8 @@ O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jog
 
 ### Folk Theorem
 
+A estratégia de gatilho mostra que a cooperação *pode* ser sustentada. Mas até que ponto a repetição amplia o conjunto de resultados possíveis? O Folk Theorem — assim chamado porque circulava informalmente entre teóricos antes de ser formalmente demonstrado — fornece uma resposta surpreendente e, ao mesmo tempo, perturbadora.
+
 !!! abstract "Folk Theorem (versão informal)"
     Em jogos infinitamente repetidos com fator de desconto suficientemente próximo de 1, **qualquer** payoff individualmente racional e factível pode ser sustentado como equilíbrio de Nash do jogo repetido.
 
@@ -114,6 +126,8 @@ O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jog
     O Folk Theorem é simultaneamente poderoso e problemático. Poderoso porque mostra que a repetição pode resolver dilemas de cooperação. Problemático porque gera uma **multiplicidade** enorme de equilíbrios — praticamente qualquer resultado razoável pode ser sustentado, o que limita o poder preditivo da teoria.
 
 ### Estratégias de punição alternativas
+
+O grim trigger é a estratégia de punição mais simples e severa: uma única traição condena os jogadores à não cooperação perpétua. Mas será que essa punição draconiana é realista? No mundo real, relações comerciais se recuperam de rupturas, parceiros se reconciliam após conflitos. Estratégias mais sofisticadas capturam essa possibilidade de "perdão" e, em muitos contextos, se mostram mais robustas.
 
 Além do grim trigger, existem estratégias mais sofisticadas:
 
@@ -132,18 +146,24 @@ Além do grim trigger, existem estratégias mais sofisticadas:
 
 ## 9b.3 Barganha
 
+Os jogos repetidos mostram como a interação prolongada pode sustentar cooperação. Mas muitas situações econômicas envolvem um tipo diferente de dinâmica: não a repetição de um mesmo jogo, mas uma negociação sequencial sobre a divisão de um excedente. Compradores e vendedores, sindicatos e empresas, países em disputas comerciais — todos enfrentam o problema de como dividir os ganhos do acordo. Os modelos de barganha formalizam essa questão, e a análise por indução retroativa revela resultados que, embora matematicamente elegantes, frequentemente desafiam as intuições comportamentais.
+
 ### O Jogo do Ultimato
 
 O jogo mais simples de barganha: o jogador 1 (proponente) oferece uma divisão \(x\) de um bolo de tamanho 1. O jogador 2 (respondedor) aceita ou rejeita. Se aceita, payoffs são \((x, 1-x)\). Se rejeita, ambos recebem 0.
 
-**Equilíbrio Perfeito em Subjogos:** No subjogo após qualquer oferta \(x\), o respondedor aceita (pois \(1-x \geq 0\)). Antecipando isso, o proponente oferece \(x = 1\) (fica com tudo).
+**Equilíbrio Perfeito em Subjogos:** A análise por indução retroativa começa pelo respondedor. No subjogo após qualquer oferta \(x\), aceitar dá \(1-x \geq 0\) e rejeitar dá \(0\). Portanto, o respondedor aceita qualquer oferta (mesmo a mais miserável). Antecipando isso, o proponente oferece \(x = 1\) (fica com tudo), pois sabe que o respondedor aceitará.
 
 !!! warning "Teoria vs. Evidência"
     A previsão teórica — proponente oferece quase nada, respondedor aceita — é sistematicamente rejeitada em experimentos. Ofertas modais são 40-50% do bolo, e ofertas abaixo de 20% são frequentemente rejeitadas. Isso motivou modelos de preferências sociais (Fehr-Schmidt, Módulo 8) e de racionalidade limitada.
 
 ### Barganha de Rubinstein (ofertas alternadas)
 
+O jogo do ultimato é extremo: uma única oferta, sem possibilidade de contraproposta. Na prática, a maioria das negociações envolve rodadas de ofertas e contraofertas, e o custo do atraso — salários não pagos durante uma greve, produção perdida, oportunidades desperdiçadas — é o que impele as partes ao acordo. O modelo de Rubinstein captura essa dinâmica com elegância e produz um resultado notavelmente preciso.
+
 Dois jogadores alternam propostas com fator de desconto \(\delta \in (0,1)\). No período 1, o jogador 1 propõe; se 2 rejeita, no período 2 o jogador 2 propõe; e assim por diante.
+
+Rubinstein (1982) demonstrou que esse jogo, apesar de ter infinitas rodadas de ofertas e contraofertas, possui um **único EPS**. A divisão é determinada exclusivamente pelos fatores de desconto dos dois jogadores:
 
 O **único EPS** (Rubinstein, 1982) é:
 
@@ -169,6 +189,8 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 ---
 
 ## Box Brasil: Guerra Fiscal do ICMS como Jogo Repetido
+
+Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram aplicações diretas na economia brasileira. Os dois Boxes a seguir ilustram, respectivamente, como a lógica do Dilema dos Prisioneiros repetido explica a persistência da guerra fiscal entre estados e como o modelo de Rubinstein ilumina as negociações salariais na indústria automotiva.
 
 !!! example "Box Brasil — A guerra fiscal do ICMS: uma corrida ao fundo"
     A competição entre estados brasileiros pela atração de investimentos via benefícios fiscais no **ICMS** é um dos exemplos mais claros do Dilema dos Prisioneiros na política econômica brasileira.
@@ -253,6 +275,32 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 
 ---
 
+## Resumo do Capítulo
+
+- Jogos dinâmicos com informação completa envolvem jogadores que agem em sequência, podendo observar as ações anteriores. O conceito de solução central é o **Equilíbrio Perfeito em Subjogos (EPS)**, obtido por **indução retroativa**.
+- O EPS refina o equilíbrio de Nash ao eliminar equilíbrios sustentados por **ameaças não críveis** — ações que o jogador não teria incentivo para executar se o momento chegasse.
+- Em **jogos repetidos infinitamente**, a cooperação pode ser sustentada em equilíbrio via estratégias de punição (grim trigger, tit-for-tat), desde que os jogadores sejam suficientemente pacientes (\(\delta \geq \delta^*\)).
+- O **Folk Theorem** mostra que, com \(\delta\) suficientemente alto, qualquer payoff individualmente racional e factível pode ser sustentado como equilíbrio — gerando multiplicidade de equilíbrios e limitando o poder preditivo.
+- Na **barganha de Rubinstein** (ofertas alternadas), o único EPS gera uma divisão determinada pelos fatores de desconto: o jogador mais paciente obtém a maior fatia.
+- O **comprometimento** — investimento irreversível, contratos vinculantes ou reputação — é o mecanismo que torna ameaças críveis e confere vantagem estratégica.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Indução retroativa | Método de solução que resolve o jogo "de trás para frente", determinando ações ótimas a partir dos últimos nós de decisão. |
+| Equilíbrio Perfeito em Subjogos (EPS) | Perfil de estratégias que constitui um equilíbrio de Nash em todo subjogo do jogo na forma extensiva. |
+| Ameaça não crível | Ação que um jogador ameaça executar mas que não seria ótima no momento da decisão; eliminada pelo EPS. |
+| Comprometimento | Ação irreversível que altera os payoffs futuros, tornando uma ameaça ou promessa crível. |
+| Estratégia de gatilho (Grim Trigger) | Coopera enquanto todos cooperam; se alguém desvia, pune para sempre jogando a estratégia não cooperativa. |
+| Tit-for-Tat | Coopera no primeiro período; depois copia a ação do oponente no período anterior. |
+| Folk Theorem | Resultado que afirma que qualquer payoff factível e individualmente racional pode ser sustentado em equilíbrio de jogo repetido infinitamente com \(\delta\) suficientemente alto. |
+| Fator de desconto (\(\delta\)) | Medida da paciência dos jogadores ou da probabilidade de continuação do jogo; determina a viabilidade da cooperação. |
+| Barganha de Rubinstein | Modelo de ofertas alternadas com desconto cujo único EPS gera divisão proporcional à paciência relativa dos jogadores. |
+| Jogo do Ultimato | Jogo de barganha em que o proponente faz uma oferta e o respondedor aceita ou rejeita; o EPS prevê oferta mínima, mas experimentos mostram ofertas de 40-50%. |
+
+---
+
 ## Exercícios Resolvidos
 
 ??? example "Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
@@ -318,7 +366,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 **Exercício 9b.2.** (Tit-for-Tat) No Dilema dos Prisioneiros repetido com payoffs \(T = 5\), \(R = 3\), \(P = 1\), \(S = 0\):
 
-(a) Mostre que a cooperação com Tit-for-Tat requer \(\delta \geq (T-R)/(T-S) = 2/5\).
+(a) Mostre que a cooperação com Tit-for-Tat requer \(\delta \geq (T-R)/(T-P) = 2/4 = 1/2\).
 
 (b) Compare com o grim trigger. Qual estratégia requer menor \(\delta^*\)?
 
@@ -334,7 +382,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ---
 
-**Exercício 9b.4.** (Conluio com N firmas) Mostre que no Cournot repetido infinitamente com \(N\) firmas simétricas, a cooperação requer \(\delta \geq \frac{(N+1)^2 - 4N}{(N+1)^2 - (N-1)^2}\). Para \(N = 2\), qual é \(\delta^*\)? E para \(N = 10\)?
+**Exercício 9b.4.** (Conluio com N firmas) Mostre que no Cournot repetido infinitamente com \(N\) firmas simétricas, a cooperação requer \(\delta \geq \frac{(N-1)^2(N+1)^2}{(N+1)^4 - 16N^2}\). Para \(N = 2\), qual é \(\delta^*\)? E para \(N = 10\)?
 
 [:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-4)
 

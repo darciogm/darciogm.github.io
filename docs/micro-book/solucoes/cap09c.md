@@ -78,7 +78,7 @@ E[\varepsilon^{(1)}] = 20 \times \frac{N - 1}{N + 1} = 20 \times \frac{2}{4} = 1
 
 (usando a fórmula para a \(k\)-ésima estatística de ordem de \(U[a,b]\): \(E[\varepsilon^{(k)}] = a + (b-a) \times k/(N+1)\).)
 
-O sinal do vencedor é, em média, \(s^{(1)} = 100 + 10 = 110\). Se ele lancar \(b = s = 110\), seu lucro esperado é:
+O sinal do vencedor é, em média, \(s^{(1)} = 100 + 10 = 110\). Se ele lançar \(b = s = 110\), seu lucro esperado é:
 
 \[
 E[\pi | \text{vencer}] = V - s^{(1)} = 100 - 110 = -10

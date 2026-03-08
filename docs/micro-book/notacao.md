@@ -30,7 +30,7 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 |---------|-------------|
 | \(x_i\) | Quantidade consumida do bem \(i\) |
 | \(p_i\) | Preço do bem \(i\) |
-| \(I\) ou \(m\) | Renda do consumidor |
+| \(I\) | Renda do consumidor |
 | \(x_i^*(p_1, p_2, I)\) | Demanda marshalliana (não-compensada) do bem \(i\) |
 | \(h_i(p_1, p_2, \bar{U})\) | Demanda hicksiana (compensada) do bem \(i\) |
 
@@ -46,12 +46,13 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 
 | Símbolo | Significado |
 |---------|-------------|
-| \(q\) ou \(y\) | Quantidade produzida (output) |
+| \(q\) | Quantidade produzida (output) |
 | \(f(K, L)\) ou \(f(\mathbf{x})\) | Função de produção |
 | \(K\) | Capital |
 | \(L\) | Trabalho |
 | \(w\) | Salário (preço do trabalho) |
-| \(r\) ou \(v\) | Preço do capital (taxa de aluguel) |
+| \(v\) | Preço do capital (taxa de aluguel) |
+| \(r\) | Taxa de juros |
 | \(C(q)\) | Função custo total |
 | \(C(w, r, q)\) | Função custo (com preços dos insumos) |
 | \(CMg\) | Custo marginal |
@@ -102,6 +103,15 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(\frac{\partial f}{\partial x}\) | Derivada parcial de \(f\) em relação a \(x\) |
 | \(\nabla f\) | Gradiente de \(f\) |
 | \(\mathcal{L}\) | Lagrangeano |
-| \(\lambda\) | Multiplicador de Lagrange |
+| \(\lambda\) | Multiplicador de Lagrange (primal e dual) |
+| \(\mu\) | Crenças bayesianas (teoria dos jogos); média (estatística); proporção de tipos (screening) |
 | \(\Delta\) | Variação discreta |
 | \(d\) | Diferencial |
+
+## Convenções de Notação
+
+- **Preços**: sempre minúsculo (\(p\), \(p_i\), \(p_t\)). Exceção: \(P\) em citações de provas ANPEC preserva a notação original.
+- **Renda**: sempre \(I\). A letra \(m\) é reservada para sinais em jogos de sinalização ou número de restrições em KKT.
+- **Output**: sempre \(q\). A letra \(y\) é reservada para vetores de produção em equilíbrio geral (\(y_j^k\)), variáveis informativas genéricas, ou bens de consumo em questões ANPEC.
+- **Custo marginal**: sempre \(CMg\) (português). Siglas em inglês (\(MC\)) não são utilizadas.
+- **Multiplicador de Lagrange**: sempre \(\lambda\), tanto no problema primal quanto no dual.

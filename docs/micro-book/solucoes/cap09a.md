@@ -119,7 +119,7 @@ E[\pi_E] = 0{,}6 \times (-2) + 0{,}4 \times 4 = -1{,}2 + 1{,}6 = 0{,}4 > 0
 
 **BNE:** Entrante entra; incumbente aceita (não tem ação estratégica após a entrada neste jogo simplificado).
 
-Se \(\Pr(\theta_F) > 2/3\): \(E[\pi_E] = 0{,}6p(-2) + (1-p)(4) < 0\) quando \(p > 2/3\), e a entrante não entra.
+Se \(\Pr(\theta_F) > 2/3\): \(E[\pi_E] = p \cdot (-2) + (1-p) \cdot 4 < 0\) quando \(p > 2/3\), e a entrante não entra.
 
 **(c)** Sim, a incumbente fraca teria incentivo para sinalizar força (por exemplo, investindo em capacidade ou praticando preços agressivos antes da decisão de entrada). Se a sinalização for crível, a entrante atualiza suas crenças para \(\Pr(\theta_F) > 2/3\) e não entra. No entanto, a incumbente forte também gostaria de sinalizar — o que pode gerar equilíbrios pooling (ambos os tipos sinalizam) ou separadores (apenas um tipo sinaliza), dependendo dos custos de sinalização para cada tipo.
 

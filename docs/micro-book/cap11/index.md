@@ -18,7 +18,7 @@ A compreensão da estrutura de custos é indispensável para a análise da ofert
 !!! definition "Custo contábil"
     O **custo contábil** registra apenas os desembolsos efetivamente realizados — custos explícitos. Não considera o custo de oportunidade dos recursos próprios da firma.
 
-A diferença entre lucro econômico e lucro contábil é dada pelos custos implícitos:
+Por que essa distinção importa? Porque o contador e o economista podem olhar para o mesmo balanço e chegar a conclusões opostas sobre a saúde financeira de uma empresa. O lucro contábil pode ser positivo enquanto o lucro econômico é negativo — o que significa que a empresa está destruindo valor, pois seus recursos renderiam mais em outro uso. A diferença entre lucro econômico e lucro contábil é dada pelos custos implícitos:
 
 \[
 \pi_{\text{econômico}} = \text{Receita total} - \text{Custos explícitos} - \text{Custos implícitos}
@@ -42,12 +42,16 @@ Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é
 
 ### Custos irrecuperáveis (sunk costs)
 
+A distinção entre custo econômico e custo contábil não é a única armadilha conceitual na análise de custos. Outra categoria merece atenção especial — não por ser relevante para as decisões futuras da firma, mas justamente por *não* dever sê-lo. Trata-se dos custos irrecuperáveis, cuja compreensão é essencial para a tomada de decisão racional.
+
 !!! note "Custos irrecuperáveis"
     **Custos irrecuperáveis** (*sunk costs*) são despesas já realizadas e que não podem ser recuperadas. Do ponto de vista da tomada de decisão racional, custos irrecuperáveis **não devem influenciar** decisões correntes e futuras — apenas custos evitáveis (prospectivos) são relevantes. Contudo, a economia comportamental documenta extensamente o viés dos custos irrecuperáveis (*sunk cost fallacy*), pelo qual agentes continuam investindo em projetos fracassados para "justificar" gastos passados.
 
 ---
 
 ## 11.2 Maximização de Lucro e Minimização de Custos
+
+Definidos os conceitos de custo econômico e custo de oportunidade, podemos agora perguntar: qual é a relação entre o objetivo da firma — maximizar lucro — e o problema de minimizar custos? À primeira vista, parecem ser dois lados da mesma moeda. E de fato são intimamente relacionados, mas a relação tem uma sutil assimetria que merece atenção.
 
 A firma maximizadora de lucro resolve:
 
@@ -70,9 +74,11 @@ Um resultado central é que a **maximização de lucro implica minimização de 
 
 ## 11.3 Minimização de Custos: Isocusto e Tangência
 
+Estabelecida a relação entre maximização de lucro e minimização de custos, mergulhamos agora na análise detalhada do problema de minimização. A estrutura é elegantemente simétrica à do problema do consumidor que minimiza gasto para atingir um dado nível de utilidade (Capítulo 5): aqui, a firma busca a combinação de insumos de menor custo que ainda permita atingir o nível de produto desejado. Essa simetria não é mera coincidência — ela reflete a dualidade fundamental entre produção e custos que percorre toda a teoria da firma.
+
 <figure markdown="span">
   <iframe src="../graficos/cap11/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 10.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
+  <figcaption markdown="span"><strong>Figura 11.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
 </figure>
 
 ### O problema de minimização de custos
@@ -117,6 +123,8 @@ Igualando:
 \frac{w}{f_L} = \frac{r}{f_K} \implies \frac{f_L}{f_K} = \frac{w}{r} \implies \mathrm{TMST}_{L,K} = \frac{w}{r}
 \]
 
+Essa condição tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/r\)). Se a TMST fosse maior que \(w/r\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
+
 !!! abstract "Condição de minimização de custos"
     No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
 
@@ -132,6 +140,8 @@ Igualando:
 
 ### Demandas condicionadas por insumos
 
+A condição de tangência nos diz *como* os insumos devem ser combinados no ótimo, mas não *quanto* de cada insumo é necessário. Para isso, precisamos resolver simultaneamente a condição de tangência e a restrição tecnológica \(f(K, L) = q_0\). O resultado são as **demandas condicionadas** por insumos.
+
 Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = q_0\), obtemos as **demandas condicionadas** (ou demandas hicksianas na produção):
 
 \[
@@ -143,6 +153,8 @@ Estas funções expressam as quantidades ótimas de cada insumo como funções d
 ---
 
 ## 11.4 A Função Custo e o Lema de Shephard
+
+A minimização de custos nos forneceu as demandas condicionadas por insumos — as quantidades ótimas de capital e trabalho para cada nível de produto, dados os preços. Substituindo essas demandas de volta na expressão de custo, obtemos a **função custo**, que sintetiza toda a informação relevante sobre a tecnologia e os preços em uma única relação entre custo mínimo e quantidade produzida. Essa função é a peça central da análise dual da firma, e dela emerge um dos resultados mais elegantes da microeconomia: o Lema de Shephard.
 
 ### A função custo
 
@@ -218,9 +230,11 @@ A função custo possui as seguintes propriedades:
 
 ## 11.5 Curvas de Custo
 
+A função custo derivada na seção anterior é uma construção abstrata que relaciona custo mínimo a preços de insumos e nível de produto. Nesta seção, fixamos os preços dos insumos e examinamos como o custo varia com a quantidade produzida — obtendo as célebres curvas de custo total, custo médio e custo marginal que constituem o instrumental básico de análise da firma. Compreender as relações geométricas entre essas curvas — em particular, por que o custo marginal cruza o custo médio em seu ponto de mínimo — é fundamental para a análise da oferta e para a resolução de problemas da ANPEC.
+
 <figure markdown="span">
   <iframe src="../graficos/cap11/curvas-custo.html" width="100%" height="600" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 10.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
+  <figcaption markdown="span"><strong>Figura 11.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
 </figure>
 
 ### Custo total, custo médio e custo marginal
@@ -280,6 +294,8 @@ Com rendimentos marginais inicialmente crescentes e depois decrescentes (o forma
 
 ## 11.6 Deslocamentos nas Curvas de Custo
 
+As curvas de custo analisadas até aqui foram derivadas para preços de insumos e tecnologia fixos. Mas o mundo real é dinâmico: salários sobem, o preço da energia flutua, novas tecnologias surgem e a regulação muda. Como essas mudanças afetam as curvas de custo da firma? Esta seção examina três fontes de deslocamento: variações nos preços dos insumos, progresso técnico e tributação.
+
 ### Mudanças nos preços dos insumos
 
 Um aumento no salário \(w\) desloca para cima as curvas de custo. Pelo Lema de Shephard, o impacto é proporcional à quantidade de trabalho utilizada:
@@ -305,9 +321,11 @@ Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um impos
 
 ## 11.7 Curto Prazo versus Longo Prazo: A Curva Envoltória
 
+Uma das distinções mais importantes da teoria dos custos é entre curto e longo prazo. No curto prazo, pelo menos um insumo está fixo, e a firma opera com uma "planta" dada — arcando com custos que poderiam ser menores se pudesse redimensionar suas instalações. No longo prazo, todos os insumos são ajustáveis, e a firma pode escolher a escala de planta que minimiza seus custos para cada nível de produção. A relação entre essas duas perspectivas temporais gera a célebre **curva envoltória** — uma das construções mais elegantes da teoria dos custos.
+
 <figure markdown="span">
   <iframe src="../graficos/cap11/curto-longo-prazo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 10.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
+  <figcaption markdown="span"><strong>Figura 11.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
 </figure>
 
 ### Custos de curto prazo
@@ -360,7 +378,7 @@ A forma da curva \(\mathrm{CMe}_{LP}\) reflete os rendimentos de escala:
 - **Rendimentos constantes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) constante.
 - **Rendimentos decrescentes de escala** \(\Leftrightarrow\) \(\mathrm{CMe}_{LP}\) crescente \(\Leftrightarrow\) **deseconomias de escala**.
 
-A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o CMe de longo prazo atinge seu mínimo. A EME tem implicações diretas para a estrutura de mercado: se a EME é grande em relação ao tamanho do mercado, o setor tende a ter poucas firmas (oligopólio ou monopólio natural).
+A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o CMe de longo prazo atinge seu mínimo. A EME tem implicações diretas para a estrutura de mercado: se a EME é grande em relação ao tamanho do mercado, o setor tende a ter poucas firmas (oligopólio ou monopólio natural). Por exemplo, se a EME de uma montadora de automóveis é de 200 mil veículos por ano e o mercado brasileiro absorve 2 milhões, o mercado comporta no máximo dez montadoras eficientes — o que ajuda a explicar a estrutura oligopolística observada nesse setor.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Economias de escala significam que produzir mais sai mais barato por unidade — o custo médio cai conforme a firma cresce.
@@ -420,6 +438,8 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ## 11.8 Demandas Condicionais e Função Custo por Tipo de Função de Produção
 
+As seções anteriores desenvolveram os conceitos gerais de minimização de custos, função custo e curvas de custo. Agora é hora de aplicar esses conceitos de forma sistemática às quatro funções de produção clássicas estudadas no Capítulo 10 — Cobb-Douglas, linear, Leontief e CES. Para cada uma, derivamos explicitamente as demandas condicionais por insumos, a função custo resultante e, quando a solução existe, as demandas por insumos via maximização de lucro. Esse catálogo de resultados será referência constante nos capítulos seguintes e nos exercícios da ANPEC.
+
 Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(r\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
 
 ### 11.8.1 Cobb-Douglas: q = Kᵅ Lᵝ
@@ -433,17 +453,17 @@ Nesta seção, derivamos as demandas condicionais por insumos, a função custo 
 O Lagrangeano é:
 
 \[
-\mathcal{L} = rK + wL + \mu(q - K^\alpha L^\beta)
+\mathcal{L} = rK + wL + \lambda(q - K^\alpha L^\beta)
 \]
 
 Condições de primeira ordem:
 
 \[
-\frac{\partial \mathcal{L}}{\partial K} = r - \mu \alpha K^{\alpha-1} L^\beta = 0
+\frac{\partial \mathcal{L}}{\partial K} = r - \lambda \alpha K^{\alpha-1} L^\beta = 0
 \]
 
 \[
-\frac{\partial \mathcal{L}}{\partial L} = w - \mu \beta K^\alpha L^{\beta-1} = 0
+\frac{\partial \mathcal{L}}{\partial L} = w - \lambda \beta K^\alpha L^{\beta-1} = 0
 \]
 
 Dividindo a primeira CPO pela segunda:
@@ -494,7 +514,7 @@ onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\a
 p\alpha K^{\alpha-1}L^\beta = r, \qquad p\beta K^\alpha L^{\beta-1} = w
 \]
 
-Resolvendo o sistema (detalhes em Cap. 11):
+Resolvendo o sistema (detalhes em Cap. 12):
 
 \[
 \boxed{L^*(w,r,p) = \left(\frac{p\,\alpha^\alpha\,\beta^{1-\alpha}}{w^{1-\alpha}\,r^\alpha}\right)^{1/(1-\alpha-\beta)}, \quad K^*(w,r,p) = \left(\frac{p\,\alpha^{1-\beta}\,\beta^\beta}{w^\beta\,r^{1-\beta}}\right)^{1/(1-\alpha-\beta)}}
@@ -559,7 +579,7 @@ A função CES generaliza os três casos anteriores. O parâmetro \(\rho\) deter
 \min_{K,L} \; rK + wL \quad \text{s.a.} \quad (\alpha K^\rho + \beta L^\rho)^{1/\rho} = q
 \]
 
-O Lagrangeano é \(\mathcal{L} = rK + wL + \mu[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
+O Lagrangeano é \(\mathcal{L} = rK + wL + \lambda[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
 
 \[
 \frac{r}{w} = \frac{\alpha K^{\rho-1}}{\beta L^{\rho-1}} \quad \Longrightarrow \quad \frac{K}{L} = \left(\frac{\alpha\, w}{\beta\, r}\right)^\sigma
@@ -592,13 +612,37 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 !!! info "Casos limite da CES na produção"
     - \(\rho \to 0\) (\(\sigma \to 1\)): converge para Cobb-Douglas \(q = K^\alpha L^\beta\) (com \(\alpha + \beta = 1\) sob CRS)
     - \(\rho \to 1\) (\(\sigma \to \infty\)): converge para tecnologia linear \(q = \alpha K + \beta L\)
-    - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K/\alpha, L/\beta\}\)
+    - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K, L\}\) (na parametrização com pesos \(\delta, 1-\delta\); para a forma \(\min\{K/a, L/b\}\), os coeficientes devem estar dentro da função \(\min\))
+
+## Resumo do Capítulo
+
+- O **custo econômico** difere do custo contábil por incluir o custo de oportunidade dos recursos próprios da firma (capital do proprietário, tempo do empreendedor), enquanto o custo contábil registra apenas desembolsos efetivos. Essa distinção é fundamental para avaliar corretamente a lucratividade de um negócio.
+- No **curto prazo**, a firma opera com pelo menos um insumo fixo, gerando custos fixos e variáveis. As curvas de custo marginal (CMg), custo variável médio (CVMe) e custo total médio (CTMe) possuem formato em U — reflexo da lei dos rendimentos marginais decrescentes — e se relacionam de maneira precisa: o CMg cruza o CVMe e o CTMe em seus respectivos pontos de mínimo.
+- No **longo prazo**, todos os insumos são variáveis e a firma resolve o problema de **minimização de custos** sujeita à restrição tecnológica, o que gera a condição de tangência entre a isocusto e a isoquanta: $\mathrm{TMST} = w/r$.
+- O **Lema de Shephard** estabelece que as demandas condicionadas por insumos podem ser obtidas como derivadas parciais da função custo em relação aos preços dos insumos, conectando a dualidade entre produção e custos.
+- As **economias de escala** e as **economias de escopo** explicam por que firmas maiores ou diversificadas podem ter custos médios menores, sendo conceitos centrais para a organização industrial. A curva de custo médio de longo prazo é a envoltória das curvas de curto prazo.
+- No contexto brasileiro, o chamado **"custo Brasil"** — carga tributária, logística deficiente, burocracia — representa um deslocamento para cima da curva de custos das firmas nacionais, reduzindo sua competitividade internacional.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Custo econômico | Custo total de utilização de recursos, incluindo custos explícitos (desembolsos) e implícitos (custo de oportunidade dos recursos próprios). |
+| Custo de oportunidade | Valor do melhor uso alternativo de um recurso; base do conceito de custo econômico. |
+| Custo fixo (CF) | Custo que não varia com o nível de produção no curto prazo (aluguel, depreciação de equipamentos). |
+| Custo variável (CV) | Custo que varia com o nível de produção (matéria-prima, mão de obra variável). |
+| Custo marginal (CMg) | Acréscimo ao custo total decorrente da produção de uma unidade adicional: $\mathrm{CMg} = dCT/dq$. |
+| Isocusto | Reta representando todas as combinações de insumos que geram o mesmo custo total: $C = wL + rK$. |
+| Lema de Shephard | As demandas condicionadas (hicksianas) por insumos são obtidas derivando a função custo em relação ao preço de cada insumo: $L^*(w,r,q) = \partial C/\partial w$. |
+| Economias de escala | Redução do custo médio de longo prazo à medida que a escala de produção aumenta. |
+| Economias de escopo | Redução de custos ao produzir dois ou mais bens conjuntamente em vez de separadamente. |
+| Curva envoltória | Curva de custo médio de longo prazo, tangente a cada curva de custo médio de curto prazo no ponto ótimo de escala de planta. |
 
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 10.1 — Custo econômico versus custo contábil"
+??? example "Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
 
     **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
 
@@ -629,7 +673,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
-??? example "Exercício Resolvido 10.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+??? example "Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(r = 2\).
 
@@ -695,7 +739,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
-??? example "Exercício Resolvido 10.3 — Curto prazo versus longo prazo"
+??? example "Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(r = 10\).
 
@@ -743,9 +787,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ## Exercícios
 
-!!! tip "Exercícios do Capítulo 11"
-
-**Exercício 10.1.**
+**Exercício 11.1.**
 Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(r = 1\).
 
 (a) Derive as demandas condicionadas por insumos \(K^c(w, r, q)\) e \(L^c(w, r, q)\).
@@ -758,11 +800,11 @@ Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrent
 
 (e) Determine o custo marginal e o custo médio e mostre que são constantes. Explique por que isso ocorre (dica: relacione com rendimentos de escala).
 
-[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-1)
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-11-1)
 
 ---
 
-**Exercício 10.2.**
+**Exercício 11.2.**
 Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + q^3/3\).
 
 (a) Identifique o custo fixo e o custo variável.
@@ -773,11 +815,11 @@ Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + 
 
 (d) Verifique que o CMg cruza o CMe e o CVMe nos respectivos pontos de mínimo.
 
-[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-2)
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-11-2)
 
 ---
 
-**Exercício 10.3.**
+**Exercício 11.3.**
 Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 8\) e \(w = 2\).
 
 (a) Derive a função custo \(C(q)\).
@@ -786,11 +828,11 @@ Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 
 
 (c) Compare com o caso de uma Cobb-Douglas com rendimentos constantes. Em que se assemelham os custos?
 
-[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-3)
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-11-3)
 
 ---
 
-**Exercício 10.4.**
+**Exercício 11.4.**
 Explique graficamente e algebricamente por que a curva de custo médio de longo prazo é a envoltória das curvas de custo médio de curto prazo. Use o caso de uma firma com função de produção \(q = K^{1/3}L^{1/3}\) e preços de insumos \(w = r = 1\) para:
 
 (a) Derivar a função custo de longo prazo.
@@ -799,11 +841,11 @@ Explique graficamente e algebricamente por que a curva de custo médio de longo 
 
 (c) Mostrar que \(\mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}=4)\) para todo \(q\), com igualdade em um ponto específico.
 
-[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-4)
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-11-4)
 
 ---
 
-**Exercício 10.5.**
+**Exercício 11.5.**
 Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + \beta = 1\) (rendimentos constantes de escala).
 
 (a) Mostre que a função custo é linear em \(q\): \(C(w, r, q) = c(w, r) \cdot q\), onde \(c(w, r)\) é o custo unitário.
@@ -814,13 +856,13 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 (d) Interprete economicamente: por que rendimentos constantes de escala implicam custos marginais constantes?
 
-[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-5)
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-11-5)
 
 ---
 
 ## 🏆 Vem, ANPEC!
 
-??? question "ANPEC 2020 — Questão 06"
+??? question "ANPEC 2020 — Questão 6"
     Em um ano, uma empresa apresentou os seguintes dados contábeis: \$ 1 milhão de receitas, \$ 300 mil de compras de matérias primas, \$ 30 mil de despesas com água e energia elétrica, \$ 100 mil de gastos com a folha de salários e \$ 120 mil de gasto com o salário do proprietário da empresa. O empresário tem a opção de fechar sua empresa e alugar as instalações por \$ 200 mil por ano. Ele também tem duas ofertas de emprego: uma com salário anual de \$ 90 mil e outra com salário anual de \$ 150 mil. O proprietário somente pode aceitar uma dessas ofertas, caso decida fazê-lo, e seria obrigado a fechar seu negócio. Levando em conta essas informações e a teoria dos custos, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -842,7 +884,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
         - **Item 3 — V:** Como o lucro econômico é \$220k > 0, a empresa remunera todos os fatores acima de seu custo de oportunidade. O proprietário deve continuar operando.
         - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua \$220k > 0 independentemente de custos já afundados. A decisão racional é continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva (Seção 11.1).
 
-??? question "ANPEC 2018 — Questão 05"
+??? question "ANPEC 2018 — Questão 5"
     Com relação aos custos de produção, indique quais das afirmações abaixo são verdadeiras e quais são falsas:
 
     | Item | Afirmação |
@@ -864,7 +906,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
         - **Item 3 — V:** \(CMe = a + bq + cq^2\) e \(CMg = a + 2bq + 3cq^2\). Para os parâmetros convencionais (\(b < 0, c > 0\)), ambas são parábolas com concavidade para cima, gerando o formato de U clássico (Seção 11.5).
         - **Item 4 — V:** Custos quase fixos são custos que não variam com o nível de produção, mas que só existem quando a firma produz (\(q > 0\)). Diferem dos custos fixos tradicionais, que são incorridos mesmo com \(q = 0\). Exemplos incluem o custo de aquecimento de um forno industrial ou a equipe mínima de operação.
 
-??? question "ANPEC 2022 — Questão 05"
+??? question "ANPEC 2022 — Questão 5"
     Com relação à Teoria dos Custos, julgue os itens a seguir:
 
     | Item | Afirmação |
@@ -897,7 +939,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
     **Resultado principal:** Os resultados mostraram que a curva de CMe de longo prazo tinha de fato formato de U: economias de escala significativas para firmas pequenas e médias, custos médios aproximadamente constantes para firmas com geração acima de 20 bilhões de kWh, e leves deseconomias para as maiores. Isso contrastava com estimativas anteriores (usando formas funcionais restritivas como a Cobb-Douglas), que encontravam economias de escala ilimitadas — artefato da imposição de retornos crescentes homogêneos.
 
-    **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 10.4 e 10.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
+    **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 11.4 e 11.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
 
 ??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). [Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061). *American Economic Review*, 106(6), 1320-1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
     **Pergunta central:** Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?

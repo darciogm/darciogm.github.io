@@ -23,7 +23,7 @@ Em uma economia com \(n\) bens, os preços \(p_1, p_2, \ldots, p_n\) são determ
 
 ### Homogeneidade e normalização
 
-Em um sistema competitivo, apenas os **preços relativos** importam. As funções de demanda e oferta são homogêneas de grau zero nos preços: se todos os preços dobram, as quantidades demandadas e ofertadas não se alteram. Isso permite normalizar os preços, fixando um bem como **numerário** com preço igual a 1:
+Uma observação aparentemente simples, mas com profundas implicações, é que em um sistema competitivo apenas os **preços relativos** importam. As funções de demanda e oferta são homogêneas de grau zero nos preços: se todos os preços dobram, as quantidades demandadas e ofertadas não se alteram. Isso permite normalizar os preços, fixando um bem como **numerário** com preço igual a 1:
 
 \[
 p_n = 1 \quad \Rightarrow \quad \text{sistema com } n-1 \text{ preços relativos a determinar}
@@ -32,6 +32,8 @@ p_n = 1 \quad \Rightarrow \quad \text{sistema com } n-1 \text{ preços relativos
 ---
 
 ## 14.2 Modelo Gráfico: A Caixa de Edgeworth
+
+A definição formal de equilíbrio geral competitivo — um vetor de preços que equilibra simultaneamente todos os mercados — pode parecer abstrata à primeira vista. Para desenvolver intuição antes de mergulhar na formalização matemática, começamos por um modelo gráfico simples e profundamente iluminador: a Caixa de Edgeworth. Trata-se de uma economia mínima, com apenas dois consumidores e dois bens, mas que já captura a essência das trocas voluntárias, da eficiência e do papel dos preços relativos.
 
 ### Construção
 
@@ -75,6 +77,8 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 
 ## 14.3 Troca Pura: Curva de Contrato e Núcleo
 
+A Caixa de Edgeworth nos permitiu visualizar alocações e curvas de indiferença. Agora, podemos formular a pergunta central da economia do bem-estar: entre todas as alocações possíveis, quais são "boas"? Mais precisamente, quais alocações não desperdiçam oportunidades de trocas mutuamente benéficas? O conceito de eficiência de Pareto fornece o critério, e a curva de contrato identifica o locus de todas as alocações eficientes.
+
 ### Eficiência de Pareto na troca
 
 !!! definition "Eficiência de Pareto"
@@ -83,7 +87,7 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Uma situação é eficiente no sentido de Pareto quando não dá mais para melhorar a vida de alguém sem prejudicar outra pessoa.
 
-    **Pense assim:** Pense em uma partilha de bolo de aniversário. Se dá para refattiar o bolo de modo que alguém ganhe um pedaço maior sem que ninguém fique com um pedaço menor, a divisão original era ineficiente. Eficiência de Pareto é quando todo o bolo já foi distribuído da melhor forma possível — qualquer mudança que beneficie alguém necessariamente tira de outro.
+    **Pense assim:** Pense em uma partilha de bolo de aniversário. Se dá para refatiar o bolo de modo que alguém ganhe um pedaço maior sem que ninguém fique com um pedaço menor, a divisão original era ineficiente. Eficiência de Pareto é quando todo o bolo já foi distribuído da melhor forma possível — qualquer mudança que beneficie alguém necessariamente tira de outro.
 
     **Por que isso importa:** Eficiência de Pareto é o critério mínimo de "bom funcionamento" de uma economia, mas não diz nada sobre justiça — uma sociedade onde uma pessoa tem tudo e as demais nada pode ser Pareto-eficiente, o que mostra por que eficiência e equidade são questões distintas.
 
@@ -106,11 +110,13 @@ O **núcleo** é um subconjunto da curva de contrato: inclui apenas as alocaçõ
 U_A(x_A) \geq U_A(\omega_A) \quad \text{e} \quad U_B(x_B) \geq U_B(\omega_B)
 \]
 
-O equilíbrio walrasiano pertence ao núcleo. Além disso, à medida que a economia é "replicada" (duplicando o número de consumidores de cada tipo), o núcleo se contrai, convergindo para o equilíbrio walrasiano no limite — este é o **Teorema do Limite do Núcleo** de Debreu e Scarf.
+O equilíbrio walrasiano pertence ao núcleo. Além disso, à medida que a economia é "replicada" (duplicando o número de consumidores de cada tipo), o núcleo se contrai, convergindo para o equilíbrio walrasiano no limite — este é o **Teorema do Limite do Núcleo** de Debreu e Scarf. Esse resultado tem um significado profundo: em economias grandes, com muitos agentes, o poder de barganha individual se dilui e o resultado de mercado se aproxima do único resultado que nenhuma coalizão de agentes pode melhorar. É a versão mais rigorosa da ideia de que a concorrência elimina o poder de mercado.
 
 ---
 
 ## 14.4 Produção e Troca: Fronteira de Possibilidades de Produção
+
+A análise da Caixa de Edgeworth tratou de uma economia de troca pura — os bens já existem e a única questão é como distribuí-los. Mas em economias reais, os bens precisam ser produzidos, e a alocação de insumos entre setores produtivos é uma decisão tão importante quanto a distribuição de bens entre consumidores. Ao introduzir produção no modelo, surge uma nova dimensão de eficiência e um novo instrumento gráfico fundamental: a **fronteira de possibilidades de produção** (FPP).
 
 ### Eficiência na produção
 
@@ -138,13 +144,13 @@ A eficiência econômica plena requer que a TMT iguale a TMS comum aos consumido
 TMT = TMS_A^{12} = TMS_B^{12}
 \]
 
-Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis.
+Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis. Se, por exemplo, os consumidores estivessem dispostos a trocar 3 unidades do bem 2 por 1 do bem 1 (TMS = 3), mas a economia só precisasse sacrificar 1 unidade do bem 2 para produzir 1 do bem 1 (TMT = 1), seria eficiente produzir mais do bem 1 — pois o benefício para os consumidores superaria o custo de oportunidade. A igualdade TMT = TMS elimina essas oportunidades de melhoria.
 
 ---
 
 ## Tabela: Condições de Eficiência de Pareto
 
-A tabela abaixo sintetiza as três condições marginais para a eficiência de Pareto em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
+As seções anteriores identificaram três tipos de eficiência: na troca (entre consumidores), na produção (entre setores) e no mix de produtos (entre o que se produz e o que se deseja consumir). A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A tabela abaixo sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
 
 | Tipo de eficiência | Condição marginal | Interpretação |
 |---|---|---|
@@ -187,6 +193,8 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 ---
 
 ## 14.5 O Primeiro Teorema do Bem-Estar
+
+As condições de eficiência na troca, na produção e no mix de produtos — sintetizadas na tabela acima — são alcançadas simultaneamente pelo equilíbrio competitivo. Esse resultado não é óbvio: como é possível que milhões de agentes, cada um perseguindo seu próprio interesse, sem nenhuma coordenação central, cheguem a um resultado eficiente? O Primeiro Teorema do Bem-Estar formaliza essa intuição, constituindo o resultado mais importante de toda a teoria do equilíbrio geral.
 
 !!! abstract "Primeiro Teorema do Bem-Estar"
     Se todos os consumidores e firmas são tomadores de preço, e se existe um mercado completo para cada bem, então o equilíbrio competitivo (walrasiano) é **eficiente no sentido de Pareto**.
@@ -252,6 +260,8 @@ Este é o resultado formal que dá substância à intuição da "mão invisível
 
 ## 14.6 O Segundo Teorema do Bem-Estar
 
+O Primeiro Teorema nos diz que o equilíbrio competitivo é eficiente — mas *qual* equilíbrio eficiente? A curva de contrato contém infinitas alocações Pareto-eficientes, e algumas delas são altamente desiguais. O mercado seleciona um ponto específico na curva de contrato, determinado pelas dotações iniciais dos agentes. Se a sociedade considera a distribuição resultante injusta, será necessário sacrificar a eficiência para obter equidade? O Segundo Teorema do Bem-Estar responde a essa pergunta com um resultado surpreendentemente otimista.
+
 !!! abstract "Segundo Teorema do Bem-Estar"
     Se as preferências dos consumidores são convexas e localmente não saciadas, e se os conjuntos de produção das firmas são convexos, então qualquer alocação Pareto-eficiente pode ser alcançada como um equilíbrio competitivo, desde que se realizem transferências lump-sum apropriadas das dotações iniciais.
 
@@ -307,6 +317,8 @@ Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo 
 
 ## 14.7 Modelo Matemático de Troca
 
+Até aqui, a análise de equilíbrio geral apoiou-se em argumentos gráficos (Caixa de Edgeworth) e na enunciação dos Teoremas do Bem-Estar. Agora, formalizamos o modelo matematicamente, introduzindo as funções de excesso de demanda e a Lei de Walras — ferramentas que nos permitirão, na seção seguinte, demonstrar a existência do equilíbrio walrasiano.
+
 ### Funções de excesso de demanda
 
 Defina a **demanda líquida** (ou excesso de demanda) do consumidor \(i\) pelo bem \(k\) como:
@@ -355,9 +367,13 @@ Somando sobre todos os consumidores:
 !!! tip "Consequência importante"
     A Lei de Walras implica que, em um sistema com \(n\) mercados, se \(n - 1\) deles estão em equilíbrio, o \(n\)-ésimo mercado também estará necessariamente em equilíbrio. Portanto, há apenas \(n - 1\) equações de equilíbrio independentes — exatamente o número de preços relativos a determinar (após normalização).
 
+Essa consequência é profundamente significativa do ponto de vista prático. Ela significa que o "leiloeiro walrasiano" do Capítulo 13 não precisa verificar *todos* os mercados: basta equilibrar \(n-1\) deles, e o último se equilibra automaticamente. Também explica por que a normalização de um preço como numerário é legítima — ela não elimina informação, pois corresponde exatamente à equação redundante que a Lei de Walras garante.
+
 ---
 
 ## 14.8 Existência de Equilíbrio
+
+A formalização da seção anterior nos forneceu as funções de excesso de demanda e a Lei de Walras. Mas uma questão fundamental permanece em aberto: existe de fato um vetor de preços que equilibra todos os mercados simultaneamente? Não é *a priori* evidente que um sistema de \(n-1\) equações não lineares interdependentes tenha solução. A demonstração de existência, devida a Arrow e Debreu (1954), é uma das mais célebres da economia matemática e utiliza um resultado da topologia: o Teorema do Ponto Fixo de Brouwer.
 
 ### O Teorema do Ponto Fixo de Brouwer
 
@@ -411,6 +427,8 @@ Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \ma
 
 ## 14.9 Modelo Matemático de Produção e Troca
 
+A demonstração de existência da seção anterior tratou de uma economia de troca pura. Como o modelo se generaliza quando incorporamos firmas que produzem bens a partir de insumos? A estrutura conceitual é a mesma — buscar um ponto fixo no mapeamento de preços —, mas a definição de equilíbrio precisa agora incluir as decisões de produção das firmas e a distribuição de seus lucros entre os consumidores acionistas.
+
 ### Extensão com produção
 
 Quando incluímos firmas na economia, o modelo se generaliza. Com \(J\) firmas, cada firma \(j\) escolhe um plano de produção \(\mathbf{y}_j \in Y_j\) (seu conjunto de produção) para maximizar lucro:
@@ -445,6 +463,8 @@ A Lei de Walras generaliza-se naturalmente: o valor do excesso de demanda (agora
 ---
 
 ## 14.10 Modelos Computáveis de Equilíbrio Geral (CGE)
+
+A teoria walrasiana desenvolvida nas seções anteriores — com suas condições de equilíbrio, Teoremas do Bem-Estar e provas de existência — é matematicamente elegante, mas pode parecer distante da realidade de uma economia com milhares de setores, milhões de agentes e complexas interdependências. Como traduzir essa teoria em análises quantitativas capazes de avaliar o impacto de políticas públicas concretas, como a reforma tributária brasileira ou o acordo Mercosul-UE? A resposta está nos modelos computáveis de equilíbrio geral (CGE), que representam a ponte entre a teoria e a prática.
 
 ### Da teoria à prática
 
@@ -505,11 +525,35 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
     4. **Limitações**: Os modelos CGE baseiam-se em hipóteses de concorrência perfeita (na maioria das versões), retornos constantes de escala e pleno emprego de fatores. Extensões incorporando economias de escala, concorrência imperfeita e desemprego (modelos "novos CGE") são áreas ativas de pesquisa no Brasil.
 
+## Resumo do Capítulo
+
+- O **equilíbrio geral** analisa a interdependência simultânea de todos os mercados, em contraste com o equilíbrio parcial que estuda um mercado isolado. Um equilíbrio walrasiano é um vetor de preços $\mathbf{p}^*$ tal que todos os mercados se equilibram simultaneamente.
+- A **Caixa de Edgeworth** é a ferramenta gráfica fundamental para visualizar trocas em uma economia com dois consumidores e dois bens. A **curva de contrato** conecta todas as alocações Pareto-eficientes, onde as taxas marginais de substituição dos dois consumidores são iguais.
+- O **Primeiro Teorema do Bem-Estar** estabelece que todo equilíbrio walrasiano é eficiente de Pareto (sob as hipóteses de concorrência perfeita, ausência de externalidades e mercados completos). Esse resultado formaliza a "mão invisível" de Adam Smith.
+- O **Segundo Teorema do Bem-Estar** afirma que qualquer alocação Pareto-eficiente pode ser sustentada como equilíbrio competitivo mediante redistribuição apropriada das dotações iniciais (transferências lump-sum), separando as questões de eficiência e equidade.
+- A **existência** do equilíbrio walrasiano é demonstrada via o Teorema do Ponto Fixo de Brouwer, aplicado ao mapeamento de excesso de demanda. A **Lei de Walras** — a soma dos valores dos excessos de demanda é zero para quaisquer preços — é propriedade fundamental que permite normalizar um preço como numerário.
+- Os **modelos computáveis de equilíbrio geral** (CGE) aplicam a teoria à avaliação quantitativa de políticas públicas, como reforma tributária, abertura comercial e infraestrutura, sendo amplamente utilizados no Brasil por instituições como IPEA e FGV.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Equilíbrio geral walrasiano | Vetor de preços em que todos os mercados se equilibram simultaneamente: oferta iguala demanda em cada mercado. |
+| Caixa de Edgeworth | Diagrama que representa todas as alocações possíveis de dois bens entre dois consumidores, dado o total fixo de recursos. |
+| Curva de contrato | Conjunto de alocações Pareto-eficientes dentro da Caixa de Edgeworth, onde $\mathrm{TMS}_A = \mathrm{TMS}_B$. |
+| Eficiência de Pareto | Alocação em que não é possível melhorar a situação de um agente sem piorar a de outro. |
+| Primeiro Teorema do Bem-Estar | Todo equilíbrio competitivo é eficiente de Pareto (sob hipóteses padrão). |
+| Segundo Teorema do Bem-Estar | Toda alocação Pareto-eficiente pode ser atingida como equilíbrio competitivo após redistribuição adequada das dotações. |
+| Lei de Walras | A soma dos valores dos excessos de demanda é identicamente zero: $\sum_k p_k z_k(\mathbf{p}) \equiv 0$. |
+| Numerário | Bem cujo preço é normalizado em 1; apenas preços relativos importam no equilíbrio geral. |
+| Função de excesso de demanda | $z_k(\mathbf{p}) = D_k(\mathbf{p}) - S_k(\mathbf{p})$; no equilíbrio, $z_k(\mathbf{p}^*) = 0$ para todo $k$. |
+| Modelos CGE | Modelos computáveis de equilíbrio geral que calibram e simulam numericamente os efeitos de políticas sobre toda a economia. |
+
 ---
 
 ## Exercícios Resolvidos
 
-??? example "Exercício Resolvido 13.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+??? example "Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
     **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
 
     **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
@@ -523,13 +567,13 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
     *Consumidor A* (\(U_A = x_1 x_2\), Cobb-Douglas com \(\alpha = 1/2\)):
 
     \[
-    x_1^A = \frac{m_A}{2p}, \qquad x_2^A = \frac{m_A}{2}, \qquad m_A = 8p + 2
+    x_1^A = \frac{I_A}{2p}, \qquad x_2^A = \frac{I_A}{2}, \qquad I_A = 8p + 2
     \]
 
     *Consumidor B* (\(U_B = x_1^{1/3} x_2^{2/3}\), Cobb-Douglas com \(\alpha = 1/3\)):
 
     \[
-    x_1^B = \frac{m_B}{3p}, \qquad x_2^B = \frac{2m_B}{3}, \qquad m_B = 2p + 8
+    x_1^B = \frac{I_B}{3p}, \qquad x_2^B = \frac{2I_B}{3}, \qquad I_B = 2p + 8
     \]
 
     **Passo 2 — Equilíbrio de mercado (bem 1)**
@@ -547,7 +591,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
     **Passo 3 — Alocações de equilíbrio**
 
     \[
-    m_A = 8 \cdot \frac{11}{16} + 2 = \frac{120}{16} = \frac{15}{2}
+    I_A = 8 \cdot \frac{11}{16} + 2 = \frac{120}{16} = \frac{15}{2}
     \]
 
     \[
@@ -555,7 +599,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
     \]
 
     \[
-    m_B = 2 \cdot \frac{11}{16} + 8 = \frac{150}{16} = \frac{75}{8}
+    I_B = 2 \cdot \frac{11}{16} + 8 = \frac{150}{16} = \frac{75}{8}
     \]
 
     \[
@@ -566,7 +610,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
     **Passo 4 — Verificação da Lei de Walras**
 
-    A preços arbitrários \(p = 1\): \(m_A = 10\), \(m_B = 10\).
+    A preços arbitrários \(p = 1\): \(I_A = 10\), \(I_B = 10\).
 
     \[
     Z^1 = \frac{10}{2} + \frac{10}{3} - 10 = \frac{-5}{3}, \qquad Z^2 = \frac{10}{2} + \frac{20}{3} - 10 = \frac{5}{3}
@@ -592,10 +636,10 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-??? example "Exercício Resolvido 13.2 — Segundo Teorema e transferências lump-sum"
-    **Enunciado:** Na mesma economia do ER 13.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
+??? example "Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
+    **Enunciado:** Na mesma economia do ER 14.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
 
-    **Dados:** Mesmas preferências e dotações do ER 13.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
+    **Dados:** Mesmas preferências e dotações do ER 14.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
 
     **Resolução:**
 
@@ -618,27 +662,27 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
     **Passo 3 — Renda necessária para cada consumidor**
 
     \[
-    m_A^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{10}{3} = \frac{10}{3} + \frac{10}{3} = \frac{20}{3}
+    I_A^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{10}{3} = \frac{10}{3} + \frac{10}{3} = \frac{20}{3}
     \]
 
     \[
-    m_B^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{20}{3} = \frac{10}{3} + \frac{20}{3} = 10
+    I_B^{\text{necessária}} = \frac{2}{3} \cdot 5 + 1 \cdot \frac{20}{3} = \frac{10}{3} + \frac{20}{3} = 10
     \]
 
     **Passo 4 — Renda original ao novo preço**
 
     \[
-    m_A^{\text{original}} = \frac{2}{3} \cdot 8 + 1 \cdot 2 = \frac{16}{3} + 2 = \frac{22}{3}
+    I_A^{\text{original}} = \frac{2}{3} \cdot 8 + 1 \cdot 2 = \frac{16}{3} + 2 = \frac{22}{3}
     \]
 
     \[
-    m_B^{\text{original}} = \frac{2}{3} \cdot 2 + 1 \cdot 8 = \frac{4}{3} + 8 = \frac{28}{3}
+    I_B^{\text{original}} = \frac{2}{3} \cdot 2 + 1 \cdot 8 = \frac{4}{3} + 8 = \frac{28}{3}
     \]
 
     **Passo 5 — Transferência lump-sum**
 
     \[
-    T_A = m_A^{\text{necessária}} - m_A^{\text{original}} = \frac{20}{3} - \frac{22}{3} = -\frac{2}{3}
+    T_A = I_A^{\text{necessária}} - I_A^{\text{original}} = \frac{20}{3} - \frac{22}{3} = -\frac{2}{3}
     \]
 
     A paga uma transferência de \(2/3\) unidades do numerário para B. Após a transferência, os mercados competitivos geram exatamente a alocação desejada.
@@ -651,7 +695,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ## Exercícios
 
-**Exercício 13.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
+**Exercício 14.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
 
 (a) Derive a curva de contrato.
 
@@ -661,11 +705,11 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 (d) Verifique que o equilíbrio pertence ao núcleo.
 
-[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-1)
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-1)
 
 ---
 
-**Exercício 13.2.** Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
+**Exercício 14.2.** Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
 
 (a) \(TMS_A^{12} = TMS_B^{12}\) (eficiência na troca).
 
@@ -675,11 +719,11 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 Explique por que cada condição é necessária, usando argumentos de contradição.
 
-[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-2)
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-2)
 
 ---
 
-**Exercício 13.3.** Considere uma economia com três bens (\(k = 1, 2, 3\)) e funções de excesso de demanda:
+**Exercício 14.3.** Considere uma economia com três bens (\(k = 1, 2, 3\)) e funções de excesso de demanda:
 
 \[
 Z^1(\mathbf{p}) = 3\frac{p_2}{p_1} + 2\frac{p_3}{p_1} - 5
@@ -695,21 +739,21 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 (c) Normalizando \(p_1 = 1\), encontre os preços de equilíbrio walrasiano.
 
-[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-3)
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-3)
 
 ---
 
-**Exercício 13.4.** Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
+**Exercício 14.4.** Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
 
 - Consumidores igualam \(TMS = p_1/p_2\)
 - Produtores igualam \(TMST = w/r\)
 - Maximização de lucro implica \(p = CMg\)
 
-[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-4)
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-4)
 
 ---
 
-**Exercício 13.5.** Um país negocia um acordo de livre comércio que eliminará tarifas de importação sobre produtos industrializados. Usando a estrutura conceitual de equilíbrio geral:
+**Exercício 14.5.** Um país negocia um acordo de livre comércio que eliminará tarifas de importação sobre produtos industrializados. Usando a estrutura conceitual de equilíbrio geral:
 
 (a) Explique por que a análise de equilíbrio parcial (mercado por mercado) pode subestimar ou superestimar os efeitos do acordo.
 
@@ -719,7 +763,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 (d) Quais hipóteses do modelo CGE padrão (concorrência perfeita, retornos constantes, pleno emprego) são mais problemáticas para a análise da economia brasileira? Justifique.
 
-[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-5)
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-5)
 
 ---
 
@@ -745,7 +789,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
         - **Item 0 — V:** Os totais da economia são \(\bar{X} = 1 + 9 = 10\) e \(\bar{Y} = 9 + 1 = 10\). A Caixa de Edgeworth tem dimensões \(10 \times 10\), e cada alocação factível é um ponto em \([0,10]^2\).
         - **Item 1 — F:** Com utilidade linear para A, \(TMS_A = 1\) em todos os pontos. Para B (Cobb-Douglas simétrica), \(TMS_B = Y_B/X_B\). A eficiência de Pareto requer \(TMS_A = TMS_B\), i.e., \(Y_B/X_B = 1 \implies Y_B = X_B\). Nas coordenadas de A: \(10 - Y = 10 - X \implies Y = X\). A curva de contrato é a diagonal \(Y = X\), e não a função \(Y = 10X/(20-X)\).
-        - **Item 2 — V:** Com \(p/q = 1\): \(m_A = 1 + 9 = 10\), A é indiferente entre X e Y (utilidade linear), podendo escolher \((5, 5)\). Para B: \(m_B = 9 + 1 = 10\), \(X_B = 10/2 = 5\), \(Y_B = 10/2 = 5\). Mercados se equilibram: \(5 + 5 = 10\). É um equilíbrio walrasiano.
+        - **Item 2 — V:** Com \(p/q = 1\): \(I_A = 1 + 9 = 10\), A é indiferente entre X e Y (utilidade linear), podendo escolher \((5, 5)\). Para B: \(I_B = 9 + 1 = 10\), \(X_B = 10/2 = 5\), \(Y_B = 10/2 = 5\). Mercados se equilibram: \(5 + 5 = 10\). É um equilíbrio walrasiano.
         - **Item 3 — V:** Pelo Primeiro Teorema do Bem-Estar, todo equilíbrio walrasiano é Pareto-eficiente. Verificação direta: \(TMS_B = 5/5 = 1 = TMS_A\).
         - **Item 4 — F:** No equilíbrio, o excesso de demanda é zero em todos os mercados (\(Z^X = Z^Y = 0\)). Pela Lei de Walras, \(p \cdot Z^X + q \cdot Z^Y = 0\) para quaisquer preços — e no equilíbrio ambos os termos são zero.
 

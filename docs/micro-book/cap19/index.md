@@ -28,6 +28,8 @@ A análise econômica desses arranjos contratuais constitui o campo da **teoria 
 
 ## 19.2 O Modelo Principal-Agente
 
+Diante da multiplicidade de situações em que a informação assimétrica se manifesta, é natural perguntar: existe um arcabouço analítico unificado capaz de capturar a essência comum desses problemas? A resposta é afirmativa, e o instrumento é o **modelo principal-agente** — um dos frameworks mais versáteis da microeconomia moderna, com aplicações que vão de contratos de trabalho a regulação de monopólios, de seguros a concessões de serviços públicos.
+
 O **modelo principal-agente** fornece o arcabouço analítico geral para estudar situações de informação assimétrica em relações contratuais.
 
 !!! definition "Relação Principal-Agente"
@@ -70,6 +72,8 @@ Sob **informação assimétrica**, o principal não observa o tipo ou a ação d
 ---
 
 ## 19.3 Ações Ocultas: Risco Moral
+
+Com o arcabouço do modelo principal-agente estabelecido, podemos agora examinar em detalhe os dois problemas fundamentais de informação assimétrica. Começamos pelo risco moral — o problema que surge quando o agente pode tomar ações não observáveis pelo principal após a celebração do contrato. Por que o risco moral é tão difundido? Porque em praticamente toda relação de delegação — de um empregador que contrata um gerente a uma seguradora que cobre um segurado — existe algum grau de ação oculta que escapa ao monitoramento direto.
 
 !!! definition "Risco Moral (Moral Hazard)"
     Problema de informação assimétrica que surge quando uma parte de uma transação pode tomar **ações não observáveis** (ocultas) que afetam o resultado da relação, e a outra parte não consegue monitorar ou verificar essas ações diretamente. O termo refere-se à mudança de comportamento do agente após a celebração do contrato.
@@ -215,6 +219,8 @@ Essa condição exige que a diferença de pagamentos entre os estados bom e ruim
 ---
 
 ## 19.4 Tipos Ocultos: Seleção Adversa
+
+Se o risco moral diz respeito a ações ocultas — o que o agente faz depois do contrato —, a seleção adversa diz respeito a tipos ocultos — quem o agente é antes do contrato. A informação privada relevante, neste caso, não são as ações futuras do agente, mas suas características intrínsecas: seu nível de risco, a qualidade do produto que vende, sua produtividade ou suas preferências. Essa distinção temporal é fundamental: o risco moral é um problema pós-contratual, enquanto a seleção adversa é um problema pré-contratual. E as consequências podem ser ainda mais dramáticas — como demonstrou Akerlof, a seleção adversa pode levar ao desaparecimento completo de mercados.
 
 !!! definition "Seleção Adversa (Adverse Selection)"
     Problema de informação assimétrica que surge quando uma parte de uma transação possui **informação privada sobre suas características** (seu "tipo") antes da celebração do contrato, e essa informação não é observável pela outra parte. A seleção adversa é um problema **pré-contratual**.
@@ -416,6 +422,8 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
 ## 19.5 Sinalização no Mercado
 
+Os problemas de seleção adversa discutidos na seção anterior decorrem do fato de que a parte informada não pode comunicar credibilmente sua informação privada. Mas será que essa comunicação é impossível? O insight fundamental de Michael Spence (1973) é que, em certas condições, a parte informada pode tomar ações custosas e observáveis que funcionam como sinais críveis de suas características ocultas. A chave é que o custo do sinal deve diferir entre os tipos — caso contrário, todos sinalizariam da mesma forma e nenhuma informação seria transmitida.
+
 !!! definition "Sinalização (Signaling)"
     Mecanismo pelo qual a parte informada (agente) toma uma **ação custosa e observável** para transmitir credibilmente sua informação privada à parte desinformada (principal). Para que o sinal seja efetivo, ele deve ser **diferencialmente custoso** entre os tipos.
 
@@ -478,6 +486,8 @@ O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separ
 
 ## 19.6 Screening (Triagem pelo Principal)
 
+A sinalização e a triagem são duas faces da mesma moeda: ambas buscam resolver o problema de tipos ocultos, mas diferem em quem toma a iniciativa. Na sinalização, a parte informada age primeiro, investindo em um sinal custoso; na triagem, é a parte desinformada que age primeiro, desenhando um menu de opções. Na prática, essa distinção é relevante porque define quem arca com os custos da revelação de informação e, portanto, como o excedente se distribui entre as partes.
+
 Enquanto a sinalização é iniciativa da parte informada, a **triagem** (screening) é desenhada pela parte desinformada para extrair informação privada da parte informada.
 
 !!! definition "Triagem (Screening)"
@@ -503,6 +513,8 @@ Em equilíbrio, os dois mecanismos podem levar a alocações equivalentes (como 
 ---
 
 ## 19.7 Leilões
+
+Passamos agora a uma aplicação especialmente elegante da teoria da informação assimétrica: os leilões. Em um leilão, cada participante possui informação privada — sua valoração do objeto à venda — e deve decidir quanto ofertar sem conhecer as valorações dos demais. O leilão é, assim, um mecanismo de mercado que opera sob assimetria de informação bilateral: cada licitante sabe algo que os outros não sabem. O desenho das regras do leilão determina quão eficientemente a informação dispersa se traduz em alocação e preço.
 
 Leilões são mecanismos de venda particularmente interessantes sob informação assimétrica, pois cada licitante possui informação privada sobre sua valoração do objeto.
 
@@ -569,6 +581,8 @@ Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, 
 
 ## 19.8 Taxonomia dos Problemas de Informação Assimétrica
 
+Ao longo deste capítulo, analisamos diversos problemas de informação assimétrica — risco moral, seleção adversa, sinalização, triagem, leilões — cada um com suas especificidades. Para consolidar a compreensão desse rico arcabouço conceitual, é útil organizá-los em uma taxonomia que destaque as dimensões essenciais: o timing da assimetria (pré ou pós-contratual), a natureza da informação oculta (ação ou tipo) e os mecanismos disponíveis para atenuá-la.
+
 A tabela a seguir resume os principais tipos de problemas de informação assimétrica, suas características e os mecanismos de resposta.
 
 | Tipo de Assimetria | Timing | O que é oculto | Exemplos | Soluções de Mercado |
@@ -602,6 +616,32 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
     Este caso ilustra como o desenho institucional e contratual pode mitigar problemas de informação assimétrica, com efeitos quantitativamente expressivos sobre preços e volumes de mercado.
 
     *Fonte: [BCB](https://www.bcb.gov.br), Relatório de Economia Bancária, 2024; Lei n.º 10.820/2003.*
+
+---
+
+## Resumo do Capítulo
+
+- A informação assimétrica -- situação em que uma parte de uma transação detém informação relevante que a outra não possui -- é uma falha de mercado que pode levar à ineficiência ou até ao colapso de mercados inteiros.
+- O modelo principal-agente é o arcabouço geral para analisar relações com informação assimétrica. O principal desenha contratos sujeitos a duas restrições: participação (o agente aceita o contrato) e compatibilidade de incentivos (o agente age conforme desejado).
+- O risco moral (ações ocultas) surge quando o agente pode tomar ações não observáveis após o contrato. A solução envolve um trade-off entre incentivos e seguro: contratos ótimos vinculam remuneração a resultados observáveis, mas expõem o agente avesso ao risco a variabilidade.
+- A seleção adversa (tipos ocultos) ocorre quando uma parte possui informação privada sobre suas características antes do contrato. O modelo de limões de Akerlof mostra que a assimetria de informação pode expulsar produtos de alta qualidade do mercado.
+- A sinalização (Spence) permite que a parte informada revele seu tipo por meio de ações custosas (como educação), enquanto a triagem/screening (Rothschild-Stiglitz) permite que a parte desinformada desenhe menus de contratos que induzam autosseleção.
+- Leilões são mecanismos de alocação sob informação assimétrica. Pelo teorema da equivalência de receitas, os quatro formatos clássicos geram a mesma receita esperada sob certas condições. No Brasil, leilões de concessão são amplamente utilizados em infraestrutura.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Informação assimétrica | Situação em que uma parte de uma transação detém informação relevante que a outra não possui |
+| Modelo principal-agente | Arcabouço em que o principal delega uma tarefa ao agente que possui informação privada, e desenha contratos com restrições de participação e incentivo |
+| Risco moral (moral hazard) | Problema pós-contratual em que o agente pode tomar ações ocultas que afetam o resultado, sem que o principal possa monitorá-las diretamente |
+| Seleção adversa | Problema pré-contratual em que uma parte possui informação privada sobre seu tipo (qualidade, risco), levando à expulsão dos "bons" do mercado |
+| Mercado de limões (Akerlof) | Modelo que demonstra como a assimetria de informação sobre qualidade pode levar ao colapso do mercado, com apenas produtos de baixa qualidade sendo transacionados |
+| Sinalização (Spence) | Mecanismo pelo qual a parte informada realiza ação custosa para revelar de forma crível seu tipo (ex.: educação como sinal de produtividade) |
+| Triagem/screening | Mecanismo pelo qual a parte desinformada oferece menu de contratos que induz autosseleção dos diferentes tipos |
+| Custo de agência | Diferença de custo entre o contrato ótimo sob informação assimétrica (second-best) e o contrato sob informação completa (first-best) |
+| Restrição de compatibilidade de incentivos (RCI) | Condição que garante que o agente prefira a ação desejada pelo principal a qualquer alternativa |
+| Teorema da equivalência de receitas | Resultado de que leilões inglês, holandês, de primeiro preço selado e de Vickrey geram a mesma receita esperada sob valores privados independentes |
 
 ---
 

@@ -8,6 +8,8 @@ No Capítulo 4, derivamos as condições de otimalidade do consumidor e obtivemo
 
 ## 5.1 Funções de Demanda e Suas Propriedades
 
+Antes de investigar como a demanda reage a mudanças no ambiente econômico, convém relembrar o ponto de partida: as funções de demanda que emergem do problema de otimização do consumidor. Quais propriedades essas funções satisfazem? E por que essas propriedades são importantes? Elas não são meras curiosidades matemáticas — cada uma reflete uma restrição econômica fundamental sobre o comportamento racional.
+
 O problema de maximização de utilidade do consumidor gera as **funções de demanda marshalliana** (ou não-compensada):
 
 \[
@@ -29,15 +31,17 @@ que expressam a quantidade ótima de cada bem como função dos preços e da ren
     2. **Esgotamento da renda** (Lei de Walras): \(\sum_{j=1}^n p_j x_j^* = I\).
     3. **Negatividade do efeito substituição próprio** (consequência da Equação de Slutsky, que veremos adiante).
 
-A propriedade de homogeneidade de grau zero expressa a ausência de **ilusão monetária**: se todos os preços e a renda dobrarem simultaneamente, a cesta ótima permanece inalterada, pois o conjunto orçamentário não se modifica.
+A propriedade de homogeneidade de grau zero expressa a ausência de **ilusão monetária**: se todos os preços e a renda dobrarem simultaneamente, a cesta ótima permanece inalterada, pois o conjunto orçamentário não se modifica. Em outras palavras, o consumidor racional responde a preços *relativos*, não a valores nominais — um resultado que, embora intuitivo, tem implicações profundas para a neutralidade da moeda em modelos macroeconômicos.
 
 ---
 
 ## 5.2 Variações na Renda
 
+Com as propriedades das funções de demanda estabelecidas, podemos agora perguntar: o que acontece quando a renda do consumidor se altera? Essa pergunta é central para compreender padrões de consumo em economias em crescimento — e particularmente relevante para o Brasil, que experimentou transformações significativas na distribuição de renda nas últimas décadas.
+
 ### 5.2.1 Caminho de expansão da renda e curva de Engel
 
-Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto de cestas ótimas traça o **caminho de expansão da renda** no espaço de bens. A projeção desse caminho em um único bem gera a **curva de Engel**, que relaciona a renda à quantidade demandada.
+Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto de cestas ótimas traça o **caminho de expansão da renda** no espaço de bens. A projeção desse caminho em um único bem gera a **curva de Engel**, que relaciona a renda à quantidade demandada. Essa ferramenta, batizada em homenagem ao estatístico alemão Ernst Engel (1821–1896), permite visualizar como o consumo de cada bem responde ao enriquecimento ou empobrecimento do consumidor.
 
 !!! definition "Curva de Engel"
     A **curva de Engel** para o bem \(i\) é a função \(x_i^*(I)\) obtida fixando-se todos os preços e variando apenas a renda. Formalmente, é o gráfico do mapeamento \(I \mapsto x_i^*(p_1, \ldots, p_n, I)\).
@@ -55,6 +59,8 @@ Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto
     - A curva de Engel de \(x_1\) é **horizontal** (elasticidade-renda zero); a de \(x_2\) é linear com inclinação \(1/p_2\).
 
 ### 5.2.2 Bens normais e bens inferiores
+
+A forma da curva de Engel conduz naturalmente a uma classificação fundamental: como a demanda por um bem reage a aumentos de renda? Para a maioria dos bens, a resposta é intuitiva — consumimos mais quando ficamos mais ricos. Mas nem sempre é assim, e essa distinção tem consequências importantes para a análise de políticas de redistribuição e crescimento econômico.
 
 !!! definition "Bens normais e bens inferiores"
     - Um bem é **normal** se \(\frac{\partial x_i^*}{\partial I} > 0\): a demanda aumenta com a renda.
@@ -75,7 +81,7 @@ Exemplos clássicos de bens inferiores no contexto brasileiro incluem a farinha 
 
 ### 5.2.3 Bens de luxo e bens de necessidade
 
-A distinção entre luxo e necessidade depende da **elasticidade-renda** (que formalizaremos na Seção 5.7):
+Dentro da categoria dos bens normais, existe uma segunda distinção relevante: o consumo cresce proporcionalmente mais ou menos que a renda? Essa pergunta leva à classificação entre bens de luxo e bens de necessidade, que depende da **elasticidade-renda** (que formalizaremos na Seção 5.7):
 
 - **Bem de necessidade**: \(0 < \varepsilon_{x,I} < 1\) — a demanda cresce proporcionalmente menos que a renda.
 - **Bem de luxo**: \(\varepsilon_{x,I} > 1\) — a demanda cresce proporcionalmente mais que a renda.
@@ -90,6 +96,8 @@ Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 ---
 
 ## 5.3 Variações no Preço: Efeitos Renda e Substituição
+
+Até aqui, analisamos como a demanda responde a variações na renda, mantendo os preços fixos. Agora, invertemos a pergunta: o que acontece quando um preço se altera? Essa questão é mais sutil do que parece à primeira vista. Quando o preço de um bem cai, o consumidor se beneficia de duas maneiras distintas — e separar essas duas fontes de benefício é o objetivo central da decomposição que apresentaremos a seguir.
 
 Quando o preço de um bem cai, dois fenômenos ocorrem simultaneamente:
 
@@ -108,7 +116,7 @@ O efeito substituição de Hicks move o consumidor **ao longo** da curva de indi
 
 ### 5.3.2 Decomposição de Slutsky
 
-Na abordagem de **Slutsky**, o efeito substituição é definido mantendo-se o **poder de compra** constante — ou seja, compensando-se a renda de modo que a cesta original permaneça acessível. A compensação de Slutsky é dada por:
+A decomposição de Hicks, embora elegante, exige que conheçamos as curvas de indiferença do consumidor — algo que, na prática, não observamos diretamente. Existe uma alternativa mais operacional? Sim: a abordagem de **Slutsky** propõe um critério de compensação baseado em grandezas observáveis. Na abordagem de Slutsky, o efeito substituição é definido mantendo-se o **poder de compra** constante — ou seja, compensando-se a renda de modo que a cesta original permaneça acessível. A compensação de Slutsky é dada por:
 
 \[
 \Delta I^S = x_i^* \cdot \Delta p_i
@@ -150,7 +158,7 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
 ## 5.4 Equação de Slutsky
 
-A **Equação de Slutsky** é a pedra angular da teoria da demanda. Ela decompõe formalmente o efeito de uma variação de preço sobre a demanda marshalliana em efeito substituição (hicksiano) e efeito renda.
+As decomposições gráficas da seção anterior nos deram a intuição; agora, é hora de formalizar. A **Equação de Slutsky** é a pedra angular da teoria da demanda. Ela traduz em linguagem matemática precisa a separação entre efeito substituição e efeito renda, decompondo formalmente o efeito de uma variação de preço sobre a demanda marshalliana em efeito substituição (hicksiano) e efeito renda. Essa equação não é apenas uma identidade algébrica — ela conecta duas funções de demanda distintas (marshalliana e hicksiana) e permite extrair conclusões qualitativas poderosas sobre o comportamento do consumidor.
 
 !!! abstract "Teorema: Equação de Slutsky"
     Para quaisquer bens \(i\) e \(j\):
@@ -206,9 +214,11 @@ A **Equação de Slutsky** é a pedra angular da teoria da demanda. Ela decompõ
 
     O termo \(\frac{\partial h_i}{\partial p_j}\) captura o efeito substituição puro (a preços relativos), e \(-x_j \frac{\partial x_i}{\partial I}\) captura o efeito renda: a variação em \(p_j\) altera o poder de compra em magnitude proporcional a \(x_j\), que então afeta a demanda por \(x_i\) na proporção de \(\frac{\partial x_i}{\partial I}\). \(\blacksquare\)
 
+Vale notar a elegância da derivação: bastaram a identidade entre demandas hicksiana e marshalliana e o Lema de Shephard para conectar duas funções de demanda aparentemente distintas em uma única equação. O resultado revela que a quantidade consumida do bem cujo preço variou (\(x_j\)) atua como um "multiplicador" do efeito renda — quanto mais o consumidor gasta com esse bem, maior o impacto sobre seu poder de compra.
+
 ### 5.4.1 Implicações da Equação de Slutsky
 
-Da Equação de Slutsky, extraímos consequências cruciais:
+Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais para a teoria da demanda:
 
 1. **Para o próprio preço** (\(i = j\)): \(\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - x_i \frac{\partial x_i}{\partial I}\). O efeito substituição é sempre não-positivo (pela concavidade da função dispêndio). Logo, se o bem for normal (\(\frac{\partial x_i}{\partial I} > 0\)), a demanda cai quando o preço sobe — a **Lei da Demanda** vale sem ambiguidade.
 
@@ -221,7 +231,7 @@ Da Equação de Slutsky, extraímos consequências cruciais:
 
     **Por que isso importa:** O paradoxo de Giffen mostra por que a Lei da Demanda não é uma lei universal — e por que programas como o Bolsa Família, ao elevar a renda, podem eliminar esse tipo de comportamento extremo.
 
-3. **Simetria de Slutsky**: \(\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}\). Os efeitos substituição cruzados são simétricos.
+3. **Simetria de Slutsky**: \(\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}\). Os efeitos substituição cruzados são simétricos. Essa simetria, que não vale para a demanda marshalliana, é uma propriedade poderosa: ela reduz pela metade o número de parâmetros a estimar em sistemas de demanda e reflete uma propriedade profunda da dualidade entre maximização de utilidade e minimização de dispêndio.
 
 !!! note "Giffen na prática: arroz na China"
     Bens de Giffen são raríssimos empiricamente. A evidência mais robusta foi documentada por [Jensen e Miller (2008)](https://doi.org/10.1257/aer.98.4.1553), que identificaram comportamento de Giffen para o arroz entre famílias extremamente pobres na província de Hunan, na China. Nessas famílias, o arroz representava parcela tão grande do orçamento que o efeito renda de um aumento de preço dominava o efeito substituição. Voltaremos a esse estudo no Apêndice.
@@ -229,6 +239,8 @@ Da Equação de Slutsky, extraímos consequências cruciais:
 ---
 
 ## 5.5 A Curva de Demanda Individual
+
+A Equação de Slutsky nos permitiu decompor o efeito de uma variação de preço em suas partes constitutivas. Agora, podemos construir e comparar as duas curvas de demanda que emergem dessa análise: a marshalliana, que observamos nos mercados reais, e a hicksiana, que isola o efeito substituição puro. Compreender as diferenças entre elas é essencial tanto para a análise positiva (o que acontece) quanto para a análise normativa (como medir o bem-estar).
 
 ### 5.5.1 Demanda marshalliana (não-compensada)
 
@@ -238,17 +250,17 @@ A curva de demanda marshalliana relaciona preço e quantidade mantendo a renda n
 x_i^* = x_i(p_i; \bar{p}_{-i}, \bar{I})
 \]
 
-Pela Equação de Slutsky, sua inclinação combina efeitos substituição e renda. Para bens normais, é inequivocamente negativamente inclinada. Para bens inferiores, pode ser positivamente inclinada (caso Giffen).
+Pela Equação de Slutsky, sua inclinação combina efeitos substituição e renda. Para bens normais, é inequivocamente negativamente inclinada — a famosa Lei da Demanda. Para bens inferiores, pode ser positivamente inclinada (caso Giffen), embora, como vimos, esse cenário exija condições bastante especiais.
 
 ### 5.5.2 Demanda hicksiana (compensada)
 
-A curva de demanda hicksiana mantém a **utilidade** constante. É uma construção teórica, mas fundamental para a análise de bem-estar.
+Enquanto a demanda marshalliana reflete o comportamento efetivamente observado, a curva de demanda hicksiana responde a uma pergunta contrafactual: como a demanda variaria se o consumidor fosse permanentemente compensado de modo a manter seu nível de utilidade inalterado? Essa curva mantém a **utilidade** constante e, embora seja uma construção teórica, é fundamental para a análise de bem-estar.
 
 \[
 h_i = h_i(p_i; \bar{p}_{-i}, \bar{U})
 \]
 
-Como captura apenas o efeito substituição, é **sempre** negativamente inclinada (ou nula). Para bens normais, a curva hicksiana é mais inclinada (menos elástica) que a marshalliana; para bens inferiores, é menos inclinada.
+Como captura apenas o efeito substituição, é **sempre** negativamente inclinada (ou nula). Para bens normais, a curva hicksiana é mais inclinada (menos elástica) que a marshalliana, pois o efeito renda reforça o efeito substituição na marshalliana; para bens inferiores, a situação se inverte e a hicksiana é menos inclinada.
 
 !!! note "Relação geométrica"
     As curvas marshalliana e hicksiana se cruzam no ponto correspondente ao preço e à renda iniciais. A partir desse ponto, a marshalliana diverge conforme o efeito renda se acumula.
@@ -261,6 +273,8 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 ---
 
 ## 5.6 Demanda Compensada: Propriedades Formais
+
+A seção anterior apresentou as curvas de demanda marshalliana e hicksiana de forma intuitiva e gráfica. Agora, aprofundamos as propriedades formais da demanda compensada, que desempenham papel central tanto na teoria pura quanto na análise empírica. Essas propriedades geram restrições testáveis sobre o comportamento observado do consumidor — permitindo verificar se os dados são compatíveis com a hipótese de racionalidade.
 
 A demanda hicksiana \(h_i(\mathbf{p}, \bar{U})\) pode ser obtida a partir da **função dispêndio** \(E(\mathbf{p}, \bar{U})\):
 
@@ -282,7 +296,7 @@ A propriedade 4 é particularmente poderosa: dela decorrem restrições testáve
 
 ## 5.7 Elasticidades da Demanda
 
-As **elasticidades** medem a sensibilidade percentual da demanda a variações em preços e renda, sendo adimensionais e, portanto, comparáveis entre bens e mercados distintos.
+Até aqui, discutimos os efeitos de variações de preço e renda em termos de derivadas — grandezas que dependem das unidades de medida. Mas como comparar a sensibilidade da demanda por gasolina (medida em litros) com a da demanda por arroz (medida em quilos)? Ou a resposta do consumidor brasileiro com a do consumidor americano, cujas rendas e preços são expressos em moedas diferentes? É aqui que entram as **elasticidades**, que medem a sensibilidade percentual da demanda a variações em preços e renda, sendo adimensionais e, portanto, comparáveis entre bens e mercados distintos.
 
 ### 5.7.1 Elasticidade-preço da demanda
 
@@ -298,11 +312,15 @@ As **elasticidades** medem a sensibilidade percentual da demanda a variações e
 
 ### 5.7.2 Elasticidade-renda da demanda
 
+A elasticidade-renda captura a resposta percentual da demanda a variações percentuais na renda. É ela que formaliza a classificação entre bens normais, inferiores, de luxo e de necessidade que discutimos na Seção 5.2:
+
 \[
 \varepsilon_{x_i, I} = \frac{\partial x_i}{\partial I} \cdot \frac{I}{x_i}
 \]
 
 ### 5.7.3 Elasticidade-preço cruzada
+
+A elasticidade-preço cruzada mede como a demanda por um bem responde a variações no preço de outro bem. Essa grandeza será central no Capítulo 6, quando classificarmos bens como substitutos ou complementos:
 
 \[
 \varepsilon_{x_i, p_j} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i}
@@ -310,7 +328,7 @@ As **elasticidades** medem a sensibilidade percentual da demanda a variações e
 
 ### 5.7.4 Relações de agregação
 
-As elasticidades não são independentes entre si. Três relações fundamentais as conectam:
+As elasticidades definidas acima não são independentes entre si. As restrições teóricas do problema do consumidor — homogeneidade de grau zero, esgotamento da renda — impõem relações de consistência entre elas. Três relações fundamentais as conectam:
 
 !!! abstract "Agregação de Engel"
     A soma ponderada das elasticidades-renda de todos os bens, com pesos iguais às parcelas orçamentárias \(w_i = \frac{p_i x_i}{I}\), é igual a um:
@@ -339,7 +357,7 @@ As elasticidades não são independentes entre si. Três relações fundamentais
 
 ### 5.7.5 Tabela de elasticidades estimadas para o Brasil
 
-A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
+As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
 
 | Categoria de Bem | Elasticidade-preço (\(\varepsilon_{x,p}\)) | Elasticidade-renda (\(\varepsilon_{x,I}\)) | Classificação |
 |:---|:---:|:---:|:---|
@@ -399,6 +417,8 @@ A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-r
 
 ## 5.8 Excedente do Consumidor
 
+As elasticidades nos dizem *como* a demanda reage a variações em preços e renda, mas não nos dizem *quanto* o consumidor ganha ou perde com essas variações. Para responder a essa pergunta — fundamental para a avaliação de políticas públicas —, precisamos de medidas monetárias de bem-estar. Como quantificar, em reais, o impacto de um aumento na tarifa de energia elétrica ou de uma redução no ICMS sobre combustíveis? É essa a tarefa do excedente do consumidor e de suas variantes compensatória e equivalente.
+
 ### 5.8.1 O conceito marshalliano
 
 O **excedente do consumidor** (\(EC\)) mede o ganho líquido que o consumidor obtém ao participar do mercado — a diferença entre o que estaria disposto a pagar e o que efetivamente paga:
@@ -410,6 +430,8 @@ EC = \int_{0}^{x^*} p(x) \, dx - p^* \cdot x^*
 onde \(p(x)\) é a função de demanda inversa.
 
 ### 5.8.2 Variação compensatória (VC)
+
+O excedente do consumidor marshalliano é uma medida prática e amplamente utilizada, mas possui uma limitação teórica: ele se baseia na curva de demanda marshalliana, que mistura efeitos substituição e renda. Para obter medidas de bem-estar teoricamente exatas, precisamos recorrer às curvas de demanda hicksiana, que mantêm a utilidade constante. Isso nos leva à variação compensatória e à variação equivalente.
 
 !!! definition "Variação Compensatória"
     A **variação compensatória** (\(VC\)) é a quantia de renda que deve ser retirada (ou dada) ao consumidor, após uma mudança de preço, para que ele retorne ao nível de utilidade original \(\bar{U}_0\):
@@ -435,7 +457,7 @@ Geometricamente, a \(VC\) é a área à esquerda da curva de demanda hicksiana r
 
 ### 5.8.4 Relação entre EC, VC e VE
 
-Para uma queda de preço de um bem normal:
+Dispondo de três medidas de bem-estar — EC, VC e VE —, cabe perguntar: como elas se relacionam entre si? Em geral, as três fornecem valores distintos, e a ordenação entre elas depende da natureza do bem e da direção da variação de preço. Para uma queda de preço de um bem normal:
 
 \[
 VC < EC < VE
@@ -513,7 +535,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
 ## 5.9 Preferência Revelada e o Efeito Substituição
 
-A teoria da **preferência revelada**, desenvolvida por Paul Samuelson, fornece fundamentos observacionais para a teoria da demanda, sem recorrer diretamente ao conceito de utilidade.
+Ao longo deste capítulo, derivamos a Equação de Slutsky e suas consequências a partir de funções de utilidade — um conceito que, por definição, não é diretamente observável. Será possível chegar aos mesmos resultados usando apenas dados de preços e quantidades escolhidas? A resposta é sim, e ela vem de uma das contribuições mais elegantes da microeconomia moderna. A teoria da **preferência revelada**, desenvolvida por Paul Samuelson, fornece fundamentos observacionais para a teoria da demanda, sem recorrer diretamente ao conceito de utilidade.
 
 !!! definition "Axioma Fraco da Preferência Revelada (AFPR)"
     Se a cesta \(\mathbf{x}^0\) é escolhida quando \(\mathbf{x}^1\) era acessível (isto é, \(\mathbf{p}^0 \cdot \mathbf{x}^1 \leq \mathbf{p}^0 \cdot \mathbf{x}^0\)), então \(\mathbf{x}^1\) não pode ser escolhida quando \(\mathbf{x}^0\) é acessível (isto é, \(\mathbf{p}^1 \cdot \mathbf{x}^0 > \mathbf{p}^1 \cdot \mathbf{x}^1\)).
@@ -528,7 +550,7 @@ A teoria da **preferência revelada**, desenvolvida por Paul Samuelson, fornece 
     **Conexão com este capítulo:**
     A teoria da preferência revelada, apresentada neste capítulo, é uma das contribuições mais elegantes de Samuelson. O Axioma Fraco da Preferência Revelada (WARP) permite testar a racionalidade do consumidor usando apenas dados de preços e quantidades observadas — sem hipóteses sobre utilidade ou preferências subjacentes.
 
-O AFPR garante a **negatividade do efeito substituição de Slutsky**. Se o consumidor satisfaz o AFPR, então, para uma variação compensada de preço (no sentido de Slutsky):
+O poder do AFPR reside na sua simplicidade: ele não exige que conheçamos as preferências do consumidor, apenas que observemos suas escolhas. Mas por que isso é relevante para o presente capítulo? Porque o AFPR garante a **negatividade do efeito substituição de Slutsky** — o mesmo resultado que derivamos anteriormente a partir da concavidade da função dispêndio, agora obtido por uma via puramente observacional. Se o consumidor satisfaz o AFPR, então, para uma variação compensada de preço (no sentido de Slutsky):
 
 \[
 (\mathbf{p}^1 - \mathbf{p}^0) \cdot (\mathbf{x}^1 - \mathbf{x}^0) \leq 0
@@ -540,6 +562,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
     Um consumidor cujas escolhas satisfazem o Axioma Fraco da Preferência Revelada exibe efeito substituição de Slutsky não-positivo. Reciprocamente, se a matriz de Slutsky é negativa semidefinida, as escolhas observadas satisfazem o AFPR (sob certas condições de regularidade).
 
 ---
+
+As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slutsky, elasticidades, excedente do consumidor, preferência revelada — ganham vida quando aplicadas a problemas concretos. O estudo de caso a seguir ilustra como essas ferramentas são utilizadas na análise do mercado brasileiro de combustíveis, um dos mais estudados empiricamente no país.
 
 ## Box Brasil: Elasticidade-preço da gasolina no Brasil
 
@@ -561,6 +585,32 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
     **Implicações de política**: a inelasticidade da demanda por gasolina no curto prazo implica que aumentos de impostos sobre combustíveis (como a CIDE) geram receita tributária substancial, mas com custo de bem-estar significativo — especialmente para famílias de baixa renda, para as quais a variação compensatória pode representar parcela relevante do orçamento mensal.
 
     *Fontes: ANP — Levantamento de Preços de Combustíveis; IPEA — Texto para Discussão n.º 1.898 (2013); Santos (2013); Cardoso et al. (2019).*
+
+---
+
+## Resumo do Capítulo
+
+- As funções de demanda marshalliana (não-compensada) são homogêneas de grau zero em preços e renda, esgotam o orçamento (Lei de Walras) e dependem de preços e renda; as funções hicksianas (compensadas) mantêm a utilidade constante e capturam apenas o efeito substituição.
+- Variações na renda geram curvas de Engel e permitem classificar bens como normais (elasticidade-renda positiva) ou inferiores (negativa), e ainda como necessidades (elasticidade entre 0 e 1) ou bens de luxo (elasticidade maior que 1).
+- A Equação de Slutsky decompõe o efeito de uma variação de preço em efeito substituição (sempre não-positivo para o próprio preço) e efeito renda, fundamentando a Lei da Demanda para bens normais e explicando a possibilidade teórica de bens de Giffen.
+- As elasticidades-preço, elasticidade-renda e elasticidade cruzada quantificam a sensibilidade da demanda a variações de preços e renda, obedecendo restrições como a agregação de Engel e a homogeneidade.
+- O excedente do consumidor, a variação compensatória (VC) e a variação equivalente (VE) são medidas de bem-estar que permitem avaliar o impacto de mudanças de preço sobre os consumidores; para preferências quase-lineares, as três medidas coincidem.
+- A teoria da preferência revelada fornece uma abordagem alternativa que, sem postular funções de utilidade, permite testar a racionalidade do consumidor e demonstrar que o efeito substituição é não-positivo.
+
+## Conceitos-Chave
+
+| Conceito | Definição |
+|----------|-----------|
+| Demanda marshalliana | Função de demanda que resulta da maximização de utilidade sujeita à restrição orçamentária; depende de preços e renda nominal. |
+| Demanda hicksiana | Função de demanda compensada que minimiza o dispêndio para atingir um dado nível de utilidade; depende de preços e utilidade-alvo. |
+| Equação de Slutsky | Identidade que decompõe o efeito total de uma variação de preço em efeito substituição (hicksiano) e efeito renda. |
+| Efeito substituição | Variação na demanda devida à mudança nos preços relativos, mantendo utilidade (Hicks) ou poder de compra (Slutsky) constante; sempre não-positivo para o próprio preço. |
+| Efeito renda | Variação na demanda devida à mudança no poder de compra real causada pela alteração do preço. |
+| Bem de Giffen | Bem inferior cujo efeito renda domina o efeito substituição, gerando uma curva de demanda positivamente inclinada. |
+| Elasticidade-preço da demanda | Variação percentual na quantidade demandada dividida pela variação percentual no preço; mede a sensibilidade da demanda ao preço. |
+| Excedente do consumidor | Diferença entre a disposição a pagar e o preço efetivamente pago; corresponde à área abaixo da curva de demanda e acima do preço. |
+| Variação compensatória (VC) | Montante de renda que, após uma variação de preço, restaura o nível de utilidade original do consumidor. |
+| Preferência revelada | Abordagem que infere racionalidade e relações de preferência a partir de escolhas observadas, sem postular funções de utilidade. |
 
 ---
 
@@ -612,8 +662,6 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 ---
 
 ## Exercícios
-
-!!! tip "Exercícios do Capítulo 5"
 
 **Exercício 5.1.** Considere a função de utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), com preços \(p_1\), \(p_2\) e renda \(I\).
 
