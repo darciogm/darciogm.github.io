@@ -409,4 +409,15 @@ figcaption {
   .md-nav__item--active > #__toc:checked ~ .md-nav--secondary {
     display: block;
   }
+
+  /* Esconder o <a> do capítulo ativo (só recarrega a mesma página)
+     e mostrar o <label> como toggle clicável */
+  .md-nav__item--active > #__toc ~ a.md-nav__link {
+    display: none;
+  }
+
+  .md-nav__item--active > #__toc ~ label.md-nav__link {
+    display: flex;
+    cursor: pointer;
+  }
 }
