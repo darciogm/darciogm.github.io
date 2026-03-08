@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualizacao da TMS</title>
+  <title>Visualização da TMS</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -47,18 +47,18 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Taxa Marginal de Substituicao (TMS)</div>
+  <div class="graph-title">Taxa Marginal de Substituição (TMS)</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Funcao Utilidade</h3>
+      <h3>Função Utilidade</h3>
       <div class="fn-selector">
         <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
         <input type="range" id="slider-alpha" min="0.1" max="2" step="0.05" value="0.5">
@@ -235,7 +235,7 @@
         var labelX = Math.min(9, px + 1.5);
         var labelY = py + slope * 1.5;
         if (labelY > 0.5 && labelY < 10) {
-          annotations.push(board.create('text', [labelX, labelY, 'inclinacao = -TMS'], {
+          annotations.push(board.create('text', [labelX, labelY, 'inclinação = -TMS'], {
             fontSize: 11, color: '#00897b', fixed: true, anchorX: 'left'
           }));
         }
@@ -302,8 +302,8 @@
           funcStr = '\\(u(x_1, x_2) = \\min\\!\\left(\\frac{x_1}{\\alpha},\\; \\frac{x_2}{\\beta}\\right)\\)';
           var r1 = px/a, r2 = py/b;
           if (Math.abs(r1 - r2) < 0.15) {
-            tmsFormulaStr = 'TMS <b>indefinida</b> no vertice';
-            tmsStr = '<span class="highlight">Ponto no vertice da CI</span>';
+            tmsFormulaStr = 'TMS <b>indefinida</b> no vértice';
+            tmsStr = '<span class="highlight">Ponto no vértice da CI</span>';
           } else if (r1 < r2) {
             tmsFormulaStr = 'Braco vertical: \\(\\text{TMS} \\to \\infty\\)';
             tmsStr = '<span class="highlight">\\(\\text{TMS} \\to \\infty\\)</span>';

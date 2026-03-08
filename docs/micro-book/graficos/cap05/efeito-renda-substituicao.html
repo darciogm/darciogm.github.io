@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Efeito Renda e Substituicao (Decomposicao de Hicks e Slutsky) — Interactive Graph
+  Efeito Renda e Substituição (Decomposição de Hicks e Slutsky) — Interactive Graph
   Library: JSXGraph
   Reason: Dynamic indifference curves, budget lines, and decomposition arrows with sliders.
   Chapter 5 — Microeconomia
@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Efeito Renda e Substituicao</title>
+  <title>Efeito Renda e Substituição</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
@@ -138,14 +138,14 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Efeitos Renda e Substituicao</div>
+  <div class="graph-title">Efeitos Renda e Substituição</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
 
       <div class="slider-group">
-        <label>Novo preco \(p_1'\): <span class="val" id="val-p1new">1.00</span></label>
+        <label>Novo preço \(p_1'\): <span class="val" id="val-p1new">1.00</span></label>
         <input type="range" id="slider-p1new" min="0.5" max="5" step="0.1" value="1">
       </div>
 
@@ -160,7 +160,7 @@
       </div>
 
       <div class="toggle-group">
-        <strong style="font-size:0.85rem;">Decomposicao:</strong>
+        <strong style="font-size:0.85rem;">Decomposição:</strong>
         <label><input type="radio" name="decomp" value="hicks" checked> Hicks (utilidade constante)</label>
         <label><input type="radio" name="decomp" value="slutsky"> Slutsky (poder de compra constante)</label>
       </div>
@@ -476,7 +476,7 @@
 
       var dLabel = s.decomp === 'hicks' ? 'Hicks' : 'Slutsky';
 
-      var html = '<strong>Decomposicao de ' + dLabel + ':</strong><br>';
+      var html = '<strong>Decomposição de ' + dLabel + ':</strong><br>';
       html += '\\(p_1 = ' + p1_init.toFixed(2) + ' \\to p_1\' = ' + s.p1new.toFixed(2) + '\\)<br>';
       html += '\\(x_1^A = ' + orig.x1.toFixed(2) + '\\), ';
       html += '\\(x_1^B = ' + bx.toFixed(2) + '\\), ';

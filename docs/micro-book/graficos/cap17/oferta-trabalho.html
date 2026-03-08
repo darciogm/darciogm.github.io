@@ -46,15 +46,15 @@
   <div class="graph-title">Curva de Oferta de Trabalho Backward-Bending</div>
   <div class="graph-container">
     <div class="boards-wrapper">
-      <div class="board-label">Lazer-Consumo (para o salario selecionado)</div>
+      <div class="board-label">Lazer-Consumo (para o salário selecionado)</div>
       <div id="jxgbox1" class="jxgbox"></div>
       <div class="board-label">Curva de oferta de trabalho \(h^*(w)\)</div>
       <div id="jxgbox2" class="jxgbox"></div>
     </div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>Salario \(w\): <span class="val" id="val-w">10</span></label>
+        <label>Salário \(w\): <span class="val" id="val-w">10</span></label>
         <input type="range" id="slider-w" min="1" max="40" step="0.5" value="10">
       </div>
       <div class="slider-group">
@@ -306,7 +306,7 @@
       html += '<strong style="color:' + regionColor + ';">' + region + '</strong>';
       html += '</div>';
       html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
-      html += '\\(\\gamma > 1\\): baixa elasticidade de substituicao (\\(\\sigma = 1/\\gamma < 1\\)), favorece backward-bending.';
+      html += '\\(\\gamma > 1\\): baixa elasticidade de substituição (\\(\\sigma = 1/\\gamma < 1\\)), favorece backward-bending.';
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;

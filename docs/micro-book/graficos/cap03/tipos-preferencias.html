@@ -94,7 +94,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Comparacao de Tipos de Preferencias</div>
+  <div class="graph-title">Comparação de Tipos de Preferencias</div>
 
   <div class="panels">
     <!-- Cobb-Douglas -->
@@ -118,7 +118,7 @@
       <div class="panel-title" style="color:#00897b;">Complementos Perfeitos</div>
       <div class="panel-eq">\(u = \min\{x_1, x_2\}\)</div>
       <div id="box-cp" class="jxg-panel"></div>
-      <div class="panel-note">Angulo reto (L), TMS indefinida no vertice, \(\sigma = 0\)</div>
+      <div class="panel-note">Ângulo reto (L), TMS indefinida no vértice, \(\sigma = 0\)</div>
     </div>
 
     <!-- Quase-linear -->
@@ -126,7 +126,7 @@
       <div class="panel-title" style="color:#e65100;">Quase-linear</div>
       <div class="panel-eq">\(u = \sqrt{x_1} + x_2\)</div>
       <div id="box-ql" class="jxg-panel"></div>
-      <div class="panel-note">Translacoes verticais, TMS depende so de \(x_1\)</div>
+      <div class="panel-note">Translações verticais, TMS depende so de \(x_1\)</div>
     </div>
   </div>
 
@@ -231,7 +231,7 @@
     bCP.create('text', [6, 7.5, '\\(x_1 = x_2\\)'], {
       fontSize: 10, color: '#888', fixed: true
     });
-    bCP.create('text', [1, 9.5, 'Angulo reto'], {
+    bCP.create('text', [1, 9.5, 'Ângulo reto'], {
       fontSize: 10, color: '#00897b', fixed: true
     });
 
@@ -256,7 +256,7 @@
       })(qlLevels[i], qlColors[i % qlColors.length]);
     }
     // Show vertical translation annotation
-    bQL.create('text', [5, 9, 'Translacoes verticais'], {
+    bQL.create('text', [5, 9, 'Translações verticais'], {
       fontSize: 10, color: '#e65100', fixed: true
     });
     bQL.create('arrow', [[4, 2], [4, 6]], {

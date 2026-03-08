@@ -44,11 +44,11 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Mercado de Seguros: Espaco Estado-Contingente</div>
+  <div class="graph-title">Mercado de Seguros: Espaço Estado-Contingente</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
 
       <div class="slider-group">
         <label>Riqueza inicial \(W_0\): <span class="val" id="val-w0">10.0</span></label>
@@ -150,7 +150,7 @@
       var Wb0 = W0 - L;   // bad state
       var pEndow = board.create('point', [Wg0, Wb0], {
         size: 5, color: '#C8102E', fillColor: '#C8102E', fixed: true,
-        name: 'Dotacao', label: { fontSize: 12, offset: [8, -5] }
+        name: 'Dotação', label: { fontSize: 12, offset: [8, -5] }
       });
       drawObjects.push(pEndow);
 
@@ -189,7 +189,7 @@
 
       var pOpt = board.create('point', [optWg, optWb], {
         size: 5, color: '#00897b', fillColor: '#00897b', fixed: true,
-        name: 'Otimo', label: { fontSize: 12, offset: [8, 5] }
+        name: 'Ótimo', label: { fontSize: 12, offset: [8, 5] }
       });
       drawObjects.push(pOpt);
 
@@ -199,7 +199,7 @@
 
       var levels = [U0, Uopt];
       var icColors = ['#C8102E', '#00897b'];
-      var icNames = ['Sem seguro', 'Seguro otimo'];
+      var icNames = ['Sem seguro', 'Seguro ótimo'];
 
       for (var k = 0; k < levels.length; k++) {
         var Ulev = levels[k];

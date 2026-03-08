@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restricao Orcamentaria</title>
+  <title>Restrição Orçamentária</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
@@ -106,21 +106,21 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Restricao Orcamentaria</div>
+  <div class="graph-title">Restrição Orçamentária</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Renda \(M\): <span class="val" id="val-M">50</span></label>
         <input type="range" id="slider-M" min="10" max="100" step="1" value="50">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_1\): <span class="val" id="val-p1">5</span></label>
+        <label>Preço \(p_1\): <span class="val" id="val-p1">5</span></label>
         <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="5">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_2\): <span class="val" id="val-p2">5</span></label>
+        <label>Preço \(p_2\): <span class="val" id="val-p2">5</span></label>
         <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="5">
       </div>
 
@@ -225,7 +225,7 @@
       document.getElementById('eq-budget').innerHTML =
         '\\(' + p.p1.toFixed(1) + 'x_1 + ' + p.p2.toFixed(1) + 'x_2 = ' + p.M.toFixed(0) + '\\)';
       document.getElementById('eq-slope').innerHTML =
-        'Inclinacao: \\(-p_1/p_2 = ' + (-p.p1 / p.p2).toFixed(3) + '\\)';
+        'Inclinação: \\(-p_1/p_2 = ' + (-p.p1 / p.p2).toFixed(3) + '\\)';
       document.getElementById('eq-intercepts').innerHTML =
         '\\(M/p_1 = ' + (p.M / p.p1).toFixed(1) + ',\\; M/p_2 = ' + (p.M / p.p2).toFixed(1) + '\\)';
       document.getElementById('eq-point').innerHTML =

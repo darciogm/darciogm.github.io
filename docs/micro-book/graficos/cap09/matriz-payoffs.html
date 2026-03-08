@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matriz de Payoffs e Equilibrio de Nash</title>
+  <title>Matriz de Payoffs e Equilíbrio de Nash</title>
 
   <script>
     window.MathJax = {
@@ -75,7 +75,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Matriz de Payoffs e Equilibrio de Nash</div>
+  <div class="graph-title">Matriz de Payoffs e Equilíbrio de Nash</div>
   <div class="main-container">
 
     <div class="size-toggle">
@@ -95,7 +95,7 @@
     <button class="btn-solve" onclick="solve()">Resolver</button>
     <button class="btn-reset" onclick="resetAll()">Resetar</button>
 
-    <div class="info-box" id="info">Clique em <strong>Resolver</strong> para encontrar equilibrios.</div>
+    <div class="info-box" id="info">Clique em <strong>Resolver</strong> para encontrar equilíbrios.</div>
   </div>
 
   <script>
@@ -275,7 +275,7 @@
             html += '\\(\\sigma_2^* = (' + q.toFixed(3) + ',\\; ' + (1-q).toFixed(3) + ')\\)<br>';
             html += '\\(E[u_1] = ' + eu1.toFixed(3) + '\\), \\(E[u_2] = ' + eu2.toFixed(3) + '\\)';
           } else {
-            html += 'Nao existe EN completamente misto (probabilidades fora de [0,1]).';
+            html += 'Não existe EN completamente misto (probabilidades fora de [0,1]).';
           }
         } else {
           html += 'Jogo possui estrategia dominante; EN misto degenera.';
@@ -338,7 +338,7 @@
       document.getElementById('btn-2x2').classList.add('active');
       document.getElementById('btn-3x3').classList.remove('active');
       initMatrix();
-      document.getElementById('info').innerHTML = 'Clique em <strong>Resolver</strong> para encontrar equilibrios.';
+      document.getElementById('info').innerHTML = 'Clique em <strong>Resolver</strong> para encontrar equilíbrios.';
     }
 
     initMatrix();

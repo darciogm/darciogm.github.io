@@ -49,13 +49,13 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Intercepto \(a\): <span class="val" id="val-a">100</span></label>
         <input type="range" id="slider-a" min="40" max="200" step="1" value="100">
       </div>
       <div class="slider-group">
-        <label>Inclinacao \(b\): <span class="val" id="val-b">1.0</span></label>
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
         <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
@@ -67,7 +67,7 @@
         <input type="range" id="slider-c2" min="0" max="80" step="1" value="20">
       </div>
       <div class="chk-group">
-        <label><input type="checkbox" id="chk-cobweb"> Mostrar convergencia (cobweb)</label>
+        <label><input type="checkbox" id="chk-cobweb"> Mostrar convergência (cobweb)</label>
       </div>
       <div class="info-box" id="info"></div>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
@@ -206,11 +206,11 @@
         point1: { visible: false }, point2: { visible: false }
       });
 
-      var html = '<div class="section-title">Equilibrio de Cournot-Nash</div>';
+      var html = '<div class="section-title">Equilíbrio de Cournot-Nash</div>';
       html += '\\(q_1^* = ' + q1s.toFixed(2) + '\\), \\(q_2^* = ' + q2s.toFixed(2) + '\\)<br>';
       html += '\\(Q^* = ' + Qs.toFixed(2) + '\\), \\(P^* = ' + Ps.toFixed(2) + '\\)<br>';
       html += '\\(\\pi_1 = ' + pi1.toFixed(1) + '\\), \\(\\pi_2 = ' + pi2.toFixed(1) + '\\)';
-      html += '<div class="section-title">Comparacao</div>';
+      html += '<div class="section-title">Comparação</div>';
       html += 'Colusao: \\(Q = ' + qMon.toFixed(2) + '\\), \\(P = ' + ((p.a+cAvg)/2).toFixed(2) + '\\)<br>';
       html += 'Competitivo: \\(Q = ' + qComp.toFixed(2) + '\\), \\(P = ' + cAvg.toFixed(0) + '\\)';
 

@@ -44,7 +44,7 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>BMg consumidor 1 (\(a_1\)): <span class="val" id="val-a1">10</span></label>
         <input type="range" id="sl-a1" min="3" max="20" step="0.5" value="10">
@@ -77,7 +77,7 @@
 
     board.create('axis', [[0,0],[13,0]], {
       ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
-      name: 'G (bem publico)', withLabel: true,
+      name: 'G (bem público)', withLabel: true,
       label: { position: 'rt', offset: [-60, 15], fontSize: 11 }
     });
     board.create('axis', [[0,0],[0,21]], {
@@ -177,7 +177,7 @@
       var gs = gStar(), gp = gPriv();
       var t1 = mb1(gs), t2 = mb2(gs);
 
-      var html = '<b>Condicao de Samuelson:</b><br>';
+      var html = '<b>Condição de Samuelson:</b><br>';
       html += '\\(\\sum BMg_i = CMg\\)<br>';
       html += '\\(' + t1.toFixed(1) + ' + ' + t2.toFixed(1) + ' = ' + c.toFixed(1) + '\\)<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
@@ -185,7 +185,7 @@
       html += '<span style="color:#999;font-weight:700;">Provisao privada: \\(G_{priv} = ' + gp.toFixed(2) + '\\)</span><br>';
       html += '<b>Subprovisao:</b> \\(\\Delta G = ' + (gs - gp).toFixed(2) + '\\)<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<b>Precos de Lindahl:</b><br>';
+      html += '<b>Preços de Lindahl:</b><br>';
       html += '<span style="color:#1565c0;">\\(\\tau_1 = ' + t1.toFixed(2) + '\\)</span><br>';
       html += '<span style="color:#00897b;">\\(\\tau_2 = ' + t2.toFixed(2) + '\\)</span><br>';
       html += '\\(\\tau_1 + \\tau_2 = ' + (t1+t2).toFixed(2) + ' = CMg\\)';

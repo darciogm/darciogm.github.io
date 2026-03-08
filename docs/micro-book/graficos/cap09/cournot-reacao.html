@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Funcoes de Reacao de Cournot</title>
+  <title>Funções de Reação de Cournot</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
@@ -50,11 +50,11 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Funcoes de Reacao de Cournot</div>
+  <div class="graph-title">Funções de Reação de Cournot</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros de demanda e custo</h3>
+      <h3>Parâmetros de demanda e custo</h3>
 
       <div class="slider-group">
         <label>Intercepto \(a\): <span class="val" id="val-a">120</span></label>
@@ -62,7 +62,7 @@
       </div>
 
       <div class="slider-group">
-        <label>Inclinacao \(b\): <span class="val" id="val-b">1.0</span></label>
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
         <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
       </div>
 
@@ -76,7 +76,7 @@
         <input type="range" id="slider-c2" min="0" max="80" step="5" value="30">
       </div>
 
-      <button class="btn-animate" id="btn-anim" onclick="toggleAnim()">Animar convergencia</button>
+      <button class="btn-animate" id="btn-anim" onclick="toggleAnim()">Animar convergência</button>
 
       <div class="info-box" id="info"></div>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
@@ -200,7 +200,7 @@
 
       document.getElementById('info').innerHTML =
         '\\(P(Q) = ' + a.toFixed(0) + ' - ' + b.toFixed(1) + 'Q\\)<br>' +
-        '<strong style="color:#00897b">Equilibrio de Nash:</strong><br>' +
+        '<strong style="color:#00897b">Equilíbrio de Nash:</strong><br>' +
         '\\(q_1^* = ' + ne.q1.toFixed(2) + '\\), \\(q_2^* = ' + ne.q2.toFixed(2) + '\\)<br>' +
         '\\(Q^* = ' + Q.toFixed(2) + '\\), \\(P^* = ' + P.toFixed(2) + '\\)<br>' +
         '\\(\\pi_1 = ' + pi1.toFixed(1) + '\\), \\(\\pi_2 = ' + pi2.toFixed(1) + '\\)';
@@ -223,7 +223,7 @@
     function startAnim() {
       clearAnim();
       isAnimating = true;
-      document.getElementById('btn-anim').textContent = 'Parar animacao';
+      document.getElementById('btn-anim').textContent = 'Parar animação';
       document.getElementById('btn-anim').style.background = '#d32f2f';
 
       var q1 = BR1(0) * 0.9; // start near BR1 intercept
@@ -273,7 +273,7 @@
     function stopAnim() {
       isAnimating = false;
       if (animTimer) { clearInterval(animTimer); animTimer = null; }
-      document.getElementById('btn-anim').textContent = 'Animar convergencia';
+      document.getElementById('btn-anim').textContent = 'Animar convergência';
       document.getElementById('btn-anim').style.background = '#1565c0';
     }
 

@@ -243,15 +243,6 @@ abline(0, 1, lty = 3, col = "gray")
         statusEl.textContent = 'WebR pronto!';
         statusEl.className = 'status-bar status-ready';
         btnRun.disabled = false;
-
-        // Set up canvas graphics device
-        await webR.evalRVoid(`
-          options(device = function(...) {
-            png(tf <- tempfile(fileext = ".png"), width = 520, height = 400, res = 96, ...)
-            dev.control("enable")
-            tf
-          })
-        `);
       } catch (e) {
         statusEl.textContent = 'Erro ao carregar WebR: ' + e.message;
         statusEl.className = 'status-bar status-error';

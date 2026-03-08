@@ -53,7 +53,7 @@
         <label><input type="radio" name="ptype" value="harrod"><span>Harrod-neutro</span></label>
         <label><input type="radio" name="ptype" value="solow"><span>Solow-neutro</span></label>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Tecnologia \(A\): <span class="val" id="val-A">1.00</span></label>
         <input type="range" id="sl-A" min="1" max="3" step="0.1" value="1">
@@ -167,7 +167,7 @@
       } else if (type === 'harrod') {
         html += '<div class="eq">\\(q = K^{' + alpha + '} (AL)^{' + beta + '}\\)</div>';
         html += '<div>Harrod-neutro (aumentador de trabalho)</div>';
-        html += '<div>Compativel com crescimento equilibrado</div>';
+        html += '<div>Compatível com crescimento equilibrado</div>';
       } else {
         html += '<div class="eq">\\(q = (AK)^{' + alpha + '} L^{' + beta + '}\\)</div>';
         html += '<div>Solow-neutro (aumentador de capital)</div>';
@@ -178,7 +178,7 @@
       if (A > 1.05) {
         html += 'menos insumos necessarios para \\(q = ' + q.toFixed(1) + '\\)</div>';
       } else {
-        html += 'tecnologia de referencia</div>';
+        html += 'tecnologia de referência</div>';
       }
 
       info.innerHTML = html;

@@ -159,7 +159,7 @@ function updateInfo() {
   document.getElementById('optInfo').textContent = 'x*=' + paramA.toFixed(2) + ', f=' + f(paramA).toFixed(2);
   document.getElementById('cpoInfo').textContent = "f'(" + paramA.toFixed(1) + ") = 0  ✓";
   var fppVal = fpp(paramA);
-  document.getElementById('csoInfo').textContent = fppVal.toFixed(2) + ' < 0  ✓ (maximo)';
+  document.getElementById('csoInfo').textContent = fppVal.toFixed(2) + ' < 0  ✓ (máximo)';
   document.getElementById('csoInfo').style.color = fppVal < 0 ? '#00897b' : '#C8102E';
 }
 

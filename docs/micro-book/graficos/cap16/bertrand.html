@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Competicao de Bertrand</title>
+  <title>Competição de Bertrand</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -47,7 +47,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Competicao de Bertrand</div>
+  <div class="graph-title">Competição de Bertrand</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
@@ -56,7 +56,7 @@
         <button class="toggle-btn active" id="btn-homog" onclick="setMode('homog')">Homogeneo</button>
         <button class="toggle-btn" id="btn-diff" onclick="setMode('diff')">Diferenciado</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>CMg Firma 1 \(c_1\): <span class="val" id="val-c1">20</span></label>
         <input type="range" id="slider-c1" min="0" max="60" step="1" value="20">
@@ -71,11 +71,11 @@
           <input type="range" id="slider-alpha" min="40" max="200" step="1" value="100">
         </div>
         <div class="slider-group">
-          <label>Sensib. proprio preco \(\beta\): <span class="val" id="val-beta">2.0</span></label>
+          <label>Sensib. próprio preço \(\beta\): <span class="val" id="val-beta">2.0</span></label>
           <input type="range" id="slider-beta" min="1" max="5" step="0.1" value="2">
         </div>
         <div class="slider-group">
-          <label>Sensib. preco rival \(\gamma\): <span class="val" id="val-gamma">1.0</span></label>
+          <label>Sensib. preço rival \(\gamma\): <span class="val" id="val-gamma">1.0</span></label>
           <input type="range" id="slider-gamma" min="0.1" max="4" step="0.1" value="1">
         </div>
       </div>
@@ -205,7 +205,7 @@
 
         if (k >= 1 || p1s < 0 || p2s < 0) {
           // No interior equilibrium
-          document.getElementById('info').innerHTML = '<strong>Sem equilibrio interior.</strong> Ajuste \\(\\gamma < 2\\beta\\).';
+          document.getElementById('info').innerHTML = '<strong>Sem equilíbrio interior.</strong> Ajuste \\(\\gamma < 2\\beta\\).';
           board.update();
           if (window.MathJax && MathJax.typeset) MathJax.typeset();
           return;
@@ -246,13 +246,13 @@
         var pi1 = (p1s - c1) * q1s;
         var pi2 = (p2s - c2) * q2s;
 
-        var html = '<div class="section-title">Bertrand com Diferenciacao</div>';
+        var html = '<div class="section-title">Bertrand com Diferenciação</div>';
         html += '\\(q_i = ' + alpha + ' - ' + beta.toFixed(1) + 'p_i + ' + gamma.toFixed(1) + 'p_j\\)<br>';
-        html += '<div class="section-title">Equilibrio de Nash</div>';
+        html += '<div class="section-title">Equilíbrio de Nash</div>';
         html += '\\(p_1^* = ' + p1s.toFixed(2) + '\\), \\(p_2^* = ' + p2s.toFixed(2) + '\\)<br>';
         html += '\\(q_1 = ' + q1s.toFixed(2) + '\\), \\(q_2 = ' + q2s.toFixed(2) + '\\)<br>';
         html += '\\(\\pi_1 = ' + pi1.toFixed(1) + '\\), \\(\\pi_2 = ' + pi2.toFixed(1) + '\\)<br>';
-        html += 'Precos <strong>acima</strong> de CMg: diferenciacao resolve o paradoxo.';
+        html += 'Preços <strong>acima</strong> de CMg: diferenciação resolve o paradoxo.';
         document.getElementById('info').innerHTML = html;
       }
 

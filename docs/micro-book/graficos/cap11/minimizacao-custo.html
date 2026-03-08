@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Cap. 10 — Minimizacao de Custo (Cost Minimization)
+  Cap. 10 — Minimização de Custo (Cost Minimization)
   Library: JSXGraph
   Function types: Cobb-Douglas, Linear, Leontief, CES (production functions)
 -->
@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minimizacao de Custo</title>
+  <title>Minimização de Custo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -41,20 +41,20 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Minimizacao de Custo: Isoquanta e Isocusto</div>
+  <div class="graph-title">Minimização de Custo: Isoquanta e Isocusto</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Funcao de Producao</h3>
+      <h3>Função de Produção</h3>
       <div class="fn-selector">
         <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>Salario \(w\): <span class="val" id="val-w">2.00</span></label>
+        <label>Salário \(w\): <span class="val" id="val-w">2.00</span></label>
         <input type="range" id="sl-w" min="0.5" max="6" step="0.25" value="2">
       </div>
       <div class="slider-group">
@@ -277,7 +277,7 @@
       html += '<hr style="margin:.4rem 0">';
 
       if (currentFn === 'leontief') {
-        html += '<div class="eq">Proporcoes fixas: \\(\\frac{L}{K} = \\frac{'+be.toFixed(2)+'}{'+al.toFixed(2)+'}\\)</div>';
+        html += '<div class="eq">Proporções fixas: \\(\\frac{L}{K} = \\frac{'+be.toFixed(2)+'}{'+al.toFixed(2)+'}\\)</div>';
       } else {
         var tmst = w/r;
         html += '<div class="eq">\\(\\mathrm{TMST} = \\frac{w}{r} = '+tmst.toFixed(3)+'\\)</div>';

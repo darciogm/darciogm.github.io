@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equilibrio de Monopolio</title>
+  <title>Equilíbrio de Monopólio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -43,17 +43,17 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Equilibrio de Monopolio</div>
+  <div class="graph-title">Equilíbrio de Monopólio</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Intercepto da demanda \(a\): <span class="val" id="val-a">100</span></label>
         <input type="range" id="slider-a" min="40" max="150" step="1" value="100">
       </div>
       <div class="slider-group">
-        <label>Inclinacao da demanda \(b\): <span class="val" id="val-b">1.0</span></label>
+        <label>Inclinação da demanda \(b\): <span class="val" id="val-b">1.0</span></label>
         <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
@@ -228,12 +228,12 @@
       var bb = [-8, p.a * 1.1, (p.a / p.b) * 1.1, -10];
       board.setBoundingBox(bb);
 
-      var html = '<div class="section-title">Monopolio</div>';
+      var html = '<div class="section-title">Monopólio</div>';
       html += '\\(Q^m = ' + qm.toFixed(2) + '\\), \\(P^m = ' + pm.toFixed(2) + '\\)<br>';
       html += '\\(\\pi = ' + profit.toFixed(1) + '\\)<br>';
       html += '\\(EC = ' + cs.toFixed(1) + '\\), \\(PPM = ' + dwl.toFixed(1) + '\\)<br>';
       html += '\\(L = \\frac{P-CMg}{P} = ' + lerner.toFixed(3) + '\\)';
-      html += '<div class="section-title">Concorrencia Perfeita</div>';
+      html += '<div class="section-title">Concorrência Perfeita</div>';
       html += '\\(Q^c = ' + qc.toFixed(2) + '\\), \\(P^c = ' + p.c.toFixed(0) + '\\)<br>';
       var csComp = 0.5 * (p.a - p.c) * qc;
       html += '\\(EC^c = ' + csComp.toFixed(1) + '\\), \\(PPM = 0\\)';

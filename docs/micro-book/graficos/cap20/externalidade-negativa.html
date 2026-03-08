@@ -44,7 +44,7 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Custo externo por unidade (\(e\)): <span class="val" id="val-ext">3.0</span></label>
         <input type="range" id="sl-ext" min="0" max="8" step="0.1" value="3.0">
@@ -54,7 +54,7 @@
         <input type="range" id="sl-aD" min="10" max="30" step="0.5" value="20">
       </div>
       <div class="slider-group">
-        <label>Inclinacao oferta (\(b_S\)): <span class="val" id="val-bS">1.5</span></label>
+        <label>Inclinação oferta (\(b_S\)): <span class="val" id="val-bS">1.5</span></label>
         <input type="range" id="sl-bS" min="0.5" max="4" step="0.1" value="1.5">
       </div>
       <div class="slider-group">
@@ -188,11 +188,11 @@
       // Actually for linear curves: DWL = 0.5 * (qm-qs) * ext (since at qs, D=SMC and at qm the gap is ext)
       dwl = 0.5 * Math.abs(qm - qs) * ext;
 
-      var html = '<b>Equilibrio de mercado:</b><br>';
+      var html = '<b>Equilíbrio de mercado:</b><br>';
       html += '\\(Q_m = ' + qm.toFixed(2) + '\\), \\(P_m = ' + pm.toFixed(2) + '\\)<br>';
-      html += '<b>Otimo social:</b><br>';
+      html += '<b>Ótimo social:</b><br>';
       html += '\\(Q^* = ' + qs.toFixed(2) + '\\), \\(P^* = ' + ps.toFixed(2) + '\\)<br>';
-      html += '<b>Sobreproducao:</b> \\(\\Delta Q = ' + (qm - qs).toFixed(2) + '\\)<br>';
+      html += '<b>Sobreprodução:</b> \\(\\Delta Q = ' + (qm - qs).toFixed(2) + '\\)<br>';
       html += '<span style="color:#C8102E;font-weight:700;">Imposto pigouviano: \\(t^* = e = ' + ext.toFixed(1) + '\\)</span><br>';
       html += '<span style="color:#C8102E;">DWL = ' + dwl.toFixed(2) + '</span>';
 

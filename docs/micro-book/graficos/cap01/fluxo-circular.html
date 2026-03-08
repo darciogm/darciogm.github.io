@@ -87,7 +87,7 @@ function draw() {
   // Boxes
   var boxW = 140, boxH = 50;
   var agents = [
-    { id: 'households', label: 'Familias', x: cx, y: cy - ry - 20, color: '#1565c0' },
+    { id: 'households', label: 'Famílias', x: cx, y: cy - ry - 20, color: '#1565c0' },
     { id: 'firms', label: 'Firmas', x: cx, y: cy + ry + 20, color: '#C8102E' },
     { id: 'product', label: 'Mercado de\nProdutos', x: cx + rx, y: cy, color: '#00897b' },
     { id: 'factor', label: 'Mercado de\nFatores', x: cx - rx, y: cy, color: '#ff9800' }
@@ -116,48 +116,48 @@ function draw() {
 
   // Top-right: Households -> Product market (spending / payments)
   flows.push({ path: arcPath(hx+boxW/2, hy+10, px-boxW/2, py-10, -40), color: '#C8102E', marker: 0,
-    tip: 'Gastos das familias: pagamento por bens e servicos', label: 'Gastos ($)' });
+    tip: 'Gastos das famílias: pagamento por bens e servicos', label: 'Gastos ($)' });
   // Right-bottom: Product market -> Firms (revenue)
   flows.push({ path: arcPath(px-boxW/2, py+10, fx+boxW/2, fy-10, -40), color: '#C8102E', marker: 0,
     tip: 'Receita das firmas: venda de bens e servicos', label: 'Receita ($)' });
   // Top-right return: Product market -> Households (goods)
   flows.push({ path: arcPath(px-boxW/2-5, py-15, hx+boxW/2+5, hy+15, 40), color: '#00897b', marker: 2, dash: '6,4',
-    tip: 'Bens e servicos fluem do mercado para as familias', label: 'Bens/Servicos' });
+    tip: 'Bens e servicos fluem do mercado para as famílias', label: 'Bens/Servicos' });
   // Right-bottom return: Firms -> Product market (goods)
   flows.push({ path: arcPath(fx+boxW/2+5, fy-15, px-boxW/2-5, py+15, 40), color: '#00897b', marker: 2, dash: '6,4',
     tip: 'Firmas oferecem bens e servicos ao mercado', label: 'Bens/Servicos' });
 
   // Bottom-left: Firms -> Factor market (demand for factors / payments)
   flows.push({ path: arcPath(fx-boxW/2, fy-10, fax+boxW/2, fay+10, -40), color: '#C8102E', marker: 0,
-    tip: 'Pagamento por fatores de producao (salarios, alugueis, juros)', label: 'Pagamentos ($)' });
+    tip: 'Pagamento por fatores de produção (salários, aluguéis, juros)', label: 'Pagamentos ($)' });
   // Left-top: Factor market -> Households (income)
   flows.push({ path: arcPath(fax+boxW/2, fay-10, hx-boxW/2, hy+10, -40), color: '#C8102E', marker: 0,
-    tip: 'Renda das familias: salarios, alugueis, lucros, juros', label: 'Renda ($)' });
+    tip: 'Renda das famílias: salários, aluguéis, lucros, juros', label: 'Renda ($)' });
   // Bottom-left return: Factor market -> Firms (factors)
   flows.push({ path: arcPath(fax+boxW/2+5, fay+15, fx-boxW/2-5, fy+15, 40), color: '#ff9800', marker: 3, dash: '6,4',
-    tip: 'Fatores de producao fluem para as firmas (trabalho, capital, terra)', label: 'Fatores' });
+    tip: 'Fatores de produção fluem para as firmas (trabalho, capital, terra)', label: 'Fatores' });
   // Left-top return: Households -> Factor market (factors)
   flows.push({ path: arcPath(hx-boxW/2-5, hy+15, fax+boxW/2+5, fay-15, 40), color: '#ff9800', marker: 3, dash: '6,4',
-    tip: 'Familias oferecem fatores de producao ao mercado', label: 'Fatores' });
+    tip: 'Famílias oferecem fatores de produção ao mercado', label: 'Fatores' });
 
   // Government flows
   if (showGov) {
     var gx = cx, gy = cy + ry + 110;
     flows.push({ path: straightPath(gx-30, gy-boxH/2, hx-30, hy+boxH/2), color: '#7b1fa2', marker: 4,
-      tip: 'Transferencias do governo para familias (Bolsa Familia, aposentadorias)', label: 'Transferencias' });
+      tip: 'Transferências do governo para famílias (Bolsa Familia, aposentadorias)', label: 'Transferências' });
     flows.push({ path: straightPath(hx+30, hy+boxH/2, gx+30, gy-boxH/2), color: '#7b1fa2', marker: 4,
-      tip: 'Impostos pagos pelas familias ao governo', label: 'Impostos' });
+      tip: 'Impostos pagos pelas famílias ao governo', label: 'Impostos' });
     flows.push({ path: arcPath(gx+boxW/2, gy, fx+boxW/2+10, fy+10, 50), color: '#7b1fa2', marker: 4, dash: '4,3',
-      tip: 'Impostos sobre producao e subsidios', label: 'Impostos/Subsidios' });
+      tip: 'Impostos sobre produção e subsídios', label: 'Impostos/Subsídios' });
   }
 
   // International flows
   if (showIntl) {
     var ix = cx + rx + 10, iy = cy + ry + 60;
     flows.push({ path: arcPath(ix-boxW/2, iy-10, px+10, py+boxH/2, -30), color: '#795548', marker: -1,
-      tip: 'Importacoes: bens estrangeiros entram no mercado de produtos', label: 'Importacoes' });
+      tip: 'Importações: bens estrangeiros entram no mercado de produtos', label: 'Importações' });
     flows.push({ path: arcPath(px+10, py+boxH/2+5, ix-boxW/2, iy+10, 30), color: '#795548', marker: -1, dash: '6,4',
-      tip: 'Exportacoes: bens domesticos vendidos ao exterior', label: 'Exportacoes' });
+      tip: 'Exportações: bens domesticos vendidos ao exterior', label: 'Exportações' });
   }
 
   // Draw flows

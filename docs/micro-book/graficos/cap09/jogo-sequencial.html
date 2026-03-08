@@ -54,20 +54,20 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Jogo Sequencial — Forma Extensiva e Inducao Retroativa</div>
+  <div class="graph-title">Jogo Sequencial — Forma Extensiva e Indução Retroativa</div>
   <div class="graph-container">
     <svg id="tree-svg" width="520" height="420"></svg>
     <div class="controls">
       <h3>Jogos pre-definidos</h3>
       <div class="preset-group">
-        <button onclick="loadPreset('entry')">Entrada/Deterrencia</button>
+        <button onclick="loadPreset('entry')">Entrada/Deterrência</button>
         <button onclick="loadPreset('stackelberg')">Stackelberg</button>
       </div>
 
       <h3>Payoffs nos nos terminais</h3>
       <div class="payoff-editor" id="payoff-editor"></div>
 
-      <button class="btn-solve" onclick="solveAndDraw()">Resolver (inducao retroativa)</button>
+      <button class="btn-solve" onclick="solveAndDraw()">Resolver (indução retroativa)</button>
 
       <div class="info-box" id="info">Escolha um jogo e clique em <strong>Resolver</strong>.</div>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
@@ -79,11 +79,11 @@
     // Each node: { id, player, label, children: [{action, node}], payoffs: [p1, p2] (terminal only) }
     var games = {
       entry: {
-        name: 'Deterrencia de Entrada',
+        name: 'Deterrência de Entrada',
         tree: {
           id: 'root', player: 'Entrante', label: 'E',
           children: [
-            { action: 'Nao Entrar', node: { id: 't1', payoffs: [0, 2] } },
+            { action: 'Não Entrar', node: { id: 't1', payoffs: [0, 2] } },
             { action: 'Entrar', node: {
               id: 'n2', player: 'Incumbente', label: 'I',
               children: [
@@ -205,7 +205,7 @@
       }
 
       document.getElementById('info').innerHTML =
-        '<strong>Equilibrio Perfeito em Subjogos:</strong><br>' +
+        '<strong>Equilíbrio Perfeito em Subjogos:</strong><br>' +
         pathStr + '<br>' +
         'Payoffs: (' + result.payoffs[0] + ', ' + result.payoffs[1] + ')';
     }

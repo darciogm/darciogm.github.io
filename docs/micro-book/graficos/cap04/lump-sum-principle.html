@@ -52,28 +52,28 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Funcao Utilidade</h3>
+      <h3>Função Utilidade</h3>
       <div class="fn-selector">
         <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Renda \(M\): <span class="val" id="val-M">80</span></label>
         <input type="range" id="slider-M" min="20" max="100" step="1" value="80">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <label>Preço \(p_1\): <span class="val" id="val-p1">4</span></label>
         <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_2\): <span class="val" id="val-p2">4</span></label>
+        <label>Preço \(p_2\): <span class="val" id="val-p2">4</span></label>
         <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="4">
       </div>
       <div class="slider-group">
-        <label>Imposto unitario \(t\): <span class="val" id="val-t">2.0</span></label>
+        <label>Imposto unitário \(t\): <span class="val" id="val-t">2.0</span></label>
         <input type="range" id="slider-t" min="0.5" max="10" step="0.5" value="2">
       </div>
       <div class="slider-group" id="rho-group" style="display:none;">
@@ -82,7 +82,7 @@
       </div>
       <div class="legend">
         <span style="background:#C8102E;"></span> Original &nbsp;
-        <span style="background:#1565c0;"></span> Imposto unitario &nbsp;
+        <span style="background:#1565c0;"></span> Imposto unitário &nbsp;
         <span style="background:#00897b;"></span> <em>Lump sum</em>
       </div>
       <div class="info-box" id="info">
@@ -260,7 +260,7 @@
       if (currentFn === 'ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
 
       document.getElementById('eq-rev').innerHTML = 'Receita: \\(R = t \\cdot x_1^t = ' + c.Rev.toFixed(2) + '\\)';
-      document.getElementById('eq-ut').innerHTML = 'Utilidade (imposto unitario): \\(U^t = ' + c.Ut.toFixed(3) + '\\)';
+      document.getElementById('eq-ut').innerHTML = 'Utilidade (imposto unitário): \\(U^t = ' + c.Ut.toFixed(3) + '\\)';
       document.getElementById('eq-ul').innerHTML = 'Utilidade (<em>lump sum</em>): \\(U^{LS} = ' + c.Ul.toFixed(3) + '\\)';
       var diff = c.Ul - c.Ut;
       document.getElementById('eq-diff').innerHTML =

@@ -44,7 +44,7 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Prob. sinistro alto risco (\(p_H\)): <span class="val" id="val-pH">0.40</span></label>
         <input type="range" id="sl-pH" min="0.20" max="0.70" step="0.01" value="0.40">
@@ -209,7 +209,7 @@
       var euL_L = (1 - pL) * Math.log(wgL) + pL * Math.log(wbL);
       var premH = pH * d, premL = pL * betaL;
 
-      var html = '<b>Equilibrio Separador:</b><br>';
+      var html = '<b>Equilíbrio Separador:</b><br>';
       html += '<span style="color:#C8102E;font-weight:700;">Tipo H (alto risco):</span><br>';
       html += 'Seguro completo: \\(\\beta_H = d = ' + d + '\\)<br>';
       html += 'Premio: \\(\\alpha_H = p_H d = ' + premH.toFixed(1) + '\\)<br>';
@@ -221,7 +221,7 @@
       html += '\\(W_{bom} = ' + wgL.toFixed(1) + '\\), \\(W_{mau} = ' + wbL.toFixed(1) + '\\)<br>';
       html += 'EU = ' + euL_L.toFixed(3) + '<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<span style="font-size:.78rem;color:#666;">Tipo H recebe seguro completo (sobre linha 45°).<br>Tipo L recebe seguro parcial (distorcao pela assimetria de informacao).</span>';
+      html += '<span style="font-size:.78rem;color:#666;">Tipo H recebe seguro completo (sobre linha 45°).<br>Tipo L recebe seguro parcial (distorção pela assimetria de informação).</span>';
 
       document.getElementById('info').innerHTML = html;
       if (window.MathJax && MathJax.typeset) MathJax.typeset();

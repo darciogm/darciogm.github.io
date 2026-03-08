@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinalizacao — Modelo de Spence</title>
+  <title>Sinalização — Modelo de Spence</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -40,11 +40,11 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Sinalizacao por Educacao (Spence, 1973)</div>
+  <div class="graph-title">Sinalização por Educação (Spence, 1973)</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Produtividade alta (\(\theta_H\)): <span class="val" id="val-tH">100</span></label>
         <input type="range" id="sl-tH" min="60" max="150" step="1" value="100">
@@ -54,7 +54,7 @@
         <input type="range" id="sl-tL" min="20" max="80" step="1" value="50">
       </div>
       <div class="slider-group">
-        <label>Fracao tipo H (\(\mu\)): <span class="val" id="val-mu">0.50</span></label>
+        <label>Fração tipo H (\(\mu\)): <span class="val" id="val-mu">0.50</span></label>
         <input type="range" id="sl-mu" min="0.05" max="0.95" step="0.01" value="0.50">
       </div>
       <div class="info-box" id="info"></div>
@@ -78,12 +78,12 @@
 
     board.create('axis', [[0,0],[4300,0]], {
       ticks: { drawLabels: true, ticksDistance: 1000, minorTicks: 1, label:{fontSize:10} },
-      name: 'Educacao (s)', withLabel: true,
+      name: 'Educação (s)', withLabel: true,
       label: { position: 'rt', offset: [-50, 15], fontSize: 11 }
     });
     board.create('axis', [[0,0],[0,165]], {
       ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10} },
-      name: 'Salario / Payoff', withLabel: true,
+      name: 'Salário / Payoff', withLabel: true,
       label: { position: 'rt', offset: [10, -5], fontSize: 11 }
     });
 
@@ -200,17 +200,17 @@
       var netL = tL; // type L gets theta_L, no education
       var costRatio = (1/tL) / (1/tH);
 
-      var html = '<b>Custo educacao:</b> \\(c_H(s) = s/' + tH + '\\), \\(c_L(s) = s/' + tL + '\\)<br>';
+      var html = '<b>Custo educação:</b> \\(c_H(s) = s/' + tH + '\\), \\(c_L(s) = s/' + tL + '\\)<br>';
       html += '<b>Razao de custos:</b> \\(c_L/c_H = ' + costRatio.toFixed(2) + '\\)<br>';
       html += '<b>Single-crossing:</b> ' + (tH > tL ? '<span style="color:#00897b;font-weight:700;">Satisfeita</span>' : '<span style="color:#C8102E;">Violada</span>') + '<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<b>Equilibrio separador:</b><br>';
+      html += '<b>Equilíbrio separador:</b><br>';
       html += '\\(s^* \\in [' + sMin.toFixed(0) + ',\\,' + sMax.toFixed(0) + ']\\)<br>';
       html += '<b>Menor custo:</b> \\(s^* = \\theta_L(\\theta_H - \\theta_L) = ' + sLC.toFixed(0) + '\\)<br>';
       html += '<b>Payoff H:</b> \\(\\theta_H - s^*/\\theta_H = ' + netH.toFixed(1) + '\\)<br>';
       html += '<b>Payoff L:</b> \\(\\theta_L = ' + netL.toFixed(0) + '\\)<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<b>Equilibrio pooling:</b> \\(w = ' + wPool().toFixed(1) + '\\)<br>';
+      html += '<b>Equilíbrio pooling:</b> \\(w = ' + wPool().toFixed(1) + '\\)<br>';
       html += '<span style="font-size:.78rem;color:#666;">Regiao azul clara: intervalo de s* validos</span>';
 
       document.getElementById('info').innerHTML = html;

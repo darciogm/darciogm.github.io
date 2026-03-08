@@ -49,34 +49,34 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Dualidade: Maximizacao de Utilidade vs. Minimizacao do Dispendio</div>
+  <div class="graph-title">Dualidade: Maximização de Utilidade vs. Minimização do Dispendio</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Funcao Utilidade</h3>
+      <h3>Função Utilidade</h3>
       <div class="fn-selector">
         <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
       </div>
-      <h3>Visualizacao</h3>
+      <h3>Visualização</h3>
       <div class="toggle-group">
         <button class="toggle-btn active" id="btn-primal" onclick="setView('primal')">Primal (max U)</button>
         <button class="toggle-btn" id="btn-dual" onclick="setView('dual')">Dual (min E)</button>
         <button class="toggle-btn" id="btn-both" onclick="setView('both')">Ambos</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Renda \(I\): <span class="val" id="val-I">60</span></label>
         <input type="range" id="slider-I" min="10" max="100" step="1" value="60">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <label>Preço \(p_1\): <span class="val" id="val-p1">4</span></label>
         <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_2\): <span class="val" id="val-p2">3</span></label>
+        <label>Preço \(p_2\): <span class="val" id="val-p2">3</span></label>
         <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="3">
       </div>
       <div class="slider-group" id="rho-group" style="display:none;">
@@ -328,7 +328,7 @@
       } else if (currentView === 'dual') {
         document.getElementById('eq-problem').innerHTML = '\\(\\min E = p_1 x_1 + p_2 x_2\\) s.a. \\(U \\geq \\bar{u}\\)';
       } else {
-        document.getElementById('eq-problem').innerHTML = 'Primal e Dual: mesmo ponto de tangencia';
+        document.getElementById('eq-problem').innerHTML = 'Primal e Dual: mesmo ponto de tangência';
       }
       document.getElementById('eq-solution').innerHTML = '\\(x_1^* = ' + c.x1.toFixed(2) + ',\\; x_2^* = ' + c.x2.toFixed(2) + '\\)';
       document.getElementById('eq-V').innerHTML = '\\(V(\\mathbf{p}, I) = ' + c.V.toFixed(3) + '\\)';

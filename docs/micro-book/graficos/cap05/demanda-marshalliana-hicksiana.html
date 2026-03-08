@@ -138,16 +138,16 @@
   <div class="graph-title">Demanda Marshalliana vs Hicksiana</div>
   <div class="graph-container">
     <div class="panels">
-      <div class="panel-label">Curvas de indiferenca e restricoes orcamentarias</div>
+      <div class="panel-label">Curvas de indiferença e restrições orçamentárias</div>
       <div id="jxgbox1" class="jxgbox"></div>
       <div class="panel-label">Curvas de demanda</div>
       <div id="jxgbox2" class="jxgbox"></div>
     </div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
 
       <div class="slider-group">
-        <label>Preco \(p_1\): <span class="val" id="val-p1">2.00</span></label>
+        <label>Preço \(p_1\): <span class="val" id="val-p1">2.00</span></label>
         <input type="range" id="slider-p1" min="0.5" max="6" step="0.1" value="2">
       </div>
 
@@ -379,7 +379,7 @@
       html += '\\(x_1^{Hicks} = ' + x1h.toFixed(2) + '\\)<br>';
       html += 'Excedente do consumidor \\(\\approx ' + cs.toFixed(2) + '\\)<br>';
       html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
-      html += 'Para bem normal (\\(\\alpha > 0\\)): a hicksiana e mais inclinada que a marshalliana (menos elastica), pois captura apenas o efeito substituicao.';
+      html += 'Para bem normal (\\(\\alpha > 0\\)): a hicksiana e mais inclinada que a marshalliana (menos elastica), pois captura apenas o efeito substituição.';
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;

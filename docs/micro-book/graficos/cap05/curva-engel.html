@@ -137,16 +137,16 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Curva de Engel e Caminho de Expansao da Renda</div>
+  <div class="graph-title">Curva de Engel e Caminho de Expansão da Renda</div>
   <div class="graph-container">
     <div class="boards-wrapper">
-      <div class="board-label">Espaco de Bens (caminho de expansao)</div>
+      <div class="board-label">Espaço de Bens (caminho de expansão)</div>
       <div id="jxgbox1" class="jxgbox"></div>
       <div class="board-label">Curva de Engel</div>
       <div id="jxgbox2" class="jxgbox"></div>
     </div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
 
       <div class="slider-group">
         <label>Renda \(M\): <span class="val" id="val-M">100</span></label>
@@ -430,7 +430,7 @@
       html += '\\(\\varepsilon_{x_2,M} = ' + elast2.toFixed(2) + '\\) (' + classif2 + ')';
       html += '</div>';
       if (s.type === 'inferior') {
-        html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">Nota: Na quase-linear, \\(x_1\\) nao responde a renda (efeito renda zero) enquanto \\(x_2\\) absorve toda variacao.</div>';
+        html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">Nota: Na quase-linear, \\(x_1\\) nao responde a renda (efeito renda zero) enquanto \\(x_2\\) absorve toda variação.</div>';
       }
 
       document.getElementById('info').innerHTML = html;

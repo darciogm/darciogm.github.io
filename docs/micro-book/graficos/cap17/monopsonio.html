@@ -45,13 +45,13 @@
   <div class="graph-container">
     <div id="jxgbox1" class="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Intercepto oferta \(a\): <span class="val" id="val-a">5</span></label>
         <input type="range" id="slider-a" min="0" max="15" step="0.5" value="5">
       </div>
       <div class="slider-group">
-        <label>Inclinacao oferta \(b\): <span class="val" id="val-b">0.50</span></label>
+        <label>Inclinação oferta \(b\): <span class="val" id="val-b">0.50</span></label>
         <input type="range" id="slider-b" min="0.10" max="1.50" step="0.05" value="0.50">
       </div>
       <div class="slider-group">
@@ -59,7 +59,7 @@
         <input type="range" id="slider-mrp0" min="20" max="60" step="1" value="40">
       </div>
       <div class="slider-group">
-        <label>VPMg (inclinacao): <span class="val" id="val-mrp1">0.50</span></label>
+        <label>VPMg (inclinação): <span class="val" id="val-mrp1">0.50</span></label>
         <input type="range" id="slider-mrp1" min="0.10" max="1.50" step="0.05" value="0.50">
       </div>
       <div class="info-box" id="info"></div>
@@ -163,7 +163,7 @@
     board.create('text', [
       function() { return monopH() + 1.5; },
       function() { return (monopW() + monopMRP()) / 2; },
-      function() { return '<span style="color:#C8102E;font-size:10px;">Exploracao</span>'; }
+      function() { return '<span style="color:#C8102E;font-size:10px;">Exploração</span>'; }
     ], { fontSize: 10, anchorX: 'left', useMathJax: false });
 
     // Legend
@@ -207,7 +207,7 @@
       html += '\\(H^* = ' + Hm.toFixed(1) + '\\), \\(w^* = ' + wm.toFixed(1) + '\\)<br>';
       html += '<span style="color:#00897b;font-weight:bold;">Competitivo:</span><br>';
       html += '\\(H_c = ' + Hc.toFixed(1) + '\\), \\(w_c = ' + wc.toFixed(1) + '\\)<br>';
-      html += '<strong>Exploracao:</strong> \\(VPMg - w^* = ' + exploitation.toFixed(1) + '\\)';
+      html += '<strong>Exploração:</strong> \\(VPMg - w^* = ' + exploitation.toFixed(1) + '\\)';
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;

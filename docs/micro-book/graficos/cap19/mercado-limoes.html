@@ -47,9 +47,9 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>Fracao de limoes (\(\lambda\)): <span class="val" id="val-lam">0.50</span></label>
+        <label>Fração de limoes (\(\lambda\)): <span class="val" id="val-lam">0.50</span></label>
         <input type="range" id="sl-lam" min="0" max="1" step="0.01" value="0.50">
       </div>
       <div class="slider-group">
@@ -83,7 +83,7 @@
     // Axes
     board.create('axis', [[0,0],[1.1,0]], {
       ticks: { drawLabels: true, ticksDistance: 0.2, minorTicks: 0, label: {fontSize:10} },
-      name: 'Fracao limoes (λ)', withLabel: true,
+      name: 'Fração limoes (λ)', withLabel: true,
       label: { position: 'rt', offset: [-60, 15], fontSize: 11 }
     });
     board.create('axis', [[0,0],[0,1.1]], {
@@ -187,16 +187,16 @@
 
       if (goodTrade) {
         html += '<span class="status-ok">Ambos os tipos transacionam (WTP ≥ C_H)</span><br>';
-        html += '<b>Preco de equilibrio:</b> ' + wtp.toFixed(1);
+        html += '<b>Preço de equilíbrio:</b> ' + wtp.toFixed(1);
       } else if (badTrade) {
         html += '<span class="status-fail">Apenas limoes no mercado (WTP < C_H)</span><br>';
-        html += '<b>Preco:</b> ' + VL.toFixed(1) + ' (so carros ruins)';
+        html += '<b>Preço:</b> ' + VL.toFixed(1) + ' (so carros ruins)';
       } else {
         html += '<span class="status-fail">Mercado colapsa completamente!</span>';
       }
       document.getElementById('info').innerHTML = html;
 
-      var steps = '<b>Processo de selecao adversa:</b><br>';
+      var steps = '<b>Processo de seleção adversa:</b><br>';
       steps += '1. Comprador oferece \\(\\bar{V} = ' + wtp.toFixed(1) + '\\)<br>';
       if (goodTrade) {
         steps += '2. \\(\\bar{V} \\geq C_H\\): vendedores de carros bons aceitam<br>';
@@ -205,7 +205,7 @@
         steps += '2. \\(\\bar{V} < C_H = ' + CH + '\\): carros bons saem do mercado<br>';
         steps += '3. So restam limoes; comprador ajusta para \\(V_L = ' + VL + '\\)<br>';
         if (VL >= CL) {
-          steps += '4. Equilibrio: apenas carros ruins a preco \\(V_L\\)';
+          steps += '4. Equilíbrio: apenas carros ruins a preço \\(V_L\\)';
         } else {
           steps += '4. \\(V_L < C_L\\): mercado desaparece completamente!';
         }

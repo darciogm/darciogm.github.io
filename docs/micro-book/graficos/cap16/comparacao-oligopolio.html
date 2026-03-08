@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparacao de Estruturas de Mercado</title>
+  <title>Comparação de Estruturas de Mercado</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -45,17 +45,17 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Comparacao de Estruturas de Mercado</div>
+  <div class="graph-title">Comparação de Estruturas de Mercado</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Intercepto \(a\): <span class="val" id="val-a">100</span></label>
         <input type="range" id="slider-a" min="40" max="200" step="1" value="100">
       </div>
       <div class="slider-group">
-        <label>Inclinacao \(b\): <span class="val" id="val-b">1.0</span></label>
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
         <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
@@ -170,7 +170,7 @@
       html += '<tr><td><span class="dot-legend" style="background:'+colors.cour+'"></span>Cournot</td><td>' + qCour.toFixed(1) + '</td><td>' + pCour.toFixed(1) + '</td><td>' + piCour.toFixed(0) + '</td><td>' + csCour.toFixed(0) + '</td><td>' + wCour.toFixed(0) + '</td></tr>';
       html += '<tr><td><span class="dot-legend" style="background:'+colors.mon+'"></span>Colusao</td><td>' + qMon.toFixed(1) + '</td><td>' + pMon.toFixed(1) + '</td><td>' + piMon.toFixed(0) + '</td><td>' + csMon.toFixed(0) + '</td><td>' + wMon.toFixed(0) + '</td></tr>';
       html += '</table>';
-      html += '<div style="margin-top:0.5rem;font-size:0.78rem;color:#666;">\\(W = EC + \\pi\\). Ordenacao por eficiencia: Compet. \\(\\geq\\) Stack. \\(\\geq\\) Cournot \\(\\geq\\) Colusao.</div>';
+      html += '<div style="margin-top:0.5rem;font-size:0.78rem;color:#666;">\\(W = EC + \\pi\\). Ordenação por eficiência: Compet. \\(\\geq\\) Stack. \\(\\geq\\) Cournot \\(\\geq\\) Colusao.</div>';
 
       document.getElementById('info').innerHTML = html;
       board.update();

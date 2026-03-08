@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discriminacao de Precos</title>
+  <title>Discriminação de Preços</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -47,11 +47,11 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Discriminacao de Precos</div>
+  <div class="graph-title">Discriminação de Preços</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Tipo de Discriminacao</h3>
+      <h3>Tipo de Discriminação</h3>
       <div class="toggle-group">
         <button class="toggle-btn active" id="btn-1st" onclick="setMode('1st')">1o Grau</button>
         <button class="toggle-btn" id="btn-2nd" onclick="setMode('2nd')">2o Grau</button>
@@ -71,7 +71,7 @@
           <input type="range" id="slider-a1" min="40" max="150" step="1" value="100">
         </div>
         <div class="slider-group">
-          <label>Inclinacao \(b\): <span class="val" id="val-b1">1.0</span></label>
+          <label>Inclinação \(b\): <span class="val" id="val-b1">1.0</span></label>
           <input type="range" id="slider-b1" min="0.3" max="3" step="0.1" value="1">
         </div>
       </div>
@@ -82,7 +82,7 @@
           <input type="range" id="slider-a2" min="40" max="150" step="1" value="100">
         </div>
         <div class="slider-group">
-          <label>Inclinacao \(b\): <span class="val" id="val-b2">1.0</span></label>
+          <label>Inclinação \(b\): <span class="val" id="val-b2">1.0</span></label>
           <input type="range" id="slider-b2" min="0.3" max="3" step="0.1" value="1">
         </div>
         <div class="slider-group">
@@ -178,8 +178,8 @@
       board.create('text', [qc/3, c + (a - c) * 0.4, '\\(\\pi\\)'], { fontSize: 13, color: '#00897b', useMathJax: true, fontWeight: 'bold' });
 
       var totalSurplus = 0.5 * (a - c) * qc;
-      var html = '<div class="section-title">Discriminacao de 1o Grau</div>';
-      html += 'Cada unidade vendida ao preco de reserva do consumidor.<br>';
+      var html = '<div class="section-title">Discriminação de 1o Grau</div>';
+      html += 'Cada unidade vendida ao preço de reserva do consumidor.<br>';
       html += '\\(Q = Q^c = ' + qc.toFixed(2) + '\\)<br>';
       html += '\\(\\pi = EC_{total} = ' + totalSurplus.toFixed(1) + '\\)<br>';
       html += '\\(EC = 0\\), \\(PPM = 0\\)<br>';
@@ -233,10 +233,10 @@
       var csRemaining = csAtC - effectiveT;
 
       var html = '<div class="section-title">Tarifa em Duas Partes</div>';
-      html += 'Preco unitario \\(p = CMg = ' + c.toFixed(0) + '\\)<br>';
+      html += 'Preço unitário \\(p = CMg = ' + c.toFixed(0) + '\\)<br>';
       html += 'Taxa fixa \\(T = ' + T.toFixed(0) + '\\)<br>';
       html += '\\(Q = ' + qOpt.toFixed(2) + '\\)<br>';
-      html += 'EC maximo a \\(p=c\\): \\(' + csAtC.toFixed(1) + '\\)<br>';
+      html += 'EC máximo a \\(p=c\\): \\(' + csAtC.toFixed(1) + '\\)<br>';
       if (T <= csAtC) {
         html += '\\(\\pi = T = ' + effectiveT.toFixed(1) + '\\)<br>';
         html += 'EC residual: \\(' + csRemaining.toFixed(1) + '\\)<br>';
@@ -332,9 +332,9 @@
       html += '<strong style="color:#C8102E">Mercado 2:</strong> \\(P_2=' + p2.toFixed(1) + '\\), \\(Q_2=' + q2.toFixed(2) + '\\), \\(\\pi_2=' + pi2.toFixed(1) + '\\)<br>';
       html += '\\(|\\varepsilon_2|=' + Math.abs(eps2).toFixed(2) + '\\)<br>';
       html += '\\(\\pi_{total} = ' + (pi1 + pi2).toFixed(1) + '\\)';
-      html += '<div class="section-title">Preco Uniforme</div>';
+      html += '<div class="section-title">Preço Uniforme</div>';
       html += '\\(P^u=' + bestPu.toFixed(1) + '\\), \\(\\pi^u=' + bestPiU.toFixed(1) + '\\)<br>';
-      html += 'Ganho com discriminacao: \\(' + (pi1 + pi2 - bestPiU).toFixed(1) + '\\)';
+      html += 'Ganho com discriminação: \\(' + (pi1 + pi2 - bestPiU).toFixed(1) + '\\)';
       document.getElementById('info').innerHTML = html;
     }
 

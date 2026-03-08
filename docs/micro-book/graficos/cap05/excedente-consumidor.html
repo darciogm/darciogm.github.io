@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Excedente do Consumidor, Variacao Compensatoria e Variacao Equivalente — Interactive Graph
+  Excedente do Consumidor, Variação Compensatória e Variação Equivalente — Interactive Graph
   Library: JSXGraph
   Reason: Shaded areas, sliders, and dynamic welfare measure calculations.
   Chapter 5 — Microeconomia
@@ -144,15 +144,15 @@
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
 
       <div class="slider-group">
-        <label>Preco inicial \(p_0\): <span class="val" id="val-p0">5.00</span></label>
+        <label>Preço inicial \(p_0\): <span class="val" id="val-p0">5.00</span></label>
         <input type="range" id="slider-p0" min="1" max="8" step="0.1" value="5">
       </div>
 
       <div class="slider-group">
-        <label>Preco final \(p_1\): <span class="val" id="val-p1">2.00</span></label>
+        <label>Preço final \(p_1\): <span class="val" id="val-p1">2.00</span></label>
         <input type="range" id="slider-p1" min="0.5" max="8" step="0.1" value="2">
       </div>
 
@@ -162,7 +162,7 @@
       </div>
 
       <div class="slider-group">
-        <label>Inclinacao \(b\): <span class="val" id="val-b">1.00</span></label>
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.00</span></label>
         <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
       </div>
 
@@ -179,8 +179,8 @@
       <div class="toggle-group">
         <strong style="font-size:0.85rem;">Exibir:</strong>
         <label><input type="checkbox" id="show-cs" checked> EC (Excedente do Consumidor)</label>
-        <label><input type="checkbox" id="show-cv"> VC (Variacao Compensatoria)</label>
-        <label><input type="checkbox" id="show-ev"> VE (Variacao Equivalente)</label>
+        <label><input type="checkbox" id="show-cv"> VC (Variação Compensatória)</label>
+        <label><input type="checkbox" id="show-ev"> VE (Variação Equivalente)</label>
       </div>
 
       <div style="margin-bottom:0.6rem;">
@@ -435,8 +435,8 @@
 
       updateAreas();
 
-      var priceDir = s.p1 < s.p0 ? 'queda' : (s.p1 > s.p0 ? 'aumento' : 'sem variacao');
-      var html = '<strong>Variacao de preco (' + priceDir + '):</strong><br>';
+      var priceDir = s.p1 < s.p0 ? 'queda' : (s.p1 > s.p0 ? 'aumento' : 'sem variação');
+      var html = '<strong>Variação de preço (' + priceDir + '):</strong><br>';
       html += '\\(p_0 = ' + s.p0.toFixed(2) + ' \\to p_1 = ' + s.p1.toFixed(2) + '\\)<br>';
       html += '<div style="margin:0.3rem 0;">';
       if (s.showCS) html += '<span style="color:#C8102E;">\\(\\Delta EC = ' + (sign * csVal).toFixed(2) + '\\)</span><br>';
@@ -445,7 +445,7 @@
       html += '</div>';
 
       if (s.p1 < s.p0 && s.showCS && s.showCV && s.showEV) {
-        html += '<div style="font-size:0.78rem;color:#555;margin-top:0.3rem;">Para queda de preco de bem normal:<br>';
+        html += '<div style="font-size:0.78rem;color:#555;margin-top:0.3rem;">Para queda de preço de bem normal:<br>';
         html += '\\(VC < \\Delta EC < VE\\)<br>';
         html += '(' + cvDisplay.toFixed(2) + ' < ' + (csVal).toFixed(2) + ' < ' + evDisplay.toFixed(2) + ')</div>';
       }

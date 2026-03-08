@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equilibrio do Consumidor</title>
+  <title>Equilíbrio do Consumidor</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -46,28 +46,28 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Equilibrio do Consumidor — Tangencia</div>
+  <div class="graph-title">Equilíbrio do Consumidor — Tangência</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Funcao Utilidade</h3>
+      <h3>Função Utilidade</h3>
       <div class="fn-selector">
         <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Renda \(M\): <span class="val" id="val-M">60</span></label>
         <input type="range" id="slider-M" min="10" max="100" step="1" value="60">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <label>Preço \(p_1\): <span class="val" id="val-p1">4</span></label>
         <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
       </div>
       <div class="slider-group">
-        <label>Preco \(p_2\): <span class="val" id="val-p2">3</span></label>
+        <label>Preço \(p_2\): <span class="val" id="val-p2">3</span></label>
         <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="3">
       </div>
       <div class="slider-group">
@@ -293,32 +293,32 @@
         case 'cd':
           uStr = '\\(U = x_1^{' + p.a.toFixed(2) + '} \\cdot x_2^{' + (1-p.a).toFixed(2) + '}\\)';
           oStr = '\\(x_1^* = \\frac{\\alpha M}{p_1} = ' + o.x1.toFixed(2) + ',\\; x_2^* = \\frac{(1\\!-\\!\\alpha)M}{p_2} = ' + o.x2.toFixed(2) + '\\)';
-          tStr = 'Tangencia: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1/p.p2).toFixed(3) + '\\)';
+          tStr = 'Tangência: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1/p.p2).toFixed(3) + '\\)';
           break;
         case 'linear':
           uStr = '\\(U = ' + p.a.toFixed(2) + ' x_1 + ' + (1-p.a).toFixed(2) + ' x_2\\)';
           var b1 = p.a/p.p1, b2 = (1-p.a)/p.p2;
           if (b1 > b2 + 0.0001) {
-            oStr = 'Solucao de canto: \\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = 0\\)';
+            oStr = 'Solução de canto: \\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = 0\\)';
             tStr = '\\(\\frac{\\alpha}{p_1} = ' + b1.toFixed(4) + ' > \\frac{1-\\alpha}{p_2} = ' + b2.toFixed(4) + '\\)';
           } else if (b2 > b1 + 0.0001) {
-            oStr = 'Solucao de canto: \\(x_1^* = 0,\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
+            oStr = 'Solução de canto: \\(x_1^* = 0,\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
             tStr = '\\(\\frac{1-\\alpha}{p_2} = ' + b2.toFixed(4) + ' > \\frac{\\alpha}{p_1} = ' + b1.toFixed(4) + '\\)';
           } else {
-            oStr = 'Multiplos otimos ao longo da reta orcamentaria';
+            oStr = 'Multiplos otimos ao longo da reta orçamentária';
             tStr = '\\(\\frac{\\alpha}{p_1} = \\frac{1-\\alpha}{p_2}\\)';
           }
           break;
         case 'leontief':
           uStr = '\\(U = \\min\\!\\left(\\frac{x_1}{\\alpha},\\; \\frac{x_2}{1-\\alpha}\\right)\\)';
           oStr = '\\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
-          tStr = 'Otimo no vertice: \\(\\frac{x_1}{\\alpha} = \\frac{x_2}{1-\\alpha}\\)';
+          tStr = 'Ótimo no vértice: \\(\\frac{x_1}{\\alpha} = \\frac{x_2}{1-\\alpha}\\)';
           break;
         case 'ces':
           var rho = getRho(), sigma = 1/(1-rho);
           uStr = '\\(U = (\\alpha x_1^{\\rho} + (1\\!-\\!\\alpha) x_2^{\\rho})^{1/\\rho}\\),&ensp;\\(\\sigma = ' + sigma.toFixed(2) + '\\)';
           oStr = '\\(x_1^* = ' + o.x1.toFixed(2) + ',\\; x_2^* = ' + o.x2.toFixed(2) + '\\)';
-          tStr = 'Tangencia: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1/p.p2).toFixed(3) + '\\)';
+          tStr = 'Tangência: \\(\\text{TMS} = \\frac{p_1}{p_2} = ' + (p.p1/p.p2).toFixed(3) + '\\)';
           break;
       }
       usStr = '\\(U^* = ' + o.U.toFixed(3) + '\\)';

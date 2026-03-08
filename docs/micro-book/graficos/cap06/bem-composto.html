@@ -45,13 +45,13 @@
   <div class="graph-container">
     <div id="jxgbox1" class="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>\(\alpha\) (preco proporcional do composto): <span class="val" id="val-alpha">1.00</span></label>
+        <label>\(\alpha\) (preço proporcional do composto): <span class="val" id="val-alpha">1.00</span></label>
         <input type="range" id="slider-alpha" min="0.30" max="3.00" step="0.05" value="1.00">
       </div>
       <div class="slider-group">
-        <label>\(p_1\) (preco do bem 1): <span class="val" id="val-p1">2.00</span></label>
+        <label>\(p_1\) (preço do bem 1): <span class="val" id="val-p1">2.00</span></label>
         <input type="range" id="slider-p1" min="0.5" max="5" step="0.1" value="2">
       </div>
       <div class="slider-group">
@@ -59,7 +59,7 @@
         <input type="range" id="slider-I" min="40" max="200" step="5" value="120">
       </div>
       <div class="slider-group">
-        <label>\(\beta\) (preferencia por \(x_1\)): <span class="val" id="val-beta">0.40</span></label>
+        <label>\(\beta\) (preferência por \(x_1\)): <span class="val" id="val-beta">0.40</span></label>
         <input type="range" id="slider-beta" min="0.10" max="0.90" step="0.05" value="0.40">
       </div>
       <div class="info-box" id="info"></div>
@@ -190,20 +190,20 @@
 
       var html = '<div style="text-align:center;">\\(U(x_1, y) = x_1^{\\beta} y^{1-\\beta}\\)</div>';
       html += '<div style="margin-top:0.4rem;">';
-      html += 'Restricao: \\(p_1 x_1 + \\alpha \\cdot y = I\\)<br>';
+      html += 'Restrição: \\(p_1 x_1 + \\alpha \\cdot y = I\\)<br>';
       html += '\\(x_1^* = ' + x1s.toFixed(2) + '\\), \\(y^* = ' + ys.toFixed(2) + '\\)<br>';
       html += 'Gasto com composto: \\(\\alpha y^* = ' + (s.alpha * ys).toFixed(2) + '\\)<br>';
       html += 'Gasto com \\(x_1\\): \\(p_1 x_1^* = ' + (s.p1 * x1s).toFixed(2) + '\\)';
       html += '</div>';
       html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
       if (s.alpha > 1.05) {
-        html += 'O preco do composto subiu (\\(\\alpha > 1\\)): a restricao gira para dentro no eixo \\(y\\). O consumidor substitui em direcao a \\(x_1\\).';
+        html += 'O preço do composto subiu (\\(\\alpha > 1\\)): a restrição gira para dentro no eixo \\(y\\). O consumidor substitui em direção a \\(x_1\\).';
       } else if (s.alpha < 0.95) {
-        html += 'O preco do composto caiu (\\(\\alpha < 1\\)): a restricao gira para fora no eixo \\(y\\). O consumidor compra mais do composto.';
+        html += 'O preço do composto caiu (\\(\\alpha < 1\\)): a restrição gira para fora no eixo \\(y\\). O consumidor compra mais do composto.';
       } else {
-        html += 'Precos-base (\\(\\alpha = 1\\)): situacao de referencia.';
+        html += 'Preços-base (\\(\\alpha = 1\\)): situação de referência.';
       }
-      html += ' <span style="color:#ccc;">Linha cinza tracejada = restricao com \\(\\alpha=1\\).</span>';
+      html += ' <span style="color:#ccc;">Linha cinza tracejada = restrição com \\(\\alpha=1\\).</span>';
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;

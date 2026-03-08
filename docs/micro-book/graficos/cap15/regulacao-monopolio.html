@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regulacao de Monopolio</title>
+  <title>Regulação de Monopólio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -46,23 +46,23 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Regulacao de Monopolio Natural</div>
+  <div class="graph-title">Regulação de Monopólio Natural</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Regime Regulatorio</h3>
+      <h3>Regime Regulatório</h3>
       <div class="toggle-group">
-        <button class="toggle-btn active" id="btn-unreg" onclick="setMode('unreg')">Sem Regulacao</button>
+        <button class="toggle-btn active" id="btn-unreg" onclick="setMode('unreg')">Sem Regulação</button>
         <button class="toggle-btn" id="btn-mc" onclick="setMode('mc')">P = CMg</button>
         <button class="toggle-btn" id="btn-ac" onclick="setMode('ac')">P = CMe</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>Intercepto demanda \(a\): <span class="val" id="val-a">100</span></label>
         <input type="range" id="slider-a" min="50" max="150" step="1" value="100">
       </div>
       <div class="slider-group">
-        <label>Inclinacao demanda \(b\): <span class="val" id="val-b">1.0</span></label>
+        <label>Inclinação demanda \(b\): <span class="val" id="val-b">1.0</span></label>
         <input type="range" id="slider-b" min="0.3" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
@@ -190,7 +190,7 @@
 
         var dwl = 0.5 * (pm - p.c) * (qmc - qm);
         var cs = 0.5 * (p.a - pm) * qm;
-        var html = '<div class="section-title">Monopolio Nao Regulado</div>';
+        var html = '<div class="section-title">Monopólio Não Regulado</div>';
         html += '\\(Q^m = ' + qm.toFixed(2) + '\\), \\(P^m = ' + pm.toFixed(1) + '\\)<br>';
         html += '\\(CMe = ' + acm.toFixed(1) + '\\)<br>';
         html += '\\(\\pi = ' + profitM.toFixed(1) + '\\)<br>';
@@ -208,18 +208,18 @@
 
         board.create('text', [qmc*0.4, (pmc+acmc)/2, 'Subsidio'], { fontSize: 11, color: '#C8102E', fontWeight: 'bold' });
 
-        var html = '<div class="section-title">Regulacao P = CMg (First-Best)</div>';
+        var html = '<div class="section-title">Regulação P = CMg (First-Best)</div>';
         html += '\\(Q = ' + qmc.toFixed(2) + '\\), \\(P = CMg = ' + pmc.toFixed(0) + '\\)<br>';
         html += '\\(CMe = ' + acmc.toFixed(1) + '\\)<br>';
         html += '\\(\\pi = ' + profitMC.toFixed(1) + '\\) (prejuizo)<br>';
-        html += 'Subsidio necessario: \\(' + subsidy.toFixed(1) + '\\)<br>';
+        html += 'Subsidio necessário: \\(' + subsidy.toFixed(1) + '\\)<br>';
         html += '\\(PPM = 0\\) (eficiente)<br>';
-        html += 'Problema: financiar o subsidio gera distorcoes.';
+        html += 'Problema: financiar o subsidio gera distorções.';
 
       } else {
         if (discr < 0) {
-          var html = '<div class="section-title">Regulacao P = CMe</div>';
-          html += '<strong>Nao ha intersecao demanda/CMe.</strong><br>';
+          var html = '<div class="section-title">Regulação P = CMe</div>';
+          html += '<strong>Não ha interseção demanda/CMe.</strong><br>';
           html += 'Custos fixos muito altos para o mercado.';
         } else {
           // DWL between AC pricing and MC pricing
@@ -235,13 +235,13 @@
           var csAC = 0.5 * (p.a - pac) * qac;
           var dwlMon = 0.5 * (pm - p.c) * (qmc - qm);
 
-          var html = '<div class="section-title">Regulacao P = CMe (Second-Best)</div>';
+          var html = '<div class="section-title">Regulação P = CMe (Second-Best)</div>';
           html += '\\(Q = ' + qac.toFixed(2) + '\\), \\(P = CMe = ' + pac.toFixed(1) + '\\)<br>';
           html += '\\(\\pi = 0\\) (lucro zero)<br>';
           html += '\\(EC = ' + csAC.toFixed(1) + '\\)<br>';
           html += '\\(PPM = ' + dwlAC.toFixed(1) + '\\) (residual)<br>';
-          html += 'PPM sem regulacao: \\(' + dwlMon.toFixed(1) + '\\)<br>';
-          html += 'Reducao na PPM: \\(' + (dwlMon - dwlAC).toFixed(1) + '\\)';
+          html += 'PPM sem regulação: \\(' + dwlMon.toFixed(1) + '\\)<br>';
+          html += 'Redução na PPM: \\(' + (dwlMon - dwlAC).toFixed(1) + '\\)';
         }
       }
 

@@ -49,16 +49,16 @@
   <div class="graph-container">
     <div id="jxgbox1" class="jxgbox"></div>
     <div class="controls">
-      <h3>Funcao Utilidade</h3>
+      <h3>Função Utilidade</h3>
       <div class="fn-selector">
         <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
       </div>
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>Salario \(w\): <span class="val" id="val-w">10</span></label>
+        <label>Salário \(w\): <span class="val" id="val-w">10</span></label>
         <input type="range" id="slider-w" min="2" max="30" step="0.5" value="10">
       </div>
       <div class="slider-group">
@@ -311,8 +311,8 @@
       html += '\\(C^* = wh^* + V = '+opt.C.toFixed(1)+'\\)';
       if (currentFn === 'linear') {
         var bangC = s.alpha, bangL = (1-s.alpha)/s.w;
-        if (bangC > bangL + 0.001) html += '<br><em>Solucao de canto: so trabalho</em>';
-        else if (bangL > bangC + 0.001) html += '<br><em>Solucao de canto: so lazer</em>';
+        if (bangC > bangL + 0.001) html += '<br><em>Solução de canto: so trabalho</em>';
+        else if (bangL > bangC + 0.001) html += '<br><em>Solução de canto: so lazer</em>';
       }
       html += '</div>';
 

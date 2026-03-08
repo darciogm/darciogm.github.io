@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Cap. 10 — Curto vs Longo Prazo: Curva Envoltoria
+  Cap. 10 — Curto vs Longo Prazo: Curva Envoltória
   Library: JSXGraph
   Multiple SRAC curves for different K levels
   LRAC as envelope
@@ -41,11 +41,11 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Curva Envoltoria: CMe de Curto e Longo Prazo</div>
+  <div class="graph-title">Curva Envoltória: CMe de Curto e Longo Prazo</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>\(\bar{K}\) selecionado: <span class="val" id="val-K">4.00</span></label>
         <input type="range" id="sl-K" min="1" max="10" step="0.5" value="4">
@@ -61,7 +61,7 @@
       <div class="legend">
         <span style="background:#C8102E"></span>SRAC (\(\bar{K}\) selecionado) &nbsp;
         <span style="background:#ccc"></span>Outros SRAC &nbsp;
-        <span style="background:#1565c0"></span>LRAC (envoltoria)
+        <span style="background:#1565c0"></span>LRAC (envoltória)
       </div>
       <div class="info-box" id="info"></div>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
@@ -183,7 +183,7 @@
         objs.push(board.create('point', [qTan, cmeTan], {
           name: '', size: 4, color: '#00897b', fixed: true
         }));
-        objs.push(board.create('text', [qTan + 0.3, cmeTan + 0.8, 'Tangencia'], { fontSize: 9, color: '#00897b' }));
+        objs.push(board.create('text', [qTan + 0.3, cmeTan + 0.8, 'Tangência'], { fontSize: 9, color: '#00897b' }));
       }
 
       var info = document.getElementById('info');
@@ -195,9 +195,9 @@
       html += '<hr style="margin:.3rem 0">';
       html += '<div>Min SRAC: \\(q = ' + qMinSR.toFixed(2) + '\\), CMe = ' + cmeMinSR.toFixed(2) + '</div>';
       if (!isNaN(qTan)) {
-        html += '<div style="color:#00897b">Tangencia em \\(q \\approx ' + qTan.toFixed(2) + '\\)</div>';
+        html += '<div style="color:#00897b">Tangência em \\(q \\approx ' + qTan.toFixed(2) + '\\)</div>';
       }
-      html += '<div style="margin-top:.4rem;font-size:.78rem;color:#666">LRAC tangencia cada SRAC: no LP a firma escolhe \\(K\\) otimo</div>';
+      html += '<div style="margin-top:.4rem;font-size:.78rem;color:#666">LRAC tangência cada SRAC: no LP a firma escolhe \\(K\\) ótimo</div>';
 
       info.innerHTML = html;
       if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
