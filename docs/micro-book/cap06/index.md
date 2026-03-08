@@ -255,6 +255,16 @@ A teoria tradicional assume que o consumidor obtém utilidade diretamente dos be
 
 Esse modelo gera **preços implícitos** (ou **preços hedônicos**) para os atributos. Se o número de atributos for menor que o de bens (\(m < n\)), o consumidor pode calcular o "custo" de cada unidade de atributo combinando bens de modo eficiente.
 
+!!! info "🏅 Prêmio Nobel — Daniel McFadden (2000)"
+
+    **Daniel Little McFadden** (1937–presente) é um economista americano. Obteve o PhD na Universidade de Minnesota e foi professor em Yale, MIT e UC Berkeley. Dividiu o Nobel com James Heckman.
+
+    **Por que ganhou o Nobel:**
+    Premiado por desenvolver a teoria e os métodos para análise de escolha discreta. McFadden formulou o modelo logit condicional, que permite estimar a probabilidade de um indivíduo escolher entre alternativas discretas (modos de transporte, localização residencial, marcas) com base nos atributos de cada alternativa — conectando a teoria microeconômica da utilidade aleatória à estimação econométrica.
+
+    **Conexão com este capítulo:**
+    O modelo de Lancaster — em que consumidores valorizam atributos dos bens, não os bens em si — é a base teórica dos modelos de escolha discreta de McFadden. A abordagem de preços hedônicos discutida neste capítulo é uma aplicação direta: decompor o preço de um bem (imóvel, automóvel) em contribuições de seus atributos é exatamente o que os métodos de McFadden operacionalizam econometricamente.
+
 ### 6.6.2 Implicações
 
 O modelo de Lancaster explica fenômenos que a teoria tradicional não captura com facilidade:

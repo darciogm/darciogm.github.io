@@ -301,6 +301,18 @@ Na prática, observamos enormes diferenças salariais entre trabalhadores. A teo
 !!! definition "Capital humano"
     **Capital humano** é o estoque de habilidades, conhecimentos e experiência que um trabalhador acumula ao longo da vida, principalmente por meio da educação formal e do treinamento no trabalho (*on-the-job training*). O conceito foi formalizado por Gary Becker (1964) e Theodore Schultz (1961).
 
+!!! info "🏅 Prêmio Nobel — Gary S. Becker (1992) e Theodore W. Schultz (1979)"
+
+    **Gary Stanley Becker** (1930–2014) foi um economista americano. Obteve o PhD na Universidade de Chicago sob orientação de Milton Friedman e foi professor em Chicago por mais de cinco décadas.
+
+    **Theodore William Schultz** (1902–1998) foi um economista americano. Obteve o PhD na Universidade de Wisconsin e foi professor na Universidade de Chicago. Dividiu o Nobel de 1979 com Arthur Lewis.
+
+    **Por que ganharam o Nobel:**
+    Schultz foi premiado por sua pesquisa pioneira em desenvolvimento econômico, com atenção especial ao papel da educação e do investimento em capital humano como motor do crescimento. Becker estendeu a análise econômica a domínios tradicionalmente não econômicos — discriminação racial, crime, família — e formalizou a teoria do capital humano, mostrando que a decisão de investir em educação segue a mesma lógica de custo-benefício intertemporal de qualquer investimento em capital físico.
+
+    **Conexão com este capítulo:**
+    A teoria do capital humano — que interpreta educação, treinamento e saúde como investimentos que aumentam a produtividade futura do trabalhador — é apresentada neste capítulo como extensão da teoria da demanda por fatores. A análise de Becker sobre discriminação no mercado de trabalho e a contribuição de Schultz sobre o papel da educação no desenvolvimento conectam diretamente a microeconomia dos mercados de trabalho às questões de desigualdade e crescimento.
+
 O modelo de capital humano prevê que trabalhadores mais educados recebem salários mais altos porque são mais produtivos. A decisão de investir em educação segue a mesma lógica de qualquer investimento: comparam-se os custos (mensalidades, custo de oportunidade do tempo) com os benefícios (salários futuros mais altos).
 
 A **equação de Mincer** relaciona o logaritmo do salário ao nível de educação e à experiência:

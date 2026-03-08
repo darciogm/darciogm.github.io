@@ -492,6 +492,16 @@ A taxa de crescimento do produto pode ser decomposta como:
 
 O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**. Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
 
+!!! info "🏅 Prêmio Nobel — Robert M. Solow (1987)"
+
+    **Robert Merton Solow** (1924–2023) foi um economista americano. Obteve o PhD em Harvard sob orientação de Wassily Leontief e foi professor no MIT por mais de cinco décadas.
+
+    **Por que ganhou o Nobel:**
+    Premiado por suas contribuições à teoria do crescimento econômico. Solow desenvolveu o modelo neoclássico de crescimento (1956) e introduziu a contabilidade do crescimento (1957), que decompõe o crescimento do produto nas contribuições de capital, trabalho e um resíduo — a produtividade total dos fatores (PTF). O "resíduo de Solow" revelou que o progresso técnico, e não a mera acumulação de fatores, é o principal motor do crescimento de longo prazo.
+
+    **Conexão com este capítulo:**
+    A decomposição do crescimento — que atribui parcelas do crescimento do produto a capital, trabalho e PTF — é apresentada neste capítulo como aplicação direta da função de produção Cobb-Douglas. O resíduo de Solow, interpretado como medida de progresso técnico, conecta a teoria da produção à questão central do crescimento econômico.
+
 ??? example "Exercício Resolvido 9.3"
     **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
 

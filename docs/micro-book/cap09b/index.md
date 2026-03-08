@@ -21,6 +21,16 @@ Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores 
 
 O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio de Nash, mas nem todo equilíbrio de Nash é perfeito em subjogos. O EPS elimina equilíbrios sustentados por **ameaças não críveis** em subjogos fora do caminho de equilíbrio.
 
+!!! info "🏅 Prêmio Nobel — Reinhard Selten (1994)"
+
+    **Reinhard Selten** (1930–2016) foi um economista alemão, nascido em Breslau (atual Wrocław, Polônia). Obteve o PhD na Universidade de Frankfurt e foi professor na Universidade de Bonn. Dividiu o Nobel com Nash e Harsanyi.
+
+    **Por que ganhou o Nobel:**
+    Selten introduziu refinamentos do equilíbrio de Nash que eliminam equilíbrios sustentados por ameaças não críveis. O equilíbrio perfeito em subjogos (1965) exige que a estratégia de cada jogador seja ótima em todo subjogo — não apenas no jogo como um todo. Posteriormente, propôs o conceito de *trembling hand perfection* (1975), que testa a robustez do equilíbrio a pequenos erros.
+
+    **Conexão com este capítulo:**
+    O equilíbrio perfeito em subjogos (EPS) é a ferramenta central deste capítulo sobre jogos dinâmicos. A indução retroativa — o método de resolução que identifica o EPS — elimina ameaças não críveis e gera previsões mais refinadas do que o equilíbrio de Nash simples, como demonstrado nos jogos sequenciais analisados aqui.
+
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Indução retroativa significa pensar "de trás para frente" — primeiro o que acontece no final, depois o que é racional fazer no início.
 

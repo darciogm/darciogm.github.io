@@ -112,6 +112,16 @@ As curvas de indiferença nos dizem *quais* cestas o consumidor considera equiva
 
     A TMS mede a quantidade do bem 2 que o consumidor está disposto a abrir mão para obter uma unidade adicional do bem 1, mantendo o nível de utilidade constante.
 
+!!! info "🏅 Prêmio Nobel — John R. Hicks (1972)"
+
+    **John Richard Hicks** (1904–1989) foi um economista britânico, formado na Universidade de Oxford. Foi professor em Manchester, Oxford e na London School of Economics. Dividiu o Nobel com Kenneth Arrow.
+
+    **Por que ganhou o Nobel:**
+    Premiado por suas contribuições pioneiras à teoria do equilíbrio geral e à teoria do bem-estar. Em *Value and Capital* (1939), Hicks axiomatizou a teoria do consumidor, introduzindo a taxa marginal de substituição como ferramenta central, e desenvolveu o conceito de demanda compensada (hicksiana), que separa efeitos renda e substituição.
+
+    **Conexão com este capítulo:**
+    A taxa marginal de substituição (TMS) formalizada por Hicks é o conceito central deste capítulo. A condição de tangência entre a curva de indiferença e a restrição orçamentária — que exige igualdade entre TMS e razão de preços — é a base da teoria da escolha do consumidor desenvolvida aqui.
+
 **Interpretação econômica**: A TMS é a **taxa de troca subjetiva** do consumidor. Se \(\text{TMS}_{12} = 3\), o consumidor está disposto a trocar até 3 unidades do bem 2 por 1 unidade adicional do bem 1.
 
 **TMS decrescente**: Sob preferências estritamente convexas, a TMS é decrescente ao longo da curva de indiferença. À medida que o consumidor adquire mais do bem 1, cada unidade adicional torna-se relativamente menos valiosa, e ele está disposto a sacrificar cada vez menos do bem 2. Esta propriedade é equivalente à convexidade estrita das curvas de indiferença.

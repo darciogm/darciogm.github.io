@@ -34,6 +34,16 @@ A transformação de Harsanyi converte um jogo com informação incompleta em um
 
     Cada tipo de cada jogador maximiza seu payoff esperado, condicionando nas crenças sobre os tipos dos outros e nas estratégias de equilíbrio dos demais.
 
+!!! info "🏅 Prêmio Nobel — John C. Harsanyi (1994)"
+
+    **John Charles Harsanyi** (1920–2000) foi um economista húngaro-americano. Fugiu da Hungria comunista em 1950, obteve o PhD em Stanford sob orientação de Kenneth Arrow e foi professor na UC Berkeley. Dividiu o Nobel com Nash e Selten.
+
+    **Por que ganhou o Nobel:**
+    Harsanyi resolveu o problema fundamental de como analisar jogos em que os jogadores não conhecem as características uns dos outros. Sua *transformação de Harsanyi* (1967–68) converte um jogo com informação incompleta em um jogo com informação imperfeita, introduzindo a "Natureza" como jogador que sorteia os tipos privados. Isso tornou possível aplicar o conceito de equilíbrio de Nash a situações de incerteza sobre os adversários.
+
+    **Conexão com este capítulo:**
+    O equilíbrio bayesiano de Nash (BNE) — conceito central deste capítulo — é a aplicação direta da transformação de Harsanyi. A ideia de que cada jogador possui um "tipo" privado sorteado pela Natureza, e que as estratégias são funções do tipo, fundamenta toda a análise de jogos com informação incompleta apresentada aqui.
+
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Em jogos bayesianos, cada jogador usa sua informação privada para extrair vantagem, mas o equilíbrio incorpora essa assimetria.
 

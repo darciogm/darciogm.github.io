@@ -151,6 +151,16 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 !!! tip "DARA como propriedade desejável"
     A evidência empírica sugere fortemente que a aversão absoluta ao risco é **decrescente** na riqueza (DARA): indivíduos mais ricos estão dispostos a aceitar apostas de valor fixo que indivíduos mais pobres recusariam. A função de utilidade quadrática, embora matematicamente conveniente, viola essa propriedade (apresenta IARA) e possui a limitação adicional de que a utilidade marginal se torna negativa para riquezas suficientemente altas.
 
+!!! info "🏅 Prêmio Nobel — Kenneth J. Arrow (1972)"
+
+    **Kenneth Joseph Arrow** (1921–2017) foi um economista americano. Obteve o PhD na Universidade de Columbia e foi professor em Stanford e Harvard. Dividiu o Nobel com John Hicks. É considerado um dos economistas mais influentes do século XX.
+
+    **Por que ganhou o Nobel:**
+    Premiado por suas contribuições pioneiras à teoria do equilíbrio geral e à teoria do bem-estar. Arrow fez contribuições fundamentais em múltiplas áreas: provou (com Debreu) a existência do equilíbrio geral competitivo, formulou o teorema da impossibilidade em escolha social, e desenvolveu a teoria de mercados contingentes (Arrow-Debreu) para alocação eficiente de risco.
+
+    **Conexão com este capítulo:**
+    O coeficiente de Arrow-Pratt de aversão ao risco — medida central para classificar atitudes frente ao risco — foi desenvolvido independentemente por Arrow e John W. Pratt. As medidas de aversão absoluta e relativa ao risco, que determinam como a demanda por seguros e ativos arriscados varia com a riqueza, são ferramentas essenciais da análise de risco apresentada neste capítulo.
+
 ---
 
 ## 7.5 Prêmio de Risco e Equivalente de Certeza

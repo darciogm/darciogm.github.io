@@ -471,6 +471,16 @@ pq - wL - rK \leq (s - r)K
 
 Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinvestir em capital** para inflar a base de remuneração — o chamado **efeito Averch-Johnson**. A firma substitui trabalho por capital além do socialmente ótimo, resultando em ineficiência produtiva.
 
+!!! info "🏅 Prêmio Nobel — Jean Tirole (2014)"
+
+    **Jean Tirole** (1953–presente) é um economista francês. Obteve o PhD no MIT sob orientação de Eric Maskin e é professor na Toulouse School of Economics (TSE), que ajudou a transformar em um dos principais centros de pesquisa econômica do mundo.
+
+    **Por que ganhou o Nobel:**
+    Premiado por sua análise do poder de mercado e da regulação. Tirole desenvolveu a teoria moderna de regulação de monopólios sob informação assimétrica (com Jean-Jacques Laffont), mostrando como desenhar contratos regulatórios quando o regulador não conhece os custos da firma. Suas contribuições à organização industrial unificaram a teoria do monopólio, oligopólio e barreiras à entrada em um framework analítico coerente baseado na teoria dos jogos.
+
+    **Conexão com este capítulo:**
+    A análise de regulação de monopólio natural — regulação por custo marginal, custo médio e tarifas em duas partes — apresentada neste capítulo é o ponto de partida da agenda de pesquisa de Tirole. Sua contribuição foi mostrar que, na prática, o regulador enfrenta informação assimétrica sobre os custos da firma, o que torna o problema de regulação fundamentalmente um problema de desenho de mecanismos.
+
 ---
 
 ## Gráfico interativo: Regulação de monopólio natural

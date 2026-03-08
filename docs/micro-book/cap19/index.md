@@ -239,6 +239,16 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 !!! note "Resultado de Akerlof"
     Em casos extremos, a seleção adversa pode provocar o **desaparecimento completo** do mercado (market unraveling), mesmo quando ganhos de troca existiriam sob informação simétrica. Esse resultado mostra que a informação assimétrica é uma genuína **falha de mercado**.
 
+!!! info "🏅 Prêmio Nobel — George A. Akerlof, A. Michael Spence e Joseph E. Stiglitz (2001)"
+
+    **George Arthur Akerlof** (1940–presente) é um economista americano, PhD no MIT, professor em Berkeley e Georgetown. **Andrew Michael Spence** (1943–presente) é um economista americano, PhD em Harvard, professor em Harvard e Stanford. **Joseph Eugene Stiglitz** (1943–presente) é um economista americano, PhD no MIT sob orientação de Paul Samuelson, professor na Universidade de Columbia.
+
+    **Por que ganharam o Nobel:**
+    Premiados por suas análises de mercados com informação assimétrica. Akerlof mostrou que a assimetria de informação sobre qualidade pode levar ao colapso de mercados (*The Market for "Lemons"*, 1970). Spence demonstrou como agentes informados podem usar ações custosas para sinalizar suas características (*Job Market Signaling*, 1973). Stiglitz (com Rothschild) analisou como a parte desinformada pode usar menus de contratos para induzir autosseleção (*screening*), com aplicação seminal a mercados de seguros (1976).
+
+    **Conexão com este capítulo:**
+    Os três problemas fundamentais de informação assimétrica analisados neste capítulo — seleção adversa (Akerlof), sinalização (Spence) e triagem (Stiglitz) — correspondem diretamente às contribuições premiadas em 2001. O framework integrado apresentado aqui, que conecta risco moral, seleção adversa e mecanismos de revelação de informação, é em grande parte a síntese do trabalho desses três laureados.
+
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Quando o comprador não consegue distinguir produtos bons de ruins, os bons somem do mercado — porque ninguém paga o preço justo por eles.
 
@@ -523,6 +533,16 @@ No leilão de segundo preço, cada licitante tem uma **estratégia dominante**: 
     Sob as seguintes condições: (i) valores privados independentes; (ii) licitantes neutros ao risco; (iii) distribuição de valorações simétrica e contínua; (iv) o licitante com valoração mínima obtém excedente zero — **todos os quatro formatos de leilão geram a mesma receita esperada para o vendedor**.
 
 Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, sob as condições do teorema, a escolha do formato de leilão é irrelevante para a receita. As diferenças surgem quando as condições são violadas — por exemplo, com aversão ao risco dos licitantes (favorece o primeiro preço) ou com valores correlacionados (favorece o inglês).
+
+!!! info "🏅 Prêmio Nobel — Leonid Hurwicz, Eric S. Maskin e Roger B. Myerson (2007)"
+
+    **Leonid Hurwicz** (1917–2008) foi um economista e matemático russo-americano, professor na Universidade de Minnesota. **Eric Stark Maskin** (1950–presente) é um economista americano, PhD em Harvard, professor em Harvard e no Institute for Advanced Study. **Roger Bruce Myerson** (1951–presente) é um economista americano, PhD em Harvard, professor na Universidade de Chicago.
+
+    **Por que ganharam o Nobel:**
+    Premiados por lançar as bases da teoria de desenho de mecanismos. Hurwicz formulou o problema: como desenhar instituições (mecanismos) que produzam resultados desejáveis quando os agentes possuem informação privada e agem em interesse próprio? Maskin estabeleceu condições para que um mecanismo implemente resultados socialmente desejáveis. Myerson provou o *princípio da revelação* — todo resultado alcançável por qualquer mecanismo pode ser replicado por um mecanismo de revelação direta — e aplicou a teoria ao desenho de leilões ótimos.
+
+    **Conexão com este capítulo:**
+    O princípio da revelação de Myerson e a teoria de leilões ótimos são apresentados neste capítulo como aplicações da informação assimétrica ao desenho de instituições. A análise do leilão de Vickrey (segundo preço) e do Teorema da Equivalência de Receita conectam-se diretamente ao framework de desenho de mecanismos desenvolvido por Hurwicz, Maskin e Myerson.
 
 ---
 

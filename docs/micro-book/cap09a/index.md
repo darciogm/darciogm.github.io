@@ -108,6 +108,16 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
 O equilíbrio de Nash é um conceito de **consistência mútua de expectativas** (Gibbons, 1992, Cap. 1): se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
 
+!!! info "🏅 Prêmio Nobel — John Nash, John Harsanyi e Reinhard Selten (1994)"
+
+    **John Forbes Nash Jr.** (1928–2015) foi um matemático americano, PhD em Princeton, onde formulou o conceito de equilíbrio que leva seu nome. **John Charles Harsanyi** (1920–2000) foi um economista húngaro-americano, PhD em Stanford, professor em Berkeley. **Reinhard Selten** (1930–2016) foi um economista alemão, PhD em Frankfurt, professor em Bonn.
+
+    **Por que ganharam o Nobel:**
+    Premiados por sua análise pioneira de equilíbrios em jogos não cooperativos. Nash demonstrou a existência de pelo menos um equilíbrio em estratégias mistas para todo jogo finito (1950). Harsanyi estendeu a teoria para jogos com informação incompleta, introduzindo o equilíbrio bayesiano (1967–68). Selten refinou o conceito para jogos dinâmicos com o equilíbrio perfeito em subjogos (1965).
+
+    **Conexão com este capítulo:**
+    O equilíbrio de Nash — perfil de estratégias em que nenhum jogador pode melhorar unilateralmente — é o conceito central deste capítulo. Toda a análise de jogos estáticos com informação completa se organiza em torno da identificação e interpretação desses equilíbrios.
+
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** No equilíbrio de Nash, ninguém se arrepende da própria escolha depois de ver o que os outros fizeram.
 

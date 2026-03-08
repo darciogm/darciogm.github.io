@@ -395,6 +395,18 @@ Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \ma
 !!! note "Unicidade e estabilidade"
     O Teorema de Brouwer garante existência, mas não unicidade. Resultados de unicidade requerem condições adicionais sobre as funções de excesso de demanda (por exemplo, a condição de substitutibilidade bruta). Da mesma forma, a estabilidade do equilíbrio sob processos de ajuste *tâtonnement* requer hipóteses adicionais.
 
+!!! info "🏅 Prêmio Nobel — Kenneth J. Arrow (1972) e Gérard Debreu (1983)"
+
+    **Kenneth Joseph Arrow** (1921–2017) foi um economista americano, PhD pela Universidade de Columbia, professor em Stanford e Harvard. Dividiu o Nobel de 1972 com John Hicks.
+
+    **Gérard Debreu** (1921–2004) foi um economista e matemático francês-americano. Formou-se na École Normale Supérieure de Paris e foi professor na UC Berkeley.
+
+    **Por que ganharam o Nobel:**
+    Arrow e Debreu provaram rigorosamente a existência de equilíbrio competitivo em uma economia com múltiplos mercados interdependentes (1954), usando o teorema do ponto fixo de Kakutani. Demonstraram também os dois Teoremas Fundamentais do Bem-Estar: que todo equilíbrio competitivo é Pareto-eficiente (1o TBE) e que qualquer alocação Pareto-eficiente pode ser descentralizada como equilíbrio competitivo via transferências lump-sum (2o TBE). Debreu axiomatizou a teoria do valor em *Theory of Value* (1959).
+
+    **Conexão com este capítulo:**
+    O modelo Arrow-Debreu é a estrutura formal que sustenta toda a análise de equilíbrio geral deste capítulo. A prova de existência do equilíbrio walrasiano, a Caixa de Edgeworth, os Teoremas do Bem-Estar e o conceito de mercados contingentes — todos são contribuições diretas ou derivações do framework desenvolvido por Arrow e Debreu.
+
 ---
 
 ## 14.9 Modelo Matemático de Produção e Troca

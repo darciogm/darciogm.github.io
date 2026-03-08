@@ -270,6 +270,16 @@ C'(q) + E'(q) = P
 4. **Efeitos riqueza**: com utilidade marginal da renda decrescente, a atribuição inicial dos direitos pode afetar a alocação final.
 5. **Problemas de hold-up**: investimentos específicos à relação podem gerar comportamento oportunista.
 
+!!! info "🏅 Prêmio Nobel — Ronald H. Coase (1991)"
+
+    **Ronald Harry Coase** (1910–2013) foi um economista britânico-americano. Formou-se na London School of Economics e foi professor na Universidade de Chicago Law School por mais de quatro décadas, onde foi editor do *Journal of Law and Economics*.
+
+    **Por que ganhou o Nobel:**
+    Premiado por descobrir e esclarecer o significado dos custos de transação e dos direitos de propriedade para a estrutura institucional e o funcionamento da economia. Em *The Problem of Social Cost* (1960), Coase demonstrou que, na ausência de custos de transação, a negociação privada entre as partes leva à alocação eficiente de recursos independentemente da atribuição inicial de direitos de propriedade — resultado que ficou conhecido como Teorema de Coase.
+
+    **Conexão com este capítulo:**
+    O Teorema de Coase, apresentado neste capítulo como solução privada para externalidades, mostra que a negociação voluntária pode internalizar custos externos sem intervenção governamental — desde que os custos de transação sejam suficientemente baixos. A ênfase de Coase nos custos de transação como obstáculo prático explica por que, na maioria dos casos reais (poluição atmosférica, congestionamento urbano), soluções regulatórias como impostos pigouvianos e mercados de permissões são necessárias.
+
 ### 20.4.3 Regulação direta (command and control)
 
 A regulação direta consiste em impor limites quantitativos de emissão ou padrões tecnológicos às firmas poluidoras. Exemplos incluem:
@@ -390,6 +400,16 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
   <iframe src="../graficos/cap20/tragedia-comuns.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
   <figcaption markdown="span"><strong>Figura 20.4</strong> — Tragédia dos comuns. Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.</figcaption>
 </figure>
+
+!!! info "🏅 Prêmio Nobel — Elinor Ostrom (2009)"
+
+    **Elinor Ostrom** (1933–2012) foi uma cientista política americana. Obteve o PhD na UCLA e foi professora na Universidade de Indiana, onde cofundou o Workshop in Political Theory and Policy Analysis. Foi a primeira mulher a receber o Nobel de Economia. Dividiu o prêmio com Oliver Williamson.
+
+    **Por que ganhou o Nobel:**
+    Premiada por sua análise da governança econômica, especialmente dos recursos comuns. Em *Governing the Commons* (1990), Ostrom desafiou a prescrição convencional de que recursos comuns requerem privatização ou regulação estatal para evitar a sobre-exploração. Documentou, com extenso trabalho de campo, que comunidades locais frequentemente desenvolvem instituições próprias — regras de uso, monitoramento mútuo, sanções graduais — que sustentam a gestão eficiente de recursos comuns por séculos.
+
+    **Conexão com este capítulo:**
+    A tragédia dos comuns, apresentada neste capítulo como falha de mercado, pressupõe que a ausência de direitos de propriedade leva inevitavelmente à sobre-exploração. Ostrom mostrou que essa conclusão é incompleta: entre a privatização e a regulação estatal, existe um terceiro caminho — a governança comunitária — que funciona quando os usuários conseguem se organizar, monitorar e sancionar coletivamente.
 
 ## 20.8 O Problema do Carona (Free Rider)
 

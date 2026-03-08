@@ -20,6 +20,16 @@ A escolha da variável estratégica não é trivial e produz resultados dramatic
 !!! definition "Interdependência Estratégica"
     Em um oligopólio, o lucro de cada firma depende não apenas de sua própria decisão, mas também das decisões de todas as rivais. Formalmente, se há \(n\) firmas, o lucro da firma \(i\) é \(\pi_i(s_i, s_{-i})\), onde \(s_i\) é a estratégia da firma \(i\) e \(s_{-i}\) é o vetor de estratégias das demais firmas. O conceito de solução é o **equilíbrio de Nash**: um perfil de estratégias \((s_1^*, \ldots, s_n^*)\) tal que nenhuma firma pode aumentar unilateralmente seu lucro desviando.
 
+!!! info "🏅 Prêmio Nobel — Jean Tirole (2014)"
+
+    **Jean Tirole** (1953–presente) é um economista francês. Obteve o PhD no MIT e é professor na Toulouse School of Economics (TSE). Recebeu o Nobel individualmente — um dos poucos em economia.
+
+    **Por que ganhou o Nobel:**
+    Premiado por sua análise do poder de mercado e da regulação. Em *The Theory of Industrial Organization* (1988), Tirole sintetizou e expandiu os modelos clássicos de oligopólio (Cournot, Bertrand, Stackelberg) usando a teoria dos jogos, transformando a organização industrial em uma disciplina rigorosa e unificada. Suas contribuições incluem a análise de preços-limite, competição em plataformas bilaterais e colusão tácita.
+
+    **Conexão com este capítulo:**
+    Os modelos de Cournot, Bertrand, Stackelberg e colusão analisados neste capítulo são apresentados no framework moderno consolidado por Tirole. Sua abordagem — tratar cada estrutura de oligopólio como um jogo com equilíbrio de Nash — unificou a análise e permitiu comparar rigorosamente as previsões de cada modelo sobre preços, quantidades e bem-estar.
+
 ---
 
 ## 16.2 Modelo de Bertrand: concorrência em preços

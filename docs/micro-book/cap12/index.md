@@ -30,6 +30,18 @@ A firma, portanto, é uma resposta institucional à existência de custos de tra
 2. **Frequência**: transações recorrentes justificam estruturas de governança mais sofisticadas.
 3. **Incerteza**: quanto maior a incerteza, mais difícil redigir contratos completos, favorecendo a organização interna.
 
+!!! info "🏅 Prêmio Nobel — Ronald H. Coase (1991) e Oliver E. Williamson (2009)"
+
+    **Ronald Harry Coase** (1910–2013) foi um economista britânico-americano. Formou-se na London School of Economics e foi professor na Universidade de Chicago por mais de quatro décadas.
+
+    **Oliver Eaton Williamson** (1932–2020) foi um economista americano. Obteve o PhD no Carnegie Institute of Technology (atual CMU) e foi professor na UC Berkeley. Dividiu o Nobel de 2009 com Elinor Ostrom.
+
+    **Por que ganharam o Nobel:**
+    Coase foi premiado por descobrir e esclarecer o significado dos custos de transação e dos direitos de propriedade para a estrutura institucional da economia. Em *The Nature of the Firm* (1937), explicou por que firmas existem: quando os custos de transação no mercado excedem os custos de organização interna, a firma substitui o mecanismo de preços. Williamson estendeu essa análise, identificando os atributos das transações (especificidade de ativos, frequência, incerteza) que determinam se a governança ótima é via mercado, hierarquia ou formas híbridas.
+
+    **Conexão com este capítulo:**
+    A questão "por que firmas existem?" — ponto de partida deste capítulo — foi formulada por Coase e aprofundada por Williamson. A análise dos custos de transação como determinante das fronteiras da firma complementa a teoria neoclássica da produção e explica por que a firma não é apenas uma função de produção, mas uma instituição que economiza em custos de coordenação.
+
 ### O objetivo da firma: maximização de lucro
 
 Na análise microeconômica padrão, assume-se que a firma busca **maximizar o lucro**:

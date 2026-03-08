@@ -167,6 +167,16 @@ A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto 
 | Abdellaoui (2000) | 0,89 | 0,92 | 2,54 | 0,60 | 0,70 | Trade-off method |
 | Booij, van Praag e van de Kuilen (2010) | 0,86 | 0,86 | 2,09 | 0,65 | 0,65 | Meta-análise |
 
+!!! info "🏅 Prêmio Nobel — Daniel Kahneman (2002)"
+
+    **Daniel Kahneman** (1934–2024) foi um psicólogo israelense-americano. Formou-se na Universidade Hebraica de Jerusalém e obteve o PhD em Berkeley. Foi professor em Jerusalem, UBC e Princeton. Dividiu o Nobel de Economia com Vernon Smith — sendo um dos raros não-economistas a recebê-lo.
+
+    **Por que ganhou o Nobel:**
+    Premiado por integrar insights da psicologia à ciência econômica, especialmente no que diz respeito ao julgamento e tomada de decisão sob incerteza. Com Amos Tversky (1937–1996), Kahneman desenvolveu a Teoria do Prospecto, que substitui a utilidade esperada por uma função valor definida sobre ganhos e perdas relativos a um ponto de referência, com aversão a perdas (\(\lambda \approx 2{,}25\)) e sensibilidade decrescente.
+
+    **Conexão com este capítulo:**
+    A função valor da Teoria do Prospecto — côncava para ganhos, convexa para perdas, mais inclinada no domínio das perdas — é o ponto de partida deste capítulo. Os vieses cognitivos documentados por Kahneman e Tversky (representatividade, disponibilidade, ancoragem) explicam os desvios sistemáticos da racionalidade que motivam toda a economia comportamental discutida aqui.
+
 ??? example "Exercício Resolvido 8.1 — Função valor da Teoria do Prospecto"
     **Enunciado:** Usando a função valor paramétrica da Teoria do Prospecto com \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\), calcule o valor subjetivo dos seguintes resultados: \(v(100)\), \(v(-100)\), \(v(250)\) e \(v(-250)\). Em seguida, verifique a propriedade de aversão à perda e a sensibilidade decrescente.
 
@@ -306,6 +316,16 @@ Essas regras decorrem diretamente da curvatura da função valor da Teoria do Pr
 
 !!! example "Box Brasil — Cartão de crédito e contas mentais"
     O uso intenso do cartão de crédito no Brasil — frequentemente como instrumento de parcelamento "sem juros" — ilustra a contabilidade mental em ação. O parcelamento separa uma grande perda (o preço total do bem) em pequenas perdas mensais, cada uma percebida como menos dolorosa. Além disso, a separação temporal entre o momento da compra (prazer imediato) e o pagamento (dor adiada) explora tanto a contabilidade mental quanto o viés do presente discutido na Seção 8.5. Prelec e Loewenstein (1998) modelaram formalmente essa "desvinculação" entre consumo e pagamento.
+
+!!! info "🏅 Prêmio Nobel — Richard H. Thaler (2017)"
+
+    **Richard Howard Thaler** (1945–presente) é um economista americano. Obteve o PhD na Universidade de Rochester e é professor na Booth School of Business da Universidade de Chicago.
+
+    **Por que ganhou o Nobel:**
+    Premiado por suas contribuições à economia comportamental. Thaler demonstrou como limitações cognitivas — contabilidade mental, autocontrole limitado e preferências sociais — afetam sistematicamente as decisões econômicas individuais e os resultados de mercado. Sua agenda de pesquisa transformou a economia comportamental de curiosidade acadêmica em ferramenta prática de políticas públicas (*nudges*).
+
+    **Conexão com este capítulo:**
+    A contabilidade mental — a tendência de tratar diferentes categorias de dinheiro como não fungíveis, segregando gastos em "contas" separadas — é uma das anomalias comportamentais mais robustas e é discutida em detalhe neste capítulo. Thaler mostrou que essa tendência viola o princípio da fungibilidade e explica comportamentos como o tratamento diferenciado de ganhos inesperados (*windfall gains*) versus renda regular.
 
 ---
 

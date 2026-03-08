@@ -35,6 +35,16 @@ Os jogos de sinalização, formalizados por Spence (1973), são jogos sequenciai
     3. O receptor observa \(m\) (mas não \(\theta\)), atualiza crenças via Bayes e escolhe \(a \in A\).
     4. Payoffs: \(u_R(m, a, \theta)\) e \(u_S(m, a, \theta)\).
 
+!!! info "🏅 Prêmio Nobel — A. Michael Spence (2001)"
+
+    **Andrew Michael Spence** (1943–presente) é um economista americano. Obteve o PhD em Harvard sob orientação de Kenneth Arrow e foi professor em Harvard e Stanford, onde foi também reitor da Graduate School of Business. Dividiu o Nobel com George Akerlof e Joseph Stiglitz.
+
+    **Por que ganhou o Nobel:**
+    Premiado por sua análise de mercados com informação assimétrica. Em *Job Market Signaling* (1973), Spence mostrou como um agente mais bem informado pode usar ações custosas e observáveis — como investir em educação — para sinalizar credivamente suas características não observáveis ao mercado. A chave é que o custo do sinal é menor para os tipos de alta qualidade, tornando a imitação não lucrativa.
+
+    **Conexão com este capítulo:**
+    O modelo de Spence — em que trabalhadores de alta produtividade investem em educação para se distinguir dos de baixa produtividade — é o exemplo central de jogo de sinalização analisado neste capítulo. Os conceitos de equilíbrio separador e agregador, e as condições para que a sinalização funcione como mecanismo de revelação de informação, são desenvolvidos diretamente a partir do framework de Spence.
+
 ### Tipos de equilíbrio
 
 - **Separador**: tipos diferentes escolhem sinais diferentes → o sinal revela perfeitamente o tipo.

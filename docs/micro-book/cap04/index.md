@@ -309,6 +309,16 @@ h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2.
 
 A demanda hicksiana recebe o nome de "compensada" porque mantém o nível de utilidade fixo — como se o consumidor fosse **compensado** por variações de preço de modo a permanecer na mesma curva de indiferença.
 
+!!! info "🏅 Prêmio Nobel — John R. Hicks (1972)"
+
+    **John Richard Hicks** (1904–1989) foi um economista britânico, formado na Universidade de Oxford. Foi professor em Manchester, Oxford e na London School of Economics. Dividiu o Nobel com Kenneth Arrow.
+
+    **Por que ganhou o Nobel:**
+    Premiado por suas contribuições à teoria do equilíbrio geral e à teoria do bem-estar. Hicks desenvolveu a decomposição dos efeitos de preço em efeito substituição e efeito renda, e introduziu os conceitos de variação compensatória e variação equivalente como medidas monetárias de bem-estar.
+
+    **Conexão com este capítulo:**
+    A demanda hicksiana (compensada) é o pilar da abordagem dual apresentada neste capítulo. A distinção entre demandas marshalliana e hicksiana, o Lema de Shephard e a equação de Slutsky — todos formalizados ou inspirados pelo trabalho de Hicks — constituem a estrutura analítica central do capítulo.
+
 **Propriedades da demanda hicksiana**:
 
 1. **Homogênea de grau zero em \(\mathbf{p}\)**: multiplicar todos os preços pelo mesmo fator não altera as quantidades compensadas.

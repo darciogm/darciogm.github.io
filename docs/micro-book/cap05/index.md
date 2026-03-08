@@ -518,6 +518,16 @@ A teoria da **preferência revelada**, desenvolvida por Paul Samuelson, fornece 
 !!! definition "Axioma Fraco da Preferência Revelada (AFPR)"
     Se a cesta \(\mathbf{x}^0\) é escolhida quando \(\mathbf{x}^1\) era acessível (isto é, \(\mathbf{p}^0 \cdot \mathbf{x}^1 \leq \mathbf{p}^0 \cdot \mathbf{x}^0\)), então \(\mathbf{x}^1\) não pode ser escolhida quando \(\mathbf{x}^0\) é acessível (isto é, \(\mathbf{p}^1 \cdot \mathbf{x}^0 > \mathbf{p}^1 \cdot \mathbf{x}^1\)).
 
+!!! info "🏅 Prêmio Nobel — Paul A. Samuelson (1970)"
+
+    **Paul Anthony Samuelson** (1915–2009) foi um economista americano. Obteve o PhD em Harvard sob orientação de Wassily Leontief e foi professor no MIT por mais de seis décadas. Foi o primeiro americano a receber o Nobel de Economia.
+
+    **Por que ganhou o Nobel:**
+    Premiado pelo trabalho científico que elevou o nível da análise econômica. Samuelson revolucionou múltiplas áreas: formalizou a teoria da preferência revelada, demonstrando que as escolhas observadas do consumidor são suficientes para reconstruir suas preferências sem recorrer a funções de utilidade, e unificou a estática comparativa com o princípio de correspondência em *Foundations of Economic Analysis* (1947).
+
+    **Conexão com este capítulo:**
+    A teoria da preferência revelada, apresentada neste capítulo, é uma das contribuições mais elegantes de Samuelson. O Axioma Fraco da Preferência Revelada (WARP) permite testar a racionalidade do consumidor usando apenas dados de preços e quantidades observadas — sem hipóteses sobre utilidade ou preferências subjacentes.
+
 O AFPR garante a **negatividade do efeito substituição de Slutsky**. Se o consumidor satisfaz o AFPR, então, para uma variação compensada de preço (no sentido de Slutsky):
 
 \[
