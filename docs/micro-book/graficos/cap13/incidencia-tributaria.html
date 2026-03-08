@@ -131,9 +131,9 @@
     var eqOrig = board.create('point', [function(){ return qEq0(); }, function(){ return pEq0(); }],
       { name: '', size: 3, fillColor: '#666', strokeColor: '#666', fixed: true });
     var eqNew = board.create('point', [function(){ return qTax(); }, function(){ return pcTax(); }],
-      { name: 'pc', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true, label: { offset: [8,5], fontSize: 11 } });
+      { name: 'pc', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true, label: { offset: [10, 8], fontSize: 11 } });
     var eqPp = board.create('point', [function(){ return qTax(); }, function(){ return ppTax(); }],
-      { name: 'pp', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true, label: { offset: [8,-10], fontSize: 11 } });
+      { name: 'pp', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true, label: { offset: [-18, -8], fontSize: 11 } });
 
     // Dashed lines
     board.create('segment', [[function(){ return qTax(); }, function(){ return pcTax(); }], [0, function(){ return pcTax(); }]], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
@@ -174,7 +174,7 @@
         '<span style="color:#00897b;font-weight:700;">Carga do vendedor: ' + sellerShare.toFixed(1) + '%</span><br>' +
         '<b>Receita tributária:</b> ' + revenue.toFixed(2) + '<br>' +
         '<span style="color:#C8102E;font-weight:700;">Peso morto (DWL): ' + dwl.toFixed(2) + '</span><br>' +
-        '<small>O lado legal (comprador vs vendedor) nao altera a incidência economica.</small>';
+        '<small>O lado legal (comprador vs vendedor) não altera a incidência econômica.</small>';
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
 

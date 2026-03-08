@@ -80,7 +80,7 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/matriz-payoffs.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 9a.1</strong> — Matriz de payoffs e equilíbrio de Nash. Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9a.1</strong> — Matriz de payoffs e equilíbrio de Nash. Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.</figcaption>
 </figure>
 
 ### Taxonomia dos Jogos Clássicos
@@ -196,7 +196,7 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/estrategias-mistas.html" width="100%" height="820" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 9a.2</strong> — Equilíbrio em estratégias mistas. Para um jogo 2×2, os gráficos mostram o payoff esperado de cada jogador em função da probabilidade de mistura do oponente. O ponto de interseção determina a probabilidade de equilíbrio (princípio da indiferença). Edite os payoffs e selecione jogos predefinidos.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9a.2</strong> — Equilíbrio em estratégias mistas. Para um jogo 2×2, os gráficos mostram o payoff esperado de cada jogador em função da probabilidade de mistura do oponente. O ponto de interseção determina a probabilidade de equilíbrio (princípio da indiferença). Edite os payoffs e selecione jogos predefinidos.</figcaption>
 </figure>
 
 ### Existência de Equilíbrio (Teorema de Nash)
@@ -305,7 +305,7 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/cournot-reacao.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 9a.3</strong> — Funções de reação de Cournot. Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9a.3</strong> — Funções de reação de Cournot. Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.</figcaption>
 </figure>
 
 ### Competição de Stackelberg (líder-seguidora)
@@ -346,7 +346,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/stackelberg-reacao.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 9a.4</strong> — Stackelberg vs Cournot. A isoprofit da líder tangencia a função de reação da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de reação). Altere os custos para ver o efeito de assimetrias.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9a.4</strong> — Stackelberg vs Cournot. A isoprofit da líder tangencia a função de reação da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de reação). Altere os custos para ver o efeito de assimetrias.</figcaption>
 </figure>
 
 ---
@@ -419,7 +419,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-friend-foe.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9a.1</strong> — Análise do game show Friend or Foe com dados reais. O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9a.1</strong> — Análise do game show Friend or Foe com dados reais. O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.</figcaption>
     </figure>
 
 ---
@@ -433,7 +433,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-proto.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9a.2</strong> — Equilíbrio de Cournot com parâmetros editáveis. Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9a.2</strong> — Equilíbrio de Cournot com parâmetros editáveis. Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).</figcaption>
     </figure>
 
 ---

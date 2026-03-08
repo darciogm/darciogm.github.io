@@ -110,7 +110,7 @@ onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser em
 
 <figure markdown="span">
   <iframe src="../graficos/cap12/receita-marginal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
+  <figcaption markdown="span"><strong>Figura 11.2</strong> — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.</figcaption>
 </figure>
 
 ### Receita marginal
@@ -157,7 +157,7 @@ onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preç
 
 <figure markdown="span">
   <iframe src="../graficos/cap12/maximizacao-lucro.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 11.1</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
+  <figcaption markdown="span"><strong>Figura 11.1</strong> — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).</figcaption>
 </figure>
 
 ### A decisão de produção no curto prazo

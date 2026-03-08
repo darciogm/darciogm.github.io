@@ -132,10 +132,10 @@
       // Region labels
       var qElastic = qMR0 / 2;
       var qInelastic = (qMR0 + qMax) / 2;
-      objs.push(board.create('text', [qElastic, -6, 'Elastica'], { fontSize: 10, color: '#1565c0', anchorX: 'middle' }));
+      objs.push(board.create('text', [qElastic, -6, 'Elástica'], { fontSize: 10, color: '#1565c0', anchorX: 'middle' }));
       objs.push(board.create('text', [qElastic, -8, '|\\(\\varepsilon\\)|>1'], { fontSize: 9, color: '#1565c0', anchorX: 'middle' }));
       if (qInelastic < 24) {
-        objs.push(board.create('text', [qInelastic, -6, 'Inelastica'], { fontSize: 10, color: '#999', anchorX: 'middle' }));
+        objs.push(board.create('text', [qInelastic, -6, 'Inelástica'], { fontSize: 10, color: '#999', anchorX: 'middle' }));
         objs.push(board.create('text', [qInelastic, -8, '|\\(\\varepsilon\\)|<1'], { fontSize: 9, color: '#999', anchorX: 'middle' }));
       }
 

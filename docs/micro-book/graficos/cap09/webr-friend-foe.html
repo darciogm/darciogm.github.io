@@ -54,18 +54,18 @@ library(Ecdat)
 data("FriendFoe")
 
 # --- Tabela de frequências: como as pessoas jogam? ---
-game_mat <- FriendFoe |>
-  summarize(
-    ff = mean(play == "friend" & play1 == "friend"),
-    Ff = mean(play == "foe"   & play1 == "friend"),
-    fF = mean(play == "friend"& play1 == "foe"),
-    FF = mean(play == "foe"   & play1 == "foe")
-  ) |> as.numeric() |> matrix(nrow = 2)
+n <- nrow(FriendFoe)
+game_mat <- matrix(c(
+  mean(FriendFoe$play == "friend" & FriendFoe$play1 == "friend"),
+  mean(FriendFoe$play == "foe"    & FriendFoe$play1 == "friend"),
+  mean(FriendFoe$play == "friend" & FriendFoe$play1 == "foe"),
+  mean(FriendFoe$play == "foe"    & FriendFoe$play1 == "foe")
+), nrow = 2)
 colnames(game_mat) <- rownames(game_mat) <- c("Friend","Foe")
 
 cat("=== Frequência de cada célula ===\n")
 print(round(game_mat, 3))
-cat("\nN jogos:", nrow(FriendFoe), "\n")
+cat("\nN jogos:", n, "\n")
 cat("Taxa cooperação (Friend):",
     round(mean(c(FriendFoe$play, FriendFoe$play1) == "friend"), 3), "\n")
 

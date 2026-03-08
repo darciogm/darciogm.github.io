@@ -72,7 +72,7 @@ Um resultado central é que a **maximização de lucro implica minimização de 
 
 <figure markdown="span">
   <iframe src="../graficos/cap11/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
+  <figcaption markdown="span"><strong>Figura 10.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
 </figure>
 
 ### O problema de minimização de custos
@@ -220,7 +220,7 @@ A função custo possui as seguintes propriedades:
 
 <figure markdown="span">
   <iframe src="../graficos/cap11/curvas-custo.html" width="100%" height="600" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
+  <figcaption markdown="span"><strong>Figura 10.2</strong> — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.</figcaption>
 </figure>
 
 ### Custo total, custo médio e custo marginal
@@ -307,7 +307,7 @@ Impostos sobre insumos funcionam como aumentos nos preços dos insumos. Um impos
 
 <figure markdown="span">
   <iframe src="../graficos/cap11/curto-longo-prazo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 10.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
+  <figcaption markdown="span"><strong>Figura 10.3</strong> — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.</figcaption>
 </figure>
 
 ### Custos de curto prazo

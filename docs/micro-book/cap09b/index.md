@@ -43,7 +43,7 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/jogo-sequencial.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 9b.1</strong> — Jogo sequencial na forma extensiva. Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do EPS é destacado em vermelho.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9b.1</strong> — Jogo sequencial na forma extensiva. Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do EPS é destacado em vermelho.</figcaption>
 </figure>
 
 ### Comprometimento e vantagem estratégica
@@ -115,7 +115,7 @@ Além do grim trigger, existem estratégias mais sofisticadas:
 
 <figure markdown="span">
   <iframe src="../graficos/cap09/delta-cooperacao.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 9b.2</strong> — Cooperação no Dilema dos Prisioneiros repetido. Altere os payoffs \(T\), \(R\), \(P\) e o fator de desconto \(\delta\) para ver quando a cooperação é sustentável pela estratégia de gatilho. A curva verde (\(V_{\text{coop}}\)) deve estar acima da vermelha (\(V_{\text{desvio}}\)).</figcaption>
+  <figcaption markdown="span"><strong>Figura 9b.2</strong> — Cooperação no Dilema dos Prisioneiros repetido. Altere os payoffs \(T\), \(R\), \(P\) e o fator de desconto \(\delta\) para ver quando a cooperação é sustentável pela estratégia de gatilho. A curva verde (\(V_{\text{coop}}\)) deve estar acima da vermelha (\(V_{\text{desvio}}\)).</figcaption>
 </figure>
 
 ---
@@ -224,7 +224,7 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-ultimatum.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9b.1</strong> — Simulação de um experimento de ultimatum game com modelo logit. Altere os parâmetros da simulação e estime a probabilidade de aceitar em função da oferta.</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9b.1</strong> — Simulação de um experimento de ultimatum game com modelo logit. Altere os parâmetros da simulação e estime a probabilidade de aceitar em função da oferta.</figcaption>
     </figure>
 
 ---
@@ -238,7 +238,7 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-gasoline.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9b.2</strong> — Simulação de ciclos de Edgeworth no mercado de gasolina. Baseado em Adams (2025, Cap. 7) e dados de Perth.</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9b.2</strong> — Simulação de ciclos de Edgeworth no mercado de gasolina. Baseado em Adams (2025, Cap. 7) e dados de Perth.</figcaption>
     </figure>
 
 ---

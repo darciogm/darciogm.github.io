@@ -184,7 +184,7 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-spence.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9d.1</strong> — Modelo de Spence: equilíbrio separador. Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9d.1</strong> — Modelo de Spence: equilíbrio separador. Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.</figcaption>
     </figure>
 
 ---
@@ -196,7 +196,7 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-insurance.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9d.2</strong> — Seleção adversa no mercado de seguros. Varie a proporção de tipos de alto risco para ver quando o mercado colapsa. Baseado em Adams (2025, Cap. 13).</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9d.2</strong> — Seleção adversa no mercado de seguros. Varie a proporção de tipos de alto risco para ver quando o mercado colapsa. Baseado em Adams (2025, Cap. 13).</figcaption>
     </figure>
 
 ---

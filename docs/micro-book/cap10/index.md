@@ -92,7 +92,7 @@ Até aqui, analisamos a produção variando um insumo por vez. Agora, consideram
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
 </figure>
 
 ### Isoquantas
@@ -178,7 +178,7 @@ A lei dos rendimentos marginais decrescentes descreve o que acontece quando vari
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
+  <figcaption markdown="span"><strong>Figura 9.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
 </figure>
 
 !!! definition "Rendimentos de escala"
@@ -454,7 +454,7 @@ As funções de produção vistas até aqui descrevem a tecnologia em um ponto f
 
 <figure markdown="span">
   <iframe src="../graficos/cap10/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 9.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
+  <figcaption markdown="span"><strong>Figura 9.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
 </figure>
 
 Formalmente, introduzimos o tempo \(t\) na função de produção. A formulação mais simples é:

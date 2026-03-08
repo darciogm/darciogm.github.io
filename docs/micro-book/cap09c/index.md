@@ -158,7 +158,7 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
     <figure markdown="span">
       <iframe src="../graficos/cap09/webr-auction.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption><strong>R Interativo 9c.1</strong> — Simulação Monte Carlo de leilões de 1º e 2º preço. Altere <code>N</code> (licitantes) e <code>n_sim</code> (simulações) para explorar o Teorema da Equivalência de Receita.</figcaption>
+      <figcaption markdown="span"><strong>R Interativo 9c.1</strong> — Simulação Monte Carlo de leilões de 1º e 2º preço. Altere <code>N</code> (licitantes) e <code>n_sim</code> (simulações) para explorar o Teorema da Equivalência de Receita.</figcaption>
     </figure>
 
 ---

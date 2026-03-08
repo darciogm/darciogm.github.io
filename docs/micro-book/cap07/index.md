@@ -111,7 +111,7 @@ Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando 
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/aversao-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 7.1</strong> — Aversão ao risco e função de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.</figcaption>
+  <figcaption markdown="span"><strong>Figura 7.1</strong> — Aversão ao risco e função de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.</figcaption>
 </figure>
 
 ---
@@ -232,7 +232,7 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/premio-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 7.2</strong> — Prêmio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
+  <figcaption markdown="span"><strong>Figura 7.2</strong> — Prêmio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
 </figure>
 
 ---
@@ -251,7 +251,7 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 
 <figure markdown="span">
   <iframe src="../graficos/cap07/seguro.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption><strong>Figura 7.3</strong> — Mercado de seguros no espaço estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).</figcaption>
+  <figcaption markdown="span"><strong>Figura 7.3</strong> — Mercado de seguros no espaço estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).</figcaption>
 </figure>
 
 ### 7.6.2 Diversificação

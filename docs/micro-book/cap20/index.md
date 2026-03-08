@@ -148,7 +148,7 @@ DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
 
 <figure>
   <iframe src="../graficos/cap20/externalidade-negativa.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 20.1</strong> — Externalidade negativa e imposto pigouviano. A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.</figcaption>
+  <figcaption markdown="span"><strong>Figura 20.1</strong> — Externalidade negativa e imposto pigouviano. A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.</figcaption>
 </figure>
 
 ## 20.4 Soluções para Externalidades Negativas
@@ -241,7 +241,7 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 <figure>
   <iframe src="../graficos/cap20/teorema-coase.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 20.2</strong> — Teorema de Coase. Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.</figcaption>
+  <figcaption markdown="span"><strong>Figura 20.2</strong> — Teorema de Coase. Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.</figcaption>
 </figure>
 
 ### 20.4.2 O Teorema de Coase
@@ -348,7 +348,7 @@ Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para c
 
 <figure>
   <iframe src="../graficos/cap20/bem-publico.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 20.3</strong> — Provisão ótima de bem público. A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.</figcaption>
+  <figcaption markdown="span"><strong>Figura 20.3</strong> — Provisão ótima de bem público. A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.</figcaption>
 </figure>
 
 ### Subprovisão pelo mercado
@@ -388,7 +388,7 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 <figure>
   <iframe src="../graficos/cap20/tragedia-comuns.html" width="100%" height="620" frameborder="0" style="border:1px solid #eee; border-radius:8px;"></iframe>
-  <figcaption><strong>Figura 20.4</strong> — Tragédia dos comuns. Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.</figcaption>
+  <figcaption markdown="span"><strong>Figura 20.4</strong> — Tragédia dos comuns. Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.</figcaption>
 </figure>
 
 ## 20.8 O Problema do Carona (Free Rider)

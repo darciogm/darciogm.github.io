@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Provisao de Bem Publico</title>
+  <title>Provisão de Bem Público</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -40,7 +40,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Provisao Otima de Bem Publico (Samuelson)</div>
+  <div class="graph-title">Provisão Ótima de Bem Público (Samuelson)</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
@@ -154,11 +154,11 @@
       [function(){ return gStar(); }, function(){ return mb2(gStar()); }]
     ], { strokeColor: '#00897b', strokeWidth: 1, dash: 4, fixed: true });
 
-    var lblT1 = board.create('text', [-0.3, function(){ return mb1(gStar()) + 0.3; },
+    var lblT1 = board.create('text', [-0.15, function(){ return mb1(gStar()) + 0.3; },
       function(){ return 'τ₁=' + mb1(gStar()).toFixed(1); }
     ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;' });
 
-    var lblT2 = board.create('text', [-0.3, function(){ return mb2(gStar()) + 0.3; },
+    var lblT2 = board.create('text', [-0.45, function(){ return mb2(gStar()) - 0.3; },
       function(){ return 'τ₂=' + mb2(gStar()).toFixed(1); }
     ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#00897b;font-weight:700;' });
 
@@ -170,7 +170,7 @@
 
     board.create('text', [
       function(){ return (gPriv() + gStar()) / 2; }, -0.7,
-      'Subprovisao'
+      'Subprovisão'
     ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;' });
 
     function updateInfo() {
@@ -181,9 +181,9 @@
       html += '\\(\\sum BMg_i = CMg\\)<br>';
       html += '\\(' + t1.toFixed(1) + ' + ' + t2.toFixed(1) + ' = ' + c.toFixed(1) + '\\)<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<span style="color:#C8102E;font-weight:700;">Provisao otima: \\(G^* = ' + gs.toFixed(2) + '\\)</span><br>';
-      html += '<span style="color:#999;font-weight:700;">Provisao privada: \\(G_{priv} = ' + gp.toFixed(2) + '\\)</span><br>';
-      html += '<b>Subprovisao:</b> \\(\\Delta G = ' + (gs - gp).toFixed(2) + '\\)<br>';
+      html += '<span style="color:#C8102E;font-weight:700;">Provisão ótima: \\(G^* = ' + gs.toFixed(2) + '\\)</span><br>';
+      html += '<span style="color:#999;font-weight:700;">Provisão privada: \\(G_{priv} = ' + gp.toFixed(2) + '\\)</span><br>';
+      html += '<b>Subprovisão:</b> \\(\\Delta G = ' + (gs - gp).toFixed(2) + '\\)<br>';
       html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
       html += '<b>Preços de Lindahl:</b><br>';
       html += '<span style="color:#1565c0;">\\(\\tau_1 = ' + t1.toFixed(2) + '\\)</span><br>';

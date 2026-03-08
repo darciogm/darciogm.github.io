@@ -157,19 +157,19 @@
     ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
 
     // Y-axis value labels
-    var lblCH = board.create('text', [-0.07, function(){ return n(CH); },
-      function(){ return CH.toFixed(0); }
+    var lblCH = board.create('text', [-0.04, function(){ return n(CH); },
+      function(){ return 'C_H=' + CH.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#C8102E;' });
 
-    var lblCL = board.create('text', [-0.07, function(){ return n(CL); },
-      function(){ return CL.toFixed(0); }
+    var lblCL = board.create('text', [-0.04, function(){ return n(CL); },
+      function(){ return 'C_L=' + CL.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#00897b;' });
 
-    var lblVH = board.create('text', [-0.07, function(){ return n(VH); },
+    var lblVH = board.create('text', [-0.12, function(){ return n(VH); },
       function(){ return 'V_H=' + VH.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
 
-    var lblVL = board.create('text', [-0.07, function(){ return n(VL); },
+    var lblVL = board.create('text', [-0.12, function(){ return n(VL); },
       function(){ return 'V_L=' + VL.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
 
@@ -183,7 +183,7 @@
       var html = '<b>WTP comprador:</b> \\(\\bar{V} = (1-\\lambda)V_H + \\lambda V_L = ' + wtp.toFixed(1) + '\\)<br>';
       html += '<b>Custo vendedor bom:</b> \\(C_H = ' + CH + '\\)<br>';
       html += '<b>Custo vendedor ruim:</b> \\(C_L = ' + CL + '\\)<br>';
-      html += '<b>\\(\\lambda\\) critico:</b> ' + lc.toFixed(2) + '<br>';
+      html += '<b>\\(\\lambda\\) crítico:</b> ' + lc.toFixed(2) + '<br>';
 
       if (goodTrade) {
         html += '<span class="status-ok">Ambos os tipos transacionam (WTP ≥ C_H)</span><br>';
