@@ -393,3 +393,20 @@ figcaption {
     justify-content: center;
   }
 }
+
+/* ========================================
+   TOC COLAPSÁVEL NO SIDEBAR
+   (com toc.integrate ativo)
+   ======================================== */
+
+/* Esconder TOC por padrão no desktop */
+@media screen and (min-width: 76.25em) {
+  .md-nav__item--active > #__toc ~ .md-nav--secondary {
+    display: none;
+  }
+
+  /* Mostrar quando checkbox marcado (clique no toggle) */
+  .md-nav__item--active > #__toc:checked ~ .md-nav--secondary {
+    display: block;
+  }
+}
