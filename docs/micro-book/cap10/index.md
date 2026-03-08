@@ -48,7 +48,14 @@ O **produto médio do trabalho** é definido como:
 \mathrm{PMe}_L = \frac{f(K, L)}{L}
 \]
 
-A relação entre produto marginal e produto médio é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo. A intuição é direta: se o trabalhador adicional produz mais do que a média dos anteriores, ele "puxa" a média para cima.
+A relação entre produto marginal e produto médio é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo.
+
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Se o trabalhador adicional produz mais do que a média dos anteriores, ele "puxa" a média para cima; se produz menos, puxa para baixo.
+
+    **Pense assim:** Numa partida de futebol, se o jogador que entra no segundo tempo faz mais gols que a média do time até ali, a média de gols por jogador sobe. Se ele erra tudo, a média cai. O produto marginal é o "gol do substituto" — e ele determina a direção do produto médio.
+
+    **Por que isso importa:** Essa relação é a base para entender por que firmas contratam até o ponto em que o valor do produto marginal iguala o salário — e por que o produto médio é uma medida enganosa de produtividade quando usado isoladamente.
 
 ### Lei dos rendimentos marginais decrescentes
 

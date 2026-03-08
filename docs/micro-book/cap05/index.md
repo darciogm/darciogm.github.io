@@ -116,8 +116,12 @@ Na abordagem de **Slutsky**, o efeito substituição é definido mantendo-se o *
 
 Ambas as decomposições convergem para variações infinitesimais de preço e resultam na mesma equação fundamental — a Equação de Slutsky.
 
-!!! tip "Intuição"
-    Imagine que a gasolina ficou 10% mais barata. O efeito substituição faz você trocar um pouco de transporte público por carro. O efeito renda faz você "se sentir mais rico", podendo aumentar o consumo de diversos bens. Se a gasolina for um bem normal, ambos os efeitos reforçam a maior demanda. Se for inferior (implausível neste caso), os efeitos se opõem.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Toda mudança de preço tem dois efeitos: substituição (troca entre bens) e renda (poder de compra) — separá-los é a chave da análise da demanda.
+
+    **Pense assim:** A gasolina ficou 10% mais barata. O efeito substituição faz você trocar um pouco de transporte público por carro. O efeito renda faz você "se sentir mais rico", podendo aumentar o consumo de diversos bens. Se a gasolina for um bem normal, ambos reforçam a maior demanda. Se for inferior, os efeitos se opõem.
+
+    **Por que isso importa:** A decomposição de Slutsky é a base para avaliar o impacto de impostos e subsídios sobre o consumo — e para distinguir quando uma queda de preço beneficia os consumidores pelo barateamento relativo ou pelo aumento do poder de compra.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** Quando um preço muda, duas coisas acontecem ao mesmo tempo: você troca de produto (efeito substituição) e seu poder de compra muda (efeito renda).

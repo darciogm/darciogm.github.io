@@ -68,7 +68,7 @@ A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R
 
 Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbrio (Trair, Trair) com payoffs \((-5, -5)\) é o único equilíbrio de Nash, mas é **Pareto-dominado** pelo resultado (Cooperar, Cooperar) com payoffs \((-1, -1)\). Essa tensão entre racionalidade individual e eficiência coletiva é o cerne do dilema.
 
-!!! idea "Intuição Econômica: O dilema está em toda parte"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** No Dilema dos Prisioneiros, cada um faz o melhor para si e o resultado é ruim para todos.
 
     **Pense assim:** Dois quiosques vizinhos na praia de Copacabana poderiam manter preços altos e lucrar bem. Mas cada um pensa: "se eu baixar o preço, roubo os clientes do vizinho". Ambos baixam, ambos lucram menos — e nenhum consegue voltar atrás sozinho.
@@ -108,7 +108,7 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
 O equilíbrio de Nash é um conceito de **consistência mútua de expectativas** (Gibbons, 1992, Cap. 1): se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
 
-!!! idea "Intuição Econômica: Por que Nash funciona"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** No equilíbrio de Nash, ninguém se arrepende da própria escolha depois de ver o que os outros fizeram.
 
     **Pense assim:** Pense no trânsito de São Paulo: se todo mundo usa o Waze e escolhe a rota mais rápida, nenhum motorista individual consegue melhorar seu tempo mudando de caminho — porque todas as alternativas já estão igualmente congestionadas. Isso é um equilíbrio de Nash do trânsito (e uma versão do paradoxo de Braess).
@@ -166,7 +166,7 @@ Em um equilíbrio em estratégias mistas, cada jogador randomiza de tal forma qu
 U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_i^l \text{ com } \sigma_i^*(s_i^l) > 0
 \]
 
-!!! idea "Intuição Econômica: A imprevisibilidade como estratégia"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Jogar de forma imprevisível pode ser a melhor estratégia quando qualquer padrão fixo seria explorado pelo adversário.
 
     **Pense assim:** Um cobrador de pênaltis que sempre chuta no mesmo canto será facilmente defendido. Por isso, os melhores batedores variam entre esquerda, direita e centro de forma quase aleatória — e a proporção ideal é exatamente aquela que deixa o goleiro indiferente entre os lados. Chiappori, Levitt e Groseclose (2002) confirmaram isso empiricamente com dados de cobranças de pênaltis na Série A italiana e na liga francesa.
@@ -290,7 +290,7 @@ Duas firmas com produtos homogêneos e custo marginal constante \(c\) escolhem s
 
 O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\), com lucro zero para ambas as firmas — mesmo com apenas dois concorrentes, o resultado é competitivo.
 
-!!! idea "Intuição Econômica: Bertrand vs Cournot — qual modelo usar?"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** A variável estratégica da firma — preço ou quantidade — determina radicalmente o equilíbrio do mercado.
 
     **Pense assim:** Imagine duas padarias vizinhas no mesmo bairro. Se cada uma decide *quantos pães* assar de manhã (capacidade), estamos no mundo de Cournot: a produção é decidida antes, e o preço se ajusta pela demanda. Se cada uma decide o *preço* na vitrine a cada hora (e pode atender toda a demanda), estamos no mundo de Bertrand: qualquer diferença de preço desvia todos os clientes.

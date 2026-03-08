@@ -269,8 +269,12 @@ Com rendimentos marginais inicialmente crescentes e depois decrescentes (o forma
 - **CVMe**: formato de U — segue a mesma lógica, mas é mais suave.
 - **CMe**: formato de U — soma de CVMe (U) com CFMe (decrescente). O mínimo do CMe ocorre à direita do mínimo do CVMe.
 
-!!! tip "Intuição: por que CMg e PMg são 'espelhos'"
-    A relação inversa entre custo marginal e produto marginal é central. Se \(q = f(L)\) no curto prazo, então \(\mathrm{CMg} = w / PMg_L\). Quando o produto marginal do trabalho cresce, o custo de produzir uma unidade adicional cai; quando o produto marginal decresce, o custo marginal sobe. As curvas de custo são, portanto, o "reflexo" das curvas de produtividade.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Custo marginal e produto marginal são espelhos: quando a produtividade do trabalhador sobe, o custo de mais uma unidade cai — e vice-versa.
+
+    **Pense assim:** Se um padeiro experiente faz 100 pães por hora e o aprendiz faz 20, o custo por pão do aprendiz é cinco vezes maior. Quando a produtividade marginal cresce (o aprendiz melhora), o custo marginal cai. A curva de CMg é o "reflexo invertido" da curva de PMg.
+
+    **Por que isso importa:** Essa relação inversa (\(\mathrm{CMg} = w / PMg_L\)) conecta diretamente a teoria da produção à teoria dos custos e explica por que a curva de CMg tem formato de U — herança direta da lei dos rendimentos marginais decrescentes.
 
 ---
 
@@ -335,7 +339,12 @@ CT_{LP}(q) = \min_{K, L} \{wL + rK \mid f(K, L) = q\}
 
     com igualdade quando \(\bar{K} = K^*(q)\), o nível ótimo de capital de longo prazo para produzir \(q\).
 
-Intuitivamente, no longo prazo a firma tem mais flexibilidade (pode ajustar todos os insumos), de modo que seus custos nunca podem exceder os de curto prazo. A curva de CMe de longo prazo "tangencia" cada curva de CMe de curto prazo no ponto em que o nível de capital fixo é ótimo para aquele nível de produto.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** No longo prazo, a firma pode ajustar tudo — por isso seus custos nunca superam os de curto prazo.
+
+    **Pense assim:** Um restaurante com cozinha pequena (capital fixo) gasta muito para atender 200 clientes no sábado — precisa de horas extras, delivery externo. Mas se pudesse escolher o tamanho da cozinha (longo prazo), dimensionaria para 200 e gastaria menos. A curva de CMe de longo prazo "tangencia" cada curva de curto prazo no ponto ótimo de cada configuração.
+
+    **Por que isso importa:** A envoltória de custos de longo prazo determina a escala eficiente da firma e, portanto, o número de firmas que o mercado comporta — informação crucial para política antitruste e regulação.
 
 Propriedade importante: no ponto de tangência, o CMg de curto prazo é igual ao CMg de longo prazo:
 

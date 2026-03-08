@@ -56,7 +56,11 @@ A **ancoragem** ocorre quando um valor inicial — mesmo que arbitrário e irrel
 A ancoragem tem implicações importantes para a economia: negociações salariais, precificação de imóveis e até decisões judiciais são influenciadas por valores-âncora iniciais. Estudos mostram que o preço de listagem de um imóvel funciona como âncora mesmo para avaliadores profissionais (Northcraft e Neale 1987).
 
 !!! idea "Intuição Econômica 💡"
-    As três heurísticas — representatividade, disponibilidade e ancoragem — não são "defeitos" do raciocínio humano. São atalhos que evoluíram porque funcionam bem em ambientes naturais, onde decisões precisam ser rápidas e a informação é incompleta. O problema surge quando esses atalhos são aplicados a contextos modernos — mercados financeiros, decisões de saúde, políticas públicas — para os quais não foram "calibrados" pela evolução.
+    **Em uma frase:** Heurísticas são atalhos mentais que evoluíram para funcionar bem em ambientes naturais — o problema surge quando os aplicamos a contextos modernos para os quais não foram calibrados.
+
+    **Pense assim:** Nosso cérebro foi "programado" na savana africana, onde decidir rápido (fugir do leão) valia mais do que decidir com precisão. Essas mesmas regras de bolso — julgar pela semelhança, pelo que vem fácil à mente, pelo primeiro número que aparece — podem nos enganar quando avaliamos um investimento ou votamos numa política pública.
+
+    **Por que isso importa:** Reconhecer as heurísticas permite desenhar políticas públicas que "desenviesam" decisões — os famosos *nudges* — em vez de presumir que basta dar informação para que as pessoas escolham bem.
 
 ### 8.1.4 Excesso de confiança
 
@@ -75,7 +79,11 @@ Kahneman (2011) sintetizou décadas de pesquisa sobre heurísticas em um modelo 
 Os vieses cognitivos documentados nas subseções anteriores surgem quando o Sistema 1 fornece uma resposta rápida (baseada em representatividade, disponibilidade ou ancoragem) e o Sistema 2 — por preguiça, sobrecarga ou falta de treinamento — não a corrige. Dhami (2016, p. 1433–1441) discute como essa arquitetura dual se conecta à distinção entre raciocínio heurístico e raciocínio deliberativo na psicologia cognitiva.
 
 !!! idea "Intuição Econômica 💡"
-    A distinção Sistema 1 / Sistema 2 não é uma dicotomia rígida, mas um espectro. Um contador experiente calcula um desconto composto quase "automaticamente" (Sistema 1 treinado), enquanto um iniciante precisa de esforço consciente (Sistema 2). A expertise pode transformar processos deliberados em heurísticas eficientes — mas também pode criar "pontos cegos" quando as condições mudam.
+    **Em uma frase:** O cérebro opera em dois modos — um rápido e automático (Sistema 1) e outro lento e deliberado (Sistema 2) — e a maioria das decisões econômicas do dia a dia usa o primeiro.
+
+    **Pense assim:** Um contador experiente calcula um desconto composto quase "no automático" (Sistema 1 treinado), enquanto um iniciante precisa de papel e caneta (Sistema 2). A expertise transforma raciocínio deliberado em heurística eficiente — mas também cria "pontos cegos" quando as condições mudam.
+
+    **Por que isso importa:** Se a maioria das decisões de consumo, poupança e investimento passa pelo Sistema 1, modelos que assumem otimização deliberada e completa podem errar sistematicamente nas previsões.
 
 A tabela a seguir resume as principais heurísticas e seus vieses associados:
 
@@ -127,7 +135,11 @@ A Teoria do Prospecto propõe que os agentes avaliam resultados como **ganhos ou
     A **aversão à perda** é a assimetria na avaliação de ganhos e perdas: o impacto psicológico de uma perda de magnitude \(|x|\) é maior do que o de um ganho de mesma magnitude. Formalmente, \(|v(-x)| > v(x)\) para todo \(x > 0\). O coeficiente de aversão à perda \(\lambda = |v(-x)|/v(x)\) é tipicamente estimado em torno de \(2{,}0\) a \(2{,}5\) — ou seja, perdas "pesam" cerca de duas vezes mais que ganhos equivalentes.
 
 !!! idea "Intuição Econômica 💡"
-    A aversão à perda explica por que muitas pessoas rejeitam apostas favoráveis. Considere uma moeda justa que paga R\$ 150 em caso de cara e cobra R\$ 100 em caso de coroa. O valor esperado é positivo (\(+\)R\$ 25), mas a dor de perder R\$ 100 supera o prazer de ganhar R\$ 150 quando \(\lambda > 1{,}5\). Com \(\lambda \approx 2{,}25\), a perda potencial "pesa" R\$ 225 em termos psicológicos — mais do que os R\$ 150 do ganho.
+    **Em uma frase:** Perder dói mais do que ganhar alegra — por isso as pessoas rejeitam apostas matematicamente favoráveis.
+
+    **Pense assim:** Uma moeda justa paga R\$ 150 na cara e cobra R\$ 100 na coroa. O valor esperado é +R\$ 25, mas com \(\lambda \approx 2{,}25\), a perda potencial "pesa" R\$ 225 em termos psicológicos — mais do que os R\$ 150 do ganho. A maioria das pessoas recusa a aposta.
+
+    **Por que isso importa:** A aversão à perda explica por que investidores seguram ações perdedoras tempo demais ("não quero realizar o prejuízo") e vendem vencedoras cedo demais ("melhor garantir o lucro") — o chamado efeito disposição, documentado na B3.
 
 Uma especificação paramétrica comum é:
 
@@ -207,7 +219,11 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
 </div>
 
 !!! idea "Intuição Econômica 💡"
-    A ponderação de probabilidades resolve um paradoxo do comportamento humano: **a mesma pessoa** compra bilhete de loteria (sobrevalorizando uma probabilidade minúscula de ganho) **e** contrata seguro contra catástrofe (sobrevalorizando uma probabilidade minúscula de perda). Sob utilidade esperada linear em probabilidades, essas duas atitudes são inconsistentes. Sob a Teoria do Prospecto, ambas decorrem naturalmente da sobrevalorização de eventos raros combinada com a assimetria da função valor.
+    **Em uma frase:** A mesma pessoa compra loteria e contrata seguro contra catástrofe — ambos explicados pela sobrevalorização de eventos raros.
+
+    **Pense assim:** Você joga na Mega-Sena (chance de 1 em 50 milhões) porque seu cérebro "infla" essa probabilidade minúscula. E contrata seguro contra incêndio (chance de 1 em 10.000) pelo mesmo motivo — a probabilidade pequena de perda também é inflada. Sob utilidade esperada, essas atitudes são inconsistentes; sob a Teoria do Prospecto, ambas decorrem da mesma distorção.
+
+    **Por que isso importa:** A ponderação não linear de probabilidades é a peça que faltava para explicar simultaneamente comportamentos de risco (loterias, day trading) e aversão extrema a catástrofes (seguros caros, pânico financeiro).
 
 !!! example "Box Brasil — A Mega-Sena e a sobrevalorização de probabilidades pequenas"
     A probabilidade de acertar as seis dezenas da Mega-Sena é de aproximadamente 1 em 50 milhões. Mesmo assim, milhões de brasileiros apostam regularmente. O valor esperado de uma aposta de R\$ 5,00 é tipicamente negativo (parte da arrecadação financia programas sociais via Caixa Econômica Federal). Sob utilidade esperada com probabilidades lineares, apostar seria irracional para qualquer agente avesso ao risco. A Teoria do Prospecto oferece uma explicação: a função de ponderação transforma a probabilidade objetiva minúscula (\(p \approx 0{,}00000002\)) em um peso decisório substancialmente maior, tornando a aposta subjetivamente atraente. O prazer antecipatório de imaginar o ganho faz parte do "produto" consumido — algo que o modelo neoclássico não captura.
@@ -237,7 +253,11 @@ A tabela a seguir compara os quatro modelos:
 | \(w\) para ganhos e perdas | — | Uma única \(w\) | Duas \(w\) | Duas \(w^+, w^-\) |
 
 !!! idea "Intuição Econômica 💡"
-    A CPT é hoje o modelo de referência em economia comportamental porque preserva as inovações psicológicas da OPT (referência, aversão à perda, ponderação não linear) sem violar a dominância estocástica. Na prática, para loterias com poucos resultados, as previsões da OPT e da CPT são muito semelhantes — a diferença técnica importa mais para análise teórica e para loterias com muitos resultados.
+    **Em uma frase:** A CPT corrige o defeito técnico da Teoria do Prospecto original — violação de dominância estocástica — preservando todas as suas inovações psicológicas.
+
+    **Pense assim:** A OPT de 1979 era como um carro revolucionário que às vezes acelerava sozinho (violava dominância). A CPT de Tversky e Kahneman (1992) consertou o motor (ponderação cumulativa em vez de isolada) sem mudar o design — referência, aversão à perda e distorção de probabilidades continuam presentes.
+
+    **Por que isso importa:** A CPT é o modelo de referência em economia comportamental e finanças comportamentais. Para loterias simples, OPT e CPT geram previsões semelhantes — a diferença técnica importa mais para loterias com muitos resultados e para consistência teórica.
 
 ### 8.2.5 Efeito dotação e efeito framing
 
@@ -330,7 +350,11 @@ A aversão à ambiguidade motivou o desenvolvimento de vários modelos formais a
 - **Aversão à ambiguidade suave:** Klibanoff, Marinacci e Mukerji (2005) propõem um modelo em que o agente tem uma distribuição de segunda ordem sobre as probabilidades possíveis, avaliada por uma função côncava que captura a aversão à ambiguidade.
 
 !!! idea "Intuição Econômica 💡"
-    A aversão à ambiguidade tem consequências práticas importantes. Em mercados financeiros, ativos com retornos difíceis de modelar (por exemplo, ações de empresas em setores novos ou países com dados escassos) carregam um **prêmio de ambiguidade** além do prêmio de risco convencional. No Brasil, a dificuldade de prever a política fiscal e regulatória pode amplificar esse prêmio, contribuindo para os elevados spreads de crédito observados no mercado corporativo brasileiro.
+    **Em uma frase:** Pessoas preferem riscos conhecidos a incertezas desconhecidas — mesmo quando as probabilidades objetivas são iguais.
+
+    **Pense assim:** Você prefere apostar numa urna com 50 bolas vermelhas e 50 azuis (risco) ou numa urna com 100 bolas de proporção desconhecida (ambiguidade)? A maioria escolhe a primeira, mesmo que a melhor estimativa para a segunda também seja 50-50. A falta de informação sobre as probabilidades gera desconforto adicional.
+
+    **Por que isso importa:** Em mercados financeiros, ativos com retornos difíceis de modelar carregam um **prêmio de ambiguidade** além do prêmio de risco. No Brasil, a imprevisibilidade da política fiscal e regulatória amplifica esse prêmio, contribuindo para os elevados spreads de crédito do mercado corporativo.
 
 ---
 
@@ -438,7 +462,11 @@ O modelo de Fehr-Schmidt captura a aversão à **desigualdade de resultados**, m
 Essa disposição à **punição altruísta** — pagar um custo para punir quem viola normas sociais — é difícil de explicar pelo autointeresse, mas emerge naturalmente de modelos que combinam aversão à inequidade com reciprocidade (Dhami 2016, p. 466–478).
 
 !!! idea "Intuição Econômica 💡"
-    A combinação de reciprocidade positiva (recompensar cooperação) e reciprocidade negativa (punir deserção) cria um mecanismo de **imposição descentralizada** de normas sociais. Em comunidades pequenas — vilas de pescadores, cooperativas agrícolas, condomínios —, a ameaça de punição social pode ser mais eficaz do que contratos formais para sustentar a cooperação. Henrich et al. (2001) documentaram variação cross-cultural significativa no grau de reciprocidade, mostrando que sociedades com maior integração de mercado tendem a exibir mais cooperação em jogos experimentais.
+    **Em uma frase:** Reciprocidade positiva (recompensar cooperação) e negativa (punir deserção) criam um mecanismo descentralizado de imposição de normas — mais eficaz que contratos formais em comunidades pequenas.
+
+    **Pense assim:** Num condomínio, o vizinho que sempre limpa a churrasqueira ganha convites para festas (reciprocidade positiva). O que nunca ajuda é excluído do grupo de WhatsApp (reciprocidade negativa). Ninguém precisa de contrato formal — a pressão social sustenta a cooperação.
+
+    **Por que isso importa:** Henrich et al. (2001) mostraram que sociedades com maior integração de mercado exibem mais cooperação em jogos experimentais. Entender preferências sociais é essencial para desenhar mecanismos que funcionem com seres humanos reais, não com *homo economicus*.
 
 ---
 
@@ -504,7 +532,11 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 | Frederick, Loewenstein e O'Donoghue (2002) | Meta-análise | 0,20–0,80 | 0,90–0,99 |
 
 !!! idea "Intuição Econômica 💡"
-    O modelo \((\beta, \delta)\) captura uma intuição simples: **o futuro como um todo é descontado em relação ao presente** (pelo fator \(\beta\)), mas **dentro do futuro**, os períodos são descontados normalmente (pelo fator \(\delta\)). É como se houvesse uma "fronteira psicológica" entre agora e tudo que vem depois. Esse salto discreto explica por que as pessoas conseguem planejar com paciência para o futuro distante ("vou começar a dieta na segunda"), mas cedem à tentação quando o futuro se torna presente ("hoje tem bolo no escritório").
+    **Em uma frase:** O modelo \((\beta, \delta)\) captura a "fronteira psicológica" entre agora e tudo que vem depois — o futuro como um todo é descontado extra, mas dentro do futuro o desconto é normal.
+
+    **Pense assim:** "Vou começar a dieta na segunda" é fácil de dizer na sexta — segunda e terça parecem igualmente distantes. Mas quando segunda chega e tem bolo no escritório, o presente ganha peso desproporcional. O \(\beta < 1\) é esse "puxão gravitacional" do agora.
+
+    **Por que isso importa:** O desconto hiperbólico explica por que pessoas aderem a planos de previdência com desconto em folha (mecanismo de comprometimento) e por que políticas de "opt-out" — como a inscrição automática no FGTS — são mais eficazes que "opt-in" para promover poupança.
 
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/funcoes-desconto.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>

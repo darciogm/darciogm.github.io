@@ -157,8 +157,12 @@ Mas, pela condição de primeira ordem, \(\frac{\partial f}{\partial x}\big|_{x^
 
 \(\blacksquare\)
 
-!!! note "Intuição econômica"
-    O resultado é intuitivo: no ótimo, o agente já ajustou \(x\) da melhor forma possível. Uma pequena mudança em \(x\) a partir do ótimo tem efeito de segunda ordem sobre \(f\) (pelo fato de que a derivada é zero no ótimo). Portanto, o único efeito de primeira ordem de uma mudança em \(a\) é o efeito **direto**.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** No ótimo, o único efeito que importa de uma mudança no parâmetro é o efeito direto — o ajuste indireto via \(x\) é de segunda ordem.
+
+    **Pense assim:** Imagine que você já encontrou a melhor posição para sentar em um auditório lotado. Se a temperatura da sala mudar um grau, o desconforto vem diretamente do calor — não de precisar trocar de assento, porque você já está no melhor lugar possível. O "ajuste fino" da posição não muda quase nada.
+
+    **Por que isso importa:** O Teorema da Envoltória simplifica drasticamente a estática comparativa: em vez de recalcular todo o ótimo, basta olhar o efeito direto do parâmetro sobre a função objetivo.
 
 ---
 

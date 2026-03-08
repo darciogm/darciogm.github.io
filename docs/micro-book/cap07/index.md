@@ -288,7 +288,12 @@ Manter opções abertas tem valor positivo sob incerteza. A possibilidade de adi
 
 Formalmente, considere um agente que pode tomar uma decisão irreversível hoje ou esperar um período para obter informação adicional. Se o custo de esperar é baixo e a incerteza é alta, o **valor da opção de espera** pode ser substancial. Esse conceito, desenvolvido por Dixit e Pindyck (1994), tem aplicações importantes em decisões de investimento, exploração de recursos naturais e políticas públicas.
 
-A intuição é simples: sob incerteza, a irreversibilidade cria um custo de oportunidade. Ao agir hoje, o agente "mata" a opção de agir de forma mais informada no futuro. Por isso, a regra do valor presente líquido (VPL) positivo pode ser insuficiente para justificar um investimento — é necessário que o VPL exceda o valor da opção de espera.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Sob incerteza, a irreversibilidade cria um custo de oportunidade — agir hoje "mata" a opção de decidir melhor amanhã.
+
+    **Pense assim:** Você recebeu uma proposta de emprego em outra cidade, mas espera uma resposta de um concurso público que sai em 30 dias. Aceitar agora é irreversível. Se a incerteza sobre o concurso é grande, o valor de esperar — mesmo perdendo um mês de salário — pode compensar. O VPL positivo da mudança não basta; ele precisa superar o valor da opção de espera.
+
+    **Por que isso importa:** Esse raciocínio explica por que empresas adiam investimentos mesmo com VPL positivo, por que a Petrobras pode postergar a exploração do pré-sal quando o preço do petróleo é volátil, e por que políticas públicas irreversíveis merecem cautela extra.
 
 ### 7.6.4 Informação
 

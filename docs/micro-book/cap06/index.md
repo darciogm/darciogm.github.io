@@ -32,8 +32,12 @@ No caso de dois bens, a restrição orçamentária impõe relações fortes. Se 
 
 Isso significa que, no sentido hicksiano, **dois bens são sempre substitutos líquidos** quando há apenas dois bens no modelo. A complementaridade só emerge com três ou mais bens.
 
-!!! tip "Intuição"
-    Com apenas dois bens, quando o preço de um sobe e compensamos a renda para manter a utilidade constante, o consumidor necessariamente migra para o outro bem — não há terceira opção. Por isso, a complementaridade líquida é impossível com dois bens.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** Com apenas dois bens, eles são sempre substitutos líquidos — a complementaridade só emerge quando existe uma terceira opção.
+
+    **Pense assim:** Se no cardápio do almoço só há arroz e macarrão, e o arroz fica mais caro (com compensação de renda), você necessariamente come mais macarrão — não tem para onde fugir. Só quando existe uma terceira opção (salada) é que dois bens podem ser complementares líquidos.
+
+    **Por que isso importa:** Modelos com apenas dois bens podem ser enganosos para análise de política tributária: a complementaridade, que é fundamental para a regra de Ramsey de tributação ótima, simplesmente não aparece.
 
 ---
 

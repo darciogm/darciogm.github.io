@@ -34,7 +34,7 @@ A transformação de Harsanyi converte um jogo com informação incompleta em um
 
     Cada tipo de cada jogador maximiza seu payoff esperado, condicionando nas crenças sobre os tipos dos outros e nas estratégias de equilíbrio dos demais.
 
-!!! idea "Intuição Econômica: Por que mentir pode ser ótimo — e quando não é"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Em jogos bayesianos, cada jogador usa sua informação privada para extrair vantagem, mas o equilíbrio incorpora essa assimetria.
 
     **Pense assim:** Num leilão de arte, você sabe quanto o quadro vale para você, mas não para os outros. Se lancar seu valor verdadeiro num leilão de primeiro preço, paga demais quando ganha. O equilíbrio envolve *bid shading* — lancar abaixo do valor. Mas num leilão de segundo preço (Vickrey), lancar o valor verdadeiro é estratégia dominante!
@@ -85,7 +85,7 @@ E[\text{Receita}] = \frac{N-1}{N+1}
 
 ### Leilões de valor comum e a maldição do vencedor
 
-!!! idea "Intuição Econômica: A maldição do vencedor"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Em leilões de valor comum, ganhar é uma má notícia — significa que você estimou o valor mais alto que todos.
 
     **Pense assim:** Num leilão de direitos de exploração de petróleo (como os da ANP), o bloco vale o mesmo para todos, mas cada empresa tem uma estimativa diferente do volume de óleo. Quem ganha é quem estimou mais. Se todos cometem erros simétricos de estimação, o vencedor é o mais otimista — e provavelmente pagou demais.

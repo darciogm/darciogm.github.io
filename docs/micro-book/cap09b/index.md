@@ -21,7 +21,7 @@ Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores 
 
 O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio de Nash, mas nem todo equilíbrio de Nash é perfeito em subjogos. O EPS elimina equilíbrios sustentados por **ameaças não críveis** em subjogos fora do caminho de equilíbrio.
 
-!!! idea "Intuição Econômica: Por que o último jogador tem poder"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Indução retroativa significa pensar "de trás para frente" — primeiro o que acontece no final, depois o que é racional fazer no início.
 
     **Pense assim:** Quando uma grande rede de supermercados ameaça derrubar preços para expulsar um mercadinho de bairro, o mercadinho precisa avaliar: essa ameaça é crível? Se a guerra de preços der prejuízo também para a rede, ela não vai cumprir a ameaça. Pensar de trás para frente revela quais ameaças são blefe.
@@ -82,7 +82,7 @@ No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta
 
 O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue.
 
-!!! idea "Intuição Econômica: Cooperação sem contrato — o papel do δ"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Cooperação emerge quando a sombra do futuro é longa o suficiente para que a punição por trair supere o ganho imediato.
 
     **Pense assim:** Dois vizinhos que se encontram todo dia no elevador cooperam mais do que dois desconhecidos que interagem uma única vez. O vizinho sabe que se agir de forma oportunista hoje, enfrentará a hostilidade do outro por anos. É o mesmo princípio que sustenta o conluio tácito entre postos de gasolina: a interação repetida e a facilidade de monitoramento (preços em totens) criam as condições para cooperação.
@@ -147,7 +147,7 @@ Quando \(\delta_1 = \delta_2 = \delta\):
 x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 \]
 
-!!! idea "Intuição Econômica: Paciência é poder na barganha"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Na barganha de Rubinstein, quem é mais paciente (maior \(\delta\)) fica com a maior fatia.
 
     **Pense assim:** Numa negociação salarial entre o sindicato dos metalúrgicos e uma montadora, cada rodada sem acordo custa para ambos (trabalhadores perdem salário, empresa perde produção). Quem aguenta mais tempo sem acordo — quem tem mais "reservas" — consegue extrair mais valor.

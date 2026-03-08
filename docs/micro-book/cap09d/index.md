@@ -51,7 +51,7 @@ c(e, \theta_H) < c(e, \theta_L) \quad \text{para todo } e > 0
 
 Essa condição de **single-crossing** garante que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
 
-!!! idea "Intuição Econômica: Diploma como sinal vs capital humano"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** No modelo de Spence, a educação tem valor de sinalização *mesmo que não aumente a produtividade*.
 
     **Pense assim:** Uma empresa não sabe se o candidato é talentoso ou não. O candidato talentoso acha mais fácil (menos custoso) obter um MBA. Então ele faz o MBA não porque aprende algo novo, mas para *provar* que é talentoso. A educação funciona como um filtro que separa tipos.
@@ -101,7 +101,7 @@ O modelo básico de principal-agente:
 
 **Trade-off central:** Para incentivar esforço, o contrato deve vincular pagamento ao resultado. Mas isso expõe o agente (avesso ao risco) a risco — gerando custo de seguro. O contrato ótimo equilibra incentivos e seguro.
 
-!!! idea "Intuição Econômica: Por que o seguro de saúde é caro"
+!!! idea "Intuição Econômica 💡"
     **Em uma frase:** Quando alguém não arca com as consequências de suas ações, tende a agir de forma mais arriscada.
 
     **Pense assim:** Uma pessoa com seguro de saúde completo pode cuidar menos da saúde (alimentação, exercício, prevenção) do que alguém sem seguro. O seguro *causa* comportamento mais arriscado — não apenas o cobre.

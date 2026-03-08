@@ -290,8 +290,12 @@ W = EC + EP
 
     Isso é satisfeito, pois a demanda inversa é decrescente (\(dp_D/dQ < 0\)) e a oferta inversa é crescente (\(dp_S/dQ > 0\)). Portanto, \(Q^*\) é de fato um máximo de bem-estar. \(\blacksquare\)
 
-!!! tip "Intuição: por que o equilíbrio competitivo maximiza o bem-estar?"
-    A cada unidade transacionada, o benefício marginal do consumidor (dado pela curva de demanda) supera o custo marginal do produtor (dado pela curva de oferta). Enquanto essa condição valer, produzir e vender mais uma unidade gera ganho líquido para a sociedade. No equilíbrio competitivo, a última unidade transacionada tem benefício marginal *exatamente igual* ao custo marginal — não há mais ganhos a explorar. Qualquer quantidade menor desperdiça trocas mutuamente vantajosas; qualquer quantidade maior força trocas cujo custo supera o benefício.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O equilíbrio competitivo maximiza o bem-estar porque esgota todas as trocas mutuamente vantajosas — a última unidade vendida tem benefício marginal exatamente igual ao custo marginal.
+
+    **Pense assim:** Imagine uma feira livre onde cada barraca vende até o ponto em que o próximo cliente pagaria menos do que custa repor a mercadoria. Enquanto houver alguém disposto a pagar mais do que o custo, ambos ganham com a troca. No equilíbrio, não sobra nenhuma troca lucrativa por fazer.
+
+    **Por que isso importa:** Qualquer quantidade abaixo do equilíbrio desperdiça trocas vantajosas; qualquer quantidade acima força trocas cujo custo supera o benefício. Esse é o fundamento da análise de peso morto de impostos, tabelamentos e cotas.
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** O excedente do consumidor mede o "desconto" que ele sente por pagar menos do que estaria disposto, e o excedente do produtor mede o "bônus" por receber mais do que o mínimo necessário para vender.

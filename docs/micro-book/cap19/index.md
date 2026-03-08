@@ -150,8 +150,12 @@ Simplificando a RCI:
 
 Essa condição exige que a diferença de pagamentos entre os estados bom e ruim seja suficientemente grande para compensar o custo adicional do esforço. Como \(p_H > p_L\), precisamos de \(w_H > w_L\): o pagamento deve ser maior quando o resultado é bom.
 
-!!! tip "Intuição Econômica"
-    A RCI nos diz que o "prêmio" por bom desempenho, \(w_H - w_L\), deve ser grande o suficiente para que o agente prefira se esforçar. Quanto maior a diferença \(c(e_H) - c(e_L)\) e menor a diferença \(p_H - p_L\), mais difícil é prover incentivos — e maior o custo de agência.
+!!! idea "Intuição Econômica 💡"
+    **Em uma frase:** O "prêmio" por bom desempenho deve ser grande o suficiente para que o agente prefira se esforçar — caso contrário, ele relaxa.
+
+    **Pense assim:** Um vendedor comissionado só se esforça se a diferença entre a comissão do mês bom e a do mês ruim compensar o cansaço extra. Se a comissão é quase igual nos dois cenários, por que suar? Quanto mais difícil é distinguir esforço de sorte (\(p_H - p_L\) pequeno), maior precisa ser o bônus.
+
+    **Por que isso importa:** A Restrição de Compatibilidade de Incentivos (RCI) é a peça central dos contratos de incentivo — ela determina o custo de agência e explica por que contratos ótimos raramente oferecem seguro completo ao agente.
 
 ---
 
