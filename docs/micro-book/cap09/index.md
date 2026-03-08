@@ -1,4 +1,4 @@
-# Capítulo 9 — Nash no Bar: A Arte do Pensamento Estratégico
+# Capítulo 9 — Quando Sua Escolha Não É Só Sua
 
 !!! info "Capítulo reorganizado"
     O Capítulo 9 foi expandido e dividido em quatro módulos:

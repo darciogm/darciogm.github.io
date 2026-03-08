@@ -65,8 +65,9 @@ nav:
       - micro-book/mercados/index.md
       - "Cap. 7 — O Preço do Talvez": micro-book/cap07/index.md
       - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
-      - "Cap. 9 — Nash no Bar":
-        - "9a — Jogos Estáticos": micro-book/cap09a/index.md
+      - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
+        - micro-book/cap09/index.md
+        - "9a — Jogos Estáticos com Informação Completa": micro-book/cap09a/index.md
         - "9b — Jogos Dinâmicos": micro-book/cap09b/index.md
         - "9c — Informação Incompleta": micro-book/cap09c/index.md
         - "9d — Sinais e Contratos": micro-book/cap09d/index.md
