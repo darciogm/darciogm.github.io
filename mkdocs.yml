@@ -28,7 +28,6 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
-    - navigation.expand
     - navigation.indexes
     - navigation.footer
     - toc.integrate
