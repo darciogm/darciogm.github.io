@@ -579,6 +579,8 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 (c) Agora suponha \(V = 48\). Derive \(h^*(w)\) e mostre que a oferta de trabalho agora é decrescente em \(w\). Interprete.
 
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-1)
+
 ---
 
 **Exercício 17.2.** Considere um mercado de trabalho competitivo com oferta \(H^s = 100w\) e demanda \(H^d = 4000 - 100w\).
@@ -588,6 +590,8 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 (b) Se o governo impõe um salário mínimo \(w_{min} = 25\), qual é o nível de emprego? E o excesso de oferta (desemprego)?
 
 (c) Calcule a perda de peso morto gerada pelo salário mínimo.
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-2)
 
 ---
 
@@ -599,6 +603,8 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 (c) Compare com o equilíbrio competitivo. Calcule a exploração monopsonística.
 
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-3)
+
 ---
 
 **Exercício 17.4.** Um sindicato maximiza a renda total dos seus membros, \(R = w \cdot H^d(w)\), onde a demanda por trabalho é \(H^d(w) = 1000 - 20w\).
@@ -609,6 +615,8 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 (c) Compare com o equilíbrio competitivo (supondo oferta perfeitamente elástica a \(w = 15\)).
 
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-4)
+
 ---
 
 **Exercício 17.5.** Discuta, com base na teoria e na evidência empírica brasileira:
@@ -618,6 +626,8 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 (b) Em um mercado de trabalho com monopsônio, é possível que um aumento do salário mínimo eleve simultaneamente o emprego e o salário? Ilustre graficamente.
 
 (c) Quais são os principais canais pelos quais o aumento do salário mínimo pode afetar a distribuição de renda no Brasil?
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-5)
 
 ---
 

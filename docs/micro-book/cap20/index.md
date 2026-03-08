@@ -623,6 +623,8 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 (c) Calcule o imposto pigouviano ótimo \(t^*\) e verifique que ele induz a firma a produzir a quantidade eficiente.
 (d) Calcule a perda de peso morto associada à ausência de regulação.
 
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-1)
+
 **Exercício 20.2.** Considere três indivíduos (\(A\), \(B\), \(C\)) com as seguintes valorações marginais por um bem público \(G\) (medido em unidades):
 
 | \(G\) | \(BMg_A\) | \(BMg_B\) | \(BMg_C\) | \(CMg\) |
@@ -638,6 +640,8 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 (c) Explique por que a provisão voluntária (contribuição individual) resultaria em \(G < G^*\).
 (d) Verifique se os preços de Lindahl são equilibrados orçamentariamente.
 
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-2)
+
 **Exercício 20.3.** Duas firmas emitem poluentes. A firma 1 tem custo de abatimento \(CA_1(a_1) = 2a_1^2\) e a firma 2, \(CA_2(a_2) = a_2^2\), onde \(a_i\) é o abatimento em toneladas. Cada firma emite 100 toneladas sem regulação. O regulador deseja reduzir as emissões totais em 60 toneladas.
 
 (a) Qual é a alocação custo-efetiva de abatimento entre as duas firmas?
@@ -645,12 +649,16 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 (c) Compare com o custo da solução custo-efetiva e calcule a economia.
 (d) Se for utilizado um mercado de permissões (cap-and-trade), qual será o preço de equilíbrio da permissão?
 
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-3)
+
 **Exercício 20.4.** Uma comunidade com 100 moradores deve decidir se constrói uma praça pública (bem público discreto) ao custo de \(R\$ 50.000\). Cada morador \(i\) tem valoração \(v_i\) pela praça, distribuída uniformemente entre \(R\$ 200\) e \(R\$ 800\).
 
 (a) A praça deve ser construída? (Compare a soma das valorações esperadas com o custo.)
 (b) Se a construção for financiada por contribuição voluntária uniforme de \(R\$ 500\) por morador, quantos moradores estariam dispostos a contribuir?
 (c) Explique o problema do carona nesta situação.
 (d) Descreva como um mecanismo de imposto pivotal (Clarke) funcionaria neste contexto.
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-4)
 
 **Exercício 20.5.** Considere uma economia com dois bens — um privado (\(x\)) e um público (\(G\)) — e dois consumidores com utilidades:
 
@@ -664,6 +672,8 @@ O preço do bem privado é 1 e o custo marginal do bem público é \(c\). Cada c
 (b) Determine o nível eficiente \(G^*\) em função de \(W\) e \(c\).
 (c) Se cada consumidor contribui voluntariamente (equilíbrio de Nash em contribuições), determine o nível de \(G\) de equilíbrio.
 (d) Mostre que \(G^{Nash} < G^*\) e interprete economicamente.
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-5)
 
 ---
 

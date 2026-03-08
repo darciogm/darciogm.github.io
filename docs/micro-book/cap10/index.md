@@ -640,6 +640,8 @@ Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
 (e) Confirme que \(\sigma = 1\).
 
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-1)
+
 ---
 
 **Exercício 9.2.**
@@ -657,6 +659,8 @@ q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}
 
 (d) Compare a forma das isoquantas desta função com as da Cobb-Douglas.
 
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-2)
+
 ---
 
 **Exercício 9.3.**
@@ -667,6 +671,8 @@ Considere a função de produção Leontief \(q = \min\{2K, 3L\}\).
 (b) Se a firma deseja produzir \(q = 60\), quais as quantidades mínimas de \(K\) e \(L\)?
 
 (c) Qual o efeito de dobrar apenas o trabalho, mantendo o capital constante? Interprete em termos de rendimentos marginais.
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-3)
 
 ---
 
@@ -680,6 +686,8 @@ Uma função de produção é dada por \(q = K^{0,6} L^{0,8}\).
 (c) Se a firma dobrar ambos os insumos, por qual fator o produto aumentará?
 
 (d) Explique por que rendimentos crescentes de escala podem existir mesmo com produtos marginais decrescentes em cada fator individualmente.
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-4)
 
 ---
 
@@ -695,6 +703,8 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 (d) Este progresso técnico é neutro no sentido de Hicks, Harrod ou Solow? Justifique.
 
 (e) Calcule a produtividade total dos fatores em \(t = 0\) e \(t = 10\). Se em \(t = 0\) a firma utiliza \(K = 100\) e \(L = 200\), qual o produto em \(t = 0\) e em \(t = 10\) (supondo que os insumos cresçam às taxas indicadas)?
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-9-5)
 
 ---
 

@@ -635,9 +635,13 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 (c) Calcule o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
 
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-1)
+
 ---
 
 **Exercício 7.2.** Mostre que a função de utilidade \(u(W) = -e^{-aW}\), com \(a > 0\), apresenta aversão absoluta ao risco constante (CARA). Calcule \(A(W)\) e \(R(W)\) e discuta as implicações econômicas de cada medida.
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-2)
 
 ---
 
@@ -651,6 +655,8 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 (d) Se uma seguradora oferece seguro a um prêmio de R\$ 60.000, o agricultor contrata? Justifique.
 
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-3)
+
 ---
 
 **Exercício 7.4.** Considere dois estados da natureza, \(s_1\) (expansão) e \(s_2\) (recessão), com probabilidades \(\pi_1 = 0{,}6\) e \(\pi_2 = 0{,}4\). Um agente com riqueza \(W = 100\) e utilidade \(u(c) = \ln(c)\) pode comprar ativos contingentes ao preço \(\psi_1 = 0{,}6\) e \(\psi_2 = 0{,}4\).
@@ -661,6 +667,8 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 
 (c) Interprete o resultado à luz da suavização de consumo entre estados.
 
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-4)
+
 ---
 
 **Exercício 7.5.** Considere dois agentes, A com \(u_A(W) = \ln(W)\) e B com \(u_B(W) = -e^{-0{,}001W}\), ambos com riqueza \(W = 10.000\).
@@ -670,6 +678,8 @@ O **risco moral** ocorre *depois* da celebração do contrato, quando uma das pa
 (b) Compare o prêmio de risco (aproximado) que cada um exigiria para aceitar uma loteria com valor esperado zero e desvio padrão de R\$ 1.000.
 
 (c) Como o prêmio de risco de cada agente se altera se a riqueza aumenta para \(W = 50.000\)? Discuta a relação com DARA e CARA.
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-5)
 
 ---
 

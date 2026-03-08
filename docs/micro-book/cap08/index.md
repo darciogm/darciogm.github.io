@@ -677,23 +677,43 @@ A economia comportamental e os nudges não são panaceias:
 
     **Exercício 8.1.** Um investidor avalia duas opções: (A) ganhar R\$ 500 com certeza; (B) ganhar R\$ 1.000 com probabilidade \(0{,}50\). Sob utilidade esperada com função de utilidade côncava, o investidor prefere A. Agora considere: (C) perder R\$ 500 com certeza; (D) perder R\$ 1.000 com probabilidade \(0{,}50\). Sob a Teoria do Prospecto, qual a escolha provável em cada par? Explique usando as propriedades da função valor.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-1)
+
     **Exercício 8.2.** Usando a função valor paramétrica \(v(x) = x^{0{,}88}\) para ganhos e \(v(x) = -2{,}25 \cdot (-x)^{0{,}88}\) para perdas, calcule \(v(100)\), \(v(-100)\), \(v(200)\) e \(v(-200)\). Verifique que \(|v(-100)| > v(100)\) e interprete economicamente.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-2)
 
     **Exercício 8.3.** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}99)\) avalia dois planos de poupança. O Plano X exige um depósito de R\$ 100 **hoje** e paga R\$ 150 em 1 ano. O Plano Y exige um depósito de R\$ 100 **em 6 meses** e paga R\$ 150 em 18 meses. (a) Calcule a utilidade descontada de cada plano sob desconto quasi-hiperbólico, assumindo \(u(x) = x\). (b) O consumidor prefere Y hoje, mas quando chegar o mês 6, ele vai aderir? Explique a diferença entre agentes sofisticados e ingênuos.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-3)
+
     **Exercício 8.4.** Uma empresa oferece dois planos de academia: (A) pagamento mensal de R\$ 100; (B) pagamento anual antecipado de R\$ 960 (equivalente a R\$ 80/mês). DellaVigna e Malmendier (2006) mostram que muitos consumidores escolhem (A) e depois frequentam a academia menos de 5 vezes por mês, pagando mais de R\$ 20 por visita — quando poderiam comprar passes avulsos por R\$ 12. Explique esse comportamento usando: (i) excesso de confiança sobre o uso futuro; (ii) viés do presente.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-4)
 
     **Exercício 8.5.** O governo está considerando duas políticas para aumentar a poupança previdenciária: (i) subsídio fiscal de 10% sobre contribuições voluntárias; (ii) adesão automática com *opt-out*. Com base na literatura comportamental, qual política provavelmente terá maior impacto sobre a taxa de poupança agregada? Justifique.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-5)
+
     **Exercício 8.6.** Explique por que o Paradoxo de Allais viola o axioma da independência da utilidade esperada. Mostre formalmente que as preferências \(A \succ B\) e \(D \succ C\) são inconsistentes com a existência de uma função de utilidade de Von Neumann–Morgenstern.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-6)
 
     **Exercício 8.7.** No Paradoxo de Ellsberg (duas cores), mostre que a preferência simultânea pela Urna A em ambas as apostas (vermelho e preto) é incompatível com qualquer probabilidade subjetiva atribuída à composição da Urna B. Qual axioma da UE de Savage é violado?
 
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-7)
+
     **Exercício 8.8.** Em um jogo do ultimato com \(S = 200\), o respondedor tem parâmetros de Fehr-Schmidt \(\alpha_R = 3\) e \(\beta_R = 0{,}5\). (a) Calcule a oferta mínima aceita. (b) Se o respondedor fosse puramente autointeressado (\(\alpha_R = \beta_R = 0\)), qual seria a oferta mínima? (c) Interprete a diferença à luz da aversão à inequidade.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-8)
 
     **Exercício 8.9.** Usando as quatro regras de edição hedônica de Thaler (1985), explique por que: (a) lojas de departamento anunciam promoções como "20% de desconto + 10% extra" em vez de "28% de desconto"; (b) a cobrança de taxa condominial é mensal (não anual); (c) supermercados oferecem "cashback" em vez de desconto no preço.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-9)
+
     **Exercício 8.10.** A função de ponderação de probabilidades de Tversky e Kahneman é \(w(p) = p^{\gamma}/(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}\). (a) Mostre que \(w(0) = 0\) e \(w(1) = 1\). (b) Calcule \(w(0{,}01)\), \(w(0{,}50)\) e \(w(0{,}99)\) para \(\gamma = 0{,}61\). (c) Verifique a propriedade de subcerteza: \(w(p) + w(1-p) < 1\) para \(p = 0{,}50\).
+
+    [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-10)
 
 ---
 

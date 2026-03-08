@@ -543,6 +543,8 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 (c) Encontre o equilíbrio de Nash em estratégias mistas e calcule os payoffs esperados.
 
+[:material-arrow-right: Ver solução](../solucoes/cap09a.md#ex-9a-1)
+
 ---
 
 **Exercício 9a.2.** Duas firmas idênticas competem à la Cournot com demanda inversa \(P(Q) = 120 - Q\) e custo marginal \(c = 30\).
@@ -553,6 +555,8 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 (c) Agora suponha que a firma 1 move primeiro (Stackelberg). Encontre o equilíbrio e compare.
 
+[:material-arrow-right: Ver solução](../solucoes/cap09a.md#ex-9a-2)
+
 ---
 
 **Exercício 9a.3.** No modelo de Bertrand com diferenciação, as demandas são \(q_1 = a - bp_1 + dp_2\) e \(q_2 = a - bp_2 + dp_1\), com \(b > d > 0\) e custo marginal \(c\).
@@ -562,6 +566,8 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 (b) Encontre o equilíbrio de Nash e mostre que os lucros são positivos (diferentemente do Bertrand homogêneo).
 
 (c) O que acontece quando \(d \to 0\)? E quando \(d \to b\)?
+
+[:material-arrow-right: Ver solução](../solucoes/cap09a.md#ex-9a-3)
 
 ---
 
@@ -577,9 +583,13 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 (c) I teria incentivo para sinalizar força? (Tema do Módulo 9d.)
 
+[:material-arrow-right: Ver solução](../solucoes/cap09a.md#ex-9a-4)
+
 ---
 
 **Exercício 9a.5.** (Sinalização — prévia do Módulo 9d) No modelo de Spence, trabalhadores têm produtividade \(\theta_H = 2\) (prob. 0,5) ou \(\theta_L = 1\) (prob. 0,5). O custo da educação é \(c(e, \theta) = e/\theta\). Encontre um equilíbrio separador e verifique que nenhum tipo desvia.
+
+[:material-arrow-right: Ver solução](../solucoes/cap09a.md#ex-9a-5)
 
 ---
 

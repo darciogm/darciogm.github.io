@@ -867,6 +867,8 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 (d) Verifique a Identidade de Roy para o bem 1.
 
+[:material-arrow-right: Ver solução](../solucoes/cap04.md#ex-4-1)
+
 ---
 
 **Exercício 4.2.** Para as mesmas preferências do exercício anterior:
@@ -881,6 +883,8 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 (e) Verifique as identidades de dualidade \(V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u}\) e \(E(\mathbf{p}, V(\mathbf{p}, I)) = I\).
 
+[:material-arrow-right: Ver solução](../solucoes/cap04.md#ex-4-2)
+
 ---
 
 **Exercício 4.3.** Um consumidor tem preferências representadas por \(u(x_1, x_2) = \min\{2x_1, x_2\}\), com \(p_1 = 4\), \(p_2 = 2\) e \(I = 120\).
@@ -891,6 +895,8 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 (c) Qual seria a cesta ótima se a renda aumentasse para \(I = 180\)? Os bens são normais?
 
+[:material-arrow-right: Ver solução](../solucoes/cap04.md#ex-4-3)
+
 ---
 
 **Exercício 4.4.** O governo está considerando duas políticas para arrecadar R\$ 100 de um consumidor com \(u(x_1, x_2) = x_1^{0,4} x_2^{0,6}\), \(p_1 = 10\), \(p_2 = 5\) e \(I = 1000\):
@@ -900,6 +906,8 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 (b) **Política B**: imposto *lump sum* de R\$ 100.
 
 (c) Compare os níveis de utilidade do consumidor sob as duas políticas. Qual é preferida pelo consumidor? Este resultado é consistente com o princípio do montante fixo?
+
+[:material-arrow-right: Ver solução](../solucoes/cap04.md#ex-4-4)
 
 ---
 
@@ -912,6 +920,8 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 (c) Derive a função de utilidade indireta e a função dispêndio.
 
 (d) Verifique que, para esse caso particular, as demandas marshalliana e hicksiana do bem 1 são **idênticas**. Explique por que isso ocorre.
+
+[:material-arrow-right: Ver solução](../solucoes/cap04.md#ex-4-5)
 
 ---
 

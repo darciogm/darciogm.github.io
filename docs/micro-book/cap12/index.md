@@ -607,6 +607,8 @@ Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(
 
 (e) Se o preço de mercado é \(p = 12\), qual a quantidade produzida e o lucro?
 
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-1)
+
 ---
 
 **Exercício 11.2.**
@@ -620,6 +622,8 @@ Demonstre que, para uma firma com poder de mercado enfrentando uma curva de dema
 
 (d) Se o custo marginal é \(\mathrm{CMg} = c\) (constante), derive a quantidade e o preço de maximização de lucro. Mostre que o preço é um *markup* sobre o custo marginal.
 
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-2)
+
 ---
 
 **Exercício 11.3.**
@@ -632,6 +636,8 @@ Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentand
 (c) Calcule o lucro máximo.
 
 (d) Verifique o Lema de Hotelling calculando a função lucro \(\pi(p, w, r)\) e suas derivadas parciais.
+
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-3)
 
 ---
 
@@ -648,6 +654,8 @@ Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de p
 
 (e) Compare com a decisão de longo prazo (quando \(K\) também pode ser ajustado).
 
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-4)
+
 ---
 
 **Exercício 11.5.**
@@ -662,6 +670,8 @@ Explique, usando a teoria vista neste capítulo, por que:
 (d) A relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) implica que um monopolista nunca opera na região inelástica da demanda. Explique intuitivamente.
 
 (e) Segundo Coase, qual o limite para o crescimento da firma? Relacione com deseconomias de escala e custos de monitoramento.
+
+[:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-11-5)
 
 ---
 

@@ -758,6 +758,8 @@ Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrent
 
 (e) Determine o custo marginal e o custo médio e mostre que são constantes. Explique por que isso ocorre (dica: relacione com rendimentos de escala).
 
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-1)
+
 ---
 
 **Exercício 10.2.**
@@ -771,6 +773,8 @@ Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + 
 
 (d) Verifique que o CMg cruza o CMe e o CVMe nos respectivos pontos de mínimo.
 
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-2)
+
 ---
 
 **Exercício 10.3.**
@@ -782,6 +786,8 @@ Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 
 
 (c) Compare com o caso de uma Cobb-Douglas com rendimentos constantes. Em que se assemelham os custos?
 
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-3)
+
 ---
 
 **Exercício 10.4.**
@@ -792,6 +798,8 @@ Explique graficamente e algebricamente por que a curva de custo médio de longo 
 (b) Fixar \(\bar{K} = 4\) e derivar a função custo de curto prazo.
 
 (c) Mostrar que \(\mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}=4)\) para todo \(q\), com igualdade em um ponto específico.
+
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-4)
 
 ---
 
@@ -805,6 +813,8 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 (c) Mostre que, neste caso, \(\mathrm{CMg} = \mathrm{CMe} = c(w, r)\) — o custo marginal é constante e igual ao custo médio.
 
 (d) Interprete economicamente: por que rendimentos constantes de escala implicam custos marginais constantes?
+
+[:material-arrow-right: Ver solução](../solucoes/cap11.md#ex-10-5)
 
 ---
 

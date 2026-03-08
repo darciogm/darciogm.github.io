@@ -594,11 +594,15 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 (c) Qual seria o resultado sob informação simétrica?
 (d) Proponha um mecanismo institucional para atenuar a seleção adversa nesse mercado.
 
+[:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-1)
+
 **Exercício 19.2.** Um proprietário contrata um gerente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O lucro é \(\pi_H = 200\) com probabilidade \(p(e)\) e \(\pi_L = 50\) caso contrário, onde \(p(1) = 0{,}8\) e \(p(0) = 0{,}3\). A utilidade de reserva é \(\bar{U} = 5\).
 
 (a) Escreva as restrições de participação e de incentivo para induzir \(e = 1\).
 (b) Resolva para os pagamentos ótimos \(w_H^*\) e \(w_L^*\).
 (c) Compare o custo esperado do contrato com o first-best (em que o esforço é observável).
+
+[:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-2)
 
 **Exercício 19.3.** No modelo de Spence, há dois tipos de trabalhadores. O tipo H tem produtividade \(\theta_H = 100\) e custo de educação \(c_H(s) = s/2\). O tipo L tem produtividade \(\theta_L = 50\) e custo de educação \(c_L(s) = s\).
 
@@ -607,6 +611,8 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 (c) Existe um equilíbrio agregador estável neste modelo? Justifique.
 (d) Discuta se a sinalização por educação é socialmente eficiente neste contexto.
 
+[:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-3)
+
 **Exercício 19.4.** Em um leilão de segundo preço com três licitantes cujas valorações são i.i.d. com distribuição uniforme em \([0, 100]\):
 
 (a) Qual é a estratégia ótima de cada licitante?
@@ -614,12 +620,16 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 (c) Usando o Teorema da Equivalência de Receita, qual seria a receita esperada em um leilão de primeiro preço?
 (d) No leilão de primeiro preço, qual é a estratégia de equilíbrio simétrico de cada licitante?
 
+[:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-4)
+
 **Exercício 19.5.** Uma seguradora opera num mercado com dois tipos de consumidores. O tipo A tem probabilidade de sinistro \(p_A = 0{,}1\) e o tipo B tem \(p_B = 0{,}4\). Ambos têm riqueza \(W = 100\) e perda potencial \(d = 80\). A proporção de tipo A é \(60\%\). A utilidade é \(U(W) = \ln(W)\).
 
 (a) Calcule os contratos de seguro completo atuarialmente justos para cada tipo.
 (b) Mostre que um contrato agregador (pooling) com seguro completo à taxa média não é um equilíbrio.
 (c) No equilíbrio separador, o tipo B recebe seguro completo. Escreva a condição de incentivo-compatibilidade que determina a cobertura máxima para o tipo A.
 (d) Discuta qualitativamente como a proporção de tipos afeta a existência do equilíbrio separador.
+
+[:material-arrow-right: Ver solução](../solucoes/cap19.md#ex-19-5)
 
 ---
 

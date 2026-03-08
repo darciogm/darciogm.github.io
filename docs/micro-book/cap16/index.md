@@ -721,6 +721,8 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Compare com o resultado que seria obtido se ambas as firmas tivessem \(c = 20\). A assimetria de custos aumenta ou reduz o excedente total?
 
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-1)
+
 ??? example "Exercício 2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
@@ -729,6 +731,8 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     b) Calcule o equilíbrio de Nash em preços e quantidades.
 
     c) Mostre que os preços de equilíbrio são superiores ao custo marginal (resolvendo o paradoxo de Bertrand).
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-2)
 
 ??? example "Exercício 3"
     Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
@@ -739,6 +743,8 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Calcule o número socialmente ótimo de firmas (que maximiza o excedente total menos os custos fixos totais). Há excesso de entrada?
 
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-3)
+
 ??? example "Exercício 4"
     Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
 
@@ -748,6 +754,8 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     c) Como o resultado se altera se há três firmas ao invés de duas?
 
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-4)
+
 ??? example "Exercício 5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 
@@ -756,6 +764,8 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     b) Calcule as quantidades, o preço e os lucros de equilíbrio de Stackelberg.
 
     c) Compare com o equilíbrio de Cournot (simultâneo) com os mesmos custos assimétricos. Qual estrutura gera maior excedente total?
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-5)
 
 ---
 

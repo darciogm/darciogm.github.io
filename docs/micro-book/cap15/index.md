@@ -654,6 +654,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Calcule a perda de peso morto e compare com o excedente total sob concorrência perfeita.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-1)
+
 ??? example "Exercício 2"
     Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
 
@@ -662,6 +664,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     b) Calcule os índices de Lerner em cada mercado e relacione com as elasticidades.
 
     c) Compare o lucro com discriminação ao lucro sem discriminação (preço uniforme ótimo).
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-2)
 
 ??? example "Exercício 3"
     O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
@@ -672,6 +676,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Compare a receita fiscal com a variação na perda de peso morto.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-3)
+
 ??? example "Exercício 4"
     Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
 
@@ -681,6 +687,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     c) Calcule o resultado sob regulação de custo médio (\(p = CMe\)) e a PPM residual.
 
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-4)
+
 ??? example "Exercício 5"
     Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
 
@@ -689,6 +697,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     b) Se usa tarifa em duas partes atendendo ambos os tipos, encontre \((T^*, p^*)\).
 
     c) Se usa tarifa em duas partes atendendo apenas o tipo 1 (excluindo o tipo 2), encontre \((T^*, p^*)\) e compare os lucros.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-5)
 
 ---
 

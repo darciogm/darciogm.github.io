@@ -613,6 +613,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 (c) Classifique os bens como normais ou inferiores, e como luxo ou necessidade.
 
+[:material-arrow-right: Ver solução](../solucoes/cap05.md#ex-5-1)
+
 ---
 
 **Exercício 5.2.** Um consumidor tem função de utilidade \(U(x, y) = \ln x + y\) (quase-linear), com preços \(p_x\), \(p_y = 1\) e renda \(I\).
@@ -623,9 +625,13 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 (c) Calcule a variação compensatória, a variação equivalente e o excedente do consumidor marshalliano para uma queda de \(p_x\) de 4 para 1. Confirme que as três medidas coincidem.
 
+[:material-arrow-right: Ver solução](../solucoes/cap05.md#ex-5-2)
+
 ---
 
 **Exercício 5.3.** Utilizando a Equação de Slutsky, demonstre formalmente que um bem de Giffen deve ser necessariamente um bem inferior. É verdade que todo bem inferior é de Giffen? Justifique.
+
+[:material-arrow-right: Ver solução](../solucoes/cap05.md#ex-5-3)
 
 ---
 
@@ -637,6 +643,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 (c) Se a elasticidade-preço própria do bem 1 é \(\varepsilon_{x_1, p_1} = -0{,}8\), use a condição de homogeneidade para calcular a elasticidade-preço cruzada \(\varepsilon_{x_1, p_2}\).
 
+[:material-arrow-right: Ver solução](../solucoes/cap05.md#ex-5-4)
+
 ---
 
 **Exercício 5.5 (Aplicação ao Brasil).** Suponha que a elasticidade-preço da gasolina no Brasil é \(-0{,}40\) e que a elasticidade-preço cruzada gasolina-etanol é \(+1{,}10\). O governo decide aumentar a CIDE de modo que o preço da gasolina suba 15%.
@@ -646,6 +654,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 (b) Estime a variação percentual na demanda por etanol.
 
 (c) Discuta as limitações dessa análise estática e como ela poderia subestimar ou superestimar os efeitos de longo prazo.
+
+[:material-arrow-right: Ver solução](../solucoes/cap05.md#ex-5-5)
 
 ---
 

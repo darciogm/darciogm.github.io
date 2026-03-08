@@ -533,6 +533,8 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 
 (c) Calcule o efeito substituição cruzado \(\frac{\partial h_1}{\partial p_2}\) e verifique que os bens são sempre substitutos líquidos (no caso de dois bens).
 
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-1)
+
 ---
 
 **Exercício 6.2 (Bem composto).** Um consumidor compra três tipos de fruta: banana (\(b\)), maçã (\(m\)) e laranja (\(l\)), além de um bem "todos os outros" (\(y\)). Suponha que os preços das frutas sempre variem na mesma proporção: \(p_b = \alpha \bar{p}_b\), \(p_m = \alpha \bar{p}_m\), \(p_l = \alpha \bar{p}_l\).
@@ -542,6 +544,8 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 (b) Se \(\alpha\) aumenta em 15%, explique como analisar o efeito sobre o consumo de "todos os outros" usando o modelo de dois bens.
 
 (c) Discuta sob quais circunstâncias a hipótese de proporcionalidade dos preços das frutas falharia no Brasil.
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-2)
 
 ---
 
@@ -554,6 +558,8 @@ A tabela a seguir classifica pares de bens relevantes para o consumidor brasilei
 (c) Obtenha as demandas hicksianas e calcule \(\frac{\partial h_1}{\partial p_2}\). Classifique os bens como substitutos ou complementos líquidos.
 
 (d) Verifique a Equação de Slutsky: \(\frac{\partial x_1}{\partial p_2} = \frac{\partial h_1}{\partial p_2} - x_2 \frac{\partial x_1}{\partial I}\).
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-3)
 
 ---
 
@@ -570,6 +576,8 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 (b) Suponha que um novo bem "ovo" entre no mercado com 155 calorias e 13 proteínas por unidade ao preço de R$ 8,00. Recalcule a alocação ótima e discuta como o novo bem afeta a demanda pelos bens existentes.
 
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-4)
+
 ---
 
 **Exercício 6.5 (Agregação da demanda).** Em uma economia com dois consumidores, as demandas individuais pelo bem 1 são:
@@ -582,6 +590,8 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 (b) Suponha que \(I^A = I^B = 100\) e \(p_1 = 10\). Calcule a demanda de mercado. Agora redistribua: \(I^A = 50\), \(I^B = 150\). Calcule novamente e mostre que a demanda mudou apesar de a renda total ser a mesma.
 
 (c) Discuta as implicações para a avaliação de políticas de redistribuição de renda como o programa Bolsa Família.
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-5)
 
 ---
 

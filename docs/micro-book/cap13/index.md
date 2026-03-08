@@ -665,6 +665,8 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (d) Se o governo impõe um imposto de \(t = 2\) por unidade, encontre o novo equilíbrio, a receita tributária e a perda de peso morto.
 
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-1)
+
 ---
 
 **Exercício 12.2.** Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
@@ -675,9 +677,13 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (c) Compare graficamente o EC antes e depois do controle de preço.
 
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-2)
+
 ---
 
 **Exercício 12.3.** Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
+
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-3)
 
 ---
 
@@ -689,6 +695,8 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 (c) Se a demanda se desloca para \(Q' = 2500 - 50p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-4)
+
 ---
 
 **Exercício 12.5.** No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
@@ -698,6 +706,8 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 (b) Discuta as implicações distributivas e de eficiência dessa política, considerando que diesel é um insumo essencial para o transporte de cargas no Brasil.
 
 (c) Calcule a perda de peso morto em termos do subsídio, das elasticidades e do preço e quantidade iniciais.
+
+[:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-12-5)
 
 ---
 

@@ -700,6 +700,8 @@ b) Classifique cada ponto crítico como máximo local, mínimo local ou ponto de
 
 c) Identifique o máximo global no intervalo \([0, 4]\).
 
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-1)
+
 **Exercício 2.2.** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\) e enfrenta preços \(p_1\) e \(p_2\) com renda \(m\).
 
 a) Formule o Lagrangeano do problema de maximização de utilidade.
@@ -712,6 +714,8 @@ d) Verifique que as funções de demanda são homogêneas de grau 0 em \((p_1, p
 
 e) Interprete economicamente o multiplicador de Lagrange \(\lambda^*\).
 
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-2)
+
 **Exercício 2.3.** Considere a função de produção Cobb-Douglas \(Q = A K^\alpha L^\beta\) com \(\alpha, \beta > 0\).
 
 a) Mostre que \(Q\) é homogênea de grau \(\alpha + \beta\).
@@ -722,6 +726,8 @@ c) Sob que condição a função apresenta retornos constantes de escala? E reto
 
 d) Calcule a taxa marginal de substituição técnica (\(TMST\)) entre capital e trabalho e interprete economicamente.
 
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-3)
+
 **Exercício 2.4 (Teorema do Envelope).** Uma firma monopolista enfrenta a demanda \(P = a - bQ\) e tem custo total \(CT = cQ\), onde \(a\), \(b\) e \(c\) são parâmetros positivos com \(a > c\).
 
 a) Encontre a quantidade ótima \(Q^*(a, b, c)\) e o lucro máximo \(\pi^*(a, b, c)\).
@@ -731,6 +737,8 @@ b) Use o teorema do envelope para calcular \(\frac{\partial \pi^*}{\partial a}\)
 c) Verifique os resultados do item (b) diferenciando diretamente a expressão do lucro máximo.
 
 d) Interprete economicamente o sinal de cada derivada.
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-4)
 
 **Exercício 2.5 (Kuhn-Tucker).** Um consumidor tem utilidade \(U(x_1, x_2) = \ln(x_1) + x_2\) (preferências quase-lineares), preços \(p_1 = 2\) e \(p_2 = 1\), e renda \(m\).
 
@@ -743,6 +751,8 @@ c) Para \(m = 10\), encontre a solução ótima e verifique todas as condições
 d) Para \(m = 0{,}3\), mostre que a solução envolve \(x_2 = 0\) (solução de canto) e encontre \(x_1^*\).
 
 e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir quantidades positivas de ambos os bens?
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-5)
 
 ---
 

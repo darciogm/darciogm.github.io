@@ -458,7 +458,11 @@ Portanto, a condição de segunda ordem exige que o **custo marginal seja cresce
 
 **Exercício 1.1.** Explique, usando a analogia do mapa, por que um modelo econômico que inclui todas as variáveis relevantes de uma economia real não seria necessariamente superior a um modelo mais simples. Em que sentido a simplificação pode ser uma virtude epistêmica?
 
+[:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-1)
+
 **Exercício 1.2.** Considere a afirmação: "O modelo de concorrência perfeita é inútil porque nenhum mercado real satisfaz todas as suas premissas." Avalie essa afirmação à luz da metodologia de Friedman (1953) e da distinção entre verificação direta e indireta de modelos.
+
+[:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-2)
 
 **Exercício 1.3.** Classifique cada uma das proposições abaixo como **positiva** ou **normativa** e justifique:
 
@@ -472,6 +476,8 @@ d) O preço da gasolina é injustamente alto no Brasil.
 
 e) Políticas de transferência de renda aumentam o consumo das famílias beneficiárias.
 
+[:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-3)
+
 **Exercício 1.4.** Considere o modelo de maximização de lucro de uma firma competitiva com função de custo total \(CT(q) = 100 + 10q + q^2\).
 
 a) Determine a função de custo marginal \(CMg(q)\).
@@ -484,6 +490,8 @@ d) Calcule o lucro máximo.
 
 e) Identifique as variáveis exógenas e endógenas neste modelo.
 
+[:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-4)
+
 **Exercício 1.5.** O paradoxo da água e do diamante foi um dos grandes quebra-cabeças da economia clássica.
 
 a) Enuncie o paradoxo.
@@ -493,6 +501,8 @@ b) Explique por que a teoria do valor-trabalho de Smith não consegue resolvê-l
 c) Mostre como a revolução marginalista resolveu o paradoxo usando o conceito de utilidade marginal.
 
 d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginalista) em sua síntese neoclássica.
+
+[:material-arrow-right: Ver solução](../solucoes/cap01.md#ex-1-5)
 
 ---
 

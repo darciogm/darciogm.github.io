@@ -302,6 +302,8 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 (b) Encontre o EPS para K que torna a ameaça crível.
 
+[:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-1)
+
 ---
 
 **Exercício 9b.2.** (Tit-for-Tat) No Dilema dos Prisioneiros repetido com payoffs \(T = 5\), \(R = 3\), \(P = 1\), \(S = 0\):
@@ -312,13 +314,19 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 (c) Discuta as vantagens do Tit-for-Tat à luz dos torneios de Axelrod (1984).
 
+[:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-2)
+
 ---
 
 **Exercício 9b.3.** (Barganha) Dois sindicatos negociam com uma empresa. O sindicato A tem \(\delta_A = 0{,}95\) e o sindicato B tem \(\delta_B = 0{,}7\). Qual sindicato obtém um acordo melhor no modelo de Rubinstein? Quantifique.
 
+[:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-3)
+
 ---
 
 **Exercício 9b.4.** (Conluio com N firmas) Mostre que no Cournot repetido infinitamente com \(N\) firmas simétricas, a cooperação requer \(\delta \geq \frac{(N+1)^2 - 4N}{(N+1)^2 - (N-1)^2}\). Para \(N = 2\), qual é \(\delta^*\)? E para \(N = 10\)?
+
+[:material-arrow-right: Ver solução](../solucoes/cap09b.md#ex-9b-4)
 
 ---
 

@@ -491,9 +491,13 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
 
 (c) Mostre que a TMS é decrescente ao longo de uma curva de indiferença (ou seja, \(\partial \text{TMS}_{12} / \partial x_1 < 0\) ao longo de \(u = \bar{u}\)).
 
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-1)
+
 ---
 
 **Exercício 3.2.** Mostre que a função de utilidade \(u(x_1, x_2) = \ln x_1 + 2 \ln x_2\) representa as mesmas preferências que \(v(x_1, x_2) = x_1 \cdot x_2^2\). Verifique que ambas produzem a mesma TMS.
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-2)
 
 ---
 
@@ -509,6 +513,8 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 (c) Esboce as curvas de indiferença. Elas estão mais próximas do caso Cobb-Douglas ou do caso de complementos perfeitos? Justifique.
 
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-3)
+
 ---
 
 **Exercício 3.4.** Considere preferências quase-lineares \(u(x_1, x_2) = \sqrt{x_1} + x_2\).
@@ -519,6 +525,8 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 (c) Explique por que, nesse caso, a demanda pelo bem 1 é independente da renda (para soluções interiores).
 
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-4)
+
 ---
 
 **Exercício 3.5.** Um economista propõe representar as preferências de um consumidor pela função \(u(x_1, x_2) = x_1^2 + x_2^2\).
@@ -528,6 +536,8 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 (b) A TMS é decrescente ao longo de uma curva de indiferença?
 
 (c) Essa função satisfaz o axioma de preferências estritamente convexas? Que problema isso gera para a existência de soluções interiores no problema de otimização do consumidor?
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-5)
 
 ---
 

@@ -649,6 +649,8 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 (d) Verifique que o equilíbrio pertence ao núcleo.
 
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-1)
+
 ---
 
 **Exercício 13.2.** Em uma economia \(2 \times 2 \times 2\) (dois bens, dois consumidores, dois insumos), mostre que as seguintes condições são necessárias e suficientes para a eficiência de Pareto:
@@ -660,6 +662,8 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 (c) \(TMT^{12} = TMS^{12}\) (eficiência no mix de produtos).
 
 Explique por que cada condição é necessária, usando argumentos de contradição.
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-2)
 
 ---
 
@@ -679,6 +683,8 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 (c) Normalizando \(p_1 = 1\), encontre os preços de equilíbrio walrasiano.
 
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-3)
+
 ---
 
 **Exercício 13.4.** Apresente uma demonstração intuitiva (não formal) de por que o equilíbrio competitivo satisfaz as três condições de eficiência de Pareto listadas na tabela deste capítulo. Use o fato de que, em concorrência perfeita:
@@ -686,6 +692,8 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 - Consumidores igualam \(TMS = p_1/p_2\)
 - Produtores igualam \(TMST = w/r\)
 - Maximização de lucro implica \(p = CMg\)
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-4)
 
 ---
 
@@ -698,6 +706,8 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 (c) Discuta como um modelo CGE capturaria esses efeitos intersetoriais e quais dados seriam necessários para calibrá-lo.
 
 (d) Quais hipóteses do modelo CGE padrão (concorrência perfeita, retornos constantes, pleno emprego) são mais problemáticas para a análise da economia brasileira? Justifique.
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-13-5)
 
 ---
 

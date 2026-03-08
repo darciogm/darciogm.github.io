@@ -567,6 +567,8 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 (d) Se \(r\) sobe para 20%, como mudam \(C_1^*\) e \(C_2^*\)? Decomponha em efeitos renda e substituição.
 
+[:material-arrow-right: Ver solução](../solucoes/cap18.md#ex-18-1)
+
 ---
 
 **Exercício 18.2.** Uma firma considera investir em uma máquina que custa R$ 500.000, tem vida útil de 5 anos, deprecia-se linearmente e gera receitas líquidas anuais de R$ 150.000.
@@ -577,6 +579,8 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 (c) Se a Selic real é 8% e o prêmio de risco do setor é 4%, o projeto deve ser aceito?
 
+[:material-arrow-right: Ver solução](../solucoes/cap18.md#ex-18-2)
+
 ---
 
 **Exercício 18.3.** Um recurso natural não renovável tem estoque inicial \(S_0 = 1000\) unidades. O preço de mercado é \(P_0 = 50\) reais por unidade, o custo marginal de extração é \(c = 10\) reais e a taxa de juros é \(r = 5\%\).
@@ -586,6 +590,8 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 (b) Se uma nova tecnologia reduzir o custo de extração para \(c = 5\), o que acontece com a trajetória de preços? O recurso será exaurido mais rápido ou mais devagar?
 
 (c) Se a taxa de juros subir para \(r = 10\%\), o que acontece com a velocidade de extração? Explique intuitivamente.
+
+[:material-arrow-right: Ver solução](../solucoes/cap18.md#ex-18-3)
 
 ---
 
@@ -605,6 +611,8 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 (d) Explique por que o VPL é considerado o critério superior.
 
+[:material-arrow-right: Ver solução](../solucoes/cap18.md#ex-18-4)
+
 ---
 
 **Exercício 18.5.** Discuta as seguintes questões, articulando teoria e evidência empírica:
@@ -614,6 +622,8 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 (b) Explique por que a regra de Hotelling pode não ser observada empiricamente para o preço do petróleo.
 
 (c) Um governo que deseja incentivar investimentos em infraestrutura de longo prazo (com payback de 20-30 anos) deve se preocupar mais com a taxa de juros real ou com a estabilidade regulatória? Justifique usando os conceitos de VPL e prêmio de risco.
+
+[:material-arrow-right: Ver solução](../solucoes/cap18.md#ex-18-5)
 
 ---
 
