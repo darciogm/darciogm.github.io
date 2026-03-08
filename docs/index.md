@@ -25,6 +25,7 @@ Darcio is affiliated with Insper's [Center for Regulation and Democracy (CRD)](h
 
 [:material-email:](mailto:darciogm1@insper.edu.br "Email")
 [:material-school:](https://scholar.google.com/citations?user=ywp2nq0AAAAJ&hl=en&oi=ao "Google Scholar")
+[:material-domain:](https://www.insper.edu.br/en/docentes/darcio-genicolo-martins "Insper")
 [:simple-orcid:](https://orcid.org/0000-0003-2223-6930 "ORCID")
 [:material-share-variant:](https://ideas.repec.org/f/pge367.html "RePEc")
 [:material-github:](https://github.com/darciogm "GitHub")
