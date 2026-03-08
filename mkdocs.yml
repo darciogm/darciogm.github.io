@@ -27,7 +27,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
-    - navigation.indexes
     - navigation.footer
     - toc.integrate
     - search.suggest
@@ -63,7 +62,7 @@ nav:
       - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
     - Interação Estratégica:
       - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
-        - micro-book/cap09/index.md
+        - "Visão Geral": micro-book/cap09/index.md
         - "9a — Jogos Estáticos com Informação Completa": micro-book/cap09a/index.md
         - "9b — Jogos Dinâmicos": micro-book/cap09b/index.md
         - "9c — Informação Incompleta": micro-book/cap09c/index.md
