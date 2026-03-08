@@ -52,37 +52,37 @@ nav:
       - Good Economics for Hard Times (DEDP - J-Pal / Insper): teaching/good-economics-hard-times.md
   - Micro Book:
     - micro-book/index.md
-    - Fundamentos:
-      - micro-book/fundamentos/index.md
+    - Ferramentas:
       - "Cap. 1 — Todos os Modelos Estão Errados": micro-book/cap01/index.md
       - "Cap. 2 — O Manual de Sobrevivência Matemática": micro-book/cap02/index.md
+    - O Consumidor:
       - "Cap. 3 — Mais É Melhor — Será?": micro-book/cap03/index.md
       - "Cap. 4 — Você Quer Tudo. Mas Não Pode.": micro-book/cap04/index.md
       - "Cap. 5 — Slutsky no Supermercado": micro-book/cap05/index.md
       - "Cap. 6 — Substitutos, Complementos e Relações Complicadas": micro-book/cap06/index.md
-    - Mercados:
-      - micro-book/mercados/index.md
       - "Cap. 7 — O Preço do Talvez": micro-book/cap07/index.md
       - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
+    - Interação Estratégica:
       - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
         - micro-book/cap09/index.md
         - "9a — Jogos Estáticos com Informação Completa": micro-book/cap09a/index.md
         - "9b — Jogos Dinâmicos": micro-book/cap09b/index.md
         - "9c — Informação Incompleta": micro-book/cap09c/index.md
         - "9d — Sinais e Contratos": micro-book/cap09d/index.md
+    - A Firma e os Custos:
       - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap10/index.md
       - "Cap. 11 — Por Que Nada É de Graça": micro-book/cap11/index.md
       - "Cap. 12 — A Firma Nua": micro-book/cap12/index.md
+    - Mercados Competitivos:
       - "Cap. 13 — O Leiloeiro que Ninguém Vê": micro-book/cap13/index.md
       - "Cap. 14 — Equilíbrio Geral": micro-book/cap14/index.md
-    - Poder & Insumos:
-      - micro-book/poder/index.md
+    - Poder de Mercado:
       - "Cap. 15 — Sem Concorrente, Sem Piedade": micro-book/cap15/index.md
       - "Cap. 16 — Quando Gigantes Competem": micro-book/cap16/index.md
+    - Fatores e Tempo:
       - "Cap. 17 — Economia do Trabalho": micro-book/cap17/index.md
       - "Cap. 18 — A Paciência Tem Preço": micro-book/cap18/index.md
-    - Fronteiras:
-      - micro-book/fronteiras/index.md
+    - Falhas de Mercado:
       - "Cap. 19 — Limões, Sinais e Contratos": micro-book/cap19/index.md
       - "Cap. 20 — Fumaça, Caronas e Tragédias": micro-book/cap20/index.md
     - Referência:
