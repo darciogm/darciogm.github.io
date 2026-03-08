@@ -691,7 +691,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## Exercícios
 
-**Exercício 7.1.** {#ex-7-1} Um investidor com função de utilidade \(u(W) = \ln(W)\) e riqueza inicial \(W_0 = 10.000\) pode participar de uma loteria que paga \(+5.000\) com probabilidade \(0{,}5\) e \(-5.000\) com probabilidade \(0{,}5\).
+<a id="ex-7-1"></a>**Exercício 7.1.** Um investidor com função de utilidade \(u(W) = \ln(W)\) e riqueza inicial \(W_0 = 10.000\) pode participar de uma loteria que paga \(+5.000\) com probabilidade \(0{,}5\) e \(-5.000\) com probabilidade \(0{,}5\).
 
 (a) Calcule a utilidade esperada da loteria.
 
@@ -703,13 +703,13 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-**Exercício 7.2.** {#ex-7-2} Mostre que a função de utilidade \(u(W) = -e^{-aW}\), com \(a > 0\), apresenta aversão absoluta ao risco constante (CARA). Calcule \(A(W)\) e \(R(W)\) e discuta as implicações econômicas de cada medida.
+<a id="ex-7-2"></a>**Exercício 7.2.** Mostre que a função de utilidade \(u(W) = -e^{-aW}\), com \(a > 0\), apresenta aversão absoluta ao risco constante (CARA). Calcule \(A(W)\) e \(R(W)\) e discuta as implicações econômicas de cada medida.
 
 [:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-2)
 
 ---
 
-**Exercício 7.3.** {#ex-7-3} Um agricultor no Cerrado brasileiro enfrenta a seguinte situação: com probabilidade \(0{,}7\) a safra é boa e ele obtém receita de R\$ 200.000; com probabilidade \(0{,}3\) há seca e a receita cai para R\$ 50.000. Sua função de utilidade é \(u(W) = \sqrt{W}\).
+<a id="ex-7-3"></a>**Exercício 7.3.** Um agricultor no Cerrado brasileiro enfrenta a seguinte situação: com probabilidade \(0{,}7\) a safra é boa e ele obtém receita de R\$ 200.000; com probabilidade \(0{,}3\) há seca e a receita cai para R\$ 50.000. Sua função de utilidade é \(u(W) = \sqrt{W}\).
 
 (a) Qual o valor esperado da receita?
 
@@ -723,7 +723,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-**Exercício 7.4.** {#ex-7-4} Considere dois estados da natureza, \(s_1\) (expansão) e \(s_2\) (recessão), com probabilidades \(\pi_1 = 0{,}6\) e \(\pi_2 = 0{,}4\). Um agente com riqueza \(W = 100\) e utilidade \(u(c) = \ln(c)\) pode comprar ativos contingentes ao preço \(\psi_1 = 0{,}6\) e \(\psi_2 = 0{,}4\).
+<a id="ex-7-4"></a>**Exercício 7.4.** Considere dois estados da natureza, \(s_1\) (expansão) e \(s_2\) (recessão), com probabilidades \(\pi_1 = 0{,}6\) e \(\pi_2 = 0{,}4\). Um agente com riqueza \(W = 100\) e utilidade \(u(c) = \ln(c)\) pode comprar ativos contingentes ao preço \(\psi_1 = 0{,}6\) e \(\psi_2 = 0{,}4\).
 
 (a) Formule o problema de maximização.
 
@@ -735,7 +735,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-**Exercício 7.5.** {#ex-7-5} Considere dois agentes, A com \(u_A(W) = \ln(W)\) e B com \(u_B(W) = -e^{-0{,}001W}\), ambos com riqueza \(W = 10.000\).
+<a id="ex-7-5"></a>**Exercício 7.5.** Considere dois agentes, A com \(u_A(W) = \ln(W)\) e B com \(u_B(W) = -e^{-0{,}001W}\), ambos com riqueza \(W = 10.000\).
 
 (a) Calcule \(A(W)\) e \(R(W)\) para cada agente.
 

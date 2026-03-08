@@ -568,7 +568,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ## Exercícios
 
-**Exercício 6.1.** {#ex-6-1} Considere a função de utilidade CES: \(U(x_1, x_2) = (x_1^\rho + x_2^\rho)^{1/\rho}\), com \(\rho < 1\), preços \(p_1, p_2\) e renda \(I\).
+<a id="ex-6-1"></a>**Exercício 6.1.** Considere a função de utilidade CES: \(U(x_1, x_2) = (x_1^\rho + x_2^\rho)^{1/\rho}\), com \(\rho < 1\), preços \(p_1, p_2\) e renda \(I\).
 
 (a) Derive as demandas marshallianas \(x_1^*\) e \(x_2^*\).
 
@@ -580,7 +580,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-**Exercício 6.2 (Bem composto).** {#ex-6-2} Um consumidor compra três tipos de fruta: banana (\(b\)), maçã (\(m\)) e laranja (\(l\)), além de um bem "todos os outros" (\(y\)). Suponha que os preços das frutas sempre variem na mesma proporção: \(p_b = \alpha \bar{p}_b\), \(p_m = \alpha \bar{p}_m\), \(p_l = \alpha \bar{p}_l\).
+<a id="ex-6-2"></a>**Exercício 6.2 (Bem composto).** Um consumidor compra três tipos de fruta: banana (\(b\)), maçã (\(m\)) e laranja (\(l\)), além de um bem "todos os outros" (\(y\)). Suponha que os preços das frutas sempre variem na mesma proporção: \(p_b = \alpha \bar{p}_b\), \(p_m = \alpha \bar{p}_m\), \(p_l = \alpha \bar{p}_l\).
 
 (a) Defina o bem composto "frutas" e reescreva a restrição orçamentária.
 
@@ -592,7 +592,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-**Exercício 6.3 (Classificação marshalliana vs. hicksiana).** {#ex-6-3} Um consumidor tem demandas marshallianas \(x_1 = \frac{I}{3p_1}\) e \(x_2 = \frac{2I}{3p_2}\).
+<a id="ex-6-3"></a>**Exercício 6.3 (Classificação marshalliana vs. hicksiana).** Um consumidor tem demandas marshallianas \(x_1 = \frac{I}{3p_1}\) e \(x_2 = \frac{2I}{3p_2}\).
 
 (a) Calcule \(\frac{\partial x_1}{\partial p_2}\) e classifique os bens como substitutos ou complementos brutos.
 
@@ -606,7 +606,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-**Exercício 6.4 (Modelo de Lancaster).** {#ex-6-4} Um consumidor deriva utilidade de dois atributos: calorias (\(z_1\)) e proteínas (\(z_2\)). Dois bens estão disponíveis:
+<a id="ex-6-4"></a>**Exercício 6.4 (Modelo de Lancaster).** Um consumidor deriva utilidade de dois atributos: calorias (\(z_1\)) e proteínas (\(z_2\)). Dois bens estão disponíveis:
 
 | Bem | Calorias por unidade | Proteínas por unidade | Preço |
 |:---|:---:|:---:|:---:|
@@ -623,7 +623,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ---
 
-**Exercício 6.5 (Agregação da demanda).** {#ex-6-5} Em uma economia com dois consumidores, as demandas individuais pelo bem 1 são:
+<a id="ex-6-5"></a>**Exercício 6.5 (Agregação da demanda).** Em uma economia com dois consumidores, as demandas individuais pelo bem 1 são:
 
 - Consumidor A: \(x_1^A = \frac{I^A}{2p_1}\)
 - Consumidor B: \(x_1^B = \frac{(I^B)^2}{p_1 \cdot 100}\)

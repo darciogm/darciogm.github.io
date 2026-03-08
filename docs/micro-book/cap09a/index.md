@@ -596,7 +596,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ## Exercícios
 
-**Exercício 9a.1.** {#ex-9a-1} Considere o seguinte jogo simultâneo:
+<a id="ex-9a-1"></a>**Exercício 9a.1.** Considere o seguinte jogo simultâneo:
 
 |  | Jogador 2: L | Jogador 2: R |
 |:---|:---:|:---:|
@@ -613,7 +613,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-**Exercício 9a.2.** {#ex-9a-2} Duas firmas idênticas competem à la Cournot com demanda inversa \(P(Q) = 120 - Q\) e custo marginal \(c = 30\).
+<a id="ex-9a-2"></a>**Exercício 9a.2.** Duas firmas idênticas competem à la Cournot com demanda inversa \(P(Q) = 120 - Q\) e custo marginal \(c = 30\).
 
 (a) Derive as funções de melhor resposta e encontre o equilíbrio de Nash.
 
@@ -625,7 +625,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-**Exercício 9a.3.** {#ex-9a-3} No modelo de Bertrand com diferenciação, as demandas são \(q_1 = a - bp_1 + dp_2\) e \(q_2 = a - bp_2 + dp_1\), com \(b > d > 0\) e custo marginal \(c\).
+<a id="ex-9a-3"></a>**Exercício 9a.3.** No modelo de Bertrand com diferenciação, as demandas são \(q_1 = a - bp_1 + dp_2\) e \(q_2 = a - bp_2 + dp_1\), com \(b > d > 0\) e custo marginal \(c\).
 
 (a) Derive as funções de reação em preços e mostre que são crescentes (complementos estratégicos).
 
@@ -637,7 +637,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-**Exercício 9a.4.** {#ex-9a-4} (Jogo Bayesiano — prévia do Módulo 9c) Uma firma incumbente pode ser forte (\(\theta_F\), com probabilidade 0,6) ou fraca (\(\theta_W\), com probabilidade 0,4). Uma entrante decide se entra.
+<a id="ex-9a-4"></a>**Exercício 9a.4.** (Jogo Bayesiano — prévia do Módulo 9c) Uma firma incumbente pode ser forte (\(\theta_F\), com probabilidade 0,6) ou fraca (\(\theta_W\), com probabilidade 0,4). Uma entrante decide se entra.
 
 - Não entra: I obtém 10, E obtém 0.
 - Entra + I forte: payoffs (3, –2).
@@ -653,7 +653,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-**Exercício 9a.5.** {#ex-9a-5} (Sinalização — prévia do Módulo 9d) No modelo de Spence, trabalhadores têm produtividade \(\theta_H = 2\) (prob. 0,5) ou \(\theta_L = 1\) (prob. 0,5). O custo da educação é \(c(e, \theta) = e/\theta\). Encontre um equilíbrio separador e verifique que nenhum tipo desvia.
+<a id="ex-9a-5"></a>**Exercício 9a.5.** (Sinalização — prévia do Módulo 9d) No modelo de Spence, trabalhadores têm produtividade \(\theta_H = 2\) (prob. 0,5) ou \(\theta_L = 1\) (prob. 0,5). O custo da educação é \(c(e, \theta) = e/\theta\). Encontre um equilíbrio separador e verifique que nenhum tipo desvia.
 
 [:material-arrow-right: Ver solução](../solucoes/cap09a.md#ex-9a-5)
 

@@ -533,7 +533,7 @@ As seções anteriores construíram progressivamente o arcabouço teórico das p
 
 ## Exercícios
 
-**Exercício 3.1.** {#ex-3-1} Considere um consumidor com preferências sobre dois bens (\(x_1, x_2\)) representadas pela função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\).
+<a id="ex-3-1"></a>**Exercício 3.1.** Considere um consumidor com preferências sobre dois bens (\(x_1, x_2\)) representadas pela função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\).
 
 (a) Calcule a TMS\(_{12}\).
 
@@ -545,13 +545,13 @@ As seções anteriores construíram progressivamente o arcabouço teórico das p
 
 ---
 
-**Exercício 3.2.** {#ex-3-2} Mostre que a função de utilidade \(u(x_1, x_2) = \ln x_1 + 2 \ln x_2\) representa as mesmas preferências que \(v(x_1, x_2) = x_1 \cdot x_2^2\). Verifique que ambas produzem a mesma TMS.
+<a id="ex-3-2"></a>**Exercício 3.2.** Mostre que a função de utilidade \(u(x_1, x_2) = \ln x_1 + 2 \ln x_2\) representa as mesmas preferências que \(v(x_1, x_2) = x_1 \cdot x_2^2\). Verifique que ambas produzem a mesma TMS.
 
 [:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-2)
 
 ---
 
-**Exercício 3.3.** {#ex-3-3} Um consumidor tem preferências do tipo CES com \(\rho = -1\):
+<a id="ex-3-3"></a>**Exercício 3.3.** Um consumidor tem preferências do tipo CES com \(\rho = -1\):
 
 \[
 u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
@@ -567,7 +567,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ---
 
-**Exercício 3.4.** {#ex-3-4} Considere preferências quase-lineares \(u(x_1, x_2) = \sqrt{x_1} + x_2\).
+<a id="ex-3-4"></a>**Exercício 3.4.** Considere preferências quase-lineares \(u(x_1, x_2) = \sqrt{x_1} + x_2\).
 
 (a) Calcule a TMS\(_{12}\) e mostre que ela depende apenas de \(x_1\).
 
@@ -579,7 +579,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ---
 
-**Exercício 3.5.** {#ex-3-5} Um economista propõe representar as preferências de um consumidor pela função \(u(x_1, x_2) = x_1^2 + x_2^2\).
+<a id="ex-3-5"></a>**Exercício 3.5.** Um economista propõe representar as preferências de um consumidor pela função \(u(x_1, x_2) = x_1^2 + x_2^2\).
 
 (a) As curvas de indiferença dessa função são convexas em relação à origem? Justifique.
 

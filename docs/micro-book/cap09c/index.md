@@ -252,19 +252,19 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ## Exercícios
 
-**Exercício 9c.1.** {#ex-9c-1} Em um jogo bayesiano 2×2, o jogador 1 tem tipo \(\theta \in \{H, L\}\) com \(\Pr(H) = 0{,}5\). O jogador 2 não tem tipo privado. Os payoffs dependem do tipo de 1. Encontre o BNE.
+<a id="ex-9c-1"></a>**Exercício 9c.1.** Em um jogo bayesiano 2×2, o jogador 1 tem tipo \(\theta \in \{H, L\}\) com \(\Pr(H) = 0{,}5\). O jogador 2 não tem tipo privado. Os payoffs dependem do tipo de 1. Encontre o BNE.
 
 [:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-1)
 
 ---
 
-**Exercício 9c.2.** {#ex-9c-2} Dois licitantes com \(v_i \sim U[0, 1]\) participam de um leilão *all-pay* (todos pagam seu lance, apenas o maior lance ganha). Encontre o BNE simétrico e a receita esperada. Compare com o primeiro preço.
+<a id="ex-9c-2"></a>**Exercício 9c.2.** Dois licitantes com \(v_i \sim U[0, 1]\) participam de um leilão *all-pay* (todos pagam seu lance, apenas o maior lance ganha). Encontre o BNE simétrico e a receita esperada. Compare com o primeiro preço.
 
 [:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-2)
 
 ---
 
-**Exercício 9c.3.** {#ex-9c-3} (Maldição do vencedor) Três empresas licitam por um bloco de petróleo cujo valor verdadeiro é \(V = 100\). Cada empresa observa um sinal \(s_i = V + \varepsilon_i\), onde \(\varepsilon_i \sim U[-20, 20]\) independentes. Se cada empresa lançar seu sinal, qual é o lucro esperado do vencedor? Como o lance ótimo deveria ser ajustado?
+<a id="ex-9c-3"></a>**Exercício 9c.3.** (Maldição do vencedor) Três empresas licitam por um bloco de petróleo cujo valor verdadeiro é \(V = 100\). Cada empresa observa um sinal \(s_i = V + \varepsilon_i\), onde \(\varepsilon_i \sim U[-20, 20]\) independentes. Se cada empresa lançar seu sinal, qual é o lucro esperado do vencedor? Como o lance ótimo deveria ser ajustado?
 
 [:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-3)
 

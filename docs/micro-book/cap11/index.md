@@ -787,7 +787,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ## Exercícios
 
-**Exercício 11.1.** {#ex-11-1}
+<a id="ex-11-1"></a>**Exercício 11.1.** 
 Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(r = 1\).
 
 (a) Derive as demandas condicionadas por insumos \(K^c(w, r, q)\) e \(L^c(w, r, q)\).
@@ -804,7 +804,7 @@ Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrent
 
 ---
 
-**Exercício 11.2.** {#ex-11-2}
+<a id="ex-11-2"></a>**Exercício 11.2.** 
 Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + q^3/3\).
 
 (a) Identifique o custo fixo e o custo variável.
@@ -819,7 +819,7 @@ Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + 
 
 ---
 
-**Exercício 11.3.** {#ex-11-3}
+<a id="ex-11-3"></a>**Exercício 11.3.** 
 Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 8\) e \(w = 2\).
 
 (a) Derive a função custo \(C(q)\).
@@ -832,7 +832,7 @@ Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 
 
 ---
 
-**Exercício 11.4.** {#ex-11-4}
+<a id="ex-11-4"></a>**Exercício 11.4.** 
 Explique graficamente e algebricamente por que a curva de custo médio de longo prazo é a envoltória das curvas de custo médio de curto prazo. Use o caso de uma firma com função de produção \(q = K^{1/3}L^{1/3}\) e preços de insumos \(w = r = 1\) para:
 
 (a) Derivar a função custo de longo prazo.
@@ -845,7 +845,7 @@ Explique graficamente e algebricamente por que a curva de custo médio de longo 
 
 ---
 
-**Exercício 11.5.** {#ex-11-5}
+<a id="ex-11-5"></a>**Exercício 11.5.** 
 Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + \beta = 1\) (rendimentos constantes de escala).
 
 (a) Mostre que a função custo é linear em \(q\): \(C(w, r, q) = c(w, r) \cdot q\), onde \(c(w, r)\) é o custo unitário.

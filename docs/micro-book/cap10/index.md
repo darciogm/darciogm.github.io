@@ -671,7 +671,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ## Exercícios
 
-**Exercício 10.1.** {#ex-10-1}
+<a id="ex-10-1"></a>**Exercício 10.1.** 
 Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
 (a) Calcule os produtos marginais \(\mathrm{PMg}_K\) e \(\mathrm{PMg}_L\).
@@ -688,7 +688,7 @@ Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
 
 ---
 
-**Exercício 10.2.** {#ex-10-2}
+<a id="ex-10-2"></a>**Exercício 10.2.** 
 Uma firma opera com a tecnologia CES:
 
 \[
@@ -707,7 +707,7 @@ q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}
 
 ---
 
-**Exercício 10.3.** {#ex-10-3}
+<a id="ex-10-3"></a>**Exercício 10.3.** 
 Considere a função de produção Leontief \(q = \min\{2K, 3L\}\).
 
 (a) Qual a proporção ótima de uso dos insumos?
@@ -720,7 +720,7 @@ Considere a função de produção Leontief \(q = \min\{2K, 3L\}\).
 
 ---
 
-**Exercício 10.4.** {#ex-10-4}
+<a id="ex-10-4"></a>**Exercício 10.4.** 
 Uma função de produção é dada por \(q = K^{0,6} L^{0,8}\).
 
 (a) Classifique os rendimentos de escala.
@@ -735,7 +735,7 @@ Uma função de produção é dada por \(q = K^{0,6} L^{0,8}\).
 
 ---
 
-**Exercício 10.5.** {#ex-10-5}
+<a id="ex-10-5"></a>**Exercício 10.5.** 
 Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\), com \(A(t) = e^{0,02t}\).
 
 (a) Qual a taxa de crescimento da PTF?

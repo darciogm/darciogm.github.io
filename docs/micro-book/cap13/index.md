@@ -701,7 +701,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ## Exercícios
 
-**Exercício 13.1.** {#ex-13-1} Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
+<a id="ex-13-1"></a>**Exercício 13.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
 
 (a) Derive a demanda e a oferta de mercado.
 
@@ -715,7 +715,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-**Exercício 13.2.** {#ex-13-2} Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
+<a id="ex-13-2"></a>**Exercício 13.2.** Em um mercado competitivo, a demanda é \(Q_D = 1000 - 50p\) e a oferta é \(Q_S = 25p - 200\).
 
 (a) Encontre o equilíbrio.
 
@@ -727,13 +727,13 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-**Exercício 13.3.** {#ex-13-3} Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
+<a id="ex-13-3"></a>**Exercício 13.3.** Demonstre que, para um imposto *ad valorem* à taxa \(\tau\) (onde o consumidor paga \(p_c = (1 + \tau) p_p\)), a fração do imposto absorvida pelo consumidor também depende das elasticidades relativas de oferta e demanda. Derive a fórmula análoga à do imposto específico.
 
 [:material-arrow-right: Ver solução](../solucoes/cap13.md#ex-13-3)
 
 ---
 
-**Exercício 13.4.** {#ex-13-4} Considere uma indústria de custos crescentes com curva de oferta de longo prazo \(p = 10 + 0{,}01Q\). A demanda é \(Q = 2000 - 50p\).
+<a id="ex-13-4"></a>**Exercício 13.4.** Considere uma indústria de custos crescentes com curva de oferta de longo prazo \(p = 10 + 0{,}01Q\). A demanda é \(Q = 2000 - 50p\).
 
 (a) Encontre o equilíbrio de longo prazo.
 
@@ -745,7 +745,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-**Exercício 13.5.** {#ex-13-5} No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
+<a id="ex-13-5"></a>**Exercício 13.5.** No mercado brasileiro de combustíveis, o governo subsidia o diesel em \(s = \text{R\$} 0{,}30\) por litro. Suponha que a demanda de diesel seja relativamente inelástica (\(|\varepsilon_D| = 0{,}3\)) e a oferta seja relativamente elástica (\(\varepsilon_S = 2{,}0\)).
 
 (a) Qual fração do subsídio beneficia o consumidor e qual fração beneficia o produtor?
 

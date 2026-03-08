@@ -621,7 +621,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 !!! note "Exercícios do Capítulo 17"
 
-**Exercício 17.1.** {#ex-17-1} Um trabalhador tem preferências representadas por \(U(C,L) = \ln C + 2\ln L\). Sua dotação de tempo é \(T = 24\) horas por dia, a renda não salarial é \(V = 0\) e o salário é \(w\).
+<a id="ex-17-1"></a>**Exercício 17.1.** Um trabalhador tem preferências representadas por \(U(C,L) = \ln C + 2\ln L\). Sua dotação de tempo é \(T = 24\) horas por dia, a renda não salarial é \(V = 0\) e o salário é \(w\).
 
 (a) Derive as demandas ótimas \(C^*(w)\) e \(L^*(w)\).
 
@@ -633,7 +633,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-**Exercício 17.2.** {#ex-17-2} Considere um mercado de trabalho competitivo com oferta \(H^s = 100w\) e demanda \(H^d = 4000 - 100w\).
+<a id="ex-17-2"></a>**Exercício 17.2.** Considere um mercado de trabalho competitivo com oferta \(H^s = 100w\) e demanda \(H^d = 4000 - 100w\).
 
 (a) Encontre o salário e o emprego de equilíbrio.
 
@@ -645,7 +645,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-**Exercício 17.3.** {#ex-17-3} Uma firma monopsonista enfrenta a oferta de trabalho \(w = 10 + 0{,}5H\) e tem \(VPMg_L = 50 - H\).
+<a id="ex-17-3"></a>**Exercício 17.3.** Uma firma monopsonista enfrenta a oferta de trabalho \(w = 10 + 0{,}5H\) e tem \(VPMg_L = 50 - H\).
 
 (a) Derive o custo marginal do trabalho (despesa marginal).
 
@@ -657,7 +657,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-**Exercício 17.4.** {#ex-17-4} Um sindicato maximiza a renda total dos seus membros, \(R = w \cdot H^d(w)\), onde a demanda por trabalho é \(H^d(w) = 1000 - 20w\).
+<a id="ex-17-4"></a>**Exercício 17.4.** Um sindicato maximiza a renda total dos seus membros, \(R = w \cdot H^d(w)\), onde a demanda por trabalho é \(H^d(w) = 1000 - 20w\).
 
 (a) Encontre o salário que maximiza \(R\).
 
@@ -669,7 +669,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-**Exercício 17.5.** {#ex-17-5} Discuta, com base na teoria e na evidência empírica brasileira:
+<a id="ex-17-5"></a>**Exercício 17.5.** Discuta, com base na teoria e na evidência empírica brasileira:
 
 (a) Por que o efeito-farol do salário mínimo é particularmente relevante em economias com alta informalidade?
 

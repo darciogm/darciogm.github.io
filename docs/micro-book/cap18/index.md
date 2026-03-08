@@ -601,7 +601,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 !!! note "Exercícios do Capítulo 18"
 
-**Exercício 18.1.** {#ex-18-1} Um consumidor vive dois períodos, com renda \(Y_1 = 100\) e \(Y_2 = 110\), e preferências \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1} \ln C_2\). A taxa de juros é \(r = 10\%\).
+<a id="ex-18-1"></a>**Exercício 18.1.** Um consumidor vive dois períodos, com renda \(Y_1 = 100\) e \(Y_2 = 110\), e preferências \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1} \ln C_2\). A taxa de juros é \(r = 10\%\).
 
 (a) Calcule a riqueza intertemporal \(W\).
 
@@ -615,7 +615,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-**Exercício 18.2.** {#ex-18-2} Uma firma considera investir em uma máquina que custa R$ 500.000, tem vida útil de 5 anos, deprecia-se linearmente e gera receitas líquidas anuais de R$ 150.000.
+<a id="ex-18-2"></a>**Exercício 18.2.** Uma firma considera investir em uma máquina que custa R$ 500.000, tem vida útil de 5 anos, deprecia-se linearmente e gera receitas líquidas anuais de R$ 150.000.
 
 (a) Calcule o VPL do projeto para \(r = 8\%\) e \(r = 15\%\).
 
@@ -627,7 +627,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-**Exercício 18.3.** {#ex-18-3} Um recurso natural não renovável tem estoque inicial \(S_0 = 1000\) unidades. O preço de mercado é \(p_0 = 50\) reais por unidade, o custo marginal de extração é \(c = 10\) reais e a taxa de juros é \(r = 5\%\).
+<a id="ex-18-3"></a>**Exercício 18.3.** Um recurso natural não renovável tem estoque inicial \(S_0 = 1000\) unidades. O preço de mercado é \(p_0 = 50\) reais por unidade, o custo marginal de extração é \(c = 10\) reais e a taxa de juros é \(r = 5\%\).
 
 (a) Segundo a regra de Hotelling, qual será o preço do recurso daqui a 10 anos?
 
@@ -639,7 +639,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-**Exercício 18.4.** {#ex-18-4} Considere dois projetos mutuamente exclusivos:
+<a id="ex-18-4"></a>**Exercício 18.4.** Considere dois projetos mutuamente exclusivos:
 
 | | Projeto A | Projeto B |
 |---|---|---|
@@ -659,7 +659,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-**Exercício 18.5.** {#ex-18-5} Discuta as seguintes questões, articulando teoria e evidência empírica:
+<a id="ex-18-5"></a>**Exercício 18.5.** Discuta as seguintes questões, articulando teoria e evidência empírica:
 
 (a) "Se o Brasil conseguisse reduzir a taxa de juros real de longo prazo de 6% para 3%, o impacto sobre o investimento produtivo seria enorme." Avalie essa afirmação usando o conceito de custo de uso do capital e a sensibilidade do VPL à taxa de desconto.
 
