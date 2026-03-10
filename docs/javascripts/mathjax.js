@@ -1,5 +1,10 @@
 window.MathJax = {
-  loader: {load: ['[tex]/boldsymbol']},
+  loader: {
+    load: ['[tex]/boldsymbol'],
+    source: {
+      '[tex]/boldsymbol': 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/input/tex/extensions/boldsymbol.js'
+    }
+  },
   tex: {
     inlineMath: [["\\(", "\\)"]],
     displayMath: [["\\[", "\\]"]],
