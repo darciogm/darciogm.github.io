@@ -135,7 +135,7 @@
       padding: 0.5rem;
       background: #fff;
     }
-    #r-plot img {
+    #r-plot img, #r-plot canvas {
       max-width: 100%;
       border-radius: 4px;
     }
@@ -254,22 +254,14 @@ abline(0, 1, lty = 3, col = "gray")
       btnRun.disabled = true;
       outputEl.textContent = 'Executando...';
       plotEl.innerHTML = '';
-
       try {
-        // Capture text output
         const shelter = await new webR.Shelter();
-
-        // Use canvas-based approach for plot capture
-        await webR.evalRVoid('if (dev.cur() > 1) dev.off()');
-        await webR.evalRVoid('png(tf <- tempfile(fileext=".png"), width=520, height=400, res=96)');
-
         const result = await shelter.captureR(code, {
           withAutoprint: true,
           captureStreams: true,
-          captureConditions: true
+          captureConditions: true,
+          captureGraphics: {width: 520, height: 400}
         });
-
-        // Collect text output
         let textOut = '';
         for (const out of result.output) {
           if (out.type === 'stdout' || out.type === 'stderr') {
@@ -277,27 +269,18 @@ abline(0, 1, lty = 3, col = "gray")
           }
         }
         outputEl.textContent = textOut || '(sem saída de texto)';
-
-        // Try to capture plot
-        try {
-          await webR.evalRVoid('dev.off()');
-          const plotData = await webR.evalR('readBin(tf, "raw", file.info(tf)$size)');
-          const plotBytes = await plotData.toArray();
-
-          if (plotBytes.length > 0) {
-            const blob = new Blob([new Uint8Array(plotBytes)], { type: 'image/png' });
-            const url = URL.createObjectURL(blob);
-            plotEl.innerHTML = '<img src="' + url + '" alt="R plot">';
-          }
-        } catch (plotErr) {
-          // No plot generated, that's fine
+        if (result.images && result.images.length > 0) {
+          const lastImg = result.images[result.images.length - 1];
+          const canvas = document.createElement('canvas');
+          canvas.width = lastImg.width;
+          canvas.height = lastImg.height;
+          canvas.getContext('2d').drawImage(lastImg, 0, 0);
+          plotEl.appendChild(canvas);
         }
-
         await shelter.purge();
       } catch (e) {
         outputEl.textContent = 'Erro: ' + e.message;
       }
-
       btnRun.disabled = false;
     };
 

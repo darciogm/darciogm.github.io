@@ -31,7 +31,7 @@
     .output-header { background: #f5f5f5; padding: 0.4rem 1rem; font-size: 0.8rem; color: #666; border-bottom: 1px solid #ddd; }
     #r-output { padding: 0.8rem 1rem; font-family: 'Fira Code','Consolas',monospace; font-size: 0.82rem; background: #1e1e1e; color: #d4d4d4; min-height: 100px; max-height: 350px; overflow-y: auto; white-space: pre-wrap; }
     #r-plot { text-align: center; padding: 0.5rem; background: #fff; }
-    #r-plot img { max-width: 100%; border-radius: 4px; }
+    #r-plot img, #r-plot canvas { max-width: 100%; border-radius: 4px; }
     .info-box { margin-top: 1rem; padding: 0.8rem; background: #f8f8f8; border: 1px solid #eee; border-radius: 4px; font-size: 0.8rem; color: #666; line-height: 1.5; }
   </style>
 </head>
@@ -120,7 +120,29 @@ legend("topleft",
     import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
     const webR = new WebR(); const statusEl = document.getElementById('status'); const btnRun = document.getElementById('btn-run'); const outputEl = document.getElementById('r-output'); const plotEl = document.getElementById('r-plot'); const originalCode = document.getElementById('r-code').value; window._originalCode = originalCode;
     async function initWebR() { try { await webR.init(); statusEl.textContent = 'WebR pronto!'; statusEl.className = 'status-bar status-ready'; btnRun.disabled = false; } catch(e) { statusEl.textContent='Erro: '+e.message; statusEl.className='status-bar status-error'; } }
-    window.runCode = async function() { const code=document.getElementById('r-code').value; btnRun.disabled=true; outputEl.textContent='Executando...'; plotEl.innerHTML=''; try { const s=await new webR.Shelter(); await webR.evalRVoid('if(dev.cur()>1)dev.off()'); await webR.evalRVoid('png(tf<-tempfile(fileext=".png"),width=520,height=380,res=96)'); const r=await s.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true}); let t=''; for(const o of r.output){if(o.type==='stdout'||o.type==='stderr')t+=o.data+'\n';} outputEl.textContent=t||'(sem saída)'; try{await webR.evalRVoid('dev.off()');const pd=await webR.evalR('readBin(tf,"raw",file.info(tf)$size)');const pb=await pd.toArray();if(pb.length>0){const b=new Blob([new Uint8Array(pb)],{type:'image/png'});plotEl.innerHTML='<img src="'+URL.createObjectURL(b)+'" alt="R plot">';}}catch(e){} await s.purge(); } catch(e){outputEl.textContent='Erro: '+e.message;} btnRun.disabled=false; };
+    window.runCode = async function() {
+      const code = document.getElementById('r-code').value;
+      btnRun.disabled = true; outputEl.textContent = 'Executando...'; plotEl.innerHTML = '';
+      try {
+        const shelter = await new webR.Shelter();
+        const result = await shelter.captureR(code, {
+          withAutoprint: true, captureStreams: true, captureConditions: true,
+          captureGraphics: {width: 520, height: 380}
+        });
+        let textOut = '';
+        for (const out of result.output) { if (out.type === 'stdout' || out.type === 'stderr') textOut += out.data + '\n'; }
+        outputEl.textContent = textOut || '(sem saída)';
+        if (result.images && result.images.length > 0) {
+          const lastImg = result.images[result.images.length - 1];
+          const canvas = document.createElement('canvas');
+          canvas.width = lastImg.width; canvas.height = lastImg.height;
+          canvas.getContext('2d').drawImage(lastImg, 0, 0);
+          plotEl.appendChild(canvas);
+        }
+        await shelter.purge();
+      } catch (e) { outputEl.textContent = 'Erro: ' + e.message; }
+      btnRun.disabled = false;
+    };
     window.resetCode = function() { document.getElementById('r-code').value = window._originalCode; };
     initWebR();
   </script>

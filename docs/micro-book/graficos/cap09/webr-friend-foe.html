@@ -32,7 +32,7 @@
     .output-header { background: #f5f5f5; padding: 0.4rem 1rem; font-size: 0.8rem; color: #666; border-bottom: 1px solid #ddd; }
     #r-output { padding: 0.8rem 1rem; font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.82rem; background: #1e1e1e; color: #d4d4d4; min-height: 120px; max-height: 400px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
     #r-plot { text-align: center; padding: 0.5rem; background: #fff; }
-    #r-plot img { max-width: 100%; border-radius: 4px; }
+    #r-plot img, #r-plot canvas { max-width: 100%; border-radius: 4px; }
     .info-box { margin-top: 1rem; padding: 0.8rem; background: #f8f8f8; border: 1px solid #eee; border-radius: 4px; font-size: 0.8rem; color: #666; line-height: 1.5; }
   </style>
 </head>
@@ -126,23 +126,25 @@ text(2.5, 0.26, "25% (uniforme)", cex = 0.8, col = "gray40")
       plotEl.innerHTML = '';
       try {
         const shelter = await new webR.Shelter();
-        await webR.evalRVoid('if (dev.cur() > 1) dev.off()');
-        await webR.evalRVoid('png(tf <- tempfile(fileext=".png"), width=520, height=380, res=96)');
-        const result = await shelter.captureR(code, { withAutoprint: true, captureStreams: true, captureConditions: true });
+        const result = await shelter.captureR(code, {
+          withAutoprint: true,
+          captureStreams: true,
+          captureConditions: true,
+          captureGraphics: {width: 520, height: 380}
+        });
         let textOut = '';
         for (const out of result.output) {
           if (out.type === 'stdout' || out.type === 'stderr') textOut += out.data + '\n';
         }
         outputEl.textContent = textOut || '(sem saída de texto)';
-        try {
-          await webR.evalRVoid('dev.off()');
-          const plotData = await webR.evalR('readBin(tf, "raw", file.info(tf)$size)');
-          const plotBytes = await plotData.toArray();
-          if (plotBytes.length > 0) {
-            const blob = new Blob([new Uint8Array(plotBytes)], { type: 'image/png' });
-            plotEl.innerHTML = '<img src="' + URL.createObjectURL(blob) + '" alt="R plot">';
-          }
-        } catch (e) {}
+        if (result.images && result.images.length > 0) {
+          const lastImg = result.images[result.images.length - 1];
+          const canvas = document.createElement('canvas');
+          canvas.width = lastImg.width;
+          canvas.height = lastImg.height;
+          canvas.getContext('2d').drawImage(lastImg, 0, 0);
+          plotEl.appendChild(canvas);
+        }
         await shelter.purge();
       } catch (e) {
         outputEl.textContent = 'Erro: ' + e.message;
