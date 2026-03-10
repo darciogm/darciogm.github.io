@@ -127,7 +127,8 @@ text(2.5, 0.26, "25% (uniforme)", cex = 0.8, col = "gray40")
       plotEl.innerHTML = '';
       try {
         const shelter = await new webR.Shelter();
-        const result = await shelter.captureR(code, {
+        const wrapped = 'if (dev.cur() > 1) dev.off()\nwebr::canvas(width=520, height=380)\n' + code + '\ndev.off()';
+        const result = await shelter.captureR(wrapped, {
           withAutoprint: true,
           captureStreams: true,
           captureConditions: true
@@ -144,6 +145,17 @@ text(2.5, 0.26, "25% (uniforme)", cex = 0.8, col = "gray40")
           canvas.height = lastImg.height;
           canvas.getContext('2d').drawImage(lastImg, 0, 0);
           plotEl.appendChild(canvas);
+        } else {
+          const msgs = await webR.flush();
+          for (const msg of msgs) {
+            if (msg.type === 'canvas' && msg.data.event === 'canvasImage') {
+              const canvas = document.createElement('canvas');
+              canvas.width = msg.data.image.width;
+              canvas.height = msg.data.image.height;
+              canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+              plotEl.appendChild(canvas);
+            }
+          }
         }
         await shelter.purge();
       } catch (e) {

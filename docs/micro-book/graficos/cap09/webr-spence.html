@@ -124,7 +124,8 @@ text(e_min, theta_H + 0.2, sprintf("e* = %.2f", e_min),
       btnRun.disabled = true; outputEl.textContent = 'Executando...'; plotEl.innerHTML = '';
       try {
         const shelter = await new webR.Shelter();
-        const result = await shelter.captureR(code, {
+        const wrapped = 'if (dev.cur() > 1) dev.off()\nwebr::canvas(width=520, height=400)\n' + code + '\ndev.off()';
+        const result = await shelter.captureR(wrapped, {
           withAutoprint: true, captureStreams: true, captureConditions: true
         });
         let textOut = '';
@@ -136,6 +137,16 @@ text(e_min, theta_H + 0.2, sprintf("e* = %.2f", e_min),
           canvas.width = lastImg.width; canvas.height = lastImg.height;
           canvas.getContext('2d').drawImage(lastImg, 0, 0);
           plotEl.appendChild(canvas);
+        } else {
+          const msgs = await webR.flush();
+          for (const msg of msgs) {
+            if (msg.type === 'canvas' && msg.data.event === 'canvasImage') {
+              const canvas = document.createElement('canvas');
+              canvas.width = msg.data.image.width; canvas.height = msg.data.image.height;
+              canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+              plotEl.appendChild(canvas);
+            }
+          }
         }
         await shelter.purge();
       } catch (e) { outputEl.textContent = 'Erro: ' + e.message; }
