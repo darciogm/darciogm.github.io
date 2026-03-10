@@ -108,6 +108,7 @@ text(2.5, 0.26, "25% (uniforme)", cex = 0.8, col = "gray40")
     async function initWebR() {
       try {
         await webR.init();
+        await webR.evalRVoid('options(device = webr::canvas)');
         statusEl.textContent = 'Instalando pacote Ecdat...';
         await webR.installPackages(['Ecdat']);
         statusEl.textContent = 'WebR pronto!';
@@ -129,8 +130,7 @@ text(2.5, 0.26, "25% (uniforme)", cex = 0.8, col = "gray40")
         const result = await shelter.captureR(code, {
           withAutoprint: true,
           captureStreams: true,
-          captureConditions: true,
-          captureGraphics: {width: 520, height: 380}
+          captureConditions: true
         });
         let textOut = '';
         for (const out of result.output) {

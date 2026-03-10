@@ -119,6 +119,7 @@ legend("bottomright", legend = c("Aceita", "Rejeita"),
     async function initWebR() {
       try {
         await webR.init();
+        await webR.evalRVoid('options(device = webr::canvas)');
         statusEl.textContent = 'WebR pronto!';
         statusEl.className = 'status-bar status-ready';
         btnRun.disabled = false;
@@ -137,8 +138,7 @@ legend("bottomright", legend = c("Aceita", "Rejeita"),
         const result = await shelter.captureR(code, {
           withAutoprint: true,
           captureStreams: true,
-          captureConditions: true,
-          captureGraphics: {width: 520, height: 380}
+          captureConditions: true
         });
         let textOut = '';
         for (const out of result.output) {

@@ -119,15 +119,14 @@ legend("topleft",
   <script type="module">
     import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
     const webR = new WebR(); const statusEl = document.getElementById('status'); const btnRun = document.getElementById('btn-run'); const outputEl = document.getElementById('r-output'); const plotEl = document.getElementById('r-plot'); const originalCode = document.getElementById('r-code').value; window._originalCode = originalCode;
-    async function initWebR() { try { await webR.init(); statusEl.textContent = 'WebR pronto!'; statusEl.className = 'status-bar status-ready'; btnRun.disabled = false; } catch(e) { statusEl.textContent='Erro: '+e.message; statusEl.className='status-bar status-error'; } }
+    async function initWebR() { try { await webR.init(); await webR.evalRVoid('options(device = webr::canvas)'); statusEl.textContent = 'WebR pronto!'; statusEl.className = 'status-bar status-ready'; btnRun.disabled = false; } catch(e) { statusEl.textContent='Erro: '+e.message; statusEl.className='status-bar status-error'; } }
     window.runCode = async function() {
       const code = document.getElementById('r-code').value;
       btnRun.disabled = true; outputEl.textContent = 'Executando...'; plotEl.innerHTML = '';
       try {
         const shelter = await new webR.Shelter();
         const result = await shelter.captureR(code, {
-          withAutoprint: true, captureStreams: true, captureConditions: true,
-          captureGraphics: {width: 520, height: 380}
+          withAutoprint: true, captureStreams: true, captureConditions: true
         });
         let textOut = '';
         for (const out of result.output) { if (out.type === 'stdout' || out.type === 'stderr') textOut += out.data + '\n'; }
