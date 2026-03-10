@@ -56,18 +56,18 @@ Definidos os conceitos de custo econômico e custo de oportunidade, podemos agor
 A firma maximizadora de lucro resolve:
 
 \[
-\max_{K, L} \; \pi = p \cdot f(K, L) - wL - rK
+\max_{K, L} \; \pi = p \cdot f(K, L) - wL - vK
 \]
 
-onde \(p\) é o preço do produto, \(w\) é o salário e \(r\) é o custo de aluguel do capital.
+onde \(p\) é o preço do produto, \(w\) é o salário e \(v\) é o custo de aluguel do capital.
 
 Um resultado central é que a **maximização de lucro implica minimização de custos**: se a firma escolhe quantidades de insumos que maximizam o lucro, então, para o nível de produto resultante, ela necessariamente minimiza o custo de produção. A recíproca, contudo, não é verdadeira — minimizar custos é condição necessária, mas não suficiente, para maximizar lucro, pois a firma ainda precisa escolher o nível ótimo de produção.
 
 !!! abstract "Proposição: Maximização de lucro implica minimização de custos"
-    Se \((K^*, L^*)\) resolve o problema de maximização de lucro \(\max_{K,L} \; pf(K,L) - wL - rK\) com produto \(q^* = f(K^*, L^*)\), então \((K^*, L^*)\) também resolve o problema de minimização de custos para o nível de produto \(q^*\):
+    Se \((K^*, L^*)\) resolve o problema de maximização de lucro \(\max_{K,L} \; pf(K,L) - wL - vK\) com produto \(q^* = f(K^*, L^*)\), então \((K^*, L^*)\) também resolve o problema de minimização de custos para o nível de produto \(q^*\):
 
     \[
-    \min_{K, L} \; wL + rK \quad \text{s.a.} \quad f(K, L) \geq q^*
+    \min_{K, L} \; wL + vK \quad \text{s.a.} \quad f(K, L) \geq q^*
     \]
 
 ---
@@ -78,7 +78,7 @@ Estabelecida a relação entre maximização de lucro e minimização de custos,
 
 <figure markdown="span">
   <iframe src="../graficos/cap11/minimizacao-custo.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 11.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(r\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
+  <figcaption markdown="span"><strong>Figura 11.1</strong> — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(v\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.</figcaption>
 </figure>
 
 ### O problema de minimização de custos
@@ -86,7 +86,7 @@ Estabelecida a relação entre maximização de lucro e minimização de custos,
 O problema dual ao da maximização do produto sujeito a um orçamento é a **minimização do custo** de atingir um dado nível de produto:
 
 \[
-\min_{K, L} \; C = wL + rK \quad \text{s.a.} \quad f(K, L) = q_0
+\min_{K, L} \; C = wL + vK \quad \text{s.a.} \quad f(K, L) = q_0
 \]
 
 A lógica é análoga à do consumidor que minimiza o gasto para atingir um dado nível de utilidade (Capítulo 5). Aqui, a isoquanta substitui a curva de indiferença, e a reta de isocusto substitui a reta orçamentária.
@@ -96,17 +96,17 @@ A lógica é análoga à do consumidor que minimiza o gasto para atingir um dado
 A **reta de isocusto** representa todas as combinações de insumos que geram o mesmo custo total \(C_0\):
 
 \[
-C_0 = wL + rK \implies K = \frac{C_0}{r} - \frac{w}{r}L
+C_0 = wL + vK \implies K = \frac{C_0}{v} - \frac{w}{v}L
 \]
 
-A inclinação da isocusto é \(-w/r\), a razão dos preços dos insumos.
+A inclinação da isocusto é \(-w/v\), a razão dos preços dos insumos.
 
 ### Condição de tangência
 
 Pelo método de Lagrange, a condição de primeira ordem para a minimização de custos é:
 
 \[
-\mathcal{L} = wL + rK + \lambda[q_0 - f(K, L)]
+\mathcal{L} = wL + vK + \lambda[q_0 - f(K, L)]
 \]
 
 \[
@@ -114,28 +114,28 @@ Pelo método de Lagrange, a condição de primeira ordem para a minimização de
 \]
 
 \[
-\frac{\partial \mathcal{L}}{\partial K} = r - \lambda f_K = 0 \implies \lambda = \frac{r}{f_K}
+\frac{\partial \mathcal{L}}{\partial K} = v - \lambda f_K = 0 \implies \lambda = \frac{v}{f_K}
 \]
 
 Igualando:
 
 \[
-\frac{w}{f_L} = \frac{r}{f_K} \implies \frac{f_L}{f_K} = \frac{w}{r} \implies \mathrm{TMST}_{L,K} = \frac{w}{r}
+\frac{w}{f_L} = \frac{v}{f_K} \implies \frac{f_L}{f_K} = \frac{w}{v} \implies \mathrm{TMST}_{L,K} = \frac{w}{v}
 \]
 
-Essa condição tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/r\)). Se a TMST fosse maior que \(w/r\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
+Essa condição tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/v\)). Se a TMST fosse maior que \(w/v\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
 
 !!! abstract "Condição de minimização de custos"
     No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
 
     \[
-    \mathrm{TMST}_{L,K} = \frac{w}{r}
+    \mathrm{TMST}_{L,K} = \frac{w}{v}
     \]
 
     Equivalentemente, o produto marginal por unidade monetária gasta deve ser igual para todos os insumos:
 
     \[
-    \frac{f_L}{w} = \frac{f_K}{r}
+    \frac{f_L}{w} = \frac{f_K}{v}
     \]
 
 ### Demandas condicionadas por insumos
@@ -145,7 +145,7 @@ A condição de tangência nos diz *como* os insumos devem ser combinados no ót
 Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = q_0\), obtemos as **demandas condicionadas** (ou demandas hicksianas na produção):
 
 \[
-L^c = L^c(w, r, q), \qquad K^c = K^c(w, r, q)
+L^c = L^c(w, v, q), \qquad K^c = K^c(w, v, q)
 \]
 
 Estas funções expressam as quantidades ótimas de cada insumo como funções dos preços dos insumos e do nível de produto desejado.
@@ -159,26 +159,26 @@ A minimização de custos nos forneceu as demandas condicionadas por insumos —
 ### A função custo
 
 !!! definition "Função custo"
-    A **função custo** \(C(w, r, q)\) é o valor mínimo do custo de produzir \(q\) unidades, dados os preços dos insumos \(w\) e \(r\):
+    A **função custo** \(C(w, v, q)\) é o valor mínimo do custo de produzir \(q\) unidades, dados os preços dos insumos \(w\) e \(v\):
 
     \[
-    C(w, r, q) = wL^c(w, r, q) + rK^c(w, r, q)
+    C(w, v, q) = wL^c(w, v, q) + vK^c(w, v, q)
     \]
 
 A função custo possui as seguintes propriedades:
 
-1. **Não decrescente** em \(w\), \(r\) e \(q\).
-2. **Homogênea de grau 1** nos preços dos insumos: \(C(tw, tr, q) = tC(w, r, q)\). Se todos os preços dos insumos dobram, o custo mínimo dobra.
+1. **Não decrescente** em \(w\), \(v\) e \(q\).
+2. **Homogênea de grau 1** nos preços dos insumos: \(C(tw, tr, q) = tC(w, v, q)\). Se todos os preços dos insumos dobram, o custo mínimo dobra.
 3. **Côncava** nos preços dos insumos: a firma substitui o insumo que ficou mais caro pelo mais barato, de modo que o custo cresce menos que proporcionalmente ao aumento do preço de um insumo.
 4. **Contínua** nos preços dos insumos.
 
 ### Lema de Shephard
 
 !!! proof "Demonstração: Lema de Shephard"
-    **Enunciado.** Se \(C(w, r, q)\) é a função custo e é diferenciável em \((w, r)\), então as demandas condicionadas por insumos são obtidas pela derivada parcial da função custo em relação ao preço do respectivo insumo:
+    **Enunciado.** Se \(C(w, v, q)\) é a função custo e é diferenciável em \((w, v)\), então as demandas condicionadas por insumos são obtidas pela derivada parcial da função custo em relação ao preço do respectivo insumo:
 
     \[
-    \frac{\partial C(w, r, q)}{\partial w} = L^c(w, r, q), \qquad \frac{\partial C(w, r, q)}{\partial r} = K^c(w, r, q)
+    \frac{\partial C(w, v, q)}{\partial w} = L^c(w, v, q), \qquad \frac{\partial C(w, v, q)}{\partial v} = K^c(w, v, q)
     \]
 
     **Demonstração.**
@@ -187,31 +187,31 @@ A função custo possui as seguintes propriedades:
     O lagrangeano é:
 
     \[
-    \mathcal{L}(K, L, \lambda; w, r, q) = wL + rK + \lambda[q - f(K, L)]
+    \mathcal{L}(K, L, \lambda; w, v, q) = wL + vK + \lambda[q - f(K, L)]
     \]
 
     Pelo teorema da envoltória:
 
     \[
-    \frac{\partial C}{\partial w} = \frac{\partial \mathcal{L}}{\partial w}\bigg|_{(K^c, L^c, \lambda^*)} = L^c(w, r, q)
+    \frac{\partial C}{\partial w} = \frac{\partial \mathcal{L}}{\partial w}\bigg|_{(K^c, L^c, \lambda^*)} = L^c(w, v, q)
     \]
 
     Analogamente:
 
     \[
-    \frac{\partial C}{\partial r} = K^c(w, r, q)
+    \frac{\partial C}{\partial v} = K^c(w, v, q)
     \]
 
     **Verificação com Cobb-Douglas.** Para \(q = K^{\alpha}L^{1-\alpha}\), a função custo é:
 
     \[
-    C(w, r, q) = q \cdot \kappa \cdot w^{1-\alpha} \cdot r^{\alpha}
+    C(w, v, q) = q \cdot \kappa \cdot w^{1-\alpha} \cdot v^{\alpha}
     \]
 
     onde \(\kappa = \left(\frac{\alpha}{1-\alpha}\right)^{-(1-\alpha)} + \left(\frac{\alpha}{1-\alpha}\right)^{\alpha}\) é uma constante. Derivando em relação a \(w\):
 
     \[
-    \frac{\partial C}{\partial w} = q \cdot \kappa \cdot (1-\alpha) \cdot w^{-\alpha} \cdot r^{\alpha} = L^c(w, r, q)
+    \frac{\partial C}{\partial w} = q \cdot \kappa \cdot (1-\alpha) \cdot w^{-\alpha} \cdot v^{\alpha} = L^c(w, v, q)
     \]
 
     o que confirma o lema. \(\blacksquare\)
@@ -333,7 +333,7 @@ Uma das distinções mais importantes da teoria dos custos é entre curto e long
 No **curto prazo**, o capital é fixo em \(\bar{K}\). A firma só pode ajustar o trabalho. O custo total de curto prazo é:
 
 \[
-CT_{CP}(q; \bar{K}) = r\bar{K} + w \cdot L(q, \bar{K})
+CT_{CP}(q; \bar{K}) = v\bar{K} + w \cdot L(q, \bar{K})
 \]
 
 onde \(L(q, \bar{K})\) é a quantidade de trabalho necessária para produzir \(q\) dado \(\bar{K}\), obtida invertendo a função de produção de curto prazo.
@@ -343,7 +343,7 @@ onde \(L(q, \bar{K})\) é a quantidade de trabalho necessária para produzir \(q
 No **longo prazo**, todos os insumos são variáveis. A firma escolhe simultaneamente \(K\) e \(L\) para minimizar custos:
 
 \[
-CT_{LP}(q) = \min_{K, L} \{wL + rK \mid f(K, L) = q\}
+CT_{LP}(q) = \min_{K, L} \{wL + vK \mid f(K, L) = q\}
 \]
 
 ### A curva envoltória
@@ -440,26 +440,26 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 As seções anteriores desenvolveram os conceitos gerais de minimização de custos, função custo e curvas de custo. Agora é hora de aplicar esses conceitos de forma sistemática às quatro funções de produção clássicas estudadas no Capítulo 10 — Cobb-Douglas, linear, Leontief e CES. Para cada uma, derivamos explicitamente as demandas condicionais por insumos, a função custo resultante e, quando a solução existe, as demandas por insumos via maximização de lucro. Esse catálogo de resultados será referência constante nos capítulos seguintes e nos exercícios da ANPEC.
 
-Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(r\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
+Nesta seção, derivamos as demandas condicionais por insumos, a função custo e (quando aplicável) as demandas por insumos via maximização de lucro para as quatro formas funcionais mais utilizadas. Usamos \(w\) e \(v\) para os preços do trabalho e do capital, \(q\) para a quantidade produzida, e \(L\) e \(K\) para trabalho e capital.
 
 ### 11.8.1 Cobb-Douglas: q = Kᵅ Lᵝ
 
 **Demandas condicionais (minimização de custo).** A firma resolve:
 
 \[
-\min_{K,L} \; rK + wL \quad \text{s.a.} \quad K^\alpha L^\beta = q
+\min_{K,L} \; vK + wL \quad \text{s.a.} \quad K^\alpha L^\beta = q
 \]
 
 O Lagrangeano é:
 
 \[
-\mathcal{L} = rK + wL + \lambda(q - K^\alpha L^\beta)
+\mathcal{L} = vK + wL + \lambda(q - K^\alpha L^\beta)
 \]
 
 Condições de primeira ordem:
 
 \[
-\frac{\partial \mathcal{L}}{\partial K} = r - \lambda \alpha K^{\alpha-1} L^\beta = 0
+\frac{\partial \mathcal{L}}{\partial K} = v - \lambda \alpha K^{\alpha-1} L^\beta = 0
 \]
 
 \[
@@ -469,33 +469,33 @@ Condições de primeira ordem:
 Dividindo a primeira CPO pela segunda:
 
 \[
-\frac{r}{w} = \frac{\alpha L}{\beta K} \quad \Longrightarrow \quad K = \frac{\alpha\, w}{\beta\, r}\, L
+\frac{v}{w} = \frac{\alpha L}{\beta K} \quad \Longrightarrow \quad K = \frac{\alpha\, w}{\beta\, v}\, L
 \]
 
 Substituindo na restrição tecnológica:
 
 \[
-\left(\frac{\alpha\, w}{\beta\, r}\right)^\alpha L^{\alpha+\beta} = q \quad \Longrightarrow \quad L^c = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{-\alpha/(\alpha+\beta)}
+\left(\frac{\alpha\, w}{\beta\, v}\right)^\alpha L^{\alpha+\beta} = q \quad \Longrightarrow \quad L^c = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, v}\right)^{-\alpha/(\alpha+\beta)}
 \]
 
 \[
-\boxed{L^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\beta\, r}{\alpha\, w}\right)^{\alpha/(\alpha+\beta)}}
+\boxed{L^c(w,v,q) = q^{1/(\alpha+\beta)} \left(\frac{\beta\, v}{\alpha\, w}\right)^{\alpha/(\alpha+\beta)}}
 \]
 
 \[
-\boxed{K^c(w,r,q) = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, r}\right)^{\beta/(\alpha+\beta)}}
+\boxed{K^c(w,v,q) = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, v}\right)^{\beta/(\alpha+\beta)}}
 \]
 
-**Função custo.** Avaliando o gasto mínimo \(C = rK^c + wL^c\):
+**Função custo.** Avaliando o gasto mínimo \(C = vK^c + wL^c\):
 
 \[
-\boxed{C(w,r,q) = q^{1/(\alpha+\beta)} \cdot \frac{\alpha+\beta}{\alpha^\alpha \beta^\beta} \cdot \frac{w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)}}{(\alpha+\beta)^{(\alpha+\beta)/(\alpha+\beta)}} \cdot (\alpha+\beta) \left(\frac{w}{\beta}\right)^{\beta/(\alpha+\beta)} \left(\frac{r}{\alpha}\right)^{\alpha/(\alpha+\beta)}}
+\boxed{C(w,v,q) = q^{1/(\alpha+\beta)} \cdot \frac{\alpha+\beta}{\alpha^\alpha \beta^\beta} \cdot \frac{w^{\beta/(\alpha+\beta)}\, v^{\alpha/(\alpha+\beta)}}{(\alpha+\beta)^{(\alpha+\beta)/(\alpha+\beta)}} \cdot (\alpha+\beta) \left(\frac{w}{\beta}\right)^{\beta/(\alpha+\beta)} \left(\frac{v}{\alpha}\right)^{\alpha/(\alpha+\beta)}}
 \]
 
 Simplificando, a função custo Cobb-Douglas tem a forma:
 
 \[
-C(w,r,q) = \kappa \cdot w^{\beta/(\alpha+\beta)}\, r^{\alpha/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}
+C(w,v,q) = \kappa \cdot w^{\beta/(\alpha+\beta)}\, v^{\alpha/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}
 \]
 
 onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\alpha+\beta)}\) é uma constante.
@@ -508,16 +508,16 @@ onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\a
 
 *Verificação pelo Lema de Shephard*: \(\partial C/\partial w = L^c\) ✓
 
-**Demandas por insumos (maximização de lucro).** Com retornos decrescentes (\(\alpha+\beta < 1\)), a firma maximiza \(\pi = pq - wL - rK\). Substituindo \(q = K^\alpha L^\beta\) e derivando:
+**Demandas por insumos (maximização de lucro).** Com retornos decrescentes (\(\alpha+\beta < 1\)), a firma maximiza \(\pi = pq - wL - vK\). Substituindo \(q = K^\alpha L^\beta\) e derivando:
 
 \[
-p\alpha K^{\alpha-1}L^\beta = r, \qquad p\beta K^\alpha L^{\beta-1} = w
+p\alpha K^{\alpha-1}L^\beta = v, \qquad p\beta K^\alpha L^{\beta-1} = w
 \]
 
 Resolvendo o sistema (detalhes em Cap. 12):
 
 \[
-\boxed{L^*(w,r,p) = \left(\frac{p\,\alpha^\alpha\,\beta^{1-\alpha}}{w^{1-\alpha}\,r^\alpha}\right)^{1/(1-\alpha-\beta)}, \quad K^*(w,r,p) = \left(\frac{p\,\alpha^{1-\beta}\,\beta^\beta}{w^\beta\,r^{1-\beta}}\right)^{1/(1-\alpha-\beta)}}
+\boxed{L^*(w,v,p) = \left(\frac{p\,\alpha^\alpha\,\beta^{1-\alpha}}{w^{1-\alpha}\,v^\alpha}\right)^{1/(1-\alpha-\beta)}, \quad K^*(w,v,p) = \left(\frac{p\,\alpha^{1-\beta}\,\beta^\beta}{w^\beta\,v^{1-\beta}}\right)^{1/(1-\alpha-\beta)}}
 \]
 
 Estas demandas só existem com retornos decrescentes. Com retornos constantes ou crescentes, o lucro não tem máximo finito.
@@ -528,24 +528,24 @@ Com tecnologia linear, os insumos são perfeitamente substituíveis. As isoquant
 
 **Demandas condicionais.** A firma compara o custo por unidade de produto de cada insumo:
 
-- Custo de uma unidade de produto via capital: \(r/\alpha\)
+- Custo de uma unidade de produto via capital: \(v/\alpha\)
 - Custo de uma unidade de produto via trabalho: \(w/\beta\)
 
 \[
-\boxed{K^c = \begin{cases} q/\alpha & \text{se } r/\alpha < w/\beta \\ 0 & \text{se } r/\alpha > w/\beta \end{cases}, \qquad L^c = \begin{cases} 0 & \text{se } r/\alpha < w/\beta \\ q/\beta & \text{se } r/\alpha > w/\beta \end{cases}}
+\boxed{K^c = \begin{cases} q/\alpha & \text{se } v/\alpha < w/\beta \\ 0 & \text{se } v/\alpha > w/\beta \end{cases}, \qquad L^c = \begin{cases} 0 & \text{se } v/\alpha < w/\beta \\ q/\beta & \text{se } v/\alpha > w/\beta \end{cases}}
 \]
 
-Se \(r/\alpha = w/\beta\), qualquer combinação sobre a isoquanta é ótima.
+Se \(v/\alpha = w/\beta\), qualquer combinação sobre a isoquanta é ótima.
 
 **Função custo.**
 
 \[
-\boxed{C(w,r,q) = q \cdot \min\left\{\frac{r}{\alpha},\; \frac{w}{\beta}\right\}}
+\boxed{C(w,v,q) = q \cdot \min\left\{\frac{v}{\alpha},\; \frac{w}{\beta}\right\}}
 \]
 
-Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg constante igual a \(\min\{r/\alpha, w/\beta\}\).
+Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg constante igual a \(\min\{v/\alpha, w/\beta\}\).
 
-**Demandas por insumos (maximização de lucro).** Com retornos constantes de escala, o lucro é linear em \(q\). Se \(p > \min\{r/\alpha, w/\beta\}\), a firma deseja produzir infinito; se \(p < \min\{r/\alpha, w/\beta\}\), a firma produz zero. O problema de maximização de lucro só tem solução interior com rendimentos decrescentes.
+**Demandas por insumos (maximização de lucro).** Com retornos constantes de escala, o lucro é linear em \(q\). Se \(p > \min\{v/\alpha, w/\beta\}\), a firma deseja produzir infinito; se \(p < \min\{v/\alpha, w/\beta\}\), a firma produz zero. O problema de maximização de lucro só tem solução interior com rendimentos decrescentes.
 
 ### 11.8.3 Tecnologia Leontief (Proporções Fixas): q = min{K/α, L/β}
 
@@ -562,12 +562,12 @@ As demandas condicionais são **independentes dos preços dos insumos** — não
 **Função custo.**
 
 \[
-\boxed{C(w,r,q) = (\alpha\, r + \beta\, w)\, q}
+\boxed{C(w,v,q) = (\alpha\, v + \beta\, w)\, q}
 \]
 
-O custo é linear em \(q\), com CMg constante igual a \(\alpha r + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
+O custo é linear em \(q\), com CMg constante igual a \(\alpha v + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
 
-**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha r + \beta w\). Para ter solução interior, seriam necessários retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
+**Demandas por insumos (maximização de lucro).** Com retornos constantes, valem as mesmas considerações do caso linear: o problema só tem solução finita se \(p = \alpha v + \beta w\). Para ter solução interior, seriam necessários retornos decrescentes, por exemplo, \(q = [\min\{K/\alpha, L/\beta\}]^\gamma\) com \(\gamma < 1\).
 
 ### 11.8.4 CES: q = (αKᵖ + βLᵖ)¹ᐟᵖ
 
@@ -576,31 +576,31 @@ A função CES generaliza os três casos anteriores. O parâmetro \(\rho\) deter
 **Demandas condicionais.** A firma resolve:
 
 \[
-\min_{K,L} \; rK + wL \quad \text{s.a.} \quad (\alpha K^\rho + \beta L^\rho)^{1/\rho} = q
+\min_{K,L} \; vK + wL \quad \text{s.a.} \quad (\alpha K^\rho + \beta L^\rho)^{1/\rho} = q
 \]
 
-O Lagrangeano é \(\mathcal{L} = rK + wL + \lambda[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
+O Lagrangeano é \(\mathcal{L} = vK + wL + \lambda[q - (\alpha K^\rho + \beta L^\rho)^{1/\rho}]\). As CPOs, após simplificação, fornecem:
 
 \[
-\frac{r}{w} = \frac{\alpha K^{\rho-1}}{\beta L^{\rho-1}} \quad \Longrightarrow \quad \frac{K}{L} = \left(\frac{\alpha\, w}{\beta\, r}\right)^\sigma
+\frac{v}{w} = \frac{\alpha K^{\rho-1}}{\beta L^{\rho-1}} \quad \Longrightarrow \quad \frac{K}{L} = \left(\frac{\alpha\, w}{\beta\, v}\right)^\sigma
 \]
 
 Definimos o **índice de preços de insumos CES**:
 
 \[
-W \equiv \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}
+W \equiv \left(\alpha^\sigma\, v^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}
 \]
 
 As demandas condicionais ficam:
 
 \[
-\boxed{K^c = \alpha^\sigma\, r^{-\sigma}\, W^{\sigma-1}\, q, \qquad L^c = \beta^\sigma\, w^{-\sigma}\, W^{\sigma-1}\, q}
+\boxed{K^c = \alpha^\sigma\, v^{-\sigma}\, W^{\sigma-1}\, q, \qquad L^c = \beta^\sigma\, w^{-\sigma}\, W^{\sigma-1}\, q}
 \]
 
 **Função custo.**
 
 \[
-\boxed{C(w,r,q) = W \cdot q = q \cdot \left(\alpha^\sigma\, r^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}}
+\boxed{C(w,v,q) = W \cdot q = q \cdot \left(\alpha^\sigma\, v^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}}
 \]
 
 A função custo é linear em \(q\) (retornos constantes de escala) e tem a estrutura de um índice de preços CES.
@@ -618,7 +618,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 - O **custo econômico** difere do custo contábil por incluir o custo de oportunidade dos recursos próprios da firma (capital do proprietário, tempo do empreendedor), enquanto o custo contábil registra apenas desembolsos efetivos. Essa distinção é fundamental para avaliar corretamente a lucratividade de um negócio.
 - No **curto prazo**, a firma opera com pelo menos um insumo fixo, gerando custos fixos e variáveis. As curvas de custo marginal (CMg), custo variável médio (CVMe) e custo total médio (CTMe) possuem formato em U — reflexo da lei dos rendimentos marginais decrescentes — e se relacionam de maneira precisa: o CMg cruza o CVMe e o CTMe em seus respectivos pontos de mínimo.
-- No **longo prazo**, todos os insumos são variáveis e a firma resolve o problema de **minimização de custos** sujeita à restrição tecnológica, o que gera a condição de tangência entre a isocusto e a isoquanta: $\mathrm{TMST} = w/r$.
+- No **longo prazo**, todos os insumos são variáveis e a firma resolve o problema de **minimização de custos** sujeita à restrição tecnológica, o que gera a condição de tangência entre a isocusto e a isoquanta: $\mathrm{TMST} = w/v$.
 - O **Lema de Shephard** estabelece que as demandas condicionadas por insumos podem ser obtidas como derivadas parciais da função custo em relação aos preços dos insumos, conectando a dualidade entre produção e custos.
 - As **economias de escala** e as **economias de escopo** explicam por que firmas maiores ou diversificadas podem ter custos médios menores, sendo conceitos centrais para a organização industrial. A curva de custo médio de longo prazo é a envoltória das curvas de curto prazo.
 - No contexto brasileiro, o chamado **"custo Brasil"** — carga tributária, logística deficiente, burocracia — representa um deslocamento para cima da curva de custos das firmas nacionais, reduzindo sua competitividade internacional.
@@ -632,8 +632,8 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 | Custo fixo (CF) | Custo que não varia com o nível de produção no curto prazo (aluguel, depreciação de equipamentos). |
 | Custo variável (CV) | Custo que varia com o nível de produção (matéria-prima, mão de obra variável). |
 | Custo marginal (CMg) | Acréscimo ao custo total decorrente da produção de uma unidade adicional: $\mathrm{CMg} = dCT/dq$. |
-| Isocusto | Reta representando todas as combinações de insumos que geram o mesmo custo total: $C = wL + rK$. |
-| Lema de Shephard | As demandas condicionadas (hicksianas) por insumos são obtidas derivando a função custo em relação ao preço de cada insumo: $L^*(w,r,q) = \partial C/\partial w$. |
+| Isocusto | Reta representando todas as combinações de insumos que geram o mesmo custo total: $C = wL + vK$. |
+| Lema de Shephard | As demandas condicionadas (hicksianas) por insumos são obtidas derivando a função custo em relação ao preço de cada insumo: $L^*(w,v,q) = \partial C/\partial w$. |
 | Economias de escala | Redução do custo médio de longo prazo à medida que a escala de produção aumenta. |
 | Economias de escopo | Redução de custos ao produzir dois ou mais bens conjuntamente em vez de separadamente. |
 | Curva envoltória | Curva de custo médio de longo prazo, tangente a cada curva de custo médio de curto prazo no ponto ótimo de escala de planta. |
@@ -675,7 +675,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ??? example "Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
 
-    **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(r = 2\).
+    **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(v = 2\).
 
     (a) Derive as demandas condicionadas por insumos.
 
@@ -690,7 +690,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     **(a)** Com \(\alpha = 1/3\) e \(\beta = 2/3\) (\(\alpha + \beta = 1\), retornos constantes), a condição de tangência é:
 
     \[
-    \frac{\alpha}{\beta} \cdot \frac{L}{K} = \frac{r}{w} \implies \frac{1}{2} \cdot \frac{L}{K} = \frac{2}{8} = \frac{1}{4} \implies L = \frac{K}{2}
+    \frac{\alpha}{\beta} \cdot \frac{L}{K} = \frac{v}{w} \implies \frac{1}{2} \cdot \frac{L}{K} = \frac{2}{8} = \frac{1}{4} \implies L = \frac{K}{2}
     \]
 
     Substituindo na restrição \(K^{1/3}L^{2/3} = q\):
@@ -706,7 +706,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     **(b)** Função custo:
 
     \[
-    C = rK^c + wL^c = 2 \cdot 2^{2/3} q + 8 \cdot 2^{-1/3} q = 2^{5/3} q + 2^{3} \cdot 2^{-1/3} q = 2^{5/3} q + 2^{8/3} q
+    C = vK^c + wL^c = 2 \cdot 2^{2/3} q + 8 \cdot 2^{-1/3} q = 2^{5/3} q + 2^{3} \cdot 2^{-1/3} q = 2^{5/3} q + 2^{8/3} q
     \]
 
     \[
@@ -716,13 +716,13 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     **(c)** Verificação:
 
     \[
-    \frac{\partial C}{\partial w} = \frac{\partial}{\partial w}[wL^c + rK^c]
+    \frac{\partial C}{\partial w} = \frac{\partial}{\partial w}[wL^c + vK^c]
     \]
 
-    Precisamos expressar \(C\) em termos de \(w\) e \(r\). Para \(q = K^{1/3}L^{2/3}\), a função custo geral é \(C = \kappa \cdot w^{2/3} r^{1/3} q\), onde \(\kappa = 3/(2^{2/3})\). Então:
+    Precisamos expressar \(C\) em termos de \(w\) e \(v\). Para \(q = K^{1/3}L^{2/3}\), a função custo geral é \(C = \kappa \cdot w^{2/3} v^{1/3} q\), onde \(\kappa = 3/(2^{2/3})\). Então:
 
     \[
-    \frac{\partial C}{\partial w} = \kappa \cdot \frac{2}{3} w^{-1/3} r^{1/3} q = L^c \quad \checkmark
+    \frac{\partial C}{\partial w} = \kappa \cdot \frac{2}{3} w^{-1/3} v^{1/3} q = L^c \quad \checkmark
     \]
 
     **(d)** Para \(q = 10\):
@@ -741,7 +741,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ??? example "Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
 
-    **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(r = 10\).
+    **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(v = 10\).
 
     (a) Derive a função custo de longo prazo e mostre que o CMg é crescente.
 
@@ -754,7 +754,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     **(a)** Com \(\alpha = \beta = 1/4\) e \(\alpha + \beta = 1/2 < 1\) (retornos decrescentes), pela condição de tangência:
 
     \[
-    \frac{1/4 \cdot L}{1/4 \cdot K} = \frac{r}{w} = 1 \implies K = L
+    \frac{1/4 \cdot L}{1/4 \cdot K} = \frac{v}{w} = 1 \implies K = L
     \]
 
     Substituindo: \(K^{1/4} K^{1/4} = q \implies K^{1/2} = q \implies K^c = L^c = q^2\).
@@ -772,7 +772,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     **(b)** Com \(\bar{K} = 1\): \(q = 1^{1/4} L^{1/4} = L^{1/4} \implies L = q^4\).
 
     \[
-    CT_{CP} = r\bar{K} + wL = 10 \cdot 1 + 10 \cdot q^4 = 10 + 10q^4
+    CT_{CP} = v\bar{K} + wL = 10 \cdot 1 + 10 \cdot q^4 = 10 + 10q^4
     \]
 
     **(c)** Comparando:
@@ -788,13 +788,13 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 ## Exercícios
 
 <a id="ex-11-1"></a>**Exercício 11.1.** 
-Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(r = 1\).
+Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(v = 1\).
 
-(a) Derive as demandas condicionadas por insumos \(K^c(w, r, q)\) e \(L^c(w, r, q)\).
+(a) Derive as demandas condicionadas por insumos \(K^c(w, v, q)\) e \(L^c(w, v, q)\).
 
-(b) Obtenha a função custo \(C(w, r, q)\).
+(b) Obtenha a função custo \(C(w, v, q)\).
 
-(c) Verifique o Lema de Shephard calculando \(\partial C / \partial w\) e \(\partial C / \partial r\).
+(c) Verifique o Lema de Shephard calculando \(\partial C / \partial w\) e \(\partial C / \partial v\).
 
 (d) Calcule o custo total para produzir \(q = 10\).
 
@@ -820,7 +820,7 @@ Considere a função de custo total de curto prazo \(CT(q) = 100 + 10q - 2q^2 + 
 ---
 
 <a id="ex-11-3"></a>**Exercício 11.3.** 
-Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 8\) e \(w = 2\).
+Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(v = 8\) e \(w = 2\).
 
 (a) Derive a função custo \(C(q)\).
 
@@ -833,7 +833,7 @@ Uma firma opera com a tecnologia \(q = \min\{K, 2L\}\) e enfrenta preços \(r = 
 ---
 
 <a id="ex-11-4"></a>**Exercício 11.4.** 
-Explique graficamente e algebricamente por que a curva de custo médio de longo prazo é a envoltória das curvas de custo médio de curto prazo. Use o caso de uma firma com função de produção \(q = K^{1/3}L^{1/3}\) e preços de insumos \(w = r = 1\) para:
+Explique graficamente e algebricamente por que a curva de custo médio de longo prazo é a envoltória das curvas de custo médio de curto prazo. Use o caso de uma firma com função de produção \(q = K^{1/3}L^{1/3}\) e preços de insumos \(w = v = 1\) para:
 
 (a) Derivar a função custo de longo prazo.
 
@@ -848,11 +848,11 @@ Explique graficamente e algebricamente por que a curva de custo médio de longo 
 <a id="ex-11-5"></a>**Exercício 11.5.** 
 Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + \beta = 1\) (rendimentos constantes de escala).
 
-(a) Mostre que a função custo é linear em \(q\): \(C(w, r, q) = c(w, r) \cdot q\), onde \(c(w, r)\) é o custo unitário.
+(a) Mostre que a função custo é linear em \(q\): \(C(w, v, q) = c(w, v) \cdot q\), onde \(c(w, v)\) é o custo unitário.
 
-(b) Derive a expressão de \(c(w, r)\) e mostre que ele é homogêneo de grau 1 nos preços dos insumos.
+(b) Derive a expressão de \(c(w, v)\) e mostre que ele é homogêneo de grau 1 nos preços dos insumos.
 
-(c) Mostre que, neste caso, \(\mathrm{CMg} = \mathrm{CMe} = c(w, r)\) — o custo marginal é constante e igual ao custo médio.
+(c) Mostre que, neste caso, \(\mathrm{CMg} = \mathrm{CMe} = c(w, v)\) — o custo marginal é constante e igual ao custo médio.
 
 (d) Interprete economicamente: por que rendimentos constantes de escala implicam custos marginais constantes?
 
@@ -911,11 +911,11 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
     | Item | Afirmação |
     |------|-----------|
-    | 0 | Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por \(f_1(K,L) = \min\{K, L/4\}\) e o segundo processo é dado por \(f_2(K,L) = \min\{K/5, L\}\). Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é \(r = 1\) e o do trabalho é \(w = 2\). Então, a função custo da empresa é \(c(Q) = 7Q\). |
-    | 1 | Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por \(r > 0\) e \(w > 0\). Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: \(c(r, w, q) = 2r^{5/8}w^{3/8}\). Suponha que \(r = 1\) e \(w = 256 = 2^8\). Então, a demanda fatorial por capital é \(K = 16\). |
-    | 2 | Uma empresa possui função de produção dada por \(f(K, L) = \sqrt{KL}\), em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \(\bar{K} = 4\). Suponha que o preço fatorial do capital é \(r = 1\) e que o preço fatorial do trabalho é \(w = 4\). Então, a função de custo de curto prazo é \(c(q) = 4 + q^2\). |
+    | 0 | Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por \(f_1(K,L) = \min\{K, L/4\}\) e o segundo processo é dado por \(f_2(K,L) = \min\{K/5, L\}\). Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é \(v = 1\) e o do trabalho é \(w = 2\). Então, a função custo da empresa é \(c(Q) = 7Q\). |
+    | 1 | Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por \(v > 0\) e \(w > 0\). Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: \(c(v, w, q) = 2v^{5/8}w^{3/8}\). Suponha que \(v = 1\) e \(w = 256 = 2^8\). Então, a demanda fatorial por capital é \(K = 16\). |
+    | 2 | Uma empresa possui função de produção dada por \(f(K, L) = \sqrt{KL}\), em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \(\bar{K} = 4\). Suponha que o preço fatorial do capital é \(v = 1\) e que o preço fatorial do trabalho é \(w = 4\). Então, a função de custo de curto prazo é \(c(q) = 4 + q^2\). |
     | 3 | No curto prazo, se o preço do produto é inferior ao custo médio mínimo, então a firma necessariamente não produzirá. |
-    | 4 | Uma firma tem função de produção \(f(K, L) = \min\{K + L, 2L\}\). Sejam \(r, w > 0\) os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que \(r < w\). O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto. |
+    | 4 | Uma firma tem função de produção \(f(K, L) = \min\{K + L, 2L\}\). Sejam \(v, w > 0\) os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que \(v < w\). O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto. |
 
     ??? success "Gabarito"
         **Respostas: V F V F V**
@@ -923,10 +923,10 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
         **Justificativa por item:**
 
         - **Item 0 — V:** Processo 1 usa 1K e 4L por unidade: custo unitário = \(1 \cdot 1 + 4 \cdot 2 = 9\). Processo 2 usa 5K e 1L por unidade: custo unitário = \(5 \cdot 1 + 1 \cdot 2 = 7\). Como \(7 < 9\), a firma usa apenas o processo 2 e \(c(Q) = 7Q\).
-        - **Item 1 — F:** Pelo Lema de Shephard: \(K = \partial c / \partial r = 2 \cdot \frac{5}{8} r^{-3/8} w^{3/8} = \frac{5}{4} r^{-3/8} w^{3/8}\). Com \(r = 1\) e \(w = 256\): \(K = \frac{5}{4} \cdot 1 \cdot 256^{3/8} = \frac{5}{4} \cdot (2^8)^{3/8} = \frac{5}{4} \cdot 2^3 = \frac{5}{4} \cdot 8 = 10\), não 16. O Lema de Shephard (Seção 11.4) é a ferramenta para resolver este item.
-        - **Item 2 — V:** \(q = \sqrt{4L} = 2\sqrt{L} \implies L = q^2/4\). Custo de curto prazo: \(c = r\bar{K} + wL = 1 \cdot 4 + 4 \cdot q^2/4 = 4 + q^2\).
+        - **Item 1 — F:** Pelo Lema de Shephard: \(K = \partial c / \partial v = 2 \cdot \frac{5}{8} v^{-3/8} w^{3/8} = \frac{5}{4} v^{-3/8} w^{3/8}\). Com \(v = 1\) e \(w = 256\): \(K = \frac{5}{4} \cdot 1 \cdot 256^{3/8} = \frac{5}{4} \cdot (2^8)^{3/8} = \frac{5}{4} \cdot 2^3 = \frac{5}{4} \cdot 8 = 10\), não 16. O Lema de Shephard (Seção 11.4) é a ferramenta para resolver este item.
+        - **Item 2 — V:** \(q = \sqrt{4L} = 2\sqrt{L} \implies L = q^2/4\). Custo de curto prazo: \(c = v\bar{K} + wL = 1 \cdot 4 + 4 \cdot q^2/4 = 4 + q^2\).
         - **Item 3 — F:** No curto prazo, se \(P < \mathrm{CMe}_{min}\) mas \(P > \mathrm{CVMe}_{min}\), a firma produz — ela cobre seus custos variáveis e parte dos custos fixos. A firma só encerra produção se \(P < \mathrm{CVMe}_{min}\) (ponto de fechamento). A condição é sobre o CVMe, não sobre o CMe (Seção 11.5).
-        - **Item 4 — V:** \(f(K,L) = \min\{K+L, 2L\}\). Com \(r < w\), a firma prefere usar mais K e menos L. Para \(q = \min\{K+L, 2L\}\), no ótimo com \(r < w\): \(K+L \geq 2L\) (i.e., \(K \geq L\)), de modo que \(q = 2L\), logo \(L = q/2\). A restrição \(L \leq 10\) se torna ativa quando \(q/2 > 10\), ou seja, \(q > 20\).
+        - **Item 4 — V:** \(f(K,L) = \min\{K+L, 2L\}\). Com \(v < w\), a firma prefere usar mais K e menos L. Para \(q = \min\{K+L, 2L\}\), no ótimo com \(v < w\): \(K+L \geq 2L\) (i.e., \(K \geq L\)), de modo que \(q = 2L\), logo \(L = q/2\). A restrição \(L \leq 10\) se torna ativa quando \(q/2 > 10\), ou seja, \(q > 20\).
 
 ---
 

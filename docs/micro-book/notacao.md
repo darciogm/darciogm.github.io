@@ -23,6 +23,7 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(V(p_1, p_2, I)\) | Função de utilidade indireta |
 | \(E(p_1, p_2, \bar{U})\) | Função dispêndio (expenditure function) |
 | \(TMS\) | Taxa marginal de substituição |
+| \(UMg\) | Utilidade marginal |
 
 ## Consumidor
 
@@ -31,6 +32,8 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(x_i\) | Quantidade consumida do bem \(i\) |
 | \(p_i\) | Preço do bem \(i\) |
 | \(I\) | Renda do consumidor |
+| \(W\) | Riqueza |
+| \(T\) | Dotação de tempo |
 | \(x_i^*(p_1, p_2, I)\) | Demanda marshalliana (não-compensada) do bem \(i\) |
 | \(h_i(p_1, p_2, \bar{U})\) | Demanda hicksiana (compensada) do bem \(i\) |
 
@@ -41,6 +44,7 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(\varepsilon_{x,p}\) ou \(e_{x,p}\) | Elasticidade-preço da demanda |
 | \(\varepsilon_{x,I}\) | Elasticidade-renda da demanda |
 | \(\varepsilon_{x,p_y}\) | Elasticidade-preço cruzada |
+| \(\eta\) | Elasticidade (notação alternativa) |
 
 ## Produção e Custos
 
@@ -53,11 +57,16 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(w\) | Salário (preço do trabalho) |
 | \(v\) | Preço do capital (taxa de aluguel) |
 | \(r\) | Taxa de juros |
+| \(\alpha, \beta\) | Parâmetros da função de produção (e.g., Cobb-Douglas: \(f = K^\alpha L^\beta\)) |
+| \(\rho\) | Parâmetro de substituição (CES) |
+| \(\gamma\) | Progresso técnico / parâmetro de escala |
 | \(C(q)\) | Função custo total |
-| \(C(w, r, q)\) | Função custo (com preços dos insumos) |
+| \(C(w, v, q)\) | Função custo (com preços dos insumos) |
 | \(CMg\) | Custo marginal |
 | \(CMe\) | Custo médio |
 | \(CVMe\) | Custo variável médio |
+| \(CFMe\) | Custo fixo médio |
+| \(VPMg\) | Valor do produto marginal |
 | \(TMST\) | Taxa marginal de substituição técnica |
 
 ## Mercado e Equilíbrio
@@ -71,9 +80,14 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(\pi\) | Lucro econômico |
 | \(R(q)\) | Receita total |
 | \(RMg\) | Receita marginal |
+| \(n\) | Número de firmas no mercado |
 | \(EC\) | Excedente do consumidor |
 | \(EP\) | Excedente do produtor |
 | \(PPM\) | Perda de peso morto |
+| \(\tau\) | Alíquota tributária |
+| \(HHI\) | Índice de Herfindahl-Hirschman (concentração de mercado) |
+| \(\boldsymbol{\omega}_i\) | Vetor de dotações do consumidor \(i\) (equilíbrio geral) |
+| \(\theta_{ij}\) | Participação do consumidor \(i\) nos lucros da firma \(j\) |
 
 ## Teoria dos Jogos
 
@@ -85,13 +99,16 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(s_{-i}\) | Perfil de estratégias dos demais jogadores |
 | \(u_i(s_i, s_{-i})\) | Payoff do jogador \(i\) |
 | \(\sigma_i\) | Estratégia mista do jogador \(i\) |
+| \(\delta\) | Fator de desconto (jogos repetidos) |
 
 ## Incerteza
 
 | Símbolo | Significado |
 |---------|-------------|
-| \(E[X]\) | Valor esperado da variável aleatória \(X\) |
+| \(E[X]\) ou \(\mathbb{E}[X]\) | Valor esperado da variável aleatória \(X\) |
 | \(\text{Var}(X)\) | Variância de \(X\) |
+| \(\text{Cov}(X, Y)\) | Covariância de \(X\) e \(Y\) |
+| \(W\) | Riqueza inicial |
 | \(\pi_s\) | Probabilidade do estado \(s\) |
 | \(A(W)\) | Coeficiente de aversão absoluta ao risco (Arrow-Pratt) |
 | \(R(W)\) | Coeficiente de aversão relativa ao risco |
@@ -105,8 +122,12 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(\mathcal{L}\) | Lagrangeano |
 | \(\lambda\) | Multiplicador de Lagrange (primal e dual) |
 | \(\mu\) | Crenças bayesianas (teoria dos jogos); média (estatística); proporção de tipos (screening) |
+| \(\theta\) | Tipo do agente (screening/sinalização); participação nos lucros (equilíbrio geral) |
+| \(\delta\) | Fator de desconto (jogos repetidos); taxa de depreciação (produção) |
 | \(\Delta\) | Variação discreta |
 | \(d\) | Diferencial |
+| \(CPO\) | Condição de primeira ordem |
+| \(\text{s.a.}\) | Sujeito a (restrição de otimização) |
 
 ## Convenções de Notação
 
@@ -115,3 +136,4 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 - **Output**: sempre \(q\). A letra \(y\) é reservada para vetores de produção em equilíbrio geral (\(y_j^k\)), variáveis informativas genéricas, ou bens de consumo em questões ANPEC.
 - **Custo marginal**: sempre \(CMg\) (português). Siglas em inglês (\(MC\)) não são utilizadas.
 - **Multiplicador de Lagrange**: sempre \(\lambda\), tanto no problema primal quanto no dual.
+- **Preço do capital**: sempre \(v\). A letra \(r\) é reservada para taxa de juros.

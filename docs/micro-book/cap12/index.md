@@ -103,7 +103,7 @@ Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente*
 Alternativamente, a firma pode escolher diretamente as quantidades de insumos. O problema é:
 
 \[
-\max_{K, L} \; \pi = p \cdot f(K, L) - wL - rK
+\max_{K, L} \; \pi = p \cdot f(K, L) - wL - vK
 \]
 
 As condições de primeira ordem são:
@@ -113,7 +113,7 @@ p \cdot f_L = w \implies \text{VPMg}_L = w
 \]
 
 \[
-p \cdot f_K = r \implies \text{VPMg}_K = r
+p \cdot f_K = v \implies \text{VPMg}_K = v
 \]
 
 onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser empregado até o ponto em que o valor de sua contribuição marginal ao produto iguala seu preço. Em termos concretos: a firma contrata trabalhadores enquanto o valor do que cada trabalhador adicional produz (\(p \cdot f_L\)) superar o salário que ela precisa pagar (\(w\)). No ponto ótimo, o último trabalhador contratado gera receita adicional exatamente igual ao seu salário — e o mesmo vale para o capital.
@@ -263,53 +263,53 @@ No capítulo anterior, vimos como o Lema de Shephard permite recuperar as demand
 ### A função lucro
 
 !!! definition "Função lucro"
-    A **função lucro** \(\pi(p, w, r)\) é o lucro máximo que a firma pode obter dados o preço do produto \(p\) e os preços dos insumos \(w\) e \(r\):
+    A **função lucro** \(\pi(p, w, v)\) é o lucro máximo que a firma pode obter dados o preço do produto \(p\) e os preços dos insumos \(w\) e \(v\):
 
     \[
-    \pi(p, w, r) = \max_{q} \{p \cdot q - C(w, r, q)\}
+    \pi(p, w, v) = \max_{q} \{p \cdot q - C(w, v, q)\}
     \]
 
     ou, equivalentemente:
 
     \[
-    \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
+    \pi(p, w, v) = \max_{K, L} \{p \cdot f(K, L) - wL - vK\}
     \]
 
 A função lucro possui propriedades notáveis:
 
 1. **Não decrescente** em \(p\): um aumento no preço do produto nunca reduz o lucro máximo.
-2. **Não crescente** em \(w\) e \(r\): um aumento no preço de qualquer insumo nunca aumenta o lucro máximo.
-3. **Homogênea de grau 1** em \((p, w, r)\): se todos os preços (do produto e dos insumos) são multiplicados por \(t > 0\), o lucro máximo também é multiplicado por \(t\).
-4. **Convexa** em \((p, w, r)\): a firma pode ajustar suas decisões em resposta a mudanças de preços, de modo que o lucro responde mais que proporcionalmente (é "mais sensível") a grandes mudanças de preços.
+2. **Não crescente** em \(w\) e \(v\): um aumento no preço de qualquer insumo nunca aumenta o lucro máximo.
+3. **Homogênea de grau 1** em \((p, w, v)\): se todos os preços (do produto e dos insumos) são multiplicados por \(t > 0\), o lucro máximo também é multiplicado por \(t\).
+4. **Convexa** em \((p, w, v)\): a firma pode ajustar suas decisões em resposta a mudanças de preços, de modo que o lucro responde mais que proporcionalmente (é "mais sensível") a grandes mudanças de preços.
 
 ### Lema de Hotelling
 
 !!! proof "Demonstração: Lema de Hotelling"
-    **Enunciado.** Se \(\pi(p, w, r)\) é diferenciável, então:
+    **Enunciado.** Se \(\pi(p, w, v)\) é diferenciável, então:
 
     \[
-    \frac{\partial \pi(p, w, r)}{\partial p} = q^*(p, w, r) \quad \text{(função de oferta)}
+    \frac{\partial \pi(p, w, v)}{\partial p} = q^*(p, w, v) \quad \text{(função de oferta)}
     \]
 
     \[
-    \frac{\partial \pi(p, w, r)}{\partial w} = -L^*(p, w, r) \quad \text{(negativo da demanda por trabalho)}
+    \frac{\partial \pi(p, w, v)}{\partial w} = -L^*(p, w, v) \quad \text{(negativo da demanda por trabalho)}
     \]
 
     \[
-    \frac{\partial \pi(p, w, r)}{\partial r} = -K^*(p, w, r) \quad \text{(negativo da demanda por capital)}
+    \frac{\partial \pi(p, w, v)}{\partial v} = -K^*(p, w, v) \quad \text{(negativo da demanda por capital)}
     \]
 
     **Demonstração.**
     Considere o problema de maximização de lucro com escolha de insumos:
 
     \[
-    \pi(p, w, r) = \max_{K, L} \{p \cdot f(K, L) - wL - rK\}
+    \pi(p, w, v) = \max_{K, L} \{p \cdot f(K, L) - wL - vK\}
     \]
 
     Seja \((K^*, L^*)\) a solução ótima. Defina a função objetivo como:
 
     \[
-    g(K, L; p, w, r) = p \cdot f(K, L) - wL - rK
+    g(K, L; p, w, v) = p \cdot f(K, L) - wL - vK
     \]
 
     Pelo **teorema da envoltória**, a derivada da função valor em relação a um parâmetro é igual à derivada parcial da função objetivo avaliada no ótimo:
@@ -323,43 +323,43 @@ A função lucro possui propriedades notáveis:
     \]
 
     \[
-    \frac{\partial \pi}{\partial r} = \frac{\partial g}{\partial r}\bigg|_{(K^*, L^*)} = -K^*
+    \frac{\partial \pi}{\partial v} = \frac{\partial g}{\partial v}\bigg|_{(K^*, L^*)} = -K^*
     \]
 
-    **Verificação com Cobb-Douglas.** Para que a maximização de lucro tenha solução interior finita, a função de produção deve exibir retornos decrescentes de escala. Considere \(q = K^{1/3}L^{1/3}\) (\(\alpha + \beta = 2/3 < 1\)), com preços \((p, w, r)\). As CPOs são:
+    **Verificação com Cobb-Douglas.** Para que a maximização de lucro tenha solução interior finita, a função de produção deve exibir retornos decrescentes de escala. Considere \(q = K^{1/3}L^{1/3}\) (\(\alpha + \beta = 2/3 < 1\)), com preços \((p, w, v)\). As CPOs são:
 
     \[
-    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w, \qquad \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r
+    \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w, \qquad \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = v
     \]
 
-    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w\), logo \(L = (r/w)\,K\). Substituindo em \(\text{CPO}_K\):
+    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = v/w\), logo \(L = (v/w)\,K\). Substituindo em \(\text{CPO}_K\):
 
     \[
-    \frac{p}{3}\,K^{-2/3}\left(\frac{r}{w}\,K\right)^{1/3} = r \implies \frac{p}{3}\left(\frac{r}{w}\right)^{1/3} = r \cdot K^{1/3}
+    \frac{p}{3}\,K^{-2/3}\left(\frac{v}{w}\,K\right)^{1/3} = v \implies \frac{p}{3}\left(\frac{v}{w}\right)^{1/3} = v \cdot K^{1/3}
     \]
 
     \[
-    K^{1/3} = \frac{p}{3\,r}\left(\frac{r}{w}\right)^{1/3} \implies K^* = \frac{p^3}{27\,r^3}\cdot\frac{r}{w} = \frac{p^3}{27\,r^2\,w}
+    K^{1/3} = \frac{p}{3\,v}\left(\frac{v}{w}\right)^{1/3} \implies K^* = \frac{p^3}{27\,v^3}\cdot\frac{v}{w} = \frac{p^3}{27\,v^2\,w}
     \]
 
-    De forma análoga, \(L^* = \frac{p^3}{27\,w^2\,r}\). A produção ótima é:
+    De forma análoga, \(L^* = \frac{p^3}{27\,w^2\,v}\). A produção ótima é:
 
     \[
-    q^* = (K^*)^{1/3}(L^*)^{1/3} = \left(\frac{p^3}{27\,r^2 w}\right)^{1/3}\left(\frac{p^3}{27\,w^2 r}\right)^{1/3} = \frac{p^2}{9\,wr}
+    q^* = (K^*)^{1/3}(L^*)^{1/3} = \left(\frac{p^3}{27\,v^2 w}\right)^{1/3}\left(\frac{p^3}{27\,w^2 v}\right)^{1/3} = \frac{p^2}{9\,wv}
     \]
 
-    O lucro máximo é \(\pi^* = p\,q^* - w\,L^* - r\,K^* = \frac{p^3}{9wr} - \frac{p^3}{27wr} - \frac{p^3}{27wr} = \frac{p^3}{27wr}\). Verificando o Lema:
+    O lucro máximo é \(\pi^* = p\,q^* - w\,L^* - v\,K^* = \frac{p^3}{9wv} - \frac{p^3}{27wv} - \frac{p^3}{27wv} = \frac{p^3}{27wv}\). Verificando o Lema:
 
     \[
-    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark \qquad \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2 r} = -L^* \;\checkmark
+    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wv} = \frac{p^2}{9wv} = q^* \;\checkmark \qquad \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2 v} = -L^* \;\checkmark
     \]
 
     \(\blacksquare\)
 
     !!! note "Por que retornos constantes não funcionam"
-        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p = c(w,r)\); \(-\infty\) se \(p < c(w,r)\) (firma não produz); e \(+\infty\) se \(p > c(w,r)\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
+        Com retornos constantes de escala (\(\alpha + \beta = 1\)), a função lucro é: zero se \(p = c(w,v)\); \(-\infty\) se \(p < c(w,v)\) (firma não produz); e \(+\infty\) se \(p > c(w,v)\) (firma quer produzir infinitamente). O problema de maximização não tem solução interior finita, e o Lema de Hotelling não se aplica. Por isso, a verificação numérica requer retornos decrescentes.
 
-        **Nota:** A condição \(p^2 = 4wr\) é específica do caso simétrico \(\alpha = \beta = 1/2\). Para o caso geral \(\alpha + \beta = 1\), a condição de lucro zero é \(p = \kappa \cdot w^{\beta} \cdot r^{\alpha}\), onde \(\kappa = \alpha^{-\alpha}\beta^{-\beta}\) depende dos expoentes da função de produção.
+        **Nota:** A condição \(p^2 = 4wv\) é específica do caso simétrico \(\alpha = \beta = 1/2\). Para o caso geral \(\alpha + \beta = 1\), a condição de lucro zero é \(p = \kappa \cdot w^{\beta} \cdot v^{\alpha}\), onde \(\kappa = \alpha^{-\alpha}\beta^{-\beta}\) depende dos expoentes da função de produção.
 
 !!! tip "Significado econômico do Lema de Hotelling"
     O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
@@ -382,14 +382,14 @@ O Lema de Hotelling nos deu uma via dual para obter as demandas por insumos: der
 A **demanda incondicional** (ou marshalliana) por insumos é obtida diretamente das condições de primeira ordem da maximização de lucro:
 
 \[
-L^*(p, w, r): \quad p \cdot f_L(K^*, L^*) = w
+L^*(p, w, v): \quad p \cdot f_L(K^*, L^*) = w
 \]
 
 \[
-K^*(p, w, r): \quad p \cdot f_K(K^*, L^*) = r
+K^*(p, w, v): \quad p \cdot f_K(K^*, L^*) = v
 \]
 
-Estas demandas diferem das demandas condicionadas (Capítulo 11) porque não fixam o nível de produto — ele é determinado endogenamente pela maximização de lucro. A distinção é sutil, mas importante: as demandas condicionadas respondem à pergunta "dado que quero produzir \(q\) unidades, quanto de cada insumo devo usar?", enquanto as demandas incondicionais respondem a "quanto de cada insumo devo usar para maximizar meu lucro?". As primeiras dependem de \((w, r, q)\); as segundas, de \((p, w, r)\).
+Estas demandas diferem das demandas condicionadas (Capítulo 11) porque não fixam o nível de produto — ele é determinado endogenamente pela maximização de lucro. A distinção é sutil, mas importante: as demandas condicionadas respondem à pergunta "dado que quero produzir \(q\) unidades, quanto de cada insumo devo usar?", enquanto as demandas incondicionais respondem a "quanto de cada insumo devo usar para maximizar meu lucro?". As primeiras dependem de \((w, v, q)\); as segundas, de \((p, w, v)\).
 
 ### Propriedades da demanda por insumos
 
@@ -474,7 +474,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 - A **firma** existe, segundo Coase, porque os custos de transação do mercado podem ser superiores aos custos de coordenação interna. A teoria microeconômica assume que a firma maximiza lucro ($\pi = RT - CT$), embora existam modelos alternativos (maximização de receita, satisficing, teoria gerencial).
 - A condição fundamental de **maximização de lucro** exige que a receita marginal iguale o custo marginal ($\mathrm{RMg} = \mathrm{CMg}$), com a condição de segunda ordem $\mathrm{RMg}' < \mathrm{CMg}'$. A relação entre receita marginal e elasticidade-preço da demanda é dada por $\mathrm{RMg} = p(1 + 1/\varepsilon_d)$.
 - No **curto prazo**, a firma decide operar se o preço cobre ao menos o custo variável médio mínimo ($p \geq \mathrm{CVMe}_{\min}$); caso contrário, minimiza perdas fechando. No longo prazo, o preço deve cobrir o custo total médio.
-- A **função lucro** $\pi^*(p, w, r)$ possui propriedades de convexidade em preços, e o **Lema de Hotelling** permite derivar as funções de oferta e de demanda por insumos diretamente a partir das derivadas da função lucro.
+- A **função lucro** $\pi^*(p, w, v)$ possui propriedades de convexidade em preços, e o **Lema de Hotelling** permite derivar as funções de oferta e de demanda por insumos diretamente a partir das derivadas da função lucro.
 - O **índice de Lerner** $L = (p - \mathrm{CMg})/p = -1/\varepsilon_d$ mede o poder de mercado da firma: em concorrência perfeita ele é zero, e cresce à medida que a firma tem mais poder de fixação de preço.
 - No Brasil, a alta taxa de mortalidade das **micro e pequenas empresas** (MPEs) ilustra a teoria: muitas firmas operam com preço abaixo do custo médio no longo prazo, sendo forçadas a encerrar atividades quando os custos fixos vencem.
 
@@ -487,7 +487,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 | Receita marginal | Acréscimo à receita total pela venda de uma unidade adicional: $\mathrm{RMg} = dRT/dq = p(1 + 1/\varepsilon_d)$. |
 | Ponto de fechamento | Nível de preço abaixo do qual a firma prefere produzir zero: $p < \mathrm{CVMe}_{\min}$ no curto prazo. |
 | Índice de Lerner | Medida de poder de mercado: $L = (p - \mathrm{CMg})/p$; igual a zero em concorrência perfeita. |
-| Função lucro | $\pi^*(p, w, r)$: lucro máximo como função dos preços de produto e insumos; convexa e homogênea de grau 1 em preços. |
+| Função lucro | $\pi^*(p, w, v)$: lucro máximo como função dos preços de produto e insumos; convexa e homogênea de grau 1 em preços. |
 | Lema de Hotelling | A oferta do produto é $\partial \pi^*/\partial p = q^*(p)$ e as demandas por insumos são $-\partial \pi^*/\partial w_i = x_i^*(p, \mathbf{w})$. |
 | Lucro econômico vs. lucro contábil | Lucro econômico desconta o custo de oportunidade; lucro contábil registra apenas receitas menos custos explícitos. |
 
@@ -586,9 +586,9 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 ---
 
 ??? example "Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
-    **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(r = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
+    **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(v = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
 
-    **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(r = 1\).
+    **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(v = 1\).
 
     **Resolução:**
 
@@ -597,12 +597,12 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
     \text{CPO}_L:\; \frac{p}{3}\,K^{1/3}L^{-2/3} = w \implies 4\,K^{1/3}L^{-2/3} = 1
     \]
     \[
-    \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = r \implies 4\,K^{-2/3}L^{1/3} = 1
+    \text{CPO}_K:\; \frac{p}{3}\,K^{-2/3}L^{1/3} = v \implies 4\,K^{-2/3}L^{1/3} = 1
     \]
 
     **Passo 2 — Razão ótima de insumos**
 
-    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = r/w = 1\), logo \(L = K\).
+    Dividindo \(\text{CPO}_K\) por \(\text{CPO}_L\): \(L/K = v/w = 1\), logo \(L = K\).
 
     Substituindo em \(\text{CPO}_K\): \(4\,K^{-2/3}\,K^{1/3} = 1 \implies 4\,K^{-1/3} = 1 \implies K^{1/3} = 4 \implies K^* = 64\).
 
@@ -615,24 +615,24 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
     **Passo 4 — Função lucro geral**
 
-    Para preços genéricos \((p, w, r)\), as soluções são \(K^* = \frac{p^3}{27\,r^2\,w}\) e \(L^* = \frac{p^3}{27\,w^2\,r}\), com \(q^* = \frac{p^2}{9\,wr}\) e:
+    Para preços genéricos \((p, w, v)\), as soluções são \(K^* = \frac{p^3}{27\,v^2\,w}\) e \(L^* = \frac{p^3}{27\,w^2\,v}\), com \(q^* = \frac{p^2}{9\,wv}\) e:
 
     \[
-    \pi(p, w, r) = \frac{p^3}{27\,wr}
+    \pi(p, w, v) = \frac{p^3}{27\,wv}
     \]
 
     **Passo 5 — Verificação do Lema de Hotelling**
     \[
-    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wr} = \frac{p^2}{9wr} = q^* \;\checkmark
+    \frac{\partial \pi}{\partial p} = \frac{3p^2}{27wv} = \frac{p^2}{9wv} = q^* \;\checkmark
     \]
     \[
-    \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2r} = -L^* \;\checkmark \qquad
-    \frac{\partial \pi}{\partial r} = -\frac{p^3}{27wr^2} = -K^* \;\checkmark
+    \frac{\partial \pi}{\partial w} = -\frac{p^3}{27w^2v} = -L^* \;\checkmark \qquad
+    \frac{\partial \pi}{\partial v} = -\frac{p^3}{27wv^2} = -K^* \;\checkmark
     \]
 
     **Resultado:** \(K^* = L^* = 64\), \(q^* = 16\), \(\pi^* = 64\). O Lema de Hotelling é verificado: as derivadas da função lucro recuperam a oferta e as demandas por insumos.
 
-    **Interpretação econômica:** A função lucro \(\pi = p^3/(27wr)\) é homogênea de grau 1 em \((p, w, r)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wr) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
+    **Interpretação econômica:** A função lucro \(\pi = p^3/(27wv)\) é homogênea de grau 1 em \((p, w, v)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wv) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
 
 ---
 
@@ -671,7 +671,7 @@ Demonstre que, para uma firma com poder de mercado enfrentando uma curva de dema
 ---
 
 <a id="ex-12-3"></a>**Exercício 12.3.** 
-Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentando preços \(p = 27\), \(w = 2\) e \(r = 1\).
+Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentando preços \(p = 27\), \(w = 2\) e \(v = 1\).
 
 (a) Derive as condições de primeira ordem para maximização de lucro.
 
@@ -679,17 +679,17 @@ Considere uma firma com função de produção \(q = K^{1/3}L^{2/3}\) enfrentand
 
 (c) Calcule o lucro máximo.
 
-(d) Verifique o Lema de Hotelling calculando a função lucro \(\pi(p, w, r)\) e suas derivadas parciais.
+(d) Verifique o Lema de Hotelling calculando a função lucro \(\pi(p, w, v)\) e suas derivadas parciais.
 
 !!! warning "Nota pedagógica"
-    Este exercício é *intencionalmente* mal-posto: como \(\alpha + \beta = 1/3 + 2/3 = 1\) (retornos constantes de escala), o custo unitário é \(c(w,r) = 3 < p = 27\), e a firma deseja produzir em escala infinita. Não existe solução interior finita para o problema de maximização de lucro. O objetivo do exercício é que o aluno identifique a indeterminação decorrente de RCE e compreenda por que a teoria da firma competitiva requer retornos decrescentes de escala. Veja a solução para a análise completa.
+    Este exercício é *intencionalmente* mal-posto: como \(\alpha + \beta = 1/3 + 2/3 = 1\) (retornos constantes de escala), o custo unitário é \(c(w,v) = 3 < p = 27\), e a firma deseja produzir em escala infinita. Não existe solução interior finita para o problema de maximização de lucro. O objetivo do exercício é que o aluno identifique a indeterminação decorrente de RCE e compreenda por que a teoria da firma competitiva requer retornos decrescentes de escala. Veja a solução para a análise completa.
 
 [:material-arrow-right: Ver solução](../solucoes/cap12.md#ex-12-3)
 
 ---
 
 <a id="ex-12-4"></a>**Exercício 12.4.** 
-Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de produção \(q = \bar{K}^{1/2} L^{1/2} = 4L^{1/2}\). O salário é \(w = 8\) e o custo do capital é \(r = 2\).
+Uma firma opera no curto prazo com capital fixo \(\bar{K} = 16\) e função de produção \(q = \bar{K}^{1/2} L^{1/2} = 4L^{1/2}\). O salário é \(w = 8\) e o custo do capital é \(v = 2\).
 
 (a) Derive a função de custo total de curto prazo \(CT(q)\).
 

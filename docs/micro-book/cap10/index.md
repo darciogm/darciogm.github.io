@@ -596,13 +596,13 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 !!! abstract "Proposição — Propriedades de funções de produção homotéticas"
     Se \(f(K, L)\) é homotética, então:
 
-    1. **Caminho de expansão linear**: para preços dos fatores \((w, r)\) fixos, a combinação ótima de insumos que minimiza custos satisfaz \(K^*/L^* = \psi(w/r)\), constante para todos os níveis de produto \(q\).
-    2. **Custo médio de longo prazo constante em escala**: a função custo pode ser escrita como \(C(w, r, q) = c(w, r) \cdot \gamma(q)\), onde \(c\) depende apenas dos preços e \(\gamma\) apenas do produto.
+    1. **Caminho de expansão linear**: para preços dos fatores \((w, v)\) fixos, a combinação ótima de insumos que minimiza custos satisfaz \(K^*/L^* = \psi(w/v)\), constante para todos os níveis de produto \(q\).
+    2. **Custo médio de longo prazo constante em escala**: a função custo pode ser escrita como \(C(w, v, q) = c(w, v) \cdot \gamma(q)\), onde \(c\) depende apenas dos preços e \(\gamma\) apenas do produto.
     3. **Função custo separável**: consequência direta da propriedade 2 — os preços dos fatores afetam o nível de custos, mas não a forma como o custo varia com \(q\).
 
 **Exemplos.**
 
-- **Cobb-Douglas** \(f = K^\alpha L^\beta\): homotética (homogênea de grau \(\alpha + \beta\)). Caminho de expansão: \(K/L = (\alpha w)/(\beta r)\).
+- **Cobb-Douglas** \(f = K^\alpha L^\beta\): homotética (homogênea de grau \(\alpha + \beta\)). Caminho de expansão: \(K/L = (\alpha w)/(\beta v)\).
 - **CES** \(f = [\delta K^\rho + (1-\delta)L^\rho]^{\gamma/\rho}\): homotética (transformação monotônica de uma função homogênea de grau 1).
 - **Leontief** \(f = \min\{aK, bL\}\): homotética (homogênea de grau 1). Caminho de expansão fixo em \(K/L = b/a\).
 
@@ -617,7 +617,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
     **Por que isso importa:** A hipótese de homoteticidade simplifica enormemente a análise de custos. Se a tecnologia não for homotética, a proporção ótima de insumos muda com a escala, e a função custo não se separa em um componente de preços e outro de quantidade.
 
 ??? example "Exercício Resolvido 10.6"
-    **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = r\). (c) Calcule a TMST ao longo do raio \(K = L\).
+    **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = v\). (c) Calcule a TMST ao longo do raio \(K = L\).
 
     **Resolução:**
 
@@ -625,7 +625,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
     Defina \(h(K, L) = K^{0,5} L^{0,5}\), que é homogênea de grau 1: \(h(\lambda K, \lambda L) = \lambda K^{0,5} L^{0,5} = \lambda h(K, L)\). Então \(f = \ln(1 + h) = g(h)\), onde \(g(z) = \ln(1 + z)\) é estritamente crescente. Logo \(f\) é homotética.
 
-    **Passo 2 — Caminho de expansão com \(w = r\)**
+    **Passo 2 — Caminho de expansão com \(w = v\)**
 
     A TMST é:
 
@@ -633,13 +633,13 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
     \text{TMST}_{LK} = \frac{\partial f / \partial L}{\partial f / \partial K} = \frac{0{,}5 K^{0,5} L^{-0,5}}{0{,}5 K^{-0,5} L^{0,5}} = \frac{K}{L}
     \]
 
-    No ótimo, \(\text{TMST} = w/r = 1\), logo \(K/L = 1\). O caminho de expansão é a reta \(K = L\).
+    No ótimo, \(\text{TMST} = w/v = 1\), logo \(K/L = 1\). O caminho de expansão é a reta \(K = L\).
 
     **Passo 3 — TMST ao longo de \(K = L\)**
 
     Se \(K = L\), então \(\text{TMST} = K/L = 1\) — constante ao longo do raio, confirmando a propriedade homotética.
 
-    **Resultado:** A função é homotética (log de Cobb-Douglas). Com \(w = r\), a firma usa quantidades iguais de capital e trabalho em qualquer escala.
+    **Resultado:** A função é homotética (log de Cobb-Douglas). Com \(w = v\), a firma usa quantidades iguais de capital e trabalho em qualquer escala.
 
 ---
 
@@ -859,7 +859,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
         **Justificativa por item:**
 
         - **Item 0 — V:** Na formulação \(Q = Af(K,L)\), o parâmetro \(A\) é o nível de PTF (produtividade total dos fatores), conforme definido na Seção 10.6.
-        - **Item 1 — F:** Para minimizar custos, a firma deve igualar a TMST à razão de preços: \(\frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{w}{r}\). Aqui, \(\frac{60}{90} = 0{,}667\) e \(\frac{15}{30} = 0{,}5\). Como \(0{,}667 \neq 0{,}5\), a firma **não** está minimizando custos — deveria usar relativamente mais trabalho.
+        - **Item 1 — F:** Para minimizar custos, a firma deve igualar a TMST à razão de preços: \(\frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{w}{v}\). Aqui, \(\frac{60}{90} = 0{,}667\) e \(\frac{15}{30} = 0{,}5\). Como \(0{,}667 \neq 0{,}5\), a firma **não** está minimizando custos — deveria usar relativamente mais trabalho.
         - **Item 2 — V:** TMST constante e igual a \(-1\) significa isoquantas lineares com inclinação \(-1\), ou seja, \(q = aK + aL\) — os insumos são substitutos perfeitos (trocáveis na proporção 1:1).
         - **Item 3 — V:** Custos fixos elevados significam que o custo médio cai fortemente com a escala (diluição dos fixos), o que é uma manifestação de rendimentos crescentes de escala.
         - **Item 4 — V:** *Learning by doing* implica que a produtividade aumenta com a experiência acumulada (produção acumulada), gerando efetivamente rendimentos crescentes de escala dinâmicos.
