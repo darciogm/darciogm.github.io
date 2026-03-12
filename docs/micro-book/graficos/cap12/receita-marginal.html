@@ -78,40 +78,51 @@
     board.create('text', [24, -1, 'q'], { fontSize: 12 });
     board.create('text', [-0.7, 24, 'p, RMg'], { fontSize: 11 });
 
+    // Global parameters (updated by sliders)
+    var pa = 20, pb = 1, pqSel = 5;
+
+    function getA() { return pa; }
+    function getB() { return pb; }
+
+    // Demand curve: p = a - bq (functiongraph auto-clips to visible area)
+    board.create('functiongraph', [function(q) {
+      var qMax = getA() / getB();
+      if (q < 0 || q > qMax) return NaN;
+      return getA() - getB() * q;
+    }, 0, 200], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+    // MR curve: MR = a - 2bq
+    board.create('functiongraph', [function(q) {
+      if (q < 0) return NaN;
+      var mr = getA() - 2 * getB() * q;
+      if (mr < -10) return NaN;
+      return mr;
+    }, 0, 200], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    // Dynamic elements (recreated on each draw)
     var objs = [];
 
     function draw() {
       for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
       objs = [];
 
-      var a = parseFloat(document.getElementById('sl-a').value);
-      var b = parseFloat(document.getElementById('sl-b').value);
-      var qSel = parseFloat(document.getElementById('sl-q').value);
+      pa = parseFloat(document.getElementById('sl-a').value);
+      pb = parseFloat(document.getElementById('sl-b').value);
+      pqSel = parseFloat(document.getElementById('sl-q').value);
 
-      document.getElementById('val-a').textContent = a.toFixed(2);
-      document.getElementById('val-b').textContent = b.toFixed(2);
-      document.getElementById('val-q').textContent = qSel.toFixed(2);
+      document.getElementById('val-a').textContent = pa.toFixed(2);
+      document.getElementById('val-b').textContent = pb.toFixed(2);
+      document.getElementById('val-q').textContent = pqSel.toFixed(2);
 
-      var qMax = a / b; // demand hits zero
-      var qMR0 = a / (2 * b); // MR = 0
+      var a = pa, b = pb, qSel = pqSel;
+      var qMax = a / b;
+      var qMR0 = a / (2 * b);
 
-      // Demand curve: p = a - bq
-      var xs_d = [], ys_d = [];
-      for (var q = 0; q <= qMax; q += 0.1) {
-        xs_d.push(q); ys_d.push(a - b * q);
+      // Labels for curves
+      if (qMax * 0.85 < 24) {
+        objs.push(board.create('text', [qMax * 0.85, (a - b * qMax * 0.85) + 1, 'D'], { fontSize: 11, color: '#1565c0' }));
       }
-      xs_d.push(qMax); ys_d.push(0);
-      objs.push(board.create('curve', [xs_d, ys_d], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
-      objs.push(board.create('text', [qMax * 0.85, (a - b * qMax * 0.85) + 1, 'D'], { fontSize: 11, color: '#1565c0' }));
-
-      // MR curve: MR = a - 2bq (show positive + slightly negative part)
-      var xs_mr = [], ys_mr = [];
-      for (var q = 0; q <= qMax * 1.1; q += 0.1) {
-        var mr = a - 2 * b * q;
-        if (mr >= -10) { xs_mr.push(q); ys_mr.push(mr); }
-      }
-      objs.push(board.create('curve', [xs_mr, ys_mr], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
-      objs.push(board.create('text', [qMax * 0.45, -8, 'RMg'], { fontSize: 11, color: '#C8102E' }));
+      objs.push(board.create('text', [Math.min(qMax * 0.45, 23), -8, 'RMg'], { fontSize: 11, color: '#C8102E' }));
 
       // MR = 0 point (unit elastic)
       objs.push(board.create('point', [qMR0, 0], {
@@ -142,7 +153,6 @@
       var epsSel = (qSel > 0 && pSel > 0) ? -(1/b) * (pSel / qSel) : NaN;
 
       if (qSel > 0 && qSel < qMax * 1.1) {
-        // Point on demand curve
         if (pSel > 0) {
           objs.push(board.create('point', [qSel, pSel], {
             name: '', size: 4, color: '#1565c0', fixed: true
@@ -154,7 +164,6 @@
             strokeColor: '#999', dash: 3, strokeWidth: 1
           }));
         }
-        // Point on MR
         objs.push(board.create('point', [qSel, mrSel], {
           name: '', size: 4, color: '#C8102E', fixed: true
         }));
