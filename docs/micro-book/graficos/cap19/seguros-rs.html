@@ -237,8 +237,6 @@
       document.getElementById('val-W').textContent = W.toFixed(0);
       document.getElementById('val-d').textContent = d.toFixed(0);
 
-      maxAx = Math.max(W + 20, 150);
-      board.setBoundingBox([-10, maxAx+10, maxAx+10, -10]);
       board.update();
       updateInfo();
     }

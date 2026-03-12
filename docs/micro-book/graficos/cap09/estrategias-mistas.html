@@ -80,11 +80,11 @@
 
   <script>
     var board1 = JXG.JSXGraph.initBoard('board1', {
-      boundingbox: [-0.08, 5, 1.08, -2],
+      boundingbox: [-0.08, 22, 1.08, -5],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
     var board2 = JXG.JSXGraph.initBoard('board2', {
-      boundingbox: [-0.08, 5, 1.08, -2],
+      boundingbox: [-0.08, 22, 1.08, -5],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
@@ -218,12 +218,7 @@
         }
       }
 
-      // Adjust bounding boxes
-      var allVals = [g.a00, g.a01, g.a10, g.a11, g.b00, g.b01, g.b10, g.b11];
-      var ymin = Math.min.apply(null, allVals) - 0.5;
-      var ymax = Math.max.apply(null, allVals) + 0.8;
-      board1.setBoundingBox([-0.08, ymax, 1.08, ymin]);
-      board2.setBoundingBox([-0.08, ymax, 1.08, ymin]);
+      // Bounding boxes are fixed; no dynamic rescaling.
 
       // Move drag points to equilibrium if found
       if (pStar !== null && pStar >= 0 && pStar <= 1) dragP.moveTo([pStar, 0]);

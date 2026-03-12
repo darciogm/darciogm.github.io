@@ -85,7 +85,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-5, 100, 100, -5],
+      boundingbox: [-20, 250, 250, -20],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
@@ -153,8 +153,7 @@
       document.getElementById('val-c2').textContent = c2.toFixed(0);
 
       var ne = nashQ();
-      var maxQ = Math.max(BR1(0), BR2(0), ne.q1, ne.q2) * 1.2 + 5;
-      board.setBoundingBox([-maxQ*0.05, maxQ, maxQ, -maxQ*0.05]);
+      var maxQ = 250; // Fixed axis range to accommodate worst-case a=200, b=0.5, c=0
 
       // BR1: q1 as function of q2 => plot q2 on y-axis, q1 on x-axis
       // q1 = BR1(q2) => to plot: x = BR1(y), so parametric

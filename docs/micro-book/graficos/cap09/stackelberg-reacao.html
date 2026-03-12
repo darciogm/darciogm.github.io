@@ -75,7 +75,7 @@
   </div>
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-3, 55, 55, -3],
+      boundingbox: [-8, 130, 130, -8],
       showCopyright: false, showNavigation: false,
       defaultAxes: {
         x: { name: '\\(q_1\\)', withLabel: true, label: { position: 'rt', offset: [-20, 15] },
@@ -180,8 +180,7 @@
       document.getElementById('st-qs').textContent = sq[0].toFixed(1) + ', ' + sq[1].toFixed(1);
       document.getElementById('st-pis').textContent = pis1 + ', ' + pis2;
 
-      var maxQ = Math.max(a - c1, a - c2, 10) * 0.6;
-      board.setBoundingBox([-maxQ*0.06, maxQ*1.05, maxQ*1.05, -maxQ*0.06]);
+      // Bounding box is fixed; no dynamic rescaling.
       board.update();
     }
 

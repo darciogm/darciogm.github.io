@@ -185,7 +185,7 @@
 
     // Board 1: Leisure-Consumption space
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-2, 650, 28, -30],
+      boundingbox: [-2, 1250, 28, -63],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
 
@@ -289,10 +289,6 @@
       var hplus = computeOptimal(s.w + dw, s.V, s.gamma).h;
       var hminus = computeOptimal(s.w - dw, s.V, s.gamma).h;
       var dhdw = (hplus - hminus) / (2 * dw);
-
-      // Update bounding boxes
-      var maxC = Math.max((s.w * T + s.V) * 1.1, 200);
-      board1.setBoundingBox([-2, maxC, T + 4, -maxC * 0.05]);
 
       var region = dhdw > 0.01 ? 'ES domina (trecho ascendente)' :
                    (dhdw < -0.01 ? 'ER domina (trecho backward-bending)' : 'ES \\(\\approx\\) ER');

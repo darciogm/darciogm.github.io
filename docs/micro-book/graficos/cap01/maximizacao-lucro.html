@@ -94,7 +94,7 @@ function qStar() { return price - 2; } // from P = 2 + q => q* = P - 2
 
 function initBoard() {
   board = JXG.JSXGraph.initBoard('board', {
-    boundingbox: [-2, 600, 55, -200],
+    boundingbox: [-2, 2600, 55, -200],
     axis: true,
     showCopyright: false,
     showNavigation: false,
@@ -167,13 +167,6 @@ function updateInfo() {
 function updateGraph() {
   price = parseFloat(document.getElementById('priceSlider').value);
   document.getElementById('priceValue').textContent = price;
-
-  // Adjust bounding box dynamically
-  var qs = Math.max(qStar(), 0);
-  var maxY = Math.max(R(qs), CT(qs), 300) * 1.15;
-  var minY = Math.min(profit(0), -50);
-  var maxX = Math.max(qs + 10, 30);
-  board.setBoundingBox([-2, maxY, maxX, minY]);
 
   board.update();
   updateInfo();

@@ -70,15 +70,19 @@
   </div>
 
   <script>
+    // Fixed bounding box: worst case a=200, b=0.2, c=0 → reaction intercept (a-c)/b = 1000,
+    // with 1.3 multiplier → 1300, plus 6% padding ≈ 78. Use 1300 with ~80 margin.
+    var FIXED_BB = [-80, 1300, 1300, -80];
+
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-5, 90, 90, -5],
+      boundingbox: FIXED_BB,
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     function rebuildBoard() {
       JXG.JSXGraph.freeBoard(board);
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-5, 90, 90, -5],
+        boundingbox: FIXED_BB,
         axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
       });
     }
@@ -125,10 +129,6 @@
       var piLC = Math.max(0, (PC - p.cL) * q1C);
       var piSC = Math.max(0, (PC - p.cS) * q2C);
 
-      // Axis bounds
-      var maxQ = Math.max(q1L, q2S, q1C, q2C, (p.a - p.cS) / p.b, (p.a - p.cL) / (2 * p.b)) * 1.3;
-      board.setBoundingBox([-maxQ*0.06, maxQ, maxQ, -maxQ*0.06]);
-
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(q_L\\)', withLabel: true, label: { position: 'rt', offset: [-15, 15], useMathJax: true } });
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(q_S\\)', withLabel: true, label: { position: 'rt', offset: [15, -5], useMathJax: true } });
 
@@ -149,7 +149,7 @@
         board.create('segment', [[rfL_int, 0], [0, rfL_q2max]], {
           strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3
         });
-        board.create('text', [rfL_int * 0.9, maxQ * 0.04, '\\(R_L(q_S)\\)'], { fontSize: 12, color: '#1565c0', useMathJax: true });
+        board.create('text', [rfL_int * 0.9, FIXED_BB[2] * 0.04, '\\(R_L(q_S)\\)'], { fontSize: 12, color: '#1565c0', useMathJax: true });
       }
 
       // Leader's iso-profit curves

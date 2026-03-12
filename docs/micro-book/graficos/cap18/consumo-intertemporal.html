@@ -78,15 +78,15 @@
     */
 
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-15, 320, 280, -15],
+      boundingbox: [-20, 525, 420, -25],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
 
-    board.create('axis', [[0,0],[270,0]], {
+    board.create('axis', [[0,0],[400,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 50 },
       name: 'C_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
     });
-    board.create('axis', [[0,0],[0,310]], {
+    board.create('axis', [[0,0],[0,500]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 50 },
       name: 'C_2', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
     });
@@ -140,7 +140,7 @@
         var val = (U - Math.log(t)) / s.beta;
         return Math.exp(val);
       },
-      0.5, 280
+      0.5, 420
     ], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
 
     // Second indifference curve (lower utility)
@@ -156,7 +156,7 @@
         var val = (U - Math.log(t)) / s.beta;
         return Math.exp(val);
       },
-      0.5, 280
+      0.5, 420
     ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3, strokeOpacity: 0.35 });
 
     // Dashed lines to axes
@@ -200,11 +200,6 @@
       var C1s = W / (1 + s.beta);
       var C2s = s.beta * (1 + s.r) * W / (1 + s.beta);
       var saving = s.Y1 - C1s;
-
-      // Dynamic bounding box
-      var maxC1 = W * 1.1;
-      var maxC2 = (1 + s.r) * W * 1.1;
-      board.setBoundingBox([-maxC1*0.05, maxC2, maxC1, -maxC2*0.05]);
 
       var status = saving > 0.5 ? 'Poupador' : (saving < -0.5 ? 'Devedor' : 'Neutro');
       var statusColor = saving > 0.5 ? '#00897b' : (saving < -0.5 ? '#C8102E' : '#666');

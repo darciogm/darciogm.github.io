@@ -81,14 +81,14 @@
   <script>
     var regMode = 'unreg';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-8, 120, 110, -15],
+      boundingbox: [-25, 165, 550, -15],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     function rebuildBoard() {
       JXG.JSXGraph.freeBoard(board);
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-8, 120, 110, -15],
+        boundingbox: [-25, 165, 550, -15],
         axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
       });
     }
@@ -119,10 +119,6 @@
       rebuildBoard();
 
       var maxQ = p.a / p.b;
-      // AC(q) = F/q + c, find max AC for display
-      var acAt1 = p.F + p.c;
-      var maxP = Math.min(acAt1, p.a * 1.5);
-      board.setBoundingBox([-maxQ*0.08, maxP > p.a ? p.a * 1.15 : p.a * 1.1, maxQ * 1.1, -maxP * 0.08]);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] } });
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] } });

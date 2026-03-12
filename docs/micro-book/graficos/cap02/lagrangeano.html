@@ -99,9 +99,8 @@ function fStar() { return cVal * cVal / 4; }
 function lambdaStar() { return cVal / 2; }
 
 function initBoard() {
-  var maxCoord = 14;
   board = JXG.JSXGraph.initBoard('board', {
-    boundingbox: [-1, maxCoord, maxCoord, -1],
+    boundingbox: [-1, 16, 16, -1],
     axis: true,
     showCopyright: false,
     showNavigation: false,
@@ -260,10 +259,6 @@ function updateGraph() {
   gradGArrow = board.create('arrow', [
     [ox, oy], [ox + lam*scale, oy + lam*scale]
   ], { strokeColor: '#7b1fa2', strokeWidth: 2.5, dash: 2, lastArrow: { type: 2, size: 6 } });
-
-  // Adjust bounding box
-  var bb = Math.max(cVal * 0.8, 8);
-  board.setBoundingBox([-1, bb, bb, -1]);
 
   board.unsuspendUpdate();
   updateInfo();

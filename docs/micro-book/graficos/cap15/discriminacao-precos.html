@@ -118,14 +118,14 @@
   <script>
     var mode = '1st';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-8, 120, 110, -10],
+      boundingbox: [-25, 165, 580, -10],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     function rebuildBoard() {
       JXG.JSXGraph.freeBoard(board);
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-8, 120, 110, -10],
+        boundingbox: [-25, 165, 580, -10],
         axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
       });
     }
@@ -151,7 +151,6 @@
 
       var qc = Math.max(0, (a - c) / b);
       var maxQ = a / b;
-      board.setBoundingBox([-8, a * 1.1, maxQ * 1.15, -10]);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] } });
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] } });
@@ -197,7 +196,6 @@
       document.getElementById('val-T').textContent = T.toFixed(0);
 
       var maxQ = a / b;
-      board.setBoundingBox([-8, a * 1.1, maxQ * 1.15, -10]);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] } });
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] } });
@@ -264,7 +262,6 @@
 
       var maxA = Math.max(a1, a2);
       var maxQ = Math.max(a1/b1, a2/b2);
-      board.setBoundingBox([-8, maxA * 1.1, maxQ * 1.15, -10]);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] } });
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] } });

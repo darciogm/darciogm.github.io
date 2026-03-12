@@ -74,7 +74,7 @@
   </div>
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.08, 55, 1.08, -5],
+      boundingbox: [-0.08, 110, 1.08, -8],
       showCopyright: false, showNavigation: false,
       defaultAxes: {
         x: { name: '\\(\\delta\\)', withLabel: true, label: { position: 'rt', offset: [-20, 15] },
@@ -148,8 +148,7 @@
 
       ptCoop.moveTo([curDelta, vcoop < 100 ? vcoop : 50]);
 
-      var maxY = Math.min(Math.max(R / (1 - 0.95), T + 0.95 * P / 0.05, 30), 100);
-      board.setBoundingBox([-0.08, maxY * 1.1, 1.08, -maxY * 0.08]);
+      // Bounding box is fixed; no dynamic rescaling.
 
       var rb = document.getElementById('result-box');
       if (curDelta >= dstar) {

@@ -159,7 +159,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-8, 60, 108, -60],
+      boundingbox: [-16, 120, 216, -120],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
@@ -243,9 +243,6 @@
 
       document.getElementById('info-min').textContent = '≈ ' + minOffer.toFixed(0);
       document.getElementById('info-frac').textContent = '≈ ' + (100 * minOffer / S).toFixed(0) + '%';
-
-      // Update bounding box for different S values
-      board.setBoundingBox([-S * 0.08, S * 0.6, S * 1.08, -S * 0.6]);
 
       board.update();
     }

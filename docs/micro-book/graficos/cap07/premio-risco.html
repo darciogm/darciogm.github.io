@@ -82,7 +82,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.5, 5, 10.5, -2],
+      boundingbox: [-0.5, 12, 10.5, -25],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -94,7 +94,7 @@
       name: '\\(W\\)', withLabel: true,
       label: { position: 'rt', offset: [-15, -20], fontSize: 14 }
     });
-    board.create('axis', [[0,0],[0,5]], {
+    board.create('axis', [[0,0],[0,12]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
       name: '\\(u(W)\\)', withLabel: true,
       label: { position: 'rt', offset: [-30, -5], fontSize: 14 }
@@ -178,12 +178,6 @@
       document.getElementById('val-var').textContent = sig2.toFixed(2);
       document.getElementById('val-curv').textContent = c.toFixed(2);
 
-      // Adjust bounding box based on utility function range
-      var ymin = uFunc(0.1), ymax = uFunc(10);
-      if (ymin > ymax) { var t = ymin; ymin = ymax; ymax = t; }
-      var margin = (ymax - ymin) * 0.15 || 1;
-      board.setBoundingBox([-0.5, ymax + margin, 10.5, ymin - margin]);
-
       // Utility curve
       var curve = board.create('functiongraph', [function(x) { return uFunc(x); }, 0.05, 10.2], {
         strokeColor: '#C8102E', strokeWidth: 2.5
@@ -230,7 +224,7 @@
       if (Math.abs(riskPrem) > 0.02) {
         var x1 = Math.min(CE, W), x2 = Math.max(CE, W);
         var poly = board.create('polygon', [
-          [x1, ymin - margin], [x2, ymin - margin], [x2, EuW], [x1, EuW]
+          [x1, -25], [x2, -25], [x2, EuW], [x1, EuW]
         ], {
           fillColor: '#C8102E', fillOpacity: 0.1,
           borders: { strokeColor: '#C8102E', strokeWidth: 1, dash: 2 },
@@ -240,7 +234,7 @@
       }
 
       // Vertical at W
-      var vW = board.create('segment', [[W, ymin - margin], [W, uW]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true });
+      var vW = board.create('segment', [[W, -25], [W, uW]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true });
       drawObjects.push(vW);
 
       // Dashed at w1, w2

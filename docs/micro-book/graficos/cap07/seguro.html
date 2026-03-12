@@ -77,19 +77,19 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.8, 16, 16, -0.8],
+      boundingbox: [-0.8, 17, 17, -0.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,
       keepAspectRatio: true
     });
 
-    board.create('axis', [[0,0],[16,0]], {
+    board.create('axis', [[0,0],[17,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
       name: '\\(W_{\\text{bom}}\\)', withLabel: true,
       label: { position: 'rt', offset: [-30, -20], fontSize: 13 }
     });
-    board.create('axis', [[0,0],[0,16]], {
+    board.create('axis', [[0,0],[0,17]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
       name: '\\(W_{\\text{ruim}}\\)', withLabel: true,
       label: { position: 'rt', offset: [-35, -5], fontSize: 13 }
@@ -133,9 +133,6 @@
       document.getElementById('val-L').textContent = L.toFixed(1);
       document.getElementById('val-pi').textContent = pi.toFixed(2);
       document.getElementById('val-lam').textContent = lam.toFixed(2);
-
-      var maxW = Math.max(16, W0 + 2);
-      board.setBoundingBox([-0.8, maxW, maxW, -0.8]);
 
       // 45-degree line (full insurance)
       var line45 = board.create('line', [[0,0],[1,1]], {
@@ -207,7 +204,7 @@
         var ic = board.create('curve', [
           function(Ul) { return function(t) { return t; }; }(Ulev),
           function(Ul) { return function(t) { return solveWb(t, Ul); }; }(Ulev),
-          0.1, maxW
+          0.1, 17
         ], {
           strokeColor: col, strokeWidth: 2, numberPointsHigh: 400
         });

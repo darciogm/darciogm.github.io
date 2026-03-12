@@ -91,7 +91,7 @@
     var currentFn = 'cd';
 
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-2, 320, 28, -15],
+      boundingbox: [-2, 860, 28, -43],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board.create('axis', [[0,0],[26,0]], {
@@ -283,10 +283,6 @@
       document.getElementById('val-alpha').textContent = s.alpha.toFixed(2);
       document.getElementById('val-T').textContent = s.T.toFixed(0);
       if (currentFn==='ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
-
-      var fullIncome = s.w*s.T + s.V;
-      var maxC = Math.max(fullIncome*1.1, 100);
-      board.setBoundingBox([-2, maxC, s.T+4, -maxC*0.05]);
 
       var opt = optimalLC(s);
       var hs = s.T - opt.L;
