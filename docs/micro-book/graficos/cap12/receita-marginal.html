@@ -112,8 +112,8 @@
         var mr = a - 2 * b * q;
         if (mr >= -10) { xs_mr.push(q); ys_mr.push(mr); }
       }
-      // Redraw as curve to control range
-      for (var j = objs.length - 1; j >= objs.length - 1; j--) { board.removeObject(objs[j]); objs.pop(); }
+      // Remove the segment, redraw as curve to control range
+      board.removeObject(objs[objs.length - 1]); objs.pop();
       objs.push(board.create('curve', [xs_mr, ys_mr], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
       objs.push(board.create('text', [qMax * 0.45, -8, 'RMg'], { fontSize: 11, color: '#C8102E' }));
 
