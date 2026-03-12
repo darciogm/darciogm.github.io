@@ -148,21 +148,14 @@
       }));
       objs1.push(b1.create('text', [0.5, p.a + 10, 'CF=' + p.a.toFixed(0)], { fontSize: 9, color: '#999' }));
 
-      // Adjust b2 bounding box based on max values
-      var maxY2 = 0;
-      for (var q = 0.5; q <= qmax; q += 0.5) {
-        var cmg = CMg(q, p);
-        var cme = CMe(q, p);
-        if (cmg > maxY2) maxY2 = cmg;
-        if (!isNaN(cme) && cme > maxY2) maxY2 = cme;
-      }
-      maxY2 = Math.min(maxY2 * 1.1, 150);
+      // Fixed y-limit for board 2 (matches boundingbox ymax = 80)
+      var yMax2 = 80;
 
       // CMg curve
       xs = []; ys = [];
       for (var q = 0.1; q <= qmax; q += 0.1) {
         var v = CMg(q, p);
-        if (v >= -5 && v <= maxY2) { xs.push(q); ys.push(v); }
+        if (v >= -5 && v <= yMax2) { xs.push(q); ys.push(v); }
       }
       objs2.push(b2.create('curve', [xs, ys], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
       objs2.push(b2.create('text', [xs[xs.length-1]-1, ys[ys.length-1]+2, 'CMg'], { fontSize: 10, color: '#C8102E' }));
@@ -171,7 +164,7 @@
       xs = []; ys = [];
       for (var q = 0.3; q <= qmax; q += 0.1) {
         var v = CMe(q, p);
-        if (!isNaN(v) && v >= 0 && v <= maxY2) { xs.push(q); ys.push(v); }
+        if (!isNaN(v) && v >= 0 && v <= yMax2) { xs.push(q); ys.push(v); }
       }
       objs2.push(b2.create('curve', [xs, ys], { strokeColor: '#1565c0', strokeWidth: 2 }));
       objs2.push(b2.create('text', [xs[xs.length-1]-1, ys[ys.length-1]+2, 'CMe'], { fontSize: 10, color: '#1565c0' }));
@@ -180,7 +173,7 @@
       xs = []; ys = [];
       for (var q = 0.3; q <= qmax; q += 0.1) {
         var v = CVMe(q, p);
-        if (!isNaN(v) && v >= 0 && v <= maxY2) { xs.push(q); ys.push(v); }
+        if (!isNaN(v) && v >= 0 && v <= yMax2) { xs.push(q); ys.push(v); }
       }
       objs2.push(b2.create('curve', [xs, ys], { strokeColor: '#00897b', strokeWidth: 2 }));
       objs2.push(b2.create('text', [xs[xs.length-1]-1, ys[ys.length-1]+2, 'CVMe'], { fontSize: 10, color: '#00897b' }));
@@ -203,7 +196,7 @@
       var cmeMin = CMe(qMinCMe, p);
 
       // Mark shutdown point
-      if (qShutdown > 0 && qShutdown < qmax && cvmeMin > 0 && cvmeMin < maxY2) {
+      if (qShutdown > 0 && qShutdown < qmax && cvmeMin > 0 && cvmeMin < yMax2) {
         objs2.push(b2.create('point', [qShutdown, cvmeMin], {
           name: '', size: 4, color: '#00897b', fixed: true
         }));
@@ -212,7 +205,7 @@
       }
 
       // Mark min CMe
-      if (qMinCMe > 0 && qMinCMe < qmax && cmeMin > 0 && cmeMin < maxY2) {
+      if (qMinCMe > 0 && qMinCMe < qmax && cmeMin > 0 && cmeMin < yMax2) {
         objs2.push(b2.create('point', [qMinCMe, cmeMin], {
           name: '', size: 4, color: '#1565c0', fixed: true
         }));
