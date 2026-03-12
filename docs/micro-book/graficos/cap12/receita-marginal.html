@@ -96,24 +96,20 @@
       var qMR0 = a / (2 * b); // MR = 0
 
       // Demand curve: p = a - bq
-      objs.push(board.create('line', [[0, a], [qMax, 0]], {
-        strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false
-      }));
+      var xs_d = [], ys_d = [];
+      for (var q = 0; q <= qMax; q += 0.1) {
+        xs_d.push(q); ys_d.push(a - b * q);
+      }
+      xs_d.push(qMax); ys_d.push(0);
+      objs.push(board.create('curve', [xs_d, ys_d], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
       objs.push(board.create('text', [qMax * 0.85, (a - b * qMax * 0.85) + 1, 'D'], { fontSize: 11, color: '#1565c0' }));
 
-      // MR curve: MR = a - 2bq
-      var qMRend = a / (2 * b);
-      objs.push(board.create('segment', [[0, a], [qMax, -a]], {
-        strokeColor: '#C8102E', strokeWidth: 2.5
-      }));
-      // Only show positive + slightly negative part
+      // MR curve: MR = a - 2bq (show positive + slightly negative part)
       var xs_mr = [], ys_mr = [];
       for (var q = 0; q <= qMax * 1.1; q += 0.1) {
         var mr = a - 2 * b * q;
         if (mr >= -10) { xs_mr.push(q); ys_mr.push(mr); }
       }
-      // Remove the segment, redraw as curve to control range
-      board.removeObject(objs[objs.length - 1]); objs.pop();
       objs.push(board.create('curve', [xs_mr, ys_mr], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
       objs.push(board.create('text', [qMax * 0.45, -8, 'RMg'], { fontSize: 11, color: '#C8102E' }));
 
