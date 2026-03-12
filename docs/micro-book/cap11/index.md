@@ -370,6 +370,13 @@ Propriedade importante: no ponto de tangência, o CMg de curto prazo é igual ao
 \mathrm{CMg}_{CP}(q^*; \bar{K}^*) = \mathrm{CMg}_{LP}(q^*)
 \]
 
+A visualização abaixo complementa a Figura 11.3 mostrando a envoltória em termos de **custo total** (e não custo médio). Cada curva colorida representa o \(CT_{CP}(q; \bar{K}) = wq^2/\bar{K} + v\bar{K}\) para um nível fixo de capital, assumindo a tecnologia Cobb-Douglas \(q = K^{0{,}5}L^{0{,}5}\). A curva azul — o custo total de longo prazo — é calculada **numericamente** como \(CT_{LP}(q) = \min_{\bar{K}} CT_{CP}(q; \bar{K})\) para cada \(q\), confirmando que a envoltória inferior emerge da minimização ponto a ponto. Nos pontos de tangência (marcadores verdes), a inclinação do \(CT_{CP}\) é igual à do \(CT_{LP}\) — uma aplicação direta do **Teorema do Envelope**: a derivada da função valor em relação ao parâmetro (\(q\)) coincide com a derivada parcial do objetivo avaliada no ótimo.
+
+<figure markdown="span">
+  <iframe src="../graficos/cap11/envoltoria-custo-total.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+  <figcaption markdown="span"><strong>Figura 11.4</strong> — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente. Os pontos verdes indicam onde cada \(CT_{CP}\) tangencia a envoltória. Use os controles para alterar \(w\) e \(v\), e as caixas de seleção para mostrar/ocultar curvas individuais e pontos de tangência.</figcaption>
+</figure>
+
 ### Economias e deseconomias de escala
 
 A forma da curva \(\mathrm{CMe}_{LP}\) reflete os rendimentos de escala:

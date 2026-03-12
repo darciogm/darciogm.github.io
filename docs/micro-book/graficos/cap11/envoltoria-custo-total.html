@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+  Cap. 11 — Envoltória de Custo Total: CT de Curto Prazo e Longo Prazo
+  Library: JSXGraph
+  Production function: q = K^0.5 * L^0.5 (CRS Cobb-Douglas)
+  CT_CP(q, Kbar) = w*q^2/Kbar + v*Kbar
+  CT_LP(q) = min_k CT_CP(q, k)  [computed numerically]
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envoltória de Custo Total</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .checkbox-group { margin-bottom: .5rem; font-size: .85rem; }
+    .checkbox-group label { cursor: pointer; display: flex; align-items: center; gap: .4rem; margin-bottom: .3rem; }
+    .checkbox-group input[type="checkbox"] { accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .legend { margin-top: .5rem; font-size: .78rem; line-height: 1.8; }
+    .legend-item { display: flex; align-items: center; gap: .4rem; }
+    .legend-swatch { display: inline-block; width: 18px; height: 3px; border-radius: 1px; }
+    .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-title">Curvas de Custo Total de Curto Prazo e a Envoltória de Longo Prazo</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>\(w\) (salário): <span class="val" id="val-w">1.00</span></label>
+        <input type="range" id="sl-w" min="0.5" max="4" step="0.25" value="1">
+      </div>
+      <div class="slider-group">
+        <label>\(v\) (preço do capital): <span class="val" id="val-v">1.00</span></label>
+        <input type="range" id="sl-v" min="0.5" max="4" step="0.25" value="1">
+      </div>
+      <div class="checkbox-group">
+        <strong style="font-size:.85rem;display:block;margin-bottom:.3rem;">Curvas de \(\bar{K}\):</strong>
+        <label><input type="checkbox" class="cb-k" data-k="0.5" checked> \(\bar{K} = 0{,}5\)</label>
+        <label><input type="checkbox" class="cb-k" data-k="1" checked> \(\bar{K} = 1\)</label>
+        <label><input type="checkbox" class="cb-k" data-k="2" checked> \(\bar{K} = 2\)</label>
+        <label><input type="checkbox" class="cb-k" data-k="4" checked> \(\bar{K} = 4\)</label>
+        <label><input type="checkbox" class="cb-k" data-k="8" checked> \(\bar{K} = 8\)</label>
+      </div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="cb-tangency" checked> Mostrar pontos de tangência</label>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-swatch" style="background:#E69F00"></span> \(CT_{CP}\) com \(\bar{K}=0{,}5\)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#56B4E9"></span> \(CT_{CP}\) com \(\bar{K}=1\)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#009E73"></span> \(CT_{CP}\) com \(\bar{K}=2\)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#CC79A7"></span> \(CT_{CP}\) com \(\bar{K}=4\)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#D55E00"></span> \(CT_{CP}\) com \(\bar{K}=8\)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#1565c0;height:4px"></span> \(CT_{LP}\) (envoltória)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#00897b"></span> Ponto de tangência</div>
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // --- Board setup ---
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.4, 22, 8, -1],
+      axis: false, showCopyright: false, showNavigation: false,
+      pan: { enabled: true }, zoom: { wheel: true, pinch: true }
+    });
+    board.create('axis', [[0,0],[8,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,22]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('text', [7.5, -0.6, 'q'], { fontSize: 13, cssClass: 'axis-label' });
+    board.create('text', [-0.35, 21, 'CT'], { fontSize: 13, cssClass: 'axis-label' });
+
+    var objs = [];
+
+    // Colorblind-safe palette (Wong 2011)
+    var kVals   = [0.5, 1, 2, 4, 8];
+    var kColors = ['#E69F00', '#56B4E9', '#009E73', '#CC79A7', '#D55E00'];
+
+    // --- Model ---
+    // Production: q = K^0.5 * L^0.5  (Cobb-Douglas, alpha=beta=0.5)
+    // SR: L*(q, Kbar) = q^2 / Kbar
+    // CT_CP(q, Kbar) = w * q^2 / Kbar + v * Kbar
+    function CT_CP(q, Kbar, w, v) {
+      return w * q * q / Kbar + v * Kbar;
+    }
+
+    // LR: CT_LP(q) = min over k of CT_CP(q, k)  [numerical grid search]
+    function CT_LP_numeric(q, w, v) {
+      var kMin = 0.05, kMax = 20, dk = 0.02;
+      var best = Infinity;
+      for (var k = kMin; k <= kMax; k += dk) {
+        var c = CT_CP(q, k, w, v);
+        if (c < best) best = c;
+      }
+      return best;
+    }
+
+    // Tangency: k*(q) that minimizes CT_CP w.r.t. k
+    // dCT_CP/dk = -w*q^2/k^2 + v = 0  =>  k* = q * sqrt(w/v)
+    // We verify numerically that CT_CP(q, k*) = CT_LP(q)
+    function kStar(q, w, v) {
+      return q * Math.sqrt(w / v);
+    }
+
+    // --- Drawing ---
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var w = parseFloat(document.getElementById('sl-w').value);
+      var v = parseFloat(document.getElementById('sl-v').value);
+      document.getElementById('val-w').textContent = w.toFixed(2);
+      document.getElementById('val-v').textContent = v.toFixed(2);
+
+      var showTangency = document.getElementById('cb-tangency').checked;
+      var checkboxes = document.querySelectorAll('.cb-k');
+      var activeK = [];
+      for (var ci = 0; ci < checkboxes.length; ci++) {
+        if (checkboxes[ci].checked) activeK.push(parseFloat(checkboxes[ci].dataset.k));
+      }
+
+      var qmax = 7.5;
+
+      // Draw CT_CP curves for each active K
+      for (var ki = 0; ki < kVals.length; ki++) {
+        var Kb = kVals[ki];
+        if (activeK.indexOf(Kb) === -1) continue;
+
+        var xs = [], ys = [];
+        for (var q = 0; q <= qmax; q += 0.05) {
+          var c = CT_CP(q, Kb, w, v);
+          if (c <= 21) { xs.push(q); ys.push(c); }
+        }
+        if (xs.length > 1) {
+          objs.push(board.create('curve', [xs, ys], {
+            strokeColor: kColors[ki], strokeWidth: 2, highlight: false
+          }));
+          // Label near the right end of each curve
+          var li = Math.min(xs.length - 1, Math.floor(xs.length * 0.8));
+          if (ys[li] < 19) {
+            objs.push(board.create('text', [xs[li] + 0.1, ys[li] + 0.5,
+              'K\u0305=' + (Kb < 1 ? '0,' + (Kb*10) : Kb)],
+              { fontSize: 9, color: kColors[ki], anchorX: 'left' }));
+          }
+        }
+      }
+
+      // CT_LP envelope (numerical)
+      var xs_lr = [0], ys_lr = [0];
+      for (var q = 0.05; q <= qmax; q += 0.05) {
+        var c = CT_LP_numeric(q, w, v);
+        if (c <= 21) { xs_lr.push(q); ys_lr.push(c); }
+      }
+      if (xs_lr.length > 1) {
+        objs.push(board.create('curve', [xs_lr, ys_lr], {
+          strokeColor: '#1565c0', strokeWidth: 3.5, highlight: false
+        }));
+        var idx = Math.floor(xs_lr.length * 0.9);
+        if (ys_lr[idx] < 19) {
+          objs.push(board.create('text', [xs_lr[idx] + 0.15, ys_lr[idx] - 0.8,
+            'CT_LP'], { fontSize: 11, color: '#1565c0', fontWeight: 700 }));
+        }
+      }
+
+      // Tangency points
+      if (showTangency) {
+        for (var ki = 0; ki < kVals.length; ki++) {
+          var Kb = kVals[ki];
+          if (activeK.indexOf(Kb) === -1) continue;
+
+          // q at tangency: k* = q*sqrt(w/v)  =>  q_tan = Kb / sqrt(w/v) = Kb * sqrt(v/w)
+          var qTan = Kb * Math.sqrt(v / w);
+          if (qTan > 0 && qTan <= qmax) {
+            var ctTan = CT_CP(qTan, Kb, w, v);
+            if (ctTan <= 21) {
+              objs.push(board.create('point', [qTan, ctTan], {
+                name: '', size: 4, color: '#00897b', fixed: true,
+                strokeColor: '#00897b', fillColor: '#00897b'
+              }));
+            }
+          }
+        }
+      }
+
+      // Info box
+      var info = document.getElementById('info');
+      var html = '<div>\\(q = K^{0{,}5} L^{0{,}5}\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div>\\(CT_{CP}(q;\\bar{K}) = \\frac{wq^2}{\\bar{K}} + v\\bar{K}\\)</div>';
+      html += '<div>\\(CT_{LP}(q) = \\min_{\\bar{K}} CT_{CP}(q;\\bar{K})\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      // Analytical check: CT_LP = 2*sqrt(wv)*q
+      var ctlp_coef = 2 * Math.sqrt(w * v);
+      html += '<div style="font-size:.78rem;color:#666">Verificação: \\(CT_{LP} = 2\\sqrt{wv}\\,q = '
+            + ctlp_coef.toFixed(2) + '\\,q\\)</div>';
+
+      if (showTangency) {
+        html += '<div style="margin-top:.3rem;font-size:.78rem;color:#00897b">';
+        html += 'Tangência: \\(\\bar{K}^* = q\\sqrt{w/v}\\)</div>';
+      }
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-w').value = 1;
+      document.getElementById('sl-v').value = 1;
+      document.getElementById('cb-tangency').checked = true;
+      var cbs = document.querySelectorAll('.cb-k');
+      for (var i = 0; i < cbs.length; i++) cbs[i].checked = true;
+      draw();
+    }
+
+    // Event listeners
+    ['sl-w', 'sl-v'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    document.getElementById('cb-tangency').addEventListener('change', draw);
+    var cbs = document.querySelectorAll('.cb-k');
+    for (var i = 0; i < cbs.length; i++) {
+      cbs[i].addEventListener('change', draw);
+    }
+
+    draw();
+  </script>
+</body>
+</html>
