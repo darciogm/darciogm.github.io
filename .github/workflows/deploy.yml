@@ -25,8 +25,15 @@ jobs:
           python-version: '3.x'
       - run: pip install mkdocs-material mkdocs-glightbox
 
-      # Build site (includes micro-book section)
+      # Build main site
       - run: mkdocs build
+
+      # Copy pre-built procure meeting site
+      - run: |
+          if [ -d "procure_meeting_0326" ]; then
+            mkdir -p site/procure/meeting_0326
+            cp -r procure_meeting_0326/* site/procure/meeting_0326/
+          fi
 
       - uses: actions/upload-pages-artifact@v3
         with:
