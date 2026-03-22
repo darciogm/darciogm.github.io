@@ -425,3 +425,11 @@ figcaption {
 .md-nav__item--active > a.md-nav__link--active {
   cursor: pointer;
 }
+
+/* Wrapper de tabelas — remover margin-bottom extra */
+.md-typeset__scrollwrap {
+    margin-bottom: 0 !important;
+}
+.md-typeset__table {
+    margin-bottom: 0 !important;
+}
