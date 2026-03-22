@@ -1,87 +1,206 @@
 <!DOCTYPE html>
+<!--
+  Otimização com Restrição — Lagrangeano
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Otimização com Restrição — Lagrangeano</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
-<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f9fa; color: #222; }
-  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
-  h2 { text-align: center; margin-bottom: 0.3rem; color: #333; font-size: 1.3rem; }
-  .subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
-  #board { width: 100%; height: 520px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
-  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1rem 0; justify-content: center; }
-  .controls label { font-weight: 600; font-size: 0.95rem; }
-  .controls input[type=range] { width: 220px; accent-color: #C8102E; }
-  .controls span { font-family: 'Courier New', monospace; min-width: 2.5rem; }
-  .info-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
-  .info-card { background: #fff; border-radius: 8px; padding: 0.8rem 1rem; border-left: 4px solid #1565c0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-  .info-card.opt { border-left-color: #C8102E; }
-  .info-card.lambda { border-left-color: #00897b; }
-  .info-card .label { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-  .info-card .value { font-size: 1.05rem; font-weight: 700; margin-top: 0.2rem; }
-  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 0.8rem; font-size: 0.85rem; }
-  .legend-item { display: flex; align-items: center; gap: 0.4rem; }
-  .legend-swatch { width: 24px; height: 4px; border-radius: 2px; }
-  button.reset { background: #C8102E; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
-  button.reset:hover { background: #a00d24; }
-  .note { text-align: center; font-size: 0.82rem; color: #666; margin-top: 0.6rem; font-style: italic; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otimização com Restrição — Lagrangeano</title>
+
+  <!-- JSXGraph -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #C8102E;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 450px;
+      max-width: 560px;
+      height: 450px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 300px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    .info-box .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .info-box .info-label {
+      color: #666;
+    }
+    .info-box .info-val {
+      font-weight: 700;
+      color: #333;
+    }
+    .info-box .info-val.accent { color: #C8102E; }
+    .info-box .info-val.green { color: #00897b; }
+    .info-box .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 0.4rem 0;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .legend-swatch {
+      width: 18px;
+      height: 3px;
+      border-radius: 2px;
+    }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-  <h2>Otimização com Restrição: Método de Lagrange</h2>
-  <p class="subtitle">\(\max f(x,y) = xy\) sujeito a \(g(x,y) = x + y = c\) &mdash; Condição: \(\nabla f = \lambda \nabla g\)</p>
+  <div class="graph-title">Figura 2.3 — Otimização com Restrição: Método de Lagrange</div>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
 
-  <div class="controls">
-    <label>Restrição \(c\):</label>
-    <input type="range" id="sliderC" min="2" max="20" value="10" step="0.5">
-    <span id="valC">10.0</span>
-    <button class="reset" onclick="resetGraph()">Reset</button>
+      <div class="slider-group">
+        <label>Restrição \(c\): <span class="val" id="valC">10.0</span></label>
+        <input type="range" id="sliderC" min="2" max="20" value="10" step="0.5">
+      </div>
+
+      <div class="info-box">
+        <div class="info-row">
+          <span class="info-label">Ótimo \((x^*, y^*)\)</span>
+          <span class="info-val accent" id="optXY">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Valor ótimo \(f^*\)</span>
+          <span class="info-val accent" id="fStar">—</span>
+        </div>
+        <hr class="divider">
+        <div class="info-row">
+          <span class="info-label">Multiplicador \(\lambda^*\)</span>
+          <span class="info-val green" id="lambdaStar">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">\(\nabla f\) no ótimo</span>
+          <span class="info-val" id="gradF">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">\(\lambda \nabla g\) no ótimo</span>
+          <span class="info-val" id="lambdaGradG">—</span>
+        </div>
+        <hr class="divider">
+        <div class="info-row">
+          <span class="info-label">Condição \(\nabla f = \lambda \nabla g\)</span>
+          <span class="info-val green" id="condition">—</span>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Curvas de nível \(f=k\)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Restrição \(x+y=c\)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#00897b; border-radius:50%; width:10px; height:10px;"></div> Ótimo</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#ff9800"></div> \(\nabla f\)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#7b1fa2"></div> \(\lambda \nabla g\)</div>
+      </div>
+
+      <button class="btn-reset" onclick="resetGraph()">Resetar</button>
+    </div>
   </div>
-
-  <div id="board"></div>
-
-  <div class="legend">
-    <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Curvas de nível \(f(x,y)=k\)</div>
-    <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Restrição \(x+y=c\)</div>
-    <div class="legend-item"><div class="legend-swatch" style="background:#00897b; border-radius:50%; width:12px; height:12px;"></div> Ótimo (tangência)</div>
-    <div class="legend-item"><div class="legend-swatch" style="background:#ff9800"></div> \(\nabla f\)</div>
-    <div class="legend-item"><div class="legend-swatch" style="background:#7b1fa2"></div> \(\lambda \nabla g\)</div>
-  </div>
-
-  <div class="info-panel">
-    <div class="info-card opt">
-      <div class="label">Ótimo \((x^*, y^*)\)</div>
-      <div class="value" id="optXY">—</div>
-    </div>
-    <div class="info-card opt">
-      <div class="label">Valor ótimo \(f^*\)</div>
-      <div class="value" id="fStar">—</div>
-    </div>
-    <div class="info-card lambda">
-      <div class="label">Multiplicador \(\lambda^*\)</div>
-      <div class="value" id="lambdaStar">—</div>
-    </div>
-    <div class="info-card">
-      <div class="label">\(\nabla f\) no ótimo</div>
-      <div class="value" id="gradF">—</div>
-    </div>
-    <div class="info-card">
-      <div class="label">\(\lambda \nabla g\) no ótimo</div>
-      <div class="value" id="lambdaGradG">—</div>
-    </div>
-    <div class="info-card lambda">
-      <div class="label">Condição \(\nabla f = \lambda \nabla g\)</div>
-      <div class="value" id="condition">—</div>
-    </div>
-  </div>
-  <p class="note">O ponto ótimo ocorre onde a curva de nível de \(f\) é tangente à restrição. Os gradientes são paralelos.</p>
-</div>
 
 <script>
 var board;
@@ -99,7 +218,7 @@ function fStar() { return cVal * cVal / 4; }
 function lambdaStar() { return cVal / 2; }
 
 function initBoard() {
-  board = JXG.JSXGraph.initBoard('board', {
+  board = JXG.JSXGraph.initBoard('jxgbox', {
     boundingbox: [-2, 20.5, 19, -2],
     axis: true,
     showCopyright: false,
