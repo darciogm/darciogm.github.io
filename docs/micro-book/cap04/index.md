@@ -175,6 +175,10 @@ As propriedades da demanda marshalliana revelam regularidades profundas do compo
 
 ---
 
+## 🎯 Exercícios Resolvidos
+
+Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste capítulo. Recomenda-se tentar resolver cada exercício antes de consultar a solução.
+
 ??? exercicio-resolvido "Exercício Resolvido 4.1"
     **Enunciado:** Um consumidor tem função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), preços \(p_1 = 6\), \(p_2 = 3\) e renda \(I = 180\). Encontre a cesta ótima e a utilidade máxima.
 
