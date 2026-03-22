@@ -152,68 +152,470 @@ Mas, pela condição de primeira ordem, \(\frac{\partial f}{\partial x}\big|_{x^
 
 ## 2.5 Maximização com restrições: o método de Lagrange
 
-### Formulação do problema
+O método de Lagrange é a ferramenta mais importante deste capítulo — e, possivelmente, de todo o curso de microeconomia. Praticamente todos os modelos que estudaremos — consumidor, firma, equilíbrio geral — envolvem otimizar uma função sujeita a restrições. Esta seção apresenta o método em um passo a passo detalhado, para que o leitor possa aplicá-lo com confiança a qualquer problema.
 
-O problema canônico da microeconomia é:
+!!! info "Referências para aprofundamento"
+    Para uma exposição mais detalhada dos fundamentos matemáticos do método de Lagrange, consulte Chiang & Wainwright (2005, Cap. 12) e Simon & Blume (1994, Cap. 18–19). Para aplicações econômicas, veja Nicholson & Snyder (2017, Cap. 2) e Jehle & Reny (2011, Cap. 1).
 
-\[
-\max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n) \quad \text{sujeito a} \quad g(x_1, \ldots, x_n) = c
-\]
+### Passo 0 — Identificar o problema
 
-onde \(f\) é a função objetivo e \(g(\mathbf{x}) = c\) é a restrição.
-
-### O Lagrangeano
-
-Define-se a **função de Lagrange** (ou Lagrangeano):
+O problema canônico da microeconomia pode ser escrito na forma:
 
 \[
-\mathcal{L}(x_1, \ldots, x_n, \lambda) = f(x_1, \ldots, x_n) + \lambda \left[c - g(x_1, \ldots, x_n)\right]
+\max_{x_1, x_2} f(x_1, x_2) \quad \text{sujeito a} \quad g(x_1, x_2) = c \tag{2.1}
 \]
 
-onde \(\lambda\) é o **multiplicador de Lagrange**.
+onde \(f\) é a **função objetivo** (o que o agente quer maximizar ou minimizar) e \(g(x_1, x_2) = c\) é a **restrição** (a limitação que o agente enfrenta). A formulação se generaliza para \(n\) variáveis de escolha e múltiplas restrições, mas o caso com duas variáveis e uma restrição é o ponto de partida ideal.
 
-### Condições de primeira ordem
+!!! info "Intuição econômica"
+    Por que precisamos otimizar sob restrição? Porque em economia os recursos são escassos. Dois exemplos fundamentais:
+
+    - **Consumidor**: maximiza a utilidade \(U(x_1, x_2)\) sujeito à restrição orçamentária \(p_1 x_1 + p_2 x_2 = m\). Aqui, \(f = U\), \(g = p_1 x_1 + p_2 x_2\), e \(c = m\).
+    - **Firma**: minimiza o custo \(wL + rK\) sujeito a atingir um nível de produção \(f(K, L) = q_0\). Aqui, a função objetivo é o custo, a restrição é a isoquanta, e \(c = q_0\).
+
+    Sem a restrição, a solução seria trivial (consumir infinito, por exemplo). É a escassez que torna o problema interessante — e que dá origem ao conceito de **custo de oportunidade**.
+
+### Passo 1 — Montar o Lagrangeano
+
+A ideia central do método de Lagrange é transformar o problema **restrito** em um problema **irrestrito**, incorporando a restrição diretamente na função a ser otimizada. Define-se a **função de Lagrange** (ou Lagrangeano):
 
 \[
-\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial f}{\partial x_i} - \lambda \frac{\partial g}{\partial x_i} = 0, \quad i = 1, \ldots, n
+\mathcal{L}(x_1, x_2, \lambda) = f(x_1, x_2) + \lambda \left[c - g(x_1, x_2)\right] \tag{2.2}
 \]
 
-\[
-\frac{\partial \mathcal{L}}{\partial \lambda} = c - g(x_1, \ldots, x_n) = 0
-\]
+onde \(\lambda\) é o **multiplicador de Lagrange**, uma nova variável de escolha introduzida pelo método.
 
-Das primeiras \(n\) condições, obtém-se:
-
-\[
-\frac{f_i}{g_i} = \lambda, \quad \forall \, i
-\]
-
-Isso implica que as **razões das derivadas parciais** da função objetivo e da restrição são iguais para todas as variáveis — um resultado com interpretação econômica profunda.
-
-### Interpretação do multiplicador de Lagrange
-
-!!! definition "Interpretação de \(\lambda\)"
-    O multiplicador de Lagrange \(\lambda\) mede o **valor marginal da restrição**: é a taxa à qual o valor ótimo da função objetivo aumenta quando a constante da restrição é relaxada marginalmente.
+!!! tip "Dica: convenção de sinal"
+    A equação (2.2) pode ser escrita equivalentemente como:
 
     \[
-    \lambda^* = \frac{dV}{dc}
+    \mathcal{L} = f(x_1, x_2) - \lambda \left[g(x_1, x_2) - c\right]
     \]
 
-    onde \(V(c) = f(\mathbf{x}^*(c))\) é a função valor.
+    As duas formas são matematicamente idênticas (basta redefinir o sinal de \(\lambda\)). Neste livro, adotamos a convenção \(f + \lambda[c - g]\), que garante que \(\lambda > 0\) em problemas de maximização com restrições "do tipo orçamentário". Alguns textos (como Varian, 1992) usam a outra convenção. O importante é ser consistente.
 
-**Exemplo: maximização de utilidade.** No problema do consumidor:
+!!! info "Intuição econômica"
+    O multiplicador \(\lambda\) tem um significado econômico profundo: é o **valor-sombra** (*shadow price*) da restrição. Ele mede quanto a função objetivo melhoraria se pudéssemos "relaxar" a restrição em uma unidade marginal. Por exemplo, no problema do consumidor, \(\lambda\) é a **utilidade marginal da renda** — quanto a utilidade máxima aumenta se a renda crescer em R\$ 1.
+
+### Passo 2 — Condições de primeira ordem (CPOs)
+
+Para encontrar o ótimo, derivamos \(\mathcal{L}\) em relação a cada variável de escolha (\(x_1\), \(x_2\)) e em relação a \(\lambda\), e igualamos a zero:
 
 \[
-\max_{x_1, x_2} U(x_1, x_2) \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m
+\frac{\partial \mathcal{L}}{\partial x_1} = \frac{\partial f}{\partial x_1} - \lambda \frac{\partial g}{\partial x_1} = 0 \tag{2.3}
 \]
-
-O multiplicador \(\lambda\) é a **utilidade marginal da renda**: mede o aumento na utilidade máxima quando a renda \(m\) aumenta em uma unidade monetária. As CPOs implicam:
 
 \[
-\frac{UMg_1}{p_1} = \frac{UMg_2}{p_2} = \lambda
+\frac{\partial \mathcal{L}}{\partial x_2} = \frac{\partial f}{\partial x_2} - \lambda \frac{\partial g}{\partial x_2} = 0 \tag{2.4}
 \]
 
-Ou seja, no ótimo, a utilidade marginal por unidade monetária gasta é igual para todos os bens — o famoso princípio da **equimarginalidade**.
+\[
+\frac{\partial \mathcal{L}}{\partial \lambda} = c - g(x_1, x_2) = 0 \tag{2.5}
+\]
+
+Observe que a terceira CPO, equação (2.5), simplesmente **recupera a restrição original** \(g(x_1, x_2) = c\). Isso é uma consequência direta de como o Lagrangeano foi construído.
+
+**Condição de tangência.** Das equações (2.3) e (2.4), podemos isolar \(\lambda\):
+
+\[
+\lambda = \frac{f_{x_1}}{g_{x_1}} = \frac{f_{x_2}}{g_{x_2}}
+\]
+
+Igualando as duas expressões:
+
+\[
+\frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}} \tag{2.6}
+\]
+
+A equação (2.6) é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
+
+!!! info "Intuição econômica"
+    No problema do consumidor, a equação (2.6) se torna:
+
+    \[
+    \frac{UMg_1}{UMg_2} = \frac{p_1}{p_2}
+    \]
+
+    Ou seja, a **taxa marginal de substituição** (TMS) se iguala à razão de preços. O consumidor ajusta suas quantidades até que a taxa à qual está *disposto* a trocar os bens (TMS) se iguale à taxa à qual o *mercado* permite trocá-los (razão de preços).
+
+### Passo 3 — Resolver o sistema
+
+O sistema de CPOs consiste em \(n + 1\) equações com \(n + 1\) incógnitas (no caso de duas variáveis: \(x_1, x_2, \lambda\) — três equações e três incógnitas). As estratégias de resolução mais comuns são:
+
+**Estratégia A — Isolar \(\lambda\) e igualar.** De cada uma das primeiras CPOs, isola-se \(\lambda\):
+
+\[
+\lambda = \frac{f_{x_1}}{g_{x_1}}, \qquad \lambda = \frac{f_{x_2}}{g_{x_2}}
+\]
+
+Igualando as expressões, obtém-se uma relação entre \(x_1\) e \(x_2\) (a condição de tangência). Substituindo na restrição \(g = c\), resolve-se para os valores ótimos.
+
+**Estratégia B — Dividir CPOs.** Divide-se a equação (2.3) pela equação (2.4):
+
+\[
+\frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}}
+\]
+
+Isso elimina \(\lambda\) diretamente e fornece a condição de tangência. Em seguida, substitui-se na restrição.
+
+!!! tip "Dica"
+    A estratégia B é geralmente a mais rápida, pois elimina \(\lambda\) em um único passo. A estratégia A é útil quando as expressões se simplificam melhor ao isolar \(\lambda\). Na prática, vale tentar as duas e escolher a mais conveniente.
+
+!!! warning "Cuidado"
+    Ao dividir CPOs, verifique que o denominador não é zero. Se \(f_{x_2} = 0\) ou \(g_{x_2} = 0\) em algum ponto, a divisão não é válida e pode haver soluções de canto. Nesse caso, é necessário usar o método de Kuhn-Tucker (Seção 2.7).
+
+### Passo 4 — Interpretar \(\lambda\)
+
+O multiplicador de Lagrange no ótimo, \(\lambda^*\), tem uma interpretação precisa como a derivada do **valor ótimo** em relação ao parâmetro da restrição:
+
+\[
+\lambda^* = \frac{df^*}{dc} = \frac{dV}{dc} \tag{2.7}
+\]
+
+onde \(V(c) = f(\mathbf{x}^*(c))\) é a **função valor** — o valor máximo de \(f\) dado o nível da restrição \(c\). Este resultado é uma consequência do **teorema do envelope** aplicado ao problema restrito (ver Seção 2.6).
+
+!!! example "Exemplo numérico"
+    Suponha que resolvemos o problema do consumidor e encontramos \(\lambda^* = 0{,}5\). Isso significa que, se a renda do consumidor aumentar em R\$ 1 (de \(m\) para \(m + 1\)), a utilidade máxima aumentará em aproximadamente 0,5 unidades. Reciprocamente, se a renda diminuir em R\$ 1, a utilidade cairá em aproximadamente 0,5 unidades.
+
+!!! info "Intuição econômica"
+    No problema do consumidor, \(\lambda^*\) é a **utilidade marginal da renda**. As CPOs implicam:
+
+    \[
+    \frac{UMg_1}{p_1} = \frac{UMg_2}{p_2} = \lambda
+    \]
+
+    Ou seja, no ótimo, a utilidade marginal por unidade monetária gasta é igual para todos os bens — o princípio da **equimarginalidade**. Se essa igualdade não valesse, o consumidor poderia realocar seu gasto entre os bens e aumentar sua utilidade.
+
+    No problema da firma (minimização de custos), \(\lambda^*\) é o **custo marginal**: quanto custa produzir uma unidade adicional de produto quando a firma já está minimizando custos (ver [Capítulo 10](../cap10/index.md#condicao-de-tangencia)).
+
+### Passo 5 — Verificar condições de segunda ordem
+
+Encontrar um ponto que satisfaça as CPOs é necessário, mas não suficiente — pode ser um máximo, um mínimo ou um ponto de sela. A verificação formal das condições de segunda ordem utiliza o **hessiano orlado** (*bordered Hessian*).
+
+Para o caso de duas variáveis e uma restrição, o hessiano orlado é a matriz \(3 \times 3\):
+
+\[
+\bar{H} = \begin{pmatrix}
+0 & g_{x_1} & g_{x_2} \\
+g_{x_1} & \mathcal{L}_{x_1 x_1} & \mathcal{L}_{x_1 x_2} \\
+g_{x_2} & \mathcal{L}_{x_2 x_1} & \mathcal{L}_{x_2 x_2}
+\end{pmatrix} \tag{2.8}
+\]
+
+onde \(\mathcal{L}_{x_i x_j} = f_{x_i x_j} - \lambda g_{x_i x_j}\) são as derivadas segundas do Lagrangeano.
+
+A condição suficiente para **máximo** com restrição é:
+
+\[
+\det(\bar{H}) > 0 \tag{2.9}
+\]
+
+Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
+
+!!! tip "Dica"
+    Na prática, muitos problemas econômicos envolvem funções objetivo **quase-côncavas** (como a maioria das funções utilidade) e restrições lineares (como a restrição orçamentária). Nesses casos, a quase-concavidade garante que qualquer ponto que satisfaça as CPOs é necessariamente um máximo global — dispensando a verificação explícita do hessiano orlado (ver Seção 2.8).
+
+!!! warning "Cuidado"
+    Um erro comum é encontrar as CPOs, resolver o sistema e declarar a resposta como "o ótimo", sem verificar se é de fato um máximo (ou mínimo, conforme o problema). Em provas e exercícios, sempre mencione por que as condições de segunda ordem são satisfeitas — nem que seja por um argumento de quase-concavidade.
+
+### Exercício resolvido: maximização de utilidade CES via Lagrangeano {#exercicio-ces}
+
+Aplicamos agora o passo a passo completo a um problema que será recorrente ao longo do livro: a maximização de utilidade com preferências CES.
+
+#### Enunciado
+
+Um consumidor tem preferências representadas pela função de utilidade **CES** (*Constant Elasticity of Substitution* — Elasticidade de Substituição Constante):
+
+\[
+U(x_1, x_2) = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \tag{2.10}
+\]
+
+onde \(0 < \alpha < 1\) é o parâmetro de distribuição e \(\rho < 1\), \(\rho \neq 0\), é o parâmetro de substituição. A **elasticidade de substituição** é:
+
+\[
+\sigma = \frac{1}{1 - \rho} \tag{2.11}
+\]
+
+O consumidor dispõe de renda \(m\) e enfrenta preços \(p_1\) e \(p_2\).
+
+**Problema:** Encontre as demandas marshallianas \(x_1^*(p_1, p_2, m)\) e \(x_2^*(p_1, p_2, m)\) usando o método do Lagrangeano.
+
+#### Resolução
+
+##### Passo 0 — Identificar o problema
+
+O problema do consumidor é:
+
+\[
+\max_{x_1, x_2} \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m \tag{2.12}
+\]
+
+Aqui, \(f(x_1, x_2) = U(x_1, x_2)\) é a utilidade CES, \(g(x_1, x_2) = p_1 x_1 + p_2 x_2\) é o gasto total, e \(c = m\) é a renda.
+
+##### Passo 1 — Montar o Lagrangeano
+
+O Lagrangeano é:
+
+\[
+\mathcal{L} = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \tag{2.13}
+\]
+
+!!! tip "Dica: simplificação por transformação monotônica"
+    A função \(z^{1/\rho}\) é uma transformação monotônica crescente de \(z\) (para \(z > 0\)). Como transformações monotônicas preservam a ordenação de preferências, maximizar \(U = (\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho})^{1/\rho}\) é equivalente a maximizar:
+
+    \[
+    V(x_1, x_2) = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} \tag{2.14}
+    \]
+
+    Esta simplificação elimina o expoente \(1/\rho\), tornando as derivadas parciais muito mais simples. As demandas ótimas \(x_1^*\) e \(x_2^*\) serão as mesmas (apenas o valor de \(\lambda\) mudará). Usamos a versão simplificada daqui em diante.
+
+O Lagrangeano simplificado é:
+
+\[
+\mathcal{L} = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \tag{2.15}
+\]
+
+##### Passo 2 — Condições de primeira ordem
+
+Derivando o Lagrangeano (2.15) em relação a \(x_1\), \(x_2\) e \(\lambda\):
+
+\[
+\frac{\partial \mathcal{L}}{\partial x_1} = \alpha \rho \, x_1^{\rho - 1} - \lambda p_1 = 0 \tag{2.16}
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial x_2} = (1-\alpha) \rho \, x_2^{\rho - 1} - \lambda p_2 = 0 \tag{2.17}
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial \lambda} = m - p_1 x_1 - p_2 x_2 = 0 \tag{2.18}
+\]
+
+A equação (2.18) confirma que a restrição orçamentária é satisfeita.
+
+##### Passo 3 — Resolver o sistema
+
+**Dividir (2.16) por (2.17)** para eliminar \(\lambda\):
+
+\[
+\frac{\alpha \rho \, x_1^{\rho - 1}}{(1-\alpha) \rho \, x_2^{\rho - 1}} = \frac{\lambda p_1}{\lambda p_2}
+\]
+
+Os fatores \(\rho\) e \(\lambda\) se cancelam:
+
+\[
+\frac{\alpha}{1-\alpha} \left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{p_1}{p_2} \tag{2.19}
+\]
+
+**Isolar a razão \(x_1/x_2\):**
+
+\[
+\left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}
+\]
+
+\[
+\frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{1/(\rho - 1)} \tag{2.20}
+\]
+
+!!! tip "Dica: relação entre os expoentes"
+    Vamos mostrar que \(\frac{1}{\rho - 1} = -\sigma\). Pela definição (2.11), \(\sigma = \frac{1}{1-\rho}\), logo:
+
+    \[
+    \frac{1}{\rho - 1} = \frac{1}{-(1 - \rho)} = -\frac{1}{1-\rho} = -\sigma
+    \]
+
+    Portanto, podemos reescrever (2.20) como:
+
+    \[
+    \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{-\sigma} = \left(\frac{\alpha}{1-\alpha} \cdot \frac{p_2}{p_1}\right)^{\sigma} \tag{2.21}
+    \]
+
+**Expressar \(x_1\) em função de \(x_2\).** Da equação (2.21):
+
+\[
+x_1 = x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} \tag{2.22}
+\]
+
+**Substituir na restrição orçamentária (2.18):**
+
+\[
+p_1 \cdot x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} + p_2 \, x_2 = m
+\]
+
+Colocando \(x_2\) em evidência:
+
+\[
+x_2 \left[p_1 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} + p_2\right] = m
+\]
+
+Simplificando o termo entre colchetes. Observe que:
+
+\[
+p_1 \left(\frac{p_2}{p_1}\right)^{\sigma} = p_1^{1-\sigma} \, p_2^{\sigma}
+\]
+
+Logo:
+
+\[
+x_2 \left[\alpha^{\sigma}(1-\alpha)^{-\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + p_2\right] = m
+\]
+
+Multiplicando e dividindo o segundo termo por \((1-\alpha)^{\sigma} (1-\alpha)^{-\sigma} = 1\):
+
+\[
+x_2 \left[\frac{\alpha^{\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + (1-\alpha)^{\sigma} \, p_2}{(1-\alpha)^{\sigma}}\right] \cdot (1-\alpha)^{\sigma} = m
+\]
+
+Fatorando \(p_2^{\sigma}\) e reorganizando, chegamos a:
+
+\[
+x_2^* = \frac{(1-\alpha)^{\sigma} \, p_2^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \tag{2.23}
+\]
+
+Por simetria (ou repetindo o procedimento para \(x_1\)):
+
+\[
+x_1^* = \frac{\alpha^{\sigma} \, p_1^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \tag{2.24}
+\]
+
+!!! definition "Demandas marshallianas CES"
+    As funções de demanda marshallianas para o caso CES são:
+
+    \[
+    \boxed{x_i^* = \frac{\alpha_i^{\sigma} \, p_i^{-\sigma}}{\sum_{j} \alpha_j^{\sigma} \, p_j^{1-\sigma}} \cdot m}, \qquad i = 1, 2
+    \]
+
+    onde \(\alpha_1 = \alpha\) e \(\alpha_2 = 1-\alpha\). A fração \(\frac{\alpha_i^{\sigma} \, p_i^{1-\sigma}}{\sum_j \alpha_j^{\sigma} \, p_j^{1-\sigma}}\) é a **parcela orçamentária** (*budget share*) do bem \(i\), denotada \(s_i\).
+
+Observe que as demandas são **homogêneas de grau zero** em \((p_1, p_2, m)\): multiplicar todos os preços e a renda por uma constante não altera as quantidades demandadas.
+
+##### Passo 4 — Interpretar \(\lambda^*\)
+
+Da CPO (2.16), isolamos \(\lambda\):
+
+\[
+\lambda^* = \frac{\alpha \rho \, (x_1^*)^{\rho-1}}{p_1} \tag{2.25}
+\]
+
+Como usamos a versão simplificada \(V = \alpha x_1^{\rho} + (1-\alpha) x_2^{\rho}\), este \(\lambda^*\) corresponde à derivada de \(V^*\) em relação a \(m\). Para obter a utilidade marginal da renda da função original \(U = V^{1/\rho}\), aplicamos a regra da cadeia.
+
+**Verificação numérica.** Considere os seguintes valores:
+
+- \(\alpha = 0{,}5\), \(\rho = 0{,}5\) (ou seja, \(\sigma = \frac{1}{1-0{,}5} = 2\))
+- \(p_1 = 2\), \(p_2 = 3\), \(m = 120\)
+
+Calculemos as demandas ótimas. O denominador comum é:
+
+\[
+D = \alpha^{\sigma} p_1^{1-\sigma} + (1-\alpha)^{\sigma} p_2^{1-\sigma} = 0{,}5^2 \cdot 2^{-1} + 0{,}5^2 \cdot 3^{-1}
+\]
+
+\[
+D = 0{,}25 \cdot 0{,}5 + 0{,}25 \cdot 0{,}333 = 0{,}125 + 0{,}0833 = 0{,}2083
+\]
+
+Demanda do bem 1:
+
+\[
+x_1^* = \frac{0{,}5^2 \cdot 2^{-2}}{0{,}2083} \cdot 120 = \frac{0{,}25 \cdot 0{,}25}{0{,}2083} \cdot 120 = \frac{0{,}0625}{0{,}2083} \cdot 120 = 0{,}3 \cdot 120 = 36
+\]
+
+Demanda do bem 2:
+
+\[
+x_2^* = \frac{0{,}5^2 \cdot 3^{-2}}{0{,}2083} \cdot 120 = \frac{0{,}25 \cdot 0{,}1111}{0{,}2083} \cdot 120 = \frac{0{,}02778}{0{,}2083} \cdot 120 = 0{,}1333 \cdot 120 = 16
+\]
+
+Verificação pela restrição orçamentária:
+
+\[
+p_1 x_1^* + p_2 x_2^* = 2 \times 36 + 3 \times 16 = 72 + 48 = 120 = m \quad \checkmark
+\]
+
+Utilidade no ótimo:
+
+\[
+U^* = \left(0{,}5 \cdot 36^{0,5} + 0{,}5 \cdot 16^{0,5}\right)^{1/0,5} = \left(0{,}5 \cdot 6 + 0{,}5 \cdot 4\right)^{2} = (3 + 2)^2 = 25
+\]
+
+Para \(\lambda^*\) (versão simplificada): da CPO (2.16),
+
+\[
+\lambda^* = \frac{0{,}5 \cdot 0{,}5 \cdot 36^{-0,5}}{2} = \frac{0{,}25 \cdot \frac{1}{6}}{2} = \frac{0{,}04167}{2} = 0{,}02083
+\]
+
+**Interpretação:** se a renda aumentar de R\$ 120 para R\$ 121, a utilidade (na versão \(V\)) aumentará em aproximadamente 0,02083 unidades.
+
+##### Passo 5 — Condições de segunda ordem
+
+A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus conjuntos de nível superior são convexos). Como a restrição orçamentária é linear — portanto define um conjunto convexo — o ponto encontrado pelas CPOs é um **máximo global** do problema restrito. A verificação explícita do hessiano orlado não é necessária neste caso.
+
+!!! example "Casos especiais da CES"
+
+    A família CES engloba, como casos-limite, as principais funções utilidade da microeconomia:
+
+    **1. \(\rho \to 0\) (\(\sigma \to 1\)): Cobb-Douglas**
+
+    Quando \(\rho \to 0\), pode-se mostrar (pela regra de L'Hôpital aplicada ao logaritmo) que:
+
+    \[
+    U \to x_1^{\alpha} \, x_2^{1-\alpha}
+    \]
+
+    As demandas marshallianas se reduzem a:
+
+    \[
+    x_1^* = \frac{\alpha \, m}{p_1}, \qquad x_2^* = \frac{(1-\alpha) \, m}{p_2}
+    \]
+
+    As parcelas orçamentárias são constantes: o consumidor gasta fração \(\alpha\) da renda no bem 1 e fração \(1-\alpha\) no bem 2, independentemente dos preços.
+
+    **2. \(\rho \to -\infty\) (\(\sigma \to 0\)): Leontief (complementos perfeitos)**
+
+    Quando \(\rho \to -\infty\):
+
+    \[
+    U \to \min\{x_1, x_2\}
+    \]
+
+    A elasticidade de substituição é zero — os bens são consumidos em proporções fixas. A demanda é:
+
+    \[
+    x_1^* = x_2^* = \frac{m}{p_1 + p_2}
+    \]
+
+    **3. \(\rho = 1\) (\(\sigma \to \infty\)): Substitutos perfeitos**
+
+    Para \(\rho = 1\):
+
+    \[
+    U = \alpha x_1 + (1-\alpha) x_2
+    \]
+
+    Os bens são substitutos perfeitos. A demanda é uma solução de canto: o consumidor gasta toda a renda no bem com maior "valor por unidade monetária":
+
+    \[
+    x_1^* = \frac{m}{p_1} \text{ se } \frac{\alpha}{p_1} > \frac{1-\alpha}{p_2}; \qquad x_2^* = \frac{m}{p_2} \text{ caso contrário}
+    \]
+
+    Se \(\frac{\alpha}{p_1} = \frac{1-\alpha}{p_2}\), qualquer combinação na restrição orçamentária é ótima.
+
+    A tabela abaixo resume os casos:
+
+    | Parâmetro \(\rho\) | \(\sigma\) | Função utilidade | Curvas de indiferença |
+    |---|---|---|---|
+    | \(\rho \to -\infty\) | 0 | \(\min\{x_1, x_2\}\) | Ângulo reto (L) |
+    | \(\rho \to 0\) | 1 | \(x_1^{\alpha} x_2^{1-\alpha}\) | Hipérboles "suaves" |
+    | \(\rho = 0{,}5\) | 2 | \((\alpha \sqrt{x_1} + (1-\alpha)\sqrt{x_2})^2\) | Curvas intermediárias |
+    | \(\rho = 1\) | \(\infty\) | \(\alpha x_1 + (1-\alpha) x_2\) | Retas paralelas |
+
+#### Gráfico interativo: demandas marshallianas CES
+
+<iframe src="../graficos/cap02/ces-demandas.html" width="100%" height="750" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
+<strong>Figura 2.4</strong> — Demandas marshallianas CES. Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
+</p>
 
 ---
 
@@ -583,8 +985,11 @@ e) Qual o valor mínimo de \(m\) a partir do qual o consumidor passa a adquirir 
 
 ## Referências
 
+- CHIANG, A. C.; WAINWRIGHT, K. *Fundamental Methods of Mathematical Economics*. 4. ed. Boston: McGraw-Hill, 2005.
+- JEHLE, G. A.; RENY, P. J. *Advanced Microeconomic Theory*. 3. ed. Harlow: Pearson, 2011.
 - MAS-COLELL, A.; WHINSTON, M. D.; GREEN, J. R. *Microeconomic Theory*. New York: Oxford University Press, 1995.
 - NICHOLSON, W.; SNYDER, C. *Microeconomic Theory: Basic Principles and Extensions*. 12. ed. Boston: Cengage Learning, 2017.
 - PINDYCK, R. S.; RUBINFELD, D. L. *Microeconomia*. 8. ed. São Paulo: Pearson, 2013.
 - SIMON, C. P.; BLUME, L. *Mathematics for Economists*. New York: W. W. Norton, 1994.
+- VARIAN, H. R. *Microeconomic Analysis*. 3. ed. New York: W. W. Norton, 1992.
 - VARIAN, H. R. *Microeconomia: uma abordagem moderna*. 9. ed. Rio de Janeiro: Elsevier, 2015.

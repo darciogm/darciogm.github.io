@@ -86,7 +86,7 @@ A inclinação da isocusto é \(-w/r\), a razão dos preços dos insumos.
 
 ### Condição de tangência
 
-Pelo método de Lagrange, a condição de primeira ordem para a minimização de custos é:
+Pelo método de Lagrange (ver [passo a passo no Capítulo 2](../cap02/index.md#25-maximizacao-com-restricoes-o-metodo-de-lagrange)), a condição de primeira ordem para a minimização de custos é:
 
 \[
 \mathcal{L} = wL + rK + \lambda[q_0 - f(K, L)]

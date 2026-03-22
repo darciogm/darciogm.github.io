@@ -65,6 +65,8 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
 
 ## 4.3 O Caso com \(n\) Bens — O Lagrangeano
 
+Para uma revisão detalhada do método de Lagrange, incluindo o passo a passo completo e um exercício resolvido com a função CES, veja a [Seção 2.5](../cap02/index.md#25-maximizacao-com-restricoes-o-metodo-de-lagrange).
+
 Para \(n\) bens, o problema do consumidor é:
 
 \[
