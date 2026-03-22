@@ -192,7 +192,7 @@
     function qStar() { return Math.max(price - 2, 0); }
 
     // Board setup
-    var bbLeft = -9, bbTop = 2800, bbRight = 58, bbBottom = -400;
+    var bbLeft = -9, bbTop = 1500, bbRight = 58, bbBottom = -1000;
 
     board = JXG.JSXGraph.initBoard('jxgbox', {
       boundingbox: [bbLeft, bbTop, bbRight, bbBottom],
@@ -207,9 +207,9 @@
       name: '', withLabel: false,
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 }
     });
-    board.create('axis', [[0,0],[0,2600]], {
+    board.create('axis', [[0,0],[0,1500]], {
       name: '', withLabel: false,
-      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 500 }
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 250 }
     });
 
     // Axis labels: centered, rotated Y, bold italic
