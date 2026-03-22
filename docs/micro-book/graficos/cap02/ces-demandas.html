@@ -45,13 +45,14 @@
       justify-content: center;
     }
     #jxgbox {
-      width: 520px;
-      height: 420px;
+      flex: 1 1 450px;
+      max-width: 540px;
+      height: 450px;
       border: 1px solid #ddd;
       border-radius: 6px;
     }
     .controls {
-      width: 300px;
+      flex: 0 1 300px;
       padding: 1rem;
       background: #f8f8f8;
       border-radius: 6px;
@@ -143,8 +144,8 @@
     }
     @media (max-width: 860px) {
       .graph-container { flex-direction: column; align-items: center; }
-      #jxgbox { width: 100%; max-width: 520px; }
-      .controls { width: 100%; max-width: 520px; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
     }
   </style>
 </head>
@@ -313,7 +314,7 @@
     // ---- Drawing ----
     function initBoard() {
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-8, 82, 78, -8],
+        boundingbox: [-10, 85, 82, -10],
         axis: true,
         showCopyright: false,
         showNavigation: false,
@@ -322,10 +323,6 @@
           y: { name: '', withLabel: false, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
         }
       });
-
-      // Manual axis labels
-      board.create('text', [-2.5, 80, '\\(x_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
-      board.create('text', [80, -2.5, '\\(x_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
 
       fullUpdate();
     }
@@ -350,7 +347,11 @@
 
       board.suspendUpdate();
       clearAll();
-      board.setBoundingBox([-bbMax*0.12, bbMax*1.08, bbMax*1.08, -bbMax*0.12]);
+      var bbLeft = -bbMax * 0.15;
+      var bbBottom = -bbMax * 0.12;
+      var bbRight = bbMax * 1.10;
+      var bbTop = bbMax * 1.12;
+      board.setBoundingBox([bbLeft, bbTop, bbRight, bbBottom]);
 
       // --- Indifference curves ---
       var nCurves = 7;
@@ -412,6 +413,15 @@
           fixed: true
         });
       }
+
+      // --- Dynamic axis labels (follow bounding box) ---
+      var axEnd = bbMax * 0.95;
+      curves.push(board.create('text', [bbLeft * 0.3, axEnd + bbMax * 0.04, '\\(x_2\\)'], {
+        fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true
+      }));
+      curves.push(board.create('text', [axEnd + bbMax * 0.04, bbBottom * 0.3, '\\(x_1\\)'], {
+        fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true
+      }));
 
       board.unsuspendUpdate();
 
