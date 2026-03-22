@@ -117,29 +117,31 @@ function draw() {
   var fax = cx - rx, fay = cy; // factor market
 
   // Top-right: Households -> Product market (spending / payments)
-  flows.push({ path: arcPath(hx+boxW/2, hy+10, px-boxW/2, py-10, -40), color: '#C8102E', marker: 0,
+  flows.push({ path: arcPath(hx+boxW/2, hy+5, px-boxW/2, py-20, -25), color: '#C8102E', marker: 0,
     tip: 'Gastos das famílias: pagamento por bens e servicos', label: 'Gastos ($)' });
-  // Right-bottom: Product market -> Firms (revenue)
-  flows.push({ path: arcPath(px-boxW/2, py+10, fx+boxW/2, fy-10, -40), color: '#C8102E', marker: 0,
-    tip: 'Receita das firmas: venda de bens e servicos', label: 'Receita ($)' });
   // Top-right return: Product market -> Households (goods)
-  flows.push({ path: arcPath(px-boxW/2-5, py-15, hx+boxW/2+5, hy+15, 40), color: '#00897b', marker: 2, dash: '6,4',
-    tip: 'Bens e servicos fluem do mercado para as famílias', label: 'Bens/Servicos' });
+  flows.push({ path: arcPath(px-boxW/2, py+20, hx+boxW/2, hy-5, -25), color: '#00897b', marker: 2, dash: '6,4',
+    tip: 'Bens e servicos fluem do mercado para as famílias', label: 'Bens/Serviços' });
+
+  // Right-bottom: Product market -> Firms (revenue)
+  flows.push({ path: arcPath(px-boxW/2, py+20, fx+boxW/2, fy-5, -25), color: '#C8102E', marker: 0,
+    tip: 'Receita das firmas: venda de bens e servicos', label: 'Receita ($)' });
   // Right-bottom return: Firms -> Product market (goods)
-  flows.push({ path: arcPath(fx+boxW/2+5, fy-15, px-boxW/2-5, py+15, 40), color: '#00897b', marker: 2, dash: '6,4',
-    tip: 'Firmas oferecem bens e servicos ao mercado', label: 'Bens/Servicos' });
+  flows.push({ path: arcPath(fx+boxW/2, fy+5, px-boxW/2, py-20, -25), color: '#00897b', marker: 2, dash: '6,4',
+    tip: 'Firmas oferecem bens e servicos ao mercado', label: 'Bens/Serviços' });
 
   // Bottom-left: Firms -> Factor market (demand for factors / payments)
-  flows.push({ path: arcPath(fx-boxW/2, fy-10, fax+boxW/2, fay+10, -40), color: '#C8102E', marker: 0,
+  flows.push({ path: arcPath(fx-boxW/2, fy-5, fax+boxW/2, fay+20, -25), color: '#C8102E', marker: 0,
     tip: 'Pagamento por fatores de produção (salários, aluguéis, juros)', label: 'Pagamentos ($)' });
-  // Left-top: Factor market -> Households (income)
-  flows.push({ path: arcPath(fax+boxW/2, fay-10, hx-boxW/2, hy+10, -40), color: '#C8102E', marker: 0,
-    tip: 'Renda das famílias: salários, aluguéis, lucros, juros', label: 'Renda ($)' });
   // Bottom-left return: Factor market -> Firms (factors)
-  flows.push({ path: arcPath(fax+boxW/2+5, fay+15, fx-boxW/2-5, fy+15, 40), color: '#ff9800', marker: 3, dash: '6,4',
+  flows.push({ path: arcPath(fax+boxW/2, fay-20, fx-boxW/2, fy+5, -25), color: '#ff9800', marker: 3, dash: '6,4',
     tip: 'Fatores de produção fluem para as firmas (trabalho, capital, terra)', label: 'Fatores' });
+
+  // Left-top: Factor market -> Households (income)
+  flows.push({ path: arcPath(fax+boxW/2, fay-20, hx-boxW/2, hy+5, -25), color: '#C8102E', marker: 0,
+    tip: 'Renda das famílias: salários, aluguéis, lucros, juros', label: 'Renda ($)' });
   // Left-top return: Households -> Factor market (factors)
-  flows.push({ path: arcPath(hx-boxW/2-5, hy+15, fax+boxW/2+5, fay-15, 40), color: '#ff9800', marker: 3, dash: '6,4',
+  flows.push({ path: arcPath(hx-boxW/2, hy-5, fax+boxW/2, fay+20, -25), color: '#ff9800', marker: 3, dash: '6,4',
     tip: 'Famílias oferecem fatores de produção ao mercado', label: 'Fatores' });
 
   // Government flows
