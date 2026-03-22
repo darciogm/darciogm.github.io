@@ -95,12 +95,12 @@
       brd.create('axis', [[0,0],[1,0]], {
         ticks: { drawLabels: true, label: { fontSize: 10 }, ticksDistance: 0.25 },
         name: xName, withLabel: true,
-        label: { position: 'rt', offset: [-15, -18], fontSize: 12 }
+        label: { position: 'rt', offset: [5, 20], fontSize: 12 }
       });
       brd.create('axis', [[0,0],[0,5]], {
         ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] } },
         name: yName, withLabel: true,
-        label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
+        label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
       });
     }
     addAxes(board1, '\\(p\\)', '\\(E[u_2]\\)');

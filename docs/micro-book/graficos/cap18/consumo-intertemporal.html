@@ -84,11 +84,11 @@
 
     board.create('axis', [[0,0],[400,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 50 },
-      name: 'C_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
+      name: 'C_1', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
     });
     board.create('axis', [[0,0],[0,500]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
-      name: 'C_2', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
+      name: 'C_2', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
     });
 
     // Intertemporal budget line: C2 = (1+r)*(W - C1) = (1+r)*W - (1+r)*C1

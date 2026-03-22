@@ -191,11 +191,11 @@
 
     board1.create('axis', [[0,0],[26,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
-      name: 'L', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
+      name: 'L', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
     });
     board1.create('axis', [[0,0],[0,600]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 100 },
-      name: 'C', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
+      name: 'C', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
     });
 
     // Budget line
@@ -218,11 +218,11 @@
 
     board2.create('axis', [[0,0],[19,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
-      name: 'h', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
+      name: 'h', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
     });
     board2.create('axis', [[0,0],[0,42]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 5 },
-      name: 'w', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
+      name: 'w', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
     });
 
     // Labor supply curve (parametric: w on y-axis, h on x-axis)

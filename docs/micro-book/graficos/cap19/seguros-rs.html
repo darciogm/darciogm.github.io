@@ -85,12 +85,12 @@
     board.create('axis', [[0,0],[maxAx+5,0]], {
       ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:10} },
       name: 'W_bom (sem sinistro)', withLabel: true,
-      label: { position: 'rt', offset: [-80, 15], fontSize: 11 }
+      label: { position: 'rt', offset: [5, 20], fontSize: 11 }
     });
     board.create('axis', [[0,0],[0,maxAx+5]], {
       ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
       name: 'W_mau (com sinistro)', withLabel: true,
-      label: { position: 'rt', offset: [-25, -5], fontSize: 11 }
+      label: { position: 'rt', offset: [-5, -20], fontSize: 11 }
     });
 
     // 45-degree line (full insurance)

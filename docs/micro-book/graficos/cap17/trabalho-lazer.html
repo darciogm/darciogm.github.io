@@ -96,11 +96,11 @@
     });
     board.create('axis', [[0,0],[26,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
-      name: 'L (lazer)', withLabel: true, label: { position: 'rt', offset: [-20, 15], fontSize: 12 }
+      name: 'L (lazer)', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
     });
     board.create('axis', [[0,0],[0,310]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
-      name: 'C (consumo)', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
+      name: 'C (consumo)', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
     });
 
     function getState() {
