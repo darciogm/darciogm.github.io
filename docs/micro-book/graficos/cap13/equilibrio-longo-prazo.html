@@ -37,6 +37,9 @@
     @media (max-width: 760px) {
       #firmbox, #marketbox { width: 100%; max-width: 340px; }
     }
+    /* === FIX: anti-scrollHeight inflation === */
+    html { height: auto !important; min-height: 0 !important; }
+    body { height: auto !important; min-height: 0 !important; overflow: visible; }
   </style>
 </head>
 <body>

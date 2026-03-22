@@ -43,6 +43,9 @@
       #jxgbox { width: 100%; max-width: 520px; }
       .controls { width: 100%; max-width: 520px; }
     }
+    /* === FIX: anti-scrollHeight inflation === */
+    html { height: auto !important; min-height: 0 !important; }
+    body { height: auto !important; min-height: 0 !important; overflow: visible; }
   </style>
 </head>
 <body>

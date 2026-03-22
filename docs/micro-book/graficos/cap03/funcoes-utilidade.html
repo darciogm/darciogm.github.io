@@ -111,6 +111,9 @@
       #plotly-div { flex-basis: 100%; max-width: 100%; }
       .controls { flex-basis: 100%; max-width: 100%; }
     }
+    /* === FIX: anti-scrollHeight inflation === */
+    html { height: auto !important; min-height: 0 !important; }
+    body { height: auto !important; min-height: 0 !important; overflow: visible; }
   </style>
 </head>
 <body>

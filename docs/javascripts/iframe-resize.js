@@ -3,14 +3,19 @@
   function resizeIframe(iframe) {
     try {
       var doc = iframe.contentDocument || iframe.contentWindow.document;
-      var height = Math.max(
-        doc.body.scrollHeight,
-        doc.body.offsetHeight,
-        doc.documentElement.scrollHeight,
-        doc.documentElement.offsetHeight
+      // Use the minimum reliable measure of actual content height
+      var body = doc.body;
+      var html = doc.documentElement;
+      var height = Math.min(
+        Math.max(body.scrollHeight, body.offsetHeight),
+        Math.max(html.scrollHeight, html.offsetHeight)
       );
+      // Fallback: if min gives something too small, use body.scrollHeight
+      if (height < 100) {
+        height = body.scrollHeight;
+      }
       if (height > 100) {
-        iframe.style.height = (height + 16) + 'px';
+        iframe.style.height = height + 'px';
       }
     } catch(e) { /* cross-origin fallback: keep original height */ }
   }

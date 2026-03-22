@@ -41,6 +41,9 @@
     .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } .boards { width: 100%; max-width: 520px; } #jxgbox1, #jxgbox2 { width: 100%; } .controls { width: 100%; max-width: 520px; } }
+    /* === FIX: anti-scrollHeight inflation === */
+    html { height: auto !important; min-height: 0 !important; }
+    body { height: auto !important; min-height: 0 !important; overflow: visible; }
   </style>
 </head>
 <body>

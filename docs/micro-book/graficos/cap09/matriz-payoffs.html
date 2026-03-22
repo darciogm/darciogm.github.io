@@ -72,6 +72,9 @@
       padding: 0.4rem; background: #666; color: #fff; border: none;
       border-radius: 4px; cursor: pointer; font-size: 0.82rem; font-family: inherit;
     }
+    /* === FIX: anti-scrollHeight inflation === */
+    html { height: auto !important; min-height: 0 !important; }
+    body { height: auto !important; min-height: 0 !important; overflow: visible; }
   </style>
 </head>
 <body>

@@ -160,6 +160,9 @@
       .urns-row { flex-direction: column; align-items: center; }
       .choice-row { flex-direction: column; }
     }
+    /* === FIX: anti-scrollHeight inflation === */
+    html { height: auto !important; min-height: 0 !important; }
+    body { height: auto !important; min-height: 0 !important; overflow: visible; }
   </style>
 </head>
 <body>
