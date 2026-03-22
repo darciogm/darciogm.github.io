@@ -135,7 +135,7 @@ O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A
 <iframe src="../graficos/cap18/consumo-intertemporal.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 18.1** — Modelo de consumo intertemporal de dois períodos. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.
+**Figura 18.1 — Modelo de consumo intertemporal de dois períodos.** Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.
 </p>
 
 ---
@@ -272,7 +272,7 @@ O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desco
 <iframe src="../graficos/cap18/vpl-tir.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 18.2** — Valor Presente Líquido como função da taxa de desconto. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR).
+**Figura 18.2 — Valor Presente Líquido como função da taxa de desconto.** O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR).
 </p>
 
 ---

@@ -41,7 +41,7 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
 <iframe src="../graficos/cap04/restricao-orcamentaria.html" width="100%" style="border:none; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 4.1** — Restrição Orçamentária. Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
+**Figura 4.1 — Restrição Orçamentária.** Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
 </p>
 
 !!! example "Box Brasil — Combustíveis e a reta orçamentária das famílias brasileiras"
@@ -87,7 +87,7 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
 <iframe src="../graficos/cap04/equilibrio-consumidor.html" width="100%" style="border:none; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 4.2** — Equilíbrio do Consumidor. Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.
+**Figura 4.2 — Equilíbrio do Consumidor.** Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.
 </p>
 
 ---
@@ -424,7 +424,7 @@ Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)
 <iframe src="../graficos/cap04/dualidade.html" width="100%" style="border:none; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 4.4** — Dualidade: Maximização de Utilidade vs. Minimização do Dispêndio. Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.
+**Figura 4.4 — Dualidade: Maximização de Utilidade vs.** Minimização do Dispêndio. Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.
 </p>
 
 Além disso, as demandas marshalliana e hicksiana estão relacionadas:

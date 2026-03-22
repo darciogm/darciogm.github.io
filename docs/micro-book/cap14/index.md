@@ -74,7 +74,7 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 <iframe src="../graficos/cap14/caixa-edgeworth.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 14.1** — Caixa de Edgeworth. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação para verificar melhorias de Pareto e eficiência sobre a curva de contrato.
+**Figura 14.1 — Caixa de Edgeworth.** Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação para verificar melhorias de Pareto e eficiência sobre a curva de contrato.
 </p>
 
 ---
@@ -176,7 +176,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 <iframe src="../graficos/cap14/fpp.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 14.2** — Fronteira de possibilidades de produção (FPP). Ajuste a dotação de recursos e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia.
+**Figura 14.2 — Fronteira de possibilidades de produção (FPP).** Ajuste a dotação de recursos e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia.
 </p>
 
 ---
@@ -324,7 +324,7 @@ Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo 
 <iframe src="../graficos/cap14/equilibrio-geral.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 14.3** — Equilíbrio geral walrasiano. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda. O equilíbrio ocorre quando o excesso de demanda é zero.
+**Figura 14.3 — Equilíbrio geral walrasiano.** Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda. O equilíbrio ocorre quando o excesso de demanda é zero.
 </p>
 
 ---

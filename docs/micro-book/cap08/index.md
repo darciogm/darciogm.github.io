@@ -166,7 +166,7 @@ onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda 
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.1** — Função valor da Teoria do Prospecto. Ajuste os parâmetros de curvatura e aversão à perda para observar a assimetria entre ganhos e perdas.
+**Figura 8.1 — Função valor da Teoria do Prospecto.** Ajuste os parâmetros de curvatura e aversão à perda para observar a assimetria entre ganhos e perdas.
 </p>
 
 A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto em diferentes estudos:
@@ -243,7 +243,7 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.2** — Função de ponderação de probabilidades \(w(p)\). Compare a ponderação com a linha de 45 graus para visualizar a sobrevalorização de probabilidades pequenas e a subvalorização de probabilidades altas.
+**Figura 8.2 — Função de ponderação de probabilidades \(w(p)\).** Compare a ponderação com a linha de 45 graus para visualizar a sobrevalorização de probabilidades pequenas e a subvalorização de probabilidades altas.
 </p>
 
 !!! idea "Intuição Econômica 💡"
@@ -388,7 +388,7 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.3** — Paradoxo de Ellsberg: duas urnas. Visualize como a aversão à ambiguidade leva à preferência pela urna com probabilidades conhecidas.
+**Figura 8.3 — Paradoxo de Ellsberg: duas urnas.** Visualize como a aversão à ambiguidade leva à preferência pela urna com probabilidades conhecidas.
 </p>
 
 ### 8.3.3 Modelos de ambiguidade
@@ -479,7 +479,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.4** — Utilidade de Fehr-Schmidt para dois jogadores. Ajuste os parâmetros de aversão à desigualdade desvantajosa e vantajosa para observar o efeito sobre a utilidade.
+**Figura 8.4 — Utilidade de Fehr-Schmidt para dois jogadores.** Ajuste os parâmetros de aversão à desigualdade desvantajosa e vantajosa para observar o efeito sobre a utilidade.
 </p>
 
 <div class="graph-container" markdown>
@@ -487,7 +487,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.5** — Jogo do ultimato: decisão do respondedor com preferências de Fehr-Schmidt. Observe como a aversão à inequidade determina o limiar de rejeição.
+**Figura 8.5 — Jogo do ultimato: decisão do respondedor com preferências de Fehr-Schmidt.** Observe como a aversão à inequidade determina o limiar de rejeição.
 </p>
 
 ??? example "Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
@@ -615,7 +615,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.6** — Funções de desconto: exponencial vs quasi-hiperbólico. Compare a taxa de desconto constante do modelo exponencial com o viés do presente capturado pelo parâmetro \(\beta\).
+**Figura 8.6 — Funções de desconto: exponencial vs quasi-hiperbólico.** Compare a taxa de desconto constante do modelo exponencial com o viés do presente capturado pelo parâmetro \(\beta\).
 </p>
 
 <div class="graph-container" markdown>
@@ -623,7 +623,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.7** — Curvas de indiferença intertemporal: consumo presente \(c_0\) vs consumo futuro \(c_1\). Visualize como o desconto quasi-hiperbólico altera a forma das curvas em relação ao modelo exponencial.
+**Figura 8.7 — Curvas de indiferença intertemporal: consumo presente \(c_0\) vs consumo futuro \(c_1\).** Visualize como o desconto quasi-hiperbólico altera a forma das curvas em relação ao modelo exponencial.
 </p>
 
 ??? example "Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
@@ -718,7 +718,7 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 8.8** — Efeito do default na adesão. Compare as taxas de adesão sob regimes de opt-in e opt-out para diferentes programas.
+**Figura 8.8 — Efeito do default na adesão.** Compare as taxas de adesão sob regimes de opt-in e opt-out para diferentes programas.
 </p>
 
 **Framing e simplificação.** A forma como as informações são apresentadas importa: rótulos nutricionais em semáforo (verde/amarelo/vermelho) são mais eficazes do que tabelas numéricas detalhadas; cartas de cobrança com linguagem simplificada aumentam a taxa de pagamento de impostos.

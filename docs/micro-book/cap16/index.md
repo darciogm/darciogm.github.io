@@ -98,7 +98,7 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 <iframe src="../graficos/cap16/bertrand.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 16.1** — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.
+**Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal.** Ajuste elasticidades e custos.
 </p>
 
 ---
@@ -164,7 +164,7 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 <iframe src="../graficos/cap16/cournot.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 16.2** — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.
+**Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\).** O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.
 </p>
 
 ---
@@ -209,7 +209,7 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 <iframe src="../graficos/cap16/stackelberg.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 16.3** — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).
+**Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora.** As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).
 </p>
 
 ---
@@ -586,7 +586,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 <iframe src="../graficos/cap16/comparacao-oligopolio.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 16.4** — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.
+**Figura 16.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\).** A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.
 </p>
 
 ---

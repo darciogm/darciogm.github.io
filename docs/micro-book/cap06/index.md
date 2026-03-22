@@ -125,7 +125,7 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 <iframe src="../graficos/cap06/substitutos-complementos.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 6.1** — Substitutos e Complementos: Efeitos Cruzados de Preço. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
+**Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
 </p>
 
 ---
@@ -239,7 +239,7 @@ O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o be
 <iframe src="../graficos/cap06/bem-composto.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 6.2** — Teorema do Bem Composto de Hicks. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)). Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
+**Figura 6.2 — Teorema do Bem Composto de Hicks.** O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)). Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 </p>
 
 ---

@@ -126,7 +126,7 @@ Com seguro completo (\(I = L\)), o segurado recebe \(W_0 - q\) em qualquer estad
 <iframe src="../graficos/cap19/principal-agente.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 19.1** — Modelo principal-agente com risco moral. O gráfico mostra a restrição de participação (RP) e a restrição de compatibilidade de incentivos (RCI) no espaço de salários. O ponto verde indica o contrato ótimo que induz esforço alto.
+**Figura 19.1 — Modelo principal-agente com risco moral.** O gráfico mostra a restrição de participação (RP) e a restrição de compatibilidade de incentivos (RCI) no espaço de salários. O ponto verde indica o contrato ótimo que induz esforço alto.
 </p>
 
 ### 19.3.3 O problema do esforço não observável: modelo formal
@@ -266,7 +266,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 <iframe src="../graficos/cap19/mercado-limoes.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 19.2** — Mercado de limões (Akerlof, 1970). Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.
+**Figura 19.2 — Mercado de limões (Akerlof, 1970).** Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.
 </p>
 
 ---
@@ -443,7 +443,7 @@ com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\)
 <iframe src="../graficos/cap19/sinalizacao.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 19.3** — Sinalização por educação (Spence, 1973). Visualize as curvas de custo de educação para ambos os tipos, o salário de equilíbrio e a condição de single-crossing. A região azul indica o intervalo de níveis de educação que sustentam um equilíbrio separador.
+**Figura 19.3 — Sinalização por educação (Spence, 1973).** Visualize as curvas de custo de educação para ambos os tipos, o salário de equilíbrio e a condição de single-crossing. A região azul indica o intervalo de níveis de educação que sustentam um equilíbrio separador.
 </p>
 
 ### 19.5.2 Equilíbrio separador vs. equilíbrio agregador
@@ -485,7 +485,7 @@ O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separ
 <iframe src="../graficos/cap19/seguros-rs.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 19.4** — Modelo de seguros de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326). No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.
+**Figura 19.4 — Modelo de seguros de [Rothschild-Stiglitz](https://doi.**org/10.2307/1885326). No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.
 </p>
 
 ## 19.6 Screening (Triagem pelo Principal)
