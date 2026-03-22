@@ -235,7 +235,9 @@ PPM = \frac{1}{2}(p^m - c)(q^c - q^m) = \frac{(a-c)^2}{8b}
 Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0,1% do PIB, um valor surpreendentemente pequeno. Estimativas posteriores, incorporando *rent-seeking* e ineficiências organizacionais, sugerem valores significativamente maiores.
 
 !!! example "Poder de mercado e o CADE"
-    O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória.
+    O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória. A [Tabela 15.1](#tabela-15-1) compara os resultados dos dois regimes.
+
+<a id="tabela-15-1"></a>
 
 | Variável | Concorrência Perfeita | Monopólio | Variação |
 |---|---|---|---|

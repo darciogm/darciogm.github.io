@@ -211,7 +211,9 @@ O preço de equilíbrio de longo prazo será mais alto após o aumento na demand
 
 ### Indústria de custos decrescentes
 
-Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**. No Brasil, o polo tecnológico de Campinas (SP) é um possível exemplo: a concentração de empresas de TI gerou uma rede de fornecedores, mão de obra especializada e infraestrutura de telecomunicações que reduz os custos de cada firma individual à medida que a indústria cresce.
+Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**. No Brasil, o polo tecnológico de Campinas (SP) é um possível exemplo: a concentração de empresas de TI gerou uma rede de fornecedores, mão de obra especializada e infraestrutura de telecomunicações que reduz os custos de cada firma individual à medida que a indústria cresce. A [Tabela 13.1](#tabela-13-1) resume os três tipos de indústria.
+
+<a id="tabela-13-1"></a>
 
 | Tipo de indústria | Efeito da entrada sobre custos | Inclinação da oferta de LP | Efeito de ↑D sobre preço de LP |
 |---|---|---|---|
@@ -494,7 +496,9 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
 ## 13.12 — Efeitos de Políticas sobre EC, EP e PPM
 
-A tabela abaixo resume os efeitos das principais políticas de intervenção em um mercado competitivo.
+A [Tabela 13.2](#tabela-13-2) resume os efeitos das principais políticas de intervenção em um mercado competitivo.
+
+<a id="tabela-13-2"></a>
 
 | Política | Efeito sobre EC | Efeito sobre EP | Receita/Gasto Gov. | PPM |
 |---|---|---|---|---|

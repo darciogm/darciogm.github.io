@@ -105,7 +105,9 @@ Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentid
 
 ### Distinção entre análise positiva e normativa
 
-Os dois pilares anteriores — *ceteris paribus* e otimização — são ferramentas para construir modelos e derivar previsões. Mas há uma distinção conceitual igualmente importante que todo economista precisa manter em mente: a diferença entre descrever o que *é* e prescrever o que *deveria ser*.
+Os dois pilares anteriores — *ceteris paribus* e otimização — são ferramentas para construir modelos e derivar previsões. Mas há uma distinção conceitual igualmente importante que todo economista precisa manter em mente: a diferença entre descrever o que *é* e prescrever o que *deveria ser*. A [Tabela 1.1](#tabela-1-1) sintetiza essa distinção.
+
+<a id="tabela-1-1"></a>
 
 | Aspecto | Análise Positiva | Análise Normativa |
 |---|---|---|
@@ -169,7 +171,9 @@ Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, p
 
 ## 1.5 Desenvolvimento da teoria do valor
 
-A história do pensamento econômico pode ser lida como uma longa investigação sobre uma pergunta aparentemente simples: **o que determina o valor de um bem?** Por que o diamante custa mais que a água, embora a água seja indispensável à vida? Por que um quadro de Picasso vale milhões, enquanto uma cópia perfeita vale quase nada? Diferentes gerações de economistas ofereceram respostas distintas para essas perguntas, e a evolução dessas respostas moldou a microeconomia tal como a conhecemos hoje. A tabela a seguir apresenta uma cronologia das principais contribuições.
+A história do pensamento econômico pode ser lida como uma longa investigação sobre uma pergunta aparentemente simples: **o que determina o valor de um bem?** Por que o diamante custa mais que a água, embora a água seja indispensável à vida? Por que um quadro de Picasso vale milhões, enquanto uma cópia perfeita vale quase nada? Diferentes gerações de economistas ofereceram respostas distintas para essas perguntas, e a evolução dessas respostas moldou a microeconomia tal como a conhecemos hoje. A [Tabela 1.2](#tabela-1-2) apresenta uma cronologia das principais contribuições.
+
+<a id="tabela-1-2"></a>
 
 | Período | Escola / Autor | Contribuição Principal |
 |---|---|---|

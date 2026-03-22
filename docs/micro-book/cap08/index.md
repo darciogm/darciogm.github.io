@@ -89,7 +89,9 @@ Os vieses cognitivos documentados nas subseções anteriores surgem quando o Sis
 
     **Por que isso importa:** Se a maioria das decisões de consumo, poupança e investimento passa pelo Sistema 1, modelos que assumem otimização deliberada e completa podem errar sistematicamente nas previsões.
 
-A tabela a seguir resume as principais heurísticas e seus vieses associados:
+A [Tabela 8.1](#tabela-8-1) resume as principais heurísticas e seus vieses associados:
+
+<a id="tabela-8-1"></a>
 
 | Heurística | Viés principal | Experimento clássico | Referência |
 |---|---|---|---|
@@ -174,7 +176,9 @@ onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda 
 **Figura 8.1 — Função valor da Teoria do Prospecto.** Ajuste os parâmetros de curvatura e aversão à perda para observar a assimetria entre ganhos e perdas.
 </div>
 
-A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto em diferentes estudos:
+A [Tabela 8.2](#tabela-8-2) compara as estimativas dos parâmetros da Teoria do Prospecto em diferentes estudos:
+
+<a id="tabela-8-2"></a>
 
 | Estudo | \(\alpha\) | \(\beta\) | \(\lambda\) | \(\gamma^+\) | \(\gamma^-\) | Método |
 |---|---|---|---|---|---|---|
@@ -285,7 +289,9 @@ A utilidade RDU é então \(\text{RDU}(L) = \sum_{i=1}^{n} \pi_i \, u(x_i)\). Di
 
 **PT Cumulativa (CPT).** Tversky e Kahneman (1992) combinaram a RDU com as inovações da OPT — dependência de referência, aversão à perda e funções de ponderação distintas para ganhos e perdas — criando a **Teoria do Prospecto Cumulativa**. Na CPT, ganhos são ordenados do menor ao maior e perdas do maior (menos negativo) ao menor (mais negativo), com pesos decisórios computados separadamente para cada domínio.
 
-A tabela a seguir compara os quatro modelos:
+A [Tabela 8.3](#tabela-8-3) compara os quatro modelos:
+
+<a id="tabela-8-3"></a>
 
 | Característica | UE | RDU | OPT | CPT |
 |---|---|---|---|---|
@@ -376,7 +382,9 @@ A Teoria do Prospecto desafia a utilidade esperada ao mostrar que os agentes dis
 
 ### 8.3.1 Risco, incerteza e ambiguidade
 
-O Capítulo 7 tratou de decisões sob **risco** — situações em que as probabilidades dos estados do mundo são conhecidas. Knight (1921) distinguiu o risco da **incerteza** (*uncertainty*), em que as probabilidades são desconhecidas. Ellsberg (1961) identificou um fenômeno ainda mais específico: mesmo quando os agentes poderiam atribuir probabilidades subjetivas (como prescreve a UE de Savage), eles sistematicamente **evitam** situações em que as probabilidades são **ambíguas** — isto é, pouco informadas ou vagas.
+O Capítulo 7 tratou de decisões sob **risco** — situações em que as probabilidades dos estados do mundo são conhecidas. Knight (1921) distinguiu o risco da **incerteza** (*uncertainty*), em que as probabilidades são desconhecidas. Ellsberg (1961) identificou um fenômeno ainda mais específico: mesmo quando os agentes poderiam atribuir probabilidades subjetivas (como prescreve a UE de Savage), eles sistematicamente **evitam** situações em que as probabilidades são **ambíguas** — isto é, pouco informadas ou vagas. A [Tabela 8.4](#tabela-8-4) distingue esses três conceitos.
+
+<a id="tabela-8-4"></a>
 
 | Conceito | Probabilidades | Exemplo |
 |---|---|---|
@@ -441,7 +449,7 @@ Os modelos neoclássicos tradicionais assumem que os agentes são **autointeress
 
 ### 8.4.1 Evidência experimental: os jogos de laboratório
 
-Três jogos experimentais formam a base empírica das preferências sociais (Dhami 2016, p. 384–404; Wilkinson e Klaes 2012, p. 397–420):
+Três jogos experimentais formam a base empírica das preferências sociais (Dhami 2016, p. 384–404; Wilkinson e Klaes 2012, p. 397–420). A [Tabela 8.5](#tabela-8-5) sintetiza os resultados.
 
 **Jogo do Ultimato (Ultimatum Game).** Um proponente P divide uma quantia \(S\) com um respondedor R. P oferece \(x\) a R e fica com \(S - x\). R pode aceitar (ambos recebem os valores propostos) ou rejeitar (ambos recebem zero). O equilíbrio de Nash por indução retroativa prevê que P ofereça o mínimo possível e R aceite qualquer oferta positiva. Mas os resultados experimentais são sistematicamente diferentes:
 
@@ -452,6 +460,8 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
 **Jogo do Ditador (Dictator Game).** Idêntico ao jogo do ultimato, mas R não pode rejeitar — recebe passivamente o que P oferece. A previsão autointeressada é \(x = 0\). Na prática, ditadores oferecem em média **20%** do bolo (Forsythe et al. 1994), indicando algum grau de altruísmo genuíno (não motivado pelo medo de rejeição). Com duplo-anonimato, as ofertas caem para cerca de 10% (Hoffman et al. 1994).
 
 **Jogo da Confiança (Trust Game).** O investidor I recebe uma dotação \(E\) e decide quanto enviar ao administrador A. O valor enviado é triplicado (representando os ganhos da cooperação). A então decide quanto devolver a I. O equilíbrio autointeressado prevê que A não devolva nada e, antecipando isso, I não envie nada. Na prática, investidores enviam em média **50%** de sua dotação, e administradores devolvem em média cerca de **1/3** do valor recebido — suficiente para gerar retorno positivo ao investidor em muitos casos (Berg, Dickhaut e McCabe 1995).
+
+<a id="tabela-8-5"></a>
 
 | Jogo | Previsão UE autointeressada | Resultado experimental típico |
 |---|---|---|

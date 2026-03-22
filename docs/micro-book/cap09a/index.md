@@ -92,9 +92,11 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 **Figura 9a.1 — Matriz de payoffs e equilíbrio de Nash.** Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.
 </div>
 
-O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A tabela abaixo sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
+O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A [Tabela 9a.1](#tabela-9a-1) sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
 
 ### Taxonomia dos Jogos Clássicos
+
+<a id="tabela-9a-1"></a>
 
 | Jogo | Payoffs (genéricos) | EN em puras | EN em mistas | Característica | Aplicação |
 |:-----|:-------------------|:------------|:------------|:---------------|:----------|
@@ -382,7 +384,9 @@ q_1^S = \frac{a-c}{2b}, \qquad q_2^S = \frac{a-c}{4b}, \qquad Q^S = \frac{3(a-c)
 \label{eq:9a.9} \tag{9a.9}
 \]
 
-**Comparação Cournot vs Stackelberg vs Monopólio vs Competição Perfeita:**
+A [Tabela 9a.2](#tabela-9a-2) compara Cournot, Stackelberg, monopólio e competição perfeita:
+
+<a id="tabela-9a-2"></a>
 
 | Modelo | \(Q\) total | Preço \(P\) | \(\pi_{\text{líder}}\) | \(\pi_{\text{seguidora}}\) |
 |:-------|:-----------|:-----------|:----------------------|:--------------------------|

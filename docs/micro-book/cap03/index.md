@@ -377,6 +377,10 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
     **Por que isso importa:** Essa propriedade permite agregar consumidores com rendas diferentes em um "consumidor representativo" — base de grande parte dos modelos macroeconômicos. Contudo, os dados da POF (ver Box Brasil, §3.6.4) mostram que preferências reais raramente são homotéticas: a participação da alimentação cai com a renda (Lei de Engel), evidenciando preferências não homotéticas na prática.
 
+A [Tabela 3.1](#tabela-3-1) compara as principais formas funcionais de utilidade discutidas neste capítulo.
+
+<a id="tabela-3-1"></a>
+
 | Tipo | Função \(u(x_1, x_2)\) | TMS\(_{12}\) | Curvas de indiferença | Elasticidade de substituição (\(\sigma\)) |
 |---|---|---|---|---|
 | Cobb-Douglas | \(x_1^a x_2^b\) | \(\dfrac{a\, x_2}{b\, x_1}\) | Hipérboles convexas | \(1\) |

@@ -146,7 +146,9 @@ Se o moral hazard é um problema pós-contratual (ações ocultas), a seleção 
 
 No mercado de seguros: pessoas de alto risco são mais propensas a comprar seguro (sabem que precisam). Isso eleva o prêmio, afastando pessoas de baixo risco, potencialmente destruindo o mercado. O mecanismo é cumulativo: à medida que os tipos bons se retiram, a qualidade média do pool se deteriora, o prêmio sobe, e mais tipos bons saem — uma espiral que pode culminar no colapso do mercado.
 
-**Mecanismos de mitigação:**
+A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
+
+<a id="tabela-9d-1"></a>
 
 | Mecanismo | Exemplo | Quem age |
 |:----------|:--------|:---------|

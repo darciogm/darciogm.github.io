@@ -332,7 +332,9 @@ A primeira metade deste capítulo dedicou-se às externalidades — situações 
 
 ### Classificação de bens
 
-A combinação dessas duas propriedades gera uma classificação de bens em quatro categorias:
+A combinação dessas duas propriedades gera a classificação apresentada na [Tabela 20.1](#tabela-20-1):
+
+<a id="tabela-20-1"></a>
 
 | | **Excludente** | **Não-excludente** |
 |---|---|---|
@@ -343,7 +345,9 @@ A combinação dessas duas propriedades gera uma classificação de bens em quat
 **Tabela 20.1 — Classificação de bens por rivalidade e excludência.**
 </div>
 
-A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos & Garcia, 2014):
+A [Tabela 20.2](#tabela-20-2) apresenta exemplos brasileiros para cada categoria (Vasconcellos & Garcia, 2014):
+
+<a id="tabela-20-2"></a>
 
 | Categoria | Propriedades | Exemplos Brasileiros |
 |---|---|---|

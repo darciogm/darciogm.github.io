@@ -154,7 +154,9 @@ Isso garante que a combinação de bens produzida é exatamente aquela que os co
 
 ## 14.11 — Condições de Eficiência de Pareto
 
-As seções anteriores identificaram três tipos de eficiência: na troca (entre consumidores), na produção (entre setores) e no mix de produtos (entre o que se produz e o que se deseja consumir). A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A tabela abaixo sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
+As seções anteriores identificaram três tipos de eficiência: na troca (entre consumidores), na produção (entre setores) e no mix de produtos (entre o que se produz e o que se deseja consumir). A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A [Tabela 14.1](#tabela-14-1) sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
+
+<a id="tabela-14-1"></a>
 
 | Tipo de eficiência | Condição marginal | Interpretação |
 |---|---|---|

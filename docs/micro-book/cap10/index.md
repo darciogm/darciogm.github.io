@@ -416,6 +416,10 @@ A CES **generaliza** as três funções anteriores:
 - \(\rho = 1 \Rightarrow\) Linear \((\sigma = \infty)\),
 - \(\rho \to -\infty \Rightarrow\) Leontief \((\sigma = 0)\): \(q \to A\min\{K, L\}\). (Para obter a forma geral \(\min\{K/a, L/b\}\), é necessário colocar os coeficientes dentro da função \(\min\), e não como pesos \(\delta, 1-\delta\) na CES.)
 
+A [Tabela 10.1](#tabela-10-1) compara as propriedades das quatro funções de produção.
+
+<a id="tabela-10-1"></a>
+
 | Propriedade | Linear | Leontief | Cobb-Douglas | CES |
 |:---|:---|:---|:---|:---|
 | **Fórmula** | \(aK + bL\) | \(\min\{K/a, L/b\}\) | \(AK^{\alpha}L^{\beta}\) | \(A[\delta K^{\rho} + (1-\delta)L^{\rho}]^{\gamma/\rho}\) |

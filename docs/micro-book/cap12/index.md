@@ -205,6 +205,10 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
 ### Condições de oferta no curto prazo
 
+A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto prazo.
+
+<a id="tabela-12-1"></a>
+
 | Condição de preço | Decisão | Lucro econômico |
 |:---|:---|:---|
 | \(p > \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Lucro positivo \((\pi > 0)\) |

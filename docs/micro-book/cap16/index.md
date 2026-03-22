@@ -382,6 +382,10 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
     **Por que isso importa:** Programas de leniência do [CADE](https://www.gov.br/cade) exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
 
+A [Tabela 16.1](#tabela-16-1) lista os principais fatores que facilitam a sustentação de acordos colusivos.
+
+<a id="tabela-16-1"></a>
+
 | Fator | Efeito sobre a colusão | Mecanismo |
 |---|---|---|
 | Poucas firmas | Facilita | Menor incentivo ao desvio |
@@ -520,7 +524,9 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ## 16.13 — Comparação dos modelos de oligopólio
 
-A tabela a seguir resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
+A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
+
+<a id="tabela-16-2"></a>
 
 | Variável | Bertrand | Cournot | Stackelberg | Colusão |
 |---|---|---|---|---|

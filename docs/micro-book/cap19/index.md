@@ -501,7 +501,9 @@ Enquanto a sinalização é iniciativa da parte informada, a **triagem** (screen
 !!! definition "Triagem (Screening)"
     Mecanismo pelo qual a parte desinformada (principal) oferece um **menu de opções** desenhado de forma que cada tipo de agente revele voluntariamente sua informação privada ao escolher a opção mais adequada ao seu tipo.
 
-Exemplos práticos:
+A [Tabela 19.1](#tabela-19-1) apresenta exemplos práticos de mecanismos de triagem:
+
+<a id="tabela-19-1"></a>
 
 | Contexto | Mecanismo de Triagem |
 |----------|---------------------|
@@ -534,6 +536,10 @@ Leilões são mecanismos de venda particularmente interessantes sob informação
     Mecanismo de mercado para alocação de bens em que os participantes submetem lances, e o bem é alocado (e o preço determinado) de acordo com regras predefinidas. O desenho de leilões é uma aplicação central da teoria de mecanismos.
 
 ### Tipos de leilões
+
+A [Tabela 19.2](#tabela-19-2) descreve os quatro formatos clássicos de leilão.
+
+<a id="tabela-19-2"></a>
 
 | Tipo de Leilão | Descrição | Lance | Preço pago |
 |----------------|-----------|-------|------------|
@@ -599,7 +605,9 @@ Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, 
 
 Ao longo deste capítulo, analisamos diversos problemas de informação assimétrica — risco moral, seleção adversa, sinalização, triagem, leilões — cada um com suas especificidades. Para consolidar a compreensão desse rico arcabouço conceitual, é útil organizá-los em uma taxonomia que destaque as dimensões essenciais: o timing da assimetria (pré ou pós-contratual), a natureza da informação oculta (ação ou tipo) e os mecanismos disponíveis para atenuá-la.
 
-A tabela a seguir resume os principais tipos de problemas de informação assimétrica, suas características e os mecanismos de resposta.
+A [Tabela 19.3](#tabela-19-3) resume os principais tipos de problemas de informação assimétrica, suas características e os mecanismos de resposta.
+
+<a id="tabela-19-3"></a>
 
 | Tipo de Assimetria | Timing | O que é oculto | Exemplos | Soluções de Mercado |
 |---|---|---|---|---|

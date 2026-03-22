@@ -258,6 +258,10 @@ A função custo derivada na seção anterior é uma construção abstrata que r
 
 ### Relações entre as curvas de custo
 
+A [Tabela 11.1](#tabela-11-1) sintetiza as principais relações entre as curvas de custo.
+
+<a id="tabela-11-1"></a>
+
 | Relação | Expressão | Implicação |
 |:---|:---|:---|
 | CMg e CMe | Se \(\mathrm{CMg} < \mathrm{CMe}\), CMe é decrescente | CMg "puxa" CMe para baixo |

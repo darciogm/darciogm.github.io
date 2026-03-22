@@ -131,7 +131,9 @@ A estratégia de gatilho mostra que a cooperação *pode* ser sustentada. Mas at
 
 O grim trigger é a estratégia de punição mais simples e severa: uma única traição condena os jogadores à não cooperação perpétua. Mas será que essa punição draconiana é realista? No mundo real, relações comerciais se recuperam de rupturas, parceiros se reconciliam após conflitos. Estratégias mais sofisticadas capturam essa possibilidade de "perdão" e, em muitos contextos, se mostram mais robustas.
 
-Além do grim trigger, existem estratégias mais sofisticadas:
+Além do grim trigger, existem estratégias mais sofisticadas, comparadas na [Tabela 9b.1](#tabela-9b-1):
+
+<a id="tabela-9b-1"></a>
 
 | Estratégia | Descrição | \(\delta^*\) | Vantagem | Desvantagem |
 |:-----------|:----------|:------------|:---------|:------------|

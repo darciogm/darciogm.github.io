@@ -159,6 +159,10 @@ A escolha de qual medida utilizar depende do contexto. Se o risco é de magnitud
 
 ### Classes importantes de funções de utilidade
 
+A [Tabela 7.1](#tabela-7-1) apresenta as classes mais utilizadas de funções de utilidade sob risco e suas propriedades.
+
+<a id="tabela-7-1"></a>
+
 | Classe | Função \(u(W)\) | \(A(W)\) | \(R(W)\) | Propriedade |
 |:-------|:----------------|:---------|:---------|:------------|
 | CARA (Aversão Absoluta Constante) | \(-e^{-aW}\), \(a > 0\) | \(a\) (constante) | \(aW\) (crescente) | A atitude frente a apostas de valor fixo não muda com a riqueza |

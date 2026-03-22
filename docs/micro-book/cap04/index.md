@@ -537,6 +537,10 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
 
 ## 4.11 — Funções do Consumidor
 
+A [Tabela 4.1](#tabela-4-1) resume as cinco funções centrais da teoria do consumidor e suas propriedades.
+
+<a id="tabela-4-1"></a>
+
 | Função | Definição | Argumentos | Propriedades principais |
 |---|---|---|---|
 | Utilidade direta \(u(\mathbf{x})\) | Nível de satisfação da cesta \(\mathbf{x}\) | Quantidades \(\mathbf{x}\) | Ordinal; contínua; quase-côncava |

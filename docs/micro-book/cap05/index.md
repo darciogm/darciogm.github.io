@@ -360,7 +360,9 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
 
 ### 5.7.5 Elasticidades estimadas para o Brasil
 
-As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
+As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. A [Tabela 5.1](#tabela-5-1) apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
+
+<a id="tabela-5-1"></a>
 
 | Categoria de Bem | Elasticidade-preço (\(\varepsilon_{x,p}\)) | Elasticidade-renda (\(\varepsilon_{x,I}\)) | Classificação |
 |:---|:---:|:---:|:---|

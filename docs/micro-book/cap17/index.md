@@ -303,6 +303,10 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
 ### Deslocamentos das curvas
 
+A [Tabela 17.1](#tabela-17-1) apresenta os principais fatores que deslocam as curvas de oferta e demanda de trabalho.
+
+<a id="tabela-17-1"></a>
+
 | Fator | Efeito sobre a oferta | Efeito sobre a demanda | Impacto no salário |
 |---|---|---|---|
 | Aumento da produtividade | — | Desloca \(H^d\) para a direita | \(w^*\) sobe |
@@ -602,6 +606,10 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 ---
 
 ## 17.9 — Efeitos Substituição e Renda sobre a Oferta de Trabalho
+
+A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para diferentes variações.
+
+<a id="tabela-17-2"></a>
 
 | Variação | Efeito Substituição | Efeito Renda | Resultado sobre \(h^*\) |
 |---|---|---|---|

@@ -974,6 +974,10 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ## 2.13 — Condições de otimização
 
+A [Tabela 2.1](#tabela-2-1) reúne as condições de otimização para os principais tipos de problemas discutidos neste capítulo.
+
+<a id="tabela-2-1"></a>
+
 | Tipo de Problema | Condição de Primeira Ordem | Condição de Segunda Ordem | Observação |
 |---|---|---|---|
 | **Sem restrição** (1 variável) | \(f'(x^*) = 0\) | \(f''(x^*) < 0\) para máx. | Teste da derivada segunda |

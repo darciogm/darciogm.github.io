@@ -59,6 +59,10 @@ onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de
 
 ### Fatores que afetam a taxa de juros
 
+A [Tabela 18.1](#tabela-18-1) resume os principais fatores que afetam a taxa de juros de equilíbrio.
+
+<a id="tabela-18-1"></a>
+
 | Fator | Efeito sobre \(r^*\) | Mecanismo |
 |---|---|---|
 | Aumento da produtividade do capital | \(\uparrow r^*\) | Desloca demanda por investimento para a direita |
@@ -428,7 +432,9 @@ Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa an
 | 3 | 40.000 |
 | 4 | 45.000 |
 
-A TIR deste projeto é aproximadamente 15,2%. A tabela a seguir mostra o VPL para diferentes taxas de desconto:
+A TIR deste projeto é aproximadamente 15,2%. A [Tabela 18.2](#tabela-18-2) mostra o VPL para diferentes taxas de desconto:
+
+<a id="tabela-18-2"></a>
 
 | Taxa de desconto (\(r\)) | VPL (R$) | Decisão |
 |---|---|---|
