@@ -38,9 +38,8 @@
     .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 880px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 540px; } .controls { width: 100%; max-width: 540px; } }
-    /* === FIX: anti-scrollHeight inflation === */
-    html { height: auto !important; min-height: 0 !important; }
-    body { height: auto !important; min-height: 0 !important; overflow: visible; }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
@@ -286,5 +285,6 @@
       }
     }
   </script>
+<script>(function(){function r(){var c=document.body.children,m=0;for(var i=0;i<c.length;i++){var b=c[i].getBoundingClientRect();var h=b.top+b.height;if(h>m)m=h}var height=Math.ceil(m)+20;if(height>50&&window.parent!==window)window.parent.postMessage({type:"iframeResize",height:height},"*")}if(document.readyState==="complete")setTimeout(r,200);else window.addEventListener("load",function(){setTimeout(r,200)});setTimeout(r,2000);setTimeout(r,5000);var t;new MutationObserver(function(){clearTimeout(t);t=setTimeout(r,300)}).observe(document.body,{childList:true,subtree:true,attributes:true})})();</script>
 </body>
 </html>

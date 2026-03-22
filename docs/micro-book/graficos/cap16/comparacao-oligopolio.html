@@ -42,9 +42,8 @@
       #jxgbox { width: 100%; max-width: 520px; }
       .controls { width: 100%; max-width: 520px; }
     }
-    /* === FIX: anti-scrollHeight inflation === */
-    html { height: auto !important; min-height: 0 !important; }
-    body { height: auto !important; min-height: 0 !important; overflow: visible; }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
@@ -199,5 +198,6 @@
     });
     updateGraph();
   </script>
+<script>(function(){function r(){var c=document.body.children,m=0;for(var i=0;i<c.length;i++){var b=c[i].getBoundingClientRect();var h=b.top+b.height;if(h>m)m=h}var height=Math.ceil(m)+20;if(height>50&&window.parent!==window)window.parent.postMessage({type:"iframeResize",height:height},"*")}if(document.readyState==="complete")setTimeout(r,200);else window.addEventListener("load",function(){setTimeout(r,200)});setTimeout(r,2000);setTimeout(r,5000);var t;new MutationObserver(function(){clearTimeout(t);t=setTimeout(r,300)}).observe(document.body,{childList:true,subtree:true,attributes:true})})();</script>
 </body>
 </html>
