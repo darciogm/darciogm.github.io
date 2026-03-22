@@ -173,7 +173,7 @@ code, pre, kbd, .highlight {
 
 .author-links a {
   font-size: 0.82rem;
-  color: #C8102E !important;
+  color: #C8102E;
   text-decoration: none;
   border: 1px solid #C8102E;
   border-radius: 4px;
@@ -183,7 +183,7 @@ code, pre, kbd, .highlight {
 
 .author-links a:hover {
   background: #C8102E;
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 
@@ -364,7 +364,7 @@ figcaption {
 }
 
 .social-links a {
-  color: #C8102E !important;
+  color: #C8102E;
   text-decoration: none;
   font-size: 1.5rem;
   line-height: 1;
@@ -372,7 +372,7 @@ figcaption {
 }
 
 .social-links a:hover {
-  color: #9a0c23 !important;
+  color: #9a0c23;
   transform: scale(1.15);
 }
 
@@ -428,11 +428,11 @@ figcaption {
 }
 
 /* Wrapper de tabelas — remover margin-bottom extra */
-.md-typeset__scrollwrap {
-    margin-bottom: 0 !important;
+.md-typeset .md-typeset__scrollwrap {
+    margin-bottom: 0;
 }
-.md-typeset__table {
-    margin-bottom: 0 !important;
+.md-typeset .md-typeset__table {
+    margin-bottom: 0;
 }
 
 /* Espaçamento acima dos iframes de figuras — igual às tabelas */
