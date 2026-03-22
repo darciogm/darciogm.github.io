@@ -71,9 +71,9 @@ Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
 O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
 
-<iframe src="../graficos/cap17/trabalho-lazer.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap17/trabalho-lazer.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 17.1** — Escolha ótima entre lazer e consumo. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
 </p>
 
@@ -244,9 +244,9 @@ Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso
 
 O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibilidade de backward-bending. No painel superior, veja a escolha lazer-consumo para o salário selecionado. No painel inferior, a curva de oferta de trabalho \(h^*(w)\). Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
 
-<iframe src="../graficos/cap17/oferta-trabalho.html" width="100%" height="800" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap17/oferta-trabalho.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 17.2** — Curva de oferta de trabalho individual e a possibilidade de backward-bending. Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
 </p>
 
@@ -424,9 +424,9 @@ A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de
 
 O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (CMgL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 
-<iframe src="../graficos/cap17/monopsonio.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap17/monopsonio.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 17.3** — Equilíbrio monopsonístico versus competitivo no mercado de trabalho. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 </p>
 

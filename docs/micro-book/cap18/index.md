@@ -132,9 +132,9 @@ Para um poupador, o efeito líquido sobre \(C_1\) é ambíguo (semelhante à cur
 
 O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A reta orçamentária intertemporal tem inclinação \(-(1+r)\) e passa pelo ponto de dotação \((Y_1, Y_2)\). O consumidor escolhe o ponto de tangência com a curva de indiferença. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta e a classificação do agente como poupador ou devedor.
 
-<iframe src="../graficos/cap18/consumo-intertemporal.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap18/consumo-intertemporal.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 18.1** — Modelo de consumo intertemporal de dois períodos. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.
 </p>
 
@@ -269,9 +269,9 @@ Por essas razões, o VPL é considerado o critério superior para avaliação de
 
 O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desconto. Edite os fluxos de caixa \(F_0\) a \(F_5\) e ajuste a taxa de desconto \(r\) com o slider. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR). Projetos com VPL positivo (acima da linha zero) devem ser aceitos.
 
-<iframe src="../graficos/cap18/vpl-tir.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
+<iframe src="../graficos/cap18/vpl-tir.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 18.2** — Valor Presente Líquido como função da taxa de desconto. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR).
 </p>
 

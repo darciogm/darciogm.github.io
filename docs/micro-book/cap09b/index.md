@@ -53,9 +53,9 @@ Para tornar esses conceitos concretos, considere o problema clássico de deterr�
 
     A ameaça "se você entrar, eu luto" não é crível porque, no momento em que I precisa decidir, lutar é pior do que acomodar. O EPS descarta esse equilíbrio.
 
-<iframe src="../graficos/cap09/jogo-sequencial.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+<iframe src="../graficos/cap09/jogo-sequencial.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 9b.1** — Jogo sequencial na forma extensiva. Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do EPS é destacado em vermelho.
 </p>
 
@@ -138,9 +138,9 @@ Além do grim trigger, existem estratégias mais sofisticadas:
 | **Tit-for-Tat** | Coopera no 1º período; depois copia a ação do oponente no período anterior | \(\frac{T-R}{T-P}\) | Simples, "perdoa"; venceu os torneios de Axelrod | Vulnerável a erros; ciclos de retaliação |
 | **Win-Stay, Lose-Shift** | Mantém a ação se o payoff foi bom, muda se foi ruim | Variável | Autocorreção | Pode não ser EPS |
 
-<iframe src="../graficos/cap09/delta-cooperacao.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+<iframe src="../graficos/cap09/delta-cooperacao.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 9b.2** — Cooperação no Dilema dos Prisioneiros repetido. Altere os payoffs \(T\), \(R\), \(P\) e o fator de desconto \(\delta\) para ver quando a cooperação é sustentável pela estratégia de gatilho. A curva verde (\(V_{\text{coop}}\)) deve estar acima da vermelha (\(V_{\text{desvio}}\)).
 </p>
 
@@ -256,9 +256,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     Andersen et al. (2011) realizaram experimentos na Índia com stakes variando de US\$ 0,50 a US\$ 200 (até 8 meses de salário local). Com stakes muito altos, as ofertas convergem para a previsão teórica — sugerindo que preferências por fairness têm um preço.
 
-    <iframe src="../graficos/cap09/webr-ultimatum.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+    <iframe src="../graficos/cap09/webr-ultimatum.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
     **Figura 9b.3** — Simulação de um experimento de ultimatum game com modelo logit. Altere os parâmetros da simulação e estime a probabilidade de aceitar em função da oferta.
     </p>
 
@@ -271,9 +271,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     Este box simula os ciclos de Edgeworth: preços sobem gradualmente (fase cooperativa) e depois desabam (fase de punição/undercut), gerando o padrão "dente de serra".
 
-    <iframe src="../graficos/cap09/webr-gasoline.html" width="100%" height="720" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+    <iframe src="../graficos/cap09/webr-gasoline.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
     **Figura 9b.4** — Simulação de ciclos de Edgeworth no mercado de gasolina. Baseado em Adams (2025, Cap. 7) e dados de Perth.
     </p>
 
