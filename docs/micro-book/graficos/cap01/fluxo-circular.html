@@ -116,32 +116,36 @@ function draw() {
   var px = cx + rx, py = cy; // product market
   var fax = cx - rx, fay = cy; // factor market
 
-  // Top-right: Households -> Product market (spending / payments)
-  flows.push({ path: arcPath(hx+boxW/2, hy+5, px-boxW/2, py-20, -25), color: '#C8102E', marker: 0,
-    tip: 'Gastos das famílias: pagamento por bens e servicos', label: 'Gastos ($)' });
-  // Top-right return: Product market -> Households (goods)
-  flows.push({ path: arcPath(px-boxW/2, py+20, hx+boxW/2, hy-5, -25), color: '#00897b', marker: 2, dash: '6,4',
-    tip: 'Bens e servicos fluem do mercado para as famílias', label: 'Bens/Serviços' });
+  // === QUADRANTE SUPERIOR-DIREITO (Famílias ↔ Mercado de Produtos) ===
+  // Seta externa (dinheiro): Famílias → Mercado de Produtos
+  flows.push({ path: arcPath(hx+boxW/2, hy, px, py-boxH/2, -60), color: '#C8102E', marker: 0,
+    tip: 'Gastos das famílias: pagamento por bens e serviços', label: 'Gastos ($)' });
+  // Seta interna (bens): Mercado de Produtos → Famílias
+  flows.push({ path: arcPath(px, py-boxH/2, hx+boxW/2, hy, 60), color: '#00897b', marker: 2, dash: '6,4',
+    tip: 'Bens e serviços fluem do mercado para as famílias', label: 'Bens/Serviços' });
 
-  // Right-bottom: Product market -> Firms (revenue)
-  flows.push({ path: arcPath(px-boxW/2, py+20, fx+boxW/2, fy-5, -25), color: '#C8102E', marker: 0,
-    tip: 'Receita das firmas: venda de bens e servicos', label: 'Receita ($)' });
-  // Right-bottom return: Firms -> Product market (goods)
-  flows.push({ path: arcPath(fx+boxW/2, fy+5, px-boxW/2, py-20, -25), color: '#00897b', marker: 2, dash: '6,4',
-    tip: 'Firmas oferecem bens e servicos ao mercado', label: 'Bens/Serviços' });
+  // === QUADRANTE INFERIOR-DIREITO (Mercado de Produtos ↔ Firmas) ===
+  // Seta externa (dinheiro): Mercado de Produtos → Firmas
+  flows.push({ path: arcPath(px, py+boxH/2, fx+boxW/2, fy, -60), color: '#C8102E', marker: 0,
+    tip: 'Receita das firmas: venda de bens e serviços', label: 'Receita ($)' });
+  // Seta interna (bens): Firmas → Mercado de Produtos
+  flows.push({ path: arcPath(fx+boxW/2, fy, px, py+boxH/2, 60), color: '#00897b', marker: 2, dash: '6,4',
+    tip: 'Firmas oferecem bens e serviços ao mercado', label: 'Bens/Serviços' });
 
-  // Bottom-left: Firms -> Factor market (demand for factors / payments)
-  flows.push({ path: arcPath(fx-boxW/2, fy-5, fax+boxW/2, fay+20, -25), color: '#C8102E', marker: 0,
+  // === QUADRANTE INFERIOR-ESQUERDO (Firmas ↔ Mercado de Fatores) ===
+  // Seta externa (dinheiro): Firmas → Mercado de Fatores
+  flows.push({ path: arcPath(fx-boxW/2, fy, fax, fay+boxH/2, -60), color: '#C8102E', marker: 0,
     tip: 'Pagamento por fatores de produção (salários, aluguéis, juros)', label: 'Pagamentos ($)' });
-  // Bottom-left return: Factor market -> Firms (factors)
-  flows.push({ path: arcPath(fax+boxW/2, fay-20, fx-boxW/2, fy+5, -25), color: '#ff9800', marker: 3, dash: '6,4',
+  // Seta interna (fatores): Mercado de Fatores → Firmas
+  flows.push({ path: arcPath(fax, fay+boxH/2, fx-boxW/2, fy, 60), color: '#ff9800', marker: 3, dash: '6,4',
     tip: 'Fatores de produção fluem para as firmas (trabalho, capital, terra)', label: 'Fatores' });
 
-  // Left-top: Factor market -> Households (income)
-  flows.push({ path: arcPath(fax+boxW/2, fay-20, hx-boxW/2, hy+5, -25), color: '#C8102E', marker: 0,
+  // === QUADRANTE SUPERIOR-ESQUERDO (Mercado de Fatores ↔ Famílias) ===
+  // Seta externa (dinheiro): Mercado de Fatores → Famílias
+  flows.push({ path: arcPath(fax, fay-boxH/2, hx-boxW/2, hy, -60), color: '#C8102E', marker: 0,
     tip: 'Renda das famílias: salários, aluguéis, lucros, juros', label: 'Renda ($)' });
-  // Left-top return: Households -> Factor market (factors)
-  flows.push({ path: arcPath(hx-boxW/2, hy-5, fax+boxW/2, fay+20, -25), color: '#ff9800', marker: 3, dash: '6,4',
+  // Seta interna (fatores): Famílias → Mercado de Fatores
+  flows.push({ path: arcPath(hx-boxW/2, hy, fax, fay-boxH/2, 60), color: '#ff9800', marker: 3, dash: '6,4',
     tip: 'Famílias oferecem fatores de produção ao mercado', label: 'Fatores' });
 
   // Government flows
