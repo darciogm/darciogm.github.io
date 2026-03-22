@@ -25,7 +25,8 @@
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
     .boards-wrapper { display: flex; flex-direction: column; gap: 0.5rem; }
     .board-label { font-size: 0.8rem; font-weight: 700; color: #555; text-align: center; }
-    .jxgbox { width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
+    .jxgbox { width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px; overflow: visible !important; }
+    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }
@@ -85,7 +86,7 @@
   <script>
     // Board 1: Demand for x1 as function of p2
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-0.5, 60, 6, -5],
+      boundingbox: [-1.5, 60, 6, -5],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board1.create('axis', [[0,0],[6,0]], {

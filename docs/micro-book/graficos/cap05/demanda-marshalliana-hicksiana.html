@@ -60,7 +60,9 @@
       height: 300px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 290px;
       padding: 1rem;
@@ -168,6 +170,9 @@
       </div>
 
       <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -350,10 +355,17 @@
          fixed: true, label: { fontSize: 9, offset: [5, 10] } });
 
     // Legend in bottom panel
-    board2.create('text', [50, 6.2, function() { return '<span style="color:#C8102E;font-weight:bold">Marshalliana</span>'; }],
+    var _legMarsh = board2.create('text', [50, 6.2, function() { return '<span style="color:#C8102E;font-weight:bold">Marshalliana</span>'; }],
       { fontSize: 10, anchorX: 'left' });
-    board2.create('text', [50, 5.6, function() { return '<span style="color:#1565c0;font-weight:bold">Hicksiana</span>'; }],
+    var _legHicks = board2.create('text', [50, 5.6, function() { return '<span style="color:#1565c0;font-weight:bold">Hicksiana</span>'; }],
       { fontSize: 10, anchorX: 'left' });
+    var textLabels = [_legMarsh, _legHicks];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board1.update();
+      board2.update();
+    }
 
     function update() {
       var s = getState();

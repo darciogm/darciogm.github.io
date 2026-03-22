@@ -23,7 +23,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px;  overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }

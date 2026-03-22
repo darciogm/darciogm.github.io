@@ -48,7 +48,9 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 280px;
       padding: 1rem;
@@ -141,6 +143,9 @@
           <strong>Linha cinza:</strong> utilidade linear (\(v = x\))
         </div>
       </div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar (Tversky–Kahneman 1992)</button>
     </div>
   </div>
@@ -184,17 +189,18 @@
     ], { strokeColor: '#C8102E', strokeWidth: 3 });
 
     // Origin label
-    board.create('text', [3, -8, 'Ponto de referência'], {
+    var lblRef = board.create('text', [3, -8, 'Ponto de referência'], {
       fontSize: 11, color: '#666', fixed: true
     });
 
     // Gain/Loss labels
-    board.create('text', [60, 80, 'Ganhos'], {
+    var lblGanhos = board.create('text', [60, 80, 'Ganhos'], {
       fontSize: 13, color: '#2a7f2a', fontWeight: 'bold', fixed: true
     });
-    board.create('text', [-95, -100, 'Perdas'], {
+    var lblPerdas = board.create('text', [-95, -100, 'Perdas'], {
       fontSize: 13, color: '#C8102E', fontWeight: 'bold', fixed: true
     });
+    var textLabels = [lblRef, lblGanhos, lblPerdas];
 
     function resetAll() {
       document.getElementById('slider-alpha').value = 0.88;
@@ -215,6 +221,12 @@
       gainCurve.Y = function(x) { return x >= 0 ? Math.pow(x, alpha) : 0; };
       lossCurve.Y = function(x) { return x < 0 ? -lambda * Math.pow(-x, beta) : 0; };
 
+      board.update();
+    }
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({ visible: show }); });
       board.update();
     }
 

@@ -39,6 +39,8 @@
       #jxgbox { width: 100%; max-width: 480px; height: auto; aspect-ratio: 1; }
       .controls { width: 100%; max-width: 480px; }
     }
+    #jxgbox { overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -68,6 +70,9 @@
         <input type="range" id="sl-aB" min="0.2" max="0.8" step="0.05" value="0.5">
       </div>
       <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -78,7 +83,7 @@
     var priceRatio = 1; // p1/p2
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.8, W2 + 0.8, W1 + 0.8, -0.8],
+      boundingbox: [-1.5, W2 + 1.5, W1 + 1.5, -1.5],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: true
     });
 
@@ -256,6 +261,21 @@
       document.getElementById(id).addEventListener('input', update);
     });
     update();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
   </script>
 </body>
 </html>

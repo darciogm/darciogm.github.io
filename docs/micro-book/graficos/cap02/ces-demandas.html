@@ -49,7 +49,9 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 300px;
       padding: 1rem;
@@ -341,7 +343,7 @@
       var maxX1 = par.m / par.p1;
       var maxX2 = par.m / par.p2;
       var bbMax = Math.max(maxX1, maxX2) * 1.25;
-      var bbMargin = bbMax * 0.06;
+      var bbMargin = bbMax * 0.10;
 
       board.suspendUpdate();
       clearAll();

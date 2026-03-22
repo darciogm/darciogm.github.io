@@ -49,7 +49,9 @@
       height: 460px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 310px;
       padding: 1rem;
@@ -172,6 +174,9 @@
       </div>
 
       <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -361,7 +366,7 @@
       }
     ], { strokeColor: '#00897b', strokeWidth: 3, lastArrow: { type: 2, size: 6 } });
 
-    board.create('text', [
+    var _lblES = board.create('text', [
       function() {
         var s = getState();
         var orig = cobbDouglas(s.alpha, s.M, p1_init);
@@ -388,7 +393,7 @@
       function() { var s = getState(); return [cobbDouglas(s.alpha, s.M, s.p1new).x1, arrowY]; }
     ], { strokeColor: '#1565c0', strokeWidth: 3, lastArrow: { type: 2, size: 6 } });
 
-    board.create('text', [
+    var _lblER = board.create('text', [
       function() {
         var s = getState();
         var orig = cobbDouglas(s.alpha, s.M, p1_init);
@@ -408,13 +413,20 @@
       function() { var s = getState(); return [cobbDouglas(s.alpha, s.M, s.p1new).x1, arrowY2]; }
     ], { strokeColor: '#C8102E', strokeWidth: 3, lastArrow: { type: 2, size: 6 } });
 
-    board.create('text', [
+    var _lblTotal = board.create('text', [
       function() {
         var s = getState();
         return (cobbDouglas(s.alpha, s.M, p1_init).x1 + cobbDouglas(s.alpha, s.M, s.p1new).x1) / 2;
       },
       arrowY2 - 5, 'Total'
     ], { fontSize: 11, color: '#C8102E', anchorX: 'middle' });
+
+    var textLabels = [_lblES, _lblER, _lblTotal];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update();
+    }
 
     // Dashed drop lines from A and C to x-axis
     board.create('segment', [

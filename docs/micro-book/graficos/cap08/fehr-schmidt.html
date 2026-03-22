@@ -48,7 +48,9 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 280px;
       padding: 1rem;
@@ -169,13 +171,16 @@
         Utilidade máxima em: \(y_j\) = <span id="info-max">50</span><br>
         \(U_i\) atual: <span id="info-util">50</span>
       </div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-8, 110, 108, -80],
+      boundingbox: [-10, 115, 110, -85],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
@@ -216,6 +221,12 @@
     var eqLabel = board.create('text', [52, 95, 'igualdade'], {
       fontSize: 10, color: '#2a7f2a', fixed: true
     });
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      eqLabel.setAttribute({ visible: show });
+      board.update();
+    }
 
     function resetAll() {
       document.getElementById('slider-alpha').value = 1.00;

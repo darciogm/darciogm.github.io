@@ -23,7 +23,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
@@ -84,6 +85,9 @@
         <div class="eq" id="eq-tangency"></div>
         <div class="eq" id="eq-ustar"></div>
       </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -91,7 +95,7 @@
   <script>
     var currentFn = 'cd';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1, 25, 25, -1],
+      boundingbox: [-2, 25, 25, -2],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
@@ -229,19 +233,25 @@
       strokeColor: '#00897b', dash: 2, strokeWidth: 1
     });
 
-    board.create('text', [
+    var _lbl1 = board.create('text', [
       function() { return optimal().x1; }, -0.8,
       function() { return '\\(x_1^*\\)'; }
     ], { fontSize: 12, color: '#00897b', anchorX: 'middle', useMathJax: true });
-    board.create('text', [
+    var _lbl2 = board.create('text', [
       -0.3, function() { return optimal().x2 + 0.3; },
       function() { return '\\(x_2^*\\)'; }
     ], { fontSize: 12, color: '#00897b', anchorX: 'right', useMathJax: true });
-    board.create('text', [
+    var _lbl3 = board.create('text', [
       function() { return optimal().x1 + 0.8; },
       function() { return optimal().x2 + 1.0; },
       function() { var o = optimal(); return '(' + o.x1.toFixed(2) + ', ' + o.x2.toFixed(2) + ')'; }
     ], { fontSize: 13, color: '#00897b', fontWeight: 'bold' });
+    var textLabels = [_lbl1, _lbl2, _lbl3];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update();
+    }
 
     // Dynamic ICs
     var icObjs = [];

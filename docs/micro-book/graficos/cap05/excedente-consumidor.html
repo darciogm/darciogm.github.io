@@ -49,7 +49,9 @@
       height: 440px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 310px;
       padding: 1rem;
@@ -190,6 +192,9 @@
       </div>
 
       <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -198,7 +203,7 @@
     var p2 = 1;
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1, 12, 25, -1],
+      boundingbox: [-1.5, 12, 25, -1.5],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -298,13 +303,20 @@
     ], { strokeColor: '#666', strokeWidth: 1, dash: 3 });
 
     // Labels for p0 and p1
-    board.create('text', [
+    var _lblP0 = board.create('text', [
       -0.8, function() { return getState().p0; }, function() { return 'p_0'; }
     ], { fontSize: 11, color: '#666' });
 
-    board.create('text', [
+    var _lblP1 = board.create('text', [
       -0.8, function() { return getState().p1; }, function() { return 'p_1'; }
     ], { fontSize: 11, color: '#666' });
+
+    var textLabels = [_lblP0, _lblP1];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update();
+    }
 
     // CS shaded area (between p0 and p1 under Marshallian)
     // Using inequality/polygon approach with curve approximation

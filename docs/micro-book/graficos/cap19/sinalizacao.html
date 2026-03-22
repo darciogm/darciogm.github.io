@@ -22,7 +22,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px;  overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 340px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
     .slider-group { margin-bottom: .7rem; }
@@ -58,6 +59,9 @@
         <input type="range" id="sl-mu" min="0.05" max="0.95" step="0.01" value="0.50">
       </div>
       <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -227,6 +231,14 @@
       board.update();
       updateInfo();
     }
+
+    var textLabels = [poolLabel, sStarLabel, lblWH, lblWL];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update(); 
+    }
+
 
     function resetAll() {
       document.getElementById('sl-tH').value = 100;

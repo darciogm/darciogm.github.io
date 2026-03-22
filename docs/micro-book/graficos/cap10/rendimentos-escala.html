@@ -40,6 +40,8 @@
     .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 520px; } .controls { width: 100%; max-width: 520px; } }
+    #jxgbox { overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -59,13 +61,16 @@
         <input type="range" id="sl-t" min="1" max="3" step="0.1" value="1.5">
       </div>
       <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.5, 15, 15, -0.5],
+      boundingbox: [-1.5, 16, 16, -1.5],
       axis: false, showCopyright: false, showNavigation: false
     });
     board.create('axis', [[0,0],[15,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
@@ -183,6 +188,21 @@
     document.getElementById('sl-t').addEventListener('input', draw);
     document.querySelectorAll('input[name="rtype"]').forEach(function(r) { r.addEventListener('change', draw); });
     draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
   </script>
 </body>
 </html>

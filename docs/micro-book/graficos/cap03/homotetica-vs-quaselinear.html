@@ -77,7 +77,9 @@
     .jxg-panel {
       width: 100%;
       height: 320px;
+      overflow: visible !important;
     }
+    .jxg-panel svg, .jxg-panel .JXGtext { overflow: visible !important; }
     .controls {
       max-width: 900px;
       margin: 0.8rem auto 0;
@@ -171,7 +173,7 @@
   </div>
 
   <script>
-    var BB = [-0.5, 12, 12, -0.5];
+    var BB = [-1.5, 13, 13, -1.5];
     var boardOpts = {
       boundingbox: BB,
       axis: false,

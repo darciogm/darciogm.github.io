@@ -48,7 +48,9 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 300px;
       padding: 1rem;
@@ -153,13 +155,16 @@
       <div class="result-box result-accept" id="result-box">
         Oferta &ge; mínimo → ACEITA
       </div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-16, 120, 216, -120],
+      boundingbox: [-18, 125, 218, -125],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
@@ -192,12 +197,13 @@
     ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
 
     // Labels
-    board.create('text', [75, 35, 'Aceitar'], {
+    var lblAceitar = board.create('text', [75, 35, 'Aceitar'], {
       fontSize: 12, color: '#C8102E', fontWeight: 'bold', fixed: true
     });
-    board.create('text', [75, -5, 'Rejeitar'], {
+    var lblRejeitar = board.create('text', [75, -5, 'Rejeitar'], {
       fontSize: 11, color: '#999', fixed: true
     });
+    var textLabels = [lblAceitar, lblRejeitar];
 
     // Threshold point
     var threshPt = board.create('point', [33.3, 0], {
@@ -209,6 +215,13 @@
       // U_R(accept) = x - alpha*(S - 2x) = x(1 + 2*alpha) - alpha*S >= 0
       // x >= alpha*S / (1 + 2*alpha)
       return alphaR * S / (1 + 2 * alphaR);
+    }
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({ visible: show }); });
+      if (threshPt.label) threshPt.label.setAttribute({ visible: show });
+      board.update();
     }
 
     function resetAll() {

@@ -50,7 +50,9 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 280px;
       padding: 1rem;
@@ -130,13 +132,16 @@
         <div class="eq" id="eq-intercepts"></div>
         <div class="eq" id="eq-point"></div>
       </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1, 22, 22, -1],
+      boundingbox: [-2, 22, 22, -2],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -215,6 +220,13 @@
         return '(' + dragPt.X().toFixed(2) + ', ' + dragPt.Y().toFixed(2) + ')';
       }
     ], { fontSize: 13, color: '#00897b', fontWeight: 'bold' });
+
+    var textLabels = [labelA, labelB, dragLabel];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update();
+    }
 
     function updateInfo() {
       var p = getParams();

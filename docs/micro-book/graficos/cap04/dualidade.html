@@ -23,7 +23,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
@@ -90,6 +91,9 @@
         <div class="eq" id="eq-E"></div>
         <div class="eq" id="eq-identity"></div>
       </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -100,7 +104,7 @@
     var currentView = 'primal';
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1, 25, 25, -1],
+      boundingbox: [-2, 25, 25, -2],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
     board.create('axis', [[0,0],[1,0]], {
@@ -223,11 +227,18 @@
 
     board.create('segment', [tangPt, [function() { return compute().x1; }, 0]], { strokeColor: '#888', dash: 2, strokeWidth: 1 });
     board.create('segment', [tangPt, [0, function() { return compute().x2; }]], { strokeColor: '#888', dash: 2, strokeWidth: 1 });
-    board.create('text', [
+    var _lblCoord = board.create('text', [
       function() { return compute().x1 + 0.6; },
       function() { return compute().x2 + 1.0; },
       function() { var c = compute(); return '(' + c.x1.toFixed(2) + ', ' + c.x2.toFixed(2) + ')'; }
     ], { fontSize: 12, color: '#C8102E', fontWeight: 'bold' });
+    var textLabels = [_lblCoord];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      // Also redraw dynamic labels
+      updateAll();
+    }
 
     // Dynamic objects
     var dynObjs = [];
@@ -265,9 +276,10 @@
             ], { strokeColor: '#1565c0', strokeWidth: i===1?2.5:1.5, dash: i===1?0:2 }));
           }
         });
+        var _showLbl = document.getElementById('chk-labels').checked;
         dynObjs.push(board.create('text', [
           c.x1 + 3, c.x2 + 3, 'max U \\(\\uparrow\\)'
-        ], { fontSize: 12, color: '#1565c0', useMathJax: true }));
+        ], { fontSize: 12, color: '#1565c0', useMathJax: true, visible: _showLbl }));
       }
 
       // Dual iso-expenditure lines
@@ -290,9 +302,10 @@
             0.05, 25
           ], { strokeColor: '#00897b', strokeWidth: 2.5 }));
         }
+        var _showLbl2 = document.getElementById('chk-labels').checked;
         dynObjs.push(board.create('text', [
           Math.max(c.x1 - 4, 1), Math.max(c.x2 - 2, 1), 'min E \\(\\downarrow\\)'
-        ], { fontSize: 12, color: '#00897b', useMathJax: true }));
+        ], { fontSize: 12, color: '#00897b', useMathJax: true, visible: _showLbl2 }));
       }
     }
 

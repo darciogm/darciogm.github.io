@@ -26,7 +26,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 320px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }
@@ -76,13 +77,16 @@
       </div>
 
       <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.5, 12, 10.5, -25],
+      boundingbox: [-1.5, 13, 11.5, -26],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -282,6 +286,14 @@
       document.getElementById('slider-var').value = 2;
       document.getElementById('slider-curv').value = 0.5;
       update();
+    }
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      drawObjects.forEach(function(obj) {
+        if (obj.hasLabel && obj.label) obj.label.setAttribute({ visible: show });
+      });
+      board.update();
     }
 
     update();

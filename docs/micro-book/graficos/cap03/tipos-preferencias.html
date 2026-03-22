@@ -72,7 +72,9 @@
     .jxg-panel {
       width: 100%;
       height: 300px;
+      overflow: visible !important;
     }
+    .jxg-panel svg, .jxg-panel .JXGtext { overflow: visible !important; }
     .btn-reset {
       display: block;
       width: 200px;
@@ -133,7 +135,7 @@
   <button class="btn-reset" onclick="drawAll()">Resetar</button>
 
   <script>
-    var BB = [-0.5, 10.5, 10.5, -0.5];
+    var BB = [-1.5, 11.5, 11.5, -1.5];
     var boardOpts = {
       boundingbox: BB,
       axis: false,

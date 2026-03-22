@@ -23,7 +23,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
@@ -91,6 +92,9 @@
         <div class="eq" id="eq-ul"></div>
         <div class="eq" id="eq-diff"></div>
       </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -100,7 +104,7 @@
     var currentFn = 'cd';
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1, 25, 25, -1],
+      boundingbox: [-2, 25, 25, -2],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
     board.create('axis', [[0,0],[1,0]], {
@@ -210,6 +214,10 @@
     var dynObjs = [];
     function clearDyn() { dynObjs.forEach(function(o){board.removeObject(o);}); dynObjs=[]; }
 
+    function toggleLabels() {
+      updateAll();
+    }
+
     function drawAll() {
       clearDyn();
       var p = getP();
@@ -246,8 +254,9 @@
       // Optimal points
       dynObjs.push(board.create('point', [c.x1t, c.x2t], { name:'', size:4, strokeColor:'#1565c0', fillColor:'#1565c0', fixed:true }));
       dynObjs.push(board.create('point', [c.x1l, c.x2l], { name:'', size:4, strokeColor:'#00897b', fillColor:'#00897b', fixed:true }));
-      dynObjs.push(board.create('text', [c.x1t+0.5, c.x2t+0.8, 'Tax'], { fontSize:11, color:'#1565c0', fontWeight:'bold' }));
-      dynObjs.push(board.create('text', [c.x1l+0.5, c.x2l+0.8, 'LS'], { fontSize:11, color:'#00897b', fontWeight:'bold' }));
+      var _showLbl = document.getElementById('chk-labels').checked;
+      dynObjs.push(board.create('text', [c.x1t+0.5, c.x2t+0.8, 'Tax'], { fontSize:11, color:'#1565c0', fontWeight:'bold', visible: _showLbl }));
+      dynObjs.push(board.create('text', [c.x1l+0.5, c.x2l+0.8, 'LS'], { fontSize:11, color:'#00897b', fontWeight:'bold', visible: _showLbl }));
     }
 
     function updateAll() {

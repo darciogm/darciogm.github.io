@@ -41,6 +41,10 @@
     .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) { .graph-container { flex-direction: column; align-items: center; } .boards { width: 100%; max-width: 520px; } #jxgbox1, #jxgbox2 { width: 100%; } .controls { width: 100%; max-width: 520px; } }
+    #jxgbox1 { overflow: visible !important; }
+    #jxgbox1 svg, #jxgbox1 .JXGtext { overflow: visible !important; }
+    #jxgbox2 { overflow: visible !important; }
+    #jxgbox2 svg, #jxgbox2 .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -78,6 +82,9 @@
         <span style="background:#00897b"></span>CVMe
       </div>
       <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -85,7 +92,7 @@
   <script>
     // Board 1: CT
     var b1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-1, 500, 22, -20],
+      boundingbox: [-2, 520, 23, -30],
       axis: false, showCopyright: false, showNavigation: false
     });
     b1.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
@@ -95,7 +102,7 @@
 
     // Board 2: CMe, CMg, CVMe
     var b2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-1, 80, 22, -5],
+      boundingbox: [-2, 85, 23, -8],
       axis: false, showCopyright: false, showNavigation: false
     });
     b2.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
@@ -250,6 +257,21 @@
       document.getElementById(id).addEventListener('input', draw);
     });
     draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [b1, b2];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
   </script>
 </body>
 </html>

@@ -60,7 +60,9 @@
       height: 320px;
       border: 1px solid #ddd;
       border-radius: 6px;
+      overflow: visible !important;
     }
+    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 300px;
       padding: 1rem;
@@ -176,6 +178,9 @@
 
       <div class="info-box" id="info">
       </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -371,10 +376,17 @@
          label: { fontSize: 11, offset: [8, -5] } });
 
     // Legend
-    board2.create('text', [65, 200, function() { return '<span style="color:#C8102E;font-weight:bold">--- x_1*</span>'; }],
+    var _legX1 = board2.create('text', [65, 200, function() { return '<span style="color:#C8102E;font-weight:bold">--- x_1*</span>'; }],
       { fontSize: 11, anchorX: 'left', useMathJax: false });
-    board2.create('text', [65, 185, function() { return '<span style="color:#1565c0;font-weight:bold">- - x_2*</span>'; }],
+    var _legX2 = board2.create('text', [65, 185, function() { return '<span style="color:#1565c0;font-weight:bold">- - x_2*</span>'; }],
       { fontSize: 11, anchorX: 'left', useMathJax: false });
+    var textLabels = [_legX1, _legX2];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board1.update();
+      board2.update();
+    }
 
     // --- State management ---
     function getState() {

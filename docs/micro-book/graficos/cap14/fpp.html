@@ -41,6 +41,8 @@
       #jxgbox { width: 100%; max-width: 500px; }
       .controls { width: 100%; max-width: 500px; }
     }
+    #jxgbox { overflow: visible !important; }
+    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -63,6 +65,9 @@
         <span style="background:#1565c0;opacity:.3;"></span> Factível (ineficiente, interior)<br>
         <span style="background:#C8102E;opacity:.15;"></span> Infactível (exterior)
       </div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
@@ -94,7 +99,7 @@
     }
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1, 17, 17, -1],
+      boundingbox: [-2, 18, 18, -2],
       axis: false, showCopyright: false, showNavigation: false
     });
 
@@ -199,6 +204,21 @@
       document.getElementById(id).addEventListener('input', update);
     });
     update();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
   </script>
 </body>
 </html>
