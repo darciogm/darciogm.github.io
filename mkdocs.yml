@@ -39,13 +39,17 @@ theme:
       definition: material/book-open-variant
       theorem: material/certificate-outline
       proof: material/math-compass
+      tip: material/fire
+      warning: material/alert
       exercicio-resolvido: material/bullseye-arrow
       exercicio-proposto: material/pencil-outline
       example: material/flask-outline
       box-brasil: material/flag-variant
       question: material/trophy-outline
-      pesquisa: material/microscope
+      note: material/information-outline
+      info: material/information
       code: material/language-r
+      pesquisa: material/microscope
 
 nav:
   - Home: index.md
