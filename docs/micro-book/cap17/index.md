@@ -155,7 +155,7 @@ Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\
 
 ---
 
-??? example "✏️ Exercício Resolvido 17.1"
+??? exercicio-resolvido "🎯 Exercício Resolvido 17.1"
     **Enunciado:** Um trabalhador tem preferências \(U(C,L) = C^{1/2}\, L^{1/2}\), dotação de tempo \(T = 16\) horas e renda não salarial \(V = 32\). O salário-hora é \(w\).
 
     **Dados:** \(T = 16\), \(V = 32\), \(\alpha = 1/2\).
@@ -436,7 +436,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
-??? example "✏️ Exercício Resolvido 17.2"
+??? exercicio-resolvido "🎯 Exercício Resolvido 17.2"
     **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
 
     **Dados:** \(w(H) = 4 + 2H\); \(VPMg_L = 100 - 2H\).

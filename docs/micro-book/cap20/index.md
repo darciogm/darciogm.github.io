@@ -593,9 +593,9 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
+??? exercicio-resolvido "🎯 Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
     **Enunciado.** Uma siderúrgica produz aço ao preço competitivo \(P = 100\) com custo privado \(C(q) = 10q + q^2\). A produção gera poluição com custo externo \(E(q) = q^2\). (a) Calcule a produção privada e a socialmente ótima. (b) Determine o imposto pigouviano ótimo. (c) Calcule a perda de peso morto sem regulação.
 
     **Resolução.**
@@ -630,7 +630,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     A perda de peso morto é R$ 1.012,50 — o custo social da ausência de regulação.
 
-??? example "✏️ Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
+??? exercicio-resolvido "🎯 Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
     **Enunciado.** Dois consumidores têm utilidade \(U_1 = 3\ln G + x_1\) e \(U_2 = 2\ln G + x_2\), onde \(G\) é o bem público e \(x_i\) o bem privado. O custo marginal do bem público é \(CMg = 1\). (a) Determine o nível eficiente de \(G\). (b) Calcule os preços de Lindahl. (c) Compare com a provisão voluntária (Nash).
 
     **Resolução.**
@@ -665,7 +665,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     Resultado: \(G^{Nash} = 3 < 5 = G^*\). O bem público é subprovido em 40%. O consumidor 2 pega carona na contribuição do consumidor 1 — o problema clássico do free rider.
 
-??? example "✏️ Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
+??? exercicio-resolvido "🎯 Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
     **Enunciado.** Duas fábricas emitem 50 toneladas cada de \(SO_2\) (total: 100 ton). O regulador quer reduzir as emissões totais para 60 ton (abatimento de 40 ton). Os custos marginais de abatimento são \(CMgA_1 = 4a_1\) e \(CMgA_2 = 2a_2\), onde \(a_i\) é o abatimento da firma \(i\). (a) Encontre a alocação custo-efetiva. (b) Compare com abatimento uniforme. (c) Determine o preço de equilíbrio da permissão em um sistema cap-and-trade.
 
     **Resolução.**

@@ -623,9 +623,9 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
+??? exercicio-resolvido "🎯 Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
     **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
 
     **Resolução.**
@@ -694,7 +694,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
 
-??? example "✏️ Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
+??? exercicio-resolvido "🎯 Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
     **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
 
     **Resolução.**
@@ -739,7 +739,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
 
-??? example "✏️ Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
+??? exercicio-resolvido "🎯 Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
     **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
 
     **Resolução.**

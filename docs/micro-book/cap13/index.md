@@ -584,9 +584,9 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
+??? exercicio-resolvido "🎯 Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
     **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
 
     ---
@@ -625,7 +625,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
 
-??? example "✏️ Exercício Resolvido 13.2 — Preço máximo e escassez"
+??? exercicio-resolvido "🎯 Exercício Resolvido 13.2 — Preço máximo e escassez"
     **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
 
     ---
@@ -678,7 +678,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
 
-??? example "✏️ Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
+??? exercicio-resolvido "🎯 Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
     **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
     ---

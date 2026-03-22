@@ -518,9 +518,9 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 9a.1 — Equilíbrios de Nash na Batalha dos Sexos"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9a.1 — Equilíbrios de Nash na Batalha dos Sexos"
     **Enunciado:** Encontre todos os equilíbrios de Nash (em puras e em mistas) do seguinte jogo simultâneo:
 
     |  | Jogador 2: E | Jogador 2: D |
@@ -549,7 +549,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Interpretação:** Este é um jogo de coordenação com preferências conflitantes. Múltiplos equilíbrios explicam por que convenções, normas (ABNT, INMETRO) e regulamentações são valiosas — funcionam como "pontos focais" (Schelling, 1960).
 
-??? example "✏️ Exercício Resolvido 9a.2 — Cournot assimétrico no setor aéreo"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9a.2 — Cournot assimétrico no setor aéreo"
     **Enunciado:** Duas companhias aéreas competem à la Cournot em uma rota doméstica. A demanda inversa é \(P(Q) = 500 - 2Q\), onde \(Q = q_1 + q_2\) (em milhares de assentos/mês). A incumbente tem custo marginal \(c_1 = 100\) e a entrante tem \(c_2 = 150\). Encontre o equilíbrio de Cournot-Nash.
 
     **Resolução:**
@@ -570,7 +570,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Interpretação:** A firma mais eficiente produz mais e lucra mais. Na aviação brasileira, a Latam tem historicamente custos por ASK menores, o que contribui para seu market share de 39,1%.
 
-??? example "✏️ Exercício Resolvido 9a.3 — Stackelberg no mercado de cervejas"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9a.3 — Stackelberg no mercado de cervejas"
     **Enunciado:** A Ambev (líder) e a Heineken (seguidora) competem à la Stackelberg no mercado de cerveja premium. A demanda inversa é \(P = 20 - Q\) (R\$/litro, em milhões de litros/mês), com \(c_1 = c_2 = 4\).
 
     (a) Encontre o equilíbrio de Stackelberg.

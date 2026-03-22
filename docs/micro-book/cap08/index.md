@@ -197,7 +197,7 @@ A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto 
     **Conexão com este capítulo:**
     A função valor da Teoria do Prospecto — côncava para ganhos, convexa para perdas, mais inclinada no domínio das perdas — é o ponto de partida deste capítulo. Os vieses cognitivos documentados por Kahneman e Tversky (representatividade, disponibilidade, ancoragem) explicam os desvios sistemáticos da racionalidade que motivam toda a economia comportamental discutida aqui.
 
-??? example "✏️ Exercício Resolvido 8.1 — Função valor da Teoria do Prospecto"
+??? exercicio-resolvido "🎯 Exercício Resolvido 8.1 — Função valor da Teoria do Prospecto"
     **Enunciado:** Usando a função valor paramétrica da Teoria do Prospecto com \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\), calcule o valor subjetivo dos seguintes resultados: \(v(100)\), \(v(-100)\), \(v(250)\) e \(v(-250)\). Em seguida, verifique a propriedade de aversão à perda e a sensibilidade decrescente.
 
     **Dados:** \(\alpha = 0{,}88\), \(\beta = 0{,}88\), \(\lambda = 2{,}25\).
@@ -510,7 +510,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 **Figura 8.5 — Jogo do ultimato: decisão do respondedor com preferências de Fehr-Schmidt.** Observe como a aversão à inequidade determina o limiar de rejeição.
 </div>
 
-??? example "✏️ Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
+??? exercicio-resolvido "🎯 Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
     **Enunciado:** Em um jogo do ultimato com bolo \(S = 100\), o respondedor R tem parâmetros de Fehr-Schmidt \(\alpha_R = 2\) e \(\beta_R = 0{,}4\). (a) Qual é a oferta mínima que R aceita? (b) Se o proponente P tem \(\alpha_P = 0{,}5\) e \(\beta_P = 0{,}3\), qual é a oferta que maximiza a utilidade de P, sabendo que P conhece os parâmetros de R?
 
     **Dados:** \(S = 100\), \(\alpha_R = 2\), \(\beta_R = 0{,}4\), \(\alpha_P = 0{,}5\), \(\beta_P = 0{,}3\).
@@ -646,7 +646,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 **Figura 8.7 — Curvas de indiferença intertemporal: consumo presente \(c_0\) vs consumo futuro \(c_1\).** Visualize como o desconto quasi-hiperbólico altera a forma das curvas em relação ao modelo exponencial.
 </div>
 
-??? example "✏️ Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
+??? exercicio-resolvido "🎯 Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
     **Enunciado:** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}95)\) e utilidade linear \(u(x) = x\) pode escolher entre dois bônus salariais: **Bônus A**, que paga R\$ 1.000 no mês 6, e **Bônus B**, que paga R\$ 1.200 no mês 7. (a) Qual bônus o consumidor prefere quando avaliado em \(t = 0\)? (b) Qual bônus ele prefere quando avaliado em \(t = 6\) (isto é, quando o pagamento de A é iminente)? (c) Essa preferência é consistente ao longo do tempo?
 
     **Dados:** \(\beta = 0{,}70\), \(\delta = 0{,}95\), \(u(x) = x\).
@@ -747,7 +747,7 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 
 **Normas sociais.** Informar as pessoas sobre o comportamento de seus pares ("90% dos seus vizinhos pagam o IPTU em dia") explora a tendência à conformidade social e pode ser mais eficaz do que apelos racionais ou ameaças de multa.
 
-??? example "✏️ Exercício Resolvido 8.4 — Impacto do default na adesão previdenciária"
+??? exercicio-resolvido "🎯 Exercício Resolvido 8.4 — Impacto do default na adesão previdenciária"
     **Enunciado:** Uma empresa com 1.000 funcionários adota um plano de previdência complementar. Sob o regime de adesão voluntária (*opt-in*), a taxa de adesão é de 40%. A empresa considera migrar para adesão automática (*opt-out*). Suponha que, com *opt-out*, 85% dos funcionários permanecem no plano, e que a contribuição média mensal é de R\$ 300. (a) Calcule o aumento na contribuição mensal agregada. (b) Se 20% dos funcionários que permaneceram por inércia teriam preferido não participar (revelando heterogeneidade de preferências), quantos funcionários são "nudgeados" em direção contrária às suas preferências?
 
     **Dados:** 1.000 funcionários, adesão *opt-in* = 40%, adesão *opt-out* = 85%, contribuição média = R\$ 300/mês.

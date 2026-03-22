@@ -567,9 +567,9 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+??? exercicio-resolvido "🎯 Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
     **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
 
     **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
@@ -652,7 +652,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-??? example "✏️ Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
+??? exercicio-resolvido "🎯 Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
     **Enunciado:** Na mesma economia do ER 14.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
 
     **Dados:** Mesmas preferências e dotações do ER 14.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).

@@ -263,9 +263,9 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
     **Enunciado:** Trabalhadores têm produtividade \(\theta_H = 2\) (prob. 0,5) ou \(\theta_L = 1\) (prob. 0,5). O custo da educação é \(c(e, \theta) = e/\theta\). Firmas pagam salário = produtividade esperada condicionada em \(e\). Encontre o equilíbrio separador com menor custo.
 
     **Resolução:**
@@ -282,7 +282,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
     **Eficiência:** Se a informação fosse simétrica, cada tipo receberia sua produtividade sem custo de sinalização. O custo total da sinalização é \(0{,}5 \times (1/2) = 0{,}25\) — puro desperdício social, pois a educação não aumenta a produtividade neste modelo.
 
-??? example "✏️ Exercício Resolvido 9d.2 — Contrato ótimo com moral hazard"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9d.2 — Contrato ótimo com moral hazard"
     **Enunciado:** Um principal contrata um agente. O agente pode exercer esforço alto (\(e_H\), custo 2) ou baixo (\(e_L\), custo 0). Com esforço alto, o resultado é bom (100) com prob. 0,8 e ruim (0) com prob. 0,2. Com esforço baixo, é bom com prob. 0,3 e ruim com prob. 0,7. O agente é neutro ao risco e tem utilidade de reserva 0.
 
     (a) Qual contrato implementa esforço alto?

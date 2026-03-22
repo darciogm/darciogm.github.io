@@ -657,9 +657,9 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
+??? exercicio-resolvido "🎯 Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
 
     **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
 
@@ -690,7 +690,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
-??? example "✏️ Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+??? exercicio-resolvido "🎯 Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(v = 2\).
 
@@ -756,7 +756,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
-??? example "✏️ Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
+??? exercicio-resolvido "🎯 Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(v = 10\).
 

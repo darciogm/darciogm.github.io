@@ -468,9 +468,9 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
+??? exercicio-resolvido "🎯 Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
 
     **Enunciado.** Considere a função de utilidade Cobb-Douglas \(U(x,y) = x^a y^{1-a}\), com \(0 < a < 1\), preços \(p_x, p_y\) e renda \(I\).
 
@@ -508,7 +508,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     Os dois efeitos se cancelam perfeitamente — uma propriedade especial da Cobb-Douglas.
 
-??? example "✏️ Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
+??? exercicio-resolvido "🎯 Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
 
     **Enunciado.** Um consumidor tem utilidade \(U(x,y) = 2x + y\), preços iniciais \(p_x = p_y = 2\) e renda \(I = 100\).
 
@@ -530,7 +530,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     **Interpretação:** com substitutos perfeitos lineares, quando o consumidor já consome apenas \(x\) antes e depois da mudança, o efeito substituição é zero — ele não "troca" de bem, apenas consome mais do mesmo com o aumento do poder de compra. Este é um resultado importante e frequente em provas da ANPEC.
 
-??? example "✏️ Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
+??? exercicio-resolvido "🎯 Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
 
     **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
 

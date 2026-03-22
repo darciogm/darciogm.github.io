@@ -570,9 +570,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
+??? exercicio-resolvido "🎯 Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
     **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
 
     ---
@@ -609,7 +609,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
-??? example "✏️ Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
+??? exercicio-resolvido "🎯 Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
     **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
 
     ---
@@ -642,7 +642,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-??? example "✏️ Exercício Resolvido 15.3 — Regulação de monopólio natural"
+??? exercicio-resolvido "🎯 Exercício Resolvido 15.3 — Regulação de monopólio natural"
     **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 500 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
 
     ---

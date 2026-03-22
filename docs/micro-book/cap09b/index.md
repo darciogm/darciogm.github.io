@@ -309,9 +309,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
     **Enunciado:** Dois postos de combustíveis interagem repetidamente. Payoffs: se ambos mantêm preço alto (cooperam), cada um lucra R\$ 8.000/mês; se ambos cortam preço (traem), cada um lucra R\$ 2.000/mês; se um corta e outro mantém, o que cortou lucra R\$ 12.000 e o outro lucra R\$ 0. Qual o fator de desconto mínimo para sustentar cooperação com grim trigger?
 
     **Dados:** \(T = 12.000\), \(R = 8.000\), \(P = 2.000\), \(S = 0\).
@@ -336,7 +336,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     **Interpretação:** \(\delta^* = 0{,}4\) é baixo, indicando que a cooperação é fácil de sustentar — consistente com a prevalência de cartéis no setor. Com interação diária, o fator efetivo é próximo de 1, muito acima de 0,4. Isso explica por que o CADE precisa intervir ativamente.
 
-??? example "✏️ Exercício Resolvido 9b.2 — Barganha de Rubinstein"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9b.2 — Barganha de Rubinstein"
     **Enunciado:** Dois agentes negociam a divisão de R\$ 1 milhão com ofertas alternadas. O jogador 1 (proponente) tem \(\delta_1 = 0{,}9\) e o jogador 2 (respondedor) tem \(\delta_2 = 0{,}8\). Encontre a divisão no EPS.
 
     **Resolução:**

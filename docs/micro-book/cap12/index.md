@@ -499,9 +499,9 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
+??? exercicio-resolvido "🎯 Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
     **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
 
     **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
@@ -544,7 +544,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? example "✏️ Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
+??? exercicio-resolvido "🎯 Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
     **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
 
     **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
@@ -591,7 +591,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? example "✏️ Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
+??? exercicio-resolvido "🎯 Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
     **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(v = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
 
     **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(v = 1\).

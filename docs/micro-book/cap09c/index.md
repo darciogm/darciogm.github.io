@@ -217,9 +217,9 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
-## ✏️ Exercícios Resolvidos
+## 🎯 Exercícios Resolvidos
 
-??? example "✏️ Exercício Resolvido 9c.1 — BNE em jogo de entrada com tipos"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9c.1 — BNE em jogo de entrada com tipos"
     **Enunciado:** Uma incumbente pode ser forte (\(\theta_F\), prob. 0,6) ou fraca (\(\theta_W\), prob. 0,4). A entrante decide se entra. Payoffs: não entra → (10, 0); entra + forte → (3, –2); entra + fraca → (2, 4).
 
     **Resolução:**
@@ -234,7 +234,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     Se \(p > 2/3\), \(E[\pi_E] < 0\) e a entrante não entra. O ponto de indiferença é \(p^* = 2/3\).
 
-??? example "✏️ Exercício Resolvido 9c.2 — Leilão de primeiro preço com 3 licitantes"
+??? exercicio-resolvido "🎯 Exercício Resolvido 9c.2 — Leilão de primeiro preço com 3 licitantes"
     **Enunciado:** Três licitantes com valores \(v_i \sim U[0, 100]\) participam de um leilão de primeiro preço. (a) Encontre a estratégia de equilíbrio. (b) Calcule a receita esperada. (c) Compare com o leilão de segundo preço.
 
     **Resolução:**

@@ -164,7 +164,7 @@ Essa condição exige que a diferença de pagamentos entre os estados bom e ruim
 
 ---
 
-??? example "✏️ Exercício Resolvido 19.1"
+??? exercicio-resolvido "🎯 Exercício Resolvido 19.1"
     **Enunciado:** Um principal contrata um agente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O resultado pode ser bom (\(x_H\)) com probabilidade \(p(e)\) ou ruim (\(x_L\)) caso contrário, onde \(p(1) = 3/4\) e \(p(0) = 1/4\). A utilidade de reserva é \(\bar{U} = 3\). O principal deseja induzir esforço alto (\(e = 1\)).
 
     **Dados:** \(p_H = 3/4\), \(p_L = 1/4\), \(c(1) = 1\), \(c(0) = 0\), \(\bar{U} = 3\).
@@ -271,7 +271,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 ---
 
-??? example "✏️ Exercício Resolvido 19.2"
+??? exercicio-resolvido "🎯 Exercício Resolvido 19.2"
     **Enunciado:** Em um mercado de carros usados à la Akerlof, 40% dos carros são bons e 60% são ruins. Carros bons valem R$ 24.000 para compradores e R$ 20.000 para vendedores. Carros ruins valem R$ 10.000 para compradores e R$ 6.000 para vendedores. (a) O mercado de carros bons funciona? (b) Qual é a perda de bem-estar causada pela assimetria?
 
     **Dados:** \(\lambda = 0{,}4\); \(V_H = 24.000\), \(C_H = 20.000\); \(V_L = 10.000\), \(C_L = 6.000\).
