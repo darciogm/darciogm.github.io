@@ -248,7 +248,7 @@
           function(t) {
             if (t < 0) return NaN;
             var val = U - Math.sqrt(t);
-            return val < -0.5 ? NaN : val;
+            return val >= 0 ? val : NaN;
           },
           0.01, 10.5
         ], { strokeColor: col, strokeWidth: 1.8, numberPointsHigh: 200 });

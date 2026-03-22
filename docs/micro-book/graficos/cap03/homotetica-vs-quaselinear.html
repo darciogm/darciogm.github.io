@@ -220,7 +220,8 @@
       function(t) {
         var p = parseFloat(document.getElementById('sl-price').value);
         var I = parseFloat(document.getElementById('sl-income').value);
-        return I - p * t;
+        var val = I - p * t;
+        return val >= 0 ? val : NaN;
       },
       0, 12
     ], { strokeColor: '#C8102E', strokeWidth: 2, numberPointsHigh: 100 });
@@ -297,7 +298,7 @@
           function(t) {
             if (t < 0.01) return NaN;
             var val = U - Math.sqrt(t);
-            return val < -0.5 ? NaN : val;
+            return val >= 0 ? val : NaN;
           },
           0.01, 12
         ], { strokeColor: '#bbb', strokeWidth: 1.2, numberPointsHigh: 200 });
@@ -310,7 +311,8 @@
       function(t) {
         var p = parseFloat(document.getElementById('sl-price').value);
         var I = parseFloat(document.getElementById('sl-income').value);
-        return I - p * t;
+        var val = I - p * t;
+        return val >= 0 ? val : NaN;
       },
       0, 12
     ], { strokeColor: '#C8102E', strokeWidth: 2, numberPointsHigh: 100 });
@@ -327,7 +329,7 @@
         if (x2 < 0) { x1 = I / p; x2 = 0; }
         var U = Math.sqrt(x1) + x2;
         var val = U - Math.sqrt(t);
-        return val < -0.5 ? NaN : val;
+        return val >= 0 ? val : NaN;
       },
       0.01, 12
     ], { strokeColor: '#e65100', strokeWidth: 2.2, numberPointsHigh: 200 });
