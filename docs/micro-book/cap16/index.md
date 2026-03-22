@@ -48,7 +48,7 @@ q_1(p_1, p_2) = \begin{cases} D(p_1) & \text{se } p_1 < p_2 \\ \frac{D(p_1)}{2} 
 
 ### O paradoxo de Bertrand
 
-!!! abstract "Teorema: Equilíbrio de Bertrand"
+!!! theorem "Teorema: Equilíbrio de Bertrand"
     No modelo de Bertrand com bens homogêneos e custos marginais constantes e idênticos, o único equilíbrio de Nash é \(p_1^* = p_2^* = c\). Ambas as firmas obtêm lucro zero.
 
 !!! proof "Demonstração"
@@ -75,7 +75,7 @@ q_1(p_1, p_2) = \begin{cases} D(p_1) & \text{se } p_1 < p_2 \\ \frac{D(p_1)}{2} 
 
 O resultado é paradoxal: bastam **duas firmas** para reproduzir o resultado competitivo. Isso contrasta fortemente com a evidência empírica, na qual mercados duopolísticos tipicamente apresentam lucros positivos. O paradoxo de Bertrand motivou diversas extensões do modelo.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Se duas empresas vendem o mesmo produto, a guerra de preços pode eliminar todo o lucro — mesmo que sejam apenas duas.
 
     **Pense assim:** Imagine duas barracas de água mineral idêntica na saída de um show no Maracanã. Se uma cobra R$ 6 e a outra R$ 5, todo mundo vai na mais barata. A rival baixa para R$ 4,50, e a guerra continua até que ambas cobrem o custo — e ninguém lucra nada.
@@ -152,7 +152,7 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 \pi_1^* = \pi_2^* = \frac{(a-c)^2}{9b}
 \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No equilíbrio de Cournot, cada empresa produz menos do que faria sozinha, mas o mercado como um todo produz mais do que um monopólio.
 
     **Pense assim:** Pense em duas redes de postos de gasolina decidindo quantos postos abrir numa cidade. Cada uma sabe que, se abrir postos demais, o preço da gasolina cai para todo mundo. Então cada uma modera a expansão — mas, juntas, atendem mais consumidores do que um monopolista faria.
@@ -195,7 +195,7 @@ Q^{St} = \frac{3(a-c)}{4b}, \quad p^{St} = \frac{a+3c}{4}
 
 O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e lucra menos. A **vantagem do primeiro movimento** (first-mover advantage) decorre do compromisso crível com uma quantidade elevada.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quem se compromete primeiro com uma decisão grande e irreversível pode forçar os concorrentes a se acomodarem.
 
     **Pense assim:** Quando a Ambev inaugura uma fábrica gigante em uma região, cervejarias menores sabem que competir ali será duro. A capacidade já instalada é um "fato consumado" que muda o jogo — a líder produz muito, e a seguidora aceita uma fatia menor do mercado.
@@ -299,7 +299,7 @@ Edgeworth (1897) observou que, se as firmas têm **capacidade limitada**, o equi
 
 Kreps e Scheinkman (1983) demonstraram um resultado notável:
 
-!!! abstract "Teorema de Kreps-Scheinkman"
+!!! theorem "Teorema de Kreps-Scheinkman"
     Em um jogo em dois estágios no qual as firmas primeiro escolhem **capacidades** (estágio 1) e depois competem em **preços** (estágio 2), o resultado de equilíbrio coincide com o **equilíbrio de Cournot**, desde que a regra de racionamento eficiente seja utilizada.
 
 Esse resultado fornece uma fundamentação microeconômica para o modelo de Cournot: a concorrência em quantidades pode ser interpretada como uma concorrência em preços precedida por decisões de capacidade. As quantidades de Cournot representam as capacidades que as firmas escolheriam instalar antes de competir em preços.
@@ -375,7 +375,7 @@ Com \(n\) firmas simétricas, a condição torna-se:
 
 Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Cartéis são tentadores mas instáveis — cada participante ganha mais se trair o acordo enquanto os outros cooperam.
 
     **Pense assim:** Imagine um grupo de feirantes combinando o preço do tomate. Cada um tem a tentação de baixar o preço escondido e roubar os clientes dos vizinhos. Quanto mais feirantes no acordo, mais fácil alguém furar sem ser notado — e o combinado desmorona.
@@ -400,7 +400,7 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 !!! tip "Colusão tácita e direito concorrencial"
     A colusão tácita — sustentada por interação repetida sem comunicação explícita — é extremamente difícil de combater com instrumentos tradicionais do direito antitruste. O CADE distingue entre **cartel** (acordo explícito, ilícito per se) e **paralelismo consciente** (comportamento coordenado sem acordo, que pode não ser ilícito). A análise de estrutura de mercado (concentração, barreiras, transparência) é utilizada para avaliar a probabilidade de coordenação tácita.
 
-!!! example "🇧🇷 Box Brasil: O cartel do metrô de São Paulo e o Programa de Leniência do CADE"
+!!! box-brasil "Box Brasil: O cartel do metrô de São Paulo e o Programa de Leniência do CADE"
     Em 2013, o CADE condenou um cartel formado por grandes construtoras e fabricantes de equipamentos ferroviários que atuavam em licitações do Metrô de São Paulo e da CPTM. As empresas — incluindo Alstom, Bombardier, Mitsui, Siemens e CAF — coordenavam preços e dividiam lotes de licitações de trens e sistemas de sinalização por mais de uma década.
 
     **Mecanismo de colusão:**
@@ -542,7 +542,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-!!! example "🇧🇷 Box Brasil: Concentração bancária — spread, fusões e competição"
+!!! box-brasil "Box Brasil: Concentração bancária — spread, fusões e competição"
     O sistema bancário brasileiro é um dos mais concentrados entre as grandes economias. Os cinco maiores bancos (Itaú Unibanco, Bradesco, Banco do Brasil, Caixa Econômica Federal e Santander) detêm mais de 80% dos ativos totais do sistema, segundo dados do Banco Central do Brasil.
 
     **Spreads bancários**
@@ -625,7 +625,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
+??? exercicio-resolvido "Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
     **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
 
     **Resolução.**
@@ -694,7 +694,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
+??? exercicio-resolvido "Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
     **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
 
     **Resolução.**
@@ -739,7 +739,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
+??? exercicio-resolvido "Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
     **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
 
     **Resolução.**
@@ -777,7 +777,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 ## ✏️ Exercícios
 
 <a id="ex-16-1"></a>
-??? example "✏️ Exercício 16.1"
+??? exercicio-proposto "Exercício 16.1"
     Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
 
     a) Encontre as funções de reação de cada firma.
@@ -789,7 +789,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-1)
 
 <a id="ex-16-2"></a>
-??? example "✏️ Exercício 16.2"
+??? exercicio-proposto "Exercício 16.2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
     a) Encontre as funções de reação em preços.
@@ -801,7 +801,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-2)
 
 <a id="ex-16-3"></a>
-??? example "✏️ Exercício 16.3"
+??? exercicio-proposto "Exercício 16.3"
     Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
 
     a) Encontre preço, quantidade por firma e lucro por firma em função de \(n\).
@@ -813,7 +813,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-3)
 
 <a id="ex-16-4"></a>
-??? example "✏️ Exercício 16.4"
+??? exercicio-proposto "Exercício 16.4"
     Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
 
     a) Calcule o preço de monopólio e o lucro de monopólio dividido.
@@ -825,7 +825,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-4)
 
 <a id="ex-16-5"></a>
-??? example "✏️ Exercício 16.5"
+??? exercicio-proposto "Exercício 16.5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 
     a) Encontre a função de reação da seguidora.
@@ -928,7 +928,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Bresnahan, T. F.; Reiss, P. C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
+??? pesquisa "Bresnahan, T. F.; Reiss, P. C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
     **Pergunta central:** Quantos concorrentes são necessários para que um mercado se comporte de forma competitiva?
 
     **Método:** Os autores estudam mercados locais isolados nos Estados Unidos (pequenas cidades) para cinco tipos de negócios (dentistas, optometristas, farmácias, encanadores e pneus). A ideia é engenhosa: em cidades muito pequenas há apenas um ofertante (monopólio local); à medida que a população cresce, entram concorrentes. Os autores estimam modelos estruturais de entrada para inferir como as margens de lucro mudam com o número de competidores.
@@ -937,7 +937,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo fornece evidência empírica direta para a convergência do modelo de Cournot: a teoria prevê que o equilíbrio se aproxima do resultado competitivo conforme \(n\) cresce, e Bresnahan e Reiss mostram que essa convergência é rápida — essencialmente completa com 3 a 5 firmas. Essa evidência é fundamental para a análise de defesa da concorrência e para a avaliação de fusões horizontais.
 
-??? abstract "Berry, S.; Levinsohn, J.; Pakes, A. (1995). [Automobile Market Equilibrium and the Effects of Price Controls](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841–890."
+??? pesquisa "Berry, S.; Levinsohn, J.; Pakes, A. (1995). [Automobile Market Equilibrium and the Effects of Price Controls](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841–890."
     **Pergunta central:** Como modelar a demanda e o equilíbrio de preços em mercados oligopolísticos com produtos diferenciados, levando em conta a endogeneidade dos preços?
 
     **Método:** Berry, Levinsohn e Pakes (BLP) desenvolvem um modelo estrutural de demanda por automóveis nos Estados Unidos, combinando dados de mercado agregados com um modelo de escolha discreta com heterogeneidade de consumidores. A inovação metodológica central é o uso de variáveis instrumentais para lidar com a endogeneidade dos preços e uma técnica de inversão (a "inversão de BLP") que permite recuperar as utilidades médias dos produtos a partir das participações de mercado observadas. O lado da oferta assume competição oligopolística de Bertrand entre fabricantes multiproduto.

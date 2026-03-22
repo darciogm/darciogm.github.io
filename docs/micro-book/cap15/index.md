@@ -35,7 +35,7 @@ Em alguns mercados, as condições tecnológicas tornam ineficiente a presença 
 
 Exemplos clássicos incluem redes de distribuição de água, gás, eletricidade e telecomunicações fixas, nas quais a duplicação da infraestrutura seria socialmente custosa.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Em um monopólio natural, uma única empresa atende todo o mercado a um custo menor do que duas ou mais fariam — duplicar a infraestrutura seria desperdício.
 
     **Pense assim:** Pense na rede de água encanada do seu bairro. Faz sentido ter uma empresa com uma rede de canos, não duas redes paralelas competindo na mesma rua. O custo fixo de enterrar a tubulação é tão alto que, quanto mais casas uma única rede atende, menor o custo por casa. Construir uma segunda rede seria jogar dinheiro fora — literalmente cavar buracos à toa.
@@ -122,7 +122,7 @@ O monopolista aplica um **markup** sobre o custo marginal que é inversamente pr
 
     Para uma firma em concorrência perfeita, \(L = 0\). Para um monopolista, \(L = \frac{1}{|\varepsilon_p|}\). O índice varia entre 0 e 1.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O markup do monopolista é maior quando os consumidores têm poucas alternativas — quanto mais "preso" o cliente, mais caro o produto.
 
     **Pense assim:** Compare o preço de uma garrafa d'água no supermercado (R$ 2) com o preço no estádio de futebol (R$ 10). No estádio, você não pode sair para comprar em outro lugar — sua demanda é inelástica — e o vendedor explora isso cobrando um markup enorme. No supermercado, com dez marcas na prateleira, ninguém consegue cobrar muito acima do custo. O índice de Lerner mede exatamente esse "poder de espremer" o consumidor.
@@ -253,7 +253,7 @@ Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0
 !!! tip "Interpretação"
     A passagem de concorrência perfeita para monopólio envolve duas transferências: (i) parte do excedente do consumidor é capturada pelo monopolista (retângulo de transferência); (ii) parte do excedente total simplesmente desaparece (triângulo de Harberger). A PPM representa uma perda **líquida** de bem-estar social.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O monopólio produz menos e cobra mais do que um mercado competitivo, e a diferença de bem-estar que se perde no caminho não vai para ninguém — simplesmente evapora.
 
     **Pense assim:** Imagine que, em vez de vários postos de gasolina no bairro, houvesse apenas um. Ele reduziria a quantidade vendida e aumentaria o preço. Parte do que os consumidores perdem vai para o bolso do dono do posto (lucro de monopólio), mas outra parte — os litros que deixaram de ser vendidos porque o preço ficou alto demais — é pura perda. É como se alguém queimasse dinheiro: nem o consumidor nem o produtor ficam com ele.
@@ -353,7 +353,7 @@ Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de inc
     - Versões de software (básica, profissional, enterprise).
     - Descontos por quantidade em supermercados.
 
-!!! example "🇧🇷 Box Brasil: Discriminação de preços nas passagens aéreas"
+!!! box-brasil "Box Brasil: Discriminação de preços nas passagens aéreas"
     O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da [ANAC](https://www.anac.gov.br)), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
 
     **Discriminação de segundo grau (autosseleção):**
@@ -388,14 +388,14 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 \frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}
 \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Discriminar preços significa cobrar mais de quem está mais disposto a pagar e menos de quem é mais sensível ao preço.
 
     **Pense assim:** Pense nas passagens aéreas da Latam ou Gol. O executivo que compra na véspera paga R$ 2.000 porque *precisa* viajar (demanda inelástica). O estudante que compra com dois meses de antecedência paga R$ 400 porque tem flexibilidade (demanda elástica). A companhia aérea não está sendo "generosa" com o estudante — está maximizando lucro ao extrair mais de quem pode pagar mais e ainda assim vender para quem pagaria menos.
 
     **Por que isso importa:** A discriminação de preços pode, em alguns casos, aumentar a quantidade total vendida e até reduzir a perda de peso morto — o que complica o juízo de política concorrencial e exige análise caso a caso pelo CADE.
 
-!!! example "🇧🇷 Box Brasil: Monopólios naturais regulados — o setor elétrico e telecomunicações pós-privatização"
+!!! box-brasil "Box Brasil: Monopólios naturais regulados — o setor elétrico e telecomunicações pós-privatização"
     O Brasil passou por extenso processo de privatização e regulação de monopólios naturais nos anos 1990. Dois casos emblemáticos ilustram os desafios da regulação:
 
     **Setor Elétrico**
@@ -572,7 +572,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
+??? exercicio-resolvido "Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
     **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
 
     ---
@@ -609,7 +609,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
+??? exercicio-resolvido "Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
     **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
 
     ---
@@ -642,7 +642,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 15.3 — Regulação de monopólio natural"
+??? exercicio-resolvido "Exercício Resolvido 15.3 — Regulação de monopólio natural"
     **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 500 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
 
     ---
@@ -704,7 +704,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 ## ✏️ Exercícios
 
 <a id="ex-15-1"></a>
-??? example "✏️ Exercício 15.1"
+??? exercicio-proposto "Exercício 15.1"
     Considere um monopolista com custo total \(C(q) = 100 + 10q\) enfrentando demanda \(p = 50 - 2q\).
 
     a) Encontre o preço, a quantidade e o lucro de monopólio.
@@ -716,7 +716,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-1)
 
 <a id="ex-15-2"></a>
-??? example "✏️ Exercício 15.2"
+??? exercicio-proposto "Exercício 15.2"
     Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
 
     a) Encontre os preços e quantidades ótimos em cada mercado com discriminação de terceiro grau.
@@ -728,7 +728,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-2)
 
 <a id="ex-15-3"></a>
-??? example "✏️ Exercício 15.3"
+??? exercicio-proposto "Exercício 15.3"
     O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
 
     a) Calcule preço, quantidade e lucro antes e depois do imposto.
@@ -740,7 +740,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-3)
 
 <a id="ex-15-4"></a>
-??? example "✏️ Exercício 15.4"
+??? exercicio-proposto "Exercício 15.4"
     Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
 
     a) Calcule o resultado do monopólio não regulado.
@@ -752,7 +752,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-4)
 
 <a id="ex-15-5"></a>
-??? example "✏️ Exercício 15.5"
+??? exercicio-proposto "Exercício 15.5"
     Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
 
     a) Se o monopolista usa preço uniforme, qual é o preço ótimo?
@@ -851,7 +851,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
+??? pesquisa "De Loecker, J., Eeckhout, J. & Unger, G. (2020). [The Rise of Market Power and the Macroeconomic Implications](https://doi.org/10.1093/qje/qjz041). *Quarterly Journal of Economics*, 135(2), 561–644."
     **DOI:** [10.1093/qje/qjz041](https://doi.org/10.1093/qje/qjz041)
 
     **Contexto.** O Capítulo 15 analisa o monopólio como estrutura de mercado, mas até que ponto o poder de mercado é um fenômeno relevante empiricamente? De Loecker, Eeckhout e Unger (2020) respondem a essa pergunta com uma análise abrangente do *markup* praticado pelas firmas nos Estados Unidos ao longo de seis décadas.
@@ -862,7 +862,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Conexão com o capítulo.** O artigo fornece evidência empírica maciça sobre o índice de Lerner (Seção 15.3) em escala agregada. Os *markups* estimados podem ser diretamente interpretados como \(1/(1 - L)\), conectando a teoria do monopólio à mensuração empírica do poder de mercado. A tendência ascendente documentada sugere que o modelo de concorrência perfeita se torna progressivamente menos adequado como descrição da economia moderna.
 
-??? abstract "Bergemann, D., Brooks, B. & Morris, S. (2015). [The Limits of Price Discrimination](https://doi.org/10.1257/aer.20130848). *American Economic Review*, 105(3), 921–957."
+??? pesquisa "Bergemann, D., Brooks, B. & Morris, S. (2015). [The Limits of Price Discrimination](https://doi.org/10.1257/aer.20130848). *American Economic Review*, 105(3), 921–957."
     **DOI:** [10.1257/aer.20130848](https://doi.org/10.1257/aer.20130848)
 
     **Contexto.** A Seção 15.7 classifica a discriminação de preços em três graus, mas essa taxonomia assume que sabemos exatamente quanta informação o monopolista possui sobre os consumidores. Bergemann, Brooks e Morris (2015) fazem uma pergunta mais fundamental: dada uma demanda de mercado, quais são os **limites** do que a discriminação de preços pode alcançar, considerando toda estrutura de informação possível?

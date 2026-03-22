@@ -299,20 +299,6 @@ figcaption {
   font-weight: 600;
 }
 
-/* Admonition customizado para exercícios resolvidos */
-.md-typeset .admonition.exercicio-resolvido,
-.md-typeset details.exercicio-resolvido {
-  border-color: #C8102E;
-}
-.md-typeset .exercicio-resolvido > .admonition-title,
-.md-typeset .exercicio-resolvido > summary {
-  background-color: rgba(200, 16, 46, 0.08);
-}
-.md-typeset .exercicio-resolvido > .admonition-title::before,
-.md-typeset .exercicio-resolvido > summary::before {
-  content: "" !important;
-  display: none !important;
-}
 
 /* Caption de figuras e tabelas — colado ao elemento acima */
 .caption-obj {

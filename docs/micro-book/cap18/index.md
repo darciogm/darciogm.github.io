@@ -50,7 +50,7 @@ S(r) = I(r)
 
 onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de juros \(r^*\) que iguala oferta e demanda de fundos é a **taxa de juros de equilíbrio**.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A taxa de juros é o preço do tempo — quanto custa trazer dinheiro do futuro para o presente, ou quanto se ganha por abrir mão do consumo hoje.
 
     **Pense assim:** Quando você parcela uma compra no cartão com juros, está pagando pela impaciência de ter o produto agora. Quando coloca dinheiro na poupança, está sendo recompensado por esperar. A taxa de juros equilibra os impacientes (que querem gastar hoje) com os pacientes (que preferem poupar).
@@ -231,7 +231,7 @@ A demanda por capital da firma nos diz que ela investe até igualar o retorno ma
 - Se \(VPL < 0\): o projeto destrói valor; deve ser rejeitado.
 - Se \(VPL = 0\): o projeto remunera exatamente o custo de oportunidade; indiferente.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O VPL responde à pergunta mais importante de qualquer investimento: "Vale mais a pena colocar meu dinheiro aqui ou deixar rendendo no banco?"
 
     **Pense assim:** Um dono de padaria em Belo Horizonte avalia comprar um forno novo por R$ 50 mil que vai gerar R$ 15 mil de lucro extra por ano durante 5 anos. Mas ele poderia deixar os R$ 50 mil no CDB a 10% ao ano. O VPL calcula se o forno supera o CDB, trazendo todos os lucros futuros para "reais de hoje".
@@ -338,7 +338,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
     **Intuição**: se a renda de escassez crescesse a uma taxa superior a \(r\), seria mais lucrativo não extrair hoje e esperar — o proprietário reduziria a extração presente, elevando o preço hoje e reduzindo a taxa de crescimento. Se crescesse a uma taxa inferior a \(r\), seria melhor extrair tudo agora e aplicar no mercado financeiro — a extração presente aumentaria, reduzindo o preço hoje e elevando a taxa de crescimento. No equilíbrio, os dois incentivos se equilibram. \(\blacksquare\)
 
-!!! abstract "Regra de Hotelling"
+!!! theorem "Regra de Hotelling"
     Em equilíbrio competitivo, o preço líquido (preço menos custo marginal de extração) de um recurso natural exaurível cresce à taxa de juros:
 
     \[
@@ -347,7 +347,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
     onde \(R = P - c\) é a renda de escassez do recurso.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O preço de um recurso que vai acabar precisa subir ao longo do tempo à mesma taxa dos juros — senão, o dono preferiria extrair tudo hoje e aplicar o dinheiro.
 
     **Pense assim:** Imagine um fazendeiro no Pará com mogno nativo na propriedade. Se o preço da madeira não estiver subindo pelo menos tanto quanto o rendimento de um CDB, ele corta tudo agora e coloca o dinheiro no banco. Mas se o mogno está valorizando mais que os juros, compensa deixar a árvore crescendo. No equilíbrio, as duas opções se equivalem.
@@ -514,7 +514,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 18.1 — Consumo intertemporal e classificação poupador/devedor"
+??? exercicio-resolvido "Exercício Resolvido 18.1 — Consumo intertemporal e classificação poupador/devedor"
     **Enunciado.** Um consumidor vive dois períodos com renda \(Y_1 = 80\) e \(Y_2 = 66\). Suas preferências são \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1}\ln C_2\). A taxa de juros é \(r = 10\%\). (a) Calcule a riqueza intertemporal. (b) Encontre o consumo ótimo em cada período. (c) O consumidor é poupador ou devedor?
 
     **Resolução.**
@@ -547,7 +547,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 18.2 — VPL, TIR e decisão de investimento"
+??? exercicio-resolvido "Exercício Resolvido 18.2 — VPL, TIR e decisão de investimento"
     **Enunciado.** Uma empresa avalia instalar painéis solares por R$ 200.000, com economia anual de R$ 55.000 durante 5 anos. O custo de oportunidade do capital é 12% a.a. (a) Calcule o VPL. (b) Calcule a TIR por interpolação. (c) O projeto deve ser aceito?
 
     **Resolução.**
@@ -584,7 +584,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 18.3 — Regra de Hotelling e trajetória de preços"
+??? exercicio-resolvido "Exercício Resolvido 18.3 — Regra de Hotelling e trajetória de preços"
     **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(p_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
 
     **Resolução.**
@@ -751,7 +751,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "[Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004.](https://doi.org/10.1016/j.jcorpfin.2012.03.001)"
+??? pesquisa "[Araujo, A.; Ferreira, R.; Funchal, B. (2012). The Brazilian Bankruptcy Law Experience. *Journal of Corporate Finance*, 18(4), 994–1004.](https://doi.org/10.1016/j.jcorpfin.2012.03.001)"
     **Pergunta central:** Como a reforma da lei de falências brasileira (Lei 11.101/2005) afetou o custo de crédito e o investimento das empresas?
 
     **Método:** Os autores exploram a reforma de 2005 como um experimento natural. A nova lei introduziu mecanismos de recuperação judicial mais eficientes e aumentou a prioridade dos credores com garantia real na ordem de pagamento. Os autores comparam o custo do crédito corporativo e os spreads bancários antes e depois da reforma, usando dados do Banco Central do Brasil e controlando por variáveis macroeconômicas.
@@ -760,7 +760,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo conecta diretamente a estrutura institucional ao custo de uso do capital \(c_K = p_K(r + \delta)\). A taxa de juros \(r\) que as firmas enfrentam inclui um prêmio de risco que depende da qualidade do arcabouço legal de recuperação de crédito. A reforma da lei de falências reduziu esse prêmio, diminuindo o custo de capital e potencialmente viabilizando projetos de investimento que antes tinham VPL negativo — exatamente o mecanismo discutido na Seção 18.6.
 
-??? abstract "[Mehra, R.; Prescott, E. C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161.](https://doi.org/10.1016/0304-3932(85)90061-3)"
+??? pesquisa "[Mehra, R.; Prescott, E. C. (1985). The Equity Premium: A Puzzle. *Journal of Monetary Economics*, 15(2), 145–161.](https://doi.org/10.1016/0304-3932(85)90061-3)"
     **Pergunta central:** O prêmio de risco histórico das ações sobre títulos públicos pode ser explicado por modelos padrão de consumo intertemporal com níveis razoáveis de aversão ao risco?
 
     **Método:** [Mehra e Prescott](https://doi.org/10.1016/0304-3932(85)90061-3) calibram um modelo de troca pura com utilidade CRRA (aversão relativa ao risco constante) usando dados históricos dos EUA (1889–1978). No modelo, o fator de desconto estocástico é \(m = \beta(C_{t+1}/C_t)^{-\gamma}\), onde \(\gamma\) é o coeficiente de aversão ao risco. Os autores verificam quais combinações de \(\beta\) e \(\gamma\) reproduzem o prêmio de risco observado (~6% a.a.) e a taxa livre de risco (~1% a.a.).

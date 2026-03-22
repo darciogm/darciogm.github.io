@@ -46,7 +46,7 @@ Mantendo os preços \(p_1\) e \(p_2\) fixos e variando a renda \(I\), o conjunto
 !!! definition "Curva de Engel"
     A **curva de Engel** para o bem \(i\) é a função \(x_i^*(I)\) obtida fixando-se todos os preços e variando apenas a renda. Formalmente, é o gráfico do mapeamento \(I \mapsto x_i^*(p_1, \ldots, p_n, I)\).
 
-!!! abstract "Proposição — Curvas de Engel para preferências homotéticas"
+!!! theorem "Proposição — Curvas de Engel para preferências homotéticas"
     Se as preferências são **homotéticas** (Cap. 3, §3.6.6), então:
 
     - O caminho de expansão da renda é uma **reta passando pela origem**.
@@ -68,7 +68,7 @@ A forma da curva de Engel conduz naturalmente a uma classificação fundamental:
 
 Exemplos clássicos de bens inferiores no contexto brasileiro incluem a farinha de mandioca e o transporte público em certas faixas de renda — à medida que a renda familiar cresce, o consumo desses itens tende a ser substituído por alternativas de maior qualidade percebida.
 
-!!! example "🇧🇷 Box Brasil — Farinha de mandioca: um bem inferior em números"
+!!! box-brasil "Box Brasil — Farinha de mandioca: um bem inferior em números"
     A farinha de mandioca é talvez o exemplo mais emblemático de bem inferior no Brasil. Dados do [IBGE](https://www.ibge.gov.br) mostram uma queda expressiva no consumo domiciliar per capita: de 7,76 kg/ano na POF 2002–2003 para 2,33 kg/ano na POF 2017–2018, uma redução de 70% em quinze anos.
 
     **Padrão por faixa de renda:** tanto a frequência de consumo quanto a quantidade média per capita diária de farinha de mandioca são maiores nos quartis de renda mais baixos. A diferença entre o primeiro e o último quartil de renda é acentuada, confirmando o comportamento de bem inferior (\(\varepsilon_{x,I} < 0\)).
@@ -125,21 +125,21 @@ A decomposição de Hicks, embora elegante, exige que conheçamos as curvas de i
 
 Ambas as decomposições convergem para variações infinitesimais de preço e resultam na mesma equação fundamental — a Equação de Slutsky.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Toda mudança de preço tem dois efeitos: substituição (troca entre bens) e renda (poder de compra) — separá-los é a chave da análise da demanda.
 
     **Pense assim:** A gasolina ficou 10% mais barata. O efeito substituição faz você trocar um pouco de transporte público por carro. O efeito renda faz você "se sentir mais rico", podendo aumentar o consumo de diversos bens. Se a gasolina for um bem normal, ambos reforçam a maior demanda. Se for inferior, os efeitos se opõem.
 
     **Por que isso importa:** A decomposição de Slutsky é a base para avaliar o impacto de impostos e subsídios sobre o consumo — e para distinguir quando uma queda de preço beneficia os consumidores pelo barateamento relativo ou pelo aumento do poder de compra.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quando um preço muda, duas coisas acontecem ao mesmo tempo: você troca de produto (efeito substituição) e seu poder de compra muda (efeito renda).
 
     **Pense assim:** Quando o preço da carne bovina sobe no supermercado, você faz duas coisas: troca parte da carne por frango (efeito substituição) e, como seu dinheiro agora compra menos, acaba reduzindo o consumo de outros itens também (efeito renda). A Equação de Slutsky separa matematicamente essas duas forças que, no carrinho de compras, aparecem misturadas.
 
     **Por que isso importa:** Separar esses efeitos é essencial para política pública — por exemplo, para saber se um aumento no preço da gasolina empurra as pessoas para o etanol (substituição) ou simplesmente as empobrece (renda).
 
-!!! example "🇧🇷 Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
+!!! box-brasil "Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
     No Brasil, diversos preços são fixados ou regulados por agências governamentais — os chamados **preços administrados**, que representam cerca de 25% do IPCA. A energia elétrica é um caso particularmente interessante para a teoria do consumidor, pois o sistema de **bandeiras tarifárias** (verde, amarela e vermelha) funciona como uma variação exógena de preço com periodicidade mensal.
 
     **Mecanismo:** quando a bandeira muda de verde para vermelha (patamar 2), a tarifa residencial pode subir mais de R$ 0,07/kWh, o que equivale a um aumento de 8–10% no custo da energia. Essa variação é exógena ao consumidor (depende de condições hidrológicas), criando um experimento natural para observar efeitos substituição e renda.
@@ -162,7 +162,7 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
 As decomposições gráficas da seção anterior nos deram a intuição; agora, é hora de formalizar. A **Equação de Slutsky** é a pedra angular da teoria da demanda. Ela traduz em linguagem matemática precisa a separação entre efeito substituição e efeito renda, decompondo formalmente o efeito de uma variação de preço sobre a demanda marshalliana em efeito substituição (hicksiano) e efeito renda. Essa equação não é apenas uma identidade algébrica — ela conecta duas funções de demanda distintas (marshalliana e hicksiana) e permite extrair conclusões qualitativas poderosas sobre o comportamento do consumidor.
 
-!!! abstract "Teorema: Equação de Slutsky"
+!!! theorem "Teorema: Equação de Slutsky"
     Para quaisquer bens \(i\) e \(j\):
 
     \[
@@ -226,7 +226,7 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
 
 2. **Bens de Giffen**: se o bem for inferior e o efeito renda dominar o efeito substituição, \(\frac{\partial x_i}{\partial p_i} > 0\), e temos um **bem de Giffen**. Esses casos são raros e exigem que o bem represente parcela significativa do orçamento — condição necessária para que o efeito renda seja suficientemente forte.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Um bem de Giffen é tão essencial e ocupa tanta parte do orçamento que, quando seu preço sobe, o consumidor fica tão mais pobre que acaba comprando *mais* dele, não menos.
 
     **Pense assim:** Pense numa família muito pobre que gasta quase tudo em farinha de mandioca. Se o preço da farinha sobe, a família não pode mais comprar carne (que já era rara). Ela fica tão mais pobre que precisa comer *ainda mais* farinha para sobreviver — o efeito renda (empobrecimento) domina o efeito substituição. Na prática, esse fenômeno é raríssimo e só foi documentado de forma robusta para o arroz entre famílias extremamente pobres na China.
@@ -333,7 +333,7 @@ A elasticidade-preço cruzada mede como a demanda por um bem responde a variaç�
 
 As elasticidades definidas acima não são independentes entre si. As restrições teóricas do problema do consumidor — homogeneidade de grau zero, esgotamento da renda — impõem relações de consistência entre elas. Três relações fundamentais as conectam:
 
-!!! abstract "Agregação de Engel"
+!!! theorem "Agregação de Engel"
     A soma ponderada das elasticidades-renda de todos os bens, com pesos iguais às parcelas orçamentárias \(w_i = \frac{p_i x_i}{I}\), é igual a um:
 
     \[
@@ -342,7 +342,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
 
     **Implicação**: nem todos os bens podem ser inferiores simultaneamente. Se alguns bens têm elasticidade-renda baixa, outros devem compensar com elasticidade-renda alta.
 
-!!! abstract "Condição de Homogeneidade (Agregação de Cournot)"
+!!! theorem "Condição de Homogeneidade (Agregação de Cournot)"
     Para cada bem \(i\), a soma das elasticidades-preço (própria e cruzadas) e da elasticidade-renda é zero:
 
     \[
@@ -351,7 +351,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
 
     Esta condição decorre diretamente da homogeneidade de grau zero da demanda.
 
-!!! abstract "Simetria de Slutsky (em termos de elasticidades)"
+!!! theorem "Simetria de Slutsky (em termos de elasticidades)"
     Definindo a elasticidade de substituição compensada \(s_{ij} = \varepsilon_{x_i, p_j}^h\), a simetria impõe:
 
     \[
@@ -382,7 +382,7 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 5.1"
+??? exercicio-resolvido "Exercício Resolvido 5.1"
     **Enunciado:** Considere uma economia com dois bens: alimentação (bem 1) e serviços (bem 2). A parcela orçamentária da alimentação é \(w_1 = 0{,}35\) e a dos serviços é \(w_2 = 0{,}65\). A elasticidade-renda da alimentação é \(\varepsilon_{1,I} = 0{,}42\), e a elasticidade-preço própria da alimentação é \(\varepsilon_{1,p_1} = -0{,}55\). (a) Calcule a elasticidade-renda dos serviços. (b) Classifique cada bem. (c) Calcule a elasticidade-preço cruzada da alimentação em relação ao preço dos serviços.
 
     **Dados:** \(w_1 = 0{,}35\), \(w_2 = 0{,}65\), \(\varepsilon_{1,I} = 0{,}42\), \(\varepsilon_{1,p_1} = -0{,}55\).
@@ -468,7 +468,7 @@ Dispondo de três medidas de bem-estar — EC, VC e VE —, cabe perguntar: como
 VC < EC < VE
 \]
 
-!!! abstract "Proposição — Equivalência das medidas de bem-estar (quase-linear)"
+!!! theorem "Proposição — Equivalência das medidas de bem-estar (quase-linear)"
     Se \(u(x_1, x_2) = v(x_1) + x_2\) (utilidade quase-linear), então para qualquer variação de preços:
 
     \[
@@ -479,7 +479,7 @@ VC < EC < VE
 
 As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear), caso em que a curva marshalliana e a hicksiana são idênticas.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A variação compensatória pergunta "quanto dinheiro compensa a perda?"; a variação equivalente pergunta "quanto você pagaria para evitar a perda?" — são dois ângulos da mesma mudança de bem-estar.
 
     **Pense assim:** Suponha que o preço do gás de cozinha dobre. A VC pergunta: "quanto o governo teria que depositar na sua conta para você ficar tão bem quanto antes?" A VE pergunta: "quanto você toparia pagar hoje para garantir que o preço não suba?" As respostas diferem porque seu poder de compra muda entre os dois cenários.
@@ -491,7 +491,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
     - **VE** é apropriada para avaliar quanto o consumidor pagaria para obter uma mudança.
     - **EC** marshalliano é uma aproximação prática, amplamente usada em análise de políticas públicas pela sua facilidade de cálculo.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 5.2"
+??? exercicio-resolvido "Exercício Resolvido 5.2"
     **Enunciado:** Um consumidor possui utilidade quase-linear \(U(x,y) = 2\sqrt{x} + y\), com \(p_y = 1\) e renda \(I = 10\). O preço de \(x\) sobe de \(p_x = 1\) para \(p_x' = 4\). Calcule a VC, a VE e a variação no EC. Confirme que as três medidas coincidem.
 
     **Dados:** \(U = 2\sqrt{x} + y\), \(p_y = 1\), \(I = 10\), \(p_x^0 = 1\), \(p_x^1 = 4\).
@@ -564,7 +564,7 @@ O poder do AFPR reside na sua simplicidade: ele não exige que conheçamos as pr
 
 Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \Delta x_i^S \leq 0\), onde \(\Delta x_i^S\) é a variação compensada — exatamente a negatividade do efeito substituição.
 
-!!! abstract "Teorema: Equivalência entre AFPR e negatividade do efeito substituição"
+!!! theorem "Teorema: Equivalência entre AFPR e negatividade do efeito substituição"
     Um consumidor cujas escolhas satisfazem o Axioma Fraco da Preferência Revelada exibe efeito substituição de Slutsky não-positivo. Reciprocamente, se a matriz de Slutsky é negativa semidefinida, as escolhas observadas satisfazem o AFPR (sob certas condições de regularidade).
 
 ---
@@ -573,7 +573,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ## 🇧🇷 Box Brasil: Elasticidade-preço da gasolina no Brasil
 
-!!! example "🇧🇷 Box Brasil — Elasticidade-preço da gasolina no Brasil"
+!!! box-brasil "Box Brasil — Elasticidade-preço da gasolina no Brasil"
     A gasolina é um dos bens mais estudados empiricamente no Brasil, tanto pela relevância fiscal (ICMS, CIDE, PIS/COFINS) quanto pelo impacto no custo de vida. A Agência Nacional do Petróleo (ANP) coleta semanalmente preços em postos de todo o país, fornecendo uma base de dados rica para estimações econométricas.
 
     **Principais achados empíricos:**
@@ -622,7 +622,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 5.3"
+??? exercicio-resolvido "Exercício Resolvido 5.3"
     **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
 
     **Dados:** Cobb-Douglas com \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 80\), \(p_1' = 1\).
@@ -813,7 +813,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Jensen, R. T.; Miller, N. H. (2008). [Giffen Behavior and Subsistence Consumption](https://doi.org/10.1257/aer.98.4.1553). *The American Economic Review*, 98(4), 1553–1577."
+??? pesquisa "Jensen, R. T.; Miller, N. H. (2008). [Giffen Behavior and Subsistence Consumption](https://doi.org/10.1257/aer.98.4.1553). *The American Economic Review*, 98(4), 1553–1577."
     **Pergunta central:** Bens de Giffen — aqueles cuja demanda aumenta quando o preço sobe — são uma curiosidade teórica ou existem de fato? Desde que Alfred Marshall popularizou a ideia no século XIX atribuindo-a a Sir Robert Giffen, nenhum estudo havia conseguido documentar convincentemente esse comportamento com dados de campo.
 
     **Método:** Jensen e Miller conduziram um experimento de campo randomizado em duas províncias chinesas: Hunan (onde o alimento básico é o arroz) e Gansu (onde é o trigo). O experimento subsidiou aleatoriamente o preço do alimento básico para famílias extremamente pobres e mediu as variações na quantidade demandada. O desenho experimental permitiu identificar a curva de demanda de forma causal, evitando problemas de endogeneidade comuns em estudos observacionais.
@@ -824,7 +824,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
     **Relevância para o capítulo:** O estudo é a ilustração empírica mais rigorosa das Seções 5.3–5.4. Ele demonstra que a Equação de Slutsky não é apenas uma identidade matemática: suas implicações qualitativas — em particular, que um bem de Giffen deve ser inferior e representar parcela substancial do orçamento — encontram confirmação nos dados. O caso também ilumina a discussão sobre bens inferiores no Brasil (farinha de mandioca), embora o contexto brasileiro contemporâneo não seja de subsistência pura, tornando o surgimento de Giffen improvável.
 
-??? abstract "Hausman, J. A. (1981). [Exact Consumer's Surplus and Deadweight Loss](https://www.jstor.org/stable/1805921). *The American Economic Review*, 71(4), 662–676."
+??? pesquisa "Hausman, J. A. (1981). [Exact Consumer's Surplus and Deadweight Loss](https://www.jstor.org/stable/1805921). *The American Economic Review*, 71(4), 662–676."
     **Pergunta central:** O excedente do consumidor marshalliano, calculado a partir da curva de demanda observável, é uma boa medida da variação de bem-estar causada por mudanças de preço? Ou é necessário recorrer às medidas exatas — variação compensatória (VC) e variação equivalente (VE) — baseadas nas demandas hicksianas não-observáveis?
 
     **Método:** Hausman desenvolveu um procedimento para calcular a VC e a VE exatas a partir de estimativas econométricas da demanda marshalliana observada. O método explora a Equação de Slutsky e a dualidade entre problema primal e dual para recuperar a demanda hicksiana a partir da marshalliana, permitindo calcular as medidas exatas de bem-estar sem precisar estimar diretamente a função dispêndio.

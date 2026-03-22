@@ -34,6 +34,18 @@ theme:
     - content.tabs.link
   icon:
     logo: material/school
+    admonition:
+      idea: material/lightbulb-outline
+      definition: material/book-open-variant
+      theorem: material/certificate-outline
+      proof: material/math-compass
+      exercicio-resolvido: material/bullseye-arrow
+      exercicio-proposto: material/pencil-outline
+      example: material/flask-outline
+      box-brasil: material/flag-variant
+      question: material/trophy-outline
+      pesquisa: material/microscope
+      code: material/language-r
 
 nav:
   - Home: index.md

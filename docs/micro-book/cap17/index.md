@@ -36,7 +36,7 @@ C + wL = wT + V \equiv M^*
 
 onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo obteria se trabalhasse todas as \(T\) horas. O preço do lazer é o salário \(w\), pois cada hora de lazer tem um custo de oportunidade igual ao salário que se deixa de receber.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O salário não é apenas o que você ganha por trabalhar — é também o preço que você paga por cada hora de lazer.
 
     **Pense assim:** Quando um motorista de aplicativo decide tirar um domingo de folga para assistir ao jogo do Flamengo, o "preço" desse lazer não é só o ingresso — inclui as corridas que ele deixou de fazer. Se o salário-hora dele sobe, o churrasco de domingo fica mais "caro" em termos do que ele abre mão.
@@ -85,7 +85,7 @@ A seção anterior apresentou os elementos conceituais do modelo trabalho-lazer:
 
 ### O problema de maximização
 
-!!! abstract "Problema de Otimização do Trabalhador"
+!!! theorem "Problema de Otimização do Trabalhador"
     O indivíduo resolve:
 
     \[
@@ -155,7 +155,7 @@ Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 17.1"
+??? exercicio-resolvido "Exercício Resolvido 17.1"
     **Enunciado:** Um trabalhador tem preferências \(U(C,L) = C^{1/2}\, L^{1/2}\), dotação de tempo \(T = 16\) horas e renda não salarial \(V = 32\). O salário-hora é \(w\).
 
     **Dados:** \(T = 16\), \(V = 32\), \(\alpha = 1/2\).
@@ -228,7 +228,7 @@ Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso
 2. A elasticidade-renda do lazer é elevada;
 3. O efeito substituição compensado é pequeno.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A partir de certo salário, ganhar mais faz a pessoa querer trabalhar menos, não mais — porque ela já pode "se dar ao luxo" de curtir a vida.
 
     **Pense assim:** Um médico recém-formado aceita plantões extras para pagar as contas. Mas um cirurgião sênior que já ganha muito bem prefere reduzir a carga e passar mais tempo com a família ou viajando. O dinheiro extra não compensa a perda de lazer — a curva de oferta "volta para trás".
@@ -412,7 +412,7 @@ Isso resulta em:
 
 A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de Joan Robinson).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quando há um único grande empregador na região, ele pode pagar salários abaixo da produtividade dos trabalhadores porque eles não têm para onde ir.
 
     **Pense assim:** Em muitas cidades pequenas do interior do Brasil, a prefeitura ou uma única fábrica é praticamente a única empregadora formal. Se o trabalhador pede aumento, não tem concorrente para onde migrar. O empregador sabe disso e mantém salários baixos, mesmo que o trabalhador produza muito mais do que recebe.
@@ -436,7 +436,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 17.2"
+??? exercicio-resolvido "Exercício Resolvido 17.2"
     **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
 
     **Dados:** \(w(H) = 4 + 2H\); \(VPMg_L = 100 - 2H\).
@@ -779,7 +779,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Engbom, N.; Moser, C. (2022). [Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506). *American Economic Review*, 112(12), 3803–3847."
+??? pesquisa "Engbom, N.; Moser, C. (2022). [Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506). *American Economic Review*, 112(12), 3803–3847."
     **Pergunta central:** O salário mínimo pode, de fato, reduzir a desigualdade salarial? E se puder, quanto dessa redução se deve ao piso legal versus a outros fatores? Essas questões são centrais para a política pública, especialmente no Brasil, onde o salário mínimo real cresceu 128% entre 1996 e 2018 — um dos maiores aumentos sustentados do mundo.
 
     **Método:** Engbom e Moser combinaram dados administrativos de empregadores e empregados (RAIS) com pesquisas domiciliares (PNAD) cobrindo mais de duas décadas. Para isolar o efeito causal do salário mínimo, desenvolveram um modelo de equilíbrio com firmas e trabalhadores heterogêneos, estimado estruturalmente nos dados brasileiros. O modelo permite que o salário mínimo afete não apenas os trabalhadores que recebem exatamente o piso, mas também aqueles acima dele — os chamados *spillover effects*.
@@ -790,7 +790,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     **Relevância para o capítulo:** O paper conecta-se diretamente com as seções 17.5 (equilíbrio competitivo) e 17.7 (monopsônio e salário mínimo). O fato de o efeito sobre o emprego ter sido moderado é consistente com modelos de monopsônio ou *wage-posting*, nos quais o salário mínimo pode aumentar o emprego. A evidência de spillover effects confirma empiricamente o "efeito-farol" discutido no Box Brasil sobre salário mínimo.
 
-??? abstract "Meghir, C.; Narita, R.; Robin, J.-M. (2015). [Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110). *American Economic Review*, 105(4), 1509–1546."
+??? pesquisa "Meghir, C.; Narita, R.; Robin, J.-M. (2015). [Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110). *American Economic Review*, 105(4), 1509–1546."
     **Pergunta central:** Por que firmas e trabalhadores similares coexistem nos setores formal e informal? Qual o efeito de aumentar a fiscalização trabalhista sobre salários, emprego e bem-estar? Essas questões são fundamentais para entender o mercado de trabalho brasileiro, onde quase 40% dos ocupados são informais.
 
     **Método:** Os autores — entre eles a brasileira Renata Narita — construíram um modelo de equilíbrio com *wage-posting* (firmas fixam salários), busca sequencial por emprego (trabalhadores procuram empregos estando empregados ou desempregados) e escolha endógena do setor (formal ou informal) por firmas heterogêneas. O modelo foi estimado com dados da Pesquisa Mensal de Emprego (PME/IBGE) do Brasil.

@@ -44,7 +44,7 @@ onde \(x_A^k\) é o consumo do bem \(k\) pelo indivíduo \(A\).
 !!! note "Externalidades Pecuniárias vs. Tecnológicas"
     É importante distinguir **externalidades tecnológicas** (reais) de **externalidades pecuniárias**. Externalidades pecuniárias operam *via preços*: quando uma firma expande sua produção e reduz o preço do produto, prejudicando concorrentes. Essas não são verdadeiras externalidades no sentido econômico, pois são mediadas pelo mercado e não geram ineficiência. Apenas externalidades tecnológicas — que afetam diretamente funções de produção ou utilidade — constituem falhas de mercado.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Uma externalidade existe quando o preço de um produto não reflete todo o custo (ou benefício) que sua produção ou consumo impõe à sociedade.
 
     **Pense assim:** Quando uma fábrica em Cubatão polui o rio, o preço do produto que ela vende não inclui o custo da água contaminada para os pescadores e moradores rio abaixo. A fábrica "exporta" parte do seu custo para a sociedade sem pagar por isso. Da mesma forma, quem se vacina protege não só a si mesmo, mas também quem está ao redor — um benefício que não entra no cálculo individual.
@@ -185,7 +185,7 @@ p_1 = C_1'(q_1) + t^*
 
 Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{soc}\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O imposto pigouviano faz o poluidor pagar exatamente pelo dano que causa, transformando um custo "invisível" para a sociedade em um custo real para a empresa.
 
     **Pense assim:** Se uma usina termelétrica paga R$ 0 pela fumaça que emite, ela polui sem pensar duas vezes. Mas se o governo cobra um imposto por tonelada de CO₂ igual ao dano ambiental causado, a usina passa a incluir essa conta no seu cálculo de custos. Poluir vira caro, e a produção se ajusta ao nível que a sociedade realmente quer.
@@ -256,10 +256,10 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 O imposto pigouviano é uma solução centralizada: requer que o governo conheça o custo marginal externo e imponha o imposto correto. Mas seria possível resolver o problema sem intervenção governamental? Ronald Coase respondeu afirmativamente, sob certas condições — um resultado que transformou profundamente a análise econômica do direito e das instituições.
 
-!!! abstract "Teorema de Coase (Coase, 1960)"
+!!! theorem "Teorema de Coase (Coase, 1960)"
     Se os **direitos de propriedade** estão claramente definidos e os **custos de transação** são nulos, a barganha privada entre as partes levará à alocação eficiente de recursos, **independentemente** de qual parte detém o direito de propriedade. A distribuição dos direitos afeta apenas a distribuição de riqueza, não a eficiência.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Se as partes afetadas conseguem sentar e negociar sem custos, elas mesmas resolvem o problema da externalidade — sem precisar de governo.
 
     **Pense assim:** Um bar com música alta no Leblon incomoda os moradores do prédio ao lado. Se o direito é do bar, os moradores podem se juntar e pagar para ele reduzir o volume. Se o direito é dos moradores, o bar pode compensá-los financeiramente. Nos dois casos, chegam ao mesmo nível de som — o que muda é quem paga.
@@ -369,7 +369,7 @@ Estabelecidas as propriedades que definem os bens públicos, passamos à questã
 
 Para um bem privado, a eficiência requer que todos os consumidores se deparem com o mesmo preço, que iguala o custo marginal. Para um bem público, a condição de eficiência é fundamentalmente diferente.
 
-!!! abstract "Condição de Samuelson para Bens Públicos"
+!!! theorem "Condição de Samuelson para Bens Públicos"
     A provisão eficiente de um bem público requer que a **soma das taxas marginais de substituição** de todos os indivíduos iguale a **taxa marginal de transformação** (custo marginal de produção):
 
     \[
@@ -448,7 +448,7 @@ O equilíbrio de Lindahl pressupõe que os indivíduos revelam honestamente quan
 !!! definition "Problema do Carona"
     Ocorre quando indivíduos racionais subinvestem na provisão de um bem público (ou na revelação de suas preferências) porque esperam se beneficiar das contribuições alheias sem pagar por elas. O bem público é não-excludente: mesmo quem não paga pode consumir.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Se você pode usufruir de algo sem pagar, por que pagar? Esse raciocínio individual, repetido por todos, faz com que ninguém contribua — e o bem público não sai do papel.
 
     **Pense assim:** Em um condomínio, todos querem uma piscina reformada, mas cada morador prefere que os outros paguem a obra. Se a contribuição fosse voluntária, muitos "pegariam carona" nos vizinhos generosos. Por isso condomínios usam rateio obrigatório — e, por analogia, o governo cobra impostos para financiar iluminação pública, defesa nacional e saneamento.
@@ -482,7 +482,7 @@ Na ausência de mecanismos de mercado eficientes para bens públicos (Giambiagi 
 
 Considere uma comunidade de \(N\) cidadãos que deve decidir o nível de gastos \(G\) com um bem público, financiado por imposto uniforme \(T = CMg(G)/N\) por pessoa. Cada cidadão \(i\) tem nível preferido \(G_i^*\) que maximiza \(U_i(G) - T\).
 
-!!! abstract "Teorema do Eleitor Mediano"
+!!! theorem "Teorema do Eleitor Mediano"
     Se as preferências dos eleitores são **unimodais** (single-peaked) e a escolha é unidimensional, a regra de maioria simples seleciona o nível preferido pelo **eleitor mediano** — aquele cujo nível preferido \(G_m^*\) é tal que metade dos eleitores prefere mais e metade prefere menos.
 
     Formalmente, se \(G_1^* \leq G_2^* \leq \cdots \leq G_N^*\), o resultado da votação por maioria é \(G_m^* = G_{(N+1)/2}^*\) (para \(N\) ímpar).
@@ -491,7 +491,7 @@ Considere uma comunidade de \(N\) cidadãos que deve decidir o nível de gastos 
 
 **Paradoxo de Condorcet**: Quando as preferências não são unimodais ou a escolha é multidimensional, a votação por maioria pode produzir **ciclos** (A vence B, B vence C, C vence A), não existindo um vencedor de Condorcet.
 
-!!! abstract "Teorema da Impossibilidade de Arrow"
+!!! theorem "Teorema da Impossibilidade de Arrow"
     Não existe regra de agregação de preferências (com três ou mais alternativas e dois ou mais indivíduos) que satisfaça simultaneamente: (i) domínio irrestrito; (ii) princípio de Pareto; (iii) independência de alternativas irrelevantes; (iv) não-ditadura.
 
 ---
@@ -527,7 +527,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ## 🇧🇷 Box Brasil: Desmatamento na Amazônia e Precificação de Carbono
 
-!!! example "🇧🇷 Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
+!!! box-brasil "Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
     O desmatamento na Amazônia brasileira é um caso emblemático de **externalidade negativa de escala global**. A remoção da floresta gera custos externos que incluem emissões de CO₂ (contribuindo para a mudança climática), perda de biodiversidade, alteração do ciclo hidrológico (inclusive os "rios voadores" que transportam umidade para o Centro-Sul do Brasil) e erosão do solo.
 
     **Dimensão do problema**: Segundo dados do [INPE](https://www.gov.br/inpe)/PRODES, o desmatamento acumulado na Amazônia Legal superou 85 milhões de hectares até 2023 (cerca de 17% da floresta original). Após queda expressiva entre 2004 e 2012 (de 27.772 km² para 4.571 km² anuais), as taxas voltaram a subir, atingindo 13.235 km² em 2021, antes de recuar para cerca de 9.001 km² em 2023 com o reforço de políticas de fiscalização.
@@ -550,7 +550,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-!!! example "🇧🇷 Box Brasil: Cobrança pelo uso da água e a tragédia dos comuns no semiárido"
+!!! box-brasil "Box Brasil: Cobrança pelo uso da água e a tragédia dos comuns no semiárido"
     A água doce é um exemplo clássico de **recurso comum** no Brasil: rival no consumo (a água captada por um irrigante não está disponível para outro) e historicamente de difícil exclusão. A Lei das Águas (Lei n.º 9.433/1997) instituiu a **Política Nacional de Recursos Hídricos**, que reconhece a água como bem público dotado de valor econômico e estabelece a **cobrança pelo uso** como instrumento de gestão.
 
     **Mecanismo econômico:**
@@ -595,7 +595,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
+??? exercicio-resolvido "Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
     **Enunciado.** Uma siderúrgica produz aço ao preço competitivo \(P = 100\) com custo privado \(C(q) = 10q + q^2\). A produção gera poluição com custo externo \(E(q) = q^2\). (a) Calcule a produção privada e a socialmente ótima. (b) Determine o imposto pigouviano ótimo. (c) Calcule a perda de peso morto sem regulação.
 
     **Resolução.**
@@ -630,7 +630,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     A perda de peso morto é R$ 1.012,50 — o custo social da ausência de regulação.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
+??? exercicio-resolvido "Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
     **Enunciado.** Dois consumidores têm utilidade \(U_1 = 3\ln G + x_1\) e \(U_2 = 2\ln G + x_2\), onde \(G\) é o bem público e \(x_i\) o bem privado. O custo marginal do bem público é \(CMg = 1\). (a) Determine o nível eficiente de \(G\). (b) Calcule os preços de Lindahl. (c) Compare com a provisão voluntária (Nash).
 
     **Resolução.**
@@ -665,7 +665,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     Resultado: \(G^{Nash} = 3 < 5 = G^*\). O bem público é subprovido em 40%. O consumidor 2 pega carona na contribuição do consumidor 1 — o problema clássico do free rider.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
+??? exercicio-resolvido "Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
     **Enunciado.** Duas fábricas emitem 50 toneladas cada de \(SO_2\) (total: 100 ton). O regulador quer reduzir as emissões totais para 60 ton (abatimento de 40 ton). Os custos marginais de abatimento são \(CMgA_1 = 4a_1\) e \(CMgA_2 = 2a_2\), onde \(a_i\) é o abatimento da firma \(i\). (a) Encontre a alocação custo-efetiva. (b) Compare com abatimento uniforme. (c) Determine o preço de equilíbrio da permissão em um sistema cap-and-trade.
 
     **Resolução.**
@@ -851,7 +851,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1257/aer.104.10.3038)"
+??? pesquisa "[Greenstone, M.; Hanna, R. (2014). Environmental Regulations, Air and Water Pollution, and Infant Mortality in India. *American Economic Review*, 104(10), 3038–3072.](https://doi.org/10.1257/aer.104.10.3038)"
     **Pergunta central:** Regulações ambientais do tipo command-and-control são eficazes para reduzir a poluição e melhorar a saúde em países em desenvolvimento?
 
     **Método:** Os autores avaliam o impacto de duas grandes regulações ambientais na Índia: o Programa Nacional de Ação sobre Poluição do Ar (1987) e a regulação de poluição hídrica de distritos designados como "criticamente poluídos". Utilizam dados de monitoramento de qualidade do ar e da água em centenas de estações ao longo de duas décadas, combinados com dados de mortalidade infantil, em uma estratégia de diferenças-em-diferenças.
@@ -860,7 +860,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo ilustra empiricamente a eficácia diferencial da regulação direta (command-and-control) discutida na Seção 20.4.3. A regulação funciona quando o monitoramento é viável (poluição do ar em fontes pontuais), mas falha quando os custos de enforcement são altos (poluição hídrica difusa) — exatamente o que a teoria prevê. Para o Brasil, a lição é direta: a eficácia do Código Florestal e da fiscalização do IBAMA depende criticamente da capacidade de monitoramento (DETER/INPE) e de enforcement.
 
-??? abstract "[Assunção, J.; Gandour, C.; Rocha, R. (2023). DETER-ing Deforestation in the Amazon: Environmental Monitoring and Law Enforcement. *American Economic Journal: Applied Economics*, 15(2), 125–156.](https://doi.org/10.1257/app.20200196)"
+??? pesquisa "[Assunção, J.; Gandour, C.; Rocha, R. (2023). DETER-ing Deforestation in the Amazon: Environmental Monitoring and Law Enforcement. *American Economic Journal: Applied Economics*, 15(2), 125–156.](https://doi.org/10.1257/app.20200196)"
     **Pergunta central:** O sistema de monitoramento por satélite em tempo real (DETER) e o reforço da fiscalização ambiental reduziram efetivamente o desmatamento na Amazônia brasileira?
 
     **Método:** Os autores exploram a introdução do sistema DETER pelo INPE em 2004 — que permite detecção de desmatamento em tempo quase-real via imagens de satélite — e o consequente aumento das operações de fiscalização do IBAMA. Utilizam dados georeferenciados de desmatamento (PRODES), autos de infração do IBAMA e variação espacial na cobertura do DETER, em uma estratégia de variáveis instrumentais e diferenças-em-diferenças espaciais.

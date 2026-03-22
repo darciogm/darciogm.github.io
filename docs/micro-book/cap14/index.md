@@ -48,7 +48,7 @@ A **Caixa de Edgeworth** é um retângulo com dimensões \(\bar{x}_1 \times \bar
 !!! definition "Caixa de Edgeworth"
     A **Caixa de Edgeworth** é uma representação gráfica de todas as alocações factíveis em uma economia de troca pura com dois consumidores e dois bens. Cada ponto no retângulo especifica simultaneamente as cestas de consumo de ambos os consumidores.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A Caixa de Edgeworth é um mapa de todas as formas possíveis de dividir os recursos de uma economia entre duas pessoas.
 
     **Pense assim:** Imagine dois colegas de república dividindo o que sobrou na geladeira: 6 fatias de pizza e 4 latas de refrigerante. Qualquer combinação que dê o total — 4 fatias para um e 2 para outro, por exemplo — é um ponto na caixa. Movendo o ponto, você redistribui pizza e refrigerante entre os dois. A mágica da caixa é mostrar, num só diagrama, se existe uma redistribuição que deixe ambos mais felizes.
@@ -88,7 +88,7 @@ A Caixa de Edgeworth nos permitiu visualizar alocações e curvas de indiferenç
 !!! definition "Eficiência de Pareto"
     Uma alocação é **eficiente no sentido de Pareto** (ou um **ótimo de Pareto**) se não existe outra alocação factível que melhore a situação de pelo menos um agente sem piorar a de nenhum outro.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Uma situação é eficiente no sentido de Pareto quando não dá mais para melhorar a vida de alguém sem prejudicar outra pessoa.
 
     **Pense assim:** Pense em uma partilha de bolo de aniversário. Se dá para refatiar o bolo de modo que alguém ganhe um pedaço maior sem que ninguém fique com um pedaço menor, a divisão original era ineficiente. Eficiência de Pareto é quando todo o bolo já foi distribuído da melhor forma possível — qualquer mudança que beneficie alguém necessariamente tira de outro.
@@ -185,7 +185,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ## 🇧🇷 Box Brasil: Mercosul-UE e os Ganhos de Troca
 
-!!! example "🇧🇷 Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
+!!! box-brasil "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
     Em dezembro de 2024, após 25 anos de negociação, o **Mercosul** e a **União Europeia** assinaram um acordo de parceria comercial que cria uma das maiores zonas de livre comércio do mundo, reunindo **718 milhões de pessoas** e um PIB conjunto de US$ 22,4 trilhões.
 
     **Os ganhos de troca na linguagem da Caixa de Edgeworth**
@@ -208,7 +208,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 As condições de eficiência na troca, na produção e no mix de produtos — sintetizadas na tabela acima — são alcançadas simultaneamente pelo equilíbrio competitivo. Esse resultado não é óbvio: como é possível que milhões de agentes, cada um perseguindo seu próprio interesse, sem nenhuma coordenação central, cheguem a um resultado eficiente? O Primeiro Teorema do Bem-Estar formaliza essa intuição, constituindo o resultado mais importante de toda a teoria do equilíbrio geral.
 
-!!! abstract "Primeiro Teorema do Bem-Estar"
+!!! theorem "Primeiro Teorema do Bem-Estar"
     Se todos os consumidores e firmas são tomadores de preço, e se existe um mercado completo para cada bem, então o equilíbrio competitivo (walrasiano) é **eficiente no sentido de Pareto**.
 
 Este é o resultado formal que dá substância à intuição da "mão invisível" de Adam Smith: sob concorrência perfeita, o interesse próprio dos agentes, guiado pelos preços de mercado, conduz a uma alocação eficiente sem necessidade de planejamento centralizado.
@@ -261,7 +261,7 @@ Este é o resultado formal que dá substância à intuição da "mão invisível
 !!! tip "Hipóteses cruciais"
     O Primeiro Teorema requer: (i) comportamento tomador de preço; (ii) mercados completos (sem externalidades nem bens públicos); (iii) não saciedade local das preferências. A violação de qualquer uma dessas hipóteses abre espaço para **falhas de mercado** — tema dos próximos capítulos.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quando os mercados funcionam bem (sem monopólios, externalidades ou informação assimétrica), o interesse próprio de cada agente leva, como que por mágica, a um resultado eficiente para todos.
 
     **Pense assim:** Ninguém coordena os milhares de caminhões que levam comida de Mato Grosso aos supermercados de São Paulo. Cada motorista, cada atacadista e cada varejista age por interesse próprio — mas o sistema de preços funciona como um "maestro invisível", sinalizando onde falta e onde sobra produto. O Primeiro Teorema formaliza essa ideia: se os preços são livres e ninguém tem poder de mercado, o resultado é eficiente.
@@ -274,7 +274,7 @@ Este é o resultado formal que dá substância à intuição da "mão invisível
 
 O Primeiro Teorema nos diz que o equilíbrio competitivo é eficiente — mas *qual* equilíbrio eficiente? A curva de contrato contém infinitas alocações Pareto-eficientes, e algumas delas são altamente desiguais. O mercado seleciona um ponto específico na curva de contrato, determinado pelas dotações iniciais dos agentes. Se a sociedade considera a distribuição resultante injusta, será necessário sacrificar a eficiência para obter equidade? O Segundo Teorema do Bem-Estar responde a essa pergunta com um resultado surpreendentemente otimista.
 
-!!! abstract "Segundo Teorema do Bem-Estar"
+!!! theorem "Segundo Teorema do Bem-Estar"
     Se as preferências dos consumidores são convexas e localmente não saciadas, e se os conjuntos de produção das firmas são convexos, então qualquer alocação Pareto-eficiente pode ser alcançada como um equilíbrio competitivo, desde que se realizem transferências lump-sum apropriadas das dotações iniciais.
 
 ### Importância normativa
@@ -287,7 +287,7 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 !!! note "Limitação prática"
     Na prática, transferências *lump-sum* perfeitas são difíceis de implementar, pois requerem informação sobre características dos agentes que geralmente são privadas. A tributação factível (imposto de renda, IVA) introduz distorções e gera perda de peso morto — um *trade-off* entre eficiência e equidade que é central na economia do setor público.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A sociedade pode escolher qualquer distribuição de bem-estar que considere justa e, em princípio, alcançá-la usando mercados competitivos — basta redistribuir as dotações iniciais.
 
     **Pense assim:** Imagine que o governo quer reduzir a desigualdade sem destruir a eficiência da economia. O Segundo Teorema diz que, em teoria, bastaria redistribuir a "riqueza inicial" (terra, capital) e depois deixar os mercados funcionarem livremente. É como reorganizar as fichas antes de começar o jogo, em vez de mudar as regras durante a partida. O problema é que, na prática, redistribuir sem distorcer é quase impossível — o Bolsa Família, por exemplo, é eficiente mas ainda gera algum custo administrativo.
@@ -298,7 +298,7 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 
 ## 🇧🇷 Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
 
-!!! example "🇧🇷 Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
+!!! box-brasil "Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
     A **Reforma Tributária** brasileira (EC 132/2023, regulamentada pela LC 214/2025) é, do ponto de vista da teoria do equilíbrio geral, uma das maiores intervenções sobre o sistema de preços relativos já realizadas no país. Ela substitui cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por dois: a **CBS** (federal) e o **IBS** (estadual/municipal), formando um IVA dual com alíquota estimada entre 26,5% e 28%.
 
     **Por que a reforma é um problema de equilíbrio geral?**
@@ -361,7 +361,7 @@ As funções de excesso de demanda agregado satisfazem:
 
 ### Lei de Walras
 
-!!! abstract "Lei de Walras"
+!!! theorem "Lei de Walras"
     Para qualquer vetor de preços \(\mathbf{p}\), o valor total do excesso de demanda é identicamente zero:
 
     \[
@@ -393,7 +393,7 @@ A formalização da seção anterior nos forneceu as funções de excesso de dem
 
 ### O Teorema do Ponto Fixo de Brouwer
 
-!!! abstract "Teorema do Ponto Fixo de Brouwer"
+!!! theorem "Teorema do Ponto Fixo de Brouwer"
     Seja \(f: \Delta \to \Delta\) uma função contínua de um conjunto convexo e compacto \(\Delta \subset \mathbb{R}^n\) nele mesmo. Então existe pelo menos um ponto \(\mathbf{x}^* \in \Delta\) tal que:
 
     \[
@@ -421,7 +421,7 @@ Esta função eleva o preço de bens com excesso de demanda positivo e reduz (re
 
 Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \mathbf{p}^*\). Pode-se mostrar, usando a Lei de Walras, que isso implica \(Z^k(\mathbf{p}^*) \leq 0\) para todo \(k\), com igualdade se \(p_k^* > 0\) — exatamente as condições de equilíbrio walrasiano.
 
-!!! abstract "Teorema de Existência do Equilíbrio Walrasiano (Arrow-Debreu, 1954)"
+!!! theorem "Teorema de Existência do Equilíbrio Walrasiano (Arrow-Debreu, 1954)"
     Se as preferências dos consumidores são contínuas, convexas e localmente não saciadas, e se as dotações agregadas são estritamente positivas, então existe pelo menos um equilíbrio walrasiano.
 
 !!! note "Unicidade e estabilidade"
@@ -510,7 +510,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ## 🇧🇷 Box Brasil: Modelos CGE Aplicados ao Brasil
 
-!!! example "🇧🇷 Box Brasil: Equilíbrio geral computável e políticas comerciais"
+!!! box-brasil "Box Brasil: Equilíbrio geral computável e políticas comerciais"
     O Brasil tem uma tradição relevante no desenvolvimento e aplicação de modelos de equilíbrio geral computável para avaliação de políticas públicas. Diversas instituições — como o IPEA (Instituto de Pesquisa Econômica Aplicada), a FGV (Fundação Getulio Vargas), a ESALQ/USP e universidades federais — mantêm modelos CGE calibrados para a economia brasileira.
 
     **Principais modelos brasileiros:**
@@ -569,7 +569,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+??? exercicio-resolvido "Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
     **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
 
     **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
@@ -652,7 +652,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
+??? exercicio-resolvido "Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
     **Enunciado:** Na mesma economia do ER 14.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
 
     **Dados:** Mesmas preferências e dotações do ER 14.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
@@ -865,7 +865,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Dix-Carneiro, R. (2014). [Trade Liberalization and Labor Market Dynamics](https://doi.org/10.3982/ECTA10457). *Econometrica*, 82(3), 825–885."
+??? pesquisa "Dix-Carneiro, R. (2014). [Trade Liberalization and Labor Market Dynamics](https://doi.org/10.3982/ECTA10457). *Econometrica*, 82(3), 825–885."
     **Pergunta central:** Quando um país como o Brasil abre sua economia ao comércio internacional, trabalhadores precisam migrar de setores que perdem proteção tarifária para setores com vantagem comparativa. Quanto custa essa transição? A teoria de equilíbrio geral prevê realocação eficiente dos fatores, mas na prática a mobilidade é imperfeita. Dix-Carneiro investiga: qual é o custo real da transição setorial de trabalhadores e como ele afeta os ganhos líquidos da liberalização?
 
     **Método:** O artigo estima um modelo estrutural dinâmico de equilíbrio geral do mercado de trabalho brasileiro, com múltiplos setores, gerações sobrepostas, trabalhadores heterogêneos, acumulação de experiência setorial e custos de mudança de setor. O modelo é estimado com microdados brasileiros do mercado de trabalho formal, permitindo simular contrafactuais de política comercial.
@@ -876,7 +876,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
     **Relevância para o capítulo:** O modelo de Dix-Carneiro é uma implementação sofisticada do equilíbrio geral walrasiano com produção (Seção 14.9): firmas maximizam lucro, trabalhadores maximizam utilidade intertemporal, e todos os mercados se equilibram. A diferença em relação ao modelo estático é a dimensão temporal — custos de ajuste impedem que a economia salte instantaneamente de um equilíbrio para outro. O artigo ilustra, com dados brasileiros, que os Teoremas do Bem-Estar descrevem propriedades do equilíbrio de longo prazo, mas a transição entre equilíbrios pode ser dolorosa.
 
-??? abstract "Caliendo, L.; Parro, F. (2015). [Estimates of the Trade and Welfare Effects of NAFTA](https://doi.org/10.1093/restud/rdu035). *Review of Economic Studies*, 82(1), 1–44."
+??? pesquisa "Caliendo, L.; Parro, F. (2015). [Estimates of the Trade and Welfare Effects of NAFTA](https://doi.org/10.1093/restud/rdu035). *Review of Economic Studies*, 82(1), 1–44."
     **Pergunta central:** Quanto os países ganham (ou perdem) com acordos de livre comércio? A teoria de equilíbrio geral prevê ganhos de troca, mas quantificá-los requer um modelo que incorpore múltiplos setores, insumos intermediários e cadeias globais de valor. Caliendo e Parro desenvolvem tal modelo e o aplicam ao NAFTA para estimar os efeitos sobre comércio e bem-estar.
 
     **Método:** Os autores constroem um modelo ricardiano multisetorial de equilíbrio geral com comércio de bens intermediários, estimando elasticidades comerciais setoriais consistentes com modelos gravitacionais. O modelo é calibrado com dados de produção, comércio e tarifas dos EUA, México e Canadá.

@@ -88,7 +88,7 @@ Este resultado é fundamental em estática comparativa: permite calcular como um
 
 Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio. Note a potência do resultado: sem precisar resolver explicitamente o modelo para \(P^*\), o teorema da função implícita nos permite determinar a *direção* do efeito e, com mais informação, sua *magnitude*.
 
-!!! example "🇧🇷 Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
+!!! box-brasil "Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
 
     A **elasticidade-preço da demanda** — definida como \(\varepsilon = \frac{\partial Q}{\partial P} \cdot \frac{P}{Q}\) — é uma aplicação direta de derivadas parciais ao problema do consumidor. No Brasil, estimativas empíricas dessas elasticidades fundamentam decisões de política tributária, regulação de tarifas e política comercial.
 
@@ -140,7 +140,7 @@ Até aqui, sabemos como *encontrar* o ótimo e *confirmar* que ele é de fato um
 
 O teorema do envelope é um dos resultados mais úteis e elegantes da microeconomia. Ele permite calcular como o valor ótimo de uma função objetivo muda quando um parâmetro varia, sem necessidade de recalcular a solução ótima.
 
-!!! abstract "Teorema do Envelope (caso irrestrito)"
+!!! theorem "Teorema do Envelope (caso irrestrito)"
     Seja \(f(x, a)\) uma função de \(x\) (variável de escolha) e \(a\) (parâmetro), e seja \(x^*(a)\) a solução do problema \(\max_x f(x, a)\). Defina a **função valor** como:
 
     \[
@@ -173,7 +173,7 @@ Mas, pela condição de primeira ordem, \(\frac{\partial f}{\partial x}\big|_{x^
 
 O que esse resultado nos diz? A demonstração revela por que o teorema funciona: no ponto ótimo, a derivada de \(f\) em relação a \(x\) é zero (pela CPO). Portanto, qualquer ajuste que o agente faça na variável de escolha \(x\) em resposta à mudança do parâmetro \(a\) produz apenas um efeito de segunda ordem sobre o valor da função — negligenciável para variações infinitesimais. Resta, portanto, apenas o efeito direto de \(a\) sobre \(f\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No ótimo, o único efeito que importa de uma mudança no parâmetro é o efeito direto — o ajuste indireto via \(x\) é de segunda ordem.
 
     **Pense assim:** Imagine que você já encontrou a melhor posição para sentar em um auditório lotado. Se a temperatura da sala mudar um grau, o desconforto vem diretamente do calor — não de precisar trocar de assento, porque você já está no melhor lugar possível. O "ajuste fino" da posição não muda quase nada.
@@ -228,7 +228,7 @@ onde \(\lambda\) é o **multiplicador de Lagrange**, uma nova variável de escol
 
     As duas formas são matematicamente idênticas (basta redefinir o sinal de \(\lambda\)). Neste livro, adotamos a convenção \(f + \lambda[c - g]\), que garante que \(\lambda > 0\) em problemas de maximização com restrições "do tipo orçamentário". Alguns textos (como Varian, 1992) usam a outra convenção. O importante é ser consistente.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O multiplicador \(\lambda\) é o **valor-sombra** (*shadow price*) da restrição — quanto a função objetivo melhoraria se pudéssemos "relaxar" a restrição em uma unidade marginal.
 
     **Pense assim:** Imagine que você recebe R\$ 500 de vale-alimentação por mês. O \(\lambda\) diz exatamente quanto de satisfação extra você obteria se alguém te desse R\$ 1 a mais. É o valor de um real a mais de orçamento.
@@ -661,7 +661,7 @@ Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como 
 
 ## 2.6 Teorema do envelope na maximização restrita
 
-!!! abstract "Teorema do Envelope (caso restrito)"
+!!! theorem "Teorema do Envelope (caso restrito)"
     Considere o problema \(\max_{\mathbf{x}} f(\mathbf{x}, a)\) sujeito a \(g(\mathbf{x}, a) = c\), e defina a função valor \(V(a) = f(\mathbf{x}^*(a), a)\). Então:
 
     \[
@@ -759,14 +759,14 @@ As condições KKT são:
 !!! tip "Interpretação econômica"
     As condições KKT generalizam o método de Lagrange para situações em que o agente pode estar em uma "solução de canto". Por exemplo, um consumidor pode decidir não consumir nenhuma quantidade de um bem (solução \(x_i = 0\)), caso a utilidade marginal por unidade monetária desse bem seja inferior à dos demais bens, mesmo ao nível zero de consumo.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Se uma restrição não está "mordendo", ela não custa nada; se uma variável é zero, seu preço-sombra pode ser qualquer coisa.
 
     **Pense assim:** Se o limite do seu cartão de crédito é R$ 10.000 e você só gasta R$ 3.000, o limite não afeta suas decisões — é como se ele não existisse (λ = 0). Mas se você bate no limite todo mês, cada real adicional de crédito tem valor real (λ > 0). Folga complementar diz: ou a restrição aperta, ou o multiplicador é zero — nunca os dois ao mesmo tempo.
 
     **Por que isso importa:** Soluções de canto são comuns no mundo real — famílias que não poupam nada, firmas que não exportam, consumidores que não compram certos bens. As condições KKT são a linguagem matemática dessas situações.
 
-!!! example "🇧🇷 Box Brasil — O teto de gastos e a otimização sob restrições de desigualdade"
+!!! box-brasil "Box Brasil — O teto de gastos e a otimização sob restrições de desigualdade"
 
     A **Emenda Constitucional nº 95/2016** (posteriormente substituída pelo novo arcabouço fiscal da EC 126/2022) impôs um **teto para os gastos primários** da União: a despesa primária total de um exercício não poderia exceder a despesa do exercício anterior corrigida pela inflação (IPCA).
 
@@ -831,7 +831,7 @@ Exemplos em economia:
 - Uma função de produção com **retornos constantes de escala** é homogênea de grau 1.
 - Funções de demanda são homogêneas de grau 0 em preços e renda (ausência de ilusão monetária).
 
-!!! abstract "Teorema de Euler"
+!!! theorem "Teorema de Euler"
     Se \(f\) é homogênea de grau \(k\) e diferenciável, então:
 
     \[
@@ -846,7 +846,7 @@ K \cdot \frac{\partial F}{\partial K} + L \cdot \frac{\partial F}{\partial L} = 
 
 Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), então \(rK + wL = F(K,L)\) — o produto é exatamente esgotado pela remuneração dos fatores. Este resultado é conhecido como o **problema da exaustão do produto** (Nicholson & Snyder, 2017). A implicação é notável: sob retornos constantes de escala e remuneração competitiva dos fatores, não há "sobra" — nenhum lucro econômico puro. Todo o produto é distribuído entre capital e trabalho segundo suas contribuições marginais.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Se a tecnologia tem retornos constantes de escala, pagar cada fator pela sua produtividade marginal esgota exatamente o produto — não sobra nem falta nada.
 
     **Pense assim:** Imagine uma padaria onde dobrar todos os insumos (farinha, forno, padeiros) dobra exatamente a produção de pães. Se cada insumo recebe o valor dos pães extras que ele produz, a conta fecha redondinha: todo pão é "explicado" por algum insumo. Não há lucro econômico puro.
@@ -989,7 +989,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ## 🇧🇷 Box Brasil: A matemática por trás do IPCA
 
-!!! example "🇧🇷 Box Brasil — O IPCA e as funções de agregação de Laspeyres"
+!!! box-brasil "Box Brasil — O IPCA e as funções de agregação de Laspeyres"
 
     O **Índice Nacional de Preços ao Consumidor Amplo (IPCA)**, calculado mensalmente pelo IBGE, é o indicador oficial de inflação no Brasil e meta do regime de metas de inflação adotado desde 1999. Por trás de sua aparente simplicidade — "quanto subiram os preços?" — há um arcabouço matemático preciso baseado em **funções de agregação de preços**.
 
@@ -1041,7 +1041,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 Os exercícios resolvidos a seguir aplicam as principais ferramentas matemáticas do capítulo a problemas econômicos concretos. O primeiro resolve um problema de maximização de utilidade via Lagrange, incluindo a interpretação econômica do multiplicador. O segundo demonstra a aplicação do teorema do envelope a uma firma monopolista. O terceiro explora as condições de Kuhn-Tucker em um contexto com soluções de canto. Em cada caso, recomenda-se acompanhar a resolução passo a passo, verificando que cada etapa corresponde às condições formais apresentadas nas seções anteriores.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
+??? exercicio-resolvido "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
 
     **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(I = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
 
@@ -1081,7 +1081,7 @@ Os exercícios resolvidos a seguir aplicam as principais ferramentas matemática
 
     **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}25\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,25 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
+??? exercicio-resolvido "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
 
     **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
 
@@ -1115,7 +1115,7 @@ Os exercícios resolvidos a seguir aplicam as principais ferramentas matemática
 
     **Interpretação econômica:** Um aumento unitário no custo marginal reduz o lucro máximo em \(\frac{a-c}{2}\), que é exatamente a quantidade ótima produzida. A elegância do teorema do envelope está em dispensar o cálculo de como \(Q^*\) se ajusta: basta a derivada parcial direta do lucro em relação a \(c\), avaliada no ótimo. No Brasil, quando a Petrobras eleva o preço dos derivados (aumento de \(c\) para distribuidoras), o teorema do envelope permite estimar rapidamente o impacto sobre o lucro do setor sem recalcular toda a cadeia de ajustes de quantidade.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
+??? exercicio-resolvido "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
 
     **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I\). Encontre a cesta ótima para \(I = 20\) e \(I = 0{,}5\), identificando soluções interiores e de canto.
 
@@ -1313,7 +1313,7 @@ e) Qual o valor mínimo de \(I\) a partir do qual o consumidor passa a adquirir 
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Chetty, R. (2009). [Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods](https://doi.org/10.1146/annurev.economics.050708.142910). *Annual Review of Economics*, 1, 451–488."
+??? pesquisa "Chetty, R. (2009). [Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods](https://doi.org/10.1146/annurev.economics.050708.142910). *Annual Review of Economics*, 1, 451–488."
     **Pergunta central:** Como avaliar o impacto de uma política pública sobre o bem-estar social sem precisar estimar um modelo estrutural completo da economia? A estimação de modelos estruturais é custosa e depende de suposições sobre formas funcionais e distribuições — será possível responder a perguntas de política usando apenas algumas "estatísticas suficientes"?
 
     **Método:** Chetty mostra que, para uma ampla classe de problemas de política pública — tributação, seguro-desemprego, regulação —, o impacto sobre o bem-estar pode ser expresso como função de um pequeno número de **estatísticas suficientes**, tipicamente elasticidades comportamentais estimáveis. A chave é o **teorema do envelope**: como os agentes estão otimizando, os efeitos de primeira ordem de mudanças comportamentais sobre a utilidade são nulos. O único efeito relevante é o efeito **direto** da política sobre a restrição — exatamente o resultado das Seções 2.4 e 2.6.
@@ -1324,7 +1324,7 @@ e) Qual o valor mínimo de \(I\) a partir do qual o consumidor passa a adquirir 
 
     **Relevância para o capítulo:** O artigo é uma aplicação magistral do teorema do envelope (Seções 2.4 e 2.6): ao reconhecer que agentes otimizadores "já fizeram o melhor possível", Chetty transforma problemas aparentemente intratáveis em expressões simples envolvendo derivadas parciais avaliadas no ótimo. A mensagem é que as ferramentas matemáticas deste capítulo — derivadas parciais, multiplicadores de Lagrange, teorema do envelope — não são mero formalismo: são a base de uma revolução metodológica na economia empírica.
 
-??? abstract "Milgrom, P.; Shannon, C. (1994). [Monotone Comparative Statics](https://www.econometricsociety.org/publications/econometrica/1994/01/01/monotone-comparative-statics). *Econometrica*, 62(1), 157–180."
+??? pesquisa "Milgrom, P.; Shannon, C. (1994). [Monotone Comparative Statics](https://www.econometricsociety.org/publications/econometrica/1994/01/01/monotone-comparative-statics). *Econometrica*, 62(1), 157–180."
     **Pergunta central:** Quando podemos afirmar que a solução ótima de um problema de maximização é *monotonamente crescente* em um parâmetro? A estática comparativa clássica — "se o preço sobe, a quantidade cai" — depende de condições sobre derivadas segundas (concavidade, condições de segunda ordem). Será possível obter resultados de estática comparativa sem essas condições?
 
     **Método:** Milgrom e Shannon desenvolveram a teoria da **estática comparativa monotônica** usando conceitos de teoria dos reticulados (*lattice theory*). A ideia central é substituir as condições tradicionais de segunda ordem (hessiana negativa definida, concavidade) por uma condição mais fraca: **supermodularidade** da função objetivo. Uma função é supermodular quando "fazer mais de uma coisa aumenta o retorno de fazer mais de outra" — uma forma de complementaridade.

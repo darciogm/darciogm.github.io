@@ -50,7 +50,7 @@ O **produto médio do trabalho** é definido como:
 
 A relação entre produto marginal e produto médio é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Se o trabalhador adicional produz mais do que a média dos anteriores, ele "puxa" a média para cima; se produz menos, puxa para baixo.
 
     **Pense assim:** Numa partida de futebol, se o jogador que entra no segundo tempo faz mais gols que a média do time até ali, a média de gols por jogador sobe. Se ele erra tudo, a média cai. O produto marginal é o "gol do substituto" — e ele determina a direção do produto médio.
@@ -61,7 +61,7 @@ A relação entre produto marginal e produto médio é análoga àquela entre cu
 
 A relação entre produto marginal e produto médio revela um padrão importante: à medida que a firma emprega mais e mais trabalhadores com capital fixo, a produtividade marginal de cada trabalhador adicional tende a cair. Esse padrão é tão recorrente na prática que recebeu o estatuto de "lei" — embora, como veremos, trate-se de uma regularidade empírica, não de uma necessidade lógica.
 
-!!! abstract "Lei dos rendimentos marginais decrescentes"
+!!! theorem "Lei dos rendimentos marginais decrescentes"
     Se um insumo variável é adicionado a um insumo fixo, a partir de certo ponto o produto marginal do insumo variável torna-se decrescente. Formalmente, existe \(L^*\) tal que para \(L > L^*\):
 
     \[
@@ -70,7 +70,7 @@ A relação entre produto marginal e produto médio revela um padrão importante
 
 É crucial observar que esta "lei" é uma regularidade empírica, não um resultado lógico necessário. Ela se aplica ao **curto prazo**, quando pelo menos um fator é fixo. Não deve ser confundida com rendimentos decrescentes de escala, que dizem respeito à variação simultânea de todos os insumos — uma distinção frequentemente cobrada em provas da ANPEC.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Cada trabalhador a mais produz menos que o anterior quando o espaço e os equipamentos são fixos.
 
     **Pense assim:** Em uma cozinha de restaurante com quatro bocas de fogão, o primeiro cozinheiro é muito produtivo. O segundo ajuda bastante. O terceiro já começa a esbarrar nos outros. O quarto fica esperando uma boca liberar. O fogão não mudou — é o trabalhador extra que rende menos.
@@ -80,7 +80,7 @@ A relação entre produto marginal e produto médio revela um padrão importante
 !!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
     Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
 
-!!! example "🇧🇷 Box Brasil: Produtividade do trabalho na indústria brasileira"
+!!! box-brasil "Box Brasil: Produtividade do trabalho na indústria brasileira"
 
     A produtividade do trabalho — medida como valor adicionado por hora trabalhada — é uma aplicação direta do conceito de produto médio do trabalho (\(\mathrm{PMe}_L\)). Dados das Contas Nacionais do IBGE e da PNAD Contínua, compilados pelo FGV/IBRE, mostram que a produtividade por hora trabalhada no Brasil cresceu em média **+1,6% ao ano entre 2000 e 2010**, mas desacelerou para apenas **+0,3% ao ano entre 2010 e 2023** — e a média de longo prazo (1981–2023) é de modestos **+0,5% ao ano**.
 
@@ -133,14 +133,14 @@ f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
 
 O que essa expressão nos diz economicamente? A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema. Quando a firma já emprega muito trabalho e pouco capital, cada unidade adicional de trabalho compensa menos capital perdido — exatamente porque os rendimentos marginais do trabalho são decrescentes. Esse fenômeno é intuitivamente análogo à taxa marginal de substituição decrescente no consumo, e a convexidade das isoquantas é sua expressão geométrica.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A TMST mede quantas unidades de um insumo a firma pode trocar por uma unidade do outro sem perder produção.
 
     **Pense assim:** Numa fazenda de café altamente mecanizada, cada colheitadeira a menos exige muitos trabalhadores extras para compensar. Mas numa fazenda com muita mão de obra e pouca máquina, dispensar um trabalhador custa pouca mecanização adicional. A troca fica mais difícil conforme a firma se torna mais "desequilibrada".
 
     **Por que isso importa:** Quando o salário mínimo sobe no Brasil, a TMST indica o quanto as firmas conseguem substituir trabalho por máquinas — e em setores com baixa substituibilidade, o impacto no emprego é menor.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 10.1"
+??? exercicio-resolvido "Exercício Resolvido 10.1"
     **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
 
     **Dados:** \(A = 20\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(K = 25\), \(L = 16\).
@@ -204,7 +204,7 @@ onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em r
 
 Note que uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos. Confundir esses dois conceitos é um erro recorrente — e compreensível, pois ambos tratam de "rendimentos". A distinção é temporal e conceitual: os rendimentos marginais decrescentes são um fenômeno de curto prazo (um fator fixo); os rendimentos de escala são um fenômeno de longo prazo (todos os fatores variáveis). Uma siderúrgica pode ter rendimentos crescentes de escala (produzir mais aço por real investido ao dobrar toda a operação) e, simultaneamente, rendimentos marginais decrescentes do trabalho (cada operário adicional em uma planta fixa produz menos que o anterior).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Rendimentos de escala respondem à pergunta: se a firma dobrar tudo — máquinas, trabalhadores, espaço —, o produto mais que dobra, dobra exatamente ou menos que dobra?
 
     **Pense assim:** Uma padaria de bairro que abre uma segunda unidade idêntica produz o dobro de pães (rendimentos constantes). Já uma siderúrgica que duplica o alto-forno produz mais que o dobro de aço, porque o volume do forno cresce com o cubo do raio enquanto o custo do material cresce com o quadrado (rendimentos crescentes). É a lógica que explica por que usinas são enormes e padarias são pequenas.
@@ -214,13 +214,13 @@ Note que uma função pode apresentar simultaneamente rendimentos crescentes de 
 !!! example "Exemplo: Economias de escala na indústria automobilística brasileira"
     A indústria automobilística ilustra rendimentos crescentes de escala na faixa relevante de produção. Uma linha de montagem exige investimento fixo elevado em robôs, estamparia e pintura, independentemente do volume produzido. Estudos setoriais indicam que a escala mínima eficiente de uma planta de montagem situa-se entre 100 e 200 mil veículos/ano — abaixo desse patamar, o custo médio por veículo é significativamente mais alto. Essa lógica de rendimentos crescentes explica a concentração geográfica da produção automotiva brasileira no ABC paulista e em polos como Betim (MG) e Camaçari (BA), onde a escala viabiliza custos competitivos.
 
-!!! example "🇧🇷 Box Brasil: Economias de escala e fusões no CADE"
+!!! box-brasil "Box Brasil: Economias de escala e fusões no CADE"
 
     O **Conselho Administrativo de Defesa Econômica (CADE)** avalia rotineiramente alegações de economias de escala em processos de fusão e aquisição. Um caso emblemático foi a fusão entre **Sadia e Perdigão** (2009), que criou a BRF — uma das maiores empresas de alimentos do mundo. As partes argumentaram que a fusão geraria ganhos de eficiência por meio de economias de escala na produção de aves e suínos, na logística de distribuição refrigerada e na diluição de custos fixos de P&D.
 
     O CADE aprovou a operação com restrições, exigindo a venda de marcas e ativos em mercados onde a concentração era excessiva. Em termos da teoria da produção, o argumento das empresas equivale a afirmar que a função de produção conjunta apresenta rendimentos crescentes de escala (\(e > 1\)) na faixa relevante — a firma maior produz a um custo médio menor que as duas firmas separadas. O CADE, por sua vez, ponderou que os ganhos de escala precisavam ser contrastados com os riscos de poder de mercado — tema que retomaremos nos capítulos sobre concorrência imperfeita.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 10.2"
+??? exercicio-resolvido "Exercício Resolvido 10.2"
     **Enunciado:** Classifique os rendimentos de escala das seguintes funções de produção: (a) \(q = 3K + 7L\); (b) \(q = K^{0,4}L^{0,8}\); (c) \(q = \min\{2K, 5L\}\).
 
     **Resolução:**
@@ -276,7 +276,7 @@ Intuitivamente, \(\sigma\) capta a curvatura da isoquanta:
 
 A elasticidade de substituição é um parâmetro central na análise da distribuição funcional da renda, pois determina como mudanças nos preços relativos dos fatores afetam as participações do capital e do trabalho na renda total. Quando \(\sigma > 1\), um barateamento relativo do capital leva a uma substituição tão intensa que a participação do capital na renda *aumenta*; quando \(\sigma < 1\), o efeito é o oposto. Esse mecanismo está no centro do debate contemporâneo sobre desigualdade, como argumentou Thomas Piketty em *O Capital no Século XXI* (2014).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A elasticidade de substituição mede o quão fácil é trocar máquinas por pessoas (ou vice-versa) sem perder produção.
 
     **Pense assim:** Em um call center, substituir atendentes humanos por chatbots de IA é relativamente fácil (elasticidade alta). Já em uma cirurgia cardíaca, trocar o cirurgião por um robô é muito mais difícil (elasticidade baixa). Quanto mais rígida a receita de produção, menor a elasticidade.
@@ -321,7 +321,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 !!! example "Exemplo: Elasticidade de substituição na indústria brasileira"
     A elasticidade de substituição tem implicações diretas para o mercado de trabalho. Quando \(\sigma\) é alto, as firmas substituem trabalho por capital (automação) com relativa facilidade. A literatura empírica aponta valores de \(\sigma\) entre 0,4 e 0,6 para o setor manufatureiro em diversas economias (Chirinko, 2008), e estudos com dados brasileiros encontram valores consistentemente abaixo de 1. Isso indica que capital e trabalho são complementares — mas não tanto quanto no caso Leontief puro (\(\sigma = 0\)). Esse grau intermediário de complementaridade ajuda a explicar por que a automação industrial desloca trabalhadores de forma menos abrupta do que ocorreria com \(\sigma\) mais elevado, mas ainda assim gera pressão sobre ocupações de baixa qualificação.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 10.4"
+??? exercicio-resolvido "Exercício Resolvido 10.4"
     **Enunciado:** Uma firma opera com a função de produção CES \(q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}\). Calcule a elasticidade de substituição e a TMST quando \(K = 8\) e \(L = 2\).
 
     **Dados:** \(\delta = 0{,}5\), \(\rho = -1\), \(\gamma = 1\).
@@ -417,7 +417,7 @@ A CES **generaliza** as três funções anteriores:
 
 As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 10.5"
+??? exercicio-resolvido "Exercício Resolvido 10.5"
     **Enunciado:** A função de produção de uma pizzaria é \(Q = 30K^{0,5}L^{0,5}\), com \(K\) fornos fixados em 4 no curto prazo. (a) Escreva a função de produção de curto prazo. (b) Calcule o produto total com 9 trabalhadores. (c) Calcule o produto marginal e o produto médio com 9 trabalhadores. (d) Classifique os rendimentos de escala.
 
     **Dados:** \(A = 30\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(\bar{K} = 4\).
@@ -517,7 +517,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
     **Conexão com este capítulo:**
     A decomposição do crescimento — que atribui parcelas do crescimento do produto a capital, trabalho e PTF — é apresentada neste capítulo como aplicação direta da função de produção Cobb-Douglas. O resíduo de Solow, interpretado como medida de progresso técnico, conecta a teoria da produção à questão central do crescimento econômico.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 10.3"
+??? exercicio-resolvido "Exercício Resolvido 10.3"
     **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
 
     **Dados:** \(\alpha = 0{,}3\), \(\beta = 0{,}7\), \(\dot{A}/A = 0{,}02\), \(\dot{K}/K = 0{,}04\), \(\dot{L}/L = 0{,}01\).
@@ -549,7 +549,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
     **Interpretação econômica:** A predominância da PTF no crescimento é consistente com o padrão observado na agricultura brasileira pós-Embrapa (ver Box Brasil a seguir), onde a inovação tecnológica respondeu por parcela majoritária dos ganhos de produtividade. Como a função é Cobb-Douglas, o progresso técnico é simultaneamente neutro no sentido de Hicks, Harrod e Solow — as três classificações convergem (Seção 10.6).
 
-!!! example "🇧🇷 Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
+!!! box-brasil "Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
 
     Os dados do **[IBGE/SIDRA](https://sidra.ibge.gov.br)** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 44,1 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados [CONAB](https://www.conab.gov.br), safra 2022/23). A produtividade média passou de 2.403 para 3.509 kg/ha.
 
@@ -564,7 +564,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 ## 🇧🇷 Box Brasil: A Revolução Tecnológica da Embrapa e a Produtividade Agrícola
 
-!!! example "🇧🇷 Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
+!!! box-brasil "Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
 
     A agropecuária brasileira vivenciou, nas últimas cinco décadas, uma das mais impressionantes transformações produtivas do mundo. O protagonista dessa revolução foi a **Empresa Brasileira de Pesquisa Agropecuária (Embrapa)**, fundada em 1973, cuja atuação é um caso emblemático de progresso técnico aplicado à produção.
 
@@ -598,7 +598,7 @@ f(K, L) = g\!\big(h(K, L)\big), \quad g' > 0, \quad h(\lambda K, \lambda L) = \l
 
 Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As isoquantas são **expansões radiais** umas das outras.
 
-!!! abstract "Proposição — Propriedades de funções de produção homotéticas"
+!!! theorem "Proposição — Propriedades de funções de produção homotéticas"
     Se \(f(K, L)\) é homotética, então:
 
     1. **Caminho de expansão linear**: para preços dos fatores \((w, v)\) fixos, a combinação ótima de insumos que minimiza custos satisfaz \(K^*/L^* = \psi(w/v)\), constante para todos os níveis de produto \(q\).
@@ -614,14 +614,14 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 !!! warning "Contraexemplo"
     A função \(f(K, L) = K + L + KL\) **não** é homotética: a TMST \(= (1 + L)/(1 + K)\) depende dos níveis absolutos de \(K\) e \(L\), não apenas da razão \(K/L\). As isoquantas mudam de forma conforme o nível de produto aumenta.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Com tecnologia homotética, firmas grandes e pequenas usam a mesma "receita" — a proporção de insumos depende apenas dos preços relativos, não da escala de produção.
 
     **Pense assim:** Uma padaria que usa 2 kg de farinha para cada litro de leite manterá essa proporção se produzir 100 ou 10.000 pães por dia — desde que os preços dos insumos não mudem. Isso é o caminho de expansão linear: "escalar" a produção é como dar zoom na mesma combinação ótima.
 
     **Por que isso importa:** A hipótese de homoteticidade simplifica enormemente a análise de custos. Se a tecnologia não for homotética, a proporção ótima de insumos muda com a escala, e a função custo não se separa em um componente de preços e outro de quantidade.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 10.6"
+??? exercicio-resolvido "Exercício Resolvido 10.6"
     **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = v\). (c) Calcule a TMST ao longo do raio \(K = L\).
 
     **Resolução:**
@@ -895,7 +895,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). [*A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*](https://repositorio.ipea.gov.br). Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
+??? pesquisa "Gasques, José Garcia; Bastos, Eliana Teles; Bacchi, Mirian Rumenos Piedade; Valdes, Constanza. (2010). Produtividade Total dos Fatores e Transformações da Agricultura Brasileira: Análise dos Dados dos Censos Agropecuários. In: Gasques, J. G.; Vieira Filho, J. E. R.; Navarro, Z. (Orgs.). [*A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*](https://repositorio.ipea.gov.br). Brasília: IPEA, Cap. 1, 19-44. ISBN: 978-85-7811-050-5"
     **Pergunta central:** Quanto do crescimento da produção agropecuária brasileira nas últimas décadas se deve ao uso de mais insumos (terra, trabalho, capital) e quanto se deve ao progresso técnico? A decomposição do crescimento entre acumulação de fatores e produtividade total dos fatores (PTF) é uma aplicação direta da contabilidade de crescimento à la Solow discutida na Seção 10.6.
 
     **Método:** Gasques et al. utilizam dados dos Censos Agropecuários do IBGE para construir índices de produtividade total dos fatores na agropecuária brasileira entre 1970 e 2006. A metodologia consiste em calcular índices de Törnqvist para produto e insumos agregados (terra, trabalho, capital, materiais) e obter a PTF como resíduo — o mesmo conceito do resíduo de Solow, agora aplicado a dados censitários reais.
@@ -906,7 +906,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
     **Relevância para o capítulo:** O estudo é uma aplicação empírica da decomposição do crescimento apresentada na Seção 10.6. O parâmetro \(A(t)\) da função de produção não é uma abstração teórica: é medido, acompanhado e influenciado por políticas públicas. O caso da agricultura brasileira mostra que o progresso técnico — capturado pelo resíduo de Solow — pode ser a força dominante do crescimento, exatamente como previsto pela teoria quando a PTF cresce mais rápido que os insumos.
 
-??? abstract "Oberfield, Ezra; Raval, Devesh. (2021). [Micro Data and Macro Technology](https://doi.org/10.3982/ECTA12807). *Econometrica*, 89(2), 703-732. DOI: [10.3982/ECTA12807](https://doi.org/10.3982/ECTA12807)"
+??? pesquisa "Oberfield, Ezra; Raval, Devesh. (2021). [Micro Data and Macro Technology](https://doi.org/10.3982/ECTA12807). *Econometrica*, 89(2), 703-732. DOI: [10.3982/ECTA12807](https://doi.org/10.3982/ECTA12807)"
     **Pergunta central:** Qual é a elasticidade de substituição entre capital e trabalho na economia? Esse parâmetro — o \(\sigma\) da função CES discutido na Seção 10.4 — é crucial para entender se a participação do capital na renda aumenta ou diminui quando o capital se torna mais abundante. Piketty (2014) argumentou que \(\sigma > 1\) explicaria o aumento da desigualdade; outros pesquisadores contestaram essa estimativa.
 
     **Método:** Oberfield e Raval propõem uma abordagem que usa microdados de plantas industriais (Census of Manufactures dos EUA) para estimar a elasticidade de substituição agregada. A ideia-chave é que a elasticidade agregada depende de dois componentes: a elasticidade de substituição *dentro* de cada planta (entre capital e trabalho) e a elasticidade de substituição *entre* plantas (realocação de recursos de plantas intensivas em trabalho para plantas intensivas em capital). Os autores estimam ambas separadamente.

@@ -76,7 +76,7 @@ A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R
 
 Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbrio (Trair, Trair) com payoffs \((-5, -5)\) é o único equilíbrio de Nash, mas é **Pareto-dominado** pelo resultado (Cooperar, Cooperar) com payoffs \((-1, -1)\). Essa tensão entre racionalidade individual e eficiência coletiva é o cerne do dilema.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No Dilema dos Prisioneiros, cada um faz o melhor para si e o resultado é ruim para todos.
 
     **Pense assim:** Dois quiosques vizinhos na praia de Copacabana poderiam manter preços altos e lucrar bem. Mas cada um pensa: "se eu baixar o preço, roubo os clientes do vizinho". Ambos baixam, ambos lucram menos — e nenhum consegue voltar atrás sozinho.
@@ -135,7 +135,7 @@ O equilíbrio de Nash é um conceito de **consistência mútua de expectativas**
     **Conexão com este capítulo:**
     O equilíbrio de Nash — perfil de estratégias em que nenhum jogador pode melhorar unilateralmente — é o conceito central deste capítulo. Toda a análise de jogos estáticos com informação completa se organiza em torno da identificação e interpretação desses equilíbrios.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No equilíbrio de Nash, ninguém se arrepende da própria escolha depois de ver o que os outros fizeram.
 
     **Pense assim:** Pense no trânsito de São Paulo: se todo mundo usa o Waze e escolhe a rota mais rápida, nenhum motorista individual consegue melhorar seu tempo mudando de caminho — porque todas as alternativas já estão igualmente congestionadas. Isso é um equilíbrio de Nash do trânsito (e uma versão do paradoxo de Braess).
@@ -199,7 +199,7 @@ Em um equilíbrio em estratégias mistas, cada jogador randomiza de tal forma qu
 U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_i^l \text{ com } \sigma_i^*(s_i^l) > 0
 \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Jogar de forma imprevisível pode ser a melhor estratégia quando qualquer padrão fixo seria explorado pelo adversário.
 
     **Pense assim:** Um cobrador de pênaltis que sempre chuta no mesmo canto será facilmente defendido. Por isso, os melhores batedores variam entre esquerda, direita e centro de forma quase aleatória — e a proporção ideal é exatamente aquela que deixa o goleiro indiferente entre os lados. Chiappori, Levitt e Groseclose (2002) confirmaram isso empiricamente com dados de cobranças de pênaltis na Série A italiana e na liga francesa.
@@ -237,7 +237,7 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
 O exemplo da Batalha dos Sexos ilustra como calcular o equilíbrio misto em um jogo específico. Mas será que *todo* jogo finito possui ao menos um equilíbrio? A resposta afirmativa — o Teorema de Nash — é um dos resultados mais importantes da matemática aplicada do século XX. Sua demonstração utiliza o Teorema do Ponto Fixo de Kakutani e, embora a apresentação formal possa parecer abstrata, a intuição geométrica é elegante: as correspondências de melhor resposta dos jogadores devem necessariamente se "cruzar" em algum ponto.
 
-!!! abstract "Teorema de Nash (1950)"
+!!! theorem "Teorema de Nash (1950)"
     Todo jogo finito (número finito de jogadores e de estratégias puras para cada jogador) possui pelo menos um **equilíbrio de Nash em estratégias mistas**.
 
 !!! proof "Demonstração: Existência de equilíbrio de Nash (caso 2×2)"
@@ -330,7 +330,7 @@ Duas firmas com produtos homogêneos e custo marginal constante \(c\) escolhem s
 
 O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\), com lucro zero para ambas as firmas — mesmo com apenas dois concorrentes, o resultado é competitivo. Por que isso é paradoxal? Porque contradiz a intuição de que um mercado com apenas duas firmas deveria gerar lucros oligopolísticos substanciais. A razão é a extrema sensibilidade da demanda: com produtos perfeitamente homogêneos, uma diferença infinitesimal de preço desloca *toda* a demanda para a firma mais barata. Essa "competição à navalha" força ambas as firmas ao custo marginal — um resultado idêntico ao de competição perfeita com infinitas firmas.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A variável estratégica da firma — preço ou quantidade — determina radicalmente o equilíbrio do mercado.
 
     **Pense assim:** Imagine duas padarias vizinhas no mesmo bairro. Se cada uma decide *quantos pães* assar de manhã (capacidade), estamos no mundo de Cournot: a produção é decidida antes, e o preço se ajusta pela demanda. Se cada uma decide o *preço* na vitrine a cada hora (e pode atender toda a demanda), estamos no mundo de Bertrand: qualquer diferença de preço desvia todos os clientes.
@@ -403,7 +403,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 Os modelos de oligopólio apresentados acima não são meros exercícios teóricos — eles fornecem a estrutura analítica que órgãos reguladores como o CADE utilizam diariamente para avaliar práticas anticompetitivas. O primeiro Box Brasil deste capítulo examina precisamente essa conexão entre teoria e prática regulatória.
 
-!!! example "🇧🇷 Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
+!!! box-brasil "Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
     O mercado de revenda de combustíveis no Brasil é um dos campos mais ativos de investigação antitruste pelo **CADE** (Conselho Administrativo de Defesa Econômica). A frequência de cartéis nesse setor oferece um laboratório natural para a teoria dos jogos.
 
     **Por que o conluio é frequente nesse mercado?**
@@ -434,7 +434,7 @@ Os modelos de oligopólio apresentados acima não são meros exercícios teóric
 
 Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais, o transporte aéreo doméstico oferece um panorama complementar: um oligopólio altamente concentrado em escala nacional, no qual coexistem elementos de Cournot, Bertrand e Stackelberg dependendo da rota e do horizonte temporal.
 
-!!! example "🇧🇷 Box Brasil — Gol, Latam e Azul: competição estratégica a 10.000 metros"
+!!! box-brasil "Box Brasil — Gol, Latam e Azul: competição estratégica a 10.000 metros"
     O transporte aéreo doméstico no Brasil é um dos mercados mais concentrados do país e ilustra diretamente os modelos de oligopólio.
 
     **Concentração extrema**
@@ -520,7 +520,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9a.1 — Equilíbrios de Nash na Batalha dos Sexos"
+??? exercicio-resolvido "Exercício Resolvido 9a.1 — Equilíbrios de Nash na Batalha dos Sexos"
     **Enunciado:** Encontre todos os equilíbrios de Nash (em puras e em mistas) do seguinte jogo simultâneo:
 
     |  | Jogador 2: E | Jogador 2: D |
@@ -549,7 +549,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Interpretação:** Este é um jogo de coordenação com preferências conflitantes. Múltiplos equilíbrios explicam por que convenções, normas (ABNT, INMETRO) e regulamentações são valiosas — funcionam como "pontos focais" (Schelling, 1960).
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9a.2 — Cournot assimétrico no setor aéreo"
+??? exercicio-resolvido "Exercício Resolvido 9a.2 — Cournot assimétrico no setor aéreo"
     **Enunciado:** Duas companhias aéreas competem à la Cournot em uma rota doméstica. A demanda inversa é \(P(Q) = 500 - 2Q\), onde \(Q = q_1 + q_2\) (em milhares de assentos/mês). A incumbente tem custo marginal \(c_1 = 100\) e a entrante tem \(c_2 = 150\). Encontre o equilíbrio de Cournot-Nash.
 
     **Resolução:**
@@ -570,7 +570,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Interpretação:** A firma mais eficiente produz mais e lucra mais. Na aviação brasileira, a Latam tem historicamente custos por ASK menores, o que contribui para seu market share de 39,1%.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9a.3 — Stackelberg no mercado de cervejas"
+??? exercicio-resolvido "Exercício Resolvido 9a.3 — Stackelberg no mercado de cervejas"
     **Enunciado:** A Ambev (líder) e a Heineken (seguidora) competem à la Stackelberg no mercado de cerveja premium. A demanda inversa é \(P = 20 - Q\) (R\$/litro, em milhões de litros/mês), com \(c_1 = c_2 = 4\).
 
     (a) Encontre o equilíbrio de Stackelberg.
@@ -754,7 +754,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Bresnahan, Timothy F.; Reiss, Peter C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
+??? pesquisa "Bresnahan, Timothy F.; Reiss, Peter C. (1991). [Entry and Competition in Concentrated Markets](https://doi.org/10.1086/261786). *Journal of Political Economy*, 99(5), 977–1009."
     **Pergunta central:** Quantas firmas são necessárias para que um mercado se torne efetivamente competitivo?
 
     **Método:** Modelo econométrico de entrada em mercados locais geograficamente isolados nos EUA (cidades pequenas com 1 a 5 firmas), usando dados de cinco setores — médicos, dentistas, farmácias, encanadores e lojas de pneus. A ideia-chave: se o mercado precisa ser proporcionalmente maior para sustentar 3 firmas do que para 2, é porque a terceira firma reduz as margens.
@@ -763,14 +763,14 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Relevância:** Para o Brasil, os resultados têm implicações diretas para análise do CADE em atos de concentração. A metodologia é aplicável a mercados de combustíveis, farmácias e serviços de saúde no interior. O artigo testa empiricamente as previsões de Cournot e Bertrand (Seção 9a.5).
 
-??? abstract "Adams, Brian W. (2025). *Game Theory for Applied Econometricians: Data Analytics with R*. Boca Raton: CRC Press. Capítulos 1–5."
+??? pesquisa "Adams, Brian W. (2025). *Game Theory for Applied Econometricians: Data Analytics with R*. Boca Raton: CRC Press. Capítulos 1–5."
     **Escopo:** Parte I do livro cobre jogos estáticos com informação completa — a matéria deste módulo — com ênfase em aplicações empíricas e análise de dados em R.
 
     **Contribuição pedagógica:** Adams conecta cada conceito teórico a um dataset e um script R. O Capítulo 1 analisa o game show *Friend or Foe* (Dilema dos Prisioneiros com dinheiro real); o Capítulo 2 estuda entrada de firmas no mercado de pneus; o Capítulo 3 modela competição de hambúrgueres; o Capítulo 5 testa estratégias mistas com dados de pênaltis.
 
     **Relevância:** Os R Boxes interativos deste módulo (9a.1 e 9a.2) são inspirados nos scripts de Adams, adaptados para execução no navegador via WebR. Os dados do pacote `Ecdat` permitem que o leitor reproduza e modifique as análises sem instalar nada.
 
-??? abstract "Chiappori, Pierre-André; Levitt, Steven; Groseclose, Tim (2002). [Testing Mixed-Strategy Equilibria When Players Are Heterogeneous](https://doi.org/10.1257/00028280260344678). *American Economic Review*, 92(4), 1138–1147."
+??? pesquisa "Chiappori, Pierre-André; Levitt, Steven; Groseclose, Tim (2002). [Testing Mixed-Strategy Equilibria When Players Are Heterogeneous](https://doi.org/10.1257/00028280260344678). *American Economic Review*, 92(4), 1138–1147."
     **Pergunta central:** Os jogadores de futebol profissional jogam estratégias mistas consistentes com a teoria em cobranças de pênalti?
 
     **Método:** Dados de 459 pênaltis da Série A italiana e da liga francesa. Cada cobrança é modelada como um jogo 2×2 (cobrador escolhe lado, goleiro escolhe lado). A teoria prevê que as taxas de sucesso devem ser iguais em todos os lados — caso contrário, o cobrador deveria ajustar suas probabilidades.

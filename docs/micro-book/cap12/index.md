@@ -17,7 +17,7 @@ Mas antes de mergulhar na análise formal, vale perguntar: **por que existem fir
 
 A firma, portanto, é uma resposta institucional à existência de custos de transação. Sua fronteira — isto é, quais atividades são realizadas internamente e quais são contratadas no mercado — é determinada pela comparação entre custos de transação e custos de organização interna. Esse insight simples mas profundo transforma a firma de uma "caixa-preta" que recebe insumos e produz outputs em uma instituição viva, cujas fronteiras se expandem ou se contraem conforme mudam as condições econômicas e regulatórias.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Firmas existem porque negociar tudo no mercado tem um custo — e às vezes sai mais barato resolver as coisas "dentro de casa".
 
     **Pense assim:** Imagine um dono de restaurante em São Paulo. Ele poderia, todo dia, ir à CEAGESP negociar preço de cada verdura com um fornecedor diferente. Mas o tempo gasto, o risco de levar gato por lebre e a burocracia dos contratos tornam mais eficiente ter um fornecedor fixo ou até uma horta própria. Essa é a lógica dos custos de transação.
@@ -74,14 +74,14 @@ A condição de primeira ordem (CPO) é:
 \frac{d\pi}{dq} = \frac{dRT}{dq} - \frac{dCT}{dq} = 0 \implies \mathrm{RMg}(q) = \mathrm{CMg}(q)
 \]
 
-!!! abstract "Regra de maximização de lucro"
+!!! theorem "Regra de maximização de lucro"
     A firma maximiza lucro produzindo a quantidade \(q^*\) em que a **receita marginal** iguala o **custo marginal**:
 
     \[
     \mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)
     \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A firma produz até o ponto em que o ganho da próxima unidade vendida empata com o custo de produzi-la.
 
     **Pense assim:** Pense em uma barraquinha de açaí na praia. Cada copo extra rende R$ 10, mas o custo dos insumos vai subindo (mais polpa, mais gelo, mais copos). Enquanto o próximo copo custar menos de R$ 10 para fazer, vale a pena produzir. Quando o custo do próximo copo alcançar R$ 10, é hora de parar. Esse é o ponto em que receita marginal iguala custo marginal.
@@ -225,7 +225,7 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
     Graficamente, é a área acima da curva de oferta (CMg) e abaixo do preço. O excedente do produtor é a medida apropriada de bem-estar do lado da oferta no curto prazo, pois mede a contribuição da produção para cobrir os custos fixos e gerar lucro.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Uma firma com prejuízo pode racionalmente continuar operando, desde que a receita cubra pelo menos os custos variáveis.
 
     **Pense assim:** Imagine um quiosque na praia que paga R$ 3.000 de aluguel por mês (custo fixo). Se fechar, perde os R$ 3.000 de qualquer jeito. Se abrir e faturar o suficiente para pagar funcionários, insumos e ainda sobrar R$ 500, é melhor abrir — mesmo com prejuízo. O aluguel já é "dinheiro perdido" no curto prazo. Fechar só vale a pena quando nem os custos variáveis se pagam.
@@ -236,7 +236,7 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
 ## 🇧🇷 Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
 
-!!! example "🇧🇷 Box Brasil — Soja: quando o preço sobe, a área plantada responde"
+!!! box-brasil "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
     O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 12.4.
 
     **Dados da [CONAB](https://www.conab.gov.br) (Companhia Nacional de Abastecimento):**
@@ -370,7 +370,7 @@ A função lucro possui propriedades notáveis:
 !!! tip "Significado econômico do Lema de Hotelling"
     O Lema de Hotelling estabelece uma dualidade elegante: a partir da função lucro — que sintetiza toda a informação sobre tecnologia e preços — podemos recuperar tanto a **função de oferta** do produto quanto as **demandas por insumos**. Juntamente com o Lema de Shephard (capítulo anterior), forma o arcabouço dual da teoria da firma. A convexidade da função lucro implica que a oferta é não decrescente no preço do produto (lei da oferta) e que as demandas por insumos são não crescentes nos respectivos preços.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Conhecendo apenas o lucro máximo da firma em função dos preços, conseguimos deduzir quanto ela produz e quanto usa de cada insumo.
 
     **Pense assim:** É como se você olhasse apenas o extrato bancário de um feirante — quanto ele lucra a cada combinação de preço da banana e custo do transporte — e, só com essa informação, conseguisse descobrir quantas bananas ele vende e quantas viagens de caminhão ele faz. O Lema de Hotelling diz que a função lucro já carrega toda essa informação, bastando derivá-la.
@@ -417,14 +417,14 @@ A demanda incondicional por trabalho pode ser decomposta:
 
 O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho por capital ao longo da isoquanta quando \(w\) sobe. O **efeito produto** também é negativo: \(w\) maior eleva o CMg, o que reduz \(q^*\), o que reduz a demanda por trabalho. Ambos os efeitos operam na mesma direção — diferentemente do caso do consumidor, onde efeito substituição e efeito renda podem ter sinais opostos (bem de Giffen).
 
-!!! abstract "Proposição: Inexistência de 'insumo de Giffen'"
+!!! theorem "Proposição: Inexistência de 'insumo de Giffen'"
     Na teoria da firma maximizadora de lucro, a demanda por um insumo é sempre não crescente em seu próprio preço. Não existe o análogo de um "bem de Giffen" para insumos, pois tanto o efeito substituição quanto o efeito produto reduzem a demanda quando o preço do insumo aumenta.
 
 ---
 
 ## 🇧🇷 Box Brasil: JBS e a Integração Vertical na Agroindústria
 
-!!! example "🇧🇷 Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
+!!! box-brasil "Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
     A **JBS S.A.** é a maior processadora de proteína animal do mundo, com receita líquida trimestral recorde de **R$ 110,5 bilhões** no 3º trimestre de 2024 e presença em mais de 20 países. Sua trajetória ilustra de forma notável a teoria dos custos de transação de **Coase** e **Williamson** (Seção 12.1).
 
     **A lógica da integração vertical**
@@ -449,7 +449,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ## 🇧🇷 Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
 
-!!! example "🇧🇷 Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
+!!! box-brasil "Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
 
     As **micro e pequenas empresas (MPEs)** são o coração do tecido empresarial brasileiro. Segundo dados do **SEBRAE** e da **Receita Federal**:
 
@@ -501,7 +501,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
+??? exercicio-resolvido "Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
     **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
 
     **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
@@ -544,7 +544,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
+??? exercicio-resolvido "Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
     **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
 
     **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
@@ -591,7 +591,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
+??? exercicio-resolvido "Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
     **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(v = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
 
     **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(v = 1\).
@@ -812,7 +812,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Ulyssea, G. (2018). [Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745). *American Economic Review*, 108(8), 2015–2047."
+??? pesquisa "Ulyssea, G. (2018). [Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745). *American Economic Review*, 108(8), 2015–2047."
     **Pergunta central:** Por que tantas empresas no Brasil operam na informalidade, e quais são as consequências de políticas que tentam reduzi-la? A informalidade empresarial atinge milhões de firmas brasileiras e tem implicações diretas para produtividade, arrecadação e bem-estar. Ulyssea investiga se reduzir a informalidade de firmas (registro formal) necessariamente reduz a informalidade no mercado de trabalho (contratação formal).
 
     **Método:** O artigo desenvolve um modelo de equilíbrio com firmas heterogêneas que tomam duas decisões: (i) se registram formalmente a empresa (margem extensiva da informalidade) e (ii) se contratam trabalhadores com carteira assinada (margem intensiva). O modelo é estimado com dados brasileiros de firmas e trabalhadores, permitindo simular políticas contrafactuais de fiscalização e redução de custos de formalização.
@@ -823,7 +823,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
     **Relevância para o capítulo:** O modelo de Ulyssea é fundamentalmente um modelo de **maximização de lucro** com custos de transação regulatórios. A decisão de formalizar é análoga à fronteira da firma de Coase: a firma compara o custo de operar formalmente (impostos, burocracia) com o custo de operar informalmente (risco de multa, exclusão de crédito). A informalidade trabalhista reflete a demanda por insumos sob custos regulatórios — exatamente os temas das Seções 11.1 e 11.6.
 
-??? abstract "Dix-Carneiro, R.; Kovak, B. K. (2017). [Trade Liberalization and Regional Dynamics](https://doi.org/10.1257/aer.20161214). *American Economic Review*, 107(10), 2908–2946."
+??? pesquisa "Dix-Carneiro, R.; Kovak, B. K. (2017). [Trade Liberalization and Regional Dynamics](https://doi.org/10.1257/aer.20161214). *American Economic Review*, 107(10), 2908–2946."
     **Pergunta central:** Como as firmas e os mercados de trabalho regionais se ajustam no longo prazo a choques de preços causados por liberalização comercial? O Brasil realizou uma das maiores aberturas comerciais do mundo no início dos anos 1990, oferecendo um experimento natural para estudar a resposta da oferta e da demanda por insumos.
 
     **Método:** Os autores combinam dados de censos demográficos brasileiros de 1991 a 2010 com variação regional na exposição a reduções tarifárias, usando uma estratégia de diferenças-em-diferenças. Regiões mais afetadas pela abertura (que tinham indústrias mais protegidas) são comparadas com regiões menos afetadas ao longo de 20 anos.

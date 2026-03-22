@@ -31,7 +31,7 @@ onde \(p_1, p_2 > 0\) são os preços dos bens e \(I > 0\) é a renda nominal do
 
 Sob monotonicidade das preferências, a restrição orçamentária é satisfeita com igualdade na solução ótima: o consumidor gasta toda a renda.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A restrição orçamentária diz que toda escolha tem um custo de oportunidade — comprar mais de um bem significa abrir mão de outro.
 
     **Pense assim:** Imagine que você tem R$ 300 para gastar no mês entre carne e transporte. Cada real a mais gasto em carne é um real a menos em passagem de ônibus. A inclinação da reta orçamentária (\(-p_1/p_2\)) é exatamente esse "preço" da troca: se a carne custa R$ 40/kg e a passagem R$ 5, cada quilo de carne "custa" 8 passagens.
@@ -44,7 +44,7 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
 **Figura 4.1 — Restrição Orçamentária.** Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
 </div>
 
-!!! example "🇧🇷 Box Brasil — Combustíveis e a reta orçamentária das famílias brasileiras"
+!!! box-brasil "Box Brasil — Combustíveis e a reta orçamentária das famílias brasileiras"
     Um exemplo concreto de como preços afetam a restrição orçamentária vem do mercado de combustíveis no Brasil. Segundo dados da [ANP](https://www.gov.br/anp) (Agência Nacional do Petróleo), o preço médio da gasolina comum ao consumidor passou de cerca de R$ 4,50/litro no início de 2020 para R$ 7,26/litro em março de 2022 — um aumento superior a 60%. Esse aumento expressivo alterou significativamente a reta orçamentária das famílias, especialmente as de renda mais baixa.
 
     De acordo com a POF 2017–2018 ([IBGE](https://www.ibge.gov.br)), famílias com renda de até 2 salários mínimos destinavam cerca de 3,5% de seus gastos a combustíveis, enquanto famílias com renda acima de 25 salários mínimos destinavam 6,1%. Porém, como proporção da renda disponível para outros bens, o impacto é relativamente maior para as famílias mais pobres.
@@ -74,7 +74,7 @@ A condição de tangência pode ser reescrita em termos de utilidade marginal po
 
 Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última unidade monetária gasta em cada bem produz o mesmo incremento de utilidade.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No ponto ótimo, o último real gasto em qualquer bem deve render a mesma satisfação — senão, valeria a pena realocar.
 
     **Pense assim:** Suponha que o último real gasto em café no supermercado te dá mais prazer que o último real gasto em pão. Então faz sentido comprar menos pão e mais café, até que a satisfação marginal por real se iguale nos dois. É como distribuir água entre vasos: você para quando o nível está igual em todos.
@@ -175,7 +175,7 @@ As propriedades da demanda marshalliana revelam regularidades profundas do compo
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 4.1"
+??? exercicio-resolvido "Exercício Resolvido 4.1"
     **Enunciado:** Um consumidor tem função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), preços \(p_1 = 6\), \(p_2 = 3\) e renda \(I = 180\). Encontre a cesta ótima e a utilidade máxima.
 
     **Dados:** \(a = 1/3\), \(b = 2/3\), \(p_1 = 6\), \(p_2 = 3\), \(I = 180\).
@@ -242,7 +242,7 @@ As demandas marshallianas nos dizem *o que* o consumidor compra dados preços e 
 
 Com a função de utilidade indireta em mãos, estamos em condições de analisar uma das questões mais relevantes da microeconomia aplicada a políticas públicas. Antes de apresentar o resultado formal, considere a seguinte pergunta de política pública: se o governo precisa arrecadar uma determinada receita de um consumidor, qual tipo de imposto causa **menor perda de bem-estar**? A resposta revela uma das implicações mais poderosas da teoria do consumidor.
 
-!!! abstract "Proposição 4.1 — Princípio do montante fixo"
+!!! theorem "Proposição 4.1 — Princípio do montante fixo"
     Um imposto sobre a renda (montante fixo, *lump sum*) que arrecada a mesma receita que um imposto específico sobre um bem deixa o consumidor em um nível de utilidade **pelo menos tão alto** quanto o imposto específico.
 
 **Intuição**: O imposto específico sobre o bem 1 (digamos, de valor \(t\) por unidade) altera a razão de preços, distorcendo a escolha do consumidor. O imposto *lump sum* equivalente desloca a reta orçamentária paralelamente, sem distorcer preços relativos. O consumidor enfrenta a mesma redução de poder aquisitivo, mas pode realocar livremente entre os bens.
@@ -264,7 +264,7 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
 **Figura 4.3** — Princípio do Montante Fixo (*Lump Sum*). Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
 </div>
 
-!!! example "🇧🇷 Box Brasil — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
+!!! box-brasil "Box Brasil — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
     O debate entre transferência direta e subsídio a preços tem um exemplo emblemático no Brasil: o gás de cozinha (GLP). Durante anos, o governo subsidiou o preço do GLP diretamente, o que beneficiava todos os consumidores, inclusive os de alta renda. A partir de 2016, com o programa Gás para Todos (e depois o Auxílio Gás, criado em 2021), o governo passou a adotar uma transferência monetária direta às famílias inscritas no [Cadastro Único](https://www.gov.br/mds).
 
     Do ponto de vista do princípio do montante fixo, a mudança vai na direção correta. O subsídio ao preço distorce preços relativos, incentivando consumo excessivo de GLP em relação a outras fontes de energia. A transferência direta, por não alterar o preço relativo do gás, permite que a família aloque os recursos conforme suas preferências, gerando utilidade pelo menos igual — e tipicamente maior — para a mesma despesa pública.
@@ -273,7 +273,7 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
 
     **Fonte**: Ministério do Desenvolvimento e Assistência Social; Lei nº 14.237/2021 (Auxílio Gás).
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 4.2"
+??? exercicio-resolvido "Exercício Resolvido 4.2"
     **Enunciado:** Um consumidor com \(u(x_1, x_2) = x_1^{0{,}5} x_2^{0{,}5}\), \(p_1 = 10\), \(p_2 = 5\) e \(I = 200\) enfrenta um imposto específico de \(t = 10\) sobre o bem 1. Compare o imposto específico com um imposto *lump sum* de mesma receita.
 
     **Dados:** \(a = b = 0{,}5\), \(p_1 = 10\), \(p_2 = 5\), \(I = 200\), \(t = 10\).
@@ -414,7 +414,7 @@ E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a u
 
 Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)\) são **inversas** uma da outra (fixados os preços).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Maximizar a felicidade com um orçamento fixo e minimizar o gasto para atingir uma felicidade fixa são dois lados da mesma moeda.
 
     **Pense assim:** Pense em um estudante que quer montar a melhor marmita possível com R$ 15 (problema primal). Ou, alternativamente, quer gastar o mínimo para montar uma marmita tão boa quanto a que comeu ontem (problema dual). Nos dois casos, ele escolhe os mesmos ingredientes no mesmo ponto de tangência — só muda a pergunta.
@@ -439,7 +439,7 @@ h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u})).
 
 A primeira identidade diz que avaliar a demanda hicksiana no nível de utilidade ótimo reproduz a demanda marshalliana. A segunda diz que avaliar a demanda marshalliana na renda mínima necessária reproduz a demanda hicksiana.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 4.3"
+??? exercicio-resolvido "Exercício Resolvido 4.3"
     **Enunciado:** Para um consumidor com \(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\) e \(I = 100\), verifique as duas identidades de dualidade.
 
     **Dados:** \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 100\).
@@ -470,7 +470,7 @@ A primeira identidade diz que avaliar a demanda hicksiana no nível de utilidade
 
 As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contêm, de forma compacta, *toda* a informação sobre o comportamento do consumidor. Mas será que é possível extrair dessa informação as próprias funções de demanda — sem precisar resolver novamente o problema de otimização? A resposta é afirmativa, e o resultado que formaliza essa "engenharia reversa" é a célebre **Identidade de Roy**. Ela permite recuperar as demandas marshallianas diretamente a partir das derivadas parciais da função de utilidade indireta.
 
-!!! abstract "Teorema 4.1 — Identidade de Roy"
+!!! theorem "Teorema 4.1 — Identidade de Roy"
     Se \(V(\mathbf{p}, I)\) é diferenciável em \((\mathbf{p}, I)\) e \(\partial V / \partial I \neq 0\), então a demanda marshalliana do bem \(i\) é dada por:
 
     \[
@@ -507,7 +507,7 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
     x_i(\mathbf{p}, I) = -\frac{\partial V / \partial p_i}{\partial V / \partial I}. \qquad \blacksquare
     \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A Identidade de Roy diz que, se você sabe como a satisfação máxima reage a preços e renda, já consegue recuperar a demanda — sem resolver o problema de otimização de novo.
 
     **Pense assim:** É como se o extrato bancário (utilidade indireta) já contivesse toda a informação sobre o que você comprou. A Identidade de Roy é a "fórmula de engenharia reversa" que recupera o carrinho de compras a partir do extrato. O Lema de Shephard faz o mesmo truque partindo da função dispêndio.
@@ -857,7 +857,7 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 !!! info "Caminho de expansão da renda"
     Na utilidade quase-linear, o caminho de expansão da renda é uma **reta vertical** no espaço \((x_1, x_2)\): \(x_1\) permanece fixo em \((v')^{-1}(p_1/p_2)\) enquanto \(x_2\) cresce linearmente com \(I\). Contraste com as preferências homotéticas (§3.6.6), cujo caminho de expansão é uma reta passando pela **origem**.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 4.4"
+??? exercicio-resolvido "Exercício Resolvido 4.4"
     **Enunciado:** Um consumidor tem preferências Leontief \(u(x_1, x_2) = \min\{2x_1, x_2\}\), com \(p_1 = 4\), \(p_2 = 2\) e \(I = 120\). (a) Encontre a cesta ótima. (b) Suponha que o governo conceda uma transferência de R$ 40. Qual é a nova cesta?
 
     **Dados:** \(a = 2\), \(b = 1\) (na forma \(\min\{ax_1, bx_2\}\)), \(p_1 = 4\), \(p_2 = 2\), \(I = 120\).
@@ -886,7 +886,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ## 🇧🇷 Box Brasil: O Impacto do Bolsa Família na Restrição Orçamentária
 
-!!! example "🇧🇷 Box Brasil — Transferências condicionadas e escolhas de consumo"
+!!! box-brasil "Box Brasil — Transferências condicionadas e escolhas de consumo"
     O Programa Bolsa Família (PBF), criado em 2003 e reestruturado como Auxílio Brasil em 2021 e novamente como Bolsa Família em 2023, constitui o maior programa de transferência condicionada de renda da América Latina, atingindo cerca de 21 milhões de famílias em 2023.
 
     **Efeito sobre a restrição orçamentária**: A transferência mensal \(T\) desloca a reta orçamentária paralelamente para cima, de \(p_1 x_1 + p_2 x_2 = I\) para \(p_1 x_1 + p_2 x_2 = I + T\). Note que, ao contrário de subsídios a bens específicos, a transferência em dinheiro **não altera preços relativos**, funcionando como um *lump sum*. Pelo princípio do montante fixo (Seção 4.5), essa forma de transferência é mais eficiente do que subsídios a bens específicos, permitindo ao beneficiário maximizar sua utilidade de acordo com suas preferências individuais.
@@ -904,7 +904,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
     **Fontes**: SOARES, F. V.; SÁTYRO, N. *O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*. Texto para Discussão IPEA, n. 1424, 2009. RESENDE, A. C. C.; OLIVEIRA, A. M. H. C. Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras. *Estudos Econômicos*, v. 38, n. 2, p. 235–265, 2008. [MDS](https://www.gov.br/mds) — Ministério do Desenvolvimento Social, dados administrativos.
 
-!!! example "🇧🇷 Box Brasil — Endividamento das famílias e a restrição orçamentária intertemporal"
+!!! box-brasil "Box Brasil — Endividamento das famílias e a restrição orçamentária intertemporal"
     O crédito permite que famílias consumam além de sua renda corrente, expandindo a restrição orçamentária no presente à custa de contraí-la no futuro. No Brasil, o endividamento das famílias cresceu expressivamente nas últimas décadas. Segundo o [Banco Central do Brasil](https://www.bcb.gov.br) (BCB), o nível de endividamento das famílias — medido pela razão entre o saldo de dívidas com o Sistema Financeiro Nacional e a renda acumulada em 12 meses — alcançou 53,1% em meados de 2022, o maior patamar da série histórica.
 
     Do ponto de vista da teoria do consumidor, o acesso ao crédito modifica o conjunto orçamentário. Sem crédito, a restrição é \(p_1 x_1 + p_2 x_2 \leq I\). Com crédito a uma taxa de juros \(r\), a família pode consumir no presente um valor superior a \(I\), desde que o valor presente dos pagamentos futuros não exceda o valor presente da renda futura. A Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC/[CNC](https://www.portaldocomercio.org.br)) indicou que, em 2022, 77,9% das famílias brasileiras possuíam algum tipo de dívida, sendo o cartão de crédito a principal modalidade.
@@ -1075,7 +1075,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Attanasio, O.; Battistin, E.; Mesnard, A. (2012). [Food and Cash Transfers: Evidence from Colombia](https://doi.org/10.1111/j.1468-0297.2011.02473.x). *The Economic Journal*, 122(559), 92–124."
+??? pesquisa "Attanasio, O.; Battistin, E.; Mesnard, A. (2012). [Food and Cash Transfers: Evidence from Colombia](https://doi.org/10.1111/j.1468-0297.2011.02473.x). *The Economic Journal*, 122(559), 92–124."
     **Pergunta central:** Transferências de renda em dinheiro são mais eficientes do que transferências em espécie (como cestas básicas) para melhorar o consumo alimentar das famílias pobres? A teoria do consumidor prevê que, se o valor da transferência em espécie é inferior ao que a família gastaria voluntariamente com alimentação, os dois tipos de transferência deveriam ter efeitos idênticos — o que é conhecido como o "teorema da fungibilidade" da renda.
 
     **Método:** O estudo explora uma característica do programa colombiano *Familias en Acción*, que oferecia transferências em dinheiro condicionadas à frequência escolar e a visitas de saúde. Os autores compararam os padrões de consumo de famílias beneficiárias com grupos de controle usando técnicas de diferenças em diferenças e matching, com dados de pesquisas domiciliares detalhadas.
@@ -1086,7 +1086,7 @@ Os cinco tipos de função utilidade analisados nesta seção cobrem a grande ma
 
     **Relevância para o capítulo:** O estudo ilustra o princípio do montante fixo na prática: transferências em dinheiro (análogas a *lump sum*) permitem ao consumidor reotimizar livremente sua cesta de consumo, enquanto transferências em espécie impõem uma composição específica que pode não corresponder às preferências individuais. A superioridade teórica do *lump sum* (Seção 4.5) encontra respaldo empírico, embora fatores comportamentais (como o *labeling*) adicionem nuances à previsão do modelo padrão.
 
-??? abstract "Deaton, A.; Muellbauer, J. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *The American Economic Review*, 70(3), 312–326."
+??? pesquisa "Deaton, A.; Muellbauer, J. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *The American Economic Review*, 70(3), 312–326."
     **Pergunta central:** Como estimar empiricamente um sistema completo de demanda do consumidor que seja consistente com a teoria microeconômica — satisfazendo homogeneidade, simetria de Slutsky e a restrição orçamentária — e ao mesmo tempo suficientemente flexível para capturar padrões reais de consumo?
 
     **Método:** Deaton e Muellbauer derivaram o *Almost Ideal Demand System* (AIDS) a partir de uma forma funcional específica para a função dispêndio. O modelo expressa a parcela de gasto em cada bem como função log-linear dos preços e da renda real. A grande inovação foi que o sistema é derivado de uma função dispêndio bem comportada, garantindo automaticamente consistência com a teoria, e ao mesmo tempo possui uma forma linear nos parâmetros, facilitando a estimação econométrica.

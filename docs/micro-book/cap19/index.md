@@ -78,7 +78,7 @@ Com o arcabouço do modelo principal-agente estabelecido, podemos agora examinar
 !!! definition "Risco Moral (Moral Hazard)"
     Problema de informação assimétrica que surge quando uma parte de uma transação pode tomar **ações não observáveis** (ocultas) que afetam o resultado da relação, e a outra parte não consegue monitorar ou verificar essas ações diretamente. O termo refere-se à mudança de comportamento do agente após a celebração do contrato.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quando alguém está protegido contra as consequências de suas ações, tende a se arriscar mais — porque quem paga a conta é outro.
 
     **Pense assim:** Depois de contratar um seguro completo para o celular, muita gente deixa de usar capinha e película. Afinal, se o aparelho quebrar, a seguradora cobre. Esse "relaxamento" após o contrato é o risco moral em ação — o comportamento muda porque o custo de ser descuidado foi transferido para outra parte.
@@ -106,7 +106,7 @@ Quando \(e\) não é observável, o proprietário precisa desenhar um esquema de
 - Um salário fixo \(w = \bar{w}\) provê seguro perfeito ao gerente, mas nenhum incentivo para se esforçar.
 - Um contrato puramente variável \(w = \pi - R\) (em que \(R\) é a renda fixa do proprietário) provê incentivos perfeitos, mas transfere todo o risco ao gerente.
 
-!!! abstract "Princípio da Informatividade (Holmström, 1979)"
+!!! theorem "Princípio da Informatividade (Holmström, 1979)"
     O contrato ótimo deve vincular o pagamento do agente a **qualquer variável** que contenha informação sobre o esforço do agente, e somente a essas variáveis. Formalmente, uma variável \(y\) deve ser incluída no contrato se e somente se a distribuição condicional de \(x\) dado \(e\) muda com \(y\), ou seja, se \(y\) é **informativa** sobre \(e\).
 
 ### 19.3.2 Risco moral em seguros
@@ -155,7 +155,7 @@ Simplificando a RCI:
 
 Essa condição exige que a diferença de pagamentos entre os estados bom e ruim seja suficientemente grande para compensar o custo adicional do esforço. Como \(p_H > p_L\), precisamos de \(w_H > w_L\): o pagamento deve ser maior quando o resultado é bom.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O "prêmio" por bom desempenho deve ser grande o suficiente para que o agente prefira se esforçar — caso contrário, ele relaxa.
 
     **Pense assim:** Um vendedor comissionado só se esforça se a diferença entre a comissão do mês bom e a do mês ruim compensar o cansaço extra. Se a comissão é quase igual nos dois cenários, por que suar? Quanto mais difícil é distinguir esforço de sorte (\(p_H - p_L\) pequeno), maior precisa ser o bônus.
@@ -164,7 +164,7 @@ Essa condição exige que a diferença de pagamentos entre os estados bom e ruim
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 19.1"
+??? exercicio-resolvido "Exercício Resolvido 19.1"
     **Enunciado:** Um principal contrata um agente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O resultado pode ser bom (\(x_H\)) com probabilidade \(p(e)\) ou ruim (\(x_L\)) caso contrário, onde \(p(1) = 3/4\) e \(p(0) = 1/4\). A utilidade de reserva é \(\bar{U} = 3\). O principal deseja induzir esforço alto (\(e = 1\)).
 
     **Dados:** \(p_H = 3/4\), \(p_L = 1/4\), \(c(1) = 1\), \(c(0) = 0\), \(\bar{U} = 3\).
@@ -256,7 +256,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
     **Conexão com este capítulo:**
     Os três problemas fundamentais de informação assimétrica analisados neste capítulo — seleção adversa (Akerlof), sinalização (Spence) e triagem (Stiglitz) — correspondem diretamente às contribuições premiadas em 2001. O framework integrado apresentado aqui, que conecta risco moral, seleção adversa e mecanismos de revelação de informação, é em grande parte a síntese do trabalho desses três laureados.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quando o comprador não consegue distinguir produtos bons de ruins, os bons somem do mercado — porque ninguém paga o preço justo por eles.
 
     **Pense assim:** No mercado de carros usados no Brasil, quem vende um carro bem cuidado compete com quem vende um carro cheio de problemas escondidos. O comprador, desconfiado, só topa pagar um preço médio. Mas esse preço é baixo demais para quem tem carro bom, que desiste de vender. Sobram só os "abacaxis" — e o comprador, sabendo disso, oferece menos ainda.
@@ -271,7 +271,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 ---
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 19.2"
+??? exercicio-resolvido "Exercício Resolvido 19.2"
     **Enunciado:** Em um mercado de carros usados à la Akerlof, 40% dos carros são bons e 60% são ruins. Carros bons valem R$ 24.000 para compradores e R$ 20.000 para vendedores. Carros ruins valem R$ 10.000 para compradores e R$ 6.000 para vendedores. (a) O mercado de carros bons funciona? (b) Qual é a perda de bem-estar causada pela assimetria?
 
     **Dados:** \(\lambda = 0{,}4\); \(V_H = 24.000\), \(C_H = 20.000\); \(V_L = 10.000\), \(C_L = 6.000\).
@@ -335,7 +335,7 @@ A solução ótima envolve: (i) o tipo baixo recebe quantidade **distorcida para
 
 Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde \(\alpha_1\) é o prêmio pago e \(\alpha_2\) é a indenização líquida em caso de sinistro.
 
-!!! abstract "Resultado de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
+!!! theorem "Resultado de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
     Em equilíbrio competitivo com informação assimétrica: (a) não existe equilíbrio agregador (pooling) — um contrato único para ambos os tipos é sempre destruído por um contrato desviante; (b) um equilíbrio separador existe somente se a proporção de tipos de alto risco for suficientemente grande; (c) no equilíbrio separador, o tipo de alto risco recebe seguro completo (atuarialmente justo para ele) e o tipo de baixo risco recebe seguro parcial (distorção para baixo).
 
 !!! proof "Demonstração: Condição de Incentivo-Compatibilidade no Modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326)"
@@ -470,7 +470,7 @@ Resolvendo:
 
 O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separating) ocorre em \(s^* = \theta_L(\theta_H - \theta_L)\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Um diploma pode funcionar como um "selo de qualidade" do trabalhador, mesmo que a faculdade em si não ensine nada diretamente útil para o cargo.
 
     **Pense assim:** No Brasil, muitas empresas exigem diploma superior para vagas que não precisam de conhecimento acadêmico. Por que? Porque concluir uma graduação sinaliza disciplina, persistência e capacidade de aprender — qualidades que o empregador não consegue medir numa entrevista. Quem tem alta produtividade acha a faculdade mais fácil, e por isso o sinal é crível.
@@ -546,14 +546,14 @@ Leilões são mecanismos de venda particularmente interessantes sob informação
 
 No leilão de segundo preço, cada licitante tem uma **estratégia dominante**: ofertar sua verdadeira valoração.
 
-!!! abstract "Proposição: Estratégia Dominante no Leilão de Vickrey"
+!!! theorem "Proposição: Estratégia Dominante no Leilão de Vickrey"
     No leilão de segundo preço com valores privados independentes, é estratégia fracamente dominante para cada licitante ofertar \(b_i = v_i\) (lance igual à valoração verdadeira).
 
 **Intuição da prova**: Se \(b_i > v_i\), o licitante pode vencer e pagar mais que sua valoração; se \(b_i < v_i\), pode perder uma oportunidade lucrativa. Em ambos os casos, desviar de \(b_i = v_i\) não melhora o payoff esperado.
 
 ### O Teorema da Equivalência de Receita
 
-!!! abstract "Teorema da Equivalência de Receita (Revenue Equivalence Theorem)"
+!!! theorem "Teorema da Equivalência de Receita (Revenue Equivalence Theorem)"
     Sob as seguintes condições: (i) valores privados independentes; (ii) licitantes neutros ao risco; (iii) distribuição de valorações simétrica e contínua; (iv) o licitante com valoração mínima obtém excedente zero — **todos os quatro formatos de leilão geram a mesma receita esperada para o vendedor**.
 
 Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, sob as condições do teorema, a escolha do formato de leilão é irrelevante para a receita. As diferenças surgem quando as condições são violadas — por exemplo, com aversão ao risco dos licitantes (favorece o primeiro preço) ou com valores correlacionados (favorece o inglês).
@@ -613,7 +613,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ## 🇧🇷 Box Brasil: Crédito Consignado e Seleção Adversa no Brasil
 
-!!! example "🇧🇷 Box Brasil: Crédito Consignado e Seleção Adversa"
+!!! box-brasil "Box Brasil: Crédito Consignado e Seleção Adversa"
     O **crédito consignado** — modalidade em que as parcelas são descontadas diretamente da folha de pagamento ou do benefício previdenciário — é um exemplo notável de como um desenho contratual pode reduzir drasticamente os problemas de informação assimétrica no mercado de crédito.
 
     **O problema da seleção adversa no crédito**: No mercado de crédito pessoal convencional, o banco não observa perfeitamente o risco de inadimplência do tomador. Como resultado, cobra taxas de juros que refletem o risco médio da carteira. Tomadores de baixo risco (bons pagadores) consideram a taxa elevada e deixam de tomar empréstimos, enquanto tomadores de alto risco (potenciais inadimplentes) aceitam as condições — um mecanismo clássico de seleção adversa à la Akerlof.
@@ -763,7 +763,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "[Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78.](https://doi.org/10.1086/317671)"
+??? pesquisa "[Chiappori, P.-A.; Salanié, B. (2000). Testing for Asymmetric Information in Insurance Markets. *Journal of Political Economy*, 108(1), 56–78.](https://doi.org/10.1086/317671)"
     **Pergunta central:** A assimetria de informação é realmente importante nos mercados de seguros, ou é apenas uma elegância teórica? Se seleção adversa ou risco moral estiverem presentes, devemos observar uma **correlação positiva** entre a cobertura do seguro escolhida e a ocorrência de sinistros: pessoas que escolhem mais cobertura deveriam ter mais acidentes (seja porque são mais arriscadas, seja porque se protegem menos). Mas essa correlação existe nos dados?
 
     **Método:** [Chiappori e Salanié](https://doi.org/10.1086/317671) desenvolveram um teste empírico elegante e geral. Usando dados detalhados de seguros de automóveis na França (jovens motoristas iniciantes), compararam a cobertura escolhida com a frequência de acidentes nos anos subsequentes, controlando por todas as variáveis observáveis que as seguradoras usam para precificar (idade, sexo, localização, tipo de veículo). Se, após esses controles, a correlação cobertura-sinistro for positiva, há evidência de informação assimétrica residual.
@@ -774,7 +774,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
     **Relevância para o capítulo:** O paper testa diretamente as previsões do modelo de [Rothschild-Stiglitz](https://doi.org/10.2307/1885326) (seção 19.4.3): se há seleção adversa, tipos de alto risco compram mais cobertura. A ausência de correlação sugere que os mecanismos de triagem das seguradoras (seção 19.6) — menus de franquias, bônus por ausência de sinistros, inspeção veicular — podem ser suficientemente eficazes para resolver o problema informacional.
 
-??? abstract "[Matoso, R.; Rezende, M. (2014). Asymmetric Information in Oil and Gas Lease Auctions with a National Company. *International Journal of Industrial Organization*, 33, 72–82.](https://doi.org/10.1016/j.ijindorg.2014.02.006)"
+??? pesquisa "[Matoso, R.; Rezende, M. (2014). Asymmetric Information in Oil and Gas Lease Auctions with a National Company. *International Journal of Industrial Organization*, 33, 72–82.](https://doi.org/10.1016/j.ijindorg.2014.02.006)"
     **Pergunta central:** A Petrobras, como empresa nacional com décadas de experiência exploratória, possui vantagem informacional sobre concorrentes internacionais nos leilões de blocos de petróleo e gás? Se sim, como essa assimetria se manifesta no comportamento de lances e nos resultados dos leilões?
 
     **Método:** Os autores utilizaram dados dos leilões de concessão da ANP (Agência Nacional do Petróleo) para testar as previsões de modelos de leilões com informação assimétrica (Hendricks e Porter, 1988). A identificação explora o fato de que a Petrobras tinha acesso privilegiado a dados geológicos e sísmicos, especialmente em áreas adjacentes a campos já explorados (os chamados *drainage leases*). Compararam o comportamento de lances da Petrobras versus concorrentes estrangeiros em diferentes tipos de blocos.

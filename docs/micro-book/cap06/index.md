@@ -34,7 +34,7 @@ No caso de dois bens, a restrição orçamentária impõe relações fortes. Se 
 
 Isso significa que, no sentido hicksiano, **dois bens são sempre substitutos líquidos** quando há apenas dois bens no modelo. A complementaridade só emerge com três ou mais bens.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Com apenas dois bens, eles são sempre substitutos líquidos — a complementaridade só emerge quando existe uma terceira opção.
 
     **Pense assim:** Se no cardápio do almoço só há arroz e macarrão, e o arroz fica mais caro (com compensação de renda), você necessariamente come mais macarrão — não tem para onde fugir. Só quando existe uma terceira opção (salada) é que dois bens podem ser complementares líquidos.
@@ -57,7 +57,7 @@ O resultado da seção anterior — de que, com dois bens, a substituição líq
 !!! note "Assimetria da classificação bruta"
     A classificação marshalliana **não é necessariamente simétrica**: pode ocorrer que \(\frac{\partial x_1}{\partial p_2} > 0\) enquanto \(\frac{\partial x_2}{\partial p_1} < 0\). Isso decorre da interferência do efeito renda, que contamina a relação cruzada de forma assimétrica. Essa é uma das razões pelas quais a classificação hicksiana é teoricamente preferida.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Substitutos são bens que competem pela sua escolha; complementos são bens que andam juntos — e a classificação muda conforme você isole ou não o efeito renda.
 
     **Pense assim:** No posto de gasolina, gasolina e etanol são substitutos — se um encarece, você abastece com o outro. Já arroz e feijão são complementos: ninguém pede "só arroz" no prato feito. A classificação "bruta" (marshalliana) mistura o efeito renda; a "líquida" (hicksiana) isola a substituição pura. Dois bens podem parecer complementos nos dados, mas ser substitutos puros quando se desconta o empobrecimento.
@@ -109,7 +109,7 @@ Se \(x_i\) é um bem normal (\(\frac{\partial x_i}{\partial I} > 0\)), o efeito 
 
 Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito renda negativo exceder o efeito substituição positivo.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A classificação hicksiana (líquida) é a "verdadeira" relação de substituição entre bens, porque remove a contaminação do efeito renda.
 
     **Pense assim:** Imagine que o preço do plano de saúde sobe. Nos dados brutos, você pode observar que as famílias também reduzem o consumo de educação privada — parecendo complementos. Mas, na verdade, ambos caíram porque a família ficou mais pobre (efeito renda). Isolando esse empobrecimento (análise hicksiana), descobre-se que saúde e educação privada na verdade competem pelo mesmo orçamento — são substitutos líquidos.
@@ -148,7 +148,7 @@ s_{ii} = \frac{\partial h_i}{\partial p_i} \leq 0
 
 mas os elementos fora da diagonal podem ter qualquer sinal. No entanto, nem todos podem ser negativos:
 
-!!! abstract "Teorema: Predominância da substituibilidade líquida"
+!!! theorem "Teorema: Predominância da substituibilidade líquida"
     Para cada bem \(i\), a soma ponderada dos efeitos substituição cruzados (com pesos iguais aos preços) é não negativa. Mais precisamente, pela homogeneidade de grau zero da demanda hicksiana:
 
     \[
@@ -165,7 +165,7 @@ Essa propriedade implica que, embora a complementaridade líquida exista, a subs
 
 A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n^2\) elementos — e estimá-los todos empiricamente exigiria uma quantidade enorme de dados. Como proceder na prática? Uma estratégia poderosa é agregar bens em categorias, reduzindo a dimensionalidade do problema. Mas essa agregação é legítima do ponto de vista teórico? Sob que condições podemos tratar um grupo de bens como se fosse um único bem? Em modelos aplicados, frequentemente trabalhamos com centenas ou milhares de bens. Para tornar a análise tratável, agrupamos bens em categorias. O **Teorema do Bem Composto de Hicks** fornece a justificativa teórica para essa prática.
 
-!!! abstract "Teorema do Bem Composto de Hicks"
+!!! theorem "Teorema do Bem Composto de Hicks"
     Se um grupo de bens tem seus preços variando na mesma proporção, então esse grupo pode ser tratado como um único **bem composto**, cujo "preço" é um índice dos preços do grupo e cuja "quantidade" é o gasto real com o grupo.
 
     Formalmente: se \(p_j = \alpha \bar{p}_j\) para todo \(j \in G\) (onde \(\bar{p}_j\) é o preço-base e \(\alpha\) varia), então o grupo \(G\) pode ser representado por um bem composto \(y = \sum_{j \in G} \bar{p}_j x_j\), com preço \(\alpha\).
@@ -220,7 +220,7 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
 !!! tip "Aplicação prática"
     O Teorema do Bem Composto justifica o uso frequente, em exercícios e modelos aplicados, de um "bem 1" versus "todos os outros bens" (representados pelo gasto restante). Para que a agregação seja válida, é necessário que os preços relativos dentro do grupo permaneçam aproximadamente constantes. Quando um choque afeta apenas um subgrupo (por exemplo, uma seca que encarece frutas mas não cereais), o teorema perde validade para o grupo "alimentos" como um todo.
 
-!!! example "🇧🇷 Box Brasil: Preços administrados e o Bem Composto no IPCA"
+!!! box-brasil "Box Brasil: Preços administrados e o Bem Composto no IPCA"
     O IPCA, calculado pelo IBGE, distingue entre **preços livres** (cerca de 75% do índice) e **preços administrados** (cerca de 25%), que incluem combustíveis, energia elétrica, planos de saúde e tarifas de transporte público. Os preços administrados são reajustados por fórmulas contratuais vinculadas a índices como o IGP-M ou o IPCA do período anterior.
 
     Essa distinção ilustra quando o Teorema do Bem Composto **funciona** e quando **falha**:
@@ -287,7 +287,7 @@ A reformulação de Lancaster pode parecer uma complicação desnecessária — 
 - **Diferenciação de produto**: marcas diferentes do "mesmo" bem oferecem combinações distintas de atributos (sabor, durabilidade, status).
 - **Preços hedônicos**: o preço de um imóvel, por exemplo, pode ser decomposto em preços implícitos de localização, metragem, número de quartos e outros atributos.
 
-!!! example "🇧🇷 Box Brasil: Preços hedônicos no mercado imobiliário"
+!!! box-brasil "Box Brasil: Preços hedônicos no mercado imobiliário"
     O índice FipeZap, calculado pela Fipe em parceria com o portal Zap Imóveis, acompanha os preços de venda e aluguel de imóveis residenciais em mais de 50 cidades brasileiras. A metodologia utiliza modelos de **preços hedônicos** — uma aplicação direta do modelo de Lancaster — para decompor o preço do imóvel nos preços implícitos de seus atributos: localização (bairro, proximidade do metrô), área útil, número de quartos e vagas de garagem.
 
     O índice FipeZap de março de 2024 registrava preço médio de venda de R$ 9.082/m² em São Paulo e R$ 11.032/m² no Rio de Janeiro. A diferença não reflete apenas metragem, mas o "preço implícito" de atributos locacionais — bairros como Leblon (RJ) ou Vila Nova Conceição (SP) embutem um prêmio por amenidades urbanas (proximidade de parques, serviços, segurança).
@@ -335,12 +335,12 @@ A soma horizontal parece inocente, mas esconde uma armadilha. A simples soma de 
 
 Quando a condição de Gorman não é satisfeita, a demanda de mercado depende da **distribuição de renda**, não apenas da renda total. Isso tem implicações profundas para a política econômica: transferências de renda (como o Bolsa Família / Auxílio Brasil) alteram a demanda agregada mesmo que a renda total permaneça constante.
 
-!!! example "🇧🇷 Box Brasil: Distribuição de renda e demanda agregada"
+!!! box-brasil "Box Brasil: Distribuição de renda e demanda agregada"
     O programa Bolsa Família, que em 2024 atendia cerca de 21 milhões de famílias, ilustra por que a condição de Gorman importa na prática. As famílias beneficiárias têm propensões marginais a consumir alimentos, gás de cozinha e vestuário muito superiores às das famílias de renda mais alta. Segundo dados da POF/IBGE 2017-2018, famílias com renda per capita de até 1 salário mínimo destinam cerca de 22% do orçamento a alimentação, enquanto famílias com renda acima de 15 salários mínimos destinam cerca de 7,6%.
 
     Se as curvas de Engel fossem lineares e paralelas (condição de Gorman), transferir R$ 1 de uma família rica para uma pobre não alteraria a demanda agregada por nenhum bem — apenas a composição individual mudaria. Mas como as curvas de Engel diferem entre classes de renda, a redistribuição aumenta a demanda agregada por alimentos básicos e reduz a demanda por bens de luxo, mesmo com renda total constante. A elasticidade-renda da demanda por alimentos é substancialmente maior nas classes de renda mais baixa.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A demanda de mercado não depende só da renda total do país, mas de como essa renda é distribuída entre as famílias.
 
     **Pense assim:** Se o Brasil tem um PIB de R$ 10 trilhões, a demanda agregada por arroz e feijão seria muito diferente caso essa renda estivesse dividida igualmente entre todos ou concentrada em poucos milionários. Famílias de baixa renda gastam proporcionalmente mais com alimentos básicos. Por isso, programas como o Bolsa Família alteram a composição da demanda agregada mesmo sem mudar a renda total — redistribuir é realocar demanda.
@@ -470,7 +470,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
+??? exercicio-resolvido "Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
 
     **Enunciado.** Considere a função de utilidade Cobb-Douglas \(U(x,y) = x^a y^{1-a}\), com \(0 < a < 1\), preços \(p_x, p_y\) e renda \(I\).
 
@@ -508,7 +508,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     Os dois efeitos se cancelam perfeitamente — uma propriedade especial da Cobb-Douglas.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
+??? exercicio-resolvido "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
 
     **Enunciado.** Um consumidor tem utilidade \(U(x,y) = 2x + y\), preços iniciais \(p_x = p_y = 2\) e renda \(I = 100\).
 
@@ -530,7 +530,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     **Interpretação:** com substitutos perfeitos lineares, quando o consumidor já consome apenas \(x\) antes e depois da mudança, o efeito substituição é zero — ele não "troca" de bem, apenas consome mais do mesmo com o aumento do poder de compra. Este é um resultado importante e frequente em provas da ANPEC.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
+??? exercicio-resolvido "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
 
     **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
 
@@ -720,7 +720,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Deaton, Angus; Muellbauer, John. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *American Economic Review*, 70(3), 312-326."
+??? pesquisa "Deaton, Angus; Muellbauer, John. (1980). [An Almost Ideal Demand System](https://www.jstor.org/stable/1805222). *American Economic Review*, 70(3), 312-326."
     **Pergunta central:** Como estimar empiricamente um sistema completo de equações de demanda — com vários bens e interações cruzadas — de modo que seja consistente com a teoria do consumidor (homogeneidade, simetria de Slutsky, agregação) e ao mesmo tempo flexível o bastante para capturar padrões reais dos dados?
 
     **Método:** Deaton e Muellbauer propuseram o **AIDS** (*Almost Ideal Demand System*), um modelo em que as parcelas orçamentárias de cada bem são funções lineares dos logaritmos dos preços e do logaritmo da renda real. O modelo assume uma forma funcional específica para a função dispêndio (da família PIGLOG — *Price-Independent Generalized Logarithmic*), que garante consistência com a teoria da escolha do consumidor. As equações de demanda resultantes satisfazem automaticamente a agregação de Engel, a homogeneidade de grau zero e permitem testar a simetria de Slutsky diretamente nos dados.
@@ -729,7 +729,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
     **Relevância para o capítulo:** O AIDS é uma das ferramentas empíricas mais utilizadas para estimar as relações cruzadas de demanda discutidas nas Seções 6.1 a 6.4. A forma PIGLOG garante que a condição de Gorman (Seção 6.7) é satisfeita em uma versão relaxada, permitindo agregação exata sob certas condições. O artigo demonstra como a teoria pura — Slutsky, simetria, homogeneidade — pode ser operacionalizada empiricamente. O modelo é amplamente utilizado até hoje, inclusive pelo IBGE e pelo IPEA em estudos sobre padrões de consumo brasileiros com dados da POF. Angus Deaton recebeu o Prêmio Nobel de Economia em 2015.
 
-??? abstract "Berry, Steven; Levinsohn, James; Pakes, Ariel. (1995). [Automobile Prices in Market Equilibrium](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841-890. DOI: [10.2307/2171802](https://doi.org/10.2307/2171802)"
+??? pesquisa "Berry, Steven; Levinsohn, James; Pakes, Ariel. (1995). [Automobile Prices in Market Equilibrium](https://doi.org/10.2307/2171802). *Econometrica*, 63(4), 841-890. DOI: [10.2307/2171802](https://doi.org/10.2307/2171802)"
     **Pergunta central:** Como estimar a demanda por produtos diferenciados — bens que são substitutos imperfeitos entre si, diferindo em múltiplos atributos — quando os dados disponíveis são agregados (participações de mercado e preços) e os preços são endógenos?
 
     **Método:** Berry, Levinsohn e Pakes (BLP) desenvolveram um modelo estrutural de demanda que combina a abordagem de Lancaster (Seção 6.6) com heterogeneidade de preferências entre consumidores. Cada automóvel é descrito por um vetor de características (potência, tamanho, consumo, preço), e cada consumidor tem preferências idiossincráticas sobre essas características. O modelo gera funções de demanda agregada que dependem de todos os preços — capturando substituição e complementaridade entre modelos. Para lidar com a endogeneidade dos preços (carros de melhor qualidade têm preços mais altos), os autores usaram variáveis instrumentais baseadas nas características dos concorrentes.

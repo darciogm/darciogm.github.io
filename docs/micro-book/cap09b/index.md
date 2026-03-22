@@ -31,7 +31,7 @@ O EPS é um **refinamento** do equilíbrio de Nash: todo EPS é um equilíbrio d
     **Conexão com este capítulo:**
     O equilíbrio perfeito em subjogos (EPS) é a ferramenta central deste capítulo sobre jogos dinâmicos. A indução retroativa — o método de resolução que identifica o EPS — elimina ameaças não críveis e gera previsões mais refinadas do que o equilíbrio de Nash simples, como demonstrado nos jogos sequenciais analisados aqui.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Indução retroativa significa pensar "de trás para frente" — primeiro o que acontece no final, depois o que é racional fazer no início.
 
     **Pense assim:** Quando uma grande rede de supermercados ameaça derrubar preços para expulsar um mercadinho de bairro, o mercadinho precisa avaliar: essa ameaça é crível? Se a guerra de preços der prejuízo também para a rede, ela não vai cumprir a ameaça. Pensar de trás para frente revela quais ameaças são blefe.
@@ -103,7 +103,7 @@ No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta
 
 O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue. A condição é intuitivamente clara: a cooperação exige que o ganho imediato de trair (\(T - R\)) seja compensado pela perda futura de ser punido (diferença entre \(R\) e \(P\), descontada por \(\delta\)). Quanto mais pacientes os jogadores (maior \(\delta\)), mais fácil é sustentar a cooperação.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Cooperação emerge quando a sombra do futuro é longa o suficiente para que a punição por trair supere o ganho imediato.
 
     **Pense assim:** Dois vizinhos que se encontram todo dia no elevador cooperam mais do que dois desconhecidos que interagem uma única vez. O vizinho sabe que se agir de forma oportunista hoje, enfrentará a hostilidade do outro por anos. É o mesmo princípio que sustenta o conluio tácito entre postos de gasolina: a interação repetida e a facilidade de monitoramento (preços em totens) criam as condições para cooperação.
@@ -118,7 +118,7 @@ O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jog
 
 A estratégia de gatilho mostra que a cooperação *pode* ser sustentada. Mas até que ponto a repetição amplia o conjunto de resultados possíveis? O Folk Theorem — assim chamado porque circulava informalmente entre teóricos antes de ser formalmente demonstrado — fornece uma resposta surpreendente e, ao mesmo tempo, perturbadora.
 
-!!! abstract "Folk Theorem (versão informal)"
+!!! theorem "Folk Theorem (versão informal)"
     Em jogos infinitamente repetidos com fator de desconto suficientemente próximo de 1, **qualquer** payoff individualmente racional e factível pode ser sustentado como equilíbrio de Nash do jogo repetido.
 
     Um payoff é **individualmente racional** para o jogador \(i\) se é pelo menos tão bom quanto seu **payoff de minimax**. Um payoff é **factível** se pertence ao fecho convexo dos payoffs realizáveis do jogo de estágio.
@@ -183,7 +183,7 @@ Quando \(\delta_1 = \delta_2 = \delta\):
 x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Na barganha de Rubinstein, quem é mais paciente (maior \(\delta\)) fica com a maior fatia.
 
     **Pense assim:** Numa negociação salarial entre o sindicato dos metalúrgicos e uma montadora, cada rodada sem acordo custa para ambos (trabalhadores perdem salário, empresa perde produção). Quem aguenta mais tempo sem acordo — quem tem mais "reservas" — consegue extrair mais valor.
@@ -198,7 +198,7 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 
 Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram aplicações diretas na economia brasileira. Os dois Boxes a seguir ilustram, respectivamente, como a lógica do Dilema dos Prisioneiros repetido explica a persistência da guerra fiscal entre estados e como o modelo de Rubinstein ilumina as negociações salariais na indústria automotiva.
 
-!!! example "🇧🇷 Box Brasil — A guerra fiscal do ICMS: uma corrida ao fundo"
+!!! box-brasil "Box Brasil — A guerra fiscal do ICMS: uma corrida ao fundo"
     A competição entre estados brasileiros pela atração de investimentos via benefícios fiscais no **ICMS** é um dos exemplos mais claros do Dilema dos Prisioneiros na política econômica brasileira.
 
     **A estrutura do jogo**
@@ -226,7 +226,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ## 🇧🇷 Box Brasil: Negociação Salarial na Indústria Automotiva
 
-!!! example "🇧🇷 Box Brasil — Metalúrgicos vs. Montadoras: barganha à brasileira"
+!!! box-brasil "Box Brasil — Metalúrgicos vs. Montadoras: barganha à brasileira"
     As negociações salariais anuais entre o **Sindicato dos Metalúrgicos do ABC** e as montadoras (Volkswagen, Mercedes-Benz, Toyota) são um exemplo clássico de barganha com ofertas alternadas.
 
     **Estrutura da barganha**
@@ -311,7 +311,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
+??? exercicio-resolvido "Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
     **Enunciado:** Dois postos de combustíveis interagem repetidamente. Payoffs: se ambos mantêm preço alto (cooperam), cada um lucra R\$ 8.000/mês; se ambos cortam preço (traem), cada um lucra R\$ 2.000/mês; se um corta e outro mantém, o que cortou lucra R\$ 12.000 e o outro lucra R\$ 0. Qual o fator de desconto mínimo para sustentar cooperação com grim trigger?
 
     **Dados:** \(T = 12.000\), \(R = 8.000\), \(P = 2.000\), \(S = 0\).
@@ -336,7 +336,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     **Interpretação:** \(\delta^* = 0{,}4\) é baixo, indicando que a cooperação é fácil de sustentar — consistente com a prevalência de cartéis no setor. Com interação diária, o fator efetivo é próximo de 1, muito acima de 0,4. Isso explica por que o CADE precisa intervir ativamente.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9b.2 — Barganha de Rubinstein"
+??? exercicio-resolvido "Exercício Resolvido 9b.2 — Barganha de Rubinstein"
     **Enunciado:** Dois agentes negociam a divisão de R\$ 1 milhão com ofertas alternadas. O jogador 1 (proponente) tem \(\delta_1 = 0{,}9\) e o jogador 2 (respondedor) tem \(\delta_2 = 0{,}8\). Encontre a divisão no EPS.
 
     **Resolução:**
@@ -433,7 +433,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Porter, Robert H. (1983). [A Study of Cartel Stability: The Joint Executive Committee, 1880–1886](https://doi.org/10.2307/3003634). *The Bell Journal of Economics*, 14(2), 301–314."
+??? pesquisa "Porter, Robert H. (1983). [A Study of Cartel Stability: The Joint Executive Committee, 1880–1886](https://doi.org/10.2307/3003634). *The Bell Journal of Economics*, 14(2), 301–314."
     **Pergunta:** Os modelos de jogos repetidos preveem alternância entre conluio e guerras de preço. Essa dinâmica é observável em dados reais?
 
     **Método:** Dados semanais do *Joint Executive Committee* (cartel ferroviário, EUA, 1880–86). Modelo de *switching regression* para identificar fases cooperativas e de guerra de preços.
@@ -442,14 +442,14 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
     **Relevância:** Metodologia aplicável à investigação do CADE: padrões de preços que alternam "estabilidade" e "guerra" podem indicar conluio tácito.
 
-??? abstract "Axelrod, Robert (1984). [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books."
+??? pesquisa "Axelrod, Robert (1984). [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books."
     **Contribuição:** Axelrod organizou dois torneios de computador onde especialistas submeteram estratégias para o Dilema dos Prisioneiros repetido. A vencedora foi **Tit-for-Tat** (Anatol Rapoport): simples, "nice" (coopera primeiro), retaliadora (pune imediatamente) e "forgiving" (volta a cooperar).
 
     **Resultado:** Estratégias "nice" (que nunca iniciam a traição) dominaram. A cooperação emerge não por altruísmo, mas por auto-interesse esclarecido — a "sombra do futuro" é suficiente.
 
     **Relevância:** Os torneios de Axelrod influenciaram o desenho de mecanismos de regulação (programas de leniência, que exploram a instabilidade do conluio via incentivos à delação).
 
-??? abstract "Rubinstein, Ariel (1982). [Perfect Equilibrium in a Bargaining Model](https://doi.org/10.2307/1912531). *Econometrica*, 50(1), 97–109."
+??? pesquisa "Rubinstein, Ariel (1982). [Perfect Equilibrium in a Bargaining Model](https://doi.org/10.2307/1912531). *Econometrica*, 50(1), 97–109."
     **Contribuição:** Rubinstein mostrou que o jogo de ofertas alternadas com desconto tem um **único** EPS, com divisão determinada pelos fatores de desconto. Quando o intervalo entre ofertas vai a zero, o resultado converge para a solução de barganha de Nash — uma fundamentação não cooperativa para a teoria cooperativa.
 
     **Relevância:** Base teórica para a análise de negociações salariais, disputas comerciais e arbitragem.

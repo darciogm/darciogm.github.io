@@ -67,7 +67,7 @@ c(e, \theta_H) < c(e, \theta_L) \quad \text{para todo } e > 0
 
 Essa condição de **single-crossing** é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que cria a possibilidade de separação: o nível de educação que o tipo alto aceita obter é proibitivamente custoso para o tipo baixo, garantindo que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No modelo de Spence, a educação tem valor de sinalização *mesmo que não aumente a produtividade*.
 
     **Pense assim:** Uma empresa não sabe se o candidato é talentoso ou não. O candidato talentoso acha mais fácil (menos custoso) obter um MBA. Então ele faz o MBA não porque aprende algo novo, mas para *provar* que é talentoso. A educação funciona como um filtro que separa tipos.
@@ -125,7 +125,7 @@ O modelo básico de principal-agente formaliza essa situação: o principal ofer
 
 **Trade-off central:** Para incentivar esforço, o contrato deve vincular pagamento ao resultado. Mas isso expõe o agente (avesso ao risco) a risco — gerando custo de seguro. O contrato ótimo equilibra incentivos e seguro. Esse dilema entre risco e incentivos é onipresente na economia.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quando alguém não arca com as consequências de suas ações, tende a agir de forma mais arriscada.
 
     **Pense assim:** Uma pessoa com seguro de saúde completo pode cuidar menos da saúde (alimentação, exercício, prevenção) do que alguém sem seguro. O seguro *causa* comportamento mais arriscado — não apenas o cobre.
@@ -164,7 +164,7 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
 Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na realidade institucional brasileira. Os dois Boxes a seguir ilustram como a comunicação do Banco Central pode ser analisada como cheap talk e como a regulação de telecomunicações enfrenta informação assimétrica entre regulador e firma.
 
-!!! example "🇧🇷 Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
+!!! box-brasil "Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
     O **Banco Central do Brasil** comunica suas intenções de política monetária por meio de comunicados, atas do Copom e o Relatório de Inflação. Essa comunicação pode ser analisada como um jogo de sinalização:
 
     **Estrutura do jogo**
@@ -190,7 +190,7 @@ Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na rea
 
 O próximo Box ilustra o lado operacional da informação assimétrica na regulação setorial.
 
-!!! example "🇧🇷 Box Brasil — Regulação de telecom: quando a Anatel não sabe os custos"
+!!! box-brasil "Box Brasil — Regulação de telecom: quando a Anatel não sabe os custos"
     A regulação de telecomunicações no Brasil enfrenta um problema clássico de informação assimétrica: a **Anatel** precisa fixar tarifas, mas não observa os custos verdadeiros das operadoras (Vivo, Claro, TIM).
 
     **O dilema do regulador (moral hazard)**
@@ -265,7 +265,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
+??? exercicio-resolvido "Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
     **Enunciado:** Trabalhadores têm produtividade \(\theta_H = 2\) (prob. 0,5) ou \(\theta_L = 1\) (prob. 0,5). O custo da educação é \(c(e, \theta) = e/\theta\). Firmas pagam salário = produtividade esperada condicionada em \(e\). Encontre o equilíbrio separador com menor custo.
 
     **Resolução:**
@@ -282,7 +282,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
     **Eficiência:** Se a informação fosse simétrica, cada tipo receberia sua produtividade sem custo de sinalização. O custo total da sinalização é \(0{,}5 \times (1/2) = 0{,}25\) — puro desperdício social, pois a educação não aumenta a produtividade neste modelo.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9d.2 — Contrato ótimo com moral hazard"
+??? exercicio-resolvido "Exercício Resolvido 9d.2 — Contrato ótimo com moral hazard"
     **Enunciado:** Um principal contrata um agente. O agente pode exercer esforço alto (\(e_H\), custo 2) ou baixo (\(e_L\), custo 0). Com esforço alto, o resultado é bom (100) com prob. 0,8 e ruim (0) com prob. 0,2. Com esforço baixo, é bom com prob. 0,3 e ruim com prob. 0,7. O agente é neutro ao risco e tem utilidade de reserva 0.
 
     (a) Qual contrato implementa esforço alto?
@@ -365,17 +365,17 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Spence, Michael (1973). [Job Market Signaling](https://doi.org/10.2307/1882010). *Quarterly Journal of Economics*, 87(3), 355–374."
+??? pesquisa "Spence, Michael (1973). [Job Market Signaling](https://doi.org/10.2307/1882010). *Quarterly Journal of Economics*, 87(3), 355–374."
     **Contribuição:** Spence formalizou a ideia de que a educação pode funcionar como sinal de habilidade, mesmo sem aumentar a produtividade. O modelo introduziu os conceitos de equilíbrio separador, pooling e a condição de single-crossing.
 
     **Impacto:** O artigo fundamentou a teoria de sinalização, aplicada hoje a finanças (dividendos como sinal de qualidade), marketing (preço como sinal de qualidade) e regulação (certificações como sinal de competência).
 
-??? abstract "Akerlof, George A. (1970). [The Market for 'Lemons'](https://doi.org/10.2307/1879431). *Quarterly Journal of Economics*, 84(3), 488–500."
+??? pesquisa "Akerlof, George A. (1970). [The Market for 'Lemons'](https://doi.org/10.2307/1879431). *Quarterly Journal of Economics*, 84(3), 488–500."
     **Contribuição:** Akerlof mostrou que informação assimétrica sobre qualidade pode levar ao colapso de mercados — o problema dos "limões". Se vendedores sabem a qualidade e compradores não, o preço reflete a qualidade *média*, afastando vendedores de carros bons.
 
     **Relevância para o Brasil:** Mercados de carros usados, crédito (spread bancário elevado reflete seleção adversa) e planos de saúde (cobertura obrigatória como resposta ao problema de seleção). Cross-reference com Capítulo 19.
 
-??? abstract "Adams, Brian W. (2025). *Game Theory for Applied Econometricians*. Caps. 12–13."
+??? pesquisa "Adams, Brian W. (2025). *Game Theory for Applied Econometricians*. Caps. 12–13."
     **Escopo:** Parte IV cobre moral hazard (Cap. 12: corporações baleeiras como principal-agente) e seleção adversa (Cap. 13: seguros de saúde). Ambos com datasets e scripts R.
 
     **Relevância:** Os R Boxes deste módulo são inspirados nos scripts de Adams, demonstrando como estimar empiricamente o efeito de informação assimétrica em dados reais.

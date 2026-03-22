@@ -30,7 +30,7 @@ Por que essa distinção importa? Porque o contador e o economista podem olhar p
 
 Quando o lucro econômico é zero, a firma obtém o **lucro normal** — isto é, remunera todos os fatores de produção, inclusive os próprios, pelo seu custo de oportunidade. Lucro econômico positivo indica **lucro supranormal** (ou econômico puro).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O custo de oportunidade é o valor daquilo que você deixou de fazer ao escolher o que fez.
 
     **Pense assim:** Um engenheiro que larga o emprego de R$ 15.000/mês para abrir uma hamburgueria precisa contar esse salário perdido como custo do negócio. Se a hamburgueria lucra R$ 12.000 por mês no papel, na verdade ele está "perdendo" R$ 3.000 em relação ao que poderia ganhar — o lucro econômico é negativo.
@@ -63,7 +63,7 @@ onde \(p\) é o preço do produto, \(w\) é o salário e \(v\) é o custo de alu
 
 Um resultado central é que a **maximização de lucro implica minimização de custos**: se a firma escolhe quantidades de insumos que maximizam o lucro, então, para o nível de produto resultante, ela necessariamente minimiza o custo de produção. A recíproca, contudo, não é verdadeira — minimizar custos é condição necessária, mas não suficiente, para maximizar lucro, pois a firma ainda precisa escolher o nível ótimo de produção.
 
-!!! abstract "Proposição: Maximização de lucro implica minimização de custos"
+!!! theorem "Proposição: Maximização de lucro implica minimização de custos"
     Se \((K^*, L^*)\) resolve o problema de maximização de lucro \(\max_{K,L} \; pf(K,L) - wL - vK\) com produto \(q^* = f(K^*, L^*)\), então \((K^*, L^*)\) também resolve o problema de minimização de custos para o nível de produto \(q^*\):
 
     \[
@@ -126,7 +126,7 @@ Igualando:
 
 Essa condição tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/v\)). Se a TMST fosse maior que \(w/v\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
 
-!!! abstract "Condição de minimização de custos"
+!!! theorem "Condição de minimização de custos"
     No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
 
     \[
@@ -220,7 +220,7 @@ A função custo possui as seguintes propriedades:
 !!! tip "Significado econômico do Lema de Shephard"
     O Lema de Shephard é a contraparte, na teoria da produção, da **identidade de Roy** na teoria do consumidor. Ele permite recuperar as demandas condicionadas por insumos a partir de informações sobre custos — que são frequentemente mais fáceis de observar empiricamente do que as tecnologias de produção subjacentes. É uma ferramenta central na estimação empírica de funções de custo.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O Lema de Shephard diz que, se você sabe como o custo total muda quando o salário sobe um pouquinho, você já sabe quanta mão de obra a firma usa.
 
     **Pense assim:** Se o preço da energia sobe R$ 0,01 por kWh e a conta de luz da fábrica sobe R$ 500, você sabe que a fábrica consome 50.000 kWh. O lema formaliza essa ideia simples: a sensibilidade do custo ao preço de um insumo revela a quantidade usada desse insumo.
@@ -274,7 +274,7 @@ A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
 
 Portanto, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).**
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O custo marginal "puxa" o custo médio — se produzir uma unidade a mais custa menos que a média, a média cai; se custa mais, a média sobe.
 
     **Pense assim:** Pense na sua média de notas na faculdade. Se você tira 9 na próxima prova e sua média é 7, a média sobe. Se tira 5, a média cai. A nota marginal (a próxima prova) sempre arrasta a média na sua direção. Com custos é igual: o CMg cruza o CMe exatamente no ponto de mínimo do CMe.
@@ -289,7 +289,7 @@ Com rendimentos marginais inicialmente crescentes e depois decrescentes (o forma
 - **CVMe**: formato de U — segue a mesma lógica, mas é mais suave.
 - **CMe**: formato de U — soma de CVMe (U) com CFMe (decrescente). O mínimo do CMe ocorre à direita do mínimo do CVMe.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Custo marginal e produto marginal são espelhos: quando a produtividade do trabalhador sobe, o custo de mais uma unidade cai — e vice-versa.
 
     **Pense assim:** Se um padeiro experiente faz 100 pães por hora e o aprendiz faz 20, o custo por pão do aprendiz é cinco vezes maior. Quando a produtividade marginal cresce (o aprendiz melhora), o custo marginal cai. A curva de CMg é o "reflexo invertido" da curva de PMg.
@@ -357,7 +357,7 @@ A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colo
 **Figura 11.3 — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente.** Os pontos verdes indicam onde cada \(CT_{CP}\) tangencia a envoltória. Use os controles para alterar \(w\) e \(v\), e as caixas de seleção para mostrar/ocultar curvas individuais e pontos de tangência.
 </div>
 
-!!! abstract "Teorema da curva envoltória"
+!!! theorem "Teorema da curva envoltória"
     A curva de custo médio de longo prazo (\(\mathrm{CMe}_{LP}\)) é a **envoltória** das curvas de custo médio de curto prazo. Para cada nível de produto \(q\):
 
     \[
@@ -366,7 +366,7 @@ A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colo
 
     com igualdade quando \(\bar{K} = K^*(q)\), o nível ótimo de capital de longo prazo para produzir \(q\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** No longo prazo, a firma pode ajustar tudo — por isso seus custos nunca superam os de curto prazo.
 
     **Pense assim:** Um restaurante com cozinha pequena (capital fixo) gasta muito para atender 200 clientes no sábado — precisa de horas extras, delivery externo. Mas se pudesse escolher o tamanho da cozinha (longo prazo), dimensionaria para 200 e gastaria menos. A curva de CMe de longo prazo "tangencia" cada curva de curto prazo no ponto ótimo de cada configuração.
@@ -397,7 +397,7 @@ A forma da curva \(\mathrm{CMe}_{LP}\) reflete os rendimentos de escala:
 
 A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o CMe de longo prazo atinge seu mínimo. A EME tem implicações diretas para a estrutura de mercado: se a EME é grande em relação ao tamanho do mercado, o setor tende a ter poucas firmas (oligopólio ou monopólio natural). Por exemplo, se a EME de uma montadora de automóveis é de 200 mil veículos por ano e o mercado brasileiro absorve 2 milhões, o mercado comporta no máximo dez montadoras eficientes — o que ajuda a explicar a estrutura oligopolística observada nesse setor.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Economias de escala significam que produzir mais sai mais barato por unidade — o custo médio cai conforme a firma cresce.
 
     **Pense assim:** Uma fábrica de cerveja artesanal paga quase o mesmo aluguel, energia e licença sanitária que uma grande cervejaria, mas produz muito menos garrafas para diluir esses custos. Por isso a Ambev consegue vender a R$ 3 a lata enquanto a artesanal cobra R$ 15 — a escala mínima eficiente do setor é alta.
@@ -408,7 +408,7 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ## 🇧🇷 Box Brasil: Estrutura de Custos e o "Custo Brasil"
 
-!!! example "🇧🇷 Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
+!!! box-brasil "Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
 
     O termo **"custo Brasil"** designa o conjunto de ineficiências sistêmicas que elevam os custos de produção no país acima dos padrões internacionais. Segundo levantamentos da **Confederação Nacional da Indústria (CNI)** e da **FIESP**, o custo Brasil representava, em estimativas recentes, um sobrecusto de cerca de **R$ 1,7 trilhão por ano** para a economia brasileira — equivalente a aproximadamente 20% do PIB.
 
@@ -432,7 +432,7 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ## 🇧🇷 Box Brasil: Economias de Escala na Agropecuária
 
-!!! example "🇧🇷 Box Brasil: Escala mínima eficiente e concentração na produção de soja"
+!!! box-brasil "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
 
     A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do [IBGE](https://www.ibge.gov.br) (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
 
@@ -659,7 +659,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
+??? exercicio-resolvido "Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
 
     **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
 
@@ -690,7 +690,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+??? exercicio-resolvido "Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(v = 2\).
 
@@ -756,7 +756,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
+??? exercicio-resolvido "Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(v = 10\).
 
@@ -949,7 +949,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Christensen, Laurits R.; Greene, William H. (1976). [Economies of Scale in U.S. Electric Power Generation](https://doi.org/10.1086/260470). *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: [10.1086/260470](https://doi.org/10.1086/260470)"
+??? pesquisa "Christensen, Laurits R.; Greene, William H. (1976). [Economies of Scale in U.S. Electric Power Generation](https://doi.org/10.1086/260470). *Journal of Political Economy*, 84(4, Part 1), 655-676. DOI: [10.1086/260470](https://doi.org/10.1086/260470)"
     **Pergunta central:** A indústria de geração de energia elétrica apresenta economias de escala? E, se sim, até que ponto? Essa questão era central para o debate regulatório dos anos 1970: se houvesse economias de escala ilimitadas, o monopólio natural seria a estrutura eficiente e a regulação seria justificada; se as economias de escala se esgotassem a partir de certo porte, a competição entre firmas seria viável.
 
     **Método:** Christensen e Greene estimaram funções de custo translog (*transcendental logarithmic*) — uma forma funcional flexível que não impõe *a priori* o formato da curva de CMe de longo prazo — para uma amostra de 114 empresas de geração de energia elétrica nos Estados Unidos em 1970. A função translog permite que o formato de U do CMe emerja dos dados, em vez de ser imposto pela especificação funcional.
@@ -958,7 +958,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
     **Relevância para o capítulo:** O artigo é uma aplicação empírica direta dos conceitos das Seções 11.4 e 11.7: estimação da função custo, teste de economias de escala e determinação da escala mínima eficiente. A lição metodológica é poderosa: a escolha da forma funcional para a função custo (Cobb-Douglas vs. translog) pode alterar dramaticamente as conclusões sobre a estrutura de mercado eficiente. No Brasil, o setor elétrico passou por reformas estruturais nos anos 1990 e 2000, com a separação entre geração, transmissão e distribuição — decisão que pressupõe, implicitamente, que as economias de escala na geração não são ilimitadas, consistente com os achados de Christensen e Greene.
 
-??? abstract "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). [Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061). *American Economic Review*, 106(6), 1320-1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
+??? pesquisa "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). [Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061). *American Economic Review*, 106(6), 1320-1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
     **Pergunta central:** Como choques de produtividade na agricultura — que reduzem os custos de produção — afetam a estrutura produtiva e o emprego nas economias locais? A redução de custos no setor agrícola libera mão de obra para outros setores ou intensifica a produção agrícola?
 
     **Método:** Os autores exploraram a introdução da soja geneticamente modificada (transgênica) no Brasil a partir de 2003 como um "experimento natural". A soja GM reduziu significativamente os custos de produção — especialmente os custos com herbicidas e mão de obra — em regiões com solo e clima adequados. Usando variação geográfica na adequação à soja GM, os autores estimaram o efeito causal da redução de custos agrícolas sobre a realocação de trabalho entre setores.

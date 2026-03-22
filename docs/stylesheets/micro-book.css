@@ -11,37 +11,158 @@
   transition: height 0.3s ease;
 }
 
-/* Admonitions: Demonstrações (proof) */
-.md-typeset .admonition.proof,
-.md-typeset details.proof {
-  border-color: #7c4dff;
+/* ================================================================
+   ADMONITIONS — 15 tipos com cores e ícones exclusivos
+   ================================================================ */
+
+/* 1. Intuição Econômica — âmbar */
+.md-typeset .admonition.idea,
+.md-typeset details.idea {
+  border-color: #FFB300;
 }
-.md-typeset .proof > .admonition-title,
-.md-typeset .proof > summary {
-  background-color: rgba(124, 77, 255, 0.1);
-  color: #7c4dff;
+.md-typeset .idea > .admonition-title,
+.md-typeset .idea > summary {
+  background-color: rgba(255, 179, 0, 0.08);
 }
 
-/* Admonitions: Definições */
+/* 2. Definição Formal — teal */
 .md-typeset .admonition.definition,
 .md-typeset details.definition {
   border-color: #00897b;
 }
 .md-typeset .definition > .admonition-title,
 .md-typeset .definition > summary {
-  background-color: rgba(0, 137, 123, 0.1);
-  color: #00897b;
+  background-color: rgba(0, 137, 123, 0.08);
 }
 
-/* Admonitions: Teoremas */
+/* 3. Teorema / Proposição / Lei — azul royal */
 .md-typeset .admonition.theorem,
 .md-typeset details.theorem {
   border-color: #1565c0;
 }
 .md-typeset .theorem > .admonition-title,
 .md-typeset .theorem > summary {
-  background-color: rgba(21, 101, 192, 0.1);
-  color: #1565c0;
+  background-color: rgba(21, 101, 192, 0.08);
+}
+
+/* 4. Demonstração — roxo violeta */
+.md-typeset .admonition.proof,
+.md-typeset details.proof {
+  border-color: #7c4dff;
+}
+.md-typeset .proof > .admonition-title,
+.md-typeset .proof > summary {
+  background-color: rgba(124, 77, 255, 0.08);
+}
+
+/* 5. Dica / Macete — verde escuro */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #43A047;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(67, 160, 71, 0.08);
+}
+
+/* 6. Cuidado / Erro Comum — laranja */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: #F57C00;
+}
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: rgba(245, 124, 0, 0.08);
+}
+
+/* 7. Exercício Resolvido — vermelho */
+.md-typeset .admonition.exercicio-resolvido,
+.md-typeset details.exercicio-resolvido {
+  border-color: #C8102E;
+}
+.md-typeset .exercicio-resolvido > .admonition-title,
+.md-typeset .exercicio-resolvido > summary {
+  background-color: rgba(200, 16, 46, 0.08);
+}
+
+/* 8. Exercício Proposto — roxo médio */
+.md-typeset .admonition.exercicio-proposto,
+.md-typeset details.exercicio-proposto {
+  border-color: #8E24AA;
+}
+.md-typeset .exercicio-proposto > .admonition-title,
+.md-typeset .exercicio-proposto > summary {
+  background-color: rgba(142, 36, 170, 0.08);
+}
+
+/* 9. Exemplo / Aplicação — verde água */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-color: #26A69A;
+}
+.md-typeset .example > .admonition-title,
+.md-typeset .example > summary {
+  background-color: rgba(38, 166, 154, 0.08);
+}
+
+/* 10. Box Brasil — verde bandeira */
+.md-typeset .admonition.box-brasil,
+.md-typeset details.box-brasil {
+  border-color: #009c3b;
+}
+.md-typeset .box-brasil > .admonition-title,
+.md-typeset .box-brasil > summary {
+  background-color: rgba(0, 156, 59, 0.08);
+}
+
+/* 11. ANPEC / Prova — terracota */
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  border-color: #D84315;
+}
+.md-typeset .question > .admonition-title,
+.md-typeset .question > summary {
+  background-color: rgba(216, 67, 21, 0.08);
+}
+
+/* 12. Nota / Observação — índigo */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: #5C6BC0;
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(92, 107, 192, 0.08);
+}
+
+/* 13. Informação — azul céu */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: #0288D1;
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: rgba(2, 136, 209, 0.08);
+}
+
+/* 14. R Interativo — púrpura */
+.md-typeset .admonition.code,
+.md-typeset details.code {
+  border-color: #6A1B9A;
+}
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary {
+  background-color: rgba(106, 27, 154, 0.08);
+}
+
+/* 15. Pesquisa em Ação — grafite */
+.md-typeset .admonition.pesquisa,
+.md-typeset details.pesquisa {
+  border-color: #37474F;
+}
+.md-typeset .pesquisa > .admonition-title,
+.md-typeset .pesquisa > summary {
+  background-color: rgba(55, 71, 79, 0.08);
 }
 
 /* Equações em bloco (div.arithmatex) — fundo destacado */
@@ -74,10 +195,6 @@
   border-top: .06em solid !important;
 }
 
-/* Box Brasil */
-.md-typeset .admonition.example {
-  border-left: 4px solid #009c3b;
-}
 
 /* Hub — Cards de navegação na página inicial */
 .hub-grid {

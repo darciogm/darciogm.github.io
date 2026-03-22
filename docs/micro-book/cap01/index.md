@@ -19,7 +19,7 @@ Da mesma forma, um modelo econômico é uma representação simplificada da real
 !!! definition "Modelo Econômico"
     Um **modelo econômico** é uma representação simplificada de uma situação econômica real, expressa por meio de relações lógicas (frequentemente matemáticas) entre variáveis, construída com o objetivo de explicar fenômenos observados e gerar previsões testáveis (Nicholson & Snyder, 2017, p. 3).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Um modelo econômico é uma receita que deixa de fora os ingredientes que não fazem diferença no sabor.
 
     **Pense assim:** Quando o Waze calcula sua rota em São Paulo, ele ignora a cor dos prédios, o nome das padarias e se está chovendo na Bahia. Ele simplifica o mundo para resolver *seu* problema. Um modelo econômico faz o mesmo: descarta o que não importa para a pergunta que você está fazendo.
@@ -79,7 +79,7 @@ Os modelos microeconômicos compartilham certas características metodológicas 
 
 Esse princípio é análogo ao controle de variáveis em um experimento de laboratório. Embora na realidade "tudo o mais" raramente permaneça constante, a análise *ceteris paribus* permite identificar relações causais parciais que, combinadas, fornecem uma compreensão do sistema como um todo.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** *Ceteris paribus* é o "muda só uma coisa por vez" da economia.
 
     **Pense assim:** Se você quer saber se sal melhora o feijão, não muda a panela, o fogo e o tipo de feijão ao mesmo tempo. Você muda *só* o sal e compara. Economistas fazem o mesmo: perguntam "o que acontece se o preço da gasolina subir, mas a renda, o preço do etanol e tudo mais ficarem iguais?"
@@ -96,7 +96,7 @@ O *ceteris paribus* nos diz como analisar; mas o que os modelos supõem sobre o 
 
 Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentido psicológico. Basta que se **comportem como se** otimizassem — a chamada abordagem "as if" de Friedman.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A microeconomia não diz que as pessoas fazem contas — diz que elas *agem como se* fizessem.
 
     **Pense assim:** Um jogador de sinuca experiente não resolve equações de física antes de cada tacada, mas suas jogadas se aproximam da trajetória que a física prevê. Da mesma forma, um consumidor no Mercado Municipal não calcula derivadas, mas tende a escolher uma cesta que se parece com a solução do problema de otimização.
@@ -208,7 +208,7 @@ A década de 1870 assistiu a uma revolução no pensamento econômico, protagoni
 
 Os três chegaram à mesma conclusão fundamental: o valor de um bem é determinado não pela quantidade total de utilidade que ele proporciona, mas pela **utilidade marginal** — a utilidade da última unidade consumida. Isso resolve o paradoxo da água e do diamante: a água é abundante, logo sua utilidade marginal é baixa; o diamante é escasso, logo sua utilidade marginal é alta.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O valor de um bem não depende de quanto você precisa dele no total, mas de quanto precisa da *próxima* unidade.
 
     **Pense assim:** No sertão nordestino, o primeiro litro de água do dia vale ouro. O centésimo litro serve para lavar a calçada. A água não mudou — o que mudou foi a *margem*. O diamante é caro não porque é mais útil que a água, mas porque você quase nunca tem um sobrando.
@@ -266,7 +266,7 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apresentamos a seguir uma demonstração formal completa de um dos resultados mais importantes da microeconomia: a condição de maximização de lucro da firma competitiva. Este resultado ilustra concretamente o roteiro da Seção 1.4 — definir objetivo, identificar restrições, resolver o problema de otimização e interpretar o resultado.
 
-!!! abstract "Teorema: Condição de Primeira Ordem para Maximização de Lucro"
+!!! theorem "Teorema: Condição de Primeira Ordem para Maximização de Lucro"
     Considere uma firma tomadora de preços (*price taker*) em um mercado competitivo. Se a firma produz uma quantidade positiva \(q^* > 0\) que maximiza seu lucro, então o preço de mercado deve ser igual ao custo marginal avaliado nessa quantidade:
 
     \[
@@ -331,7 +331,7 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 
 ## 🇧🇷 Box Brasil: O Plano Real e o uso de modelos econômicos
 
-!!! example "🇧🇷 Box Brasil — O Plano Real (1994): modelos econômicos em ação"
+!!! box-brasil "Box Brasil — O Plano Real (1994): modelos econômicos em ação"
 
     O **Plano Real**, implementado em 1994, é um dos exemplos mais notáveis de aplicação prática de modelos econômicos na história brasileira. Diferentemente dos planos de estabilização anteriores (Cruzado, Bresser, Verão, Collor), que recorreram a congelamentos de preços e confiscos — medidas ad hoc, sem fundamentação teórica sólida —, o Plano Real foi desenhado com base em modelos formais de **expectativas racionais**, **teoria dos jogos** e **teoria monetária**.
 
@@ -349,7 +349,7 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 
 ## 🇧🇷 Box Brasil: Modelos de projeção do Banco Central
 
-!!! example "🇧🇷 Box Brasil — COPOM e os modelos de projeção da inflação"
+!!! box-brasil "Box Brasil — COPOM e os modelos de projeção da inflação"
 
     O **Comitê de Política Monetária (COPOM)** do Banco Central do Brasil decide, a cada 45 dias, a taxa básica de juros (**Selic**) com base em projeções geradas por modelos econômicos. O principal instrumento é o **SAMBA** (*Stochastic Analytical Model with a Bayesian Approach*), um modelo de equilíbrio geral dinâmico estocástico (DSGE) que representa a economia brasileira por meio de equações descrevendo o comportamento de famílias, firmas, governo e setor externo (Castro et al., 2015).
 
@@ -393,7 +393,7 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 
 Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste capítulo a problemas concretos. O primeiro exercício pratica a distinção entre análise positiva e normativa (Seção 1.3). O segundo trabalha a estrutura de variáveis exógenas e endógenas, equilíbrio e estática comparativa (Seção 1.4). O terceiro aplica a condição de maximização de lucro \(P = CMg\) demonstrada acima. Recomenda-se tentar resolver cada exercício antes de consultar a solução.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 1.1 — Análise positiva versus normativa"
+??? exercicio-resolvido "Exercício Resolvido 1.1 — Análise positiva versus normativa"
 
     **Enunciado.** Classifique cada afirmação como positiva ou normativa e justifique:
 
@@ -415,7 +415,7 @@ Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste cap�
 
     **(d) Normativa.** O conceito de "justiça" envolve julgamento de valor — diferentes concepções de equidade (rawlsiana, utilitarista, libertária) conduziriam a conclusões distintas sobre a mesma política.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
+??? exercicio-resolvido "Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
 
     **Enunciado.** Considere o seguinte modelo simplificado do mercado de café no Brasil:
 
@@ -460,7 +460,7 @@ Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste cap�
 
     **(d)** \(\dfrac{\partial P^*}{\partial Y} = 0{,}2 > 0\). Um aumento da renda eleva o preço de equilíbrio. Intuitivamente, mais renda desloca a curva de demanda para a direita (a cada preço dado, a quantidade demandada aumenta), pressionando o preço para cima. Este é um exercício de estática comparativa como descrito na Seção 1.4: variamos uma variável exógena (\(Y\)) e observamos o efeito sobre a variável endógena (\(P^*\)).
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
+??? exercicio-resolvido "Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
 
     **Enunciado.** Uma firma competitiva tem função de custo total \(CT(q) = 50 + 8q + 0{,}5q^2\). O preço de mercado é \(P = 28\).
 
@@ -618,7 +618,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Angrist, J. D.; Pischke, J.-S. (2010). [The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics](https://doi.org/10.1257/jep.24.2.3). *Journal of Economic Perspectives*, 24(2), 3–30."
+??? pesquisa "Angrist, J. D.; Pischke, J.-S. (2010). [The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics](https://doi.org/10.1257/jep.24.2.3). *Journal of Economic Perspectives*, 24(2), 3–30."
     **Pergunta central:** Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.
 
     **Método:** Angrist e Pischke documentam a "revolução da credibilidade" que transformou a economia empírica a partir dos anos 1990. A ideia central é que a identificação causal — o problema de isolar o efeito de uma variável sobre outra, *ceteris paribus* — pode ser alcançada por meio de estratégias de pesquisa que exploram variações quase-experimentais nos dados: variáveis instrumentais, diferenças em diferenças, regressão descontínua e experimentos aleatorizados.
@@ -627,7 +627,7 @@ d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginali
 
     **Relevância para o capítulo:** O artigo conecta diretamente a Seção 1.2 (verificação de modelos) e a Seção 1.3 (*ceteris paribus*). A cláusula *ceteris paribus*, apresentada como recurso teórico neste capítulo, é também o objetivo prático da econometria moderna. A revolução da credibilidade mostra que a microeconomia empírica não se limita a testar modelos — ela os refina, revelando quais suposições são empiricamente sustentáveis e quais precisam ser revisadas. Joshua Angrist recebeu o Prêmio Nobel de Economia em 2021, em grande parte por essas contribuições metodológicas.
 
-??? abstract "Thaler, R. H. (2016). [Behavioral Economics: Past, Present, and Future](https://doi.org/10.1257/aer.106.7.1577). *American Economic Review*, 106(7), 1577–1600."
+??? pesquisa "Thaler, R. H. (2016). [Behavioral Economics: Past, Present, and Future](https://doi.org/10.1257/aer.106.7.1577). *American Economic Review*, 106(7), 1577–1600."
     **Pergunta central:** Até que ponto a hipótese de otimização racional — fundamento dos modelos microeconômicos discutidos na Seção 1.3 — descreve adequadamente o comportamento humano? E quando os desvios da racionalidade são sistemáticos, como devemos modificar nossos modelos?
 
     **Método:** Thaler, em seu discurso presidencial na American Economic Association, traça a trajetória da economia comportamental desde seus precursores (Simon, Kahneman, Tversky) até sua consolidação como subdisciplina influente. O argumento central é que os agentes econômicos reais (*Humans*) diferem sistematicamente dos agentes perfeitamente racionais dos modelos (*Econs*): exibem racionalidade limitada, autocontrole imperfeito e preferências sociais.

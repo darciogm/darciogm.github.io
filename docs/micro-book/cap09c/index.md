@@ -48,7 +48,7 @@ Com a estrutura do jogo bayesiano definida, qual é o conceito de equilíbrio ap
     **Conexão com este capítulo:**
     O equilíbrio bayesiano de Nash (BNE) — conceito central deste capítulo — é a aplicação direta da transformação de Harsanyi. A ideia de que cada jogador possui um "tipo" privado sorteado pela Natureza, e que as estratégias são funções do tipo, fundamenta toda a análise de jogos com informação incompleta apresentada aqui.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Em jogos bayesianos, cada jogador usa sua informação privada para extrair vantagem, mas o equilíbrio incorpora essa assimetria.
 
     **Pense assim:** Num leilão de arte, você sabe quanto o quadro vale para você, mas não para os outros. Se lançar seu valor verdadeiro num leilão de primeiro preço, paga demais quando ganha. O equilíbrio envolve *bid shading* — lançar abaixo do valor. Mas num leilão de segundo preço (Vickrey), lançar o valor verdadeiro é estratégia dominante!
@@ -95,7 +95,7 @@ E[\text{Receita}] = \frac{N-1}{N+1}
 
 Os leilões de primeiro e segundo preço parecem radicalmente distintos. As receitas deveriam diferir, certo? Surpreendentemente, não: sob condições bastante gerais, a receita esperada é *idêntica* em todos os formatos padrão.
 
-!!! abstract "Revenue Equivalence Theorem (Myerson, 1981; Riley e Samuelson, 1981)"
+!!! theorem "Revenue Equivalence Theorem (Myerson, 1981; Riley e Samuelson, 1981)"
     Com licitantes simétricos, IPV, risco-neutros, e qualquer mecanismo que (i) atribui o objeto ao licitante com maior valor e (ii) dá payoff zero ao tipo mais baixo, a **receita esperada** do leiloeiro é a mesma.
 
     Consequência: leilão de 1º preço, 2º preço, inglês e holandês geram a mesma receita esperada.
@@ -107,7 +107,7 @@ Os leilões de primeiro e segundo preço parecem radicalmente distintos. As rece
 
 Até aqui, assumimos valores privados. Em muitos contextos, porém, o objeto tem um valor *comum* que ninguém conhece com certeza — em leilões de petróleo, por exemplo, o volume de óleo é o mesmo para qualquer empresa, mas cada uma tem sua estimativa. Essa mudança de premissa introduz um fenômeno perverso.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Em leilões de valor comum, ganhar é uma má notícia — significa que você estimou o valor mais alto que todos.
 
     **Pense assim:** Num leilão de direitos de exploração de petróleo (como os da ANP), o bloco vale o mesmo para todos, mas cada empresa tem uma estimativa diferente do volume de óleo. Quem ganha é quem estimou mais. Se todos cometem erros simétricos de estimação, o vencedor é o mais otimista — e provavelmente pagou demais.
@@ -135,7 +135,7 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
 Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lances, maldição do vencedor e desenho de mecanismos — estão longe de ser abstrações acadêmicas. No Brasil, bilhões de reais são alocados anualmente por meio de leilões cujos formatos refletem diretamente as preocupações da teoria.
 
-!!! example "🇧🇷 Box Brasil — Leilões de petróleo e energia: quando o formato importa"
+!!! box-brasil "Box Brasil — Leilões de petróleo e energia: quando o formato importa"
     O Brasil utiliza leilões em setores estratégicos onde a teoria de leilões tem aplicação direta:
 
     **Leilões de petróleo (ANP)**
@@ -160,7 +160,7 @@ Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lanc
 
 Se os leilões de petróleo e energia ilustram o lado virtuoso da competição entre licitantes, as licitações públicas revelam o lado sombrio: quando os participantes se coordenam para suprimir a competição, os leilões podem se tornar instrumentos de extração de renda pública — exatamente o oposto do que a teoria prescreve.
 
-!!! example "🇧🇷 Box Brasil — Cartéis em licitações: o outro lado dos leilões"
+!!! box-brasil "Box Brasil — Cartéis em licitações: o outro lado dos leilões"
     Leilões de compras governamentais (licitações) são vulneráveis a colusão entre licitantes — o oposto do que a teoria competitiva prevê.
 
     **Mecanismos de colusão**
@@ -219,7 +219,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9c.1 — BNE em jogo de entrada com tipos"
+??? exercicio-resolvido "Exercício Resolvido 9c.1 — BNE em jogo de entrada com tipos"
     **Enunciado:** Uma incumbente pode ser forte (\(\theta_F\), prob. 0,6) ou fraca (\(\theta_W\), prob. 0,4). A entrante decide se entra. Payoffs: não entra → (10, 0); entra + forte → (3, –2); entra + fraca → (2, 4).
 
     **Resolução:**
@@ -234,7 +234,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     Se \(p > 2/3\), \(E[\pi_E] < 0\) e a entrante não entra. O ponto de indiferença é \(p^* = 2/3\).
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 9c.2 — Leilão de primeiro preço com 3 licitantes"
+??? exercicio-resolvido "Exercício Resolvido 9c.2 — Leilão de primeiro preço com 3 licitantes"
     **Enunciado:** Três licitantes com valores \(v_i \sim U[0, 100]\) participam de um leilão de primeiro preço. (a) Encontre a estratégia de equilíbrio. (b) Calcule a receita esperada. (c) Compare com o leilão de segundo preço.
 
     **Resolução:**
@@ -297,12 +297,12 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Athey, Susan, e Philip A. Haile (2007). [Nonparametric Approaches to Auctions](https://doi.org/10.1016/S1573-4412(07)06060-6). In: *Handbook of Econometrics*, Vol. 6A, 3847–3965."
+??? pesquisa "Athey, Susan, e Philip A. Haile (2007). [Nonparametric Approaches to Auctions](https://doi.org/10.1016/S1573-4412(07)06060-6). In: *Handbook of Econometrics*, Vol. 6A, 3847–3965."
     **Contribuição:** Survey abrangente sobre métodos econométricos para estimar modelos estruturais de leilões. Mostra como recuperar a distribuição de valores privados a partir de dados de lances observados — identificação não paramétrica.
 
     **Relevância:** Base metodológica para análise empírica de leilões da ANP e ANEEL. Os métodos permitem testar se licitantes jogam o BNE, estimar o grau de colusão e avaliar formatos alternativos de leilão.
 
-??? abstract "Myerson, Roger B. (1981). [Optimal Auction Design](https://doi.org/10.1287/moor.6.1.58). *Mathematics of Operations Research*, 6(1), 58–73."
+??? pesquisa "Myerson, Roger B. (1981). [Optimal Auction Design](https://doi.org/10.1287/moor.6.1.58). *Mathematics of Operations Research*, 6(1), 58–73."
     **Contribuição:** Myerson derivou o leilão ótimo (que maximiza receita esperada do leiloeiro) usando o Princípio da Revelação. O resultado inclui um preço de reserva ótimo e, com assimetria, discriminação entre licitantes.
 
     **Relevância:** Fundamentação teórica para o desenho de leilões governamentais. O preço de reserva — que exclui licitantes com valores baixos — aumenta a receita esperada mesmo ao risco de não vender o objeto.

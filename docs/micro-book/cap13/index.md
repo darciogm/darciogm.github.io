@@ -98,7 +98,7 @@ S(p) = \sum_{j=1}^{m} S_j(p)
 
     A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O preço de equilíbrio é aquele em que ninguém está frustrado — todo mundo que quer comprar a esse preço consegue, e todo mundo que quer vender encontra comprador.
 
     **Pense assim:** Na feira livre do seu bairro, se o quilo do tomate está caro demais, sobra tomate na barraca e o feirante baixa o preço. Se está barato demais, falta tomate e os consumidores competem entre si, puxando o preço para cima. O equilíbrio é o ponto em que a pilha de tomates na barraca "dá certo" com a fila de compradores — sem sobra nem falta.
@@ -292,7 +292,7 @@ O **bem-estar social** (W) na análise de equilíbrio parcial é:
 W = EC + EP
 \]
 
-!!! abstract "Teorema: Eficiência do equilíbrio competitivo (equilíbrio parcial)"
+!!! theorem "Teorema: Eficiência do equilíbrio competitivo (equilíbrio parcial)"
     O equilíbrio competitivo maximiza o bem-estar social \(W = EC + EP\). Qualquer desvio da quantidade de equilíbrio competitivo — seja por intervenção governamental ou por poder de mercado — gera uma **perda de peso morto** (PPM), ou seja, uma redução líquida do bem-estar total.
 
 !!! proof "Demonstração"
@@ -318,14 +318,14 @@ W = EC + EP
 
     Isso é satisfeito, pois a demanda inversa é decrescente (\(dp_D/dQ < 0\)) e a oferta inversa é crescente (\(dp_S/dQ > 0\)). Portanto, \(Q^*\) é de fato um máximo de bem-estar. \(\blacksquare\)
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O equilíbrio competitivo maximiza o bem-estar porque esgota todas as trocas mutuamente vantajosas — a última unidade vendida tem benefício marginal exatamente igual ao custo marginal.
 
     **Pense assim:** Imagine uma feira livre onde cada barraca vende até o ponto em que o próximo cliente pagaria menos do que custa repor a mercadoria. Enquanto houver alguém disposto a pagar mais do que o custo, ambos ganham com a troca. No equilíbrio, não sobra nenhuma troca lucrativa por fazer.
 
     **Por que isso importa:** Qualquer quantidade abaixo do equilíbrio desperdiça trocas vantajosas; qualquer quantidade acima força trocas cujo custo supera o benefício. Esse é o fundamento da análise de peso morto de impostos, tabelamentos e cotas.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O excedente do consumidor mede o "desconto" que ele sente por pagar menos do que estaria disposto, e o excedente do produtor mede o "bônus" por receber mais do que o mínimo necessário para vender.
 
     **Pense assim:** Você pagaria até R$ 50 por um ingresso de cinema, mas a bilheteria cobra R$ 30. Os R$ 20 de "alívio" que você sente são seu excedente de consumidor. Do outro lado, o cinema aceitaria vender a partir de R$ 15 (seu custo marginal), mas recebe R$ 30 — os R$ 15 de "folga" são o excedente do produtor. Somando os dois, temos o ganho total que aquela troca gerou para a sociedade.
@@ -360,7 +360,7 @@ Quando o governo estabelece um preço mínimo \(\underline{p} > p^*\), a quantid
     - **Preço máximo**: controle de aluguéis, tabelamento de medicamentos, congelamento de preços (como no Plano Cruzado, 1986).
     - **Preço mínimo**: salário mínimo, preços mínimos agrícolas (PGPM — Política de Garantia de Preços Mínimos no Brasil).
 
-!!! example "🇧🇷 Box Brasil: O Plano Cruzado e os limites do tabelamento"
+!!! box-brasil "Box Brasil: O Plano Cruzado e os limites do tabelamento"
     Em fevereiro de 1986, o governo brasileiro lançou o Plano Cruzado, que impôs um congelamento generalizado de preços como estratégia anti-inflacionária. A inflação, que acumulava cerca de 235% em 12 meses (IGP-DI/FGV), caiu abruptamente para próximo de zero nos meses seguintes.
 
     No entanto, os efeitos colaterais ilustram perfeitamente a análise de preços máximos:
@@ -404,7 +404,7 @@ O novo equilíbrio satisfaz:
 X(p_c) = S(p_p) = S(p_c - t)
 \]
 
-!!! abstract "Teorema: Incidência tributária e elasticidades"
+!!! theorem "Teorema: Incidência tributária e elasticidades"
     A divisão da carga tributária entre consumidores e produtores depende das elasticidades relativas de oferta e demanda. A fração do imposto absorvida pelo consumidor é:
 
     \[
@@ -468,7 +468,7 @@ A intuição por trás desses resultados é simples e poderosa: o lado mais inel
 !!! note "Irrelevância do lado legal"
     A incidência econômica do imposto independe de quem tem a obrigação legal de recolhê-lo. Seja o imposto cobrado do vendedor ou do comprador, a divisão da carga é determinada pelas elasticidades.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Quem realmente paga o imposto não é quem o governo manda pagar — é quem tem menos flexibilidade para escapar dele.
 
     **Pense assim:** Quando o governo aumenta o ICMS da gasolina e cobra do posto, o posto repassa quase tudo ao consumidor no preço da bomba. Por quê? Porque o motorista *precisa* de gasolina (demanda inelástica) e não tem muita alternativa, enquanto o posto pode ajustar a oferta. O lado mais "preso" ao mercado é quem absorve a maior fatia do imposto, independentemente de quem assina a guia de recolhimento.
@@ -514,7 +514,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
     PPM = \frac{1}{2} \cdot t^2 \cdot \frac{|\varepsilon_D| \cdot \varepsilon_S}{|\varepsilon_D| + \varepsilon_S} \cdot \frac{Q_0}{p_0}
     \]
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A perda de peso morto é o valor das trocas que deixaram de acontecer — um prejuízo que ninguém embolsa.
 
     **Pense assim:** Imagine que um imposto sobre o cafezinho faz o preço subir de R$ 5 para R$ 6. Alguns clientes que compravam a R$ 5 desistem, e o dono do café perde essas vendas. O governo arrecada sobre os cafés que ainda são vendidos, mas o valor das transações que sumiram — aquele cafezinho que o cliente queria e o vendedor podia oferecer — evaporou. Esse "triângulo" de valor perdido é a perda de peso morto.
@@ -525,7 +525,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ## 🇧🇷 Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
 
-!!! example "🇧🇷 Box Brasil: Soja brasileira e o leiloeiro global"
+!!! box-brasil "Box Brasil: Soja brasileira e o leiloeiro global"
     O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 ([CONAB](https://www.conab.gov.br)). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
 
     **Formação de preços internos:**
@@ -586,7 +586,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
+??? exercicio-resolvido "Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
     **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
 
     ---
@@ -625,7 +625,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 13.2 — Preço máximo e escassez"
+??? exercicio-resolvido "Exercício Resolvido 13.2 — Preço máximo e escassez"
     **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
 
     ---
@@ -678,7 +678,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
+??? exercicio-resolvido "Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
     **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
     ---
@@ -873,7 +873,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
+??? pesquisa "Roberts, M. J. & Schlenker, W. (2013). [Identifying Supply and Demand Elasticities of Agricultural Commodities: Implications for the US Ethanol Mandate](https://doi.org/10.1257/aer.103.6.2265). *American Economic Review*, 103(6), 2265–2295."
     **DOI:** [10.1257/aer.103.6.2265](https://doi.org/10.1257/aer.103.6.2265)
 
     **Contexto.** A estimação de elasticidades de oferta e demanda é central para a análise de equilíbrio parcial, mas enfrenta o clássico problema de identificação: variações observadas em preços e quantidades refletem simultaneamente deslocamentos de oferta e demanda. Roberts e Schlenker enfrentam esse desafio no mercado de commodities agrícolas — exatamente o tipo de mercado competitivo analisado neste capítulo.
@@ -884,7 +884,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Conexão com o capítulo.** O artigo é uma aplicação direta da análise de estática comparativa (Seção 13.4) e da discussão sobre elasticidades de oferta e demanda (Seções 13.1 e 13.7) em mercados competitivos reais. Também dialoga com o Box Brasil sobre a soja, cujas elasticidades estimadas pelo IPEA e CONAB são comparáveis às encontradas no estudo.
 
-??? abstract "Weyl, E. G. & Fabinger, M. (2013). [Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition](https://doi.org/10.1086/670401). *Journal of Political Economy*, 121(3), 528–583."
+??? pesquisa "Weyl, E. G. & Fabinger, M. (2013). [Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition](https://doi.org/10.1086/670401). *Journal of Political Economy*, 121(3), 528–583."
     **DOI:** [10.1086/670401](https://doi.org/10.1086/670401)
 
     **Contexto.** A Seção 13.11 demonstra que, em concorrência perfeita, a incidência de um imposto específico depende das elasticidades relativas de oferta e demanda. Mas o que acontece quando os mercados não são perfeitamente competitivos? Weyl e Fabinger desenvolvem uma teoria unificada de *pass-through* (repasse) que generaliza os resultados clássicos de incidência para estruturas de mercado imperfeitas.

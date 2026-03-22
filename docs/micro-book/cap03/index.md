@@ -37,7 +37,7 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
 !!! info "Exemplo — Racionalidade nas escolhas de consumo no Brasil"
     Os axiomas de completude e transitividade podem parecer abstratos, mas refletem exigências mínimas de consistência nas escolhas cotidianas. A Pesquisa de Orçamentos Familiares (POF 2017-2018) do [IBGE](https://www.ibge.gov.br) mostra que famílias brasileiras, mesmo as de baixa renda, alocam seus orçamentos de forma estável e internamente consistente: quando a renda aumenta, a participação relativa da alimentação cai de maneira suave e previsível (de 22% para famílias com renda até R$ 1.908 a 7,6% para famílias acima de R$ 23.850). Essa regularidade empírica é compatível com preferências que satisfazem os axiomas acima — especialmente transitividade e monotonicidade — e justifica o uso do arcabouço axiomático como ponto de partida para modelar o consumidor.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Os axiomas de preferência são apenas regras mínimas de coerência — exigem que o consumidor saiba comparar opções e não se contradiga.
 
     **Pense assim:** Quando você vai à feira e decide que prefere banana a maçã, e maçã a pera, seria estranho voltar e dizer que prefere pera a banana. Completude é conseguir comparar qualquer par de frutas; transitividade é não entrar em contradição. A monotonicidade diz que, entre dois sacos de frutas, você prefere o maior — desde que goste de todas.
@@ -58,7 +58,7 @@ Uma **função de utilidade** \(u: X \to \mathbb{R}\) **representa** a relação
 
 A existência de tal função não é trivial. O teorema a seguir fornece condições suficientes.
 
-!!! abstract "Teorema 3.1 — Existência da Função de Utilidade (Debreu, 1954)"
+!!! theorem "Teorema 3.1 — Existência da Função de Utilidade (Debreu, 1954)"
     Se a relação de preferência \(\succsim\) sobre \(X \subseteq \mathbb{R}^n_+\) é **completa**, **transitiva**, **contínua** e **monótona**, então existe uma função de utilidade contínua \(u: X \to \mathbb{R}\) que representa \(\succsim\).
 
 A demonstração completa pode ser encontrada em Mas-Colell, Whinston e Green (1995, Proposição 3.C.1). A ideia central é construir \(u(\mathbf{x})\) como o escalar \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\), onde \(\mathbf{1} = (1, 1, \ldots, 1)\). A monotonicidade garante que tal \(t\) é único, e a continuidade garante que a função resultante é contínua.
@@ -66,7 +66,7 @@ A demonstração completa pode ser encontrada em Mas-Colell, Whinston e Green (1
 !!! note "Utilidade é ordinal, não cardinal"
     A função de utilidade atribui números a cestas apenas para preservar o **ordenamento**. Os valores absolutos não têm significado econômico intrínseco. Se \(u(\mathbf{x}) = 10\) e \(u(\mathbf{y}) = 5\), sabemos apenas que \(\mathbf{x} \succ \mathbf{y}\), **não** que \(\mathbf{x}\) é "duas vezes melhor" que \(\mathbf{y}\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Os números da utilidade funcionam como a ordem de chegada numa corrida — só importa quem chegou antes, não por quantos segundos.
 
     **Pense assim:** Imagine que você dá nota 10 para um prato de feijoada e nota 5 para uma salada. Isso não significa que a feijoada é "duas vezes mais gostosa" — apenas que você a prefere. Se um amigo desse nota 100 e 50, as preferências seriam as mesmas. O ranking é o que importa, não o placar.
@@ -129,7 +129,7 @@ As curvas de indiferença nos dizem *quais* cestas o consumidor considera equiva
 
 **TMS decrescente**: Sob preferências estritamente convexas, a TMS é decrescente ao longo da curva de indiferença. À medida que o consumidor adquire mais do bem 1, cada unidade adicional torna-se relativamente menos valiosa, e ele está disposto a sacrificar cada vez menos do bem 2. Esta propriedade é equivalente à convexidade estrita das curvas de indiferença.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A TMS mede "quanto do bem 2 você toparia trocar por mais uma unidade do bem 1" — é o seu preço pessoal de troca.
 
     **Pense assim:** Imagine que você tem muito arroz e pouco feijão em casa. Você toparia trocar bastante arroz por um pouco de feijão. Mas à medida que ganha feijão e perde arroz, cada porção adicional de feijão vale menos para você, e cada porção de arroz que abre mão dói mais. Essa "taxa de troca pessoal" que vai caindo é a TMS decrescente.
@@ -153,7 +153,7 @@ A **utilidade marginal** do bem \(i\) é:
 
 A relação fundamental entre utilidade marginal e TMS é dada pela proposição a seguir.
 
-!!! abstract "Proposição 3.2 — TMS como razão de utilidades marginais"
+!!! theorem "Proposição 3.2 — TMS como razão de utilidades marginais"
     Se \(u(x_1, x_2)\) é diferenciável e \(\text{UMg}_2 > 0\), então:
 
     \[
@@ -189,7 +189,7 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
 **Figura 3.2 — Taxa Marginal de Substituição (TMS).** Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
 </div>
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 3.1"
+??? exercicio-resolvido "Exercício Resolvido 3.1"
     **Enunciado:** Um consumidor tem preferências representadas por \(u(x_1, x_2) = x_1^{2/5} \, x_2^{3/5}\). Calcule a TMS no ponto \((x_1, x_2) = (10, 15)\) e interprete o resultado.
 
     **Dados:** \(a = 2/5\), \(b = 3/5\), \(x_1 = 10\), \(x_2 = 15\).
@@ -314,7 +314,7 @@ A TMS depende apenas de \(x_1\):
 
 As curvas de indiferença são **translações verticais** umas das outras: possuem a mesma forma, apenas deslocadas paralelamente ao eixo \(x_2\). Isso implica que não há efeito renda sobre o bem 1 (para soluções interiores). A utilidade quase-linear é particularmente útil em análises de equilíbrio parcial e em modelos de organização industrial.
 
-!!! abstract "Proposição — Propriedades da utilidade quase-linear"
+!!! theorem "Proposição — Propriedades da utilidade quase-linear"
     Seja \(u(x_1, x_2) = v(x_1) + x_2\) com \(v' > 0\) e \(v'' < 0\). Então, para soluções interiores:
 
     1. **Efeito renda nulo sobre \(x_1\)**: a demanda marshalliana por \(x_1\) depende apenas de \(p_1/p_2\), não da renda \(I\).
@@ -322,7 +322,7 @@ As curvas de indiferença são **translações verticais** umas das outras: poss
     3. **Medidas de bem-estar coincidem**: variação compensatória, variação equivalente e variação do excedente do consumidor são iguais — \(VC = VE = \Delta EC\) — porque a demanda hicksiana por \(x_1\) independe do nível de utilidade (ver Cap. 5, §5.8.4).
     4. **Função dispêndio**: \(E(\mathbf{p}, \bar{u}) = c(p_1, p_2) + p_2 \bar{u}\), onde \(c(\cdot)\) é uma função apenas dos preços. A função dispêndio é **linear** em \(\bar{u}\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Na utilidade quase-linear, o bem 2 funciona como "dinheiro" — todo aumento de renda vai para \(x_2\), sem afetar a escolha de \(x_1\).
 
     **Pense assim:** Imagine que você decide quanto café tomar por dia baseado apenas no preço do café, e todo o resto do seu orçamento vai para "outros gastos" (\(x_2\)). Se você ganha um aumento de salário, continua tomando a mesma quantidade de café — a renda extra vai toda para os outros gastos. Essa é a essência da quase-linearidade.
@@ -350,7 +350,7 @@ Após examinar a quase-linearidade, é natural perguntar: existe uma classe de p
 
 Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdot x_1\)), a TMS é constante. Geometricamente, as curvas de indiferença são **expansões radiais** umas das outras — ao escalar uma curva de indiferença a partir da origem, obtemos outra curva de indiferença.
 
-!!! abstract "Proposição — Propriedades das preferências homotéticas"
+!!! theorem "Proposição — Propriedades das preferências homotéticas"
     Se \(u\) é homotética, então:
 
     1. **Caminho de expansão da renda linear**: a reta que passa pela origem e pela cesta ótima contém todas as cestas ótimas para diferentes níveis de renda (preços fixos). A razão \(x_1^*/x_2^*\) é constante em \(I\).
@@ -366,7 +366,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 - **Substitutos perfeitos** e **complementos perfeitos**: ambos são homotéticos (homogêneos de grau 1).
 - **Quase-linear** \(u = v(x_1) + x_2\): **não** é homotética. A TMS depende de \(x_1\) isoladamente, não de \(x_1/x_2\). A razão ótima \(x_1^*/x_2^*\) varia com a renda.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Com preferências homotéticas, ricos e pobres gastam a mesma *proporção* da renda em cada bem — só a escala muda.
 
     **Pense assim:** Uma família homotética que gasta 30% da renda com alimentação e 70% com outros bens manterá essa proporção se sua renda dobrar, triplicar ou cair pela metade. O caminho de expansão da renda é uma reta que sai da origem — escalar a cesta ótima é como "dar zoom" na mesma cesta.
@@ -404,7 +404,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 **Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
 </div>
 
-!!! example "🇧🇷 Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
+!!! box-brasil "Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
     A propriedade mais marcante da função Cobb-Douglas é que a **participação de cada bem na despesa total é constante**, independente do nível de renda. Os dados da Pesquisa de Orçamentos Familiares (POF 2017-2018, IBGE) permitem confrontar essa previsão teórica com a realidade brasileira.
 
     A POF revela que a participação da alimentação no orçamento familiar **varia substancialmente** com a renda: famílias com renda de até R$ 1.908 destinam cerca de 22% à alimentação, enquanto famílias com renda acima de R$ 23.850 destinam apenas 7,6%. Essa variação contraria a previsão de participação constante da Cobb-Douglas, sugerindo que essa função não é adequada para modelar preferências entre alimentação e outros bens *ao longo de diferentes faixas de renda*.
@@ -415,7 +415,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
     **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018 — Primeiros Resultados.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 3.2"
+??? exercicio-resolvido "Exercício Resolvido 3.2"
     **Enunciado:** Considere a função CES \(u(x_1, x_2) = (x_1^{\rho} + x_2^{\rho})^{1/\rho}\) com \(\rho = -1\). (a) Calcule a elasticidade de substituição. (b) Derive a TMS. (c) Compare as curvas de indiferença com os casos Cobb-Douglas e complementos perfeitos.
 
     **Dados:** \(\rho = -1\), logo \(u(x_1, x_2) = (x_1^{-1} + x_2^{-1})^{-1}\).
@@ -452,12 +452,12 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
 Ao longo das seções anteriores, enfatizamos que a utilidade é ordinal: apenas o ordenamento das cestas importa, não os valores numéricos em si. Mas o que exatamente isso implica para a liberdade do economista na escolha da forma funcional? A consequência é notável: podemos transformar a função de utilidade sem alterar as preferências subjacentes — desde que a transformação preserve a ordenação. Essa liberdade tem implicações práticas importantes, pois permite ao analista escolher a representação mais conveniente para cada problema.
 
-!!! abstract "Proposição 3.3 — Invariância sob transformação monotônica"
+!!! theorem "Proposição 3.3 — Invariância sob transformação monotônica"
     Se \(u(\mathbf{x})\) representa \(\succsim\) e \(f: \mathbb{R} \to \mathbb{R}\) é estritamente crescente, então \(\hat{u}(\mathbf{x}) = f(u(\mathbf{x}))\) também representa \(\succsim\).
 
 A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}) \geq u(\mathbf{y})\) se e somente se \(f(u(\mathbf{x})) \geq f(u(\mathbf{y}))\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Você pode trocar a "régua" que mede a utilidade sem alterar as preferências — qualquer escala que preserve a ordem serve.
 
     **Pense assim:** É como converter temperatura de Celsius para Fahrenheit: os números mudam, mas a água continua fervendo antes do metal derreter. Da mesma forma, se você aplica logaritmo na utilidade Cobb-Douglas para facilitar as contas, o consumidor continua preferindo as mesmas cestas de antes.
@@ -472,7 +472,7 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
 !!! tip "Implicações práticas da ordinalidade"
     A TMS é invariante sob transformações monotônicas. A utilidade marginal, porém, **não é invariante**: ela muda com a transformação. Por isso, a utilidade marginal não tem significado cardinal — apenas a razão entre utilidades marginais (a TMS) possui significado econômico bem definido.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 3.3"
+??? exercicio-resolvido "Exercício Resolvido 3.3"
     **Enunciado:** Mostre que \(u(x_1, x_2) = \ln x_1 + 2\ln x_2\) e \(v(x_1, x_2) = x_1 \cdot x_2^2\) representam as mesmas preferências, e verifique que ambas produzem a mesma TMS.
 
     **Resolução:**
@@ -503,7 +503,7 @@ As seções anteriores construíram progressivamente o arcabouço teórico das p
 
 ## 🇧🇷 Box Brasil: Mudança de Preferências do Consumidor Brasileiro Pós-Estabilização
 
-!!! example "🇧🇷 Box Brasil — O Plano Real e a revolução no consumo"
+!!! box-brasil "Box Brasil — O Plano Real e a revolução no consumo"
     A hiperinflação brasileira que antecedeu o Plano Real (julho de 1994) distorcia profundamente as preferências reveladas dos consumidores. Com taxas de inflação que chegaram a superar 2.000% ao ano em 1993, o comportamento de compra era dominado pela **antecipação de consumo**: famílias corriam ao supermercado no dia do pagamento para converter salários em bens antes que os preços subissem.
 
     Dados da Pesquisa de Orçamentos Familiares (POF) do IBGE revelam mudanças marcantes nos padrões de consumo ao longo das décadas:
@@ -702,7 +702,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Falk, A.; Becker, A.; Dohmen, T.; Enke, B.; Huffman, D.; Sunde, U. (2018). [Global Evidence on Economic Preferences](https://doi.org/10.1093/qje/qjy013). *Quarterly Journal of Economics*, 133(4), 1645–1692."
+??? pesquisa "Falk, A.; Becker, A.; Dohmen, T.; Enke, B.; Huffman, D.; Sunde, U. (2018). [Global Evidence on Economic Preferences](https://doi.org/10.1093/qje/qjy013). *Quarterly Journal of Economics*, 133(4), 1645–1692."
     **Pergunta central:** Os axiomas de preferência apresentados na Seção 3.1 são abstrações teóricas — mas como as preferências reais dos indivíduos variam entre países e dentro de cada sociedade? Existem padrões sistemáticos que conectem preferências a características demográficas, culturais e econômicas? Este artigo é o maior esforço empírico já realizado para responder a essas perguntas.
 
     **Método:** Falk e coautores construíram o *Global Preference Survey* (GPS), um instrumento de pesquisa experimentalmente validado, aplicado a amostras representativas de 80.000 pessoas em 76 países — incluindo o Brasil. O GPS mede seis dimensões de preferências: paciência (preferência temporal), disposição a assumir riscos, reciprocidade positiva e negativa, altruísmo e confiança. A validação experimental foi realizada comparando as respostas da pesquisa com escolhas em experimentos com incentivos monetários reais.
@@ -713,7 +713,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
     **Relevância para o capítulo:** O artigo conecta diretamente os axiomas da Seção 3.1 com evidências empíricas: se as preferências variam sistematicamente entre indivíduos, as funções de utilidade que as representam também diferem — o que justifica a diversidade de formas funcionais apresentadas na Seção 3.6. Além disso, a heterogeneidade de preferências dentro do Brasil reforça a importância de modelos que permitam diferenças individuais, como a análise por faixa de renda da POF discutida no Box Brasil sobre Cobb-Douglas.
 
-??? abstract "Choi, S.; Kariv, S.; Müller, W.; Silverman, D. (2014). [Who Is (More) Rational?](https://doi.org/10.1257/aer.104.6.1518) *American Economic Review*, 104(6), 1518–1550."
+??? pesquisa "Choi, S.; Kariv, S.; Müller, W.; Silverman, D. (2014). [Who Is (More) Rational?](https://doi.org/10.1257/aer.104.6.1518) *American Economic Review*, 104(6), 1518–1550."
     **Pergunta central:** Os axiomas de preferência — especialmente a transitividade e a completude — são *de fato* satisfeitos pelas escolhas dos consumidores reais? E se houver variação na "racionalidade" das decisões, ela está correlacionada com resultados econômicos importantes, como a acumulação de riqueza?
 
     **Método:** Choi e coautores conduziram um experimento em larga escala com uma amostra representativa da população holandesa (painel CentERpanel). Cada participante tomou 25 decisões de alocação entre dois bens sob restrições orçamentárias variadas. Os autores testaram se as escolhas observadas satisfazem o GARP (*Generalized Axiom of Revealed Preference*) — a condição necessária e suficiente para que os dados sejam consistentes com a maximização de alguma função de utilidade bem comportada (Teorema 3.1).

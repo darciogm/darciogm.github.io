@@ -67,7 +67,7 @@ A formalização moderna da teoria da utilidade esperada foi apresentada por Joh
 
     4. **Independência**: Se \(L_1 \succsim L_2\), então para todo \(L_3\) e todo \(\alpha \in (0,1)\): \(\alpha L_1 + (1-\alpha)L_3 \succsim \alpha L_2 + (1-\alpha) L_3\).
 
-!!! abstract "Teorema da Utilidade Esperada"
+!!! theorem "Teorema da Utilidade Esperada"
     Se as preferências \(\succsim\) sobre o espaço de loterias \(\mathcal{L}\) satisfazem os axiomas de completude, transitividade, continuidade e independência, então existe uma função \(u: \mathbb{R} \to \mathbb{R}\) tal que, para quaisquer loterias \(L_1\) e \(L_2\):
 
     \[
@@ -80,7 +80,7 @@ A formalização moderna da teoria da utilidade esperada foi apresentada por Joh
 
 O axioma mais controverso é o de **independência**. Ele afirma, em essência, que se você prefere a loteria A à loteria B, então misturar ambas com uma mesma terceira loteria não deveria alterar essa preferência — a "adição" de uma alternativa irrelevante não contamina a comparação original. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979), que estudaremos no Capítulo 8.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** A utilidade esperada diz que pessoas racionais avaliam apostas pela "felicidade média" que elas proporcionam, não pelo dinheiro médio.
 
     **Pense assim:** Imagine que você concorre a um sorteio de R$ 10.000 com 50% de chance. O valor esperado é R$ 5.000, mas a alegria que R$ 10.000 trazem não é o dobro da alegria de R$ 5.000 — assim como o segundo prato de comida no rodízio nunca é tão bom quanto o primeiro.
@@ -110,7 +110,7 @@ Intuitivamente, o agente avesso ao risco prefere receber o valor esperado de uma
 
 Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando dois pontos na curva de utilidade fica **abaixo** da própria curva — ou seja, a utilidade esperada da loteria (ponto na corda) é inferior à utilidade do valor esperado (ponto na curva).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Aversão ao risco significa preferir o certo ao duvidoso, mesmo quando o valor médio é igual.
 
     **Pense assim:** Um trabalhador brasileiro prefere um salário fixo de R$ 3.000 a um emprego que paga R$ 6.000 em meses bons e zero em meses ruins — mesmo que a média seja a mesma. A dor de ficar sem renda pesa mais do que a alegria do mês gordo.
@@ -201,7 +201,7 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
 
     Para um agente avesso ao risco, \(\pi > 0\); para um neutro, \(\pi = 0\).
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** O equivalente certo é o "preço de saída" de uma aposta — quanto você aceitaria receber para não ter que jogar.
 
     **Pense assim:** Se você tem um bilhete de rifa que vale R$ 1.000 com 50% de chance (valor esperado = R$ 500), mas toparia vendê-lo por R$ 350, então R$ 350 é seu equivalente certo e os R$ 150 de diferença são o prêmio de risco — o desconto que você dá só para dormir tranquilo.
@@ -280,7 +280,7 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 - **Prêmio atuarialmente justo**: \(P = p \cdot d\). Sob esse prêmio, o agente avesso ao risco contrata cobertura total.
 - **Prêmio com carregamento**: \(P = (1+\lambda) p \cdot d\), \(\lambda > 0\). Nesse caso, a cobertura ótima pode ser parcial.
 
-!!! abstract "Teorema: Seguro total sob prêmio atuarialmente justo"
+!!! theorem "Teorema: Seguro total sob prêmio atuarialmente justo"
     Se o prêmio do seguro é atuarialmente justo e o agente é estritamente avesso ao risco, então o contrato ótimo é de **cobertura total** (\(q^* = d\)), onde \(q\) é a indenização contratada.
 
 <iframe src="../graficos/cap07/seguro.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
@@ -312,7 +312,7 @@ Quando \(\rho < 1\), existe um peso \(w^*\) que minimiza \(\sigma_p^2\), gerando
 !!! note "Risco diversificável vs. risco sistemático"
     Em uma economia com muitos ativos, a diversificação elimina o **risco idiossincrático** (específico de cada ativo), mas não elimina o **risco sistemático** (que afeta todos os ativos simultaneamente). Essa distinção é central no modelo CAPM (Capital Asset Pricing Model), no qual apenas o risco sistemático — medido pelo coeficiente beta — é remunerado pelo mercado.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Diversificar é não colocar todos os ovos na mesma cesta — o risco total cai mesmo sem reduzir o retorno esperado.
 
     **Pense assim:** Um pequeno agricultor do Paraná que planta só soja fica à mercê da seca ou da queda de preço. Se ele divide a terra entre soja, milho e feijão, uma safra ruim de um produto pode ser compensada pela boa safra de outro. O retorno médio pode ser parecido, mas o risco de "quebrar" cai muito.
@@ -327,7 +327,7 @@ Manter opções abertas tem valor positivo sob incerteza. A possibilidade de adi
 
 Formalmente, considere um agente que pode tomar uma decisão irreversível hoje ou esperar um período para obter informação adicional. Se o custo de esperar é baixo e a incerteza é alta, o **valor da opção de espera** pode ser substancial. Esse conceito, desenvolvido por Dixit e Pindyck (1994), tem aplicações importantes em decisões de investimento, exploração de recursos naturais e políticas públicas.
 
-!!! idea "Intuição Econômica 💡"
+!!! idea "Intuição Econômica"
     **Em uma frase:** Sob incerteza, a irreversibilidade cria um custo de oportunidade — agir hoje "mata" a opção de decidir melhor amanhã.
 
     **Pense assim:** Você recebeu uma proposta de emprego em outra cidade, mas espera uma resposta de um concurso público que sai em 30 dias. Aceitar agora é irreversível. Se a incerteza sobre o concurso é grande, o valor de esperar — mesmo perdendo um mês de salário — pode compensar. O VPL positivo da mudança não basta; ele precisa superar o valor da opção de espera.
@@ -414,7 +414,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## 🇧🇷 Box Brasil: O Mercado de Seguros de Automóvel no Brasil
 
-!!! example "🇧🇷 Box Brasil — Seguros de automóvel: risco, precificação e regulação"
+!!! box-brasil "Box Brasil — Seguros de automóvel: risco, precificação e regulação"
     O mercado de seguros de automóvel no Brasil é um campo fértil para a aplicação dos conceitos de incerteza e aversão ao risco. Regulado pela **[SUSEP](https://www.susep.gov.br)** (Superintendência de Seguros Privados), esse mercado apresenta características que ilustram os desafios teóricos discutidos neste capítulo.
 
     **Estrutura de mercado e concentração**
@@ -454,7 +454,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## 🇧🇷 Box Brasil: A Mega-Sena e a Economia da Loteria
 
-!!! example "🇧🇷 Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
+!!! box-brasil "Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
     A **Mega-Sena**, operada pela Caixa Econômica Federal, é a maior loteria do Brasil e ilustra de maneira contundente o contraste entre valor esperado e comportamento observado.
 
     **Os números da Mega-Sena**
@@ -483,7 +483,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## 🇧🇷 Box Brasil: O Seguro Agrícola e o PSR
 
-!!! example "🇧🇷 Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
+!!! box-brasil "Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
     O setor agropecuário brasileiro — responsável por cerca de 24% do PIB quando considerada toda a cadeia — está intrinsecamente exposto a riscos climáticos, fitossanitários e de preços. O **Programa de Subvenção ao Prêmio do Seguro Rural (PSR)**, criado em 2003, é a principal política pública de gestão de risco agrícola no país.
 
     **Como funciona**
@@ -536,7 +536,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## 🎯 Exercícios Resolvidos
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 7.1"
+??? exercicio-resolvido "Exercício Resolvido 7.1"
     **Enunciado:** Um investidor com função de utilidade \(u(W) = \ln(W)\) possui riqueza inicial \(W_0 = 10.000\). Ele é convidado a participar de uma loteria que paga \(+6.000\) com probabilidade \(0{,}4\) e \(-4.000\) com probabilidade \(0{,}6\). Calcule o equivalente de certeza, o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
 
     **Dados:** \(u(W) = \ln(W)\), \(W_0 = 10.000\), \(L = \{(+6.000,\; 0{,}4);\; (-4.000,\; 0{,}6)\}\).
@@ -587,7 +587,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Interpretação econômica:** O investidor exigiria pelo menos R\$ 1.121 para aceitar esse risco justo — equivalente a 11,2% de sua riqueza. A discrepância entre o valor exato e a aproximação reflete que o risco não é "pequeno" em relação à riqueza (desvio padrão de R\$ 4.899 ≈ 49% de \(W_0\)), o que compromete a precisão da expansão de Taylor.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 7.2"
+??? exercicio-resolvido "Exercício Resolvido 7.2"
     **Enunciado:** Uma produtora de café no Sul de Minas possui riqueza de R\$ 500.000 e enfrenta risco de geada que, com probabilidade \(0{,}2\), causa perda de R\$ 200.000. Sua utilidade é \(u(W) = \sqrt{W}\). (a) Calcule o prêmio atuarialmente justo. (b) Verifique que a produtora contrata cobertura total. (c) Se a seguradora cobra carregamento \(\lambda = 0{,}3\), qual o prêmio de risco máximo que a produtora aceita pagar?
 
     **Dados:** \(W = 500.000\), \(d = 200.000\), \(p = 0{,}2\), \(u(W) = \sqrt{W}\).
@@ -632,7 +632,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Interpretação econômica:** A diferença \(P_{max} - P_{justo} = \text{R\$ } 4.064\) é o prêmio de risco da produtora — o valor monetário da sua aversão ao risco. Com carregamento de 30%, a seguradora cobra mais do que a produtora está disposta a pagar por cobertura total, o que pode levar à contratação de cobertura parcial (franquia elevada). Este é precisamente o mecanismo que explica por que pequenos produtores brasileiros, com baixa capacidade de absorção de risco, dependem do subsídio do PSR para viabilizar o seguro.
 
-??? exercicio-resolvido "🎯 Exercício Resolvido 7.3"
+??? exercicio-resolvido "Exercício Resolvido 7.3"
     **Enunciado:** Um investidor aloca sua riqueza entre dois ativos: ações de uma empresa de energia (\(\mu_1 = 12\%\), \(\sigma_1 = 20\%\)) e títulos do agronegócio (\(\mu_2 = 8\%\), \(\sigma_2 = 15\%\)). A correlação entre os retornos é \(\rho = -0{,}3\). (a) Calcule o retorno e a variância da carteira para \(w = 0{,}5\). (b) Encontre o peso \(w^*\) que minimiza a variância. (c) Compare o desvio padrão da carteira de variância mínima com os desvios individuais.
 
     **Dados:** \(\mu_1 = 0{,}12\), \(\sigma_1 = 0{,}20\), \(\mu_2 = 0{,}08\), \(\sigma_2 = 0{,}15\), \(\rho = -0{,}3\).
@@ -838,7 +838,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## 🔬 Pesquisa em Ação
 
-??? abstract "Chiappori, Pierre-André; Salanié, Bernard. (2000). [Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/262111). *Journal of Political Economy*, 108(1), 56–78. DOI: [10.1086/262111](https://doi.org/10.1086/262111)"
+??? pesquisa "Chiappori, Pierre-André; Salanié, Bernard. (2000). [Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/262111). *Journal of Political Economy*, 108(1), 56–78. DOI: [10.1086/262111](https://doi.org/10.1086/262111)"
     **Pergunta central:** A teoria prevê que, sob informação assimétrica, indivíduos de maior risco escolhem contratos com mais cobertura (seleção adversa) e/ou reduzem seus cuidados após a contratação (risco moral). Mas essas previsões se verificam empiricamente? Existe, de fato, uma correlação positiva entre cobertura e sinistralidade nos dados reais de seguros?
 
     **Método:** Chiappori e Salanié propuseram um teste empírico geral: se há informação assimétrica (seja por seleção adversa, risco moral ou ambos), deve existir uma correlação positiva condicional entre a cobertura contratada e a ocorrência de sinistros, mesmo após controlar todas as variáveis observáveis usadas pelas seguradoras na precificação. Utilizaram dados detalhados do mercado francês de seguros de automóvel, com informações sobre contratos, prêmios, características dos condutores e histórico de acidentes.
@@ -849,7 +849,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Relevância para o capítulo:** O artigo testa empiricamente as previsões teóricas da Seção 7.8. A correlação positiva entre cobertura e risco é uma implicação testável da teoria de informação assimétrica. A ausência dessa correlação em alguns mercados sugere que os mecanismos de triagem (*screening*) e sinalização funcionam razoavelmente bem — ou que as fontes de heterogeneidade são mais complexas do que o modelo básico prevê.
 
-??? abstract "Mehra, Rajnish; Prescott, Edward C. (1985). [The Equity Premium: A Puzzle](https://doi.org/10.1016/0304-3932(85)90061-3). *Journal of Monetary Economics*, 15(2), 145–161. DOI: [10.1016/0304-3932(85)90061-3](https://doi.org/10.1016/0304-3932(85)90061-3)"
+??? pesquisa "Mehra, Rajnish; Prescott, Edward C. (1985). [The Equity Premium: A Puzzle](https://doi.org/10.1016/0304-3932(85)90061-3). *Journal of Monetary Economics*, 15(2), 145–161. DOI: [10.1016/0304-3932(85)90061-3](https://doi.org/10.1016/0304-3932(85)90061-3)"
     **Pergunta central:** Historicamente, ações renderam cerca de 6 pontos percentuais a mais por ano do que títulos públicos nos Estados Unidos. Essa diferença — o *equity premium* — pode ser racionalizada pelo modelo padrão de utilidade esperada com aversão ao risco (CRRA)?
 
     **Método:** Mehra e Prescott calibraram um modelo de equilíbrio geral com agente representativo, utilidade CRRA e consumo estocástico baseado em dados macroeconômicos americanos de 1889 a 1978. Calcularam qual coeficiente de aversão relativa ao risco \(\gamma\) seria necessário para gerar o prêmio de risco observado nos dados.
