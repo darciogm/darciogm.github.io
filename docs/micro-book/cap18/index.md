@@ -416,7 +416,7 @@ Se a taxa discreta (anual) é \(r_d\) e a taxa contínua é \(r_c\), então:
 
 ---
 
-## VPL, Taxa de Desconto e Decisão de Investimento
+## 18.10 VPL, Taxa de Desconto e Decisão de Investimento
 
 Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa anuais conforme a tabela abaixo:
 

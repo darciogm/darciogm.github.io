@@ -225,7 +225,7 @@ Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, vi
 
 ---
 
-## 13.**7 Elasticidade de Oferta de Longo Prazo
+## 13.7 Elasticidade de Oferta de Longo Prazo
 
 A distinção entre indústrias de custos constantes, crescentes e decrescentes determina a inclinação da curva de oferta de longo prazo. Para quantificar essa responsividade da oferta ao preço, recorremos à elasticidade de oferta de longo prazo — uma medida que incorpora não apenas o ajuste de produção das firmas existentes, mas também a dinâmica de entrada e saída e o efeito sobre os preços dos insumos.
 
