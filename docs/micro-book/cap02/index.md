@@ -356,304 +356,306 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 !!! warning "Cuidado"
     Um erro comum é encontrar as CPOs, resolver o sistema e declarar a resposta como "o ótimo", sem verificar se é de fato um máximo (ou mínimo, conforme o problema). Em provas e exercícios, sempre mencione por que as condições de segunda ordem são satisfeitas — nem que seja por um argumento de quase-concavidade.
 
-### ✏️ Exercício resolvido: maximização de utilidade CES via Lagrangeano {#exercicio-ces}
+<a id="exercicio-ces"></a>
 
-Aplicamos agora o passo a passo completo a um problema que será recorrente ao longo do livro: a maximização de utilidade com preferências CES.
+!!! exercicio-resolvido "Exercício Resolvido 2.1 — Maximização de utilidade CES via Lagrangeano"
 
-#### Enunciado
+    Aplicamos agora o passo a passo completo a um problema que será recorrente ao longo do livro: a maximização de utilidade com preferências CES.
 
-Um consumidor tem preferências representadas pela função de utilidade **CES** (*Constant Elasticity of Substitution* — Elasticidade de Substituição Constante):
+    **Enunciado**
 
-\[
-U(x_1, x_2) = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \label{eq:2.10} \tag{2.10}
-\]
-
-onde \(0 < \alpha < 1\) é o parâmetro de distribuição e \(\rho < 1\), \(\rho \neq 0\), é o parâmetro de substituição. A **elasticidade de substituição** é:
-
-\[
-\sigma = \frac{1}{1 - \rho} \label{eq:2.11} \tag{2.11}
-\]
-
-O consumidor dispõe de renda \(m\) e enfrenta preços \(p_1\) e \(p_2\).
-
-**Problema:** Encontre as demandas marshallianas \(x_1^*(p_1, p_2, m)\) e \(x_2^*(p_1, p_2, m)\) usando o método do Lagrangeano.
-
-#### Resolução
-
-##### Passo 0 — Identificar o problema
-
-O problema do consumidor é:
-
-\[
-\max_{x_1, x_2} \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m \label{eq:2.12} \tag{2.12}
-\]
-
-Aqui, \(f(x_1, x_2) = U(x_1, x_2)\) é a utilidade CES, \(g(x_1, x_2) = p_1 x_1 + p_2 x_2\) é o gasto total, e \(c = m\) é a renda.
-
-##### Passo 1 — Montar o Lagrangeano
-
-O Lagrangeano é:
-
-\[
-\mathcal{L} = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \label{eq:2.13} \tag{2.13}
-\]
-
-!!! tip "Dica: simplificação por transformação monotônica"
-    A função \(z^{1/\rho}\) é uma transformação monotônica crescente de \(z\) (para \(z > 0\)). Como transformações monotônicas preservam a ordenação de preferências, maximizar \(U = (\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho})^{1/\rho}\) é equivalente a maximizar:
+    Um consumidor tem preferências representadas pela função de utilidade **CES** (*Constant Elasticity of Substitution* — Elasticidade de Substituição Constante):
 
     \[
-    V(x_1, x_2) = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} \label{eq:2.14} \tag{2.14}
+    U(x_1, x_2) = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \label{eq:2.10} \tag{2.10}
     \]
 
-    Esta simplificação elimina o expoente \(1/\rho\), tornando as derivadas parciais muito mais simples. As demandas ótimas \(x_1^*\) e \(x_2^*\) serão as mesmas (apenas o valor de \(\lambda\) mudará). Usamos a versão simplificada daqui em diante.
-
-O Lagrangeano simplificado é:
-
-\[
-\mathcal{L} = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \label{eq:2.15} \tag{2.15}
-\]
-
-##### Passo 2 — Condições de primeira ordem
-
-Derivando o Lagrangeano (2.15) em relação a \(x_1\), \(x_2\) e \(\lambda\):
-
-\[
-\frac{\partial \mathcal{L}}{\partial x_1} = \alpha \rho \, x_1^{\rho - 1} - \lambda p_1 = 0 \label{eq:2.16} \tag{2.16}
-\]
-
-\[
-\frac{\partial \mathcal{L}}{\partial x_2} = (1-\alpha) \rho \, x_2^{\rho - 1} - \lambda p_2 = 0 \label{eq:2.17} \tag{2.17}
-\]
-
-\[
-\frac{\partial \mathcal{L}}{\partial \lambda} = m - p_1 x_1 - p_2 x_2 = 0 \label{eq:2.18} \tag{2.18}
-\]
-
-A equação $\eqref{eq:2.18}$ confirma que a restrição orçamentária é satisfeita.
-
-##### Passo 3 — Resolver o sistema
-
-**Dividir (2.16) por (2.17)** para eliminar \(\lambda\):
-
-\[
-\frac{\alpha \rho \, x_1^{\rho - 1}}{(1-\alpha) \rho \, x_2^{\rho - 1}} = \frac{\lambda p_1}{\lambda p_2}
-\]
-
-Os fatores \(\rho\) e \(\lambda\) se cancelam:
-
-\[
-\frac{\alpha}{1-\alpha} \left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{p_1}{p_2} \label{eq:2.19} \tag{2.19}
-\]
-
-**Isolar a razão \(x_1/x_2\):**
-
-\[
-\left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}
-\]
-
-\[
-\frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{1/(\rho - 1)} \label{eq:2.20} \tag{2.20}
-\]
-
-!!! tip "Dica: relação entre os expoentes"
-    Vamos mostrar que \(\frac{1}{\rho - 1} = -\sigma\). Pela definição (2.11), \(\sigma = \frac{1}{1-\rho}\), logo:
+    onde \(0 < \alpha < 1\) é o parâmetro de distribuição e \(\rho < 1\), \(\rho \neq 0\), é o parâmetro de substituição. A **elasticidade de substituição** é:
 
     \[
-    \frac{1}{\rho - 1} = \frac{1}{-(1 - \rho)} = -\frac{1}{1-\rho} = -\sigma
+    \sigma = \frac{1}{1 - \rho} \label{eq:2.11} \tag{2.11}
     \]
 
-    Portanto, podemos reescrever (2.20) como:
+    O consumidor dispõe de renda \(m\) e enfrenta preços \(p_1\) e \(p_2\).
+
+    **Problema:** Encontre as demandas marshallianas \(x_1^*(p_1, p_2, m)\) e \(x_2^*(p_1, p_2, m)\) usando o método do Lagrangeano.
+
+    **Resolução**
+
+    **Passo 0 — Identificar o problema**
+
+    O problema do consumidor é:
 
     \[
-    \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{-\sigma} = \left(\frac{\alpha}{1-\alpha} \cdot \frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.21} \tag{2.21}
+    \max_{x_1, x_2} \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m \label{eq:2.12} \tag{2.12}
     \]
 
-**Expressar \(x_1\) em função de \(x_2\).** Da equação $\eqref{eq:2.21}$:
+    Aqui, \(f(x_1, x_2) = U(x_1, x_2)\) é a utilidade CES, \(g(x_1, x_2) = p_1 x_1 + p_2 x_2\) é o gasto total, e \(c = m\) é a renda.
 
-\[
-x_1 = x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.22} \tag{2.22}
-\]
+    **Passo 1 — Montar o Lagrangeano**
 
-**Substituir na restrição orçamentária (2.18):**
-
-\[
-p_1 \cdot x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} + p_2 \, x_2 = m
-\]
-
-Colocando \(x_2\) em evidência:
-
-\[
-x_2 \left[p_1 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} + p_2\right] = m
-\]
-
-Simplificando o termo entre colchetes. Observe que:
-
-\[
-p_1 \left(\frac{p_2}{p_1}\right)^{\sigma} = p_1^{1-\sigma} \, p_2^{\sigma}
-\]
-
-Logo:
-
-\[
-x_2 \left[\alpha^{\sigma}(1-\alpha)^{-\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + p_2\right] = m
-\]
-
-Multiplicando e dividindo o segundo termo por \((1-\alpha)^{\sigma} (1-\alpha)^{-\sigma} = 1\):
-
-\[
-x_2 \left[\frac{\alpha^{\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + (1-\alpha)^{\sigma} \, p_2}{(1-\alpha)^{\sigma}}\right] \cdot (1-\alpha)^{\sigma} = m
-\]
-
-Fatorando \(p_2^{\sigma}\) e reorganizando, chegamos a:
-
-\[
-x_2^* = \frac{(1-\alpha)^{\sigma} \, p_2^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \label{eq:2.23} \tag{2.23}
-\]
-
-Por simetria (ou repetindo o procedimento para \(x_1\)):
-
-\[
-x_1^* = \frac{\alpha^{\sigma} \, p_1^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \label{eq:2.24} \tag{2.24}
-\]
-
-!!! definition "Demandas marshallianas CES"
-    As funções de demanda marshallianas para o caso CES são:
+    O Lagrangeano é:
 
     \[
-    \boxed{x_i^* = \frac{\alpha_i^{\sigma} \, p_i^{-\sigma}}{\sum_{j} \alpha_j^{\sigma} \, p_j^{1-\sigma}} \cdot m}, \qquad i = 1, 2
+    \mathcal{L} = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \label{eq:2.13} \tag{2.13}
     \]
 
-    onde \(\alpha_1 = \alpha\) e \(\alpha_2 = 1-\alpha\). A fração \(\frac{\alpha_i^{\sigma} \, p_i^{1-\sigma}}{\sum_j \alpha_j^{\sigma} \, p_j^{1-\sigma}}\) é a **parcela orçamentária** (*budget share*) do bem \(i\), denotada \(s_i\).
+    !!! tip "Dica: simplificação por transformação monotônica"
+        A função \(z^{1/\rho}\) é uma transformação monotônica crescente de \(z\) (para \(z > 0\)). Como transformações monotônicas preservam a ordenação de preferências, maximizar \(U = (\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho})^{1/\rho}\) é equivalente a maximizar:
 
-Observe que as demandas são **homogêneas de grau zero** em \((p_1, p_2, m)\): multiplicar todos os preços e a renda por uma constante não altera as quantidades demandadas.
+        \[
+        V(x_1, x_2) = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} \label{eq:2.14} \tag{2.14}
+        \]
 
-##### Passo 4 — Interpretar \(\lambda^*\)
+        Esta simplificação elimina o expoente \(1/\rho\), tornando as derivadas parciais muito mais simples. As demandas ótimas \(x_1^*\) e \(x_2^*\) serão as mesmas (apenas o valor de \(\lambda\) mudará). Usamos a versão simplificada daqui em diante.
 
-Da CPO (2.16), isolamos \(\lambda\):
-
-\[
-\lambda^* = \frac{\alpha \rho \, (x_1^*)^{\rho-1}}{p_1} \label{eq:2.25} \tag{2.25}
-\]
-
-Como usamos a versão simplificada \(V = \alpha x_1^{\rho} + (1-\alpha) x_2^{\rho}\), este \(\lambda^*\) corresponde à derivada de \(V^*\) em relação a \(m\). Para obter a utilidade marginal da renda da função original \(U = V^{1/\rho}\), aplicamos a regra da cadeia.
-
-**Verificação numérica.** Considere os seguintes valores:
-
-- \(\alpha = 0{,}5\), \(\rho = 0{,}5\) (ou seja, \(\sigma = \frac{1}{1-0{,}5} = 2\))
-- \(p_1 = 2\), \(p_2 = 3\), \(m = 120\)
-
-Calculemos as demandas ótimas. O denominador comum é:
-
-\[
-D = \alpha^{\sigma} p_1^{1-\sigma} + (1-\alpha)^{\sigma} p_2^{1-\sigma} = 0{,}5^2 \cdot 2^{-1} + 0{,}5^2 \cdot 3^{-1}
-\]
-
-\[
-D = 0{,}25 \cdot 0{,}5 + 0{,}25 \cdot 0{,}333 = 0{,}125 + 0{,}0833 = 0{,}2083
-\]
-
-Demanda do bem 1:
-
-\[
-x_1^* = \frac{0{,}5^2 \cdot 2^{-2}}{0{,}2083} \cdot 120 = \frac{0{,}25 \cdot 0{,}25}{0{,}2083} \cdot 120 = \frac{0{,}0625}{0{,}2083} \cdot 120 = 0{,}3 \cdot 120 = 36
-\]
-
-Demanda do bem 2:
-
-\[
-x_2^* = \frac{0{,}5^2 \cdot 3^{-2}}{0{,}2083} \cdot 120 = \frac{0{,}25 \cdot 0{,}1111}{0{,}2083} \cdot 120 = \frac{0{,}02778}{0{,}2083} \cdot 120 = 0{,}1333 \cdot 120 = 16
-\]
-
-Verificação pela restrição orçamentária:
-
-\[
-p_1 x_1^* + p_2 x_2^* = 2 \times 36 + 3 \times 16 = 72 + 48 = 120 = m \quad \checkmark
-\]
-
-Utilidade no ótimo:
-
-\[
-U^* = \left(0{,}5 \cdot 36^{0,5} + 0{,}5 \cdot 16^{0,5}\right)^{1/0,5} = \left(0{,}5 \cdot 6 + 0{,}5 \cdot 4\right)^{2} = (3 + 2)^2 = 25
-\]
-
-Para \(\lambda^*\) (versão simplificada): da CPO (2.16),
-
-\[
-\lambda^* = \frac{0{,}5 \cdot 0{,}5 \cdot 36^{-0,5}}{2} = \frac{0{,}25 \cdot \frac{1}{6}}{2} = \frac{0{,}04167}{2} = 0{,}02083
-\]
-
-**Interpretação:** se a renda aumentar de R\$ 120 para R\$ 121, a utilidade (na versão \(V\)) aumentará em aproximadamente 0,02083 unidades.
-
-##### Passo 5 — Condições de segunda ordem
-
-A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus conjuntos de nível superior são convexos). Como a restrição orçamentária é linear — portanto define um conjunto convexo — o ponto encontrado pelas CPOs é um **máximo global** do problema restrito. A verificação explícita do hessiano orlado não é necessária neste caso.
-
-!!! example "Casos especiais da CES"
-
-    A família CES engloba, como casos-limite, as principais funções utilidade da microeconomia:
-
-    **1. \(\rho \to 0\) (\(\sigma \to 1\)): Cobb-Douglas**
-
-    Quando \(\rho \to 0\), pode-se mostrar (pela regra de L'Hôpital aplicada ao logaritmo) que:
+    O Lagrangeano simplificado é:
 
     \[
-    U \to x_1^{\alpha} \, x_2^{1-\alpha}
+    \mathcal{L} = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \label{eq:2.15} \tag{2.15}
     \]
 
-    As demandas marshallianas se reduzem a:
+    **Passo 2 — Condições de primeira ordem**
+
+    Derivando o Lagrangeano (2.15) em relação a \(x_1\), \(x_2\) e \(\lambda\):
 
     \[
-    x_1^* = \frac{\alpha \, m}{p_1}, \qquad x_2^* = \frac{(1-\alpha) \, m}{p_2}
+    \frac{\partial \mathcal{L}}{\partial x_1} = \alpha \rho \, x_1^{\rho - 1} - \lambda p_1 = 0 \label{eq:2.16} \tag{2.16}
     \]
-
-    As parcelas orçamentárias são constantes: o consumidor gasta fração \(\alpha\) da renda no bem 1 e fração \(1-\alpha\) no bem 2, independentemente dos preços.
-
-    **2. \(\rho \to -\infty\) (\(\sigma \to 0\)): Leontief (complementos perfeitos)**
-
-    Quando \(\rho \to -\infty\):
 
     \[
-    U \to \min\{x_1, x_2\}
+    \frac{\partial \mathcal{L}}{\partial x_2} = (1-\alpha) \rho \, x_2^{\rho - 1} - \lambda p_2 = 0 \label{eq:2.17} \tag{2.17}
     \]
-
-    A elasticidade de substituição é zero — os bens são consumidos em proporções fixas. A demanda é:
 
     \[
-    x_1^* = x_2^* = \frac{m}{p_1 + p_2}
+    \frac{\partial \mathcal{L}}{\partial \lambda} = m - p_1 x_1 - p_2 x_2 = 0 \label{eq:2.18} \tag{2.18}
     \]
 
-    **3. \(\rho = 1\) (\(\sigma \to \infty\)): Substitutos perfeitos**
+    A equação $\eqref{eq:2.18}$ confirma que a restrição orçamentária é satisfeita.
 
-    Para \(\rho = 1\):
+    **Passo 3 — Resolver o sistema**
+
+    **Dividir (2.16) por (2.17)** para eliminar \(\lambda\):
 
     \[
-    U = \alpha x_1 + (1-\alpha) x_2
+    \frac{\alpha \rho \, x_1^{\rho - 1}}{(1-\alpha) \rho \, x_2^{\rho - 1}} = \frac{\lambda p_1}{\lambda p_2}
     \]
 
-    Os bens são substitutos perfeitos. A demanda é uma solução de canto: o consumidor gasta toda a renda no bem com maior "valor por unidade monetária":
+    Os fatores \(\rho\) e \(\lambda\) se cancelam:
 
     \[
-    x_1^* = \frac{m}{p_1} \text{ se } \frac{\alpha}{p_1} > \frac{1-\alpha}{p_2}; \qquad x_2^* = \frac{m}{p_2} \text{ caso contrário}
+    \frac{\alpha}{1-\alpha} \left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{p_1}{p_2} \label{eq:2.19} \tag{2.19}
     \]
 
-    Se \(\frac{\alpha}{p_1} = \frac{1-\alpha}{p_2}\), qualquer combinação na restrição orçamentária é ótima.
+    **Isolar a razão \(x_1/x_2\):**
 
-    **Casos especiais da função CES**
+    \[
+    \left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}
+    \]
 
-    | Parâmetro \(\rho\) | \(\sigma\) | Função utilidade | Curvas de indiferença |
-    |---|---|---|---|
-    | \(\rho \to -\infty\) | 0 | \(\min\{x_1, x_2\}\) | Ângulo reto (L) |
-    | \(\rho \to 0\) | 1 | \(x_1^{\alpha} x_2^{1-\alpha}\) | Hipérboles "suaves" |
-    | \(\rho = 0{,}5\) | 2 | \((\alpha \sqrt{x_1} + (1-\alpha)\sqrt{x_2})^2\) | Curvas intermediárias |
-    | \(\rho = 1\) | \(\infty\) | \(\alpha x_1 + (1-\alpha) x_2\) | Retas paralelas |
+    \[
+    \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{1/(\rho - 1)} \label{eq:2.20} \tag{2.20}
+    \]
 
-#### Gráfico interativo: demandas marshallianas CES
+    !!! tip "Dica: relação entre os expoentes"
+        Vamos mostrar que \(\frac{1}{\rho - 1} = -\sigma\). Pela definição (2.11), \(\sigma = \frac{1}{1-\rho}\), logo:
 
-<iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.1 — Demandas marshallianas CES" class="graph-iframe"></iframe>
+        \[
+        \frac{1}{\rho - 1} = \frac{1}{-(1 - \rho)} = -\frac{1}{1-\rho} = -\sigma
+        \]
 
-<div class="caption-obj" markdown>
-**Figura 2.1 — Demandas marshallianas CES.** Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
-</div>
+        Portanto, podemos reescrever (2.20) como:
+
+        \[
+        \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{-\sigma} = \left(\frac{\alpha}{1-\alpha} \cdot \frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.21} \tag{2.21}
+        \]
+
+    **Expressar \(x_1\) em função de \(x_2\).** Da equação $\eqref{eq:2.21}$:
+
+    \[
+    x_1 = x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.22} \tag{2.22}
+    \]
+
+    **Substituir na restrição orçamentária (2.18):**
+
+    \[
+    p_1 \cdot x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} + p_2 \, x_2 = m
+    \]
+
+    Colocando \(x_2\) em evidência:
+
+    \[
+    x_2 \left[p_1 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} + p_2\right] = m
+    \]
+
+    Simplificando o termo entre colchetes. Observe que:
+
+    \[
+    p_1 \left(\frac{p_2}{p_1}\right)^{\sigma} = p_1^{1-\sigma} \, p_2^{\sigma}
+    \]
+
+    Logo:
+
+    \[
+    x_2 \left[\alpha^{\sigma}(1-\alpha)^{-\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + p_2\right] = m
+    \]
+
+    Multiplicando e dividindo o segundo termo por \((1-\alpha)^{\sigma} (1-\alpha)^{-\sigma} = 1\):
+
+    \[
+    x_2 \left[\frac{\alpha^{\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + (1-\alpha)^{\sigma} \, p_2}{(1-\alpha)^{\sigma}}\right] \cdot (1-\alpha)^{\sigma} = m
+    \]
+
+    Fatorando \(p_2^{\sigma}\) e reorganizando, chegamos a:
+
+    \[
+    x_2^* = \frac{(1-\alpha)^{\sigma} \, p_2^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \label{eq:2.23} \tag{2.23}
+    \]
+
+    Por simetria (ou repetindo o procedimento para \(x_1\)):
+
+    \[
+    x_1^* = \frac{\alpha^{\sigma} \, p_1^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \label{eq:2.24} \tag{2.24}
+    \]
+
+    !!! definition "Demandas marshallianas CES"
+        As funções de demanda marshallianas para o caso CES são:
+
+        \[
+        \boxed{x_i^* = \frac{\alpha_i^{\sigma} \, p_i^{-\sigma}}{\sum_{j} \alpha_j^{\sigma} \, p_j^{1-\sigma}} \cdot m}, \qquad i = 1, 2
+        \]
+
+        onde \(\alpha_1 = \alpha\) e \(\alpha_2 = 1-\alpha\). A fração \(\frac{\alpha_i^{\sigma} \, p_i^{1-\sigma}}{\sum_j \alpha_j^{\sigma} \, p_j^{1-\sigma}}\) é a **parcela orçamentária** (*budget share*) do bem \(i\), denotada \(s_i\).
+
+    Observe que as demandas são **homogêneas de grau zero** em \((p_1, p_2, m)\): multiplicar todos os preços e a renda por uma constante não altera as quantidades demandadas.
+
+    **Passo 4 — Interpretar \(\lambda^*\)**
+
+    Da CPO (2.16), isolamos \(\lambda\):
+
+    \[
+    \lambda^* = \frac{\alpha \rho \, (x_1^*)^{\rho-1}}{p_1} \label{eq:2.25} \tag{2.25}
+    \]
+
+    Como usamos a versão simplificada \(V = \alpha x_1^{\rho} + (1-\alpha) x_2^{\rho}\), este \(\lambda^*\) corresponde à derivada de \(V^*\) em relação a \(m\). Para obter a utilidade marginal da renda da função original \(U = V^{1/\rho}\), aplicamos a regra da cadeia.
+
+    **Verificação numérica.** Considere os seguintes valores:
+
+    - \(\alpha = 0{,}5\), \(\rho = 0{,}5\) (ou seja, \(\sigma = \frac{1}{1-0{,}5} = 2\))
+    - \(p_1 = 2\), \(p_2 = 3\), \(m = 120\)
+
+    Calculemos as demandas ótimas. O denominador comum é:
+
+    \[
+    D = \alpha^{\sigma} p_1^{1-\sigma} + (1-\alpha)^{\sigma} p_2^{1-\sigma} = 0{,}5^2 \cdot 2^{-1} + 0{,}5^2 \cdot 3^{-1}
+    \]
+
+    \[
+    D = 0{,}25 \cdot 0{,}5 + 0{,}25 \cdot 0{,}333 = 0{,}125 + 0{,}0833 = 0{,}2083
+    \]
+
+    Demanda do bem 1:
+
+    \[
+    x_1^* = \frac{0{,}5^2 \cdot 2^{-2}}{0{,}2083} \cdot 120 = \frac{0{,}25 \cdot 0{,}25}{0{,}2083} \cdot 120 = \frac{0{,}0625}{0{,}2083} \cdot 120 = 0{,}3 \cdot 120 = 36
+    \]
+
+    Demanda do bem 2:
+
+    \[
+    x_2^* = \frac{0{,}5^2 \cdot 3^{-2}}{0{,}2083} \cdot 120 = \frac{0{,}25 \cdot 0{,}1111}{0{,}2083} \cdot 120 = \frac{0{,}02778}{0{,}2083} \cdot 120 = 0{,}1333 \cdot 120 = 16
+    \]
+
+    Verificação pela restrição orçamentária:
+
+    \[
+    p_1 x_1^* + p_2 x_2^* = 2 \times 36 + 3 \times 16 = 72 + 48 = 120 = m \quad \checkmark
+    \]
+
+    Utilidade no ótimo:
+
+    \[
+    U^* = \left(0{,}5 \cdot 36^{0,5} + 0{,}5 \cdot 16^{0,5}\right)^{1/0,5} = \left(0{,}5 \cdot 6 + 0{,}5 \cdot 4\right)^{2} = (3 + 2)^2 = 25
+    \]
+
+    Para \(\lambda^*\) (versão simplificada): da CPO (2.16),
+
+    \[
+    \lambda^* = \frac{0{,}5 \cdot 0{,}5 \cdot 36^{-0,5}}{2} = \frac{0{,}25 \cdot \frac{1}{6}}{2} = \frac{0{,}04167}{2} = 0{,}02083
+    \]
+
+    **Interpretação:** se a renda aumentar de R\$ 120 para R\$ 121, a utilidade (na versão \(V\)) aumentará em aproximadamente 0,02083 unidades.
+
+    **Passo 5 — Condições de segunda ordem**
+
+    A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus conjuntos de nível superior são convexos). Como a restrição orçamentária é linear — portanto define um conjunto convexo — o ponto encontrado pelas CPOs é um **máximo global** do problema restrito. A verificação explícita do hessiano orlado não é necessária neste caso.
+
+    !!! example "Casos especiais da CES"
+
+        A família CES engloba, como casos-limite, as principais funções utilidade da microeconomia:
+
+        **1. \(\rho \to 0\) (\(\sigma \to 1\)): Cobb-Douglas**
+
+        Quando \(\rho \to 0\), pode-se mostrar (pela regra de L'Hôpital aplicada ao logaritmo) que:
+
+        \[
+        U \to x_1^{\alpha} \, x_2^{1-\alpha}
+        \]
+
+        As demandas marshallianas se reduzem a:
+
+        \[
+        x_1^* = \frac{\alpha \, m}{p_1}, \qquad x_2^* = \frac{(1-\alpha) \, m}{p_2}
+        \]
+
+        As parcelas orçamentárias são constantes: o consumidor gasta fração \(\alpha\) da renda no bem 1 e fração \(1-\alpha\) no bem 2, independentemente dos preços.
+
+        **2. \(\rho \to -\infty\) (\(\sigma \to 0\)): Leontief (complementos perfeitos)**
+
+        Quando \(\rho \to -\infty\):
+
+        \[
+        U \to \min\{x_1, x_2\}
+        \]
+
+        A elasticidade de substituição é zero — os bens são consumidos em proporções fixas. A demanda é:
+
+        \[
+        x_1^* = x_2^* = \frac{m}{p_1 + p_2}
+        \]
+
+        **3. \(\rho = 1\) (\(\sigma \to \infty\)): Substitutos perfeitos**
+
+        Para \(\rho = 1\):
+
+        \[
+        U = \alpha x_1 + (1-\alpha) x_2
+        \]
+
+        Os bens são substitutos perfeitos. A demanda é uma solução de canto: o consumidor gasta toda a renda no bem com maior "valor por unidade monetária":
+
+        \[
+        x_1^* = \frac{m}{p_1} \text{ se } \frac{\alpha}{p_1} > \frac{1-\alpha}{p_2}; \qquad x_2^* = \frac{m}{p_2} \text{ caso contrário}
+        \]
+
+        Se \(\frac{\alpha}{p_1} = \frac{1-\alpha}{p_2}\), qualquer combinação na restrição orçamentária é ótima.
+
+        **Casos especiais da função CES**
+
+        | Parâmetro \(\rho\) | \(\sigma\) | Função utilidade | Curvas de indiferença |
+        |---|---|---|---|
+        | \(\rho \to -\infty\) | 0 | \(\min\{x_1, x_2\}\) | Ângulo reto (L) |
+        | \(\rho \to 0\) | 1 | \(x_1^{\alpha} x_2^{1-\alpha}\) | Hipérboles "suaves" |
+        | \(\rho = 0{,}5\) | 2 | \((\alpha \sqrt{x_1} + (1-\alpha)\sqrt{x_2})^2\) | Curvas intermediárias |
+        | \(\rho = 1\) | \(\infty\) | \(\alpha x_1 + (1-\alpha) x_2\) | Retas paralelas |
+
+    **Gráfico interativo: demandas marshallianas CES**
+
+    <iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.1 — Demandas marshallianas CES" class="graph-iframe"></iframe>
+
+    <div class="caption-obj" markdown>
+    **Figura 2.1 — Demandas marshallianas CES.** Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
+    </div>
 
 Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
 
