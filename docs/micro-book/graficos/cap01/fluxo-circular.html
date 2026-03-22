@@ -199,12 +199,28 @@ function draw() {
         tooltip.style.opacity = 0;
       });
 
-    // Flow label
+    // Flow label — offset along the normal to avoid overlapping the curve
     var pathNode = p.node();
-    var midLen = pathNode.getTotalLength() / 2;
+    var totalLen = pathNode.getTotalLength();
+    var midLen = totalLen / 2;
     var midPt = pathNode.getPointAtLength(midLen);
-    svg.append('text').attr('x', midPt.x).attr('y', midPt.y - 8)
-      .attr('text-anchor','middle').attr('font-size','10px').attr('fill', f.color).attr('font-weight','600')
+    // Compute tangent direction at midpoint
+    var eps = 2;
+    var ptBefore = pathNode.getPointAtLength(Math.max(0, midLen - eps));
+    var ptAfter = pathNode.getPointAtLength(Math.min(totalLen, midLen + eps));
+    var dx = ptAfter.x - ptBefore.x;
+    var dy = ptAfter.y - ptBefore.y;
+    var len = Math.sqrt(dx*dx + dy*dy) || 1;
+    // Normal vector (perpendicular, pointing outward from center)
+    var nx = -dy / len;
+    var ny = dx / len;
+    // Push label 16px along the normal (away from curve)
+    var labelOffset = 16;
+    svg.append('text')
+      .attr('x', midPt.x + nx * labelOffset)
+      .attr('y', midPt.y + ny * labelOffset)
+      .attr('text-anchor','middle').attr('dominant-baseline','middle')
+      .attr('font-size','10px').attr('fill', f.color).attr('font-weight','600')
       .text(f.label);
 
     // Animate dot along path
