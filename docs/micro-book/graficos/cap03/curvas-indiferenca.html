@@ -127,6 +127,7 @@
           <option value="substitutos">Substitutos Perfeitos</option>
           <option value="complementos">Complementos Perfeitos</option>
           <option value="ces">CES</option>
+          <option value="quase-linear">Quase-linear</option>
         </select>
       </div>
 
@@ -213,6 +214,8 @@
         case 'ces':
           if (rho === 0) return Math.pow(x1, 0.5) * Math.pow(x2, 0.5);
           return Math.pow(Math.pow(x1, rho) + Math.pow(x2, rho), 1/rho);
+        case 'quase-linear':
+          return a * Math.sqrt(x1) + x2;
       }
     }
 
@@ -245,6 +248,9 @@
           var diff = Ur - x1r;
           if (diff <= 0) return NaN;
           return Math.pow(diff, 1/rho);
+        case 'quase-linear':
+          var val = U - a * Math.sqrt(x1);
+          return val >= 0 ? val : NaN;
       }
     }
 
@@ -263,6 +269,8 @@
         case 'ces':
           if (rho === 0) return x2 / x1;
           return Math.pow(x1 / x2, rho - 1);
+        case 'quase-linear':
+          return a / (2 * Math.sqrt(x1));
       }
     }
 
@@ -291,6 +299,8 @@
             lev = 2 + k * 3;
           } else if (type === 'cobb-douglas') {
             lev = 1 + k * 2;
+          } else if (type === 'quase-linear') {
+            lev = 2 + k * 2;
           } else {
             lev = 1 + k * 2;
           }
@@ -383,6 +393,10 @@
           var sigma = 1 / (1 - rho);
           eqTms = '\\(\\text{TMS}_{12} = (x_1/x_2)^{\\rho-1}, \\quad \\sigma = ' + sigma.toFixed(2) + '\\)';
           break;
+        case 'quase-linear':
+          eqFunc = '\\(u(x_1, x_2) = ' + a.toFixed(1) + '\\sqrt{x_1} + x_2\\)';
+          eqTms = '\\(\\text{TMS}_{12} = \\frac{' + a.toFixed(1) + '}{2\\sqrt{x_1}}\\) (indep. de \\(x_2\\))';
+          break;
       }
 
       document.getElementById('eq-func').innerHTML = eqFunc;
@@ -402,7 +416,7 @@
     function showHideControls() {
       var type = getType();
       document.getElementById('grp-rho').style.display = type === 'ces' ? '' : 'none';
-      // Alpha slider not used directly but a/b are
+      document.getElementById('grp-b').style.display = type === 'quase-linear' ? 'none' : '';
     }
 
     function update() {
