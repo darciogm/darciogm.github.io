@@ -113,7 +113,7 @@
     var dragPt = board.create('point', [3, 4], {
       name: 'P', size: 5, color: '#C8102E',
       strokeColor: '#C8102E', fillColor: '#C8102E',
-      label: { fontSize: 13, offset: [8, 8], color: '#C8102E' }
+      label: { fontSize: 13, offset: [-15, -15], anchorX: 'right', color: '#C8102E' }
     });
 
     function getAlpha() { return parseFloat(document.getElementById('slider-alpha').value); }
@@ -265,10 +265,10 @@
           annotations.push(board.create('arrow', [[px + dx1, py], [px + dx1, py + dx2]], {
             strokeColor: '#C8102E', strokeWidth: 2, fixed: true, lastArrow: { type: 2, size: 6 }
           }));
-          annotations.push(board.create('text', [px + dx1/2, py + 0.4, '\\(\\Delta x_1\\)'], {
-            fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle', useMathJax: true
+          annotations.push(board.create('text', [px + dx1/2, py + 0.8, '\\(\\Delta x_1\\)'], {
+            fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle', anchorY: 'bottom', useMathJax: true
           }));
-          annotations.push(board.create('text', [px + dx1 + 0.3, py + dx2/2, '\\(\\Delta x_2\\)'], {
+          annotations.push(board.create('text', [px + dx1 + 0.6, py + dx2/2, '\\(\\Delta x_2\\)'], {
             fontSize: 10, color: '#C8102E', fixed: true, anchorX: 'left', useMathJax: true
           }));
         }
