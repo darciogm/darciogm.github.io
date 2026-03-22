@@ -73,6 +73,10 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 
 <iframe src="../graficos/cap14/caixa-edgeworth.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 14.1** — Caixa de Edgeworth. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação para verificar melhorias de Pareto e eficiência sobre a curva de contrato.
+</p>
+
 ---
 
 ## 14.3 Troca Pura: Curva de Contrato e Núcleo
@@ -152,6 +156,8 @@ Isso garante que a combinação de bens produzida é exatamente aquela que os co
 
 As seções anteriores identificaram três tipos de eficiência: na troca (entre consumidores), na produção (entre setores) e no mix de produtos (entre o que se produz e o que se deseja consumir). A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A tabela abaixo sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
 
+**Tabela 14.1** — Condições de eficiência de Pareto
+
 | Tipo de eficiência | Condição marginal | Interpretação |
 |---|---|---|
 | **Eficiência na troca** | \(TMS_A^{12} = TMS_B^{12}\) | Os consumidores valorizam os bens na mesma proporção marginal; não há trocas mutuamente benéficas. |
@@ -168,6 +174,10 @@ As seções anteriores identificaram três tipos de eficiência: na troca (entre
 Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
 
 <iframe src="../graficos/cap14/fpp.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 14.2** — Fronteira de possibilidades de produção (FPP). Ajuste a dotação de recursos e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia.
+</p>
 
 ---
 
@@ -312,6 +322,10 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda resultante. O equilíbrio walrasiano ocorre quando o excesso de demanda é zero -- o gráfico indica o preço de equilíbrio e sinaliza a direção de ajuste necessária.
 
 <iframe src="../graficos/cap14/equilibrio-geral.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 14.3** — Equilíbrio geral walrasiano. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda. O equilíbrio ocorre quando o excesso de demanda é zero.
+</p>
 
 ---
 

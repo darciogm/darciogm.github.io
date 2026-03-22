@@ -57,7 +57,7 @@ onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de
 
     **Por que isso importa:** Com a Selic historicamente elevada no Brasil, o "preço da impaciência" é muito alto, desestimulando investimentos de longo prazo e encarecendo o crédito para famílias e empresas.
 
-### Fatores que afetam a taxa de juros
+### Tabela 18.1 — Fatores que afetam a taxa de juros
 
 | Fator | Efeito sobre \(r^*\) | Mecanismo |
 |---|---|---|
@@ -133,6 +133,10 @@ Para um poupador, o efeito líquido sobre \(C_1\) é ambíguo (semelhante à cur
 O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A reta orçamentária intertemporal tem inclinação \(-(1+r)\) e passa pelo ponto de dotação \((Y_1, Y_2)\). O consumidor escolhe o ponto de tangência com a curva de indiferença. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta e a classificação do agente como poupador ou devedor.
 
 <iframe src="../graficos/cap18/consumo-intertemporal.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 18.1** — Modelo de consumo intertemporal de dois períodos. Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.
+</p>
 
 ---
 
@@ -266,6 +270,10 @@ Por essas razões, o VPL é considerado o critério superior para avaliação de
 O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desconto. Edite os fluxos de caixa \(F_0\) a \(F_5\) e ajuste a taxa de desconto \(r\) com o slider. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR). Projetos com VPL positivo (acima da linha zero) devem ser aceitos.
 
 <iframe src="../graficos/cap18/vpl-tir.html" width="100%" height="560" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 18.2** — Valor Presente Líquido como função da taxa de desconto. O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR).
+</p>
 
 ---
 
@@ -404,7 +412,7 @@ Se a taxa discreta (anual) é \(r_d\) e a taxa contínua é \(r_c\), então:
 
 ---
 
-## Tabela: VPL, Taxa de Desconto e Decisão de Investimento
+## Tabela 18.2 — VPL, Taxa de Desconto e Decisão de Investimento
 
 Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa anuais conforme a tabela abaixo:
 
@@ -479,7 +487,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 - A Regra de Hotelling estabelece que o preço líquido de um recurso natural exaurível deve crescer à taxa de juros no equilíbrio, equilibrando o incentivo entre extrair hoje e preservar para o futuro. Juros altos aceleram a extração.
 - No Brasil, a taxa Selic historicamente elevada encarece o custo de capital, torna inviáveis projetos de longo prazo e cria viés contra investimentos produtivos, especialmente em infraestrutura e P&D.
 
-## Conceitos-Chave
+## Tabela 18.3 — Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

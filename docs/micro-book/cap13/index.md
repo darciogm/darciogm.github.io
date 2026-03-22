@@ -67,6 +67,10 @@ Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio 
 
 <iframe src="../graficos/cap13/oferta-demanda.html" width="100%" height="500" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 13.1** — Equilíbrio de oferta e demanda. Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor e do produtor.
+</p>
+
 ---
 
 ## 13.3 Determinação de Preço no Curto Prazo
@@ -183,6 +187,10 @@ Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste 
 
 <iframe src="../graficos/cap13/equilibrio-longo-prazo.html" width="100%" height="620" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 13.2** — Equilíbrio de longo prazo: firma e mercado. Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero).
+</p>
+
 ---
 
 ## 13.6 Equilíbrio de Longo Prazo: Custos Constantes, Crescentes e Decrescentes
@@ -204,6 +212,8 @@ O preço de equilíbrio de longo prazo será mais alto após o aumento na demand
 ### Indústria de custos decrescentes
 
 Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**. No Brasil, o polo tecnológico de Campinas (SP) é um possível exemplo: a concentração de empresas de TI gerou uma rede de fornecedores, mão de obra especializada e infraestrutura de telecomunicações que reduz os custos de cada firma individual à medida que a indústria cresce.
+
+**Tabela 13.1** — Tipos de indústria e oferta de longo prazo
 
 | Tipo de indústria | Efeito da entrada sobre custos | Inclinação da oferta de LP | Efeito de ↑D sobre preço de LP |
 |---|---|---|---|
@@ -368,6 +378,10 @@ Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do
 
 <iframe src="../graficos/cap13/controles-precos.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 13.3** — Controles de preços: teto e piso. Alterne entre preço máximo e mínimo e ajuste o nível do preço controlado para observar escassez ou excedente, variações nos excedentes e a perda de peso morto.
+</p>
+
 ---
 
 ## 13.11 Incidência Tributária: Quem Realmente Paga o Imposto?
@@ -470,11 +484,17 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
 <iframe src="../graficos/cap13/incidencia-tributaria.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 13.4** — Incidência tributária. Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária, a receita do governo e a perda de peso morto.
+</p>
+
 ---
 
 ## Tabela: Efeitos de Políticas sobre EC, EP e PPM
 
 A tabela abaixo resume os efeitos das principais políticas de intervenção em um mercado competitivo.
+
+**Tabela 13.2** — Efeitos de políticas sobre EC, EP e PPM
 
 | Política | Efeito sobre EC | Efeito sobre EP | Receita/Gasto Gov. | PPM |
 |---|---|---|---|---|

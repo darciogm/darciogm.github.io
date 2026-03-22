@@ -94,10 +94,11 @@ A análise da Seção 10.1 tratou de situações em que apenas um insumo varia e
 
 A resposta está nas **isoquantas** e na **taxa marginal de substituição técnica (TMST)**, ferramentas que capturam, respectivamente, o conjunto de combinações de insumos que geram o mesmo produto e a "taxa de câmbio" entre um fator e outro ao longo desse conjunto. A analogia com a teoria do consumidor é direta — e proposital: as isoquantas são o equivalente produtivo das curvas de indiferença, e a TMST desempenha papel análogo à taxa marginal de substituição.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap10/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 10.1</strong> — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.</figcaption>
-</figure>
+<iframe src="../graficos/cap10/isoquantas.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 10.1** — Mapa de isoquantas interativo. Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.
+</p>
 
 ### Isoquantas
 
@@ -180,10 +181,11 @@ O que essa expressão nos diz economicamente? A TMST decrescente reflete a dific
 
 Até aqui, nossa análise caminhou em duas direções complementares: primeiro, variamos um insumo com o outro fixo (Seção 10.1, rendimentos marginais); depois, trocamos um insumo por outro ao longo de uma isoquanta (Seção 10.2, substituição). Resta uma terceira pergunta, talvez a mais relevante para decisões estratégicas de longo prazo: o que acontece quando a firma aumenta **todos** os insumos proporcionalmente? Se uma empresa duplica suas fábricas, seus trabalhadores e toda a sua estrutura, o produto necessariamente dobra? A resposta, que define os rendimentos de escala, tem implicações profundas para a estrutura de mercado — pois determina se há vantagem em ser grande ou pequeno.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap10/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 10.2</strong> — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.</figcaption>
-</figure>
+<iframe src="../graficos/cap10/rendimentos-escala.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 10.2** — Rendimentos de escala. Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.
+</p>
 
 !!! definition "Rendimentos de escala"
     Considere a função de produção \(f(K, L)\) e um escalar \(t > 1\). Os **rendimentos de escala** classificam-se em:
@@ -460,10 +462,11 @@ As quatro funções de produção apresentadas na seção anterior descrevem a t
 
 A resposta reside no **progresso técnico** — o deslocamento da própria função de produção ao longo do tempo. Incorporar essa dimensão temporal é essencial para conectar a microeconomia da produção à macroeconomia do crescimento, e o instrumento-chave para essa conexão é o **resíduo de Solow**, que mede a parcela do crescimento do produto não explicada pela acumulação de fatores.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap10/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 10.3</strong> — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).</figcaption>
-</figure>
+<iframe src="../graficos/cap10/progresso-tecnico.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 10.3** — Progresso técnico e deslocamento de isoquantas. Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).
+</p>
 
 Formalmente, introduzimos o tempo \(t\) na função de produção. A formulação mais simples é:
 

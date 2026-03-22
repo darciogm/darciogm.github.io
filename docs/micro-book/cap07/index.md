@@ -117,10 +117,11 @@ Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando 
 
     **Por que isso importa:** É por isso que existem seguros, previdência e CLT — instituições que transferem risco de quem não quer carregar para quem consegue absorvê-lo melhor.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap07/aversao-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 7.1</strong> — Aversão ao risco e função de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.</figcaption>
-</figure>
+<iframe src="../graficos/cap07/aversao-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 7.1** — Aversão ao risco e função de utilidade. Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.
+</p>
 
 ---
 
@@ -256,10 +257,11 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
 
 A fórmula de Arrow-Pratt é notavelmente elegante: ela decompõe o "preço" que o agente paga pelo risco em dois fatores — um subjetivo (quão avesso ele é) e outro objetivo (quão arriscada é a loteria). Essa decomposição tem implicações práticas imediatas: para um dado nível de risco, agentes mais avessos pagam prêmios maiores; para um dado nível de aversão, riscos mais voláteis custam mais caro. É exatamente essa lógica que as seguradoras utilizam ao precificar apólices, cobrando mais de quem enfrenta riscos maiores e oferecendo descontos a quem demonstra menor exposição.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap07/premio-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 7.2</strong> — Prêmio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).</figcaption>
-</figure>
+<iframe src="../graficos/cap07/premio-risco.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 7.2** — Prêmio de risco de Arrow-Pratt. Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).
+</p>
 
 ---
 
@@ -277,10 +279,11 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 !!! abstract "Teorema: Seguro total sob prêmio atuarialmente justo"
     Se o prêmio do seguro é atuarialmente justo e o agente é estritamente avesso ao risco, então o contrato ótimo é de **cobertura total** (\(q^* = d\)), onde \(q\) é a indenização contratada.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap07/seguro.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 7.3</strong> — Mercado de seguros no espaço estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).</figcaption>
-</figure>
+<iframe src="../graficos/cap07/seguro.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 7.3** — Mercado de seguros no espaço estado-contingente. Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).
+</p>
 
 ### 7.6.2 Diversificação
 

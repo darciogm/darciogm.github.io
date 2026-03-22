@@ -39,7 +39,10 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
     **Por que isso importa:** Todo debate sobre política de preços — subsídios ao gás de cozinha, tarifa zero no transporte público — é, no fundo, sobre como deslocar ou rotacionar essa reta orçamentária das famílias.
 
 <iframe src="../graficos/cap04/restricao-orcamentaria.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
-*Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 4.1** — Restrição Orçamentária. Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
+</p>
 
 !!! example "Box Brasil — Combustíveis e a reta orçamentária das famílias brasileiras"
     Um exemplo concreto de como preços afetam a restrição orçamentária vem do mercado de combustíveis no Brasil. Segundo dados da [ANP](https://www.gov.br/anp) (Agência Nacional do Petróleo), o preço médio da gasolina comum ao consumidor passou de cerca de R$ 4,50/litro no início de 2020 para R$ 7,26/litro em março de 2022 — um aumento superior a 60%. Esse aumento expressivo alterou significativamente a reta orçamentária das famílias, especialmente as de renda mais baixa.
@@ -82,7 +85,10 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
     Nem todas as soluções são interiores. Para substitutos perfeitos, por exemplo, o consumidor tipicamente consome apenas o bem com maior razão \(a_i/p_i\). Soluções de canto ocorrem quando a TMS no ponto \(x_i = 0\) já é inferior (ou superior) à razão de preços, de modo que a condição de tangência não se verifica em nenhum ponto interior.
 
 <iframe src="../graficos/cap04/equilibrio-consumidor.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
-*Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 4.2** — Equilíbrio do Consumidor. Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.
+</p>
 
 ---
 
@@ -253,7 +259,10 @@ A cesta \((x_1^t, x_2^t)\) satisfaz esta restrição (verifique!), mas não é n
     O resultado pressupõe informação perfeita, ausência de custos administrativos e que o imposto *lump sum* seja viável. Na prática, impostos *lump sum* são frequentemente considerados injustos ou politicamente inviáveis. A tributação ótima (Ramsey, Mirrlees) busca conciliar eficiência e equidade sob restrições informacionais.
 
 <iframe src="../graficos/cap04/lump-sum-principle.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
-*Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 4.3** — Princípio do Montante Fixo (*Lump Sum*). Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
+</p>
 
 !!! example "Box Brasil — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
     O debate entre transferência direta e subsídio a preços tem um exemplo emblemático no Brasil: o gás de cozinha (GLP). Durante anos, o governo subsidiou o preço do GLP diretamente, o que beneficiava todos os consumidores, inclusive os de alta renda. A partir de 2016, com o programa Gás para Todos (e depois o Auxílio Gás, criado em 2021), o governo passou a adotar uma transferência monetária direta às famílias inscritas no [Cadastro Único](https://www.gov.br/mds).
@@ -413,7 +422,10 @@ Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)
     **Por que isso importa:** A dualidade permite construir medidas de bem-estar (variação compensatória e equivalente) que são essenciais para avaliar políticas públicas como reajustes de tarifas ou mudanças tributárias.
 
 <iframe src="../graficos/cap04/dualidade.html" width="100%" height="500" style="border:none; border-radius:8px;"></iframe>
-*Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 4.4** — Dualidade: Maximização de Utilidade vs. Minimização do Dispêndio. Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.
+</p>
 
 Além disso, as demandas marshalliana e hicksiana estão relacionadas:
 
@@ -519,7 +531,7 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
 
 ---
 
-## Tabela Resumo: Funções do Consumidor
+## Tabela 4.1 — Funções do Consumidor
 
 | Função | Definição | Argumentos | Propriedades principais |
 |---|---|---|---|

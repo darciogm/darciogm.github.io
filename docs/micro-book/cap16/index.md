@@ -97,8 +97,8 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 
 <iframe src="../graficos/cap16/bertrand.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 16.1** — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal. Ajuste elasticidades e custos.
 </p>
 
 ---
@@ -163,8 +163,8 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 
 <iframe src="../graficos/cap16/cournot.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 16.2** — Funções de reação de Cournot no espaço \((q_1, q_2)\). O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.
 </p>
 
 ---
@@ -208,8 +208,8 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 <iframe src="../graficos/cap16/stackelberg.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 16.3** — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora. As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).
 </p>
 
 ---
@@ -382,7 +382,7 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
     **Por que isso importa:** Programas de leniência do [CADE](https://www.gov.br/cade) exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
 
-### Fatores que facilitam a colusão
+### Tabela 16.1 — Fatores que facilitam a colusão
 
 | Fator | Efeito sobre a colusão | Mecanismo |
 |---|---|---|
@@ -516,7 +516,7 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ---
 
-## Comparação dos modelos de oligopólio
+## Tabela 16.2 — Comparação dos modelos de oligopólio
 
 A tabela a seguir resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
 
@@ -585,8 +585,8 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 <iframe src="../graficos/cap16/comparacao-oligopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 16.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 16.4** — Todos os modelos de oligopólio em um único diagrama \((Q, P)\). A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.
 </p>
 
 ---
@@ -600,7 +600,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 - A colusão tácita pode ser sustentada em jogos repetidos por meio de estratégias de gatilho, desde que o fator de desconto seja suficientemente alto. Fatores como poucas firmas, interação frequente e transparência de preços facilitam a coordenação.
 - Decisões de longo prazo como investimento em capacidade, dissuasão estratégica de entrada e inovação ampliam a análise para além dos modelos estáticos, com a taxonomia de Fudenberg-Tirole orientando a escolha entre estratégias agressivas e acomodatórias.
 
-## Conceitos-Chave
+## Tabela 16.3 — Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

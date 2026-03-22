@@ -638,7 +638,7 @@ A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus
 
     Se \(\frac{\alpha}{p_1} = \frac{1-\alpha}{p_2}\), qualquer combinação na restrição orçamentária é ótima.
 
-    A tabela abaixo resume os casos:
+    **Tabela 2.1 — Casos especiais da função CES**
 
     | Parâmetro \(\rho\) | \(\sigma\) | Função utilidade | Curvas de indiferença |
     |---|---|---|---|
@@ -652,7 +652,7 @@ A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus
 <iframe src="../graficos/cap02/ces-demandas.html" width="100%" height="750" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 2.4** — Demandas marshallianas CES. Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
+**Figura 2.1** — Demandas marshallianas CES. Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
 </p>
 
 Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
@@ -951,7 +951,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 <iframe src="../graficos/cap02/otimizacao-1var.html" width="100%" height="880" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 2.1** — Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Use os sliders para alterar curvatura e posição do pico.
+**Figura 2.2** — Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Use os sliders para alterar curvatura e posição do pico.
 </p>
 
 ### Otimização com restrição: Lagrangeano
@@ -959,7 +959,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 <iframe src="../graficos/cap02/lagrangeano.html" width="100%" height="920" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 2.2** — Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
+**Figura 2.3** — Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
 </p>
 
 ### Teorema do envelope
@@ -967,12 +967,12 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 <iframe src="../graficos/cap02/envelope.html" width="100%" height="880" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 2.3** — Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\). O teorema do envelope mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.
+**Figura 2.4** — Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\). O teorema do envelope mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.
 </p>
 
 ---
 
-## Tabela-resumo: condições de otimização
+## Tabela 2.2 — Condições de otimização
 
 | Tipo de Problema | Condição de Primeira Ordem | Condição de Segunda Ordem | Observação |
 |---|---|---|---|
@@ -1016,7 +1016,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 - As **condições de Kuhn-Tucker** generalizam o método de Lagrange para restrições de desigualdade e soluções de canto, com as condições de folga complementar determinando quais restrições são ativas.
 - O capítulo também cobre **funções homogêneas** (teorema de Euler e exaustão do produto), **concavidade e quase-concavidade** (condições de segunda ordem), integração (excedentes), otimização dinâmica (equação de Euler) e estatística (valor esperado, variância, utilidade esperada de von Neumann-Morgenstern).
 
-## Conceitos-Chave
+## Tabela 2.3 — Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

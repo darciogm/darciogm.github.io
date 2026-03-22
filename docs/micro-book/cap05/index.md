@@ -88,10 +88,11 @@ Dentro da categoria dos bens normais, existe uma segunda distinção relevante: 
 
 Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap05/curva-engel.html" width="100%" height="750" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 5.1</strong> — Curva de Engel e caminho de expansão da renda. Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).</figcaption>
-</figure>
+<iframe src="../graficos/cap05/curva-engel.html" width="100%" height="750" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 5.1** — Curva de Engel e caminho de expansão da renda. Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
+</p>
 
 ---
 
@@ -149,10 +150,11 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
     **Fontes**: ANEEL — Tarifas e Bandeiras Tarifárias; BCB — Relatório de Inflação; Agência Brasil (2022).
 
-<figure markdown="span">
-  <iframe src="../graficos/cap05/efeito-renda-substituicao.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 5.2</strong> — Decomposição dos efeitos renda e substituição. Ajuste o novo preço \(p_1'\) e observe como o efeito total (vermelho) se decompõe em efeito substituição (verde, ao longo da curva de indiferença) e efeito renda (azul, entre curvas). Alterne entre as decomposições de Hicks e Slutsky.</figcaption>
-</figure>
+<iframe src="../graficos/cap05/efeito-renda-substituicao.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 5.2** — Decomposição dos efeitos renda e substituição. Ajuste o novo preço \(p_1'\) e observe como o efeito total (vermelho) se decompõe em efeito substituição (verde, ao longo da curva de indiferença) e efeito renda (azul, entre curvas). Alterne entre as decomposições de Hicks e Slutsky.
+</p>
 
 ---
 
@@ -265,10 +267,11 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 !!! note "Relação geométrica"
     As curvas marshalliana e hicksiana se cruzam no ponto correspondente ao preço e à renda iniciais. A partir desse ponto, a marshalliana diverge conforme o efeito renda se acumula.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" width="100%" height="700" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 5.3</strong> — Demanda marshalliana (vermelha) vs hicksiana (azul). Painel superior: curvas de indiferença e restrição orçamentária no espaço de bens. Painel inferior: curvas de demanda derivadas. Para bens normais, a hicksiana é mais inclinada. A área sombreada representa o excedente do consumidor.</figcaption>
-</figure>
+<iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" width="100%" height="700" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 5.3** — Demanda marshalliana (vermelha) vs hicksiana (azul). Painel superior: curvas de indiferença e restrição orçamentária no espaço de bens. Painel inferior: curvas de demanda derivadas. Para bens normais, a hicksiana é mais inclinada. A área sombreada representa o excedente do consumidor.
+</p>
 
 ---
 
@@ -355,7 +358,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
     w_i \, s_{ij} = w_j \, s_{ji}
     \]
 
-### 5.7.5 Tabela de elasticidades estimadas para o Brasil
+### 5.7.5 Tabela 5.1 — Elasticidades estimadas para o Brasil
 
 As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
 
@@ -526,10 +529,11 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
     **Interpretação econômica:** as três medidas coincidem porque a utilidade é quase-linear — o efeito renda sobre \(x\) é zero, e as curvas marshalliana e hicksiana de \(x\) são idênticas. Em aplicações práticas, quando o bem em questão representa parcela pequena do orçamento (como um produto específico), o efeito renda é negligível e o EC marshalliano é uma boa aproximação das medidas exatas de bem-estar.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap05/excedente-consumidor.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
-  <figcaption markdown="span"><strong>Figura 5.4</strong> — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE). Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).</figcaption>
-</figure>
+<iframe src="../graficos/cap05/excedente-consumidor.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 5.4** — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE). Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).
+</p>
 
 ---
 

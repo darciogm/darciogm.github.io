@@ -165,6 +165,10 @@ onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda 
   <iframe src="../graficos/cap08/funcao-valor-pt.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.1** — Função valor da Teoria do Prospecto. Ajuste os parâmetros de curvatura e aversão à perda para observar a assimetria entre ganhos e perdas.
+</p>
+
 A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto em diferentes estudos:
 
 | Estudo | \(\alpha\) | \(\beta\) | \(\lambda\) | \(\gamma^+\) | \(\gamma^-\) | Método |
@@ -237,6 +241,10 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/ponderacao-prob.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.2** — Função de ponderação de probabilidades \(w(p)\). Compare a ponderação com a linha de 45 graus para visualizar a sobrevalorização de probabilidades pequenas e a subvalorização de probabilidades altas.
+</p>
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A mesma pessoa compra loteria e contrata seguro contra catástrofe — ambos explicados pela sobrevalorização de eventos raros.
@@ -379,6 +387,10 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
   <iframe src="../graficos/cap08/ellsberg-urnas.html" width="100%" height="620" style="border:none;border-radius:8px;"></iframe>
 </div>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.3** — Paradoxo de Ellsberg: duas urnas. Visualize como a aversão à ambiguidade leva à preferência pela urna com probabilidades conhecidas.
+</p>
+
 ### 8.3.3 Modelos de ambiguidade
 
 O Paradoxo de Ellsberg estabelece o fenômeno empírico — a aversão à ambiguidade é real e robusta. Mas como formalizá-la? Que modelos matemáticos podem acomodar a preferência sistemática por probabilidades conhecidas sem abandonar completamente a estrutura da teoria da decisão? Diversas respostas foram propostas.
@@ -466,9 +478,17 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
   <iframe src="../graficos/cap08/fehr-schmidt.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.4** — Utilidade de Fehr-Schmidt para dois jogadores. Ajuste os parâmetros de aversão à desigualdade desvantajosa e vantajosa para observar o efeito sobre a utilidade.
+</p>
+
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/ultimatum-game.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.5** — Jogo do ultimato: decisão do respondedor com preferências de Fehr-Schmidt. Observe como a aversão à inequidade determina o limiar de rejeição.
+</p>
 
 ??? example "Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
     **Enunciado:** Em um jogo do ultimato com bolo \(S = 100\), o respondedor R tem parâmetros de Fehr-Schmidt \(\alpha_R = 2\) e \(\beta_R = 0{,}4\). (a) Qual é a oferta mínima que R aceita? (b) Se o proponente P tem \(\alpha_P = 0{,}5\) e \(\beta_P = 0{,}3\), qual é a oferta que maximiza a utilidade de P, sabendo que P conhece os parâmetros de R?
@@ -594,9 +614,17 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
   <iframe src="../graficos/cap08/funcoes-desconto.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.6** — Funções de desconto: exponencial vs quasi-hiperbólico. Compare a taxa de desconto constante do modelo exponencial com o viés do presente capturado pelo parâmetro \(\beta\).
+</p>
+
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/indiferenca-intertemporal.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.7** — Curvas de indiferença intertemporal: consumo presente \(c_0\) vs consumo futuro \(c_1\). Visualize como o desconto quasi-hiperbólico altera a forma das curvas em relação ao modelo exponencial.
+</p>
 
 ??? example "Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
     **Enunciado:** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}95)\) e utilidade linear \(u(x) = x\) pode escolher entre dois bônus salariais: **Bônus A**, que paga R\$ 1.000 no mês 6, e **Bônus B**, que paga R\$ 1.200 no mês 7. (a) Qual bônus o consumidor prefere quando avaliado em \(t = 0\)? (b) Qual bônus ele prefere quando avaliado em \(t = 6\) (isto é, quando o pagamento de A é iminente)? (c) Essa preferência é consistente ao longo do tempo?
@@ -688,6 +716,10 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/nudge-default.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 </div>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 8.8** — Efeito do default na adesão. Compare as taxas de adesão sob regimes de opt-in e opt-out para diferentes programas.
+</p>
 
 **Framing e simplificação.** A forma como as informações são apresentadas importa: rótulos nutricionais em semáforo (verde/amarelo/vermelho) são mais eficazes do que tabelas numéricas detalhadas; cartas de cobrança com linguagem simplificada aumentam a taxa de pagamento de impostos.
 

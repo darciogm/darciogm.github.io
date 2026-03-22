@@ -86,10 +86,11 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 !!! note "Relevância do Dilema dos Prisioneiros"
     O Dilema dos Prisioneiros aparece em inúmeros contextos econômicos: corrida armamentista entre nações, concorrência predatória entre firmas, tragédia dos comuns na exploração de recursos naturais e guerra fiscal entre entes federativos (como veremos no Box Brasil deste capítulo). A compreensão desse jogo é fundamental para o desenho de mecanismos e instituições que alinhem incentivos individuais e coletivos.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap09/matriz-payoffs.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 9a.1</strong> — Matriz de payoffs e equilíbrio de Nash. Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.</figcaption>
-</figure>
+<iframe src="../graficos/cap09/matriz-payoffs.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 9a.1** — Matriz de payoffs e equilíbrio de Nash. Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.
+</p>
 
 O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A tabela abaixo sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
 
@@ -222,10 +223,11 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
     Logo, o equilíbrio em estratégias mistas é \(\sigma_1 = (3/4, 1/4)\), \(\sigma_2 = (1/4, 3/4)\). O payoff esperado de cada jogador é \(3/4\), inferior ao payoff em qualquer dos dois equilíbrios puros — a incerteza sobre a coordenação é custosa.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap09/estrategias-mistas.html" width="100%" height="820" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 9a.2</strong> — Equilíbrio em estratégias mistas. Para um jogo 2×2, os gráficos mostram o payoff esperado de cada jogador em função da probabilidade de mistura do oponente. O ponto de interseção determina a probabilidade de equilíbrio (princípio da indiferença). Edite os payoffs e selecione jogos predefinidos.</figcaption>
-</figure>
+<iframe src="../graficos/cap09/estrategias-mistas.html" width="100%" height="820" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 9a.2** — Equilíbrio em estratégias mistas. Para um jogo 2×2, os gráficos mostram o payoff esperado de cada jogador em função da probabilidade de mistura do oponente. O ponto de interseção determina a probabilidade de equilíbrio (princípio da indiferença). Edite os payoffs e selecione jogos predefinidos.
+</p>
 
 ### Existência de Equilíbrio (Teorema de Nash)
 
@@ -337,10 +339,11 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 
     **Por que isso importa para o Brasil:** O CADE precisa escolher o modelo correto ao simular fusões. Na aviação (Cournot por slots), fusões têm efeito grande sobre preços; no varejo online (Bertrand com diferenciação), o efeito pode ser menor.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap09/cournot-reacao.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 9a.3</strong> — Funções de reação de Cournot. Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.</figcaption>
-</figure>
+<iframe src="../graficos/cap09/cournot-reacao.html" width="100%" height="560" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 9a.3** — Funções de reação de Cournot. Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.
+</p>
 
 ### Competição de Stackelberg (líder-seguidora)
 
@@ -380,10 +383,11 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 !!! tip "Vantagem do primeiro movimento"
     A vantagem da líder em Stackelberg vem do **comprometimento crível** com uma quantidade alta. Se a líder pudesse mudar de ideia depois de observar \(q_2\), o resultado voltaria a ser Cournot. O comprometimento (ex: investimento irreversível em capacidade) é o que confere poder à líder.
 
-<figure markdown="span">
-  <iframe src="../graficos/cap09/stackelberg-reacao.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-  <figcaption markdown="span"><strong>Figura 9a.4</strong> — Stackelberg vs Cournot. A isoprofit da líder tangencia a função de reação da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de reação). Altere os custos para ver o efeito de assimetrias.</figcaption>
-</figure>
+<iframe src="../graficos/cap09/stackelberg-reacao.html" width="100%" height="520" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 9a.4** — Stackelberg vs Cournot. A isoprofit da líder tangencia a função de reação da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de reação). Altere os custos para ver o efeito de assimetrias.
+</p>
 
 ---
 
@@ -457,10 +461,11 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     Os dados de 227 episódios (Kalist, 2004; List, 2006) estão disponíveis no pacote R `Ecdat`. Explore: qual fração coopera? A decisão depende do valor em jogo? Da idade?
 
-    <figure markdown="span">
-      <iframe src="../graficos/cap09/webr-friend-foe.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption markdown="span"><strong>R Interativo 9a.1</strong> — Análise do game show Friend or Foe com dados reais. O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.</figcaption>
-    </figure>
+    <iframe src="../graficos/cap09/webr-friend-foe.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    **Figura 9a.5** — Análise do game show Friend or Foe com dados reais. O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.
+    </p>
 
 ---
 
@@ -471,10 +476,11 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Exercício sugerido:** mude \(c_2\) para 40 e compare com o caso simétrico. A firma de custo alto produz menos — qual é o efeito sobre o preço de mercado?
 
-    <figure markdown="span">
-      <iframe src="../graficos/cap09/webr-proto.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
-      <figcaption markdown="span"><strong>R Interativo 9a.2</strong> — Equilíbrio de Cournot com parâmetros editáveis. Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).</figcaption>
-    </figure>
+    <iframe src="../graficos/cap09/webr-proto.html" width="100%" height="700" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
+
+    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    **Figura 9a.6** — Equilíbrio de Cournot com parâmetros editáveis. Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).
+    </p>
 
 ---
 

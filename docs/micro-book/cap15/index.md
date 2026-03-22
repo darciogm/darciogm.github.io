@@ -59,8 +59,8 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 <iframe src="../graficos/cap15/monopolio.html" width="100%" height="550" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 15.1** — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.
 </p>
 
 ---
@@ -237,7 +237,7 @@ Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0
 !!! example "Poder de mercado e o CADE"
     O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória.
 
-### Comparação concorrência perfeita versus monopólio
+### Tabela 15.1 — Comparação concorrência perfeita versus monopólio
 
 | Variável | Concorrência Perfeita | Monopólio | Variação |
 |---|---|---|---|
@@ -420,8 +420,8 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
 <iframe src="../graficos/cap15/discriminacao-precos.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 15.2** — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
 </p>
 
 ---
@@ -511,8 +511,8 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
 <iframe src="../graficos/cap15/regulacao-monopolio.html" width="100%" height="580" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<em>Figura 15.3 — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.</em>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 15.3** — Visualize um monopólio natural com custo médio decrescente. Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.
 </p>
 
 ---
@@ -551,7 +551,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 - A regulação de monopólios naturais enfrenta um dilema fundamental: a precificação pelo custo marginal gera prejuízos (first-best impraticável), enquanto a precificação pelo custo médio ou por teto de preços (price cap) representa soluções de second-best com trade-offs entre eficiência e incentivos ao investimento.
 - As visões dinâmicas de Schumpeter (destruição criativa) e de Baumol (mercados contestáveis) relativizam os custos do monopólio, sugerindo que lucros de monopólio podem incentivar inovação e que a ameaça de entrada pode disciplinar o incumbente.
 
-## Conceitos-Chave
+## Tabela 15.2 — Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

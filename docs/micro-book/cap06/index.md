@@ -124,6 +124,10 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 
 <iframe src="../graficos/cap06/substitutos-complementos.html" width="100%" height="780" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 6.1** — Substitutos e Complementos: Efeitos Cruzados de Preço. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
+</p>
+
 ---
 
 ## 6.4 Substituibilidade com Muitos Bens
@@ -233,6 +237,10 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
 O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 
 <iframe src="../graficos/cap06/bem-composto.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 6.2** — Teorema do Bem Composto de Hicks. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)). Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
+</p>
 
 ---
 
@@ -352,7 +360,7 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 
 ---
 
-## Tabela: Classificação de Pares de Bens no Contexto Brasileiro
+## Tabela 6.1 — Classificação de Pares de Bens no Contexto Brasileiro
 
 Para consolidar as classificações discutidas nas seções anteriores, a tabela a seguir reúne pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana). Note como, em alguns casos, as duas classificações divergem — reflexo direto do efeito renda que a Equação de Slutsky separa.
 

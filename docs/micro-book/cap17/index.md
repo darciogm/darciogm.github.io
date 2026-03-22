@@ -73,6 +73,10 @@ O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamen
 
 <iframe src="../graficos/cap17/trabalho-lazer.html" width="100%" height="520" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 17.1** — Escolha ótima entre lazer e consumo. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
+</p>
+
 ---
 
 ## 17.2 Análise Matemática da Oferta de Trabalho
@@ -242,6 +246,10 @@ O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibili
 
 <iframe src="../graficos/cap17/oferta-trabalho.html" width="100%" height="800" style="border:none;border-radius:8px;"></iframe>
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 17.2** — Curva de oferta de trabalho individual e a possibilidade de backward-bending. Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
+</p>
+
 ---
 
 ## 17.4 Curva de Oferta de Trabalho do Mercado
@@ -289,7 +297,7 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
     Nesse equilíbrio, todo trabalhador que deseja trabalhar ao salário \(w^*\) encontra emprego, e toda firma que deseja contratar ao salário \(w^*\) encontra trabalhadores.
 
-### Deslocamentos das curvas
+### Tabela 17.1 — Deslocamentos das curvas
 
 | Fator | Efeito sobre a oferta | Efeito sobre a demanda | Impacto no salário |
 |---|---|---|---|
@@ -417,6 +425,10 @@ A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de
 O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (CMgL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 
 <iframe src="../graficos/cap17/monopsonio.html" width="100%" height="540" style="border:none;border-radius:8px;"></iframe>
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 17.3** — Equilíbrio monopsonístico versus competitivo no mercado de trabalho. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
+</p>
 
 ---
 
@@ -600,7 +612,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 - Sindicatos podem elevar salários acima do nível competitivo, com efeitos sobre emprego que dependem do poder de barganha e da estrutura de mercado. O salário mínimo tem efeitos ambíguos: sob monopsônio pode aumentar emprego, enquanto em mercados competitivos pode reduzi-lo.
 - A realidade brasileira é marcada por elevada informalidade, desigualdade salarial significativa, alto retorno à educação e debates persistentes sobre os efeitos do salário mínimo e da reforma trabalhista.
 
-## Conceitos-Chave
+## Tabela 17.2 — Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

@@ -107,6 +107,8 @@ Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentid
 
 Os dois pilares anteriores — *ceteris paribus* e otimização — são ferramentas para construir modelos e derivar previsões. Mas há uma distinção conceitual igualmente importante que todo economista precisa manter em mente: a diferença entre descrever o que *é* e prescrever o que *deveria ser*.
 
+**Tabela 1.1 — Análise positiva vs. normativa**
+
 | Aspecto | Análise Positiva | Análise Normativa |
 |---|---|---|
 | **Pergunta central** | "O que é?" / "O que será?" | "O que deveria ser?" |
@@ -167,7 +169,7 @@ Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, p
 
 A história do pensamento econômico pode ser lida como uma longa investigação sobre uma pergunta aparentemente simples: **o que determina o valor de um bem?** Por que o diamante custa mais que a água, embora a água seja indispensável à vida? Por que um quadro de Picasso vale milhões, enquanto uma cópia perfeita vale quase nada? Diferentes gerações de economistas ofereceram respostas distintas para essas perguntas, e a evolução dessas respostas moldou a microeconomia tal como a conhecemos hoje. A tabela a seguir apresenta uma cronologia das principais contribuições.
 
-### Cronologia das principais escolas de pensamento
+### Tabela 1.2 — Cronologia das principais escolas de pensamento
 
 | Período | Escola / Autor | Contribuição Principal |
 |---|---|---|
@@ -242,16 +244,16 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 <iframe src="../graficos/cap01/maximizacao-lucro.html" width="100%" height="920" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<strong>Figura 1.1</strong> — Receita, custo total e lucro de uma firma competitiva com \(CT(q)=10+2q+0{,}5q^2\). Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 1.1** — Receita, custo total e lucro de uma firma competitiva com \(CT(q)=10+2q+0{,}5q^2\). Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
 </p>
 
 ### Fluxo circular da renda
 
 <iframe src="../graficos/cap01/fluxo-circular.html" width="100%" height="720" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;">
-<strong>Figura 1.2</strong> — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores. Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 1.2** — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores. Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
 </p>
 
 ---
@@ -366,7 +368,7 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 - A teoria do valor evoluiu da teoria do valor-trabalho (Smith, Ricardo) para a **revolução marginalista** (Jevons, Menger, Walras), que resolveu o paradoxo da água e do diamante via utilidade marginal, culminando na síntese neoclássica de Marshall e no equilíbrio geral de Arrow-Debreu.
 - Desenvolvimentos modernos — teoria dos jogos, economia da informação, economia comportamental, teoria dos mecanismos — relaxam as suposições do modelo competitivo básico e ampliam o alcance da microeconomia.
 
-## Conceitos-Chave
+## Tabela 1.3 — Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
