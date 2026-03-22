@@ -80,14 +80,14 @@
 
     board.create('axis', [[0,0],[13,0]], {
       ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
-      name: 'G (bem público)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 11 }
+      name: '', withLabel: false
     });
+    board.create('text', [13.6, -1, 'G (bem público)'], { fontSize: 14, fixed: true, anchorX: 'left' });
     board.create('axis', [[0,0],[0,21]], {
       ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
-      name: '$', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 13 }
+      name: '', withLabel: false
     });
+    board.create('text', [-0.64, 23.5, '$'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     var a1 = 10, a2 = 6, c = 8;
 

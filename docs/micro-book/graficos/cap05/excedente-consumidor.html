@@ -201,7 +201,7 @@
     var p2 = 1;
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-3, 13.5, 28, -1.5],
+      boundingbox: [-3, 14.5, 28, -1.5],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -210,12 +210,16 @@
 
     board.create('axis', [[0,0],[24,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 5 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
+      name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,11]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 2 },
-      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board.create('text', [-1.0, 11.8, 'p_1'], { fontSize: 12, fixed: true, anchorX: 'right' });
+    board.create('text', [25, -0.5, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
 
     function getState() {
       return {

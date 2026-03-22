@@ -81,12 +81,15 @@
       boundingbox: [-16, 145, 145, -16],
       showCopyright: false, showNavigation: false,
       defaultAxes: {
-        x: { name: '\\(q_1\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true },
+        x: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 10, minorTicks: 0, label: { fontSize: 11 } } },
-        y: { name: '\\(q_2\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true },
+        y: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 10, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
+    // Manual axis labels
+    board.create('text', [140, -6, '\\(q_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-6, 140, '\\(q_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     var a = 100, c1 = 20, c2 = 20, b = 1;
 

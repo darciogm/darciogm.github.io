@@ -212,7 +212,7 @@
 
     // --- Top panel: Goods space ---
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-14, 128, 128, -14],
+      boundingbox: [-14, 133, 128, -14],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -221,12 +221,16 @@
 
     board1.create('axis', [[0,0],[110,0]], {
       ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 20 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 11 }
+      name: '', withLabel: false
     });
     board1.create('axis', [[0,0],[0,110]], {
       ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
-      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 11 }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board1.create('text', [-4, 115, 'x_2'], { fontSize: 11, fixed: true, anchorX: 'right' });
+    board1.create('text', [115, -4, 'x_1'], { fontSize: 11, fixed: true, anchorX: 'left' });
 
     // Budget line at current p1
     board1.create('segment', [
@@ -266,7 +270,7 @@
 
     // --- Bottom panel: Demand curves ---
     var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-10, 7.8, 90, -0.8],
+      boundingbox: [-10, 8.5, 90, -0.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -275,12 +279,16 @@
 
     board2.create('axis', [[0,0],[75,0]], {
       ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 11 }
+      name: '', withLabel: false
     });
     board2.create('axis', [[0,0],[0,7]], {
       ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 1 },
-      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 11 }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board2.create('text', [-3, 7.5, 'p_1'], { fontSize: 11, fixed: true, anchorX: 'right' });
+    board2.create('text', [78, -0.3, 'x_1'], { fontSize: 11, fixed: true, anchorX: 'left' });
 
     // Consumer surplus shaded area (under marshallian, above p1)
     var csPolygon = board2.create('curve', [[], []], {

@@ -94,14 +94,15 @@
 
     board.create('axis', [[0,0],[10.5,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
-      name: '\\(W\\)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 14 }
+      name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,12]], {
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
-      name: '\\(u(W)\\)', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 14 }
+      name: '', withLabel: false
     });
+    // Manual axis labels
+    board.create('text', [11, -0.5, '\\(W\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-0.5, 12.5, '\\(u(W)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     function getType() { return document.getElementById('sel-util').value; }
     function getW() { return parseFloat(document.getElementById('slider-w').value); }

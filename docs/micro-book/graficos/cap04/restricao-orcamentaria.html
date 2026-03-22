@@ -139,7 +139,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-3, 24, 24, -3],
+      boundingbox: [-3, 25.5, 24, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -149,12 +149,16 @@
     // Custom axes
     board.create('axis', [[0,0],[1,0]], {
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
-      name: '\\(x_1\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true }
+      name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,1]], {
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5, label: { anchorX: 'right', offset: [-8, 0] } },
-      name: '\\(x_2\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board.create('text', [-1.0, 24.5, '\\(x_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+    board.create('text', [24.5, -1.0, '\\(x_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
 
     // Helper to read slider values
     function getParams() {

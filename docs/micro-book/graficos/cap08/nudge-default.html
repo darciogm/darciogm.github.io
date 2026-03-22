@@ -173,8 +173,10 @@
     // Y axis
     board.create('axis', [[0, 0], [0, 1]], {
       ticks: { insertTicks: false, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
-      name: 'Adesão (%)', withLabel: true, label: { position: 'rt', offset: [-5, -20] }
+      name: '', withLabel: false
     });
+    // Manual Y-axis label
+    board.create('text', [-0.15, 114, 'Adesao (%)'], { fontSize: 12, fixed: true, anchorX: 'right' });
 
     // X axis (no numbers)
     board.create('segment', [[0, 0], [3.5, 0]], {

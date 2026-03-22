@@ -313,15 +313,20 @@
     // ---- Drawing ----
     function initBoard() {
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-8, 78, 78, -8],
+        boundingbox: [-8, 82, 78, -8],
         axis: true,
         showCopyright: false,
         showNavigation: false,
         defaultAxes: {
-          x: { name: '\\(x_1\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 14, useMathJax: true } },
-          y: { name: '\\(x_2\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 14, useMathJax: true }, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
+          x: { name: '', withLabel: false },
+          y: { name: '', withLabel: false, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
         }
       });
+
+      // Manual axis labels
+      board.create('text', [-2.5, 80, '\\(x_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+      board.create('text', [80, -2.5, '\\(x_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+
       fullUpdate();
     }
 

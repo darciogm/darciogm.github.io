@@ -155,12 +155,15 @@
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
-        x: { name: '\\(x\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true },
+        x: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 50, minorTicks: 0, label: { fontSize: 11 } } },
-        y: { name: '\\(v(x)\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true },
+        y: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 50, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
+    // Manual axis labels
+    board.create('text', [110, -5, '\\(x\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-5, 110, '\\(v(x)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     // Reference line v = x
     board.create('line', [[0,0],[1,1]], {

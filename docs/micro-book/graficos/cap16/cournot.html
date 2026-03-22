@@ -117,8 +117,10 @@
       var r2max = Math.max(0, (p.a - p.c2) / (2 * p.b)); // q2 intercept of R2
       var r2q1max = Math.max(0, (p.a - p.c2) / p.b);     // q1 intercept of R2
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(q_1\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true } });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: '\\(q_2\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true } });
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+      board.create('text', [1065, -44.8, '\\(q_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+      board.create('text', [-44.8, 1065, '\\(q_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
       // Reaction function 1: q1 = R1(q2) => plot as (R1(q2), q2)
       // In (q1, q2) space: q1 = (a-c1)/(2b) - q2/2

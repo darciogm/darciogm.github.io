@@ -73,12 +73,14 @@
 
     board.create('axis', [[0,0],[1,0]], {
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
-      name: 'Q', withLabel: true, label: { position: 'rt', offset: [5, 20] }
+      name: '', withLabel: false
     });
+    board.create('text', [897, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
     board.create('axis', [[0,0],[0,1]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 , label: { anchorX: 'right', offset: [-8, 0] } },
-      name: 'P', withLabel: true, label: { position: 'rt', offset: [-5, -20] }
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20  },
+      name: '', withLabel: false
     });
+    board.create('text', [-37, 177.4, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     function gp() {
       return {

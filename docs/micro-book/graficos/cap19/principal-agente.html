@@ -86,14 +86,14 @@
 
     board.create('axis', [[0,0],[105,0]], {
       ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10} },
-      name: 'w_L (salário ruim)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 11 }
+      name: '', withLabel: false
     });
+    board.create('text', [107, -4.5, 'w_L (salário ruim)'], { fontSize: 14, fixed: true, anchorX: 'left' });
     board.create('axis', [[0,0],[0,105]], {
       ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
-      name: 'w_H (salário bom)', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 11 }
+      name: '', withLabel: false
     });
+    board.create('text', [-4.5, 108, 'w_H (salário bom)'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     var pH=0.80, pL=0.30, cH=2.0, cL=0.5, Ubar=3.0;
 

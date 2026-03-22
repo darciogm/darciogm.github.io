@@ -177,12 +177,15 @@
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
-        x: { name: '\\(p\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true },
+        x: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11 } } },
-        y: { name: '\\(w(p)\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true },
+        y: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
+    // Manual axis labels
+    board.create('text', [1.08, -0.04, '\\(p\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-0.04, 1.08, '\\(w(p)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     // 45-degree line (linear weighting = EU)
     board.create('line', [[0,0],[1,1]], {

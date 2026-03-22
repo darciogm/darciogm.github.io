@@ -102,9 +102,11 @@
     });
 
     board.create('axis', [[0,0],[17,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 },
-      name: 'Bem 1 (X₁)', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 } });
-    board.create('axis', [[0,0],[0,17]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } },
-      name: 'Bem 2 (X₂)', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 } });
+      name: '', withLabel: false });
+    board.create('text', [17.7, -0.7, 'Bem 1 (X\u2081)'], { fontSize: 14, fixed: true, anchorX: 'left' });
+    board.create('axis', [[0,0],[0,17]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  },
+      name: '', withLabel: false });
+    board.create('text', [-0.7, 17.7, 'Bem 2 (X\u2082)'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     // Shade feasible region (under PPF)
     var feasiblePts = [];

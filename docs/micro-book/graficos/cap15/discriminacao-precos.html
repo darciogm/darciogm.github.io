@@ -152,8 +152,10 @@
       var qc = Math.max(0, (a - c) / b);
       var maxQ = a / b;
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [5, 20] } });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [-5, -20] } });
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+      board.create('text', [620, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+      board.create('text', [-26, 178, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
       // Entire area under demand above MC = producer surplus (perfect discrimination)
       var pts = [[0, a]];
@@ -197,8 +199,10 @@
 
       var maxQ = a / b;
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [5, 20] } });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [-5, -20] } });
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+      board.create('text', [620, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+      board.create('text', [-26, 178, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
       // With two-part tariff: p = c, T captures CS
       var qOpt = Math.max(0, (a - c) / b);
@@ -263,8 +267,10 @@
       var maxA = Math.max(a1, a2);
       var maxQ = Math.max(a1/b1, a2/b2);
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [5, 20] } });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [-5, -20] } });
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+      board.create('text', [620, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+      board.create('text', [-26, 178, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
       // Demand 1
       board.create('functiongraph', [function(q){ return a1 - b1*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });

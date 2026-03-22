@@ -80,18 +80,22 @@
     */
 
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-8, 145, 78, -15],
+      boundingbox: [-8, 152, 78, -15],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
 
     board.create('axis', [[0,0],[65,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
+      name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,125]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
-      name: 'y (composto)', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 11 }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board.create('text', [-3, 131, 'y (composto)'], { fontSize: 11, fixed: true, anchorX: 'right' });
+    board.create('text', [68, -5, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
 
     // Budget line: p1*x1 + alpha*y = I  =>  y = (I - p1*x1)/alpha
     var budgetLine = board.create('segment', [

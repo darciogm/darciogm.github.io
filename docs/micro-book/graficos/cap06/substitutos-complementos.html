@@ -85,17 +85,21 @@
   <script>
     // Board 1: Demand for x1 as function of p2
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-0.8, 67, 7, -7],
+      boundingbox: [-0.8, 70, 7, -7],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board1.create('axis', [[0,0],[6,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 1 },
-      name: 'p_2', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
+      name: '', withLabel: false
     });
     board1.create('axis', [[0,0],[0,55]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board1.create('text', [-0.3, 58, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'right' });
+    board1.create('text', [6.3, -2, 'p_2'], { fontSize: 12, fixed: true, anchorX: 'left' });
 
     // CES demand: x1 = I * p1^(s-1) / (p1^s + p2^s) where s = rho/(rho-1)
     function cesDemandX1(p1, p2, I, rho) {
@@ -147,17 +151,21 @@
 
     // Board 2: Goods space
     var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-7, 67, 67, -7],
+      boundingbox: [-7, 70, 67, -7],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board2.create('axis', [[0,0],[55,0]], {
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 12 }
+      name: '', withLabel: false
     });
     board2.create('axis', [[0,0],[0,55]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
+      name: '', withLabel: false
     });
+
+    // Manual axis labels
+    board2.create('text', [-2, 58, 'x_2'], { fontSize: 12, fixed: true, anchorX: 'right' });
+    board2.create('text', [58, -2, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
 
     // Budget line
     var budgetLine = board2.create('segment', [

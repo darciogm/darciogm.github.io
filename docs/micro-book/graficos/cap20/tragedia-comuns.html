@@ -86,14 +86,14 @@
 
     board.create('axis', [[0,0],[55,0]], {
       ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 1, label:{fontSize:10} },
-      name: 'Uso total (E)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 11 }
+      name: '', withLabel: false
     });
+    board.create('text', [57, -1, 'Uso total (E)'], { fontSize: 14, fixed: true, anchorX: 'left' });
     board.create('axis', [[0,0],[0,13]], {
       ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
-      name: '$/unidade', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 13 }
+      name: '', withLabel: false
     });
+    board.create('text', [-11.6, 23, '$/unidade'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     var K = 100, N = 10, w = 2.0;
 

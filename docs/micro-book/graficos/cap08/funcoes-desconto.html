@@ -173,12 +173,15 @@
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
-        x: { name: '\\(t\\) (períodos)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true },
+        x: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 5, minorTicks: 0, label: { fontSize: 11 } } },
-        y: { name: '\\(D(t)\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true },
+        y: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
+    // Manual axis labels
+    board.create('text', [24, -0.05, '\\(t\\) (periodos)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-1, 1.24, '\\(D(t)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     var delta = 0.95, betaParam = 0.70;
 

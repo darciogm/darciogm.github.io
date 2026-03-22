@@ -89,14 +89,15 @@
 
     board.create('axis', [[0,0],[17,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
-      name: '\\(W_{\\text{bom}}\\)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 13 }
+      name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,17]], {
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
-      name: '\\(W_{\\text{ruim}}\\)', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 13 }
+      name: '', withLabel: false
     });
+    // Manual axis labels
+    board.create('text', [17.5, -0.7, '\\(W_{\\text{bom}}\\)'], { fontSize: 13, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-0.7, 17.5, '\\(W_{\\text{ruim}}\\)'], { fontSize: 13, fixed: true, anchorX: 'right', useMathJax: true });
 
     function getW0() { return parseFloat(document.getElementById('slider-w0').value); }
     function getL() { return parseFloat(document.getElementById('slider-L').value); }

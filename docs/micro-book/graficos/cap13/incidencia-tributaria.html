@@ -78,8 +78,10 @@
       boundingbox: [-2, 18, 18, -2],
       axis: false, showCopyright: false, showNavigation: false
     });
-    board.create('axis', [[0,0],[16,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 14 } });
-    board.create('axis', [[0,0],[0,16]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 14 } });
+    board.create('axis', [[0,0],[16,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: '', withLabel: false });
+    board.create('text', [16.64, -0.64, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+    board.create('axis', [[0,0],[0,16]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  }, name: '', withLabel: false });
+    board.create('text', [-0.64, 16.64, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     // D: Q = 20 - bD*p => p = (20-Q)/bD
     // S: Q = -2 + bS*p => p = (Q+2)/bS

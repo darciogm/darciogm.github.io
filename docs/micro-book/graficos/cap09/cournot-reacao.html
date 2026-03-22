@@ -94,14 +94,15 @@
 
     board.create('axis', [[0,0],[100,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
-      name: '\\(q_1\\)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 14 }
+      name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,100]], {
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
-      name: '\\(q_2\\)', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 14 }
+      name: '', withLabel: false
     });
+    // Manual axis labels
+    board.create('text', [270, -10, '\\(q_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-10, 270, '\\(q_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     function getA() { return parseFloat(document.getElementById('slider-a').value); }
     function getB() { return parseFloat(document.getElementById('slider-b').value); }

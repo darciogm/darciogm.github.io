@@ -94,15 +94,19 @@ function qStar() { return price - 2; } // from P = 2 + q => q* = P - 2
 
 function initBoard() {
   board = JXG.JSXGraph.initBoard('board', {
-    boundingbox: [-7, 3000, 60, -350],
+    boundingbox: [-7, 3100, 60, -350],
     axis: true,
     showCopyright: false,
     showNavigation: false,
     defaultAxes: {
-      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [5, 20], fontSize: 14 } },
-      y: { name: '$', withLabel: true, label: { position: 'rt', offset: [-5, -20], fontSize: 14 }, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
+      x: { name: '', withLabel: false, label: { position: 'rt', offset: [5, 20], fontSize: 14 } },
+      y: { name: '', withLabel: false, label: { position: 'rt', offset: [-5, -20], fontSize: 14 }, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
     }
   });
+
+  // Manual axis labels
+  board.create('text', [-1.5, 2700, '$'], { fontSize: 14, fixed: true, anchorX: 'right' });
+  board.create('text', [54, -60, 'q'], { fontSize: 14, fixed: true, anchorX: 'left' });
 
   // Revenue
   revCurve = board.create('functiongraph', [function(q){ return price*q; }, 0, 52], {

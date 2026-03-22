@@ -94,14 +94,15 @@
     function addAxes(brd, xName, yName) {
       brd.create('axis', [[0,0],[1,0]], {
         ticks: { drawLabels: true, label: { fontSize: 10 }, ticksDistance: 0.25 },
-        name: xName, withLabel: true,
-        label: { position: 'rt', offset: [5, 20], fontSize: 12 }
+        name: '', withLabel: false
       });
       brd.create('axis', [[0,0],[0,5]], {
         ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] } },
-        name: yName, withLabel: true,
-        label: { position: 'rt', offset: [-5, -20], fontSize: 12 }
+        name: '', withLabel: false
       });
+      // Manual axis labels
+      brd.create('text', [1.08, -0.8, xName], { fontSize: 12, fixed: true, anchorX: 'left', useMathJax: true });
+      brd.create('text', [-0.04, 24, yName], { fontSize: 12, fixed: true, anchorX: 'right', useMathJax: true });
     }
     addAxes(board1, '\\(p\\)', '\\(E[u_2]\\)');
     addAxes(board2, '\\(q\\)', '\\(E[u_1]\\)');

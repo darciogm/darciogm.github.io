@@ -124,8 +124,10 @@
       if (bMode === 'homog') {
         var maxP = FIXED_BB[2]; // use fixed axis extent for drawing references
 
-        board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(p_1\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true } });
-        board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: '\\(p_2\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true } });
+        board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+        board.create('text', [277, -11.6, '\\(p_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+        board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+        board.create('text', [-11.6, 277, '\\(p_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
         // 45-degree line
         board.create('line', [[0,0],[1,1]], { strokeColor: '#ddd', strokeWidth: 1, dash: 4, point1: { visible: false }, point2: { visible: false } });
@@ -218,8 +220,10 @@
 
         var maxP = FIXED_BB[2]; // use fixed axis extent for drawing references
 
-        board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(p_1\\)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true } });
-        board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: '\\(p_2\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true } });
+        board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+        board.create('text', [277, -11.6, '\\(p_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+        board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+        board.create('text', [-11.6, 277, '\\(p_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
         // 45-degree line
         board.create('line', [[0,0],[1,1]], { strokeColor: '#ddd', strokeWidth: 1, dash: 4, point1: { visible: false }, point2: { visible: false } });

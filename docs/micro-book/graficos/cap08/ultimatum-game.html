@@ -166,12 +166,15 @@
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
-        x: { name: '\\(x\\) (oferta)', withLabel: true, label: { position: 'rt', offset: [5, 20], useMathJax: true },
+        x: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11 } } },
-        y: { name: '\\(U_R\\)', withLabel: true, label: { position: 'rt', offset: [-5, -20], useMathJax: true },
+        y: { name: '', withLabel: false,
              ticks: { insertTicks: false, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
+    // Manual axis labels
+    board.create('text', [218, -5, '\\(x\\) (oferta)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+    board.create('text', [-8, 130, '\\(U_R\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
 
     var S = 100, alphaR = 1.00, betaR = 0.60;
 

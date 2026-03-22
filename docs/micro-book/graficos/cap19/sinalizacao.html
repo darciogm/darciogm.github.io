@@ -81,14 +81,14 @@
 
     board.create('axis', [[0,0],[4300,0]], {
       ticks: { drawLabels: true, ticksDistance: 1000, minorTicks: 1, label:{fontSize:10} },
-      name: 'Educação (s)', withLabel: true,
-      label: { position: 'rt', offset: [5, 20], fontSize: 11 }
+      name: '', withLabel: false
     });
+    board.create('text', [4500, -7.6, 'Educação (s)'], { fontSize: 14, fixed: true, anchorX: 'left' });
     board.create('axis', [[0,0],[0,165]], {
       ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
-      name: 'Salário / Payoff', withLabel: true,
-      label: { position: 'rt', offset: [-5, -20], fontSize: 11 }
+      name: '', withLabel: false
     });
+    board.create('text', [-201.6, 183, 'Salário / Payoff'], { fontSize: 14, fixed: true, anchorX: 'right' });
 
     var tH = 100, tL = 50, mu = 0.50;
 
