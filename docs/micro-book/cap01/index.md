@@ -242,7 +242,7 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 ---
 
-## Gráficos interativos
+### Gráficos interativos
 
 ### Maximização de lucro da firma competitiva
 
@@ -262,7 +262,7 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 ---
 
-## Demonstração: Condição de maximização de lucro P = CMg
+## 1.7 — Demonstração: Condição de maximização de lucro P = CMg
 
 Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apresentamos a seguir uma demonstração formal completa de um dos resultados mais importantes da microeconomia: a condição de maximização de lucro da firma competitiva. Este resultado ilustra concretamente o roteiro da Seção 1.4 — definir objetivo, identificar restrições, resolver o problema de otimização e interpretar o resultado.
 

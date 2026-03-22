@@ -360,7 +360,7 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 
 ---
 
-## Classificação de Pares de Bens no Contexto Brasileiro
+## 6.8 — Classificação de Pares de Bens no Contexto Brasileiro
 
 Para consolidar as classificações discutidas nas seções anteriores, a tabela a seguir reúne pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana). Note como, em alguns casos, as duas classificações divergem — reflexo direto do efeito renda que a Equação de Slutsky separa.
 

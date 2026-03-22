@@ -597,7 +597,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Efeitos Substituição e Renda sobre a Oferta de Trabalho
+## 17.9 — Efeitos Substituição e Renda sobre a Oferta de Trabalho
 
 | Variação | Efeito Substituição | Efeito Renda | Resultado sobre \(h^*\) |
 |---|---|---|---|

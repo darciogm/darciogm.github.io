@@ -471,7 +471,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## R Interativo: Friend or Foe — Dilema dos Prisioneiros Real
+### R Interativo: Friend or Foe — Dilema dos Prisioneiros Real
 
 ??? code "R Interativo — Dados reais do game show Friend or Foe (Adams, 2025, Cap. 1)"
     No início dos anos 2000, o programa de TV *Friend or Foe* (Game Show Network) colocava duplas de participantes para jogar um Dilema dos Prisioneiros real — o *Trust Box* — com milhares de dólares em jogo. Cada jogador escolhia "Friend" (cooperar) ou "Foe" (trair). Se ambos cooperavam, dividiam o prêmio igualmente; se um traía e o outro cooperava, o traidor ficava com tudo; se ambos traíam, ninguém recebia nada.
@@ -486,7 +486,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## R Interativo: Equilíbrio de Cournot com Simulação
+### R Interativo: Equilíbrio de Cournot com Simulação
 
 ??? code "R Interativo — Cournot Duopólio: equilíbrio analítico e gráfico (Adams, 2025, Cap. 3)"
     O modelo de Cournot com demanda linear admite solução analítica. Neste box interativo, você pode alterar os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) para explorar como o equilíbrio muda. O R calcula quantidades, preço e lucros de equilíbrio e plota as funções de reação.

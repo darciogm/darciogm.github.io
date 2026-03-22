@@ -531,7 +531,7 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
 
 ---
 
-## Funções do Consumidor
+## 4.11 — Funções do Consumidor
 
 | Função | Definição | Argumentos | Propriedades principais |
 |---|---|---|---|

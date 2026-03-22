@@ -212,7 +212,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
-## R Interativo: Sinalização e Separação de Tipos
+### R Interativo: Sinalização e Separação de Tipos
 
 ??? code "R Interativo — Modelo de Spence: custo da sinalização e equilíbrio separador"
     Este box permite explorar o modelo de Spence variando os parâmetros de produtividade e custo da educação. Veja como o equilíbrio separador muda quando a diferença de custos entre tipos diminui.
@@ -225,7 +225,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
-## R Interativo: Seleção Adversa no Mercado de Seguros
+### R Interativo: Seleção Adversa no Mercado de Seguros
 
 ??? code "R Interativo — Seleção adversa: simulação de mercado de seguros (Adams, 2025, Cap. 13)"
     Este box simula um mercado de seguros de saúde com tipos heterogêneos (risco alto/baixo). Veja como a seleção adversa pode levar ao colapso do mercado quando o prêmio é calculado pela média.

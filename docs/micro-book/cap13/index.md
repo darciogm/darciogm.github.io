@@ -492,7 +492,7 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
 ---
 
-## Efeitos de Políticas sobre EC, EP e PPM
+## 13.12 — Efeitos de Políticas sobre EC, EP e PPM
 
 A tabela abaixo resume os efeitos das principais políticas de intervenção em um mercado competitivo.
 

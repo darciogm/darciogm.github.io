@@ -942,7 +942,7 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ---
 
-## Gráficos interativos
+### Gráficos interativos
 
 Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos discutidos neste capítulo. Manipular os parâmetros e observar como as soluções ótimas se ajustam é uma forma eficaz de desenvolver a intuição geométrica por trás das condições formais.
 
@@ -972,7 +972,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ---
 
-## Condições de otimização
+## 2.13 — Condições de otimização
 
 | Tipo de Problema | Condição de Primeira Ordem | Condição de Segunda Ordem | Observação |
 |---|---|---|---|

@@ -93,7 +93,7 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 
 ---
 
-## Gráfico interativo: Competição de Bertrand
+### Gráfico interativo: Competição de Bertrand
 
 <iframe src="../graficos/cap16/bertrand.html" title="Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal" class="graph-iframe"></iframe>
 
@@ -159,7 +159,7 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 
     **Por que isso importa:** O modelo de Cournot mostra que bastam poucas empresas para gerar alguma concorrência, e que o resultado melhora para o consumidor conforme o número de competidores aumenta.
 
-## Gráfico interativo: Duopólio de Cournot
+### Gráfico interativo: Duopólio de Cournot
 
 <iframe src="../graficos/cap16/cournot.html" title="Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\)" class="graph-iframe"></iframe>
 
@@ -204,7 +204,7 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 ---
 
-## Gráfico interativo: Liderança de Stackelberg
+### Gráfico interativo: Liderança de Stackelberg
 
 <iframe src="../graficos/cap16/stackelberg.html" title="Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora" class="graph-iframe"></iframe>
 
@@ -518,7 +518,7 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ---
 
-## Comparação dos modelos de oligopólio
+## 16.13 — Comparação dos modelos de oligopólio
 
 A tabela a seguir resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
 
@@ -587,7 +587,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-## Gráfico interativo: Comparação de estruturas de mercado
+### Gráfico interativo: Comparação de estruturas de mercado
 
 <iframe src="../graficos/cap16/comparacao-oligopolio.html" title="Figura 16.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\)" class="graph-iframe"></iframe>
 

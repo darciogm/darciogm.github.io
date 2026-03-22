@@ -55,7 +55,7 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 ---
 
-## Gráfico interativo: Equilíbrio de monopólio
+### Gráfico interativo: Equilíbrio de monopólio
 
 <iframe src="../graficos/cap15/monopolio.html" title="Figura 15.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner" class="graph-iframe"></iframe>
 
@@ -418,7 +418,7 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
 ---
 
-## Gráfico interativo: Discriminação de preços
+### Gráfico interativo: Discriminação de preços
 
 <iframe src="../graficos/cap15/discriminacao-precos.html" title="Figura 15.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados)" class="graph-iframe"></iframe>
 
@@ -509,7 +509,7 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
 ---
 
-## Gráfico interativo: Regulação de monopólio natural
+### Gráfico interativo: Regulação de monopólio natural
 
 <iframe src="../graficos/cap15/regulacao-monopolio.html" title="Figura 15.3 — Visualize um monopólio natural com custo médio decrescente" class="graph-iframe"></iframe>
 
