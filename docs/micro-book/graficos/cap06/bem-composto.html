@@ -89,8 +89,8 @@
       name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
     });
     board.create('axis', [[0,0],[0,125]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 },
-      name: 'y (composto)', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 11 }
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
+      name: 'y (composto)', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 11 }
     });
 
     // Budget line: p1*x1 + alpha*y = I  =>  y = (I - p1*x1)/alpha

@@ -103,8 +103,8 @@
       name: '\\(x_1\\)', withLabel: true, label: { position: 'rt', offset: [-15, 15], useMathJax: true }
     });
     board.create('axis', [[0,0],[0,1]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
-      name: '\\(x_2\\)', withLabel: true, label: { position: 'rt', offset: [15, -5], useMathJax: true }
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5, label: { anchorX: 'right', offset: [-8, 0] } },
+      name: '\\(x_2\\)', withLabel: true, label: { position: 'rt', offset: [-25, -5], useMathJax: true }
     });
 
     function getP() {

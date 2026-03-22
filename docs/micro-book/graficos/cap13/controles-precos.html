@@ -71,7 +71,7 @@
       axis: false, showCopyright: false, showNavigation: false
     });
     board.create('axis', [[0,0],[16,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15,15], fontSize: 14 } });
-    board.create('axis', [[0,0],[0,16]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15,-5], fontSize: 14 } });
+    board.create('axis', [[0,0],[0,16]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 14 } });
 
     // D: p = (20-Q)/2 => Q = 20-2p;  S: p = (Q+2)/1.5 => Q = 1.5p-2
     var aD = 20, bD = 2, aS = 2, bS = 1.5;

@@ -76,8 +76,8 @@
       name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] }
     });
     board.create('axis', [[0,0],[0,1]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
-      name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] }
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 , label: { anchorX: 'right', offset: [-8, 0] } },
+      name: 'P', withLabel: true, label: { position: 'rt', offset: [-25, -5] }
     });
 
     function gp() {

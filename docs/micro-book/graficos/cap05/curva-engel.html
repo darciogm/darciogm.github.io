@@ -199,8 +199,8 @@
       name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
     });
     board1.create('axis', [[0,0],[0,100]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 },
-      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
+      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
     });
 
     // Budget lines for multiple income levels (faded)
@@ -314,8 +314,8 @@
       name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
     });
     board2.create('axis', [[0,0],[0,210]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 40 },
-      name: 'M', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 40 },
+      name: 'M', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
     });
 
     // Engel curve for x1

@@ -102,7 +102,7 @@
       rebuildBoard();
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-15, 15] } });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: 'P', withLabel: true, label: { position: 'rt', offset: [15, -5] } });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: 'P', withLabel: true, label: { position: 'rt', offset: [-25, -5] } });
 
       // Demand
       board.create('functiongraph', [function(q){ return p.a - p.b*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });

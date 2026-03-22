@@ -92,7 +92,7 @@
       axis: false, showCopyright: false, showNavigation: false
     });
     b1.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
-    b1.create('axis', [[0,0],[0,500]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    b1.create('axis', [[0,0],[0,500]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
     b1.create('text', [21, -15, 'q'], { fontSize: 12 });
     b1.create('text', [-0.8, 480, 'CT'], { fontSize: 12, color: '#333' });
 
@@ -102,7 +102,7 @@
       axis: false, showCopyright: false, showNavigation: false
     });
     b2.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
-    b2.create('axis', [[0,0],[0,80]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    b2.create('axis', [[0,0],[0,80]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
     b2.create('text', [21, -3, 'q'], { fontSize: 12 });
     b2.create('text', [-0.8, 76, '$'], { fontSize: 12, color: '#333' });
 

@@ -99,7 +99,7 @@
       pan: { enabled: true }, zoom: { wheel: true, pinch: true }
     });
     board.create('axis', [[0,0],[8,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
-    board.create('axis', [[0,0],[0,22]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,22]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
     board.create('text', [7.5, -0.6, 'q'], { fontSize: 13, cssClass: 'axis-label' });
     board.create('text', [-0.35, 21, 'CT'], { fontSize: 13, cssClass: 'axis-label' });
 

@@ -224,8 +224,8 @@
       name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 11 }
     });
     board1.create('axis', [[0,0],[0,110]], {
-      ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 20 },
-      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 11 }
+      ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
+      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 11 }
     });
 
     // Budget line at current p1
@@ -278,8 +278,8 @@
       name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 11 }
     });
     board2.create('axis', [[0,0],[0,7]], {
-      ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 1 },
-      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 11 }
+      ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 1 },
+      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 11 }
     });
 
     // Consumer surplus shaded area (under marshallian, above p1)

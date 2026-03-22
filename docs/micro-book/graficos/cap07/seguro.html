@@ -93,9 +93,9 @@
       label: { position: 'rt', offset: [-30, -20], fontSize: 13 }
     });
     board.create('axis', [[0,0],[0,17]], {
-      ticks: { drawLabels: true, label: { fontSize: 11 } },
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
       name: '\\(W_{\\text{ruim}}\\)', withLabel: true,
-      label: { position: 'rt', offset: [-35, -5], fontSize: 13 }
+      label: { position: 'rt', offset: [-25, -5], fontSize: 13 }
     });
 
     function getW0() { return parseFloat(document.getElementById('slider-w0').value); }

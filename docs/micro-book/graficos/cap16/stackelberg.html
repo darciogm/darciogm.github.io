@@ -130,7 +130,7 @@
       var piSC = Math.max(0, (PC - p.cS) * q2C);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(q_L\\)', withLabel: true, label: { position: 'rt', offset: [-15, 15], useMathJax: true } });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '\\(q_S\\)', withLabel: true, label: { position: 'rt', offset: [15, -5], useMathJax: true } });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } }, name: '\\(q_S\\)', withLabel: true, label: { position: 'rt', offset: [-25, -5], useMathJax: true } });
 
       // Follower's reaction function: q2 = (a-cS)/(2b) - q1/2
       var rfIntercept = Math.max(0, (p.a - p.cS) / (2 * p.b));

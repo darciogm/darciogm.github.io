@@ -86,9 +86,9 @@
       label: { position: 'rt', offset: [-50, 15], fontSize: 11 }
     });
     board.create('axis', [[0,0],[0,13]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
       name: '$', withLabel: true,
-      label: { position: 'rt', offset: [15, -5], fontSize: 13 }
+      label: { position: 'rt', offset: [-25, -5], fontSize: 13 }
     });
 
     var aMB = 10, bMD = 1.0, cMB = 1.0;

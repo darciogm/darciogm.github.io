@@ -90,9 +90,9 @@
       label: { position: 'rt', offset: [-60, 15], fontSize: 11 }
     });
     board.create('axis', [[0,0],[0,105]], {
-      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
       name: 'w_H (salário bom)', withLabel: true,
-      label: { position: 'rt', offset: [10, -5], fontSize: 11 }
+      label: { position: 'rt', offset: [-25, -5], fontSize: 11 }
     });
 
     var pH=0.80, pL=0.30, cH=2.0, cL=0.5, Ubar=3.0;

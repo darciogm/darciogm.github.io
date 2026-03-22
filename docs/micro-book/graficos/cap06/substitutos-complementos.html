@@ -93,8 +93,8 @@
       name: 'p_2', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
     });
     board1.create('axis', [[0,0],[0,55]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
     });
 
     // CES demand: x1 = I * p1^(s-1) / (p1^s + p2^s) where s = rho/(rho-1)
@@ -155,8 +155,8 @@
       name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 12 }
     });
     board2.create('axis', [[0,0],[0,55]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 12 }
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [-25, -5], fontSize: 12 }
     });
 
     // Budget line
