@@ -2,13 +2,13 @@
    MICRO BOOK — Styles specific to the Microeconomia textbook
    ================================================================ */
 
-/* Graph iframes — no scrollbars, smooth transitions */
-.md-typeset iframe[src*="graficos"] {
+/* Classe padrão para iframes de gráficos interativos */
+.graph-iframe {
   display: block;
+  width: 100%;
   max-width: 100%;
   border: none;
   border-radius: 8px;
-  transition: height 0.3s ease;
 }
 
 /* ================================================================
