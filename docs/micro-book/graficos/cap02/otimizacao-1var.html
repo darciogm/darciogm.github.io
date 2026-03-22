@@ -213,7 +213,7 @@ function fpp(x) { return -2 * paramB; }
 
 function initBoard() {
   board = JXG.JSXGraph.initBoard('jxgbox', {
-    boundingbox: [-1.5, 12.5, 9, -6.5],
+    boundingbox: [-1.5, 9, 9, -6.5],
     axis: true,
     showCopyright: false,
     showNavigation: false,
@@ -225,7 +225,7 @@ function initBoard() {
 
   // Y-axis label: centered vertically, rotated 90°, bold italic
   board.create('text', [
-    -1.5 * 0.55, (12.5 + (-6.5)) / 2,
+    -1.5 * 0.55, (9 + (-6.5)) / 2,
     '<b><i>f</i>(<i>x</i>)</b>'
   ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
 
