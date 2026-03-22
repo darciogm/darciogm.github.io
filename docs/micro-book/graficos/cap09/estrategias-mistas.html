@@ -23,7 +23,8 @@
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem;   overflow: hidden;
+    }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
     .board-wrap { text-align: center; }
@@ -45,8 +46,6 @@
       .jxgbox { width: 100%; max-width: 400px; }
       .controls { width: 100%; max-width: 400px; }
     }
-    /* iframe-height-fix */
-    html,body{height:auto!important;min-height:0!important;overflow:visible!important}
   </style>
 </head>
 <body>

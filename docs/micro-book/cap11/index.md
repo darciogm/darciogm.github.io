@@ -76,7 +76,7 @@ Um resultado central é que a **maximização de lucro implica minimização de 
 
 Estabelecida a relação entre maximização de lucro e minimização de custos, mergulhamos agora na análise detalhada do problema de minimização. A estrutura é elegantemente simétrica à do problema do consumidor que minimiza gasto para atingir um dado nível de utilidade (Capítulo 5): aqui, a firma busca a combinação de insumos de menor custo que ainda permita atingir o nível de produto desejado. Essa simetria não é mera coincidência — ela reflete a dualidade fundamental entre produção e custos que percorre toda a teoria da firma.
 
-<iframe src="../graficos/cap11/minimizacao-custo.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
+<iframe src="../graficos/cap11/minimizacao-custo.html" class="grafico-alto"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 11.1** — Minimização de custo. A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(v\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.
@@ -233,7 +233,7 @@ A função custo possui as seguintes propriedades:
 
 A função custo derivada na seção anterior é uma construção abstrata que relaciona custo mínimo a preços de insumos e nível de produto. Nesta seção, fixamos os preços dos insumos e examinamos como o custo varia com a quantidade produzida — obtendo as célebres curvas de custo total, custo médio e custo marginal que constituem o instrumental básico de análise da firma. Compreender as relações geométricas entre essas curvas — em particular, por que o custo marginal cruza o custo médio em seu ponto de mínimo — é fundamental para a análise da oferta e para a resolução de problemas da ANPEC.
 
-<iframe src="../graficos/cap11/curvas-custo.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
+<iframe src="../graficos/cap11/curvas-custo.html" class="grafico-alto"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 11.2** — Curvas de custo total, médio e marginal. Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.
@@ -349,7 +349,7 @@ CT_{LP}(q) = \min_{K, L} \{wL + vK \mid f(K, L) = q\}
 
 A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colorida representa o \(CT_{CP}(q; \bar{K}) = wq^2/\bar{K} + v\bar{K}\) para um nível fixo de capital, assumindo a tecnologia Cobb-Douglas \(q = K^{0{,}5}L^{0{,}5}\). A curva azul — o custo total de longo prazo — é calculada **numericamente** como \(CT_{LP}(q) = \min_{\bar{K}} CT_{CP}(q; \bar{K})\) para cada \(q\), confirmando que a envoltória inferior emerge da minimização ponto a ponto. Nos pontos de tangência (marcadores verdes), a inclinação do \(CT_{CP}\) é igual à do \(CT_{LP}\) — uma aplicação direta do **Teorema do Envelope**: a derivada da função valor em relação ao parâmetro (\(q\)) coincide com a derivada parcial do objetivo avaliada no ótimo.
 
-<iframe src="../graficos/cap11/envoltoria-custo-total.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
+<iframe src="../graficos/cap11/envoltoria-custo-total.html" class="grafico-painel"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 11.3** — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente. Os pontos verdes indicam onde cada \(CT_{CP}\) tangencia a envoltória. Use os controles para alterar \(w\) e \(v\), e as caixas de seleção para mostrar/ocultar curvas individuais e pontos de tangência.
@@ -379,7 +379,7 @@ Propriedade importante: no ponto de tangência, o CMg de curto prazo é igual ao
 
 A Figura 11.4 complementa a visão anterior, agora em termos de **custo médio**. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória.
 
-<iframe src="../graficos/cap11/curto-longo-prazo.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
+<iframe src="../graficos/cap11/curto-longo-prazo.html" class="grafico-painel"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 11.4** — Curva envoltória: CMe de curto e longo prazo. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.

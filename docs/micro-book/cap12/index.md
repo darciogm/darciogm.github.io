@@ -124,7 +124,7 @@ onde \(\text{VPMg}\) é o **valor do produto marginal**. Cada insumo deve ser em
 
 A condição de maximização de lucro — igualar receita marginal a custo marginal — requer que compreendamos em profundidade o lado da receita. Para uma firma tomadora de preços, a receita marginal é simplesmente o preço de mercado, e a análise é direta. Mas para firmas com poder de mercado — que enfrentam uma curva de demanda negativamente inclinada —, vender uma unidade a mais exige reduzir o preço de *todas* as unidades vendidas, o que torna a receita marginal menor que o preço. A relação entre receita marginal e elasticidade-preço da demanda, que derivamos a seguir, é uma das mais úteis de toda a microeconomia, pois conecta a decisão de produção da firma à sensibilidade dos consumidores ao preço.
 
-<iframe src="../graficos/cap12/receita-marginal.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
+<iframe src="../graficos/cap12/receita-marginal.html" class="grafico-painel"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 12.1** — Receita marginal, demanda e elasticidade. A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.
@@ -174,7 +174,7 @@ onde \(\varepsilon_d = \frac{dq}{dp} \cdot \frac{p}{q}\) é a elasticidade-preç
 
 A relação entre receita marginal e elasticidade nos permite analisar firmas com poder de mercado. Voltemos agora ao caso competitivo — a firma tomadora de preços —, que é o alicerce da construção da curva de oferta. A pergunta central desta seção é: dada uma determinada estrutura de custos, para quais preços a firma decide produzir, e quanto? A resposta envolve não apenas a condição \(p = \mathrm{CMg}\), mas também uma decisão prévia e frequentemente negligenciada: a firma deve operar ou fechar as portas?
 
-<iframe src="../graficos/cap12/maximizacao-lucro.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
+<iframe src="../graficos/cap12/maximizacao-lucro.html" class="grafico-alto"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
 **Figura 12.2** — Maximização de lucro para firma tomadora de preços. Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).

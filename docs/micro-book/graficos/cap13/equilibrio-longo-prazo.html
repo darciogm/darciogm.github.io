@@ -20,7 +20,8 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem;   overflow: hidden;
+    }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: .5rem; text-align: center; }
     .panels { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
     .panel-label { text-align: center; font-size: .9rem; font-weight: 700; color: #333; margin-bottom: .3rem; }
@@ -37,8 +38,6 @@
     @media (max-width: 760px) {
       #firmbox, #marketbox { width: 100%; max-width: 340px; }
     }
-    /* iframe-height-fix */
-    html,body{height:auto!important;min-height:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
