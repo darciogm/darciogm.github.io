@@ -15,7 +15,7 @@ A exposição segue Nicholson e Snyder (2017, Cap. 4), complementada por Varian 
 O consumidor resolve o seguinte problema de **maximização da utilidade**:
 
 \[
-\max_{x_1, x_2} \; u(x_1, x_2) \quad \text{sujeito a} \quad p_1 x_1 + p_2 x_2 \leq I, \quad x_1 \geq 0, \quad x_2 \geq 0, \tag{4.1.1}
+\max_{x_1, x_2} \; u(x_1, x_2) \quad \text{sujeito a} \quad p_1 x_1 + p_2 x_2 \leq I, \quad x_1 \geq 0, \quad x_2 \geq 0, \label{eq:4.1.1} \tag{4.1.1}
 \]
 
 onde \(p_1, p_2 > 0\) são os preços dos bens e \(I > 0\) é a renda nominal do consumidor.
@@ -24,7 +24,7 @@ onde \(p_1, p_2 > 0\) são os preços dos bens e \(I > 0\) é a renda nominal do
     O **conjunto orçamentário** é definido como:
 
     \[
-    B(p_1, p_2, I) = \{(x_1, x_2) \in \mathbb{R}^2_+ : p_1 x_1 + p_2 x_2 \leq I\}. \tag{4.1.2}
+    B(p_1, p_2, I) = \{(x_1, x_2) \in \mathbb{R}^2_+ : p_1 x_1 + p_2 x_2 \leq I\}. \label{eq:4.1.2} \tag{4.1.2}
     \]
 
     A fronteira deste conjunto, \(p_1 x_1 + p_2 x_2 = I\), é a **reta orçamentária**. Sua inclinação é \(-p_1/p_2\), refletindo o **custo de oportunidade** de uma unidade do bem 1 em termos do bem 2.
@@ -60,7 +60,7 @@ Sob monotonicidade das preferências, a restrição orçamentária é satisfeita
 Antes de recorrer ao ferramental analítico do Lagrangeano, vale desenvolver a intuição geométrica do problema. A visualização gráfica não é apenas uma ilustração — ela revela a lógica econômica da otimização de forma imediata e permite antecipar resultados que, pela via algébrica, só emergem após algumas manipulações. Geometricamente, o consumidor busca a curva de indiferença mais alta que ainda toca o conjunto orçamentário. Para uma **solução interior** (\(x_1^* > 0\) e \(x_2^* > 0\)), a condição necessária é a **tangência**:
 
 \[
-\text{TMS}_{12} = \frac{p_1}{p_2}. \tag{4.2.3}
+\text{TMS}_{12} = \frac{p_1}{p_2}. \label{eq:4.2.3} \tag{4.2.3}
 \]
 
 !!! definition "Condição de tangência"
@@ -69,7 +69,7 @@ Antes de recorrer ao ferramental analítico do Lagrangeano, vale desenvolver a i
 A condição de tangência pode ser reescrita em termos de utilidade marginal ponderada pelo preço:
 
 \[
-\frac{\text{UMg}_1}{p_1} = \frac{\text{UMg}_2}{p_2}. \tag{4.2.4}
+\frac{\text{UMg}_1}{p_1} = \frac{\text{UMg}_2}{p_2}. \label{eq:4.2.4} \tag{4.2.4}
 \]
 
 Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última unidade monetária gasta em cada bem produz o mesmo incremento de utilidade.
@@ -99,19 +99,19 @@ A análise gráfica da seção anterior é intuitiva e poderosa, mas limitada a 
 Para \(n\) bens, o problema do consumidor é:
 
 \[
-\max_{\mathbf{x} \in \mathbb{R}^n_+} \; u(\mathbf{x}) \quad \text{sujeito a} \quad \mathbf{p} \cdot \mathbf{x} \leq I. \tag{4.3.5}
+\max_{\mathbf{x} \in \mathbb{R}^n_+} \; u(\mathbf{x}) \quad \text{sujeito a} \quad \mathbf{p} \cdot \mathbf{x} \leq I. \label{eq:4.3.5} \tag{4.3.5}
 \]
 
 Montamos o **lagrangeano**:
 
 \[
-\mathcal{L}(\mathbf{x}, \lambda) = u(\mathbf{x}) + \lambda \left(I - \sum_{i=1}^{n} p_i x_i\right). \tag{4.3.6}
+\mathcal{L}(\mathbf{x}, \lambda) = u(\mathbf{x}) + \lambda \left(I - \sum_{i=1}^{n} p_i x_i\right). \label{eq:4.3.6} \tag{4.3.6}
 \]
 
 As **condições de primeira ordem** (CPOs) para uma solução interior são:
 
 \[
-\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial u}{\partial x_i} - \lambda p_i = 0, \quad i = 1, 2, \ldots, n, \tag{4.3.7}
+\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial u}{\partial x_i} - \lambda p_i = 0, \quad i = 1, 2, \ldots, n, \label{eq:4.3.7} \tag{4.3.7}
 \]
 
 \[
@@ -121,7 +121,7 @@ As **condições de primeira ordem** (CPOs) para uma solução interior são:
 Das CPOs, obtemos:
 
 \[
-\frac{\text{UMg}_i}{p_i} = \lambda, \quad \forall \, i. \tag{4.3.8}
+\frac{\text{UMg}_i}{p_i} = \lambda, \quad \forall \, i. \label{eq:4.3.8} \tag{4.3.8}
 \]
 
 Este resultado merece atenção: ele generaliza para \(n\) bens a condição de igualdade da utilidade marginal por real gasto que derivamos graficamente para dois bens. Em palavras, no ótimo, o último real gasto em *qualquer* bem produz exatamente o mesmo acréscimo de utilidade — e esse acréscimo comum é precisamente \(\lambda\).
@@ -136,7 +136,7 @@ O **multiplicador de Lagrange** \(\lambda\) tem, portanto, interpretação econ�
 Resolvido o problema de otimização, as quantidades ótimas de cada bem ficam expressas como funções dos preços e da renda. Essas funções — que encapsulam toda a informação sobre o comportamento do consumidor diante de variações em preços e renda — são as **funções de demanda marshalliana** (ou walrasiana):
 
 \[
-x_i^* = x_i(p_1, p_2, \ldots, p_n, I), \quad i = 1, \ldots, n. \tag{4.3.9}
+x_i^* = x_i(p_1, p_2, \ldots, p_n, I), \quad i = 1, \ldots, n. \label{eq:4.3.9} \tag{4.3.9}
 \]
 
 Essas funções expressam a quantidade ótima de cada bem como função dos preços e da renda.
@@ -220,7 +220,7 @@ As demandas marshallianas nos dizem *o que* o consumidor compra dados preços e 
     A **função de utilidade indireta** é o valor ótimo da utilidade como função dos preços e da renda:
 
     \[
-    V(p_1, p_2, I) = u\big(x_1^*(p_1, p_2, I), \; x_2^*(p_1, p_2, I)\big) = \max_{\mathbf{x} \in B(\mathbf{p}, I)} u(\mathbf{x}). \tag{4.4.10}
+    V(p_1, p_2, I) = u\big(x_1^*(p_1, p_2, I), \; x_2^*(p_1, p_2, I)\big) = \max_{\mathbf{x} \in B(\mathbf{p}, I)} u(\mathbf{x}). \label{eq:4.4.10} \tag{4.4.10}
     \]
 
 **Propriedades de \(V(\mathbf{p}, I)\)**:
@@ -313,7 +313,7 @@ Até aqui, formulamos o problema do consumidor de uma única maneira: dado um or
 O **dual** do problema de maximização da utilidade é, portanto, o problema de **minimização do dispêndio** (ou minimização do gasto):
 
 \[
-\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{sujeito a} \quad u(x_1, x_2) \geq \bar{u}, \quad x_1 \geq 0, \quad x_2 \geq 0. \tag{4.6.11}
+\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{sujeito a} \quad u(x_1, x_2) \geq \bar{u}, \quad x_1 \geq 0, \quad x_2 \geq 0. \label{eq:4.6.11} \tag{4.6.11}
 \]
 
 O consumidor busca a forma mais barata de atingir um nível de utilidade pré-especificado \(\bar{u}\).
@@ -337,7 +337,7 @@ u(x_1, x_2) = \bar{u}.
 Dividindo as CPOs dos bens 1 e 2:
 
 \[
-\frac{p_1}{p_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \text{TMS}_{12}. \tag{4.6.12}
+\frac{p_1}{p_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \text{TMS}_{12}. \label{eq:4.6.12} \tag{4.6.12}
 \]
 
 A condição de tangência é **idêntica** à do problema primal, confirmando a equivalência entre os dois problemas. Esse resultado não é uma coincidência: primal e dual são duas perspectivas sobre a mesma decisão ótima, e o ponto de tangência entre a curva de indiferença e a reta orçamentária permanece o mesmo, independentemente de qual dos dois problemas se resolve.
@@ -347,7 +347,7 @@ A condição de tangência é **idêntica** à do problema primal, confirmando a
 A solução do problema de minimização define as **funções de demanda hicksiana** (ou compensada):
 
 \[
-h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2. \tag{4.6.13}
+h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2. \label{eq:4.6.13} \tag{4.6.13}
 \]
 
 A demanda hicksiana recebe o nome de "compensada" porque mantém o nível de utilidade fixo — como se o consumidor fosse **compensado** por variações de preço de modo a permanecer na mesma curva de indiferença.
@@ -378,7 +378,7 @@ Assim como a função de utilidade indireta sintetiza o *valor ótimo* do proble
     A **função dispêndio** é o custo mínimo de atingir o nível de utilidade \(\bar{u}\) aos preços vigentes:
 
     \[
-    E(p_1, p_2, \bar{u}) = p_1 \, h_1(p_1, p_2, \bar{u}) + p_2 \, h_2(p_1, p_2, \bar{u}) = \min_{\mathbf{x}: u(\mathbf{x}) \geq \bar{u}} \mathbf{p} \cdot \mathbf{x}. \tag{4.7.14}
+    E(p_1, p_2, \bar{u}) = p_1 \, h_1(p_1, p_2, \bar{u}) + p_2 \, h_2(p_1, p_2, \bar{u}) = \min_{\mathbf{x}: u(\mathbf{x}) \geq \bar{u}} \mathbf{p} \cdot \mathbf{x}. \label{eq:4.7.14} \tag{4.7.14}
     \]
 
 **Propriedades de \(E(\mathbf{p}, \bar{u})\)**:
@@ -409,11 +409,11 @@ Assim como a função de utilidade indireta sintetiza o *valor ótimo* do proble
 Apresentamos até aqui a função de utilidade indireta \(V\) (que nasce do problema primal) e a função dispêndio \(E\) (que nasce do problema dual). Mas qual é a relação precisa entre essas duas funções? A resposta é uma das ideias mais elegantes da teoria do consumidor: \(V\) e \(E\) são **inversas** uma da outra — e as identidades que formalizam essa relação constituem o elo central de toda a estrutura dual. As seguintes identidades conectam \(V\) e \(E\):
 
 \[
-V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u} \qquad \text{(a renda mínima para atingir } \bar{u} \text{ gera utilidade exatamente } \bar{u}\text{)}, \tag{4.8.15}
+V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u} \qquad \text{(a renda mínima para atingir } \bar{u} \text{ gera utilidade exatamente } \bar{u}\text{)}, \label{eq:4.8.15} \tag{4.8.15}
 \]
 
 \[
-E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a utilidade máxima com renda } I \text{ é exatamente } I\text{)}. \tag{4.8.16}
+E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a utilidade máxima com renda } I \text{ é exatamente } I\text{)}. \label{eq:4.8.16} \tag{4.8.16}
 \]
 
 Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)\) são **inversas** uma da outra (fixados os preços).
@@ -434,11 +434,11 @@ Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)
 Além disso, as demandas marshalliana e hicksiana estão relacionadas:
 
 \[
-x_i(\mathbf{p}, I) = h_i(\mathbf{p}, V(\mathbf{p}, I)), \tag{4.8.17}
+x_i(\mathbf{p}, I) = h_i(\mathbf{p}, V(\mathbf{p}, I)), \label{eq:4.8.17} \tag{4.8.17}
 \]
 
 \[
-h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u})). \tag{4.8.18}
+h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u})). \label{eq:4.8.18} \tag{4.8.18}
 \]
 
 A primeira identidade diz que avaliar a demanda hicksiana no nível de utilidade ótimo reproduz a demanda marshalliana. A segunda diz que avaliar a demanda marshalliana na renda mínima necessária reproduz a demanda hicksiana.
@@ -478,7 +478,7 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
     Se \(V(\mathbf{p}, I)\) é diferenciável em \((\mathbf{p}, I)\) e \(\partial V / \partial I \neq 0\), então a demanda marshalliana do bem \(i\) é dada por:
 
     \[
-    x_i(\mathbf{p}, I) = -\frac{\partial V / \partial p_i}{\partial V / \partial I}. \tag{4.9.19}
+    x_i(\mathbf{p}, I) = -\frac{\partial V / \partial p_i}{\partial V / \partial I}. \label{eq:4.9.19} \tag{4.9.19}
     \]
 
 !!! proof "Demonstração"
@@ -603,7 +603,7 @@ p_1 x_1 + p_2 \cdot \frac{b\, p_1}{a\, p_2}\, x_1 = I \quad \Longrightarrow \qua
 Portanto, as **demandas marshallianas** são:
 
 \[
-\boxed{x_1^* = \frac{a}{a+b}\,\frac{I}{p_1}, \qquad x_2^* = \frac{b}{a+b}\,\frac{I}{p_2}} \tag{4.10.20}
+\boxed{x_1^* = \frac{a}{a+b}\,\frac{I}{p_1}, \qquad x_2^* = \frac{b}{a+b}\,\frac{I}{p_2}} \label{eq:4.10.20} \tag{4.10.20}
 \]
 
 O consumidor gasta a fração \(a/(a+b)\) da renda no bem 1 e \(b/(a+b)\) no bem 2. Quando \(a+b=1\), as frações coincidem com os expoentes.
@@ -611,7 +611,7 @@ O consumidor gasta a fração \(a/(a+b)\) da renda no bem 1 e \(b/(a+b)\) no bem
 **Utilidade indireta.** Substituindo as demandas na função utilidade:
 
 \[
-V(p_1,p_2,I) = \left(\frac{a}{a+b}\right)^a \left(\frac{b}{a+b}\right)^b \frac{I^{a+b}}{p_1^a\, p_2^b} \tag{4.10.21}
+V(p_1,p_2,I) = \left(\frac{a}{a+b}\right)^a \left(\frac{b}{a+b}\right)^b \frac{I^{a+b}}{p_1^a\, p_2^b} \label{eq:4.10.21} \tag{4.10.21}
 \]
 
 **Demanda Hicksiana.** O consumidor resolve o dual:
@@ -629,7 +629,7 @@ x_1^a \left(\frac{b\, p_1}{a\, p_2}\, x_1\right)^b = \bar{u} \quad \Longrightarr
 Resolvendo para \(x_1\):
 
 \[
-\boxed{h_1 = \bar{u}^{\,1/(a+b)} \left(\frac{a\, p_2}{b\, p_1}\right)^{b/(a+b)}, \qquad h_2 = \bar{u}^{\,1/(a+b)} \left(\frac{b\, p_1}{a\, p_2}\right)^{a/(a+b)}} \tag{4.10.22}
+\boxed{h_1 = \bar{u}^{\,1/(a+b)} \left(\frac{a\, p_2}{b\, p_1}\right)^{b/(a+b)}, \qquad h_2 = \bar{u}^{\,1/(a+b)} \left(\frac{b\, p_1}{a\, p_2}\right)^{a/(a+b)}} \label{eq:4.10.22} \tag{4.10.22}
 \]
 
 **Função dispêndio.** Avaliando o gasto mínimo:
@@ -653,7 +653,7 @@ Passemos agora ao caso diametralmente oposto ao da Cobb-Douglas em termos de sub
 Formalmente:
 
 \[
-\boxed{x_1^* = \begin{cases} I/p_1 & \text{se } a/b > p_1/p_2 \\ 0 & \text{se } a/b < p_1/p_2 \\ \text{qualquer } x_1 \in [0, I/p_1] & \text{se } a/b = p_1/p_2 \end{cases}} \tag{4.10.23}
+\boxed{x_1^* = \begin{cases} I/p_1 & \text{se } a/b > p_1/p_2 \\ 0 & \text{se } a/b < p_1/p_2 \\ \text{qualquer } x_1 \in [0, I/p_1] & \text{se } a/b = p_1/p_2 \end{cases}} \label{eq:4.10.23} \tag{4.10.23}
 \]
 
 A demanda é descontínua: uma pequena mudança em preços pode fazer o consumidor saltar de consumir apenas o bem 1 para apenas o bem 2.
@@ -693,7 +693,7 @@ p_1 x_1 + p_2 \cdot \frac{b}{a}\, x_1 = I \quad \Longrightarrow \quad x_1 \left(
 \]
 
 \[
-\boxed{x_1^* = \frac{a\, I}{a\, p_1 + b\, p_2}, \qquad x_2^* = \frac{b\, I}{a\, p_1 + b\, p_2}} \tag{4.10.24}
+\boxed{x_1^* = \frac{a\, I}{a\, p_1 + b\, p_2}, \qquad x_2^* = \frac{b\, I}{a\, p_1 + b\, p_2}} \label{eq:4.10.24} \tag{4.10.24}
 \]
 
 Note que a demanda depende de *ambos* os preços — uma redução em \(p_1\) aumenta a demanda por *ambos* os bens, pois eles são sempre consumidos juntos na proporção \(a:b\).
@@ -763,13 +763,13 @@ Como \(\rho - 1 = -1/\sigma\), elevando ambos os lados a \(-\sigma\):
 Portanto \(x_1 = x_2 \cdot (a/b)^\sigma \cdot (p_1/p_2)^{-\sigma}\). Substituindo na restrição orçamentária e resolvendo, definimos o **índice de preços CES**:
 
 \[
-P \equiv \left(a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}\right)^{1/(1-\sigma)} \tag{4.10.25}
+P \equiv \left(a^\sigma\, p_1^{1-\sigma} + b^\sigma\, p_2^{1-\sigma}\right)^{1/(1-\sigma)} \label{eq:4.10.25} \tag{4.10.25}
 \]
 
 As **demandas marshallianas** podem ser escritas de forma compacta:
 
 \[
-\boxed{x_i^* = \frac{a_i^\sigma\, p_i^{-\sigma}}{P^{1-\sigma}}\, I = a_i^\sigma\, p_i^{-\sigma}\, P^{\sigma-1}\, I} \tag{4.10.26}
+\boxed{x_i^* = \frac{a_i^\sigma\, p_i^{-\sigma}}{P^{1-\sigma}}\, I = a_i^\sigma\, p_i^{-\sigma}\, P^{\sigma-1}\, I} \label{eq:4.10.26} \tag{4.10.26}
 \]
 
 onde \(a_1 = a\), \(a_2 = b\). Equivalentemente:
@@ -816,13 +816,13 @@ Por fim, retornamos à utilidade quase-linear, cuja estrutura singular — a aus
 A CPO para solução interior é:
 
 \[
-v'(x_1) = \frac{p_1}{p_2} \tag{4.10.27}
+v'(x_1) = \frac{p_1}{p_2} \label{eq:4.10.27} \tag{4.10.27}
 \]
 
 Como \(v'' < 0\), a CPO define implicitamente \(x_1^* = (v')^{-1}(p_1/p_2)\), que **não depende da renda**. O bem 2 absorve toda a variação de renda:
 
 \[
-\boxed{x_1^* = (v')^{-1}\!\left(\frac{p_1}{p_2}\right), \qquad x_2^* = \frac{I - p_1 x_1^*}{p_2}} \tag{4.10.28}
+\boxed{x_1^* = (v')^{-1}\!\left(\frac{p_1}{p_2}\right), \qquad x_2^* = \frac{I - p_1 x_1^*}{p_2}} \label{eq:4.10.28} \tag{4.10.28}
 \]
 
 !!! warning "Condição de solução interior"

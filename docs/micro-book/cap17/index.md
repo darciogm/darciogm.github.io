@@ -32,7 +32,7 @@ Podemos reescrever a restrição como:
 
 \[
 C + wL = wT + V \equiv M^*
-\tag{17.1} \]
+\label{eq:17.1} \tag{17.1} \]
 
 onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo obteria se trabalhasse todas as \(T\) horas. O preço do lazer é o salário \(w\), pois cada hora de lazer tem um custo de oportunidade igual ao salário que se deixa de receber.
 
@@ -55,13 +55,13 @@ A **taxa marginal de substituição** entre lazer e consumo é:
 
 \[
 TMS_{L,C} = \frac{U_L}{U_C}
-\tag{17.2} \]
+\label{eq:17.2} \tag{17.2} \]
 
 No ótimo interior, a condição de tangência exige:
 
 \[
 \frac{U_L}{U_C} = w
-\tag{17.3} \]
+\label{eq:17.3} \tag{17.3} \]
 
 Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
@@ -90,13 +90,13 @@ A seção anterior apresentou os elementos conceituais do modelo trabalho-lazer:
 
     \[
     \max_{C, L} \; U(C, L) \quad \text{sujeito a} \quad C + wL = wT + V, \quad 0 \leq L \leq T
-    \tag{17.4} \]
+    \label{eq:17.4} \tag{17.4} \]
 
 Montando o lagrangeano:
 
 \[
 \mathcal{L} = U(C, L) + \lambda(wT + V - C - wL)
-\tag{17.5} \]
+\label{eq:17.5} \tag{17.5} \]
 
 As condições de primeira ordem (CPO) são:
 
@@ -116,7 +116,7 @@ Combinando as duas primeiras:
 
 \[
 \frac{U_L}{U_C} = w
-\tag{17.6} \]
+\label{eq:17.6} \tag{17.6} \]
 
 ### Efeitos de uma variação salarial
 
@@ -127,7 +127,7 @@ Combinando as duas primeiras:
 
     \[
     \frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}}_{\text{efeito substituição}} + \underbrace{(T - L^*) \cdot \left(-\frac{\partial L^*}{\partial V}\right)}_{\text{efeito renda}}
-    \tag{17.7} \]
+    \label{eq:17.7} \tag{17.7} \]
 
     Note que, diferentemente do caso padrão do consumidor, a variação no "preço" do lazer (\(w\)) também altera a renda plena. Por isso, o efeito renda é multiplicado por \((T - L^*) = h^*\), as horas trabalhadas.
 
@@ -139,7 +139,7 @@ Combinando as duas primeiras:
 
     \[
     \frac{\partial h^*}{\partial w} = \underbrace{-\frac{\partial L^c}{\partial w}}_{>0} + \underbrace{h^* \cdot \frac{\partial L^*}{\partial V}}_{<0 \text{ (se } L \text{ normal)}}
-    \tag{17.8} \]
+    \label{eq:17.8} \tag{17.8} \]
 
     O sinal de \(\partial h^* / \partial w\) é **ambíguo**: depende de qual efeito domina. Para salários baixos, o efeito substituição tende a dominar; para salários altos, o efeito renda pode prevalecer. \(\blacksquare\)
 
@@ -149,7 +149,7 @@ Suponha \(U(C, L) = C^\alpha L^{1-\alpha}\), com \(0 < \alpha < 1\). A solução
 
 \[
 L^* = \frac{(1-\alpha)(wT + V)}{w}, \qquad h^* = T - L^* = \alpha T - \frac{(1-\alpha)V}{w}
-\tag{17.9} \]
+\label{eq:17.9} \tag{17.9} \]
 
 Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\). Os efeitos renda e substituição se cancelam exatamente — uma propriedade conhecida das preferências Cobb-Douglas.
 
@@ -264,7 +264,7 @@ A oferta de trabalho do mercado é obtida pela **agregação horizontal** das of
 
 \[
 H^s(w) = \sum_{i=1}^{n} h_i^*(w)
-\tag{17.10} \]
+\label{eq:17.10} \tag{17.10} \]
 
 Mesmo que curvas individuais sejam backward-bending, a curva de mercado tende a ser **positivamente inclinada** por duas razões:
 
@@ -287,7 +287,7 @@ No modelo competitivo, o mercado de trabalho funciona como qualquer outro mercad
 A **demanda por trabalho** da firma advém da maximização de lucros. No curto prazo, com capital fixo, a firma contrata trabalho até que:
 
 \[
-w = p \cdot PMg_L = VPMg_L \tag{17.11}
+w = p \cdot PMg_L = VPMg_L \label{eq:17.11} \tag{17.11}
 \]
 
 onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do produto marginal do trabalho**. A curva de demanda por trabalho é, portanto, a curva de \(VPMg_L\), que é decrescente (devido à lei dos rendimentos decrescentes).
@@ -297,7 +297,7 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
     \[
     H^s(w^*) = H^d(w^*) = H^*
-    \tag{17.12} \]
+    \label{eq:17.12} \tag{17.12} \]
 
     Nesse equilíbrio, todo trabalhador que deseja trabalhar ao salário \(w^*\) encontra emprego, e toda firma que deseja contratar ao salário \(w^*\) encontra trabalhadores.
 
@@ -343,7 +343,7 @@ A **equação de Mincer** relaciona o logaritmo do salário ao nível de educaç
 
 \[
 \ln w = \beta_0 + \beta_1 S + \beta_2 X + \beta_3 X^2 + \varepsilon
-\tag{17.13} \]
+\label{eq:17.13} \tag{17.13} \]
 
 onde \(S\) é anos de escolaridade, \(X\) é experiência (ou idade − escolaridade − 6), e \(\beta_1\) é interpretado como a **taxa de retorno da educação**.
 
@@ -401,13 +401,13 @@ O **custo marginal do trabalho** (despesa marginal) é:
 
 \[
 CMg_L = \frac{dCT_L}{dH} = w(H) + H \cdot w'(H) > w(H)
-\tag{17.14} \]
+\label{eq:17.14} \tag{17.14} \]
 
 O monopsonista contrata até que:
 
 \[
 VPMg_L = CMg_L
-\tag{17.15} \]
+\label{eq:17.15} \tag{17.15} \]
 
 Isso resulta em:
 

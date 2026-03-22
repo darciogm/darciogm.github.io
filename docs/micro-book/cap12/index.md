@@ -48,7 +48,7 @@ Na análise microeconômica padrão, assume-se que a firma busca **maximizar o l
 
 \[
 \pi = RT - CT = p \cdot q - C(q)
-\tag{12.1}
+\label{eq:12.1} \tag{12.1}
 \]
 
 Embora existam teorias alternativas — maximização de receita (Baumol), maximização da utilidade gerencial (Williamson), satisfação (*satisficing*, Simon) —, a maximização de lucro permanece como a hipótese de trabalho dominante por sua tratabilidade analítica e por gerar predições empiricamente testáveis. Cabe perguntar: essa hipótese é realista? Em empresas com separação entre propriedade e controle — como as grandes corporações listadas na B3 —, os gerentes podem perseguir seus próprios interesses em vez de maximizar o lucro dos acionistas. Contudo, a pressão competitiva nos mercados de produtos, o mercado de capitais e a ameaça de aquisição hostil tendem a disciplinar os gestores, aproximando o comportamento observado do modelo de maximização de lucro.
@@ -73,7 +73,7 @@ A condição de primeira ordem (CPO) é:
 
 \[
 \frac{d\pi}{dq} = \frac{dRT}{dq} - \frac{dCT}{dq} = 0 \implies \mathrm{RMg}(q) = \mathrm{CMg}(q)
-\tag{12.2}
+\label{eq:12.2} \tag{12.2}
 \]
 
 !!! theorem "Regra de maximização de lucro"
@@ -81,7 +81,7 @@ A condição de primeira ordem (CPO) é:
 
     \[
     \mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)
-    \tag{12.3}
+    \label{eq:12.3} \tag{12.3}
     \]
 
 !!! idea "Intuição Econômica"
@@ -97,7 +97,7 @@ Para que \(q^*\) seja um máximo (e não um mínimo), exige-se:
 
 \[
 \frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \implies \frac{d\mathrm{RMg}}{dq}\bigg|_{q^*} < \frac{d\mathrm{CMg}}{dq}\bigg|_{q^*}
-\tag{12.4}
+\label{eq:12.4} \tag{12.4}
 \]
 
 Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**. Essa condição é frequentemente negligenciada na resolução de exercícios, mas é essencial: se o CMg cruzar o RMg de cima para baixo, o ponto corresponde a um *mínimo* de lucro, não a um máximo. Em provas da ANPEC, a condição de segunda ordem é cobrada com frequência, especialmente quando a função de custo ou de demanda é não linear.
@@ -114,7 +114,7 @@ As condições de primeira ordem são:
 
 \[
 p \cdot f_L = w \implies \text{VPMg}_L = w
-\tag{12.5}
+\label{eq:12.5} \tag{12.5}
 \]
 
 \[
@@ -141,7 +141,7 @@ A **receita total** é \(RT = p(q) \cdot q\). A **receita marginal** é:
 
 \[
 \mathrm{RMg} = \frac{dRT}{dq} = p + q \frac{dp}{dq}
-\tag{12.6}
+\label{eq:12.6} \tag{12.6}
 \]
 
 Para uma firma **tomadora de preços** (mercado perfeitamente competitivo), \(dp/dq = 0\), logo \(\mathrm{RMg} = p\).
@@ -155,7 +155,7 @@ Para uma firma com **poder de mercado**, \(dp/dq < 0\), logo \(\mathrm{RMg} < p\
 
     \[
     \mathrm{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = p\left(1 - \frac{1}{|\varepsilon_d|}\right)
-    \tag{12.7}
+    \label{eq:12.7} \tag{12.7}
     \]
 
 A derivação é direta:
@@ -200,7 +200,7 @@ A firma deve operar se e somente se:
 
 \[
 p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \mathrm{CVMe}(q)
-\tag{12.8}
+\label{eq:12.8} \tag{12.8}
 \]
 
 ### Condições de oferta no curto prazo
@@ -222,7 +222,7 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
     \[
     q^s(p) = \begin{cases} \mathrm{CMg}^{-1}(p) & \text{se } p \geq \mathrm{CVMe}_{\min} \\ 0 & \text{se } p < \mathrm{CVMe}_{\min} \end{cases}
-    \tag{12.9}
+    \label{eq:12.9} \tag{12.9}
     \]
 
 !!! note "O excedente do produtor"
@@ -282,7 +282,7 @@ No capítulo anterior, vimos como o Lema de Shephard permite recuperar as demand
 
     \[
     \pi(p, w, v) = \max_{q} \{p \cdot q - C(w, v, q)\}
-    \tag{12.10}
+    \label{eq:12.10} \tag{12.10}
     \]
 
     ou, equivalentemente:
@@ -305,12 +305,12 @@ A função lucro possui propriedades notáveis:
 
     \[
     \frac{\partial \pi(p, w, v)}{\partial p} = q^*(p, w, v) \quad \text{(função de oferta)}
-    \tag{12.11}
+    \label{eq:12.11} \tag{12.11}
     \]
 
     \[
     \frac{\partial \pi(p, w, v)}{\partial w} = -L^*(p, w, v) \quad \text{(negativo da demanda por trabalho)}
-    \tag{12.12}
+    \label{eq:12.12} \tag{12.12}
     \]
 
     \[
@@ -425,7 +425,7 @@ A demanda incondicional por trabalho pode ser decomposta:
 
 \[
 \frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição}} + \underbrace{\frac{\partial L^c}{\partial q} \cdot \frac{\partial q^*}{\partial w}}_{\text{efeito produto}}
-\tag{12.13}
+\label{eq:12.13} \tag{12.13}
 \]
 
 O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho por capital ao longo da isoquanta quando \(w\) sobe. O **efeito produto** também é negativo: \(w\) maior eleva o CMg, o que reduz \(q^*\), o que reduz a demanda por trabalho. Ambos os efeitos operam na mesma direção — diferentemente do caso do consumidor, onde efeito substituição e efeito renda podem ter sinais opostos (bem de Giffen).

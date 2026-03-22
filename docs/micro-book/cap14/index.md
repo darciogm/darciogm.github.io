@@ -41,7 +41,7 @@ Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (
 
 \[
 \bar{x}_1 = \omega_A^1 + \omega_B^1, \qquad \bar{x}_2 = \omega_A^2 + \omega_B^2
-\tag{14.3} \]
+\label{eq:14.3} \tag{14.3} \]
 
 A **Caixa de Edgeworth** é um retângulo com dimensões \(\bar{x}_1 \times \bar{x}_2\). O consumidor A é medido a partir do canto inferior esquerdo e o consumidor B a partir do canto superior direito. Cada ponto na caixa representa uma alocação factível que esgota todos os recursos.
 
@@ -61,7 +61,7 @@ As curvas de indiferença do consumidor A são desenhadas normalmente (convexas 
 
 \[
 TMS_A^{12} = TMS_B^{12}
-\tag{14.4} \]
+\label{eq:14.4} \tag{14.4} \]
 
 Nesse ponto, não há trocas mutuamente benéficas possíveis — a alocação é **eficiente no sentido de Pareto**.
 
@@ -112,7 +112,7 @@ O **núcleo** é um subconjunto da curva de contrato: inclui apenas as alocaçõ
 
 \[
 U_A(x_A) \geq U_A(\omega_A) \quad \text{e} \quad U_B(x_B) \geq U_B(\omega_B)
-\tag{14.5} \]
+\label{eq:14.5} \tag{14.5} \]
 
 O equilíbrio walrasiano pertence ao núcleo. Além disso, à medida que a economia é "replicada" (duplicando o número de consumidores de cada tipo), o núcleo se contrai, convergindo para o equilíbrio walrasiano no limite — este é o **Teorema do Limite do Núcleo** de Debreu e Scarf. Esse resultado tem um significado profundo: em economias grandes, com muitos agentes, o poder de barganha individual se dilui e o resultado de mercado se aproxima do único resultado que nenhuma coalizão de agentes pode melhorar. É a versão mais rigorosa da ideia de que a concorrência elimina o poder de mercado.
 
@@ -128,7 +128,7 @@ Quando introduzimos produção na análise, precisamos considerar a eficiência 
 
 \[
 TMST_1^{LK} = TMST_2^{LK}
-\tag{14.6} \]
+\label{eq:14.6} \tag{14.6} \]
 
 ### Fronteira de possibilidades de produção (FPP)
 
@@ -138,7 +138,7 @@ A inclinação da FPP é a **taxa marginal de transformação** (TMT):
 
 \[
 TMT = -\frac{dX_2}{dX_1} = \frac{CMg_1}{CMg_2}
-\tag{14.7} \]
+\label{eq:14.7} \tag{14.7} \]
 
 ### Eficiência no mix de produtos
 
@@ -146,7 +146,7 @@ A eficiência econômica plena requer que a TMT iguale a TMS comum aos consumido
 
 \[
 TMT = TMS_A^{12} = TMS_B^{12}
-\tag{14.8} \]
+\label{eq:14.8} \tag{14.8} \]
 
 Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis. Se, por exemplo, os consumidores estivessem dispostos a trocar 3 unidades do bem 2 por 1 do bem 1 (TMS = 3), mas a economia só precisasse sacrificar 1 unidade do bem 2 para produzir 1 do bem 1 (TMT = 1), seria eficiente produzir mais do bem 1 — pois o benefício para os consumidores superaria o custo de oportunidade. A igualdade TMT = TMS elimina essas oportunidades de melhoria.
 
@@ -229,13 +229,13 @@ Este é o resultado formal que dá substância à intuição da "mão invisível
     **Passo 1:** Se \(\hat{\mathbf{x}}_j \succ_j \mathbf{x}_j^*\), então \(\hat{\mathbf{x}}_j\) não pertence ao conjunto orçamentário de \(j\) no equilíbrio (caso contrário, \(j\) teria escolhido \(\hat{\mathbf{x}}_j\) em vez de \(\mathbf{x}_j^*\)). Portanto:
 
     \[
-    \mathbf{p}^* \cdot \hat{\mathbf{x}}_j > \mathbf{p}^* \cdot \boldsymbol{\omega}_j \tag{14.1}
+    \mathbf{p}^* \cdot \hat{\mathbf{x}}_j > \mathbf{p}^* \cdot \boldsymbol{\omega}_j \label{eq:14.1} \tag{14.1}
     \]
 
     **Passo 2:** Para todo \(i\) tal que \(\hat{\mathbf{x}}_i \succsim_i \mathbf{x}_i^*\), a não saciedade local implica que:
 
     \[
-    \mathbf{p}^* \cdot \hat{\mathbf{x}}_i \geq \mathbf{p}^* \cdot \boldsymbol{\omega}_i \tag{14.2}
+    \mathbf{p}^* \cdot \hat{\mathbf{x}}_i \geq \mathbf{p}^* \cdot \boldsymbol{\omega}_i \label{eq:14.2} \tag{14.2}
     \]
 
     (Se \(\hat{\mathbf{x}}_i\) custasse estritamente menos, por não saciedade local, existiria uma cesta ainda melhor e acessível, contradizendo a otimalidade de \(\mathbf{x}_i^*\).)
@@ -347,7 +347,7 @@ O **excesso de demanda agregado** pelo bem \(k\) é:
 
 \[
 Z^k(\mathbf{p}) = \sum_{i=1}^{I} z_i^k(\mathbf{p}) = \sum_{i=1}^{I} x_i^k(\mathbf{p}) - \bar{\omega}^k
-\tag{14.9} \]
+\label{eq:14.9} \tag{14.9} \]
 
 O equilíbrio walrasiano requer \(Z^k(\mathbf{p}^*) = 0\) para todo \(k = 1, \ldots, n\) (ou, mais geralmente, \(Z^k(\mathbf{p}^*) \leq 0\) com igualdade se \(p_k^* > 0\)).
 
@@ -366,7 +366,7 @@ As funções de excesso de demanda agregado satisfazem:
 
     \[
     \sum_{k=1}^{n} p_k \cdot Z^k(\mathbf{p}) \equiv 0
-    \tag{14.10} \]
+    \label{eq:14.10} \tag{14.10} \]
 
 A Lei de Walras decorre diretamente do fato de que cada consumidor satisfaz sua restrição orçamentária com igualdade (pela não saciedade local):
 
@@ -406,13 +406,13 @@ A ideia central é construir uma função que mapeia preços em preços e cujo p
 
 \[
 \Delta = \left\{ \mathbf{p} \in \mathbb{R}^n_+ : \sum_{k=1}^{n} p_k = 1 \right\}
-\tag{14.11} \]
+\label{eq:14.11} \tag{14.11} \]
 
 Definimos uma função de ajuste de preços \(g: \Delta \to \Delta\):
 
 \[
 g_k(\mathbf{p}) = \frac{p_k + \max\{0, Z^k(\mathbf{p})\}}{1 + \sum_{j=1}^{n} \max\{0, Z^j(\mathbf{p})\}}
-\tag{14.12} \]
+\label{eq:14.12} \tag{14.12} \]
 
 Esta função eleva o preço de bens com excesso de demanda positivo e reduz (relativamente) o de bens com excesso de oferta. Verifica-se que:
 
@@ -457,7 +457,7 @@ Os consumidores possuem ações \(\theta_{ij}\) nas firmas, de modo que a renda 
 
 \[
 m_i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}_i + \sum_{j=1}^{J} \theta_{ij} \cdot \pi_j(\mathbf{p})
-\tag{14.13} \]
+\label{eq:14.13} \tag{14.13} \]
 
 onde \(\pi_j(\mathbf{p}) = \mathbf{p} \cdot \mathbf{y}_j^*(\mathbf{p})\) é o lucro maximizado da firma \(j\).
 
@@ -472,7 +472,7 @@ onde \(\pi_j(\mathbf{p}) = \mathbf{p} \cdot \mathbf{y}_j^*(\mathbf{p})\) é o lu
 
     \[
     \sum_{i=1}^{I} \mathbf{x}_i^* = \sum_{i=1}^{I} \boldsymbol{\omega}_i + \sum_{j=1}^{J} \mathbf{y}_j^*
-    \tag{14.14} \]
+    \label{eq:14.14} \tag{14.14} \]
 
 A Lei de Walras generaliza-se naturalmente: o valor do excesso de demanda (agora incorporando produção) é identicamente zero. O teorema de existência de Arrow-Debreu aplica-se com hipóteses adicionais de convexidade sobre os conjuntos de produção.
 

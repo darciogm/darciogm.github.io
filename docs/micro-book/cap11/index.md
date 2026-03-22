@@ -57,7 +57,7 @@ A firma maximizadora de lucro resolve:
 
 \[
 \max_{K, L} \; \pi = p \cdot f(K, L) - wL - vK
-\tag{11.1}
+\label{eq:11.1} \tag{11.1}
 \]
 
 onde \(p\) é o preço do produto, \(w\) é o salário e \(v\) é o custo de aluguel do capital.
@@ -89,7 +89,7 @@ O problema dual ao da maximização do produto sujeito a um orçamento é a **mi
 
 \[
 \min_{K, L} \; C = wL + vK \quad \text{s.a.} \quad f(K, L) = q_0
-\tag{11.2}
+\label{eq:11.2} \tag{11.2}
 \]
 
 A lógica é análoga à do consumidor que minimiza o gasto para atingir um dado nível de utilidade (Capítulo 5). Aqui, a isoquanta substitui a curva de indiferença, e a reta de isocusto substitui a reta orçamentária.
@@ -124,7 +124,7 @@ Igualando:
 
 \[
 \frac{w}{f_L} = \frac{v}{f_K} \implies \frac{f_L}{f_K} = \frac{w}{v} \implies \mathrm{TMST}_{L,K} = \frac{w}{v}
-\tag{11.3}
+\label{eq:11.3} \tag{11.3}
 \]
 
 Essa condição tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/v\)). Se a TMST fosse maior que \(w/v\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
@@ -140,7 +140,7 @@ Essa condição tem uma interpretação econômica elegante e direta: no ótimo,
 
     \[
     \frac{f_L}{w} = \frac{f_K}{v}
-    \tag{11.4}
+    \label{eq:11.4} \tag{11.4}
     \]
 
 ### Demandas condicionadas por insumos
@@ -151,7 +151,7 @@ Resolvendo as condições de primeira ordem junto com a restrição \(f(K, L) = 
 
 \[
 L^c = L^c(w, v, q), \qquad K^c = K^c(w, v, q)
-\tag{11.5}
+\label{eq:11.5} \tag{11.5}
 \]
 
 Estas funções expressam as quantidades ótimas de cada insumo como funções dos preços dos insumos e do nível de produto desejado.
@@ -169,7 +169,7 @@ A minimização de custos nos forneceu as demandas condicionadas por insumos —
 
     \[
     C(w, v, q) = wL^c(w, v, q) + vK^c(w, v, q)
-    \tag{11.6}
+    \label{eq:11.6} \tag{11.6}
     \]
 
 A função custo possui as seguintes propriedades:
@@ -186,7 +186,7 @@ A função custo possui as seguintes propriedades:
 
     \[
     \frac{\partial C(w, v, q)}{\partial w} = L^c(w, v, q), \qquad \frac{\partial C(w, v, q)}{\partial v} = K^c(w, v, q)
-    \tag{11.7}
+    \label{eq:11.7} \tag{11.7}
     \]
 
     **Demonstração.**
@@ -277,7 +277,7 @@ A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
 
 \[
 \frac{d(\mathrm{CMe})}{dq} = \frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{\mathrm{CMg} \cdot q - CT}{q^2} = \frac{\mathrm{CMg} - \mathrm{CMe}}{q}
-\tag{11.8}
+\label{eq:11.8} \tag{11.8}
 \]
 
 Portanto, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).**
@@ -343,7 +343,7 @@ No **curto prazo**, o capital é fixo em \(\bar{K}\). A firma só pode ajustar o
 
 \[
 CT_{CP}(q; \bar{K}) = v\bar{K} + w \cdot L(q, \bar{K})
-\tag{11.9}
+\label{eq:11.9} \tag{11.9}
 \]
 
 onde \(L(q, \bar{K})\) é a quantidade de trabalho necessária para produzir \(q\) dado \(\bar{K}\), obtida invertendo a função de produção de curto prazo.
@@ -354,7 +354,7 @@ No **longo prazo**, todos os insumos são variáveis. A firma escolhe simultanea
 
 \[
 CT_{LP}(q) = \min_{K, L} \{wL + vK \mid f(K, L) = q\}
-\tag{11.10}
+\label{eq:11.10} \tag{11.10}
 \]
 
 ### A curva envoltória
@@ -372,7 +372,7 @@ A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colo
 
     \[
     \mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K}) \quad \text{para todo } \bar{K}
-    \tag{11.11}
+    \label{eq:11.11} \tag{11.11}
     \]
 
     com igualdade quando \(\bar{K} = K^*(q)\), o nível ótimo de capital de longo prazo para produzir \(q\).
@@ -388,7 +388,7 @@ Propriedade importante: no ponto de tangência, o CMg de curto prazo é igual ao
 
 \[
 \mathrm{CMg}_{CP}(q^*; \bar{K}^*) = \mathrm{CMg}_{LP}(q^*)
-\tag{11.12}
+\label{eq:11.12} \tag{11.12}
 \]
 
 A Figura 11.4 complementa a visão anterior, agora em termos de **custo médio**. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória.
@@ -509,12 +509,12 @@ Substituindo na restrição tecnológica:
 
 \[
 \boxed{L^c(w,v,q) = q^{1/(\alpha+\beta)} \left(\frac{\beta\, v}{\alpha\, w}\right)^{\alpha/(\alpha+\beta)}}
-\tag{11.13}
+\label{eq:11.13} \tag{11.13}
 \]
 
 \[
 \boxed{K^c(w,v,q) = q^{1/(\alpha+\beta)} \left(\frac{\alpha\, w}{\beta\, v}\right)^{\beta/(\alpha+\beta)}}
-\tag{11.14}
+\label{eq:11.14} \tag{11.14}
 \]
 
 **Função custo.** Avaliando o gasto mínimo \(C = vK^c + wL^c\):
@@ -527,7 +527,7 @@ Simplificando, a função custo Cobb-Douglas tem a forma:
 
 \[
 C(w,v,q) = \kappa \cdot w^{\beta/(\alpha+\beta)}\, v^{\alpha/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}
-\tag{11.15}
+\label{eq:11.15} \tag{11.15}
 \]
 
 onde \(\kappa = (\alpha+\beta)\left(\alpha^{-\alpha}\beta^{-\beta}\right)^{1/(\alpha+\beta)}\) é uma constante.
@@ -573,7 +573,7 @@ Se \(v/\alpha = w/\beta\), qualquer combinação sobre a isoquanta é ótima.
 
 \[
 \boxed{C(w,v,q) = q \cdot \min\left\{\frac{v}{\alpha},\; \frac{w}{\beta}\right\}}
-\tag{11.16}
+\label{eq:11.16} \tag{11.16}
 \]
 
 Os custos são sempre lineares em \(q\) (retornos constantes de escala), com CMg constante igual a \(\min\{v/\alpha, w/\beta\}\).
@@ -596,7 +596,7 @@ As demandas condicionais são **independentes dos preços dos insumos** — não
 
 \[
 \boxed{C(w,v,q) = (\alpha\, v + \beta\, w)\, q}
-\tag{11.17}
+\label{eq:11.17} \tag{11.17}
 \]
 
 O custo é linear em \(q\), com CMg constante igual a \(\alpha v + \beta w\). Uma mudança nos preços dos insumos desloca a curva de CMg paralelamente, mas não altera a combinação de insumos.
@@ -635,7 +635,7 @@ As demandas condicionais ficam:
 
 \[
 \boxed{C(w,v,q) = W \cdot q = q \cdot \left(\alpha^\sigma\, v^{1-\sigma} + \beta^\sigma\, w^{1-\sigma}\right)^{1/(1-\sigma)}}
-\tag{11.18}
+\label{eq:11.18} \tag{11.18}
 \]
 
 A função custo é linear em \(q\) (retornos constantes de escala) e tem a estrutura de um índice de preços CES.

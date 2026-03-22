@@ -10,7 +10,10 @@ window.MathJax = {
     displayMath: [["\\[", "\\]"]],
     processEscapes: true,
     processEnvironments: true,
-    packages: {'[+]': ['boldsymbol']}
+    tags: 'ams',
+    tagSide: 'right',
+    tagIndent: '0.8em',
+    packages: {'[+]': ['boldsymbol', 'ams']}
   },
   options: {
     ignoreHtmlClass: ".*|",

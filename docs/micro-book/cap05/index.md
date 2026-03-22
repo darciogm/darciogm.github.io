@@ -110,7 +110,7 @@ Quando o preço de um bem cai, dois fenômenos ocorrem simultaneamente:
 Na abordagem de **Hicks**, o efeito substituição é definido mantendo-se o **nível de utilidade** constante. O consumidor é "compensado" de modo a permanecer na mesma curva de indiferença, mas enfrenta a nova razão de preços.
 
 \[
-\underbrace{\Delta x_i}_{\text{efeito total}} = \underbrace{\Delta x_i^{ES}}_{\substack{\text{efeito substituição} \\ \text{(utilidade constante)}}} + \underbrace{\Delta x_i^{ER}}_{\substack{\text{efeito renda} \\ \text{(poder de compra)}}} \tag{5.3.1}
+\underbrace{\Delta x_i}_{\text{efeito total}} = \underbrace{\Delta x_i^{ES}}_{\substack{\text{efeito substituição} \\ \text{(utilidade constante)}}} + \underbrace{\Delta x_i^{ER}}_{\substack{\text{efeito renda} \\ \text{(poder de compra)}}} \label{eq:5.3.1} \tag{5.3.1}
 \]
 
 O efeito substituição de Hicks move o consumidor **ao longo** da curva de indiferença original; o efeito renda move o consumidor **entre** curvas de indiferença.
@@ -120,7 +120,7 @@ O efeito substituição de Hicks move o consumidor **ao longo** da curva de indi
 A decomposição de Hicks, embora elegante, exige que conheçamos as curvas de indiferença do consumidor — algo que, na prática, não observamos diretamente. Existe uma alternativa mais operacional? Sim: a abordagem de **Slutsky** propõe um critério de compensação baseado em grandezas observáveis. Na abordagem de Slutsky, o efeito substituição é definido mantendo-se o **poder de compra** constante — ou seja, compensando-se a renda de modo que a cesta original permaneça acessível. A compensação de Slutsky é dada por:
 
 \[
-\Delta I^S = x_i^* \cdot \Delta p_i \tag{5.3.2}
+\Delta I^S = x_i^* \cdot \Delta p_i \label{eq:5.3.2} \tag{5.3.2}
 \]
 
 Ambas as decomposições convergem para variações infinitesimais de preço e resultam na mesma equação fundamental — a Equação de Slutsky.
@@ -166,7 +166,7 @@ As decomposições gráficas da seção anterior nos deram a intuição; agora, 
     Para quaisquer bens \(i\) e \(j\):
 
     \[
-    \frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I} \tag{5.4.3}
+    \frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I} \label{eq:5.4.3} \tag{5.4.3}
     \]
 
     onde \(x_i = x_i(p_1, \ldots, p_n, I)\) é a demanda marshalliana, \(h_i = h_i(p_1, \ldots, p_n, \bar{U})\) é a demanda hicksiana e \(I\) é a renda.
@@ -282,7 +282,7 @@ A seção anterior apresentou as curvas de demanda marshalliana e hicksiana de f
 A demanda hicksiana \(h_i(\mathbf{p}, \bar{U})\) pode ser obtida a partir da **função dispêndio** \(E(\mathbf{p}, \bar{U})\):
 
 \[
-h_i(\mathbf{p}, \bar{U}) = \frac{\partial E(\mathbf{p}, \bar{U})}{\partial p_i} \tag{5.6.4}
+h_i(\mathbf{p}, \bar{U}) = \frac{\partial E(\mathbf{p}, \bar{U})}{\partial p_i} \label{eq:5.6.4} \tag{5.6.4}
 \]
 
 Este é o **Lema de Shephard**, que já utilizamos na demonstração da Equação de Slutsky.
@@ -306,7 +306,7 @@ Até aqui, discutimos os efeitos de variações de preço e renda em termos de d
 !!! definition "Elasticidade-preço da demanda"
 
     \[
-    \varepsilon_{x_i, p_i} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i} \tag{5.7.5}
+    \varepsilon_{x_i, p_i} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i} \label{eq:5.7.5} \tag{5.7.5}
     \]
 
     - \(|\varepsilon| > 1\): demanda **elástica**
@@ -318,7 +318,7 @@ Até aqui, discutimos os efeitos de variações de preço e renda em termos de d
 A elasticidade-renda captura a resposta percentual da demanda a variações percentuais na renda. É ela que formaliza a classificação entre bens normais, inferiores, de luxo e de necessidade que discutimos na Seção 5.2:
 
 \[
-\varepsilon_{x_i, I} = \frac{\partial x_i}{\partial I} \cdot \frac{I}{x_i} \tag{5.7.6}
+\varepsilon_{x_i, I} = \frac{\partial x_i}{\partial I} \cdot \frac{I}{x_i} \label{eq:5.7.6} \tag{5.7.6}
 \]
 
 ### 5.7.3 Elasticidade-preço cruzada
@@ -326,7 +326,7 @@ A elasticidade-renda captura a resposta percentual da demanda a variações perc
 A elasticidade-preço cruzada mede como a demanda por um bem responde a variações no preço de outro bem. Essa grandeza será central no Capítulo 6, quando classificarmos bens como substitutos ou complementos:
 
 \[
-\varepsilon_{x_i, p_j} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i} \tag{5.7.7}
+\varepsilon_{x_i, p_j} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i} \label{eq:5.7.7} \tag{5.7.7}
 \]
 
 ### 5.7.4 Relações de agregação
@@ -337,7 +337,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
     A soma ponderada das elasticidades-renda de todos os bens, com pesos iguais às parcelas orçamentárias \(w_i = \frac{p_i x_i}{I}\), é igual a um:
 
     \[
-    \sum_{i=1}^n w_i \, \varepsilon_{x_i, I} = 1 \tag{5.7.8}
+    \sum_{i=1}^n w_i \, \varepsilon_{x_i, I} = 1 \label{eq:5.7.8} \tag{5.7.8}
     \]
 
     **Implicação**: nem todos os bens podem ser inferiores simultaneamente. Se alguns bens têm elasticidade-renda baixa, outros devem compensar com elasticidade-renda alta.
@@ -346,7 +346,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
     Para cada bem \(i\), a soma das elasticidades-preço (própria e cruzadas) e da elasticidade-renda é zero:
 
     \[
-    \sum_{j=1}^n \varepsilon_{x_i, p_j} + \varepsilon_{x_i, I} = 0 \tag{5.7.9}
+    \sum_{j=1}^n \varepsilon_{x_i, p_j} + \varepsilon_{x_i, I} = 0 \label{eq:5.7.9} \tag{5.7.9}
     \]
 
     Esta condição decorre diretamente da homogeneidade de grau zero da demanda.
@@ -355,7 +355,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
     Definindo a elasticidade de substituição compensada \(s_{ij} = \varepsilon_{x_i, p_j}^h\), a simetria impõe:
 
     \[
-    w_i \, s_{ij} = w_j \, s_{ji} \tag{5.7.10}
+    w_i \, s_{ij} = w_j \, s_{ji} \label{eq:5.7.10} \tag{5.7.10}
     \]
 
 ### 5.7.5 Elasticidades estimadas para o Brasil
@@ -429,7 +429,7 @@ As elasticidades nos dizem *como* a demanda reage a variações em preços e ren
 O **excedente do consumidor** (\(EC\)) mede o ganho líquido que o consumidor obtém ao participar do mercado — a diferença entre o que estaria disposto a pagar e o que efetivamente paga:
 
 \[
-EC = \int_{0}^{x^*} p(x) \, dx - p^* \cdot x^* \tag{5.8.11}
+EC = \int_{0}^{x^*} p(x) \, dx - p^* \cdot x^* \label{eq:5.8.11} \tag{5.8.11}
 \]
 
 onde \(p(x)\) é a função de demanda inversa.

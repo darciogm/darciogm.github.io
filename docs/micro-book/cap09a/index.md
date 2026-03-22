@@ -119,7 +119,7 @@ Os exemplos da seção anterior revelam que nem todo jogo possui estratégias do
 
     \[
     u_i(s_i^*, s_{-i}^*) \geq u_i(s_i, s_{-i}^*) \quad \forall \; s_i \in S_i
-    \tag{9a.1}
+    \label{eq:9a.1} \tag{9a.1}
     \]
 
     Em palavras: nenhum jogador pode melhorar unilateralmente seu payoff desviando de \(s_i^*\), dado que os demais jogadores mantêm suas estratégias de equilíbrio.
@@ -188,7 +188,7 @@ Os exemplos anteriores mostram que alguns jogos — como o Matching Pennies — 
 
     \[
     U_i(\sigma) = \sum_{s \in S} \left(\prod_{j=1}^{n} \sigma_j(s_j)\right) u_i(s)
-    \tag{9a.2}
+    \label{eq:9a.2} \tag{9a.2}
     \]
 
 ### Princípio da indiferença
@@ -199,7 +199,7 @@ Em um equilíbrio em estratégias mistas, cada jogador randomiza de tal forma qu
 
 \[
 U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_i^l \text{ com } \sigma_i^*(s_i^l) > 0
-\tag{9a.3}
+\label{eq:9a.3} \tag{9a.3}
 \]
 
 !!! idea "Intuição Econômica"
@@ -289,35 +289,35 @@ O lucro da firma \(i\) é:
 
 \[
 \pi_i(q_i, q_j) = (a - b(q_i + q_j) - c) \, q_i
-\tag{9a.4}
+\label{eq:9a.4} \tag{9a.4}
 \]
 
 Observe que o lucro de cada firma depende não apenas da própria quantidade, mas também da quantidade produzida pela rival — a interdependência estratégica que motiva toda a teoria dos jogos. Cada firma maximiza seu lucro tomando como dada a quantidade da outra, o que gera a seguinte condição de primeira ordem e a correspondente **função de reação** (melhor resposta):
 
 \[
 q_i^*(q_j) = \frac{a - c - bq_j}{2b}
-\tag{9a.5}
+\label{eq:9a.5} \tag{9a.5}
 \]
 
 A função de reação é decrescente: quanto mais a rival produz, menos é ótimo para a firma produzir. Em linguagem estratégica, as quantidades são **substitutos estratégicos** — o aumento da ação de um jogador reduz a melhor resposta do outro. O equilíbrio de Nash (Cournot-Nash) é obtido pela interseção das funções de reação:
 
 \[
 q_1^* = q_2^* = \frac{a-c}{3b}, \qquad Q^* = \frac{2(a-c)}{3b}, \qquad P^* = \frac{a + 2c}{3}
-\tag{9a.6}
+\label{eq:9a.6} \tag{9a.6}
 \]
 
 O lucro de cada firma no equilíbrio é:
 
 \[
 \pi_i^* = \frac{(a-c)^2}{9b}
-\tag{9a.7}
+\label{eq:9a.7} \tag{9a.7}
 \]
 
 **Extensão: \(N\) firmas simétricas.** Com \(N\) firmas idênticas, o equilíbrio de Cournot é:
 
 \[
 q_i^* = \frac{a-c}{(N+1)b}, \qquad P^* = \frac{a + Nc}{N+1}
-\tag{9a.8}
+\label{eq:9a.8} \tag{9a.8}
 \]
 
 Quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição perfeita. Esse resultado é notável: ele conecta a teoria dos jogos à teoria clássica de mercados competitivos, mostrando que a competição perfeita é o caso limite de um oligopólio de Cournot quando o número de firmas cresce indefinidamente.
@@ -379,7 +379,7 @@ A CPO gera (para \(c_1 = c_2 = c\)):
 
 \[
 q_1^S = \frac{a-c}{2b}, \qquad q_2^S = \frac{a-c}{4b}, \qquad Q^S = \frac{3(a-c)}{4b}, \qquad P^S = \frac{a + 3c}{4}
-\tag{9a.9}
+\label{eq:9a.9} \tag{9a.9}
 \]
 
 **Comparação Cournot vs Stackelberg vs Monopólio vs Competição Perfeita:**

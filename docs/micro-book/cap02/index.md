@@ -196,7 +196,7 @@ O método de Lagrange é a ferramenta mais importante deste capítulo — e, pos
 O problema canônico da microeconomia pode ser escrito na forma:
 
 \[
-\max_{x_1, x_2} f(x_1, x_2) \quad \text{sujeito a} \quad g(x_1, x_2) = c \tag{2.1}
+\max_{x_1, x_2} f(x_1, x_2) \quad \text{sujeito a} \quad g(x_1, x_2) = c \label{eq:2.1} \tag{2.1}
 \]
 
 onde \(f\) é a **função objetivo** (o que o agente quer maximizar ou minimizar) e \(g(x_1, x_2) = c\) é a **restrição** (a limitação que o agente enfrenta). A formulação se generaliza para \(n\) variáveis de escolha e múltiplas restrições, mas o caso com duas variáveis e uma restrição é o ponto de partida ideal.
@@ -214,13 +214,13 @@ onde \(f\) é a **função objetivo** (o que o agente quer maximizar ou minimiza
 A ideia central do método de Lagrange é engenhosa: em vez de resolver um problema de otimização *com restrição*, transforma-se o problema em um de otimização *sem restrição* em um espaço ampliado, que inclui uma variável auxiliar — o multiplicador de Lagrange \(\lambda\). Define-se a **função de Lagrange** (ou Lagrangeano):
 
 \[
-\mathcal{L}(x_1, x_2, \lambda) = f(x_1, x_2) + \lambda \left[c - g(x_1, x_2)\right] \tag{2.2}
+\mathcal{L}(x_1, x_2, \lambda) = f(x_1, x_2) + \lambda \left[c - g(x_1, x_2)\right] \label{eq:2.2} \tag{2.2}
 \]
 
 onde \(\lambda\) é o **multiplicador de Lagrange**, uma nova variável de escolha introduzida pelo método.
 
 !!! tip "Dica: convenção de sinal"
-    A equação (2.2) pode ser escrita equivalentemente como:
+    A equação \eqref{eq:2.2} pode ser escrita equivalentemente como:
 
     \[
     \mathcal{L} = f(x_1, x_2) - \lambda \left[g(x_1, x_2) - c\right]
@@ -240,20 +240,20 @@ onde \(\lambda\) é o **multiplicador de Lagrange**, uma nova variável de escol
 Para encontrar o ótimo, derivamos \(\mathcal{L}\) em relação a cada variável de escolha (\(x_1\), \(x_2\)) e em relação a \(\lambda\), e igualamos a zero:
 
 \[
-\frac{\partial \mathcal{L}}{\partial x_1} = \frac{\partial f}{\partial x_1} - \lambda \frac{\partial g}{\partial x_1} = 0 \tag{2.3}
+\frac{\partial \mathcal{L}}{\partial x_1} = \frac{\partial f}{\partial x_1} - \lambda \frac{\partial g}{\partial x_1} = 0 \label{eq:2.3} \tag{2.3}
 \]
 
 \[
-\frac{\partial \mathcal{L}}{\partial x_2} = \frac{\partial f}{\partial x_2} - \lambda \frac{\partial g}{\partial x_2} = 0 \tag{2.4}
+\frac{\partial \mathcal{L}}{\partial x_2} = \frac{\partial f}{\partial x_2} - \lambda \frac{\partial g}{\partial x_2} = 0 \label{eq:2.4} \tag{2.4}
 \]
 
 \[
-\frac{\partial \mathcal{L}}{\partial \lambda} = c - g(x_1, x_2) = 0 \tag{2.5}
+\frac{\partial \mathcal{L}}{\partial \lambda} = c - g(x_1, x_2) = 0 \label{eq:2.5} \tag{2.5}
 \]
 
-Observe que a terceira CPO, equação (2.5), simplesmente **recupera a restrição original** \(g(x_1, x_2) = c\). Isso é uma consequência direta de como o Lagrangeano foi construído.
+Observe que a terceira CPO, equação \eqref{eq:2.5}, simplesmente **recupera a restrição original** \(g(x_1, x_2) = c\). Isso é uma consequência direta de como o Lagrangeano foi construído.
 
-**Condição de tangência.** Das equações (2.3) e (2.4), podemos isolar \(\lambda\):
+**Condição de tangência.** Das equações \eqref{eq:2.3} e (2.4), podemos isolar \(\lambda\):
 
 \[
 \lambda = \frac{f_{x_1}}{g_{x_1}} = \frac{f_{x_2}}{g_{x_2}}
@@ -262,13 +262,13 @@ Observe que a terceira CPO, equação (2.5), simplesmente **recupera a restriç�
 Igualando as duas expressões:
 
 \[
-\frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}} \tag{2.6}
+\frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}} \label{eq:2.6} \tag{2.6}
 \]
 
-A equação (2.6) é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
+A equação \eqref{eq:2.6} é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
 
 !!! info "Intuição econômica"
-    No problema do consumidor, a equação (2.6) se torna:
+    No problema do consumidor, a equação \eqref{eq:2.6} se torna:
 
     \[
     \frac{UMg_1}{UMg_2} = \frac{p_1}{p_2}
@@ -288,7 +288,7 @@ O sistema de CPOs consiste em \(n + 1\) equações com \(n + 1\) incógnitas (no
 
 Igualando as expressões, obtém-se uma relação entre \(x_1\) e \(x_2\) (a condição de tangência). Substituindo na restrição \(g = c\), resolve-se para os valores ótimos.
 
-**Estratégia B — Dividir CPOs.** Divide-se a equação (2.3) pela equação (2.4):
+**Estratégia B — Dividir CPOs.** Divide-se a equação \eqref{eq:2.3} pela equação \eqref{eq:2.4}:
 
 \[
 \frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}}
@@ -307,7 +307,7 @@ Isso elimina \(\lambda\) diretamente e fornece a condição de tangência. Em se
 O multiplicador de Lagrange no ótimo, \(\lambda^*\), tem uma interpretação precisa como a derivada do **valor ótimo** em relação ao parâmetro da restrição:
 
 \[
-\lambda^* = \frac{df^*}{dc} = \frac{dV}{dc} \tag{2.7}
+\lambda^* = \frac{df^*}{dc} = \frac{dV}{dc} \label{eq:2.7} \tag{2.7}
 \]
 
 onde \(V(c) = f(\mathbf{x}^*(c))\) é a **função valor** — o valor máximo de \(f\) dado o nível da restrição \(c\). Este resultado é uma consequência do **teorema do envelope** aplicado ao problema restrito (ver Seção 2.6).
@@ -337,7 +337,7 @@ Para o caso de duas variáveis e uma restrição, o hessiano orlado é a matriz 
 0 & g_{x_1} & g_{x_2} \\
 g_{x_1} & \mathcal{L}_{x_1 x_1} & \mathcal{L}_{x_1 x_2} \\
 g_{x_2} & \mathcal{L}_{x_2 x_1} & \mathcal{L}_{x_2 x_2}
-\end{pmatrix} \tag{2.8}
+\end{pmatrix} \label{eq:2.8} \tag{2.8}
 \]
 
 onde \(\mathcal{L}_{x_i x_j} = f_{x_i x_j} - \lambda g_{x_i x_j}\) são as derivadas segundas do Lagrangeano.
@@ -345,7 +345,7 @@ onde \(\mathcal{L}_{x_i x_j} = f_{x_i x_j} - \lambda g_{x_i x_j}\) são as deriv
 A condição suficiente para **máximo** com restrição é:
 
 \[
-\det(\bar{H}) > 0 \tag{2.9}
+\det(\bar{H}) > 0 \label{eq:2.9} \tag{2.9}
 \]
 
 Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
@@ -365,13 +365,13 @@ Aplicamos agora o passo a passo completo a um problema que será recorrente ao l
 Um consumidor tem preferências representadas pela função de utilidade **CES** (*Constant Elasticity of Substitution* — Elasticidade de Substituição Constante):
 
 \[
-U(x_1, x_2) = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \tag{2.10}
+U(x_1, x_2) = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \label{eq:2.10} \tag{2.10}
 \]
 
 onde \(0 < \alpha < 1\) é o parâmetro de distribuição e \(\rho < 1\), \(\rho \neq 0\), é o parâmetro de substituição. A **elasticidade de substituição** é:
 
 \[
-\sigma = \frac{1}{1 - \rho} \tag{2.11}
+\sigma = \frac{1}{1 - \rho} \label{eq:2.11} \tag{2.11}
 \]
 
 O consumidor dispõe de renda \(m\) e enfrenta preços \(p_1\) e \(p_2\).
@@ -385,7 +385,7 @@ O consumidor dispõe de renda \(m\) e enfrenta preços \(p_1\) e \(p_2\).
 O problema do consumidor é:
 
 \[
-\max_{x_1, x_2} \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m \tag{2.12}
+\max_{x_1, x_2} \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m \label{eq:2.12} \tag{2.12}
 \]
 
 Aqui, \(f(x_1, x_2) = U(x_1, x_2)\) é a utilidade CES, \(g(x_1, x_2) = p_1 x_1 + p_2 x_2\) é o gasto total, e \(c = m\) é a renda.
@@ -395,14 +395,14 @@ Aqui, \(f(x_1, x_2) = U(x_1, x_2)\) é a utilidade CES, \(g(x_1, x_2) = p_1 x_1 
 O Lagrangeano é:
 
 \[
-\mathcal{L} = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \tag{2.13}
+\mathcal{L} = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \label{eq:2.13} \tag{2.13}
 \]
 
 !!! tip "Dica: simplificação por transformação monotônica"
     A função \(z^{1/\rho}\) é uma transformação monotônica crescente de \(z\) (para \(z > 0\)). Como transformações monotônicas preservam a ordenação de preferências, maximizar \(U = (\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho})^{1/\rho}\) é equivalente a maximizar:
 
     \[
-    V(x_1, x_2) = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} \tag{2.14}
+    V(x_1, x_2) = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} \label{eq:2.14} \tag{2.14}
     \]
 
     Esta simplificação elimina o expoente \(1/\rho\), tornando as derivadas parciais muito mais simples. As demandas ótimas \(x_1^*\) e \(x_2^*\) serão as mesmas (apenas o valor de \(\lambda\) mudará). Usamos a versão simplificada daqui em diante.
@@ -410,7 +410,7 @@ O Lagrangeano é:
 O Lagrangeano simplificado é:
 
 \[
-\mathcal{L} = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \tag{2.15}
+\mathcal{L} = \alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho} - \lambda \left(p_1 x_1 + p_2 x_2 - m\right) \label{eq:2.15} \tag{2.15}
 \]
 
 ##### Passo 2 — Condições de primeira ordem
@@ -418,18 +418,18 @@ O Lagrangeano simplificado é:
 Derivando o Lagrangeano (2.15) em relação a \(x_1\), \(x_2\) e \(\lambda\):
 
 \[
-\frac{\partial \mathcal{L}}{\partial x_1} = \alpha \rho \, x_1^{\rho - 1} - \lambda p_1 = 0 \tag{2.16}
+\frac{\partial \mathcal{L}}{\partial x_1} = \alpha \rho \, x_1^{\rho - 1} - \lambda p_1 = 0 \label{eq:2.16} \tag{2.16}
 \]
 
 \[
-\frac{\partial \mathcal{L}}{\partial x_2} = (1-\alpha) \rho \, x_2^{\rho - 1} - \lambda p_2 = 0 \tag{2.17}
+\frac{\partial \mathcal{L}}{\partial x_2} = (1-\alpha) \rho \, x_2^{\rho - 1} - \lambda p_2 = 0 \label{eq:2.17} \tag{2.17}
 \]
 
 \[
-\frac{\partial \mathcal{L}}{\partial \lambda} = m - p_1 x_1 - p_2 x_2 = 0 \tag{2.18}
+\frac{\partial \mathcal{L}}{\partial \lambda} = m - p_1 x_1 - p_2 x_2 = 0 \label{eq:2.18} \tag{2.18}
 \]
 
-A equação (2.18) confirma que a restrição orçamentária é satisfeita.
+A equação \eqref{eq:2.18} confirma que a restrição orçamentária é satisfeita.
 
 ##### Passo 3 — Resolver o sistema
 
@@ -442,7 +442,7 @@ A equação (2.18) confirma que a restrição orçamentária é satisfeita.
 Os fatores \(\rho\) e \(\lambda\) se cancelam:
 
 \[
-\frac{\alpha}{1-\alpha} \left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{p_1}{p_2} \tag{2.19}
+\frac{\alpha}{1-\alpha} \left(\frac{x_1}{x_2}\right)^{\rho - 1} = \frac{p_1}{p_2} \label{eq:2.19} \tag{2.19}
 \]
 
 **Isolar a razão \(x_1/x_2\):**
@@ -452,7 +452,7 @@ Os fatores \(\rho\) e \(\lambda\) se cancelam:
 \]
 
 \[
-\frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{1/(\rho - 1)} \tag{2.20}
+\frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{1/(\rho - 1)} \label{eq:2.20} \tag{2.20}
 \]
 
 !!! tip "Dica: relação entre os expoentes"
@@ -465,13 +465,13 @@ Os fatores \(\rho\) e \(\lambda\) se cancelam:
     Portanto, podemos reescrever (2.20) como:
 
     \[
-    \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{-\sigma} = \left(\frac{\alpha}{1-\alpha} \cdot \frac{p_2}{p_1}\right)^{\sigma} \tag{2.21}
+    \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{-\sigma} = \left(\frac{\alpha}{1-\alpha} \cdot \frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.21} \tag{2.21}
     \]
 
-**Expressar \(x_1\) em função de \(x_2\).** Da equação (2.21):
+**Expressar \(x_1\) em função de \(x_2\).** Da equação \eqref{eq:2.21}:
 
 \[
-x_1 = x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} \tag{2.22}
+x_1 = x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.22} \tag{2.22}
 \]
 
 **Substituir na restrição orçamentária (2.18):**
@@ -507,13 +507,13 @@ x_2 \left[\frac{\alpha^{\sigma} \, p_1^{1-\sigma} \, p_2^{\sigma} + (1-\alpha)^{
 Fatorando \(p_2^{\sigma}\) e reorganizando, chegamos a:
 
 \[
-x_2^* = \frac{(1-\alpha)^{\sigma} \, p_2^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \tag{2.23}
+x_2^* = \frac{(1-\alpha)^{\sigma} \, p_2^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \label{eq:2.23} \tag{2.23}
 \]
 
 Por simetria (ou repetindo o procedimento para \(x_1\)):
 
 \[
-x_1^* = \frac{\alpha^{\sigma} \, p_1^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \tag{2.24}
+x_1^* = \frac{\alpha^{\sigma} \, p_1^{-\sigma}}{\alpha^{\sigma} \, p_1^{1-\sigma} + (1-\alpha)^{\sigma} \, p_2^{1-\sigma}} \cdot m \label{eq:2.24} \tag{2.24}
 \]
 
 !!! definition "Demandas marshallianas CES"
@@ -532,7 +532,7 @@ Observe que as demandas são **homogêneas de grau zero** em \((p_1, p_2, m)\): 
 Da CPO (2.16), isolamos \(\lambda\):
 
 \[
-\lambda^* = \frac{\alpha \rho \, (x_1^*)^{\rho-1}}{p_1} \tag{2.25}
+\lambda^* = \frac{\alpha \rho \, (x_1^*)^{\rho-1}}{p_1} \label{eq:2.25} \tag{2.25}
 \]
 
 Como usamos a versão simplificada \(V = \alpha x_1^{\rho} + (1-\alpha) x_2^{\rho}\), este \(\lambda^*\) corresponde à derivada de \(V^*\) em relação a \(m\). Para obter a utilidade marginal da renda da função original \(U = V^{1/\rho}\), aplicamos a regra da cadeia.

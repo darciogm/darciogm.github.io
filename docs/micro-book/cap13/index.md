@@ -18,7 +18,7 @@ A demanda de mercado é obtida pela soma horizontal das demandas individuais de 
 
 \[
 X(p) = \sum_{i=1}^{n} x_i(p)
-\tag{13.1} \]
+\label{eq:13.1} \tag{13.1} \]
 
 !!! definition "Demanda de mercado"
     A **demanda de mercado** por um bem é a quantidade total demandada por todos os consumidores a cada nível de preço, ou seja, a soma horizontal das curvas de demanda individuais.
@@ -32,7 +32,7 @@ A curva de demanda de mercado herda propriedades das demandas individuais:
 
 \[
 \varepsilon_{X,p} = \sum_{i=1}^{n} \frac{x_i}{X} \cdot \varepsilon_{x_i, p}
-\tag{13.2} \]
+\label{eq:13.2} \tag{13.2} \]
 
 3. **Efeitos renda e substituição**: Deslocamentos na demanda de mercado refletem mudanças na renda agregada, na distribuição de renda, nos preços de bens relacionados e nas preferências dos consumidores. Cabe notar que a distribuição de renda importa: uma economia com renda total de R$ 1 trilhão concentrada em poucos indivíduos terá demanda de mercado diferente de outra com a mesma renda total distribuída mais igualitariamente — pois os padrões de consumo diferem entre faixas de renda.
 
@@ -81,20 +81,20 @@ No curto prazo, as firmas podem ajustar a produção variando insumos variáveis
 
 \[
 S_j(p) = \begin{cases} q_j \text{ tal que } CMg_j(q_j) = p, & \text{se } p \geq CVMe_{\min} \\ 0, & \text{se } p < CVMe_{\min} \end{cases}
-\tag{13.3} \]
+\label{eq:13.3} \tag{13.3} \]
 
 A oferta de mercado de curto prazo é a soma horizontal das ofertas individuais das \(m\) firmas:
 
 \[
 S(p) = \sum_{j=1}^{m} S_j(p)
-\tag{13.4} \]
+\label{eq:13.4} \tag{13.4} \]
 
 !!! definition "Equilíbrio de curto prazo"
     O **equilíbrio competitivo de curto prazo** ocorre ao preço \(p^*\) tal que a quantidade demandada pelo mercado iguala a quantidade ofertada:
 
     \[
     X(p^*) = S(p^*)
-    \tag{13.5} \]
+    \label{eq:13.5} \tag{13.5} \]
 
     A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
 
@@ -111,7 +111,7 @@ O equilíbrio marshalliano é estável quando, a preços acima do equilíbrio, h
 
 \[
 \frac{dX}{dp} - \frac{dS}{dp} < 0
-\tag{13.6} \]
+\label{eq:13.6} \tag{13.6} \]
 
 o que é satisfeito sempre que a demanda é negativamente inclinada e a oferta é positivamente inclinada.
 
@@ -127,7 +127,7 @@ A análise de estática comparativa examina como o equilíbrio muda em resposta 
 
 \[
 X(p, \alpha) = S(p, \beta)
-\tag{13.7} \]
+\label{eq:13.7} \tag{13.7} \]
 
 onde \(\alpha\) é um parâmetro de demanda (por exemplo, renda) e \(\beta\) é um parâmetro de oferta (por exemplo, custo de um insumo).
 
@@ -141,7 +141,7 @@ Rearranjando:
 
 \[
 \frac{dp}{d\alpha} = \frac{\partial X / \partial \alpha}{\partial S / \partial p - \partial X / \partial p} > 0
-\tag{13.8} \]
+\label{eq:13.8} \tag{13.8} \]
 
 se um aumento em \(\alpha\) desloca a demanda para a direita (\(\partial X / \partial \alpha > 0\)) e as curvas têm inclinações convencionais.
 
@@ -167,7 +167,7 @@ A análise de curto prazo toma como dado o número de firmas no mercado. Mas no 
 No longo prazo, todos os fatores de produção são variáveis e há livre entrada e saída de firmas no mercado. Se as firmas existentes obtêm lucro econômico positivo (\(\pi > 0\)), novas firmas entram, deslocando a oferta para a direita e reduzindo o preço. Se há prejuízo (\(\pi < 0\)), firmas saem, deslocando a oferta para a esquerda e elevando o preço. No equilíbrio de longo prazo:
 
 \[
-\pi = 0 \quad \Longrightarrow \quad p = CMe_{\min} \tag{13.9}
+\pi = 0 \quad \Longrightarrow \quad p = CMe_{\min} \label{eq:13.9} \tag{13.9}
 \]
 
 !!! definition "Equilíbrio competitivo de longo prazo"
@@ -232,7 +232,7 @@ A distinção entre indústrias de custos constantes, crescentes e decrescentes 
 A elasticidade de oferta de longo prazo mede a responsividade da quantidade ofertada de longo prazo a variações no preço:
 
 \[
-\varepsilon_{S}^{LP} = \frac{\Delta Q / Q}{\Delta p / p} = \frac{dQ}{dp} \cdot \frac{p}{Q} \tag{13.10}
+\varepsilon_{S}^{LP} = \frac{\Delta Q / Q}{\Delta p / p} = \frac{dQ}{dp} \cdot \frac{p}{Q} \label{eq:13.10} \tag{13.10}
 \]
 
 !!! definition "Elasticidade de oferta de longo prazo"
@@ -262,7 +262,7 @@ Formalmente, o excedente do produtor de longo prazo é a área acima da curva de
 
 \[
 EP_{LP} = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
-\tag{13.11} \]
+\label{eq:13.11} \tag{13.11} \]
 
 onde \(p_S(Q)\) é a curva de oferta inversa de longo prazo.
 
@@ -278,19 +278,19 @@ O **excedente do consumidor** (EC) mede o ganho líquido dos consumidores, sendo
 
 \[
 EC = \int_0^{Q^*} \left[ p_D(Q) - p^* \right] dQ
-\tag{13.12} \]
+\label{eq:13.12} \tag{13.12} \]
 
 O **excedente do produtor** (EP) mede o ganho líquido dos produtores:
 
 \[
 EP = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
-\tag{13.13} \]
+\label{eq:13.13} \tag{13.13} \]
 
 O **bem-estar social** (W) na análise de equilíbrio parcial é:
 
 \[
 W = EC + EP
-\tag{13.14} \]
+\label{eq:13.14} \tag{13.14} \]
 
 !!! theorem "Teorema: Eficiência do equilíbrio competitivo (equilíbrio parcial)"
     O equilíbrio competitivo maximiza o bem-estar social \(W = EC + EP\). Qualquer desvio da quantidade de equilíbrio competitivo — seja por intervenção governamental ou por poder de mercado — gera uma **perda de peso morto** (PPM), ou seja, uma redução líquida do bem-estar total.
@@ -396,13 +396,13 @@ Considere um imposto específico de \(t\) reais por unidade vendida. No equilíb
 
 \[
 p_c = p_p + t
-\tag{13.15} \]
+\label{eq:13.15} \tag{13.15} \]
 
 O novo equilíbrio satisfaz:
 
 \[
 X(p_c) = S(p_p) = S(p_c - t)
-\tag{13.16} \]
+\label{eq:13.16} \tag{13.16} \]
 
 !!! theorem "Teorema: Incidência tributária e elasticidades"
     A divisão da carga tributária entre consumidores e produtores depende das elasticidades relativas de oferta e demanda. A fração do imposto absorvida pelo consumidor é:

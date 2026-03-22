@@ -49,17 +49,17 @@ Formalmente, o principal resolve:
 
 \[
 \max_{w(\cdot)} \; \mathbb{E}[\pi(x) - w(x)]
-\tag{19.1} \]
+\label{eq:19.1} \tag{19.1} \]
 
 sujeito a:
 
 \[
 \mathbb{E}[U(w(x), e^*)] \geq \bar{U} \quad \text{(Restrição de Participação)}
-\tag{19.2} \]
+\label{eq:19.2} \tag{19.2} \]
 
 \[
 e^* \in \arg\max_{e} \; \mathbb{E}[U(w(x), e)] \quad \text{(Restrição de Incentivo)}
-\tag{19.3} \]
+\label{eq:19.3} \tag{19.3} \]
 
 onde \(w(x)\) é o esquema de pagamento contingente ao resultado observável \(x\), \(e\) é o esforço do agente e \(\pi(x)\) é o lucro bruto do principal.
 
@@ -93,13 +93,13 @@ Considere um proprietário (principal) que contrata um gerente (agente) para adm
 
 \[
 \pi = f(e) + \varepsilon, \quad \varepsilon \sim (0, \sigma^2)
-\tag{19.4} \]
+\label{eq:19.4} \tag{19.4} \]
 
 O esforço \(e\) é custoso para o gerente, com custo \(c(e)\), onde \(c'(e) > 0\) e \(c''(e) > 0\). Se o proprietário pudesse observar \(e\), contrataria o nível eficiente \(e^*\) tal que:
 
 \[
 f'(e^*) = c'(e^*)
-\tag{19.5} \]
+\label{eq:19.5} \tag{19.5} \]
 
 Quando \(e\) não é observável, o proprietário precisa desenhar um esquema de compensação \(w(\pi)\) que dependa do resultado observável \(\pi\). Se o gerente é avesso ao risco com utilidade \(U(w) - c(e)\), o contrato ótimo envolve um **trade-off entre incentivos e seguro**:
 
@@ -139,19 +139,19 @@ O principal deseja induzir esforço alto. O contrato especifica pagamentos \(w_H
 
 \[
 p_H \, U(w_H) + (1 - p_H) \, U(w_L) - c(e_H) \geq \bar{U}
-\tag{19.6} \]
+\label{eq:19.6} \tag{19.6} \]
 
 **Restrição de Compatibilidade de Incentivos (RCI):**
 
 \[
 p_H \, U(w_H) + (1 - p_H) \, U(w_L) - c(e_H) \geq p_L \, U(w_H) + (1 - p_L) \, U(w_L) - c(e_L)
-\tag{19.7} \]
+\label{eq:19.7} \tag{19.7} \]
 
 Simplificando a RCI:
 
 \[
 (p_H - p_L)[U(w_H) - U(w_L)] \geq c(e_H) - c(e_L)
-\tag{19.8} \]
+\label{eq:19.8} \tag{19.8} \]
 
 Essa condição exige que a diferença de pagamentos entre os estados bom e ruim seja suficientemente grande para compensar o custo adicional do esforço. Como \(p_H > p_L\), precisamos de \(w_H > w_L\): o pagamento deve ser maior quando o resultado é bom.
 
@@ -243,7 +243,7 @@ Se o comprador não distingue os tipos, está disposto a pagar no máximo:
 
 \[
 \bar{V} = \lambda V_H + (1 - \lambda) V_L
-\tag{19.9} \]
+\label{eq:19.9} \tag{19.9} \]
 
 Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço médio. Somente carros ruins permanecem no mercado, e o comprador, antecipando isso, oferece no máximo \(V_L\). A **qualidade média do mercado cai**, configurando a seleção adversa: os "bons" saem, os "ruins" ficam.
 
@@ -319,11 +319,11 @@ As restrições de autosseleção (incentivo-compatibilidade) são:
 
 \[
 \theta_H v(q_H) - T_H \geq \theta_H v(q_L) - T_L \quad \text{(RCI do tipo alto)}
-\tag{19.10} \]
+\label{eq:19.10} \tag{19.10} \]
 
 \[
 \theta_L v(q_L) - T_L \geq \theta_L v(q_H) - T_H \quad \text{(RCI do tipo baixo)}
-\tag{19.11} \]
+\label{eq:19.11} \tag{19.11} \]
 
 E as restrições de participação:
 
@@ -459,18 +459,18 @@ com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\)
 No **equilíbrio separador**, o tipo \(H\) escolhe nível de educação \(s^*\) e o tipo \(L\) escolhe \(s = 0\). O nível \(s^*\) deve satisfazer simultaneamente:
 
 \[
-\theta_H - \frac{s^*}{\theta_H} \geq \theta_L \quad \text{(tipo H prefere sinalizar)} \tag{19.12}
+\theta_H - \frac{s^*}{\theta_H} \geq \theta_L \quad \text{(tipo H prefere sinalizar)} \label{eq:19.12} \tag{19.12}
 \]
 
 \[
-\theta_L \geq \theta_H - \frac{s^*}{\theta_L} \quad \text{(tipo L prefere não sinalizar)} \tag{19.13}
+\theta_L \geq \theta_H - \frac{s^*}{\theta_L} \quad \text{(tipo L prefere não sinalizar)} \label{eq:19.13} \tag{19.13}
 \]
 
 Resolvendo:
 
 \[
 \theta_L(\theta_H - \theta_L) \leq s^* \leq \theta_H(\theta_H - \theta_L)
-\tag{19.14} \]
+\label{eq:19.14} \tag{19.14} \]
 
 O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separating) ocorre em \(s^* = \theta_L(\theta_H - \theta_L)\).
 

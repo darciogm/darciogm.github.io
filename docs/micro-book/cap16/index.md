@@ -44,7 +44,7 @@ A função de demanda da firma 1 é:
 
 \[
 q_1(p_1, p_2) = \begin{cases} D(p_1) & \text{se } p_1 < p_2 \\ \frac{D(p_1)}{2} & \text{se } p_1 = p_2 \\ 0 & \text{se } p_1 > p_2 \end{cases}
-\tag{16.1} \]
+\label{eq:16.1} \tag{16.1} \]
 
 ### O paradoxo de Bertrand
 
@@ -115,19 +115,19 @@ O lucro da firma 1 é:
 
 \[
 \pi_1(q_1, q_2) = [a - b(q_1 + q_2)] \cdot q_1 - c \cdot q_1
-\tag{16.2} \]
+\label{eq:16.2} \tag{16.2} \]
 
 A condição de primeira ordem é:
 
 \[
 \frac{\partial \pi_1}{\partial q_1} = a - 2bq_1 - bq_2 - c = 0
-\tag{16.3} \]
+\label{eq:16.3} \tag{16.3} \]
 
 Resolvendo para \(q_1\):
 
 \[
 q_1^*(q_2) = \frac{a - c - bq_2}{2b} = \frac{a - c}{2b} - \frac{q_2}{2}
-\tag{16.4} \]
+\label{eq:16.4} \tag{16.4} \]
 
 Essa é a **função de reação** (ou função de melhor resposta) da firma 1. Ela indica a quantidade ótima da firma 1 para cada nível de produção da firma 2. A função de reação é **decrescente**: as quantidades são **substitutos estratégicos** no modelo de Cournot.
 
@@ -146,11 +146,11 @@ O equilíbrio de Cournot é:
 
 \[
 q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac{a+2c}{3}
-\tag{16.5} \]
+\label{eq:16.5} \tag{16.5} \]
 
 \[
 \pi_1^* = \pi_2^* = \frac{(a-c)^2}{9b}
-\tag{16.6} \]
+\label{eq:16.6} \tag{16.6} \]
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** No equilíbrio de Cournot, cada empresa produz menos do que faria sozinha, mas o mercado como um todo produz mais do que um monopólio.
@@ -187,11 +187,11 @@ A condição de primeira ordem dá:
 
 \[
 q_1^L = \frac{a-c}{2b}, \quad q_2^S = \frac{a-c}{4b}
-\tag{16.7} \]
+\label{eq:16.7} \tag{16.7} \]
 
 \[
 Q^{St} = \frac{3(a-c)}{4b}, \quad p^{St} = \frac{a+3c}{4}
-\tag{16.8} \]
+\label{eq:16.8} \tag{16.8} \]
 
 O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e lucra menos. A **vantagem do primeiro movimento** (first-mover advantage) decorre do compromisso crível com uma quantidade elevada.
 
@@ -259,7 +259,7 @@ Os resultados obtidos para o duopólio de Cournot levantam uma questão natural:
 
     \[
     \boxed{q^* = \frac{a - c}{b(n+1)}}
-    \tag{16.9} \]
+    \label{eq:16.9} \tag{16.9} \]
 
     A quantidade agregada e o preço de equilíbrio são:
 
@@ -269,13 +269,13 @@ Os resultados obtidos para o duopólio de Cournot levantam uma questão natural:
 
     \[
     p^* = a - bQ^* = a - \frac{n(a-c)}{n+1} = \frac{a + nc}{n+1}
-    \tag{16.10} \]
+    \label{eq:16.10} \tag{16.10} \]
 
     O lucro de cada firma é:
 
     \[
     \pi^* = (p^* - c)q^* = \frac{(a-c)^2}{b(n+1)^2}
-    \tag{16.11} \]
+    \label{eq:16.11} \tag{16.11} \]
 
     **Propriedades de estática comparativa:**
 
@@ -317,7 +317,7 @@ Considere um segmento de reta \([0, 1]\) representando o espaço de característ
 O consumidor indiferente localiza-se em:
 
 \[
-\hat{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} \tag{16.12}
+\hat{x} = \frac{1}{2} + \frac{p_2 - p_1}{2t} \label{eq:16.12} \tag{16.12}
 \]
 
 As demandas são \(q_1 = \hat{x}\) e \(q_2 = 1 - \hat{x}\). As funções de lucro (com custo marginal zero) são:
@@ -336,7 +336,7 @@ O modelo de Salop estende Hotelling para \(n\) firmas dispostas simetricamente e
 
 \[
 p^* = c + \frac{t}{n}, \quad n^* = \sqrt{\frac{t}{f}}
-\tag{16.13} \]
+\label{eq:16.13} \tag{16.13} \]
 
 onde \(f\) é o custo fixo de entrada. O número de firmas em equilíbrio é crescente no custo de transporte (diferenciação) e decrescente no custo fixo.
 
@@ -365,13 +365,13 @@ A colusão é sustentável se:
 
 \[
 \frac{1}{2(1-\delta)} \geq 1 \implies \delta \geq \frac{1}{2}
-\tag{16.14} \]
+\label{eq:16.14} \tag{16.14} \]
 
 Com \(n\) firmas simétricas, a condição torna-se:
 
 \[
 \delta \geq 1 - \frac{1}{n}
-\tag{16.15} \]
+\label{eq:16.15} \tag{16.15} \]
 
 Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
@@ -488,7 +488,7 @@ Resolvendo para \(n\):
 
 \[
 n^* = \frac{a-c}{\sqrt{bf}} - 1
-\tag{16.16} \]
+\label{eq:16.16} \tag{16.16} \]
 
 O número de firmas é crescente no tamanho do mercado \((a-c)\) e decrescente no custo fixo \(f\) e no parâmetro de inclinação da demanda \(b\).
 

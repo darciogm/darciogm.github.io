@@ -75,19 +75,19 @@ O monopolista enfrenta toda a curva de demanda do mercado. Se a demanda inversa 
 
 \[
 \max_q \; \pi(q) = p(q) \cdot q - C(q)
-\tag{15.1} \]
+\label{eq:15.1} \tag{15.1} \]
 
 A condição de primeira ordem é:
 
 \[
 \frac{d\pi}{dq} = \underbrace{p(q) + q \cdot p'(q)}_{\text{Receita Marginal (RMg)}} - \underbrace{C'(q)}_{\text{Custo Marginal (CMg)}} = 0
-\tag{15.2} \]
+\label{eq:15.2} \tag{15.2} \]
 
 Portanto, a regra de maximização é:
 
 \[
 \boxed{RMg(q^m) = CMg(q^m)}
-\tag{15.3} \]
+\label{eq:15.3} \tag{15.3} \]
 
 A condição de segunda ordem exige que \(\frac{d^2\pi}{dq^2} < 0\), ou seja, que a receita marginal corte o custo marginal "de cima para baixo".
 
@@ -97,7 +97,7 @@ A receita marginal pode ser expressa em termos da elasticidade-preço da demanda
 
 \[
 RMg = p\left(1 + \frac{1}{\varepsilon_p}\right) = p\left(1 - \frac{1}{|\varepsilon_p|}\right)
-\tag{15.4} \]
+\label{eq:15.4} \tag{15.4} \]
 
 Como o monopolista opera onde \(RMg > 0\), ele necessariamente produz na faixa **elástica** da demanda (\(|\varepsilon_p| > 1\)). Na faixa inelástica, a receita marginal seria negativa, e o monopolista poderia aumentar a receita (e o lucro) reduzindo a produção.
 
@@ -109,7 +109,7 @@ Da condição \(RMg = CMg\), obtemos:
 
 \[
 p\left(1 - \frac{1}{|\varepsilon_p|}\right) = CMg \implies p = \frac{CMg}{1 - \frac{1}{|\varepsilon_p|}}
-\tag{15.5} \]
+\label{eq:15.5} \tag{15.5} \]
 
 O monopolista aplica um **markup** sobre o custo marginal que é inversamente proporcional à elasticidade-preço da demanda. Quanto mais inelástica a demanda, maior o markup e maior o poder de mercado.
 
@@ -118,7 +118,7 @@ O monopolista aplica um **markup** sobre o custo marginal que é inversamente pr
 
     \[
     L = \frac{p - CMg}{p}
-    \tag{15.6} \]
+    \label{eq:15.6} \tag{15.6} \]
 
     Para uma firma em concorrência perfeita, \(L = 0\). Para um monopolista, \(L = \frac{1}{|\varepsilon_p|}\). O índice varia entre 0 e 1.
 
@@ -194,7 +194,7 @@ A derivação formal a seguir explicita a conexão algébrica entre o poder de m
 
     \[
     \boxed{L = \frac{p - CMg}{p} = \frac{1}{|\varepsilon_p|}}
-    \tag{15.7} \]
+    \label{eq:15.7} \tag{15.7} \]
 
     O índice de Lerner é igual ao inverso do valor absoluto da elasticidade-preço da demanda. Quanto mais inelástica a demanda (menor \(|\varepsilon_p|\)), maior o poder de mercado. Em concorrência perfeita, a firma enfrenta demanda perfeitamente elástica (\(|\varepsilon_p| \to \infty\)), de modo que \(L = 0\). \(\blacksquare\)
 
@@ -220,7 +220,7 @@ q^c = \frac{a - c}{b}, \quad p^c = c
 
 \[
 RMg = a - 2bq = c \implies q^m = \frac{a - c}{2b}, \quad p^m = \frac{a + c}{2}
-\tag{15.8} \]
+\label{eq:15.8} \tag{15.8} \]
 
 O monopolista produz **metade** da quantidade competitiva e cobra um preço **acima** do custo marginal.
 
@@ -230,7 +230,7 @@ A perda de peso morto corresponde à área do triângulo entre a curva de demand
 
 \[
 PPM = \frac{1}{2}(p^m - c)(q^c - q^m) = \frac{(a-c)^2}{8b}
-\tag{15.9} \]
+\label{eq:15.9} \tag{15.9} \]
 
 Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0,1% do PIB, um valor surpreendentemente pequeno. Estimativas posteriores, incorporando *rent-seeking* e ineficiências organizacionais, sugerem valores significativamente maiores.
 
@@ -272,7 +272,7 @@ Suponha que o governo impõe um imposto unitário \(t\) sobre cada unidade produ
 
 \[
 q^m(t) = \frac{a - c - t}{2b}, \quad p^m(t) = \frac{a + c + t}{2}
-\tag{15.10} \]
+\label{eq:15.10} \tag{15.10} \]
 
 Observe que \(\frac{dp^m}{dt} = \frac{1}{2}\): o monopolista repassa apenas **metade** do imposto ao consumidor. Isso contrasta com a concorrência perfeita, na qual, com oferta perfeitamente elástica, o repasse é integral.
 
@@ -305,7 +305,7 @@ A condição para a escolha ótima de qualidade é:
 
 \[
 \frac{\partial p}{\partial s} \cdot q = \frac{\partial C}{\partial s}
-\tag{15.11} \]
+\label{eq:15.11} \tag{15.11} \]
 
 O monopolista iguala a receita marginal da qualidade ao custo marginal da qualidade. A receita marginal da qualidade é avaliada no **consumidor marginal** (o último a adquirir o bem), não no consumidor médio. Como o consumidor marginal tipicamente valora a qualidade menos do que o consumidor médio, o monopolista pode subprover ou superprover qualidade em relação ao ótimo social, dependendo da distribuição de preferências.
 
@@ -379,14 +379,14 @@ Se há dois mercados com demandas \(p_1(q_1)\) e \(p_2(q_2)\), o monopolista res
 As condições de primeira ordem são:
 
 \[
-RMg_1(q_1) = RMg_2(q_2) = CMg(q_1 + q_2) \tag{15.12}
+RMg_1(q_1) = RMg_2(q_2) = CMg(q_1 + q_2) \label{eq:15.12} \tag{15.12}
 \]
 
 O monopolista iguala as receitas marginais em todos os mercados ao custo marginal. O mercado com demanda **mais inelástica** paga o preço **mais alto**:
 
 \[
 \frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}
-\tag{15.13} \]
+\label{eq:15.13} \tag{15.13} \]
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Discriminar preços significa cobrar mais de quem está mais disposto a pagar e menos de quem é mais sensível ao preço.
@@ -493,7 +493,7 @@ O regulador permite que a firma obtenha uma taxa de retorno "justa" \(s\) sobre 
 
 \[
 pq - wL - rK \leq (s - r)K
-\tag{15.14} \]
+\label{eq:15.14} \tag{15.14} \]
 
 Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinvestir em capital** para inflar a base de remuneração — o chamado **efeito Averch-Johnson**. A firma substitui trabalho por capital além do socialmente ótimo, resultando em ineficiência produtiva.
 
