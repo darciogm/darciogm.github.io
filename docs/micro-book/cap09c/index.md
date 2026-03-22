@@ -22,7 +22,7 @@ Como modelar formalmente uma situação em que os jogadores não conhecem as car
 
     onde \(\Theta_i\) é o conjunto de tipos do jogador \(i\), \(u_i(s, \theta)\) é o payoff, e \(p(\theta)\) é a distribuição conjunta sobre o perfil de tipos (prior comum).
 
-A transformação de Harsanyi converte um jogo com informação incompleta em um jogo com informação imperfeita (mas completa): a "natureza" sorteia os tipos, cada jogador observa apenas o próprio tipo, e o jogo prossegue como um jogo simultâneo em que cada tipo é tratado como um "jogador" separado. O que antes era genuína ignorância sobre a estrutura do jogo, formalizada pela equação \eqref{eq:9c.1}, torna-se meramente incerteza sobre um lance aleatório — algo que as ferramentas probabilísticas podem tratar rigorosamente.
+A transformação de Harsanyi converte um jogo com informação incompleta em um jogo com informação imperfeita (mas completa): a "natureza" sorteia os tipos, cada jogador observa apenas o próprio tipo, e o jogo prossegue como um jogo simultâneo em que cada tipo é tratado como um "jogador" separado. O que antes era genuína ignorância sobre a estrutura do jogo, formalizada pela equação $\eqref{eq:9c.1}$, torna-se meramente incerteza sobre um lance aleatório — algo que as ferramentas probabilísticas podem tratar rigorosamente.
 
 ---
 
@@ -86,7 +86,7 @@ b(v) = v \cdot \frac{N-1}{N}
 \label{eq:9c.3} \tag{9c.3}
 \]
 
-Pela equação \eqref{eq:9c.3}, cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, o lance é metade do valor; com muitos, converge para o valor verdadeiro. Com mais concorrentes, o risco de perder o leilão aumenta e o sombreamento diminui — no limite, com infinitos licitantes, cada um lança (quase) seu valor verdadeiro.
+Pela equação $\eqref{eq:9c.3}$, cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, o lance é metade do valor; com muitos, converge para o valor verdadeiro. Com mais concorrentes, o risco de perder o leilão aumenta e o sombreamento diminui — no limite, com infinitos licitantes, cada um lança (quase) seu valor verdadeiro.
 
 **Receita esperada:** Com \(v_i \sim U[0, 1]\):
 
@@ -102,7 +102,7 @@ Os leilões de primeiro e segundo preço parecem radicalmente distintos. As rece
 !!! theorem "Revenue Equivalence Theorem (Myerson, 1981; Riley e Samuelson, 1981)"
     Com licitantes simétricos, IPV, risco-neutros, e qualquer mecanismo que (i) atribui o objeto ao licitante com maior valor e (ii) dá payoff zero ao tipo mais baixo, a **receita esperada** do leiloeiro é a mesma.
 
-    Consequência: leilão de 1º preço, 2º preço, inglês e holandês geram a mesma receita esperada, como confirma a equação \eqref{eq:9c.4}.
+    Consequência: leilão de 1º preço, 2º preço, inglês e holandês geram a mesma receita esperada, como confirma a equação $\eqref{eq:9c.4}$.
 
 !!! note "Quando a equivalência falha"
     A equivalência de receita falha com: (i) aversão ao risco (1º preço gera mais receita); (ii) assimetria entre licitantes; (iii) valores afiliados/comuns; (iv) colusão. Nesses casos, o formato do leilão importa — e o desenho ótimo de mecanismo (Myerson, 1981) se torna relevante.

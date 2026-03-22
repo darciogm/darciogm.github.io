@@ -66,7 +66,7 @@ c(e, \theta_H) < c(e, \theta_L) \quad \text{para todo } e > 0
 \label{eq:9d.1} \tag{9d.1}
 \]
 
-A condição de **single-crossing** da equação \eqref{eq:9d.1} é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que cria a possibilidade de separação: o nível de educação que o tipo alto aceita obter é proibitivamente custoso para o tipo baixo, garantindo que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
+A condição de **single-crossing** da equação $\eqref{eq:9d.1}$ é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que cria a possibilidade de separação: o nível de educação que o tipo alto aceita obter é proibitivamente custoso para o tipo baixo, garantindo que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** No modelo de Spence, a educação tem valor de sinalização *mesmo que não aumente a produtividade*.
@@ -75,7 +75,7 @@ A condição de **single-crossing** da equação \eqref{eq:9d.1} é o ingredient
 
     **O teste da redundância:** Se todo mundo fosse obrigado a ter MBA, o sinal perderia valor — porque deixaria de separar. Isso é exatamente o que ocorre quando a inflação de diplomas torna certificações ubíquas.
 
-    **Spence vs. Becker:** Na teoria do capital humano (Becker, 1964), a educação aumenta a produtividade diretamente. Na teoria de sinalização (Spence, 1973), a educação não precisa aumentar a produtividade — basta que satisfaça a condição \eqref{eq:9d.1} de custo diferencialmente menor para o tipo hábil. Na prática, ambos os canais coexistem.
+    **Spence vs. Becker:** Na teoria do capital humano (Becker, 1964), a educação aumenta a produtividade diretamente. Na teoria de sinalização (Spence, 1973), a educação não precisa aumentar a produtividade — basta que satisfaça a condição $\eqref{eq:9d.1}$ de custo diferencialmente menor para o tipo hábil. Na prática, ambos os canais coexistem.
 
 ### Equilíbrio separador: derivação
 

@@ -220,7 +220,7 @@ A ideia central do método de Lagrange é engenhosa: em vez de resolver um probl
 onde \(\lambda\) é o **multiplicador de Lagrange**, uma nova variável de escolha introduzida pelo método.
 
 !!! tip "Dica: convenção de sinal"
-    A equação \eqref{eq:2.2} pode ser escrita equivalentemente como:
+    A equação $\eqref{eq:2.2}$ pode ser escrita equivalentemente como:
 
     \[
     \mathcal{L} = f(x_1, x_2) - \lambda \left[g(x_1, x_2) - c\right]
@@ -251,9 +251,9 @@ Para encontrar o ótimo, derivamos \(\mathcal{L}\) em relação a cada variável
 \frac{\partial \mathcal{L}}{\partial \lambda} = c - g(x_1, x_2) = 0 \label{eq:2.5} \tag{2.5}
 \]
 
-Observe que a terceira CPO, equação \eqref{eq:2.5}, simplesmente **recupera a restrição original** \(g(x_1, x_2) = c\). Isso é uma consequência direta de como o Lagrangeano foi construído.
+Observe que a terceira CPO, equação $\eqref{eq:2.5}$, simplesmente **recupera a restrição original** \(g(x_1, x_2) = c\). Isso é uma consequência direta de como o Lagrangeano foi construído.
 
-**Condição de tangência.** Das equações \eqref{eq:2.3} e (2.4), podemos isolar \(\lambda\):
+**Condição de tangência.** Das equações $\eqref{eq:2.3}$ e (2.4), podemos isolar \(\lambda\):
 
 \[
 \lambda = \frac{f_{x_1}}{g_{x_1}} = \frac{f_{x_2}}{g_{x_2}}
@@ -265,10 +265,10 @@ Igualando as duas expressões:
 \frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}} \label{eq:2.6} \tag{2.6}
 \]
 
-A equação \eqref{eq:2.6} é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
+A equação $\eqref{eq:2.6}$ é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
 
 !!! info "Intuição econômica"
-    No problema do consumidor, a equação \eqref{eq:2.6} se torna:
+    No problema do consumidor, a equação $\eqref{eq:2.6}$ se torna:
 
     \[
     \frac{UMg_1}{UMg_2} = \frac{p_1}{p_2}
@@ -288,7 +288,7 @@ O sistema de CPOs consiste em \(n + 1\) equações com \(n + 1\) incógnitas (no
 
 Igualando as expressões, obtém-se uma relação entre \(x_1\) e \(x_2\) (a condição de tangência). Substituindo na restrição \(g = c\), resolve-se para os valores ótimos.
 
-**Estratégia B — Dividir CPOs.** Divide-se a equação \eqref{eq:2.3} pela equação \eqref{eq:2.4}:
+**Estratégia B — Dividir CPOs.** Divide-se a equação $\eqref{eq:2.3}$ pela equação $\eqref{eq:2.4}$:
 
 \[
 \frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}}
@@ -429,7 +429,7 @@ Derivando o Lagrangeano (2.15) em relação a \(x_1\), \(x_2\) e \(\lambda\):
 \frac{\partial \mathcal{L}}{\partial \lambda} = m - p_1 x_1 - p_2 x_2 = 0 \label{eq:2.18} \tag{2.18}
 \]
 
-A equação \eqref{eq:2.18} confirma que a restrição orçamentária é satisfeita.
+A equação $\eqref{eq:2.18}$ confirma que a restrição orçamentária é satisfeita.
 
 ##### Passo 3 — Resolver o sistema
 
@@ -468,7 +468,7 @@ Os fatores \(\rho\) e \(\lambda\) se cancelam:
     \frac{x_1}{x_2} = \left(\frac{1-\alpha}{\alpha} \cdot \frac{p_1}{p_2}\right)^{-\sigma} = \left(\frac{\alpha}{1-\alpha} \cdot \frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.21} \tag{2.21}
     \]
 
-**Expressar \(x_1\) em função de \(x_2\).** Da equação \eqref{eq:2.21}:
+**Expressar \(x_1\) em função de \(x_2\).** Da equação $\eqref{eq:2.21}$:
 
 \[
 x_1 = x_2 \left(\frac{\alpha}{1-\alpha}\right)^{\sigma} \left(\frac{p_2}{p_1}\right)^{\sigma} \label{eq:2.22} \tag{2.22}

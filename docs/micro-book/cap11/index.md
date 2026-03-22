@@ -127,7 +127,7 @@ Igualando:
 \label{eq:11.3} \tag{11.3}
 \]
 
-A equação \eqref{eq:11.3} tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/v\)). Se a TMST fosse maior que \(w/v\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
+A equação $\eqref{eq:11.3}$ tem uma interpretação econômica elegante e direta: no ótimo, a taxa à qual a firma *pode* substituir capital por trabalho sem perder produção (a TMST) deve igualar a taxa à qual o mercado *permite* essa substituição (a razão de preços \(w/v\)). Se a TMST fosse maior que \(w/v\), a firma poderia reduzir custos usando mais trabalho e menos capital; se fosse menor, o ajuste inverso seria vantajoso.
 
 !!! theorem "Condição de minimização de custos"
     No ótimo, a **TMST** (inclinação da isoquanta) iguala a **razão dos preços dos insumos** (inclinação da isocusto):
@@ -284,7 +284,7 @@ A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
 \label{eq:11.8} \tag{11.8}
 \]
 
-Portanto, pela equação \eqref{eq:11.8}, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).**
+Portanto, pela equação $\eqref{eq:11.8}$, \(\mathrm{CMe}\) é decrescente quando \(\mathrm{CMg} < \mathrm{CMe}\) e crescente quando \(\mathrm{CMg} > \mathrm{CMe}\).**
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O custo marginal "puxa" o custo médio — se produzir uma unidade a mais custa menos que a média, a média cai; se custa mais, a média sobe.
@@ -388,7 +388,7 @@ A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colo
 
     **Por que isso importa:** A envoltória de custos de longo prazo determina a escala eficiente da firma e, portanto, o número de firmas que o mercado comporta — informação crucial para política antitruste e regulação.
 
-Propriedade importante: no ponto de tangência, conforme a equação \eqref{eq:11.12}, o CMg de curto prazo é igual ao CMg de longo prazo:
+Propriedade importante: no ponto de tangência, conforme a equação $\eqref{eq:11.12}$, o CMg de curto prazo é igual ao CMg de longo prazo:
 
 \[
 \mathrm{CMg}_{CP}(q^*; \bar{K}^*) = \mathrm{CMg}_{LP}(q^*)

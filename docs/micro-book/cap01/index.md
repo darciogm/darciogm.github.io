@@ -157,7 +157,7 @@ Q^d = Q^s \quad \text{(equilíbrio)} \label{eq:1.4.3} \tag{1.4.3}
 
 ### A hipótese de otimização como fundamento
 
-O sistema de equações \eqref{eq:1.4.1}--\eqref{eq:1.4.3} descreve o equilíbrio de um mercado, mas como chegamos a essas equações? A resposta está na hipótese de otimização discutida na Seção 1.3. Na prática, a construção de um modelo microeconômico segue um roteiro bem definido, que traduz a ideia de agentes otimizadores em um problema matemático concreto. A estrutura típica de um modelo microeconômico envolve:
+O sistema de equações $\eqref{eq:1.4.1}$--$\eqref{eq:1.4.3}$ descreve o equilíbrio de um mercado, mas como chegamos a essas equações? A resposta está na hipótese de otimização discutida na Seção 1.3. Na prática, a construção de um modelo microeconômico segue um roteiro bem definido, que traduz a ideia de agentes otimizadores em um problema matemático concreto. A estrutura típica de um modelo microeconômico envolve:
 
 1. **Definir o objetivo** do agente (função utilidade, função lucro).
 2. **Identificar as restrições** (orçamentária, tecnológica, informacional).
@@ -327,9 +327,9 @@ Para que \(q^*\) seja de fato um **máximo** (e não um mínimo ou ponto de infl
 \frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0 \label{eq:1.4.8} \tag{1.4.8}
 \]
 
-Portanto, a condição de segunda ordem \eqref{eq:1.4.8} exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
+Portanto, a condição de segunda ordem $\eqref{eq:1.4.8}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
 
-O que essa demonstração nos revela? Do ponto de vista econômico, o resultado da equação \eqref{eq:1.4.6} encapsula uma lógica elegante: a firma expande a produção enquanto cada unidade adicional gera receita (\(P\)) superior ao custo de produzi-la (\(CMg\)). No ponto ótimo, a última unidade produzida "se paga" exatamente — não há mais ganho possível na margem. Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos capítulos sobre a teoria da firma.
+O que essa demonstração nos revela? Do ponto de vista econômico, o resultado da equação $\eqref{eq:1.4.6}$ encapsula uma lógica elegante: a firma expande a produção enquanto cada unidade adicional gera receita (\(P\)) superior ao custo de produzi-la (\(CMg\)). No ponto ótimo, a última unidade produzida "se paga" exatamente — não há mais ganho possível na margem. Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos capítulos sobre a teoria da firma.
 
 ---
 

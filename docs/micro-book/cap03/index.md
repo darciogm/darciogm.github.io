@@ -56,7 +56,7 @@ Uma **função de utilidade** \(u: X \to \mathbb{R}\) **representa** a relação
 \mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \label{eq:3.2.1} \tag{3.2.1}
 \]
 
-A condição expressa na equação \eqref{eq:3.2.1} exige apenas que a função preserve o ordenamento das preferências. A existência de tal função não é trivial. O teorema a seguir fornece condições suficientes.
+A condição expressa na equação $\eqref{eq:3.2.1}$ exige apenas que a função preserve o ordenamento das preferências. A existência de tal função não é trivial. O teorema a seguir fornece condições suficientes.
 
 !!! theorem "Teorema 3.1 — Existência da Função de Utilidade (Debreu, 1954)"
     Se a relação de preferência \(\succsim\) sobre \(X \subseteq \mathbb{R}^n_+\) é **completa**, **transitiva**, **contínua** e **monótona**, então existe uma função de utilidade contínua \(u: X \to \mathbb{R}\) que representa \(\succsim\).
@@ -151,7 +151,7 @@ A **utilidade marginal** do bem \(i\) é:
 \text{UMg}_i = \frac{\partial u}{\partial x_i}. \label{eq:3.5.3} \tag{3.5.3}
 \]
 
-A relação fundamental entre utilidade marginal, definida pela equação \eqref{eq:3.5.3}, e a TMS definida pela equação \eqref{eq:3.4.2} é dada pela proposição a seguir.
+A relação fundamental entre utilidade marginal, definida pela equação $\eqref{eq:3.5.3}$, e a TMS definida pela equação $\eqref{eq:3.4.2}$ é dada pela proposição a seguir.
 
 !!! theorem "Proposição 3.2 — TMS como razão de utilidades marginais"
     Se \(u(x_1, x_2)\) é diferenciável e \(\text{UMg}_2 > 0\), então:
@@ -278,7 +278,7 @@ As curvas de indiferença têm formato de **L** (ângulo reto), com vértice na 
 
 ### 3.6.4 CES (Elasticidade de Substituição Constante)
 
-Os três casos anteriores — Cobb-Douglas \eqref{eq:3.6.5}, substitutos perfeitos \eqref{eq:3.6.7} e complementos perfeitos \eqref{eq:3.6.9} — podem parecer categorias isoladas, mas na verdade são membros de uma mesma família: a função CES. Essa generalização permite capturar qualquer grau de substituibilidade entre os bens por meio de um único parâmetro \(\rho\), tornando-a uma ferramenta extremamente versátil tanto na teoria quanto na aplicação empírica.
+Os três casos anteriores — Cobb-Douglas $\eqref{eq:3.6.5}$, substitutos perfeitos $\eqref{eq:3.6.7}$ e complementos perfeitos $\eqref{eq:3.6.9}$ — podem parecer categorias isoladas, mas na verdade são membros de uma mesma família: a função CES. Essa generalização permite capturar qualquer grau de substituibilidade entre os bens por meio de um único parâmetro \(\rho\), tornando-a uma ferramenta extremamente versátil tanto na teoria quanto na aplicação empírica.
 
 \[
 u(x_1, x_2) = \left(x_1^{\rho} + x_2^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \; \rho \neq 0. \label{eq:3.6.10} \tag{3.6.10}

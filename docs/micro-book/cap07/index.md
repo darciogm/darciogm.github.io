@@ -48,7 +48,7 @@ E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \in
 \label{eq:7.2} \tag{7.2}
 \]
 
-No entanto, nenhuma pessoa racional pagaria uma quantia arbitrariamente alta para participar desse jogo. O valor esperado infinito da equação \eqref{eq:7.2} não se traduz em disposição a pagar infinita. Daniel Bernoulli (1738) propôs que os agentes avaliam os resultados não pelo seu valor monetário, mas pela **utilidade** que deles extraem — inaugurando a ideia de utilidade esperada. Essa intuição genial — a de que o que importa não é o dinheiro em si, mas a satisfação que ele proporciona — é o ponto de partida para a construção axiomática que veremos a seguir.
+No entanto, nenhuma pessoa racional pagaria uma quantia arbitrariamente alta para participar desse jogo. O valor esperado infinito da equação $\eqref{eq:7.2}$ não se traduz em disposição a pagar infinita. Daniel Bernoulli (1738) propôs que os agentes avaliam os resultados não pelo seu valor monetário, mas pela **utilidade** que deles extraem — inaugurando a ideia de utilidade esperada. Essa intuição genial — a de que o que importa não é o dinheiro em si, mas a satisfação que ele proporciona — é o ponto de partida para a construção axiomática que veremos a seguir.
 
 ---
 
@@ -110,7 +110,7 @@ u(E[\tilde{x}]) > E[u(\tilde{x})]
 \label{eq:7.4} \tag{7.4}
 \]
 
-Intuitivamente, a desigualdade \eqref{eq:7.4} mostra que o agente avesso ao risco prefere receber o valor esperado de uma loteria com certeza a participar da loteria. A curvatura de \(u\) captura a intensidade dessa preferência: quanto mais côncava a função, maior a aversão ao risco.
+Intuitivamente, a desigualdade $\eqref{eq:7.4}$ mostra que o agente avesso ao risco prefere receber o valor esperado de uma loteria com certeza a participar da loteria. A curvatura de \(u\) captura a intensidade dessa preferência: quanto mais côncava a função, maior a aversão ao risco.
 
 Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando dois pontos na curva de utilidade fica **abaixo** da própria curva — ou seja, a utilidade esperada da loteria (ponto na corda) é inferior à utilidade do valor esperado (ponto na curva).
 
@@ -211,7 +211,7 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
     \label{eq:7.8} \tag{7.8}
     \]
 
-    Para um agente avesso ao risco, \(\pi > 0\); para um neutro, \(\pi = 0\). Note que o equivalente de certeza \eqref{eq:7.7} e o prêmio de risco \eqref{eq:7.8} estão diretamente relacionados às medidas de Arrow-Pratt, como mostra a aproximação \eqref{eq:7.9}.
+    Para um agente avesso ao risco, \(\pi > 0\); para um neutro, \(\pi = 0\). Note que o equivalente de certeza $\eqref{eq:7.7}$ e o prêmio de risco $\eqref{eq:7.8}$ estão diretamente relacionados às medidas de Arrow-Pratt, como mostra a aproximação $\eqref{eq:7.9}$.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O equivalente certo é o "preço de saída" de uma aposta — quanto você aceitaria receber para não ter que jogar.

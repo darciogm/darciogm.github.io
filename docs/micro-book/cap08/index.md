@@ -166,7 +166,7 @@ x^{\alpha} & \text{se } x \geq 0 \\
 \label{eq:8.1} \tag{8.1}
 \]
 
-onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda > 1\) captura a aversão à perda. Na equação \eqref{eq:8.1}, as estimativas originais de Tversky e Kahneman (1992) são \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\).
+onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda > 1\) captura a aversão à perda. Na equação $\eqref{eq:8.1}$, as estimativas originais de Tversky e Kahneman (1992) são \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\).
 
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/funcao-valor-pt.html" title="Figura 8.1 — Função Valor em Prospect Theory" class="graph-iframe"></iframe>
@@ -285,7 +285,7 @@ A combinação de função valor e ponderação de probabilidades confere à Teo
 \label{eq:8.3} \tag{8.3}
 \]
 
-A utilidade RDU é então \(\text{RDU}(L) = \sum_{i=1}^{n} \pi_i \, u(x_i)\). Diferentemente da ponderação direta, os pesos decisórios da equação \eqref{eq:8.3} nunca violam a dominância estocástica (Dhami 2016, p. 159–164).
+A utilidade RDU é então \(\text{RDU}(L) = \sum_{i=1}^{n} \pi_i \, u(x_i)\). Diferentemente da ponderação direta, os pesos decisórios da equação $\eqref{eq:8.3}$ nunca violam a dominância estocástica (Dhami 2016, p. 159–164).
 
 **PT Cumulativa (CPT).** Tversky e Kahneman (1992) combinaram a RDU com as inovações da OPT — dependência de referência, aversão à perda e funções de ponderação distintas para ganhos e perdas — criando a **Teoria do Prospecto Cumulativa**. Na CPT, ganhos são ordenados do menor ao maior e perdas do maior (menos negativo) ao menor (mais negativo), com pesos decisórios computados separadamente para cada domínio.
 
@@ -493,7 +493,7 @@ onde:
 
 - \(\alpha_i \geq 0\) mede a **aversão à inequidade desvantajosa** (a dor de ganhar menos que os outros).
 - \(0 \leq \beta_i < 1\) mede a **aversão à inequidade vantajosa** (o desconforto de ganhar mais que os outros).
-- Na equação \eqref{eq:8.4}, a restrição \(\beta_i \leq \alpha_i\) garante que a inequidade desvantajosa dói mais que a vantajosa — as pessoas sofrem mais quando estão "por baixo" do que quando estão "por cima".
+- Na equação $\eqref{eq:8.4}$, a restrição \(\beta_i \leq \alpha_i\) garante que a inequidade desvantajosa dói mais que a vantajosa — as pessoas sofrem mais quando estão "por baixo" do que quando estão "por cima".
 
 !!! definition "Aversão à inequidade (Fehr-Schmidt)"
     O modelo de Fehr-Schmidt assume que os agentes comparam seus payoffs com os dos demais membros do grupo de referência. A utilidade diminui tanto quando o agente ganha menos que os outros (**inequidade desvantajosa**, ponderada por \(\alpha_i\)) quanto quando ganha mais (**inequidade vantajosa**, ponderada por \(\beta_i\)). A restrição \(\beta_i < \alpha_i\) reflete a assimetria empírica: o ressentimento de ficar atrás é mais forte que a culpa de ficar à frente.

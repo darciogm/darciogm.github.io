@@ -73,7 +73,7 @@ q_1(p_1, p_2) = \begin{cases} D(p_1) & \text{se } p_1 < p_2 \\ \frac{D(p_1)}{2} 
 
     Esgotados todos os casos, o único equilíbrio de Nash é \(p_1^* = p_2^* = c\). \(\blacksquare\)
 
-O resultado é paradoxal: pela equação \eqref{eq:16.1}, bastam **duas firmas** para reproduzir o resultado competitivo. Isso contrasta fortemente com a evidência empírica, na qual mercados duopolísticos tipicamente apresentam lucros positivos. O paradoxo de Bertrand motivou diversas extensões do modelo.
+O resultado é paradoxal: pela equação $\eqref{eq:16.1}$, bastam **duas firmas** para reproduzir o resultado competitivo. Isso contrasta fortemente com a evidência empírica, na qual mercados duopolísticos tipicamente apresentam lucros positivos. O paradoxo de Bertrand motivou diversas extensões do modelo.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Se duas empresas vendem o mesmo produto, a guerra de preços pode eliminar todo o lucro — mesmo que sejam apenas duas.
@@ -129,7 +129,7 @@ Resolvendo para \(q_1\):
 q_1^*(q_2) = \frac{a - c - bq_2}{2b} = \frac{a - c}{2b} - \frac{q_2}{2}
 \label{eq:16.4} \tag{16.4} \]
 
-A equação \eqref{eq:16.4} é a **função de reação** (ou função de melhor resposta) da firma 1. Ela indica a quantidade ótima da firma 1 para cada nível de produção da firma 2. A função de reação é **decrescente**: as quantidades são **substitutos estratégicos** no modelo de Cournot.
+A equação $\eqref{eq:16.4}$ é a **função de reação** (ou função de melhor resposta) da firma 1. Ela indica a quantidade ótima da firma 1 para cada nível de produção da firma 2. A função de reação é **decrescente**: as quantidades são **substitutos estratégicos** no modelo de Cournot.
 
 !!! definition "Substitutos e Complementos Estratégicos"
     Variáveis de decisão são **substitutos estratégicos** se a melhor resposta de uma firma é decrescente na ação da rival: quando a rival produz mais, a firma reduz sua produção. São **complementos estratégicos** se a melhor resposta é crescente. No modelo de Cournot, quantidades são substitutos estratégicos. No modelo de Bertrand com produtos diferenciados, preços são tipicamente complementos estratégicos.
@@ -328,7 +328,7 @@ As demandas são \(q_1 = \hat{x}\) e \(q_2 = 1 - \hat{x}\). As funções de lucr
 
 No equilíbrio simétrico: \(p_1^* = p_2^* = t\), \(\pi_1^* = \pi_2^* = \frac{t}{2}\).
 
-Na equação \eqref{eq:16.12}, o parâmetro \(t\) mede o grau de diferenciação. Quando \(t \to 0\), os produtos tornam-se homogêneos e os lucros convergem para zero (Bertrand). Quando \(t\) é grande, a diferenciação confere poder de mercado significativo.
+Na equação $\eqref{eq:16.12}$, o parâmetro \(t\) mede o grau de diferenciação. Quando \(t \to 0\), os produtos tornam-se homogêneos e os lucros convergem para zero (Bertrand). Quando \(t\) é grande, a diferenciação confere poder de mercado significativo.
 
 ### Modelo de Salop (cidade circular)
 
