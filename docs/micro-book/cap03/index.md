@@ -91,7 +91,7 @@ Com a função de utilidade em mãos, passamos da abstração algébrica para a 
 
 O **mapa de indiferença** é a família de todas as curvas de indiferença. Ele oferece uma representação visual completa das preferências do consumidor no espaço bidimensional.
 
-<iframe src="../graficos/cap03/curvas-indiferenca.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/curvas-indiferenca.html" title="Figura 3.1 — Mapa de curvas de indiferença" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.1 — Mapa de curvas de indiferença.** Arraste o ponto sobre a curva para ver a TMS. Use os sliders para alterar os parâmetros e o menu para trocar o tipo de preferência (Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES, quase-linear).
@@ -183,7 +183,7 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
     \text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{\text{UMg}_1}{\text{UMg}_2}. \qquad \blacksquare
     \]
 
-<iframe src="../graficos/cap03/tms-ponto.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/tms-ponto.html" title="Figura 3.2 — Taxa Marginal de Substituição (TMS)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.2 — Taxa Marginal de Substituição (TMS).** Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
@@ -386,19 +386,19 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 **Tabela 3.1 — Comparativa das funções de utilidade.**
 </div>
 
-<iframe src="../graficos/cap03/tipos-preferencias.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/tipos-preferencias.html" title="Figura 3.3 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.3 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).**
 </div>
 
-<iframe src="../graficos/cap03/funcoes-utilidade.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/funcoes-utilidade.html" title="Figura 3.4 — Superfície 3D da função de utilidade" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.4 — Superfície 3D da função de utilidade.** Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, substitutos perfeitos (plano), complementos perfeitos (superfície em cunha), CES e quase-linear. Ajuste os parâmetros nos sliders.
 </div>
 
-<iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" title="Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.

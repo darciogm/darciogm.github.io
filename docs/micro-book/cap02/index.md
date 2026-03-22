@@ -649,7 +649,7 @@ A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus
 
 #### Gráfico interativo: demandas marshallianas CES
 
-<iframe src="../graficos/cap02/ces-demandas.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.1 — Demandas marshallianas CES" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.1 — Demandas marshallianas CES.** Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
@@ -948,7 +948,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ### Otimização de função de uma variável
 
-<iframe src="../graficos/cap02/otimizacao-1var.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.2 — Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.2 — Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Use os sliders para alterar curvatura e posição do pico.
@@ -956,7 +956,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ### Otimização com restrição: Lagrangeano
 
-<iframe src="../graficos/cap02/lagrangeano.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.3 — Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.3 — Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\).** O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
@@ -964,7 +964,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ### Teorema do envelope
 
-<iframe src="../graficos/cap02/envelope.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/envelope.html" title="Figura 2.4 — Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.4 — Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\).** O teorema do envelope mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.

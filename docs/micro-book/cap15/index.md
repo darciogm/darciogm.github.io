@@ -57,7 +57,7 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 ## Gráfico interativo: Equilíbrio de monopólio
 
-<iframe src="../graficos/cap15/monopolio.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/monopolio.html" title="Figura 15.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner.** Compare com o resultado competitivo.
@@ -420,7 +420,7 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
 ## Gráfico interativo: Discriminação de preços
 
-<iframe src="../graficos/cap15/discriminacao-precos.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/discriminacao-precos.html" title="Figura 15.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados).** Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
@@ -511,7 +511,7 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
 ## Gráfico interativo: Regulação de monopólio natural
 
-<iframe src="../graficos/cap15/regulacao-monopolio.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/regulacao-monopolio.html" title="Figura 15.3 — Visualize um monopólio natural com custo médio decrescente" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.3 — Visualize um monopólio natural com custo médio decrescente.** Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.

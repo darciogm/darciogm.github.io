@@ -150,7 +150,7 @@ DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
 
 ---
 
-<iframe src="../graficos/cap20/externalidade-negativa.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap20/externalidade-negativa.html" title="Figura 20.1 — Externalidade negativa e imposto pigouviano" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.1 — Externalidade negativa e imposto pigouviano.** A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.
@@ -246,7 +246,7 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 !!! tip "Subsídio Pigouviano"
     De forma simétrica, para externalidades positivas, o instrumento pigouviano é um **subsídio** por unidade igual ao benefício marginal externo: \(s^* = B'^{ext}(q^{soc})\). Isso eleva a quantidade produzida/consumida até o nível socialmente eficiente.
 
-<iframe src="../graficos/cap20/teorema-coase.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap20/teorema-coase.html" title="Figura 20.2 — Teorema de Coase" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.2 — Teorema de Coase.** Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.
@@ -382,7 +382,7 @@ Para um bem privado, a eficiência requer que todos os consumidores se deparem c
 
 Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para cada \(i\) individualmente (não a soma).
 
-<iframe src="../graficos/cap20/bem-publico.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap20/bem-publico.html" title="Figura 20.3 — Provisão ótima de bem público" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.3 — Provisão ótima de bem público.** A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.
@@ -425,7 +425,7 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 ---
 
-<iframe src="../graficos/cap20/tragedia-comuns.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap20/tragedia-comuns.html" title="Figura 20.4 — Tragédia dos comuns" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.4 — Tragédia dos comuns.** Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.

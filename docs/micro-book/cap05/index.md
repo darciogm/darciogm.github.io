@@ -88,7 +88,7 @@ Dentro da categoria dos bens normais, existe uma segunda distinção relevante: 
 
 Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 
-<iframe src="../graficos/cap05/curva-engel.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap05/curva-engel.html" title="Figura 5.1 — Curva de Engel e caminho de expansão da renda" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.1 — Curva de Engel e caminho de expansão da renda.** Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
@@ -150,7 +150,7 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
     **Fontes**: ANEEL — Tarifas e Bandeiras Tarifárias; BCB — Relatório de Inflação; Agência Brasil (2022).
 
-<iframe src="../graficos/cap05/efeito-renda-substituicao.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap05/efeito-renda-substituicao.html" title="Figura 5.2 — Decomposição dos efeitos renda e substituição" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.2 — Decomposição dos efeitos renda e substituição.** Ajuste o novo preço \(p_1'\) e observe como o efeito total (vermelho) se decompõe em efeito substituição (verde, ao longo da curva de indiferença) e efeito renda (azul, entre curvas). Alterne entre as decomposições de Hicks e Slutsky.
@@ -267,7 +267,7 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 !!! note "Relação geométrica"
     As curvas marshalliana e hicksiana se cruzam no ponto correspondente ao preço e à renda iniciais. A partir desse ponto, a marshalliana diverge conforme o efeito renda se acumula.
 
-<iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" title="Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul).** Painel superior: curvas de indiferença e restrição orçamentária no espaço de bens. Painel inferior: curvas de demanda derivadas. Para bens normais, a hicksiana é mais inclinada. A área sombreada representa o excedente do consumidor.
@@ -531,7 +531,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
     **Interpretação econômica:** as três medidas coincidem porque a utilidade é quase-linear — o efeito renda sobre \(x\) é zero, e as curvas marshalliana e hicksiana de \(x\) são idênticas. Em aplicações práticas, quando o bem em questão representa parcela pequena do orçamento (como um produto específico), o efeito renda é negligível e o EC marshalliano é uma boa aproximação das medidas exatas de bem-estar.
 
-<iframe src="../graficos/cap05/excedente-consumidor.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap05/excedente-consumidor.html" title="Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE).** Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).

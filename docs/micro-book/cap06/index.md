@@ -122,7 +122,7 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
 O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
 
-<iframe src="../graficos/cap06/substitutos-complementos.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap06/substitutos-complementos.html" title="Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
@@ -236,7 +236,7 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
 
 O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 
-<iframe src="../graficos/cap06/bem-composto.html" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap06/bem-composto.html" title="Figura 6.2 — Teorema do Bem Composto de Hicks" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.2 — Teorema do Bem Composto de Hicks.** O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)). Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
