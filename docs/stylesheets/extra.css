@@ -159,7 +159,7 @@ code, pre, kbd, .highlight {
 .author-info .author-bio {
   font-size: 0.9rem;
   text-align: left;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
 }
 
@@ -305,7 +305,7 @@ figcaption {
   font-size: 0.85rem;
   color: #666;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding-top: 0;
   line-height: 1.5;
 }
