@@ -106,7 +106,7 @@
 
     // Firm panel
     var firmBoard = JXG.JSXGraph.initBoard('firmbox', {
-      boundingbox: [-1.5, 15, 11, -1.5],
+      boundingbox: [-1.5, 16, 11.5, -2],
       axis: false, showCopyright: false, showNavigation: false
     });
     firmBoard.create('axis', [[0,0],[10,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label: { fontSize: 10 } }, name: 'q', withLabel: true, label: { position: 'rt', offset: [-12,12], fontSize: 12 } });
@@ -148,7 +148,7 @@
 
     // Market panel
     var mktBoard = JXG.JSXGraph.initBoard('marketbox', {
-      boundingbox: [-1, 15, 63, -1],
+      boundingbox: [-7, 16, 67, -2],
       axis: false, showCopyright: false, showNavigation: false
     });
     mktBoard.create('axis', [[0,0],[60,0]], { ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 0, label: { fontSize: 10 } }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-12,12], fontSize: 12 } });

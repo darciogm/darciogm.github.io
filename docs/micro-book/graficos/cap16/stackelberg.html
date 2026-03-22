@@ -72,7 +72,7 @@
   <script>
     // Fixed bounding box: worst case a=200, b=0.2, c=0 → reaction intercept (a-c)/b = 1000,
     // with 1.3 multiplier → 1300, plus 6% padding ≈ 78. Use 1300 with ~80 margin.
-    var FIXED_BB = [-13, 1300, 1300, -13];
+    var FIXED_BB = [-120, 1120, 1120, -120];
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
       boundingbox: FIXED_BB,

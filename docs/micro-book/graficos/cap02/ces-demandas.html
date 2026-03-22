@@ -313,7 +313,7 @@
     // ---- Drawing ----
     function initBoard() {
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-0.8, 70, 70, -0.8],
+        boundingbox: [-8, 78, 78, -8],
         axis: true,
         showCopyright: false,
         showNavigation: false,
@@ -345,7 +345,7 @@
 
       board.suspendUpdate();
       clearAll();
-      board.setBoundingBox([-0.8, bbMax, bbMax, -0.8]);
+      board.setBoundingBox([-bbMax*0.12, bbMax*1.08, bbMax*1.08, -bbMax*0.12]);
 
       // --- Indifference curves ---
       var nCurves = 7;

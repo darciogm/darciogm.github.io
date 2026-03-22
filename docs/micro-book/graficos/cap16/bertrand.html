@@ -89,7 +89,7 @@
     // Homogeneous: maxP = max(c1,c2)*3+10, worst c=60 → 190.
     // Differentiated: maxP = max(p1s,p2s)*2, worst case (alpha=200, beta=1, gamma=0.1, c=60)
     //   → p1s ≈ 130, maxP ≈ 260. Use 280 with ~17 padding.
-    var FIXED_BB = [-3, 280, 280, -3];
+    var FIXED_BB = [-31, 291, 291, -31];
 
     var bMode = 'homog';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
