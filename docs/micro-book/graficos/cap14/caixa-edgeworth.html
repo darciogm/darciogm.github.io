@@ -90,8 +90,8 @@
     // Labels
     board.create('text', [-0.5, -0.5, 'A'], { fontSize: 14, cssStyle: 'font-weight:700;color:#1565c0;' });
     board.create('text', [W1 + 0.3, W2 + 0.5, 'B'], { fontSize: 14, cssStyle: 'font-weight:700;color:#00897b;' });
-    board.create('text', [W1/2, -0.5, function(){ return 'Bem 1'; }], { fontSize: 11, anchorX: 'middle' });
-    board.create('text', [-0.6, W2/2, function(){ return 'Bem 2'; }], { fontSize: 11, anchorX: 'middle', display: 'html' });
+    board.create('text', [W1/2, -0.8, function(){ return '<b><i>Bem 1</i></b>'; }], { fontSize: 15, anchorX: 'middle', anchorY: 'middle', fixed: true, highlight: false });
+    board.create('text', [-1.0, W2/2, function(){ return '<b><i>Bem 2</i></b>'; }], { fontSize: 15, anchorX: 'middle', anchorY: 'middle', rotate: 90, fixed: true, highlight: false });
 
     // Utility functions: U_A = x1^alpha * x2^(1-alpha), U_B = x1^beta * x2^(1-beta)
     function UA(x1, x2) { return Math.pow(x1, alphaA) * Math.pow(x2, 1 - alphaA); }

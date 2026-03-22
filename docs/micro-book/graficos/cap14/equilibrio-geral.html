@@ -92,6 +92,8 @@
     });
     board.create('text', [-0.5, -0.5, 'A'], { fontSize: 14, cssStyle: 'font-weight:700;color:#1565c0;' });
     board.create('text', [W1 + 0.3, W2 + 0.5, 'B'], { fontSize: 14, cssStyle: 'font-weight:700;color:#00897b;' });
+    board.create('text', [W1/2, -0.8, '<b><i>Bem 1</i></b>'], { fontSize: 15, anchorX: 'middle', anchorY: 'middle', fixed: true, highlight: false });
+    board.create('text', [-1.0, W2/2, '<b><i>Bem 2</i></b>'], { fontSize: 15, anchorX: 'middle', anchorY: 'middle', rotate: 90, fixed: true, highlight: false });
 
     // Cobb-Douglas demands:
     // A: x1A = alpha * mA / p1, x2A = (1-alpha) * mA / p2
