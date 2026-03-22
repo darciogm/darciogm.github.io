@@ -289,6 +289,7 @@ figcaption {
 /* Table styling */
 .md-typeset table:not([class]) {
   font-size: 0.82rem;
+  margin-top: 1.5rem;
 }
 
 .md-typeset table:not([class]) th {
