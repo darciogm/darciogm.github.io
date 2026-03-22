@@ -94,7 +94,7 @@ function qStar() { return price - 2; } // from P = 2 + q => q* = P - 2
 
 function initBoard() {
   board = JXG.JSXGraph.initBoard('board', {
-    boundingbox: [-7, 3100, 60, -350],
+    boundingbox: [-7, 3100, 60, -200],
     axis: true,
     showCopyright: false,
     showNavigation: false,
@@ -112,7 +112,7 @@ function initBoard() {
 
   // X-axis label: centered horizontally, below ticks, bold italic
   board.create('text', [
-    60 / 2, -350 * 0.65,
+    60 / 2, -200 * 0.65,
     '<b><i>q</i></b>'
   ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
