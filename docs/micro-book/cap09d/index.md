@@ -212,9 +212,9 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 ??? code "R Interativo — Modelo de Spence: custo da sinalização e equilíbrio separador"
     Este box permite explorar o modelo de Spence variando os parâmetros de produtividade e custo da educação. Veja como o equilíbrio separador muda quando a diferença de custos entre tipos diminui.
 
-    <iframe src="../graficos/cap09/webr-spence.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
+    <iframe src="../graficos/cap09/webr-spence.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
+    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
     **Figura 9d.1** — Modelo de Spence: equilíbrio separador. Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.
     </p>
 
@@ -225,9 +225,9 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 ??? code "R Interativo — Seleção adversa: simulação de mercado de seguros (Adams, 2025, Cap. 13)"
     Este box simula um mercado de seguros de saúde com tipos heterogêneos (risco alto/baixo). Veja como a seleção adversa pode levar ao colapso do mercado quando o prêmio é calculado pela média.
 
-    <iframe src="../graficos/cap09/webr-insurance.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
+    <iframe src="../graficos/cap09/webr-insurance.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
+    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
     **Figura 9d.2** — Seleção adversa no mercado de seguros. Varie a proporção de tipos de alto risco para ver quando o mercado colapsa. Baseado em Adams (2025, Cap. 13).
     </p>
 

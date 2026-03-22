@@ -242,17 +242,17 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 ### Maximização de lucro da firma competitiva
 
-<iframe src="../graficos/cap01/maximizacao-lucro.html" width="100%" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height:400px;" loading="lazy"></iframe>
+<iframe src="../graficos/cap01/maximizacao-lucro.html" width="100%" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
 **Figura 1.1** — Receita, custo total e lucro de uma firma competitiva com \(CT(q)=10+2q+0{,}5q^2\). Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
 </p>
 
 ### Fluxo circular da renda
 
-<iframe src="../graficos/cap01/fluxo-circular.html" width="100%" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height:400px;" loading="lazy"></iframe>
+<iframe src="../graficos/cap01/fluxo-circular.html" width="100%" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
 **Figura 1.2** — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores. Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
 </p>
 
