@@ -117,35 +117,35 @@ function draw() {
   var fax = cx - rx, fay = cy; // factor market
 
   // === QUADRANTE SUPERIOR-DIREITO (Famílias ↔ Mercado de Produtos) ===
-  // Seta externa (dinheiro): Famílias → Mercado de Produtos
-  flows.push({ path: arcPath(hx+boxW/2, hy, px, py-boxH/2, -60), color: '#C8102E', marker: 0,
+  // Arco externo (dinheiro): Famílias → Mercado de Produtos
+  flows.push({ path: arcPath(hx+boxW/2, hy, px, py-boxH/2, -80), color: '#C8102E', marker: 0,
     tip: 'Gastos das famílias: pagamento por bens e serviços', label: 'Gastos ($)' });
-  // Seta interna (bens): Mercado de Produtos → Famílias
-  flows.push({ path: arcPath(px, py-boxH/2, hx+boxW/2, hy, 60), color: '#00897b', marker: 2, dash: '6,4',
+  // Arco interno (bens): Mercado de Produtos → Famílias
+  flows.push({ path: arcPath(px, py-boxH/2, hx+boxW/2, hy, -30), color: '#00897b', marker: 2, dash: '6,4',
     tip: 'Bens e serviços fluem do mercado para as famílias', label: 'Bens/Serviços' });
 
   // === QUADRANTE INFERIOR-DIREITO (Mercado de Produtos ↔ Firmas) ===
-  // Seta externa (dinheiro): Mercado de Produtos → Firmas
-  flows.push({ path: arcPath(px, py+boxH/2, fx+boxW/2, fy, -60), color: '#C8102E', marker: 0,
+  // Arco externo (dinheiro): Mercado de Produtos → Firmas
+  flows.push({ path: arcPath(px, py+boxH/2, fx+boxW/2, fy, -80), color: '#C8102E', marker: 0,
     tip: 'Receita das firmas: venda de bens e serviços', label: 'Receita ($)' });
-  // Seta interna (bens): Firmas → Mercado de Produtos
-  flows.push({ path: arcPath(fx+boxW/2, fy, px, py+boxH/2, 60), color: '#00897b', marker: 2, dash: '6,4',
+  // Arco interno (bens): Firmas → Mercado de Produtos
+  flows.push({ path: arcPath(fx+boxW/2, fy, px, py+boxH/2, -30), color: '#00897b', marker: 2, dash: '6,4',
     tip: 'Firmas oferecem bens e serviços ao mercado', label: 'Bens/Serviços' });
 
   // === QUADRANTE INFERIOR-ESQUERDO (Firmas ↔ Mercado de Fatores) ===
-  // Seta externa (dinheiro): Firmas → Mercado de Fatores
-  flows.push({ path: arcPath(fx-boxW/2, fy, fax, fay+boxH/2, -60), color: '#C8102E', marker: 0,
+  // Arco externo (dinheiro): Firmas → Mercado de Fatores
+  flows.push({ path: arcPath(fx-boxW/2, fy, fax, fay+boxH/2, -80), color: '#C8102E', marker: 0,
     tip: 'Pagamento por fatores de produção (salários, aluguéis, juros)', label: 'Pagamentos ($)' });
-  // Seta interna (fatores): Mercado de Fatores → Firmas
-  flows.push({ path: arcPath(fax, fay+boxH/2, fx-boxW/2, fy, 60), color: '#ff9800', marker: 3, dash: '6,4',
+  // Arco interno (fatores): Mercado de Fatores → Firmas
+  flows.push({ path: arcPath(fax, fay+boxH/2, fx-boxW/2, fy, -30), color: '#ff9800', marker: 3, dash: '6,4',
     tip: 'Fatores de produção fluem para as firmas (trabalho, capital, terra)', label: 'Fatores' });
 
   // === QUADRANTE SUPERIOR-ESQUERDO (Mercado de Fatores ↔ Famílias) ===
-  // Seta externa (dinheiro): Mercado de Fatores → Famílias
-  flows.push({ path: arcPath(fax, fay-boxH/2, hx-boxW/2, hy, -60), color: '#C8102E', marker: 0,
+  // Arco externo (dinheiro): Mercado de Fatores → Famílias
+  flows.push({ path: arcPath(fax, fay-boxH/2, hx-boxW/2, hy, -80), color: '#C8102E', marker: 0,
     tip: 'Renda das famílias: salários, aluguéis, lucros, juros', label: 'Renda ($)' });
-  // Seta interna (fatores): Famílias → Mercado de Fatores
-  flows.push({ path: arcPath(hx-boxW/2, hy, fax, fay-boxH/2, 60), color: '#ff9800', marker: 3, dash: '6,4',
+  // Arco interno (fatores): Famílias → Mercado de Fatores
+  flows.push({ path: arcPath(hx-boxW/2, hy, fax, fay-boxH/2, -30), color: '#ff9800', marker: 3, dash: '6,4',
     tip: 'Famílias oferecem fatores de produção ao mercado', label: 'Fatores' });
 
   // Government flows
