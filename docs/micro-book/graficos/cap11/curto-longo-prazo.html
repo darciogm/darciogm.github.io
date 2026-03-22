@@ -243,5 +243,17 @@
       }
     }
   </script>
+<script>
+(function(){
+  function sendHeight(){
+    if(window.parent!==window){
+      var h=Math.max(document.body.scrollHeight,document.body.offsetHeight);
+      window.parent.postMessage({type:"iframeResize",height:h},"*");
+    }
+  }
+  window.addEventListener("load",function(){sendHeight();setTimeout(sendHeight,1500);setTimeout(sendHeight,4000);});
+  if(document.readyState==="complete")sendHeight();
+})();
+</script>
 </body>
 </html>
