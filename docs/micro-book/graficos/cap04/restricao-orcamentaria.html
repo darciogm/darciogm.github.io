@@ -194,13 +194,13 @@
       function() { return getParams().M / getParams().p1; },
       -0.8,
       function() { return '\\(\\frac{M}{p_1}=' + (getParams().M / getParams().p1).toFixed(1) + '\\)'; }
-    ], { fontSize: 12, color: '#C8102E', anchorX: 'middle', useMathJax: true });
+    ], { fontSize: 9, color: '#C8102E', anchorX: 'middle', useMathJax: true });
 
     var labelB = board.create('text', [
       -0.3,
       function() { return getParams().M / getParams().p2 + 0.5; },
       function() { return '\\(\\frac{M}{p_2}=' + (getParams().M / getParams().p2).toFixed(1) + '\\)'; }
-    ], { fontSize: 12, color: '#C8102E', anchorX: 'right', useMathJax: true });
+    ], { fontSize: 9, color: '#C8102E', anchorX: 'right', useMathJax: true });
 
     // Draggable point on budget line
     var dragPt = board.create('glider', [5, 5, budgetLine], {
