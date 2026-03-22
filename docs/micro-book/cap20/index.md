@@ -30,14 +30,14 @@ As externalidades podem ser classificadas em duas dimensões:
 Formalmente, uma externalidade de produção existe quando a função de produção da firma \(j\) depende do nível de produção da firma \(i\):
 
 \[
-q_j = f_j(L_j, K_j, q_i)
+q_j = f_j(L_j, K_j, q_i) \tag{20.4}
 \]
 
 Uma externalidade de consumo existe quando a utilidade do indivíduo \(B\) depende do consumo do indivíduo \(A\):
 
 \[
 U_B = U_B(x_B^1, x_B^2, \ldots, x_A^k)
-\]
+\tag{20.5} \]
 
 onde \(x_A^k\) é o consumo do bem \(k\) pelo indivíduo \(A\).
 
@@ -65,7 +65,7 @@ Considere uma firma que produz um bem \(q\) com custo privado \(C(q)\) e que ger
 
 \[
 CS(q) = C(q) + E(q)
-\]
+\tag{20.6} \]
 
 A firma, buscando maximizar lucro, iguala o custo marginal privado ao preço:
 
@@ -77,7 +77,7 @@ Mas a condição de eficiência social requer:
 
 \[
 P = C'(q) + E'(q) \quad \text{(CMg social)}
-\]
+\tag{20.7} \]
 
 Como \(E'(q) > 0\), a firma produz **mais do que o ótimo social**: \(q^{priv} > q^{soc}\).
 
@@ -93,13 +93,13 @@ O indivíduo consome até onde seu benefício marginal privado iguala o preço:
 
 \[
 B'^{priv}(q) = P
-\]
+\tag{20.8} \]
 
 Mas a eficiência requer:
 
 \[
 B'^{priv}(q) + B'^{ext}(q) = P
-\]
+\tag{20.9} \]
 
 Como \(B'^{ext}(q) > 0\), o consumo privado fica **aquém do ótimo social**: \(q^{priv} < q^{soc}\).
 
@@ -138,7 +138,7 @@ A condição de primeira ordem para \(q_1\) é:
 
 \[
 p_1 = C_1'(q_1) + \frac{\partial C_2}{\partial e} \cdot e'(q_1)
-\]
+\tag{20.10} \]
 
 O termo \(\frac{\partial C_2}{\partial e} \cdot e'(q_1)\) é o **custo marginal externo** (CME) — o dano marginal imposto pela firma 1 sobre a firma 2. No equilíbrio privado, esse termo é ignorado, levando a \(q_1^{priv} > q_1^{soc}\).
 
@@ -210,13 +210,13 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
     Logo, o nível ótimo \(q^*\) satisfaz:
 
     \[
-    P = C'(q^*) + E'(q^*) \tag{1}
+    P = C'(q^*) + E'(q^*) \tag{20.1}
     \]
 
     **Passo 2 — Equilíbrio privado sem imposto.** A firma maximiza \(\pi(q) = Pq - C(q)\):
 
     \[
-    P = C'(q^{priv}) \tag{2}
+    P = C'(q^{priv}) \tag{20.2}
     \]
 
     Como \(E'(q) > 0\), comparando (1) e (2), e dado que \(C''(q) > 0\), temos \(q^{priv} > q^*\). A firma produz em excesso.
@@ -230,7 +230,7 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
     Com o imposto, o lucro da firma é \(\pi^t(q) = Pq - C(q) - t^* q\). A condição de maximização é:
 
     \[
-    P = C'(q^t) + t^* = C'(q^t) + E'(q^*) \tag{3}
+    P = C'(q^t) + t^* = C'(q^t) + E'(q^*) \tag{20.3}
     \]
 
     **Passo 4 — Comparação.** Comparando (3) com (1), ambas requerem:
@@ -374,7 +374,7 @@ Para um bem privado, a eficiência requer que todos os consumidores se deparem c
 
     \[
     \sum_{i=1}^{N} TMS_i^{G,x} = TMT^{G,x}
-    \]
+    \tag{20.11} \]
 
     onde \(TMS_i^{G,x} = \frac{\partial U_i / \partial G}{\partial U_i / \partial x_i}\) é a taxa marginal de substituição entre o bem público \(G\) e o bem privado \(x\) para o indivíduo \(i\).
 
@@ -401,7 +401,7 @@ u(W_i - g_i) + v\!\left(g_i + \sum_{j \neq i} g_j\right)
 A condição de primeira ordem é:
 
 \[
-u'(W_i - g_i) = v'(G) \implies TMS_i = 1
+u'(W_i - g_i) = v'(G) \implies TMS_i = 1 \tag{20.12}
 \]
 
 Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/N\) para indivíduos idênticos. Como \(1 > 1/N\), cada indivíduo demanda benefício marginal excessivamente alto, resultando em \(G^{priv} < G^*\): o bem público é **subprovido**.
@@ -417,7 +417,7 @@ Sabemos agora que o mercado subprovê bens públicos porque cada indivíduo igno
 
     \[
     \sum_{i=1}^{N} \tau_i = CMg(G)
-    \]
+    \tag{20.13} \]
 
     Cada indivíduo, enfrentando seu preço personalizado, demanda a mesma quantidade \(G^*\), e a condição de Samuelson é satisfeita.
 
@@ -513,7 +513,7 @@ O desafio central na provisão de bens públicos é induzir os indivíduos a **r
 4. Se \(i\) é pivotal, paga um imposto igual a:
 
 \[
-t_i = C - \sum_{j \neq i} \hat{v}_j
+t_i = C - \sum_{j \neq i} \hat{v}_j \tag{20.15}
 \]
 
 Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os demais (que precisam financiar a diferença).

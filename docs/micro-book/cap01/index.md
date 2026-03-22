@@ -142,15 +142,15 @@ Considere o modelo clássico de oferta e demanda para um mercado competitivo:
 As equações do modelo:
 
 \[
-Q^d = D(P, Y) \quad \text{(demanda)}
+Q^d = D(P, Y) \quad \text{(demanda)} \tag{1.4.1}
 \]
 
 \[
-Q^s = S(P, w, A) \quad \text{(oferta)}
+Q^s = S(P, w, A) \quad \text{(oferta)} \tag{1.4.2}
 \]
 
 \[
-Q^d = Q^s \quad \text{(equilíbrio)}
+Q^d = Q^s \quad \text{(equilíbrio)} \tag{1.4.3}
 \]
 
 ### A hipótese de otimização como fundamento
@@ -280,7 +280,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
 O lucro da firma é dado por:
 
 \[
-\pi(q) = RT(q) - CT(q) = P \cdot q - CT(q)
+\pi(q) = RT(q) - CT(q) = P \cdot q - CT(q) \tag{1.4.4}
 \]
 
 onde \(P\) é o preço de mercado (dado, exógeno para a firma competitiva), \(RT(q)\) é a receita total e \(CT(q)\) é o custo total.
@@ -290,7 +290,7 @@ onde \(P\) é o preço de mercado (dado, exógeno para a firma competitiva), \(R
 Para que \(q^*\) seja um máximo interior, é necessário que a derivada do lucro em relação a \(q\) seja zero:
 
 \[
-\frac{d\pi}{dq}\bigg|_{q=q^*} = 0
+\frac{d\pi}{dq}\bigg|_{q=q^*} = 0 \tag{1.4.5}
 \]
 
 \[
@@ -302,7 +302,7 @@ P - \frac{dCT}{dq}\bigg|_{q=q^*} = 0
 \]
 
 \[
-\boxed{P = CMg(q^*)}
+\boxed{P = CMg(q^*)} \tag{1.4.6}
 \]
 
 onde \(CMg(q) = \frac{dCT}{dq}\) é o custo marginal.
@@ -312,7 +312,7 @@ onde \(CMg(q) = \frac{dCT}{dq}\) é o custo marginal.
 Para que \(q^*\) seja de fato um **máximo** (e não um mínimo ou ponto de inflexão), a segunda derivada do lucro deve ser negativa:
 
 \[
-\frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0
+\frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \tag{1.4.7}
 \]
 
 \[
@@ -320,7 +320,7 @@ Para que \(q^*\) seja de fato um **máximo** (e não um mínimo ou ponto de infl
 \]
 
 \[
-\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0
+\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0 \tag{1.4.8}
 \]
 
 Portanto, a condição de segunda ordem exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)

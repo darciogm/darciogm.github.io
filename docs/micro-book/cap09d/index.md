@@ -63,6 +63,7 @@ Trabalhadores têm habilidade \(\theta_H\) (alta) ou \(\theta_L\) (baixa). A edu
 
 \[
 c(e, \theta_H) < c(e, \theta_L) \quad \text{para todo } e > 0
+\tag{9d.1}
 \]
 
 Essa condição de **single-crossing** é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que cria a possibilidade de separação: o nível de educação que o tipo alto aceita obter é proibitivamente custoso para o tipo baixo, garantindo que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.

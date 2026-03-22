@@ -23,13 +23,13 @@ Considere um consumidor que maximiza \(U(x_1, x_2)\) sujeito à restrição orç
 Pela Equação de Slutsky (Capítulo 5), essa derivada pode ser decomposta:
 
 \[
-\frac{\partial x_1}{\partial p_2} = \underbrace{\frac{\partial h_1}{\partial p_2}}_{\text{efeito substituição cruzado}} - \underbrace{x_2 \frac{\partial x_1}{\partial I}}_{\text{efeito renda cruzado}}
+\frac{\partial x_1}{\partial p_2} = \underbrace{\frac{\partial h_1}{\partial p_2}}_{\text{efeito substituição cruzado}} - \underbrace{x_2 \frac{\partial x_1}{\partial I}}_{\text{efeito renda cruzado}} \tag{6.1.1}
 \]
 
 No caso de dois bens, a restrição orçamentária impõe relações fortes. Se o preço de \(x_2\) aumenta, o efeito substituição necessariamente empurra o consumidor na direção de \(x_1\) — no caso de dois bens, o efeito substituição cruzado é sempre não negativo:
 
 \[
-\frac{\partial h_1}{\partial p_2} \geq 0 \quad \text{(com dois bens)}
+\frac{\partial h_1}{\partial p_2} \geq 0 \quad \text{(com dois bens)} \tag{6.1.2}
 \]
 
 Isso significa que, no sentido hicksiano, **dois bens são sempre substitutos líquidos** quando há apenas dois bens no modelo. A complementaridade só emerge com três ou mais bens.
@@ -85,7 +85,7 @@ A classificação marshalliana, embora direta e empiricamente acessível, aprese
 Uma vantagem crucial da classificação hicksiana é a **simetria**: pela propriedade da matriz de Slutsky,
 
 \[
-\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}
+\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i} \tag{6.3.3}
 \]
 
 Logo, se o bem \(i\) é substituto líquido de \(j\), então \(j\) é necessariamente substituto líquido de \(i\). Não há ambiguidade.
@@ -137,7 +137,7 @@ Até aqui, trabalhamos predominantemente com dois bens — um cenário que, embo
 Com \(n > 2\) bens, a análise se torna mais rica e complexa. A **matriz de substituição de Slutsky** \(\mathbf{S}\), com elementos:
 
 \[
-s_{ij} = \frac{\partial h_i}{\partial p_j}, \quad i, j = 1, \ldots, n
+s_{ij} = \frac{\partial h_i}{\partial p_j}, \quad i, j = 1, \ldots, n \tag{6.4.4}
 \]
 
 é simétrica (\(s_{ij} = s_{ji}\)) e negativa semidefinida. Os elementos diagonais são necessariamente não positivos:
@@ -152,7 +152,7 @@ mas os elementos fora da diagonal podem ter qualquer sinal. No entanto, nem todo
     Para cada bem \(i\), a soma ponderada dos efeitos substituição cruzados (com pesos iguais aos preços) é não negativa. Mais precisamente, pela homogeneidade de grau zero da demanda hicksiana:
 
     \[
-    \sum_{j=1}^n p_j \frac{\partial h_i}{\partial p_j} = 0
+    \sum_{j=1}^n p_j \frac{\partial h_i}{\partial p_j} = 0 \tag{6.4.5}
     \]
 
     Como \(\frac{\partial h_i}{\partial p_i} \leq 0\), pelo menos alguns dos termos cruzados devem ser positivos. Logo, **todo bem deve ter pelo menos um substituto líquido**.
@@ -256,13 +256,13 @@ A teoria tradicional assume que o consumidor obtém utilidade diretamente dos be
     Cada bem \(j\) contém quantidades fixas de \(m\) atributos, representadas pela matriz de tecnologia de consumo \(\mathbf{B} = [b_{kj}]\), onde \(b_{kj}\) é a quantidade do atributo \(k\) contida em uma unidade do bem \(j\). A utilidade depende dos atributos:
 
     \[
-    U = U(z_1, z_2, \ldots, z_m)
+    U = U(z_1, z_2, \ldots, z_m) \tag{6.6.6}
     \]
 
     onde cada atributo é "produzido" pelo consumo dos bens:
 
     \[
-    z_k = \sum_{j=1}^n b_{kj} x_j, \quad k = 1, \ldots, m
+    z_k = \sum_{j=1}^n b_{kj} x_j, \quad k = 1, \ldots, m \tag{6.6.7}
     \]
 
     O consumidor maximiza \(U(\mathbf{z})\) sujeito a \(\mathbf{z} = \mathbf{B} \mathbf{x}\), \(\mathbf{p} \cdot \mathbf{x} \leq I\) e \(\mathbf{x} \geq 0\).
@@ -299,7 +299,7 @@ A reformulação de Lancaster pode parecer uma complicação desnecessária — 
 Enquanto Lancaster enfatiza os atributos dos bens, Gary **Becker** (1965) chamou atenção para um recurso escasso que a teoria tradicional ignora: o *tempo*. Becker propôs que as famílias são unidades produtivas que combinam bens de mercado com tempo para gerar **commodities domésticas** que geram utilidade. Por exemplo, uma refeição exige ingredientes (bens) e tempo de preparo (trabalho doméstico). Formalmente:
 
 \[
-z_k = f_k(x_k, t_k)
+z_k = f_k(x_k, t_k) \tag{6.6.8}
 \]
 
 onde \(x_k\) são bens de mercado e \(t_k\) é o tempo dedicado à atividade \(k\). O consumidor maximiza \(U(z_1, \ldots, z_m)\) sujeito a restrições de orçamento monetário e de tempo total.
@@ -317,7 +317,7 @@ Até aqui, toda a análise concentrou-se no consumidor individual. Mas os mercad
 A **demanda de mercado** é obtida pela soma horizontal das demandas individuais. Se há \(H\) consumidores, cada um com demanda \(x_i^h(p_1, \ldots, p_n, I^h)\), a demanda de mercado pelo bem \(i\) é:
 
 \[
-X_i(p_1, \ldots, p_n, I^1, \ldots, I^H) = \sum_{h=1}^H x_i^h(p_1, \ldots, p_n, I^h)
+X_i(p_1, \ldots, p_n, I^1, \ldots, I^H) = \sum_{h=1}^H x_i^h(p_1, \ldots, p_n, I^h) \tag{6.7.9}
 \]
 
 ### 6.7.2 Condições para uma demanda de mercado "bem-comportada"
@@ -328,7 +328,7 @@ A soma horizontal parece inocente, mas esconde uma armadilha. A simples soma de 
     A demanda de mercado pode ser escrita como função de preços e renda **agregada** \(I = \sum_h I^h\) se, e somente se, todas as curvas de Engel individuais forem lineares e paralelas. Isso ocorre quando as preferências são **quase-homotéticas** (preferências homotéticas mais uma translação) ou, de modo mais geral, quando as funções de utilidade indireta têm a forma de Gorman:
 
     \[
-    V^h(\mathbf{p}, I^h) = a(\mathbf{p}) + b(\mathbf{p}) \cdot I^h
+    V^h(\mathbf{p}, I^h) = a(\mathbf{p}) + b(\mathbf{p}) \cdot I^h \tag{6.7.10}
     \]
 
     onde \(a(\mathbf{p})\) e \(b(\mathbf{p})\) são comuns a todos os consumidores.

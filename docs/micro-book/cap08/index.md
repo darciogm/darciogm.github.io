@@ -161,6 +161,7 @@ v(x) =
 x^{\alpha} & \text{se } x \geq 0 \\
 -\lambda(-x)^{\beta} & \text{se } x < 0
 \end{cases}
+\tag{8.1}
 \]
 
 onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda > 1\) captura a aversão à perda. As estimativas originais de Tversky e Kahneman (1992) são \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\).
@@ -236,6 +237,7 @@ Na utilidade esperada, as probabilidades entram linearmente na função objetivo
 
 \[
 w(p) = \frac{p^{\gamma}}{(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}}
+\tag{8.2}
 \]
 
 onde \(\gamma \in (0,1)\) controla o grau de distorção. As propriedades principais são:
@@ -272,6 +274,7 @@ A combinação de função valor e ponderação de probabilidades confere à Teo
 
 \[
 \pi_i = w\!\left(\sum_{j=i}^{n} p_j\right) - w\!\left(\sum_{j=i+1}^{n} p_j\right)
+\tag{8.3}
 \]
 
 A utilidade RDU é então \(\text{RDU}(L) = \sum_{i=1}^{n} \pi_i \, u(x_i)\). Diferentemente da ponderação direta, a RDU nunca viola a dominância estocástica (Dhami 2016, p. 159–164).
@@ -469,6 +472,7 @@ Fehr e Schmidt (1999) formalizaram as preferências sociais com um modelo elegan
 
 \[
 U_i(\mathbf{y}) = y_i - \frac{\alpha_i}{n-1} \sum_{j \neq i} \max(y_j - y_i,\, 0) - \frac{\beta_i}{n-1} \sum_{j \neq i} \max(y_i - y_j,\, 0)
+\tag{8.4}
 \]
 
 onde:
@@ -490,6 +494,7 @@ Se \(x < S/2\) (oferta abaixo da metade), a inequidade é desvantajosa: \(U_R = 
 
 \[
 x < \frac{\alpha_R}{ 1 + 2\alpha_R} \cdot S
+\tag{8.5}
 \]
 
 Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são rejeitadas. Com \(\alpha_R = 4\), o limiar sobe para \(x^* \approx 0{,}44 \cdot S\). O modelo prevê corretamente que respondedores com maior aversão à desvantagem exigem ofertas mais generosas.
@@ -566,6 +571,7 @@ O modelo padrão de escolha intertemporal — o **Modelo de Utilidade Descontada
 
 \[
 U_0 = \sum_{t=0}^{T} \delta^t \, u(c_t)
+\tag{8.6}
 \]
 
 A principal implicação comportamental do desconto exponencial é a **consistência temporal**: se o agente prefere a opção A à B quando ambas ocorrem no futuro, essa preferência se mantém quando o momento da decisão se aproxima. Em outras palavras, um agente exponencial nunca muda de ideia simplesmente porque o tempo passou — seus planos são confiáveis. Formalmente, se \(u(A)\) em \(t\) é preferido a \(u(B)\) em \(t+k\), então a mesma preferência vale para qualquer data de avaliação anterior.

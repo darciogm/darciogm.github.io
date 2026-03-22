@@ -23,6 +23,7 @@ O **valor esperado** de uma loteria é a média ponderada dos resultados pelas r
 
 \[
 E[L] = \sum_{i=1}^{n} p_i \, x_i
+\tag{7.1}
 \]
 
 !!! example "Exemplo numérico"
@@ -44,6 +45,7 @@ O valor esperado, por si só, não é suficiente para descrever o comportamento 
 
 \[
 E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty
+\tag{7.2}
 \]
 
 No entanto, nenhuma pessoa racional pagaria uma quantia arbitrariamente alta para participar desse jogo. Daniel Bernoulli (1738) propôs que os agentes avaliam os resultados não pelo seu valor monetário, mas pela **utilidade** que deles extraem — inaugurando a ideia de utilidade esperada. Essa intuição genial — a de que o que importa não é o dinheiro em si, mas a satisfação que ele proporciona — é o ponto de partida para a construção axiomática que veremos a seguir.
@@ -72,6 +74,7 @@ A formalização moderna da teoria da utilidade esperada foi apresentada por Joh
 
     \[
     L_1 \succsim L_2 \iff E[u(L_1)] \geq E[u(L_2)]
+    \tag{7.3}
     \]
 
     onde \(E[u(L)] = \sum_{i=1}^{n} p_i \, u(x_i)\).
@@ -104,6 +107,7 @@ A aversão ao risco está intimamente ligada à **concavidade** da função de u
 
 \[
 u(E[\tilde{x}]) > E[u(\tilde{x})]
+\tag{7.4}
 \]
 
 Intuitivamente, o agente avesso ao risco prefere receber o valor esperado de uma loteria com certeza a participar da loteria. A curvatura de \(u\) captura a intensidade dessa preferência: quanto mais côncava a função, maior a aversão ao risco.
@@ -136,6 +140,7 @@ Para comparar a aversão ao risco entre agentes ou ao longo de diferentes nívei
 
     \[
     A(W) = -\frac{u''(W)}{u'(W)}
+    \tag{7.5}
     \]
 
     onde \(W\) é o nível de riqueza do agente.
@@ -145,6 +150,7 @@ Para comparar a aversão ao risco entre agentes ou ao longo de diferentes nívei
 
     \[
     R(W) = -\frac{W \cdot u''(W)}{u'(W)} = W \cdot A(W)
+    \tag{7.6}
     \]
 
 Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco para apostas de magnitude absoluta fixa, enquanto \(R(W)\) mede a aversão ao risco para apostas proporcionais à riqueza. Note que ambas dependem da razão entre a segunda e a primeira derivadas da função de utilidade — a primeira derivada captura a utilidade marginal (quanto vale um real a mais), enquanto a segunda derivada captura como essa utilidade marginal muda (o quanto o agente "satura" à medida que enriquece).
@@ -191,12 +197,14 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
 
     \[
     u(W_{EC}) = E[u(\tilde{W})]
+    \tag{7.7}
     \]
 
     - O **prêmio de risco** \(\pi\) é a quantia máxima que o agente pagaria para eliminar o risco:
 
     \[
     \pi = E[\tilde{W}] - W_{EC} = W - W_{EC}
+    \tag{7.8}
     \]
 
     Para um agente avesso ao risco, \(\pi > 0\); para um neutro, \(\pi = 0\).
@@ -215,6 +223,7 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
 
     \[
     \pi \approx \frac{1}{2} A(W) \sigma^2
+    \tag{7.9}
     \]
 
     **Demonstração**:

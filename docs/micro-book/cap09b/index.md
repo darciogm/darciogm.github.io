@@ -99,6 +99,7 @@ No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta
 
 \[
 \frac{R}{1 - \delta} \geq T + \frac{\delta P}{1 - \delta} \quad \Longleftrightarrow \quad \delta \geq \frac{T - R}{T - P} \equiv \delta^*
+\tag{9b.1}
 \]
 
 O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue. A condição é intuitivamente clara: a cooperação exige que o ganho imediato de trair (\(T - R\)) seja compensado pela perda futura de ser punido (diferença entre \(R\) e \(P\), descontada por \(\delta\)). Quanto mais pacientes os jogadores (maior \(\delta\)), mais fácil é sustentar a cooperação.
@@ -175,12 +176,14 @@ O **único EPS** (Rubinstein, 1982) é:
 
 \[
 x_1^* = \frac{1 - \delta_2}{1 - \delta_1 \delta_2}, \qquad x_2^* = \frac{\delta_2(1 - \delta_1)}{1 - \delta_1 \delta_2}
+\tag{9b.2}
 \]
 
 Quando \(\delta_1 = \delta_2 = \delta\):
 
 \[
 x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
+\tag{9b.3}
 \]
 
 !!! idea "Intuição Econômica"

@@ -53,7 +53,7 @@ Os axiomas da seção anterior descrevem propriedades qualitativas das preferên
 Uma **função de utilidade** \(u: X \to \mathbb{R}\) **representa** a relação de preferência \(\succsim\) se, para todo \(\mathbf{x}, \mathbf{y} \in X\):
 
 \[
-\mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}).
+\mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \tag{3.2.1}
 \]
 
 A existência de tal função não é trivial. O teorema a seguir fornece condições suficientes.
@@ -110,7 +110,7 @@ As curvas de indiferença nos dizem *quais* cestas o consumidor considera equiva
     A **taxa marginal de substituição** do bem 1 pelo bem 2 é definida como o valor absoluto da inclinação da curva de indiferença no ponto \((x_1, x_2)\):
 
     \[
-    \text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}}
+    \text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} \tag{3.4.2}
     \]
 
     A TMS mede a quantidade do bem 2 que o consumidor está disposto a abrir mão para obter uma unidade adicional do bem 1, mantendo o nível de utilidade constante.
@@ -148,7 +148,7 @@ Na seção anterior, definimos a TMS geometricamente como a inclinação da curv
 A **utilidade marginal** do bem \(i\) é:
 
 \[
-\text{UMg}_i = \frac{\partial u}{\partial x_i}.
+\text{UMg}_i = \frac{\partial u}{\partial x_i}. \tag{3.5.3}
 \]
 
 A relação fundamental entre utilidade marginal e TMS é dada pela proposição a seguir.
@@ -157,7 +157,7 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
     Se \(u(x_1, x_2)\) é diferenciável e \(\text{UMg}_2 > 0\), então:
 
     \[
-    \text{TMS}_{12} = \frac{\text{UMg}_1}{\text{UMg}_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2}
+    \text{TMS}_{12} = \frac{\text{UMg}_1}{\text{UMg}_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} \tag{3.5.4}
     \]
 
 !!! proof "Demonstração"
@@ -235,13 +235,13 @@ Até aqui, tratamos a função de utilidade e a TMS em termos gerais, sem impor 
 A função Cobb-Douglas é, sem dúvida, a forma funcional mais utilizada em microeconomia — tanto pela sua tratabilidade analítica quanto por suas propriedades econômicas intuitivas. Ela é definida como:
 
 \[
-u(x_1, x_2) = x_1^a \, x_2^b, \quad a, b > 0.
+u(x_1, x_2) = x_1^a \, x_2^b, \quad a, b > 0. \tag{3.6.5}
 \]
 
 As curvas de indiferença são hipérboles convexas. A TMS é:
 
 \[
-\text{TMS}_{12} = \frac{a \, x_2}{b \, x_1}.
+\text{TMS}_{12} = \frac{a \, x_2}{b \, x_1}. \tag{3.6.6}
 \]
 
 A função Cobb-Douglas é extremamente conveniente por gerar funções de demanda com forma fechada. A participação de cada bem na despesa total é constante: \(\frac{a}{a+b}\) para o bem 1 e \(\frac{b}{a+b}\) para o bem 2. A elasticidade de substituição é \(\sigma = 1\).
@@ -251,13 +251,13 @@ A função Cobb-Douglas é extremamente conveniente por gerar funções de deman
 No extremo oposto da substituibilidade, considere bens que o consumidor troca livremente entre si a uma taxa fixa — como, para muitos consumidores, manteiga e margarina. Nesse caso, a função de utilidade assume a forma linear:
 
 \[
-u(x_1, x_2) = a x_1 + b x_2, \quad a, b > 0.
+u(x_1, x_2) = a x_1 + b x_2, \quad a, b > 0. \tag{3.6.7}
 \]
 
 As curvas de indiferença são **linhas retas** com inclinação \(-a/b\). A TMS é constante:
 
 \[
-\text{TMS}_{12} = \frac{a}{b}.
+\text{TMS}_{12} = \frac{a}{b}. \tag{3.6.8}
 \]
 
 O consumidor troca os bens a uma taxa fixa, independente da composição da cesta. A elasticidade de substituição é \(\sigma = \infty\). Tipicamente, o consumidor se especializa no bem com menor preço relativo ajustado pela taxa de troca.
@@ -267,7 +267,7 @@ O consumidor troca os bens a uma taxa fixa, independente da composição da cest
 Se os substitutos perfeitos representam a máxima disposição a trocar entre bens, os complementos perfeitos ocupam o extremo oposto: os bens só têm valor quando consumidos juntos, em proporções fixas. Pense em um pé esquerdo e um pé direito de sapato — um sem o outro é inútil. A função de utilidade que captura essa rigidez é:
 
 \[
-u(x_1, x_2) = \min\{a x_1, \, b x_2\}, \quad a, b > 0.
+u(x_1, x_2) = \min\{a x_1, \, b x_2\}, \quad a, b > 0. \tag{3.6.9}
 \]
 
 As curvas de indiferença têm formato de **L** (ângulo reto), com vértice na reta \(a x_1 = b x_2\). A TMS é indefinida no vértice, zero nos segmentos horizontais e infinita nos segmentos verticais. A elasticidade de substituição é \(\sigma = 0\). Exemplos clássicos: sapato esquerdo e sapato direito, CPU e monitor.
@@ -277,13 +277,13 @@ As curvas de indiferença têm formato de **L** (ângulo reto), com vértice na 
 Os três casos anteriores — Cobb-Douglas, substitutos perfeitos e complementos perfeitos — podem parecer categorias isoladas, mas na verdade são membros de uma mesma família: a função CES. Essa generalização permite capturar qualquer grau de substituibilidade entre os bens por meio de um único parâmetro \(\rho\), tornando-a uma ferramenta extremamente versátil tanto na teoria quanto na aplicação empírica.
 
 \[
-u(x_1, x_2) = \left(x_1^{\rho} + x_2^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \; \rho \neq 0.
+u(x_1, x_2) = \left(x_1^{\rho} + x_2^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \; \rho \neq 0. \tag{3.6.10}
 \]
 
 A elasticidade de substituição é:
 
 \[
-\sigma = \frac{1}{1 - \rho}.
+\sigma = \frac{1}{1 - \rho}. \tag{3.6.11}
 \]
 
 A função CES engloba como casos especiais:
@@ -295,7 +295,7 @@ A função CES engloba como casos especiais:
 A TMS para a CES é:
 
 \[
-\text{TMS}_{12} = \left(\frac{x_1}{x_2}\right)^{\rho - 1}.
+\text{TMS}_{12} = \left(\frac{x_1}{x_2}\right)^{\rho - 1}. \tag{3.6.12}
 \]
 
 ### 3.6.5 Quase-linear
@@ -303,13 +303,13 @@ A TMS para a CES é:
 As formas funcionais anteriores compartilham uma propriedade importante: são todas homotéticas (como veremos na Seção 3.6.6), o que significa que a proporção entre os bens consumidos não se altera com a renda. Na prática, porém, existem bens cuja demanda é essencialmente insensível à renda — por exemplo, o consumo de sal de cozinha. A função de utilidade quase-linear captura exatamente essa situação:
 
 \[
-u(x_1, x_2) = v(x_1) + x_2, \quad v' > 0, \; v'' < 0.
+u(x_1, x_2) = v(x_1) + x_2, \quad v' > 0, \; v'' < 0. \tag{3.6.13}
 \]
 
 A TMS depende apenas de \(x_1\):
 
 \[
-\text{TMS}_{12} = v'(x_1).
+\text{TMS}_{12} = v'(x_1). \tag{3.6.14}
 \]
 
 As curvas de indiferença são **translações verticais** umas das outras: possuem a mesma forma, apenas deslocadas paralelamente ao eixo \(x_2\). Isso implica que não há efeito renda sobre o bem 1 (para soluções interiores). A utilidade quase-linear é particularmente útil em análises de equilíbrio parcial e em modelos de organização industrial.
@@ -345,7 +345,7 @@ Após examinar a quase-linearidade, é natural perguntar: existe uma classe de p
 **Propriedade fundamental.** Para preferências homotéticas, a TMS depende apenas da **razão** \(x_1/x_2\):
 
 \[
-\text{TMS}_{12}(x_1, x_2) = \phi\!\left(\frac{x_1}{x_2}\right).
+\text{TMS}_{12}(x_1, x_2) = \phi\!\left(\frac{x_1}{x_2}\right). \tag{3.6.15}
 \]
 
 Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdot x_1\)), a TMS é constante. Geometricamente, as curvas de indiferença são **expansões radiais** umas das outras — ao escalar uma curva de indiferença a partir da origem, obtemos outra curva de indiferença.

@@ -25,7 +25,7 @@ A **taxa de retorno** (\(r\)) de um investimento mede a remuneração do capital
 
 \[
 r = \frac{\pi}{K_0}
-\]
+\tag{18.1} \]
 
 No equilíbrio competitivo de longo prazo, a taxa de retorno do capital se iguala à **taxa de juros** do mercado, pois o investidor é indiferente entre aplicar recursos no mercado financeiro e investir em capital físico.
 
@@ -46,7 +46,7 @@ No equilíbrio:
 
 \[
 S(r) = I(r)
-\]
+\tag{18.2} \]
 
 onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de juros \(r^*\) que iguala oferta e demanda de fundos é a **taxa de juros de equilíbrio**.
 
@@ -90,7 +90,7 @@ O modelo de Irving Fisher é a pedra angular da teoria do consumo intertemporal.
 
     \[
     C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r} \equiv W
-    \]
+    \tag{18.3} \]
 
     onde \(W\) é a **riqueza intertemporal** — o valor presente de toda a renda futura. A inclinação da reta orçamentária intertemporal é \(-(1+r)\).
 
@@ -100,7 +100,7 @@ O consumidor maximiza \(U(C_1, C_2)\) sujeito à restrição intertemporal. A co
 
 \[
 \frac{U_1}{U_2} = 1 + r
-\]
+\tag{18.4} \]
 
 ou equivalentemente:
 
@@ -113,7 +113,7 @@ TMS_{C_1, C_2} = 1 + r
 
     \[
     TMS_{C_1, C_2} = 1 + \rho
-    \]
+    \tag{18.5} \]
 
     No ótimo, \(\rho = r\): a taxa de desconto subjetiva se iguala à taxa de juros de mercado. Se \(\rho > r\), o consumidor é "impaciente" e toma empréstimo; se \(\rho < r\), ele poupa.
 
@@ -154,7 +154,7 @@ O **Capital Asset Pricing Model** (Modelo de Precificação de Ativos de Capital
 
 \[
 E[r_i] = r_f + \beta_i \cdot (E[r_m] - r_f)
-\]
+\tag{18.6} \]
 
 onde:
 
@@ -169,7 +169,7 @@ O prêmio de risco do ativo \(i\) é proporcional ao seu beta: ativos com maior 
 Uma abordagem mais geral utiliza o **fator de desconto estocástico** (SDF, *stochastic discount factor*). O preço de qualquer ativo satisfaz:
 
 \[
-p_i = E[m \cdot x_i]
+p_i = E[m \cdot x_i] \tag{18.7}
 \]
 
 onde \(m\) é o fator de desconto estocástico e \(x_i\) é o payoff do ativo. No modelo de consumo intertemporal com utilidade esperada:
@@ -193,13 +193,13 @@ A firma demanda capital até que o **valor do produto marginal do capital** igua
 
 \[
 p \cdot PMg_K = c_K
-\]
+\tag{18.8} \]
 
 O **custo de uso do capital** (user cost of capital, ou custo de Jorgenson) é:
 
 \[
 c_K = p_K(r + \delta)
-\]
+\tag{18.9} \]
 
 onde \(p_K\) é o preço do bem de capital, \(r\) é a taxa de juros real e \(\delta\) é a taxa de depreciação.
 
@@ -221,7 +221,7 @@ A demanda por capital da firma nos diz que ela investe até igualar o retorno ma
 
     \[
     VPL = \sum_{t=0}^{n} \frac{F_t}{(1+r)^t} = F_0 + \frac{F_1}{1+r} + \frac{F_2}{(1+r)^2} + \cdots + \frac{F_n}{(1+r)^n}
-    \]
+    \tag{18.10} \]
 
     onde \(r\) é a taxa de desconto (custo de oportunidade do capital) e \(F_0 < 0\) representa o investimento inicial.
 
@@ -253,7 +253,7 @@ Enquanto o VPL fornece o valor monetário gerado por um projeto a uma dada taxa 
 
     \[
     \sum_{t=0}^{n} \frac{F_t}{(1+r^*)^t} = 0
-    \]
+    \tag{18.11} \]
 
     A regra de decisão é: aceitar o projeto se \(TIR > r\) (custo de oportunidade do capital).
 
@@ -343,7 +343,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
     \[
     \frac{\dot{R}}{R} = r \quad \text{(em tempo contínuo)} \qquad \text{ou} \qquad \frac{R_{t+1} - R_t}{R_t} = r \quad \text{(em tempo discreto)}
-    \]
+    \tag{18.12} \]
 
     onde \(R = P - c\) é a renda de escassez do recurso.
 

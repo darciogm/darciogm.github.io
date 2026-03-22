@@ -21,6 +21,7 @@ Quando um dos insumos é mantido fixo — por exemplo, o capital no curto prazo 
 
 \[
 q = f(\bar{K}, L) \equiv \mathrm{TP}(L)
+\tag{10.1}
 \]
 
 onde \(\mathrm{TP}(L)\) é o produto total do trabalho. Essa distinção entre curto e longo prazo será fundamental para a análise de custos no próximo capítulo.
@@ -34,6 +35,7 @@ Definida a função de produção, a pergunta natural é: quanto produto adicion
 
     \[
     \mathrm{PMg}_L = \frac{\partial f(K, L)}{\partial L}
+    \tag{10.2}
     \]
 
     Analogamente, o **produto marginal do capital** é:
@@ -46,6 +48,7 @@ O **produto médio do trabalho** é definido como:
 
 \[
 \mathrm{PMe}_L = \frac{f(K, L)}{L}
+\tag{10.3}
 \]
 
 A relação entre produto marginal e produto médio é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo.
@@ -66,6 +69,7 @@ A relação entre produto marginal e produto médio revela um padrão importante
 
     \[
     \frac{\partial^2 f(\bar{K}, L)}{\partial L^2} < 0
+    \tag{10.4}
     \]
 
 É crucial observar que esta "lei" é uma regularidade empírica, não um resultado lógico necessário. Ela se aplica ao **curto prazo**, quando pelo menos um fator é fixo. Não deve ser confundida com rendimentos decrescentes de escala, que dizem respeito à variação simultânea de todos os insumos — uma distinção frequentemente cobrada em provas da ANPEC.
@@ -123,12 +127,14 @@ As isoquantas são o análogo, na teoria da produção, das curvas de indiferen�
 
     \[
     \mathrm{TMST}_{L,K} = -\frac{dK}{dL}\bigg|_{q = q_0} = \frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{f_L}{f_K}
+    \tag{10.5}
     \]
 
 A derivação segue da diferenciação total da isoquanta \(f(K, L) = q_0\):
 
 \[
 f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
+\tag{10.6}
 \]
 
 O que essa expressão nos diz economicamente? A TMST decrescente reflete a dificuldade crescente de substituir um fator pelo outro à medida que a combinação se torna mais extrema. Quando a firma já emprega muito trabalho e pouco capital, cada unidade adicional de trabalho compensa menos capital perdido — exatamente porque os rendimentos marginais do trabalho são decrescentes. Esse fenômeno é intuitivamente análogo à taxa marginal de substituição decrescente no consumo, e a convexidade das isoquantas é sua expressão geométrica.
@@ -198,6 +204,7 @@ Uma medida local dos rendimentos de escala é dada pela **elasticidade de escala
 
 \[
 e = \frac{\partial \ln f(tK, tL)}{\partial \ln t}\bigg|_{t=1} = \frac{f_K \cdot K + f_L \cdot L}{f(K, L)} = \varepsilon_K + \varepsilon_L
+\tag{10.7}
 \]
 
 onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em relação a cada insumo. Se \(e = 1\), rendimentos constantes; se \(e > 1\), crescentes; se \(e < 1\), decrescentes.
@@ -266,6 +273,7 @@ A **elasticidade de substituição** é o parâmetro que responde a essa pergunt
 
     \[
     \sigma = \frac{d \ln(K/L)}{d \ln(\mathrm{TMST}_{L,K})} = \frac{d \ln(K/L)}{d \ln(f_L / f_K)}
+    \tag{10.8}
     \]
 
 Intuitivamente, \(\sigma\) capta a curvatura da isoquanta:
@@ -378,6 +386,7 @@ Entre a rigidez total do Leontief e a flexibilidade ilimitada da linear, situa-s
 
 \[
 q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0
+\tag{10.9}
 \]
 
 As propriedades dependem dos parâmetros: rendimentos constantes se \(\alpha + \beta = 1\), crescentes se \(\alpha + \beta > 1\), decrescentes se \(\alpha + \beta < 1\). A TMST é \((\beta/\alpha)(K/L)\) e \(\sigma = 1\).
@@ -388,6 +397,7 @@ A função CES, introduzida por Arrow, Chenery, Minhas e Solow (1961), generaliz
 
 \[
 q = A\left[\delta K^{\rho} + (1 - \delta) L^{\rho}\right]^{\gamma/\rho}, \qquad \rho \leq 1, \; \rho \neq 0, \; 0 < \delta < 1
+\tag{10.10}
 \]
 
 onde:
@@ -474,6 +484,7 @@ Formalmente, introduzimos o tempo \(t\) na função de produção. A formulaçã
 
 \[
 q = A(t) \cdot f(K, L)
+\tag{10.11}
 \]
 
 Essa especificação corresponde ao progresso **neutro de Hicks**: o parâmetro \(A(t)\) aumenta o produto na mesma proporção para qualquer combinação de insumos, sem alterar a TMST para uma dada razão \(K/L\).
@@ -503,6 +514,7 @@ A taxa de crescimento do produto pode ser decomposta como:
 
 \[
 \frac{\dot{q}}{q} = \frac{\dot{A}}{A} + \alpha \frac{\dot{K}}{K} + \beta \frac{\dot{L}}{L}
+\tag{10.12}
 \]
 
 O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**. Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
@@ -594,6 +606,7 @@ f(K, L) = g\!\big(h(K, L)\big), \quad g' > 0, \quad h(\lambda K, \lambda L) = \l
 
 \[
 \text{TMST}_{LK}(K, L) = \phi\!\left(\frac{K}{L}\right).
+\tag{10.13}
 \]
 
 Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As isoquantas são **expansões radiais** umas das outras.

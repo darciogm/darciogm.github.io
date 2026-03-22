@@ -17,6 +17,7 @@ Como modelar formalmente uma situação em que os jogadores não conhecem as car
 
     \[
     \Gamma^B = \langle N, (S_i)_{i \in N}, (\Theta_i)_{i \in N}, (u_i)_{i \in N}, p \rangle
+    \tag{9c.1}
     \]
 
     onde \(\Theta_i\) é o conjunto de tipos do jogador \(i\), \(u_i(s, \theta)\) é o payoff, e \(p(\theta)\) é a distribuição conjunta sobre o perfil de tipos (prior comum).
@@ -34,6 +35,7 @@ Com a estrutura do jogo bayesiano definida, qual é o conceito de equilíbrio ap
 
     \[
     \sigma_i^*(\theta_i) \in \arg\max_{s_i \in S_i} \; E_{\theta_{-i}|\theta_i}\left[u_i(s_i, \sigma_{-i}^*(\theta_{-i}), \theta_i, \theta_{-i})\right]
+    \tag{9c.2}
     \]
 
     Cada tipo de cada jogador maximiza seu payoff esperado, condicionando nas crenças sobre os tipos dos outros e nas estratégias de equilíbrio dos demais.
@@ -81,6 +83,7 @@ No leilão de Vickrey, portanto, a verdade é ótima independentemente do que os
 
 \[
 b(v) = v \cdot \frac{N-1}{N}
+\tag{9c.3}
 \]
 
 Cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, o lance é metade do valor; com muitos, converge para o valor verdadeiro. Com mais concorrentes, o risco de perder o leilão aumenta e o sombreamento diminui — no limite, com infinitos licitantes, cada um lança (quase) seu valor verdadeiro.
@@ -89,6 +92,7 @@ Cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, 
 
 \[
 E[\text{Receita}] = \frac{N-1}{N+1}
+\tag{9c.4}
 \]
 
 ### Teorema da Equivalência de Receita
