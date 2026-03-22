@@ -23,8 +23,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
-    .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    #jxgbox { flex: 1 1 400px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
     .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
@@ -41,8 +41,8 @@
     .highlight { color: #C8102E; font-weight: 700; }
     @media (max-width: 860px) {
       .graph-container { flex-direction: column; align-items: center; }
-      #jxgbox { width: 100%; max-width: 520px; }
-      .controls { width: 100%; max-width: 520px; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
     }
   </style>
 </head>
@@ -57,6 +57,7 @@
         <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
         <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
         <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+        <button class="fn-btn" data-fn="ql" onclick="setFn('ql')">Quase-linear</button>
       </div>
       <h3>Parâmetros</h3>
       <div class="slider-group">
@@ -120,6 +121,7 @@
         b.classList.toggle('active', b.dataset.fn === fn);
       });
       document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      document.getElementById('slider-beta').closest('.slider-group').style.display = (fn === 'ql') ? 'none' : '';
       update();
     }
 
@@ -133,6 +135,8 @@
           var r = getRho();
           if (Math.abs(r) < 0.05) return Math.pow(x1, a/(a+b)) * Math.pow(x2, b/(a+b));
           return Math.pow(a * Math.pow(x1, r) + b * Math.pow(x2, r), 1/r);
+        case 'ql':
+          return a * Math.sqrt(x1) + x2;
       }
     }
 
@@ -153,6 +157,9 @@
           var s = Math.pow(U, r) - a * Math.pow(x1, r);
           if (s <= 0) return NaN;
           return Math.pow(s / b, 1/r);
+        case 'ql':
+          var val = U - a * Math.sqrt(x1);
+          return val >= 0 ? val : NaN;
       }
     }
 
@@ -169,6 +176,8 @@
           var r = getRho();
           if (Math.abs(r) < 0.05) return (a * x2) / (b * x1);
           return (a/b) * Math.pow(x1/x2, r - 1);
+        case 'ql':
+          return a / (2 * Math.sqrt(x1));
       }
     }
 
@@ -232,16 +241,18 @@
         });
         annotations.push(tLine);
 
-        var labelX = Math.min(9, px + 1.5);
-        var labelY = py + slope * 1.5;
+        // Place tangent label on the left side of the point to avoid overlap with arrows
+        var labelX = Math.max(0.5, px - 2.5);
+        var labelY = py - slope * 2.5;
         if (labelY > 0.5 && labelY < 10) {
-          annotations.push(board.create('text', [labelX, labelY, 'inclinação = -TMS'], {
+          annotations.push(board.create('text', [labelX, labelY, 'inclinação = −TMS'], {
             fontSize: 11, color: '#00897b', fixed: true, anchorX: 'left'
           }));
         }
 
-        // Trade-off arrows
+        // Trade-off arrows (on the right side of the point)
         var dx1 = 1, dx2 = -tms * dx1;
+        if (Math.abs(dx2) > 5) { dx1 = 3 / tms; dx2 = -3; }
         if (px + dx1 < 10 && py + dx2 > 0.3) {
           annotations.push(board.create('arrow', [[px, py], [px + dx1, py]], {
             strokeColor: '#1565c0', strokeWidth: 2, fixed: true, lastArrow: { type: 2, size: 6 }
@@ -249,10 +260,10 @@
           annotations.push(board.create('arrow', [[px + dx1, py], [px + dx1, py + dx2]], {
             strokeColor: '#C8102E', strokeWidth: 2, fixed: true, lastArrow: { type: 2, size: 6 }
           }));
-          annotations.push(board.create('text', [px + dx1/2, py + 0.3, '\\(\\Delta x_1 = 1\\)'], {
+          annotations.push(board.create('text', [px + dx1/2, py + 0.4, '\\(\\Delta x_1\\)'], {
             fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle', useMathJax: true
           }));
-          annotations.push(board.create('text', [px + dx1 + 0.4, py + dx2/2, '\\(\\Delta x_2\\)'], {
+          annotations.push(board.create('text', [px + dx1 + 0.3, py + dx2/2, '\\(\\Delta x_2\\)'], {
             fontSize: 10, color: '#C8102E', fixed: true, anchorX: 'left', useMathJax: true
           }));
         }
@@ -321,6 +332,13 @@
           var umg1c = a * Math.pow(px, rho-1) * Math.pow(U0, 1-rho);
           var umg2c = b * Math.pow(py, rho-1) * Math.pow(U0, 1-rho);
           umgStr = '\\(\\text{UMg}_1 = ' + umg1c.toFixed(4) + '\\)<br>\\(\\text{UMg}_2 = ' + umg2c.toFixed(4) + '\\)';
+          tmsStr = '<span class="highlight">\\(\\text{TMS}_{12} = ' + tms.toFixed(4) + '\\)</span>';
+          break;
+        case 'ql':
+          funcStr = '\\(u(x_1, x_2) = ' + a.toFixed(2) + '\\sqrt{x_1} + x_2\\)';
+          tmsFormulaStr = '\\(\\text{TMS}_{12} = \\frac{\\alpha}{2\\sqrt{x_1}}\\) (indep. de \\(x_2\\))';
+          var umg1q = a / (2 * Math.sqrt(px));
+          umgStr = '\\(\\text{UMg}_1 = ' + umg1q.toFixed(4) + '\\)<br>\\(\\text{UMg}_2 = 1\\)';
           tmsStr = '<span class="highlight">\\(\\text{TMS}_{12} = ' + tms.toFixed(4) + '\\)</span>';
           break;
       }

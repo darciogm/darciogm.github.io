@@ -92,7 +92,10 @@ Com a função de utilidade em mãos, passamos da abstração algébrica para a 
 O **mapa de indiferença** é a família de todas as curvas de indiferença. Ele oferece uma representação visual completa das preferências do consumidor no espaço bidimensional.
 
 <iframe src="../graficos/cap03/curvas-indiferenca.html" width="100%" height="520" style="border:none; border-radius:8px;"></iframe>
-*Arraste o ponto sobre a curva para ver a TMS. Use os sliders para alterar os parâmetros e o menu para trocar o tipo de preferência.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 3.1** — Mapa de curvas de indiferença. Arraste o ponto sobre a curva para ver a TMS. Use os sliders para alterar os parâmetros e o menu para trocar o tipo de preferência (Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES, quase-linear).
+</p>
 
 !!! tip "Convexidade estrita"
     Se as preferências forem **estritamente convexas** — isto é, se \(\mathbf{x} \sim \mathbf{y}\) e \(\mathbf{x} \neq \mathbf{y}\) implicarem \(t\mathbf{x} + (1-t)\mathbf{y} \succ \mathbf{x}\) para todo \(t \in (0,1)\) — então as curvas de indiferença são estritamente convexas em relação à origem. Isso reflete a ideia de que consumidores preferem variedade: uma cesta "mista" é preferida a cestas extremas. A seção sobre a TMS (a seguir) mostrará que essa propriedade equivale a uma TMS decrescente.
@@ -181,7 +184,10 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
     \]
 
 <iframe src="../graficos/cap03/tms-ponto.html" width="100%" height="520" style="border:none; border-radius:8px;"></iframe>
-*Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da TMS = UMg₁/UMg₂ atualizado em tempo real. Ajuste α e β nos sliders.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 3.2** — Taxa Marginal de Substituição (TMS). Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
+</p>
 
 ??? example "Exercício Resolvido 3.1"
     **Enunciado:** Um consumidor tem preferências representadas por \(u(x_1, x_2) = x_1^{2/5} \, x_2^{3/5}\). Calcule a TMS no ponto \((x_1, x_2) = (10, 15)\) e interprete o resultado.
@@ -379,13 +385,22 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 | Homotética (geral) | \(g(h(x_1,x_2))\), \(h\) homogênea grau 1 | \(\phi(x_1/x_2)\) | Expansões radiais | Depende de \(h\) |
 
 <iframe src="../graficos/cap03/tipos-preferencias.html" width="100%" height="750" style="border:none; border-radius:8px;"></iframe>
-*Comparação visual dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 3.3** — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).
+</p>
 
 <iframe src="../graficos/cap03/funcoes-utilidade.html" width="100%" height="560" style="border:none; border-radius:8px;"></iframe>
-*Superfície 3D da função de utilidade. Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, CES e quase-linear, e ajuste os parâmetros nos sliders.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 3.4** — Superfície 3D da função de utilidade. Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, CES e quase-linear, e ajuste os parâmetros nos sliders.
+</p>
 
 <iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" width="100%" height="560" style="border:none; border-radius:8px;"></iframe>
-*Homotética vs quase-linear: compare a expansão da renda. À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.*
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Figura 3.5** — Homotética vs quase-linear: compare a expansão da renda. À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
+</p>
 
 !!! example "Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
     A propriedade mais marcante da função Cobb-Douglas é que a **participação de cada bem na despesa total é constante**, independente do nível de renda. Os dados da Pesquisa de Orçamentos Familiares (POF 2017-2018, IBGE) permitem confrontar essa previsão teórica com a realidade brasileira.

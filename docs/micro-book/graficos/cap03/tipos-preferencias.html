@@ -94,7 +94,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Comparação de Tipos de Preferencias</div>
+  <div class="graph-title">Figura 3.3 — Comparação de Tipos de Preferências</div>
 
   <div class="panels">
     <!-- Cobb-Douglas -->
@@ -175,8 +175,8 @@
       })(cdLevels[i], cdColors[i % cdColors.length]);
     }
     // Label
-    bCD.create('text', [7, 1.2, '\\(U\\) crescente'], { fontSize: 10, color: '#C8102E', fixed: true });
-    bCD.create('arrow', [[5, 1.5], [8, 4]], {
+    bCD.create('text', [7.5, 1, '\\(U\\) cresc.'], { fontSize: 10, color: '#C8102E', fixed: true });
+    bCD.create('arrow', [[6.5, 1.5], [8.5, 3.5]], {
       strokeColor: '#C8102E', strokeWidth: 1, fixed: true,
       lastArrow: { type: 2, size: 4 }
     });
@@ -196,9 +196,8 @@
         });
       })(spLevels[i]);
     }
-    bSP.create('text', [1, 9, 'TMS = constante'], { fontSize: 10, color: '#1565c0', fixed: true });
-    // Show equal spacing annotation
-    bSP.create('text', [6.5, 1.5, '\\(\\text{TMS} = \\frac{a}{b} = 1\\)'], {
+    bSP.create('text', [0.5, 9.5, 'TMS constante'], { fontSize: 10, color: '#1565c0', fixed: true });
+    bSP.create('text', [5, 0.8, '\\(\\text{TMS} = a/b = 1\\)'], {
       fontSize: 10, color: '#1565c0', fixed: true
     });
 
@@ -228,10 +227,10 @@
       straightFirst: true, straightLast: true,
       point1: { visible: false }, point2: { visible: false }
     });
-    bCP.create('text', [6, 7.5, '\\(x_1 = x_2\\)'], {
+    bCP.create('text', [7.5, 8.5, '\\(x_1 = x_2\\)'], {
       fontSize: 10, color: '#888', fixed: true
     });
-    bCP.create('text', [1, 9.5, 'Ângulo reto'], {
+    bCP.create('text', [0.5, 9.5, 'Ângulo reto'], {
       fontSize: 10, color: '#00897b', fixed: true
     });
 
@@ -256,10 +255,10 @@
       })(qlLevels[i], qlColors[i % qlColors.length]);
     }
     // Show vertical translation annotation
-    bQL.create('text', [5, 9, 'Translações verticais'], {
+    bQL.create('text', [5.5, 9.5, 'Translações verticais'], {
       fontSize: 10, color: '#e65100', fixed: true
     });
-    bQL.create('arrow', [[4, 2], [4, 6]], {
+    bQL.create('arrow', [[7, 2], [7, 5.5]], {
       strokeColor: '#e65100', strokeWidth: 1, dash: 2, fixed: true,
       lastArrow: { type: 2, size: 4 }
     });

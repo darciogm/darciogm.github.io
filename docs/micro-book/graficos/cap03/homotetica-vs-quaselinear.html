@@ -134,7 +134,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Homotética vs Quase-linear: Expansão da Renda</div>
+  <div class="graph-title">Figura 3.5 — Homotética vs Quase-linear: Expansão da Renda</div>
   <div class="graph-subtitle">Compare como as curvas de indiferença se comportam quando a renda aumenta</div>
 
   <div class="panels">
@@ -268,10 +268,21 @@
     });
 
     // Label
-    bH.create('text', [0.5, 10.5, function() {
-      var p = parseFloat(document.getElementById('sl-price').value);
-      return '\\(x_1/x_2 = 1/' + p.toFixed(1) + '\\)';
-    }], { fontSize: 10, color: '#2e7d32', fixed: true });
+    bH.create('text', [
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        return I / (2 * p) + 0.4;
+      },
+      function() {
+        var I = parseFloat(document.getElementById('sl-income').value);
+        return Math.min(I / 2 + 1.5, 11);
+      },
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        return 'Expansão radial';
+      }
+    ], { fontSize: 10, color: '#2e7d32', fixed: true });
 
     // ========== Quasi-linear ==========
     var bQ = JXG.JSXGraph.initBoard('box-ql', boardOpts);
