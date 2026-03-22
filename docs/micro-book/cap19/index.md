@@ -65,7 +65,7 @@ onde \(w(x)\) é o esquema de pagamento contingente ao resultado observável \(x
 
 ### Informação completa vs. incompleta
 
-Sob **informação completa** (ou simétrica), o principal observa tanto o tipo quanto a ação do agente. Nesse caso, basta oferecer um contrato que satisfaça a restrição de participação com igualdade — o chamado **first-best** (ótimo de primeiro melhor).
+Sob **informação completa** (ou simétrica), o principal observa tanto o tipo quanto a ação do agente. Nesse caso, basta oferecer um contrato que satisfaça a restrição de participação \eqref{eq:19.2} com igualdade — o chamado **first-best** (ótimo de primeiro melhor).
 
 Sob **informação assimétrica**, o principal não observa o tipo ou a ação do agente, e precisa satisfazer adicionalmente a restrição de incentivos. O resultado é o **second-best** (ótimo de segundo melhor), que geralmente envolve uma perda de eficiência em relação ao first-best.
 
@@ -153,7 +153,7 @@ Simplificando a RCI:
 (p_H - p_L)[U(w_H) - U(w_L)] \geq c(e_H) - c(e_L)
 \label{eq:19.8} \tag{19.8} \]
 
-Essa condição exige que a diferença de pagamentos entre os estados bom e ruim seja suficientemente grande para compensar o custo adicional do esforço. Como \(p_H > p_L\), precisamos de \(w_H > w_L\): o pagamento deve ser maior quando o resultado é bom.
+A equação \eqref{eq:19.8} exige que a diferença de pagamentos entre os estados bom e ruim seja suficientemente grande para compensar o custo adicional do esforço. Como \(p_H > p_L\), precisamos de \(w_H > w_L\): o pagamento deve ser maior quando o resultado é bom.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O "prêmio" por bom desempenho deve ser grande o suficiente para que o agente prefira se esforçar — caso contrário, ele relaxa.
@@ -472,7 +472,7 @@ Resolvendo:
 \theta_L(\theta_H - \theta_L) \leq s^* \leq \theta_H(\theta_H - \theta_L)
 \label{eq:19.14} \tag{19.14} \]
 
-O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separating) ocorre em \(s^* = \theta_L(\theta_H - \theta_L)\).
+As restrições \eqref{eq:19.12} e \eqref{eq:19.13} delimitam o intervalo \eqref{eq:19.14}, e o equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separating) ocorre em \(s^* = \theta_L(\theta_H - \theta_L)\).
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Um diploma pode funcionar como um "selo de qualidade" do trabalhador, mesmo que a faculdade em si não ensine nada diretamente útil para o cargo.

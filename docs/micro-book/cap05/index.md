@@ -123,7 +123,7 @@ A decomposição de Hicks, embora elegante, exige que conheçamos as curvas de i
 \Delta I^S = x_i^* \cdot \Delta p_i \label{eq:5.3.2} \tag{5.3.2}
 \]
 
-Ambas as decomposições convergem para variações infinitesimais de preço e resultam na mesma equação fundamental — a Equação de Slutsky.
+Ambas as decomposições — a de Hicks, expressa na equação \eqref{eq:5.3.1}, e a de Slutsky, com compensação dada pela equação \eqref{eq:5.3.2} — convergem para variações infinitesimais de preço e resultam na mesma equação fundamental — a Equação de Slutsky.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Toda mudança de preço tem dois efeitos: substituição (troca entre bens) e renda (poder de compra) — separá-los é a chave da análise da demanda.
@@ -285,7 +285,7 @@ A demanda hicksiana \(h_i(\mathbf{p}, \bar{U})\) pode ser obtida a partir da **f
 h_i(\mathbf{p}, \bar{U}) = \frac{\partial E(\mathbf{p}, \bar{U})}{\partial p_i} \label{eq:5.6.4} \tag{5.6.4}
 \]
 
-Este é o **Lema de Shephard**, que já utilizamos na demonstração da Equação de Slutsky.
+Este é o **Lema de Shephard** — a equação \eqref{eq:5.6.4} —, que já utilizamos na demonstração da equação de Slutsky \eqref{eq:5.4.3}.
 
 !!! definition "Propriedades da demanda hicksiana"
     1. **Homogeneidade de grau zero em preços**: \(h_i(\alpha \mathbf{p}, \bar{U}) = h_i(\mathbf{p}, \bar{U})\).
@@ -434,7 +434,7 @@ O **excedente do consumidor** (\(EC\)) mede o ganho líquido que o consumidor ob
 EC = \int_{0}^{x^*} p(x) \, dx - p^* \cdot x^* \label{eq:5.8.11} \tag{5.8.11}
 \]
 
-onde \(p(x)\) é a função de demanda inversa.
+onde \(p(x)\) é a função de demanda inversa. A equação \eqref{eq:5.8.11} traduz em linguagem matemática a ideia de que o consumidor extrai valor de cada unidade comprada acima do preço que efetivamente paga.
 
 ### 5.8.2 Variação compensatória (VC)
 

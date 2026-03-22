@@ -88,7 +88,7 @@ Uma vantagem crucial da classificação hicksiana é a **simetria**: pela propri
 \frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i} \label{eq:6.3.3} \tag{6.3.3}
 \]
 
-Logo, se o bem \(i\) é substituto líquido de \(j\), então \(j\) é necessariamente substituto líquido de \(i\). Não há ambiguidade.
+Logo, pela equação \eqref{eq:6.3.3}, se o bem \(i\) é substituto líquido de \(j\), então \(j\) é necessariamente substituto líquido de \(i\). Não há ambiguidade.
 
 !!! tip "Quando a classificação bruta e líquida divergem"
     A classificação bruta e líquida podem divergir quando o efeito renda é grande o suficiente para dominar o efeito substituição. Por exemplo, dois bens podem ser substitutos líquidos mas complementos brutos se o aumento no preço de um deles causar uma queda de renda real tão grande que reduza a demanda de ambos.
@@ -155,7 +155,7 @@ mas os elementos fora da diagonal podem ter qualquer sinal. No entanto, nem todo
     \sum_{j=1}^n p_j \frac{\partial h_i}{\partial p_j} = 0 \label{eq:6.4.5} \tag{6.4.5}
     \]
 
-    Como \(\frac{\partial h_i}{\partial p_i} \leq 0\), pelo menos alguns dos termos cruzados devem ser positivos. Logo, **todo bem deve ter pelo menos um substituto líquido**.
+    Como \(\frac{\partial h_i}{\partial p_i} \leq 0\), a equação \eqref{eq:6.4.5} implica que pelo menos alguns dos termos cruzados devem ser positivos. Logo, **todo bem deve ter pelo menos um substituto líquido**.
 
 Essa propriedade implica que, embora a complementaridade líquida exista, a substituibilidade é o fenômeno "dominante" no sentido de que não pode haver um bem que seja complemento líquido de todos os outros. Intuitivamente, se o preço de um bem sobe (mantendo a utilidade constante), o consumidor precisa redistribuir seu consumo em direção a *algum* outro bem — a substituição é, em certo sentido, inevitável.
 
@@ -265,7 +265,7 @@ A teoria tradicional assume que o consumidor obtém utilidade diretamente dos be
     z_k = \sum_{j=1}^n b_{kj} x_j, \quad k = 1, \ldots, m \label{eq:6.6.7} \tag{6.6.7}
     \]
 
-    O consumidor maximiza \(U(\mathbf{z})\) sujeito a \(\mathbf{z} = \mathbf{B} \mathbf{x}\), \(\mathbf{p} \cdot \mathbf{x} \leq I\) e \(\mathbf{x} \geq 0\).
+    O consumidor maximiza a equação \eqref{eq:6.6.6} sujeito à relação tecnológica \eqref{eq:6.6.7}, à restrição orçamentária \(\mathbf{p} \cdot \mathbf{x} \leq I\) e à não negatividade \(\mathbf{x} \geq 0\).
 
 Esse modelo gera **preços implícitos** (ou **preços hedônicos**) para os atributos. Se o número de atributos for menor que o de bens (\(m < n\)), o consumidor pode calcular o "custo" de cada unidade de atributo combinando bens de modo eficiente. Em certo sentido, Lancaster transforma o problema do consumidor em um problema de programação linear: encontrar a combinação de bens que fornece os atributos desejados ao menor custo.
 

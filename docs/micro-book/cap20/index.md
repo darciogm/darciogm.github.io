@@ -67,7 +67,7 @@ Considere uma firma que produz um bem \(q\) com custo privado \(C(q)\) e que ger
 CS(q) = C(q) + E(q)
 \label{eq:20.6} \tag{20.6} \]
 
-A firma, buscando maximizar lucro, iguala o custo marginal privado ao preço:
+A firma, buscando maximizar lucro, iguala o custo marginal privado ao preço, conforme a equação \eqref{eq:20.2}, ao passo que o ótimo social exige a equação \eqref{eq:20.1}:
 
 \[
 P = C'(q) \quad \text{(CMg privado)}
@@ -394,7 +394,7 @@ Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para c
 
 ### Subprovisão pelo mercado
 
-O mercado tende a **subprover** bens públicos porque cada indivíduo, ao decidir sua contribuição voluntária, considera apenas **seu** benefício marginal, ignorando o benefício que gera para os demais.
+O mercado tende a **subprover** bens públicos porque, pela equação \eqref{eq:20.12}, cada indivíduo, ao decidir sua contribuição voluntária, considera apenas **seu** benefício marginal, ignorando o benefício que gera para os demais.
 
 Considere \(N\) indivíduos idênticos com utilidade \(U_i = u(x_i) + v(G)\), onde \(G = \sum g_i\) é a contribuição total ao bem público. Cada indivíduo escolhe \(g_i\) para maximizar:
 
@@ -520,7 +520,7 @@ O desafio central na provisão de bens públicos é induzir os indivíduos a **r
 t_i = C - \sum_{j \neq i} \hat{v}_j \label{eq:20.15} \tag{20.15}
 \]
 
-Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os demais (que precisam financiar a diferença).
+O imposto pivotal \eqref{eq:20.15} corresponde ao "custo" que a presença de \(i\) impõe sobre os demais (que precisam financiar a diferença).
 
 **Por que funciona**: Se \(i\) reporta \(\hat{v}_i > v_i\), pode tornar-se pivotal quando não deveria, e pagar um imposto superior ao seu benefício real. Se reporta \(\hat{v}_i < v_i\), pode impedir a provisão de um bem que lhe seria benéfico. Em ambos os casos, o desvio não é lucrativo, e a verdade é estratégia dominante.
 

@@ -34,7 +34,7 @@ Podemos reescrever a restrição como:
 C + wL = wT + V \equiv M^*
 \label{eq:17.1} \tag{17.1} \]
 
-onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo obteria se trabalhasse todas as \(T\) horas. O preço do lazer é o salário \(w\), pois cada hora de lazer tem um custo de oportunidade igual ao salário que se deixa de receber.
+onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo obteria se trabalhasse todas as \(T\) horas. A equação \eqref{eq:17.1} revela que o preço do lazer é o salário \(w\), pois cada hora de lazer tem um custo de oportunidade igual ao salário que se deixa de receber.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O salário não é apenas o que você ganha por trabalhar — é também o preço que você paga por cada hora de lazer.
@@ -141,7 +141,7 @@ Combinando as duas primeiras:
     \frac{\partial h^*}{\partial w} = \underbrace{-\frac{\partial L^c}{\partial w}}_{>0} + \underbrace{h^* \cdot \frac{\partial L^*}{\partial V}}_{<0 \text{ (se } L \text{ normal)}}
     \label{eq:17.8} \tag{17.8} \]
 
-    O sinal de \(\partial h^* / \partial w\) é **ambíguo**: depende de qual efeito domina. Para salários baixos, o efeito substituição tende a dominar; para salários altos, o efeito renda pode prevalecer. \(\blacksquare\)
+    Na equação \eqref{eq:17.8}, o sinal de \(\partial h^* / \partial w\) é **ambíguo**: depende de qual efeito domina. Para salários baixos, o efeito substituição tende a dominar; para salários altos, o efeito renda pode prevalecer. \(\blacksquare\)
 
 ### Exemplo com Cobb-Douglas
 
@@ -290,7 +290,7 @@ A **demanda por trabalho** da firma advém da maximização de lucros. No curto 
 w = p \cdot PMg_L = VPMg_L \label{eq:17.11} \tag{17.11}
 \]
 
-onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do produto marginal do trabalho**. A curva de demanda por trabalho é, portanto, a curva de \(VPMg_L\), que é decrescente (devido à lei dos rendimentos decrescentes).
+onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do produto marginal do trabalho**. A equação \eqref{eq:17.11} mostra que a curva de demanda por trabalho é a curva de \(VPMg_L\), que é decrescente (devido à lei dos rendimentos decrescentes).
 
 !!! definition "Equilíbrio competitivo no mercado de trabalho"
     O equilíbrio competitivo ocorre no par \((w^*, H^*)\) tal que:

@@ -51,7 +51,7 @@ O **produto médio do trabalho** é definido como:
 \label{eq:10.3} \tag{10.3}
 \]
 
-A relação entre produto marginal e produto médio é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo.
+A relação entre produto marginal \eqref{eq:10.2} e produto médio \eqref{eq:10.3} é análoga àquela entre custo marginal e custo médio: quando \(\mathrm{PMg}_L > \mathrm{PMe}_L\), o produto médio é crescente; quando \(\mathrm{PMg}_L < \mathrm{PMe}_L\), o produto médio é decrescente; e quando \(\mathrm{PMg}_L = \mathrm{PMe}_L\), o produto médio atinge seu máximo.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Se o trabalhador adicional produz mais do que a média dos anteriores, ele "puxa" a média para cima; se produz menos, puxa para baixo.
@@ -130,7 +130,7 @@ As isoquantas são o análogo, na teoria da produção, das curvas de indiferen�
     \label{eq:10.5} \tag{10.5}
     \]
 
-A derivação segue da diferenciação total da isoquanta \(f(K, L) = q_0\):
+A derivação da equação \eqref{eq:10.5} segue da diferenciação total da isoquanta \(f(K, L) = q_0\):
 
 \[
 f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}
@@ -213,7 +213,7 @@ e = \frac{\partial \ln f(tK, tL)}{\partial \ln t}\bigg|_{t=1} = \frac{f_K \cdot 
 
 onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em relação a cada insumo. Se \(e = 1\), rendimentos constantes; se \(e > 1\), crescentes; se \(e < 1\), decrescentes.
 
-Note que uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos. Confundir esses dois conceitos é um erro recorrente — e compreensível, pois ambos tratam de "rendimentos". A distinção é temporal e conceitual: os rendimentos marginais decrescentes são um fenômeno de curto prazo (um fator fixo); os rendimentos de escala são um fenômeno de longo prazo (todos os fatores variáveis). Uma siderúrgica pode ter rendimentos crescentes de escala (produzir mais aço por real investido ao dobrar toda a operação) e, simultaneamente, rendimentos marginais decrescentes do trabalho (cada operário adicional em uma planta fixa produz menos que o anterior).
+Note que, pela equação \eqref{eq:10.7}, uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos. Confundir esses dois conceitos é um erro recorrente — e compreensível, pois ambos tratam de "rendimentos". A distinção é temporal e conceitual: os rendimentos marginais decrescentes são um fenômeno de curto prazo (um fator fixo); os rendimentos de escala são um fenômeno de longo prazo (todos os fatores variáveis). Uma siderúrgica pode ter rendimentos crescentes de escala (produzir mais aço por real investido ao dobrar toda a operação) e, simultaneamente, rendimentos marginais decrescentes do trabalho (cada operário adicional em uma planta fixa produz menos que o anterior).
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Rendimentos de escala respondem à pergunta: se a firma dobrar tudo — máquinas, trabalhadores, espaço —, o produto mais que dobra, dobra exatamente ou menos que dobra?

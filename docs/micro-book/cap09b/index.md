@@ -102,7 +102,7 @@ No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta
 \label{eq:9b.1} \tag{9b.1}
 \]
 
-O fator de desconto \(\delta\) pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue. A condição é intuitivamente clara: a cooperação exige que o ganho imediato de trair (\(T - R\)) seja compensado pela perda futura de ser punido (diferença entre \(R\) e \(P\), descontada por \(\delta\)). Quanto mais pacientes os jogadores (maior \(\delta\)), mais fácil é sustentar a cooperação.
+O fator de desconto \(\delta\) na equação \eqref{eq:9b.1} pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue. A condição é intuitivamente clara: a cooperação exige que o ganho imediato de trair (\(T - R\)) seja compensado pela perda futura de ser punido (diferença entre \(R\) e \(P\), descontada por \(\delta\)). Quanto mais pacientes os jogadores (maior \(\delta\)), mais fácil é sustentar a cooperação.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Cooperação emerge quando a sombra do futuro é longa o suficiente para que a punição por trair supere o ganho imediato.
@@ -172,7 +172,7 @@ O jogo do ultimato é extremo: uma única oferta, sem possibilidade de contrapro
 
 Dois jogadores alternam propostas com fator de desconto \(\delta \in (0,1)\). No período 1, o jogador 1 propõe; se 2 rejeita, no período 2 o jogador 2 propõe; e assim por diante.
 
-Rubinstein (1982) demonstrou que esse jogo, apesar de ter infinitas rodadas de ofertas e contraofertas, possui um **único EPS**. A divisão é determinada exclusivamente pelos fatores de desconto dos dois jogadores:
+Rubinstein (1982) demonstrou que esse jogo, apesar de ter infinitas rodadas de ofertas e contraofertas, possui um **único EPS**. A divisão, dada pela equação \eqref{eq:9b.2}, é determinada exclusivamente pelos fatores de desconto dos dois jogadores:
 
 O **único EPS** (Rubinstein, 1982) é:
 
@@ -181,7 +181,7 @@ x_1^* = \frac{1 - \delta_2}{1 - \delta_1 \delta_2}, \qquad x_2^* = \frac{\delta_
 \label{eq:9b.2} \tag{9b.2}
 \]
 
-Quando \(\delta_1 = \delta_2 = \delta\):
+Quando \(\delta_1 = \delta_2 = \delta\), a equação \eqref{eq:9b.2} simplifica-se para:
 
 \[
 x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}

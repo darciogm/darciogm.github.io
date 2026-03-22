@@ -27,7 +27,7 @@ A **taxa de retorno** (\(r\)) de um investimento mede a remuneração do capital
 r = \frac{\pi}{K_0}
 \label{eq:18.1} \tag{18.1} \]
 
-No equilíbrio competitivo de longo prazo, a taxa de retorno do capital se iguala à **taxa de juros** do mercado, pois o investidor é indiferente entre aplicar recursos no mercado financeiro e investir em capital físico.
+Pela equação \eqref{eq:18.1}, no equilíbrio competitivo de longo prazo, a taxa de retorno do capital se iguala à **taxa de juros** do mercado, pois o investidor é indiferente entre aplicar recursos no mercado financeiro e investir em capital físico.
 
 ---
 
@@ -119,7 +119,7 @@ TMS_{C_1, C_2} = 1 + r
     TMS_{C_1, C_2} = 1 + \rho
     \label{eq:18.5} \tag{18.5} \]
 
-    No ótimo, \(\rho = r\): a taxa de desconto subjetiva se iguala à taxa de juros de mercado. Se \(\rho > r\), o consumidor é "impaciente" e toma empréstimo; se \(\rho < r\), ele poupa.
+    A equação \eqref{eq:18.5}, combinada com a condição de ótimo \eqref{eq:18.4}, implica que \(\rho = r\): a taxa de desconto subjetiva se iguala à taxa de juros de mercado. Se \(\rho > r\), o consumidor é "impaciente" e toma empréstimo; se \(\rho < r\), ele poupa.
 
 ### Efeitos de uma variação na taxa de juros
 
@@ -210,7 +210,7 @@ onde \(p_K\) é o preço do bem de capital, \(r\) é a taxa de juros real e \(\d
 !!! definition "Custo de uso do capital"
     O custo de uso do capital \(c_K = p_K(r + \delta)\) representa o custo por período de utilizar uma unidade de capital. Ele inclui dois componentes: o **custo de oportunidade** do capital (\(p_K \cdot r\), o retorno que se obteria aplicando o valor do capital no mercado financeiro) e o **custo de depreciação** (\(p_K \cdot \delta\), a perda de valor do capital por desgaste ou obsolescência).
 
-A demanda por capital é decrescente na taxa de juros: quando \(r\) sobe, \(c_K\) aumenta e a firma reduz seu estoque de capital desejado.
+As equações \eqref{eq:18.8} e \eqref{eq:18.9} mostram que a demanda por capital é decrescente na taxa de juros: quando \(r\) sobe, \(c_K\) aumenta e a firma reduz seu estoque de capital desejado.
 
 ---
 

@@ -126,7 +126,7 @@ Os exemplos da seção anterior revelam que nem todo jogo possui estratégias do
 
     Em palavras: nenhum jogador pode melhorar unilateralmente seu payoff desviando de \(s_i^*\), dado que os demais jogadores mantêm suas estratégias de equilíbrio.
 
-O equilíbrio de Nash é um conceito de **consistência mútua de expectativas** (Gibbons, 1992, Cap. 1): se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
+A definição \eqref{eq:9a.1} estabelece um conceito de **consistência mútua de expectativas** (Gibbons, 1992, Cap. 1): se cada jogador espera que os demais joguem suas estratégias de equilíbrio, então é ótimo para ele também jogar sua estratégia de equilíbrio. Ninguém tem incentivo para desviar unilateralmente.
 
 !!! info "🏅 Prêmio Nobel — John Nash, John Harsanyi e Reinhard Selten (1994)"
 
@@ -322,7 +322,7 @@ q_i^* = \frac{a-c}{(N+1)b}, \qquad P^* = \frac{a + Nc}{N+1}
 \label{eq:9a.8} \tag{9a.8}
 \]
 
-Quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição perfeita. Esse resultado é notável: ele conecta a teoria dos jogos à teoria clássica de mercados competitivos, mostrando que a competição perfeita é o caso limite de um oligopólio de Cournot quando o número de firmas cresce indefinidamente.
+Pela equação \eqref{eq:9a.8}, quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição perfeita. Esse resultado é notável: ele conecta a teoria dos jogos à teoria clássica de mercados competitivos, mostrando que a competição perfeita é o caso limite de um oligopólio de Cournot quando o número de firmas cresce indefinidamente.
 
 **Extensão: Custos assimétricos.** Com custos marginais \(c_1 \neq c_2\):
 
@@ -330,7 +330,7 @@ Quando \(N \to \infty\), \(P^* \to c\): o resultado converge para competição p
 q_1^* = \frac{a - 2c_1 + c_2}{3b}, \qquad q_2^* = \frac{a - 2c_2 + c_1}{3b}
 \]
 
-A firma com menor custo produz mais e obtém lucro maior. Esse resultado tem implicação direta para a análise de fusões: se uma fusão reduz custos (gera eficiências), a firma resultante aumenta sua produção e pode até reduzir o preço de mercado. O CADE precisa ponderar esse efeito de eficiência contra o aumento de poder de mercado.
+Comparando com o equilíbrio simétrico \eqref{eq:9a.6}, a firma com menor custo produz mais e obtém lucro maior. Esse resultado tem implicação direta para a análise de fusões: se uma fusão reduz custos (gera eficiências), a firma resultante aumenta sua produção e pode até reduzir o preço de mercado. O CADE precisa ponderar esse efeito de eficiência contra o aumento de poder de mercado.
 
 ### Competição de Bertrand (preços)
 

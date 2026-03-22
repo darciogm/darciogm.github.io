@@ -96,7 +96,7 @@ S(p) = \sum_{j=1}^{m} S_j(p)
     X(p^*) = S(p^*)
     \label{eq:13.5} \tag{13.5} \]
 
-    A esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
+    O equilíbrio definido pela equação \eqref{eq:13.5} garante que, a esse preço, nenhum comprador ou vendedor individual tem incentivo para alterar seu comportamento.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O preço de equilíbrio é aquele em que ninguém está frustrado — todo mundo que quer comprar a esse preço consegue, e todo mundo que quer vender encontra comprador.
@@ -164,7 +164,7 @@ A análise de curto prazo toma como dado o número de firmas no mercado. Mas no 
 
 ### Entrada, saída e lucro zero
 
-No longo prazo, todos os fatores de produção são variáveis e há livre entrada e saída de firmas no mercado. Se as firmas existentes obtêm lucro econômico positivo (\(\pi > 0\)), novas firmas entram, deslocando a oferta para a direita e reduzindo o preço. Se há prejuízo (\(\pi < 0\)), firmas saem, deslocando a oferta para a esquerda e elevando o preço. No equilíbrio de longo prazo:
+No longo prazo, todos os fatores de produção são variáveis e há livre entrada e saída de firmas no mercado. Se as firmas existentes obtêm lucro econômico positivo (\(\pi > 0\)), novas firmas entram, deslocando a oferta para a direita e reduzindo o preço. Se há prejuízo (\(\pi < 0\)), firmas saem, deslocando a oferta para a esquerda e elevando o preço. No equilíbrio de longo prazo, pela equação \eqref{eq:13.9}:
 
 \[
 \pi = 0 \quad \Longrightarrow \quad p = CMe_{\min} \label{eq:13.9} \tag{13.9}
@@ -288,7 +288,7 @@ O **excedente do produtor** (EP) mede o ganho líquido dos produtores:
 EP = \int_0^{Q^*} \left[ p^* - p_S(Q) \right] dQ
 \label{eq:13.13} \tag{13.13} \]
 
-O **bem-estar social** (W) na análise de equilíbrio parcial é:
+Somando as equações \eqref{eq:13.12} e \eqref{eq:13.13}, o **bem-estar social** (W) na análise de equilíbrio parcial é:
 
 \[
 W = EC + EP

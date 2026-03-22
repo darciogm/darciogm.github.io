@@ -63,7 +63,7 @@ As curvas de indiferença do consumidor A são desenhadas normalmente (convexas 
 TMS_A^{12} = TMS_B^{12}
 \label{eq:14.4} \tag{14.4} \]
 
-Nesse ponto, não há trocas mutuamente benéficas possíveis — a alocação é **eficiente no sentido de Pareto**.
+Nesse ponto, descrito pela equação \eqref{eq:14.4}, não há trocas mutuamente benéficas possíveis — a alocação é **eficiente no sentido de Pareto**.
 
 ---
 
@@ -351,7 +351,7 @@ O **excesso de demanda agregado** pelo bem \(k\) é:
 Z^k(\mathbf{p}) = \sum_{i=1}^{I} z_i^k(\mathbf{p}) = \sum_{i=1}^{I} x_i^k(\mathbf{p}) - \bar{\omega}^k
 \label{eq:14.9} \tag{14.9} \]
 
-O equilíbrio walrasiano requer \(Z^k(\mathbf{p}^*) = 0\) para todo \(k = 1, \ldots, n\) (ou, mais geralmente, \(Z^k(\mathbf{p}^*) \leq 0\) com igualdade se \(p_k^* > 0\)).
+Pela equação \eqref{eq:14.9}, o equilíbrio walrasiano requer \(Z^k(\mathbf{p}^*) = 0\) para todo \(k = 1, \ldots, n\) (ou, mais geralmente, \(Z^k(\mathbf{p}^*) \leq 0\) com igualdade se \(p_k^* > 0\)).
 
 ### Propriedades das funções de excesso de demanda
 
@@ -370,7 +370,7 @@ As funções de excesso de demanda agregado satisfazem:
     \sum_{k=1}^{n} p_k \cdot Z^k(\mathbf{p}) \equiv 0
     \label{eq:14.10} \tag{14.10} \]
 
-A Lei de Walras decorre diretamente do fato de que cada consumidor satisfaz sua restrição orçamentária com igualdade (pela não saciedade local):
+A Lei de Walras \eqref{eq:14.10} decorre diretamente do fato de que cada consumidor satisfaz sua restrição orçamentária com igualdade (pela não saciedade local):
 
 \[
 \mathbf{p} \cdot \mathbf{x}_i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}_i \quad \forall\, i

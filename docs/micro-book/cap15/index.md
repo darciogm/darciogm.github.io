@@ -99,7 +99,7 @@ A receita marginal pode ser expressa em termos da elasticidade-preço da demanda
 RMg = p\left(1 + \frac{1}{\varepsilon_p}\right) = p\left(1 - \frac{1}{|\varepsilon_p|}\right)
 \label{eq:15.4} \tag{15.4} \]
 
-Como o monopolista opera onde \(RMg > 0\), ele necessariamente produz na faixa **elástica** da demanda (\(|\varepsilon_p| > 1\)). Na faixa inelástica, a receita marginal seria negativa, e o monopolista poderia aumentar a receita (e o lucro) reduzindo a produção.
+Pela equação \eqref{eq:15.4}, como o monopolista opera onde \(RMg > 0\), ele necessariamente produz na faixa **elástica** da demanda (\(|\varepsilon_p| > 1\)). Na faixa inelástica, a receita marginal seria negativa, e o monopolista poderia aumentar a receita (e o lucro) reduzindo a produção.
 
 ### A regra de markup
 
@@ -222,7 +222,7 @@ q^c = \frac{a - c}{b}, \quad p^c = c
 RMg = a - 2bq = c \implies q^m = \frac{a - c}{2b}, \quad p^m = \frac{a + c}{2}
 \label{eq:15.8} \tag{15.8} \]
 
-O monopolista produz **metade** da quantidade competitiva e cobra um preço **acima** do custo marginal.
+Pela equação \eqref{eq:15.8}, o monopolista produz **metade** da quantidade competitiva e cobra um preço **acima** do custo marginal.
 
 ### O triângulo de Harberger
 
@@ -384,7 +384,7 @@ As condições de primeira ordem são:
 RMg_1(q_1) = RMg_2(q_2) = CMg(q_1 + q_2) \label{eq:15.12} \tag{15.12}
 \]
 
-O monopolista iguala as receitas marginais em todos os mercados ao custo marginal. O mercado com demanda **mais inelástica** paga o preço **mais alto**:
+A equação \eqref{eq:15.12} mostra que o monopolista iguala as receitas marginais em todos os mercados ao custo marginal. O mercado com demanda **mais inelástica** paga o preço **mais alto**:
 
 \[
 \frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}

@@ -100,7 +100,7 @@ Para que \(q^*\) seja um máximo (e não um mínimo), exige-se:
 \label{eq:12.4} \tag{12.4}
 \]
 
-Isto é, na quantidade ótima, o custo marginal deve crescer **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**. Essa condição é frequentemente negligenciada na resolução de exercícios, mas é essencial: se o CMg cruzar o RMg de cima para baixo, o ponto corresponde a um *mínimo* de lucro, não a um máximo. Em provas da ANPEC, a condição de segunda ordem é cobrada com frequência, especialmente quando a função de custo ou de demanda é não linear.
+A condição de segunda ordem \eqref{eq:12.4} exige que, na quantidade ótima, o custo marginal cresça **mais rapidamente** que a receita marginal. Graficamente, o CMg deve cruzar o RMg **de baixo para cima**. Essa condição é frequentemente negligenciada na resolução de exercícios, mas é essencial: se o CMg cruzar o RMg de cima para baixo, o ponto corresponde a um *mínimo* de lucro, não a um máximo. Em provas da ANPEC, a condição de segunda ordem é cobrada com frequência, especialmente quando a função de custo ou de demanda é não linear.
 
 ### Maximização de lucro com dois insumos
 
@@ -196,7 +196,7 @@ No curto prazo, a firma incorre em custos fixos independentemente de produzir ou
 - Se **opera**, o lucro é: \(\pi = p \cdot q - CV(q) - CF\)
 - Se **fecha**, o lucro é: \(\pi = -CF\)
 
-A firma deve operar se e somente se:
+A firma deve operar se e somente se a condição da equação \eqref{eq:12.8} for satisfeita:
 
 \[
 p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \mathrm{CVMe}(q)
@@ -432,7 +432,7 @@ A demanda incondicional por trabalho pode ser decomposta:
 \label{eq:12.13} \tag{12.13}
 \]
 
-O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho por capital ao longo da isoquanta quando \(w\) sobe. O **efeito produto** também é negativo: \(w\) maior eleva o CMg, o que reduz \(q^*\), o que reduz a demanda por trabalho. Ambos os efeitos operam na mesma direção — diferentemente do caso do consumidor, onde efeito substituição e efeito renda podem ter sinais opostos (bem de Giffen).
+Na equação \eqref{eq:12.13}, o **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho por capital ao longo da isoquanta quando \(w\) sobe. O **efeito produto** também é negativo: \(w\) maior eleva o CMg, o que reduz \(q^*\), o que reduz a demanda por trabalho. Ambos os efeitos operam na mesma direção — diferentemente do caso do consumidor, onde efeito substituição e efeito renda podem ter sinais opostos (bem de Giffen).
 
 !!! theorem "Proposição: Inexistência de 'insumo de Giffen'"
     Na teoria da firma maximizadora de lucro, a demanda por um insumo é sempre não crescente em seu próprio preço. Não existe o análogo de um "bem de Giffen" para insumos, pois tanto o efeito substituição quanto o efeito produto reduzem a demanda quando o preço do insumo aumenta.

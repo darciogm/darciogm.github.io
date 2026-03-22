@@ -124,7 +124,7 @@ Das CPOs, obtemos:
 \frac{\text{UMg}_i}{p_i} = \lambda, \quad \forall \, i. \label{eq:4.3.8} \tag{4.3.8}
 \]
 
-Este resultado merece atenção: ele generaliza para \(n\) bens a condição de igualdade da utilidade marginal por real gasto que derivamos graficamente para dois bens. Em palavras, no ótimo, o último real gasto em *qualquer* bem produz exatamente o mesmo acréscimo de utilidade — e esse acréscimo comum é precisamente \(\lambda\).
+Este resultado merece atenção: a equação \eqref{eq:4.3.8} generaliza para \(n\) bens a condição de igualdade da utilidade marginal por real gasto que derivamos graficamente para dois bens na equação \eqref{eq:4.2.4}. Em palavras, no ótimo, o último real gasto em *qualquer* bem produz exatamente o mesmo acréscimo de utilidade — e esse acréscimo comum é precisamente \(\lambda\).
 
 O **multiplicador de Lagrange** \(\lambda\) tem, portanto, interpretação econômica precisa: é a **utilidade marginal da renda**, ou seja, o aumento na utilidade máxima quando a renda aumenta em uma unidade marginal. Trata-se de uma das grandezas mais importantes da teoria do consumidor, pois conecta variações na renda a variações no bem-estar.
 
@@ -340,7 +340,7 @@ Dividindo as CPOs dos bens 1 e 2:
 \frac{p_1}{p_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \text{TMS}_{12}. \label{eq:4.6.12} \tag{4.6.12}
 \]
 
-A condição de tangência é **idêntica** à do problema primal, confirmando a equivalência entre os dois problemas. Esse resultado não é uma coincidência: primal e dual são duas perspectivas sobre a mesma decisão ótima, e o ponto de tangência entre a curva de indiferença e a reta orçamentária permanece o mesmo, independentemente de qual dos dois problemas se resolve.
+A condição de tangência \eqref{eq:4.6.12} é **idêntica** à do problema primal \eqref{eq:4.2.3}, confirmando a equivalência entre os dois problemas. Esse resultado não é uma coincidência: primal e dual são duas perspectivas sobre a mesma decisão ótima, e o ponto de tangência entre a curva de indiferença e a reta orçamentária permanece o mesmo, independentemente de qual dos dois problemas se resolve.
 
 ### Demanda Hicksiana (Compensada)
 
@@ -441,7 +441,7 @@ x_i(\mathbf{p}, I) = h_i(\mathbf{p}, V(\mathbf{p}, I)), \label{eq:4.8.17} \tag{4
 h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u})). \label{eq:4.8.18} \tag{4.8.18}
 \]
 
-A primeira identidade diz que avaliar a demanda hicksiana no nível de utilidade ótimo reproduz a demanda marshalliana. A segunda diz que avaliar a demanda marshalliana na renda mínima necessária reproduz a demanda hicksiana.
+A equação \eqref{eq:4.8.17} diz que avaliar a demanda hicksiana no nível de utilidade ótimo reproduz a demanda marshalliana. A equação \eqref{eq:4.8.18} diz que avaliar a demanda marshalliana na renda mínima necessária reproduz a demanda hicksiana.
 
 ??? exercicio-resolvido "Exercício Resolvido 4.3"
     **Enunciado:** Para um consumidor com \(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\) e \(I = 100\), verifique as duas identidades de dualidade.
