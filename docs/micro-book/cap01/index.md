@@ -107,14 +107,16 @@ Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentid
 
 Os dois pilares anteriores — *ceteris paribus* e otimização — são ferramentas para construir modelos e derivar previsões. Mas há uma distinção conceitual igualmente importante que todo economista precisa manter em mente: a diferença entre descrever o que *é* e prescrever o que *deveria ser*.
 
-**Tabela 1.1 — Análise positiva vs. normativa**
-
 | Aspecto | Análise Positiva | Análise Normativa |
 |---|---|---|
 | **Pergunta central** | "O que é?" / "O que será?" | "O que deveria ser?" |
 | **Natureza** | Descritiva/preditiva | Prescritiva |
 | **Verificação** | Confronto com dados | Julgamento de valor |
 | **Exemplo** | "Um imposto sobre cigarro reduz o consumo em X%" | "O governo deveria tributar cigarros" |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 1.1 — Análise positiva vs. normativa.**
+</p>
 
 !!! tip "Importância da distinção"
     Embora a fronteira entre análise positiva e normativa nem sempre seja nítida, manter a distinção é essencial para o rigor intelectual. Muitas controvérsias em política econômica decorrem de confusões entre proposições positivas e normativas.
@@ -169,8 +171,6 @@ Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, p
 
 A história do pensamento econômico pode ser lida como uma longa investigação sobre uma pergunta aparentemente simples: **o que determina o valor de um bem?** Por que o diamante custa mais que a água, embora a água seja indispensável à vida? Por que um quadro de Picasso vale milhões, enquanto uma cópia perfeita vale quase nada? Diferentes gerações de economistas ofereceram respostas distintas para essas perguntas, e a evolução dessas respostas moldou a microeconomia tal como a conhecemos hoje. A tabela a seguir apresenta uma cronologia das principais contribuições.
 
-### Tabela 1.2 — Cronologia das principais escolas de pensamento
-
 | Período | Escola / Autor | Contribuição Principal |
 |---|---|---|
 | 1776 | Adam Smith | Teoria do valor-trabalho; mão invisível; divisão do trabalho |
@@ -183,6 +183,10 @@ A história do pensamento econômico pode ser lida como uma longa investigação
 | 1947 | Paul Samuelson | *Foundations*: axiomatização da teoria econômica; preferência revelada |
 | 1954 | Arrow & Debreu | Prova de existência do equilíbrio geral competitivo |
 | 1970– | Teoria dos jogos, informação assimétrica, economia comportamental | Fronteiras modernas da microeconomia |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 1.2 — Cronologia das principais escolas de pensamento.**
+</p>
 
 ### Os economistas clássicos: Smith e Ricardo
 
@@ -368,7 +372,7 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 - A teoria do valor evoluiu da teoria do valor-trabalho (Smith, Ricardo) para a **revolução marginalista** (Jevons, Menger, Walras), que resolveu o paradoxo da água e do diamante via utilidade marginal, culminando na síntese neoclássica de Marshall e no equilíbrio geral de Arrow-Debreu.
 - Desenvolvimentos modernos — teoria dos jogos, economia da informação, economia comportamental, teoria dos mecanismos — relaxam as suposições do modelo competitivo básico e ampliam o alcance da microeconomia.
 
-## Tabela 1.3 — Conceitos-Chave
+## Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

@@ -531,7 +531,7 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
 
 ---
 
-## Tabela 4.1 — Funções do Consumidor
+## Funções do Consumidor
 
 | Função | Definição | Argumentos | Propriedades principais |
 |---|---|---|---|
@@ -540,6 +540,10 @@ As identidades de dualidade da seção anterior revelam que \(V\) e \(E\) contê
 | Utilidade indireta \(V(\mathbf{p}, I)\) | Utilidade máxima dados preços e renda | Preços \(\mathbf{p}\), renda \(I\) | Homogênea de grau 0; decrescente em \(\mathbf{p}\); crescente em \(I\); quase-convexa em \(\mathbf{p}\) |
 | Demanda hicksiana \(h_i(\mathbf{p}, \bar{u})\) | Cesta de custo mínimo para atingir \(\bar{u}\) | Preços \(\mathbf{p}\), utilidade \(\bar{u}\) | Homogênea de grau 0 em \(\mathbf{p}\); \(\partial h_i/\partial p_i \leq 0\) |
 | Função dispêndio \(E(\mathbf{p}, \bar{u})\) | Gasto mínimo para atingir \(\bar{u}\) | Preços \(\mathbf{p}\), utilidade \(\bar{u}\) | Homogênea de grau 1 em \(\mathbf{p}\); côncava em \(\mathbf{p}\); Lema de Shephard |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 4.1 — Funções do consumidor.**
+</p>
 
 **Relações fundamentais**:
 

@@ -358,7 +358,7 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
     w_i \, s_{ij} = w_j \, s_{ji}
     \]
 
-### 5.7.5 Tabela 5.1 — Elasticidades estimadas para o Brasil
+### 5.7.5 Elasticidades estimadas para o Brasil
 
 As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. A tabela a seguir apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
 
@@ -375,7 +375,9 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 | Eletrodomésticos | \(-1{,}15\) | \(1{,}52\) | Elástica; luxo |
 | Cigarros e tabaco | \(-0{,}35\) | \(0{,}25\) | Inelástica; necessidade |
 
-*Fontes: POF/IBGE (2017–2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.*
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 5.1 — Elasticidades estimadas para o Brasil.** Fontes: POF/IBGE (2017-2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.
+</p>
 
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.

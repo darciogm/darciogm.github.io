@@ -213,13 +213,15 @@ O preço de equilíbrio de longo prazo será mais alto após o aumento na demand
 
 Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, via economias de escala externas à firma (mas internas à indústria), como o desenvolvimento de infraestrutura especializada ou de uma rede de fornecedores. A curva de oferta de longo prazo é **negativamente inclinada**. No Brasil, o polo tecnológico de Campinas (SP) é um possível exemplo: a concentração de empresas de TI gerou uma rede de fornecedores, mão de obra especializada e infraestrutura de telecomunicações que reduz os custos de cada firma individual à medida que a indústria cresce.
 
-**Tabela 13.1 — Tipos de indústria e oferta de longo prazo
-
 | Tipo de indústria | Efeito da entrada sobre custos | Inclinação da oferta de LP | Efeito de ↑D sobre preço de LP |
 |---|---|---|---|
 | Custos constantes | Nenhum | Horizontal | Preço inalterado |
 | Custos crescentes | Custos sobem | Positiva | Preço sobe |
 | Custos decrescentes | Custos caem | Negativa | Preço cai |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 13.1 — Tipos de indústria e oferta de longo prazo.**
+</p>
 
 ---
 
@@ -490,18 +492,20 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
 ---
 
-## Tabela: Efeitos de Políticas sobre EC, EP e PPM
+## Efeitos de Políticas sobre EC, EP e PPM
 
 A tabela abaixo resume os efeitos das principais políticas de intervenção em um mercado competitivo.
 
-**Tabela 13.2 — Efeitos de políticas sobre EC, EP e PPM
-
-| Política | Efeito sobre EC | Efeito sobre EP | Receita/Gasto Gov.** | PPM |
+| Política | Efeito sobre EC | Efeito sobre EP | Receita/Gasto Gov. | PPM |
 |---|---|---|---|---|
 | **Imposto por unidade** (\(t\)) | Diminui: \(-\Delta EC\) | Diminui: \(-\Delta EP\) | Receita: \(R = t \cdot Q_t\) | \(PPM = \frac{1}{2} t \cdot \Delta Q > 0\) |
 | **Subsídio por unidade** (\(s\)) | Aumenta | Aumenta | Gasto: \(G = s \cdot Q_s\) | \(PPM = \frac{1}{2} s \cdot \Delta Q > 0\) |
 | **Preço máximo** (\(\bar{p} < p^*\)) | Ambíguo (↑ preço menor, ↓ quantidade) | Diminui | — | \(PPM > 0\) (escassez) |
 | **Preço mínimo** (\(\underline{p} > p^*\)) | Diminui | Ambíguo (↑ preço maior, ↓ quantidade vendida) | Custo se gov. compra excedente | \(PPM > 0\) (excesso) |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 13.2 — Efeitos de políticas sobre EC, EP e PPM.**
+</p>
 
 !!! note "Perda de peso morto"
     A perda de peso morto (PPM), também chamada de *deadweight loss* ou triângulo de Harberger, representa a perda de bem-estar social que não é capturada por nenhum agente — nem consumidores, nem produtores, nem governo. Para um imposto com curvas lineares:

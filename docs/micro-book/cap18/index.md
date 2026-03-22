@@ -57,7 +57,7 @@ onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de
 
     **Por que isso importa:** Com a Selic historicamente elevada no Brasil, o "preço da impaciência" é muito alto, desestimulando investimentos de longo prazo e encarecendo o crédito para famílias e empresas.
 
-### Tabela 18.1 — Fatores que afetam a taxa de juros
+### Fatores que afetam a taxa de juros
 
 | Fator | Efeito sobre \(r^*\) | Mecanismo |
 |---|---|---|
@@ -65,6 +65,10 @@ onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de
 | Aumento da preferência pelo consumo presente | \(\uparrow r^*\) | Reduz oferta de poupança |
 | Aumento da oferta de fundos (ex.: poupança externa) | \(\downarrow r^*\) | Desloca oferta de poupança para a direita |
 | Aumento do risco percebido | \(\uparrow r^*\) | Exige prêmio de risco maior |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 18.1 — Fatores que afetam a taxa de juros.**
+</p>
 
 ---
 
@@ -412,7 +416,7 @@ Se a taxa discreta (anual) é \(r_d\) e a taxa contínua é \(r_c\), então:
 
 ---
 
-## Tabela 18.2 — VPL, Taxa de Desconto e Decisão de Investimento
+## VPL, Taxa de Desconto e Decisão de Investimento
 
 Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa anuais conforme a tabela abaixo:
 
@@ -437,6 +441,10 @@ A TIR deste projeto é aproximadamente 15,2%. A tabela a seguir mostra o VPL par
 | 18% | −5.536 | Rejeitar |
 | 20% | −10.648 | Rejeitar |
 | 25% | −22.560 | Rejeitar |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 18.2 — VPL, taxa de desconto e decisão de investimento.**
+</p>
 
 A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de desconto; (ii) projetos viáveis a juros baixos podem se tornar inviáveis quando a taxa de juros sobe — um problema particularmente relevante no contexto brasileiro de juros historicamente elevados.
 
@@ -487,7 +495,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 - A Regra de Hotelling estabelece que o preço líquido de um recurso natural exaurível deve crescer à taxa de juros no equilíbrio, equilibrando o incentivo entre extrair hoje e preservar para o futuro. Juros altos aceleram a extração.
 - No Brasil, a taxa Selic historicamente elevada encarece o custo de capital, torna inviáveis projetos de longo prazo e cria viés contra investimentos produtivos, especialmente em infraestrutura e P&D.
 
-## Tabela 18.3 — Conceitos-Chave
+## Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

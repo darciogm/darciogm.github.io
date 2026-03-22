@@ -102,6 +102,10 @@ A tabela a seguir resume as principais heurísticas e seus vieses associados:
 | Hindsight | "Eu sabia o tempo todo" | Previsões retrospectivas | Fischhoff (1975) |
 | Confirmação | Busca seletiva de evidências | Teste de hipóteses | Wason (1960) |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 8.1 — Principais heurísticas e vieses cognitivos.**
+</p>
+
 Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a análise da decisão sob risco incorporando esses fenômenos de forma estruturada.
 
 ---
@@ -178,6 +182,10 @@ A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto 
 | Wu e Gonzalez (1996) | — | — | — | 0,71 | — | Loterias binárias |
 | Abdellaoui (2000) | 0,89 | 0,92 | 2,54 | 0,60 | 0,70 | Trade-off method |
 | Booij, van Praag e van de Kuilen (2010) | 0,86 | 0,86 | 2,09 | 0,65 | 0,65 | Meta-análise |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 8.2 — Estimativas dos parâmetros da Teoria do Prospecto.**
+</p>
 
 !!! info "🏅 Prêmio Nobel — Daniel Kahneman (2002)"
 
@@ -280,6 +288,10 @@ A tabela a seguir compara os quatro modelos:
 | Respeita dominância | Sim | Sim | **Não** | Sim |
 | \(w\) para ganhos e perdas | — | Uma única \(w\) | Duas \(w\) | Duas \(w^+, w^-\) |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 8.3 — Comparação dos modelos de decisão sob risco.**
+</p>
+
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A CPT corrige o defeito técnico da Teoria do Prospecto original — violação de dominância estocástica — preservando todas as suas inovações psicológicas.
 
@@ -365,6 +377,10 @@ O Capítulo 7 tratou de decisões sob **risco** — situações em que as probab
 | **Incerteza knightiana** | Desconhecidas | Resultado de uma revolução política |
 | **Ambiguidade** | Formalmente atribuíveis, mas vagas | Urna com composição desconhecida |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 8.4 — Risco, incerteza knightiana e ambiguidade.**
+</p>
+
 ### 8.3.2 O Paradoxo de Ellsberg
 
 Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers* — construiu um experimento mental engenhoso que demonstra a aversão à ambiguidade de forma irrefutável.
@@ -437,6 +453,10 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
 | Confiança | I envia 0; A devolve 0 | I envia \(\approx 50\%\); A devolve \(\approx 33\%\) do recebido |
 | Bens públicos (sem punição) | Contribuição = 0 | Contribuição inicial \(\approx 40{-}60\%\); decai com repetição |
 | Bens públicos (com punição) | Contribuição = 0 | Contribuição estável \(\approx 50{-}80\%\) |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 8.5 — Resultados experimentais vs. previsão autointeressada.**
+</p>
 
 !!! example "Box Brasil — Preferências sociais e informalidade fiscal"
     A alta tolerância à informalidade fiscal no Brasil pode ser interpretada à luz das preferências sociais. Quando os contribuintes percebem que o sistema tributário é **inequitativo** — com altas alíquotas sobre o trabalho formal e baixa tributação sobre lucros e dividendos —, a reciprocidade negativa pode reduzir a disposição a pagar impostos. Pesquisas de opinião do Ipea indicam que a percepção de injustiça fiscal é um dos principais fatores associados à tolerância com a evasão tributária. O modelo de Fehr-Schmidt (Seção 8.4.2) prevê exatamente esse padrão: agentes com alta aversão à desvantagem (\(\alpha_i\) elevado) podem preferir a "punição" de não cooperar a aceitar uma distribuição percebida como injusta.

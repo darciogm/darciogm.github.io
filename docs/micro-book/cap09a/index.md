@@ -104,6 +104,10 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 | **Coordenação Pura** | Payoffs altos na diagonal | (A,A) e (B,B) | Sim (instável) | Seleção de equilíbrio | Convenções sociais |
 | **Matching Pennies** | Soma zero; interesses opostos | Nenhum | \((1/2, 1/2)\) cada | Jogo estritamente competitivo | Estratégias militares, esportes |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 9a.1 — Taxonomia dos jogos clássicos.**
+</p>
+
 ---
 
 ## 9a.3 Equilíbrio de Nash
@@ -377,6 +381,10 @@ q_1^S = \frac{a-c}{2b}, \qquad q_2^S = \frac{a-c}{4b}, \qquad Q^S = \frac{3(a-c)
 | Stackelberg | \(\frac{3(a-c)}{4b}\) | \(\frac{a+3c}{4}\) | \(\frac{(a-c)^2}{8b}\) | \(\frac{(a-c)^2}{16b}\) |
 | Cournot | \(\frac{2(a-c)}{3b}\) | \(\frac{a+2c}{3}\) | \(\frac{(a-c)^2}{9b}\) | \(\frac{(a-c)^2}{9b}\) |
 | Comp. Perfeita | \(\frac{a-c}{b}\) | \(c\) | 0 | 0 |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 9a.2 — Comparação Cournot, Stackelberg, monopólio e competição perfeita.**
+</p>
 
 A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora produz *menos* e lucra *menos*. A quantidade total é maior e o preço é menor — o consumidor prefere Stackelberg a Cournot. Em termos econômicos, a tabela revela uma hierarquia clara de bem-estar do consumidor: competição perfeita > Stackelberg > Cournot > Monopólio. Quanto mais intensa a competição — seja pelo número de firmas ou pela estrutura do jogo — mais o excedente é transferido dos produtores para os consumidores.
 

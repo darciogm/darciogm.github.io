@@ -507,6 +507,10 @@ Exemplos práticos:
 | Telecomunicações | Planos com diferentes volumes de dados e preços por unidade |
 | Educação | Programas com diferentes graus de seletividade e rigor |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 19.1 — Exemplos de mecanismos de triagem.**
+</p>
+
 A diferença fundamental entre sinalização e triagem é quem toma a iniciativa:
 
 - **Sinalização**: a parte informada age primeiro, escolhendo um sinal custoso.
@@ -533,6 +537,10 @@ Leilões são mecanismos de venda particularmente interessantes sob informação
 | **Holandês** (descendente) | Preço cai até alguém aceitar | Fechado (estrategicamente) | Valor do lance aceito |
 | **Primeiro preço** (selado) | Lances simultâneos em envelope fechado | Fechado, simultâneo | Maior lance |
 | **Segundo preço** (Vickrey) | Lances simultâneos; vencedor paga o segundo maior lance | Fechado, simultâneo | Segundo maior lance |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 19.2 — Tipos de leilões.**
+</p>
 
 ### O leilão de segundo preço (Vickrey)
 
@@ -596,6 +604,10 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 | **Sinalização** | Pré-contratual | Tipo do agente (revelado pela ação) | Educação e produtividade; garantias e qualidade; dividendos e lucratividade | Ações custosas e observáveis com custo diferencial entre tipos |
 | **Triagem (screening)** | Pré-contratual | Tipo do agente (revelado pela escolha) | Classes tarifárias; menus de planos de saúde; versões de software | Menus autosseletivos, discriminação de preços de 2.º grau |
 | **Leilões** | Pré-contratual | Valoração dos licitantes | Leilões de arte, espectro, títulos públicos, concessões | Formatos de leilão (Vickrey, inglês, etc.), preço de reserva |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 19.3 — Taxonomia dos problemas de informação assimétrica.**
+</p>
 
 ---
 

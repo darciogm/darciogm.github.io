@@ -373,8 +373,6 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
     **Por que isso importa:** Essa propriedade permite agregar consumidores com rendas diferentes em um "consumidor representativo" — base de grande parte dos modelos macroeconômicos. Contudo, os dados da POF (ver Box Brasil, §3.6.4) mostram que preferências reais raramente são homotéticas: a participação da alimentação cai com a renda (Lei de Engel), evidenciando preferências não homotéticas na prática.
 
-### Tabela comparativa das funções de utilidade
-
 | Tipo | Função \(u(x_1, x_2)\) | TMS\(_{12}\) | Curvas de indiferença | Elasticidade de substituição (\(\sigma\)) |
 |---|---|---|---|---|
 | Cobb-Douglas | \(x_1^a x_2^b\) | \(\dfrac{a\, x_2}{b\, x_1}\) | Hipérboles convexas | \(1\) |
@@ -383,6 +381,10 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 | CES | \((x_1^{\rho}+x_2^{\rho})^{1/\rho}\) | \(\left(\frac{x_1}{x_2}\right)^{\rho-1}\) | Convexa (curvatura varia com \(\rho\)) | \(\dfrac{1}{1-\rho}\) |
 | Quase-linear | \(v(x_1) + x_2\) | \(v'(x_1)\) | Translações verticais | Variável |
 | Homotética (geral) | \(g(h(x_1,x_2))\), \(h\) homogênea grau 1 | \(\phi(x_1/x_2)\) | Expansões radiais | Depende de \(h\) |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 3.1 — Comparativa das funções de utilidade.**
+</p>
 
 <iframe src="../graficos/cap03/tipos-preferencias.html" width="100%" style="border:none; border-radius:8px;"></iframe>
 

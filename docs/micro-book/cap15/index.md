@@ -237,8 +237,6 @@ Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0
 !!! example "Poder de mercado e o CADE"
     O Conselho Administrativo de Defesa Econômica (CADE) utiliza o índice de Lerner e medidas correlatas para avaliar poder de mercado em atos de concentração e investigações de conduta. No caso da fusão Ambev (1999), o CADE estimou que a empresa resultante deteria cerca de 70% do mercado de cervejas, com significativo poder de precificação. Mais recentemente, em 2022, o CADE aplicou multa de R$ 539 milhões ao Google por abuso de posição dominante no mercado de *ad tech* — um caso em que o poder de mercado decorre não de barreiras tecnológicas clássicas, mas de efeitos de rede e controle de dados. O índice de Lerner é uma ferramenta analítica central nessas investigações: um \(L\) elevado e persistente sinaliza poder de mercado que justifica intervenção regulatória.
 
-### Tabela 15.1 — Comparação concorrência perfeita versus monopólio
-
 | Variável | Concorrência Perfeita | Monopólio | Variação |
 |---|---|---|---|
 | **Preço** | \(p^c = c\) | \(p^m = \frac{a+c}{2}\) | \(\uparrow\) |
@@ -247,6 +245,10 @@ Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0
 | **Excedente do Produtor** | \(0\) | \(\frac{(a-c)^2}{4b}\) | \(\uparrow\) |
 | **Excedente Total** | \(\frac{(a-c)^2}{2b}\) | \(\frac{3(a-c)^2}{8b}\) | \(\downarrow\) |
 | **Perda de Peso Morto** | \(0\) | \(\frac{(a-c)^2}{8b}\) | — |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 15.1 — Comparação concorrência perfeita versus monopólio.**
+</p>
 
 !!! tip "Interpretação"
     A passagem de concorrência perfeita para monopólio envolve duas transferências: (i) parte do excedente do consumidor é capturada pelo monopolista (retângulo de transferência); (ii) parte do excedente total simplesmente desaparece (triângulo de Harberger). A PPM representa uma perda **líquida** de bem-estar social.
@@ -551,7 +553,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 - A regulação de monopólios naturais enfrenta um dilema fundamental: a precificação pelo custo marginal gera prejuízos (first-best impraticável), enquanto a precificação pelo custo médio ou por teto de preços (price cap) representa soluções de second-best com trade-offs entre eficiência e incentivos ao investimento.
 - As visões dinâmicas de Schumpeter (destruição criativa) e de Baumol (mercados contestáveis) relativizam os custos do monopólio, sugerindo que lucros de monopólio podem incentivar inovação e que a ameaça de entrada pode disciplinar o incumbente.
 
-## Tabela 15.2 — Conceitos-Chave
+## Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

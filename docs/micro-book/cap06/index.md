@@ -360,7 +360,7 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 
 ---
 
-## Tabela 6.1 — Classificação de Pares de Bens no Contexto Brasileiro
+## Classificação de Pares de Bens no Contexto Brasileiro
 
 Para consolidar as classificações discutidas nas seções anteriores, a tabela a seguir reúne pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana). Note como, em alguns casos, as duas classificações divergem — reflexo direto do efeito renda que a Equação de Slutsky separa.
 
@@ -377,7 +377,9 @@ Para consolidar as classificações discutidas nas seções anteriores, a tabela
 | Educação privada e Plano de saúde | Ambíguo | Substitutos fracos | Competem pelo orçamento; líquidos: substitutos via renda disponível |
 | Manteiga e Margarina | Substitutos | Substitutos | Clássico par de substitutos; elasticidade cruzada elevada |
 
-*Fontes: estimativas baseadas em POF/IBGE (2017-2018); estudos setoriais ABRAS; literatura aplicada brasileira.*
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 6.1 — Classificação de pares de bens no contexto brasileiro.** Fontes: estimativas baseadas em POF/IBGE (2017-2018); estudos setoriais ABRAS; literatura aplicada brasileira.
+</p>
 
 !!! note "Divergência entre classificações"
     Note o caso de carne bovina e sal: embora sejam complementos brutos (o sal é usado para temperar a carne), quando isolamos o efeito substituição, a relação é praticamente nula — a "complementaridade" observada nos dados marshallianos decorre em grande parte do efeito renda (famílias mais ricas consomem mais de ambos).

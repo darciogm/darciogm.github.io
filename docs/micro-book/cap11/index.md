@@ -251,8 +251,6 @@ A função custo derivada na seção anterior é uma construção abstrata que r
 
 ### Relações entre as curvas de custo
 
-**Tabela 11.1 — Relações entre as curvas de custo
-
 | Relação | Expressão | Implicação |
 |:---|:---|:---|
 | CMg e CMe | Se \(\mathrm{CMg} < \mathrm{CMe}\), CMe é decrescente | CMg "puxa" CMe para baixo |
@@ -263,6 +261,10 @@ A função custo derivada na seção anterior é uma construção abstrata que r
 | CMe e CVMe | \(\mathrm{CMe} = \mathrm{CVMe} + \mathrm{CFMe}\) | CMe está sempre acima de CVMe |
 | CMe e CVMe | \(\mathrm{CMe} - \mathrm{CVMe} = CF/q \to 0\) | As curvas convergem quando \(q \to \infty\) |
 | Área sob CMg | \(\int_0^q \mathrm{CMg}(x)\,dx = CV(q)\) | Custo variável = área sob CMg |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 11.1 — Relações entre as curvas de custo.**
+</p>
 
 A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
 

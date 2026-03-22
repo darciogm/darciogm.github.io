@@ -382,8 +382,6 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 
     **Por que isso importa:** Programas de leniência do [CADE](https://www.gov.br/cade) exploram exatamente essa fragilidade: ao oferecer imunidade ao primeiro delator, transformam a tentação de trair o cartel em incentivo para denunciá-lo.
 
-### Tabela 16.1 — Fatores que facilitam a colusão
-
 | Fator | Efeito sobre a colusão | Mecanismo |
 |---|---|---|
 | Poucas firmas | Facilita | Menor incentivo ao desvio |
@@ -394,6 +392,10 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 | Transparência de preços | Facilita | Detecção rápida de desvios |
 | Barreiras à entrada | Facilita | Impede erosão de lucros por entrantes |
 | Contato multimercado | Facilita | Mais oportunidades de punição |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 16.1 — Fatores que facilitam a colusão.**
+</p>
 
 !!! tip "Colusão tácita e direito concorrencial"
     A colusão tácita — sustentada por interação repetida sem comunicação explícita — é extremamente difícil de combater com instrumentos tradicionais do direito antitruste. O CADE distingue entre **cartel** (acordo explícito, ilícito per se) e **paralelismo consciente** (comportamento coordenado sem acordo, que pode não ser ilícito). A análise de estrutura de mercado (concentração, barreiras, transparência) é utilizada para avaliar a probabilidade de coordenação tácita.
@@ -516,7 +518,7 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ---
 
-## Tabela 16.2 — Comparação dos modelos de oligopólio
+## Comparação dos modelos de oligopólio
 
 A tabela a seguir resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
 
@@ -530,6 +532,10 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 | **Variável de decisão** | Preço | Quantidade | Quantidade (sequencial) | Preço ou quantidade |
 | **Eficiência** | Eficiente | Intermediária | Intermediária (mais que Cournot) | Monopólio |
 | **Estabilidade** | Equilíbrio de Nash | Equilíbrio de Nash | Eq. perfeito em subjogos | Requer mecanismo de enforcement |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 16.2 — Comparação dos modelos de oligopólio.**
+</p>
 
 !!! tip "Ordenação por eficiência"
     Em termos de excedente total, a ordenação é: Bertrand \(\geq\) Stackelberg \(\geq\) Cournot \(\geq\) Colusão. A concorrência em preços é a mais eficiente; a colusão é a menos eficiente (equivalente ao monopólio).
@@ -600,7 +606,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 - A colusão tácita pode ser sustentada em jogos repetidos por meio de estratégias de gatilho, desde que o fator de desconto seja suficientemente alto. Fatores como poucas firmas, interação frequente e transparência de preços facilitam a coordenação.
 - Decisões de longo prazo como investimento em capacidade, dissuasão estratégica de entrada e inovação ampliam a análise para além dos modelos estáticos, com a taxonomia de Fudenberg-Tirole orientando a escolha entre estratégias agressivas e acomodatórias.
 
-## Tabela 16.3 — Conceitos-Chave
+## Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

@@ -638,7 +638,7 @@ A função CES com \(0 < \alpha < 1\) e \(\rho < 1\) é **quase-côncava** (seus
 
     Se \(\frac{\alpha}{p_1} = \frac{1-\alpha}{p_2}\), qualquer combinação na restrição orçamentária é ótima.
 
-    **Tabela 2.1 — Casos especiais da função CES**
+    **Casos especiais da função CES**
 
     | Parâmetro \(\rho\) | \(\sigma\) | Função utilidade | Curvas de indiferença |
     |---|---|---|---|
@@ -972,7 +972,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ---
 
-## Tabela 2.2 — Condições de otimização
+## Condições de otimização
 
 | Tipo de Problema | Condição de Primeira Ordem | Condição de Segunda Ordem | Observação |
 |---|---|---|---|
@@ -980,6 +980,10 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 | **Sem restrição** (\(n\) variáveis) | \(\nabla f(\mathbf{x}^*) = \mathbf{0}\) | \(H(\mathbf{x}^*)\) negativa definida para máx. | \(H\) é a hessiana |
 | **Restrição de igualdade** | \(\nabla f = \lambda \nabla g\); \(g(\mathbf{x}) = c\) | Hessiano orlado com menores alternando em sinal | \(\lambda\) = valor sombra da restrição |
 | **Restrição de desigualdade** | Condições KKT: folga complementar | Mesmas do caso com igualdade nas restrições ativas | Restrições inativas: \(\lambda_j = 0\) |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 2.1 — Condições de otimização.**
+</p>
 
 ---
 
@@ -1016,7 +1020,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 - As **condições de Kuhn-Tucker** generalizam o método de Lagrange para restrições de desigualdade e soluções de canto, com as condições de folga complementar determinando quais restrições são ativas.
 - O capítulo também cobre **funções homogêneas** (teorema de Euler e exaustão do produto), **concavidade e quase-concavidade** (condições de segunda ordem), integração (excedentes), otimização dinâmica (equação de Euler) e estatística (valor esperado, variância, utilidade esperada de von Neumann-Morgenstern).
 
-## Tabela 2.3 — Conceitos-Chave
+## Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|

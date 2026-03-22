@@ -152,17 +152,19 @@ Isso garante que a combinação de bens produzida é exatamente aquela que os co
 
 ---
 
-## Tabela: Condições de Eficiência de Pareto
+## Condições de Eficiência de Pareto
 
 As seções anteriores identificaram três tipos de eficiência: na troca (entre consumidores), na produção (entre setores) e no mix de produtos (entre o que se produz e o que se deseja consumir). A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A tabela abaixo sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
-
-**Tabela 14.1** — Condições de eficiência de Pareto
 
 | Tipo de eficiência | Condição marginal | Interpretação |
 |---|---|---|
 | **Eficiência na troca** | \(TMS_A^{12} = TMS_B^{12}\) | Os consumidores valorizam os bens na mesma proporção marginal; não há trocas mutuamente benéficas. |
 | **Eficiência na produção** | \(TMST_1^{LK} = TMST_2^{LK}\) | Os insumos são alocados entre setores de modo que é impossível aumentar a produção de um bem sem reduzir a do outro. |
 | **Eficiência no mix de produtos** | \(TMT^{12} = TMS_A^{12} = TMS_B^{12}\) | A combinação de bens produzida corresponde às preferências dos consumidores; o custo de oportunidade social iguala a valoração marginal. |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 14.1 — Condições de eficiência de Pareto.**
+</p>
 
 !!! note "Concorrência perfeita e eficiência"
     Em concorrência perfeita, o sistema de preços descentraliza automaticamente todas essas condições. Os consumidores igualam suas TMS à razão de preços (\(TMS = p_1/p_2\)); as firmas igualam suas TMST à razão de preços dos insumos (\(TMST = w/r\)); e a maximização de lucro garante que \(CMg_1/CMg_2 = p_1/p_2\). Portanto, \(TMS = TMT\).

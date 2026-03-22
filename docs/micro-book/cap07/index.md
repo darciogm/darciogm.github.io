@@ -161,6 +161,10 @@ A escolha de qual medida utilizar depende do contexto. Se o risco é de magnitud
 | DARA (Aversão Absoluta Decrescente) | \(\ln(W)\), \(\frac{W^{1-\gamma}}{1-\gamma}\) | Decrescente em \(W\) | Depende da forma | Agentes mais ricos aceitam mais risco absoluto |
 | Quadrática | \(W - bW^2\), \(b > 0\) | \(\frac{2b}{1-2bW}\) (crescente) | \(\frac{2bW}{1-2bW}\) (crescente) | IARA — propriedade pouco realista |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 7.1 — Classes importantes de funções de utilidade.**
+</p>
+
 !!! tip "DARA como propriedade desejável"
     A evidência empírica sugere fortemente que a aversão absoluta ao risco é **decrescente** na riqueza (DARA): indivíduos mais ricos estão dispostos a aceitar apostas de valor fixo que indivíduos mais pobres recusariam. A função de utilidade quadrática, embora matematicamente conveniente, viola essa propriedade (apresenta IARA) e possui a limitação adicional de que a utilidade marginal se torna negativa para riquezas suficientemente altas.
 

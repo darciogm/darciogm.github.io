@@ -138,6 +138,10 @@ Além do grim trigger, existem estratégias mais sofisticadas:
 | **Tit-for-Tat** | Coopera no 1º período; depois copia a ação do oponente no período anterior | \(\frac{T-R}{T-P}\) | Simples, "perdoa"; venceu os torneios de Axelrod | Vulnerável a erros; ciclos de retaliação |
 | **Win-Stay, Lose-Shift** | Mantém a ação se o payoff foi bom, muda se foi ruim | Variável | Autocorreção | Pode não ser EPS |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 9b.1 — Estratégias de cooperação em jogos repetidos.**
+</p>
+
 <iframe src="../graficos/cap09/delta-cooperacao.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>

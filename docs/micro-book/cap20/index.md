@@ -339,6 +339,10 @@ A combinação dessas duas propriedades gera uma classificação de bens em quat
 | **Rival** | **Bem privado** (alimento, vestuário, combustível) | **Recurso comum** (cardume no oceano, pasto comunitário, água de aquífero) |
 | **Não-rival** | **Bem de clube** (TV a cabo, pedágio, parque com entrada paga) | **Bem público puro** (defesa nacional, iluminação pública, ar limpo) |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 20.1 — Classificação de bens por rivalidade e excludência.**
+</p>
+
 A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos & Garcia, 2014):
 
 | Categoria | Propriedades | Exemplos Brasileiros |
@@ -347,6 +351,10 @@ A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos
 | **Bem público puro** | Não-rival e não-excludente | Defesa nacional (Forças Armadas), iluminação de via pública, sinal de rádio aberto, conhecimento científico básico |
 | **Bem de clube** | Não-rival (até congestionamento) e excludente | Netflix, rodovia com pedágio (Via Dutra, Rodovia dos Bandeirantes), clube recreativo, sistema de streaming de futebol |
 | **Recurso comum** | Rival e não-excludente | Peixes no rio Amazonas, pastagem no semiárido, água do Aquífero Guarani, vagas de estacionamento público |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 20.2 — Exemplos brasileiros por categoria de bem.**
+</p>
 
 !!! note "Bens Públicos Locais e Globais"
     A provisão de bens públicos pode ter escala local (iluminação de uma rua), regional (defesa costeira), nacional (sistema judiciário) ou global (estabilidade climática, erradicação de doenças). A escala determina qual nível de governo (ou cooperação internacional) é mais adequado para a provisão.

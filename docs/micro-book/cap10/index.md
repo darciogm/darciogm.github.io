@@ -402,8 +402,6 @@ A CES **generaliza** as três funções anteriores:
 - \(\rho = 1 \Rightarrow\) Linear \((\sigma = \infty)\),
 - \(\rho \to -\infty \Rightarrow\) Leontief \((\sigma = 0)\): \(q \to A\min\{K, L\}\). (Para obter a forma geral \(\min\{K/a, L/b\}\), é necessário colocar os coeficientes dentro da função \(\min\), e não como pesos \(\delta, 1-\delta\) na CES.)
 
-### Tabela comparativa das funções de produção
-
 | Propriedade | Linear | Leontief | Cobb-Douglas | CES |
 |:---|:---|:---|:---|:---|
 | **Fórmula** | \(aK + bL\) | \(\min\{K/a, L/b\}\) | \(AK^{\alpha}L^{\beta}\) | \(A[\delta K^{\rho} + (1-\delta)L^{\rho}]^{\gamma/\rho}\) |
@@ -412,6 +410,10 @@ A CES **generaliza** as três funções anteriores:
 | **Rendimentos de escala** | Constantes | Constantes | Depende de \(\alpha + \beta\) | Depende de \(\gamma\) |
 | **Isoquantas** | Retas | Ângulos retos | Hipérboles convexas | Curvas convexas |
 | **Casos especiais** | — | — | CES com \(\rho \to 0\) | Generaliza todas |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 10.1 — Comparativa das funções de produção.**
+</p>
 
 As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
 

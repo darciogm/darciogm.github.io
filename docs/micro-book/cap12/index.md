@@ -197,8 +197,6 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
 ### Condições de oferta no curto prazo
 
-**Tabela 12.1** — Condições de oferta no curto prazo
-
 | Condição de preço | Decisão | Lucro econômico |
 |:---|:---|:---|
 | \(p > \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Lucro positivo \((\pi > 0)\) |
@@ -206,6 +204,10 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 | \(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\) | Produzir em \(p = \mathrm{CMg}\) | Prejuízo, mas menor que \(CF\) |
 | \(p = \mathrm{CVMe}_{\min}\) | Indiferente entre operar e fechar | Prejuízo igual a \(CF\) (ponto de fechamento) |
 | \(p < \mathrm{CVMe}_{\min}\) | Fechar (produção zero) | Prejuízo igual a \(CF\) |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 12.1 — Condições de oferta no curto prazo.**
+</p>
 
 !!! definition "Curva de oferta de curto prazo"
     A **curva de oferta de curto prazo** da firma tomadora de preços é o trecho da curva de custo marginal que está **acima** do custo variável médio mínimo:

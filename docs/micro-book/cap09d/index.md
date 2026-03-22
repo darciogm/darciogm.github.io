@@ -154,6 +154,10 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 | **Certificação** | Rating de crédito (Serasa, S&P) | Terceiro |
 | **Regulação** | Seguro obrigatório (DPVAT) | Estado |
 
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 9d.1 — Mecanismos de mitigação da seleção adversa.**
+</p>
+
 ---
 
 ## Box Brasil: Credibilidade do Banco Central

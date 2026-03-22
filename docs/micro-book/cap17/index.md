@@ -297,7 +297,7 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
     Nesse equilíbrio, todo trabalhador que deseja trabalhar ao salário \(w^*\) encontra emprego, e toda firma que deseja contratar ao salário \(w^*\) encontra trabalhadores.
 
-### Tabela 17.1 — Deslocamentos das curvas
+### Deslocamentos das curvas
 
 | Fator | Efeito sobre a oferta | Efeito sobre a demanda | Impacto no salário |
 |---|---|---|---|
@@ -305,6 +305,10 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 | Imigração | Desloca \(H^s\) para a direita | — | \(w^*\) cai |
 | Aumento da renda não salarial | Desloca \(H^s\) para a esquerda | — | \(w^*\) sobe |
 | Progresso tecnológico poupador de trabalho | — | Desloca \(H^d\) para a esquerda | \(w^*\) cai |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 17.1 — Deslocamentos das curvas de oferta e demanda de trabalho.**
+</p>
 
 ---
 
@@ -593,13 +597,17 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Tabela-Resumo: Efeitos Substituição e Renda sobre a Oferta de Trabalho
+## Efeitos Substituição e Renda sobre a Oferta de Trabalho
 
 | Variação | Efeito Substituição | Efeito Renda | Resultado sobre \(h^*\) |
 |---|---|---|---|
 | \(\uparrow w\) (salário sobe) | \(h\) sobe (lazer mais caro) | \(h\) cai (mais rico, quer mais lazer) | Ambíguo |
 | \(\uparrow V\) (renda não salarial sobe) | Nenhum | \(h\) cai (mais rico) | \(h\) cai |
 | \(\uparrow p\) (preço do consumo sobe) | Depende (o efeito sobre o preço relativo do lazer varia com a cesta) | Depende | Ambíguo |
+
+<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+**Tabela 17.2 — Efeitos substituição e renda sobre a oferta de trabalho.**
+</p>
 
 ---
 
@@ -612,7 +620,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 - Sindicatos podem elevar salários acima do nível competitivo, com efeitos sobre emprego que dependem do poder de barganha e da estrutura de mercado. O salário mínimo tem efeitos ambíguos: sob monopsônio pode aumentar emprego, enquanto em mercados competitivos pode reduzi-lo.
 - A realidade brasileira é marcada por elevada informalidade, desigualdade salarial significativa, alto retorno à educação e debates persistentes sobre os efeitos do salário mínimo e da reforma trabalhista.
 
-## Tabela 17.2 — Conceitos-Chave
+## Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
