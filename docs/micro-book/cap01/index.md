@@ -275,55 +275,55 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
 
     Além disso, a condição de segunda ordem exige que o custo marginal seja crescente nesse ponto.
 
-**Demonstração.**
+!!! proof "Demonstração"
 
-O lucro da firma é dado por:
+    O lucro da firma é dado por:
 
-\[
-\pi(q) = RT(q) - CT(q) = P \cdot q - CT(q) \label{eq:1.4.4} \tag{1.4.4}
-\]
+    \[
+    \pi(q) = RT(q) - CT(q) = P \cdot q - CT(q) \label{eq:1.4.4} \tag{1.4.4}
+    \]
 
-onde \(P\) é o preço de mercado (dado, exógeno para a firma competitiva), \(RT(q)\) é a receita total e \(CT(q)\) é o custo total.
+    onde \(P\) é o preço de mercado (dado, exógeno para a firma competitiva), \(RT(q)\) é a receita total e \(CT(q)\) é o custo total.
 
-**Condição de primeira ordem (CPO):**
+    **Condição de primeira ordem (CPO):**
 
-Para que \(q^*\) seja um máximo interior, é necessário que a derivada do lucro em relação a \(q\) seja zero:
+    Para que \(q^*\) seja um máximo interior, é necessário que a derivada do lucro em relação a \(q\) seja zero:
 
-\[
-\frac{d\pi}{dq}\bigg|_{q=q^*} = 0 \label{eq:1.4.5} \tag{1.4.5}
-\]
+    \[
+    \frac{d\pi}{dq}\bigg|_{q=q^*} = 0 \label{eq:1.4.5} \tag{1.4.5}
+    \]
 
-\[
-\frac{d}{dq}\left[P \cdot q - CT(q)\right]\bigg|_{q=q^*} = 0
-\]
+    \[
+    \frac{d}{dq}\left[P \cdot q - CT(q)\right]\bigg|_{q=q^*} = 0
+    \]
 
-\[
-P - \frac{dCT}{dq}\bigg|_{q=q^*} = 0
-\]
+    \[
+    P - \frac{dCT}{dq}\bigg|_{q=q^*} = 0
+    \]
 
-\[
-\boxed{P = CMg(q^*)} \label{eq:1.4.6} \tag{1.4.6}
-\]
+    \[
+    \boxed{P = CMg(q^*)} \label{eq:1.4.6} \tag{1.4.6}
+    \]
 
-onde \(CMg(q) = \frac{dCT}{dq}\) é o custo marginal.
+    onde \(CMg(q) = \frac{dCT}{dq}\) é o custo marginal.
 
-**Condição de segunda ordem (CSO):**
+    **Condição de segunda ordem (CSO):**
 
-Para que \(q^*\) seja de fato um **máximo** (e não um mínimo ou ponto de inflexão), a segunda derivada do lucro deve ser negativa:
+    Para que \(q^*\) seja de fato um **máximo** (e não um mínimo ou ponto de inflexão), a segunda derivada do lucro deve ser negativa:
 
-\[
-\frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \label{eq:1.4.7} \tag{1.4.7}
-\]
+    \[
+    \frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \label{eq:1.4.7} \tag{1.4.7}
+    \]
 
-\[
--\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} < 0
-\]
+    \[
+    -\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} < 0
+    \]
 
-\[
-\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0 \label{eq:1.4.8} \tag{1.4.8}
-\]
+    \[
+    \frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0 \label{eq:1.4.8} \tag{1.4.8}
+    \]
 
-Portanto, a condição de segunda ordem $\eqref{eq:1.4.8}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
+    Portanto, a condição de segunda ordem $\eqref{eq:1.4.8}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
 
 O que essa demonstração nos revela? Do ponto de vista econômico, o resultado da equação $\eqref{eq:1.4.6}$ encapsula uma lógica elegante: a firma expande a produção enquanto cada unidade adicional gera receita (\(P\)) superior ao custo de produzi-la (\(CMg\)). No ponto ótimo, a última unidade produzida "se paga" exatamente — não há mais ganho possível na margem. Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos capítulos sobre a teoria da firma.
 
