@@ -433,3 +433,8 @@ figcaption {
 .md-typeset__table {
     margin-bottom: 0 !important;
 }
+
+/* Espaçamento acima dos iframes de figuras — igual às tabelas */
+.md-typeset iframe {
+    margin-top: 1.5rem;
+}
