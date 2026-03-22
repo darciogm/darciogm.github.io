@@ -88,7 +88,7 @@ Esta é a **lei da utilidade marginal ponderada igualada**: no ótimo, a última
 
 ## 4.3 O Caso com n Bens — O Lagrangeano
 
-A análise gráfica da seção anterior é intuitiva e poderosa, mas limitada a dois bens. No mundo real, consumidores escolhem entre dezenas ou centenas de categorias de bens e serviços. Como generalizar a condição de tangência para esse cenário multidimensional? Para isso, precisamos de uma técnica de otimização mais poderosa — o **método de Lagrange** —, que traduz a condição geométrica de tangência em um sistema de equações algébricas resolvível para qualquer número de bens.
+A análise gráfica da seção anterior é intuitiva e poderosa, mas limitada a dois bens. No mundo real, consumidores escolhem entre dezenas ou centenas de categorias de bens e serviços. Como generalizar a condição de tangência para esse cenário multidimensional? Para isso, precisamos de uma técnica de otimização mais poderosa — o **método de Lagrange** —, que traduz a condição geométrica de tangência em um sistema de equações algébricas resolvível para qualquer número de bens. Para uma revisão detalhada do método, incluindo o passo a passo completo e um exercício resolvido com a função CES, veja a [Seção 2.5](../cap02/index.md#25-maximizacao-com-restricoes-o-metodo-de-lagrange).
 
 Para \(n\) bens, o problema do consumidor é:
 
