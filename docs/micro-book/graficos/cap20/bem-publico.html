@@ -125,14 +125,14 @@
       function(){ return gStar(); },
       function(){ return c; }
     ], { name: 'G*', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
-         label: { offset: [8, 8], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
+         label: { offset: [8, -12], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
 
     // Private provision point
     board.create('point', [
       function(){ return gPriv(); },
       function(){ return c; }
     ], { name: 'G_priv', size: 4, fillColor: '#999', strokeColor: '#999', fixed: true,
-         label: { offset: [5, -12], fontSize: 10, cssStyle: 'color:#999;font-weight:700;' } });
+         label: { offset: [-15, 10], fontSize: 10, cssStyle: 'color:#999;font-weight:700;' } });
 
     // Dashed lines
     board.create('segment', [
@@ -157,12 +157,26 @@
       [function(){ return gStar(); }, function(){ return mb2(gStar()); }]
     ], { strokeColor: '#00897b', strokeWidth: 1, dash: 4, fixed: true });
 
-    var lblT1 = board.create('text', [-0.15, function(){ return mb1(gStar()) + 0.3; },
-      function(){ return 'τ₁=' + mb1(gStar()).toFixed(1); }
+    var lblT1 = board.create('text', [-0.15, function(){
+      var y1 = mb1(gStar()) + 0.3;
+      var y2 = mb2(gStar()) - 0.3;
+      if (Math.abs(y1 - y2) < 0.8) {
+        var mid = (mb1(gStar()) + mb2(gStar())) / 2;
+        return mid + 0.5;
+      }
+      return y1;
+    }, function(){ return 'τ₁=' + mb1(gStar()).toFixed(1); }
     ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;' });
 
-    var lblT2 = board.create('text', [-0.45, function(){ return mb2(gStar()) - 0.3; },
-      function(){ return 'τ₂=' + mb2(gStar()).toFixed(1); }
+    var lblT2 = board.create('text', [-0.45, function(){
+      var y1 = mb1(gStar()) + 0.3;
+      var y2 = mb2(gStar()) - 0.3;
+      if (Math.abs(y1 - y2) < 0.8) {
+        var mid = (mb1(gStar()) + mb2(gStar())) / 2;
+        return mid - 0.5;
+      }
+      return y2;
+    }, function(){ return 'τ₂=' + mb2(gStar()).toFixed(1); }
     ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#00897b;font-weight:700;' });
 
     // Underprovision region

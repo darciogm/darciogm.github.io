@@ -368,6 +368,7 @@
       }
     ], { strokeColor: '#00897b', strokeWidth: 3, lastArrow: { type: 2, size: 6 } });
 
+    var esLabelYBase = arrowY - 5;
     var _lblES = board.create('text', [
       function() {
         var s = getState();
@@ -378,7 +379,7 @@
         else { var Mc = s.p1new * orig.x1 + p2 * orig.x2; bx = cobbDouglas(s.alpha, Mc, s.p1new).x1; }
         return (orig.x1 + bx) / 2;
       },
-      arrowY - 5, 'ES'
+      esLabelYBase, 'ES'
     ], { fontSize: 11, color: '#00897b', anchorX: 'middle' });
 
     // Income effect arrow (blue)
@@ -403,9 +404,26 @@
         var bx;
         if (s.decomp === 'hicks') bx = hicksianDemand(s.alpha, s.p1new, U0).x1;
         else { var Mc = s.p1new * orig.x1 + p2 * orig.x2; bx = cobbDouglas(s.alpha, Mc, s.p1new).x1; }
-        return (bx + cobbDouglas(s.alpha, s.M, s.p1new).x1) / 2;
+        var esLabelX = (orig.x1 + bx) / 2;
+        var erLabelX = (bx + cobbDouglas(s.alpha, s.M, s.p1new).x1) / 2;
+        return erLabelX;
       },
-      arrowY - 5, 'ER'
+      function() {
+        var s = getState();
+        var orig = cobbDouglas(s.alpha, s.M, p1_init);
+        var U0 = utility(s.alpha, orig.x1, orig.x2);
+        var bx;
+        if (s.decomp === 'hicks') bx = hicksianDemand(s.alpha, s.p1new, U0).x1;
+        else { var Mc = s.p1new * orig.x1 + p2 * orig.x2; bx = cobbDouglas(s.alpha, Mc, s.p1new).x1; }
+        var esLabelX = (orig.x1 + bx) / 2;
+        var erLabelX = (bx + cobbDouglas(s.alpha, s.M, s.p1new).x1) / 2;
+        // If ES and ER arrow midpoints are within 5 units of each other, stack vertically
+        if (Math.abs(esLabelX - erLabelX) < 5) {
+          return esLabelYBase - 4;
+        }
+        return esLabelYBase;
+      },
+      'ER'
     ], { fontSize: 11, color: '#1565c0', anchorX: 'middle' });
 
     // Total effect arrow (red, offset lower)

@@ -263,14 +263,14 @@
       // E[u(W)] on chord
       var pEuW = board.create('point', [EW, EuW], {
         size: 4, color: '#666', fillColor: '#666', fixed: true, name: 'E[u]',
-        label: { fontSize: 11, offset: [8, 0] }
+        label: { fontSize: 11, offset: [8, -12] }
       });
       drawObjects.push(pEuW);
 
       // u(E[W]) on curve
       var puEW = board.create('point', [EW, uEW], {
         size: 4, color: '#C8102E', fillColor: '#C8102E', fixed: true, name: 'u(E[W])',
-        label: { fontSize: 11, offset: [8, 5] }
+        label: { fontSize: 11, offset: [8, 15] }
       });
       drawObjects.push(puEW);
 

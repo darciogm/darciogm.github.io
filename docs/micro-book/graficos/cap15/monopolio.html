@@ -194,24 +194,27 @@
       function(){ return '\\(Q^c\\)'; }
     ], { fontSize: 12, color: '#00897b', anchorX: 'middle', useMathJax: true });
 
-    // Area labels
+    // Area labels — hidden when areas shrink too small
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
       function(){ var p=gp(); return (p.a+p.c)/2 + (p.a - (p.a+p.c)/2)/3; },
       'EC'
-    ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold' });
+    ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold',
+         visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
       function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)/2; },
       function(){ return '\\(\\pi\\)'; }
-    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', useMathJax: true });
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', useMathJax: true,
+         visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     board.create('text', [
       function(){ var p=gp(); var qm=(p.a-p.c)/(2*p.b); var qc=(p.a-p.c)/p.b; return qm + (qc-qm)*0.4; },
       function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)*0.3; },
       'PPM'
-    ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold' });
+    ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold',
+         visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     function updateInfo() {
       var p = gp();

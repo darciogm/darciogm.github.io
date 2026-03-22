@@ -246,9 +246,15 @@
         });
         annotations.push(tLine);
 
-        // Place tangent label on the left side of the point to avoid overlap with arrows
-        var labelX = Math.max(0.5, px - 2.5);
-        var labelY = py - slope * 2.5;
+        // Place tangent label avoiding overlap with P label
+        var labelX, labelY;
+        if (px > 3) {
+            labelX = Math.max(0.5, px - 2.5);
+            labelY = py - slope * (-2.5);
+        } else {
+            labelX = Math.min(10, px + 2);
+            labelY = py + slope * 2;
+        }
         if (labelY > 0.5 && labelY < 10) {
           annotations.push(board.create('text', [labelX, labelY, 'inclinação = −TMS'], {
             fontSize: 11, color: '#00897b', fixed: true, anchorX: 'left'

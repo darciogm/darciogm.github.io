@@ -138,14 +138,14 @@
       function(){ return qMarket(); },
       function(){ return pAtQ(qMarket()); }
     ], { name: 'E_m', size: 4, fillColor: '#00897b', strokeColor: '#00897b', fixed: true,
-         label: { offset: [8, 5], fontSize: 11, cssStyle: 'color:#00897b;font-weight:700;' } });
+         label: { offset: [8, -12], fontSize: 11, cssStyle: 'color:#00897b;font-weight:700;' } });
 
     // Social optimum point
     board.create('point', [
       function(){ return qSocial(); },
       function(){ return pAtQ(qSocial()); }
     ], { name: 'E*', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
-         label: { offset: [-20, 5], fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;' } });
+         label: { offset: [-20, 10], fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;' } });
 
     // Dashed lines
     board.create('segment', [
@@ -175,7 +175,8 @@
       function(){ return 'Q_m=' + qMarket().toFixed(1); }
     ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#00897b;font-weight:700;' });
     board.create('text', [
-      function(){ return qSocial(); }, -0.5,
+      function(){ return qSocial(); },
+      function(){ return Math.abs(qMarket() - qSocial()) < 1.5 ? -1.5 : -0.5; },
       function(){ return 'Q*=' + qSocial().toFixed(1); }
     ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
 

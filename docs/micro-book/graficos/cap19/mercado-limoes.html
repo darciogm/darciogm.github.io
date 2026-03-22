@@ -159,21 +159,35 @@
       function(){ return 'λ*=' + lamCrit().toFixed(2); }
     ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
 
-    // Y-axis value labels
-    var lblCH = board.create('text', [-0.04, function(){ return n(CH); },
-      function(){ return 'C_H=' + CH.toFixed(0); }
+    // Y-axis value labels — with minimum gap to avoid overlap
+    var minGap = 0.06;
+
+    var lblCH = board.create('text', [-0.04, function(){
+      var yCH = n(CH), yVH = n(VH);
+      if (Math.abs(yCH - yVH) < minGap) { return yCH - minGap / 2; }
+      return yCH;
+    }, function(){ return 'C_H=' + CH.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#C8102E;' });
 
-    var lblCL = board.create('text', [-0.04, function(){ return n(CL); },
-      function(){ return 'C_L=' + CL.toFixed(0); }
+    var lblCL = board.create('text', [-0.04, function(){
+      var yCL = n(CL), yVL = n(VL);
+      if (Math.abs(yCL - yVL) < minGap) { return yCL - minGap / 2; }
+      return yCL;
+    }, function(){ return 'C_L=' + CL.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#00897b;' });
 
-    var lblVH = board.create('text', [-0.12, function(){ return n(VH); },
-      function(){ return 'V_H=' + VH.toFixed(0); }
+    var lblVH = board.create('text', [-0.12, function(){
+      var yCH = n(CH), yVH = n(VH);
+      if (Math.abs(yCH - yVH) < minGap) { return yVH + minGap / 2; }
+      return yVH;
+    }, function(){ return 'V_H=' + VH.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
 
-    var lblVL = board.create('text', [-0.12, function(){ return n(VL); },
-      function(){ return 'V_L=' + VL.toFixed(0); }
+    var lblVL = board.create('text', [-0.12, function(){
+      var yCL = n(CL), yVL = n(VL);
+      if (Math.abs(yCL - yVL) < minGap) { return yVL + minGap / 2; }
+      return yVL;
+    }, function(){ return 'V_L=' + VL.toFixed(0); }
     ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
 
     function updateInfo() {
