@@ -87,19 +87,19 @@
   <script>
     var currentFn = 'cd';
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-0.5, 10.5, 10.5, -0.5],
+      boundingbox: [-0.8, 11.5, 11.5, -1.2],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
-    board.create('axis', [[0,0],[10,0]], {
+    board.create('axis', [[0,0],[11,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
       name: '\\(x_1\\)', withLabel: true,
-      label: { position: 'rt', offset: [-15, -20], fontSize: 14 }
+      label: { position: 'rt', offset: [-5, 15], fontSize: 14 }
     });
-    board.create('axis', [[0,0],[0,10]], {
+    board.create('axis', [[0,0],[0,11]], {
       ticks: { drawLabels: true, label: { fontSize: 11 } },
       name: '\\(x_2\\)', withLabel: true,
-      label: { position: 'rt', offset: [-25, -5], fontSize: 14 }
+      label: { position: 'rt', offset: [10, 0], fontSize: 14 }
     });
 
     var icCurves = [];
