@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 15"
 
 ---
 
-## Exercício 15.1 {#ex-15-1}
+## ✏️ Exercício 15.1 {#ex-15-1}
 
 **Monopolista com \( C(q) = 100 + 10q \) e demanda \( p = 50 - 2q \).**
 
@@ -140,7 +140,7 @@ DWL = \frac{1}{2}(p^M - CMg)(q^{CP} - q^M) = \frac{1}{2}(30 - 10)(20 - 10) = \fr
 
 ---
 
-## Exercício 15.2 {#ex-15-2}
+## ✏️ Exercício 15.2 {#ex-15-2}
 
 **Monopolista com dois mercados segmentados: \( p_1 = 100 - q_1 \), \( p_2 = 60 - 2q_2 \), \( CMg = 20 \).**
 
@@ -272,7 +272,7 @@ O lucro com preço uniforme:
 
 ---
 
-## Exercício 15.3 {#ex-15-3}
+## ✏️ Exercício 15.3 {#ex-15-3}
 
 **Imposto unitário \( t = 4 \) sobre monopolista com \( CMg = c = 10 \) e demanda \( p = 30 - q \).**
 
@@ -360,7 +360,7 @@ RF = 32 > \Delta DWL = 22
 
 ---
 
-## Exercício 15.4 {#ex-15-4}
+## ✏️ Exercício 15.4 {#ex-15-4}
 
 **Monopólio natural com \( C(q) = 1000 + 5q \) e demanda \( p = 45 - q \).**
 
@@ -466,7 +466,7 @@ Como \( EC^{CMg} = 800 < 1000 = \text{custo fixo} \), o benefício social não j
 
 ---
 
-## Exercício 15.5 {#ex-15-5}
+## ✏️ Exercício 15.5 {#ex-15-5}
 
 **Tarifa em duas partes com dois tipos de consumidores. Tipo 1: \( q_1 = 20 - p \), Tipo 2: \( q_2 = 10 - p \). 100 consumidores de cada tipo. \( CMg = c = 2 \).**
 

@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 8"
 
 ---
 
-## Exercício 8.1 {#ex-8-1}
+## ✏️ Exercício 8.1 {#ex-8-1}
 
 **Solução.**
 
@@ -31,7 +31,7 @@ Sob Teoria do Prospecto: a função valor é **convexa** para perdas (busca por 
 
 ---
 
-## Exercício 8.2 {#ex-8-2}
+## ✏️ Exercício 8.2 {#ex-8-2}
 
 **Solução.**
 
@@ -64,7 +64,7 @@ A dor de perder R\$ 100 (\(|{-129{,}47}|\)) é 2,25 vezes maior que o prazer de 
 
 ---
 
-## Exercício 8.3 {#ex-8-3}
+## ✏️ Exercício 8.3 {#ex-8-3}
 
 **Solução.**
 
@@ -110,7 +110,7 @@ A utilidade de Y avaliada em \(t = 6\) é **negativa** — o custo imediato domi
 
 ---
 
-## Exercício 8.4 {#ex-8-4}
+## ✏️ Exercício 8.4 {#ex-8-4}
 
 **Solução.**
 
@@ -125,7 +125,7 @@ A utilidade de Y avaliada em \(t = 6\) é **negativa** — o custo imediato domi
 
 ---
 
-## Exercício 8.5 {#ex-8-5}
+## ✏️ Exercício 8.5 {#ex-8-5}
 
 **Solução.**
 
@@ -146,7 +146,7 @@ A **adesão automática com *opt-out* (ii)** provavelmente terá maior impacto. 
 
 ---
 
-## Exercício 8.6 {#ex-8-6}
+## ✏️ Exercício 8.6 {#ex-8-6}
 
 **Solução.**
 
@@ -188,7 +188,7 @@ As inequações (\(*\)) e (\(**\)) são **contraditórias**. Logo, não existe \
 
 ---
 
-## Exercício 8.7 {#ex-8-7}
+## ✏️ Exercício 8.7 {#ex-8-7}
 
 **Solução.**
 
@@ -208,7 +208,7 @@ O axioma violado é o axioma **Sure-Thing Principle** (P2) de Savage, que é a v
 
 ---
 
-## Exercício 8.8 {#ex-8-8}
+## ✏️ Exercício 8.8 {#ex-8-8}
 
 **Solução.**
 
@@ -245,7 +245,7 @@ Oferta mínima aceita: **R\$ 85,71** (≈ 42,9% do total).
 
 ---
 
-## Exercício 8.9 {#ex-8-9}
+## ✏️ Exercício 8.9 {#ex-8-9}
 
 **Solução.**
 
@@ -267,7 +267,7 @@ As quatro regras de edição hedônica de Thaler (1985):
 
 ---
 
-## Exercício 8.10 {#ex-8-10}
+## ✏️ Exercício 8.10 {#ex-8-10}
 
 **Solução.**
 

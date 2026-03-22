@@ -360,7 +360,7 @@ Quando o governo estabelece um preço mínimo \(\underline{p} > p^*\), a quantid
     - **Preço máximo**: controle de aluguéis, tabelamento de medicamentos, congelamento de preços (como no Plano Cruzado, 1986).
     - **Preço mínimo**: salário mínimo, preços mínimos agrícolas (PGPM — Política de Garantia de Preços Mínimos no Brasil).
 
-!!! example "Box Brasil: O Plano Cruzado e os limites do tabelamento"
+!!! example "🇧🇷 Box Brasil: O Plano Cruzado e os limites do tabelamento"
     Em fevereiro de 1986, o governo brasileiro lançou o Plano Cruzado, que impôs um congelamento generalizado de preços como estratégia anti-inflacionária. A inflação, que acumulava cerca de 235% em 12 meses (IGP-DI/FGV), caiu abruptamente para próximo de zero nos meses seguintes.
 
     No entanto, os efeitos colaterais ilustram perfeitamente a análise de preços máximos:
@@ -523,9 +523,9 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-## Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
+## 🇧🇷 Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
 
-!!! example "Box Brasil: Soja brasileira e o leiloeiro global"
+!!! example "🇧🇷 Box Brasil: Soja brasileira e o leiloeiro global"
     O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 ([CONAB](https://www.conab.gov.br)). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
 
     **Formação de preços internos:**
@@ -558,7 +558,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     Observe a estática comparativa em ação: na safra 2020/21, choques positivos de demanda global (recuperação pós-pandemia, recomposição de estoques chineses) combinados com câmbio depreciado elevaram drasticamente o preço interno. Nas safras seguintes, a resposta da oferta (expansão de área) gradualmente pressionou os preços para baixo — uma ilustração da dinâmica de ajuste de longo prazo em indústria de custos crescentes.
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A **demanda de mercado** é obtida pela soma horizontal das demandas individuais, e a **oferta de mercado** pela soma horizontal das curvas de custo marginal das firmas (acima do custo variável médio mínimo). O equilíbrio competitivo ocorre no preço em que quantidade demandada iguala quantidade ofertada.
 - No **curtíssimo prazo**, a oferta é perfeitamente inelástica; no **curto prazo**, as firmas ajustam a produção com planta fixa; no **longo prazo**, há livre entrada e saída, levando o preço ao custo médio mínimo e o lucro econômico a zero.
@@ -567,7 +567,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 - A **incidência tributária** depende das elasticidades relativas de oferta e demanda, não de quem formalmente recolhe o imposto: o lado mais inelástico do mercado arca com a maior parcela do tributo. A tributação gera uma cunha entre o preço pago pelo consumidor e o recebido pelo produtor, criando perda de peso morto.
 - Em **indústrias de custos crescentes**, a curva de oferta de longo prazo tem inclinação positiva, e firmas inframarginais auferem **rendas ricardianas** — lucros econômicos devidos a vantagens de custo, como ocorre na agricultura brasileira com terras de diferentes fertilidades.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -584,9 +584,9 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
+??? example "✏️ Exercício Resolvido 13.1 — Equilíbrio, excedentes e imposto"
     **Enunciado.** Em um mercado competitivo, a demanda é \(Q_D = 120 - 2p\) e a oferta é \(Q_S = 3p - 30\). (a) Encontre o equilíbrio. (b) Calcule EC e EP. (c) O governo impõe um imposto de \(t = 10\) por unidade sobre os vendedores. Encontre o novo equilíbrio, a receita do governo e a PPM.
 
     ---
@@ -625,7 +625,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
 
-??? example "Exercício Resolvido 13.2 — Preço máximo e escassez"
+??? example "✏️ Exercício Resolvido 13.2 — Preço máximo e escassez"
     **Enunciado.** No mercado de um bem, \(Q_D = 500 - 10p\) e \(Q_S = 20p - 100\). O governo fixa um preço máximo \(\bar{p} = 15\). (a) Encontre o equilíbrio livre. (b) Calcule a escassez, o novo EC e EP, e a PPM.
 
     ---
@@ -678,7 +678,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
     **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
 
-??? example "Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
+??? example "✏️ Exercício Resolvido 13.3 — Indústria de custos crescentes e renda ricardiana"
     **Enunciado.** Uma indústria competitiva de custos crescentes tem oferta de longo prazo \(p = 20 + 0{,}05Q\). A demanda é \(Q = 800 - 10p\). (a) Encontre o equilíbrio de LP. (b) Calcule a renda ricardiana. (c) Se a demanda se desloca para \(Q' = 1000 - 10p\), encontre o novo equilíbrio e a variação na renda ricardiana.
 
     ---
@@ -723,7 +723,7 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-13-1"></a>**Exercício 13.1.** Considere um mercado com 100 consumidores idênticos, cada um com demanda individual \(x_i(p) = 20 - 2p\), e 50 firmas idênticas, cada uma com oferta individual \(s_j(p) = 4p - 10\) (para \(p \geq 2{,}5\)).
 
@@ -897,7 +897,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 10.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage. Caps. 12–13.

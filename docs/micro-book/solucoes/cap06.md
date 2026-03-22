@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 6"
 
 ---
 
-## Exercício 6.1 {#ex-6-1}
+## ✏️ Exercício 6.1 {#ex-6-1}
 
 **Solução.**
 
@@ -51,7 +51,7 @@ Com dois bens, o efeito substituição cruzado é sempre **positivo** (os bens s
 
 ---
 
-## Exercício 6.2 {#ex-6-2}
+## ✏️ Exercício 6.2 {#ex-6-2}
 
 **Solução.**
 
@@ -78,7 +78,7 @@ Pelo Teorema do Bem Composto (Hicks), podemos tratar "frutas" como um único bem
 
 ---
 
-## Exercício 6.3 {#ex-6-3}
+## ✏️ Exercício 6.3 {#ex-6-3}
 
 **Solução.**
 
@@ -123,7 +123,7 @@ Lado direito: \(\frac{\partial h_1}{\partial p_2} - \frac{2I}{3p_2} \cdot \frac{
 
 ---
 
-## Exercício 6.4 {#ex-6-4}
+## ✏️ Exercício 6.4 {#ex-6-4}
 
 **Solução.**
 
@@ -181,7 +181,7 @@ Resolvendo o sistema expandido (omitindo álgebra extensa), o ovo tenderia a sub
 
 ---
 
-## Exercício 6.5 {#ex-6-5}
+## ✏️ Exercício 6.5 {#ex-6-5}
 
 **Solução.**
 

@@ -155,7 +155,7 @@ Neste caso, quando \(V = 0\), temos \(h^* = \alpha T\), que não depende de \(w\
 
 ---
 
-??? example "Exercício Resolvido 17.1"
+??? example "✏️ Exercício Resolvido 17.1"
     **Enunciado:** Um trabalhador tem preferências \(U(C,L) = C^{1/2}\, L^{1/2}\), dotação de tempo \(T = 16\) horas e renda não salarial \(V = 32\). O salário-hora é \(w\).
 
     **Dados:** \(T = 16\), \(V = 32\), \(\alpha = 1/2\).
@@ -353,7 +353,7 @@ Diferenças salariais também podem refletir **discriminação** por gênero, ra
 
 ---
 
-## Box Brasil: Retorno à Educação e Desigualdade Salarial
+## 🇧🇷 Box Brasil: Retorno à Educação e Desigualdade Salarial
 
 !!! example "O prêmio salarial da educação e os hiatos de gênero e raça"
     A equação de Mincer aplicada ao Brasil revela um dos maiores retornos à educação do mundo — e, ao mesmo tempo, uma desigualdade que persiste mesmo após o controle por escolaridade.
@@ -436,7 +436,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
-??? example "Exercício Resolvido 17.2"
+??? example "✏️ Exercício Resolvido 17.2"
     **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
 
     **Dados:** \(w(H) = 4 + 2H\); \(VPMg_L = 100 - 2H\).
@@ -524,7 +524,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Box Brasil: Informalidade e Reforma Trabalhista
+## 🇧🇷 Box Brasil: Informalidade e Reforma Trabalhista
 
 !!! example "A informalidade estrutural e os efeitos da Reforma Trabalhista de 2017"
     O mercado de trabalho brasileiro é marcado por uma taxa de informalidade persistentemente elevada, que condiciona a eficácia de políticas salariais e trabalhistas.
@@ -557,7 +557,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Box Brasil: Salário Mínimo no Brasil
+## 🇧🇷 Box Brasil: Salário Mínimo no Brasil
 
 !!! example "O salário mínimo e o debate sobre o 'efeito-farol'"
     O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de um piso salarial para trabalhadores formais com carteira assinada. Ele serve como **referência** (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.
@@ -611,7 +611,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - O mercado de trabalho é analisado pelo modelo trabalho-lazer, no qual o indivíduo aloca seu tempo entre lazer e trabalho, enfrentando o salário como custo de oportunidade do lazer. A condição de ótimo iguala a taxa marginal de substituição entre lazer e consumo ao salário real.
 - Um aumento salarial tem efeitos ambíguos sobre a oferta de trabalho: o efeito substituição (lazer fica mais caro) incentiva mais trabalho, enquanto o efeito renda (maior poder de compra) incentiva mais lazer. Quando o efeito renda domina, a curva de oferta de trabalho se torna backward-bending.
@@ -620,7 +620,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 - Sindicatos podem elevar salários acima do nível competitivo, com efeitos sobre emprego que dependem do poder de barganha e da estrutura de mercado. O salário mínimo tem efeitos ambíguos: sob monopsônio pode aumentar emprego, enquanto em mercados competitivos pode reduzi-lo.
 - A realidade brasileira é marcada por elevada informalidade, desigualdade salarial significativa, alto retorno à educação e debates persistentes sobre os efeitos do salário mínimo e da reforma trabalhista.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -637,7 +637,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 !!! note "Exercícios do Capítulo 17"
 
@@ -801,7 +801,7 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
     **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 17.5–17.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Becker, Gary S. 1957. [*The Economics of Discrimination*](https://books.google.com/books?id=50qHcSNVVEMC). Chicago: University of Chicago Press.
 - Becker, Gary S. 1964. [*Human Capital*](https://books.google.com.br/books?id=9t69iICmrZ0C). New York: Columbia University Press.

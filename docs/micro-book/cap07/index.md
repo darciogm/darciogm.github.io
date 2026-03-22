@@ -412,9 +412,9 @@ Se a seleção adversa é um problema de **informação oculta** (quem é o agen
 
 Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade esperada, aversão ao risco, prêmio de risco, diversificação e informação assimétrica — ganham vida quando aplicados a mercados reais. Os boxes a seguir ilustram como a teoria se manifesta em três contextos brasileiros: o mercado de seguros de automóvel, a Mega-Sena e o seguro agrícola.
 
-## Box Brasil: O Mercado de Seguros de Automóvel no Brasil
+## 🇧🇷 Box Brasil: O Mercado de Seguros de Automóvel no Brasil
 
-!!! example "Box Brasil — Seguros de automóvel: risco, precificação e regulação"
+!!! example "🇧🇷 Box Brasil — Seguros de automóvel: risco, precificação e regulação"
     O mercado de seguros de automóvel no Brasil é um campo fértil para a aplicação dos conceitos de incerteza e aversão ao risco. Regulado pela **[SUSEP](https://www.susep.gov.br)** (Superintendência de Seguros Privados), esse mercado apresenta características que ilustram os desafios teóricos discutidos neste capítulo.
 
     **Estrutura de mercado e concentração**
@@ -452,9 +452,9 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-## Box Brasil: A Mega-Sena e a Economia da Loteria
+## 🇧🇷 Box Brasil: A Mega-Sena e a Economia da Loteria
 
-!!! example "Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
+!!! example "🇧🇷 Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
     A **Mega-Sena**, operada pela Caixa Econômica Federal, é a maior loteria do Brasil e ilustra de maneira contundente o contraste entre valor esperado e comportamento observado.
 
     **Os números da Mega-Sena**
@@ -481,9 +481,9 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-## Box Brasil: O Seguro Agrícola e o PSR
+## 🇧🇷 Box Brasil: O Seguro Agrícola e o PSR
 
-!!! example "Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
+!!! example "🇧🇷 Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
     O setor agropecuário brasileiro — responsável por cerca de 24% do PIB quando considerada toda a cadeia — está intrinsecamente exposto a riscos climáticos, fitossanitários e de preços. O **Programa de Subvenção ao Prêmio do Seguro Rural (PSR)**, criado em 2003, é a principal política pública de gestão de risco agrícola no país.
 
     **Como funciona**
@@ -508,7 +508,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Uma loteria é uma distribuição de probabilidade sobre resultados monetários; o valor esperado é a média ponderada dos payoffs, mas não captura a atitude do agente em relação ao risco.
 - A Hipótese da Utilidade Esperada (Von Neumann-Morgenstern) axiomatiza a escolha sob incerteza: agentes racionais maximizam a esperança de uma função de utilidade, com os axiomas de completude, transitividade, continuidade e independência fundamentando o teorema.
@@ -517,7 +517,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 - O prêmio de risco e o equivalente de certeza conectam a teoria à prática: o prêmio de risco é o valor que o agente pagaria para eliminar a incerteza, e a aproximação de Arrow-Pratt o relaciona à variância da loteria e à curvatura da utilidade.
 - Diversificação, seguros e mercados de ativos contingentes (abordagem estado-preferência) são mecanismos para reduzir ou redistribuir riscos; problemas de informação assimétrica (seleção adversa e risco moral) limitam a eficiência desses mercados.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -534,9 +534,9 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 7.1"
+??? example "✏️ Exercício Resolvido 7.1"
     **Enunciado:** Um investidor com função de utilidade \(u(W) = \ln(W)\) possui riqueza inicial \(W_0 = 10.000\). Ele é convidado a participar de uma loteria que paga \(+6.000\) com probabilidade \(0{,}4\) e \(-4.000\) com probabilidade \(0{,}6\). Calcule o equivalente de certeza, o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
 
     **Dados:** \(u(W) = \ln(W)\), \(W_0 = 10.000\), \(L = \{(+6.000,\; 0{,}4);\; (-4.000,\; 0{,}6)\}\).
@@ -587,7 +587,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Interpretação econômica:** O investidor exigiria pelo menos R\$ 1.121 para aceitar esse risco justo — equivalente a 11,2% de sua riqueza. A discrepância entre o valor exato e a aproximação reflete que o risco não é "pequeno" em relação à riqueza (desvio padrão de R\$ 4.899 ≈ 49% de \(W_0\)), o que compromete a precisão da expansão de Taylor.
 
-??? example "Exercício Resolvido 7.2"
+??? example "✏️ Exercício Resolvido 7.2"
     **Enunciado:** Uma produtora de café no Sul de Minas possui riqueza de R\$ 500.000 e enfrenta risco de geada que, com probabilidade \(0{,}2\), causa perda de R\$ 200.000. Sua utilidade é \(u(W) = \sqrt{W}\). (a) Calcule o prêmio atuarialmente justo. (b) Verifique que a produtora contrata cobertura total. (c) Se a seguradora cobra carregamento \(\lambda = 0{,}3\), qual o prêmio de risco máximo que a produtora aceita pagar?
 
     **Dados:** \(W = 500.000\), \(d = 200.000\), \(p = 0{,}2\), \(u(W) = \sqrt{W}\).
@@ -632,7 +632,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Interpretação econômica:** A diferença \(P_{max} - P_{justo} = \text{R\$ } 4.064\) é o prêmio de risco da produtora — o valor monetário da sua aversão ao risco. Com carregamento de 30%, a seguradora cobra mais do que a produtora está disposta a pagar por cobertura total, o que pode levar à contratação de cobertura parcial (franquia elevada). Este é precisamente o mecanismo que explica por que pequenos produtores brasileiros, com baixa capacidade de absorção de risco, dependem do subsídio do PSR para viabilizar o seguro.
 
-??? example "Exercício Resolvido 7.3"
+??? example "✏️ Exercício Resolvido 7.3"
     **Enunciado:** Um investidor aloca sua riqueza entre dois ativos: ações de uma empresa de energia (\(\mu_1 = 12\%\), \(\sigma_1 = 20\%\)) e títulos do agronegócio (\(\mu_2 = 8\%\), \(\sigma_2 = 15\%\)). A correlação entre os retornos é \(\rho = -0{,}3\). (a) Calcule o retorno e a variância da carteira para \(w = 0{,}5\). (b) Encontre o peso \(w^*\) que minimiza a variância. (c) Compare o desvio padrão da carteira de variância mínima com os desvios individuais.
 
     **Dados:** \(\mu_1 = 0{,}12\), \(\sigma_1 = 0{,}20\), \(\mu_2 = 0{,}08\), \(\sigma_2 = 0{,}15\), \(\rho = -0{,}3\).
@@ -696,7 +696,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-7-1"></a>**Exercício 7.1.** Um investidor com função de utilidade \(u(W) = \ln(W)\) e riqueza inicial \(W_0 = 10.000\) pode participar de uma loteria que paga \(+5.000\) com probabilidade \(0{,}5\) e \(-5.000\) com probabilidade \(0{,}5\).
 
@@ -860,7 +860,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Relevância para o capítulo:** O artigo demonstra que as medidas de Arrow-Pratt (Seção 7.4) — em particular o coeficiente de aversão relativa constante \(\gamma\) da utilidade CRRA — têm implicações quantitativas testáveis para os preços dos ativos financeiros. O *puzzle* revela os limites do modelo VNM padrão (Seção 7.2) e motiva extensões teóricas que relaxam os axiomas clássicos.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Akerlof, George A. 1970. "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *The Quarterly Journal of Economics* 84 (3): 488–500. [DOI](https://doi.org/10.2307/1879431)
 - Arrow, Kenneth J. 1964. "The Role of Securities in the Optimal Allocation of Risk-Bearing." *The Review of Economic Studies* 31 (2): 91–96. [DOI](https://doi.org/10.2307/2296612)

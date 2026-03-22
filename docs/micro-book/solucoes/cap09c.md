@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 9c"
 
 ---
 
-## Exercício 9c.1 {#ex-9c-1}
+## ✏️ Exercício 9c.1 {#ex-9c-1}
 
 **Solução.**
 
@@ -33,7 +33,7 @@ O ponto-chave é que J2 maximiza contra a **distribuição** sobre os tipos de J
 
 ---
 
-## Exercício 9c.2 {#ex-9c-2}
+## ✏️ Exercício 9c.2 {#ex-9c-2}
 
 **Solução.**
 
@@ -68,7 +68,7 @@ As receitas são **idênticas** (1/3), confirmando o Teorema da Equivalência de
 
 ---
 
-## Exercício 9c.3 {#ex-9c-3}
+## ✏️ Exercício 9c.3 {#ex-9c-3}
 
 **Solução.**
 

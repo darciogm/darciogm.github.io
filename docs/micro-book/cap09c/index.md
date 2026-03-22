@@ -131,11 +131,11 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
 ---
 
-## Box Brasil: Leilões da ANP e da ANEEL
+## 🇧🇷 Box Brasil: Leilões da ANP e da ANEEL
 
 Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lances, maldição do vencedor e desenho de mecanismos — estão longe de ser abstrações acadêmicas. No Brasil, bilhões de reais são alocados anualmente por meio de leilões cujos formatos refletem diretamente as preocupações da teoria.
 
-!!! example "Box Brasil — Leilões de petróleo e energia: quando o formato importa"
+!!! example "🇧🇷 Box Brasil — Leilões de petróleo e energia: quando o formato importa"
     O Brasil utiliza leilões em setores estratégicos onde a teoria de leilões tem aplicação direta:
 
     **Leilões de petróleo (ANP)**
@@ -156,11 +156,11 @@ Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lanc
 
 ---
 
-## Box Brasil: Licitações Públicas e Colusão
+## 🇧🇷 Box Brasil: Licitações Públicas e Colusão
 
 Se os leilões de petróleo e energia ilustram o lado virtuoso da competição entre licitantes, as licitações públicas revelam o lado sombrio: quando os participantes se coordenam para suprimir a competição, os leilões podem se tornar instrumentos de extração de renda pública — exatamente o oposto do que a teoria prescreve.
 
-!!! example "Box Brasil — Cartéis em licitações: o outro lado dos leilões"
+!!! example "🇧🇷 Box Brasil — Cartéis em licitações: o outro lado dos leilões"
     Leilões de compras governamentais (licitações) são vulneráveis a colusão entre licitantes — o oposto do que a teoria competitiva prevê.
 
     **Mecanismos de colusão**
@@ -192,7 +192,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Jogos com **informação incompleta** modelam situações em que os jogadores não conhecem plenamente as características dos demais (payoffs, custos, tipo). A transformação de Harsanyi converte essa incerteza em um jogo bayesiano com "tipos" privados sorteados pela natureza.
 - O conceito de equilíbrio é o **Equilíbrio Bayesiano de Nash (BNE)**: cada tipo de cada jogador maximiza seu payoff esperado, condicionando nas crenças sobre os tipos dos outros e nas estratégias de equilíbrio dos demais.
@@ -201,7 +201,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 - Em **leilões de valor comum**, a **maldição do vencedor** faz com que o ganhador tenda a superestimar o valor do objeto, exigindo sombreamento adicional dos lances.
 - O **desenho de mecanismos** inverte a pergunta da teoria dos jogos: dado o resultado desejado, qual jogo o implementa em equilíbrio? O Princípio da Revelação simplifica a busca ao limitar a análise a mecanismos de revelação direta.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -217,9 +217,9 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 9c.1 — BNE em jogo de entrada com tipos"
+??? example "✏️ Exercício Resolvido 9c.1 — BNE em jogo de entrada com tipos"
     **Enunciado:** Uma incumbente pode ser forte (\(\theta_F\), prob. 0,6) ou fraca (\(\theta_W\), prob. 0,4). A entrante decide se entra. Payoffs: não entra → (10, 0); entra + forte → (3, –2); entra + fraca → (2, 4).
 
     **Resolução:**
@@ -234,7 +234,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     Se \(p > 2/3\), \(E[\pi_E] < 0\) e a entrante não entra. O ponto de indiferença é \(p^* = 2/3\).
 
-??? example "Exercício Resolvido 9c.2 — Leilão de primeiro preço com 3 licitantes"
+??? example "✏️ Exercício Resolvido 9c.2 — Leilão de primeiro preço com 3 licitantes"
     **Enunciado:** Três licitantes com valores \(v_i \sim U[0, 100]\) participam de um leilão de primeiro preço. (a) Encontre a estratégia de equilíbrio. (b) Calcule a receita esperada. (c) Compare com o leilão de segundo preço.
 
     **Resolução:**
@@ -251,7 +251,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-9c-1"></a>**Exercício 9c.1.** Em um jogo bayesiano 2×2, o jogador 1 tem tipo \(\theta \in \{H, L\}\) com \(\Pr(H) = 0{,}5\). O jogador 2 não tem tipo privado. Os payoffs dependem do tipo de 1. Encontre o BNE.
 
@@ -309,7 +309,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 9–11.
 - Athey, Susan, e Philip A. Haile. 2007. "Nonparametric Approaches to Auctions." In *Handbook of Econometrics*, Vol. 6A, 3847–3965. [DOI](https://doi.org/10.1016/S1573-4412(07)06060-6)

@@ -400,7 +400,7 @@ Quanto maior o número de firmas, mais difícil sustentar a colusão.
 !!! tip "Colusão tácita e direito concorrencial"
     A colusão tácita — sustentada por interação repetida sem comunicação explícita — é extremamente difícil de combater com instrumentos tradicionais do direito antitruste. O CADE distingue entre **cartel** (acordo explícito, ilícito per se) e **paralelismo consciente** (comportamento coordenado sem acordo, que pode não ser ilícito). A análise de estrutura de mercado (concentração, barreiras, transparência) é utilizada para avaliar a probabilidade de coordenação tácita.
 
-!!! example "Box Brasil: O cartel do metrô de São Paulo e o Programa de Leniência do CADE"
+!!! example "🇧🇷 Box Brasil: O cartel do metrô de São Paulo e o Programa de Leniência do CADE"
     Em 2013, o CADE condenou um cartel formado por grandes construtoras e fabricantes de equipamentos ferroviários que atuavam em licitações do Metrô de São Paulo e da CPTM. As empresas — incluindo Alstom, Bombardier, Mitsui, Siemens e CAF — coordenavam preços e dividiam lotes de licitações de trens e sistemas de sinalização por mais de uma década.
 
     **Mecanismo de colusão:**
@@ -542,7 +542,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-!!! example "Box Brasil: Concentração bancária — spread, fusões e competição"
+!!! example "🇧🇷 Box Brasil: Concentração bancária — spread, fusões e competição"
     O sistema bancário brasileiro é um dos mais concentrados entre as grandes economias. Os cinco maiores bancos (Itaú Unibanco, Bradesco, Banco do Brasil, Caixa Econômica Federal e Santander) detêm mais de 80% dos ativos totais do sistema, segundo dados do Banco Central do Brasil.
 
     **Spreads bancários**
@@ -597,7 +597,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - O oligopólio é caracterizado pela interdependência estratégica: o lucro de cada firma depende das decisões das rivais, exigindo o uso da teoria dos jogos para a análise do equilíbrio.
 - No modelo de Bertrand (concorrência em preços com produtos homogêneos), bastam duas firmas para reproduzir o resultado competitivo (preço igual ao custo marginal e lucro zero) — o paradoxo de Bertrand. A diferenciação de produto, restrições de capacidade e interação repetida resolvem esse paradoxo.
@@ -606,7 +606,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 - A colusão tácita pode ser sustentada em jogos repetidos por meio de estratégias de gatilho, desde que o fator de desconto seja suficientemente alto. Fatores como poucas firmas, interação frequente e transparência de preços facilitam a coordenação.
 - Decisões de longo prazo como investimento em capacidade, dissuasão estratégica de entrada e inovação ampliam a análise para além dos modelos estáticos, com a taxonomia de Fudenberg-Tirole orientando a escolha entre estratégias agressivas e acomodatórias.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -623,9 +623,9 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
+??? example "✏️ Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
     **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
 
     **Resolução.**
@@ -694,7 +694,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
 
-??? example "Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
+??? example "✏️ Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
     **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
 
     **Resolução.**
@@ -739,7 +739,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
     Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
 
-??? example "Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
+??? example "✏️ Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
     **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
 
     **Resolução.**
@@ -774,10 +774,10 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-16-1"></a>
-??? example "Exercício 16.1"
+??? example "✏️ Exercício 16.1"
     Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
 
     a) Encontre as funções de reação de cada firma.
@@ -789,7 +789,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-1)
 
 <a id="ex-16-2"></a>
-??? example "Exercício 16.2"
+??? example "✏️ Exercício 16.2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
     a) Encontre as funções de reação em preços.
@@ -801,7 +801,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-2)
 
 <a id="ex-16-3"></a>
-??? example "Exercício 16.3"
+??? example "✏️ Exercício 16.3"
     Considere o modelo de Cournot com \(n\) firmas idênticas, demanda \(p = 200 - Q\) e custo marginal \(c = 20\). O custo fixo de entrada é \(f = 400\).
 
     a) Encontre preço, quantidade por firma e lucro por firma em função de \(n\).
@@ -813,7 +813,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-3)
 
 <a id="ex-16-4"></a>
-??? example "Exercício 16.4"
+??? example "✏️ Exercício 16.4"
     Duas firmas jogam um jogo de Bertrand repetido infinitamente com fator de desconto \(\delta\). A demanda de mercado é \(Q = 100 - p\) e o custo marginal é \(c = 40\). As firmas consideram usar uma estratégia de gatilho para sustentar o preço de monopólio.
 
     a) Calcule o preço de monopólio e o lucro de monopólio dividido.
@@ -825,7 +825,7 @@ A tabela a seguir resume os principais resultados dos modelos clássicos para o 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-4)
 
 <a id="ex-16-5"></a>
-??? example "Exercício 16.5"
+??? example "✏️ Exercício 16.5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 
     a) Encontre a função de reação da seguidora.
@@ -948,7 +948,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Belleflamme, Paul, e Martin Peitz. 2015. [*Industrial Organization: Markets and Strategies*](https://books.google.com/books?id=fdsLAQAAQBAJ). 2ª ed. Cambridge: Cambridge University Press.
 - Motta, Massimo. 2004. [*Competition Policy: Theory and Practice*](https://books.google.com/books?id=J3xZnDSlfC8C). Cambridge: Cambridge University Press.

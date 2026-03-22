@@ -80,7 +80,7 @@ A relação entre produto marginal e produto médio revela um padrão importante
 !!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
     Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
 
-!!! example "Box Brasil: Produtividade do trabalho na indústria brasileira"
+!!! example "🇧🇷 Box Brasil: Produtividade do trabalho na indústria brasileira"
 
     A produtividade do trabalho — medida como valor adicionado por hora trabalhada — é uma aplicação direta do conceito de produto médio do trabalho (\(\mathrm{PMe}_L\)). Dados das Contas Nacionais do IBGE e da PNAD Contínua, compilados pelo FGV/IBRE, mostram que a produtividade por hora trabalhada no Brasil cresceu em média **+1,6% ao ano entre 2000 e 2010**, mas desacelerou para apenas **+0,3% ao ano entre 2010 e 2023** — e a média de longo prazo (1981–2023) é de modestos **+0,5% ao ano**.
 
@@ -140,7 +140,7 @@ O que essa expressão nos diz economicamente? A TMST decrescente reflete a dific
 
     **Por que isso importa:** Quando o salário mínimo sobe no Brasil, a TMST indica o quanto as firmas conseguem substituir trabalho por máquinas — e em setores com baixa substituibilidade, o impacto no emprego é menor.
 
-??? example "Exercício Resolvido 10.1"
+??? example "✏️ Exercício Resolvido 10.1"
     **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
 
     **Dados:** \(A = 20\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(K = 25\), \(L = 16\).
@@ -214,13 +214,13 @@ Note que uma função pode apresentar simultaneamente rendimentos crescentes de 
 !!! example "Exemplo: Economias de escala na indústria automobilística brasileira"
     A indústria automobilística ilustra rendimentos crescentes de escala na faixa relevante de produção. Uma linha de montagem exige investimento fixo elevado em robôs, estamparia e pintura, independentemente do volume produzido. Estudos setoriais indicam que a escala mínima eficiente de uma planta de montagem situa-se entre 100 e 200 mil veículos/ano — abaixo desse patamar, o custo médio por veículo é significativamente mais alto. Essa lógica de rendimentos crescentes explica a concentração geográfica da produção automotiva brasileira no ABC paulista e em polos como Betim (MG) e Camaçari (BA), onde a escala viabiliza custos competitivos.
 
-!!! example "Box Brasil: Economias de escala e fusões no CADE"
+!!! example "🇧🇷 Box Brasil: Economias de escala e fusões no CADE"
 
     O **Conselho Administrativo de Defesa Econômica (CADE)** avalia rotineiramente alegações de economias de escala em processos de fusão e aquisição. Um caso emblemático foi a fusão entre **Sadia e Perdigão** (2009), que criou a BRF — uma das maiores empresas de alimentos do mundo. As partes argumentaram que a fusão geraria ganhos de eficiência por meio de economias de escala na produção de aves e suínos, na logística de distribuição refrigerada e na diluição de custos fixos de P&D.
 
     O CADE aprovou a operação com restrições, exigindo a venda de marcas e ativos em mercados onde a concentração era excessiva. Em termos da teoria da produção, o argumento das empresas equivale a afirmar que a função de produção conjunta apresenta rendimentos crescentes de escala (\(e > 1\)) na faixa relevante — a firma maior produz a um custo médio menor que as duas firmas separadas. O CADE, por sua vez, ponderou que os ganhos de escala precisavam ser contrastados com os riscos de poder de mercado — tema que retomaremos nos capítulos sobre concorrência imperfeita.
 
-??? example "Exercício Resolvido 10.2"
+??? example "✏️ Exercício Resolvido 10.2"
     **Enunciado:** Classifique os rendimentos de escala das seguintes funções de produção: (a) \(q = 3K + 7L\); (b) \(q = K^{0,4}L^{0,8}\); (c) \(q = \min\{2K, 5L\}\).
 
     **Resolução:**
@@ -321,7 +321,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 !!! example "Exemplo: Elasticidade de substituição na indústria brasileira"
     A elasticidade de substituição tem implicações diretas para o mercado de trabalho. Quando \(\sigma\) é alto, as firmas substituem trabalho por capital (automação) com relativa facilidade. A literatura empírica aponta valores de \(\sigma\) entre 0,4 e 0,6 para o setor manufatureiro em diversas economias (Chirinko, 2008), e estudos com dados brasileiros encontram valores consistentemente abaixo de 1. Isso indica que capital e trabalho são complementares — mas não tanto quanto no caso Leontief puro (\(\sigma = 0\)). Esse grau intermediário de complementaridade ajuda a explicar por que a automação industrial desloca trabalhadores de forma menos abrupta do que ocorreria com \(\sigma\) mais elevado, mas ainda assim gera pressão sobre ocupações de baixa qualificação.
 
-??? example "Exercício Resolvido 10.4"
+??? example "✏️ Exercício Resolvido 10.4"
     **Enunciado:** Uma firma opera com a função de produção CES \(q = \left[0{,}5 K^{-1} + 0{,}5 L^{-1}\right]^{-1}\). Calcule a elasticidade de substituição e a TMST quando \(K = 8\) e \(L = 2\).
 
     **Dados:** \(\delta = 0{,}5\), \(\rho = -1\), \(\gamma = 1\).
@@ -417,7 +417,7 @@ A CES **generaliza** as três funções anteriores:
 
 As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
 
-??? example "Exercício Resolvido 10.5"
+??? example "✏️ Exercício Resolvido 10.5"
     **Enunciado:** A função de produção de uma pizzaria é \(Q = 30K^{0,5}L^{0,5}\), com \(K\) fornos fixados em 4 no curto prazo. (a) Escreva a função de produção de curto prazo. (b) Calcule o produto total com 9 trabalhadores. (c) Calcule o produto marginal e o produto médio com 9 trabalhadores. (d) Classifique os rendimentos de escala.
 
     **Dados:** \(A = 30\), \(\alpha = 0{,}5\), \(\beta = 0{,}5\), \(\bar{K} = 4\).
@@ -517,7 +517,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
     **Conexão com este capítulo:**
     A decomposição do crescimento — que atribui parcelas do crescimento do produto a capital, trabalho e PTF — é apresentada neste capítulo como aplicação direta da função de produção Cobb-Douglas. O resíduo de Solow, interpretado como medida de progresso técnico, conecta a teoria da produção à questão central do crescimento econômico.
 
-??? example "Exercício Resolvido 10.3"
+??? example "✏️ Exercício Resolvido 10.3"
     **Enunciado:** Uma firma opera com \(q = A(t) \cdot K^{0,3} L^{0,7}\), onde \(A(0) = 1\) e \(A\) cresce a 2% ao ano. O capital cresce a 4% ao ano e o trabalho a 1% ao ano. Calcule a taxa de crescimento do produto e decomponha-a nas contribuições de cada fonte.
 
     **Dados:** \(\alpha = 0{,}3\), \(\beta = 0{,}7\), \(\dot{A}/A = 0{,}02\), \(\dot{K}/K = 0{,}04\), \(\dot{L}/L = 0{,}01\).
@@ -549,7 +549,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
     **Interpretação econômica:** A predominância da PTF no crescimento é consistente com o padrão observado na agricultura brasileira pós-Embrapa (ver Box Brasil a seguir), onde a inovação tecnológica respondeu por parcela majoritária dos ganhos de produtividade. Como a função é Cobb-Douglas, o progresso técnico é simultaneamente neutro no sentido de Hicks, Harrod e Solow — as três classificações convergem (Seção 10.6).
 
-!!! example "Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
+!!! example "🇧🇷 Box Brasil: Produtividade agrícola e a função de produção da soja no Cerrado"
 
     Os dados do **[IBGE/SIDRA](https://sidra.ibge.gov.br)** (Pesquisa Agrícola Municipal) permitem estimar funções de produção para culturas brasileiras. Considere a soja no Cerrado. Entre 2000 e 2023, a área plantada de soja no Brasil cresceu de 13,6 para 44,1 milhões de hectares, enquanto a produção saltou de 32,8 para 154,6 milhões de toneladas (dados [CONAB](https://www.conab.gov.br), safra 2022/23). A produtividade média passou de 2.403 para 3.509 kg/ha.
 
@@ -562,9 +562,9 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 ---
 
-## Box Brasil: A Revolução Tecnológica da Embrapa e a Produtividade Agrícola
+## 🇧🇷 Box Brasil: A Revolução Tecnológica da Embrapa e a Produtividade Agrícola
 
-!!! example "Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
+!!! example "🇧🇷 Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
 
     A agropecuária brasileira vivenciou, nas últimas cinco décadas, uma das mais impressionantes transformações produtivas do mundo. O protagonista dessa revolução foi a **Empresa Brasileira de Pesquisa Agropecuária (Embrapa)**, fundada em 1973, cuja atuação é um caso emblemático de progresso técnico aplicado à produção.
 
@@ -621,7 +621,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
     **Por que isso importa:** A hipótese de homoteticidade simplifica enormemente a análise de custos. Se a tecnologia não for homotética, a proporção ótima de insumos muda com a escala, e a função custo não se separa em um componente de preços e outro de quantidade.
 
-??? example "Exercício Resolvido 10.6"
+??? example "✏️ Exercício Resolvido 10.6"
     **Enunciado:** Considere a função de produção \(f(K, L) = \ln(1 + K^{0,5} L^{0,5})\). (a) Mostre que é homotética. (b) Determine a direção do caminho de expansão quando \(w = v\). (c) Calcule a TMST ao longo do raio \(K = L\).
 
     **Resolução:**
@@ -648,7 +648,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A **função de produção** $q = f(K, L)$ descreve a quantidade máxima de produto obtida a partir de capital e trabalho, sintetizando a tecnologia da firma. Dela derivam-se o produto marginal, o produto médio e a lei dos rendimentos marginais decrescentes.
 - As **isoquantas** representam combinações de insumos que geram o mesmo nível de produto, e a **TMST** (taxa marginal de substituição técnica) mede a taxa à qual a firma pode trocar um insumo por outro mantendo a produção constante.
@@ -657,7 +657,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 - As quatro funções de produção clássicas — **linear** ($\sigma = \infty$), **Leontief** ($\sigma = 0$), **Cobb-Douglas** ($\sigma = 1$) e **CES** ($\sigma$ livre) — cobrem todo o espectro de substituibilidade entre insumos e são amplamente utilizadas na análise empírica.
 - O **progresso técnico** desloca a função de produção para cima ao longo do tempo, podendo ser neutro (Hicks, Harrod ou Solow) ou enviesado, e é o principal motor do crescimento da produtividade no longo prazo — como ilustra a revolução agrícola da Embrapa no Brasil.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -674,7 +674,7 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-10-1"></a>**Exercício 10.1.** 
 Considere a função de produção \(q = 10K^{0,3}L^{0,7}\).
@@ -917,7 +917,7 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 
     **Relevância para o capítulo:** O artigo demonstra que a elasticidade de substituição \(\sigma\) — apresentada na Seção 10.4 como um parâmetro abstrato da CES — é um objeto empiricamente estimável e economicamente consequente. A distinção entre a CES no nível da planta e no nível agregado mostra que a escolha da forma funcional (Seção 10.5) tem implicações que vão muito além do exercício de sala de aula: ela determina previsões sobre distribuição de renda, política fiscal e futuro do trabalho.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 9.

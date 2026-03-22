@@ -70,7 +70,7 @@ A ancoragem tem implicações importantes para a economia: negociações salaria
 
 As heurísticas anteriores se referem a distorções no julgamento sobre eventos externos. Mas os agentes também cometem erros sistemáticos na avaliação de suas próprias capacidades e conhecimentos. O **excesso de confiança** (*overconfidence*) manifesta-se de várias formas: superestimação das próprias habilidades, calibração inadequada de intervalos de confiança e a ilusão de controle sobre eventos aleatórios. Quando perguntados, a maioria dos motoristas se declara "acima da média" — uma impossibilidade estatística. Investidores excessivamente confiantes tendem a negociar com frequência excessiva, reduzindo seus retornos líquidos (Barber e Odean 2001).
 
-!!! example "Box Brasil — Efeito disposição na B3"
+!!! example "🇧🇷 Box Brasil — Efeito disposição na B3"
     O **efeito disposição** — a tendência a vender ações vencedoras cedo demais e manter ações perdedoras por tempo demais — é uma manifestação conjunta de aversão à perda e excesso de confiança. Estudos com dados de investidores pessoa física na B3 (antiga BM&FBovespa) documentam esse padrão de forma robusta. Estudos empíricos usando dados de corretoras brasileiras encontraram que investidores individuais realizam ganhos com frequência significativamente maior do que realizam perdas. Esse comportamento é custoso: as ações vendidas (vencedoras) tendem a ter desempenho futuro superior ao das ações mantidas (perdedoras), gerando retornos líquidos menores para o investidor.
 
 ### 8.1.5 Sistema 1 e Sistema 2: a arquitetura dual do pensamento
@@ -197,7 +197,7 @@ A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto 
     **Conexão com este capítulo:**
     A função valor da Teoria do Prospecto — côncava para ganhos, convexa para perdas, mais inclinada no domínio das perdas — é o ponto de partida deste capítulo. Os vieses cognitivos documentados por Kahneman e Tversky (representatividade, disponibilidade, ancoragem) explicam os desvios sistemáticos da racionalidade que motivam toda a economia comportamental discutida aqui.
 
-??? example "Exercício Resolvido 8.1 — Função valor da Teoria do Prospecto"
+??? example "✏️ Exercício Resolvido 8.1 — Função valor da Teoria do Prospecto"
     **Enunciado:** Usando a função valor paramétrica da Teoria do Prospecto com \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\), calcule o valor subjetivo dos seguintes resultados: \(v(100)\), \(v(-100)\), \(v(250)\) e \(v(-250)\). Em seguida, verifique a propriedade de aversão à perda e a sensibilidade decrescente.
 
     **Dados:** \(\alpha = 0{,}88\), \(\beta = 0{,}88\), \(\lambda = 2{,}25\).
@@ -261,7 +261,7 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
 
     **Por que isso importa:** A ponderação não linear de probabilidades é a peça que faltava para explicar simultaneamente comportamentos de risco (loterias, day trading) e aversão extrema a catástrofes (seguros caros, pânico financeiro).
 
-!!! example "Box Brasil — A Mega-Sena e a sobrevalorização de probabilidades pequenas"
+!!! example "🇧🇷 Box Brasil — A Mega-Sena e a sobrevalorização de probabilidades pequenas"
     A probabilidade de acertar as seis dezenas da Mega-Sena é de aproximadamente 1 em 50 milhões. Mesmo assim, milhões de brasileiros apostam regularmente. O valor esperado de uma aposta de R\$ 5,00 é tipicamente negativo (parte da arrecadação financia programas sociais via Caixa Econômica Federal). Sob utilidade esperada com probabilidades lineares, apostar seria irracional para qualquer agente avesso ao risco. A Teoria do Prospecto oferece uma explicação: a função de ponderação transforma a probabilidade objetiva minúscula (\(p \approx 0{,}00000002\)) em um peso decisório substancialmente maior, tornando a aposta subjetivamente atraente. O prazer antecipatório de imaginar o ganho faz parte do "produto" consumido — algo que o modelo neoclássico não captura.
 
 ### 8.2.4 Da PT Original à PT Cumulativa (CPT)
@@ -310,7 +310,7 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 !!! example "Canecas de Kahneman, Knetsch e Thaler"
     No experimento clássico de Kahneman, Knetsch e Thaler (1990), metade dos participantes recebeu uma caneca de café da universidade. Quando questionados sobre o preço mínimo para vendê-la, os "donos" pediram em média US\$ 7,12. Os "compradores" (que não receberam a caneca) ofereceram em média US\$ 2,87. A simples posse — a dotação — mais que dobrou a valoração do objeto.
 
-!!! example "Box Brasil — Efeito dotação no mercado imobiliário"
+!!! example "🇧🇷 Box Brasil — Efeito dotação no mercado imobiliário"
     O mercado imobiliário brasileiro oferece uma ilustração vívida do efeito dotação. Dados do índice FipeZap mostram que, em períodos de desaceleração econômica, os preços de venda de imóveis residenciais resistem a cair mesmo quando o volume de transações despenca. Proprietários que compraram seus imóveis a preços elevados relutam em vender abaixo do preço de aquisição — o ponto de referência —, preferindo manter o imóvel fora do mercado por meses ou anos. Essa rigidez de preços para baixo é difícil de explicar pela teoria neoclássica pura, mas é uma previsão natural da aversão à perda: vender abaixo do preço de compra é codificado como "perda", e a dor dessa perda supera o benefício racional de liquidar o ativo e realocar o capital.
 
 **Efeito framing.** Se o efeito dotação mostra que a posse de um objeto altera sua valoração, o efeito framing revela algo ainda mais perturbador para o modelo neoclássico: a forma como uma decisão é apresentada afeta sistematicamente as escolhas, mesmo quando as opções são logicamente equivalentes. Não é apenas o *conteúdo* da decisão que importa — é a *moldura* em que ela é colocada.
@@ -348,7 +348,7 @@ Como a contabilidade mental afeta as decisões concretas dos consumidores? Thale
 
 Essas regras decorrem diretamente da curvatura da função valor da Teoria do Prospecto — concavidade para ganhos (ganhos separados são avaliados em regiões de maior sensibilidade) e convexidade para perdas (perdas combinadas são avaliadas em região de menor sensibilidade marginal).
 
-!!! example "Box Brasil — Cartão de crédito e contas mentais"
+!!! example "🇧🇷 Box Brasil — Cartão de crédito e contas mentais"
     O uso intenso do cartão de crédito no Brasil — frequentemente como instrumento de parcelamento "sem juros" — ilustra a contabilidade mental em ação. O parcelamento separa uma grande perda (o preço total do bem) em pequenas perdas mensais, cada uma percebida como menos dolorosa. Além disso, a separação temporal entre o momento da compra (prazer imediato) e o pagamento (dor adiada) explora tanto a contabilidade mental quanto o viés do presente discutido na Seção 8.5. Prelec e Loewenstein (1998) modelaram formalmente essa "desvinculação" entre consumo e pagamento.
 
 !!! info "🏅 Prêmio Nobel — Richard H. Thaler (2017)"
@@ -458,7 +458,7 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
 **Tabela 8.5 — Resultados experimentais vs. previsão autointeressada.**
 </div>
 
-!!! example "Box Brasil — Preferências sociais e informalidade fiscal"
+!!! example "🇧🇷 Box Brasil — Preferências sociais e informalidade fiscal"
     A alta tolerância à informalidade fiscal no Brasil pode ser interpretada à luz das preferências sociais. Quando os contribuintes percebem que o sistema tributário é **inequitativo** — com altas alíquotas sobre o trabalho formal e baixa tributação sobre lucros e dividendos —, a reciprocidade negativa pode reduzir a disposição a pagar impostos. Pesquisas de opinião do Ipea indicam que a percepção de injustiça fiscal é um dos principais fatores associados à tolerância com a evasão tributária. O modelo de Fehr-Schmidt (Seção 8.4.2) prevê exatamente esse padrão: agentes com alta aversão à desvantagem (\(\alpha_i\) elevado) podem preferir a "punição" de não cooperar a aceitar uma distribuição percebida como injusta.
 
 ### 8.4.2 O modelo de Fehr-Schmidt (aversão à inequidade)
@@ -510,7 +510,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 **Figura 8.5 — Jogo do ultimato: decisão do respondedor com preferências de Fehr-Schmidt.** Observe como a aversão à inequidade determina o limiar de rejeição.
 </div>
 
-??? example "Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
+??? example "✏️ Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
     **Enunciado:** Em um jogo do ultimato com bolo \(S = 100\), o respondedor R tem parâmetros de Fehr-Schmidt \(\alpha_R = 2\) e \(\beta_R = 0{,}4\). (a) Qual é a oferta mínima que R aceita? (b) Se o proponente P tem \(\alpha_P = 0{,}5\) e \(\beta_P = 0{,}3\), qual é a oferta que maximiza a utilidade de P, sabendo que P conhece os parâmetros de R?
 
     **Dados:** \(S = 100\), \(\alpha_R = 2\), \(\beta_R = 0{,}4\), \(\alpha_P = 0{,}5\), \(\beta_P = 0{,}3\).
@@ -646,7 +646,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 **Figura 8.7 — Curvas de indiferença intertemporal: consumo presente \(c_0\) vs consumo futuro \(c_1\).** Visualize como o desconto quasi-hiperbólico altera a forma das curvas em relação ao modelo exponencial.
 </div>
 
-??? example "Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
+??? example "✏️ Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
     **Enunciado:** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}95)\) e utilidade linear \(u(x) = x\) pode escolher entre dois bônus salariais: **Bônus A**, que paga R\$ 1.000 no mês 6, e **Bônus B**, que paga R\$ 1.200 no mês 7. (a) Qual bônus o consumidor prefere quando avaliado em \(t = 0\)? (b) Qual bônus ele prefere quando avaliado em \(t = 6\) (isto é, quando o pagamento de A é iminente)? (c) Essa preferência é consistente ao longo do tempo?
 
     **Dados:** \(\beta = 0{,}70\), \(\delta = 0{,}95\), \(u(x) = x\).
@@ -693,7 +693,7 @@ Essa tensão entre o eu presente e o eu futuro pode ser modelada como um **jogo 
 
 Agentes que reconhecem sua inconsistência temporal são chamados **sofisticados**; agentes que (erroneamente) acreditam que suas preferências futuras serão consistentes são chamados **ingênuos** (*naïfs*). Sofisticados buscam compromissos; ingênuos procrastinam repetidamente. O'Donoghue e Rabin (1999) mostraram formalmente que a procrastinação é mais severa para agentes ingênuos, enquanto sofisticados podem sofrer de **preproperation** — realizar tarefas desagradáveis cedo demais por medo de não fazê-las depois (Dhami 2016, p. 704–710).
 
-!!! example "Box Brasil — Crédito rotativo e viés do presente"
+!!! example "🇧🇷 Box Brasil — Crédito rotativo e viés do presente"
     O crédito rotativo do cartão de crédito no Brasil cobra taxas de juros que figuram entre as mais altas do mundo — segundo dados do Banco Central do Brasil, a taxa média do rotativo superou 400% ao ano em diversos momentos recentes. Muitos consumidores, ao optar por pagar apenas o valor mínimo da fatura, subestimam o custo total acumulado das parcelas futuras. Esse comportamento é consistente com o desconto quasi-hiperbólico: o alívio imediato de não pagar a fatura integral (benefício no período \(t = 0\)) é sobrevalorizado em relação ao custo dos juros compostos nos períodos seguintes (descontados por \(\beta\delta^t\) com \(\beta < 1\)). A Lei do Superendividamento (Lei nº 14.181/2021) reconheceu implicitamente esse padrão ao criar mecanismos de renegociação e preservação do mínimo existencial.
 
 ---
@@ -747,7 +747,7 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 
 **Normas sociais.** Informar as pessoas sobre o comportamento de seus pares ("90% dos seus vizinhos pagam o IPTU em dia") explora a tendência à conformidade social e pode ser mais eficaz do que apelos racionais ou ameaças de multa.
 
-??? example "Exercício Resolvido 8.4 — Impacto do default na adesão previdenciária"
+??? example "✏️ Exercício Resolvido 8.4 — Impacto do default na adesão previdenciária"
     **Enunciado:** Uma empresa com 1.000 funcionários adota um plano de previdência complementar. Sob o regime de adesão voluntária (*opt-in*), a taxa de adesão é de 40%. A empresa considera migrar para adesão automática (*opt-out*). Suponha que, com *opt-out*, 85% dos funcionários permanecem no plano, e que a contribuição média mensal é de R\$ 300. (a) Calcule o aumento na contribuição mensal agregada. (b) Se 20% dos funcionários que permaneceram por inércia teriam preferido não participar (revelando heterogeneidade de preferências), quantos funcionários são "nudgeados" em direção contrária às suas preferências?
 
     **Dados:** 1.000 funcionários, adesão *opt-in* = 40%, adesão *opt-out* = 85%, contribuição média = R\$ 300/mês.
@@ -780,12 +780,12 @@ A economia comportamental e os nudges não são panaceias:
 - **Persistência.** Muitos nudges perdem eficácia com o tempo, à medida que os agentes se habituam.
 - **Problemas estruturais.** Nudges são complementos, não substitutos, de políticas públicas robustas. Nenhum nudge compensa salários insuficientes ou ausência de acesso a serviços financeiros.
 
-!!! example "Box Brasil — Nudges em políticas públicas federais"
+!!! example "🇧🇷 Box Brasil — Nudges em políticas públicas federais"
     O governo federal brasileiro tem incorporado gradualmente princípios de economia comportamental em políticas públicas. A rotulagem frontal com **lupa de advertência** da Anvisa (2022), para alimentos ricos em açúcar, gordura saturada e sódio, é um nudge clássico de saliência: destaca a informação mais relevante no momento da decisão de compra. O Programa Nacional de Imunizações (PNI) utiliza lembretes por SMS e notificações via aplicativo do SUS para aumentar a adesão a campanhas de vacinação — um exemplo de feedback e saliência. No sistema financeiro, o *Open Finance* do Banco Central (implementado a partir de 2021) facilita a comparação de produtos financeiros entre instituições, reduzindo a ancoragem ao banco de relacionamento e combatendo a inércia do *status quo* via portabilidade simplificada de crédito.
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Heurísticas cognitivas (representatividade, disponibilidade, ancoragem, excesso de confiança) são atalhos mentais que produzem vieses previsíveis; o modelo dual de Kahneman (Sistema 1 rápido e intuitivo vs. Sistema 2 lento e deliberado) explica por que esses vieses persistem.
 - A Teoria do Prospecto substitui a utilidade esperada por uma função valor definida sobre ganhos e perdas relativos a um ponto de referência, com três propriedades: concavidade para ganhos, convexidade para perdas e aversão à perda (perdas pesam cerca de 2,25 vezes mais que ganhos equivalentes).
@@ -794,7 +794,7 @@ A economia comportamental e os nudges não são panaceias:
 - Preferências sociais (aversão à inequidade, reciprocidade, punição altruísta) são formalizadas pelo modelo de Fehr-Schmidt e explicam os resultados dos jogos do ultimato, ditador e confiança que contradizem a hipótese de autointeresse puro.
 - O desconto quasi-hiperbólico captura o viés do presente e gera inconsistência temporal, explicando procrastinação e subpoupança; nudges (opções-padrão, framing, normas sociais, compromisso prévio) aproveitam os vieses comportamentais para melhorar decisões sem restringir a liberdade de escolha.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -811,7 +811,7 @@ A economia comportamental e os nudges não são panaceias:
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-8-1"></a>**Exercício 8.1.** Um investidor avalia duas opções: (A) ganhar R\$ 500 com certeza; (B) ganhar R\$ 1.000 com probabilidade \(0{,}50\). Sob utilidade esperada com função de utilidade côncava, o investidor prefere A. Agora considere: (C) perder R\$ 500 com certeza; (D) perder R\$ 1.000 com probabilidade \(0{,}50\). Sob a Teoria do Prospecto, qual a escolha provável em cada par? Explique usando as propriedades da função valor.
 
@@ -976,7 +976,7 @@ A economia comportamental e os nudges não são panaceias:
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Abdellaoui, Mohammed. 2000. "[Parameter-Free Elicitation of Utility and Probability Weighting Functions](https://doi.org/10.1287/mnsc.46.11.1497.12080)." *Management Science* 46 (11): 1497–1512.
 - Allais, Maurice. 1953. "[Le comportement de l'homme rationnel devant le risque: Critique des postulats et axiomes de l'école américaine](https://doi.org/10.2307/1907921)." *Econometrica* 21 (4): 503–546.

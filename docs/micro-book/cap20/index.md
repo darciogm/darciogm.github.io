@@ -525,9 +525,9 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-## Box Brasil: Desmatamento na Amazônia e Precificação de Carbono
+## 🇧🇷 Box Brasil: Desmatamento na Amazônia e Precificação de Carbono
 
-!!! example "Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
+!!! example "🇧🇷 Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
     O desmatamento na Amazônia brasileira é um caso emblemático de **externalidade negativa de escala global**. A remoção da floresta gera custos externos que incluem emissões de CO₂ (contribuindo para a mudança climática), perda de biodiversidade, alteração do ciclo hidrológico (inclusive os "rios voadores" que transportam umidade para o Centro-Sul do Brasil) e erosão do solo.
 
     **Dimensão do problema**: Segundo dados do [INPE](https://www.gov.br/inpe)/PRODES, o desmatamento acumulado na Amazônia Legal superou 85 milhões de hectares até 2023 (cerca de 17% da floresta original). Após queda expressiva entre 2004 e 2012 (de 27.772 km² para 4.571 km² anuais), as taxas voltaram a subir, atingindo 13.235 km² em 2021, antes de recuar para cerca de 9.001 km² em 2023 com o reforço de políticas de fiscalização.
@@ -550,7 +550,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-!!! example "Box Brasil: Cobrança pelo uso da água e a tragédia dos comuns no semiárido"
+!!! example "🇧🇷 Box Brasil: Cobrança pelo uso da água e a tragédia dos comuns no semiárido"
     A água doce é um exemplo clássico de **recurso comum** no Brasil: rival no consumo (a água captada por um irrigante não está disponível para outro) e historicamente de difícil exclusão. A Lei das Águas (Lei n.º 9.433/1997) instituiu a **Política Nacional de Recursos Hídricos**, que reconhece a água como bem público dotado de valor econômico e estabelece a **cobrança pelo uso** como instrumento de gestão.
 
     **Mecanismo econômico:**
@@ -567,7 +567,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Externalidades ocorrem quando a ação de um agente afeta diretamente a utilidade ou produção de outro fora do sistema de preços. Externalidades negativas levam à superprodução e externalidades positivas à subprodução em relação ao ótimo social.
 - O imposto pigouviano, igual ao custo marginal externo avaliado no ótimo social, internaliza a externalidade e restaura a eficiência. De forma simétrica, subsídios pigouvianos corrigem externalidades positivas.
@@ -576,7 +576,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 - Bens públicos puros (não-rivais e não-excludentes) são subprovidos pelo mercado devido ao problema do carona. A condição de Samuelson para eficiência requer que a soma das TMS de todos os indivíduos iguale a taxa marginal de transformação.
 - Mecanismos como preços de Lindahl e o mecanismo VCG buscam induzir a revelação verdadeira de preferências para bens públicos, enquanto a votação por maioria tende a selecionar a preferência do eleitor mediano, que geralmente difere do ótimo de Samuelson.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -593,9 +593,9 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
+??? example "✏️ Exercício Resolvido 20.20.1 — Imposto pigouviano e perda de peso morto"
     **Enunciado.** Uma siderúrgica produz aço ao preço competitivo \(P = 100\) com custo privado \(C(q) = 10q + q^2\). A produção gera poluição com custo externo \(E(q) = q^2\). (a) Calcule a produção privada e a socialmente ótima. (b) Determine o imposto pigouviano ótimo. (c) Calcule a perda de peso morto sem regulação.
 
     **Resolução.**
@@ -630,7 +630,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     A perda de peso morto é R$ 1.012,50 — o custo social da ausência de regulação.
 
-??? example "Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
+??? example "✏️ Exercício Resolvido 20.2 — Provisão eficiente de bem público e preços de Lindahl"
     **Enunciado.** Dois consumidores têm utilidade \(U_1 = 3\ln G + x_1\) e \(U_2 = 2\ln G + x_2\), onde \(G\) é o bem público e \(x_i\) o bem privado. O custo marginal do bem público é \(CMg = 1\). (a) Determine o nível eficiente de \(G\). (b) Calcule os preços de Lindahl. (c) Compare com a provisão voluntária (Nash).
 
     **Resolução.**
@@ -665,7 +665,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
     Resultado: \(G^{Nash} = 3 < 5 = G^*\). O bem público é subprovido em 40%. O consumidor 2 pega carona na contribuição do consumidor 1 — o problema clássico do free rider.
 
-??? example "Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
+??? example "✏️ Exercício Resolvido 20.3 — Cap-and-trade e custo-efetividade"
     **Enunciado.** Duas fábricas emitem 50 toneladas cada de \(SO_2\) (total: 100 ton). O regulador quer reduzir as emissões totais para 60 ton (abatimento de 40 ton). Os custos marginais de abatimento são \(CMgA_1 = 4a_1\) e \(CMgA_2 = 2a_2\), onde \(a_i\) é o abatimento da firma \(i\). (a) Encontre a alocação custo-efetiva. (b) Compare com abatimento uniforme. (c) Determine o preço de equilíbrio da permissão em um sistema cap-and-trade.
 
     **Resolução.**
@@ -696,7 +696,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-20-1"></a>**Exercício 20.1.** Uma fábrica de celulose produz \(q\) toneladas com custo total \(C(q) = 10q + q^2\) e vende ao preço \(P = 110\). A produção gera poluição com custo externo \(E(q) = 2q^2\).
 
@@ -871,7 +871,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books?id=c5-JEQAAQBAJ). New York: Oxford University Press.
 - Ostrom, Elinor. 1990. [*Governing the Commons*](https://books.google.com.br/books?id=4xg6oUobMz4C). Cambridge: Cambridge University Press.

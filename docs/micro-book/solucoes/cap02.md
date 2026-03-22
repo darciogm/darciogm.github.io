@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 2"
 
 ---
 
-## Exercício 2.1 {#ex-2-1}
+## ✏️ Exercício 2.1 {#ex-2-1}
 
 **Solução.**
 
@@ -55,7 +55,7 @@ O máximo global é \(f(4) = 64\).
 
 ---
 
-## Exercício 2.2 {#ex-2-2}
+## ✏️ Exercício 2.2 {#ex-2-2}
 
 **Solução.**
 
@@ -116,7 +116,7 @@ O multiplicador \(\lambda^*\) mede a **utilidade marginal da renda**: o aumento 
 
 ---
 
-## Exercício 2.3 {#ex-2-3}
+## ✏️ Exercício 2.3 {#ex-2-3}
 
 **Solução.**
 
@@ -159,7 +159,7 @@ TMST_{KL} = \frac{PMg_K}{PMg_L} = \frac{\alpha A K^{\alpha-1} L^\beta}{\beta A K
 
 ---
 
-## Exercício 2.4 {#ex-2-4}
+## ✏️ Exercício 2.4 {#ex-2-4}
 
 **Solução.**
 
@@ -226,7 +226,7 @@ O lucro máximo é:
 
 ---
 
-## Exercício 2.5 {#ex-2-5}
+## ✏️ Exercício 2.5 {#ex-2-5}
 
 **Solução.**
 

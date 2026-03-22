@@ -406,9 +406,9 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ---
 
-## Box Brasil: Estrutura de Custos e o "Custo Brasil"
+## 🇧🇷 Box Brasil: Estrutura de Custos e o "Custo Brasil"
 
-!!! example "Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
+!!! example "🇧🇷 Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
 
     O termo **"custo Brasil"** designa o conjunto de ineficiências sistêmicas que elevam os custos de produção no país acima dos padrões internacionais. Segundo levantamentos da **Confederação Nacional da Indústria (CNI)** e da **FIESP**, o custo Brasil representava, em estimativas recentes, um sobrecusto de cerca de **R$ 1,7 trilhão por ano** para a economia brasileira — equivalente a aproximadamente 20% do PIB.
 
@@ -430,9 +430,9 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ---
 
-## Box Brasil: Economias de Escala na Agropecuária
+## 🇧🇷 Box Brasil: Economias de Escala na Agropecuária
 
-!!! example "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
+!!! example "🇧🇷 Box Brasil: Escala mínima eficiente e concentração na produção de soja"
 
     A produção de soja no Brasil ilustra de forma nítida o papel das economias de escala na determinação da estrutura produtiva. Segundo dados do **Censo Agropecuário do [IBGE](https://www.ibge.gov.br) (2017)**, enquanto 70% dos estabelecimentos produtores de soja possuem menos de 100 hectares, esses estabelecimentos respondem por apenas 10% da produção total. Os 5% maiores produtores (acima de 1.000 ha) respondem por mais de 50% da produção nacional.
 
@@ -631,7 +631,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
     - \(\rho \to 1\) (\(\sigma \to \infty\)): converge para tecnologia linear \(q = \alpha K + \beta L\)
     - \(\rho \to -\infty\) (\(\sigma \to 0\)): converge para Leontief \(q = \min\{K, L\}\) (na parametrização com pesos \(\delta, 1-\delta\); para a forma \(\min\{K/a, L/b\}\), os coeficientes devem estar dentro da função \(\min\))
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - O **custo econômico** difere do custo contábil por incluir o custo de oportunidade dos recursos próprios da firma (capital do proprietário, tempo do empreendedor), enquanto o custo contábil registra apenas desembolsos efetivos. Essa distinção é fundamental para avaliar corretamente a lucratividade de um negócio.
 - No **curto prazo**, a firma opera com pelo menos um insumo fixo, gerando custos fixos e variáveis. As curvas de custo marginal (CMg), custo variável médio (CVMe) e custo total médio (CTMe) possuem formato em U — reflexo da lei dos rendimentos marginais decrescentes — e se relacionam de maneira precisa: o CMg cruza o CVMe e o CTMe em seus respectivos pontos de mínimo.
@@ -640,7 +640,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 - As **economias de escala** e as **economias de escopo** explicam por que firmas maiores ou diversificadas podem ter custos médios menores, sendo conceitos centrais para a organização industrial. A curva de custo médio de longo prazo é a envoltória das curvas de curto prazo.
 - No contexto brasileiro, o chamado **"custo Brasil"** — carga tributária, logística deficiente, burocracia — representa um deslocamento para cima da curva de custos das firmas nacionais, reduzindo sua competitividade internacional.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -657,9 +657,9 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
+??? example "✏️ Exercício Resolvido 11.1 — Custo econômico versus custo contábil"
 
     **Enunciado.** Uma confeitaria artesanal em Belo Horizonte tem os seguintes dados anuais: receita de R$ 480.000; custos com ingredientes de R$ 120.000; aluguel de R$ 60.000; salários de funcionários de R$ 96.000; retirada da proprietária (*pró-labore*) de R$ 48.000. A proprietária possui equipamentos avaliados em R$ 200.000 (que poderiam render 10% a.a. se aplicados) e tem uma oferta de emprego como *chef* em um restaurante com salário de R$ 84.000/ano.
 
@@ -690,7 +690,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
-??? example "Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
+??? example "✏️ Exercício Resolvido 11.2 — Minimização de custos e Lema de Shephard com Cobb-Douglas"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/3}L^{2/3}\) e enfrenta preços de insumos \(w = 8\) e \(v = 2\).
 
@@ -756,7 +756,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
-??? example "Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
+??? example "✏️ Exercício Resolvido 11.3 — Curto prazo versus longo prazo"
 
     **Enunciado.** Uma firma tem função de produção \(q = K^{1/4}L^{1/4}\) com \(w = 10\) e \(v = 10\).
 
@@ -802,7 +802,7 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-11-1"></a>**Exercício 11.1.** 
 Uma firma com função de produção Cobb-Douglas \(q = K^{1/2}L^{1/2}\) enfrenta preços de insumos \(w = 4\) e \(v = 1\).
@@ -967,7 +967,7 @@ Uma firma produz com a tecnologia \(q = AL^{\alpha}K^{\beta}\), onde \(\alpha + 
 
     **Relevância para o capítulo:** O artigo conecta diretamente a Seção 11.6 (deslocamentos nas curvas de custo por progresso técnico) e a Seção 11.7 (economias de escala). A adoção da soja GM representou uma redução de custos enviesada — poupadora de trabalho — que deslocou a curva de custo das fazendas para baixo e alterou a razão ótima capital/trabalho. Além disso, a expansão da escala de produção nas fazendas de soja ilustra as economias de escala discutidas no Box Brasil sobre agropecuária: a tecnologia GM favoreceu desproporcionalmente os grandes produtores, que podiam adquirir as sementes modificadas e o maquinário complementar.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5 (Seções 5.C–5.D).
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 10.

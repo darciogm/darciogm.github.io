@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 12"
 
 ---
 
-## Exercício 12.1 {#ex-12-1}
+## ✏️ Exercício 12.1 {#ex-12-1}
 
 **Solução.**
 
@@ -27,7 +27,7 @@ title: "Soluções — Capítulo 12"
 
 ---
 
-## Exercício 12.2 {#ex-12-2}
+## ✏️ Exercício 12.2 {#ex-12-2}
 
 **Solução.**
 
@@ -46,7 +46,7 @@ title: "Soluções — Capítulo 12"
 
 ---
 
-## Exercício 12.3 {#ex-12-3}
+## ✏️ Exercício 12.3 {#ex-12-3}
 
 **Solução.**
 
@@ -89,7 +89,7 @@ Na prática, com RCE e \(p > c\), o lucro cresce sem limite. A firma opera em es
 
 ---
 
-## Exercício 12.4 {#ex-12-4}
+## ✏️ Exercício 12.4 {#ex-12-4}
 
 **Solução.**
 
@@ -108,7 +108,7 @@ Na prática, com RCE e \(p > c\), o lucro cresce sem limite. A firma opera em es
 
 ---
 
-## Exercício 12.5 {#ex-12-5}
+## ✏️ Exercício 12.5 {#ex-12-5}
 
 **Solução.**
 

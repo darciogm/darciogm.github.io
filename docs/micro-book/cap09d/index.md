@@ -160,11 +160,11 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 
 ---
 
-## Box Brasil: Credibilidade do Banco Central
+## 🇧🇷 Box Brasil: Credibilidade do Banco Central
 
 Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na realidade institucional brasileira. Os dois Boxes a seguir ilustram como a comunicação do Banco Central pode ser analisada como cheap talk e como a regulação de telecomunicações enfrenta informação assimétrica entre regulador e firma.
 
-!!! example "Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
+!!! example "🇧🇷 Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
     O **Banco Central do Brasil** comunica suas intenções de política monetária por meio de comunicados, atas do Copom e o Relatório de Inflação. Essa comunicação pode ser analisada como um jogo de sinalização:
 
     **Estrutura do jogo**
@@ -186,11 +186,11 @@ Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na rea
 
 ---
 
-## Box Brasil: Telecom e Regulação sob Informação Assimétrica
+## 🇧🇷 Box Brasil: Telecom e Regulação sob Informação Assimétrica
 
 O próximo Box ilustra o lado operacional da informação assimétrica na regulação setorial.
 
-!!! example "Box Brasil — Regulação de telecom: quando a Anatel não sabe os custos"
+!!! example "🇧🇷 Box Brasil — Regulação de telecom: quando a Anatel não sabe os custos"
     A regulação de telecomunicações no Brasil enfrenta um problema clássico de informação assimétrica: a **Anatel** precisa fixar tarifas, mas não observa os custos verdadeiros das operadoras (Vivo, Claro, TIM).
 
     **O dilema do regulador (moral hazard)**
@@ -237,7 +237,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Jogos dinâmicos com informação incompleta combinam ação sequencial com assimetria informacional. O conceito de equilíbrio é o **Equilíbrio Bayesiano Perfeito (PBE)**, que exige otimalidade sequencial das estratégias e consistência bayesiana das crenças em cada conjunto de informação.
 - No **modelo de sinalização de Spence**, a educação funciona como sinal de habilidade mesmo sem aumentar a produtividade: a condição de single-crossing (custo menor para tipos melhores) permite que o equilíbrio separador revele o tipo do trabalhador.
@@ -246,7 +246,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 - O **moral hazard** (risco moral) surge quando o agente toma ações não observáveis pelo principal; o contrato ótimo equilibra incentivos ao esforço com seguro contra risco.
 - A **seleção adversa** ocorre quando informação privada pré-contratual atrai desproporcionalmente os tipos "ruins", podendo destruir mercados inteiros. Mecanismos de mitigação incluem sinalização, screening, certificação e regulação obrigatória.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -263,9 +263,9 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
+??? example "✏️ Exercício Resolvido 9d.1 — Equilíbrio separador de Spence"
     **Enunciado:** Trabalhadores têm produtividade \(\theta_H = 2\) (prob. 0,5) ou \(\theta_L = 1\) (prob. 0,5). O custo da educação é \(c(e, \theta) = e/\theta\). Firmas pagam salário = produtividade esperada condicionada em \(e\). Encontre o equilíbrio separador com menor custo.
 
     **Resolução:**
@@ -282,7 +282,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
     **Eficiência:** Se a informação fosse simétrica, cada tipo receberia sua produtividade sem custo de sinalização. O custo total da sinalização é \(0{,}5 \times (1/2) = 0{,}25\) — puro desperdício social, pois a educação não aumenta a produtividade neste modelo.
 
-??? example "Exercício Resolvido 9d.2 — Contrato ótimo com moral hazard"
+??? example "✏️ Exercício Resolvido 9d.2 — Contrato ótimo com moral hazard"
     **Enunciado:** Um principal contrata um agente. O agente pode exercer esforço alto (\(e_H\), custo 2) ou baixo (\(e_L\), custo 0). Com esforço alto, o resultado é bom (100) com prob. 0,8 e ruim (0) com prob. 0,2. Com esforço baixo, é bom com prob. 0,3 e ruim com prob. 0,7. O agente é neutro ao risco e tem utilidade de reserva 0.
 
     (a) Qual contrato implementa esforço alto?
@@ -309,7 +309,7 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-9d-1"></a>**Exercício 9d.1.** No modelo de Spence com \(\theta_H = 3\) e \(\theta_L = 1\), e custo \(c(e, \theta) = e^2/(2\theta)\), encontre o equilíbrio separador de menor custo. Compare o custo social da sinalização com o caso \(\theta_H = 2\).
 
@@ -382,7 +382,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 12–13.
 - Akerlof, George A. 1970. "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *Quarterly Journal of Economics* 84 (3): 488–500. [DOI](https://doi.org/10.2307/1879431)

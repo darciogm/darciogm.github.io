@@ -68,7 +68,7 @@ A forma da curva de Engel conduz naturalmente a uma classificação fundamental:
 
 Exemplos clássicos de bens inferiores no contexto brasileiro incluem a farinha de mandioca e o transporte público em certas faixas de renda — à medida que a renda familiar cresce, o consumo desses itens tende a ser substituído por alternativas de maior qualidade percebida.
 
-!!! example "Box Brasil — Farinha de mandioca: um bem inferior em números"
+!!! example "🇧🇷 Box Brasil — Farinha de mandioca: um bem inferior em números"
     A farinha de mandioca é talvez o exemplo mais emblemático de bem inferior no Brasil. Dados do [IBGE](https://www.ibge.gov.br) mostram uma queda expressiva no consumo domiciliar per capita: de 7,76 kg/ano na POF 2002–2003 para 2,33 kg/ano na POF 2017–2018, uma redução de 70% em quinze anos.
 
     **Padrão por faixa de renda:** tanto a frequência de consumo quanto a quantidade média per capita diária de farinha de mandioca são maiores nos quartis de renda mais baixos. A diferença entre o primeiro e o último quartil de renda é acentuada, confirmando o comportamento de bem inferior (\(\varepsilon_{x,I} < 0\)).
@@ -139,7 +139,7 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
     **Por que isso importa:** Separar esses efeitos é essencial para política pública — por exemplo, para saber se um aumento no preço da gasolina empurra as pessoas para o etanol (substituição) ou simplesmente as empobrece (renda).
 
-!!! example "Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
+!!! example "🇧🇷 Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
     No Brasil, diversos preços são fixados ou regulados por agências governamentais — os chamados **preços administrados**, que representam cerca de 25% do IPCA. A energia elétrica é um caso particularmente interessante para a teoria do consumidor, pois o sistema de **bandeiras tarifárias** (verde, amarela e vermelha) funciona como uma variação exógena de preço com periodicidade mensal.
 
     **Mecanismo:** quando a bandeira muda de verde para vermelha (patamar 2), a tarifa residencial pode subir mais de R$ 0,07/kWh, o que equivale a um aumento de 8–10% no custo da energia. Essa variação é exógena ao consumidor (depende de condições hidrológicas), criando um experimento natural para observar efeitos substituição e renda.
@@ -382,7 +382,7 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.
 
-??? example "Exercício Resolvido 5.1"
+??? example "✏️ Exercício Resolvido 5.1"
     **Enunciado:** Considere uma economia com dois bens: alimentação (bem 1) e serviços (bem 2). A parcela orçamentária da alimentação é \(w_1 = 0{,}35\) e a dos serviços é \(w_2 = 0{,}65\). A elasticidade-renda da alimentação é \(\varepsilon_{1,I} = 0{,}42\), e a elasticidade-preço própria da alimentação é \(\varepsilon_{1,p_1} = -0{,}55\). (a) Calcule a elasticidade-renda dos serviços. (b) Classifique cada bem. (c) Calcule a elasticidade-preço cruzada da alimentação em relação ao preço dos serviços.
 
     **Dados:** \(w_1 = 0{,}35\), \(w_2 = 0{,}65\), \(\varepsilon_{1,I} = 0{,}42\), \(\varepsilon_{1,p_1} = -0{,}55\).
@@ -491,7 +491,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
     - **VE** é apropriada para avaliar quanto o consumidor pagaria para obter uma mudança.
     - **EC** marshalliano é uma aproximação prática, amplamente usada em análise de políticas públicas pela sua facilidade de cálculo.
 
-??? example "Exercício Resolvido 5.2"
+??? example "✏️ Exercício Resolvido 5.2"
     **Enunciado:** Um consumidor possui utilidade quase-linear \(U(x,y) = 2\sqrt{x} + y\), com \(p_y = 1\) e renda \(I = 10\). O preço de \(x\) sobe de \(p_x = 1\) para \(p_x' = 4\). Calcule a VC, a VE e a variação no EC. Confirme que as três medidas coincidem.
 
     **Dados:** \(U = 2\sqrt{x} + y\), \(p_y = 1\), \(I = 10\), \(p_x^0 = 1\), \(p_x^1 = 4\).
@@ -571,9 +571,9 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slutsky, elasticidades, excedente do consumidor, preferência revelada — ganham vida quando aplicadas a problemas concretos. O estudo de caso a seguir ilustra como essas ferramentas são utilizadas na análise do mercado brasileiro de combustíveis, um dos mais estudados empiricamente no país.
 
-## Box Brasil: Elasticidade-preço da gasolina no Brasil
+## 🇧🇷 Box Brasil: Elasticidade-preço da gasolina no Brasil
 
-!!! example "Box Brasil — Elasticidade-preço da gasolina no Brasil"
+!!! example "🇧🇷 Box Brasil — Elasticidade-preço da gasolina no Brasil"
     A gasolina é um dos bens mais estudados empiricamente no Brasil, tanto pela relevância fiscal (ICMS, CIDE, PIS/COFINS) quanto pelo impacto no custo de vida. A Agência Nacional do Petróleo (ANP) coleta semanalmente preços em postos de todo o país, fornecendo uma base de dados rica para estimações econométricas.
 
     **Principais achados empíricos:**
@@ -594,7 +594,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - As funções de demanda marshalliana (não-compensada) são homogêneas de grau zero em preços e renda, esgotam o orçamento (Lei de Walras) e dependem de preços e renda; as funções hicksianas (compensadas) mantêm a utilidade constante e capturam apenas o efeito substituição.
 - Variações na renda geram curvas de Engel e permitem classificar bens como normais (elasticidade-renda positiva) ou inferiores (negativa), e ainda como necessidades (elasticidade entre 0 e 1) ou bens de luxo (elasticidade maior que 1).
@@ -603,7 +603,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 - O excedente do consumidor, a variação compensatória (VC) e a variação equivalente (VE) são medidas de bem-estar que permitem avaliar o impacto de mudanças de preço sobre os consumidores; para preferências quase-lineares, as três medidas coincidem.
 - A teoria da preferência revelada fornece uma abordagem alternativa que, sem postular funções de utilidade, permite testar a racionalidade do consumidor e demonstrar que o efeito substituição é não-positivo.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -620,9 +620,9 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 5.3"
+??? example "✏️ Exercício Resolvido 5.3"
     **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
 
     **Dados:** Cobb-Douglas com \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 80\), \(p_1' = 1\).
@@ -667,7 +667,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-5-1"></a>**Exercício 5.1.** Considere a função de utilidade \(U(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), com preços \(p_1\), \(p_2\) e renda \(I\).
 
@@ -835,7 +835,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
     **Relevância para o capítulo:** Hausman operacionaliza a relação \(VC < EC < VE\) (Seção 5.8.4), mostrando que essa desigualdade tem consequências quantitativas relevantes. O método ilustra também a utilidade prática da Equação de Slutsky: ela não apenas decompõe efeitos, mas permite reconstruir a curva de demanda compensada a partir da observável — ponte entre teoria e política.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Almeida, Alexandre Nunes de, e Carlos Roberto Azzoni. 2016. "[Custo de vida comparativo das regiões metropolitanas brasileiras: 1996–2014.](https://doi.org/10.1590/0101-416146128aaa)" *Estudos Econômicos* 46 (1): 253–276.
 - Cardoso, Breno Ferreira, Marcelo Tavares de Azevedo, e Francisco Carlos da Cunha Cassuce. 2019. "Estimação da elasticidade-preço da demanda, da elasticidade-renda e da elasticidade preço-cruzada no Brasil." *Análise Econômica* 37 (74): 7–30.

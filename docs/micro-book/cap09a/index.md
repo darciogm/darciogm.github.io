@@ -42,7 +42,7 @@ Antes de analisar qualquer jogo específico, é necessário estabelecer a lingua
 
 Com essas duas representações em mãos, podemos definir os conceitos que serão utilizados ao longo de todo o capítulo. Quais são os ingredientes mínimos que um jogador racional precisa considerar ao tomar uma decisão? A resposta passa pelas noções de estratégia, dominância e melhor resposta.
 
-### Conceitos auxiliares
+### 🔑 Conceitos auxiliares
 
 - **Estratégia pura**: uma escolha determinística de ação, \(s_i \in S_i\).
 - **Estratégia mista**: uma distribuição de probabilidade sobre as estratégias puras, \(\sigma_i \in \Delta(S_i)\).
@@ -399,11 +399,11 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 ---
 
-## Box Brasil: Cartéis de Postos de Combustíveis e o CADE
+## 🇧🇷 Box Brasil: Cartéis de Postos de Combustíveis e o CADE
 
 Os modelos de oligopólio apresentados acima não são meros exercícios teóricos — eles fornecem a estrutura analítica que órgãos reguladores como o CADE utilizam diariamente para avaliar práticas anticompetitivas. O primeiro Box Brasil deste capítulo examina precisamente essa conexão entre teoria e prática regulatória.
 
-!!! example "Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
+!!! example "🇧🇷 Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
     O mercado de revenda de combustíveis no Brasil é um dos campos mais ativos de investigação antitruste pelo **CADE** (Conselho Administrativo de Defesa Econômica). A frequência de cartéis nesse setor oferece um laboratório natural para a teoria dos jogos.
 
     **Por que o conluio é frequente nesse mercado?**
@@ -430,11 +430,11 @@ Os modelos de oligopólio apresentados acima não são meros exercícios teóric
 
 ---
 
-## Box Brasil: O Oligopólio Aéreo Brasileiro
+## 🇧🇷 Box Brasil: O Oligopólio Aéreo Brasileiro
 
 Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais, o transporte aéreo doméstico oferece um panorama complementar: um oligopólio altamente concentrado em escala nacional, no qual coexistem elementos de Cournot, Bertrand e Stackelberg dependendo da rota e do horizonte temporal.
 
-!!! example "Box Brasil — Gol, Latam e Azul: competição estratégica a 10.000 metros"
+!!! example "🇧🇷 Box Brasil — Gol, Latam e Azul: competição estratégica a 10.000 metros"
     O transporte aéreo doméstico no Brasil é um dos mercados mais concentrados do país e ilustra diretamente os modelos de oligopólio.
 
     **Concentração extrema**
@@ -492,7 +492,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A teoria dos jogos estuda a tomada de decisão em ambientes de interdependência estratégica, nos quais o resultado de cada agente depende das ações de todos os demais.
 - Jogos estáticos com informação completa são representados na forma normal (matriz de payoffs) e resolvidos pelo conceito de **equilíbrio de Nash**: um perfil de estratégias em que nenhum jogador pode melhorar unilateralmente seu payoff.
@@ -501,7 +501,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 - Os modelos de oligopólio (Cournot, Bertrand e Stackelberg) aplicam o equilíbrio de Nash a mercados com poucos concorrentes, mostrando como a variável estratégica (quantidade vs. preço) e a ordem de movimento alteram radicalmente preços, quantidades e lucros.
 - No Cournot, firmas competem em quantidades e o resultado situa-se entre monopólio e competição perfeita; no Bertrand com produtos homogêneos, duas firmas bastam para reproduzir o resultado competitivo; no Stackelberg, a líder obtém vantagem via comprometimento crível.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -518,9 +518,9 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 9a.1 — Equilíbrios de Nash na Batalha dos Sexos"
+??? example "✏️ Exercício Resolvido 9a.1 — Equilíbrios de Nash na Batalha dos Sexos"
     **Enunciado:** Encontre todos os equilíbrios de Nash (em puras e em mistas) do seguinte jogo simultâneo:
 
     |  | Jogador 2: E | Jogador 2: D |
@@ -549,7 +549,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Interpretação:** Este é um jogo de coordenação com preferências conflitantes. Múltiplos equilíbrios explicam por que convenções, normas (ABNT, INMETRO) e regulamentações são valiosas — funcionam como "pontos focais" (Schelling, 1960).
 
-??? example "Exercício Resolvido 9a.2 — Cournot assimétrico no setor aéreo"
+??? example "✏️ Exercício Resolvido 9a.2 — Cournot assimétrico no setor aéreo"
     **Enunciado:** Duas companhias aéreas competem à la Cournot em uma rota doméstica. A demanda inversa é \(P(Q) = 500 - 2Q\), onde \(Q = q_1 + q_2\) (em milhares de assentos/mês). A incumbente tem custo marginal \(c_1 = 100\) e a entrante tem \(c_2 = 150\). Encontre o equilíbrio de Cournot-Nash.
 
     **Resolução:**
@@ -570,7 +570,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Interpretação:** A firma mais eficiente produz mais e lucra mais. Na aviação brasileira, a Latam tem historicamente custos por ASK menores, o que contribui para seu market share de 39,1%.
 
-??? example "Exercício Resolvido 9a.3 — Stackelberg no mercado de cervejas"
+??? example "✏️ Exercício Resolvido 9a.3 — Stackelberg no mercado de cervejas"
     **Enunciado:** A Ambev (líder) e a Heineken (seguidora) competem à la Stackelberg no mercado de cerveja premium. A demanda inversa é \(P = 20 - Q\) (R\$/litro, em milhões de litros/mês), com \(c_1 = c_2 = 4\).
 
     (a) Encontre o equilíbrio de Stackelberg.
@@ -608,7 +608,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-9a-1"></a>**Exercício 9a.1.** Considere o seguinte jogo simultâneo:
 
@@ -781,7 +781,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Adams, Brian W. 2025. [*Game Theory for Applied Econometricians: Data Analytics with R*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press.
 - Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books.

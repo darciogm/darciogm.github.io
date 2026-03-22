@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 13"
 
 ---
 
-## Exercício 13.1 {#ex-13-1}
+## ✏️ Exercício 13.1 {#ex-13-1}
 
 **Solução.**
 
@@ -35,7 +35,7 @@ PPM: \(\frac{1}{2} \times 2 \times (750 - 550) = 200\).
 
 ---
 
-## Exercício 13.2 {#ex-13-2}
+## ✏️ Exercício 13.2 {#ex-13-2}
 
 **Solução.**
 
@@ -56,7 +56,7 @@ Na verdade, \(PPM = EC_{\text{antes}} + EP_{\text{antes}} - EC_{\text{depois}} -
 
 ---
 
-## Exercício 13.3 {#ex-13-3}
+## ✏️ Exercício 13.3 {#ex-13-3}
 
 **Solução.**
 
@@ -93,7 +93,7 @@ Estas fórmulas são **idênticas** às do imposto específico. O lado mais inel
 
 ---
 
-## Exercício 13.4 {#ex-13-4}
+## ✏️ Exercício 13.4 {#ex-13-4}
 
 **Solução.**
 
@@ -118,7 +118,7 @@ Variação: \(\Delta EP = 8888{,}9 - 5000 = 3888{,}9\).
 
 ---
 
-## Exercício 13.5 {#ex-13-5}
+## ✏️ Exercício 13.5 {#ex-13-5}
 
 **Solução.**
 

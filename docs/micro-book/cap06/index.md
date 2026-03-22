@@ -220,7 +220,7 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
 !!! tip "Aplicação prática"
     O Teorema do Bem Composto justifica o uso frequente, em exercícios e modelos aplicados, de um "bem 1" versus "todos os outros bens" (representados pelo gasto restante). Para que a agregação seja válida, é necessário que os preços relativos dentro do grupo permaneçam aproximadamente constantes. Quando um choque afeta apenas um subgrupo (por exemplo, uma seca que encarece frutas mas não cereais), o teorema perde validade para o grupo "alimentos" como um todo.
 
-!!! example "Box Brasil: Preços administrados e o Bem Composto no IPCA"
+!!! example "🇧🇷 Box Brasil: Preços administrados e o Bem Composto no IPCA"
     O IPCA, calculado pelo IBGE, distingue entre **preços livres** (cerca de 75% do índice) e **preços administrados** (cerca de 25%), que incluem combustíveis, energia elétrica, planos de saúde e tarifas de transporte público. Os preços administrados são reajustados por fórmulas contratuais vinculadas a índices como o IGP-M ou o IPCA do período anterior.
 
     Essa distinção ilustra quando o Teorema do Bem Composto **funciona** e quando **falha**:
@@ -287,7 +287,7 @@ A reformulação de Lancaster pode parecer uma complicação desnecessária — 
 - **Diferenciação de produto**: marcas diferentes do "mesmo" bem oferecem combinações distintas de atributos (sabor, durabilidade, status).
 - **Preços hedônicos**: o preço de um imóvel, por exemplo, pode ser decomposto em preços implícitos de localização, metragem, número de quartos e outros atributos.
 
-!!! example "Box Brasil: Preços hedônicos no mercado imobiliário"
+!!! example "🇧🇷 Box Brasil: Preços hedônicos no mercado imobiliário"
     O índice FipeZap, calculado pela Fipe em parceria com o portal Zap Imóveis, acompanha os preços de venda e aluguel de imóveis residenciais em mais de 50 cidades brasileiras. A metodologia utiliza modelos de **preços hedônicos** — uma aplicação direta do modelo de Lancaster — para decompor o preço do imóvel nos preços implícitos de seus atributos: localização (bairro, proximidade do metrô), área útil, número de quartos e vagas de garagem.
 
     O índice FipeZap de março de 2024 registrava preço médio de venda de R$ 9.082/m² em São Paulo e R$ 11.032/m² no Rio de Janeiro. A diferença não reflete apenas metragem, mas o "preço implícito" de atributos locacionais — bairros como Leblon (RJ) ou Vila Nova Conceição (SP) embutem um prêmio por amenidades urbanas (proximidade de parques, serviços, segurança).
@@ -335,7 +335,7 @@ A soma horizontal parece inocente, mas esconde uma armadilha. A simples soma de 
 
 Quando a condição de Gorman não é satisfeita, a demanda de mercado depende da **distribuição de renda**, não apenas da renda total. Isso tem implicações profundas para a política econômica: transferências de renda (como o Bolsa Família / Auxílio Brasil) alteram a demanda agregada mesmo que a renda total permaneça constante.
 
-!!! example "Box Brasil: Distribuição de renda e demanda agregada"
+!!! example "🇧🇷 Box Brasil: Distribuição de renda e demanda agregada"
     O programa Bolsa Família, que em 2024 atendia cerca de 21 milhões de famílias, ilustra por que a condição de Gorman importa na prática. As famílias beneficiárias têm propensões marginais a consumir alimentos, gás de cozinha e vestuário muito superiores às das famílias de renda mais alta. Segundo dados da POF/IBGE 2017-2018, famílias com renda per capita de até 1 salário mínimo destinam cerca de 22% do orçamento a alimentação, enquanto famílias com renda acima de 15 salários mínimos destinam cerca de 7,6%.
 
     Se as curvas de Engel fossem lineares e paralelas (condição de Gorman), transferir R$ 1 de uma família rica para uma pobre não alteraria a demanda agregada por nenhum bem — apenas a composição individual mudaria. Mas como as curvas de Engel diferem entre classes de renda, a redistribuição aumenta a demanda agregada por alimentos básicos e reduz a demanda por bens de luxo, mesmo com renda total constante. A elasticidade-renda da demanda por alimentos é substancialmente maior nas classes de renda mais baixa.
@@ -388,7 +388,7 @@ Para consolidar as classificações discutidas nas seções anteriores, a tabela
 
 Para ilustrar concretamente as relações de substituição e complementaridade discutidas neste capítulo, apresentamos a seguir dois estudos de caso detalhados do mercado brasileiro — o primeiro sobre combustíveis (substituição quase pura) e o segundo sobre bebidas (um mosaico de relações cruzadas).
 
-## Box Brasil: Gasolina versus Etanol — Substitutos na Bomba
+## 🇧🇷 Box Brasil: Gasolina versus Etanol — Substitutos na Bomba
 
 !!! example "Gasolina versus etanol: substitutos na bomba"
     O Brasil possui a maior frota *flex-fuel* do mundo: segundo a Anfavea, mais de 90% dos automóveis leves vendidos desde 2010 são bicombustíveis. Isso torna a escolha entre gasolina e etanol um caso quase puro de substituição, em que o consumidor compara preços a cada abastecimento.
@@ -405,7 +405,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-## Box Brasil: Substitutos e Complementos no Mercado de Bebidas Brasileiro
+## 🇧🇷 Box Brasil: Substitutos e Complementos no Mercado de Bebidas Brasileiro
 
 !!! example "Substitutos e complementos no mercado de bebidas brasileiro"
     O mercado brasileiro de bebidas é um laboratório natural para o estudo de relações cruzadas de demanda. Com faturamento superior a R$ 120 bilhões anuais e elevada penetração em todas as classes sociais, as categorias de cerveja, refrigerante e água mineral apresentam interações de preço particularmente reveladoras.
@@ -443,7 +443,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Os efeitos cruzados de preço medem como a variação no preço de um bem afeta a demanda por outro, e podem ser decompostos pela Equação de Slutsky em efeito substituição cruzado e efeito renda cruzado.
 - Bens são classificados como substitutos ou complementos brutos (marshallianos, baseados na demanda não-compensada) e líquidos (hicksianos, baseados na demanda compensada); a classificação pode diferir entre as duas definições quando o efeito renda é significativo.
@@ -452,7 +452,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 - O modelo de Lancaster propõe que os consumidores valorizam atributos dos bens (não os bens em si), gerando preços hedônicos implícitos; o modelo de Becker incorpora o tempo como insumo na produção doméstica de utilidade.
 - A demanda de mercado é a soma horizontal das demandas individuais; a condição de Gorman (curvas de Engel lineares e paralelas) garante a existência de um consumidor representativo.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -468,9 +468,9 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
+??? example "✏️ Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
 
     **Enunciado.** Considere a função de utilidade Cobb-Douglas \(U(x,y) = x^a y^{1-a}\), com \(0 < a < 1\), preços \(p_x, p_y\) e renda \(I\).
 
@@ -508,7 +508,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     Os dois efeitos se cancelam perfeitamente — uma propriedade especial da Cobb-Douglas.
 
-??? example "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
+??? example "✏️ Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
 
     **Enunciado.** Um consumidor tem utilidade \(U(x,y) = 2x + y\), preços iniciais \(p_x = p_y = 2\) e renda \(I = 100\).
 
@@ -530,7 +530,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     **Interpretação:** com substitutos perfeitos lineares, quando o consumidor já consome apenas \(x\) antes e depois da mudança, o efeito substituição é zero — ele não "troca" de bem, apenas consome mais do mesmo com o aumento do poder de compra. Este é um resultado importante e frequente em provas da ANPEC.
 
-??? example "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
+??? example "✏️ Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
 
     **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
 
@@ -576,7 +576,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-6-1"></a>**Exercício 6.1.** Considere a função de utilidade CES: \(U(x_1, x_2) = (x_1^\rho + x_2^\rho)^{1/\rho}\), com \(\rho < 1\), preços \(p_1, p_2\) e renda \(I\).
 
@@ -738,7 +738,7 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
     **Relevância para o capítulo:** O modelo BLP é uma implementação empírica direta do modelo de Lancaster (Seção 6.6): os consumidores derivam utilidade dos *atributos* dos automóveis, não dos veículos em si. A estrutura de substituição entre produtos emerge endogenamente da proximidade no espaço de atributos, em vez de ser imposta *ad hoc*. Além disso, a agregação da demanda individual (Seção 6.7) é central no modelo — a demanda de mercado resulta da soma de escolhas heterogêneas, e a heterogeneidade de preferências (violação da condição de Gorman) é uma *feature*, não um bug. O artigo é um dos mais citados em organização industrial e tornou-se referência para a análise antitruste de fusões pelo [CADE](https://www.gov.br/cade) no Brasil e por autoridades concorrenciais no mundo todo.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Deaton, Angus, e John Muellbauer. 1980. [*Economics and Consumer Behavior*](https://books.google.com/books/about/Economics_and_Consumer_Behavior.html?id=B81RYQsx2l0C). Cambridge: Cambridge University Press.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 3 (Seções 3.G–3.I) e Cap. 4.

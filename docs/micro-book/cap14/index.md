@@ -183,9 +183,9 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ---
 
-## Box Brasil: Mercosul-UE e os Ganhos de Troca
+## 🇧🇷 Box Brasil: Mercosul-UE e os Ganhos de Troca
 
-!!! example "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
+!!! example "🇧🇷 Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
     Em dezembro de 2024, após 25 anos de negociação, o **Mercosul** e a **União Europeia** assinaram um acordo de parceria comercial que cria uma das maiores zonas de livre comércio do mundo, reunindo **718 milhões de pessoas** e um PIB conjunto de US$ 22,4 trilhões.
 
     **Os ganhos de troca na linguagem da Caixa de Edgeworth**
@@ -296,9 +296,9 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
 
 ---
 
-## Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
+## 🇧🇷 Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
 
-!!! example "Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
+!!! example "🇧🇷 Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
     A **Reforma Tributária** brasileira (EC 132/2023, regulamentada pela LC 214/2025) é, do ponto de vista da teoria do equilíbrio geral, uma das maiores intervenções sobre o sistema de preços relativos já realizadas no país. Ela substitui cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por dois: a **CBS** (federal) e o **IBS** (estadual/municipal), formando um IVA dual com alíquota estimada entre 26,5% e 28%.
 
     **Por que a reforma é um problema de equilíbrio geral?**
@@ -508,9 +508,9 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-## Box Brasil: Modelos CGE Aplicados ao Brasil
+## 🇧🇷 Box Brasil: Modelos CGE Aplicados ao Brasil
 
-!!! example "Box Brasil: Equilíbrio geral computável e políticas comerciais"
+!!! example "🇧🇷 Box Brasil: Equilíbrio geral computável e políticas comerciais"
     O Brasil tem uma tradição relevante no desenvolvimento e aplicação de modelos de equilíbrio geral computável para avaliação de políticas públicas. Diversas instituições — como o IPEA (Instituto de Pesquisa Econômica Aplicada), a FGV (Fundação Getulio Vargas), a ESALQ/USP e universidades federais — mantêm modelos CGE calibrados para a economia brasileira.
 
     **Principais modelos brasileiros:**
@@ -541,7 +541,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
     4. **Limitações**: Os modelos CGE baseiam-se em hipóteses de concorrência perfeita (na maioria das versões), retornos constantes de escala e pleno emprego de fatores. Extensões incorporando economias de escala, concorrência imperfeita e desemprego (modelos "novos CGE") são áreas ativas de pesquisa no Brasil.
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - O **equilíbrio geral** analisa a interdependência simultânea de todos os mercados, em contraste com o equilíbrio parcial que estuda um mercado isolado. Um equilíbrio walrasiano é um vetor de preços $\mathbf{p}^*$ tal que todos os mercados se equilibram simultaneamente.
 - A **Caixa de Edgeworth** é a ferramenta gráfica fundamental para visualizar trocas em uma economia com dois consumidores e dois bens. A **curva de contrato** conecta todas as alocações Pareto-eficientes, onde as taxas marginais de substituição dos dois consumidores são iguais.
@@ -550,7 +550,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 - A **existência** do equilíbrio walrasiano é demonstrada via o Teorema do Ponto Fixo de Brouwer, aplicado ao mapeamento de excesso de demanda. A **Lei de Walras** — a soma dos valores dos excessos de demanda é zero para quaisquer preços — é propriedade fundamental que permite normalizar um preço como numerário.
 - Os **modelos computáveis de equilíbrio geral** (CGE) aplicam a teoria à avaliação quantitativa de políticas públicas, como reforma tributária, abertura comercial e infraestrutura, sendo amplamente utilizados no Brasil por instituições como IPEA e FGV.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -567,9 +567,9 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
+??? example "✏️ Exercício Resolvido 14.1 — Equilíbrio walrasiano na Caixa de Edgeworth"
     **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
 
     **Dados:** \(\boldsymbol{\omega}_A = (8, 2)\), \(\boldsymbol{\omega}_B = (2, 8)\). Totais: \(\bar{x}_1 = 10\), \(\bar{x}_2 = 10\).
@@ -652,7 +652,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-??? example "Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
+??? example "✏️ Exercício Resolvido 14.2 — Segundo Teorema e transferências lump-sum"
     **Enunciado:** Na mesma economia do ER 14.1, um planejador social deseja alcançar a alocação Pareto-eficiente \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\). Verifique que essa alocação é eficiente e determine a transferência *lump-sum* necessária.
 
     **Dados:** Mesmas preferências e dotações do ER 14.1. Alocação desejada: \(\mathbf{x}_A = (5,\; 10/3)\), \(\mathbf{x}_B = (5,\; 20/3)\).
@@ -709,7 +709,7 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-14-1"></a>**Exercício 14.1.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (1 e 2). As dotações são \(\boldsymbol{\omega}_A = (10, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = x_1^B \cdot x_2^B\) (Cobb-Douglas com parâmetros iguais).
 
@@ -887,7 +887,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
     **Relevância para o capítulo:** O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Arrow, Kenneth J., e Gerard Debreu. 1954. ["Existence of an Equilibrium for a Competitive Economy."](https://doi.org/10.2307/1907353) *Econometrica* 22 (3): 265–290.
 - Caliendo, Lorenzo, e Fernando Parro. 2015. ["Estimates of the Trade and Welfare Effects of NAFTA."](https://doi.org/10.1093/restud/rdv007) *Review of Economic Studies* 82 (1): 1–44.

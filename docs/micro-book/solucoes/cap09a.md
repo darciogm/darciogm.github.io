@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 9a"
 
 ---
 
-## Exercício 9a.1 {#ex-9a-1}
+## ✏️ Exercício 9a.1 {#ex-9a-1}
 
 **Solução.**
 
@@ -36,7 +36,7 @@ Como R é estritamente dominante para J2, não existe equilíbrio em estratégia
 
 ---
 
-## Exercício 9a.2 {#ex-9a-2}
+## ✏️ Exercício 9a.2 {#ex-9a-2}
 
 **Solução.**
 
@@ -83,7 +83,7 @@ O líder produz mais e lucra mais que no Cournot; o seguidor produz menos e lucr
 
 ---
 
-## Exercício 9a.3 {#ex-9a-3}
+## ✏️ Exercício 9a.3 {#ex-9a-3}
 
 **Solução.**
 
@@ -114,7 +114,7 @@ Quando \(d \to b\): bens quase homogêneos. \(p^* \to (a + bc)/b = c + a/b\). A 
 
 ---
 
-## Exercício 9a.4 {#ex-9a-4}
+## ✏️ Exercício 9a.4 {#ex-9a-4}
 
 **Solução.**
 
@@ -137,7 +137,7 @@ Se \(\Pr(\theta_F) > 2/3\): \(E[\pi_E] = p \cdot (-2) + (1-p) \cdot 4 < 0\) quan
 
 ---
 
-## Exercício 9a.5 {#ex-9a-5}
+## ✏️ Exercício 9a.5 {#ex-9a-5}
 
 **Solução.**
 

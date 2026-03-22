@@ -88,7 +88,7 @@ Este resultado é fundamental em estática comparativa: permite calcular como um
 
 Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio. Note a potência do resultado: sem precisar resolver explicitamente o modelo para \(P^*\), o teorema da função implícita nos permite determinar a *direção* do efeito e, com mais informação, sua *magnitude*.
 
-!!! example "Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
+!!! example "🇧🇷 Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
 
     A **elasticidade-preço da demanda** — definida como \(\varepsilon = \frac{\partial Q}{\partial P} \cdot \frac{P}{Q}\) — é uma aplicação direta de derivadas parciais ao problema do consumidor. No Brasil, estimativas empíricas dessas elasticidades fundamentam decisões de política tributária, regulação de tarifas e política comercial.
 
@@ -356,7 +356,7 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 !!! warning "Cuidado"
     Um erro comum é encontrar as CPOs, resolver o sistema e declarar a resposta como "o ótimo", sem verificar se é de fato um máximo (ou mínimo, conforme o problema). Em provas e exercícios, sempre mencione por que as condições de segunda ordem são satisfeitas — nem que seja por um argumento de quase-concavidade.
 
-### Exercício resolvido: maximização de utilidade CES via Lagrangeano {#exercicio-ces}
+### ✏️ Exercício resolvido: maximização de utilidade CES via Lagrangeano {#exercicio-ces}
 
 Aplicamos agora o passo a passo completo a um problema que será recorrente ao longo do livro: a maximização de utilidade com preferências CES.
 
@@ -766,7 +766,7 @@ As condições KKT são:
 
     **Por que isso importa:** Soluções de canto são comuns no mundo real — famílias que não poupam nada, firmas que não exportam, consumidores que não compram certos bens. As condições KKT são a linguagem matemática dessas situações.
 
-!!! example "Box Brasil — O teto de gastos e a otimização sob restrições de desigualdade"
+!!! example "🇧🇷 Box Brasil — O teto de gastos e a otimização sob restrições de desigualdade"
 
     A **Emenda Constitucional nº 95/2016** (posteriormente substituída pelo novo arcabouço fiscal da EC 126/2022) impôs um **teto para os gastos primários** da União: a despesa primária total de um exercício não poderia exceder a despesa do exercício anterior corrigida pela inflação (IPCA).
 
@@ -987,9 +987,9 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ---
 
-## Box Brasil: A matemática por trás do IPCA
+## 🇧🇷 Box Brasil: A matemática por trás do IPCA
 
-!!! example "Box Brasil — O IPCA e as funções de agregação de Laspeyres"
+!!! example "🇧🇷 Box Brasil — O IPCA e as funções de agregação de Laspeyres"
 
     O **Índice Nacional de Preços ao Consumidor Amplo (IPCA)**, calculado mensalmente pelo IBGE, é o indicador oficial de inflação no Brasil e meta do regime de metas de inflação adotado desde 1999. Por trás de sua aparente simplicidade — "quanto subiram os preços?" — há um arcabouço matemático preciso baseado em **funções de agregação de preços**.
 
@@ -1011,7 +1011,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - O capítulo fornece o aparato matemático essencial para a microeconomia: **cálculo diferencial** (condições de primeira e segunda ordem), **cálculo multivariado** (derivadas parciais, diferencial total, teorema da função implícita) e **otimização** com e sem restrições.
 - O **teorema da função implícita** é a ferramenta central da estática comparativa: permite calcular como variáveis endógenas (preço de equilíbrio, quantidade) respondem a mudanças em variáveis exógenas (renda, custos) a partir de condições de equilíbrio implícitas.
@@ -1020,7 +1020,7 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 - As **condições de Kuhn-Tucker** generalizam o método de Lagrange para restrições de desigualdade e soluções de canto, com as condições de folga complementar determinando quais restrições são ativas.
 - O capítulo também cobre **funções homogêneas** (teorema de Euler e exaustão do produto), **concavidade e quase-concavidade** (condições de segunda ordem), integração (excedentes), otimização dinâmica (equação de Euler) e estatística (valor esperado, variância, utilidade esperada de von Neumann-Morgenstern).
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -1037,11 +1037,11 @@ Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos 
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
 Os exercícios resolvidos a seguir aplicam as principais ferramentas matemáticas do capítulo a problemas econômicos concretos. O primeiro resolve um problema de maximização de utilidade via Lagrange, incluindo a interpretação econômica do multiplicador. O segundo demonstra a aplicação do teorema do envelope a uma firma monopolista. O terceiro explora as condições de Kuhn-Tucker em um contexto com soluções de canto. Em cada caso, recomenda-se acompanhar a resolução passo a passo, verificando que cada etapa corresponde às condições formais apresentadas nas seções anteriores.
 
-??? example "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
+??? example "✏️ Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
 
     **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(I = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
 
@@ -1081,7 +1081,7 @@ Os exercícios resolvidos a seguir aplicam as principais ferramentas matemática
 
     **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}25\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,25 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
 
-??? example "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
+??? example "✏️ Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
 
     **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
 
@@ -1115,7 +1115,7 @@ Os exercícios resolvidos a seguir aplicam as principais ferramentas matemática
 
     **Interpretação econômica:** Um aumento unitário no custo marginal reduz o lucro máximo em \(\frac{a-c}{2}\), que é exatamente a quantidade ótima produzida. A elegância do teorema do envelope está em dispensar o cálculo de como \(Q^*\) se ajusta: basta a derivada parcial direta do lucro em relação a \(c\), avaliada no ótimo. No Brasil, quando a Petrobras eleva o preço dos derivados (aumento de \(c\) para distribuidoras), o teorema do envelope permite estimar rapidamente o impacto sobre o lucro do setor sem recalcular toda a cadeia de ajustes de quantidade.
 
-??? example "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
+??? example "✏️ Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
 
     **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I\). Encontre a cesta ótima para \(I = 20\) e \(I = 0{,}5\), identificando soluções interiores e de canto.
 
@@ -1153,7 +1153,7 @@ Os exercícios resolvidos a seguir aplicam as principais ferramentas matemática
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 Os exercícios abaixo progridem do cálculo diferencial básico (otimização de funções de uma variável) até aplicações mais avançadas (Lagrange, Kuhn-Tucker, teorema do envelope). Procure identificar, em cada exercício, qual ferramenta matemática é a mais adequada e como os resultados admitem interpretação econômica.
 
@@ -1335,7 +1335,7 @@ e) Qual o valor mínimo de \(I\) a partir do qual o consumidor passa a adquirir 
 
     **Relevância para o capítulo:** O artigo dialoga com as Seções 2.2 (função implícita e estática comparativa), 2.3 (condições de segunda ordem) e 2.8 (concavidade e curvatura). As ferramentas clássicas deste capítulo — derivar a CPO, verificar a CSO, aplicar o teorema da função implícita — produzem resultados de estática comparativa sob condições de regularidade. Milgrom e Shannon mostram que esses resultados sobrevivem sob hipóteses muito mais gerais, sugerindo que a estrutura matemática da otimização é mais profunda do que a maquinaria de cálculo diferencial captura.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Chiang, Alpha C., e Kevin Wainwright. 2005. [*Fundamental Methods of Mathematical Economics*](https://books.google.com.br/books?id=0S1JnwEACAAJ). 4ª ed. New York: McGraw-Hill.
 - Jehle, Geoffrey A., e Philip J. Reny. 2011. [*Advanced Microeconomic Theory*](https://books.google.com/books/about/Advanced_Microeconomic_Theory.html?id=vDR1DwAAQBAJ). 3ª ed. Harlow: Pearson. Cap. 1.

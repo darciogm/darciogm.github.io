@@ -450,7 +450,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## Box Brasil: Taxa Selic e o Custo de Capital no Brasil
+## 🇧🇷 Box Brasil: Taxa Selic e o Custo de Capital no Brasil
 
 !!! example "Por que os juros brasileiros são historicamente altos?"
     O Brasil é conhecido internacionalmente por praticar uma das taxas de juros reais mais elevadas do mundo. A taxa Selic — a taxa básica de juros definida pelo Comitê de Política Monetária (Copom) do [Banco Central do Brasil](https://www.bcb.gov.br) — atingiu níveis estratosféricos ao longo das últimas décadas.
@@ -486,7 +486,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A taxa de juros é o preço do tempo, determinada pelo equilíbrio entre oferta de poupança e demanda de investimento no mercado de fundos emprestáveis. A taxa de juros de equilíbrio depende da produtividade do capital, das preferências intertemporais, da oferta de poupança e do risco percebido.
 - O modelo de dois períodos de Fisher formaliza a escolha intertemporal do consumidor: no ótimo, a taxa marginal de substituição entre consumo presente e futuro iguala \(1 + r\). O consumidor é poupador se sua taxa de desconto subjetiva é menor que a taxa de juros, e devedor caso contrário.
@@ -495,7 +495,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 - A Regra de Hotelling estabelece que o preço líquido de um recurso natural exaurível deve crescer à taxa de juros no equilíbrio, equilibrando o incentivo entre extrair hoje e preservar para o futuro. Juros altos aceleram a extração.
 - No Brasil, a taxa Selic historicamente elevada encarece o custo de capital, torna inviáveis projetos de longo prazo e cria viés contra investimentos produtivos, especialmente em infraestrutura e P&D.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -512,9 +512,9 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 18.1 — Consumo intertemporal e classificação poupador/devedor"
+??? example "✏️ Exercício Resolvido 18.1 — Consumo intertemporal e classificação poupador/devedor"
     **Enunciado.** Um consumidor vive dois períodos com renda \(Y_1 = 80\) e \(Y_2 = 66\). Suas preferências são \(U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1}\ln C_2\). A taxa de juros é \(r = 10\%\). (a) Calcule a riqueza intertemporal. (b) Encontre o consumo ótimo em cada período. (c) O consumidor é poupador ou devedor?
 
     **Resolução.**
@@ -547,7 +547,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
 
-??? example "Exercício Resolvido 18.2 — VPL, TIR e decisão de investimento"
+??? example "✏️ Exercício Resolvido 18.2 — VPL, TIR e decisão de investimento"
     **Enunciado.** Uma empresa avalia instalar painéis solares por R$ 200.000, com economia anual de R$ 55.000 durante 5 anos. O custo de oportunidade do capital é 12% a.a. (a) Calcule o VPL. (b) Calcule a TIR por interpolação. (c) O projeto deve ser aceito?
 
     **Resolução.**
@@ -584,7 +584,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
     Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
 
-??? example "Exercício Resolvido 18.3 — Regra de Hotelling e trajetória de preços"
+??? example "✏️ Exercício Resolvido 18.3 — Regra de Hotelling e trajetória de preços"
     **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(p_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
 
     **Resolução.**
@@ -613,7 +613,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 !!! note "Exercícios do Capítulo 18"
 
@@ -771,7 +771,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Dixit, Avinash K., e Robert S. Pindyck. 1994. [*Investment under Uncertainty*](https://books.google.com.br/books?id=8op0btN4mKEC). Princeton: Princeton University Press.
 - Hotelling, Harold. 1931. "[The Economics of Exhaustible Resources](https://doi.org/10.1086/254195)." *Journal of Political Economy* 39 (2): 137–175.

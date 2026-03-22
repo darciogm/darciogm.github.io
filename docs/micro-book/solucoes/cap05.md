@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 5"
 
 ---
 
-## Exercício 5.1 {#ex-5-1}
+## ✏️ Exercício 5.1 {#ex-5-1}
 
 **Solução.**
 
@@ -38,7 +38,7 @@ Ambos os bens têm elasticidade-renda unitária — nem luxo nem necessidade. Is
 
 ---
 
-## Exercício 5.2 {#ex-5-2}
+## ✏️ Exercício 5.2 {#ex-5-2}
 
 **Solução.**
 
@@ -77,7 +77,7 @@ Com \(\bar{u}^1 = \ln(1) + I - 1 = I - 1\): \(E = p_x^0 \cdot h_x(p^0) + h_y = 4
 
 ---
 
-## Exercício 5.3 {#ex-5-3}
+## ✏️ Exercício 5.3 {#ex-5-3}
 
 **Solução.**
 
@@ -108,7 +108,7 @@ A recíproca é **falsa**: nem todo bem inferior é de Giffen. Para que um bem i
 
 ---
 
-## Exercício 5.4 {#ex-5-4}
+## ✏️ Exercício 5.4 {#ex-5-4}
 
 **Solução.**
 
@@ -135,7 +135,7 @@ Como \(\varepsilon_{x_1,p_2} > 0\), os bens são **substitutos brutos**: um aume
 
 ---
 
-## Exercício 5.5 {#ex-5-5}
+## ✏️ Exercício 5.5 {#ex-5-5}
 
 **Solução.**
 

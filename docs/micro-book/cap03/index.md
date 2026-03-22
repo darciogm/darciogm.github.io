@@ -189,7 +189,7 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
 **Figura 3.2 — Taxa Marginal de Substituição (TMS).** Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
 </div>
 
-??? example "Exercício Resolvido 3.1"
+??? example "✏️ Exercício Resolvido 3.1"
     **Enunciado:** Um consumidor tem preferências representadas por \(u(x_1, x_2) = x_1^{2/5} \, x_2^{3/5}\). Calcule a TMS no ponto \((x_1, x_2) = (10, 15)\) e interprete o resultado.
 
     **Dados:** \(a = 2/5\), \(b = 3/5\), \(x_1 = 10\), \(x_2 = 15\).
@@ -404,7 +404,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 **Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
 </div>
 
-!!! example "Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
+!!! example "🇧🇷 Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
     A propriedade mais marcante da função Cobb-Douglas é que a **participação de cada bem na despesa total é constante**, independente do nível de renda. Os dados da Pesquisa de Orçamentos Familiares (POF 2017-2018, IBGE) permitem confrontar essa previsão teórica com a realidade brasileira.
 
     A POF revela que a participação da alimentação no orçamento familiar **varia substancialmente** com a renda: famílias com renda de até R$ 1.908 destinam cerca de 22% à alimentação, enquanto famílias com renda acima de R$ 23.850 destinam apenas 7,6%. Essa variação contraria a previsão de participação constante da Cobb-Douglas, sugerindo que essa função não é adequada para modelar preferências entre alimentação e outros bens *ao longo de diferentes faixas de renda*.
@@ -415,7 +415,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 
     **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018 — Primeiros Resultados.
 
-??? example "Exercício Resolvido 3.2"
+??? example "✏️ Exercício Resolvido 3.2"
     **Enunciado:** Considere a função CES \(u(x_1, x_2) = (x_1^{\rho} + x_2^{\rho})^{1/\rho}\) com \(\rho = -1\). (a) Calcule a elasticidade de substituição. (b) Derive a TMS. (c) Compare as curvas de indiferença com os casos Cobb-Douglas e complementos perfeitos.
 
     **Dados:** \(\rho = -1\), logo \(u(x_1, x_2) = (x_1^{-1} + x_2^{-1})^{-1}\).
@@ -472,7 +472,7 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
 !!! tip "Implicações práticas da ordinalidade"
     A TMS é invariante sob transformações monotônicas. A utilidade marginal, porém, **não é invariante**: ela muda com a transformação. Por isso, a utilidade marginal não tem significado cardinal — apenas a razão entre utilidades marginais (a TMS) possui significado econômico bem definido.
 
-??? example "Exercício Resolvido 3.3"
+??? example "✏️ Exercício Resolvido 3.3"
     **Enunciado:** Mostre que \(u(x_1, x_2) = \ln x_1 + 2\ln x_2\) e \(v(x_1, x_2) = x_1 \cdot x_2^2\) representam as mesmas preferências, e verifique que ambas produzem a mesma TMS.
 
     **Resolução:**
@@ -501,9 +501,9 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
 
 As seções anteriores construíram progressivamente o arcabouço teórico das preferências: partimos de axiomas, chegamos à função de utilidade, derivamos curvas de indiferença e TMS, exploramos formas funcionais específicas e, por fim, demonstramos a invariância ordinal. Antes de consolidar esses conceitos no resumo do capítulo, vale observar como esse arcabouço se manifesta — e, por vezes, é posto à prova — em um contexto histórico concreto do Brasil.
 
-## Box Brasil: Mudança de Preferências do Consumidor Brasileiro Pós-Estabilização
+## 🇧🇷 Box Brasil: Mudança de Preferências do Consumidor Brasileiro Pós-Estabilização
 
-!!! example "Box Brasil — O Plano Real e a revolução no consumo"
+!!! example "🇧🇷 Box Brasil — O Plano Real e a revolução no consumo"
     A hiperinflação brasileira que antecedeu o Plano Real (julho de 1994) distorcia profundamente as preferências reveladas dos consumidores. Com taxas de inflação que chegaram a superar 2.000% ao ano em 1993, o comportamento de compra era dominado pela **antecipação de consumo**: famílias corriam ao supermercado no dia do pagamento para converter salários em bens antes que os preços subissem.
 
     Dados da Pesquisa de Orçamentos Familiares (POF) do IBGE revelam mudanças marcantes nos padrões de consumo ao longo das décadas:
@@ -522,7 +522,7 @@ As seções anteriores construíram progressivamente o arcabouço teórico das p
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A teoria do consumidor parte de **axiomas sobre preferências** — completude, transitividade, continuidade e monotonicidade — que estabelecem regras mínimas de coerência para ordenar cestas de consumo.
 - Sob esses axiomas, o **Teorema de Debreu** garante a existência de uma **função de utilidade** contínua que representa as preferências. A utilidade é **ordinal** (apenas o ordenamento importa, não os valores absolutos).
@@ -531,7 +531,7 @@ As seções anteriores construíram progressivamente o arcabouço teórico das p
 - O capítulo apresenta as principais famílias de funções de utilidade — **Cobb-Douglas**, **substitutos perfeitos**, **complementos perfeitos**, **CES** e **quase-linear** — cada uma com formato de curvas de indiferença e elasticidade de substituição distintos.
 - **Preferências homotéticas** (TMS depende apenas da razão \(x_1/x_2\)) geram curvas de Engel lineares e participação constante na despesa, enquanto preferências **quase-lineares** eliminam o efeito renda sobre um dos bens.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -548,7 +548,7 @@ As seções anteriores construíram progressivamente o arcabouço teórico das p
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-3-1"></a>**Exercício 3.1.** Considere um consumidor com preferências sobre dois bens (\(x_1, x_2\)) representadas pela função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\).
 
@@ -724,7 +724,7 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
     **Relevância para o capítulo:** Este artigo testa empiricamente os fundamentos do Capítulo 3. O GARP é a tradução operacional dos axiomas de completude e transitividade para dados de consumo observados. Os resultados mostram que, embora a maioria dos consumidores se comporte de forma aproximadamente consistente com os axiomas, há variação significativa — o que justifica tanto o uso do arcabouço axiomático como ponto de partida quanto a atenção a seus limites, discutidos na observação sobre preferências lexicográficas (Seção 3.1).
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Barros, Ricardo Paes de, Miguel Nathan Foguel, e Gabriel Ulyssea, orgs. 2007. [*Desigualdade de renda no Brasil: uma análise da queda recente*](https://repositorio.ipea.gov.br/handle/11058/3249). Brasília: IPEA.
 - Besanko, David, e Ronald R. Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. Hoboken: Wiley. Capítulos 3–4.

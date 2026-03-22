@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 3"
 
 ---
 
-## Exercício 3.1 {#ex-3-1}
+## ✏️ Exercício 3.1 {#ex-3-1}
 
 **Solução.**
 
@@ -49,7 +49,7 @@ Derivando em relação a \(x_1\):
 
 ---
 
-## Exercício 3.2 {#ex-3-2}
+## ✏️ Exercício 3.2 {#ex-3-2}
 
 **Solução.**
 
@@ -80,7 +80,7 @@ As TMS são idênticas. \(\blacksquare\)
 
 ---
 
-## Exercício 3.3 {#ex-3-3}
+## ✏️ Exercício 3.3 {#ex-3-3}
 
 **Solução.**
 
@@ -117,7 +117,7 @@ Com \(\rho = -1\):
 
 ---
 
-## Exercício 3.4 {#ex-3-4}
+## ✏️ Exercício 3.4 {#ex-3-4}
 
 **Solução.**
 
@@ -146,7 +146,7 @@ A demanda por \(x_1\) depende apenas da razão de preços, não da renda \(m\). 
 
 ---
 
-## Exercício 3.5 {#ex-3-5}
+## ✏️ Exercício 3.5 {#ex-3-5}
 
 **Solução.**
 

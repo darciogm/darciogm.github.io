@@ -234,9 +234,9 @@ p \cdot q - CV(q) - CF \geq -CF \implies p \cdot q \geq CV(q) \implies p \geq \m
 
 ---
 
-## Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
+## 🇧🇷 Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
 
-!!! example "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
+!!! example "🇧🇷 Box Brasil — Soja: quando o preço sobe, a área plantada responde"
     O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 12.4.
 
     **Dados da [CONAB](https://www.conab.gov.br) (Companhia Nacional de Abastecimento):**
@@ -422,9 +422,9 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-## Box Brasil: JBS e a Integração Vertical na Agroindústria
+## 🇧🇷 Box Brasil: JBS e a Integração Vertical na Agroindústria
 
-!!! example "Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
+!!! example "🇧🇷 Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
     A **JBS S.A.** é a maior processadora de proteína animal do mundo, com receita líquida trimestral recorde de **R$ 110,5 bilhões** no 3º trimestre de 2024 e presença em mais de 20 países. Sua trajetória ilustra de forma notável a teoria dos custos de transação de **Coase** e **Williamson** (Seção 12.1).
 
     **A lógica da integração vertical**
@@ -447,9 +447,9 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-## Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
+## 🇧🇷 Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
 
-!!! example "Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
+!!! example "🇧🇷 Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
 
     As **micro e pequenas empresas (MPEs)** são o coração do tecido empresarial brasileiro. Segundo dados do **SEBRAE** e da **Receita Federal**:
 
@@ -475,7 +475,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
     Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A **firma** existe, segundo Coase, porque os custos de transação do mercado podem ser superiores aos custos de coordenação interna. A teoria microeconômica assume que a firma maximiza lucro ($\pi = RT - CT$), embora existam modelos alternativos (maximização de receita, satisficing, teoria gerencial).
 - A condição fundamental de **maximização de lucro** exige que a receita marginal iguale o custo marginal ($\mathrm{RMg} = \mathrm{CMg}$), com a condição de segunda ordem $\mathrm{RMg}' < \mathrm{CMg}'$. A relação entre receita marginal e elasticidade-preço da demanda é dada por $\mathrm{RMg} = p(1 + 1/\varepsilon_d)$.
@@ -484,7 +484,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 - O **índice de Lerner** $L = (p - \mathrm{CMg})/p = -1/\varepsilon_d$ mede o poder de mercado da firma: em concorrência perfeita ele é zero, e cresce à medida que a firma tem mais poder de fixação de preço.
 - No Brasil, a alta taxa de mortalidade das **micro e pequenas empresas** (MPEs) ilustra a teoria: muitas firmas operam com preço abaixo do custo médio no longo prazo, sendo forçadas a encerrar atividades quando os custos fixos vencem.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -499,9 +499,9 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
+??? example "✏️ Exercício Resolvido 12.1 — Receita marginal, elasticidade e markup"
     **Enunciado:** Um monopolista enfrenta a demanda \(p = 100 - 2q\) e tem custo marginal constante \(\mathrm{CMg} = 20\). Determine a quantidade e o preço de maximização de lucro, a elasticidade-preço da demanda no ponto ótimo e o índice de Lerner.
 
     **Dados:** \(p(q) = 100 - 2q\); \(\mathrm{CMg} = 20\).
@@ -544,7 +544,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? example "Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
+??? example "✏️ Exercício Resolvido 12.2 — Decisão de operar ou fechar no curto prazo"
     **Enunciado:** Uma firma tomadora de preços tem custo total de curto prazo \(CT(q) = 72 + 10q + 0{,}5q^2\). O preço de mercado é \(p = 16\). A firma deve operar ou fechar? Qual o lucro?
 
     **Dados:** \(CF = 72\); \(CV(q) = 10q + 0{,}5q^2\); \(p = 16\).
@@ -591,7 +591,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-??? example "Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
+??? example "✏️ Exercício Resolvido 12.3 — Verificação do Lema de Hotelling"
     **Enunciado:** Uma firma com função de produção \(q = K^{1/3}L^{1/3}\) enfrenta preços \(p = 12\), \(w = 1\) e \(v = 1\). Encontre as demandas ótimas por insumos, a produção e o lucro máximo. Verifique o Lema de Hotelling.
 
     **Dados:** \(q = K^{1/3}L^{1/3}\); \(p = 12\), \(w = 1\), \(v = 1\).
@@ -642,7 +642,7 @@ O **efeito substituição** (\(\leq 0\)) reflete a substituição do trabalho po
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-12-1"></a>**Exercício 12.1.** 
 Uma firma tomadora de preços tem a função de custo total de curto prazo \(CT(q) = 50 + 2q + 0{,}5q^2\).
@@ -834,7 +834,7 @@ Explique, usando a teoria vista neste capítulo, por que:
 
     **Relevância para o capítulo:** O artigo ilustra a distinção entre **curto e longo prazo** da Seção 12.4: no curto prazo, firmas operam com prejuízo (decisão de não fechar), mas no longo prazo, a saída de firmas e a realocação de fatores deveria restaurar o equilíbrio. Dix-Carneiro e Kovak mostram que esse ajuste pode ser extremamente lento. O artigo também documenta empiricamente como a **demanda por insumos** (Seção 12.6) responde a mudanças de preços — exatamente o que o Lema de Hotelling prediz, mas com dinâmica muito mais complexa do que o modelo estático sugere.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Coase, Ronald H. 1937. ["The Nature of the Firm."](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x) *Economica* 4 (16): 386–405.
 - CONAB. 2023–2026. [*Acompanhamento da Safra Brasileira de Grãos*](https://www.conab.gov.br). Brasília: CONAB.

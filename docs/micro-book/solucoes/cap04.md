@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 4"
 
 ---
 
-## Exercício 4.1 {#ex-4-1}
+## ✏️ Exercício 4.1 {#ex-4-1}
 
 **Solução.**
 
@@ -81,7 +81,7 @@ x_1^* = -\frac{-I/(4p_1^{3/2} p_2^{1/2})}{1/(2(p_1 p_2)^{1/2})} = \frac{I}{4p_1^
 
 ---
 
-## Exercício 4.2 {#ex-4-2}
+## ✏️ Exercício 4.2 {#ex-4-2}
 
 **Solução.**
 
@@ -138,7 +138,7 @@ Identidade 2: \(E(\mathbf{p}, V(\mathbf{p}, I)) = 2 \cdot \frac{I}{2\sqrt{p_1 p_
 
 ---
 
-## Exercício 4.3 {#ex-4-3}
+## ✏️ Exercício 4.3 {#ex-4-3}
 
 **Solução.**
 
@@ -175,7 +175,7 @@ De fato, com complementos perfeitos, as demandas são lineares na renda: \(x_1^*
 
 ---
 
-## Exercício 4.4 {#ex-4-4}
+## ✏️ Exercício 4.4 {#ex-4-4}
 
 **Solução.**
 
@@ -228,7 +228,7 @@ u_B = 36^{0,4} \cdot 108^{0,6} \approx 4{,}35 \times 25{,}39 \approx 110{,}4
 
 ---
 
-## Exercício 4.5 {#ex-4-5}
+## ✏️ Exercício 4.5 {#ex-4-5}
 
 **Solução.**
 

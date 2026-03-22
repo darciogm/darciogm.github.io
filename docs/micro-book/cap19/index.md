@@ -164,7 +164,7 @@ Essa condição exige que a diferença de pagamentos entre os estados bom e ruim
 
 ---
 
-??? example "Exercício Resolvido 19.1"
+??? example "✏️ Exercício Resolvido 19.1"
     **Enunciado:** Um principal contrata um agente cuja utilidade é \(U = \sqrt{w} - e\), onde \(w\) é o salário e \(e \in \{0, 1\}\) é o esforço. O resultado pode ser bom (\(x_H\)) com probabilidade \(p(e)\) ou ruim (\(x_L\)) caso contrário, onde \(p(1) = 3/4\) e \(p(0) = 1/4\). A utilidade de reserva é \(\bar{U} = 3\). O principal deseja induzir esforço alto (\(e = 1\)).
 
     **Dados:** \(p_H = 3/4\), \(p_L = 1/4\), \(c(1) = 1\), \(c(0) = 0\), \(\bar{U} = 3\).
@@ -271,7 +271,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 ---
 
-??? example "Exercício Resolvido 19.2"
+??? example "✏️ Exercício Resolvido 19.2"
     **Enunciado:** Em um mercado de carros usados à la Akerlof, 40% dos carros são bons e 60% são ruins. Carros bons valem R$ 24.000 para compradores e R$ 20.000 para vendedores. Carros ruins valem R$ 10.000 para compradores e R$ 6.000 para vendedores. (a) O mercado de carros bons funciona? (b) Qual é a perda de bem-estar causada pela assimetria?
 
     **Dados:** \(\lambda = 0{,}4\); \(V_H = 24.000\), \(C_H = 20.000\); \(V_L = 10.000\), \(C_L = 6.000\).
@@ -401,7 +401,7 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
 ---
 
-## Box Brasil: Seleção Adversa nos Planos de Saúde
+## 🇧🇷 Box Brasil: Seleção Adversa nos Planos de Saúde
 
 !!! example "Antisseleção e regulação por faixas etárias ([ANS](https://www.gov.br/ans))"
     O mercado brasileiro de saúde suplementar, com cerca de 51 milhões de beneficiários, é um caso emblemático de seleção adversa. Pessoas mais doentes (alto risco) têm maior incentivo para contratar planos de saúde, enquanto jovens saudáveis (baixo risco) tendem a considerar os prêmios elevados e permanecer sem plano — o clássico mecanismo de antisseleção.
@@ -570,7 +570,7 @@ Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, 
 
 ---
 
-## Box Brasil: Leilões de Concessão no Brasil
+## 🇧🇷 Box Brasil: Leilões de Concessão no Brasil
 
 !!! example "Do pré-sal ao 5G: informação assimétrica e desenho de leilões"
     O Brasil tem sido um laboratório de formatos de leilão em setores estratégicos. Dois casos ilustram como o desenho do mecanismo afeta os resultados em presença de informação assimétrica.
@@ -611,9 +611,9 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Box Brasil: Crédito Consignado e Seleção Adversa no Brasil
+## 🇧🇷 Box Brasil: Crédito Consignado e Seleção Adversa no Brasil
 
-!!! example "Box Brasil: Crédito Consignado e Seleção Adversa"
+!!! example "🇧🇷 Box Brasil: Crédito Consignado e Seleção Adversa"
     O **crédito consignado** — modalidade em que as parcelas são descontadas diretamente da folha de pagamento ou do benefício previdenciário — é um exemplo notável de como um desenho contratual pode reduzir drasticamente os problemas de informação assimétrica no mercado de crédito.
 
     **O problema da seleção adversa no crédito**: No mercado de crédito pessoal convencional, o banco não observa perfeitamente o risco de inadimplência do tomador. Como resultado, cobra taxas de juros que refletem o risco médio da carteira. Tomadores de baixo risco (bons pagadores) consideram a taxa elevada e deixam de tomar empréstimos, enquanto tomadores de alto risco (potenciais inadimplentes) aceitam as condições — um mecanismo clássico de seleção adversa à la Akerlof.
@@ -635,7 +635,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - A informação assimétrica -- situação em que uma parte de uma transação detém informação relevante que a outra não possui -- é uma falha de mercado que pode levar à ineficiência ou até ao colapso de mercados inteiros.
 - O modelo principal-agente é o arcabouço geral para analisar relações com informação assimétrica. O principal desenha contratos sujeitos a duas restrições: participação (o agente aceita o contrato) e compatibilidade de incentivos (o agente age conforme desejado).
@@ -644,7 +644,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 - A sinalização (Spence) permite que a parte informada revele seu tipo por meio de ações custosas (como educação), enquanto a triagem/screening (Rothschild-Stiglitz) permite que a parte desinformada desenhe menus de contratos que induzam autosseleção.
 - Leilões são mecanismos de alocação sob informação assimétrica. Pelo teorema da equivalência de receitas, os quatro formatos clássicos geram a mesma receita esperada sob certas condições. No Brasil, leilões de concessão são amplamente utilizados em infraestrutura.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -661,7 +661,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-19-1"></a>**Exercício 19.1.** Considere um mercado de carros usados no modelo de Akerlof. Há dois tipos de carros: bons (valor de \(R\$ 30.000\) para compradores, \(R\$ 25.000\) para vendedores) e ruins (valor de \(R\$ 15.000\) para compradores, \(R\$ 10.000\) para vendedores). Metade dos carros são bons.
 
@@ -785,7 +785,7 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 
     **Relevância para o capítulo:** O paper é uma aplicação empírica direta da teoria de leilões com informação assimétrica (seção 19.7). A vantagem informacional da Petrobras é análoga ao problema de *common value* com licitantes assimétricos: o licitante mais informado pode extrair renda informacional, enquanto os menos informados enfrentam uma versão ampliada da maldição do vencedor. O resultado ilustra que o desenho do leilão importa — contrariando a equivalência de receita quando suas condições são violadas.
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Akerlof, George A. 1970. "[The Market for 'Lemons': Quality Uncertainty and the Market Mechanism](https://doi.org/10.2307/1879431)." *Quarterly Journal of Economics* 84 (3): 488–500.
 - Chiappori, Pierre-André, e Bernard Salanié. 2000. "[Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/317671)." *Journal of Political Economy* 108 (1): 56–78.

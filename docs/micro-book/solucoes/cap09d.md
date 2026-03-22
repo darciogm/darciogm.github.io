@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 9d"
 
 ---
 
-## Exercício 9d.1 {#ex-9d-1}
+## ✏️ Exercício 9d.1 {#ex-9d-1}
 
 **Solução.**
 
@@ -46,7 +46,7 @@ Com \(\theta_H = 3\): (i) o sinal necessário é maior (\(e^* = 2\) vs. \(\sqrt{
 
 ---
 
-## Exercício 9d.2 {#ex-9d-2}
+## ✏️ Exercício 9d.2 {#ex-9d-2}
 
 **Solução.**
 
@@ -76,7 +76,7 @@ Isso é um caso de **cheap talk** não crível: como falar é gratuito e os ince
 
 ---
 
-## Exercício 9d.3 {#ex-9d-3}
+## ✏️ Exercício 9d.3 {#ex-9d-3}
 
 **Solução.**
 
@@ -108,7 +108,7 @@ Resultado: o mercado colapsa para baixo risco (desaparece), e alto risco paga pr
 
 ---
 
-## Exercício 9d.4 {#ex-9d-4}
+## ✏️ Exercício 9d.4 {#ex-9d-4}
 
 **Solução.**
 

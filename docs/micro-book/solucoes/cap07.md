@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 7"
 
 ---
 
-## Exercício 7.1 {#ex-7-1}
+## ✏️ Exercício 7.1 {#ex-7-1}
 
 **Solução.**
 
@@ -48,7 +48,7 @@ A aproximação (1250) subestima o prêmio de risco exato (1340) porque a fórmu
 
 ---
 
-## Exercício 7.2 {#ex-7-2}
+## ✏️ Exercício 7.2 {#ex-7-2}
 
 **Solução.**
 
@@ -86,7 +86,7 @@ Na prática, a CARA é usada por conveniência analítica (permite soluções ex
 
 ---
 
-## Exercício 7.3 {#ex-7-3}
+## ✏️ Exercício 7.3 {#ex-7-3}
 
 **Solução.**
 
@@ -127,7 +127,7 @@ Como \(374{,}17 < 380{,}13 = E[u]\), o agricultor **não** contrata: ficar sem s
 
 ---
 
-## Exercício 7.4 {#ex-7-4}
+## ✏️ Exercício 7.4 {#ex-7-4}
 
 **Solução.**
 
@@ -158,7 +158,7 @@ Logo \(c_1^* = c_2^*\). Da restrição: \(0{,}6 c + 0{,}4 c = c = 100\).
 
 ---
 
-## Exercício 7.5 {#ex-7-5}
+## ✏️ Exercício 7.5 {#ex-7-5}
 
 **Solução.**
 

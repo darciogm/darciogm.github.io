@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 17"
 
 ---
 
-## Exercício 17.1 {#ex-17-1}
+## ✏️ Exercício 17.1 {#ex-17-1}
 
 **Trabalhador com \( U(C,L) = \ln C + 2\ln L \). Dotação de tempo \( T = 24 \), renda não-laboral \( V = 0 \), salário \( w \).**
 
@@ -112,7 +112,7 @@ Portanto, o salário de reserva é \( w_R = 4 \). Abaixo desse valor, o trabalha
 
 ---
 
-## Exercício 17.2 {#ex-17-2}
+## ✏️ Exercício 17.2 {#ex-17-2}
 
 **Mercado de trabalho competitivo com oferta \( H^s = 100w \) e demanda \( H^d = 4000 - 100w \).**
 
@@ -186,7 +186,7 @@ O peso morto do salário mínimo é \( DWL = 2{.}500 \) unidades monetárias. Es
 
 ---
 
-## Exercício 17.3 {#ex-17-3}
+## ✏️ Exercício 17.3 {#ex-17-3}
 
 **Monopsonista enfrenta oferta de trabalho \( w = 10 + 0{,}5H \) e \( VPMgL = 50 - H \).**
 
@@ -255,7 +255,7 @@ Cada trabalhador recebe um salário 10 unidades monetárias abaixo de sua contri
 
 ---
 
-## Exercício 17.4 {#ex-17-4}
+## ✏️ Exercício 17.4 {#ex-17-4}
 
 **Sindicato maximiza a folha salarial total \( R = w \cdot H^d(w) \), com \( H^d(w) = 1000 - 20w \).**
 
@@ -323,7 +323,7 @@ Esse resultado ilustra o **trade-off fundamental** da ação sindical: o sindica
 
 ---
 
-## Exercício 17.5 {#ex-17-5}
+## ✏️ Exercício 17.5 {#ex-17-5}
 
 **Discussão baseada na teoria e em evidências empíricas brasileiras.**
 

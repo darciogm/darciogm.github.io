@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 18"
 
 ---
 
-## Exercício 18.1 {#ex-18-1}
+## ✏️ Exercício 18.1 {#ex-18-1}
 
 **Consumidor vive dois períodos, \( Y_1 = 100 \), \( Y_2 = 110 \), \( U(C_1, C_2) = \ln C_1 + \frac{1}{1{,}1} \ln C_2 \). Taxa de juros \( r = 10\% \).**
 
@@ -123,7 +123,7 @@ Para o tomador de empréstimo, o aumento dos juros tem efeito renda negativo e e
 
 ---
 
-## Exercício 18.2 {#ex-18-2}
+## ✏️ Exercício 18.2 {#ex-18-2}
 
 **Firma considera investir em máquina: custo R\$500.000, vida útil 5 anos, depreciação linear, receita líquida anual R\$150.000.**
 
@@ -208,7 +208,7 @@ Como \( \text{VPL} > 0 \) (equivalentemente, \( \text{TIR} = 15{,}24\% > 12\% \)
 
 ---
 
-## Exercício 18.3 {#ex-18-3}
+## ✏️ Exercício 18.3 {#ex-18-3}
 
 **Recurso não-renovável com \( S_0 = 1000 \) unidades, \( P_0 = 50 \), custo marginal de extração \( c = 10 \), \( r = 5\% \).**
 
@@ -270,7 +270,7 @@ O estoque se esgota em um horizonte menor.
 
 ---
 
-## Exercício 18.4 {#ex-18-4}
+## ✏️ Exercício 18.4 {#ex-18-4}
 
 **Dois projetos mutuamente excludentes:**
 
@@ -361,7 +361,7 @@ O VPL é considerado o critério superior ao da TIR por diversas razões:
 
 ---
 
-## Exercício 18.5 {#ex-18-5}
+## ✏️ Exercício 18.5 {#ex-18-5}
 
 ### (a) Impacto da redução da taxa de juros real de longo prazo de 6% para 3%
 

@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 10"
 
 ---
 
-## Exercício 10.1 {#ex-10-1}
+## ✏️ Exercício 10.1 {#ex-10-1}
 
 **Solução.**
 
@@ -39,7 +39,7 @@ Ao longo de uma isoquanta, quando \(L\) aumenta, \(K\) diminui, logo \(K/L\) dim
 
 ---
 
-## Exercício 10.2 {#ex-10-2}
+## ✏️ Exercício 10.2 {#ex-10-2}
 
 **Solução.**
 
@@ -60,7 +60,7 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 ---
 
-## Exercício 10.3 {#ex-10-3}
+## ✏️ Exercício 10.3 {#ex-10-3}
 
 **Solução.**
 
@@ -77,7 +77,7 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 ---
 
-## Exercício 10.4 {#ex-10-4}
+## ✏️ Exercício 10.4 {#ex-10-4}
 
 **Solução.**
 
@@ -94,7 +94,7 @@ Rendimentos constantes de escala (\(\gamma = 1\)). ✓
 
 ---
 
-## Exercício 10.5 {#ex-10-5}
+## ✏️ Exercício 10.5 {#ex-10-5}
 
 **Solução.**
 

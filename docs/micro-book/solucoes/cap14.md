@@ -8,7 +8,7 @@ title: "Soluções — Capítulo 14"
 
 ---
 
-## Exercício 14.1 {#ex-14-1}
+## ✏️ Exercício 14.1 {#ex-14-1}
 
 **Solução.**
 
@@ -55,7 +55,7 @@ Alocações: \(x_1^A = (50/6 + 2)/(10/6) = (62/6)/(10/6) = 6{,}2\), \(x_2^A = (5
 
 ---
 
-## Exercício 14.2 {#ex-14-2}
+## ✏️ Exercício 14.2 {#ex-14-2}
 
 **Solução.**
 
@@ -70,7 +70,7 @@ Alocações: \(x_1^A = (50/6 + 2)/(10/6) = (62/6)/(10/6) = 6{,}2\), \(x_2^A = (5
 
 ---
 
-## Exercício 14.3 {#ex-14-3}
+## ✏️ Exercício 14.3 {#ex-14-3}
 
 **Solução.**
 
@@ -111,7 +111,7 @@ Substituindo (ii) em (i): \(3p_2 + 2(p_2 - 1) = 5 \implies 5p_2 = 7 \implies p_2
 
 ---
 
-## Exercício 14.4 {#ex-14-4}
+## ✏️ Exercício 14.4 {#ex-14-4}
 
 **Solução.**
 
@@ -130,7 +130,7 @@ Cada condição emerge naturalmente da otimização individual diante de preços
 
 ---
 
-## Exercício 14.5 {#ex-14-5}
+## ✏️ Exercício 14.5 {#ex-14-5}
 
 **Solução.**
 

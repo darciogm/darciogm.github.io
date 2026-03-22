@@ -194,11 +194,11 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 
 ---
 
-## Box Brasil: Guerra Fiscal do ICMS como Jogo Repetido
+## 🇧🇷 Box Brasil: Guerra Fiscal do ICMS como Jogo Repetido
 
 Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram aplicações diretas na economia brasileira. Os dois Boxes a seguir ilustram, respectivamente, como a lógica do Dilema dos Prisioneiros repetido explica a persistência da guerra fiscal entre estados e como o modelo de Rubinstein ilumina as negociações salariais na indústria automotiva.
 
-!!! example "Box Brasil — A guerra fiscal do ICMS: uma corrida ao fundo"
+!!! example "🇧🇷 Box Brasil — A guerra fiscal do ICMS: uma corrida ao fundo"
     A competição entre estados brasileiros pela atração de investimentos via benefícios fiscais no **ICMS** é um dos exemplos mais claros do Dilema dos Prisioneiros na política econômica brasileira.
 
     **A estrutura do jogo**
@@ -224,9 +224,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-## Box Brasil: Negociação Salarial na Indústria Automotiva
+## 🇧🇷 Box Brasil: Negociação Salarial na Indústria Automotiva
 
-!!! example "Box Brasil — Metalúrgicos vs. Montadoras: barganha à brasileira"
+!!! example "🇧🇷 Box Brasil — Metalúrgicos vs. Montadoras: barganha à brasileira"
     As negociações salariais anuais entre o **Sindicato dos Metalúrgicos do ABC** e as montadoras (Volkswagen, Mercedes-Benz, Toyota) são um exemplo clássico de barganha com ofertas alternadas.
 
     **Estrutura da barganha**
@@ -283,7 +283,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - Jogos dinâmicos com informação completa envolvem jogadores que agem em sequência, podendo observar as ações anteriores. O conceito de solução central é o **Equilíbrio Perfeito em Subjogos (EPS)**, obtido por **indução retroativa**.
 - O EPS refina o equilíbrio de Nash ao eliminar equilíbrios sustentados por **ameaças não críveis** — ações que o jogador não teria incentivo para executar se o momento chegasse.
@@ -292,7 +292,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 - Na **barganha de Rubinstein** (ofertas alternadas), o único EPS gera uma divisão determinada pelos fatores de desconto: o jogador mais paciente obtém a maior fatia.
 - O **comprometimento** — investimento irreversível, contratos vinculantes ou reputação — é o mecanismo que torna ameaças críveis e confere vantagem estratégica.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -309,9 +309,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
+??? example "✏️ Exercício Resolvido 9b.1 — Grim Trigger em postos de combustíveis"
     **Enunciado:** Dois postos de combustíveis interagem repetidamente. Payoffs: se ambos mantêm preço alto (cooperam), cada um lucra R\$ 8.000/mês; se ambos cortam preço (traem), cada um lucra R\$ 2.000/mês; se um corta e outro mantém, o que cortou lucra R\$ 12.000 e o outro lucra R\$ 0. Qual o fator de desconto mínimo para sustentar cooperação com grim trigger?
 
     **Dados:** \(T = 12.000\), \(R = 8.000\), \(P = 2.000\), \(S = 0\).
@@ -336,7 +336,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     **Interpretação:** \(\delta^* = 0{,}4\) é baixo, indicando que a cooperação é fácil de sustentar — consistente com a prevalência de cartéis no setor. Com interação diária, o fator efetivo é próximo de 1, muito acima de 0,4. Isso explica por que o CADE precisa intervir ativamente.
 
-??? example "Exercício Resolvido 9b.2 — Barganha de Rubinstein"
+??? example "✏️ Exercício Resolvido 9b.2 — Barganha de Rubinstein"
     **Enunciado:** Dois agentes negociam a divisão de R\$ 1 milhão com ofertas alternadas. O jogador 1 (proponente) tem \(\delta_1 = 0{,}9\) e o jogador 2 (respondedor) tem \(\delta_2 = 0{,}8\). Encontre a divisão no EPS.
 
     **Resolução:**
@@ -357,7 +357,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-9b-1"></a>**Exercício 9b.1.** (Credibilidade de ameaças) Considere o jogo de entrada com 3 estágios: (1) E decide se entra; (2) I decide se investe K em capacidade; (3) se E entrou, I decide se luta ou acomoda.
 
@@ -456,7 +456,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 6–8.
 - Andersen, Steffen, Seda Ertaç, Uri Gneezy, Moshe Hoffman, e John A. List. 2011. "Stakes Matter in Ultimatum Games." *American Economic Review* 101 (7): 3427–3439. [DOI](https://doi.org/10.1257/aer.101.7.3427)

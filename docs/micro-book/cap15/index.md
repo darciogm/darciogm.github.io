@@ -353,7 +353,7 @@ Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de inc
     - Versões de software (básica, profissional, enterprise).
     - Descontos por quantidade em supermercados.
 
-!!! example "Box Brasil: Discriminação de preços nas passagens aéreas"
+!!! example "🇧🇷 Box Brasil: Discriminação de preços nas passagens aéreas"
     O mercado brasileiro de aviação civil, dominado por três companhias (Latam, Gol e Azul, que juntas detêm mais de 98% do mercado doméstico segundo dados da [ANAC](https://www.anac.gov.br)), é um exemplo rico de discriminação de preços de segundo e terceiro grau.
 
     **Discriminação de segundo grau (autosseleção):**
@@ -395,7 +395,7 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
     **Por que isso importa:** A discriminação de preços pode, em alguns casos, aumentar a quantidade total vendida e até reduzir a perda de peso morto — o que complica o juízo de política concorrencial e exige análise caso a caso pelo CADE.
 
-!!! example "Box Brasil: Monopólios naturais regulados — o setor elétrico e telecomunicações pós-privatização"
+!!! example "🇧🇷 Box Brasil: Monopólios naturais regulados — o setor elétrico e telecomunicações pós-privatização"
     O Brasil passou por extenso processo de privatização e regulação de monopólios naturais nos anos 1990. Dois casos emblemáticos ilustram os desafios da regulação:
 
     **Setor Elétrico**
@@ -544,7 +544,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
-## Resumo do Capítulo
+## 📋 Resumo do Capítulo
 
 - O monopólio surge quando barreiras à entrada (legais, naturais ou estratégicas) impedem a concorrência, permitindo que uma única firma fixe preços acima do custo marginal e obtenha lucros persistentes.
 - O monopolista maximiza lucro igualando receita marginal ao custo marginal (RMg = CMg), operando sempre na faixa elástica da demanda. O markup sobre o custo marginal é inversamente proporcional à elasticidade-preço, conforme medido pelo índice de Lerner.
@@ -553,7 +553,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 - A regulação de monopólios naturais enfrenta um dilema fundamental: a precificação pelo custo marginal gera prejuízos (first-best impraticável), enquanto a precificação pelo custo médio ou por teto de preços (price cap) representa soluções de second-best com trade-offs entre eficiência e incentivos ao investimento.
 - As visões dinâmicas de Schumpeter (destruição criativa) e de Baumol (mercados contestáveis) relativizam os custos do monopólio, sugerindo que lucros de monopólio podem incentivar inovação e que a ameaça de entrada pode disciplinar o incumbente.
 
-## Conceitos-Chave
+## 🔑 Conceitos-Chave
 
 | Conceito | Definição |
 |----------|-----------|
@@ -570,9 +570,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
-## Exercícios Resolvidos
+## ✏️ Exercícios Resolvidos
 
-??? example "Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
+??? example "✏️ Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
     **Enunciado.** Um monopolista enfrenta demanda \(p = 80 - 2q\) e tem custo total \(C(q) = 200 + 8q\). (a) Encontre preço, quantidade e lucro de monopólio. (b) Calcule o índice de Lerner. (c) Calcule a perda de peso morto e o excedente total. (d) Compare com o resultado competitivo.
 
     ---
@@ -609,7 +609,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
-??? example "Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
+??? example "✏️ Exercício Resolvido 15.2 — Discriminação de terceiro grau com dois mercados"
     **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
 
     ---
@@ -642,7 +642,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-??? example "Exercício Resolvido 15.3 — Regulação de monopólio natural"
+??? example "✏️ Exercício Resolvido 15.3 — Regulação de monopólio natural"
     **Enunciado.** Uma distribuidora de água (monopólio natural) tem custo total \(C(q) = 500 + 10q\) e enfrenta demanda \(p = 60 - 0{,}5q\). (a) Calcule o equilíbrio sem regulação. (b) Calcule o resultado com regulação *first-best* (\(p = CMg\)) e mostre o prejuízo. (c) Calcule o resultado *second-best* (\(p = CMe\)).
 
     ---
@@ -701,10 +701,10 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
-## Exercícios
+## ✏️ Exercícios
 
 <a id="ex-15-1"></a>
-??? example "Exercício 15.1"
+??? example "✏️ Exercício 15.1"
     Considere um monopolista com custo total \(C(q) = 100 + 10q\) enfrentando demanda \(p = 50 - 2q\).
 
     a) Encontre o preço, a quantidade e o lucro de monopólio.
@@ -716,7 +716,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-1)
 
 <a id="ex-15-2"></a>
-??? example "Exercício 15.2"
+??? example "✏️ Exercício 15.2"
     Um monopolista atende dois mercados segmentados com demandas \(p_1 = 100 - q_1\) e \(p_2 = 60 - 2q_2\). O custo marginal é constante e igual a 20.
 
     a) Encontre os preços e quantidades ótimos em cada mercado com discriminação de terceiro grau.
@@ -728,7 +728,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-2)
 
 <a id="ex-15-3"></a>
-??? example "Exercício 15.3"
+??? example "✏️ Exercício 15.3"
     O governo impõe um imposto unitário \(t = 4\) sobre um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 30 - q\).
 
     a) Calcule preço, quantidade e lucro antes e depois do imposto.
@@ -740,7 +740,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-3)
 
 <a id="ex-15-4"></a>
-??? example "Exercício 15.4"
+??? example "✏️ Exercício 15.4"
     Um monopolista natural tem custo total \(C(q) = 1000 + 5q\). A demanda é \(p = 45 - q\).
 
     a) Calcule o resultado do monopólio não regulado.
@@ -752,7 +752,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-4)
 
 <a id="ex-15-5"></a>
-??? example "Exercício 15.5"
+??? example "✏️ Exercício 15.5"
     Um monopolista pode adotar uma tarifa em duas partes \((T, p)\) para atender dois tipos de consumidores. O tipo 1 tem demanda \(q_1 = 20 - p\) e o tipo 2 tem demanda \(q_2 = 10 - p\). Há 100 consumidores de cada tipo. O custo marginal é \(c = 2\).
 
     a) Se o monopolista usa preço uniforme, qual é o preço ótimo?
@@ -875,7 +875,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ---
 
-## Referências do Capítulo
+## 📚 Referências do Capítulo
 
 - Besanko, David, e Ronald Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. New York: Wiley. Caps. 11–12.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 12.

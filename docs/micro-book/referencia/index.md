@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Referência
+# 📚 Referência
 
 <div class="section-overview" markdown>
 
