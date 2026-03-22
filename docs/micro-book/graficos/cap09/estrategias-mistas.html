@@ -83,15 +83,15 @@
 
   <script>
     var board1 = JXG.JSXGraph.initBoard('board1', {
-      boundingbox: [-0.12, 25, 1.12, -2.5],
+      boundingbox: [-0.19, 25, 1.12, -3.4],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
     var board2 = JXG.JSXGraph.initBoard('board2', {
-      boundingbox: [-0.12, 25, 1.12, -2.5],
+      boundingbox: [-0.19, 25, 1.12, -3.4],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
-    function addAxes(brd, xName, yName) {
+    function addAxes(brd, xLabel, yLabel) {
       brd.create('axis', [[0,0],[1,0]], {
         ticks: { drawLabels: true, label: { fontSize: 10 }, ticksDistance: 0.25 },
         name: '', withLabel: false
@@ -100,12 +100,17 @@
         ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] } },
         name: '', withLabel: false
       });
-      // Manual axis labels
-      brd.create('text', [1.08, -0.8, xName], { fontSize: 12, fixed: true, anchorX: 'left', useMathJax: true });
-      brd.create('text', [-0.04, 24, yName], { fontSize: 12, fixed: true, anchorX: 'right', useMathJax: true });
+      // Y-axis: centered, rotated, bold
+      brd.create('text', [-0.19 * 0.55, 25 / 2, yLabel], {
+          fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+      });
+      // X-axis: centered, bold
+      brd.create('text', [1.12 / 2, -3.4 * 0.65, xLabel], {
+          fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+      });
     }
-    addAxes(board1, '\\(p\\)', '\\(E[u_2]\\)');
-    addAxes(board2, '\\(q\\)', '\\(E[u_1]\\)');
+    addAxes(board1, '<b><i>p</i></b>', '<b>E[<i>u</i><sub>2</sub>]</b>');
+    addAxes(board2, '<b><i>q</i></b>', '<b>E[<i>u</i><sub>1</sub>]</b>');
 
     var draw1 = [], draw2 = [];
 

@@ -203,9 +203,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board1.create('text', [-4, 105, 'x_2'], { fontSize: 12, fixed: true, anchorX: 'right' });
-    board1.create('text', [105, -4, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board1.create('text', [
+      -13 * 0.55, 128 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board1.create('text', [
+      123 / 2, -13 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     // Budget lines for multiple income levels (faded)
     var budgetLines1 = [];
@@ -322,9 +330,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board2.create('text', [-4, 220, 'M'], { fontSize: 12, fixed: true, anchorX: 'right' });
-    board2.create('text', [105, -8, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board2.create('text', [
+      -13 * 0.55, 255 / 2,
+      '<b><i>M</i></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board2.create('text', [
+      123 / 2, -25 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     // Engel curve for x1
     var engelX1 = board2.create('curve', [

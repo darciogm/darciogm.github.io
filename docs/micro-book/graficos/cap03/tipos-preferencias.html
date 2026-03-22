@@ -133,7 +133,7 @@
   <button class="btn-reset" onclick="drawAll()">Resetar</button>
 
   <script>
-    var BB = [-1.5, 12, 11.5, -1.5];
+    var BB = [-1.8, 12, 11.5, -1.5];
     var boardOpts = {
       boundingbox: BB,
       axis: false,
@@ -152,9 +152,17 @@
         name: '', withLabel: false
       });
 
-      // Manual axis labels
-      brd.create('text', [-0.5, 10.5, '\\(x_2\\)'], { fontSize: 11, fixed: true, anchorX: 'right', useMathJax: true });
-      brd.create('text', [10.5, -0.5, '\\(x_1\\)'], { fontSize: 11, fixed: true, anchorX: 'left', useMathJax: true });
+      // Y-axis label: centered vertically, rotated 90°, bold italic
+      brd.create('text', [
+        BB[0] * 0.55, BB[1] / 2,
+        '<b><i>x</i><sub>2</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+      // X-axis label: centered horizontally, below ticks, bold italic
+      brd.create('text', [
+        BB[2] / 2, BB[3] * 0.65,
+        '<b><i>x</i><sub>1</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
     }
 
     // ========== Cobb-Douglas ==========

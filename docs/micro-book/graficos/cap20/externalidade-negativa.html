@@ -82,12 +82,16 @@
       ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
       name: '', withLabel: false
     });
-    board.create('text', [15.7, -1.1, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+board.create('text', [9.0, -1.9500000000000002, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,24]], {
       ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
-    board.create('text', [-0.72, 26.1, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+board.create('text', [-1.1, 14.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     var ext = 3.0, aD = 20, bS = 1.5, aS = 2;
 

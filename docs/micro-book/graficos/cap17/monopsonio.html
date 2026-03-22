@@ -88,12 +88,16 @@
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
       name: '', withLabel: false
     });
-    board.create('text', [54.5, -2.5, 'H (trabalho)'], { fontSize: 14, fixed: true, anchorX: 'left' });
+board.create('text', [31.0, -4.55, '<b><i>H</i> (trabalho)</b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,52]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
       name: '', withLabel: false
     });
-    board.create('text', [-2.5, 60, 'w'], { fontSize: 14, fixed: true, anchorX: 'right' });
+board.create('text', [-3.8500000000000005, 31.0, '<b><i>w</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     // Supply curve: w = a + bH
     var supplyCurve = board.create('functiongraph', [

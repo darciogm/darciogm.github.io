@@ -78,7 +78,7 @@
   </div>
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-16, 145, 145, -16],
+      boundingbox: [-25, 145, 145, -20],
       showCopyright: false, showNavigation: false,
       defaultAxes: {
         x: { name: '', withLabel: false,
@@ -87,9 +87,14 @@
              ticks: { insertTicks: false, ticksDistance: 10, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
-    // Manual axis labels
-    board.create('text', [140, -6, '\\(q_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
-    board.create('text', [-6, 140, '\\(q_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-25 * 0.55, 145 / 2, '<b><i>q</i><sub>2</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [145 / 2, -20 * 0.65, '<b><i>q</i><sub>1</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     var a = 100, c1 = 20, c2 = 20, b = 1;
 

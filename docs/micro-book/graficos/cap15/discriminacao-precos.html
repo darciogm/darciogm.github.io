@@ -153,9 +153,13 @@
       var maxQ = a / b;
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [620, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('text', [325.0, -13.0, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-26, 178, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+      board.create('text', [-38.5, 92.5, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
       // Entire area under demand above MC = producer surplus (perfect discrimination)
       var pts = [[0, a]];
@@ -176,7 +180,7 @@
       board.create('point', [qc, c], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E' });
       board.create('segment', [[qc, c],[qc, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
 
-      board.create('text', [qc/3, c + (a - c) * 0.4, '\\(\\pi\\)'], { fontSize: 13, color: '#00897b', useMathJax: true, fontWeight: 'bold' });
+      board.create('text', [qc/3, c + (a - c) * 0.4, '\\(\\pi\\)'], { fontSize: 13, color: '#00897b', fontWeight: 'bold' });
 
       var totalSurplus = 0.5 * (a - c) * qc;
       var html = '<div class="section-title">Discriminação de 1o Grau</div>';
@@ -200,9 +204,13 @@
       var maxQ = a / b;
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [620, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('text', [325.0, -13.0, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-26, 178, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+      board.create('text', [-38.5, 92.5, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
       // With two-part tariff: p = c, T captures CS
       var qOpt = Math.max(0, (a - c) / b);
@@ -229,7 +237,7 @@
       board.create('segment', [[qOpt, c],[qOpt, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
 
       // Horizontal line at p = c showing the unit price
-      board.create('text', [qOpt/3, c + (a-c)*0.35, '\\(T\\)'], { fontSize: 13, color: '#00897b', useMathJax: true, fontWeight: 'bold' });
+      board.create('text', [qOpt/3, c + (a-c)*0.35, '\\(T\\)'], { fontSize: 13, color: '#00897b', fontWeight: 'bold' });
 
       var profit = effectiveT + 0; // profit from unit price = 0 since p=c
       var csRemaining = csAtC - effectiveT;
@@ -268,19 +276,23 @@
       var maxQ = Math.max(a1/b1, a2/b2);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [620, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('text', [325.0, -13.0, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-26, 178, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+      board.create('text', [-38.5, 92.5, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
       // Demand 1
       board.create('functiongraph', [function(q){ return a1 - b1*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
-      board.create('text', [a1/b1 - 3, 4, '\\(D_1\\)'], { fontSize: 12, color: '#1565c0', useMathJax: true });
+      board.create('text', [a1/b1 - 3, 4, '\\(D_1\\)'], { fontSize: 12, color: '#1565c0' });
       // MR 1
       board.create('functiongraph', [function(q){ return a1 - 2*b1*q; }], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 2 });
 
       // Demand 2
       board.create('functiongraph', [function(q){ return a2 - b2*q; }], { strokeColor: '#C8102E', strokeWidth: 2.5 });
-      board.create('text', [a2/b2 - 3, 10, '\\(D_2\\)'], { fontSize: 12, color: '#C8102E', useMathJax: true });
+      board.create('text', [a2/b2 - 3, 10, '\\(D_2\\)'], { fontSize: 12, color: '#C8102E' });
       // MR 2
       board.create('functiongraph', [function(q){ return a2 - 2*b2*q; }], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
 

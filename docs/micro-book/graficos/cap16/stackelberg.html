@@ -130,9 +130,13 @@
       var piSC = Math.max(0, (PC - p.cS) * q2C);
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [1065, -44.8, '\\(q_L\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
+      board.create('text', [560.0, -78.0, '<b><i>q</i><sub>L</sub></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-44.8, 1065, '\\(q_S\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+      board.create('text', [-66.0, 560.0, '<b><i>q</i><sub>S</sub></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
       // Follower's reaction function: q2 = (a-cS)/(2b) - q1/2
       var rfIntercept = Math.max(0, (p.a - p.cS) / (2 * p.b));
@@ -141,7 +145,7 @@
         board.create('segment', [[0, rfIntercept], [rfQ1max, 0]], {
           strokeColor: '#C8102E', strokeWidth: 2.5
         });
-        board.create('text', [rfQ1max * 0.85, rfIntercept * 0.1, '\\(R_S(q_L)\\)'], { fontSize: 13, color: '#C8102E', useMathJax: true });
+        board.create('text', [rfQ1max * 0.85, rfIntercept * 0.1, '\\(R_S(q_L)\\)'], { fontSize: 13, color: '#C8102E' });
       }
 
       // Leader's reaction function (for Cournot comparison): q1 = (a-cL)/(2b) - q2/2
@@ -151,7 +155,7 @@
         board.create('segment', [[rfL_int, 0], [0, rfL_q2max]], {
           strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3
         });
-        board.create('text', [rfL_int * 0.9, FIXED_BB[2] * 0.04, '\\(R_L(q_S)\\)'], { fontSize: 12, color: '#1565c0', useMathJax: true });
+        board.create('text', [rfL_int * 0.9, FIXED_BB[2] * 0.04, '\\(R_L(q_S)\\)'], { fontSize: 12, color: '#1565c0' });
       }
 
       // Leader's iso-profit curves

@@ -104,9 +104,17 @@ function initBoard() {
     }
   });
 
-  // Manual axis labels
-  board.create('text', [-1.5, 2700, '$'], { fontSize: 14, fixed: true, anchorX: 'right' });
-  board.create('text', [54, -60, 'q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+  // Y-axis label: centered vertically, rotated 90°, bold italic
+  board.create('text', [
+    -7 * 0.55, 3100 / 2,
+    '<b>$</b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+  // X-axis label: centered horizontally, below ticks, bold italic
+  board.create('text', [
+    60 / 2, -350 * 0.65,
+    '<b><i>q</i></b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
   // Revenue
   revCurve = board.create('functiongraph', [function(q){ return price*q; }, 0, 52], {

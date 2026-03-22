@@ -161,9 +161,14 @@
              ticks: { insertTicks: false, ticksDistance: 50, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
-    // Manual axis labels
-    board.create('text', [110, -5, '\\(x\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
-    board.create('text', [-5, 110, '\\(v(x)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-110 * 0.55, (115 + (-155)) / 2, '<b><i>v</i>(<i>x</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [115 / 2, -155 * 0.65, '<b><i>x</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     // Reference line v = x
     board.create('line', [[0,0],[1,1]], {

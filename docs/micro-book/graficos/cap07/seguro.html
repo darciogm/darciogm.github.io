@@ -80,7 +80,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-2, 19, 19, -2],
+      boundingbox: [-3.2, 19, 19, -2.6],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -95,9 +95,14 @@
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
       name: '', withLabel: false
     });
-    // Manual axis labels
-    board.create('text', [17.5, -0.7, '\\(W_{\\text{bom}}\\)'], { fontSize: 13, fixed: true, anchorX: 'left', useMathJax: true });
-    board.create('text', [-0.7, 17.5, '\\(W_{\\text{ruim}}\\)'], { fontSize: 13, fixed: true, anchorX: 'right', useMathJax: true });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-3.2 * 0.55, 19 / 2, '<b><i>W</i><sub>ruim</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [19 / 2, -2.6 * 0.65, '<b><i>W</i><sub>bom</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     function getW0() { return parseFloat(document.getElementById('slider-w0').value); }
     function getL() { return parseFloat(document.getElementById('slider-L').value); }

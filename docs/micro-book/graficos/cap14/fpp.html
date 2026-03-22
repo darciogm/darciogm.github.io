@@ -103,10 +103,14 @@
 
     board.create('axis', [[0,0],[17,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 },
       name: '', withLabel: false });
-    board.create('text', [17.7, -0.7, 'Bem 1 (X\u2081)'], { fontSize: 14, fixed: true, anchorX: 'left' });
+    board.create('text', [9.5, -1.3, '<b><i>Bem 1 (X<sub>1</sub>)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,17]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  },
       name: '', withLabel: false });
-    board.create('text', [-0.7, 17.7, 'Bem 2 (X\u2082)'], { fontSize: 14, fixed: true, anchorX: 'right' });
+    board.create('text', [-1.1, 9.5, '<b><i>Bem 2 (X<sub>2</sub>)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     // Shade feasible region (under PPF)
     var feasiblePts = [];

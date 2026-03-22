@@ -98,12 +98,16 @@
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
       name: '', withLabel: false
     });
-    board.create('text', [27.2, -38.4, 'L (lazer)'], { fontSize: 14, fixed: true, anchorX: 'left' });
+board.create('text', [15.5, -26.0, '<b><i>L</i> (lazer)</b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,310]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
       name: '', withLabel: false
     });
-    board.create('text', [-1.24, 920, 'C (consumo)'], { fontSize: 14, fixed: true, anchorX: 'right' });
+board.create('text', [-1.9250000000000003, 480.0, '<b><i>C</i> (consumo)</b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     function getState() {
       return {

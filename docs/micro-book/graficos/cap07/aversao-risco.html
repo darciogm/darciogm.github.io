@@ -157,7 +157,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1.5, 12.5, 12.5, -1.5],
+      boundingbox: [-2.2, 12.5, 12.5, -1.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -172,9 +172,14 @@
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
       name: '', withLabel: false
     });
-    // Manual axis labels
-    board.create('text', [11.5, -0.5, '\\(W\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
-    board.create('text', [-0.5, 11.5, '\\(u(W)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-2.2 * 0.55, 12.5 / 2, '<b><i>u</i>(<i>W</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [12.5 / 2, -1.8 * 0.65, '<b><i>W</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     var mode = 'averse';
 

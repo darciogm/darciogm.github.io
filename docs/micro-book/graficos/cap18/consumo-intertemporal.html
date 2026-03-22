@@ -86,12 +86,16 @@
       ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 50 },
       name: '', withLabel: false
     });
-    board.create('text', [418, -23.6, 'C\u2081'], { fontSize: 14, fixed: true, anchorX: 'left' });
+    board.create('text', [235, -40.95, '<b><i>C</i><sub>1</sub></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,500]], {
       ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
       name: '', withLabel: false
     });
-    board.create('text', [-18.8, 566, 'C\u2082'], { fontSize: 14, fixed: true, anchorX: 'right' });
+    board.create('text', [-27.5, 295, '<b><i>C</i><sub>2</sub></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     // Intertemporal budget line: C2 = (1+r)*(W - C1) = (1+r)*W - (1+r)*C1
     var budgetLine = board.create('segment', [

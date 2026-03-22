@@ -84,12 +84,16 @@
       ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
       name: '', withLabel: false
     });
-    board.create('text', [12, -0.64, 'Poluição (q)'], { fontSize: 14, fixed: true, anchorX: 'left' });
+    board.create('text', [6.75, -1.3, '<b><i>Poluição (q)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,13]], {
       ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
-    board.create('text', [-0.54, 14.6, '$'], { fontSize: 14, fixed: true, anchorX: 'right' });
+    board.create('text', [-0.9900000000000001, 8.0, '<b><i>$</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     var aMB = 10, bMD = 1.0, cMB = 1.0;
     var rights = 'polluter'; // 'polluter' or 'victim'

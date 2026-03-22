@@ -88,7 +88,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-30, 280, 280, -30],
+      boundingbox: [-47, 280, 280, -38],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
@@ -100,9 +100,14 @@
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
       name: '', withLabel: false
     });
-    // Manual axis labels
-    board.create('text', [270, -10, '\\(q_1\\)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
-    board.create('text', [-10, 270, '\\(q_2\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-47 * 0.55, 280 / 2, '<b><i>q</i><sub>2</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [280 / 2, -38 * 0.65, '<b><i>q</i><sub>1</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     function getA() { return parseFloat(document.getElementById('slider-a').value); }
     function getB() { return parseFloat(document.getElementById('slider-b').value); }

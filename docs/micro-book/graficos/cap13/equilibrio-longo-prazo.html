@@ -110,9 +110,13 @@
       axis: false, showCopyright: false, showNavigation: false
     });
     firmBoard.create('axis', [[0,0],[10,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: '', withLabel: false });
-    firmBoard.create('text', [10.5, -0.6, 'q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+firmBoard.create('text', [5.75, -1.3, '<b><i>q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     firmBoard.create('axis', [[0,0],[0,14]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: '', withLabel: false });
-    firmBoard.create('text', [-0.5, 14.6, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+firmBoard.create('text', [-0.8250000000000001, 8.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     // MC curve
     firmBoard.create('functiongraph', [function(q) { return MC(q); }, 0, 10],
@@ -154,9 +158,13 @@
       axis: false, showCopyright: false, showNavigation: false
     });
     mktBoard.create('axis', [[0,0],[60,0]], { ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 0 }, name: '', withLabel: false });
-    mktBoard.create('text', [63, -0.6, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+mktBoard.create('text', [33.5, -1.3, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     mktBoard.create('axis', [[0,0],[0,14]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: '', withLabel: false });
-    mktBoard.create('text', [-3, 14.6, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+mktBoard.create('text', [-3.8500000000000005, 8.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     // Market demand
     mktBoard.create('functiongraph', [function(Q) { return (80 + deltaD - Q) / 5; }, 0, 60],

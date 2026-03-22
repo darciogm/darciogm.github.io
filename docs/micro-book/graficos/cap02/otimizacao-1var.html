@@ -94,7 +94,7 @@ function fpp(x) { return -2 * paramB; }
 
 function initBoard() {
   board = JXG.JSXGraph.initBoard('board', {
-    boundingbox: [-1.2, 12.5, 9, -1.5],
+    boundingbox: [-1.5, 12.5, 9, -1.5],
     axis: true,
     showCopyright: false,
     showNavigation: false,
@@ -104,9 +104,17 @@ function initBoard() {
     }
   });
 
-  // Manual axis labels
-  board.create('text', [-0.4, 12, 'f(x)'], { fontSize: 14, fixed: true, anchorX: 'right' });
-  board.create('text', [9.4, -0.4, 'x'], { fontSize: 14, fixed: true, anchorX: 'left' });
+  // Y-axis label: centered vertically, rotated 90°, bold italic
+  board.create('text', [
+    -1.5 * 0.55, 12.5 / 2,
+    '<b><i>f</i>(<i>x</i>)</b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+  // X-axis label: centered horizontally, below ticks, bold italic
+  board.create('text', [
+    9 / 2, -1.5 * 0.65,
+    '<b><i>x</i></b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
   // Function curve
   fCurve = board.create('functiongraph', [f, -6, 9], {

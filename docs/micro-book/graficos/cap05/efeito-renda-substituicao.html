@@ -199,9 +199,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board.create('text', [-5, 147, 'x_2'], { fontSize: 12, fixed: true, anchorX: 'right' });
-    board.create('text', [147, -5, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board.create('text', [
+      -17 * 0.55, 170 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board.create('text', [
+      162 / 2, -17 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     function getState() {
       return {

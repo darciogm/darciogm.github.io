@@ -73,13 +73,19 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-2, 28, 17, -3],
+      boundingbox: [-2.9, 28, 17, -3.8],
       axis: false, showCopyright: false, showNavigation: false
     });
     board.create('axis', [[0,0],[15,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
     board.create('axis', [[0,0],[0,25]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
-    board.create('text', [14.3, -0.5, 'q'], { fontSize: 12 });
-    board.create('text', [-0.4, 24, 'CMe'], { fontSize: 12 });
+    // Y-axis: centered, rotated, bold
+    board.create('text', [-2.9 * 0.55, 28 / 2, '<b>CMe</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [17 / 2, -3.8 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     var objs = [];
 

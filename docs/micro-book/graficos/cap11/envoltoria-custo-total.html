@@ -94,14 +94,20 @@
   <script>
     // --- Board setup ---
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1.2, 25, 9, -3],
+      boundingbox: [-1.6, 25, 9, -3.4],
       axis: false, showCopyright: false, showNavigation: false,
       pan: { enabled: true }, zoom: { wheel: true, pinch: true }
     });
     board.create('axis', [[0,0],[8,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
     board.create('axis', [[0,0],[0,22]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
-    board.create('text', [7.5, -0.6, 'q'], { fontSize: 13, cssClass: 'axis-label' });
-    board.create('text', [-0.35, 21, 'CT'], { fontSize: 13, cssClass: 'axis-label' });
+    // Y-axis: centered, rotated, bold
+    board.create('text', [-1.6 * 0.55, 25 / 2, '<b>CT</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [9 / 2, -3.4 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     var objs = [];
 

@@ -102,9 +102,13 @@
       rebuildBoard();
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [1070, -9, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+      board.create('text', [560.0, -15.600000000000001, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-44.8, 218, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+      board.create('text', [-66.0, 112.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
       // Demand
       board.create('functiongraph', [function(q){ return p.a - p.b*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });

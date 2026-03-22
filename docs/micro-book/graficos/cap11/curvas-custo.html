@@ -88,23 +88,35 @@
   <script>
     // Board 1: CT
     var b1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-3, 560, 25, -60],
+      boundingbox: [-4.2, 560, 25, -75],
       axis: false, showCopyright: false, showNavigation: false
     });
     b1.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
     b1.create('axis', [[0,0],[0,500]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
-    b1.create('text', [21, -15, 'q'], { fontSize: 12 });
-    b1.create('text', [-0.8, 480, 'CT'], { fontSize: 12, color: '#333' });
+    // Y-axis: centered, rotated, bold
+    b1.create('text', [-4.2 * 0.55, 560 / 2, '<b>CT</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    b1.create('text', [25 / 2, -75 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     // Board 2: CMe, CMg, CVMe
     var b2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-3, 90, 25, -10],
+      boundingbox: [-4.2, 90, 25, -12],
       axis: false, showCopyright: false, showNavigation: false
     });
     b2.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
     b2.create('axis', [[0,0],[0,80]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
-    b2.create('text', [21, -3, 'q'], { fontSize: 12 });
-    b2.create('text', [-0.8, 76, '$'], { fontSize: 12, color: '#333' });
+    // Y-axis: centered, rotated, bold
+    b2.create('text', [-4.2 * 0.55, 90 / 2, '<b>$</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    b2.create('text', [25 / 2, -12 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     var objs1 = [], objs2 = [];
     var dragPt = null;

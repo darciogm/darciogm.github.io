@@ -228,9 +228,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board1.create('text', [-4, 115, 'x_2'], { fontSize: 11, fixed: true, anchorX: 'right' });
-    board1.create('text', [115, -4, 'x_1'], { fontSize: 11, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board1.create('text', [
+      -14 * 0.55, 133 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board1.create('text', [
+      128 / 2, -14 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     // Budget line at current p1
     board1.create('segment', [
@@ -270,7 +278,7 @@
 
     // --- Bottom panel: Demand curves ---
     var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-10, 8.5, 90, -0.8],
+      boundingbox: [-10, 8.5, 90, -1.1],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -286,9 +294,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board2.create('text', [-3, 7.5, 'p_1'], { fontSize: 11, fixed: true, anchorX: 'right' });
-    board2.create('text', [78, -0.3, 'x_1'], { fontSize: 11, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board2.create('text', [
+      -10 * 0.55, 8.5 / 2,
+      '<b><i>p</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board2.create('text', [
+      90 / 2, -1.1 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     // Consumer surplus shaded area (under marshallian, above p1)
     var csPolygon = board2.create('curve', [[], []], {

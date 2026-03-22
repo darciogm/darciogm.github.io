@@ -347,10 +347,10 @@
 
       board.suspendUpdate();
       clearAll();
-      var bbLeft = -bbMax * 0.15;
-      var bbBottom = -bbMax * 0.12;
-      var bbRight = bbMax * 1.10;
-      var bbTop = bbMax * 1.12;
+      var bbLeft = -bbMax * 0.18;
+      var bbBottom = -bbMax * 0.15;
+      var bbRight = bbMax * 1.08;
+      var bbTop = bbMax * 1.08;
       board.setBoundingBox([bbLeft, bbTop, bbRight, bbBottom]);
 
       // --- Indifference curves ---
@@ -414,13 +414,14 @@
         });
       }
 
-      // --- Dynamic axis labels (follow bounding box) ---
-      var axEnd = bbMax * 0.95;
-      curves.push(board.create('text', [bbLeft * 0.3, axEnd + bbMax * 0.04, '\\(x_2\\)'], {
-        fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true
+      // --- Dynamic axis labels: centered, rotated Y, bold italic ---
+      var yMid = bbMax * 0.5;
+      var xMid = bbMax * 0.5;
+      curves.push(board.create('text', [bbLeft * 0.55, yMid, '<b><i>x</i><sub>2</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
       }));
-      curves.push(board.create('text', [axEnd + bbMax * 0.04, bbBottom * 0.3, '\\(x_1\\)'], {
-        fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true
+      curves.push(board.create('text', [xMid, bbBottom * 0.65, '<b><i>x</i><sub>1</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
       }));
 
       board.unsuspendUpdate();

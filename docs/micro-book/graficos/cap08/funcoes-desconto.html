@@ -169,7 +169,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-2.5, 1.28, 25, -0.14],
+      boundingbox: [-4.2, 1.28, 25, -0.18],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
@@ -179,9 +179,14 @@
              ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
-    // Manual axis labels
-    board.create('text', [24, -0.05, '\\(t\\) (periodos)'], { fontSize: 14, fixed: true, anchorX: 'left', useMathJax: true });
-    board.create('text', [-1, 1.24, '\\(D(t)\\)'], { fontSize: 14, fixed: true, anchorX: 'right', useMathJax: true });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-4.2 * 0.55, 1.28 / 2, '<b><i>D</i>(<i>t</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [25 / 2, -0.18 * 0.65, '<b><i>t</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
 
     var delta = 0.95, betaParam = 0.70;
 

@@ -85,7 +85,7 @@
   <script>
     // Board 1: Demand for x1 as function of p2
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-0.8, 70, 7, -7],
+      boundingbox: [-1.1, 70, 7, -7],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board1.create('axis', [[0,0],[6,0]], {
@@ -97,9 +97,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board1.create('text', [-0.3, 58, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'right' });
-    board1.create('text', [6.3, -2, 'p_2'], { fontSize: 12, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board1.create('text', [
+      -1.1 * 0.55, 70 / 2,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board1.create('text', [
+      7 / 2, -7 * 0.65,
+      '<b><i>p</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     // CES demand: x1 = I * p1^(s-1) / (p1^s + p2^s) where s = rho/(rho-1)
     function cesDemandX1(p1, p2, I, rho) {
@@ -163,9 +171,17 @@
       name: '', withLabel: false
     });
 
-    // Manual axis labels
-    board2.create('text', [-2, 58, 'x_2'], { fontSize: 12, fixed: true, anchorX: 'right' });
-    board2.create('text', [58, -2, 'x_1'], { fontSize: 12, fixed: true, anchorX: 'left' });
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board2.create('text', [
+      -7 * 0.55, 70 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board2.create('text', [
+      67 / 2, -7 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
     // Budget line
     var budgetLine = board2.create('segment', [

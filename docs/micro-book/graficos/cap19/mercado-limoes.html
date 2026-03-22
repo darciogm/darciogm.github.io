@@ -92,8 +92,12 @@
       ticks: { drawLabels: false, ticksDistance: 0.2, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } },
       name: '', withLabel: false
     });
-    board.create('text', [1.1, -0.046, 'λ (fração limoes)'], { fontSize: 14, fixed: true, anchorX: 'left' });
-    board.create('text', [-0.046, 1.1, 'Valor'], { fontSize: 14, fixed: true, anchorX: 'right' });
+    board.create('text', [0.575, -0.078, '<b><i>λ</i> (fração limões)</b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('text', [-0.066, 0.575, '<b><i>Valor</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     var lam=0.5, VH=30, VL=15, CH=25, CL=10;
     var maxVal = 50;

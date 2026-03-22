@@ -75,12 +75,16 @@
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
       name: '', withLabel: false
     });
-    board.create('text', [897, -7.4, 'Q'], { fontSize: 14, fixed: true, anchorX: 'left' });
+board.create('text', [460.0, -13.0, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
     board.create('axis', [[0,0],[0,1]], {
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20  },
       name: '', withLabel: false
     });
-    board.create('text', [-37, 177.4, 'P'], { fontSize: 14, fixed: true, anchorX: 'right' });
+board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
 
     function gp() {
       return {
@@ -173,11 +177,11 @@
     board.create('text', [
       -6, function(){ return (gp().a+gp().c)/2; },
       function(){ return '\\(P^m\\)'; }
-    ], { fontSize: 13, color: '#C8102E', anchorX: 'right', useMathJax: true });
+    ], { fontSize: 13, color: '#C8102E', anchorX: 'right' });
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, -4,
       function(){ return '\\(Q^m\\)'; }
-    ], { fontSize: 13, color: '#C8102E', anchorX: 'middle', useMathJax: true });
+    ], { fontSize: 13, color: '#C8102E', anchorX: 'middle' });
 
     // Competitive point
     var ptComp = board.create('point', [
@@ -192,7 +196,7 @@
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/p.b; }, -4,
       function(){ return '\\(Q^c\\)'; }
-    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', useMathJax: true });
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle' });
 
     // Area labels — hidden when areas shrink too small
     board.create('text', [
@@ -206,7 +210,7 @@
       function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
       function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)/2; },
       function(){ return '\\(\\pi\\)'; }
-    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', useMathJax: true,
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold',
          visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     board.create('text', [
