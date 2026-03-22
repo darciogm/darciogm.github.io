@@ -162,7 +162,7 @@ x^{\alpha} & \text{se } x \geq 0 \\
 onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda > 1\) captura a aversão à perda. As estimativas originais de Tversky e Kahneman (1992) são \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/funcao-valor-pt.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/funcao-valor-pt.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -239,7 +239,7 @@ onde \(\gamma \in (0,1)\) controla o grau de distorção. As propriedades princi
 O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para ganhos e \(\gamma^- = 0{,}69\) para perdas. Prelec (1998) propôs uma forma axiomática alternativa, \(w(p) = \exp(-(-\ln p)^{\alpha})\), com propriedades de auto-similitude (Dhami 2016, p. 153–157).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ponderacao-prob.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/ponderacao-prob.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -384,7 +384,7 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
     Esse padrão viola a UE de Savage. Se o agente atribui probabilidade subjetiva \(P(\text{vermelho em B}) < 0{,}5\), deveria atribuir \(P(\text{preto em B}) > 0{,}5\) e preferir a Urna B na aposta em preto. A preferência simultânea pela Urna A em ambas as apostas revela uma aversão à **ambiguidade** — à falta de informação sobre as probabilidades — que vai além da aversão ao risco (Dhami 2016, p. 321–324).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ellsberg-urnas.html" class="grafico-simples"></iframe>
+  <iframe src="../graficos/cap08/ellsberg-urnas.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -475,7 +475,7 @@ x < \frac{\alpha_R}{ 1 + 2\alpha_R} \cdot S
 Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são rejeitadas. Com \(\alpha_R = 4\), o limiar sobe para \(x^* \approx 0{,}44 \cdot S\). O modelo prevê corretamente que respondedores com maior aversão à desvantagem exigem ofertas mais generosas.
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/fehr-schmidt.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/fehr-schmidt.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -483,7 +483,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 </p>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ultimatum-game.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/ultimatum-game.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -611,7 +611,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
     **Por que isso importa:** O desconto hiperbólico explica por que pessoas aderem a planos de previdência com desconto em folha (mecanismo de comprometimento) e por que políticas de "opt-out" — como a inscrição automática no FGTS — são mais eficazes que "opt-in" para promover poupança.
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/funcoes-desconto.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/funcoes-desconto.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -619,7 +619,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 </p>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/indiferenca-intertemporal.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/indiferenca-intertemporal.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
@@ -714,7 +714,7 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 | Simplificação | Sobrecarga cognitiva | Reduzir opções e burocracia | Formulário FAFSA simplificado | +8 p.p. na inscrição universitária |
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/nudge-default.html" class="grafico-painel"></iframe>
+  <iframe src="../graficos/cap08/nudge-default.html" width="100%" style="border:none;border-radius:8px; min-height:400px;"></iframe>
 </div>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>

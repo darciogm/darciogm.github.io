@@ -184,7 +184,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     **Exercício:** Mude `N` de 3 para 10. O que acontece com a receita? E com o surplus do vencedor?
 
-    <iframe src="../graficos/cap09/webr-auction.html" class="grafico-simples"></iframe>
+    <iframe src="../graficos/cap09/webr-auction.html" width="100%" style="border:1px solid #ddd; border-radius:6px; min-height:400px;" loading="lazy"></iframe>
 
     <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem; min-height:400px;" markdown>
     **Figura 9c.1** — Simulação Monte Carlo de leilões de 1º e 2º preço. Altere <code>N</code> (licitantes) e <code>n_sim</code> (simulações) para explorar o Teorema da Equivalência de Receita.

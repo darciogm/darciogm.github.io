@@ -132,6 +132,7 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/iframe-resize.js
   - javascripts/toc-toggle.js
 
 extra:

@@ -25,7 +25,6 @@
       background: #ffffff;
       color: #333;
       padding: 1rem;
-      overflow: hidden;
     }
     .graph-title {
       font-size: 1.1rem;
@@ -161,6 +160,8 @@
       .urns-row { flex-direction: column; align-items: center; }
       .choice-row { flex-direction: column; }
     }
+    /* iframe-height-fix */
+    html,body{height:auto!important;min-height:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
