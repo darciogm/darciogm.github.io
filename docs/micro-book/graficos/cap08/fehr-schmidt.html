@@ -48,9 +48,7 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
-      overflow: visible !important;
     }
-    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 280px;
       padding: 1rem;
@@ -180,7 +178,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-10, 115, 110, -85],
+      boundingbox: [-3, 115, 110, -5],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
@@ -214,7 +212,7 @@
     ], { strokeColor: '#C8102E', strokeWidth: 3 });
 
     // Vertical line at y_j = y_i (equality point)
-    var eqLine = board.create('segment', [[50, -80], [50, 110]], {
+    var eqLine = board.create('segment', [[50, -4], [50, 110]], {
       strokeColor: '#2a7f2a', strokeWidth: 1, dash: 3, fixed: true
     });
 
@@ -254,7 +252,7 @@
 
       selfLine.Y = function() { return yi; };
 
-      eqLine.point1.moveTo([yi, -80]);
+      eqLine.point1.moveTo([yi, -4]);
       eqLine.point2.moveTo([yi, 110]);
       eqLabel.moveTo([yi + 2, 95]);
 

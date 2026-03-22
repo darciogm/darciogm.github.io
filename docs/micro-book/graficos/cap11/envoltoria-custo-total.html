@@ -47,8 +47,6 @@
       #jxgbox { width: 100%; max-width: 520px; }
       .controls { width: 100%; max-width: 520px; }
     }
-    #jxgbox { overflow: visible !important; }
-    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -96,7 +94,7 @@
   <script>
     // --- Board setup ---
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1.5, 23, 9, -2],
+      boundingbox: [-0.8, 23, 9, -0.8],
       axis: false, showCopyright: false, showNavigation: false,
       pan: { enabled: true }, zoom: { wheel: true, pinch: true }
     });

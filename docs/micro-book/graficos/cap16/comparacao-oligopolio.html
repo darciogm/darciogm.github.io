@@ -23,8 +23,7 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 440px; border: 1px solid #ddd; border-radius: 6px;  overflow: visible !important; }
-    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
+ #jxgbox { width: 520px; height: 440px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { width: 340px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.7rem; }
@@ -71,7 +70,7 @@
   <script>
     // Fixed bounding box: worst case a=200, b=0.2, c=0 → maxQ=(a-c)/b*1.15=1150, maxP=a*1.1=220.
     // Padding: x=-92 (maxQ*0.08), y=-18 (maxP*0.08).
-    var FIXED_BB = [-92, 220, 1150, -18];
+    var FIXED_BB = [-12, 220, 1150, -2];
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
       boundingbox: FIXED_BB,

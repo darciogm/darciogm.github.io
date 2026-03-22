@@ -25,8 +25,7 @@
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
     .boards-wrapper { display: flex; flex-direction: column; gap: 0.5rem; }
     .board-label { font-size: 0.8rem; font-weight: 700; color: #555; text-align: center; }
-    .jxgbox { width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px;  overflow: visible !important; }
-    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
+ .jxgbox { width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }
@@ -186,7 +185,7 @@
 
     // Board 1: Leisure-Consumption space
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-2, 1250, 28, -63],
+      boundingbox: [-1, 1250, 28, -13],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
 
@@ -213,7 +212,7 @@
 
     // Board 2: Labor supply curve h*(w)
     var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-1.5, 46, 21, -2],
+      boundingbox: [-1, 46, 21, -0.5],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
 

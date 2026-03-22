@@ -60,9 +60,7 @@
       height: 320px;
       border: 1px solid #ddd;
       border-radius: 6px;
-      overflow: visible !important;
     }
-    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 300px;
       padding: 1rem;
@@ -188,7 +186,7 @@
   <script>
     // --- Board 1: Goods space with budget lines and expansion path ---
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-5, 110, 110, -5],
+      boundingbox: [-0.8, 110, 110, -0.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -304,7 +302,7 @@
 
     // --- Board 2: Engel curve (M vertical, x horizontal) ---
     var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-5, 220, 110, -10],
+      boundingbox: [-0.8, 220, 110, -0.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,

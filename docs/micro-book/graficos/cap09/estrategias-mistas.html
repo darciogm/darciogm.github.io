@@ -28,8 +28,7 @@
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
     .board-wrap { text-align: center; }
     .board-wrap h4 { font-size: 0.9rem; color: #333; margin-bottom: 0.3rem; }
-    .jxgbox { width: 400px; height: 320px; border: 1px solid #ddd; border-radius: 6px; display: inline-block; overflow: visible !important; }
-    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
+    .jxgbox { width: 400px; height: 320px; border: 1px solid #ddd; border-radius: 6px; display: inline-block; }
     .controls { width: 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .payoff-grid { display: grid; grid-template-columns: auto 1fr 1fr; gap: 0.2rem; margin-bottom: 0.8rem; font-size: 0.82rem; }
@@ -84,11 +83,11 @@
 
   <script>
     var board1 = JXG.JSXGraph.initBoard('board1', {
-      boundingbox: [-0.12, 23, 1.12, -5],
+      boundingbox: [-0.06, 23, 1.12, -2],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
     var board2 = JXG.JSXGraph.initBoard('board2', {
-      boundingbox: [-0.12, 23, 1.12, -5],
+      boundingbox: [-0.06, 23, 1.12, -2],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 

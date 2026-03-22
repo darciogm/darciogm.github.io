@@ -37,10 +37,6 @@
     @media (max-width: 760px) {
       #firmbox, #marketbox { width: 100%; max-width: 340px; }
     }
-    #firmbox { overflow: visible !important; }
-    #firmbox svg, #firmbox .JXGtext { overflow: visible !important; }
-    #marketbox { overflow: visible !important; }
-    #marketbox svg, #marketbox .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -152,7 +148,7 @@
 
     // Market panel
     var mktBoard = JXG.JSXGraph.initBoard('marketbox', {
-      boundingbox: [-4, 15, 63, -1.5],
+      boundingbox: [-1, 15, 63, -1],
       axis: false, showCopyright: false, showNavigation: false
     });
     mktBoard.create('axis', [[0,0],[60,0]], { ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 0, label: { fontSize: 10 } }, name: 'Q', withLabel: true, label: { position: 'rt', offset: [-12,12], fontSize: 12 } });

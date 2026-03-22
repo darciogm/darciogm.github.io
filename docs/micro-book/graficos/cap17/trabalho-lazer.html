@@ -23,8 +23,7 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    .jxgbox { width: 480px; height: 400px; border: 1px solid #ddd; border-radius: 6px;  overflow: visible !important; }
-    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
+ .jxgbox { width: 480px; height: 400px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { width: 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
@@ -92,7 +91,7 @@
     var currentFn = 'cd';
 
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-2, 860, 28, -43],
+      boundingbox: [-1, 860, 28, -9],
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board.create('axis', [[0,0],[26,0]], {

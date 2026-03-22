@@ -60,9 +60,7 @@
       height: 300px;
       border: 1px solid #ddd;
       border-radius: 6px;
-      overflow: visible !important;
     }
-    .jxgbox svg, .jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 290px;
       padding: 1rem;
@@ -214,7 +212,7 @@
 
     // --- Top panel: Goods space ---
     var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-3, 115, 115, -3],
+      boundingbox: [-0.8, 115, 115, -0.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -223,11 +221,11 @@
 
     board1.create('axis', [[0,0],[110,0]], {
       ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 20 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 12], fontSize: 11 }
+      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 11 }
     });
     board1.create('axis', [[0,0],[0,110]], {
       ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 20 },
-      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [12, -5], fontSize: 11 }
+      name: 'x_2', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 11 }
     });
 
     // Budget line at current p1
@@ -268,7 +266,7 @@
 
     // --- Bottom panel: Demand curves ---
     var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-3, 7, 80, -0.3],
+      boundingbox: [-0.8, 7, 80, -0.3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -277,11 +275,11 @@
 
     board2.create('axis', [[0,0],[75,0]], {
       ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 10 },
-      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 12], fontSize: 11 }
+      name: 'x_1', withLabel: true, label: { position: 'rt', offset: [-15, 15], fontSize: 11 }
     });
     board2.create('axis', [[0,0],[0,7]], {
       ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 1 },
-      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [12, -5], fontSize: 11 }
+      name: 'p_1', withLabel: true, label: { position: 'rt', offset: [15, -5], fontSize: 11 }
     });
 
     // Consumer surplus shaded area (under marshallian, above p1)

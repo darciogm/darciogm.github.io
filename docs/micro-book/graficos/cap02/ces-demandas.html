@@ -49,9 +49,7 @@
       height: 420px;
       border: 1px solid #ddd;
       border-radius: 6px;
-      overflow: visible !important;
     }
-    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
     .controls {
       width: 300px;
       padding: 1rem;
@@ -315,7 +313,7 @@
     // ---- Drawing ----
     function initBoard() {
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: [-2, 70, 70, -5],
+        boundingbox: [-0.8, 70, 70, -0.8],
         axis: true,
         showCopyright: false,
         showNavigation: false,
@@ -347,7 +345,7 @@
 
       board.suspendUpdate();
       clearAll();
-      board.setBoundingBox([-bbMargin, bbMax, bbMax, -bbMargin]);
+      board.setBoundingBox([-0.8, bbMax, bbMax, -0.8]);
 
       // --- Indifference curves ---
       var nCurves = 7;

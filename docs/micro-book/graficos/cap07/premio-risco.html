@@ -26,8 +26,7 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-title { font-size: 1.1rem; font-weight: 700; color: #C8102E; margin-bottom: 0.5rem; text-align: center; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; overflow: visible !important; }
-    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
+    #jxgbox { width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { width: 320px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }
@@ -86,7 +85,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-1.5, 13, 11.5, -26],
+      boundingbox: [-0.8, 13, 11.5, -0.8],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -228,7 +227,7 @@
       if (Math.abs(riskPrem) > 0.02) {
         var x1 = Math.min(CE, W), x2 = Math.max(CE, W);
         var poly = board.create('polygon', [
-          [x1, -25], [x2, -25], [x2, EuW], [x1, EuW]
+          [x1, 0], [x2, 0], [x2, EuW], [x1, EuW]
         ], {
           fillColor: '#C8102E', fillOpacity: 0.1,
           borders: { strokeColor: '#C8102E', strokeWidth: 1, dash: 2 },
@@ -238,7 +237,7 @@
       }
 
       // Vertical at W
-      var vW = board.create('segment', [[W, -25], [W, uW]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true });
+      var vW = board.create('segment', [[W, 0], [W, uW]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true });
       drawObjects.push(vW);
 
       // Dashed at w1, w2

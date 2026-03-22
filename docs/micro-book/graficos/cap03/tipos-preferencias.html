@@ -72,9 +72,7 @@
     .jxg-panel {
       width: 100%;
       height: 300px;
-      overflow: visible !important;
     }
-    .jxg-panel svg, .jxg-panel .JXGtext { overflow: visible !important; }
     .btn-reset {
       display: block;
       width: 200px;
@@ -135,7 +133,7 @@
   <button class="btn-reset" onclick="drawAll()">Resetar</button>
 
   <script>
-    var BB = [-1.5, 11.5, 11.5, -1.5];
+    var BB = [-0.8, 11.5, 11.5, -0.8];
     var boardOpts = {
       boundingbox: BB,
       axis: false,
@@ -148,12 +146,12 @@
       brd.create('axis', [[0,0],[10,0]], {
         ticks: { drawLabels: true, label: { fontSize: 9 } },
         name: '\\(x_1\\)', withLabel: true,
-        label: { position: 'rt', offset: [-12, -16], fontSize: 11, useMathJax: true }
+        label: { position: 'rt', offset: [-15, 15], fontSize: 11, useMathJax: true }
       });
       brd.create('axis', [[0,0],[0,10]], {
         ticks: { drawLabels: true, label: { fontSize: 9 } },
         name: '\\(x_2\\)', withLabel: true,
-        label: { position: 'rt', offset: [-20, -5], fontSize: 11, useMathJax: true }
+        label: { position: 'rt', offset: [15, -5], fontSize: 11, useMathJax: true }
       });
     }
 

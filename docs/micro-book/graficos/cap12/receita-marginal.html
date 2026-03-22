@@ -38,8 +38,6 @@
     .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 880px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { width: 100%; max-width: 540px; } .controls { width: 100%; max-width: 540px; } }
-    #jxgbox { overflow: visible !important; }
-    #jxgbox svg, #jxgbox .JXGtext { overflow: visible !important; }
   </style>
 </head>
 <body>
@@ -75,7 +73,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-2, 27, 26, -14],
+      boundingbox: [-0.8, 27, 26, -10],
       axis: false, showCopyright: false, showNavigation: false
     });
     board.create('axis', [[0,0],[25,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
