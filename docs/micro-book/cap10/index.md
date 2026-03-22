@@ -96,9 +96,9 @@ A resposta está nas **isoquantas** e na **taxa marginal de substituição técn
 
 <iframe src="../graficos/cap10/isoquantas.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 10.1 — Mapa de isoquantas interativo.** Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.
-</p>
+</div>
 
 ### Isoquantas
 
@@ -183,9 +183,9 @@ Até aqui, nossa análise caminhou em duas direções complementares: primeiro, 
 
 <iframe src="../graficos/cap10/rendimentos-escala.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 10.2 — Rendimentos de escala.** Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.
-</p>
+</div>
 
 !!! definition "Rendimentos de escala"
     Considere a função de produção \(f(K, L)\) e um escalar \(t > 1\). Os **rendimentos de escala** classificam-se em:
@@ -411,9 +411,9 @@ A CES **generaliza** as três funções anteriores:
 | **Isoquantas** | Retas | Ângulos retos | Hipérboles convexas | Curvas convexas |
 | **Casos especiais** | — | — | CES com \(\rho \to 0\) | Generaliza todas |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 10.1 — Comparativa das funções de produção.**
-</p>
+</div>
 
 As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a tecnologia evolui — e a incorporação dessa evolução ao modelo é o tema da próxima seção.
 
@@ -466,9 +466,9 @@ A resposta reside no **progresso técnico** — o deslocamento da própria funç
 
 <iframe src="../graficos/cap10/progresso-tecnico.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 10.3 — Progresso técnico e deslocamento de isoquantas.** Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).
-</p>
+</div>
 
 Formalmente, introduzimos o tempo \(t\) na função de produção. A formulação mais simples é:
 

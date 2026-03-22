@@ -78,9 +78,9 @@ Estabelecida a relação entre maximização de lucro e minimização de custos,
 
 <iframe src="../graficos/cap11/minimizacao-custo.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 11.1 — Minimização de custo.** A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(v\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.
-</p>
+</div>
 
 ### O problema de minimização de custos
 
@@ -235,9 +235,9 @@ A função custo derivada na seção anterior é uma construção abstrata que r
 
 <iframe src="../graficos/cap11/curvas-custo.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 11.2 — Curvas de custo total, médio e marginal.** Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.
-</p>
+</div>
 
 ### Custo total, custo médio e custo marginal
 
@@ -262,9 +262,9 @@ A função custo derivada na seção anterior é uma construção abstrata que r
 | CMe e CVMe | \(\mathrm{CMe} - \mathrm{CVMe} = CF/q \to 0\) | As curvas convergem quando \(q \to \infty\) |
 | Área sob CMg | \(\int_0^q \mathrm{CMg}(x)\,dx = CV(q)\) | Custo variável = área sob CMg |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 11.1 — Relações entre as curvas de custo.**
-</p>
+</div>
 
 A demonstração de que o CMg cruza o CMe no ponto de mínimo segue diretamente:
 
@@ -353,9 +353,9 @@ A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colo
 
 <iframe src="../graficos/cap11/envoltoria-custo-total.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 11.3 — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente.** Os pontos verdes indicam onde cada \(CT_{CP}\) tangencia a envoltória. Use os controles para alterar \(w\) e \(v\), e as caixas de seleção para mostrar/ocultar curvas individuais e pontos de tangência.
-</p>
+</div>
 
 !!! abstract "Teorema da curva envoltória"
     A curva de custo médio de longo prazo (\(\mathrm{CMe}_{LP}\)) é a **envoltória** das curvas de custo médio de curto prazo. Para cada nível de produto \(q\):
@@ -383,9 +383,9 @@ A Figura 11.4 complementa a visão anterior, agora em termos de **custo médio**
 
 <iframe src="../graficos/cap11/curto-longo-prazo.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 11.4 — Curva envoltória: CMe de curto e longo prazo.** Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.
-</p>
+</div>
 
 ### Economias e deseconomias de escala
 

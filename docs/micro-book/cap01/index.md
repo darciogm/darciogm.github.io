@@ -114,9 +114,9 @@ Os dois pilares anteriores — *ceteris paribus* e otimização — são ferrame
 | **Verificação** | Confronto com dados | Julgamento de valor |
 | **Exemplo** | "Um imposto sobre cigarro reduz o consumo em X%" | "O governo deveria tributar cigarros" |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 1.1 — Análise positiva vs. normativa.**
-</p>
+</div>
 
 !!! tip "Importância da distinção"
     Embora a fronteira entre análise positiva e normativa nem sempre seja nítida, manter a distinção é essencial para o rigor intelectual. Muitas controvérsias em política econômica decorrem de confusões entre proposições positivas e normativas.
@@ -184,9 +184,9 @@ A história do pensamento econômico pode ser lida como uma longa investigação
 | 1954 | Arrow & Debreu | Prova de existência do equilíbrio geral competitivo |
 | 1970– | Teoria dos jogos, informação assimétrica, economia comportamental | Fronteiras modernas da microeconomia |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 1.2 — Cronologia das principais escolas de pensamento.**
-</p>
+</div>
 
 ### Os economistas clássicos: Smith e Ricardo
 
@@ -248,17 +248,17 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 <iframe src="../graficos/cap01/maximizacao-lucro.html" width="100%" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 1.1 — Receita, custo total e lucro de uma firma competitiva com \(CT(q)=10+2q+0{,}5q^2\).** Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
-</p>
+</div>
 
 ### Fluxo circular da renda
 
 <iframe src="../graficos/cap01/fluxo-circular.html" width="100%" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores.** Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
-</p>
+</div>
 
 ---
 

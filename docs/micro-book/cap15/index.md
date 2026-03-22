@@ -59,9 +59,9 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 <iframe src="../graficos/cap15/monopolio.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 15.1 — Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner.** Compare com o resultado competitivo.
-</p>
+</div>
 
 ---
 
@@ -246,9 +246,9 @@ Arnold Harberger (1954) estimou que a PPM nos Estados Unidos seria da ordem de 0
 | **Excedente Total** | \(\frac{(a-c)^2}{2b}\) | \(\frac{3(a-c)^2}{8b}\) | \(\downarrow\) |
 | **Perda de Peso Morto** | \(0\) | \(\frac{(a-c)^2}{8b}\) | — |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 15.1 — Comparação concorrência perfeita versus monopólio.**
-</p>
+</div>
 
 !!! tip "Interpretação"
     A passagem de concorrência perfeita para monopólio envolve duas transferências: (i) parte do excedente do consumidor é capturada pelo monopolista (retângulo de transferência); (ii) parte do excedente total simplesmente desaparece (triângulo de Harberger). A PPM representa uma perda **líquida** de bem-estar social.
@@ -422,9 +422,9 @@ O monopolista iguala as receitas marginais em todos os mercados ao custo margina
 
 <iframe src="../graficos/cap15/discriminacao-precos.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 15.2 — Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados).** Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
-</p>
+</div>
 
 ---
 
@@ -513,9 +513,9 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
 <iframe src="../graficos/cap15/regulacao-monopolio.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 15.3 — Visualize um monopólio natural com custo médio decrescente.** Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.
-</p>
+</div>
 
 ---
 

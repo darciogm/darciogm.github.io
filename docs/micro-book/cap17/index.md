@@ -73,9 +73,9 @@ O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamen
 
 <iframe src="../graficos/cap17/trabalho-lazer.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 17.1 — Escolha ótima entre lazer e consumo.** Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
-</p>
+</div>
 
 ---
 
@@ -246,9 +246,9 @@ O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibili
 
 <iframe src="../graficos/cap17/oferta-trabalho.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 17.2 — Curva de oferta de trabalho individual e a possibilidade de backward-bending.** Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
-</p>
+</div>
 
 ---
 
@@ -306,9 +306,9 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 | Aumento da renda não salarial | Desloca \(H^s\) para a esquerda | — | \(w^*\) sobe |
 | Progresso tecnológico poupador de trabalho | — | Desloca \(H^d\) para a esquerda | \(w^*\) cai |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 17.1 — Deslocamentos das curvas de oferta e demanda de trabalho.**
-</p>
+</div>
 
 ---
 
@@ -430,9 +430,9 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 <iframe src="../graficos/cap17/monopsonio.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 17.3 — Equilíbrio monopsonístico versus competitivo no mercado de trabalho.** A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
-</p>
+</div>
 
 ---
 
@@ -605,9 +605,9 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 | \(\uparrow V\) (renda não salarial sobe) | Nenhum | \(h\) cai (mais rico) | \(h\) cai |
 | \(\uparrow p\) (preço do consumo sobe) | Depende (o efeito sobre o preço relativo do lazer varia com a cesta) | Depende | Ambíguo |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 17.2 — Efeitos substituição e renda sobre a oferta de trabalho.**
-</p>
+</div>
 
 ---
 

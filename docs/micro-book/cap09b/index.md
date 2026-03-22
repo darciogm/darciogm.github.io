@@ -55,9 +55,9 @@ Para tornar esses conceitos concretos, considere o problema clássico de deterr�
 
 <iframe src="../graficos/cap09/jogo-sequencial.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 9b.1 — Jogo sequencial na forma extensiva.** Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do EPS é destacado em vermelho.
-</p>
+</div>
 
 ### Comprometimento e vantagem estratégica
 
@@ -138,15 +138,15 @@ Além do grim trigger, existem estratégias mais sofisticadas:
 | **Tit-for-Tat** | Coopera no 1º período; depois copia a ação do oponente no período anterior | \(\frac{T-R}{T-P}\) | Simples, "perdoa"; venceu os torneios de Axelrod | Vulnerável a erros; ciclos de retaliação |
 | **Win-Stay, Lose-Shift** | Mantém a ação se o payoff foi bom, muda se foi ruim | Variável | Autocorreção | Pode não ser EPS |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 9b.1 — Estratégias de cooperação em jogos repetidos.**
-</p>
+</div>
 
 <iframe src="../graficos/cap09/delta-cooperacao.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 9b.2 — Cooperação no Dilema dos Prisioneiros repetido.** Altere os payoffs \(T\), \(R\), \(P\) e o fator de desconto \(\delta\) para ver quando a cooperação é sustentável pela estratégia de gatilho. A curva verde (\(V_{\text{coop}}\)) deve estar acima da vermelha (\(V_{\text{desvio}}\)).
-</p>
+</div>
 
 ---
 
@@ -262,9 +262,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     <iframe src="../graficos/cap09/webr-ultimatum.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    <div class="caption-obj" markdown>
     **Figura 9b.3 — Simulação de um experimento de ultimatum game com modelo logit.** Altere os parâmetros da simulação e estime a probabilidade de aceitar em função da oferta.
-    </p>
+    </div>
 
 ---
 
@@ -277,9 +277,9 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     <iframe src="../graficos/cap09/webr-gasoline.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    <div class="caption-obj" markdown>
     **Figura 9b.4 — Simulação de ciclos de Edgeworth no mercado de gasolina.** Baseado em Adams (2025, Cap. 7) e dados de Perth.
-    </p>
+    </div>
 
 ---
 

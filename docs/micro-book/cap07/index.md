@@ -119,9 +119,9 @@ Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando 
 
 <iframe src="../graficos/cap07/aversao-risco.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 7.1 — Aversão ao risco e função de utilidade.** Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.
-</p>
+</div>
 
 ---
 
@@ -161,9 +161,9 @@ A escolha de qual medida utilizar depende do contexto. Se o risco é de magnitud
 | DARA (Aversão Absoluta Decrescente) | \(\ln(W)\), \(\frac{W^{1-\gamma}}{1-\gamma}\) | Decrescente em \(W\) | Depende da forma | Agentes mais ricos aceitam mais risco absoluto |
 | Quadrática | \(W - bW^2\), \(b > 0\) | \(\frac{2b}{1-2bW}\) (crescente) | \(\frac{2bW}{1-2bW}\) (crescente) | IARA — propriedade pouco realista |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 7.1 — Classes importantes de funções de utilidade.**
-</p>
+</div>
 
 !!! tip "DARA como propriedade desejável"
     A evidência empírica sugere fortemente que a aversão absoluta ao risco é **decrescente** na riqueza (DARA): indivíduos mais ricos estão dispostos a aceitar apostas de valor fixo que indivíduos mais pobres recusariam. A função de utilidade quadrática, embora matematicamente conveniente, viola essa propriedade (apresenta IARA) e possui a limitação adicional de que a utilidade marginal se torna negativa para riquezas suficientemente altas.
@@ -263,9 +263,9 @@ A fórmula de Arrow-Pratt é notavelmente elegante: ela decompõe o "preço" que
 
 <iframe src="../graficos/cap07/premio-risco.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 7.2 — Prêmio de risco de Arrow-Pratt.** Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).
-</p>
+</div>
 
 ---
 
@@ -285,9 +285,9 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 
 <iframe src="../graficos/cap07/seguro.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 7.3 — Mercado de seguros no espaço estado-contingente.** Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).
-</p>
+</div>
 
 ### 7.6.2 Diversificação
 

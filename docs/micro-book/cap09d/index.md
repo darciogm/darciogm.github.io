@@ -154,9 +154,9 @@ No mercado de seguros: pessoas de alto risco são mais propensas a comprar segur
 | **Certificação** | Rating de crédito (Serasa, S&P) | Terceiro |
 | **Regulação** | Seguro obrigatório (DPVAT) | Estado |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 9d.1 — Mecanismos de mitigação da seleção adversa.**
-</p>
+</div>
 
 ---
 
@@ -218,9 +218,9 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
     <iframe src="../graficos/cap09/webr-spence.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    <div class="caption-obj" markdown>
     **Figura 9d.1 — Modelo de Spence: equilíbrio separador.** Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.
-    </p>
+    </div>
 
 ---
 
@@ -231,9 +231,9 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
     <iframe src="../graficos/cap09/webr-insurance.html" width="100%" style="border:1px solid #ddd; border-radius:6px;" loading="lazy"></iframe>
 
-    <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+    <div class="caption-obj" markdown>
     **Figura 9d.2 — Seleção adversa no mercado de seguros.** Varie a proporção de tipos de alto risco para ver quando o mercado colapsa. Baseado em Adams (2025, Cap. 13).
-    </p>
+    </div>
 
 ---
 

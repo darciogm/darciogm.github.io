@@ -102,9 +102,9 @@ A tabela a seguir resume as principais heurísticas e seus vieses associados:
 | Hindsight | "Eu sabia o tempo todo" | Previsões retrospectivas | Fischhoff (1975) |
 | Confirmação | Busca seletiva de evidências | Teste de hipóteses | Wason (1960) |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 8.1 — Principais heurísticas e vieses cognitivos.**
-</p>
+</div>
 
 Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a análise da decisão sob risco incorporando esses fenômenos de forma estruturada.
 
@@ -169,9 +169,9 @@ onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda 
   <iframe src="../graficos/cap08/funcao-valor-pt.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.1 — Função valor da Teoria do Prospecto.** Ajuste os parâmetros de curvatura e aversão à perda para observar a assimetria entre ganhos e perdas.
-</p>
+</div>
 
 A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto em diferentes estudos:
 
@@ -183,9 +183,9 @@ A tabela a seguir compara as estimativas dos parâmetros da Teoria do Prospecto 
 | Abdellaoui (2000) | 0,89 | 0,92 | 2,54 | 0,60 | 0,70 | Trade-off method |
 | Booij, van Praag e van de Kuilen (2010) | 0,86 | 0,86 | 2,09 | 0,65 | 0,65 | Meta-análise |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 8.2 — Estimativas dos parâmetros da Teoria do Prospecto.**
-</p>
+</div>
 
 !!! info "🏅 Prêmio Nobel — Daniel Kahneman (2002)"
 
@@ -250,9 +250,9 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
   <iframe src="../graficos/cap08/ponderacao-prob.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.2 — Função de ponderação de probabilidades \(w(p)\).** Compare a ponderação com a linha de 45 graus para visualizar a sobrevalorização de probabilidades pequenas e a subvalorização de probabilidades altas.
-</p>
+</div>
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A mesma pessoa compra loteria e contrata seguro contra catástrofe — ambos explicados pela sobrevalorização de eventos raros.
@@ -288,9 +288,9 @@ A tabela a seguir compara os quatro modelos:
 | Respeita dominância | Sim | Sim | **Não** | Sim |
 | \(w\) para ganhos e perdas | — | Uma única \(w\) | Duas \(w\) | Duas \(w^+, w^-\) |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 8.3 — Comparação dos modelos de decisão sob risco.**
-</p>
+</div>
 
 !!! idea "Intuição Econômica 💡"
     **Em uma frase:** A CPT corrige o defeito técnico da Teoria do Prospecto original — violação de dominância estocástica — preservando todas as suas inovações psicológicas.
@@ -377,9 +377,9 @@ O Capítulo 7 tratou de decisões sob **risco** — situações em que as probab
 | **Incerteza knightiana** | Desconhecidas | Resultado de uma revolução política |
 | **Ambiguidade** | Formalmente atribuíveis, mas vagas | Urna com composição desconhecida |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 8.4 — Risco, incerteza knightiana e ambiguidade.**
-</p>
+</div>
 
 ### 8.3.2 O Paradoxo de Ellsberg
 
@@ -403,9 +403,9 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
   <iframe src="../graficos/cap08/ellsberg-urnas.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.3 — Paradoxo de Ellsberg: duas urnas.** Visualize como a aversão à ambiguidade leva à preferência pela urna com probabilidades conhecidas.
-</p>
+</div>
 
 ### 8.3.3 Modelos de ambiguidade
 
@@ -454,9 +454,9 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
 | Bens públicos (sem punição) | Contribuição = 0 | Contribuição inicial \(\approx 40{-}60\%\); decai com repetição |
 | Bens públicos (com punição) | Contribuição = 0 | Contribuição estável \(\approx 50{-}80\%\) |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 8.5 — Resultados experimentais vs. previsão autointeressada.**
-</p>
+</div>
 
 !!! example "Box Brasil — Preferências sociais e informalidade fiscal"
     A alta tolerância à informalidade fiscal no Brasil pode ser interpretada à luz das preferências sociais. Quando os contribuintes percebem que o sistema tributário é **inequitativo** — com altas alíquotas sobre o trabalho formal e baixa tributação sobre lucros e dividendos —, a reciprocidade negativa pode reduzir a disposição a pagar impostos. Pesquisas de opinião do Ipea indicam que a percepção de injustiça fiscal é um dos principais fatores associados à tolerância com a evasão tributária. O modelo de Fehr-Schmidt (Seção 8.4.2) prevê exatamente esse padrão: agentes com alta aversão à desvantagem (\(\alpha_i\) elevado) podem preferir a "punição" de não cooperar a aceitar uma distribuição percebida como injusta.
@@ -498,17 +498,17 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
   <iframe src="../graficos/cap08/fehr-schmidt.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.4 — Utilidade de Fehr-Schmidt para dois jogadores.** Ajuste os parâmetros de aversão à desigualdade desvantajosa e vantajosa para observar o efeito sobre a utilidade.
-</p>
+</div>
 
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/ultimatum-game.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.5 — Jogo do ultimato: decisão do respondedor com preferências de Fehr-Schmidt.** Observe como a aversão à inequidade determina o limiar de rejeição.
-</p>
+</div>
 
 ??? example "Exercício Resolvido 8.2 — Fehr-Schmidt no jogo do ultimato"
     **Enunciado:** Em um jogo do ultimato com bolo \(S = 100\), o respondedor R tem parâmetros de Fehr-Schmidt \(\alpha_R = 2\) e \(\beta_R = 0{,}4\). (a) Qual é a oferta mínima que R aceita? (b) Se o proponente P tem \(\alpha_P = 0{,}5\) e \(\beta_P = 0{,}3\), qual é a oferta que maximiza a utilidade de P, sabendo que P conhece os parâmetros de R?
@@ -634,17 +634,17 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
   <iframe src="../graficos/cap08/funcoes-desconto.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.6 — Funções de desconto: exponencial vs quasi-hiperbólico.** Compare a taxa de desconto constante do modelo exponencial com o viés do presente capturado pelo parâmetro \(\beta\).
-</p>
+</div>
 
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/indiferenca-intertemporal.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.7 — Curvas de indiferença intertemporal: consumo presente \(c_0\) vs consumo futuro \(c_1\).** Visualize como o desconto quasi-hiperbólico altera a forma das curvas em relação ao modelo exponencial.
-</p>
+</div>
 
 ??? example "Exercício Resolvido 8.3 — Desconto quasi-hiperbólico e preferências reversíveis"
     **Enunciado:** Um consumidor com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}95)\) e utilidade linear \(u(x) = x\) pode escolher entre dois bônus salariais: **Bônus A**, que paga R\$ 1.000 no mês 6, e **Bônus B**, que paga R\$ 1.200 no mês 7. (a) Qual bônus o consumidor prefere quando avaliado em \(t = 0\)? (b) Qual bônus ele prefere quando avaliado em \(t = 6\) (isto é, quando o pagamento de A é iminente)? (c) Essa preferência é consistente ao longo do tempo?
@@ -737,9 +737,9 @@ A tabela a seguir organiza as principais ferramentas de nudging:
   <iframe src="../graficos/cap08/nudge-default.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 </div>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 8.8 — Efeito do default na adesão.** Compare as taxas de adesão sob regimes de opt-in e opt-out para diferentes programas.
-</p>
+</div>
 
 **Framing e simplificação.** A forma como as informações são apresentadas importa: rótulos nutricionais em semáforo (verde/amarelo/vermelho) são mais eficazes do que tabelas numéricas detalhadas; cartas de cobrança com linguagem simplificada aumentam a taxa de pagamento de impostos.
 

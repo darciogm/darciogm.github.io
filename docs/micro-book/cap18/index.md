@@ -66,9 +66,9 @@ onde \(S\) é a poupança agregada e \(I\) é o investimento agregado. A taxa de
 | Aumento da oferta de fundos (ex.: poupança externa) | \(\downarrow r^*\) | Desloca oferta de poupança para a direita |
 | Aumento do risco percebido | \(\uparrow r^*\) | Exige prêmio de risco maior |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 18.1 — Fatores que afetam a taxa de juros.**
-</p>
+</div>
 
 ---
 
@@ -138,9 +138,9 @@ O gráfico abaixo ilustra o modelo de consumo intertemporal de dois períodos. A
 
 <iframe src="../graficos/cap18/consumo-intertemporal.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 18.1 — Modelo de consumo intertemporal de dois períodos.** Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.
-</p>
+</div>
 
 ---
 
@@ -275,9 +275,9 @@ O gráfico abaixo plota o Valor Presente Líquido como função da taxa de desco
 
 <iframe src="../graficos/cap18/vpl-tir.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 18.2 — Valor Presente Líquido como função da taxa de desconto.** O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR).
-</p>
+</div>
 
 ---
 
@@ -442,9 +442,9 @@ A TIR deste projeto é aproximadamente 15,2%. A tabela a seguir mostra o VPL par
 | 20% | −10.648 | Rejeitar |
 | 25% | −22.560 | Rejeitar |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 18.2 — VPL, taxa de desconto e decisão de investimento.**
-</p>
+</div>
 
 A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de desconto; (ii) projetos viáveis a juros baixos podem se tornar inviáveis quando a taxa de juros sobe — um problema particularmente relevante no contexto brasileiro de juros historicamente elevados.
 

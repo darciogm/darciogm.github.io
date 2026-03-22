@@ -152,9 +152,9 @@ DWL = \int_{q_1^{soc}}^{q_1^{priv}} \left[ C_1'(q) + E'(q) - P \right] dq
 
 <iframe src="../graficos/cap20/externalidade-negativa.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 20.1 — Externalidade negativa e imposto pigouviano.** A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.
-</p>
+</div>
 
 ## 20.4 Soluções para Externalidades Negativas
 
@@ -248,9 +248,9 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 <iframe src="../graficos/cap20/teorema-coase.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 20.2 — Teorema de Coase.** Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.
-</p>
+</div>
 
 ### 20.4.2 O Teorema de Coase
 
@@ -339,9 +339,9 @@ A combinação dessas duas propriedades gera uma classificação de bens em quat
 | **Rival** | **Bem privado** (alimento, vestuário, combustível) | **Recurso comum** (cardume no oceano, pasto comunitário, água de aquífero) |
 | **Não-rival** | **Bem de clube** (TV a cabo, pedágio, parque com entrada paga) | **Bem público puro** (defesa nacional, iluminação pública, ar limpo) |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 20.1 — Classificação de bens por rivalidade e excludência.**
-</p>
+</div>
 
 A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos & Garcia, 2014):
 
@@ -352,9 +352,9 @@ A tabela abaixo apresenta exemplos brasileiros para cada categoria (Vasconcellos
 | **Bem de clube** | Não-rival (até congestionamento) e excludente | Netflix, rodovia com pedágio (Via Dutra, Rodovia dos Bandeirantes), clube recreativo, sistema de streaming de futebol |
 | **Recurso comum** | Rival e não-excludente | Peixes no rio Amazonas, pastagem no semiárido, água do Aquífero Guarani, vagas de estacionamento público |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 20.2 — Exemplos brasileiros por categoria de bem.**
-</p>
+</div>
 
 !!! note "Bens Públicos Locais e Globais"
     A provisão de bens públicos pode ter escala local (iluminação de uma rua), regional (defesa costeira), nacional (sistema judiciário) ou global (estabilidade climática, erradicação de doenças). A escala determina qual nível de governo (ou cooperação internacional) é mais adequado para a provisão.
@@ -384,9 +384,9 @@ Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para c
 
 <iframe src="../graficos/cap20/bem-publico.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 20.3 — Provisão ótima de bem público.** A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.
-</p>
+</div>
 
 ### Subprovisão pelo mercado
 
@@ -427,9 +427,9 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 <iframe src="../graficos/cap20/tragedia-comuns.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 20.4 — Tragédia dos comuns.** Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.
-</p>
+</div>
 
 !!! info "🏅 Prêmio Nobel — Elinor Ostrom (2009)"
 

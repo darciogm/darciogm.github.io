@@ -67,9 +67,9 @@ Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio 
 
 <iframe src="../graficos/cap13/oferta-demanda.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 13.1 — Equilíbrio de oferta e demanda.** Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor e do produtor.
-</p>
+</div>
 
 ---
 
@@ -187,9 +187,9 @@ Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste 
 
 <iframe src="../graficos/cap13/equilibrio-longo-prazo.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 13.2 — Equilíbrio de longo prazo: firma e mercado.** Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero).
-</p>
+</div>
 
 ---
 
@@ -219,9 +219,9 @@ Em casos mais raros, a entrada de firmas pode reduzir custos — por exemplo, vi
 | Custos crescentes | Custos sobem | Positiva | Preço sobe |
 | Custos decrescentes | Custos caem | Negativa | Preço cai |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 13.1 — Tipos de indústria e oferta de longo prazo.**
-</p>
+</div>
 
 ---
 
@@ -380,9 +380,9 @@ Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do
 
 <iframe src="../graficos/cap13/controles-precos.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 13.3 — Controles de preços: teto e piso.** Alterne entre preço máximo e mínimo e ajuste o nível do preço controlado para observar escassez ou excedente, variações nos excedentes e a perda de peso morto.
-</p>
+</div>
 
 ---
 
@@ -486,9 +486,9 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
 <iframe src="../graficos/cap13/incidencia-tributaria.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 13.4 — Incidência tributária.** Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária, a receita do governo e a perda de peso morto.
-</p>
+</div>
 
 ---
 
@@ -503,9 +503,9 @@ A tabela abaixo resume os efeitos das principais políticas de intervenção em 
 | **Preço máximo** (\(\bar{p} < p^*\)) | Ambíguo (↑ preço menor, ↓ quantidade) | Diminui | — | \(PPM > 0\) (escassez) |
 | **Preço mínimo** (\(\underline{p} > p^*\)) | Diminui | Ambíguo (↑ preço maior, ↓ quantidade vendida) | Custo se gov. compra excedente | \(PPM > 0\) (excesso) |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 13.2 — Efeitos de políticas sobre EC, EP e PPM.**
-</p>
+</div>
 
 !!! note "Perda de peso morto"
     A perda de peso morto (PPM), também chamada de *deadweight loss* ou triângulo de Harberger, representa a perda de bem-estar social que não é capturada por nenhum agente — nem consumidores, nem produtores, nem governo. Para um imposto com curvas lineares:

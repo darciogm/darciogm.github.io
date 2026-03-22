@@ -125,9 +125,9 @@ Com seguro completo (\(I = L\)), o segurado recebe \(W_0 - q\) em qualquer estad
 
 <iframe src="../graficos/cap19/principal-agente.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 19.1 — Modelo principal-agente com risco moral.** O gráfico mostra a restrição de participação (RP) e a restrição de compatibilidade de incentivos (RCI) no espaço de salários. O ponto verde indica o contrato ótimo que induz esforço alto.
-</p>
+</div>
 
 ### 19.3.3 O problema do esforço não observável: modelo formal
 
@@ -265,9 +265,9 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 <iframe src="../graficos/cap19/mercado-limoes.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 19.2 — Mercado de limões (Akerlof, 1970).** Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.
-</p>
+</div>
 
 ---
 
@@ -442,9 +442,9 @@ com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\)
 
 <iframe src="../graficos/cap19/sinalizacao.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 19.3 — Sinalização por educação (Spence, 1973).** Visualize as curvas de custo de educação para ambos os tipos, o salário de equilíbrio e a condição de single-crossing. A região azul indica o intervalo de níveis de educação que sustentam um equilíbrio separador.
-</p>
+</div>
 
 ### 19.5.2 Equilíbrio separador vs. equilíbrio agregador
 
@@ -484,9 +484,9 @@ O equilíbrio separador de menor custo (equilíbrio de Riley ou least-cost separ
 
 <iframe src="../graficos/cap19/seguros-rs.html" width="100%" style="border:1px solid #eee; border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 19.4 — Modelo de seguros de [Rothschild-Stiglitz](https://doi.**org/10.2307/1885326). No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.
-</p>
+</div>
 
 ## 19.6 Screening (Triagem pelo Principal)
 
@@ -507,9 +507,9 @@ Exemplos práticos:
 | Telecomunicações | Planos com diferentes volumes de dados e preços por unidade |
 | Educação | Programas com diferentes graus de seletividade e rigor |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 19.1 — Exemplos de mecanismos de triagem.**
-</p>
+</div>
 
 A diferença fundamental entre sinalização e triagem é quem toma a iniciativa:
 
@@ -538,9 +538,9 @@ Leilões são mecanismos de venda particularmente interessantes sob informação
 | **Primeiro preço** (selado) | Lances simultâneos em envelope fechado | Fechado, simultâneo | Maior lance |
 | **Segundo preço** (Vickrey) | Lances simultâneos; vencedor paga o segundo maior lance | Fechado, simultâneo | Segundo maior lance |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 19.2 — Tipos de leilões.**
-</p>
+</div>
 
 ### O leilão de segundo preço (Vickrey)
 
@@ -605,9 +605,9 @@ A tabela a seguir resume os principais tipos de problemas de informação assim�
 | **Triagem (screening)** | Pré-contratual | Tipo do agente (revelado pela escolha) | Classes tarifárias; menus de planos de saúde; versões de software | Menus autosseletivos, discriminação de preços de 2.º grau |
 | **Leilões** | Pré-contratual | Valoração dos licitantes | Leilões de arte, espectro, títulos públicos, concessões | Formatos de leilão (Vickrey, inglês, etc.), preço de reserva |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 19.3 — Taxonomia dos problemas de informação assimétrica.**
-</p>
+</div>
 
 ---
 

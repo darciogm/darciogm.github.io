@@ -90,9 +90,9 @@ Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 
 <iframe src="../graficos/cap05/curva-engel.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 5.1 — Curva de Engel e caminho de expansão da renda.** Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
-</p>
+</div>
 
 ---
 
@@ -152,9 +152,9 @@ Ambas as decomposições convergem para variações infinitesimais de preço e r
 
 <iframe src="../graficos/cap05/efeito-renda-substituicao.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 5.2 — Decomposição dos efeitos renda e substituição.** Ajuste o novo preço \(p_1'\) e observe como o efeito total (vermelho) se decompõe em efeito substituição (verde, ao longo da curva de indiferença) e efeito renda (azul, entre curvas). Alterne entre as decomposições de Hicks e Slutsky.
-</p>
+</div>
 
 ---
 
@@ -269,9 +269,9 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 
 <iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul).** Painel superior: curvas de indiferença e restrição orçamentária no espaço de bens. Painel inferior: curvas de demanda derivadas. Para bens normais, a hicksiana é mais inclinada. A área sombreada representa o excedente do consumidor.
-</p>
+</div>
 
 ---
 
@@ -375,9 +375,9 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 | Eletrodomésticos | \(-1{,}15\) | \(1{,}52\) | Elástica; luxo |
 | Cigarros e tabaco | \(-0{,}35\) | \(0{,}25\) | Inelástica; necessidade |
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Tabela 5.1 — Elasticidades estimadas para o Brasil.** Fontes: POF/IBGE (2017-2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.
-</p>
+</div>
 
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.
@@ -533,9 +533,9 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
 <iframe src="../graficos/cap05/excedente-consumidor.html" width="100%" style="border:none;border-radius:8px;"></iframe>
 
-<p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
+<div class="caption-obj" markdown>
 **Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE).** Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).
-</p>
+</div>
 
 ---
 
