@@ -183,7 +183,7 @@ A relação fundamental entre utilidade marginal e TMS é dada pela proposição
     \text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{\text{UMg}_1}{\text{UMg}_2}. \qquad \blacksquare
     \]
 
-<iframe src="../graficos/cap03/tms-ponto.html" width="100%" height="520" style="border:none; border-radius:8px;"></iframe>
+<iframe src="../graficos/cap03/tms-ponto.html" width="100%" height="580" style="border:none; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
 **Figura 3.2** — Taxa Marginal de Substituição (TMS). Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
