@@ -47,7 +47,7 @@
   </style>
 </head>
 <body>
-  <div class="graph-title">Taxa Marginal de Substituição (TMS)</div>
+  <div class="graph-title">Figura 3.2 — Taxa Marginal de Substituição (TMS)</div>
   <div class="graph-container">
     <div id="jxgbox"></div>
     <div class="controls">
@@ -250,10 +250,10 @@
             strokeColor: '#C8102E', strokeWidth: 2, fixed: true, lastArrow: { type: 2, size: 6 }
           }));
           annotations.push(board.create('text', [px + dx1/2, py + 0.3, '\\(\\Delta x_1 = 1\\)'], {
-            fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle'
+            fontSize: 10, color: '#1565c0', fixed: true, anchorX: 'middle', useMathJax: true
           }));
           annotations.push(board.create('text', [px + dx1 + 0.4, py + dx2/2, '\\(\\Delta x_2\\)'], {
-            fontSize: 10, color: '#C8102E', fixed: true, anchorX: 'left'
+            fontSize: 10, color: '#C8102E', fixed: true, anchorX: 'left', useMathJax: true
           }));
         }
       } else if (currentFn === 'leontief') {
