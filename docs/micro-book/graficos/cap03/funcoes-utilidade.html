@@ -118,6 +118,8 @@
         <label>Tipo de função:</label>
         <select id="sel-type">
           <option value="cobb-douglas">Cobb-Douglas</option>
+          <option value="substitutos">Substitutos Perfeitos</option>
+          <option value="complementos">Complementos Perfeitos</option>
           <option value="ces">CES</option>
           <option value="quase-linear">Quase-linear</option>
         </select>
@@ -165,6 +167,10 @@
         case 'ces':
           if (Math.abs(rho) < 0.01) return Math.sqrt(x1 * x2);
           return Math.pow(Math.pow(x1, rho) + Math.pow(x2, rho), 1/rho);
+        case 'substitutos':
+          return a * x1 + b * x2;
+        case 'complementos':
+          return Math.min(x1 / a, x2 / b);
         case 'quase-linear':
           return a * Math.pow(x1, 0.5) + x2;
       }
@@ -231,7 +237,8 @@
     function showHideControls() {
       var type = getType();
       document.getElementById('grp-rho').style.display = type === 'ces' ? '' : 'none';
-      document.getElementById('grp-b').style.display = type === 'quase-linear' ? 'none' : '';
+      document.getElementById('grp-b').style.display = (type === 'quase-linear') ? 'none' : '';
+      document.getElementById('grp-a').style.display = '';
     }
 
     function updateInfo() {
@@ -247,6 +254,14 @@
           eqFunc = '\\(u = (x_1^{' + rho.toFixed(2) + '} + x_2^{' + rho.toFixed(2) + '})^{1/' + rho.toFixed(2) + '}\\)';
           var sigma = 1 / (1 - rho);
           eqSigma = '\\(\\sigma = \\frac{1}{1-\\rho} = ' + sigma.toFixed(2) + '\\)';
+          break;
+        case 'substitutos':
+          eqFunc = '\\(u(x_1, x_2) = ' + a.toFixed(2) + 'x_1 + ' + b.toFixed(2) + 'x_2\\)';
+          eqSigma = '\\(\\text{TMS} = a/b = ' + (a/b).toFixed(2) + '\\) (constante), \\(\\sigma = \\infty\\)';
+          break;
+        case 'complementos':
+          eqFunc = '\\(u(x_1, x_2) = \\min\\left(\\frac{x_1}{' + a.toFixed(2) + '},\\; \\frac{x_2}{' + b.toFixed(2) + '}\\right)\\)';
+          eqSigma = 'TMS indefinida no vértice, \\(\\sigma = 0\\)';
           break;
         case 'quase-linear':
           eqFunc = '\\(u(x_1, x_2) = ' + a.toFixed(2) + '\\sqrt{x_1} + x_2\\)';

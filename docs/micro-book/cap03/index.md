@@ -393,7 +393,7 @@ Isso significa que ao longo de qualquer raio que parte da origem (\(x_2 = k \cdo
 <iframe src="../graficos/cap03/funcoes-utilidade.html" width="100%" style="border:none; border-radius:8px;"></iframe>
 
 <p style="text-align:center; font-size:0.85rem; color:#666; margin-top:0.3rem;" markdown>
-**Figura 3.4 — Superfície 3D da função de utilidade.** Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, CES e quase-linear, e ajuste os parâmetros nos sliders.
+**Figura 3.4 — Superfície 3D da função de utilidade.** Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, substitutos perfeitos (plano), complementos perfeitos (superfície em cunha), CES e quase-linear. Ajuste os parâmetros nos sliders.
 </p>
 
 <iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" width="100%" style="border:none; border-radius:8px;"></iframe>
