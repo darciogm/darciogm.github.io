@@ -950,23 +950,17 @@ A visualização interativa é um complemento essencial à exposição formal. E
 
 Ao longo de todo o livro, cada capítulo contará com gráficos interativos semelhantes, adaptados aos temas específicos daquela seção. Essa abordagem visual-interativa acompanha o leitor desde os fundamentos matemáticos aqui apresentados até as aplicações em teoria do consumidor, teoria da firma, equilíbrio geral e economia da informação.
 
-### Otimização de função de uma variável
-
 <iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.2 — Otimização de função de uma variável" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.2 — Otimização de função de uma variável.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. Use os sliders para alterar curvatura e posição do pico.
 </div>
 
-### Otimização com restrição: Lagrangeano
-
 <iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.3 — Otimização com restrição: Lagrangeano" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.3 — Otimização com restrição: Lagrangeano.** Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
 </div>
-
-### Teorema do envelope
 
 <iframe src="../graficos/cap02/envelope.html" title="Figura 2.4 — Teorema do Envelope" class="graph-iframe"></iframe>
 
