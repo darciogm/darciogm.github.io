@@ -422,8 +422,6 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
 
 ---
 
-## 🇧🇷 Box Brasil: Estrutura de Custos e o "Custo Brasil"
-
 !!! box-brasil "Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
 
     O termo **"custo Brasil"** designa o conjunto de ineficiências sistêmicas que elevam os custos de produção no país acima dos padrões internacionais. Segundo levantamentos da **Confederação Nacional da Indústria (CNI)** e da **FIESP**, o custo Brasil representava, em estimativas recentes, um sobrecusto de cerca de **R$ 1,7 trilhão por ano** para a economia brasileira — equivalente a aproximadamente 20% do PIB.
@@ -445,8 +443,6 @@ A **escala mínima eficiente** (EME) é o menor nível de produto para o qual o 
     Em termos da teoria dos custos, o "custo Brasil" representa um deslocamento para cima das curvas de custo das firmas brasileiras em relação a competidores internacionais. Trata-se, em grande parte, de **custos fixos** (burocracia, tributação fixa) e **custos variáveis** elevados (logística, energia). A consequência é que a **escala mínima eficiente** das firmas brasileiras tende a ser maior, dificultando a sobrevivência de empresas menores e reduzindo a competitividade internacional. A reforma tributária de 2023 (EC 132/2023), com a unificação de tributos sobre consumo (CBS e IBS), representa uma tentativa de reduzir uma das principais fontes do custo Brasil.
 
 ---
-
-## 🇧🇷 Box Brasil: Economias de Escala na Agropecuária
 
 !!! box-brasil "Box Brasil: Escala mínima eficiente e concentração na produção de soja"
 

@@ -529,8 +529,6 @@ O imposto pivotal $\eqref{eq:20.15}$ corresponde ao "custo" que a presença de \
 
 ---
 
-## 🇧🇷 Box Brasil: Desmatamento na Amazônia e Precificação de Carbono
-
 !!! box-brasil "Box Brasil: Desmatamento na Amazônia e Precificação de Carbono"
     O desmatamento na Amazônia brasileira é um caso emblemático de **externalidade negativa de escala global**. A remoção da floresta gera custos externos que incluem emissões de CO₂ (contribuindo para a mudança climática), perda de biodiversidade, alteração do ciclo hidrológico (inclusive os "rios voadores" que transportam umidade para o Centro-Sul do Brasil) e erosão do solo.
 

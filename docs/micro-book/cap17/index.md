@@ -361,8 +361,6 @@ Diferenças salariais também podem refletir **discriminação** por gênero, ra
 
 ---
 
-## 🇧🇷 Box Brasil: Retorno à Educação e Desigualdade Salarial
-
 !!! box-brasil "O prêmio salarial da educação e os hiatos de gênero e raça"
     A equação de Mincer aplicada ao Brasil revela um dos maiores retornos à educação do mundo — e, ao mesmo tempo, uma desigualdade que persiste mesmo após o controle por escolaridade.
 
@@ -532,8 +530,6 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
-## 🇧🇷 Box Brasil: Informalidade e Reforma Trabalhista
-
 !!! box-brasil "A informalidade estrutural e os efeitos da Reforma Trabalhista de 2017"
     O mercado de trabalho brasileiro é marcado por uma taxa de informalidade persistentemente elevada, que condiciona a eficácia de políticas salariais e trabalhistas.
 
@@ -564,8 +560,6 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
     *Fonte: PNAD Contínua/IBGE; [IPEA](https://www.ipea.gov.br), Nota Técnica sobre Reforma Trabalhista, 2023.*
 
 ---
-
-## 🇧🇷 Box Brasil: Salário Mínimo no Brasil
 
 !!! box-brasil "O salário mínimo e o debate sobre o 'efeito-farol'"
     O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de um piso salarial para trabalhadores formais com carteira assinada. Ele serve como **referência** (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.

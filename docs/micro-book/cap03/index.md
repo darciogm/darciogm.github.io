@@ -509,8 +509,6 @@ A demonstração é direta: como \(f\) é estritamente crescente, \(u(\mathbf{x}
 
 As seções anteriores construíram progressivamente o arcabouço teórico das preferências: partimos de axiomas, chegamos à função de utilidade, derivamos curvas de indiferença e TMS, exploramos formas funcionais específicas e, por fim, demonstramos a invariância ordinal. Antes de consolidar esses conceitos no resumo do capítulo, vale observar como esse arcabouço se manifesta — e, por vezes, é posto à prova — em um contexto histórico concreto do Brasil.
 
-## 🇧🇷 Box Brasil: Mudança de Preferências do Consumidor Brasileiro Pós-Estabilização
-
 !!! box-brasil "Box Brasil — O Plano Real e a revolução no consumo"
     A hiperinflação brasileira que antecedeu o Plano Real (julho de 1994) distorcia profundamente as preferências reveladas dos consumidores. Com taxas de inflação que chegaram a superar 2.000% ao ano em 1993, o comportamento de compra era dominado pela **antecipação de consumo**: famílias corriam ao supermercado no dia do pagamento para converter salários em bens antes que os preços subissem.
 

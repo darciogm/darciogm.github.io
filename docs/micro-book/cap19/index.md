@@ -405,8 +405,6 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
 ---
 
-## 🇧🇷 Box Brasil: Seleção Adversa nos Planos de Saúde
-
 !!! example "Antisseleção e regulação por faixas etárias ([ANS](https://www.gov.br/ans))"
     O mercado brasileiro de saúde suplementar, com cerca de 51 milhões de beneficiários, é um caso emblemático de seleção adversa. Pessoas mais doentes (alto risco) têm maior incentivo para contratar planos de saúde, enquanto jovens saudáveis (baixo risco) tendem a considerar os prêmios elevados e permanecer sem plano — o clássico mecanismo de antisseleção.
 
@@ -580,8 +578,6 @@ Esse resultado notável, devido a Vickrey (1961) e Myerson (1981), implica que, 
 
 ---
 
-## 🇧🇷 Box Brasil: Leilões de Concessão no Brasil
-
 !!! example "Do pré-sal ao 5G: informação assimétrica e desenho de leilões"
     O Brasil tem sido um laboratório de formatos de leilão em setores estratégicos. Dois casos ilustram como o desenho do mecanismo afeta os resultados em presença de informação assimétrica.
 
@@ -622,8 +618,6 @@ A [Tabela 19.3](#tabela-19-3) resume os principais tipos de problemas de informa
 </div>
 
 ---
-
-## 🇧🇷 Box Brasil: Crédito Consignado e Seleção Adversa no Brasil
 
 !!! box-brasil "Box Brasil: Crédito Consignado e Seleção Adversa"
     O **crédito consignado** — modalidade em que as parcelas são descontadas diretamente da folha de pagamento ou do benefício previdenciário — é um exemplo notável de como um desenho contratual pode reduzir drasticamente os problemas de informação assimétrica no mercado de crédito.

@@ -163,8 +163,6 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
 ---
 
-## 🇧🇷 Box Brasil: Credibilidade do Banco Central
-
 Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na realidade institucional brasileira. Os dois Boxes a seguir ilustram como a comunicação do Banco Central pode ser analisada como cheap talk e como a regulação de telecomunicações enfrenta informação assimétrica entre regulador e firma.
 
 !!! box-brasil "Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
@@ -188,8 +186,6 @@ Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na rea
     **Fonte**: BCB, Relatório de Inflação; BACEN, Comunicados do COPOM.
 
 ---
-
-## 🇧🇷 Box Brasil: Telecom e Regulação sob Informação Assimétrica
 
 O próximo Box ilustra o lado operacional da informação assimétrica na regulação setorial.
 

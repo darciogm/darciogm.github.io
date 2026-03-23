@@ -573,8 +573,6 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slutsky, elasticidades, excedente do consumidor, preferência revelada — ganham vida quando aplicadas a problemas concretos. O estudo de caso a seguir ilustra como essas ferramentas são utilizadas na análise do mercado brasileiro de combustíveis, um dos mais estudados empiricamente no país.
 
-## 🇧🇷 Box Brasil: Elasticidade-preço da gasolina no Brasil
-
 !!! box-brasil "Box Brasil — Elasticidade-preço da gasolina no Brasil"
     A gasolina é um dos bens mais estudados empiricamente no Brasil, tanto pela relevância fiscal (ICMS, CIDE, PIS/COFINS) quanto pelo impacto no custo de vida. A Agência Nacional do Petróleo (ANP) coleta semanalmente preços em postos de todo o país, fornecendo uma base de dados rica para estimações econométricas.
 

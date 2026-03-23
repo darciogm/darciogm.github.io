@@ -527,8 +527,6 @@ A [Tabela 13.2](#tabela-13-2) resume os efeitos das principais políticas de int
 
 ---
 
-## 🇧🇷 Box Brasil: Mercado de Commodities Agrícolas — A Formação de Preços da Soja
-
 !!! box-brasil "Box Brasil: Soja brasileira e o leiloeiro global"
     O Brasil é o maior produtor e exportador mundial de soja, com safra recorde de aproximadamente 155 milhões de toneladas na safra 2023/24 ([CONAB](https://www.conab.gov.br)). Apesar da escala gigantesca, o Brasil atua essencialmente como **tomador de preços** (*price-taker*) no mercado internacional, cujos preços são formados na Bolsa de Chicago (CBOT).
 

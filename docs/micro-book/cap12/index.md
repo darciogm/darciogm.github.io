@@ -247,8 +247,6 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
 ---
 
-## 🇧🇷 Box Brasil: A Soja Brasileira e a Curva de Oferta em Ação
-
 !!! box-brasil "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
     O Brasil é o maior produtor e exportador mundial de soja, e a evolução da área plantada nas últimas safras oferece uma demonstração empírica direta da **curva de oferta** derivada na Seção 12.4.
 
@@ -439,8 +437,6 @@ Na equação $\eqref{eq:12.13}$, o **efeito substituição** (\(\leq 0\)) reflet
 
 ---
 
-## 🇧🇷 Box Brasil: JBS e a Integração Vertical na Agroindústria
-
 !!! box-brasil "Box Brasil — JBS: quando fazer internamente é melhor que comprar no mercado"
     A **JBS S.A.** é a maior processadora de proteína animal do mundo, com receita líquida trimestral recorde de **R$ 110,5 bilhões** no 3º trimestre de 2024 e presença em mais de 20 países. Sua trajetória ilustra de forma notável a teoria dos custos de transação de **Coase** e **Williamson** (Seção 12.1).
 
@@ -463,8 +459,6 @@ Na equação $\eqref{eq:12.13}$, o **efeito substituição** (\(\leq 0\)) reflet
     **Fonte**: JBS, Relatório de Resultados 3T2024; InfoMoney; Câmara dos Deputados.
 
 ---
-
-## 🇧🇷 Box Brasil: MPEs — Desafios de Sobrevivência Empresarial
 
 !!! box-brasil "Box Brasil: Micro e pequenas empresas — a arte de sobreviver"
 

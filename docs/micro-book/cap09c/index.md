@@ -135,8 +135,6 @@ O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado 
 
 ---
 
-## 🇧🇷 Box Brasil: Leilões da ANP e da ANEEL
-
 Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lances, maldição do vencedor e desenho de mecanismos — estão longe de ser abstrações acadêmicas. No Brasil, bilhões de reais são alocados anualmente por meio de leilões cujos formatos refletem diretamente as preocupações da teoria.
 
 !!! box-brasil "Box Brasil — Leilões de petróleo e energia: quando o formato importa"
@@ -159,8 +157,6 @@ Os conceitos desenvolvidos nas seções anteriores — BNE, sombreamento de lanc
     **Fonte**: ANP, Rodadas de Licitação; ANEEL, Leilões de Energia.
 
 ---
-
-## 🇧🇷 Box Brasil: Licitações Públicas e Colusão
 
 Se os leilões de petróleo e energia ilustram o lado virtuoso da competição entre licitantes, as licitações públicas revelam o lado sombrio: quando os participantes se coordenam para suprimir a competição, os leilões podem se tornar instrumentos de extração de renda pública — exatamente o oposto do que a teoria prescreve.
 

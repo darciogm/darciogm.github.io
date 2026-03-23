@@ -456,8 +456,6 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## 🇧🇷 Box Brasil: Taxa Selic e o Custo de Capital no Brasil
-
 !!! box-brasil "Por que os juros brasileiros são historicamente altos?"
     O Brasil é conhecido internacionalmente por praticar uma das taxas de juros reais mais elevadas do mundo. A taxa Selic — a taxa básica de juros definida pelo Comitê de Política Monetária (Copom) do [Banco Central do Brasil](https://www.bcb.gov.br) — atingiu níveis estratosféricos ao longo das últimas décadas.
 

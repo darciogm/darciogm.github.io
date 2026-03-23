@@ -390,8 +390,6 @@ Para consolidar as classificações discutidas nas seções anteriores, a [Tabel
 
 Para ilustrar concretamente as relações de substituição e complementaridade discutidas neste capítulo, apresentamos a seguir dois estudos de caso detalhados do mercado brasileiro — o primeiro sobre combustíveis (substituição quase pura) e o segundo sobre bebidas (um mosaico de relações cruzadas).
 
-## 🇧🇷 Box Brasil: Gasolina versus Etanol — Substitutos na Bomba
-
 !!! example "Gasolina versus etanol: substitutos na bomba"
     O Brasil possui a maior frota *flex-fuel* do mundo: segundo a Anfavea, mais de 90% dos automóveis leves vendidos desde 2010 são bicombustíveis. Isso torna a escolha entre gasolina e etanol um caso quase puro de substituição, em que o consumidor compara preços a cada abastecimento.
 
@@ -406,8 +404,6 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
     *Fontes: ANP — Levantamento de Preços de Combustíveis; Anfavea — Anuário Estatístico; CEPEA/ESALQ — Indicador do Etanol.*
 
 ---
-
-## 🇧🇷 Box Brasil: Substitutos e Complementos no Mercado de Bebidas Brasileiro
 
 !!! example "Substitutos e complementos no mercado de bebidas brasileiro"
     O mercado brasileiro de bebidas é um laboratório natural para o estudo de relações cruzadas de demanda. Com faturamento superior a R$ 120 bilhões anuais e elevada penetração em todas as classes sociais, as categorias de cerveja, refrigerante e água mineral apresentam interações de preço particularmente reveladoras.

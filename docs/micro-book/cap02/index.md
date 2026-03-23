@@ -991,8 +991,6 @@ A [Tabela 2.1](#tabela-2-1) reúne as condições de otimização para os princi
 
 ---
 
-## 🇧🇷 Box Brasil: A matemática por trás do IPCA
-
 !!! box-brasil "Box Brasil — O IPCA e as funções de agregação de Laspeyres"
 
     O **Índice Nacional de Preços ao Consumidor Amplo (IPCA)**, calculado mensalmente pelo IBGE, é o indicador oficial de inflação no Brasil e meta do regime de metas de inflação adotado desde 1999. Por trás de sua aparente simplicidade — "quanto subiram os preços?" — há um arcabouço matemático preciso baseado em **funções de agregação de preços**.

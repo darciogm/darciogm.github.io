@@ -425,8 +425,6 @@ Se a seleção adversa é um problema de **informação oculta** (quem é o agen
 
 Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade esperada, aversão ao risco, prêmio de risco, diversificação e informação assimétrica — ganham vida quando aplicados a mercados reais. Os boxes a seguir ilustram como a teoria se manifesta em três contextos brasileiros: o mercado de seguros de automóvel, a Mega-Sena e o seguro agrícola.
 
-## 🇧🇷 Box Brasil: O Mercado de Seguros de Automóvel no Brasil
-
 !!! box-brasil "Box Brasil — Seguros de automóvel: risco, precificação e regulação"
     O mercado de seguros de automóvel no Brasil é um campo fértil para a aplicação dos conceitos de incerteza e aversão ao risco. Regulado pela **[SUSEP](https://www.susep.gov.br)** (Superintendência de Seguros Privados), esse mercado apresenta características que ilustram os desafios teóricos discutidos neste capítulo.
 
@@ -465,8 +463,6 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-## 🇧🇷 Box Brasil: A Mega-Sena e a Economia da Loteria
-
 !!! box-brasil "Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
     A **Mega-Sena**, operada pela Caixa Econômica Federal, é a maior loteria do Brasil e ilustra de maneira contundente o contraste entre valor esperado e comportamento observado.
 
@@ -493,8 +489,6 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
     **Fonte**: Caixa Econômica Federal, regulamento da Mega-Sena; Lei 13.756/2018 (destinação da arrecadação de loterias).
 
 ---
-
-## 🇧🇷 Box Brasil: O Seguro Agrícola e o PSR
 
 !!! box-brasil "Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
     O setor agropecuário brasileiro — responsável por cerca de 24% do PIB quando considerada toda a cadeia — está intrinsecamente exposto a riscos climáticos, fitossanitários e de preços. O **Programa de Subvenção ao Prêmio do Seguro Rural (PSR)**, criado em 2003, é a principal política pública de gestão de risco agrícola no país.

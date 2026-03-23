@@ -199,8 +199,6 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 
 ---
 
-## 🇧🇷 Box Brasil: Guerra Fiscal do ICMS como Jogo Repetido
-
 Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram aplicações diretas na economia brasileira. Os dois Boxes a seguir ilustram, respectivamente, como a lógica do Dilema dos Prisioneiros repetido explica a persistência da guerra fiscal entre estados e como o modelo de Rubinstein ilumina as negociações salariais na indústria automotiva.
 
 !!! box-brasil "Box Brasil — A guerra fiscal do ICMS: uma corrida ao fundo"
@@ -228,8 +226,6 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
     A EC 132/2023 (IBS com alíquota uniforme e cobrança no destino) não tenta sustentar cooperação no jogo existente — ela **redesenha o jogo** eliminando o instrumento (ICMS na origem) que permitia a concessão unilateral de benefícios.
 
 ---
-
-## 🇧🇷 Box Brasil: Negociação Salarial na Indústria Automotiva
 
 !!! box-brasil "Box Brasil — Metalúrgicos vs. Montadoras: barganha à brasileira"
     As negociações salariais anuais entre o **Sindicato dos Metalúrgicos do ABC** e as montadoras (Volkswagen, Mercedes-Benz, Toyota) são um exemplo clássico de barganha com ofertas alternadas.

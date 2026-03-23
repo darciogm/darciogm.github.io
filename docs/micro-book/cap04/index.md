@@ -892,8 +892,6 @@ A função dispêndio é **linear** em \(\bar{u}\): \(\partial E / \partial \bar
 
 Os cinco tipos de função utilidade analisados nesta seção cobrem a grande maioria das aplicações em microeconomia teórica e empírica. Na prática, a escolha da forma funcional envolve um *trade-off* entre tratabilidade analítica e realismo empírico — e os boxes a seguir ilustram como esses modelos se conectam a questões concretas de política pública no Brasil.
 
-## 🇧🇷 Box Brasil: O Impacto do Bolsa Família na Restrição Orçamentária
-
 !!! box-brasil "Box Brasil — Transferências condicionadas e escolhas de consumo"
     O Programa Bolsa Família (PBF), criado em 2003 e reestruturado como Auxílio Brasil em 2021 e novamente como Bolsa Família em 2023, constitui o maior programa de transferência condicionada de renda da América Latina, atingindo cerca de 21 milhões de famílias em 2023.
 

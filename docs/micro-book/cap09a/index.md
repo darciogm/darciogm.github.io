@@ -412,8 +412,6 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
 ---
 
-## 🇧🇷 Box Brasil: Cartéis de Postos de Combustíveis e o CADE
-
 Os modelos de oligopólio apresentados acima não são meros exercícios teóricos — eles fornecem a estrutura analítica que órgãos reguladores como o CADE utilizam diariamente para avaliar práticas anticompetitivas. O primeiro Box Brasil deste capítulo examina precisamente essa conexão entre teoria e prática regulatória.
 
 !!! box-brasil "Box Brasil — Cartéis de postos de combustíveis: conluio, detecção e punição"
@@ -442,8 +440,6 @@ Os modelos de oligopólio apresentados acima não são meros exercícios teóric
     **Fonte**: CADE, decisões do Tribunal Administrativo (2024–2025).
 
 ---
-
-## 🇧🇷 Box Brasil: O Oligopólio Aéreo Brasileiro
 
 Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais, o transporte aéreo doméstico oferece um panorama complementar: um oligopólio altamente concentrado em escala nacional, no qual coexistem elementos de Cournot, Bertrand e Stackelberg dependendo da rota e do horizonte temporal.
 

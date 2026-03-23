@@ -582,8 +582,6 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 ---
 
-## 🇧🇷 Box Brasil: A Revolução Tecnológica da Embrapa e a Produtividade Agrícola
-
 !!! box-brasil "Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
 
     A agropecuária brasileira vivenciou, nas últimas cinco décadas, uma das mais impressionantes transformações produtivas do mundo. O protagonista dessa revolução foi a **Empresa Brasileira de Pesquisa Agropecuária (Embrapa)**, fundada em 1973, cuja atuação é um caso emblemático de progresso técnico aplicado à produção.

@@ -185,8 +185,6 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ---
 
-## 🇧🇷 Box Brasil: Mercosul-UE e os Ganhos de Troca
-
 !!! box-brasil "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
     Em dezembro de 2024, após 25 anos de negociação, o **Mercosul** e a **União Europeia** assinaram um acordo de parceria comercial que cria uma das maiores zonas de livre comércio do mundo, reunindo **718 milhões de pessoas** e um PIB conjunto de US$ 22,4 trilhões.
 
@@ -297,8 +295,6 @@ O Segundo Teorema separa eficiência de equidade. Ele afirma que, em princípio,
     **Por que isso importa:** Esse teorema fundamenta a separação entre política de eficiência (deixar mercados funcionar) e política de equidade (redistribuir renda), e é a base teórica de programas de transferência de renda como o Bolsa Família.
 
 ---
-
-## 🇧🇷 Box Brasil: A Reforma Tributária e os Teoremas do Bem-Estar
 
 !!! box-brasil "Box Brasil — IBS + CBS: eficiência econômica à luz do equilíbrio geral"
     A **Reforma Tributária** brasileira (EC 132/2023, regulamentada pela LC 214/2025) é, do ponto de vista da teoria do equilíbrio geral, uma das maiores intervenções sobre o sistema de preços relativos já realizadas no país. Ela substitui cinco tributos sobre consumo (PIS, Cofins, IPI, ICMS e ISS) por dois: a **CBS** (federal) e o **IBS** (estadual/municipal), formando um IVA dual com alíquota estimada entre 26,5% e 28%.
@@ -509,8 +505,6 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
     Os modelos CGE mais conhecidos utilizam o software GAMS (General Algebraic Modeling System) ou GEMPACK. Modelos globais como o GTAP (Global Trade Analysis Project) permitem análise de comércio internacional com desagregação por país e setor.
 
 ---
-
-## 🇧🇷 Box Brasil: Modelos CGE Aplicados ao Brasil
 
 !!! box-brasil "Box Brasil: Equilíbrio geral computável e políticas comerciais"
     O Brasil tem uma tradição relevante no desenvolvimento e aplicação de modelos de equilíbrio geral computável para avaliação de políticas públicas. Diversas instituições — como o IPEA (Instituto de Pesquisa Econômica Aplicada), a FGV (Fundação Getulio Vargas), a ESALQ/USP e universidades federais — mantêm modelos CGE calibrados para a economia brasileira.
