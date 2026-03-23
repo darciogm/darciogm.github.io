@@ -329,8 +329,6 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 
 ---
 
-## 🇧🇷 Box Brasil: O Plano Real e o uso de modelos econômicos
-
 !!! box-brasil "Box Brasil — O Plano Real (1994): modelos econômicos em ação"
 
     O **Plano Real**, implementado em 1994, é um dos exemplos mais notáveis de aplicação prática de modelos econômicos na história brasileira. Diferentemente dos planos de estabilização anteriores (Cruzado, Bresser, Verão, Collor), que recorreram a congelamentos de preços e confiscos — medidas ad hoc, sem fundamentação teórica sólida —, o Plano Real foi desenhado com base em modelos formais de **expectativas racionais**, **teoria dos jogos** e **teoria monetária**.
@@ -346,8 +344,6 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
     Este caso demonstra a tese central deste capítulo: modelos são úteis não apesar de suas simplificações, mas *por causa* delas.
 
 ---
-
-## 🇧🇷 Box Brasil: Modelos de projeção do Banco Central
 
 !!! box-brasil "Box Brasil — COPOM e os modelos de projeção da inflação"
 
