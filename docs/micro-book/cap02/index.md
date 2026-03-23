@@ -952,26 +952,26 @@ Ao longo de todo o livro, cada capítulo contará com gráficos interativos seme
 
 ### Otimização de função de uma variável
 
-<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.2 — Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.2 — Otimização de função de uma variável" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 2.2 — Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Use os sliders para alterar curvatura e posição do pico.
+**Figura 2.2 — Otimização de função de uma variável.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. Use os sliders para alterar curvatura e posição do pico.
 </div>
 
 ### Otimização com restrição: Lagrangeano
 
-<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.3 — Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\)" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.3 — Otimização com restrição: Lagrangeano" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 2.3 — Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\).** O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
+**Figura 2.3 — Otimização com restrição: Lagrangeano.** Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
 </div>
 
 ### Teorema do envelope
 
-<iframe src="../graficos/cap02/envelope.html" title="Figura 2.4 — Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\)" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/envelope.html" title="Figura 2.4 — Teorema do Envelope" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 2.4 — Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\).** O teorema do envelope mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.
+**Figura 2.4 — Teorema do Envelope.** Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\). O teorema mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.
 </div>
 
 ---
