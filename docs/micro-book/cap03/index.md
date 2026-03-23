@@ -82,14 +82,15 @@ Com a função de utilidade em mãos, passamos da abstração algébrica para a 
 !!! definition "Curva de indiferença"
     A curva de indiferença associada ao nível de utilidade \(\bar{u}\) é o conjunto \(\{\mathbf{x} \in X : u(\mathbf{x}) = \bar{u}\}\). Trata-se de uma **curva de nível** da função de utilidade.
 
-**Propriedades das curvas de indiferença** (sob os axiomas da Seção 3.1):
+!!! tip "Propriedades das curvas de indiferença"
+    Sob os axiomas da Seção 3.1:
 
-1. **Cobrem todo o espaço de consumo**: pela completude, toda cesta pertence a alguma curva de indiferença.
-2. **Não se cruzam**: se duas curvas se cruzassem em um ponto, a transitividade seria violada.
-3. **Possuem inclinação negativa**: pela monotonicidade, para manter o mesmo nível de utilidade, um aumento em \(x_1\) deve ser compensado por uma redução em \(x_2\).
-4. **Cestas em curvas mais altas (a nordeste) são preferidas**: consequência direta da monotonicidade.
+    1. **Cobrem todo o espaço de consumo**: pela completude, toda cesta pertence a alguma curva de indiferença.
+    2. **Não se cruzam**: se duas curvas se cruzassem em um ponto, a transitividade seria violada.
+    3. **Possuem inclinação negativa**: pela monotonicidade, para manter o mesmo nível de utilidade, um aumento em \(x_1\) deve ser compensado por uma redução em \(x_2\).
+    4. **Cestas em curvas mais altas (a nordeste) são preferidas**: consequência direta da monotonicidade.
 
-O **mapa de indiferença** é a família de todas as curvas de indiferença. Ele oferece uma representação visual completa das preferências do consumidor no espaço bidimensional.
+    O **mapa de indiferença** é a família de todas as curvas de indiferença. Ele oferece uma representação visual completa das preferências do consumidor no espaço bidimensional.
 
 <iframe src="../graficos/cap03/curvas-indiferenca.html" title="Figura 3.1 — Mapa de curvas de indiferença" class="graph-iframe"></iframe>
 
