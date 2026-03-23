@@ -246,8 +246,6 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 ---
 
-### Maximização de lucro da firma competitiva
-
 <iframe src="../graficos/cap01/maximizacao-lucro.html" title="Figura 1.1 — Receita, custo total e lucro de uma firma competitiva com \(CT(q)=10+2q+0{,}5q^2\)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
