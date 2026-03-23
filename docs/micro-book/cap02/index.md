@@ -639,7 +639,7 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 
         Se \(\frac{\alpha}{p_1} = \frac{1-\alpha}{p_2}\), qualquer combinação na restrição orçamentária é ótima.
 
-        **Casos especiais da função CES**
+        <div style="display: flex; justify-content: center;" markdown>
 
         | Parâmetro \(\rho\) | \(\sigma\) | Função utilidade | Curvas de indiferença |
         |---|---|---|---|
@@ -648,7 +648,7 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
         | \(\rho = 0{,}5\) | 2 | \((\alpha \sqrt{x_1} + (1-\alpha)\sqrt{x_2})^2\) | Curvas intermediárias |
         | \(\rho = 1\) | \(\infty\) | \(\alpha x_1 + (1-\alpha) x_2\) | Retas paralelas |
 
-    **Gráfico interativo: demandas marshallianas CES**
+        </div>
 
     <iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.1 — Demandas marshallianas CES" class="graph-iframe"></iframe>
 
