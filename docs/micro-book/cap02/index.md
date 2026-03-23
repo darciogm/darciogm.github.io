@@ -201,7 +201,7 @@ O problema canônico da microeconomia pode ser escrito na forma:
 
 onde \(f\) é a **função objetivo** (o que o agente quer maximizar ou minimizar) e \(g(x_1, x_2) = c\) é a **restrição** (a limitação que o agente enfrenta). A formulação se generaliza para \(n\) variáveis de escolha e múltiplas restrições, mas o caso com duas variáveis e uma restrição é o ponto de partida ideal.
 
-!!! info "Intuição econômica"
+!!! info "Por que otimizar sem restrição é ficção?"
     Por que precisamos otimizar sob restrição? Porque em economia os recursos são escassos. Dois exemplos fundamentais:
 
     - **Consumidor**: maximiza a utilidade \(U(x_1, x_2)\) sujeito à restrição orçamentária \(p_1 x_1 + p_2 x_2 = m\). Aqui, \(f = U\), \(g = p_1 x_1 + p_2 x_2\), e \(c = m\).
@@ -267,7 +267,7 @@ Igualando as duas expressões:
 
 A equação $\eqref{eq:2.6}$ é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
 
-!!! info "Intuição econômica"
+!!! info "TMS igual à razão de preços: o ótimo do consumidor"
     No problema do consumidor, a equação $\eqref{eq:2.6}$ se torna:
 
     \[
@@ -315,7 +315,7 @@ onde \(V(c) = f(\mathbf{x}^*(c))\) é a **função valor** — o valor máximo d
 !!! example "Exemplo numérico"
     Suponha que resolvemos o problema do consumidor e encontramos \(\lambda^* = 0{,}5\). Isso significa que, se a renda do consumidor aumentar em R\$ 1 (de \(m\) para \(m + 1\)), a utilidade máxima aumentará em aproximadamente 0,5 unidades. Reciprocamente, se a renda diminuir em R\$ 1, a utilidade cairá em aproximadamente 0,5 unidades.
 
-!!! info "Intuição econômica"
+!!! info "O princípio da equimarginalidade"
     No problema do consumidor, \(\lambda^*\) é a **utilidade marginal da renda**. As CPOs implicam:
 
     \[
