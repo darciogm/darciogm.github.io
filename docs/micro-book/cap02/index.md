@@ -944,7 +944,11 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ### Gráficos interativos
 
-Os gráficos interativos a seguir permitem visualizar os conceitos matemáticos discutidos neste capítulo. Manipular os parâmetros e observar como as soluções ótimas se ajustam é uma forma eficaz de desenvolver a intuição geométrica por trás das condições formais.
+Os gráficos interativos a seguir ilustram os principais conceitos desenvolvidos neste capítulo — otimização sem e com restrições, o método de Lagrange, condições de Kuhn-Tucker e funções homogêneas. Cada gráfico permite manipular parâmetros em tempo real, de modo que o leitor possa observar como as soluções ótimas, as curvas de nível e os multiplicadores se ajustam simultaneamente.
+
+A visualização interativa é um complemento essencial à exposição formal. Enquanto as demonstrações algébricas estabelecem *por que* os resultados são verdadeiros, os gráficos mostram *como* eles se manifestam geometricamente — tornando tangível a relação entre gradientes paralelos, tangência de curvas de nível e folga complementar, por exemplo.
+
+Ao longo de todo o livro, cada capítulo contará com gráficos interativos semelhantes, adaptados aos temas específicos daquela seção. Essa abordagem visual-interativa acompanha o leitor desde os fundamentos matemáticos aqui apresentados até as aplicações em teoria do consumidor, teoria da firma, equilíbrio geral e economia da informação.
 
 ### Otimização de função de uma variável
 
