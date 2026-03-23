@@ -12,7 +12,9 @@ O capítulo segue a abordagem axiomática presente em Mas-Colell, Whinston e Gre
 
 Antes de construir qualquer modelo de escolha do consumidor, precisamos estabelecer regras mínimas sobre como ele ordena suas opções. Afinal, se não soubermos ao menos *como* o consumidor compara alternativas, qualquer tentativa de prever seu comportamento estará fadada ao fracasso. Essas regras mínimas são os **axiomas** das preferências — e, como veremos, a partir delas toda a teoria do consumidor pode ser edificada. A estratégia é poderosa: em vez de supor que conhecemos as preferências específicas de cada indivíduo, impomos apenas condições gerais de coerência e mostramos que esse mínimo é suficiente para derivar previsões testáveis sobre o comportamento de consumo.
 
-Seja \(X \subseteq \mathbb{R}^n_+\) o **conjunto de consumo**, isto é, o conjunto de todas as cestas de bens fisicamente disponíveis ao consumidor. Uma cesta \(\mathbf{x} = (x_1, x_2, \ldots, x_n)\) especifica a quantidade de cada um dos \(n\) bens. Uma **relação de preferência** \(\succsim\) sobre \(X\) indica que, dadas duas cestas \(\mathbf{x}\) e \(\mathbf{y}\), o consumidor considera \(\mathbf{x}\) pelo menos tão boa quanto \(\mathbf{y}\). Note que a relação \(\succsim\) é primitiva — ela é o ponto de partida da teoria, não algo derivado de uma função de utilidade. A função de utilidade, como veremos na próxima seção, é uma *consequência* dos axiomas impostos sobre \(\succsim\).
+Seja \(X \subseteq \mathbb{R}^n_+\) o **conjunto de consumo**, isto é, o conjunto de todas as cestas de bens fisicamente disponíveis ao consumidor. Uma cesta \(\mathbf{x} = (x_1, x_2, \ldots, x_n)\) especifica a quantidade de cada um dos \(n\) bens — por exemplo, em um modelo com dois bens, \(\mathbf{x} = (x_1, x_2)\) poderia representar quilos de arroz e litros de leite. O conjunto de consumo inclui todas as combinações não negativas dessas quantidades, formando o quadrante positivo do espaço \(\mathbb{R}^n\).
+
+Uma **relação de preferência** \(\succsim\) sobre \(X\) indica que, dadas duas cestas \(\mathbf{x}\) e \(\mathbf{y}\), o consumidor considera \(\mathbf{x}\) pelo menos tão boa quanto \(\mathbf{y}\). A notação \(\mathbf{x} \succsim \mathbf{y}\) se lê "\(\mathbf{x}\) é fracamente preferida a \(\mathbf{y}\)". Note que a relação \(\succsim\) é **primitiva** — ela é o ponto de partida da teoria, não algo derivado de uma função de utilidade. Tomamos como dado que o consumidor *possui* preferências; o que os axiomas fazem é impor estrutura sobre essas preferências, de modo a torná-las matematicamente tratáveis. A função de utilidade, como veremos na próxima seção, é uma *consequência* dos axiomas impostos sobre \(\succsim\), não uma hipótese adicional.
 
 A partir de \(\succsim\), definimos duas relações derivadas que utilizaremos extensivamente:
 
@@ -46,6 +48,9 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
 
     **Por que isso importa:** Sem essas regras mínimas, não seria possível prever o comportamento do consumidor nem formular políticas públicas baseadas em escolhas racionais.
 
+!!! note "Conexão com a teoria da preferência revelada"
+    Os axiomas sobre \(\succsim\) são postulados sobre preferências *internas* do consumidor — algo que, em princípio, não podemos observar diretamente. Existe, porém, uma contrapartida observacional: o **Axioma Generalizado da Preferência Revelada (GARP)**, que traduz completude e transitividade em condições testáveis sobre *escolhas de consumo observadas*. Se as compras de um consumidor satisfazem o GARP, seus dados são consistentes com a maximização de alguma função de utilidade bem comportada. Na seção "Pesquisa em Ação" ao final deste capítulo, o artigo de Choi et al. (2014) testa exatamente essa hipótese em uma amostra representativa — com resultados surpreendentes sobre a relação entre consistência das escolhas e acumulação de riqueza.
+
 ---
 
 ## 3.2 Relações de Preferência e Função de Utilidade
@@ -54,7 +59,7 @@ Os axiomas da seção anterior descrevem propriedades qualitativas das preferên
 
 O próximo passo natural é, portanto, perguntar: podemos traduzir essas preferências em uma **função numérica** que facilite a análise? A resposta é sim, sob certas condições — e o resultado é um dos pilares mais importantes da teoria microeconômica. A passagem de uma relação binária \(\succsim\) para uma função \(u: X \to \mathbb{R}\) é o que nos permite mobilizar todo o arsenal do cálculo diferencial — derivadas, condições de primeira ordem, multiplicadores de Lagrange — para resolver o problema do consumidor. É essa ponte entre preferências e funções que torna a microeconomia uma ciência analítica.
 
-Uma **função de utilidade** \(u: X \to \mathbb{R}\) **representa** a relação de preferência \(\succsim\) se, para todo \(\mathbf{x}, \mathbf{y} \in X\):
+A definição formal de representação é a seguinte. Uma **função de utilidade** \(u: X \to \mathbb{R}\) **representa** a relação de preferência \(\succsim\) se, para todo \(\mathbf{x}, \mathbf{y} \in X\):
 
 \[
 \mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \label{eq:3.2.1} \tag{3.2.1}
@@ -64,6 +69,16 @@ A condição expressa na equação $\eqref{eq:3.2.1}$ exige apenas que a funçã
 
 !!! theorem "Teorema 3.1 — Existência da Função de Utilidade (Debreu, 1954)"
     Se a relação de preferência \(\succsim\) sobre \(X \subseteq \mathbb{R}^n_+\) é **completa**, **transitiva**, **contínua** e **monótona**, então existe uma função de utilidade contínua \(u: X \to \mathbb{R}\) que representa \(\succsim\).
+
+!!! info "🏅 Prêmio Nobel — Gerard Debreu (1983)"
+
+    **Gerard Debreu** (1921–2004) foi um economista e matemático franco-americano, formado pela École Normale Supérieure de Paris. Atuou na Cowles Commission e na Universidade da Califórnia, Berkeley.
+
+    **Por que ganhou o Nobel:**
+    Premiado por sua contribuição à teoria do equilíbrio geral e por ter incorporado novos métodos analíticos à teoria econômica. Em *Theory of Value* (1959), Debreu forneceu uma axiomatização rigorosa da teoria do consumidor e demonstrou a existência de equilíbrio geral competitivo sob condições precisas. O Teorema 3.1 deste capítulo é uma de suas contribuições mais fundamentais.
+
+    **Conexão com este capítulo:**
+    O teorema de existência da função de utilidade garante que os axiomas da Seção 3.1 — completude, transitividade, continuidade e monotonicidade — são suficientes para construir toda a maquinaria analítica que se segue: curvas de indiferença, TMS e otimização do consumidor.
 
 A demonstração completa pode ser encontrada em Mas-Colell, Whinston e Green (1995, Proposição 3.C.1). A ideia central é elegante: para cada cesta \(\mathbf{x}\), encontramos o escalar \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\), onde \(\mathbf{1} = (1, 1, \ldots, 1)\) é a cesta com uma unidade de cada bem. Esse escalar \(t\) é o "nível de utilidade" atribuído a \(\mathbf{x}\). A monotonicidade garante que tal \(t\) é único — cestas melhores correspondem a valores maiores de \(t\) — e a continuidade garante que a função resultante é contínua, sem saltos que gerariam cestas impossíveis de classificar. Cada axioma desempenha, portanto, um papel preciso na construção.
 
@@ -106,6 +121,14 @@ Essas curvas — as *curvas de indiferença* — constituem a ferramenta gráfic
 
 !!! tip "Convexidade estrita"
     Se as preferências forem **estritamente convexas** — isto é, se \(\mathbf{x} \sim \mathbf{y}\) e \(\mathbf{x} \neq \mathbf{y}\) implicarem \(t\mathbf{x} + (1-t)\mathbf{y} \succ \mathbf{x}\) para todo \(t \in (0,1)\) — então as curvas de indiferença são estritamente convexas em relação à origem. Isso reflete a ideia de que consumidores preferem variedade: uma cesta "mista" é preferida a cestas extremas. A seção sobre a TMS (a seguir) mostrará que essa propriedade equivale a uma TMS decrescente.
+
+!!! warning "Convexidade das preferências ≠ concavidade da função de utilidade"
+    Um erro frequente é confundir **preferências convexas** com **função de utilidade côncava**. São conceitos relacionados, mas distintos:
+
+    - **Preferências convexas** significam que os *conjuntos superiores* \(\{\mathbf{x} : u(\mathbf{x}) \geq \bar{u}\}\) são convexos — geometricamente, as curvas de indiferença são "abauladas" em direção à origem.
+    - **Função côncava** é uma condição sobre a própria função \(u\), mais forte que a convexidade das preferências.
+
+    Toda função de utilidade côncava gera preferências convexas, mas a recíproca é falsa: como a utilidade é ordinal, podemos sempre encontrar uma transformação monotônica que torne a função convexa (não côncava) sem alterar as preferências. O Exercício 3.5, com \(u = x_1^2 + x_2^2\), ilustra o caso oposto: uma função convexa que gera preferências *côncavas* (curvas de indiferença circulares, côncavas em relação à origem).
 
 ---
 
@@ -154,13 +177,20 @@ Essa é exatamente a informação capturada pela **taxa marginal de substituiç�
 
 Na seção anterior, definimos a TMS geometricamente como a inclinação da curva de indiferença — um conceito intuitivo, mas que depende da capacidade de visualizar a curva. Na prática analítica, precisamos de uma fórmula que nos permita calcular a TMS diretamente a partir da função de utilidade, sem necessidade de traçar gráficos. A resposta passa por uma ferramenta fundamental do cálculo diferencial: a **utilidade marginal**, que mede o acréscimo de utilidade proporcionado por uma unidade adicional de um bem, mantendo constantes as quantidades dos demais bens (*ceteris paribus*). Como demonstraremos a seguir, a TMS pode ser expressa de forma elegante e operacional como a razão entre as utilidades marginais dos dois bens — um resultado que conecta a geometria das curvas de indiferença à álgebra das derivadas parciais.
 
-A **utilidade marginal** do bem \(i\) é:
+Formalmente, a **utilidade marginal** do bem \(i\) é a derivada parcial da função de utilidade em relação à quantidade desse bem:
 
 \[
 \text{UMg}_i = \frac{\partial u}{\partial x_i}. \label{eq:3.5.3} \tag{3.5.3}
 \]
 
-A relação fundamental entre a utilidade marginal, definida pela equação $\eqref{eq:3.5.3}$, e a TMS, definida pela equação $\eqref{eq:3.4.2}$, revela que a inclinação da curva de indiferença pode ser inteiramente expressa em termos de derivadas da função de utilidade. Essa ponte entre geometria e cálculo é dada pela proposição a seguir.
+Se a utilidade marginal é positiva — o que é garantido pela monotonicidade —, o consumidor sempre se beneficia de uma unidade adicional do bem \(i\), mantendo tudo o mais constante. Contudo, é importante lembrar que, como a utilidade é ordinal (Seção 3.2), o valor numérico da utilidade marginal *em si* não possui significado econômico absoluto — ele depende da escala escolhida para representar as preferências. O que *tem* significado é a razão entre utilidades marginais, como veremos imediatamente.
+
+!!! warning "Cuidado: utilidade marginal não tem significado isolado"
+    A utilidade marginal \(\text{UMg}_i\) muda de valor quando aplicamos uma transformação monotônica à função de utilidade (Seção 3.7). Se \(\hat{u} = \ln(u)\), a utilidade marginal passa de \(\partial u / \partial x_i\) para \(\frac{1}{u} \cdot \partial u / \partial x_i\) — um valor completamente diferente. Por isso, afirmações como "a utilidade marginal do bem 1 é 5" não possuem conteúdo econômico: o número 5 depende arbitrariamente da escala escolhida.
+
+    O que **tem** significado econômico é a **razão** \(\text{UMg}_1 / \text{UMg}_2\), que é a TMS — invariante sob transformações monotônicas. Não confunda, ainda, "utilidade marginal decrescente" (propriedade cardinal, sem significado ordinal) com "TMS decrescente" (propriedade ordinal, com significado econômico preciso: preferências convexas).
+
+A relação fundamental entre a utilidade marginal, definida pela equação $\eqref{eq:3.5.3}$, e a TMS, definida pela equação $\eqref{eq:3.4.2}$, revela que a inclinação da curva de indiferença pode ser inteiramente expressa em termos de derivadas da função de utilidade. Essa ponte entre geometria e cálculo — entre a inclinação visual da curva e as derivadas parciais da função — é dada pela proposição a seguir.
 
 !!! theorem "Proposição 3.2 — TMS como razão de utilidades marginais"
     Se \(u(x_1, x_2)\) é diferenciável e \(\text{UMg}_2 > 0\), então:
@@ -253,7 +283,7 @@ A função Cobb-Douglas é, sem dúvida, a forma funcional mais utilizada em mic
 u(x_1, x_2) = x_1^a \, x_2^b, \quad a, b > 0. \label{eq:3.6.5} \tag{3.6.5}
 \]
 
-As curvas de indiferença são hipérboles convexas, estritamente decrescentes e assintóticas aos eixos — o consumidor nunca deseja quantidades nulas de qualquer bem. A TMS é:
+Geometricamente, as curvas de indiferença da Cobb-Douglas são hipérboles convexas, estritamente decrescentes e assintóticas aos eixos coordenados. A assíntota implica que o consumidor nunca deseja quantidades nulas de qualquer bem: por maior que seja a quantidade de \(x_1\), uma pequena quantidade positiva de \(x_2\) sempre é necessária para manter a utilidade positiva. A TMS é:
 
 \[
 \text{TMS}_{12} = \frac{a \, x_2}{b \, x_1}. \label{eq:3.6.6} \tag{3.6.6}
@@ -271,7 +301,7 @@ No extremo oposto da substituibilidade, considere bens que o consumidor troca li
 u(x_1, x_2) = a x_1 + b x_2, \quad a, b > 0. \label{eq:3.6.7} \tag{3.6.7}
 \]
 
-As curvas de indiferença são **linhas retas** com inclinação \(-a/b\). A TMS é constante:
+As curvas de indiferença são **linhas retas** com inclinação \(-a/b\), paralelas entre si no espaço \((x_1, x_2)\). Curvas de indiferença mais altas (maiores níveis de utilidade) estão mais afastadas da origem. A TMS é constante em todos os pontos:
 
 \[
 \text{TMS}_{12} = \frac{a}{b}. \label{eq:3.6.8} \tag{3.6.8}
@@ -297,23 +327,39 @@ Os três casos anteriores — Cobb-Douglas $\eqref{eq:3.6.5}$, substitutos perfe
 u(x_1, x_2) = \left(x_1^{\rho} + x_2^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \; \rho \neq 0. \label{eq:3.6.10} \tag{3.6.10}
 \]
 
-A elasticidade de substituição é:
+A elasticidade de substituição — que mede a sensibilidade da razão \(x_1/x_2\) a variações no preço relativo — é determinada diretamente pelo parâmetro \(\rho\):
 
 \[
 \sigma = \frac{1}{1 - \rho}. \label{eq:3.6.11} \tag{3.6.11}
 \]
 
-A função CES engloba como casos especiais:
+Essa relação é a chave para entender a versatilidade da CES: ao variar um único parâmetro, percorremos todo o espectro de substituibilidade. A função CES engloba como casos especiais as três formas funcionais anteriores:
 
-- \(\rho \to 0\): Cobb-Douglas (\(\sigma = 1\)).
-- \(\rho = 1\): Substitutos perfeitos (\(\sigma = \infty\)).
-- \(\rho \to -\infty\): Complementos perfeitos (\(\sigma = 0\)).
+- \(\rho \to 0\): Cobb-Douglas (\(\sigma = 1\)). A passagem ao limite requer a regra de L'Hôpital aplicada ao logaritmo da função.
+- \(\rho = 1\): Substitutos perfeitos (\(\sigma = \infty\)). A utilidade se reduz a uma combinação linear dos bens.
+- \(\rho \to -\infty\): Complementos perfeitos (\(\sigma = 0\)). A utilidade converge para o mínimo das quantidades ponderadas.
 
-A TMS para a CES é:
+Para valores intermediários de \(\rho\), a CES produz curvas de indiferença com curvatura intermediária — nem tão "redondas" quanto as da Cobb-Douglas, nem tão "angulosas" quanto as dos complementos perfeitos. Isso a torna ideal para estimação empírica, pois os dados podem "escolher" o grau de substituibilidade que melhor se ajusta ao comportamento observado.
+
+A TMS para a CES assume uma forma compacta e elegante:
 
 \[
 \text{TMS}_{12} = \left(\frac{x_1}{x_2}\right)^{\rho - 1}. \label{eq:3.6.12} \tag{3.6.12}
 \]
+
+Note que, quando \(\rho < 1\) (o caso economicamente relevante), o expoente \(\rho - 1\) é negativo, de modo que a TMS é decrescente em \(x_1/x_2\) — confirmando a convexidade das curvas de indiferença.
+
+!!! example "Exemplo numérico: CES com diferentes valores de ρ"
+    Considere o ponto \((x_1, x_2) = (4, 8)\). A TMS da CES é \(\text{TMS}_{12} = (x_1/x_2)^{\rho-1} = (4/8)^{\rho-1} = (0{,}5)^{\rho-1}\). Veja como ela varia com \(\rho\):
+
+    | \(\rho\) | \(\sigma = \frac{1}{1-\rho}\) | \(\text{TMS}_{12}(4,8)\) | Interpretação |
+    |---|---|---|---|
+    | \(0{,}5\) | \(2\) | \((0{,}5)^{-0,5} = 1{,}41\) | Substituição fácil: troca 1,41 unidades de \(x_2\) por 1 de \(x_1\) |
+    | \(0\) (Cobb-Douglas) | \(1\) | \((0{,}5)^{-1} = 2\) | Substituição moderada |
+    | \(-1\) | \(0{,}5\) | \((0{,}5)^{-2} = 4\) | Substituição difícil: exige 4 unidades de \(x_2\) por 1 de \(x_1\) |
+    | \(-5\) | \(0{,}17\) | \((0{,}5)^{-6} = 64\) | Quase complementares: compensação altíssima |
+
+    À medida que \(\rho\) diminui (e \(\sigma\) cai), a TMS cresce explosivamente para cestas desequilibradas — o consumidor resiste cada vez mais a trocar o bem escasso. Para \(\rho \to -\infty\), a TMS diverge para infinito fora do vértice, recuperando os complementos perfeitos.
 
 ### 3.6.5 Quase-linear
 
@@ -323,11 +369,13 @@ As formas funcionais anteriores compartilham uma propriedade importante: são to
 u(x_1, x_2) = v(x_1) + x_2, \quad v' > 0, \; v'' < 0. \label{eq:3.6.13} \tag{3.6.13}
 \]
 
-A TMS depende apenas de \(x_1\):
+A TMS depende apenas de \(x_1\) — e não de \(x_2\), o que é uma peculiaridade notável:
 
 \[
 \text{TMS}_{12} = v'(x_1). \label{eq:3.6.14} \tag{3.6.14}
 \]
+
+Como \(v'' < 0\), a TMS é decrescente em \(x_1\): à medida que o consumidor obtém mais do bem 1, sua disposição a trocar o bem 2 por unidades adicionais do bem 1 diminui — preservando a convexidade das curvas de indiferença. O aspecto crucial é que essa taxa de troca é completamente independente da quantidade do bem 2 que o consumidor possui.
 
 As curvas de indiferença são **translações verticais** umas das outras: possuem a mesma forma, apenas deslocadas paralelamente ao eixo \(x_2\). Essa propriedade geométrica tem uma implicação econômica direta e poderosa: não há efeito renda sobre o bem 1 (para soluções interiores), pois a demanda por \(x_1\) depende apenas dos preços, não da renda. Todo acréscimo de renda é absorvido pelo bem 2, que funciona como um "numerário" — um bem residual que absorve as variações de poder aquisitivo. A utilidade quase-linear é particularmente útil em análises de equilíbrio parcial e em modelos de organização industrial, onde se deseja isolar o mercado de um bem específico sem que efeitos renda contaminem a análise.
 
@@ -383,6 +431,24 @@ A implicação geométrica é elegante: ao longo de qualquer raio que parte da o
 - **Substitutos perfeitos** e **complementos perfeitos**: ambos são homotéticos (homogêneos de grau 1). No caso dos substitutos, a solução de canto faz com que toda a renda vá para um único bem, mas a *proporção* não depende de \(I\).
 - **Quase-linear** \(u = v(x_1) + x_2\): **não** é homotética. A TMS depende de \(x_1\) isoladamente, não da razão \(x_1/x_2\). A razão ótima \(x_1^*/x_2^*\) varia com a renda, pois todo o acréscimo de renda é absorvido por \(x_2\).
 
+!!! box-brasil "Box Brasil — Lei de Engel e a POF: evidência contra a homoteticidade"
+    A **Lei de Engel** (1857) afirma que a participação da alimentação no orçamento familiar *cai* à medida que a renda *sobe*. Essa regularidade empírica — uma das mais robustas de toda a economia — implica que a elasticidade-renda da alimentação é menor que 1 (bem necessário), violando a previsão de elasticidade unitária das preferências homotéticas.
+
+    Os dados da **POF 2017-2018** (IBGE) confirmam a Lei de Engel para o Brasil com notável clareza:
+
+    | Faixa de renda familiar (R$/mês) | Participação da alimentação (%) | Participação de transporte (%) | Participação de educação (%) |
+    |---|---|---|---|
+    | Até 1.908 | 22,0 | 11,5 | 1,6 |
+    | 1.908 a 2.862 | 18,5 | 14,2 | 2,0 |
+    | 5.724 a 9.540 | 12,1 | 18,8 | 3,7 |
+    | Acima de 23.850 | 7,6 | 15,4 | 6,2 |
+
+    A alimentação segue o padrão engeliano clássico (de 22% para 7,6%), enquanto educação exibe comportamento oposto — bem de luxo, com participação crescente na renda. Transporte apresenta uma relação não monotônica: cresce nas faixas intermediárias e recua nas mais altas (possivelmente refletindo a troca de transporte público por automóvel próprio já amortizado).
+
+    **Implicação teórica:** preferências homotéticas — incluindo a Cobb-Douglas — são uma aproximação razoável *dentro* de uma faixa de renda estreita, mas não capturam a variação *entre* faixas. Modelos aplicados ao Brasil, como os que estimam impactos distributivos de reformas tributárias, devem usar especificações não homotéticas (como o AIDS de Deaton e Muellbauer) para capturar esses padrões.
+
+    **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Com preferências homotéticas, ricos e pobres gastam a mesma *proporção* da renda em cada bem — só a escala muda.
 
@@ -406,6 +472,17 @@ A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais d
 <div class="caption-obj" markdown>
 **Tabela 3.1 — Comparativa das funções de utilidade.**
 </div>
+
+!!! tip "Como escolher a forma funcional certa?"
+    Diante de tantas opções, como decidir qual função de utilidade usar em um modelo ou exercício? A escolha depende do objetivo da análise:
+
+    - **Cobb-Douglas**: primeira escolha para modelos teóricos que exigem soluções analíticas em forma fechada. Ideal para exercícios e demonstrações pedagógicas. Limitação: elasticidade de substituição fixa em 1 e participação constante na despesa.
+    - **CES**: preferida em trabalhos empíricos e modelos de comércio internacional (Armington), pois permite estimar a elasticidade de substituição \(\sigma\) a partir dos dados. Também útil quando se deseja generalidade teórica sem perder tratabilidade.
+    - **Substitutos perfeitos**: para mercados em que os bens são essencialmente intercambiáveis (commodities homogêneas, marcas genéricas). Gera soluções de canto — útil para ilustrar especialização.
+    - **Complementos perfeitos (Leontief)**: para insumos que devem ser usados em proporções fixas. Aparece frequentemente na teoria da produção (Capítulo 10) e em modelos de equilíbrio geral computável.
+    - **Quase-linear**: a escolha natural para análises de equilíbrio parcial e modelos de organização industrial, pois elimina efeitos renda e garante \(VC = VE = \Delta EC\). Ideal quando o foco é um mercado específico.
+
+    **Regra prática:** comece com a forma mais simples que capture o fenômeno de interesse. Se a Cobb-Douglas for suficiente, não use a CES.
 
 <iframe src="../graficos/cap03/tipos-preferencias.html" title="Figura 3.3 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais)" class="graph-iframe"></iframe>
 
@@ -492,6 +569,21 @@ A demonstração é direta e vale a pena percorrer, pois ilustra a simplicidade 
 - A Cobb-Douglas \(u = x_1^a x_2^b\) pode ser transformada em \(\hat{u} = a \ln x_1 + b \ln x_2\) via \(f(u) = \ln(u)\). O logaritmo transforma o produto em soma, eliminando os expoentes e simplificando consideravelmente as derivadas parciais e a resolução das condições de primeira ordem.
 - Qualquer Cobb-Douglas pode ser normalizada de modo que \(\hat{u} = \frac{a}{a+b} \ln x_1 + \frac{b}{a+b} \ln x_2\), com coeficientes somando 1. Essa normalização é conveniente porque os coeficientes passam a coincidir com as participações na despesa — tornando a interpretação econômica imediata.
 
+!!! example "Transformação monotônica em ação: simplificando a CES"
+    A função CES \(u = (x_1^\rho + x_2^\rho)^{1/\rho}\) envolve uma raiz que complica as derivadas parciais. Aplique a transformação monotônica \(f(u) = u^\rho\) (estritamente crescente para \(u > 0\) quando \(\rho > 0\), e estritamente decrescente — mas aí tomamos \(f(u) = -u^\rho\) — para \(\rho < 0\)). O resultado é:
+
+    \[
+    \hat{u} = x_1^\rho + x_2^\rho
+    \]
+
+    Agora as CPOs ficam muito mais simples:
+
+    \[
+    \frac{\partial \hat{u}}{\partial x_1} = \rho \, x_1^{\rho-1}, \qquad \frac{\partial \hat{u}}{\partial x_2} = \rho \, x_2^{\rho-1}
+    \]
+
+    E a TMS se obtém diretamente: \(\text{TMS}_{12} = (x_1/x_2)^{\rho-1}\) — o mesmo resultado da equação $\eqref{eq:3.6.12}$, mas com cálculo muito mais rápido. Essa é a essência da invariância ordinal: simplificar a álgebra sem alterar a economia.
+
 !!! tip "Implicações práticas da ordinalidade"
     A TMS é invariante sob transformações monotônicas. A utilidade marginal, porém, **não é invariante**: ela muda com a transformação. Por isso, a utilidade marginal não tem significado cardinal — apenas a razão entre utilidades marginais (a TMS) possui significado econômico bem definido.
 
@@ -547,12 +639,12 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
 
 ## 📋 Resumo do Capítulo
 
-- A teoria do consumidor parte de **axiomas sobre preferências** — completude, transitividade, continuidade e monotonicidade — que estabelecem regras mínimas de coerência para ordenar cestas de consumo.
-- Sob esses axiomas, o **Teorema de Debreu** garante a existência de uma **função de utilidade** contínua que representa as preferências. A utilidade é **ordinal** (apenas o ordenamento importa, não os valores absolutos).
-- As **curvas de indiferença** são curvas de nível da função de utilidade: cobrem todo o espaço, não se cruzam, têm inclinação negativa e, sob convexidade estrita, são abauladas em direção à origem (refletindo preferência por variedade).
-- A **taxa marginal de substituição (TMS)** mede a taxa de troca subjetiva entre bens ao longo da curva de indiferença e equivale à razão das utilidades marginais: \(\text{TMS}_{12} = \text{UMg}_1 / \text{UMg}_2\). A TMS decrescente equivale à convexidade estrita das preferências.
-- O capítulo apresenta as principais famílias de funções de utilidade — **Cobb-Douglas**, **substitutos perfeitos**, **complementos perfeitos**, **CES** e **quase-linear** — cada uma com formato de curvas de indiferença e elasticidade de substituição distintos.
-- **Preferências homotéticas** (TMS depende apenas da razão \(x_1/x_2\)) geram curvas de Engel lineares e participação constante na despesa, enquanto preferências **quase-lineares** eliminam o efeito renda sobre um dos bens.
+- A teoria do consumidor parte de **axiomas sobre preferências** — completude, transitividade, continuidade e monotonicidade — que estabelecem regras mínimas de coerência para ordenar cestas de consumo. Esses axiomas são o alicerce sobre o qual todo o resto se constrói: sem eles, não há função de utilidade, não há curvas de indiferença e não há otimização.
+- Sob esses axiomas, o **Teorema de Debreu** (1954) garante a existência de uma **função de utilidade** contínua que representa as preferências. Essa função é **ordinal**: apenas o ordenamento das cestas importa, não os valores numéricos em si. A ordinalidade implica que qualquer transformação monotônica crescente da função de utilidade representa as mesmas preferências (Seção 3.7).
+- As **curvas de indiferença** são curvas de nível da função de utilidade: cobrem todo o espaço de consumo, não se cruzam (pela transitividade), têm inclinação negativa (pela monotonicidade) e, sob convexidade estrita, são abauladas em direção à origem — refletindo a ideia de que o consumidor valoriza a diversidade na composição de sua cesta.
+- A **taxa marginal de substituição (TMS)** mede a taxa de troca subjetiva entre bens ao longo da curva de indiferença e equivale à razão das utilidades marginais: \(\text{TMS}_{12} = \text{UMg}_1 / \text{UMg}_2\). A TMS decrescente — que reflete a disposição cada vez menor do consumidor a abrir mão de um bem à medida que ele se torna mais escasso na cesta — é matematicamente equivalente à convexidade estrita das preferências.
+- O capítulo apresenta as principais famílias de funções de utilidade — **Cobb-Douglas**, **substitutos perfeitos**, **complementos perfeitos**, **CES** e **quase-linear** — cada uma com formato de curvas de indiferença e elasticidade de substituição distintos. A função CES unifica as três primeiras como casos especiais de um único parâmetro \(\rho\), enquanto a quase-linear se distingue por eliminar o efeito renda sobre um dos bens.
+- **Preferências homotéticas** (TMS depende apenas da razão \(x_1/x_2\)) geram curvas de Engel lineares, elasticidade-renda unitária e participação constante na despesa — propriedades que permitem a agregação em um consumidor representativo. Preferências **quase-lineares**, por contraste, concentram todo o efeito renda em um único bem e garantem que as medidas de bem-estar (VC, VE, \(\Delta\)EC) coincidam.
 
 ## 🔑 Conceitos-Chave
 
@@ -572,6 +664,8 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
 ---
 
 ## ✏️ Exercícios
+
+Os exercícios a seguir cobrem os principais tópicos do capítulo — axiomas, funções de utilidade, TMS, formas funcionais e transformações monotônicas. Eles progridem em dificuldade: os primeiros requerem cálculos diretos de TMS para funções específicas, enquanto os últimos exigem demonstrações e raciocínio mais abstrato sobre propriedades das preferências. As soluções detalhadas estão disponíveis na seção de soluções.
 
 <a id="ex-3-1"></a>**Exercício 3.1.** Considere um consumidor com preferências sobre dois bens (\(x_1, x_2\)) representadas pela função de utilidade \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\).
 
