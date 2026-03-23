@@ -228,9 +228,11 @@ A relação fundamental entre a utilidade marginal, definida pela equação $\eq
 **Figura 3.2 — Taxa Marginal de Substituição (TMS).** Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
 </div>
 
+---
+
 ## 🎯 Exercícios Resolvidos
 
-Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste capítulo a situações concretas, reforçando tanto a mecânica algébrica quanto a interpretação econômica dos resultados. Recomenda-se enfaticamente tentar resolver cada exercício antes de consultar a solução — a experiência de enfrentar as dificuldades e eventualmente superá-las é parte essencial do aprendizado.
+Com os conceitos de TMS e utilidade marginal estabelecidos, é hora de aplicá-los a problemas concretos. Os exercícios resolvidos a seguir consolidam a mecânica algébrica e a interpretação econômica dos resultados apresentados nas seções anteriores. Recomenda-se enfaticamente tentar resolver cada exercício antes de consultar a solução — a experiência de enfrentar as dificuldades e eventualmente superá-las é parte essencial do aprendizado.
 
 ??? exercicio-resolvido "Exercício Resolvido 3.1"
     **Enunciado:** Um consumidor tem preferências representadas por \(u(x_1, x_2) = x_1^{2/5} \, x_2^{3/5}\). Calcule a TMS no ponto \((x_1, x_2) = (10, 15)\) e interprete o resultado.
@@ -307,7 +309,16 @@ As curvas de indiferença são **linhas retas** com inclinação \(-a/b\), paral
 \text{TMS}_{12} = \frac{a}{b}. \label{eq:3.6.8} \tag{3.6.8}
 \]
 
-O consumidor troca os bens a uma taxa fixa, independente da composição da cesta — não há TMS decrescente, pois a disposição a substituir nunca se altera. A elasticidade de substituição é \(\sigma = \infty\), refletindo a perfeita substituibilidade. Uma consequência importante para a otimização é que a solução ótima tipicamente é de *canto*: o consumidor gasta toda a renda no bem que oferece maior "valor por unidade monetária" — isto é, maior razão entre o coeficiente de utilidade e o preço. Apenas no caso-faca em que \(a/p_1 = b/p_2\) qualquer combinação na reta orçamentária é igualmente ótima.
+O consumidor troca os bens a uma taxa fixa, independente da composição da cesta — não há TMS decrescente, pois a disposição a substituir nunca se altera. A elasticidade de substituição é \(\sigma = \infty\), refletindo a perfeita substituibilidade.
+
+!!! warning "Substitutos perfeitos geram soluções de canto"
+    Diferentemente das demais formas funcionais, a solução ótima com substitutos perfeitos tipicamente **não é interior**: o consumidor gasta toda a renda no bem que oferece maior "valor por unidade monetária" — isto é, maior razão \(a_i/p_i\). Formalmente:
+
+    - Se \(a/p_1 > b/p_2\): \(x_1^* = m/p_1\), \(x_2^* = 0\) — especialização total no bem 1.
+    - Se \(a/p_1 < b/p_2\): \(x_1^* = 0\), \(x_2^* = m/p_2\) — especialização total no bem 2.
+    - Se \(a/p_1 = b/p_2\): qualquer cesta na reta orçamentária é ótima (caso-faca).
+
+    Na prática, isso significa que a condição de tangência \(\text{TMS} = p_1/p_2\) não se aplica: como a TMS é constante e a reta orçamentária também tem inclinação constante, as duas nunca se "encontram" em um ponto interior (a menos do caso-faca). Essa é uma exceção importante à regra geral de otimização do Capítulo 4.
 
 ### 3.6.3 Complementos Perfeitos
 
@@ -375,7 +386,10 @@ A TMS depende apenas de \(x_1\) — e não de \(x_2\), o que é uma peculiaridad
 \text{TMS}_{12} = v'(x_1). \label{eq:3.6.14} \tag{3.6.14}
 \]
 
-Como \(v'' < 0\), a TMS é decrescente em \(x_1\): à medida que o consumidor obtém mais do bem 1, sua disposição a trocar o bem 2 por unidades adicionais do bem 1 diminui — preservando a convexidade das curvas de indiferença. O aspecto crucial é que essa taxa de troca é completamente independente da quantidade do bem 2 que o consumidor possui.
+Como \(v'' < 0\), a TMS é decrescente em \(x_1\): à medida que o consumidor obtém mais do bem 1, sua disposição a trocar o bem 2 por unidades adicionais do bem 1 diminui — preservando a convexidade das curvas de indiferença.
+
+!!! note "TMS independente de x₂: a assinatura da quase-linearidade"
+    A propriedade mais distintiva da utilidade quase-linear é que a TMS depende *exclusivamente* de \(x_1\) — a quantidade do bem 2 é irrelevante para a taxa de troca subjetiva do consumidor. Em todas as demais formas funcionais deste capítulo (Cobb-Douglas, CES, complementos perfeitos), a TMS depende da composição *completa* da cesta. Na quase-linear, o consumidor que possui 10 ou 1.000 unidades de \(x_2\) atribui exatamente o mesmo valor marginal relativo ao bem 1, desde que \(x_1\) seja o mesmo. É essa independência que elimina o efeito renda sobre \(x_1\) e gera curvas de indiferença que são translações verticais.
 
 As curvas de indiferença são **translações verticais** umas das outras: possuem a mesma forma, apenas deslocadas paralelamente ao eixo \(x_2\). Essa propriedade geométrica tem uma implicação econômica direta e poderosa: não há efeito renda sobre o bem 1 (para soluções interiores), pois a demanda por \(x_1\) depende apenas dos preços, não da renda. Todo acréscimo de renda é absorvido pelo bem 2, que funciona como um "numerário" — um bem residual que absorve as variações de poder aquisitivo. A utilidade quase-linear é particularmente útil em análises de equilíbrio parcial e em modelos de organização industrial, onde se deseja isolar o mercado de um bem específico sem que efeitos renda contaminem a análise.
 
@@ -454,7 +468,7 @@ A implicação geométrica é elegante: ao longo de qualquer raio que parte da o
 
     **Pense assim:** Uma família homotética que gasta 30% da renda com alimentação e 70% com outros bens manterá essa proporção se sua renda dobrar, triplicar ou cair pela metade. O caminho de expansão da renda é uma reta que sai da origem — escalar a cesta ótima é como "dar zoom" na mesma cesta.
 
-    **Por que isso importa:** Essa propriedade permite agregar consumidores com rendas diferentes em um "consumidor representativo" — base de grande parte dos modelos macroeconômicos. Contudo, os dados da POF (ver Box Brasil, §3.6.4) mostram que preferências reais raramente são homotéticas: a participação da alimentação cai com a renda (Lei de Engel), evidenciando preferências não homotéticas na prática.
+    **Por que isso importa:** Essa propriedade permite agregar consumidores com rendas diferentes em um "consumidor representativo" — base de grande parte dos modelos macroeconômicos. Contudo, os dados da POF (ver Box Brasil, §3.6.6) mostram que preferências reais raramente são homotéticas: a participação da alimentação cai com a renda (Lei de Engel), evidenciando preferências não homotéticas na prática.
 
 A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais de utilidade discutidas neste capítulo, reunindo em uma única referência a expressão da função, a TMS, o formato das curvas de indiferença e a elasticidade de substituição de cada caso. Recomenda-se consultá-la sempre que surgir dúvida sobre as propriedades de uma forma funcional específica.
 
@@ -501,17 +515,6 @@ A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais d
 <div class="caption-obj" markdown>
 **Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
 </div>
-
-!!! box-brasil "Box Brasil — Cobb-Douglas e a POF: participação constante na despesa?"
-    A propriedade mais marcante da função Cobb-Douglas é que a **participação de cada bem na despesa total é constante**, independente do nível de renda. Os dados da Pesquisa de Orçamentos Familiares (POF 2017-2018, IBGE) permitem confrontar essa previsão teórica com a realidade brasileira.
-
-    A POF revela que a participação da alimentação no orçamento familiar **varia substancialmente** com a renda: famílias com renda de até R$ 1.908 destinam cerca de 22% à alimentação, enquanto famílias com renda acima de R$ 23.850 destinam apenas 7,6%. Essa variação contraria a previsão de participação constante da Cobb-Douglas, sugerindo que essa função não é adequada para modelar preferências entre alimentação e outros bens *ao longo de diferentes faixas de renda*.
-
-    Em termos formais, a lei de Engel — que afirma que a participação da alimentação no orçamento cai com a renda — implica que a elasticidade-renda da alimentação é menor que 1 (bem necessário). Uma função Cobb-Douglas, por ter elasticidade-renda unitária para todos os bens, não consegue capturar esse padrão.
-
-    **Implicação para a modelagem:** Em estudos aplicados sobre o consumidor brasileiro, a função CES ou especificações não homotéticas (como o sistema Almost Ideal Demand System, de [Deaton e Muellbauer](https://www.jstor.org/stable/1805222)) frequentemente oferecem ajuste superior à Cobb-Douglas, especialmente quando a análise envolve comparações entre faixas de renda.
-
-    **Fonte:** IBGE, Pesquisa de Orçamentos Familiares 2017-2018 — Primeiros Resultados.
 
 ??? exercicio-resolvido "Exercício Resolvido 3.2"
     **Enunciado:** Considere a função CES \(u(x_1, x_2) = (x_1^{\rho} + x_2^{\rho})^{1/\rho}\) com \(\rho = -1\). (a) Calcule a elasticidade de substituição. (b) Derive a TMS. (c) Compare as curvas de indiferença com os casos Cobb-Douglas e complementos perfeitos.
