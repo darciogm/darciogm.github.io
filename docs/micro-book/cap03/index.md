@@ -725,6 +725,76 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
 ---
 
+<a id="ex-3-6"></a>**Exercício 3.6.** Considere a função de utilidade CES generalizada com pesos:
+
+\[
+u(x_1, x_2) = \left(\alpha \, x_1^{\rho} + (1-\alpha) \, x_2^{\rho}\right)^{1/\rho}, \quad 0 < \alpha < 1, \; \rho < 1, \; \rho \neq 0.
+\]
+
+(a) Derive a TMS\(_{12}\) e mostre que ela depende de \(\alpha\), \(\rho\) e da razão \(x_1/x_2\).
+
+(b) Mostre que, no caso \(\alpha = 1/2\), a TMS no ponto \(x_1 = x_2\) é igual a 1, independentemente de \(\rho\).
+
+(c) Interprete economicamente o papel do parâmetro \(\alpha\): o que acontece com as curvas de indiferença quando \(\alpha\) aumenta?
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-6)
+
+---
+
+<a id="ex-3-7"></a>**Exercício 3.7.** Sejam duas funções de utilidade:
+
+\[
+u(x_1, x_2) = x_1^{1/2} \, x_2^{1/2}, \qquad v(x_1, x_2) = -\frac{1}{x_1 \, x_2}.
+\]
+
+(a) Mostre que \(v\) é uma transformação monotônica de \(u\) e identifique a função \(f\) tal que \(v = f(u)\).
+
+(b) Calcule a TMS\(_{12}\) usando \(u\) e usando \(v\). Verifique que ambas coincidem.
+
+(c) Compare as utilidades marginais de \(u\) e de \(v\). Embora ambas representem as mesmas preferências, os valores das utilidades marginais coincidem? Explique por que a utilidade marginal não possui significado econômico isolado.
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-7)
+
+---
+
+<a id="ex-3-8"></a>**Exercício 3.8.** Um consumidor tem preferências representadas por \(u(x_1, x_2) = \min\{2x_1, x_2\}\).
+
+(a) Em que proporção o consumidor deseja consumir os dois bens? Justifique a partir da função de utilidade.
+
+(b) Suponha que o consumidor possui renda \(m = 120\) e enfrenta preços \(p_1 = 10\) e \(p_2 = 5\). Encontre a cesta ótima.
+
+(c) Se o preço do bem 1 dobrar para \(p_1 = 20\), qual será a nova cesta ótima? Calcule a variação percentual no consumo de cada bem e interprete.
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-8)
+
+---
+
+<a id="ex-3-9"></a>**Exercício 3.9.** Demonstre que, para preferências homotéticas, a TMS depende apenas da razão \(x_1/x_2\).
+
+*Dica:* Seja \(u(x_1, x_2) = g(h(x_1, x_2))\), onde \(g' > 0\) e \(h\) é homogênea de grau 1. Use o Teorema de Euler para mostrar que \(\text{TMS}_{12} = h_1/h_2\), e depois explore a homogeneidade de grau zero das derivadas de uma função homogênea de grau 1.
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-9)
+
+---
+
+<a id="ex-3-10"></a>**Exercício 3.10.** A Pesquisa de Orçamentos Familiares (POF 2017-2018) mostra que famílias com renda mensal de R\$ 1.908 gastam 22% da renda em alimentação, enquanto famílias com renda de R\$ 23.850 gastam 7,6%.
+
+(a) Calcule a elasticidade-renda aproximada da alimentação entre essas duas faixas de renda, usando a fórmula de arco-elasticidade:
+
+\[
+\varepsilon \approx \frac{\Delta Q / \bar{Q}}{\Delta I / \bar{I}}
+\]
+
+onde \(Q = s \cdot I\) é o gasto com alimentação (\(s\) = participação), e \(\bar{Q}\) e \(\bar{I}\) são as médias dos dois pontos.
+
+(b) A alimentação é um bem normal ou inferior? É um bem de luxo ou de necessidade? Justifique com base na elasticidade calculada.
+
+(c) Esse padrão é compatível com preferências homotéticas? E com preferências Cobb-Douglas? Explique, relacionando com as propriedades da Seção 3.6.6.
+
+[:material-arrow-right: Ver solução](../solucoes/cap03.md#ex-3-10)
+
+---
+
 ## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2019 — Questão 01"
@@ -841,8 +911,37 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 
     **Relevância para o capítulo:** Este artigo testa empiricamente os fundamentos do Capítulo 3. O GARP é a tradução operacional dos axiomas de completude e transitividade para dados de consumo observados. Os resultados mostram que, embora a maioria dos consumidores se comporte de forma aproximadamente consistente com os axiomas, há variação significativa — o que justifica tanto o uso do arcabouço axiomático como ponto de partida quanto a atenção a seus limites, discutidos na observação sobre preferências lexicográficas (Seção 3.1).
 
+??? pesquisa "Atkin, D. (2013). [Trade, Tastes, and Nutrition in India](https://doi.org/10.1257/aer.103.5.1629). *American Economic Review*, 103(5), 1629–1663."
+    **Pergunta central:** As preferências dos consumidores — que a Seção 3.1 trata como dadas e estáveis — podem ser moldadas por forças econômicas como a abertura comercial? E, se as preferências mudam, quais são as consequências para o bem-estar, especialmente em dimensões como a nutrição?
+
+    **Método:** Atkin explora a liberalização comercial na Índia a partir de 1991 para investigar como a queda nos preços relativos de certos alimentos afetou não apenas as quantidades consumidas, mas os *hábitos alimentares* de longo prazo. Utilizando dados de consumo domiciliar de mais de 500.000 observações ao longo de duas décadas, o autor estima um modelo estrutural de demanda que permite distinguir entre movimentos *ao longo* de curvas de indiferença (substituição padrão) e *deslocamentos* das próprias curvas (mudança de preferências — formação de hábitos).
+
+    **Resultado principal:** A abertura comercial reduziu os preços de calorias, mas parte dos ganhos calóricos potenciais foi dissipada por mudanças nos gostos: consumidores expostos a preços mais baixos de certos alimentos desenvolveram preferências por esses alimentos que persistiram mesmo após os preços retornarem. O efeito-hábito reduziu em até 10% os ganhos nutricionais da liberalização, especialmente entre os mais pobres.
+
+    **Relevância para o capítulo:** O artigo questiona a hipótese de preferências estáveis que sustenta o arcabouço axiomático da Seção 3.1. Se as preferências são endógenas aos preços (via formação de hábitos), a função de utilidade \(u(\mathbf{x})\) não é fixa — ela se desloca com o histórico de consumo. Isso tem implicações diretas para a interpretação das curvas de indiferença e da TMS: a "taxa de troca subjetiva" de hoje pode diferir da de amanhã, não por mudança de preços, mas por mudança nos próprios gostos. O resultado é especialmente relevante para países em desenvolvimento como o Brasil, onde mudanças estruturais rápidas (como o Plano Real, discutido no Box Brasil §3.7) alteram simultaneamente preços e hábitos.
+
+??? pesquisa "Aguiar, M.; Bils, M. (2015). [Has Consumption Inequality Mirrored Income Inequality?](https://doi.org/10.1257/aer.20120599) *American Economic Review*, 105(9), 2725–2756."
+    **Pergunta central:** A desigualdade de consumo acompanhou o aumento da desigualdade de renda nos Estados Unidos nas últimas décadas? Se as preferências são homotéticas (Seção 3.6.6), a resposta deveria ser sim — mas os dados contam uma história mais complexa.
+
+    **Método:** Aguiar e Bils utilizam dados da *Consumer Expenditure Survey* (CEX) e da *Nielsen Homescan* para construir medidas de desigualdade de consumo que corrigem problemas de mensuração nos dados de pesquisas domiciliares. A estratégia empírica central explora a Lei de Engel: bens com alta elasticidade-renda (bens de luxo) servem como "indicadores" de renda permanente, permitindo inferir desigualdade de consumo a partir da composição das cestas — e não apenas dos valores totais declarados, que sofrem viés de subdeclaração.
+
+    **Resultado principal:** Contrariamente a estudos anteriores que sugeriam estabilidade, a desigualdade de consumo *cresceu significativamente* entre 1980 e 2010, acompanhando de perto a desigualdade de renda. A chave metodológica foi usar a composição das cestas (participações engelianas) em vez de valores totais. As famílias mais ricas deslocaram seu consumo fortemente para bens de luxo (educação, lazer, serviços), enquanto as mais pobres mantiveram alta participação em necessidades (alimentação, moradia).
+
+    **Relevância para o capítulo:** O artigo mobiliza diretamente dois conceitos centrais do capítulo: a **Lei de Engel** (discutida no Box Brasil sobre homoteticidade, §3.6.6) e a distinção entre **preferências homotéticas e não homotéticas**. Se as preferências fossem homotéticas, a composição das cestas seria idêntica entre ricos e pobres — e a estratégia de identificação dos autores não funcionaria. O fato de que a estratégia é bem-sucedida é, em si, evidência empírica contra a homoteticidade. O resultado reforça a importância de modelos não homotéticos (como o AIDS) para análises distributivas — inclusive no contexto brasileiro, onde a POF revela padrões engelianos ainda mais pronunciados.
+
+??? pesquisa "Thomas, D.; Strauss, J.; Henriques, M. H. (1991). [How Does Mother's Education Affect Child Height?](https://doi.org/10.2307/145920) *Journal of Human Resources*, 26(2), 183–211."
+    **Pergunta central:** A educação materna afeta a nutrição infantil por meio de mudanças nas *preferências* (função de utilidade) ou apenas por mudanças na *restrição orçamentária* (renda e preços)? Utilizando dados brasileiros, este artigo seminal testa se mães mais educadas fazem escolhas alimentares qualitativamente diferentes para seus filhos — e não apenas quantitativamente maiores.
+
+    **Método:** Thomas, Strauss e Henriques utilizam microdados do **ENDEF** (*Estudo Nacional da Despesa Familiar*) de 1974-75, com informações antropométricas de crianças e características socioeconômicas de mais de 50.000 domicílios brasileiros. O modelo estima o efeito da educação materna sobre a estatura infantil (*height-for-age*), controlando para renda familiar, preços locais, acesso a serviços de saúde e região geográfica. A estratégia de identificação compara crianças dentro de faixas de renda similares, isolando o efeito da educação que opera *via preferências* (escolha de alimentos mais nutritivos, práticas de higiene) do efeito que opera *via renda*.
+
+    **Resultado principal:** A educação materna tem um efeito forte e robusto sobre a nutrição infantil, mesmo após controlar para renda: um ano adicional de escolaridade da mãe aumenta a estatura da criança em 0,3-0,5 cm. Crucialmente, o efeito é muito maior para a educação da *mãe* do que para a do *pai*, sugerindo que o canal relevante não é apenas renda (ambos os pais contribuem para a renda), mas a forma como a mãe *aloca* os recursos do domicílio entre as diferentes categorias de consumo — alimentação nutritiva, cuidados de saúde, saneamento.
+
+    **Relevância para o capítulo:** O artigo ilustra, com dados brasileiros, que a *forma* da função de utilidade — não apenas a restrição orçamentária — é determinante para os resultados de consumo. Nos termos do capítulo, mães com diferentes níveis de educação possuem *curvas de indiferença* com formatos distintos: mães mais educadas atribuem TMS mais alta a alimentos nutritivos em relação a outros bens, mesmo quando enfrentam os mesmos preços e a mesma renda. Isso reforça a mensagem do artigo de Falk et al. (2018) sobre a heterogeneidade de preferências e conecta-se à discussão sobre a Lei de Engel (Box Brasil §3.6.6): a composição da cesta depende não apenas de quanto se ganha, mas de *quem* decide como gastar.
+
 ## 📚 Referências do Capítulo
 
+- Aguiar, Mark, e Mark Bils. 2015. "[Has Consumption Inequality Mirrored Income Inequality?](https://doi.org/10.1257/aer.20120599)" *American Economic Review* 105 (9): 2725–2756.
+- Atkin, David. 2013. "[Trade, Tastes, and Nutrition in India.](https://doi.org/10.1257/aer.103.5.1629)" *American Economic Review* 103 (5): 1629–1663.
 - Barros, Ricardo Paes de, Miguel Nathan Foguel, e Gabriel Ulyssea, orgs. 2007. [*Desigualdade de renda no Brasil: uma análise da queda recente*](https://repositorio.ipea.gov.br/handle/11058/3249). Brasília: IPEA.
 - Besanko, David, e Ronald R. Braeutigam. 2014. [*Microeconomics*](https://books.google.com.br/books?id=BeoengEACAAJ). 5ª ed. Hoboken: Wiley. Capítulos 3–4.
 - Choi, Syngjoo, Shachar Kariv, Wieland Müller, e Dan Silverman. 2014. "[Who Is (More) Rational?](https://doi.org/10.1257/aer.104.6.1518)" *American Economic Review* 104 (6): 1518–1550.
@@ -850,5 +949,6 @@ u(x_1, x_2) = \left(x_1^{-1} + x_2^{-1}\right)^{-1}.
 - Falk, Armin, Anke Becker, Thomas Dohmen, Benjamin Enke, David Huffman, e Uwe Sunde. 2018. "[Global Evidence on Economic Preferences.](https://doi.org/10.1093/qje/qjx003)" *Quarterly Journal of Economics* 133 (4): 1645–1692.
 - IBGE — Instituto Brasileiro de Geografia e Estatística. 2019. [*Pesquisa de Orçamentos Familiares (POF) 2017–2018: Primeiros Resultados*](https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html). Rio de Janeiro: IBGE.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Capítulo 3.
+- Thomas, Duncan, John Strauss, e Maria-Helena Henriques. 1991. "[How Does Mother's Education Affect Child Height?](https://doi.org/10.2307/145920)" *Journal of Human Resources* 26 (2): 183–211.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 3.
 - Varian, Hal R. 2015. [*Microeconomia: uma abordagem moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Capítulos 3–5.
