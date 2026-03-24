@@ -6,28 +6,12 @@ hide:
 # Microeconomia: Do Zero ao Equilíbrio (e Além)
 
 <div class="book-meta">
-  <span class="book-author">Dárcio Genicolo Martins</span>
-  <span class="book-version">Insper — Instituto de Ensino e Pesquisa</span>
+  <span class="book-version">Insper -- Instituto de Ensino e Pesquisa</span>
 </div>
 
 Livro didático interativo de **Microeconomia** para graduação avançada e pós-graduação. Rigor matemático, intuição econômica e aplicações ao Brasil em cada capítulo.
 
 [Ler o Prefácio](prefacio.md){ .md-button .md-button--primary }
-
-<div class="hero-features" markdown>
-
-- Derivações matemáticas completas
-- Gráficos interativos (JSXGraph, Plotly, D3)
-- Casos aplicados ao Brasil (IBGE, IPEA, BCB, CADE)
-- Exercícios resolvidos e propostos com diferentes níveis de dificuldade
-- Questões de provas ANPEC
-- Seção "Pesquisa em Ação" com papers de top journals
-
-</div>
-
----
-
-## Estrutura do Livro
 
 Clique em qualquer parte para acessar os capítulos correspondentes.
 
