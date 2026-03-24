@@ -150,7 +150,7 @@ O **multiplicador de Lagrange** \(\lambda\) tem, portanto, interpretação econ�
 
     **Por que isso importa:** \(\lambda\) é o elo entre renda e bem-estar. Nas Seções 4.4 e 4.8, veremos que \(\lambda\) reaparece na Identidade de Roy e conecta as funções de utilidade indireta e dispêndio.
 
-### Demanda Marshalliana
+### 4.3.1 Demanda Marshalliana
 
 Resolvido o problema de otimização, as quantidades ótimas de cada bem ficam expressas como funções dos preços e da renda. Essas funções — que encapsulam toda a informação sobre o comportamento do consumidor diante de variações em preços e renda — são as **funções de demanda marshalliana** (ou walrasiana), batizadas em homenagem ao economista britânico Alfred Marshall (1842–1924), que sistematizou a análise da demanda em sua obra *Principles of Economics* (1890). Marshall foi o primeiro a apresentar a curva de demanda como relação entre preço e quantidade, estabelecendo o vocabulário analítico que usamos até hoje:
 
@@ -353,7 +353,7 @@ A condição de tangência $\eqref{eq:4.6.12}$ é **idêntica** à do problema p
 
     **Por que isso importa:** A formulação dual gera funções — a demanda hicksiana e a função dispêndio — que são matematicamente mais tratáveis para medir o bem-estar do consumidor. As medidas de variação compensatória e variação equivalente (Capítulo 5) derivam diretamente do problema dual.
 
-### Demanda Hicksiana (Compensada)
+### 4.6.1 Demanda Hicksiana (Compensada)
 
 A solução do problema de minimização define as **funções de demanda hicksiana** (ou compensada):
 
@@ -976,6 +976,8 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-4-3"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Restrição orçamentária | Conjunto de cestas acessíveis dado preços e renda: \(p_1 x_1 + p_2 x_2 \leq I\). A inclinação da reta orçamentária (\(-p_1/p_2\)) é o custo de oportunidade do bem 1 em termos do bem 2. |
@@ -988,6 +990,10 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
 | Demanda hicksiana (compensada) | Quantidade que minimiza o gasto para atingir utilidade \(\bar{u}\): \(h_i(\mathbf{p}, \bar{u})\). Satisfaz a lei da demanda compensada (\(\partial h_i/\partial p_i \leq 0\)). |
 | Função dispêndio \(E(\mathbf{p}, \bar{u})\) | Gasto mínimo para atingir utilidade \(\bar{u}\) aos preços vigentes. Homogênea de grau 1 em preços e côncava em preços. |
 | Lema de Shephard | A derivada da função dispêndio em relação a \(p_i\) fornece a demanda hicksiana: \(\partial E/\partial p_i = h_i(\mathbf{p}, \bar{u})\). |
+
+<div class="caption-obj" markdown>
+**Tabela 4.3 — Conceitos-chave.**
+</div>
 
 ---
 

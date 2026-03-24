@@ -187,7 +187,7 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
 ---
 
-### Gráfico interativo: Substitutos e Complementos
+### 6.3.2 Gráfico interativo: Substitutos e Complementos
 
 O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
 
@@ -339,7 +339,7 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
 
 ---
 
-### Gráfico interativo: Bem Composto de Hicks
+### 6.5.1 Gráfico interativo: Bem Composto de Hicks
 
 O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 
@@ -617,6 +617,8 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-6-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Efeito cruzado de preço | Variação na demanda de um bem causada pela mudança no preço de outro bem. |
@@ -628,6 +630,10 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 | Modelo de Lancaster | Teoria em que a utilidade depende dos atributos dos bens, não dos bens em si, gerando preços hedônicos implícitos. |
 | Condição de Gorman | Condição sob a qual a demanda de mercado depende apenas da renda agregada: curvas de Engel lineares e paralelas para todos os consumidores. |
 | Preços hedônicos | Preços implícitos dos atributos de um bem, estimados pela decomposição do preço de mercado em contribuições de cada característica. |
+
+<div class="caption-obj" markdown>
+**Tabela 6.2 — Conceitos-chave.**
+</div>
 
 ## ✏️ Exercícios
 

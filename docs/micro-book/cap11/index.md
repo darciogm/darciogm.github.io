@@ -660,6 +660,8 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-11-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Custo econômico | Custo total de utilização de recursos, incluindo custos explícitos (desembolsos) e implícitos (custo de oportunidade dos recursos próprios). |
@@ -672,6 +674,10 @@ A função custo é linear em \(q\) (retornos constantes de escala) e tem a estr
 | Economias de escala | Redução do custo médio de longo prazo à medida que a escala de produção aumenta. |
 | Economias de escopo | Redução de custos ao produzir dois ou mais bens conjuntamente em vez de separadamente. |
 | Curva envoltória | Curva de custo médio de longo prazo, tangente a cada curva de custo médio de curto prazo no ponto ótimo de escala de planta. |
+
+<div class="caption-obj" markdown>
+**Tabela 11.2 — Conceitos-chave.**
+</div>
 
 ---
 

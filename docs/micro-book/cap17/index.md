@@ -628,6 +628,8 @@ A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para d
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-17-3"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Renda plena (full income) | Renda máxima que o indivíduo obteria se trabalhasse todas as horas disponíveis: \(M^* = wT + V\) |
@@ -640,6 +642,10 @@ A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para d
 | Custo marginal do trabalho (monopsônio) | Custo de contratar um trabalhador adicional, que excede o salário pago porque o monopsonista deve elevar o salário de todos os trabalhadores |
 | Salário de reserva | Salário mínimo abaixo do qual o indivíduo prefere não trabalhar (solução de canto com \(h = 0\)) |
 | Capital humano | Estoque de habilidades e conhecimentos adquiridos via educação e experiência que elevam a produtividade e os salários |
+
+<div class="caption-obj" markdown>
+**Tabela 17.3 — Conceitos-chave.**
+</div>
 
 ---
 

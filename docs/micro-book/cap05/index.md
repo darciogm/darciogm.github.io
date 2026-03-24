@@ -705,6 +705,8 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-5-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Demanda marshalliana | Função de demanda que resulta da maximização de utilidade sujeita à restrição orçamentária; depende de preços e renda nominal. |
@@ -717,6 +719,10 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 | Excedente do consumidor | Diferença entre a disposição a pagar e o preço efetivamente pago; corresponde à área abaixo da curva de demanda e acima do preço. |
 | Variação compensatória (VC) | Montante de renda que, após uma variação de preço, restaura o nível de utilidade original do consumidor. |
 | Preferência revelada | Abordagem que infere racionalidade e relações de preferência a partir de escolhas observadas, sem postular funções de utilidade. |
+
+<div class="caption-obj" markdown>
+**Tabela 5.2 — Conceitos-chave.**
+</div>
 
 ## ✏️ Exercícios
 

@@ -355,6 +355,8 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-9b-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Indução retroativa | Método de solução que resolve o jogo "de trás para frente", determinando ações ótimas a partir dos últimos nós de decisão. |
@@ -367,6 +369,10 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 | Fator de desconto (\(\delta\)) | Medida da paciência dos jogadores ou da probabilidade de continuação do jogo; determina a viabilidade da cooperação. |
 | Barganha de Rubinstein | Modelo de ofertas alternadas com desconto cujo único EPS gera divisão proporcional à paciência relativa dos jogadores. |
 | Jogo do Ultimato | Jogo de barganha em que o proponente faz uma oferta e o respondedor aceita ou rejeita; o EPS prevê oferta mínima, mas experimentos mostram ofertas de 40-50%. |
+
+<div class="caption-obj" markdown>
+**Tabela 9b.2 — Conceitos-chave.**
+</div>
 
 ---
 

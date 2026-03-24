@@ -1220,6 +1220,8 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-2-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Condição de primeira ordem (CPO) | Condição necessária para um extremo: a derivada (ou gradiente) da função objetivo é zero no ponto ótimo. |
@@ -1232,6 +1234,10 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 | Teorema de Euler | Para funções homogêneas de grau \(k\): \(\sum x_i f_i = k \cdot f\); implica a exaustão do produto sob retornos constantes de escala. |
 | Quase-concavidade | Propriedade de funções cujos conjuntos de nível superior são convexos; garante curvas de indiferença convexas e condições de segunda ordem em problemas restritos. |
 | Equação de Euler (intertemporal) | Condição \(u'(c_t) = \beta(1+r)u'(c_{t+1})\) que iguala o custo marginal de consumir hoje ao benefício marginal de poupar e consumir amanhã. |
+
+<div class="caption-obj" markdown>
+**Tabela 2.2 — Conceitos-chave.**
+</div>
 
 ## ✏️ Exercícios
 

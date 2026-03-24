@@ -266,6 +266,8 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-9c-1"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Jogo bayesiano | Jogo em que cada jogador possui um tipo privado sorteado pela natureza, com payoffs que dependem do perfil de tipos. |
@@ -277,6 +279,10 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 | Teorema da Equivalência de Receita | Sob IPV, simetria e risco-neutralidade, todos os formatos de leilão padrão geram a mesma receita esperada. |
 | Maldição do vencedor | Fenômeno em leilões de valor comum: o vencedor tende a ser o licitante mais otimista, pagando acima do valor real. |
 | Princípio da Revelação | Para qualquer mecanismo e BNE, existe um mecanismo de revelação direta equivalente em que reportar o tipo verdadeiro é equilíbrio. |
+
+<div class="caption-obj" markdown>
+**Tabela 9c.1 — Conceitos-chave.**
+</div>
 
 ---
 

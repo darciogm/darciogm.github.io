@@ -230,10 +230,6 @@ A [Tabela 8.2](#tabela-8-2) compara as estimativas dos parâmetros da Teoria do 
     **Conexão com este capítulo:**
     A função valor da Teoria do Prospecto — côncava para ganhos, convexa para perdas, mais inclinada no domínio das perdas — é o ponto de partida deste capítulo. Os vieses cognitivos documentados por Kahneman e Tversky (representatividade, disponibilidade, ancoragem) explicam os desvios sistemáticos da racionalidade que motivam toda a economia comportamental discutida aqui.
 
-## 🎯 Exercícios Resolvidos
-
-Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste capítulo. Recomenda-se tentar resolver cada exercício antes de consultar a solução.
-
 ??? exercicio-resolvido "Exercício Resolvido 8.1 — Função valor da Teoria do Prospecto"
     **Enunciado:** Usando a função valor paramétrica da Teoria do Prospecto com \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\), calcule o valor subjetivo dos seguintes resultados: \(v(100)\), \(v(-100)\), \(v(250)\) e \(v(-250)\). Em seguida, verifique a propriedade de aversão à perda e a sensibilidade decrescente.
 
@@ -684,6 +680,8 @@ Para capturar o viés do presente sem abandonar completamente a tratabilidade do
 
 Os **fatores de desconto** para os períodos futuros são:
 
+<a id="tabela-8-6"></a>
+
 | Período | Exponencial | Quasi-hiperbólico |
 |---|---|---|
 | \(t = 0\) | \(1\) | \(1\) |
@@ -691,9 +689,15 @@ Os **fatores de desconto** para os períodos futuros são:
 | \(t = 2\) | \(\delta^2\) | \(\beta\delta^2\) |
 | \(t = s\) | \(\delta^s\) | \(\beta\delta^s\) |
 
+<div class="caption-obj" markdown>
+**Tabela 8.6 — Fatores de desconto exponencial e quasi-hiperbólico.**
+</div>
+
 A diferença crucial é que a queda no fator de desconto entre \(t=0\) e \(t=1\) é proporcionalmente muito maior (\(\beta\delta\) vs. 1) do que entre quaisquer dois períodos futuros consecutivos (\(\beta\delta^{t+1}/\beta\delta^t = \delta\)). Isso gera o viés do presente e permite preferências reversíveis.
 
 A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em diferentes estudos:
+
+<a id="tabela-8-7"></a>
 
 | Estudo | Contexto | \(\beta\) | \(\delta\) (anual) |
 |---|---|---|---|
@@ -702,6 +706,10 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 | Paserman (2008) | Busca de emprego | 0,40–0,90 | 0,99 |
 | Augenblick, Niederle e Sprenger (2015) | Experimento tarefas reais | 0,75 | 0,99 |
 | Frederick, Loewenstein e O'Donoghue (2002) | Meta-análise | 0,20–0,80 | 0,90–0,99 |
+
+<div class="caption-obj" markdown>
+**Tabela 8.7 — Estimativas dos parâmetros de desconto quasi-hiperbólico.**
+</div>
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O modelo \((\beta, \delta)\) captura a "fronteira psicológica" entre agora e tudo que vem depois — o futuro como um todo é descontado extra, mas dentro do futuro o desconto é normal.
@@ -810,6 +818,8 @@ Como traduzir a filosofia do paternalismo libertário em intervenções concreta
 
 A tabela a seguir organiza as principais ferramentas de nudging:
 
+<a id="tabela-8-8"></a>
+
 | Tipo de nudge | Viés explorado | Mecanismo | Exemplo | Evidência |
 |---|---|---|---|---|
 | Opção-padrão (*default*) | *Status quo*, inércia | Pré-selecionar a opção desejável | Adesão automática 401(k) | 49% → 86% (Madrian e Shea 2001) |
@@ -818,6 +828,10 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 | Normas sociais | Conformidade | Informar sobre comportamento de pares | "90% pagam IPTU em dia" | Aumento de 5–15% na conformidade |
 | Compromisso prévio | Viés do presente | Vincular decisão futura agora | *Save More Tomorrow* | Poupança 3,5% → 13,6% |
 | Simplificação | Sobrecarga cognitiva | Reduzir opções e burocracia | Formulário FAFSA simplificado | +8 p.p. na inscrição universitária |
+
+<div class="caption-obj" markdown>
+**Tabela 8.8 — Principais ferramentas de nudging.**
+</div>
 
 <div class="graph-container" markdown>
   <iframe src="../graficos/cap08/nudge-default.html" title="Figura 8.8 — Efeito Padrão (Default)" class="graph-iframe"></iframe>
@@ -889,6 +903,8 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-8-9"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Heurística | Atalho cognitivo que simplifica julgamentos complexos, podendo gerar vieses sistemáticos em contextos específicos. |
@@ -901,6 +917,10 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
 | Desconto quasi-hiperbólico | Modelo de desconto intertemporal com parâmetros (\(\beta\), \(\delta\)) que captura o viés do presente: um desconto extra aplicado a todos os períodos futuros em relação ao presente. |
 | Contabilidade mental | Tendência de organizar, avaliar e acompanhar atividades financeiras em contas mentais separadas, violando a fungibilidade do dinheiro. |
 | Nudge | Intervenção na arquitetura de escolha que altera o comportamento de forma previsível sem proibir opções nem alterar incentivos econômicos significativos. |
+
+<div class="caption-obj" markdown>
+**Tabela 8.9 — Conceitos-chave.**
+</div>
 
 ---
 

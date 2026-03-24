@@ -23,7 +23,8 @@
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
 .panels { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
     .panel-label { text-align: center; font-size: .9rem; font-weight: 700; color: #333; margin-bottom: .3rem; }
-    #firmbox, #marketbox { width: 340px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
+    .panel-box { flex: 1 1 300px; max-width: 340px; }
+    #firmbox, #marketbox { width: 100%; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { width: 100%; max-width: 700px; margin: .8rem auto 0; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
     .controls h3 { width: 100%; font-size: .95rem; color: #C8102E; margin-bottom: .4rem; border-bottom: 1px solid #ddd; padding-bottom: .3rem; }
     .slider-group { flex: 1; min-width: 200px; margin-bottom: .5rem; }
@@ -34,6 +35,7 @@
     .btn-reset { display: inline-block; margin-top: .5rem; padding: .5rem 2rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 760px) {
+      .panel-box { flex-basis: 100%; max-width: 340px; }
       #firmbox, #marketbox { width: 100%; max-width: 340px; }
     }
     /* anti-inflation-fix */
@@ -42,11 +44,11 @@
 </head>
 <body>
 <div class="panels">
-    <div>
+    <div class="panel-box">
       <div class="panel-label">Firma Individual</div>
       <div id="firmbox"></div>
     </div>
-    <div>
+    <div class="panel-box">
       <div class="panel-label">Mercado</div>
       <div id="marketbox"></div>
     </div>

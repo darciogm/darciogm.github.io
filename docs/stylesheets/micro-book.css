@@ -2,11 +2,19 @@
    MICRO BOOK — Styles specific to the Microeconomia textbook
    ================================================================ */
 
+/* Tabelas centralizadas horizontalmente */
+.md-typeset table:not([class]) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Classe padrão para iframes de gráficos interativos */
 .graph-iframe {
   display: block;
   width: 100%;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   border: none;
   border-radius: 8px;
 }

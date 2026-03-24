@@ -390,7 +390,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
     O lucro da firma é dado por:
 
     \[
-    \pi(q) = RT(q) - CT(q) = P \cdot q - CT(q) \label{eq:1.4.4} \tag{1.4.4}
+    \pi(q) = RT(q) - CT(q) = P \cdot q - CT(q) \label{eq:1.7.1} \tag{1.7.1}
     \]
 
     onde \(P\) é o preço de mercado (dado, exógeno para a firma competitiva), \(RT(q)\) é a receita total e \(CT(q)\) é o custo total.
@@ -400,7 +400,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
     Para que \(q^*\) seja um máximo interior, é necessário que a derivada do lucro em relação a \(q\) seja zero:
 
     \[
-    \frac{d\pi}{dq}\bigg|_{q=q^*} = 0 \label{eq:1.4.5} \tag{1.4.5}
+    \frac{d\pi}{dq}\bigg|_{q=q^*} = 0 \label{eq:1.7.2} \tag{1.7.2}
     \]
 
     \[
@@ -412,7 +412,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
     \]
 
     \[
-    \boxed{P = CMg(q^*)} \label{eq:1.4.6} \tag{1.4.6}
+    \boxed{P = CMg(q^*)} \label{eq:1.7.3} \tag{1.7.3}
     \]
 
     onde \(CMg(q) = \frac{dCT}{dq}\) é o custo marginal.
@@ -422,7 +422,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
     Para que \(q^*\) seja de fato um **máximo** (e não um mínimo ou ponto de inflexão), a segunda derivada do lucro deve ser negativa:
 
     \[
-    \frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \label{eq:1.4.7} \tag{1.4.7}
+    \frac{d^2\pi}{dq^2}\bigg|_{q=q^*} < 0 \label{eq:1.7.4} \tag{1.7.4}
     \]
 
     \[
@@ -430,10 +430,10 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
     \]
 
     \[
-    \frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0 \label{eq:1.4.8} \tag{1.4.8}
+    \frac{d^2 CT}{dq^2}\bigg|_{q=q^*} > 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} > 0 \label{eq:1.7.5} \tag{1.7.5}
     \]
 
-    Portanto, a condição de segunda ordem $\eqref{eq:1.4.8}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
+    Portanto, a condição de segunda ordem $\eqref{eq:1.7.5}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
 
 <iframe src="../graficos/cap01/maximizacao-lucro.html" title="Figura 1.4 — Maximização de lucro da firma competitiva" class="graph-iframe"></iframe>
 
@@ -441,7 +441,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
 **Figura 1.4 — Maximização de lucro da firma competitiva.** Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
 </div>
 
-O que essa demonstração nos revela? Do ponto de vista econômico, o resultado da equação $\eqref{eq:1.4.6}$ encapsula uma lógica elegante: a firma expande a produção enquanto cada unidade adicional gera receita (\(P\)) superior ao custo de produzi-la (\(CMg\)). No ponto ótimo, a última unidade produzida "se paga" exatamente — não há mais ganho possível na margem. Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos Capítulos 7–9, onde estudaremos a teoria da firma em profundidade.
+O que essa demonstração nos revela? Do ponto de vista econômico, o resultado da equação $\eqref{eq:1.7.3}$ encapsula uma lógica elegante: a firma expande a produção enquanto cada unidade adicional gera receita (\(P\)) superior ao custo de produzi-la (\(CMg\)). No ponto ótimo, a última unidade produzida "se paga" exatamente — não há mais ganho possível na margem. Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos Capítulos 7–9, onde estudaremos a teoria da firma em profundidade.
 
 Note também que a demonstração ilustra o poder da estática comparativa: como \(CMg\) é crescente no ótimo, um aumento no preço \(P\) exige um aumento em \(q^*\) para restaurar a igualdade \(P = CMg\). Isso fundamenta a **lei da oferta** — a relação positiva entre preço e quantidade ofertada — como consequência lógica da otimização, não como uma hipótese ad hoc. A relação \(q^*(P)\), que associa a cada preço a quantidade ótima, é a **curva de oferta individual** da firma.
 
@@ -540,6 +540,8 @@ Note também que a demonstração ilustra o poder da estática comparativa: como
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-1-3"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Modelo econômico | Representação simplificada da realidade, expressa por relações lógicas entre variáveis, com o objetivo de explicar fenômenos e gerar previsões testáveis. |
@@ -553,6 +555,10 @@ Note também que a demonstração ilustra o poder da estática comparativa: como
 | Utilidade marginal | Utilidade adicional obtida pelo consumo da última unidade de um bem; conceito central da revolução marginalista. |
 | Teoria do valor-trabalho | Doutrina clássica (Smith, Ricardo) segundo a qual o valor de troca de um bem é determinado pela quantidade de trabalho necessária para produzi-lo. |
 | Equilíbrio geral | Determinação simultânea de preços e quantidades em todos os mercados da economia, formalizado por Walras e provado por Arrow e Debreu. |
+
+<div class="caption-obj" markdown>
+**Tabela 1.3 — Conceitos-chave.**
+</div>
 
 ---
 

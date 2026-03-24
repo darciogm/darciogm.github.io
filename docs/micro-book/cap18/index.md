@@ -424,6 +424,8 @@ Se a taxa discreta (anual) é \(r_d\) e a taxa contínua é \(r_c\), então:
 
 Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa anuais conforme a tabela abaixo:
 
+<a id="tabela-18-3"></a>
+
 | Ano | Fluxo de caixa (R$) |
 |---|---|
 | 0 | −100.000 |
@@ -431,6 +433,10 @@ Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa an
 | 2 | 35.000 |
 | 3 | 40.000 |
 | 4 | 45.000 |
+
+<div class="caption-obj" markdown>
+**Tabela 18.3 — Fluxos de caixa do projeto de investimento.**
+</div>
 
 A TIR deste projeto é aproximadamente 15,2%. A [Tabela 18.2](#tabela-18-2) mostra o VPL para diferentes taxas de desconto:
 
@@ -501,6 +507,8 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-18-4"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Capital | Estoque de bens produzidos utilizados como insumos na produção; fator de produção produzido (máquinas, equipamentos, infraestrutura) |
@@ -513,6 +521,10 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 | Regra de Hotelling | Em equilíbrio, o preço líquido de um recurso exaurível cresce à taxa de juros: \(\dot{R}/R = r\) |
 | Beta (CAPM) | Medida de risco sistemático de um ativo: \(\beta_i = \text{Cov}(r_i, r_m)/\text{Var}(r_m)\) |
 | Perpetuidade | Fluxo de pagamentos constante e infinito cujo valor presente é \(VP = F/r\) |
+
+<div class="caption-obj" markdown>
+**Tabela 18.4 — Conceitos-chave.**
+</div>
 
 ---
 
@@ -661,11 +673,17 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 <a id="ex-18-4"></a>**Exercício 18.4.** Considere dois projetos mutuamente exclusivos:
 
+<a id="tabela-18-5"></a>
+
 | | Projeto A | Projeto B |
 |---|---|---|
 | Investimento inicial | R$ 100.000 | R$ 200.000 |
 | Fluxo anual (5 anos) | R$ 35.000 | R$ 62.000 |
 | TIR | 22,1% | 16,8% |
+
+<div class="caption-obj" markdown>
+**Tabela 18.5 — Projetos mutuamente exclusivos.**
+</div>
 
 (a) Calcule o VPL de cada projeto para \(r = 10\%\).
 

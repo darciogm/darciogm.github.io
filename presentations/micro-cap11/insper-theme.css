@@ -1,0 +1,636 @@
+/*
+ * ═══════════════════════════════════════════════════════════
+ *  Tema Insper — Reveal.js  (Light variant)
+ *  Template acadêmico para Economia
+ * ═══════════════════════════════════════════════════════════
+ *
+ *  Paleta: extraída de theme1.xml (Modelo_Insper.pptx) + insper.edu.br
+ *  Fonte:  CMU Serif (Computer Modern) — coerência visual com LaTeX/MathJax
+ *  Slides: 1400×900 (16:9 ish — legível em projetor de seminário)
+ */
+
+/* ═══════════ Fontes ═══════════ */
+@import url('https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Serif/cmun-serif.css');
+
+/* ═══════════ Variáveis globais ═══════════ */
+:root {
+  /* ── Paleta Insper (hex exatos de theme1.xml + site) ── */
+  --insper-red:         #E50505;   /* dk2 / cor institucional dominante         */
+  --insper-dark-red:    #C00000;   /* variante escura do vermelho               */
+  --insper-yellow:      #FFCC00;   /* accent1                                   */
+  --insper-purple:      #730D9F;   /* accent2                                   */
+  --insper-green:       #92D053;   /* accent3                                   */
+  --insper-teal:        #3ACC9F;   /* accent4                                   */
+  --insper-pink:        #F37DCD;   /* accent5                                   */
+  --insper-orange:      #F89D49;   /* accent6                                   */
+
+  /* ── Neutros ── */
+  --insper-text:        #000014;   /* navy ultra-escuro — texto principal        */
+  --insper-text-muted:  #5B5B5B;   /* cinza médio — captions, notas             */
+  --insper-dark:        #1A1A2E;   /* quase-preto — backgrounds escuros          */
+  --insper-gray:        #7F7F7F;   /* cinza — linhas, bordas leves              */
+  --insper-gray-light:  #D0D0D0;   /* cinza claro — separadores discretos       */
+  --insper-bg:          #FFFFFF;   /* background padrão                          */
+  --insper-bg-warm:     #F8F7F5;   /* off-white quente — equações               */
+  --insper-bg-cool:     #F4F4F6;   /* off-white frio — figuras                  */
+
+  /* ── Tipografia ── */
+  --font-main:    'Computer Modern Serif', 'CMU Serif', Georgia, 'Times New Roman', serif;
+  --font-math:    'Computer Modern Serif', serif;
+
+  /* ── Tamanhos (calibrados para legibilidade a 5 m) ── */
+  --size-title:         2.4em;     /* h1 — slide de título                      */
+  --size-section-title: 2.6em;     /* h2 em section divider                     */
+  --size-heading:       1.6em;     /* h2 — slides de conteúdo                   */
+  --size-subheading:    1.15em;    /* h3                                        */
+  --size-body:          0.95em;    /* p, li                                     */
+  --size-caption:       0.7em;     /* captions, notas de tabela                 */
+  --size-slide-number:  0.65em;    /* número de slide                           */
+
+  /* ── Espaçamento ── */
+  --slide-padding:      60px 80px;
+  --section-gap:        1.2em;
+
+  /* ── Elementos visuais ── */
+  --rule-thickness:     2px;
+  --rule-color:         var(--insper-red);
+  --border-radius:      0px;
+}
+
+/* ═══════════ Reset Reveal.js ═══════════ */
+.reveal-viewport {
+  background: var(--insper-bg);
+}
+
+.reveal {
+  font-family: var(--font-main);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--insper-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  padding: var(--slide-padding);
+  box-sizing: border-box;
+  line-height: 1.55;
+}
+
+/* ═══════════ Tipografia global ═══════════ */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font-main);
+  color: var(--insper-text);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+}
+
+.reveal h1 { font-size: var(--size-title); }
+.reveal h2 { font-size: var(--size-heading); }
+.reveal h3 { font-size: var(--size-subheading); font-style: italic; color: var(--insper-text-muted); }
+.reveal h4 { font-size: 1em; font-weight: 700; }
+
+.reveal p {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  margin: 0 0 0.7em 0;
+}
+
+.reveal strong { font-weight: 700; }
+.reveal em     { font-style: italic; }
+
+.reveal a         { color: var(--insper-red); text-decoration: none; border-bottom: 1px solid transparent; }
+.reveal a:hover   { border-bottom-color: var(--insper-red); }
+
+/* ═══════════ Listas — bullets vermelhos ═══════════ */
+.reveal ul, .reveal ol {
+  margin: 0 0 0.6em 0;
+  padding-left: 1.2em;
+}
+
+.reveal ul { list-style: none; }
+.reveal ul > li { position: relative; padding-left: 0.1em; margin-bottom: 0.45em; }
+.reveal ul > li::before {
+  content: '—';
+  position: absolute;
+  left: -1.2em;
+  color: var(--insper-red);
+  font-weight: 700;
+}
+
+/* Sub-bullets */
+.reveal ul ul { margin-top: 0.3em; }
+.reveal ul ul > li::before {
+  content: '·';
+  font-size: 1.3em;
+  left: -1em;
+}
+
+.reveal ol > li { margin-bottom: 0.45em; }
+.reveal ol > li::marker { color: var(--insper-red); font-weight: 700; }
+
+/* ═══════════ Código inline ═══════════ */
+.reveal code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 0.85em;
+  background: var(--insper-bg-cool);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════
+   SLIDE TYPES
+   ═══════════════════════════════════════ */
+
+/* ── TITLE SLIDE ── */
+.reveal .slides section.slide-title {
+  background: var(--insper-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+}
+
+.slide-title h1 {
+  font-size: var(--size-title);
+  font-weight: 400;
+  color: var(--insper-text);
+  margin-bottom: 0.15em;
+  max-width: 85%;
+}
+
+.slide-title .subtitle {
+  font-size: 1.1em;
+  color: var(--insper-text-muted);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Linha vermelha separadora */
+.slide-title .title-rule {
+  width: 100%;
+  max-width: 75%;
+  height: var(--rule-thickness);
+  background: var(--insper-red);
+  border: none;
+  margin: 1.2em 0;
+}
+
+.slide-title .authors {
+  font-size: 0.85em;
+  color: var(--insper-text);
+  margin-bottom: 0.2em;
+}
+
+.slide-title .affiliations {
+  font-size: 0.75em;
+  color: var(--insper-text-muted);
+  margin-bottom: 0.2em;
+}
+
+.slide-title .event {
+  font-size: 0.7em;
+  color: var(--insper-text-muted);
+  font-style: italic;
+}
+
+/* Logo posicionado canto superior direito */
+.slide-title .logo,
+.slide-title .cover-logo {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: auto;
+  height: 120px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* ── SECTION DIVIDER ── */
+.reveal .slides section.slide-section {
+  background: var(--insper-red);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Número de seção como marca d'água */
+.slide-section .section-number {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.slide-section h2 {
+  font-size: var(--size-section-title);
+  color: #FFFFFF;
+  font-weight: 400;
+  margin: 0;
+  max-width: 70%;
+}
+
+/* ── CONTENT (padrão) ── */
+.reveal .slides section.slide-content {
+  background: var(--insper-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50px 80px;
+}
+
+.slide-content h2 {
+  font-size: var(--size-heading);
+  padding-bottom: 0.3em;
+  border-bottom: var(--rule-thickness) solid var(--insper-red);
+  margin-bottom: 0.8em;
+}
+
+/* ── TWO COLUMN ── */
+.reveal .slides section.slide-two-col {
+  background: var(--insper-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50px 80px;
+}
+
+.slide-two-col h2 {
+  font-size: var(--size-heading);
+  padding-bottom: 0.3em;
+  border-bottom: var(--rule-thickness) solid var(--insper-red);
+  margin-bottom: 0.8em;
+  width: 100%;
+}
+
+.slide-two-col .columns {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 0;
+  flex: 1;
+  align-items: start;
+}
+
+.slide-two-col .col-left {
+  padding-right: 35px;
+  border-right: 1px solid var(--insper-red);
+}
+
+.slide-two-col .col-right {
+  padding-left: 35px;
+}
+
+/* ── EQUATION FOCUS ── */
+.reveal .slides section.slide-equation {
+  background: var(--insper-bg-warm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 100px;
+}
+
+.slide-equation h2 {
+  font-size: var(--size-heading);
+  padding-bottom: 0.3em;
+  border-bottom: var(--rule-thickness) solid var(--insper-red);
+  margin-bottom: 1em;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.slide-equation .equation-block {
+  font-size: 1.3em;
+  margin: 0.6em 0;
+}
+
+.slide-equation .equation-caption {
+  font-size: var(--size-caption);
+  font-style: italic;
+  color: var(--insper-text-muted);
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+/* ── FIGURE / TABLE ── */
+.reveal .slides section.slide-figure {
+  background: var(--insper-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 45px 80px;
+}
+
+.slide-figure h2 {
+  font-size: 1.3em;
+  padding-bottom: 0.2em;
+  border-bottom: var(--rule-thickness) solid var(--insper-red);
+  margin-bottom: 0.5em;
+}
+
+.slide-figure .figure-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--insper-bg-cool);
+  border: 1px solid var(--insper-gray-light);
+  border-radius: 2px;
+  margin-bottom: 0.4em;
+  min-height: 0;
+}
+
+.slide-figure .figure-area img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide-figure .figure-caption {
+  font-size: var(--size-caption);
+  font-style: italic;
+  color: var(--insper-text-muted);
+}
+
+.slide-figure .figure-source {
+  font-size: 0.6em;
+  color: var(--insper-gray);
+}
+
+/* ── RESULTS ── */
+.reveal .slides section.slide-results {
+  background: var(--insper-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50px 80px;
+}
+
+.slide-results h2 {
+  font-size: var(--size-heading);
+  padding-bottom: 0.3em;
+  border-bottom: var(--rule-thickness) solid var(--insper-red);
+  margin-bottom: 0.5em;
+}
+
+.slide-results .result-headline {
+  font-size: 1.8em;
+  color: var(--insper-red);
+  text-align: center;
+  font-weight: 400;
+  margin: 0.4em 0 0.6em;
+}
+
+/* ── CLOSING ── */
+.reveal .slides section.slide-closing {
+  background: var(--insper-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 80px;
+}
+
+.slide-closing h2 {
+  font-size: var(--size-title);
+  font-weight: 400;
+  color: var(--insper-text);
+  margin-bottom: 0.1em;
+}
+
+.slide-closing .closing-rule {
+  width: 60%;
+  height: var(--rule-thickness);
+  background: var(--insper-red);
+  border: none;
+  margin: 1em 0;
+}
+
+.slide-closing .contact {
+  font-size: 0.85em;
+  color: var(--insper-text);
+  margin-bottom: 0.2em;
+}
+
+.slide-closing .thanks-note {
+  font-size: var(--size-caption);
+  color: var(--insper-text-muted);
+  font-style: italic;
+  margin-top: 1.5em;
+  max-width: 70%;
+}
+
+.slide-closing .logo,
+.slide-closing .cover-logo {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  width: auto;
+  height: 45px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════
+   TABELAS — Estilo Econômico (AER/QJE)
+   ═══════════════════════════════════════ */
+table.econ-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-main);
+  font-size: 0.78em;
+  margin: 0.6em 0;
+}
+
+table.econ-table thead {
+  border-top: 2px solid var(--insper-text);
+  border-bottom: 1px solid var(--insper-text);
+}
+
+table.econ-table thead th {
+  padding: 0.5em 0.8em;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--insper-text);
+}
+
+table.econ-table thead th:first-child {
+  text-align: left;
+  font-style: normal;
+}
+
+table.econ-table tbody td {
+  padding: 0.35em 0.8em;
+  text-align: center;
+  vertical-align: top;
+}
+
+table.econ-table tbody td:first-child {
+  text-align: left;
+}
+
+/* Linhas de erro-padrão — cinza, entre parênteses */
+table.econ-table tbody tr.se td {
+  padding-top: 0;
+  color: var(--insper-text-muted);
+  font-size: 0.92em;
+}
+
+/* Linha de separação pré-footer */
+table.econ-table tfoot {
+  border-top: 2px solid var(--insper-text);
+}
+
+table.econ-table tfoot td {
+  padding: 0.4em 0.8em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+table.econ-table tfoot td:first-child {
+  text-align: left;
+}
+
+/* Sem bordas verticais nunca */
+table.econ-table td,
+table.econ-table th {
+  border-left: none;
+  border-right: none;
+}
+
+/* Significância estatística */
+.stars       { font-size: 0.8em; vertical-align: super; }
+.table-notes {
+  font-size: var(--size-caption);
+  font-style: italic;
+  color: var(--insper-text-muted);
+  margin-top: 0.4em;
+  line-height: 1.45;
+}
+
+/* ═══════════════════════════════════════
+   ELEMENTOS ACADÊMICOS
+   ═══════════════════════════════════════ */
+
+/* Teorema / Proposição */
+.theorem, .proposition {
+  border-left: 3px solid var(--insper-red);
+  padding: 0.6em 1em;
+  margin: 0.8em 0;
+  background: transparent;
+}
+
+.theorem .label, .proposition .label {
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+  color: var(--insper-text);
+}
+
+/* Definição */
+.definition {
+  background: #FEF5F5;
+  padding: 0.7em 1em;
+  margin: 0.8em 0;
+  border-left: 3px solid var(--insper-red);
+}
+
+.definition .label {
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+}
+
+/* Hipótese */
+.hypothesis {
+  font-style: italic;
+  color: var(--insper-text);
+  padding: 0.4em 0;
+}
+
+/* Destaques inline */
+.highlight { color: var(--insper-red); font-weight: 700; }
+.result    { font-size: 1.8em; color: var(--insper-red); text-align: center; }
+.muted     { color: var(--insper-text-muted); }
+
+/* Check / Cross para robustez */
+.check { color: #2E8B57; }
+.cross { color: var(--insper-red); }
+
+/* ═══════════════════════════════════════
+   SLIDE NUMBER & PROGRESS
+   ═══════════════════════════════════════ */
+.reveal .slide-number {
+  font-family: var(--font-main);
+  font-size: var(--size-slide-number);
+  color: var(--insper-text-muted);
+  background: transparent;
+  right: 24px;
+  bottom: 16px;
+}
+
+/* Esconder número na capa e section dividers */
+.slide-title ~ .reveal .slide-number,
+.reveal .slide-number-a { /* controlado via JS showSlideNumber */ }
+
+.reveal .progress {
+  color: var(--insper-red);
+  height: 3px;
+}
+
+.reveal .controls {
+  color: var(--insper-red);
+}
+
+/* ═══════════════════════════════════════
+   UTILITÁRIOS
+   ═══════════════════════════════════════ */
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-red     { color: var(--insper-red); }
+.text-muted   { color: var(--insper-text-muted); }
+.mt-0         { margin-top: 0; }
+.mt-1         { margin-top: 0.5em; }
+.mt-2         { margin-top: 1em; }
+.mb-0         { margin-bottom: 0; }
+.mb-1         { margin-bottom: 0.5em; }
+.small        { font-size: 0.8em; }
+.smaller      { font-size: 0.7em; }
+.nowrap       { white-space: nowrap; }
+
+/* ═══════════════════════════════════════
+   Logo persistente (injetado via JS)
+   Aparece em todos os slides exceto
+   slide-title, slide-closing, slide-section
+   ═══════════════════════════════════════ */
+.slide-logo {
+  position: absolute;
+  bottom: 24px;
+  right: 36px;
+  width: auto;
+  height: 36px;
+  object-fit: contain;
+  z-index: 100;
+  opacity: 0.92;
+  pointer-events: none;
+}

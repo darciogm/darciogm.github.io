@@ -571,6 +571,8 @@ A [Tabela 13.2](#tabela-13-2) resume os efeitos das principais políticas de int
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-13-3"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Demanda de mercado | Soma horizontal das demandas individuais: $X(p) = \sum_i x_i(p)$. |
@@ -583,6 +585,10 @@ A [Tabela 13.2](#tabela-13-2) resume os efeitos das principais políticas de int
 | Preço máximo (teto) | Preço legalmente fixado abaixo do equilíbrio, gerando escassez ($Q_D > Q_S$). |
 | Preço mínimo (piso) | Preço legalmente fixado acima do equilíbrio, gerando excedente de oferta ($Q_S > Q_D$). |
 | Renda ricardiana | Lucro econômico auferido por firmas com custos inferiores à firma marginal em indústrias de custos crescentes. |
+
+<div class="caption-obj" markdown>
+**Tabela 13.3 — Conceitos-chave.**
+</div>
 
 ---
 

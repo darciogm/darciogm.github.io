@@ -22,8 +22,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
 .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
- #jxgbox { width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
-    .controls { width: 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+ #jxgbox { flex: 1 1 420px; max-width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.7rem; }
     .slider-group label { display: flex; justify-content: space-between; font-size: 0.83rem; margin-bottom: 0.2rem; }
@@ -36,8 +36,8 @@
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 880px) {
       .graph-container { flex-direction: column; align-items: center; }
-      #jxgbox { width: 100%; max-width: 520px; }
-      .controls { width: 100%; max-width: 520px; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
     }
     /* anti-inflation-fix */
     html,body{margin:0!important;padding:0!important;overflow:visible!important}

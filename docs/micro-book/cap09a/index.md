@@ -78,10 +78,16 @@ Com a linguagem formal estabelecida, podemos agora examinar os jogos que deram f
 
 O **Dilema dos Prisioneiros** é possivelmente o jogo mais célebre da teoria dos jogos. A história da sua criação é ela mesma fascinante: formulado em 1950 por Merrill Flood e Melvin Dresher no laboratório RAND, e batizado pelo matemático Albert Tucker (orientador de Nash) ao apresentá-lo para uma plateia de psicólogos em Stanford, o Dilema dos Prisioneiros captura, com elegância mínima, a tensão estrutural entre interesse individual e bem coletivo. Dois suspeitos são interrogados separadamente e cada um pode cooperar (ficar calado) ou trair (delatar o outro). A narrativa da prisão é apenas um disfarce: a mesma estrutura de payoffs aparece na corrida armamentista entre países, na concorrência predatória entre firmas, na tragédia dos comuns e na guerra fiscal entre estados brasileiros. É precisamente essa universalidade que torna o Dilema dos Prisioneiros o caso de teste obrigatório para qualquer teoria de comportamento estratégico.
 
+<a id="tabela-9a-1"></a>
+
 |  | Jogador 2: Cooperar | Jogador 2: Trair |
 |:---|:---:|:---:|
 | **Jogador 1: Cooperar** | \((-1, -1)\) | \((-10, 0)\) |
 | **Jogador 1: Trair** | \((0, -10)\) | \((-5, -5)\) |
+
+<div class="caption-obj" markdown>
+**Tabela 9a.1 — Dilema dos Prisioneiros.**
+</div>
 
 A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R\) = recompensa mútua, \(P\) = punição, \(S\) = *sucker's payoff*), com a condição adicional \(2R > T + S\). Essa parametrização não é arbitrária: a desigualdade \(T > R\) garante que trair seja tentador quando o outro coopera; \(R > P\) garante que a cooperação mútua seja preferível à traição mútua; e \(P > S\) garante que ser traído enquanto se coopera é o pior resultado possível. A condição \(2R > T + S\) assegura que a cooperação mútua gera mais valor total do que a alternância entre traição e cooperação.
 
@@ -110,11 +116,11 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 **Figura 9a.1 — Matriz de payoffs e equilíbrio de Nash.** Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.
 </div>
 
-O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A [Tabela 9a.1](#tabela-9a-1) sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
+O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A [Tabela 9a.2](#tabela-9a-2) sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
 
 ### Taxonomia dos Jogos Clássicos
 
-<a id="tabela-9a-1"></a>
+<a id="tabela-9a-2"></a>
 
 | Jogo | Payoffs (genéricos) | EN em puras | EN em mistas | Característica | Aplicação |
 |:-----|:-------------------|:------------|:------------|:---------------|:----------|
@@ -125,7 +131,7 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 | **Matching Pennies** | Soma zero; interesses opostos | Nenhum | \((1/2, 1/2)\) cada | Jogo estritamente competitivo | Estratégias militares, esportes |
 
 <div class="caption-obj" markdown>
-**Tabela 9a.1 — Taxonomia dos jogos clássicos.**
+**Tabela 9a.2 — Taxonomia dos jogos clássicos.**
 </div>
 
 ---
@@ -186,10 +192,16 @@ Para fixar o conceito, vejamos como o equilíbrio de Nash se manifesta em jogos 
 
 Dois parceiros querem sair juntos, mas um prefere futebol (F) e o outro prefere cinema (C).
 
+<a id="tabela-9a-3"></a>
+
 |  | Jogador 2: F | Jogador 2: C |
 |:---|:---:|:---:|
 | **Jogador 1: F** | \((3, 1)\) | \((0, 0)\) |
 | **Jogador 1: C** | \((0, 0)\) | \((1, 3)\) |
+
+<div class="caption-obj" markdown>
+**Tabela 9a.3 — Batalha dos Sexos.**
+</div>
 
 Existem **dois equilíbrios de Nash em estratégias puras**: \((F, F)\) e \((C, C)\), e um em estratégias mistas (derivado na Seção 9a.4). O jogo ilustra o problema de **coordenação** quando existem múltiplos equilíbrios. Diferentemente do Dilema dos Prisioneiros, aqui não há conflito entre racionalidade individual e eficiência coletiva — ambos os equilíbrios em puras são Pareto-eficientes. O problema é outro: como os jogadores se coordenam em um dos equilíbrios sem comunicação prévia? É nesse contexto que os "pontos focais" de Schelling (1960) — soluções que se destacam por saliência cultural, histórica ou contextual — desempenham papel crucial.
 
@@ -197,10 +209,16 @@ Existem **dois equilíbrios de Nash em estratégias puras**: \((F, F)\) e \((C, 
 
 Dois animais (ou firmas) disputam um recurso de valor \(V\). Cada um pode ser agressivo (Hawk, H) ou passivo (Dove, D).
 
+<a id="tabela-9a-4"></a>
+
 |  | Jogador 2: H | Jogador 2: D |
 |:---|:---:|:---:|
 | **Jogador 1: H** | \(\left(\frac{V-C}{2}, \frac{V-C}{2}\right)\) | \((V, 0)\) |
 | **Jogador 1: D** | \((0, V)\) | \(\left(\frac{V}{2}, \frac{V}{2}\right)\) |
+
+<div class="caption-obj" markdown>
+**Tabela 9a.4 — Hawk-Dove (Falcão-Pomba).**
+</div>
 
 Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equilíbrios em puras — \((H, D)\) e \((D, H)\) — e um em mistas. Note que, diferentemente da Batalha dos Sexos, o Hawk-Dove é um jogo de **anti-coordenação**: os equilíbrios em puras envolvem jogadores fazendo escolhas *diferentes* (um agressivo, outro passivo). Em mercados, essa estrutura aparece quando firmas segmentam nichos para evitar concorrência destrutiva. A versão biológica desse jogo (Maynard Smith e Price, 1973) está na origem da **teoria dos jogos evolutiva**, que estuda como populações de agentes convertem para padrões estáveis de comportamento sem assumir racionalidade individual.
 
@@ -428,9 +446,9 @@ q_1^S = \frac{a-c}{2b}, \qquad q_2^S = \frac{a-c}{4b}, \qquad Q^S = \frac{3(a-c)
 \label{eq:9a.9} \tag{9a.9}
 \]
 
-A [Tabela 9a.2](#tabela-9a-2) compara Cournot, Stackelberg, monopólio e competição perfeita:
+A [Tabela 9a.5](#tabela-9a-5) compara Cournot, Stackelberg, monopólio e competição perfeita:
 
-<a id="tabela-9a-2"></a>
+<a id="tabela-9a-5"></a>
 
 | Modelo | \(Q\) total | Preço \(P\) | \(\pi_{\text{líder}}\) | \(\pi_{\text{seguidora}}\) |
 |:-------|:-----------|:-----------|:----------------------|:--------------------------|
@@ -440,7 +458,7 @@ A [Tabela 9a.2](#tabela-9a-2) compara Cournot, Stackelberg, monopólio e competi
 | Comp. Perfeita | \(\frac{a-c}{b}\) | \(c\) | 0 | 0 |
 
 <div class="caption-obj" markdown>
-**Tabela 9a.2 — Comparação Cournot, Stackelberg, monopólio e competição perfeita.**
+**Tabela 9a.5 — Comparação Cournot, Stackelberg, monopólio e competição perfeita.**
 </div>
 
 A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora produz *menos* e lucra *menos*. A quantidade total é maior e o preço é menor — o consumidor prefere Stackelberg a Cournot. Em termos econômicos, a tabela revela uma hierarquia clara de bem-estar do consumidor: competição perfeita > Stackelberg > Cournot > Monopólio. Quanto mais intensa a competição — seja pelo número de firmas ou pela estrutura do jogo — mais o excedente é transferido dos produtores para os consumidores.
@@ -586,6 +604,8 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-9a-6"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Jogo na forma normal | Tripla \(\langle N, (S_i), (u_i) \rangle\) que especifica jogadores, estratégias e payoffs. |
@@ -598,6 +618,10 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 | Modelo de Bertrand | Oligopólio em que firmas escolhem preços simultaneamente; com produtos homogêneos, o preço converge para o custo marginal. |
 | Modelo de Stackelberg | Oligopólio sequencial em que a líder se compromete com uma quantidade antes da seguidora, obtendo vantagem de primeiro movimento. |
 | Dilema dos Prisioneiros | Jogo em que a estratégia dominante de cada jogador leva a um resultado coletivamente inferior (Pareto-dominado). |
+
+<div class="caption-obj" markdown>
+**Tabela 9a.6 — Conceitos-chave.**
+</div>
 
 ---
 

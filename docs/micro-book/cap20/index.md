@@ -580,6 +580,8 @@ O imposto pivotal $\eqref{eq:20.15}$ corresponde ao "custo" que a presença de \
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-20-3"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Externalidade | Efeito da ação de um agente sobre a utilidade ou produção de outro, não mediado pelo sistema de preços |
@@ -592,6 +594,10 @@ O imposto pivotal $\eqref{eq:20.15}$ corresponde ao "custo" que a presença de \
 | Problema do carona (free rider) | Incentivo individual a não contribuir para bens públicos, esperando beneficiar-se das contribuições alheias |
 | Preços de Lindahl | Preços personalizados para o bem público, iguais à TMS de cada indivíduo, cuja soma iguala o custo marginal |
 | Teorema do eleitor mediano | Sob preferências unimodais e escolha unidimensional, a regra de maioria seleciona o nível preferido pelo eleitor mediano |
+
+<div class="caption-obj" markdown>
+**Tabela 20.3 — Conceitos-chave.**
+</div>
 
 ---
 
@@ -711,6 +717,8 @@ O imposto pivotal $\eqref{eq:20.15}$ corresponde ao "custo" que a presença de \
 
 <a id="ex-20-2"></a>**Exercício 20.2.** Considere três indivíduos (\(A\), \(B\), \(C\)) com as seguintes valorações marginais por um bem público \(G\) (medido em unidades):
 
+<a id="tabela-20-4"></a>
+
 | \(G\) | \(BMg_A\) | \(BMg_B\) | \(BMg_C\) | \(CMg\) |
 |-------|-----------|-----------|-----------|---------|
 | 1     | 40        | 30        | 20        | 60      |
@@ -718,6 +726,10 @@ O imposto pivotal $\eqref{eq:20.15}$ corresponde ao "custo" que a presença de \
 | 3     | 25        | 20        | 10        | 60      |
 | 4     | 15        | 10        | 5         | 60      |
 | 5     | 5         | 5         | 2         | 60      |
+
+<div class="caption-obj" markdown>
+**Tabela 20.4 — Valorações marginais e custo marginal do bem público.**
+</div>
 
 (a) Determine o nível eficiente de provisão do bem público.
 (b) Calcule os preços de Lindahl para cada indivíduo no nível eficiente.

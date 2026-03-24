@@ -652,6 +652,8 @@ A [Tabela 19.3](#tabela-19-3) resume os principais tipos de problemas de informa
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-19-4"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Informação assimétrica | Situação em que uma parte de uma transação detém informação relevante que a outra não possui |
@@ -664,6 +666,10 @@ A [Tabela 19.3](#tabela-19-3) resume os principais tipos de problemas de informa
 | Custo de agência | Diferença de custo entre o contrato ótimo sob informação assimétrica (second-best) e o contrato sob informação completa (first-best) |
 | Restrição de compatibilidade de incentivos (RCI) | Condição que garante que o agente prefira a ação desejada pelo principal a qualquer alternativa |
 | Teorema da equivalência de receitas | Resultado de que leilões inglês, holandês, de primeiro preço selado e de Vickrey geram a mesma receita esperada sob valores privados independentes |
+
+<div class="caption-obj" markdown>
+**Tabela 19.4 — Conceitos-chave.**
+</div>
 
 ---
 

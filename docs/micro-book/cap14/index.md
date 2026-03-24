@@ -548,6 +548,8 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-14-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Equilíbrio geral walrasiano | Vetor de preços em que todos os mercados se equilibram simultaneamente: oferta iguala demanda em cada mercado. |
@@ -560,6 +562,10 @@ Modelos CGE são usados para simulações de **estática comparativa**: comparam
 | Numerário | Bem cujo preço é normalizado em 1; apenas preços relativos importam no equilíbrio geral. |
 | Função de excesso de demanda | $z_k(\mathbf{p}) = D_k(\mathbf{p}) - S_k(\mathbf{p})$; no equilíbrio, $z_k(\mathbf{p}^*) = 0$ para todo $k$. |
 | Modelos CGE | Modelos computáveis de equilíbrio geral que calibram e simulam numericamente os efeitos de políticas sobre toda a economia. |
+
+<div class="caption-obj" markdown>
+**Tabela 14.2 — Conceitos-chave.**
+</div>
 
 ---
 

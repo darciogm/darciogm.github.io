@@ -9,7 +9,9 @@
     function setup(iframe) {
         iframe.addEventListener('load', function() {
             resize(iframe);
-            setTimeout(function() { resize(iframe); }, 1000);
+            setTimeout(function() { resize(iframe); }, 500);
+            setTimeout(function() { resize(iframe); }, 2000);
+            setTimeout(function() { resize(iframe); }, 4000);
         });
         try {
             if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {

@@ -354,10 +354,10 @@ A TMS para a CES assume uma forma compacta e elegante:
 
 Note que, quando \(\rho < 1\) (o caso economicamente relevante), o expoente \(\rho - 1\) é negativo, de modo que a TMS é decrescente em \(x_1/x_2\) — confirmando a convexidade das curvas de indiferença.
 
-<iframe src="../graficos/cap03/ces-continua.html" title="Figura 3.6 — CES Contínua: de Leontief a Substitutos Perfeitos" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/ces-continua.html" title="Figura 3.3 — CES Contínua: de Leontief a Substitutos Perfeitos" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 3.6 — CES Contínua: de Leontief a Substitutos Perfeitos.** Arraste o slider de \(\rho\) para observar a transformação contínua das curvas de indiferença: de ângulos retos (\(\rho \to -\infty\), complementos perfeitos) a hipérboles suaves (\(\rho = 0\), Cobb-Douglas) a retas (\(\rho \to 1\), substitutos perfeitos). A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
+**Figura 3.3 — CES Contínua: de Leontief a Substitutos Perfeitos.** Arraste o slider de \(\rho\) para observar a transformação contínua das curvas de indiferença: de ângulos retos (\(\rho \to -\infty\), complementos perfeitos) a hipérboles suaves (\(\rho = 0\), Cobb-Douglas) a retas (\(\rho \to 1\), substitutos perfeitos). A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
 </div>
 
 !!! example "Exemplo numérico: CES com diferentes valores de ρ"
@@ -498,22 +498,22 @@ A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais d
 
     **Regra prática:** comece com a forma mais simples que capture o fenômeno de interesse. Se a Cobb-Douglas for suficiente, não use a CES.
 
-<iframe src="../graficos/cap03/tipos-preferencias.html" title="Figura 3.3 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais)" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/tipos-preferencias.html" title="Figura 3.4 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 3.3 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).**
+**Figura 3.4 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).**
 </div>
 
-<iframe src="../graficos/cap03/funcoes-utilidade.html" title="Figura 3.4 — Superfície 3D da função de utilidade" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/funcoes-utilidade.html" title="Figura 3.5 — Superfície 3D da função de utilidade" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 3.4 — Superfície 3D da função de utilidade.** Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, substitutos perfeitos (plano), complementos perfeitos (superfície em cunha), CES e quase-linear. Ajuste os parâmetros nos sliders.
+**Figura 3.5 — Superfície 3D da função de utilidade.** Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, substitutos perfeitos (plano), complementos perfeitos (superfície em cunha), CES e quase-linear. Ajuste os parâmetros nos sliders.
 </div>
 
-<iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" title="Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" title="Figura 3.6 — Homotética vs quase-linear: compare a expansão da renda" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 3.5 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
+**Figura 3.6 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
 </div>
 
 ??? exercicio-resolvido "Exercício Resolvido 3.2"
@@ -657,6 +657,8 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-3-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Relação de preferência (\(\succsim\)) | Ordenamento sobre cestas de consumo indicando que uma cesta é "pelo menos tão boa quanto" outra. |
@@ -669,6 +671,10 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
 | Elasticidade de substituição (\(\sigma\)) | Mede a facilidade com que o consumidor substitui entre bens; varia de 0 (complementos perfeitos) a \(\infty\) (substitutos perfeitos). |
 | Preferências homotéticas | Preferências cuja TMS depende apenas da razão \(x_1/x_2\); geram elasticidade-renda unitária e participação constante na despesa. |
 | Utilidade quase-linear | Função \(u = v(x_1) + x_2\) em que todo aumento de renda vai para \(x_2\); elimina o efeito renda sobre \(x_1\) e iguala as medidas de bem-estar (VC = VE = \(\Delta\)EC). |
+
+<div class="caption-obj" markdown>
+**Tabela 3.2 — Conceitos-chave.**
+</div>
 
 ---
 

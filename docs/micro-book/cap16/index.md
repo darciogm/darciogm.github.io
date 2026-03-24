@@ -614,6 +614,8 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-16-3"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Interdependência estratégica | Situação em que o lucro de cada firma depende das decisões de todas as rivais, exigindo análise via equilíbrio de Nash |
@@ -626,6 +628,10 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 | Estratégia de gatilho (grim trigger) | Estratégia em que firmas cooperam enquanto todas cooperam, mas revertem permanentemente ao equilíbrio de Nash se alguém desviar |
 | Modelo de Hotelling | Modelo de diferenciação horizontal em que firmas se localizam em um espaço de características e consumidores incorrem em custos de transporte |
 | Dissuasão estratégica de entrada | Uso de investimento em capacidade ou preços-limite para tornar a entrada de rivais não lucrativa |
+
+<div class="caption-obj" markdown>
+**Tabela 16.3 — Conceitos-chave.**
+</div>
 
 ---
 

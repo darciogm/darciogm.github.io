@@ -557,6 +557,8 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-15-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Poder de mercado | Capacidade de uma firma fixar preços acima do custo marginal e obter lucros econômicos persistentes |
@@ -569,6 +571,10 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 | Regulação por price cap | Regime regulatório em que o preço é reajustado pela inflação menos um fator de produtividade (X), incentivando redução de custos |
 | Efeito Averch-Johnson | Tendência de firmas reguladas por taxa de retorno a sobreinvestir em capital para inflar a base de remuneração |
 | Mercado contestável | Mercado em que a ameaça de entrada e saída sem custos irrecuperáveis disciplina o incumbente, mesmo que haja apenas uma firma |
+
+<div class="caption-obj" markdown>
+**Tabela 15.2 — Conceitos-chave.**
+</div>
 
 ---
 

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cap. 11 — A Empresa por Dentro: Lucro, Receita e a Arte de Sobreviver</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Tema Insper (light) -->
+  <link rel="stylesheet" href="insper-theme.css">
+
+  <!-- Estilos adicionais para gráficos interativos -->
+  <style>
+    .graph-container {
+      width: 700px;
+      height: 420px;
+      margin: 0 auto;
+      background: #FAFAFA;
+      border: 1px solid #E0E0E0;
+      border-radius: 2px;
+      position: relative;
+    }
+    .graph-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8em;
+      justify-content: center;
+      margin-top: 0.5em;
+      font-size: 0.7em;
+    }
+    .graph-controls label {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+    .graph-controls input[type="range"] {
+      width: 120px;
+      accent-color: #E50505;
+    }
+    .graph-controls .val {
+      font-weight: 700;
+      color: #E50505;
+      min-width: 3em;
+    }
+    .graph-controls button {
+      padding: 0.3em 0.8em;
+      background: #E50505;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1em;
+    }
+    .graph-controls button:hover { background: #C00000; }
+    .graph-caption {
+      font-size: 0.65em;
+      font-style: italic;
+      color: #5B5B5B;
+      text-align: center;
+      margin-top: 0.4em;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE 1 — TITLE
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-title" data-state="no-num">
+  <img class="cover-logo" src="assets/insper-logo-cover.png" alt="Insper">
+  <h1>A Empresa por Dentro: Lucro, Receita e a Arte de Sobreviver</h1>
+  <p class="subtitle">Microeconomia: Do Zero ao Equilíbrio (e Além) — Capítulo 11</p>
+  <hr class="title-rule">
+  <p class="authors">Darcio Genicolo Martins</p>
+  <p class="affiliations">Insper — Instituto de Ensino e Pesquisa</p>
+  <p class="event">Microeconomia — 1.&ordm; Semestre 2026</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE 2 — ROADMAP
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-content">
+  <h2>Roteiro</h2>
+  <ul>
+    <li class="fragment">11.1 — A Natureza e o Comportamento das Firmas</li>
+    <li class="fragment">11.2 — Maximização de Lucro</li>
+    <li class="fragment">11.3 — Receita Marginal e Elasticidade</li>
+    <li class="fragment">11.4 — Oferta de Curto Prazo da Firma Tomadora de Preços</li>
+    <li class="fragment">11.5 — A Função Lucro e o Lema de Hotelling</li>
+    <li class="fragment">11.6 — Maximização de Lucro e Demanda por Insumos</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE 3 — A Questão Central (NOVO)
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-two-col">
+  <h2>A Questão Central do Capítulo</h2>
+  <div class="columns">
+    <div class="col-left">
+      <h3>Contexto</h3>
+      <ul>
+        <li>Capítulos anteriores: <strong>tecnologia</strong> (função de produção) e <strong>custos</strong> (função custo)</li>
+        <li>Agora reunimos os dois pilares para analisar a firma como <em>unidade de decisão</em></li>
+      </ul>
+      <div class="theorem" style="margin-top: 0.6em;">
+        <div class="label">Questão central</div>
+        <p class="mb-0"><strong>Como a firma escolhe quanto produzir?</strong></p>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>O que veremos</h3>
+      <ul>
+        <li>CPO e CSO da maximização de lucro</li>
+        <li>Relação RMg $\times$ elasticidade</li>
+        <li>Decisão de operar ou fechar no curto prazo</li>
+        <li>Propriedades da função lucro</li>
+        <li>Lema de Hotelling e demanda por insumos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO 1 — A Natureza e o Comportamento das Firmas
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">1</span>
+  <h2>A Natureza e o Comportamento das Firmas</h2>
+</section>
+
+<!-- SLIDE — Coase & Williamson -->
+<section class="slide-two-col">
+  <h2>Por que firmas existem?</h2>
+  <div class="columns">
+    <div class="col-left">
+      <h3>Coase (1937)</h3>
+      <div class="definition">
+        <div class="label">Custos de transação</div>
+        <p class="mb-0">Firmas existem porque a utilização do mecanismo de mercado envolve <strong>custos de transação</strong>: busca, negociação, elaboração e execução de contratos.</p>
+      </div>
+      <h3>Williamson (1975, 1985)</h3>
+      <p>Três atributos determinam a forma organizacional:</p>
+      <ol>
+        <li><span class="highlight">Especificidade de ativos</span></li>
+        <li>Frequência das transações</li>
+        <li>Incerteza contratual</li>
+      </ol>
+    </div>
+    <div class="col-right">
+      <h3>Intuição econômica</h3>
+      <ul>
+        <li>A firma é uma <em>resposta institucional</em> aos custos de usar o mercado</li>
+        <li>A fronteira da firma: internalizar vs. terceirizar</li>
+        <li>Investimentos específicos criam risco de <em>hold-up</em>, favorecendo integração vertical</li>
+        <li>Quanto maior a incerteza, mais difícil redigir contratos completos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE — Objetivo: Maximização de Lucro -->
+<section class="slide-equation">
+  <h2>O Objetivo da Firma</h2>
+  <div class="equation-block">
+    $$\pi = RT - CT = p \cdot q - C(q)$$
+  </div>
+  <p class="equation-caption">
+    A firma busca <strong>maximizar o lucro</strong> $\pi$, onde $p$ é o preço do produto, $q$ é a quantidade produzida e $C(q)$ é a função custo total.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO 2 — Maximização de Lucro
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">2</span>
+  <h2>Maximização de Lucro</h2>
+</section>
+
+<!-- SLIDE — CPO -->
+<section class="slide-equation">
+  <h2>Condição de Primeira Ordem</h2>
+  <div class="equation-block">
+    $$\frac{d\pi}{dq} = \frac{dRT}{dq} - \frac{dCT}{dq} = 0$$
+  </div>
+  <div class="equation-block">
+    $$\boxed{\mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)}$$
+  </div>
+  <p class="equation-caption">
+    A firma maximiza lucro produzindo a quantidade $q^*$ em que a <strong>receita marginal</strong> iguala o <strong>custo marginal</strong>.
+  </p>
+</section>
+
+<!-- SLIDE — CSO e dois insumos -->
+<section class="slide-two-col">
+  <h2>CSO e Maximização com Dois Insumos</h2>
+  <div class="columns">
+    <div class="col-left">
+      <h3>Condição de segunda ordem</h3>
+      <p class="text-center">
+        $\dfrac{d^2\pi}{dq^2}\bigg|_{q^*} < 0 \implies \dfrac{d\mathrm{CMg}}{dq}\bigg|_{q^*} > \dfrac{d\mathrm{RMg}}{dq}\bigg|_{q^*}$
+      </p>
+      <p>O CMg deve cruzar o RMg <span class="highlight">de baixo para cima</span>.</p>
+    </div>
+    <div class="col-right">
+      <h3>Escolha de insumos</h3>
+      <p class="text-center">$\max_{K,L} \; p \cdot f(K,L) - wL - rK$</p>
+      <p>Condições de primeira ordem:</p>
+      <p class="text-center">$p \cdot f_L = w \implies \text{VPMg}_L = w$</p>
+      <p class="text-center">$p \cdot f_K = r \implies \text{VPMg}_K = r$</p>
+      <p class="small muted">Cada insumo é empregado até o ponto em que o valor de sua contribuição marginal iguala seu preço.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO 3 — Receita Marginal e Elasticidade
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">3</span>
+  <h2>Receita Marginal e Elasticidade</h2>
+</section>
+
+<!-- SLIDE — Da RT à RMg (NOVO) -->
+<section class="slide-equation">
+  <h2>Da Receita Total à Receita Marginal</h2>
+  <div class="equation-block">
+    $$RT = p(q) \cdot q$$
+  </div>
+  <div class="equation-block">
+    $$\mathrm{RMg} = \frac{dRT}{dq} = p + q\frac{dp}{dq}$$
+  </div>
+  <p class="equation-caption">
+    Para uma firma <strong>tomadora de preços</strong>: $dp/dq = 0$, logo $\mathrm{RMg} = p$.<br>
+    Para uma firma com <strong>poder de mercado</strong>: $dp/dq < 0$, logo $\mathrm{RMg} < p$.<br>
+    Vender uma unidade adicional exige reduzir o preço de <em>todas</em> as unidades — o segundo termo captura esse efeito.
+  </p>
+</section>
+
+<!-- SLIDE — RMg e elasticidade -->
+<section class="slide-equation">
+  <h2>Receita Marginal e Elasticidade-Preço</h2>
+  <div class="equation-block">
+    $$\mathrm{RMg} = p + q\frac{dp}{dq} = p\left(1 + \frac{1}{\varepsilon_d}\right) = p\left(1 - \frac{1}{|\varepsilon_d|}\right)$$
+  </div>
+  <p class="equation-caption">
+    onde $\varepsilon_d = \frac{dq}{dp}\cdot\frac{p}{q}$ é a elasticidade-preço da demanda.<br>
+    Tomadora de preços: $dp/dq = 0 \implies \mathrm{RMg} = p$. &ensp;
+    Poder de mercado: $dp/dq < 0 \implies \mathrm{RMg} < p$.
+  </p>
+</section>
+
+<!-- SLIDE — Demanda Linear: RMg = a - 2bq (NOVO) -->
+<section class="slide-equation">
+  <h2>Caso Especial: Demanda Linear</h2>
+  <div class="equation-block">
+    $$p(q) = a - bq \implies RT = aq - bq^2$$
+  </div>
+  <div class="equation-block">
+    $$\mathrm{RMg} = a - 2bq$$
+  </div>
+  <p class="equation-caption">
+    A RMg tem o <strong>mesmo intercepto</strong> $a$ e o <strong>dobro da inclinação</strong> da curva de demanda.<br>
+    Receita total é máxima em $q = a/(2b)$, onde $\mathrm{RMg} = 0$ e $|\varepsilon_d| = 1$.
+  </p>
+  <aside class="notes">
+    Demonstração: RT = p·q = (a-bq)q = aq - bq². Derivando: dRT/dq = a - 2bq.
+    No ponto q=a/(2b): p = a/2, ε = -(1/b)(a/2)/(a/2b) = -1.
+  </aside>
+</section>
+
+<!-- SLIDE — Gráfico interativo: Receita Marginal (Figura 11.2) -->
+<section class="slide-figure" data-graph="receita-marginal">
+  <h2>Receita Marginal, Demanda e Elasticidade</h2>
+  <div class="figure-area">
+    <div class="graph-container" id="graph-receita-marginal"></div>
+  </div>
+  <div class="graph-controls">
+    <label>$a$: <input type="range" id="rm-sl-a" min="10" max="40" step="1" value="20"> <span class="val" id="rm-val-a">20</span></label>
+    <label>$b$: <input type="range" id="rm-sl-b" min="0.2" max="3" step="0.1" value="1"> <span class="val" id="rm-val-b">1.0</span></label>
+    <label>$q$: <input type="range" id="rm-sl-q" min="0.5" max="20" step="0.5" value="5"> <span class="val" id="rm-val-q">5.0</span></label>
+    <button onclick="window.Graficos['receita-marginal'].reset()">Reset</button>
+  </div>
+  <p class="graph-caption">
+    <strong>Figura 11.2</strong> — A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca $\mathrm{RMg}=0$ (elasticidade unitária).
+  </p>
+</section>
+
+<!-- SLIDE — Implicações da elasticidade -->
+<section class="slide-content">
+  <h2>Implicações: Regiões de Elasticidade</h2>
+  <ul>
+    <li>$|\varepsilon_d| > 1$ (demanda <span class="highlight">elástica</span>): $\mathrm{RMg} > 0$ — aumentar produção eleva $RT$</li>
+    <li>$|\varepsilon_d| = 1$ (elasticidade unitária): $\mathrm{RMg} = 0$ — receita total é <span class="highlight">máxima</span></li>
+    <li>$|\varepsilon_d| < 1$ (demanda inelástica): $\mathrm{RMg} < 0$ — aumentar produção <em>reduz</em> $RT$</li>
+  </ul>
+  <div class="theorem" style="margin-top: 1em;">
+    <div class="label">Implicação para precificação</div>
+    <p class="mb-0">Uma firma maximizadora de lucro com poder de mercado <strong>nunca</strong> opera na porção inelástica da curva de demanda, pois ali $\mathrm{RMg} < 0 < \mathrm{CMg}$.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO 4 — Oferta de Curto Prazo
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">4</span>
+  <h2>Oferta de Curto Prazo da Firma Tomadora de Preços</h2>
+</section>
+
+<!-- SLIDE — Gráfico interativo: Maximização de Lucro (Figura 11.1) -->
+<section class="slide-figure" data-graph="maximizacao-lucro">
+  <h2>Maximização de Lucro: Firma Tomadora de Preços</h2>
+  <div class="figure-area">
+    <div class="graph-container" id="graph-maximizacao-lucro"></div>
+  </div>
+  <div class="graph-controls">
+    <label>$p$: <input type="range" id="ml-sl-p" min="2" max="40" step="0.5" value="18"> <span class="val" id="ml-val-p">18.0</span></label>
+    <label>$CF$: <input type="range" id="ml-sl-cf" min="10" max="100" step="5" value="50"> <span class="val" id="ml-val-cf">50</span></label>
+    <button onclick="window.Graficos['maximizacao-lucro'].reset()">Reset</button>
+  </div>
+  <p class="graph-caption">
+    <strong>Figura 11.1</strong> — Ajuste o preço $p$ para ver $q^*$ onde $p=\mathrm{CMg}$, o retângulo de lucro/prejuízo e a condição de fechamento ($p < \mathrm{CVMe}_{\min}$).
+  </p>
+</section>
+
+<!-- SLIDE — Condições de oferta (tabela) -->
+<section class="slide-results">
+  <h2>Decisão de Curto Prazo</h2>
+  <table class="econ-table">
+    <thead>
+      <tr>
+        <th>Condição de preço</th>
+        <th>Decisão</th>
+        <th>Lucro econômico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$p > \mathrm{CMe}_{\min}$</td>
+        <td>Produzir em $p = \mathrm{CMg}$</td>
+        <td>$\pi > 0$</td>
+      </tr>
+      <tr>
+        <td>$p = \mathrm{CMe}_{\min}$</td>
+        <td>Produzir (<em>break-even</em>)</td>
+        <td>$\pi = 0$</td>
+      </tr>
+      <tr>
+        <td>$\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}$</td>
+        <td>Produzir em $p = \mathrm{CMg}$</td>
+        <td>Prejuízo $< CF$</td>
+      </tr>
+      <tr>
+        <td>$p = \mathrm{CVMe}_{\min}$</td>
+        <td>Indiferente (fechamento)</td>
+        <td>$\pi = -CF$</td>
+      </tr>
+      <tr>
+        <td>$p < \mathrm{CVMe}_{\min}$</td>
+        <td><span class="highlight">Fechar</span></td>
+        <td>$\pi = -CF$</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SLIDE — Exemplo Numérico: Exercício 11.1 (NOVO) -->
+<section class="slide-content">
+  <h2>Exemplo Numérico: Firma Tomadora de Preços</h2>
+  <p>$CT(q) = 50 + 2q + 0{,}5q^2$</p>
+  <ul>
+    <li>$CF = 50$, &ensp; $CV(q) = 2q + 0{,}5q^2$</li>
+    <li>$\mathrm{CMg}(q) = 2 + q$</li>
+    <li>$\mathrm{CVMe}(q) = 2 + 0{,}5q$ &ensp; $\implies$ &ensp; $\mathrm{CVMe}_{\min} = 2$ &ensp; (em $q = 0$)</li>
+    <li>$\mathrm{CMe}(q) = 50/q + 2 + 0{,}5q$ &ensp; $\implies$ &ensp; $\mathrm{CMe}_{\min} = 12$ &ensp; (em $q = 10$)</li>
+  </ul>
+  <div class="theorem" style="margin-top: 0.6em;">
+    <div class="label">Se $p = 12$</div>
+    <p class="mb-0">$p = \mathrm{CMg} \implies 12 = 2 + q \implies q^* = 10$<br>
+    $\pi = 12 \times 10 - (50 + 20 + 50) = 120 - 120 = $ <span class="highlight">$0$ (break-even)</span></p>
+  </div>
+  <aside class="notes">
+    Este é o Exercício 11.1 do livro. Curva de oferta: q = p - 2 para p ≥ 2.
+    Se p = 20: q* = 18, π = 20×18 - (50 + 36 + 162) = 360 - 248 = 112.
+  </aside>
+</section>
+
+<!-- SLIDE — Curva de oferta -->
+<section class="slide-equation">
+  <h2>Curva de Oferta de Curto Prazo</h2>
+  <div class="definition">
+    <div class="label">Definição</div>
+    <p class="mb-0">A curva de oferta de curto prazo da firma tomadora de preços é o trecho da curva de CMg <strong>acima</strong> do CVMe mínimo:</p>
+  </div>
+  <div class="equation-block">
+    $$q^s(p) = \begin{cases} \mathrm{CMg}^{-1}(p) & \text{se } p \geq \mathrm{CVMe}_{\min} \\ 0 & \text{se } p < \mathrm{CVMe}_{\min} \end{cases}$$
+  </div>
+  <p class="equation-caption">
+    O <strong>excedente do produtor</strong> no curto prazo é $EP = RT - CV = \pi + CF$: área acima da curva de oferta e abaixo do preço.
+  </p>
+</section>
+
+<!-- SLIDE — Excedente do Produtor (NOVO) -->
+<section class="slide-two-col">
+  <h2>Excedente do Produtor</h2>
+  <div class="columns">
+    <div class="col-left">
+      <h3>Definição formal</h3>
+      <div class="definition">
+        <div class="label">Excedente do Produtor (EP)</div>
+        <p class="mb-0">$EP = RT - CV = p \cdot q - CV(q)$</p>
+      </div>
+      <p class="mt-1">Relação com o lucro:</p>
+      <p class="text-center">$EP = \pi + CF$</p>
+      <p class="small muted">O EP mede quanto a firma recebe <em>acima</em> do mínimo necessário para produzir (custo variável).</p>
+    </div>
+    <div class="col-right">
+      <h3>Interpretação gráfica</h3>
+      <ul>
+        <li>Área <strong>acima</strong> da curva de oferta (CMg) e <strong>abaixo</strong> do preço</li>
+        <li>Inclui o lucro econômico mais os custos fixos</li>
+        <li>Medida apropriada de bem-estar do lado da oferta no curto prazo</li>
+        <li>No longo prazo (sem custos fixos): $EP = \pi$</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO 5 — Função Lucro e Lema de Hotelling
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">5</span>
+  <h2>A Função Lucro e o Lema de Hotelling</h2>
+</section>
+
+<!-- SLIDE — Função Lucro -->
+<section class="slide-equation">
+  <h2>A Função Lucro</h2>
+  <div class="definition">
+    <div class="label">Definição</div>
+    <p class="mb-0">$\pi(p, w, r) = \max_{K,L}\{p \cdot f(K,L) - wL - rK\}$</p>
+  </div>
+  <div class="equation-block" style="font-size:1em; margin-top:1em;">
+    <strong>Propriedades:</strong>
+  </div>
+  <ol style="font-size:0.85em; max-width:80%; margin:0 auto;">
+    <li><strong>Não decrescente</strong> em $p$</li>
+    <li><strong>Não crescente</strong> em $w$ e $r$</li>
+    <li><strong>Homogênea de grau 1</strong> em $(p, w, r)$</li>
+    <li><strong>Convexa</strong> em $(p, w, r)$</li>
+  </ol>
+</section>
+
+<!-- SLIDE — Convexidade da Função Lucro (NOVO) -->
+<section class="slide-equation">
+  <h2>Convexidade da Função Lucro</h2>
+  <div class="theorem">
+    <div class="label">Propriedade</div>
+    <p class="mb-0">A função lucro $\pi(p, w, r)$ é <strong>convexa</strong> em $(p, w, r)$.</p>
+  </div>
+  <div class="equation-block" style="margin-top: 1em;">
+    $$\pi(tp_1 + (1-t)p_2) \leq t\,\pi(p_1) + (1-t)\,\pi(p_2) \quad \forall\, t \in [0,1]$$
+  </div>
+  <p class="equation-caption">
+    <strong>Intuição:</strong> a firma pode <em>reotimizar</em> suas decisões quando preços mudam.<br>
+    Essa flexibilidade faz com que o lucro responda <em>mais que proporcionalmente</em> a variações de preços.<br>
+    <strong>Implicação:</strong> $\partial^2\pi/\partial p^2 \geq 0$ $\implies$ $\partial q^*/\partial p \geq 0$ (lei da oferta).
+  </p>
+</section>
+
+<!-- SLIDE — Lema de Hotelling -->
+<section class="slide-equation">
+  <h2>Lema de Hotelling</h2>
+  <div class="theorem">
+    <div class="label">Lema de Hotelling</div>
+    <p class="mb-0">Se $\pi(p,w,r)$ é diferenciável:</p>
+  </div>
+  <div class="equation-block">
+    $$\frac{\partial \pi}{\partial p} = q^*(p,w,r)$$
+  </div>
+  <div class="equation-block">
+    $$\frac{\partial \pi}{\partial w} = -L^*(p,w,r)$$
+  </div>
+  <div class="equation-block">
+    $$\frac{\partial \pi}{\partial r} = -K^*(p,w,r)$$
+  </div>
+  <p class="equation-caption">
+    Pelo <strong>teorema da envoltória</strong>: a derivada da função lucro em relação a um preço<br>
+    recupera diretamente a função de oferta (ou o negativo da demanda por insumo).
+  </p>
+</section>
+
+<!-- SLIDE — Hotelling: formal + intuição -->
+<section class="slide-two-col">
+  <h2>Hotelling: Dualidade da Firma</h2>
+  <div class="columns">
+    <div class="col-left">
+      <h3>Demonstração (Envoltória)</h3>
+      <p>$g(K,L;p,w,r) = p\cdot f(K,L) - wL - rK$</p>
+      <p>No ótimo $(K^*, L^*)$:</p>
+      <p class="text-center">$\dfrac{\partial \pi}{\partial p} = \dfrac{\partial g}{\partial p}\bigg|_{(K^*,L^*)} = f(K^*,L^*) = q^*$</p>
+      <p class="text-center">$\dfrac{\partial \pi}{\partial w} = -L^*$</p>
+      <p class="text-center">$\dfrac{\partial \pi}{\partial r} = -K^*$</p>
+    </div>
+    <div class="col-right">
+      <h3>Significado econômico</h3>
+      <ul>
+        <li>A função lucro <em>sintetiza toda a informação</em> sobre tecnologia e preços</li>
+        <li>Dela recuperamos a <strong>oferta</strong> e as <strong>demandas por insumos</strong></li>
+        <li>Análogo ao <strong>Lema de Shephard</strong> nos custos</li>
+        <li>Convexidade de $\pi$ $\implies$ oferta não decrescente em $p$ (<span class="highlight">lei da oferta</span>)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE — Verificação Cobb-Douglas (NOVO) -->
+<section class="slide-content">
+  <h2>Verificação: Cobb-Douglas e Hotelling</h2>
+  <p>$q = K^{1/3}L^{2/3}$, com preços $(p, w, r) = (27, 2, 1)$</p>
+  <ul>
+    <li>CPO: $p \cdot \tfrac{1}{3}K^{-2/3}L^{2/3} = r$ &ensp; e &ensp; $p \cdot \tfrac{2}{3}K^{1/3}L^{-1/3} = w$</li>
+    <li class="fragment">Dividindo: $\dfrac{K}{2L} = \dfrac{r}{w} = \dfrac{1}{2} \implies K = L$</li>
+    <li class="fragment">Substituindo na CPO: $27 \cdot \tfrac{2}{3} L^{-1/3} = 2 \implies L^{1/3} = 9 \implies$ <span class="highlight">$L^* = 729$</span></li>
+    <li class="fragment">$K^* = 729$, &ensp; $q^* = 729$</li>
+    <li class="fragment">$\pi^* = 27 \times 729 - 2 \times 729 - 1 \times 729 = 729(27 - 3) = $ <span class="highlight">$17\,496$</span></li>
+  </ul>
+  <aside class="notes">
+    Verificação de Hotelling: ∂π/∂p deve dar q*.
+    Aqui α+β = 1 (retornos constantes), caso limite.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO 6 — Demanda por Insumos
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">6</span>
+  <h2>Maximização de Lucro e Demanda por Insumos</h2>
+</section>
+
+<!-- SLIDE — Demanda Condicionada vs. Incondicional (NOVO) -->
+<section class="slide-two-col">
+  <h2>Demanda Condicionada vs. Incondicional</h2>
+  <div class="columns">
+    <div class="col-left">
+      <h3>Demanda condicionada $L^c(w, r, q)$</h3>
+      <ul>
+        <li>Minimização de custo para $q$ <strong>fixo</strong></li>
+        <li>Obtida do Lema de Shephard: $L^c = \partial C / \partial w$</li>
+        <li>Captura apenas o <strong>efeito substituição</strong></li>
+      </ul>
+      <p class="text-center mt-1">$\dfrac{\partial L^c}{\partial w}\bigg|_{q} \leq 0$</p>
+    </div>
+    <div class="col-right">
+      <h3>Demanda incondicional $L^*(p, w, r)$</h3>
+      <ul>
+        <li>Maximização de lucro — $q$ é <strong>endógeno</strong></li>
+        <li>Obtida do Lema de Hotelling: $L^* = -\partial \pi / \partial w$</li>
+        <li>Captura efeito substituição <strong>+</strong> efeito produto</li>
+      </ul>
+      <p class="text-center mt-1">$\dfrac{\partial L^*}{\partial w} \leq \dfrac{\partial L^c}{\partial w}\bigg|_{q^*} \leq 0$</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE — Decomposição -->
+<section class="slide-equation">
+  <h2>Decomposição da Demanda por Insumos</h2>
+  <div class="equation-block">
+    $$\frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição}} + \underbrace{\frac{\partial L^c}{\partial q} \cdot \frac{\partial q^*}{\partial w}}_{\text{efeito produto}}$$
+  </div>
+  <p class="equation-caption">
+    <strong>Efeito substituição</strong> ($\leq 0$): substituição ao longo da isoquanta quando $w$ sobe.<br>
+    <strong>Efeito produto</strong> ($\leq 0$): $w$ maior $\to$ CMg maior $\to$ $q^*$ menor $\to$ menos trabalho.
+  </p>
+</section>
+
+<!-- SLIDE — Insumo de Giffen -->
+<section class="slide-content">
+  <h2>Inexistência de "Insumo de Giffen"</h2>
+  <div class="theorem">
+    <div class="label">Proposição</div>
+    <p class="mb-0">Na teoria da firma maximizadora de lucro, a demanda por um insumo é <strong>sempre não crescente</strong> em seu próprio preço:</p>
+    <p class="text-center mt-1">$\dfrac{\partial L^*}{\partial w} = -\dfrac{\partial^2 \pi}{\partial w^2} \leq 0$</p>
+  </div>
+  <ul style="margin-top: 1em;">
+    <li>Ambos os efeitos (substituição e produto) operam na <span class="highlight">mesma direção</span></li>
+    <li>Contraste com o consumidor: efeito substituição e efeito renda podem ter sinais <em>opostos</em> (bem de Giffen)</li>
+    <li>Decorre da <strong>convexidade da função lucro</strong></li>
+  </ul>
+</section>
+
+<!-- SLIDE — Firma vs. Consumidor (NOVO) -->
+<section class="slide-content">
+  <h2>Firma vs. Consumidor: Dualidade Comparada</h2>
+  <table class="econ-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Consumidor</th>
+        <th>Firma</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Objetivo</td>
+        <td>Max utilidade s.a. orçamento</td>
+        <td>Max lucro</td>
+      </tr>
+      <tr>
+        <td>Função valor</td>
+        <td>Utilidade indireta $V(p, m)$</td>
+        <td>Função lucro $\pi(p, w, r)$</td>
+      </tr>
+      <tr>
+        <td>Demanda</td>
+        <td>Marshalliana $x^*(p, m)$</td>
+        <td>Incondicional $L^*(p, w, r)$</td>
+      </tr>
+      <tr>
+        <td>Lema</td>
+        <td>Identidade de Roy</td>
+        <td>Lema de Hotelling</td>
+      </tr>
+      <tr>
+        <td>Decomposição</td>
+        <td>Slutsky (subst. + renda)</td>
+        <td>Subst. + produto</td>
+      </tr>
+      <tr>
+        <td>"Bem de Giffen"?</td>
+        <td><span class="highlight">Possível</span> (efeito renda $>$ subst.)</td>
+        <td><strong>Impossível</strong> (mesma direção)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BOX BRASIL — MPEs
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <span class="section-number">B</span>
+  <h2>Box Brasil: MPEs e Sobrevivência Empresarial</h2>
+</section>
+
+<!-- SLIDE — MPEs -->
+<section class="slide-content">
+  <h2>Micro e Pequenas Empresas no Brasil</h2>
+  <ul>
+    <li>MPEs = <span class="highlight">99%</span> dos estabelecimentos formais</li>
+    <li>Respondem por ~55% dos empregos formais e ~30% do PIB</li>
+    <li>~29% fecham nos primeiros 5 anos (SEBRAE, coorte 2017)</li>
+  </ul>
+  <div class="theorem" style="margin-top: 0.8em;">
+    <div class="label">Interpretação via teoria da firma</div>
+    <p class="mb-0">A alta mortalidade reflete firmas operando com $p < \mathrm{CMe}_{\min}$ no longo prazo. O <strong>Simples Nacional</strong> (LC 123/2006) desloca para baixo as curvas de custo, reduzindo o ponto de fechamento $(\mathrm{CVMe}_{\min})$.</p>
+  </div>
+  <aside class="notes">
+    Dados do Mapa de Empresas (2024): mais de 21 milhões de empresas ativas.
+    Taxa de abertura supera consistentemente a de fechamento.
+    Desafio: transformar sobrevivência em crescimento sustentável.
+  </aside>
+</section>
+
+<!-- SLIDE — Causas da Mortalidade (NOVO) -->
+<section class="slide-results">
+  <h2>Causas da Mortalidade Empresarial</h2>
+  <table class="econ-table">
+    <thead>
+      <tr>
+        <th>Fator</th>
+        <th>Frequência</th>
+        <th>Interpretação microeconômica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Falta de planejamento/gestão</td>
+        <td>~25%</td>
+        <td>Ineficiência produtiva (não minimiza custos)</td>
+      </tr>
+      <tr>
+        <td>Dificuldade de acesso a crédito</td>
+        <td>~20%</td>
+        <td>Custo de capital $r$ elevado</td>
+      </tr>
+      <tr>
+        <td>Carga tributária excessiva</td>
+        <td>~18%</td>
+        <td>Deslocamento para cima das curvas de custo</td>
+      </tr>
+      <tr>
+        <td>Concorrência intensa</td>
+        <td>~15%</td>
+        <td>$p < \mathrm{CMe}_{\min}$ da firma</td>
+      </tr>
+      <tr>
+        <td>Falta de demanda</td>
+        <td>~12%</td>
+        <td>Receita insuficiente para cobrir custos</td>
+      </tr>
+      <tr>
+        <td>Problemas societários</td>
+        <td>~10%</td>
+        <td>Custos de transação internos (Coase)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="table-notes">Fonte: SEBRAE — Sobrevivência das Empresas no Brasil (coorte 2017).</p>
+</section>
+
+<!-- SLIDE — Simples Nacional (NOVO) -->
+<section class="slide-content">
+  <h2>Simples Nacional: Efeito nas Curvas de Custo</h2>
+  <ul>
+    <li><strong>Simples Nacional</strong> (LC 123/2006, reformulado pela LC 155/2016): unifica tributos em guia única com alíquotas progressivas</li>
+    <li>Efeito microeconômico: desloca para <span class="highlight">baixo</span> as curvas de custo das MPEs</li>
+    <li>Reduz o <strong>ponto de fechamento</strong> ($\mathrm{CVMe}_{\min}$), permitindo que firmas menos eficientes sobrevivam</li>
+    <li>Brasil (2024): mais de <span class="highlight">21 milhões</span> de empresas ativas (Mapa de Empresas)</li>
+  </ul>
+  <div class="theorem" style="margin-top: 0.6em;">
+    <div class="label">Desafio de política pública</div>
+    <p class="mb-0">Transformar <em>sobrevivência</em> em <strong>crescimento sustentável</strong> — e isso passa por reduzir o "custo Brasil" analisado no capítulo anterior.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE — CLOSING (Principais Resultados)
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-closing" data-state="no-num">
+  <img class="cover-logo" src="assets/insper-logo-cover.png" alt="Insper">
+  <h2>Principais Resultados</h2>
+  <hr class="closing-rule">
+  <ul style="list-style: none; padding: 0; font-size: 0.85em;">
+    <li style="margin-bottom: 0.5em;">Maximização de lucro: $\mathrm{RMg}(q^*) = \mathrm{CMg}(q^*)$</li>
+    <li style="margin-bottom: 0.5em;">RMg e elasticidade: $\mathrm{RMg} = p(1 + 1/\varepsilon_d)$ — firma nunca opera onde $|\varepsilon_d| < 1$</li>
+    <li style="margin-bottom: 0.5em;">Oferta de curto prazo: trecho do CMg acima do $\mathrm{CVMe}_{\min}$</li>
+    <li style="margin-bottom: 0.5em;">Lema de Hotelling: $\partial\pi/\partial p = q^*$, $\partial\pi/\partial w = -L^*$</li>
+    <li>Não existe "insumo de Giffen": efeito substituição e efeito produto operam na mesma direção</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE FINAL — FIM DO CAPÍTULO
+     ═══════════════════════════════════════════════════════ -->
+<section class="slide-section" data-state="no-num">
+  <h2>Fim do Capítulo 11</h2>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════ -->
+
+<!-- 1. MathJax config (ANTES do MathJax) -->
+<script>
+window.MathJax = {
+  loader: {
+    load: ['[tex]/boldsymbol', '[tex]/ams', '[tex]/mathtools']
+  },
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    tags: 'ams',
+    tagSide: 'right',
+    tagIndent: '0.8em',
+    packages: { '[+]': ['ams', 'boldsymbol', 'mathtools'] },
+    macros: {
+      /* ── Operadores estatísticos ── */
+      E:      '{\\mathbb{E}}',
+      Var:    '{\\text{Var}}',
+      Cov:    '{\\text{Cov}}',
+      Corr:   '{\\text{Corr}}',
+      plim:   '{\\text{plim}}',
+      se:     '{\\text{s.e.}}',
+      Prob:   '{\\Pr}',
+
+      /* ── Independência / distribuições ── */
+      ind:    '{\\perp\\!\\!\\!\\perp}',
+      iid:    '{\\overset{\\text{iid}}{\\sim}}',
+      N:      '{\\mathcal{N}}',
+      R:      '{\\mathbb{R}}',
+
+      /* ── Vetores e matrizes (bold) ── */
+      bx:     '{\\mathbf{x}}',
+      bX:     '{\\mathbf{X}}',
+      by:     '{\\mathbf{y}}',
+      bY:     '{\\mathbf{Y}}',
+      bZ:     '{\\mathbf{Z}}',
+      bW:     '{\\mathbf{W}}',
+      bbeta:   '{\\boldsymbol{\\beta}}',
+      beps:    '{\\boldsymbol{\\varepsilon}}',
+      bgamma:  '{\\boldsymbol{\\gamma}}',
+      btheta:  '{\\boldsymbol{\\theta}}',
+      bdelta:  '{\\boldsymbol{\\delta}}',
+      bmu:     '{\\boldsymbol{\\mu}}',
+      bSigma:  '{\\boldsymbol{\\Sigma}}',
+      bOmega:  '{\\boldsymbol{\\Omega}}',
+      bxi:     '{\\boldsymbol{\\xi}}',
+      blambda: '{\\boldsymbol{\\lambda}}',
+
+      /* ── Estimadores ── */
+      OLS:    '{\\hat{\\beta}_{\\text{OLS}}}',
+      IV:     '{\\hat{\\beta}_{\\text{IV}}}',
+      TSLS:   '{\\hat{\\beta}_{\\text{2SLS}}}',
+      GMM:    '{\\hat{\\beta}_{\\text{GMM}}}',
+      MLE:    '{\\hat{\\theta}_{\\text{MLE}}}',
+
+      /* ── Operadores ── */
+      argmax: '{\\operatorname*{arg\\,max}}',
+      argmin: '{\\operatorname*{arg\\,min}}',
+      asy:    '{\\xrightarrow{\\text{a}}}',
+      pconv:  '{\\xrightarrow{\\text{p}}}',
+      dconv:  '{\\xrightarrow{\\text{d}}}',
+
+      /* ── Macros específicos do Capítulo 11 ── */
+      RMg:    '{\\mathrm{RMg}}',
+      CMg:    '{\\mathrm{CMg}}',
+      CMe:    '{\\mathrm{CMe}}',
+      CVMe:   '{\\mathrm{CVMe}}',
+      VPMg:   '{\\text{VPMg}}',
+      RT:     '{\\mathrm{RT}}',
+      CT:     '{\\mathrm{CT}}',
+      CV:     '{\\mathrm{CV}}',
+      CF:     '{\\mathrm{CF}}'
+    }
+  },
+  chtml: {
+    scale: 1,
+    matchFontHeight: false
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      if (typeof Reveal !== 'undefined') {
+        Reveal.on('slidechanged', () => MathJax.typesetPromise());
+        Reveal.on('fragmentshown', () => MathJax.typesetPromise());
+        Reveal.on('fragmenthidden', () => MathJax.typesetPromise());
+      }
+    }
+  }
+};
+</script>
+
+<!-- 2. CDN de gráficos -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- 3. Gráficos interativos -->
+<script src="graficos.js"></script>
+
+<!-- 4. Reveal.js core + plugins -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+
+<!-- 5. MathJax CDN -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+<!-- 6. Reveal.initialize -->
+<script>
+  Reveal.initialize({
+    width: 1400,
+    height: 900,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+
+    hash: true,
+    slideNumber: 'c/t',
+    showSlideNumber: 'all',
+
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+
+    plugins: [ RevealNotes ],
+  });
+
+  // Esconde slide number em title / section / closing
+  Reveal.on('slidechanged', event => {
+    const el = document.querySelector('.reveal .slide-number');
+    if (!el) return;
+    const state = event.currentSlide.dataset.state;
+    el.style.display = (state === 'no-num') ? 'none' : 'block';
+  });
+  window.addEventListener('load', () => {
+    const el = document.querySelector('.reveal .slide-number');
+    const first = document.querySelector('.reveal .slides section');
+    if (el && first && first.dataset.state === 'no-num') el.style.display = 'none';
+  });
+
+  // Logo persistente em slides de conteúdo
+  function injectLogos() {
+    const skip = ['slide-title', 'slide-closing', 'slide-section'];
+    document.querySelectorAll('.reveal .slides > section').forEach(slide => {
+      const existing = slide.querySelector('.slide-logo');
+      if (existing) existing.remove();
+      if (skip.some(cls => slide.classList.contains(cls))) return;
+      const logo = document.createElement('img');
+      logo.src = 'assets/insper-logo.png';
+      logo.alt = 'Insper';
+      logo.className = 'slide-logo';
+      slide.appendChild(logo);
+    });
+  }
+  Reveal.on('ready', injectLogos);
+</script>
+</body>
+</html>

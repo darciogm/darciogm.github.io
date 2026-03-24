@@ -497,6 +497,8 @@ Na equação $\eqref{eq:12.13}$, o **efeito substituição** (\(\leq 0\)) reflet
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-12-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Custos de transação (Coase) | Custos de busca, negociação e execução de contratos no mercado; sua existência justifica a organização da produção dentro de firmas. |
@@ -507,6 +509,10 @@ Na equação $\eqref{eq:12.13}$, o **efeito substituição** (\(\leq 0\)) reflet
 | Função lucro | $\pi^*(p, w, v)$: lucro máximo como função dos preços de produto e insumos; convexa e homogênea de grau 1 em preços. |
 | Lema de Hotelling | A oferta do produto é $\partial \pi^*/\partial p = q^*(p)$ e as demandas por insumos são $-\partial \pi^*/\partial w_i = x_i^*(p, \mathbf{w})$. |
 | Lucro econômico vs. lucro contábil | Lucro econômico desconta o custo de oportunidade; lucro contábil registra apenas receitas menos custos explícitos. |
+
+<div class="caption-obj" markdown>
+**Tabela 12.2 — Conceitos-chave.**
+</div>
 
 ---
 

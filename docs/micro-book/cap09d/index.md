@@ -341,6 +341,8 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-9d-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Equilíbrio Bayesiano Perfeito (PBE) | Combinação de estratégias e crenças satisfazendo otimalidade sequencial e consistência bayesiana em cada conjunto de informação. |
@@ -353,6 +355,10 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 | Seleção adversa | Situação pré-contratual em que informação privada sobre qualidade leva os piores tipos a se auto-selecionarem para a transação. |
 | Screening | Mecanismo pelo qual a parte desinformada oferece um menu de contratos desenhado para que cada tipo se auto-selecione revelando informação. |
 | Princípio da Revelação | Para qualquer mecanismo e equilíbrio, existe um mecanismo direto equivalente em que reportar o tipo verdadeiro é ótimo. |
+
+<div class="caption-obj" markdown>
+**Tabela 9d.2 — Conceitos-chave.**
+</div>
 
 ---
 

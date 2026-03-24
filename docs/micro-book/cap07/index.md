@@ -45,7 +45,7 @@ O valor esperado é um critério natural de avaliação — ele nos diz, em méd
 
 Antes de apresentá-lo, vale reforçar a conexão com a Seção 2.12: o valor esperado de uma loteria é exatamente o valor esperado de uma variável aleatória discreta, e a variância da loteria mede a dispersão dos resultados em torno dessa média. Ambos esses momentos são ferramentas que reaparecerão ao longo do capítulo — o valor esperado como medida de tendência central do risco, a variância como indicador de sua magnitude. A novidade da microeconomia da incerteza é que o agente não avalia a loteria pelos seus momentos estatísticos em si, mas pela utilidade que extrai de cada resultado possível.
 
-### O Paradoxo de São Petersburgo
+### 7.1.1 O Paradoxo de São Petersburgo
 
 O valor esperado, por si só, não é suficiente para descrever o comportamento dos agentes diante do risco. O célebre **Paradoxo de São Petersburgo**, proposto por Nicolau Bernoulli em 1713, ilustra essa limitação. Considere um jogo em que uma moeda justa é lançada repetidamente até sair cara. Se a cara aparece no \(n\)-ésimo lançamento, o jogador recebe \(2^n\) reais. O valor esperado desse jogo é:
 
@@ -206,7 +206,7 @@ A questão de *quanto* um agente típico é avesso ao risco não é apenas teór
 
 Para decisões de política econômica, o coeficiente de aversão ao risco importa diretamente. Políticas de estabilização de renda (como o Bolsa Família) e de smoothing de consumo (como o seguro-desemprego) têm valor welfare que depende criticamente de \(\gamma\): quanto maior a aversão ao risco, maior o ganho de bem-estar de reduzir a variância do consumo. Da mesma forma, o custo social de flutuações do PIB — calculado por Lucas (1987) — é proporcional à aversão ao risco da população.
 
-### Classes importantes de funções de utilidade
+### 7.4.1 Classes importantes de funções de utilidade
 
 A [Tabela 7.1](#tabela-7-1) apresenta as classes mais utilizadas de funções de utilidade sob risco e suas propriedades.
 
@@ -284,7 +284,7 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
 
     **Por que isso importa:** O prêmio de risco explica por que títulos do Tesouro pagam menos que ações na Bolsa — investidores exigem compensação para aceitar incerteza.
 
-### Aproximação de Arrow-Pratt para o prêmio de risco
+### 7.5.1 Aproximação de Arrow-Pratt para o prêmio de risco
 
 !!! proof "Demonstração: Derivação do prêmio de risco de Arrow-Pratt"
     **Objetivo**: Mostrar que, para riscos pequenos, o prêmio de risco é aproximadamente:
@@ -675,7 +675,7 @@ A análise até aqui pressupôs que todos os agentes compartilham a mesma inform
 
 Os problemas de informação assimétrica surgem quando uma das partes de uma transação possui informação relevante que a outra desconhece. Esses problemas são centrais para a compreensão de falhas de mercado e serão tratados em profundidade em capítulos posteriores. Apresentamos aqui uma visão preliminar dos dois tipos fundamentais.
 
-### Seleção adversa
+### 7.8.1 Seleção adversa
 
 A **seleção adversa** ocorre *antes* da celebração do contrato, quando uma das partes possui informação privada sobre suas características. O exemplo clássico é o mercado de carros usados de Akerlof (1970): vendedores conhecem a qualidade de seus veículos, mas compradores não conseguem distinguir carros bons de ruins (*lemons*). O resultado é que carros de boa qualidade podem ser expulsos do mercado.
 
@@ -684,7 +684,7 @@ Mecanismos para mitigar a seleção adversa incluem:
 - **Sinalização**: a parte informada toma ações custosas para revelar sua qualidade (Spence, 1973).
 - **Triagem** (*screening*): a parte desinformada oferece um menu de contratos que induz a autorevelação.
 
-### Risco moral
+### 7.8.2 Risco moral
 
 Se a seleção adversa é um problema de **informação oculta** (quem é o agente?), o risco moral é um problema de **ação oculta** (o que o agente faz?). O **risco moral** ocorre *depois* da celebração do contrato, quando uma das partes pode tomar ações não observáveis que afetam o resultado. Por exemplo, após contratar um seguro, o segurado pode reduzir seus cuidados preventivos. A solução envolve o desenho de contratos com incentivos adequados (franquias, copagamentos, bônus por desempenho).
 
@@ -800,6 +800,8 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-7-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Loteria | Distribuição de probabilidade sobre um conjunto finito de resultados monetários. |
@@ -812,6 +814,10 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 | Diversificação | Estratégia de alocação de riqueza entre ativos imperfeitamente correlacionados para reduzir o risco total do portfólio. |
 | Seleção adversa | Problema de informação assimétrica pré-contratual em que a parte menos informada atrai desproporcionalmente agentes de alto risco. |
 | Risco moral | Problema de informação assimétrica pós-contratual em que o agente segurado altera seu comportamento de forma não observável. |
+
+<div class="caption-obj" markdown>
+**Tabela 7.2 — Conceitos-chave.**
+</div>
 
 ## ✏️ Exercícios
 
