@@ -171,14 +171,14 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-102, 615, 615, -82],
+      boundingbox: [-102, 2200, 950, -82],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
         x: { name: '', withLabel: false,
-             ticks: { insertTicks: false, ticksDistance: 100, minorTicks: 0, label: { fontSize: 11 } } },
+             ticks: { insertTicks: false, ticksDistance: 200, minorTicks: 0, label: { fontSize: 11 } } },
         y: { name: '', withLabel: false,
-             ticks: { insertTicks: false, ticksDistance: 100, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
+             ticks: { insertTicks: false, ticksDistance: 400, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
       }
     });
     // Y-axis: centered, rotated, bold italic
@@ -207,13 +207,13 @@
     // Quasi-hyperbolic indifference curve
     var qhCurve = board.create('functiongraph', [
       function(c0) { return getC1(c0, betaP, delta, ubar); },
-      0, 500
+      0, 900
     ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
 
     // Exponential indifference curve (beta=1, same utility level)
     var expCurve = board.create('functiongraph', [
       function(c0) { return getC1(c0, 1, delta, ubar); },
-      0, 500
+      0, 900
     ], { strokeColor: '#2a7f2a', strokeWidth: 2.5 });
 
     function resetAll() {

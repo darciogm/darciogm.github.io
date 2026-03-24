@@ -156,7 +156,7 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-38, 135, 224, -18],
+      boundingbox: [-25, 135, 210, -25],
       showCopyright: false,
       showNavigation: false,
       defaultAxes: {
@@ -187,13 +187,13 @@
           return x - betaR * (2 * x - S);
         }
       },
-      0, 100
+      0, 200
     ], { strokeColor: '#C8102E', strokeWidth: 3 });
 
     // Zero line (utility from rejecting)
     var rejectLine = board.create('functiongraph', [
       function(x) { return 0; },
-      0, 100
+      0, 200
     ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
 
     // Labels
