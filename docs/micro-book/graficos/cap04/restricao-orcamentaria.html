@@ -140,27 +140,37 @@
       keepAspectRatio: false
     });
 
-    // Custom axes
-    board.create('axis', [[0,0],[1,0]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
-      name: '', withLabel: false
-    });
-    board.create('axis', [[0,0],[0,1]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5, label: { anchorX: 'right', offset: [-8, 0] } },
-      name: '', withLabel: false
-    });
-
-    // Y-axis label: centered vertically, rotated 90°, bold italic
-    board.create('text', [
-      -3 * 0.55, 25.5 / 2,
-      '<b><i>x</i><sub>2</sub></b>'
-    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
-
-    // X-axis label: centered horizontally, below ticks, bold italic
-    board.create('text', [
-      24 / 2, -3 * 0.65,
-      '<b><i>x</i><sub>1</sub></b>'
-    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+    // Custom axes (will be recreated on resize)
+    var xAxis, yAxis, labelX, labelY;
+    function createAxes() {
+      if (xAxis) board.removeObject(xAxis);
+      if (yAxis) board.removeObject(yAxis);
+      if (labelX) board.removeObject(labelX);
+      if (labelY) board.removeObject(labelY);
+      var p = getParams();
+      var maxInt = Math.max(p.M / p.p1, p.M / p.p2);
+      var margin = maxInt * 0.15;
+      var top = maxInt + margin;
+      var right = maxInt + margin;
+      var tickDist = maxInt <= 15 ? 2 : maxInt <= 30 ? 5 : maxInt <= 60 ? 10 : 20;
+      board.setBoundingBox([-margin, top, right, -margin]);
+      xAxis = board.create('axis', [[0,0],[1,0]], {
+        ticks: { drawLabels: true, minorTicks: 0, ticksDistance: tickDist },
+        name: '', withLabel: false
+      });
+      yAxis = board.create('axis', [[0,0],[0,1]], {
+        ticks: { drawLabels: true, minorTicks: 0, ticksDistance: tickDist, label: { anchorX: 'right', offset: [-8, 0] } },
+        name: '', withLabel: false
+      });
+      labelY = board.create('text', [
+        -margin * 0.55, top / 2,
+        '<b><i>x</i><sub>2</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+      labelX = board.create('text', [
+        right / 2, -margin * 0.65,
+        '<b><i>x</i><sub>1</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+    }
 
     // Helper to read slider values
     function getParams() {
@@ -247,6 +257,7 @@
       document.getElementById('eq-point').innerHTML =
         'Ponto: \\((' + dragPt.X().toFixed(2) + ',\\,' + dragPt.Y().toFixed(2) + ')\\)';
 
+      createAxes();
       board.update();
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
