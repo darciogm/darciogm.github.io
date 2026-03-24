@@ -66,6 +66,7 @@ nav:
       - Good Economics for Hard Times (DEDP - J-Pal / Insper): teaching/good-economics-hard-times.md
   - Micro Book:
     - micro-book/index.md
+    - "Prefácio": micro-book/prefacio.md
     - Ferramentas:
       - "Cap. 1 — Todos os Modelos Estão Errados": micro-book/cap01/index.md
       - "Cap. 2 — O Manual de Sobrevivência Matemática": micro-book/cap02/index.md

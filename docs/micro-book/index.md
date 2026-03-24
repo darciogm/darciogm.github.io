@@ -7,6 +7,8 @@ hide:
 
 Livro didático interativo de **Microeconomia** para graduação avançada e pós-graduação. Rigor matemático, intuição econômica e aplicações ao Brasil em cada capítulo.
 
+[Ler o Prefácio](prefacio.md){ .md-button .md-button--primary }
+
 <div class="hero-features" markdown>
 
 - Derivações matemáticas completas
