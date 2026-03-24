@@ -50,7 +50,7 @@
         Equilíbrio: \(D(P,Y) - S(P) = 0\)
       </div>
       <div style="text-align:center;margin-bottom:.4rem;color:#555;font-size:.75rem">
-        \(D = 100 + Y - 3P\) &nbsp;|&nbsp; \(S = -20 + 2P\)
+        \(D = 80 + 10\sqrt{Y} - 3P\) &nbsp;|&nbsp; \(S = -20 + 2P\)
       </div>
       <hr class="divider">
       <div class="info-row"><span class="info-label">\(P^*(Y)\)</span><span class="info-val accent" id="info-P">—</span></div>
@@ -61,7 +61,7 @@
       <div class="info-row"><span class="info-label">\(D_P - S_P\)</span><span class="info-val" id="info-denom">—</span></div>
       <hr class="divider">
       <div style="font-size:.78rem;color:#666;margin-top:.3rem">
-        Arraste \(Y\) e observe \(P^*\) se mover ao longo da curva implícita no plano \((Y, P)\). A inclinação da curva é \(dP/dY\).
+        Arraste \(Y\) e observe \(P^*\) se mover ao longo da curva implícita no plano \((Y, P)\). A inclinação da tangente é \(dP/dY\).
       </div>
     </div>
     <button class="btn-reset" onclick="resetAll()">Resetar</button>
@@ -69,11 +69,15 @@
 </div>
 <script>
 var Y0=40;
-// D(P,Y)=100+Y-3P, S(P)=-20+2P
-// Eq: 100+Y-3P = -20+2P => 120+Y = 5P => P* = (120+Y)/5
-// Q* = -20 + 2P* = -20 + 2(120+Y)/5 = (-100+240+2Y)/5 = (140+2Y)/5
-function Pstar(y){return (120+y)/5;}
-function Qstar(y){return (140+2*y)/5;}
+// D(P,Y) = 80 + 10√Y - 3P,  S(P) = -20 + 2P
+// Eq: 80 + 10√Y - 3P = -20 + 2P  =>  100 + 10√Y = 5P
+// P*(Y) = 20 + 2√Y   (côncava — tangente se distingue da curva)
+// Q*(Y) = S(P*) = -20 + 2(20+2√Y) = 20 + 4√Y
+// D_Y = 5/√Y,  D_P = -3,  S_P = 2
+// dP*/dY = -D_Y/(D_P - S_P) = -(5/√Y)/(-5) = 1/√Y
+function Pstar(y){return 20+2*Math.sqrt(y);}
+function Qstar(y){return 20+4*Math.sqrt(y);}
+function dPdY(y){return 1/Math.sqrt(y);}
 
 var board=JXG.JSXGraph.initBoard('jxgbox',{
   boundingbox:[-5,48,90,-2],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:false
@@ -83,7 +87,7 @@ board.create('axis',[[0,0],[0,45]],{name:'',withLabel:false,ticks:{drawLabels:tr
 board.create('text',[45,-1.5,'<b><i>Y</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
 board.create('text',[-4,24,'<b><i>P*</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
 
-// Implicit curve P*(Y) = (120+Y)/5
+// Implicit curve P*(Y) = 20 + 2√Y
 board.create('functiongraph',[function(y){return Pstar(y);},5,85],{strokeColor:'#C8102E',strokeWidth:2.5});
 
 // Current point
@@ -92,7 +96,7 @@ var pt=board.create('point',[function(){return Y0;},function(){return Pstar(Y0);
 // Tangent line at current point
 board.create('line',[
   [function(){return Y0;},function(){return Pstar(Y0);}],
-  [function(){return Y0+10;},function(){return Pstar(Y0)+10*0.2;}]
+  [function(){return Y0+10;},function(){return Pstar(Y0)+10*dPdY(Y0);}]
 ],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3,straightFirst:true,straightLast:true,
   point1:{visible:false},point2:{visible:false}});
 
@@ -106,12 +110,12 @@ board.create('text',[function(){return Y0+2;},function(){return Pstar(Y0)+1.5;},
 function updateAll(){
   Y0=+document.getElementById('sl-Y').value;
   document.getElementById('val-Y').textContent=Y0;
-  var ps=Pstar(Y0),qs=Qstar(Y0);
+  var ps=Pstar(Y0),qs=Qstar(Y0),slope=dPdY(Y0);
   document.getElementById('info-P').textContent=ps.toFixed(2);
   document.getElementById('info-Q').textContent=qs.toFixed(2);
-  // dP/dY = -D_Y/(D_P-S_P) = -1/(-3-2) = -1/(-5) = 1/5 = 0.2
-  document.getElementById('info-dPdY').textContent='1/5 = 0.20 > 0';
-  document.getElementById('info-DY').textContent='1';
+  var dy=(5/Math.sqrt(Y0));
+  document.getElementById('info-dPdY').textContent='1/\u221A'+Y0+' = '+slope.toFixed(4);
+  document.getElementById('info-DY').textContent=(dy).toFixed(4);
   document.getElementById('info-denom').textContent='-3 - 2 = -5';
   board.update();
 }
