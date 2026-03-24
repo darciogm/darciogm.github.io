@@ -773,6 +773,16 @@ O exercício com a CES é um investimento que se pagará ao longo de todo o livr
 
 Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples — e de enorme utilidade prática: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
 
+!!! box-mundo "🌍 Box Mundo 2.1 — Preço-sombra do carbono: o multiplicador de Lagrange na política climática global"
+
+    **Contexto:** Uma das aplicações mais consequentes do método de Lagrange na economia contemporânea é a precificação do carbono. O problema global pode ser formulado como uma otimização restrita: maximizar o bem-estar econômico mundial sujeito a uma restrição sobre a quantidade total de emissões de CO₂ compatível com uma meta climática (por exemplo, limitar o aquecimento a 2°C acima dos níveis pré-industriais). Nesse enquadramento, o multiplicador de Lagrange \(\lambda^*\) associado à restrição de emissões tem uma interpretação direta: é o **custo social do carbono** (*Social Cost of Carbon*, SCC) — o custo marginal, em termos de bem-estar, de emitir uma tonelada adicional de CO₂.
+
+    **Dados:** William Nordhaus, laureado com o Nobel de Economia em 2018, desenvolveu o modelo DICE (*Dynamic Integrated model of Climate and the Economy*), que resolve exatamente esse problema de otimização restrita em escala global. Em suas estimativas mais recentes, o SCC situa-se entre US$ 30 e US$ 80 por tonelada de CO₂, dependendo da taxa de desconto intertemporal utilizada. A Agência de Proteção Ambiental dos EUA (EPA) adotou em 2023 uma estimativa central de US$ 51 por tonelada, enquanto estimativas com taxas de desconto mais baixas — como as de Stern (2006), que usou uma taxa próxima de zero por razões éticas — chegam a valores superiores a US$ 200 por tonelada. Na prática, o EU Emissions Trading System (EU ETS), que cobre cerca de 40% das emissões europeias, negociou permissões a preços entre €80 e €100 por tonelada de CO₂ em 2023, enquanto o mercado regulado da Califórnia operou a cerca de US$ 30 por tonelada.
+
+    **Análise:** A divergência entre os preços observados nos mercados de carbono e o SCC estimado pelos modelos revela um ponto central do método de Lagrange: o multiplicador \(\lambda^*\) depende criticamente da restrição escolhida. Uma meta mais ambiciosa (menor limite de emissões) implica um \(\lambda^*\) mais alto — isto é, um custo marginal de abatimento mais elevado. A discussão sobre a taxa de desconto (Nordhaus vs. Stern) traduz-se diretamente em diferentes valores de \(\lambda^*\), pois altera a "rigidez" da restrição intertemporal. Este é o método de Lagrange em ação na maior escala possível: a otimização restrita como ferramenta de política climática global.
+
+    **Fonte:** Nordhaus, W. D. (2017). Revisiting the social cost of carbon. *Proceedings of the National Academy of Sciences*, 114(7), 1518–1523. Stern, N. (2006). *The Economics of Climate Change: The Stern Review*. Cambridge University Press. EPA (2023). *Report on the Social Cost of Greenhouse Gases*.
+
 ---
 
 ## 2.6 Teorema do envelope na maximização restrita
@@ -842,6 +852,16 @@ Note a diferença sutil em relação ao caso irrestrito: aqui, a derivada é do 
 - No Capítulo 10, mostra que o custo marginal da firma iguala o multiplicador do problema de minimização de custos.
 
 A mensagem recorrente é a mesma: no ótimo, os efeitos indiretos (ajustes nas variáveis de escolha) são de segunda ordem, e apenas o efeito direto importa. Essa simplificação — que decorre da CPO — é o motor analítico por trás de boa parte da estática comparativa em microeconomia.
+
+!!! box-mundo "🌍 Box Mundo 2.2 — O teorema do envelope no desenho de leilões: de Vickrey aos leilões de espectro"
+
+    **Contexto:** Uma das aplicações mais elegantes e influentes do teorema do envelope ocorre na teoria de leilões. William Vickrey, em seu trabalho pioneiro de 1961 (que lhe rendeu o Nobel de 1996), utilizou o envelope theorem para demonstrar o célebre **Teorema da Equivalência de Receita**: sob certas condições, todos os formatos padrão de leilão (inglês, holandês, primeiro preço selado, segundo preço selado) geram a mesma receita esperada para o vendedor. A chave da demonstração é que o pagamento esperado de um participante pode ser recuperado inteiramente a partir de sua probabilidade de vencer — sem necessidade de conhecer sua estratégia de lance — exatamente porque o teorema do envelope permite "ignorar" os ajustes ótimos de comportamento.
+
+    **Dados:** A relevância prática dessa teoria ficou evidente nos leilões de espectro eletromagnético para telecomunicações. O leilão simultâneo de múltiplas rodadas (*Simultaneous Multiple-Round Auction*, SMRA), desenhado por Paul Milgrom e Robert Wilson (Nobel de 2020) para a FCC americana em 1994, arrecadou mais de US$ 20 bilhões nas primeiras rodadas. O formato explorava insights do teorema do envelope para garantir que os licitantes revelassem suas avaliações verdadeiras ao longo das rodadas. No Reino Unido, o leilão 3G de 2000, desenhado por Ken Binmore, arrecadou £22,5 bilhões — cinco vezes acima do esperado. No Brasil, o leilão do 5G em 2021, conduzido pela Anatel, movimentou R$ 47,2 bilhões em outorgas, sendo o maior leilão de espectro da história do país.
+
+    **Análise:** O teorema do envelope é central para a teoria de leilões porque permite derivar pagamentos ótimos a partir de regras de alocação sem resolver explicitamente o problema de otimização de cada participante. Formalmente, se \(V(v_i)\) é o payoff esperado de um licitante com valoração \(v_i\), o envelope theorem garante que \(V'(v_i) = \Pr(\text{vencer} \mid v_i)\) — a derivada do valor em relação ao tipo iguala a probabilidade de alocação. Integrando essa expressão, recupera-se o pagamento esperado. Esse é exatamente o princípio da Seção 2.6: no ótimo, basta olhar o efeito direto do parâmetro (aqui, a valoração do licitante), pois os ajustes indiretos na estratégia de lance são de segunda ordem. O sucesso dos leilões de espectro em mais de 30 países demonstra que o teorema do envelope não é apenas uma curiosidade matemática, mas uma ferramenta operacional que gera bilhões em receita pública.
+
+    **Fonte:** Vickrey, W. (1961). Counterspeculation, auctions, and competitive sealed tenders. *Journal of Finance*, 16(1), 8–37. Milgrom, P. (2004). *Putting Auction Theory to Work*. Cambridge University Press. Krishna, V. (2010). *Auction Theory*. 2ª ed. Academic Press.
 
 ---
 
