@@ -350,6 +350,57 @@ A distinção entre prêmio de risco *exato* e *aproximado* merece atenção. A 
 **Figura 7.2 — Prêmio de risco de Arrow-Pratt.** Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).
 </div>
 
+??? exercicio-resolvido "Exercício Resolvido 7.1"
+    **Enunciado:** Um investidor com função de utilidade \(u(W) = \ln(W)\) possui riqueza inicial \(W_0 = 10.000\). Ele é convidado a participar de uma loteria que paga \(+6.000\) com probabilidade \(0{,}4\) e \(-4.000\) com probabilidade \(0{,}6\). Calcule o equivalente de certeza, o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
+
+    **Dados:** \(u(W) = \ln(W)\), \(W_0 = 10.000\), \(L = \{(+6.000,\; 0{,}4);\; (-4.000,\; 0{,}6)\}\).
+
+    **Resolução:**
+
+    **Passo 1 — Resultados possíveis e valor esperado**
+
+    - Estado favorável: \(W_1 = 10.000 + 6.000 = 16.000\) com \(p_1 = 0{,}4\)
+    - Estado desfavorável: \(W_2 = 10.000 - 4.000 = 6.000\) com \(p_2 = 0{,}6\)
+    - Valor esperado: \(E[W] = 0{,}4 \times 16.000 + 0{,}6 \times 6.000 = 6.400 + 3.600 = 10.000\)
+
+    Note que \(E[W] = W_0\): trata-se de um risco justo (\(E[\tilde{\varepsilon}] = 0\)).
+
+    **Passo 2 — Utilidade esperada**
+
+    \[
+    E[u(W)] = 0{,}4 \times \ln(16.000) + 0{,}6 \times \ln(6.000)
+    \]
+
+    \[
+    = 0{,}4 \times 9{,}6803 + 0{,}6 \times 8{,}6995 = 3{,}8721 + 5{,}2197 = 9{,}0918
+    \]
+
+    **Passo 3 — Equivalente de certeza**
+
+    \[
+    u(W_{EC}) = E[u(W)] \implies \ln(W_{EC}) = 9{,}0918 \implies W_{EC} = e^{9{,}0918} \approx 8.879
+    \]
+
+    **Passo 4 — Prêmio de risco exato**
+
+    \[
+    \pi = E[W] - W_{EC} = 10.000 - 8.879 = \text{R\$ } 1.121
+    \]
+
+    **Passo 5 — Aproximação de Arrow-Pratt**
+
+    Para \(u(W) = \ln(W)\): \(A(W) = 1/W\). Em \(W_0 = 10.000\): \(A = 1/10.000 = 0{,}0001\).
+
+    A variância do risco: \(\sigma^2 = 0{,}4 \times (6.000)^2 + 0{,}6 \times (-4.000)^2 = 14.400.000 + 9.600.000 = 24.000.000\).
+
+    \[
+    \pi_{AP} \approx \frac{1}{2} \times 0{,}0001 \times 24.000.000 = \text{R\$ } 1.200
+    \]
+
+    **Resultado:** \(\pi_{\text{exato}} = \text{R\$ } 1.121\) vs. \(\pi_{AP} \approx \text{R\$ } 1.200\). A aproximação superestima em cerca de 7%.
+
+    **Interpretação econômica:** O investidor exigiria pelo menos R\$ 1.121 para aceitar esse risco justo — equivalente a 11,2% de sua riqueza. A discrepância entre o valor exato e a aproximação reflete que o risco não é "pequeno" em relação à riqueza (desvio padrão de R\$ 4.899 ≈ 49% de \(W_0\)), o que compromete a precisão da expansão de Taylor.
+
 ---
 
 ## 7.6 Métodos para Reduzir o Risco
@@ -395,6 +446,51 @@ Na prática, os mercados de seguros brasileiros exibem carregamentos que variam 
 **Figura 7.3 — Mercado de seguros no espaço estado-contingente.** Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).
 </div>
 
+??? exercicio-resolvido "Exercício Resolvido 7.2"
+    **Enunciado:** Uma produtora de café no Sul de Minas possui riqueza de R\$ 500.000 e enfrenta risco de geada que, com probabilidade \(0{,}2\), causa perda de R\$ 200.000. Sua utilidade é \(u(W) = \sqrt{W}\). (a) Calcule o prêmio atuarialmente justo. (b) Verifique que a produtora contrata cobertura total. (c) Se a seguradora cobra carregamento \(\lambda = 0{,}3\), qual o prêmio de risco máximo que a produtora aceita pagar?
+
+    **Dados:** \(W = 500.000\), \(d = 200.000\), \(p = 0{,}2\), \(u(W) = \sqrt{W}\).
+
+    **Resolução:**
+
+    **Passo 1 — Prêmio atuarialmente justo**
+
+    \[
+    P_{justo} = p \times d = 0{,}2 \times 200.000 = \text{R\$ } 40.000
+    \]
+
+    **Passo 2 — Cobertura total sob prêmio justo**
+
+    Sem seguro: \(E[u] = 0{,}8 \times \sqrt{500.000} + 0{,}2 \times \sqrt{300.000} = 0{,}8 \times 707{,}11 + 0{,}2 \times 547{,}72 = 565{,}69 + 109{,}54 = 675{,}23\).
+
+    Com seguro total (\(P = 40.000\)): riqueza certa = \(500.000 - 40.000 = 460.000\).
+
+    \(u(460.000) = \sqrt{460.000} = 678{,}23\).
+
+    Como \(678{,}23 > 675{,}23\), a produtora prefere o seguro total. De fato, para agente avesso ao risco, seguro total é ótimo sob prêmio justo (Seção 7.6.1).
+
+    **Passo 3 — Prêmio máximo que aceita pagar**
+
+    O prêmio máximo \(P_{max}\) satisfaz \(u(W - P_{max}) = E[u]\) sem seguro:
+
+    \[
+    \sqrt{500.000 - P_{max}} = 675{,}23 \implies 500.000 - P_{max} = 675{,}23^2 = 455.936
+    \]
+
+    \[
+    P_{max} = 500.000 - 455.936 = \text{R\$ } 44.064
+    \]
+
+    **Passo 4 — Decisão com carregamento**
+
+    Prêmio com carregamento: \(P_\lambda = (1 + 0{,}3) \times 40.000 = \text{R\$ } 52.000\).
+
+    Como \(P_\lambda = 52.000 > P_{max} = 44.064\), a produtora **não contrata** cobertura total a esse preço.
+
+    **Resultado:** O prêmio atuarialmente justo é R\$ 40.000, e a produtora pagaria até R\$ 44.064 (prêmio de risco de R\$ 4.064). O carregamento de 30% torna a cobertura total inviável.
+
+    **Interpretação econômica:** A diferença \(P_{max} - P_{justo} = \text{R\$ } 4.064\) é o prêmio de risco da produtora — o valor monetário da sua aversão ao risco. Com carregamento de 30%, a seguradora cobra mais do que a produtora está disposta a pagar por cobertura total, o que pode levar à contratação de cobertura parcial (franquia elevada). Este é precisamente o mecanismo que explica por que pequenos produtores brasileiros, com baixa capacidade de absorção de risco, dependem do subsídio do PSR para viabilizar o seguro.
+
 ### 7.6.2 Diversificação
 
 Se o seguro transfere risco de um agente para outro, a diversificação opera por um mecanismo diferente: ela **dilui** o risco ao distribuir a exposição entre múltiplas fontes de incerteza. A lógica é simples, mas poderosa: quando os resultados de diferentes ativos não se movem perfeitamente em conjunto, as perdas de uns tendem a ser parcialmente compensadas pelos ganhos de outros.
@@ -426,6 +522,68 @@ A diversificação tem um limite fundamental: ela não elimina o risco agregado,
     **Pense assim:** Um pequeno agricultor do Paraná que planta só soja fica à mercê da seca ou da queda de preço. Se ele divide a terra entre soja, milho e feijão, uma safra ruim de um produto pode ser compensada pela boa safra de outro. O retorno médio pode ser parecido, mas o risco de "quebrar" cai muito.
 
     **Por que isso importa:** A diversificação é o princípio por trás dos fundos de investimento, dos planos de previdência e até da política de crédito agrícola do Banco do Brasil, que incentiva a rotação de culturas.
+
+??? exercicio-resolvido "Exercício Resolvido 7.3"
+    **Enunciado:** Um investidor aloca sua riqueza entre dois ativos: ações de uma empresa de energia (\(\mu_1 = 12\%\), \(\sigma_1 = 20\%\)) e títulos do agronegócio (\(\mu_2 = 8\%\), \(\sigma_2 = 15\%\)). A correlação entre os retornos é \(\rho = -0{,}3\). (a) Calcule o retorno e a variância da carteira para \(w = 0{,}5\). (b) Encontre o peso \(w^*\) que minimiza a variância. (c) Compare o desvio padrão da carteira de variância mínima com os desvios individuais.
+
+    **Dados:** \(\mu_1 = 0{,}12\), \(\sigma_1 = 0{,}20\), \(\mu_2 = 0{,}08\), \(\sigma_2 = 0{,}15\), \(\rho = -0{,}3\).
+
+    **Resolução:**
+
+    **Passo 1 — Carteira igualmente ponderada (\(w = 0{,}5\))**
+
+    \[
+    \mu_p = 0{,}5 \times 0{,}12 + 0{,}5 \times 0{,}08 = 0{,}10 = 10\%
+    \]
+
+    \[
+    \sigma_p^2 = (0{,}5)^2(0{,}20)^2 + (0{,}5)^2(0{,}15)^2 + 2(0{,}5)(0{,}5)(-0{,}3)(0{,}20)(0{,}15)
+    \]
+
+    \[
+    = 0{,}01 + 0{,}005625 + (-0{,}0045) = 0{,}011125
+    \]
+
+    \[
+    \sigma_p = \sqrt{0{,}011125} = 0{,}1055 = 10{,}55\%
+    \]
+
+    **Passo 2 — Peso de variância mínima**
+
+    \[
+    w^* = \frac{\sigma_2^2 - \rho\sigma_1\sigma_2}{\sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2}
+    \]
+
+    \[
+    = \frac{0{,}0225 - (-0{,}3)(0{,}20)(0{,}15)}{0{,}04 + 0{,}0225 - 2(-0{,}3)(0{,}20)(0{,}15)} = \frac{0{,}0225 + 0{,}009}{0{,}0625 + 0{,}018} = \frac{0{,}0315}{0{,}0805} = 0{,}3913
+    \]
+
+    **Passo 3 — Variância mínima e comparação**
+
+    \[
+    \sigma_p^2(w^*) = (0{,}3913)^2(0{,}04) + (0{,}6087)^2(0{,}0225) + 2(0{,}3913)(0{,}6087)(-0{,}009)
+    \]
+
+    \[
+    = 0{,}006125 + 0{,}008337 - 0{,}004288 = 0{,}010174
+    \]
+
+    \[
+    \sigma_p(w^*) = \sqrt{0{,}010174} = 0{,}1009 = 10{,}09\%
+    \]
+
+    O retorno desta carteira: \(\mu_p(w^*) = 0{,}3913 \times 12\% + 0{,}6087 \times 8\% = 9{,}57\%\).
+
+    **Resultado:**
+
+    | Carteira | Retorno | Desvio padrão |
+    |:---------|:--------|:-------------|
+    | Ativo 1 puro | 12,00% | 20,00% |
+    | Ativo 2 puro | 8,00% | 15,00% |
+    | Igualmente ponderada | 10,00% | 10,55% |
+    | Variância mínima | 9,57% | 10,09% |
+
+    **Interpretação econômica:** A correlação negativa (\(\rho = -0{,}3\)) gera um forte benefício de diversificação. O desvio padrão da carteira de variância mínima (10,09%) é **menor** que o de ambos os ativos individuais — um resultado impossível quando \(\rho = 1\). Essa é a essência do resultado de Markowitz: combinando ativos com correlação imperfeita, um investidor brasileiro pode reduzir o risco total sem sacrificar proporcionalmente o retorno.
 
 ### 7.6.3 Flexibilidade e valor da opção
 
@@ -654,170 +812,6 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 | Diversificação | Estratégia de alocação de riqueza entre ativos imperfeitamente correlacionados para reduzir o risco total do portfólio. |
 | Seleção adversa | Problema de informação assimétrica pré-contratual em que a parte menos informada atrai desproporcionalmente agentes de alto risco. |
 | Risco moral | Problema de informação assimétrica pós-contratual em que o agente segurado altera seu comportamento de forma não observável. |
-
----
-
-## 🎯 Exercícios Resolvidos
-
-??? exercicio-resolvido "Exercício Resolvido 7.1"
-    **Enunciado:** Um investidor com função de utilidade \(u(W) = \ln(W)\) possui riqueza inicial \(W_0 = 10.000\). Ele é convidado a participar de uma loteria que paga \(+6.000\) com probabilidade \(0{,}4\) e \(-4.000\) com probabilidade \(0{,}6\). Calcule o equivalente de certeza, o prêmio de risco exato e compare com a aproximação de Arrow-Pratt.
-
-    **Dados:** \(u(W) = \ln(W)\), \(W_0 = 10.000\), \(L = \{(+6.000,\; 0{,}4);\; (-4.000,\; 0{,}6)\}\).
-
-    **Resolução:**
-
-    **Passo 1 — Resultados possíveis e valor esperado**
-
-    - Estado favorável: \(W_1 = 10.000 + 6.000 = 16.000\) com \(p_1 = 0{,}4\)
-    - Estado desfavorável: \(W_2 = 10.000 - 4.000 = 6.000\) com \(p_2 = 0{,}6\)
-    - Valor esperado: \(E[W] = 0{,}4 \times 16.000 + 0{,}6 \times 6.000 = 6.400 + 3.600 = 10.000\)
-
-    Note que \(E[W] = W_0\): trata-se de um risco justo (\(E[\tilde{\varepsilon}] = 0\)).
-
-    **Passo 2 — Utilidade esperada**
-
-    \[
-    E[u(W)] = 0{,}4 \times \ln(16.000) + 0{,}6 \times \ln(6.000)
-    \]
-
-    \[
-    = 0{,}4 \times 9{,}6803 + 0{,}6 \times 8{,}6995 = 3{,}8721 + 5{,}2197 = 9{,}0918
-    \]
-
-    **Passo 3 — Equivalente de certeza**
-
-    \[
-    u(W_{EC}) = E[u(W)] \implies \ln(W_{EC}) = 9{,}0918 \implies W_{EC} = e^{9{,}0918} \approx 8.879
-    \]
-
-    **Passo 4 — Prêmio de risco exato**
-
-    \[
-    \pi = E[W] - W_{EC} = 10.000 - 8.879 = \text{R\$ } 1.121
-    \]
-
-    **Passo 5 — Aproximação de Arrow-Pratt**
-
-    Para \(u(W) = \ln(W)\): \(A(W) = 1/W\). Em \(W_0 = 10.000\): \(A = 1/10.000 = 0{,}0001\).
-
-    A variância do risco: \(\sigma^2 = 0{,}4 \times (6.000)^2 + 0{,}6 \times (-4.000)^2 = 14.400.000 + 9.600.000 = 24.000.000\).
-
-    \[
-    \pi_{AP} \approx \frac{1}{2} \times 0{,}0001 \times 24.000.000 = \text{R\$ } 1.200
-    \]
-
-    **Resultado:** \(\pi_{\text{exato}} = \text{R\$ } 1.121\) vs. \(\pi_{AP} \approx \text{R\$ } 1.200\). A aproximação superestima em cerca de 7%.
-
-    **Interpretação econômica:** O investidor exigiria pelo menos R\$ 1.121 para aceitar esse risco justo — equivalente a 11,2% de sua riqueza. A discrepância entre o valor exato e a aproximação reflete que o risco não é "pequeno" em relação à riqueza (desvio padrão de R\$ 4.899 ≈ 49% de \(W_0\)), o que compromete a precisão da expansão de Taylor.
-
-??? exercicio-resolvido "Exercício Resolvido 7.2"
-    **Enunciado:** Uma produtora de café no Sul de Minas possui riqueza de R\$ 500.000 e enfrenta risco de geada que, com probabilidade \(0{,}2\), causa perda de R\$ 200.000. Sua utilidade é \(u(W) = \sqrt{W}\). (a) Calcule o prêmio atuarialmente justo. (b) Verifique que a produtora contrata cobertura total. (c) Se a seguradora cobra carregamento \(\lambda = 0{,}3\), qual o prêmio de risco máximo que a produtora aceita pagar?
-
-    **Dados:** \(W = 500.000\), \(d = 200.000\), \(p = 0{,}2\), \(u(W) = \sqrt{W}\).
-
-    **Resolução:**
-
-    **Passo 1 — Prêmio atuarialmente justo**
-
-    \[
-    P_{justo} = p \times d = 0{,}2 \times 200.000 = \text{R\$ } 40.000
-    \]
-
-    **Passo 2 — Cobertura total sob prêmio justo**
-
-    Sem seguro: \(E[u] = 0{,}8 \times \sqrt{500.000} + 0{,}2 \times \sqrt{300.000} = 0{,}8 \times 707{,}11 + 0{,}2 \times 547{,}72 = 565{,}69 + 109{,}54 = 675{,}23\).
-
-    Com seguro total (\(P = 40.000\)): riqueza certa = \(500.000 - 40.000 = 460.000\).
-
-    \(u(460.000) = \sqrt{460.000} = 678{,}23\).
-
-    Como \(678{,}23 > 675{,}23\), a produtora prefere o seguro total. De fato, para agente avesso ao risco, seguro total é ótimo sob prêmio justo (Seção 7.6.1).
-
-    **Passo 3 — Prêmio máximo que aceita pagar**
-
-    O prêmio máximo \(P_{max}\) satisfaz \(u(W - P_{max}) = E[u]\) sem seguro:
-
-    \[
-    \sqrt{500.000 - P_{max}} = 675{,}23 \implies 500.000 - P_{max} = 675{,}23^2 = 455.936
-    \]
-
-    \[
-    P_{max} = 500.000 - 455.936 = \text{R\$ } 44.064
-    \]
-
-    **Passo 4 — Decisão com carregamento**
-
-    Prêmio com carregamento: \(P_\lambda = (1 + 0{,}3) \times 40.000 = \text{R\$ } 52.000\).
-
-    Como \(P_\lambda = 52.000 > P_{max} = 44.064\), a produtora **não contrata** cobertura total a esse preço.
-
-    **Resultado:** O prêmio atuarialmente justo é R\$ 40.000, e a produtora pagaria até R\$ 44.064 (prêmio de risco de R\$ 4.064). O carregamento de 30% torna a cobertura total inviável.
-
-    **Interpretação econômica:** A diferença \(P_{max} - P_{justo} = \text{R\$ } 4.064\) é o prêmio de risco da produtora — o valor monetário da sua aversão ao risco. Com carregamento de 30%, a seguradora cobra mais do que a produtora está disposta a pagar por cobertura total, o que pode levar à contratação de cobertura parcial (franquia elevada). Este é precisamente o mecanismo que explica por que pequenos produtores brasileiros, com baixa capacidade de absorção de risco, dependem do subsídio do PSR para viabilizar o seguro.
-
-??? exercicio-resolvido "Exercício Resolvido 7.3"
-    **Enunciado:** Um investidor aloca sua riqueza entre dois ativos: ações de uma empresa de energia (\(\mu_1 = 12\%\), \(\sigma_1 = 20\%\)) e títulos do agronegócio (\(\mu_2 = 8\%\), \(\sigma_2 = 15\%\)). A correlação entre os retornos é \(\rho = -0{,}3\). (a) Calcule o retorno e a variância da carteira para \(w = 0{,}5\). (b) Encontre o peso \(w^*\) que minimiza a variância. (c) Compare o desvio padrão da carteira de variância mínima com os desvios individuais.
-
-    **Dados:** \(\mu_1 = 0{,}12\), \(\sigma_1 = 0{,}20\), \(\mu_2 = 0{,}08\), \(\sigma_2 = 0{,}15\), \(\rho = -0{,}3\).
-
-    **Resolução:**
-
-    **Passo 1 — Carteira igualmente ponderada (\(w = 0{,}5\))**
-
-    \[
-    \mu_p = 0{,}5 \times 0{,}12 + 0{,}5 \times 0{,}08 = 0{,}10 = 10\%
-    \]
-
-    \[
-    \sigma_p^2 = (0{,}5)^2(0{,}20)^2 + (0{,}5)^2(0{,}15)^2 + 2(0{,}5)(0{,}5)(-0{,}3)(0{,}20)(0{,}15)
-    \]
-
-    \[
-    = 0{,}01 + 0{,}005625 + (-0{,}0045) = 0{,}011125
-    \]
-
-    \[
-    \sigma_p = \sqrt{0{,}011125} = 0{,}1055 = 10{,}55\%
-    \]
-
-    **Passo 2 — Peso de variância mínima**
-
-    \[
-    w^* = \frac{\sigma_2^2 - \rho\sigma_1\sigma_2}{\sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2}
-    \]
-
-    \[
-    = \frac{0{,}0225 - (-0{,}3)(0{,}20)(0{,}15)}{0{,}04 + 0{,}0225 - 2(-0{,}3)(0{,}20)(0{,}15)} = \frac{0{,}0225 + 0{,}009}{0{,}0625 + 0{,}018} = \frac{0{,}0315}{0{,}0805} = 0{,}3913
-    \]
-
-    **Passo 3 — Variância mínima e comparação**
-
-    \[
-    \sigma_p^2(w^*) = (0{,}3913)^2(0{,}04) + (0{,}6087)^2(0{,}0225) + 2(0{,}3913)(0{,}6087)(-0{,}009)
-    \]
-
-    \[
-    = 0{,}006125 + 0{,}008337 - 0{,}004288 = 0{,}010174
-    \]
-
-    \[
-    \sigma_p(w^*) = \sqrt{0{,}010174} = 0{,}1009 = 10{,}09\%
-    \]
-
-    O retorno desta carteira: \(\mu_p(w^*) = 0{,}3913 \times 12\% + 0{,}6087 \times 8\% = 9{,}57\%\).
-
-    **Resultado:**
-
-    | Carteira | Retorno | Desvio padrão |
-    |:---------|:--------|:-------------|
-    | Ativo 1 puro | 12,00% | 20,00% |
-    | Ativo 2 puro | 8,00% | 15,00% |
-    | Igualmente ponderada | 10,00% | 10,55% |
-    | Variância mínima | 9,57% | 10,09% |
-
-    **Interpretação econômica:** A correlação negativa (\(\rho = -0{,}3\)) gera um forte benefício de diversificação. O desvio padrão da carteira de variância mínima (10,09%) é **menor** que o de ambos os ativos individuais — um resultado impossível quando \(\rho = 1\). Essa é a essência do resultado de Markowitz: combinando ativos com correlação imperfeita, um investidor brasileiro pode reduzir o risco total sem sacrificar proporcionalmente o retorno.
-
----
 
 ## ✏️ Exercícios
 

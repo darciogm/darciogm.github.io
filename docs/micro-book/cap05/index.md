@@ -286,6 +286,49 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
 !!! note "Giffen na prática: arroz na China"
     Bens de Giffen são raríssimos empiricamente. A evidência mais robusta foi documentada por [Jensen e Miller (2008)](https://doi.org/10.1257/aer.98.4.1553), que identificaram comportamento de Giffen para o arroz entre famílias extremamente pobres na província de Hunan, na China. Nessas famílias, o arroz representava parcela tão grande do orçamento que o efeito renda de um aumento de preço dominava o efeito substituição. Voltaremos a esse estudo no Apêndice.
 
+??? exercicio-resolvido "Exercício Resolvido 5.3"
+    **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
+
+    **Dados:** Cobb-Douglas com \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 80\), \(p_1' = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Cestas ótimas**
+
+    Demandas marshallianas para Cobb-Douglas: \(x_i^* = \frac{a_i}{a_1 + a_2} \cdot \frac{I}{p_i}\). Com \(a_1 = a_2 = 1/2\):
+
+    - Antes: \(x_1^0 = \frac{1}{2} \cdot \frac{80}{4} = 10\), \(x_2^0 = \frac{1}{2} \cdot \frac{80}{1} = 40\). \(U_0 = \sqrt{10 \times 40} = 20\).
+    - Depois: \(x_1^1 = \frac{1}{2} \cdot \frac{80}{1} = 40\), \(x_2^1 = 40\). \(U_1 = \sqrt{40 \times 40} = 40\).
+
+    Efeito total: \(\Delta x_1 = 40 - 10 = +30\).
+
+    **Passo 2 — Decomposição de Hicks**
+
+    Demanda hicksiana: \(h_1 = \bar{U} \sqrt{p_2/p_1}\).
+
+    - Com \(\bar{U} = U_0 = 20\) e preço novo \(p_1' = 1\): \(h_1 = 20 \sqrt{1/1} = 20\).
+
+    Efeito substituição: \(ES = h_1(p_1', U_0) - x_1^0 = 20 - 10 = +10\).
+
+    Efeito renda: \(ER = x_1^1 - h_1(p_1', U_0) = 40 - 20 = +20\).
+
+    Verificação: \(ES + ER = 10 + 20 = 30 = \Delta x_1\). ✓
+
+    **Passo 3 — Verificação pela Equação de Slutsky**
+
+    \[
+    \frac{\partial x_1}{\partial p_1} = \frac{\partial h_1}{\partial p_1} - x_1 \frac{\partial x_1}{\partial I}
+    \]
+
+    - \(\frac{\partial x_1}{\partial p_1} = -\frac{I}{2p_1^2} = -\frac{80}{2 \times 16} = -2{,}5\)
+    - \(\frac{\partial h_1}{\partial p_1} = -\frac{\bar{U}}{2} p_2^{1/2} p_1^{-3/2} = -\frac{20}{2} \times 1 \times 4^{-3/2} = -10 \times \frac{1}{8} = -1{,}25\)
+    - \(x_1 \frac{\partial x_1}{\partial I} = 10 \times \frac{1}{2 \times 4} = 10 \times 0{,}125 = 1{,}25\)
+    - Verificação: \(-1{,}25 - 1{,}25 = -2{,}5\) ✓
+
+    **Resultado:** o efeito total (+30 unidades) decompõe-se em efeito substituição (+10) e efeito renda (+20). O efeito renda é o dobro do efeito substituição.
+
+    **Interpretação econômica:** a forte queda de preço (de 4 para 1) gera um expressivo aumento de poder de compra. Como o bem é normal e a queda de preço é grande, o efeito renda domina. Em termos brasileiros, pense em uma redução drástica no preço da energia elétrica: parte do aumento no consumo viria da substituição de gás por eletricidade (ES), mas a maior parte viria do aumento no poder de compra permitindo consumir mais de tudo (ER).
+
 ---
 
 ## 5.5 A Curva de Demanda Individual
@@ -674,55 +717,6 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 | Excedente do consumidor | Diferença entre a disposição a pagar e o preço efetivamente pago; corresponde à área abaixo da curva de demanda e acima do preço. |
 | Variação compensatória (VC) | Montante de renda que, após uma variação de preço, restaura o nível de utilidade original do consumidor. |
 | Preferência revelada | Abordagem que infere racionalidade e relações de preferência a partir de escolhas observadas, sem postular funções de utilidade. |
-
----
-
-## 🎯 Exercícios Resolvidos
-
-??? exercicio-resolvido "Exercício Resolvido 5.3"
-    **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
-
-    **Dados:** Cobb-Douglas com \(a = b = 1/2\), \(p_1 = 4\), \(p_2 = 1\), \(I = 80\), \(p_1' = 1\).
-
-    **Resolução:**
-
-    **Passo 1 — Cestas ótimas**
-
-    Demandas marshallianas para Cobb-Douglas: \(x_i^* = \frac{a_i}{a_1 + a_2} \cdot \frac{I}{p_i}\). Com \(a_1 = a_2 = 1/2\):
-
-    - Antes: \(x_1^0 = \frac{1}{2} \cdot \frac{80}{4} = 10\), \(x_2^0 = \frac{1}{2} \cdot \frac{80}{1} = 40\). \(U_0 = \sqrt{10 \times 40} = 20\).
-    - Depois: \(x_1^1 = \frac{1}{2} \cdot \frac{80}{1} = 40\), \(x_2^1 = 40\). \(U_1 = \sqrt{40 \times 40} = 40\).
-
-    Efeito total: \(\Delta x_1 = 40 - 10 = +30\).
-
-    **Passo 2 — Decomposição de Hicks**
-
-    Demanda hicksiana: \(h_1 = \bar{U} \sqrt{p_2/p_1}\).
-
-    - Com \(\bar{U} = U_0 = 20\) e preço novo \(p_1' = 1\): \(h_1 = 20 \sqrt{1/1} = 20\).
-
-    Efeito substituição: \(ES = h_1(p_1', U_0) - x_1^0 = 20 - 10 = +10\).
-
-    Efeito renda: \(ER = x_1^1 - h_1(p_1', U_0) = 40 - 20 = +20\).
-
-    Verificação: \(ES + ER = 10 + 20 = 30 = \Delta x_1\). ✓
-
-    **Passo 3 — Verificação pela Equação de Slutsky**
-
-    \[
-    \frac{\partial x_1}{\partial p_1} = \frac{\partial h_1}{\partial p_1} - x_1 \frac{\partial x_1}{\partial I}
-    \]
-
-    - \(\frac{\partial x_1}{\partial p_1} = -\frac{I}{2p_1^2} = -\frac{80}{2 \times 16} = -2{,}5\)
-    - \(\frac{\partial h_1}{\partial p_1} = -\frac{\bar{U}}{2} p_2^{1/2} p_1^{-3/2} = -\frac{20}{2} \times 1 \times 4^{-3/2} = -10 \times \frac{1}{8} = -1{,}25\)
-    - \(x_1 \frac{\partial x_1}{\partial I} = 10 \times \frac{1}{2 \times 4} = 10 \times 0{,}125 = 1{,}25\)
-    - Verificação: \(-1{,}25 - 1{,}25 = -2{,}5\) ✓
-
-    **Resultado:** o efeito total (+30 unidades) decompõe-se em efeito substituição (+10) e efeito renda (+20). O efeito renda é o dobro do efeito substituição.
-
-    **Interpretação econômica:** a forte queda de preço (de 4 para 1) gera um expressivo aumento de poder de compra. Como o bem é normal e a queda de preço é grande, o efeito renda domina. Em termos brasileiros, pense em uma redução drástica no preço da energia elétrica: parte do aumento no consumo viria da substituição de gás por eletricidade (ES), mas a maior parte viria do aumento no poder de compra permitindo consumir mais de tudo (ER).
-
----
 
 ## ✏️ Exercícios
 

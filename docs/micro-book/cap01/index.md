@@ -136,6 +136,28 @@ Os dois pilares anteriores — *ceteris paribus* e otimização — são ferrame
 
 Com os três pilares metodológicos em mãos — *ceteris paribus*, otimização e a distinção positivo/normativo —, estamos prontos para examinar mais de perto a estrutura formal de um modelo microeconômico típico. Como, concretamente, esses princípios se materializam em equações e variáveis?
 
+??? exercicio-resolvido "Exercício Resolvido 1.1 — Análise positiva versus normativa"
+
+    **Enunciado.** Classifique cada afirmação como positiva ou normativa e justifique:
+
+    (a) A taxa de desemprego no Brasil em 2023 foi de 7,8%.
+
+    (b) O governo deveria reduzir impostos sobre a cesta básica para combater a desigualdade.
+
+    (c) Um aumento de 10% na tarifa de importação de aço eleva o preço doméstico em aproximadamente 5%.
+
+    (d) A política de cotas raciais nas universidades é justa.
+
+    **Solução.**
+
+    **(a) Positiva.** Trata-se de uma afirmação descritiva sobre um fato observável, verificável por dados da PNAD Contínua/IBGE. Não envolve julgamento de valor.
+
+    **(b) Normativa.** Contém o verbo "deveria", indicando prescrição baseada em julgamento de valor sobre o que é desejável. Duas pessoas podem concordar sobre o efeito positivo da medida (análise positiva) e discordar sobre se ela *deve* ser adotada (análise normativa).
+
+    **(c) Positiva.** É uma previsão quantitativa testável empiricamente — por exemplo, via modelos de equilíbrio parcial ou métodos econométricos. Não envolve juízo sobre se o aumento tarifário é bom ou ruim.
+
+    **(d) Normativa.** O conceito de "justiça" envolve julgamento de valor — diferentes concepções de equidade (rawlsiana, utilitarista, libertária) conduziriam a conclusões distintas sobre a mesma política.
+
 ---
 
 ## 1.4 Estrutura dos modelos econômicos
@@ -195,6 +217,51 @@ O sistema de equações $\eqref{eq:1.4.1}$--$\eqref{eq:1.4.3}$ descreve o equil�
     A **estática comparativa** consiste em comparar dois equilíbrios — um antes e outro depois de uma mudança em uma variável exógena — para determinar a *direção* e a *magnitude* da resposta das variáveis endógenas. O termo "estática" indica que se comparam dois pontos de repouso, sem descrever o caminho de ajuste entre eles; "comparativa" indica a comparação entre os dois estados. Formalmente, trata-se de calcular derivadas como \(\partial P^* / \partial Y\) (efeito de uma variação na renda sobre o preço de equilíbrio). No Capítulo 2, o teorema da função implícita e o teorema do envelope fornecerão as ferramentas matemáticas para realizar estática comparativa de forma sistemática.
 
 Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, para formalizar as preferências do consumidor; no Capítulo 4, para derivar as funções de demanda; nos Capítulos 7–9, para obter as curvas de custo e oferta da firma; e no Capítulo 12, para analisar o equilíbrio geral. Mas antes de mergulhar na análise formal, vale a pena situar as ideias que discutimos até aqui em uma perspectiva mais ampla. Como a ciência econômica chegou a esse modo de pensar? A resposta passa pela história da teoria do valor — o problema central que motivou o desenvolvimento da microeconomia.
+
+??? exercicio-resolvido "Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
+
+    **Enunciado.** Considere o seguinte modelo simplificado do mercado de café no Brasil:
+
+    - Demanda: \(Q^d = 200 - 4P + 2Y\), onde \(P\) é o preço e \(Y\) é a renda dos consumidores.
+    - Oferta: \(Q^s = -20 + 6P - 3C\), onde \(C\) é o custo dos insumos agrícolas.
+
+    (a) Identifique as variáveis exógenas e endógenas.
+
+    (b) Encontre o preço e a quantidade de equilíbrio como funções dos parâmetros exógenos.
+
+    (c) Se \(Y = 50\) e \(C = 10\), calcule \(P^*\) e \(Q^*\).
+
+    (d) Realize estática comparativa: qual o efeito de um aumento da renda sobre o preço de equilíbrio?
+
+    **Solução.**
+
+    **(a)** **Exógenas:** \(Y\) (renda) e \(C\) (custo dos insumos) — determinadas fora do modelo. **Endógenas:** \(P^*\) (preço) e \(Q^*\) (quantidade) — determinadas pelo equilíbrio do modelo.
+
+    **(b)** No equilíbrio, \(Q^d = Q^s\):
+
+    \[
+    200 - 4P + 2Y = -20 + 6P - 3C
+    \]
+
+    \[
+    220 + 2Y + 3C = 10P
+    \]
+
+    \[
+    P^* = 22 + 0{,}2Y + 0{,}3C
+    \]
+
+    Substituindo na função de demanda:
+
+    \[
+    Q^* = 200 - 4(22 + 0{,}2Y + 0{,}3C) + 2Y = 112 + 1{,}2Y - 1{,}2C
+    \]
+
+    **(c)** \(P^* = 22 + 0{,}2 \times 50 + 0{,}3 \times 10 = 22 + 10 + 3 = 35\)
+
+    \(Q^* = 112 + 1{,}2 \times 50 - 1{,}2 \times 10 = 112 + 60 - 12 = 160\)
+
+    **(d)** \(\dfrac{\partial P^*}{\partial Y} = 0{,}2 > 0\). Um aumento da renda eleva o preço de equilíbrio. Intuitivamente, mais renda desloca a curva de demanda para a direita (a cada preço dado, a quantidade demandada aumenta), pressionando o preço para cima. Este é um exercício de estática comparativa como descrito na Seção 1.4: variamos uma variável exógena (\(Y\)) e observamos o efeito sobre a variável endógena (\(P^*\)).
 
 ---
 
@@ -378,6 +445,58 @@ O que essa demonstração nos revela? Do ponto de vista econômico, o resultado 
 
 Note também que a demonstração ilustra o poder da estática comparativa: como \(CMg\) é crescente no ótimo, um aumento no preço \(P\) exige um aumento em \(q^*\) para restaurar a igualdade \(P = CMg\). Isso fundamenta a **lei da oferta** — a relação positiva entre preço e quantidade ofertada — como consequência lógica da otimização, não como uma hipótese ad hoc. A relação \(q^*(P)\), que associa a cada preço a quantidade ótima, é a **curva de oferta individual** da firma.
 
+??? exercicio-resolvido "Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
+
+    **Enunciado.** Uma firma competitiva tem função de custo total \(CT(q) = 50 + 8q + 0{,}5q^2\). O preço de mercado é \(P = 28\).
+
+    (a) Determine o custo marginal e o custo médio.
+
+    (b) Encontre a quantidade que maximiza o lucro usando a condição \(P = CMg\).
+
+    (c) Verifique a condição de segunda ordem.
+
+    (d) Calcule o lucro máximo.
+
+    (e) Identifique as variáveis exógenas e endógenas neste modelo.
+
+    **Solução.**
+
+    **(a)**
+
+    \[
+    CMg(q) = \frac{dCT}{dq} = 8 + q
+    \]
+
+    \[
+    CMe(q) = \frac{CT(q)}{q} = \frac{50}{q} + 8 + 0{,}5q
+    \]
+
+    **(b)** Pela condição de primeira ordem (\(P = CMg\)):
+
+    \[
+    28 = 8 + q \implies q^* = 20
+    \]
+
+    **(c)** A condição de segunda ordem exige \(\dfrac{dCMg}{dq}\bigg|_{q^*} > 0\):
+
+    \[
+    \frac{dCMg}{dq} = 1 > 0 \quad \checkmark
+    \]
+
+    O custo marginal é crescente em todo o domínio, confirmando que \(q^* = 20\) é um máximo do lucro.
+
+    **(d)**
+
+    \[
+    \pi^* = P \cdot q^* - CT(q^*) = 28 \times 20 - (50 + 8 \times 20 + 0{,}5 \times 400)
+    \]
+
+    \[
+    \pi^* = 560 - 50 - 160 - 200 = 150
+    \]
+
+    **(e)** **Exógenas:** preço de mercado \(P\), parâmetros da função de custo (50, 8, 0,5). **Endógena:** quantidade ótima \(q^*\) (e, por consequência, o lucro \(\pi^*\)).
+
 ---
 
 !!! box-brasil "Box Brasil — O Plano Real (1994): modelos econômicos em ação"
@@ -434,131 +553,6 @@ Note também que a demonstração ilustra o poder da estática comparativa: como
 | Utilidade marginal | Utilidade adicional obtida pelo consumo da última unidade de um bem; conceito central da revolução marginalista. |
 | Teoria do valor-trabalho | Doutrina clássica (Smith, Ricardo) segundo a qual o valor de troca de um bem é determinado pela quantidade de trabalho necessária para produzi-lo. |
 | Equilíbrio geral | Determinação simultânea de preços e quantidades em todos os mercados da economia, formalizado por Walras e provado por Arrow e Debreu. |
-
----
-
-## 🎯 Exercícios Resolvidos
-
-Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste capítulo a problemas concretos. O primeiro exercício pratica a distinção entre análise positiva e normativa (Seção 1.3). O segundo trabalha a estrutura de variáveis exógenas e endógenas, equilíbrio e estática comparativa (Seção 1.4). O terceiro aplica a condição de maximização de lucro \(P = CMg\) demonstrada acima. Recomenda-se tentar resolver cada exercício antes de consultar a solução.
-
-??? exercicio-resolvido "Exercício Resolvido 1.1 — Análise positiva versus normativa"
-
-    **Enunciado.** Classifique cada afirmação como positiva ou normativa e justifique:
-
-    (a) A taxa de desemprego no Brasil em 2023 foi de 7,8%.
-
-    (b) O governo deveria reduzir impostos sobre a cesta básica para combater a desigualdade.
-
-    (c) Um aumento de 10% na tarifa de importação de aço eleva o preço doméstico em aproximadamente 5%.
-
-    (d) A política de cotas raciais nas universidades é justa.
-
-    **Solução.**
-
-    **(a) Positiva.** Trata-se de uma afirmação descritiva sobre um fato observável, verificável por dados da PNAD Contínua/IBGE. Não envolve julgamento de valor.
-
-    **(b) Normativa.** Contém o verbo "deveria", indicando prescrição baseada em julgamento de valor sobre o que é desejável. Duas pessoas podem concordar sobre o efeito positivo da medida (análise positiva) e discordar sobre se ela *deve* ser adotada (análise normativa).
-
-    **(c) Positiva.** É uma previsão quantitativa testável empiricamente — por exemplo, via modelos de equilíbrio parcial ou métodos econométricos. Não envolve juízo sobre se o aumento tarifário é bom ou ruim.
-
-    **(d) Normativa.** O conceito de "justiça" envolve julgamento de valor — diferentes concepções de equidade (rawlsiana, utilitarista, libertária) conduziriam a conclusões distintas sobre a mesma política.
-
-??? exercicio-resolvido "Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa"
-
-    **Enunciado.** Considere o seguinte modelo simplificado do mercado de café no Brasil:
-
-    - Demanda: \(Q^d = 200 - 4P + 2Y\), onde \(P\) é o preço e \(Y\) é a renda dos consumidores.
-    - Oferta: \(Q^s = -20 + 6P - 3C\), onde \(C\) é o custo dos insumos agrícolas.
-
-    (a) Identifique as variáveis exógenas e endógenas.
-
-    (b) Encontre o preço e a quantidade de equilíbrio como funções dos parâmetros exógenos.
-
-    (c) Se \(Y = 50\) e \(C = 10\), calcule \(P^*\) e \(Q^*\).
-
-    (d) Realize estática comparativa: qual o efeito de um aumento da renda sobre o preço de equilíbrio?
-
-    **Solução.**
-
-    **(a)** **Exógenas:** \(Y\) (renda) e \(C\) (custo dos insumos) — determinadas fora do modelo. **Endógenas:** \(P^*\) (preço) e \(Q^*\) (quantidade) — determinadas pelo equilíbrio do modelo.
-
-    **(b)** No equilíbrio, \(Q^d = Q^s\):
-
-    \[
-    200 - 4P + 2Y = -20 + 6P - 3C
-    \]
-
-    \[
-    220 + 2Y + 3C = 10P
-    \]
-
-    \[
-    P^* = 22 + 0{,}2Y + 0{,}3C
-    \]
-
-    Substituindo na função de demanda:
-
-    \[
-    Q^* = 200 - 4(22 + 0{,}2Y + 0{,}3C) + 2Y = 112 + 1{,}2Y - 1{,}2C
-    \]
-
-    **(c)** \(P^* = 22 + 0{,}2 \times 50 + 0{,}3 \times 10 = 22 + 10 + 3 = 35\)
-
-    \(Q^* = 112 + 1{,}2 \times 50 - 1{,}2 \times 10 = 112 + 60 - 12 = 160\)
-
-    **(d)** \(\dfrac{\partial P^*}{\partial Y} = 0{,}2 > 0\). Um aumento da renda eleva o preço de equilíbrio. Intuitivamente, mais renda desloca a curva de demanda para a direita (a cada preço dado, a quantidade demandada aumenta), pressionando o preço para cima. Este é um exercício de estática comparativa como descrito na Seção 1.4: variamos uma variável exógena (\(Y\)) e observamos o efeito sobre a variável endógena (\(P^*\)).
-
-??? exercicio-resolvido "Exercício Resolvido 1.3 — Maximização de lucro e a condição \(P = CMg\)"
-
-    **Enunciado.** Uma firma competitiva tem função de custo total \(CT(q) = 50 + 8q + 0{,}5q^2\). O preço de mercado é \(P = 28\).
-
-    (a) Determine o custo marginal e o custo médio.
-
-    (b) Encontre a quantidade que maximiza o lucro usando a condição \(P = CMg\).
-
-    (c) Verifique a condição de segunda ordem.
-
-    (d) Calcule o lucro máximo.
-
-    (e) Identifique as variáveis exógenas e endógenas neste modelo.
-
-    **Solução.**
-
-    **(a)**
-
-    \[
-    CMg(q) = \frac{dCT}{dq} = 8 + q
-    \]
-
-    \[
-    CMe(q) = \frac{CT(q)}{q} = \frac{50}{q} + 8 + 0{,}5q
-    \]
-
-    **(b)** Pela condição de primeira ordem (\(P = CMg\)):
-
-    \[
-    28 = 8 + q \implies q^* = 20
-    \]
-
-    **(c)** A condição de segunda ordem exige \(\dfrac{dCMg}{dq}\bigg|_{q^*} > 0\):
-
-    \[
-    \frac{dCMg}{dq} = 1 > 0 \quad \checkmark
-    \]
-
-    O custo marginal é crescente em todo o domínio, confirmando que \(q^* = 20\) é um máximo do lucro.
-
-    **(d)**
-
-    \[
-    \pi^* = P \cdot q^* - CT(q^*) = 28 \times 20 - (50 + 8 \times 20 + 0{,}5 \times 400)
-    \]
-
-    \[
-    \pi^* = 560 - 50 - 160 - 200 = 150
-    \]
-
-    **(e)** **Exógenas:** preço de mercado \(P\), parâmetros da função de custo (50, 8, 0,5). **Endógena:** quantidade ótima \(q^*\) (e, por consequência, o lucro \(\pi^*\)).
 
 ---
 

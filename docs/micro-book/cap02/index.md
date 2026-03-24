@@ -201,6 +201,40 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 
     **Por que isso importa:** O Teorema da Envoltória simplifica drasticamente a estática comparativa: em vez de recalcular todo o ótimo, basta olhar o efeito direto do parâmetro sobre a função objetivo.
 
+??? exercicio-resolvido "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
+
+    **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
+
+    **Dados:** \(P = a - Q\), \(CT = cQ\), parâmetros \(a, c > 0\).
+
+    **Resolução:**
+
+    **Passo 1 — Encontrar a solução ótima**
+
+    Lucro: \(\pi(Q, c) = (a - Q)Q - cQ = aQ - Q^2 - cQ = (a - c)Q - Q^2\).
+
+    CPO: \(\frac{\partial \pi}{\partial Q} = a - c - 2Q = 0 \implies Q^*(c) = \frac{a - c}{2}\).
+
+    Lucro máximo: \(\pi^*(c) = \frac{(a - c)^2}{4}\).
+
+    **Passo 2 — Aplicar o teorema do envelope**
+
+    Pelo teorema do envelope (Seção 2.4):
+
+    \[
+    \frac{d\pi^*}{dc} = \frac{\partial \pi}{\partial c}\bigg|_{Q = Q^*} = -Q^* = -\frac{a - c}{2}
+    \]
+
+    **Passo 3 — Verificar por diferenciação direta**
+
+    \[
+    \frac{d\pi^*}{dc} = \frac{d}{dc}\left[\frac{(a-c)^2}{4}\right] = \frac{2(a-c)(-1)}{4} = -\frac{a-c}{2} \quad \checkmark
+    \]
+
+    **Resultado:** \(\frac{d\pi^*}{dc} = -\frac{a-c}{2} < 0\).
+
+    **Interpretação econômica:** Um aumento unitário no custo marginal reduz o lucro máximo em \(\frac{a-c}{2}\), que é exatamente a quantidade ótima produzida. A elegância do teorema do envelope está em dispensar o cálculo de como \(Q^*\) se ajusta: basta a derivada parcial direta do lucro em relação a \(c\), avaliada no ótimo. No Brasil, quando a Petrobras eleva o preço dos derivados (aumento de \(c\) para distribuidoras), o teorema do envelope permite estimar rapidamente o impacto sobre o lucro do setor sem recalcular toda a cadeia de ajustes de quantidade.
+
 ---
 
 ## 2.5 Maximização com restrições: o método de Lagrange
@@ -697,6 +731,46 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 
 O exercício com a CES é um investimento que se pagará ao longo de todo o livro: as demandas marshallianas CES reaparecerão no Capítulo 4 (escolha do consumidor), no Capítulo 5 (equação de Slutsky), e na análise de comércio internacional baseada no modelo de Armington. O leitor que dominar a álgebra da CES estará preparado para esses desenvolvimentos.
 
+??? exercicio-resolvido "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
+
+    **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(I = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
+
+    **Dados:** \(U = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\), \(I = 100\).
+
+    **Resolução:**
+
+    **Passo 1 — Montar o Lagrangeano**
+
+    \[
+    \mathcal{L} = x_1^{1/2} x_2^{1/2} + \lambda(100 - 4x_1 - x_2)
+    \]
+
+    **Passo 2 — Condições de primeira ordem**
+
+    \[
+    \frac{\partial \mathcal{L}}{\partial x_1} = \frac{1}{2} x_1^{-1/2} x_2^{1/2} - 4\lambda = 0 \quad \Rightarrow \quad \frac{x_2^{1/2}}{2x_1^{1/2}} = 4\lambda
+    \]
+
+    \[
+    \frac{\partial \mathcal{L}}{\partial x_2} = \frac{1}{2} x_1^{1/2} x_2^{-1/2} - \lambda = 0 \quad \Rightarrow \quad \frac{x_1^{1/2}}{2x_2^{1/2}} = \lambda
+    \]
+
+    \[
+    \frac{\partial \mathcal{L}}{\partial \lambda} = 100 - 4x_1 - x_2 = 0
+    \]
+
+    **Passo 3 — Resolver o sistema**
+
+    Dividindo a primeira CPO pela segunda: \(\frac{x_2}{x_1} = 4\), logo \(x_2 = 4x_1\).
+
+    Substituindo na restrição: \(4x_1 + 4x_1 = 100 \implies x_1^* = 12{,}5\) e \(x_2^* = 50\).
+
+    Da segunda CPO: \(\lambda^* = \frac{(12{,}5)^{1/2}}{2(50)^{1/2}} = \frac{\sqrt{12{,}5}}{2\sqrt{50}} = \frac{\sqrt{1/4}}{2} = \frac{1}{4} = 0{,}25\).
+
+    **Resultado:** Cesta ótima: \((x_1^*, x_2^*) = (12{,}5;\ 50)\). Multiplicador: \(\lambda^* = 0{,}25\).
+
+    **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}25\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,25 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
+
 Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples — e de enorme utilidade prática: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
 
 ---
@@ -836,6 +910,42 @@ As condições KKT são:
     onde \(\bar{G}\) é o teto fiscal. As condições de Kuhn-Tucker (Seção 2.7) implicam que, se o teto é ativo (\(\sum g_i = \bar{G}\)), o multiplicador \(\lambda > 0\) mede o **custo social marginal** da restrição fiscal — quanto de bem-estar a sociedade sacrifica por não poder gastar uma unidade adicional. Se o teto não é ativo, \(\lambda = 0\) e a restrição fiscal é irrelevante.
 
     **Folga complementar na prática.** Na maioria dos exercícios fiscais desde 2017, o teto foi uma restrição ativa (vinculante), com \(\lambda > 0\). A transição para o novo arcabouço fiscal em 2023 modificou os parâmetros da restrição, mas preservou a lógica de otimização sob restrição de desigualdade. As pressões por ampliação do teto revelam, na prática, que o multiplicador \(\lambda\) é percebido como significativamente positivo — o custo social da restrição é elevado.
+
+??? exercicio-resolvido "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
+
+    **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I\). Encontre a cesta ótima para \(I = 20\) e \(I = 0{,}5\), identificando soluções interiores e de canto.
+
+    **Dados:** \(U = 2x_1^{1/2} + x_2\), \(p_1 = 4\), \(p_2 = 1\).
+
+    **Resolução:**
+
+    **Passo 1 — Montar o Lagrangeano e condições KKT**
+
+    \[
+    \mathcal{L} = 2\sqrt{x_1} + x_2 + \lambda(I - 4x_1 - x_2)
+    \]
+
+    Condições KKT:
+
+    - \(\frac{\partial \mathcal{L}}{\partial x_1} = x_1^{-1/2} - 4\lambda \leq 0\), com igualdade se \(x_1 > 0\)
+    - \(\frac{\partial \mathcal{L}}{\partial x_2} = 1 - \lambda \leq 0\), com igualdade se \(x_2 > 0\)
+    - \(4x_1 + x_2 \leq I\), com igualdade se \(\lambda > 0\)
+
+    **Passo 2 — Caso \(I = 20\) (solução interior)**
+
+    Se \(x_2 > 0\): da segunda condição, \(\lambda = 1\). Da primeira: \(x_1^{-1/2} = 4 \implies x_1^* = 1/16\). Gasto em \(x_1\): \(4 \times 1/16 = 1/4\). Sobra: \(x_2^* = 20 - 1/4 = 19{,}75\).
+
+    Verificação: \(x_1 > 0\), \(x_2 > 0\), restrição ativa. Todas as condições KKT satisfeitas.
+
+    **Passo 3 — Caso \(I = 0{,}5\) (solução de canto)**
+
+    Se \(x_2 > 0\), então \(\lambda = 1\) e \(x_1 = 1/16\), exigindo gasto de \(4 \times 1/16 = 0{,}25\). Sobraria \(x_2 = 0{,}25\). Mas verifiquemos: com \(I = 0{,}5\), o consumidor pode alocar tudo em \(x_1\): \(x_1 = 0{,}5/4 = 0{,}125\), obtendo \(U = 2\sqrt{0{,}125} \approx 0{,}707\). Ou alocar como na solução interior: \(U = 2\sqrt{1/16} + 0{,}25 = 0{,}5 + 0{,}25 = 0{,}75\). A solução interior é melhor.
+
+    De fato, com \(I = 0{,}5\), a solução interior \(x_1 = 1/16\), \(x_2 = 0{,}25\) é viável e satisfaz as KKT. A solução de canto (\(x_2 = 0\)) só ocorreria se a renda fosse menor que \(0{,}25\), pois o gasto mínimo em \(x_1\) na solução interior é \(1/4\).
+
+    **Resultado:** Para \(I = 20\): \((x_1^*, x_2^*) = (1/16,\ 19{,}75)\). Para \(I = 0{,}5\): \((x_1^*, x_2^*) = (1/16,\ 0{,}25)\). A solução de canto (\(x_2 = 0\)) ocorre para \(I < 0{,}25\).
+
+    **Interpretação econômica:** A utilidade quase-linear implica que a demanda por \(x_1\) é independente da renda (quando a solução é interior): \(x_1^* = 1/16\) para qualquer \(I \geq 0{,}25\). Todo aumento de renda é absorvido por \(x_2\). Isso é uma propriedade importante: com preferências quase-lineares, não há efeito-renda sobre o bem \(x_1\), simplificando a análise de bem-estar — o excedente do consumidor é uma medida exata da variação de utilidade.
 
 ---
 
@@ -1122,124 +1232,6 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 | Teorema de Euler | Para funções homogêneas de grau \(k\): \(\sum x_i f_i = k \cdot f\); implica a exaustão do produto sob retornos constantes de escala. |
 | Quase-concavidade | Propriedade de funções cujos conjuntos de nível superior são convexos; garante curvas de indiferença convexas e condições de segunda ordem em problemas restritos. |
 | Equação de Euler (intertemporal) | Condição \(u'(c_t) = \beta(1+r)u'(c_{t+1})\) que iguala o custo marginal de consumir hoje ao benefício marginal de poupar e consumir amanhã. |
-
----
-
-## 🎯 Exercícios Resolvidos
-
-Os exercícios resolvidos a seguir aplicam as principais ferramentas matemáticas do capítulo a problemas econômicos concretos. O primeiro resolve um problema de maximização de utilidade via Lagrange, incluindo a interpretação econômica do multiplicador. O segundo demonstra a aplicação do teorema do envelope a uma firma monopolista. O terceiro explora as condições de Kuhn-Tucker em um contexto com soluções de canto. Em cada caso, recomenda-se acompanhar a resolução passo a passo, verificando que cada etapa corresponde às condições formais apresentadas nas seções anteriores.
-
-??? exercicio-resolvido "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
-
-    **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(I = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
-
-    **Dados:** \(U = x_1^{1/2} x_2^{1/2}\), \(p_1 = 4\), \(p_2 = 1\), \(I = 100\).
-
-    **Resolução:**
-
-    **Passo 1 — Montar o Lagrangeano**
-
-    \[
-    \mathcal{L} = x_1^{1/2} x_2^{1/2} + \lambda(100 - 4x_1 - x_2)
-    \]
-
-    **Passo 2 — Condições de primeira ordem**
-
-    \[
-    \frac{\partial \mathcal{L}}{\partial x_1} = \frac{1}{2} x_1^{-1/2} x_2^{1/2} - 4\lambda = 0 \quad \Rightarrow \quad \frac{x_2^{1/2}}{2x_1^{1/2}} = 4\lambda
-    \]
-
-    \[
-    \frac{\partial \mathcal{L}}{\partial x_2} = \frac{1}{2} x_1^{1/2} x_2^{-1/2} - \lambda = 0 \quad \Rightarrow \quad \frac{x_1^{1/2}}{2x_2^{1/2}} = \lambda
-    \]
-
-    \[
-    \frac{\partial \mathcal{L}}{\partial \lambda} = 100 - 4x_1 - x_2 = 0
-    \]
-
-    **Passo 3 — Resolver o sistema**
-
-    Dividindo a primeira CPO pela segunda: \(\frac{x_2}{x_1} = 4\), logo \(x_2 = 4x_1\).
-
-    Substituindo na restrição: \(4x_1 + 4x_1 = 100 \implies x_1^* = 12{,}5\) e \(x_2^* = 50\).
-
-    Da segunda CPO: \(\lambda^* = \frac{(12{,}5)^{1/2}}{2(50)^{1/2}} = \frac{\sqrt{12{,}5}}{2\sqrt{50}} = \frac{\sqrt{1/4}}{2} = \frac{1}{4} = 0{,}25\).
-
-    **Resultado:** Cesta ótima: \((x_1^*, x_2^*) = (12{,}5;\ 50)\). Multiplicador: \(\lambda^* = 0{,}25\).
-
-    **Interpretação econômica:** O consumidor gasta metade da renda em cada bem: \(4 \times 12{,}5 = 50\) e \(1 \times 50 = 50\). Isso é uma propriedade geral da Cobb-Douglas com expoentes iguais. O multiplicador \(\lambda^* = 0{,}25\) significa que um real adicional de renda aumentaria a utilidade máxima em 0,25 unidades — é a utilidade marginal da renda. No contexto do Bolsa Família, por exemplo, \(\lambda\) mede o ganho de bem-estar por real transferido a uma família beneficiária.
-
-??? exercicio-resolvido "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
-
-    **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
-
-    **Dados:** \(P = a - Q\), \(CT = cQ\), parâmetros \(a, c > 0\).
-
-    **Resolução:**
-
-    **Passo 1 — Encontrar a solução ótima**
-
-    Lucro: \(\pi(Q, c) = (a - Q)Q - cQ = aQ - Q^2 - cQ = (a - c)Q - Q^2\).
-
-    CPO: \(\frac{\partial \pi}{\partial Q} = a - c - 2Q = 0 \implies Q^*(c) = \frac{a - c}{2}\).
-
-    Lucro máximo: \(\pi^*(c) = \frac{(a - c)^2}{4}\).
-
-    **Passo 2 — Aplicar o teorema do envelope**
-
-    Pelo teorema do envelope (Seção 2.4):
-
-    \[
-    \frac{d\pi^*}{dc} = \frac{\partial \pi}{\partial c}\bigg|_{Q = Q^*} = -Q^* = -\frac{a - c}{2}
-    \]
-
-    **Passo 3 — Verificar por diferenciação direta**
-
-    \[
-    \frac{d\pi^*}{dc} = \frac{d}{dc}\left[\frac{(a-c)^2}{4}\right] = \frac{2(a-c)(-1)}{4} = -\frac{a-c}{2} \quad \checkmark
-    \]
-
-    **Resultado:** \(\frac{d\pi^*}{dc} = -\frac{a-c}{2} < 0\).
-
-    **Interpretação econômica:** Um aumento unitário no custo marginal reduz o lucro máximo em \(\frac{a-c}{2}\), que é exatamente a quantidade ótima produzida. A elegância do teorema do envelope está em dispensar o cálculo de como \(Q^*\) se ajusta: basta a derivada parcial direta do lucro em relação a \(c\), avaliada no ótimo. No Brasil, quando a Petrobras eleva o preço dos derivados (aumento de \(c\) para distribuidoras), o teorema do envelope permite estimar rapidamente o impacto sobre o lucro do setor sem recalcular toda a cadeia de ajustes de quantidade.
-
-??? exercicio-resolvido "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
-
-    **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I\). Encontre a cesta ótima para \(I = 20\) e \(I = 0{,}5\), identificando soluções interiores e de canto.
-
-    **Dados:** \(U = 2x_1^{1/2} + x_2\), \(p_1 = 4\), \(p_2 = 1\).
-
-    **Resolução:**
-
-    **Passo 1 — Montar o Lagrangeano e condições KKT**
-
-    \[
-    \mathcal{L} = 2\sqrt{x_1} + x_2 + \lambda(I - 4x_1 - x_2)
-    \]
-
-    Condições KKT:
-
-    - \(\frac{\partial \mathcal{L}}{\partial x_1} = x_1^{-1/2} - 4\lambda \leq 0\), com igualdade se \(x_1 > 0\)
-    - \(\frac{\partial \mathcal{L}}{\partial x_2} = 1 - \lambda \leq 0\), com igualdade se \(x_2 > 0\)
-    - \(4x_1 + x_2 \leq I\), com igualdade se \(\lambda > 0\)
-
-    **Passo 2 — Caso \(I = 20\) (solução interior)**
-
-    Se \(x_2 > 0\): da segunda condição, \(\lambda = 1\). Da primeira: \(x_1^{-1/2} = 4 \implies x_1^* = 1/16\). Gasto em \(x_1\): \(4 \times 1/16 = 1/4\). Sobra: \(x_2^* = 20 - 1/4 = 19{,}75\).
-
-    Verificação: \(x_1 > 0\), \(x_2 > 0\), restrição ativa. Todas as condições KKT satisfeitas.
-
-    **Passo 3 — Caso \(I = 0{,}5\) (solução de canto)**
-
-    Se \(x_2 > 0\), então \(\lambda = 1\) e \(x_1 = 1/16\), exigindo gasto de \(4 \times 1/16 = 0{,}25\). Sobraria \(x_2 = 0{,}25\). Mas verifiquemos: com \(I = 0{,}5\), o consumidor pode alocar tudo em \(x_1\): \(x_1 = 0{,}5/4 = 0{,}125\), obtendo \(U = 2\sqrt{0{,}125} \approx 0{,}707\). Ou alocar como na solução interior: \(U = 2\sqrt{1/16} + 0{,}25 = 0{,}5 + 0{,}25 = 0{,}75\). A solução interior é melhor.
-
-    De fato, com \(I = 0{,}5\), a solução interior \(x_1 = 1/16\), \(x_2 = 0{,}25\) é viável e satisfaz as KKT. A solução de canto (\(x_2 = 0\)) só ocorreria se a renda fosse menor que \(0{,}25\), pois o gasto mínimo em \(x_1\) na solução interior é \(1/4\).
-
-    **Resultado:** Para \(I = 20\): \((x_1^*, x_2^*) = (1/16,\ 19{,}75)\). Para \(I = 0{,}5\): \((x_1^*, x_2^*) = (1/16,\ 0{,}25)\). A solução de canto (\(x_2 = 0\)) ocorre para \(I < 0{,}25\).
-
-    **Interpretação econômica:** A utilidade quase-linear implica que a demanda por \(x_1\) é independente da renda (quando a solução é interior): \(x_1^* = 1/16\) para qualquer \(I \geq 0{,}25\). Todo aumento de renda é absorvido por \(x_2\). Isso é uma propriedade importante: com preferências quase-lineares, não há efeito-renda sobre o bem \(x_1\), simplificando a análise de bem-estar — o excedente do consumidor é uma medida exata da variação de utilidade.
-
----
 
 ## ✏️ Exercícios
 

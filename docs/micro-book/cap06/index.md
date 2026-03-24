@@ -97,6 +97,44 @@ O resultado da seção anterior — de que, com dois bens, a substituição líq
 
 A palavra "bruta" na expressão "substituto bruto" evoca justamente essa contaminação: a derivada \(\frac{\partial x_i}{\partial p_j}\) mistura, de forma inseparável, a resposta substitutiva pura (a tendência de trocar um bem por outro quando seus preços relativos mudam) com a resposta de renda (a redução no poder de compra que acompanha toda elevação de preço). A classificação bruta não é errada — ela descreve fielmente o comportamento observado no mercado. Mas é incompleta como base teórica, porque não revela a estrutura subjacente das preferências.
 
+??? exercicio-resolvido "Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
+
+    **Enunciado.** Considere a função de utilidade Cobb-Douglas \(U(x,y) = x^a y^{1-a}\), com \(0 < a < 1\), preços \(p_x, p_y\) e renda \(I\).
+
+    (a) Derive as demandas marshallianas.
+
+    (b) Calcule a elasticidade-preço cruzada da demanda por \(x\) em relação a \(p_y\).
+
+    (c) Interprete o resultado à luz da classificação bruta (marshalliana).
+
+    **Solução.**
+
+    **(a)** As demandas marshallianas da Cobb-Douglas são:
+
+    \[
+    x^* = \frac{aI}{p_x}, \qquad y^* = \frac{(1-a)I}{p_y}
+    \]
+
+    **(b)** A elasticidade-preço cruzada de \(x\) em relação a \(p_y\) é:
+
+    \[
+    \varepsilon_{x, p_y} = \frac{\partial x^*}{\partial p_y} \cdot \frac{p_y}{x^*}
+    \]
+
+    Como \(x^* = \frac{aI}{p_x}\) não depende de \(p_y\):
+
+    \[
+    \frac{\partial x^*}{\partial p_y} = 0 \implies \varepsilon_{x, p_y} = 0
+    \]
+
+    **(c)** Na Cobb-Douglas, os bens são **independentes** na classificação bruta: a demanda por cada bem depende apenas de seu próprio preço e da renda, nunca do preço do outro bem. Isso ocorre porque o efeito substituição cruzado (positivo, pois temos dois bens) é exatamente compensado pelo efeito renda cruzado (negativo, pois ambos são bens normais). Pela Equação de Slutsky:
+
+    \[
+    \underbrace{\frac{\partial x}{\partial p_y}}_{=\,0} = \underbrace{\frac{\partial h_x}{\partial p_y}}_{>\,0} - \underbrace{y \cdot \frac{\partial x}{\partial I}}_{>\,0}
+    \]
+
+    Os dois efeitos se cancelam perfeitamente — uma propriedade especial da Cobb-Douglas.
+
 ---
 
 ## 6.3 Substitutos e Complementos Líquidos (Hicksianos)
@@ -158,6 +196,28 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 <div class="caption-obj" markdown>
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
 </div>
+
+??? exercicio-resolvido "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
+
+    **Enunciado.** Um consumidor tem utilidade \(U(x,y) = 2x + y\), preços iniciais \(p_x = p_y = 2\) e renda \(I = 100\).
+
+    (a) Determine a cesta ótima inicial.
+
+    (b) Se \(p_x\) cai para 1, determine a nova cesta ótima.
+
+    (c) Decomponha a variação na demanda por \(x\) em efeito substituição e efeito renda (Slutsky).
+
+    **Solução.**
+
+    **(a)** Com substitutos perfeitos, o consumidor compara as "utilidades marginais por real gasto": \(UMg_x / p_x = 2/2 = 1\) e \(UMg_y / p_y = 1/2 = 0{,}5\). Como \(UMg_x/p_x > UMg_y/p_y\), a solução é de canto: \(x^* = I/p_x = 100/2 = 50\), \(y^* = 0\).
+
+    **(b)** Com \(p_x = 1\): \(UMg_x/p_x = 2/1 = 2 > 1/2 = UMg_y/p_y\). A solução continua de canto: \(x^* = 100/1 = 100\), \(y^* = 0\). A variação total é \(\Delta x = 100 - 50 = 50\).
+
+    **(c)** **Efeito substituição (Slutsky):** compensamos a renda para que o consumidor possa comprar exatamente a cesta inicial aos novos preços. Custo da cesta inicial \((50, 0)\) a preços novos \((1, 2)\): \(1 \times 50 + 2 \times 0 = 50\). Com renda compensada \(I' = 50\) e preços \((1, 2)\): \(UMg_x/p_x = 2 > UMg_y/p_y = 0{,}5\), logo \(x^{ES} = 50/1 = 50\). O efeito substituição é \(50 - 50 = 0\).
+
+    **Efeito renda:** \(\Delta x_{ER} = 100 - 50 = 50\). Toda a variação é efeito renda.
+
+    **Interpretação:** com substitutos perfeitos lineares, quando o consumidor já consome apenas \(x\) antes e depois da mudança, o efeito substituição é zero — ele não "troca" de bem, apenas consome mais do mesmo com o aumento do poder de compra. Este é um resultado importante e frequente em provas da ANPEC.
 
 ---
 
@@ -419,6 +479,50 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 !!! note "Suavização pela agregação"
     A agregação tende a "suavizar" irregularidades individuais. Mesmo que consumidores individuais tenham demandas com descontinuidades (por exemplo, escolhas discretas entre marcas), a demanda de mercado pode ser bem aproximada por uma função contínua e diferenciável, desde que haja heterogeneidade suficiente entre consumidores.
 
+??? exercicio-resolvido "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
+
+    **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
+
+    - Consumidor A: \(x_1^A = \frac{I^A}{2p_1}\)
+    - Consumidor B: \(x_1^B = \frac{I^B}{3p_1}\)
+
+    (a) Verifique se a condição de Gorman é satisfeita.
+
+    (b) A demanda agregada pode ser escrita como função da renda total?
+
+    (c) Mostre que uma redistribuição de renda entre A e B altera a demanda de mercado.
+
+    **Solução.**
+
+    **(a)** A condição de Gorman exige curvas de Engel lineares e paralelas. A curva de Engel do consumidor \(h\) relaciona \(x_1^h\) a \(I^h\) (a preços fixos):
+
+    - Consumidor A: \(x_1^A = \frac{1}{2p_1} \cdot I^A\) — linear, com coeficiente angular \(\frac{1}{2p_1}\).
+    - Consumidor B: \(x_1^B = \frac{1}{3p_1} \cdot I^B\) — linear, com coeficiente angular \(\frac{1}{3p_1}\).
+
+    As curvas de Engel são lineares mas **não paralelas** (coeficientes angulares distintos: \(1/2p_1 \neq 1/3p_1\)). A condição de Gorman **não** é satisfeita.
+
+    **(b)** A demanda de mercado é:
+
+    \[
+    X_1 = \frac{I^A}{2p_1} + \frac{I^B}{3p_1} = \frac{3I^A + 2I^B}{6p_1}
+    \]
+
+    Esta expressão depende de \(I^A\) e \(I^B\) separadamente — não pode ser escrita apenas como função de \(I = I^A + I^B\).
+
+    **(c)** Sejam \(I^A = I^B = 100\) e \(p_1 = 10\):
+
+    \[
+    X_1 = \frac{100}{20} + \frac{100}{30} = 5 + 3{,}33 = 8{,}33
+    \]
+
+    Após redistribuição (\(I^A = 50\), \(I^B = 150\), mesma renda total):
+
+    \[
+    X_1 = \frac{50}{20} + \frac{150}{30} = 2{,}5 + 5 = 7{,}5
+    \]
+
+    A demanda caiu de 8,33 para 7,5 apesar de a renda total permanecer em 200. A redistribuição transferiu renda do consumidor com maior propensão marginal a consumir o bem (A) para o consumidor com menor propensão (B).
+
 ---
 
 ## 6.8 — Classificação de Pares de Bens no Contexto Brasileiro
@@ -524,116 +628,6 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 | Modelo de Lancaster | Teoria em que a utilidade depende dos atributos dos bens, não dos bens em si, gerando preços hedônicos implícitos. |
 | Condição de Gorman | Condição sob a qual a demanda de mercado depende apenas da renda agregada: curvas de Engel lineares e paralelas para todos os consumidores. |
 | Preços hedônicos | Preços implícitos dos atributos de um bem, estimados pela decomposição do preço de mercado em contribuições de cada característica. |
-
----
-
-## 🎯 Exercícios Resolvidos
-
-??? exercicio-resolvido "Exercício Resolvido 6.1 — Elasticidade-preço cruzada com Cobb-Douglas"
-
-    **Enunciado.** Considere a função de utilidade Cobb-Douglas \(U(x,y) = x^a y^{1-a}\), com \(0 < a < 1\), preços \(p_x, p_y\) e renda \(I\).
-
-    (a) Derive as demandas marshallianas.
-
-    (b) Calcule a elasticidade-preço cruzada da demanda por \(x\) em relação a \(p_y\).
-
-    (c) Interprete o resultado à luz da classificação bruta (marshalliana).
-
-    **Solução.**
-
-    **(a)** As demandas marshallianas da Cobb-Douglas são:
-
-    \[
-    x^* = \frac{aI}{p_x}, \qquad y^* = \frac{(1-a)I}{p_y}
-    \]
-
-    **(b)** A elasticidade-preço cruzada de \(x\) em relação a \(p_y\) é:
-
-    \[
-    \varepsilon_{x, p_y} = \frac{\partial x^*}{\partial p_y} \cdot \frac{p_y}{x^*}
-    \]
-
-    Como \(x^* = \frac{aI}{p_x}\) não depende de \(p_y\):
-
-    \[
-    \frac{\partial x^*}{\partial p_y} = 0 \implies \varepsilon_{x, p_y} = 0
-    \]
-
-    **(c)** Na Cobb-Douglas, os bens são **independentes** na classificação bruta: a demanda por cada bem depende apenas de seu próprio preço e da renda, nunca do preço do outro bem. Isso ocorre porque o efeito substituição cruzado (positivo, pois temos dois bens) é exatamente compensado pelo efeito renda cruzado (negativo, pois ambos são bens normais). Pela Equação de Slutsky:
-
-    \[
-    \underbrace{\frac{\partial x}{\partial p_y}}_{=\,0} = \underbrace{\frac{\partial h_x}{\partial p_y}}_{>\,0} - \underbrace{y \cdot \frac{\partial x}{\partial I}}_{>\,0}
-    \]
-
-    Os dois efeitos se cancelam perfeitamente — uma propriedade especial da Cobb-Douglas.
-
-??? exercicio-resolvido "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
-
-    **Enunciado.** Um consumidor tem utilidade \(U(x,y) = 2x + y\), preços iniciais \(p_x = p_y = 2\) e renda \(I = 100\).
-
-    (a) Determine a cesta ótima inicial.
-
-    (b) Se \(p_x\) cai para 1, determine a nova cesta ótima.
-
-    (c) Decomponha a variação na demanda por \(x\) em efeito substituição e efeito renda (Slutsky).
-
-    **Solução.**
-
-    **(a)** Com substitutos perfeitos, o consumidor compara as "utilidades marginais por real gasto": \(UMg_x / p_x = 2/2 = 1\) e \(UMg_y / p_y = 1/2 = 0{,}5\). Como \(UMg_x/p_x > UMg_y/p_y\), a solução é de canto: \(x^* = I/p_x = 100/2 = 50\), \(y^* = 0\).
-
-    **(b)** Com \(p_x = 1\): \(UMg_x/p_x = 2/1 = 2 > 1/2 = UMg_y/p_y\). A solução continua de canto: \(x^* = 100/1 = 100\), \(y^* = 0\). A variação total é \(\Delta x = 100 - 50 = 50\).
-
-    **(c)** **Efeito substituição (Slutsky):** compensamos a renda para que o consumidor possa comprar exatamente a cesta inicial aos novos preços. Custo da cesta inicial \((50, 0)\) a preços novos \((1, 2)\): \(1 \times 50 + 2 \times 0 = 50\). Com renda compensada \(I' = 50\) e preços \((1, 2)\): \(UMg_x/p_x = 2 > UMg_y/p_y = 0{,}5\), logo \(x^{ES} = 50/1 = 50\). O efeito substituição é \(50 - 50 = 0\).
-
-    **Efeito renda:** \(\Delta x_{ER} = 100 - 50 = 50\). Toda a variação é efeito renda.
-
-    **Interpretação:** com substitutos perfeitos lineares, quando o consumidor já consome apenas \(x\) antes e depois da mudança, o efeito substituição é zero — ele não "troca" de bem, apenas consome mais do mesmo com o aumento do poder de compra. Este é um resultado importante e frequente em provas da ANPEC.
-
-??? exercicio-resolvido "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
-
-    **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
-
-    - Consumidor A: \(x_1^A = \frac{I^A}{2p_1}\)
-    - Consumidor B: \(x_1^B = \frac{I^B}{3p_1}\)
-
-    (a) Verifique se a condição de Gorman é satisfeita.
-
-    (b) A demanda agregada pode ser escrita como função da renda total?
-
-    (c) Mostre que uma redistribuição de renda entre A e B altera a demanda de mercado.
-
-    **Solução.**
-
-    **(a)** A condição de Gorman exige curvas de Engel lineares e paralelas. A curva de Engel do consumidor \(h\) relaciona \(x_1^h\) a \(I^h\) (a preços fixos):
-
-    - Consumidor A: \(x_1^A = \frac{1}{2p_1} \cdot I^A\) — linear, com coeficiente angular \(\frac{1}{2p_1}\).
-    - Consumidor B: \(x_1^B = \frac{1}{3p_1} \cdot I^B\) — linear, com coeficiente angular \(\frac{1}{3p_1}\).
-
-    As curvas de Engel são lineares mas **não paralelas** (coeficientes angulares distintos: \(1/2p_1 \neq 1/3p_1\)). A condição de Gorman **não** é satisfeita.
-
-    **(b)** A demanda de mercado é:
-
-    \[
-    X_1 = \frac{I^A}{2p_1} + \frac{I^B}{3p_1} = \frac{3I^A + 2I^B}{6p_1}
-    \]
-
-    Esta expressão depende de \(I^A\) e \(I^B\) separadamente — não pode ser escrita apenas como função de \(I = I^A + I^B\).
-
-    **(c)** Sejam \(I^A = I^B = 100\) e \(p_1 = 10\):
-
-    \[
-    X_1 = \frac{100}{20} + \frac{100}{30} = 5 + 3{,}33 = 8{,}33
-    \]
-
-    Após redistribuição (\(I^A = 50\), \(I^B = 150\), mesma renda total):
-
-    \[
-    X_1 = \frac{50}{20} + \frac{150}{30} = 2{,}5 + 5 = 7{,}5
-    \]
-
-    A demanda caiu de 8,33 para 7,5 apesar de a renda total permanecer em 200. A redistribuição transferiu renda do consumidor com maior propensão marginal a consumir o bem (A) para o consumidor com menor propensão (B).
-
----
 
 ## ✏️ Exercícios
 
