@@ -731,15 +731,21 @@ E(\mathbf{p}, \bar{u}) = (a\, p_1 + b\, p_2)\,\bar{u}
 
 A função dispêndio é linear nos preços — não há curvatura porque não há substituição.
 
-### 4.10.4 CES: U(x₁, x₂) = (a x₁ᵖ + b x₂ᵖ)¹ᐟᵖ
+### 4.10.4 CES: U(x₁, x₂) = (a x₁<sup>ρ</sup> + b x₂<sup>ρ</sup>)<sup>1/ρ</sup>
 
 Após derivar separadamente os casos Cobb-Douglas, substitutos e complementos perfeitos, estamos em condições de apresentar a família que os unifica. A função CES (*Constant Elasticity of Substitution*) generaliza os três casos anteriores, e suas demandas oferecem uma visão integrada de como o grau de substituibilidade entre bens afeta o comportamento do consumidor. O parâmetro \(\rho \in (-\infty, 1]\setminus\{0\}\) determina a elasticidade de substituição \(\sigma = 1/(1-\rho)\):
+
+<a id="tabela-4-1"></a>
 
 | \(\rho\) | \(\sigma\) | Caso limite |
 |-----------|-----------|-------------|
 | \(\rho \to 1\) | \(\sigma \to \infty\) | Substitutos perfeitos |
 | \(\rho \to 0\) | \(\sigma \to 1\) | Cobb-Douglas |
 | \(\rho \to -\infty\) | \(\sigma \to 0\) | Complementares perfeitos |
+
+<div class="caption-obj" markdown>
+**Tabela 4.1 — Casos limite da função CES.** O parâmetro \(\rho\) determina a elasticidade de substituição \(\sigma = 1/(1-\rho)\).
+</div>
 
 **Demanda Marshalliana.** O consumidor resolve:
 
@@ -905,9 +911,9 @@ Os boxes a seguir ilustram como esses modelos se conectam a questões concretas 
 
 ## 4.11 — Funções do Consumidor: Quadro Resumo
 
-A [Tabela 4.1](#tabela-4-1) resume as cinco funções centrais da teoria do consumidor e suas propriedades. Este quadro serve tanto como referência rápida quanto como mapa conceitual das relações desenvolvidas ao longo do capítulo. Cada linha da tabela corresponde a um conceito fundamental; cada coluna, a uma dimensão analítica relevante. Ao percorrer a tabela, observe como as funções se organizam em pares duais — \(x_i\) e \(h_i\); \(V\) e \(E\) — e como as propriedades de homogeneidade, monotonia e curvatura refletem a estrutura subjacente das preferências.
+A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do consumidor e suas propriedades. Este quadro serve tanto como referência rápida quanto como mapa conceitual das relações desenvolvidas ao longo do capítulo. Cada linha da tabela corresponde a um conceito fundamental; cada coluna, a uma dimensão analítica relevante. Ao percorrer a tabela, observe como as funções se organizam em pares duais — \(x_i\) e \(h_i\); \(V\) e \(E\) — e como as propriedades de homogeneidade, monotonia e curvatura refletem a estrutura subjacente das preferências.
 
-<a id="tabela-4-1"></a>
+<a id="tabela-4-2"></a>
 
 | Função | Definição | Argumentos | Propriedades principais |
 |---|---|---|---|
@@ -918,7 +924,7 @@ A [Tabela 4.1](#tabela-4-1) resume as cinco funções centrais da teoria do cons
 | Função dispêndio \(E(\mathbf{p}, \bar{u})\) | Gasto mínimo para atingir \(\bar{u}\) | Preços \(\mathbf{p}\), utilidade \(\bar{u}\) | Homogênea de grau 1 em \(\mathbf{p}\); côncava em \(\mathbf{p}\); Lema de Shephard |
 
 <div class="caption-obj" markdown>
-**Tabela 4.1 — Funções do consumidor.**
+**Tabela 4.2 — Funções do consumidor.**
 </div>
 
 **Relações fundamentais**:
