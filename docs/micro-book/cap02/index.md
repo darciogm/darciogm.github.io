@@ -1140,14 +1140,6 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ---
 
-### Gráficos interativos
-
-Os gráficos interativos a seguir ilustram os principais conceitos desenvolvidos neste capítulo — otimização sem e com restrições, o método de Lagrange, condições de Kuhn-Tucker e funções homogêneas. Cada gráfico permite manipular parâmetros em tempo real, de modo que o leitor possa observar como as soluções ótimas, as curvas de nível e os multiplicadores se ajustam simultaneamente.
-
-A visualização interativa é um complemento essencial à exposição formal. Enquanto as demonstrações algébricas estabelecem *por que* os resultados são verdadeiros, os gráficos mostram *como* eles se manifestam geometricamente — tornando tangível a relação entre gradientes paralelos, tangência de curvas de nível e folga complementar, por exemplo.
-
-Ao longo de todo o livro, cada capítulo contará com gráficos interativos semelhantes, adaptados aos temas específicos daquela seção. Essa abordagem visual-interativa acompanha o leitor desde os fundamentos matemáticos aqui apresentados até as aplicações em teoria do consumidor, teoria da firma, equilíbrio geral e economia da informação.
-
 <iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.5 — Otimização de função de uma variável" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
