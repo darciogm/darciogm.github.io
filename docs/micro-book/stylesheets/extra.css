@@ -201,6 +201,17 @@ code, pre, kbd, .highlight {
   border-left: 4px solid #009c3b;
 }
 
+/* Box Mundo — Casos aplicados internacionais (EUA, Europa, Ásia, etc.) */
+.md-typeset .admonition.box-mundo,
+.md-typeset details.box-mundo {
+  border-color: #1B3A5C;
+}
+.md-typeset .box-mundo > .admonition-title,
+.md-typeset .box-mundo > summary {
+  background-color: rgba(27, 58, 92, 0.1);
+  color: #1B3A5C;
+}
+
 
 /* ================================================================
    4. HUB — Cards de navegação na página inicial

@@ -4,7 +4,9 @@ A teoria da produção constitui o alicerce sobre o qual se ergue toda a anális
 
 A **função de produção** é o instrumento analítico que sintetiza a tecnologia disponível para a firma. A partir dela, derivamos conceitos fundamentais — produtividade marginal, isoquantas, taxa marginal de substituição técnica (TMST), rendimentos de escala e elasticidade de substituição — que serão mobilizados nos capítulos seguintes para construir as curvas de custo e de oferta.
 
-O capítulo está organizado em seis seções. Começamos pela produtividade marginal e pelas relações entre produto total, médio e marginal (Seção 10.1). Em seguida, introduzimos as isoquantas e a TMST (Seção 10.2), o conceito de rendimentos de escala (Seção 10.3) e a elasticidade de substituição (Seção 10.4). A Seção 10.5 apresenta quatro famílias de funções de produção clássicas — linear, Leontief, Cobb-Douglas e CES — e a Seção 10.6 incorpora o progresso técnico. Um Box Brasil dedicado à revolução agrícola impulsionada pela [Embrapa](https://www.embrapa.br) ilustra como a teoria encontra expressão concreta na transformação produtiva do país.
+O capítulo está organizado em sete seções. Começamos pela produtividade marginal e pelas relações entre produto total, médio e marginal (Seção 10.1). Em seguida, introduzimos as isoquantas e a TMST (Seção 10.2), o conceito de rendimentos de escala (Seção 10.3) e a elasticidade de substituição (Seção 10.4). A Seção 10.5 apresenta quatro famílias de funções de produção clássicas — linear, Leontief, Cobb-Douglas e CES —, a Seção 10.6 incorpora o progresso técnico, e a Seção 10.7 discute funções de produção homotéticas e suas implicações para a função custo. Boxes Brasil e Mundo ao longo do capítulo ilustram como a teoria encontra expressão concreta — da revolução agrícola da [Embrapa](https://www.embrapa.br) ao debate sobre o declínio da participação do trabalho na renda nas economias avançadas.
+
+O material deste capítulo pressupõe familiaridade com as ferramentas matemáticas do Capítulo 2 — em especial diferenciação de funções multivariadas, regra da cadeia e diferenciação implícita — e conecta-se à teoria do consumidor do Capítulo 4 por meio de uma dualidade formal: a firma que minimiza custos sujeita a uma restrição de produto resolve um problema analiticamente idêntico ao do consumidor que minimiza gastos sujeita a uma restrição de utilidade. Essa dualidade, explorada nos Capítulos 11 e 12, permite derivar resultados sobre oferta e custos aproveitando diretamente a intuição desenvolvida no lado do consumidor.
 
 ---
 
@@ -13,6 +15,10 @@ O capítulo está organizado em seis seções. Começamos pela produtividade mar
 ### A função de produção
 
 Por que algumas firmas produzem mais que outras com quantidades semelhantes de insumos? A resposta está na **tecnologia** — o conjunto de conhecimentos e processos que determinam como insumos são combinados para gerar produto. A função de produção é a representação matemática dessa tecnologia.
+
+A teoria da produção ocupa na análise da firma o mesmo papel que a teoria das preferências ocupa na análise do consumidor: ela descreve o que é *tecnologicamente possível*, sem ainda incorporar considerações de preço ou custo. Assim como no Capítulo 2 aprendemos as ferramentas matemáticas de diferenciação e otimização com restrições, aqui as mobilizamos para caracterizar como o produto reage a variações nos insumos. E assim como no Capítulo 4 a função de utilidade descrevia as preferências do consumidor, a função de produção descreve as possibilidades tecnológicas da firma — os capítulos seguintes (11 e 12) irão adicionar os preços dos fatores para derivar custos e a oferta.
+
+É útil pensar na função de produção como uma "receita técnica" que a firma conhece: para cada combinação de máquinas e trabalhadores, ela sabe qual é o máximo de produto que pode obter. Esse *máximo* é a chave — a função de produção descreve a **fronteira** das possibilidades produtivas, não qualquer combinação ineficiente abaixo dela. Na prática, a econometria de produção (um campo ativo desde os trabalhos de Solow em 1957 e dos estudos de Griliches sobre a agricultura americana na década de 1960) busca estimar esses parâmetros tecnológicos a partir de dados observacionais, separando a eficiência técnica da firma da tecnologia do setor.
 
 !!! definition "Função de produção"
     A **função de produção** \(q = f(K, L)\) descreve a quantidade máxima de produto \(q\) que pode ser obtida a partir de quantidades de capital \(K\) e trabalho \(L\), dada a tecnologia disponível.
@@ -84,6 +90,13 @@ A relação entre produto marginal e produto médio revela um padrão importante
 !!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
     Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
 
+!!! idea "Intuição Econômica"
+    **Em uma frase:** O 10º trabalhador produz menos que o 1º não porque é menos capaz, mas porque tem menos capital com que trabalhar.
+
+    **Pense assim:** Imagine uma linha de montagem com 5 máquinas de solda e uma equipe crescente de operários. O primeiro operário usa todas as máquinas em rodízio e é muito produtivo. O quinto já disputa tempo de máquina com os demais. O décimo fica ocioso boa parte do turno aguardando uma máquina liberar. O problema não é o trabalhador — é a proporção de máquinas por trabalhador, que cai com cada contratação. Matematicamente, a segunda derivada da função de produção em relação a \(L\) é negativa: \(\partial^2 f/\partial L^2 < 0\).
+
+    **Por que isso importa:** Essa intuição explica tanto a escassez de capital como fonte de baixa produtividade do trabalho no Brasil quanto o retorno elevado à mecanização: cada máquina adicional "libera" o potencial de múltiplos trabalhadores. A Embrapa documentou esse efeito na agricultura do Cerrado, onde a introdução de maquinário pesado elevou substancialmente o produto por trabalhador mesmo sem aumentar o número de trabalhadores.
+
 !!! box-brasil "Box Brasil: Produtividade do trabalho na indústria brasileira"
 
     A produtividade do trabalho — medida como valor adicionado por hora trabalhada — é uma aplicação direta do conceito de produto médio do trabalho (\(\mathrm{PMe}_L\)). Dados das Contas Nacionais do IBGE e da PNAD Contínua, compilados pelo FGV/IBRE, mostram que a produtividade por hora trabalhada no Brasil cresceu em média **+1,6% ao ano entre 2000 e 2010**, mas desacelerou para apenas **+0,3% ao ano entre 2010 e 2023** — e a média de longo prazo (1981–2023) é de modestos **+0,5% ao ano**.
@@ -96,7 +109,9 @@ A relação entre produto marginal e produto médio revela um padrão importante
 
 A análise da Seção 10.1 tratou de situações em que apenas um insumo varia enquanto o outro permanece fixo — o cenário típico do curto prazo. Mas na prática, as firmas dispõem de margem para redesenhar seus processos produtivos: podem substituir máquinas por trabalhadores, ou vice-versa, buscando a combinação mais eficiente. Que instrumento analítico nos permite estudar essas possibilidades de troca entre insumos?
 
-A resposta está nas **isoquantas** e na **taxa marginal de substituição técnica (TMST)**, ferramentas que capturam, respectivamente, o conjunto de combinações de insumos que geram o mesmo produto e a "taxa de câmbio" entre um fator e outro ao longo desse conjunto. A analogia com a teoria do consumidor é direta — e proposital: as isoquantas são o equivalente produtivo das curvas de indiferença, e a TMST desempenha papel análogo à taxa marginal de substituição.
+A resposta está nas **isoquantas** e na **taxa marginal de substituição técnica (TMST)**, ferramentas que capturam, respectivamente, o conjunto de combinações de insumos que geram o mesmo produto e a "taxa de câmbio" entre um fator e outro ao longo desse conjunto. A analogia com a teoria do consumidor é direta — e proposital: as isoquantas são o equivalente produtivo das curvas de indiferença estudadas no Capítulo 4, e a TMST desempenha papel análogo à taxa marginal de substituição do consumidor. Mais do que uma analogia superficial, trata-se de uma dualidade profunda: a firma que minimiza custos para um dado produto resolve um problema formalmente idêntico ao do consumidor que maximiza utilidade para um dado orçamento. Essa simetria, explorada em detalhes nos Capítulos 11 e 12, permite importar diretamente os resultados do lado da demanda para o lado da oferta.
+
+A figura interativa a seguir ilustra como diferentes tecnologias de produção geram mapas de isoquantas com formatos distintos — da reta (substitutos perfeitos) ao ângulo reto (complementares perfeitos), passando pela hipérbole convexa da Cobb-Douglas e pela curva intermediária da CES. Compreender visualmente esses formatos é fundamental para desenvolver intuição sobre substituibilidade antes de passar às fórmulas.
 
 <iframe src="../graficos/cap10/isoquantas.html" title="Figura 10.1 — Mapa de isoquantas interativo" class="graph-iframe"></iframe>
 
@@ -146,9 +161,14 @@ O que essa expressão nos diz economicamente? A TMST decrescente reflete a dific
 
     **Por que isso importa:** Quando o salário mínimo sobe no Brasil, a TMST indica o quanto as firmas conseguem substituir trabalho por máquinas — e em setores com baixa substituibilidade, o impacto no emprego é menor.
 
-## 🎯 Exercícios Resolvidos
+!!! warning "Cuidado"
+    **Rendimentos marginais decrescentes ≠ rendimentos de escala decrescentes.** Esses dois conceitos são frequentemente confundidos, mas descrevem fenômenos completamente distintos.
 
-Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste capítulo. Recomenda-se tentar resolver cada exercício antes de consultar a solução.
+    **Rendimentos marginais decrescentes** referem-se ao comportamento do produto quando **um único fator** aumenta mantendo os demais fixos — é um fenômeno de **curto prazo** (quando pelo menos um insumo está fixo). Formalmente: \(\partial^2 f / \partial L^2 < 0\), mantendo \(\bar{K}\) fixo.
+
+    **Rendimentos de escala** referem-se ao que ocorre quando **todos os fatores** aumentam na mesma proporção — é um fenômeno de **longo prazo** (todos os insumos são variáveis). Formalmente: comparar \(f(tK, tL)\) com \(t \cdot f(K, L)\) para \(t > 1\).
+
+    Uma firma pode ter **simultaneamente** rendimentos marginais decrescentes (em cada fator isoladamente) e rendimentos **crescentes** de escala. Exemplo: \(f(K,L) = K^{0,6}L^{0,8}\) tem \(\partial^2 f/\partial L^2 < 0\) e \(\partial^2 f/\partial K^2 < 0\), mas \(f(tK,tL) = t^{1,4} f(K,L) > tf(K,L)\) — rendimentos crescentes de escala. A distinção temporal e conceitual é fundamental: não confunda "o fogão está lotado" (curto prazo, fator fixo) com "a padaria cresceu" (longo prazo, tudo dobrou).
 
 ??? exercicio-resolvido "Exercício Resolvido 10.1"
     **Enunciado:** Uma firma produz com a função \(q = 20K^{0,5}L^{0,5}\). Atualmente utiliza \(K = 25\) e \(L = 16\). Calcule o produto total, os produtos marginais e a TMST.
@@ -213,6 +233,10 @@ e = \frac{\partial \ln f(tK, tL)}{\partial \ln t}\bigg|_{t=1} = \frac{f_K \cdot 
 
 onde \(\varepsilon_K\) e \(\varepsilon_L\) são as elasticidades do produto em relação a cada insumo. Se \(e = 1\), rendimentos constantes; se \(e > 1\), crescentes; se \(e < 1\), decrescentes.
 
+A elasticidade de escala $\eqref{eq:10.7}$ é uma medida **local**: pode variar ao longo da função de produção, de modo que a mesma firma pode exibir rendimentos crescentes em escalas baixas, constantes em escalas intermediárias e decrescentes em escalas altas. Esse padrão em "U" da elasticidade de escala é, aliás, o que fundamenta a curva de custo médio de longo prazo em "U" que estudaremos no Capítulo 11. A noção de **escala mínima eficiente** (EME) — o nível de produção a partir do qual as economias de escala se esgotam — é uma aplicação direta: é o ponto em que \(e\) passa de maior que 1 para igual a 1.
+
+Para funções Cobb-Douglas \(f = AK^{\alpha}L^{\beta}\), a elasticidade de escala é constante e igual a \(\alpha + \beta\), o que explica sua popularidade em modelos teóricos: o pesquisador pode calibrar os rendimentos de escala simplesmente escolhendo os expoentes. Para a CES, a elasticidade de escala é o parâmetro \(\gamma\), independente de \(\rho\) (elasticidade de substituição) — as duas propriedades são parametrizadas de forma ortogonal, o que facilita enormemente a análise empírica.
+
 Note que, pela equação $\eqref{eq:10.7}$, uma função pode apresentar simultaneamente rendimentos crescentes de escala e produtos marginais decrescentes em cada fator isoladamente. Isso não é uma contradição: rendimentos de escala referem-se à variação conjunta de todos os insumos, enquanto produtos marginais decrescentes referem-se à variação de um único fator com os demais fixos. Confundir esses dois conceitos é um erro recorrente — e compreensível, pois ambos tratam de "rendimentos". A distinção é temporal e conceitual: os rendimentos marginais decrescentes são um fenômeno de curto prazo (um fator fixo); os rendimentos de escala são um fenômeno de longo prazo (todos os fatores variáveis). Uma siderúrgica pode ter rendimentos crescentes de escala (produzir mais aço por real investido ao dobrar toda a operação) e, simultaneamente, rendimentos marginais decrescentes do trabalho (cada operário adicional em uma planta fixa produz menos que o anterior).
 
 !!! idea "Intuição Econômica"
@@ -264,6 +288,16 @@ Note que, pela equação $\eqref{eq:10.7}$, uma função pode apresentar simulta
 
     **Interpretação econômica:** Na função (b), dobrar ambos os insumos aumenta o produto em \(2^{1,2} \approx 2{,}30\) vezes — quase 15% a mais do que o dobro. Em setores com essa tecnologia, há incentivo natural à concentração em firmas maiores, como ocorre na siderurgia e na petroquímica brasileiras.
 
+!!! box-mundo "🌍 Box Mundo 10.1 — Rendimentos de escala na indústria automobilística: EUA e Japão"
+
+    **Contexto:** A indústria automobilística é um laboratório clássico para o estudo de rendimentos de escala. Desde a introdução da linha de montagem por Henry Ford em 1913, a produção em massa explorou intensamente as economias de escala — mas o modelo japonês de produção enxuta (*lean manufacturing*) desenvolvido pela Toyota a partir da década de 1950 mostrou que escala e eficiência não precisam ser sinônimos.
+
+    **Dados:** Estudos setoriais compilados pela OCDE e pelo Bureau of Labor Statistics (BLS) dos EUA estimam que a **escala mínima eficiente** (EME) de uma planta de montagem de automóveis situa-se entre 150 e 250 mil veículos por ano — volume abaixo do qual o custo médio por veículo é significativamente superior ao da fronteira tecnológica. A GM, em seu auge na década de 1970, produzia mais de 5 milhões de veículos anuais em plantas de grande escala, aproveitando as economias estáticas de escala. A Toyota, com volumes inicialmente menores, compensou com eficiência operacional: o **Sistema Toyota de Produção** (STP) reduziu estoques, minimizou desperdícios e elevou a produtividade do trabalho sem exigir mega-plantas.
+
+    **Análise:** Estimativas econométricas de funções de custo para a indústria automobilística mundial (Friedlaender, Winston & Wang, 1983, *Bell Journal of Economics*) encontram elasticidades de escala entre 1,10 e 1,25 na faixa de 100 a 300 mil veículos/ano — rendimentos **crescentes** de escala. Acima de 300 mil unidades, as economias de escala se esgotam e a elasticidade converge para 1 (rendimentos constantes). No caso japonês, a vantagem competitiva veio não de escala absoluta, mas de um deslocamento para cima da função de produção (\(A\) maior) — progresso técnico organizacional e não expansão do volume. A comparação GM vs. Toyota ilustra a diferença fundamental entre *mover-se ao longo* de uma isoquanta (mais capital e trabalho para produzir mais) e *deslocar* a função de produção (inovar para produzir mais com os mesmos insumos).
+
+    **Fonte:** Friedlaender, A. F.; Winston, C.; Wang, K. (1983). "Costs, Technology, and Productivity in the U.S. Automobile Industry." *Bell Journal of Economics*, 14(1), 1–20. OCDE (2023). *Automotive Industry: Productivity and Technology*. Paris: OECD Publishing. Bureau of Labor Statistics (2023). *Industry Productivity Statistics, Motor Vehicles*.
+
 ---
 
 ## 10.4 Elasticidade de Substituição
@@ -271,6 +305,10 @@ Note que, pela equação $\eqref{eq:10.7}$, uma função pode apresentar simulta
 Vimos que a TMST mede a taxa à qual a firma pode trocar um insumo por outro ao longo de uma isoquanta. Mas a TMST varia conforme nos movemos ao longo da curva. Surge então uma pergunta natural: quão sensível é a combinação de insumos a mudanças na TMST? Em outras palavras, quando os preços relativos dos fatores se alteram — por exemplo, quando o salário mínimo sobe ou o custo do capital cai —, a firma ajusta significativamente sua proporção capital-trabalho, ou a tecnologia impõe rigidez nessa escolha?
 
 A **elasticidade de substituição** é o parâmetro que responde a essa pergunta. Trata-se de uma medida adimensional que sintetiza a curvatura da isoquanta e, portanto, a facilidade de substituição entre insumos. Esse conceito é central não apenas para a teoria da produção, mas também para a análise da distribuição funcional da renda e o debate contemporâneo sobre automação e desigualdade.
+
+É importante compreender a intuição geométrica por trás da definição: a elasticidade de substituição captura o quanto a isoquanta "se dobra". Uma isoquanta muito curvada (quase em forma de L) implica baixa elasticidade — mover-se ao longo dela exige uma grande variação percentual na TMST para obter uma pequena variação na razão \(K/L\). Uma isoquanta mais reta implica alta elasticidade — uma pequena mudança na TMST já provoca uma grande mudança na proporção de insumos. Matematicamente, \(\sigma\) é o inverso da elasticidade da TMST em relação à razão \(K/L\): quanto menos a isoquanta "resiste" ao movimento, maior é \(\sigma\).
+
+A ligação com a distribuição de renda é fundamental. Sob mercados competitivos, o salário real iguala o produto marginal do trabalho e o retorno ao capital iguala o produto marginal do capital. A participação do trabalho na renda é \(wL/q = \mathrm{PMg}_L \cdot L/q\). Para a Cobb-Douglas com CRS, essa participação é sempre \(\beta\) — constante, independentemente dos preços dos fatores. Para a CES com \(\sigma \neq 1\), a participação do trabalho varia com \(w/r\): se \(\sigma > 1\), uma queda no custo do capital eleva a participação do capital; se \(\sigma < 1\), ocorre o contrário. Esse mecanismo está no centro das preocupações de economistas como Lawrence Katz, Alan Krueger e, mais recentemente, Daron Acemoglu sobre os impactos distributivos da automação.
 
 !!! definition "Elasticidade de substituição"
     A **elasticidade de substituição** \(\sigma\) mede a facilidade com que a firma pode substituir um insumo por outro ao longo de uma isoquanta. Formalmente:
@@ -358,6 +396,16 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
     **Interpretação econômica:** Com \(\sigma = 0{,}5 < 1\), capital e trabalho são mais complementares do que na Cobb-Douglas. A TMST de 16 indica que, nessa combinação capital-intensiva (\(K/L = 4\)), a firma precisaria de 16 unidades adicionais de trabalho para compensar a perda de 1 unidade de capital — a substituição é muito difícil, justamente porque a baixa elasticidade torna os insumos pouco intercambiáveis. Esse padrão é compatível com setores industriais brasileiros como a petroquímica, onde a substituição entre trabalho e capital é limitada pela natureza dos processos produtivos.
 
+!!! box-mundo "🌍 Box Mundo 10.3 — A elasticidade de substituição capital-trabalho na Europa"
+
+    **Contexto:** A participação do trabalho na renda nacional — a fração do PIB que vai para salários e remunerações — declinou em quase todos os países desenvolvidos entre 1975 e 2012. Entender esse fenômeno exige estimar a elasticidade de substituição \(\sigma\) entre capital e trabalho: se \(\sigma > 1\), a queda no preço relativo do capital (impulsionada pela revolução das TIC e pela globalização) leva as firmas a substituir trabalho por capital tão intensamente que a participação do capital na renda *aumenta* e a do trabalho *cai*.
+
+    **Dados:** Karabarbounis e Neiman (2014) compilaram dados de 59 países ao longo de três décadas e documentaram uma queda média da participação do trabalho na renda de aproximadamente **5 pontos percentuais** — um declínio expressivo e generalizável. O preço relativo dos bens de capital (máquinas, equipamentos) caiu em média 25% no mesmo período, refletindo os ganhos de produtividade na indústria de TI. No Brasil, o IBGE registra participação dos salários no valor adicionado em torno de 40–45%, abaixo da média de economias avançadas (50–55%).
+
+    **Análise:** Usando uma especificação CES para a função de produção agregada, Karabarbounis e Neiman estimam \(\hat{\sigma} \approx 1{,}25\) — *acima* de 1. Isso significa que, com a queda no custo do capital, as firmas o substituíram pelo trabalho mais do que proporcionalmente, reduzindo a participação salarial. A implicação para a teoria da produção é direta: a escolha entre Cobb-Douglas (\(\sigma = 1\)) e CES (\(\sigma \neq 1\)) não é indiferente — ela determina previsões qualitativas distintas sobre distribuição de renda. Oberfield & Raval (2021, *Econometrica*), usando microdados de plantas industriais americanas, chegam a estimativas menores (\(\sigma \approx 0{,}7\)), ilustrando que a elasticidade de substituição é sensível ao nível de agregação analisado.
+
+    **Fonte:** Karabarbounis, L.; Neiman, B. (2014). "The Global Decline of the Labor Share." *Quarterly Journal of Economics*, 129(1), 61–103. Oberfield, E.; Raval, D. (2021). "Micro Data and Macro Technology." *Econometrica*, 89(2), 703–732.
+
 ---
 
 ## 10.5 Funções de Produção Clássicas
@@ -386,7 +434,11 @@ Os insumos são **complementares perfeitos**: devem ser utilizados na proporçã
 
 ### Função de produção Cobb-Douglas
 
-Entre a rigidez total do Leontief e a flexibilidade ilimitada da linear, situa-se a função mais célebre da economia: a **Cobb-Douglas**. Proposta por Charles Cobb e Paul Douglas em 1928 para descrever a produção industrial nos EUA, ela se tornou a forma funcional mais utilizada em trabalhos empíricos — da contabilidade do crescimento à estimação de funções de custo — graças a uma combinação invejável de flexibilidade e tratabilidade analítica.
+Entre a rigidez total do Leontief e a flexibilidade ilimitada da linear, situa-se a função mais célebre da economia: a **Cobb-Douglas**. Proposta por Charles Cobb (matemático) e Paul Douglas (economista) em 1928 para descrever a produção industrial nos EUA, ela se tornou a forma funcional mais utilizada em trabalhos empíricos — da contabilidade do crescimento à estimação de funções de custo — graças a uma combinação invejável de flexibilidade e tratabilidade analítica.
+
+O trabalho original de Cobb e Douglas (1928, *American Economic Review*) ajustou a função \(q = AK^{\alpha}L^{1-\alpha}\) a dados da manufatura americana entre 1899 e 1922 e obteve \(\hat{\alpha} \approx 0{,}25\) — sugerindo que a participação do capital na renda era cerca de 25%, valor surpreendentemente próximo das estimativas das Contas Nacionais. Essa consistência entre o parâmetro estimado da função de produção e a participação fatorial observada não é coincidência: com rendimentos constantes de escala e mercados competitivos, os parâmetros \(\alpha\) e \(1-\alpha\) da Cobb-Douglas correspondem exatamente às parcelas de capital e trabalho na renda, respectivamente. Foi Robert Solow (1957) quem mostrou que essa propriedade poderia ser usada para medir a contribuição do progresso técnico ao crescimento — o chamado "resíduo de Solow" discutido na Seção 10.6.
+
+A Cobb-Douglas é também a base analítica para a derivação das funções de custo de longo prazo no Capítulo 11: com CRS e preços de fatores \(w\) (salário) e \(r\) (custo do capital), a função de custo mínimo assume a forma \(C(w,r,q) = \tilde{c}(w,r) \cdot q\), onde \(\tilde{c}\) depende apenas dos preços. Essa separabilidade é uma propriedade direta da homoteticidade da Cobb-Douglas, explorada na Seção 10.7.
 
 \[
 q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0
@@ -397,7 +449,7 @@ As propriedades dependem dos parâmetros: rendimentos constantes se \(\alpha + \
 
 ### Função de produção CES (Elasticidade de Substituição Constante)
 
-A função CES, introduzida por Arrow, Chenery, Minhas e Solow (1961), generaliza todas as formas anteriores ao permitir que a elasticidade de substituição assuma qualquer valor positivo.
+A função CES (*Constant Elasticity of Substitution*), introduzida por Arrow, Chenery, Minhas e Solow no seminal artigo de 1961 no *American Economic Review*, representa o passo decisivo na direção de uma forma funcional verdadeiramente geral. A motivação era clara: a Cobb-Douglas impõe \(\sigma = 1\) por construção, mas não há razão teórica para que todas as tecnologias apresentem essa elasticidade específica. Arrow et al. derivaram a CES mostrando que ela é a única forma funcional compatível com três hipóteses: (i) isoquantas convexas, (ii) homogeneidade de grau \(\gamma\), e (iii) elasticidade de substituição **constante** (não necessariamente igual a 1) ao longo de qualquer isoquanta. O resultado é uma família paramétrica que engloba todas as formas anteriores como casos limite ou especiais — um teorema de unificação para a teoria da produção.
 
 \[
 q = A\left[\delta K^{\rho} + (1 - \delta) L^{\rho}\right]^{\gamma/\rho}, \qquad \rho \leq 1, \; \rho \neq 0, \; 0 < \delta < 1
@@ -415,6 +467,13 @@ A CES **generaliza** as três funções anteriores:
 - \(\rho \to 0 \Rightarrow\) Cobb-Douglas \((\sigma = 1)\),
 - \(\rho = 1 \Rightarrow\) Linear \((\sigma = \infty)\),
 - \(\rho \to -\infty \Rightarrow\) Leontief \((\sigma = 0)\): \(q \to A\min\{K, L\}\). (Para obter a forma geral \(\min\{K/a, L/b\}\), é necessário colocar os coeficientes dentro da função \(\min\), e não como pesos \(\delta, 1-\delta\) na CES.)
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A CES é o "canivete suíço" das funções de produção — um único modelo que, ao variar o parâmetro \(\rho\), reproduz toda a família de tecnologias, dos complementares perfeitos aos substitutos perfeitos.
+
+    **Pense assim:** Imagine um controle deslizante com "Leontief" em um extremo (proporções rígidas, como uma receita química) e "Linear" no outro (substituição total, como dois tipos de combustível). A posição atual do controle é determinada por \(\rho\). Em \(\rho = 0\) (ou seja, \(\sigma = 1\)), o controle está exatamente no meio — e a tecnologia é Cobb-Douglas. Ao empurrar o controle para a esquerda (\(\rho \to -\infty\), \(\sigma \to 0\)), as isoquantas ficam cada vez mais "anguladas" até se tornarem um L perfeito. Ao empurrar para a direita (\(\rho \to 1\), \(\sigma \to \infty\)), as isoquantas ficam mais retas até serem linhas paralelas.
+
+    **Por que isso importa:** Na estimação empírica, a CES permite *testar* se a Cobb-Douglas é uma boa aproximação (\(\sigma = 1\)) ou se a tecnologia exige uma elasticidade diferente. Arrow et al. (1961) encontraram \(\sigma\) sistematicamente abaixo de 1 em dados industriais internacionais — o que motivou décadas de pesquisa sobre a verdadeira elasticidade de substituição nas economias modernas.
 
 A [Tabela 10.1](#tabela-10-1) compara as propriedades das quatro funções de produção.
 
@@ -481,6 +540,10 @@ As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a 
 As quatro funções de produção apresentadas na seção anterior descrevem a tecnologia em um instante do tempo — uma "fotografia" das possibilidades produtivas. Contudo, a história econômica nos ensina que a tecnologia é dinâmica: a mesma quantidade de terra e trabalho que produzia 1.700 kg de soja por hectare na década de 1970 produz mais de 3.300 kg hoje. De onde vem esse ganho, se os insumos não mudaram proporcionalmente?
 
 A resposta reside no **progresso técnico** — o deslocamento da própria função de produção ao longo do tempo. Incorporar essa dimensão temporal é essencial para conectar a microeconomia da produção à macroeconomia do crescimento, e o instrumento-chave para essa conexão é o **resíduo de Solow**, que mede a parcela do crescimento do produto não explicada pela acumulação de fatores.
+
+A ideia é elegante em sua simplicidade. Se observamos o produto crescendo a 4% ao ano, o capital crescendo a 3% e o trabalho a 1%, e se sabemos que a participação do capital na renda é de 40% e a do trabalho é de 60%, então a acumulação de fatores explica \(0{,}4 \times 3\% + 0{,}6 \times 1\% = 1{,}8\%\) do crescimento. Os restantes \(4\% - 1{,}8\% = 2{,}2\%\) constituem o resíduo — a fração não explicada, atribuída ao progresso técnico. Esse exercício de contabilidade, introduzido por Solow (1957) e refinado por Griliches (1963), revelou que o progresso técnico era quantitativamente mais importante para o crescimento de longo prazo do que a simples acumulação de capital — uma conclusão que redirecionou toda a teoria do crescimento econômico para o papel da inovação, da educação e da pesquisa.
+
+Do ponto de vista microeconômico, o progresso técnico manifesta-se visualmente como um **deslocamento para dentro das isoquantas**: a mesma quantidade de produto \(q_0\) pode ser produzida com *menos* de ambos os insumos. Geometricamente, a função de produção "sobe" — para qualquer combinação \((K, L)\), o produto aumenta. Algebricamente, o parâmetro \(A(t)\) cresce ao longo do tempo. A questão de *como* ele cresce — se de forma que favoreça capital ou trabalho, ou de forma neutra — é classificada pelas diferentes definições de neutralidade discutidas a seguir.
 
 <iframe src="../graficos/cap10/progresso-tecnico.html" title="Figura 10.3 — Progresso técnico e deslocamento de isoquantas" class="graph-iframe"></iframe>
 
@@ -598,9 +661,21 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
     **Interpretação microeconômica.**
     Em termos da teoria da produção, a atuação da Embrapa representa um deslocamento da função de produção agrícola — um aumento do parâmetro \(A(t)\). Trata-se predominantemente de progresso técnico **aumentador de terra** (análogo ao neutro de Solow aplicado ao fator terra), pois a inovação principal foi tornar produtivos solos antes imprestáveis, equivalendo a multiplicar o fator terra efetivo disponível. A elasticidade de substituição entre terra e outros insumos (fertilizantes, maquinário) aumentou, refletindo a maior flexibilidade tecnológica na produção agrícola moderna. Goolsbee, Levitt & Syverson (2020, Cap. 6) documentam padrões similares de adoção tecnológica e ganhos de produtividade na agricultura estadunidense.
 
+!!! box-mundo "🌍 Box Mundo 10.2 — O resíduo de Solow e o milagre do Leste Asiático"
+
+    **Contexto:** Entre 1960 e 1990, as economias de Coreia do Sul, Singapura, Taiwan e Hong Kong cresceram a taxas entre 6% e 9% ao ano — o "milagre" do Leste Asiático. O debate econômico em torno desse crescimento tornou-se uma das mais acesas controvérsias da macroeconomia do desenvolvimento: o crescimento derivou de acumulação extraordinária de fatores (capital e trabalho) ou de ganhos genuínos de produtividade total dos fatores (PTF)?
+
+    **Dados:** Alwyn Young (1995, *Quarterly Journal of Economics*) aplicou a contabilidade de crescimento de Solow a dados de Coreia, Singapura, Taiwan e Hong Kong para o período 1966–1990. Seus resultados foram surpreendentes: **quase todo o crescimento** era explicado por acumulação de capital e aumento da força de trabalho — a PTF crescia muito pouco ou até negativamente em Singapura. As taxas de investimento (capital físico + capital humano) excepcionalmente elevadas — em Singapura, a taxa de poupança chegou a 47% do PIB — explicavam os números, não a inovação.
+
+    **Análise:** O resultado de Young foi contestado por Hsieh (2002, *AER*), que usou dados de remuneração de fatores em vez de quantidades físicas e encontrou PTF positiva e relevante para Singapura e Taiwan. A divergência ilustra um ponto metodológico central: o resíduo de Solow é medido como **diferença** entre crescimento do produto e crescimento ponderado dos insumos — e qualquer erro de medição nos insumos se reflete diretamente na estimativa de PTF. Para o Brasil, Bonelli & Fonseca (1998, IPEA) e Gomes et al. (2003) aplicaram a mesma metodologia ao período 1970–2000 e encontraram PTF **negativa** nos anos 1980 (a "década perdida"), consistente com a crise e a hiperinflação que desorganizaram a alocação de recursos. O "milagre econômico" brasileiro de 1968–1973 apresentou PTF positiva, mas calcada em combinação de acumulação de capital, redução do subemprego e importação tecnológica.
+
+    **Fonte:** Young, A. (1995). "The Tyranny of Numbers: Confronting the Statistical Realities of the East Asian Growth Experience." *Quarterly Journal of Economics*, 110(3), 641–680. Hsieh, C.-T. (2002). "What Explains the Industrial Revolution in East Asia?" *American Economic Review*, 92(3), 502–526. Solow, R. M. (1957). "Technical Change and the Aggregate Production Function." *Review of Economics and Statistics*, 39(3), 312–320.
+
 ## 10.7 Funções de Produção Homotéticas
 
 Ao longo deste capítulo, notamos que certas propriedades das funções de produção — como o fato de a TMST depender apenas da razão \(K/L\), e não dos níveis absolutos dos insumos — simplificam enormemente a análise. Essas propriedades não são acidentais: elas decorrem de uma estrutura matemática particular chamada **homoteticidade**. Compreender essa estrutura é importante porque ela determina se o caminho de expansão da firma é linear (o que simplifica a função custo) e se firmas de diferentes tamanhos utilizam a mesma "receita" de insumos.
+
+A relevância econômica da homoteticidade vai além da elegância matemática. Quando a função de produção é homotética, a separação entre as decisões de *quais insumos usar* (determinada pelos preços relativos) e *quanto produzir* (determinada pela demanda e pelos preços dos produtos) é total. Em outras palavras, uma firma homotética que decide dobrar sua produção simplesmente dobra todas as quantidades de insumos na mesma proporção — ela não altera sua "receita". Essa propriedade é a chave que conecta a teoria da produção (Capítulo 10) à teoria dos custos (Capítulo 11): funções de custo derivadas de tecnologias homotéticas têm a forma \(C(w, r, q) = c(w, r) \cdot g(q)\), onde os custos se separam em um componente de preços e um componente de quantidade. Sem homoteticidade, a análise de custos se torna muito mais complexa, pois a proporção ótima de insumos muda a cada nível de produção.
 
 Uma função de produção \(f(K, L)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
 
@@ -678,6 +753,8 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ## 🔑 Conceitos-Chave
 
+<a id="tabela-10-2"></a>
+
 | Conceito | Definição |
 |----------|-----------|
 | Função de produção | Relação $q = f(K, L)$ que descreve a quantidade máxima de produto para dadas quantidades de insumos e tecnologia. |
@@ -690,6 +767,10 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 | Elasticidade de substituição ($\sigma$) | Mede a variação percentual na razão $K/L$ em resposta a uma variação percentual na TMST, capturando a facilidade de substituição entre insumos. |
 | Função CES | Função de produção com elasticidade de substituição constante, que engloba como casos especiais a linear, a Cobb-Douglas e a Leontief. |
 | Progresso técnico | Deslocamento da função de produção ao longo do tempo, classificado como neutro à Hicks, Harrod ou Solow conforme o viés sobre os insumos. |
+
+<div class="caption-obj" markdown>
+**Tabela 10.2 — Conceitos-chave.**
+</div>
 
 ---
 
@@ -773,6 +854,75 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
 (e) Calcule a produtividade total dos fatores em \(t = 0\) e \(t = 10\). Se em \(t = 0\) a firma utiliza \(K = 100\) e \(L = 200\), qual o produto em \(t = 0\) e em \(t = 10\) (supondo que os insumos cresçam às taxas indicadas)?
 
 [:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-5)
+
+---
+
+<a id="ex-10-6"></a>**Exercício 10.6.** *(Fácil)*
+Considere a função de produção \(f(K, L) = K^{0,3} L^{0,7}\).
+
+(a) Calcule os produtos marginais \(\mathrm{PMg}_K\) e \(\mathrm{PMg}_L\).
+
+(b) Verifique o Teorema de Euler: \(\mathrm{PMg}_K \cdot K + \mathrm{PMg}_L \cdot L = f(K, L)\) (o que implica sobre os rendimentos de escala?).
+
+(c) Mostre que os produtos marginais são decrescentes.
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-6)
+
+---
+
+<a id="ex-10-7"></a>**Exercício 10.7.** *(Fácil)*
+Classifique os rendimentos de escala das funções de produção abaixo, justificando cada caso:
+
+(a) \(f(K, L) = KL\)
+
+(b) \(f(K, L) = K + L\)
+
+(c) \(f(K, L) = \min\{K, 2L\}\)
+
+(d) \(f(K, L) = K^{0,4} L^{0,4}\)
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-7)
+
+---
+
+<a id="ex-10-8"></a>**Exercício 10.8.** *(Médio)*
+Uma firma opera com a função de produção CES \(q = \left[\delta K^{\rho} + (1-\delta)L^{\rho}\right]^{1/\rho}\), com \(\delta = 0{,}5\) e \(\rho = -1\) (portanto, \(\sigma = 0{,}5\)). Os preços dos fatores são \(r = 5\) e \(w = 3\), e a firma utiliza \(K = 10\) e \(L = 20\).
+
+(a) Calcule a TMST nessa combinação.
+
+(b) Verifique se a firma está minimizando custos (compare a TMST com a razão de preços \(w/r\)).
+
+(c) Se a firma não está no ótimo, em que direção deve ajustar a combinação de insumos?
+
+(d) Calcule a elasticidade de substituição e interprete.
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-8)
+
+---
+
+<a id="ex-10-9"></a>**Exercício 10.9.** *(Médio — contexto brasileiro)*
+Um produtor de soja no Cerrado opera com a função de produção \(f(K, L) = A \cdot K^{0,4} L^{0,6}\), onde \(A = A(t)\) representa o nível tecnológico fornecido por variedades desenvolvidas pela Embrapa.
+
+(a) Se \(A\) cresce a uma taxa constante de 3% ao ano, em quanto tempo o produto dobra, mantendo os insumos \(K\) e \(L\) constantes? (Use a regra de 70 como aproximação e confirme com o cálculo exato.)
+
+(b) Entre 2000 e 2023, a produtividade média da soja brasileira cresceu de 2.403 para 3.509 kg/ha, um crescimento de aproximadamente 1,9% ao ano. Que fração desse crescimento é consistente com um crescimento anual de \(A\) de 3%, supondo insumos constantes?
+
+(c) Como a teoria da produção interpretaria o fato de que a área plantada de soja no Brasil cresceu muito mais do que a produtividade por hectare? Isso é uma evidência de rendimentos crescentes ou decrescentes?
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-9)
+
+---
+
+<a id="ex-10-10"></a>**Exercício 10.10.** *(Difícil)*
+Considere uma função de produção homotética \(f(K, L)\), que pode ser escrita como \(f(K, L) = g(h(K, L))\), onde \(h\) é homogênea de grau 1 e \(g\) é estritamente crescente.
+
+(a) Prove que o caminho de expansão (locus de combinações ótimas de insumos à medida que o produto varia, para preços \(w\) e \(r\) fixos) é um raio a partir da origem.
+
+(b) Mostre que, como consequência, a função de custo mínimo pode ser escrita na forma separável \(C(w, r, q) = c(w, r) \cdot g^{-1}(q)\), onde \(c(w, r)\) é o custo de atingir \(h = 1\). O que essa separabilidade implica sobre como o custo varia com o produto?
+
+(c) Verifique a propriedade (b) explicitamente para a função Cobb-Douglas \(f(K, L) = K^{\alpha} L^{1-\alpha}\) com rendimentos constantes de escala.
+
+[:material-arrow-right: Ver solução](../solucoes/cap10.md#ex-10-10)
 
 ---
 
@@ -935,6 +1085,39 @@ Suponha que a função de produção de uma firma é \(q = A(t) K^{0,4} L^{0,6}\
     **Por que isso importa:** O resultado tem implicações diretas para o debate sobre desigualdade e para a calibração de modelos macroeconômicos. Se \(\sigma < 1\), a automação e a acumulação de capital não levam necessariamente a um aumento da participação do capital na renda — contrariando uma versão simplificada da tese de Piketty.
 
     **Relevância para o capítulo:** O artigo demonstra que a elasticidade de substituição \(\sigma\) — apresentada na Seção 10.4 como um parâmetro abstrato da CES — é um objeto empiricamente estimável e economicamente consequente. A distinção entre a CES no nível da planta e no nível agregado mostra que a escolha da forma funcional (Seção 10.5) tem implicações que vão muito além do exercício de sala de aula: ela determina previsões sobre distribuição de renda, política fiscal e futuro do trabalho.
+
+??? pesquisa "Solow, Robert M. (1957). Technical Change and the Aggregate Production Function. *Review of Economics and Statistics*, 39(3), 312–320."
+    **Pergunta central:** Quanto do crescimento do produto nos EUA entre 1909 e 1949 se deveu à acumulação de capital e trabalho, e quanto decorreu do progresso técnico? O artigo fundacional de Solow introduz a metodologia da contabilidade do crescimento — hoje conhecida como "resíduo de Solow" — e aplica-a pela primeira vez a dados macroeconômicos americanos.
+
+    **Método:** Solow parte de uma função de produção agregada \(Q = A(t) \cdot F(K, L)\) e diferencia ao longo do tempo. Sob hipótese de mercados competitivos (cada fator é remunerado pelo seu produto marginal), as participações factoriais na renda podem ser usadas como pesos para os fatores, permitindo isolar \(\dot{A}/A\) como resíduo. O método não requer assumir uma forma funcional específica para \(F\) — apenas que a função seja homogênea de grau 1 (rendimentos constantes de escala).
+
+    **Resultado principal:** Solow encontrou que apenas **12,5% do crescimento** do produto por hora trabalhada nos EUA no período era explicado pela acumulação de capital — os **87,5% restantes** constituíam o resíduo, interpretado como progresso técnico. Esse resultado, hoje reproduzido em inúmeras economias, foi decisivo para redirecionar a pesquisa em crescimento econômico da acumulação de fatores para a inovação e o conhecimento.
+
+    **Por que isso importa:** O artigo é a base empírica e metodológica de tudo que se estuda sobre PTF e progresso técnico, tanto em macroeconomia quanto na microeconomia da produção. O Prêmio Nobel de 1987 concedido a Solow reconhece precisamente esse legado.
+
+    **Relevância para o capítulo:** A equação de contabilidade do crescimento $\eqref{eq:10.12}$ apresentada na Seção 10.6 é diretamente derivada da metodologia deste artigo. O "resíduo de Solow" é o parâmetro \(\dot{A}/A\) — e sua estimação para o Brasil, nos estudos de Gasques et al. e Bonelli & Fonseca, replica a metodologia pioneira deste trabalho.
+
+??? pesquisa "Griliches, Zvi. (1963). The Sources of Measured Productivity Growth: United States Agriculture, 1940–60. *Journal of Political Economy*, 71(4), 331–346."
+    **Pergunta central:** Quanto cresceu a produtividade da agricultura americana nas décadas de 1940 e 1950, e quais foram as fontes desse crescimento? Griliches aplica a contabilidade de Solow ao setor agrícola americano, com foco especial na adoção tecnológica e na qualidade dos insumos.
+
+    **Método:** O trabalho constrói índices de produto agrícola e insumos ajustados pela qualidade: trabalho ponderado por educação, capital ajustado pela vintage tecnológica dos equipamentos. A ideia central é que parte do "resíduo" de Solow reflete mudanças na *qualidade* dos insumos, não apenas progresso técnico desincorporado. Griliches distingue entre progresso técnico **incorporado** (embodied — melhorias nos bens de capital, como tratores mais eficientes) e **desincorporado** (disembodied — aumentos de produtividade independentes dos insumos).
+
+    **Resultado principal:** A produtividade da agricultura americana cresceu a aproximadamente 2% ao ano entre 1940 e 1960. Quando os insumos são ajustados pela qualidade, o resíduo não explicado pelo crescimento dos fatores cai substancialmente — sugerindo que parte significativa do "milagre" da produtividade agrícola americana refletia melhorias na qualidade do capital e do trabalho, e não apenas progresso técnico puro.
+
+    **Por que isso importa:** O trabalho de Griliches inaugurou a tradição de medir a PTF ajustada pela qualidade dos insumos, uma linha de pesquisa central em econometria da produção até hoje. Seus estudos posteriores sobre P&D e spillovers de conhecimento influenciaram diretamente a política de apoio à pesquisa agrícola nos EUA — e a criação de instituições como a Embrapa no Brasil.
+
+    **Relevância para o capítulo:** A decomposição entre progresso técnico incorporado e desincorporado é uma extensão natural do conceito de PTF apresentado na Seção 10.6. No contexto brasileiro, a Embrapa produz tanto progresso incorporado (sementes de alto rendimento, máquinas adaptadas ao Cerrado) quanto desincorporado (técnicas agronômicas, manejo de solo) — e a distinção de Griliches ajuda a interpretar quanto de cada tipo explicou a revolução agrícola brasileira.
+
+??? pesquisa "Bustos, Paula; Caprettini, Bruno; Ponticelli, Jacopo. (2016). Agricultural Productivity and Structural Transformation: Evidence from Brazil. *American Economic Review*, 106(6), 1320–1365. DOI: [10.1257/aer.20131061](https://doi.org/10.1257/aer.20131061)"
+    **Pergunta central:** A introdução de novas tecnologias agrícolas de alta produtividade leva ao desenvolvimento econômico e à transformação estrutural? O artigo usa a adoção da soja transgênica de alta tecnologia (HT — *high-yield* varieties) no Brasil como experimento natural para estimar o impacto do progresso técnico agrícola sobre a alocação de trabalho entre setores.
+
+    **Método:** Bustos, Caprettini e Ponticelli exploram a variação geográfica na adequação das novas variedades de soja HT (introduzidas no Brasil a partir dos anos 2000): municípios onde as condições climáticas e de solo favoreciam a adoção da nova tecnologia experimentaram maiores aumentos de produtividade agrícola. Usando essa variação como instrumento, os autores estimam o efeito causal do progresso técnico agrícola sobre o emprego industrial e o processo de urbanização.
+
+    **Resultado principal:** A adoção de HT causou aumento significativo da produtividade agrícola e, simultaneamente, **liberação de trabalho** do campo em direção ao setor industrial. Municípios com maior adequação à HT experimentaram maior crescimento do emprego industrial, consistente com um processo de transformação estrutural clássico: ganhos de produtividade na agricultura liberam mão de obra que se emprega em atividades de maior valor adicionado. O efeito foi quantitativamente relevante — municípios com alta adequação à HT cresceram o emprego industrial cerca de 10 pontos percentuais a mais que os demais.
+
+    **Por que isso importa:** O artigo conecta diretamente a teoria da produção (progresso técnico, PTF) ao desenvolvimento econômico. O "resíduo de Solow" agrícola não é apenas um número contábil — ele tem consequências reais sobre a estrutura do emprego e o nível de renda per capita. Para o Brasil, onde a agropecuária continua sendo setor fundamental, a pesquisa da Embrapa tem impactos que vão muito além da porteira da fazenda.
+
+    **Relevância para o capítulo:** O artigo é uma aplicação direta da decomposição do crescimento (Seção 10.6) a dados brasileiros reais, conectando o parâmetro \(A(t)\) da função de produção agrícola a transformações macroeconômicas de longo prazo. Combina os instrumentais de teoria da produção e econometria para identificar causalidade, exemplificando como os conceitos deste capítulo fundamentam pesquisa empírica de fronteira.
 
 ## 📚 Referências do Capítulo
 
