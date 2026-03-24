@@ -285,3 +285,170 @@ Para \(m \geq 1\), o consumidor compra ambos os bens. Para \(m < 1\), gasta tudo
 **Interpretação econômica:** Com utilidade quase-linear, a demanda por \(x_1\) é constante (\(x_1^* = 1/2\)) quando a renda é suficiente. Toda variação de renda é absorvida por \(x_2\), que funciona como "numerário". A solução de canto ocorre quando a renda é tão baixa que o consumidor não pode adquirir a quantidade "ideal" de \(x_1\) e ainda sobrar algo para \(x_2\).
 
 ↩ [Voltar ao enunciado](../cap02/index.md#ex-2-5)
+
+---
+
+## ✏️ Exercício 2.6 {#ex-2-6}
+
+**Solução.**
+
+**(a)** Testamos: \(f(tx, ty) = (tx)^2(ty) = t^2 x^2 \cdot t y = t^3 x^2 y = t^3 f(x,y)\). Portanto, \(f\) é **homogênea de grau 3**.
+
+**(b)** No ponto \((3, 4)\): \(f(3,4) = 9 \times 4 = 36\). As derivadas parciais: \(f_x = 2xy = 24\), \(f_y = x^2 = 9\). Pelo Teorema de Euler: \(x f_x + y f_y = 3 \times 24 + 4 \times 9 = 72 + 36 = 108\). Verificação: \(k \cdot f = 3 \times 36 = 108\). ✓
+
+**(c)** \(f_x = 2xy\): testamos \(f_x(tx, ty) = 2(tx)(ty) = t^2 \cdot 2xy = t^2 f_x(x,y)\). Logo \(f_x\) é homogênea de grau 2. \(f_y = x^2\): \(f_y(tx, ty) = (tx)^2 = t^2 x^2 = t^2 f_y(x,y)\). Logo \(f_y\) é homogênea de grau 2. Em geral, se \(f\) é homogênea de grau \(k\), suas derivadas parciais são homogêneas de grau \(k-1\).
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-6)
+
+---
+
+## ✏️ Exercício 2.7 {#ex-2-7}
+
+**Solução.**
+
+**(a)** No ótimo da função Leontief \(U = \min\{x_1, 2x_2\}\), o consumidor deseja \(x_1 = 2x_2\). Consumir mais de \(x_1\) além de \(2x_2\) não aumenta a utilidade (o mínimo permanece \(2x_2\)); analogamente para \(x_2\). A proporção ótima é 2:1.
+
+**(b)** Substituindo \(x_1 = 2x_2\) na restrição: \(3(2x_2) + 6x_2 = 90 \implies 12x_2 = 90 \implies x_2^* = 7{,}5\), \(x_1^* = 15\).
+
+**(c)** \(U^* = \min\{15, 2(7{,}5)\} = \min\{15, 15\} = 15\).
+
+**(d)** Com \(I = 120\): \(12x_2 = 120 \implies x_2^* = 10\), \(x_1^* = 20\). Variação: \(x_1\) subiu 33,3%, \(x_2\) subiu 33,3%. A elasticidade-renda é unitária para ambos os bens — propriedade geral das preferências homotéticas (Leontief é homotética).
+
+**Interpretação econômica:** Como os bens são complementos perfeitos (pense em café e filtro de papel, ou impressora e cartucho), o consumidor mantém a proporção fixa independentemente de preços e renda. Todo aumento de renda é distribuído proporcionalmente entre os bens.
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-7)
+
+---
+
+## ✏️ Exercício 2.8 {#ex-2-8}
+
+**Solução.**
+
+**(a)** Equilíbrio: \(Q^d = Q^s\):
+
+\[
+a - bP = -c + d(P - t) \implies a - bP = -c + dP - dt
+\]
+
+\[
+a + c - dt = (b + d)P \implies P^* = \frac{a + c - dt}{b + d}
+\]
+
+\[
+Q^* = a - b \cdot \frac{a + c - dt}{b+d} = \frac{a d - bc + bdt}{b+d}
+\]
+
+**(b)** \(\frac{dP^*}{dt} = \frac{-d}{b+d}\). Como \(b, d > 0\), temos \(0 < \frac{d}{b+d} < 1\). O imposto não é integralmente repassado: o consumidor absorve a fração \(\frac{d}{b+d}\) e o produtor absorve \(\frac{b}{b+d}\).
+
+**(c)** O repasse é maior que 50% quando \(\frac{d}{b+d} > \frac{1}{2}\), ou seja, \(d > b\). Em termos de elasticidades: como \(\varepsilon_d = -b(P/Q)\) e \(\varepsilon_s = d(P/Q)\), o repasse é maior quando a oferta é mais elástica que a demanda (\(\varepsilon_s > |\varepsilon_d|\)). Intuitivamente, produtores mais sensíveis a preço conseguem "escapar" do imposto reduzindo a quantidade, forçando o ajuste pelo lado do consumidor.
+
+**(d)** \(R(t) = t \cdot Q^*(t) = t \cdot \frac{ad - bc + bdt}{b+d}\). Derivando e igualando a zero:
+
+\[
+\frac{dR}{dt} = \frac{ad - bc + 2bdt}{b+d} = 0 \implies t^* = \frac{bc - ad}{2bd}
+\]
+
+Para que \(t^* > 0\), precisamos \(bc > ad\). A receita primeiro cresce com \(t\) (efeito base: mais receita por unidade) e depois cai (efeito quantidade: a base tributária encolhe). Esse é o formato da **curva de Laffer**: alíquotas muito altas podem reduzir a receita.
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-8)
+
+---
+
+## ✏️ Exercício 2.9 {#ex-2-9}
+
+**Solução.**
+
+**(a)** O produtor maximiza a receita total:
+
+\[
+\max_{L_s, L_m} \; 160 \times 10\sqrt{L_s} + 120 \times 6\sqrt{L_m} = 1600\sqrt{L_s} + 720\sqrt{L_m}
+\]
+
+sujeito a \(L_s + L_m = 100\).
+
+**(b)** Lagrangeano: \(\mathcal{L} = 1600\sqrt{L_s} + 720\sqrt{L_m} + \lambda(100 - L_s - L_m)\).
+
+CPOs:
+
+\[
+\frac{\partial \mathcal{L}}{\partial L_s} = \frac{800}{\sqrt{L_s}} - \lambda = 0 \implies \lambda = \frac{800}{\sqrt{L_s}}
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial L_m} = \frac{360}{\sqrt{L_m}} - \lambda = 0 \implies \lambda = \frac{360}{\sqrt{L_m}}
+\]
+
+**(c)** Igualando: \(\frac{800}{\sqrt{L_s}} = \frac{360}{\sqrt{L_m}} \implies \frac{\sqrt{L_m}}{\sqrt{L_s}} = \frac{360}{800} = 0{,}45 \implies \frac{L_m}{L_s} = 0{,}2025\).
+
+Logo \(L_m = 0{,}2025 L_s\). Substituindo: \(L_s + 0{,}2025 L_s = 100 \implies 1{,}2025 L_s = 100 \implies L_s^* \approx 83{,}16\).
+
+\(L_m^* = 100 - 83{,}16 = 16{,}84\).
+
+**(d)** \(\lambda^* = \frac{800}{\sqrt{83{,}16}} = \frac{800}{9{,}12} \approx 87{,}7\) R\$/hora.
+
+**Interpretação:** Uma hora adicional de trabalho aumentaria a receita do produtor em aproximadamente R\$ 87,70. Esse é o valor-sombra do recurso escasso (tempo).
+
+**(e)** Se \(P_s\) sobe para 200, a CPO para \(L_s\) torna-se \(\frac{1000}{\sqrt{L_s}} = \lambda\). A razão \(L_m/L_s\) cai (de 0,2025 para \((360/1000)^2 = 0{,}1296\)), logo o produtor realoca horas *da milho para a soja* — exatamente o que a estática comparativa prevê. O multiplicador \(\lambda\) também sobe, refletindo que cada hora de trabalho agora é mais valiosa.
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-9)
+
+---
+
+## ✏️ Exercício 2.10 {#ex-2-10}
+
+**Solução.**
+
+**(a)** A firma maximiza \(\pi = PQ - wL - rK\) sujeita a \(Q = K^\alpha L^{1-\alpha}\) e \(K \leq \bar{K}\). Substituindo a função de produção:
+
+\[
+\pi = P K^\alpha L^{1-\alpha} - wL - rK
+\]
+
+Lagrangeano com restrição de capacidade:
+
+\[
+\mathcal{L} = P K^\alpha L^{1-\alpha} - wL - rK + \mu(\bar{K} - K)
+\]
+
+**(b)** KKT:
+
+\[
+\frac{\partial \mathcal{L}}{\partial L} = P(1-\alpha)K^\alpha L^{-\alpha} - w = 0
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial K} = P\alpha K^{\alpha-1} L^{1-\alpha} - r - \mu = 0
+\]
+
+\[
+\mu \geq 0, \quad \bar{K} - K \geq 0, \quad \mu(\bar{K} - K) = 0
+\]
+
+**(c)** Se \(K < \bar{K}\), então \(\mu = 0\). Da segunda CPO: \(P\alpha K^{\alpha-1}L^{1-\alpha} = r\), ou seja, \(P \cdot PMg_K = r\) — o valor do produto marginal do capital iguala o custo do capital. Da primeira CPO: \(P(1-\alpha)K^\alpha L^{-\alpha} = w\), ou seja, \(P \cdot PMg_L = w\).
+
+Dividindo: \(\frac{\alpha}{1-\alpha} \cdot \frac{L}{K} = \frac{r}{w} \implies K = \frac{\alpha w}{(1-\alpha)r} L\).
+
+Substituindo na função de produção, obtemos as demandas por fatores como funções de \(P, w, r\).
+
+**(d)** Se \(K = \bar{K}\), a CPO para \(K\) dá:
+
+\[
+\mu = P\alpha \bar{K}^{\alpha-1} L^{1-\alpha} - r
+\]
+
+Como \(\mu > 0\), temos \(P \cdot PMg_K > r\): a produtividade marginal do capital excede seu custo — a firma *gostaria* de contratar mais capital, mas não pode. O multiplicador \(\mu\) é o "aluguel-sombra" do capital: quanto de lucro adicional a firma obteria se pudesse usar uma unidade a mais de capital. Em termos práticos, \(\mu\) mede o valor de uma expansão de capacidade.
+
+**(e)** A restrição se torna ativa quando a demanda ótima irrestrita de capital excede \(\bar{K}\):
+
+\[
+K^*_{\text{irrestrito}} = \frac{\alpha w}{(1-\alpha)r} L^* > \bar{K}
+\]
+
+Isso ocorre quando \(\bar{K}\) é suficientemente baixo (ou quando \(P\) e \(w/r\) são suficientemente altos, incentivando uma intensidade de capital maior).
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-10)

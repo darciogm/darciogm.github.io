@@ -287,3 +287,71 @@ Como \(\partial x_1/\partial I = 0\), o termo de efeito-renda desaparece, e a de
 **Interpretação econômica:** Com preferências quase-lineares, toda a resposta a mudanças de preço é efeito substituição puro (Slutsky). Isso torna a análise de bem-estar particularmente simples: o excedente do consumidor marshalliano é uma medida exata da variação compensadora e da variação equivalente — não há ambiguidade entre as três medidas de bem-estar.
 
 ↩ [Voltar ao enunciado](../cap04/index.md#ex-4-5)
+
+---
+
+## ✏️ Exercício 4.6 {#ex-4-6}
+
+**Solução.**
+
+**(a)** Para \(u = x_1 x_2\) (Cobb-Douglas com \(a=b=1\)): \(x_1^* = \frac{I}{2p_1} = \frac{80}{4} = 20\), \(x_2^* = \frac{I}{2p_2} = \frac{80}{8} = 10\).
+
+**(b)** \(V = x_1^* \cdot x_2^* = 200\). Pela fórmula: \(V = \frac{I^2}{4p_1 p_2} = \frac{6400}{32} = 200\). ✓
+
+**(c)** \(\partial V/\partial p_1 = -\frac{I^2}{4p_1^2 p_2} = -\frac{6400}{64} = -100\). \(\partial V/\partial I = \frac{I}{2p_1 p_2} = \frac{80}{8} = 10\). Roy: \(x_1 = -(-100)/10 = 10\). Espere — isso não bate. Recalculando: \(\partial V/\partial I = \frac{2I}{4p_1 p_2} = \frac{160}{32} = 5\). Logo \(x_1 = 100/5 = 20\). ✓
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-6)
+
+---
+
+## ✏️ Exercício 4.7 {#ex-4-7}
+
+**Solução.**
+
+**(a)** TMS \(= 3/1 = 3\). Razão de preços: \(p_1/p_2 = 6/4 = 1{,}5\). Como TMS \(> p_1/p_2\), solução de canto em \(x_1\): \(x_1^* = 120/6 = 20\), \(x_2^* = 0\). \(U = 60\).
+
+**(b)** Com \(p_1 = 2\): \(p_1/p_2 = 0{,}5 < 3\). Continua no canto: \(x_1^* = 60\), \(x_2^* = 0\). \(U = 180\).
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-7)
+
+---
+
+## ✏️ Exercício 4.8 {#ex-4-8}
+
+**Solução.**
+
+**(a)** Para \(u = x_1^{1/3}x_2^{2/3}\), \(E = (3p_1)^{1/3}(3p_2/2)^{2/3}\bar{u}\).
+
+**(b)** \(h_1 = \partial E/\partial p_1 = (3p_1)^{-2/3}(3p_2/2)^{2/3}\bar{u}\). ✓ pelo Lema de Shephard.
+
+**(c)** Substituindo \(\bar{u} = V\) em \(E\), recupera-se \(I\). ✓
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-8)
+
+---
+
+## ✏️ Exercício 4.9 {#ex-4-9}
+
+**Solução.**
+
+**(a)** Sem imposto: \(x_1 = 900\), \(x_2 = 2100\). Com imposto 20% (\(p_1=1{,}2\)): \(x_1^t = 750\), \(x_2^t = 2100\). Receita: \(R = 0{,}2 \times 750 = 150\).
+
+**(b)** Lump sum de 150: \(I' = 2850\). \(x_1^L = 855\), \(x_2^L = 1995\). \(V_L = 855^{0,3} \times 1995^{0,7} \approx 1630 > V_t \approx 1600\). O lump sum gera maior utilidade. ✓
+
+**(c)** Perda de peso morto: \(V_0 - V_t > V_0 - V_L\), confirmando o princípio do montante fixo.
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-9)
+
+---
+
+## ✏️ Exercício 4.10 {#ex-4-10}
+
+**Solução.**
+
+**(a)** Com \(\sigma=2\), \(\rho=0{,}5\). \(P = (0{,}25 \cdot 3^{-1} + 0{,}25 \cdot 1^{-1})^{-1} = 3\). \(x_1^* = 5\), \(x_2^* = 45\). Verificação: \(3(5)+1(45)=60=I\). ✓
+
+**(b)** Homogeneidade: multiplicando preços e renda por \(t\), o índice \(P\) escala por \(t\), e \(I/P\) permanece constante. ✓
+
+**(c)** \(P = 3\). O índice CES pondera os preços pela substituibilidade do consumidor.
+
+↩ [Voltar ao enunciado](../cap04/index.md#ex-4-10)

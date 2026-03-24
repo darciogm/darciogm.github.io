@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+  Kuhn-Tucker / Folga Complementar — Restrição ativa vs inativa
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condições de Kuhn-Tucker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}
+    .graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}
+    #jxgbox{flex:1 1 480px;max-width:560px;height:460px;border:1px solid #ddd;border-radius:6px}
+    .controls{flex:0 1 310px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}
+    .controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}
+    .slider-group{margin-bottom:.8rem}
+    .slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    .info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.7}
+    .info-box .info-row{display:flex;justify-content:space-between;align-items:baseline}
+    .info-box .info-label{color:#666}
+    .info-box .info-val{font-weight:700;color:#333}
+    .info-box .info-val.accent{color:#C8102E}
+    .info-box .info-val.green{color:#00897b}
+    .info-box .divider{border:none;border-top:1px solid #eee;margin:.4rem 0}
+    .status-box{margin-top:.6rem;padding:.5rem;border-radius:4px;font-size:.82rem;text-align:center;font-weight:700}
+    .status-active{background:#fff3e0;color:#e65100;border:1px solid #ffcc80}
+    .status-inactive{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+    .legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem;font-size:.78rem;color:#666}
+    .legend-item{display:flex;align-items:center;gap:.3rem}
+    .legend-swatch{width:18px;height:3px;border-radius:2px}
+    .btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}
+    .btn-reset:hover{background:#9a0c23}
+    @media(max-width:860px){.graph-container{flex-direction:column;align-items:center}#jxgbox,.controls{flex-basis:100%;max-width:100%}}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Kuhn-Tucker: Folga Complementar</h3>
+    <div class="slider-group">
+      <label>Nível da restrição \(c\): <span class="val" id="val-c">8</span></label>
+      <input type="range" id="sl-c" min="3" max="18" step="0.5" value="8">
+    </div>
+    <div class="info-box">
+      <div style="text-align:center;margin-bottom:.4rem;color:#555;font-size:.8rem">
+        \(\max\; xy\) &nbsp; s.a. &nbsp; \(x + y \leq c\), \(x,y \geq 0\)
+      </div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">Ótimo irrestrito</span><span class="info-val" id="info-unres">—</span></div>
+      <div class="info-row"><span class="info-label">Ótimo restrito \((x^*,y^*)\)</span><span class="info-val green" id="info-opt">—</span></div>
+      <div class="info-row"><span class="info-label">\(f^* = x^*y^*\)</span><span class="info-val accent" id="info-fstar">—</span></div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">\(\lambda^*\) (preço-sombra)</span><span class="info-val accent" id="info-lambda">—</span></div>
+      <div class="info-row"><span class="info-label">Folga: \(c - x - y\)</span><span class="info-val" id="info-slack">—</span></div>
+    </div>
+    <div class="status-box" id="status">—</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Curvas de nível \(xy = k\)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Restrição \(x+y=c\)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#ff9800;height:2px;border-top:2px dashed #ff9800"></div> Restrição inativa</div>
+    </div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+var cVal=8;
+// f(x,y) = xy. Unconstrained max doesn't exist (goes to infinity)
+// But with constraint x+y<=c, x,y>=0: max xy s.t. x+y<=c
+// Solution: x*=y*=c/2, f*=c²/4, λ*=c/2
+// The constraint is ALWAYS active here because xy is monotone increasing.
+// To make it more interesting, let's use f(x,y) = -(x-5)²-(y-5)² + 50
+// This has unconstrained max at (5,5) with f=50
+// With x+y <= c: if c >= 10, constraint is INACTIVE (5+5=10<=c), λ=0
+// If c < 10, constraint is ACTIVE, and we solve via Lagrange
+
+function fVal(x,y){return -(x-5)*(x-5)-(y-5)*(y-5)+50;}
+// Unconstrained max: (5,5), f=50
+// Constrained: if c<10, max on line x+y=c => x=y=c/2 (by symmetry)
+// f(c/2,c/2) = -(c/2-5)²-(c/2-5)² + 50 = -2(c/2-5)² + 50
+// λ = 2(5-c/2) = 10-c (from KKT)
+
+function isActive(){return cVal<10;}
+function xOpt(){return isActive()?cVal/2:5;}
+function yOpt(){return isActive()?cVal/2:5;}
+function fOpt(){return fVal(xOpt(),yOpt());}
+function lambdaOpt(){return isActive()?10-cVal:0;}
+
+var board=JXG.JSXGraph.initBoard('jxgbox',{
+  boundingbox:[-1,12,12,-1],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:true
+});
+board.create('axis',[[0,0],[11.5,0]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10},minorTicks:0,ticksDistance:2}});
+board.create('axis',[[0,0],[0,11.5]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:2}});
+board.create('text',[6,-.7,'<b><i>x</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
+board.create('text',[-.7,6,'<b><i>y</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
+
+// Level curves of f(x,y) = -(x-5)²-(y-5)²+50 = k => (x-5)²+(y-5)² = 50-k
+var levelColors=['#e3f2fd','#bbdefb','#90caf9','#64b5f6','#42a5f5'];
+for(var lv=0;lv<5;lv++){
+  (function(r2){
+    var r=Math.sqrt(r2);
+    board.create('circle',[[5,5],r],{strokeColor:'#1565c0',strokeWidth:1,strokeOpacity:0.4+lv*0.12,fillColor:'none',dash:0,fixed:true,highlight:false});
+  })([40,30,20,10,2][lv]);
+}
+
+// Constraint line x+y=c (red when active, dashed orange when inactive)
+var constrLine=board.create('line',[[function(){return cVal;},0],[0,function(){return cVal;}]],{
+  strokeColor:function(){return isActive()?'#C8102E':'#ff9800';},
+  strokeWidth:function(){return isActive()?2.5:2;},
+  dash:function(){return isActive()?0:3;},
+  straightFirst:false,straightLast:false
+});
+
+// Feasible region shading
+var feasible=board.create('polygon',[[0,0],[function(){return cVal;},0],[0,function(){return cVal;}]],{
+  fillColor:'#C8102E',fillOpacity:0.05,borders:{strokeWidth:0},vertices:{visible:false},highlight:false
+});
+
+// Optimal point
+var optPt=board.create('point',[function(){return xOpt();},function(){return yOpt();}],{
+  size:6,fillColor:'#00897b',strokeColor:'#00897b',name:'',fixed:true
+});
+
+// Unconstrained optimum (always shown as reference)
+board.create('point',[5,5],{size:4,fillColor:'#999',strokeColor:'#999',name:'irrestrito',
+  label:{fontSize:10,offset:[5,5],color:'#999'},fixed:true});
+
+// Dashed lines from optimal point
+board.create('segment',[[function(){return xOpt();},0],[function(){return xOpt();},function(){return yOpt();}]],{strokeColor:'#999',dash:2,strokeWidth:1});
+board.create('segment',[[0,function(){return yOpt();}],[function(){return xOpt();},function(){return yOpt();}]],{strokeColor:'#999',dash:2,strokeWidth:1});
+
+// Level curve through optimum
+board.create('circle',[[5,5],function(){var r2=50-fOpt();return r2>0?Math.sqrt(r2):0.01;}],{
+  strokeColor:'#00897b',strokeWidth:2,fillColor:'none',highlight:false
+});
+
+function updateAll(){
+  cVal=+document.getElementById('sl-c').value;
+  document.getElementById('val-c').textContent=cVal;
+  document.getElementById('info-unres').textContent='(5, 5), f = 50';
+  document.getElementById('info-opt').textContent='('+xOpt().toFixed(2)+', '+yOpt().toFixed(2)+')';
+  document.getElementById('info-fstar').textContent=fOpt().toFixed(2);
+  document.getElementById('info-lambda').textContent=lambdaOpt().toFixed(2);
+  document.getElementById('info-slack').textContent=(cVal-xOpt()-yOpt()).toFixed(2);
+  var st=document.getElementById('status');
+  if(isActive()){
+    st.className='status-box status-active';
+    st.textContent='Restrição ATIVA: λ = '+(10-cVal).toFixed(1)+' > 0';
+  } else {
+    st.className='status-box status-inactive';
+    st.textContent='Restrição INATIVA: λ = 0 (ótimo irrestrito viável)';
+  }
+  board.update();
+}
+document.getElementById('sl-c').addEventListener('input',updateAll);
+function resetAll(){document.getElementById('sl-c').value=8;cVal=8;updateAll();}
+updateAll();
+</script>
+</body>
+</html>

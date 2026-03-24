@@ -4,13 +4,15 @@ A microeconomia moderna é uma disciplina intrinsecamente matemática. Os modelo
 
 O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida dos resultados e técnicas que serão utilizados ao longo do livro. O leitor familiarizado com cálculo multivariado e álgebra linear pode percorrer este capítulo rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais, como o teorema do envelope e as condições de Kuhn-Tucker.
 
-O capítulo segue uma progressão natural: partimos da otimização em uma dimensão (Seção 2.1), avançamos para funções de várias variáveis e o ferramental de estática comparativa (Seções 2.2--2.3), introduzimos o teorema do envelope (Seção 2.4), abordamos a otimização com restrições de igualdade e desigualdade (Seções 2.5--2.7), examinamos propriedades de curvatura e homogeneidade (Seções 2.8--2.9), e encerramos com integração, otimização dinâmica e estatística (Seções 2.10--2.12). Ao final, o leitor disporá de todo o aparato formal necessário para acompanhar os capítulos subsequentes sobre teoria do consumidor, teoria da firma e equilíbrio de mercado.
+O capítulo segue uma progressão natural: partimos da otimização em uma dimensão (Seção 2.1), avançamos para funções de várias variáveis e o ferramental de estática comparativa (Seções 2.2–2.3), introduzimos o teorema do envelope (Seção 2.4), abordamos a otimização com restrições de igualdade e desigualdade (Seções 2.5–2.7), examinamos propriedades de curvatura e homogeneidade (Seções 2.8–2.9), e encerramos com integração, otimização dinâmica e estatística (Seções 2.10–2.12). Ao final, o leitor disporá de todo o aparato formal necessário para acompanhar os capítulos subsequentes sobre teoria do consumidor (Capítulos 3–5), teoria da firma (Capítulos 7–10) e equilíbrio de mercado (Capítulos 12–13).
+
+A exposição segue Nicholson e Snyder (2017, Cap. 2), complementada pelo apêndice matemático de Mas-Colell, Whinston e Green (1995) e por Simon e Blume (1994). Para uma abordagem passo a passo especialmente acessível, ver Chiang e Wainwright (2005). As ferramentas apresentadas aqui não são ornamentos formais: são a linguagem em que toda a microeconomia é escrita. Dominá-las é condição necessária — e, em grande medida, suficiente — para acompanhar o restante do livro.
 
 ---
 
 ## 2.1 Maximização de funções de uma variável
 
-Começamos pelo caso mais simples: maximizar uma função de uma única variável. Embora a maioria dos problemas econômicos envolva múltiplas variáveis, o caso unidimensional é instrutivo porque nele as ideias centrais — condições de primeira ordem, condições de segunda ordem, interpretação econômica — aparecem em sua forma mais transparente.
+Começamos pelo caso mais simples: maximizar uma função de uma única variável. Embora a maioria dos problemas econômicos envolva múltiplas variáveis, o caso unidimensional é instrutivo porque nele as ideias centrais — condições de primeira ordem, condições de segunda ordem, interpretação econômica — aparecem em sua forma mais transparente. Os conceitos desta seção são a versão rigorosa do "roteiro de otimização" apresentado informalmente no Capítulo 1 (Seção 1.4): definir o objetivo, derivar, igualar a zero, verificar a segunda derivada.
 
 ### Condições de primeira ordem
 
@@ -45,7 +47,14 @@ Se \(f''(x^*) > 0\), o ponto é um mínimo local. Se \(f''(x^*) = 0\), o teste �
 
     Lucro máximo: \(\pi(15) = 90(15) - 3(225) = 1350 - 675 = 675\).
 
-O caso de uma variável é didático, mas limitado. Na prática, consumidores escolhem cestas com múltiplos bens, firmas combinam vários insumos e governos alocam recursos entre diversas áreas. Para lidar com esses problemas, precisamos estender as ferramentas de otimização para funções de várias variáveis. O primeiro passo é dominar as noções de derivada parcial e diferencial total.
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A condição de primeira ordem diz "pare quando o ganho marginal for zero"; a condição de segunda ordem garante que você parou no topo, não no fundo.
+
+    **Pense assim:** Imagine que você sobe uma montanha com os olhos vendados. A CPO é o momento em que o terreno fica plano sob seus pés — você parou de subir. Mas o terreno plano pode ser o topo da montanha (máximo), o fundo de um vale (mínimo) ou uma sela entre dois picos. A CSO verifica: o terreno curva para baixo em todas as direções? Se sim, você está no topo.
+
+    **Por que isso importa:** Em economia, a CPO nos diz que "a firma produz até que \(P = CMg\)" ou que "o consumidor iguala a TMS à razão de preços" — são as condições de equilíbrio. A CSO garante que esse equilíbrio é de fato um ótimo, não um pésimo.
+
+O caso de uma variável é didático, mas limitado. Na prática, consumidores escolhem cestas com múltiplos bens, firmas combinam vários insumos e governos alocam recursos entre diversas áreas. Dito de outra forma: o problema real é quase sempre multidimensional. Para lidar com esses problemas, precisamos estender as ferramentas de otimização para funções de várias variáveis. O primeiro passo é dominar as noções de derivada parcial e diferencial total — a linguagem do *ceteris paribus* em termos matemáticos precisos.
 
 ---
 
@@ -55,11 +64,14 @@ O caso de uma variável é didático, mas limitado. Na prática, consumidores es
 
 Quando o problema envolve múltiplas variáveis — como a utilidade que depende de vários bens, ou a produção que depende de capital e trabalho —, a noção de derivada precisa ser generalizada. A ideia é simples: variamos *uma* variável de cada vez, mantendo as demais fixas, e medimos o efeito sobre o valor da função.
 
-Seja \(f: \mathbb{R}^n \to \mathbb{R}\). A **derivada parcial** de \(f\) em relação a \(x_i\), denotada \(\frac{\partial f}{\partial x_i}\) ou \(f_i\), mede a taxa de variação de \(f\) quando apenas \(x_i\) varia, mantendo todas as demais variáveis constantes — é o equivalente matemático do *ceteris paribus*.
+Seja \(f: \mathbb{R}^n \to \mathbb{R}\). A **derivada parcial** de \(f\) em relação a \(x_i\), denotada \(\frac{\partial f}{\partial x_i}\) ou \(f_i\), mede a taxa de variação de \(f\) quando apenas \(x_i\) varia, mantendo todas as demais variáveis constantes — é o equivalente matemático do *ceteris paribus* discutido no Capítulo 1 (Seção 1.3). No contexto do consumidor, \(\frac{\partial U}{\partial x_1}\) é a **utilidade marginal** do bem 1 — quanto a satisfação aumenta quando o consumidor adquire uma unidade adicional do bem 1, mantendo constantes as quantidades dos demais bens. No contexto da firma, \(\frac{\partial F}{\partial L}\) é a **produtividade marginal do trabalho**.
+
+!!! warning "Derivada parcial ≠ derivada total"
+    Um erro frequente é confundir a derivada parcial \(\frac{\partial f}{\partial x_i}\) com a derivada total \(\frac{df}{dx_i}\). A derivada parcial mantém todas as demais variáveis *constantes*; a derivada total permite que elas variem (por exemplo, por serem funções de \(x_i\)). Em estática comparativa, essa distinção é crucial: quando o preço de um bem sobe, o consumidor ajusta as quantidades de *todos* os bens — o efeito total sobre a utilidade não é dado pela derivada parcial, mas pela derivada total (que inclui os efeitos indiretos via ajustes nas quantidades). O teorema do envelope (Seção 2.4) mostra, elegantemente, que no ótimo esses efeitos indiretos desaparecem.
 
 ### Diferencial total
 
-Enquanto a derivada parcial isola o efeito de *uma* variável, mantendo as demais constantes, a diferencial total captura o efeito *combinado* de variações simultâneas em todas as variáveis. A **diferencial total** de \(f(x_1, x_2, \ldots, x_n)\) é:
+Enquanto a derivada parcial isola o efeito de *uma* variável, mantendo as demais constantes, a diferencial total captura o efeito *combinado* de variações simultâneas em todas as variáveis. Essa distinção é crucial em economia, onde variáveis raramente mudam isoladamente: quando o preço do petróleo sobe, o preço da gasolina, do diesel e do plástico mudam simultaneamente. A diferencial total é a ferramenta que agrega todos esses efeitos parciais em uma medida única da variação total. A **diferencial total** de \(f(x_1, x_2, \ldots, x_n)\) é:
 
 \[
 df = \sum_{i=1}^{n} \frac{\partial f}{\partial x_i} \, dx_i = f_1 \, dx_1 + f_2 \, dx_2 + \cdots + f_n \, dx_n
@@ -69,7 +81,7 @@ A diferencial total expressa a variação aproximada de \(f\) quando todas as va
 
 ### Teorema da função implícita
 
-Em muitos modelos econômicos, as variáveis endógenas não são expressas explicitamente como funções dos parâmetros. Em vez disso, elas são definidas implicitamente por uma condição de equilíbrio — por exemplo, a igualdade entre oferta e demanda. Como, então, calcular o efeito de uma mudança paramétrica sobre a variável endógena? É aqui que entra o teorema da função implícita, uma das ferramentas mais utilizadas em estática comparativa.
+Em muitos modelos econômicos, as variáveis endógenas não são expressas explicitamente como funções dos parâmetros. Em vez disso, elas são definidas implicitamente por uma condição de equilíbrio — por exemplo, a igualdade entre oferta e demanda \(D(P, Y) = S(P, w)\), onde \(P\) é determinado implicitamente pelos parâmetros \(Y\) e \(w\). Não conseguimos, em geral, "resolver para \(P^*\)" de forma fechada — a equação pode ser não-linear, ou a forma funcional pode ser desconhecida. Como, então, calcular o efeito de uma mudança paramétrica sobre a variável endógena? É aqui que entra o **teorema da função implícita** (TFI), uma das ferramentas mais utilizadas em estática comparativa — e, na verdade, em toda a economia matemática.
 
 !!! definition "Teorema da Função Implícita"
     Seja \(F(x, y) = 0\) uma relação implícita entre \(x\) e \(y\), com \(F\) continuamente diferenciável e \(F_y \neq 0\) em um ponto \((x_0, y_0)\). Então, em uma vizinhança de \((x_0, y_0)\), existe uma função \(y = g(x)\) tal que \(F(x, g(x)) = 0\), e:
@@ -86,7 +98,15 @@ Este resultado é fundamental em estática comparativa: permite calcular como um
 \frac{dP}{dY} = -\frac{\partial D / \partial Y}{\partial D / \partial P - \partial S / \partial P} = -\frac{D_Y}{D_P - S_P}
 \]
 
-Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio. Note a potência do resultado: sem precisar resolver explicitamente o modelo para \(P^*\), o teorema da função implícita nos permite determinar a *direção* do efeito e, com mais informação, sua *magnitude*.
+Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor que a da oferta), então \(\frac{dP}{dY} > 0\): um aumento na renda eleva o preço de equilíbrio. Note a potência do resultado: sem precisar resolver explicitamente o modelo para \(P^*\), o teorema da função implícita nos permite determinar a *direção* do efeito e, com mais informação, sua *magnitude*. Essa técnica será usada extensivamente nos capítulos sobre teoria do consumidor (Capítulo 5, equação de Slutsky) e teoria da firma (Capítulo 8, estática comparativa de custos).
+
+A magnitude da resposta depende criticamente das inclinações das curvas de oferta e demanda — ou, em termos econômicos, de suas **elasticidades**. Quando a demanda é inelástica (curva quase vertical), um choque de oferta produz grande variação no preço e pequena variação na quantidade; quando é elástica (curva quase horizontal), o oposto ocorre. Essa relação entre elasticidades e inclinações é a ponte entre a matemática do TFI e a economia aplicada — como ilustra o Box Brasil a seguir.
+
+<iframe src="../graficos/cap02/funcao-implicita.html" title="Figura 2.1 — Teorema da Função Implícita" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 2.1 — Teorema da Função Implícita.** A curva vermelha mostra \(P^*(Y)\) — o preço de equilíbrio como função implícita da renda. A reta tangente (azul tracejada) tem inclinação \(dP^*/dY = -D_Y/(D_P - S_P)\). Arraste \(Y\) para visualizar a estática comparativa ao longo da curva implícita.
+</div>
 
 !!! box-brasil "Box Brasil — Elasticidades de demanda: o cálculo a serviço da política pública"
 
@@ -106,7 +126,7 @@ Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor q
 
 ## 2.3 Maximização com várias variáveis
 
-Com as ferramentas de cálculo multivariado em mãos — derivadas parciais, diferencial total e teorema da função implícita —, podemos agora retomar o problema central: como encontrar o máximo de uma função de várias variáveis? Essa é a generalização natural da Seção 2.1 para o caso \(n\)-dimensional.
+Com as ferramentas de cálculo multivariado em mãos — derivadas parciais, diferencial total e teorema da função implícita —, podemos agora retomar o problema central: como encontrar o máximo de uma função de várias variáveis? Essa é a generalização natural da Seção 2.1 para o caso \(n\)-dimensional, e é essencial porque praticamente todos os problemas econômicos envolvem múltiplas variáveis de escolha: o consumidor escolhe quantidades de vários bens, a firma combina diversos insumos, o governo aloca orçamento entre múltiplas áreas.
 
 Para maximizar \(f(x_1, x_2, \ldots, x_n)\) sem restrições, as condições necessárias de primeira ordem são:
 
@@ -132,13 +152,15 @@ onde \(f_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}\).
 !!! definition "Condição Suficiente de Segunda Ordem (caso irrestrito)"
     O ponto crítico \(\mathbf{x}^*\) é um **máximo local** se a matriz hessiana \(H(\mathbf{x}^*)\) for **negativa definida**, ou seja, se todos os seus autovalores forem negativos. Equivalentemente, os menores principais líderes devem alternar em sinal: \(f_{11} < 0\), \(f_{11}f_{22} - f_{12}^2 > 0\), etc.
 
-Até aqui, sabemos como *encontrar* o ótimo e *confirmar* que ele é de fato um máximo. Mas em economia, frequentemente a pergunta mais interessante não é "qual é o ótimo?", e sim "como o ótimo muda quando as circunstâncias mudam?" — isto é, estática comparativa. O teorema do envelope oferece um atalho elegante para responder a essa pergunta.
+A hessiana é simétrica pelo teorema de Young (\(f_{ij} = f_{ji}\)), o que reduz o número de derivadas cruzadas a calcular. Para \(n = 2\), a condição de máximo exige \(f_{11} < 0\) e \(\det(H) = f_{11}f_{22} - f_{12}^2 > 0\). A primeira condição garante que a função é localmente côncava na direção de \(x_1\); a segunda garante que a curvatura é negativa em *todas* as direções, incluindo as diagonais. Na Seção 2.8, discutiremos a relação entre essas condições locais (no ponto ótimo) e propriedades globais de curvatura como concavidade e quase-concavidade.
+
+Até aqui, sabemos como *encontrar* o ótimo e *confirmar* que ele é de fato um máximo. Mas em economia, frequentemente a pergunta mais interessante não é "qual é o ótimo?", e sim "como o ótimo muda quando as circunstâncias mudam?" — isto é, **estática comparativa**, o conceito definido no Capítulo 1 (Seção 1.4). O teorema do envelope oferece um atalho elegante para responder a essa pergunta.
 
 ---
 
 ## 2.4 Teorema do envelope
 
-O teorema do envelope é um dos resultados mais úteis e elegantes da microeconomia. Ele permite calcular como o valor ótimo de uma função objetivo muda quando um parâmetro varia, sem necessidade de recalcular a solução ótima.
+O teorema do envelope é um dos resultados mais úteis e elegantes da microeconomia — e, na opinião de muitos economistas, o resultado mais "sub-apreciado" do cálculo. Ele permite calcular como o valor ótimo de uma função objetivo muda quando um parâmetro varia, sem necessidade de recalcular a solução ótima. A utilidade desse atalho é enorme: em problemas complexos com muitas variáveis de escolha, recalcular o ótimo para cada mudança de parâmetro pode ser extremamente trabalhoso. O teorema do envelope mostra que, para mudanças marginais, essa recalculação é desnecessária — basta olhar o efeito direto do parâmetro sobre a função objetivo, ignorando os ajustes nas variáveis de escolha.
 
 !!! theorem "Teorema do Envelope (caso irrestrito)"
     Seja \(f(x, a)\) uma função de \(x\) (variável de escolha) e \(a\) (parâmetro), e seja \(x^*(a)\) a solução do problema \(\max_x f(x, a)\). Defina a **função valor** como:
@@ -183,12 +205,21 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 
 ## 2.5 Maximização com restrições: o método de Lagrange
 
-Até agora, tratamos de problemas de otimização sem restrições: o agente pode escolher livremente qualquer valor para as variáveis de decisão. Mas os problemas econômicos quase sempre envolvem restrições. O consumidor deseja maximizar sua satisfação, porém dispõe de renda limitada. A firma quer maximizar o lucro, mas enfrenta restrições tecnológicas. Como incorporar essas limitações ao problema de otimização?
+Até agora, tratamos de problemas de otimização sem restrições: o agente pode escolher livremente qualquer valor para as variáveis de decisão. Mas os problemas econômicos quase sempre envolvem restrições — e é a presença dessas restrições que torna a economia interessante. O consumidor deseja maximizar sua satisfação, porém dispõe de renda limitada. A firma quer maximizar o lucro, mas enfrenta restrições tecnológicas (não pode produzir mais do que sua função de produção permite) e, eventualmente, restrições de capacidade. O governo deseja maximizar o bem-estar social, mas enfrenta restrições orçamentárias, informacionais e de incentivos. Em cada caso, a escassez de recursos é o que gera o *trade-off* — a necessidade de escolher entre alternativas —, e é essa escolha que a microeconomia estuda.
 
-O método de Lagrange é a ferramenta mais importante deste capítulo — e, possivelmente, de todo o curso de microeconomia. Praticamente todos os modelos que estudaremos — consumidor, firma, equilíbrio geral — envolvem otimizar uma função sujeita a restrições. Esta seção apresenta o método em um passo a passo detalhado, para que o leitor possa aplicá-lo com confiança a qualquer problema.
+O método de Lagrange é a ferramenta mais importante deste capítulo — e, possivelmente, de todo o curso de microeconomia. Desenvolvido pelo matemático ítalo-francês Joseph-Louis Lagrange no final do século XVIII, o método transforma um problema de otimização com restrição em um problema sem restrição em um espaço ampliado. Praticamente todos os modelos que estudaremos — consumidor (Capítulo 4), firma (Capítulos 7–10), equilíbrio geral (Capítulo 12) — envolvem otimizar uma função sujeita a restrições. O método é tão central que o multiplicador de Lagrange \(\lambda\) se tornará, ao longo do livro, um dos objetos mais interpretados economicamente: utilidade marginal da renda, custo marginal, preço-sombra de restrições regulatórias.
+
+Esta seção apresenta o método em um passo a passo detalhado, para que o leitor possa aplicá-lo com confiança a qualquer problema.
 
 !!! info "Referências para aprofundamento"
     Para uma exposição mais detalhada dos fundamentos matemáticos do método de Lagrange, consulte Chiang & Wainwright (2005, Cap. 12) e Simon & Blume (1994, Cap. 18–19). Para aplicações econômicas, veja Nicholson & Snyder (2017, Cap. 2) e Jehle & Reny (2011, Cap. 1).
+
+!!! info "Prêmio Nobel — Leonid Kantorovich e Tjalling Koopmans (1975)"
+
+    **Leonid Kantorovich** (1912–1986, URSS) e **Tjalling Koopmans** (1910–1985, EUA/Holanda) foram premiados "pela sua contribuição à teoria da alocação ótima de recursos". Kantorovich, matemático de formação, desenvolveu a **programação linear** em 1939, motivado pelo problema prático de alocar matérias-primas em fábricas soviéticas de modo eficiente. Koopmans generalizou e conectou essa teoria à economia, mostrando que os preços-sombra da programação linear correspondem aos preços de equilíbrio competitivo.
+
+    **Conexão com este capítulo:**
+    O método de Lagrange e as condições KKT desta seção são, em essência, a versão diferenciável dos resultados de programação linear de Kantorovich e Koopmans. O multiplicador \(\lambda\) — o "valor-sombra" da restrição — é exatamente o conceito que Kantorovich chamou de "avaliação resolvente" (*resolving multiplier*) em seu trabalho original. A equivalência entre a solução do problema de otimização com restrições e os preços de equilíbrio competitivo é uma das ideias mais profundas da teoria econômica, formalizada no segundo teorema do bem-estar (Capítulo 13).
 
 ### Passo 0 — Identificar o problema
 
@@ -264,7 +295,15 @@ Igualando as duas expressões:
 \frac{f_{x_1}}{f_{x_2}} = \frac{g_{x_1}}{g_{x_2}} \label{eq:2.6} \tag{2.6}
 \]
 
-A equação $\eqref{eq:2.6}$ é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo.
+!!! definition "Condição de Tangência"
+    A equação $\eqref{eq:2.6}$ é a **condição de tangência**: no ótimo, a razão das derivadas parciais da função objetivo é igual à razão das derivadas parciais da restrição. Geometricamente, isso significa que a **curva de nível** de \(f\) é tangente à curva definida pela restrição \(g = c\). Equivalentemente, os gradientes \(\nabla f\) e \(\nabla g\) são paralelos no ponto ótimo — não há direção ao longo da restrição que permita melhorar o valor de \(f\).
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** No ótimo com restrição, a curva de indiferença "encosta" na restrição sem cruzá-la — como uma bola de futebol que repousa sobre uma superfície inclinada.
+
+    **Pense assim:** Imagine-se caminhando ao longo de uma trilha no morro (a restrição orçamentária). Você quer subir o mais alto possível (maximizar utilidade), mas só pode andar na trilha. No ponto ótimo, a trilha é tangente a uma curva de nível da altitude — se a trilha cruzasse a curva, você poderia seguir subindo. A tangência significa: não há mais subida disponível dentro da trilha.
+
+    **Por que isso importa:** A condição de tangência é a base de toda a teoria da escolha do consumidor (Capítulo 4) e da minimização de custos da firma (Capítulo 10). No problema do consumidor, ela se traduz em \(\text{TMS} = p_1/p_2\); no problema da firma, em \(\text{TMST} = w/r\).
 
 !!! info "TMS igual à razão de preços: o ótimo do consumidor"
     No problema do consumidor, a equação $\eqref{eq:2.6}$ se torna:
@@ -650,13 +689,15 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 
         </div>
 
-    <iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.1 — Demandas marshallianas CES" class="graph-iframe"></iframe>
+    <iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.2 — Demandas marshallianas CES" class="graph-iframe"></iframe>
 
     <div class="caption-obj" markdown>
-    **Figura 2.1 — Demandas marshallianas CES.** Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
+    **Figura 2.2 — Demandas marshallianas CES.** Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
     </div>
 
-Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
+O exercício com a CES é um investimento que se pagará ao longo de todo o livro: as demandas marshallianas CES reaparecerão no Capítulo 4 (escolha do consumidor), no Capítulo 5 (equação de Slutsky), e na análise de comércio internacional baseada no modelo de Armington. O leitor que dominar a álgebra da CES estará preparado para esses desenvolvimentos.
+
+Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples — e de enorme utilidade prática: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
 
 ---
 
@@ -720,13 +761,23 @@ Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como 
 
     \(\blacksquare\)
 
-Note a diferença sutil em relação ao caso irrestrito: aqui, a derivada é do Lagrangeano, não apenas de \(f\). Isso faz sentido intuitivamente: quando há uma restrição, a variação do parâmetro pode afetar tanto o objetivo quanto a restrição, e o Lagrangeano captura ambos os efeitos por meio do termo \(\lambda[c - g]\). Este resultado será utilizado extensivamente nos capítulos seguintes — por exemplo, para mostrar que a utilidade marginal da renda é o multiplicador de Lagrange do problema do consumidor.
+Note a diferença sutil em relação ao caso irrestrito: aqui, a derivada é do **Lagrangeano**, não apenas de \(f\). Isso faz sentido intuitivamente: quando há uma restrição, a variação do parâmetro pode afetar tanto o objetivo quanto a restrição, e o Lagrangeano captura ambos os efeitos por meio do termo \(\lambda[c - g]\). Este resultado será utilizado extensivamente nos capítulos seguintes:
+
+- No Capítulo 4, mostra que \(\lambda^* = \partial V / \partial I\): a utilidade marginal da renda é o multiplicador do problema do consumidor.
+- No Capítulo 4 (Lema de Shephard), mostra que \(\partial E / \partial p_i = h_i\): a derivada da função dispêndio em relação ao preço fornece a demanda hicksiana.
+- No Capítulo 10, mostra que o custo marginal da firma iguala o multiplicador do problema de minimização de custos.
+
+A mensagem recorrente é a mesma: no ótimo, os efeitos indiretos (ajustes nas variáveis de escolha) são de segunda ordem, e apenas o efeito direto importa. Essa simplificação — que decorre da CPO — é o motor analítico por trás de boa parte da estática comparativa em microeconomia.
 
 ---
 
 ## 2.7 Restrições de desigualdade: condições de Kuhn-Tucker
 
-O método de Lagrange resolve problemas com restrições de *igualdade*: o consumidor gasta exatamente toda a sua renda, a firma usa exatamente a capacidade total de produção. Mas nem sempre a restrição é ativa. O consumidor pode não gastar toda a renda (se tiver preferências saciáveis), ou pode optar por não consumir nenhuma quantidade de um bem cujo preço é muito alto. Para lidar com essas situações, precisamos de uma generalização que admita restrições de desigualdade e soluções de canto. Em muitos problemas econômicos, as restrições são **desigualdades** (por exemplo, \(x_i \geq 0\), ou restrições orçamentárias do tipo \(\leq\)):
+O método de Lagrange resolve problemas com restrições de *igualdade*: o consumidor gasta exatamente toda a sua renda, a firma usa exatamente a capacidade total de produção. Mas nem sempre a restrição é ativa. O consumidor pode não gastar toda a renda (se tiver preferências saciáveis), ou pode optar por não consumir nenhuma quantidade de um bem cujo preço é muito alto — por exemplo, uma família de baixa renda que não adquire nenhuma unidade de carne importada. Para lidar com essas situações, precisamos de uma generalização que admita restrições de desigualdade e soluções de canto.
+
+Soluções de canto são extremamente comuns no mundo real, embora os livros-texto frequentemente as releguem a notas de rodapé. No contexto do consumidor, uma família que não viaja de avião está em uma solução de canto para "viagens aéreas". No contexto da firma, uma empresa que não investe em P&D está em uma solução de canto para "gastos com inovação". No contexto do governo, um município que não gasta nada com cultura está em uma solução de canto para "despesas culturais" — provavelmente porque o custo de oportunidade (em termos de saúde e educação) é muito alto. As condições de Kuhn-Tucker são a ferramenta matemática que formaliza essas situações.
+
+Em muitos problemas econômicos, as restrições são **desigualdades** (por exemplo, \(x_i \geq 0\), ou restrições orçamentárias do tipo \(\leq\)):
 
 \[
 \max_{\mathbf{x}} f(\mathbf{x}) \quad \text{s.a.} \quad g_j(\mathbf{x}) \leq c_j, \quad j = 1, \ldots, m; \quad x_i \geq 0, \quad i = 1, \ldots, n
@@ -766,6 +817,12 @@ As condições KKT são:
 
     **Por que isso importa:** Soluções de canto são comuns no mundo real — famílias que não poupam nada, firmas que não exportam, consumidores que não compram certos bens. As condições KKT são a linguagem matemática dessas situações.
 
+<iframe src="../graficos/cap02/kuhn-tucker.html" title="Figura 2.3 — Condições de Kuhn-Tucker: restrição ativa vs inativa" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 2.3 — Condições de Kuhn-Tucker: restrição ativa vs inativa.** Maximize \(f(x,y) = -(x-5)^2-(y-5)^2+50\) sujeito a \(x+y \leq c\). Quando \(c < 10\), a restrição é ativa (\(\lambda > 0\)); quando \(c \geq 10\), o ótimo irrestrito é viável e \(\lambda = 0\). Arraste o slider para observar a transição e a folga complementar em ação.
+</div>
+
 !!! box-brasil "Box Brasil — O teto de gastos e a otimização sob restrições de desigualdade"
 
     A **Emenda Constitucional nº 95/2016** (posteriormente substituída pelo novo arcabouço fiscal da EC 126/2022) impôs um **teto para os gastos primários** da União: a despesa primária total de um exercício não poderia exceder a despesa do exercício anterior corrigida pela inflação (IPCA).
@@ -784,7 +841,7 @@ As condições KKT são:
 
 ## 2.8 Condições de segunda ordem e curvatura
 
-Nas seções anteriores, as condições de segunda ordem apareceram como requisitos técnicos — a hessiana negativa definida, o custo marginal crescente. Mas qual é o significado mais profundo dessas condições? Elas estão intimamente ligadas à *curvatura* da função objetivo: conceitos como concavidade e convexidade, que determinam se pontos críticos são máximos globais e se as condições de Lagrange são suficientes.
+Nas seções anteriores, as condições de segunda ordem apareceram como requisitos técnicos — a hessiana negativa definida, o custo marginal crescente. Mas qual é o significado mais profundo dessas condições? Elas estão intimamente ligadas à *curvatura* da função objetivo: conceitos como concavidade e convexidade, que determinam se pontos críticos são máximos globais e se as condições de Lagrange são suficientes. A importância prática é enorme: se a função objetivo é côncava, qualquer solução das CPOs é automaticamente um máximo global — dispensando a verificação laboriosa do hessiano orlado. A maior parte dos problemas que encontraremos neste livro satisfará essa condição, o que simplifica substancialmente a resolução.
 
 ### Concavidade e convexidade
 
@@ -808,7 +865,7 @@ A concavidade é uma condição forte: muitas funções utilidade comuns (como a
 !!! definition "Quase-concavidade"
     Uma função \(f\) é **quase-côncava** se seus **conjuntos de nível superior** \(\{x : f(x) \geq k\}\) são convexos para todo \(k\).
 
-A quase-concavidade é mais fraca que a concavidade, mas é suficiente para garantir que curvas de indiferença têm o formato convexo usual (abauladas em direção à origem). A maioria das funções utilidade usadas em microeconomia é quase-côncava, embora nem todas sejam côncavas.
+A quase-concavidade é mais fraca que a concavidade, mas é suficiente para garantir que curvas de indiferença têm o formato convexo usual (abauladas em direção à origem). A maioria das funções utilidade usadas em microeconomia é quase-côncava, embora nem todas sejam côncavas. A distinção é sutil mas importante: a função Cobb-Douglas \(U = x_1^2 x_2^2\), por exemplo, não é côncava (sua hessiana não é negativa semidefinida em todos os pontos), mas é quase-côncava (seus conjuntos de nível superior são convexos). Como a utilidade é ordinal (Capítulo 3, Seção 3.7), podemos aplicar uma transformação monotônica — por exemplo, \(\hat{U} = \ln U = 2\ln x_1 + 2\ln x_2\) — que é côncava e representa as mesmas preferências. Essa observação explica por que a quase-concavidade, e não a concavidade, é a condição "certa" para o problema do consumidor: ela é invariante sob transformações monotônicas, enquanto a concavidade não é.
 
 !!! note "Condições de segunda ordem em problemas restritos"
     Para problemas de maximização com restrições de igualdade, as condições de segunda ordem envolvem o **hessiano orlado** (*bordered Hessian*), que incorpora as derivadas da restrição. A quase-concavidade da função objetivo é suficiente para garantir que as CSO são satisfeitas em problemas restritos.
@@ -817,7 +874,7 @@ A quase-concavidade é mais fraca que a concavidade, mas é suficiente para gara
 
 ## 2.9 Funções homogêneas e Teorema de Euler
 
-Além da curvatura, outra propriedade das funções que desempenha um papel central em microeconomia é a *homogeneidade*. Uma função homogênea possui uma simetria especial: multiplicar todos os argumentos por uma mesma constante produz um efeito previsível sobre o valor da função. Essa propriedade é fundamental para entender retornos de escala em produção e ausência de ilusão monetária em demanda.
+Além da curvatura, outra propriedade das funções que desempenha um papel central em microeconomia é a *homogeneidade*. Uma função homogênea possui uma simetria especial: multiplicar todos os argumentos por uma mesma constante produz um efeito previsível sobre o valor da função. Essa propriedade — que pode parecer uma curiosidade matemática à primeira vista — tem implicações econômicas profundas e imediatas. É a homogeneidade que fundamenta conceitos como retornos de escala em produção, a ausência de ilusão monetária na demanda e a exaustão do produto pela remuneração dos fatores. Léon Walras, em seus *Éléments d'économie politique pure* (1874), já reconhecia que a homogeneidade é a propriedade matemática por trás da "lei de Walras" — a interdependência dos mercados que discutiremos no Capítulo 12.
 
 !!! definition "Função Homogênea"
     Uma função \(f: \mathbb{R}^n \to \mathbb{R}\) é **homogênea de grau \(k\)** se, para todo escalar \(t > 0\):
@@ -826,10 +883,13 @@ Além da curvatura, outra propriedade das funções que desempenha um papel cent
     f(t x_1, t x_2, \ldots, t x_n) = t^k \, f(x_1, x_2, \ldots, x_n)
     \]
 
-Exemplos em economia:
+A homogeneidade captura a ideia de *escala*: ao multiplicar todos os insumos por \(t\), o produto se multiplica por \(t^k\). Quando \(k = 1\), duplicar os insumos duplica o produto — retornos constantes de escala. Quando \(k > 1\), o produto mais que duplica — retornos crescentes. Quando \(k < 1\), menos que duplica — retornos decrescentes.
 
-- Uma função de produção com **retornos constantes de escala** é homogênea de grau 1.
-- Funções de demanda são homogêneas de grau 0 em preços e renda (ausência de ilusão monetária).
+Exemplos centrais em economia:
+
+- Uma **função de produção** com retornos constantes de escala é homogênea de grau 1: \(F(tK, tL) = tF(K,L)\).
+- **Funções de demanda** marshalliana são homogêneas de grau 0 em preços e renda: \(x_i(tp_1, tp_2, tI) = x_i(p_1, p_2, I)\). Duplicar todos os preços e a renda não altera as quantidades demandadas — o que importa são preços *relativos* e renda *real*. Essa propriedade, chamada de **ausência de ilusão monetária**, é consequência direta da maximização de utilidade (Capítulo 4).
+- A **função dispêndio** é homogênea de grau 1 em preços: duplicar todos os preços duplica o gasto mínimo para atingir um dado nível de utilidade.
 
 !!! theorem "Teorema de Euler"
     Se \(f\) é homogênea de grau \(k\) e diferenciável, então:
@@ -844,7 +904,13 @@ Exemplos em economia:
 K \cdot \frac{\partial F}{\partial K} + L \cdot \frac{\partial F}{\partial L} = F(K, L)
 \]
 
-Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), então \(rK + wL = F(K,L)\) — o produto é exatamente esgotado pela remuneração dos fatores. Este resultado é conhecido como o **problema da exaustão do produto** (Nicholson & Snyder, 2017). A implicação é notável: sob retornos constantes de escala e remuneração competitiva dos fatores, não há "sobra" — nenhum lucro econômico puro. Todo o produto é distribuído entre capital e trabalho segundo suas contribuições marginais.
+Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), então \(rK + wL = F(K,L)\) — o produto é exatamente esgotado pela remuneração dos fatores.
+
+<iframe src="../graficos/cap02/funcoes-homogeneas.html" title="Figura 2.4 — Funções Homogêneas e Teorema de Euler" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 2.4 — Funções Homogêneas e Teorema de Euler.** Isoquantas de \(F(K,L) = K^\alpha L^\beta\). Ajuste \(\alpha\) e \(\beta\) para mudar o grau de homogeneidade (retornos de escala). O fator \(t\) escala o ponto (4,4): a isoquanta verde mostra \(F(tK, tL) = t^k F(K,L)\). O painel verifica o Teorema de Euler numericamente.
+</div> Este resultado é conhecido como o **problema da exaustão do produto** (Nicholson & Snyder, 2017). A implicação é notável: sob retornos constantes de escala e remuneração competitiva dos fatores, não há "sobra" — nenhum lucro econômico puro. Todo o produto é distribuído entre capital e trabalho segundo suas contribuições marginais.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Se a tecnologia tem retornos constantes de escala, pagar cada fator pela sua produtividade marginal esgota exatamente o produto — não sobra nem falta nada.
@@ -859,9 +925,25 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
 As seções anteriores concentraram-se em técnicas de diferenciação e otimização. Mas a operação inversa da diferenciação — a integração — também tem aplicações importantes em microeconomia, especialmente na análise de bem-estar. Quando queremos medir quanto um consumidor ou produtor ganha ou perde com uma mudança de preço, precisamos calcular áreas sob curvas, o que requer integração. Em microeconomia, a integração aparece em diversos contextos:
 
-- **Excedente do consumidor**: \(EC = \int_{0}^{Q^*} D^{-1}(q) \, dq - P^* Q^*\)
-- **Excedente do produtor**: \(EP = P^* Q^* - \int_{0}^{Q^*} CMg(q) \, dq\)
-- **Valor esperado**: \(E[X] = \int_{-\infty}^{\infty} x \, f(x) \, dx\)
+- **Excedente do consumidor**: a área entre a curva de demanda inversa e o preço de equilíbrio, que mede o ganho líquido dos consumidores por poderem comprar ao preço de mercado:
+
+\[
+EC = \int_{0}^{Q^*} D^{-1}(q) \, dq - P^* Q^*
+\]
+
+- **Excedente do produtor**: a área entre o preço de equilíbrio e a curva de custo marginal, que mede o ganho líquido dos produtores:
+
+\[
+EP = P^* Q^* - \int_{0}^{Q^*} CMg(q) \, dq
+\]
+
+- **Valor esperado** de uma variável aleatória (Seção 2.12):
+
+\[
+E[X] = \int_{-\infty}^{\infty} x \, f(x) \, dx
+\]
+
+Os excedentes do consumidor e do produtor serão desenvolvidos formalmente no Capítulo 5, onde calcularemos variações no bem-estar associadas a mudanças de preços e políticas tributárias. Por ora, basta registrar que a integração é a ferramenta que converte informações *marginais* (a disposição a pagar por cada unidade) em medidas *totais* (o bem-estar agregado).
 
 O **Teorema Fundamental do Cálculo** conecta integração e diferenciação:
 
@@ -875,7 +957,7 @@ Em análise de bem-estar, a integração permite calcular a **variação compens
 
 ## 2.11 Otimização dinâmica: uma breve introdução
 
-Todas as técnicas apresentadas até aqui tratam de decisões estáticas: o agente escolhe uma vez, em um único momento. Mas muitas das decisões econômicas mais importantes são *intertemporais* — envolvem trocas entre presente e futuro. Muitos problemas econômicos envolvem decisões ao longo do tempo:
+Todas as técnicas apresentadas até aqui tratam de decisões **estáticas**: o agente escolhe uma vez, em um único momento. Mas muitas das decisões econômicas mais importantes são *intertemporais* — envolvem trocas entre presente e futuro. Um estudante que decide quanto tempo dedicar a estudar hoje em vez de trabalhar está fazendo uma escolha intertemporal: o custo (renda perdida hoje) e o benefício (salário mais alto no futuro) ocorrem em momentos diferentes. Muitos problemas econômicos envolvem decisões ao longo do tempo:
 
 - Quanto consumir hoje versus poupar para amanhã?
 - Quanto investir em capital em cada período?
@@ -897,11 +979,15 @@ A **equação de Euler** resultante é:
 u'(c_t) = \beta(1+r) \, u'(c_{t+1})
 \]
 
-que expressa a condição de que o agente é indiferente entre consumir uma unidade hoje e poupá-la para consumir \((1+r)\) unidades amanhã, descontadas pelo fator \(\beta\). Note a analogia com a equimarginalidade do problema do consumidor (Seção 2.5): lá, o agente iguala a utilidade marginal por real gasto entre bens; aqui, iguala a utilidade marginal por real entre períodos.
+que expressa a condição de que o agente é indiferente entre consumir uma unidade hoje e poupá-la para consumir \((1+r)\) unidades amanhã, descontadas pelo fator \(\beta\). Note a analogia com a equimarginalidade do problema do consumidor (Seção 2.5): lá, o agente iguala a utilidade marginal por real gasto entre bens; aqui, iguala a utilidade marginal por real entre períodos. A estrutura lógica é idêntica — otimização sujeita a restrição —, apenas o espaço de escolha muda: em vez de alocar renda entre bens no mesmo momento, o agente aloca renda entre períodos ao longo do tempo.
+
+Se \(\beta(1+r) = 1\) — ou seja, se a taxa de desconto subjetiva iguala a taxa de juros —, a equação de Euler implica \(u'(c_t) = u'(c_{t+1})\), logo \(c_t = c_{t+1}\): o agente suaviza perfeitamente o consumo ao longo do tempo. Se \(\beta(1+r) > 1\) (juros altos ou paciência alta), o consumo cresce ao longo do tempo; se \(\beta(1+r) < 1\), o consumo decresce. Essa lógica fundamenta modelos de poupança, crescimento econômico e política fiscal intertemporal.
 
 ### Otimização contínua: cálculo de variações e controle ótimo
 
-Em tempo contínuo, problemas de otimização dinâmica são resolvidos pelo **cálculo de variações** ou pela **teoria do controle ótimo** (princípio do máximo de Pontryagin). Esses métodos são particularmente usados em teoria do crescimento, economia dos recursos naturais e finanças.
+Em tempo contínuo, problemas de otimização dinâmica são resolvidos pelo **cálculo de variações** ou pela **teoria do controle ótimo** (princípio do máximo de Pontryagin). No cálculo de variações, o agente escolhe uma *função* inteira \(c(t)\) — a trajetória ótima de consumo ao longo do tempo —, em vez de um vetor finito de variáveis. O princípio do máximo de Pontryagin generaliza o método de Lagrange para esse contexto: introduz uma variável adjunta \(\mu(t)\) — o análogo dinâmico do multiplicador de Lagrange — que mede o valor-sombra do estoque de riqueza em cada instante.
+
+Esses métodos são particularmente usados em teoria do crescimento (modelo de Ramsey-Cass-Koopmans), economia dos recursos naturais (extração ótima de petróleo, desmatamento) e finanças (precificação de opções, consumo e investimento ao longo do ciclo de vida). No contexto brasileiro, modelos de controle ótimo foram aplicados à análise da sustentabilidade fiscal e à gestão de reservas do pré-sal. Embora o desenvolvimento formal desses métodos esteja fora do escopo deste livro, a intuição é a mesma da otimização estática: igualar benefício marginal a custo marginal, agora em cada ponto do tempo.
 
 ---
 
@@ -936,9 +1022,11 @@ r_A(W) = -\frac{U''(W)}{U'(W)}
 \]
 
 !!! tip "Conexão com a concavidade"
-    A desigualdade de Jensen afirma que, para funções côncavas, \(E[U(W)] \leq U(E[W])\). Isso significa que um agente avesso ao risco prefere a renda esperada com certeza à loteria em si — ele estaria disposto a pagar um prêmio para eliminar o risco.
+    A desigualdade de Jensen afirma que, para funções côncavas, \(E[U(W)] \leq U(E[W])\). Isso significa que um agente avesso ao risco prefere a renda esperada com certeza à loteria em si — ele estaria disposto a pagar um **prêmio de risco** para eliminar a incerteza. A diferença \(E[W] - CE\), onde \(CE\) é o **equivalente-certo** (o valor certo que o agente considera tão bom quanto a loteria), mede esse prêmio de risco. Quanto mais côncava a função utilidade, maior a aversão ao risco e maior o prêmio.
 
-Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um contexto completamente diferente: a concavidade da função utilidade, que na teoria do consumidor garante curvas de indiferença bem-comportadas, na teoria da escolha sob risco expressa a aversão ao risco do agente. Essa convergência ilustra a economia e a elegância do aparato matemático que percorre todo este capítulo.
+A aversão ao risco tem implicações práticas diretas: explica por que pessoas contratam seguros (pagam um prêmio para eliminar risco), por que investidores diversificam carteiras (reduzem variância sacrificando retorno esperado) e por que trabalhadores preferem salários estáveis a comissões variáveis de mesmo valor esperado. No Brasil, o coeficiente de Arrow-Pratt estimado para famílias de baixa renda é tipicamente maior do que para famílias de alta renda — o que justifica políticas de seguro social mais generosas para os mais vulneráveis.
+
+Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um contexto completamente diferente: a concavidade da função utilidade, que na teoria do consumidor garante curvas de indiferença bem-comportadas (Capítulo 3), na teoria da escolha sob risco expressa a aversão ao risco do agente. Essa convergência ilustra a economia e a elegância do aparato matemático que percorre todo este capítulo: o mesmo conceito — concavidade — desempenha papéis distintos mas relacionados em diferentes áreas da microeconomia. A escolha sob risco será desenvolvida em detalhe no Capítulo 6, onde os conceitos de valor esperado, variância e utilidade de von Neumann-Morgenstern aqui introduzidos serão aplicados a problemas de seguros, mercados financeiros e decisões de investimento.
 
 ---
 
@@ -950,29 +1038,29 @@ A visualização interativa é um complemento essencial à exposição formal. E
 
 Ao longo de todo o livro, cada capítulo contará com gráficos interativos semelhantes, adaptados aos temas específicos daquela seção. Essa abordagem visual-interativa acompanha o leitor desde os fundamentos matemáticos aqui apresentados até as aplicações em teoria do consumidor, teoria da firma, equilíbrio geral e economia da informação.
 
-<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.2 — Otimização de função de uma variável" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.5 — Otimização de função de uma variável" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 2.2 — Otimização de função de uma variável.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. Use os sliders para alterar curvatura e posição do pico.
+**Figura 2.5 — Otimização de função de uma variável.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. Use os sliders para alterar curvatura e posição do pico.
 </div>
 
-<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.3 — Otimização com restrição: Lagrangeano" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.6 — Otimização com restrição: Lagrangeano" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 2.3 — Otimização com restrição: Lagrangeano.** Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
+**Figura 2.6 — Otimização com restrição: Lagrangeano.** Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
 </div>
 
-<iframe src="../graficos/cap02/envelope.html" title="Figura 2.4 — Teorema do Envelope" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/envelope.html" title="Figura 2.7 — Teorema do Envelope" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 2.4 — Teorema do Envelope.** Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\). O teorema mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.
+**Figura 2.7 — Teorema do Envelope.** Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\). O teorema mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.
 </div>
 
 ---
 
 ## 2.13 — Condições de otimização
 
-A [Tabela 2.1](#tabela-2-1) reúne as condições de otimização para os principais tipos de problemas discutidos neste capítulo.
+Ao longo das seções anteriores, apresentamos uma diversidade de problemas de otimização: sem restrição, com restrição de igualdade, com restrição de desigualdade, em tempo discreto e contínuo. Cada tipo de problema tem suas próprias condições de otimalidade, mas a lógica subjacente é sempre a mesma: igualar o benefício marginal ao custo marginal, avaliados na direção correta. A [Tabela 2.1](#tabela-2-1) reúne as condições de otimização para os principais tipos de problemas discutidos neste capítulo, servindo como referência rápida para o restante do livro.
 
 <a id="tabela-2-1"></a>
 
@@ -1221,6 +1309,78 @@ e) Qual o valor mínimo de \(I\) a partir do qual o consumidor passa a adquirir 
 
 ---
 
+<a id="ex-2-6"></a>**Exercício 2.6.** Considere a função \(f(x, y) = x^2 y\).
+
+a) Verifique que \(f\) é homogênea e determine o grau de homogeneidade.
+
+b) Verifique numericamente o Teorema de Euler no ponto \((x, y) = (3, 4)\).
+
+c) As derivadas parciais \(f_x\) e \(f_y\) são homogêneas? De que grau?
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-6)
+
+---
+
+<a id="ex-2-7"></a>**Exercício 2.7.** Um consumidor tem preferências do tipo Leontief (complementos perfeitos): \(U(x_1, x_2) = \min\{x_1, \, 2x_2\}\). Os preços são \(p_1 = 3\), \(p_2 = 6\) e a renda é \(I = 90\).
+
+a) Em que proporção o consumidor deseja consumir os dois bens? *(Dica: no ótimo, \(x_1 = 2x_2\).)*
+
+b) Encontre a cesta ótima substituindo a condição de complementaridade na restrição orçamentária.
+
+c) Calcule a utilidade no ótimo.
+
+d) Se a renda aumentar para \(I = 120\), qual é a nova cesta ótima? Calcule a variação percentual em cada bem e interprete.
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-7)
+
+---
+
+<a id="ex-2-8"></a>**Exercício 2.8 (Teorema da função implícita e imposto).** Considere um mercado competitivo com demanda \(Q^d = a - bP\) e oferta \(Q^s = -c + d(P - t)\), onde \(t \geq 0\) é um imposto por unidade cobrado dos produtores.
+
+a) Encontre o preço de equilíbrio \(P^*(t)\) e a quantidade de equilíbrio \(Q^*(t)\).
+
+b) Calcule \(\frac{dP^*}{dt}\) e interprete: o imposto é integralmente repassado ao consumidor?
+
+c) Sob que condição sobre as elasticidades de oferta e demanda o repasse é maior do que 50%?
+
+d) Calcule a receita tributária \(R(t) = t \cdot Q^*(t)\) e encontre a alíquota que maximiza a receita. Interprete usando a curva de Laffer.
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-8)
+
+---
+
+<a id="ex-2-9"></a>**Exercício 2.9 (Aplicação ao Brasil).** Um produtor rural no Paraná aloca \(L = 100\) horas de trabalho entre a produção de soja (\(L_s\)) e milho (\(L_m\)), com \(L_s + L_m = 100\). As funções de produção são \(q_s = 10\sqrt{L_s}\) (toneladas de soja) e \(q_m = 6\sqrt{L_m}\) (toneladas de milho). Os preços são \(P_s = 160\) R\$/tonelada e \(P_m = 120\) R\$/tonelada.
+
+a) Formule o problema de maximização da receita total sujeito à restrição de horas.
+
+b) Monte o Lagrangeano e derive as condições de primeira ordem.
+
+c) Encontre a alocação ótima \(L_s^*\) e \(L_m^*\).
+
+d) Interprete o multiplicador \(\lambda^*\): quanto vale uma hora adicional de trabalho?
+
+e) Se o preço da soja subir para \(P_s = 200\), como muda a alocação? Use o resultado de estática comparativa, sem resolver o sistema inteiro novamente.
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-9)
+
+---
+
+<a id="ex-2-10"></a>**Exercício 2.10 (Kuhn-Tucker avançado).** Uma firma maximiza lucro \(\pi = PQ - C(Q) - rK\) sujeita à função de produção \(Q = K^{\alpha} L^{1-\alpha}\) (com \(0 < \alpha < 1\)) e a uma restrição de capacidade \(K \leq \bar{K}\). O preço do produto \(P\), o salário \(w\), o custo do capital \(r\) e \(\bar{K}\) são dados.
+
+a) Formule o Lagrangeano com a restrição de igualdade (produção) e a restrição de desigualdade (capacidade).
+
+b) Escreva as condições de Kuhn-Tucker completas, incluindo a folga complementar para a restrição de capacidade.
+
+c) **Caso interior** (\(K < \bar{K}\)): mostre que a firma contrata capital até que a produtividade marginal do capital iguala o custo relativo \(r/P\). Encontre a demanda por capital e trabalho como funções de \(P\), \(w\), \(r\).
+
+d) **Caso de canto** (\(K = \bar{K}\)): mostre que o multiplicador \(\mu > 0\) da restrição de capacidade mede o ganho de lucro por unidade adicional de capital. Interprete \(\mu\) como o "aluguel-sombra" do capital.
+
+e) Qual é o nível crítico de \(\bar{K}\) abaixo do qual a restrição se torna ativa?
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-10)
+
+---
+
 ## 🏆 Vem, ANPEC!
 
 ### Prova de Matemática
@@ -1334,6 +1494,33 @@ e) Qual o valor mínimo de \(I\) a partir do qual o consumidor passa a adquirir 
     **Por que isso importa:** A contribuição de Milgrom e Shannon é metodológica: mostra que muitas previsões qualitativas da microeconomia ("mais de X leva a mais de Y") são mais robustas do que se pensava — não dependem das formas funcionais específicas usadas nos modelos. Em aplicações empíricas, isso justifica o uso de previsões de sinais (positivo/negativo) mesmo quando a forma funcional exata é desconhecida.
 
     **Relevância para o capítulo:** O artigo dialoga com as Seções 2.2 (função implícita e estática comparativa), 2.3 (condições de segunda ordem) e 2.8 (concavidade e curvatura). As ferramentas clássicas deste capítulo — derivar a CPO, verificar a CSO, aplicar o teorema da função implícita — produzem resultados de estática comparativa sob condições de regularidade. Milgrom e Shannon mostram que esses resultados sobrevivem sob hipóteses muito mais gerais, sugerindo que a estrutura matemática da otimização é mais profunda do que a maquinaria de cálculo diferencial captura.
+
+??? pesquisa "Deaton, A.; Muellbauer, J. (1980). [An Almost Ideal Demand System](https://doi.org/10.2307/1805222). *American Economic Review*, 70(3), 312–326."
+    **O que investiga:** Como estimar um sistema de demanda que seja teoricamente consistente (derivado de maximização de utilidade), flexível o bastante para capturar padrões empíricos e tratável econometricamente? Deaton e Muellbauer propõem o *Almost Ideal Demand System* (AIDS), que se tornou o modelo mais utilizado em economia aplicada para estimar elasticidades de demanda.
+
+    **Conexão com o capítulo:** O AIDS é construído inteiramente a partir das ferramentas deste capítulo: a função dispêndio (derivada via dualidade e teorema do envelope, Seções 2.4–2.6), o Lema de Shephard (uma aplicação direta do envelope restrito) e as propriedades de homogeneidade (Seção 2.9). As parcelas orçamentárias do AIDS são lineares nos logaritmos dos preços e da renda real, o que permite estimação por mínimos quadrados — uma consequência da escolha cuidadosa da forma funcional da função dispêndio.
+
+    **Principais resultados:** O sistema AIDS permite estimar elasticidades-preço e elasticidades-renda que satisfazem automaticamente as restrições teóricas (homogeneidade, simetria de Slutsky, aditividade). No Brasil, o AIDS é amplamente utilizado para estimar padrões de consumo a partir da POF, informando políticas tributárias e análises de bem-estar.
+
+    **Por que importa:** O artigo demonstra que as ferramentas matemáticas "abstratas" deste capítulo — dualidade, envelope, homogeneidade — são a base de modelos empíricos usados para orientar políticas reais de tributação e subsídios.
+
+??? pesquisa "Saez, E. (2001). [Using Elasticities to Derive Optimal Income Tax Rates](https://doi.org/10.1111/1467-937X.00166). *Review of Economic Studies*, 68(1), 205–229."
+    **O que investiga:** Qual deve ser a estrutura ótima do imposto de renda — progressiva, regressiva ou proporcional? Saez reformula o problema clássico de tributação ótima (Mirrlees, 1971) em termos de *elasticidades comportamentais* diretamente estimáveis, em vez de primitivas estruturais (função utilidade, distribuição de habilidades) difíceis de observar.
+
+    **Conexão com o capítulo:** O artigo é uma aplicação magistral do método de Lagrange (Seção 2.5) e das condições de Kuhn-Tucker (Seção 2.7) ao problema de um planejador social que maximiza o bem-estar sujeito a uma restrição de receita fiscal e a restrições de incentivo (os contribuintes ajustam seu comportamento em resposta aos impostos). O teorema do envelope (Seções 2.4 e 2.6) é usado implicitamente: como os contribuintes otimizam, a perda de bem-estar de um aumento marginal na alíquota depende apenas do efeito direto sobre a receita e da elasticidade comportamental.
+
+    **Principais resultados:** A alíquota marginal ótima no topo da distribuição de renda é \(\tau^* = \frac{1 - g}{1 - g + a \cdot e}\), onde \(g\) é o peso social do contribuinte, \(a\) é o parâmetro de Pareto da cauda da distribuição e \(e\) é a elasticidade da renda tributável. Para elasticidades estimadas nos EUA (\(e \approx 0{,}25\)) e peso social \(g \approx 0\), a alíquota ótima no topo é de aproximadamente 73%.
+
+    **Por que importa:** O artigo transformou a análise de tributação ótima de um exercício teórico em uma ferramenta empírica aplicável. No Brasil, onde a alíquota máxima do IRPF é 27,5% — significativamente abaixo das estimativas de Saez para os EUA e Europa —, os resultados sugerem espaço para maior progressividade, condicionada às elasticidades comportamentais dos contribuintes brasileiros.
+
+??? pesquisa "Afriat, S. N. (1967). [The Construction of Utility Functions from Expenditure Data](https://doi.org/10.2307/2525382). *International Economic Review*, 8(1), 67–77."
+    **O que investiga:** É possível determinar, a partir de dados de consumo observados, se um consumidor se comporta de acordo com a teoria da maximização de utilidade? E, em caso afirmativo, é possível *construir* uma função de utilidade consistente com os dados?
+
+    **Conexão com o capítulo:** Afriat mostrou que as condições necessárias e suficientes para que dados de consumo sejam racionalizáveis por uma função de utilidade côncava (Seção 2.8) e contínua se resumem a um sistema de desigualdades lineares — as **desigualdades de Afriat**. Cada desigualdade corresponde a uma aplicação do teorema do envelope e da definição de função côncava: se a cesta \(\mathbf{x}^t\) foi escolhida a preços \(\mathbf{p}^t\), então ela maximiza alguma utilidade côncava, e o teorema do envelope implica relações específicas entre as utilidades e os multiplicadores (preços) em diferentes observações.
+
+    **Principais resultados:** Afriat demonstrou que, se um conjunto finito de observações de preços e quantidades satisfaz o **Axioma Generalizado da Preferência Revelada (GARP)**, então existe uma função de utilidade côncava, contínua e monotônica que racionaliza os dados. Esse resultado é construtivo: Afriat fornece um algoritmo para computar a função de utilidade.
+
+    **Por que importa:** O teorema de Afriat é a ponte entre a teoria (axiomas de preferência, Capítulo 3) e a prática (dados de consumo). Ele fundamenta toda a econometria da demanda e é usado pelo CADE no Brasil para avaliar a consistência de dados de mercado com comportamento competitivo. O artigo de Choi et al. (2014), discutido na seção "Pesquisa em Ação" do Capítulo 3, testa as desigualdades de Afriat em dados experimentais.
 
 ## 📚 Referências do Capítulo
 

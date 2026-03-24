@@ -2,9 +2,13 @@
 
 > *"Nenhum bem é uma ilha: a demanda por cada produto depende dos preços de todos os outros."*
 
-No capítulo anterior, analisamos como variações de preço e renda afetam a demanda por um bem individual, decompondo os efeitos substituição e renda. Agora, voltamos o olhar para as **relações entre bens**: como a variação no preço de um bem afeta a demanda por outro? Quando bens são substitutos? Quando são complementos? E como agregamos as demandas individuais para obter a demanda de mercado?
+No capítulo anterior, analisamos como variações de preço e renda afetam a demanda por um bem individual, decompondo os efeitos substituição e renda via Equação de Slutsky. Agora, voltamos o olhar para as **relações entre bens**: como a variação no preço de um bem afeta a demanda por outro? Quando bens são substitutos? Quando são complementos? E como agregamos as demandas individuais para obter a demanda de mercado?
 
 A relevância prática dessas perguntas é imediata. No Brasil, a decisão entre abastecer com gasolina ou etanol depende dos preços relativos em cada bomba; o consumo de carne bovina recua quando o frango barateia; a tributação seletiva sobre bebidas açucaradas redesenha a demanda por água mineral e sucos. Compreender essas relações cruzadas é essencial tanto para a política pública quanto para a estratégia empresarial.
+
+Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda. A jornada que fizemos até aqui nos trouxe de preferências e restrições orçamentárias (Capítulo 2) até a decomposição de Slutsky (Capítulo 5), que separou os efeitos de uma variação de preço em dois componentes interpretáveis. O instrumental de Slutsky é precisamente o que precisamos agora: o efeito substituição cruzado — o elemento fora da diagonal da matriz de Slutsky — é o núcleo analítico das classificações de substitutos e complementos que estudaremos aqui.
+
+**Roteiro do capítulo.** A Seção 6.1 começa com o caso mais simples — dois bens —, mostrando que a estrutura de dois bens impõe restrições fortes sobre as relações cruzadas. A Seção 6.2 introduz a classificação marshalliana (bruta), diretamente observável nos dados, e discute sua contaminação pelo efeito renda. A Seção 6.3 apresenta a classificação hicksiana (líquida), mais pura teoricamente, e mostra quando as duas classificações divergem. A Seção 6.4 generaliza a análise para muitos bens, introduzindo a matriz de Slutsky completa e suas propriedades algébricas. As Seções 6.5 e 6.6 oferecem dois caminhos para lidar com a complexidade de economias com muitos bens: o Teorema do Bem Composto de Hicks (que agrega bens em categorias tratáveis) e os modelos de Lancaster e Becker (que reformulam o próprio objeto de escolha). Por fim, a Seção 6.7 aborda a agregação da demanda do plano individual para o mercado — um problema que conecta este capítulo ao estudo do equilíbrio geral (Capítulo 12).
 
 Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda.
 
@@ -34,6 +38,16 @@ No caso de dois bens, a restrição orçamentária impõe relações fortes. Se 
 
 Isso significa que, no sentido hicksiano, **dois bens são sempre substitutos líquidos** quando há apenas dois bens no modelo. A complementaridade só emerge com três ou mais bens.
 
+A razão algébrica para esse resultado é direta. Pela propriedade de homogeneidade de grau zero da demanda hicksiana (Teorema de Euler para funções homogêneas), temos \(\sum_j p_j \frac{\partial h_1}{\partial p_j} = 0\), o que implica:
+
+\[
+p_1 \frac{\partial h_1}{\partial p_1} + p_2 \frac{\partial h_1}{\partial p_2} = 0
+\]
+
+Como \(\frac{\partial h_1}{\partial p_1} \leq 0\) (lei da demanda compensada), o segundo termo deve ser não negativo — e como \(p_2 > 0\), concluímos \(\frac{\partial h_1}{\partial p_2} \geq 0\). A equação é a versão em dois bens da restrição \eqref{eq:6.4.5}, que exploraremos na Seção 6.4.
+
+Vale notar que esse resultado tem uma conexão direta com o Teorema da Função Implícita (Capítulo 2): as condições de primeira ordem da minimização de dispêndio geram um sistema implícito, e a matriz de Slutsky nada mais é do que a Jacobiana das demandas compensadas em relação a preços — estrutura que garante as propriedades de simetria e semidefinição negativa que embasam o resultado acima. O caso de dois bens é um cenário tão restrito que a estrutura da matriz de Slutsky \(2 \times 2\) — com diagonal negativa e determinante não negativo — força o único elemento fora da diagonal a ser positivo. A riqueza analítica das relações de substituição e complementaridade, incluindo a possibilidade de complementaridade líquida, só se manifesta plenamente quando o número de bens é três ou mais.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Com apenas dois bens, eles são sempre substitutos líquidos — a complementaridade só emerge quando existe uma terceira opção.
 
@@ -57,6 +71,15 @@ O resultado da seção anterior — de que, com dois bens, a substituição líq
 !!! note "Assimetria da classificação bruta"
     A classificação marshalliana **não é necessariamente simétrica**: pode ocorrer que \(\frac{\partial x_1}{\partial p_2} > 0\) enquanto \(\frac{\partial x_2}{\partial p_1} < 0\). Isso decorre da interferência do efeito renda, que contamina a relação cruzada de forma assimétrica. Essa é uma das razões pelas quais a classificação hicksiana é teoricamente preferida.
 
+!!! warning "Cuidado: a classificação bruta pode ser assimétrica"
+    Um erro frequente é supor que, se \(x_1\) é substituto bruto de \(x_2\), então \(x_2\) também é substituto bruto de \(x_1\). Isso não é garantido. Considere dois bens normais com efeitos renda muito diferentes: suponha que o bem 2 tenha elasticidade-renda alta (um luxo), enquanto o bem 1 tenha elasticidade-renda baixa (uma necessidade). Um aumento em \(p_2\) empobrece o consumidor substancialmente (ele gastava muito em bem 2), reduzindo a demanda por \(x_1\) via efeito renda — o que pode fazer \(\frac{\partial x_1}{\partial p_2} < 0\) mesmo que o efeito substituição seja positivo. No sentido oposto, um aumento em \(p_1\) empobrece menos o consumidor (ele gastava pouco em bem 1), e o efeito substituição pode dominar, gerando \(\frac{\partial x_2}{\partial p_1} > 0\).
+
+    Em termos formais, da Equação de Slutsky temos:
+    \[
+    \frac{\partial x_1}{\partial p_2} - \frac{\partial x_2}{\partial p_1} = x_2 \frac{\partial x_1}{\partial I} - x_1 \frac{\partial x_2}{\partial I}
+    \]
+    A diferença entre as duas derivadas cruzadas marshallianas é proporcional à diferença entre os gastos ponderados pelas elasticidades-renda — em geral diferente de zero. Somente a classificação hicksiana é garantidamente simétrica, pois \(\frac{\partial h_1}{\partial p_2} = \frac{\partial h_2}{\partial p_1}\) é uma propriedade da matriz de Slutsky que não depende de hipóteses sobre o efeito renda.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Substitutos são bens que competem pela sua escolha; complementos são bens que andam juntos — e a classificação muda conforme você isole ou não o efeito renda.
 
@@ -69,6 +92,10 @@ O resultado da seção anterior — de que, com dois bens, a substituição líq
 - **Carne bovina e frango**: substitutos brutos — quando a carne bovina encarece, a demanda por frango tende a subir. Dados do [CEPEA/ESALQ](https://www.cepea.esalq.usp.br) mostram que, entre 2019 e 2021, a arroba do boi gordo subiu cerca de 80% em termos reais, período em que o consumo per capita de frango cresceu significativamente.
 - **Automóvel e gasolina**: complementos brutos — se o preço do automóvel sobe, as vendas caem e, consequentemente, a demanda por gasolina também.
 - **Arroz e feijão**: complementos brutos — o par arroz-feijão forma a base da alimentação brasileira e o consumo tende a se mover na mesma direção. Segundo a POF/[IBGE](https://www.ibge.gov.br) 2017-2018, o arroz e feijão estão presentes em mais de 70% dos domicílios brasileiros.
+
+É importante compreender por que a classificação marshalliana, apesar de seus problemas teóricos de assimetria, continua sendo amplamente utilizada em estudos empíricos. A razão é simples: ela é diretamente observável. Os econometristas estimam as funções de demanda marshalliana a partir de variações nos preços de mercado e nas quantidades compradas — dados que os institutos de pesquisa (IBGE, IPEA, Ipespe) efetivamente coletam. Para estimar as demandas hicksianas seria necessário observar as demandas a utilidade constante, o que requer informações adicionais sobre a função utilidade ou a função dispêndio que dificilmente estão disponíveis diretamente. Por isso, o economista aplicado frequentemente trabalha com a classificação marshalliana e, quando necessário, usa a Equação de Slutsky para inferir as relações hicksianas a partir das estimativas marshallianas e de informações sobre a elasticidade-renda.
+
+A palavra "bruta" na expressão "substituto bruto" evoca justamente essa contaminação: a derivada \(\frac{\partial x_i}{\partial p_j}\) mistura, de forma inseparável, a resposta substitutiva pura (a tendência de trocar um bem por outro quando seus preços relativos mudam) com a resposta de renda (a redução no poder de compra que acompanha toda elevação de preço). A classificação bruta não é errada — ela descreve fielmente o comportamento observado no mercado. Mas é incompleta como base teórica, porque não revela a estrutura subjacente das preferências.
 
 ---
 
@@ -92,6 +119,10 @@ Logo, pela equação $\eqref{eq:6.3.3}$, se o bem \(i\) é substituto líquido d
 
 !!! tip "Quando a classificação bruta e líquida divergem"
     A classificação bruta e líquida podem divergir quando o efeito renda é grande o suficiente para dominar o efeito substituição. Por exemplo, dois bens podem ser substitutos líquidos mas complementos brutos se o aumento no preço de um deles causar uma queda de renda real tão grande que reduza a demanda de ambos.
+
+A simétria da classificação hicksiana tem uma implicação prática relevante para o design de políticas públicas. Quando um governo tributa um bem com o objetivo de reduzir seu consumo (como um imposto sobre cigarros ou bebidas açucaradas), a relação hicksiana com os demais bens determina quais produtos se beneficiarão ou serão prejudicados pela tributação. Como a classificação hicksiana é simétrica, se o cigarro é substituto hicksiano do cachimbo, então o cachimbo também é substituto hicksiano do cigarro — e o imposto sobre cigarro aumentará a demanda compensada por cachimbo da mesma forma que um imposto sobre cachimbo aumentaria a demanda compensada por cigarro. Essa simetria é violada pela classificação marshalliana, o que pode levar a previsões incorretas sobre os efeitos de cascata de uma política tributária.
+
+Do ponto de vista da teoria de bem-estar, a classificação hicksiana também é mais adequada para avaliar as perdas de eficiência geradas por impostos. A área sob a curva de demanda compensada — não a marshalliana — mede o excedente do consumidor da forma correta, uma vez que elimina o confundimento com variações de renda real. Por isso, as medidas de bem-estar como a Variação Compensatória e a Variação Equivalente (derivadas no Capítulo 5) utilizam a demanda hicksiana como base.
 
 ### 6.3.1 Relação entre as classificações
 
@@ -157,7 +188,16 @@ mas os elementos fora da diagonal podem ter qualquer sinal. No entanto, nem todo
 
     Como \(\frac{\partial h_i}{\partial p_i} \leq 0\), a equação $\eqref{eq:6.4.5}$ implica que pelo menos alguns dos termos cruzados devem ser positivos. Logo, **todo bem deve ter pelo menos um substituto líquido**.
 
+!!! idea "Intuição Econômica"
+    **Em uma frase:** Nenhum bem existe em isolamento — se um bem fica mais caro (com utilidade mantida constante), o consumidor precisa migrar para algum outro bem, tornando todo bem substituto líquido de pelo menos um outro.
+
+    **Pense assim:** Suponha que todos os bens fossem complementos líquidos de um bem específico — digamos, que o aumento no preço da farinha de trigo reduzisse a demanda compensada por pão, macarrão, biscoito e bolo simultaneamente. Mas isso é impossível: o consumidor precisa alocar sua renda compensada *para algum lugar*. Se gasta menos com tudo relacionado a trigo, precisará gastar mais com carne, legumes, laticínios ou qualquer outro grupo — que são, portanto, substitutos líquidos do trigo. A equação \eqref{eq:6.4.5} formaliza exatamente essa inevitabilidade: a soma ponderada dos efeitos substituição cruzados de qualquer bem deve ser positiva para compensar o efeito substituição próprio negativo.
+
+    **Por que isso importa:** Para qualquer política que encareça um grupo de bens (imposto sobre alimentos ultraprocessados, taxação de combustíveis fósseis), haverá necessariamente bens que se beneficiarão como substitutos líquidos. Identificar esses bens é parte essencial da análise de impacto.
+
 Essa propriedade implica que, embora a complementaridade líquida exista, a substituibilidade é o fenômeno "dominante" no sentido de que não pode haver um bem que seja complemento líquido de todos os outros. Intuitivamente, se o preço de um bem sobe (mantendo a utilidade constante), o consumidor precisa redistribuir seu consumo em direção a *algum* outro bem — a substituição é, em certo sentido, inevitável.
+
+A matriz de Slutsky também tem implicações empíricas diretas. Suas propriedades — simetria e semidefinição negativa — são condições testáveis que os econometras utilizam para verificar se os dados de demanda são consistentes com a teoria do consumidor racional. Estudos que estimam sistemas completos de demanda (como o modelo AIDS de Deaton e Muellbauer, apresentado na seção de Pesquisa em Ação) testam a simetria de Slutsky como hipótese estatística. Quando essa hipótese é rejeitada pelos dados, pode indicar agregação imprópria de bens, violação da hipótese de consumidor representativo, ou simplesmente erro de medição. No Brasil, estudos baseados na POF e em dados de scanner de supermercados têm testado essas restrições para categorias alimentares, com resultados que geralmente suportam a simetria — mas frequentemente rejeitam a semidefinição negativa estrita, sugerindo a presença de efeitos de hábito ou complementaridade dinâmica não capturados pelo modelo estático.
 
 ---
 
@@ -220,6 +260,13 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
 !!! tip "Aplicação prática"
     O Teorema do Bem Composto justifica o uso frequente, em exercícios e modelos aplicados, de um "bem 1" versus "todos os outros bens" (representados pelo gasto restante). Para que a agregação seja válida, é necessário que os preços relativos dentro do grupo permaneçam aproximadamente constantes. Quando um choque afeta apenas um subgrupo (por exemplo, uma seca que encarece frutas mas não cereais), o teorema perde validade para o grupo "alimentos" como um todo.
 
+!!! idea "Intuição Econômica"
+    **Em uma frase:** O Teorema do Bem Composto permite ao economista trabalhar com dois bens mesmo quando a economia tem milhares — desde que os bens "de fundo" se movam em bloco.
+
+    **Pense assim:** Imagine que você analise o consumo de cinema versus "tudo mais que compro no mês". Para que essa simplificação seja válida, não é preciso que o preço de cada item do "tudo mais" (aluguel, alimentação, transporte, roupas...) seja constante em nível absoluto — apenas que eles variem proporcionalmente entre si. Se a inflação geral encarece todo o "tudo mais" na mesma proporção de 5%, o bloco se comporta como um único bem que ficou 5% mais caro, e você pode analisar cinema versus esse bloco como um problema de dois bens. Quando os preços relativos dentro do bloco mudam (energia elétrica sobe 30% enquanto alimentos sobem 5%), o teorema falha e a análise de dois bens pode induzir a conclusões errôneas.
+
+    **Por que isso importa:** Modelos macroeconômicos usam frequentemente a dicotomia "bem tradeable versus bem non-tradeable" ou "bem importado versus bem doméstico" — ambas são aplicações implícitas do Teorema do Bem Composto. A validade dessas dicotomias depende de que os preços relativos dentro de cada grupo sejam razoavelmente estáveis, o que pode não se verificar durante choques assimétricos como os causados pela pandemia de 2020 ou pelo conflito na Ucrânia em 2022.
+
 !!! box-brasil "Box Brasil: Preços administrados e o Bem Composto no IPCA"
     O IPCA, calculado pelo IBGE, distingue entre **preços livres** (cerca de 75% do índice) e **preços administrados** (cerca de 25%), que incluem combustíveis, energia elétrica, planos de saúde e tarifas de transporte público. Os preços administrados são reajustados por fórmulas contratuais vinculadas a índices como o IGP-M ou o IPCA do período anterior.
 
@@ -250,7 +297,7 @@ Até este ponto, tratamos os bens como objetos homogêneos de desejo: o consumid
 
 ### 6.6.1 O modelo de Lancaster
 
-A teoria tradicional assume que o consumidor obtém utilidade diretamente dos bens. Kelvin **Lancaster** (1966) propôs uma reformulação provocativa: os bens são desejados não por si mesmos, mas pelos **atributos** (ou **características**) que contêm. Um automóvel não é consumido como "automóvel", mas como um conjunto de atributos — potência, conforto, eficiência, status — que o veículo incorpora.
+A teoria tradicional assume que o consumidor obtém utilidade diretamente dos bens. Kelvin **Lancaster** (1966) propôs uma reformulação provocativa: os bens são desejados não por si mesmos, mas pelos **atributos** (ou **características**) que contêm. Um automóvel não é consumido como "automóvel", mas como um conjunto de atributos — potência, conforto, eficiência, status — que o veículo incorpora. Essa mudança de perspectiva, aparentemente sutil, tem consequências profundas: a unidade de análise deixa de ser o bem e passa a ser o atributo. A concorrência entre bens é, em última instância, concorrência entre combinações de atributos — e o preço de mercado de cada bem reflete, implicitamente, os preços sombra dos atributos que o compõem.
 
 !!! definition "Modelo de Lancaster"
     Cada bem \(j\) contém quantidades fixas de \(m\) atributos, representadas pela matriz de tecnologia de consumo \(\mathbf{B} = [b_{kj}]\), onde \(b_{kj}\) é a quantidade do atributo \(k\) contida em uma unidade do bem \(j\). A utilidade depende dos atributos:
@@ -287,12 +334,18 @@ A reformulação de Lancaster pode parecer uma complicação desnecessária — 
 - **Diferenciação de produto**: marcas diferentes do "mesmo" bem oferecem combinações distintas de atributos (sabor, durabilidade, status).
 - **Preços hedônicos**: o preço de um imóvel, por exemplo, pode ser decomposto em preços implícitos de localização, metragem, número de quartos e outros atributos.
 
-!!! box-brasil "Box Brasil: Preços hedônicos no mercado imobiliário"
-    O índice FipeZap, calculado pela Fipe em parceria com o portal Zap Imóveis, acompanha os preços de venda e aluguel de imóveis residenciais em mais de 50 cidades brasileiras. A metodologia utiliza modelos de **preços hedônicos** — uma aplicação direta do modelo de Lancaster — para decompor o preço do imóvel nos preços implícitos de seus atributos: localização (bairro, proximidade do metrô), área útil, número de quartos e vagas de garagem.
+A **análise de preços hedônicos** — desenvolvida formalmente por Sherwin Rosen (1974) — é a operacionalização econométrica do modelo de Lancaster. Rosen mostrou que, em mercados competitivos de bens diferenciados, o preço de equilíbrio de um bem é uma função dos seus atributos, e que as derivadas dessa função em relação a cada atributo revelam os "preços implícitos" (ou "preços hedônicos") que o mercado atribui a cada característica. Em equilíbrio, o preço implícito de um atributo reflete tanto a disposição marginal a pagar dos consumidores quanto o custo marginal de oferta desse atributo — uma estrutura que generaliza a análise de oferta e demanda do mercado de atributos.
 
-    O índice FipeZap de março de 2024 registrava preço médio de venda de R$ 9.082/m² em São Paulo e R$ 11.032/m² no Rio de Janeiro. A diferença não reflete apenas metragem, mas o "preço implícito" de atributos locacionais — bairros como Leblon (RJ) ou Vila Nova Conceição (SP) embutem um prêmio por amenidades urbanas (proximidade de parques, serviços, segurança).
+No Brasil, a abordagem hedônica tem sido amplamente aplicada ao mercado imobiliário, onde os atributos locacionais — proximidade de estações de metrô, escola de alta qualidade, parques urbanos, índices de criminalidade — podem ser precificados implicitamente a partir dos diferenciais de preço entre imóveis com características físicas semelhantes mas localizações distintas. Essa mesma lógica é usada pelo Banco Central do Brasil para construir índices de preços imobiliários ajustados por qualidade, evitando que uma melhora na composição dos imóveis vendidos seja confundida com inflação de preços.
 
-    A CBIC (Câmara Brasileira da Indústria da Construção) utiliza abordagens semelhantes para analisar o custo de construção por componente, separando o preço do insumo (cimento, aço, mão de obra) do atributo que ele confere ao imóvel.
+!!! box-brasil "Box Brasil: Preços hedônicos e o índice FipeZap no mercado imobiliário"
+    O índice FipeZap, calculado pela Fundação Instituto de Pesquisas Econômicas (FIPE) em parceria com o portal Zap Imóveis, acompanha os preços de venda e aluguel de imóveis residenciais em mais de 50 cidades brasileiras. A metodologia central é baseada em **modelos de preços hedônicos** — uma implementação direta do arcabouço de Rosen (1974), que por sua vez operacionaliza o modelo de Lancaster: o preço de cada imóvel é regredido sobre seus atributos físicos (área útil, número de quartos e banheiros, vagas de garagem, andar, presença de elevador) e locacionais (bairro, distância de transporte público, índice de walkability).
+
+    O índice FipeZap de março de 2024 registrava preço médio de venda de R$ 9.082/m² em São Paulo e R$ 11.032/m² no Rio de Janeiro. Mas a diferença entre bairros dentro de uma mesma cidade é ainda mais reveladora: no Rio de Janeiro, o preço médio no Leblon superava R$ 20.000/m², enquanto em Campo Grande (zona oeste) ficava abaixo de R$ 4.000/m². Essa diferença de cinco vezes não reflete apenas metragem ou número de quartos — ela embute o "preço implícito" de atributos locacionais como amenidades urbanas (proximidade de praias, parques, estabelecimentos de saúde e educação), segurança e acesso a transporte.
+
+    A CBIC (Câmara Brasileira da Indústria da Construção) utiliza abordagens semelhantes para analisar o custo de construção por componente, separando o preço do insumo (cimento, aço, mão de obra) do atributo que ele confere ao imóvel. O Banco Central do Brasil, por sua vez, constrói seu Índice de Preços de Imóveis Residenciais (IVG-R) utilizando regressões hedônicas para controlar por mudanças na composição dos imóveis financiados ao longo do tempo — evitando que oscilações no mix de imóveis (por exemplo, mais apartamentos de alto padrão em um período) sejam confundidas com variações reais de preço.
+
+    Do ponto de vista microeconômico, o FipeZap nos permite estimar os preços implícitos dos atributos: estudos aplicados ao mercado paulistano estimam que a proximidade de uma estação de metrô agrega entre R$ 400 e R$ 1.200/m² ao preço do imóvel, dependendo do bairro — o "preço hedônico" da acessibilidade. Da mesma forma, a presença de uma escola pública de qualidade no entorno valoriza o imóvel, revelando a disposição a pagar das famílias pelo atributo "educação de proximidade".
 
 ### 6.6.3 Modelo de produção doméstica de Becker
 
@@ -305,6 +358,10 @@ z_k = f_k(x_k, t_k) \label{eq:6.6.8} \tag{6.6.8}
 onde \(x_k\) são bens de mercado e \(t_k\) é o tempo dedicado à atividade \(k\). O consumidor maximiza \(U(z_1, \ldots, z_m)\) sujeito a restrições de orçamento monetário e de tempo total.
 
 O preço implícito de cada commodity doméstica incorpora tanto o custo dos bens quanto o custo de oportunidade do tempo, o que explica, por exemplo, por que famílias de renda mais alta tendem a consumir mais refeições fora do domicílio — o custo de oportunidade do tempo de preparo é elevado. No Brasil, esse fenômeno é claramente documentado pela POF: a parcela do orçamento destinada à alimentação fora do domicílio cresce monotonicamente com a renda, passando de cerca de 14% nas classes mais baixas para mais de 40% nas classes mais altas. O modelo de Becker captura essa regularidade de forma natural — não porque os ricos "gostam mais" de comer fora, mas porque seu tempo vale mais.
+
+O modelo de Becker e o modelo de Lancaster compartilham uma mesma intuição profunda: o que realmente interessa ao consumidor não são os bens de mercado em si, mas o que eles *produzem* — seja em termos de atributos (Lancaster) seja em termos de commodities domésticas combinadas com tempo (Becker). Ambos os modelos implicam que a substituição e a complementaridade entre bens de mercado são, em última análise, derivadas das relações de substituição e complementaridade no espaço dos atributos ou das commodities domésticas.
+
+Essa perspectiva também conecta este capítulo ao Capítulo 12, sobre equilíbrio geral. Em uma economia de equilíbrio geral, os preços dos bens de mercado refletem, em equilíbrio, os preços implícitos dos atributos que eles fornecem — uma visão que tem inspirado a economia ambiental (onde atributos como qualidade do ar ou biodiversidade precisam ser precificados implicitamente) e a economia urbana (onde o preço da terra reflete o valor capitalizado de amenidades locacionais, como na abordagem hedônica do FipeZap descrita acima).
 
 ---
 
@@ -334,6 +391,10 @@ A soma horizontal parece inocente, mas esconde uma armadilha. A simples soma de 
     onde \(a(\mathbf{p})\) e \(b(\mathbf{p})\) são comuns a todos os consumidores.
 
 Quando a condição de Gorman não é satisfeita, a demanda de mercado depende da **distribuição de renda**, não apenas da renda total. Isso tem implicações profundas para a política econômica: transferências de renda (como o Bolsa Família / Auxílio Brasil) alteram a demanda agregada mesmo que a renda total permaneça constante.
+
+Vale notar que a condição de Gorman é bastante restritiva: ela exige não apenas que as curvas de Engel individuais sejam lineares, mas que todas as famílias tenham a mesma propensão marginal a consumir cada bem (o coeficiente \(b(\mathbf{p})\) deve ser idêntico para todos). Na prática, essa hipótese é quase sempre violada. Família de alta renda e família de baixa renda têm propensões marginais a consumir alimentos, transporte e lazer completamente distintas — reflexo de suas estruturas de preferências, mas também de restrições de crédito, hábitos de consumo e acesso diferenciado a mercados. A evidência empírica, tanto no Brasil quanto internacionalmente, rejeita sistematicamente a condição de Gorman quando testada diretamente sobre dados de consumo domiciliar.
+
+Isso não significa que o conceito de consumidor representativo seja inútil — modelos macroeconômicos com consumidor representativo continuam sendo ferramentas analíticas poderosas. Mas o economista deve estar consciente de que esses modelos impõem implicitamente a condição de Gorman, e que suas previsões sobre os efeitos distributivos de políticas econômicas serão sistematicamente tendenciosas quando essa condição é violada. A falha de Gorman implica que não é possível separar a análise de eficiência (tamanho do bolo) da análise distributiva (divisão do bolo) — ambas interagem de forma inextricável na determinação da demanda de mercado.
 
 !!! box-brasil "Box Brasil: Distribuição de renda e demanda agregada"
     O programa Bolsa Família, que em 2024 atendia cerca de 21 milhões de famílias, ilustra por que a condição de Gorman importa na prática. As famílias beneficiárias têm propensões marginais a consumir alimentos, gás de cozinha e vestuário muito superiores às das famílias de renda mais alta. Segundo dados da POF/IBGE 2017-2018, famílias com renda per capita de até 1 salário mínimo destinam cerca de 22% do orçamento a alimentação, enquanto famílias com renda acima de 15 salários mínimos destinam cerca de 7,6%.
@@ -646,6 +707,68 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
 
 ---
 
+<a id="ex-6-6"></a>**Exercício 6.6 (Marshallianos vs. Hicksianos com Cobb-Douglas).** Considere um consumidor com função de utilidade \(U(x_1, x_2) = x_1^{0{,}5} x_2^{0{,}5}\), preços \(p_1, p_2 > 0\) e renda \(I > 0\).
+
+(a) Derive as demandas marshallianas e calcule a elasticidade-preço cruzada marshalliana \(\varepsilon_{x_1, p_2}^M\).
+
+(b) Derive a função dispêndio e as demandas hicksianas. Calcule o efeito substituição cruzado hicksiano \(\frac{\partial h_1}{\partial p_2}\) e mostre que é positivo.
+
+(c) Explique, usando a Equação de Slutsky, por que a elasticidade cruzada marshalliana é zero enquanto o efeito substituição hicksiano é positivo. O que exatamente cancela o efeito substituição na demanda marshalliana?
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-6)
+
+---
+
+<a id="ex-6-7"></a>**Exercício 6.7 (Bem composto e choques agrícolas).** Um consumidor compra três bens: arroz (\(R\)), feijão (\(F\)) e carne (\(M\)), além de um bem numerário (\(y\)). Os preços do arroz e do feijão são sistematicamente afetados pelos mesmos choques de oferta agrícola, de modo que \(p_R = \alpha \bar{p}_R\) e \(p_F = \alpha \bar{p}_F\), onde \(\bar{p}_R\) e \(\bar{p}_F\) são preços-base fixos e \(\alpha > 0\) varia com os choques. O preço da carne \(p_M\) e o preço numerário \(p_y = 1\) não variam com \(\alpha\).
+
+(a) Defina o bem composto "alimentos básicos" (\(A\)) e reescreva a restrição orçamentária do consumidor em termos de \(A\), \(M\) e \(y\).
+
+(b) Qual é o "preço" do bem composto \(A\)? Qual é a "quantidade" de \(A\)?
+
+(c) Com essa agregação, o problema original de 4 bens se reduz a quantos bens? Quando essa simplificação seria inválida para analisar o impacto de uma seca que afeta apenas o arroz?
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-7)
+
+---
+
+<a id="ex-6-8"></a>**Exercício 6.8 (Matriz de Slutsky e restrições).** Uma economia tem 3 bens com preços \(\mathbf{p} = (1, 1, 1)\). A matriz de Slutsky parcialmente conhecida é:
+
+\[
+S = \begin{pmatrix} -4 & 3 & s_{13} \\ 3 & -5 & 2 \\ s_{13} & 2 & s_{33} \end{pmatrix}
+\]
+
+(a) Usando a propriedade \(S\mathbf{p} = \mathbf{0}\) (com \(\mathbf{p} = (1,1,1)^\top\)), encontre \(s_{13}\) a partir da primeira linha.
+
+(b) Com o valor de \(s_{13}\) encontrado, classifique a relação entre o bem 1 e o bem 3: são substitutos líquidos, complementos líquidos ou independentes?
+
+(c) Encontre também \(s_{33}\) usando a segunda linha (ou a terceira linha com \(s_{13}\) já determinado). Verifique que \(s_{33} \leq 0\), como exigido pela teoria.
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-8)
+
+---
+
+<a id="ex-6-9"></a>**Exercício 6.9 (Imposto sobre combustíveis — aplicação brasileira).** Com base nas elasticidades apresentadas no Box Brasil sobre gasolina e etanol (Seção 6.8): elasticidade-preço própria da gasolina \(\varepsilon_{G,p_G} \approx -0{,}60\) e elasticidade-preço cruzada (gasolina-etanol) \(\varepsilon_{G,p_E} \approx +0{,}65\) (e, por simetria, \(\varepsilon_{E,p_G} \approx +0{,}65\)).
+
+Suponha que o governo eleve o ICMS sobre gasolina em 10%, mantendo o preço do etanol fixo. Os preços iniciais são tais que a relação etanol/gasolina estava exatamente em 70% (ponto de indiferença do consumidor flex).
+
+(a) Estime a variação percentual na quantidade demandada de gasolina.
+
+(b) Estime a variação percentual na quantidade demandada de etanol.
+
+(c) Suponha que a quantidade inicial de gasolina consumida era \(Q_G^0 = 100\) litros e o preço inicial era \(p_G^0 = 6{,}00\) reais/litro. Use a aproximação triangular para estimar a perda de peso morto (triângulo de Harberger) associada ao imposto. Interprete o resultado à luz da elasticidade elevada.
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-9)
+
+---
+
+<a id="ex-6-10"></a>**Exercício 6.10 (Prova: efeito substituição cruzado não negativo com 2 bens).** Prove formalmente que, com apenas dois bens, o efeito substituição cruzado hicksiano satisfaz \(\frac{\partial h_1}{\partial p_2} \geq 0\). Use as propriedades da matriz de Slutsky.
+
+*Dica:* Utilize (i) a simetria da matriz de Slutsky (\(s_{12} = s_{21}\)), (ii) a homogeneidade de grau zero das demandas hicksianas (que implica \(\sum_j p_j s_{ij} = 0\) para todo \(i\)), e (iii) a negatividade do efeito substituição próprio (\(s_{11} \leq 0\) e \(s_{22} \leq 0\)).
+
+[:material-arrow-right: Ver solução](../solucoes/cap06.md#ex-6-10)
+
+---
+
 ## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2012 — Questão 03"
@@ -735,6 +858,33 @@ Sua função de utilidade é \(U(z_1, z_2) = z_1^{0,4} z_2^{0,6}\) e sua renda �
     **Resultado principal:** Aplicando o modelo ao mercado americano de automóveis (1971-1990), os autores estimaram elasticidades-preço próprias e cruzadas para centenas de modelos. Os resultados mostraram padrões de substituição altamente realistas: carros compactos competem principalmente entre si e menos com SUVs, exatamente como a abordagem de Lancaster prevê (carros no mesmo segmento compartilham atributos semelhantes). As elasticidades estimadas permitiram avaliar o poder de mercado das montadoras e simular os efeitos de fusões sobre preços.
 
     **Relevância para o capítulo:** O modelo BLP é uma implementação empírica direta do modelo de Lancaster (Seção 6.6): os consumidores derivam utilidade dos *atributos* dos automóveis, não dos veículos em si. A estrutura de substituição entre produtos emerge endogenamente da proximidade no espaço de atributos, em vez de ser imposta *ad hoc*. Além disso, a agregação da demanda individual (Seção 6.7) é central no modelo — a demanda de mercado resulta da soma de escolhas heterogêneas, e a heterogeneidade de preferências (violação da condição de Gorman) é uma *feature*, não um bug. O artigo é um dos mais citados em organização industrial e tornou-se referência para a análise antitruste de fusões pelo [CADE](https://www.gov.br/cade) no Brasil e por autoridades concorrenciais no mundo todo.
+
+??? pesquisa "Rosen, Sherwin. (1974). [Hedonic Prices and Implicit Markets: Product Differentiation in Pure Competition](https://doi.org/10.1086/260169). *Journal of Political Economy*, 82(1), 34–55. DOI: [10.1086/260169](https://doi.org/10.1086/260169)"
+    **Pergunta central:** Como determinar os preços implícitos dos atributos de bens diferenciados — como imóveis, automóveis ou trabalhadores — em mercados competitivos onde os preços observados são os preços dos bens, não dos seus atributos individuais?
+
+    **Método:** Rosen propôs um modelo de equilíbrio hedônico em dois estágios. No primeiro, o preço de mercado de um bem diferenciado é modelado como uma função de seus atributos: \(p = P(z_1, z_2, \ldots, z_m)\), onde \(z_k\) são os atributos. As derivadas parciais \(\partial P / \partial z_k\) são os **preços hedônicos** (ou preços implícitos) de cada atributo — o quanto o mercado paga a mais por uma unidade adicional do atributo \(k\). No segundo estágio, esses preços implícitos são usados para estimar as curvas de demanda inversa e oferta inversa dos atributos individuais, permitindo recuperar as preferências dos consumidores e os custos dos produtores. A chave é que, em equilíbrio competitivo, consumidores e produtores se "emparelham" de modo que os preços hedônicos reflitam simultaneamente a disposição marginal a pagar dos compradores e o custo marginal de oferta dos vendedores.
+
+    **Resultado principal:** Rosen demonstrou as condições de equilíbrio do mercado hedônico e estabeleceu a relação entre a função de preços hedônicos e as curvas de oferta e demanda dos atributos. O artigo mostrou que a função de preços hedônicos não é, em geral, linear nos atributos — sua curvatura reflete a heterogeneidade das preferências e dos custos. Essa não linearidade tem implicações importantes para a estimação econométrica: uma regressão linear de preços sobre atributos pode ser uma aproximação razoável localmente, mas pode gerar vieses para variações grandes nos atributos.
+
+    **Relevância para o capítulo:** O modelo de Rosen é a ponte formal entre o modelo de Lancaster (Seção 6.6.1) — que postula que os consumidores valorizam atributos dos bens — e a análise empírica de preços de mercado. Enquanto Lancaster descreve o *problema do consumidor* em termos de atributos, Rosen descreve o *equilíbrio de mercado* que emerge quando muitos consumidores e produtores com preferências e custos heterogêneos interagem. As aplicações brasileiras — FipeZap, índices imobiliários do Banco Central, estudos de salário hedônico para diferentes ocupações — todas se baseiam no arcabouço de Rosen. O artigo é um dos mais citados em economia aplicada e continua sendo a referência teórica padrão para estudos de precificação hedônica no Brasil e no mundo.
+
+??? pesquisa "Lewbel, Arthur. (1996). [Aggregation Without Separability: A Generalized Composite Commodity Theorem](https://www.jstor.org/stable/2118240). *American Economic Review*, 86(3), 524–543."
+    **Pergunta central:** O Teorema do Bem Composto de Hicks exige que os preços de um grupo variem *exatamente* em proporção. Na prática, os preços nunca se movem em proporção perfeita — então quando podemos ainda tratar um grupo de bens como um bem composto aproximado?
+
+    **Método:** Lewbel generaliza o Teorema do Bem Composto relaxando a hipótese de proporcionalidade estrita. O autor mostra que, mesmo quando os preços relativos dentro de um grupo variam, é possível construir um índice de preços para o grupo que satisfaz uma versão generalizada do teorema, sob condições mais fracas que a proporcionalidade. Em particular, Lewbel demonstra que o teorema pode ser estendido para agrupar bens mesmo quando há alguma variação nos preços relativos internos, desde que as funções de demanda satisfaçam certas propriedades de separabilidade fraca. O artigo também conecta a agregação de bens à teoria de números-índice, mostrando que os índices de preços tipo Laspeyres e Paasche são casos especiais do teorema generalizado.
+
+    **Resultado principal:** A condição necessária e suficiente para a agregação exata é mais fraca do que a proporcionalidade de Hicks — ela permite alguma variação nos preços relativos internos, desde que as preferências satisfaçam separabilidade fraca. Além disso, Lewbel mostra que, para qualquer conjunto de preferências, sempre é possível encontrar uma partição dos bens em grupos que satisfaz o teorema generalizado, o que justifica o uso de índices de preços compostos em análises empíricas mesmo sem proporcionalidade exata.
+
+    **Relevância para o capítulo:** A Seção 6.5 apresenta o Teorema do Bem Composto de Hicks na sua forma clássica, que exige proporcionalidade estrita dos preços. Lewbel mostra quando e como essa condição pode ser relaxada — uma questão central para aplicações ao IPCA brasileiro, onde os preços administrados e livres raramente se movem em proporção exata. O artigo também elucida os fundamentos teóricos dos índices de preços usados pelo IBGE, conectando a teoria microeconômica da demanda à prática de mensuração da inflação. Para o Brasil, onde choques de preços são frequentemente assimétricos entre categorias (energia versus alimentos versus serviços), a generalização de Lewbel é especialmente relevante para avaliar a validade de análises que tratam grupos de bens como compostos.
+
+??? pesquisa "Dubois, Pierre; Griffith, Rachel; Nevo, Aviv. (2014). [Do Prices and Attributes Explain International Differences in Food Purchases?](https://doi.org/10.1257/aer.104.3.832) *American Economic Review*, 104(3), 832–867. DOI: [10.1257/aer.104.3.832](https://doi.org/10.1257/aer.104.3.832)"
+    **Pergunta central:** Por que famílias em países diferentes compram cestas alimentares tão distintas? A diferença deve-se a diferenças nos preços dos alimentos, nos atributos (qualidade, conveniência, sabor) disponíveis em cada país, ou a preferências genuinamente distintas?
+
+    **Método:** Os autores coletaram dados detalhados de compras domiciliares de alimentos em três países — França, Estados Unidos e Reino Unido — com informações sobre quantidades, preços pagos e características dos produtos (calorias, teor de gordura, nível de processamento, conveniência). Usando o arcabouço de Lancaster, modelaram cada produto como um conjunto de atributos, estimando a função utilidade sobre atributos (não sobre produtos) com técnicas de equações estruturais. A abordagem permite decompor as diferenças internacionais nas cestas alimentares em três componentes: diferenças de preços, diferenças na disponibilidade de atributos, e diferenças nas preferências sobre atributos.
+
+    **Resultado principal:** A maior parte das diferenças internacionais nas cestas alimentares é explicada por diferenças nos preços e na disponibilidade de atributos — não por diferenças nas preferências. Se franceses, americanos e britânicos enfrentassem os mesmos preços e as mesmas opções de produtos disponíveis, suas cestas alimentares seriam muito mais semelhantes do que as observadas. Em particular, os americanos compram mais alimentos processados e calóricos não porque preferem esses atributos, mas porque são relativamente mais baratos nos EUA. Esse resultado tem implicações importantes para políticas de saúde pública: uma tributação sobre alimentos processados (similar ao imposto seletivo proposto no Brasil) pode ser eficaz em alterar a composição da cesta, pois as diferenças nos padrões alimentares respondem ao sistema de preços.
+
+    **Relevância para o capítulo:** O artigo é uma implementação empírica direta do modelo de Lancaster (Seção 6.6.1) em grande escala, com dados reais de múltiplos países. Ele demonstra que o framework de atributos não é apenas uma construção teórica abstrata, mas uma ferramenta empírica poderosa para entender padrões de demanda. Para o Brasil, o resultado sugere que as diferenças regionais e inter-classes nos padrões alimentares — documentadas pela POF/IBGE e discutidas nas Seções 6.2 e 6.7 — podem refletir principalmente diferenças nos preços relativos dos atributos (calorias, proteínas, conveniência) entre regiões e classes de renda, e não diferenças intrínsecas nas preferências. Isso implica que políticas de preços — subsídios a alimentos saudáveis, tributação de ultraprocessados — poderiam ser instrumentos eficazes para alterar a composição das cestas alimentares das famílias brasileiras.
 
 ## 📚 Referências do Capítulo
 

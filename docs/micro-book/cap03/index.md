@@ -360,6 +360,12 @@ A TMS para a CES assume uma forma compacta e elegante:
 
 Note que, quando \(\rho < 1\) (o caso economicamente relevante), o expoente \(\rho - 1\) é negativo, de modo que a TMS é decrescente em \(x_1/x_2\) — confirmando a convexidade das curvas de indiferença.
 
+<iframe src="../graficos/cap03/ces-continua.html" title="Figura 3.6 — CES Contínua: de Leontief a Substitutos Perfeitos" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 3.6 — CES Contínua: de Leontief a Substitutos Perfeitos.** Arraste o slider de \(\rho\) para observar a transformação contínua das curvas de indiferença: de ângulos retos (\(\rho \to -\infty\), complementos perfeitos) a hipérboles suaves (\(\rho = 0\), Cobb-Douglas) a retas (\(\rho \to 1\), substitutos perfeitos). A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
+</div>
+
 !!! example "Exemplo numérico: CES com diferentes valores de ρ"
     Considere o ponto \((x_1, x_2) = (4, 8)\). A TMS da CES é \(\text{TMS}_{12} = (x_1/x_2)^{\rho-1} = (4/8)^{\rho-1} = (0{,}5)^{\rho-1}\). Veja como ela varia com \(\rho\):
 
@@ -571,6 +577,12 @@ A demonstração é direta e vale a pena percorrer, pois ilustra a simplicidade 
 
 - A Cobb-Douglas \(u = x_1^a x_2^b\) pode ser transformada em \(\hat{u} = a \ln x_1 + b \ln x_2\) via \(f(u) = \ln(u)\). O logaritmo transforma o produto em soma, eliminando os expoentes e simplificando consideravelmente as derivadas parciais e a resolução das condições de primeira ordem.
 - Qualquer Cobb-Douglas pode ser normalizada de modo que \(\hat{u} = \frac{a}{a+b} \ln x_1 + \frac{b}{a+b} \ln x_2\), com coeficientes somando 1. Essa normalização é conveniente porque os coeficientes passam a coincidir com as participações na despesa — tornando a interpretação econômica imediata.
+
+<iframe src="../graficos/cap03/transformacao-monotonica.html" title="Figura 3.7 — Transformação Monotônica e Invariância Ordinal" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 3.7 — Transformação Monotônica e Invariância Ordinal.** Esquerda: curvas de indiferença de \(U = x_1 x_2\). Direita: curvas da transformada \(\hat{U} = f(U)\). As curvas são **idênticas** — apenas os rótulos numéricos mudam. Escolha entre \(\ln\), \(\sqrt{}\), \(U^2\), \(U^3\) e \(-1/U\). Mova o ponto de referência para verificar que a TMS é a mesma em ambos os painéis.
+</div>
 
 !!! example "Transformação monotônica em ação: simplificando a CES"
     A função CES \(u = (x_1^\rho + x_2^\rho)^{1/\rho}\) envolve uma raiz que complica as derivadas parciais. Aplique a transformação monotônica \(f(u) = u^\rho\) (estritamente crescente para \(u > 0\) quando \(\rho > 0\), e estritamente decrescente — mas aí tomamos \(f(u) = -u^\rho\) — para \(\rho < 0\)). O resultado é:

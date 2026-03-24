@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+  Oferta e Demanda com Estática Comparativa
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta e Demanda — Estática Comparativa</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}
+    .graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}
+    #jxgbox{flex:1 1 480px;max-width:580px;height:460px;border:1px solid #ddd;border-radius:6px}
+    .controls{flex:0 1 300px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}
+    .controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}
+    .slider-group{margin-bottom:.8rem}
+    .slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    .info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.7}
+    .info-box .info-row{display:flex;justify-content:space-between;align-items:baseline}
+    .info-box .info-label{color:#666}
+    .info-box .info-val{font-weight:700;color:#333}
+    .info-box .info-val.accent{color:#C8102E}
+    .info-box .info-val.green{color:#00897b}
+    .info-box .divider{border:none;border-top:1px solid #eee;margin:.4rem 0}
+    .legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem;font-size:.78rem;color:#666}
+    .legend-item{display:flex;align-items:center;gap:.3rem}
+    .legend-swatch{width:18px;height:3px;border-radius:2px}
+    .btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}
+    .btn-reset:hover{background:#9a0c23}
+    @media(max-width:860px){.graph-container{flex-direction:column;align-items:center}#jxgbox,.controls{flex-basis:100%;max-width:100%}}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Parâmetros</h3>
+    <div class="slider-group">
+      <label>Renda \(Y\): <span class="val" id="val-Y">50</span></label>
+      <input type="range" id="sl-Y" min="10" max="100" step="1" value="50">
+    </div>
+    <div class="slider-group">
+      <label>Custo insumo \(w\): <span class="val" id="val-w">10</span></label>
+      <input type="range" id="sl-w" min="0" max="40" step="1" value="10">
+    </div>
+    <div class="slider-group">
+      <label>Inclinação demanda \(b\): <span class="val" id="val-b">4</span></label>
+      <input type="range" id="sl-b" min="1" max="10" step="0.5" value="4">
+    </div>
+    <div class="slider-group">
+      <label>Inclinação oferta \(d\): <span class="val" id="val-d">6</span></label>
+      <input type="range" id="sl-d" min="1" max="10" step="0.5" value="6">
+    </div>
+    <div class="info-box" id="info">
+      <div style="text-align:center;margin-bottom:.4rem;color:#555;font-size:.8rem">
+        \(Q^d = 200 - bP + 2Y\) &nbsp;|&nbsp; \(Q^s = -20 + dP - 3w\)
+      </div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">Preço \(P^*\)</span><span class="info-val accent" id="info-P">—</span></div>
+      <div class="info-row"><span class="info-label">Quantidade \(Q^*\)</span><span class="info-val green" id="info-Q">—</span></div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">\(\partial P^*/\partial Y\)</span><span class="info-val" id="info-dPdY">—</span></div>
+      <div class="info-row"><span class="info-label">\(\partial P^*/\partial w\)</span><span class="info-val" id="info-dPdw">—</span></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Demanda</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Oferta</div>
+    </div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+var Y=50, w=10, b=4, d=6;
+function Qd(P){return 200 - b*P + 2*Y;}
+function Qs(P){return -20 + d*P - 3*w;}
+function Pstar(){return (220 + 2*Y + 3*w)/(b+d);}
+function Qstar(){return Qd(Pstar());}
+
+var board = JXG.JSXGraph.initBoard('jxgbox',{
+  boundingbox:[-3,55,55,-3], axis:false, showCopyright:false, showNavigation:false, keepAspectRatio:false
+});
+// Axes
+board.create('axis',[[0,0],[52,0]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10},minorTicks:0,ticksDistance:10}});
+board.create('axis',[[0,0],[0,52]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:10}});
+board.create('text',[27,-2,'<b><i>Q</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
+board.create('text',[-2.5,27,'<b><i>P</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
+
+// Demand curve (P as function of Q, but we plot Q on x-axis, P on y-axis)
+// Qd = 200 - bP + 2Y  =>  P = (200+2Y-Q)/b
+var demandCurve = board.create('functiongraph',[function(Q){return (200+2*Y-Q)/b;},0,50],{strokeColor:'#1565c0',strokeWidth:2.5});
+// Supply curve: Qs = -20 + dP - 3w  =>  P = (Q+20+3w)/d
+var supplyCurve = board.create('functiongraph',[function(Q){return (Q+20+3*w)/d;},0,50],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+// Equilibrium point
+var eqPt = board.create('point',[function(){return Qstar();},function(){return Pstar();}],{size:6,fillColor:'#00897b',strokeColor:'#00897b',name:'',fixed:true});
+
+// Dashed lines to axes
+board.create('segment',[[function(){return Qstar();},0],[function(){return Qstar();},function(){return Pstar();}]],{strokeColor:'#999',dash:2,strokeWidth:1});
+board.create('segment',[[0,function(){return Pstar();}],[function(){return Qstar();},function(){return Pstar();}]],{strokeColor:'#999',dash:2,strokeWidth:1});
+
+// Labels on axes
+board.create('text',[function(){return Qstar();},-1.5,'Q*'],{fontSize:11,fixed:true,anchorX:'middle',color:'#00897b',highlight:false});
+board.create('text',[-1.8,function(){return Pstar();},'P*'],{fontSize:11,fixed:true,anchorX:'right',color:'#00897b',highlight:false});
+
+function updateAll(){
+  Y=+document.getElementById('sl-Y').value;
+  w=+document.getElementById('sl-w').value;
+  b=+document.getElementById('sl-b').value;
+  d=+document.getElementById('sl-d').value;
+  document.getElementById('val-Y').textContent=Y;
+  document.getElementById('val-w').textContent=w;
+  document.getElementById('val-b').textContent=b;
+  document.getElementById('val-d').textContent=d;
+  var ps=Pstar(), qs=Qstar();
+  document.getElementById('info-P').textContent=ps.toFixed(2);
+  document.getElementById('info-Q').textContent=qs.toFixed(2);
+  document.getElementById('info-dPdY').textContent=(2/(b+d)).toFixed(3)+' > 0';
+  document.getElementById('info-dPdw').textContent=(3/(b+d)).toFixed(3)+' > 0';
+  board.update();
+}
+['sl-Y','sl-w','sl-b','sl-d'].forEach(function(id){document.getElementById(id).addEventListener('input',updateAll);});
+function resetAll(){
+  document.getElementById('sl-Y').value=50;document.getElementById('sl-w').value=10;
+  document.getElementById('sl-b').value=4;document.getElementById('sl-d').value=6;
+  Y=50;w=10;b=4;d=6;updateAll();
+}
+updateAll();
+</script>
+</body>
+</html>
