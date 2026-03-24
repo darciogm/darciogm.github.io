@@ -4,7 +4,7 @@ Nos módulos anteriores, todos os jogadores conheciam perfeitamente a estrutura 
 
 Harsanyi (1967–68) resolveu o problema de modelar jogos com **informação incompleta** ao introduzir a noção de "tipos": cada jogador tem um tipo privado (sorteado pela natureza), e as crenças sobre os tipos dos outros são descritas por uma distribuição de probabilidade (prior comum). O conceito de equilíbrio correspondente é o **Equilíbrio Bayesiano de Nash** (BNE).
 
-Este módulo cobre jogos bayesianos estáticos e sua principal aplicação: a **teoria de leilões** (Gibbons, 1992, Cap. 3).
+Este módulo cobre jogos bayesianos estáticos e sua principal aplicação: a **teoria de leilões** (Gibbons, 1992, Cap. 3). Os conceitos aqui desenvolvidos conectam-se diretamente ao Capítulo 9a (jogos estáticos com informação completa, cujo equilíbrio de Nash é o caso especial sem tipos privados), ao Capítulo 9b (jogos dinâmicos com informação completa, que introduz credibilidade e ameaças — cruciais nos leilões ascendentes) e ao Capítulo 9d (jogos dinâmicos com informação incompleta, que aprofunda sinalização e reputação). O leitor que domina o BNE estará preparado para os modelos de sinalização em 9d, nos quais a assimetria informacional persiste ao longo de múltiplos estágios.
 
 ---
 
@@ -24,6 +24,8 @@ Como modelar formalmente uma situação em que os jogadores não conhecem as car
 
 A transformação de Harsanyi converte um jogo com informação incompleta em um jogo com informação imperfeita (mas completa): a "natureza" sorteia os tipos, cada jogador observa apenas o próprio tipo, e o jogo prossegue como um jogo simultâneo em que cada tipo é tratado como um "jogador" separado. O que antes era genuína ignorância sobre a estrutura do jogo, formalizada pela equação $\eqref{eq:9c.1}$, torna-se meramente incerteza sobre um lance aleatório — algo que as ferramentas probabilísticas podem tratar rigorosamente.
 
+É importante notar a diferença entre **informação incompleta** e **informação imperfeita** (introduzida no Capítulo 9b). Informação imperfeita significa que os jogadores não observam todas as ações passadas; informação incompleta significa que não conhecem as características fundamentais dos adversários — custos, valores, preferências. A genialidade da transformação de Harsanyi é reduzir o segundo tipo ao primeiro, unificando o tratamento analítico. Uma vez que o jogo bayesiano está definido, as estratégias passam a ser *funções dos tipos*: em vez de escolher uma ação, cada jogador escolhe um plano contingente que especifica o que fazer para cada possível realização do seu tipo privado.
+
 ---
 
 ## 9c.2 Equilíbrio Bayesiano de Nash
@@ -39,6 +41,22 @@ Com a estrutura do jogo bayesiano definida, qual é o conceito de equilíbrio ap
     \]
 
     Cada tipo de cada jogador maximiza seu payoff esperado, condicionando nas crenças sobre os tipos dos outros e nas estratégias de equilíbrio dos demais.
+
+!!! definition "Equilíbrio Bayesiano de Nash — Definição Operacional"
+    Dito de forma equivalente, \(\sigma^*\) é um **BNE** se e somente se, para cada jogador \(i\) e cada tipo \(\theta_i\) com probabilidade positiva, a ação \(\sigma_i^*(\theta_i)\) é uma melhor resposta às estratégias dos demais, tomando a expectativa sobre \(\theta_{-i}\) usando a distribuição posterior de \(i\) sobre os tipos dos outros, condicionada em \(\theta_i\).
+
+    Em termos práticos: encontrar um BNE equivale a resolver um sistema de problemas de otimização interligados — um para cada par (jogador, tipo) — em que as melhores respostas devem ser mutuamente consistentes.
+
+O BNE herda as propriedades do equilíbrio de Nash: em jogos finitos, sempre existe pelo menos um BNE (possivelmente em estratégias mistas). A diferença fundamental está na *dimensionalidade* do problema de equilíbrio: com \(n\) jogadores e \(|\Theta_i|\) tipos cada, o número de condições de otimização cresce proporcionalmente ao produto dos tamanhos dos conjuntos de tipos — muito mais complexo do que o jogo de informação completa correspondente.
+
+!!! idea "Intuição Econômica"
+    **BNE: escolher melhor resposta dado o que você acredita sobre os tipos alheios**
+
+    **Em uma frase:** No BNE, cada tipo de cada jogador age como o melhor que pode, dado o que acredita saber sobre quem está do outro lado da mesa.
+
+    **Pense assim:** Imagine que você negocia um contrato com uma empresa fornecedora. Você não sabe se ela é eficiente (custo baixo) ou ineficiente (custo alto). Mas sabe que, historicamente, 40% das fornecedoras são eficientes. No BNE, você formula uma proposta ótima contra essa distribuição de 40/60, e cada tipo da fornecedora responde com sua melhor oferta. Ninguém sabe o tipo do outro, mas todos agem racionalmente dado o que sabem.
+
+    **Por que isso importa:** O BNE é o conceito que unifica leilões, seguros, mercados de trabalho e regulação sob um mesmo arcabouço. Em todos esses contextos, há agentes com informação privada tomando decisões simultâneas — e o BNE captura exatamente o que acontece quando todos são racionais e as crenças são consistentes.
 
 !!! info "🏅 Prêmio Nobel — John C. Harsanyi (1994)"
 
@@ -62,6 +80,8 @@ Com a estrutura do jogo bayesiano definida, qual é o conceito de equilíbrio ap
 ## 9c.3 Leilões de Valor Privado
 
 A aplicação mais importante dos jogos bayesianos estáticos é a teoria de leilões. Em um leilão, cada participante possui informação privada sobre seu próprio valor pelo objeto e deve decidir quanto oferecer sem conhecer os valores dos concorrentes — um jogo bayesiano por excelência.
+
+A teoria moderna de leilões foi inaugurada por Vickrey (1961), que demonstrou a propriedade de revelação de verdade no leilão de segundo preço e estabeleceu as bases para a análise de bem-estar. Duas décadas depois, Myerson (1981) e Riley e Samuelson (1981) completaram o edifício com a derivação do leilão ótimo e o teorema da equivalência de receita. William Vickrey dividiu o Nobel de 1996 com James Mirrlees precisamente por essas contribuições — e Roger Myerson recebeu o Nobel de 2007 (junto com Hurwicz e Maskin) pelo desenho de mecanismos. Raramente uma área da teoria econômica gerou tanto reconhecimento tão rápido, o que reflete a importância prática imediata dos resultados.
 
 ### Modelo básico: IPV (Valores Privados Independentes)
 
@@ -88,6 +108,8 @@ b(v) = v \cdot \frac{N-1}{N}
 
 Pela equação $\eqref{eq:9c.3}$, cada licitante "sombreia" seu lance por um fator \((N-1)/N\). Com 2 licitantes, o lance é metade do valor; com muitos, converge para o valor verdadeiro. Com mais concorrentes, o risco de perder o leilão aumenta e o sombreamento diminui — no limite, com infinitos licitantes, cada um lança (quase) seu valor verdadeiro.
 
+A intuição por trás do sombreamento é fundamental: no leilão de primeiro preço, o licitante enfrenta um *trade-off* entre a probabilidade de ganhar e o lucro condicional à vitória. Lançar mais alto aumenta a chance de ganhar, mas reduz o ganho se vencer. A fórmula do BNE simétrico resolve esse trade-off de forma ótima: o sombreamento ótimo é exatamente proporcional ao valor, com fator \((N-1)/N\) que cresce em \(N\). Essa elegância matemática reflete uma lógica econômica profunda — o licitante "compra" probabilidade de vitória ao custo de lucro esperado, e o equilíbrio iguala os benefícios marginais de ambos os lados.
+
 **Receita esperada:** Com \(v_i \sim U[0, 1]\):
 
 \[
@@ -106,6 +128,17 @@ Os leilões de primeiro e segundo preço parecem radicalmente distintos. As rece
 
 !!! note "Quando a equivalência falha"
     A equivalência de receita falha com: (i) aversão ao risco (1º preço gera mais receita); (ii) assimetria entre licitantes; (iii) valores afiliados/comuns; (iv) colusão. Nesses casos, o formato do leilão importa — e o desenho ótimo de mecanismo (Myerson, 1981) se torna relevante.
+
+!!! warning "Cuidado"
+    **A maldição do vencedor não é sobre má sorte — é sobre seleção adversa**
+
+    Um erro comum ao estudar leilões de valor comum é pensar que a "maldição do vencedor" é apenas um desvio comportamental ou resultado de irracionalidade. Na verdade, trata-se de um **problema estrutural de seleção adversa**: vencer um leilão de valor comum revela que sua estimativa era a mais alta entre todos os participantes, o que é uma *má notícia* sobre o valor real do objeto.
+
+    **Erro típico:** "Minha estimativa é R$ 120 milhões, então vou lançar R$ 120 milhões." — Errado! Se você ganha, significa que todos os outros estimaram *menos* que R$ 120 milhões. O valor real provavelmente é menor.
+
+    **Correção:** O lance ótimo condiciona na informação revelada pela vitória: \(b^* = E[V \mid s_i = \max_j s_j]\), que é *sempre menor* que \(s_i\) quando há mais de um licitante. A diferença \(s_i - b^*\) cresce com o número de concorrentes — mais licitantes significa mais seleção adversa.
+
+    **Aplicação brasileira:** Em licitações de obras públicas, empresas que ignoram a maldição do vencedor frequentemente ganham contratos que se tornam prejudiciais, levando a renegociações ou abandono de obras — um problema crônico na infraestrutura nacional.
 
 ### Leilões de valor comum e a maldição do vencedor
 
@@ -132,6 +165,19 @@ A teoria de leilões levanta uma pergunta mais ampla: se a receita depende do fo
     Implicação prática: ao buscar o mecanismo ótimo, basta considerar mecanismos de revelação direta com compatibilidade de incentivos.
 
 O desenho de mecanismos inverte a pergunta da teoria dos jogos: em vez de "dado o jogo, qual é o equilíbrio?", pergunta-se "dado o resultado desejado, qual jogo gera esse resultado em equilíbrio?" Essa inversão é profundamente prática: o regulador que projeta um leilão, o governo que desenha uma licitação, a empresa que cria um processo seletivo — todos estão fazendo desenho de mecanismos. O Princípio da Revelação simplifica a tarefa ao mostrar que basta considerar mecanismos nos quais os participantes reportam seus tipos — desde que dizer a verdade seja ótimo.
+
+!!! idea "Intuição Econômica"
+    **Desenho de mecanismos: engenharia reversa do jogo**
+
+    **Em uma frase:** Desenho de mecanismos é a arte de construir o "jogo" para que o comportamento racional e egoísta dos participantes produza o resultado que o designer quer.
+
+    **Pense assim:** Um governo quer vender uma licença de espectro de rádio ao operador que mais valoriza o recurso (eficiência alocativa) e maximizar a receita para os cofres públicos. Não pode simplesmente perguntar "quanto você paga?", pois as empresas mentiriam. A solução do mecanismo design é construir um formato de leilão em que dizer a verdade *ou* lançar o lance estrategicamente ótimo resulte, em equilíbrio, na alocação eficiente.
+
+    **Por que isso importa:** O campo surgiu do reconhecimento de que as regras do jogo não são dadas — elas são *escolhas de política*. Myerson (2007), Hurwicz (2007) e Maskin (2007) receberam o Nobel por formalizar como desenhar mecanismos que funcionam mesmo quando os participantes têm informação privada e interesses próprios.
+
+O resultado central do desenho de mecanismos para leilões — o *leilão ótimo* de Myerson — combina dois elementos: um **preço de reserva** (que exclui licitantes com valores baixos, aumentando a receita esperada ao custo de ineficiência ocasional) e **discriminação entre licitantes assimétricos** (um licitante sistematicamente mais fraco recebe tratamento favorável para aumentar a competição e extrair mais receita do licitante mais forte). Esse resultado surpreende a intuição: às vezes, excluir participantes ou distorcer a alocação *aumenta* a receita esperada. O Princípio da Revelação torna esse resultado tratável ao permitir que o designer procure entre mecanismos com compatibilidade de incentivos, em vez de entre todos os mecanismos possíveis.
+
+O desenho de mecanismos conecta-se diretamente ao Capítulo 9d: nos jogos dinâmicos com informação incompleta, a questão não é apenas "qual equilíbrio?" mas também "como desenhar a sequência de comunicação e ação para que o equilíbrio desejado seja sustentável?". Os conceitos de compatibilidade de incentivos e racionalidade individual desenvolvidos aqui são os blocos fundamentais para essa análise mais avançada.
 
 ---
 
@@ -174,6 +220,23 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
     O CADE tem investigado cartéis em licitações de obras públicas, alimentos para merenda escolar e medicamentos. O "Cartel do Metrô de SP" (2013) envolveu construtoras que se coordenavam para dividir contratos de obras de metrô — com sobrepreço estimado em 30%.
 
     **Implicações da teoria:** A colusão é mais fácil em leilões de primeiro preço do que de segundo preço (McAfee e McMillan, 1992). Leilões ascendentes (ingleses) são ainda mais vulneráveis pois permitem sinalização durante o leilão. Isso explica por que o formato do leilão é um instrumento de política antitruste.
+
+!!! box-brasil "Box Brasil — Leilões de espectro da ANATEL: teoria e prática"
+    Os leilões de espectro de radiofrequências organizados pela **ANATEL** para concessão de bandas 4G e 5G são um laboratório de desenho de mecanismos aplicado ao contexto brasileiro.
+
+    **O problema do designer (ANATEL):** Alocar faixas de espectro de forma eficiente (aos operadores que mais as valorizam), maximizar receita para a União e garantir cobertura em áreas remotas — objetivos frequentemente conflitantes.
+
+    **Soluções de desenho de mecanismos adotadas:**
+
+    - **Leilão combinatório:** Operadores fazem lances sobre *pacotes* de frequências, não sobre frequências individuais, evitando o problema de complementaridade (quando o valor de duas faixas juntas supera a soma dos valores individuais).
+    - **Obrigações de cobertura:** Em vez de apenas maximizar o bônus de assinatura, o edital impõe metas de cobertura em municípios rurais — um mecanismo que transfere parte do excedente para regiões menos lucrativas.
+    - **Preços de reserva diferenciados:** Lotes em regiões com menor demanda têm preços de reserva mais baixos, incentivando a participação e evitando lotes não arrematados.
+
+    **Leilão do 5G (2021):** Arrecadou R$ 47,2 bilhões, incluindo R$ 40,5 bilhões em compromissos de cobertura e implantação de rede. A ANATEL escolheu deliberadamente um formato que priorizava cobertura sobre receita imediata — uma decisão de desenho de mecanismos com impacto estrutural de longo prazo.
+
+    **Conexão teórica:** O formato do leilão de espectro da ANATEL ilustra que o "leilão ótimo" de Myerson raramente é adotado literalmente na prática. Em vez de maximizar receita pura, os reguladores combinam múltiplos objetivos usando restrições de equilíbrio bayesiano como ferramentas de planejamento.
+
+    **Fonte**: ANATEL, Editais de licitação de radiofrequências (2014, 2021).
 
 ---
 
@@ -271,6 +334,41 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
+<a id="ex-9c-4"></a>**Exercício 9c.4.** (BNE em jogo de 2 tipos e 2 ações — Fácil) Considere um jogo bayesiano em que o Jogador 1 tem tipo \(\theta \in \{A, B\}\) com probabilidades \(\Pr(A) = 0{,}3\) e \(\Pr(B) = 0{,}7\). Cada jogador escolhe entre as ações \(\{X, Y\}\). Os payoffs (J1, J2) são:
+
+- Tipo A: (X,X) = (4,1); (X,Y) = (2,3); (Y,X) = (1,2); (Y,Y) = (3,0)
+- Tipo B: (X,X) = (1,1); (X,Y) = (3,2); (Y,X) = (2,3); (Y,Y) = (0,1)
+
+Encontre todos os BNEs puros. Justifique o procedimento de solução passo a passo.
+
+[:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-4)
+
+---
+
+<a id="ex-9c-5"></a>**Exercício 9c.5.** (Leilão de segundo preço — Fácil) Dois licitantes com valores \(v_1 = 80\) e \(v_2 = 60\) (ambos conhecidos apenas pelo próprio detentor) participam de um leilão de segundo preço (Vickrey). (a) Mostre que \(b_i = v_i\) é estratégia fracamente dominante para ambos. (b) Quem ganha e quanto paga? (c) Qual é o excedente do vencedor? (d) O que acontece se o vendedor adiciona um preço de reserva de R$ 70?
+
+[:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-5)
+
+---
+
+<a id="ex-9c-6"></a>**Exercício 9c.6.** (Comparação de receitas — Médio) Quatro licitantes com valores \(v_i \sim U[0, 200]\) participam de um leilão. (a) Calcule a receita esperada no leilão de primeiro preço. (b) Calcule a receita esperada no leilão de segundo preço (use a fórmula da segunda estatística de ordem). (c) Verifique numericamente a equivalência de receitas. (d) Como a receita se altera se um dos licitantes tem custo de participação de R$ 10 e decide não participar?
+
+[:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-6)
+
+---
+
+<a id="ex-9c-7"></a>**Exercício 9c.7.** (Desenho de leilão da ANP — Médio, Brasileiro) A ANP quer leiloar um bloco de petróleo no pré-sal. Há dois tipos de empresas: *grandes* (custo de extração baixo, \(c_G = 20\)) e *pequenas* (custo alto, \(c_P = 50\)), com probabilidades iguais. O valor do bloco é \(V = 100\). (a) Se a ANP usa um leilão de primeiro preço com lance sobre o bônus de assinatura, quais são as estratégias de BNE de cada tipo? (b) Qual formato de leilão maximiza a receita esperada da ANP? (c) Como o regime de partilha de produção (onde a empresa oferece uma percentagem do excedente em óleo) altera os incentivos, comparado ao bônus de assinatura? (d) Discuta se o formato atual da ANP está próximo do leilão ótimo de Myerson.
+
+[:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-7)
+
+---
+
+<a id="ex-9c-8"></a>**Exercício 9c.8.** (Teorema da Equivalência de Receita — Difícil) Considere \(N\) licitantes com valores \(v_i\) sorteados i.i.d. de uma distribuição \(F\) com densidade \(f\) contínua e suporte \([0, 1]\). (a) Derive a condição de otimização de primeira ordem para o BNE simétrico de um leilão de primeiro preço, obtendo a equação diferencial ordinária que \(b(v)\) deve satisfazer. (b) Mostre que a solução é \(b(v) = v - \int_0^v F(t)^{N-1} dt / F(v)^{N-1}\), que é a esperança condicional da maior estatística de ordem entre os demais, dado que é menor que \(v\). (c) Use o envelope theorem para demonstrar que a receita esperada em qualquer mecanismo eficiente e individualmente racional é a mesma, independente do formato. (d) Identifique quais das hipóteses (IPV, simetria, risco-neutralidade, eficiência) são essenciais para o resultado e dê um contra-exemplo para cada uma.
+
+[:material-arrow-right: Ver solução](../solucoes/cap09c.md#ex-9c-8)
+
+---
+
 ## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2018 — Questão 10 (adaptada)"
@@ -307,6 +405,11 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     **Relevância:** Fundamentação teórica para o desenho de leilões governamentais. O preço de reserva — que exclui licitantes com valores baixos — aumenta a receita esperada mesmo ao risco de não vender o objeto.
 
+??? pesquisa "Milgrom, Paul R., e Robert J. Weber (1982). [A Theory of Auctions and Competitive Bidding](https://doi.org/10.2307/1911865). *Econometrica*, 50(5), 1089–1122."
+    **Contribuição:** Milgrom e Weber generalizaram a teoria de leilões para valores afiliados (correlacionados), demonstrando o "linkage principle": leilões que divulgam mais informação geram mais receita. Também mostraram que leilões abertos (inglês) dominam fechados quando os valores são afiliados.
+
+    **Relevância:** Explica por que a ANP usa rodadas com publicação de dados sísmicos (aumenta a informação disponível, reduz a maldição do vencedor e aumenta a receita). O linkage principle é um dos resultados mais aplicados na política de leilões.
+
 ---
 
 ## 📚 Referências do Capítulo
@@ -319,6 +422,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 - Krishna, Vijay. 2010. [*Auction Theory*](https://books.google.com/books?id=QDnmDVfSyhUC). 2nd ed. San Diego: Academic Press.
 - McAfee, R. Preston, e John McMillan. 1992. "Bidding Rings." *American Economic Review* 82 (3): 579–599.
 - Milgrom, Paul R. 2004. [*Putting Auction Theory to Work*](https://books.google.com/books?id=AkeHTU7XW4kC). Cambridge: Cambridge University Press.
+- Milgrom, Paul R., e Robert J. Weber. 1982. "A Theory of Auctions and Competitive Bidding." *Econometrica* 50 (5): 1089–1122. [DOI](https://doi.org/10.2307/1911865)
 - Myerson, Roger B. 1981. "Optimal Auction Design." *Mathematics of Operations Research* 6 (1): 58–73. [DOI](https://doi.org/10.1287/moor.6.1.58)
 - Riley, John G., e William F. Samuelson. 1981. "Optimal Auctions." *American Economic Review* 71 (3): 381–392.
 - Vickrey, William. 1961. "Counterspeculation, Auctions, and Competitive Sealed Tenders." *Journal of Finance* 16 (1): 8–37. [DOI](https://doi.org/10.1111/j.1540-6261.1961.tb02789.x)
