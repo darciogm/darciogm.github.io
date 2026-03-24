@@ -5,13 +5,13 @@ hide:
 
 # Microeconomia: Do Zero ao Equilíbrio (e Além)
 
+[Ler o Prefácio](prefacio.md){ .md-button .md-button--primary }
+
 <div class="book-meta">
   <span class="book-version">Insper -- Instituto de Ensino e Pesquisa</span>
 </div>
 
 Livro didático interativo de **Microeconomia** para graduação avançada e pós-graduação. Rigor matemático, intuição econômica e aplicações ao Brasil em cada capítulo.
-
-[Ler o Prefácio](prefacio.md){ .md-button .md-button--primary }
 
 Clique em qualquer parte para acessar os capítulos correspondentes.
 
