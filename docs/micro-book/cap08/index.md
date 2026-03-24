@@ -13,6 +13,10 @@ Este capítulo apresenta seis pilares da **economia comportamental**:
 5. O **desconto hiperbólico**, que explica por que sistematicamente priorizamos o presente em detrimento do futuro.
 6. Os ***nudges*** — intervenções que aproveitam esses vieses para melhorar as decisões sem restringir a liberdade de escolha.
 
+**Conexão com o restante do livro.** Este capítulo se situa em uma encruzilhada. Do lado do passado, dialoga diretamente com dois conjuntos de resultados já estabelecidos: os axiomas de racionalidade do Capítulo 3 (completude, transitividade, continuidade e, especialmente, independência) e a teoria da utilidade esperada de Von Neumann–Morgenstern do Capítulo 7 (o axioma da independência e a representação linear das probabilidades). A economia comportamental não descarta esses modelos — ela os usa como referência precisa para identificar *onde* e *por que* os agentes se afastam das previsões canônicas. Do lado do futuro, os conceitos deste capítulo são insumos diretos para tópicos avançados: no Capítulo 14, sobre teoria dos jogos, as preferências sociais (Seção 8.4) modificam os equilíbrios previstos em jogos de barganha e de cooperação. Em teoria de mecanismos e desenho de contratos — temas que surgem no Capítulo 15 e além —, a contabilidade mental, o desconto quasi-hiperbólico e a aversão à perda determinam que tipos de incentivos funcionam na prática. Um governo que projeta um programa de previdência complementar ou um regulador que define o formato de um rótulo nutricional precisa incorporar as regularidades documentadas aqui; caso contrário, o mecanismo pode funcionar elegantemente no papel e falhar com agentes reais.
+
+A abordagem deste capítulo é deliberadamente cumulativa: começamos pelos fundamentos psicológicos das heurísticas (Seção 8.1), passamos para o modelo formal mais influente de decisão sob risco (Teoria do Prospecto, Seção 8.2), estendemos a análise para situações com probabilidades desconhecidas (Seção 8.3) e para contextos de interação (preferências sociais, Seção 8.4), examinamos o eixo temporal (desconto hiperbólico, Seção 8.5) e concluímos com as implicações de política pública (nudges, Seção 8.6). A cada passo, privilegiamos a conexão entre o rigor formal e as evidências empíricas — porque a economia comportamental é, acima de tudo, uma ciência empírica.
+
 !!! warning "Viés não é irracionalidade"
     A economia comportamental **não** afirma que os agentes são irracionais. Ela identifica **desvios sistemáticos** em relação ao modelo de racionalidade perfeita e propõe modelos alternativos que descrevem melhor o comportamento observado. Como observam Wilkinson e Klaes (2012, p. 17), os vieses cognitivos muitas vezes são subprodutos de heurísticas que funcionam bem na maioria das situações cotidianas — são atalhos adaptativos, não falhas de projeto.
 
@@ -24,12 +28,14 @@ Antes de examinar modelos alternativos de decisão, é preciso entender *por que
 
 O cérebro humano processa informações usando **heurísticas** — regras simplificadas que permitem tomar decisões rápidas com informação limitada. Na maioria das vezes, essas regras produzem resultados satisfatórios. Porém, em contextos específicos, elas geram **vieses** — desvios previsíveis em relação ao julgamento estatisticamente correto.
 
+O programa de pesquisa sobre heurísticas e vieses não surgiu do nada. Ele foi motivado por uma insatisfação profunda com o modelo do agente perfeitamente racional — o chamado *Homo economicus* — que dominava a teoria econômica no pós-guerra. Na psicologia, Herbert Simon havia cunhado o conceito de **racionalidade limitada** (*bounded rationality*) ainda nos anos 1950: os agentes não maximizam de forma global e irrestrita, mas se satisfazem com soluções "suficientemente boas" dada sua capacidade cognitiva finita. O trabalho de Tversky e Kahneman foi um passo adiante: identificou os mecanismos específicos pelos quais essa limitação se manifesta, transformando a racionalidade limitada de um princípio geral em um conjunto preciso de previsões testáveis.
+
 !!! definition "Heurística"
     Uma **heurística** é um atalho cognitivo que simplifica problemas complexos de julgamento e decisão, substituindo uma questão difícil por uma mais acessível. O termo foi popularizado por Tversky e Kahneman (1974), que identificaram três heurísticas fundamentais: representatividade, disponibilidade e ancoragem. Dhami (2016, p. 1377–1384) cataloga mais de uma dúzia de heurísticas adicionais documentadas nas décadas seguintes.
 
 ### 8.1.1 Representatividade
 
-A heurística da **representatividade** consiste em julgar a probabilidade de um evento pela semelhança com um estereótipo ou categoria mental, ignorando informações estatísticas relevantes como a taxa base.
+A heurística da **representatividade** consiste em julgar a probabilidade de um evento pela semelhança com um estereótipo ou categoria mental, ignorando informações estatísticas relevantes como a taxa base. O problema é que a semelhança e a probabilidade são conceitos radicalmente distintos: o fato de um indivíduo "parecer" com um médico não nos diz nada sobre quantos médicos existem no grupo em questão. Quando usamos a representatividade, substituímos uma pergunta difícil ("qual é a probabilidade de X?") por uma mais fácil ("X se parece com um típico membro da categoria Y?"), e essa substituição produz erros sistemáticos.
 
 !!! example "O problema de Linda"
     Linda tem 31 anos, é solteira, franca e muito inteligente. Na faculdade, foi ativista pelos direitos das minorias e participou de manifestações antinucleares. Qual das alternativas é mais provável?
@@ -39,11 +45,15 @@ A heurística da **representatividade** consiste em julgar a probabilidade de um
 
     A maioria dos participantes escolhe (B) — mas isso viola a **regra da conjunção**: a probabilidade de dois eventos simultâneos nunca pode exceder a de cada evento isolado, ou seja, \(P(A \cap B) \leq P(A)\). A descrição de Linda "se parece" mais com uma feminista, e essa semelhança (representatividade) domina o raciocínio probabilístico correto.
 
-Uma consequência importante da representatividade é a **lei dos pequenos números**: a crença de que amostras pequenas devem refletir as propriedades de amostras grandes (Dhami 2016, p. 1385–1395). Essa crença alimenta a **falácia do jogador** — a expectativa de que, após uma sequência de resultados iguais (por exemplo, cinco "caras" seguidas), o resultado oposto se torne mais provável, mesmo quando os eventos são independentes.
+Uma consequência importante da representatividade é a **lei dos pequenos números**: a crença de que amostras pequenas devem refletir as propriedades de amostras grandes (Dhami 2016, p. 1385–1395). Essa crença alimenta a **falácia do jogador** — a expectativa de que, após uma sequência de resultados iguais (por exemplo, cinco "caras" seguidas), o resultado oposto se torne mais provável, mesmo quando os eventos são independentes. A mesma lógica aparece nas finanças: analistas que observam três trimestres consecutivos de lucro crescente tendem a extrapolar essa tendência para o futuro, ignorando a regressão à média e superestimando a persistência dos resultados.
+
+A **negligência da taxa base** (*base rate neglect*) é outra manifestação da representatividade com implicações econômicas diretas. Ao avaliar a probabilidade de sucesso de uma nova empresa, investidores tendem a focar nas características específicas do empreendimento — a qualidade do fundador, a clareza do plano de negócios, o nicho de mercado —, negligenciando a taxa base de falência de startups no setor (frequentemente superior a 80% nos primeiros cinco anos). Kahneman chamou isso de o **inside view** versus o **outside view**: quem está de dentro do projeto superestima suas chances porque foca nos detalhes representativos, enquanto uma perspectiva externa privilegia as taxas base históricas.
 
 ### 8.1.2 Disponibilidade
 
-Se a representatividade nos engana pela semelhança, a próxima heurística nos engana pela facilidade de recordação. A heurística da **disponibilidade** consiste em estimar a frequência ou probabilidade de um evento pela facilidade com que exemplos vêm à mente. Eventos vívidos, recentes ou emocionalmente carregados são superestimados; eventos abstratos ou distantes, subestimados.
+Se a representatividade nos engana pela semelhança, a próxima heurística nos engana pela facilidade de recordação. A heurística da **disponibilidade** consiste em estimar a frequência ou probabilidade de um evento pela facilidade com que exemplos vêm à mente. Eventos vívidos, recentes ou emocionalmente carregados são superestimados; eventos abstratos ou distantes, subestimados. A disponibilidade é uma heurística razoável em muitos contextos: se consigo lembrar facilmente de muitos casos de uma doença específica, provavelmente é porque ela é de fato frequente. O problema surge quando a disponibilidade é dissociada da frequência real — quando eventos raros, mas espetaculares, são lembrados com muito mais facilidade do que eventos comuns, mas prosaicos.
+
+A mídia tem um papel amplificador crucial aqui. A cobertura intensiva de acidentes aéreos, ataques terroristas ou crimes violentos aumenta artificialmente a "disponibilidade cognitiva" desses eventos, levando à superestimação de sua frequência. Pesquisas de percepção de risco realizadas no Brasil mostram que os entrevistados consistentemente superestimam a probabilidade de morte por homicídio em relação à de doenças cardiovasculares — o inverso do que as estatísticas do SUS revelam. A morte por doença é silenciosa e estatística; a morte por violência é noticiada e memorável.
 
 !!! example "Risco de avião vs. carro"
     Após um acidente aéreo amplamente noticiado, a percepção de risco de voar aumenta significativamente — mesmo que, estatisticamente, o transporte aéreo seja muito mais seguro por quilômetro percorrido do que o rodoviário. No Brasil, os dados da ANTT e da ANAC indicam que a taxa de fatalidade por passageiro-quilômetro no transporte rodoviário é dezenas de vezes superior à do transporte aéreo. A cobertura midiática intensa de acidentes aéreos torna esses eventos cognitivamente "disponíveis", distorcendo a avaliação de risco.
@@ -57,7 +67,7 @@ A **ancoragem** ocorre quando um valor inicial — mesmo que arbitrário e irrel
 !!! example "O experimento da roda da fortuna"
     Tversky e Kahneman (1974) pediram a participantes que estimassem a porcentagem de países africanos nas Nações Unidas. Antes de responder, cada participante girava uma roda da fortuna que parava em um número aleatório (10 ou 65). Os participantes que viram o número 10 estimaram, em média, 25%; os que viram 65 estimaram 45%. O número da roda — completamente irrelevante para a questão — funcionou como **âncora**, puxando as estimativas em sua direção.
 
-A ancoragem tem implicações importantes para a economia: negociações salariais, precificação de imóveis e até decisões judiciais são influenciadas por valores-âncora iniciais. Estudos mostram que o preço de listagem de um imóvel funciona como âncora mesmo para avaliadores profissionais (Northcraft e Neale 1987).
+A ancoragem tem implicações importantes para a economia: negociações salariais, precificação de imóveis e até decisões judiciais são influenciadas por valores-âncora iniciais. Estudos mostram que o preço de listagem de um imóvel funciona como âncora mesmo para avaliadores profissionais (Northcraft e Neale 1987). No contexto de negociações contratuais, quem faz a primeira oferta frequentemente captura uma parcela maior do excedente — não porque a primeira oferta seja mais informativa, mas porque serve de âncora para o processo de ajuste subsequente. Para o economista comportamental, isso implica que a distribuição de poder em uma negociação pode depender de quem "lança a âncora", mais do que das posições de reserva objetivas das partes.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Heurísticas são atalhos mentais que evoluíram para funcionar bem em ambientes naturais — o problema surge quando os aplicamos a contextos modernos para os quais não foram calibrados.
@@ -81,6 +91,17 @@ Todas as heurísticas e vieses documentados acima levantam uma questão natural:
 - **Sistema 2:** lento, deliberado, analítico, de alto esforço. Requer atenção consciente e é acionado quando o Sistema 1 encontra uma situação inesperada ou quando precisamos fazer cálculos explícitos.
 
 Os vieses cognitivos documentados nas subseções anteriores surgem quando o Sistema 1 fornece uma resposta rápida (baseada em representatividade, disponibilidade ou ancoragem) e o Sistema 2 — por preguiça, sobrecarga ou falta de treinamento — não a corrige. Dhami (2016, p. 1433–1441) discute como essa arquitetura dual se conecta à distinção entre raciocínio heurístico e raciocínio deliberativo na psicologia cognitiva.
+
+Uma implicação importante é que os dois sistemas podem entrar em conflito. Kahneman documentou esse fenômeno com o famoso "teste do morcego e da bola": "Um morcego e uma bola juntos custam R\$ 1,10. O morcego custa R\$ 1,00 a mais que a bola. Quanto custa a bola?" O Sistema 1 dispara imediatamente a resposta "10 centavos" — que está errada. A resposta correta é 5 centavos, e exige que o Sistema 2 "freie" a intuição e faça o cálculo explícito. O fato de que universitários de instituições de prestígio erram esse problema com alta frequência demonstra que a intervenção do Sistema 2 não é automática nem garantida — requer esforço deliberado e motivação para questionar a própria intuição.
+
+Para a teoria econômica, o modelo dual tem uma implicação metodológica profunda: os agentes se comportam de maneira diferente dependendo de *qual sistema está no comando*. Em ambientes de alta pressão de tempo, baixa motivação ou sobrecarga cognitiva, o Sistema 1 domina e os vieses são maximizados. Em ambientes de reflexão calma e baixa sobrecarga, o Sistema 2 pode corrigir as respostas intuitivas. Isso significa que o contexto da decisão — o "ambiente de escolha" — afeta sistematicamente o comportamento, independentemente das preferências subjacentes do agente. Essa é a fundação teórica dos nudges discutidos na Seção 8.6: ao redesenhar o ambiente de escolha, o arquiteto pode acionar o Sistema 2 nos momentos em que isso mais importa — ou, alternativamente, usar o Sistema 1 a favor de melhores decisões.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** "Pensar devagar" (Sistema 2) corrige os erros do "pensar rápido" (Sistema 1) — mas exige esforço, e esse esforço frequentemente não vale o custo percebido.
+
+    **Pense assim:** Quando você compra algo por impulso no checkout do supermercado, é o Sistema 1 que decide — rápido, baseado no que está visível e no que parece familiar. Se você para, pega o celular e compara preços, o Sistema 2 assumiu o controle. Supermercados, lojas de conveniência e marketplaces digitais são projetados para manter o Sistema 1 no comando: displays chamativos, promoções relâmpago e botões "comprar agora" exploram o pensamento automático.
+
+    **Por que isso importa:** Políticas de rotulagem, advertências de saúde e formulários de consentimento informado tentam, com frequência, acionar o Sistema 2 antes de uma decisão importante. Mas a eficácia dessas intervenções depende de quanto esforço o agente médio está disposto a despender — e a evidência sugere que esse esforço é sistematicamente subestimado pelos policymakers.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O cérebro opera em dois modos — um rápido e automático (Sistema 1) e outro lento e deliberado (Sistema 2) — e a maioria das decisões econômicas do dia a dia usa o primeiro.
@@ -118,9 +139,13 @@ As heurísticas e vieses mapeados na seção anterior nos dizem *onde* o modelo 
 
 A **utilidade esperada** de Von Neumann e Morgenstern (Capítulo 7) pressupõe que os agentes avaliam resultados em termos de riqueza final e ponderam probabilidades linearmente. A Teoria do Prospecto, proposta por Kahneman e Tversky (1979) e refinada em sua versão cumulativa (Tversky e Kahneman 1992), substitui essas premissas por duas inovações fundamentais: uma **função valor** definida sobre ganhos e perdas relativos a um ponto de referência, e uma **função de ponderação de probabilidades** que distorce probabilidades objetivas.
 
+É importante compreender o que a Teoria do Prospecto *não* é: ela não é uma teoria ad hoc construída para acomodar anomalias uma a uma. É uma teoria coerente, derivada sistematicamente de regularidades observadas, que gera previsões novas — muitas delas confirmadas em experimentos posteriores e em dados de campo. O par (função valor + ponderação de probabilidades) não foi escolhido arbitrariamente; cada elemento foi motivado por um conjunto específico de experimentos e pela busca de parsimônia: o menor número de inovações que acomode os fenômenos documentados. Essa é a marca de uma boa teoria científica.
+
 ### 8.2.1 O Paradoxo de Allais
 
-Para motivar as inovações da Teoria do Prospecto, comecemos por um experimento mental que abalou a confiança no axioma da independência — o pilar mais controverso da utilidade esperada de Von Neumann e Morgenstern. Antes da Teoria do Prospecto, Maurice Allais (1953) já havia demonstrado uma violação elegante da utilidade esperada. Considere os seguintes problemas de decisão:
+Para motivar as inovações da Teoria do Prospecto, comecemos por um experimento mental que abalou a confiança no axioma da independência — o pilar mais controverso da utilidade esperada de Von Neumann e Morgenstern. Antes da Teoria do Prospecto, Maurice Allais (1953) já havia demonstrado uma violação elegante da utilidade esperada. Considere os seguintes problemas de decisão.
+
+Vale notar que o Paradoxo de Allais foi apresentado, de forma provocativa, ao próprio grupo de economistas que havia desenvolvido a utilidade esperada — incluindo nomes como Savage e Samuelson — durante uma conferência em Paris em 1952. Muitos deles, ao responder intuitivamente, violaram os próprios axiomas que defendiam. Quando Savage percebeu que havia respondido de forma inconsistente, disse algo notável: a inconsistência não resultava de irracionalidade, mas de um "erro de cálculo" que ele corrigiria ao raciocinar com mais cuidado. Isso é precisamente o que Kahneman documentaria décadas depois: o Sistema 2 pode corrigir as intuições do Sistema 1, mas só quando acionado. A questão de política relevante é: nas decisões reais de consumo, poupança e investimento, os agentes acionam o Sistema 2 com frequência suficiente?
 
 !!! example "Paradoxo de Allais"
     **Problema 1:** Escolha entre:
@@ -147,6 +172,9 @@ A Teoria do Prospecto propõe que os agentes avaliam resultados como **ganhos ou
 
 !!! definition "Aversão à perda"
     A **aversão à perda** é a assimetria na avaliação de ganhos e perdas: o impacto psicológico de uma perda de magnitude \(|x|\) é maior do que o de um ganho de mesma magnitude. Formalmente, \(|v(-x)| > v(x)\) para todo \(x > 0\). O coeficiente de aversão à perda \(\lambda = |v(-x)|/v(x)\) é tipicamente estimado em torno de \(2{,}0\) a \(2{,}5\) — ou seja, perdas "pesam" cerca de duas vezes mais que ganhos equivalentes.
+
+!!! warning "Cuidado"
+    **Aversão à perda ≠ Aversão ao risco.** É um erro frequente confundir esses dois conceitos. A **aversão ao risco** (Capítulo 7) descreve a preferência por um resultado certo em relação a uma aposta com o mesmo valor esperado — ela decorre da *concavidade* da função de utilidade sobre riqueza. A **aversão à perda** é um fenômeno distinto: mesmo que a função valor \(v(x)\) fosse linear (sem concavidade), a assimetria \(\lambda > 1\) geraria aversão à perda. Um agente pode, em princípio, ser neutro ao risco e ainda assim ser avesso à perda — pois os dois conceitos operam em dimensões diferentes. Concretamente: a aversão ao risco explica por que você prefere R\$ 500 certos a uma aposta de 50% de chance de R\$ 1.000; a aversão à perda explica por que você recusa uma aposta de 50% de ganhar R\$ 150 contra 50% de *perder* R\$ 100, mesmo com valor esperado positivo de R\$ 25. Misturar os dois conceitos leva a erros na calibração de modelos e na interpretação de evidências empíricas.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Perder dói mais do que ganhar alegra — por isso as pessoas rejeitam apostas matematicamente favoráveis.
@@ -328,6 +356,8 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 
 **Efeito framing.** Se o efeito dotação mostra que a posse de um objeto altera sua valoração, o efeito framing revela algo ainda mais perturbador para o modelo neoclássico: a forma como uma decisão é apresentada afeta sistematicamente as escolhas, mesmo quando as opções são logicamente equivalentes. Não é apenas o *conteúdo* da decisão que importa — é a *moldura* em que ela é colocada.
 
+No plano da política pública, o efeito framing tem implicações práticas de primeira ordem. Comunicações governamentais sobre saúde pública, tributos ou programas sociais produzem respostas diferentes dependendo de se enfatizam o que os cidadãos *ganham* com a adesão ou o que *perdem* sem ela. Estudos de campo mostram que mensagens enquadradas em termos de perda ("você perderá R\$ X em benefícios caso não se inscreva") costumam gerar maior taxa de resposta do que mensagens equivalentes enquadradas em termos de ganho — um resultado direto da assimetria \(\lambda > 1\) da função valor. O efeito framing também aparece no design de contratos: um bônus por desempenho acima da meta ("ganho se superar") é avaliado de forma diferente de uma penalidade por desempenho abaixo da meta ("perda se ficar abaixo"), mesmo que os valores monetários sejam idênticos. A literatura sobre contratos de incentivo comportamental explora essa assimetria para desenhar contratos que motivam mais sem necessariamente custar mais.
+
 !!! example "O problema das doenças asiáticas"
     Tversky e Kahneman (1981) apresentaram o seguinte cenário: uma doença incomum ameaça matar 600 pessoas. Dois programas são propostos:
 
@@ -348,6 +378,10 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 O efeito framing já nos mostrou que a forma de apresentação importa. A contabilidade mental leva essa ideia um passo adiante: não apenas a apresentação externa, mas a organização interna — a forma como o próprio agente categoriza e acompanha suas transações financeiras — afeta sistematicamente suas decisões.
 
 A **contabilidade mental** (*mental accounting*), conceito introduzido por Thaler (1985, 1999), descreve como as pessoas organizam, avaliam e acompanham suas atividades financeiras usando um sistema de "contas" mentais separadas — em vez de tratar o dinheiro como perfeitamente fungível, conforme prevê a teoria neoclássica.
+
+A violação de fungibilidade é o fenômeno central. Do ponto de vista neoclássico, um real é um real, independentemente de sua origem (salário, bônus, herança, prêmio de loteria) ou de sua destinação planejada (alimentação, lazer, emergência). Mas na prática, as pessoas tratam o dinheiro de formas radicalmente diferentes conforme sua "conta mental" de origem. Um ganho inesperado — como uma restituição do Imposto de Renda — tende a ser gasto com maior "liberdade" do que o equivalente em salário mensal. Economicamente, ambos aumentam o orçamento disponível pela mesma quantia, mas psicologicamente são percebidos como recursos de diferentes "naturezas". O mesmo trabalhador que economiza rigorosamente em alimentação pode gastar o 13º salário de forma impulsiva — não porque mudou de preferências, mas porque o 13º pertence à conta mental de "dinheiro extraordinário".
+
+No contexto brasileiro, a contabilidade mental aparece de forma particularmente vívida em dois contextos. Primeiro, na **Bolsa Família e no Auxílio Brasil**: pesquisas de avaliação do programa mostram que as famílias beneficiárias tendem a alocar os recursos recebidos prioritariamente para alimentação e material escolar — em proporção maior do que os recursos oriundos de outras fontes de renda. Isso não se deve apenas a restrições de uso formal (o benefício não tem destinação legalmente vinculada), mas à criação de uma "conta mental" específica associada ao benefício, com normas sociais implícitas sobre seu uso adequado. Segundo, na **conta salário**: a separação, promovida pelo sistema bancário brasileiro, entre a conta de depósito de salário (muitas vezes isenta de tarifas) e a conta corrente de movimentação cria divisões de contabilidade mental que afetam decisões de poupança. O dinheiro que "ainda não saiu da conta salário" é mentalmente tratado como mais disponível para poupança do que o dinheiro já transferido para a conta corrente.
 
 !!! definition "Contabilidade mental"
     A **contabilidade mental** é o conjunto de operações cognitivas usadas por indivíduos e famílias para organizar, avaliar e acompanhar atividades financeiras (Thaler 1999). Inclui três componentes: (i) como os resultados são percebidos e avaliados; (ii) como as atividades são alocadas a contas específicas; e (iii) a frequência com que as contas são "fechadas" e avaliadas. Dhami (2016, p. 1486–1518) dedica um capítulo inteiro ao tema.
@@ -379,6 +413,8 @@ Essas regras decorrem diretamente da curvatura da função valor da Teoria do Pr
 ## 8.3 Ambiguidade e o Paradoxo de Ellsberg
 
 A Teoria do Prospecto desafia a utilidade esperada ao mostrar que os agentes distorcem probabilidades e avaliam resultados relativamente a um ponto de referência. Mas há um desafio ainda mais fundamental: e quando as probabilidades sequer são conhecidas? A distinção entre risco e ambiguidade abre uma nova frente de questionamento que nem a utilidade esperada clássica nem a Teoria do Prospecto, em sua formulação original, conseguem acomodar plenamente.
+
+A transição da Seção 8.2 para esta seção é conceitualmente importante. Na Teoria do Prospecto, as probabilidades dos eventos são conhecidas — o que varia é *como* os agentes as processam (com distorções sistemáticas). Na presente seção, damos um passo atrás: e se as próprias probabilidades forem desconhecidas? Esse é o domínio da **incerteza genuína**, e a evidência mostra que os agentes não apenas são incapazes de atribuir probabilidades precisas nesses casos — eles sistematicamente *evitam* situações em que não conseguem quantificar os riscos.
 
 ### 8.3.1 Risco, incerteza e ambiguidade
 
@@ -432,6 +468,10 @@ A aversão à ambiguidade motivou o desenvolvimento de vários modelos formais a
 - **Maximin Expected Utility (MEU):** o agente considera um conjunto de distribuições de probabilidade possíveis e maximiza a utilidade esperada sob a distribuição mais pessimista (Gilboa e Schmeidler 1989).
 - **Aversão à ambiguidade suave:** Klibanoff, Marinacci e Mukerji (2005) propõem um modelo em que o agente tem uma distribuição de segunda ordem sobre as probabilidades possíveis, avaliada por uma função côncava que captura a aversão à ambiguidade.
 
+A conexão com a incerteza **knightiana** é direta. Knight (1921) distinguiu risco (probabilidades quantificáveis) de incerteza genuína (probabilidades não quantificáveis) precisamente porque reconheceu que os dois tipos de situações geram respostas comportamentais distintas. A sua intuição foi confirmada pelas evidências experimentais do paradoxo de Ellsberg e formalizou-se nos modelos de ambiguidade mencionados acima. Para a macroeconomia e as finanças, essa distinção é crucial: crises financeiras e recessões severas são frequentemente caracterizadas por um colapso da confiança nas próprias distribuições de probabilidade dos ativos — os agentes passam do estado de "risco" para o de "ambiguidade", e o comportamento muda qualitativamente. O aumento súbito dos spreads de crédito durante a crise financeira global de 2008-2009, ou durante a pandemia de Covid-19 em 2020, reflete parcialmente esse movimento: investidores não sabiam apenas *qual* cenário se materializaria, mas *quão confiáveis eram seus próprios modelos* para prever os possíveis cenários.
+
+No Brasil, a instabilidade do marco regulatório e fiscal ao longo das últimas décadas cria um ambiente de ambiguidade persistente para investidores estrangeiros e domésticos. Quando as regras do jogo podem mudar de forma imprevisível — por via legislativa, por decisões judiciais ou por revisões de contratos —, a avaliação de risco usual (que pressupõe distribuições de probabilidade estacionárias) se torna inadequada. Os elevados spreads de crédito corporativo no Brasil, mesmo em períodos de inflação controlada, refletem em parte esse **prêmio de ambiguidade** que se sobrepõe ao prêmio de risco convencional.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Pessoas preferem riscos conhecidos a incertezas desconhecidas — mesmo quando as probabilidades objetivas são iguais.
 
@@ -447,9 +487,11 @@ Até aqui, questionamos *como* os agentes avaliam resultados e probabilidades �
 
 Os modelos neoclássicos tradicionais assumem que os agentes são **autointeressados**: a utilidade de cada agente depende apenas de seu próprio consumo. Contudo, evidências experimentais robustas mostram que as pessoas se importam com a **distribuição** dos resultados e com as **intenções** dos outros jogadores. Essas **preferências sociais** incluem aversão à inequidade, reciprocidade, altruísmo e punição de comportamento injusto.
 
+A transição desta seção para as anteriores é relevante: nas Seções 8.2 e 8.3, os desvios comportamentais eram individuais — um único agente, tomando decisões sob risco ou ambiguidade, se afasta das previsões normativas. Aqui, entramos no domínio da interação estratégica, onde o comportamento de cada agente depende de suas crenças sobre os demais. Isso torna o fenômeno das preferências sociais duplamente interessante: ao mesmo tempo que desafia o pressuposto de autointeresse, conecta-se naturalmente à teoria dos jogos (Capítulo 14). A diferença é que, enquanto a teoria dos jogos padrão assume autointeresse e pergunta quais equilíbrios surgem, a economia comportamental das preferências sociais pergunta como os equilíbrios mudam quando os agentes se importam com a distribuição dos resultados e com as intenções alheias.
+
 ### 8.4.1 Evidência experimental: os jogos de laboratório
 
-Três jogos experimentais formam a base empírica das preferências sociais (Dhami 2016, p. 384–404; Wilkinson e Klaes 2012, p. 397–420). A [Tabela 8.5](#tabela-8-5) sintetiza os resultados.
+Três jogos experimentais formam a base empírica das preferências sociais (Dhami 2016, p. 384–404; Wilkinson e Klaes 2012, p. 397–420). A [Tabela 8.5](#tabela-8-5) sintetiza os resultados. O valor científico desses jogos de laboratório reside em sua **transparência estrutural**: as regras, os payoffs e os incentivos são conhecidos por todos os participantes e pelo experimentador. Isso permite isolar o papel das preferências dos demais fatores — informação assimétrica, reputação de longo prazo, normas legais — que normalmente tornam ambíguas as inferências sobre motivações em situações de campo.
 
 **Jogo do Ultimato (Ultimatum Game).** Um proponente P divide uma quantia \(S\) com um respondedor R. P oferece \(x\) a R e fica com \(S - x\). R pode aceitar (ambos recebem os valores propostos) ou rejeitar (ambos recebem zero). O equilíbrio de Nash por indução retroativa prevê que P ofereça o mínimo possível e R aceite qualquer oferta positiva. Mas os resultados experimentais são sistematicamente diferentes:
 
@@ -475,12 +517,21 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
 **Tabela 8.5 — Resultados experimentais vs. previsão autointeressada.**
 </div>
 
+!!! idea "Intuição Econômica"
+    **Em uma frase:** No jogo do ultimato, as pessoas rejeitam ofertas "injustas" mesmo perdendo dinheiro — porque a dor da desigualdade supera o benefício monetário da aceitação.
+
+    **Pense assim:** Imagine que alguém vai dividir R\$ 200 com você. Ela fica com R\$ 170 e oferece R\$ 30 para você. Você aceita? A teoria padrão diz "sim, R\$ 30 > R\$ 0". Mas a maioria das pessoas rejeita — R\$ 30 de uma divisão de R\$ 200 (15%) é percebido como uma afrontação, e a dor de aceitar algo "injusto" supera o ganho de R\$ 30. Esse mesmo mecanismo aparece em negociações salariais: trabalhadores rejeitam propostas que percebem como desvantajosas em relação aos colegas, mesmo que o salário em valor absoluto seja adequado.
+
+    **Por que isso importa:** O equilíbrio de Nash por indução retroativa prevê que qualquer oferta positiva seja aceita — mas essa previsão falha sistematicamente. Qualquer modelo de barganha aplicado a negociações trabalhistas, contratos públicos ou fusões corporativas precisa levar em conta que os agentes reais têm um "preço da dignidade" — um limiar abaixo do qual preferem o impasse à capitulação.
+
 !!! box-brasil "Box Brasil — Preferências sociais e informalidade fiscal"
     A alta tolerância à informalidade fiscal no Brasil pode ser interpretada à luz das preferências sociais. Quando os contribuintes percebem que o sistema tributário é **inequitativo** — com altas alíquotas sobre o trabalho formal e baixa tributação sobre lucros e dividendos —, a reciprocidade negativa pode reduzir a disposição a pagar impostos. Pesquisas de opinião do Ipea indicam que a percepção de injustiça fiscal é um dos principais fatores associados à tolerância com a evasão tributária. O modelo de Fehr-Schmidt (Seção 8.4.2) prevê exatamente esse padrão: agentes com alta aversão à desvantagem (\(\alpha_i\) elevado) podem preferir a "punição" de não cooperar a aceitar uma distribuição percebida como injusta.
 
 ### 8.4.2 O modelo de Fehr-Schmidt (aversão à inequidade)
 
 Os experimentos da subseção anterior documentam o fenômeno — as pessoas se importam com a justiça distributiva. Mas como incorporar essas preferências em um modelo formal que gere previsões testáveis? É necessário ir além da observação empírica e construir uma função de utilidade que capture a aversão à desigualdade de forma tratável e elegante.
+
+O modelo de Fehr-Schmidt tem um mérito metodológico crucial: é parcimoniosa. Adiciona apenas dois parâmetros (\(\alpha_i\) e \(\beta_i\)) ao modelo padrão e, com isso, explica um conjunto muito amplo de resultados experimentais. Essa parcimônia não é cosmética — quanto mais parâmetros um modelo tem, mais fácil é ajustá-lo a dados já observados, mas menor é seu poder preditivo para novos contextos. A robustez do modelo de Fehr-Schmidt, confirmada em inúmeros estudos de replicação e em contextos culturais muito distintos, sugere que a aversão à inequidade é um traço humano genuinamente universal, ainda que com variações quantitativas entre populações e contextos.
 
 Fehr e Schmidt (1999) formalizaram as preferências sociais com um modelo elegante de **aversão à inequidade**. Em um grupo de \(n\) jogadores com payoffs \(y_1, y_2, \ldots, y_n\), a utilidade do jogador \(i\) é:
 
@@ -566,6 +617,10 @@ O modelo de Fehr-Schmidt captura a aversão à **desigualdade de resultados**, m
 
 Essa disposição à **punição altruísta** — pagar um custo para punir quem viola normas sociais — é difícil de explicar pelo autointeresse, mas emerge naturalmente de modelos que combinam aversão à inequidade com reciprocidade (Dhami 2016, p. 466–478).
 
+As implicações para o mercado de trabalho são especialmente importantes. Akerlof (1982) havia proposto o modelo de **salário-eficiência**: trabalhadores que percebem seu salário como "justo" — acima do que o mercado exigiria como mínimo — respondem com maior esforço e lealdade, não por altruísmo puro, mas por reciprocidade. A firma faz uma "dádiva" ao trabalhador (salário acima do equilíbrio), e o trabalhador responde com uma "contradádiva" (esforço acima do mínimo contratável). Nesse modelo, os salários não caem até o equilíbrio walrasiano mesmo com desemprego, porque fazê-lo destruiria a reciprocidade e reduziria a produtividade.
+
+A reciprocidade também tem implicações para o design de contratos de incentivo. Contratos de alto-monitoramento — câmeras, relatórios detalhados, métricas granulares de desempenho — podem transmitir a mensagem de que o empregador não confia no trabalhador, ativando reciprocidade negativa e reduzindo a motivação intrínseca. Fehr, Herz e Wilkening (2013) mostraram experimentalmente que contratos com forte controle externo podem ser menos eficientes do que contratos com menor monitoramento, porque destroem a reciprocidade positiva e substituem motivação intrínseca por motivação extrínseca. Essa tensão entre contratos formais e normas informais de reciprocidade é central para entender por que organizações bem-sucedidas muitas vezes dependem mais de cultura corporativa do que de sistemas de incentivo explícitos.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Reciprocidade positiva (recompensar cooperação) e negativa (punir deserção) criam um mecanismo descentralizado de imposição de normas — mais eficaz que contratos formais em comunidades pequenas.
 
@@ -579,9 +634,11 @@ Essa disposição à **punição altruísta** — pagar um custo para punir quem
 
 As seções anteriores examinaram desvios comportamentais no domínio do risco (Teoria do Prospecto), da ambiguidade (Ellsberg) e da interação social (preferências sociais). Mas há uma dimensão fundamental da decisão econômica que ainda não abordamos sob a lente comportamental: o **tempo**. Como as pessoas trocam benefícios presentes por benefícios futuros? O modelo neoclássico oferece uma resposta elegante — o desconto exponencial —, mas a evidência empírica revela anomalias que pedem uma reformulação.
 
+A escolha intertemporal é o domínio onde o comportamento humano talvez mais se afaste das previsões normativas, e onde as consequências para o bem-estar individual são mais duradouras. Decisões de quanto poupar, quando parar de fumar, quando começar uma dieta ou quando se inscrever em um programa de previdência são todas escolhas intertemporais com efeitos de longo prazo. O custo de errar — por exemplo, chegar à aposentadoria sem poupança adequada — é alto e frequentemente irreversível. Por isso, o viés do presente não é apenas uma curiosidade de laboratório: é um dos principais determinantes do bem-estar econômico das famílias ao longo da vida.
+
 ### 8.5.1 O Modelo de Utilidade Descontada
 
-O modelo padrão de escolha intertemporal — o **Modelo de Utilidade Descontada** (DUM), proposto por Samuelson (1937) — assume que os agentes avaliam fluxos de utilidade futura usando uma taxa de desconto **constante** \(\delta \in (0,1)\):
+O modelo padrão de escolha intertemporal — o **Modelo de Utilidade Descontada** (DUM), proposto por Samuelson (1937) — assume que os agentes avaliam fluxos de utilidade futura usando uma taxa de desconto **constante** \(\delta \in (0,1)\). É importante notar que Samuelson, ao propor o modelo, foi explicitamente cético sobre sua validade psicológica — ele o apresentou como uma conveniência analítica, não como uma descrição fiel do comportamento humano. Não obstante, o DUM tornou-se o paradigma dominante em macroeconomia e finanças, e suas implicações comportamentais — em particular, a consistência temporal — passaram a ser tratadas como referência normativa.
 
 \[
 U_0 = \sum_{t=0}^{T} \delta^t \, u(c_t)
@@ -613,14 +670,17 @@ Diante dessas anomalias, como construir um modelo que capture o viés do present
 
 Para capturar o viés do presente sem abandonar completamente a tratabilidade do modelo exponencial, Laibson (1997) — com base em Phelps e Pollak (1968) — propôs o modelo de desconto **quasi-hiperbólico**.
 
-!!! definition "Desconto quasi-hiperbólico (β, δ)"
-    O modelo de desconto **quasi-hiperbólico** modifica o DUM introduzindo um parâmetro adicional \(\beta \in (0,1)\) que captura o **viés do presente**:
+!!! definition "Desconto quasi-hiperbólico (β-δ)"
+    O modelo de desconto **quasi-hiperbólico** (\(\beta\)-\(\delta\)) modifica o DUM introduzindo um parâmetro adicional \(\beta \in (0,1)\) que captura o **viés do presente**:
 
     \[
     U_0 = u(c_0) + \beta \sum_{t=1}^{T} \delta^t \, u(c_t)
+    \label{eq:8.7} \tag{8.7}
     \]
 
-    O fator \(\beta\) aplica um desconto **extra** a todos os períodos futuros em relação ao presente. Quando \(\beta = 1\), o modelo se reduz ao desconto exponencial. Valores típicos estimados na literatura são \(\beta \approx 0{,}70\) e \(\delta \approx 0{,}99\).
+    O fator \(\beta\) aplica um desconto **extra** a todos os períodos futuros em relação ao presente, criando uma "fronteira psicológica" entre o hoje e tudo que vem depois. Quando \(\beta = 1\), o modelo se reduz ao desconto exponencial. Para qualquer \(\beta < 1\), o desconto entre o período presente e o primeiro período futuro é desproporcionalmente grande — esse é o viés do presente. Valores típicos estimados na literatura são \(\beta \approx 0{,}70\) e \(\delta \approx 0{,}99\).
+
+    A taxa de desconto *implícita* entre os períodos \(t\) e \(t+1\) é \(\delta\) para \(t \geq 1\), mas \(\beta\delta\) entre \(t = 0\) e \(t = 1\). Como \(\beta\delta < \delta\), o agente desconta mais intensamente a transição do presente para o futuro do que qualquer outra transição intertemporal. Isso gera a taxa de desconto decrescente com o horizonte que caracteriza o desconto hiperbólico.
 
 Os **fatores de desconto** para os períodos futuros são:
 
@@ -713,6 +773,10 @@ Essa tensão entre o eu presente e o eu futuro pode ser modelada como um **jogo 
 
 Agentes que reconhecem sua inconsistência temporal são chamados **sofisticados**; agentes que (erroneamente) acreditam que suas preferências futuras serão consistentes são chamados **ingênuos** (*naïfs*). Sofisticados buscam compromissos; ingênuos procrastinam repetidamente. O'Donoghue e Rabin (1999) mostraram formalmente que a procrastinação é mais severa para agentes ingênuos, enquanto sofisticados podem sofrer de **preproperation** — realizar tarefas desagradáveis cedo demais por medo de não fazê-las depois (Dhami 2016, p. 704–710).
 
+No contexto brasileiro, as estratégias de compromisso aparecem de forma particularmente clara em dois produtos financeiros. Primeiro, o **crédito consignado**: ao contratar um empréstimo com desconto automático em folha de pagamento, o trabalhador — paradoxalmente — pode estar usando o crédito como mecanismo de compromisso de poupança forçada. A lógica é a seguinte: ao tomar um empréstimo consignado, o trabalhador recebe hoje (resolve o problema do viés do presente imediato) e amortiza por débito automático nos meses seguintes (remove a tentação de não pagar). Para muitos trabalhadores com acesso limitado a crédito convencional, o consignado funciona como um instrumento de suavização de consumo que, paradoxalmente, se torna mais atrativo quanto mais pronunciado for o viés do presente. Segundo, a **previdência complementar de servidores públicos federais (Funpresp)**: quando a reforma previdenciária criou a Funpresp em 2013, novos servidores passaram a ser automaticamente inscritos no plano complementar. Essa adesão automática com *opt-out* é precisamente um nudge direcionado ao viés do presente — remove do servidor a decisão ativa de poupar, que seria sistematicamente postergada por agentes ingênuos com \(\beta < 1\). A lógica é a mesma do estudo clássico de Madrian e Shea (2001) sobre 401(k) nos EUA: o *default* faz o trabalho que a disciplina individual não faz.
+
+A distinção entre agentes sofisticados e ingênuos tem implicações práticas para o design de políticas. Nudges como a adesão automática são igualmente eficazes para ambos os tipos — tanto o agente que reconhece seu viés quanto o que não reconhece ficam no plano se o *default* for "aderir". Porém, mecanismos de compromisso mais sofisticados — como o *Save More Tomorrow*, em que o trabalhador se compromete a destinar aumentos salariais futuros à poupança — exigem um grau de sofisticação: o agente precisa reconhecer que seu "eu futuro" precisará de ajuda. Políticas bem calibradas combinam nudges universais (que funcionam para todos) com opções de compromisso voluntário (que beneficiam os sofisticados).
+
 !!! box-brasil "Box Brasil — Crédito rotativo e viés do presente"
     O crédito rotativo do cartão de crédito no Brasil cobra taxas de juros que figuram entre as mais altas do mundo — segundo dados do Banco Central do Brasil, a taxa média do rotativo superou 400% ao ano em diversos momentos recentes. Muitos consumidores, ao optar por pagar apenas o valor mínimo da fatura, subestimam o custo total acumulado das parcelas futuras. Esse comportamento é consistente com o desconto quasi-hiperbólico: o alívio imediato de não pagar a fatura integral (benefício no período \(t = 0\)) é sobrevalorizado em relação ao custo dos juros compostos nos períodos seguintes (descontados por \(\beta\delta^t\) com \(\beta < 1\)). A Lei do Superendividamento (Lei nº 14.181/2021) reconheceu implicitamente esse padrão ao criar mecanismos de renegociação e preservação do mínimo existencial.
 
@@ -723,6 +787,8 @@ Agentes que reconhecem sua inconsistência temporal são chamados **sofisticados
 Ao longo deste capítulo, construímos um inventário detalhado das limitações da racionalidade humana: heurísticas que distorcem julgamentos, aversão à perda que deforma avaliações, preferências sociais que complicam a interação estratégica e viés do presente que sabota planos de longo prazo. Diante de tantos desvios, uma pergunta de política pública se impõe com urgência: o que fazer? Proibir escolhas ruins? Deixar o mercado agir? Ou existe uma terceira via?
 
 As seções anteriores mostraram que os agentes cometem erros sistemáticos — heurísticas que distorcem julgamentos, aversão à perda que deforma avaliações e viés do presente que sabota planos de longo prazo. Diante desses desvios, surge uma questão de política pública: é possível **ajudar** as pessoas a tomar melhores decisões sem restringir sua liberdade?
+
+As respostas tradicionais a essa pergunta oscilam entre dois extremos. O **paternalismo duro** — proibir cigarros, limitar o acesso ao crédito rotativo, tornar compulsória a contribuição previdenciária — é eficaz, mas restringe a liberdade individual e pode ser politicamente impraticável em democracias liberais. O **laissez-faire informacional** — fornecer mais e melhor informação e deixar que os agentes decidam — respeita a autonomia, mas frequentemente falha porque o problema não é falta de informação, mas a forma como o cérebro processa informação. A contribuição fundamental de Thaler e Sunstein (2008) foi mostrar que existe uma terceira via: preservar a liberdade de escolha enquanto se usa o que sabemos sobre psicologia humana para tornar as escolhas mais fáceis de acertar.
 
 ### 8.6.1 Paternalismo libertário
 
@@ -800,6 +866,13 @@ A economia comportamental e os nudges não são panaceias:
 - **Persistência.** Muitos nudges perdem eficácia com o tempo, à medida que os agentes se habituam.
 - **Problemas estruturais.** Nudges são complementos, não substitutos, de políticas públicas robustas. Nenhum nudge compensa salários insuficientes ou ausência de acesso a serviços financeiros.
 
+O conceito de ***sludge*** — introduzido por Thaler e Sunstein — é particularmente relevante: enquanto nudges tornam comportamentos desejáveis mais fáceis, sludges são obstáculos burocráticos desnecessários que tornam comportamentos desejáveis mais difíceis. Formulários complexos, filas longas, requisitos de documentação excessivos e processos de *opt-out* deliberadamente difíceis são exemplos de sludge. A distinção entre nudge e sludge é normativa — depende de quem define o que é "desejável" —, e críticos apontam que governos e empresas frequentemente usam sludges para desviar os cidadãos de direitos e benefícios que seriam custosos para o Estado ou para a firma. A campanha de simplificação burocrática empreendida pelo governo federal brasileiro nos últimos anos — com a criação da Redesim para abertura de empresas e o Portal Gov.br para centralizar serviços digitais — é parcialmente uma estratégia de redução de sludge: ao tornar o acesso a serviços públicos mais rápido e fácil, remove-se uma barreira ao comportamento "desejável" (formalização, acesso a benefícios).
+
+Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertário assume que existe um "eu verdadeiro" cujas preferências de longo prazo devem ser favorecidas em relação às preferências de curto prazo. Mas quem decide quais são as preferências "verdadeiras"? Esse problema — às vezes chamado de o problema do *arquiteto sábio* — é a objeção filosófica central a toda a agenda de nudges. Camerer et al. (2003) propuseram uma versão mais modesta: o **paternalismo assimétrico**, que intervém apenas quando o custo da intervenção para agentes totalmente racionais é baixo, mas o benefício para agentes com vieses é alto. Essa versão é mais defensável filosoficamente, mas também mais difícil de implementar na prática.
+
+!!! box-brasil "Box Brasil — CPF na nota e previdência complementar: nudges brasileiros"
+    O Brasil dispõe de dois exemplos marcantes do poder dos nudges em políticas públicas. O primeiro é o programa **Nota Fiscal Paulista** (São Paulo, 2008), depois replicado em outros estados sob o nome "CPF na nota": ao incluir o CPF nas notas fiscais, os consumidores recebem créditos e participam de sorteios, tornando-se fiscalizadores involuntários da evasão fiscal. Do ponto de vista comportamental, o programa explora a *sobrevalorização de eventos raros* (a chance de ganhar num sorteio) para induzir um comportamento — exigir nota fiscal — que tem externalidade positiva sobre a arrecadação tributária. A Secretaria da Fazenda de São Paulo reportou queda significativa na informalidade comercial nas regiões de maior adesão ao programa. O segundo exemplo é a **Funpresp**, o regime de previdência complementar dos servidores públicos federais criado pela Emenda Constitucional nº 41/2003 e regulamentado em 2012. Novos servidores enquadrados no regime são automaticamente inscritos no plano com contribuição-padrão de 8,5% da parcela remuneratória acima do teto do RGPS, podendo fazer *opt-out*. A adesão automática explora o viés do *status quo* e o viés do presente: ao remover a necessidade de ação ativa, o *default* supera a procrastinação que levaria muitos servidores a adiar indefinidamente a decisão de aderir. Estudos de adesão à Funpresp mostram taxas de participação substancialmente acima das previstas para um regime de *opt-in* equivalente.
+
 !!! box-brasil "Box Brasil — Nudges em políticas públicas federais"
     O governo federal brasileiro tem incorporado gradualmente princípios de economia comportamental em políticas públicas. A rotulagem frontal com **lupa de advertência** da Anvisa (2022), para alimentos ricos em açúcar, gordura saturada e sódio, é um nudge clássico de saliência: destaca a informação mais relevante no momento da decisão de compra. O Programa Nacional de Imunizações (PNI) utiliza lembretes por SMS e notificações via aplicativo do SUS para aumentar a adesão a campanhas de vacinação — um exemplo de feedback e saliência. No sistema financeiro, o *Open Finance* do Banco Central (implementado a partir de 2021) facilita a comparação de produtos financeiros entre instituições, reduzindo a ancoragem ao banco de relacionamento e combatendo a inércia do *status quo* via portabilidade simplificada de crédito.
 
@@ -872,6 +945,26 @@ A economia comportamental e os nudges não são panaceias:
 <a id="ex-8-10"></a>**Exercício 8.10.** A função de ponderação de probabilidades de Tversky e Kahneman é \(w(p) = p^{\gamma}/(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}\). (a) Mostre que \(w(0) = 0\) e \(w(1) = 1\). (b) Calcule \(w(0{,}01)\), \(w(0{,}50)\) e \(w(0{,}99)\) para \(\gamma = 0{,}61\). (c) Verifique a propriedade de subcerteza: \(w(p) + w(1-p) < 1\) para \(p = 0{,}50\).
 
 [:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-10)
+
+<a id="ex-8-11"></a>**Exercício 8.11.** Um consumidor tem \(u(x) = x^{0{,}5}\) (utilidade esperada padrão) e riqueza inicial \(W = 1000\). Compare as seguintes opções: (a) Perda certa de R\$ 400 (riqueza final = 600); (b) Loteria: perde R\$ 800 com probabilidade \(0{,}5\) ou não perde nada com probabilidade \(0{,}5\) (riqueza esperada = 600). **(i)** Sob utilidade esperada, qual opção é preferida? **(ii)** Sob Teoria do Prospecto com ponto de referência \(r = 1000\), função valor \(v(x) = x^{0{,}88}\) para ganhos e \(v(x) = -2{,}25(-x)^{0{,}88}\) para perdas, e sem ponderação de probabilidades (\(w(p) = p\)), qual opção é preferida? **(iii)** Explique a diferença entre as previsões dos dois modelos.
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-11)
+
+<a id="ex-8-12"></a>**Exercício 8.12.** Julgue cada afirmação como Verdadeira (V) ou Falsa (F) e justifique brevemente: (a) A Teoria do Prospecto prevê que agentes exibem busca por risco no domínio das perdas. (b) O efeito dotação contradiz a teoria neoclássica da demanda, pois implica que a disposição a aceitar (WTA) sistematicamente excede a disposição a pagar (WTP). (c) Agentes com desconto quasi-hiperbólico (\(\beta < 1\)) sempre preferem recompensas imediatas a recompensas futuras, independentemente do horizonte. (d) Um nudge restringe o conjunto de escolhas disponíveis ao agente.
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-12)
+
+<a id="ex-8-13"></a>**Exercício 8.13.** Um agente com preferências \((\beta, \delta)\) e \(\beta = 0{,}70\), \(\delta = 0{,}95\), utilidade linear \(u(x) = x\), avalia três opções: (A) receber R\$ 100 hoje; (B) receber R\$ 120 daqui a 1 mês (\(t = 1\)); (C) receber R\$ 150 daqui a 3 meses (\(t = 3\)). **(a)** Calcule as utilidades descontadas de A, B e C avaliadas em \(t = 0\) e ordene as opções. **(b)** Quando chega o mês 1, o agente reavalia B (que agora é imediato) e C (a 2 meses). Calcule as utilidades em \(t = 1\) e ordene novamente. **(c)** Ocorre inversão de preferências entre \(t = 0\) e \(t = 1\)? Qual é a fonte da inconsistência?
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-13)
+
+<a id="ex-8-14"></a>**Exercício 8.14.** Um trabalhador brasileiro pode escolher entre dois contratos: **(A)** salário fixo de R\$ 5.000/mês; **(B)** salário-base de R\$ 4.000 mais bônus uniformemente distribuído entre R\$ 0 e R\$ 2.000 dependendo do desempenho (valor esperado do bônus = R\$ 1.000, então renda esperada de R\$ 5.000). **(i)** Sob utilidade esperada com \(u(x) = x^{1-\gamma}/(1-\gamma)\), \(\gamma = 2\), calcule a utilidade esperada de cada contrato e determine qual é preferido. Normalize as rendas dividindo por 1000 para simplificar os cálculos. **(ii)** Sob Teoria do Prospecto com ponto de referência \(r = 5.000\), \(\lambda = 2\), função valor linear por partes (\(v(x) = x\) para \(x \geq 0\) e \(v(x) = 2x\) para \(x < 0\)) e sem ponderação de probabilidades, calcule o valor esperado do prospecto B e compare com o contrato A.
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-14)
+
+<a id="ex-8-15"></a>**Exercício 8.15.** *(Difícil)* Um agente enfrenta uma perda potencial \(L\) com probabilidade \(p\), e pode comprar seguro a preço atuarialmente justo. O agente tem preferências da Teoria do Prospecto com: ponto de referência = riqueza inicial \(W\), função valor \(v(x) = x\) para \(x \geq 0\) e \(v(x) = -\lambda(-x)\) para \(x < 0\) (com \(\lambda > 1\)), e função de ponderação \(w(p)\) satisfazendo \(w(p) > p\) para \(p\) pequeno e \(w(p) < p\) para \(p\) grande. **(a)** Mostre que, para perdas pequenas com probabilidade pequena (\(p \to 0\), \(L\) moderado), o agente **sobre-segura** — isto é, compra mais do que a cobertura completa seria necessária ou está disposto a pagar prêmio acima do atuarialmente justo. **(b)** Mostre que, para perdas catastróficas com probabilidade pequena (\(p\) pequeno, \(L \to W\)), a interação entre \(\lambda\) e \(w(p)\) pode gerar **sub-seguro** — o agente rejeita cobertura mesmo a preço justo. Interprete a diferença entre os dois resultados.
+
+[:material-arrow-right: Ver solução](../solucoes/cap08.md#ex-8-15)
 
 ---
 
@@ -994,6 +1087,50 @@ A economia comportamental e os nudges não são panaceias:
 
     O paradoxo de Ellsberg é apresentado na Seção 8.3, que distingue risco, incerteza knightiana e ambiguidade. Os modelos de ambiguidade discutidos na Seção 8.3.3 são respostas formais ao desafio colocado por este artigo.
 
+??? pesquisa "Thaler, Richard H.; Sunstein, Cass R. (2003). [Libertarian Paternalism](https://doi.org/10.1257/000282803321947001). *American Economic Review*, 93(2): 175–179. DOI: [10.1257/000282803321947001](https://doi.org/10.1257/000282803321947001)"
+
+    **A pergunta**
+
+    Existe uma forma de política pública que preserve a liberdade de escolha individual e, ao mesmo tempo, direcione os agentes para decisões que melhorem seu próprio bem-estar? A questão é especialmente premente em contextos onde os agentes cometem erros previsíveis — como na escolha de planos de saúde, programas de poupança ou opções de alimentos — e a inação do governo (laissez-faire) produz resultados piores do que intervenções leves.
+
+    **Como os autores responderam**
+
+    Thaler e Sunstein introduziram o conceito de **paternalismo libertário**: libertário porque preserva a liberdade de escolha — qualquer opção continua disponível e pode ser selecionada com custo próximo de zero; paternalista porque a arquitetura de escolha é desenhada para direcionar as decisões no sentido do bem-estar do próprio agente. A peça central é a noção de que toda situação de escolha tem uma arquitetura — não existe posição neutra. Empresas e governos sempre estabelecem *defaults*, orderam opções e enquadram decisões. A questão normativa é: dado que essa arquitetura é inevitável, por que não desenhá-la conscientemente para favorecer o bem-estar?
+
+    **O que descobriram**
+
+    O artigo ilustra o conceito com exemplos de planos de saúde e benefícios previdenciários, mostrando que pequenas mudanças na apresentação e no *default* — sem alterar preços ou proibir alternativas — têm efeitos de primeira ordem sobre as escolhas. A chave é que os agentes reais são fortemente influenciados pelo *status quo*, pela saliência das opções e pelo esforço cognitivo envolvido em decidir ativamente. O paternalismo libertário aproveita essas tendências em vez de lutar contra elas.
+
+    **Por que isso importa**
+
+    Este artigo de três páginas inaugurou uma agenda de pesquisa e política pública que transformou governos em todo o mundo. Unidades de economia comportamental ("nudge units") foram criadas em Reino Unido, EUA, Austrália e Brasil, entre outros. O artigo é a síntese filosófica da agenda de nudges, e o livro Nudge (Thaler e Sunstein 2008) expandiu os argumentos com dezenas de exemplos aplicados.
+
+    **Conexão com este capítulo**
+
+    A filosofia do paternalismo libertário é a fundação teórica da Seção 8.6. O *trade-off* entre eficácia e respeito à autonomia discutido na Seção 8.6.3 é diretamente motivado pelas questões levantadas neste artigo seminal.
+
+??? pesquisa "DellaVigna, Stefano. (2009). [Psychology and Economics: Evidence from the Field](https://doi.org/10.1257/jel.47.2.315). *Journal of Economic Literature*, 47(2): 315–372. DOI: [10.1257/jel.47.2.315](https://doi.org/10.1257/jel.47.2.315)"
+
+    **A pergunta**
+
+    A economia comportamental produziu, até o final dos anos 2000, uma vasta literatura experimental de laboratório documentando desvios da racionalidade. Mas esses desvios são relevantes fora do laboratório? Sobrevivem quando os *stakes* são altos, quando os agentes têm experiência e incentivos fortes para acertar, e quando os mercados competitivos têm a oportunidade de disciplinar o comportamento?
+
+    **Como os autores responderam**
+
+    DellaVigna realizou uma revisão abrangente das evidências de campo — estudos com dados naturais de empresas, mercados financeiros, mercados de trabalho e decisões de consumo — para testar se as anomalias comportamentais documentadas em laboratório se manifestam em contextos econômicos reais. O artigo organiza as evidências em três categorias: não-otimização padrão (inclui aversão à perda, efeito dotação e framing), preferências não-padrão (desconto quasi-hiperbólico, preferências sociais) e crenças não-padrão (excesso de confiança, aprendizado enviesado).
+
+    **O que descobriram**
+
+    A evidência de campo confirma, em sua maioria, as predições comportamentais. Por exemplo: trabalhadores de táxi trabalham menos horas em dias com tarifas altas — consistente com metas de renda diária e aversão à perda. Vendedores de imóveis vendem suas próprias casas a preços mais altos e esperam mais tempo do que as que vendem para clientes — consistente com o efeito dotação. Investidores do mercado financeiro exibem o efeito disposição em escala massiva. A adesão automática a planos de previdência aumenta drasticamente a poupança. Esses resultados mostram que os vieses comportamentais não são artefatos de laboratório, mas fenômenos econômicos de grande magnitude.
+
+    **Por que isso importa**
+
+    O artigo é a referência central para quem quer ir além dos experimentos de laboratório e entender o quanto a economia comportamental importa para mercados reais. Ele também documenta os limites: em alguns contextos — especialmente mercados competitivos com experiência e feedback intenso —, os agentes aprendem a corrigir os vieses. A distinção entre contextos onde os vieses persistem e onde são corrigidos é crucial para o design de políticas.
+
+    **Conexão com este capítulo**
+
+    O artigo de DellaVigna é a evidência de campo que valida as teorias das Seções 8.2, 8.4 e 8.5. Os exemplos do efeito dotação (Seção 8.2.5), do desconto quasi-hiperbólico (Seção 8.5.3) e dos nudges (Seção 8.6) ganham sustentação empírica com os dados revisados neste survey.
+
 ---
 
 ## 📚 Referências do Capítulo
@@ -1006,6 +1143,7 @@ A economia comportamental e os nudges não são panaceias:
 - Berg, Joyce, John Dickhaut, e Kevin McCabe. 1995. "[Trust, Reciprocity, and Social History](https://doi.org/10.1006/game.1995.1027)." *Games and Economic Behavior* 10 (1): 122–142.
 - Booij, Adam S., Bernard M. S. van Praag, e Gijs van de Kuilen. 2010. "[A Parametric Analysis of Prospect Theory's Functionals for the General Population](https://doi.org/10.1007/s11238-009-9144-4)." *Theory and Decision* 68 (1–2): 115–148.
 - Camerer, Colin F., e Teck-Hua Ho. 1994. "[Violations of the Betweenness Axiom and Nonlinearity in Probability](https://doi.org/10.1007/bf01065371)." *Journal of Risk and Uncertainty* 8 (2): 167–196.
+- DellaVigna, Stefano. 2009. "[Psychology and Economics: Evidence from the Field](https://doi.org/10.1257/jel.47.2.315)." *Journal of Economic Literature* 47 (2): 315–372.
 - DellaVigna, Stefano, e Ulrike Malmendier. 2006. "[Paying Not to Go to the Gym](https://doi.org/10.1257/aer.96.3.694)." *American Economic Review* 96 (3): 694–719.
 - Dhami, Sanjit S. 2016. [*The Foundations of Behavioral Economic Analysis*](https://books.google.com/books?id=AMBjDQAAQBAJ). Oxford: Oxford University Press.
 - Ellsberg, Daniel. 1961. "[Risk, Ambiguity, and the Savage Axioms](https://doi.org/10.2307/1884324)." *Quarterly Journal of Economics* 75 (4): 643–669.
@@ -1041,6 +1179,7 @@ A economia comportamental e os nudges não são panaceias:
 - Thaler, Richard H. 1999. "[Mental Accounting Matters](https://doi.org/10.1002/(SICI)1099-0771(199912)12:4<183::AID-BDM318>3.0.CO;2-F)." *Journal of Behavioral Decision Making* 12 (3): 183–206.
 - Thaler, Richard H., e Shlomo Benartzi. 2004. "[Save More Tomorrow: Using Behavioral Economics to Increase Employee Saving](https://doi.org/10.1086/380085)." *Journal of Political Economy* 112 (S1): S164–S187.
 - Thaler, Richard H., e Hersh Shefrin. 1981. "[An Economic Theory of Self-Control](https://doi.org/10.1086/260971)." *Journal of Political Economy* 89 (2): 392–406.
+- Thaler, Richard H., e Cass R. Sunstein. 2003. "[Libertarian Paternalism](https://doi.org/10.1257/000282803321947001)." *American Economic Review* 93 (2): 175–179.
 - Thaler, Richard H., e Cass R. Sunstein. 2008. [*Nudge: Improving Decisions about Health, Wealth, and Happiness*](https://books.google.com.br/books?id=dSJQn8egXvUC). New Haven: Yale University Press.
 - Tversky, Amos, e Daniel Kahneman. 1974. "[Judgment under Uncertainty: Heuristics and Biases](https://doi.org/10.1126/science.185.4157.1124)." *Science* 185 (4157): 1124–1131.
 - Tversky, Amos, e Daniel Kahneman. 1981. "[The Framing of Decisions and the Psychology of Choice](https://doi.org/10.1126/science.7455683)." *Science* 211 (4481): 453–458.

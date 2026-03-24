@@ -312,3 +312,265 @@ A propriedade de subcerteza (\(w(p) + w(1-p) < 1\)) implica que os pesos de deci
 **Interpretação econômica:** A função de ponderação explica simultaneamente: (i) a compra de bilhetes de loteria (sobreponderação de ganhos improváveis: \(w(0{,}01) \gg 0{,}01\)); e (ii) a compra de seguros contra catástrofes (sobreponderação de perdas improváveis). Esses dois comportamentos são incompatíveis com a utilidade esperada mas naturais na Teoria do Prospecto.
 
 ↩ [Voltar ao enunciado](../cap08/index.md#ex-8-10)
+
+---
+
+## ✏️ Exercício 8.11 {#ex-8-11}
+
+**Solução.**
+
+O consumidor tem \(u(x) = x^{0{,}5}\) e riqueza inicial \(W = 1000\).
+
+**(i) Sob utilidade esperada:**
+
+- **Opção (a) — perda certa de R\$ 400:** riqueza final = 600. \(u(600) = \sqrt{600} \approx 24{,}49\).
+- **Opção (b) — loteria:** com prob. 0,5 perde 800 (riqueza = 200) e com prob. 0,5 não perde nada (riqueza = 1000).
+
+\[
+EU(b) = 0{,}5 \, u(200) + 0{,}5 \, u(1000) = 0{,}5\sqrt{200} + 0{,}5\sqrt{1000} \approx 0{,}5 \times 14{,}14 + 0{,}5 \times 31{,}62 = 22{,}88
+\]
+
+Como \(u(600) = 24{,}49 > 22{,}88 = EU(b)\), o consumidor prefere a **perda certa (a)** sob utilidade esperada. Isso é consistente com aversão ao risco (função \(u\) côncava): prefere a perda certa à loteria com mesmo valor esperado.
+
+**(ii) Sob Teoria do Prospecto:**
+
+O ponto de referência é \(r = 1000\). As variações (ganhos/perdas relativas ao ponto de referência) são:
+
+- **Opção (a):** perda certa de 400. \(v(-400) = -2{,}25 \times 400^{0{,}88}\). Calculando: \(400^{0{,}88} = e^{0{,}88 \ln 400} = e^{0{,}88 \times 5{,}991} = e^{5{,}272} \approx 194{,}5\). Portanto, \(v(-400) \approx -2{,}25 \times 194{,}5 = -437{,}6\).
+- **Opção (b):** com prob. 0,5, perda de 800; com prob. 0,5, perda de 0.
+
+\[
+v(-800) = -2{,}25 \times 800^{0{,}88}. \quad 800^{0{,}88} = e^{0{,}88 \times 6{,}685} = e^{5{,}883} \approx 357{,}8. \quad v(-800) \approx -805{,}1.
+\]
+
+\[
+V(b) = 0{,}5 \times v(-800) + 0{,}5 \times v(0) = 0{,}5 \times (-805{,}1) + 0 = -402{,}6
+\]
+
+Como \(V(b) = -402{,}6 > -437{,}6 = v(-400)\), sob a Teoria do Prospecto o consumidor prefere a **loteria (b)**.
+
+**(iii) Diferença entre os modelos:**
+
+A utilidade esperada prediz aversão ao risco em todo o domínio (por concavidade de \(u\)), resultando na preferência pela perda certa. A Teoria do Prospecto prediz **busca por risco no domínio das perdas** (a função valor é convexa para perdas), resultando na preferência pela loteria — o agente prefere a chance de evitar a perda a aceitar a perda certa. Esse é o **efeito reflexão**: o mesmo agente pode ser avesso ao risco para ganhos e buscar risco para perdas, dependendo do ponto de referência.
+
+**Interpretação econômica:** Essa assimetria explica por que empresas em dificuldade financeira tomam decisões de risco elevado (apostam na recuperação) em vez de liquidar ativos a preços baixos (a "perda certa"), e por que governos relutam em reconhecer formalmente programas falhos — ambos os casos envolvem agentes operando no domínio das perdas.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-11)
+
+---
+
+## ✏️ Exercício 8.12 {#ex-8-12}
+
+**Solução.**
+
+**(a) Verdadeira.** A Teoria do Prospecto assume que a função valor é **convexa** para perdas (\(v''(x) > 0\) para \(x < 0\)), o que implica propensão ao risco nesse domínio. Formalmente, para uma perda esperada de \(-E[L]\), o valor esperado do prospecto \(E[v(-L)] > v(-E[L])\) quando \(v\) é convexa — ou seja, o agente prefere a aposta à perda certa de mesmo valor esperado. Isso é o efeito reflexão documentado por Kahneman e Tversky (1979).
+
+**(b) Verdadeira.** O efeito dotação implica que WTA (disposição a aceitar para vender um bem que já se possui) > WTP (disposição a pagar para adquirir o mesmo bem). Na teoria neoclássica, para bens normais sem efeito renda significativo, WTA ≈ WTP. O efeito dotação viola esse resultado, pois a mera posse do bem altera o ponto de referência: ceder o bem é codificado como perda (domain of losses), enquanto adquiri-lo é codificado como ganho. Como perdas pesam mais (\(\lambda > 1\)), WTA > WTP. Kahneman, Knetsch e Thaler (1990) documentaram esse efeito com canecas de cerâmica.
+
+**(c) Falsa.** Agentes quasi-hiperbólicos **não** preferem sempre recompensas imediatas. A preferência pelo presente só aparece quando uma recompensa é imediata versus futura. Para duas recompensas ambas no futuro (\(t \geq 1\)), o fator \(\beta\) cancela e o desconto entre elas é exponencial puro (\(\delta\)). Por exemplo, com \(\beta = 0{,}7\) e \(\delta = 0{,}95\): \(U_0(\text{R\$ 100 em } t=5) = 0{,}7 \times 0{,}95^5 \times 100 = 54{,}7\) e \(U_0(\text{R\$ 120 em } t=6) = 0{,}7 \times 0{,}95^6 \times 120 = 62{,}3\). O agente prefere R\$ 120 em \(t=6\) a R\$ 100 em \(t=5\), apesar de ambas serem futuras.
+
+**(d) Falsa.** Por definição, um nudge **não** restringe o conjunto de escolhas. Thaler e Sunstein (2008) definem explicitamente que, para ser um nudge, a intervenção deve ser "fácil e barata de evitar" — qualquer opção deve permanecer disponível. O que o nudge altera é a **arquitetura de escolha** (a forma de apresentação, o default, a saliência das opções), não o conjunto de alternativas. O que restringe escolhas é a regulação (proibições, obrigações), não o nudge.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-12)
+
+---
+
+## ✏️ Exercício 8.13 {#ex-8-13}
+
+**Solução.**
+
+Parâmetros: \(\beta = 0{,}70\), \(\delta = 0{,}95\), \(u(x) = x\).
+
+**(a) Avaliação em \(t = 0\):**
+
+Todas as opções estão no futuro, então o fator \(\beta\) aplica-se a todas:
+
+\[
+U_0(A) = \beta \delta^0 \times 100 = 0{,}70 \times 1 \times 100 = 70{,}00
+\]
+
+*Atenção:* A é "hoje" (\(t=0\)), portanto não recebe desconto extra \(\beta\) — é imediato:
+
+\[
+U_0(A) = 100
+\]
+
+\[
+U_0(B) = \beta \delta^1 \times 120 = 0{,}70 \times 0{,}95 \times 120 = 79{,}80
+\]
+
+\[
+U_0(C) = \beta \delta^3 \times 150 = 0{,}70 \times 0{,}95^3 \times 150 = 0{,}70 \times 0{,}8574 \times 150 = 90{,}02
+\]
+
+**Ordenação em \(t = 0\):** \(C \succ B \succ A\) (\(90{,}02 > 79{,}80 > ... \))
+
+Porém, como A é imediato, \(U_0(A) = 100\). Recalculando:
+
+\[
+U_0(A) = 100 > U_0(C) = 90{,}02 > U_0(B) = 79{,}80
+\]
+
+**Ordenação em \(t = 0\):** \(A \succ C \succ B\).
+
+**(b) Avaliação em \(t = 1\) (mês 1 chegou):**
+
+Agora B é imediato (\(t=0\) na perspectiva do mês 1) e C está a 2 meses:
+
+\[
+U_1(A) = \beta \delta^{-1} \times 100
+\]
+
+A é o passado — não mais disponível. Apenas B e C são relevantes em \(t=1\):
+
+\[
+U_1(B) = 120 \quad \text{(imediato)}
+\]
+
+\[
+U_1(C) = \beta \delta^2 \times 150 = 0{,}70 \times 0{,}9025 \times 150 = 94{,}76
+\]
+
+**Ordenação em \(t = 1\) (escolhendo entre B e C):** \(C \succ B\) (\(94{,}76 > ... \))
+
+Porém B é imediato: \(U_1(B) = 120 > 94{,}76 = U_1(C)\).
+
+**Ordenação em \(t = 1\):** \(B \succ C\).
+
+**(c) Ocorrência de inversão de preferências:**
+
+Em \(t=0\), o agente ordenou \(C \succ B\) (quando A não é opção relevante para o par B vs C): \(U_0(C) = 90{,}02 > U_0(B) = 79{,}80\).
+
+Em \(t=1\), o agente ordena \(B \succ C\): \(U_1(B) = 120 > U_1(C) = 94{,}76\).
+
+**Sim, ocorre inversão de preferências** entre B e C. Em \(t=0\), o agente planeja escolher C (pois ambas são futuras e o desconto entre elas é puramente exponencial com vantagem para C). Mas em \(t=1\), B tornou-se imediato, e o "puxão" do presente (\(\beta = 0{,}70\)) penaliza desproporcionalmente C (que está 2 meses no futuro). A fonte da inconsistência é o **viés do presente**: o parâmetro \(\beta < 1\) cria uma assimetria entre o presente e qualquer momento futuro que não existe entre dois momentos futuros.
+
+**Interpretação econômica:** Um agente ingênuo com essas preferências chegará ao mês 1 e escolherá B (pagamento imediato) em vez de C (que havia planejado em \(t=0\)). Se puder, um agente sofisticado tentará se comprometer com C antes que o mês 1 chegue — por exemplo, assinando um contrato ou pedindo a alguém que o impeça de mudar de ideia.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-13)
+
+---
+
+## ✏️ Exercício 8.14 {#ex-8-14}
+
+**Solução.**
+
+Normalização: dividir por 1000. Contrato A: renda = 5 (certa). Contrato B: renda-base = 4 + bônus \(U[0, 2]\), renda total \(\sim U[4, 6]\) com \(E[\text{renda}] = 5\).
+
+**(i) Sob utilidade esperada com CRRA \(\gamma = 2\):**
+
+\[
+u(x) = \frac{x^{1-2}}{1-2} = -x^{-1} = -\frac{1}{x}
+\]
+
+**Contrato A:** \(u(5) = -1/5 = -0{,}200\).
+
+**Contrato B:** O bônus \(b\) é uniforme em \([0, 2]\), logo a renda total é \(x = 4 + b \sim U[4,6]\).
+
+\[
+EU(B) = \int_4^6 u(x) \cdot \frac{1}{2} \, dx = \frac{1}{2} \int_4^6 \left(-\frac{1}{x}\right) dx = -\frac{1}{2} [\ln 6 - \ln 4] = -\frac{1}{2} \ln\frac{6}{4} = -\frac{\ln 1{,}5}{2} \approx -\frac{0{,}405}{2} = -0{,}203
+\]
+
+Como \(u(A) = -0{,}200 > -0{,}203 = EU(B)\), o trabalhador prefere o **Contrato A** (fixo) sob utilidade esperada. Isso reflete aversão ao risco com CRRA: o ganho de variância do contrato B não compensa a utilidade marginal crescente.
+
+**(ii) Sob Teoria do Prospecto com ponto de referência \(r = 5.000\) (= 5 normalizado):**
+
+Usando a função valor linear por partes com \(\lambda = 2\):
+
+**Contrato A:** renda fixa = 5 = ponto de referência. Ganho/perda = 0. \(V(A) = v(0) = 0\).
+
+**Contrato B:** O bônus \(b \sim U[0,2]\), então a renda \(x = 4 + b\). Em relação ao ponto de referência \(r = 5\), a variação é \(x - 5 = b - 1\), que varia de \(-1\) (quando \(b=0\)) a \(+1\) (quando \(b=2\)).
+
+\[
+V(B) = \int_0^2 v(b - 1) \cdot \frac{1}{2} \, db
+\]
+
+Separando pelo sinal:
+
+- Para \(b < 1\): \(b - 1 < 0\), então \(v(b-1) = 2(b-1)\) (perda com \(\lambda = 2\)).
+- Para \(b > 1\): \(b - 1 > 0\), então \(v(b-1) = b-1\) (ganho).
+
+\[
+V(B) = \frac{1}{2}\left[\int_0^1 2(b-1) \, db + \int_1^2 (b-1) \, db\right]
+\]
+
+\[
+= \frac{1}{2}\left[2 \int_0^1 (b-1) \, db + \int_1^2 (b-1) \, db\right]
+\]
+
+\[
+\int_0^1 (b-1) \, db = \left[\frac{b^2}{2} - b\right]_0^1 = \frac{1}{2} - 1 = -\frac{1}{2}
+\]
+
+\[
+\int_1^2 (b-1) \, db = \left[\frac{b^2}{2} - b\right]_1^2 = (2 - 2) - (\frac{1}{2} - 1) = \frac{1}{2}
+\]
+
+\[
+V(B) = \frac{1}{2}\left[2 \times \left(-\frac{1}{2}\right) + \frac{1}{2}\right] = \frac{1}{2}\left[-1 + \frac{1}{2}\right] = \frac{1}{2} \times \left(-\frac{1}{2}\right) = -\frac{1}{4} = -0{,}25
+\]
+
+Como \(V(A) = 0 > -0{,}25 = V(B)\), o trabalhador também prefere o **Contrato A** sob Teoria do Prospecto.
+
+**Interpretação econômica:** Embora os dois modelos gerem a mesma preferência aqui, os mecanismos são diferentes. Sob EU, a preferência por A reflete aversão ao risco (utilidade marginal decrescente). Sob PT, a preferência por A reflete principalmente a **aversão à perda**: metade das realizações do bônus geram uma renda abaixo do ponto de referência (R\$ 5.000), o que é codificado como perda com \(\lambda = 2\). A dor dessas perdas supera a alegria dos ganhos equivalentes. O modelo PT prevê que trabalhadores resistem a contratos variáveis mesmo quando o valor esperado é idêntico ao salário fixo — o que tem implicações para o design de pacotes de remuneração variável.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-14)
+
+---
+
+## ✏️ Exercício 8.15 {#ex-8-15}
+
+**Solução.**
+
+O agente enfrenta perda \(L\) com probabilidade \(p\) pequena. Preço do seguro atuarialmente justo: prêmio \(\pi = pL\) por cobertura total.
+
+**Configuração:** Ponto de referência = riqueza inicial \(W\). Função valor linear por partes: \(v(x) = x\) para ganhos, \(v(x) = -\lambda(-x)\) para perdas (\(\lambda > 1\)). Função de ponderação \(w(p)\) com \(w(p) > p\) para \(p\) pequeno.
+
+**Sem seguro:** O agente enfrenta o prospecto \((-L, p; 0, 1-p)\). O valor do prospecto é:
+
+\[
+V(\text{sem seguro}) = w(p) \cdot v(-L) + w(1-p) \cdot v(0) = -\lambda L \cdot w(p)
+\]
+
+**Com seguro completo a preço justo:** O agente paga \(pL\) com certeza. O valor é:
+
+\[
+V(\text{com seguro}) = v(-pL) = -\lambda pL
+\]
+
+O agente prefere o seguro se \(V(\text{com seguro}) > V(\text{sem seguro})\):
+
+\[
+-\lambda pL > -\lambda L \cdot w(p) \iff p < w(p)
+\]
+
+**(a) Pequenas perdas com \(p\) pequeno (\(w(p) > p\)):**
+
+Para \(p \to 0\), a função de ponderação satisfaz \(w(p) > p\). Portanto \(V(\text{com seguro}) > V(\text{sem seguro}\)), e o agente **compra** o seguro. Mais do que isso: como \(w(p) \gg p\) para \(p\) muito pequeno, a disposição a pagar pelo seguro excede o prêmio atuarialmente justo. O agente está disposto a pagar um prêmio \(\pi^*\) tal que:
+
+\[
+v(-\pi^*) = -\lambda \pi^* = V(\text{sem seguro}) = -\lambda L \cdot w(p)
+\]
+
+\[
+\pi^* = L \cdot w(p) > L \cdot p = \text{prêmio justo}
+\]
+
+Isso é **sobre-seguro**: o agente paga acima do prêmio atuarialmente justo, porque a ponderação de probabilidades inflaciona a probabilidade subjetiva da perda.
+
+**(b) Perdas catastróficas com \(L \to W\) e \(p\) pequeno:**
+
+Quando a perda é quase total (\(L \to W\)), a função valor avalia a perda em \(-\lambda W\). O argumento acima continuaria sugerindo que o agente compraria seguro (pois \(w(p) > p\) ainda vale). A anomalia surge quando \(L\) é grande em valor absoluto mas pequeno em relação a \(W\) — ou quando a incerteza sobre as probabilidades (ambiguidade) é alta para eventos catastróficos.
+
+Para capturar o sub-seguro observado em catástrofes, nota-se que: (i) eventos com \(p\) *muito* pequeno são frequentemente subestimados cognitivamente — a função de ponderação tem \(w(p) \approx 0\) para \(p < \varepsilon\) (negligência de probabilidade), e (ii) a interação com aversão à ambiguidade reduz ainda mais a disposição a pagar por seguros cujos termos são complexos. Formalmente, quando \(p\) é tão pequeno que o agente o arredonda para zero, \(w(p) \approx 0\) e \(V(\text{sem seguro}) \approx 0\), tornando qualquer prêmio positivo desvantajoso.
+
+**Resumo:** A Teoria do Prospecto prevê **sobre-seguro para perdas moderadas e frequentes** (onde \(w(p) > p\) domina) e **sub-seguro para catástrofes raras** (onde \(p\) é tão pequeno que é negligenciado cognitivamente — \(w(p) \approx 0\)). Esse padrão em formato de U invertido — alta cobertura para riscos intermediários, baixa cobertura para os extremos — é consistente com evidências do mercado de seguros: as pessoas contratam seguros de celular mas negligenciam cobertura de terremoto.
+
+**Interpretação econômica:** A assimetria entre os dois domínios tem implicações para o design de seguros. Coberturas obrigatórias (como o seguro DPVAT no Brasil) podem ser justificadas comportamentalmente pelo fato de que o sub-seguro voluntário para catástrofes cria externalidades sociais quando as vítimas precisam de assistência pública.
+
+
+↩ [Voltar ao enunciado](../cap08/index.md#ex-8-15)
