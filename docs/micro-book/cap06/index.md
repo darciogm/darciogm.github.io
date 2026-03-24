@@ -187,8 +187,6 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
 ---
 
-### 6.3.2 Gráfico interativo: Substitutos e Complementos
-
 O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
 
 <iframe src="../graficos/cap06/substitutos-complementos.html" title="Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço" class="graph-iframe"></iframe>
@@ -196,6 +194,20 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 <div class="caption-obj" markdown>
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
 </div>
+
+!!! box-mundo "🌍 Box Mundo 6.1 — Elasticidades cruzadas nos mercados de energia: gás natural, carvão e a transição energética"
+
+    **Contexto:** A transição energética global reconfigurou as relações de substituição entre fontes de energia. Nos Estados Unidos e na União Europeia, gás natural e carvão competem diretamente na geração de eletricidade: quando o preço do gás natural sobe, usinas termelétricas substituem gás por carvão, e vice-versa. Essa substituição é um dos mecanismos centrais pelos quais choques de preço de energia se propagam pelo sistema produtivo — e também pelo qual políticas de precificação de carbono podem alterar a matriz energética.
+
+    A crise energética europeia de 2021–2022, provocada pela invasão russa da Ucrânia e pela consequente restrição no fornecimento de gás via gasoduto Nord Stream, ofereceu um "experimento natural" de larga escala para medir essas elasticidades cruzadas em tempo real.
+
+    **Dados:** Nos EUA, Linn e Muehlenbachs (2018) estimaram uma elasticidade cruzada de substituição entre gás natural e carvão na geração elétrica entre +0,5 e +0,8 no curto prazo, indicando substituição forte. Quando o boom do shale gas reduziu o preço do gás natural americano em cerca de 70% entre 2008 e 2016, a participação do carvão na matriz elétrica dos EUA caiu de 48% para 30% — uma substituição massiva impulsionada por preços relativos, não por regulação ambiental.
+
+    Na Europa, Burke e Yang (2016) e estudos subsequentes do Bruegel Institute estimaram elasticidades cruzadas carvão-gás entre +0,3 e +0,6 para a geração elétrica europeia. Durante a crise de 2022, com o preço spot do gás natural no TTF (Title Transfer Facility, hub europeu) atingindo picos de €340/MWh — mais de dez vezes o nível pré-crise —, a geração a carvão na Alemanha aumentou 8% e na Polônia permaneceu estável em nível já elevado, mesmo com compromissos de descarbonização assumidos sob o European Green Deal.
+
+    **Análise:** Esses dados ilustram com precisão a teoria da seção 6.2: gás natural e carvão são substitutos brutos inequívocos na geração de eletricidade, com elasticidades cruzadas positivas e economicamente significativas. A magnitude das elasticidades varia conforme a flexibilidade tecnológica das usinas (usinas dual-fuel apresentam elasticidades mais altas) e o horizonte temporal (no longo prazo, investimentos em novas usinas amplificam a substituição). Do ponto de vista hicksiano, a substituição é ainda mais forte, pois o efeito renda (encarecimento geral da energia reduz o consumo total) atenua parcialmente a resposta bruta observada. A implicação para a política climática é direta: uma taxa sobre carbono que encareça o carvão relativamente ao gás natural explora justamente essa elasticidade cruzada positiva para induzir substituição — mas a eficácia depende da magnitude específica da elasticidade, que varia entre países e horizontes temporais.
+
+    **Fonte:** Linn, J. e Muehlenbachs, L. (2018). "The heterogeneous impacts of low natural gas prices on consumers and the environment." *Journal of Environmental Economics and Management*, 89, 1–28. Burke, P. J. e Yang, H. (2016). "The price and income elasticities of natural gas demand." *Energy Economics*, 58, 466–474. Bruegel Institute (2022). "National energy policy responses to the energy crisis." *Bruegel Datasets*.
 
 ??? exercicio-resolvido "Exercício Resolvido 6.2 — Substitutos perfeitos e efeito substituição"
 
@@ -338,8 +350,6 @@ A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n
     Segundo dados do [BCB](https://www.bcb.gov.br), entre 2000 e 2023 os preços administrados acumularam alta de cerca de 530%, enquanto os preços livres subiram cerca de 350% — uma divergência persistente que viola a hipótese de proporcionalidade e exige análise desagregada.
 
 ---
-
-### 6.5.1 Gráfico interativo: Bem Composto de Hicks
 
 O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 
@@ -522,6 +532,20 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
     \]
 
     A demanda caiu de 8,33 para 7,5 apesar de a renda total permanecer em 200. A redistribuição transferiu renda do consumidor com maior propensão marginal a consumir o bem (A) para o consumidor com menor propensão (B).
+
+!!! box-mundo "🌍 Box Mundo 6.2 — O debate do agente representativo: a crítica de Kirman e a heterogeneidade dos consumidores"
+
+    **Contexto:** A seção 6.7 mostrou que a agregação de demandas individuais em uma demanda de mercado "bem-comportada" exige condições restritivas (como a condição de Gorman). Essa questão está no coração de um dos debates mais persistentes da teoria econômica: é legítimo modelar uma economia inteira como se fosse um único "agente representativo"? Em 1992, o economista Alan Kirman publicou uma crítica influente argumentando que a resposta é, em geral, não — e que a prática de usar agentes representativos em modelos macroeconômicos pode gerar previsões sistematicamente incorretas.
+
+    A crítica de Kirman não se limita a um argumento teórico abstrato. Ele demonstrou que, mesmo quando cada consumidor individual se comporta de forma perfeitamente racional, o agregado pode exibir propriedades que nenhum indivíduo isoladamente apresentaria — incluindo violações da lei da demanda, preferências reveladas inconsistentes e instabilidade de equilíbrio. Isso ocorre porque a agregação mistura efeitos de composição (quem está comprando) com efeitos de comportamento (quanto cada um compra).
+
+    **Dados:** Dados do Consumer Expenditure Survey (CEX) dos EUA, analisados por Blundell, Browning e Crawford (2003, 2008), revelam heterogeneidade substancial nas respostas de consumo a variações de preço. Por exemplo, a elasticidade-preço da demanda por alimentos varia de -0,3 para o quintil mais rico a -0,8 para o quintil mais pobre — uma diferença de quase três vezes que nenhum agente representativo pode capturar simultaneamente. Pesquisas mais recentes usando dados de scanner (Aguiar e Hurst, 2007; Handbury, 2021) mostram que famílias de alta e baixa renda enfrentam efetivamente "preços diferentes" para os mesmos bens (por diferenças em local de compra, tamanho de embalagem e capacidade de estocar promoções), o que amplifica a heterogeneidade real para além do que os modelos tradicionais capturariam.
+
+    No Brasil, análises baseadas na POF/IBGE confirmam padrões similares: a participação de alimentos no orçamento varia de 22% (renda per capita até 1 SM) a 7,6% (acima de 15 SM), e as elasticidades estimadas diferem sistematicamente entre estratos de renda (Almeida e Azzoni, 2016). Modelos de agente representativo calibrados com dados médios subestimam o impacto de choques de preço de alimentos sobre as famílias mais pobres em até 40%.
+
+    **Análise:** A crítica de Kirman e a evidência empírica subsequente reforçam a mensagem central da seção 6.7: a condição de Gorman raramente é satisfeita, e tratar o mercado como se fosse um agente representativo é uma simplificação que pode ter custos analíticos significativos. A propriedade de simetria de Slutsky, que vale para cada consumidor individual, pode ser rejeitada estatisticamente nos dados agregados — não porque os indivíduos sejam irracionais, mas porque a agregação destrói a estrutura. A implicação prática é que modelos macroeconômicos que ignoram a heterogeneidade dos consumidores (modelos DSGE com agente representativo, por exemplo) podem gerar previsões enviesadas sobre os efeitos de políticas tributárias, transferências de renda e choques de preços relativos. A pesquisa contemporânea em macroeconomia (modelos HANK — Heterogeneous Agent New Keynesian) busca justamente incorporar essa heterogeneidade que Kirman identificou como essencial.
+
+    **Fonte:** Kirman, A. P. (1992). "Whom or what does the representative individual represent?" *Journal of Economic Perspectives*, 6(2), 117–136. Blundell, R., Browning, M. e Crawford, I. (2003). "Nonparametric Engel curves and revealed preference." *Econometrica*, 71(1), 205–240. Almeida, A. N. e Azzoni, C. R. (2016). "Custo de vida comparativo das regiões metropolitanas brasileiras." *Estudos Econômicos*, 46(1), 253–276.
 
 ---
 

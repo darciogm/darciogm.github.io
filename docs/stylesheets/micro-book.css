@@ -215,6 +215,25 @@
   mask-image: var(--md-admonition-icon--box-brasil);
 }
 
+/* === TIPO 10b: Box Mundo — casos internacionais — azul-marinho === */
+.md-typeset .admonition.box-mundo,
+.md-typeset details.box-mundo {
+  border-color: #1B3A5C;
+  color: #333;
+}
+.md-typeset .box-mundo > .admonition-title,
+.md-typeset .box-mundo > summary {
+  background-color: rgba(27, 58, 92, 0.10);
+  color: #1B3A5C;
+  border-bottom: 1px solid rgba(27, 58, 92, 0.15);
+}
+.md-typeset .box-mundo > .admonition-title::before,
+.md-typeset .box-mundo > summary::before {
+  background-color: #1B3A5C;
+  -webkit-mask-image: var(--md-admonition-icon--box-mundo);
+  mask-image: var(--md-admonition-icon--box-mundo);
+}
+
 /* === TIPO 11: ANPEC / Prova — terracota === */
 .md-typeset .admonition.question,
 .md-typeset details.question {
