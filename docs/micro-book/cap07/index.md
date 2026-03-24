@@ -4,6 +4,10 @@ A maior parte das decisões econômicas relevantes envolve algum grau de incerte
 
 Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito de **loteria**, passando pela formulação axiomática da **utilidade esperada** de Von Neumann e Morgenstern, pela caracterização da **aversão ao risco** e suas medidas quantitativas, até os mecanismos institucionais que permitem reduzir ou redistribuir riscos. Ao final, introduzimos a abordagem de **estado-preferência** e oferecemos uma visão preliminar dos problemas de **informação assimétrica** que serão aprofundados em capítulos posteriores.
 
+**Roteiro do capítulo.** A leitura segue uma progressão natural: partimos do instrumental estatístico mais básico — a loteria e o valor esperado (Seção 7.1) — para mostrar por que ele é insuficiente como critério de decisão. Em seguida, construímos o arcabouço axiomático da utilidade esperada de Von Neumann e Morgenstern (Seção 7.2), que resolve o paradoxo de São Petersburgo e serve de fundação para todo o restante da teoria. Com essa ferramenta em mãos, classificamos atitudes frente ao risco (Seção 7.3) e as medimos com precisão por meio dos coeficientes de Arrow-Pratt (Seção 7.4). As Seções 7.5 e 7.6 traduzem essas medidas em quantidades monetárias observáveis — o equivalente de certeza e o prêmio de risco — e examinam como indivíduos e instituições lidam com a incerteza na prática. A Seção 7.7 reconecta a teoria do consumidor (Cap. 3) ao mundo da incerteza via abordagem estado-preferência, e a Seção 7.8 antecipa os temas de informação assimétrica que serão centrais nos capítulos seguintes.
+
+**Conexões com outros capítulos.** O leitor que estudou a Seção 2.12 (estatística básica para economistas) encontrará aqui os conceitos de valor esperado e variância num papel protagonista, agora inseridos num modelo de escolha. Mais importante, o Capítulo 3 introduziu a utilidade como representação *ordinal* das preferências — o que importava era a ordenação, não o número em si. Neste capítulo, veremos que a utilidade VNM é fundamentalmente diferente: ela é uma representação *cardinal*, única a menos de transformações afins, e essa cardinalidade não é uma convenção matemática, mas uma exigência dos próprios axiomas de escolha racional sob incerteza. Compreender essa distinção é o primeiro passo para dominar a teoria do risco.
+
 ---
 
 ## 7.1 Loterias e Valor Esperado
@@ -39,6 +43,8 @@ Uma **loteria composta** é uma loteria cujos resultados são, eles mesmos, lote
 
 O valor esperado é um critério natural de avaliação — ele nos diz, em média, quanto a loteria "vale". Mas será que ele é suficiente para guiar as decisões de agentes reais? Um exemplo clássico sugere que não.
 
+Antes de apresentá-lo, vale reforçar a conexão com a Seção 2.12: o valor esperado de uma loteria é exatamente o valor esperado de uma variável aleatória discreta, e a variância da loteria mede a dispersão dos resultados em torno dessa média. Ambos esses momentos são ferramentas que reaparecerão ao longo do capítulo — o valor esperado como medida de tendência central do risco, a variância como indicador de sua magnitude. A novidade da microeconomia da incerteza é que o agente não avalia a loteria pelos seus momentos estatísticos em si, mas pela utilidade que extrai de cada resultado possível.
+
 ### O Paradoxo de São Petersburgo
 
 O valor esperado, por si só, não é suficiente para descrever o comportamento dos agentes diante do risco. O célebre **Paradoxo de São Petersburgo**, proposto por Nicolau Bernoulli em 1713, ilustra essa limitação. Considere um jogo em que uma moeda justa é lançada repetidamente até sair cara. Se a cara aparece no \(n\)-ésimo lançamento, o jogador recebe \(2^n\) reais. O valor esperado desse jogo é:
@@ -49,6 +55,10 @@ E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \in
 \]
 
 No entanto, nenhuma pessoa racional pagaria uma quantia arbitrariamente alta para participar desse jogo. O valor esperado infinito da equação $\eqref{eq:7.2}$ não se traduz em disposição a pagar infinita. Daniel Bernoulli (1738) propôs que os agentes avaliam os resultados não pelo seu valor monetário, mas pela **utilidade** que deles extraem — inaugurando a ideia de utilidade esperada. Essa intuição genial — a de que o que importa não é o dinheiro em si, mas a satisfação que ele proporciona — é o ponto de partida para a construção axiomática que veremos a seguir.
+
+O paradoxo de São Petersburgo continua relevante dois séculos e meio depois de sua formulação. Ele demonstra que o valor esperado, apesar de ser matematicamente bem definido, captura apenas uma dimensão da incerteza: a tendência central. A variância, a assimetria e, sobretudo, a curvatura das preferências do agente — tudo isso é invisível para o critério do valor esperado puro. A solução de Bernoulli, aparentemente simples, abriu caminho para a teoria moderna da decisão: em vez de maximizar o valor esperado monetário, os agentes maximizam o valor esperado de sua *utilidade* — uma função que transforma dinheiro em satisfação de maneira não linear. Esse salto conceitual, de \(E[L]\) para \(E[u(L)]\), é toda a diferença entre o Capítulo 2 e o Capítulo 7.
+
+É útil notar também que o paradoxo tem implicações práticas para os mercados financeiros brasileiros. Um investidor que avaliasse ativos exclusivamente pelo retorno esperado deveria concentrar toda a sua riqueza no ativo de maior retorno esperado — jamais diversificaria. O fato de que investidores reais diversificam, contratam seguros e aceitam retornos menores em troca de estabilidade é evidência diária de que o critério do valor esperado não governa as decisões humanas. A teoria que desenvolvemos a seguir pretende explicar exatamente esse comportamento.
 
 ---
 
@@ -83,12 +93,30 @@ A formalização moderna da teoria da utilidade esperada foi apresentada por Joh
 
 O axioma mais controverso é o de **independência**. Ele afirma, em essência, que se você prefere a loteria A à loteria B, então misturar ambas com uma mesma terceira loteria não deveria alterar essa preferência — a "adição" de uma alternativa irrelevante não contamina a comparação original. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979), que estudaremos no Capítulo 8.
 
+O paradoxo de Allais pode ser apresentado de forma direta. Considere duas situações de escolha:
+
+- **Situação I**: Escolha entre A (R$ 1 milhão com certeza) e B (10% de chance de R$ 5 milhões, 89% de chance de R$ 1 milhão, 1% de chance de nada).
+- **Situação II**: Escolha entre C (11% de chance de R$ 1 milhão, 89% de chance de nada) e D (10% de chance de R$ 5 milhões, 90% de chance de nada).
+
+Experimentalmente, a maioria das pessoas escolhe A na Situação I e D na Situação II. Mas essa combinação viola o axioma da independência: se subtrairmos mentalmente uma "camada" de 89% de chance de R$ 1 milhão de ambas as opções da Situação I, chegamos exatamente às opções da Situação II — e quem prefere A na Situação I deveria preferir C na Situação II. A violação sistêmica desse padrão sugere que agentes reais não tratam as probabilidades de forma linear, especialmente quando resultados certos estão em jogo (o chamado "efeito certeza"). Kahneman e Tversky (1979) documentaram extensamente essas violações e propuseram a teoria dos prospectos como alternativa descritiva à utilidade VNM.
+
+Apesar dessas críticas comportamentais, a teoria VNM permanece o padrão normativo da microeconomia e o ponto de partida obrigatório para qualquer extensão. Compreender onde ela falha exige primeiro compreender onde ela acerta — e é isso que fazemos nas seções seguintes.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** A utilidade esperada diz que pessoas racionais avaliam apostas pela "felicidade média" que elas proporcionam, não pelo dinheiro médio.
 
     **Pense assim:** Imagine que você concorre a um sorteio de R$ 10.000 com 50% de chance. O valor esperado é R$ 5.000, mas a alegria que R$ 10.000 trazem não é o dobro da alegria de R$ 5.000 — assim como o segundo prato de comida no rodízio nunca é tão bom quanto o primeiro.
 
     **Por que isso importa:** Toda a regulação de seguros, previdência e mercados financeiros no Brasil se apoia na ideia de que as pessoas transformam dinheiro em bem-estar de forma não linear.
+
+!!! idea "Intuição Econômica"
+    **A utilidade VNM é cardinal — não ordinal.**
+
+    No Capítulo 3, a utilidade era puramente *ordinal*: qualquer transformação crescente da função de utilidade representava as mesmas preferências. Se \(u(x) = x^2\) e \(v(x) = e^x\) ordenam os cestos de forma idêntica, são equivalentes para a teoria do consumidor determinística. Isso porque o que importava era apenas a *direção* das preferências, nunca a magnitude.
+
+    Aqui, a situação é radicalmente diferente. A utilidade VNM é única a menos de transformações **afins positivas**: \(v(x) = a \cdot u(x) + b\) (com \(a > 0\)) representa as mesmas preferências, mas \(v(x) = [u(x)]^2\) já não representa — mesmo que seja uma transformação crescente. Por quê? Porque as probabilidades entram de forma *linear* no cálculo da utilidade esperada. Quando escrevemos \(E[u(L)] = p_1 u(x_1) + p_2 u(x_2)\), a estrutura aritmética da média ponderada fixa a escala da função de utilidade de uma maneira que transformações não afins destroem.
+
+    **Implicação prática:** Comparar as funções de utilidade de dois agentes faz sentido — dizer que o agente A tem ARA mais alta que o agente B é uma afirmação invariante à classe de transformações afins. Já perguntar "quem tem mais utilidade no estado 1?" não faz sentido sem fixar a normalização. A cardinalidade da utilidade VNM é, portanto, uma propriedade *relacional* (entre loterias e probabilidades), não uma afirmação sobre o nível absoluto de bem-estar.
 
 ---
 
@@ -113,6 +141,21 @@ u(E[\tilde{x}]) > E[u(\tilde{x})]
 Intuitivamente, a desigualdade $\eqref{eq:7.4}$ mostra que o agente avesso ao risco prefere receber o valor esperado de uma loteria com certeza a participar da loteria. A curvatura de \(u\) captura a intensidade dessa preferência: quanto mais côncava a função, maior a aversão ao risco.
 
 Graficamente, a aversão ao risco se manifesta pelo fato de que a corda ligando dois pontos na curva de utilidade fica **abaixo** da própria curva — ou seja, a utilidade esperada da loteria (ponto na corda) é inferior à utilidade do valor esperado (ponto na curva).
+
+As implicações econômicas da aversão ao risco são vastas. No mercado de seguros, agentes avessos ao risco estão dispostos a pagar um prêmio positivo — acima do valor atuarialmente justo — para eliminar a incerteza. Isso cria espaço para a existência lucrativa de seguradoras, mesmo quando o prêmio supera a perda esperada. Nos mercados financeiros, a aversão ao risco explica por que ativos mais voláteis precisam oferecer retornos esperados mais altos para atrair compradores — o que está na raiz do modelo CAPM e do enigma do prêmio de risco (ver Seção 7.4 e o box "Pesquisa em Ação" ao final). No mercado de trabalho, trabalhadores avessos ao risco preferem contratos de salário fixo a esquemas de comissão pura, mesmo que estes ofereçam maior remuneração esperada — o que explica a prevalência de vínculos empregatícios formais com salário garantido.
+
+Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou décadas ao estudo empírico da aversão ao risco e de suas irregularidades. Uma de suas contribuições mais influentes, desenvolvida com Amos Tversky, é a ideia de que agentes reais não são igualmente avessos ao risco em todos os domínios: eles são mais sensíveis a perdas do que a ganhos de mesma magnitude — o que ficou conhecido como *loss aversion* (aversão à perda). Essa assimetria, que viola a teoria VNM padrão, é modelada na teoria dos prospectos e será discutida no Capítulo 8. Por ora, o importante é reconhecer que a aversão ao risco, no sentido VNM de concavidade da utilidade, é uma hipótese robusta e amplamente respaldada pelos dados, mesmo que não capture todas as nuances do comportamento humano.
+
+!!! warning "Cuidado"
+    **Aversão ao risco não significa evitar todo risco.**
+
+    Um equívoco comum, especialmente em contextos de finanças e gestão, é interpretar "aversão ao risco" como sinônimo de "recusar qualquer aposta". Essa leitura é incorreta.
+
+    Um agente avesso ao risco ainda toma riscos — ele simplesmente exige ser compensado por eles. A definição formal diz que o agente prefere o valor esperado da loteria com certeza à própria loteria. Mas se a loteria oferecer retorno esperado *suficientemente alto*, o agente avesso ao risco a aceitará. Um investidor com utilidade côncava que compra ações da Petrobras na Bolsa não está violando sua aversão ao risco: ele está sendo compensado pelo retorno esperado adicional (o prêmio de risco) que as ações oferecem em relação ao Tesouro Direto.
+
+    A distinção correta é: um agente avesso ao risco *rejeita loterias justas* (com valor esperado zero) e exige um prêmio positivo para aceitar loterias com valor esperado positivo. Quanto maior sua aversão, maior o prêmio exigido. Isso não implica que ele nunca invista em ativos arriscados, mas sim que ele demanda um "desconto" em relação ao agente neutro ao risco.
+
+    Em resumo: aversão ao risco regula o *preço* que o agente cobra pelo risco, não se ele aceita ou recusa qualquer risco.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Aversão ao risco significa preferir o certo ao duvidoso, mesmo quando o valor médio é igual.
@@ -157,6 +200,12 @@ Essas medidas possuem interpretação direta: \(A(W)\) mede a aversão ao risco 
 
 A escolha de qual medida utilizar depende do contexto. Se o risco é de magnitude fixa (por exemplo, uma aposta de R\$ 1.000 independentemente da riqueza do agente), a medida absoluta \(A(W)\) é a mais relevante. Se o risco é proporcional à riqueza (por exemplo, investir 10% do patrimônio em ações), a medida relativa \(R(W)\) é mais informativa.
 
+Vale notar que \(A(W)\) e \(R(W)\) são medidas *locais* — elas descrevem a curvatura da função de utilidade num ponto específico \(W\). Isso é diferente de perguntar se o agente é "avesso ao risco" em geral: a curvatura pode variar ao longo da função, gerando padrões ricos de comportamento conforme a riqueza muda. As classes de funções de utilidade descritas abaixo capturam os casos mais relevantes.
+
+A questão de *quanto* um agente típico é avesso ao risco não é apenas teórica — ela pode ser estimada empiricamente. Na literatura de macroeconomia e finanças, o coeficiente de aversão relativa ao risco \(\gamma\) da utilidade CRRA é o mais estudado. Estimativas calibradas a partir de dados de consumo e retornos de ativos tipicamente sugerem valores entre 1 e 5. Mehra e Prescott (1985), no artigo fundador do "enigma do prêmio de risco", mostraram que reproduzir o diferencial histórico de retorno entre ações e títulos públicos nos EUA exigiria \(\gamma > 30\) — um nível implausível que sugere falhas no modelo padrão ou componentes de preferências adicionais, como aversão à perda ou formação de hábitos. No Brasil, estudos como os de Issler e Piqueira (2000) e de Gomes e Paz (2013) encontram estimativas de \(\gamma\) entre 2 e 8 usando dados macroeconômicos nacionais, com considerável incerteza dependendo da amostra e do método de estimação.
+
+Para decisões de política econômica, o coeficiente de aversão ao risco importa diretamente. Políticas de estabilização de renda (como o Bolsa Família) e de smoothing de consumo (como o seguro-desemprego) têm valor welfare que depende criticamente de \(\gamma\): quanto maior a aversão ao risco, maior o ganho de bem-estar de reduzir a variância do consumo. Da mesma forma, o custo social de flutuações do PIB — calculado por Lucas (1987) — é proporcional à aversão ao risco da população.
+
 ### Classes importantes de funções de utilidade
 
 A [Tabela 7.1](#tabela-7-1) apresenta as classes mais utilizadas de funções de utilidade sob risco e suas propriedades.
@@ -193,6 +242,21 @@ A [Tabela 7.1](#tabela-7-1) apresenta as classes mais utilizadas de funções de
 ## 7.5 Prêmio de Risco e Equivalente de Certeza
 
 As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura da função de utilidade — uma grandeza matemática. Mas como traduzir essa curvatura em termos econômicos concretos? Quanto, em reais, um agente pagaria para se livrar de um risco? É exatamente isso que os conceitos de **equivalente de certeza** e **prêmio de risco** fazem: eles transformam a informação contida na função de utilidade em valores monetários que podem ser diretamente observados ou estimados no mercado.
+
+!!! definition "Equivalente de Certeza"
+    O **equivalente de certeza** (EC) de uma loteria \(\tilde{W}\) é o valor monetário certo \(W_{EC}\) tal que o agente é indiferente entre receber \(W_{EC}\) com certeza e participar da loteria:
+
+    \[
+    u(W_{EC}) = E[u(\tilde{W})]
+    \]
+
+    Para um agente estritamente avesso ao risco (\(u'' < 0\)), o equivalente de certeza é *estritamente menor* que o valor esperado da loteria: \(W_{EC} < E[\tilde{W}]\). O **prêmio de risco** \(\pi\) é a diferença:
+
+    \[
+    \pi = E[\tilde{W}] - W_{EC} > 0
+    \]
+
+    O prêmio de risco mede o "custo" da incerteza em termos monetários: é o máximo que o agente pagaria para eliminar o risco, ou equivalentemente, a compensação mínima que ele exigiria para suportar o risco sem reclamar.
 
 !!! definition "Equivalente de certeza e prêmio de risco"
     Seja \(\tilde{W} = W + \tilde{\varepsilon}\) a riqueza aleatória, onde \(\tilde{\varepsilon}\) é um risco justo (isto é, \(E[\tilde{\varepsilon}] = 0\)) com variância \(\sigma^2\).
@@ -274,6 +338,12 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
 
 A fórmula de Arrow-Pratt é notavelmente elegante: ela decompõe o "preço" que o agente paga pelo risco em dois fatores — um subjetivo (quão avesso ele é) e outro objetivo (quão arriscada é a loteria). Essa decomposição tem implicações práticas imediatas: para um dado nível de risco, agentes mais avessos pagam prêmios maiores; para um dado nível de aversão, riscos mais voláteis custam mais caro. É exatamente essa lógica que as seguradoras utilizam ao precificar apólices, cobrando mais de quem enfrenta riscos maiores e oferecendo descontos a quem demonstra menor exposição.
 
+O equivalente de certeza tem aplicações que vão muito além da teoria dos seguros. No Brasil, o BNDES (Banco Nacional de Desenvolvimento Econômico e Social) financia projetos de infraestrutura que envolvem grandes incertezas de retorno. A taxa de desconto aplicada a esses projetos deve incorporar, em princípio, um prêmio de risco proporcional à variância dos fluxos de caixa — exatamente o que a aproximação de Arrow-Pratt formaliza. Da mesma forma, o seguro agrícola (discutido no Box Brasil desta seção) pode ser interpretado como a compra do equivalente de certeza da renda agrícola: o produtor rural troca uma renda variável por uma renda garantida, pagando um prêmio de risco pela estabilidade.
+
+Para ilustrar com números concretos: um cafeicultor do Sul de Minas com riqueza de R\$ 200.000, utilidade logarítmica e risco de perder R\$ 80.000 em caso de geada (probabilidade 20%) tem um prêmio de risco de aproximadamente \(\frac{1}{2} \times \frac{1}{200.000} \times (0{,}2 \times 0{,}8 \times 80.000^2) = \frac{1}{2} \times \frac{1}{200.000} \times 1{,}024 \times 10^9 \approx \text{R\$ } 2.560\). Esse valor representa o quanto ele pagaria *acima* do prêmio atuarialmente justo para eliminar o risco — e é esse sobrepagamento que torna os contratos de seguro mutuamente vantajosos: a seguradora cobra mais que o valor esperado do sinistro, e o produtor ainda assim prefere contratar.
+
+A distinção entre prêmio de risco *exato* e *aproximado* merece atenção. A fórmula de Arrow-Pratt é uma aproximação de segunda ordem válida para riscos "pequenos" em relação à riqueza. Quando o risco é grande (como nos exemplos dos exercícios, em que o desvio padrão pode representar 30–50% da riqueza), o prêmio exato deve ser calculado diretamente da equação \(\eqref{eq:7.7}\). A aproximação sistematicamente subestima o prêmio para agentes com utilidade côncava crescentemente rápida (como \(\ln W\)) e o superestima para agentes com utilidade menos côncava.
+
 <iframe src="../graficos/cap07/premio-risco.html" title="Figura 7.2 — Prêmio de risco de Arrow-Pratt" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
@@ -295,6 +365,29 @@ O mecanismo de seguro permite transferir risco de agentes mais avessos para agen
 
 !!! theorem "Teorema: Seguro total sob prêmio atuarialmente justo"
     Se o prêmio do seguro é atuarialmente justo e o agente é estritamente avesso ao risco, então o contrato ótimo é de **cobertura total** (\(q^* = d\)), onde \(q\) é a indenização contratada.
+
+A intuição por trás deste teorema é direta: quando o prêmio é justo, o agente pode "comprar" certeza sem custo atuarial. Como ele prefere certeza à incerteza (por ser avesso ao risco), ele maximiza a utilidade eliminando todo o risco. Com carregamento (\(\lambda > 0\)), a certeza passa a ter um preço adicional, e o agente pondera entre redução de risco e custo do prêmio — a solução intermediária pode envolver franquias, cobertura parcial ou mesmo a decisão de não contratar seguro.
+
+Na prática, os mercados de seguros brasileiros exibem carregamentos que variam amplamente. O seguro de automóvel pode ter \(\lambda\) entre 30% e 60% sobre o prêmio puro, enquanto resseguros de catástrofes naturais (como enchentes e secas) têm carregamentos ainda maiores, refletindo riscos sistemáticos que não se diversificam dentro da carteira da seguradora. Esse ponto é crucial: a diversificação pela seguradora só funciona quando os sinistros são *independentes* entre segurados. Uma seca que atinge todos os produtores de uma região simultaneamente não é diversificável na escala de uma única seguradora — o que explica o papel indispensável do resseguro e da participação do Estado em programas como o Proagro.
+
+!!! box-brasil "Box Brasil — Proagro e o seguro rural no Brasil"
+    O **Proagro** (Programa de Garantia da Atividade Agropecuária) é o principal instrumento de proteção à renda dos agricultores brasileiros contra perdas causadas por eventos climáticos adversos, pragas e doenças. Criado em 1973 (Lei 5.969/73) e operado pelo Banco Central do Brasil em parceria com agentes financeiros, o Proagro garante a cobertura de financiamentos rurais quando a lavoura sofre perdas que impedem o pagamento do crédito.
+
+    **Como funciona na prática**
+
+    O produtor que toma crédito rural pelo Sistema Nacional de Crédito Rural (SNCR) pode aderir ao Proagro pagando um adicional (o "prêmio" do Proagro) de 2% a 6% sobre o valor financiado. Em caso de sinistro comprovado — quebra de safra por geada, seca, excesso de chuva, granizo ou pragas —, o Proagro cobre as obrigações financeiras do produtor junto ao banco. Para pequenos produtores enquadrados no Pronaf, existe o **Proagro Mais**, com condições mais favoráveis e custo subsidiado pelo Tesouro Nacional.
+
+    **A lógica microeconômica**
+
+    Do ponto de vista da teoria desenvolvida neste capítulo, o Proagro é um mecanismo de seguro com prêmio *subsidiado*. O prêmio atuarialmente justo para cobrir os riscos climáticos de regiões como o Semiárido nordestino ou o Cerrado goiano seria muito superior ao que os produtores conseguem pagar, especialmente os de menor escala. O subsídio — financiado pelo Tesouro e computado no orçamento do Ministério da Agricultura — funciona como uma redução do carregamento \(\lambda\), tornando o seguro acessível para produtores que de outra forma permaneceriam sem cobertura.
+
+    Rosenzweig e Binswanger (1993), usando dados de agricultores indianos, mostram que a exposição ao risco climático reduz significativamente a lucratividade e o investimento agropecuário — especialmente para produtores mais pobres que não têm acesso a mercados de crédito ou seguro. O Proagro atua exatamente nessa fronteira: sem cobertura, o produtor reduz o risco *ex ante* escolhendo tecnologias menos produtivas mas mais seguras (como plantio tardio ou variedades de menor rendimento mas maior resistência à seca). Com o seguro, ele pode adotar tecnologias de maior risco e maior retorno médio, aumentando a produtividade e a renda agrícola.
+
+    **Desafios e limitações**
+
+    O Proagro enfrenta problemas clássicos de informação assimétrica (Seção 7.8): **seleção adversa** (produtores em regiões de maior risco climático têm mais incentivo a aderir) e **risco moral** (após a contratação, o produtor pode reduzir investimentos em irrigação e práticas preventivas). Além disso, a verificação dos sinistros é custosa e sujeita a disputas, o que eleva os custos administrativos do programa.
+
+    **Fonte**: Banco Central do Brasil, Manual de Crédito Rural (MCR), Capítulo 16; Ministério da Agricultura e Pecuária, Relatório Proagro 2023.
 
 <iframe src="../graficos/cap07/seguro.html" title="Figura 7.3 — Mercado de seguros no espaço estado-contingente" class="graph-iframe"></iframe>
 
@@ -325,6 +418,8 @@ Quando \(\rho < 1\), existe um peso \(w^*\) que minimiza \(\sigma_p^2\), gerando
 !!! note "Risco diversificável vs. risco sistemático"
     Em uma economia com muitos ativos, a diversificação elimina o **risco idiossincrático** (específico de cada ativo), mas não elimina o **risco sistemático** (que afeta todos os ativos simultaneamente). Essa distinção é central no modelo CAPM (Capital Asset Pricing Model), no qual apenas o risco sistemático — medido pelo coeficiente beta — é remunerado pelo mercado.
 
+A diversificação tem um limite fundamental: ela não elimina o risco agregado, apenas realoca e dilui o risco idiossincrático. Um fundo de ações com 500 empresas distintas ainda estará sujeito às flutuações do ciclo econômico, à variação da taxa Selic e aos choques cambiais — todos riscos sistemáticos que afetam todas as empresas simultaneamente. No Brasil, a elevada correlação entre setores da Bolsa de Valores — especialmente entre commodities agrícolas, petróleo e setor financeiro, que juntos representam uma parcela desproporcional do Ibovespa — limita os benefícios práticos da diversificação doméstica. Por isso, fundos de previdência e investidores institucionais brasileiros buscam crescentemente a diversificação internacional, alocando parte do patrimônio em ativos de outras economias com ciclos menos correlacionados com o Brasil.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Diversificar é não colocar todos os ovos na mesma cesta — o risco total cai mesmo sem reduzir o retorno esperado.
 
@@ -347,6 +442,8 @@ Formalmente, considere um agente que pode tomar uma decisão irreversível hoje 
 
     **Por que isso importa:** Esse raciocínio explica por que empresas adiam investimentos mesmo com VPL positivo, por que a Petrobras pode postergar a exploração do pré-sal quando o preço do petróleo é volátil, e por que políticas públicas irreversíveis merecem cautela extra.
 
+A teoria das opções reais ganhou proeminência justamente porque o critério simples do valor presente líquido (VPL) — que é, no fundo, uma aplicação do critério do valor esperado — ignora a flexibilidade gerencial. Uma empresa que pode fechar uma mina durante períodos de baixo preço do minério e reabri-la quando os preços sobem possui uma opção de abandono e uma opção de reativação. Ambas têm valor positivo que não aparece num cálculo de VPL estático. No Brasil, projetos de energia elétrica (termoelétricas a gás, usinas hidrelétricas) e de exploração de petróleo no pré-sal são contextos nos quais o valor da flexibilidade operacional — a possibilidade de ajustar a produção conforme os preços variam — pode representar parcela substancial do valor total do empreendimento.
+
 ### 7.6.4 Informação
 
 O último mecanismo para lidar com o risco não redistribui nem adia a incerteza — ele a **reduz diretamente**. A informação reduz a incerteza e permite decisões mais bem fundamentadas. O **valor da informação** pode ser definido como a diferença entre a utilidade esperada com e sem a informação. Para um agente avesso ao risco, informação completa é sempre (fracamente) valiosa.
@@ -358,6 +455,10 @@ VI = E_\theta\left[\max_a u(a, \theta)\right] - \max_a E_\theta[u(a, \theta)]
 \]
 
 Pela desigualdade de Jensen aplicada ao operador \(\max\), temos \(VI \geq 0\): informação nunca tem valor negativo para um agente que pode ignorá-la. Informação **imperfeita** (um sinal correlacionado com \(\theta\)) também tem valor não negativo, calculado de forma análoga usando a atualização bayesiana das crenças.
+
+O valor da informação tem aplicações diretas em contextos brasileiros. Uma empresa que considera expandir sua fábrica em Goiás pode contratar uma consultoria para avaliar a demanda regional — o valor da consultoria é exatamente o VI definido acima. Um agricultor que assina um contrato de venda antecipada de soja está, em parte, pagando para converter uma renda incerta em renda certa (comprando informação sobre o preço futuro via contrato). O governo que financia pesquisas climáticas para melhorar as previsões de seca no Nordeste está investindo em informação cujo valor é proporcional ao quanto essa informação permite melhorar as decisões de plantio e de ativação do Proagro.
+
+Uma distinção importante é que o valor da informação depende de *quão* boa é a decisão sem ela. Se o agente já escolhe quase otimamente sem a informação adicional, o ganho é pequeno. Se a incerteza é grande e a decisão sem informação é muito sub-ótima, o valor pode ser enorme. Isso sugere que o retorno de investimentos em coleta e processamento de dados é maior em ambientes de alta incerteza — exatamente o caso do agronegócio brasileiro sujeito a variabilidade climática, oscilações cambiais e volatilidade de preços internacionais de commodities.
 
 ---
 
@@ -394,8 +495,19 @@ A condição de primeira ordem implica:
 
 Se os mercados de ativos contingentes são **completos** (existe um ativo para cada estado), todo risco pode ser alocado eficientemente. Se, adicionalmente, o agente é avesso ao risco e os preços são atuarialmente justos (\(\psi_s = \pi_s\) para todo \(s\)), a solução ótima é \(c_s = c_{s'}\) para todo \(s, s'\) — ou seja, **consumo perfeitamente suavizado** entre estados. Esse resultado é a contrapartida, no espaço de estados, do resultado que vimos na Seção 7.6.1: assim como o agente avesso ao risco contrata cobertura total quando o prêmio é justo, ele equaliza o consumo entre todos os estados quando os preços dos ativos contingentes são atuarialmente justos. Em ambos os casos, a aversão ao risco conduz à eliminação completa da incerteza sempre que isso pode ser feito sem custo.
 
+!!! idea "Intuição Econômica"
+    **Comprar seguro é comprar um ativo contingente ao estado ruim.**
+
+    A abordagem estado-preferência oferece uma perspectiva radicalmente diferente — e mais geral — da abordagem probabilística. Em vez de pensar em "loterias" e "utilidade esperada", pensamos em *mercados de consumo contingente*. Comprar um seguro de carro não é contratar uma loteria: é adquirir um ativo (o contrato de seguro) que paga R\$ 50.000 se e somente se o estado "acidente grave" se realizar. Em termos de Arrow-Debreu, você está comprando unidades do ativo contingente ao estado "acidente".
+
+    A beleza dessa reformulação é que ela reduz o problema de decisão sob incerteza ao problema do consumidor que já conhecemos do Capítulo 3. O "cesto de bens" agora é \((c_1, c_2, \ldots, c_S)\) — consumo em cada estado do mundo — e a restrição orçamentária e as condições de ótimo têm a mesma forma matemática de sempre. A aversão ao risco corresponde à curvatura das curvas de indiferença no espaço estado-consumo, exatamente como a preferência por variedade corresponde à curvatura das curvas de indiferença no espaço de bens do Capítulo 3.
+
+    **Implicação prática:** Quando você compra ações de uma empresa e simultaneamente vende a descoberto um índice de mercado (para eliminar o risco sistemático), está construindo um portfólio que paga apenas em estados específicos do mundo — uma carteira de ativos contingentes. Mercados financeiros completos e seguros são, nessa perspectiva, simplesmente mercados de bens contingentes.
+
 !!! note "Mercados completos e eficiência"
     A completude dos mercados é uma condição forte. Na prática, muitos riscos não são seguráveis (desemprego, saúde futura), o que gera incompletude dos mercados e potenciais ineficiências de Pareto. A incompletude dos mercados é um dos temas centrais da teoria financeira moderna.
+
+A abordagem estado-preferência tem implicações normativas importantes para a política econômica brasileira. O sistema de previdência social (INSS) pode ser interpretado como a criação de um ativo contingente ao estado "velhice sem renda" — um estado que, sem a previdência, muitos trabalhadores não conseguiriam cobrir nos mercados privados. O seguro-desemprego é um ativo contingente ao estado "demissão involuntária". O SUS (Sistema Único de Saúde) é um conjunto de ativos contingentes a estados de doença que o mercado privado não consegue prover de forma universal, dadas as falhas de informação assimétrica (Seção 7.8). A teoria dos ativos contingentes de Arrow-Debreu, portanto, não é apenas um exercício matemático elegante: ela fornece o arcabouço conceitual para avaliar quando e por que o Estado deve intervir nos mercados de risco.
 
 ---
 
@@ -420,6 +532,10 @@ Se a seleção adversa é um problema de **informação oculta** (quem é o agen
 
 !!! tip "Terminologia"
     Em português, o termo consagrado é **risco moral** (tradução de *moral hazard*), e **não** "risco de inadimplência". "Risco moral" refere-se ao problema de incentivos gerado pela impossibilidade de observar as ações do agente após a contratação.
+
+A importância prática da informação assimétrica para os mercados de risco no Brasil não pode ser subestimada. No mercado de saúde suplementar, a ANS (Agência Nacional de Saúde Suplementar) regulamenta as coberturas mínimas obrigatórias parcialmente como resposta à seleção adversa: sem obrigatoriedade de cobertura para doenças preexistentes, as operadoras excluiriam exatamente os segurados de maior risco, destruindo a lógica do pool de riscos. No crédito rural, o Proagro enfrenta risco moral porque o produtor que contratou a cobertura tem menos incentivos para investir em irrigação de emergência ou na escolha de sementes resistentes à seca. No mercado de trabalho, contratos de incentivo — comissões, bônus, participação nos lucros — são respostas diretas ao risco moral de agentes que podem shirk (reduzir esforço) quando o trabalho não é perfeitamente monitorado.
+
+A compreensão desses mecanismos começa nesta seção, mas a análise formal — incluindo a derivação dos contratos ótimos com informação assimétrica, os menus de triagem, os sinais de mercado e o teorema da revelação — será desenvolvida em profundidade nos capítulos posteriores. Por ora, o que importa é reconhecer que os mercados de risco, diferentemente dos mercados de bens homogêneos, são especialmente vulneráveis a falhas de informação, e que essas falhas geram ineficiências que justificam tanto a regulação quanto o desenho cuidadoso de políticas públicas.
 
 ---
 
@@ -761,6 +877,72 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
+<a id="ex-7-6"></a>**Exercício 7.6.** *(Fácil)* Um agente possui função de utilidade \(u(W) = \sqrt{W}\) e riqueza inicial \(W_0 = 100\). Ele é convidado a participar de uma loteria que paga \(+60\) com probabilidade \(0{,}5\) e \(-60\) com probabilidade \(0{,}5\).
+
+(a) Calcule a utilidade esperada da loteria, \(E[u]\).
+
+(b) Calcule a utilidade do valor esperado da riqueza, \(u(E[W])\).
+
+(c) Com base na comparação entre \(E[u]\) e \(u(E[W])\), determine se o agente é avesso, neutro ou propenso ao risco. Justifique usando a desigualdade de Jensen.
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-6)
+
+---
+
+<a id="ex-7-7"></a>**Exercício 7.7.** *(Fácil — Verdadeiro ou Falso)* Julgue as afirmativas abaixo como verdadeiras ou falsas, com justificativa.
+
+(a) Um agente neutro ao risco possui função de utilidade linear.
+
+(b) A utilidade CARA implica que o prêmio de risco é independente da riqueza.
+
+(c) Se \(u''(W) < 0\), o agente sempre rejeita qualquer loteria justa.
+
+(d) A diversificação elimina todo o risco de uma carteira de ativos.
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-7)
+
+---
+
+<a id="ex-7-8"></a>**Exercício 7.8.** *(Médio)* Um agente tem função de utilidade \(u(W) = \ln(W)\) e riqueza inicial \(W_0 = 10.000\). Ele enfrenta o seguinte risco: com probabilidade \(0{,}1\) perde R\$ 5.000; com probabilidade \(0{,}9\) não perde nada.
+
+(a) Calcule o equivalente de certeza e o prêmio de risco exato.
+
+(b) Qual é o prêmio máximo que o agente pagaria por um seguro de cobertura total?
+
+(c) Uma seguradora oferece cobertura total por R\$ 600. O agente contrata? Justifique calculando a utilidade com e sem seguro.
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-8)
+
+---
+
+<a id="ex-7-9"></a>**Exercício 7.9.** *(Médio — Contexto Brasileiro)* Um cafeicultor de Minas Gerais possui utilidade CRRA com coeficiente de aversão relativa ao risco \(\gamma = 2\), ou seja, \(u(W) = -W^{-1}\), e riqueza inicial \(W_0 = \text{R\$ }200.000\). Ele enfrenta o seguinte risco climático: com probabilidade \(0{,}3\), uma seca severa reduz sua produção em 40%, de modo que sua riqueza cai para R\$ 120.000; com probabilidade \(0{,}7\), não há seca e ele mantém R\$ 200.000.
+
+O Proagro oferece um seguro que cobre integralmente a perda de R\$ 80.000 em caso de seca, com prêmio de R\$ 30.000 (que inclui o prêmio atuarialmente justo de R\$ 24.000 mais um carregamento de 25%).
+
+(a) Calcule o prêmio de risco exato do agricultor (o máximo que ele pagaria pelo seguro).
+
+(b) Compare o prêmio de risco com o prêmio cobrado pelo Proagro. O agricultor contrata o seguro? Justifique calculando a utilidade esperada com e sem seguro.
+
+(c) Qual seria o carregamento máximo \(\lambda^*\) que tornaria o agricultor indiferente entre contratar e não contratar o seguro?
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-9)
+
+---
+
+<a id="ex-7-10"></a>**Exercício 7.10.** *(Difícil — Demonstração)* Prove que, para um agente avesso ao risco (\(u'' < 0\)), o prêmio de risco \(\pi\) associado a um risco justo \(\tilde{\varepsilon}\) com variância \(\sigma^2\) satisfaz, aproximadamente:
+
+\[
+\pi \approx \frac{1}{2}\sigma^2 \cdot A(W_0)
+\]
+
+onde \(A(W_0) = -u''(W_0)/u'(W_0)\) é o coeficiente de Arrow-Pratt de aversão absoluta ao risco avaliado na riqueza inicial \(W_0\).
+
+*Instruções:* Use expansões em série de Taylor de segunda ordem para \(E[u(W_0 + \tilde{\varepsilon})]\) e de primeira ordem para \(u(W_0 - \pi)\). Identifique a aproximação e interprete cada termo do resultado.
+
+[:material-arrow-right: Ver solução](../solucoes/cap07.md#ex-7-10)
+
+---
+
 ## 🏆 Vem, ANPEC!
 
 ??? question "ANPEC 2018 — Questão 06"
@@ -867,6 +1049,39 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
     **Relevância para o capítulo:** O artigo demonstra que as medidas de Arrow-Pratt (Seção 7.4) — em particular o coeficiente de aversão relativa constante \(\gamma\) da utilidade CRRA — têm implicações quantitativas testáveis para os preços dos ativos financeiros. O *puzzle* revela os limites do modelo VNM padrão (Seção 7.2) e motiva extensões teóricas que relaxam os axiomas clássicos.
 
+??? pesquisa "Kahneman, Daniel; Tversky, Amos. (1979). [Prospect Theory: An Analysis of Decision under Risk](https://doi.org/10.2307/1914185). *Econometrica*, 47(2), 263–291. DOI: [10.2307/1914185](https://doi.org/10.2307/1914185)"
+    **Pergunta central:** Os axiomas de Von Neumann e Morgenstern descrevem com precisão como as pessoas realmente tomam decisões sob incerteza? Em particular, o axioma da independência é violado de forma sistemática — e se sim, que teoria alternativa pode explicar os padrões observados?
+
+    **Método:** Kahneman e Tversky conduziram uma série de experimentos com sujeitos humanos, apresentando escolhas hipotéticas entre loterias. Os experimentos foram desenhados para testar sistematicamente se os axiomas VNM são satisfeitos, com atenção especial ao axioma da independência, ao tratamento de probabilidades e à simetria entre ganhos e perdas.
+
+    **Resultado principal:** Os autores documentaram três desvios sistemáticos da teoria VNM: (i) o *efeito certeza* — as pessoas sobrevalorizam resultados certos em relação a resultados probabilísticos, violando o axioma da independência; (ii) o *efeito reflexo* — as pessoas exibem aversão ao risco no domínio dos ganhos e propensão ao risco no domínio das perdas; (iii) a *aversão à perda* — perdas têm peso subjetivo maior do que ganhos de mesma magnitude. Com base nesses achados, propuseram a **teoria dos prospectos**: uma função de valor côncava sobre ganhos e convexa sobre perdas (com inflexão no ponto de referência) e uma função de ponderação de probabilidades não linear que sobrepesa probabilidades pequenas e subpondera probabilidades grandes.
+
+    **Por que isso importa:** Este é o artigo mais citado da economia, com mais de 80.000 citações segundo o Google Scholar. Ele abriu o campo da economia comportamental e rendeu a Kahneman o Prêmio Nobel de Economia de 2002 (Tversky faleceu em 1996). Para o Brasil, as implicações são diretas: as distorções documentadas por Kahneman e Tversky afetam decisões de poupança e previdência, contratação de seguros, endividamento no crédito rotativo e adesão a programas sociais — todos contextos em que políticas "nudge" (empurrõezinhos) podem corrigir falhas comportamentais de forma custo-efetiva.
+
+    **Relevância para o capítulo:** O artigo desafia diretamente os axiomas VNM da Seção 7.2 e motiva a distinção entre teoria normativa (como agentes *deveriam* decidir) e descritiva (como eles *de fato* decidem). A teoria dos prospectos será tratada em detalhe no Capítulo 8; neste capítulo, ela serve como contraponto que reforça a importância de compreender a teoria VNM antes de criticá-la.
+
+??? pesquisa "Rabin, Matthew. (2000). [Risk Aversion and Expected-Utility Theory: A Calibration Theorem](https://doi.org/10.1111/1468-0262.00158). *Econometrica*, 68(5), 1281–1292. DOI: [10.1111/1468-0262.00158](https://doi.org/10.1111/1468-0262.00158)"
+    **Pergunta central:** Se um agente rejeita uma aposta de pequena escala (digamos, recusar uma aposta de ganhar R\$ 110 ou perder R\$ 100) em todos os níveis de riqueza, quais são as implicações para sua aversão ao risco em apostas de grande escala? A teoria da utilidade esperada pode acomodar aversão ao risco tanto em pequena quanto em grande escala com um mesmo coeficiente de curvatura?
+
+    **Método:** Rabin demonstrou um resultado matemático puro (um teorema de calibração) sem necessidade de dados: a partir de hipóteses de rejeição de apostas de pequena escala em múltiplos níveis de riqueza, derivou implicações para o prêmio de risco exigido em apostas de grande escala, usando apenas as propriedades matemáticas da utilidade esperada com função crescente e côncava.
+
+    **Resultado principal:** O teorema de Rabin mostra que a teoria da utilidade esperada é internamente inconsistente como teoria descritiva da aversão ao risco: se um agente rejeita a aposta "perder R\$ 100 ou ganhar R\$ 110, cara ou coroa" para qualquer nível de riqueza abaixo de R\$ 300.000, então a mesma função de utilidade implica que ele deveria rejeitar qualquer aposta com perda esperada superior a R\$ 1 bilhão — um resultado absurdo. A concavidade global da função de utilidade, necessária para gerar aversão ao risco em pequenas apostas, implica aversão ao risco implausível em apostas grandes. Isso sugere que a aversão ao risco em pequena escala não é bem modelada pela curvatura da utilidade VNM, mas sim por outros mecanismos como aversão à perda (Kahneman e Tversky, 1979).
+
+    **Por que isso importa:** O artigo de Rabin, junto com o de Kahneman e Tversky, é um dos pilares da crítica à teoria VNM como teoria descritiva. Ele demonstra que a teoria VNM e a teoria dos prospectos não são igualmente válidas para todos os tamanhos de aposta: VNM pode ser adequada para riscos de grande escala (decisões de portfólio), mas falha para riscos de pequena escala (onde a aversão à perda domina).
+
+    **Relevância para o capítulo:** O artigo complementa a discussão das medidas de Arrow-Pratt (Seção 7.4) ao mostrar que coeficientes de aversão ao risco estimados a partir de escolhas sobre pequenas apostas não são comparáveis aos estimados de escolhas de portfólio. Para um economista brasileiro que usa dados de loterias ou experimentos de campo para medir preferências de risco de agricultores familiares, essa distinção é fundamental.
+
+??? pesquisa "Rosenzweig, Mark R.; Binswanger, Hans P. (1993). [Wealth, Weather Risk and the Composition and Profitability of Agricultural Investments](https://doi.org/10.2307/2234337). *The Economic Journal*, 103(416), 56–78. DOI: [10.2307/2234337](https://doi.org/10.2307/2234337)"
+    **Pergunta central:** Em contextos agrícolas de países em desenvolvimento, como a aversão ao risco e a exposição ao risco climático afetam as decisões de investimento dos agricultores? Em particular: agricultores mais pobres e mais expostos ao risco climático adotam tecnologias de menor risco e menor retorno médio em comparação com agricultores mais ricos?
+
+    **Método:** Os autores utilizaram dados de painel de agricultores na Índia rural (Instituto Internacional de Pesquisa de Culturas para os Trópicos Semi-áridos — ICRISAT), combinando variação nas condições de riqueza e nas realizações climáticas ao longo do tempo. Estimaram a relação entre riqueza, exposição ao risco pluviométrico e composição do portfólio agrícola (culturas de alto risco/alto retorno versus culturas seguras de baixo retorno).
+
+    **Resultado principal:** Os dados confirmam que agricultores mais pobres e mais expostos ao risco climático adotam estratégias de produção significativamente mais conservadoras: cultivam variedades de menor rendimento médio mas maior resistência à seca, investem menos em insumos de alta produtividade e diversificam mais entre culturas do que os agricultores mais ricos. Estimaram que aumentar a riqueza agrícola em 50% elevaria a lucratividade esperada em até 35%, simplesmente por permitir a adoção de tecnologias de maior risco e maior retorno. A exposição ao risco climático, portanto, tem um custo real de eficiência: ela trava os agricultores em equilíbrios de baixa produtividade.
+
+    **Por que isso importa:** Este artigo fornece evidência empírica direta de que a aversão ao risco — modelada nos termos deste capítulo — tem consequências reais para o investimento agrícola e o desenvolvimento econômico. Para o Brasil, onde pequenos e médios produtores representam a maioria das propriedades rurais e onde o risco climático (secas no Nordeste, geadas no Sul, El Niño/La Niña) é uma constante, as conclusões são diretamente relevantes: programas como o Proagro e o PSR não são apenas transferências de renda, mas instrumentos de eficiência que desbloqueiam o potencial produtivo de agricultores que, sem cobertura, preferem seguir a estratégia segura e de baixo retorno.
+
+    **Relevância para o capítulo:** O artigo é a evidência empírica mais influente por trás do argumento teórico da Seção 7.6.1 (seguros como mecanismo de eficiência) e do Box Brasil sobre o Proagro (Seção 7.6.1). Ele conecta diretamente a teoria do prêmio de risco (Seção 7.5) ao comportamento observado de agricultores em países em desenvolvimento.
+
 ## 📚 Referências do Capítulo
 
 - Akerlof, George A. 1970. "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *The Quarterly Journal of Economics* 84 (3): 488–500. [DOI](https://doi.org/10.2307/1879431)
@@ -879,5 +1094,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Capítulo 7.
 - Perloff, Jeffrey M. 2017. [*Microeconomics: Theory and Applications with Calculus*](https://books.google.com.br/books?id=jGs4EAAAQBAJ). 4ª ed. Boston: Pearson. Capítulo 17.
 - Pratt, John W. 1964. "Risk Aversion in the Small and in the Large." *Econometrica* 32 (1–2): 122–136. [DOI](https://doi.org/10.2307/1913738)
+- Rabin, Matthew. 2000. "Risk Aversion and Expected-Utility Theory: A Calibration Theorem." *Econometrica* 68 (5): 1281–1292. [DOI](https://doi.org/10.1111/1468-0262.00158)
+- Rosenzweig, Mark R., e Hans P. Binswanger. 1993. "Wealth, Weather Risk and the Composition and Profitability of Agricultural Investments." *The Economic Journal* 103 (416): 56–78. [DOI](https://doi.org/10.2307/2234337)
 - Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Capítulo 12.
 - Von Neumann, John, e Oskar Morgenstern. 1944. [*Theory of Games and Economic Behavior*](https://books.google.com/books?id=jCN5aNJ-n-0C). Princeton: Princeton University Press.
