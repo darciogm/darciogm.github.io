@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--
+  Estática Comparativa do Monopólio — Efeito de Imposto Unitário
+  Library: JSXGraph
+  Shows: demand, MR, MC, MC+t, before/after tax equilibria, tax revenue, DWL
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estática Comparativa — Imposto sobre o Monopólio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .info-box .section-title { font-weight: 700; color: #1565c0; margin-top: 0.4rem; }
+    .info-box .section-title:first-child { margin-top: 0; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Parâmetros</h3>
+    <div class="slider-group">
+      <label>Intercepto da demanda \(a\): <span class="val" id="val-a">80</span></label>
+      <input type="range" id="slider-a" min="50" max="120" step="1" value="80">
+    </div>
+    <div class="slider-group">
+      <label>Inclinação da demanda \(b\): <span class="val" id="val-b">1.0</span></label>
+      <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
+    </div>
+    <div class="slider-group">
+      <label>Custo marginal \(c\): <span class="val" id="val-c">10</span></label>
+      <input type="range" id="slider-c" min="0" max="40" step="1" value="10">
+    </div>
+    <div class="slider-group">
+      <label>Imposto unitário \(t\): <span class="val" id="val-t">0</span></label>
+      <input type="range" id="slider-t" min="0" max="30" step="1" value="0">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-60, 130, 500, -15],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  board.create('axis', [[0,0],[1,0]], {
+    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+    name: '', withLabel: false
+  });
+  board.create('text', [250, -9, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', highlight: false
+  });
+  board.create('axis', [[0,0],[0,1]], {
+    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+    name: '', withLabel: false
+  });
+  board.create('text', [-35, 65, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', highlight: false
+  });
+
+  function gp() {
+    return {
+      a: parseFloat(document.getElementById('slider-a').value),
+      b: parseFloat(document.getElementById('slider-b').value),
+      c: parseFloat(document.getElementById('slider-c').value),
+      t: parseFloat(document.getElementById('slider-t').value)
+    };
+  }
+
+  // Tax revenue rectangle (between CMg and CMg+t, from 0 to qm(t))
+  var taxPoly = board.create('polygon', [
+    [0, function(){ return gp().c; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ return gp().c; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return p.c+p.t; }],
+    [0, function(){ var p=gp(); return p.c+p.t; }]
+  ], {
+    fillColor: '#ff9800', fillOpacity: 0.15,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false,
+    visible: function(){ return gp().t > 0; }
+  });
+
+  // DWL triangle (after tax)
+  var dwlPoly = board.create('polygon', [
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/p.b); }, function(){ var p=gp(); return p.c+p.t; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return p.c+p.t; }]
+  ], {
+    fillColor: '#ff9800', fillOpacity: 0.25,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+  });
+
+  // Profit rectangle (after tax)
+  var profitPoly = board.create('polygon', [
+    [0, function(){ var p=gp(); return p.c+p.t; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return p.c+p.t; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
+    [0, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }]
+  ], {
+    fillColor: '#00897b', fillOpacity: 0.18,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+  });
+
+  // CS triangle
+  var csPoly = board.create('polygon', [
+    [0, function(){ return gp().a; }],
+    [0, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }]
+  ], {
+    fillColor: '#1565c0', fillOpacity: 0.18,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+  });
+
+  // Demand curve
+  board.create('functiongraph', [function(q) { var p=gp(); return p.a - p.b*q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  board.create('text', [function(){ return gp().a/gp().b - 5; }, 4], {
+    anchorX: 'middle', fontSize: 13, color: '#1565c0', getText: function(){ return 'D'; }
+  });
+
+  // MR curve
+  board.create('functiongraph', [function(q) { var p=gp(); return p.a - 2*p.b*q; }], {
+    strokeColor: '#C8102E', strokeWidth: 2, dash: 2
+  });
+  board.create('text', [function(){ return gp().a/(2*gp().b) - 3; }, 4], {
+    anchorX: 'middle', fontSize: 13, color: '#C8102E', getText: function(){ return 'RMg'; }
+  });
+
+  // MC line
+  board.create('functiongraph', [function(q) { return gp().c; }], {
+    strokeColor: '#00897b', strokeWidth: 2.5
+  });
+  board.create('text', [function(){ return gp().a/gp().b - 2; }, function(){ return gp().c + 3; }], {
+    anchorX: 'middle', fontSize: 13, color: '#00897b', getText: function(){ return 'CMg'; }
+  });
+
+  // MC + t line (dashed orange)
+  board.create('functiongraph', [function(q) { var p=gp(); return p.c + p.t; }], {
+    strokeColor: '#ff9800', strokeWidth: 2, dash: 3,
+    visible: function(){ return gp().t > 0; }
+  });
+  board.create('text', [function(){ return gp().a/gp().b - 2; }, function(){ var p=gp(); return p.c+p.t+3; }], {
+    anchorX: 'middle', fontSize: 13, color: '#ff9800',
+    getText: function(){ return 'CMg+t'; },
+    visible: function(){ return gp().t > 0; }
+  });
+
+  // Before-tax equilibrium (ghost point, lighter)
+  board.create('point', [
+    function(){ var p=gp(); return (p.a-p.c)/(2*p.b); },
+    function(){ var p=gp(); return (p.a+p.c)/2; }
+  ], { name: '', size: 3, strokeColor: '#999', fillColor: '#999', strokeOpacity: 0.5, fillOpacity: 0.5,
+       visible: function(){ return gp().t > 0; } });
+
+  // After-tax equilibrium (solid)
+  board.create('point', [
+    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); },
+    function(){ var p=gp(); return (p.a+p.c+p.t)/2; }
+  ], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E' });
+
+  // Dashed lines from equilibrium
+  board.create('segment', [
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
+    [0, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+  board.create('segment', [
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
+    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, 0]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+
+  // Labels
+  board.create('text', [-5, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }, function(){ return '\\(P^m\\)'; }],
+    { fontSize: 13, color: '#C8102E', anchorX: 'right' });
+  board.create('text', [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, -4, function(){ return '\\(Q^m\\)'; }],
+    { fontSize: 13, color: '#C8102E', anchorX: 'middle' });
+
+  // Area labels
+  board.create('text', [
+    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(4*p.b)); },
+    function(){ var p=gp(); return (p.a+p.c+p.t)/2 + (p.a - (p.a+p.c+p.t)/2)/3; }, 'EC'
+  ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold',
+       visible: function(){ var p=gp(); return (p.a - p.c - p.t) > 10; } });
+
+  board.create('text', [
+    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(4*p.b)); },
+    function(){ var p=gp(); return (p.c+p.t) + ((p.a+p.c+p.t)/2 - (p.c+p.t))/2; },
+    function(){ return '\\(\\pi\\)'; }
+  ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold',
+       visible: function(){ var p=gp(); return (p.a - p.c - p.t) > 10; } });
+
+  board.create('text', [
+    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(4*p.b)); },
+    function(){ var p=gp(); return p.c + (p.t)/2; }, 'Receita fiscal'
+  ], { fontSize: 10, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold',
+       visible: function(){ var p=gp(); return gp().t > 3; } });
+
+  function updateInfo() {
+    var p = gp();
+    document.getElementById('val-a').textContent = p.a.toFixed(0);
+    document.getElementById('val-b').textContent = p.b.toFixed(1);
+    document.getElementById('val-c').textContent = p.c.toFixed(0);
+    document.getElementById('val-t').textContent = p.t.toFixed(0);
+
+    var qm0 = (p.a - p.c) / (2 * p.b);
+    var pm0 = (p.a + p.c) / 2;
+    var qm = Math.max(0, (p.a - p.c - p.t) / (2 * p.b));
+    var pm = (p.a + p.c + p.t) / 2;
+    var profit = (pm - p.c - p.t) * qm;
+    var cs = 0.5 * (p.a - pm) * qm;
+    var taxRev = p.t * qm;
+    var lerner = pm > 0 ? (pm - p.c - p.t) / pm : 0;
+    var passThrough = p.t > 0 ? (pm - pm0) / p.t : 0;
+
+    var html = '';
+    if (p.t > 0) {
+      html += '<div class="section-title">Antes do imposto</div>';
+      html += '\\(Q^m = ' + qm0.toFixed(1) + '\\), \\(P^m = ' + pm0.toFixed(1) + '\\)<br>';
+      html += '\\(\\pi = ' + ((pm0-p.c)*qm0).toFixed(1) + '\\)';
+      html += '<div class="section-title">Depois do imposto (\\(t = ' + p.t + '\\))</div>';
+    } else {
+      html += '<div class="section-title">Monopólio (sem imposto)</div>';
+    }
+    html += '\\(Q^m = ' + qm.toFixed(1) + '\\), \\(P^m = ' + pm.toFixed(1) + '\\)<br>';
+    html += '\\(\\pi = ' + profit.toFixed(1) + '\\)<br>';
+    html += '\\(EC = ' + cs.toFixed(1) + '\\)<br>';
+    html += '\\(L = ' + lerner.toFixed(3) + '\\)';
+    if (p.t > 0) {
+      html += '<div class="section-title">Incidência tributária</div>';
+      html += 'Receita fiscal: \\(' + taxRev.toFixed(1) + '\\)<br>';
+      html += 'Repasse ao consumidor: \\(\\Delta P / t = ' + passThrough.toFixed(2) + '\\) (' + (passThrough*100).toFixed(0) + '%)<br>';
+      html += '\\(\\Delta Q = ' + (qm - qm0).toFixed(1) + '\\)';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-a').value = 80;
+    document.getElementById('slider-b').value = 1;
+    document.getElementById('slider-c').value = 10;
+    document.getElementById('slider-t').value = 0;
+    updateInfo();
+  }
+
+  ['slider-a','slider-b','slider-c','slider-t'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', updateInfo);
+  });
+  updateInfo();
+</script>
+</body>
+</html>
