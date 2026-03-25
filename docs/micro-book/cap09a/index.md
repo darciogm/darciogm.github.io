@@ -618,22 +618,27 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-### R Interativo: Friend or Foe — Dilema dos Prisioneiros Real
-
 ??? code "R Interativo — Dados reais do game show Friend or Foe (Adams, 2025, Cap. 1)"
     No início dos anos 2000, o programa de TV *Friend or Foe* (Game Show Network) colocava duplas de participantes para jogar um Dilema dos Prisioneiros real — o *Trust Box* — com milhares de dólares em jogo. Cada jogador escolhia "Friend" (cooperar) ou "Foe" (trair). Se ambos cooperavam, dividiam o prêmio igualmente; se um traía e o outro cooperava, o traidor ficava com tudo; se ambos traíam, ninguém recebia nada.
 
     Os dados de 227 episódios (Kalist, 2004; List, 2006) estão disponíveis no pacote R `Ecdat`. Explore: qual fração coopera? A decisão depende do valor em jogo? Da idade?
 
-    <iframe src="../graficos/cap09/webr-friend-foe.html" title="Figura 9a.5 — Friend or Foe" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+    <iframe id="iframe-9a5" src="../graficos/cap09/webr-friend-foe.html" title="Figura 9a.5 — Friend or Foe" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+    <script>
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.iframeHeight && e.data.src && e.data.src.indexOf('webr-friend-foe') !== -1) {
+        var iframe = document.getElementById('iframe-9a5');
+        if (iframe) iframe.style.height = (e.data.iframeHeight + 40) + 'px';
+      }
+    });
+    </script>
 
     <div class="caption-obj" markdown>
     **Figura 9a.5 — Análise do game show Friend or Foe com dados reais.** O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.
     </div>
 
 ---
-
-### R Interativo: Equilíbrio de Cournot com Simulação
 
 ??? code "R Interativo — Cournot Duopólio: equilíbrio analítico e gráfico (Adams, 2025, Cap. 3)"
     O modelo de Cournot com demanda linear admite solução analítica. Neste box interativo, você pode alterar os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) para explorar como o equilíbrio muda. O R calcula quantidades, preço e lucros de equilíbrio e plota as funções de melhor-resposta.
