@@ -458,7 +458,7 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
   <iframe src="../graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe" style="height:900px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
-<div class="caption-obj" markdown>
+<div class="caption-obj" style="margin-top:2rem;" markdown>
 **Figura 8.3 — Paradoxo de Ellsberg: duas urnas.** Visualize como a aversão à ambiguidade leva à preferência pela urna com probabilidades conhecidas.
 </div>
 
