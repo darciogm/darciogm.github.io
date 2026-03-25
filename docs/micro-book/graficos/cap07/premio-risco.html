@@ -114,17 +114,22 @@
     function getVar() { return parseFloat(document.getElementById('slider-var').value); }
     function getCurv() { return parseFloat(document.getElementById('slider-curv').value); }
 
+    // CARA: normalized so u(0)≈0, u(10)≈10 — purely visual scaling
+    // Quadratic: b = c * 0.01 so bliss point >> graph range
     function uFunc(w) {
       var c = getCurv();
       if (w <= 0.01) w = 0.01;
       switch(getType()) {
-        case 'cara': return -Math.exp(-c * w);
+        case 'cara':
+          var D = 1 - Math.exp(-c * 10);
+          if (Math.abs(D) < 1e-10) return w;
+          return (1 - Math.exp(-c * w)) / D * 10;
         case 'crra':
           if (Math.abs(c - 1) < 0.01) return Math.log(w);
           return Math.pow(w, 1 - c) / (1 - c);
         case 'quad':
-          var val = w - c * w * w;
-          return val;
+          var b = c * 0.01;
+          return w - b * w * w;
       }
     }
 
@@ -132,11 +137,16 @@
       var c = getCurv();
       if (w <= 0.01) w = 0.01;
       switch(getType()) {
-        case 'cara': return c * Math.exp(-c * w);
+        case 'cara':
+          var D = 1 - Math.exp(-c * 10);
+          if (Math.abs(D) < 1e-10) return 1;
+          return c * Math.exp(-c * w) / D * 10;
         case 'crra':
           if (Math.abs(c - 1) < 0.01) return 1 / w;
           return Math.pow(w, -c);
-        case 'quad': return 1 - 2 * c * w;
+        case 'quad':
+          var b = c * 0.01;
+          return 1 - 2 * b * w;
       }
     }
 
@@ -144,11 +154,16 @@
       var c = getCurv();
       if (w <= 0.01) w = 0.01;
       switch(getType()) {
-        case 'cara': return -c * c * Math.exp(-c * w);
+        case 'cara':
+          var D = 1 - Math.exp(-c * 10);
+          if (Math.abs(D) < 1e-10) return 0;
+          return -c * c * Math.exp(-c * w) / D * 10;
         case 'crra':
           if (Math.abs(c - 1) < 0.01) return -1 / (w * w);
           return -c * Math.pow(w, -c - 1);
-        case 'quad': return -2 * c;
+        case 'quad':
+          var b = c * 0.01;
+          return -2 * b;
       }
     }
 
@@ -272,11 +287,11 @@
     function funcLabel() {
       var c = getCurv();
       switch(getType()) {
-        case 'cara': return '\\(-e^{-' + c.toFixed(2) + 'W}\\)';
+        case 'cara': return '\\(1 - e^{-' + c.toFixed(2) + 'W}\\) (normalizada)';
         case 'crra':
           if (Math.abs(c - 1) < 0.01) return '\\(\\ln(W)\\)';
           return '\\(\\frac{W^{' + (1-c).toFixed(2) + '}}{' + (1-c).toFixed(2) + '}\\)';
-        case 'quad': return '\\(W - ' + c.toFixed(2) + 'W^2\\)';
+        case 'quad': return '\\(W - ' + (c*0.01).toFixed(4) + 'W^2\\)';
       }
     }
 
