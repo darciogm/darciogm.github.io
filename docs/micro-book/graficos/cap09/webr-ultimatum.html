@@ -135,12 +135,12 @@ legend("bottomright", legend = c("Aceita", "Rejeita"),
       plotEl.innerHTML = '';
       try {
         const shelter = await new webR.Shelter();
-        const wrapped = code;
+        const wrapped = 'if (dev.cur() > 1) dev.off()\nwebr::canvas(width=520, height=380)\n' + code + '\ndev.off()';
         const result = await shelter.captureR(wrapped, {
           withAutoprint: true,
           captureStreams: true,
           captureConditions: true,
-          captureGraphics: { width: 520, height: 400 }
+          captureGraphics: true
         });
         let textOut = '';
         for (const out of result.output) {
