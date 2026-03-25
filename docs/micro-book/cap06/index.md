@@ -489,12 +489,6 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 !!! note "Suavização pela agregação"
     A agregação tende a "suavizar" irregularidades individuais. Mesmo que consumidores individuais tenham demandas com descontinuidades (por exemplo, escolhas discretas entre marcas), a demanda de mercado pode ser bem aproximada por uma função contínua e diferenciável, desde que haja heterogeneidade suficiente entre consumidores.
 
-<iframe src="../graficos/cap06/elasticidade-receita.html" title="Figura 6.3 — Elasticidade-preco e receita total" class="graph-iframe" style="height:660px;overflow:hidden" scrolling="no"></iframe>
-
-<div class="caption-obj" markdown>
-**Figura 6.3 — Elasticidade-preço e receita total.** Arraste o ponto sobre a curva de demanda linear \(P = a - bQ\) para explorar a relação entre elasticidade e receita total. Na região elástica (\(|\varepsilon| > 1\)), aumentos de preço reduzem a receita; na região inelástica (\(|\varepsilon| < 1\)), aumentos de preço elevam a receita. A receita é máxima no ponto de elasticidade unitária.
-</div>
-
 ??? exercicio-resolvido "Exercício Resolvido 6.3 — Agregação e a condição de Gorman"
 
     **Enunciado.** Em uma economia há dois consumidores com as seguintes demandas pelo bem 1:
