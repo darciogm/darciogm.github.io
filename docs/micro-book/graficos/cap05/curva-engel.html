@@ -32,15 +32,16 @@
     }
 .graph-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 1rem;
-      align-items: flex-start;
-      justify-content: center;
+      align-items: center;
     }
     .boards-wrapper {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      width: 100%;
+      max-width: 620px;
     }
     .board-label {
       font-size: 0.8rem;
@@ -49,14 +50,15 @@
       text-align: center;
     }
     .jxgbox {
-      flex: 1 1 420px;
-      max-width: 420px;
-      height: 320px;
+      width: 100%;
+      max-width: 620px;
+      height: 360px;
       border: 1px solid #ddd;
       border-radius: 6px;
     }
     .controls {
-      flex: 0 1 280px;
+      width: 100%;
+      max-width: 620px;
       padding: 1rem;
       background: #f8f8f8;
       border-radius: 6px;

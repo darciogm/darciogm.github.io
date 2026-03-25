@@ -99,7 +99,7 @@ Dentro da categoria dos bens normais, existe uma segunda distinção relevante: 
 
 Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 
-<iframe src="../graficos/cap05/curva-engel.html" title="Figura 5.1 — Curva de Engel e caminho de expansão da renda" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap05/curva-engel.html" title="Figura 5.1 — Curva de Engel e caminho de expansão da renda" class="graph-iframe" style="height:1050px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.1 — Curva de Engel e caminho de expansão da renda.** Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
@@ -388,7 +388,7 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 !!! note "Relação geométrica"
     As curvas marshalliana e hicksiana se cruzam no ponto correspondente ao preço e à renda iniciais. A partir desse ponto, a marshalliana diverge conforme o efeito renda se acumula.
 
-<iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" title="Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul)" class="graph-iframe" style="height:780px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" title="Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul)" class="graph-iframe" style="height:1000px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul).** Painel superior: curvas de indiferença e restrição orçamentária no espaço de bens. Painel inferior: curvas de demanda derivadas. Para bens normais, a hicksiana é mais inclinada. A área sombreada representa o excedente do consumidor.
