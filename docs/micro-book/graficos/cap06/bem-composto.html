@@ -121,8 +121,8 @@
     var optPt = board.create('point', [
       function() { var s = getState(); return s.beta * s.I / s.p1; },
       function() { var s = getState(); return (1 - s.beta) * s.I / s.alpha; }
-    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(x_1^*, y^*)', fixed: true,
-         label: { fontSize: 11, offset: [10, -5] } });
+    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(x\u2081*, y*)', fixed: true,
+         label: { fontSize: 11, offset: [0, -18], anchorX: 'middle' } });
 
     // Indifference curve through optimal
     var indiffCurve = board.create('curve', [
@@ -179,10 +179,12 @@
       function() { var s = getState(); return [s.beta * s.I / s.p1, (1 - s.beta) * s.I / s.alpha]; }
     ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
 
-    // Label for budget slope
-    var _lblSlope = board.create('text', [3, function() { var s = getState(); return s.I / s.alpha - 5; },
-      function() { return '<span style="font-size:11px;color:#1565c0;">incl. = -p_1/\\(\\alpha\\)</span>'; }
-    ], { fontSize: 10, anchorX: 'left', useMathJax: false });
+    // Label for budget slope — below the y-intercept
+    var _lblSlope = board.create('text', [
+      function() { var s = getState(); return s.I / s.p1 / 2; },
+      function() { var s = getState(); return s.I / s.alpha / 2 - 8; },
+      '<span style="font-size:11px;color:#1565c0;">incl. = &minus;p<sub>1</sub>/&alpha;</span>'
+    ], { fontSize: 10, anchorX: 'middle', useMathJax: false });
 
     var textLabels = [_lblSlope];
     function toggleLabels() {
