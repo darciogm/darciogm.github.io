@@ -69,6 +69,34 @@ Clique em qualquer parte para acessar os capítulos correspondentes.
   <div class="hub-card__caps">Caps. 19–20</div>
 </a>
 
+<a href="cap21/" class="hub-card hub-card--front">
+  <div class="hub-card__label">Parte IX — Economia Digital</div>
+  <div class="hub-card__title">Plataformas, Redes e Dados</div>
+  <div class="hub-card__desc">Efeitos de rede, mercados bilaterais, lock-in e regulação digital</div>
+  <div class="hub-card__caps">Cap. 21</div>
+</a>
+
+<a href="cap22/" class="hub-card hub-card--fund">
+  <div class="hub-card__label">Parte X — Métodos</div>
+  <div class="hub-card__title">O Laboratório do Economista</div>
+  <div class="hub-card__desc">Experimentos, RCTs, diferenças em diferenças e regressão descontínua</div>
+  <div class="hub-card__caps">Cap. 22</div>
+</a>
+
+<a href="cap23/" class="hub-card hub-card--front">
+  <div class="hub-card__label">Parte XI — Economia da Saúde</div>
+  <div class="hub-card__title">Microeconomia da Saúde</div>
+  <div class="hub-card__desc">Modelo de Grossman, seguros, risco moral e avaliação de tecnologias</div>
+  <div class="hub-card__caps">Cap. 23</div>
+</a>
+
+<a href="cap24/" class="hub-card hub-card--front">
+  <div class="hub-card__label">Parte XII — Economia Ambiental</div>
+  <div class="hub-card__title">Mercados, Clima e Sustentabilidade</div>
+  <div class="hub-card__desc">Cap-and-trade, custo social do carbono, recursos naturais e valoração ambiental</div>
+  <div class="hub-card__caps">Cap. 24</div>
+</a>
+
 </div>
 
 ---
