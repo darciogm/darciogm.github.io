@@ -255,7 +255,8 @@ abline(0, 1, lty = 3, col = "gray")
         const result = await shelter.captureR(wrapped, {
           withAutoprint: true,
           captureStreams: true,
-          captureConditions: true
+          captureConditions: true,
+          captureGraphics: true
         });
         let textOut = '';
         for (const out of result.output) {
@@ -265,22 +266,12 @@ abline(0, 1, lty = 3, col = "gray")
         }
         outputEl.textContent = textOut || '(sem saída de texto)';
         if (result.images && result.images.length > 0) {
-          const lastImg = result.images[result.images.length - 1];
-          const canvas = document.createElement('canvas');
-          canvas.width = lastImg.width;
-          canvas.height = lastImg.height;
-          canvas.getContext('2d').drawImage(lastImg, 0, 0);
-          plotEl.appendChild(canvas);
-        } else {
-          const msgs = await webR.flush();
-          for (const msg of msgs) {
-            if (msg.type === 'canvas' && msg.data.event === 'canvasImage') {
-              const canvas = document.createElement('canvas');
-              canvas.width = msg.data.image.width;
-              canvas.height = msg.data.image.height;
-              canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
-              plotEl.appendChild(canvas);
-            }
+          for (const img of result.images) {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            canvas.getContext('2d').drawImage(img, 0, 0);
+            plotEl.appendChild(canvas);
           }
         }
         await shelter.purge();

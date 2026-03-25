@@ -126,7 +126,8 @@ text(10, mean(margins) + 0.05, "Margem média",
         const shelter = await new webR.Shelter();
         const wrapped = 'if (dev.cur() > 1) dev.off()\nwebr::canvas(width=520, height=360)\n' + code + '\ndev.off()';
         const result = await shelter.captureR(wrapped, {
-          withAutoprint: true, captureStreams: true, captureConditions: true
+          withAutoprint: true, captureStreams: true, captureConditions: true,
+          captureGraphics: true
         });
         let textOut = '';
         for (const out of result.output) { if (out.type === 'stdout' || out.type === 'stderr') textOut += out.data + '\n'; }
