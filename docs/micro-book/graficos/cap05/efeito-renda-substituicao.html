@@ -342,7 +342,7 @@
         }
       }
     ], { size: 5, fillColor: '#00897b', strokeColor: '#00897b', name: 'B', fixed: true,
-         label: { fontSize: 13, offset: [-15, 10], color: '#00897b' } });
+         label: { fontSize: 13, offset: [0, 15], anchorX: 'middle', color: '#00897b' } });
 
     var ptC = board.create('point', [
       function() { var s = getState(); return cobbDouglas(s.alpha, s.M, s.p1new).x1; },
