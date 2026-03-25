@@ -449,12 +449,39 @@
 .hub-card--front::after { color: #7c4dff; }
 .hub-card--aplic::after { color: #e65100; }
 
-/* Contact / feedback bar */
+/* ── Hero 2-column layout ── */
+.book-hero {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.book-hero__left {
+  flex: 3;
+}
+.book-hero__left h1 {
+  margin-top: 0;
+}
+.book-hero__right {
+  flex: 2;
+  min-width: 220px;
+}
+@media (max-width: 768px) {
+  .book-hero {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .book-hero__right {
+    width: 100%;
+  }
+}
+
+/* Contact / feedback bar (used inside hero right column) */
 .book-contact {
   text-align: center;
-  margin: 2rem 0 0.5rem;
-  padding: 1rem 1.2rem;
-  border-radius: 8px;
+  margin: 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
   background: rgba(200, 16, 46, 0.04);
   border: 1px solid rgba(200, 16, 46, 0.12);
   font-size: 0.88rem;
@@ -468,6 +495,23 @@
 }
 .book-contact a:hover {
   text-decoration: underline;
+}
+
+/* QR Code inside contact box */
+.book-contact__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+.book-contact__qr img {
+  width: 120px;
+  height: 120px;
+}
+.book-contact__qr-label {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 0.3rem;
 }
 
 /* Reference links row */

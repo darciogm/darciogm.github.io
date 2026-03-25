@@ -3,11 +3,27 @@ hide:
   - toc
 ---
 
-# Microeconomia: Do Zero ao Equilíbrio (e Além)
-
-[Ler o Prefácio](prefacio.md){ .md-button .md-button--primary }
-
-Livro didático interativo de **Microeconomia** para graduação avançada e pós-graduação. Rigor matemático, intuição econômica e aplicações ao Brasil em cada capítulo.
+<div class="book-hero">
+  <div class="book-hero__left">
+    <h1>Microeconomia: Do Zero ao Equilíbrio (e Além)</h1>
+    <div class="book-meta">
+      <span class="book-author">Dárcio Gomes de Moura</span>
+      <span class="book-version">Versão 1.0 — Março 2026</span>
+    </div>
+    <p>Livro didático interativo de <strong>Microeconomia</strong> para graduação avançada e pós-graduação. Rigor matemático, intuição econômica e aplicações ao Brasil em cada capítulo.</p>
+    <a href="prefacio/" class="md-button md-button--primary">Ler o Prefácio</a>
+  </div>
+  <div class="book-hero__right">
+    <div class="book-contact">
+      Encontrou um erro, tem sugestão ou quer contribuir?<br>
+      Escreva para <a href="mailto:darciogm1@insper.edu.br">darciogm1@insper.edu.br</a>
+      <div class="book-contact__qr">
+        <img src="assets/qrcode_contato.svg" alt="QR Code — e-mail do autor" width="120" height="120">
+        <span class="book-contact__qr-label">Contato do autor</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 Clique em qualquer parte para acessar os capítulos correspondentes.
 
@@ -110,7 +126,3 @@ Clique em qualquer parte para acessar os capítulos correspondentes.
 
 </div>
 
-<div class="book-contact">
-  Encontrou um erro, tem sugestão ou quer contribuir?<br>
-  Escreva para <a href="mailto:darciogm1@insper.edu.br">darciogm1@insper.edu.br</a>
-</div>
