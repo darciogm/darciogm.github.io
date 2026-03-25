@@ -100,7 +100,7 @@ A demonstração completa pode ser encontrada em Mas-Colell, Whinston e Green (1
 
     **Pense assim:** Imagine que você dá nota 10 para um prato de feijoada e nota 5 para uma salada. Isso não significa que a feijoada é "duas vezes mais gostosa" — apenas que você a prefere. Se um amigo desse nota 100 e 50, as preferências seriam as mesmas. O ranking é o que importa, não o placar.
 
-    **Por que isso importa:** Essa propriedade ordinal nos liberta de medir "felicidade" em unidades absolutas — basta saber o que o consumidor prefere para analisar suas escolhas.
+    **Por que isso importa:** Essa propriedade ordinal nos liberta de medir "felicidade" em unidades absolutas — basta saber o que o consumidor prefere para analisar suas escolhas. No Capítulo 7, veremos que a introdução de incerteza exige uma utilidade **cardinal** (VNM): a curvatura da função passa a ter significado econômico, determinando a aversão ao risco do agente.
 
 ---
 
@@ -381,6 +381,15 @@ Note que, quando \(\rho < 1\) (o caso economicamente relevante), o expoente \(\r
     | \(-5\) | \(0{,}17\) | \((0{,}5)^{-6} = 64\) | Quase complementares: compensação altíssima |
 
     À medida que \(\rho\) diminui (e \(\sigma\) cai), a TMS cresce explosivamente para cestas desequilibradas — o consumidor resiste cada vez mais a trocar o bem escasso. Para \(\rho \to -\infty\), a TMS diverge para infinito fora do vértice, recuperando os complementos perfeitos.
+
+!!! box-brasil "🇧🇷 Box Brasil 3.3 — Etanol versus gasolina: preferências CES reveladas nas bombas brasileiras"
+    **Contexto:** O Brasil oferece um laboratório natural único para observar a elasticidade de substituição entre bens de consumo. Desde a introdução dos veículos flex-fuel em 2003, motoristas brasileiros escolhem, a cada abastecimento, entre etanol hidratado e gasolina comum — bens que são substitutos próximos, mas não perfeitos (o etanol rende aproximadamente 70% da quilometragem por litro em relação à gasolina). A regra prática difundida entre consumidores — "abasteça etanol se o preço for inferior a 70% do preço da gasolina" — é, na essência, uma aplicação intuitiva da condição de otimização com preferências CES.
+
+    **Dados:** Segundo a ANP (Agência Nacional do Petróleo), a participação do etanol no consumo total de combustíveis leves oscila fortemente com o preço relativo. Em São Paulo, onde o etanol é mais barato (média de 65–70% do preço da gasolina em 2023), a participação do etanol atingiu cerca de 45% do volume total. No Rio de Janeiro e nos estados do Sul, onde a razão de preços frequentemente supera 75%, a participação do etanol caiu para 15–20%. Estimativas econométricas de Santos (2013, *Energy Economics*) e Salvo e Huse (2013, *Journal of Environmental Economics and Management*) encontraram elasticidades de substituição entre etanol e gasolina na faixa de \(\sigma \approx 3\) a \(5\) para proprietários de veículos flex — valores que situam esses combustíveis na região intermediária do espectro CES, entre a Cobb-Douglas (\(\sigma = 1\)) e os substitutos perfeitos (\(\sigma = \infty\)).
+
+    **Análise:** O caso brasileiro do etanol ilustra com precisão como o parâmetro \(\rho\) da função CES se manifesta em decisões reais. Se etanol e gasolina fossem substitutos perfeitos (\(\sigma \to \infty\)), observaríamos soluções de canto puras: 100% etanol ou 100% gasolina em cada estado, sem transição gradual. O fato de a participação variar *suavemente* com o preço relativo — em vez de saltar descontinuamente — revela que \(\sigma\) é alto, mas finito: diferenças na autonomia, na disponibilidade de postos, na percepção de desempenho do motor e em hábitos de consumo impedem a substituição perfeita. A curva de indiferença entre etanol e gasolina é convexa, mas relativamente "achatada", refletindo alta substituibilidade com fricções.
+
+    **Para refletir:** Se o governo aumentar a tributação sobre a gasolina em 10%, que mudança percentual na razão etanol/gasolina consumida você esperaria observar com \(\sigma = 4\)? Compare com o que ocorreria se \(\sigma = 1\) (Cobb-Douglas) ou \(\sigma = \infty\) (substitutos perfeitos).
 
 ### 3.6.5 Quase-linear
 
@@ -663,6 +672,68 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
     Vasconcellos e Garcia (2014) contextualizam os ciclos econômicos brasileiros que moldaram essas transformações nas escolhas de consumo.
 
     **Fonte**: IBGE, Pesquisa de Orçamentos Familiares (várias edições); Barros, R. P. de; Foguel, M. N.; Ulyssea, G. (orgs.). *Desigualdade de renda no Brasil: uma análise da queda recente*. Brasília: IPEA, 2007.
+
+!!! box-mundo "🌍 Box Mundo 3.3 — Preferência revelada em big data: dados de scanner de supermercados e testes do GARP"
+
+    **Contexto:** A teoria do consumidor desenvolvida neste capítulo repousa sobre axiomas — completude, transitividade, continuidade, monotonicidade — que são hipóteses sobre as preferências dos agentes. Mas como verificar empiricamente se consumidores reais se comportam de acordo com esses axiomas? A resposta clássica vem da teoria da preferência revelada (que será formalizada na Seção 5.9): se observarmos as escolhas de um consumidor em diferentes situações de preço e renda, podemos testar se essas escolhas são compatíveis com a maximização de alguma função de utilidade. O critério operacional é o **Axioma Generalizado da Preferência Revelada** (GARP, *Generalized Axiom of Revealed Preference*), formulado por Varian (1982): se as escolhas observadas satisfazem o GARP, então existe uma função de utilidade que as racionaliza. A revolução dos dados de scanner de supermercados — registros eletrônicos de cada item comprado por cada consumidor — abriu, a partir dos anos 2000, a possibilidade de testar essa hipótese com milhões de observações individuais.
+
+    **Dados:** Echenique, Lee e Shum (2011, *American Economic Review*) utilizaram dados de scanner do painel Homescan da Nielsen, que rastreia todas as compras de supermercado de uma amostra representativa de famílias americanas ao longo de vários anos. Com observações de preços e quantidades de centenas de produtos para cada família, os autores testaram o GARP individualmente para mais de 500 famílias. O resultado principal: apenas cerca de 5% das famílias apresentaram violações do GARP, e mesmo essas violações foram de magnitude pequena — medidas pelo índice de Afriat (1967), que quantifica o grau de inconsistência, as violações raramente ultrapassaram 1% do orçamento. Dean e Martin (2016, *American Economic Review*) confirmaram esses resultados usando dados experimentais com escolhas sobre cestas reais de bens, encontrando taxas de violação do GARP inferiores a 10%. Na Europa, Cherchye, De Rock e Vermeulen (2011, *Review of Economics and Statistics*) aplicaram testes de preferência revelada a microdados belgas e holandeses, concluindo que o modelo coletivo de consumo domiciliar (onde marido e mulher têm preferências distintas) racionaliza os dados significativamente melhor do que o modelo unitário — evidência de que a unidade de decisão importa para a validade dos axiomas.
+
+    **Análise:** Esses resultados fornecem suporte empírico notável para os axiomas apresentados na Seção 3.1: na grande maioria dos casos, as escolhas de consumo observadas em dados de alta frequência são compatíveis com a existência de uma função de utilidade racional. A taxa de violação de 5% é consistente com a evidência de intransitividade discutida no Box Mundo 3.1 — violações existem, mas são a exceção, não a regra. Do ponto de vista da Seção 3.7 (invariância ordinal), os testes de preferência revelada são particularmente elegantes: eles verificam se existe *alguma* função de utilidade compatível com os dados, sem impor uma forma funcional específica (Cobb-Douglas, CES, etc.) — exatamente porque a utilidade é ordinal e qualquer transformação monotônica preserva o ordenamento. A explosão de dados de scanner e de compras online oferece oportunidades sem precedentes para testar a teoria do consumidor em escala, transformando os axiomas deste capítulo de postulados filosóficos em hipóteses empiricamente verificáveis.
+
+    **Fonte:** Varian, H. R. (1982). The nonparametric approach to demand analysis. *Econometrica*, 50(4), 945–973. Echenique, F.; Lee, S.; Shum, M. (2011). The money pump as a measure of revealed preference violations. *American Economic Review*, 101(4), 1645–1651. Cherchye, L.; De Rock, B.; Vermeulen, F. (2011). The revealed preference approach to collective consumption behaviour. *Review of Economics and Statistics*, 93(1), 223–238.
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. O axioma de transitividade das preferências implica que:"
+    - (a) O consumidor sempre prefere mais a menos
+    - (b) Se $A \succsim B$ e $B \succsim C$, então $A \succsim C$
+    - (c) O consumidor consegue comparar quaisquer duas cestas
+    - (d) A utilidade marginal é sempre decrescente
+
+    ??? success "Resposta"
+        **(b)** Transitividade exige consistência nas ordenações: se A é pelo menos tão bom quanto B, e B pelo menos tão bom quanto C, então A deve ser pelo menos tão bom quanto C. A alternativa (a) descreve monotonicidade; (c) descreve completude; (d) é uma propriedade da função de utilidade, não um axioma sobre preferências.
+
+??? question "2. Se $u(x_1, x_2) = x_1^{0{,}5} x_2^{0{,}5}$ e $v = 2u + 10$, é correto afirmar que:"
+    - (a) $v$ representa preferências diferentes de $u$, pois os valores numéricos mudam
+    - (b) $v$ representa as mesmas preferências, pois é uma transformação monotônica crescente de $u$
+    - (c) $v$ só representa as mesmas preferências se a renda do consumidor não mudar
+    - (d) $v$ inverte a ordenação das cestas em relação a $u$
+
+    ??? success "Resposta"
+        **(b)** A função de utilidade é ordinal: qualquer transformação monotônica crescente $v = g(u)$ com $g' > 0$ preserva a ordenação das cestas e, portanto, representa as mesmas preferências. A alternativa (a) confunde valores cardinais com ordinais; (c) adiciona condição inexistente; (d) seria verdade apenas para transformações decrescentes.
+
+??? question "3. A Taxa Marginal de Substituição (TMS) entre dois bens mede:"
+    - (a) A razão entre os preços dos dois bens no mercado
+    - (b) A quantidade de um bem que o consumidor está disposto a abrir mão para obter uma unidade adicional do outro, mantendo a utilidade constante
+    - (c) A variação percentual na demanda de um bem quando o preço do outro varia
+    - (d) O custo de oportunidade de produzir um bem em vez do outro
+
+    ??? success "Resposta"
+        **(b)** A TMS é a inclinação da curva de indiferença e mede a taxa subjetiva de troca entre bens que mantém o consumidor indiferente. Matematicamente, $\text{TMS}_{12} = -dx_2/dx_1|_{u=\bar{u}} = \text{UMg}_1/\text{UMg}_2$. A alternativa (a) descreve a inclinação da restrição orçamentária; (c) descreve elasticidade cruzada; (d) refere-se à produção.
+
+??? question "4. As curvas de indiferença de preferências estritamente convexas são:"
+    - (a) Retas com inclinação constante
+    - (b) Convexas em relação à origem (curvadas para fora)
+    - (c) Côncavas em relação à origem (curvadas para dentro, 'arqueadas')
+    - (d) Círculos concêntricos
+
+    ??? success "Resposta"
+        **(c)** Preferências convexas implicam que médias são preferidas a extremos, gerando curvas de indiferença côncavas em relação à origem (convexas do ponto de vista do conjunto preferido). A TMS é decrescente em valor absoluto. A alternativa (a) descreve substitutos perfeitos; (b) descreve preferências côncavas (não convexas); (d) não é uma forma padrão.
+
+??? question "5. Qual das seguintes funções de utilidade representa preferências por complementos perfeitos?"
+    - (a) $u(x_1, x_2) = x_1 + x_2$
+    - (b) $u(x_1, x_2) = \min(x_1, x_2)$
+    - (c) $u(x_1, x_2) = x_1 \cdot x_2$
+    - (d) $u(x_1, x_2) = x_1^2 + x_2^2$
+
+    ??? success "Resposta"
+        **(b)** Complementos perfeitos são consumidos em proporções fixas; a utilidade é determinada pelo bem em menor quantidade relativa, representada pela função $\min$. As curvas de indiferença são em L. A alternativa (a) representa substitutos perfeitos; (c) representa preferências Cobb-Douglas; (d) representa preferências côncavas (não convexas), onde o consumidor prefere extremos a médias.
 
 ---
 

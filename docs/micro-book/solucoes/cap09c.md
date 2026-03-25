@@ -417,3 +417,173 @@ Esta expressão depende apenas de \(F\) e de \(N\), não do formato do leilão. 
 | **Eficiência** (\(b\) crescente, ganha quem tem maior valor) | Permite o argumento de envelope | Leilão de 1º preço com preço de reserva: o objeto pode não ser vendido mesmo com compradores com valores positivos — ineficiência que aumenta a receita esperada |
 
 ↩ [Voltar ao enunciado](../cap09c/index.md#ex-9c-8)
+
+---
+
+## ✏️ Exercício 9c.9 {#ex-9c-9}
+
+**Solução.**
+
+**(a) Interpretação como leilão *all-pay*:**
+
+O jogo é equivalente a um leilão *all-pay* com valores privados: o "lance" é o esforço \(e_i\), o "prêmio" é \(\theta_i\) (valor privado), e ambos os jogadores pagam seu lance independentemente de ganhar. A diferença em relação ao leilão *all-pay* padrão é que o prêmio é específico ao tipo (não um valor fixo), mas como cada jogador conhece seu próprio \(\theta_i\), a análise é análoga.
+
+**(b) BNE simétrico:**
+
+Buscamos \(e(\theta)\) crescente e diferenciável. O jogador \(i\) com tipo \(\theta\) escolhe esforço \(e\) para maximizar:
+
+\[
+\max_e \; \theta \cdot \Pr(e > e(\theta_j)) - e = \theta \cdot \Pr(\theta_j < e^{-1}(e)) - e
+\]
+
+Com \(\theta_j \sim U[0,1]\), temos \(\Pr(\theta_j < e^{-1}(e)) = e^{-1}(e)\).
+
+Suponha \(e(\theta) = \alpha \theta^2\). Então \(e^{-1}(e) = \sqrt{e/\alpha}\).
+
+O problema se torna:
+
+\[
+\max_e \; \theta \cdot \sqrt{e/\alpha} - e
+\]
+
+CPO: \(\theta \cdot \frac{1}{2\sqrt{\alpha e}} - 1 = 0 \implies e = \frac{\theta^2}{4\alpha}\).
+
+Para consistência: \(e(\theta) = \alpha \theta^2 = \frac{\theta^2}{4\alpha}\), logo \(\alpha = 1/2\).
+
+\[
+\boxed{e(\theta) = \frac{\theta^2}{2}}
+\]
+
+**(c) Esforço total esperado e "desperdício":**
+
+O esforço esperado de cada jogador é:
+
+\[
+E[e(\theta)] = E\left[\frac{\theta^2}{2}\right] = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}
+\]
+
+O esforço total esperado (dois jogadores) é \(2 \times 1/6 = 1/3\).
+
+O valor esperado do prêmio para o vencedor é \(E[\theta \cdot \mathbf{1}_{[\text{ganha}]}]\). Por simetria, cada jogador ganha com probabilidade 1/2 em média. O valor esperado do prêmio do vencedor é:
+
+\[
+E[\max(\theta_1, \theta_2)] \cdot 1 = \frac{2}{3}
+\]
+
+Porém, o vencedor recebe \(\theta_{\text{vencedor}}\), e o prêmio efetivo é \(E[\max(\theta_1, \theta_2)] = 2/3\).
+
+A "dissipação de rendas" é a razão entre esforço total e valor do prêmio: \((1/3)/(2/3) = 1/2\). Metade do valor do prêmio é dissipada em esforço — há desperdício de recursos, pois ambos os jogadores gastam esforço, mas apenas um obtém o prêmio.
+
+**(d) Aplicações:**
+
+- **Tournaments corporativos (Lazear e Rosen, 1981):** Em competições por promoção, funcionários investem esforço (horas extras, projetos especiais) para vencer a "corrida". O modelo *all-pay* captura o fato de que todos incorrem em custos, mas apenas um recebe a promoção. A dissipação de rendas implica que o custo total do esforço dos funcionários pode exceder o prêmio salarial da promoção — gerando ineficiência organizacional.
+
+- **Lobby político:** Firmas que competem por regulação favorável investem em atividades de lobby (consultores, contribuições de campanha). O modelo prevê que o investimento total em lobby cresce com o valor da regulação e com o número de competidores, mas a maior parte desse investimento é socialmente desperdiçada (rent-seeking). Tullock (1980) formalizou essa ideia usando exatamente a estrutura de leilão *all-pay*.
+
+↩ [Voltar ao enunciado](../cap09c/index.md#ex-9c-9)
+
+---
+
+## ✏️ Exercício 9c.10 {#ex-9c-10}
+
+**Solução.**
+
+**Dados:** \(N = 2\), \(v_i \sim U[0,1]\), \(v_0 = 0\).
+
+**(a) Receita sem preço de reserva:**
+
+No leilão de segundo preço sem reserva, \(b_i = v_i\) e a receita é o segundo maior valor:
+
+\[
+E[R_0] = E[v^{(2)}] = \frac{N-1}{N+1} = \frac{1}{3}
+\]
+
+**(b) Receita com preço de reserva \(r\):**
+
+Com preço de reserva \(r\), o objeto é vendido apenas se ao menos um licitante tem \(v_i \geq r\). Há três casos:
+
+1. **Ambos \(v_i < r\):** Probabilidade \(r^2\). Receita = 0 (objeto não vendido).
+
+2. **Exatamente um \(v_i \geq r\):** Probabilidade \(2r(1-r)\). O vencedor paga \(r\) (preço de reserva é o "segundo lance"). Receita = \(r\).
+
+3. **Ambos \(v_i \geq r\):** Probabilidade \((1-r)^2\). Receita = \(E[v^{(2)} | v^{(2)} \geq r]\).
+
+Para o caso 3, com \(v_i \sim U[0,1]\) condicionado em \(v_i \geq r\):
+
+\[
+E[\min(v_1, v_2) | v_1, v_2 \geq r] = r + \frac{1-r}{3} = \frac{3r + 1 - r}{3} = \frac{2r + 1}{3}
+\]
+
+A receita esperada total é:
+
+\[
+E[R(r)] = 0 \cdot r^2 + r \cdot 2r(1-r) + \frac{2r+1}{3} \cdot (1-r)^2
+\]
+
+\[
+= 2r^2(1-r) + \frac{(2r+1)(1-r)^2}{3}
+\]
+
+Expandindo e simplificando:
+
+\[
+E[R(r)] = 2r^2 - 2r^3 + \frac{(2r+1)(1 - 2r + r^2)}{3}
+\]
+
+\[
+= 2r^2 - 2r^3 + \frac{2r - 4r^2 + 2r^3 + 1 - 2r + r^2}{3}
+\]
+
+\[
+= 2r^2 - 2r^3 + \frac{1 - 3r^2 + 2r^3}{3}
+\]
+
+\[
+= 2r^2 - 2r^3 + \frac{1}{3} - r^2 + \frac{2r^3}{3}
+\]
+
+\[
+= r^2 - \frac{4r^3}{3} + \frac{1}{3}
+\]
+
+**(c) Preço de reserva ótimo:**
+
+CPO:
+
+\[
+\frac{dE[R]}{dr} = 2r - 4r^2 = 0 \implies 2r(1 - 2r) = 0
+\]
+
+As soluções são \(r = 0\) (mínimo local) e \(r = 1/2\). Verificando a CSO: \(\frac{d^2 E[R]}{dr^2} = 2 - 8r\). Em \(r = 1/2\): \(2 - 4 = -2 < 0\). Máximo.
+
+\[
+\boxed{r^* = \frac{1}{2}}
+\]
+
+**(d) Ganho de receita:**
+
+\[
+E[R(1/2)] = \frac{1}{4} - \frac{4 \cdot 1/8}{3} + \frac{1}{3} = \frac{1}{4} - \frac{1}{6} + \frac{1}{3} = \frac{3 - 2 + 4}{12} = \frac{5}{12}
+\]
+
+Ganho em relação ao leilão sem reserva: \(\frac{5/12 - 1/3}{1/3} = \frac{5/12 - 4/12}{4/12} = \frac{1/12}{4/12} = \frac{1}{4} = 25\%\).
+
+O preço de reserva ótimo aumenta a receita esperada em **25%** — um ganho substancial, obtido ao custo de ineficiência ocasional (25% de probabilidade de não vender o objeto).
+
+**(e) Conexão com Myerson:**
+
+O valor virtual com \(v \sim U[0,1]\) é:
+
+\[
+\psi(v) = v - \frac{1-F(v)}{f(v)} = v - \frac{1-v}{1} = 2v - 1
+\]
+
+O leilão ótimo de Myerson exclui licitantes com valor virtual negativo: \(\psi(v) < 0 \iff v < 1/2\). Com \(v_0 = 0\), a condição \(\psi(r^*) = v_0\) dá:
+
+\[
+2r^* - 1 = 0 \implies r^* = \frac{1}{2}
+\]
+
+Isso confirma que o preço de reserva ótimo encontrado no item (c) coincide exatamente com o do leilão ótimo de Myerson. O resultado é geral: para qualquer distribuição regular, o preço de reserva ótimo é o valor \(r\) tal que \(\psi(r) = v_0\) — ou seja, o valor virtual no preço de reserva iguala o valor de reserva do leiloeiro. \(\blacksquare\)
+
+↩ [Voltar ao enunciado](../cap09c/index.md#ex-9c-10)

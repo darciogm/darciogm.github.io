@@ -330,6 +330,12 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
     **Por que isso importa:** Essa lógica explica por que tantas MPEs brasileiras operam com prejuízo por meses antes de fechar — e por que o SEBRAE monitora a taxa de mortalidade empresarial nos primeiros cinco anos.
 
+<iframe src="../graficos/cap12/lucro-maximo.html" title="Figura 12.3 — Lucro maximo e excedente do produtor" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 12.3 — Lucro maximo e excedente do produtor.** Ajuste o preco \(p\) para visualizar a quantidade otima \(q^*\) onde \(p = \mathrm{CMg}\), o retangulo de lucro (ou prejuizo) sombreado, o excedente do produtor (area entre \(p\) e CMg) e a condicao de fechamento. Compare os tres regimes: lucro positivo (\(p \geq \mathrm{CTMe}_{\min}\)), prejuizo com operacao (\(\mathrm{CVMe}_{\min} \leq p < \mathrm{CTMe}_{\min}\)) e fechamento (\(p < \mathrm{CVMe}_{\min}\)).
+</div>
+
 ---
 
 !!! box-brasil "Box Brasil — Soja: quando o preço sobe, a área plantada responde"
@@ -752,6 +758,56 @@ A magnitude relativa desses dois efeitos é empiricamente relevante. Em indústr
     A alta mortalidade das MPEs pode ser entendida como o resultado de firmas que operam com \(p < \mathrm{CMe}_{\min}\) no longo prazo. No curto prazo, muitas continuam operando enquanto \(p > \mathrm{CVMe}_{\min}\) (cobrindo custos variáveis e parte dos fixos), mas quando os custos fixos (aluguéis, financiamentos) vencem, a firma é forçada a fechar. A decisão de Coase — fazer internamente ou comprar no mercado — também é relevante: muitas MPEs fracassam por tentarem internalizar atividades que seriam mais eficientes se terceirizadas, incorrendo em custos organizacionais que superam os custos de transação do mercado.
 
     Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. A condição fundamental de maximização de lucro da firma é:"
+    - (a) Receita total igual ao custo total ($RT = CT$)
+    - (b) Receita marginal igual ao custo marginal ($\text{RMg} = \text{CMg}$), com $\text{CMg}$ crescente
+    - (c) Preço igual ao custo médio ($p = \text{CMe}$)
+    - (d) Produção no ponto de custo médio mínimo
+
+    ??? success "Resposta"
+        **(b)** A firma maximiza lucro onde a receita adicional de uma unidade extra iguala o custo adicional, com a condição de segunda ordem exigindo que o CMg seja crescente nesse ponto ($\text{RMg}' < \text{CMg}'$). A alternativa (a) descreve lucro zero, não maximização; (c) também descreve lucro zero no longo prazo competitivo; (d) é o ponto de eficiência produtiva, não necessariamente de lucro máximo.
+
+??? question "2. Em concorrência perfeita, a curva de oferta de curto prazo da firma individual é:"
+    - (a) Toda a curva de custo marginal
+    - (b) A parte da curva de custo marginal acima do custo variável médio mínimo
+    - (c) A curva de custo médio total
+    - (d) Uma reta horizontal ao nível do preço de mercado
+
+    ??? success "Resposta"
+        **(b)** A firma produz onde $p = \text{CMg}$, mas só opera se $p \geq \text{CVMe}_{\min}$ (ponto de fechamento). Abaixo desse preço, a firma fecha e a oferta é zero. A alternativa (a) inclui a parte irrelevante abaixo do CVMe mínimo; (c) não é a curva de oferta; (d) descreve a curva de demanda que a firma enfrenta, não sua oferta.
+
+??? question "3. No equilíbrio competitivo de longo prazo com livre entrada e saída, o lucro econômico de cada firma é:"
+    - (a) Positivo, pois as firmas sobreviventes são eficientes
+    - (b) Zero — o preço iguala o custo médio mínimo de longo prazo
+    - (c) Negativo para firmas marginais
+    - (d) Indeterminado sem informação sobre elasticidades
+
+    ??? success "Resposta"
+        **(b)** Com livre entrada, lucros positivos atraem novas firmas, expandindo a oferta e reduzindo o preço até que $p = \text{CMe}_{\min}^{LP}$, eliminando os lucros econômicos. Simetricamente, prejuízos levam à saída. Lucro econômico zero não significa lucro contábil zero — inclui remuneração normal do capital. A alternativa (a) confunde lucro contábil com econômico.
+
+??? question "4. Em uma indústria de custos crescentes, a curva de oferta de longo prazo é:"
+    - (a) Horizontal — o preço de equilíbrio de longo prazo é constante
+    - (b) Negativamente inclinada
+    - (c) Positivamente inclinada — a expansão da indústria eleva os custos dos insumos e, portanto, o preço de equilíbrio
+    - (d) Vertical — a quantidade ofertada é fixa no longo prazo
+
+    ??? success "Resposta"
+        **(c)** Em indústrias de custos crescentes, a entrada de novas firmas aumenta a demanda por insumos especializados, elevando seus preços e deslocando as curvas de custo das firmas para cima. O preço de equilíbrio de longo prazo sobe com a quantidade. A alternativa (a) descreve indústria de custos constantes; (d) descreve oferta perfeitamente inelástica.
+
+??? question "5. A decisão de fechar (shut down) no curto prazo é diferente da decisão de sair (exit) no longo prazo porque:"
+    - (a) Ao fechar, a firma elimina seus custos fixos; ao sair, não
+    - (b) Ao fechar, a firma ainda incorre em custos fixos mas evita custos variáveis; ao sair, elimina todos os custos
+    - (c) Fechar e sair são decisões idênticas com nomes diferentes
+    - (d) A firma sempre prefere fechar a sair
+
+    ??? success "Resposta"
+        **(b)** No curto prazo, custos fixos são irrecuperáveis (sunk) — a firma os paga independentemente de operar ou não. A decisão de fechar compara receita com custos variáveis: fecha se $p < \text{CVMe}_{\min}$. No longo prazo, todos os custos são evitáveis: a firma sai se $p < \text{CMe}_{\min}^{LP}$. A alternativa (a) inverte — custos fixos são inescapáveis no curto prazo.
 
 ## 📋 Resumo do Capítulo
 

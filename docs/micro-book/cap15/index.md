@@ -143,6 +143,12 @@ O monopolista aplica um **markup** sobre o custo marginal que é inversamente pr
 
     **Por que isso importa:** O [CADE](https://www.gov.br/cade) usa medidas como o índice de Lerner para avaliar se fusões e aquisições criarão poder de mercado excessivo — como na análise da fusão que criou a Ambev.
 
+!!! warning "⚠️ Erro Comum"
+
+    **Achar que o monopolista pode operar na faixa inelástica da demanda.**
+
+    Um erro frequente é esquecer que o monopolista maximizador de lucro **nunca** produz na região onde \(|\varepsilon_p| < 1\). Na faixa inelástica, a receita marginal é negativa: ao reduzir a produção, a firma aumenta a receita *e* reduz o custo — logo, o lucro sobe. O monopolista sempre opera onde \(|\varepsilon_p| > 1\). Se uma questão de prova apresenta uma demanda com \(|\varepsilon_p| < 1\) no ponto calculado, revise o cálculo: algo está errado, ou trata-se de uma solução de canto.
+
 O exercício a seguir aplica as ferramentas recém-desenvolvidas a um problema numérico completo, ilustrando cada etapa do cálculo do equilíbrio de monopólio.
 
 ??? exercicio-resolvido "Exercício Resolvido 15.1 — Monopólio com demanda linear: preço, lucro e PPM"
@@ -748,6 +754,16 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
     Ambos os setores ilustram o dilema fundamental da regulação de monopólios naturais: garantir eficiência produtiva e preços acessíveis sem eliminar os incentivos ao investimento. Para o contexto institucional e fiscal da regulação de monopólios naturais no Brasil, ver Giambiagi & Além (2016).
 
+!!! box-brasil "🇧🇷 Box Brasil 15.3 — ANS e a regulação dos planos de saúde como controle de monopólio"
+
+    **Contexto:** A **Agência Nacional de Saúde Suplementar (ANS)**, criada pela Lei n.º 9.961/2000, regula o mercado de planos de saúde no Brasil — um setor com características de oligopólio concentrado e fortes assimetrias de informação. Em 2024, o setor atendia cerca de 51 milhões de beneficiários (aproximadamente 25% da população), movimentando mais de R$ 300 bilhões em receitas anuais. As quatro maiores operadoras (Hapvida-NotreDame Intermédica, Bradesco Saúde, SulAmérica e Amil) concentram mais de 35% do mercado, e em muitas regiões uma ou duas operadoras detêm posição dominante — configurando monopólios ou duopólios locais.
+
+    **Dados:** A ANS utiliza diversos instrumentos regulatórios que espelham os mecanismos discutidos neste capítulo: (i) **teto de reajuste** para planos individuais — análogo ao *price cap* (Seção 15.9), fixado anualmente pela ANS com base na variação de custos do setor (reajuste máximo de 6,91% em 2024); (ii) **rol de procedimentos obrigatórios** — que funciona como regulação de qualidade mínima, impedindo que operadoras reduzam custos eliminando coberturas essenciais; (iii) **ressarcimento ao SUS** — quando beneficiários de planos usam o sistema público, a operadora deve reembolsar o SUS, internalizando parte do custo social. A sinistralidade média do setor (razão entre despesas assistenciais e receitas de contraprestações) situou-se em torno de 85% em 2023, indicando margens operacionais comprimidas.
+
+    **Análise:** O mercado de planos de saúde combina duas falhas de mercado estudadas neste livro: **poder de mercado** (Capítulo 15) e **informação assimétrica** (Capítulo 19). A concentração regional confere às operadoras poder de precificação, enquanto a complexidade dos contratos gera assimetria entre operadora e beneficiário. A regulação da ANS enfrenta o dilema clássico de Tirole: sem informação perfeita sobre os custos das operadoras, o regulador não consegue distinguir ineficiência operacional de custos genuinamente elevados. O teto de reajuste para planos individuais protege consumidores cativos, mas pode desestimular a entrada de novos competidores e levar à deterioração da qualidade — exatamente o trade-off previsto pela teoria de regulação por price cap.
+
+    **Para refletir:** Os planos coletivos (empresariais e por adesão), que representam mais de 80% do mercado, não estão sujeitos ao teto de reajuste da ANS — seus preços são negociados livremente. Usando a teoria de discriminação de preços do Capítulo 15, analise: por que a ANS regula os reajustes individuais mas não os coletivos? A resposta envolve a diferença de poder de barganha (elasticidade da demanda) entre os dois segmentos.
+
 No gráfico interativo abaixo, visualize como diferentes regimes regulatórios afetam preço, quantidade e bem-estar em um monopólio natural com custo médio decrescente. Alterne entre os três regimes e observe os trade-offs.
 
 <iframe src="../graficos/cap15/regulacao-monopolio.html" title="Figura 15.4 — Regulação de monopólio natural" class="graph-iframe"></iframe>
@@ -874,6 +890,58 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. O monopolista maximiza lucro igualando receita marginal ao custo marginal. A receita marginal é menor que o preço porque:"
+    - (a) O monopolista opera com custos mais altos que firmas competitivas
+    - (b) Para vender uma unidade adicional, o monopolista deve reduzir o preço de todas as unidades, gerando um efeito negativo sobre a receita das unidades inframarginais
+    - (c) O governo taxa a receita do monopolista
+    - (d) A demanda pelo bem do monopolista é perfeitamente elástica
+
+    ??? success "Resposta"
+        **(b)** Diferentemente da firma competitiva (que é tomadora de preço), o monopolista enfrenta toda a curva de demanda. Vender mais exige reduzir o preço, o que diminui a receita das unidades já vendidas. Assim, $\text{RMg} = p + q \cdot dp/dq = p(1 + 1/\varepsilon_d) < p$. A alternativa (d) descreve concorrência perfeita, não monopólio.
+
+??? question "2. O índice de Lerner mede o poder de mercado como:"
+    - (a) $L = (p - \text{CMe})/p$
+    - (b) $L = (p - \text{CMg})/p = -1/\varepsilon_d$
+    - (c) $L = \text{lucro total}/\text{receita total}$
+    - (d) $L = \text{CMg}/p$
+
+    ??? success "Resposta"
+        **(b)** O índice de Lerner $L = (p - \text{CMg})/p$ mede o markup percentual sobre o custo marginal. Em equilíbrio, $L = -1/\varepsilon_d$: quanto menos elástica a demanda, maior o poder de mercado. Em concorrência perfeita, $L = 0$ ($p = \text{CMg}$). A alternativa (a) usa custo médio em vez de marginal; (c) é uma medida de lucratividade, não de poder de mercado.
+
+??? question "3. Na discriminação de preços de primeiro grau (perfeita), o monopolista:"
+    - (a) Cobra o mesmo preço de todos os consumidores
+    - (b) Cobra de cada consumidor exatamente sua disposição a pagar, extraindo todo o excedente do consumidor
+    - (c) Divide os consumidores em dois grupos e cobra preços diferentes
+    - (d) Reduz a quantidade abaixo do nível competitivo
+
+    ??? success "Resposta"
+        **(b)** Na discriminação perfeita, o monopolista conhece a disposição a pagar de cada consumidor e cobra preços personalizados. O excedente do consumidor é zero e todo o excedente vai para o monopolista. Curiosamente, a quantidade produzida é eficiente (igual à competitiva) — não há peso morto, embora a distribuição seja extremamente desigual. A alternativa (d) descreve o monopólio sem discriminação.
+
+??? question "4. Um monopólio natural ocorre quando:"
+    - (a) A firma detém uma patente sobre o produto
+    - (b) O custo médio é decrescente em toda a faixa relevante de demanda, de modo que uma única firma atende o mercado a custo menor do que duas ou mais
+    - (c) O governo concede exclusividade legal à firma
+    - (d) A firma possui o único recurso natural necessário à produção
+
+    ??? success "Resposta"
+        **(b)** O monopólio natural surge de economias de escala extremas: subaditividade de custos na faixa relevante. Duplicar a infraestrutura (ex.: rede elétrica, saneamento) seria socialmente custoso. A alternativa (a) descreve monopólio por patente; (c) descreve monopólio legal; (d) descreve monopólio por controle de recurso — todos são fontes de monopólio, mas não 'natural'.
+
+??? question "5. A regulação por preço-teto (price cap) de um monopólio natural, fixando $p = \text{CMe}$, resulta em:"
+    - (a) Lucro econômico positivo para a firma
+    - (b) Produção eficiente ao nível de custo marginal
+    - (c) Lucro econômico zero (second-best), mas quantidade inferior ao ótimo de primeiro melhor ($p = \text{CMg}$)
+    - (d) Prejuízo para a firma, exigindo subsídio
+
+    ??? success "Resposta"
+        **(c)** Fixar $p = \text{CMe}$ garante viabilidade financeira (lucro zero) mas a quantidade é menor que a de $p = \text{CMg}$. A alternativa (d) descreve o que ocorre quando se tenta impor $p = \text{CMg}$ em monopólio natural com custos médios decrescentes — nesse caso, $\text{CMg} < \text{CMe}$ e a firma tem prejuízo. A regulação por CMe é o second-best que evita esse problema.
+
+---
+
 ## 📋 Resumo do Capítulo
 
 - O monopólio surge quando barreiras à entrada (legais, naturais ou estratégicas) impedem a concorrência, permitindo que uma única firma fixe preços acima do custo marginal e obtenha lucros persistentes.
@@ -967,6 +1035,66 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     c) Se usa tarifa em duas partes atendendo apenas o tipo 1 (excluindo o tipo 2), encontre \((T^*, p^*)\) e compare os lucros.
 
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-5)
+
+<a id="ex-15-6"></a>
+??? exercicio-proposto "Exercício 15.6"
+    Um monopolista enfrenta a demanda \(p = 80 - 0{,}5q\) e tem custo total \(C(q) = 200 + 20q\).
+
+    a) Encontre a quantidade, o preço e o lucro de monopólio.
+
+    b) Calcule o índice de Lerner e verifique a relação \(L = 1/|\varepsilon_d|\).
+
+    c) Se a demanda mudar para \(p = 80 - 2q\) (mantendo o mesmo custo), recalcule o equilíbrio de monopólio e compare o poder de mercado nos dois casos.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-6)
+
+<a id="ex-15-7"></a>
+??? exercicio-proposto "Exercício 15.7"
+    Um monopolista pode praticar discriminação de preços. A demanda individual de cada consumidor é \(q = 10 - p\) e há 50 consumidores idênticos. O custo marginal é constante \(c = 2\).
+
+    a) Calcule o lucro sob preço uniforme de monopólio (sem discriminação).
+
+    b) Calcule o lucro sob discriminação de primeiro grau (preços personalizados perfeitos).
+
+    c) Compare os excedentes do consumidor e do produtor nos dois casos. Há perda de peso morto sob discriminação perfeita?
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-7)
+
+<a id="ex-15-8"></a>
+??? exercicio-proposto "Exercício 15.8"
+    Um monopolista natural opera com custo total \(C(q) = 500 + 2q\) e demanda \(p = 52 - q\).
+
+    a) Calcule o resultado do monopólio não regulado (preço, quantidade, lucro).
+
+    b) Calcule o resultado sob regulação de custo marginal (\(p = CMg\)). A firma é viável?
+
+    c) Calcule o resultado sob regulação de custo médio (\(p = CMe\)) e determine o subsídio necessário (se houver) para viabilizar a firma em cada regime regulatório.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-8)
+
+<a id="ex-15-9"></a>
+??? exercicio-proposto "Exercício 15.9"
+    Considere um monopolista com custo marginal constante \(c = 10\) e demanda \(p = 100 - 2q\).
+
+    a) Calcule o equilíbrio de monopólio e a perda de peso morto (DWL).
+
+    b) Calcule a DWL como fração da receita do monopolista e como fração do excedente total competitivo.
+
+    c) Suponha que o custo marginal suba para \(c' = 30\). Recalcule a DWL e mostre como ela varia com o nível do custo marginal. Interprete.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-9)
+
+<a id="ex-15-10"></a>
+??? exercicio-proposto "Exercício 15.10"
+    Um monopolista de parque de diversões enfrenta consumidores idênticos, cada um com demanda por brinquedos \(q = 24 - 2p\), onde \(p\) é o preço por brinquedo. O custo marginal de cada brinquedo é \(c = 2\). O monopolista usa uma tarifa em duas partes: cobra uma entrada fixa \(T\) e um preço por brinquedo \(p\).
+
+    a) Encontre a tarifa ótima em duas partes \((T^*, p^*)\) e o lucro por consumidor.
+
+    b) Compare com o lucro que o monopolista obteria usando apenas preço uniforme (sem entrada).
+
+    c) Suponha agora que haja dois tipos de consumidores: tipo A com demanda \(q_A = 24 - 2p\) e tipo B com demanda \(q_B = 12 - 2p\), em proporções iguais. Encontre a tarifa em duas partes ótima que atenda ambos os tipos.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-10)
 
 ---
 
@@ -1100,6 +1228,26 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Conexão com o capítulo.** O artigo desafia a intuição de que mais concorrência sempre reduz diferenças de preço. Ele mostra que a discriminação de preços (Seção 15.7) não é exclusividade do monopólio — firmas com algum poder de mercado em oligopólios também a praticam intensamente. Esse resultado antecipa temas do Capítulo 16 (Oligopólio) e conecta-se diretamente ao Box Brasil sobre passagens aéreas.
 
+??? pesquisa "Wallsten, S. (2001). [An Econometric Analysis of Telecom Competition, Privatization, and Regulation in Africa and Latin America](https://doi.org/10.1111/1468-2354.t01-1-00106). *Journal of Industrial Economics*, 49(1), 1–19."
+    **DOI:** [10.1111/1468-2354.t01-1-00106](https://doi.org/10.1111/1468-2354.t01-1-00106)
+
+    **Contexto.** A Seção 15.8 discute a regulação de monopólios naturais em teoria. Wallsten (2001) fornece evidência empírica crucial sobre os efeitos reais da desregulamentação e privatização no setor de telecomunicações — um dos exemplos mais importantes de monopólio natural regulado do século XX.
+
+    **Metodologia.** O autor utiliza dados em painel de 30 países da África e da América Latina entre 1984 e 1997, período em que muitas nações promoveram reformas regulatórias no setor de telecomunicações (privatização, criação de agências reguladoras independentes e abertura à competição). A estratégia empírica explora a variação temporal e entre países nessas reformas para identificar seus efeitos sobre investimento, acesso (linhas per capita), qualidade do serviço e tarifas.
+
+    **Resultados.** A privatização combinada com a entrada de concorrentes aumentou significativamente o investimento em telecomunicações e o número de linhas telefônicas per capita. No entanto, a privatização *sem* introdução de competição — isto é, a mera transferência do monopólio estatal para um monopólio privado — teve efeitos muito menores ou nulos sobre o bem-estar dos consumidores. A criação de agências reguladoras independentes também se mostrou relevante para a credibilidade das reformas e a atração de investimento privado.
+
+    **Conexão com o capítulo.** O artigo conecta-se diretamente à análise de regulação de monopólios naturais (Seção 15.8) e ao Box Brasil 15.2 sobre concessões de serviços públicos no Brasil. Ele ilustra empiricamente o trade-off entre eficiência alocativa e viabilidade financeira discutido nos Exercícios 15.4 e 15.8, mostrando que a estrutura regulatória — não apenas a propriedade — determina os resultados de bem-estar.
+
+---
+
+!!! tip "🤖 Exercício com IA"
+    **IA.3 — Deadweight Loss do Monopólio**
+
+    Peça à IA para calcular o deadweight loss de um monopólio com demanda $P = 100 - 2Q$ e $CMg = 20$. Depois peça para ela comparar com discriminação de preços de 1º grau. A IA distinguiu corretamente os excedentes? Desenhe os gráficos para confirmar.
+
+    [:material-arrow-right: Ver exercício completo](../exercicios-ia.md#ia-3)
+
 ---
 
 ## 📚 Referências do Capítulo
@@ -1122,3 +1270,4 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 - Spence, Michael. 1975. "[Monopoly, Quality, and Regulation.](https://doi.org/10.2307/3003237)" *Bell Journal of Economics* 6 (2): 417–429.
 - Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press. Caps. 1–3.
 - Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Caps. 14, 24.
+- Wallsten, Scott. 2001. "[An Econometric Analysis of Telecom Competition, Privatization, and Regulation in Africa and Latin America.](https://doi.org/10.1111/1468-2354.t01-1-00106)" *Journal of Industrial Economics* 49 (1): 1–19.

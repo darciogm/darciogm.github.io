@@ -661,6 +661,16 @@ A intuição por trás desses resultados é simples e poderosa: o lado mais inel
 !!! example "Incidência tributária no Brasil: ICMS sobre combustíveis"
     Até 2022, o ICMS sobre combustíveis no Brasil era cobrado *ad valorem* e variava entre estados, com alíquotas efetivas de 25% a 34% sobre a gasolina. A Lei Complementar 192/2022 unificou o ICMS em valor fixo por litro. Como a demanda de combustíveis é relativamente inelástica no curto prazo (\(|\varepsilon_D| \approx 0{,}1\) a \(0{,}3\), segundo estimativas do [IPEA](https://www.ipea.gov.br)) e a oferta de derivados é mais elástica, o modelo prevê que a maior parte da carga tributária recaia sobre os consumidores — o que é consistente com a evidência empírica de que variações no ICMS são quase integralmente repassadas aos preços na bomba ([ANP](https://www.gov.br/anp), Boletim de Preços).
 
+!!! box-brasil "🇧🇷 Box Brasil 13.3 — Reforma Tributária de 2023: IBS/CBS e a racionalização da incidência"
+
+    **Contexto:** A Emenda Constitucional n.º 132/2023 e a Lei Complementar n.º 214/2025 instituíram a maior reforma tributária sobre o consumo da história brasileira, substituindo cinco tributos — PIS, Cofins, IPI (federais), ICMS (estadual) e ISS (municipal) — por dois: o **IBS** (Imposto sobre Bens e Serviços, subnacional) e a **CBS** (Contribuição sobre Bens e Serviços, federal), ambos operando como um IVA (Imposto sobre Valor Agregado) dual e não cumulativo. A alíquota de referência combinada foi estimada entre 26% e 28%, com transição gradual de 2026 a 2033.
+
+    **Dados:** O sistema anterior era marcado pela cumulatividade (tributo sobre tributo), guerra fiscal entre estados (incentivos de ICMS), e complexidade administrativa — o Brasil gastava em média 1.501 horas/ano em compliance tributário, segundo o *Doing Business* do Banco Mundial (2020), o pior desempenho do mundo. Estimativas do Ministério da Fazenda e do IPEA indicam que a reforma pode elevar o PIB em 2,4% a 12% no longo prazo, via eliminação de distorções alocativas. A não cumulatividade plena elimina o efeito cascata que encarecia insumos intermediários e penalizava cadeias produtivas longas (indústria, construção).
+
+    **Análise:** Pela ótica da incidência tributária (Seção 13.11), a reforma altera a **eficiência** da arrecadação sem necessariamente mudar a **incidência final** — que continua determinada pelas elasticidades de oferta e demanda. Porém, ao eliminar a cumulatividade, a reforma reduz a **cunha tributária efetiva** sobre bens com cadeias produtivas longas, redistribuindo a carga entre setores: serviços (cadeias curtas, baixo uso de insumos) tendem a ter aumento de carga, enquanto a indústria (cadeias longas) tende a ter alívio. A alíquota reduzida para saúde, educação e alimentos da cesta básica (com cashback para famílias de baixa renda) é uma tentativa de mitigar impactos regressivos — reconhecendo que, para bens de demanda inelástica consumidos proporcionalmente mais pelos pobres, a carga econômica recai desproporcionalmente sobre eles.
+
+    **Para refletir:** Se a incidência econômica independe da incidência legal (Teorema da Seção 13.11), por que a reforma tributária — que muda a *estrutura* legal dos tributos — pode ter efeitos reais sobre eficiência e distribuição? A resposta está na eliminação de distorções: cumulatividade, guerra fiscal e complexidade administrativa criam perdas de peso morto que a reforma reduz, mesmo sem alterar quem efetivamente paga.
+
 !!! box-mundo "🌍 Box Mundo 13.3 — Quem paga o imposto corporativo? Evidência de países da OCDE sobre incidência capital vs. trabalho"
 
     **Contexto:** A tributação sobre o lucro das empresas (*corporate income tax*) é frequentemente apresentada no debate público como um imposto "sobre os ricos" ou "sobre o capital". Mas a análise de incidência da Seção 13.11 nos ensina que a incidência legal (quem recolhe) pode diferir radicalmente da incidência econômica (quem efetivamente arca com o ônus). No caso do imposto corporativo, a questão é particularmente complexa: o ônus pode recair sobre os acionistas (via menor retorno ao capital), sobre os trabalhadores (via salários menores) ou sobre os consumidores (via preços mais altos).
@@ -789,6 +799,56 @@ Um resultado que merece destaque na Tabela 13.2 é que o efeito do preço máxim
     | 2023/24 | 155,3 | 120,50 | 101,2 |
 
     Observe a estática comparativa em ação: na safra 2020/21, choques positivos de demanda global (recuperação pós-pandemia, recomposição de estoques chineses) combinados com câmbio depreciado elevaram drasticamente o preço interno. Nas safras seguintes, a resposta da oferta (expansão de área) gradualmente pressionou os preços para baixo — uma ilustração da dinâmica de ajuste de longo prazo em indústria de custos crescentes.
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. A incidência econômica de um imposto (quem realmente paga) depende:"
+    - (a) Exclusivamente de quem o governo designa como pagador legal
+    - (b) Das elasticidades relativas de oferta e demanda — o lado mais inelástico suporta a maior parcela
+    - (c) Apenas do valor absoluto do imposto
+    - (d) Da eficiência do sistema de arrecadação
+
+    ??? success "Resposta"
+        **(b)** A incidência econômica independe da incidência legal (quem recolhe o tributo). O ônus recai mais sobre o lado do mercado com menor elasticidade, pois esse lado tem menor capacidade de ajustar quantidade em resposta ao preço. Se a oferta é perfeitamente elástica, o consumidor paga 100% do imposto; se a demanda é perfeitamente inelástica, idem.
+
+??? question "2. O peso morto (deadweight loss) de um imposto por unidade $t$ em um mercado competitivo é aproximadamente:"
+    - (a) Proporcional a $t$ — dobrar o imposto dobra o peso morto
+    - (b) Proporcional a $t^2$ — dobrar o imposto quadruplica o peso morto
+    - (c) Constante independentemente de $t$
+    - (d) Negativo quando a demanda é inelástica
+
+    ??? success "Resposta"
+        **(b)** O peso morto é a área do triângulo de Harberger, aproximadamente $\frac{1}{2} t \cdot \Delta q$. Como $\Delta q$ é proporcional a $t$, o peso morto é proporcional a $t^2$. Isso é a 'regra do quadrado': dobrar a alíquota quadruplica a perda de eficiência. A alternativa (a) subestima o dano de impostos altos; (d) é incorreta — o peso morto é sempre não negativo.
+
+??? question "3. A regra de Ramsey para tributação ótima prescreve que, para minimizar o peso morto total:"
+    - (a) Todos os bens devem ser taxados com a mesma alíquota
+    - (b) Bens com demanda mais inelástica devem receber alíquotas mais altas (regra da elasticidade inversa)
+    - (c) Bens de luxo devem ser isentos de impostos
+    - (d) Apenas bens com externalidades negativas devem ser taxados
+
+    ??? success "Resposta"
+        **(b)** A regra de Ramsey mostra que o peso morto é minimizado quando as alíquotas são proporcionais ao inverso da elasticidade-preço: bens com demanda inelástica suportam alíquotas maiores porque a distorção na quantidade é menor. A alternativa (a) é subótima; (c) pode conflitar com eficiência; (d) descreve tributação corretiva (Pigou), não Ramsey.
+
+??? question "4. Um subsídio a um bem gera peso morto porque:"
+    - (a) Reduz a receita do governo, o que é sempre ineficiente
+    - (b) Estimula a produção além do nível eficiente — unidades cujo custo marginal excede o benefício marginal são produzidas
+    - (c) Transfere renda dos pobres para os ricos
+    - (d) Aumenta o preço para o consumidor
+
+    ??? success "Resposta"
+        **(b)** Um subsídio reduz o preço efetivo, aumentando a quantidade acima do nível competitivo. As unidades adicionais têm custo social (CMg) superior ao benefício social (disposição a pagar), gerando ineficiência. O peso morto é o triângulo entre as curvas de oferta e demanda, análogo ao do imposto. A alternativa (d) inverte o efeito; (a) confunde custo fiscal com ineficiência.
+
+??? question "5. Se a oferta de um bem é perfeitamente inelástica (vertical), a imposição de um imposto por unidade resulta em:"
+    - (a) Peso morto máximo, pois toda a produção é eliminada
+    - (b) Nenhum peso morto — o imposto é integralmente absorvido pelo produtor sem distorcer quantidades
+    - (c) Peso morto igual à receita tributária
+    - (d) Divisão igualitária do ônus entre produtor e consumidor
+
+    ??? success "Resposta"
+        **(b)** Com oferta perfeitamente inelástica, a quantidade ofertada não muda com o preço. O imposto é 100% absorvido pelo produtor (preço ao consumidor não muda, preço ao produtor cai em $t$) e não há distorção na alocação, logo peso morto é zero. É um imposto sobre rendas econômicas puras. A alternativa (a) confunde inelasticidade com eliminação da produção.
 
 ## 📋 Resumo do Capítulo
 

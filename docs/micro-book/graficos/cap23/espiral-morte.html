@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+  Espiral da Morte em Mercados de Seguros — Simulacao Interativa
+  Library: Plotly.js
+  Chapter 23 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espiral da Morte — Selecao Adversa em Seguros</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #plotly-chart { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #plotly-chart { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotly-chart"></div>
+  <div class="controls">
+    <h3>Parametros</h3>
+    <div class="slider-group">
+      <label>Populacao \(N\): <span class="val" id="val-N">1000</span></label>
+      <input type="range" id="slider-N" min="100" max="2000" step="100" value="1000">
+    </div>
+    <div class="slider-group">
+      <label>Risco medio \(\bar{\pi}\): <span class="val" id="val-pi">0.15</span></label>
+      <input type="range" id="slider-pi" min="0.05" max="0.40" step="0.01" value="0.15">
+    </div>
+    <div class="slider-group">
+      <label>Dispersao de risco \(\sigma\): <span class="val" id="val-sig">0.10</span></label>
+      <input type="range" id="slider-sig" min="0.02" max="0.20" step="0.01" value="0.10">
+    </div>
+    <div class="slider-group">
+      <label>Loading factor \(\lambda\): <span class="val" id="val-lam">1.20</span></label>
+      <input type="range" id="slider-lam" min="1.00" max="1.60" step="0.05" value="1.20">
+    </div>
+    <div class="slider-group">
+      <label>Perda \(L\): <span class="val" id="val-L">50000</span></label>
+      <input type="range" id="slider-L" min="10000" max="100000" step="5000" value="50000">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  var MAX_ROUNDS = 20;
+
+  function getState() {
+    return {
+      N: parseInt(document.getElementById('slider-N').value),
+      piMean: parseFloat(document.getElementById('slider-pi').value),
+      sigma: parseFloat(document.getElementById('slider-sig').value),
+      lambda: parseFloat(document.getElementById('slider-lam').value),
+      L: parseFloat(document.getElementById('slider-L').value)
+    };
+  }
+
+  function simulate(s) {
+    // Generate N individuals with risk pi_i ~ Uniform(piMean - sigma, piMean + sigma)
+    // Each individual i buys insurance iff: pi_i * L * riskAversion >= premium
+    // Simplification: individual buys iff expected cost pi_i * L * willingness >= P
+    // willingness = 1 + riskPremium, approximate as 1.3 for all
+    var riskAversion = 1.3;
+    var piMin = Math.max(0.01, s.piMean - s.sigma);
+    var piMax = Math.min(0.95, s.piMean + s.sigma);
+
+    // Create sorted array of risk types (uniform distribution)
+    var risks = [];
+    for (var i = 0; i < s.N; i++) {
+      risks.push(piMin + (piMax - piMin) * i / (s.N - 1));
+    }
+
+    var rounds = [];
+    var premiums = [];
+    var insuredCounts = [];
+    var insuredPct = [];
+
+    // Initial premium: actuarially fair for whole population * loading
+    var avgRisk = risks.reduce(function(a,b){return a+b;}, 0) / risks.length;
+    var premium = s.lambda * avgRisk * s.L;
+
+    for (var t = 0; t < MAX_ROUNDS; t++) {
+      rounds.push(t + 1);
+      premiums.push(premium);
+
+      // Who buys? Individual buys if willingness to pay >= premium
+      // WTP_i = pi_i * L * riskAversion
+      var insured = [];
+      for (var j = 0; j < risks.length; j++) {
+        var wtp = risks[j] * s.L * riskAversion;
+        if (wtp >= premium) {
+          insured.push(risks[j]);
+        }
+      }
+
+      insuredCounts.push(insured.length);
+      insuredPct.push(insured.length / s.N * 100);
+
+      if (insured.length === 0) {
+        // Market collapsed — fill remaining rounds
+        for (var k = t + 1; k < MAX_ROUNDS; k++) {
+          rounds.push(k + 1);
+          premiums.push(premium);
+          insuredCounts.push(0);
+          insuredPct.push(0);
+        }
+        break;
+      }
+
+      // New premium: loading * average cost of insured pool
+      var avgCost = insured.reduce(function(a,b){return a+b;}, 0) / insured.length * s.L;
+      var newPremium = s.lambda * avgCost;
+
+      // Check convergence
+      if (Math.abs(newPremium - premium) < 1) {
+        // Fill remaining rounds with steady state
+        for (var k = t + 1; k < MAX_ROUNDS; k++) {
+          rounds.push(k + 1);
+          premiums.push(newPremium);
+          insuredCounts.push(insured.length);
+          insuredPct.push(insured.length / s.N * 100);
+        }
+        premium = newPremium;
+        break;
+      }
+
+      premium = newPremium;
+    }
+
+    return {
+      rounds: rounds,
+      premiums: premiums,
+      insuredCounts: insuredCounts,
+      insuredPct: insuredPct,
+      initialPop: s.N,
+      finalInsured: insuredCounts[insuredCounts.length - 1],
+      finalPremium: premiums[premiums.length - 1],
+      fairPremium: s.lambda * avgRisk * s.L
+    };
+  }
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-N').textContent = s.N;
+    document.getElementById('val-pi').textContent = s.piMean.toFixed(2);
+    document.getElementById('val-sig').textContent = s.sigma.toFixed(2);
+    document.getElementById('val-lam').textContent = s.lambda.toFixed(2);
+    document.getElementById('val-L').textContent = s.L.toFixed(0);
+
+    var sim = simulate(s);
+
+    // Two y-axes: premium (left) and % insured (right)
+    var tracePremium = {
+      x: sim.rounds, y: sim.premiums,
+      mode: 'lines+markers', name: 'Premio (R$)',
+      line: { color: '#C8102E', width: 2.5 },
+      marker: { size: 5 },
+      yaxis: 'y1'
+    };
+
+    var traceInsured = {
+      x: sim.rounds, y: sim.insuredPct,
+      mode: 'lines+markers', name: '% Segurados',
+      line: { color: '#00897b', width: 2.5 },
+      marker: { size: 5 },
+      yaxis: 'y2'
+    };
+
+    // Fair premium line
+    var traceFair = {
+      x: [1, MAX_ROUNDS], y: [sim.fairPremium, sim.fairPremium],
+      mode: 'lines', name: 'Premio atuarial (pop. completa)',
+      line: { color: '#1565c0', width: 1.5, dash: 'dot' },
+      yaxis: 'y1'
+    };
+
+    var layout = {
+      margin: { t: 30, r: 60, b: 50, l: 65 },
+      xaxis: { title: 'Rodada', dtick: 2, range: [0.5, MAX_ROUNDS + 0.5] },
+      yaxis: { title: 'Premio (R$)', titlefont: { color: '#C8102E' }, tickfont: { color: '#C8102E' }, side: 'left', rangemode: 'tozero' },
+      yaxis2: { title: '% Segurados', titlefont: { color: '#00897b' }, tickfont: { color: '#00897b' }, side: 'right', overlaying: 'y', range: [0, 105] },
+      legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 10 } },
+      font: { family: 'CMU Serif, Georgia, serif', size: 12 },
+      plot_bgcolor: '#fff',
+      paper_bgcolor: '#fff'
+    };
+
+    Plotly.react('plotly-chart', [tracePremium, traceFair, traceInsured], layout, { responsive: true, displayModeBar: false });
+
+    // Info box
+    var collapsed = sim.finalInsured === 0;
+    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Resultado da Espiral</div>';
+    html += '<div style="margin-top:0.4rem;">';
+    html += 'Populacao inicial: ' + sim.initialPop + '<br>';
+    html += 'Premio atuarial justo: R$ ' + sim.fairPremium.toFixed(0) + '<br>';
+    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+    if (collapsed) {
+      html += '<b style="color:#C8102E;">COLAPSO TOTAL</b><br>';
+      html += 'O mercado desapareceu completamente.<br>';
+      html += 'Nenhum individuo aceita o premio final.<br>';
+    } else {
+      html += 'Segurados finais: <b>' + sim.finalInsured + '</b> (' + (sim.finalInsured / sim.initialPop * 100).toFixed(0) + '%)<br>';
+      html += 'Premio final: <b style="color:#C8102E;">R$ ' + sim.finalPremium.toFixed(0) + '</b><br>';
+      html += 'Aumento do premio: ' + ((sim.finalPremium / sim.fairPremium - 1) * 100).toFixed(0) + '%<br>';
+    }
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    html += 'A cada rodada, baixo-risco sai e o custo medio sobe. Aumente \\(\\sigma\\) e \\(\\lambda\\) para ver o colapso.';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-N').value = 1000;
+    document.getElementById('slider-pi').value = 0.15;
+    document.getElementById('slider-sig').value = 0.10;
+    document.getElementById('slider-lam').value = 1.20;
+    document.getElementById('slider-L').value = 50000;
+    update();
+  }
+
+  ['slider-N','slider-pi','slider-sig','slider-lam','slider-L'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

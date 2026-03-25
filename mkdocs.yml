@@ -93,17 +93,36 @@ nav:
       - "Cap. 14 — Equilíbrio Geral": micro-book/cap14/index.md
     - Poder de Mercado:
       - "Cap. 15 — Sem Concorrente, Sem Piedade": micro-book/cap15/index.md
-      - "Cap. 16 — Quando Gigantes Competem": micro-book/cap16/index.md
+      - "Cap. 16 — Oligopólio e Organização Industrial": micro-book/cap16/index.md
     - Fatores e Tempo:
       - "Cap. 17 — Economia do Trabalho": micro-book/cap17/index.md
       - "Cap. 18 — A Paciência Tem Preço": micro-book/cap18/index.md
     - Falhas de Mercado:
       - "Cap. 19 — Limões, Sinais e Contratos": micro-book/cap19/index.md
       - "Cap. 20 — Fumaça, Caronas e Tragédias": micro-book/cap20/index.md
+    - Economia Digital:
+      - "Cap. 21 — Plataformas, Redes e Dados": micro-book/cap21/index.md
+    - Métodos:
+      - "Cap. 22 — O Laboratório do Economista": micro-book/cap22/index.md
+    - Economia da Saúde:
+      - "Cap. 23 — Microeconomia da Saúde": micro-book/cap23/index.md
+    - Economia Ambiental:
+      - "Cap. 24 — Mercados, Clima e Sustentabilidade": micro-book/cap24/index.md
+    - "Cadernos Python": micro-book/notebooks/index.md
+    - "Mapa do Livro": micro-book/mapa-livro.md
+    - "Guia de Estudo": micro-book/guia-estudo.md
+    - "Guia do Instrutor": micro-book/guia-instrutor.md
+    - "Exercícios com IA": micro-book/exercicios-ia.md
+    - "Compilado ANPEC": micro-book/anpec-compilado.md
+    - Recursos:
+      - "Recursos para Download": micro-book/recursos/index.md
+      - "Versão para Impressão / PDF": micro-book/recursos/versao-impressao.md
+    - "English Summary": micro-book/english-summary.md
     - Referência:
       - micro-book/referencia/index.md
       - Notação: micro-book/notacao.md
       - Glossário: micro-book/glossario.md
+      - Índice Remissivo: micro-book/indice-remissivo.md
       - Referências: micro-book/referencias.md
 
 plugins:

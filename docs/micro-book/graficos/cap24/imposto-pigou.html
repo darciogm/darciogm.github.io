@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--
+  Imposto Pigouviano vs Cap-and-Trade — Simulacao Interativa
+  Library: JSXGraph
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imposto Pigouviano vs Cap-and-Trade</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jsxbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: 0.8rem; display: flex; gap: 0.5rem; }
+    .toggle-btn { flex: 1; padding: 0.4rem; border: 1px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; cursor: pointer; font-size: 0.82rem; font-family: inherit; text-align: center; }
+    .toggle-btn.active { background: #C8102E; color: #fff; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jsxbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jsxbox"></div>
+  <div class="controls">
+    <h3>Instrumento</h3>
+    <div class="toggle-group">
+      <button class="toggle-btn active" id="btn-tax" onclick="setMode('tax')">Imposto Pigou</button>
+      <button class="toggle-btn" id="btn-cap" onclick="setMode('cap')">Cap-and-Trade</button>
+    </div>
+    <div class="slider-group" id="group-tax">
+      <label>Imposto \(t\): <span class="val" id="val-t">30</span></label>
+      <input type="range" id="slider-t" min="0" max="80" step="2" value="30">
+    </div>
+    <div class="slider-group" id="group-cap" style="display:none;">
+      <label>Cap \(\bar{E}\): <span class="val" id="val-cap">60</span></label>
+      <input type="range" id="slider-cap" min="10" max="100" step="5" value="60">
+    </div>
+    <div class="slider-group">
+      <label>Custo externo unitario \(e\): <span class="val" id="val-e">30</span></label>
+      <input type="range" id="slider-e" min="5" max="60" step="5" value="30">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  var mode = 'tax';
+  var board;
+
+  // Model:
+  // Demand (inverse): P(Q) = 120 - Q
+  // PMgC (private marginal cost): PMgC(Q) = 20 + 0.5*Q
+  // External cost per unit: e (constant)
+  // CMgS (social marginal cost): CMgS(Q) = PMgC(Q) + e = 20 + 0.5*Q + e
+
+  // Market equilibrium (no intervention): P = PMgC => 120 - Q = 20 + 0.5Q => Q_m = 200/3 ~ 66.7
+  // Social optimum: P = CMgS => 120 - Q = 20 + 0.5Q + e => Q* = (100-e)/1.5
+
+  function setMode(m) {
+    mode = m;
+    document.getElementById('btn-tax').className = 'toggle-btn' + (m === 'tax' ? ' active' : '');
+    document.getElementById('btn-cap').className = 'toggle-btn' + (m === 'cap' ? ' active' : '');
+    document.getElementById('group-tax').style.display = m === 'tax' ? 'block' : 'none';
+    document.getElementById('group-cap').style.display = m === 'cap' ? 'block' : 'none';
+    updateBoard();
+  }
+
+  function initBoard() {
+    board = JXG.JSXGraph.initBoard('jsxbox', {
+      boundingbox: [-8, 135, 110, -10],
+      axis: false,
+      showNavigation: false,
+      showCopyright: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[100,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 }
+    });
+    board.create('axis', [[0,0],[0,130]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 }
+    });
+    board.create('text', [55, -7, 'Quantidade (Q)'], { fontSize: 11, anchorX: 'middle' });
+    board.create('text', [-6, 70, 'Preco / Custo'], { fontSize: 11, anchorX: 'middle', rotate: 90 });
+  }
+
+  function updateBoard() {
+    // Clear dynamic elements
+    while (board.objectsList.length > 6) {
+      board.removeObject(board.objectsList[board.objectsList.length - 1]);
+    }
+
+    var e = parseFloat(document.getElementById('slider-e').value);
+    var tax = parseFloat(document.getElementById('slider-t').value);
+    var cap = parseFloat(document.getElementById('slider-cap').value);
+
+    document.getElementById('val-e').textContent = e.toFixed(0);
+    document.getElementById('val-t').textContent = tax.toFixed(0);
+    document.getElementById('val-cap').textContent = cap.toFixed(0);
+
+    var D = function(q) { return 120 - q; };
+    var PMgC = function(q) { return 20 + 0.5 * q; };
+    var CMgS = function(q) { return 20 + 0.5 * q + e; };
+
+    // Market eq (no intervention)
+    var Qm = (120 - 20) / 1.5; // 66.67
+    var Pm = D(Qm);
+
+    // Social optimum
+    var Qstar = (120 - 20 - e) / 1.5;
+    var Pstar = D(Qstar);
+
+    // Draw curves
+    board.create('functiongraph', [D, 0, 120], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'Demanda' });
+    board.create('functiongraph', [PMgC, 0, 100], { strokeColor: '#333', strokeWidth: 2, name: 'PMgC', dash: 0 });
+    board.create('functiongraph', [CMgS, 0, 100], { strokeColor: '#C8102E', strokeWidth: 2, name: 'CMgS' });
+
+    // Labels
+    board.create('text', [98, D(96), 'D'], { fontSize: 11, color: '#1565c0' });
+    board.create('text', [88, PMgC(90) + 3, 'PMgC'], { fontSize: 10, color: '#333' });
+    board.create('text', [78, CMgS(80) + 3, 'CMgS'], { fontSize: 10, color: '#C8102E' });
+
+    // DWL of no intervention (triangle between CMgS and D, from Q* to Qm)
+    if (Qstar < Qm && Qstar > 0) {
+      var dwlPoly = [];
+      var steps = 30;
+      for (var i = 0; i <= steps; i++) {
+        var q = Qstar + (Qm - Qstar) * i / steps;
+        dwlPoly.push([q, CMgS(q)]);
+      }
+      for (var i = steps; i >= 0; i--) {
+        var q = Qstar + (Qm - Qstar) * i / steps;
+        dwlPoly.push([q, D(q)]);
+      }
+      board.create('polygon', dwlPoly, {
+        fillColor: '#666', fillOpacity: 0.15,
+        borders: { strokeWidth: 0 }, vertices: { visible: false },
+        hasInnerPoints: false, name: ''
+      });
+      board.create('text', [(Qstar + Qm) / 2, (CMgS((Qstar + Qm) / 2) + D((Qstar + Qm) / 2)) / 2 - 3, 'DWL\ns/ interv.'], { fontSize: 9, color: '#666', anchorX: 'middle' });
+    }
+
+    if (mode === 'tax') {
+      // With tax: firm faces PMgC + t. New eq: D(Q) = PMgC(Q) + t => 120 - Q = 20 + 0.5Q + t => Q_tax = (100-t)/1.5
+      var Qt = Math.max(0, (100 - tax) / 1.5);
+      var Pt_consumer = D(Qt);
+      var Pt_producer = PMgC(Qt);
+
+      // Draw PMgC + t curve
+      var PMgCt = function(q) { return 20 + 0.5 * q + tax; };
+      board.create('functiongraph', [PMgCt, 0, 100], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, name: 'PMgC + t' });
+      board.create('text', [78, PMgCt(80) + 3, 'PMgC+t'], { fontSize: 9, color: '#00897b' });
+
+      // Equilibrium point
+      board.create('point', [Qt, Pt_consumer], { name: '', size: 3, color: '#00897b', fixed: true });
+
+      // Dashed lines to axes
+      board.create('segment', [[Qt, 0], [Qt, Pt_consumer]], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
+      board.create('segment', [[0, Pt_consumer], [Qt, Pt_consumer]], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
+
+      // Tax revenue rectangle
+      if (Qt > 0) {
+        board.create('polygon', [[0, Pt_producer], [Qt, Pt_producer], [Qt, Pt_consumer], [0, Pt_consumer]], {
+          fillColor: '#00897b', fillOpacity: 0.1,
+          borders: { strokeWidth: 0 }, vertices: { visible: false },
+          name: ''
+        });
+      }
+
+      // Optimal point
+      if (Qstar > 0) {
+        board.create('point', [Qstar, Pstar], { name: 'Q*', size: 3, color: '#C8102E', fixed: true, label: { fontSize: 10, color: '#C8102E', offset: [5, 5] } });
+      }
+
+      updateInfoTax(Qt, Pt_consumer, Pt_producer, tax, Qm, Qstar, e);
+    } else {
+      // Cap-and-trade: quantity fixed at cap, price of permit adjusts
+      var Qc = Math.min(cap, Qm);
+      var Pc_consumer = D(Qc);
+      var Pc_producer = PMgC(Qc);
+      var permitPrice = Pc_consumer - Pc_producer;
+
+      // Vertical line at cap
+      board.create('segment', [[Qc, 0], [Qc, 130]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
+      board.create('text', [Qc + 1, 125, 'Cap'], { fontSize: 10, color: '#00897b' });
+
+      // Equilibrium points
+      board.create('point', [Qc, Pc_consumer], { name: '', size: 3, color: '#1565c0', fixed: true });
+      board.create('point', [Qc, Pc_producer], { name: '', size: 3, color: '#333', fixed: true });
+
+      // Permit price bracket
+      if (permitPrice > 2) {
+        board.create('segment', [[Qc + 2, Pc_producer], [Qc + 2, Pc_consumer]], { strokeColor: '#C8102E', strokeWidth: 2 });
+        board.create('text', [Qc + 4, (Pc_producer + Pc_consumer) / 2, 'p_E'], { fontSize: 10, color: '#C8102E' });
+      }
+
+      // Optimal point
+      if (Qstar > 0) {
+        board.create('point', [Qstar, Pstar], { name: 'Q*', size: 3, color: '#C8102E', fixed: true, label: { fontSize: 10, color: '#C8102E', offset: [5, 5] } });
+      }
+
+      updateInfoCap(Qc, Pc_consumer, Pc_producer, permitPrice, Qm, Qstar, e, cap);
+    }
+
+    board.update();
+  }
+
+  function updateInfoTax(Qt, Pc, Pp, tax, Qm, Qstar, e) {
+    var dwlNoInterv = 0.5 * (Qm - Qstar) * e; // approximate triangle
+    var dwlTax = 0;
+    if (Qt !== Qstar) {
+      dwlTax = 0.5 * Math.abs(Qt - Qstar) * Math.abs(tax - e);
+    }
+    var taxRev = tax * Qt;
+    var optimal = Math.abs(tax - e) < 2;
+
+    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Imposto Pigouviano</div>';
+    html += '<div style="margin-top:0.4rem;">';
+    html += 'Q mercado (s/ interv.): ' + (200/3).toFixed(1) + '<br>';
+    html += 'Q otimo social: ' + Qstar.toFixed(1) + '<br>';
+    html += 'Q com imposto: <b>' + Qt.toFixed(1) + '</b><br>';
+    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+    html += 'DWL s/ intervencao: ' + dwlNoInterv.toFixed(0) + '<br>';
+    if (optimal) {
+      html += '<b style="color:#00897b;">Imposto otimo! (t = e)</b><br>';
+    } else {
+      html += 'DWL residual: ' + dwlTax.toFixed(0) + '<br>';
+      html += (tax < e ? 'Imposto baixo demais' : 'Imposto alto demais') + '<br>';
+    }
+    html += 'Receita tributaria: ' + taxRev.toFixed(0) + '<br>';
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    html += 'Ajuste \\(t = e\\) para restaurar eficiencia.';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function updateInfoCap(Qc, Pc, Pp, pE, Qm, Qstar, e, cap) {
+    var dwlNoInterv = 0.5 * (Qm - Qstar) * e;
+    var optimal = Math.abs(Qc - Qstar) < 2;
+
+    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Cap-and-Trade</div>';
+    html += '<div style="margin-top:0.4rem;">';
+    html += 'Q mercado (s/ interv.): ' + (200/3).toFixed(1) + '<br>';
+    html += 'Q otimo social: ' + Qstar.toFixed(1) + '<br>';
+    html += 'Cap: <b>' + cap + '</b><br>';
+    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+    html += 'Preco da permissao \\(p_E\\): ' + pE.toFixed(1) + '<br>';
+    html += 'DWL s/ intervencao: ' + dwlNoInterv.toFixed(0) + '<br>';
+    if (optimal) {
+      html += '<b style="color:#00897b;">Cap otimo!</b><br>';
+    } else {
+      html += (Qc > Qstar ? 'Cap frouxo demais' : 'Cap restritivo demais') + '<br>';
+    }
+    html += 'Receita (se leiloado): ' + (pE * Qc).toFixed(0) + '<br>';
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    html += 'Ajuste o cap para \\(Q^*\\) para restaurar eficiencia. Note: \\(p_E\\) equivale ao imposto otimo.';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-t').value = 30;
+    document.getElementById('slider-cap').value = 60;
+    document.getElementById('slider-e').value = 30;
+    setMode('tax');
+  }
+
+  ['slider-t','slider-cap','slider-e'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', updateBoard);
+  });
+
+  initBoard();
+  updateBoard();
+</script>
+</body>
+</html>

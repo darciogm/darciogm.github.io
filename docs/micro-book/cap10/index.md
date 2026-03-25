@@ -742,6 +742,58 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ---
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Uma função de produção $f(K,L)$ apresenta rendimentos crescentes de escala se:"
+    - (a) $f(tK, tL) = t \cdot f(K,L)$ para todo $t > 1$
+    - (b) $f(tK, tL) > t \cdot f(K,L)$ para todo $t > 1$
+    - (c) O produto marginal do trabalho é crescente
+    - (d) A TMST é constante ao longo de uma isoquanta
+
+    ??? success "Resposta"
+        **(b)** Rendimentos crescentes de escala significam que dobrar todos os insumos mais que dobra o produto. Formalmente, $f(tK,tL) > t \cdot f(K,L)$ para $t > 1$. A alternativa (a) descreve rendimentos constantes (homogeneidade de grau 1); (c) descreve rendimentos crescentes do fator trabalho, não de escala; (d) descreve substitutos perfeitos na produção.
+
+??? question "2. Para a função Cobb-Douglas $f(K,L) = A K^\alpha L^\beta$, os rendimentos de escala são determinados por:"
+    - (a) O valor de $A$
+    - (b) A soma $\alpha + \beta$: crescentes se $> 1$, constantes se $= 1$, decrescentes se $< 1$
+    - (c) O produto $\alpha \cdot \beta$
+    - (d) A razão $\alpha / \beta$
+
+    ??? success "Resposta"
+        **(b)** Para Cobb-Douglas, $f(tK,tL) = t^{\alpha+\beta} f(K,L)$. Se $\alpha + \beta > 1$, rendimentos crescentes; se $= 1$, constantes; se $< 1$, decrescentes. O parâmetro $A$ (a) é um fator de produtividade que não afeta os rendimentos de escala; (c) e (d) não determinam a homogeneidade.
+
+??? question "3. A Taxa Marginal de Substituição Técnica (TMST) entre capital e trabalho mede:"
+    - (a) O custo de substituir uma unidade de capital por trabalho no mercado
+    - (b) A quantidade de capital que a firma pode dispensar ao empregar uma unidade adicional de trabalho, mantendo a produção constante
+    - (c) A razão entre os preços dos insumos
+    - (d) A elasticidade de substituição entre os insumos
+
+    ??? success "Resposta"
+        **(b)** A TMST é a inclinação da isoquanta: $\text{TMST}_{LK} = -dK/dL|_{q=\bar{q}} = \text{PMg}_L/\text{PMg}_K$. Mede a taxa à qual a firma pode trocar capital por trabalho mantendo o produto. A alternativa (c) descreve a inclinação da isocusto; (a) confunde TMST com custo de mercado; (d) é um conceito relacionado mas distinto ($\sigma$ mede a curvatura da isoquanta).
+
+??? question "4. A lei dos rendimentos marginais decrescentes afirma que:"
+    - (a) Quando todos os insumos aumentam, o produto total eventualmente diminui
+    - (b) Quando um insumo aumenta com os demais fixos, seu produto marginal eventualmente diminui
+    - (c) O custo médio é sempre crescente
+    - (d) As isoquantas se tornam retas à medida que a produção aumenta
+
+    ??? success "Resposta"
+        **(b)** A lei dos rendimentos marginais decrescentes aplica-se ao curto prazo: mantendo pelo menos um insumo fixo, o produto marginal do insumo variável eventualmente cai. Isso não diz que o produto total diminui (a) — apenas que cresce a taxas decrescentes. A alternativa (a) confunde rendimentos decrescentes do fator com rendimentos de escala; (c) não segue necessariamente.
+
+??? question "5. Uma função de produção é homotética quando:"
+    - (a) Os rendimentos de escala são sempre constantes
+    - (b) A TMST depende apenas da razão $K/L$, não do nível de produção — as isoquantas são 'cópias ampliadas' umas das outras
+    - (c) O produto marginal de cada insumo é constante
+    - (d) A elasticidade de substituição é infinita
+
+    ??? success "Resposta"
+        **(b)** Homoteticidade significa que a TMST em qualquer ponto da isoquanta depende apenas da razão capital-trabalho, não da escala. A expansão da produção ao longo de um raio a partir da origem mantém a proporção ótima dos insumos. A alternativa (a) é restritiva — funções homotéticas podem ter rendimentos variáveis; (c) descreve uma função linear nos insumos; (d) descreve substitutos perfeitos.
+
+---
+
 ## 📋 Resumo do Capítulo
 
 - A **função de produção** $q = f(K, L)$ descreve a quantidade máxima de produto obtida a partir de capital e trabalho, sintetizando a tecnologia da firma. Dela derivam-se o produto marginal, o produto médio e a lei dos rendimentos marginais decrescentes.

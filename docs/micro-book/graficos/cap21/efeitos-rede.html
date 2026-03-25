@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--
+  Efeitos de Rede e Ponto de Virada — Interactive Graph
+  Library: Plotly.js
+  Chapter 21 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efeitos de Rede e Ponto de Virada</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .plot-box { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .plot-box { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Parametros</h3>
+    <div class="slider-group">
+      <label>Valor isolado \(v\): <span class="val" id="val-v">20</span></label>
+      <input type="range" id="slider-v" min="0" max="50" step="1" value="20">
+    </div>
+    <div class="slider-group">
+      <label>Forca de rede \(\alpha\): <span class="val" id="val-alpha">0.80</span></label>
+      <input type="range" id="slider-alpha" min="0" max="2.00" step="0.05" value="0.80">
+    </div>
+    <div class="slider-group">
+      <label>Preco \(p\): <span class="val" id="val-p">30</span></label>
+      <input type="range" id="slider-p" min="0" max="100" step="1" value="30">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  var N_MAX = 100;
+  var BETA = 0.6; // concavity parameter (fixed)
+
+  function getState() {
+    return {
+      v: parseFloat(document.getElementById('slider-v').value),
+      alpha: parseFloat(document.getElementById('slider-alpha').value),
+      p: parseFloat(document.getElementById('slider-p').value)
+    };
+  }
+
+  // u(n) = v + alpha * n^beta
+  // Net benefit: u(n) - p
+  // Equilibrium condition: u(n) = p  =>  v + alpha * n^beta = p
+  // => n_crit = ((p - v) / alpha)^(1/beta)
+
+  function utilityAt(n, s) {
+    return s.v + s.alpha * Math.pow(n, BETA);
+  }
+
+  function findEquilibria(s) {
+    // u(n) = p  =>  alpha * n^beta = p - v
+    var gap = s.p - s.v;
+    var nCrit = NaN;
+    if (gap > 0 && s.alpha > 0) {
+      nCrit = Math.pow(gap / s.alpha, 1 / BETA);
+    } else if (gap <= 0) {
+      // u(0) = v >= p, so even n=0 yields positive surplus => no trap
+      nCrit = 0;
+    }
+    // High equilibrium: we look for the largest n where WTP equals or exceeds p
+    // Since u(n) is increasing and concave, if nCrit < N_MAX then n_high = N_MAX (stable convention)
+    // The "tipping point" is nCrit; below it net benefit < 0, above it net benefit > 0
+    var nHigh = NaN;
+    if (!isNaN(nCrit) && nCrit <= N_MAX) {
+      nHigh = N_MAX;
+    }
+    return { nCrit: nCrit, nHigh: nHigh };
+  }
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-v').textContent = s.v.toFixed(0);
+    document.getElementById('val-alpha').textContent = s.alpha.toFixed(2);
+    document.getElementById('val-p').textContent = s.p.toFixed(0);
+
+    var ns = [], us = [], ps = [];
+    for (var i = 0; i <= N_MAX; i++) {
+      ns.push(i);
+      us.push(utilityAt(i, s));
+      ps.push(s.p);
+    }
+
+    var eq = findEquilibria(s);
+
+    // Shaded regions
+    var trapX = [], trapY = [], takeoffX = [], takeoffY = [];
+    for (var i = 0; i <= N_MAX; i++) {
+      var u = utilityAt(i, s);
+      if (u < s.p) {
+        trapX.push(i);
+        trapY.push(u);
+      } else {
+        takeoffX.push(i);
+        takeoffY.push(u);
+      }
+    }
+
+    var traces = [];
+
+    // Trap shading (below price line, where net benefit < 0)
+    if (trapX.length > 1) {
+      var fillX = trapX.concat(trapX.slice().reverse());
+      var fillY = trapY.concat(trapX.map(function() { return s.p; }).reverse());
+      traces.push({
+        x: fillX, y: fillY, fill: 'toself',
+        fillcolor: 'rgba(200,16,46,0.12)', line: { width: 0 },
+        name: 'Armadilha de adocao', showlegend: true, hoverinfo: 'skip'
+      });
+    }
+
+    // Takeoff shading (above price line, where net benefit > 0)
+    if (takeoffX.length > 1) {
+      var fillX2 = takeoffX.concat(takeoffX.slice().reverse());
+      var fillY2 = takeoffX.map(function() { return s.p; }).concat(takeoffY.slice().reverse());
+      traces.push({
+        x: fillX2, y: fillY2, fill: 'toself',
+        fillcolor: 'rgba(0,137,123,0.12)', line: { width: 0 },
+        name: 'Regiao de decolagem', showlegend: true, hoverinfo: 'skip'
+      });
+    }
+
+    // Utility curve
+    traces.push({
+      x: ns, y: us, mode: 'lines',
+      line: { color: '#1565c0', width: 2.5 },
+      name: 'u(n) = v + alpha n^beta'
+    });
+
+    // Price line
+    traces.push({
+      x: [0, N_MAX], y: [s.p, s.p], mode: 'lines',
+      line: { color: '#C8102E', width: 2, dash: 'dash' },
+      name: 'Preco p'
+    });
+
+    // Equilibrium markers
+    var shapes = [];
+    if (!isNaN(eq.nCrit) && eq.nCrit > 0 && eq.nCrit <= N_MAX) {
+      traces.push({
+        x: [eq.nCrit], y: [s.p], mode: 'markers',
+        marker: { size: 10, color: '#C8102E', symbol: 'diamond-open', line: { width: 2, color: '#C8102E' } },
+        name: 'n* (ponto critico)', showlegend: true
+      });
+      // Vertical dashed line at tipping point
+      shapes.push({
+        type: 'line', x0: eq.nCrit, x1: eq.nCrit, y0: 0, y1: s.p,
+        line: { color: '#C8102E', width: 1, dash: 'dot' }
+      });
+    }
+
+    // Stable equilibria markers
+    // n=0 is stable when u(0) < p
+    if (s.v < s.p) {
+      traces.push({
+        x: [0], y: [s.v], mode: 'markers',
+        marker: { size: 9, color: '#00897b', symbol: 'circle' },
+        name: 'Eq. estavel (n=0)', showlegend: true
+      });
+    }
+    // n_high = N_MAX stable when u(N_MAX) > p
+    if (utilityAt(N_MAX, s) > s.p) {
+      traces.push({
+        x: [N_MAX], y: [utilityAt(N_MAX, s)], mode: 'markers',
+        marker: { size: 9, color: '#00897b', symbol: 'circle' },
+        name: 'Eq. estavel (n alto)', showlegend: true
+      });
+    }
+
+    var layout = {
+      margin: { l: 55, r: 20, t: 30, b: 50 },
+      xaxis: { title: 'Numero de usuarios (n)', range: [0, N_MAX + 2], dtick: 20 },
+      yaxis: { title: 'Disposicao a pagar / Utilidade', range: [0, Math.max(s.p * 1.4, utilityAt(N_MAX, s) * 1.15, 50)], dtick: 20 },
+      showlegend: true,
+      legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 10 } },
+      shapes: shapes,
+      font: { family: 'CMU Serif, Georgia, serif' }
+    };
+
+    Plotly.react('plotDiv', traces, layout, { responsive: true, displayModeBar: false });
+
+    // Info box
+    var surplus = (!isNaN(eq.nHigh)) ? (utilityAt(N_MAX, s) - s.p).toFixed(1) : '—';
+    var nCritStr = (!isNaN(eq.nCrit) && eq.nCrit > 0 && eq.nCrit <= N_MAX) ? eq.nCrit.toFixed(1) : (eq.nCrit === 0 ? '0 (sem armadilha)' : 'Inexistente');
+    var nHighStr = (!isNaN(eq.nHigh)) ? N_MAX : '—';
+
+    var html = '<div style="text-align:center;">\\(u(n) = v + \\alpha \\, n^{\\beta}\\), \\(\\beta=' + BETA.toFixed(1) + '\\)</div>';
+    html += '<div style="margin-top:0.4rem;">';
+    html += 'Massa critica \\(n^* = ' + nCritStr + '\\)<br>';
+    html += 'Equil. alto \\(n_{\\text{alto}} = ' + nHighStr + '\\)<br>';
+    html += 'Excedente no equil. alto: \\(' + surplus + '\\)<br>';
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    if (s.v >= s.p) {
+      html += '<strong style="color:#00897b;">Valor isolado &ge; preco:</strong> adocao ocorre sem massa critica.';
+    } else if (isNaN(eq.nCrit) || eq.nCrit > N_MAX) {
+      html += '<strong style="color:#C8102E;">Rede insuficiente:</strong> mesmo com todos os usuarios, \\(u(N)<p\\). Nenhuma adocao sustentavel.';
+    } else {
+      html += '<span style="color:#C8102E;">&#9632;</span> Armadilha: \\(n < n^*\\) &rarr; util. &lt; preco.<br>';
+      html += '<span style="color:#00897b;">&#9632;</span> Decolagem: \\(n > n^*\\) &rarr; util. &gt; preco.';
+    }
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-v').value = 20;
+    document.getElementById('slider-alpha').value = 0.80;
+    document.getElementById('slider-p').value = 30;
+    update();
+  }
+
+  ['slider-v', 'slider-alpha', 'slider-p'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

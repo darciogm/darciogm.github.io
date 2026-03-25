@@ -1,0 +1,10 @@
+TF	Trata-se de um jogo de informação imperfeita.	true
+TF	Há dois equilíbrios de Nash.	true
+TF	Os dois caçadores possuem estratégias fracamente dominantes.	false
+TF	Se x = 0, o equilíbrio misto prescreve Cervo com probabilidade 1/3.	true
+TF	Se x \to 1, o equilíbrio misto converge para o EN Pareto-dominado (Lebre, Lebre).	true
+TF	Em todo jogo finito com informação perfeita, a indução retroativa identifica pelo menos um Equilíbrio Perfeito em Subjogos.	true
+TF	No Dilema dos Prisioneiros repetido infinitamente, a cooperação pode ser sustentada como EPS para qualquer valor do fator de desconto \delta \in (0,1).	false
+TF	No modelo de barganha de Rubinstein com fatores de desconto simétricos \delta_1 = \delta_2 = \delta, o jogador que propõe primeiro sempre obtém mais do que metade do excedente, para qualquer \delta \in (0,1).	true
+TF	O Folk Theorem garante que, em jogos infinitamente repetidos com \delta suficientemente alto, qualquer perfil de payoffs factível e individualmente racional pode ser sustentado como equilíbrio.	true
+TF	No Dilema dos Prisioneiros repetido finitamente (com horizonte T conhecido), o único EPS é a repetição do equilíbrio de Nash do jogo de estágio em todos os T períodos, desde que o jogo de estágio tenha equilíbrio de Nash único.	true

@@ -380,3 +380,450 @@ Formalmente, existe um limiar \( \bar{\lambda} \) para a proporção de tipo A t
 Esse resultado é um dos achados mais importantes de **Rothschild e Stiglitz (1976)**: em mercados competitivos com seleção adversa, o equilíbrio pode simplesmente não existir, dependendo da composição da população. Isso contrasta com o resultado de mercados com informação simétrica, nos quais o equilíbrio competitivo sempre existe sob condições padrão.
 
 ↩ [Voltar ao enunciado](../cap19/index.md#ex-19-5)
+
+---
+
+## ✏️ Exercício 19.6 {#ex-19-6}
+
+**Mercado de carros usados com três qualidades.** Alta: \( v_A = 90 \), \( c_A = 70 \). Média: \( v_M = 60 \), \( c_M = 50 \). Baixa: \( v_B = 30 \), \( c_B = 20 \). Proporção \( 1/3 \) cada.
+
+### (a) Preço máximo e primeira rodada de seleção adversa
+
+Se todos os tipos estivessem à venda, o valor esperado para o comprador desinformado seria:
+
+\[
+\mathbb{E}[V] = \frac{1}{3}(90) + \frac{1}{3}(60) + \frac{1}{3}(30) = 60
+\]
+
+O comprador paga no máximo \( P = 60 \). A esse preço:
+
+- Vendedores de qualidade alta exigem \( c_A = 70 > 60 \): **saem do mercado**.
+- Vendedores de qualidade média aceitam: \( c_M = 50 \leq 60 \). ✓
+- Vendedores de qualidade baixa aceitam: \( c_B = 20 \leq 60 \). ✓
+
+Na primeira rodada, os carros de qualidade alta são expulsos.
+
+### (b) Iteração do raciocínio — equilíbrio final
+
+Com apenas tipos M e B no mercado (proporção \( 1/2 \) cada), o comprador racional recalcula:
+
+\[
+\mathbb{E}[V \mid \text{M e B}] = \frac{1}{2}(60) + \frac{1}{2}(30) = 45
+\]
+
+Preço máximo: \( P = 45 \). A esse preço:
+
+- Tipo M exige \( c_M = 50 > 45 \): **sai do mercado**.
+- Tipo B aceita: \( c_B = 20 \leq 45 \). ✓
+
+Agora, somente carros de qualidade baixa permanecem. O comprador antecipa isso e oferece no máximo \( P = 30 \). Como \( 30 > c_B = 20 \), o mercado funciona apenas para carros ruins.
+
+**Equilíbrio final:** apenas carros de qualidade baixa são transacionados a \( P \in [20;\, 30] \). Este é um exemplo de **unraveling** completo — a seleção adversa expulsa sequencialmente todos os tipos bons.
+
+### (c) Perda de bem-estar
+
+Sob **informação simétrica**, todos os tipos seriam transacionados:
+
+- Excedente por carro de qualidade alta: \( v_A - c_A = 90 - 70 = 20 \)
+- Excedente por carro de qualidade média: \( v_M - c_M = 60 - 50 = 10 \)
+- Excedente por carro de qualidade baixa: \( v_B - c_B = 30 - 20 = 10 \)
+
+Excedente total esperado (por carro): \( \frac{1}{3}(20 + 10 + 10) = \frac{40}{3} \approx 13{,}33 \).
+
+Sob **informação assimétrica**, apenas tipo B é transacionado:
+
+Excedente realizado (por carro na população): \( \frac{1}{3}(10) = \frac{10}{3} \approx 3{,}33 \).
+
+**Perda de bem-estar:** \( \frac{40}{3} - \frac{10}{3} = 10 \) por carro na população, equivalente a **75% do excedente potencial** destruído pela assimetria informacional.
+
+### (d) Garantia como mecanismo de sinalização
+
+Se a garantia custa \( 5 \) para vendedores de carros bons e \( 25 \) para os demais, o vendedor de qualidade alta pode oferecer garantia como sinal.
+
+**Para o vendedor de qualidade alta:** utilidade líquida com garantia = \( P_{sinal} - 70 - 5 \). Para que valha a pena sinalizar (em vez de ser confundido com tipo baixo e receber no máximo \( 30 \)): \( P_{sinal} - 75 > 30 - 70 \), logo basta \( P_{sinal} > 35 \). Como o comprador está disposto a pagar até \( 90 \) por um carro com garantia (sabendo que é bom), há amplo espaço para comércio.
+
+**Para o vendedor de qualidade média/baixa:** custo de imitar = \( 25 \). Tipo M obtém \( P_{sinal} - 50 - 25 = P_{sinal} - 75 \) com imitação, versus \( P_{sem} - 50 \) sem garantia. Tipo B obtém \( P_{sinal} - 20 - 25 = P_{sinal} - 45 \), versus \( P_{sem} - 20 \).
+
+Se o mercado sem garantia oferece \( P_{sem} \leq 30 \) (apenas tipo B), o tipo M não participa sem garantia. Mas o tipo M não quer imitar se \( P_{sinal} - 75 < 0 \), ou seja, se \( P_{sinal} < 75 \). Com \( P_{sinal} \in (35;\, 75) \), a garantia separa o tipo A dos demais.
+
+Entretanto, o tipo M continua excluído. Para resolver completamente, seria necessário um segundo nível de sinal (por exemplo, garantia de duração intermediária). A garantia **resolve parcialmente** o problema, restaurando o mercado para carros de alta qualidade mas não necessariamente para os de qualidade média.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-6)
+
+---
+
+## ✏️ Exercício 19.7 {#ex-19-7}
+
+**Risco moral no seguro com esforço contínuo.** \( p(e) = 1 - e \), \( C(e) = e^2/2 \), \( L = 100 \), cobertura \( \alpha \), prêmio justo \( \pi = \alpha \cdot p(e) \cdot L \).
+
+### (a) Nível ótimo de precaução sob observabilidade (first-best)
+
+Se o esforço é observável, o planejador (ou a seguradora) escolhe \( e \) para minimizar o custo social total — sinistro esperado mais custo do esforço:
+
+\[
+\min_e \; p(e) \cdot L + C(e) = (1 - e) \cdot 100 + \frac{e^2}{2}
+\]
+
+CPO:
+
+\[
+-100 + e = 0 \implies e^{FB} = 100
+\]
+
+Porém, como \( e \in [0, 1] \), temos uma solução de canto: \( e^{FB} = 1 \).
+
+Verificação: com \( e = 1 \), \( p(1) = 0 \) (nenhum sinistro) e \( C(1) = 1/2 \). Custo total = \( 0 + 0{,}5 = 0{,}5 \).
+Com \( e = 0 \): custo total = \( 100 + 0 = 100 \). Claramente, o esforço máximo é ótimo.
+
+**Nota:** Para tornar o problema interior, reparametrizemos com \( L = 1 \) (ou, equivalentemente, considere que o custo do esforço é \( C(e) = 50\,e^2 \)). Com \( C(e) = 50\,e^2 \):
+
+\[
+\min_e \; (1 - e) \cdot 100 + 50\,e^2
+\]
+
+CPO: \( -100 + 100\,e = 0 \implies e^{FB} = 1 \). Ainda solução de canto. Usemos então a formulação original e interpretemos: o first-best é \( e^{FB} = 1 \).
+
+### (b) Esforço escolhido com cobertura \( \alpha \) (esforço não observável)
+
+O segurado escolhe \( e \) para minimizar seu custo esperado privado. Com cobertura \( \alpha \) e prêmio \( \pi = \alpha(1-e) \cdot 100 \), o custo que o segurado internaliza é:
+
+- Prêmio: \( 100\alpha(1-e) \) (pago com certeza).
+- Perda não coberta em caso de sinistro: \( (1-\alpha) \cdot 100 \) com probabilidade \( (1-e) \).
+- Custo do esforço: \( e^2/2 \).
+
+**Porém**, ao escolher \( e \), o segurado toma o prêmio como dado (pois a seguradora não observa \( e \) no momento do contrato e fixa o prêmio com base no \( e \) esperado de equilíbrio). Assim, o segurado minimiza:
+
+\[
+\min_e \; (1-e)(1-\alpha) \cdot 100 + \frac{e^2}{2}
+\]
+
+(O prêmio é um custo fixo do ponto de vista da escolha de \( e \).)
+
+CPO:
+
+\[
+-(1-\alpha) \cdot 100 + e = 0 \implies e^*(\alpha) = 100(1-\alpha)
+\]
+
+Como \( e \in [0, 1] \): para \( \alpha \leq 0{,}99 \), teríamos \( e^* \geq 1 \), portanto \( e^* = \min\{100(1-\alpha),\, 1\} \).
+
+Para que a solução seja interior, consideremos novamente \( C(e) = 50e^2 \). Então:
+
+CPO: \( -(1-\alpha) \cdot 100 + 100e = 0 \implies e^*(\alpha) = 1 - \alpha \).
+
+**Usando \( C(e) = 50e^2 \): \( e^*(\alpha) = 1 - \alpha \).**
+
+### (c) Comparação: risco moral
+
+Com \( C(e) = 50e^2 \): \( e^{FB} = 1 \) e \( e^*(\alpha) = 1 - \alpha \).
+
+Para qualquer \( \alpha > 0 \):
+
+\[
+e^*(\alpha) = 1 - \alpha < 1 = e^{FB}
+\]
+
+O segurado exerce **menos precaução** quando possui seguro. Isso é o **risco moral**: a cobertura reduz o custo marginal privado de ser descuidado. Com seguro completo (\( \alpha = 1 \)): \( e^*(1) = 0 \) — nenhuma precaução. O custo total recai sobre a seguradora.
+
+### (d) Cobertura ótima
+
+O bem-estar do segurado (custo total, incluindo prêmio em equilíbrio) é:
+
+\[
+W(\alpha) = \underbrace{100\,\alpha\,(1-e^*)}_{prêmio} + \underbrace{(1-\alpha) \cdot 100 \cdot (1-e^*)}_{perda\;não\;coberta} + \underbrace{50\,(e^*)^2}_{custo\;esforço}
+\]
+
+Substituindo \( e^* = 1 - \alpha \):
+
+\[
+W(\alpha) = 100\alpha \cdot \alpha + (1-\alpha) \cdot 100 \cdot \alpha + 50(1-\alpha)^2
+\]
+
+\[
+= 100\alpha^2 + 100\alpha(1-\alpha) + 50(1-\alpha)^2
+\]
+
+\[
+= 100\alpha^2 + 100\alpha - 100\alpha^2 + 50 - 100\alpha + 50\alpha^2
+\]
+
+\[
+= 50\alpha^2 + 50
+\]
+
+Minimizando: \( \frac{dW}{d\alpha} = 100\alpha = 0 \implies \alpha^* = 0 \).
+
+**O seguro completo não é ótimo.** A cobertura ótima é \( \alpha^* = 0 \) (nenhum seguro), com custo total \( W(0) = 50 \). Com seguro completo: \( W(1) = 100 \).
+
+**Interpretação:** Neste modelo simplificado com segurado neutro ao risco (custos lineares em riqueza), o seguro não traz benefício de suavização de risco, e o risco moral torna qualquer cobertura custosa. Na prática, com aversão ao risco, a cobertura ótima é positiva mas parcial (\( 0 < \alpha^* < 1 \)), refletindo o trade-off clássico entre seguro e incentivos.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-7)
+
+---
+
+## ✏️ Exercício 19.8 {#ex-19-8}
+
+**Sinalização de Spence com contínuo de tipos.** \( \theta \sim U[1, 2] \), \( c(s, \theta) = s/\theta \), firma oferece \( w(s) \).
+
+### (a) Condição de autosseleção
+
+No equilíbrio separador, cada tipo \( \theta \) escolhe \( s(\theta) \) para maximizar:
+
+\[
+\max_s \; w(s) - \frac{s}{\theta}
+\]
+
+CPO:
+
+\[
+w'(s) = \frac{1}{\theta}
+\]
+
+No equilíbrio, a firma infere \( \theta \) a partir de \( s \), então \( w(s) = \theta(s) \) (salário igual à produtividade). Seja \( s(\theta) \) a função de sinalização (invertível). Então \( \theta(s) = s^{-1}(s) \) e:
+
+\[
+w'(s) = \frac{d\theta}{ds} = \frac{1}{s'(\theta)} = \frac{1}{\theta}
+\]
+
+Portanto, \( s'(\theta) = \theta \). Esta é a **equação diferencial** que governa o equilíbrio separador.
+
+### (b) Função de sinalização e esquema salarial
+
+Integrando \( s'(\theta) = \theta \) com condição de contorno \( s(1) = 0 \) (o tipo mais baixo não sinaliza):
+
+\[
+s(\theta) = \int_1^\theta t\, dt = \frac{\theta^2}{2} - \frac{1}{2} = \frac{\theta^2 - 1}{2}
+\]
+
+Invertendo: \( \theta = \sqrt{2s + 1} \).
+
+**Esquema salarial:**
+
+\[
+w(s) = \theta(s) = \sqrt{2s + 1}
+\]
+
+Verificação: \( w'(s) = \frac{1}{\sqrt{2s+1}} = \frac{1}{\theta} \). ✓
+
+### (c) Custo social total da sinalização
+
+O custo de sinalização do tipo \( \theta \) é:
+
+\[
+c(s(\theta), \theta) = \frac{s(\theta)}{\theta} = \frac{\theta^2 - 1}{2\theta}
+\]
+
+O custo social total (esperado, com \( \theta \sim U[1, 2] \)):
+
+\[
+CS = \int_1^2 \frac{\theta^2 - 1}{2\theta} \cdot 1\, d\theta = \int_1^2 \frac{\theta}{2} - \frac{1}{2\theta}\, d\theta
+\]
+
+\[
+= \left[\frac{\theta^2}{4} - \frac{\ln\theta}{2}\right]_1^2 = \left(\frac{4}{4} - \frac{\ln 2}{2}\right) - \left(\frac{1}{4} - 0\right) = \frac{3}{4} - \frac{\ln 2}{2} \approx 0{,}750 - 0{,}347 = 0{,}403
+\]
+
+Sob **informação simétrica**, cada trabalhador receberia \( w = \theta \) sem nenhum custo de sinalização. O excedente total seria simplesmente a produtividade média: \( \mathbb{E}[\theta] = 3/2 \) (que vai ao trabalhador ou é dividido).
+
+O custo de sinalização \( \approx 0{,}403 \) representa aproximadamente **27%** da produtividade média — uma perda significativa de recursos reais gastos apenas para transmitir informação.
+
+### (d) Imposto sobre educação
+
+Um imposto sobre educação \( \tau \) por unidade de \( s \) aumenta o custo para \( (1/\theta + \tau) \cdot s \). No equilíbrio, isso reduziria \( s(\theta) \), diminuindo o custo de sinalização.
+
+**Porém**, se o imposto for alto demais, pode destruir o equilíbrio separador, levando a um equilíbrio agregador (pooling) onde todos os tipos são pagos pela produtividade média. Isso prejudica os tipos altos e beneficia os tipos baixos.
+
+**Resultado paradoxal:** no modelo puro de sinalização (educação improdutiva), um imposto moderado sobre educação **melhora** o bem-estar, pois reduz o desperdício de recursos em sinalização sem destruir completamente a separação. Contudo, na prática, a educação tem componente produtivo real, o que torna essa política desaconselhável. A prescrição depende crucialmente de quanto da educação é sinalização vs. capital humano — uma questão empírica aberta.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-8)
+
+---
+
+## ✏️ Exercício 19.9 {#ex-19-9}
+
+**Triagem (screening) por um monopolista.** \( \theta_H = 10 \), \( \theta_L = 4 \), \( \lambda = 0{,}5 \), \( U = \theta q - t \), \( C(q) = q^2/2 \).
+
+### (a) Contratos de first-best
+
+Sob informação completa, o monopolista maximiza \( t_i - q_i^2/2 \) sujeito a \( \theta_i q_i - t_i \geq 0 \) (participação com igualdade):
+
+\[
+t_i = \theta_i q_i
+\]
+
+Maximizando \( \theta_i q_i - q_i^2/2 \):
+
+CPO: \( \theta_i - q_i = 0 \implies q_i^{FB} = \theta_i \).
+
+**Tipo H:** \( q_H^{FB} = 10 \), \( t_H^{FB} = 100 \).
+
+**Tipo L:** \( q_L^{FB} = 4 \), \( t_L^{FB} = 16 \).
+
+Lucro do monopolista: \( 0{,}5(100 - 50) + 0{,}5(16 - 8) = 25 + 4 = 29 \).
+
+### (b) O menu de first-best não é incentivo-compatível
+
+O tipo \( \theta_H = 10 \) avalia o contrato do tipo L:
+
+\[
+U_H(q_L^{FB}, t_L^{FB}) = 10 \times 4 - 16 = 24
+\]
+
+O tipo \( \theta_H \) avalia seu próprio contrato:
+
+\[
+U_H(q_H^{FB}, t_H^{FB}) = 10 \times 10 - 100 = 0
+\]
+
+Como \( 24 > 0 \), o tipo H **prefere estritamente** o contrato desenhado para o tipo L. O menu de first-best viola a restrição de compatibilidade de incentivos do tipo H.
+
+### (c) Menu ótimo de second-best
+
+Aplicamos as condições padrão do problema de triagem:
+
+1. **IC de \( \theta_H \) ativa:** \( \theta_H q_H - t_H = \theta_H q_L - t_L \)
+2. **RP de \( \theta_L \) ativa:** \( \theta_L q_L - t_L = 0 \implies t_L = \theta_L q_L = 4q_L \)
+3. **"No distortion at the top":** \( q_H^{SB} = q_H^{FB} = \theta_H = 10 \)
+4. **Distorção para baixo no tipo L**
+
+Da RP de L: \( t_L = 4q_L \).
+
+Da IC de H ativa: \( 10 \times 10 - t_H = 10 \times q_L - 4q_L = 6q_L \), logo:
+
+\[
+t_H = 100 - 6q_L
+\]
+
+O lucro esperado do monopolista é:
+
+\[
+\Pi = 0{,}5\left(t_H - \frac{q_H^2}{2}\right) + 0{,}5\left(t_L - \frac{q_L^2}{2}\right)
+\]
+
+\[
+= 0{,}5\left(100 - 6q_L - 50\right) + 0{,}5\left(4q_L - \frac{q_L^2}{2}\right)
+\]
+
+\[
+= 0{,}5(50 - 6q_L) + 0{,}5\left(4q_L - \frac{q_L^2}{2}\right)
+\]
+
+\[
+= 25 - 3q_L + 2q_L - \frac{q_L^2}{4} = 25 - q_L - \frac{q_L^2}{4}
+\]
+
+CPO em \( q_L \):
+
+\[
+-1 - \frac{q_L}{2} = 0 \implies q_L = -2
+\]
+
+Como \( q_L \geq 0 \), a solução é \( q_L^{SB} = 0 \): o monopolista **exclui o tipo L** do mercado!
+
+Isso é um resultado clássico quando \( \lambda = 0{,}5 \) e a diferença entre tipos é grande. Recalculando com \( q_L = 0 \): \( t_L = 0 \) e \( t_H = 100 - 0 = 100 \).
+
+**Mas** verificando a IC: \( U_H = 10 \times 10 - 100 = 0 \) e \( U_H \) no contrato L: \( 10 \times 0 - 0 = 0 \). A IC vale com igualdade. ✓
+
+**Resultado alternativo:** Se a exclusão não é desejável (por exemplo, com \( \lambda_L \) maior), reavaliemos. Com \( \lambda = 0{,}5 \), o lucro com exclusão é \( 0{,}5(100 - 50) = 25 \), igual ao first-best para H sozinho.
+
+Para um caso com solução interior, considere \( \lambda_H = 0{,}3 \), \( \lambda_L = 0{,}7 \):
+
+\[
+\Pi = 0{,}3(50 - 6q_L) + 0{,}7\left(4q_L - \frac{q_L^2}{2}\right) = 15 - 1{,}8q_L + 2{,}8q_L - 0{,}35q_L^2
+\]
+
+\[
+= 15 + q_L - 0{,}35q_L^2
+\]
+
+CPO: \( 1 - 0{,}7q_L = 0 \implies q_L^{SB} = 10/7 \approx 1{,}43 \).
+
+**Para o caso original (\( \lambda = 0{,}5 \)):**
+
+\[
+q_H^{SB} = 10, \quad t_H^{SB} = 100, \quad q_L^{SB} = 0, \quad t_L^{SB} = 0
+\]
+
+### (d) Renda informacional e lucro
+
+**Renda informacional do tipo H:** \( U_H = \theta_H q_H - t_H = 100 - 100 = 0 \). Com exclusão do tipo L, o tipo H não obtém renda informacional — o monopolista extrai todo o excedente.
+
+Se \( q_L > 0 \) (caso interior), a renda informacional do tipo H seria:
+
+\[
+RI_H = (\theta_H - \theta_L) q_L = 6q_L
+\]
+
+**Lucro esperado (caso \( \lambda = 0{,}5 \), com exclusão):**
+
+\[
+\Pi^{SB} = 0{,}5 \times (100 - 50) + 0{,}5 \times 0 = 25
+\]
+
+Comparação com first-best: \( \Pi^{FB} = 29 \). A perda de \( 29 - 25 = 4 \) é o custo da assimetria informacional: o monopolista abre mão de vender ao tipo L para evitar pagar renda informacional excessiva ao tipo H.
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-9)
+
+---
+
+## ✏️ Exercício 19.10 {#ex-19-10}
+
+**Desenho de mecanismos e VCG.** Duas firmas com custos \( c_i \sim U[0, 1] \). Mecanismo direto para alocação de projeto público.
+
+### (a) Princípio da Revelação
+
+O **Princípio da Revelação** (Myerson, 1981) afirma que, para qualquer mecanismo (possivelmente indireto — leilões, negociações, etc.) com um equilíbrio de Bayes-Nash, existe um **mecanismo direto revelador** que implementa o mesmo resultado, no qual cada agente reporta diretamente seu tipo (aqui, seu custo) e a verdade é uma estratégia de equilíbrio.
+
+**Implicação prática:** o governo não precisa considerar todos os mecanismos possíveis (leilões de primeiro preço, leilões sequenciais, negociação bilateral, etc.). Pode restringir a análise a mecanismos em que as firmas reportam seus custos diretamente e a revelação verdadeira é incentivo-compatível. Se o melhor mecanismo direto revelador atinge certo resultado, nenhum mecanismo indireto pode fazer melhor.
+
+Isso **não** significa que mecanismos diretos são mais práticos na implementação — apenas que são suficientes para a análise teórica. Na prática, mecanismos indiretos (como leilões) podem ser preferidos por simplicidade ou robustez.
+
+### (b) Estratégia dominante no mecanismo VCG
+
+No mecanismo VCG: (i) o projeto é alocado à firma com menor custo reportado; (ii) a firma vencedora recebe pagamento igual ao custo reportado pela outra firma.
+
+Suponha que a firma 1 tem custo verdadeiro \( c_1 \) e reporta \( \hat{c}_1 \).
+
+- Se \( \hat{c}_1 < c_2 \): firma 1 vence e recebe \( t_1 = c_2 \). Payoff = \( c_2 - c_1 \geq 0 \) (pois \( c_1 \leq \hat{c}_1 < c_2 \) implica \( c_1 < c_2 \)).
+- Se \( \hat{c}_1 > c_2 \): firma 1 perde. Payoff = 0.
+- Se \( \hat{c}_1 = c_2 \): empate (irrelevante com distribuição contínua).
+
+**Desvio para \( \hat{c}_1 < c_1 \):** Firma 1 pode vencer casos em que \( \hat{c}_1 < c_2 < c_1 \), mas então \( t_1 = c_2 < c_1 \), gerando payoff negativo \( c_2 - c_1 < 0 \). O desvio é prejudicial.
+
+**Desvio para \( \hat{c}_1 > c_1 \):** Firma 1 perde casos em que \( c_1 < c_2 < \hat{c}_1 \), nos quais teria payoff positivo \( c_2 - c_1 > 0 \). O desvio é prejudicial.
+
+Portanto, \( \hat{c}_1 = c_1 \) é **estratégia fracamente dominante**. O mesmo argumento aplica-se à firma 2. ∎
+
+### (c) Pagamento esperado do governo
+
+Com revelação verdadeira, a firma vencedora é a de menor custo e recebe o custo da outra firma. Sejam \( c_{(1)} = \min(c_1, c_2) \) e \( c_{(2)} = \max(c_1, c_2) \) as estatísticas de ordem.
+
+O **pagamento do governo** é \( c_{(2)} \) (o segundo menor custo, que é o custo da firma perdedora).
+
+O **custo real do projeto** é \( c_{(1)} \) (o menor custo).
+
+Com \( c_i \sim U[0, 1] \) e \( n = 2 \):
+
+\[
+\mathbb{E}[c_{(1)}] = \frac{1}{n+1} = \frac{1}{3}
+\]
+
+\[
+\mathbb{E}[c_{(2)}] = \frac{2}{n+1} = \frac{2}{3}
+\]
+
+**Pagamento esperado do governo:** \( \mathbb{E}[t] = \frac{2}{3} \).
+
+**Custo real esperado:** \( \mathbb{E}[c_{(1)}] = \frac{1}{3} \).
+
+A diferença \( \frac{2}{3} - \frac{1}{3} = \frac{1}{3} \) é a **renda informacional esperada** que a firma vencedora captura. Ela existe porque o governo não conhece os custos e precisa pagar mais do que o custo real para induzir revelação verdadeira.
+
+### (d) Eficiência e equilíbrio orçamentário
+
+**Eficiência:** Sim, o mecanismo VCG é **eficiente** (alocativamente). Como a revelação verdadeira é estratégia dominante, a firma com genuinamente menor custo sempre vence. O projeto é executado pelo produtor mais eficiente — o resultado de first-best em termos de alocação.
+
+**Equilíbrio orçamentário:** Não, o mecanismo VCG **não** é orçamentariamente equilibrado no sentido de que o governo paga mais do que o custo real (renda informacional positiva). O governo paga \( c_{(2)} > c_{(1)} \), gerando um "excesso" de pagamento. Neste caso com apenas um bem a alocar, não há como redistribuir — o excesso é a renda da firma vencedora.
+
+**Trade-off fundamental (Myerson-Satterthwaite):** O Teorema de Myerson-Satterthwaite (1983) mostra que, em geral, não existe mecanismo que seja simultaneamente eficiente, incentivo-compatível, individualmente racional e orçamentariamente equilibrado quando há informação privada bilateral. O VCG sacrifica o equilíbrio orçamentário para garantir eficiência e incentivo-compatibilidade. Na prática, o governo pode usar leilões de primeiro preço (que reduzem a renda informacional à custa de menor eficiência) ou mecanismos ótimos de Myerson (que maximizam a receita/minimizam o pagamento, mas podem excluir firmas eficientes).
+
+↩ [Voltar ao enunciado](../cap19/index.md#ex-19-10)

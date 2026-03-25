@@ -452,3 +452,129 @@ Isso ocorre quando \(\bar{K}\) é suficientemente baixo (ou quando \(P\) e \(w/r
 
 
 ↩ [Voltar ao enunciado](../cap02/index.md#ex-2-10)
+
+---
+
+## ✏️ Exercício 2.11 {#ex-2-11}
+
+**Solução.**
+
+**(a)** O Lagrangeano é:
+
+\[
+\mathcal{L} = 20q_1 + 16q_2 - q_1^2 - q_2^2 + \lambda(12 - q_1 - q_2)
+\]
+
+Condições de Kuhn-Tucker:
+
+\[
+\frac{\partial \mathcal{L}}{\partial q_1} = 20 - 2q_1 - \lambda \leq 0, \quad q_1 \geq 0, \quad q_1(20 - 2q_1 - \lambda) = 0
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial q_2} = 16 - 2q_2 - \lambda \leq 0, \quad q_2 \geq 0, \quad q_2(16 - 2q_2 - \lambda) = 0
+\]
+
+\[
+\lambda \geq 0, \quad 12 - q_1 - q_2 \geq 0, \quad \lambda(12 - q_1 - q_2) = 0
+\]
+
+**(b)** Sem restrição de capacidade (\(\lambda = 0\)): \(20 - 2q_1 = 0 \implies q_1 = 10\) e \(16 - 2q_2 = 0 \implies q_2 = 8\). Total: \(q_1 + q_2 = 18 > 12\). Sim, a restrição é violada.
+
+**(c)** Com a restrição ativa (\(q_1 + q_2 = 12\), \(\lambda > 0\)): das CPOs com igualdade (ambos \(q_i > 0\)):
+
+\[
+20 - 2q_1 = \lambda \quad \text{e} \quad 16 - 2q_2 = \lambda
+\]
+
+Igualando: \(20 - 2q_1 = 16 - 2q_2 \implies q_1 - q_2 = 2\). Com \(q_1 + q_2 = 12\):
+
+\[
+\boxed{q_1^* = 7, \quad q_2^* = 5}
+\]
+
+O multiplicador: \(\lambda^* = 20 - 2(7) = 6\).
+
+**(d)** \(\lambda^* = 6\) significa que uma unidade adicional de capacidade (passar de 12 para 13) aumentaria o lucro em aproximadamente R\$ 6. É o preço-sombra da restrição de capacidade — o valor marginal de expandir a planta.
+
+**(e)** Verificação: com capacidade 12, \(\pi^*(12) = 20(7) + 16(5) - 49 - 25 = 140 + 80 - 74 = 146\).
+
+Com capacidade 13, resolvendo analogamente: \(q_1 - q_2 = 2\) e \(q_1 + q_2 = 13\), logo \(q_1 = 7{,}5\), \(q_2 = 5{,}5\). \(\pi^*(13) = 20(7{,}5) + 16(5{,}5) - 56{,}25 - 30{,}25 = 150 + 88 - 86{,}5 = 151{,}5\).
+
+Diferença: \(151{,}5 - 146 = 5{,}5\), próximo de \(\lambda^* = 6\). A diferença existe porque \(\lambda^*\) é uma aproximação marginal (linear); para variações discretas, a aproximação não é exata. \(\blacksquare\)
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-11)
+
+---
+
+## ✏️ Exercício 2.12 {#ex-2-12}
+
+**Solução.**
+
+**(a)** O problema de minimização de custos é:
+
+\[
+\min_{K, L} \; rK + wL \quad \text{s.a.} \quad K^{1/2} L^{1/2} = \bar{Q}
+\]
+
+Lagrangeano (com sinal ajustado para minimização):
+
+\[
+\mathcal{L} = rK + wL + \lambda(\bar{Q} - K^{1/2}L^{1/2})
+\]
+
+**(b)** Condições de primeira ordem:
+
+\[
+\frac{\partial \mathcal{L}}{\partial K} = r - \frac{\lambda}{2} K^{-1/2} L^{1/2} = 0 \implies r = \frac{\lambda L^{1/2}}{2K^{1/2}} \tag{i}
+\]
+
+\[
+\frac{\partial \mathcal{L}}{\partial L} = w - \frac{\lambda}{2} K^{1/2} L^{-1/2} = 0 \implies w = \frac{\lambda K^{1/2}}{2L^{1/2}} \tag{ii}
+\]
+
+Dividindo (i) por (ii): \(\frac{r}{w} = \frac{L}{K} \implies K = \frac{w}{r}L\).
+
+Substituindo na restrição: \(\left(\frac{w}{r}L\right)^{1/2} L^{1/2} = \bar{Q} \implies \left(\frac{w}{r}\right)^{1/2} L = \bar{Q}\).
+
+\[
+\boxed{L^* = \bar{Q} \left(\frac{r}{w}\right)^{1/2}, \qquad K^* = \bar{Q} \left(\frac{w}{r}\right)^{1/2}}
+\]
+
+**(c)** A função custo é:
+
+\[
+C = rK^* + wL^* = r \cdot \bar{Q}\left(\frac{w}{r}\right)^{1/2} + w \cdot \bar{Q}\left(\frac{r}{w}\right)^{1/2} = \bar{Q}(rw)^{1/2} + \bar{Q}(rw)^{1/2}
+\]
+
+\[
+\boxed{C(\bar{Q}, r, w) = 2\bar{Q}\sqrt{rw}}
+\]
+
+**(d)** Pelo teorema do envelope na minimização restrita: \(\frac{\partial C}{\partial r} = \frac{\partial \mathcal{L}}{\partial r}\big|_{\text{ótimo}} = K^*\).
+
+Verificação por diferenciação direta:
+
+\[
+\frac{\partial C}{\partial r} = 2\bar{Q} \cdot \frac{1}{2} \cdot \frac{w^{1/2}}{r^{1/2}} = \bar{Q}\left(\frac{w}{r}\right)^{1/2} = K^* \quad \checkmark
+\]
+
+\[
+\frac{\partial C}{\partial w} = 2\bar{Q} \cdot \frac{1}{2} \cdot \frac{r^{1/2}}{w^{1/2}} = \bar{Q}\left(\frac{r}{w}\right)^{1/2} = L^* \quad \checkmark
+\]
+
+Este é o **Lema de Shephard para a firma**: a demanda condicional de cada insumo é a derivada da função custo em relação ao respectivo preço.
+
+**(e)** De (i): \(\lambda = \frac{2rK^{1/2}}{L^{1/2}} = 2r \left(\frac{w}{r}\right)^{1/2} \cdot \frac{1}{\left(\frac{r}{w}\right)^{1/2} \cdot \bar{Q}^{-1/2} \cdot \bar{Q}^{1/2}}\). Simplificando com os valores ótimos:
+
+\(\lambda^* = 2\sqrt{rw}\).
+
+Pelo teorema do envelope: \(\frac{\partial C}{\partial \bar{Q}} = \frac{\partial \mathcal{L}}{\partial \bar{Q}}\big|_{\text{ótimo}} = \lambda^*\).
+
+Verificação direta: \(\frac{\partial C}{\partial \bar{Q}} = 2\sqrt{rw} = \lambda^*\). \(\checkmark\)
+
+**Interpretação econômica:** O multiplicador \(\lambda^*\) é o custo marginal — o custo de produzir uma unidade adicional. O Lema de Shephard e a igualdade \(CMg = \lambda^*\) são ambos aplicações do teorema do envelope, confirmando sua centralidade na teoria da firma. \(\blacksquare\)
+
+
+↩ [Voltar ao enunciado](../cap02/index.md#ex-2-12)

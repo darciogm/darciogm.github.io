@@ -1,0 +1,15 @@
+TF	O nível de utilização do insumo que maximiza o nível de produção é x_1 = 33{,}33.	true
+TF	O nível de utilização do insumo que maximiza o lucro da firma é x_1 = 19{,}5.	false
+TF	O nível de produção economicamente ótimo é q = 28.	true
+TF	O lucro máximo (\pi) obtenível pela firma é \pi = R\$\,120{,}00.	true
+TF	A produtividade marginal do fator é crescente.	false
+TF	O custo contábil anual da empresa é de \$550 mil.	true
+TF	O custo econômico anual da empresa é de \$780 mil.	true
+TF	O lucro econômico anual da empresa é de \$100 mil.	false
+TF	Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo.	true
+TF	O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$300 mil.	false
+TF	No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.	false
+TF	No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.	true
+TF	Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.	false
+TF	Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.	false
+TF	Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.	true

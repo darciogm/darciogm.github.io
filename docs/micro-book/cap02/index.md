@@ -4,7 +4,7 @@ A microeconomia moderna é uma disciplina intrinsecamente matemática. Os modelo
 
 O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida dos resultados e técnicas que serão utilizados ao longo do livro. O leitor familiarizado com cálculo multivariado e álgebra linear pode percorrer este capítulo rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais, como o teorema do envelope e as condições de Kuhn-Tucker.
 
-O capítulo segue uma progressão natural: partimos da otimização em uma dimensão (Seção 2.1), avançamos para funções de várias variáveis e o ferramental de estática comparativa (Seções 2.2–2.3), introduzimos o teorema do envelope (Seção 2.4), abordamos a otimização com restrições de igualdade e desigualdade (Seções 2.5–2.7), examinamos propriedades de curvatura e homogeneidade (Seções 2.8–2.9), e encerramos com integração, otimização dinâmica e estatística (Seções 2.10–2.12). Ao final, o leitor disporá de todo o aparato formal necessário para acompanhar os capítulos subsequentes sobre teoria do consumidor (Capítulos 3–5), teoria da firma (Capítulos 7–10) e equilíbrio de mercado (Capítulos 12–13).
+O capítulo segue uma progressão natural: partimos da otimização em uma dimensão (Seção 2.1), avançamos para funções de várias variáveis e o ferramental de estática comparativa (Seções 2.2–2.3), introduzimos o teorema do envelope (Seção 2.4), abordamos a otimização com restrições de igualdade e desigualdade (Seções 2.5–2.7), examinamos propriedades de curvatura e homogeneidade (Seções 2.8–2.9), cobrimos integração, otimização dinâmica e estatística (Seções 2.10–2.12), e encerramos com os teoremas de ponto fixo que garantem a existência de equilíbrios (Seção 2.13). Ao final, o leitor disporá de todo o aparato formal necessário para acompanhar os capítulos subsequentes sobre teoria do consumidor (Capítulos 3–5), teoria da firma (Capítulos 7–10), teoria dos jogos (Capítulo 9a) e equilíbrio de mercado (Capítulos 12–14).
 
 A exposição segue Nicholson e Snyder (2017, Cap. 2), complementada pelo apêndice matemático de Mas-Colell, Whinston e Green (1995) e por Simon e Blume (1994). Para uma abordagem passo a passo especialmente acessível, ver Chiang e Wainwright (2005). As ferramentas apresentadas aqui não são ornamentos formais: são a linguagem em que toda a microeconomia é escrita. Dominá-las é condição necessária — e, em grande medida, suficiente — para acompanhar o restante do livro.
 
@@ -863,6 +863,23 @@ A mensagem recorrente é a mesma: no ótimo, os efeitos indiretos (ajustes nas v
 
     **Fonte:** Vickrey, W. (1961). Counterspeculation, auctions, and competitive sealed tenders. *Journal of Finance*, 16(1), 8–37. Milgrom, P. (2004). *Putting Auction Theory to Work*. Cambridge University Press. Krishna, V. (2010). *Auction Theory*. 2ª ed. Academic Press.
 
+### O poder do envelope: um resultado, muitos nomes
+
+O teorema do envelope na maximização restrita é tão central que reaparece ao longo de toda a microeconomia sob nomes diferentes — cada um revelando uma faceta distinta do mesmo princípio. Para referência futura, listamos as principais aplicações que serão desenvolvidas nos capítulos subsequentes:
+
+- **Identidade de Roy** (Capítulo 4): Se \(V(\mathbf{p}, I)\) é a função utilidade indireta, então a demanda marshalliana é \(x_i^* = -\frac{\partial V / \partial p_i}{\partial V / \partial I}\). A derivada \(\partial V / \partial p_i\) vem diretamente do envelope aplicado ao Lagrangeano do consumidor.
+
+- **Lema de Shephard** (Capítulo 4 / Capítulo 11): Se \(E(\mathbf{p}, \bar{u})\) é a função dispêndio (custo mínimo para atingir utilidade \(\bar{u}\)), então a demanda hicksiana (compensada) é \(h_i = \frac{\partial E}{\partial p_i}\). Para a firma, o mesmo argumento mostra que a demanda condicional de insumo é a derivada da função custo em relação ao preço do insumo.
+
+- **Lema de Hotelling** (Capítulo 12): Se \(\pi(\mathbf{p}, \mathbf{w})\) é a função lucro, então a oferta ótima é \(y^* = \frac{\partial \pi}{\partial p}\) e a demanda por insumo é \(-x_i^* = \frac{\partial \pi}{\partial w_i}\).
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** Roy, Shephard e Hotelling são o mesmo teorema do envelope vestido com roupas diferentes — em cada caso, a derivada da função valor em relação a um preço recupera a quantidade ótima.
+
+    **Pense assim:** O envelope diz que, no ótimo, só importa o efeito direto do parâmetro. Quando o parâmetro é um *preço*, o efeito direto é proporcional à *quantidade* daquele bem ou insumo — exatamente o que os três lemas afirmam. É como se o preço fosse um termômetro: sua variação mede diretamente a importância (quantidade) do item correspondente na solução ótima.
+
+    **Por que isso importa:** Esses resultados permitem recuperar funções de demanda e oferta a partir de funções valor (que são frequentemente mais fáceis de estimar), sem resolver novamente o problema de otimização. É o motor analítico por trás da dualidade em microeconomia.
+
 ---
 
 ## 2.7 Restrições de desigualdade: condições de Kuhn-Tucker
@@ -984,7 +1001,13 @@ Nas seções anteriores, as condições de segunda ordem apareceram como requisi
 
     Se a desigualdade é estrita para \(\mathbf{x} \neq \mathbf{y}\) e \(t \in (0,1)\), a função é **estritamente côncava**.
 
-Para funções duas vezes diferenciáveis, a concavidade equivale à condição de que a **hessiana seja negativa semidefinida** em todos os pontos.
+Para funções duas vezes diferenciáveis, a concavidade equivale à condição de que a **hessiana seja negativa semidefinida** em todos os pontos. A **matriz hessiana** de uma função \(f(x_1, x_2)\) é a matriz de derivadas parciais de segunda ordem:
+
+\[
+H = \begin{pmatrix} f_{11} & f_{12} \\ f_{21} & f_{22} \end{pmatrix} \label{eq:2.26} \tag{2.26}
+\]
+
+onde \(f_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}\). A hessiana generaliza a derivada segunda para \(n\) variáveis: ela captura a curvatura da função em todas as direções. A hessiana é **negativa definida** se \(f_{11} < 0\) e \(\det(H) = f_{11}f_{22} - f_{12}^2 > 0\) (para \(n = 2\)); de modo geral, se todos os menores principais líderes alternam em sinal, começando negativo. A hessiana é **negativa semidefinida** se os menores principais líderes satisfazem \(f_{11} \leq 0\), \(\det(H) \geq 0\), etc.
 
 Uma função côncava tem a propriedade crucial de que **todo ponto crítico é um máximo global** — o que simplifica enormemente os problemas de otimização. Em termos práticos, isso significa que, para funções côncavas, basta resolver as condições de primeira ordem: se existe solução, ela é automaticamente o máximo global. Não é necessário verificar as condições de segunda ordem nem se preocupar com máximos locais que não sejam globais.
 
@@ -995,10 +1018,31 @@ A concavidade é uma condição forte: muitas funções utilidade comuns (como a
 !!! definition "Quase-concavidade"
     Uma função \(f\) é **quase-côncava** se seus **conjuntos de nível superior** \(\{x : f(x) \geq k\}\) são convexos para todo \(k\).
 
+    Equivalentemente, para todo \(\mathbf{x}, \mathbf{y}\) e \(t \in [0,1]\):
+
+    \[
+    f(t\mathbf{x} + (1-t)\mathbf{y}) \geq \min\{f(\mathbf{x}), f(\mathbf{y})\} \label{eq:2.27} \tag{2.27}
+    \]
+
+    Note a diferença: a concavidade exige que \(f\) fique acima da *média ponderada* dos valores; a quase-concavidade exige apenas que fique acima do *mínimo*.
+
 A quase-concavidade é mais fraca que a concavidade, mas é suficiente para garantir que curvas de indiferença têm o formato convexo usual (abauladas em direção à origem). A maioria das funções utilidade usadas em microeconomia é quase-côncava, embora nem todas sejam côncavas. A distinção é sutil mas importante: a função Cobb-Douglas \(U = x_1^2 x_2^2\), por exemplo, não é côncava (sua hessiana não é negativa semidefinida em todos os pontos), mas é quase-côncava (seus conjuntos de nível superior são convexos). Como a utilidade é ordinal (Capítulo 3, Seção 3.7), podemos aplicar uma transformação monotônica — por exemplo, \(\hat{U} = \ln U = 2\ln x_1 + 2\ln x_2\) — que é côncava e representa as mesmas preferências. Essa observação explica por que a quase-concavidade, e não a concavidade, é a condição "certa" para o problema do consumidor: ela é invariante sob transformações monotônicas, enquanto a concavidade não é.
 
-!!! note "Condições de segunda ordem em problemas restritos"
-    Para problemas de maximização com restrições de igualdade, as condições de segunda ordem envolvem o **hessiano orlado** (*bordered Hessian*), que incorpora as derivadas da restrição. A quase-concavidade da função objetivo é suficiente para garantir que as CSO são satisfeitas em problemas restritos.
+### Condições de segunda ordem em problemas restritos: o hessiano orlado
+
+Para problemas de maximização com restrições de igualdade \(\max f(\mathbf{x})\) sujeito a \(g(\mathbf{x}) = c\), as condições de segunda ordem envolvem o **hessiano orlado** (*bordered Hessian*). Para \(n = 2\) variáveis e uma restrição, o hessiano orlado é:
+
+\[
+\bar{H} = \begin{pmatrix} 0 & g_1 & g_2 \\ g_1 & \mathcal{L}_{11} & \mathcal{L}_{12} \\ g_2 & \mathcal{L}_{21} & \mathcal{L}_{22} \end{pmatrix} \label{eq:2.28} \tag{2.28}
+\]
+
+onde \(\mathcal{L}_{ij} = f_{ij} - \lambda g_{ij}\) são as derivadas segundas do Lagrangeano. A condição suficiente de segunda ordem para um **máximo restrito** é:
+
+\[
+\det(\bar{H}) > 0 \quad \text{(para } n = 2 \text{ com uma restrição)} \label{eq:2.29} \tag{2.29}
+\]
+
+Para o caso geral com \(n\) variáveis e \(m\) restrições (\(m < n\)), a CSO para máximo exige que os últimos \(n - m\) menores principais orlados alternem em sinal, começando com sinal \((-1)^{m+1}\). Na prática, a verificação do hessiano orlado pode ser laboriosa — e aqui reside a importância da quase-concavidade: **se \(f\) é quase-côncava e a restrição define um conjunto convexo, qualquer ponto que satisfaz as CPOs é automaticamente um máximo global do problema restrito**. Isso dispensa completamente a verificação do hessiano orlado, simplificando enormemente a resolução. A quase-concavidade da função utilidade, aliada à linearidade da restrição orçamentária (Capítulo 3), garante que as condições de Lagrange são necessárias *e* suficientes no problema do consumidor — razão pela qual, a partir do Capítulo 4, raramente verificaremos condições de segunda ordem explicitamente.
 
 ---
 
@@ -1048,6 +1092,16 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
     **Pense assim:** Imagine uma padaria onde dobrar todos os insumos (farinha, forno, padeiros) dobra exatamente a produção de pães. Se cada insumo recebe o valor dos pães extras que ele produz, a conta fecha redondinha: todo pão é "explicado" por algum insumo. Não há lucro econômico puro.
 
     **Por que isso importa:** Esse resultado é a base teórica da distribuição funcional da renda — quanto vai para o trabalho e quanto vai para o capital. No Brasil, onde a participação do trabalho na renda caiu de ~48% para ~43% entre 2000 e 2015 (Contas Nacionais/[IBGE](https://www.ibge.gov.br)), o teorema de Euler ajuda a entender as forças por trás dessa mudança.
+
+!!! box-mundo "🌍 Box Mundo 2.3 — Modelos quantitativos no FMI e no Banco Mundial: otimização e estática comparativa na prática de política econômica"
+
+    **Contexto:** As ferramentas matemáticas desenvolvidas neste capítulo — otimização restrita, multiplicadores de Lagrange, estática comparativa e o teorema do envelope — não são abstrações confinadas a manuais: constituem a espinha dorsal dos modelos quantitativos utilizados pelas principais instituições de política econômica do mundo. O Fundo Monetário Internacional (FMI), o Banco Mundial e a OCDE empregam modelos de equilíbrio geral computável (CGE) e modelos dinâmicos estocásticos de equilíbrio geral (DSGE) para avaliar cenários de política, projetar crescimento e estimar os efeitos de reformas estruturais. Em todos esses modelos, agentes representativos resolvem problemas de maximização com restrições — exatamente o tipo de problema formalizado nas Seções 2.5 a 2.7.
+
+    **Dados:** O modelo GIMF (*Global Integrated Monetary and Fiscal Model*) do FMI, descrito em Kumhof et al. (2010, *IMF Working Paper* WP/10/34), é um DSGE com múltiplas regiões no qual famílias maximizam utilidade intertemporal sujeitas a restrições orçamentárias, e firmas maximizam lucro sob restrições tecnológicas — problemas resolvidos via condições de Lagrange e equações de Euler. O Banco Mundial utiliza o modelo ENVISAGE, um CGE global com 57 setores e 140 regiões, para projetar os efeitos de mudanças climáticas e políticas comerciais até 2050 (Van der Mensbrugghe, 2019). A OCDE, em seu *Economic Outlook* semestral, emprega o modelo NiGEM (*National Institute Global Econometric Model*) para simular o impacto de variações na taxa de juros, choques de oferta e reformas fiscais. Em todos os casos, a estática comparativa — comparar soluções ótimas antes e depois de uma mudança paramétrica (Seção 2.4) — é o método fundamental para gerar as previsões de política que orientam recomendações a governos.
+
+    **Análise:** A conexão com este capítulo é direta. O multiplicador de Lagrange \(\lambda\), apresentado na Seção 2.5 como o preço-sombra de uma restrição, aparece no GIMF do FMI como o preço-sombra do capital, no ENVISAGE como o custo-sombra de emissões de carbono e no NiGEM como a taxa de juros implícita na restrição orçamentária do governo. O teorema do envelope (Seções 2.4 e 2.6) permite calcular como o valor ótimo de uma função-objetivo — PIB, bem-estar, receita fiscal — responde a variações nos parâmetros de política (tarifa, imposto, taxa de câmbio) sem necessidade de resolver novamente todo o sistema de equações. E as condições de Kuhn-Tucker (Seção 2.7) tratam das restrições de desigualdade que surgem naturalmente nesses modelos — países que atingem o limite zero de taxa de juros nominal, setores que não produzem quando o preço está abaixo do custo variável, famílias em soluções de canto para bens de luxo. As ferramentas matemáticas deste capítulo são, literalmente, o código que roda nos servidores do FMI e do Banco Mundial.
+
+    **Fonte:** Kumhof, M.; Laxton, D.; Muir, D.; Mursula, S. (2010). The Global Integrated Monetary and Fiscal Model (GIMF). *IMF Working Paper*, WP/10/34. Van der Mensbrugghe, D. (2019). The ENVISAGE Model: Version 10.01. *World Bank Technical Report*. OECD (2023). *OECD Economic Outlook*, No. 113.
 
 ---
 
@@ -1180,7 +1234,43 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ---
 
-## 2.13 — Condições de otimização
+## 2.13 Teoremas de ponto fixo
+
+Os teoremas apresentados até aqui fornecem ferramentas para *resolver* problemas de otimização — encontrar o ótimo, analisar sua sensibilidade a parâmetros, verificar condições de segunda ordem. Mas há uma questão logicamente anterior que nem sempre recebe a devida atenção: **a solução existe?** Em problemas simples (maximizar uma função contínua em um compacto), o teorema de Weierstrass garante a existência. Mas em problemas de equilíbrio — onde múltiplos agentes otimizam simultaneamente e as decisões de cada um dependem das decisões dos demais — a existência da solução é tudo menos óbvia. Os teoremas de ponto fixo são a ferramenta matemática que resolve essa questão.
+
+!!! definition "Ponto fixo"
+    Seja \(f: X \to X\) uma função de um conjunto \(X\) nele mesmo. Um ponto \(x^* \in X\) é um **ponto fixo** de \(f\) se:
+
+    \[
+    f(x^*) = x^* \label{eq:2.30} \tag{2.30}
+    \]
+
+    Para uma correspondência (função que mapeia pontos em *conjuntos*) \(\varphi: X \rightrightarrows X\), um ponto fixo satisfaz \(x^* \in \varphi(x^*)\).
+
+### Teorema do ponto fixo de Brouwer
+
+O resultado mais fundamental é o teorema de Brouwer (1911): toda função contínua de um conjunto compacto e convexo nele mesmo possui ao menos um ponto fixo. No caso unidimensional, a intuição é imediata: se \(f: [0,1] \to [0,1]\) é contínua, seu gráfico deve cruzar a diagonal \(y = x\) em algum ponto — pelo teorema do valor intermediário.
+
+### Teorema do ponto fixo de Kakutani
+
+A generalização crucial para a economia é o teorema de Kakutani (1941), que estende o resultado de Brouwer para **correspondências** (funções de valores conjuntos). Se \(X \subset \mathbb{R}^n\) é compacto e convexo, e \(\varphi: X \rightrightarrows X\) é uma correspondência com gráfico fechado e valores não-vazios e convexos, então \(\varphi\) possui um ponto fixo.
+
+A generalização para correspondências é essencial porque as "funções de melhor resposta" em teoria dos jogos tipicamente não são funções no sentido usual — um jogador pode ter múltiplas estratégias igualmente ótimas, gerando um *conjunto* de melhores respostas.
+
+### Aplicações em microeconomia
+
+Os teoremas de ponto fixo são utilizados em dois contextos centrais neste livro:
+
+**Existência de equilíbrio de Nash** (Capítulo 9a). Em um jogo com \(n\) jogadores, defina a correspondência de melhor resposta conjunta \(\varphi(\mathbf{s}) = BR_1(s_{-1}) \times \cdots \times BR_n(s_{-n})\), onde \(BR_i\) é a melhor resposta do jogador \(i\) às estratégias dos demais. Um equilíbrio de Nash é um ponto fixo de \(\varphi\): um perfil de estratégias \(\mathbf{s}^*\) tal que cada jogador já está jogando uma melhor resposta aos demais. O teorema de Nash (1950) demonstra a existência de equilíbrio em estratégias mistas aplicando o teorema de Kakutani: sob hipóteses padrão (número finito de jogadores, conjuntos de estratégias compactos e convexos, payoffs contínuos e quase-côncavos), a correspondência de melhor resposta satisfaz as condições de Kakutani, garantindo a existência de ao menos um ponto fixo.
+
+**Existência de equilíbrio walrasiano** (Capítulo 14). A demonstração de Arrow e Debreu (1954) utiliza o teorema de Kakutani para provar que existe um vetor de preços \(\mathbf{p}^*\) tal que todos os mercados se equilibram simultaneamente. O argumento constrói uma correspondência que mapeia preços em "preços revisados" (elevando o preço nos mercados com excesso de demanda) e mostra que seu ponto fixo corresponde a um equilíbrio geral competitivo.
+
+!!! definition "Por que o ponto fixo importa"
+    Os teoremas de ponto fixo não dizem *como encontrar* o equilíbrio — apenas que ele *existe*. Essa garantia é logicamente fundamental: antes de investigar propriedades, unicidade ou estabilidade de um equilíbrio, precisamos saber que há algo a ser investigado. Sem os teoremas de Brouwer e Kakutani, toda a teoria de equilíbrio geral e a teoria dos jogos não-cooperativos careceriam de fundamento lógico.
+
+---
+
+## 2.14 Condições de otimização
 
 Ao longo das seções anteriores, apresentamos uma diversidade de problemas de otimização: sem restrição, com restrição de igualdade, com restrição de desigualdade, em tempo discreto e contínuo. Cada tipo de problema tem suas próprias condições de otimalidade, mas a lógica subjacente é sempre a mesma: igualar o benefício marginal ao custo marginal, avaliados na direção correta. A [Tabela 2.1](#tabela-2-1) reúne as condições de otimização para os principais tipos de problemas discutidos neste capítulo, servindo como referência rápida para o restante do livro.
 
@@ -1221,6 +1311,58 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 
 ---
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Para que um ponto crítico de uma função $f(x)$ seja um máximo local, é necessário que:"
+    - (a) $f'(x) = 0$ e $f''(x) > 0$
+    - (b) $f'(x) = 0$ e $f''(x) < 0$
+    - (c) $f'(x) > 0$ e $f''(x) = 0$
+    - (d) $f'(x) < 0$ e $f''(x) < 0$
+
+    ??? success "Resposta"
+        **(b)** A condição de primeira ordem (CPO) exige $f'(x) = 0$ (ponto crítico) e a condição de segunda ordem (CSO) exige $f''(x) < 0$ (concavidade local), garantindo que o ponto é um máximo e não um mínimo. A alternativa (a) descreve um mínimo local; (c) e (d) não satisfazem a CPO.
+
+??? question "2. No método de Lagrange para maximizar $f(x,y)$ sujeito a $g(x,y) = 0$, o multiplicador $\lambda$ pode ser interpretado como:"
+    - (a) O valor da função objetivo no ponto ótimo
+    - (b) A taxa de variação do valor ótimo de $f$ em relação a um relaxamento marginal da restrição
+    - (c) A derivada parcial de $g$ em relação a $x$
+    - (d) O custo total da restrição para o agente
+
+    ??? success "Resposta"
+        **(b)** O multiplicador de Lagrange $\lambda$ mede o 'preço-sombra' da restrição: quanto o valor ótimo da função objetivo muda quando a restrição é relaxada marginalmente. Pelo Teorema do Envelope, $\lambda = \partial f^*/\partial c$ onde $c$ é o nível da restrição. As demais alternativas confundem $\lambda$ com outros conceitos.
+
+??? question "3. Se $F(x, p) = 0$ define implicitamente $x(p)$, o Teorema da Função Implícita nos diz que $\frac{dx}{dp} =$"
+    - (a) $-\frac{\partial F / \partial p}{\partial F / \partial x}$, desde que $\frac{\partial F}{\partial x} \neq 0$
+    - (b) $\frac{\partial F / \partial p}{\partial F / \partial x}$, sem condições adicionais
+    - (c) $-\frac{\partial F / \partial x}{\partial F / \partial p}$, desde que $\frac{\partial F}{\partial p} \neq 0$
+    - (d) $\frac{\partial^2 F}{\partial x \partial p}$
+
+    ??? success "Resposta"
+        **(a)** Diferenciando $F(x,p) = 0$ totalmente: $\frac{\partial F}{\partial x}dx + \frac{\partial F}{\partial p}dp = 0$, logo $\frac{dx}{dp} = -\frac{\partial F/\partial p}{\partial F/\partial x}$, exigindo que $\partial F/\partial x \neq 0$. A alternativa (b) erra o sinal e a condição; (c) inverte numerador e denominador; (d) confunde com a derivada cruzada.
+
+??? question "4. Uma função $f(x)$ é côncava em um intervalo se e somente se:"
+    - (a) $f''(x) > 0$ para todo $x$ no intervalo
+    - (b) $f''(x) \leq 0$ para todo $x$ no intervalo
+    - (c) $f'(x)$ é crescente no intervalo
+    - (d) $f(x)$ é positiva no intervalo
+
+    ??? success "Resposta"
+        **(b)** Concavidade significa que a derivada segunda é não positiva ($f''(x) \leq 0$), ou equivalentemente, que qualquer segmento de reta conectando dois pontos do gráfico fica abaixo (ou sobre) a curva. A alternativa (a) descreve convexidade; (c) também descreve convexidade ($f'$ crescente $\Rightarrow f'' \geq 0$); (d) não tem relação com concavidade.
+
+??? question "5. Na otimização com restrição de desigualdade, as condições de Kuhn-Tucker exigem que:"
+    - (a) O multiplicador $\lambda$ pode ser negativo se a restrição for ativa
+    - (b) Se a restrição não é ativa (folga), então $\lambda = 0$ (complementaridade)
+    - (c) Todas as restrições devem ser ativas no ótimo
+    - (d) A função objetivo deve ser convexa
+
+    ??? success "Resposta"
+        **(b)** A condição de complementaridade de Kuhn-Tucker estabelece que $\lambda \cdot g(x) = 0$: se a restrição tem folga ($g(x) > 0$), então $\lambda = 0$; se $\lambda > 0$, a restrição é ativa ($g(x) = 0$). A alternativa (a) é incorreta pois $\lambda \geq 0$ para restrições de desigualdade em problemas de maximização; (c) não é necessário; (d) confunde — para máximo, queremos concavidade, não convexidade.
+
+---
+
 ## 📋 Resumo do Capítulo
 
 - O capítulo fornece o aparato matemático essencial para a microeconomia: **cálculo diferencial** (condições de primeira e segunda ordem), **cálculo multivariado** (derivadas parciais, diferencial total, teorema da função implícita) e **otimização** com e sem restrições.
@@ -1228,7 +1370,10 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 - O **teorema do envelope** simplifica a estática comparativa ao mostrar que, no ótimo, o efeito de uma mudança paramétrica sobre o valor ótimo é dado apenas pelo efeito direto — o ajuste indireto via variáveis de escolha é de segunda ordem.
 - O **método de Lagrange** resolve problemas de maximização com restrições de igualdade; o multiplicador \(\lambda\) mede o valor marginal de relaxar a restrição (ex.: utilidade marginal da renda no problema do consumidor).
 - As **condições de Kuhn-Tucker** generalizam o método de Lagrange para restrições de desigualdade e soluções de canto, com as condições de folga complementar determinando quais restrições são ativas.
-- O capítulo também cobre **funções homogêneas** (teorema de Euler e exaustão do produto), **concavidade e quase-concavidade** (condições de segunda ordem), integração (excedentes), otimização dinâmica (equação de Euler) e estatística (valor esperado, variância, utilidade esperada de von Neumann-Morgenstern).
+- As **condições de segunda ordem** em problemas restritos envolvem o **hessiano orlado**; a **quase-concavidade** da função objetivo — condição mais fraca que a concavidade, mas invariante sob transformações monotônicas — é suficiente para garantir que as CPOs identificam máximos globais no problema restrito.
+- O teorema do envelope reaparece sob nomes específicos em todo o livro: **identidade de Roy** (Cap. 4), **lema de Shephard** (Caps. 4 e 11), **lema de Hotelling** (Cap. 12) — em cada caso, a derivada da função valor em relação a um preço recupera a quantidade ótima.
+- Os **teoremas de ponto fixo** (Brouwer, Kakutani) garantem a *existência* de soluções de equilíbrio: equilíbrio de Nash em jogos (Cap. 9a) e equilíbrio walrasiano em mercados (Cap. 14).
+- O capítulo também cobre **funções homogêneas** (teorema de Euler e exaustão do produto), integração (excedentes), otimização dinâmica (equação de Euler) e estatística (valor esperado, variância, utilidade esperada de von Neumann-Morgenstern).
 
 ## 🔑 Conceitos-Chave
 
@@ -1244,7 +1389,10 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 | Condições de Kuhn-Tucker (KKT) | Generalização do método de Lagrange para restrições de desigualdade, incluindo condições de folga complementar. |
 | Função homogênea de grau \(k\) | Função tal que \(f(t\mathbf{x}) = t^k f(\mathbf{x})\); retornos constantes de escala correspondem a \(k=1\). |
 | Teorema de Euler | Para funções homogêneas de grau \(k\): \(\sum x_i f_i = k \cdot f\); implica a exaustão do produto sob retornos constantes de escala. |
-| Quase-concavidade | Propriedade de funções cujos conjuntos de nível superior são convexos; garante curvas de indiferença convexas e condições de segunda ordem em problemas restritos. |
+| Quase-concavidade | Propriedade de funções cujos conjuntos de nível superior são convexos; garante curvas de indiferença convexas e condições de segunda ordem em problemas restritos. Invariante sob transformações monotônicas, diferentemente da concavidade. |
+| Hessiano orlado (*bordered Hessian*) | Matriz que incorpora derivadas da restrição à hessiana do Lagrangeano; usada para verificar condições de segunda ordem em problemas de otimização restrita. |
+| Identidade de Roy / Lema de Shephard / Lema de Hotelling | Aplicações do teorema do envelope que recuperam demandas e ofertas ótimas como derivadas de funções valor (utilidade indireta, função dispêndio, função lucro). |
+| Ponto fixo (Brouwer/Kakutani) | Um ponto \(x^*\) tal que \(f(x^*) = x^*\); os teoremas de ponto fixo garantem a existência de equilíbrios de Nash e equilíbrios walrasianos. |
 | Equação de Euler (intertemporal) | Condição \(u'(c_t) = \beta(1+r)u'(c_{t+1})\) que iguala o custo marginal de consumir hoje ao benefício marginal de poupar e consumir amanhã. |
 
 <div class="caption-obj" markdown>
@@ -1388,6 +1536,38 @@ d) **Caso de canto** (\(K = \bar{K}\)): mostre que o multiplicador \(\mu > 0\) d
 e) Qual é o nível crítico de \(\bar{K}\) abaixo do qual a restrição se torna ativa?
 
 [:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-10)
+
+---
+
+<a id="ex-2-11"></a>**Exercício 2.11 (KKT com múltiplas restrições).** Uma firma produz dois bens com função de lucro conjunta \(\pi(q_1, q_2) = 20q_1 + 16q_2 - q_1^2 - q_2^2\), sujeita a restrições de capacidade \(q_1 + q_2 \leq 12\) e de não-negatividade \(q_1, q_2 \geq 0\).
+
+a) Escreva o Lagrangeano e as condições completas de Kuhn-Tucker.
+
+b) Encontre a solução ótima irrestrita. A restrição de capacidade é violada?
+
+c) Resolva o problema com a restrição ativa e encontre \((q_1^*, q_2^*)\) e o multiplicador \(\lambda^*\).
+
+d) Interprete \(\lambda^*\): quanto a firma ganharia com uma unidade adicional de capacidade?
+
+e) Verifique a resposta do item (d) comparando \(\pi^*(12)\) com \(\pi^*(13)\).
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-11)
+
+---
+
+<a id="ex-2-12"></a>**Exercício 2.12 (Teorema do envelope na minimização de custos).** Uma firma com função de produção \(Q = K^{1/2} L^{1/2}\) enfrenta preços de insumos \(r\) (capital) e \(w\) (trabalho). A firma minimiza o custo de produzir \(\bar{Q}\) unidades.
+
+a) Formule o problema de minimização de custos e monte o Lagrangeano.
+
+b) Derive as demandas condicionais de insumos \(K^*(\bar{Q}, r, w)\) e \(L^*(\bar{Q}, r, w)\).
+
+c) Obtenha a função custo \(C(\bar{Q}, r, w) = rK^* + wL^*\).
+
+d) Use o teorema do envelope para mostrar que \(\frac{\partial C}{\partial r} = K^*\) e \(\frac{\partial C}{\partial w} = L^*\) (Lema de Shephard para a firma). Verifique por diferenciação direta.
+
+e) Mostre que o custo marginal \(\frac{\partial C}{\partial \bar{Q}}\) iguala o multiplicador de Lagrange \(\lambda^*\).
+
+[:material-arrow-right: Ver solução](../solucoes/cap02.md#ex-2-12)
 
 ---
 

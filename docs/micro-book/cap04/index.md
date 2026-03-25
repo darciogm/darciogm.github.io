@@ -510,6 +510,16 @@ A equação $\eqref{eq:4.8.17}$ diz que avaliar a demanda hicksiana no nível de
 
     **Interpretação econômica:** A dualidade mostra que maximizar utilidade com renda \(I\) e minimizar gasto para atingir a utilidade \(V\) são dois lados da mesma moeda. Essa equivalência é a base para construir medidas de variação de bem-estar (variação compensatória e equivalente) que serão tratadas no Capítulo 5.
 
+!!! box-mundo "🌍 Box Mundo 4.3 — Nudge Units e a escolha do consumidor: quando a arquitetura de escolhas encontra a teoria"
+
+    **Contexto:** A teoria da escolha do consumidor desenvolvida neste capítulo pressupõe que o agente resolve, implicitamente, um problema de maximização restrita — confronta preços e renda, avalia suas preferências e seleciona a cesta ótima. Mas a economia comportamental, iniciada por Kahneman e Tversky (Capítulo 8), documenta que consumidores reais frequentemente se desviam da solução ótima por inércia, sobrecarga cognitiva ou viés do presente. Essa constatação levou Richard Thaler e Cass Sunstein a proporem o conceito de **arquitetura de escolhas** (*choice architecture*): a ideia de que a forma como as opções são apresentadas influencia sistematicamente a decisão, mesmo quando o conjunto orçamentário permanece inalterado. A criação de *nudge units* — equipes governamentais dedicadas a aplicar esses insights — representa a institucionalização dessa agenda.
+
+    **Dados:** O **Behavioural Insights Team** (BIT), criado em 2010 no gabinete do Primeiro-Ministro do Reino Unido, foi a primeira *nudge unit* governamental do mundo. Em seus primeiros cinco anos, o BIT conduziu mais de 750 ensaios controlados randomizados (RCTs) envolvendo milhões de cidadãos (BIT, 2015). Nos EUA, o *Social and Behavioral Sciences Team* (SBST), criado por decreto executivo de Obama em 2015, demonstrou que simplificar o formulário FAFSA de auxílio financeiro universitário elevou a matrícula em 8 pontos percentuais entre famílias de baixa renda (Bettinger et al., 2012, *Quarterly Journal of Economics*). Na área de escolha previdenciária, Madrian e Shea (2001) mostraram que mudar o *default* de opt-in para opt-out em planos 401(k) elevou a adesão de 49% para 86%. Até 2023, a OCDE documentava mais de 400 instituições em mais de 60 países aplicando ciência comportamental a políticas públicas (*OECD Behavioural Insights and Public Policy*, 2023). No Brasil, a adesão automática dos novos servidores federais à Funpresp (previdência complementar) segue exatamente essa lógica.
+
+    **Análise:** Do ponto de vista da teoria deste capítulo, os nudges não alteram o conjunto orçamentário do consumidor — preços e renda permanecem os mesmos. O que muda é a **saliência** das opções e o ponto de partida da decisão (*default*). Na linguagem formal da Seção 4.1, o problema de maximização do consumidor permanece \(\max u(\mathbf{x}) \text{ s.a. } \mathbf{p} \cdot \mathbf{x} \leq I\), mas o comportamento observado se desvia da solução ótima por custos cognitivos e vieses que o modelo padrão não captura. Os nudges atuam reduzindo esses custos — simplificando formulários, pré-selecionando a melhor opção, tornando informações relevantes mais visíveis — de modo que o comportamento efetivo se aproxime da solução teórica do modelo. Esse enquadramento revela uma complementaridade entre a teoria normativa (o que o consumidor *deveria* fazer) e a agenda comportamental (como ajudá-lo a *de fato* fazê-lo), ilustrando que os fundamentos do Capítulo 4 não são apenas exercícios analíticos, mas benchmarks operacionais para o desenho de políticas públicas.
+
+    **Fonte:** Thaler, R. H.; Sunstein, C. R. (2008). *Nudge: Improving Decisions about Health, Wealth, and Happiness*. Yale University Press. Madrian, B. C.; Shea, D. F. (2001). The power of suggestion: Inertia in 401(k) participation and savings behavior. *Quarterly Journal of Economics*, 116(4), 1149–1187. Bettinger, E. P.; Long, B. T.; Oreopoulos, P.; Sanbonmatsu, L. (2012). The role of application assistance and information in college decisions. *Quarterly Journal of Economics*, 127(3), 1205–1242. OECD (2023). *Behavioural Insights and Public Policy: Lessons from Around the World*. Paris.
+
 ---
 
 ## 4.9 Identidade de Roy
@@ -929,7 +939,7 @@ Os boxes a seguir ilustram como esses modelos se conectam a questões concretas 
 
 ---
 
-## 4.11 — Funções do Consumidor: Quadro Resumo
+## 4.11 Funções do Consumidor: Quadro Resumo
 
 A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do consumidor e suas propriedades. Este quadro serve tanto como referência rápida quanto como mapa conceitual das relações desenvolvidas ao longo do capítulo. Cada linha da tabela corresponde a um conceito fundamental; cada coluna, a uma dimensão analítica relevante. Ao percorrer a tabela, observe como as funções se organizam em pares duais — \(x_i\) e \(h_i\); \(V\) e \(E\) — e como as propriedades de homogeneidade, monotonia e curvatura refletem a estrutura subjacente das preferências.
 
@@ -982,6 +992,58 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
     A elevada taxa de juros brasileira — com o cartão de crédito rotativo superando 440% ao ano em 2023 (BCB) — implica que o preço intertemporal do consumo presente é muito alto no Brasil comparado a outros países, estreitando severamente a restrição orçamentária futura das famílias endividadas.
 
     **Fonte**: BCB, Relatório de Economia Bancária, 2022; CNC, Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC), 2022.
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. No ótimo interior do consumidor, a condição de tangência exige que:"
+    - (a) A utilidade marginal de cada bem seja igual ao seu preço
+    - (b) A TMS entre os bens seja igual à razão de preços $p_1/p_2$
+    - (c) O consumidor gaste a mesma quantia em cada bem
+    - (d) A utilidade total seja igual à renda
+
+    ??? success "Resposta"
+        **(b)** No ótimo interior, a curva de indiferença é tangente à reta orçamentária, o que implica $\text{TMS}_{12} = p_1/p_2$, ou equivalentemente, $\text{UMg}_1/p_1 = \text{UMg}_2/p_2$ (utilidade marginal por real gasto equalizada). A alternativa (a) não é dimensionalmente correta; (c) só vale para casos especiais como Cobb-Douglas com expoentes iguais; (d) confunde utilidade com renda.
+
+??? question "2. O multiplicador de Lagrange $\lambda$ no problema do consumidor representa:"
+    - (a) O preço do bem mais caro da cesta
+    - (b) A utilidade marginal da renda — quanto a utilidade máxima aumenta com um real adicional de renda
+    - (c) A quantidade ótima do primeiro bem
+    - (d) A inclinação da curva de indiferença no ponto ótimo
+
+    ??? success "Resposta"
+        **(b)** No problema $\max u(x_1,x_2)$ s.a. $p_1x_1 + p_2x_2 = I$, o multiplicador $\lambda = \partial V/\partial I$ é a utilidade marginal da renda, medindo o ganho de utilidade por unidade monetária adicional. A alternativa (d) descreve a TMS, que no ótimo iguala a razão de preços, não $\lambda$ diretamente.
+
+??? question "3. Na decomposição de Slutsky, o efeito substituição de uma redução no preço de um bem:"
+    - (a) Pode ser positivo ou negativo, dependendo se o bem é normal ou inferior
+    - (b) É sempre não negativo — o consumidor nunca demanda menos do bem que ficou relativamente mais barato
+    - (c) Depende da elasticidade-renda do bem
+    - (d) É zero quando os bens são complementos perfeitos
+
+    ??? success "Resposta"
+        **(b)** O efeito substituição é sempre não negativo pela convexidade das preferências: quando o preço relativo de um bem cai, a demanda compensada (hicksiana) desse bem não diminui. Isso é a Lei da Demanda Compensada. A alternativa (a) confunde com o efeito renda; (d) é incorreta — mesmo com complementos perfeitos, o efeito substituição é zero (não negativo), o que é consistente com (b).
+
+??? question "4. Se o preço de um bem normal cai, o efeito renda e o efeito substituição sobre a demanda desse bem:"
+    - (a) Atuam em direções opostas
+    - (b) Ambos atuam no sentido de aumentar a demanda, reforçando-se mutuamente
+    - (c) O efeito renda é sempre maior que o efeito substituição
+    - (d) Ambos atuam no sentido de reduzir a demanda
+
+    ??? success "Resposta"
+        **(b)** Para um bem normal com queda de preço: o efeito substituição aumenta a demanda (bem ficou relativamente mais barato) e o efeito renda também aumenta a demanda (poder de compra maior e o bem é normal). Os efeitos se reforçam. A alternativa (a) descreve o que ocorre com bens inferiores; (c) não é necessariamente verdade; (d) seria o caso de um bem de Giffen (efeito renda dominante e negativo).
+
+??? question "5. Um consumidor com utilidade Cobb-Douglas $u = x_1^a x_2^b$ gasta, no ótimo, uma fração fixa da renda em cada bem. Se $a = 1$ e $b = 3$, qual fração da renda é gasta no bem 1?"
+    - (a) $1/3$
+    - (b) $3/4$
+    - (c) $1/4$
+    - (d) $1/2$
+
+    ??? success "Resposta"
+        **(c)** Na Cobb-Douglas $u = x_1^a x_2^b$, a fração gasta no bem $i$ é o expoente dividido pela soma dos expoentes. Para o bem 1: $a/(a+b) = 1/(1+3) = 1/4$. A alternativa (b) = $3/4$ é a fração gasta no bem 2; (a) e (d) usam cálculos incorretos.
 
 ---
 
@@ -1291,6 +1353,15 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
     **Por que isso importa:** Para o Brasil, onde a distribuição de renda é altamente desigual, a não-linearidade das curvas de Engel implica que o impacto de políticas (como o Bolsa Família) depende criticamente de onde na distribuição de renda estão os beneficiários. Modelos lineares simples podem subestimar ou superestimar os efeitos sobre o bem-estar.
 
     **Relevância para o capítulo:** O QUAIDS estende diretamente a estrutura de dualidade deste capítulo (Seção 4.8): a função dispêndio QUAIDS é mais rica do que a do AIDS, gerando demandas hicksianas com maior flexibilidade. O artigo ilustra como o Lema de Shephard (Seção 4.7) é o elo entre a forma funcional escolhida para a função dispêndio e as demandas estimadas empiricamente.
+
+---
+
+!!! tip "🤖 Exercício com IA"
+    **IA.1 — Utilidade CES e Casos Limite**
+
+    Peça à IA para resolver o problema de maximização do consumidor com utilidade CES $u = (x_1^\rho + x_2^\rho)^{1/\rho}$ para diferentes valores de $\rho$. Compare as soluções quando $\rho \to 0$ (Cobb-Douglas), $\rho = 1$ (substitutos perfeitos) e $\rho \to -\infty$ (complementos perfeitos). A IA acertou todos os casos limite? Verifique.
+
+    [:material-arrow-right: Ver exercício completo](../exercicios-ia.md#ia-1)
 
 ## 📚 Referências do Capítulo
 

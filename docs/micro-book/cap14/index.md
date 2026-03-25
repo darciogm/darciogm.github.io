@@ -490,6 +490,12 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
     **Por que isso importa:** Esse teorema fundamenta a separação entre política de eficiência (deixar mercados funcionar) e política de equidade (redistribuir renda), e é a base teórica de programas de transferência de renda como o Bolsa Família.
 
+!!! warning "⚠️ Erro Comum"
+
+    **Confundir eficiência de Pareto com justiça ou equidade.**
+
+    Muitos alunos concluem que, se o equilíbrio competitivo é Pareto-eficiente (Primeiro Teorema), então ele é necessariamente "bom" ou "justo". Isso é falso. Uma alocação em que um único agente detém todos os recursos pode ser Pareto-eficiente — ninguém melhora sem que ele piore — mas é claramente desigual. Eficiência de Pareto é um critério de **não-desperdício**, não de equidade. O Segundo Teorema complementa essa análise ao mostrar que qualquer alocação eficiente pode, em princípio, ser alcançada via mercados competitivos com transferências lump-sum — separando o problema de eficiência do problema de distribuição.
+
 !!! box-mundo "🌍 Box Mundo 14.2 — Países nórdicos: o Segundo Teorema na prática"
 
     **Contexto:** Os **países nórdicos** (Dinamarca, Finlândia, Noruega, Suécia) são frequentemente citados como exemplos de economias que combinam elevado nível de bem-estar social com mercados competitivos e dinâmicos. Sua estratégia pode ser interpretada, em termos do Segundo Teorema do Bem-Estar, como uma tentativa de redistribuir dotações (via tributação e transferências) e deixar os mercados operarem livremente para alcançar a eficiência.
@@ -1006,6 +1012,56 @@ Apesar de sua utilidade, os modelos CGE têm limitações importantes que devem 
 
     4. **Limitações**: Os modelos CGE baseiam-se em hipóteses de concorrência perfeita (na maioria das versões), retornos constantes de escala e pleno emprego de fatores. Extensões incorporando economias de escala, concorrência imperfeita e desemprego (modelos "novos CGE") são áreas ativas de pesquisa no Brasil.
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Na Caixa de Edgeworth, a curva de contrato conecta todas as alocações em que:"
+    - (a) Os dois consumidores têm a mesma utilidade
+    - (b) As taxas marginais de substituição dos dois consumidores são iguais ($\text{TMS}_A = \text{TMS}_B$)
+    - (c) A dotação inicial é igualmente dividida
+    - (d) O preço de ambos os bens é igual
+
+    ??? success "Resposta"
+        **(b)** A curva de contrato é o conjunto de alocações Pareto-eficientes: não é possível melhorar um consumidor sem piorar o outro. Isso ocorre quando as curvas de indiferença são tangentes, ou seja, $\text{TMS}_A = \text{TMS}_B$. A alternativa (a) confunde eficiência com equidade; (c) descreve um ponto específico; (d) não define a curva de contrato.
+
+??? question "2. O Primeiro Teorema Fundamental do Bem-Estar afirma que:"
+    - (a) Todo equilíbrio competitivo é equitativo
+    - (b) Todo equilíbrio walrasiano, sob certas condições, é Pareto-eficiente
+    - (c) Toda alocação Pareto-eficiente pode ser alcançada como equilíbrio competitivo
+    - (d) O governo deve intervir para alcançar eficiência
+
+    ??? success "Resposta"
+        **(b)** O Primeiro Teorema afirma que mercados competitivos em equilíbrio geram alocações eficientes (sem desperdício). Não diz nada sobre equidade (a) — uma alocação onde um agente tem tudo e o outro nada pode ser eficiente. A alternativa (c) descreve o Segundo Teorema; (d) é o oposto da implicação.
+
+??? question "3. O Segundo Teorema Fundamental do Bem-Estar afirma que, sob preferências convexas:"
+    - (a) O equilíbrio competitivo é único
+    - (b) Qualquer alocação Pareto-eficiente pode ser descentralizada como equilíbrio competitivo, desde que se façam transferências lump-sum adequadas das dotações
+    - (c) A distribuição de renda é irrelevante para a eficiência
+    - (d) Impostos distorcivos são necessários para alcançar equidade
+
+    ??? success "Resposta"
+        **(b)** O Segundo Teorema separa eficiência de equidade: pode-se primeiro redistribuir as dotações iniciais (lump-sum) e depois deixar o mercado operar, alcançando qualquer ponto da curva de contrato como equilíbrio competitivo. A alternativa (a) não é garantida; (c) é uma consequência parcial, mas não o enunciado; (d) contradiz o teorema — transferências lump-sum são suficientes.
+
+??? question "4. A Lei de Walras estabelece que:"
+    - (a) Em equilíbrio geral, todos os mercados sempre se equilibram
+    - (b) Se existem $n$ mercados e $n-1$ estão em equilíbrio, o $n$-ésimo também está
+    - (c) Os preços de equilíbrio são sempre positivos
+    - (d) A oferta agregada é sempre igual à demanda agregada
+
+    ??? success "Resposta"
+        **(b)** A Lei de Walras decorre da identidade orçamentária dos agentes: a soma dos excessos de demanda, ponderada pelos preços, é identicamente zero. Portanto, se $n-1$ mercados estão equilibrados, o excesso de demanda no $n$-ésimo é automaticamente zero. A alternativa (a) descreve o equilíbrio, não a lei; (d) é verdadeira em valor mas não é o enunciado preciso da lei.
+
+??? question "5. Uma alocação é Pareto-eficiente se:"
+    - (a) Maximiza a soma das utilidades de todos os agentes
+    - (b) Cada agente recebe exatamente o que merece segundo seus méritos
+    - (c) Não é possível melhorar a situação de nenhum agente sem piorar a de pelo menos um outro
+    - (d) O governo não intervém no mercado
+
+    ??? success "Resposta"
+        **(c)** Eficiência de Pareto é um critério mínimo: não há 'dinheiro na mesa'. Não implica equidade (a pessoa mais rica do mundo e um miserável podem estar em uma alocação Pareto-eficiente). A alternativa (a) assume comparabilidade cardinal e utilitarismo; (b) descreve justiça distributiva; (d) confunde eficiência com laissez-faire.
+
 ## 📋 Resumo do Capítulo
 
 - O **equilíbrio geral** analisa a interdependência simultânea de todos os mercados, em contraste com o equilíbrio parcial que estuda um mercado isolado. Um equilíbrio walrasiano é um vetor de preços $\mathbf{p}^*$ tal que todos os mercados se equilibram simultaneamente.
@@ -1109,6 +1165,81 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 (d) Quais hipóteses do modelo CGE padrão (concorrência perfeita, retornos constantes, pleno emprego) são mais problemáticas para a análise da economia brasileira? Justifique.
 
 [:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-5)
+
+---
+
+<a id="ex-14-6"></a>**Exercício 14.6.** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens (\(x\) e \(y\)). As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 6)\). As funções de utilidade são \(U_A = \min(x_A, 2y_A)\) e \(U_B = x_B^{1/3} y_B^{2/3}\).
+
+(a) Desenhe a Caixa de Edgeworth, identificando as dimensões, a dotação inicial e as curvas de indiferença de ambos os consumidores passando pela dotação.
+
+(b) Derive a curva de contrato (conjunto de alocações Pareto-eficientes no interior da caixa).
+
+(c) Normalizando \(p_y = 1\), encontre o preço de equilíbrio walrasiano \(p_x\) e a alocação de equilíbrio.
+
+(d) Verifique que a alocação de equilíbrio está sobre a curva de contrato.
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-6)
+
+---
+
+<a id="ex-14-7"></a>**Exercício 14.7.** Em uma economia de troca com dois consumidores e dois bens, as utilidades são \(U_A = x_A + y_A\) e \(U_B = x_B \cdot y_B\). As dotações são \(\boldsymbol{\omega}_A = (4, 4)\) e \(\boldsymbol{\omega}_B = (4, 4)\). Os bens totais são \(\bar{x} = \bar{y} = 8\).
+
+(a) Mostre que qualquer alocação em que B recebe uma cesta com \(y_B/x_B = 1\) (ou em que A recebe tudo, ou B recebe tudo) é Pareto-eficiente.
+
+(b) Explique intuitivamente por que, com preferências lineares de A, o conjunto de alocações eficientes é "grande" — i.e., a curva de contrato inclui segmentos de fronteira da caixa.
+
+(c) Encontre o equilíbrio walrasiano. Mostre que há múltiplos equilíbrios.
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-7)
+
+---
+
+<a id="ex-14-8"></a>**Exercício 14.8.** Considere uma economia \(2 \times 2\) com produção. Há dois bens (\(q_1\) e \(q_2\)) e dois insumos (trabalho \(L\) e capital \(K\)), com dotações totais \(\bar{L} = 100\) e \(\bar{K} = 100\). As funções de produção são:
+
+\[
+q_1 = L_1^{1/2} K_1^{1/2}, \qquad q_2 = L_2^{1/3} K_2^{2/3}
+\]
+
+(a) Derive a condição de eficiência na produção (igualdade das TMST) e encontre a relação entre as alocações de insumos na curva de contrato de produção.
+
+(b) Se \(L_1 = 60\), encontre \(K_1\) ao longo da curva de contrato de produção. Calcule \(q_1\) e \(q_2\) nesse ponto.
+
+(c) Derive a expressão da Taxa Marginal de Transformação (TMT) nessa economia e explique por que ela depende da alocação de insumos entre os setores.
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-8)
+
+---
+
+<a id="ex-14-9"></a>**Exercício 14.9.** Suponha que uma economia com dois consumidores (A e B) e dois bens esteja em um equilíbrio competitivo com alocação \(\mathbf{x}^*\). O governo deseja implementar uma alocação Pareto-eficiente diferente, \(\hat{\mathbf{x}}\), que favorece o consumidor B.
+
+(a) Enuncie o Segundo Teorema do Bem-Estar e liste suas hipóteses.
+
+(b) Explique por que o Segundo Teorema requer transferências lump-sum e por que impostos sobre bens (ad valorem) não funcionam como substitutas.
+
+(c) Suponha que \(U_A = \ln x_A + \ln y_A\), \(U_B = \ln x_B + \ln y_B\), dotações totais \(\bar{x} = \bar{y} = 10\). A alocação desejada é \(\hat{\mathbf{x}}_A = (3, 3)\), \(\hat{\mathbf{x}}_B = (7, 7)\). Verifique que \(\hat{\mathbf{x}}\) é Pareto-eficiente. Encontre os preços de equilíbrio e as transferências lump-sum necessárias para descentralizar essa alocação, partindo das dotações \(\boldsymbol{\omega}_A = (5, 5)\) e \(\boldsymbol{\omega}_B = (5, 5)\).
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-9)
+
+---
+
+<a id="ex-14-10"></a>**Exercício 14.10.** Dois países (H e F) produzem dois bens (tecido \(T\) e vinho \(V\)) usando apenas trabalho. As produtividades são:
+
+| País | Trabalho por unidade de \(T\) | Trabalho por unidade de \(V\) |
+|------|-------------------------------|-------------------------------|
+| H    | 2 horas                       | 6 horas                       |
+| F    | 4 horas                       | 3 horas                       |
+
+Cada país tem 120 horas de trabalho disponíveis.
+
+(a) Determine a vantagem comparativa de cada país. Derive a fronteira de possibilidades de produção (FPP) de cada país.
+
+(b) Em autarquia, suponha que os consumidores de cada país têm preferências representadas por \(U = T \cdot V\). Encontre o equilíbrio autárquico (produção, consumo e preço relativo \(p_T/p_V\)) em cada país.
+
+(c) Com livre comércio, encontre o intervalo de preços relativos \(p_T/p_V\) que sustenta a especialização completa segundo a vantagem comparativa. Suponha que o preço de equilíbrio com comércio seja \(p_T/p_V = 1\). Calcule a produção e o consumo de cada país, e mostre que ambos ganham com o comércio.
+
+(d) Interprete os ganhos do comércio como uma passagem de uma alocação ineficiente (autarquia) para uma mais próxima da eficiência de Pareto (equilíbrio geral com comércio).
+
+[:material-arrow-right: Ver solução](../solucoes/cap14.md#ex-14-10)
 
 ---
 
@@ -1216,7 +1347,7 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
     **Relevância para o capítulo:** O modelo de Caliendo e Parro é uma implementação moderna do equilíbrio geral walrasiano com produção e comércio internacional: preços relativos se ajustam para equilibrar todos os mercados simultaneamente, e os ganhos de troca refletem a passagem de uma alocação ineficiente (com tarifas) para uma mais eficiente (sem tarifas). O artigo quantifica exatamente o que os Teoremas do Bem-Estar preveem qualitativamente: a remoção de distorções (tarifas) move a economia em direção à eficiência de Pareto.
 
-??? pesquisa "Kehoe, T. J.; Ruhl, K. J. (2010). [Why Have Economic Reforms in Mexico Not Generated Growth?](https://doi.org/10.1257/jel.48.4.1005) *Journal of Economic Literature*, 48(4), 1005–1027." <!-- [VERIFICAR DOI] -->
+??? pesquisa "Kehoe, T. J.; Ruhl, K. J. (2010). [Why Have Economic Reforms in Mexico Not Generated Growth?](https://doi.org/10.1257/jel.48.4.1005) *Journal of Economic Literature*, 48(4), 1005–1027."
     **Pergunta central:** O México implementou reformas econômicas profundas nas décadas de 1980 e 1990 — liberalização comercial (adesão ao GATT em 1986 e ao NAFTA em 1994), privatizações, desregulamentação e estabilização macroeconômica. Modelos de equilíbrio geral previam ganhos substanciais de bem-estar. Por que o crescimento econômico resultante ficou muito aquém das previsões?
 
     **Método:** Kehoe e Ruhl utilizam o arcabouço de equilíbrio geral para analisar os canais pelos quais as reformas deveriam ter gerado crescimento — e por que esses canais foram parcialmente bloqueados. Comparam as previsões de modelos CGE calibrados *ex ante* com os resultados observados *ex post*, identificando as falhas dos modelos.
@@ -1225,14 +1356,38 @@ Z^2(\mathbf{p}) = -\frac{p_2}{p_1} + \frac{p_3}{p_1} + 1
 
     **Por que isso importa:** O artigo é um alerta sobre os limites dos modelos CGE padrão (Seção 14.11) e sobre a importância de incorporar fricções financeiras e institucionais na análise de equilíbrio geral. Para o Brasil, que passou por processo semelhante de liberalização nos anos 1990, as lições são diretamente aplicáveis: modelos que ignoram o funcionamento do sistema financeiro e do mercado de trabalho podem produzir previsões excessivamente otimistas.
 
-    **Relevância para o capítulo:** O artigo conecta diretamente os Teoremas do Bem-Estar (Seções 14.6–14.7) com a realidade empírica: a eficiência prevista pelo Primeiro Teorema depende crucialmente das hipóteses de mercados completos e ausência de fricções — hipóteses que o caso mexicano mostra serem violadas na prática. É uma demonstração empírica de que os "detalhes" das hipóteses do Primeiro Teorema importam enormemente.
+    **Relevância para o capítulo:** O artigo conecta diretamente os Teoremas do Bem-Estar (Seções 14.6–14.7) com a realidade empírica: a eficiência prevista pelo Primeiro Teorema depende crucialmente das hipóteses de mercados completos e ausência de fricções — hipóteses que o caso mexicano mostra serem violadas na prática. É uma demonstração empírica de que os "detalhes" das hipóteses do Primeiro Teorema importam enormormente.
+
+??? pesquisa "Donaldson, D. (2018). [Railroads of the Raj: Estimating the Impact of Transportation Infrastructure](https://doi.org/10.1257/aer.20101199). *American Economic Review*, 108(4-5), 899–934."
+    **Pergunta central:** A teoria de equilíbrio geral prevê que a redução de custos de transporte integra mercados, equaliza preços e gera ganhos de comércio. Mas quanto valem esses ganhos na prática? Donaldson usa a expansão da rede ferroviária na Índia colonial (1870–1930) como um experimento natural para estimar os efeitos de equilíbrio geral da infraestrutura de transporte.
+
+    **Método:** O autor combina dados históricos detalhados de preços agrícolas, produção e comércio em distritos indianos com a cronologia exógena de construção das ferrovias. Estima um modelo ricardiano de comércio interregional — essencialmente um modelo de equilíbrio geral com múltiplas regiões e bens — para quantificar os ganhos de bem-estar. Usa variação temporal e geográfica na chegada das ferrovias para identificar efeitos causais.
+
+    **Resultado principal:** As ferrovias reduziram a dispersão de preços entre distritos em **50–60%**, evidenciando integração de mercados. A renda real dos distritos conectados à rede aumentou em média **16%**. O modelo de equilíbrio geral ricardiano replica bem os padrões observados nos dados, e os ganhos estimados pelo modelo são consistentes com a abordagem de forma reduzida. A remoção contrafactual de toda a rede ferroviária reduziria a renda real agregada em aproximadamente **17%**.
+
+    **Por que isso importa:** O artigo é uma das demonstrações empíricas mais convincentes dos ganhos de comércio previstos pela teoria de equilíbrio geral. Para economias continentais como o Brasil, onde os custos de transporte interno são elevados, os resultados sugerem que investimentos em infraestrutura podem gerar ganhos substanciais de eficiência alocativa — um argumento de equilíbrio geral que a análise parcial não captura.
+
+    **Relevância para o capítulo:** Donaldson implementa empiricamente o modelo ricardiano de vantagem comparativa (Seção 14.10) em escala regional. A integração de mercados via ferrovias funciona exatamente como a abertura ao comércio: permite especialização segundo vantagem comparativa, equalizando preços relativos e aumentando a eficiência. O artigo mostra que os mecanismos abstratos do equilíbrio geral walrasiano produzem previsões quantitativas testáveis — e que essas previsões se confirmam nos dados.
+
+??? pesquisa "Fleurbaey, M. (2009). [Beyond GDP: The Quest for a Measure of Social Welfare](https://doi.org/10.1257/jel.47.4.1029). *Journal of Economic Literature*, 47(4), 1029–1075."
+    **Pergunta central:** O PIB é frequentemente usado como medida de bem-estar, mas a teoria de equilíbrio geral mostra que a eficiência de Pareto é compatível com distribuições de renda muito desiguais. Como medir o bem-estar social de forma que incorpore tanto a eficiência quanto a equidade? Fleurbaey apresenta uma revisão abrangente das abordagens para mensurar o bem-estar social para além do PIB.
+
+    **Método:** O artigo é um *survey* crítico que examina quatro famílias de abordagens: (i) ajustes ao PIB (inclusão de lazer, trabalho doméstico, depreciação ambiental); (ii) medidas baseadas em renda equivalente (variação equivalente e compensatória); (iii) índices de capacitações (*capabilities*) inspirados em Sen; e (iv) medidas de bem-estar subjetivo. Para cada abordagem, Fleurbaey discute os fundamentos teóricos no arcabouço de equilíbrio geral e as dificuldades empíricas de implementação.
+
+    **Resultado principal:** Nenhuma medida única é satisfatória. A renda equivalente — baseada na teoria microeconômica do consumidor e coerente com o arcabouço de equilíbrio geral — é a mais promissora por incorporar preferências individuais e permitir comparações interpessoais. O autor propõe que a medida ideal combinaria eficiência (como no Primeiro Teorema) com equidade distributiva (como no Segundo Teorema), usando funções de bem-estar social que pondam as rendas equivalentes dos indivíduos.
+
+    **Por que isso importa:** A questão é central para a política pública brasileira. O Primeiro Teorema garante eficiência, mas não diz nada sobre distribuição. A avaliação de políticas como a reforma tributária ou programas de transferência de renda requer métricas que vão além da eficiência de Pareto — incorporando juízos distributivos que o equilíbrio competitivo por si só não resolve.
+
+    **Relevância para o capítulo:** O artigo conecta os Teoremas do Bem-Estar (Seções 14.6–14.7) com a questão prática de mensuração. O Primeiro Teorema mostra que o equilíbrio competitivo é eficiente, mas a eficiência é apenas um critério. O Segundo Teorema mostra que qualquer alocação eficiente pode ser descentralizada — mas a escolha de *qual* alocação requer uma função de bem-estar social (Seção 14.8). Fleurbaey operacionaliza essa discussão teórica para a mensuração empírica.
 
 ## 📚 Referências do Capítulo
 
 - Arrow, Kenneth J., e Gerard Debreu. 1954. ["Existence of an Equilibrium for a Competitive Economy."](https://doi.org/10.2307/1907353) *Econometrica* 22 (3): 265–290.
 - Caliendo, Lorenzo, e Fernando Parro. 2015. ["Estimates of the Trade and Welfare Effects of NAFTA."](https://doi.org/10.1093/restud/rdv007) *Review of Economic Studies* 82 (1): 1–44.
 - Debreu, Gerard. 1959. [*Theory of Value: An Axiomatic Analysis of Economic Equilibrium*](https://books.google.com/books?id=QkX10epC46cC). New York: Wiley.
+- Donaldson, Dave. 2018. ["Railroads of the Raj: Estimating the Impact of Transportation Infrastructure."](https://doi.org/10.1257/aer.20101199) *American Economic Review* 108 (4-5): 899–934.
 - Dix-Carneiro, Rafael. 2014. ["Trade Liberalization and Labor Market Dynamics."](https://doi.org/10.3982/ECTA10457) *Econometrica* 82 (3): 825–885.
+- Fleurbaey, Marc. 2009. ["Beyond GDP: The Quest for a Measure of Social Welfare."](https://doi.org/10.1257/jel.47.4.1029) *Journal of Economic Literature* 47 (4): 1029–1075.
 - Edgeworth, Francis Y. 1881. [*Mathematical Psychics*](https://books.google.com.br/books?id=CElYAAAAcAAJ). London: C. Kegan Paul.
 - IFI/Senado Federal. 2024. ["Reforma Tributária: Contexto, Mudanças e Impactos."](https://www12.senado.leg.br/ifi/publicacoes-1/estudos-especiais/2024/marco/estudo-especial-no-19-reforma-tributaria-contexto-mudancas-e-impactos-mar-2024) Estudo Especial nº 19.
 - [IPEA](https://www.ipea.gov.br). Diversos anos. *Modelos de Equilíbrio Geral Computável Aplicados ao Brasil*. Brasília: IPEA.

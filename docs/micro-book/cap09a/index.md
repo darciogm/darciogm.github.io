@@ -324,6 +324,18 @@ O exemplo da Batalha dos Sexos ilustra como calcular o equilíbrio misto em um j
 !!! note "Caso geral"
     A demonstração para \(n\) jogadores e \(m\) estratégias segue a mesma lógica, aplicando Kakutani no simplexo \(\Delta(S_1) \times \cdots \times \Delta(S_n)\).
 
+!!! box-mundo "🌍 Box Mundo 9a.2 — Pênaltis, saques e o equilíbrio misto no esporte profissional"
+
+    **Contexto:** Cobranças de pênaltis no futebol e saques no tênis são laboratórios naturais para o equilíbrio em estratégias mistas. Em ambos os casos, dois jogadores fazem escolhas essencialmente simultâneas (o cobrador escolhe o lado e o goleiro mergulha; o sacador escolhe a direção e o receptor se posiciona), o jogo é de soma zero e qualquer padrão previsível seria explorado pelo adversário. A teoria prevê que, em equilíbrio, cada jogador randomiza de modo a tornar o oponente indiferente entre suas opções — e que as taxas de sucesso devem ser iguais entre as direções escolhidas.
+
+    **Dados:** Palacios-Huerta (2003), em estudo seminal publicado na *Review of Economic Studies*, analisou 1.417 cobranças de pênaltis em ligas profissionais europeias (1995–2000). Os resultados são notavelmente consistentes com o equilíbrio em estratégias mistas: (i) as taxas de sucesso dos cobradores não diferiam significativamente entre chutar à esquerda e à direita do goleiro (~63% em ambos os lados); (ii) não havia correlação serial nas escolhas — cada cobrança era estatisticamente independente das anteriores; (iii) jogadores individuais variavam suas escolhas com frequências próximas às previstas pelo equilíbrio. Walker e Wooders (2001), analisando 10 temporadas de partidas de tênis de Grand Slam, encontraram padrão análogo nos saques: os melhores sacadores distribuíam seus saques entre forehand e backhand do receptor em proporções que igualavam a probabilidade de ganhar o ponto em ambas as direções. Chiappori, Levitt e Groseclose (2002), usando dados da Série A italiana e da liga francesa, confirmaram independentemente os resultados de Palacios-Huerta.
+
+    **Análise:** Esses resultados são relevantes porque testam uma das previsões mais específicas — e aparentemente implausíveis — da teoria dos jogos: que agentes reais, em ambientes de alta pressão e com milhões em jogo, se comportam *como se* resolvessem o sistema de equações do princípio da indiferença (Equação 9a.3). A convergência para o equilíbrio misto não exige que os jogadores façam cálculos conscientes — basta que, ao longo de repetidas interações, a seleção competitiva elimine padrões exploráveis. É a mesma lógica do *como se* friedmaniano aplicada a um contexto observável em tempo real.
+
+    **Para refletir:** Se um cobrador de pênaltis tem o pé esquerdo mais forte, como isso altera as probabilidades de equilíbrio? (Dica: ele chutará mais vezes para o lado natural — mas não exclusivamente, pois isso o tornaria previsível.)
+
+    **Fonte:** Palacios-Huerta, Ignacio (2003). "Professionals Play Minimax." *Review of Economic Studies*, 70(2), 395–415. Walker, Mark e Wooders, John (2001). "Minimax Play at Wimbledon." *American Economic Review*, 91(5), 1521–1538. Chiappori, Pierre-André; Levitt, Steven e Groseclose, Tim (2002). "Testing Mixed-Strategy Equilibria When Players Are Heterogeneous: The Case of Penalty Kicks in Soccer." *American Economic Review*, 92(4), 1138–1151.
+
 ---
 
 ## 9a.5 Jogos com Ações Contínuas: Oligopólio
@@ -332,7 +344,7 @@ Até agora, analisamos jogos com um número finito de estratégias — cada joga
 
 O conceito de oligopólio remonta, pelo menos, a Cournot (1838), que analisou a competição entre duas firmas que extraem água de um poço mineral — o duopólio de Cournot. Cinquenta anos depois, o matemático Joseph Bertrand (1883) publicou uma resenha do trabalho de Cournot sugerindo que, se as firmas competem em preços em vez de quantidades, o resultado é radicalmente diferente: o preço cai para o custo marginal mesmo com apenas dois concorrentes. O debate Cournot-Bertrand — mesma estrutura de mercado, variável estratégica diferente, resultados opostos — é um dos mais frutíferos da história do pensamento econômico e continua relevante para a análise antitruste moderna. Stackelberg (1934) acrescentou a dimensão da sequencialidade: o que acontece se uma firma é líder e move antes das demais? O resultado, como veremos, depende crucialmente da capacidade de comprometimento crível — tema que será aprofundado no Módulo 9b com o conceito de equilíbrio perfeito em subjogos.
 
-A pergunta central desta seção é: como a forma da competição (preço vs. quantidade) e a ordem do movimento (simultâneo vs. sequencial) afetam o resultado de mercado?
+A pergunta central desta seção é: como a forma da competição (preço vs. quantidade) e a ordem do movimento (simultâneo vs. sequencial) afetam o resultado de mercado? Extensões desses modelos — diferenciação de produto, colusão tácita, dissuasão de entrada, fusões e regulação — são tratadas no Capítulo 16.
 
 ### Competição de Cournot (quantidades)
 
@@ -514,6 +526,18 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
     **Fonte:** Alhajji, A. F. e Huettner, D. (2000). "OPEC and Other Commodity Cartels: A Comparison." *Energy Policy*, 28(15), 1151–1164. Smith, James L. (2005). "Inscrutable OPEC? Behavioral Tests of the Cartel Hypothesis." *The Energy Journal*, 26(1), 51–82. Colgan, Jeff D. (2014). "The Emperor Has No Clothes: The Limits of OPEC in the Global Oil Market." *International Organization*, 68(3), 599–632.
 
+!!! box-mundo "🌍 Box Mundo 9a.3 — Leilões de espectro de telecomunicações: bilhões em jogo na teoria dos jogos"
+
+    **Contexto:** Os leilões de espectro eletromagnético para telecomunicações (3G, 4G, 5G) são uma das aplicações mais espetaculares — e lucrativas — da teoria dos jogos ao desenho de políticas públicas. Governos ao redor do mundo vendem licenças de uso de faixas de frequência para operadoras de telecomunicações, e o formato do leilão determina não apenas a receita arrecadada, mas também a eficiência alocativa (se as frequências vão para as empresas que mais as valorizam) e a estrutura de mercado resultante. Os economistas Paul Milgrom e Robert Wilson, laureados com o Nobel de Economia em 2020, revolucionaram esse campo ao desenvolver a teoria de leilões com múltiplos itens interdependentes e ao projetar o *Simultaneous Multiple Round Auction* (SMRA), adotado pela FCC americana em 1994.
+
+    **Dados:** O leilão da FCC de 1994 (Broadband PCS) arrecadou US$ 7,7 bilhões — na época, o maior leilão da história. O leilão britânico de 3G em 2000, desenhado pelo economista Ken Binmore com base na teoria de jogos, arrecadou £22,5 bilhões (cerca de 2,5% do PIB do Reino Unido), superando todas as expectativas. Em contraste, o leilão de 3G da Holanda em 2000 arrecadou uma fração do esperado: com apenas cinco licenças e exatamente cinco incumbentes, o formato do leilão eliminou a competição efetiva — um caso clássico de falha no desenho de mecanismo. O leilão brasileiro de 5G em 2021 (Anatel) envolveu compromissos de investimento de R$ 47,2 bilhões e utilizou um formato de leilão combinatório com rodadas ascendentes, exigindo das operadoras (Claro, Vivo, TIM e entrantes regionais) estratégias de lance que são, formalmente, equilíbrios de Nash bayesianos em jogos com informação incompleta (Módulo 9c).
+
+    **Análise:** Leilões de espectro ilustram vários conceitos deste capítulo e dos módulos seguintes. A interação estratégica entre poucos licitantes (tipicamente 3–6 operadoras) configura um jogo oligopolístico: cada empresa considera não apenas sua própria valoração das frequências, mas como seus lances afetam o comportamento dos rivais. O risco de conluio tácito — operadoras sinalizando intenções através dos dígitos finais dos lances, prática documentada por Cramton e Schwartz (2000) nos leilões da FCC — é um dilema dos prisioneiros: todas se beneficiariam de preços baixos, mas cada uma tem incentivo para desviar se acreditar que obterá uma licença valiosa. O desenho do leilão é, portanto, um exercício de **desenho de mecanismo** (Módulo 9d): o regulador escolhe as regras do jogo sabendo que os jogadores otimizarão dentro dessas regras.
+
+    **Para refletir:** Por que o leilão britânico de 3G foi um sucesso e o holandês um fracasso, se ambos vendiam o mesmo tipo de ativo? (Dica: pense no número de licenças versus o número de incumbentes e como isso afeta a intensidade da competição.)
+
+    **Fonte:** Milgrom, Paul (2004). *Putting Auction Theory to Work*. Cambridge University Press. Binmore, Ken e Klemperer, Paul (2002). "The Biggest Auction Ever: the Sale of the British 3G Telecom Licences." *Economic Journal*, 112(478), C74–C96. Cramton, Peter e Schwartz, Jesse (2000). "Collusive Bidding: Lessons from the FCC Spectrum Auctions." *Journal of Regulatory Economics*, 17(3), 229–252.
+
 ---
 
 Os modelos de oligopólio apresentados acima não são meros exercícios teóricos — eles fornecem a estrutura analítica que órgãos reguladores como o CADE utilizam diariamente para avaliar práticas anticompetitivas. O primeiro Box Brasil deste capítulo examina precisamente essa conexão entre teoria e prática regulatória.
@@ -602,6 +626,58 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
     <div class="caption-obj" markdown>
     **Figura 9a.6 — Equilíbrio de Cournot com parâmetros editáveis.** Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).
     </div>
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Um equilíbrio de Nash é um perfil de estratégias no qual:"
+    - (a) Todos os jogadores obtêm o maior payoff possível
+    - (b) Nenhum jogador pode melhorar seu payoff alterando unilateralmente sua estratégia
+    - (c) Todos os jogadores usam estratégias dominantes
+    - (d) A soma dos payoffs é maximizada
+
+    ??? success "Resposta"
+        **(b)** O equilíbrio de Nash exige que cada jogador esteja fazendo a melhor resposta à estratégia dos demais — nenhum tem incentivo a desviar unilateralmente. Não exige que os payoffs sejam máximos (a), que existam estratégias dominantes (c) ou que o resultado seja socialmente ótimo (d). O Dilema dos Prisioneiros ilustra bem: o EN é mutuamente pior, mas ninguém desvia sozinho.
+
+??? question "2. No Dilema dos Prisioneiros, o resultado de equilíbrio é ineficiente porque:"
+    - (a) Os jogadores não conseguem se comunicar
+    - (b) Cada jogador tem uma estratégia dominante que leva a um resultado Pareto-inferior à cooperação mútua
+    - (c) O jogo não tem equilíbrio de Nash
+    - (d) Os payoffs são assimétricos entre os jogadores
+
+    ??? success "Resposta"
+        **(b)** Cada prisioneiro tem incentivo individual a confessar (estratégia dominante), independentemente do que o outro faz. Mas quando ambos confessam, obtêm um resultado pior do que se ambos calassem. O problema não é falta de comunicação (a) — mesmo com comunicação, sem enforcement, cada um desvia. O jogo tem EN (c é falsa); a simetria (d) é irrelevante.
+
+??? question "3. No duopólio de Cournot (competição em quantidades), comparado ao monopólio, o preço de equilíbrio é:"
+    - (a) Igual ao preço de monopólio
+    - (b) Menor que o de monopólio e maior que o competitivo
+    - (c) Igual ao preço competitivo (custo marginal)
+    - (d) Maior que o preço de monopólio devido à competição
+
+    ??? success "Resposta"
+        **(b)** No Cournot, cada firma produz considerando a produção da rival como dada. O resultado é intermediário: mais produção e menor preço que o monopólio, mas menos produção e maior preço que a concorrência perfeita. À medida que o número de firmas cresce, o resultado converge para o competitivo.
+
+??? question "4. O Paradoxo de Bertrand afirma que, com produtos homogêneos e custos marginais constantes iguais, duas firmas já bastam para:"
+    - (a) Manter preços de monopólio indefinidamente
+    - (b) Gerar o resultado competitivo: preço igual ao custo marginal e lucro econômico zero
+    - (c) Produzir quantidades iguais às de Cournot
+    - (d) Eliminar o incentivo à entrada de novas firmas
+
+    ??? success "Resposta"
+        **(b)** No modelo de Bertrand com produtos homogêneos, cada firma tem incentivo a cortar marginalmente o preço para capturar todo o mercado. O único equilíbrio é $p_1 = p_2 = c$ (custo marginal), com lucro zero — resultado idêntico à concorrência perfeita com apenas duas firmas. Isso é 'paradoxal' porque esperaríamos algum poder de mercado com tão poucas firmas.
+
+??? question "5. Um equilíbrio de Nash em estratégias mistas existe:"
+    - (a) Apenas em jogos com estratégias dominantes
+    - (b) Apenas quando não há equilíbrio em estratégias puras
+    - (c) Em todo jogo finito (com número finito de jogadores e estratégias), pelo Teorema de Nash
+    - (d) Apenas em jogos de soma zero
+
+    ??? success "Resposta"
+        **(c)** O Teorema de Nash (1950) garante que todo jogo finito possui pelo menos um equilíbrio de Nash, possivelmente em estratégias mistas. A alternativa (b) é incorreta — podem coexistir equilíbrios puros e mistos; (a) é muito restritiva; (d) ignora que o teorema se aplica a jogos gerais, não apenas soma zero.
 
 ---
 
@@ -1003,6 +1079,15 @@ e custo marginal \(c = 10\) para ambas.
     **Resultado:** O modelo EWA se ajusta melhor aos dados do que os modelos concorrentes em 7 dos 8 jogos testados. Em geral, as estratégias dos sujeitos convergem para o equilíbrio de Nash, mas o processo de convergência é lento e heterogêneo entre sujeitos.
 
     **Relevância:** Fornece evidência empírica sobre a validade descritiva do equilíbrio de Nash como previsão de comportamento. Os resultados sugerem que o equilíbrio é uma boa aproximação para situações com experiência repetida e incentivos elevados — contexto de muitos mercados industriais —, mas pode falhar em interações únicas entre agentes inexperientes. Dialoga diretamente com a discussão sobre fundamentos do equilíbrio de Nash na Seção 9a.3.
+
+---
+
+!!! tip "🤖 Exercício com IA"
+    **IA.2 — Equilíbrios de Nash: Puros e Mistos**
+
+    Use a IA para encontrar todos os equilíbrios de Nash (puros e mistos) do jogo com payoffs (U,L)=(3,1), (U,R)=(0,0), (D,L)=(0,0), (D,R)=(1,3). Depois, peça para a IA explicar por que o equilíbrio misto existe. Verifique se as probabilidades calculadas são corretas resolvendo o sistema de indiferença manualmente.
+
+    [:material-arrow-right: Ver exercício completo](../exercicios-ia.md#ia-2)
 
 ---
 

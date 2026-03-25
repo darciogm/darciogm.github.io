@@ -216,6 +216,11 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(VPMg_L\) | Valor do produto marginal do trabalho |
 | \(CMg_L\) | Custo marginal do trabalho (monopsônio) |
 | \(w_R\) | Salário de reserva |
+| \(\eta^F\) | Elasticidade de Frisch (oferta de trabalho com utilidade marginal da riqueza constante) |
+| \(\ln w = \beta_0 + \beta_1 S + \beta_2 X + \beta_3 X^2\) | Equação de Mincer (retornos à educação e experiência) |
+| \(S\) | Anos de escolaridade (equação de Mincer) |
+| \(d\) | Coeficiente de discriminação (modelo de Becker) |
+| \(\beta\) | Poder de barganha do sindicato (barganha de Nash, \(\beta \in [0,1]\)) |
 
 ## Escolha Intertemporal e Investimento
 
@@ -240,6 +245,8 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(m = \beta(C_{t+1}/C_t)^{-\gamma}\) | Fator de desconto estocástico (SDF) |
 | \(\beta_i = \text{Cov}(r_i, r_m)/\text{Var}(r_m)\) | Beta do CAPM (risco sistemático) |
 | \(r_f\) | Taxa livre de risco |
+| \(E[r_m]\) | Retorno esperado do portfólio de mercado (CAPM) |
+| \(E[r_i] = r_f + \beta_i(E[r_m] - r_f)\) | Equação do CAPM |
 
 ## Equilíbrio Geral
 
@@ -318,3 +325,5 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 - **Bem público**: sempre \(G\). Contribuições individuais: \(g_i\).
 - **Tipo do agente**: sempre \(\theta\), com \(\theta_H\) (alto) e \(\theta_L\) (baixo).
 - **Fator de desconto**: \(\delta\) em jogos repetidos e colusão; \(\beta\) em escolha intertemporal e economia comportamental.
+- **Beta (\(\beta\))**: fator de desconto subjetivo (Cap. 18); parâmetros da função de produção (Cap. 4); coeficientes de regressão na equação de Mincer (Cap. 17); poder de barganha sindical (Cap. 17); beta do CAPM (Cap. 18); viés de presente (Cap. 12). O contexto dentro de cada capítulo é sempre explicitado.
+- **Delta (\(\delta\))**: fator de desconto em jogos repetidos (Caps. 9b, 16); taxa de depreciação do capital (Cap. 18); fator de desconto exponencial em preferências intertemporais (Cap. 12). Nunca reutilizado com sentido diferente dentro do mesmo capítulo.

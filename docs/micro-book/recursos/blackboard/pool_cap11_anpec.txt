@@ -1,0 +1,15 @@
+TF	O custo contábil anual da empresa é de \$ 550 mil.	true
+TF	O custo econômico anual da empresa é de \$ 780 mil.	true
+TF	O lucro econômico anual da empresa é de \$ 100 mil.	false
+TF	Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo.	true
+TF	O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$ 300 mil.	false
+TF	Quando há níveis discretos do fator fixo, a curva de custo marginal de longo prazo será composta por trechos das curvas de custo marginal de curto prazo associados a cada nível de fator fixo.	true
+TF	No caso de uma empresa com duas fábricas, a curva de custo marginal de curto prazo da empresa é a soma vertical das curvas de custo marginal de curto prazo das duas fábricas.	false
+TF	A função de custo total quadrática do tipo CT = aq + bq^2 resulta em uma curva de custo marginal linear.	true
+TF	Uma função de custo total cúbica do tipo C = aq + bq^2 + cq^3 resulta em curvas de custo médio e marginal em forma de U.	true
+TF	Custos quase fixos independem do nível de produção, mas só precisam ser pagos se a empresa produzir uma quantidade positiva de bens.	true
+TF	Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por f_1(K,L) = \min\{K, L/4\} e o segundo processo é dado por f_2(K,L) = \min\{K/5, L\}. Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é v = 1 e o do trabalho é w = 2. Então, a função custo da empresa é c(Q) = 7Q.	true
+TF	Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por v > 0 e w > 0. Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: c(v, w, q) = 2v^{5/8}w^{3/8}. Suponha que v = 1 e w = 256 = 2^8. Então, a demanda fatorial por capital é K = 16.	false
+TF	Uma empresa possui função de produção dada por f(K, L) = \sqrt{KL}, em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \bar{K} = 4. Suponha que o preço fatorial do capital é v = 1 e que o preço fatorial do trabalho é w = 4. Então, a função de custo de curto prazo é c(q) = 4 + q^2.	true
+TF	No curto prazo, se o preço do produto é inferior ao custo médio mínimo, então a firma necessariamente não produzirá.	false
+TF	Uma firma tem função de produção f(K, L) = \min\{K + L, 2L\}. Sejam v, w > 0 os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que v < w. O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto.	true

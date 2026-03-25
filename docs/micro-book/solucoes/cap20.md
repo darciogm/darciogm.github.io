@@ -551,3 +551,509 @@ Cada um "pega carona" parcialmente no outro, e o resultado é que ambos subinves
 Este resultado fundamenta a necessidade de mecanismos coletivos (tributação, mecanismos de revelação) para atingir a provisão eficiente de bens públicos.
 
 ↩ [Voltar ao enunciado](../cap20/index.md#ex-20-5)
+
+---
+
+## ✏️ Exercício 20.6 {#ex-20-6}
+
+**Imposto pigouviano com incerteza sobre a alíquota ótima.**
+
+Uma indústria siderúrgica produz \( q \) toneladas de aço com custo total \( C(q) = 20q + 0{,}5q^2 \), vende ao preço \( P = 80 \). Custo externo: \( E(q) = q^2 \).
+
+---
+
+**(a) Quantidade sem regulação e quantidade socialmente ótima**
+
+**Sem regulação**, a firma maximiza lucro privado:
+
+\[
+\pi(q) = Pq - C(q) = 80q - 20q - 0{,}5q^2 = 60q - 0{,}5q^2
+\]
+
+Condição de primeira ordem:
+
+\[
+\frac{d\pi}{dq} = 60 - q = 0 \implies q^{priv} = 60
+\]
+
+**Ótimo social** — o planejador maximiza bem-estar líquido:
+
+\[
+W(q) = Pq - C(q) - E(q) = 80q - 20q - 0{,}5q^2 - q^2 = 60q - 1{,}5q^2
+\]
+
+\[
+\frac{dW}{dq} = 60 - 3q = 0 \implies q^{soc} = 20
+\]
+
+**Sem regulação: \( q^{priv} = 60 \). Ótimo social: \( q^{soc} = 20 \).**
+
+---
+
+**(b) Imposto pigouviano ótimo**
+
+O imposto pigouviano ótimo iguala o dano marginal externo avaliado na quantidade eficiente:
+
+\[
+t^* = E'(q^{soc}) = 2q^{soc} = 2 \times 20 = 40
+\]
+
+**Verificação:** Com \( t^* = 40 \), a firma maximiza:
+
+\[
+\pi(q) = 80q - 20q - 0{,}5q^2 - 40q = 20q - 0{,}5q^2
+\]
+
+\[
+\frac{d\pi}{dq} = 20 - q = 0 \implies q = 20 = q^{soc} \checkmark
+\]
+
+**O imposto pigouviano ótimo é \( t^* = 40 \) por tonelada.**
+
+---
+
+**(c) Receita fiscal e peso morto eliminado**
+
+A receita fiscal do imposto pigouviano é:
+
+\[
+R = t^* \cdot q^{soc} = 40 \times 20 = 800
+\]
+
+O peso morto da ausência de regulação é a perda de bem-estar entre \( q^{soc} = 20 \) e \( q^{priv} = 60 \). O custo marginal social é \( CMgS(q) = C'(q) + E'(q) = 20 + q + 2q = 20 + 3q \), e o benefício marginal é \( P = 80 \):
+
+\[
+DWL = \int_{20}^{60} \left[ CMgS(q) - P \right] dq = \int_{20}^{60} (20 + 3q - 80)\, dq = \int_{20}^{60} (3q - 60)\, dq
+\]
+
+\[
+= \left[ \frac{3q^2}{2} - 60q \right]_{20}^{60} = \left(\frac{3 \cdot 3600}{2} - 3600\right) - \left(\frac{3 \cdot 400}{2} - 1200\right)
+\]
+
+\[
+= (5400 - 3600) - (600 - 1200) = 1800 - (-600) = 2400
+\]
+
+**A receita fiscal é 800 e o peso morto eliminado pelo imposto é \( DWL = 2400 \).**
+
+---
+
+**(d) Imposto incorreto \( t = 30 \)**
+
+Com \( t = 30 \), a firma maximiza:
+
+\[
+\pi(q) = 80q - 20q - 0{,}5q^2 - 30q = 30q - 0{,}5q^2
+\]
+
+\[
+\frac{d\pi}{dq} = 30 - q = 0 \implies q = 30
+\]
+
+O peso morto residual corresponde à perda entre \( q^{soc} = 20 \) e \( q = 30 \):
+
+\[
+DWL_{res} = \int_{20}^{30} (3q - 60)\, dq = \left[ \frac{3q^2}{2} - 60q \right]_{20}^{30}
+\]
+
+\[
+= \left(\frac{3 \cdot 900}{2} - 1800\right) - \left(\frac{3 \cdot 400}{2} - 1200\right) = (1350 - 1800) - (600 - 1200)
+\]
+
+\[
+= (-450) - (-600) = 150
+\]
+
+**Com imposto incorreto \( t = 30 \), a firma produz \( q = 30 \) (acima do ótimo), e o peso morto residual é 150.** O imposto subótimo elimina a maior parte da ineficiência (reduz DWL de 2400 para 150, ou seja, remove 93,75% do peso morto), mas não a totalidade, pois o imposto é inferior ao dano marginal externo na quantidade eficiente.
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-6)
+
+---
+
+## ✏️ Exercício 20.7 {#ex-20-7}
+
+**Teorema de Coase: fazendeiro vs. lavrador.**
+
+Lucro do fazendeiro: \( \pi_F(n) = 120n - 3n^2 \). Dano à lavoura: \( D(n) = 2n^2 \).
+
+---
+
+**(a) Equilíbrio sem negociação**
+
+O fazendeiro maximiza seu lucro privado:
+
+\[
+\frac{d\pi_F}{dn} = 120 - 6n = 0 \implies n^{priv} = 20
+\]
+
+**Sem negociação, o fazendeiro cria \( n^{priv} = 20 \) cabeças.** Lucro: \( \pi_F(20) = 120 \times 20 - 3 \times 400 = 2400 - 1200 = 1200 \). Dano: \( D(20) = 2 \times 400 = 800 \).
+
+---
+
+**(b) Número socialmente ótimo**
+
+O bem-estar social é o lucro do fazendeiro menos o dano ao lavrador:
+
+\[
+W(n) = \pi_F(n) - D(n) = 120n - 3n^2 - 2n^2 = 120n - 5n^2
+\]
+
+\[
+\frac{dW}{dn} = 120 - 10n = 0 \implies n^{soc} = 12
+\]
+
+**O número socialmente ótimo é \( n^{soc} = 12 \) cabeças.** Lucro: \( \pi_F(12) = 120 \times 12 - 3 \times 144 = 1440 - 432 = 1008 \). Dano: \( D(12) = 2 \times 144 = 288 \).
+
+---
+
+**(c) Negociação coaseana — fazendeiro tem o direito**
+
+Se o fazendeiro tem o direito de criar gado livremente, ele escolheria \( n = 20 \). O lavrador pode oferecer uma compensação \( T \) para que o fazendeiro reduza o rebanho de 20 para 12 cabeças.
+
+**Perda do fazendeiro** ao reduzir de 20 para 12:
+
+\[
+\Delta \pi_F = \pi_F(20) - \pi_F(12) = 1200 - 1008 = 192
+\]
+
+**Ganho do lavrador** com a redução:
+
+\[
+\Delta D = D(20) - D(12) = 800 - 288 = 512
+\]
+
+A negociação ocorre se o ganho do lavrador excede a perda do fazendeiro: \( 512 > 192 \). O excedente da negociação é \( 512 - 192 = 320 \).
+
+A compensação \( T \) deve satisfazer:
+
+\[
+192 \leq T \leq 512
+\]
+
+O fazendeiro aceita reduzir o rebanho se recebe ao menos 192 (sua perda de lucro). O lavrador aceita pagar no máximo 512 (o dano evitado). **A negociação conduz ao ótimo social \( n = 12 \), com compensação \( T \in [192, 512] \).**
+
+---
+
+**(d) Negociação coaseana — lavrador tem o direito**
+
+Se o lavrador tem direito a não sofrer danos, o fazendeiro precisa compensar o lavrador pelo dano causado. O fazendeiro oferece \( T' \) para poder criar \( n = 12 \) cabeças (ele não criaria \( n = 20 \) pois teria que compensar todo o dano, e o dano marginal excede o lucro marginal para \( n > 12 \)).
+
+**Ganho do fazendeiro** ao criar 12 cabeças (partindo de 0):
+
+\[
+\pi_F(12) = 1008
+\]
+
+**Dano ao lavrador** com 12 cabeças:
+
+\[
+D(12) = 288
+\]
+
+A compensação \( T' \) deve satisfazer:
+
+\[
+288 \leq T' \leq 1008
+\]
+
+O lavrador aceita se recebe ao menos 288 (compensação integral pelo dano). O fazendeiro aceita pagar no máximo 1008 (seu lucro total). O excedente é \( 1008 - 288 = 720 \).
+
+**A negociação novamente conduz a \( n = 12 \), com compensação \( T' \in [288, 1008] \).** Isso confirma o Teorema de Coase: a alocação eficiente é alcançada independentemente da distribuição inicial dos direitos de propriedade. A diferença está apenas na distribuição do excedente — quem detém o direito obtém maior parcela do ganho.
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-7)
+
+---
+
+## ✏️ Exercício 20.8 {#ex-20-8}
+
+**Condição de Samuelson e subprovisão de bem público com \( N \) consumidores.**
+
+\( N = 50 \) consumidores idênticos, renda \( W = 100 \), utilidade \( U_i = x_i + 10\sqrt{G} \), custo \( C(G) = G \).
+
+---
+
+**(a) Condição de Samuelson e \( G^* \)**
+
+A TMS de cada consumidor entre bem público e bem privado é:
+
+\[
+TMS_{G,x}^i = \frac{\partial U_i / \partial G}{\partial U_i / \partial x_i} = \frac{10 / (2\sqrt{G})}{1} = \frac{5}{\sqrt{G}}
+\]
+
+A condição de Samuelson exige:
+
+\[
+\sum_{i=1}^{N} TMS^i = CMg_G \implies N \cdot \frac{5}{\sqrt{G}} = 1 \implies \frac{50 \cdot 5}{\sqrt{G}} = 1
+\]
+
+\[
+\sqrt{G^*} = 250 \implies \boxed{G^* = 62\,500}
+\]
+
+**Verificação da viabilidade:** O custo do bem público é \( G^* = 62\,500 \), e a renda total é \( 50 \times 100 = 5000 \). Como \( 62\,500 > 5000 \), o nível eficiente não é viável com essas rendas.
+
+Reconsiderando com a restrição de recursos \( \sum x_i + G = NW = 5000 \) e \( x_i \geq 0 \), o nível eficiente alcançável é limitado. Na verdade, se toda a renda fosse destinada ao bem público, \( G^{max} = 5000 \). Neste caso, como a solução interior exige \( G^* = 62\,500 \), temos uma solução de canto onde \( G^* = 5000 \) e \( x_i = 0 \) para todo \( i \).
+
+No entanto, para a análise comparativa, consideremos o caso com parâmetros ajustados em que a solução é interior. Com a utilidade quasilinear, se \( G^* = 62\,500 \) excede a renda total, interpretamos que a condição de Samuelson indica \( G^* = 62\,500 \) como ótimo irrestrito. **O nível eficiente irrestrito é \( G^* = 62\,500 \).**
+
+---
+
+**(b) Equilíbrio de Nash de contribuição voluntária**
+
+No equilíbrio de Nash, cada consumidor \( i \) escolhe \( g_i \) para maximizar:
+
+\[
+\max_{g_i} \; (W - g_i) + 10\sqrt{g_i + G_{-i}}
+\]
+
+onde \( G_{-i} = \sum_{j \neq i} g_j \). Condição de primeira ordem:
+
+\[
+-1 + \frac{10}{2\sqrt{g_i + G_{-i}}} = 0 \implies \frac{5}{\sqrt{G}} = 1 \implies \sqrt{G} = 5 \implies G = 25
+\]
+
+No equilíbrio simétrico com \( N = 50 \) consumidores idênticos: \( g_i = G/N = 25/50 = 0{,}5 \).
+
+\[
+\boxed{G^{Nash} = 25}
+\]
+
+---
+
+**(c) Razão \( G^{Nash}/G^* \)**
+
+\[
+\frac{G^{Nash}}{G^*} = \frac{25}{62\,500} = \frac{1}{2500} = \frac{1}{N^2}
+\]
+
+Com \( N = 50 \): \( G^{Nash}/G^* = 1/2500 = 0{,}04\% \). **A provisão voluntária produz uma fração ínfima do nível eficiente.** Isso ocorre porque cada consumidor iguala sua TMS individual (não a soma) ao custo marginal: \( 5/\sqrt{G} = 1 \) vs. \( 250/\sqrt{G} = 1 \).
+
+---
+
+**(d) Efeito do tamanho do grupo**
+
+Com \( N = 200 \):
+
+\[
+G^* = (200 \times 5)^2 = 1\,000\,000, \quad G^{Nash} = 25 \text{ (inalterado)}
+\]
+
+\[
+\frac{G^{Nash}}{G^*} = \frac{25}{1\,000\,000} = \frac{1}{40\,000}
+\]
+
+**A razão diminui dramaticamente.** O nível de Nash não muda (cada consumidor resolve o mesmo problema individual), mas o nível eficiente cresce com \( N^2 \). À medida que o grupo aumenta, o free-riding se agrava: cada consumidor é uma fração menor do total, seu impacto na provisão é insignificante, e o incentivo a contribuir diminui. Este é o resultado clássico de Olson (1965): **grupos maiores enfrentam problemas de ação coletiva mais severos**, pois o benefício individual da contribuição é diluído entre mais membros.
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-8)
+
+---
+
+## ✏️ Exercício 20.9 {#ex-20-9}
+
+**Tragédia dos comuns: pesca em lago de acesso aberto.**
+
+Captura total: \( Q = E(100 - E) \). Preço do peixe: \( p = 1 \). Custo por unidade de esforço: \( w = 10 \). \( n = 10 \) pescadores idênticos.
+
+---
+
+**(a) Esforço total de equilíbrio (acesso aberto)**
+
+No equilíbrio simétrico de Nash, cada pescador escolhe \( e_i \) tomando \( E_{-i} \) como dado. A receita do pescador \( i \) é:
+
+\[
+R_i = \frac{e_i}{E} \cdot E(100 - E) = e_i(100 - E)
+\]
+
+O lucro do pescador \( i \) é:
+
+\[
+\pi_i = e_i(100 - E) - we_i = e_i(100 - E - w)
+\]
+
+Com \( E = e_i + E_{-i} \) e no equilíbrio simétrico \( e_i = E/n \):
+
+\[
+\frac{\partial \pi_i}{\partial e_i} = (100 - E - w) - e_i = 0
+\]
+
+\[
+100 - E - 10 - \frac{E}{n} = 0 \implies 90 = E + \frac{E}{n} = E\left(\frac{n+1}{n}\right)
+\]
+
+\[
+E^{Nash} = \frac{90n}{n+1} = \frac{90 \times 10}{11} = \frac{900}{11} \approx 81{,}82
+\]
+
+**O esforço total de equilíbrio é \( E^{Nash} = 900/11 \approx 81{,}82 \).**
+
+---
+
+**(b) Esforço socialmente eficiente**
+
+O planejador social maximiza o lucro total:
+
+\[
+\Pi(E) = E(100 - E) - wE = 100E - E^2 - 10E = 90E - E^2
+\]
+
+\[
+\frac{d\Pi}{dE} = 90 - 2E = 0 \implies E^{soc} = 45
+\]
+
+**O esforço socialmente eficiente é \( E^{soc} = 45 \).**
+
+---
+
+**(c) Peso morto do acesso aberto**
+
+Lucro total no ótimo social:
+
+\[
+\Pi(45) = 90 \times 45 - 45^2 = 4050 - 2025 = 2025
+\]
+
+Lucro total no equilíbrio de acesso aberto:
+
+\[
+\Pi\left(\frac{900}{11}\right) = 90 \times \frac{900}{11} - \left(\frac{900}{11}\right)^2 = \frac{81\,000}{11} - \frac{810\,000}{121} = \frac{891\,000 - 810\,000}{121} = \frac{81\,000}{121} \approx 669{,}42
+\]
+
+\[
+DWL = \Pi^{soc} - \Pi^{Nash} = 2025 - \frac{81\,000}{121} = \frac{245\,025 - 81\,000}{121} = \frac{164\,025}{121} \approx 1355{,}58
+\]
+
+**O peso morto do acesso aberto é aproximadamente 1355,58, representando \( 1355{,}58 / 2025 \approx 66{,}9\% \) do excedente potencial desperdiçado.**
+
+---
+
+**(d) Políticas para alcançar o ótimo**
+
+**Política 1 — Imposto pigouviano sobre esforço.** O regulador cobra um imposto \( t \) por unidade de esforço que internalize a externalidade negativa. No equilíbrio, cada pescador iguala:
+
+\[
+100 - E - \frac{E}{n} - t = 0
+\]
+
+Para induzir \( E^{soc} = 45 \):
+
+\[
+t = 90 - 45\left(\frac{n+1}{n}\right) = 90 - 45 \times \frac{11}{10} = 90 - 49{,}5 = 40{,}5
+\]
+
+O imposto corrige a cunha entre produto médio e produto marginal, fazendo cada pescador perceber o custo social de seu esforço.
+
+**Política 2 — Sistema de quotas individuais transferíveis (ITQ).** O regulador fixa o esforço total em \( E^{soc} = 45 \) e distribui permissões de pesca. Cada pescador recebe uma quota de \( 45/10 = 4{,}5 \) unidades de esforço. As quotas são transferíveis, permitindo que pescadores mais eficientes comprem quotas dos menos eficientes. Com pescadores idênticos, não há comércio, mas o cap garante o nível eficiente. O preço de equilíbrio da quota reflete o produto marginal social da pesca no ótimo.
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-9)
+
+---
+
+## ✏️ Exercício 20.10 {#ex-20-10}
+
+**Cap-and-trade vs. imposto sobre emissões com três firmas.**
+
+Custos marginais de abatimento: \( CMgA_1 = 2a_1 \), \( CMgA_2 = 4a_2 \), \( CMgA_3 = a_3 \). Meta: redução total de 100 toneladas.
+
+---
+
+**(a) Alocação custo-efetiva e equivalência dos instrumentos de mercado**
+
+A alocação custo-efetiva equaliza os custos marginais de abatimento:
+
+\[
+2a_1 = 4a_2 = a_3 = \mu
+\]
+
+onde \( \mu \) é o preço-sombra (ou preço da permissão). Portanto:
+
+\[
+a_1 = \frac{\mu}{2}, \quad a_2 = \frac{\mu}{4}, \quad a_3 = \mu
+\]
+
+Pela restrição \( a_1 + a_2 + a_3 = 100 \):
+
+\[
+\frac{\mu}{2} + \frac{\mu}{4} + \mu = 100 \implies \frac{7\mu}{4} = 100 \implies \mu = \frac{400}{7} \approx 57{,}14
+\]
+
+\[
+a_1 = \frac{200}{7} \approx 28{,}57, \quad a_2 = \frac{100}{7} \approx 14{,}29, \quad a_3 = \frac{400}{7} \approx 57{,}14
+\]
+
+**Cap-and-trade:** Cada firma negocia permissões até igualar seu custo marginal de abatimento ao preço da permissão \( p \). No equilíbrio: \( p = \mu = 400/7 \approx 57{,}14 \).
+
+**Imposto uniforme:** Se o regulador fixa o imposto \( t = 400/7 \), cada firma abate até \( CMgA_i = t \), resultando em \( a_1 = 200/7 \), \( a_2 = 100/7 \), \( a_3 = 400/7 \) — exatamente a alocação custo-efetiva.
+
+**Ambos os instrumentos de mercado atingem a mesma alocação custo-efetiva, com o mesmo preço implícito \( \mu = 400/7 \).**
+
+---
+
+**(b) Custo total: custo-efetiva vs. uniforme**
+
+Os custos de abatimento são \( CA_1 = a_1^2 \), \( CA_2 = 2a_2^2 \), \( CA_3 = 0{,}5a_3^2 \) (integrando os custos marginais).
+
+**Custo custo-efetivo:**
+
+\[
+CT^{ef} = \left(\frac{200}{7}\right)^2 + 2\left(\frac{100}{7}\right)^2 + 0{,}5\left(\frac{400}{7}\right)^2
+\]
+
+\[
+= \frac{40\,000}{49} + \frac{20\,000}{49} + \frac{80\,000}{49} = \frac{140\,000}{49} = \frac{20\,000}{7} \approx 2857{,}14
+\]
+
+**Custo com abatimento uniforme** (\( a_i = 100/3 \) para cada firma):
+
+\[
+CT^{unif} = \left(\frac{100}{3}\right)^2 + 2\left(\frac{100}{3}\right)^2 + 0{,}5\left(\frac{100}{3}\right)^2 = 3{,}5 \times \frac{10\,000}{9} = \frac{35\,000}{9} \approx 3888{,}89
+\]
+
+**Economia:**
+
+\[
+CT^{unif} - CT^{ef} = \frac{35\,000}{9} - \frac{20\,000}{7} = \frac{245\,000 - 180\,000}{63} = \frac{65\,000}{63} \approx 1031{,}75
+\]
+
+**A alocação custo-efetiva gera economia de aproximadamente 1031,75, ou 26,5% do custo uniforme.** A economia é substancial porque os custos marginais são muito heterogêneos: a firma 3 (custo marginal mais baixo) abate quatro vezes mais que a firma 2 (custo marginal mais alto).
+
+---
+
+**(c) Imposto vs. cap-and-trade com custos subestimados**
+
+Se os verdadeiros custos de abatimento são 50% maiores: \( CMgA_1^{real} = 3a_1 \), \( CMgA_2^{real} = 6a_2 \), \( CMgA_3^{real} = 1{,}5a_3 \).
+
+**Com imposto \( t = 40 \):** Cada firma abate até \( CMgA_i^{real} = 40 \):
+
+\[
+a_1 = \frac{40}{3} \approx 13{,}33, \quad a_2 = \frac{40}{6} \approx 6{,}67, \quad a_3 = \frac{40}{1{,}5} \approx 26{,}67
+\]
+
+Abatimento total: \( 13{,}33 + 6{,}67 + 26{,}67 = 46{,}67 \) toneladas (abaixo da meta de 100).
+
+O dano da poluição residual extra (\( 100 - 46{,}67 = 53{,}33 \) toneladas a mais) é: \( D' \times 53{,}33 = 40 \times 53{,}33 = 2133{,}33 \).
+
+Porém, a economia no custo de abatimento (por abater menos) também importa. O custo total social (abatimento + dano) com o imposto reflete o trade-off correto dado o preço \( t = 40 \).
+
+**Com cap-and-trade (cap = 100 toneladas):** A meta de 100 toneladas é atingida independentemente dos custos reais. O preço da permissão ajusta-se para cima:
+
+\[
+\frac{\mu'}{3} + \frac{\mu'}{6} + \frac{\mu'}{1{,}5} = 100 \implies \mu'\left(\frac{1}{3} + \frac{1}{6} + \frac{2}{3}\right) = 100 \implies \mu' \times \frac{7}{6} = 100 \implies \mu' = \frac{600}{7} \approx 85{,}71
+\]
+
+Como o dano marginal é constante (\( D' = 40 \)), o custo marginal de abatimento no cap-and-trade (\( \mu' \approx 85{,}71 \)) excede muito o dano marginal (40). Isso significa que a sociedade está gastando mais em abatimento do que o dano evitado justifica.
+
+**O imposto é preferível neste caso**, pois mantém o custo marginal de abatimento (\( t = 40 \)) alinhado com o dano marginal (\( D' = 40 \)), mesmo que o abatimento total fique abaixo da meta.
+
+---
+
+**(d) Relação com Weitzman (1974)**
+
+O resultado de Weitzman (1974) mostra que a escolha entre preços (imposto) e quantidades (cap) depende das inclinações relativas das curvas de custo marginal de abatimento e de dano marginal:
+
+- **Quando a curva de dano marginal é plana** (como neste exercício, com \( D' = 40 \) constante) **e a curva de custo marginal de abatimento é inclinada**, o instrumento de preço (imposto) é preferível. Isso porque erros na estimação dos custos de abatimento levam a variações na quantidade abatida, mas o custo social dessas variações é pequeno quando o dano marginal é constante — o imposto mantém o custo marginal de abatimento igual ao dano marginal (a condição de eficiência).
+
+- **Quando a curva de dano marginal é inclinada** (danos catastróficos acima de certo limiar) **e a curva de custo de abatimento é plana**, o instrumento de quantidade (cap) é preferível, pois garante que o nível de emissão não ultrapasse o limiar, mesmo que os custos sejam mal estimados.
+
+No nosso exercício, com dano marginal constante e custos subestimados: o imposto errou na quantidade (abateu 46,67 em vez de 100), mas manteve a eficiência marginal. O cap-and-trade atingiu a meta, mas a um custo marginal de 85,71, muito acima do dano marginal de 40 — gerando ineficiência por abatimento excessivo em termos de custo-benefício. **O imposto domina porque a curva de dano é plana.**
+
+↩ [Voltar ao enunciado](../cap20/index.md#ex-20-10)

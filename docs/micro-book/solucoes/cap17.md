@@ -391,3 +391,399 @@ Evidências empíricas brasileiras (Firpo e Reis, 2007; Saboia, 2007) sugerem qu
 ↩ [Voltar ao enunciado](../cap17/index.md#ex-17-5)
 
 ---
+
+## ✏️ Exercício 17.6 {#ex-17-6}
+
+**Trabalhador com preferências CES \(U(C, L) = \left(0{,}5\, C^{\rho} + 0{,}5\, L^{\rho}\right)^{1/\rho}\), com \(\rho = -1\), \(T = 24\), \(V = 0\).**
+
+**(a) Derivar a demanda marshalliana por lazer.**
+
+Com CES e \(\alpha = 0{,}5\), a elasticidade de substituição é \(\sigma = \frac{1}{1-\rho} = \frac{1}{1-(-1)} = \frac{1}{2} = 0{,}5\).
+
+A demanda marshalliana por lazer com CES (e \(V = 0\), preço do consumo normalizado a 1) é:
+
+\[
+L^*(w) = \frac{w^{-\sigma}}{1 + w^{-\sigma}} \cdot T \cdot \frac{wT}{wT} = \frac{T}{1 + w^{\sigma}}
+\]
+
+Mais diretamente, das CPOs do problema CES com pesos iguais, obtemos:
+
+\[
+\frac{L}{C} = \left(\frac{1}{w}\right)^{\sigma} = w^{-\sigma}
+\]
+
+Combinando com a restrição \(C = w(24 - L)\):
+
+\[
+L = w^{-\sigma} \cdot w(24 - L) = w^{1-\sigma}(24 - L)
+\]
+
+\[
+L\left(1 + w^{1-\sigma}\right) = 24\, w^{1-\sigma}
+\]
+
+\[
+L^* = \frac{24\, w^{1-\sigma}}{1 + w^{1-\sigma}} = \frac{24}{1 + w^{\sigma - 1}} = \frac{24}{1 + w^{-0{,}5}}
+\]
+
+Equivalentemente, multiplicando numerador e denominador por \(w^{0{,}5}\):
+
+\[
+L^* = \frac{24\, w^{0{,}5}}{w^{0{,}5} + 1} = \frac{24\sqrt{w}}{\sqrt{w} + 1}
+\]
+
+**(b) Oferta de trabalho e backward-bending.**
+
+\[
+h^*(w) = 24 - L^* = 24 - \frac{24\sqrt{w}}{\sqrt{w} + 1} = \frac{24(\sqrt{w} + 1) - 24\sqrt{w}}{\sqrt{w} + 1} = \frac{24}{\sqrt{w} + 1}
+\]
+
+Para verificar o backward-bending, derivamos:
+
+\[
+\frac{dh^*}{dw} = -\frac{24}{(\sqrt{w} + 1)^2} \cdot \frac{1}{2\sqrt{w}} = -\frac{12}{\sqrt{w}(\sqrt{w} + 1)^2} < 0
+\]
+
+A derivada é **sempre negativa**, o que significa que, com \(\sigma = 0{,}5 < 1\) e \(V = 0\), a oferta de trabalho é **monotonicamente decrescente** em \(w\). O efeito renda domina o efeito substituição para todo \(w > 0\). A curva é backward-bending desde o início.
+
+*Nota:* Isso ocorre porque a elasticidade de substituição é baixa (\(\sigma = 0{,}5\)), tornando o efeito substituição fraco. Com \(\sigma > 1\), o efeito substituição dominaria e a oferta seria crescente.
+
+**(c) Salário que maximiza a oferta.**
+
+Como \(h^*(w)\) é estritamente decrescente para todo \(w > 0\) (conforme mostrado no item b), não há máximo interior. A oferta é maximizada no limite quando \(w \to 0^+\), onde \(h^* \to 24\). Na prática, para que o modelo faça sentido, precisamos de uma elasticidade de substituição \(\sigma > 1\) para obter uma curva com máximo interior.
+
+Se tivéssemos \(\sigma > 1\) (por exemplo, \(\rho > 0\)), a oferta seria inicialmente crescente e depois decrescente, com um máximo interior. Para o caso geral com \(V > 0\), a decomposição de Slutsky mostra que o ponto de inflexão ocorre onde \(\left|h^* \cdot \frac{\partial L^*}{\partial V}\right| = \left|\frac{\partial L^c}{\partial w}\right|\). No caso CES com \(\sigma < 1\), o efeito substituição é estruturalmente fraco, e o efeito renda domina em todas as faixas salariais.
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-6)
+
+---
+
+## ✏️ Exercício 17.7 {#ex-17-7}
+
+**Equação de Mincer: \(\ln w = 0{,}80 + 0{,}10 S + 0{,}04 X - 0{,}0006 X^2\).**
+
+**(a) Retorno estimado da educação.**
+
+O coeficiente de \(S\) é \(\hat{\beta}_1 = 0{,}10\). Isso significa que cada ano adicional de escolaridade está associado a um aumento de aproximadamente **10%** no salário-hora, *ceteris paribus*.
+
+Formalmente: \(\frac{\partial \ln w}{\partial S} = 0{,}10\), o que implica \(\frac{\Delta w / w}{\Delta S} \approx 10\%\).
+
+**(b) Diferencial entre superior completo e médio completo.**
+
+Com \(S_1 = 16\) (superior) e \(S_2 = 11\) (médio), ambos com \(X = 10\):
+
+\[
+\ln w_1 - \ln w_2 = 0{,}10 \times (16 - 11) = 0{,}50
+\]
+
+Em termos percentuais:
+
+\[
+\frac{w_1 - w_2}{w_2} = e^{0{,}50} - 1 \approx 0{,}649 = 64{,}9\%
+\]
+
+Um trabalhador com ensino superior completo ganha, em média, **64,9% a mais** que um com ensino médio completo (mesma experiência).
+
+**(c) Idade em que o salário atinge o pico.**
+
+O perfil experiência-salário é maximizado quando:
+
+\[
+\frac{\partial \ln w}{\partial X} = 0{,}04 - 0{,}0012X = 0 \implies X^* = \frac{0{,}04}{0{,}0012} \approx 33{,}3 \text{ anos}
+\]
+
+Se o indivíduo tem \(S = 16\) anos de escolaridade e começou a estudar aos 6 anos:
+
+\[
+\text{Idade no pico} = 6 + S + X^* = 6 + 16 + 33{,}3 \approx 55 \text{ anos}
+\]
+
+Se tem \(S = 11\):
+
+\[
+\text{Idade no pico} = 6 + 11 + 33{,}3 \approx 50 \text{ anos}
+\]
+
+O salário atinge o pico entre **50 e 55 anos**, dependendo da escolaridade.
+
+**(d) Viés de habilidade.**
+
+O coeficiente \(\hat{\beta}_1 = 0{,}10\) pode **superestimar** o retorno causal da educação por causa do **viés de variável omitida** (viés de habilidade). Se indivíduos com maior habilidade inata (inteligência, motivação, redes de contato familiares) tendem tanto a obter mais educação quanto a receber salários mais altos — independentemente da educação —, então parte do efeito atribuído à educação na verdade reflete habilidade não observada.
+
+Formalmente, se o verdadeiro modelo é \(\ln w = \beta_0 + \beta_1 S + \gamma A + \varepsilon\) (onde \(A\) é habilidade) e estimamos sem \(A\), o viés é:
+
+\[
+\text{plim } \hat{\beta}_1 = \beta_1 + \gamma \cdot \frac{\text{Cov}(S, A)}{\text{Var}(S)}
+\]
+
+Como \(\gamma > 0\) (habilidade eleva salários) e \(\text{Cov}(S, A) > 0\) (mais hábeis estudam mais), o viés é positivo: \(\hat{\beta}_1 > \beta_1\).
+
+Estratégias empíricas para lidar com esse viés incluem: variáveis instrumentais (usando, por exemplo, proximidade a universidades como instrumento para educação), estimação com gêmeos (comparando gêmeos idênticos com escolaridade diferente) e descontinuidades em políticas educacionais. Estimativas com essas correções tendem a reduzir o retorno da educação em 1–3 pontos percentuais.
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-7)
+
+---
+
+## ✏️ Exercício 17.8 {#ex-17-8}
+
+**Monopsônio com \(w = 5 + H\) e \(VPMg_L = 65 - 2H\).**
+
+**(a) Equilíbrio monopsonístico.**
+
+O custo total do trabalho é:
+
+\[
+CT_L = w \cdot H = (5 + H) \cdot H = 5H + H^2
+\]
+
+O custo marginal do trabalho é:
+
+\[
+CMg_L = \frac{dCT_L}{dH} = 5 + 2H
+\]
+
+Igualando \(VPMg_L = CMg_L\):
+
+\[
+65 - 2H = 5 + 2H \implies 60 = 4H \implies H_m = 15
+\]
+
+O salário é determinado pela curva de oferta:
+
+\[
+w_m = 5 + 15 = 20
+\]
+
+O VPMg no ponto de emprego monopsonístico é \(VPMg_L(15) = 65 - 30 = 35\). A exploração monopsonística é \(35 - 20 = 15\).
+
+**(b) Efeito do salário mínimo \(\bar{w} = 25\).**
+
+Primeiro, verificamos que \(\bar{w} = 25 > w_m = 20\), portanto o salário mínimo é efetivo. Com o salário mínimo, o custo marginal do trabalho é constante em 25 até o ponto onde a curva de oferta atinge 25:
+
+\[
+25 = 5 + H \implies H = 20
+\]
+
+Para \(H \leq 20\), o \(CMg_L = 25\). O monopsonista iguala \(VPMg_L = 25\):
+
+\[
+65 - 2H = 25 \implies H = 20
+\]
+
+Como \(H = 20 \leq 20\), estamos no trecho horizontal. O novo emprego é \(H' = 20\).
+
+O emprego **aumentou** de 15 para 20 (+33,3%), e o salário subiu de 20 para 25 (+25%). Este é o resultado clássico do salário mínimo em monopsônio: aumenta simultaneamente emprego e salário.
+
+**(c) Salário mínimo que maximiza o emprego.**
+
+O emprego é maximizado quando \(\bar{w}\) é igual ao salário competitivo. No equilíbrio competitivo, \(VPMg_L = w\):
+
+\[
+65 - 2H = 5 + H \implies 60 = 3H \implies H_c = 20, \quad w_c = 25
+\]
+
+Portanto, \(\bar{w}^* = 25\) é exatamente o salário que maximiza o emprego (restaurando o resultado competitivo com \(H = 20\)). Para qualquer \(\bar{w} > 25\), o emprego cai (pois entramos no regime competitivo onde o salário mínimo é binding acima do equilíbrio).
+
+Neste caso particular, o salário mínimo do item (b) já é o que maximiza o emprego, coincidindo com o salário competitivo.
+
+**(d) Salário mínimo que iguala o emprego ao do monopsônio.**
+
+Queremos \(\bar{w}\) tal que o emprego com salário mínimo seja igual a \(H_m = 15\). Com salário mínimo acima do competitivo, o emprego é determinado pela demanda:
+
+\[
+VPMg_L = \bar{w}: \quad 65 - 2H = \bar{w} \implies H = \frac{65 - \bar{w}}{2}
+\]
+
+Igualando a 15:
+
+\[
+\frac{65 - \bar{w}}{2} = 15 \implies \bar{w} = 35
+\]
+
+Se o salário mínimo for fixado em \(\bar{w} = 35\), o emprego volta a ser 15 — igual ao monopsônio, mas com salário muito maior (35 vs. 20). Para qualquer \(\bar{w} > 35\), o emprego cai abaixo do nível monopsonístico. Isso ilustra que salários mínimos muito altos podem ser contraproducentes mesmo em mercados monopsonísticos.
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-8)
+
+---
+
+## ✏️ Exercício 17.9 {#ex-17-9}
+
+**Barganha de Nash: \(U_S = (w - 10)H\), \(\pi = (100 - H)H - wH\), poder de barganha \(\beta\).**
+
+**(a) Demanda por trabalho da firma.**
+
+A firma maximiza lucro para um salário dado:
+
+\[
+\pi = (100 - H)H - wH = 100H - H^2 - wH
+\]
+
+\[
+\frac{d\pi}{dH} = 100 - 2H - w = 0 \implies H^d(w) = \frac{100 - w}{2}
+\]
+
+**(b) Salário negociado.**
+
+Substituindo \(H^d(w)\) nas funções objetivo:
+
+\[
+U_S = (w - 10) \cdot \frac{100 - w}{2}
+\]
+
+\[
+\pi = 100 \cdot \frac{100 - w}{2} - \left(\frac{100 - w}{2}\right)^2 - w \cdot \frac{100 - w}{2} = \frac{(100 - w)^2}{4}
+\]
+
+No ponto de desacordo, assumimos \(\pi^0 = 0\) (firma fecha) e \(U_S^0 = 0\) (trabalhadores recebem o salário de reserva). O problema de barganha de Nash é:
+
+\[
+\max_w \; \left[(w - 10) \cdot \frac{100 - w}{2}\right]^\beta \cdot \left[\frac{(100 - w)^2}{4}\right]^{1-\beta}
+\]
+
+Tomando logaritmo:
+
+\[
+\max_w \; \beta\left[\ln(w - 10) + \ln(100 - w) - \ln 2\right] + (1-\beta)\left[2\ln(100 - w) - \ln 4\right]
+\]
+
+\[
+= \beta \ln(w - 10) + \beta \ln(100 - w) + 2(1-\beta)\ln(100 - w) + \text{const.}
+\]
+
+\[
+= \beta \ln(w - 10) + (2 - \beta)\ln(100 - w) + \text{const.}
+\]
+
+CPO:
+
+\[
+\frac{\beta}{w - 10} - \frac{2 - \beta}{100 - w} = 0
+\]
+
+\[
+\beta(100 - w) = (2 - \beta)(w - 10)
+\]
+
+\[
+100\beta - \beta w = 2w - 20 - \beta w + 10\beta
+\]
+
+\[
+100\beta - 10\beta = 2w - 20
+\]
+
+\[
+90\beta + 20 = 2w
+\]
+
+\[
+w^*(\beta) = 10 + 45\beta
+\]
+
+**(c) Resultado para \(\beta = 0{,}5\).**
+
+\[
+w^* = 10 + 45 \times 0{,}5 = 32{,}5
+\]
+
+\[
+H^* = \frac{100 - 32{,}5}{2} = 33{,}75
+\]
+
+\[
+\pi^* = \frac{(100 - 32{,}5)^2}{4} = \frac{67{,}5^2}{4} = \frac{4556{,}25}{4} = 1139{,}06
+\]
+
+No equilíbrio competitivo (\(w = w_0 = 10\)):
+
+\[
+H_c = \frac{100 - 10}{2} = 45, \quad \pi_c = \frac{90^2}{4} = 2025
+\]
+
+Comparação:
+
+| | Barganha (\(\beta = 0{,}5\)) | Competitivo (\(w = 10\)) |
+|---|---|---|
+| Salário | 32,50 | 10 |
+| Emprego | 33,75 | 45 |
+| Lucro | 1.139 | 2.025 |
+
+O sindicato eleva o salário em 225%, mas reduz o emprego em 25% e o lucro em 44%.
+
+**(d) Quando \(\beta \to 1\).**
+
+\[
+\lim_{\beta \to 1} w^* = 10 + 45 = 55
+\]
+
+\[
+H^* = \frac{100 - 55}{2} = 22{,}5
+\]
+
+Quando o sindicato tem todo o poder de barganha, ele maximiza \(U_S = (w - 10)H^d(w)\):
+
+\[
+\frac{dU_S}{dw} = H^d + (w - 10)\frac{dH^d}{dw} = \frac{100 - w}{2} + (w - 10)\left(-\frac{1}{2}\right) = \frac{100 - w - w + 10}{2} = \frac{110 - 2w}{2} = 0
+\]
+
+\[
+w = 55
+\]
+
+Confirmando que \(\beta \to 1\) reproduz o monopólio sindical. A interpretação econômica é clara: quando o sindicato detém todo o poder de barganha, ele maximiza a renda líquida de seus membros sem considerar o lucro da firma, gerando o resultado de monopólio sindical — salário muito acima do competitivo e emprego significativamente menor. O parâmetro \(\beta\) permite uma transição contínua entre o resultado competitivo (\(\beta = 0\)) e o monopólio sindical (\(\beta = 1\)).
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-9)
+
+---
+
+## ✏️ Exercício 17.10 {#ex-17-10}
+
+**Questão de reflexão — automação e polarização do mercado de trabalho.**
+
+**(a) Efeito da automação sobre três grupos.**
+
+A automação de tarefas rotineiras desloca para a **esquerda** a curva de demanda por trabalhadores de média qualificação (que realizam tarefas rotineiras — montadores, operadores, escriturários). Para trabalhadores de alta qualificação (analistas, gestores, programadores), a tecnologia é **complementar**: desloca a curva de demanda para a **direita**. Para trabalhadores de baixa qualificação em tarefas manuais não rotineiras (garçons, cuidadores, limpeza), o efeito direto é pequeno — a curva de demanda se mantém relativamente estável.
+
+Graficamente:
+
+- **Alta qualificação:** demanda se desloca para a direita → salário sobe, emprego sobe.
+- **Média qualificação:** demanda se desloca para a esquerda → salário cai, emprego cai.
+- **Baixa qualificação:** demanda relativamente estável → salário e emprego pouco afetados (mas a migração de trabalhadores de média para baixa pode pressionar salários para baixo neste segmento).
+
+O resultado é uma distribuição de salários com formato de "U" — os extremos crescem e o meio encolhe — a chamada **polarização**.
+
+**(b) Regras de Marshall e vulnerabilidade à automação.**
+
+As regras de Marshall da demanda derivada ajudam a prever a vulnerabilidade:
+
+1. **Elasticidade de substituição alta** (regra 1): ocupações cujas tarefas são facilmente codificáveis e executáveis por algoritmos ou robôs são mais vulneráveis. Trabalho de escritório (contabilidade, entrada de dados) é altamente substituível; trabalho de cuidado pessoal, não.
+
+2. **Participação do trabalho no custo** (regra 3): setores intensivos em trabalho rotineiro (como centros de atendimento telefônico) têm maior incentivo para automatizar, pois a economia de custos é proporcionalmente maior.
+
+3. **Elasticidade da demanda pelo produto** (regra 2): se a automação reduz custos e o produto tem demanda elástica, a produção pode expandir o suficiente para compensar parcialmente a perda de empregos (efeito escala positivo). Setores com demanda inelástica terão perdas de emprego mais severas.
+
+4. **Oferta de capital/tecnologia** (regra 4): quanto mais barato e acessível o capital tecnológico (robôs, IA), mais rápida a substituição. A queda nos custos de computação e IA generativa acelera a automação.
+
+**(c) IA generativa e inversão da polarização.**
+
+A afirmação tem mérito parcial. A IA generativa (como modelos de linguagem e geradores de imagem) é particularmente eficaz em tarefas **cognitivas** que, até recentemente, eram consideradas seguras: redação, programação básica, análise de dados, tradução, design gráfico, diagnóstico médico preliminar. Isso ameaça ocupações de renda média-alta e alta, invertendo parcialmente o padrão de polarização.
+
+No entanto, a afirmação é incompleta:
+
+- A IA generativa **complementa** muitos trabalhadores cognitivos, aumentando sua produtividade em vez de substituí-los. Programadores que usam IA codificam mais rápido; advogados que usam IA revisam contratos mais rapidamente.
+- Tarefas cognitivas complexas que exigem julgamento, criatividade genuína e interação social profunda permanecem difíceis de automatizar.
+- A evidência empírica ainda é incipiente. Estudos preliminares (Eloundou et al., 2023) sugerem que a IA generativa "expõe" 80% das ocupações a algum grau de automação, mas o efeito líquido sobre emprego dependerá da velocidade de adoção, da regulação e da capacidade de requalificação.
+
+**(d) Políticas públicas para mitigar efeitos distributivos.**
+
+Políticas recomendadas incluem:
+
+- **Investimento em educação e requalificação contínua** (*lifelong learning*): adaptar a força de trabalho às novas demandas, com ênfase em habilidades complementares à tecnologia (pensamento crítico, criatividade, comunicação, trabalho em equipe).
+- **Fortalecimento de redes de proteção social**: seguro-desemprego mais generoso e ativo (modelo nórdico de flexicurity), com foco em recolocação.
+- **Tributação progressiva sobre capital e renda de robôs**: se a automação transfere renda do trabalho para o capital, a base tributária deve acompanhar essa mudança. Propostas incluem tributação de robôs (Bill Gates) ou imposto sobre o valor adicionado por máquinas.
+- **Renda básica universal (RBU)**: em cenário de automação massiva, pode ser necessária uma transferência incondicional financiada pela tributação do capital e de recursos naturais.
+- **Políticas de concorrência no mercado de trabalho**: combater a concentração de empregadores (seção 17.7) e garantir que os ganhos de produtividade da automação sejam compartilhados com os trabalhadores, não apenas apropriados pelas firmas.
+
+↩ [Voltar ao enunciado](../cap17/index.md#ex-17-10)
+
+---

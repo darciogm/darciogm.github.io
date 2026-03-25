@@ -1,0 +1,15 @@
+TF	Se as preferências do indivíduo estão representadas pela função utilidade U(x,y) = 2x + y e os preços dos bens são p_x = p_y = 2, então uma redução de p_x para p_x = 1 resulta num Efeito Substituição igual a zero.	true
+TF	Se dois bens x e y são complementares perfeitos e o preço do bem x decresce, então o Efeito Renda é zero e o Efeito Total se iguala ao Efeito Substituição.	false
+TF	A negatividade do Efeito Substituição decorre diretamente do Axioma Forte da Preferência Revelada.	false
+TF	No caso de preferências do tipo Cobb-Douglas, a Elasticidade-Preço Cruzada da demanda por bens é nula, enquanto a Elasticidade-Preço da demanda por cada um deles é unitária (em módulo).	true
+TF	Nas funções demandas geradas a partir de uma função utilidade do tipo U(X,Y) = X^2 + Y^2 as demandas individuais por cada bem são independentes do preço do outro.	false
+TF	Para qualquer consumidor, no espectro de preços considerado, o bem é comum.	true
+TF	Em t=0, se o valor que a sociedade atribui aos recursos deslocados da economia para a produção desse bem é de \$10, então o excedente social é nulo.	true
+TF	Em t=1, o valor que a sociedade atribui aos recursos deslocados da economia para a produção desse bem cai de \10 para \9. Então a quantidade de equilíbrio em t=1 é de Q = 11.000 unidades.	false
+TF	Em t=2, o valor que a sociedade atribui aos recursos deslocados da economia para a produção desse bem cai para \8. Então o excedente social é de \31.000.	true
+TF	Um economista coletou os dados de quantidade demandada agregada e de preços nos períodos t=0 e t=1, a saber, preço de \10 em t=0 e de \9 em t=1. Para obter os dados de demanda agregada, o economista entrevistou cada um dos demandantes que foi ao mercado em t=0 e em t=1, sendo que nenhum demandante mentiu ao ser perguntado sobre a quantidade que estava demandando ao preço do período. O economista, porém, negligenciou o fato de que os tempos de consumo dos demandantes eram diferentes. Então esse economista concluiu que o bem é de Giffen.	true
+TF	A elasticidade-preço será unitária quando a quantidade de tulipas vendida for de 1.800 unidades.	true
+TF	A elasticidade-preço da demanda por chope será -\infty ao preço de \$200.	false
+TF	Para preços entre \180 e \90, a demanda é elástica.	true
+TF	A elasticidade-preço da demanda é nula para uma quantidade de 4.000 tulipas.	false
+TF	Como chope e batata frita são bens complementares, a elasticidade-preço cruzada da demanda entre eles no bar é menor do que zero.	true

@@ -644,6 +644,8 @@ A escolha intertemporal é o domínio onde o comportamento humano talvez mais se
 
 ### 8.5.1 O Modelo de Utilidade Descontada
 
+O modelo formal de consumo intertemporal com desconto exponencial — incluindo a restrição orçamentária intertemporal, a equação de Euler e o Valor Presente Líquido — é desenvolvido no Capítulo 18.
+
 O modelo padrão de escolha intertemporal — o **Modelo de Utilidade Descontada** (DUM), proposto por Samuelson (1937) — assume que os agentes avaliam fluxos de utilidade futura usando uma taxa de desconto **constante** \(\delta \in (0,1)\). É importante notar que Samuelson, ao propor o modelo, foi explicitamente cético sobre sua validade psicológica — ele o apresentou como uma conveniência analítica, não como uma descrição fiel do comportamento humano. Não obstante, o DUM tornou-se o paradigma dominante em macroeconomia e finanças, e suas implicações comportamentais — em particular, a consistência temporal — passaram a ser tratadas como referência normativa.
 
 \[
@@ -798,6 +800,16 @@ A distinção entre agentes sofisticados e ingênuos tem implicações práticas
 !!! box-brasil "Box Brasil — Crédito rotativo e viés do presente"
     O crédito rotativo do cartão de crédito no Brasil cobra taxas de juros que figuram entre as mais altas do mundo — segundo dados do Banco Central do Brasil, a taxa média do rotativo superou 400% ao ano em diversos momentos recentes. Muitos consumidores, ao optar por pagar apenas o valor mínimo da fatura, subestimam o custo total acumulado das parcelas futuras. Esse comportamento é consistente com o desconto quasi-hiperbólico: o alívio imediato de não pagar a fatura integral (benefício no período \(t = 0\)) é sobrevalorizado em relação ao custo dos juros compostos nos períodos seguintes (descontados por \(\beta\delta^t\) com \(\beta < 1\)). A Lei do Superendividamento (Lei nº 14.181/2021) reconheceu implicitamente esse padrão ao criar mecanismos de renegociação e preservação do mínimo existencial.
 
+!!! box-mundo "🌍 Box Mundo 8.3 — Nudges na poupança previdenciária ao redor do mundo: auto-enrollment e o viés do presente como ferramenta de política"
+
+    **Contexto:** A Seção 8.5 mostrou que o desconto quasi-hiperbólico (\(\beta < 1\)) gera procrastinação sistemática em decisões de poupança: o agente planeja poupar "amanhã", mas quando amanhã chega, o viés do presente o impede novamente. Esse padrão tem consequências macroeconômicas profundas: populações inteiras chegam à aposentadoria com poupança insuficiente, pressionando sistemas previdenciários públicos já sobrecarregados pelo envelhecimento demográfico. A resposta de política pública mais bem-sucedida para esse problema é a **inscrição automática** (*auto-enrollment*) em planos de poupança previdenciária — um nudge que explora a mesma inércia e viés do *status quo* que causam a subpoupança para, paradoxalmente, promover poupança adequada.
+
+    **Dados:** O caso paradigmático é o dos planos 401(k) nos Estados Unidos. Madrian e Shea (2001, *Quarterly Journal of Economics*) documentaram que a mudança de opt-in para opt-out em uma grande empresa americana elevou a taxa de adesão de novos funcionários de 49% para 86% — um aumento de 37 pontos percentuais sem qualquer alteração na remuneração ou nos incentivos fiscais. Choi et al. (2004, *NBER Working Paper*) replicaram o resultado em múltiplas empresas e mostraram que o efeito persiste ao longo do tempo. No Reino Unido, o programa *NEST* (*National Employment Savings Trust*), implementado a partir de 2012, tornou a inscrição automática obrigatória para todos os empregadores. O Department for Work and Pensions (2023) reporta que o número de trabalhadores do setor privado com poupança previdenciária ativa passou de 2,7 milhões em 2012 para 19,4 milhões em 2022 — um aumento de mais de 600%. A taxa de opt-out permaneceu estável em torno de 9%, confirmando o poder da inércia. Na Nova Zelândia, o programa KiwiSaver (2007) combina inscrição automática com contribuição paritária do empregador e subsídio governamental, atingindo cobertura de 82% da população empregada até 2023 (IRD New Zealand). Na Turquia, a introdução de auto-enrollment em planos de previdência privada em 2017 triplicou o número de participantes no primeiro ano (OECD, 2019). O programa *Save More Tomorrow* (SMarT), desenhado por Thaler e Benartzi (2004), vai além: convida trabalhadores a comprometer aumentos salariais *futuros* à poupança, contornando simultaneamente o viés do presente (o sacrifício é futuro, não imediato) e a aversão à perda (o salário líquido nunca diminui). Na primeira implementação, a taxa de poupança dos participantes subiu de 3,5% para 13,6% em quatro aumentos salariais consecutivos.
+
+    **Análise:** Os resultados globais do auto-enrollment são uma validação empírica direta do modelo de desconto quasi-hiperbólico da Seção 8.5.3. Se os agentes tivessem desconto exponencial (\(\beta = 1\)), a mudança do default não deveria afetar significativamente a adesão — um agente racional com preferências consistentes aderiria ou não ao plano independentemente da opção pré-selecionada, pois o custo de fazer opt-in ou opt-out é trivial. O fato de que a mudança de default gera diferenças de 37 a 50 pontos percentuais na adesão revela que a inércia decisória — produto do viés do presente e do *status quo bias* — é quantitativamente dominante. O auto-enrollment funciona porque explora os próprios vieses que causam o problema: a mesma inércia que impediria o agente de aderir ativamente (opt-in) agora o impede de sair (opt-out). A lição para a política previdenciária brasileira é direta: a Funpresp adota esse princípio para servidores federais, mas o setor privado brasileiro ainda opera predominantemente sob regime de opt-in, sugerindo que há espaço significativo para elevar a cobertura previdenciária complementar via mudança de default — sem custo fiscal adicional e sem restrição de liberdade.
+
+    **Fonte:** Madrian, B. C.; Shea, D. F. (2001). The power of suggestion: Inertia in 401(k) participation and savings behavior. *Quarterly Journal of Economics*, 116(4), 1149–1187. Thaler, R. H.; Benartzi, S. (2004). Save More Tomorrow: Using behavioral economics to increase employee saving. *Journal of Political Economy*, 112(S1), S164–S187. UK Department for Work and Pensions (2023). *Automatic Enrolment Evaluation Report 2023*. OECD (2019). *Pensions at a Glance 2019*. Paris: OECD Publishing.
+
 ---
 
 ## 8.6 Nudges e Arquitetura de Escolhas
@@ -912,6 +924,58 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
 
 ---
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Na Teoria do Prospecto de Kahneman e Tversky, a função valor é:"
+    - (a) Côncava para ganhos e côncava para perdas, com simetria
+    - (b) Côncava para ganhos e convexa para perdas, com inclinação mais acentuada para perdas
+    - (c) Convexa para ganhos e côncava para perdas
+    - (d) Linear tanto para ganhos quanto para perdas
+
+    ??? success "Resposta"
+        **(b)** A função valor é definida sobre ganhos e perdas relativos a um ponto de referência: côncava para ganhos (aversão ao risco), convexa para perdas (busca de risco) e mais íngreme para perdas do que para ganhos (aversão à perda, $\lambda \approx 2{,}25$). A alternativa (a) ignora a convexidade para perdas e a assimetria; (c) inverte; (d) descreve utilidade esperada linear.
+
+??? question "2. A heurística de disponibilidade leva os agentes a:"
+    - (a) Escolher sempre a opção mais recente apresentada
+    - (b) Superestimar a probabilidade de eventos que são facilmente lembrados ou vívidos
+    - (c) Subestimar sistematicamente todos os riscos
+    - (d) Ignorar informações que contradizem suas crenças
+
+    ??? success "Resposta"
+        **(b)** A heurística de disponibilidade faz com que eventos que vêm à mente com facilidade (por serem recentes, emocionais ou midiáticos) sejam julgados como mais prováveis do que realmente são. A alternativa (a) descreve viés de recência de forma muito restrita; (c) é incorreta — pode causar tanto super quanto subestimação; (d) descreve viés de confirmação.
+
+??? question "3. O desconto hiperbólico difere do desconto exponencial porque:"
+    - (a) Implica taxa de desconto constante ao longo do tempo
+    - (b) Gera preferências consistentes no tempo — o agente nunca muda de plano
+    - (c) Implica taxa de desconto decrescente — o agente é muito impaciente no curto prazo mas relativamente paciente no longo prazo
+    - (d) Só se aplica a decisões financeiras, não a decisões de consumo
+
+    ??? success "Resposta"
+        **(c)** No desconto hiperbólico, a taxa de desconto entre períodos adjacentes cai à medida que ambos os períodos se afastam no futuro. Isso gera inconsistência temporal: o agente pode preferir hoje receber R$100 agora a R$110 amanhã, mas preferir R$110 em 31 dias a R$100 em 30 dias — invertendo a preferência quando o momento se aproxima. A alternativa (a) descreve desconto exponencial; (b) é o oposto do que ocorre.
+
+??? question "4. O Paradoxo de Allais demonstra uma violação de qual axioma da utilidade esperada?"
+    - (a) Completude
+    - (b) Transitividade
+    - (c) Independência
+    - (d) Continuidade
+
+    ??? success "Resposta"
+        **(c)** No Paradoxo de Allais, a maioria das pessoas faz escolhas entre loterias que violam o axioma de independência: a preferência entre duas opções muda quando se mistura uma terceira loteria comum. O 'efeito certeza' — sobrevalorizar resultados garantidos — é a causa principal. Os demais axiomas não são violados nesse experimento.
+
+??? question "5. Um 'nudge' (empurrão) na arquitetura de escolhas é eficaz porque:"
+    - (a) Proíbe escolhas ruins, forçando os agentes a agir racionalmente
+    - (b) Altera o conjunto orçamentário, tornando opções ruins mais caras
+    - (c) Explora vieses comportamentais previsíveis, como inércia e efeito default, sem eliminar a liberdade de escolha
+    - (d) Oferece incentivos monetários diretos para comportamentos desejados
+
+    ??? success "Resposta"
+        **(c)** Nudges utilizam conhecimento sobre vieses cognitivos (inércia, ancoragem, aversão à perda) para direcionar escolhas sem restringir opções — o conceito de 'paternalismo libertário' de Thaler e Sunstein. A alternativa (a) descreve proibição, não nudge; (b) descreve tributos/subsídios; (d) descreve incentivos econômicos tradicionais.
+
+---
+
 ## 📋 Resumo do Capítulo
 
 - Heurísticas cognitivas (representatividade, disponibilidade, ancoragem, excesso de confiança) são atalhos mentais que produzem vieses previsíveis; o modelo dual de Kahneman (Sistema 1 rápido e intuitivo vs. Sistema 2 lento e deliberado) explica por que esses vieses persistem.
@@ -1011,7 +1075,73 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
 ## 🏆 Vem, ANPEC!
 
 !!! info "Nota sobre questões ANPEC"
-    A economia comportamental é um campo relativamente recente na microeconomia e, até o momento, **não aparece como tópico explícito nas provas da ANPEC de Microeconomia** (período 2010–2025). As questões de decisão sob incerteza na ANPEC concentram-se na teoria da utilidade esperada, aversão ao risco e equivalente de certeza — temas tratados no Capítulo 7. Mantemos esta seção como referência para edições futuras, caso o tema passe a ser cobrado.
+    A economia comportamental é um campo relativamente recente na microeconomia e, até o momento, **não aparece como tópico explícito nas provas da ANPEC de Microeconomia** (período 2010–2025). As questões de decisão sob incerteza na ANPEC concentram-se na teoria da utilidade esperada, aversão ao risco e equivalente de certeza — temas tratados no Capítulo 7. As questões a seguir são elaboradas no **estilo ANPEC** para fins de preparação, caso o tema venha a ser cobrado.
+
+??? question "ANPEC (estilo) — Teoria do Prospecto e função valor"
+    Com relação à Teoria do Prospecto de Kahneman e Tversky (1979, 1992) e à função valor, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | Na Teoria do Prospecto, os agentes avaliam resultados como ganhos ou perdas relativos a um ponto de referência, e não em termos de riqueza final — o que implica que dois indivíduos com a mesma riqueza total podem tomar decisões diferentes dependendo de suas trajetórias prévias. |
+    | 1 | A aversão à perda e a aversão ao risco são conceitos equivalentes: ambas decorrem da concavidade da função de utilidade sobre a riqueza. |
+    | 2 | A função valor da Teoria do Prospecto é côncava para ganhos e convexa para perdas, o que implica que os agentes são avessos ao risco no domínio dos ganhos e propensos ao risco no domínio das perdas. |
+    | 3 | A função de ponderação de probabilidades \(w(p)\) na Teoria do Prospecto é linear, preservando a propriedade de que uma probabilidade de 10% recebe exatamente um décimo do peso de um evento certo. |
+    | 4 | Considere a função valor paramétrica \(v(x) = x^{\alpha}\) para \(x \geq 0\) e \(v(x) = -\lambda(-x)^{\beta}\) para \(x < 0\), com \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\). Se um agente enfrenta uma aposta simétrica de 50% de ganhar R\$ 100 e 50% de perder R\$ 100, o valor subjetivo esperado dessa aposta (usando probabilidades não distorcidas) é negativo. |
+
+    ??? success "Gabarito"
+        **Respostas: V F V F V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** A **dependência de referência** é uma das três propriedades fundamentais da função valor (Seção 8.2.2). O portador de valor é a variação \(x\) em relação ao ponto de referência (*status quo*), não o nível absoluto de riqueza. Dois indivíduos com riqueza idêntica, mas pontos de referência distintos (por exemplo, um que ganhou e outro que perdeu para chegar àquele nível), avaliarão as mesmas opções de forma diferente.
+        - **Item 1 — F:** Aversão à perda e aversão ao risco são conceitos distintos (Seção 8.2.2, box "Cuidado"). A **aversão ao risco** decorre da concavidade da função de utilidade sobre a riqueza e descreve a preferência por um resultado certo sobre uma aposta de mesmo valor esperado. A **aversão à perda** é a assimetria \(\lambda > 1\) na função valor: \(|v(-x)| > v(x)\). Um agente pode ser neutro ao risco (função valor linear) e ainda assim ser avesso à perda.
+        - **Item 2 — V:** A concavidade para ganhos implica sensibilidade decrescente e aversão ao risco nesse domínio; a convexidade para perdas implica sensibilidade decrescente e propensão ao risco no domínio das perdas. Esse é o **efeito reflexão** documentado por Kahneman e Tversky: no domínio dos ganhos, as pessoas preferem o certo; no das perdas, preferem arriscar para tentar evitar a perda (Seção 8.2.2).
+        - **Item 3 — F:** A função de ponderação \(w(p)\) tem formato de S invertido (Equação 8.2, Seção 8.2.3). Probabilidades pequenas são **sobrevalorizadas** (\(w(p) > p\) para \(p\) pequeno) e probabilidades altas são **subvalorizadas** (\(w(p) < p\) para \(p\) grande). Essa não linearidade é justamente o que diferencia a Teoria do Prospecto da utilidade esperada no tratamento das probabilidades.
+        - **Item 4 — V:** Com \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\): \(v(100) = 100^{0{,}88} \approx 57{,}54\) e \(v(-100) = -2{,}25 \times 100^{0{,}88} \approx -129{,}47\). O valor subjetivo esperado (sem distorção de probabilidades) é \(0{,}5 \times 57{,}54 + 0{,}5 \times (-129{,}47) = 28{,}77 - 64{,}74 = -35{,}97 < 0\). A aversão à perda torna a aposta subjetivamente negativa, embora seu valor esperado monetário seja zero — por isso a maioria das pessoas recusa apostas simétricas (Exercício Resolvido 8.1).
+
+??? question "ANPEC (estilo) — Vieses cognitivos e efeitos comportamentais"
+    Considere os vieses cognitivos e os efeitos comportamentais discutidos na economia comportamental. Indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | A **ancoragem** é o viés pelo qual um valor inicial — mesmo que arbitrário e irrelevante para a decisão — influencia sistematicamente a estimativa final, como demonstrado no experimento da roda da fortuna de Tversky e Kahneman (1974). |
+    | 1 | O **efeito framing** viola o axioma da invariância das preferências: no experimento das "doenças asiáticas" de Tversky e Kahneman (1981), a maioria dos participantes escolheu a opção certa (avessa ao risco) quando o problema foi enquadrado em termos de vidas salvas, mas escolheu a opção arriscada quando o mesmo problema foi enquadrado em termos de mortes. |
+    | 2 | O **viés do *status quo*** e o **efeito dotação** são fenômenos independentes da aversão à perda: eles decorrem exclusivamente de custos de transação e assimetrias de informação, não de propriedades da função valor. |
+    | 3 | A **contabilidade mental** implica que os agentes tratam o dinheiro como perfeitamente fungível, avaliando cada decisão financeira em relação ao orçamento total, conforme prevê a teoria neoclássica. |
+    | 4 | No contexto de negociações, a ancoragem implica que quem faz a primeira oferta pode capturar uma parcela maior do excedente — não porque a oferta inicial seja mais informativa, mas porque serve de âncora para o processo de ajuste subsequente das partes. |
+
+    ??? success "Gabarito"
+        **Respostas: V V F F V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** A ancoragem é uma das três heurísticas fundamentais identificadas por Tversky e Kahneman (1974). No experimento da roda da fortuna, participantes que viram o número 10 estimaram a proporção de países africanos na ONU em 25%, enquanto os que viram 65 estimaram 45% — embora o número fosse gerado aleatoriamente e fosse irrelevante para a questão (Seção 8.1.3).
+        - **Item 1 — V:** O experimento das doenças asiáticas é o exemplo clássico do efeito framing (Seção 8.2.5). Os programas A e C são matematicamente idênticos (200 salvas = 400 morrem, de 600), assim como B e D. Mas 72% escolheram A (certeza) no frame positivo e 78% escolheram D (risco) no frame negativo, o que é consistente com a Teoria do Prospecto: aversão ao risco para ganhos e propensão ao risco para perdas.
+        - **Item 2 — F:** O viés do *status quo* e o efeito dotação são consequências diretas da **aversão à perda** da Teoria do Prospecto (Seções 8.2.5 e 8.6.2). Abrir mão de algo que se possui é codificado como perda, e a perda "pesa" mais do que o ganho equivalente (\(\lambda > 1\)). O experimento das canecas de Kahneman, Knetsch e Thaler (1990) demonstrou que a simples posse mais que dobrou a valoração do objeto (WTA = US\$ 7,12 vs. WTP = US\$ 2,87), sem que houvesse custos de transação ou assimetria informacional envolvidos.
+        - **Item 3 — F:** A contabilidade mental descreve exatamente o oposto: os agentes **não** tratam o dinheiro como fungível (Seção 8.2.6). Thaler (1985, 1999) documentou que as pessoas segregam recursos em "contas mentais" separadas (salário, bônus, herança), e a propensão marginal a consumir difere entre essas categorias — violando a fungibilidade prevista pela teoria neoclássica.
+        - **Item 4 — V:** A ancoragem em negociações é discutida na Seção 8.1.3. Estudos mostram que o preço de listagem de imóveis funciona como âncora mesmo para avaliadores profissionais (Northcraft e Neale 1987). A primeira oferta em uma negociação "ancora" o processo de ajuste, afetando o resultado final independentemente das posições de reserva objetivas.
+
+??? question "ANPEC (estilo) — Desconto hiperbólico e inconsistência temporal"
+    Com relação ao desconto intertemporal e à inconsistência temporal, indique quais das afirmações a seguir são verdadeiras e quais são falsas:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0 | No modelo de desconto exponencial (Samuelson 1937), a taxa de desconto entre dois períodos consecutivos é constante, o que garante a **consistência temporal**: se um agente prefere a opção A à B quando ambas estão no futuro distante, essa preferência se mantém quando o momento da decisão se aproxima. |
+    | 1 | No modelo de desconto quasi-hiperbólico \((\beta, \delta)\), com \(\beta = 0{,}70\) e \(\delta = 0{,}95\), o fator de desconto entre \(t = 0\) e \(t = 1\) é \(\beta\delta = 0{,}665\), enquanto o fator de desconto entre \(t = 5\) e \(t = 6\) é \(\delta = 0{,}95\). Essa assimetria gera o viés do presente. |
+    | 2 | Um agente com desconto quasi-hiperbólico \((\beta = 0{,}70,\; \delta = 0{,}95)\) e utilidade linear avalia, em \(t = 0\), um pagamento de R\$ 1.000 em \(t = 1\) como equivalente a um pagamento de aproximadamente R\$ 665 hoje. Contudo, ao avaliar em \(t = 0\) dois pagamentos futuros — R\$ 1.000 em \(t = 10\) e R\$ 1.000 em \(t = 11\) —, a razão dos valores presentes é \(\delta = 0{,}95\), idêntica à do desconto exponencial. |
+    | 3 | A distinção entre agentes **sofisticados** e **ingênuos** é irrelevante para o desenho de políticas públicas, pois nudges como a adesão automática (*opt-out*) só são eficazes para agentes sofisticados que reconhecem seu viés do presente. |
+    | 4 | A demanda por **mecanismos de compromisso** — como planos de previdência com penalidade por resgate antecipado ou o programa *Save More Tomorrow* — é racional no contexto do modelo quasi-hiperbólico, pois o agente sofisticado reconhece que seu "eu futuro" terá viés do presente e busca restringir seu comportamento futuro. |
+
+    ??? success "Gabarito"
+        **Respostas: V V V F V**
+
+        **Justificativa por item:**
+
+        - **Item 0 — V:** O modelo de utilidade descontada (Equação 8.6, Seção 8.5.1) aplica o fator \(\delta^t\) ao período \(t\), de modo que a razão entre os fatores de desconto de dois períodos consecutivos é sempre \(\delta^{t+1}/\delta^t = \delta\), constante. Essa constância garante que as preferências não se invertem com a passagem do tempo — a propriedade de consistência temporal.
+        - **Item 1 — V:** No modelo quasi-hiperbólico (Equação 8.7, Seção 8.5.3), o fator de desconto para \(t = 1\) visto de \(t = 0\) é \(\beta\delta = 0{,}70 \times 0{,}95 = 0{,}665\). Para períodos futuros consecutivos (\(t \geq 1\)), a razão entre os fatores é \(\beta\delta^{t+1}/\beta\delta^t = \delta = 0{,}95\). Assim, a transição do presente para o futuro imediato sofre um desconto desproporcionalmente grande (\(\beta\delta\) vs. \(\delta\)), criando o viés do presente (Tabela 8.6).
+        - **Item 2 — V:** Em \(t = 0\): \(U_0(t=1) = \beta\delta \times 1000 = 0{,}665 \times 1000 = 665\). Para os pagamentos em \(t = 10\) e \(t = 11\): \(U_0(t=10) = \beta\delta^{10} \times 1000\) e \(U_0(t=11) = \beta\delta^{11} \times 1000\). A razão é \(\beta\delta^{11}/\beta\delta^{10} = \delta = 0{,}95\). Dentro do futuro, o desconto relativo entre dois períodos consecutivos é idêntico ao exponencial — o viés afeta apenas a fronteira presente/futuro.
+        - **Item 3 — F:** Nudges como a adesão automática (*opt-out*) são eficazes tanto para agentes sofisticados quanto para ingênuos (Seção 8.5.4). Ambos os tipos permanecem no plano quando o *default* é "aderir", pois a inércia e o viés do *status quo* operam independentemente de o agente reconhecer ou não seu viés. A distinção é relevante para mecanismos de compromisso voluntário (como o *Save More Tomorrow*), que exigem sofisticação — mas nudges universais funcionam para todos.
+        - **Item 4 — V:** Laibson (1997) formalizou a demanda por mecanismos de compromisso ("golden eggs") no modelo quasi-hiperbólico (Seção 8.5.4). O agente sofisticado antecipa que seu "eu futuro" terá \(\beta < 1\) e, portanto, consumirá mais do que o planejado. Ao se vincular a instrumentos ilíquidos (previdência com penalidade, poupança com desconto em folha), o agente restringe racionalmente seu comportamento futuro, protegendo a poupança da tentação de consumo imediato.
 
 ---
 

@@ -641,6 +641,27 @@ Uma última propriedade relevante da envoltória é que, no mínimo da curva de 
 
 ---
 
+!!! box-brasil "🇧🇷 Box Brasil 11.3 — Custo Brasil: burocracia, logística e tributação como deslocadores de custos"
+    **Contexto:** O conceito de "Custo Brasil" vai além dos componentes setoriais analisados no Box Brasil anterior. Trata-se de um conjunto estrutural de ineficiências — tributárias, regulatórias, logísticas e institucionais — que desloca para cima as curvas de custo de *todas* as firmas que operam no país, independentemente do setor. Do ponto de vista da teoria dos custos, o Custo Brasil equivale a um aumento generalizado nos preços efetivos dos insumos (\(w\) e \(v\)), reduzindo a competitividade das firmas brasileiras em relação a concorrentes internacionais que operam com a mesma tecnologia, mas enfrentam custos institucionais menores.
+
+    **Dados:** Estimativas da CNI (Confederação Nacional da Indústria, 2022) quantificam o Custo Brasil em R$ 1,7 trilhão anuais, distribuídos entre os seguintes componentes principais:
+
+    | Componente | Custo estimado (R$ bi/ano) | Efeito teórico |
+    |:---|:---:|:---|
+    | Complexidade tributária | 684 | Eleva custos fixos (compliance) e variáveis (cumulatividade) |
+    | Infraestrutura e logística | 382 | Eleva custo variável de transporte de insumos e produtos |
+    | Insegurança jurídica | 250 | Eleva custo de capital (prêmio de risco) |
+    | Burocracia e regulação | 224 | Eleva custos fixos de entrada e operação |
+    | Custo do crédito | 160 | Eleva \(v\) (preço efetivo do capital) |
+
+    Segundo o *Doing Business* do Banco Mundial (última edição, 2020), uma firma brasileira gastava em média **1.501 horas por ano** para cumprir obrigações tributárias — contra 175 horas na média da OCDE e 138 horas no Chile. Abrir uma empresa demandava 17 dias no Brasil versus 4 na Nova Zelândia. Esses custos de transação, embora não apareçam diretamente na função de produção \(f(L,K)\), funcionam como um imposto implícito sobre todos os insumos.
+
+    **Análise:** A teoria dos custos oferece um enquadramento preciso para o Custo Brasil. Pelo Lema de Shephard, \(\partial C / \partial w = L^c > 0\): qualquer elevação no preço efetivo de um insumo desloca a função custo para cima proporcionalmente à intensidade de uso daquele insumo. A burocracia tributária funciona como um aumento em \(w\) (horas de trabalho desviadas para compliance em vez de produção); a infraestrutura precária funciona como um aumento no custo de transporte (insumo intermediário); e o custo elevado do crédito funciona como um aumento em \(v\), encarecendo o capital. O efeito combinado é uma elevação da escala mínima eficiente (EME): firmas menores, que não conseguem diluir esses custos fixos, são desproporcionalmente penalizadas — o que ajuda a explicar a alta informalidade empresarial brasileira (cerca de 40% do PIB, segundo estimativas do IBRE/FGV).
+
+    **Para refletir:** Se a reforma tributária (EC 132/2023) reduzir o tempo de compliance de 1.501 para 500 horas/ano e o custo logístico cair 20% com investimentos em ferrovias, qual seria o efeito esperado sobre a curva de CMe das firmas brasileiras? Que tipos de firma — intensivas em trabalho ou em capital, grandes ou pequenas — se beneficiariam mais?
+
+---
+
 ## 11.8 Demandas Condicionais e Função Custo por Tipo de Função de Produção
 
 As seções anteriores desenvolveram os conceitos gerais de minimização de custos, função custo e curvas de custo. Agora é hora de aplicar esses conceitos de forma sistemática às quatro funções de produção clássicas estudadas no Capítulo 10 — Cobb-Douglas, linear, Leontief e CES. Para cada uma, derivamos explicitamente as demandas condicionais por insumos, a função custo resultante e, quando a solução existe, as demandas por insumos via maximização de lucro. Esse catálogo de resultados será referência constante nos capítulos seguintes e nos exercícios da ANPEC.
@@ -843,6 +864,56 @@ Quando \(\sigma > 1\) (alta elasticidade de substituição), um aumento em \(v/w
     Em "The Problem of Social Cost" (1960), Coase desenvolveu o que ficou conhecido como Teorema de Coase: na ausência de custos de transação, as partes negociarão e chegarão ao resultado eficiente independentemente da alocação inicial de direitos de propriedade. A existência de custos de transação positivos é, portanto, o que justifica intervenções regulatórias e arranjos institucionais. Para a teoria dos custos, a implicação é que o custo econômico completo de uma atividade inclui não apenas os custos diretos de insumos, mas também os custos de transação associados à organização da produção.
 
     *Referência: Coase, R. H. (1937). The Nature of the Firm. Economica, 4(16), 386–405.*
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. A diferença fundamental entre custo econômico e custo contábil é que:"
+    - (a) O custo econômico inclui apenas desembolsos monetários efetivos
+    - (b) O custo econômico inclui o custo de oportunidade dos recursos próprios (capital, tempo do empreendedor), enquanto o contábil não
+    - (c) O custo contábil é sempre maior que o econômico
+    - (d) O custo econômico ignora os custos fixos
+
+    ??? success "Resposta"
+        **(b)** O custo econômico considera o custo de oportunidade de todos os recursos, incluindo os próprios do empresário (retorno que obteria em alternativas). O lucro contábil pode ser positivo enquanto o lucro econômico é zero ou negativo. A alternativa (a) descreve o custo contábil; (c) inverte — o econômico é pelo menos tão grande quanto o contábil.
+
+??? question "2. No curto prazo, a curva de custo marginal (CMg) cruza a curva de custo variável médio (CVMe) em seu:"
+    - (a) Ponto de máximo
+    - (b) Ponto de mínimo
+    - (c) Ponto de inflexão
+    - (d) Intercepto vertical
+
+    ??? success "Resposta"
+        **(b)** Quando $\text{CMg} < \text{CVMe}$, o CVMe está caindo; quando $\text{CMg} > \text{CVMe}$, o CVMe está subindo. Portanto, o CMg cruza o CVMe exatamente no mínimo do CVMe. O mesmo raciocínio se aplica à relação entre CMg e CTMe. A alternativa (a) é incorreta — as curvas médias em U não têm máximo relevante neste contexto; (c) refere-se a outra propriedade.
+
+??? question "3. Economias de escala existem quando:"
+    - (a) O custo marginal é crescente
+    - (b) O custo médio de longo prazo é decrescente — produzir mais reduz o custo por unidade
+    - (c) O custo fixo é zero
+    - (d) O custo total é proporcional à quantidade produzida
+
+    ??? success "Resposta"
+        **(b)** Economias de escala significam que o custo médio de longo prazo (CMeLP) cai à medida que a produção aumenta. Ocorrem por indivisibilidades, especialização do trabalho ou vantagens tecnológicas. A alternativa (a) é compatível com deseconomias de escala; (c) eliminaria parte das economias de escala (que vêm de diluir custos fixos); (d) implica custo médio constante (nem economias nem deseconomias).
+
+??? question "4. No longo prazo, todos os insumos são variáveis. Isso implica que:"
+    - (a) Os custos fixos de longo prazo são positivos
+    - (b) A curva de custo médio de longo prazo é a envoltória inferior das curvas de custo médio de curto prazo
+    - (c) O custo marginal de longo prazo é sempre maior que o de curto prazo
+    - (d) A firma não pode ajustar a escala da planta
+
+    ??? success "Resposta"
+        **(b)** No longo prazo, a firma escolhe a escala ótima para cada nível de produção. O CMeLP é a envoltória das curvas de CMeCP — para cada $q$, é o menor custo médio possível entre todas as escalas de planta. A alternativa (a) é falsa por definição; (c) inverte — o CMgLP é geralmente menor que o CMgCP porque há mais flexibilidade; (d) contradiz a definição de longo prazo.
+
+??? question "5. A curva de custo total de curto prazo tem formato em S (sigmoide) porque:"
+    - (a) Os preços dos insumos variam com a quantidade produzida
+    - (b) Inicialmente há rendimentos crescentes do fator variável (custo cresce a taxas decrescentes) e depois rendimentos decrescentes (custo cresce a taxas crescentes)
+    - (c) Os custos fixos aumentam com a produção
+    - (d) A firma sempre opera com excesso de capacidade
+
+    ??? success "Resposta"
+        **(b)** A forma em S reflete a lei dos rendimentos marginais: com pouco uso do fator variável, há ganhos de especialização (rendimentos crescentes → custo marginal decrescente); além de certo ponto, o congestionamento do fator fixo causa rendimentos decrescentes → custo marginal crescente. A alternativa (c) contradiz a definição de custos fixos.
 
 ## 📋 Resumo do Capítulo
 
@@ -1127,6 +1198,15 @@ C(\lambda w_1 + (1-\lambda) w_2, \; \lambda r_1 + (1-\lambda) r_2, \; q) \;\geq\
 
     **Relevância para o capítulo:** O artigo de Syverson conecta a teoria dos custos (Seções 11.5–11.7) à realidade empírica. Na teoria, assumimos que as firmas estão sempre sobre a curva de custo mínimo — mas na prática, ineficiência X (operar acima do custo mínimo) é ubíqua. A dispersão de custos entre firmas brasileiras, documentada por Ferreira e Rossi (2003) no contexto da abertura comercial, é exatamente o tipo de fenômeno que Syverson analisa em escala global. Para o Brasil especificamente, a heterogeneidade de produtividade entre firmas formais e informais, e entre regiões, é uma das principais fontes de ineficiência alocativa.
 
+??? pesquisa "Benkard, C. Lanier. (2000). [Learning and Forgetting: The Dynamics of Aircraft Production.](https://doi.org/10.1257/aer.90.4.1034) *American Economic Review*, 90(4), 1034–1054. DOI: [10.1257/aer.90.4.1034](https://doi.org/10.1257/aer.90.4.1034)"
+    **Pergunta central:** As firmas realmente "aprendem fazendo" — isto é, seus custos unitários caem com a experiência acumulada de produção? E, se a produção for interrompida, a firma "esquece" o que aprendeu, de modo que os custos voltam a subir?
+
+    **Método:** Benkard utiliza dados detalhados de produção do avião comercial Lockheed L-1011 TriStar (1970–1984) para estimar uma curva de aprendizado que incorpora não apenas *learning by doing* (redução de custos com experiência acumulada), mas também *forgetting* (depreciação do conhecimento acumulado quando a taxa de produção cai). O modelo estima a função de custos de trabalho por unidade como função da experiência acumulada e da taxa corrente de produção, usando variação temporal na demanda por aeronaves como fonte de identificação.
+
+    **Resultado principal:** Os custos de trabalho por unidade caíam substancialmente com a experiência acumulada — consistente com a curva de aprendizado clássica — mas o efeito de *forgetting* era igualmente importante: quando a produção desacelerava, os custos por unidade voltavam a subir significativamente. O estoque de conhecimento depreciava-se a uma taxa de aproximadamente 40% ao ano. Isso implica que a curva de aprendizado não é um caminho unidirecional de redução de custos: interrupções na produção destroem capital organizacional e elevam os custos novamente.
+
+    **Relevância para o capítulo:** O artigo conecta diretamente a Seção 11.6 (deslocamentos nas curvas de custo) à dinâmica temporal dos custos. A curva de aprendizado é um mecanismo pelo qual a curva de CMe se desloca para baixo ao longo do tempo — mas o *forgetting* mostra que esse deslocamento pode ser parcialmente revertido. Para a indústria aeronáutica brasileira (Embraer), a lição é direta: manter ritmo de produção estável é crucial para preservar os ganhos de aprendizado e manter custos competitivos. Interrupções na linha de montagem — por choques de demanda ou reestruturações — podem elevar os custos unitários muito acima do que a experiência acumulada sugeriria.
+
 ??? pesquisa "Ferreira, Pedro C.; Rossi, José L. (2003). [New Evidence from Brazil on Trade Liberalization and Productivity Growth.](https://doi.org/10.1111/1468-2354.t01-1-00101) *International Economic Review*, 44(4), 1383–1405. DOI: [10.1111/1468-2354.t01-1-00101](https://doi.org/10.1111/1468-2354.t01-1-00101)"
     **Pergunta central:** A abertura comercial brasileira dos anos 1990, ao expor as firmas nacionais à competição internacional, reduziu seus custos de produção? Qual o mecanismo: disciplina competitiva (eliminação de ineficiência X) ou acesso a insumos importados de menor custo (deslocamento para baixo da função custo)?
 
@@ -1178,3 +1258,4 @@ C(\lambda w_1 + (1-\lambda) w_2, \; \lambda r_1 + (1-\lambda) r_2, \; q) \;\geq\
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 10.
 - Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. [*Microeconomia*](https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ). 8ª ed. São Paulo: Pearson. Cap. 7.
 - Varian, Hal R. 2015. [*Microeconomia: Uma Abordagem Moderna*](https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ). 9ª ed. Rio de Janeiro: Elsevier. Cap. 20–22.
+- Benkard, C. Lanier. 2000. "[Learning and Forgetting: The Dynamics of Aircraft Production.](https://doi.org/10.1257/aer.90.4.1034)" *American Economic Review*, 90(4), 1034–1054.

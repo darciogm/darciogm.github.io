@@ -51,6 +51,12 @@ Esta seção reúne as soluções detalhadas de todos os exercícios propostos a
 | [Cap. 19](cap19.md) | Limões, Sinais e Contratos | 5 |
 | [Cap. 20](cap20.md) | Fumaça, Caronas e Tragédias | 5 |
 
+## Economia Digital
+
+| Capítulo | Tema | Exercícios |
+|:---------|:-----|:----------:|
+| [Cap. 21](cap21.md) | Plataformas, Redes e Dados | 10 |
+
 ---
 
-**Total: 115 exercícios resolvidos** em 23 capítulos.
+**Total: 125 exercícios resolvidos** em 24 capítulos.

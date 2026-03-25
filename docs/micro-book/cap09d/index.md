@@ -1,12 +1,12 @@
 # Capítulo 9d — Sinais, Contratos e Credibilidade: Jogos Dinâmicos com Informação Incompleta
 
-No módulo anterior (9c), os jogadores faziam escolhas simultâneas sem observar as ações dos demais. Quando ações são **sequenciais** e a informação é **incompleta**, surge uma nova possibilidade: jogadores informados podem usar suas ações para **sinalizar** informação privada, e jogadores desinformados podem **atualizar crenças** via regra de Bayes.
+No módulo anterior (9c), os jogadores faziam escolhas simultâneas sem observar as ações dos demais. Quando ações são **sequenciais** e a informação é **incompleta**, surge uma nova possibilidade: jogadores informados podem usar suas ações para **sinalizar** informação privada, e jogadores desinformados podem **atualizar crenças** via regra de Bayes. Essa transição — de jogos simultâneos para jogos sequenciais com informação incompleta — marca uma mudança qualitativa na análise: a *própria ação* do jogador informado passa a conter informação, e o receptor precisa interpretar essa ação como evidência sobre o tipo do remetente.
 
 O conceito de equilíbrio é o **Equilíbrio Bayesiano Perfeito** (PBE), que combina otimalidade sequencial (como no EPS) com consistência bayesiana das crenças (como no BNE). As aplicações centrais são **sinalização** (Spence, 1973), **moral hazard** e **seleção adversa** — os problemas clássicos de informação assimétrica que George Akerlof, Michael Spence e Joseph Stiglitz formalizaram ao longo das décadas de 1970 e 1980, trabalho que culminou no Prêmio Nobel de Economia de 2001.
 
-A importância prática desse arcabouço dificilmente pode ser subestimada. Mercados de carros usados, planos de saúde, crédito bancário, relações de emprego e regulação pública todos exibem, em maior ou menor grau, problemas gerados pela assimetria informacional. A teoria desenvolvida neste capítulo oferece uma linguagem precisa para identificar esses problemas e avaliar mecanismos de mitigação. Ela também dialoga diretamente com o Capítulo 7 (risco e decisão em condições de incerteza) — pois o moral hazard, como veremos, é inseparável da aversão ao risco do agente — e com o Capítulo 8 (economia comportamental), cuja agenda em parte questiona até que ponto os agentes reais atualizam crenças de forma bayesiana e respondem racionalmente a incentivos contratuais.
+A importância prática desse arcabouço dificilmente pode ser subestimada. Mercados de carros usados, planos de saúde, crédito bancário, relações de emprego e regulação pública todos exibem, em maior ou menor grau, problemas gerados pela assimetria informacional. A teoria desenvolvida neste capítulo oferece uma linguagem precisa para identificar esses problemas e avaliar mecanismos de mitigação. Ela também dialoga diretamente com o Capítulo 7 (risco e decisão em condições de incerteza) — pois o moral hazard é inseparável da aversão ao risco do agente — e com o Capítulo 8 (economia comportamental), cuja agenda em parte questiona até que ponto os agentes reais atualizam crenças de forma bayesiana e respondem racionalmente a incentivos contratuais.
 
-Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Capítulo 19 (Limões, Sinais e Contratos).
+Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Capítulo 19 (Limões, Sinais e Contratos), que aprofunda os modelos de seleção adversa e screening em mercados competitivos. Enquanto o presente capítulo desenvolve a teoria dos jogos que fundamenta esses fenômenos — PBE, sinalização, incentivos —, o Capítulo 19 os estuda na perspectiva de equilíbrio de mercado e de desenho de mecanismos. Os dois capítulos são complementares: o leitor que dominar a formalização de jogos aqui terá a base necessária para a análise de mecanismos de revelação e contratos ótimos lá. A conexão com o módulo 9c também é direta: naquele capítulo, estudamos leilões como jogos bayesianos simultâneos; aqui, veremos que os mesmos problemas de informação privada ganham uma dimensão estratégica adicional quando as ações são sequenciais e observáveis.
 
 ---
 
@@ -35,9 +35,9 @@ A consistência bayesiana das crenças é, ao mesmo tempo, a virtude e a limita�
 
 O PBE encontra sua aplicação mais célebre nos jogos de sinalização. A pergunta central é: pode uma parte informada *revelar credivelmente* sua informação privada por meio de ações observáveis? A resposta de Spence (1973) é que sim, desde que o custo da ação seja diferencialmente menor para os tipos de alta qualidade.
 
-O insight de Spence foi desenvolver esse argumento no contexto do mercado de trabalho, mas suas implicações alcançam muito além. No mercado de carros usados, o vendedor pode oferecer uma garantia estendida como sinal de que o veículo é confiável: um vendedor de "limão" acharia essa garantia demasiado custosa de honrar, ao passo que o vendedor de um carro bom a oferta com baixo risco. No mercado de crédito, uma empresa pode distribuir dividendos elevados para sinalizar lucratividade — só uma empresa genuinamente saudável poderia fazê-lo de forma sustentável. No Brasil, o sistema do ENEM e o vestibular funcionam, em parte, como sinais de habilidade: o investimento em cursinho, horas de estudo e a própria taxa de inscrição são custos que sinalizam dedicação e aptidão ao mercado de trabalho. Em todos esses casos, o mecanismo é o mesmo: uma ação custosa cujo custo é inversamente proporcional à qualidade do agente.
+O insight de Spence foi desenvolver esse argumento no contexto do mercado de trabalho, mas suas implicações alcançam muito além: garantias de carros usados, dividendos corporativos e desempenho no ENEM são todos exemplos de sinais cujo custo é inversamente proporcional à qualidade do agente. Em cada caso, o mecanismo central é o mesmo: uma ação custosa que o tipo de baixa qualidade acha proibitiva.
 
-Os jogos de sinalização, formalizados por Spence (1973), são jogos sequenciais com informação incompleta nos quais a parte informada (o "remetente") age primeiro, escolhendo um sinal observável.
+Formalmente, jogos de sinalização são jogos sequenciais com informação incompleta nos quais a parte informada (o "remetente") age primeiro, escolhendo um sinal observável.
 
 !!! definition "Estrutura de um jogo de sinalização"
     1. A natureza sorteia o tipo \(\theta \in \Theta\) do remetente.
@@ -85,7 +85,7 @@ c(e, \theta_H) < c(e, \theta_L) \quad \text{para todo } e > 0
 \label{eq:9d.1} \tag{9d.1}
 \]
 
-A condição de **single-crossing** da equação $\eqref{eq:9d.1}$ é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que cria a possibilidade de separação: o nível de educação que o tipo alto aceita obter é proibitivamente custoso para o tipo baixo, garantindo que, em equilíbrio separador, trabalhadores de alta habilidade investem em educação suficiente para se diferenciar.
+A condição de **single-crossing** da equação $\eqref{eq:9d.1}$ é o ingrediente-chave que torna a sinalização possível. Se os custos fossem iguais para ambos os tipos, nada impediria a imitação — e o sinal perderia conteúdo informacional. É a assimetria de custos que garante que, em equilíbrio separador, o nível de educação que o tipo alto aceita obter seja proibitivamente custoso para o tipo baixo.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** No modelo de Spence, a educação tem valor de sinalização *mesmo que não aumente a produtividade*.
@@ -109,16 +109,24 @@ No equilíbrio separador, o tipo L escolhe \(e_L = 0\) e o tipo H escolhe \(e_H 
 
 O equilíbrio separador menos custoso (preferido pelo jogador informado) é \(e^* = 1\). Nesse equilíbrio, o custo da sinalização é puro desperdício social — se os empregadores pudessem observar a habilidade diretamente, nenhum investimento em sinalização seria necessário.
 
+Note que o equilíbrio separador não é único: qualquer \(e^* \in [1, 2]\) sustenta um equilíbrio separador, pois ambas as restrições de incentivo são satisfeitas. A multiplicidade de equilíbrios é uma característica geral dos jogos de sinalização — e motiva o uso de refinamentos como o **Critério de Dominância Intuitiva de Cho e Kreps (1987)**. Esse critério seleciona o equilíbrio separador de menor custo (\(e^* = 1\)) ao eliminar equilíbrios sustentados por crenças off-path implausíveis. O argumento é o seguinte: se o receptor observa um nível de educação \(e \in (1, 2)\), ele deveria atribuir probabilidade 1 ao tipo H — porque o tipo L jamais se beneficiaria de escolher esse nível, independentemente da crença do receptor, ao passo que o tipo H poderia se beneficiar se o receptor respondesse favoravelmente. O critério disciplina as crenças fora do caminho de equilíbrio e reduz a multiplicidade, tornando a previsão teórica mais precisa.
+
+A intuição do Critério de Cho-Kreps é elegante: quando um desvio nunca seria racional para um tipo mas poderia ser racional para outro, o receptor deve atribuir o desvio ao tipo para o qual ele faz sentido. Em termos formais, seja \(D(\theta)\) o conjunto de respostas do receptor que tornam o desvio lucrativo para o tipo \(\theta\). Se \(D(\theta_L) = \varnothing\) e \(D(\theta_H) \neq \varnothing\), então o receptor deve colocar probabilidade zero no tipo L ao observar o desvio.
+
 ### Equilíbrio agregador (pooling): quando a separação falha
 
 Nem todo jogo de sinalização produz separação. No equilíbrio agregador, ambos os tipos escolhem o mesmo nível de sinal, e o receptor não consegue distingui-los. Isso ocorre quando o intervalo de sinais que satisfazem as condições de incentivo dos dois tipos é vazio — ou seja, quando não existe um \(e^*\) suficientemente alto para deter a imitação do tipo baixo sem ser excessivamente custoso para o tipo alto.
 
+Formalmente, no equilíbrio pooling em \(e_P\), ambos os tipos escolhem o mesmo sinal e o receptor paga o salário da produtividade média: \(w_P = p \cdot \theta_H + (1-p) \cdot \theta_L\), onde \(p\) é a probabilidade prior de tipo H. Para que o pooling seja sustentável, é necessário que nenhum tipo desvie para outro nível de sinal. Isso requer crenças off-path suficientemente pessimistas: se o receptor acredita que qualquer desvio de \(e_P\) provém do tipo L, o salário pós-desvio é \(\theta_L\), o que pode tornar o desvio não lucrativo para ambos os tipos.
+
 No exemplo acima, se \(\theta_H = 1{,}2\) e \(\theta_L = 1\) (tipos muito próximos), a diferença de custo entre os tipos é pequena. As ICs se tornam incompatíveis num sentido prático: o nível de educação que deters o tipo L de imitar o tipo H exige um custo tão alto que o tipo H prefere não sinalizar. O resultado é um equilíbrio agregador em que ambos os tipos escolhem \(e = 0\) e recebem o salário da produtividade média — exatamente como no problema de informação oculta sem sinalização.
+
+A comparação entre os dois tipos de equilíbrio revela um trade-off fundamental: o equilíbrio separador é informacionalmente eficiente (revela os tipos) mas alocativamente ineficiente (o custo da sinalização é puro desperdício); o equilíbrio pooling é informacionalmente ineficiente (não revela tipos) mas pode ser alocativamente menos custoso (evita o gasto com sinalização). Qual equilíbrio prevalece depende da magnitude da diferença de produtividade entre os tipos, do custo da sinalização e das crenças fora do caminho de equilíbrio. Quando o Critério de Dominância Intuitiva elimina o pooling, o equilíbrio separador de menor custo é a previsão teórica selecionada — mas isso não significa que o equilíbrio separador seja socialmente ótimo.
 
 O modelo brasileiro oferece um exemplo instrutivo. O diploma universitário no Brasil tornou-se, nas últimas décadas, progressivamente mais difundido. Se no final dos anos 1980 apenas uma fração pequena dos trabalhadores tinha formação superior, hoje a proporção é consideravelmente maior. A teoria de Spence prevê que, com isso, o valor de sinalização do diploma genérico diminuiu: como mais pessoas o detêm, ele discrimina menos entre tipos. A resposta do mercado foi buscar sinais de maior resolução — pós-graduação, certificações técnicas, universidades de prestígio — num processo de corrida armamentista informacional que o modelo formaliza com precisão.
 
 !!! tip "Sinalização vs. Capital Humano"
-    No modelo de Spence, a educação tem valor de sinalização **mesmo que não aumente a produtividade**. Isso contrasta com a teoria do capital humano de Becker. Na realidade, a educação provavelmente combina ambos os papéis: parte do retorno à educação é capital humano genuíno (habilidades adquiridas), e parte é sinalização. Separar empiricamente os dois canais é um dos desafios metodológicos centrais da economia da educação.
+    Na realidade, a educação provavelmente combina sinalização e capital humano: parte do retorno é habilidades genuinamente adquiridas, e parte é sinalização. Separar empiricamente os dois canais é um dos desafios metodológicos centrais da economia da educação — tema que o Box Mundo 9d.1, a seguir, explora em profundidade.
 
 !!! box-mundo "🌍 Box Mundo 9d.1 — Retornos à educação como sinalização: Caplan, inflação de diplomas e evidência internacional"
 
@@ -140,9 +148,7 @@ O modelo brasileiro oferece um exemplo instrutivo. O diploma universitário no B
 
 ## 9d.3 Cheap Talk e Comunicação Estratégica
 
-No modelo de Spence, o sinal é crível porque é custoso. Mas o que acontece quando a comunicação não envolve custo direto? Se falar é gratuito, a credibilidade depende inteiramente do alinhamento de interesses entre as partes.
-
-Quando o sinal é sem custo (*cheap talk*), a sinalização é mais difícil. Crawford e Sobel (1982) mostraram que a quantidade de informação transmitida em equilíbrio depende do **alinhamento de interesses** entre remetente e receptor.
+No modelo de Spence, o sinal é crível porque é custoso. Mas o que acontece quando a comunicação não envolve custo direto? Crawford e Sobel (1982) mostraram que, quando o sinal é sem custo (*cheap talk*), a quantidade de informação transmitida em equilíbrio depende do **alinhamento de interesses** entre remetente e receptor.
 
 - Se os interesses são perfeitamente alinhados: revelação completa é possível.
 - Se os interesses divergem: a comunicação é parcial — o remetente envia "intervalos" de informação (*partition equilibrium*).
@@ -155,7 +161,7 @@ Quanto maior o desalinhamento de interesses, mais grosseira é a partição e me
 
 ## 9d.4 Moral Hazard (Risco Moral)
 
-As seções anteriores trataram de informação privada sobre *características* (tipos). Agora passamos a um problema distinto: o que acontece quando a assimetria se refere a *ações* tomadas após a celebração de um contrato? Se o principal não pode observar o esforço do agente, como desenhar incentivos que alinhem os interesses de ambos? Esse é o problema do moral hazard — ou risco moral — introduzido formalmente na literatura econômica por Arrow (1963) no contexto de seguros de saúde e formalizado em termos de teoria dos contratos por Holmström (1979).
+As seções anteriores trataram de informação privada sobre *características* (tipos) — o agente sabe algo sobre si que o receptor não sabe, e usa essa informação estrategicamente ao escolher sinais ou mensagens. Agora passamos a um problema qualitativamente distinto: o que acontece quando a assimetria se refere não a *quem o agente é*, mas a *o que ele faz* após a celebração de um contrato? Enquanto na sinalização e na seleção adversa o problema é de **tipos ocultos** (*hidden types*), no moral hazard o problema é de **ações ocultas** (*hidden actions*). A distinção é operacionalmente crucial: tipos ocultos exigem mecanismos de revelação (sinalização, screening); ações ocultas exigem mecanismos de incentivo (contratos contingentes a resultados). Se o principal não pode observar o esforço do agente, como desenhar incentivos que alinhem os interesses de ambos? Esse é o problema do moral hazard — ou risco moral — introduzido formalmente na literatura econômica por Arrow (1963) no contexto de seguros de saúde e formalizado em termos de teoria dos contratos por Holmström (1979).
 
 !!! definition "Moral Hazard"
     Situação em que uma parte (o **agente**) toma uma ação não observável que afeta o payoff de outra parte (o **principal**). O principal não pode monitorar diretamente o esforço do agente.
@@ -180,6 +186,32 @@ O modelo básico de principal-agente formaliza essa situação: o principal ofer
 
 **Trade-off central:** Para incentivar esforço, o contrato deve vincular pagamento ao resultado. Mas isso expõe o agente (avesso ao risco) a risco — gerando custo de seguro. O contrato ótimo equilibra incentivos e seguro. Esse dilema entre risco e incentivos é onipresente na economia.
 
+### Primeiro melhor vs. segundo melhor
+
+A distinção entre primeiro melhor (*first-best*) e segundo melhor (*second-best*) é central na teoria de contratos e permeia toda a análise de moral hazard. No **primeiro melhor**, o esforço é observável e verificável: o principal pode escrever um contrato que especifica diretamente o nível de esforço desejado e paga um salário fixo condicionado à execução desse esforço. Como o agente é avesso ao risco, o contrato ótimo é um salário fixo \(w^{FB}\) que satisfaz exatamente a restrição de participação — sem variabilidade, sem risco para o agente, sem custo de incentivos. O agente é perfeitamente segurado.
+
+No **segundo melhor**, o esforço não é observável. O principal só pode condicionar o pagamento ao resultado, que é um indicador ruidoso do esforço. O contrato ótimo deve satisfazer duas restrições simultaneamente:
+
+\[
+\text{IC:} \quad E[u(w(q)) \mid e_H] - c(e_H) \geq E[u(w(q)) \mid e_L] - c(e_L)
+\label{eq:9d.2} \tag{9d.2}
+\]
+
+\[
+\text{IR:} \quad E[u(w(q)) \mid e_H] - c(e_H) \geq \bar{u}
+\label{eq:9d.3} \tag{9d.3}
+\]
+
+A IC (compatibilidade de incentivos, equação $\eqref{eq:9d.2}$) garante que o agente prefira esforço alto a esforço baixo. A IR (restrição de participação, equação $\eqref{eq:9d.3}$) garante que o agente prefira aceitar o contrato a sua alternativa externa. No ótimo do segundo melhor, ambas as restrições vinculam: a IC força variabilidade salarial (\(w_B > w_R\)), e a IR fixa o nível de utilidade esperada do agente. A diferença de custo esperado entre o segundo melhor e o primeiro melhor é o **custo de agência** — o preço que a sociedade paga pela informação assimétrica sobre o esforço.
+
+O resultado fundamental de Holmström (1979) é que o contrato ótimo de segundo melhor segue o **Princípio da Informatividade**: a remuneração do agente deve depender de qualquer estatística do resultado que contenha informação sobre o esforço. Se o desempenho de outros agentes em circunstâncias semelhantes é observável, ele deve entrar no contrato — não porque o principal queira incentivar competição, mas porque a comparação permite filtrar o ruído do choque aleatório, melhorando a inferência sobre o esforço. Isso fundamenta o uso de benchmarks setoriais em contratos de executivos, avaliações relativas de desempenho entre professores e comparação entre hospitais na regulação de saúde.
+
+### Multitarefa e os limites dos incentivos
+
+O modelo básico assume que o agente tem uma única dimensão de esforço. Na prática, a maioria dos trabalhos envolve múltiplas tarefas — um professor ensina, pesquisa, orienta e faz extensão; um médico trata, previne e documenta; um gestor gera lucro, gerencia risco e investe em inovação. Holmström e Milgrom (1991) mostraram que, quando o esforço é multidimensional e algumas dimensões são mais facilmente mensuráveis que outras, incentivos fortes na dimensão mensurável podem distorcer o esforço *para longe* das dimensões não mensuráveis. Esse é o problema de **multitarefa**: um professor avaliado exclusivamente por notas de alunos em provas padronizadas pode *ensinar para a prova* (dimensão mensurável) às custas do desenvolvimento de pensamento crítico (dimensão não mensurável).
+
+A implicação prática é que incentivos muito potentes podem ser piores do que incentivos moderados ou até do que salário fixo — quando o agente tem margem para realocar esforço entre tarefas. A regulação educacional brasileira enfrenta esse dilema diretamente: programas como o IDESP (São Paulo) e o SPAECE (Ceará) vinculam recursos e bônus ao desempenho em avaliações padronizadas, criando incentivos potencialmente distorcivos na dimensão do ensino que a prova não captura.
+
 A conexão com o Capítulo 7 é direta: o moral hazard existe, na sua forma mais intratável, precisamente porque os agentes são avessos ao risco. Se o agente fosse neutro ao risco, o principal poderia transferir toda a renda residual para o agente ("vender a empresa"), tornando-o o reclamante residual completo — e eliminando o problema de incentivos sem custo de seguro. É a aversão ao risco que torna esse contrato inviável e força a solução de segunda ordem: uma participação parcial nos resultados que equilibra incentivos e proteção.
 
 O Capítulo 8 (economia comportamental) acrescenta uma camada adicional: evidências experimentais de Kahneman e Tversky sugerem que agentes são mais sensíveis a perdas do que a ganhos de mesma magnitude (aversão à perda). Isso afeta o design de contratos: penalidades pecuniárias por baixo desempenho podem ter poder de incentivo desproporcional ao seu valor monetário, o que tem implicações para contratos de gestores e para políticas de bônus.
@@ -197,7 +229,7 @@ O Capítulo 8 (economia comportamental) acrescenta uma camada adicional: evidên
 
 ## 9d.5 Seleção Adversa
 
-Se o moral hazard é um problema pós-contratual (ações ocultas), a seleção adversa é pré-contratual (características ocultas). Confundir os dois — como fazem os itens 0 e 1 da questão ANPEC ao final deste capítulo — é um erro frequente mas evitável: basta perguntar se a assimetria surge *antes* ou *depois* da celebração do contrato.
+O moral hazard, discutido na seção anterior, é um problema pós-contratual: o agente escolhe uma ação que o principal não pode observar *após* celebrar o contrato. A seleção adversa, por contraste, é pré-contratual: a parte informada já possui uma característica privada que afeta o valor da transação *antes* de o contrato ser firmado. Confundir os dois — como fazem os itens 0 e 1 da questão ANPEC ao final deste capítulo — é um erro frequente mas evitável: basta perguntar se a assimetria se refere a ações ocultas (moral hazard) ou a características ocultas (seleção adversa).
 
 !!! definition "Seleção Adversa"
     Situação em que uma parte tem informação privada sobre suas próprias características *antes* de firmar um contrato, e a parte desinformada não consegue distinguir os tipos. Em equilíbrio, a parte desinformada oferece condições baseadas na qualidade *média* do pool, o que:
@@ -220,6 +252,20 @@ Se o moral hazard é um problema pós-contratual (ações ocultas), a seleção 
 
 Akerlof ilustrou o mecanismo com o mercado de carros usados — o artigo que lhe valeu o Nobel de 2001. O argumento é elegante: o vendedor sabe se o carro é confiável ("pêssego") ou defeituoso ("limão"). O comprador não sabe. O preço que o comprador aceita pagar reflete a qualidade *média* do mercado. Mas, a esse preço, os vendedores de "pêssegos" (cujo carro vale mais do que o preço médio) saem do mercado. O que resta é predominantemente "limões". O comprador, antecipando isso, reduz seu preço de reserva. Mais "pêssegos" saem. O processo pode continuar até que o mercado colapse completamente — nenhuma transação ocorre, embora existam vendedores e compradores dispostos a negociar ao preço correto. A ineficiência é gerada inteiramente pela assimetria de informação, não por falhas no mecanismo de preços em si.
 
+O mecanismo de desintegração do mercado (*market unraveling*) pode ser descrito em etapas formais. Considere um contínuo de qualidades \(q \sim U[0, 1]\), onde o vendedor conhece \(q\) e o comprador não. O valor do carro para o vendedor é \(v_S(q) = q\), e para o comprador é \(v_B(q) = \alpha q\) com \(\alpha > 1\) (o comprador valoriza mais). Se o comprador acredita que todos os tipos estão no mercado, o valor esperado é \(\alpha / 2\). Mas a esse preço, apenas vendedores com \(q \leq \alpha / 2\) aceitam vender. O comprador antecipa isso e revisa o valor esperado para \(\alpha \cdot E[q \mid q \leq \alpha / 2] = \alpha^2 / 4\). Vendedores com \(q > \alpha^2 / 4\) saem. O processo converge iterativamente: a cada rodada, o pior vendedor remanescente é o melhor da rodada anterior, e o preço que o comprador aceita pagar cai. Se \(\alpha < 2\), o mercado colapsa completamente — nenhuma transação ocorre. Quando \(\alpha \geq 2\) (ganho de troca suficientemente grande), o mercado sobrevive parcialmente, mas sempre com ineficiência: transações que beneficiariam ambas as partes não se realizam.
+
+### Soluções para a seleção adversa
+
+O mercado e o Estado desenvolveram respostas institucionais ao problema de Akerlof. Essas respostas podem ser classificadas conforme a parte que age para mitigar a assimetria informacional.
+
+**Sinalização** (a parte informada age): o vendedor de um carro bom oferece garantia estendida, a empresa saudável distribui dividendos, o trabalhador qualificado investe em educação. A eficácia da sinalização depende da condição de single-crossing — o custo do sinal deve ser menor para o tipo bom.
+
+**Screening** (a parte desinformada age): a seguradora oferece um menu de contratos com diferentes combinações de prêmio e franquia, desenhado para que cada tipo se auto-selecione revelando informação. O resultado fundamental de Rothschild e Stiglitz (1976) é que, em mercados competitivos, o equilíbrio — quando existe — é necessariamente separador: o tipo de baixo risco recebe cobertura incompleta (distorção downward) para impedir que o tipo de alto risco o imite. O tipo de alto risco recebe cobertura total ao prêmio atuarialmente justo. A distorção no contrato do tipo baixo é o preço da informação assimétrica.
+
+**Certificação** (um terceiro age): agências de rating (Serasa, S&P, Fitch), laudos de vistoria (carros), selos de qualidade (Inmetro), e auditorias externas reduzem a assimetria ao produzir informação verificável sobre a qualidade do agente. O terceiro tem credibilidade porque sua receita depende da precisão — uma agência que sistematicamente dá ratings inflados perde reputação e clientes.
+
+**Regulação** (o Estado age): seguros obrigatórios (como o extinto DPVAT), cobertura universal (SUS), e restrições sobre práticas de exclusão (como as regras da ANS) combatem a seleção adversa ao forçar todos os tipos a participar do pool. Quando o pool é obrigatório, não há autosseleção — o mecanismo de Akerlof é neutralizado. O custo é que os tipos de baixo risco subsidiam os de alto risco, o que é redistributivo (e pode ser socialmente desejável) mas gera uma ineficiência do lado da demanda.
+
 !!! idea "Intuição Econômica"
     **O mercado dos limões (Akerlof, 1970):** Por que carros usados valem tão menos que carros novos, mesmo quando saem da concessionária com zero quilômetros?
 
@@ -228,6 +274,10 @@ Akerlof ilustrou o mecanismo com o mercado de carros usados — o artigo que lhe
     **A generalização:** O mesmo mecanismo opera em mercados de crédito (o tomador sabe mais sobre seu risco de inadimplência do que o banco), em seguros de saúde (o segurado sabe mais sobre sua saúde do que a seguradora) e em mercados de trabalho (o candidato sabe mais sobre sua produtividade do que o empregador). Em todos esses casos, a informação assimétrica faz com que o preço médio de equilíbrio seja "errado" para ambos os lados — caro demais para os tipos bons, barato demais para os ruins.
 
     **Por que isso importa para políticas públicas?** Quando a seleção adversa leva ao colapso de mercados com valor social positivo (como seguros de saúde para idosos ou crédito para pequenas empresas), há espaço para intervenção estatal que melhore o bem-estar de Pareto: seguro obrigatório, garantias públicas de crédito e regulação de screening.
+
+### Desenho de mecanismos: o fio condutor
+
+Sinalização, moral hazard e seleção adversa podem parecer problemas distintos, mas compartilham uma estrutura unificadora: em todos os casos, uma parte tem informação privada (sobre tipo ou sobre ação), e a eficiência depende de um **mecanismo** que induza a revelação ou o alinhamento de comportamento. O campo do *desenho de mecanismos* (*mechanism design*) — desenvolvido por Leonid Hurwicz, Eric Maskin e Roger Myerson (Nobel 2007) — formaliza essa ideia: dado um objetivo social (eficiência, maximização de receita, redistribuição), qual é o melhor conjunto de regras que pode ser implementado quando os agentes são estratégicos e informados? O **Princípio da Revelação** garante que, para qualquer mecanismo e equilíbrio, existe um mecanismo direto e equivalente em que os agentes reportam seus tipos verdadeiros. Esse resultado não resolve o problema — apenas mostra que podemos restringir a busca a mecanismos diretos e incentivo-compatíveis —, mas é a pedra angular da teoria moderna de contratos e leilões. O Capítulo 19 desenvolve essas ideias em maior profundidade; aqui, basta reconhecer que os contratos de seguro de Rothschild-Stiglitz, os sinais de Spence e os contratos de incentivo de Holmström são todos exemplos específicos de mecanismos desenhados para lidar com informação assimétrica.
 
 No mercado de seguros, o mecanismo de Akerlof opera com especial virulência. Considere um mercado de planos de saúde individual: quem sabe que tem histórico familiar de doenças graves, hábitos de vida prejudiciais à saúde ou condições preexistentes tem muito mais incentivo para comprar um plano abrangente a qualquer preço razoável. A seguradora, não podendo observar esses fatores com precisão, precifica pela média — e isso afasta as pessoas jovens e saudáveis, que percebem o plano como caro para seu risco efetivo. O pool que permanece é progressivamente mais doente, o custo médio sobe, o prêmio sobe, mais pessoas saudáveis saem. A espiral pode ser travada por regulação (cobertura obrigatória, que força todos a entrar no pool) ou por screening (menus de contratos com carências e coparticipações que induzem cada tipo a se revelar).
 
@@ -273,8 +323,6 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
 ---
 
-Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na realidade institucional brasileira. Os dois Boxes a seguir ilustram como a comunicação do Banco Central pode ser analisada como cheap talk e como a regulação de telecomunicações enfrenta informação assimétrica entre regulador e firma.
-
 !!! box-brasil "Box Brasil — Forward guidance do BCB: cheap talk ou sinalização crível?"
     O **Banco Central do Brasil** comunica suas intenções de política monetária por meio de comunicados, atas do Copom e o Relatório de Inflação. Essa comunicação pode ser analisada como um jogo de sinalização:
 
@@ -297,8 +345,6 @@ Os conceitos desenvolvidos neste capítulo encontram aplicações diretas na rea
 
 ---
 
-O próximo Box ilustra o lado operacional da informação assimétrica na regulação setorial.
-
 !!! box-brasil "Box Brasil — Regulação de telecom: quando a Anatel não sabe os custos"
     A regulação de telecomunicações no Brasil enfrenta um problema clássico de informação assimétrica: a **Anatel** precisa fixar tarifas, mas não observa os custos verdadeiros das operadoras (Vivo, Claro, TIM).
 
@@ -317,6 +363,54 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
     A transição de rate-of-return para price cap é exatamente a resposta teórica ao problema de moral hazard: ao desvincular a tarifa do custo reportado, o regulador cria incentivos para a firma se tornar mais eficiente.
 
     **Fonte**: Anatel, Planos Gerais de Outorgas; OECD, Telecom Regulatory Reviews — Brazil.
+
+---
+
+!!! box-mundo "🌍 Box Mundo 9d.2 — Garantias, lemon laws e proteção ao consumidor: sinais contra limões"
+
+    **Contexto:** O modelo de Akerlof prevê que mercados com informação assimétrica sobre qualidade podem colapsar — mas na prática, mercados de carros usados existem e movimentam trilhões de dólares globalmente. Uma das razões é que vendedores e legisladores desenvolveram mecanismos de sinalização e proteção que mitigam o problema dos limões: garantias oferecidas pelo vendedor e leis que protegem o comprador (*lemon laws*).
+
+    **Garantias como sinalização.** Uma garantia estendida é um sinal crível de qualidade porque satisfaz a condição de single-crossing: o custo esperado de honrar a garantia é muito menor para o vendedor de um carro bom do que para o vendedor de um limão. Se o carro é bom, a probabilidade de acionamento é baixa e o custo esperado é pequeno; se é um limão, o acionamento é quase certo e o custo pode exceder o lucro da venda. Assim, apenas vendedores de carros bons oferecem garantias longas de forma sustentável — exatamente como no equilíbrio separador de Spence, onde o tipo bom investe em um sinal que o tipo ruim acha proibitivamente custoso.
+
+    **Lemon laws nos EUA.** Todos os 50 estados americanos possuem alguma forma de *lemon law*, legislação que garante ao comprador de um veículo novo o direito de substituição ou reembolso caso o veículo apresente defeitos recorrentes dentro de um período especificado (tipicamente 1–2 anos ou 12.000–24.000 milhas). A Lei Magnuson-Moss (1975), federal, complementa as leis estaduais ao exigir que garantias sejam claramente redigidas e que fabricantes que ofereçam garantias cumpram obrigações mínimas. A FTC (Federal Trade Commission) estima que lemon laws cobrem aproximadamente 150.000 reclamações por ano nos EUA. O efeito econômico é duplo: (i) reduzem o custo do limão para o comprador, aumentando sua disposição a pagar e sustentando o mercado; (ii) criam incentivos para fabricantes investirem em qualidade, pois o custo de honrar lemon laws recai sobre quem produziu o defeito.
+
+    **Proteção ao consumidor na UE.** A Diretiva 1999/44/CE (atualizada pela Diretiva 2019/771) garante uma garantia legal mínima de 2 anos para bens de consumo em todos os estados-membros. Diferentemente das lemon laws americanas (focadas em automóveis), a proteção europeia cobre qualquer bem de consumo. A inversão do ônus da prova durante os primeiros 12 meses (o vendedor deve provar que o defeito não existia na entrega) é um mecanismo de screening implícito: reduz o custo de reclamação para o consumidor de boa-fé e aumenta o custo para vendedores de produtos defeituosos.
+
+    **No Brasil**, o Código de Defesa do Consumidor (1990) estabelece garantia legal de 30 dias para bens não duráveis e 90 dias para bens duráveis, complementada por garantias contratuais voluntárias dos fabricantes. No mercado automotivo, plataformas como iCarros e Webmotors passaram a oferecer laudos de vistoria veicular (cautelares) — um mecanismo de certificação por terceiros que reduz a assimetria informacional no mercado secundário. A Tabela FIPE funciona como um benchmark público de preços, facilitando a precificação mesmo sob informação imperfeita.
+
+    **Dados:** O mercado global de carros usados movimentou aproximadamente US$ 1,5 trilhão em 2023 (Statista). Nos EUA, carros usados certificados (*certified pre-owned*, CPO) — que vêm com garantia estendida do fabricante — representam ~15% das vendas de usados e comandam um prêmio de preço de 5–10% sobre veículos não certificados, evidência direta do valor de mercado da sinalização via garantia.
+
+    **Análise:** Lemon laws e garantias são soluções complementares ao problema de Akerlof. Garantias são sinais de mercado (parte informada age voluntariamente); lemon laws são regulação estatal (força todas as partes a internalizar o risco de limões). Juntas, elas impedem o colapso total do mercado previsto pelo modelo — mas não eliminam a ineficiência. Compradores ainda descontam preços de usados (o chamado *depreciation cliff* do primeiro ano), e mercados de carros usados em países com proteção ao consumidor fraca (como muitos países em desenvolvimento) sofrem de seleção adversa mais severa.
+
+    **Fonte:** FTC, *Understanding Used Car Warranty Protection*; EU, Directive 2019/771; IBGE/DENATRAN, Frota de Veículos Automotores.
+
+---
+
+!!! box-mundo "🌍 Box Mundo 9d.3 — Remuneração de CEOs e o problema principal-agente: evidência internacional"
+
+    **Contexto:** A remuneração de executivos de grandes corporações é um dos campos de aplicação mais visíveis e controversos da teoria do principal-agente. Os acionistas (principais) não podem observar diretamente o esforço e a qualidade das decisões dos CEOs (agentes); por isso, desenham contratos que vinculam a remuneração ao desempenho da empresa — stock options, bônus por lucro, ações restritas. A teoria de Holmström (1979) prevê que o contrato ótimo equilibra incentivos (alta sensibilidade da remuneração ao desempenho) e seguro (baixa variabilidade salarial), e que a parcela variável deve depender de indicadores informativos sobre o esforço do CEO.
+
+    **Dados internacionais.** A razão entre a remuneração do CEO e a do trabalhador mediano (CEO pay ratio) varia dramaticamente entre países e ao longo do tempo:
+
+    | País | CEO pay ratio (aprox., 2023) | Estrutura predominante |
+    |:-----|:----------------------------|:-----------------------|
+    | EUA | 344:1 | Stock options + ações restritas (~70% variável) |
+    | Reino Unido | 120:1 | Bônus + ações (~55% variável) |
+    | Alemanha | 65:1 | Salário fixo + bônus moderado (~40% variável) |
+    | Japão | 50:1 | Salário fixo alto (~70% fixo) |
+    | Brasil | 35–50:1 | Misto (salário + bônus; stock options em crescimento) |
+
+    **Fonte:** Economic Policy Institute (EPI), 2023; Towers Watson Global CEO Pay Study; CVM (Brasil).
+
+    Nos EUA, a razão CEO/trabalhador era de ~20:1 nos anos 1960, cresceu para ~60:1 nos anos 1990 e explodiu para mais de 300:1 após a difusão massiva de stock options nos anos 2000. A SEC (Securities and Exchange Commission) passou a exigir a divulgação do CEO pay ratio a partir de 2018 (Dodd-Frank Act, Seção 953b).
+
+    **Análise pela teoria do principal-agente.** A remuneração variável elevada nos EUA é consistente com a teoria de Holmström: mercados de capitais líquidos e diversificados permitem que acionistas imponham risco elevado aos CEOs (que, por sua vez, exigem compensação pelo risco — o prêmio de risco é parte do custo de agência). No Japão, onde a cultura corporativa valoriza relações de longo prazo e a mobilidade entre empresas é menor, o salário fixo alto funciona como um contrato relacional (*implicit contract*): o CEO é incentivado pela perspectiva de manutenção do emprego e pela reputação dentro do keiretsu, não pela remuneração variável de curto prazo. A Alemanha, com seu sistema de codeterminação (*Mitbestimmung*, onde trabalhadores têm assento no conselho), impõe restrições institucionais que moderam a remuneração variável.
+
+    O debate normativo é intenso. Bebchuk e Fried (2004), em *Pay Without Performance*, argumentam que a remuneração de CEOs nos EUA reflete não o contrato ótimo de Holmström, mas o poder de barganha do CEO sobre o conselho (*managerial power theory*): CEOs influenciam seus próprios contratos, capturando rendas que não correspondem ao esforço. A evidência empírica de Bertrand e Mullainathan (2001) mostra que CEOs são recompensados por aumentos de lucro que decorrem de fatores exógenos (como o preço do petróleo para empresas petrolíferas) — uma violação direta do Princípio da Informatividade de Holmström, que recomenda filtrar choques não informativos do contrato.
+
+    No Brasil, a CVM (Comissão de Valores Mobiliários) regulamenta a divulgação da remuneração de administradores de empresas listadas (Instrução 480/2009), mas a transparência ainda é limitada comparada aos EUA. A cultura de remuneração variável em empresas brasileiras listadas na B3 cresceu significativamente nas últimas duas décadas, com adoção crescente de stock options e ações restritas — um movimento consistente com a profissionalização da governança corporativa e a influência do modelo anglo-saxão.
+
+    **Fonte:** Bebchuk, Lucian A. e Fried, Jesse M. (2004). *Pay Without Performance: The Unfulfilled Promise of Executive Compensation*. Harvard University Press. Bertrand, Marianne e Mullainathan, Sendhil (2001). "Are CEOs Rewarded for Luck?" *Quarterly Journal of Economics*, 116(3), 901–932. Economic Policy Institute, "CEO Pay Has Skyrocketed 1,460% Since 1978" (2023).
 
 ---
 
@@ -346,14 +440,68 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. No modelo de sinalização de Spence, a educação funciona como sinal de habilidade porque:"
+    - (a) A educação sempre aumenta a produtividade do trabalhador
+    - (b) O custo de obter educação é menor para trabalhadores de alta habilidade (condição de single-crossing)
+    - (c) Os empregadores observam diretamente a habilidade dos candidatos
+    - (d) Todos os trabalhadores obtêm o mesmo nível de educação
+
+    ??? success "Resposta"
+        **(b)** A sinalização funciona porque o custo do sinal é negativamente correlacionado com o tipo: trabalhadores de alta habilidade obtêm educação a custo menor. No equilíbrio separador, apenas os de alta habilidade se educam, revelando seu tipo. A alternativa (a) é irrelevante — no modelo de Spence, a educação pode ter produtividade zero; (c) eliminaria a necessidade de sinal; (d) descreve o equilíbrio pooling.
+
+??? question "2. Em um equilíbrio separador, diferentes tipos de agentes:"
+    - (a) Escolhem a mesma ação, tornando impossível distingui-los
+    - (b) Escolhem ações diferentes, permitindo que a parte desinformada infira o tipo
+    - (c) São agrupados e recebem o mesmo contrato
+    - (d) Revelam seu tipo verbalmente antes de agir
+
+    ??? success "Resposta"
+        **(b)** No equilíbrio separador, cada tipo escolhe uma ação distinta (ex.: nível de educação diferente), permitindo que o receptor do sinal identifique o tipo do emissor. A alternativa (a) descreve equilíbrio pooling; (c) também descreve pooling; (d) ignora que 'cheap talk' sem custo não é crível.
+
+??? question "3. O Equilíbrio Bayesiano Perfeito (PBE) exige:"
+    - (a) Apenas otimalidade das estratégias, sem restrições sobre crenças
+    - (b) Que as crenças sejam consistentes com a regra de Bayes nos conjuntos de informação alcançados em equilíbrio, e que as estratégias sejam sequencialmente racionais
+    - (c) Que os jogadores tenham informação completa sobre os payoffs
+    - (d) Que o jogo seja de soma zero
+
+    ??? success "Resposta"
+        **(b)** O PBE combina otimalidade sequencial (cada jogador maximiza dado crenças e estratégias dos demais em cada conjunto de informação) com consistência bayesiana das crenças (atualizadas pela regra de Bayes onde possível). A alternativa (a) é insuficiente; (c) descreve jogos de informação completa; (d) é uma restrição desnecessária.
+
+??? question "4. O risco moral (moral hazard) difere da seleção adversa porque:"
+    - (a) No risco moral, a assimetria informacional é sobre ações (pós-contrato); na seleção adversa, sobre tipos (pré-contrato)
+    - (b) O risco moral ocorre apenas em mercados de seguros
+    - (c) A seleção adversa sempre leva ao colapso total do mercado
+    - (d) No risco moral, o principal conhece perfeitamente o tipo do agente e suas ações
+
+    ??? success "Resposta"
+        **(a)** A seleção adversa é um problema de informação oculta (hidden information) sobre características do agente antes da contratação. O risco moral é um problema de ação oculta (hidden action) após a contratação — o agente pode reduzir esforço ou tomar mais risco sem ser observado. A alternativa (b) é restritiva; (c) não é necessário; (d) contradiz a definição.
+
+??? question "5. O critério de Cho-Kreps (Critério de Dominância Intuitiva) refina o PBE ao:"
+    - (a) Eliminar todos os equilíbrios separadores, mantendo apenas os pooling
+    - (b) Restringir crenças fora do caminho de equilíbrio, eliminando equilíbrios sustentados por crenças implausíveis sobre desvios
+    - (c) Exigir que todos os tipos escolham a mesma ação
+    - (d) Permitir comunicação direta entre os jogadores
+
+    ??? success "Resposta"
+        **(b)** Cho-Kreps restringe crenças off-path: se um desvio observado só poderia beneficiar um tipo específico (e nunca outro), a crença deve atribuir probabilidade 1 a esse tipo. Isso elimina equilíbrios pooling 'ruins' e seleciona tipicamente o equilíbrio separador de menor custo. A alternativa (a) é o oposto do efeito usual; (c) descreve pooling; (d) não faz parte do conceito.
+
+---
+
 ## 📋 Resumo do Capítulo
 
 - Jogos dinâmicos com informação incompleta combinam ação sequencial com assimetria informacional. O conceito de equilíbrio é o **Equilíbrio Bayesiano Perfeito (PBE)**, que exige otimalidade sequencial das estratégias e consistência bayesiana das crenças em cada conjunto de informação. O Critério de Dominância Intuitiva de Cho e Kreps (1987) refina o PBE eliminando equilíbrios sustentados por crenças off-path implausíveis.
-- No **modelo de sinalização de Spence** (Nobel 2001), a educação funciona como sinal de habilidade mesmo sem aumentar a produtividade: a condição de single-crossing (custo menor para tipos melhores) permite que o equilíbrio separador revele o tipo do trabalhador. O mesmo mecanismo explica garantias no mercado de carros usados, dividendos em finanças corporativas e o valor do ENEM como sinal de aptidão.
-- Existem três tipos de equilíbrio em jogos de sinalização: **separador** (tipos revelados), **agregador/pooling** (nenhuma informação revelada) e **semi-separador** (revelação parcial). O Critério de Dominância Intuitiva tende a selecionar equilíbrios separadores.
+- No **modelo de sinalização de Spence** (Nobel 2001), a educação funciona como sinal de habilidade mesmo sem aumentar a produtividade: a condição de single-crossing (custo menor para tipos melhores) permite que o equilíbrio separador revele o tipo do trabalhador. O mesmo mecanismo explica garantias no mercado de carros usados, dividendos em finanças corporativas e o valor do ENEM como sinal de aptidão. O equilíbrio separador tipicamente não é único; refinamentos como Cho-Kreps selecionam o de menor custo.
+- Existem três tipos de equilíbrio em jogos de sinalização: **separador** (tipos revelados), **agregador/pooling** (nenhuma informação revelada) e **semi-separador** (revelação parcial). O Critério de Dominância Intuitiva tende a selecionar equilíbrios separadores. O trade-off fundamental é entre eficiência informacional (separador) e eficiência alocativa (pooling evita o custo de sinalização).
 - **Cheap talk** (comunicação sem custo) transmite informação apenas quando os interesses de remetente e receptor estão suficientemente alinhados (Crawford-Sobel, 1982). A autonomia institucional do BCB é um mecanismo para aumentar a credibilidade do forward guidance.
-- O **moral hazard** (risco moral) surge quando o agente toma ações não observáveis pelo principal; o contrato ótimo equilibra incentivos ao esforço com seguro contra risco. **Moral hazard não é fraude**: é desalinhamento de incentivos, não intenção de enganar. A aversão ao risco do agente (Capítulo 7) é o que torna o problema intratável.
-- A **seleção adversa** (Nobel 2001 — Akerlof) ocorre quando informação privada pré-contratual atrai desproporcionalmente os tipos "ruins", podendo destruir mercados inteiros. O modelo de Rothschild e Stiglitz (1976) mostra que o equilíbrio em mercados de seguros competitivos é separador, com o tipo baixo risco recebendo cobertura incompleta. Mecanismos de mitigação incluem sinalização, screening, certificação e regulação obrigatória — como as regras da ANS para planos de saúde individuais no Brasil.
+- O **moral hazard** (risco moral) surge quando o agente toma ações não observáveis pelo principal; o contrato ótimo equilibra incentivos ao esforço com seguro contra risco. **Moral hazard não é fraude**: é desalinhamento de incentivos, não intenção de enganar. A aversão ao risco do agente (Capítulo 7) é o que torna o problema intratável. A distinção entre **primeiro melhor** (esforço observável → salário fixo) e **segundo melhor** (esforço não observável → contrato contingente) é central: a diferença de custo é o **custo de agência**.
+- O **Princípio da Informatividade** (Holmström, 1979) afirma que qualquer variável correlacionada com o esforço do agente deve ser incluída no contrato ótimo. O problema de **multitarefa** (Holmström e Milgrom, 1991) mostra que incentivos fortes em uma dimensão podem distorcer o esforço para longe de dimensões não mensuráveis.
+- A **seleção adversa** (Nobel 2001 — Akerlof) ocorre quando informação privada pré-contratual atrai desproporcionalmente os tipos "ruins", podendo destruir mercados inteiros. O modelo de Rothschild e Stiglitz (1976) mostra que o equilíbrio em mercados de seguros competitivos é separador, com o tipo baixo risco recebendo cobertura incompleta. Mecanismos de mitigação incluem sinalização, screening, certificação e regulação obrigatória — como as regras da ANS para planos de saúde individuais no Brasil. Garantias e *lemon laws* são respostas institucionais que reduzem a assimetria informacional e sustentam mercados que, sem elas, colapsariam.
+- O **desenho de mecanismos** (Hurwicz, Maskin, Myerson — Nobel 2007) unifica os problemas de sinalização, moral hazard e seleção adversa sob um framework comum: dado que agentes são estratégicos e informados, qual é o melhor conjunto de regras? O Princípio da Revelação garante que a busca pode ser restrita a mecanismos diretos e incentivo-compatíveis.
 
 ## 🔑 Conceitos-Chave
 
@@ -366,10 +514,16 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 | Equilíbrio separador | Equilíbrio em que tipos diferentes escolhem sinais diferentes, revelando perfeitamente a informação privada. |
 | Equilíbrio agregador (pooling) | Equilíbrio em que todos os tipos escolhem o mesmo sinal, impedindo o receptor de aprender sobre o tipo. |
 | Condição de single-crossing | O custo marginal do sinal é menor para os tipos de alta qualidade, garantindo que a imitação não seja lucrativa. |
+| Critério de Cho-Kreps | Refinamento que elimina equilíbrios sustentados por crenças off-path implausíveis; seleciona o equilíbrio separador de menor custo. |
 | Cheap talk | Comunicação sem custo direto; a quantidade de informação transmitida depende do alinhamento de interesses entre remetente e receptor. |
 | Moral hazard (risco moral) | Problema de incentivos em que o agente toma ações não observáveis pelo principal, exigindo contratos que vinculem pagamento a resultados. |
+| Primeiro melhor vs. segundo melhor | Primeiro melhor: esforço observável, salário fixo ótimo. Segundo melhor: esforço não observável, contrato contingente com custo de agência positivo. |
+| Princípio da Informatividade | Qualquer variável correlacionada com o esforço do agente deve ser incluída no contrato ótimo (Holmström, 1979). |
+| Multitarefa | Quando o agente aloca esforço entre múltiplas dimensões, incentivos fortes em uma podem distorcer o esforço para longe das demais (Holmström-Milgrom, 1991). |
 | Seleção adversa | Situação pré-contratual em que informação privada sobre qualidade leva os piores tipos a se auto-selecionarem para a transação. |
+| Market unraveling | Processo iterativo de deterioração do pool de vendedores/segurados que pode levar ao colapso completo do mercado. |
 | Screening | Mecanismo pelo qual a parte desinformada oferece um menu de contratos desenhado para que cada tipo se auto-selecione revelando informação. |
+| Desenho de mecanismos | Campo que estuda as regras ótimas para induzir revelação de informação ou alinhamento de comportamento quando agentes são estratégicos. |
 | Princípio da Revelação | Para qualquer mecanismo e equilíbrio, existe um mecanismo direto equivalente em que reportar o tipo verdadeiro é ótimo. |
 
 <div class="caption-obj" markdown>
@@ -421,6 +575,39 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
     Sistema: \(w_B = w_R + 4\) e \(0{,}8(w_R + 4) + 0{,}2 w_R = 2 \implies w_R = -1{,}2\), \(w_B = 2{,}8\).
 
     Com \(w_R < 0\) (multa), o principal implementa esforço alto ao menor custo. Se multas não são possíveis (\(w_R \geq 0\)), o custo sobe — limitação de responsabilidade encarece os incentivos.
+
+??? exercicio-resolvido "Exercício Resolvido 9d.3 — Seleção adversa e equilíbrio de Akerlof com tipos contínuos"
+    **Enunciado:** No mercado de carros usados, a qualidade \(q\) é distribuída uniformemente em \([0, 10]\). O valor do carro para o vendedor é \(v_S = q\), e para o comprador é \(v_B = 1{,}5q\). O vendedor conhece \(q\); o comprador não. Apenas carros cujo preço de mercado \(P\) é pelo menos igual ao valor de reserva do vendedor (\(v_S = q\)) são colocados à venda. (a) Se o comprador acredita que todos os carros estão à venda, qual é o preço máximo que aceita pagar? (b) Dado esse preço, quais carros são realmente oferecidos? O mercado funciona? (c) Encontre o equilíbrio. (d) Que valor mínimo de \(\alpha\) (onde \(v_B = \alpha q\)) sustenta um mercado com transações?
+
+    **Resolução:**
+
+    **(a)** Se todos os carros estão à venda, \(q \sim U[0, 10]\) e o valor esperado para o comprador é:
+
+    \[
+    E[v_B] = 1{,}5 \cdot E[q] = 1{,}5 \times 5 = 7{,}5
+    \]
+
+    O comprador aceita pagar até \(P = 7{,}5\).
+
+    **(b)** A \(P = 7{,}5\), vendem-se apenas carros com \(q \leq 7{,}5\). A qualidade média dos carros à venda é:
+
+    \[
+    E[q \mid q \leq 7{,}5] = 7{,}5 / 2 = 3{,}75
+    \]
+
+    Valor esperado do comprador dado o pool efetivo: \(1{,}5 \times 3{,}75 = 5{,}625\). Mas o comprador racional antecipa que o pool é \([0, 7{,}5]\) — logo, revisa \(P\) para \(5{,}625\). A esse novo preço, só vendem-se carros com \(q \leq 5{,}625\), e o valor esperado cai para \(1{,}5 \times 5{,}625/2 = 4{,}22\). O processo iterativo converge a zero: o mercado colapsa.
+
+    **(c)** Formalmente, seja \(\bar{q}_n\) o limiar de qualidade na rodada \(n\). Temos \(\bar{q}_0 = 10\) e:
+
+    \[
+    \bar{q}_{n+1} = 1{,}5 \times \bar{q}_n / 2 = 0{,}75 \bar{q}_n
+    \]
+
+    Como \(0{,}75 < 1\), a sequência converge a \(\bar{q}^* = 0\). O único equilíbrio é o colapso total: nenhum carro é vendido. Isso ocorre apesar de existirem ganhos de troca em todas as transações (\(v_B = 1{,}5q > q = v_S\) para todo \(q > 0\)).
+
+    **(d)** Para \(v_B = \alpha q\), a recursão é \(\bar{q}_{n+1} = (\alpha/2) \bar{q}_n\). O mercado não colapsa se e somente se \(\alpha / 2 \geq 1\), ou seja, \(\alpha \geq 2\). Com \(\alpha = 2\), o comprador valoriza o carro duas vezes mais que o vendedor, e o preço de equilíbrio sustenta todo o mercado (\(\bar{q}^* = 10\)). Com \(\alpha < 2\), o mercado colapsa integralmente.
+
+    **Interpretação econômica:** O resultado \(\alpha \geq 2\) é surpreendentemente restritivo — exige que o comprador valorize o bem pelo menos o dobro do vendedor para que a seleção adversa não destrua o mercado. Na prática, mercados sobrevivem porque mecanismos como garantias, vistorias e lemon laws reduzem a assimetria informacional, efetivamente aumentando o "\(\alpha\) efetivo" ao diminuir o risco percebido pelo comprador. O modelo ilustra por que a seleção adversa é mais severa em mercados onde esses mecanismos são fracos — como mercados informais de veículos em economias em desenvolvimento.
 
 ---
 
@@ -520,6 +707,18 @@ O próximo Box ilustra o lado operacional da informação assimétrica na regula
 
 ---
 
+<a id="ex-9d-10"></a>**Exercício 9d.10.** *(Médio — Sinalização com custo quadrático e três tipos)* Considere um modelo de Spence com **três** tipos de trabalhadores: \(\theta_H = 6\), \(\theta_M = 3\) e \(\theta_L = 1\), com proporções iguais (\(1/3\) cada). O custo da educação é \(c(e, \theta) = e^2 / (2\theta)\). Firmas competitivas pagam salário igual à produtividade esperada.
+
+**(a)** Encontre o equilíbrio separador completo de menor custo, em que cada tipo escolhe um nível de educação diferente e recebe salário igual à sua produtividade. Especifique os limiares \(e_M^*\) e \(e_H^*\) (assuma \(e_L = 0\)).
+
+**(b)** Calcule o payoff de cada tipo no equilíbrio separador.
+
+**(c)** Considere agora um equilíbrio semi-separador em que os tipos M e L fazem *pooling* em \(e = 0\) (recebendo salário médio \((3 + 1)/2 = 2\)) e o tipo H se separa com \(e_H = e^{**}\). Encontre o menor \(e^{**}\) que sustenta esse equilíbrio. Compare o payoff do tipo M neste equilíbrio com o do equilíbrio separador completo.
+
+[:material-arrow-right: Ver solução](../solucoes/cap09d.md#ex-9d-10)
+
+---
+
 ## 🏆 Vem, ANPEC!
 
 Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional dos Centros de Pós-Graduação em Economia). As questões seguem o formato oficial: cinco itens (0 a 4) a serem julgados como Verdadeiro (V) ou Falso (F).
@@ -545,6 +744,26 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
         - **Item 4 — V:** Se o seguro é **universal e obrigatório**, não há autosseleção: todos os tipos (alto e baixo risco) participam do pool. Isso elimina o mecanismo de seleção adversa. O SUS brasileiro é um exemplo de cobertura universal que evita a antisseleção.
 
         **Nota:** Esta questão também aparece no Capítulo 19 (Limões, Sinais e Contratos), onde é discutida no contexto mais amplo dos mecanismos de mercado para informação assimétrica.
+
+??? question "ANPEC — Sinalização, moral hazard e contratos (questão adaptada)"
+    Sobre sinalização, moral hazard e desenho de contratos em mercados com informação assimétrica, julgue os itens:
+
+    | Item | Afirmação |
+    |------|-----------|
+    | 0    | No modelo de Spence, se o custo de obter educação fosse idêntico para trabalhadores de alta e baixa produtividade, o equilíbrio separador ainda seria sustentável, pois bastaria que o tipo alto investisse mais. |
+    | 1    | O problema do moral hazard surge porque o agente toma ações não observáveis pelo principal *após* a celebração do contrato; se o esforço fosse observável e verificável, o primeiro melhor seria alcançável com salário fixo. |
+    | 2    | No modelo de Rothschild-Stiglitz, o equilíbrio de mercado competitivo com informação assimétrica é sempre do tipo *pooling*, em que ambos os tipos recebem o mesmo contrato. |
+    | 3    | O Princípio da Informatividade de Holmström (1979) implica que o contrato ótimo de incentivos deve incluir qualquer variável correlacionada com o esforço do agente, mesmo que essa variável seja um indicador imperfeito. |
+    | 4    | No equilíbrio separador do modelo de sinalização, o custo social da sinalização é zero, pois a informação é revelada e os salários correspondem às produtividades verdadeiras. |
+
+    ??? success "Gabarito"
+        **Respostas: 01010**
+
+        - **Item 0 — F:** A condição de single-crossing (custo diferencial entre tipos) é essencial para a sustentabilidade do equilíbrio separador. Se o custo da educação fosse idêntico para ambos os tipos, o tipo baixo poderia imitar qualquer nível de educação escolhido pelo tipo alto sem desvantagem, destruindo a separação. A sinalização funciona precisamente porque "fingir" é mais caro para o tipo ruim.
+        - **Item 1 — V:** O moral hazard é um problema de ação oculta pós-contratual. Se o esforço fosse observável e verificável por um tribunal, o principal poderia escrever um contrato condicionado diretamente ao esforço, pagando um salário fixo que satisfaz a restrição de participação — sem necessidade de vincular pagamento a resultados e sem expor o agente avesso ao risco à variabilidade salarial. Esse é o primeiro melhor.
+        - **Item 2 — F:** O resultado central de Rothschild e Stiglitz (1976) é exatamente o oposto: o equilíbrio, quando existe, é necessariamente **separador**. Nenhum equilíbrio *pooling* estável existe em mercados competitivos de seguros com informação assimétrica, porque uma seguradora entrante sempre poderia oferecer um contrato que atraia apenas os tipos de baixo risco, quebrando o pool.
+        - **Item 3 — V:** Esse é o conteúdo exato do Princípio da Informatividade. Qualquer estatística que seja informativa sobre o esforço do agente — mesmo ruidosa — deve ser incluída no contrato, pois melhora a inferência e reduz o custo de agência. Isso fundamenta o uso de benchmarks setoriais e desempenho relativo em contratos de executivos.
+        - **Item 4 — F:** No equilíbrio separador, a informação é revelada e os salários correspondem às produtividades, mas o custo social da sinalização é **positivo**, não zero. O tipo alto investe em educação que, no modelo puro de Spence, não aumenta a produtividade — é puro desperdício social. O custo \(c(e^*, \theta_H)\) é o preço da credibilidade informacional.
 
 ---
 
@@ -586,5 +805,6 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 - Crawford, Vincent P., e Joel Sobel. 1982. "Strategic Information Transmission." *Econometrica* 50 (6): 1431–1451. [DOI](https://doi.org/10.2307/1913390)
 - Gibbons, Robert. 1992. [*Game Theory for Applied Economists*](https://books.google.com/books?id=8ygxf2WunAIC). Princeton: Princeton University Press. Cap. 4.
 - Holmström, Bengt. 1979. "Moral Hazard and Observability." *Bell Journal of Economics* 10 (1): 74–91.
+- Holmström, Bengt, e Paul Milgrom. 1991. "Multitask Principal-Agent Analyses: Incentive Contracts, Asset Ownership, and Job Design." *Journal of Law, Economics, & Organization* 7: 24–52.
 - Rothschild, Michael, e Joseph Stiglitz. 1976. "Equilibrium in Competitive Insurance Markets." *Quarterly Journal of Economics* 90 (4): 629–649. [DOI](https://doi.org/10.2307/1885326)
 - Spence, Michael. 1973. "Job Market Signaling." *Quarterly Journal of Economics* 87 (3): 355–374. [DOI](https://doi.org/10.2307/1882010)

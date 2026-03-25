@@ -1,0 +1,15 @@
+TF	Como a demanda pelo bem x não depende do preço y, aumentos deste último não afetarão a demanda por x, mesmo com a renda gasta integralmente com os dois bens.	true
+TF	Quando os preços dos dois bens forem \2 e a renda igual a \4, a função utilidade indireta assume o valor V(p_x, p_y, R) = 1.	true
+TF	O exercício de minimização do gasto \min\; xp_x + yp_y, sujeito a U = \sqrt{xy}, resulta em uma função demanda compensada ou hicksiana pelo bem x dada por h_x(p_x, p_y, U) = \sqrt{p_x/p_y} \cdot U.	false
+TF	A função gasto resultante do item anterior será e(p_x, p_y, U) = 2U\sqrt{p_x p_y}, expressão que indica que preços maiores e utilidade maiores requerem gasto maior.	true
+TF	Em relação à Equação de Slutsky, o efeito substituição (ES) será equivalente a ES = \frac{\partial h_x}{\partial p_x} = -\frac{1}{4}\frac{R}{p_x^2}.	false
+TF	x(\mathbf{p}, r) = h(\mathbf{p}, v(\mathbf{p}, r)).	true
+TF	e(\mathbf{p}, v(\mathbf{p}, r)) = r.	true
+TF	Seja U(x_1, \ldots, x_n) = \min\{x_1/a_1, \ldots, x_n/a_n\}, com a_1, \ldots, a_n > 0, uma utilidade Leontief. Então e(\mathbf{p}, \bar{u}) = (a_1 p_1 + \cdots + a_n p_n)/\bar{u}.	false
+TF	Se vale o princípio da valoração marginal decrescente, então a função dispêndio e(\mathbf{p}, \bar{u}) é estritamente convexa nos preços.	false
+TF	A matriz S = [s_{ij}]_{n \times n}, definida como o jacobiano de \mathbf{h}(\mathbf{p}, \bar{u}) relativamente aos preços, isto é, s_{ij} = \partial h_i / \partial p_j, para i, j = 1, \ldots, n, é antissimétrica, semidefinida negativa e satisfaz S\mathbf{p} = \mathbf{0}_n.	false
+TF	Se a utilidade U(X, Y) é quase-côncava sobre \mathbb{R}^2, então o conjunto S(X_0, Y_0) = \{(X, Y) \in \mathbb{R}^2 : U(X, Y) \geq U(X_0, Y_0)\} é convexo.	true
+TF	Se U(X, Y) = f(X) + Y é uma função de utilidade quase-linear, então o bem Y serve como numerário.	true
+TF	Se as preferências do consumidor sobre o conjunto X = \{a, b, c, d\} de alternativas são totais (ou completas), então necessariamente existe uma alternativa maximal.	true
+TF	Se U(X, Y) = \min\{aX, bY\}, com a, b > 0 constantes, então a Demanda Hicksiana (ou compensada) não depende dos preços de X e Y.	true
+TF	Seja U(X, Y) = X^a Y^{1-a}, com 0 < a < 1, uma Utilidade Cobb-Douglas. Então a elasticidade-preço cruzada da Demanda Marshalliana é positiva.	false

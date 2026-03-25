@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+  Poder Estatístico e Tamanho da Amostra — Interactive Graph
+  Library: Plotly.js
+  Chapter 22 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poder Estatístico e Tamanho da Amostra</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #plotly-chart { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    select { width: 100%; padding: 0.3rem; font-size: 0.85rem; font-family: inherit; border: 1px solid #ccc; border-radius: 4px; margin-top: 0.2rem; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #plotly-chart { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="plotly-chart"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Tamanho da amostra \(n\): <span class="val" id="val-n">50</span></label>
+        <input type="range" id="slider-n" min="10" max="1000" step="10" value="50">
+      </div>
+      <div class="slider-group">
+        <label>Tamanho do efeito \(d\): <span class="val" id="val-d">0.50</span></label>
+        <input type="range" id="slider-d" min="0.10" max="1.00" step="0.05" value="0.50">
+      </div>
+      <div class="slider-group">
+        <label>Nível de significância \(\alpha\):</label>
+        <select id="select-alpha">
+          <option value="0.01">0.01 (1%)</option>
+          <option value="0.05" selected>0.05 (5%)</option>
+          <option value="0.10">0.10 (10%)</option>
+        </select>
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Standard normal PDF and CDF approximations
+    function normalPDF(x) {
+      return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI);
+    }
+
+    // Rational approximation of the normal CDF (Abramowitz & Stegun)
+    function normalCDF(x) {
+      if (x < -8) return 0;
+      if (x > 8) return 1;
+      var sign = 1;
+      if (x < 0) { sign = -1; x = -x; }
+      var t = 1 / (1 + 0.2316419 * x);
+      var d = 0.3989422804014327;
+      var p = t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.8212560 + t * 1.3302744))));
+      p = 1 - d * Math.exp(-0.5 * x * x) * p;
+      return sign === 1 ? p : 1 - p;
+    }
+
+    // Inverse normal CDF (rational approximation)
+    function normalInvCDF(p) {
+      if (p <= 0) return -8;
+      if (p >= 1) return 8;
+      if (p < 0.5) return -normalInvCDF(1 - p);
+      var t = Math.sqrt(-2 * Math.log(1 - p));
+      var c0 = 2.515517, c1 = 0.802853, c2 = 0.010328;
+      var d1 = 1.432788, d2 = 0.189269, d3 = 0.001308;
+      return t - (c0 + c1 * t + c2 * t * t) / (1 + d1 * t + d2 * t * t + d3 * t * t * t);
+    }
+
+    function getState() {
+      return {
+        n: parseInt(document.getElementById('slider-n').value),
+        d: parseFloat(document.getElementById('slider-d').value),
+        alpha: parseFloat(document.getElementById('select-alpha').value)
+      };
+    }
+
+    function update() {
+      var s = getState();
+      document.getElementById('val-n').textContent = s.n;
+      document.getElementById('val-d').textContent = s.d.toFixed(2);
+
+      // Standard error for a two-sample test: SE = sigma * sqrt(2/n), with sigma=1 (standardized)
+      var se = Math.sqrt(2 / s.n);
+      // The non-centrality parameter (shift of H1): delta = d / se
+      var delta = s.d / se;
+
+      // Critical value (two-sided)
+      var zCrit = normalInvCDF(1 - s.alpha / 2);
+
+      // Power = P(reject | H1 true) = P(Z > zCrit - delta) + P(Z < -zCrit - delta)
+      var power = 1 - normalCDF(zCrit - delta) + normalCDF(-zCrit - delta);
+
+      // Generate distribution curves
+      var xMin = -4;
+      var xMax = Math.max(delta + 4, 6);
+      var nPts = 400;
+      var step = (xMax - xMin) / nPts;
+
+      var xVals = [], yH0 = [], yH1 = [];
+      // Shading arrays
+      var xAlphaR = [], yAlphaR = []; // right tail alpha (Type I)
+      var xAlphaL = [], yAlphaL = []; // left tail alpha
+      var xBeta = [], yBeta = [];     // beta (Type II)
+      var xPower = [], yPower = [];   // power (1 - beta)
+
+      for (var i = 0; i <= nPts; i++) {
+        var x = xMin + i * step;
+        xVals.push(x);
+        yH0.push(normalPDF(x));
+        yH1.push(normalPDF(x - delta));
+      }
+
+      // Alpha region: H0 tails beyond critical values
+      // Right tail
+      for (var i = 0; i <= nPts; i++) {
+        var x = xMin + i * step;
+        if (x >= zCrit) {
+          xAlphaR.push(x);
+          yAlphaR.push(normalPDF(x));
+        }
+      }
+      // Left tail
+      for (var i = 0; i <= nPts; i++) {
+        var x = xMin + i * step;
+        if (x <= -zCrit) {
+          xAlphaL.push(x);
+          yAlphaL.push(normalPDF(x));
+        }
+      }
+
+      // Beta region: H1 between critical values (fail to reject)
+      for (var i = 0; i <= nPts; i++) {
+        var x = xMin + i * step;
+        if (x >= -zCrit && x <= zCrit) {
+          xBeta.push(x);
+          yBeta.push(normalPDF(x - delta));
+        }
+      }
+
+      // Power region: H1 beyond critical values (reject correctly)
+      for (var i = 0; i <= nPts; i++) {
+        var x = xMin + i * step;
+        if (x >= zCrit) {
+          xPower.push(x);
+          yPower.push(normalPDF(x - delta));
+        }
+      }
+
+      var traces = [];
+
+      // Alpha shading (right tail)
+      if (xAlphaR.length > 0) {
+        traces.push({
+          x: [xAlphaR[0]].concat(xAlphaR).concat([xAlphaR[xAlphaR.length - 1]]),
+          y: [0].concat(yAlphaR).concat([0]),
+          fill: 'toself',
+          fillcolor: 'rgba(21, 101, 192, 0.25)',
+          line: { color: 'transparent' },
+          name: 'Erro Tipo I (α)',
+          showlegend: true,
+          hoverinfo: 'skip'
+        });
+      }
+
+      // Alpha shading (left tail)
+      if (xAlphaL.length > 0) {
+        traces.push({
+          x: [xAlphaL[0]].concat(xAlphaL).concat([xAlphaL[xAlphaL.length - 1]]),
+          y: [0].concat(yAlphaL).concat([0]),
+          fill: 'toself',
+          fillcolor: 'rgba(21, 101, 192, 0.25)',
+          line: { color: 'transparent' },
+          name: 'α (cauda esq.)',
+          showlegend: false,
+          hoverinfo: 'skip'
+        });
+      }
+
+      // Beta shading
+      if (xBeta.length > 0) {
+        traces.push({
+          x: [xBeta[0]].concat(xBeta).concat([xBeta[xBeta.length - 1]]),
+          y: [0].concat(yBeta).concat([0]),
+          fill: 'toself',
+          fillcolor: 'rgba(200, 16, 46, 0.25)',
+          line: { color: 'transparent' },
+          name: 'Erro Tipo II (β)',
+          showlegend: true,
+          hoverinfo: 'skip'
+        });
+      }
+
+      // Power shading
+      if (xPower.length > 0) {
+        traces.push({
+          x: [xPower[0]].concat(xPower).concat([xPower[xPower.length - 1]]),
+          y: [0].concat(yPower).concat([0]),
+          fill: 'toself',
+          fillcolor: 'rgba(0, 137, 123, 0.3)',
+          line: { color: 'transparent' },
+          name: 'Poder (1 − β)',
+          showlegend: true,
+          hoverinfo: 'skip'
+        });
+      }
+
+      // H0 curve
+      traces.push({
+        x: xVals, y: yH0,
+        mode: 'lines',
+        name: 'H₀: δ = 0',
+        line: { color: '#1565c0', width: 2.5 }
+      });
+
+      // H1 curve
+      traces.push({
+        x: xVals, y: yH1,
+        mode: 'lines',
+        name: 'H₁: δ = d',
+        line: { color: '#C8102E', width: 2.5 }
+      });
+
+      // Critical value lines
+      traces.push({
+        x: [zCrit, zCrit], y: [0, 0.45],
+        mode: 'lines',
+        name: 'Valor crítico',
+        line: { color: '#666', width: 1.5, dash: 'dash' },
+        showlegend: true
+      });
+      traces.push({
+        x: [-zCrit, -zCrit], y: [0, 0.45],
+        mode: 'lines',
+        name: '-z_crit',
+        line: { color: '#666', width: 1.5, dash: 'dash' },
+        showlegend: false
+      });
+
+      var layout = {
+        margin: { t: 30, r: 20, b: 50, l: 55 },
+        xaxis: { title: 'Estatística de teste (z)', range: [xMin, xMax] },
+        yaxis: { title: 'Densidade', range: [0, 0.45] },
+        legend: { x: 0.55, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 10 } },
+        font: { family: 'CMU Serif, Georgia, serif', size: 12 },
+        plot_bgcolor: '#fff',
+        paper_bgcolor: '#fff'
+      };
+
+      Plotly.react('plotly-chart', traces, layout, { responsive: true, displayModeBar: false });
+
+      // Required n for 80% power
+      var zBeta80 = normalInvCDF(0.80); // ~0.842
+      var nReq80 = Math.ceil(2 * Math.pow((zCrit + zBeta80) / s.d, 2));
+
+      // MDE for current n at 80% power
+      var mde = (zCrit + zBeta80) * Math.sqrt(2 / s.n);
+
+      var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Resultados</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += '<span style="color:#00897b;font-weight:700;">Poder = ' + (power * 100).toFixed(1) + '%</span><br>';
+      html += '\\(\\beta\\) (Erro Tipo II) = ' + ((1 - power) * 100).toFixed(1) + '%<br>';
+      html += '\\(z_{\\text{crit}}\\) = \\(\\pm\\)' + zCrit.toFixed(3) + '<br>';
+      html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+      html += 'MDE (\\(n=' + s.n + '\\), poder 80%): ' + mde.toFixed(3) + '<br>';
+      html += '\\(n\\) mín. p/ poder 80%: <b>' + nReq80 + '</b> por grupo';
+      html += '</div>';
+      html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+      html += '\\(n_{\\min} = \\frac{2(z_{\\alpha/2} + z_\\beta)^2}{d^2}\\)';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-n').value = 50;
+      document.getElementById('slider-d').value = 0.50;
+      document.getElementById('select-alpha').value = '0.05';
+      update();
+    }
+
+    ['slider-n','slider-d'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    document.getElementById('select-alpha').addEventListener('change', update);
+    update();
+  </script>
+</body>
+</html>

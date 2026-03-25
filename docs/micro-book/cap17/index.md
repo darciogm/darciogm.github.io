@@ -43,6 +43,14 @@ onde \(M^* = wT + V\) é a **renda plena** — a renda máxima que o indivíduo 
 
     **Por que isso importa:** Entender que o lazer tem preço ajuda a explicar por que profissionais com salários muito altos frequentemente trabalham jornadas longas — o custo de oportunidade de cada hora livre é enorme.
 
+### Perspectiva histórica: a jornada de trabalho ao longo do tempo
+
+A alocação do tempo entre trabalho e lazer não é apenas uma escolha individual — é uma construção que se transformou radicalmente ao longo dos séculos. Durante a Revolução Industrial, jornadas de 60 a 80 horas semanais eram a norma, inclusive para crianças. Reformas legislativas progressivas — como o Factory Act britânico de 1833 e a jornada de 8 horas conquistada em 1919 pela Organização Internacional do Trabalho (OIT) — reduziram gradualmente o tempo de trabalho para cerca de 40 horas semanais nos países desenvolvidos.
+
+Em 1930, John Maynard Keynes publicou o ensaio *Economic Possibilities for Our Grandchildren*, no qual previa que, em cem anos, o progresso tecnológico permitiria jornadas de apenas **15 horas semanais**. Sua previsão sobre o crescimento da produtividade estava correta — a renda per capita nos países ricos multiplicou-se por mais de cinco vezes —, mas a redução da jornada estagnou a partir da década de 1980. Nos Estados Unidos, a jornada média permaneceu em torno de 38–40 horas semanais. A explicação reside na interação entre efeito substituição e efeito renda: o aumento simultâneo dos salários reais e das possibilidades de consumo (novos bens, serviços, viagens) manteve o efeito substituição forte o suficiente para conter a redução do trabalho. Além disso, normas sociais, competição por status (*keeping up with the Joneses*) e estruturas institucionais (jornadas fixas, carreiras corporativas) limitaram a flexibilidade na escolha de horas.
+
+Nos países nórdicos, por outro lado, a jornada efetiva é significativamente menor — cerca de 30–33 horas semanais na Holanda, Dinamarca e Alemanha —, refletindo preferências coletivas distintas e políticas públicas que facilitam a redução voluntária de horas (como o direito ao trabalho parcial). Essa variação entre países ilustra que a escolha trabalho-lazer não é puramente individual: ela é moldada por instituições, cultura e política pública.
+
 ### Preferências
 
 As preferências do indivíduo são representadas por uma função de utilidade \(U(C, L)\), com as propriedades usuais:
@@ -66,8 +74,6 @@ No ótimo interior, a condição de tangência exige:
 Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
 ---
-
-### Gráfico interativo: Escolha Trabalho-Lazer
 
 O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
 
@@ -142,6 +148,20 @@ Combinando as duas primeiras:
     \label{eq:17.8} \tag{17.8} \]
 
     Na equação $\eqref{eq:17.8}$, o sinal de \(\partial h^* / \partial w\) é **ambíguo**: depende de qual efeito domina. Para salários baixos, o efeito substituição tende a dominar; para salários altos, o efeito renda pode prevalecer. \(\blacksquare\)
+
+### Conexão intertemporal: elasticidade de Frisch e o modelo de ciclo de vida
+
+A decomposição de Slutsky apresentada acima trata a oferta de trabalho em um contexto estático — um único período. No Capítulo 18, estenderemos a análise para o contexto intertemporal, no qual o trabalhador aloca não apenas entre consumo e lazer em cada período, mas também entre consumo presente e futuro. Nesse arcabouço, a oferta de trabalho torna-se uma decisão de **substituição intertemporal de lazer**: o trabalhador pode escolher trabalhar mais hoje (quando o salário é alto) e menos amanhã (ou vice-versa), suavizando o consumo ao longo do tempo via poupança e endividamento.
+
+Essa extensão dá origem a um conceito fundamental na macroeconomia moderna: a **elasticidade de Frisch** (ou elasticidade da oferta de trabalho com utilidade marginal da riqueza constante). Enquanto a elasticidade marshalliana (não compensada) e a elasticidade hicksiana (compensada) capturam, respectivamente, os efeitos totais e substituição em um período, a elasticidade de Frisch mede a resposta da oferta de trabalho a variações salariais **mantendo constante a utilidade marginal da riqueza** — ou seja, controlando para o nível de riqueza intertemporal do agente. Formalmente:
+
+\[
+\eta^F = \frac{\partial \ln h}{\partial \ln w}\bigg|_{\bar{\lambda}} \label{eq:17.8b} \tag{17.8b}
+\]
+
+onde \(\bar{\lambda}\) denota a utilidade marginal da riqueza mantida constante. A elasticidade de Frisch é sempre maior ou igual à elasticidade hicksiana, pois permite a substituição intertemporal de lazer entre períodos.
+
+Na prática, a elasticidade de Frisch é central para modelos de ciclo real de negócios (*Real Business Cycle*) e para a análise de reformas tributárias: ela determina quanto os trabalhadores ajustam suas horas em resposta a variações temporárias nos salários (como bônus, horas extras em períodos de pico, ou incentivos fiscais temporários). Estimativas empíricas sugerem valores entre 0,5 e 1,0 para a elasticidade de Frisch agregada, significativamente maiores do que a elasticidade marshalliana (que tende a ser próxima de zero para homens). Essa diferença reflete o fato de que trabalhadores respondem muito mais a variações **temporárias** do salário do que a variações permanentes — precisamente porque podem substituir lazer intertemporalmente.
 
 ### Exemplo com Cobb-Douglas
 
@@ -242,9 +262,13 @@ Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso
 !!! tip "Evidência empírica"
     A evidência empírica sugere que a oferta de trabalho masculina é relativamente **inelástica** (elasticidade próxima de zero ou levemente negativa), enquanto a oferta feminina tende a ser mais elástica, especialmente para mulheres casadas. Isso é consistente com uma curva backward-bending para homens em faixas salariais observadas.
 
----
+!!! warning "⚠️ Erro Comum"
 
-### Gráfico interativo: Curva de Oferta Backward-Bending
+    **Assumir que um aumento salarial sempre aumenta a oferta de trabalho.**
+
+    Muitos alunos aplicam automaticamente a "lei da oferta" ao mercado de trabalho, concluindo que salários maiores geram mais horas trabalhadas. Isso ignora que o lazer é um bem normal: quando o salário sobe, o efeito renda incentiva o trabalhador a consumir mais lazer (trabalhar menos), enquanto o efeito substituição o incentiva a trocar lazer por consumo (trabalhar mais). O sinal líquido é **ambíguo** e depende de qual efeito domina. Para salários elevados, o efeito renda pode prevalecer, gerando a curva backward-bending. Na decomposição de Slutsky, sempre separe os dois efeitos antes de concluir sobre o sinal de \(\partial h^*/\partial w\).
+
+---
 
 O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibilidade de backward-bending. No painel superior, veja a escolha lazer-consumo para o salário selecionado. No painel inferior, a curva de oferta de trabalho \(h^*(w)\). Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
 
@@ -274,6 +298,27 @@ Mesmo que curvas individuais sejam backward-bending, a curva de mercado tende a 
 !!! note "Margem intensiva vs. extensiva"
     A **margem intensiva** refere-se à decisão de quantas horas trabalhar (dado que se está empregado). A **margem extensiva** refere-se à decisão de participar ou não da força de trabalho. A análise do modelo trabalho-lazer captura primariamente a margem intensiva, mas a curva de mercado incorpora ambas.
 
+### A decisão de participação (margem extensiva)
+
+A margem extensiva merece atenção especial porque é quantitativamente tão importante quanto a margem intensiva — e, para certos grupos demográficos, é ainda mais relevante. O conceito central aqui é o **salário de reserva** \(w_R\): o salário mínimo que induz o indivíduo a ofertar pelo menos uma hora de trabalho. Formalmente, \(w_R\) é a taxa marginal de substituição entre lazer e consumo avaliada no ponto de não participação (\(h = 0\)):
+
+\[
+w_R = \frac{U_L(V, T)}{U_C(V, T)} \label{eq:17.10b} \tag{17.10b}
+\]
+
+Se o salário de mercado \(w < w_R\), o indivíduo não participa da força de trabalho. Se \(w \geq w_R\), ele oferece horas positivas. A **taxa de participação** da economia é a fração de indivíduos em idade ativa para os quais \(w \geq w_R\).
+
+A taxa de participação varia enormemente entre grupos demográficos e países, e suas mudanças ao longo do tempo revelam transformações sociais profundas. No Brasil, segundo a PNAD Contínua/IBGE (2024), a taxa de participação na força de trabalho apresenta diferenças marcantes por gênero:
+
+- **Homens:** taxa de participação de aproximadamente 73%, relativamente estável nas últimas décadas;
+- **Mulheres:** taxa de participação de aproximadamente 53%, tendo crescido expressivamente desde os anos 1970 (quando era inferior a 30%), mas ainda significativamente abaixo da masculina.
+
+Essa diferença de 20 pontos percentuais reflete uma combinação de fatores: divisão desigual do trabalho doméstico e de cuidados (que eleva o salário de reserva feminino), normas culturais, barreiras à participação (como a insuficiência de creches e escolas em tempo integral) e discriminação no mercado de trabalho. Políticas públicas que reduzem o custo do cuidado infantil — como a universalização de creches — podem reduzir o salário de reserva feminino e elevar a participação, com efeitos positivos sobre o PIB e a igualdade de gênero.
+
+Internacionalmente, os países nórdicos apresentam as menores diferenças de participação por gênero (5–7 pontos percentuais), graças a políticas abrangentes de licença parental compartilhada, creches públicas universais e incentivos fiscais à participação feminina. Já em países do Oriente Médio e do Norte da África, a diferença pode superar 50 pontos percentuais, refletindo barreiras institucionais e culturais mais severas.
+
+Do ponto de vista empírico, a maior parte da variação na oferta de trabalho agregada — tanto entre países quanto ao longo do tempo — advém de mudanças na **margem extensiva**, não na intensiva. É por isso que modelos que ignoram a decisão de participação subestimam a elasticidade da oferta de trabalho agregada: mesmo que cada indivíduo empregado ajuste pouco suas horas, a entrada e saída de trabalhadores do mercado gera grande variação no total de horas ofertadas.
+
 ---
 
 ## 17.5 Equilíbrio no Mercado de Trabalho
@@ -301,6 +346,29 @@ onde \(PMg_L\) é o produto marginal do trabalho e \(VPMg_L\) é o **valor do pr
 
     Nesse equilíbrio, todo trabalhador que deseja trabalhar ao salário \(w^*\) encontra emprego, e toda firma que deseja contratar ao salário \(w^*\) encontra trabalhadores.
 
+### Demanda por trabalho no longo prazo e as regras de Marshall
+
+A equação $\eqref{eq:17.11}$ descreve a demanda por trabalho no **curto prazo**, quando o capital é fixo. No **longo prazo**, a firma pode ajustar todos os fatores de produção, e a demanda por trabalho torna-se mais elástica. A intuição é que, quando o salário sobe, a firma não apenas reduz a produção (efeito-escala), mas também substitui trabalho por capital (efeito-substituição entre fatores). Ambos os efeitos reduzem a quantidade demandada de trabalho, tornando a curva de demanda de longo prazo mais plana que a de curto prazo.
+
+Alfred Marshall (1890) formulou quatro regras — conhecidas como as **regras de Marshall da demanda derivada** — que determinam a elasticidade da demanda por um fator de produção. A demanda por trabalho será **mais elástica** quando:
+
+1. **A elasticidade de substituição entre trabalho e capital for alta.** Se for fácil substituir trabalhadores por máquinas, um pequeno aumento salarial levará a uma grande substituição.
+
+2. **A demanda pelo produto final for mais elástica.** Se os consumidores são sensíveis ao preço do produto, um aumento nos custos trabalhistas (repassado aos preços) reduz muito a quantidade vendida — e, portanto, o emprego.
+
+3. **A participação do trabalho no custo total for grande.** Quando os salários representam uma fração elevada do custo de produção, variações salariais têm impacto proporcionalmente maior sobre o custo total e o preço do produto.
+
+4. **A oferta dos outros fatores (capital) for mais elástica.** Se o capital é abundante e barato, a firma pode facilmente substituir trabalho por capital quando o salário sobe.
+
+Essas regras são extremamente úteis para prever os efeitos de políticas salariais e trabalhistas em diferentes setores. Por exemplo, no setor de serviços pessoais (restaurantes, cuidados), onde a substituição por capital é difícil e o trabalho é uma fração elevada dos custos, a demanda por trabalho tende a ser relativamente inelástica no curto prazo, mas a regra 2 pode torná-la mais elástica no longo prazo se os consumidores tiverem alternativas. Já na indústria manufatureira, onde a substituição por automação é viável (regra 1), a demanda por trabalho tende a ser bastante elástica no longo prazo.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A demanda por trabalho é uma demanda "derivada" — depende não apenas da produtividade do trabalhador, mas também de quanto os consumidores querem o produto e de quão fácil é substituir trabalhadores por máquinas.
+
+    **Pense assim:** Um restaurante que paga seus garçons por hora enfrenta um aumento do salário mínimo. No curto prazo, demite poucos garçons (é difícil substituí-los por robôs — por enquanto). Mas uma fábrica de autopeças, nas mesmas condições, pode instalar braços robóticos e demitir metade da linha de produção. A mesma variação salarial gera respostas de emprego muito diferentes, porque a elasticidade de substituição entre trabalho e capital é diferente.
+
+    **Por que isso importa:** As regras de Marshall explicam por que os efeitos de políticas como o salário mínimo, encargos trabalhistas ou desonerações fiscais variam dramaticamente entre setores — e por que uma análise "tamanho único" pode ser enganosa.
+
 ### Deslocamentos das curvas
 
 A [Tabela 17.1](#tabela-17-1) apresenta os principais fatores que deslocam as curvas de oferta e demanda de trabalho.
@@ -317,6 +385,25 @@ A [Tabela 17.1](#tabela-17-1) apresenta os principais fatores que deslocam as cu
 <div class="caption-obj" markdown>
 **Tabela 17.1 — Deslocamentos das curvas de oferta e demanda de trabalho.**
 </div>
+
+!!! box-mundo "🌍 Box Mundo 17.3 — O declínio global da participação do trabalho na renda"
+    **Contexto:** Um dos fatos macroeconômicos mais marcantes das últimas décadas é a queda sustentada da parcela do trabalho na renda nacional (*labor share*) em praticamente todos os países. Enquanto a divisão funcional da renda entre trabalho e capital era tradicionalmente considerada uma das "grandes constantes" da economia (Kaldor, 1961), evidências recentes mostram que essa constância se desfez.
+
+    **Dados:** Karabarbounis e Neiman (2014), em estudo influente publicado no *Quarterly Journal of Economics*, documentaram que a participação do trabalho na renda caiu em 42 dos 59 países analisados entre 1975 e 2012:
+
+    | Região/País | Labor share (anos 1970) | Labor share (anos 2010) | Variação |
+    |---|---|---|---|
+    | Países avançados (média) | ~65% | ~58% | −7 p.p. |
+    | Estados Unidos | 66% | 58% | −8 p.p. |
+    | Alemanha | 67% | 61% | −6 p.p. |
+    | Japão | 72% | 60% | −12 p.p. |
+    | China | 60% | 47% | −13 p.p. |
+
+    *Fonte: Karabarbounis, L.; Neiman, B. (2014). "The Global Decline of the Labor Share." Quarterly Journal of Economics, 129(1), 61–103; Penn World Tables; AMECO.*
+
+    **Análise:** Os autores argumentam que a principal causa é o barateamento dos bens de capital (computadores, robôs, software), que incentivou as firmas a substituírem trabalho por capital. Quando a elasticidade de substituição entre capital e trabalho é superior a 1 (ou seja, capital e trabalho são substitutos brutos), o barateamento do capital reduz a participação do trabalho na renda. Explicações complementares incluem: a globalização (que aumentou a oferta efetiva de trabalho via offshoring), o enfraquecimento dos sindicatos, o aumento do poder de mercado das firmas (superstar firms) e mudanças tecnológicas enviesadas contra o trabalho. O fenômeno conecta-se diretamente às regras de Marshall da demanda derivada: a elasticidade de substituição entre fatores (regra 1) determina como o barateamento do capital afeta a demanda relativa por trabalho.
+
+    **Para refletir:** Se a tendência de queda do labor share continuar, quais são as implicações para a distribuição de renda e para a política tributária? Devemos tributar mais o capital e menos o trabalho? A ideia de uma renda básica universal, financiada pela tributação do capital e de recursos naturais, ganha relevância em um mundo onde a participação do trabalho na renda diminui sistematicamente?
 
 ---
 
@@ -357,7 +444,35 @@ Adam Smith já observava que trabalhos mais desagradáveis, perigosos ou insalub
 
 ### Discriminação
 
-Diferenças salariais também podem refletir **discriminação** por gênero, raça, etnia ou outras características. Modelos como o de Becker (1957) e o de discriminação estatística ajudam a explicar por que a discriminação pode persistir em equilíbrio.
+Diferenças salariais também podem refletir **discriminação** por gênero, raça, etnia ou outras características. A teoria econômica distingue duas formas principais de discriminação no mercado de trabalho:
+
+**Discriminação baseada em preferências (Becker, 1957).** No modelo de Becker, alguns empregadores, trabalhadores ou consumidores têm "gosto por discriminação" — uma desutilidade ao interagir com membros de certos grupos. Empregadores discriminadores estão dispostos a pagar um prêmio para contratar trabalhadores do grupo preferido, mesmo que a produtividade seja idêntica. Formalmente, o empregador discriminador age como se o custo de contratar um trabalhador do grupo discriminado fosse \(w(1 + d)\), onde \(d > 0\) é o **coeficiente de discriminação**. Uma implicação importante do modelo de Becker é que, em mercados competitivos, a discriminação tende a ser eliminada no longo prazo: firmas que não discriminam têm custos menores e obtêm lucros maiores, expulsando as firmas discriminadoras do mercado. A persistência da discriminação, portanto, requer alguma imperfeição de mercado — poder de mercado, barreiras à entrada ou custos de informação.
+
+**Discriminação estatística (Phelps, 1972; Arrow, 1973).** Neste modelo, empregadores racionais e não preconceituosos utilizam características observáveis do grupo (gênero, raça, idade) como proxies para produtividade individual quando a informação sobre o trabalhador é imperfeita. Se, por exemplo, um empregador acredita (correta ou incorretamente) que a variância de produtividade é maior em certo grupo, pode preferir candidatos do grupo com menor variância percebida, mesmo que a produtividade média seja igual. A discriminação estatística é particularmente insidiosa porque: (i) pode ser praticada por agentes perfeitamente racionais e sem preconceito; (ii) pode se auto-confirmar — se mulheres ou negros sabem que serão discriminados, podem investir menos em capital humano, confirmando a crença original (profecia autorrealizável); (iii) não é eliminada pela competição, pois é uma resposta ótima a informação imperfeita.
+
+**Decomposição de Oaxaca-Blinder.** Para medir a magnitude da discriminação salarial, economistas utilizam a técnica de **decomposição de Oaxaca-Blinder** (Oaxaca, 1973; Blinder, 1973). Suponha que estimamos equações de salário separadas para dois grupos (por exemplo, homens e mulheres):
+
+\[
+\ln w_H = X_H \hat{\beta}_H, \qquad \ln w_M = X_M \hat{\beta}_M
+\]
+
+onde \(X\) denota as características observáveis (educação, experiência, ocupação) e \(\hat{\beta}\) os retornos estimados. A diferença salarial média pode ser decomposta como:
+
+\[
+\underbrace{\overline{\ln w_H} - \overline{\ln w_M}}_{\text{diferencial total}} = \underbrace{(\bar{X}_H - \bar{X}_M)\hat{\beta}_H}_{\text{parte explicada}} + \underbrace{\bar{X}_M(\hat{\beta}_H - \hat{\beta}_M)}_{\text{parte não explicada}}
+\label{eq:17.13b} \tag{17.13b}
+\]
+
+A **parte explicada** reflete diferenças nas características dos trabalhadores (mulheres podem ter menos experiência por interrupções de carreira, por exemplo). A **parte não explicada** — frequentemente interpretada como uma medida superior de discriminação — reflete diferenças nos retornos a características iguais: o fato de que homens e mulheres com a mesma educação e experiência recebem remunerações diferentes.
+
+Aplicações da decomposição de Oaxaca-Blinder ao Brasil (por exemplo, Giuberti e Menezes-Filho, 2005) mostram que a parte não explicada do diferencial de gênero responde por 60–70% do hiato total, sugerindo que a discriminação (no sentido amplo, incluindo barreiras à promoção e segregação ocupacional) é responsável pela maior parte do diferencial salarial de gênero no país.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** Nem toda diferença salarial é discriminação — mas a parte que sobra depois de controlar por educação, experiência e ocupação é um sinal forte de que o mercado não está tratando todos igualmente.
+
+    **Pense assim:** Duas colegas de turma na faculdade de engenharia, uma branca e outra negra, se formam com notas idênticas, fazem estágio na mesma empresa e têm a mesma experiência. Dez anos depois, a primeira ganha 30% a mais. A decomposição de Oaxaca-Blinder separa essa diferença: quanto se deve a fatores observáveis (como tipo de empresa, setor, cidade) e quanto é "inexplicado" — a parte que, na ausência de melhor explicação, atribuímos à discriminação.
+
+    **Por que isso importa:** A decomposição não é apenas um exercício econométrico: ela informa políticas públicas. Se a maior parte do hiato é explicada por diferenças de educação, a política correta é ampliar o acesso à educação. Se a parte não explicada é grande, medidas como fiscalização de igualdade salarial, cotas e transparência remuneratória tornam-se necessárias.
 
 ---
 
@@ -425,12 +540,26 @@ A diferença \(VPMg_L - w\) é a **exploração monopsonística** (no sentido de
 
     **Por que isso importa:** Em mercados monopsonísticos, um salário mínimo bem calibrado pode, paradoxalmente, aumentar emprego e salário ao mesmo tempo — uma das conclusões mais contraintuitivas da economia do trabalho.
 
+### O "novo monopsônio": poder de mercado sem ser o único empregador
+
+O modelo clássico de monopsônio — uma única firma em uma cidade isolada — pode parecer uma construção teórica com aplicações limitadas. Mas a partir dos anos 2000, uma revolução na economia do trabalho mostrou que o poder monopsonístico é muito mais disseminado do que se pensava. O trabalho seminal de Alan Manning (2003, *Monopsony in Motion*) demonstrou que **custos de mobilidade, fricções de busca e informação imperfeita** conferem às firmas poder de mercado sobre seus trabalhadores mesmo em mercados com múltiplos empregadores. Essa abordagem, conhecida como "novo monopsônio" (*new monopsony*), tem implicações profundas para a análise do mercado de trabalho.
+
+A ideia central é simples: se um trabalhador não pode instantaneamente e sem custo encontrar um emprego equivalente em outra firma, então seu empregador atual detém algum poder de monopsônio sobre ele. As fontes desse poder incluem:
+
+- **Custos de busca:** encontrar um novo emprego requer tempo, esforço e, frequentemente, custos financeiros (deslocamento para entrevistas, períodos sem salário).
+- **Custos de mudança geográfica:** se as alternativas de emprego estão em outra cidade, os custos de mudança (moradia, escola dos filhos, redes sociais) criam uma barreira significativa.
+- **Informação imperfeita:** trabalhadores nem sempre conhecem todas as vagas disponíveis e suas condições — especialmente em mercados informais.
+- **Preferências heterogêneas por empregador:** trabalhadores podem preferir certas firmas por localização, ambiente de trabalho ou horário, mesmo que paguem menos.
+- **Concentração do mercado de trabalho:** em muitos mercados de trabalho locais (definidos por ocupação × região), poucas firmas respondem pela maioria das contratações.
+
+Estudos recentes sobre **concentração do mercado de trabalho** (Azar, Marinescu e Steinbaum, 2022) documentaram que muitos mercados de trabalho locais nos EUA são altamente concentrados — com índices Herfindahl-Hirschman (HHI) comparáveis aos de mercados de bens que seriam alvo de regulação antitruste. Mercados mais concentrados apresentam salários significativamente menores, mesmo controlando para produtividade. No Brasil, onde a combinação de grandes distâncias, informalidade e baixa mobilidade geográfica é particularmente acentuada, o poder monopsonístico pode ser ainda mais relevante.
+
+O novo monopsônio tem implicações diretas para políticas públicas. Se as firmas detêm poder de mercado sobre os trabalhadores, então: (i) o salário mínimo pode elevar o emprego (como no modelo clássico); (ii) políticas que aumentam a transparência salarial e facilitam a busca por emprego (como plataformas de vagas e obrigatoriedade de divulgação de faixas salariais) podem elevar salários; (iii) a análise antitruste deveria considerar não apenas os efeitos sobre consumidores, mas também sobre trabalhadores — uma fronteira emergente no direito concorrencial.
+
 !!! tip "Monopsônio e salário mínimo"
     Uma implicação surpreendente do modelo de monopsônio é que a imposição de um **salário mínimo** pode, sob certas condições, aumentar **simultaneamente** o salário e o emprego. Isso ocorre porque o salário mínimo transforma a curva de custo marginal do trabalho em uma linha horizontal até o ponto em que a oferta de trabalho ao salário mínimo se esgota, eliminando o incentivo do monopsonista a restringir contratações.
 
 ---
-
-### Gráfico interativo: Monopsônio no Mercado de Trabalho
 
 O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (CMgL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 
@@ -441,6 +570,21 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 </div>
 
 ---
+
+!!! box-mundo "🌍 Box Mundo 17.2 — Card e Krueger e a revolução do salário mínimo"
+    **Contexto:** Em 1992, o estado de New Jersey elevou seu salário mínimo de US\$ 4,25 para US\$ 5,05 por hora, enquanto a vizinha Pennsylvania manteve o mínimo inalterado. Os economistas David Card e Alan Krueger aproveitaram esse "experimento natural" para estimar o efeito causal do salário mínimo sobre o emprego, comparando restaurantes de fast-food nos dois estados antes e depois do aumento — um design de diferenças-em-diferenças que se tornaria um marco na economia empírica.
+
+    **Dados:** Card e Krueger (1994) pesquisaram 410 restaurantes (Burger King, KFC, Wendy's, Roy Rogers) ao longo da fronteira NJ-PA. Seus resultados foram surpreendentes:
+
+    | Indicador | New Jersey (aumento do SM) | Pennsylvania (controle) | Diferença-em-diferenças |
+    |---|---|---|---|
+    | Variação no emprego médio (ETI) | +0,59 | −2,16 | **+2,76** |
+
+    O emprego em New Jersey não caiu — ao contrário, aumentou relativamente a Pennsylvania. Este resultado desafiou diretamente a previsão do modelo competitivo.
+
+    **Análise:** O estudo gerou intensa controvérsia. Neumark e Wascher (2000) reanalisaram os dados usando registros administrativos (em vez de pesquisas telefônicas) e encontraram efeitos negativos sobre o emprego. Card e Krueger (2000) responderam com uma nova análise dos mesmos dados administrativos, confirmando seus resultados originais. Meta-análises recentes (Dube, 2019) sugerem que o consenso empírico se moveu significativamente: aumentos moderados do salário mínimo (da ordem de 10%) têm efeitos sobre o emprego **próximos de zero ou muito pequenos**, consistentes com modelos de monopsônio ou busca com fricções. Os efeitos negativos, quando existem, concentram-se em aumentos muito grandes ou em mercados com muita competição entre empregadores.
+
+    **Para refletir:** O debate Card-Krueger ilustra como a evidência empírica pode desafiar modelos teóricos estabelecidos. O modelo competitivo prevê inequivocamente que salários mínimos acima do equilíbrio reduzem o emprego. Se a evidência mostra efeitos nulos ou positivos, isso sugere que o mercado de trabalho não é competitivo — e que modelos com poder monopsonístico (seção 17.7) podem ser mais realistas. Qual modelo melhor descreve o mercado de trabalho do seu bairro?
 
 ??? exercicio-resolvido "Exercício Resolvido 17.2"
     **Enunciado:** Uma firma monopsonista enfrenta a curva de oferta de trabalho \(w = 4 + 2H\) e possui valor do produto marginal \(VPMg_L = 100 - 2H\). (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?
@@ -501,6 +645,74 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
+??? exercicio-resolvido "Exercício Resolvido 17.3"
+    **Enunciado:** Um economista estima a seguinte equação de Mincer com dados da PNAD para o Brasil:
+
+    \[
+    \ln w_i = 1{,}20 + 0{,}12 S_i + 0{,}05 X_i - 0{,}0007 X_i^2 - 0{,}18 D_i^{fem} - 0{,}15 D_i^{negro} + \varepsilon_i
+    \]
+
+    onde \(w_i\) é o salário-hora, \(S_i\) são os anos de escolaridade, \(X_i\) é a experiência (em anos), \(D_i^{fem}\) é uma dummy para gênero feminino e \(D_i^{negro}\) é uma dummy para raça negra.
+
+    (a) Interprete o coeficiente \(\hat{\beta}_1 = 0{,}12\).
+
+    (b) Calcule a experiência que maximiza o salário (mantidos os demais fatores constantes).
+
+    (c) Calcule a diferença salarial percentual entre um homem branco e uma mulher negra com mesma escolaridade e experiência.
+
+    (d) Discuta se os coeficientes das dummies capturam necessariamente discriminação.
+
+    **Resolução:**
+
+    **Passo 1 — Retorno da educação**
+
+    O coeficiente \(\hat{\beta}_1 = 0{,}12\) indica que cada ano adicional de escolaridade está associado a um aumento de aproximadamente **12%** no salário-hora, *ceteris paribus*. Formalmente, como a variável dependente está em logaritmo:
+
+    \[
+    \frac{\partial \ln w}{\partial S} = 0{,}12 \implies \frac{\Delta w / w}{\Delta S} \approx 12\%
+    \]
+
+    Esse valor é consistente com estimativas para o Brasil, que encontram retornos à educação entre 10% e 15% por ano — entre os mais altos do mundo, refletindo a grande escassez relativa de mão de obra qualificada.
+
+    **Passo 2 — Experiência ótima**
+
+    O perfil de experiência-salário é côncavo: \(0{,}05X - 0{,}0007X^2\). Maximizando:
+
+    \[
+    \frac{\partial \ln w}{\partial X} = 0{,}05 - 0{,}0014X = 0 \implies X^* = \frac{0{,}05}{0{,}0014} \approx 35{,}7 \text{ anos}
+    \]
+
+    O salário atinge seu pico com aproximadamente **36 anos de experiência** (para alguém que começou a trabalhar aos 18, isso corresponde aos 54 anos de idade). Após esse ponto, o salário decresce — refletindo a depreciação do capital humano (obsolescência de habilidades, menor vigor físico em trabalhos manuais).
+
+    **Passo 3 — Diferencial de gênero e raça**
+
+    Para um homem branco (\(D^{fem} = 0, D^{negro} = 0\)) e uma mulher negra (\(D^{fem} = 1, D^{negro} = 1\)) com mesma escolaridade e experiência:
+
+    \[
+    \ln w_{HB} - \ln w_{MN} = -(-0{,}18) - (-0{,}15) = 0{,}33
+    \]
+
+    Em termos percentuais:
+
+    \[
+    \frac{w_{HB} - w_{MN}}{w_{MN}} = e^{0{,}33} - 1 \approx 0{,}391 = 39{,}1\%
+    \]
+
+    Uma mulher negra recebe, em média, **39,1% a menos** que um homem branco com mesma educação e experiência.
+
+    **Passo 4 — Interpretação causal**
+
+    Os coeficientes das dummies **não capturam necessariamente discriminação pura**. Eles medem o diferencial salarial condicional às variáveis incluídas na regressão. Parte desse diferencial pode refletir:
+
+    - **Variáveis omitidas:** diferenças na qualidade da educação (escolas em bairros mais pobres), tipo de curso, habilidades não cognitivas;
+    - **Segregação ocupacional:** mulheres e negros podem estar concentrados em ocupações que pagam menos, mesmo controlando por escolaridade total;
+    - **Seleção amostral:** a composição de quem trabalha (e aparece na amostra) difere por gênero e raça;
+    - **Discriminação efetiva:** diferenças de tratamento por empregadores, no sentido de Becker ou estatístico.
+
+    A decomposição de Oaxaca-Blinder (equação $\eqref{eq:17.13b}$) é uma extensão natural desta análise: permite separar formalmente a parte do diferencial que se deve a diferenças de características versus diferenças de retornos.
+
+---
+
 ## 17.8 Sindicatos
 
 O monopsônio representa poder de mercado do lado da demanda por trabalho. Do lado da oferta, a contrapartida é o sindicato — uma organização que agrega o poder de barganha dos trabalhadores para negociar coletivamente salários e condições de emprego. Enquanto no mercado competitivo cada trabalhador é individualmente incapaz de influenciar o salário, o sindicato confere aos trabalhadores poder de mercado análogo ao do monopolista no mercado de bens. Como esse poder afeta salários, emprego e eficiência?
@@ -527,6 +739,25 @@ Há um trade-off entre salário e emprego: salários mais altos reduzem o empreg
 ### Barganha eficiente
 
 O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicato e firma negociam simultaneamente salário e emprego, atingindo a **curva de contrato** — o conjunto de alocações Pareto-eficientes. Nesse caso, o nível de emprego pode ser maior do que no modelo de monopólio sindical.
+
+Na negociação de Nash, o resultado da barganha maximiza o produto:
+
+\[
+\max_{w, H} \; \bigl[U_S(w, H) - U_S^0\bigr]^\beta \cdot \bigl[\pi(w, H) - \pi^0\bigr]^{1-\beta}
+\label{eq:17.15b} \tag{17.15b}
+\]
+
+onde \(U_S\) é a utilidade do sindicato, \(\pi\) é o lucro da firma, os sobrescritos \(0\) denotam os payoffs no ponto de desacordo (por exemplo, greve prolongada) e \(\beta \in [0,1]\) mede o poder de barganha relativo do sindicato. Quando \(\beta = 0\), a firma tem todo o poder e o resultado é competitivo; quando \(\beta = 1\), o sindicato tem todo o poder e o resultado se aproxima do monopólio sindical.
+
+### O declínio global dos sindicatos e a desigualdade
+
+Uma das transformações mais marcantes do mercado de trabalho nas últimas quatro décadas é o **declínio da sindicalização** na maioria dos países desenvolvidos. Nos Estados Unidos, a taxa de sindicalização caiu de 35% na década de 1950 para cerca de 10% atualmente (e apenas 6% no setor privado). No Reino Unido, a queda foi de 50% para 23%. Mesmo em países com tradição sindical forte, como França e Alemanha, as taxas de cobertura de negociações coletivas têm diminuído.
+
+Esse declínio resulta de uma combinação de fatores: (i) a desindustrialização e o crescimento do setor de serviços, onde a sindicalização é historicamente menor; (ii) mudanças legislativas que enfraqueceram o poder sindical (como as reformas Thatcher no Reino Unido e a Reforma Trabalhista de 2017 no Brasil); (iii) a globalização e a ameaça de realocação da produção para países com mão de obra mais barata; (iv) o aumento do trabalho temporário, terceirizado e por plataforma (*gig economy*), que dificulta a organização coletiva.
+
+A relação entre o declínio sindical e o aumento da desigualdade é um dos debates centrais da economia contemporânea. Estudos como o de Farber et al. (2021) para os EUA estimam que a dessindicalização explica entre 20% e 33% do aumento da desigualdade salarial desde 1980. O mecanismo é duplo: sindicatos comprimem a distribuição salarial dentro das firmas sindicalizadas (reduzindo o prêmio para gestores e aumentando o piso para operários) e exercem pressão sobre os salários de firmas não sindicalizadas na mesma região ou setor (efeito *threat effect*). Quando os sindicatos enfraquecem, ambos os canais de compressão salarial se dissipam.
+
+No Brasil, a queda foi ainda mais acentuada: a Reforma Trabalhista de 2017, ao eliminar a contribuição sindical obrigatória, acelerou o declínio da sindicalização para níveis historicamente baixos (ver Box Brasil a seguir). Esse "experimento natural" permite avaliar se o enfraquecimento sindical está associado a maior dispersão salarial nos setores afetados — uma questão empiricamente relevante e ainda em investigação.
 
 ---
 
@@ -561,6 +792,25 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
 
 ---
 
+!!! box-mundo "🌍 Box Mundo 17.1 — O modelo nórdico de mercado de trabalho: flexicurity"
+    **Contexto:** Os países nórdicos (Dinamarca, Suécia, Noruega, Finlândia) combinam altas taxas de sindicalização com mercados de trabalho flexíveis e baixos níveis de desigualdade — um aparente paradoxo para modelos que preveem rigidez quando sindicatos são fortes. O segredo reside no modelo de **flexicurity** (*flexibilidade + segurança*), particularmente desenvolvido na Dinamarca.
+
+    **Dados:**
+
+    | País | Taxa de sindicalização (2023) | Taxa de desemprego (2024) | Índice de Gini (renda disponível) |
+    |---|---|---|---|
+    | Dinamarca | 67% | 5,0% | 0,28 |
+    | Suécia | 65% | 8,3% | 0,28 |
+    | Noruega | 50% | 3,7% | 0,26 |
+    | EUA | 10% | 4,1% | 0,39 |
+    | Brasil | 8,4% | 5,6% | 0,52 |
+
+    *Fonte: OCDE, [Statistics](https://stats.oecd.org); OIT, [ILOSTAT](https://ilostat.ilo.org); IBGE, PNAD Contínua 2024–2025.*
+
+    **Análise:** O modelo nórdico opera em três pilares: (i) **flexibilidade para demitir** — firmas podem ajustar o emprego com facilidade, sem custos de demissão elevados; (ii) **generoso seguro-desemprego** — o trabalhador demitido recebe até 90% do salário anterior por até dois anos na Dinamarca; (iii) **políticas ativas de emprego** — programas de requalificação, intermediação de mão de obra e incentivos à recolocação. A negociação coletiva é centralizada e coordenada, com sindicatos e associações patronais negociando pisos salariais por setor (sem salário mínimo legal na Dinamarca e na Suécia). A compressão salarial resultante — a diferença entre o salário mais alto e o mais baixo é muito menor que nos EUA — é uma consequência direta do poder de barganha sindical coordenado. O modelo demonstra que a barganha eficiente (seção 17.8), quando institucionalizada em nível nacional, pode aproximar o resultado do ótimo de Pareto.
+
+    **Para refletir:** Se sindicatos fortes podem coexistir com flexibilidade e baixo desemprego nos países nórdicos, por que a sindicalização é frequentemente vista como obstáculo à eficiência? Que fatores institucionais (tamanho do país, homogeneidade social, cultura de cooperação) podem limitar a replicabilidade do modelo nórdico em países grandes e desiguais como o Brasil?
+
 !!! box-brasil "O salário mínimo e o debate sobre o 'efeito-farol'"
     O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de um piso salarial para trabalhadores formais com carteira assinada. Ele serve como **referência** (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.
 
@@ -579,27 +829,11 @@ O modelo de **barganha eficiente** (McDonald e Solow, 1981) propõe que sindicat
     - [Engbom e Moser (2022)](https://doi.org/10.1257/aer.20181506) estimam que a alta real de 128% do SM entre 1996 e 2018 explica **45% da queda da desigualdade salarial** no período, com efeitos limitados sobre o emprego total.
     - Dados do CAGED/MTE e da PNAD indicam que a elevação do SM tende a aumentar a proporção de trabalhadores na informalidade, pois empregadores que não conseguem pagar o novo piso migram para relações informais.
 
-    **Tabela: Composição do mercado de trabalho brasileiro**
-
-    | Indicador | Valores aproximados (2025) |
-    |---|---|
-    | População ocupada total | 103 milhões |
-    | Trabalhadores com carteira (CLT) | 39,4 milhões |
-    | Trabalhadores sem carteira | 13,4 milhões |
-    | Trabalhadores por conta própria | 26,2 milhões |
-    | Empregadores | 4 milhões |
-    | Setor público (estatutários) | 12 milhões |
-    | Taxa de informalidade (IBGE) | 38,1% |
-    | Salário médio real mensal habitual | R$ 3.652 |
-    | Salário mínimo vigente (2025) | R$ 1.518 |
-
-    *Fonte: PNAD Contínua/IBGE, média anual 2025; [DIEESE](https://www.dieese.org.br).*
-
-    A tabela revela a enorme heterogeneidade do mercado de trabalho brasileiro. A elevada taxa de informalidade (38,1%) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal.
+    Como mostra a tabela do Box Brasil anterior, a elevada taxa de informalidade (38,1% em 2025) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal. Em 2025, o SM atingiu R\$ 1.518, com rendimento real médio habitual de R\$ 3.652 (PNAD Contínua/IBGE).
 
 ---
 
-## 17.9 — Efeitos Substituição e Renda sobre a Oferta de Trabalho
+## 17.9 Efeitos Substituição e Renda sobre a Oferta de Trabalho
 
 A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para diferentes variações.
 
@@ -615,15 +849,115 @@ A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para d
 **Tabela 17.2 — Efeitos substituição e renda sobre a oferta de trabalho.**
 </div>
 
+A [Tabela 17.2](#tabela-17-2) sintetiza os resultados das seções anteriores e serve como referência rápida para a análise de políticas. Com a teoria da oferta de trabalho consolidada, passamos agora ao último dos três fatores de produção clássicos.
+
+---
+
+## 17.10 Economia da Terra e Recursos Naturais
+
+O trabalho é apenas um dos três fatores de produção clássicos — ao lado do **capital** (tratado no Capítulo 18) e da **terra** (incluindo recursos naturais). Embora a teoria do mercado de trabalho receba a maior parte da atenção em cursos de microeconomia, uma análise completa dos mercados de fatores exige examinar a determinação da remuneração da terra — a **renda da terra** — e sua relação com os conceitos de renda econômica e renda de transferência.
+
+### Renda da terra: de Ricardo à análise moderna
+
+David Ricardo (1817), nos *Principles of Political Economy*, desenvolveu a teoria clássica da renda da terra. A ideia central é que a terra é um fator de produção com oferta **fixa** (perfeitamente inelástica). Se a oferta é fixa, a remuneração da terra é inteiramente determinada pela demanda. Um aumento na demanda por terras agrícolas (por exemplo, por crescimento populacional) eleva a renda da terra sem induzir qualquer aumento na quantidade ofertada — uma conclusão com implicações profundas para a teoria da distribuição de renda e a tributação.
+
+A **renda ricardiana** também incorpora a noção de terras de qualidade diferente. As terras mais férteis são cultivadas primeiro; à medida que a demanda cresce, terras marginais (menos férteis) entram em cultivo. A renda de cada parcela reflete sua **vantagem produtiva** em relação à terra marginal (que, por definição, não gera renda). Essa análise antecipou em mais de um século o conceito moderno de renda econômica.
+
+### Renda econômica versus renda de transferência
+
+A remuneração de qualquer fator de produção pode ser decomposta em duas partes:
+
+- **Renda de transferência** (*transfer earnings*): a remuneração mínima necessária para manter o fator em seu uso atual. Se o fator recebe menos que isso, ele se transfere para outro uso.
+- **Renda econômica** (*economic rent*): o excedente recebido acima da renda de transferência. Formalmente, para um fator que recebe \(w\) e tem custo de oportunidade \(w_0\):
+
+\[
+\text{Renda econômica} = w - w_0
+\label{eq:17.16} \tag{17.16}
+\]
+
+No caso extremo da terra (oferta perfeitamente inelástica), toda a remuneração é renda econômica — pois a terra não pode "ir para outro lugar". No caso oposto (oferta perfeitamente elástica), toda a remuneração é renda de transferência. Para o trabalho, a decomposição depende das alternativas do trabalhador: um cirurgião altamente especializado que recebe R\$ 50.000/mês, mas cuja melhor alternativa pagaria R\$ 15.000, recebe R\$ 35.000 de renda econômica.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A renda econômica é o "bônus" que um fator de produção recebe acima do mínimo necessário para mantê-lo em seu uso atual — e quanto mais difícil for substituí-lo, maior esse bônus.
+
+    **Pense assim:** Neymar ganha dezenas de milhões por ano jogando futebol. Se o salário dos jogadores caísse drasticamente, ele continuaria jogando — porque sua melhor alternativa (qualquer outro emprego) pagaria muito menos. A diferença entre o que ele recebe e o que ganharia fora do futebol é renda econômica pura. Já um motorista de Uber em uma cidade com muitas alternativas de emprego recebe quase nenhuma renda econômica: se o ganho cair um pouco, ele migra para outro aplicativo ou emprego.
+
+    **Por que isso importa:** Tributar a renda econômica é o sonho de todo formulador de política pública: gera receita sem distorcer decisões econômicas. É por isso que impostos sobre a terra (Henry George) e sobre rendas de recursos naturais (royalties) são considerados os tributos mais eficientes que existem.
+
+Essa decomposição tem implicações diretas para a tributação: tributos sobre a renda econômica são **não distorcivos** (não alteram a alocação de fatores), enquanto tributos sobre a renda de transferência causam distorções (o fator pode migrar para outro uso). Henry George (1879) propôs que toda a receita tributária deveria vir de um imposto sobre a renda da terra — um tributo perfeitamente eficiente, pois a oferta de terra não se altera. Embora o "imposto único" de George nunca tenha sido implementado integralmente, a lógica subjacente informa debates contemporâneos sobre tributação de propriedade e captura de valorização fundiária.
+
+### Recursos naturais exauríveis: conexão com a regra de Hotelling
+
+A análise da terra pode ser estendida aos **recursos naturais exauríveis** (petróleo, minerais, gás). Diferentemente da terra agrícola, que se mantém em uso indefinidamente, recursos exauríveis são consumidos ao serem utilizados. A questão central torna-se: a que taxa extrair um recurso que é finito?
+
+A resposta é dada pela **regra de Hotelling** (1931), que será formalizada no Capítulo 18: no equilíbrio, o preço líquido do recurso (preço de mercado menos custo de extração) deve crescer à taxa de juros \(r\). Intuitivamente, o proprietário de uma jazida tem a opção de extrair hoje e investir a receita, ou deixar o recurso no solo para extrair amanhã a um preço maior. O equilíbrio requer que ambas as opções gerem o mesmo retorno.
+
+A renda do recurso natural — o *royalty* — é a renda econômica paga pela escassez do recurso. No Brasil, royalties de petróleo e mineração representam receitas significativas para estados e municípios produtores, levantando questões sobre equidade intergeracional (estamos consumindo a riqueza natural das gerações futuras?) e sobre a "maldição dos recursos" — a tendência de países ricos em recursos naturais apresentarem crescimento econômico inferior, possivelmente por desincentivo à diversificação produtiva e ao investimento em capital humano.
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. No modelo trabalho-lazer, um aumento salarial tem efeito ambíguo sobre a oferta de trabalho porque:"
+    - (a) O trabalhador não observa seu salário em tempo real
+    - (b) O efeito substituição (lazer mais caro → trabalha mais) pode ser compensado pelo efeito renda (mais rico → quer mais lazer)
+    - (c) A produtividade marginal do trabalhador sempre cai com mais horas
+    - (d) O imposto de renda anula completamente o aumento salarial
+
+    ??? success "Resposta"
+        **(b)** Quando o salário sobe, o custo de oportunidade do lazer aumenta (efeito substituição → mais trabalho), mas o poder de compra também aumenta (efeito renda → mais lazer, se lazer é bem normal). Quando o efeito renda domina, a curva de oferta de trabalho se torna backward-bending (negativamente inclinada). As demais alternativas não explicam a ambiguidade.
+
+??? question "2. O monopsônio no mercado de trabalho é caracterizado por:"
+    - (a) Muitos empregadores competindo pelos mesmos trabalhadores
+    - (b) Um único (ou poucos) empregador(es) com poder de mercado, que paga salário abaixo do produto marginal do trabalho
+    - (c) Sindicatos que fixam salários acima do equilíbrio competitivo
+    - (d) Salários iguais ao produto marginal em equilíbrio
+
+    ??? success "Resposta"
+        **(b)** O monopsonista enfrenta uma curva de oferta de trabalho positivamente inclinada: para contratar mais trabalhadores, deve elevar o salário de todos. O custo marginal do trabalho excede o salário, levando a emprego e salário menores que o competitivo. A alternativa (d) descreve o mercado competitivo; (c) descreve poder do lado do trabalhador, não do empregador.
+
+??? question "3. A curva de oferta de trabalho backward-bending implica que, a partir de certo salário:"
+    - (a) O trabalhador oferece mais horas de trabalho
+    - (b) O trabalhador reduz suas horas de trabalho quando o salário sobe ainda mais
+    - (c) A demanda por trabalho se torna infinitamente elástica
+    - (d) O mercado de trabalho entra em equilíbrio permanente
+
+    ??? success "Resposta"
+        **(b)** Na região backward-bending, o efeito renda domina o efeito substituição: salários mais altos levam o trabalhador a 'comprar' mais lazer, reduzindo horas trabalhadas. Evidência empírica mostra isso especialmente para trabalhadores de alta renda e para a oferta de trabalho secundária no domicílio.
+
+??? question "4. A elasticidade de Frisch mede a resposta da oferta de trabalho a:"
+    - (a) Variações permanentes no salário
+    - (b) Variações temporárias no salário, mantendo constante a utilidade marginal da riqueza
+    - (c) Variações no nível geral de preços
+    - (d) Mudanças na legislação trabalhista
+
+    ??? success "Resposta"
+        **(b)** A elasticidade de Frisch isola a resposta a variações salariais temporárias (substituição intertemporal do trabalho), mantendo fixa a utilidade marginal da riqueza. É central para modelos macroeconômicos de ciclos reais. Para variações permanentes (a), tanto efeito renda quanto substituição atuam; a Frisch captura apenas a substituição intertemporal.
+
+??? question "5. A discriminação salarial estatística ocorre quando empregadores:"
+    - (a) Pagam salários diferentes a trabalhadores igualmente produtivos por preconceito pessoal
+    - (b) Usam características observáveis do grupo (gênero, raça) como proxy para produtividade esperada, mesmo que isso penalize indivíduos produtivos do grupo
+    - (c) Oferecem salários iguais a todos os trabalhadores independentemente da produtividade
+    - (d) Remuneram trabalhadores exclusivamente por desempenho individual
+
+    ??? success "Resposta"
+        **(b)** Na discriminação estatística, empregadores racionais usam informação imperfeita: quando não podem observar a produtividade individual, usam médias do grupo como estimativa. Isso pode perpetuar desigualdades mesmo sem preconceito pessoal (a). A alternativa (a) descreve discriminação por preferência (taste-based, modelo de Becker).
+
 ---
 
 ## 📋 Resumo do Capítulo
 
 - O mercado de trabalho é analisado pelo modelo trabalho-lazer, no qual o indivíduo aloca seu tempo entre lazer e trabalho, enfrentando o salário como custo de oportunidade do lazer. A condição de ótimo iguala a taxa marginal de substituição entre lazer e consumo ao salário real.
-- Um aumento salarial tem efeitos ambíguos sobre a oferta de trabalho: o efeito substituição (lazer fica mais caro) incentiva mais trabalho, enquanto o efeito renda (maior poder de compra) incentiva mais lazer. Quando o efeito renda domina, a curva de oferta de trabalho se torna backward-bending.
-- O equilíbrio competitivo no mercado de trabalho iguala demanda e oferta de trabalho, com diferenças salariais explicadas por diferenciais compensatórios (risco, desconforto), capital humano (educação, experiência) e discriminação.
-- O monopsônio (único comprador de trabalho) paga salários abaixo do produto marginal do valor do trabalho e emprega menos trabalhadores do que o resultado competitivo, gerando ineficiência análoga ao monopólio no mercado de bens.
-- Sindicatos podem elevar salários acima do nível competitivo, com efeitos sobre emprego que dependem do poder de barganha e da estrutura de mercado. O salário mínimo tem efeitos ambíguos: sob monopsônio pode aumentar emprego, enquanto em mercados competitivos pode reduzi-lo.
+- Um aumento salarial tem efeitos ambíguos sobre a oferta de trabalho: o efeito substituição (lazer fica mais caro) incentiva mais trabalho, enquanto o efeito renda (maior poder de compra) incentiva mais lazer. Quando o efeito renda domina, a curva de oferta de trabalho se torna backward-bending. A **elasticidade de Frisch** mede a resposta a variações salariais temporárias, mantendo constante a utilidade marginal da riqueza, e é central para modelos macroeconômicos.
+- A oferta de mercado agrega decisões individuais nas margens intensiva (horas) e extensiva (participação). A taxa de participação varia significativamente por gênero e país, sendo moldada por instituições, políticas de cuidado e normas culturais.
+- A demanda por trabalho é derivada da produtividade marginal e segue as **regras de Marshall da demanda derivada**: a elasticidade da demanda por trabalho depende da substituibilidade entre fatores, da elasticidade da demanda pelo produto, da participação do trabalho no custo e da elasticidade de oferta de outros fatores.
+- O equilíbrio competitivo no mercado de trabalho iguala demanda e oferta de trabalho, com diferenças salariais explicadas por diferenciais compensatórios (risco, desconforto), capital humano (educação, experiência) e discriminação (de preferência e estatística). A **decomposição de Oaxaca-Blinder** permite separar o diferencial salarial entre parte explicada (características) e parte não explicada (discriminação).
+- O monopsônio (único comprador de trabalho) paga salários abaixo do produto marginal do valor do trabalho e emprega menos trabalhadores do que o resultado competitivo. O **novo monopsônio** (Manning, 2003) mostra que custos de mobilidade e fricções de busca conferem poder monopsonístico mesmo em mercados com múltiplos empregadores. Evidências empíricas confirmam que mercados de trabalho concentrados pagam salários significativamente menores.
+- Sindicatos podem elevar salários acima do nível competitivo, com efeitos sobre emprego que dependem do poder de barganha e da estrutura de mercado. O **declínio global da sindicalização** está associado ao aumento da desigualdade salarial. O salário mínimo tem efeitos ambíguos: sob monopsônio pode aumentar emprego, enquanto em mercados competitivos pode reduzi-lo.
+- A **renda da terra** (Ricardo) é determinada integralmente pela demanda quando a oferta é fixa. A distinção entre **renda econômica** e **renda de transferência** tem implicações diretas para a tributação eficiente. A regra de Hotelling governa a extração ótima de recursos naturais exauríveis.
 - A realidade brasileira é marcada por elevada informalidade, desigualdade salarial significativa, alto retorno à educação e debates persistentes sobre os efeitos do salário mínimo e da reforma trabalhista.
 
 ## 🔑 Conceitos-Chave
@@ -636,12 +970,20 @@ A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para d
 | Custo de oportunidade do lazer | O salário \(w\), pois cada hora de lazer implica renunciar a \(w\) reais de renda |
 | Efeito substituição (trabalho) | Aumento salarial encarece o lazer, incentivando mais horas de trabalho |
 | Efeito renda (trabalho) | Aumento salarial eleva a renda real, incentivando mais lazer (se lazer é bem normal), reduzindo horas de trabalho |
+| Elasticidade de Frisch | Elasticidade da oferta de trabalho com utilidade marginal da riqueza constante; mede a resposta a variações salariais temporárias |
 | Curva backward-bending | Curva de oferta de trabalho que se inclina para trás quando o efeito renda domina o efeito substituição em salários elevados |
+| Margem intensiva vs. extensiva | Margem intensiva: quantas horas trabalhar; margem extensiva: participar ou não do mercado de trabalho |
 | Diferencial compensatório | Diferença salarial que compensa trabalhadores por características indesejáveis do emprego (risco, insalubridade, localização) |
+| Regras de Marshall (demanda derivada) | Quatro regras que determinam a elasticidade da demanda por trabalho: substituibilidade entre fatores, elasticidade do produto, participação no custo e oferta de outros fatores |
+| Decomposição de Oaxaca-Blinder | Técnica que separa o diferencial salarial entre grupos em parte explicada (diferenças de características) e parte não explicada (diferenças de retornos / discriminação) |
+| Discriminação estatística | Discriminação racional baseada em características observáveis do grupo como proxy para produtividade individual, na ausência de informação perfeita |
 | Monopsônio | Estrutura de mercado com um único comprador de trabalho, que paga salário abaixo do produto marginal e emprega menos que o competitivo |
+| Novo monopsônio | Poder monopsonístico decorrente de custos de mobilidade, fricções de busca e informação imperfeita, mesmo com múltiplos empregadores (Manning, 2003) |
 | Custo marginal do trabalho (monopsônio) | Custo de contratar um trabalhador adicional, que excede o salário pago porque o monopsonista deve elevar o salário de todos os trabalhadores |
 | Salário de reserva | Salário mínimo abaixo do qual o indivíduo prefere não trabalhar (solução de canto com \(h = 0\)) |
 | Capital humano | Estoque de habilidades e conhecimentos adquiridos via educação e experiência que elevam a produtividade e os salários |
+| Renda da terra | Remuneração do fator terra, determinada integralmente pela demanda quando a oferta é fixa (Ricardo) |
+| Renda econômica | Excedente recebido acima da remuneração mínima necessária para manter o fator em seu uso atual: \(w - w_0\) |
 
 <div class="caption-obj" markdown>
 **Tabela 17.3 — Conceitos-chave.**
@@ -710,6 +1052,86 @@ A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para d
 (c) Quais são os principais canais pelos quais o aumento do salário mínimo pode afetar a distribuição de renda no Brasil?
 
 [:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-5)
+
+---
+
+<a id="ex-17-6"></a>**Exercício 17.6.** Considere um trabalhador com preferências CES:
+
+\[
+U(C, L) = \left(\alpha C^{\rho} + (1-\alpha) L^{\rho}\right)^{1/\rho}
+\]
+
+com \(\alpha = 0{,}5\), \(\rho = -1\) (elasticidade de substituição \(\sigma = 1/(1-\rho) = 0{,}5\)), dotação de tempo \(T = 24\) e renda não salarial \(V = 0\).
+
+(a) Mostre que a demanda marshalliana por lazer é \(L^*(w) = \frac{24}{1 + w^{\sigma}}\) (onde \(\sigma = 0{,}5\)).
+
+(b) Derive a oferta de trabalho \(h^*(w)\) e mostre que ela exibe backward-bending.
+
+(c) Encontre o salário no qual a oferta de trabalho atinge o máximo. Utilize a decomposição de Slutsky para explicar por que a curva se volta para trás.
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-6)
+
+---
+
+<a id="ex-17-7"></a>**Exercício 17.7.** Um economista estima a seguinte equação de Mincer para o Brasil:
+
+\[
+\ln w = 0{,}80 + 0{,}10 S + 0{,}04 X - 0{,}0006 X^2
+\]
+
+onde \(S\) = anos de escolaridade e \(X\) = experiência (anos).
+
+(a) Qual é o retorno estimado de cada ano adicional de educação?
+
+(b) Calcule o diferencial salarial entre um trabalhador com 16 anos de escolaridade (superior completo) e um com 11 anos (médio completo), ambos com 10 anos de experiência.
+
+(c) A que idade (aproximadamente) o salário atinge seu pico, supondo que o indivíduo começou a trabalhar imediatamente após a educação formal?
+
+(d) Discuta por que o coeficiente \(\hat{\beta}_1 = 0{,}10\) pode superestimar o retorno causal da educação (viés de habilidade).
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-7)
+
+---
+
+<a id="ex-17-8"></a>**Exercício 17.8.** Em uma cidade do interior, uma única fábrica enfrenta oferta de trabalho \(w = 5 + H\) e tem valor do produto marginal \(VPMg_L = 65 - 2H\).
+
+(a) Encontre o emprego e o salário no equilíbrio monopsonístico.
+
+(b) O governo impõe um salário mínimo \(\bar{w} = 25\). Qual é o novo nível de emprego? O emprego aumentou ou diminuiu em relação ao item (a)?
+
+(c) Existe um salário mínimo \(\bar{w}^*\) que maximiza o emprego neste mercado? Se sim, encontre-o.
+
+(d) A que nível de salário mínimo o emprego volta a ser igual ao do monopsônio sem intervenção?
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-8)
+
+---
+
+<a id="ex-17-9"></a>**Exercício 17.9.** Um sindicato e uma firma negociam segundo o modelo de barganha de Nash. A função objetivo do sindicato é \(U_S = (w - w_0) \cdot H\), onde \(w_0 = 10\) é o salário de reserva. O lucro da firma é \(\pi = (100 - H)H - wH\). O poder de barganha do sindicato é \(\beta\).
+
+(a) Mostre que a demanda por trabalho da firma (para um salário dado) é \(H^d(w) = \frac{100 - w}{2}\).
+
+(b) Substitua \(H^d(w)\) no problema de barganha e encontre o salário negociado \(w^*(\beta)\).
+
+(c) Para \(\beta = 0{,}5\), calcule \(w^*\), \(H^*\) e \(\pi^*\). Compare com o resultado competitivo (\(w = w_0 = 10\)).
+
+(d) Mostre que, quando \(\beta \to 1\), o resultado se aproxima do monopólio sindical. Interprete economicamente.
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-9)
+
+---
+
+<a id="ex-17-10"></a>**Exercício 17.10.** *(Questão de reflexão — automação e polarização)* A automação e a inteligência artificial estão transformando o mercado de trabalho. A hipótese de **polarização** (Autor, Levy e Murnane, 2003) prevê que a tecnologia substitui tarefas rotineiras (realizadas por trabalhadores de renda média), enquanto complementa tarefas cognitivas complexas (alta renda) e tem pouco efeito sobre tarefas manuais não rotineiras (baixa renda).
+
+(a) Utilizando o arcabouço de oferta e demanda por trabalho, represente graficamente o efeito da automação de tarefas rotineiras sobre o salário e o emprego de três grupos: alta qualificação, média qualificação e baixa qualificação.
+
+(b) Discuta como as regras de Marshall da demanda derivada ajudam a prever quais ocupações são mais vulneráveis à automação.
+
+(c) Considere a seguinte afirmação: "A inteligência artificial generativa (como o ChatGPT) inverte a polarização, pois ameaça principalmente tarefas cognitivas, não manuais." Avalie essa afirmação à luz da teoria da demanda por trabalho e de evidências recentes.
+
+(d) Que políticas públicas podem mitigar os efeitos distributivos da automação sem comprometer os ganhos de produtividade?
+
+[:material-arrow-right: Ver solução](../solucoes/cap17.md#ex-17-10)
 
 ---
 
@@ -813,16 +1235,68 @@ A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para d
 
     **Relevância para o capítulo:** O modelo de *wage-posting* do paper é uma extensão dos modelos de monopsônio e oferta de trabalho discutidos nas seções 17.5–17.7. A coexistência de setores formal e informal adiciona uma dimensão que o modelo competitivo simples não captura, mas que é essencial para entender o mercado de trabalho brasileiro.
 
+??? pesquisa "Card, D.; Krueger, A. B. (1994). [Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania](https://www.jstor.org/stable/2118030). *American Economic Review*, 84(4), 772–793."
+    **Pergunta central:** Um aumento do salário mínimo reduz o emprego, como prevê o modelo competitivo? Ou o mercado de trabalho de baixos salários tem características monopsonísticas que permitem aumentos do piso salarial sem perdas significativas de emprego?
+
+    **Método:** Card e Krueger utilizaram um design de diferenças-em-diferenças, comparando o emprego em restaurantes de fast-food em New Jersey (que elevou o salário mínimo de US\$ 4,25 para US\$ 5,05 em abril de 1992) com restaurantes similares na vizinha Pennsylvania (onde o mínimo não mudou). Pesquisaram 410 restaurantes (Burger King, KFC, Wendy's, Roy Rogers) antes e depois do aumento, obtendo dados sobre emprego, salários, preços e horários de funcionamento.
+
+    **Resultado principal:** Contrariando a previsão do modelo competitivo, **o emprego não diminuiu** em New Jersey relativamente a Pennsylvania. Na verdade, o emprego cresceu ligeiramente em NJ. Os restaurantes que precisaram elevar mais os salários (por estarem inicialmente mais próximos do antigo mínimo) apresentaram os maiores aumentos de emprego — consistente com o modelo de monopsônio, no qual o salário mínimo reduz a exploração monopsonística e eleva o emprego.
+
+    **Por que isso importa:** Este estudo é um dos mais influentes da economia do trabalho do século XX e é amplamente considerado como o ponto de partida da "revolução da credibilidade" na economia empírica. Ele demonstrou que a relação entre salário mínimo e emprego é uma questão empírica, não uma certeza teórica — e que a resposta depende crucialmente da estrutura de mercado. A controvérsia gerada pelo paper (incluindo críticas de Neumark e Wascher e réplicas de Card e Krueger) elevou o padrão de evidência exigido no debate de políticas públicas.
+
+    **Relevância para o capítulo:** O paper é a aplicação empírica mais célebre do modelo de monopsônio (seção 17.7) e do efeito do salário mínimo discutido no Box Mundo 17.2. Ilustra como o arcabouço teórico do monopsônio, que pode parecer abstrato, tem implicações testáveis e relevantes para a política de salário mínimo.
+
+??? pesquisa "Azar, J.; Marinescu, I.; Steinbaum, M. (2022). [Labor Market Concentration](https://doi.org/10.1086/717899). *Journal of Human Resources*, 57(S), S167–S199." <!-- [DOI VERIFICADO] -->
+    **Pergunta central:** Os mercados de trabalho são competitivos ou concentrados? Se concentrados, qual o efeito da concentração de empregadores sobre os salários?
+
+    **Método:** Os autores utilizaram dados de vagas de emprego publicadas online nos EUA (via CareerBuilder.com) para construir medidas de concentração do mercado de trabalho — definido como o cruzamento de ocupação × área geográfica (*commuting zone*). Calcularam o índice Herfindahl-Hirschman (HHI) para cada mercado e estimaram a relação entre concentração e salários postados, controlando para características do mercado e da vaga.
+
+    **Resultado principal:** O mercado de trabalho médio nos EUA é altamente concentrado: o HHI médio é de aproximadamente 3.953 (equivalente a um mercado com menos de três empregadores efetivos), um nível que seria considerado "altamente concentrado" pelas diretrizes antitruste do DOJ. A concentração é substancialmente maior em mercados rurais e para ocupações especializadas. O efeito sobre salários é significativo: uma movimentação do 25.º para o 75.º percentil de concentração está associada a uma redução de **15–25%** nos salários postados.
+
+    **Por que isso importa:** O paper documentou empiricamente que o poder monopsonístico não é uma curiosidade teórica, mas uma realidade disseminada. Isso tem implicações para a política antitruste (fusões de empresas devem considerar o efeito sobre trabalhadores, não apenas consumidores), para a política de salário mínimo (que pode elevar o emprego em mercados concentrados) e para a regulação do mercado de trabalho em geral.
+
+    **Relevância para o capítulo:** Conecta-se diretamente ao "novo monopsônio" discutido na seção 17.7 e às regras de Marshall da demanda derivada (seção 17.5). Demonstra que as implicações do modelo de monopsônio — salários abaixo da produtividade, exploração monopsonística — são empiricamente relevantes mesmo em mercados com múltiplos empregadores.
+
+??? pesquisa "Montenegro, C. E.; Patrinos, H. A. (2014). [Comparable Estimates of Returns to Schooling Around the World](https://doi.org/10.1596/1813-9450-7020). *World Bank Policy Research Working Paper*, n. 7020." <!-- [DOI VERIFICADO] -->
+    **Pergunta central:** Qual é o retorno da educação em diferentes países e regiões? Os retornos variam por nível de ensino, gênero e ao longo do tempo?
+
+    **Método:** Os autores compilaram estimativas comparáveis de equações de Mincer para 139 países, utilizando dados harmonizados de pesquisas domiciliares de 1970 a 2013 (mais de 800 pesquisas). Estimaram retornos à escolaridade por nível de ensino (primário, secundário, terciário), gênero e região, controlando para experiência e seleção amostral (correção de Heckman).
+
+    **Resultado principal:** O retorno médio global por ano adicional de escolaridade é de **10%**, mas com grande variação regional. América Latina e África Subsaariana apresentam os retornos mais altos (12–14%), enquanto países da OCDE têm retornos menores (7–8%). O retorno ao ensino superior é o mais elevado em todas as regiões e cresceu ao longo do tempo, refletindo o aumento da demanda por mão de obra qualificada. Os retornos são geralmente maiores para mulheres do que para homens — sugerindo que o investimento em educação feminina é particularmente rentável. Para o Brasil, os retornos estimados são de aproximadamente **12% por ano** de escolaridade, entre os mais altos do mundo, consistentes com a elevada desigualdade educacional e a escassez relativa de trabalhadores qualificados.
+
+    **Por que isso importa:** O estudo é a referência mais abrangente para comparações internacionais de retornos à educação. Confirma a previsão da teoria do capital humano (seção 17.6) de que a educação é um investimento rentável, especialmente em países com grande desigualdade educacional. Os altos retornos no Brasil sugerem que a expansão do acesso à educação de qualidade é uma das políticas mais eficazes para reduzir a desigualdade salarial.
+
+    **Relevância para o capítulo:** Fornece a base empírica para a equação de Mincer (equação $\eqref{eq:17.13}$) e para os exercícios sobre retornos à educação (Exercício 17.7, Exercício Resolvido 17.3). Os dados comparativos permitem situar o Brasil no contexto internacional dos retornos à educação.
+
+---
+
+!!! tip "🤖 Exercício com IA"
+    **IA.5 — Equação de Mincer com Dados Sintéticos**
+
+    Peça à IA para gerar dados sintéticos de uma equação de Mincer com $\beta_1 = 0{,}10$ (retorno de 10% por ano de educação), $\beta_2 = 0{,}03$ e $\beta_3 = -0{,}0005$. Depois peça para ela estimar os parâmetros por OLS e verificar se recupera os valores originais. Discuta: por que a OLS funciona perfeitamente com dados sintéticos mas não com dados reais?
+
+    [:material-arrow-right: Ver exercício completo](../exercicios-ia.md#ia-5)
+
 ## 📚 Referências do Capítulo
 
+- Arrow, Kenneth J. 1973. "The Theory of Discrimination." In: *Discrimination in Labor Markets*, editado por O. Ashenfelter e A. Rees. Princeton University Press.
+- Azar, José, Ioana Marinescu, e Marshall Steinbaum. 2022. "[Labor Market Concentration](https://doi.org/10.1086/717899)." *Journal of Human Resources* 57 (S): S167–S199.
 - Becker, Gary S. 1957. [*The Economics of Discrimination*](https://books.google.com/books?id=50qHcSNVVEMC). Chicago: University of Chicago Press.
 - Becker, Gary S. 1964. [*Human Capital*](https://books.google.com.br/books?id=9t69iICmrZ0C). New York: Columbia University Press.
+- Blinder, Alan S. 1973. "[Wage Discrimination: Reduced Form and Structural Estimates](https://doi.org/10.2307/144855)." *Journal of Human Resources* 8 (4): 436–455.
 - Card, David, e Alan B. Krueger. 1994. "[Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania](https://www.jstor.org/stable/2118030)." *American Economic Review* 84 (4): 772–793.
 - Corseuil, C. H., e F. G. Carneiro. 2001. "[Os Impactos do Salário Mínimo sobre Emprego e Salários no Brasil](https://www.ipea.gov.br)." *Pesquisa e Planejamento Econômico* 31 (3).
 - Engbom, Niklas, e Christian Moser. 2022. "[Earnings Inequality and the Minimum Wage: Evidence from Brazil](https://doi.org/10.1257/aer.20181506)." *American Economic Review* 112 (12): 3803–3847.
+- Farber, Henry S., Daniel Herbst, Ilyana Kuziemko, e Suresh Naidu. 2021. "[Unions and Inequality over the Twentieth Century: New Evidence from Survey Data](https://doi.org/10.1093/qje/qjab012)." *Quarterly Journal of Economics* 136 (3): 1325–1385.
+- Karabarbounis, Loukas, e Brent Neiman. 2014. "[The Global Decline of the Labor Share](https://doi.org/10.1093/qje/qjt032)." *Quarterly Journal of Economics* 129 (1): 61–103.
 - Lemos, Sara. 2009. "[Minimum Wage Effects in a Developing Country](https://doi.org/10.1016/j.labeco.2008.07.002)." *Labour Economics* 16 (2): 224–237.
+- Manning, Alan. 2003. *Monopsony in Motion: Imperfect Competition in Labor Markets*. Princeton: Princeton University Press.
 - McDonald, Ian M., e Robert M. Solow. 1981. "[Wage Bargaining and Employment](https://www.jstor.org/stable/1803906)." *American Economic Review* 71 (5): 896–908.
 - Meghir, C., R. Narita, e J.-M. Robin. 2015. "[Wages and Informality in Developing Countries](https://doi.org/10.1257/aer.20121110)." *American Economic Review* 105 (4): 1509–1546.
+- Montenegro, Claudio E., e Harry A. Patrinos. 2014. "[Comparable Estimates of Returns to Schooling Around the World](https://doi.org/10.1596/1813-9450-7020)." *World Bank Policy Research Working Paper*, n. 7020.
 - Neri, M., G. Gonzaga, e J. M. Camargo. 2001. "[Efeitos Informais do Salário Mínimo e Pobreza](https://www.ipea.gov.br)." *Texto para Discussão*, IPEA.
+- Oaxaca, Ronald. 1973. "[Male-Female Wage Differentials in Urban Labor Markets](https://doi.org/10.2307/2525981)." *International Economic Review* 14 (3): 693–709.
+- Phelps, Edmund S. 1972. "[The Statistical Theory of Racism and Sexism](https://doi.org/10.1257/aer.62.4.659)." *American Economic Review* 62 (4): 659–661.
+- Ricardo, David. 1817. *On the Principles of Political Economy and Taxation*. London: John Murray.
 - Saboia, J. 2007. "[O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil](https://www.ipea.gov.br)." In: *Desigualdade de Renda no Brasil*. IPEA.
 - Schultz, Theodore W. 1961. "[Investment in Human Capital](https://www.jstor.org/stable/1818907)." *American Economic Review* 51 (1): 1–17.

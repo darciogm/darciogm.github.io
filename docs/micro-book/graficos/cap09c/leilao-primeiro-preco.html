@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+  Leilao de Primeiro Preco — Interactive Graph
+  Library: JSXGraph
+  Chapter 9c — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leilao de Primeiro Preco</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .jxgbox { flex: 1 1 420px; max-width: 480px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { flex-basis: 100%; width: 100%; max-width: 480px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 480px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox1" class="jxgbox"></div>
+    <div class="controls">
+      <h3>Parametros do Leilao</h3>
+      <div class="slider-group">
+        <label>Licitantes \(N\): <span class="val" id="val-N">3</span></label>
+        <input type="range" id="slider-N" min="2" max="10" step="1" value="3">
+      </div>
+      <div class="slider-group">
+        <label>Valoracao max \(\bar{v}\): <span class="val" id="val-vmax">100</span></label>
+        <input type="range" id="slider-vmax" min="50" max="200" step="10" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Seu valor \(v\): <span class="val" id="val-v">60</span></label>
+        <input type="range" id="slider-v" min="0" max="200" step="1" value="60">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox1', {
+      boundingbox: [-15, 220, 220, -25],
+      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[210,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 50 },
+      name: '', withLabel: false
+    });
+    board.create('text', [110, -18, '<b><i>Valoracao v</i></b>'], {
+      fontSize: 13, fixed: true, anchorX: 'middle', highlight: false
+    });
+    board.create('axis', [[0,0],[0,210]], {
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
+      name: '', withLabel: false
+    });
+    board.create('text', [-12, 110, '<b><i>Lance b(v)</i></b>'], {
+      fontSize: 13, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+
+    // 45-degree line (truth-telling)
+    var line45 = board.create('line', [[0,0],[1,1]], {
+      strokeColor: '#aaa', strokeWidth: 1, dash: 3, straightFirst: false, straightLast: true,
+      point1: { visible: false }, point2: { visible: false }
+    });
+    board.create('text', [185, 195, 'b = v'], { fontSize: 9, color: '#aaa', fixed: true });
+
+    var objs = [];
+
+    function getState() {
+      return {
+        N: parseInt(document.getElementById('slider-N').value),
+        vmax: parseFloat(document.getElementById('slider-vmax').value),
+        v: parseFloat(document.getElementById('slider-v').value)
+      };
+    }
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var s = getState();
+      // Clamp v to vmax
+      if (s.v > s.vmax) {
+        s.v = s.vmax;
+        document.getElementById('slider-v').value = s.v;
+      }
+      document.getElementById('slider-v').max = s.vmax;
+
+      document.getElementById('val-N').textContent = s.N;
+      document.getElementById('val-vmax').textContent = s.vmax;
+      document.getElementById('val-v').textContent = s.v;
+
+      var factor = (s.N - 1) / s.N;
+
+      // Bid function line: b(v) = v * (N-1)/N
+      var xs = [], ys = [];
+      for (var v = 0; v <= s.vmax; v += 1) {
+        xs.push(v);
+        ys.push(v * factor);
+      }
+      objs.push(board.create('curve', [xs, ys], { strokeColor: '#C8102E', strokeWidth: 3 }));
+      objs.push(board.create('text', [s.vmax * 0.85, s.vmax * factor * 0.88, 'b(v) = v(N-1)/N'], {
+        fontSize: 10, color: '#C8102E', fixed: true
+      }));
+
+      // "Your bid" point
+      var myBid = s.v * factor;
+      objs.push(board.create('point', [s.v, myBid], {
+        name: '', size: 6, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true
+      }));
+      // Dashed lines to axes
+      objs.push(board.create('segment', [[s.v, 0], [s.v, myBid]], { strokeColor: '#1565c0', dash: 3, strokeWidth: 1 }));
+      objs.push(board.create('segment', [[0, myBid], [s.v, myBid]], { strokeColor: '#1565c0', dash: 3, strokeWidth: 1 }));
+      objs.push(board.create('text', [s.v, -8, 'v=' + s.v.toFixed(0)], { fontSize: 9, color: '#1565c0', anchorX: 'middle', fixed: true }));
+      objs.push(board.create('text', [-2, myBid + 5, 'b=' + myBid.toFixed(1)], { fontSize: 9, color: '#1565c0', anchorX: 'right', fixed: true }));
+
+      // Shading area = bid shading (area between 45-degree and bid function up to v)
+      var fillX = [], fillY = [];
+      for (var v = 0; v <= s.v; v += 1) {
+        fillX.push(v); fillY.push(v);
+      }
+      for (var v = s.v; v >= 0; v -= 1) {
+        fillX.push(v); fillY.push(v * factor);
+      }
+      objs.push(board.create('curve', [fillX, fillY], {
+        strokeWidth: 0, fillColor: 'rgba(21,101,192,0.10)', fillOpacity: 1
+      }));
+
+      // Expected revenue
+      var ER = (s.N - 1) / (s.N + 1) * s.vmax;
+      var shading = ((1 - factor) * 100).toFixed(1);
+      var probWin = Math.pow(s.v / s.vmax, s.N - 1);
+      var expectedPayoff = probWin * (s.v - myBid);
+
+      // Info
+      var html = '<div style="text-align:center;margin-bottom:0.4rem;">';
+      html += '\\(b(v) = v \\cdot \\frac{N-1}{N} = v \\cdot \\frac{' + (s.N-1) + '}{' + s.N + '}\\)';
+      html += '</div>';
+      html += '<div>';
+      html += '<strong style="color:#1565c0;">Seu lance:</strong> \\(b(' + s.v + ') = ' + myBid.toFixed(1) + '\\)<br>';
+      html += 'Sombreamento (<i>bid shading</i>): <strong>' + shading + '%</strong><br>';
+      html += '\\(\\Pr(\\text{ganhar}) = (v/\\bar{v})^{N-1} = ' + probWin.toFixed(4) + '\\)<br>';
+      html += 'Payoff esperado: \\(' + expectedPayoff.toFixed(2) + '\\)';
+      html += '</div>';
+      html += '<hr style="margin:0.3rem 0">';
+      html += '<div>';
+      html += '<strong style="color:#C8102E;">Receita esperada do leiloeiro:</strong><br>';
+      html += '\\(E[R] = \\frac{N-1}{N+1} \\cdot \\bar{v} = \\frac{' + (s.N-1) + '}{' + (s.N+1) + '} \\cdot ' + s.vmax + ' = ' + ER.toFixed(1) + '\\)';
+      html += '</div>';
+      html += '<hr style="margin:0.3rem 0">';
+      html += '<div style="font-size:0.78rem;color:#666;">';
+      html += '<strong>2o preco (Vickrey):</strong> \\(b(v) = v\\) (verdade),<br>';
+      html += 'mesma receita esperada \\(E[R] = ' + ER.toFixed(1) + '\\)<br>';
+      html += '(Teorema da Equivalencia de Receita)';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-N').value = 3;
+      document.getElementById('slider-vmax').value = 100;
+      document.getElementById('slider-v').value = 60;
+      draw();
+    }
+
+    ['slider-N','slider-vmax','slider-v'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  </script>
+</body>
+</html>

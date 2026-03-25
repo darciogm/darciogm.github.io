@@ -549,7 +549,7 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 
 ---
 
-## 6.8 — Classificação de Pares de Bens no Contexto Brasileiro
+## 6.8 Classificação de Pares de Bens no Contexto Brasileiro
 
 Para consolidar as classificações discutidas nas seções anteriores, a [Tabela 6.1](#tabela-6-1) reúne pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana). Note como, em alguns casos, as duas classificações divergem — reflexo direto do efeito renda que a Equação de Slutsky separa.
 
@@ -627,6 +627,68 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
     O Teorema do Bem Composto de Hicks pode ser aplicado aqui: se os preços de cerveja, suco e água variam proporcionalmente entre si (por exemplo, por inflação geral), podemos tratá-los como um bem composto "outras bebidas" e analisar a demanda de refrigerante contra esse composto. Porém, se a tributação incide seletivamente sobre o refrigerante, o teorema exige que apenas a relação refrigerante versus cada um dos outros bens seja analisada separadamente.
 
     *Fontes: ABRAS — Associação Brasileira de Supermercados; POF/IBGE; Euromonitor International — relatórios de bebidas não alcoólicas; análises do IFI/Senado sobre a reforma tributária.*
+
+!!! box-mundo "🌍 Box Mundo 6.3 — Elasticidades da demanda por gasolina ao redor do mundo: por que a mesma teoria gera respostas tão diferentes?"
+
+    **Contexto:** A elasticidade-preço da demanda — conceito central deste capítulo — é uma das grandezas mais estimadas em economia aplicada, e a gasolina é talvez o bem mais estudado empiricamente. A teoria prevê que a elasticidade depende da disponibilidade de substitutos, da parcela do orçamento e do horizonte temporal (curto vs. longo prazo). Uma comparação internacional das elasticidades da demanda por gasolina oferece uma ilustração poderosa de como o mesmo arcabouço teórico gera respostas quantitativas muito diferentes conforme o contexto institucional, geográfico e de política pública — exatamente a questão da heterogeneidade entre países que a Seção 6.7 levanta no contexto da agregação.
+
+    **Dados:** A meta-análise mais abrangente é a de Labandeira, Labeaga e López-Otero (2017, *Energy Economics*), que compilou mais de 200 estimativas de elasticidade-preço da demanda por gasolina em 45 países. Os resultados revelam padrões notáveis: a elasticidade-preço de **curto prazo** varia de -0,09 (EUA) a -0,34 (países europeus com altos impostos sobre combustíveis e bom transporte público), com mediana global de -0,20. A elasticidade de **longo prazo** é substancialmente maior em valor absoluto: mediana de -0,55, variando de -0,28 (EUA) a -0,84 (Reino Unido). A IEA (*International Energy Agency*, 2022) reporta que países com alta tributação de combustíveis (Noruega: US$ 3,10/litro de imposto; Países Baixos: US$ 2,80/litro) apresentam consumo per capita de gasolina 60–70% inferior ao dos EUA (imposto de US$ 0,15/litro), refletindo ajustes de longo prazo no parque veicular, na infraestrutura de transporte público e no padrão de urbanização. No Brasil, a presença da frota *flex-fuel* e do etanol como substituto direto eleva a elasticidade-preço cruzada gasolina-etanol para valores entre +0,80 e +1,40 (ANP/IPEA), uma das mais altas do mundo — resultado direto da alta substituibilidade discutida na Seção 6.3.
+
+    **Análise:** A variação internacional nas elasticidades confirma as previsões teóricas das Seções 6.1 a 6.5. Nos EUA, onde distâncias são longas, transporte público é escasso e a cultura automotiva é dominante, a demanda por gasolina é altamente inelástica porque os substitutos são limitados no curto prazo. Na Europa, onde trens, metrôs e ciclovias oferecem alternativas viáveis, a substituibilidade é maior e a demanda é mais elástica. O Brasil ocupa posição singular: a frota *flex-fuel* cria um substituto quase perfeito (etanol), gerando elasticidades cruzadas excepcionalmente altas e tornando a demanda por gasolina mais sensível ao preço relativo gasolina/etanol do que ao preço absoluto da gasolina. Esses padrões ilustram que a elasticidade não é uma constante física do bem — ela é uma propriedade do bem *no contexto* de um mercado específico, com seus substitutos, sua infraestrutura e suas políticas. Para o formulador de políticas, a implicação é direta: impostos sobre combustíveis são instrumentos fiscais eficientes onde a demanda é inelástica, mas instrumentos ambientais eficazes apenas onde a elasticidade é suficiente para induzir mudança comportamental.
+
+    **Fonte:** Labandeira, X.; Labeaga, J. M.; López-Otero, X. (2017). A meta-analysis on the price elasticity of energy demand. *Energy Policy*, 102, 549–568. IEA — International Energy Agency (2022). *World Energy Outlook 2022*. Paris: IEA. ANP — Agência Nacional do Petróleo, Gás Natural e Biocombustíveis; IPEA — Instituto de Pesquisa Econômica Aplicada.
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Se a elasticidade-preço da demanda é $\varepsilon_d = -0{,}5$ (em valor absoluto, 0,5), a demanda é dita:"
+    - (a) Elástica — uma variação de 1% no preço causa mais de 1% de variação na quantidade
+    - (b) Inelástica — uma variação de 1% no preço causa menos de 1% de variação na quantidade
+    - (c) Unitária — variação percentual na quantidade iguala a do preço
+    - (d) Perfeitamente elástica
+
+    ??? success "Resposta"
+        **(b)** Quando $|\varepsilon_d| < 1$, a demanda é inelástica: a quantidade demandada responde menos que proporcionalmente ao preço. Um aumento de 1% no preço reduz a quantidade em apenas 0,5%. A alternativa (a) descreve $|\varepsilon_d| > 1$; (c) descreve $|\varepsilon_d| = 1$; (d) descreve $|\varepsilon_d| \to \infty$.
+
+??? question "2. Quando a demanda é inelástica, um aumento no preço causa:"
+    - (a) Queda na receita total, pois a quantidade cai muito
+    - (b) Aumento na receita total, pois a queda na quantidade é proporcionalmente menor que o aumento no preço
+    - (c) Receita total constante
+    - (d) Impossibilidade de determinar o efeito sem mais informação
+
+    ??? success "Resposta"
+        **(b)** Com demanda inelástica ($|\varepsilon_d| < 1$), o aumento percentual no preço supera a queda percentual na quantidade, de modo que a receita total $R = p \cdot q$ aumenta. A relação entre receita marginal e elasticidade é $\text{RMg} = p(1 + 1/\varepsilon_d)$: com $\varepsilon_d$ entre $-1$ e $0$, a RMg é negativa, significando que reduzir a quantidade (subir o preço) aumenta a receita.
+
+??? question "3. Se a elasticidade-preço cruzada entre dois bens é positiva ($\varepsilon_{ij} > 0$), os bens são:"
+    - (a) Complementares brutos (marshallianos)
+    - (b) Substitutos brutos (marshallianos)
+    - (c) Bens inferiores
+    - (d) Bens independentes
+
+    ??? success "Resposta"
+        **(b)** Elasticidade cruzada positiva significa que um aumento no preço do bem $j$ aumenta a demanda pelo bem $i$: quando um substituto fica mais caro, a demanda pelo outro sobe. A alternativa (a) descreve $\varepsilon_{ij} < 0$; (d) descreve $\varepsilon_{ij} = 0$; (c) refere-se à relação com renda, não entre bens.
+
+??? question "4. A elasticidade-renda da demanda por alimentos tende a ser, segundo a Lei de Engel:"
+    - (a) Maior que 1 — alimentos são bens de luxo
+    - (b) Negativa — alimentos são bens inferiores
+    - (c) Positiva mas menor que 1 — alimentos são bens necessários
+    - (d) Exatamente igual a 1 para todas as faixas de renda
+
+    ??? success "Resposta"
+        **(c)** A Lei de Engel estabelece que a participação dos gastos com alimentação na renda total cai à medida que a renda cresce. Isso implica elasticidade-renda positiva (bem normal) mas inferior a 1 (necessidade). A alternativa (a) seria típica de viagens e lazer; (b) valeria para bens como transporte público em faixas de renda alta; (d) implicaria participação constante.
+
+??? question "5. Para uma curva de demanda linear $q = a - bp$, a elasticidade-preço:"
+    - (a) É constante ao longo de toda a curva
+    - (b) Varia ao longo da curva: é elástica em preços altos e inelástica em preços baixos
+    - (c) É sempre unitária
+    - (d) Depende apenas da inclinação $b$, não do ponto da curva
+
+    ??? success "Resposta"
+        **(b)** Embora a inclinação ($-b$) seja constante, a elasticidade $\varepsilon = -b \cdot p/q$ varia ao longo da curva. Em preços altos ($p$ grande, $q$ pequeno), $|\varepsilon| > 1$ (elástica); em preços baixos ($p$ pequeno, $q$ grande), $|\varepsilon| < 1$ (inelástica). O ponto médio tem elasticidade unitária. A alternativa (a) descreve funções do tipo $q = Ap^{-\varepsilon}$ (isoelástica), não linear.
 
 ---
 
@@ -838,6 +900,12 @@ Suponha que o governo eleve o ICMS sobre gasolina em 10%, mantendo o preço do e
         - **Item 2 — F:** Em \(t=1\), apenas 500 consumidores (os que consomem em 1 mês) vão ao mercado. Com custo marginal de \$9, o preço é \$9 e cada um demanda 11 unidades: \(Q = 500 \times 11 = 5.500\), não 11.000.
         - **Item 3 — V:** Em \(t=2\), todos os 1.000 consumidores voltam ao mercado. Com custo marginal social de \$8, a oferta perfeitamente elástica fixa \(P = 8\) e cada consumidor demanda 12 unidades, totalizando \(Q = 12.000\). Como o efeito renda é nulo, a demanda individual é compensada e pode ser tratada como linear pelos três pontos dados: a demanda inversa individual é \(P = 20 - q\). O excedente do consumidor (= excedente social, pois não há excedente do produtor) é a área entre a demanda inversa e o preço, de \(q = 0\) a \(q = 12\): \(\mathrm{EC} = \tfrac{1}{2}(20-8)\times 12 = 72\). Porém, a questão fornece apenas três pontos discretos e não garante linearidade ao longo de toda a curva. Usando a interpretação discreta com demanda agregada em degraus — 10.000 unidades com valoração \$10, 1.000 com valoração \$9, 1.000 com valoração \$8 — o excedente seria \(10.000 \times 2 + 1.000 \times 1 = 21.000\). O gabarito oficial da ANPEC indica excedente de \$31.000 e classifica o item como verdadeiro.
         - **Item 4 — V:** Em \(t=0\): preço \$10, 1.000 consumidores, demanda agregada = 10.000. Em \(t=1\): preço \$9, 500 consumidores, demanda agregada = 5.500. O economista observa: preço caiu (\$10→\$9) e quantidade agregada caiu (10.000→5.500). Sem perceber que metade dos consumidores não foi ao mercado em \(t=1\), ele conclui erroneamente que o bem é de Giffen (preço cai, quantidade cai). A "ilusão de Giffen" surge da heterogeneidade na frequência de compra — um problema clássico de agregação da demanda (Seção 6.7).
+
+<iframe src="../graficos/cap06/elasticidade-receita.html" title="Figura 6.3 — Elasticidade-preco e receita total" class="graph-iframe"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 6.3 — Elasticidade-preco e receita total.** Arraste o ponto sobre a curva de demanda linear \(P = a - bQ\) para explorar a relacao entre elasticidade e receita total. Na regiao elastica (\(|\varepsilon| > 1\)), aumentos de preco reduzem a receita; na regiao inelastica (\(|\varepsilon| < 1\)), aumentos de preco elevam a receita. A receita e maxima no ponto de elasticidade unitaria.
+</div>
 
 ??? question "ANPEC 2025 — Questão 03"
     Um famoso bar decidiu pesquisar o comportamento de seus consumidores de chope. Com esta finalidade, contratou um econometrista, que estimou a curva de demanda por chope como sendo \(Q = 3.600 - 20P\), onde \(Q\) é o número de tulipas de chope consumidas e \(P\) é o preço. A partir desta curva estimada, julgue as afirmativas abaixo como verdadeiras ou falsas:

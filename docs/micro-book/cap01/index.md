@@ -390,9 +390,19 @@ Com esse panorama dos desenvolvimentos modernos, temos uma visão completa do qu
 
     **Fonte:** Williamson, J. (1990). What Washington means by policy reform. In: *Latin American Adjustment: How Much Has Happened?*. Institute for International Economics. Easterly, W. (2005). What did structural adjustment adjust? The association of policies and growth with repeated IMF and World Bank adjustment loans. *Journal of Development Economics*, 76(1), 1–22. Rodrik, D. (2006). Goodbye Washington Consensus, hello Washington Confusion? *Journal of Economic Literature*, 44(4), 973–987.
 
+!!! box-mundo "🌍 Box Mundo 1.3 — A revolução da credibilidade: experimentos naturais e o Nobel de 2021"
+
+    **Contexto:** Durante décadas, a economia empírica enfrentou uma limitação fundamental discutida na Seção 1.2: a impossibilidade de realizar experimentos controlados na maioria dos contextos de interesse. Como saber se um programa de treinamento realmente eleva os salários, ou se mais anos de escolaridade causam maior renda — e não apenas se correlacionam com ela? A partir dos anos 1990, uma geração de econometristas desenvolveu métodos rigorosos para extrair inferência causal a partir de dados observacionais, explorando variações institucionais e políticas como "experimentos naturais". Essa transformação metodológica ficou conhecida como a **revolução da credibilidade** e foi coroada com o Prêmio Nobel de Economia de 2021, concedido a David Card, Joshua Angrist e Guido Imbens.
+
+    **Dados:** Angrist e Krueger (1991, *Quarterly Journal of Economics*) utilizaram o trimestre de nascimento como variável instrumental para identificar o retorno causal da escolaridade: nos EUA, leis de frequência escolar obrigatória fazem com que alunos nascidos no primeiro trimestre do ano permaneçam menos tempo na escola do que os nascidos no quarto trimestre, gerando uma variação exógena nos anos de estudo. A estimativa por variáveis instrumentais indicou retorno de aproximadamente 7–10% por ano adicional de escolaridade. Imbens e Angrist (1994, *Econometrica*) formalizaram o conceito de **efeito causal local médio** (LATE), mostrando que variáveis instrumentais identificam o efeito do tratamento sobre os *compliers* — indivíduos cujo comportamento é efetivamente alterado pelo instrumento. O Banco Mundial reporta que, até 2023, mais de 350 avaliações de impacto de programas sociais em países em desenvolvimento utilizaram métodos de experimentos naturais (variáveis instrumentais, diferenças em diferenças, regressão descontínua), contra menos de 30 em 1990 (World Bank, *Development Impact Evaluation*, DIME).
+
+    **Análise:** A revolução da credibilidade ilustra concretamente o debate metodológico da Seção 1.2 entre abordagem direta e indireta na verificação de modelos. Os métodos de Card, Angrist e Imbens não substituem a teoria econômica — ao contrário, eles a complementam ao fornecer ferramentas para testar previsões teóricas com rigor causal. O modelo competitivo do mercado de trabalho prevê que aumentos do salário mínimo reduzem o emprego; Card e Krueger (Box Mundo 1.1) mostraram que essa previsão pode falhar quando a hipótese de mercado competitivo é violada. A lição metodológica é profunda: modelos teóricos geram previsões condicionais às suas hipóteses, e os experimentos naturais permitem identificar sob quais condições essas hipóteses são válidas — conectando a análise positiva à verificação empírica de forma operacional.
+
+    **Fonte:** Angrist, J. D.; Krueger, A. B. (1991). Does compulsory school attendance affect schooling and earnings? *Quarterly Journal of Economics*, 106(4), 979–1014. Imbens, G. W.; Angrist, J. D. (1994). Identification and estimation of local average treatment effects. *Econometrica*, 62(2), 467–476. Nobel Prize Committee (2021). *Scientific Background: Answering Causal Questions Using Observational Data*. Royal Swedish Academy of Sciences.
+
 ---
 
-## 1.7 — Demonstração: Condição de maximização de lucro P = CMg
+## 1.7 Demonstração: Condição de maximização de lucro P = CMg
 
 Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apresentamos a seguir uma demonstração formal completa de um dos resultados mais importantes da microeconomia: a condição de maximização de lucro da firma competitiva. Este resultado ilustra concretamente o roteiro da Seção 1.4 — definir objetivo, identificar restrições, resolver o problema de otimização e interpretar o resultado. É também o primeiro exemplo de como o cálculo diferencial — as ferramentas do Capítulo 2 — se aplica a problemas econômicos.
 
@@ -546,6 +556,57 @@ Note também que a demonstração ilustra o poder da estática comparativa: como
     **Verificação.** O BCB publica trimestralmente o *Relatório de Inflação*, no qual confronta suas projeções passadas com os dados realizados — um exercício de verificação indireta de seus modelos, exatamente no espírito da Seção 1.2. Quando as projeções se desviam sistematicamente da realidade, os modelos são recalibrados.
 
     Este caso ilustra que modelos econômicos não são exercícios acadêmicos abstratos: são ferramentas operacionais que orientam decisões com impacto direto sobre a vida de milhões de brasileiros.
+
+---
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Qual é a principal diferença entre análise positiva e análise normativa em economia?"
+    - (a) A análise positiva usa dados empíricos, enquanto a normativa usa apenas teoria
+    - (b) A análise positiva descreve 'o que é', enquanto a normativa prescreve 'o que deveria ser'
+    - (c) A análise positiva trata de microeconomia e a normativa de macroeconomia
+    - (d) A análise positiva é objetiva porque não envolve suposições
+
+    ??? success "Resposta"
+        **(b)** A análise positiva busca descrever e explicar fenômenos econômicos como eles são, gerando previsões testáveis. A análise normativa envolve juízos de valor sobre o que deveria ser feito. A alternativa (a) confunde método com natureza da análise; (c) mistura subáreas; (d) é incorreta pois toda análise envolve suposições.
+
+??? question "2. Segundo a visão friedmaniana, um modelo econômico deve ser avaliado principalmente pela:"
+    - (a) Fidelidade de suas premissas à realidade observada
+    - (b) Complexidade matemática de suas equações
+    - (c) Capacidade de gerar previsões úteis e testáveis
+    - (d) Quantidade de variáveis que incorpora
+
+    ??? success "Resposta"
+        **(c)** Friedman (1953) argumentou que modelos devem ser julgados pela utilidade de suas previsões, não pelo realismo de suas suposições. Um mapa útil não precisa reproduzir cada detalhe do terreno. As demais alternativas confundem realismo das premissas (a), sofisticação formal (b) ou abrangência (d) com qualidade preditiva.
+
+??? question "3. A cláusula *ceteris paribus* em microeconomia corresponde, matematicamente, a:"
+    - (a) Uma integral definida sobre a função de demanda
+    - (b) Uma derivada parcial — variar uma variável mantendo as demais constantes
+    - (c) Uma transformação monotônica da função de utilidade
+    - (d) Uma condição de equilíbrio geral com todos os mercados simultâneos
+
+    ??? success "Resposta"
+        **(b)** *Ceteris paribus* significa 'tudo o mais constante', o que equivale a calcular a derivada parcial de uma função em relação a uma variável, mantendo todas as outras fixas. Isso é o fundamento da estática comparativa. A alternativa (d) descreve justamente a abordagem oposta — equilíbrio geral, que abandona o *ceteris paribus*.
+
+??? question "4. Em um modelo microeconômico, as variáveis endógenas são aquelas que:"
+    - (a) São determinadas fora do modelo e tratadas como parâmetros
+    - (b) São determinadas dentro do modelo, como resultado da otimização dos agentes
+    - (c) Representam apenas variáveis monetárias como preço e renda
+    - (d) Não podem ser observadas empiricamente
+
+    ??? success "Resposta"
+        **(b)** Variáveis endógenas são determinadas pelo próprio modelo (ex.: preço e quantidade de equilíbrio), enquanto variáveis exógenas (a) são determinadas fora dele (ex.: renda, tecnologia). A alternativa (c) é muito restritiva e (d) confunde endogeneidade com observabilidade.
+
+??? question "5. A hipótese de otimização na microeconomia assume que os agentes:"
+    - (a) Possuem informação perfeita sobre todos os mercados
+    - (b) Agem 'como se' maximizassem uma função objetivo, mesmo que não calculem explicitamente
+    - (c) Sempre alcançam o resultado socialmente ótimo
+    - (d) Nunca cometem erros em suas decisões
+
+    ??? success "Resposta"
+        **(b)** A hipótese de otimização, no sentido 'como se' (*as if*) de Friedman, não exige que os agentes façam cálculos conscientes — apenas que seu comportamento seja consistente com a maximização de uma função objetivo. A alternativa (a) confunde otimização com informação perfeita; (c) confunde ótimo privado com social; (d) ignora que erros sistemáticos são estudados pela economia comportamental.
 
 ---
 

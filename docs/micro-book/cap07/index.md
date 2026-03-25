@@ -266,7 +266,7 @@ As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura d
     \pi = E[\tilde{W}] - W_{EC} > 0
     \]
 
-    O prêmio de risco mede o "custo" da incerteza em termos monetários: é o máximo que o agente pagaria para eliminar o risco, ou equivalentemente, a compensação mínima que ele exigiria para suportar o risco sem reclamar.
+    O prêmio de risco mede o "custo" da incerteza em termos monetários: é o máximo que o agente pagaria para eliminar o risco, ou equivalentemente, a compensação mínima que ele exigiria para suportar o risco sem reclamar. A precificação de ativos arriscados — CAPM, fator de desconto estocástico e o enigma do prêmio de risco — é aprofundada no Capítulo 18.
 
 !!! definition "Equivalente de certeza e prêmio de risco"
     Seja \(\tilde{W} = W + \tilde{\varepsilon}\) a riqueza aleatória, onde \(\tilde{\varepsilon}\) é um risco justo (isto é, \(E[\tilde{\varepsilon}] = 0\)) com variância \(\sigma^2\).
@@ -628,6 +628,16 @@ O valor da informação tem aplicações diretas em contextos brasileiros. Uma e
 
 Uma distinção importante é que o valor da informação depende de *quão* boa é a decisão sem ela. Se o agente já escolhe quase otimamente sem a informação adicional, o ganho é pequeno. Se a incerteza é grande e a decisão sem informação é muito sub-ótima, o valor pode ser enorme. Isso sugere que o retorno de investimentos em coleta e processamento de dados é maior em ambientes de alta incerteza — exatamente o caso do agronegócio brasileiro sujeito a variabilidade climática, oscilações cambiais e volatilidade de preços internacionais de commodities.
 
+!!! box-mundo "🌍 Box Mundo 7.3 — Penetração global de seguros: como a aversão ao risco se traduz em mercados reais"
+
+    **Contexto:** A Seção 7.6.1 demonstrou que um agente avesso ao risco contrata seguro total quando o prêmio é atuarialmente justo, e seguro parcial quando há carregamento positivo. Mas como essas previsões teóricas se manifestam na prática ao redor do mundo? A **taxa de penetração de seguros** — prêmios totais como proporção do PIB — é a medida-padrão utilizada pela indústria e por reguladores para avaliar o grau em que uma economia utiliza mecanismos formais de transferência de risco. As disparidades internacionais são enormes e revelam como fatores institucionais, culturais e de desenvolvimento econômico modulam a demanda por seguros prevista pelo modelo teórico.
+
+    **Dados:** O *sigma* report da Swiss Re (2023) documenta que a penetração global de seguros em 2022 foi de 6,8% do PIB mundial, totalizando US$ 6,8 trilhões em prêmios. Porém, a variação entre países é dramática: o Reino Unido lidera com penetração de 14,5% do PIB, seguido pelos EUA (11,7%), França (9,3%) e Japão (8,2%). Em contraste, países em desenvolvimento apresentam penetração muito inferior: Brasil (3,8%), Índia (4,2%), Nigéria (0,4%) e Bangladesh (0,5%). A penetração em seguros de vida é especialmente baixa na África Subsaariana (média de 0,7% do PIB) e no Sul da Ásia (1,1%), contra 5,0% na Europa Ocidental. Segundo dados da OECD (*Insurance Statistics*, 2023), os gastos com seguros per capita variam de US$ 8.600 nos EUA e US$ 6.200 na Suíça a menos de US$ 20 em países como Paquistão e Mianmar. A Superintendência de Seguros Privados (Susep) reporta que, no Brasil, o seguro de automóvel é o ramo mais contratado (cerca de 30% dos veículos segurados), enquanto o seguro residencial cobre menos de 15% dos domicílios — refletindo tanto a parcela orçamentária do bem quanto a percepção de risco.
+
+    **Análise:** As disparidades internacionais na penetração de seguros refletem a interação entre os fatores teóricos deste capítulo e as condições institucionais de cada país. Primeiro, a aversão ao risco (Seção 7.3) é necessária mas não suficiente: mesmo em países onde os agentes são avessos ao risco, a ausência de seguradoras com capacidade de *pooling*, a falta de dados atuariais confiáveis e os altos custos de transação elevam o carregamento \(\lambda\) a níveis que tornam o seguro inacessível ou não atrativo — como previsto pela Seção 7.6.1. Segundo, a **informação assimétrica** (Seção 7.8) — seleção adversa e risco moral — é mais severa em mercados com menor infraestrutura de monitoramento, o que explica por que o seguro agrícola e de saúde é particularmente raro em países em desenvolvimento. Terceiro, a renda per capita é um determinante fundamental: seguros são bens normais, e a elasticidade-renda da demanda por seguros é estimada entre 1,0 e 1,5 pela Swiss Re, indicando que o seguro é um bem de luxo relativo. Essa constatação conecta a teoria da demanda (Capítulo 5) à teoria da incerteza: a participação orçamentária de seguros cresce mais que proporcionalmente com a renda, o que explica a enorme lacuna de proteção (*protection gap*) nos países mais pobres e fundamenta o caso para intervenções públicas como o Proagro no Brasil e os microsseguros indexados discutidos no Box Mundo 7.2.
+
+    **Fonte:** Swiss Re Institute (2023). *sigma No. 3/2023: World insurance: stirring satisfactory resilience amid turbulence*. Zurich: Swiss Re. OECD (2023). *Insurance Statistics*. Paris: OECD. Susep — Superintendência de Seguros Privados (2023). *Relatório de Análise e Acompanhamento dos Mercados Supervisionados*.
+
 !!! box-mundo "🌍 Box Mundo 7.2 — Microsseguros em países em desenvolvimento"
 
     **Contexto:** A teoria dos seguros desenvolvida nesta seção pressupõe mercados de seguros funcionais — seguradoras com capacidade de *pooling* de riscos, consumidores informados e prêmios atuarialmente justos ou próximos disso. Nos países em desenvolvimento, contudo, centenas de milhões de pequenos agricultores, trabalhadores informais e microempreendedores enfrentam riscos severos (secas, enchentes, doenças, flutuações de preços) sem acesso a seguros tradicionais. O **microsseguro** — produtos de seguro de baixo custo e cobertura simplificada, desenhados para populações de baixa renda — surgiu como resposta a essa lacuna, e o **seguro indexado** (*index-based insurance*) representa sua variante mais inovadora.
@@ -806,6 +816,58 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
     O PSR enfrenta limitações: orçamento frequentemente insuficiente para atender toda a demanda, concentração das apólices em grandes produtores do Centro-Oeste e Sul, e dificuldades na precificação atuarial de eventos climáticos extremos (que estão se tornando mais frequentes).
 
     **Fonte**: Ministério da Agricultura e Pecuária, Relatório do PSR 2023/2024; Atlas do Seguro Rural ([Embrapa](https://www.embrapa.br)).
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Um agente com função de utilidade côncava sobre riqueza é classificado como:"
+    - (a) Amante do risco — prefere a loteria ao valor esperado com certeza
+    - (b) Neutro ao risco — é indiferente entre a loteria e seu valor esperado
+    - (c) Avesso ao risco — prefere o valor esperado com certeza à loteria
+    - (d) Avesso ao risco apenas se a variância da loteria for alta
+
+    ??? success "Resposta"
+        **(c)** Concavidade de $u(W)$ implica, pela desigualdade de Jensen, que $E[u(W)] < u(E[W])$: a utilidade esperada da loteria é menor que a utilidade do valor esperado recebido com certeza. Portanto, o agente prefere a certeza — é avesso ao risco. A alternativa (a) requer convexidade; (b) requer linearidade; (d) é incorreta pois a aversão vale para qualquer loteria arriscada.
+
+??? question "2. O equivalente certeza de uma loteria é o valor $W_{CE}$ tal que:"
+    - (a) $u(W_{CE}) = E[W]$
+    - (b) $u(W_{CE}) = E[u(W)]$
+    - (c) $W_{CE} = E[W]$ sempre
+    - (d) $W_{CE} = E[W] + \text{prêmio de risco}$
+
+    ??? success "Resposta"
+        **(b)** O equivalente certeza é o montante certo que dá a mesma utilidade esperada que a loteria: $u(W_{CE}) = E[u(W)]$. Para um avesso ao risco, $W_{CE} < E[W]$, e a diferença $E[W] - W_{CE}$ é o prêmio de risco. A alternativa (a) confunde utilidade do equivalente certeza com o valor esperado monetário; (c) só vale para neutralidade ao risco; (d) inverte a relação.
+
+??? question "3. A medida de Arrow-Pratt de aversão absoluta ao risco é definida como:"
+    - (a) $A(W) = -u'(W)/u''(W)$
+    - (b) $A(W) = -u''(W)/u'(W)$
+    - (c) $A(W) = u''(W)/u'(W)$
+    - (d) $A(W) = -u'(W) \cdot u''(W)$
+
+    ??? success "Resposta"
+        **(b)** O coeficiente de Arrow-Pratt $A(W) = -u''(W)/u'(W)$ mede a curvatura relativa da função de utilidade. É positivo para avessos ao risco ($u'' < 0$). A alternativa (a) inverte a fração; (c) dá valor negativo para avessos ao risco; (d) não tem interpretação econômica padrão.
+
+??? question "4. No mercado de seguros com informação simétrica, um agente avesso ao risco e uma seguradora neutra ao risco alcançam eficiência quando:"
+    - (a) O prêmio do seguro é igual ao dobro da perda esperada
+    - (b) O agente compra seguro parcial para manter incentivo a ter cuidado
+    - (c) O agente compra seguro completo ao prêmio atuarialmente justo (igual à perda esperada)
+    - (d) A seguradora cobra prêmio igual ao equivalente certeza do agente
+
+    ??? success "Resposta"
+        **(c)** Com informação simétrica, a alocação eficiente transfere todo o risco do avesso ao risco para o neutro (seguradora). O prêmio atuarialmente justo $\pi = p \cdot L$ (probabilidade vezes perda) é suficiente para a seguradora cobrir as perdas esperadas, e o agente, sendo avesso ao risco, prefere pagar esse prêmio a enfrentar a incerteza. As demais alternativas descrevem situações subótimas ou incorretas.
+
+??? question "5. O axioma de independência na teoria da utilidade esperada afirma que:"
+    - (a) As preferências por loterias dependem apenas dos payoffs, não das probabilidades
+    - (b) Se $A \succ B$, então misturar $A$ e $B$ com uma terceira loteria $C$ preserva a preferência: $\alpha A + (1-\alpha)C \succ \alpha B + (1-\alpha)C$
+    - (c) Loterias com o mesmo valor esperado são sempre indiferentes
+    - (d) O agente é indiferente entre receber um prêmio agora ou no futuro
+
+    ??? success "Resposta"
+        **(b)** O axioma de independência estabelece que a preferência entre duas loterias não é afetada pela mistura com uma terceira loteria comum. É o axioma mais distintivo (e controverso) da teoria de VNM, violado sistematicamente no Paradoxo de Allais. A alternativa (a) é absurda; (c) descreve neutralidade ao risco; (d) refere-se a preferências intertemporais.
 
 ---
 

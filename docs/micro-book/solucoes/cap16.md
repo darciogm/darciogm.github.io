@@ -517,3 +517,141 @@ O **Stackelberg gera maior excedente total** por duas razões:
 O custo total de produção no Stackelberg é \( 10 \cdot 50 + 20 \cdot 15 = 800 \), enquanto no Cournot é \( 10 \cdot 100/3 + 20 \cdot 70/3 = 1000/3 + 1400/3 = 2400/3 = 800 \). Os custos totais são iguais neste caso, então o ganho de bem-estar do Stackelberg vem inteiramente do maior volume de produção e, consequentemente, do maior excedente do consumidor. A vantagem de primeiro movimento permite à líder expandir sua produção de forma crível, disciplinando a seguidora e aproximando o resultado do competitivo.
 
 ↩ [Voltar ao enunciado](../cap16/index.md#ex-16-5)
+
+---
+
+## ✏️ Exercício 16.6 {#ex-16-6}
+
+**Hotelling com \( t = 4 \), \( c = 2 \), firmas em 0 e 1.**
+
+### (a) Equilíbrio
+
+No equilíbrio simétrico de Hotelling com custos marginais: \( p_1^* = p_2^* = c + t = 2 + 4 = 6 \).
+
+Demandas: \( q_1 = q_2 = 1/2 \) (cada firma serve metade do mercado).
+
+Lucros: \( \pi_1 = \pi_2 = (p - c) \cdot q = (6-2) \cdot 1/2 = 2 \).
+
+### (b) Se \( t = 1 \)
+
+\( p^* = 2 + 1 = 3 \), \( \pi = (3-2)/2 = 0{,}5 \).
+
+Com menor diferenciação, preços e lucros caem. No limite \( t \to 0 \), o mercado converge para Bertrand com bens homogêneos (\( p = c \), lucro zero).
+
+### (c) Firma 1 em \( x_1 = 1/4 \)
+
+O consumidor indiferente: \( p_1 + t|x - 1/4| = p_2 + t|x - 1| \). No equilíbrio simétrico em preços, isso se resolve numericamente. A firma 1, ao se aproximar do centro, captura mais consumidores e força a firma 2 a reduzir preços. Em geral, a firma que se aproxima do centro ganha market share mas intensifica a competição (princípio de diferenciação mínima vs. máxima de Hotelling).
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-6)
+
+---
+
+## ✏️ Exercício 16.7 {#ex-16-7}
+
+**Competição monopolística com \( S = 1000 \), \( b = 2 \), \( C(q) = 100 + 10q \).**
+
+### (a) Equilíbrio simétrico de curto prazo
+
+No equilíbrio simétrico, \( p_i = \bar{p} \) para todo \( i \), então \( q = S/n = 1000/n \).
+
+Cada firma maximiza lucro tomando \( \bar{p} \) como dado. A CPO dá \( p = c + q/(2b) = 10 + 1000/(2 \cdot 2 \cdot n) = 10 + 250/n \).
+
+Lucro: \( \pi = (p - c)q - f = (250/n)(1000/n) - 100 = 250.000/n^2 - 100 \).
+
+### (b) Longo prazo (\( \pi = 0 \))
+
+\( 250.000/n^2 = 100 \implies n^2 = 2.500 \implies n^* = 50 \).
+
+### (c) Excesso de capacidade
+
+No equilíbrio: \( q^* = 1000/50 = 20 \). O custo médio mínimo ocorre onde \( CMe = 100/q + 10 \) é minimizado, ou seja, quando o custo fixo por unidade é arbitrariamente pequeno — formalmente, \( q_{eff} \to \infty \). Na prática, \( q = 20 \) implica \( CMe = 100/20 + 10 = 15 \), que excede o custo marginal (10). A firma opera com excesso de capacidade: produz menos do que minimizaria seu custo médio.
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-7)
+
+---
+
+## ✏️ Exercício 16.8 {#ex-16-8}
+
+**5 firmas: 35%, 25%, 20%, 12%, 8%.**
+
+### (a) HHI
+
+\( HHI = 35^2 + 25^2 + 20^2 + 12^2 + 8^2 = 1.225 + 625 + 400 + 144 + 64 = 2.458 \).
+
+Classificação: **moderadamente concentrado** (entre 1.500 e 2.500).
+
+### (b) Fusão das duas maiores
+
+Novo HHI: \( 60^2 + 20^2 + 12^2 + 8^2 = 3.600 + 400 + 144 + 64 = 4.208 \).
+
+\( \Delta HHI = 4.208 - 2.458 = 1.750 \).
+
+A variação supera amplamente o limiar de 200 pontos em mercado concentrado. A fusão receberá escrutínio detalhado e provavelmente será contestada ou condicionada a remédios.
+
+Note: \( \Delta HHI = 2 \times s_1 \times s_2 = 2 \times 35 \times 25 = 1.750 \). Essa fórmula mostra que a variação do HHI é exatamente o dobro do produto das participações das firmas que se fundem.
+
+### (c) Eficiências
+
+A redução de 5% no custo marginal da firma combinada precisa ser confrontada com o aumento esperado de preço. Com demanda linear e Cournot, a firma com custo menor produz mais, e o preço de equilíbrio cai. Contudo, a concentração de 60% confere poder de mercado substancial. Qualitativamente, uma redução de custos de 5% é improvável que compense um aumento de participação de 35% para 60%. A autoridade antitruste provavelmente exigiria eficiências maiores ou remédios estruturais (desinvestimento de marcas/ativos).
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-8)
+
+---
+
+## ✏️ Exercício 16.9 {#ex-16-9}
+
+**Bertrand repetido assimétrico: \( c_1 = 10 \), \( c_2 = 20 \), \( Q = 100 - p \).**
+
+### (a) Preço de monopólio
+
+Com \( c = 10 \) (menor custo): \( p^m = (100 + 10)/2 = 55 \), \( Q^m = 45 \), \( \pi^m = (55-10) \times 45 = 2.025 \).
+
+### (b) Divisão da produção
+
+No cartel eficiente, toda a produção é feita pela firma 1 (custo menor). A firma 2 não produz, mas recebe uma transferência lateral. Suponha divisão igualitária: cada firma recebe \( \pi^m/2 = 1.012{,}5 \).
+
+### (c) \(\delta\) mínimo
+
+**Firma 1:** Se desviar, cobra \( p^m - \epsilon \) e obtém \( \approx \pi^m = 2.025 \). Cooperando, obtém \( 1.012{,}5 \) por período.
+
+\( \frac{1.012{,}5}{1 - \delta} \geq 2.025 \implies \delta \geq 1/2 \).
+
+**Firma 2:** Se desviar, cobra \( p^m - \epsilon = 55 - \epsilon \) e obtém \( \approx (55 - 20) \times 45 = 1.575 \) (usando seu próprio custo). Cooperando, recebe 1.012,5.
+
+\( \frac{1.012{,}5}{1 - \delta} \geq 1.575 \implies 1.012{,}5 \geq 1.575(1-\delta) \implies \delta \geq 1 - 1.012{,}5/1.575 = 1 - 0{,}643 = 0{,}357 \).
+
+A firma 1 (eficiente) tem **maior incentivo para desviar** (precisa de \( \delta \geq 0{,}5 \)), pois seu lucro de desvio é maior (captura toda a demanda ao preço de monopólio com custo baixo). O \( \delta \) mínimo para sustentação é \( \delta = 0{,}5 \), determinado pela restrição da firma 1.
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-9)
+
+---
+
+## ✏️ Exercício 16.10 {#ex-16-10}
+
+**Salop: perímetro 1, \( t = 1 \), \( c = 0 \).**
+
+### (a) Preço e lucro de equilíbrio
+
+No Salop simétrico, cada firma compete com suas duas vizinhas. A distância entre firmas vizinhas é \( 1/n \). O consumidor indiferente entre duas firmas vizinhas está a \( 1/(2n) \) de cada.
+
+No equilíbrio simétrico: \( p^*(n) = t/n = 1/n \). Demanda por firma: \( q = 1/n \). Lucro: \( \pi^*(n) = p \cdot q - f = (1/n)(1/n) - f = 1/n^2 - f \).
+
+### (b) Entrada livre
+
+\( \pi^*(n^*) = 0 \implies 1/(n^*)^2 = f \implies n^* = 1/\sqrt{f} \).
+
+### (c) Número socialmente ótimo
+
+O planejador minimiza custos totais = custos fixos + custos de transporte:
+
+\( C_T(n) = nf + n \int_0^{1/(2n)} t \cdot x \, dx \cdot 2 = nf + n \cdot 2 \cdot \frac{t}{2} \cdot \frac{1}{4n^2} = nf + \frac{1}{4n} \)
+
+(com \( t = 1 \)).
+
+CPO: \( f - 1/(4n^2) = 0 \implies n^{**} = 1/(2\sqrt{f}) = n^*/2 \). ✓
+
+### (d) Externalidade
+
+Há **excesso de entrada** (\( n^* = 2 n^{**} \)). A externalidade é o **efeito roubo de negócios** (business stealing): cada entrante captura clientes de firmas existentes, reduzindo seus lucros, sem internalizar essa perda. A entrada privada é excessiva porque cada firma conta apenas o lucro que ganha, ignorando o lucro que rouba das vizinhas.
+
+↩ [Voltar ao enunciado](../cap16/index.md#ex-16-10)

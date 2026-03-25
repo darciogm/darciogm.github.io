@@ -386,6 +386,12 @@ A influência do Teorema de Coase na **análise econômica do direito** (Law and
 
     **Interpretação econômica:** Este exemplo confirma o Teorema de Coase: a atribuição dos direitos de propriedade não afeta a eficiência alocativa, apenas a distribuição de renda. Contudo, na prática, se houvesse centenas de pesqueiros afetados ou se a informação sobre os danos fosse assimétrica, os custos de negociação tornariam a solução privada inviável.
 
+!!! warning "⚠️ Erro Comum"
+
+    **Invocar o Teorema de Coase para concluir que intervenção governamental nunca é necessária.**
+
+    O Teorema de Coase exige custos de transação **nulos** e direitos de propriedade **bem definidos** — condições que raramente se verificam em problemas reais de externalidade. Poluição atmosférica afeta milhões de pessoas dispersas; mudança climática envolve bilhões de agentes em dezenas de países. Nesses casos, negociação bilateral é inviável e instrumentos como impostos pigouvianos ou mercados de permissões são indispensáveis. O próprio Coase enfatizava que seu teorema era um *benchmark* teórico: a mensagem central do artigo é que, quando custos de transação são positivos, a **atribuição dos direitos de propriedade importa** para a eficiência — e o desenho institucional (incluindo regulação) é fundamental.
+
 ### 20.4.3 Regulação direta (command and control)
 
 Quando os custos de transação são elevados e a informação sobre os custos externos é imperfeita, as soluções de Pigou e Coase podem ser difíceis de implementar. Nesses casos, governos frequentemente recorrem à regulação direta — a abordagem mais antiga e ainda mais utilizada no mundo para lidar com externalidades, embora tipicamente a menos eficiente.
@@ -492,6 +498,16 @@ O resultado de Weitzman (1974) — formalmente desenvolvido em "Prices vs. Quant
     **Análise:** O programa de SO₂ demonstrou três resultados centrais da teoria: (i) o mercado de permissões igualou os custos marginais de abatimento entre usinas, gerando a meta ambiental ao menor custo possível — estimativas indicam economia de 15–20% em relação à regulação direta equivalente (Ellerman et al., 2000); (ii) o mecanismo incentivou inovação tecnológica, pois usinas que investiam em tecnologias mais limpas podiam vender permissões excedentes; (iii) o teto decrescente garantiu a meta ambiental com certeza quantitativa. Este caso serviu de modelo para o EU ETS e para o Sistema Brasileiro de Comércio de Emissões (SBCE).
 
     **Fonte:** Ellerman, A. D.; Joskow, P. L.; Schmalensee, R.; Montero, J.-P.; Bailey, E. M. (2000). *Markets for Clean Air: The U.S. Acid Rain Program*. Cambridge University Press.
+
+!!! box-brasil "🇧🇷 Box Brasil 20.3 — Mercado voluntário de créditos de carbono e projetos REDD+ na Amazônia"
+
+    **Contexto:** Além do mercado regulado (SBCE, em fase de implementação) e do RenovaBio (Capítulo 24), o Brasil abriga um dos maiores mercados voluntários de créditos de carbono do mundo, impulsionado por projetos de **REDD+** (Redução de Emissões por Desmatamento e Degradação Florestal) na Amazônia. No mercado voluntário, empresas compram créditos de carbono para compensar suas emissões, motivadas por compromissos de neutralidade climática (*net zero*), pressão de investidores ESG e reputação corporativa — sem obrigação legal.
+
+    **Dados:** O Brasil emitiu mais de 40 milhões de créditos de carbono voluntários entre 2020 e 2024, sendo o maior emissor de créditos baseados em florestas do mundo. Os projetos REDD+ no Pará, Amazonas e Mato Grosso representam a maior parte desse volume. O preço dos créditos de carbono florestais brasileiros oscilou entre US$ 5 e US$ 15/tCO₂e no mercado voluntário em 2023–2024 — abaixo dos preços do EU ETS (EUR 55–100) mas acima dos CBIOs (R$ 90, ~US$ 18). A Verra (principal certificadora) registrou mais de 120 projetos REDD+ no Brasil até 2024, cobrindo área superior a 30 milhões de hectares de floresta.
+
+    **Análise:** Os créditos REDD+ são uma aplicação direta do princípio coaseano discutido neste capítulo: ao criar um "direito de propriedade" sobre o carbono armazenado na floresta, o mecanismo permite transações voluntárias entre o detentor do direito (proprietário ou comunidade que mantém a floresta em pé) e o poluidor (empresa que deseja compensar emissões). O custo de oportunidade de não desmatar — renunciar à receita da pecuária ou da soja — é compensado pela receita dos créditos de carbono. Contudo, o mercado enfrenta problemas de **adicionalidade** (os créditos representam redução real de emissões ou a floresta seria preservada de qualquer forma?), **permanência** (se a floresta for desmatada no futuro, o crédito perde validade) e **dupla contagem** (o mesmo carbono contado pelo Brasil em suas NDCs e pela empresa compradora em seu relatório ESG). Esses problemas espelham as dificuldades de definição e enforcement de direitos de propriedade que limitam a solução de Coase na prática.
+
+    **Para refletir:** Se o preço do crédito voluntário (US$ 5–15/tCO₂) é muito inferior ao custo social estimado do carbono (US$ 50–200/tCO₂, segundo Nordhaus e Stern), o mercado voluntário está subvalorizando a externalidade. Qual mecanismo — mercado regulado com teto vinculante ou imposto pigouviano sobre carbono — seria mais eficaz para corrigir essa subvalorização?
 
 ---
 
@@ -941,6 +957,58 @@ O mecanismo VCG tem aplicações práticas que vão além dos bens públicos. O 
 
 ---
 
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. Uma externalidade negativa de produção faz com que o mercado livre produza:"
+    - (a) Menos que o nível socialmente ótimo
+    - (b) Exatamente o nível socialmente ótimo
+    - (c) Mais que o nível socialmente ótimo, pois o custo social excede o custo privado
+    - (d) Zero unidades do bem
+
+    ??? success "Resposta"
+        **(c)** Com externalidade negativa, o custo social marginal (CMg privado + custo externo) excede o custo privado. O mercado iguala preço ao custo privado, produzindo além do ótimo social (onde preço = custo social marginal). As unidades entre os dois equilíbrios geram perda de bem-estar líquida. A alternativa (a) descreve externalidade positiva.
+
+??? question "2. O Teorema de Coase afirma que, na ausência de custos de transação:"
+    - (a) O governo deve sempre intervir para corrigir externalidades
+    - (b) A negociação entre as partes levará ao resultado eficiente, independentemente da alocação inicial dos direitos de propriedade
+    - (c) Os direitos de propriedade não importam para a distribuição de renda
+    - (d) Externalidades nunca existem
+
+    ??? success "Resposta"
+        **(b)** Coase mostrou que, se os direitos de propriedade são bem definidos e os custos de transação são zero, as partes negociarão até eliminar a ineficiência, independentemente de quem detém o direito. A alocação final de recursos é eficiente; o que muda é a distribuição de renda. A alternativa (a) é o oposto da implicação; (c) é falsa — a alocação de direitos afeta a distribuição, não a eficiência.
+
+??? question "3. O imposto pigouviano ótimo sobre uma externalidade negativa deve ser igual a:"
+    - (a) O custo total da externalidade
+    - (b) O custo marginal externo avaliado no nível de produção socialmente ótimo
+    - (c) O lucro do poluidor
+    - (d) O custo marginal privado de produção
+
+    ??? success "Resposta"
+        **(b)** O imposto de Pigou iguala $t = \text{CMg externo}(q^*)$, avaliado na quantidade ótima. Isso internaliza a externalidade, fazendo o produtor enfrentar o custo social completo. A alternativa (a) confunde custo total com marginal; (c) e (d) não têm relação com a externalidade.
+
+??? question "4. Um bem público puro é caracterizado por:"
+    - (a) Ser produzido exclusivamente pelo governo
+    - (b) Não rivalidade no consumo e não exclusão
+    - (c) Rivalidade no consumo mas não exclusão
+    - (d) Não rivalidade mas exclusão possível
+
+    ??? success "Resposta"
+        **(b)** Não rivalidade significa que o consumo de um agente não reduz a disponibilidade para outros; não exclusão significa que é impossível (ou muito custoso) impedir o consumo de quem não paga. Exemplos: defesa nacional, iluminação pública. A alternativa (a) confunde provisão com propriedade definidora; (c) descreve recurso comum; (d) descreve bem de clube.
+
+??? question "5. A condição de Samuelson para provisão ótima de um bem público estabelece que:"
+    - (a) Cada consumidor deve pagar o mesmo valor pelo bem público
+    - (b) A soma das disposições marginais a pagar de todos os consumidores deve igualar o custo marginal de provisão
+    - (c) O bem público deve ser produzido até que o custo marginal seja zero
+    - (d) A provisão ótima é sempre zero, pois ninguém paga voluntariamente
+
+    ??? success "Resposta"
+        **(b)** Para bem público, a demanda social é a soma vertical (não horizontal) das demandas individuais: $\sum_i \text{BMg}_i = \text{CMg}$. Isso reflete que todos consomem a mesma quantidade simultaneamente. A alternativa (a) confunde com tributação uniforme; (c) ignora custos; (d) descreve o problema do carona, não a condição de ótimo.
+
+---
+
 ## 📋 Resumo do Capítulo
 
 - Externalidades ocorrem quando a ação de um agente afeta diretamente a utilidade ou produção de outro fora do sistema de preços. Externalidades negativas levam à superprodução e externalidades positivas à subprodução em relação ao ótimo social.
@@ -1039,6 +1107,57 @@ O preço do bem privado é 1 e o custo marginal do bem público é \(c\). Cada c
 (d) Mostre que \(G^{Nash} < G^*\) e interprete economicamente.
 
 [:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-5)
+
+<a id="ex-20-6"></a>**Exercício 20.6.** Uma indústria siderúrgica produz \(q\) toneladas de aço com custo total \(C(q) = 20q + 0{,}5q^2\) e vende ao preço competitivo \(P = 80\). A produção gera emissões de \(\text{CO}_2\) com custo externo \(E(q) = q^2\).
+
+(a) Determine a quantidade produzida sem regulação e a quantidade socialmente ótima.
+(b) Calcule o imposto pigouviano ótimo \(t^*\) por tonelada.
+(c) Calcule a receita fiscal gerada pelo imposto pigouviano e o peso morto eliminado.
+(d) Se o governo errasse e fixasse o imposto em \(t = 30\), qual seria a quantidade produzida e o peso morto residual?
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-6)
+
+<a id="ex-20-7"></a>**Exercício 20.7.** Um fazendeiro cria gado que invade a lavoura do vizinho, causando danos. O lucro do fazendeiro com \(n\) cabeças de gado é \(\pi_F(n) = 120n - 3n^2\) e o dano à lavoura é \(D(n) = 2n^2\). Os custos de transação são nulos e os direitos de propriedade estão bem definidos.
+
+(a) Determine o número de cabeças no equilíbrio sem negociação (fazendeiro maximiza seu lucro privado).
+(b) Determine o número socialmente ótimo de cabeças de gado.
+(c) Suponha que o fazendeiro tem o direito de criar gado livremente. Mostre que a negociação coaseana leva ao ótimo social e determine o intervalo de compensação que o lavrador pagaria ao fazendeiro.
+(d) Repita (c) supondo que o lavrador tem direito a não sofrer danos. Determine o intervalo de compensação que o fazendeiro pagaria ao lavrador.
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-7)
+
+<a id="ex-20-8"></a>**Exercício 20.8.** Considere uma economia com \(N = 50\) consumidores idênticos e um bem público \(G\). Cada consumidor \(i\) tem renda \(W = 100\) e utilidade \(U_i = x_i + 10\sqrt{G}\), onde \(x_i\) é o consumo privado. O custo de produzir \(G\) unidades do bem público é \(C(G) = G\).
+
+(a) Derive a condição de Samuelson e determine o nível eficiente \(G^*\).
+(b) No equilíbrio de Nash de contribuição voluntária (com consumidores idênticos), determine \(G^{Nash}\).
+(c) Calcule a razão \(G^{Nash}/G^*\) e interprete.
+(d) Como \(G^{Nash}/G^*\) se altera se \(N\) aumentar para 200? Interprete o efeito do tamanho do grupo.
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-8)
+
+<a id="ex-20-9"></a>**Exercício 20.9.** Um lago é utilizado por \(n\) pescadores idênticos. Cada pescador \(i\) escolhe seu esforço de pesca \(e_i \geq 0\). A captura total é \(Q = E \cdot f(E)\), onde \(E = \sum_{i=1}^{n} e_i\) é o esforço total e \(f(E) = 100 - E\) é a produtividade por unidade de esforço (que decresce com o esforço total). Cada pescador recebe fração \(e_i / E\) da captura total. O preço do peixe é \(p = 1\) e o custo por unidade de esforço é \(w = 10\).
+
+(a) Determine o esforço total de equilíbrio (acesso aberto, cada pescador toma o esforço dos outros como dado) com \(n = 10\) pescadores idênticos.
+(b) Determine o esforço total socialmente eficiente (que um planejador escolheria).
+(c) Calcule a perda de bem-estar (peso morto) do acesso aberto em relação ao ótimo social.
+(d) Proponha duas políticas concretas para alcançar o nível eficiente de esforço e explique o mecanismo de cada uma.
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-9)
+
+<a id="ex-20-10"></a>**Exercício 20.10.** Um regulador ambiental deseja reduzir as emissões de \(\text{SO}_2\) em 100 toneladas. Existem três firmas com os seguintes custos marginais de abatimento:
+
+\[
+CMgA_1(a_1) = 2a_1, \quad CMgA_2(a_2) = 4a_2, \quad CMgA_3(a_3) = a_3
+\]
+
+onde \(a_i\) é o abatimento da firma \(i\) em toneladas.
+
+(a) Compare a alocação custo-efetiva com um sistema de cap-and-trade e com um imposto uniforme sobre emissões. Mostre que ambos os instrumentos de mercado atingem o mesmo resultado.
+(b) Calcule o custo total de abatimento na alocação custo-efetiva e compare com o abatimento uniforme (cada firma abate \(100/3\) toneladas).
+(c) Suponha que o regulador não sabe os custos de abatimento das firmas e que o dano marginal da poluição é constante e igual a \(D' = 40\). Compare imposto (fixado em \(t = 40\)) versus cap-and-trade (cap de 100 toneladas) quando os verdadeiros custos de abatimento são 50% maiores do que o regulador estimou. Qual instrumento é preferível?
+(d) Relacione sua resposta em (c) com o resultado de Weitzman (1974) sobre preços vs. quantidades.
+
+[:material-arrow-right: Ver solução](../solucoes/cap20.md#ex-20-10)
 
 ---
 
@@ -1151,7 +1270,7 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** Este é um estudo com dados brasileiros que demonstra empiricamente como a regulação direta (command-and-control) pode ser eficaz quando combinada com monitoramento adequado. O resultado conecta-se diretamente ao Box Brasil sobre desmatamento na Amazônia e mostra que, na prática, o enforcement é tão importante quanto o desenho do instrumento regulatório — um complemento essencial à discussão teórica de impostos pigouvianos e mercados de permissão.
 
-??? pesquisa "[Chay, K. Y.; Greenstone, M. (2003). The Impact of Air Pollution on Infant Mortality: Evidence from Geographic Variation in Pollution Shocks Induced by a Recession. *Quarterly Journal of Economics*, 118(3), 1121–1167.](https://doi.org/10.1093/qje/118.3.1121)" <!-- [VERIFICAR DOI] -->
+??? pesquisa "[Chay, K. Y.; Greenstone, M. (2003). The Impact of Air Pollution on Infant Mortality: Evidence from Geographic Variation in Pollution Shocks Induced by a Recession. *Quarterly Journal of Economics*, 118(3), 1121–1167.](https://doi.org/10.1093/qje/118.3.1121)"
     **Pergunta central:** A poluição atmosférica tem efeito causal sobre a mortalidade infantil?
 
     **Método:** Os autores exploram a recessão de 1981–1982 nos Estados Unidos como um choque exógeno sobre a poluição do ar. A recessão reduziu a atividade industrial de forma heterogênea entre condados, gerando variação geográfica nas reduções de partículas suspensas totais (TSPs). Utilizando essa variação como instrumento, estimam o efeito causal da poluição sobre a mortalidade infantil em um modelo de variáveis instrumentais.
@@ -1159,6 +1278,33 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
     **Resultado principal:** Uma redução de 1% nas TSPs causou uma queda de aproximadamente 0,5% na mortalidade infantil. Os autores estimam que as reduções na poluição associadas ao *Clean Air Act* salvaram aproximadamente 2.500 vidas de bebês por ano na década de 1970. O efeito é particularmente forte para a mortalidade neonatal (primeiro mês de vida) e nas regiões com maiores níveis iniciais de poluição.
 
     **Relevância para o capítulo:** O estudo quantifica o **custo externo** da poluição industrial em termos de vidas humanas — uma informação essencial para calibrar o imposto pigouviano ótimo discutido na Seção 20.4.1. Se o custo marginal externo inclui mortalidade infantil, os impostos pigouvianos corretos devem ser substancialmente maiores do que aqueles baseados apenas em danos materiais. O artigo também demonstra que a regulação ambiental (Clean Air Act) gerou benefícios mensuráveis, justificando a intervenção governamental quando externalidades são severas.
+
+??? pesquisa "[Fehr, E.; Gächter, S. (2000). Cooperation and Punishment in Public Goods Experiments. *American Economic Review*, 90(4), 980–994.](https://doi.org/10.1257/aer.90.4.980)"
+    **Pergunta central:** A possibilidade de punir free-riders sustenta a cooperação na provisão voluntária de bens públicos?
+
+    **Método:** Os autores conduzem experimentos de laboratório com jogos de bens públicos repetidos. Nos tratamentos, grupos de quatro participantes decidem quanto contribuir a um fundo comum (bem público) a partir de uma dotação individual. No tratamento-controle, não há possibilidade de punição. No tratamento com punição, após observar as contribuições, cada participante pode gastar parte de seus ganhos para reduzir os ganhos de outros membros do grupo. Comparam tratamentos com grupos fixos (*partner*) e grupos aleatórios (*stranger*).
+
+    **Resultado principal:** Sem punição, as contribuições declinam progressivamente ao longo das rodadas, convergindo para níveis próximos de zero — o padrão clássico de free-riding. Com a possibilidade de punição, as contribuições aumentam significativamente ao longo do tempo, estabilizando-se em torno de 50–90% da dotação. Free-riders são punidos de forma consistente, e a ameaça de punição sustenta a cooperação mesmo quando os participantes mudam de grupo a cada rodada.
+
+    **Relevância para o capítulo:** O experimento demonstra empiricamente o problema do carona discutido na Seção 20.6 e mostra que instituições de punição descentralizada podem mitigar a subprovisão de bens públicos. O resultado complementa a análise teórica dos mecanismos de revelação (Clarke, Groves) ao mostrar que, na prática, normas sociais e sanções informais também podem sustentar a cooperação — um insight relevante para o desenho de políticas públicas que dependem de conformidade voluntária.
+
+??? pesquisa "[Ostrom, E.; Walker, J.; Gardner, R. (1992). Covenants With and Without a Sword: Self-Governance is Possible. *American Political Science Review*, 86(2), 404–417.](https://doi.org/10.2307/1964229)"
+    **Pergunta central:** Comunidades que exploram recursos comuns conseguem evitar a tragédia dos comuns por meio de autogovernança, sem necessidade de regulação externa?
+
+    **Método:** Os autores conduzem experimentos de laboratório com jogos de recurso comum (*common-pool resource*), nos quais participantes decidem quanto extrair de um recurso compartilhado cuja produtividade declina com o uso total. Comparam quatro tratamentos: (i) sem comunicação (baseline), (ii) com comunicação face-a-face antes das decisões, (iii) com comunicação e possibilidade de sanções custosas entre pares, e (iv) com comunicação e mecanismo de sanções com custo reduzido.
+
+    **Resultado principal:** Sem comunicação, os participantes sobre-exploram o recurso conforme previsto pela teoria (tragédia dos comuns). A comunicação sozinha já eleva substancialmente a eficiência (de ~35% para ~55–70% do ótimo social). Quando os participantes podem também aplicar sanções entre si, a eficiência sobe para 85–93% do ótimo. Os "acordos" (*covenants*) firmados durante a comunicação são cumpridos mesmo sem enforcement externo, mas são ainda mais eficazes quando acompanhados da possibilidade de punição (*sword*).
+
+    **Relevância para o capítulo:** O estudo fornece evidência experimental direta para a tese central de Ostrom (1990), discutida na Seção 20.7 (Tragédia dos Comuns): comunidades podem governar recursos comuns de forma eficiente por meio de instituições de autogovernança, sem recorrer à privatização ou à regulação estatal. O resultado desafia a dicotomia Pigou (regulação) vs. Coase (mercado) ao mostrar uma terceira via — a governança comunitária — com implicações diretas para a gestão de recursos pesqueiros, florestais e hídricos no Brasil.
+
+---
+
+!!! tip "🤖 Exercício com IA"
+    **IA.7 — Tragédia dos Comuns**
+
+    Descreva à IA o problema da tragédia dos comuns com 10 pescadores e peça para ela encontrar o equilíbrio de Nash e o ótimo social. A IA identificou corretamente a externalidade? Peça para ela propor 3 soluções e avalie se são consistentes com a teoria (Pigou, Coase, regulação direta).
+
+    [:material-arrow-right: Ver exercício completo](../exercicios-ia.md#ia-7)
 
 ---
 

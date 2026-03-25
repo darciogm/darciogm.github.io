@@ -1,10 +1,13 @@
-# Capítulo 16 — Quando Gigantes Competem (ou Combinam)
+# Capítulo 16 — Oligopólio e Organização Industrial
 
 A maioria dos mercados reais situa-se entre os extremos teóricos da concorrência perfeita e do monopólio. Em um **oligopólio**, um pequeno número de firmas detém parcela significativa do mercado, e cada uma reconhece que suas decisões afetam — e são afetadas por — as decisões das rivais. Essa **interdependência estratégica** é o traço definidor do oligopólio e o que o torna analiticamente mais complexo do que as estruturas polares.
 
 A teoria dos oligopólios recorre extensivamente à **teoria dos jogos** para modelar a interação estratégica entre firmas. Os resultados são extremamente sensíveis às hipóteses sobre a variável de decisão (preço ou quantidade), a sequência de movimentos (simultâneo ou sequencial), o horizonte temporal (jogo de uma rodada ou repetido) e a natureza da informação.
 
-Este capítulo apresenta os modelos clássicos de oligopólio — Bertrand, Cournot, Stackelberg — e suas extensões, incluindo diferenciação de produto, colusão tácita, dissuasão de entrada e inovação. A análise é complementada por uma discussão do oligopólio bancário brasileiro.
+Este capítulo parte dos modelos clássicos de oligopólio — Bertrand, Cournot, Stackelberg (formalizados no Capítulo 9a) — e avança para temas centrais da organização industrial moderna: diferenciação de produto, colusão tácita, dissuasão de entrada, inovação, competição monopolística, fusões e política antitruste. A análise é complementada por discussões da experiência brasileira em defesa da concorrência.
+
+!!! note "Pré-requisito: Capítulo 9a"
+    Os modelos de Cournot, Bertrand e Stackelberg foram introduzidos no Capítulo 9a (Seção 9a.5) como aplicações da teoria dos jogos. Aqui, retomamos esses modelos com foco em suas implicações para a organização industrial e avançamos para extensões — diferenciação de produto, colusão, dissuasão de entrada, fusões e regulação.
 
 ---
 
@@ -86,14 +89,12 @@ O resultado é paradoxal: pela equação $\eqref{eq:16.1}$, bastam **duas firmas
 
 O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóteses:
 
-1. **Diferenciação de produto**: se os bens não são substitutos perfeitos, as firmas retêm algum poder de mercado mesmo cobrando preços diferentes (Seção 16.5).
-2. **Restrições de capacidade**: se as firmas têm capacidade limitada, a firma de preço mais baixo não pode atender toda a demanda (Seção 16.4).
-3. **Interação repetida**: em jogos repetidos, a ameaça de retaliação futura pode sustentar preços acima do custo (Seção 16.6).
+1. **Diferenciação de produto**: se os bens não são substitutos perfeitos, as firmas retêm algum poder de mercado mesmo cobrando preços diferentes (Seção 16.6).
+2. **Restrições de capacidade**: se as firmas têm capacidade limitada, a firma de preço mais baixo não pode atender toda a demanda (Seção 16.5).
+3. **Interação repetida**: em jogos repetidos, a ameaça de retaliação futura pode sustentar preços acima do custo (Seção 16.7).
 4. **Custos marginais assimétricos**: se \(c_1 < c_2\), o equilíbrio é \(p_1^* = c_2\) (ou ligeiramente abaixo), e a firma 1 obtém lucro positivo.
 
 ---
-
-### Gráfico interativo: Competição de Bertrand
 
 <iframe src="../graficos/cap16/bertrand.html" title="Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal" class="graph-iframe"></iframe>
 
@@ -159,7 +160,11 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 
     **Por que isso importa:** O modelo de Cournot mostra que bastam poucas empresas para gerar alguma concorrência, e que o resultado melhora para o consumidor conforme o número de competidores aumenta.
 
-### Gráfico interativo: Duopólio de Cournot
+!!! warning "⚠️ Erro Comum"
+
+    **Confundir o equilíbrio de Cournot com colusão ou com concorrência perfeita.**
+
+    O equilíbrio de Cournot **não** é colusão: cada firma maximiza seu próprio lucro *individualmente*, tomando a quantidade da rival como dada. O resultado conjunto é pior para as firmas do que a colusão (que maximizaria o lucro conjunto), mas melhor do que Bertrand com bens homogêneos. Formalmente: \(Q^{monopólio} < Q^{Cournot} < Q^{competitivo}\) e \(p^{competitivo} < p^{Cournot} < p^{monopólio}\). Outro erro frequente é trocar a variável estratégica: no Cournot as firmas escolhem **quantidades** (e o preço se ajusta pelo mercado), enquanto no Bertrand escolhem **preços**. Essa diferença gera resultados radicalmente distintos.
 
 <iframe src="../graficos/cap16/cournot.html" title="Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\)" class="graph-iframe"></iframe>
 
@@ -203,8 +208,6 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
     **Por que isso importa:** Essa lógica explica por que grandes empresas investem agressivamente em capacidade e infraestrutura antes dos rivais — o compromisso crível vira vantagem estratégica.
 
 ---
-
-### Gráfico interativo: Liderança de Stackelberg
 
 <iframe src="../graficos/cap16/stackelberg.html" title="Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora" class="graph-iframe"></iframe>
 
@@ -419,9 +422,7 @@ A [Tabela 16.1](#tabela-16-1) lista os principais fatores que facilitam a susten
 
 ## 16.8 Decisões de longo prazo: investimento, entrada e saída
 
-Os modelos de Bertrand, Cournot e Stackelberg concentram-se em decisões de curto prazo — preço ou quantidade em um mercado com estrutura dada. No longo prazo, porém, as firmas podem alterar a própria estrutura do jogo: investir em capacidade, entrar em novos mercados, desenvolver tecnologias ou adotar posicionamentos estratégicos que mudam as regras da competição futura. Essas decisões de longo prazo são frequentemente mais importantes do que as escolhas de curto prazo, pois definem as condições sob as quais a competição se desenrolará.
-
-No longo prazo, as firmas tomam decisões sobre investimentos em capacidade, P&D, localização e publicidade que afetam as condições de competição nos períodos subsequentes. Essas decisões têm natureza **estratégica**: alteram a estrutura do jogo e, portanto, o comportamento de equilíbrio.
+Os modelos de Bertrand, Cournot e Stackelberg concentram-se em decisões de curto prazo — preço ou quantidade em um mercado com estrutura dada. No longo prazo, porém, as firmas podem alterar a própria estrutura do jogo: investir em capacidade, P&D, localização e publicidade, ou adotar posicionamentos estratégicos que mudam as regras da competição futura. Essas decisões têm natureza **estratégica** — alteram a estrutura do jogo e o comportamento de equilíbrio — e são frequentemente mais importantes do que as escolhas de curto prazo, pois definem as condições sob as quais a competição se desenrolará.
 
 ### Compromisso estratégico
 
@@ -504,7 +505,7 @@ Mankiw e Whinston (1986) demonstraram que, sob condições gerais, o equilíbrio
 
 ## 16.12 Inovação sob oligopólio
 
-Para encerrar a análise do oligopólio, abordamos uma dimensão que transcende as decisões de preço e quantidade: a inovação tecnológica. Será que firmas em mercados concentrados investem mais ou menos em pesquisa e desenvolvimento do que firmas em mercados competitivos? A resposta envolve um confronto entre duas forças opostas, identificadas respectivamente por Arrow e por Gilbert e Newbery, cuja resultante depende das características específicas de cada mercado.
+Além das decisões de preço e quantidade, os oligopolistas enfrentam uma dimensão igualmente central: a inovação tecnológica. Será que firmas em mercados concentrados investem mais ou menos em pesquisa e desenvolvimento do que firmas em mercados competitivos? A resposta envolve um confronto entre duas forças opostas, identificadas respectivamente por Arrow e por Gilbert e Newbery, cuja resultante depende das características específicas de cada mercado.
 
 ### Incentivos à inovação
 
@@ -522,7 +523,7 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ---
 
-## 16.13 — Comparação dos modelos de oligopólio
+## 16.13 Comparação dos modelos de oligopólio
 
 A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
 
@@ -593,8 +594,6 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 
 ---
 
-### Gráfico interativo: Comparação de estruturas de mercado
-
 <iframe src="../graficos/cap16/comparacao-oligopolio.html" title="Figura 16.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\)" class="graph-iframe"></iframe>
 
 <div class="caption-obj" markdown>
@@ -603,14 +602,169 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 
 ---
 
+## 16.14 Competição Monopolística
+
+Os modelos de oligopólio analisados até aqui tratam de mercados com poucos produtores. No outro extremo, a concorrência perfeita assume muitos produtores de bens idênticos. Mas existe uma estrutura intermediária que combina muitas firmas com diferenciação de produto: a **competição monopolística**, formalizada por Edward Chamberlin (1933) e Joan Robinson (1933).
+
+!!! definition "Competição Monopolística"
+    A **competição monopolística** é uma estrutura de mercado em que: (i) há muitas firmas; (ii) cada firma produz um bem diferenciado (substituto imperfeito dos demais); (iii) há livre entrada e saída de firmas no longo prazo.
+
+No curto prazo, cada firma enfrenta uma curva de demanda negativamente inclinada (pois seu produto é diferenciado) e maximiza lucro igualando receita marginal ao custo marginal — comportando-se como uma mini-monopolista sobre sua variedade. No longo prazo, a livre entrada elimina os lucros econômicos: novas firmas entram até que a curva de demanda de cada firma incumbente se desloque para a esquerda e tangencie a curva de custo médio. No equilíbrio de longo prazo:
+
+\[
+p^* = CMe(q^*), \quad RMg(q^*) = CMg(q^*) \label{eq:16.17} \tag{16.17}
+\]
+
+A tangência implica que cada firma opera com **excesso de capacidade**: produz menos do que a quantidade que minimizaria seu custo médio. O preço supera o custo marginal (poder de mercado), mas o lucro econômico é zero (livre entrada). A "ineficiência" do excesso de capacidade pode ser vista como o custo da variedade — os consumidores pagam um pouco mais, mas têm acesso a uma gama diversificada de produtos.
+
+A competição monopolística é empiricamente relevante para muitos mercados: restaurantes, varejo de vestuário, cabeleireiros, aplicativos de celular, livros. A diferenciação é horizontal (gostos diferentes) mais do que vertical (qualidade diferente), conectando-se diretamente ao modelo de Hotelling da Seção 16.6.
+
+!!! box-mundo "🌍 Box Mundo 16.1 — Investigações antitruste da UE contra Big Tech"
+
+    **Contexto:** A Comissão Europeia tem sido a autoridade antitruste mais agressiva do mundo no combate às práticas de grandes plataformas digitais. Desde 2017, a UE aplicou multas bilionárias a Google, Apple, Meta e Amazon por abuso de posição dominante, culminando na aprovação do Digital Markets Act (DMA) em 2022.
+
+    **Dados:** A Google recebeu três multas da Comissão Europeia totalizando €8,25 bilhões: €2,42 bi por favorecimento do Google Shopping nos resultados de busca (2017); €4,34 bi por exigir pré-instalação de apps no Android (2018); e €1,49 bi por cláusulas restritivas em contratos de publicidade (2019). A Apple foi multada em €1,8 bi (2024) por práticas anticompetitivas na App Store contra serviços de streaming musical (caso Spotify). O DMA designou seis empresas como "gatekeepers" (Alphabet, Amazon, Apple, ByteDance, Meta, Microsoft) sujeitas a obrigações de interoperabilidade e não-discriminação.
+
+    **Análise:** Os casos ilustram dois temas centrais deste capítulo: *barreiras à entrada* (Seção 16.9) e *abuso de posição dominante*. As plataformas digitais combinam economias de escala, efeitos de rede e controle de ecossistemas que criam barreiras à entrada formidáveis. A diferença entre a abordagem europeia (regulação ex ante via DMA) e a americana (enforcement ex post via litígios caso a caso) reflete visões distintas sobre o trade-off entre regulação e inovação discutido na Seção 16.15.
+
+    **Para refletir:** Plataformas digitais se encaixam melhor no modelo de monopólio, oligopólio ou competição monopolística? A resposta pode depender de como se define o "mercado relevante".
+
+!!! box-mundo "🌍 Box Mundo 16.2 — OPEP+ e os limites da coordenação entre produtores"
+
+    **Contexto:** A Organização dos Países Exportadores de Petróleo (OPEP), fundada em 1960, é o cartel mais longevo e visível do mundo. Desde 2016, opera como OPEP+ com a adesão da Rússia e outros produtores, controlando cerca de 40% da produção mundial de petróleo.
+
+    **Dados:** Segundo a OPEP, os países membros controlaram aproximadamente 36 milhões de barris/dia em 2023. A Arábia Saudita, com capacidade ociosa de ~3 mb/d, funciona como "swing producer" que disciplina o cartel. Historicamente, a OPEP enfrentou crises de colusão: em 2014-2016, a recusa da Arábia Saudita em cortar produção levou o preço do barril de US$ 110 para US$ 30, devastando produtores de shale oil nos EUA. Em 2020, uma guerra de preços entre Arábia Saudita e Rússia fez o preço do WTI atingir valores negativos pela primeira vez na história.
+
+    **Análise:** A OPEP ilustra perfeitamente as tensões da Seção 16.7 (colusão). A condição de sustentabilidade \(\delta \geq 1 - 1/n\) explica por que a OPEP funciona melhor com menos membros efetivos (Arábia Saudita como líder de Stackelberg) do que como cartel igualitário. Os episódios de colapso são consistentes com a teoria: quando choques de demanda negativos reduzem o lucro de cooperação, a tentação de desviar supera o benefício de cooperar, e o cartel se desfaz — temporariamente.
+
+    **Para refletir:** O shale oil americano funciona como uma *backstop technology* que limita o poder de mercado da OPEP?
+
+!!! box-brasil "🇧🇷 Box Brasil 16.3 — A formação da Ambev e a análise do CADE"
+
+    **Contexto:** Em 1999, as duas maiores cervejarias brasileiras — Brahma e Antarctica — anunciaram a fusão que criaria a AmBev (Companhia de Bebidas das Américas). A operação foi o maior caso de defesa da concorrência analisado pelo CADE até então e continua sendo uma referência para o direito antitruste brasileiro.
+
+    **Dados:** Antes da fusão, Brahma e Antarctica detinham, juntas, cerca de 70% do mercado brasileiro de cervejas. A Skol (Brahma) era a marca líder. Após a fusão, a AmBev passou a controlar aproximadamente 70% do mercado. O CADE aprovou a operação em 2000, condicionada à venda da marca Bavária para uma concorrente (adquirida pela Molson). Em 2004, a AmBev fundiu-se com a belga Interbrew, formando a InBev, que depois adquiriu a Anheuser-Busch (2008), criando a AB InBev — a maior cervejaria do mundo.
+
+    **Análise:** O caso ilustra os conceitos de análise de fusões horizontais. O HHI pré-fusão era elevado (~3.500), e pós-fusão superou 5.000 — níveis que normalmente motivam bloqueio pela autoridade antitruste. O CADE, contudo, aprovou a operação com remédios (venda de marca), argumentando que: (i) havia ganhos de eficiência significativos (economias de escala em distribuição e marketing); (ii) a marca alienada permitiria manter pressão competitiva; (iii) a ameaça de importações limitaria o poder de mercado. Os críticos argumentam que a concentração resultante elevou preços e reduziu a diversidade de produtos — debate que persiste até hoje com a entrada de cervejarias artesanais e a marca Heineken (via aquisição da Brasil Kirin em 2017).
+
+    **Para refletir:** O remédio estrutural (venda de marca) foi suficiente para preservar a concorrência, ou o CADE deveria ter bloqueado a fusão?
+
+!!! box-mundo "🌍 Box Mundo 16.3 — Diferenciação de produto no mercado global de smartphones"
+
+    **Contexto:** O mercado global de smartphones é um oligopólio altamente concentrado com forte diferenciação de produto — um exemplo vivo do modelo de Hotelling e da competição monopolística. Apple e Samsung dominam as vendas, mas competem com dezenas de fabricantes em diferentes segmentos de preço.
+
+    **Dados:** Segundo a IDC, no 4º trimestre de 2023, as cinco maiores fabricantes detinham ~68% das vendas globais: Apple (24%), Samsung (17%), Xiaomi (13%), Oppo (8%) e Transsion (6%). O preço médio do iPhone (~US$ 900) é mais que o triplo do preço médio de um Xiaomi (~US$ 250), mas ambos competem indiretamente via cadeia de trade-ups. O HHI estimado do mercado global é ~1.200 (moderadamente concentrado), mas em segmentos premium (acima de US$ 800) o HHI ultrapassa 5.000 (Apple + Samsung > 90%).
+
+    **Análise:** O mercado ilustra diferenciação tanto horizontal (iOS vs. Android, design, ecossistema) quanto vertical (qualidade de câmera, processador, materiais). A diferenciação permite que Apple cobre preços muito acima do custo marginal (Lerner estimado de 30-40%) sem perder todos os clientes — exatamente como prevê o modelo de Hotelling (Seção 16.6). O custo de transporte \(t\) é aqui o custo de troca de ecossistema (migrar de iOS para Android implica perder apps, configurações e compatibilidade com outros dispositivos Apple).
+
+    **Para refletir:** A estratégia da Apple de manter um ecossistema "fechado" (iPhone, iPad, Mac, Apple Watch) é uma forma de aumentar \(t\) (custo de troca), elevando seu poder de mercado. Isso é eficiência ou abuso de posição dominante?
+
+---
+
+## 16.15 Fusões e Política Antitruste
+
+As fusões horizontais — entre firmas que competem no mesmo mercado — são o campo mais ativo da política de defesa da concorrência. A análise econômica de fusões envolve um trade-off fundamental identificado por Oliver Williamson (1968): de um lado, a fusão aumenta o poder de mercado (preços sobem); de outro, pode gerar ganhos de eficiência (custos caem). A fusão é benéfica ao consumidor quando o efeito eficiência domina o efeito poder de mercado.
+
+### Análise de fusões via HHI
+
+O índice de Herfindahl-Hirschman (HHI) é a ferramenta mais utilizada por autoridades antitruste para triagem inicial de fusões:
+
+\[
+HHI = \sum_{i=1}^n s_i^2 \label{eq:16.18} \tag{16.18}
+\]
+
+onde \(s_i\) é a participação de mercado da firma \(i\) (em percentual). O guia de fusões horizontais do CADE e do DOJ/FTC dos EUA classifica mercados como:
+
+- **Não concentrado**: HHI < 1.500
+- **Moderadamente concentrado**: 1.500 ≤ HHI < 2.500
+- **Altamente concentrado**: HHI ≥ 2.500
+
+Uma fusão que eleva o HHI em mais de 200 pontos em um mercado já concentrado recebe escrutínio detalhado. As autoridades avaliam então se os ganhos de eficiência são suficientes para compensar o aumento esperado de preços — frequentemente usando simulações de fusão baseadas no modelo BLP (Berry, Levinsohn e Pakes, 1995).
+
+### Fusões verticais
+
+Fusões entre firmas em estágios diferentes da cadeia produtiva (fornecedor e cliente) não aumentam diretamente a concentração horizontal, mas podem gerar preocupações de **foreclosure**: a firma integrada pode negar insumos a concorrentes ou discriminar em favor de sua divisão downstream.
+
+---
+
+## 16.16 Regulação de Oligopólios
+
+Quando a concorrência é insuficiente para disciplinar o comportamento das firmas — seja por barreiras naturais à entrada (monopólio natural) ou por tendência à colusão — a regulação governamental se torna necessária. A teoria da regulação moderna, desenvolvida por Jean-Jacques Laffont e Jean Tirole (Nobel 2014), reconhece que o regulador tipicamente possui menos informação que a firma regulada, gerando um problema de assimetria de informação.
+
+Os principais mecanismos regulatórios são:
+
+- **Regulação por taxa de retorno** (*rate-of-return*): o regulador fixa a taxa de retorno permitida sobre o capital. Problema: incentiva sobreinvestimento em capital (efeito Averch-Johnson).
+- **Regulação por preço-teto** (*price cap*): o regulador fixa um teto para o preço, tipicamente ajustado pela inflação menos um fator de produtividade (\(RPI - X\)). Incentiva eficiência, pois a firma retém os ganhos de redução de custos.
+- **Regulação por incentivos** (Laffont-Tirole): menus de contratos que induzem a firma a revelar informação privada sobre seus custos, aproximando-se do ótimo mesmo sob assimetria de informação.
+
+No Brasil, as agências reguladoras setoriais (ANATEL, ANEEL, ANP, ANTT) utilizam variantes de price cap para setores de infraestrutura, enquanto o CADE atua na análise de fusões e investigação de cartéis.
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. O que diferencia o oligopólio da concorrência perfeita e do monopólio é:"
+    - (a) O número de consumidores no mercado
+    - (b) A interdependência estratégica — o lucro de cada firma depende das decisões das rivais
+    - (c) A homogeneidade dos produtos
+    - (d) A ausência de barreiras à entrada
+
+    ??? success "Resposta"
+        **(b)** A característica definidora do oligopólio é a interdependência estratégica: cada firma deve considerar as reações das rivais ao tomar decisões. Na concorrência perfeita, as firmas são tão pequenas que ignoram as demais; no monopólio, não há rival. A alternativa (c) não é necessária — pode haver oligopólio com diferenciação.
+
+??? question "2. No modelo de Bertrand com produtos diferenciados, o equilíbrio de Nash resulta em preços que são:"
+    - (a) Iguais ao custo marginal, como no Bertrand homogêneo
+    - (b) Acima do custo marginal, pois a diferenciação confere algum poder de mercado a cada firma
+    - (c) Iguais ao preço de monopólio
+    - (d) Indeterminados
+
+    ??? success "Resposta"
+        **(b)** A diferenciação de produto resolve o Paradoxo de Bertrand: cada firma enfrenta uma demanda residual com alguma elasticidade finita, permitindo markup positivo. Quanto maior a diferenciação, maior o poder de mercado e mais longe do resultado competitivo. A alternativa (a) descreve o caso limite de homogeneidade perfeita; (c) só ocorreria em colusão perfeita.
+
+??? question "3. A sustentabilidade de um cartel (colusão) em oligopólio é dificultada porque:"
+    - (a) Os custos de produção são muito baixos
+    - (b) Cada membro tem incentivo individual a trair o acordo, produzindo mais que a cota para obter lucros maiores no curto prazo
+    - (c) Os consumidores formam cartéis em resposta
+    - (d) A legislação antitruste é sempre eficaz em impedir cartéis
+
+    ??? success "Resposta"
+        **(b)** O cartel enfrenta o clássico Dilema dos Prisioneiros: o lucro conjunto é maximizado com restrição de produção, mas cada firma individualmente lucra mais ao desviar (produzir acima da cota enquanto os demais restringem). A sustentabilidade depende de mecanismos de punição, transparência e paciência (Folk Theorem). A alternativa (d) ignora que muitos cartéis operam impunemente.
+
+??? question "4. No modelo de Stackelberg (líder-seguidor), a firma líder obtém lucro maior que no Cournot porque:"
+    - (a) Tem custos de produção menores
+    - (b) Compromete-se com uma quantidade maior antes da seguidora, explorando a vantagem do primeiro movimento
+    - (c) Ambas as firmas cooperam no Stackelberg
+    - (d) A demanda de mercado é maior no Stackelberg
+
+    ??? success "Resposta"
+        **(b)** No Stackelberg, a líder move primeiro e se compromete com uma quantidade elevada. A seguidora, observando isso, acomoda-se produzindo menos. A líder antecipa essa reação e explora a vantagem estratégica. O lucro da líder é maior e o da seguidora menor que no Cournot simétrico. A demanda é a mesma (d) — o que muda é a estrutura de decisão.
+
+??? question "5. A análise antitruste de fusões horizontais entre oligopolistas tipicamente avalia se a fusão:"
+    - (a) Aumenta o número de firmas no mercado
+    - (b) Gera poder de mercado unilateral ou coordenado que prejudica consumidores, considerando possíveis eficiências compensatórias
+    - (c) Reduz os custos fixos da firma resultante
+    - (d) É aprovada unanimemente pelos acionistas
+
+    ??? success "Resposta"
+        **(b)** A análise antitruste (ex.: pelo CADE no Brasil) avalia se a concentração resultante permite à firma fusionada elevar preços ou facilitar colusão tácita, ponderando eventuais eficiências (redução de custos, sinergias). A alternativa (a) é o oposto — fusões reduzem o número de firmas; (c) é parcial; (d) é irrelevante para a análise concorrencial.
+
+---
+
 ## 📋 Resumo do Capítulo
 
-- O oligopólio é caracterizado pela interdependência estratégica: o lucro de cada firma depende das decisões das rivais, exigindo o uso da teoria dos jogos para a análise do equilíbrio.
-- No modelo de Bertrand (concorrência em preços com produtos homogêneos), bastam duas firmas para reproduzir o resultado competitivo (preço igual ao custo marginal e lucro zero) — o paradoxo de Bertrand. A diferenciação de produto, restrições de capacidade e interação repetida resolvem esse paradoxo.
-- No modelo de Cournot (concorrência em quantidades), o equilíbrio produz preços acima do custo marginal, com resultados intermediários entre monopólio e concorrência perfeita. À medida que o número de firmas cresce, o equilíbrio converge para o resultado competitivo.
-- No modelo de Stackelberg (jogo sequencial em quantidades), o líder obtém vantagem do primeiro movimento ao se comprometer com uma quantidade elevada, forçando a seguidora a se acomodar.
-- A colusão tácita pode ser sustentada em jogos repetidos por meio de estratégias de gatilho, desde que o fator de desconto seja suficientemente alto. Fatores como poucas firmas, interação frequente e transparência de preços facilitam a coordenação.
-- Decisões de longo prazo como investimento em capacidade, dissuasão estratégica de entrada e inovação ampliam a análise para além dos modelos estáticos, com a taxonomia de Fudenberg-Tirole orientando a escolha entre estratégias agressivas e acomodatórias.
+- O oligopólio é caracterizado pela interdependência estratégica: o lucro de cada firma depende das decisões das rivais, exigindo o uso da teoria dos jogos para a análise do equilíbrio (ver Capítulo 9a para os modelos base).
+- No modelo de Bertrand (concorrência em preços com produtos homogêneos), bastam duas firmas para reproduzir o resultado competitivo — o paradoxo de Bertrand. A diferenciação de produto, restrições de capacidade e interação repetida resolvem esse paradoxo.
+- No modelo de Cournot (concorrência em quantidades), o equilíbrio produz preços acima do custo marginal, convergindo para o resultado competitivo à medida que o número de firmas cresce.
+- No modelo de Stackelberg (jogo sequencial em quantidades), o líder obtém vantagem do primeiro movimento ao se comprometer com uma quantidade elevada.
+- A colusão tácita pode ser sustentada em jogos repetidos por meio de estratégias de gatilho, desde que o fator de desconto seja suficientemente alto.
+- A diferenciação de produto (Hotelling, Salop) confere poder de mercado mesmo com muitos concorrentes e resolve o paradoxo de Bertrand.
+- Decisões de longo prazo como investimento em capacidade, dissuasão estratégica de entrada e inovação ampliam a análise para além dos modelos estáticos.
+- A competição monopolística combina diferenciação de produto com livre entrada, gerando equilíbrio de longo prazo com lucro zero e excesso de capacidade.
+- A análise de fusões horizontais envolve o trade-off entre poder de mercado e eficiência, com o HHI como ferramenta de triagem.
+- A regulação de oligopólios (price cap, rate-of-return, Laffont-Tirole) busca disciplinar firmas com poder de mercado sob assimetria de informação.
 
 ## 🔑 Conceitos-Chave
 
@@ -628,6 +782,9 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 | Estratégia de gatilho (grim trigger) | Estratégia em que firmas cooperam enquanto todas cooperam, mas revertem permanentemente ao equilíbrio de Nash se alguém desviar |
 | Modelo de Hotelling | Modelo de diferenciação horizontal em que firmas se localizam em um espaço de características e consumidores incorrem em custos de transporte |
 | Dissuasão estratégica de entrada | Uso de investimento em capacidade ou preços-limite para tornar a entrada de rivais não lucrativa |
+| Competição monopolística | Estrutura com muitas firmas, produtos diferenciados e livre entrada; equilíbrio de longo prazo com lucro zero e excesso de capacidade |
+| Índice de Herfindahl-Hirschman (HHI) | Medida de concentração de mercado: \(HHI = \sum s_i^2\); usado por autoridades antitruste para análise de fusões |
+| Price cap (preço-teto) | Regulação que fixa teto de preço ajustado por \(RPI - X\), incentivando eficiência produtiva |
 
 <div class="caption-obj" markdown>
 **Tabela 16.3 — Conceitos-chave.**
@@ -848,6 +1005,68 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 
     [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-5)
 
+<a id="ex-16-6"></a>
+??? exercicio-proposto "Exercício 16.6"
+    No modelo de Hotelling, duas firmas localizam-se nos extremos de um segmento \([0, 1]\). Consumidores estão uniformemente distribuídos, e o custo de transporte é \(t = 4\) por unidade de distância. Custos marginais de produção são \(c = 2\).
+
+    a) Encontre os preços de equilíbrio, as demandas e os lucros de cada firma.
+
+    b) Se \(t\) cai para 1 (produtos menos diferenciados), o que acontece com os preços e lucros? Interprete.
+
+    c) Se a firma 1 relocar para \(x_1 = 1/4\) (se aproximar do centro), mantendo a firma 2 em \(x_2 = 1\), como se altera o equilíbrio?
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-6)
+
+<a id="ex-16-7"></a>
+??? exercicio-proposto "Exercício 16.7"
+    Considere um mercado de competição monopolística com \(n\) firmas. Cada firma enfrenta demanda \(q_i = S/n - b(p_i - \bar{p})\), onde \(S = 1.000\) é o tamanho do mercado, \(\bar{p}\) é o preço médio das rivais e \(b = 2\). O custo total de cada firma é \(C(q) = 100 + 10q\) (custo fixo de 100, custo marginal de 10).
+
+    a) No equilíbrio simétrico de curto prazo (com \(n\) dado), encontre o preço e o lucro por firma em função de \(n\).
+
+    b) Determine o número de firmas no equilíbrio de longo prazo (lucro zero).
+
+    c) Verifique se há excesso de capacidade no equilíbrio de longo prazo.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-7)
+
+<a id="ex-16-8"></a>
+??? exercicio-proposto "Exercício 16.8"
+    Um mercado tem 5 firmas com as seguintes participações de mercado: 35%, 25%, 20%, 12%, 8%.
+
+    a) Calcule o HHI do mercado. Classifique-o segundo os critérios do CADE/DOJ.
+
+    b) Se as duas maiores firmas se fundirem, qual será o novo HHI? A variação (ΔHHI) justificaria escrutínio detalhado?
+
+    c) Se a fusão gerar redução de custo marginal de 5% para a firma combinada, essa eficiência é suficiente para compensar o efeito anticompetitivo, assumindo demanda linear? Discuta qualitativamente.
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-8)
+
+<a id="ex-16-9"></a>
+??? exercicio-proposto "Exercício 16.9"
+    Duas firmas jogam um Bertrand repetido com fator de desconto \(\delta\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem \(c_2 = 20\). A demanda é \(Q = 100 - p\).
+
+    a) Qual seria o preço de monopólio se as firmas coluidissem perfeitamente? (Use o menor custo marginal.)
+
+    b) Como as firmas dividiriam a produção no cartel? (Sugestão: a firma eficiente produz tudo.)
+
+    c) Determine o \(\delta\) mínimo para que a colusão seja sustentável para cada firma. Qual firma tem maior incentivo para desviar?
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-9)
+
+<a id="ex-16-10"></a>
+??? exercicio-proposto "Exercício 16.10"
+    *(Desafio)* Considere o modelo de Salop (cidade circular) com \(n\) firmas, perímetro 1, custo de transporte \(t = 1\), custo fixo \(f\) e custo marginal \(c = 0\).
+
+    a) Derive o preço de equilíbrio simétrico \(p^*(n)\) e o lucro por firma \(\pi^*(n)\).
+
+    b) Determine o número de firmas em equilíbrio de entrada livre \(n^*\) como função de \(f\).
+
+    c) Mostre que o número socialmente ótimo de firmas \(n^{**}\) (que minimiza a soma de custos fixos + custos de transporte) é \(n^{**} = n^*/2\). Há excesso de entrada?
+
+    d) Interprete: a entrada excessiva ocorre porque cada firma ignora uma externalidade. Qual é essa externalidade?
+
+    [:material-arrow-right: Ver solução](../solucoes/cap16.md#ex-16-10)
+
 ---
 
 ## 🏆 Vem, ANPEC!
@@ -958,6 +1177,33 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 
     **Relevância para o capítulo:** O artigo de BLP é possivelmente o trabalho empírico mais influente em organização industrial moderna. Ele operacionaliza o modelo de Bertrand com diferenciação de produto (Seção 16.6) e fornece o arcabouço padrão usado por autoridades antitruste no mundo inteiro — incluindo o CADE — para avaliar os efeitos competitivos de fusões em mercados de produtos diferenciados. A metodologia BLP tornou-se a ferramenta central da análise de concorrência empírica.
 
+??? pesquisa "Nevo, A. (2001). [Measuring Market Power in the Ready-to-Eat Cereal Industry](https://doi.org/10.1111/1468-0262.00194). *Econometrica*, 69(2), 307–342."
+    **Pergunta central:** Qual é o grau de poder de mercado na indústria de cereais matinais dos EUA, e como diferentes modelos de concorrência (Bertrand-Nash, colusão, etc.) afetam a avaliação?
+
+    **Método:** Nevo estima um modelo estrutural de demanda por cereais usando o framework BLP, com dados de scanner de 65 cidades americanas. O lado da oferta permite testar diferentes hipóteses sobre a conduta das firmas: Bertrand-Nash, colusão perfeita e modelos intermediários. Os markups são identificados pela interação entre elasticidades estimadas e a estrutura de propriedade das marcas.
+
+    **Resultado principal:** Os markups estimados são significativos (40-50% sobre o custo marginal), mas consistentes com Bertrand-Nash entre firmas multiproduto — não é necessário invocar colusão para explicar os preços observados. A competição entre produtos da mesma firma é internalizada (a firma não canibaliza suas próprias marcas), elevando os preços relativamente ao caso de marcas independentes.
+
+    **Relevância para o capítulo:** O artigo é uma aplicação exemplar da teoria de Bertrand com diferenciação (Seção 16.6) a dados reais. Ele mostra como a estrutura de propriedade de marcas (um fator ignorado no modelo básico) afeta o equilíbrio e como modelos de IO empírica podem ser usados para distinguir entre concorrência e colusão — questão central para autoridades antitruste como o CADE.
+
+??? pesquisa "De Figueiredo, J. N.; Silveira, B. S. (2017). [Public Financing of Private Innovation: Evidence from the BNDES](https://doi.org/10.1016/j.jpubeco.2017.09.004). *Journal of Public Economics*, 155, 108–118."
+    **Pergunta central:** O financiamento subsidiado do BNDES para inovação tecnológica de firmas brasileiras efetivamente estimula P&D, ou apenas substitui investimento que ocorreria de qualquer forma?
+
+    **Método:** Os autores exploram descontinuidades nas regras de elegibilidade do programa BNDES-Inovação para construir um design de regressão descontínua. Comparam firmas que obtiveram financiamento com firmas marginalmente rejeitadas em variáveis de resultado: gastos em P&D, patentes registradas e produtividade.
+
+    **Resultado principal:** O financiamento do BNDES gerou aumento significativo nos gastos de P&D (efeito adicionalidade), mas o efeito sobre patentes e produtividade foi menor e estatisticamente mais fraco. O resultado sugere que o subsídio estimula o insumo (gasto em pesquisa) mais do que o produto (inovação efetiva).
+
+    **Relevância para o capítulo:** O artigo conecta-se à Seção 16.12 (Inovação sob oligopólio) e ao debate sobre política industrial. Em mercados oligopolísticos, a inovação é subinvestida do ponto de vista social (efeito Arrow/spillovers), justificando subsídios. Porém, a evidência de que o BNDES estimula gastos mais do que resultados levanta questões sobre o design ótimo de incentivos à inovação no Brasil.
+
+??? pesquisa "Harrington, J. E. (2006). [Detecting Cartels](https://doi.org/10.1016/S0169-7218(06)02032-9). In: *Handbook of Industrial Organization*, Vol. 3, M. Armstrong e R. Porter (eds.), Elsevier, 213–258."
+    **Pergunta central:** Quais métodos econômicos podem ser usados por autoridades antitruste para detectar a existência de cartéis em mercados reais?
+
+    **Método:** Harrington revisa a literatura sobre detecção de cartéis, organizando os métodos em duas categorias: (i) análise de padrões de preços (variância, correlação, paralelismo); (ii) análise de padrões de licitação (rotação de vencedores, complementaridade de propostas). O capítulo também discute marcadores estruturais (poucos competidores, produto homogêneo, demanda inelástica) como indicadores de probabilidade de colusão.
+
+    **Resultado principal:** Nenhum método isolado é suficiente para provar colusão, mas a combinação de evidências econômicas (padrões de preço estatisticamente anômalos) com evidências comportamentais (comunicação entre firmas, paralelismo plus) pode fundamentar investigações. Programas de leniência continuam sendo a ferramenta mais eficaz para desvendar cartéis.
+
+    **Relevância para o capítulo:** O capítulo conecta diretamente a teoria da Seção 16.7 (colusão e jogos repetidos) à prática antitruste. O Box Brasil sobre o cartel do metrô ilustra exatamente os mecanismos de detecção e enforcement discutidos por Harrington, e o programa de leniência do CADE segue os princípios teóricos de design de mecanismos para quebrar cartéis.
+
 ---
 
 ## 📚 Referências do Capítulo
@@ -966,3 +1212,5 @@ As questões a seguir foram extraídas de provas reais da ANPEC (Microeconomia).
 - Motta, Massimo. 2004. [*Competition Policy: Theory and Practice*](https://books.google.com/books?id=J3xZnDSlfC8C). Cambridge: Cambridge University Press.
 - Shy, Oz. 1995. [*Industrial Organization: Theory and Applications*](https://books.google.com/books?id=tr4CjJ5LlRcC). Cambridge: MIT Press.
 - Tirole, Jean. 1988. [*The Theory of Industrial Organization*](https://books.google.com/books/about/The_Theory_of_Industrial_Organization.html?id=HIjsF0XONF8C). Cambridge: MIT Press.
+- Chamberlin, Edward H. 1933. *The Theory of Monopolistic Competition*. Cambridge: Harvard University Press.
+- Williamson, Oliver E. 1968. "Economies as an Antitrust Defense: The Welfare Tradeoffs." *American Economic Review* 58 (1): 18–36.

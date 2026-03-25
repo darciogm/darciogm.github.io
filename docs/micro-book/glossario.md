@@ -42,6 +42,9 @@
 
 ## C
 
+**Competição monopolística**
+: Estrutura de mercado com muitas firmas vendendo produtos diferenciados e com livre entrada; no equilíbrio de longo prazo, cada firma tem lucro zero e opera com excesso de capacidade. Cap. 16.
+
 **Caixa de Edgeworth**
 : Diagrama retangular usado na análise de equilíbrio geral para representar as possibilidades de troca entre dois consumidores e dois bens.
 
@@ -93,6 +96,9 @@
 **Curva envoltória**
 : A curva de custo médio de longo prazo, obtida como envoltória inferior das curvas de custo médio de curto prazo. Para cada nível de produto, \(\mathrm{CMe}_{LP}(q) \leq \mathrm{CMe}_{CP}(q; \bar{K})\) para todo \(\bar{K}\), com igualdade quando \(\bar{K}\) é o nível ótimo de capital para aquele \(q\).
 
+**Custo de uso do capital**
+: Custo por período de utilizar uma unidade de capital: \(c_K = p_K(r + \delta)\), incluindo o custo de oportunidade financeiro e a depreciação física. Cap. 18.
+
 **Custo contábil**
 : Registro apenas dos desembolsos efetivamente realizados — custos explícitos. Não considera o custo de oportunidade dos recursos próprios da firma.
 
@@ -115,6 +121,18 @@
 : Despesas já realizadas e que não podem ser recuperadas. Do ponto de vista da tomada de decisão racional, não devem influenciar decisões correntes e futuras.
 
 ## D
+
+**Decomposição de Oaxaca-Blinder**
+: Técnica econométrica que separa o diferencial salarial entre grupos em uma parte explicada (diferenças de características observáveis) e uma parte não explicada (diferenças nos retornos, potencialmente associada à discriminação). Cap. 17.
+
+**Diferencial compensatório**
+: Diferença salarial que compensa trabalhadores por características indesejáveis do emprego (risco, insalubridade, localização remota), de modo que, em equilíbrio, a utilidade total é igualada entre ocupações. Cap. 17.
+
+**Discriminação estatística**
+: Discriminação baseada em características observáveis do grupo como proxy para produtividade individual não observada, podendo ser racional do ponto de vista da firma mesmo quando injusta socialmente. Cap. 17.
+
+**Dispositivo de comprometimento**
+: Ação ou mecanismo que restringe as opções futuras de um agente, tornando críveis suas ameaças ou promessas. Exemplos: investimento irreversível em capacidade, regras fiscais constitucionais, independência do Banco Central. Cap. 9b.
 
 **Demanda compensada (hicksiana)**
 : Função de demanda que mostra a quantidade ótima mantendo o nível de utilidade constante: \(h_i(p_1, p_2, \bar{U})\). Obtida a partir da minimização do dispêndio.
@@ -148,6 +166,9 @@
 **Efeito substituição**
 : Variação na quantidade demandada de um bem causada pela mudança nos preços relativos, mantido constante o nível de utilidade (Hicks) ou o poder de compra (Slutsky).
 
+**Elasticidade de Frisch**
+: Elasticidade da oferta de trabalho mantendo constante a utilidade marginal da riqueza; mede a resposta das horas trabalhadas a variações salariais temporárias. Fundamental para calibrar modelos macroeconômicos de ciclos reais. Cap. 17.
+
 **Elasticidade de substituição (\(\sigma\))**
 : Medida da facilidade de substituição entre insumos (ou bens), definida como a variação percentual na razão dos insumos dividida pela variação percentual na TMST: \(\sigma = \frac{d\ln(K/L)}{d\ln(TMST)}\).
 
@@ -156,6 +177,12 @@
 
 **Elasticidade-renda da demanda**
 : Variação percentual na quantidade demandada dividida pela variação percentual na renda: \(\varepsilon_{x,I} = \frac{\partial x}{\partial I} \cdot \frac{I}{x}\).
+
+**Equação de Euler (do consumo)**
+: Condição de otimalidade intertemporal que iguala a utilidade marginal do consumo presente ao retorno descontado da utilidade marginal futura: \(u'(C_1) = \beta(1+r)\,u'(C_2)\). Rege a suavização do consumo ao longo do tempo. Cap. 18.
+
+**Equação de Fisher**
+: Relação entre a taxa de juros nominal \(i\), a taxa real \(r\) e a inflação \(\pi\): \(1+i = (1+r)(1+\pi)\). Em aproximação, \(i \approx r + \pi\). Cap. 18.
 
 **Equação de Slutsky**
 : Relação fundamental que decompõe o efeito total de uma variação de preço em efeito substituição e efeito renda: \(\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}\).
@@ -298,8 +325,14 @@
 
 ## M
 
+**Market unraveling**
+: Processo iterativo de deterioração do pool de participantes em um mercado com seleção adversa: à medida que os tipos de melhor qualidade se retiram, o preço cai, expulsando mais tipos, podendo levar ao colapso completo do mercado (Akerlof, 1970). Cap. 9d.
+
 **Maldição do vencedor (winner's curse)**
 : Fenômeno em leilões de valor comum no qual o vencedor tende a ter superestimado o valor do objeto, levando a pagamentos excessivos se não ajustar o lance para baixo.
+
+**Mecanismo VCG (Vickrey-Clarke-Groves)**
+: Mecanismo de revelação direta que aloca eficientemente e cobra de cada agente a externalidade que sua participação impõe aos demais, generalizando o leilão de segundo preço de Vickrey para ambientes com múltiplos bens ou decisões coletivas. Cap. 9c.
 
 **Maximização de lucro**
 : Objetivo da firma de escolher o nível de produção que maximiza \(\pi = R(q) - C(q)\). Condição de primeira ordem: \(RMg = CMg\).
@@ -322,15 +355,24 @@
 **Monopsônio**
 : Estrutura de mercado com um único comprador de um insumo (tipicamente trabalho). O monopsonista paga abaixo do valor do produto marginal.
 
+**Multitarefa (multitasking)**
+: Problema de incentivos em que o agente aloca esforço entre múltiplas dimensões do trabalho; incentivos fortes em uma dimensão mensurável podem distorcer o esforço para longe de outras dimensões menos mensuráveis (Holmström e Milgrom, 1991). Cap. 9d.
+
 **Multiplicador de Lagrange (\(\lambda\))**
 : No problema de otimização restrita, representa o valor marginal (preço-sombra) do relaxamento da restrição.
 
 ## N
 
+**Novo monopsônio (Manning)**
+: Abordagem que reconhece poder monopsonístico mesmo em mercados com múltiplos empregadores, decorrente de custos de mobilidade, fricções de busca e informação imperfeita sobre vagas. A oferta de trabalho à firma individual é positivamente inclinada, permitindo salários abaixo do produto marginal. Cap. 17.
+
 **Nudge (empurrão)**
 : Intervenção que altera a arquitetura de escolha para direcionar comportamentos sem restringir opções nem alterar incentivos econômicos (Thaler e Sunstein, 2008).
 
 ## O
+
+**Opção externa (*outside option*)**
+: Payoff disponível a um negociador fora da barganha corrente; torna-se vinculante quando excede o payoff que o jogador obteria no equilíbrio sem ela, alterando a divisão do excedente. Cap. 9b.
 
 **Oligopólio**
 : Estrutura de mercado em que um pequeno número de firmas detém parcela significativa do mercado, e cada uma reconhece que suas decisões afetam — e são afetadas por — as decisões das rivais. A interdependência estratégica é o traço definidor, e os modelos clássicos incluem Bertrand (preços), Cournot (quantidades) e Stackelberg (líder-seguidora).
@@ -355,6 +397,9 @@
 **Preço de Lindahl**
 : Preço personalizado para um bem público, igual ao benefício marginal de cada consumidor, de modo que a soma iguala o custo marginal.
 
+**Price cap (preço-teto regulatório)**
+: Regulação de monopólio natural que fixa um teto de preço ajustado pela fórmula \(RPI - X\) (inflação menos ganho de produtividade esperado), incentivando eficiência produtiva ao permitir que a firma retenha lucros de reduções de custo. Cap. 16.
+
 **Primeiro Teorema do Bem-Estar**
 : Em uma economia com mercados completos e concorrência perfeita, qualquer equilíbrio competitivo é uma alocação eficiente de Pareto.
 
@@ -370,6 +415,9 @@
 **Prêmio de risco**
 : Quantia máxima que um agente avesso ao risco está disposto a pagar para eliminar a incerteza. Diferença entre o valor esperado e o equivalente de certeza.
 
+**Prova de renegociação (*renegotiation-proofness*)**
+: Critério de refinamento em jogos repetidos que exige que a estratégia de punição não seja Pareto-dominada por um retorno à cooperação — punições que ambos os jogadores prefeririam abandonar não são críveis e, portanto, são eliminadas. Cap. 9b.
+
 ## Q
 
 **Quasi-concavidade**
@@ -383,8 +431,17 @@
 **Recurso comum**
 : Bem rival mas não-excludente, sujeito a sobre-exploração (tragédia dos comuns). Exemplos: bancos de pesca, pastagens comunais, aquíferos.
 
+**Regras de Marshall (demanda derivada)**
+: Quatro condições que determinam a elasticidade da demanda por um fator de produção: (i) facilidade de substituição entre fatores, (ii) elasticidade-preço da demanda pelo produto, (iii) participação do fator no custo total e (iv) elasticidade da oferta dos demais fatores. Cap. 17.
+
 **Regra de Hotelling (recursos naturais)**
 : Em equilíbrio, o preço de um recurso exaurível deve crescer a uma taxa igual à taxa de juros: \(\dot{p}/p = r\).
+
+**Renda da terra**
+: Remuneração do fator terra, determinada integralmente pela demanda quando a oferta é perfeitamente inelástica (fixa). Conceito central na teoria ricardiana da distribuição. Cap. 17.
+
+**Renda econômica**
+: Excedente recebido por um fator de produção acima da remuneração mínima necessária para mantê-lo em seu uso atual: \(w - w_0\). Quando a oferta do fator é perfeitamente inelástica, toda a remuneração é renda econômica. Cap. 17.
 
 **Renda plena (full income)**
 : Renda máxima que o indivíduo obteria se trabalhasse todas as horas disponíveis: \(M^* = wT + V\), onde \(w\) é o salário, \(T\) a dotação total de tempo e \(V\) a renda não salarial.

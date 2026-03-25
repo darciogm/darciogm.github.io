@@ -1,0 +1,15 @@
+TF	Considere um duopólio de Cournot em que a demanda é dada por P = 11 - Q, Q = q_1 + q_2, e as funções custo são C_1(q_1) = q_1^2/2 e C_2(q_2) = q_2^2 / 1 (i.e., C_2 = q_2^2). Nesse caso, o equilíbrio de Nash em quantidades é (q_1^, q_2^) = (3{,}2;\; 6) e o preço de mercado é P = 6.	true
+TF	Se uma firma possui um índice de Lerner maior do que outra, então necessariamente a primeira opera em um mercado com índice de Herfindahl-Hirschman (HHI) maior do que a segunda.	false
+TF	No modelo de Stackelberg com produtos homogêneos e custos marginais constantes e idênticos, a firma seguidora obtém lucro maior do que obteria no equilíbrio de Cournot simultâneo.	false
+TF	No equilíbrio de Stackelberg, a curva de iso-lucro do líder é tangente à curva de reação do seguidor.	true
+TF	Considere um duopólio de Bertrand repetido infinitamente, com P = 100 - Q e custo marginal c = 0. Se as firmas usam uma estratégia de gatilho (grim trigger) para sustentar o preço de monopólio, o fator de desconto mínimo para que a colusão seja sustentável é \delta = 0{,}25.	false
+TF	Se q_2 = 3, a melhor resposta da firma 1 é q_1 = 6.	true
+TF	Se q_1 = 6, a melhor resposta da firma 2 é q_2 = 3.	false
+TF	O equilíbrio de Cournot-Nash é (q_1^, q_2^) = (5, 5) e o preço de equilíbrio é P^* = 10.	true
+TF	No equilíbrio, o índice de Lerner da firma 2 é 1/4.	false
+TF	O índice de Lerner da indústria, medido pela média ponderada (pelas participações de mercado) dos índices individuais, é 1/2.	true
+TF	No modelo de demanda quebrada (kinked demand), se houver um aumento no custo marginal da firma, haverá necessariamente um aumento no preço cobrado pela firma.	false
+TF	A sinalização de preços (price signaling) por uma firma líder em um oligopólio exige necessariamente um acordo explícito entre as firmas.	false
+TF	A liderança de preços pode funcionar como mecanismo para que firmas oligopolistas superem o dilema dos prisioneiros.	true
+TF	Em um duopólio de Cournot simétrico, o lucro de cada firma no equilíbrio de Nash é maior do que o lucro que cada firma obteria em um cartel (colusão perfeita) com divisão igualitária da produção.	false
+TF	No modelo de concorrência monopolística, a livre entrada e saída de firmas implica que, no equilíbrio de longo prazo, cada firma opera com lucro econômico zero.	true

@@ -370,3 +370,55 @@ A empresa captura ~14,9% do excedente; o sindicato (respondedor) fica com ~85,1%
 **Conclusão:** Em ambos os casos, o sindicato (mais paciente) captura a maior parte do excedente — entre 85% e 90%. Quem propõe primeiro ganha marginalmente, mas a diferença é pequena: o poder de barganha é dominado pela paciência relativa, não pela ordem de propostas. Isso implica que sindicatos com robustos fundos de greve têm vantagem estrutural em negociações salariais, independentemente de quem "abre" a rodada.
 
 ↩ [Voltar ao enunciado](../cap09b/index.md#ex-9b-9)
+
+---
+
+## ✏️ Exercício 9b.10 {#ex-9b-10}
+
+**Solução.**
+
+Payoffs: \(T = 8\), \(R = 5\), \(P = 1\), \(S = 0\).
+
+**(a) Fator de desconto efetivo com probabilidade de término.**
+
+Em cada período, o jogo continua com probabilidade \(1-p\). Um payoff futuro \(\pi\) daqui a \(k\) períodos vale, em expectativa:
+
+\[
+\delta^k (1-p)^k \pi = [\delta(1-p)]^k \pi
+\]
+
+Portanto, o fator de desconto efetivo é \(\delta_{\text{ef}} = \delta(1-p)\).
+
+Com grim trigger, a condição de sustentabilidade é:
+
+\[
+\delta_{\text{ef}} \geq \frac{T - R}{T - P} = \frac{8 - 5}{8 - 1} = \frac{3}{7}
+\]
+
+Substituindo:
+
+\[
+\delta(1-p) \geq \frac{3}{7}
+\]
+
+**(b) Probabilidade máxima de término.**
+
+Com \(\delta = 0{,}95\):
+
+\[
+0{,}95(1-p) \geq \frac{3}{7} \implies 1 - p \geq \frac{3}{7 \times 0{,}95} = \frac{3}{6{,}65} \approx 0{,}451
+\]
+
+\[
+p \leq 1 - 0{,}451 = 0{,}549
+\]
+
+A probabilidade máxima de término que permite cooperação é \(p^* \approx 54{,}9\%\). Mesmo com probabilidade razoavelmente alta de término do jogo a cada período, a cooperação ainda é sustentável — porque o \(\delta^*\) do jogo de estágio é baixo (\(3/7 \approx 0{,}43\)).
+
+**(c) Interpretação.**
+
+A fórmula \(\delta_{\text{ef}} = \delta(1-p)\) mostra que alta probabilidade de saída (\(p\) alto) equivale funcionalmente a maior impaciência — ambos reduzem o peso do futuro nas decisões presentes. Em mercados onde concorrentes podem sair a qualquer momento (startups, mercados voláteis), o \(\delta_{\text{ef}}\) é baixo e o conluio é instável.
+
+No mercado brasileiro de cimento, as empresas (Votorantim, InterCement, LafargeHolcim) operam com horizonte de longo prazo: investimentos em fábricas são altamente específicos e irreversíveis, a demanda é relativamente previsível, e a probabilidade de saída é muito baixa (\(p \approx 0\)). Isso implica \(\delta_{\text{ef}} \approx \delta\), próximo de 1 — condições ideais para a sustentação do conluio. Consistentemente, o CADE condenou o cartel de cimento em 2014 (multas superiores a R$ 3 bilhões), após investigação que revelou coordenação de preços e divisão de mercados entre as grandes produtoras. A estrutura do mercado (poucas firmas, horizonte longo, produto homogêneo, demanda previsível) criava exatamente as condições previstas pelo modelo para a estabilidade do conluio.
+
+↩ [Voltar ao enunciado](../cap09b/index.md#ex-9b-10)

@@ -574,3 +574,39 @@ Para capturar o sub-seguro observado em catástrofes, nota-se que: (i) eventos c
 
 
 ↩ [Voltar ao enunciado](../cap08/index.md#ex-8-15)
+
+---
+
+## 🏆 ANPEC (estilo) — Teoria do Prospecto e função valor
+
+**Respostas: V F V F V**
+
+- **Item 0 — V:** A dependência de referência é propriedade fundamental da função valor. O portador de valor é a variação \(x\) em relação ao ponto de referência, não o nível absoluto de riqueza. Dois indivíduos com a mesma riqueza final podem tomar decisões diferentes se seus pontos de referência forem distintos.
+- **Item 1 — F:** Aversão à perda (\(\lambda > 1\)) e aversão ao risco (concavidade de \(u\)) são conceitos distintos. Um agente pode ser neutro ao risco e ainda assim ser avesso à perda.
+- **Item 2 — V:** A concavidade para ganhos gera aversão ao risco nesse domínio; a convexidade para perdas gera propensão ao risco — o efeito reflexão.
+- **Item 3 — F:** A função de ponderação \(w(p)\) tem formato de S invertido: sobrevaloriza probabilidades pequenas e subvaloriza probabilidades grandes.
+- **Item 4 — V:** \(v(100) \approx 57{,}54\) e \(v(-100) \approx -129{,}47\). Valor esperado subjetivo: \(0{,}5 \times 57{,}54 + 0{,}5 \times (-129{,}47) = -35{,}97 < 0\).
+
+---
+
+## 🏆 ANPEC (estilo) — Vieses cognitivos e efeitos comportamentais
+
+**Respostas: V V F F V**
+
+- **Item 0 — V:** A ancoragem é uma das três heurísticas fundamentais de Tversky e Kahneman (1974). No experimento da roda da fortuna, números completamente irrelevantes influenciaram sistematicamente as estimativas dos participantes.
+- **Item 1 — V:** O experimento das doenças asiáticas demonstra o efeito framing: opções logicamente idênticas geram escolhas opostas dependendo do enquadramento (vidas salvas vs. mortes).
+- **Item 2 — F:** O viés do *status quo* e o efeito dotação são consequências diretas da aversão à perda (\(\lambda > 1\)). O experimento das canecas (WTA \(\approx\) 2,5 \(\times\) WTP) ocorre sem custos de transação.
+- **Item 3 — F:** A contabilidade mental descreve precisamente a violação da fungibilidade: os agentes segregam dinheiro em contas mentais separadas, com propensões marginais a consumir distintas.
+- **Item 4 — V:** A ancoragem em negociações implica que a primeira oferta influencia o resultado final, independentemente de seu conteúdo informacional.
+
+---
+
+## 🏆 ANPEC (estilo) — Desconto hiperbólico e inconsistência temporal
+
+**Respostas: V V V F V**
+
+- **Item 0 — V:** No desconto exponencial, a razão entre fatores de desconto consecutivos é sempre \(\delta\), constante. Isso garante consistência temporal.
+- **Item 1 — V:** O fator de desconto entre \(t=0\) e \(t=1\) é \(\beta\delta = 0{,}665\), mas entre períodos futuros consecutivos é \(\delta = 0{,}95\). Essa assimetria é o viés do presente.
+- **Item 2 — V:** O valor presente de R\$ 1.000 em \(t=1\) é \(\beta\delta \times 1000 = 665\). A razão dos valores presentes de pagamentos em \(t=10\) e \(t=11\) é \(\delta = 0{,}95\), pois o fator \(\beta\) se cancela.
+- **Item 3 — F:** Nudges como adesão automática funcionam tanto para sofisticados quanto para ingênuos, pois exploram a inércia e o viés do *status quo*, que operam independentemente de autoconsciência sobre o viés do presente.
+- **Item 4 — V:** Laibson (1997) formalizou a demanda racional por mecanismos de compromisso: o agente sofisticado antecipa o viés do presente do seu "eu futuro" e se vincula a instrumentos ilíquidos para proteger a poupança.

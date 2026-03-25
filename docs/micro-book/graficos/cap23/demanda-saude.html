@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+  Seguro de Saude e Risco Moral — Simulacao Interativa
+  Library: Plotly.js
+  Chapter 23 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguro de Saude e Risco Moral</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #plotly-chart { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #plotly-chart { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotly-chart"></div>
+  <div class="controls">
+    <h3>Parametros</h3>
+    <div class="slider-group">
+      <label>Coparticipacao (%): <span class="val" id="val-c">25</span></label>
+      <input type="range" id="slider-c" min="0" max="100" step="5" value="25">
+    </div>
+    <div class="slider-group">
+      <label>Elasticidade \(|\varepsilon|\): <span class="val" id="val-e">0.20</span></label>
+      <input type="range" id="slider-e" min="0.05" max="0.60" step="0.05" value="0.20">
+    </div>
+    <div class="slider-group">
+      <label>Preco pleno \(p_0\): <span class="val" id="val-p">100</span></label>
+      <input type="range" id="slider-p" min="50" max="200" step="10" value="100">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Demand: Q(p) = Q0 * (p/p0)^(-epsilon)
+  // At full price p0: Q0 = 100 (baseline units)
+  var Q0 = 100;
+  var N = 200; // points for curve
+
+  function getState() {
+    return {
+      coinsPct: parseFloat(document.getElementById('slider-c').value),
+      epsilon: parseFloat(document.getElementById('slider-e').value),
+      p0: parseFloat(document.getElementById('slider-p').value)
+    };
+  }
+
+  function demand(p, s) {
+    if (p <= 0) return Q0 * 5;
+    return Q0 * Math.pow(p / s.p0, -s.epsilon);
+  }
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-c').textContent = s.coinsPct.toFixed(0);
+    document.getElementById('val-e').textContent = s.epsilon.toFixed(2);
+    document.getElementById('val-p').textContent = s.p0.toFixed(0);
+
+    var coins = s.coinsPct / 100;
+    var pEffective = s.p0 * coins; // price patient actually pays
+    if (pEffective < 1) pEffective = 1;
+
+    var qNoIns = demand(s.p0, s);    // quantity without insurance (at full price)
+    var qIns = demand(pEffective, s); // quantity with insurance
+
+    // Build demand curve (inverse: p as function of Q)
+    var qMin = Q0 * 0.3, qMax = Q0 * 2.5;
+    var qVals = [], pVals = [];
+    for (var i = 0; i < N; i++) {
+      var q = qMin + (qMax - qMin) * i / (N - 1);
+      // Inverse demand: p = p0 * (Q/Q0)^(-1/epsilon)
+      var p = s.p0 * Math.pow(q / Q0, -1 / s.epsilon);
+      if (p > s.p0 * 3) continue;
+      qVals.push(q);
+      pVals.push(p);
+    }
+
+    // Demand curve
+    var traceDemand = {
+      x: qVals, y: pVals,
+      mode: 'lines', name: 'Demanda D(p)',
+      line: { color: '#1565c0', width: 2.5 }
+    };
+
+    // Full price line
+    var traceP0 = {
+      x: [qMin, qMax], y: [s.p0, s.p0],
+      mode: 'lines', name: 'Preco pleno p\u2080',
+      line: { color: '#333', width: 1.5, dash: 'dash' }
+    };
+
+    // Effective price line
+    var tracePe = {
+      x: [qMin, qMax], y: [pEffective, pEffective],
+      mode: 'lines', name: 'Preco efetivo (c\u00B7p\u2080)',
+      line: { color: '#C8102E', width: 1.5, dash: 'dash' }
+    };
+
+    // DWL area (overconsumption triangle)
+    var dwlQ = [], dwlP = [];
+    if (qIns > qNoIns) {
+      var steps = 50;
+      for (var j = 0; j <= steps; j++) {
+        var q = qNoIns + (qIns - qNoIns) * j / steps;
+        var p = s.p0 * Math.pow(q / Q0, -1 / s.epsilon);
+        dwlQ.push(q);
+        dwlP.push(p);
+      }
+      // Close the shape: bottom edge at p0
+      dwlQ.push(qIns);
+      dwlP.push(s.p0);
+      dwlQ.push(qNoIns);
+      dwlP.push(s.p0);
+    }
+
+    var traceDWL = {
+      x: dwlQ, y: dwlP,
+      fill: 'toself', fillcolor: 'rgba(200,16,46,0.18)',
+      line: { color: 'rgba(200,16,46,0.4)', width: 1 },
+      name: 'Perda de peso morto',
+      mode: 'lines'
+    };
+
+    // Insurer cost area (rectangle below p0 and above pEffective, from 0 to qIns)
+    var traceInsCost = {
+      x: [qMin, qIns, qIns, qMin],
+      y: [s.p0, s.p0, pEffective, pEffective],
+      fill: 'toself', fillcolor: 'rgba(21,101,192,0.12)',
+      line: { color: 'rgba(21,101,192,0.3)', width: 1 },
+      name: 'Custo da seguradora',
+      mode: 'lines'
+    };
+
+    // Points
+    var tracePoints = {
+      x: [qNoIns, qIns],
+      y: [s.p0, pEffective],
+      mode: 'markers',
+      marker: { size: 9, color: ['#333', '#C8102E'], symbol: 'circle' },
+      name: 'Equilibrios',
+      showlegend: false
+    };
+
+    var layout = {
+      margin: { t: 30, r: 20, b: 50, l: 55 },
+      xaxis: { title: 'Quantidade de cuidados', range: [qMin * 0.9, qMax] },
+      yaxis: { title: 'Preco', range: [0, s.p0 * 2.5] },
+      legend: { x: 0.5, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 10 } },
+      font: { family: 'CMU Serif, Georgia, serif', size: 12 },
+      plot_bgcolor: '#fff',
+      paper_bgcolor: '#fff'
+    };
+
+    Plotly.react('plotly-chart', [traceInsCost, traceDWL, traceDemand, traceP0, tracePe, tracePoints], layout, { responsive: true, displayModeBar: false });
+
+    // Info box — welfare decomposition
+    var dwl = 0;
+    if (qIns > qNoIns) {
+      // Approximate DWL as integral of (D^{-1}(q) - p0) from qNoIns to qIns
+      var dq = (qIns - qNoIns) / 100;
+      for (var k = 0; k < 100; k++) {
+        var qq = qNoIns + dq * (k + 0.5);
+        var pp = s.p0 * Math.pow(qq / Q0, -1 / s.epsilon);
+        dwl += (pp - s.p0) * dq;
+      }
+      // DWL is actually the area where cost > value: cost is p0 per unit, value is demand price
+      // For units beyond qNoIns, value < p0, so DWL = integral of (p0 - D^{-1}(q)) from qNoIns to qIns
+      dwl = 0;
+      for (var k = 0; k < 100; k++) {
+        var qq = qNoIns + dq * (k + 0.5);
+        var pp = s.p0 * Math.pow(qq / Q0, -1 / s.epsilon);
+        var diff = s.p0 - pp;
+        if (diff > 0) dwl += diff * dq;
+      }
+    }
+
+    var insurerCost = (s.p0 - pEffective) * qIns;
+    var overconsumption = qIns - qNoIns;
+
+    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Decomposicao de Bem-Estar</div>';
+    html += '<div style="margin-top:0.4rem;">';
+    html += 'Coparticipacao: ' + s.coinsPct.toFixed(0) + '%<br>';
+    html += 'Preco efetivo: \\(p_e = ' + pEffective.toFixed(1) + '\\)<br>';
+    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+    html += 'Q sem seguro: ' + qNoIns.toFixed(1) + '<br>';
+    html += 'Q com seguro: ' + qIns.toFixed(1) + '<br>';
+    html += 'Sobreconsumo: <b style="color:#C8102E;">' + overconsumption.toFixed(1) + '</b> (' + (overconsumption / qNoIns * 100).toFixed(0) + '%)<br>';
+    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+    html += '<span style="color:#1565c0;">Custo seguradora:</span> ' + insurerCost.toFixed(0) + '<br>';
+    html += '<span style="color:#C8102E;">Perda peso morto:</span> ' + dwl.toFixed(0) + '<br>';
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    html += 'DWL = custo real dos cuidados acima do valor que o paciente lhes atribui (area vermelha).';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-c').value = 25;
+    document.getElementById('slider-e').value = 0.20;
+    document.getElementById('slider-p').value = 100;
+    update();
+  }
+
+  ['slider-c','slider-e','slider-p'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

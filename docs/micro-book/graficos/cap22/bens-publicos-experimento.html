@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+  Jogo de Bens Públicos — Simulação Interativa
+  Library: Plotly.js
+  Chapter 22 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Bens Públicos — Simulação</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #plotly-chart { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #plotly-chart { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="plotly-chart"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Jogadores \(N\): <span class="val" id="val-N">10</span></label>
+        <input type="range" id="slider-N" min="2" max="20" step="1" value="10">
+      </div>
+      <div class="slider-group">
+        <label>Dotação \(w\): <span class="val" id="val-w">20</span></label>
+        <input type="range" id="slider-w" min="10" max="50" step="5" value="20">
+      </div>
+      <div class="slider-group">
+        <label>Multiplicador \(\alpha\): <span class="val" id="val-alpha">2.0</span></label>
+        <input type="range" id="slider-alpha" min="1.0" max="4.0" step="0.1" value="2.0">
+      </div>
+      <div class="slider-group">
+        <label>Contribuição inicial (%): <span class="val" id="val-init">50</span></label>
+        <input type="range" id="slider-init" min="0" max="100" step="5" value="50">
+      </div>
+      <div class="slider-group">
+        <label>Decaimento por rodada (%): <span class="val" id="val-decay">15</span></label>
+        <input type="range" id="slider-decay" min="0" max="50" step="1" value="15">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var T = 20; // number of rounds
+
+    function getState() {
+      return {
+        N: parseInt(document.getElementById('slider-N').value),
+        w: parseFloat(document.getElementById('slider-w').value),
+        alpha: parseFloat(document.getElementById('slider-alpha').value),
+        initPct: parseFloat(document.getElementById('slider-init').value) / 100,
+        decay: parseFloat(document.getElementById('slider-decay').value) / 100
+      };
+    }
+
+    function simulate(s) {
+      var rounds = [];
+      var noPunish = [];
+      var withPunish = [];
+
+      for (var t = 0; t < T; t++) {
+        rounds.push(t + 1);
+
+        // Without punishment: contribution decays each round
+        var contribNP = s.initPct * s.w * Math.pow(1 - s.decay, t);
+        contribNP = Math.max(0, Math.min(s.w, contribNP));
+        noPunish.push(contribNP);
+
+        // With punishment: much slower decay (20% of the decay rate), floor at 60% of initial
+        var punishDecay = s.decay * 0.2;
+        var contribP = s.initPct * s.w * Math.pow(1 - punishDecay, t);
+        var floor = s.initPct * s.w * 0.6;
+        contribP = Math.max(floor, Math.min(s.w, contribP));
+        withPunish.push(contribP);
+      }
+
+      return { rounds: rounds, noPunish: noPunish, withPunish: withPunish };
+    }
+
+    function computePayoff(contrib, s) {
+      // payoff = (w - g) + (alpha / N) * N * g = (w - g) + alpha * g = w + (alpha - 1) * g
+      return s.w - contrib + (s.alpha / s.N) * s.N * contrib;
+    }
+
+    function computeEfficiency(contrib, s) {
+      // Efficiency = (actual total payoff - Nash payoff) / (optimal payoff - Nash payoff)
+      var nashPayoff = s.w; // g=0 => payoff = w
+      var optPayoff = s.w + (s.alpha - 1) * s.w; // g=w => payoff = w + (alpha-1)*w = alpha*w
+      var actualPayoff = s.w + (s.alpha - 1) * contrib;
+      if (optPayoff === nashPayoff) return 0;
+      return (actualPayoff - nashPayoff) / (optPayoff - nashPayoff);
+    }
+
+    function update() {
+      var s = getState();
+      document.getElementById('val-N').textContent = s.N;
+      document.getElementById('val-w').textContent = s.w.toFixed(0);
+      document.getElementById('val-alpha').textContent = s.alpha.toFixed(1);
+      document.getElementById('val-init').textContent = (s.initPct * 100).toFixed(0);
+      document.getElementById('val-decay').textContent = (s.decay * 100).toFixed(0);
+
+      var sim = simulate(s);
+
+      var traceNP = {
+        x: sim.rounds,
+        y: sim.noPunish,
+        mode: 'lines+markers',
+        name: 'Sem punição',
+        line: { color: '#C8102E', width: 2.5 },
+        marker: { size: 5 }
+      };
+
+      var traceP = {
+        x: sim.rounds,
+        y: sim.withPunish,
+        mode: 'lines+markers',
+        name: 'Com punição',
+        line: { color: '#00897b', width: 2.5 },
+        marker: { size: 5 }
+      };
+
+      // Social optimum line
+      var traceOpt = {
+        x: [1, T],
+        y: [s.w, s.w],
+        mode: 'lines',
+        name: 'Ótimo social (g = w)',
+        line: { color: '#1565c0', width: 1.5, dash: 'dash' }
+      };
+
+      // Nash equilibrium line
+      var traceNash = {
+        x: [1, T],
+        y: [0, 0],
+        mode: 'lines',
+        name: 'Nash (g = 0)',
+        line: { color: '#666', width: 1.5, dash: 'dot' }
+      };
+
+      var layout = {
+        margin: { t: 30, r: 20, b: 50, l: 55 },
+        xaxis: { title: 'Rodada', dtick: 2, range: [0.5, T + 0.5] },
+        yaxis: { title: 'Contribuição média', range: [-1, s.w * 1.1] },
+        legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 11 } },
+        font: { family: 'CMU Serif, Georgia, serif', size: 12 },
+        plot_bgcolor: '#fff',
+        paper_bgcolor: '#fff'
+      };
+
+      Plotly.react('plotly-chart', [traceNash, traceOpt, traceNP, traceP], layout, { responsive: true, displayModeBar: false });
+
+      // Info box
+      var finalNP = sim.noPunish[T - 1];
+      var finalP = sim.withPunish[T - 1];
+      var effNP = computeEfficiency(finalNP, s);
+      var effP = computeEfficiency(finalP, s);
+      var mpcr = s.alpha / s.N;
+
+      var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Resultados</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += 'MPCR: \\(\\alpha/N = ' + mpcr.toFixed(2) + '\\)<br>';
+      html += 'Nash: \\(g^* = 0\\) &nbsp;|&nbsp; Ótimo: \\(g^* = ' + s.w.toFixed(0) + '\\)<br>';
+      html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+      html += '<b style="color:#C8102E;">Sem punição</b> (rodada ' + T + '):<br>';
+      html += '&nbsp; Contrib. = ' + finalNP.toFixed(1) + ' &nbsp; Eficiência = ' + (effNP * 100).toFixed(0) + '%<br>';
+      html += '<b style="color:#00897b;">Com punição</b> (rodada ' + T + '):<br>';
+      html += '&nbsp; Contrib. = ' + finalP.toFixed(1) + ' &nbsp; Eficiência = ' + (effP * 100).toFixed(0) + '%';
+      html += '</div>';
+      html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+      html += 'Eficiência = (payoff real − Nash) / (ótimo − Nash)';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-N').value = 10;
+      document.getElementById('slider-w').value = 20;
+      document.getElementById('slider-alpha').value = 2.0;
+      document.getElementById('slider-init').value = 50;
+      document.getElementById('slider-decay').value = 15;
+      update();
+    }
+
+    ['slider-N','slider-w','slider-alpha','slider-init','slider-decay'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

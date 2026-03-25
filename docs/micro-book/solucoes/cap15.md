@@ -641,3 +641,486 @@ Lucro:
 **Interpretação:** A estratégia mais lucrativa é servir apenas o tipo 1, cobrando preço igual ao custo marginal (\( p = 2 \)) e extraindo todo o excedente via taxa fixa (\( T = 162 \)). Ao excluir o tipo 2, a firma pode fixar a taxa fixa no nível do excedente do tipo 1, que é muito maior. O trade-off da tarifa em duas partes com dois tipos é: servir ambos limita \( T \) ao excedente do tipo com menor disposição a pagar, enquanto excluir o tipo menor permite capturar todo o excedente do tipo maior. Neste caso, a perda de receita dos 100 consumidores do tipo 2 é mais do que compensada pela taxa fixa muito mais alta cobrada dos 100 consumidores do tipo 1.
 
 ↩ [Voltar ao enunciado](../cap15/index.md#ex-15-5)
+
+---
+
+## ✏️ Exercício 15.6 {#ex-15-6}
+
+**Monopolista com \( C(q) = 200 + 20q \) e demanda \( p = 80 - 0{,}5q \). Comparação com demanda \( p = 80 - 2q \).**
+
+### (a) Quantidade, preço e lucro de monopólio
+
+A receita total é:
+
+\[
+RT(q) = p \cdot q = (80 - 0{,}5q)q = 80q - 0{,}5q^2
+\]
+
+A receita marginal é:
+
+\[
+RMg = \frac{dRT}{dq} = 80 - q
+\]
+
+O custo marginal é:
+
+\[
+CMg = \frac{dC}{dq} = 20
+\]
+
+Igualando \( RMg = CMg \):
+
+\[
+80 - q = 20 \implies q^M = 60
+\]
+
+Substituindo na demanda:
+
+\[
+p^M = 80 - 0{,}5(60) = 80 - 30 = 50
+\]
+
+O lucro é:
+
+\[
+\pi^M = RT - CT = 50 \times 60 - (200 + 20 \times 60) = 3000 - 1400 = 1600
+\]
+
+**Resultado:** \( q^M = 60 \), \( p^M = 50 \) e \( \pi^M = 1600 \).
+
+### (b) Índice de Lerner e verificação
+
+O índice de Lerner é:
+
+\[
+L = \frac{p - CMg}{p} = \frac{50 - 20}{50} = \frac{30}{50} = \frac{3}{5} = 0{,}6
+\]
+
+Para a elasticidade, a demanda inversa é \( p = 80 - 0{,}5q \), logo \( q = 160 - 2p \) e \( \frac{dq}{dp} = -2 \).
+
+No ponto de equilíbrio \( (q^M, p^M) = (60, 50) \):
+
+\[
+|\varepsilon_d| = \left| \frac{dq}{dp} \cdot \frac{p}{q} \right| = \left| -2 \cdot \frac{50}{60} \right| = \frac{100}{60} = \frac{5}{3} \approx 1{,}667
+\]
+
+Verificação:
+
+\[
+\frac{1}{|\varepsilon_d|} = \frac{3}{5} = 0{,}6 = L \quad \checkmark
+\]
+
+### (c) Comparação com demanda \( p = 80 - 2q \)
+
+Com a nova demanda:
+
+\[
+RT = (80 - 2q)q = 80q - 2q^2 \implies RMg = 80 - 4q
+\]
+
+\[
+RMg = CMg \implies 80 - 4q = 20 \implies q^M = 15
+\]
+
+\[
+p^M = 80 - 2(15) = 50
+\]
+
+\[
+\pi^M = 50 \times 15 - (200 + 20 \times 15) = 750 - 500 = 250
+\]
+
+O índice de Lerner é:
+
+\[
+L = \frac{50 - 20}{50} = 0{,}6
+\]
+
+O preço e o Lerner são idênticos nos dois casos, pois ambas as demandas têm a mesma interceptação vertical (\( a = 80 \)) e o mesmo CMg. A diferença está na inclinação: a demanda mais inclinada (\( b = 2 \)) gera menor quantidade (\( q = 15 \) vs. 60) e menor lucro (\( \pi = 250 \) vs. 1600). A elasticidade no ponto de monopólio também é \( 5/3 \) em ambos os casos — resultado geral para demanda linear \( p = a - bq \) com CMg constante, pois o Lerner depende apenas de \( a \) e \( c \), não de \( b \).
+
+**Interpretação:** A inclinação da demanda afeta a escala de produção e o lucro absoluto, mas não o markup relativo nem a elasticidade no ótimo, quando a interceptação é a mesma.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-6)
+
+---
+
+## ✏️ Exercício 15.7 {#ex-15-7}
+
+**Discriminação de primeiro grau. Demanda individual \( q = 10 - p \), 50 consumidores, \( CMg = c = 2 \).**
+
+### (a) Lucro sob preço uniforme de monopólio
+
+A demanda agregada é \( Q = 50(10 - p) = 500 - 50p \), ou inversamente \( p = 10 - Q/50 \).
+
+\[
+RT = pQ = 10Q - \frac{Q^2}{50} \implies RMg = 10 - \frac{Q}{25}
+\]
+
+\[
+RMg = CMg \implies 10 - \frac{Q}{25} = 2 \implies Q^M = 200
+\]
+
+\[
+p^M = 10 - \frac{200}{50} = 10 - 4 = 6
+\]
+
+\[
+\pi^U = (p^M - c) \cdot Q^M = (6 - 2) \times 200 = 800
+\]
+
+Excedente do consumidor:
+
+\[
+EC^U = \frac{1}{2}(10 - 6)(200) = \frac{1}{2} \times 4 \times 200 = 400
+\]
+
+### (b) Lucro sob discriminação de primeiro grau
+
+Com discriminação perfeita, o monopolista cobra de cada consumidor exatamente sua disposição a pagar. O preço é reduzido até \( p = CMg = 2 \), e toda a área entre a curva de demanda e o custo marginal é capturada como lucro.
+
+Quantidade total: \( Q^{DP} = 50(10 - 2) = 400 \).
+
+O excedente total (área entre demanda e CMg) é:
+
+\[
+W^{DP} = \frac{1}{2}(10 - 2)(400) = \frac{1}{2} \times 8 \times 400 = 1600
+\]
+
+Sob discriminação perfeita, todo o excedente vai para o produtor:
+
+\[
+\pi^{DP} = 1600, \quad EC^{DP} = 0
+\]
+
+### (c) Comparação de excedentes e peso morto
+
+| Variável | Preço uniforme | Discriminação perfeita |
+|----------|---------------|----------------------|
+| Quantidade | 200 | 400 |
+| Preço | 6 | varia (de 10 a 2) |
+| EC | 400 | 0 |
+| Lucro (EP) | 800 | 1600 |
+| Bem-estar total | 1200 | 1600 |
+| DWL | 400 | 0 |
+
+A DWL sob preço uniforme é:
+
+\[
+DWL^U = \frac{1}{2}(p^M - c)(Q^{CP} - Q^M) = \frac{1}{2}(6 - 2)(400 - 200) = 400
+\]
+
+**Interpretação:** A discriminação de primeiro grau elimina completamente a perda de peso morto, pois o monopolista produz a quantidade eficiente (\( Q = 400 \), como em concorrência perfeita). Contudo, todo o excedente é capturado pelo produtor: os consumidores ficam com excedente zero. A discriminação perfeita é eficiente no sentido de Pareto em relação à situação de monopólio (o produtor ganha mais e nenhum consumidor perde em relação a não consumir), mas levanta questões distributivas.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-7)
+
+---
+
+## ✏️ Exercício 15.8 {#ex-15-8}
+
+**Monopólio natural com \( C(q) = 500 + 2q \) e demanda \( p = 52 - q \).**
+
+### (a) Monopólio não regulado
+
+\[
+RT = (52 - q)q \implies RMg = 52 - 2q
+\]
+
+\[
+CMg = 2
+\]
+
+\[
+RMg = CMg \implies 52 - 2q = 2 \implies q^M = 25, \quad p^M = 52 - 25 = 27
+\]
+
+\[
+\pi^M = 27 \times 25 - (500 + 2 \times 25) = 675 - 550 = 125
+\]
+
+**Resultado:** \( q^M = 25 \), \( p^M = 27 \), \( \pi^M = 125 \). O monopolista é viável sem regulação.
+
+### (b) Regulação por custo marginal (\( p = CMg \))
+
+\[
+p = CMg = 2 \implies 52 - q = 2 \implies q^{CMg} = 50
+\]
+
+Lucro:
+
+\[
+\pi^{CMg} = 2 \times 50 - (500 + 2 \times 50) = 100 - 600 = -500
+\]
+
+A firma tem prejuízo de 500 (exatamente o custo fixo). O custo médio no ponto regulado é:
+
+\[
+CMe(50) = \frac{500 + 100}{50} = 12 > 2 = p
+\]
+
+**A regulação por custo marginal maximiza o bem-estar, mas a firma não é viável** sem um subsídio de 500.
+
+### (c) Regulação por custo médio (\( p = CMe \))
+
+A condição \( p = CMe \) é:
+
+\[
+52 - q = \frac{500 + 2q}{q}
+\]
+
+Multiplicando por \( q \):
+
+\[
+52q - q^2 = 500 + 2q \implies q^2 - 50q + 500 = 0
+\]
+
+\[
+\Delta = 2500 - 2000 = 500 > 0
+\]
+
+\[
+q = \frac{50 \pm \sqrt{500}}{2} = \frac{50 \pm 10\sqrt{5}}{2} = 25 \pm 5\sqrt{5}
+\]
+
+Como \( 5\sqrt{5} \approx 11{,}18 \):
+
+- \( q_1 = 25 + 11{,}18 = 36{,}18 \) (solução relevante — maior quantidade)
+- \( q_2 = 25 - 11{,}18 = 13{,}82 \)
+
+O regulador escolhe a solução com maior quantidade (maior bem-estar):
+
+\[
+q^{CMe} \approx 36{,}18, \quad p^{CMe} = 52 - 36{,}18 \approx 15{,}82
+\]
+
+Lucro: \( \pi^{CMe} = 0 \) (por construção, \( p = CMe \)).
+
+**Subsídios necessários:**
+
+| Regime | Quantidade | Preço | Lucro | Subsídio necessário |
+|--------|-----------|-------|-------|-------------------|
+| Monopólio não regulado | 25 | 27 | 125 | 0 |
+| Regulação \( p = CMg \) | 50 | 2 | \(-500\) | 500 |
+| Regulação \( p = CMe \) | 36,18 | 15,82 | 0 | 0 |
+
+**Interpretação:** Neste caso, diferentemente do Exercício 15.4, a demanda é suficiente para viabilizar a regulação por custo médio. A solução \( p = CMe \) é um compromisso: produz mais do que o monopólio não regulado (36,18 vs. 25), cobra menos (15,82 vs. 27) e não requer subsídio. A regulação por CMg é a mais eficiente (maximiza o excedente total), mas exige um subsídio de 500. A escolha entre os regimes depende do custo de financiamento público do subsídio.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-8)
+
+---
+
+## ✏️ Exercício 15.9 {#ex-15-9}
+
+**Cálculo da DWL com \( CMg = c = 10 \), demanda \( p = 100 - 2q \). Depois, \( c' = 30 \).**
+
+### (a) Equilíbrio de monopólio e DWL
+
+\[
+RT = (100 - 2q)q = 100q - 2q^2 \implies RMg = 100 - 4q
+\]
+
+\[
+RMg = CMg \implies 100 - 4q = 10 \implies q^M = 22{,}5, \quad p^M = 100 - 2(22{,}5) = 55
+\]
+
+Equilíbrio competitivo (\( p = CMg \)):
+
+\[
+100 - 2q = 10 \implies q^{CP} = 45, \quad p^{CP} = 10
+\]
+
+DWL (triângulo de Harberger):
+
+\[
+DWL = \frac{1}{2}(p^M - CMg)(q^{CP} - q^M) = \frac{1}{2}(55 - 10)(45 - 22{,}5) = \frac{1}{2} \times 45 \times 22{,}5 = 506{,}25
+\]
+
+### (b) DWL como fração da receita e do excedente competitivo
+
+Receita do monopolista:
+
+\[
+RT^M = p^M \times q^M = 55 \times 22{,}5 = 1237{,}5
+\]
+
+\[
+\frac{DWL}{RT^M} = \frac{506{,}25}{1237{,}5} \approx 0{,}409 = 40{,}9\%
+\]
+
+Excedente total competitivo:
+
+\[
+W^{CP} = \frac{1}{2}(100 - 10)(45) = \frac{1}{2} \times 90 \times 45 = 2025
+\]
+
+\[
+\frac{DWL}{W^{CP}} = \frac{506{,}25}{2025} = 0{,}25 = 25\%
+\]
+
+**Interpretação:** A DWL representa 25% do excedente total que seria gerado sob concorrência perfeita — uma fração substancial.
+
+### (c) Recálculo com \( c' = 30 \)
+
+\[
+100 - 4q = 30 \implies q^M = 17{,}5, \quad p^M = 100 - 2(17{,}5) = 65
+\]
+
+Equilíbrio competitivo:
+
+\[
+100 - 2q = 30 \implies q^{CP} = 35, \quad p^{CP} = 30
+\]
+
+DWL:
+
+\[
+DWL' = \frac{1}{2}(65 - 30)(35 - 17{,}5) = \frac{1}{2} \times 35 \times 17{,}5 = 306{,}25
+\]
+
+Excedente total competitivo:
+
+\[
+W'^{CP} = \frac{1}{2}(100 - 30)(35) = \frac{1}{2} \times 70 \times 35 = 1225
+\]
+
+\[
+\frac{DWL'}{W'^{CP}} = \frac{306{,}25}{1225} = 0{,}25 = 25\%
+\]
+
+| Variável | \( c = 10 \) | \( c = 30 \) |
+|----------|------------|------------|
+| \( q^M \) | 22,5 | 17,5 |
+| \( p^M \) | 55 | 65 |
+| DWL | 506,25 | 306,25 |
+| DWL / \( W^{CP} \) | 25% | 25% |
+
+**Interpretação:** A DWL absoluta diminui quando o custo marginal sobe (pois o mercado encolhe), mas a DWL como fração do excedente competitivo permanece constante em 25%. Este é um resultado geral para demanda linear \( p = a - bq \) e CMg constante: pode-se mostrar que \( DWL/W^{CP} = 1/4 \), independentemente dos parâmetros. Isso ocorre porque o monopolista sempre restringe a produção à metade da quantidade competitiva (\( q^M = q^{CP}/2 \)), gerando um triângulo de Harberger que é sempre 1/4 do triângulo de excedente total.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-9)
+
+---
+
+## ✏️ Exercício 15.10 {#ex-15-10}
+
+**Tarifa em duas partes em parque de diversões. Demanda individual \( q = 24 - 2p \), \( CMg = c = 2 \). Depois, dois tipos de consumidores.**
+
+### (a) Tarifa ótima em duas partes com consumidores idênticos
+
+Com consumidores idênticos, a estratégia ótima é cobrar \( p = CMg \) e extrair todo o excedente via taxa fixa.
+
+Com \( p = c = 2 \):
+
+\[
+q^* = 24 - 2(2) = 20
+\]
+
+O excedente do consumidor ao preço \( p = 2 \) é a área do triângulo entre a curva de demanda e o preço. A interseção da demanda com o eixo dos preços é \( p_{max} = 12 \) (quando \( q = 0 \): \( 0 = 24 - 2p \implies p = 12 \)).
+
+\[
+EC(p = 2) = \frac{1}{2}(12 - 2)(20) = \frac{1}{2} \times 10 \times 20 = 100
+\]
+
+Logo:
+
+\[
+T^* = 100, \quad p^* = 2
+\]
+
+Lucro por consumidor:
+
+\[
+\pi = T + (p - c) \cdot q = 100 + (2 - 2) \times 20 = 100
+\]
+
+### (b) Comparação com preço uniforme
+
+Com preço uniforme (sem entrada), a demanda individual é \( q = 24 - 2p \), logo a demanda inversa é \( p = 12 - q/2 \).
+
+Para um consumidor:
+
+\[
+RT = \left(12 - \frac{q}{2}\right)q = 12q - \frac{q^2}{2} \implies RMg = 12 - q
+\]
+
+\[
+RMg = CMg \implies 12 - q = 2 \implies q^M = 10, \quad p^M = 12 - 5 = 7
+\]
+
+Lucro por consumidor:
+
+\[
+\pi^U = (7 - 2) \times 10 = 50
+\]
+
+**Comparação:** A tarifa em duas partes gera o dobro do lucro (\( 100 \) vs. \( 50 \)) por consumidor. Isso ocorre porque a tarifa em duas partes permite ao monopolista capturar todo o excedente do consumidor, eliminando a perda de peso morto.
+
+### (c) Dois tipos: A com \( q_A = 24 - 2p \), B com \( q_B = 12 - 2p \)
+
+O tipo B tem demanda menor. Sua interseção com o eixo dos preços é \( p_{max}^B = 6 \) (quando \( q_B = 0 \)).
+
+Para servir ambos os tipos, a taxa fixa é limitada pelo excedente do tipo B:
+
+\[
+T \leq EC_B(p) = \frac{1}{2}(6 - p)(12 - 2p) = (6 - p)(6 - p) = (6 - p)^2
+\]
+
+Nota: \( q_B(p) = 12 - 2p \) e o preço máximo é 6, logo \( EC_B(p) = \frac{1}{2}(6 - p)(12 - 2p) = (6 - p)^2 \).
+
+No ótimo, \( T = (6 - p)^2 \).
+
+O excedente do tipo A ao preço \( p \) é: \( EC_A(p) = \frac{1}{2}(12 - p)(24 - 2p) = (12 - p)^2 \).
+
+O lucro total (por par de consumidores, um de cada tipo):
+
+\[
+\pi = 2T + (p - c)[q_A(p) + q_B(p)]
+\]
+
+\[
+\pi = 2(6 - p)^2 + (p - 2)[(24 - 2p) + (12 - 2p)]
+\]
+
+\[
+\pi = 2(6 - p)^2 + (p - 2)(36 - 4p)
+\]
+
+Expandindo:
+
+\[
+2(6 - p)^2 = 2(36 - 12p + p^2) = 72 - 24p + 2p^2
+\]
+
+\[
+(p - 2)(36 - 4p) = 36p - 4p^2 - 72 + 8p = 44p - 4p^2 - 72
+\]
+
+Somando:
+
+\[
+\pi = 72 - 24p + 2p^2 + 44p - 4p^2 - 72 = -2p^2 + 20p
+\]
+
+Maximizando:
+
+\[
+\frac{d\pi}{dp} = -4p + 20 = 0 \implies p^* = 5
+\]
+
+\[
+T^* = (6 - 5)^2 = 1
+\]
+
+Verificação das quantidades: \( q_A = 24 - 10 = 14 \), \( q_B = 12 - 10 = 2 \). Ambos os tipos estão ativos.
+
+Lucro por par:
+
+\[
+\pi = -2(25) + 20(5) = -50 + 100 = 50
+\]
+
+Ou diretamente: \( \pi = 2(1) + (5 - 2)(14 + 2) = 2 + 3 \times 16 = 2 + 48 = 50 \).
+
+Se houvesse \( N \) consumidores de cada tipo, o lucro total seria \( 50N \).
+
+**Comparação:** Com consumidores idênticos (tipo A), o lucro por consumidor era 100. Com dois tipos, o lucro por par cai para 50 (ou 25 por consumidor). A heterogeneidade dos consumidores reduz o poder de extração da tarifa em duas partes, pois a taxa fixa deve acomodar o tipo com menor disposição a pagar. O preço unitário sobe acima do CMg (\( p = 5 > 2 \)) para compensar parcialmente a taxa fixa mais baixa.
+
+↩ [Voltar ao enunciado](../cap15/index.md#ex-15-10)

@@ -407,3 +407,103 @@ Com agente avesso ao risco (\(u = \sqrt{w}\)), esse contrato impõe risco excess
 Em síntese: quanto mais avesso ao risco o agente, mais cara a "compra" de esforço via incentivos variáveis — e maior o custo de agência. Com aversão ao risco extrema (agente quer seguro total), o custo de agência pode ser proibitivo e o principal desiste de implementar esforço alto.
 
 ↩ [Voltar ao enunciado](../cap09d/index.md#ex-9d-9)
+
+---
+
+## ✏️ Exercício 9d.10 {#ex-9d-10}
+
+**Solução.**
+
+Dados: \(\theta_H = 6\), \(\theta_M = 3\), \(\theta_L = 1\), proporções iguais (\(1/3\) cada), custo \(c(e, \theta) = e^2 / (2\theta)\).
+
+**(a) Equilíbrio separador completo de menor custo:**
+
+O tipo L escolhe \(e_L = 0\) (salário 1). O tipo M escolhe \(e_M = e_M^*\) (salário 3). O tipo H escolhe \(e_H = e_H^*\) (salário 6).
+
+**Separação entre L e M:** O tipo L não deve querer imitar M:
+
+\[
+1 - 0 \geq 3 - (e_M^*)^2 / (2 \times 1) \implies (e_M^*)^2 \geq 4 \implies e_M^* \geq 2
+\]
+
+O tipo M não deve querer imitar L:
+
+\[
+3 - (e_M^*)^2 / (2 \times 3) \geq 1 \implies (e_M^*)^2 \leq 12 \implies e_M^* \leq 2\sqrt{3} \approx 3{,}46
+\]
+
+Menor custo: \(e_M^* = 2\).
+
+**Separação entre M e H:** O tipo M não deve querer imitar H:
+
+\[
+3 - (e_M^*)^2 / (2 \times 3) \geq 6 - (e_H^*)^2 / (2 \times 3) \implies (e_H^*)^2 - (e_M^*)^2 \geq 18
+\]
+
+Com \(e_M^* = 2\): \((e_H^*)^2 \geq 18 + 4 = 22 \implies e_H^* \geq \sqrt{22} \approx 4{,}69\).
+
+O tipo H não deve querer imitar M:
+
+\[
+6 - (e_H^*)^2 / (2 \times 6) \geq 3 - (e_M^*)^2 / (2 \times 6) \implies (e_H^*)^2 - (e_M^*)^2 \leq 36
+\]
+
+Com \(e_M^* = 2\): \((e_H^*)^2 \leq 36 + 4 = 40 \implies e_H^* \leq \sqrt{40} \approx 6{,}32\).
+
+Também é preciso verificar que o tipo L não queira imitar H:
+
+\[
+1 \geq 6 - (e_H^*)^2 / (2 \times 1) \implies (e_H^*)^2 \geq 10 \implies e_H^* \geq \sqrt{10} \approx 3{,}16
+\]
+
+Essa condição é automaticamente satisfeita por \(e_H^* = \sqrt{22}\).
+
+E que o tipo H não queira imitar L:
+
+\[
+6 - (e_H^*)^2 / 12 \geq 1 \implies (e_H^*)^2 \leq 60
+\]
+
+Satisfeita.
+
+**Equilíbrio separador de menor custo:** \(e_L = 0\), \(e_M^* = 2\), \(e_H^* = \sqrt{22} \approx 4{,}69\).
+
+**(b) Payoffs:**
+
+- Tipo L: \(1 - 0 = 1\).
+- Tipo M: \(3 - (2)^2 / (2 \times 3) = 3 - 4/6 = 3 - 2/3 \approx 2{,}33\).
+- Tipo H: \(6 - 22 / (2 \times 6) = 6 - 22/12 = 6 - 11/6 \approx 6 - 1{,}83 = 4{,}17\).
+
+**(c) Equilíbrio semi-separador (L e M fazem pooling):**
+
+Se L e M escolhem \(e = 0\), o salário no pool é \((1 + 3)/2 = 2\). O tipo H se separa com \(e_H = e^{**}\) (salário 6).
+
+**IC do tipo M (não imitar H):** \(2 - 0 \geq 6 - (e^{**})^2 / (2 \times 3)\)
+
+\[
+(e^{**})^2 \geq 24 \implies e^{**} \geq \sqrt{24} = 2\sqrt{6} \approx 4{,}90
+\]
+
+**IC do tipo L (não imitar H):** \(2 - 0 \geq 6 - (e^{**})^2 / (2 \times 1)\)
+
+\[
+(e^{**})^2 \geq 8 \implies e^{**} \geq 2\sqrt{2} \approx 2{,}83
+\]
+
+A restrição vinculante é a do tipo M: \(e^{**} = 2\sqrt{6} \approx 4{,}90\).
+
+**IC do tipo H (não imitar L/M):** \(6 - (e^{**})^2 / (2 \times 6) \geq 2\)
+
+\[
+(e^{**})^2 \leq 48 \implies e^{**} \leq 4\sqrt{3} \approx 6{,}93
+\]
+
+Satisfeita com \(e^{**} = 2\sqrt{6} \approx 4{,}90 < 6{,}93\). ✓
+
+**Payoff do tipo M no semi-separador:** \(2 - 0 = 2\).
+
+**Comparação:** No separador completo, tipo M obtém \(2{,}33\); no semi-separador, obtém \(2\). O tipo M **prefere o equilíbrio separador completo** (\(2{,}33 > 2\)), porque no separador ele investe em sinalização e é recompensado com salário 3, enquanto no semi-separador ele faz pooling com o tipo L e recebe salário 2 — abaixo de sua produtividade.
+
+**Interpretação econômica:** Com três tipos, o tipo intermediário enfrenta um dilema. Se faz pooling com o tipo baixo, evita o custo de sinalização mas perde rendimento (salário da média é menor que sua produtividade). Se se separa, investe em sinal mas é pago de acordo com sua produtividade. O resultado depende do custo relativo da sinalização e da distância entre os tipos. Quando os tipos são suficientemente espaçados (como neste caso), o equilíbrio separador completo tende a ser preferido pelos tipos intermediários e altos.
+
+↩ [Voltar ao enunciado](../cap09d/index.md#ex-9d-10)

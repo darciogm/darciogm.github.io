@@ -712,6 +712,68 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
     *Fontes: ANP — Levantamento de Preços de Combustíveis; IPEA — Texto para Discussão n.º 1.898 (2013); Santos (2013); Cardoso et al. (2019).*
 
+!!! box-mundo "🌍 Box Mundo 5.3 — Bens de Giffen na prática: o experimento do arroz na China de Jensen e Miller"
+
+    **Contexto:** A existência de bens de Giffen — bens para os quais a curva de demanda é positivamente inclinada, de modo que um aumento de preço *eleva* a quantidade demandada — é uma das previsões mais contraintuitivas da teoria da demanda. Como discutido na Seção 5.4, o comportamento de Giffen requer que o bem seja fortemente inferior e represente parcela substancial do orçamento, de modo que o efeito renda (positivo) domine o efeito substituição (negativo). Apesar de figurar em todos os manuais de microeconomia desde Alfred Marshall (1890), a evidência empírica direta de bens de Giffen foi, durante mais de um século, notavelmente escassa e controversa. A situação mudou em 2008, quando Robert Jensen e Nolan Miller publicaram o que é considerado o primeiro experimento controlado que documenta rigorosamente o comportamento de Giffen em condições naturais.
+
+    **Dados:** Jensen e Miller (2008, *American Economic Review*) conduziram um experimento de campo na província de Hunan (sul da China) e na província de Gansu (noroeste). Em cada localidade, famílias de baixa renda foram aleatoriamente designadas a receber subsídios ao preço do alimento básico local — arroz em Hunan e trigo em Gansu — por cinco meses, com o subsídio sendo depois removido. O desenho experimental permitiu estimar a curva de demanda de forma causal. Os resultados para o arroz em Hunan foram inequívocos: quando o subsídio reduziu o preço efetivo do arroz, as famílias consumiram *menos* arroz (e mais carne e vegetais); quando o subsídio foi removido e o preço voltou ao nível original, o consumo de arroz *aumentou*. A elasticidade-preço estimada para o arroz entre as famílias mais pobres de Hunan foi positiva e estatisticamente significativa, da ordem de +0,45. Para o trigo em Gansu, os resultados foram qualitativamente similares, mas estatisticamente mais fracos.
+
+    **Análise:** O resultado de Jensen e Miller confirma a decomposição de Slutsky da Seção 5.4 em condições reais. O arroz em Hunan satisfaz todas as condições teóricas para o comportamento de Giffen: (i) é um bem fortemente inferior — famílias muito pobres consomem arroz como principal fonte calórica e migram para alimentos de maior qualidade à medida que sua renda real aumenta; (ii) representa parcela muito elevada do orçamento alimentar — acima de 50% para as famílias mais pobres da amostra; (iii) as alternativas disponíveis (carne, vegetais) são suficientemente mais caras para que o efeito substituição seja pequeno. Quando o preço do arroz sobe, a queda do poder de compra real é tão severa que as famílias são forçadas a renunciar a alimentos melhores e consumir *mais* do alimento básico e barato — exatamente o mecanismo do efeito renda dominante descrito na Equação de Slutsky. A evidência de Jensen e Miller demonstra que bens de Giffen não são uma curiosidade teórica, mas um fenômeno real que emerge em contextos de pobreza extrema e concentração calórica em um único alimento — com implicações diretas para o desenho de políticas de segurança alimentar e subsídios a alimentos básicos.
+
+    **Fonte:** Jensen, R. T.; Miller, N. H. (2008). Giffen behavior and subsistence consumption. *American Economic Review*, 98(4), 1553–1577. Marshall, A. (1890). *Principles of Economics*. London: Macmillan.
+
+---
+
+
+## 🧠 Revisão Rápida
+
+Teste seu entendimento dos conceitos centrais deste capítulo.
+
+??? question "1. A função de demanda marshalliana (não compensada) difere da hicksiana (compensada) porque:"
+    - (a) A marshalliana mantém a utilidade constante; a hicksiana mantém a renda constante
+    - (b) A marshalliana mantém a renda constante; a hicksiana mantém a utilidade constante
+    - (c) A marshalliana só se aplica a bens normais; a hicksiana, a bens inferiores
+    - (d) A marshalliana é sempre mais elástica que a hicksiana
+
+    ??? success "Resposta"
+        **(b)** A demanda marshalliana $x_i(\mathbf{p}, I)$ resulta da maximização de utilidade com renda fixa. A demanda hicksiana $h_i(\mathbf{p}, \bar{u})$ resulta da minimização de despesa com utilidade fixa, isolando o efeito substituição puro. A alternativa (a) inverte as definições; (d) pode não valer para bens inferiores.
+
+??? question "2. Um bem de Giffen é necessariamente:"
+    - (a) Um bem de luxo com elasticidade-renda maior que 1
+    - (b) Um bem inferior cujo efeito renda (negativo) domina o efeito substituição
+    - (c) Um bem com elasticidade-preço cruzada negativa
+    - (d) Um bem cuja curva de Engel é linear e positivamente inclinada
+
+    ??? success "Resposta"
+        **(b)** Para um bem de Giffen, a quantidade demandada aumenta quando o preço sobe. Isso só ocorre se o bem é inferior (efeito renda negativo) e esse efeito é tão forte que domina o efeito substituição (sempre negativo). Nem todo bem inferior é de Giffen, mas todo bem de Giffen é inferior. As demais alternativas descrevem propriedades incompatíveis com bens de Giffen.
+
+??? question "3. A curva de Engel para um bem normal com elasticidade-renda constante igual a 2 tem formato:"
+    - (a) Linear com inclinação positiva passando pela origem
+    - (b) Côncava — cresce a taxas decrescentes
+    - (c) Convexa — cresce a taxas crescentes
+    - (d) Horizontal
+
+    ??? success "Resposta"
+        **(c)** Elasticidade-renda $\eta_I = 2 > 1$ (bem de luxo): a demanda cresce mais que proporcionalmente à renda, gerando uma curva de Engel convexa. Se $\eta_I = 1$, a curva seria linear (a); se $0 < \eta_I < 1$ (necessidade), seria côncava (b). A alternativa (d) implicaria demanda insensível à renda.
+
+??? question "4. A identidade de Slutsky pode ser escrita como $\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}$. O termo $-x_j \frac{\partial x_i}{\partial I}$ representa:"
+    - (a) O efeito substituição
+    - (b) O efeito renda — a mudança na demanda devida à variação no poder de compra real
+    - (c) A elasticidade-preço cruzada
+    - (d) A variação compensadora
+
+    ??? success "Resposta"
+        **(b)** Na equação de Slutsky, $\partial h_i/\partial p_j$ é o efeito substituição e $-x_j \cdot \partial x_i/\partial I$ é o efeito renda. Quando $p_j$ sobe, o poder de compra cai na proporção da quantidade consumida $x_j$, e o impacto sobre a demanda de $i$ depende de como $x_i$ responde à renda ($\partial x_i/\partial I$).
+
+??? question "5. Se a demanda marshalliana de um bem cai quando a renda aumenta, esse bem é classificado como:"
+    - (a) Bem de Giffen
+    - (b) Bem de luxo
+    - (c) Bem inferior
+    - (d) Bem complementar
+
+    ??? success "Resposta"
+        **(c)** Um bem inferior tem elasticidade-renda negativa: $\partial x/\partial I < 0$. Quando a renda cresce, o consumidor substitui o bem por alternativas de qualidade superior. A alternativa (a) é um caso extremo de bem inferior (efeito renda domina o substituição), não apenas renda-negativo; (b) é o oposto; (d) descreve relação entre bens, não resposta à renda.
+
 ---
 
 ## 📋 Resumo do Capítulo

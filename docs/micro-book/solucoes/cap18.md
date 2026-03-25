@@ -451,3 +451,269 @@ Mesmo com taxa real menor, a instabilidade regulatória eleva o custo de capital
 **Conclusão:** O governo deveria priorizar a estabilidade regulatória. Uma taxa de juros real baixa é condição necessária mas não suficiente para atrair investimento em infraestrutura de longo prazo. O prêmio de risco regulatório, ao ser aplicado sobre fluxos de caixa de 20-30 anos, tem efeito cumulativo devastador sobre o VPL. Marcos regulatórios claros, contratos críveis e instituições sólidas reduzem \( \pi_{\text{reg}} \) e são, portanto, tão ou mais importantes que a política monetária para viabilizar grandes projetos de infraestrutura.
 
 ↩ [Voltar ao enunciado](../cap18/index.md#ex-18-5)
+
+---
+
+## ✏️ Exercício 18.6 {#ex-18-6}
+
+**Consumidor com \( U = \sqrt{C_1} + 0{,}9\sqrt{C_2} \), \( Y_1 = 120 \), \( Y_2 = 55 \), \( r = 10\% \).**
+
+### (a) Equação de Euler
+
+A condição de primeira ordem iguala a utilidade marginal do consumo presente à utilidade marginal descontada do consumo futuro, ponderada por \( (1+r) \):
+
+\[
+u'(C_1) = \beta(1+r)u'(C_2) \implies \frac{1}{2\sqrt{C_1}} = 0{,}9 \times 1{,}1 \times \frac{1}{2\sqrt{C_2}}
+\]
+
+\[
+\frac{1}{\sqrt{C_1}} = \frac{0{,}99}{\sqrt{C_2}} \implies \sqrt{C_2} = 0{,}99\sqrt{C_1} \implies C_2 = 0{,}9801 \, C_1
+\]
+
+### (b) Consumo ótimo
+
+Riqueza intertemporal: \( W = 120 + 55/1{,}1 = 120 + 50 = 170 \).
+
+Substituindo \( C_2 = 0{,}9801 C_1 \) na restrição:
+
+\[
+C_1 + \frac{0{,}9801 C_1}{1{,}1} = 170 \implies C_1(1 + 0{,}8910) = 170 \implies 1{,}8910 \, C_1 = 170
+\]
+
+\[
+\boxed{C_1^* = \frac{170}{1{,}8910} \approx 89{,}90}
+\]
+
+\[
+\boxed{C_2^* = 0{,}9801 \times 89{,}90 \approx 88{,}11}
+\]
+
+### (c) Classificação
+
+Poupança: \( S = Y_1 - C_1^* = 120 - 89{,}90 = 30{,}10 > 0 \).
+
+O consumidor é **poupador**. A renda é concentrada no período 1 (\( Y_1 = 120 \gg Y_2 = 55 \)), e o consumidor deseja suavizar o consumo ao longo do tempo, transferindo R$ 30,10 do período 1 para o período 2.
+
+### (d) Se \( r \) cai para 5%
+
+Nova riqueza: \( W' = 120 + 55/1{,}05 = 120 + 52{,}38 = 172{,}38 \).
+
+Nova equação de Euler: \( C_2 = (0{,}9 \times 1{,}05)^2 C_1 = 0{,}945^2 C_1 = 0{,}8930 C_1 \).
+
+\[
+C_1(1 + 0{,}8930/1{,}05) = 172{,}38 \implies C_1(1 + 0{,}8505) = 172{,}38 \implies C_1^{*\prime} \approx 93{,}10
+\]
+
+Poupança: \( S' = 120 - 93{,}10 = 26{,}90 \).
+
+O consumidor continua poupador (\( S' > 0 \)), mas poupa menos (R$ 26,90 vs. R$ 30,10).
+
+**Interpretação:** O efeito substituição da queda de \( r \) reduz o incentivo a poupar (o retorno da poupança caiu). O efeito renda é ambíguo para o poupador, mas aqui ele é positivo porém insuficiente para compensar o efeito substituição. O resultado líquido é menos poupança — o consumidor "antecipa" mais consumo.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-6)
+
+---
+
+## ✏️ Exercício 18.7 {#ex-18-7}
+
+**Estação de tratamento de água: investimento R$ 10 milhões, receita R$ 1,2 milhão/ano, 20 anos, \( r_E = 14\% \).**
+
+### (a) VPL do projeto
+
+\[
+VPL = -10.000.000 + 1.200.000 \times \frac{1 - (1{,}14)^{-20}}{0{,}14}
+\]
+
+O fator de anuidade: \( a(0{,}14;\, 20) = \frac{1 - (1{,}14)^{-20}}{0{,}14} = \frac{1 - 0{,}0728}{0{,}14} = \frac{0{,}9272}{0{,}14} = 6{,}6231 \).
+
+\[
+VPL = -10.000.000 + 1.200.000 \times 6{,}6231 = -10.000.000 + 7.947.720 = \boxed{-2.052.280}
+\]
+
+O projeto **não é viável** com \( r_E = 14\% \).
+
+### (b) Com subsídio (investimento de R$ 7 milhões)
+
+\[
+VPL' = -7.000.000 + 7.947.720 = \boxed{+947.720}
+\]
+
+Com o subsídio, o projeto se torna viável (VPL > 0).
+
+### (c) Com beta reduzido para 0,8
+
+Novo custo de capital: \( r_E' = r_f + \beta' \times (E[r_m] - r_f) = 6\% + 0{,}8 \times 6{,}7\% = 6\% + 5{,}36\% = 11{,}36\% \).
+
+Novo fator de anuidade: \( a(0{,}1136;\, 20) = \frac{1 - (1{,}1136)^{-20}}{0{,}1136} \).
+
+\( (1{,}1136)^{20} = e^{20 \ln(1{,}1136)} = e^{20 \times 0{,}1074} = e^{2{,}148} \approx 8{,}567 \). Logo \( (1{,}1136)^{-20} \approx 0{,}1167 \).
+
+\[
+a(0{,}1136;\, 20) = \frac{1 - 0{,}1167}{0{,}1136} = \frac{0{,}8833}{0{,}1136} = 7{,}776
+\]
+
+\[
+VPL'' = -10.000.000 + 1.200.000 \times 7{,}776 = -10.000.000 + 9.331.200 = \boxed{-668.800}
+\]
+
+A redução do risco regulatório melhora muito o VPL (de -2,05 mi para -0,67 mi), mas por si só não torna o projeto viável. Seria necessário uma combinação de menor risco regulatório **e** algum subsídio, ou uma redução adicional no beta.
+
+**Comparação:** O subsídio direto de R$ 3 milhões é mais eficaz neste caso (+R$ 947 mil de VPL) do que a redução de risco (-R$ 669 mil). Porém, a redução de risco regulatório beneficia **todos** os projetos do setor, enquanto o subsídio beneficia apenas este projeto específico. A longo prazo, melhorar o ambiente regulatório é a política mais eficiente.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-7)
+
+---
+
+## ✏️ Exercício 18.8 {#ex-18-8}
+
+**Tesouro Prefixado (12% nominal, 3 anos) vs. Tesouro IPCA+ (6% real + IPCA, 3 anos). Inflação: 2%, 4% ou 8%, cada com prob. 1/3.**
+
+### (a) Retorno real esperado
+
+**Tesouro Prefixado:** O retorno nominal é fixo em 12%. O retorno real depende da inflação:
+
+- Se \( \pi = 2\% \): \( r = (1{,}12/1{,}02) - 1 = 9{,}80\% \)
+- Se \( \pi = 4\% \): \( r = (1{,}12/1{,}04) - 1 = 7{,}69\% \)
+- Se \( \pi = 8\% \): \( r = (1{,}12/1{,}08) - 1 = 3{,}70\% \)
+
+\[
+E[r_{\text{pré}}] = \frac{1}{3}(9{,}80 + 7{,}69 + 3{,}70) = \frac{21{,}19}{3} = \boxed{7{,}06\%}
+\]
+
+**Tesouro IPCA+:** O retorno real é fixo em 6%, independentemente da inflação.
+
+\[
+E[r_{\text{IPCA+}}] = \boxed{6{,}00\%}
+\]
+
+### (b) Variância do retorno real
+
+**Tesouro Prefixado:**
+
+\[
+\text{Var}(r_{\text{pré}}) = \frac{1}{3}[(9{,}80 - 7{,}06)^2 + (7{,}69 - 7{,}06)^2 + (3{,}70 - 7{,}06)^2]
+\]
+
+\[
+= \frac{1}{3}[7{,}5076 + 0{,}3969 + 11{,}2896] = \frac{19{,}1941}{3} = \boxed{6{,}40\text{ p.p.}^2}
+\]
+
+**Tesouro IPCA+:** \( \text{Var}(r_{\text{IPCA+}}) = \boxed{0} \) (retorno real certo).
+
+### (c) Preferência do investidor avesso ao risco
+
+O Tesouro Prefixado tem retorno real esperado maior (7,06% > 6,00%), mas carrega risco inflacionário (variância positiva). O Tesouro IPCA+ oferece retorno real certo de 6%.
+
+O **equivalente de certeza** do Tesouro Prefixado para um agente avesso ao risco é menor que seu valor esperado: \( EC < E[r_{\text{pré}}] = 7{,}06\% \). Se a aversão ao risco for suficientemente alta, o equivalente de certeza cairá abaixo de 6%, e o investidor preferirá o IPCA+. Para um investidor com aversão moderada, a diferença de 1,06 p.p. no retorno esperado pode ou não compensar o risco.
+
+Na prática, a forte demanda por Tesouro IPCA+ no Brasil sugere que muitos investidores são suficientemente avessos ao risco inflacionário para aceitar o retorno real garantido menor.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-8)
+
+---
+
+## ✏️ Exercício 18.9 {#ex-18-9}
+
+**\( U = C_1^{0{,}5} C_2^{0{,}5} \), \( Y_1 = 200 \), \( Y_2 = 100 \), \( r = 8\% \).**
+
+### (a) Consumo ótimo
+
+Com Cobb-Douglas simétrica, o consumidor aloca metade da riqueza para cada período (em valor presente):
+
+\[
+W = 200 + \frac{100}{1{,}08} = 200 + 92{,}59 = 292{,}59
+\]
+
+\[
+C_1^* = \frac{W}{2} = \frac{292{,}59}{2} = 146{,}30
+\]
+
+\[
+C_2^* = (1+r)(W - C_1^*) = 1{,}08 \times 146{,}30 = 158{,}00
+\]
+
+Poupança: \( S = Y_1 - C_1^* = 200 - 146{,}30 = 53{,}70 > 0 \). O consumidor é **poupador**.
+
+### (b) Restrição de crédito
+
+Na solução irrestrita da parte (a), o consumidor já é poupador (\( S > 0 \)), então a restrição de crédito \( S \geq 0 \) **não é ativa** — a solução não muda.
+
+Se os parâmetros fossem tais que a solução irrestrita implicasse \( S < 0 \) (o consumidor desejasse tomar empréstimo), a restrição de crédito forçaria \( C_1 = Y_1 \) e \( C_2 = Y_2 \): o consumidor ficaria preso ao ponto de dotação, sem poder suavizar o consumo. A perda de bem-estar seria a diferença entre a utilidade no ótimo irrestrito e a utilidade no ponto de dotação.
+
+### (c) Restrições de crédito no Brasil
+
+Restrições de crédito são altamente relevantes na economia brasileira. Segundo dados do Banco Central, o crédito ao setor privado como proporção do PIB no Brasil (~55% em 2023) é muito inferior ao de economias avançadas (EUA ~200%, zona do euro ~100%). Além disso:
+
+- Spreads bancários elevados funcionam como restrição parcial ao crédito, encarecendo o empréstimo a ponto de torná-lo inviável para muitos agentes.
+- Famílias de baixa renda frequentemente não têm acesso a crédito formal, dependendo de crédito informal a taxas ainda mais altas.
+- A consequência é que muitos consumidores brasileiros não conseguem suavizar o consumo intertemporalmente, ficando presos a variações de renda — exatamente o oposto do que o modelo de Fisher prevê sob mercados perfeitos.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-9)
+
+---
+
+## ✏️ Exercício 18.10 {#ex-18-10}
+
+**Jazida: \( S_0 = 2.000 \), \( p_0 = 120 \), \( c = 40 \), \( r = 6\% \), demanda inversa \( p_t = 200 - 2q_t \).**
+
+### (a) Renda de escassez
+
+\[
+R_0 = p_0 - c = 120 - 40 = 80
+\]
+
+Em 10 anos: \( R_{10} = 80 \times (1{,}06)^{10} = 80 \times 1{,}7908 = 143{,}27 \).
+
+Verificação: pela regra de Hotelling, \( R_{10}/R_0 = (1{,}06)^{10} = 1{,}7908 \). ✓
+
+### (b) Quantidade extraída
+
+Da demanda inversa: \( p_t = 200 - 2q_t \implies q_t = (200 - p_t)/2 \).
+
+Como \( p_t = R_t + c = R_0(1+r)^t + 40 \):
+
+\[
+q_t = \frac{200 - [R_0(1{,}06)^t + 40]}{2} = \frac{160 - R_0(1{,}06)^t}{2} = 80 - \frac{R_0}{2}(1{,}06)^t
+\]
+
+A quantidade extraída decresce ao longo do tempo (à medida que \( R_t \) sobe, \( p_t \) sobe e \( q_t \) cai).
+
+### (c) Determinação de \( R_0 \) com 2 períodos
+
+Simplificando para extração em 2 períodos (\( t = 0, 1 \)):
+
+\[
+q_0 + q_1 = S_0 = 2.000
+\]
+
+\[
+q_0 = 80 - R_0/2, \quad q_1 = 80 - \frac{R_0 \times 1{,}06}{2}
+\]
+
+\[
+(80 - R_0/2) + (80 - 1{,}06 R_0/2) = 2.000
+\]
+
+\[
+160 - R_0(1 + 1{,}06)/2 = 2.000 \implies 160 - 1{,}03 R_0 = 2.000 \implies R_0 = \frac{160 - 2.000}{1{,}03} = \frac{-1.840}{1{,}03} \approx -1.786
+\]
+
+O resultado negativo indica que, com apenas 2 períodos e estoque de 2.000, a demanda é insuficiente para esgotar o recurso nas condições dadas (o estoque é muito grande em relação à demanda por período). Na prática, a extração se estenderia por muitos mais períodos. Com horizonte mais longo, \( R_0 \) seria positivo e menor, pois a extração se distribui ao longo de mais períodos.
+
+Para um horizonte \( T \) grande, a condição de estoque se torna \( \sum_{t=0}^{T} [80 - (R_0/2)(1{,}06)^t] = 2.000 \), e \( R_0 \) é encontrado numericamente.
+
+### (d) Efeito de uma taxa de carbono de R$ 20/unidade
+
+A taxa de carbono eleva o custo efetivo de extração para \( c' = 40 + 20 = 60 \). Nova renda de escassez: \( R_0' = p_0 - c' = 120 - 60 = 60 < 80 \).
+
+Efeitos:
+
+1. **Velocidade de exaustão diminui:** Com custo de extração mais alto, menos unidades são extraídas em cada período, prolongando a vida da jazida.
+
+2. **Trajetória de preços:** O preço inicial pode cair (se a renda de escassez diminui mais do que o custo sobe) ou subir (se o efeito custo domina). No caso, \( p_0 = R_0' + c' = 60 + 60 = 120 \) — o preço inicial não muda, mas a composição entre renda de escassez e custo se altera.
+
+3. **Transição energética:** A taxa de carbono funciona como um mecanismo para "internalizar" a externalidade das emissões. Ao encarecer a extração, ela incentiva: (i) redução do consumo corrente do recurso; (ii) investimento em tecnologias alternativas (o backstop fica relativamente mais atrativo); (iii) conservação do recurso para períodos em que substitutos ainda não estejam disponíveis.
+
+A taxa de carbono é, portanto, consistente com a lógica de Hotelling: altera o custo efetivo de extração e, por conseguinte, toda a trajetória ótima, desacelerando a exaustão e favorecendo a transição para fontes de energia limpas.
+
+↩ [Voltar ao enunciado](../cap18/index.md#ex-18-10)
