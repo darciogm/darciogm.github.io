@@ -1,4 +1,4 @@
-# Capítulo 9c — Jogando no Escuro: Jogos com Informação Incompleta
+# Capítulo 9c — Jogando no Escuro (E Fingindo Que Sabe)
 
 Nos módulos anteriores, todo mundo sabia tudo: os payoffs, as estratégias, quem era quem. Jogo de cartas com todas as cartas na mesa. Confortável — e completamente irreal. No mundo de verdade, a firma entrante não sabe se a incumbente é eficiente ou desperdiçadora. O licitante no leilão do pré-sal não faz ideia de quanto os concorrentes estão dispostos a pagar. A seguradora não sabe se o cliente é prudente ou desleixado. A pergunta que paralisou a teoria dos jogos por anos: como analisar um jogo quando os jogadores nem concordam sobre *qual jogo* estão jogando?
 

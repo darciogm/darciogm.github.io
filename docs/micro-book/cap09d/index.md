@@ -1,4 +1,4 @@
-# Capítulo 9d — Sinais, Contratos e Credibilidade: Jogos Dinâmicos com Informação Incompleta
+# Capítulo 9d — O Diploma É Caro, Mas O Sinal É Grátis?
 
 No módulo anterior, jogadores com informação privada agiam ao mesmo tempo — cada um no escuro sobre os demais. Agora, adicionamos sequencialidade: alguém age *primeiro*, e os outros *observam*. Essa combinação muda tudo, porque a ação do primeiro jogador *fala*. Quando um candidato a emprego exibe um MBA de escola prestigiosa, ele não está apenas consumindo educação — está *dizendo* algo ao empregador sobre sua qualidade. Quando uma empresa oferece garantia de 5 anos no produto, está *comunicando* que confia na própria qualidade. A ação se torna **sinal** — e o jogo vira uma conversa estratégica onde cada movimento é uma mensagem.
 

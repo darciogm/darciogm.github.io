@@ -1,4 +1,4 @@
-# Capítulo 11 — Por Que Nada É de Graça
+# Capítulo 11 — A Conta Sempre Chega (E Vem em Formato de U)
 
 Toda dona de padaria sabe uma coisa que muitos alunos de economia demoram a internalizar: não basta saber *fazer* — é preciso saber *quanto custa* fazer. No capítulo anterior, mapeamos a tecnologia da firma: isoquantas, rendimentos de escala, TMST. Era o cardápio das possibilidades. Agora vem a conta. A teoria dos custos traduz essas possibilidades tecnológicas em cifras — e é nessa tradução que decisões reais de produção acontecem.
 

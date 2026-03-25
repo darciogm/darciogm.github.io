@@ -1,4 +1,4 @@
-# Capítulo 23 — Microeconomia da Saúde
+# Capítulo 23 — Doutor, Quanto Custa? (Arrow Já Sabia Que Ia Dar Problema)
 
 Você sabe quanto custa uma aspirina num hospital americano? Até 25 dólares — por um comprimido que custa centavos na farmácia da esquina. Esse absurdo não é acidente. Em 1963, Kenneth Arrow publicou um artigo que mudou a forma como economistas pensam sobre saúde. Em "Uncertainty and the Welfare Economics of Medical Care", Arrow argumentou que o mercado de cuidados médicos é *fundamentalmente diferente* de outros mercados — não por razões sentimentais ("saúde não tem preço"), mas por razões econômicas precisas: incerteza radical sobre a doença, assimetria de informação entre médico e paciente, externalidades de vacinação e tratamento, e a natureza de bem meritório que justifica intervenção pública mesmo quando não há falha de mercado clássica. Seis décadas depois, a economia da saúde tornou-se uma das maiores subáreas da microeconomia aplicada, com implicações diretas para políticas públicas que afetam bilhões de pessoas — e a aspirina de 25 dólares continua sem explicação convincente fora da teoria de Arrow.
 

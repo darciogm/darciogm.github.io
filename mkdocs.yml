@@ -81,34 +81,34 @@ nav:
     - Interação Estratégica:
       - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
         - "Visão Geral": micro-book/cap09/index.md
-        - "9a — Jogos Estáticos com Informação Completa": micro-book/cap09a/index.md
-        - "9b — Jogos Dinâmicos": micro-book/cap09b/index.md
-        - "9c — Informação Incompleta": micro-book/cap09c/index.md
-        - "9d — Sinais e Contratos": micro-book/cap09d/index.md
+        - "9a — Pedra, Papel, Nash": micro-book/cap09a/index.md
+        - "9b — Primeiro Você, Depois Eu": micro-book/cap09b/index.md
+        - "9c — Jogando no Escuro": micro-book/cap09c/index.md
+        - "9d — O Diploma É Caro, Mas O Sinal É Grátis?": micro-book/cap09d/index.md
     - A Firma e os Custos:
       - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap10/index.md
-      - "Cap. 11 — Por Que Nada É de Graça": micro-book/cap11/index.md
-      - "Cap. 12 — A Firma Nua": micro-book/cap12/index.md
+      - "Cap. 11 — A Conta Sempre Chega": micro-book/cap11/index.md
+      - "Cap. 12 — Lucro = Receita − Custo": micro-book/cap12/index.md
     - Mercados Competitivos:
       - "Cap. 13 — O Leiloeiro que Ninguém Vê": micro-book/cap13/index.md
       - "Cap. 14 — Equilíbrio Geral": micro-book/cap14/index.md
     - Poder de Mercado:
-      - "Cap. 15 — Sem Concorrente, Sem Piedade": micro-book/cap15/index.md
+      - "Cap. 15 — Sozinho, Feliz e Cobrando Caro": micro-book/cap15/index.md
       - "Cap. 16 — Poucos — e Isso Muda Tudo": micro-book/cap16/index.md
     - Fatores e Tempo:
-      - "Cap. 17 — Economia do Trabalho": micro-book/cap17/index.md
+      - "Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?": micro-book/cap17/index.md
       - "Cap. 18 — A Paciência Tem Preço": micro-book/cap18/index.md
     - Falhas de Mercado:
-      - "Cap. 19 — Limões, Sinais e Contratos": micro-book/cap19/index.md
+      - "Cap. 19 — Quando Um Lado Sabe Mais": micro-book/cap19/index.md
       - "Cap. 20 — Fumaça, Caronas e Tragédias": micro-book/cap20/index.md
     - Economia Digital:
-      - "Cap. 21 — Plataformas, Redes e Dados": micro-book/cap21/index.md
+      - "Cap. 21 — Se É De Graça, O Produto É Você": micro-book/cap21/index.md
     - Métodos:
-      - "Cap. 22 — O Laboratório do Economista": micro-book/cap22/index.md
+      - "Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas": micro-book/cap22/index.md
     - Economia da Saúde:
-      - "Cap. 23 — Microeconomia da Saúde": micro-book/cap23/index.md
+      - "Cap. 23 — Doutor, Quanto Custa?": micro-book/cap23/index.md
     - Economia Ambiental:
-      - "Cap. 24 — Mercados, Clima e Sustentabilidade": micro-book/cap24/index.md
+      - "Cap. 24 — Quanto Vale Um Pôr do Sol?": micro-book/cap24/index.md
     - "Cadernos Python": micro-book/notebooks/index.md
     - "Exercícios com IA": micro-book/exercicios-ia.md
     - "Compilado ANPEC": micro-book/anpec-compilado.md

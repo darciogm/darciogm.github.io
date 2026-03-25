@@ -1,4 +1,4 @@
-# Capítulo 21 — Plataformas, Redes e Dados: Microeconomia da Era Digital
+# Capítulo 21 — Se É De Graça, O Produto É Você
 
 Por que o Google não cobra nada pelo seu buscador? Por que o WhatsApp se tornou praticamente universal no Brasil, mas concorrentes tecnicamente superiores fracassaram? Por que a Amazon pode vender livros abaixo do custo e, ainda assim, aumentar seu lucro? Essas perguntas — aparentemente desconexas — compartilham uma raiz microeconômica comum: os mercados digitais operam sob uma lógica fundamentalmente diferente daquela que governa os mercados de bens tradicionais analisados nos capítulos anteriores.
 

@@ -1,4 +1,4 @@
-# Capítulo 9b — Pensando de Trás para Frente: Jogos Dinâmicos com Informação Completa
+# Capítulo 9b — Primeiro Você, Depois Eu (E Ninguém Confia em Ninguém)
 
 No módulo anterior, todo mundo jogava ao mesmo tempo — como num "já!" de par ou ímpar. Agora, entra o tempo. Uma firma investe *antes* de a concorrente reagir. Um sindicato faz a proposta *primeiro* e a empresa responde *depois*. O Banco Central anuncia a meta de inflação *hoje* e os agentes ajustam expectativas *amanhã*. Quando a ordem importa, tudo muda.
 

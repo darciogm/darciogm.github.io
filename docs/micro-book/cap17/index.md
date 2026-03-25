@@ -1,4 +1,4 @@
-# Capítulo 17 — O Preço do Suor: Economia do Trabalho
+# Capítulo 17 — O Salário Subiu e Você… Trabalhou Menos?
 
 Todo dia, ao desligar o despertador, você enfrenta — conscientemente ou não — o dilema mais antigo da economia: vale a pena trocar mais uma hora de travesseiro por mais uma hora de salário? A renda do trabalho representa cerca de dois terços da renda nacional na maioria dos países, e as decisões sobre quanto trabalhar, que carreira seguir e como negociar salários afetam profundamente o bem-estar individual e coletivo. Neste capítulo, aplicamos as ferramentas da microeconomia — teoria do consumidor, equilíbrio de mercado e poder de mercado — ao estudo da oferta e da demanda de trabalho. Spoiler: a resposta para "salário maior sempre faz a pessoa trabalhar mais" é um sonoro *depende*.
 

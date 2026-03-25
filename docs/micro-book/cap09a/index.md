@@ -1,4 +1,4 @@
-# Capítulo 9a — Jogos Estáticos com Informação Completa
+# Capítulo 9a — Pedra, Papel, Nash
 
 Até aqui, os agentes do nosso livro viviam em solidão confortável. O consumidor maximizava utilidade olhando apenas para preços e renda — sem se preocupar com o que os outros consumidores faziam. A firma igualava custo marginal ao preço de mercado sem pensar nos concorrentes. Cada um no seu canto, todos tomadores de preço.
 

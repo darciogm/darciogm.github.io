@@ -1,4 +1,4 @@
-# Capítulo 19 — Limões, Sinais e Contratos
+# Capítulo 19 — Quando Um Lado Sabe Mais (E Isso Estraga Tudo)
 
 Até aqui, este livro tratou os agentes econômicos como se fossem oniscientes — cada um sabendo tudo sobre o produto, o preço e o comportamento alheio. Foi um mundo confortável, mas irreal. Na prática, a economia funciona mais como um jogo de pôquer do que como um jogo de xadrez: ninguém vê as cartas dos outros. Empregadores não observam perfeitamente o esforço de seus funcionários; compradores de carros usados desconhecem o histórico real de manutenção do veículo; seguradoras não conseguem distinguir com precisão clientes de alto e baixo risco; investidores sabem menos sobre a qualidade de uma empresa do que seus gestores.
 

@@ -1,4 +1,4 @@
-# Capítulo 22 — O Laboratório do Economista: Economia Experimental
+# Capítulo 22 — RCTs, Diff-in-Diff e Outras Siglas que Mudaram a Economia
 
 Se a microeconomia é uma ciência, onde estão os experimentos? Durante a maior parte do século XX, a resposta era desanimadora: economistas observavam o mundo, construíam modelos elegantes, mas raramente testavam suas previsões em ambientes controlados. A economia era considerada uma ciência *observacional*, como a astronomia — incapaz de manipular variáveis para identificar relações causais. Essa limitação não era apenas metodológica; era conceitual. Se não podemos realizar experimentos controlados, como distinguir correlação de causalidade? Como saber se o salário mínimo *causa* desemprego, ou se ambos respondem a um terceiro fator? Como testar se as pessoas realmente maximizam utilidade, ou se os leilões de fato convergem ao equilíbrio previsto pela teoria?
 

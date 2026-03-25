@@ -1,4 +1,4 @@
-# Capítulo 12 — A Firma Nua: Anatomia do Lucro
+# Capítulo 12 — Lucro = Receita − Custo (E Tudo que Pode Dar Errado no Meio)
 
 Os capítulos anteriores construíram os dois pilares sobre os quais repousa a teoria da firma: a **tecnologia** (função de produção, Capítulo 10) e os **custos** (função custo, Capítulo 11). Agora é hora de juntar as peças e deixar a firma fazer o que ela faz de melhor: tomar decisões em busca de lucro. A questão central é: **como a firma escolhe quanto produzir?** Parece simples — quase ingênua —, mas a resposta que a microeconomia oferece é como um fio de Ariadne que conecta a decisão solitária de um empresário a toda a arquitetura do equilíbrio de mercado estudada no Capítulo 13.
 

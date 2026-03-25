@@ -1,4 +1,4 @@
-# Capítulo 24 — Economia Ambiental: Mercados, Clima e Sustentabilidade
+# Capítulo 24 — Quanto Vale Um Pôr do Sol? (Não, Sério, Quanto?)
 
 Por que a temperatura média do planeta subiu mais de 1,1°C desde a era pré-industrial — e continua subindo? Por que empresas poluem mais do que a sociedade gostaria? Por que é tão difícil proteger florestas tropicais, mesmo quando todos concordam que sua destruição é uma catástrofe? E por que economistas gastam tanto tempo discutindo taxas de desconto quando o futuro do planeta está em jogo? Essas perguntas — urgentes, complexas e profundamente interligadas — são o objeto da **economia ambiental**, o campo que aplica as ferramentas da microeconomia para analisar a relação entre atividade econômica e meio ambiente.
 
