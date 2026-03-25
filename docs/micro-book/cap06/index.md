@@ -195,7 +195,7 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
 </div>
 
-!!! box-mundo "🌍 Box Mundo 6.1 — Elasticidades cruzadas nos mercados de energia: gás natural, carvão e a transição energética"
+!!! box-mundo "Box Mundo 6.1 — Elasticidades cruzadas nos mercados de energia: gás natural, carvão e a transição energética"
 
     **Contexto:** A transição energética global reconfigurou as relações de substituição entre fontes de energia. Nos Estados Unidos e na União Europeia, gás natural e carvão competem diretamente na geração de eletricidade: quando o preço do gás natural sobe, usinas termelétricas substituem gás por carvão, e vice-versa. Essa substituição é um dos mecanismos centrais pelos quais choques de preço de energia se propagam pelo sistema produtivo — e também pelo qual políticas de precificação de carbono podem alterar a matriz energética.
 
@@ -533,7 +533,7 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 
     A demanda caiu de 8,33 para 7,5 apesar de a renda total permanecer em 200. A redistribuição transferiu renda do consumidor com maior propensão marginal a consumir o bem (A) para o consumidor com menor propensão (B).
 
-!!! box-mundo "🌍 Box Mundo 6.2 — O debate do agente representativo: a crítica de Kirman e a heterogeneidade dos consumidores"
+!!! box-mundo "Box Mundo 6.2 — O debate do agente representativo: a crítica de Kirman e a heterogeneidade dos consumidores"
 
     **Contexto:** A seção 6.7 mostrou que a agregação de demandas individuais em uma demanda de mercado "bem-comportada" exige condições restritivas (como a condição de Gorman). Essa questão está no coração de um dos debates mais persistentes da teoria econômica: é legítimo modelar uma economia inteira como se fosse um único "agente representativo"? Em 1992, o economista Alan Kirman publicou uma crítica influente argumentando que a resposta é, em geral, não — e que a prática de usar agentes representativos em modelos macroeconômicos pode gerar previsões sistematicamente incorretas.
 
@@ -628,7 +628,7 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
     *Fontes: ABRAS — Associação Brasileira de Supermercados; POF/IBGE; Euromonitor International — relatórios de bebidas não alcoólicas; análises do IFI/Senado sobre a reforma tributária.*
 
-!!! box-mundo "🌍 Box Mundo 6.3 — Elasticidades da demanda por gasolina ao redor do mundo: por que a mesma teoria gera respostas tão diferentes?"
+!!! box-mundo "Box Mundo 6.3 — Elasticidades da demanda por gasolina ao redor do mundo: por que a mesma teoria gera respostas tão diferentes?"
 
     **Contexto:** A elasticidade-preço da demanda — conceito central deste capítulo — é uma das grandezas mais estimadas em economia aplicada, e a gasolina é talvez o bem mais estudado empiricamente. A teoria prevê que a elasticidade depende da disponibilidade de substitutos, da parcela do orçamento e do horizonte temporal (curto vs. longo prazo). Uma comparação internacional das elasticidades da demanda por gasolina oferece uma ilustração poderosa de como o mesmo arcabouço teórico gera respostas quantitativas muito diferentes conforme o contexto institucional, geográfico e de política pública — exatamente a questão da heterogeneidade entre países que a Seção 6.7 levanta no contexto da agregação.
 

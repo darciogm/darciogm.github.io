@@ -237,7 +237,7 @@ A [Tabela 7.1](#tabela-7-1) apresenta as classes mais utilizadas de funções de
     **Conexão com este capítulo:**
     O coeficiente de Arrow-Pratt de aversão ao risco — medida central para classificar atitudes frente ao risco — foi desenvolvido independentemente por Arrow e John W. Pratt. As medidas de aversão absoluta e relativa ao risco, que determinam como a demanda por seguros e ativos arriscados varia com a riqueza, são ferramentas essenciais da análise de risco apresentada neste capítulo.
 
-!!! box-mundo "🌍 Box Mundo 7.1 — Preferências por risco ao redor do mundo"
+!!! box-mundo "Box Mundo 7.1 — Preferências por risco ao redor do mundo"
 
     **Contexto:** A aversão ao risco é um parâmetro central da teoria microeconômica, mas será que ela varia sistematicamente entre países e culturas? Nas últimas três décadas, economistas e psicólogos acumularam evidências robustas de que as atitudes frente ao risco não são universais — elas variam com a renda per capita, a cultura, a estrutura institucional e até a história de exposição a choques econômicos de cada sociedade. Essa variação tem implicações profundas: se o coeficiente de Arrow-Pratt difere entre países, então a demanda por seguros, a composição de portfólios e o design ótimo de políticas públicas também devem diferir.
 
@@ -628,7 +628,7 @@ O valor da informação tem aplicações diretas em contextos brasileiros. Uma e
 
 Uma distinção importante é que o valor da informação depende de *quão* boa é a decisão sem ela. Se o agente já escolhe quase otimamente sem a informação adicional, o ganho é pequeno. Se a incerteza é grande e a decisão sem informação é muito sub-ótima, o valor pode ser enorme. Isso sugere que o retorno de investimentos em coleta e processamento de dados é maior em ambientes de alta incerteza — exatamente o caso do agronegócio brasileiro sujeito a variabilidade climática, oscilações cambiais e volatilidade de preços internacionais de commodities.
 
-!!! box-mundo "🌍 Box Mundo 7.3 — Penetração global de seguros: como a aversão ao risco se traduz em mercados reais"
+!!! box-mundo "Box Mundo 7.3 — Penetração global de seguros: como a aversão ao risco se traduz em mercados reais"
 
     **Contexto:** A Seção 7.6.1 demonstrou que um agente avesso ao risco contrata seguro total quando o prêmio é atuarialmente justo, e seguro parcial quando há carregamento positivo. Mas como essas previsões teóricas se manifestam na prática ao redor do mundo? A **taxa de penetração de seguros** — prêmios totais como proporção do PIB — é a medida-padrão utilizada pela indústria e por reguladores para avaliar o grau em que uma economia utiliza mecanismos formais de transferência de risco. As disparidades internacionais são enormes e revelam como fatores institucionais, culturais e de desenvolvimento econômico modulam a demanda por seguros prevista pelo modelo teórico.
 
@@ -638,7 +638,7 @@ Uma distinção importante é que o valor da informação depende de *quão* boa
 
     **Fonte:** Swiss Re Institute (2023). *sigma No. 3/2023: World insurance: stirring satisfactory resilience amid turbulence*. Zurich: Swiss Re. OECD (2023). *Insurance Statistics*. Paris: OECD. Susep — Superintendência de Seguros Privados (2023). *Relatório de Análise e Acompanhamento dos Mercados Supervisionados*.
 
-!!! box-mundo "🌍 Box Mundo 7.2 — Microsseguros em países em desenvolvimento"
+!!! box-mundo "Box Mundo 7.2 — Microsseguros em países em desenvolvimento"
 
     **Contexto:** A teoria dos seguros desenvolvida nesta seção pressupõe mercados de seguros funcionais — seguradoras com capacidade de *pooling* de riscos, consumidores informados e prêmios atuarialmente justos ou próximos disso. Nos países em desenvolvimento, contudo, centenas de milhões de pequenos agricultores, trabalhadores informais e microempreendedores enfrentam riscos severos (secas, enchentes, doenças, flutuações de preços) sem acesso a seguros tradicionais. O **microsseguro** — produtos de seguro de baixo custo e cobertura simplificada, desenhados para populações de baixa renda — surgiu como resposta a essa lacuna, e o **seguro indexado** (*index-based insurance*) representa sua variante mais inovadora.
 

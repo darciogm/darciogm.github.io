@@ -773,7 +773,7 @@ O exercício com a CES é um investimento que se pagará ao longo de todo o livr
 
 Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como esse resultado se modifica quando há restrições? A resposta é surpreendentemente simples — e de enorme utilidade prática: basta substituir a função objetivo \(f\) pelo Lagrangeano \(\mathcal{L}\).
 
-!!! box-mundo "🌍 Box Mundo 2.1 — Preço-sombra do carbono: o multiplicador de Lagrange na política climática global"
+!!! box-mundo "Box Mundo 2.1 — Preço-sombra do carbono: o multiplicador de Lagrange na política climática global"
 
     **Contexto:** Uma das aplicações mais consequentes do método de Lagrange na economia contemporânea é a precificação do carbono. O problema global pode ser formulado como uma otimização restrita: maximizar o bem-estar econômico mundial sujeito a uma restrição sobre a quantidade total de emissões de CO₂ compatível com uma meta climática (por exemplo, limitar o aquecimento a 2°C acima dos níveis pré-industriais). Nesse enquadramento, o multiplicador de Lagrange \(\lambda^*\) associado à restrição de emissões tem uma interpretação direta: é o **custo social do carbono** (*Social Cost of Carbon*, SCC) — o custo marginal, em termos de bem-estar, de emitir uma tonelada adicional de CO₂.
 
@@ -853,7 +853,7 @@ Note a diferença sutil em relação ao caso irrestrito: aqui, a derivada é do 
 
 A mensagem recorrente é a mesma: no ótimo, os efeitos indiretos (ajustes nas variáveis de escolha) são de segunda ordem, e apenas o efeito direto importa. Essa simplificação — que decorre da CPO — é o motor analítico por trás de boa parte da estática comparativa em microeconomia.
 
-!!! box-mundo "🌍 Box Mundo 2.2 — O teorema do envelope no desenho de leilões: de Vickrey aos leilões de espectro"
+!!! box-mundo "Box Mundo 2.2 — O teorema do envelope no desenho de leilões: de Vickrey aos leilões de espectro"
 
     **Contexto:** Uma das aplicações mais elegantes e influentes do teorema do envelope ocorre na teoria de leilões. William Vickrey, em seu trabalho pioneiro de 1961 (que lhe rendeu o Nobel de 1996), utilizou o envelope theorem para demonstrar o célebre **Teorema da Equivalência de Receita**: sob certas condições, todos os formatos padrão de leilão (inglês, holandês, primeiro preço selado, segundo preço selado) geram a mesma receita esperada para o vendedor. A chave da demonstração é que o pagamento esperado de um participante pode ser recuperado inteiramente a partir de sua probabilidade de vencer — sem necessidade de conhecer sua estratégia de lance — exatamente porque o teorema do envelope permite "ignorar" os ajustes ótimos de comportamento.
 
@@ -1093,7 +1093,7 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
     **Por que isso importa:** Esse resultado é a base teórica da distribuição funcional da renda — quanto vai para o trabalho e quanto vai para o capital. No Brasil, onde a participação do trabalho na renda caiu de ~48% para ~43% entre 2000 e 2015 (Contas Nacionais/[IBGE](https://www.ibge.gov.br)), o teorema de Euler ajuda a entender as forças por trás dessa mudança.
 
-!!! box-mundo "🌍 Box Mundo 2.3 — Modelos quantitativos no FMI e no Banco Mundial: otimização e estática comparativa na prática de política econômica"
+!!! box-mundo "Box Mundo 2.3 — Modelos quantitativos no FMI e no Banco Mundial: otimização e estática comparativa na prática de política econômica"
 
     **Contexto:** As ferramentas matemáticas desenvolvidas neste capítulo — otimização restrita, multiplicadores de Lagrange, estática comparativa e o teorema do envelope — não são abstrações confinadas a manuais: constituem a espinha dorsal dos modelos quantitativos utilizados pelas principais instituições de política econômica do mundo. O Fundo Monetário Internacional (FMI), o Banco Mundial e a OCDE empregam modelos de equilíbrio geral computável (CGE) e modelos dinâmicos estocásticos de equilíbrio geral (DSGE) para avaliar cenários de política, projetar crescimento e estimar os efeitos de reformas estruturais. Em todos esses modelos, agentes representativos resolvem problemas de maximização com restrições — exatamente o tipo de problema formalizado nas Seções 2.5 a 2.7.
 

@@ -51,7 +51,7 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
 !!! note "Conexão com a teoria da preferência revelada"
     Os axiomas sobre \(\succsim\) são postulados sobre preferências *internas* do consumidor — algo que, em princípio, não podemos observar diretamente. Existe, porém, uma contrapartida observacional: o **Axioma Generalizado da Preferência Revelada (GARP)**, que traduz completude e transitividade em condições testáveis sobre *escolhas de consumo observadas*. Se as compras de um consumidor satisfazem o GARP, seus dados são consistentes com a maximização de alguma função de utilidade bem comportada. Na seção "Pesquisa em Ação" ao final deste capítulo, o artigo de Choi et al. (2014) testa exatamente essa hipótese em uma amostra representativa — com resultados surpreendentes sobre a relação entre consistência das escolhas e acumulação de riqueza.
 
-!!! box-mundo "🌍 Box Mundo 3.1 — Violações de transitividade: os experimentos de Tversky e replicações internacionais"
+!!! box-mundo "Box Mundo 3.1 — Violações de transitividade: os experimentos de Tversky e replicações internacionais"
 
     **Contexto:** O axioma da transitividade — se \(A \succsim B\) e \(B \succsim C\), então \(A \succsim C\) — é um dos pilares da teoria da escolha racional. Sem ele, como discutido na Seção 3.1, não é possível construir uma função de utilidade que represente as preferências do consumidor. Porém, desde os anos 1960, psicólogos e economistas comportamentais têm documentado violações sistemáticas desse axioma em contextos experimentais. O trabalho mais influente é o de Amos Tversky (1969), que demonstrou que indivíduos frequentemente exibem preferências intransitivas quando as alternativas diferem em múltiplas dimensões e as diferenças em alguma dimensão são "imperceptíveis".
 
@@ -566,7 +566,7 @@ A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais d
 
     **Interpretação econômica:** No contexto brasileiro, uma elasticidade de substituição baixa como \(\sigma = 1/2\) pode descrever, por exemplo, a relação entre energia elétrica e gás de cozinha para cocção: o consumidor pode substituir parcialmente um pelo outro (fogão elétrico vs. fogão a gás), mas com dificuldade crescente — refletindo custos de troca de equipamentos e hábitos de consumo enraizados.
 
-!!! box-mundo "🌍 Box Mundo 3.2 — Elasticidades de substituição no comércio internacional: as elasticidades de Armington"
+!!! box-mundo "Box Mundo 3.2 — Elasticidades de substituição no comércio internacional: as elasticidades de Armington"
 
     **Contexto:** A função CES apresentada na Seção 3.6.4 não é apenas uma ferramenta teórica para modelar preferências individuais — ela é a base de praticamente todos os modelos de comércio internacional utilizados por organizações como a OMC, o FMI e o Banco Mundial. Em 1969, Paul Armington propôs tratar bens importados de diferentes países como substitutos imperfeitos, modelando as preferências dos compradores (consumidores, firmas ou governos) por bens diferenciados por origem com uma função CES. Nesse enquadramento, a elasticidade de substituição \(\sigma\) mede o grau em que compradores estão dispostos a trocar, por exemplo, aço brasileiro por aço chinês em resposta a variações de preços relativos.
 
@@ -673,7 +673,7 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
 
     **Fonte**: IBGE, Pesquisa de Orçamentos Familiares (várias edições); Barros, R. P. de; Foguel, M. N.; Ulyssea, G. (orgs.). *Desigualdade de renda no Brasil: uma análise da queda recente*. Brasília: IPEA, 2007.
 
-!!! box-mundo "🌍 Box Mundo 3.3 — Preferência revelada em big data: dados de scanner de supermercados e testes do GARP"
+!!! box-mundo "Box Mundo 3.3 — Preferência revelada em big data: dados de scanner de supermercados e testes do GARP"
 
     **Contexto:** A teoria do consumidor desenvolvida neste capítulo repousa sobre axiomas — completude, transitividade, continuidade, monotonicidade — que são hipóteses sobre as preferências dos agentes. Mas como verificar empiricamente se consumidores reais se comportam de acordo com esses axiomas? A resposta clássica vem da teoria da preferência revelada (que será formalizada na Seção 5.9): se observarmos as escolhas de um consumidor em diferentes situações de preço e renda, podemos testar se essas escolhas são compatíveis com a maximização de alguma função de utilidade. O critério operacional é o **Axioma Generalizado da Preferência Revelada** (GARP, *Generalized Axiom of Revealed Preference*), formulado por Varian (1982): se as escolhas observadas satisfazem o GARP, então existe uma função de utilidade que as racionaliza. A revolução dos dados de scanner de supermercados — registros eletrônicos de cada item comprado por cada consumidor — abriu, a partir dos anos 2000, a possibilidade de testar essa hipótese com milhões de observações individuais.
 

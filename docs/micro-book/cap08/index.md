@@ -131,7 +131,7 @@ A [Tabela 8.1](#tabela-8-1) resume as principais heurísticas e seus vieses asso
 
 Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a análise da decisão sob risco incorporando esses fenômenos de forma estruturada.
 
-!!! box-mundo "🌍 Box Mundo 8.1 — Kahneman e Tversky: como dois psicólogos israelenses transformaram a economia"
+!!! box-mundo "Box Mundo 8.1 — Kahneman e Tversky: como dois psicólogos israelenses transformaram a economia"
 
     **Contexto:** A revolução comportamental na economia não nasceu dentro da disciplina econômica. Foi gestada nos departamentos de psicologia da Universidade Hebraica de Jerusalém e da Universidade de British Columbia, a partir da colaboração entre Daniel Kahneman e Amos Tversky — dois psicólogos cognitivos israelenses cujo programa de pesquisa, iniciado no final dos anos 1960, desafiou frontalmente o axioma de racionalidade que sustenta a teoria microeconômica convencional. O trabalho conjunto produziu três contribuições seminais: o artigo sobre heurísticas e vieses (*Science*, 1974), a Teoria do Prospecto (*Econometrica*, 1979) e a versão cumulativa da Teoria do Prospecto (1992). Kahneman recebeu o Prêmio Nobel de Economia em 2002 — Tversky, falecido em 1996, teria certamente compartilhado a honraria.
 
@@ -800,7 +800,7 @@ A distinção entre agentes sofisticados e ingênuos tem implicações práticas
 !!! box-brasil "Box Brasil — Crédito rotativo e viés do presente"
     O crédito rotativo do cartão de crédito no Brasil cobra taxas de juros que figuram entre as mais altas do mundo — segundo dados do Banco Central do Brasil, a taxa média do rotativo superou 400% ao ano em diversos momentos recentes. Muitos consumidores, ao optar por pagar apenas o valor mínimo da fatura, subestimam o custo total acumulado das parcelas futuras. Esse comportamento é consistente com o desconto quasi-hiperbólico: o alívio imediato de não pagar a fatura integral (benefício no período \(t = 0\)) é sobrevalorizado em relação ao custo dos juros compostos nos períodos seguintes (descontados por \(\beta\delta^t\) com \(\beta < 1\)). A Lei do Superendividamento (Lei nº 14.181/2021) reconheceu implicitamente esse padrão ao criar mecanismos de renegociação e preservação do mínimo existencial.
 
-!!! box-mundo "🌍 Box Mundo 8.3 — Nudges na poupança previdenciária ao redor do mundo: auto-enrollment e o viés do presente como ferramenta de política"
+!!! box-mundo "Box Mundo 8.3 — Nudges na poupança previdenciária ao redor do mundo: auto-enrollment e o viés do presente como ferramenta de política"
 
     **Contexto:** A Seção 8.5 mostrou que o desconto quasi-hiperbólico (\(\beta < 1\)) gera procrastinação sistemática em decisões de poupança: o agente planeja poupar "amanhã", mas quando amanhã chega, o viés do presente o impede novamente. Esse padrão tem consequências macroeconômicas profundas: populações inteiras chegam à aposentadoria com poupança insuficiente, pressionando sistemas previdenciários públicos já sobrecarregados pelo envelhecimento demográfico. A resposta de política pública mais bem-sucedida para esse problema é a **inscrição automática** (*auto-enrollment*) em planos de poupança previdenciária — um nudge que explora a mesma inércia e viés do *status quo* que causam a subpoupança para, paradoxalmente, promover poupança adequada.
 
@@ -912,7 +912,7 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
 !!! box-brasil "Box Brasil — Nudges em políticas públicas federais"
     O governo federal brasileiro tem incorporado gradualmente princípios de economia comportamental em políticas públicas. A rotulagem frontal com **lupa de advertência** da Anvisa (2022), para alimentos ricos em açúcar, gordura saturada e sódio, é um nudge clássico de saliência: destaca a informação mais relevante no momento da decisão de compra. O Programa Nacional de Imunizações (PNI) utiliza lembretes por SMS e notificações via aplicativo do SUS para aumentar a adesão a campanhas de vacinação — um exemplo de feedback e saliência. No sistema financeiro, o *Open Finance* do Banco Central (implementado a partir de 2021) facilita a comparação de produtos financeiros entre instituições, reduzindo a ancoragem ao banco de relacionamento e combatendo a inércia do *status quo* via portabilidade simplificada de crédito.
 
-!!! box-mundo "🌍 Box Mundo 8.2 — Unidades de nudge ao redor do mundo"
+!!! box-mundo "Box Mundo 8.2 — Unidades de nudge ao redor do mundo"
 
     **Contexto:** A economia comportamental saiu dos laboratórios universitários e entrou nos gabinetes de governo. A partir de 2010, diversos países criaram unidades governamentais dedicadas a aplicar insights comportamentais ao desenho de políticas públicas — as chamadas *nudge units* ou *behavioural insights teams*. Esse movimento representa talvez a mais rápida transferência de conhecimento da pesquisa acadêmica básica para a implementação de políticas na história da economia: menos de quatro décadas separam os artigos seminais de Kahneman e Tversky da institucionalização de seus achados em estruturas permanentes de governo.
 

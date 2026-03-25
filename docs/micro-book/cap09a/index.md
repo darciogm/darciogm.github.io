@@ -324,7 +324,7 @@ O exemplo da Batalha dos Sexos ilustra como calcular o equilíbrio misto em um j
 !!! note "Caso geral"
     A demonstração para \(n\) jogadores e \(m\) estratégias segue a mesma lógica, aplicando Kakutani no simplexo \(\Delta(S_1) \times \cdots \times \Delta(S_n)\).
 
-!!! box-mundo "🌍 Box Mundo 9a.2 — Pênaltis, saques e o equilíbrio misto no esporte profissional"
+!!! box-mundo "Box Mundo 9a.2 — Pênaltis, saques e o equilíbrio misto no esporte profissional"
 
     **Contexto:** Cobranças de pênaltis no futebol e saques no tênis são laboratórios naturais para o equilíbrio em estratégias mistas. Em ambos os casos, dois jogadores fazem escolhas essencialmente simultâneas (o cobrador escolhe o lado e o goleiro mergulha; o sacador escolhe a direção e o receptor se posiciona), o jogo é de soma zero e qualquer padrão previsível seria explorado pelo adversário. A teoria prevê que, em equilíbrio, cada jogador randomiza de modo a tornar o oponente indiferente entre suas opções — e que as taxas de sucesso devem ser iguais entre as direções escolhidas.
 
@@ -512,7 +512,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
     **Fonte**: CADE, Ato de Concentração nº 08700.001642/2017-05 (Heineken/Brasil Kirin); CADE, Guia para Análise de Atos de Concentração Horizontal (2016).
 
-!!! box-mundo "🌍 Box Mundo 9a.1 — A OPEP como jogo repetido: cartéis, cotas e traição endêmica"
+!!! box-mundo "Box Mundo 9a.1 — A OPEP como jogo repetido: cartéis, cotas e traição endêmica"
 
     **Contexto:** A Organização dos Países Exportadores de Petróleo (OPEP), fundada em 1960, é o cartel mais visível e longevo da economia mundial. Seus membros — incluindo Arábia Saudita, Iraque, Irã, Kuwait, Venezuela e, desde 2016, aliados como a Rússia no formato OPEP+ — controlam aproximadamente 40% da produção mundial de petróleo e detêm cerca de 80% das reservas provadas convencionais. O problema central da OPEP é um dilema dos prisioneiros em escala geopolítica: cada membro se beneficia individualmente ao produzir acima de sua cota (capturando receita extra a preços elevados sustentados pelos demais), mas se todos trapaceiam, a oferta excedente derruba o preço e todos perdem. A estrutura de payoffs satisfaz exatamente a condição \(T > R > P > S\) do Dilema dos Prisioneiros: trair a cota é a estratégia dominante de curto prazo, mas a traição mútua gera o pior resultado coletivo.
 
@@ -526,7 +526,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 
     **Fonte:** Alhajji, A. F. e Huettner, D. (2000). "OPEC and Other Commodity Cartels: A Comparison." *Energy Policy*, 28(15), 1151–1164. Smith, James L. (2005). "Inscrutable OPEC? Behavioral Tests of the Cartel Hypothesis." *The Energy Journal*, 26(1), 51–82. Colgan, Jeff D. (2014). "The Emperor Has No Clothes: The Limits of OPEC in the Global Oil Market." *International Organization*, 68(3), 599–632.
 
-!!! box-mundo "🌍 Box Mundo 9a.3 — Leilões de espectro de telecomunicações: bilhões em jogo na teoria dos jogos"
+!!! box-mundo "Box Mundo 9a.3 — Leilões de espectro de telecomunicações: bilhões em jogo na teoria dos jogos"
 
     **Contexto:** Os leilões de espectro eletromagnético para telecomunicações (3G, 4G, 5G) são uma das aplicações mais espetaculares — e lucrativas — da teoria dos jogos ao desenho de políticas públicas. Governos ao redor do mundo vendem licenças de uso de faixas de frequência para operadoras de telecomunicações, e o formato do leilão determina não apenas a receita arrecadada, mas também a eficiência alocativa (se as frequências vão para as empresas que mais as valorizam) e a estrutura de mercado resultante. Os economistas Paul Milgrom e Robert Wilson, laureados com o Nobel de Economia em 2020, revolucionaram esse campo ao desenvolver a teoria de leilões com múltiplos itens interdependentes e ao projetar o *Simultaneous Multiple Round Auction* (SMRA), adotado pela FCC americana em 1994.
 

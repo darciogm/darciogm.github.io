@@ -281,7 +281,7 @@ A geometria do argumento é esclarecedora: o imposto específico rotaciona a ret
 
     **Fonte**: Ministério do Desenvolvimento e Assistência Social; Lei nº 14.237/2021 (Auxílio Gás).
 
-!!! box-mundo "🌍 Box Mundo 4.1 — Transferências em dinheiro vs. em espécie: evidências do Quênia e do México"
+!!! box-mundo "Box Mundo 4.1 — Transferências em dinheiro vs. em espécie: evidências do Quênia e do México"
 
     **Contexto:** O princípio do montante fixo prevê que transferências em dinheiro (*cash transfers*) são ao menos tão eficientes quanto transferências em espécie (*in-kind transfers*), pois preservam a liberdade de escolha do consumidor sem distorcer preços relativos. Essa predição teórica foi extensivamente testada em programas de grande escala em países em desenvolvimento, com resultados que confirmam — e por vezes ampliam — a lógica do modelo.
 
@@ -510,7 +510,7 @@ A equação $\eqref{eq:4.8.17}$ diz que avaliar a demanda hicksiana no nível de
 
     **Interpretação econômica:** A dualidade mostra que maximizar utilidade com renda \(I\) e minimizar gasto para atingir a utilidade \(V\) são dois lados da mesma moeda. Essa equivalência é a base para construir medidas de variação de bem-estar (variação compensatória e equivalente) que serão tratadas no Capítulo 5.
 
-!!! box-mundo "🌍 Box Mundo 4.3 — Nudge Units e a escolha do consumidor: quando a arquitetura de escolhas encontra a teoria"
+!!! box-mundo "Box Mundo 4.3 — Nudge Units e a escolha do consumidor: quando a arquitetura de escolhas encontra a teoria"
 
     **Contexto:** A teoria da escolha do consumidor desenvolvida neste capítulo pressupõe que o agente resolve, implicitamente, um problema de maximização restrita — confronta preços e renda, avalia suas preferências e seleciona a cesta ótima. Mas a economia comportamental, iniciada por Kahneman e Tversky (Capítulo 8), documenta que consumidores reais frequentemente se desviam da solução ótima por inércia, sobrecarga cognitiva ou viés do presente. Essa constatação levou Richard Thaler e Cass Sunstein a proporem o conceito de **arquitetura de escolhas** (*choice architecture*): a ideia de que a forma como as opções são apresentadas influencia sistematicamente a decisão, mesmo quando o conjunto orçamentário permanece inalterado. A criação de *nudge units* — equipes governamentais dedicadas a aplicar esses insights — representa a institucionalização dessa agenda.
 
@@ -840,7 +840,7 @@ E(\mathbf{p}, \bar{u}) = P \cdot \bar{u} = \bar{u} \cdot \left(a^\sigma\, p_1^{1
     - Quando \(\rho \to 1\) (\(\sigma \to \infty\)), o consumidor substitui perfeitamente entre os bens e consome apenas o mais barato por unidade de utilidade.
     - Quando \(\rho \to -\infty\) (\(\sigma \to 0\)), não há substituição e o consumidor consome na proporção fixa \(a:b\).
 
-!!! box-mundo "🌍 Box Mundo 4.2 — A utilidade CES no comércio internacional: o modelo Dixit-Stiglitz e a Nova Teoria do Comércio"
+!!! box-mundo "Box Mundo 4.2 — A utilidade CES no comércio internacional: o modelo Dixit-Stiglitz e a Nova Teoria do Comércio"
 
     **Contexto:** A função CES, apresentada nesta seção como ferramenta da teoria do consumidor, desempenha um papel central na teoria do comércio internacional contemporânea. Em 1977, Avinash Dixit e Joseph Stiglitz publicaram um artigo seminal — "Monopolistic Competition and Optimum Product Diversity" (*American Economic Review*) — no qual modelaram as preferências dos consumidores por variedade usando uma função utilidade CES sobre um contínuo de bens diferenciados. Essa estrutura foi posteriormente adotada por Paul Krugman (1979, 1980) para explicar por que países com dotações similares comerciam entre si — o chamado comércio intra-indústria —, dando origem à **Nova Teoria do Comércio**, que lhe rendeu o Prêmio Nobel de Economia em 2008.
 

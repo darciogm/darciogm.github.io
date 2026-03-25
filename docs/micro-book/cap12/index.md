@@ -409,7 +409,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 12.1 — Decisões de fechamento durante a COVID-19: o setor de restaurantes dos EUA"
+!!! box-mundo "Box Mundo 12.1 — Decisões de fechamento durante a COVID-19: o setor de restaurantes dos EUA"
 
     **Contexto.** A pandemia de COVID-19 ofereceu um experimento natural sem precedentes para testar a teoria da decisão de shutdown: quando preços caem abruptamente (pela queda abrupta de demanda) ou custos variáveis sobem (por requisitos sanitários), quais firmas fecham temporariamente e quais fecham permanentemente? O setor de alimentação fora do lar dos EUA, com mais de um milhão de estabelecimentos antes da pandemia, documentou em tempo real essa dinâmica.
 
@@ -432,7 +432,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 12.2 — Produtores de petróleo e o preço de break-even: OPEP vs. shale americano"
+!!! box-mundo "Box Mundo 12.2 — Produtores de petróleo e o preço de break-even: OPEP vs. shale americano"
 
     **Contexto.** A indústria de petróleo global oferece um laboratório privilegiado para a teoria da oferta de curto prazo: produtores com estruturas de custo radicalmente diferentes coexistem no mesmo mercado mundial, tomando o preço internacional como dado. O confronto entre a OPEP (dominada pelo custo de extração baixíssimo da Arábia Saudita) e os produtores de *shale* americanos (com custos marginais mais altos mas resposta mais ágil) é um caso real da Tabela 12.1 em ação.
 
@@ -461,7 +461,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 12.3 — Precificação dinâmica do Uber como precificação ao custo marginal"
+!!! box-mundo "Box Mundo 12.3 — Precificação dinâmica do Uber como precificação ao custo marginal"
 
     **Contexto.** O *surge pricing* (preço dinâmico) do Uber é um dos exemplos mais citados e controversos de implementação em tempo real da regra \(p = \mathrm{CMg}\) da teoria da firma. Diferentemente das firmas tradicionais, o Uber ajusta o preço continuamente (a cada poucos minutos, em cada célula geográfica) para equilibrar oferta e demanda instantânea de viagens.
 

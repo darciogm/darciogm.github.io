@@ -55,7 +55,7 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 - **Proliferação de marcas**: ocupar nichos de mercado para reduzir o espaço disponível para entrantes — estratégia documentada empiricamente no mercado americano de cereais matinais por Schmalensee (1978).
 - **Controle de insumos essenciais**: adquirir ou controlar o acesso a recursos sem os quais rivais não podem operar.
 
-!!! box-mundo "🌍 Box Mundo 15.1 — Patentes farmacêuticas nos EUA: o preço do monopólio legal"
+!!! box-mundo "Box Mundo 15.1 — Patentes farmacêuticas nos EUA: o preço do monopólio legal"
 
     **Contexto:** A indústria farmacêutica dos Estados Unidos é o exemplo contemporâneo mais saliente de monopólio criado por barreiras legais. Patentes de 20 anos conferem às empresas farmacêuticas o direito exclusivo de comercializar novas moléculas, gerando margens de lucro que figuram entre as maiores de qualquer indústria. Além disso, o *Hatch-Waxman Act* (1984) criou extensões de patente que podem estender a exclusividade por até 5 anos adicionais, além de períodos de exclusividade de dados de 5 a 12 anos para biológicos.
 
@@ -323,7 +323,7 @@ Richard Posner (1975) formalizou esse argumento: se firmas gastam recursos para 
 
     **Por que isso importa:** A perda de peso morto do monopólio é o principal argumento econômico para a existência de órgãos como o CADE, que combatem concentração excessiva de mercado para proteger o bem-estar dos consumidores brasileiros.
 
-!!! box-mundo "🌍 Box Mundo 15.2 — O custo social do monopólio: de Harberger (EUA) à OCDE"
+!!! box-mundo "Box Mundo 15.2 — O custo social do monopólio: de Harberger (EUA) à OCDE"
 
     **Contexto:** Quanto custa o monopólio para a sociedade? A resposta depende criticamente do que se inclui na conta. Arnold Harberger (1954), em estudo seminal com dados de 73 indústrias manufatureiras dos EUA no período 1924–1928, inaugurou a tradição de mensuração empírica das perdas de eficiência do poder de mercado — e obteve um resultado que surpreendeu a profissão por sua modéstia.
 
@@ -542,7 +542,7 @@ Essa equação formaliza a intuição de que o monopolista "espreme" mais os con
 
     **Por que isso importa:** A discriminação de preços pode, em alguns casos, aumentar a quantidade total vendida e até reduzir a perda de peso morto — o que complica o juízo de política concorrencial e exige análise caso a caso pelo CADE.
 
-!!! box-mundo "🌍 Box Mundo 15.3 — Discriminação de preços nas ferrovias europeias"
+!!! box-mundo "Box Mundo 15.3 — Discriminação de preços nas ferrovias europeias"
 
     **Contexto:** O transporte ferroviário europeu oferece um exemplo notável de discriminação de preços sofisticada, combinando técnicas de segundo e terceiro grau em escala continental. Operadoras como a Deutsche Bahn (Alemanha), a SNCF (França) e a Eurostar (Londres–Paris–Bruxelas) praticam estratégias de precificação que espelham as do setor aéreo, com uma particularidade: as ferrovias europeias operam em um regime de concorrência limitada, protegidas pela infraestrutura fixa das linhas férreas (uma barreira natural clássica).
 

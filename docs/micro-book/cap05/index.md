@@ -286,7 +286,7 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
 !!! note "Giffen na prática: arroz na China"
     Bens de Giffen são raríssimos empiricamente. A evidência mais robusta foi documentada por [Jensen e Miller (2008)](https://doi.org/10.1257/aer.98.4.1553), que identificaram comportamento de Giffen para o arroz entre famílias extremamente pobres na província de Hunan, na China. Nessas famílias, o arroz representava parcela tão grande do orçamento que o efeito renda de um aumento de preço dominava o efeito substituição. Voltaremos a esse estudo no Apêndice.
 
-!!! box-mundo "🌍 Box Mundo 5.1 — O experimento do arroz em Hunan: evidência causal de comportamento de Giffen"
+!!! box-mundo "Box Mundo 5.1 — O experimento do arroz em Hunan: evidência causal de comportamento de Giffen"
 
     **Contexto:** A existência de bens de Giffen — bens cuja demanda aumenta quando o preço sobe — foi debatida por mais de um século desde que Alfred Marshall atribuiu a ideia a Sir Robert Giffen nos anos 1890. Apesar de sua importância teórica para a Equação de Slutsky (demonstrando que o efeito renda pode dominar o efeito substituição), nenhum estudo havia conseguido documentar convincentemente esse fenômeno até o experimento de campo conduzido por Robert Jensen e Nolan Miller na província de Hunan, China, publicado na *American Economic Review* em 2008.
 
@@ -647,7 +647,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 **Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE).** Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).
 </div>
 
-!!! box-mundo "🌍 Box Mundo 5.2 — Medidas de bem-estar na política comercial: VC e VE na avaliação de acordos da OMC"
+!!! box-mundo "Box Mundo 5.2 — Medidas de bem-estar na política comercial: VC e VE na avaliação de acordos da OMC"
 
     **Contexto:** As medidas de bem-estar desenvolvidas nesta seção — variação compensatória (VC), variação equivalente (VE) e excedente do consumidor (EC) — não são apenas construções teóricas: constituem a base metodológica para avaliar o impacto de políticas comerciais sobre consumidores e produtores em diferentes países. A Organização Mundial do Comércio (OMC) e instituições como o Banco Mundial utilizam extensivamente modelos de equilíbrio geral computável (CGE) que calculam VC e VE para estimar os ganhos e perdas de rodadas de liberalização comercial — como a Rodada Uruguai (1994) e as negociações da Rodada Doha (2001–presente).
 
@@ -712,7 +712,7 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
     *Fontes: ANP — Levantamento de Preços de Combustíveis; IPEA — Texto para Discussão n.º 1.898 (2013); Santos (2013); Cardoso et al. (2019).*
 
-!!! box-mundo "🌍 Box Mundo 5.3 — Bens de Giffen na prática: o experimento do arroz na China de Jensen e Miller"
+!!! box-mundo "Box Mundo 5.3 — Bens de Giffen na prática: o experimento do arroz na China de Jensen e Miller"
 
     **Contexto:** A existência de bens de Giffen — bens para os quais a curva de demanda é positivamente inclinada, de modo que um aumento de preço *eleva* a quantidade demandada — é uma das previsões mais contraintuitivas da teoria da demanda. Como discutido na Seção 5.4, o comportamento de Giffen requer que o bem seja fortemente inferior e represente parcela substancial do orçamento, de modo que o efeito renda (positivo) domine o efeito substituição (negativo). Apesar de figurar em todos os manuais de microeconomia desde Alfred Marshall (1890), a evidência empírica direta de bens de Giffen foi, durante mais de um século, notavelmente escassa e controversa. A situação mudou em 2008, quando Robert Jensen e Nolan Miller publicaram o que é considerado o primeiro experimento controlado que documenta rigorosamente o comportamento de Giffen em condições naturais.
 

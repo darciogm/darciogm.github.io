@@ -116,7 +116,7 @@ Como \(B'^{ext}(q) > 0\), o consumo privado fica **aquém do ótimo social**: \(
     - **Externalidade positiva** → produção/consumo privado **insuficiente** em relação ao ótimo social.
     - Em ambos os casos, o mercado **falha** em atingir eficiência de Pareto.
 
-!!! box-mundo "🌍 Box Mundo 20.1 — Pedágios urbanos: precificando o congestionamento em Estocolmo, Londres e Singapura"
+!!! box-mundo "Box Mundo 20.1 — Pedágios urbanos: precificando o congestionamento em Estocolmo, Londres e Singapura"
 
     **Contexto:** O congestionamento viário é uma externalidade negativa clássica: cada motorista que entra em uma via já congestionada impõe custos a todos os demais usuários (tempo de viagem, consumo extra de combustível, poluição) sem pagar por esse efeito. A solução pigouviana natural é cobrar um pedágio que reflita o custo marginal externo do congestionamento — é exatamente o que três cidades pioneiras fizeram.
 
@@ -479,7 +479,7 @@ O resultado de Weitzman (1974) — formalmente desenvolvido em "Prices vs. Quant
 
     **Interpretação econômica:** A custo-efetividade do cap-and-trade decorre do princípio de que a redução de emissões deve ser alocada onde é mais barata. A firma 2, com menor custo marginal de abatimento, reduz mais; a firma 1, com custo mais alto, reduz menos e compensa comprando permissões. O resultado é o mesmo nível de abatimento total, mas a um custo 11% menor.
 
-!!! box-mundo "🌍 Box Mundo 20.2 — EU ETS: o maior mercado de carbono do mundo"
+!!! box-mundo "Box Mundo 20.2 — EU ETS: o maior mercado de carbono do mundo"
 
     **Contexto:** O Sistema de Comércio de Emissões da União Europeia (EU ETS), lançado em 2005, é o maior e mais antigo mercado de cap-and-trade de gases de efeito estufa do mundo. Cobre aproximadamente 40% das emissões de CO₂ da UE, abrangendo mais de 10.000 instalações nos setores de energia, indústria pesada e, desde 2012, aviação intraeuropeia.
 
@@ -489,7 +489,7 @@ O resultado de Weitzman (1974) — formalmente desenvolvido em "Prices vs. Quant
 
     **Fonte:** European Commission. EU Emissions Trading System (EU ETS). Disponível em: [climate.ec.europa.eu](https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en). Acesso em: 2024.
 
-!!! box-mundo "🌍 Box Mundo 20.3 — Chuva ácida e o cap-and-trade de SO₂ nos Estados Unidos"
+!!! box-mundo "Box Mundo 20.3 — Chuva ácida e o cap-and-trade de SO₂ nos Estados Unidos"
 
     **Contexto:** O programa de cap-and-trade de dióxido de enxofre (SO₂) nos Estados Unidos, estabelecido pelo *Clean Air Act Amendments* de 1990, é frequentemente citado como o caso de sucesso mais emblemático de mercados de permissão de emissão. O SO₂ emitido por usinas termelétricas a carvão causava chuva ácida, danificando florestas, lagos e edificações no leste dos EUA e no Canadá.
 
@@ -945,7 +945,7 @@ O mecanismo VCG tem aplicações práticas que vão além dos bens públicos. O 
 
     O caso ilustra simultaneamente: (i) a tragédia dos comuns sem regulação (sobreuso de aquíferos e rios); (ii) a solução pigouviana (cobrança pelo uso); e (iii) os limites práticos — a cobrança é politicamente difícil de calibrar no nível ótimo, e os custos de transação para negociação coaseana entre milhares de usuários são proibitivos.
 
-!!! box-mundo "🌍 Box Mundo 20.4 — Radiodifusão pública: BBC, NHK e modelos de provisão de bem público"
+!!! box-mundo "Box Mundo 20.4 — Radiodifusão pública: BBC, NHK e modelos de provisão de bem público"
 
     **Contexto:** A radiodifusão aberta (rádio e TV) é um exemplo clássico de bem público: não-rival (a audiência de um telespectador não reduz a de outro) e historicamente não-excludente (qualquer aparelho receptor capta o sinal). A forma como diferentes países financiam suas emissoras públicas ilustra diferentes soluções para o problema do carona na provisão de bens públicos.
 

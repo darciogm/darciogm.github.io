@@ -1218,7 +1218,7 @@ C(\lambda w_1 + (1-\lambda) w_2, \; \lambda r_1 + (1-\lambda) r_2, \; q) \;\geq\
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 11.1 — Economias de escala na indústria de semicondutores: TSMC e a lei de Moore"
+!!! box-mundo "Box Mundo 11.1 — Economias de escala na indústria de semicondutores: TSMC e a lei de Moore"
 
     **Contexto.** A Taiwan Semiconductor Manufacturing Company (TSMC), fundada em 1987, é hoje a maior fabricante contratada de chips do mundo, respondendo por mais de 50% da capacidade global de fundição de semicondutores avançados. Seus clientes incluem Apple, NVIDIA, AMD e Qualcomm. O setor de semicondutores oferece um dos exemplos mais extremos de economias de escala e de estrutura de custos dominada por custos fixos que existem na economia mundial.
 
@@ -1230,7 +1230,7 @@ C(\lambda w_1 + (1-\lambda) w_2, \; \lambda r_1 + (1-\lambda) r_2, \; q) \;\geq\
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 11.2 — O custo de oportunidade do lockdown: estimativas da OCDE"
+!!! box-mundo "Box Mundo 11.2 — O custo de oportunidade do lockdown: estimativas da OCDE"
 
     **Contexto.** Durante a pandemia de COVID-19 (2020–2021), governos de todo o mundo adotaram medidas de distanciamento social e lockdowns para conter a propagação do vírus. Do ponto de vista econômico, essas medidas representam um custo de oportunidade colossal — a produção econômica sacrificada em troca de vidas salvas. A Organização para a Cooperação e Desenvolvimento Econômico (OCDE) coordenou estimativas comparativas entre países que permitem avaliar esse tradeoff com dados empíricos.
 
@@ -1242,7 +1242,7 @@ C(\lambda w_1 + (1-\lambda) w_2, \; \lambda r_1 + (1-\lambda) r_2, \; q) \;\geq\
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 11.3 — Custos irrecuperáveis na indústria aeronáutica: o caso Concorde"
+!!! box-mundo "Box Mundo 11.3 — Custos irrecuperáveis na indústria aeronáutica: o caso Concorde"
 
     **Contexto.** O Concorde foi um avião supersônico comercial desenvolvido conjuntamente pela França e pelo Reino Unido a partir de 1962, com os primeiros voos comerciais em 1976 e operações encerradas em 2003. Do ponto de vista da história econômica, o Concorde é o exemplo mais citado de *sunk cost fallacy* em projetos governamentais: décadas de investimentos continuaram sendo realizados mesmo quando as estimativas econômicas tornaram-se claramente desfavoráveis.
 

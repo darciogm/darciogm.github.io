@@ -288,7 +288,7 @@ A equação $\eqref{eq:18.7}$ unifica toda a teoria de precificação de ativos:
 !!! note "Equity premium puzzle"
     O **enigma do prêmio de risco das ações** ([Mehra e Prescott, 1985](https://doi.org/10.1016/0304-3932(85)90061-3)) refere-se ao fato de que o prêmio de risco histórico das ações sobre títulos públicos (~6% ao ano nos EUA) é muito maior do que modelos padrão de consumo intertemporal conseguem explicar com níveis razoáveis de aversão ao risco. Para gerar o prêmio observado, seria necessário um coeficiente de aversão ao risco relativa \(\gamma > 30\), valor implausível (estimativas empíricas sugerem \(\gamma\) entre 1 e 5). Esse puzzle motivou décadas de pesquisa, incluindo modelos com formação de hábito (Campbell e Cochrane, 1999), aversão a perdas (Benartzi e Thaler, 1995 — conectando-se à teoria dos prospectos do Capítulo 8) e aversão à ambiguidade.
 
-!!! box-mundo "🌍 Box Mundo 18.1 — O Fundo Soberano da Noruega: poupança intergeracional em escala nacional"
+!!! box-mundo "Box Mundo 18.1 — O Fundo Soberano da Noruega: poupança intergeracional em escala nacional"
 
     **Contexto:** A Noruega é, possivelmente, o caso mais bem-sucedido de gestão intertemporal de recursos naturais no mundo. O Government Pension Fund Global — popularmente chamado de "fundo do petróleo" — foi criado em 1990 para transformar a riqueza petrolífera finita em um ativo financeiro perpétuo que beneficiasse gerações futuras.
 
@@ -530,7 +530,7 @@ A TIR deste projeto é aproximadamente 15,2%. A [Tabela 18.3](#tabela-18-3) most
 
 A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de desconto; (ii) projetos viáveis a juros baixos podem se tornar inviáveis quando a taxa de juros sobe — um problema particularmente relevante no contexto brasileiro de juros historicamente elevados. Note que, a uma taxa de 5% (típica de economias avançadas), o projeto gera R$ 35.460 de valor; a 15% (taxa real elevada), gera apenas R$ 4.474 — o projeto mal se sustenta. A 18%, é rejeitado. A mesma tecnologia, o mesmo projeto, a mesma demanda — apenas a taxa de juros difere, e a decisão se inverte.
 
-!!! box-mundo "🌍 Box Mundo 18.2 — Stern vs. Nordhaus: a taxa de desconto e as mudanças climáticas"
+!!! box-mundo "Box Mundo 18.2 — Stern vs. Nordhaus: a taxa de desconto e as mudanças climáticas"
 
     **Contexto:** Um dos debates mais acalorados em economia ambiental nas últimas décadas gira em torno da taxa de desconto a ser usada na avaliação de políticas climáticas. Como os benefícios de reduzir emissões hoje se materializam em 50, 100 ou 200 anos, a escolha da taxa de desconto tem consequências dramáticas sobre as conclusões.
 
@@ -659,7 +659,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 !!! tip "A regra de Hotelling na prática"
     Empiricamente, os preços de muitos recursos naturais não seguem a trajetória prevista pela regra de Hotelling. Isso pode ser explicado por: (i) descobertas de novas reservas; (ii) progresso tecnológico que reduz custos de extração; (iii) desenvolvimento de substitutos; (iv) poder de mercado (OPEP, por exemplo).
 
-!!! box-mundo "🌍 Box Mundo 18.3 — A maldição do petróleo: Hotelling encontra instituições"
+!!! box-mundo "Box Mundo 18.3 — A maldição do petróleo: Hotelling encontra instituições"
 
     **Contexto:** A regra de Hotelling prevê que proprietários racionais de recursos exauríveis administram a extração de forma a maximizar o valor presente dos royalties. Na prática, porém, muitos países ricos em petróleo experimentaram a chamada "maldição dos recursos naturais" (*resource curse*): crescimento econômico inferior ao esperado, deterioração institucional e volatilidade macroeconômica.
 

@@ -77,7 +77,7 @@ A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses pr
 
 Agora que compreendemos como os modelos são construídos e avaliados, podemos nos perguntar: que características comuns compartilham os modelos microeconômicos? Quais são os princípios metodológicos que permeiam praticamente toda a disciplina? A próxima seção identifica três pilares que sustentam a análise microeconômica.
 
-!!! box-mundo "🌍 Box Mundo 1.1 — Experimentos naturais e a verificação de modelos: Card & Krueger e o salário mínimo"
+!!! box-mundo "Box Mundo 1.1 — Experimentos naturais e a verificação de modelos: Card & Krueger e o salário mínimo"
 
     **Contexto:** Um dos maiores desafios da verificação empírica de modelos econômicos é a impossibilidade de realizar experimentos controlados: não se pode dividir aleatoriamente um país em "grupo de tratamento" e "grupo de controle" para testar políticas econômicas. Essa limitação levou, nas décadas de 1980 e 1990, ao desenvolvimento dos chamados *experimentos naturais* — situações em que variações exógenas de política ou de contexto institucional geram condições quase-experimentais. O trabalho seminal de David Card e Alan Krueger sobre o salário mínimo nos Estados Unidos tornou-se o exemplo paradigmático dessa abordagem e ilustra concretamente como modelos teóricos podem ser confrontados com dados.
 
@@ -380,7 +380,7 @@ O modelo competitivo básico — agentes tomadores de preço, informação perfe
 
 Com esse panorama dos desenvolvimentos modernos, temos uma visão completa do que a microeconomia faz e para onde se dirige. Retornemos agora ao terreno formal para consolidar, em uma demonstração concreta, a lógica de modelagem discutida ao longo deste capítulo.
 
-!!! box-mundo "🌍 Box Mundo 1.2 — O Consenso de Washington e o ajuste estrutural: quando modelos teóricos moldam políticas internacionais"
+!!! box-mundo "Box Mundo 1.2 — O Consenso de Washington e o ajuste estrutural: quando modelos teóricos moldam políticas internacionais"
 
     **Contexto:** Poucas vezes na história econômica a relação entre modelos teóricos e políticas públicas foi tão direta quanto no episódio do Consenso de Washington. Em 1989, o economista John Williamson cunhou o termo para descrever um conjunto de dez recomendações de política econômica que, segundo ele, refletiam o consenso entre as instituições sediadas em Washington — FMI, Banco Mundial e Departamento do Tesouro dos EUA — sobre as reformas necessárias para países em desenvolvimento. As recomendações incluíam disciplina fiscal, liberalização comercial e financeira, privatizações, desregulamentação e proteção de direitos de propriedade. Esses princípios derivavam diretamente de modelos microeconômicos de equilíbrio competitivo e da teoria do bem-estar: se mercados competitivos são eficientes (Primeiro Teorema do Bem-Estar), então a remoção de distorções governamentais deveria melhorar a alocação de recursos.
 
@@ -390,7 +390,7 @@ Com esse panorama dos desenvolvimentos modernos, temos uma visão completa do qu
 
     **Fonte:** Williamson, J. (1990). What Washington means by policy reform. In: *Latin American Adjustment: How Much Has Happened?*. Institute for International Economics. Easterly, W. (2005). What did structural adjustment adjust? The association of policies and growth with repeated IMF and World Bank adjustment loans. *Journal of Development Economics*, 76(1), 1–22. Rodrik, D. (2006). Goodbye Washington Consensus, hello Washington Confusion? *Journal of Economic Literature*, 44(4), 973–987.
 
-!!! box-mundo "🌍 Box Mundo 1.3 — A revolução da credibilidade: experimentos naturais e o Nobel de 2021"
+!!! box-mundo "Box Mundo 1.3 — A revolução da credibilidade: experimentos naturais e o Nobel de 2021"
 
     **Contexto:** Durante décadas, a economia empírica enfrentou uma limitação fundamental discutida na Seção 1.2: a impossibilidade de realizar experimentos controlados na maioria dos contextos de interesse. Como saber se um programa de treinamento realmente eleva os salários, ou se mais anos de escolaridade causam maior renda — e não apenas se correlacionam com ela? A partir dos anos 1990, uma geração de econometristas desenvolveu métodos rigorosos para extrair inferência causal a partir de dados observacionais, explorando variações institucionais e políticas como "experimentos naturais". Essa transformação metodológica ficou conhecida como a **revolução da credibilidade** e foi coroada com o Prêmio Nobel de Economia de 2021, concedido a David Card, Joshua Angrist e Guido Imbens.
 

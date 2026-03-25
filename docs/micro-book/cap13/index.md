@@ -176,7 +176,7 @@ Para fixar a intuição, considere dois exemplos concretos do contexto brasileir
 
 A estática comparativa do curto prazo toma o número de firmas como dado. No longo prazo, porém, esse número se torna endógeno: firmas entram quando há lucro e saem quando há prejuízo. Essa dinâmica de entrada e saída conduz à análise de longo prazo, nosso próximo tópico.
 
-!!! box-mundo "🌍 Box Mundo 13.1 — O modelo cobweb e a volatilidade agrícola: evidências dos mercados de milho (EUA) e trigo (UE)"
+!!! box-mundo "Box Mundo 13.1 — O modelo cobweb e a volatilidade agrícola: evidências dos mercados de milho (EUA) e trigo (UE)"
 
     **Contexto:** A estática comparativa pressupõe ajuste instantâneo ao novo equilíbrio, mas em mercados agrícolas a oferta responde com defasagem — os produtores decidem quanto plantar *antes* de conhecer o preço de venda. Essa defasagem pode gerar ciclos de preço, formalizados no **modelo cobweb** (teia de aranha) por Mordecai Ezekiel (1938). O modelo prevê que, se a oferta é mais elástica que a demanda, os preços oscilam de forma explosiva; se menos elástica, convergem ao equilíbrio; se igualmente elásticas, oscilam perpetuamente.
 
@@ -545,7 +545,7 @@ Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do
 
     **Resultado:** Com racionamento eficiente, a PPM é **750**, correspondente ao triângulo entre as curvas de demanda e oferta, da quantidade com teto (200) à quantidade de equilíbrio (300).
 
-!!! box-mundo "🌍 Box Mundo 13.2 — Controle de aluguéis em Nova York e Estocolmo: décadas de evidência sobre escassez habitacional"
+!!! box-mundo "Box Mundo 13.2 — Controle de aluguéis em Nova York e Estocolmo: décadas de evidência sobre escassez habitacional"
 
     **Contexto:** O controle de aluguéis é um dos exemplos mais estudados de preço máximo. Nova York mantém alguma forma de regulação de aluguéis desde 1943 (*rent stabilization* e *rent control*), e Estocolmo opera com um sistema de aluguéis regulados (*bruksvärdessystemet*) desde 1942. Ambas as cidades oferecem evidência empírica robusta sobre os efeitos de longo prazo dos tetos de preço no mercado imobiliário.
 
@@ -671,7 +671,7 @@ A intuição por trás desses resultados é simples e poderosa: o lado mais inel
 
     **Para refletir:** Se a incidência econômica independe da incidência legal (Teorema da Seção 13.11), por que a reforma tributária — que muda a *estrutura* legal dos tributos — pode ter efeitos reais sobre eficiência e distribuição? A resposta está na eliminação de distorções: cumulatividade, guerra fiscal e complexidade administrativa criam perdas de peso morto que a reforma reduz, mesmo sem alterar quem efetivamente paga.
 
-!!! box-mundo "🌍 Box Mundo 13.3 — Quem paga o imposto corporativo? Evidência de países da OCDE sobre incidência capital vs. trabalho"
+!!! box-mundo "Box Mundo 13.3 — Quem paga o imposto corporativo? Evidência de países da OCDE sobre incidência capital vs. trabalho"
 
     **Contexto:** A tributação sobre o lucro das empresas (*corporate income tax*) é frequentemente apresentada no debate público como um imposto "sobre os ricos" ou "sobre o capital". Mas a análise de incidência da Seção 13.11 nos ensina que a incidência legal (quem recolhe) pode diferir radicalmente da incidência econômica (quem efetivamente arca com o ônus). No caso do imposto corporativo, a questão é particularmente complexa: o ônus pode recair sobre os acionistas (via menor retorno ao capital), sobre os trabalhadores (via salários menores) ou sobre os consumidores (via preços mais altos).
 

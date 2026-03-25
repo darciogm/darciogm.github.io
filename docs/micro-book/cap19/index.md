@@ -322,7 +322,7 @@ No gráfico interativo abaixo, ajuste a fração de limões e observe como a sel
 **Figura 19.2 — Mercado de limões (Akerlof, 1970).** Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.
 </div>
 
-!!! box-mundo "🌍 Box Mundo 19.1 — O problema dos limões no mundo: inspeção veicular no Japão"
+!!! box-mundo "Box Mundo 19.1 — O problema dos limões no mundo: inspeção veicular no Japão"
 
     **Contexto:** O Japão desenvolveu um dos sistemas mais rigorosos do mundo para mitigar o "problema dos limões" no mercado de veículos usados. O sistema *shaken* (車検) — inspeção veicular obrigatória — exige que todos os veículos passem por inspeções a cada dois anos (para carros com mais de 3 anos), com custo que varia de ¥80.000 a ¥200.000 (US$ 550–1.400). A rigidez e o custo da inspeção tornam economicamente inviável manter veículos antigos, gerando um fluxo constante de carros usados de alta qualidade a preços acessíveis.
 
@@ -460,7 +460,7 @@ No gráfico interativo abaixo, explore o equilíbrio separador de Rothschild-Sti
 **Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz.** No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.
 </div>
 
-!!! box-mundo "🌍 Box Mundo 19.2 — Seleção adversa e o NHS: por que o Reino Unido optou pelo sistema universal"
+!!! box-mundo "Box Mundo 19.2 — Seleção adversa e o NHS: por que o Reino Unido optou pelo sistema universal"
 
     **Contexto:** O *National Health Service* (NHS) britânico, criado em 1948, é um dos exemplos mais duradouros de resposta institucional ao problema da seleção adversa em saúde. Antes do NHS, o mercado privado de seguros de saúde no Reino Unido sofria exatamente o tipo de espiral de seleção adversa descrita pelo modelo de Rothschild-Stiglitz: seguradoras cobravam prêmios baseados no risco médio; indivíduos saudáveis (baixo risco) consideravam os prêmios excessivos e abandonavam o mercado; o pool remanescente tornava-se mais arriscado, elevando os prêmios e expulsando mais segurados — o *unraveling* clássico.
 
@@ -689,7 +689,7 @@ A **maldição do vencedor** merece destaque especial, pois é um fenômeno empi
     **Conexão com este capítulo:**
     O princípio da revelação de Myerson e a teoria de leilões ótimos são apresentados neste capítulo como aplicações da informação assimétrica ao desenho de instituições.
 
-!!! box-mundo "🌍 Box Mundo 19.3 — Leilões de espectro nos EUA: a revolução do desenho de mecanismos"
+!!! box-mundo "Box Mundo 19.3 — Leilões de espectro nos EUA: a revolução do desenho de mecanismos"
 
     **Contexto:** Os leilões de espectro eletromagnético conduzidos pela Federal Communications Commission (FCC) nos Estados Unidos são o caso mais celebrado de aplicação prática da teoria de leilões. Antes de 1994, a FCC alocava licenças de espectro por meio de "concursos de beleza" (critérios subjetivos) ou loterias aleatórias — métodos que não revelavam a valoração dos participantes e geravam alocações ineficientes. A partir de 1994, sob influência de economistas como Paul Milgrom e Robert Wilson (Nobel 2020), a FCC adotou o formato de *simultaneous ascending auction* (leilão simultâneo ascendente), especificamente desenhado para lidar com as complementaridades e a informação assimétrica inerentes ao espectro.
 

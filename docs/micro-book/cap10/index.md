@@ -288,7 +288,7 @@ Note que, pela equação $\eqref{eq:10.7}$, uma função pode apresentar simulta
 
     **Interpretação econômica:** Na função (b), dobrar ambos os insumos aumenta o produto em \(2^{1,2} \approx 2{,}30\) vezes — quase 15% a mais do que o dobro. Em setores com essa tecnologia, há incentivo natural à concentração em firmas maiores, como ocorre na siderurgia e na petroquímica brasileiras.
 
-!!! box-mundo "🌍 Box Mundo 10.1 — Rendimentos de escala na indústria automobilística: EUA e Japão"
+!!! box-mundo "Box Mundo 10.1 — Rendimentos de escala na indústria automobilística: EUA e Japão"
 
     **Contexto:** A indústria automobilística é um laboratório clássico para o estudo de rendimentos de escala. Desde a introdução da linha de montagem por Henry Ford em 1913, a produção em massa explorou intensamente as economias de escala — mas o modelo japonês de produção enxuta (*lean manufacturing*) desenvolvido pela Toyota a partir da década de 1950 mostrou que escala e eficiência não precisam ser sinônimos.
 
@@ -396,7 +396,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
     **Interpretação econômica:** Com \(\sigma = 0{,}5 < 1\), capital e trabalho são mais complementares do que na Cobb-Douglas. A TMST de 16 indica que, nessa combinação capital-intensiva (\(K/L = 4\)), a firma precisaria de 16 unidades adicionais de trabalho para compensar a perda de 1 unidade de capital — a substituição é muito difícil, justamente porque a baixa elasticidade torna os insumos pouco intercambiáveis. Esse padrão é compatível com setores industriais brasileiros como a petroquímica, onde a substituição entre trabalho e capital é limitada pela natureza dos processos produtivos.
 
-!!! box-mundo "🌍 Box Mundo 10.2 — A elasticidade de substituição capital-trabalho na Europa"
+!!! box-mundo "Box Mundo 10.2 — A elasticidade de substituição capital-trabalho na Europa"
 
     **Contexto:** A participação do trabalho na renda nacional — a fração do PIB que vai para salários e remunerações — declinou em quase todos os países desenvolvidos entre 1975 e 2012. Entender esse fenômeno exige estimar a elasticidade de substituição \(\sigma\) entre capital e trabalho: se \(\sigma > 1\), a queda no preço relativo do capital (impulsionada pela revolução das TIC e pela globalização) leva as firmas a substituir trabalho por capital tão intensamente que a participação do capital na renda *aumenta* e a do trabalho *cai*.
 
@@ -661,7 +661,7 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
     **Interpretação microeconômica.**
     Em termos da teoria da produção, a atuação da Embrapa representa um deslocamento da função de produção agrícola — um aumento do parâmetro \(A(t)\). Trata-se predominantemente de progresso técnico **aumentador de terra** (análogo ao neutro de Solow aplicado ao fator terra), pois a inovação principal foi tornar produtivos solos antes imprestáveis, equivalendo a multiplicar o fator terra efetivo disponível. A elasticidade de substituição entre terra e outros insumos (fertilizantes, maquinário) aumentou, refletindo a maior flexibilidade tecnológica na produção agrícola moderna. Goolsbee, Levitt & Syverson (2020, Cap. 6) documentam padrões similares de adoção tecnológica e ganhos de produtividade na agricultura estadunidense.
 
-!!! box-mundo "🌍 Box Mundo 10.3 — O resíduo de Solow e o milagre do Leste Asiático"
+!!! box-mundo "Box Mundo 10.3 — O resíduo de Solow e o milagre do Leste Asiático"
 
     **Contexto:** Entre 1960 e 1990, as economias de Coreia do Sul, Singapura, Taiwan e Hong Kong cresceram a taxas entre 6% e 9% ao ano — o "milagre" do Leste Asiático. O debate econômico em torno desse crescimento tornou-se uma das mais acesas controvérsias da macroeconomia do desenvolvimento: o crescimento derivou de acumulação extraordinária de fatores (capital e trabalho) ou de ganhos genuínos de produtividade total dos fatores (PTF)?
 

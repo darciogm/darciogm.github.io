@@ -128,7 +128,7 @@ O modelo brasileiro oferece um exemplo instrutivo. O diploma universitário no B
 !!! tip "Sinalização vs. Capital Humano"
     Na realidade, a educação provavelmente combina sinalização e capital humano: parte do retorno é habilidades genuinamente adquiridas, e parte é sinalização. Separar empiricamente os dois canais é um dos desafios metodológicos centrais da economia da educação — tema que o Box Mundo 9d.1, a seguir, explora em profundidade.
 
-!!! box-mundo "🌍 Box Mundo 9d.1 — Retornos à educação como sinalização: Caplan, inflação de diplomas e evidência internacional"
+!!! box-mundo "Box Mundo 9d.1 — Retornos à educação como sinalização: Caplan, inflação de diplomas e evidência internacional"
 
     **Contexto:** A questão central levantada pelo modelo de Spence — a educação aumenta a produtividade ou apenas sinaliza habilidade preexistente? — permanece um dos debates mais vivos da economia aplicada. Bryan Caplan, economista da George Mason University, levou o argumento da sinalização ao seu limite no livro *The Case Against Education* (2018), defendendo que a maior parte do retorno privado à educação (estimado em 80% por Caplan) provém de sinalização, não de capital humano genuíno. Se Caplan estiver correto, o investimento público massivo em educação superior seria largamente um desperdício social: uma corrida armamentista informacional em que cada indivíduo investe em credenciais para se diferenciar, mas o efeito agregado é nulo quando todos investem igualmente — exatamente o equilíbrio pooling ineficiente previsto pelo modelo de Spence quando a sinalização se generaliza.
 
@@ -366,7 +366,7 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 9d.2 — Garantias, lemon laws e proteção ao consumidor: sinais contra limões"
+!!! box-mundo "Box Mundo 9d.2 — Garantias, lemon laws e proteção ao consumidor: sinais contra limões"
 
     **Contexto:** O modelo de Akerlof prevê que mercados com informação assimétrica sobre qualidade podem colapsar — mas na prática, mercados de carros usados existem e movimentam trilhões de dólares globalmente. Uma das razões é que vendedores e legisladores desenvolveram mecanismos de sinalização e proteção que mitigam o problema dos limões: garantias oferecidas pelo vendedor e leis que protegem o comprador (*lemon laws*).
 
@@ -386,7 +386,7 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 9d.3 — Remuneração de CEOs e o problema principal-agente: evidência internacional"
+!!! box-mundo "Box Mundo 9d.3 — Remuneração de CEOs e o problema principal-agente: evidência internacional"
 
     **Contexto:** A remuneração de executivos de grandes corporações é um dos campos de aplicação mais visíveis e controversos da teoria do principal-agente. Os acionistas (principais) não podem observar diretamente o esforço e a qualidade das decisões dos CEOs (agentes); por isso, desenham contratos que vinculam a remuneração ao desempenho da empresa — stock options, bônus por lucro, ações restritas. A teoria de Holmström (1979) prevê que o contrato ótimo equilibra incentivos (alta sensibilidade da remuneração ao desempenho) e seguro (baixa variabilidade salarial), e que a parcela variável deve depender de indicadores informativos sobre o esforço do CEO.
 

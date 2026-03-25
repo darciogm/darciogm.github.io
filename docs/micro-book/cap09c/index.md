@@ -223,7 +223,7 @@ A equação $\eqref{eq:9c.6}$ mostra que o licitante deve condicionar não apena
 
 A evidência empírica e experimental sobre a maldição do vencedor é robusta e consistente. Em laboratório, Kagel e Levin (1986) mostraram que participantes inexperientes sistematicamente lançam acima do ajuste ótimo em leilões de valor comum, obtendo lucros negativos em média. Apenas após repetida experiência — e, crucialmente, após sofrerem perdas — os licitantes aprendem a ajustar seus lances. No campo, a documentação de Capen, Clapp e Campbell (1971) sobre os leilões de petróleo offshore nos EUA foi seminal: empresas que venceram leilões no Golfo do México obtiveram retornos sistematicamente abaixo do custo de capital, evidência direta de que não ajustavam suficientemente para a maldição do vencedor.
 
-!!! box-mundo "🌍 Box Mundo 9c.1 — Desenho de leilões de espectro: o Nobel de 2020 e as lições dos leilões da FCC"
+!!! box-mundo "Box Mundo 9c.1 — Desenho de leilões de espectro: o Nobel de 2020 e as lições dos leilões da FCC"
 
     **Contexto:** Em outubro de 2020, o Prêmio Nobel de Economia foi concedido a Paul Milgrom e Robert Wilson "por melhorias na teoria de leilões e invenções de novos formatos de leilão". A distinção reconheceu não apenas contribuições teóricas fundamentais — como o modelo de valores afiliados de Milgrom e Weber (1982) e a formalização da maldição do vencedor por Wilson (1969, 1977) — mas, sobretudo, a aplicação prática dessas ideias ao desenho de leilões de espectro eletromagnético pela Federal Communications Commission (FCC) dos Estados Unidos. Antes de 1994, a FCC alocava licenças de espectro por *beauty contests* (processos administrativos discricionários) e loterias — métodos que não revelavam informação sobre valores e geravam alocações ineficientes, além de oportunidades de rent-seeking. A transição para leilões competitivos, informada pela teoria de Milgrom e Wilson, transformou radicalmente a alocação de um dos recursos públicos mais valiosos do mundo.
 
@@ -235,7 +235,7 @@ A evidência empírica e experimental sobre a maldição do vencedor é robusta 
 
     **Fonte:** Milgrom, Paul (2004). *Putting Auction Theory to Work*. Cambridge University Press. Cramton, Peter (2013). "Spectrum Auction Design." *Review of Industrial Organization*, 42(2), 161–190. The Royal Swedish Academy of Sciences (2020). "Improvements to Auction Theory and Inventions of New Auction Formats." Scientific Background on the Sveriges Riksbank Prize in Economic Sciences.
 
-!!! box-mundo "🌍 Box Mundo 9c.2 — O leilão de anúncios do Google: a Generalized Second Price Auction"
+!!! box-mundo "Box Mundo 9c.2 — O leilão de anúncios do Google: a Generalized Second Price Auction"
 
     **Contexto:** Quando você digita uma busca no Google, os anúncios que aparecem no topo da página não são escolhidos arbitrariamente — são alocados por um leilão que ocorre em milissegundos, repetido bilhões de vezes por dia. O mecanismo utilizado pelo Google (e, com variações, pelo Meta, Microsoft Bing e outras plataformas) é a *Generalized Second Price Auction* (GSP), um formato que combina elementos da teoria de leilões com as peculiaridades dos mercados de publicidade online. O GSP é, possivelmente, o mecanismo econômico mais frequentemente executado na história: o Google realiza centenas de bilhões de leilões por ano, alocando posições de anúncios em páginas de busca, vídeos do YouTube e aplicativos.
 
@@ -247,7 +247,7 @@ A evidência empírica e experimental sobre a maldição do vencedor é robusta 
 
     **Fonte:** Edelman, Benjamin, Michael Ostrovsky, e Michael Schwarz (2007). "Internet Advertising and the Generalized Second-Price Auction." *American Economic Review*, 97(1), 242–259. Varian, Hal R. (2007). "Position Auctions." *International Journal of Industrial Organization*, 25(6), 1163–1178.
 
-!!! box-mundo "🌍 Box Mundo 9c.3 — Leilões de espectro 3G/4G/5G: bilhões de dólares e desenho de mecanismos na prática"
+!!! box-mundo "Box Mundo 9c.3 — Leilões de espectro 3G/4G/5G: bilhões de dólares e desenho de mecanismos na prática"
 
     **Contexto:** Os leilões de espectro de telecomunicações são o maior campo de aplicação prática da teoria de leilões, com transações que totalizam centenas de bilhões de dólares globalmente. Cada geração de tecnologia móvel — 3G, 4G e 5G — gerou uma nova rodada de leilões com desafios de desenho de mecanismos progressivamente mais complexos. A experiência acumulada ao longo de três décadas ilustra como a teoria econômica se traduziu em bilhões de dólares de diferença na receita pública, dependendo da qualidade do desenho institucional.
 

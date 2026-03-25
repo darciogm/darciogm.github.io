@@ -193,7 +193,7 @@ Uma resposta à multiplicidade de equilíbrios do Folk Theorem é o conceito de 
 
     **Renegociação como critério de seleção:** Punições extremas (como o grim trigger) podem ser teóricas mas não práticas: nenhum cartel manteria uma guerra de preços destrutiva *para sempre* quando ambos poderiam lucrar retomando a cooperação. A prova de renegociação captura essa intuição e seleciona equilíbrios com punições moderadas e temporárias — mais próximas do que observamos empiricamente em oligopólios reais.
 
-!!! box-mundo "🌍 Box Mundo 9b.2 — Guerras de preços em aviação e tecnologia: punição em ação"
+!!! box-mundo "Box Mundo 9b.2 — Guerras de preços em aviação e tecnologia: punição em ação"
 
     **Contexto:** Os modelos de jogos repetidos preveem que a cooperação tácita (conluio) é periodicamente interrompida por "guerras de preços" — fases de punição que restauram a disciplina cooperativa. Guerras de preços são a execução, no mundo real, das estratégias de punição modeladas neste capítulo. A aviação comercial e o setor de tecnologia oferecem exemplos paradigmáticos.
 
@@ -260,7 +260,7 @@ Além do grim trigger, existem estratégias mais sofisticadas, comparadas na [Ta
 
     **Fonte:** CADE, Processos Administrativos 08012.010936/2007-01 (Distribuidoras de GLP) e relatórios anuais do DEE/CADE.
 
-!!! box-mundo "🌍 Box Mundo 9b.1 — Cooperação comercial internacional: a OMC como jogo repetido e a guerra comercial EUA-China"
+!!! box-mundo "Box Mundo 9b.1 — Cooperação comercial internacional: a OMC como jogo repetido e a guerra comercial EUA-China"
 
     **Contexto:** O sistema multilateral de comércio — institucionalizado pelo GATT (1947) e pela Organização Mundial do Comércio (OMC, 1995) — pode ser interpretado como um mecanismo de sustentação de cooperação em um jogo repetido entre nações. Cada país tem incentivo unilateral para proteger sua indústria doméstica com tarifas, subsídios ou barreiras não tarifárias — exatamente como no Dilema dos Prisioneiros, onde "trair" (proteger) domina "cooperar" (abrir o mercado) no jogo de estágio. Mas como o comércio é uma interação repetida indefinidamente entre os mesmos parceiros, a OMC funciona como arcabouço institucional que reduz o custo de monitoramento (mecanismo de revisão de políticas comerciais), aumenta o custo da punição (sistema de solução de controvérsias com autorização de retaliação) e, portanto, sustenta um equilíbrio cooperativo — desde que os fatores de desconto efetivos dos membros sejam suficientemente altos.
 
@@ -318,7 +318,7 @@ A derivação do resultado de Rubinstein ilustra com precisão a força da indu�
 
     **Conexão com Nash Bargaining:** Rubinstein (1982) mostrou que o EPS de ofertas alternadas converge para a solução de barganha de Nash quando o intervalo entre ofertas vai a zero — uma fundamentação não cooperativa para o modelo cooperativo.
 
-!!! box-mundo "🌍 Box Mundo 9b.3 — Brexit: barganha sequencial com prazo e paciência assimétrica"
+!!! box-mundo "Box Mundo 9b.3 — Brexit: barganha sequencial com prazo e paciência assimétrica"
 
     **Contexto:** A negociação do Brexit (2017–2020) entre o Reino Unido e a União Europeia é um caso notável de barganha sequencial em que a estrutura temporal e a paciência relativa das partes determinaram o resultado — precisamente como prevê o modelo de Rubinstein. O Artigo 50 do Tratado de Lisboa estabelecia um prazo de dois anos para a conclusão das negociações (extensível por unanimidade), criando uma barganha com horizonte finito e deadline conhecido.
 

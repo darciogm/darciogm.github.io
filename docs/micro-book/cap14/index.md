@@ -446,7 +446,7 @@ Do ponto de vista da política pública, o Primeiro Teorema fornece o fundamento
 
     **Por que isso importa:** Esse teorema é o fundamento teórico para políticas pró-concorrência e contra monopólios — mas também alerta que, quando as hipóteses falham (externalidades, bens públicos), a intervenção governamental pode ser justificada.
 
-!!! box-mundo "🌍 Box Mundo 14.1 — EU Emissions Trading System: equilíbrio geral e mercados de emissões"
+!!! box-mundo "Box Mundo 14.1 — EU Emissions Trading System: equilíbrio geral e mercados de emissões"
 
     **Contexto:** O **Sistema de Comércio de Emissões da União Europeia** (EU ETS), criado em 2005, é o maior mercado de carbono do mundo. Ele estabelece um teto (*cap*) para as emissões totais de CO₂ de setores industriais e de energia, distribuindo permissões de emissão que podem ser compradas e vendidas entre empresas. A lógica é criar um "mercado de poluição" que, ao estabelecer um preço para o carbono, incentive a redução de emissões onde ela é mais barata.
 
@@ -496,7 +496,7 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
     Muitos alunos concluem que, se o equilíbrio competitivo é Pareto-eficiente (Primeiro Teorema), então ele é necessariamente "bom" ou "justo". Isso é falso. Uma alocação em que um único agente detém todos os recursos pode ser Pareto-eficiente — ninguém melhora sem que ele piore — mas é claramente desigual. Eficiência de Pareto é um critério de **não-desperdício**, não de equidade. O Segundo Teorema complementa essa análise ao mostrar que qualquer alocação eficiente pode, em princípio, ser alcançada via mercados competitivos com transferências lump-sum — separando o problema de eficiência do problema de distribuição.
 
-!!! box-mundo "🌍 Box Mundo 14.2 — Países nórdicos: o Segundo Teorema na prática"
+!!! box-mundo "Box Mundo 14.2 — Países nórdicos: o Segundo Teorema na prática"
 
     **Contexto:** Os **países nórdicos** (Dinamarca, Finlândia, Noruega, Suécia) são frequentemente citados como exemplos de economias que combinam elevado nível de bem-estar social com mercados competitivos e dinâmicos. Sua estratégia pode ser interpretada, em termos do Segundo Teorema do Bem-Estar, como uma tentativa de redistribuir dotações (via tributação e transferências) e deixar os mercados operarem livremente para alcançar a eficiência.
 
@@ -888,7 +888,7 @@ Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \ma
 
     **Interpretação econômica:** A simetria da economia — consumidores idênticos com dotações "espelhadas" — produz um equilíbrio com preço relativo unitário e divisão igualitária. Cada consumidor troca 1 unidade de seu bem abundante por 1 unidade do bem escasso. Note como as três propriedades das funções de excesso de demanda (homogeneidade, continuidade, Lei de Walras) são verificadas explicitamente — são essas propriedades que garantem, pelo Teorema de Brouwer, a existência do equilíbrio.
 
-!!! box-mundo "🌍 Box Mundo 14.3 — Reunificação alemã (1990): um choque de equilíbrio geral"
+!!! box-mundo "Box Mundo 14.3 — Reunificação alemã (1990): um choque de equilíbrio geral"
 
     **Contexto:** A **queda do Muro de Berlim** (novembro de 1989) e a **reunificação da Alemanha** (outubro de 1990) constituem um dos maiores "experimentos naturais" de equilíbrio geral da história econômica. De um dia para o outro, duas economias com estruturas radicalmente diferentes — a capitalista Alemanha Ocidental e a socialista Alemanha Oriental — foram integradas em um único mercado, com livre mobilidade de trabalho, capital e bens.
 

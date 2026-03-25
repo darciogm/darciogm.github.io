@@ -386,7 +386,7 @@ A [Tabela 17.1](#tabela-17-1) apresenta os principais fatores que deslocam as cu
 **Tabela 17.1 — Deslocamentos das curvas de oferta e demanda de trabalho.**
 </div>
 
-!!! box-mundo "🌍 Box Mundo 17.3 — O declínio global da participação do trabalho na renda"
+!!! box-mundo "Box Mundo 17.3 — O declínio global da participação do trabalho na renda"
     **Contexto:** Um dos fatos macroeconômicos mais marcantes das últimas décadas é a queda sustentada da parcela do trabalho na renda nacional (*labor share*) em praticamente todos os países. Enquanto a divisão funcional da renda entre trabalho e capital era tradicionalmente considerada uma das "grandes constantes" da economia (Kaldor, 1961), evidências recentes mostram que essa constância se desfez.
 
     **Dados:** Karabarbounis e Neiman (2014), em estudo influente publicado no *Quarterly Journal of Economics*, documentaram que a participação do trabalho na renda caiu em 42 dos 59 países analisados entre 1975 e 2012:
@@ -571,7 +571,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 17.2 — Card e Krueger e a revolução do salário mínimo"
+!!! box-mundo "Box Mundo 17.2 — Card e Krueger e a revolução do salário mínimo"
     **Contexto:** Em 1992, o estado de New Jersey elevou seu salário mínimo de US\$ 4,25 para US\$ 5,05 por hora, enquanto a vizinha Pennsylvania manteve o mínimo inalterado. Os economistas David Card e Alan Krueger aproveitaram esse "experimento natural" para estimar o efeito causal do salário mínimo sobre o emprego, comparando restaurantes de fast-food nos dois estados antes e depois do aumento — um design de diferenças-em-diferenças que se tornaria um marco na economia empírica.
 
     **Dados:** Card e Krueger (1994) pesquisaram 410 restaurantes (Burger King, KFC, Wendy's, Roy Rogers) ao longo da fronteira NJ-PA. Seus resultados foram surpreendentes:
@@ -792,7 +792,7 @@ No Brasil, a queda foi ainda mais acentuada: a Reforma Trabalhista de 2017, ao e
 
 ---
 
-!!! box-mundo "🌍 Box Mundo 17.1 — O modelo nórdico de mercado de trabalho: flexicurity"
+!!! box-mundo "Box Mundo 17.1 — O modelo nórdico de mercado de trabalho: flexicurity"
     **Contexto:** Os países nórdicos (Dinamarca, Suécia, Noruega, Finlândia) combinam altas taxas de sindicalização com mercados de trabalho flexíveis e baixos níveis de desigualdade — um aparente paradoxo para modelos que preveem rigidez quando sindicatos são fortes. O segredo reside no modelo de **flexicurity** (*flexibilidade + segurança*), particularmente desenvolvido na Dinamarca.
 
     **Dados:**

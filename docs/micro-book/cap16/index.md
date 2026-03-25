@@ -619,7 +619,7 @@ A tangência implica que cada firma opera com **excesso de capacidade**: produz 
 
 A competição monopolística é empiricamente relevante para muitos mercados: restaurantes, varejo de vestuário, cabeleireiros, aplicativos de celular, livros. A diferenciação é horizontal (gostos diferentes) mais do que vertical (qualidade diferente), conectando-se diretamente ao modelo de Hotelling da Seção 16.6.
 
-!!! box-mundo "🌍 Box Mundo 16.1 — Investigações antitruste da UE contra Big Tech"
+!!! box-mundo "Box Mundo 16.1 — Investigações antitruste da UE contra Big Tech"
 
     **Contexto:** A Comissão Europeia tem sido a autoridade antitruste mais agressiva do mundo no combate às práticas de grandes plataformas digitais. Desde 2017, a UE aplicou multas bilionárias a Google, Apple, Meta e Amazon por abuso de posição dominante, culminando na aprovação do Digital Markets Act (DMA) em 2022.
 
@@ -629,7 +629,7 @@ A competição monopolística é empiricamente relevante para muitos mercados: r
 
     **Para refletir:** Plataformas digitais se encaixam melhor no modelo de monopólio, oligopólio ou competição monopolística? A resposta pode depender de como se define o "mercado relevante".
 
-!!! box-mundo "🌍 Box Mundo 16.2 — OPEP+ e os limites da coordenação entre produtores"
+!!! box-mundo "Box Mundo 16.2 — OPEP+ e os limites da coordenação entre produtores"
 
     **Contexto:** A Organização dos Países Exportadores de Petróleo (OPEP), fundada em 1960, é o cartel mais longevo e visível do mundo. Desde 2016, opera como OPEP+ com a adesão da Rússia e outros produtores, controlando cerca de 40% da produção mundial de petróleo.
 
@@ -649,7 +649,7 @@ A competição monopolística é empiricamente relevante para muitos mercados: r
 
     **Para refletir:** O remédio estrutural (venda de marca) foi suficiente para preservar a concorrência, ou o CADE deveria ter bloqueado a fusão?
 
-!!! box-mundo "🌍 Box Mundo 16.3 — Diferenciação de produto no mercado global de smartphones"
+!!! box-mundo "Box Mundo 16.3 — Diferenciação de produto no mercado global de smartphones"
 
     **Contexto:** O mercado global de smartphones é um oligopólio altamente concentrado com forte diferenciação de produto — um exemplo vivo do modelo de Hotelling e da competição monopolística. Apple e Samsung dominam as vendas, mas competem com dezenas de fabricantes em diferentes segmentos de preço.
 

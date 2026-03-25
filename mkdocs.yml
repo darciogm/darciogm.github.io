@@ -45,6 +45,7 @@ theme:
       exercicio-proposto: material/pencil-outline
       example: material/flask-outline
       box-brasil: material/flag-variant
+      box-mundo: material/earth
       question: material/trophy-outline
       note: material/information-outline
       info: material/information
