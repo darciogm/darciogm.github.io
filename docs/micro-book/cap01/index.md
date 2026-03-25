@@ -209,7 +209,7 @@ Q^d = Q^s \quad \text{(equilíbrio)} \label{eq:1.4.3} \tag{1.4.3}
 **Figura 1.1 — Oferta e Demanda com Estática Comparativa.** Ajuste a renda \(Y\), o custo dos insumos \(w\) e as inclinações das curvas para observar como \(P^*\) e \(Q^*\) se deslocam. O painel mostra as derivadas de estática comparativa \(\partial P^*/\partial Y\) e \(\partial P^*/\partial w\) em tempo real.
 </div>
 
-<iframe src="../graficos/cap01/fluxo-circular.html" title="Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap01/fluxo-circular.html" title="Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores.** Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
