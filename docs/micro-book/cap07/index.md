@@ -66,6 +66,8 @@ O paradoxo de São Petersburgo continua relevante dois séculos e meio depois de
 
 O Paradoxo de São Petersburgo destruiu o valor esperado como critério de decisão. Precisamos de algo melhor — algo que capture não só "quanto, em média" mas "quanto *vale para mim*". A solução veio de um lugar inesperado: um livro de teoria dos jogos. Em 1944, o matemático John von Neumann e o economista Oskar Morgenstern mostraram que, se o agente obedece a quatro regras de coerência (axiomas), suas preferências sobre loterias podem ser representadas por uma função que pondera utilidades — não dinheiro — pelas probabilidades. A ideia é devastadoramente simples: em vez de calcular \(E[\text{dinheiro}]\), calcule \(E[\text{felicidade}]\). Essa mudança de uma letra — de \(x\) para \(u(x)\) — é toda a diferença.
 
+Quais são essas quatro regras de coerência? São exigências surpreendentemente modestas — tão razoáveis que, ao lê-las, você pensará 'óbvio'. Mas cada uma tem um papel preciso, e abandonar qualquer uma delas faz a teoria desmoronar.
+
 !!! definition "Axiomas de Von Neumann–Morgenstern"
     Sejam \(L_1, L_2, L_3\) loterias no conjunto \(\mathcal{L}\). As preferências \(\succsim\) satisfazem os axiomas VNM se:
 
@@ -815,6 +817,9 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
+No início deste capítulo, tiramos o tapete da certeza. Agora, o consumidor tem ferramentas para pisar firme mesmo no chão instável: utilidade esperada para avaliar loterias, Arrow-Pratt para medir aversão ao risco, seguros para transferi-lo, e ativos contingentes para negociá-lo. O tapete não voltou — mas o consumidor aprendeu a equilibrar-se sem ele.
+
+*O consumidor aprendeu a lidar com o risco. Mas será que ele realmente faz isso de forma racional? O próximo capítulo diz que não — e tem provas.*
 
 ## 🧠 Revisão Rápida
 

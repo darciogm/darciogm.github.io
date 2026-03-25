@@ -14,7 +14,7 @@ A literatura acadêmica sobre economia digital é vasta e em rápida expansão. 
 
 ### 21.1.1 Bens de informação: custo marginal zero, custo fixo alto
 
-A microeconomia tradicional — da teoria do consumidor (Capítulos 3–6) à firma competitiva (Capítulos 10–13) — assume implicitamente que os bens são **rivais**: se você consome uma maçã, eu não posso consumi-la. Os custos de produção, nesse mundo, são tipicamente convexos: produzir unidades adicionais custa cada vez mais. Nessas condições, o equilíbrio competitivo existe e é eficiente (Primeiro Teorema do Bem-Estar, Capítulo 14).
+A resposta curta para a pergunta do título: porque quase tudo que você aprendeu sobre custos, preços e concorrência assume que produzir mais custa mais. No mundo digital, essa premissa desmorona. A microeconomia tradicional — da teoria do consumidor (Capítulos 3-6) à firma competitiva (Capítulos 10-13) — assume implicitamente que os bens são **rivais**: se você consome uma maçã, eu não posso consumi-la. Os custos de produção, nesse mundo, são tipicamente convexos: produzir unidades adicionais custa cada vez mais. Nessas condições, o equilíbrio competitivo existe e é eficiente (Primeiro Teorema do Bem-Estar, Capítulo 14).
 
 Bens de informação violam essa premissa de forma radical. Um software, um filme, uma música, uma notícia ou um algoritmo de busca têm custos de produção concentrados na **primeira cópia** — o custo fixo de desenvolvimento é alto, frequentemente na casa de bilhões de dólares. Porém, uma vez criada a primeira cópia, o custo de reprodução e distribuição digital é essencialmente **zero**. Formalmente:
 
@@ -566,7 +566,7 @@ O **General Data Protection Regulation (GDPR)** da União Europeia (2018) é a r
 
 ## 21.7 Leilões Online e Desenho de Mecanismos Digitais
 
-A economia da atenção e dos dados descrita nas seções anteriores depende, na prática, de mecanismos que alocam a atenção dos usuários entre anunciantes dispostos a pagar por ela. Esses mecanismos são, essencialmente, leilões — e operam em escala e velocidade sem precedentes.
+Cada vez que você digita algo no Google, um leilão acontece em milissegundos — sem martelo, sem plateia, sem drama visível. Mas o mecanismo por trás é o mesmo que estudamos no Capítulo 9c, turbinado por escala e velocidade sem precedentes. A economia da atenção e dos dados descrita nas seções anteriores depende, na prática, de mecanismos que alocam a atenção dos usuários entre anunciantes dispostos a pagar por ela.
 
 ### 21.7.1 O leilão de anúncios do Google
 
@@ -705,6 +705,9 @@ A teoria sugere que sim. Calvano, Calzolari, Denicolò e Pastorello (2020) demon
 
 ---
 
+Por que o Google não cobra pelo buscador? Por que o WhatsApp venceu concorrentes melhores? Por que a Amazon vende abaixo do custo? As perguntas que abriram este capítulo agora têm respostas formais: custos marginais zero, efeitos de rede, mercados bilaterais e leilões em milissegundos. A economia digital não viola as leis da microeconomia — ela as leva a extremos que os modelos tradicionais não previam, exigindo novas ferramentas e, inevitavelmente, nova regulação.
+
+*Plataformas, redes e dados redesenham a economia. No próximo capítulo, a pergunta muda: como saber se tudo isso funciona? A resposta: testando.*
 
 ## 🧠 Revisão Rápida
 

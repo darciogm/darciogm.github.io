@@ -920,6 +920,7 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
 
 ---
 
+*Sabemos onde a racionalidade falha. Agora, a pergunta muda: quando suas decisões afetam as minhas, o que acontece? Bem-vindo à teoria dos jogos.*
 
 ## 🧠 Revisão Rápida
 

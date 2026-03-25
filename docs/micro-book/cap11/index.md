@@ -865,6 +865,13 @@ Quando \(\sigma > 1\) (alta elasticidade de substituição), um aumento em \(v/w
 
     *Referência: Coase, R. H. (1937). The Nature of the Firm. Economica, 4(16), 386–405.*
 
+---
+
+A dona da padaria do início sabia: não basta saber fazer — é preciso saber quanto custa. Agora ela tem o instrumental completo: custo de oportunidade para não se enganar, Shephard para extrair demandas por insumos de uma única função, e a envoltória de Viner para distinguir o improviso do curto prazo da eficiência do longo prazo. O mapa de custos está desenhado. Falta a pergunta que paga as contas: quanto produzir?
+
+*Custos mapeados. Agora a firma enfrenta o mercado: quanto produzir, a que preço, e quando fechar as portas.*
+
+---
 
 ## 🧠 Revisão Rápida
 

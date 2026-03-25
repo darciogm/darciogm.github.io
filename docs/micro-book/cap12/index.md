@@ -760,6 +760,14 @@ A magnitude relativa desses dois efeitos é empiricamente relevante. Em indústr
     Dados mais recentes do **Mapa de Empresas** (Governo Federal) indicam que o Brasil registrou mais de **21 milhões de empresas ativas** em 2024, com uma taxa de abertura de novas empresas que supera consistentemente a de fechamento — sugerindo um dinamismo empreendedor robusto, mas com alta rotatividade. O desafio de política pública é transformar sobrevivência em **crescimento sustentável** — e isso passa, em boa medida, por reduzir o custo Brasil analisado no capítulo anterior.
 
 
+---
+
+Começamos perguntando como a firma escolhe quanto produzir — uma questão quase ingênua, dissemos. Mas a resposta montou toda a anatomia do lucro: da condição RMg = CMg à decisão de shutdown, do Lema de Hotelling que extrai oferta e demandas de uma única derivada à decomposição que mostra por que não existem "insumos de Giffen". A firma nua — despida de poder de mercado, sozinha diante do preço — encontrou seu ótimo. Agora falta o palco.
+
+*A firma individual encontrou seu ótimo. Mas o mercado tem centenas delas — e um imposto pode mudar tudo. No próximo capítulo, equilibramos o mercado inteiro.*
+
+---
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

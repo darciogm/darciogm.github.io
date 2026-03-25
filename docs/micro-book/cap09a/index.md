@@ -142,9 +142,13 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 
 No Dilema dos Prisioneiros, a solução era fácil: trair domina cooperar, aconteça o que acontecer. Mas a maioria dos jogos não é tão generosa. Na Batalha dos Sexos, por exemplo, a melhor ação depende do que o outro jogador faz — não existe "bala de prata". Como prever o resultado quando nenhuma estratégia é obviamente superior?
 
+O Nash equilibrium é a ferramenta que generaliza essa lógica: em vez de exigir que uma estratégia ganhe *de tudo*, exige apenas que cada jogador esteja fazendo o melhor *dado o que o outro faz*. É menos ambicioso que dominância — e por isso funciona em muito mais jogos.
+
 A resposta de Nash — elegante a ponto de caber numa tese de 28 páginas — é trocar de pergunta. Em vez de buscar uma estratégia boa *contra tudo*, buscar estratégias que sejam boas *umas contra as outras*. O equilíbrio de Nash é um perfil de estratégias que se sustenta sozinho: ninguém quer desviar, dado o que os outros estão fazendo. Essa mudança de perspectiva — de dominância absoluta para consistência mútua — é o salto conceitual que permitiu a Nash generalizar a análise para qualquer jogo. John Nash formulou esse conceito em sua tese de doutorado em Princeton, defendida em 1950 sob orientação de Albert Tucker, com apenas 28 páginas — um dos trabalhos mais concisos e impactantes da história da ciência econômica. A ideia central é que um equilíbrio é um perfil de estratégias que se *sustenta a si próprio*: se cada jogador acredita que os demais jogarão as estratégias de equilíbrio, então é de fato ótimo para ele jogar sua estratégia de equilíbrio — e a crença se confirma.
 
 Essa propriedade de auto-sustentação tem uma leitura econômica poderosa: o equilíbrio de Nash é uma **previsão estável** de como agentes racionais e informados jogarão. Não é necessário supor que os jogadores se comuniquem ou façam acordos vinculantes — basta que cada um raciocine corretamente sobre o comportamento dos demais. Em mercados financeiros, os preços de ativos tendem a refletir equilíbrios de Nash entre investidores que simultaneamente tentam explorar desvios de preços e, ao fazê-lo, os eliminam. Em leilões (Capítulo 9c), os lances de equilíbrio são funções das informações privadas de cada participante que formam um equilíbrio bayesiano — generalização direta do conceito de Nash.
+
+Antes da definição formal, a intuição: um equilíbrio de Nash é uma situação em que *ninguém se arrepende*. Cada jogador, ao ver o que os outros fizeram, pensa 'eu não mudaria nada'. Não é o melhor resultado coletivo (o PD mostrou isso), mas é o resultado *estável* — aquele do qual ninguém desvia sozinho.
 
 !!! definition "Equilíbrio de Nash (estratégias puras)"
     Um perfil de estratégias \(s^* = (s_1^*, s_2^*, \ldots, s_n^*)\) é um **Equilíbrio de Nash** se, para todo jogador \(i \in N\):
@@ -337,6 +341,8 @@ O exemplo da Batalha dos Sexos ilustra como calcular o equilíbrio misto em um j
     **Para refletir:** Se um cobrador de pênaltis tem o pé esquerdo mais forte, como isso altera as probabilidades de equilíbrio? (Dica: ele chutará mais vezes para o lado natural — mas não exclusivamente, pois isso o tornaria previsível.)
 
     **Fonte:** Palacios-Huerta, Ignacio (2003). "Professionals Play Minimax." *Review of Economic Studies*, 70(2), 395–415. Walker, Mark e Wooders, John (2001). "Minimax Play at Wimbledon." *American Economic Review*, 91(5), 1521–1538. Chiappori, Pierre-André; Levitt, Steven e Groseclose, Tim (2002). "Testing Mixed-Strategy Equilibria When Players Are Heterogeneous: The Case of Penalty Kicks in Soccer." *American Economic Review*, 92(4), 1138–1151.
+
+Misturar é racional — pergunte a qualquer cobrador de pênaltis. Se ele sempre chuta no mesmo canto, o goleiro aprende. Se randomiza, o goleiro vira loteria. O equilíbrio misto formaliza exatamente essa intuição: quando previsibilidade é punida, imprevisibilidade é ótima.
 
 ---
 
@@ -631,6 +637,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
+*Nos jogos simultâneos, todos apostam no escuro. No próximo módulo, alguém move primeiro — e isso muda tudo.*
 
 ## 🧠 Revisão Rápida
 

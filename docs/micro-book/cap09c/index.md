@@ -394,6 +394,11 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
+Começamos este módulo com uma pergunta que paralisou a teoria dos jogos: como analisar um jogo quando os jogadores nem concordam sobre *qual jogo* estão jogando? O truque de Harsanyi — um lance da natureza que distribui tipos privados — transformou ignorância genuína em incerteza tratável, e dessa transformação nasceram o BNE, a teoria de leilões e o desenho de mecanismos. Do leilão do pré-sal à alocação de espectro, as cartas continuam escondidas — mas agora sabemos jogar.
+
+*Leilões revelam tipos; no próximo módulo, os tipos tentam se esconder — ou se exibir. Sinalização, moral hazard e seleção adversa entram em cena.*
+
+---
 
 ## 🧠 Revisão Rápida
 

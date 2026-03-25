@@ -742,6 +742,11 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 ---
 
+A padaria com três fornos que não triplica a produção — lembra? Agora sabemos exatamente por quê: rendimentos marginais decrescentes no curto prazo, rendimentos de escala no longo prazo, e uma elasticidade de substituição que determina se a firma pode trocar braços por máquinas ou está presa à receita original. Da Cobb-Douglas à CES, do resíduo de Solow à homoteticidade, mapeamos a "receita secreta" da firma. Falta um ingrediente crucial: o preço.
+
+*Sabemos produzir. Falta saber quanto custa. No próximo capítulo, a conta chega.*
+
+---
 
 ## 🧠 Revisão Rápida
 

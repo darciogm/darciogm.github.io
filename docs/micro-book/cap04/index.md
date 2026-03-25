@@ -16,6 +16,8 @@ O capítulo segue uma progressão deliberada: partimos da formulação do proble
 
 O problema central da teoria do consumidor pode ser enunciado de forma surpreendentemente simples: dado um orçamento limitado, como o consumidor distribui seus gastos para obter a maior satisfação possível? Essa pergunta, formulada pela primeira vez de modo rigoroso por Alfred Marshall (1890) e formalizada por John Hicks (1939) e Paul Samuelson (1947), é o ponto de partida de toda a análise de demanda.
 
+A ideia visual é simples e vale antecipar: o consumidor busca a curva de indiferença mais alta que ainda cabe dentro do triângulo orçamentário. O ponto ótimo é onde a curva *tangencia* a reta — nem acima (impossível), nem abaixo (desperdício). A Seção 4.2 desenvolve essa intuição graficamente; aqui, traduzimos a mesma ideia em equações.
+
 O consumidor resolve o seguinte problema de **maximização da utilidade**:
 
 \[
@@ -106,7 +108,9 @@ Por exemplo, se uma família gasta R$ 200 por mês em streaming e R$ 50 em livro
 
 ## 4.3 O Caso com n Bens — O Lagrangeano
 
-A análise gráfica da seção anterior é intuitiva e poderosa, mas limitada a dois bens. No mundo real, consumidores escolhem entre dezenas ou centenas de categorias de bens e serviços — a POF 2017-2018 do IBGE classifica o consumo das famílias brasileiras em mais de 1.500 itens. Como generalizar a condição de tangência para esse cenário multidimensional? Para isso, precisamos de uma técnica de otimização mais poderosa — o **método de Lagrange** —, que traduz a condição geométrica de tangência em um sistema de equações algébricas resolvível para qualquer número de bens. Para uma revisão detalhada do método, incluindo o passo a passo completo e um exercício resolvido com a função CES, veja a [Seção 2.5](../cap02/index.md#25-maximizacao-com-restricoes-o-metodo-de-lagrange).
+A intuição gráfica da Seção 4.2 e a solução algébrica que segue são *duas formas de dizer a mesma coisa*: tangência = TMS igual à razão de preços = condição de Lagrange. A geometria dá a intuição; a álgebra dá a precisão. Nenhuma substitui a outra.
+
+A análise gráfica, contudo, é limitada a dois bens. No mundo real, consumidores escolhem entre dezenas ou centenas de categorias de bens e serviços — a POF 2017-2018 do IBGE classifica o consumo das famílias brasileiras em mais de 1.500 itens. Como generalizar a condição de tangência para esse cenário multidimensional? Para isso, precisamos do **método de Lagrange**, que traduz a condição geométrica de tangência em um sistema de equações algébricas resolvível para qualquer número de bens. Para uma revisão detalhada do método, incluindo o passo a passo completo e um exercício resolvido com a função CES, veja a [Seção 2.5](../cap02/index.md#25-maximizacao-com-restricoes-o-metodo-de-lagrange).
 
 Para \(n\) bens, o problema do consumidor é:
 
@@ -449,6 +453,8 @@ E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a u
 \]
 
 Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)\) são **inversas** uma da outra (fixados os preços).
+
+Se esta seção parece abstrata demais, relaxe: a dualidade é uma daquelas ideias que só fazem sentido depois de usá-la três vezes. Prossiga, volte aqui no Capítulo 5, e ela vai "clicar".
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Maximizar a felicidade com um orçamento fixo e minimizar o gasto para atingir uma felicidade fixa são dois lados da mesma moeda.
@@ -992,6 +998,10 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
     A elevada taxa de juros brasileira — com o cartão de crédito rotativo superando 440% ao ano em 2023 (BCB) — implica que o preço intertemporal do consumo presente é muito alto no Brasil comparado a outros países, estreitando severamente a restrição orçamentária futura das famílias endividadas.
 
     **Fonte**: BCB, Relatório de Economia Bancária, 2022; CNC, Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC), 2022.
+
+O consumidor encontrou sua cesta ótima. Mas o mundo não fica parado: preços mudam, rendas flutuam, governos criam impostos. O que acontece com a cesta ótima quando o chão se move? Essa é a pergunta do Capítulo 5 — onde Slutsky entra em cena.
+
+*O consumidor está em paz no seu ótimo. No próximo capítulo, perturbamos essa paz.*
 
 ---
 

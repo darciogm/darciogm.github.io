@@ -737,7 +737,7 @@ O exercício a seguir aplica a teoria de leilões a um caso numérico.
 
 ## 19.8 Taxonomia dos Problemas de Informação Assimétrica
 
-Ao longo deste capítulo, analisamos diversos problemas de informação assimétrica — risco moral, seleção adversa, sinalização, triagem, leilões — cada um com suas especificidades. Para consolidar a compreensão desse rico arcabouço conceitual, é útil organizá-los em uma taxonomia que destaque as dimensões essenciais: o timing da assimetria (pré ou pós-contratual), a natureza da informação oculta (ação ou tipo) e os mecanismos disponíveis para atenuá-la.
+Limões, seguros, diplomas, leilões — percorremos um desfile de problemas que, à primeira vista, parecem ter pouco em comum. Mas todos compartilham a mesma raiz: alguém sabe algo que o outro não sabe, e essa assimetria distorce o resultado. Para consolidar a compreensão desse rico arcabouço conceitual, é útil organizá-los em uma taxonomia que destaque as dimensões essenciais: o timing da assimetria (pré ou pós-contratual), a natureza da informação oculta (ação ou tipo) e os mecanismos disponíveis para atenuá-la.
 
 Note que os problemas discutidos neste capítulo não são mutuamente exclusivos — na prática, muitas relações econômicas envolvem *simultaneamente* risco moral e seleção adversa. Um mercado de seguros, por exemplo, enfrenta seleção adversa (clientes de alto risco procuram mais cobertura) e risco moral (segurados protegidos se cuidam menos). Um contrato de trabalho lida com seleção adversa (o empregador não conhece a produtividade do candidato na contratação) e risco moral (não observa o esforço após a contratação). A interação entre os dois problemas gera complexidade adicional e é uma área ativa de pesquisa.
 
@@ -812,6 +812,9 @@ A [Tabela 19.3](#tabela-19-3) resume os principais tipos de problemas de informa
 
 ---
 
+Começamos com um jogo de pôquer — ninguém vê as cartas dos outros — e terminamos com leilões que obrigam cada jogador a revelar o que sabe. Entre um extremo e outro, vimos mercados de limões colapsarem, seguradoras serem engolidas pelos piores clientes, e diplomas funcionarem como sinais caros de produtividade. A lição central é que a informação não é apenas um insumo da decisão — é uma variável estratégica que molda contratos, mercados e instituições inteiras.
+
+*Informação assimétrica distorce mercados de dentro para fora. No próximo capítulo, as distorções vêm de fora: externalidades e bens públicos.*
 
 ## 🧠 Revisão Rápida
 

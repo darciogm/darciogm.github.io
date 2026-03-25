@@ -41,7 +41,7 @@ Tendo compreendido *por que* simplificamos, cabe perguntar: *como* um modelo eco
 
 A qualidade de um modelo não se mede pelo "realismo" de suas suposições, mas pela capacidade de suas implicações em organizar o pensamento e gerar previsões empiricamente relevantes. Esse critério pragmático — que prioriza a utilidade sobre o realismo — é um dos traços mais distintivos da metodologia econômica, e a próxima seção explora suas raízes filosóficas.
 
-Mas como saber se um modelo é, de fato, útil? Se a qualidade não reside nas suposições, onde está o critério de avaliação? A próxima seção aborda exatamente essa questão: como verificar — e eventualmente rejeitar — um modelo econômico.
+Mas se um modelo é, por definição, uma mentira — uma simplificação deliberada —, como distinguir uma mentira *útil* de uma mentira *perigosa*? Essa pergunta não é acadêmica: modelos econômicos orientam decisões que afetam milhões de pessoas. Precisamos de um critério, e é exatamente isso que a próxima seção oferece.
 
 ---
 
@@ -278,6 +278,8 @@ Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, p
 ---
 
 ## 1.5 Desenvolvimento da teoria do valor
+
+Se a microeconomia fosse uma série, esta seção seria a temporada de flashbacks — aquela que mostra como os personagens chegaram até aqui.
 
 Se a microeconomia tivesse um enigma fundador — um mistério que manteve gerações de pensadores acordados à noite —, seria este: **por que o diamante custa mais que a água?** A água é indispensável à vida; o diamante, no máximo, decora um anel de noivado. No entanto, um litro de água na torneira custa centavos e um quilate de diamante custa uma fortuna. Algo está errado — ou algo está muito certo, e nós ainda não entendemos o quê.
 
@@ -560,6 +562,12 @@ Note também que a demonstração ilustra o poder da estática comparativa: como
     **Verificação.** O BCB publica trimestralmente o *Relatório de Inflação*, no qual confronta suas projeções passadas com os dados realizados — um exercício de verificação indireta de seus modelos, exatamente no espírito da Seção 1.2. Quando as projeções se desviam sistematicamente da realidade, os modelos são recalibrados.
 
     Este caso ilustra que modelos econômicos não são exercícios acadêmicos abstratos: são ferramentas operacionais que orientam decisões com impacto direto sobre a vida de milhões de brasileiros.
+
+---
+
+Lembra da sobremesa? Aquele conflito interno — prazer agora vs. culpa depois — é, no fundo, um problema de otimização com restrição (mandamento 2), analisável isolando variáveis *ceteris paribus* (mandamento 1), e cuja "solução correta" depende de se estamos descrevendo o que você *faz* ou prescrevendo o que *deveria* fazer (mandamento 3). Nos próximos capítulos, vamos formalizar essa intuição — começando pelas ferramentas matemáticas que transformam dilemas de supermercado em equações resolúveis.
+
+*No próximo capítulo: as ferramentas que transformam intuição em demonstração. (Aviso: vai ter derivada.)*
 
 ---
 

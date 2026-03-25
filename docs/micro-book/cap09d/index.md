@@ -442,6 +442,11 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
 ---
 
+Abrimos este módulo com uma observação simples: quando alguém age primeiro e os outros observam, a ação *fala*. O MBA de Spence, a garantia do carro usado, o contrato do seguro — em cada caso, a ação é mensagem, e o equilíbrio é uma conversa estratégica entre quem sabe e quem precisa adivinhar. Do PBE à seleção adversa, mapeamos as três faces da assimetria informacional: sinalização (o informado grita), moral hazard (o informado se esconde) e seleção adversa (o informado aparece demais).
+
+*Informação assimétrica não é só teoria dos jogos — é o tecido do mercado. Os Capítulos 10–12 voltam à firma; o Capítulo 19 aprofunda contratos e mecanismos.*
+
+---
 
 ## 🧠 Revisão Rápida
 

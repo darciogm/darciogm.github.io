@@ -427,6 +427,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
+*Jogos repetidos e barganha revelam o poder do tempo. No próximo módulo, tiramos a última certeza: os jogadores nem sabem contra quem estão jogando.*
 
 ## 🧠 Revisão Rápida
 

@@ -35,6 +35,8 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
 !!! definition "Axioma 4 — Monotonicidade (não saciedade local)"
     Se \(\mathbf{x} \geq \mathbf{y}\) (componente a componente) e \(\mathbf{x} \neq \mathbf{y}\), então \(\mathbf{x} \succ \mathbf{y}\). "Mais é melhor" — o consumidor sempre prefere ter mais de pelo menos um bem, tudo o mais constante.
 
+Uma nota de precaução que desenvolveremos na próxima seção: a função de utilidade que construiremos será *ordinal* — os números que ela atribui importam apenas pela ordem, não pela magnitude. Dizer que \(u(A) = 10\) e \(u(B) = 5\) significa que A é preferido a B, não que A é "duas vezes melhor".
+
 !!! tip "Observação sobre preferências lexicográficas"
     As preferências lexicográficas satisfazem completude, transitividade e monotonicidade, mas **não** satisfazem continuidade. Por isso, não podem ser representadas por uma função de utilidade contínua. Este é um caso clássico que ilustra a importância do axioma de continuidade.
 
@@ -51,6 +53,8 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
 !!! note "Conexão com a teoria da preferência revelada"
     Os axiomas sobre \(\succsim\) são postulados sobre preferências *internas* do consumidor — algo que, em princípio, não podemos observar diretamente. Existe, porém, uma contrapartida observacional: o **Axioma Generalizado da Preferência Revelada (GARP)**, que traduz completude e transitividade em condições testáveis sobre *escolhas de consumo observadas*. Se as compras de um consumidor satisfazem o GARP, seus dados são consistentes com a maximização de alguma função de utilidade bem comportada. Na seção "Pesquisa em Ação" ao final deste capítulo, o artigo de Choi et al. (2014) testa exatamente essa hipótese em uma amostra representativa — com resultados surpreendentes sobre a relação entre consistência das escolhas e acumulação de riqueza.
 
+Antes de prosseguir para a função de utilidade, vale uma pausa para quem quer saber: esses axiomas funcionam na prática? O Box a seguir examina a evidência experimental — e a resposta é surpreendente.
+
 !!! box-mundo "Box Mundo 3.1 — Violações de transitividade: os experimentos de Tversky e replicações internacionais"
 
     **Contexto:** O axioma da transitividade — se \(A \succsim B\) e \(B \succsim C\), então \(A \succsim C\) — é um dos pilares da teoria da escolha racional. Sem ele, como discutido na Seção 3.1, não é possível construir uma função de utilidade que represente as preferências do consumidor. Porém, desde os anos 1960, psicólogos e economistas comportamentais têm documentado violações sistemáticas desse axioma em contextos experimentais. O trabalho mais influente é o de Amos Tversky (1969), que demonstrou que indivíduos frequentemente exibem preferências intransitivas quando as alternativas diferem em múltiplas dimensões e as diferenças em alguma dimensão são "imperceptíveis".
@@ -60,6 +64,8 @@ Para que as preferências do consumidor sejam "bem comportadas" e passíveis de 
     **Análise:** Essas violações não invalidam a teoria da escolha racional, mas delimitam seu domínio de aplicação — uma questão central para a verificação de modelos (Capítulo 1). A resposta da teoria econômica tem sido dupla. Primeiro, modelos de utilidade aleatória (*random utility*), como o de McFadden (1974, Nobel 2000), incorporam um componente estocástico que pode gerar intransitividade aparente mesmo quando as preferências subjacentes são transitivas — as violações refletem "erros" de percepção, não preferências genuinamente cíclicas. Segundo, a economia comportamental desenvolveu modelos alternativos, como a *regret theory* de Loomes e Sugden (1982), que relaxam a transitividade mantendo outras propriedades. Do ponto de vista prático, a evidência sugere que a transitividade é uma aproximação excelente para decisões familiares e repetidas, mas pode falhar em escolhas complexas e não habituais — exatamente a distinção entre modelos descritivos e normativos que permeia todo este livro.
 
     **Fonte:** Tversky, A. (1969). Intransitivity of preferences. *Psychological Review*, 76(1), 31–48. Regenwetter, M.; Dana, J.; Davis-Stober, C. P. (2011). Transitivity of preferences. *Psychological Review*, 118(1), 42–56. Birnbaum, M. H.; Schmidt, U. (2015). Testing transitivity in choice under risk. *Theory and Decision*, 79(4), 631–660.
+
+Com essa ressalva empírica em mente — os axiomas são uma excelente aproximação para decisões cotidianas, mas podem falhar em escolhas complexas —, prossigamos para a recompensa teórica: a função de utilidade.
 
 ---
 
@@ -574,6 +580,8 @@ A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais d
 
     **Fonte:** Armington, P. S. (1969). A theory of demand for products distinguished by place of production. *IMF Staff Papers*, 16(1), 159–178. Broda, C.; Weinstein, D. E. (2006). Globalization and the gains from variety. *Quarterly Journal of Economics*, 121(2), 541–585. Hertel, T.; Hummels, D.; Ivanic, M.; Keeney, R. (2007). How confident can we be of CGE-based assessments of free trade agreements? *Economic Modelling*, 24(4), 611–635.
 
+Em resumo: a Cobb-Douglas é a melhor amiga do microeconomista — fácil de usar, gera soluções fechadas, e nunca reclama. A CES é mais versátil mas exige mais trabalho. A Leontief é inflexível — literalmente: só aceita proporções fixas. E a quase-linear é a favorita da análise de bem-estar, porque isola efeito renda em um único bem. Escolher a forma funcional certa para cada problema é metade da arte.
+
 ---
 
 ## 3.7 Transformações Monotônicas e Invariância Ordinal
@@ -680,6 +688,8 @@ Antes de consolidar esses conceitos no resumo do capítulo, vale observar como e
     **Análise:** Esses resultados fornecem suporte empírico notável para os axiomas apresentados na Seção 3.1: na grande maioria dos casos, as escolhas de consumo observadas em dados de alta frequência são compatíveis com a existência de uma função de utilidade racional. A taxa de violação de 5% é consistente com a evidência de intransitividade discutida no Box Mundo 3.1 — violações existem, mas são a exceção, não a regra. Do ponto de vista da Seção 3.7 (invariância ordinal), os testes de preferência revelada são particularmente elegantes: eles verificam se existe *alguma* função de utilidade compatível com os dados, sem impor uma forma funcional específica (Cobb-Douglas, CES, etc.) — exatamente porque a utilidade é ordinal e qualquer transformação monotônica preserva o ordenamento. A explosão de dados de scanner e de compras online oferece oportunidades sem precedentes para testar a teoria do consumidor em escala, transformando os axiomas deste capítulo de postulados filosóficos em hipóteses empiricamente verificáveis.
 
     **Fonte:** Varian, H. R. (1982). The nonparametric approach to demand analysis. *Econometrica*, 50(4), 945–973. Echenique, F.; Lee, S.; Shum, M. (2011). The money pump as a measure of revealed preference violations. *American Economic Review*, 101(4), 1645–1651. Cherchye, L.; De Rock, B.; Vermeulen, F. (2011). The revealed preference approach to collective consumption behaviour. *Review of Economics and Statistics*, 93(1), 223–238.
+
+*Sabemos o que o consumidor quer. Falta descobrir o que ele pode.*
 
 ---
 

@@ -314,7 +314,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ## 14.5 Condições de Eficiência de Pareto
 
-As seções anteriores identificaram três tipos de eficiência: na troca (entre consumidores), na produção (entre setores) e no mix de produtos (entre o que se produz e o que se deseja consumir). A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A [Tabela 14.1](#tabela-14-1) sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
+Eficiência na troca, eficiência na produção, eficiência no mix de produtos — três peças de um quebra-cabeça que só funciona quando encaixam ao mesmo tempo. As seções anteriores identificaram cada peça separadamente. A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A [Tabela 14.1](#tabela-14-1) sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
 
 <a id="tabela-14-1"></a>
 
@@ -670,7 +670,7 @@ Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo 
 
 ## 14.8 Modelo Matemático de Troca
 
-Até aqui, a análise de equilíbrio geral apoiou-se em argumentos gráficos (Caixa de Edgeworth) e na enunciação dos Teoremas do Bem-Estar. Agora, formalizamos o modelo matematicamente, introduzindo as funções de excesso de demanda e a Lei de Walras — ferramentas que nos permitirão, na seção seguinte, demonstrar a existência do equilíbrio walrasiano.
+Diagramas e intuições nos trouxeram até aqui — agora é hora de traduzir tudo em equações que um computador (ou um aluno de pós-graduação) consiga resolver. Formalizamos o modelo matematicamente, introduzindo as funções de excesso de demanda e a Lei de Walras — ferramentas que nos permitirão, na seção seguinte, demonstrar a existência do equilíbrio walrasiano.
 
 ### Funções de excesso de demanda
 
@@ -902,7 +902,7 @@ Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \ma
 
 ## 14.10 Modelo Matemático de Produção e Troca
 
-A demonstração de existência da seção anterior tratou de uma economia de troca pura. Como o modelo se generaliza quando incorporamos firmas que produzem bens a partir de insumos? A estrutura conceitual é a mesma — buscar um ponto fixo no mapeamento de preços —, mas a definição de equilíbrio precisa agora incluir as decisões de produção das firmas e a distribuição de seus lucros entre os consumidores acionistas.
+Provamos que o equilíbrio existe quando as pessoas apenas trocam bens entre si. Mas economias reais não são feiras de escambo — alguém precisa fabricar as coisas. Como o modelo se generaliza quando incorporamos firmas que produzem bens a partir de insumos? A estrutura conceitual é a mesma — buscar um ponto fixo no mapeamento de preços —, mas a definição de equilíbrio precisa agora incluir as decisões de produção das firmas e a distribuição de seus lucros entre os consumidores acionistas.
 
 ### Extensão com produção
 
@@ -1012,6 +1012,9 @@ Apesar de sua utilidade, os modelos CGE têm limitações importantes que devem 
 
     4. **Limitações**: Os modelos CGE baseiam-se em hipóteses de concorrência perfeita (na maioria das versões), retornos constantes de escala e pleno emprego de fatores. Extensões incorporando economias de escala, concorrência imperfeita e desemprego (modelos "novos CGE") são áreas ativas de pesquisa no Brasil.
 
+Lá no início, puxamos um fio da teia de aranha e a teia inteira vibrou. Ao longo deste capítulo, aprendemos a mapear essa vibração: a Caixa de Edgeworth mostrou como trocas voluntárias levam à eficiência, os Teoremas do Bem-Estar formalizaram a intuição da mão invisível, e os modelos CGE traduziram a teoria em números que informam ministros e legisladores. A teia, afinal, funciona — mas só quando todos os fios estão intactos.
+
+*Todos os mercados em equilíbrio. Mas nem todo equilíbrio é justo — e nem todo mercado é competitivo. No próximo capítulo, entra o monopólio.*
 
 ## 🧠 Revisão Rápida
 

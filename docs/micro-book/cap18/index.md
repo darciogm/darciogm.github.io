@@ -492,6 +492,8 @@ Para valores pequenos de \(r_d\), a aproximação \(r_c \approx r_d\) é razoáv
 
 ## 18.10 VPL, Taxa de Desconto e Decisão de Investimento
 
+A teoria é bonita, mas o empresário quer números. Nesta seção, pegamos o VPL e a TIR e os colocamos para trabalhar num cenário concreto — um projeto de investimento avaliado a diferentes taxas de desconto. O resultado é uma lição visual sobre por que o Brasil, com juros historicamente altos, é um país hostil a projetos de longa maturação.
+
 Considere um projeto com investimento inicial de R$ 100.000 e fluxos de caixa anuais conforme a tabela abaixo:
 
 <a id="tabela-18-2"></a>
@@ -677,6 +679,9 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
 ---
 
+Começamos este capítulo com uma pergunta de supermercado — quanto custam os juros do parcelamento? — e terminamos com uma regra para extrair petróleo do fundo do oceano. O fio condutor é o mesmo: o tempo transforma escolhas simples em problemas de otimização, e a taxa de juros é o preço que conecta presente e futuro. No Brasil, onde esse preço é particularmente alto, as consequências se espalham por cada decisão de investimento, cada barril extraído, cada fábrica que não foi construída.
+
+*O tempo cobra seu preço — em juros, em depreciação, em impaciência. No próximo capítulo, outra falha de mercado: quando uma das partes sabe mais que a outra.*
 
 ## 🧠 Revisão Rápida
 

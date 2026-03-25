@@ -835,7 +835,7 @@ No Brasil, a queda foi ainda mais acentuada: a Reforma Trabalhista de 2017, ao e
 
 ## 17.9 Efeitos Substituição e Renda sobre a Oferta de Trabalho
 
-A [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para diferentes variações.
+O efeito substituição puxa para um lado, o efeito renda puxa para o outro — e o resultado muda conforme o tipo de choque. Para não perder o fio, a [Tabela 17.2](#tabela-17-2) decompõe os efeitos substituição e renda para diferentes variações.
 
 <a id="tabela-17-2"></a>
 
@@ -896,6 +896,9 @@ A renda do recurso natural — o *royalty* — é a renda econômica paga pela e
 
 ---
 
+Lá no começo, o despertador tocou e você enfrentou o dilema: travesseiro ou salário? Ao longo deste capítulo, vimos que a resposta depende de efeitos substituição e renda que se digladiam, de monopsonistas que pagam menos do que deveriam e de sindicatos que tentam corrigir a balança. A economia do trabalho, no fundo, é a economia de como cada um de nós reparte o recurso mais escasso que existe — o tempo.
+
+*O trabalhador fez suas escolhas. Agora entra o tempo: poupar ou gastar, investir ou consumir. No próximo capítulo, a paciência tem preço.*
 
 ## 🧠 Revisão Rápida
 

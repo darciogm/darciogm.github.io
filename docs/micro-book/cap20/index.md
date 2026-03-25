@@ -132,7 +132,7 @@ Como \(B'^{ext}(q) > 0\), o consumo privado fica **aquém do ótimo social**: \(
 
 ## 20.3 Modelo de Equilíbrio Parcial de Externalidades
 
-A seção anterior demonstrou intuitivamente que externalidades negativas levam à sobreprodução e externalidades positivas à subprodução. Agora, formalizamos essa análise em um modelo de equilíbrio parcial com duas firmas, o que nos permitirá derivar rigorosamente a magnitude da ineficiência e, na seção seguinte, calibrar os instrumentos de política necessários para corrigi-la.
+Sabemos que o preço mente — mas quanto ele mente? A intuição da seção anterior nos disse que externalidades negativas levam à sobreprodução e positivas à subprodução. Agora, formalizamos essa análise em um modelo de equilíbrio parcial com duas firmas, o que nos permitirá medir exatamente o tamanho da mentira e, na seção seguinte, calibrar os instrumentos de política necessários para corrigi-la.
 
 Formalizemos o problema usando um modelo de equilíbrio parcial com duas firmas.
 
@@ -598,7 +598,7 @@ A [Tabela 20.2](#tabela-20-2) apresenta exemplos brasileiros para cada categoria
 
 ## 20.6 Bens Públicos e Alocação de Recursos
 
-Estabelecidas as propriedades que definem os bens públicos, passamos à questão central: qual é o nível eficiente de provisão de um bem público, e por que o mercado sistematicamente falha em alcançá-lo? A resposta envolve uma mudança fundamental na lógica da eficiência em relação aos bens privados — uma mudança que Paul Samuelson formalizou em 1954 e que constitui uma das contribuições mais duradouras da economia do setor público.
+Se para bens privados a regra de eficiencia e "preço igual para todos, quantidade diferente", para bens públicos a lógica se inverte: "quantidade igual para todos, preço diferente". Essa inversão, formalizada por Samuelson em 1954, e a chave para entender por que o mercado sistematicamente falha em prover bens públicos — e por que a solução exige somar, não igualar, as disposições a pagar. A resposta envolve uma mudança fundamental na lógica da eficiência em relação aos bens privados — uma mudança que Paul Samuelson formalizou em 1954 e que constitui uma das contribuições mais duradouras da economia do setor público.
 
 ### Condição de eficiência (Samuelson, 1954)
 
@@ -959,6 +959,9 @@ O mecanismo VCG tem aplicações práticas que vão além dos bens públicos. O 
 
 ---
 
+Começamos com um vizinho e seus galos às 5h da manhã — um prejuízo que não aparecia na conta de ninguém. Ao longo do capítulo, vimos que esse padrão se repete em escala global: da poluição industrial ao aquecimento do planeta, dos caronas do transporte público aos caronas da defesa nacional. A lição é que o mercado, deixado sozinho, conta apenas metade da história — e corrigir a outra metade exige impostos, negociação, mecanismos de revelação ou, quando tudo mais falha, uma boa votação.
+
+*Quando o mercado falha, alguém precisa agir — mas quem, e como? O próximo capítulo leva essas questões para a era digital.*
 
 ## 🧠 Revisão Rápida
 

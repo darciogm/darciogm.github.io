@@ -462,7 +462,7 @@ onde \(\pi_E\) é o lucro bruto do entrante no equilíbrio pós-entrada e \(f\) 
 
 ## 16.10 Sinalização
 
-Em mercados com **informação assimétrica**, as ações observáveis de uma firma podem transmitir informação privada sobre suas características (custos, qualidade, intenções).
+Às vezes, a melhor arma de uma firma não é o que ela produz, mas o que ela *mostra* saber. Em mercados com **informação assimétrica**, as ações observáveis de uma firma podem transmitir informação privada sobre suas características (custos, qualidade, intenções).
 
 ### Preço como sinal
 
@@ -525,7 +525,7 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ## 16.13 Comparação dos modelos de oligopólio
 
-A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
+Bertrand, Cournot, Stackelberg, colusão — são tantos modelos que é fácil perder o fio. Hora de colocar todos lado a lado e ver quem cobra mais, quem produz menos e quem deixa o consumidor em pior situação. A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
 
 <a id="tabela-16-2"></a>
 
@@ -604,7 +604,7 @@ A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos cláss
 
 ## 16.14 Competição Monopolística
 
-Os modelos de oligopólio analisados até aqui tratam de mercados com poucos produtores. No outro extremo, a concorrência perfeita assume muitos produtores de bens idênticos. Mas existe uma estrutura intermediária que combina muitas firmas com diferenciação de produto: a **competição monopolística**, formalizada por Edward Chamberlin (1933) e Joan Robinson (1933).
+Pense na rua de restaurantes do seu bairro: dezenas de opções, nenhuma igual à outra, e cada uma com seu cardápio, seu tempero e sua clientela fiel. Os modelos de oligopólio analisados até aqui tratam de mercados com poucos produtores. No outro extremo, a concorrência perfeita assume muitos produtores de bens idênticos. Mas existe uma estrutura intermediária que combina muitas firmas com diferenciação de produto: a **competição monopolística**, formalizada por Edward Chamberlin (1933) e Joan Robinson (1933).
 
 !!! definition "Competição Monopolística"
     A **competição monopolística** é uma estrutura de mercado em que: (i) há muitas firmas; (ii) cada firma produz um bem diferenciado (substituto imperfeito dos demais); (iii) há livre entrada e saída de firmas no longo prazo.
@@ -701,6 +701,9 @@ No Brasil, as agências reguladoras setoriais (ANATEL, ANEEL, ANP, ANTT) utiliza
 
 ---
 
+Voltamos à mesa de pôquer do início: poucos jogadores, cada um tentando adivinhar a jogada do outro. De Bertrand a Cournot, de Stackelberg à colusão tácita, vimos que o resultado depende crucialmente de quem escolhe o quê, quando e com que informação. A boa notícia para o consumidor é que, com as ferramentas certas — teoria dos jogos, análise antitruste e regulação —, é possível manter os jogadores honestos.
+
+*Oligopólios, fusões, regulação. Falta o mercado mais importante de todos: o de trabalho. No próximo capítulo, o fator humano.*
 
 ## 🧠 Revisão Rápida
 

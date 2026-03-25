@@ -93,7 +93,7 @@ O modelo gera várias previsões testáveis:
 
 ### 23.2.1 Demanda derivada e a distinção saúde vs. cuidados
 
-A distinção central do modelo de Grossman — entre demanda por saúde e demanda por cuidados médicos — tem implicações profundas para a análise econômica. A **demanda por saúde** é a demanda pelo estado de "estar saudável": ter energia, não sentir dor, poder trabalhar e desfrutar da vida. A **demanda por cuidados médicos** é a demanda pelos insumos que produzem saúde: consultas, exames, medicamentos, cirurgias, internações.
+Ninguém acorda de manhã desejando uma ressonância magnética. O que as pessoas querem é saúde — e a ressonância é, no melhor dos casos, um passo doloroso nessa direção. Essa observação aparentemente banal esconde uma distinção central do modelo de Grossman — entre demanda por saúde e demanda por cuidados médicos — com implicações profundas para a análise econômica. A **demanda por saúde** é a demanda pelo estado de "estar saudável": ter energia, não sentir dor, poder trabalhar e desfrutar da vida. A **demanda por cuidados médicos** é a demanda pelos insumos que produzem saúde: consultas, exames, medicamentos, cirurgias, internações.
 
 A relação é análoga à demanda por insumos na teoria da firma (Capítulo 10): a firma não demanda trabalho por si mesmo, mas porque o trabalho produz bens que geram receita. Similarmente, o indivíduo não demanda uma ressonância magnética porque gosta do procedimento, mas porque espera que o diagnóstico leve a um tratamento que melhore sua saúde.
 
@@ -654,6 +654,10 @@ O problema é que o benefício externo não é internalizado pelo indivíduo. Se
 Como \(B_p + B_e > B_p\), há indivíduos para quem \(c > B_p\) (não se vacinam) mas \(c < B_p + B_e\) (deveriam se vacinar do ponto de vista social). O mercado subprovê vacinação — justificando subsídios públicos ou obrigatoriedade, como discutido no Capítulo 20.
 
 O controle de doenças contagiosas é análogo a um **bem público** (Capítulo 20): a erradicação da varíola beneficiou toda a humanidade, independentemente de quem contribuiu para o esforço. O problema do carona (*free-rider*) é severo: cada país tem incentivo para esperar que outros financiem a erradicação.
+
+Lembra da aspirina de 25 dólares? Agora você entende por que ela custa tanto — e por que nenhuma solução simples resolve o problema. Incerteza, assimetria de informação, externalidades, bens meritórios e o dilema de financiar sistemas inteiros convergem para um mercado que desafia cada pressuposto do modelo competitivo. A economia da saúde é onde a microeconomia encontra a vida real em sua forma mais crua.
+
+*A saúde desafia quase todos os pressupostos do modelo competitivo — e exige soluções que combinam economia, ética e política. No próximo e último capítulo, outro desafio existencial: o planeta.*
 
 ---
 

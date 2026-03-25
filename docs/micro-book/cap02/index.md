@@ -1,5 +1,7 @@
 # Capítulo 2 — O Manual de Sobrevivência Matemática
 
+Quanto custa, em bem-estar, um aumento de 10% na gasolina para uma família que ganha dois salários mínimos? A resposta exige derivadas parciais (Seção 2.2), o teorema da função implícita (Seção 2.3) e o método de Lagrange (Seção 2.5). Sem essas ferramentas, a pergunta fica sem resposta. Com elas, a resposta cabe em meia página.
+
 Se o Capítulo 1 era o "o quê" e o "por quê" da microeconomia, este é o "com quê". Matemática é a linguagem em que os modelos econômicos são escritos — e, como toda língua, ela pode parecer impenetrável até que você perceba que já a fala no dia a dia. Quando você decide se vale a pena pegar trânsito para economizar R$ 20 na gasolina, está fazendo otimização. Quando nota que "o café sobe quando a geada derruba a safra", está fazendo estática comparativa. A diferença é que aqui vamos fazer isso com precisão — e com a garantia de que as conclusões se sustentam logicamente.
 
 Este capítulo é a caixa de ferramentas. O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida e prática. O leitor familiarizado com cálculo multivariado pode avançar rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais (teorema do envelope, Kuhn-Tucker). O leitor que está vendo isso pela primeira vez: calma. Cada ferramenta será *usada* em um problema econômico concreto — nada aqui é decorativo.
@@ -242,6 +244,8 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 Até agora, o agente podia escolher o que quisesse — um luxo que ninguém tem na vida real. Na prática, todo mundo enfrenta restrições: o consumidor tem renda limitada, a firma tem tecnologia limitada, o governo tem orçamento limitado, e o aluno tem tempo limitado para estudar este capítulo. É justamente a *restrição* que torna a economia interessante: se tivéssemos tudo, não haveria escolha; sem escolha, não haveria economia.
 
 O método de Lagrange é *a* ferramenta para lidar com restrições — e provavelmente a técnica mais importante que você aprenderá neste livro inteiro. Desenvolvido pelo matemático ítalo-francês Joseph-Louis Lagrange no final do século XVIII, o método transforma um problema de otimização com restrição em um problema sem restrição em um espaço ampliado. Praticamente todos os modelos que estudaremos — consumidor (Capítulo 4), firma (Capítulos 7–10), equilíbrio geral (Capítulo 12) — envolvem otimizar uma função sujeita a restrições. O método é tão central que o multiplicador de Lagrange \(\lambda\) se tornará, ao longo do livro, um dos objetos mais interpretados economicamente: utilidade marginal da renda, custo marginal, preço-sombra de restrições regulatórias.
+
+E o multiplicador \(\lambda\) que o método produz é talvez o número mais interpretado de toda a economia: você vai encontrá-lo disfarçado de "utilidade marginal da renda" no Capítulo 4, de "custo marginal" no Capítulo 11, de "preço-sombra" em problemas regulatórios — e sempre dizendo a mesma coisa: quanto vale relaxar a restrição em um pouquinho.
 
 Esta seção apresenta o método em um passo a passo detalhado, para que o leitor possa aplicá-lo com confiança a qualquer problema.
 
@@ -1308,6 +1312,10 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
     **Agregação geográfica e temporal.** Na prática, o IBGE calcula o IPCA em 16 regiões metropolitanas e usa médias ponderadas pela população para obter o índice nacional. Os preços são coletados ao longo de cada mês, exigindo técnicas de agregação temporal. A fórmula final combina índices elementares (nível de produto) em índices superiores (subitens, itens, subgrupos, grupos) mediante uma estrutura hierárquica de agregação.
 
     O IPCA é, portanto, um exemplo concreto de como funções de agregação, teoria dos números-índice e conceitos de otimização do consumidor se combinam para produzir uma estatística que afeta diretamente a vida de milhões de brasileiros — desde a meta de juros fixada pelo Copom até o reajuste de contratos de aluguel e tarifas públicas.
+
+A caixa de ferramentas está completa. Derivadas, Lagrange, envelope, KKT, ponto fixo — cada item foi apresentado com uma aplicação econômica, porque neste livro nenhuma matemática é gratuita. A partir do próximo capítulo, essas ferramentas saem da caixa e vão para a bancada: o Capítulo 3 formaliza as preferências do consumidor, e o Capítulo 4 resolve o problema de otimização que motivou todo este aparato. A viagem da teoria começa agora.
+
+*Caixa de ferramentas pronta. No próximo capítulo, o primeiro cliente: o consumidor.*
 
 ---
 

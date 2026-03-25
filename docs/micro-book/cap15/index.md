@@ -890,6 +890,9 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
 ---
 
+Abrimos o capítulo com um único vendedor, zero concorrência e um sorriso no rosto. Ao longo da análise, vimos que esse sorriso tem consequências: preço acima do custo marginal, produção abaixo do socialmente desejável e uma perda de peso morto que ninguém captura. Mas também vimos que o monopólio não é um vilão unidimensional — Schumpeter nos lembrou que, sem a promessa de lucros extraordinários, talvez não houvesse iPhone, Netflix nem vacina de mRNA.
+
+*O monopolista reina sozinho. Mas e quando há dois? Três? Poucos — e isso muda tudo. É o próximo capítulo.*
 
 ## 🧠 Revisão Rápida
 

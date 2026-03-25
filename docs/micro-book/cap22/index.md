@@ -635,6 +635,10 @@ A experimentação com seres humanos — em economia como em medicina — levant
 
 ---
 
+Começamos perguntando "onde estão os experimentos?" — e a resposta percorreu salas de informática com estudantes, campos de arroz na Índia, creches em Israel e fronteiras estaduais nos Estados Unidos. De Chamberlin a Duflo, a economia aprendeu a testar suas teorias com o mesmo rigor que a medicina usa para testar seus remédios. O método não é perfeito — a crise de replicação, os limites éticos e a tensão entre validade interna e externa lembram que medir o comportamento humano nunca será tão limpo quanto medir a velocidade da luz. Mas é incomparavelmente melhor do que não medir.
+
+*O laboratório do economista — de Chamberlin a J-PAL. No próximo capítulo, aplicamos essas ferramentas ao mercado mais íntimo de todos: a saúde.*
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

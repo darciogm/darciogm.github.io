@@ -229,7 +229,7 @@ A condição de lucro zero no longo prazo é poderosa, mas levanta uma questão 
 
 ## 13.6 Equilíbrio de Longo Prazo: Custos Constantes, Crescentes e Decrescentes
 
-A condição de lucro zero no longo prazo nos diz que \(p = CMe_{\min}\), mas qual será o nível desse preço após um aumento na demanda? A resposta depende de como a entrada de novas firmas afeta os preços dos insumos. Se os preços dos insumos permanecem inalterados, o \(CMe_{\min}\) não muda e o preço retorna ao nível original. Mas se a expansão da indústria pressiona os preços dos insumos para cima, o equilíbrio de longo prazo se estabelece a um preço mais elevado. Essa distinção dá origem a três tipos de indústria, cada um com uma forma diferente de curva de oferta de longo prazo.
+Lucro zero — e daí? O preço volta ao patamar original ou se estabelece em um novo nível? A condição de lucro zero no longo prazo nos diz que \(p = CMe_{\min}\), mas qual será o nível desse preço após um aumento na demanda? A resposta depende de como a entrada de novas firmas afeta os preços dos insumos. Se os preços dos insumos permanecem inalterados, o \(CMe_{\min}\) não muda e o preço retorna ao nível original. Mas se a expansão da indústria pressiona os preços dos insumos para cima, o equilíbrio de longo prazo se estabelece a um preço mais elevado. Essa distinção dá origem a três tipos de indústria, cada um com uma forma diferente de curva de oferta de longo prazo.
 
 ### Indústria de custos constantes
 
@@ -276,7 +276,7 @@ A [Tabela 13.1](#tabela-13-1) resume os três tipos de indústria.
 
 ## 13.7 Elasticidade de Oferta de Longo Prazo
 
-A distinção entre indústrias de custos constantes, crescentes e decrescentes determina a inclinação da curva de oferta de longo prazo. Para quantificar essa responsividade da oferta ao preço, recorremos à **elasticidade de oferta de longo prazo** — uma medida que incorpora não apenas o ajuste de produção das firmas existentes, mas também a dinâmica de entrada e saída e o efeito sobre os preços dos insumos. Enquanto a elasticidade de oferta de curto prazo reflete apenas o movimento ao longo da curva de CMg com planta fixa (Capítulo 12), a elasticidade de longo prazo captura também a resposta extensiva: novas firmas que entram no mercado.
+Sabemos que a curva de oferta de longo prazo pode ser horizontal, ascendente ou até descendente. Mas quão íngreme é essa inclinação? Para quantificar essa responsividade da oferta ao preço, recorremos à **elasticidade de oferta de longo prazo** — uma medida que incorpora não apenas o ajuste de produção das firmas existentes, mas também a dinâmica de entrada e saída e o efeito sobre os preços dos insumos. Enquanto a elasticidade de oferta de curto prazo reflete apenas o movimento ao longo da curva de CMg com planta fixa (Capítulo 12), a elasticidade de longo prazo captura também a resposta extensiva: novas firmas que entram no mercado.
 
 A elasticidade de oferta de longo prazo mede a responsividade da quantidade ofertada de longo prazo a variações no preço:
 
@@ -732,7 +732,7 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
 ## 13.12 Efeitos de Políticas sobre EC, EP e PPM
 
-A análise de bem-estar desenvolvida nas seções anteriores pode ser sintetizada em um quadro comparativo que resume os efeitos das principais políticas de intervenção sobre os excedentes e o bem-estar total. A [Tabela 13.2](#tabela-13-2) apresenta essa síntese. Observe que todas as intervenções geram perda de peso morto positiva — um resultado que decorre diretamente do teorema de eficiência do equilíbrio competitivo. A diferença entre as políticas reside na forma como redistribuem os excedentes entre consumidores, produtores e governo.
+Teto de preço, piso de preço, imposto, subsídio, tarifa — o governo tem um arsenal inteiro de intervenções. Mas qual custa mais para a sociedade? A análise de bem-estar desenvolvida nas seções anteriores pode ser sintetizada em um quadro comparativo que resume os efeitos das principais políticas de intervenção sobre os excedentes e o bem-estar total. A [Tabela 13.2](#tabela-13-2) apresenta essa síntese. Observe que todas as intervenções geram perda de peso morto positiva — um resultado que decorre diretamente do teorema de eficiência do equilíbrio competitivo. A diferença entre as políticas reside na forma como redistribuem os excedentes entre consumidores, produtores e governo.
 
 <a id="tabela-13-2"></a>
 
@@ -800,6 +800,9 @@ Um resultado que merece destaque na Tabela 13.2 é que o efeito do preço máxim
 
     Observe a estática comparativa em ação: na safra 2020/21, choques positivos de demanda global (recuperação pós-pandemia, recomposição de estoques chineses) combinados com câmbio depreciado elevaram drasticamente o preço interno. Nas safras seguintes, a resposta da oferta (expansão de área) gradualmente pressionou os preços para baixo — uma ilustração da dinâmica de ajuste de longo prazo em indústria de custos crescentes.
 
+O leiloeiro invisível do título não é tão fictício assim: em cada feira, em cada bolsa de valores, em cada clique de compra online, preços estão sendo anunciados, ajustados e reanunciados até que oferta e demanda se encontrem. Vimos neste capítulo que esse mecanismo descentralizado, quando livre de interferências, produz um resultado que ninguém conseguiria melhorar — e que toda interferência tem seu preço, medido em perda de peso morto.
+
+*Mercados em equilíbrio parcial — um de cada vez. No próximo capítulo, abrimos todas as portas ao mesmo tempo: equilíbrio geral.*
 
 ## 🧠 Revisão Rápida
 

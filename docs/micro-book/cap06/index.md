@@ -640,6 +640,9 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 ---
 
+Nenhum bem é uma ilha — e este capítulo mapeou o arquipélago. Substitutos, complementos, elasticidades cruzadas e a matriz de Slutsky são as ferramentas que revelam como os bens se conectam. Com elas, o economista pode prever não apenas o que acontece quando o preço de *um* bem muda, mas o efeito cascata sobre *todos* os demais.
+
+*Nenhum bem é uma ilha — e agora sabemos mapear as pontes entre eles. No próximo capítulo, tiramos a última certeza: o consumidor descobre que não sabe o que o futuro reserva.*
 
 ## 🧠 Revisão Rápida
 

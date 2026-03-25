@@ -563,6 +563,10 @@ A solução econômica eficiente para pescarias envolve restringir o acesso ao r
 
 A Nova Zelândia foi pioneira na implementação de ITQs em 1986, com resultados positivos: estoques pesqueiros se recuperaram e a renda econômica da pesca aumentou significativamente. A Islândia, Austrália e partes dos EUA seguiram com sistemas similares.
 
+Por que a temperatura do planeta subiu mais de 1,1°C? Por que empresas poluem demais? Por que é tão difícil proteger florestas? Começamos este capítulo com essas perguntas — e agora você tem as ferramentas para respondê-las: externalidades não precificadas, bens públicos globais, taxas de desconto que determinam o peso do futuro, e mercados de carbono que tentam colocar preço no invisível. A microeconomia não resolve sozinha a crise climática, mas sem ela, nem sabemos por onde começar.
+
+*Mudanças climáticas, mercados de carbono, valoração ambiental — a microeconomia encontra seus limites e suas maiores responsabilidades. O resto é com você.*
+
 ---
 
 ## 🧠 Revisão Rápida

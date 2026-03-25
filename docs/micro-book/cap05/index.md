@@ -105,6 +105,17 @@ Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 **Figura 5.1 — Curva de Engel e caminho de expansão da renda.** Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
 </div>
 
+**Tabela 5.1 — Classificação dos bens pela resposta à renda**
+
+| Tipo de bem | Efeito da ↑ renda sobre demanda | Elasticidade-renda | Exemplo brasileiro |
+|---|---|---|---|
+| Normal | ↑ | \(\eta > 0\) | Carne bovina |
+| Inferior | ↓ | \(\eta < 0\) | Farinha de mandioca |
+| Luxo | ↑↑ (mais que proporcional) | \(\eta > 1\) | Serviços, viagens |
+| Necessidade | ↑ (menos que proporcional) | \(0 < \eta < 1\) | Alimentação básica |
+
+Recapitulando: sabemos que bens normais sobem com a renda, inferiores caem, e luxos sobem mais que proporcionalmente. A curva de Engel mapeia tudo isso. Até aqui, a vida era simples — apenas renda variava, preços parados. Agora vem o prato principal: o que acontece quando o *preço* de um bem muda? A resposta é mais sutil, porque uma variação de preço faz *duas coisas ao mesmo tempo* — e separá-las é a contribuição central de Slutsky.
+
 ---
 
 ## 5.3 Variações no Preço: Efeitos Renda e Substituição
@@ -246,6 +257,8 @@ Vale notar a elegância da derivação: bastaram a identidade entre demandas hic
     \]
 
     O sinal de menos antes do efeito renda é fonte frequente de confusão. Lembre-se: o efeito renda aparece com sinal *negativo* porque um aumento em \(p_j\) *reduz* o poder de compra real (para \(j = i\), o bem fica mais caro, então o consumidor efetivamente "fica mais pobre"). Para verificar se o sinal está correto, aplique o teste para um bem normal (\(\partial x_i/\partial I > 0\)) com aumento de preço próprio (\(j = i\)): o efeito substituição é \(\leq 0\) e o efeito renda é \(-x_i \cdot (+) < 0\), logo o efeito total é negativo — consistente com a Lei da Demanda. Se você obtiver o sinal contrário, provavelmente inverteu o efeito renda.
+
+Se a equação parece intimidante, foque na intuição: o efeito total é substituição + renda. Para um bem normal, os dois puxam na mesma direção (demanda cai quando preço sobe). Para um bem inferior, puxam em sentidos opostos — e o resultado depende de quem é mais forte.
 
 ### 5.4.1 Implicações da Equação de Slutsky
 
@@ -694,6 +707,8 @@ Em termos escalares, para uma variação apenas em \(p_i\): \(\Delta p_i \cdot \
 
 A teoria da preferência revelada tem um papel duplo na microeconomia moderna. Positivamente, ela fornece um critério empírico para testar a racionalidade: se os dados de preços e quantidades de um consumidor violam o AFPR, temos evidência de comportamento irracional — ou de erros de medição ou agregação. Normativamente, ela fundamenta a validade das medidas de bem-estar discutidas na Seção 5.8: a variação compensatória e a variação equivalente são bem definidas apenas se as preferências do consumidor são consistentes com alguma ordenação racional, condição que o AFPR ajuda a verificar. O artigo de Hoderlein e Stoye (2014), discutido na seção "Pesquisa em Ação" deste capítulo, estende esse raciocínio para uma população heterogênea de consumidores, mostrando que as condições de preferência revelada continuam testáveis mesmo quando as preferências individuais não são observadas diretamente.
 
+A preferência revelada fecha o círculo: partimos de preferências para derivar escolhas (Capítulos 3–5); agora, das escolhas observadas, recuperamos as preferências. A teoria se confirma — ou se refuta — pelos dados.
+
 ---
 
 As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slutsky, elasticidades, excedente do consumidor, preferência revelada — ganham vida quando aplicadas a problemas concretos. O estudo de caso a seguir ilustra como essas ferramentas são utilizadas na análise do mercado brasileiro de combustíveis, um dos mais estudados empiricamente no país.
@@ -729,6 +744,9 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
+A epígrafe deste capítulo dizia que toda variação de preço carrega duas forças opostas. Agora sabemos nomeá-las: o efeito substituição redireciona o consumo (sempre contra o bem que encareceu), e o efeito renda empobrece ou enriquece (dependendo da posição do consumidor). Slutsky nos ensinou a separá-las cirurgicamente — e essa cirurgia é a base de toda análise de política tributária, tarifária e regulatória que veremos daqui para frente.
+
+*Até aqui, cada bem vivia sozinho. No próximo capítulo, eles se encontram — e a relação é complicada.*
 
 ## 🧠 Revisão Rápida
 
