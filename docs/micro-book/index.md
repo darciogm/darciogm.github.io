@@ -83,14 +83,14 @@ Clique em qualquer parte para acessar os capítulos correspondentes.
   <div class="hub-card__caps">Cap. 22</div>
 </a>
 
-<a href="cap23/" class="hub-card hub-card--front">
+<a href="cap23/" class="hub-card hub-card--aplic">
   <div class="hub-card__label">Parte XI — Economia da Saúde</div>
   <div class="hub-card__title">Microeconomia da Saúde</div>
   <div class="hub-card__desc">Modelo de Grossman, seguros, risco moral e avaliação de tecnologias</div>
   <div class="hub-card__caps">Cap. 23</div>
 </a>
 
-<a href="cap24/" class="hub-card hub-card--front">
+<a href="cap24/" class="hub-card hub-card--aplic">
   <div class="hub-card__label">Parte XII — Economia Ambiental</div>
   <div class="hub-card__title">Mercados, Clima e Sustentabilidade</div>
   <div class="hub-card__desc">Cap-and-trade, custo social do carbono, recursos naturais e valoração ambiental</div>

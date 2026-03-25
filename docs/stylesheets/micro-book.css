@@ -432,18 +432,22 @@
 .hub-card--merc  { border-left-color: #00897b; }
 .hub-card--poder { border-left-color: #C8102E; }
 .hub-card--front { border-left-color: #7c4dff; }
+.hub-card--aplic { border-left-color: #e65100; }
 .hub-card--fund  .hub-card__title { color: #1565c0; }
 .hub-card--merc  .hub-card__title { color: #00897b; }
 .hub-card--poder .hub-card__title { color: #C8102E; }
 .hub-card--front .hub-card__title { color: #7c4dff; }
+.hub-card--aplic .hub-card__title { color: #e65100; }
 .hub-card--fund  .hub-card__label { color: #1565c0; }
 .hub-card--merc  .hub-card__label { color: #00897b; }
 .hub-card--poder .hub-card__label { color: #C8102E; }
 .hub-card--front .hub-card__label { color: #7c4dff; }
+.hub-card--aplic .hub-card__label { color: #e65100; }
 .hub-card--fund::after  { color: #1565c0; }
 .hub-card--merc::after  { color: #00897b; }
 .hub-card--poder::after { color: #C8102E; }
 .hub-card--front::after { color: #7c4dff; }
+.hub-card--aplic::after { color: #e65100; }
 
 /* Contact / feedback bar */
 .book-contact {
