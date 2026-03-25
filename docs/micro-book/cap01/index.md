@@ -331,7 +331,7 @@ Os três chegaram à mesma conclusão fundamental: o valor de um bem é determin
 
     **Por que isso importa:** Essa ideia — pensar na margem — é a revolução que separou a economia moderna da clássica. Todo preço, todo custo, toda decisão se resolve na margem, não no total. No Capítulo 3, formalizaremos essa noção como a *utilidade marginal* e a *taxa marginal de substituição*.
 
-<iframe src="../graficos/cap01/utilidade-marginal.html" title="Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap01/utilidade-marginal.html" title="Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante.** A curva \(UMg(x)\) é decrescente: quanto mais abundante o bem, menor o valor da próxima unidade. Ajuste as quantidades de água e diamante para ver que a água tem maior utilidade *total* (área sob a curva), mas menor utilidade *marginal* (altura da curva) — resolvendo o paradoxo de Smith.
@@ -471,7 +471,7 @@ Chega de filosofia — vamos ver um modelo em ação. A demonstração a seguir 
 
     Portanto, a condição de segunda ordem $\eqref{eq:1.7.5}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
 
-<iframe src="../graficos/cap01/maximizacao-lucro.html" title="Figura 1.4 — Maximização de lucro da firma competitiva" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap01/maximizacao-lucro.html" title="Figura 1.4 — Maximização de lucro da firma competitiva" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.4 — Maximização de lucro da firma competitiva.** Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).

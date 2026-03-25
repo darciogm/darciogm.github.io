@@ -141,7 +141,7 @@ Com seguro completo (\(I = L\)), o segurado recebe \(W_0 - q\) em qualquer estad
 
 No gráfico interativo abaixo, explore o trade-off entre incentivos e seguro no modelo principal-agente. Observe como o contrato ótimo equilibra os pagamentos nos estados bom e ruim para induzir esforço, e como o custo de agência cresce quando a incerteza aumenta.
 
-<iframe src="../graficos/cap19/principal-agente.html" title="Figura 19.1 — Modelo principal-agente com risco moral" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap19/principal-agente.html" title="Figura 19.1 — Modelo principal-agente com risco moral" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.1 — Modelo principal-agente com risco moral.** O gráfico mostra a restrição de participação (RP) e a restrição de compatibilidade de incentivos (RCI) no espaço de salários. O ponto verde indica o contrato ótimo que induz esforço alto.
@@ -316,7 +316,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 No gráfico interativo abaixo, ajuste a fração de limões e observe como a seleção adversa pode levar ao colapso do mercado.
 
-<iframe src="../graficos/cap19/mercado-limoes.html" title="Figura 19.2 — Mercado de limões (Akerlof, 1970)" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap19/mercado-limoes.html" title="Figura 19.2 — Mercado de limões (Akerlof, 1970)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.2 — Mercado de limões (Akerlof, 1970).** Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.
@@ -454,7 +454,7 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
 No gráfico interativo abaixo, explore o equilíbrio separador de Rothschild-Stiglitz no espaço de riqueza contingente.
 
-<iframe src="../graficos/cap19/seguros-rs.html" title="Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap19/seguros-rs.html" title="Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz.** No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.
@@ -524,7 +524,7 @@ com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\)
 
 No gráfico interativo abaixo, visualize as curvas de custo de educação para ambos os tipos e o intervalo de sinais que sustenta um equilíbrio separador.
 
-<iframe src="../graficos/cap19/sinalizacao.html" title="Figura 19.4 — Sinalização por educação (Spence, 1973)" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap19/sinalizacao.html" title="Figura 19.4 — Sinalização por educação (Spence, 1973)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.4 — Sinalização por educação (Spence, 1973).** Visualize as curvas de custo de educação para ambos os tipos, o salário de equilíbrio e a condição de single-crossing. A região azul indica o intervalo de níveis de educação que sustentam um equilíbrio separador.

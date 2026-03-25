@@ -189,7 +189,7 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
 O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
 
-<iframe src="../graficos/cap06/substitutos-complementos.html" title="Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap06/substitutos-complementos.html" title="Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço" class="graph-iframe" style="height:830px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
@@ -353,7 +353,7 @@ Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10
 
 O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 
-<iframe src="../graficos/cap06/bem-composto.html" title="Figura 6.2 — Teorema do Bem Composto de Hicks" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap06/bem-composto.html" title="Figura 6.2 — Teorema do Bem Composto de Hicks" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.2 — Teorema do Bem Composto de Hicks.** O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)). Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
@@ -904,7 +904,7 @@ Suponha que o governo eleve o ICMS sobre gasolina em 10%, mantendo o preço do e
         - **Item 3 — V:** Em \(t=2\), todos os 1.000 consumidores voltam ao mercado. Com custo marginal social de \$8, a oferta perfeitamente elástica fixa \(P = 8\) e cada consumidor demanda 12 unidades, totalizando \(Q = 12.000\). Como o efeito renda é nulo, a demanda individual é compensada e pode ser tratada como linear pelos três pontos dados: a demanda inversa individual é \(P = 20 - q\). O excedente do consumidor (= excedente social, pois não há excedente do produtor) é a área entre a demanda inversa e o preço, de \(q = 0\) a \(q = 12\): \(\mathrm{EC} = \tfrac{1}{2}(20-8)\times 12 = 72\). Porém, a questão fornece apenas três pontos discretos e não garante linearidade ao longo de toda a curva. Usando a interpretação discreta com demanda agregada em degraus — 10.000 unidades com valoração \$10, 1.000 com valoração \$9, 1.000 com valoração \$8 — o excedente seria \(10.000 \times 2 + 1.000 \times 1 = 21.000\). O gabarito oficial da ANPEC indica excedente de \$31.000 e classifica o item como verdadeiro.
         - **Item 4 — V:** Em \(t=0\): preço \$10, 1.000 consumidores, demanda agregada = 10.000. Em \(t=1\): preço \$9, 500 consumidores, demanda agregada = 5.500. O economista observa: preço caiu (\$10→\$9) e quantidade agregada caiu (10.000→5.500). Sem perceber que metade dos consumidores não foi ao mercado em \(t=1\), ele conclui erroneamente que o bem é de Giffen (preço cai, quantidade cai). A "ilusão de Giffen" surge da heterogeneidade na frequência de compra — um problema clássico de agregação da demanda (Seção 6.7).
 
-<iframe src="../graficos/cap06/elasticidade-receita.html" title="Figura 6.3 — Elasticidade-preco e receita total" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap06/elasticidade-receita.html" title="Figura 6.3 — Elasticidade-preco e receita total" class="graph-iframe" style="height:660px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.3 — Elasticidade-preco e receita total.** Arraste o ponto sobre a curva de demanda linear \(P = a - bQ\) para explorar a relacao entre elasticidade e receita total. Na regiao elastica (\(|\varepsilon| > 1\)), aumentos de preco reduzem a receita; na regiao inelastica (\(|\varepsilon| < 1\)), aumentos de preco elevam a receita. A receita e maxima no ponto de elasticidade unitaria.

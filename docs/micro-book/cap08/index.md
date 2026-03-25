@@ -207,7 +207,7 @@ x^{\alpha} & \text{se } x \geq 0 \\
 onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda > 1\) captura a aversão à perda. Na equação $\eqref{eq:8.1}$, as estimativas originais de Tversky e Kahneman (1992) são \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/funcao-valor-pt.html" title="Figura 8.1 — Função Valor em Prospect Theory" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/funcao-valor-pt.html" title="Figura 8.1 — Função Valor em Prospect Theory" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -291,7 +291,7 @@ onde \(\gamma \in (0,1)\) controla o grau de distorção. As propriedades princi
 O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para ganhos e \(\gamma^- = 0{,}69\) para perdas. Prelec (1998) propôs uma forma axiomática alternativa, \(w(p) = \exp(-(-\ln p)^{\alpha})\), com propriedades de auto-similitude (Dhami 2016, p. 153–157).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ponderacao-prob.html" title="Figura 8.2 — Ponderação de Probabilidades" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/ponderacao-prob.html" title="Figura 8.2 — Ponderação de Probabilidades" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -455,7 +455,7 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
     Esse padrão viola a UE de Savage. Se o agente atribui probabilidade subjetiva \(P(\text{vermelho em B}) < 0{,}5\), deveria atribuir \(P(\text{preto em B}) > 0{,}5\) e preferir a Urna B na aposta em preto. A preferência simultânea pela Urna A em ambas as apostas revela uma aversão à **ambiguidade** — à falta de informação sobre as probabilidades — que vai além da aversão ao risco (Dhami 2016, p. 321–324).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -569,7 +569,7 @@ x < \frac{\alpha_R}{ 1 + 2\alpha_R} \cdot S
 Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são rejeitadas. Com \(\alpha_R = 4\), o limiar sobe para \(x^* \approx 0{,}44 \cdot S\). O modelo prevê corretamente que respondedores com maior aversão à desvantagem exigem ofertas mais generosas.
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/fehr-schmidt.html" title="Figura 8.4 — Modelo Fehr-Schmidt" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/fehr-schmidt.html" title="Figura 8.4 — Modelo Fehr-Schmidt" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -577,7 +577,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 </div>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ultimatum-game.html" title="Figura 8.5 — Jogo do Ultimato" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/ultimatum-game.html" title="Figura 8.5 — Jogo do Ultimato" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -729,7 +729,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
     **Por que isso importa:** O desconto hiperbólico explica por que pessoas aderem a planos de previdência com desconto em folha (mecanismo de comprometimento) e por que políticas de "opt-out" — como a inscrição automática no FGTS — são mais eficazes que "opt-in" para promover poupança.
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/funcoes-desconto.html" title="Figura 8.6 — Funções de Desconto" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/funcoes-desconto.html" title="Figura 8.6 — Funções de Desconto" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -737,7 +737,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 </div>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/indiferenca-intertemporal.html" title="Figura 8.7 — Indiferença Intertemporal" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/indiferenca-intertemporal.html" title="Figura 8.7 — Indiferença Intertemporal" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -852,7 +852,7 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 </div>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/nudge-default.html" title="Figura 8.8 — Efeito Padrão (Default)" class="graph-iframe"></iframe>
+  <iframe src="../graficos/cap08/nudge-default.html" title="Figura 8.8 — Efeito Padrão (Default)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>

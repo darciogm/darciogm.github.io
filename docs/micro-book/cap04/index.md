@@ -46,7 +46,7 @@ A formulação em \eqref{eq:4.1.1} admite generalizações naturais: para \(n\) 
 
     **Por que isso importa:** Todo debate sobre política de preços — subsídios ao gás de cozinha, tarifa zero no transporte público — é, no fundo, sobre como deslocar ou rotacionar essa reta orçamentária das famílias.
 
-<iframe src="../graficos/cap04/restricao-orcamentaria.html" title="Figura 4.1 — Restrição Orçamentária" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap04/restricao-orcamentaria.html" title="Figura 4.1 — Restrição Orçamentária" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.1 — Restrição Orçamentária.** Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
@@ -98,7 +98,7 @@ Por exemplo, se uma família gasta R$ 200 por mês em streaming e R$ 50 em livro
 !!! tip "Soluções de canto"
     Nem todas as soluções são interiores. Para substitutos perfeitos, por exemplo, o consumidor tipicamente consome apenas o bem com maior razão \(a_i/p_i\). Soluções de canto ocorrem quando a TMS no ponto \(x_i = 0\) já é inferior (ou superior) à razão de preços, de modo que a condição de tangência não se verifica em nenhum ponto interior.
 
-<iframe src="../graficos/cap04/equilibrio-consumidor.html" title="Figura 4.2 — Equilíbrio do Consumidor" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap04/equilibrio-consumidor.html" title="Figura 4.2 — Equilíbrio do Consumidor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.2 — Equilíbrio do Consumidor.** Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.
@@ -270,7 +270,7 @@ A geometria do argumento é esclarecedora: o imposto específico rotaciona a ret
 !!! note "Limitações do princípio"
     O resultado pressupõe informação perfeita, ausência de custos administrativos e que o imposto *lump sum* seja viável. Na prática, impostos *lump sum* são frequentemente considerados injustos ou politicamente inviáveis. A tributação ótima (Ramsey, Mirrlees) busca conciliar eficiência e equidade sob restrições informacionais.
 
-<iframe src="../graficos/cap04/lump-sum-principle.html" title="Figura 4.3" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap04/lump-sum-principle.html" title="Figura 4.3" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.3** — Princípio do Montante Fixo (*Lump Sum*). Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
@@ -473,7 +473,7 @@ Se esta seção parece abstrata demais, relaxe: a dualidade é uma daquelas idei
     **Conexão com este capítulo:**
     A estrutura de dualidade entre \(V\) e \(E\) está no coração do modelo Arrow-Debreu de equilíbrio geral. As demandas marshallianas derivadas neste capítulo são as peças individuais que, agregadas, formam a demanda de mercado no modelo Arrow-Debreu. Além disso, a distinção entre eficiência alocativa (equilíbrio competitivo) e bem-estar (representado por \(V\) e \(E\)) é central ao programa de pesquisa de Arrow sobre economia do bem-estar, que reaparece nos Capítulos 9 e 10.
 
-<iframe src="../graficos/cap04/dualidade.html" title="Figura 4.4 — Dualidade: Maximização de Utilidade vs" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap04/dualidade.html" title="Figura 4.4 — Dualidade: Maximização de Utilidade vs" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.4 — Dualidade: Maximização de Utilidade vs.** Minimização do Dispêndio. Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.

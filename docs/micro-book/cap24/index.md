@@ -125,7 +125,7 @@ Note a simetria com a equação $\eqref{eq:24.2}$: o preço da permissão funcio
 
 No gráfico interativo abaixo, compare o imposto pigouviano com o cap-and-trade. Alterne entre os dois instrumentos e ajuste os parâmetros para ver como cada um corrige a externalidade.
 
-<iframe src="../graficos/cap24/imposto-pigou.html" title="Figura 24.1 — Imposto Pigouviano vs Cap-and-Trade" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap24/imposto-pigou.html" title="Figura 24.1 — Imposto Pigouviano vs Cap-and-Trade" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 24.1 — Imposto Pigouviano vs Cap-and-Trade.** Alterne entre os dois instrumentos. No modo imposto, ajuste \(t\) até igualar o custo externo \(e\) para restaurar a eficiência. No modo cap-and-trade, ajuste o cap até \(Q^*\) e observe que o preço da permissão converge para o imposto ótimo.
@@ -347,7 +347,7 @@ Outros mercados regionais relevantes incluem o sistema da **Califórnia** (vincu
 
 No gráfico interativo abaixo, simule um mercado de carbono com múltiplas firmas. Ajuste o cap e observe como o mercado de permissões aloca o abatimento de forma custo-efetiva, comparado com regulação uniforme.
 
-<iframe src="../graficos/cap24/mercado-carbono.html" title="Figura 24.2 — Mercado de Carbono: Equilíbrio com N Firmas" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap24/mercado-carbono.html" title="Figura 24.2 — Mercado de Carbono: Equilíbrio com N Firmas" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 24.2 — Equilíbrio no Mercado de Carbono.** Firmas com custos marginais de abatimento diferentes negociam permissões. A firma mais barata abate mais e vende permissões; a mais cara abate menos e compra. O resultado: mesmo nível de abatimento total, mas a custo menor que regulação uniforme.

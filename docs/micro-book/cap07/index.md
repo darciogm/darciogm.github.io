@@ -164,7 +164,7 @@ Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou d
 
     **Por que isso importa:** É por isso que existem seguros, previdência e CLT — instituições que transferem risco de quem não quer carregar para quem consegue absorvê-lo melhor.
 
-<iframe src="../graficos/cap07/aversao-risco.html" title="Figura 7.1 — Aversão ao risco e função de utilidade" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap07/aversao-risco.html" title="Figura 7.1 — Aversão ao risco e função de utilidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 7.1 — Aversão ao risco e função de utilidade.** Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.
@@ -352,7 +352,7 @@ Para ilustrar com números concretos: um cafeicultor do Sul de Minas com riqueza
 
 A distinção entre prêmio de risco *exato* e *aproximado* merece atenção. A fórmula de Arrow-Pratt é uma aproximação de segunda ordem válida para riscos "pequenos" em relação à riqueza. Quando o risco é grande (como nos exemplos dos exercícios, em que o desvio padrão pode representar 30–50% da riqueza), o prêmio exato deve ser calculado diretamente da equação \(\eqref{eq:7.7}\). A aproximação sistematicamente subestima o prêmio para agentes com utilidade côncava crescentemente rápida (como \(\ln W\)) e o superestima para agentes com utilidade menos côncava.
 
-<iframe src="../graficos/cap07/premio-risco.html" title="Figura 7.2 — Prêmio de risco de Arrow-Pratt" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap07/premio-risco.html" title="Figura 7.2 — Prêmio de risco de Arrow-Pratt" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 7.2 — Prêmio de risco de Arrow-Pratt.** Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).
@@ -448,7 +448,7 @@ Na prática, os mercados de seguros brasileiros exibem carregamentos que variam 
 
     **Fonte**: Banco Central do Brasil, Manual de Crédito Rural (MCR), Capítulo 16; Ministério da Agricultura e Pecuária, Relatório Proagro 2023.
 
-<iframe src="../graficos/cap07/seguro.html" title="Figura 7.3 — Mercado de seguros no espaço estado-contingente" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap07/seguro.html" title="Figura 7.3 — Mercado de seguros no espaço estado-contingente" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 7.3 — Mercado de seguros no espaço estado-contingente.** Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).

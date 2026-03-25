@@ -69,7 +69,7 @@ A implicação prática é imediata: quanto mais inelástica a oferta, maior a v
 
 Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio de mercado. Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor (azul) e do produtor (verde).
 
-<iframe src="../graficos/cap13/oferta-demanda.html" title="Figura 13.1 — Equilíbrio de oferta e demanda" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap13/oferta-demanda.html" title="Figura 13.1 — Equilíbrio de oferta e demanda" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.1 — Equilíbrio de oferta e demanda.** Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor e do produtor.
@@ -217,7 +217,7 @@ Para ilustrar, considere o setor de restaurantes em São Paulo. A cada ano, milh
 
 Explore a relação entre a firma individual e o mercado no longo prazo. Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero). O painel esquerdo mostra a firma (CMg e CMe) e o direito mostra o mercado (S e D).
 
-<iframe src="../graficos/cap13/equilibrio-longo-prazo.html" title="Figura 13.2 — Equilíbrio de longo prazo: firma e mercado" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap13/equilibrio-longo-prazo.html" title="Figura 13.2 — Equilíbrio de longo prazo: firma e mercado" class="graph-iframe" style="height:830px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.2 — Equilíbrio de longo prazo: firma e mercado.** Ajuste o número de firmas e o deslocamento da demanda para observar como a entrada e saída de firmas conduzem o preço ao custo médio mínimo (lucro zero).
@@ -486,7 +486,7 @@ O piso de preço também gera perda de peso morto, por simetria com o teto: troc
 
 Alterne entre preço máximo (teto) e preço mínimo (piso) e ajuste o nível do preço controlado para observar a escassez ou excedente criados, a variação nos excedentes do consumidor e do produtor, e a perda de peso morto resultante.
 
-<iframe src="../graficos/cap13/controles-precos.html" title="Figura 13.3 — Controles de preços: teto e piso" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap13/controles-precos.html" title="Figura 13.3 — Controles de preços: teto e piso" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.3 — Controles de preços: teto e piso.** Alterne entre preço máximo e mínimo e ajuste o nível do preço controlado para observar escassez ou excedente, variações nos excedentes e a perda de peso morto.
@@ -683,7 +683,7 @@ A intuição por trás desses resultados é simples e poderosa: o lado mais inel
 
 Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária entre comprador e vendedor, a receita do governo e a perda de peso morto. Alterne entre imposto sobre o vendedor e sobre o comprador para verificar a irrelevância do lado legal.
 
-<iframe src="../graficos/cap13/incidencia-tributaria.html" title="Figura 13.4 — Incidência tributária" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap13/incidencia-tributaria.html" title="Figura 13.4 — Incidência tributária" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.4 — Incidência tributária.** Ajuste o valor do imposto e as elasticidades de oferta e demanda para observar a divisão da carga tributária, a receita do governo e a perda de peso morto.

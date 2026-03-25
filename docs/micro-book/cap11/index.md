@@ -125,7 +125,7 @@ Hora de arregaçar as mangas e resolver o problema de verdade. A firma quer prod
 
 No Capítulo 4, o consumidor minimizava o gasto \(wl + pm\) sujeito a atingir a curva de indiferença \(u(x_1, x_2) = \bar{u}\). Aqui, a firma minimiza o custo \(wL + vK\) sujeito a atingir a isoquanta \(f(K,L) = q_0\). As variáveis mudam de nome — utilidade vira quantidade produzida, curva de indiferença vira isoquanta, reta orçamentária vira reta de isocusto —, mas a estrutura matemática e a intuição econômica são idênticas. As demandas hicksianas de bens de consumo correspondem às demandas condicionadas por insumos; a função gasto corresponde à função custo; a identidade de Roy corresponde ao Lema de Shephard. Essa correspondência estrutural é uma das elegâncias da teoria microeconômica moderna.
 
-<iframe src="../graficos/cap11/minimizacao-custo.html" title="Figura 11.1 — Minimização de custo" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap11/minimizacao-custo.html" title="Figura 11.1 — Minimização de custo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.1 — Minimização de custo.** A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(v\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.
@@ -352,7 +352,7 @@ A função custo é poderosa, mas abstrata — depende de três variáveis ao me
 
 Vale notar que, ao fixar os preços dos insumos, passamos de uma perspectiva tridimensional (\(C\) como função de \(w\), \(v\) e \(q\)) para a perspectiva usual (\(C\) como função apenas de \(q\)). Essa simplificação — perfeitamente justificada em um mercado de insumos competitivo onde a firma é tomadora de preços — nos permite focar na geometria das curvas de custo sem perda de generalidade.
 
-<iframe src="../graficos/cap11/curvas-custo.html" title="Figura 11.2 — Curvas de custo total, médio e marginal" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap11/curvas-custo.html" title="Figura 11.2 — Curvas de custo total, médio e marginal" class="graph-iframe" style="height:680px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.2 — Curvas de custo total, médio e marginal.** Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.
@@ -488,7 +488,7 @@ CT_{LP}(q) = \min_{K, L} \{wL + vK \mid f(K, L) = q\}
 
 A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colorida representa o \(CT_{CP}(q; \bar{K}) = wq^2/\bar{K} + v\bar{K}\) para um nível fixo de capital, assumindo a tecnologia Cobb-Douglas \(q = K^{0{,}5}L^{0{,}5}\). A curva azul — o custo total de longo prazo — é calculada **numericamente** como \(CT_{LP}(q) = \min_{\bar{K}} CT_{CP}(q; \bar{K})\) para cada \(q\), confirmando que a envoltória inferior emerge da minimização ponto a ponto. Nos pontos de tangência (marcadores verdes), a inclinação do \(CT_{CP}\) é igual à do \(CT_{LP}\) — uma aplicação direta do **Teorema do Envelope**: a derivada da função valor em relação ao parâmetro (\(q\)) coincide com a derivada parcial do objetivo avaliada no ótimo.
 
-<iframe src="../graficos/cap11/envoltoria-custo-total.html" title="Figura 11.3 — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap11/envoltoria-custo-total.html" title="Figura 11.3 — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.3 — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente.** Os pontos verdes indicam onde cada \(CT_{CP}\) tangencia a envoltória. Use os controles para alterar \(w\) e \(v\), e as caixas de seleção para mostrar/ocultar curvas individuais e pontos de tangência.
@@ -527,7 +527,7 @@ Propriedade importante: no ponto de tangência, conforme a equação $\eqref{eq:
 
 A Figura 11.4 complementa a visão anterior, agora em termos de **custo médio**. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória.
 
-<iframe src="../graficos/cap11/curto-longo-prazo.html" title="Figura 11.4 — Curva envoltória: CMe de curto e longo prazo" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap11/curto-longo-prazo.html" title="Figura 11.4 — Curva envoltória: CMe de curto e longo prazo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.4 — Curva envoltória: CMe de curto e longo prazo.** Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.

@@ -113,7 +113,7 @@ A resposta está nas **isoquantas** e na **taxa marginal de substituição técn
 
 A figura interativa a seguir ilustra como diferentes tecnologias de produção geram mapas de isoquantas com formatos distintos — da reta (substitutos perfeitos) ao ângulo reto (complementares perfeitos), passando pela hipérbole convexa da Cobb-Douglas e pela curva intermediária da CES. Compreender visualmente esses formatos é fundamental para desenvolver intuição sobre substituibilidade antes de passar às fórmulas.
 
-<iframe src="../graficos/cap10/isoquantas.html" title="Figura 10.1 — Mapa de isoquantas interativo" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap10/isoquantas.html" title="Figura 10.1 — Mapa de isoquantas interativo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 10.1 — Mapa de isoquantas interativo.** Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto sobre a isoquanta para visualizar a TMST em cada combinação de insumos.
@@ -211,7 +211,7 @@ O que essa expressão nos diz economicamente? A TMST decrescente reflete a dific
 
 Até aqui, mexemos em um insumo de cada vez (Seção 10.1) e trocamos um pelo outro (Seção 10.2). Agora vem a pergunta que todo dono de franquia se faz: se eu clonar a operação inteira — dobrar fábricas, máquinas, funcionários, tudo —, o faturamento dobra junto? Quem dera fosse tão simples. A resposta, que define os rendimentos de escala, tem implicações profundas para a estrutura de mercado — pois determina se há vantagem em ser grande ou pequeno, e por que algumas indústrias são dominadas por gigantes enquanto outras florescem com milhares de pequenas firmas.
 
-<iframe src="../graficos/cap10/rendimentos-escala.html" title="Figura 10.2 — Rendimentos de escala" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap10/rendimentos-escala.html" title="Figura 10.2 — Rendimentos de escala" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 10.2 — Rendimentos de escala.** Compare o espaçamento das isoquantas sob rendimentos constantes (CRS), crescentes (IRS) e decrescentes (DRS). O slider \(t\) controla o fator de escala aplicado aos insumos.
@@ -545,7 +545,7 @@ A ideia é elegante em sua simplicidade. Se observamos o produto crescendo a 4% 
 
 Do ponto de vista microeconômico, o progresso técnico manifesta-se visualmente como um **deslocamento para dentro das isoquantas**: a mesma quantidade de produto \(q_0\) pode ser produzida com *menos* de ambos os insumos. Geometricamente, a função de produção "sobe" — para qualquer combinação \((K, L)\), o produto aumenta. Algebricamente, o parâmetro \(A(t)\) cresce ao longo do tempo. A questão de *como* ele cresce — se de forma que favoreça capital ou trabalho, ou de forma neutra — é classificada pelas diferentes definições de neutralidade discutidas a seguir.
 
-<iframe src="../graficos/cap10/progresso-tecnico.html" title="Figura 10.3 — Progresso técnico e deslocamento de isoquantas" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap10/progresso-tecnico.html" title="Figura 10.3 — Progresso técnico e deslocamento de isoquantas" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 10.3 — Progresso técnico e deslocamento de isoquantas.** Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro. Aumente \(A\) para observar a isoquanta se deslocando para dentro (menos insumos necessários para o mesmo produto).

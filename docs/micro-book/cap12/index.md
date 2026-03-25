@@ -165,7 +165,7 @@ Esse resultado conecta-se diretamente à teoria da distribuição funcional da r
 
 A regra "RMg = CMg" é linda, mas esconde uma assimetria traiçoeira no lado da receita. Para a firma tomadora de preços, a vida é simples: cada unidade extra rende exatamente o preço de mercado, sem drama. Já para a firma com poder de mercado, vender mais é como encher um balde furado — colocar uma unidade extra na prateleira exige *baixar o preço de todas as outras*, e essa "conta-gotas de receita perdida" torna a receita marginal menor que o preço. A relação entre receita marginal e elasticidade-preço da demanda, que derivamos a seguir, é uma das mais úteis de toda a microeconomia, pois conecta a decisão de produção da firma à sensibilidade dos consumidores ao preço. Essa relação é o elo central entre os capítulos 12 e 15: quando chegarmos ao monopólio, a fórmula \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) será a chave para derivar o markup de Lerner e quantificar a ineficiência do poder de mercado. Antes de chegar lá, é útil notar que a distinção entre firma tomadora de preços e firma com poder de mercado não é binária — ela é um espectro parametrizado pela elasticidade da demanda individual da firma, que por sua vez depende da estrutura do mercado estudada nos Capítulos 13 a 15.
 
-<iframe src="../graficos/cap12/receita-marginal.html" title="Figura 12.1 — Receita marginal, demanda e elasticidade" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap12/receita-marginal.html" title="Figura 12.1 — Receita marginal, demanda e elasticidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 12.1 — Receita marginal, demanda e elasticidade.** A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.
@@ -266,7 +266,7 @@ mede o grau de poder de mercado da firma: varia de zero (concorrência perfeita,
 
 Firmas com poder de mercado são fascinantes, mas voltemos agora ao personagem mais humilde — e mais fundamental — da história: a firma tomadora de preços, a peça de Lego com que se monta toda a curva de oferta. A pergunta central desta seção é: dado o cardápio de custos que herdamos do Capítulo 11, para quais preços a firma decide produzir, e quanto? A resposta envolve não apenas a condição \(p = \mathrm{CMg}\), mas também uma decisão prévia que muitos estudantes esquecem na prova (e que todo empresário conhece de cor): a firma deve operar ou fechar as portas? Essa decisão de "shutdown" — para usar o termo consagrado na literatura anglófona — é analiticamente distinta da condição de otimalidade. Ela compara dois estados alternativos (operar vs. não operar) em vez de identificar um máximo em um conjunto contínuo. A curva de oferta que derivamos nesta seção é justamente o insumo fundamental para construir a oferta de mercado do Capítulo 13 e, por extensão, para analisar o equilíbrio competitivo de longo prazo. O Box Mundo 12.1 ao final desta seção documenta, com dados empíricos da pandemia de COVID-19, como firmas reais tomam essa decisão em situações extremas.
 
-<iframe src="../graficos/cap12/maximizacao-lucro.html" title="Figura 12.2 — Maximização de lucro para firma tomadora de preços" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap12/maximizacao-lucro.html" title="Figura 12.2 — Maximização de lucro para firma tomadora de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 12.2 — Maximização de lucro para firma tomadora de preços.** Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).
@@ -330,7 +330,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
     **Por que isso importa:** Essa lógica explica por que tantas MPEs brasileiras operam com prejuízo por meses antes de fechar — e por que o SEBRAE monitora a taxa de mortalidade empresarial nos primeiros cinco anos.
 
-<iframe src="../graficos/cap12/lucro-maximo.html" title="Figura 12.3 — Lucro maximo e excedente do produtor" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap12/lucro-maximo.html" title="Figura 12.3 — Lucro maximo e excedente do produtor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 12.3 — Lucro maximo e excedente do produtor.** Ajuste o preco \(p\) para visualizar a quantidade otima \(q^*\) onde \(p = \mathrm{CMg}\), o retangulo de lucro (ou prejuizo) sombreado, o excedente do produtor (area entre \(p\) e CMg) e a condicao de fechamento. Compare os tres regimes: lucro positivo (\(p \geq \mathrm{CTMe}_{\min}\)), prejuizo com operacao (\(\mathrm{CVMe}_{\min} \leq p < \mathrm{CTMe}_{\min}\)) e fechamento (\(p < \mathrm{CVMe}_{\min}\)).

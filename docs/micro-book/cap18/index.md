@@ -194,7 +194,7 @@ onde \(Y_1 - C_1^* = S\) é a poupança do consumidor. Se \(S > 0\) (poupador), 
 
     Muitos alunos escrevem a restrição como \(C_1 + C_2 = Y_1 + Y_2\), esquecendo o fator de desconto. Essa formulação ignora completamente o papel da taxa de juros e implica que um real hoje vale o mesmo que um real amanhã. A restrição correta em **valor presente** é \(C_1 + C_2/(1+r) = W\), e em **valor futuro** é \((1+r)C_1 + C_2 = (1+r)Y_1 + Y_2\). Ambas são equivalentes, mas a primeira é a mais utilizada. O erro é particularmente grave quando se pede para analisar o efeito de uma variação em \(r\): sem o fator de desconto, a taxa de juros sequer aparece na restrição, tornando impossível qualquer análise comparativa.
 
-<iframe src="../graficos/cap18/consumo-intertemporal.html" title="Figura 18.1 — Modelo de consumo intertemporal de dois períodos" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap18/consumo-intertemporal.html" title="Figura 18.1 — Modelo de consumo intertemporal de dois períodos" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 18.1 — Modelo de consumo intertemporal de dois períodos.** Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.
@@ -375,7 +375,7 @@ Por essas razões, o VPL é considerado o critério superior para avaliação de
 
     Quando o VPL de um projeto é zero, isso **não** significa que o projeto não dá lucro. Significa que ele remunera exatamente o custo de oportunidade do capital — ou seja, rende tanto quanto a melhor alternativa de investimento disponível. A firma obtém lucro contábil positivo (fluxos de caixa > investimento), mas não obtém lucro econômico (não supera a alternativa). Analogamente, VPL = 0 equivale a dizer que a TIR iguala o custo de capital: o projeto é marginalmente viável, não deficitário.
 
-<iframe src="../graficos/cap18/vpl-tir.html" title="Figura 18.2 — Valor Presente Líquido como função da taxa de desconto" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap18/vpl-tir.html" title="Figura 18.2 — Valor Presente Líquido como função da taxa de desconto" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 18.2 — Valor Presente Líquido como função da taxa de desconto.** O ponto onde a curva cruza o eixo horizontal é a Taxa Interna de Retorno (TIR).
@@ -671,7 +671,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
     **Para refletir:** O pré-sal brasileiro gera um dilema intertemporal análogo. Que mecanismos institucionais poderiam garantir que os royalties do pré-sal sejam convertidos em ativos produtivos, e não em gasto corrente?
 
-<iframe src="../graficos/cap18/desconto-exponencial-hiperbolico.html" title="Figura 18.3 — Desconto exponencial vs quasi-hiperbolico" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap18/desconto-exponencial-hiperbolico.html" title="Figura 18.3 — Desconto exponencial vs quasi-hiperbolico" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 18.3 — Desconto exponencial vs quasi-hiperbolico.** O desconto exponencial padrao (\(\delta^t\)) trata todos os periodos igualmente, enquanto o modelo quasi-hiperbolico (\(\beta\delta^t\)) desconta o futuro proximo mais fortemente que o distante, gerando vies pelo presente e inconsistencia temporal (Laibson, 1997).

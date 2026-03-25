@@ -99,7 +99,7 @@ Note que a expressão \(RMg = p + q \cdot p'(q)\) tem uma interpretação econô
 
 No gráfico interativo abaixo, ajuste os parâmetros da demanda e do custo marginal para visualizar como o equilíbrio de monopólio se modifica. Observe que o monopolista sempre escolhe a quantidade onde a curva de \(RMg\) cruza a de \(CMg\), e o preço é lido sobre a curva de demanda — acima do \(CMg\).
 
-<iframe src="../graficos/cap15/monopolio.html" title="Figura 15.1 — Equilíbrio de monopólio" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/monopolio.html" title="Figura 15.1 — Equilíbrio de monopólio" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.1 — Equilíbrio de monopólio.** Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.
@@ -397,7 +397,7 @@ O lucro do monopolista é crescente e convexo na demanda, o que implica que o mo
 
 No gráfico interativo abaixo, experimente ajustar o slider do imposto \(t\) e observe como o equilíbrio de monopólio se desloca. Note que o preço sobe apenas metade do valor do imposto, enquanto a quantidade cai. Observe também o retângulo de receita fiscal e como a perda de peso morto se altera.
 
-<iframe src="../graficos/cap15/estatica-comparativa.html" title="Figura 15.2 — Estática comparativa: efeito de um imposto sobre o monopólio" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/estatica-comparativa.html" title="Figura 15.2 — Estática comparativa: efeito de um imposto sobre o monopólio" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.2 — Estática comparativa: efeito de um imposto sobre o monopólio.** Ajuste o imposto unitário \(t\) e os parâmetros da demanda para visualizar como o equilíbrio se desloca. Observe que o monopolista repassa apenas metade do imposto (com demanda linear) e compare com o resultado competitivo.
@@ -554,7 +554,7 @@ Essa equação formaliza a intuição de que o monopolista "espreme" mais os con
 
 No gráfico interativo abaixo, alterne entre os três graus de discriminação e observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
 
-<iframe src="../graficos/cap15/discriminacao-precos.html" title="Figura 15.3 — Discriminação de preços" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/discriminacao-precos.html" title="Figura 15.3 — Discriminação de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.3 — Discriminação de preços.** Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
@@ -766,7 +766,7 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
 No gráfico interativo abaixo, visualize como diferentes regimes regulatórios afetam preço, quantidade e bem-estar em um monopólio natural com custo médio decrescente. Alterne entre os três regimes e observe os trade-offs.
 
-<iframe src="../graficos/cap15/regulacao-monopolio.html" title="Figura 15.4 — Regulação de monopólio natural" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap15/regulacao-monopolio.html" title="Figura 15.4 — Regulação de monopólio natural" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.4 — Regulação de monopólio natural.** Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.

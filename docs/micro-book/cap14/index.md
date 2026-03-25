@@ -83,7 +83,7 @@ Quando as curvas de indiferença se *cruzam* (em vez de se tangenciar), forma-se
 
 Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação X para verificar se ele representa uma melhoria de Pareto em relação à dotação inicial e se está sobre a curva de contrato (eficiência). As curvas de indiferença tracejadas passam pela dotação E; as contínuas passam pela alocação X.
 
-<iframe src="../graficos/cap14/caixa-edgeworth.html" title="Figura 14.1 — Caixa de Edgeworth" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap14/caixa-edgeworth.html" title="Figura 14.1 — Caixa de Edgeworth" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 14.1 — Caixa de Edgeworth.** Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação para verificar melhorias de Pareto e eficiência sobre a curva de contrato.
@@ -304,7 +304,7 @@ Isso garante que a combinação de bens produzida é exatamente aquela que os co
 
 Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
 
-<iframe src="../graficos/cap14/fpp.html" title="Figura 14.2 — Fronteira de possibilidades de produção (FPP)" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap14/fpp.html" title="Figura 14.2 — Fronteira de possibilidades de produção (FPP)" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 14.2 — Fronteira de possibilidades de produção (FPP).** Ajuste a dotação de recursos e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia.
@@ -660,7 +660,7 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
 Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda resultante. O equilíbrio walrasiano ocorre quando o excesso de demanda é zero -- o gráfico indica o preço de equilíbrio e sinaliza a direção de ajuste necessária.
 
-<iframe src="../graficos/cap14/equilibrio-geral.html" title="Figura 14.3 — Equilíbrio geral walrasiano" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap14/equilibrio-geral.html" title="Figura 14.3 — Equilíbrio geral walrasiano" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 14.3 — Equilíbrio geral walrasiano.** Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda. O equilíbrio ocorre quando o excesso de demanda é zero.

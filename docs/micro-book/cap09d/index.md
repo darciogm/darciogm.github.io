@@ -421,7 +421,7 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 ??? code "R Interativo — Modelo de Spence: custo da sinalização e equilíbrio separador"
     Este box permite explorar o modelo de Spence variando os parâmetros de produtividade e custo da educação. Veja como o equilíbrio separador muda quando a diferença de custos entre tipos diminui.
 
-    <iframe src="../graficos/cap09/webr-spence.html" title="Figura 9d.1 — Modelo de Spence" class="graph-iframe"></iframe>
+    <iframe src="../graficos/cap09/webr-spence.html" title="Figura 9d.1 — Modelo de Spence" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9d.1 — Modelo de Spence: equilíbrio separador.** Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.
@@ -434,7 +434,7 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 ??? code "R Interativo — Seleção adversa: simulação de mercado de seguros (Adams, 2025, Cap. 13)"
     Este box simula um mercado de seguros de saúde com tipos heterogêneos (risco alto/baixo). Veja como a seleção adversa pode levar ao colapso do mercado quando o prêmio é calculado pela média.
 
-    <iframe src="../graficos/cap09/webr-insurance.html" title="Figura 9d.2 — Mercado de seguros com seleção adversa" class="graph-iframe"></iframe>
+    <iframe src="../graficos/cap09/webr-insurance.html" title="Figura 9d.2 — Mercado de seguros com seleção adversa" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9d.2 — Seleção adversa no mercado de seguros.** Varie a proporção de tipos de alto risco para ver quando o mercado colapsa. Baseado em Adams (2025, Cap. 13).

@@ -104,7 +104,7 @@ Se \(D_Y > 0\) (bem normal) e \(D_P - S_P < 0\) (inclinação da demanda menor q
 
 A magnitude da resposta depende criticamente das inclinações das curvas de oferta e demanda — ou, em termos econômicos, de suas **elasticidades**. Quando a demanda é inelástica (curva quase vertical), um choque de oferta produz grande variação no preço e pequena variação na quantidade; quando é elástica (curva quase horizontal), o oposto ocorre. Essa relação entre elasticidades e inclinações é a ponte entre a matemática do TFI e a economia aplicada — como ilustra o Box Brasil a seguir.
 
-<iframe src="../graficos/cap02/funcao-implicita.html" title="Figura 2.1 — Teorema da Função Implícita" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/funcao-implicita.html" title="Figura 2.1 — Teorema da Função Implícita" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.1 — Teorema da Função Implícita.** A curva vermelha mostra \(P^*(Y)\) — o preço de equilíbrio como função implícita da renda. A reta tangente (azul tracejada) tem inclinação \(dP^*/dY = -D_Y/(D_P - S_P)\). Arraste \(Y\) para visualizar a estática comparativa ao longo da curva implícita.
@@ -727,7 +727,7 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 
         </div>
 
-    <iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.2 — Demandas marshallianas CES" class="graph-iframe"></iframe>
+    <iframe src="../graficos/cap02/ces-demandas.html" title="Figura 2.2 — Demandas marshallianas CES" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 2.2 — Demandas marshallianas CES.** Varie os parâmetros \(\alpha\), \(\rho\), \(p_1\), \(p_2\) e \(m\) para observar como as curvas de indiferença mudam de forma (de complementos perfeitos a substitutos perfeitos) e como o ponto ótimo se desloca ao longo da restrição orçamentária. A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
@@ -932,7 +932,7 @@ As condições KKT são:
 
     **Por que isso importa:** Soluções de canto são comuns no mundo real — famílias que não poupam nada, firmas que não exportam, consumidores que não compram certos bens. As condições KKT são a linguagem matemática dessas situações.
 
-<iframe src="../graficos/cap02/kuhn-tucker.html" title="Figura 2.3 — Condições de Kuhn-Tucker: restrição ativa vs inativa" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/kuhn-tucker.html" title="Figura 2.3 — Condições de Kuhn-Tucker: restrição ativa vs inativa" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.3 — Condições de Kuhn-Tucker: restrição ativa vs inativa.** Maximize \(f(x,y) = -(x-5)^2-(y-5)^2+50\) sujeito a \(x+y \leq c\). Quando \(c < 10\), a restrição é ativa (\(\lambda > 0\)); quando \(c \geq 10\), o ótimo irrestrito é viável e \(\lambda = 0\). Arraste o slider para observar a transição e a folga complementar em ação.
@@ -1084,7 +1084,7 @@ K \cdot \frac{\partial F}{\partial K} + L \cdot \frac{\partial F}{\partial L} = 
 
 Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), então \(rK + wL = F(K,L)\) — o produto é exatamente esgotado pela remuneração dos fatores.
 
-<iframe src="../graficos/cap02/funcoes-homogeneas.html" title="Figura 2.4 — Funções Homogêneas e Teorema de Euler" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/funcoes-homogeneas.html" title="Figura 2.4 — Funções Homogêneas e Teorema de Euler" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.4 — Funções Homogêneas e Teorema de Euler.** Isoquantas de \(F(K,L) = K^\alpha L^\beta\). Ajuste \(\alpha\) e \(\beta\) para mudar o grau de homogeneidade (retornos de escala). O fator \(t\) escala o ponto (4,4): a isoquanta verde mostra \(F(tK, tL) = t^k F(K,L)\). O painel verifica o Teorema de Euler numericamente.
@@ -1218,19 +1218,19 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ---
 
-<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.5 — Otimização de função de uma variável" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/otimizacao-1var.html" title="Figura 2.5 — Otimização de função de uma variável" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.5 — Otimização de função de uma variável.** No máximo, \(f'(x^*)=0\) e \(f''(x^*)<0\). Arraste o ponto sobre a curva para explorar \(f'(x)\): a reta tangente mostra a inclinação em tempo real. Use os sliders para alterar curvatura e posição do pico.
 </div>
 
-<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.6 — Otimização com restrição: Lagrangeano" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/lagrangeano.html" title="Figura 2.6 — Otimização com restrição: Lagrangeano" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.6 — Otimização com restrição: Lagrangeano.** Maximização de \(f(x,y)=xy\) sujeita a \(x+y=c\). O ótimo ocorre na tangência entre a curva de nível e a restrição, onde \(\nabla f = \lambda \nabla g\). Varie \(c\) e observe os gradientes paralelos.
 </div>
 
-<iframe src="../graficos/cap02/envelope.html" title="Figura 2.7 — Teorema do Envelope" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap02/envelope.html" title="Figura 2.7 — Teorema do Envelope" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 2.7 — Teorema do Envelope.** Família de curvas \(f(x,\alpha)\) e a envoltória \(V(\alpha)=\max_x f(x,\alpha)\). O teorema mostra que \(dV/d\alpha = \partial f/\partial \alpha|_{x^*}\) — basta a derivada parcial direta, sem recalcular o ótimo.

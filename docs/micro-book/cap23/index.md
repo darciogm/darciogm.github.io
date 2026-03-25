@@ -138,7 +138,7 @@ Os resultados principais, publicados em Manning et al. (1987), foram:
 
 No gráfico interativo abaixo, ajuste a taxa de coparticipação e observe como a demanda por cuidados médicos responde ao preço efetivo, gerando sobreconsumo e perda de peso morto.
 
-<iframe src="../graficos/cap23/demanda-saude.html" title="Figura 23.1 — Seguro de Saúde e Risco Moral: Demanda com e sem Seguro" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap23/demanda-saude.html" title="Figura 23.1 — Seguro de Saúde e Risco Moral: Demanda com e sem Seguro" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 23.1 — Seguro de Saúde e Risco Moral.** Ajuste a taxa de coparticipação para ver como o seguro reduz o preço efetivo, aumenta a quantidade consumida e gera perda de peso morto (área vermelha) pelo consumo de cuidados cujo custo real excede o valor que o paciente lhes atribui.
@@ -363,7 +363,7 @@ onde \(\pi^*(P)\) é o tipo marginal que é indiferente entre comprar e não com
 
 No gráfico interativo abaixo, simule a dinâmica da espiral da morte. Ajuste a dispersão de risco e o loading factor e observe como o prêmio sobe e o número de segurados cai a cada rodada.
 
-<iframe src="../graficos/cap23/espiral-morte.html" title="Figura 23.2 — Espiral da Morte: Seleção Adversa em Seguros de Saúde" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap23/espiral-morte.html" title="Figura 23.2 — Espiral da Morte: Seleção Adversa em Seguros de Saúde" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 23.2 — Espiral da Morte em Mercados de Seguros.** A cada rodada, indivíduos de baixo risco abandonam o mercado, elevando o custo médio do pool segurado. O prêmio sobe (eixo esquerdo, vermelho) e a cobertura cai (eixo direito, verde). Aumente a dispersão de risco e o loading factor para observar o colapso total do mercado.
