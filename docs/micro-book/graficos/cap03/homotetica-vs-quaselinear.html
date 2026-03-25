@@ -271,22 +271,15 @@
       point1: { visible: false }, point2: { visible: false }
     });
 
-    // Label
+    // Label — offset to the right of the expansion ray
     bH.create('text', [
       function() {
         var p = parseFloat(document.getElementById('sl-price').value);
-        var I = parseFloat(document.getElementById('sl-income').value);
-        return I / (2 * p) + 0.4;
+        return 9 / (2 * p) + 1.2;
       },
-      function() {
-        var I = parseFloat(document.getElementById('sl-income').value);
-        return Math.min(I / 2 + 1.5, 11);
-      },
-      function() {
-        var p = parseFloat(document.getElementById('sl-price').value);
-        return 'Expansão radial';
-      }
-    ], { fontSize: 10, color: '#2e7d32', fixed: true });
+      function() { return 4; },
+      'Expansão radial'
+    ], { fontSize: 10, color: '#2e7d32', fixed: true, anchorX: 'left' });
 
     // ========== Quasi-linear ==========
     var bQ = JXG.JSXGraph.initBoard('box-ql', boardOpts);
