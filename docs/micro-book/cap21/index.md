@@ -70,7 +70,7 @@ Economias de escala pelo lado da oferta (custo médio decrescente) e pelo lado d
 
 ### 21.2.1 Definição e classificação
 
-O conceito de efeitos de rede é central para a compreensão dos mercados digitais. Um **efeito de rede** (ou **externalidade de rede**) ocorre quando o valor de um produto ou serviço para um usuário depende do número de outros usuários que também o utilizam. Diferentemente das externalidades discutidas no Capítulo 20, que tipicamente envolvem efeitos colaterais indesejados (poluição, congestionamento), os efeitos de rede são frequentemente **positivos**: mais usuários tornam o produto mais valioso para cada um deles.
+Você provavelmente já recusou o convite de um amigo para usar algum aplicativo de mensagens "muito melhor que o WhatsApp" — e a razão não foi preguiça, foi racionalidade pura. De que adianta um mensageiro com criptografia quântica se seus contatos não estão lá? Esse é o cerne dos efeitos de rede: o valor de um produto depende menos de suas especificações técnicas e mais de quantas pessoas já o adotaram. Um **efeito de rede** (ou **externalidade de rede**) ocorre quando o valor de um produto ou serviço para um usuário depende do número de outros usuários que também o utilizam. Diferentemente das externalidades discutidas no Capítulo 20, que tipicamente envolvem efeitos colaterais indesejados (poluição, congestionamento), os efeitos de rede são frequentemente **positivos**: mais usuários tornam o produto mais valioso para cada um deles.
 
 !!! definition "Efeitos de rede diretos e indiretos"
     **Efeito de rede direto**: o valor do produto para um usuário aumenta diretamente com o número de outros usuários do *mesmo* produto ou serviço. Exemplo: um telefone é inútil se ninguém mais tiver um; quanto mais pessoas possuem telefones, mais valiosa é a rede para cada assinante.
@@ -132,7 +132,7 @@ A existência de equilíbrios múltiplos gera o conceito de **massa crítica**: 
 
 ### 21.2.4 Tipping, lock-in e dependência de trajetória
 
-A multiplicidade de equilíbrios descrita acima gera três fenômenos interligados:
+Se efeitos de rede fossem um jogo de dominó, esta seção é onde todas as peças começam a cair. A multiplicidade de equilíbrios descrita acima gera três fenômenos interligados — e cada um deles ajuda a explicar por que trocar de plataforma costuma parecer tão doloroso quanto mudar de religião:
 
 **Tipping (tombamento):** Quando a competição entre redes rivais atinge um ponto de inflexão em que uma pequena vantagem inicial se amplia por meio do feedback positivo dos efeitos de rede, levando uma das redes a dominar o mercado e a outra a desaparecer. O exemplo clássico é a "guerra dos formatos" entre VHS e Betamax nos anos 1980: embora o Betamax fosse tecnicamente superior, o VHS atingiu a massa crítica primeiro (em parte por licenciamento mais amplo a fabricantes) e dominou o mercado.
 
@@ -174,7 +174,7 @@ A intervenção regulatória enfrenta, portanto, um dilema: **fragmentar** a pla
 
 ### 21.3.1 O conceito de mercado bilateral
 
-Muitos dos mercados mais importantes da economia digital não são mercados "unilaterais" tradicionais (onde uma firma vende a consumidores), mas **mercados bilaterais** (ou multilaterais) nos quais uma **plataforma** conecta dois ou mais grupos distintos de agentes, e o valor para cada grupo depende da participação do outro. Exemplos abundam:
+Pense no shopping center mais próximo de você. Ele não fabrica nada — seu negócio é colocar lojistas e consumidores sob o mesmo teto, cobrando aluguel de um lado e estacionamento (nem sempre gratuito) do outro. Agora multiplique essa lógica por um bilhão de usuários e velocidade de milissegundos: você tem uma plataforma digital. Muitos dos mercados mais importantes da economia digital não são mercados "unilaterais" tradicionais (onde uma firma vende a consumidores), mas **mercados bilaterais** (ou multilaterais) nos quais uma **plataforma** conecta dois ou mais grupos distintos de agentes, e o valor para cada grupo depende da participação do outro. Exemplos abundam:
 
 | Plataforma | Lado 1 | Lado 2 | Externalidade cruzada |
 |:-----------|:-------|:-------|:---------------------|
@@ -388,7 +388,7 @@ onde \(k \in \{B, S\}\), \(\varepsilon_k\) é a elasticidade-preço da demanda d
 
 ### 21.4.1 Dinâmicas de winner-take-all
 
-A combinação de efeitos de rede, custos fixos elevados e custos marginais baixos gera uma pergunta central: os mercados digitais tendem inevitavelmente ao monopólio? A resposta depende de uma série de fatores que modulam a intensidade dos retornos crescentes.
+Nos contos de fadas digitais, há espaço para apenas um rei no trono — e os perdedores não ficam com o segundo lugar, ficam com o esquecimento (alguém lembra do Orkut? Do Google+?). A combinação de efeitos de rede, custos fixos elevados e custos marginais baixos gera uma pergunta central: os mercados digitais tendem inevitavelmente ao monopólio? A resposta, como costuma ser em economia, é "depende" — e depende de uma série de fatores que modulam a intensidade dos retornos crescentes.
 
 O cenário extremo é o **winner-take-all** (WTA): um mercado em que os efeitos de rede são tão fortes que, em equilíbrio, apenas uma plataforma sobrevive. Formalmente, o WTA ocorre quando o benefício de rede \(f(n)\) na equação $\eqref{eq:21.2}$ é suficientemente côncavo e a diferenciação entre plataformas é insuficiente para sustentar mais de um concorrente. O Google Search (mais de 90% do mercado global) e o WhatsApp no Brasil (mais de 95% de penetração) são exemplos que se aproximam do WTA.
 
@@ -436,7 +436,7 @@ Cada expansão gera novos efeitos de rede cruzados: mais serviços no ecossistem
 
 ## 21.5 Economia da Atenção e Publicidade
 
-As seções anteriores analisaram como plataformas conectam diferentes grupos de agentes e competem entre si. Resta, porém, uma pergunta fundamental: como plataformas que não cobram nada dos usuários geram receita? A resposta reside no recurso que elas *realmente* comercializam — a atenção.
+Abra seu celular e conte quantos aplicativos gratuitos você usa diariamente. Google, Instagram, WhatsApp, YouTube — nenhum cobra um centavo. Generosidade corporativa? Filantropia do Vale do Silício? Claro que não. As seções anteriores analisaram como plataformas conectam diferentes grupos de agentes e competem entre si. Resta, porém, uma pergunta fundamental: como plataformas que não cobram nada dos usuários geram receita? A resposta reside no recurso que elas *realmente* comercializam — não dados, não tecnologia, mas algo mais primitivo e escasso: a sua atenção.
 
 ### 21.5.1 Atenção como recurso escasso
 
@@ -501,7 +501,7 @@ A análise de bem-estar é ambígua. Por um lado, o modelo ad-supported permite 
 
 ### 21.6.1 Dados como bem econômico
 
-A economia digital gera e consome quantidades colossais de dados. Em 2024, estimava-se que a humanidade produzia mais de 120 zettabytes de dados por ano — mais informação do que toda a informação acumulada na história da humanidade até o ano 2000. Mas qual é a natureza econômica dos dados?
+Se o petróleo foi o recurso estratégico do século XX, os dados pessoais são frequentemente chamados de "novo petróleo" do século XXI — com uma diferença crucial: ninguém extrai petróleo de você enquanto você assiste vídeos de gatos. (Ou melhor: extraem, só que o recurso são seus dados, não hidrocarbonetos.) A economia digital gera e consome quantidades colossais de dados. Em 2024, estimava-se que a humanidade produzia mais de 120 zettabytes de dados por ano — mais informação do que toda a informação acumulada na história da humanidade até o ano 2000. Mas qual é a natureza econômica dos dados?
 
 Dados possuem características peculiares que não se encaixam perfeitamente na taxonomia tradicional de bens:
 

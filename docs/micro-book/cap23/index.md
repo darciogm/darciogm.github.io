@@ -1,6 +1,6 @@
 # Capítulo 23 — Microeconomia da Saúde
 
-Em 1963, Kenneth Arrow publicou um artigo que mudou a forma como economistas pensam sobre saúde. Em "Uncertainty and the Welfare Economics of Medical Care", Arrow argumentou que o mercado de cuidados médicos é *fundamentalmente diferente* de outros mercados — não por razões sentimentais ("saúde não tem preço"), mas por razões econômicas precisas: incerteza radical sobre a doença, assimetria de informação entre médico e paciente, externalidades de vacinação e tratamento, e a natureza de bem meritório que justifica intervenção pública mesmo quando não há falha de mercado clássica. Seis décadas depois, a economia da saúde tornou-se uma das maiores subáreas da microeconomia aplicada, com implicações diretas para políticas públicas que afetam bilhões de pessoas.
+Você sabe quanto custa uma aspirina num hospital americano? Até 25 dólares — por um comprimido que custa centavos na farmácia da esquina. Esse absurdo não é acidente. Em 1963, Kenneth Arrow publicou um artigo que mudou a forma como economistas pensam sobre saúde. Em "Uncertainty and the Welfare Economics of Medical Care", Arrow argumentou que o mercado de cuidados médicos é *fundamentalmente diferente* de outros mercados — não por razões sentimentais ("saúde não tem preço"), mas por razões econômicas precisas: incerteza radical sobre a doença, assimetria de informação entre médico e paciente, externalidades de vacinação e tratamento, e a natureza de bem meritório que justifica intervenção pública mesmo quando não há falha de mercado clássica. Seis décadas depois, a economia da saúde tornou-se uma das maiores subáreas da microeconomia aplicada, com implicações diretas para políticas públicas que afetam bilhões de pessoas — e a aspirina de 25 dólares continua sem explicação convincente fora da teoria de Arrow.
 
 Este capítulo integra ferramentas desenvolvidas ao longo do livro para analisar mercados de saúde. A **demanda por saúde** (Seção 23.2) conecta-se ao modelo de Grossman (1972), que trata a saúde como capital durável — uma extensão natural do Capítulo 18 (escolha intertemporal). O **risco moral** em seguros de saúde (Seção 23.4) aplica diretamente os conceitos do Capítulo 7 (incerteza e seguros) e do Capítulo 19 (informação assimétrica). A **oferta de serviços** (Seção 23.3) traz elementos de poder de mercado (Capítulo 15) e problema do agente (Capítulo 19). As **externalidades** de vacinação e controle de doenças contagiosas (Seção 23.6) são aplicações diretas do Capítulo 20. E a **comparação de sistemas de saúde** (Seção 23.5) ilustra o trade-off eficiência-equidade que permeia toda a análise de bem-estar.
 
@@ -50,7 +50,7 @@ A desigualdade segue da desigualdade de Jensen — exatamente como no Capítulo 
 
 ### 23.1.2 Saúde como capital humano: o modelo de Grossman (1972)
 
-Michael Grossman propôs uma abordagem complementar à de Arrow. Em vez de focar nas falhas de mercado, Grossman tratou a **saúde como um estoque de capital durável** — análogo ao capital físico das firmas (Capítulo 10) ou ao capital humano de Becker. O indivíduo nasce com um estoque de saúde \(H_0\), que se deprecia ao longo do tempo (envelhecimento) e pode ser aumentado por investimento (cuidados médicos, exercício, alimentação).
+Se Arrow olhou para o mercado de saúde e viu falhas por toda parte, Michael Grossman olhou para o *indivíduo* e viu uma fábrica. Uma fábrica que produz saúde — e que, infelizmente, enferruja. Grossman propôs uma abordagem complementar à de Arrow, tratando a **saúde como um estoque de capital durável** — análogo ao capital físico das firmas (Capítulo 10) ou ao capital humano de Becker. O indivíduo nasce com um estoque de saúde \(H_0\), que se deprecia ao longo do tempo (envelhecimento) e pode ser aumentado por investimento (cuidados médicos, exercício, alimentação).
 
 Formalmente, a dinâmica do estoque de saúde é:
 
@@ -221,7 +221,7 @@ p_e^* = \begin{cases} \text{baixo} & \text{se benefício marginal social alto (p
 
 ### 23.3.1 O médico como agente: demanda induzida pelo ofertante
 
-Na maioria dos mercados, oferta e demanda são independentes: o padeiro produz pão e o consumidor decide quanto comprar. Em saúde, essa separação não existe: o médico é simultaneamente **conselheiro** (recomenda o tratamento) e **ofertante** (realiza e cobra pelo tratamento). Essa dupla função cria o problema da **demanda induzida pelo ofertante** (*supplier-induced demand*, SID).
+Imagine entrar numa loja onde o vendedor é também o único especialista que sabe se você precisa do produto, qual produto comprar, e em que quantidade — e, por acaso, ele ganha comissão sobre cada venda. Você confiaria no conselho? Na maioria dos mercados, oferta e demanda são independentes: o padeiro produz pão e o consumidor decide quanto comprar. Em saúde, essa separação confortável não existe: o médico é simultaneamente **conselheiro** (recomenda o tratamento) e **ofertante** (realiza e cobra pelo tratamento). Essa dupla função cria o problema da **demanda induzida pelo ofertante** (*supplier-induced demand*, SID).
 
 Formalmente, suponha que o médico maximiza uma utilidade que depende de renda (\(Y\)) e de um custo ético de indicar tratamentos desnecessários (\(\theta\)):
 
@@ -307,7 +307,7 @@ onde \(W_M\) é o excedente do consumidor sob monopólio, \(\pi_M\) é o lucro d
 
 ### 23.4.1 Seleção adversa em seguros de saúde
 
-O mercado de seguros de saúde é a aplicação mais importante do modelo de Rothschild-Stiglitz (1976) estudado no Capítulo 19. A intuição é direta: se a seguradora cobra um prêmio único baseado no risco médio da população, os indivíduos de baixo risco consideram o prêmio caro demais e abandonam o mercado. Isso eleva o risco médio dos segurados, obrigando a seguradora a aumentar o prêmio — o que expulsa mais indivíduos de baixo risco. O processo pode se repetir até que apenas os indivíduos de mais alto risco permaneçam, ou o mercado desapareça completamente.
+Se você já se perguntou por que planos de saúde são tão caros mesmo para quem nunca vai ao médico, a resposta tem nome e sobrenome: Rothschild e Stiglitz. O mercado de seguros de saúde é a aplicação mais importante do modelo de Rothschild-Stiglitz (1976) estudado no Capítulo 19. A intuição é direta — e devastadora: se a seguradora cobra um prêmio único baseado no risco médio da população, os indivíduos de baixo risco consideram o prêmio caro demais e abandonam o mercado. Isso eleva o risco médio dos segurados, obrigando a seguradora a aumentar o prêmio — o que expulsa mais indivíduos de baixo risco. O processo pode se repetir até que apenas os indivíduos de mais alto risco permaneçam, ou o mercado desapareça completamente.
 
 Formalmente, considere dois tipos de indivíduos: baixo risco (\(L\)) com probabilidade de doença \(\pi_L\) e alto risco (\(H\)) com \(\pi_H > \pi_L\). Ambos são aversos ao risco. Se a seguradora não observa o tipo, a seleção adversa emerge:
 
@@ -488,7 +488,7 @@ onde \(\hat{m}_i\) é o custo previsto do segurado \(i\) (baseado em fatores obs
 
 ### 23.5.1 Quatro modelos de organização
 
-Os sistemas de saúde do mundo podem ser classificados em quatro modelos básicos, cada um representando uma combinação diferente de financiamento e provisão:
+Se você ficar doente em Londres, o NHS cuida de você de graça — mas talvez depois de semanas na fila. Se ficar doente em Houston, será atendido na hora — mas a conta pode custar o equivalente a um carro. Se ficar doente em São Paulo, depende: tem plano ou não tem? Os sistemas de saúde do mundo podem ser classificados em quatro modelos básicos, cada um representando uma combinação diferente de financiamento e provisão — e cada um com suas dores de cabeça próprias:
 
 **Modelo Beveridge (Serviço Nacional de Saúde).**
 Financiamento: impostos gerais. Provisão: pública (hospitais e médicos públicos). Exemplos: Reino Unido (NHS), Espanha, Itália, países nórdicos, Brasil (SUS). Características: acesso universal, controle de custos, filas para eletivos.
@@ -548,7 +548,7 @@ As explicações econômicas para a anomalia americana incluem:
 
 ### 23.6.1 Tipos de avaliação econômica
 
-Dado que recursos em saúde são escassos, como decidir entre intervenções alternativas? A avaliação econômica em saúde desenvolveu um conjunto de ferramentas para informar essa decisão. Os três métodos principais são:
+Um governo tem R\$ 50 milhões. Gasta em vacinas que salvam mil vidas, ou em um medicamento de ponta que salva dez? Parece uma pergunta cruel — e é. Mas alguém precisa fazê-la, porque recursos em saúde são escassos e fingir o contrário não salva ninguém. A avaliação econômica em saúde desenvolveu um conjunto de ferramentas para informar essa decisão dolorosa mas inevitável. Os três métodos principais são:
 
 **Análise custo-efetividade (ACE / CEA).** Compara intervenções em termos de custo por unidade de resultado de saúde (anos de vida ganhos, casos evitados, curas). A medida mais comum é o **custo por QALY ganho** (ver abaixo). A ACE não exige monetizar a saúde — apenas ordena intervenções pela relação custo-resultado.
 
@@ -583,7 +583,7 @@ O **DALY** (*Disability-Adjusted Life Year*), desenvolvido pela OMS, mede a carg
 
 ### 23.6.3 Disposição a pagar pela vida e pela saúde
 
-Quanto vale uma vida estatística? Essa pergunta — central tanto para o Capítulo 20 (externalidades) quanto para a economia da saúde — é respondida pelo conceito de **valor de uma vida estatística** (VSL, *Value of Statistical Life*).
+Quanto vale uma vida? Se você respondeu "não tem preço", parabéns — você tem bom coração, mas nunca elaborou um orçamento público. Na prática, governos colocam preço em vidas todos os dias: quando decidem quanto investir em rodovias mais seguras, em tratamentos de câncer, em regulação de poluição. A pergunta — central tanto para o Capítulo 20 (externalidades) quanto para a economia da saúde — é respondida pelo conceito de **valor de uma vida estatística** (VSL, *Value of Statistical Life*).
 
 O VSL não é o valor de uma vida individual específica (que a maioria das pessoas considera infinito), mas o valor implícito de uma redução de risco. Se 10.000 trabalhadores aceitam um adicional de periculosidade de R\$ 1.000/ano para um trabalho com risco de morte 0,01% maior, o VSL implícito é:
 

@@ -1,5 +1,7 @@
 # Capítulo 20 — Fumaça, Caronas e Tragédias
 
+Seu vizinho resolve criar galos. Às 5h da manhã, o canto ecoa pelo quarteirão — e o preço do imóvel ao lado despenca. O vizinho não pagou nada por isso. O mercado de galos funcionou perfeitamente; o mercado de noites bem dormidas, não. Bem-vindo ao mundo das externalidades — onde o prejuízo de um não aparece na conta de ninguém.
+
 Nos capítulos anteriores, demonstramos que mercados competitivos com informação completa conduzem a alocações Pareto-eficientes — o resultado central dos Teoremas do Bem-Estar. Entretanto, essa conclusão depende criticamente da hipótese de que todas as interações entre agentes econômicos ocorrem via mecanismo de preços. Quando as ações de um agente afetam diretamente o bem-estar de outros **fora do sistema de preços**, surgem as **externalidades** — e a alocação de mercado deixa de ser eficiente.
 
 Da mesma forma, certos bens possuem características que tornam o mecanismo de mercado inadequado para sua provisão: bens **não-rivais** e **não-excludentes** — os chamados **bens públicos** — tendem a ser subprovidos pelo mercado devido ao problema do **carona** (free rider).
@@ -61,7 +63,7 @@ A distinção entre externalidades pecuniárias e tecnológicas merece um exempl
 
 ## 20.2 Externalidades e Ineficiência Alocativa
 
-Definido o conceito de externalidade, podemos agora compreender por que ela constitui uma falha de mercado. A ideia central é que, na presença de externalidades, o preço de mercado transmite informação incompleta: ele reflete apenas os custos e benefícios privados da transação, ignorando os efeitos sobre terceiros. Como resultado, as decisões tomadas individualmente por agentes racionais conduzem a um nível de produção ou consumo que difere do socialmente ótimo — o mercado "erra" sistematicamente.
+Definido o conceito, vem a pergunta que realmente importa: por que externalidades fazem o mercado errar? A resposta é quase ofensivamente simples. O preço — aquele mecanismo que Adam Smith celebrou como o grande coordenador da economia — mente. Ou melhor, conta apenas metade da história: reflete os custos e benefícios privados da transação, mas ignora solenemente os efeitos sobre terceiros. Como resultado, as decisões tomadas individualmente por agentes racionais conduzem a um nível de produção ou consumo que difere do socialmente ótimo — o mercado "erra" sistematicamente.
 
 É instrutivo conectar essa falha ao Primeiro Teorema do Bem-Estar. Recordemos que esse teorema garante que todo equilíbrio competitivo é Pareto-eficiente — mas sob hipóteses específicas, entre as quais a de **mercados completos**: deve existir um mercado para cada bem que afeta a utilidade ou a produção de qualquer agente. Quando uma externalidade está presente, *falta* exatamente um mercado: não existe mercado para a poluição, para o silêncio, para o ar limpo ou para a imunidade de rebanho. Essa "lacuna" no sistema de mercados viola a hipótese central do Primeiro Teorema e é a razão profunda pela qual externalidades geram ineficiência. Em termos técnicos, a externalidade cria uma **cunha** (wedge) entre os custos (ou benefícios) privados e os custos (ou benefícios) sociais. Essa cunha distorce os sinais de preço: o produtor vê um custo menor do que o verdadeiro custo social, ou o consumidor percebe um benefício menor do que o verdadeiro benefício social. A magnitude da ineficiência é proporcional ao tamanho dessa cunha.
 
@@ -178,7 +180,7 @@ Geometricamente, essa integral corresponde à área do "triângulo" entre a curv
 
 ## 20.4 Soluções para Externalidades Negativas
 
-Identificada a ineficiência causada pelas externalidades, a questão natural que se coloca é: como corrigi-la? A teoria econômica oferece um menu de instrumentos, cada um com suas vantagens e limitações. A solução mais elegante — o imposto pigouviano — ataca o problema diretamente na raiz, alterando os incentivos privados para que a firma internalize o custo externo. Mas soluções alternativas, como a negociação privada (Coase), a regulação direta e os mercados de permissão de emissão, podem ser preferíveis em contextos específicos. A escolha entre esses instrumentos constitui um dos debates mais vivos da economia ambiental e regulatória, e seus desdobramentos vão muito além da teoria: afetam diretamente a forma como países enfrentam desafios como a mudança climática, a poluição hídrica e a degradação de ecossistemas.
+Diagnosticamos a doença — agora precisamos da receita. Se o problema é que o poluidor "exporta" custos para a sociedade sem pagar a conta, a solução lógica é apresentar-lhe essa conta. A teoria econômica oferece um cardápio de instrumentos para isso, cada um com sabor e efeitos colaterais distintos. A solução mais elegante — o imposto pigouviano — ataca o problema diretamente na raiz, alterando os incentivos privados para que a firma internalize o custo externo. Mas soluções alternativas, como a negociação privada (Coase), a regulação direta e os mercados de permissão de emissão, podem ser preferíveis em contextos específicos. A escolha entre esses instrumentos constitui um dos debates mais vivos da economia ambiental e regulatória, e seus desdobramentos vão muito além da teoria: afetam diretamente a forma como países enfrentam desafios como a mudança climática, a poluição hídrica e a degradação de ecossistemas.
 
 ### 20.4.1 Imposto Pigouviano
 
@@ -513,7 +515,7 @@ O resultado de Weitzman (1974) — formalmente desenvolvido em "Prices vs. Quant
 
 ## 20.5 Atributos dos Bens Públicos
 
-A primeira metade deste capítulo dedicou-se às externalidades — situações em que ações de um agente afetam outros fora do sistema de preços. Voltamo-nos agora para a segunda grande falha de mercado: os bens públicos. Enquanto as externalidades envolvem efeitos colaterais de atividades privadas, os bens públicos representam um desafio ainda mais fundamental: são bens que, por suas próprias características intrínsecas — não-rivalidade e não-exclusão —, o mercado é incapaz de prover eficientemente. Qual é a natureza desse desafio, e quais são os mecanismos disponíveis para enfrentá-lo?
+Quem paga pela iluminação da sua rua? Provavelmente você não sabe — e esse é exatamente o ponto. Ninguém acorda de manhã pensando "vou contribuir voluntariamente para o poste de luz". A luz está lá, você usa, e se seu vizinho também usa, não sobra menos luz para você. Esse tipo de bem — que todos consomem sem que ninguém consiga ser impedido de consumir — é o que os economistas chamam de **bem público**, e representa a segunda grande falha de mercado deste capítulo. Enquanto as externalidades envolvem efeitos colaterais de atividades privadas, os bens públicos representam um desafio ainda mais fundamental: são bens que, por suas próprias características intrínsecas — não-rivalidade e não-exclusão —, o mercado é incapaz de prover eficientemente.
 
 !!! definition "Bem Público"
     Um **bem público puro** é aquele que possui simultaneamente duas propriedades:
@@ -764,7 +766,7 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 ## 20.8 O Problema do Carona (Free Rider)
 
-O equilíbrio de Lindahl pressupõe que os indivíduos revelam honestamente quanto valorizam o bem público. Mas por que o fariam? Se a contribuição de cada um é baseada em sua valoração declarada, cada indivíduo tem incentivo para subdeclarar — afirmando que valoriza pouco o bem público para pagar menos, mas usufruindo plenamente da provisão financiada pelos demais. Esse comportamento estratégico é o **problema do carona**, uma das falhas de mercado mais persistentes e de difícil solução.
+O equilíbrio de Lindahl pressupõe que os indivíduos revelam honestamente quanto valorizam o bem público. Mas convenhamos: se alguém lhe perguntasse "quanto você pagaria pela defesa nacional?" — sabendo que sua resposta determinaria sua conta —, você diria a verdade? Ou diria "ah, quase nada" e torceria para que seus 210 milhões de compatriotas bancassem o Exército? Se a contribuição de cada um é baseada em sua valoração declarada, cada indivíduo tem incentivo para subdeclarar — afirmando que valoriza pouco o bem público para pagar menos, mas usufruindo plenamente da provisão financiada pelos demais. Esse comportamento estratégico é o **problema do carona** (*free rider*), uma das falhas de mercado mais persistentes e de difícil solução — e a razão pela qual governos cobram impostos em vez de pedir doações.
 
 !!! definition "Problema do Carona"
     Ocorre quando indivíduos racionais subinvestem na provisão de um bem público (ou na revelação de suas preferências) porque esperam se beneficiar das contribuições alheias sem pagar por elas. O bem público é não-excludente: mesmo quem não paga pode consumir.
@@ -799,7 +801,7 @@ Esses resultados experimentais iluminam fenômenos do mundo real. A **Wikipedia*
 
 ## 20.9 Votação e Alocação de Recursos
 
-Se o mercado falha na provisão de bens públicos e mecanismos descentralizados como os preços de Lindahl são vulneráveis ao problema do carona, as sociedades recorrem a processos de decisão coletiva — notadamente a **votação** — para determinar quanto gastar com bens públicos e como financiar essa despesa. Mas será que o processo político conduz a resultados eficientes? A teoria da escolha pública analisa essa questão, revelando tanto as virtudes quanto as limitações da democracia como mecanismo de agregação de preferências.
+O mercado falha, Lindahl é sabotado pelos caronas, e contribuições voluntárias murcham com o tempo. O que resta? A solução mais antiga da humanidade para decisões coletivas: votar. Quando uma cidade precisa decidir entre investir em saneamento ou em uma nova avenida, não há leiloeiro walrasiano que resolva — há uma urna. Mas será que enfiar 200 milhões de preferências heterogêneas dentro de uma cédula produz algo remotamente eficiente? A teoria da escolha pública analisa essa questão, revelando tanto as virtudes quanto as limitações da democracia como mecanismo de agregação de preferências.
 
 Na ausência de mecanismos de mercado eficientes para bens públicos (Giambiagi & Além, 2016, oferecem análise detalhada para o caso brasileiro), as sociedades recorrem a processos políticos — especialmente a **votação** — para decidir o nível de provisão.
 

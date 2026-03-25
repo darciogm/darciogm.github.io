@@ -145,7 +145,7 @@ Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a 
 
 ## 8.2 Teoria do Prospecto
 
-As heurísticas e vieses mapeados na seção anterior nos dizem *onde* o modelo neoclássico falha, mas não oferecem uma alternativa formal para substituí-lo. Para isso, precisamos de um modelo que preserve o rigor analítico da utilidade esperada, mas incorpore as regularidades empíricas documentadas em laboratório e no mundo real. A Teoria do Prospecto é essa alternativa.
+A Seção 8.1 mostrou *onde* o modelo racional tropeça. Agora precisamos de um modelo que tropeça menos — sem perder a capacidade de gerar previsões. Esse modelo existe, tem nome, e rendeu um Nobel: a **Teoria do Prospecto**. Não é um remendo ad hoc; é uma teoria completa, com axiomas próprios e previsões testáveis. E a história de como ela surgiu é uma das melhores da ciência.
 
 A **utilidade esperada** de Von Neumann e Morgenstern (Capítulo 7) pressupõe que os agentes avaliam resultados em termos de riqueza final e ponderam probabilidades linearmente. A Teoria do Prospecto, proposta por Kahneman e Tversky (1979) e refinada em sua versão cumulativa (Tversky e Kahneman 1992), substitui essas premissas por duas inovações fundamentais: uma **função valor** definida sobre ganhos e perdas relativos a um ponto de referência, e uma **função de ponderação de probabilidades** que distorce probabilidades objetivas.
 
@@ -418,9 +418,7 @@ Essas regras decorrem diretamente da curvatura da função valor da Teoria do Pr
 
 ## 8.3 Ambiguidade e o Paradoxo de Ellsberg
 
-A Teoria do Prospecto desafia a utilidade esperada ao mostrar que os agentes distorcem probabilidades e avaliam resultados relativamente a um ponto de referência. Mas há um desafio ainda mais fundamental: e quando as probabilidades sequer são conhecidas? A distinção entre risco e ambiguidade abre uma nova frente de questionamento que nem a utilidade esperada clássica nem a Teoria do Prospecto, em sua formulação original, conseguem acomodar plenamente.
-
-A transição da Seção 8.2 para esta seção é conceitualmente importante. Na Teoria do Prospecto, as probabilidades dos eventos são conhecidas — o que varia é *como* os agentes as processam (com distorções sistemáticas). Na presente seção, damos um passo atrás: e se as próprias probabilidades forem desconhecidas? Esse é o domínio da **incerteza genuína**, e a evidência mostra que os agentes não apenas são incapazes de atribuir probabilidades precisas nesses casos — eles sistematicamente *evitam* situações em que não conseguem quantificar os riscos.
+A Teoria do Prospecto pressupõe que você *conhece* as probabilidades — só as processa de forma distorcida. Mas e quando você não faz *ideia* das probabilidades? Qual é a chance de uma pandemia? De um golpe de Estado? De a inteligência artificial substituir seu emprego? Nesses casos, não estamos diante de risco (probabilidades conhecidas) nem de ignorância total — estamos na terra da **ambiguidade**: sabemos que não sabemos, e isso nos assusta de um jeito que a teoria padrão não captura. Daniel Ellsberg mostrou isso de forma brilhante com duas urnas e umas bolinhas coloridas.
 
 ### 8.3.1 Risco, incerteza e ambiguidade
 
@@ -489,9 +487,9 @@ No Brasil, a instabilidade do marco regulatório e fiscal ao longo das últimas 
 
 ## 8.4 Preferências Sociais
 
-Até aqui, questionamos *como* os agentes avaliam resultados e probabilidades — mostrando que a Teoria do Prospecto e a aversão à ambiguidade descrevem melhor esse processo do que a utilidade esperada clássica. Mas há uma premissa ainda mais fundamental que merece escrutínio: a de que os agentes se preocupam apenas consigo mesmos. Será que as pessoas tomam decisões econômicas ignorando completamente o que acontece com os demais? A evidência experimental é clara: não.
+Até aqui, discutimos como o agente erra ao avaliar riscos e probabilidades. Mas há uma suposição ainda mais básica que merece ser testada: a de que as pessoas *só se importam consigo mesmas*. Faça o teste: se alguém lhe oferecesse R$ 100, mas com a condição de que outra pessoa (que você não conhece) receba R$ 1.000, você aceitaria? A maioria aceita. Agora inverta: alguém recebe R$ 100, mas *você* ganha R$ 0. Justo? A maioria rejeita — mesmo que rejeitar signifique que *ninguém* recebe nada.
 
-Os modelos neoclássicos tradicionais assumem que os agentes são **autointeressados**: a utilidade de cada agente depende apenas de seu próprio consumo. Contudo, evidências experimentais robustas mostram que as pessoas se importam com a **distribuição** dos resultados e com as **intenções** dos outros jogadores. Essas **preferências sociais** incluem aversão à inequidade, reciprocidade, altruísmo e punição de comportamento injusto.
+Esse resultado destruidor aparece em laboratório com a regularidade de um relógio. As pessoas *se importam* com a distribuição dos resultados, com a justiça e com as intenções dos outros. Essas **preferências sociais** — aversão à inequidade, reciprocidade, altruísmo punitivo — não são ruído: são padrões robustos que mudam equilíbrios de jogos e resultados de mercado.
 
 A transição desta seção para as anteriores é relevante: nas Seções 8.2 e 8.3, os desvios comportamentais eram individuais — um único agente, tomando decisões sob risco ou ambiguidade, se afasta das previsões normativas. Aqui, entramos no domínio da interação estratégica, onde o comportamento de cada agente depende de suas crenças sobre os demais. Isso torna o fenômeno das preferências sociais duplamente interessante: ao mesmo tempo que desafia o pressuposto de autointeresse, conecta-se naturalmente à teoria dos jogos (Capítulo 14). A diferença é que, enquanto a teoria dos jogos padrão assume autointeresse e pergunta quais equilíbrios surgem, a economia comportamental das preferências sociais pergunta como os equilíbrios mudam quando os agentes se importam com a distribuição dos resultados e com as intenções alheias.
 
@@ -638,9 +636,9 @@ A reciprocidade também tem implicações para o design de contratos de incentiv
 
 ## 8.5 Escolha Intertemporal e Desconto Hiperbólico
 
-As seções anteriores examinaram desvios comportamentais no domínio do risco (Teoria do Prospecto), da ambiguidade (Ellsberg) e da interação social (preferências sociais). Mas há uma dimensão fundamental da decisão econômica que ainda não abordamos sob a lente comportamental: o **tempo**. Como as pessoas trocam benefícios presentes por benefícios futuros? O modelo neoclássico oferece uma resposta elegante — o desconto exponencial —, mas a evidência empírica revela anomalias que pedem uma reformulação.
+Agora vem o domínio onde o ser humano mais tropeça — e onde as consequências são mais dolorosas: o **tempo**. Você *sabe* que deveria poupar para a aposentadoria, mas gasta o bônus num iPhone. Você *sabe* que deveria estudar para a prova, mas assiste mais um episódio. Você *planeja* começar a dieta na segunda-feira — e na segunda-feira, planeja começar na *próxima* segunda. Esse padrão universal — querer uma coisa para o futuro e fazer outra no presente — é o **viés do presente**, e a microeconomia tem um modelo para ele.
 
-A escolha intertemporal é o domínio onde o comportamento humano talvez mais se afaste das previsões normativas, e onde as consequências para o bem-estar individual são mais duradouras. Decisões de quanto poupar, quando parar de fumar, quando começar uma dieta ou quando se inscrever em um programa de previdência são todas escolhas intertemporais com efeitos de longo prazo. O custo de errar — por exemplo, chegar à aposentadoria sem poupança adequada — é alto e frequentemente irreversível. Por isso, o viés do presente não é apenas uma curiosidade de laboratório: é um dos principais determinantes do bem-estar econômico das famílias ao longo da vida.
+O custo desse viés não é uma curiosidade de laboratório: é gente chegando aos 65 anos sem previdência, famílias afogadas no rotativo do cartão, e pacientes que não tomam remédio para hipertensão porque "agora" não dói. É o domínio onde a economia comportamental tem o impacto prático mais direto — e onde as intervenções de política (nudges) têm os resultados mais documentados.
 
 ### 8.5.1 O Modelo de Utilidade Descontada
 
@@ -814,11 +812,9 @@ A distinção entre agentes sofisticados e ingênuos tem implicações práticas
 
 ## 8.6 Nudges e Arquitetura de Escolhas
 
-Ao longo deste capítulo, construímos um inventário detalhado das limitações da racionalidade humana: heurísticas que distorcem julgamentos, aversão à perda que deforma avaliações, preferências sociais que complicam a interação estratégica e viés do presente que sabota planos de longo prazo. Diante de tantos desvios, uma pergunta de política pública se impõe com urgência: o que fazer? Proibir escolhas ruins? Deixar o mercado agir? Ou existe uma terceira via?
+Chegamos à seção mais prática do capítulo — e talvez a mais controversa. As seções anteriores mostraram que erramos de formas previsíveis: distorcemos probabilidades, odiamos perdas mais do que amamos ganhos, punimos injustiça mesmo a nosso custo e sacrificamos o futuro pelo presente. Diante disso, o que fazer? Proibir escolhas ruins (paternalismo)? Deixar que cada um se vire (laissez-faire)? Ou existe uma terceira via — que use os *próprios vieses* a favor das pessoas?
 
-As seções anteriores mostraram que os agentes cometem erros sistemáticos — heurísticas que distorcem julgamentos, aversão à perda que deforma avaliações e viés do presente que sabota planos de longo prazo. Diante desses desvios, surge uma questão de política pública: é possível **ajudar** as pessoas a tomar melhores decisões sem restringir sua liberdade?
-
-As respostas tradicionais a essa pergunta oscilam entre dois extremos. O **paternalismo duro** — proibir cigarros, limitar o acesso ao crédito rotativo, tornar compulsória a contribuição previdenciária — é eficaz, mas restringe a liberdade individual e pode ser politicamente impraticável em democracias liberais. O **laissez-faire informacional** — fornecer mais e melhor informação e deixar que os agentes decidam — respeita a autonomia, mas frequentemente falha porque o problema não é falta de informação, mas a forma como o cérebro processa informação. A contribuição fundamental de Thaler e Sunstein (2008) foi mostrar que existe uma terceira via: preservar a liberdade de escolha enquanto se usa o que sabemos sobre psicologia humana para tornar as escolhas mais fáceis de acertar.
+As respostas tradicionais oscilam entre dois extremos. O **paternalismo duro** — proibir cigarros, limitar o acesso ao crédito rotativo, tornar compulsória a contribuição previdenciária — é eficaz, mas restringe a liberdade individual e pode ser politicamente impraticável em democracias liberais. O **laissez-faire informacional** — fornecer mais e melhor informação e deixar que os agentes decidam — respeita a autonomia, mas frequentemente falha porque o problema não é falta de informação, mas a forma como o cérebro processa informação. A contribuição fundamental de Thaler e Sunstein (2008) foi mostrar que existe uma terceira via: preservar a liberdade de escolha enquanto se usa o que sabemos sobre psicologia humana para tornar as escolhas mais fáceis de acertar.
 
 ### 8.6.1 Paternalismo libertário
 

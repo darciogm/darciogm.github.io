@@ -1,6 +1,6 @@
-# Capítulo 16 — Oligopólio e Organização Industrial
+# Capítulo 16 — Poucos — e Isso Muda Tudo
 
-A maioria dos mercados reais situa-se entre os extremos teóricos da concorrência perfeita e do monopólio. Em um **oligopólio**, um pequeno número de firmas detém parcela significativa do mercado, e cada uma reconhece que suas decisões afetam — e são afetadas por — as decisões das rivais. Essa **interdependência estratégica** é o traço definidor do oligopólio e o que o torna analiticamente mais complexo do que as estruturas polares.
+Até aqui, estudamos dois mundos extremos: o da concorrência perfeita, onde nenhuma firma importa individualmente, e o do monopólio, onde só uma firma importa. A maioria dos mercados reais, porém, vive no meio-termo desconfortável entre esses dois polos — é como uma mesa de pôquer em que cada jogador precisa adivinhar o que os outros vão fazer antes de decidir sua própria aposta. Em um **oligopólio**, um pequeno número de firmas detém parcela significativa do mercado, e cada uma reconhece que suas decisões afetam — e são afetadas por — as decisões das rivais. Essa **interdependência estratégica** é o traço definidor do oligopólio e o que o torna analiticamente mais rico (e mais traiçoeiro) do que as estruturas polares.
 
 A teoria dos oligopólios recorre extensivamente à **teoria dos jogos** para modelar a interação estratégica entre firmas. Os resultados são extremamente sensíveis às hipóteses sobre a variável de decisão (preço ou quantidade), a sequência de movimentos (simultâneo ou sequencial), o horizonte temporal (jogo de uma rodada ou repetido) e a natureza da informação.
 
@@ -37,7 +37,7 @@ A escolha da variável estratégica não é trivial e produz resultados dramatic
 
 ## 16.2 Modelo de Bertrand: concorrência em preços
 
-Comecemos pela pergunta mais natural: o que acontece quando duas firmas com produtos idênticos competem em preços? O modelo de Bertrand oferece uma resposta surpreendente e, à primeira vista, desconcertante — tão surpreendente que ficou conhecida como o "paradoxo de Bertrand". Como veremos, bastam duas firmas para que o resultado de mercado se assemelhe ao da concorrência perfeita, um resultado com implicações profundas para a teoria da organização industrial.
+Comecemos pela pergunta mais natural: o que acontece quando duas firmas com produtos idênticos competem em preços? A resposta de Bertrand é tão brutal que mereceu o apelido de "paradoxo": basta *uma* rival para transformar qualquer duopolista em refém da guerra de preços. É como se dois vendedores de guarda-chuva idêntico se instalassem lado a lado na saída do metrô em dia de temporal — a corrida para o fundo começa imediatamente. Como veremos, bastam duas firmas para que o resultado de mercado se assemelhe ao da concorrência perfeita, um resultado com implicações profundas para a teoria da organização industrial.
 
 ### O modelo básico
 
@@ -311,7 +311,7 @@ Esse resultado fornece uma fundamentação microeconômica para o modelo de Cour
 
 ## 16.6 Diferenciação de produto
 
-Outra forma de escapar ao paradoxo de Bertrand é reconhecer que, na maioria dos mercados, os produtos não são idênticos. Consumidores têm preferências distintas por características como sabor, localização, design ou funcionalidades, e essa heterogeneidade confere às firmas algum grau de poder de mercado mesmo na presença de concorrentes. A diferenciação de produto — horizontal (quando os consumidores discordam sobre qual produto é melhor) ou vertical (quando todos concordam, mas diferem na disposição a pagar pela qualidade) — é talvez a resolução empiricamente mais relevante do paradoxo.
+Se o paradoxo de Bertrand fosse a última palavra, toda firma lucrativa seria um mistério. A saída mais poderosa do paradoxo está em um fato óbvio para qualquer consumidor: produtos raramente são idênticos. Você não é indiferente entre um café no Starbucks e um café no boteco da esquina, mesmo que ambos contenham cafeína. Essa heterogeneidade de preferências — sabor, localização, design, funcionalidades — confere às firmas algum grau de poder de mercado mesmo na presença de concorrentes. A diferenciação de produto — horizontal (quando os consumidores discordam sobre qual produto é melhor) ou vertical (quando todos concordam, mas diferem na disposição a pagar pela qualidade) — é talvez a resolução empiricamente mais relevante do paradoxo.
 
 ### Modelo de Hotelling (diferenciação horizontal)
 
@@ -347,7 +347,7 @@ onde \(f\) é o custo fixo de entrada. O número de firmas em equilíbrio é cre
 
 ## 16.7 Colusão tácita
 
-Os modelos analisados até aqui tratam a interação entre firmas como um jogo de uma única rodada: as firmas tomam suas decisões simultaneamente e o jogo termina. Entretanto, firmas reais competem repetidamente no mercado, período após período. Essa repetição abre a possibilidade de cooperação: firmas podem coordenar-se tacitamente para manter preços elevados, sustentando a cooperação pela ameaça de retaliação futura. Como esse mecanismo funciona, e sob que condições ele é sustentável?
+Nos modelos anteriores, as firmas se encontram uma vez, tomam suas decisões e nunca mais se veem — como estranhos que dividem um táxi e depois seguem caminhos separados. Mas firmas reais são mais parecidas com vizinhos de condomínio: cruzam-se no elevador todo dia, e sabem que a retaliação de hoje pode cobrar seu preço amanhã. Essa repetição abre a possibilidade de cooperação: firmas podem coordenar-se tacitamente para manter preços elevados, sustentando a cooperação pela ameaça de retaliação futura. Como esse mecanismo funciona, e sob que condições ele é sustentável?
 
 ### Jogos repetidos e sustentação de colusão
 
@@ -422,7 +422,7 @@ A [Tabela 16.1](#tabela-16-1) lista os principais fatores que facilitam a susten
 
 ## 16.8 Decisões de longo prazo: investimento, entrada e saída
 
-Os modelos de Bertrand, Cournot e Stackelberg concentram-se em decisões de curto prazo — preço ou quantidade em um mercado com estrutura dada. No longo prazo, porém, as firmas podem alterar a própria estrutura do jogo: investir em capacidade, P&D, localização e publicidade, ou adotar posicionamentos estratégicos que mudam as regras da competição futura. Essas decisões têm natureza **estratégica** — alteram a estrutura do jogo e o comportamento de equilíbrio — e são frequentemente mais importantes do que as escolhas de curto prazo, pois definem as condições sob as quais a competição se desenrolará.
+Até aqui, tratamos o oligopólio como um jogo de tabuleiro com regras fixas — o número de jogadores, as peças disponíveis e o mapa já estavam dados, e as firmas só decidiam onde mover. Agora elevamos o nível: no longo prazo, as firmas podem redesenhar o próprio tabuleiro. Investir em capacidade, P&D, localização e publicidade, ou adotar posicionamentos que mudam as regras da competição futura — tudo isso é estratégia de longo prazo. Essas decisões alteram a estrutura do jogo e o comportamento de equilíbrio, e são frequentemente mais importantes do que as escolhas de curto prazo, pois definem as condições sob as quais a competição se desenrolará.
 
 ### Compromisso estratégico
 
@@ -663,7 +663,7 @@ A competição monopolística é empiricamente relevante para muitos mercados: r
 
 ## 16.15 Fusões e Política Antitruste
 
-As fusões horizontais — entre firmas que competem no mesmo mercado — são o campo mais ativo da política de defesa da concorrência. A análise econômica de fusões envolve um trade-off fundamental identificado por Oliver Williamson (1968): de um lado, a fusão aumenta o poder de mercado (preços sobem); de outro, pode gerar ganhos de eficiência (custos caem). A fusão é benéfica ao consumidor quando o efeito eficiência domina o efeito poder de mercado.
+Quando duas firmas rivais decidem virar uma só, a pergunta que todo regulador antitruste perde o sono para responder é: isso vai ser bom ou ruim para o consumidor? As fusões horizontais — entre firmas que competem no mesmo mercado — são o campo mais ativo da política de defesa da concorrência, e a análise econômica envolve um trade-off fundamental identificado por Oliver Williamson (1968): de um lado, a fusão aumenta o poder de mercado (preços sobem); de outro, pode gerar ganhos de eficiência (custos caem). A fusão é benéfica ao consumidor quando o efeito eficiência domina o efeito poder de mercado.
 
 ### Análise de fusões via HHI
 

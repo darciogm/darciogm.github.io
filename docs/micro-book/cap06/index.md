@@ -2,9 +2,9 @@
 
 > *"Nenhum bem é uma ilha: a demanda por cada produto depende dos preços de todos os outros."*
 
-No capítulo anterior, analisamos como variações de preço e renda afetam a demanda por um bem individual, decompondo os efeitos substituição e renda via Equação de Slutsky. Agora, voltamos o olhar para as **relações entre bens**: como a variação no preço de um bem afeta a demanda por outro? Quando bens são substitutos? Quando são complementos? E como agregamos as demandas individuais para obter a demanda de mercado?
+O Capítulo 5 olhou para cada bem isoladamente: "o preço subiu, a demanda caiu". Mas no mundo real, bens não vivem sozinhos. Quando a gasolina sobe, o etanol sorri. Quando o preço do churrasco dispara, o frango agradece. E quando o governo taxa refrigerante, o dono da água de coco comemora. Este capítulo é sobre essas **relações entre bens**: quem é substituto de quem, quem é complemento, e por que a resposta depende de como você define a pergunta.
 
-A relevância prática dessas perguntas é imediata. No Brasil, a decisão entre abastecer com gasolina ou etanol depende dos preços relativos em cada bomba; o consumo de carne bovina recua quando o frango barateia; a tributação seletiva sobre bebidas açucaradas redesenha a demanda por água mineral e sucos. Compreender essas relações cruzadas é essencial tanto para a política pública quanto para a estratégia empresarial.
+A relevância é imediata: no Brasil, a decisão entre gasolina e etanol na bomba depende dos preços relativos (a regra dos 70%); o CADE avalia se duas marcas de cerveja são "substitutas próximas" antes de aprovar uma fusão; e a tributação seletiva sobre cigarros precisa saber se o cachimbo é substituto ou não. Tudo isso é elasticidade cruzada — o tema deste capítulo.
 
 Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda. A jornada que fizemos até aqui nos trouxe de preferências e restrições orçamentárias (Capítulo 2) até a decomposição de Slutsky (Capítulo 5), que separou os efeitos de uma variação de preço em dois componentes interpretáveis. O instrumental de Slutsky é precisamente o que precisamos agora: o efeito substituição cruzado — o elemento fora da diagonal da matriz de Slutsky — é o núcleo analítico das classificações de substitutos e complementos que estudaremos aqui.
 
@@ -16,7 +16,7 @@ Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessári
 
 ## 6.1 O Caso com Dois Bens: Efeitos Cruzados de Preço
 
-Comecemos pelo caso mais simples: uma economia com apenas dois bens. Mesmo nesse cenário estilizado, a análise dos efeitos cruzados de preço revela resultados surpreendentes — e nos prepara para as sutilezas que emergem quando há muitos bens.
+Comecemos pelo caso mais simples — e mais traiçoeiro: uma economia com apenas dois bens. A surpresa: com só dois bens, *não existe complementaridade* (no sentido hicksiano). Se o arroz fica caro e compensamos sua renda, você *necessariamente* come mais macarrão — porque não há mais nada no cardápio. A complementaridade — café e açúcar, por exemplo — só aparece quando existe uma terceira opção. Essa armadilha conceitual já enganou muita gente boa.
 
 Considere um consumidor que maximiza \(U(x_1, x_2)\) sujeito à restrição orçamentária \(p_1 x_1 + p_2 x_2 = I\). As funções de demanda marshalliana \(x_1^*(p_1, p_2, I)\) e \(x_2^*(p_1, p_2, I)\) dependem de ambos os preços. O **efeito cruzado de preço** é a derivada parcial:
 
@@ -59,7 +59,7 @@ Vale notar que esse resultado tem uma conexão direta com o Teorema da Função 
 
 ## 6.2 Substitutos e Complementos Brutos (Marshallianos)
 
-O resultado da seção anterior — de que, com dois bens, a substituição líquida é o único fenômeno possível — é teoricamente importante, mas limita a riqueza da análise. Na prática, observamos relações de substituição e complementaridade o tempo todo: quando o preço do café sobe, a demanda por açúcar cai; quando o preço da gasolina sobe, a demanda por etanol cresce. Para capturar essas relações nos dados, precisamos de definições formais. A classificação mais intuitiva — e a que se observa diretamente nos dados — utiliza as derivadas cruzadas da demanda marshalliana.
+OK, com dois bens o resultado é trivial. Mas no supermercado real existem milhares de bens, e as relações são ricas: café sobe → açúcar cai (complementos); gasolina sobe → etanol sobe (substitutos); gasolina sobe → carros usados... caem? (complementos distantes). A classificação mais intuitiva — a que você "vê" diretamente nos dados de vendas — usa as derivadas cruzadas da demanda marshalliana, e é a que apresentamos agora.
 
 !!! definition "Substitutos e complementos brutos"
     Dois bens \(i\) e \(j\) são:
@@ -139,7 +139,7 @@ A palavra "bruta" na expressão "substituto bruto" evoca justamente essa contami
 
 ## 6.3 Substitutos e Complementos Líquidos (Hicksianos)
 
-A classificação marshalliana, embora direta e empiricamente acessível, apresenta um problema fundamental: ela mistura o efeito substituição (a verdadeira relação de substituibilidade ou complementaridade entre bens) com o efeito renda (o empobrecimento ou enriquecimento causado pela variação de preço). Essa contaminação pode distorcer a classificação, fazendo bens que são genuinamente substitutos parecerem complementos nos dados brutos. Para obter uma classificação teoricamente mais limpa, utilizamos as derivadas cruzadas da **demanda hicksiana** (compensada), que capturam apenas o efeito substituição, isolando o efeito renda.
+A classificação marshalliana tem um defeito: ela está "suja" pelo efeito renda. Quando a gasolina sobe, o consumidor fica mais pobre — e esse empobrecimento afeta a demanda por *todos* os bens, não apenas pelo substituto natural (etanol). O efeito renda pode fazer dois bens que são genuinamente substitutos parecerem complementos nos dados brutos. É como tentar ouvir uma música com ruído de fundo: o sinal está lá, mas contaminado. A classificação **hicksiana** (compensada) é o filtro que remove o ruído — ela usa a demanda hicksiana, que isola o efeito substituição puro.
 
 !!! definition "Substitutos e complementos líquidos (hicksianos)"
     Dois bens \(i\) e \(j\) são:
@@ -275,7 +275,7 @@ A matriz de Slutsky também tem implicações empíricas diretas. Suas proprieda
 
 ## 6.5 Bens Compostos (Teorema do Bem Composto de Hicks)
 
-A seção anterior revelou que, com muitos bens, a matriz de Slutsky contém \(n^2\) elementos — e estimá-los todos empiricamente exigiria uma quantidade enorme de dados. Como proceder na prática? Uma estratégia poderosa é agregar bens em categorias, reduzindo a dimensionalidade do problema. Mas essa agregação é legítima do ponto de vista teórico? Sob que condições podemos tratar um grupo de bens como se fosse um único bem? Em modelos aplicados, frequentemente trabalhamos com centenas ou milhares de bens. Para tornar a análise tratável, agrupamos bens em categorias. O **Teorema do Bem Composto de Hicks** fornece a justificativa teórica para essa prática.
+Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10.000 elasticidades cruzadas. Ninguém tem dados suficientes para estimar tudo isso. A solução prática: agrupar bens em categorias ("alimentação", "transporte", "lazer") e tratar cada categoria como um único "super-bem". Mas cuidado: agrupar bens arbitrariamente pode gerar erros graves. O **Teorema do Bem Composto de Hicks** diz *quando* a agregação é legítima — e a condição é surpreendentemente simples.
 
 !!! theorem "Teorema do Bem Composto de Hicks"
     Se um grupo de bens tem seus preços variando na mesma proporção, então esse grupo pode ser tratado como um único **bem composto**, cujo "preço" é um índice dos preços do grupo e cuja "quantidade" é o gasto real com o grupo.
@@ -363,7 +363,7 @@ O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o be
 
 ## 6.6 Produção Doméstica, Atributos dos Bens e Preços Implícitos
 
-Até este ponto, tratamos os bens como objetos homogêneos de desejo: o consumidor deseja "arroz", "transporte" ou "moradia". Mas, na realidade, por que alguém deseja um apartamento? Pela metragem? Pela localização? Pela vista? A resposta, naturalmente, é "por tudo isso junto" — o que sugere que talvez os bens não sejam a unidade fundamental de análise. Dois modelos influentes exploram essa ideia, reformulando a teoria do consumidor de maneiras complementares.
+Pergunta incômoda: por que alguém "deseja" arroz? Ninguém acorda de manhã sonhando com grãos brancos. O que a pessoa quer são nutrientes, saciedade, sabor — *atributos* do arroz, não o arroz em si. Da mesma forma, ninguém compra um apartamento pelo concreto: compra metragem, localização, vista, silêncio. Essa observação aparentemente trivial inspira duas reformulações radicais da teoria do consumidor.
 
 ### 6.6.1 O modelo de Lancaster
 
@@ -437,7 +437,7 @@ Essa perspectiva também conecta este capítulo ao Capítulo 12, sobre equilíbr
 
 ## 6.7 Agregação da Demanda: Do Individual ao Mercado
 
-Até aqui, toda a análise concentrou-se no consumidor individual. Mas os mercados são compostos por milhões de consumidores, cada um com preferências, renda e comportamento próprios. Como passamos da demanda individual para a demanda de mercado? A resposta parece trivial — basta somar —, mas as consequências dessa agregação são profundas e nem sempre intuitivas. A demanda de mercado herda todas as propriedades da demanda individual? Podemos nos comportar como se existisse um "consumidor representativo"?
+Até aqui, estudamos um consumidor solitário fazendo escolhas perfeitas. Mas o mercado tem milhões de consumidores — velhos e jovens, ricos e pobres, racionais e impulsivos. A operação óbvia é somar todas as demandas individuais. Mas somar é inocente? A demanda de mercado herda as boas propriedades (Slutsky, homogeneidade) da demanda individual? Podemos fingir que existe um "brasileiro médio" cujas preferências representam as de todos? A resposta curta: depende. A resposta longa é esta seção.
 
 ### 6.7.1 Demanda de mercado
 

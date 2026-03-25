@@ -1,6 +1,6 @@
 # Capítulo 7 — O Preço do Talvez
 
-A maior parte das decisões econômicas relevantes envolve algum grau de incerteza. Quando um agricultor decide o que plantar, quando um investidor aloca recursos entre ativos financeiros ou quando um consumidor contrata um plano de saúde, nenhum deles conhece com precisão os resultados futuros de suas escolhas. A microeconomia da incerteza fornece o arcabouço analítico para modelar essas decisões, permitindo compreender como agentes racionais avaliam alternativas cujos resultados dependem de estados do mundo que ainda não se materializaram.
+Até agora, o consumidor do nosso livro vivia num mundo confortável: ele sabia exatamente quanto custava cada bem, quanto ganhava por mês e qual era a qualidade de cada produto. A partir deste capítulo, tiramos esse tapete. No mundo real, o agricultor planta sem saber se vai chover; o investidor aplica sem saber se o mercado vai subir; o trabalhador aceita um emprego sem garantia de que a empresa sobreviverá. A **incerteza** é a regra, não a exceção — e a microeconomia precisa de ferramentas para lidar com ela.
 
 Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito de **loteria**, passando pela formulação axiomática da **utilidade esperada** de Von Neumann e Morgenstern, pela caracterização da **aversão ao risco** e suas medidas quantitativas, até os mecanismos institucionais que permitem reduzir ou redistribuir riscos. Ao final, introduzimos a abordagem de **estado-preferência** e oferecemos uma visão preliminar dos problemas de **informação assimétrica** que serão aprofundados em capítulos posteriores.
 
@@ -12,7 +12,7 @@ Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito
 
 ## 7.1 Loterias e Valor Esperado
 
-Para modelar decisões sob incerteza, precisamos primeiro de uma linguagem formal que descreva as alternativas disponíveis ao agente. Essa linguagem é fornecida pelo conceito de **loteria** — uma representação matemática de qualquer situação cujo resultado depende do acaso. De um bilhete de rifa a um investimento em ações, toda escolha arriscada pode ser descrita como uma loteria com resultados e probabilidades bem definidos.
+O primeiro passo é surpreendentemente simples: toda decisão sob incerteza é uma **loteria**. Comprar ações da Petrobras? Loteria (pode subir ou cair). Abrir uma padaria? Loteria (pode dar certo ou quebrar). Até atravessar a rua sem olhar é uma loteria — com probabilidades que você prefere não calcular. Essa metáfora não é apenas poética: é literal. O conceito matemático de loteria é geral o suficiente para representar qualquer situação cujo resultado depende do acaso.
 
 !!! definition "Loteria simples"
     Uma **loteria simples** é uma distribuição de probabilidade sobre um conjunto finito de resultados. Formalmente, uma loteria \(L\) é descrita por:
@@ -64,9 +64,7 @@ O paradoxo de São Petersburgo continua relevante dois séculos e meio depois de
 
 ## 7.2 Hipótese da Utilidade Esperada (Von Neumann–Morgenstern)
 
-O Paradoxo de São Petersburgo mostrou que o valor esperado, embora intuitivo, não é um critério satisfatório para descrever as decisões dos agentes diante do risco. É necessário um arcabouço mais sofisticado, que leve em conta não apenas os resultados e suas probabilidades, mas também a forma como o agente os avalia subjetivamente. Esse arcabouço é a **Hipótese da Utilidade Esperada**.
-
-A formalização moderna da teoria da utilidade esperada foi apresentada por John von Neumann e Oskar Morgenstern em 1944. Ela estabelece condições sob as quais as preferências de um agente sobre loterias podem ser representadas por uma função de utilidade com propriedade de linearidade nas probabilidades.
+O Paradoxo de São Petersburgo destruiu o valor esperado como critério de decisão. Precisamos de algo melhor — algo que capture não só "quanto, em média" mas "quanto *vale para mim*". A solução veio de um lugar inesperado: um livro de teoria dos jogos. Em 1944, o matemático John von Neumann e o economista Oskar Morgenstern mostraram que, se o agente obedece a quatro regras de coerência (axiomas), suas preferências sobre loterias podem ser representadas por uma função que pondera utilidades — não dinheiro — pelas probabilidades. A ideia é devastadoramente simples: em vez de calcular \(E[\text{dinheiro}]\), calcule \(E[\text{felicidade}]\). Essa mudança de uma letra — de \(x\) para \(u(x)\) — é toda a diferença.
 
 !!! definition "Axiomas de Von Neumann–Morgenstern"
     Sejam \(L_1, L_2, L_3\) loterias no conjunto \(\mathcal{L}\). As preferências \(\succsim\) satisfazem os axiomas VNM se:
@@ -122,7 +120,7 @@ Apesar dessas críticas comportamentais, a teoria VNM permanece o padrão normat
 
 ## 7.3 Aversão ao Risco
 
-Com o arcabouço da utilidade esperada em mãos, podemos agora investigar uma questão central: como os agentes se posicionam diante do risco? Intuitivamente, sabemos que a maioria das pessoas prefere evitar incertezas desnecessárias — é por isso que existem seguros, contratos de trabalho com salário fixo e fundos de previdência. A teoria formaliza essa intuição por meio da curvatura da função de utilidade, conectando um conceito geométrico (concavidade) a um comportamento econômico observável (a preferência pela estabilidade).
+Agora a pergunta que define a personalidade econômica de cada um: diante de uma aposta justa — cara ganha R$ 100, coroa perde R$ 100 —, você aceita ou recusa? A maioria das pessoas recusa. Prefere o certo ao duvidoso, mesmo quando a média é a mesma. Essa preferência pela estabilidade tem um nome (aversão ao risco) e uma causa geométrica (a curvatura da função de utilidade). A conexão entre um conceito abstrato (concavidade) e um comportamento observável (contratar seguro, diversificar investimentos, preferir salário fixo) é uma das pontes mais elegantes de toda a microeconomia.
 
 !!! definition "Classificação de atitudes frente ao risco"
     Seja \(u\) uma função de utilidade VNM. Um agente é:
@@ -174,9 +172,7 @@ Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou d
 
 ## 7.4 Medidas de Aversão ao Risco (Arrow-Pratt)
 
-Saber que um agente é avesso ao risco já é informativo, mas para muitas aplicações precisamos ir além: quanto avesso? Mais avesso que outro agente? Mais avesso hoje, com pouca riqueza, do que seria amanhã, se ficasse mais rico? Para responder a essas perguntas, é necessário dispor de uma **medida quantitativa** da aversão ao risco — algo que converta a noção intuitiva de "gostar mais ou menos de risco" em um número comparável entre agentes e entre níveis de riqueza.
-
-Para comparar a aversão ao risco entre agentes ou ao longo de diferentes níveis de riqueza, Kenneth Arrow e John Pratt desenvolveram medidas locais baseadas na curvatura da função de utilidade.
+"Sou avesso ao risco" — OK, mas *quanto*? Mais que você? Mais agora (quando estou pobre) do que depois (quando ficar rico)? Dizer "sou avesso" é como dizer "faz calor" sem ter termômetro. As medidas de **Arrow-Pratt** são esse termômetro: convertem a curvatura da função de utilidade — um objeto geométrico — em um número que pode ser comparado entre pessoas, entre momentos e entre níveis de riqueza.
 
 !!! definition "Coeficiente de aversão absoluta ao risco (ARA)"
     O coeficiente de aversão absoluta ao risco de Arrow-Pratt é definido como:
@@ -654,7 +650,7 @@ Uma distinção importante é que o valor da informação depende de *quão* boa
 
 Até aqui, abordamos a incerteza pelo lado do agente individual: como ele avalia loterias, quão avesso ao risco ele é, quanto pagaria por um seguro. Mas existe uma perspectiva complementar e igualmente poderosa, que reconecta a teoria da incerteza à teoria do consumidor que já conhecemos dos capítulos anteriores. Em vez de pensar em "loterias", podemos pensar em "bens contingentes" — bens que existem condicionalmente à ocorrência de determinados estados do mundo. Essa reformulação, devida a Arrow e Debreu, revela uma elegância profunda: escolher sob incerteza é, no fundo, escolher um cesto de consumo, exatamente como no problema do consumidor determinístico.
 
-A abordagem de estado-preferência, desenvolvida por Arrow (1964) e Debreu (1959), oferece uma perspectiva alternativa para modelar a incerteza.
+E se pudéssemos tratar a incerteza como... mais um problema de consumidor? A ideia — genial na sua simplicidade — é imaginar que existem "bens" especiais: um "guarda-chuva" que só entrega valor se chover, um "protetor solar" que só serve se fizer sol. Esses **ativos contingentes** transformam a escolha sob incerteza em uma escolha entre cestas — exatamente como nos Capítulos 3-4, mas agora as "mercadorias" são pagamentos condicionais a estados do mundo.
 
 !!! definition "Espaço de estados e ativos contingentes"
     - Um **estado da natureza** \(s \in S = \{1, 2, \ldots, S\}\) descreve uma configuração completa e mutuamente exclusiva do mundo.
@@ -703,7 +699,7 @@ A abordagem estado-preferência tem implicações normativas importantes para a 
 
 A análise até aqui pressupôs que todos os agentes compartilham a mesma informação sobre os riscos envolvidos. Mas o que acontece quando uma das partes sabe mais do que a outra? Essa assimetria de informação é, na prática, a regra — não a exceção. O vendedor de um carro usado conhece os defeitos ocultos; o paciente sabe mais sobre seus hábitos de saúde do que a seguradora; o gerente de uma empresa sabe mais sobre o desempenho de sua equipe do que o acionista. Essas assimetrias geram problemas que podem comprometer o funcionamento eficiente dos mercados de risco.
 
-Os problemas de informação assimétrica surgem quando uma das partes de uma transação possui informação relevante que a outra desconhece. Esses problemas são centrais para a compreensão de falhas de mercado e serão tratados em profundidade em capítulos posteriores. Apresentamos aqui uma visão preliminar dos dois tipos fundamentais.
+Para fechar o capítulo, um aperitivo do que vem pela frente: e quando o problema não é *você* não saber o futuro, mas *a outra parte* saber mais que você? O vendedor de carro usado sabe se o motor é bom; a seguradora não sabe se você dirige rápido; o empregador não sabe se o candidato é preguiçoso. Essa **assimetria de informação** gera problemas que a teoria da utilidade esperada, sozinha, não resolve — mas que serão o tema central dos Capítulos 9d e 19. Aqui, plantamos as sementes.
 
 ### 7.8.1 Seleção adversa
 

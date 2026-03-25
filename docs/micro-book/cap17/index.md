@@ -1,6 +1,6 @@
 # Capítulo 17 — O Preço do Suor: Economia do Trabalho
 
-O mercado de trabalho é, provavelmente, o mercado mais importante para a maioria das pessoas. A renda do trabalho representa cerca de dois terços da renda nacional na maioria dos países, e as decisões sobre quanto trabalhar, que carreira seguir e como negociar salários afetam profundamente o bem-estar individual e coletivo. Neste capítulo, aplicamos as ferramentas da microeconomia — teoria do consumidor, equilíbrio de mercado e poder de mercado — ao estudo da oferta e da demanda de trabalho.
+Todo dia, ao desligar o despertador, você enfrenta — conscientemente ou não — o dilema mais antigo da economia: vale a pena trocar mais uma hora de travesseiro por mais uma hora de salário? A renda do trabalho representa cerca de dois terços da renda nacional na maioria dos países, e as decisões sobre quanto trabalhar, que carreira seguir e como negociar salários afetam profundamente o bem-estar individual e coletivo. Neste capítulo, aplicamos as ferramentas da microeconomia — teoria do consumidor, equilíbrio de mercado e poder de mercado — ao estudo da oferta e da demanda de trabalho. Spoiler: a resposta para "salário maior sempre faz a pessoa trabalhar mais" é um sonoro *depende*.
 
 Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre consumo e lazer, e derivamos rigorosamente a curva de oferta de trabalho. Em seguida, analisamos fenômenos como a curva de oferta backward-bending, o equilíbrio competitivo, os diferenciais salariais, o monopsônio e o papel dos sindicatos. Ao longo do capítulo, conectamos a teoria à realidade brasileira, marcada por elevada informalidade, desigualdade salarial e um debate persistente sobre os efeitos do salário mínimo.
 
@@ -10,7 +10,7 @@ Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre co
 
 ### O problema fundamental
 
-Cada indivíduo dispõe de um estoque fixo de tempo — convencionalmente \(T\) horas por período (por exemplo, \(T = 24\) horas por dia ou \(T = 168\) horas por semana). Esse tempo pode ser alocado entre duas atividades:
+O dia tem 24 horas — para o estagiário e para o CEO. Nenhum dinheiro do mundo compra uma hora a mais. Cada indivíduo dispõe de um estoque fixo de tempo — convencionalmente \(T\) horas por período — e precisa decidir como repartir essa dotação entre duas atividades:
 
 - **Lazer** (\(L\)): horas dedicadas a atividades que geram utilidade diretamente (descanso, convívio familiar, entretenimento).
 - **Trabalho** (\(h\)): horas dedicadas à atividade remunerada, com \(h = T - L\).
@@ -87,7 +87,7 @@ O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamen
 
 ## 17.2 Análise Matemática da Oferta de Trabalho
 
-A seção anterior apresentou os elementos conceituais do modelo trabalho-lazer: a restrição orçamentária do tempo, o conceito de renda plena e a condição de tangência. Agora, formalizamos rigorosamente o problema de otimização do trabalhador e derivamos os efeitos de variações salariais sobre a oferta de trabalho, utilizando a decomposição de Slutsky adaptada ao contexto da alocação do tempo. Essa derivação é fundamental porque revela por que a oferta de trabalho pode ter inclinação positiva ou negativa — uma ambiguidade com implicações diretas para a política tributária e salarial.
+A intuição já está montada; agora é hora de apertar os parafusos com álgebra. Nesta seção, formalizamos rigorosamente o problema de otimização do trabalhador e derivamos os efeitos de variações salariais sobre a oferta de trabalho, utilizando a decomposição de Slutsky adaptada ao contexto da alocação do tempo. Essa derivação é fundamental porque revela por que a oferta de trabalho pode ter inclinação positiva ou negativa — uma ambiguidade que não é apenas uma curiosidade de quadro-negro, mas tem implicações diretas para a política tributária e salarial.
 
 ### O problema de maximização
 
@@ -323,7 +323,7 @@ Do ponto de vista empírico, a maior parte da variação na oferta de trabalho a
 
 ## 17.5 Equilíbrio no Mercado de Trabalho
 
-Com a curva de oferta de trabalho em mãos, podemos agora reunir os dois lados do mercado — oferta (trabalhadores) e demanda (firmas) — para determinar o salário de equilíbrio. O mecanismo é análogo ao de qualquer mercado competitivo, mas com uma particularidade importante: a demanda por trabalho é uma demanda derivada, que depende da produtividade marginal do trabalhador e do preço do produto final.
+Hora de juntar as duas metades da história. Até aqui, olhamos o mercado de trabalho pelo lado do trabalhador, que decide quantas horas vender. Mas ninguém vende horas para o vazio — do outro lado do balcão está a firma, que compra trabalho porque precisa produzir. O mecanismo é análogo ao de qualquer mercado competitivo, com uma particularidade saborosa: a demanda por trabalho é uma demanda *derivada*, que não surge do desejo de "ter" trabalhadores, mas da necessidade de transformar horas de esforço em produto vendável.
 
 ### Determinação do salário competitivo
 
@@ -501,7 +501,7 @@ Aplicações da decomposição de Oaxaca-Blinder ao Brasil (por exemplo, Giubert
 
 ## 17.7 Monopsônio no Mercado de Trabalho
 
-Até este ponto, a análise pressupôs que o mercado de trabalho é perfeitamente competitivo: trabalhadores e firmas são todos tomadores de salário. Mas o que acontece quando há poder de mercado do lado da demanda — isto é, quando uma firma (ou poucas firmas) é a única compradora de trabalho em uma região ou ocupação? Essa estrutura, conhecida como monopsônio, é o espelho do monopólio no mercado de bens e gera distorções análogas: salários abaixo da produtividade e emprego inferior ao socialmente ótimo.
+Até aqui, o mercado de trabalho era uma democracia: muitos vendedores, muitos compradores, ninguém mandando no preço. Mas pergunte a um professor em cidade pequena do interior, onde a prefeitura é a única empregadora com carteira assinada, se o mercado parece competitivo. Quando há poder de mercado do lado da demanda — isto é, quando uma firma (ou poucas firmas) é a única compradora de trabalho em uma região ou ocupação —, entramos no território do monopsônio, o espelho do monopólio no mercado de bens. O resultado é previsível e desagradável: salários abaixo da produtividade e emprego inferior ao socialmente ótimo.
 
 !!! definition "Monopsônio"
     **Monopsônio** é a estrutura de mercado em que existe um único comprador de trabalho (ou poucos compradores com poder de mercado). Nessa situação, a firma não é tomadora de salário: ao contratar mais trabalhadores, ela eleva o salário de mercado.
@@ -855,7 +855,7 @@ A [Tabela 17.2](#tabela-17-2) sintetiza os resultados das seções anteriores e 
 
 ## 17.10 Economia da Terra e Recursos Naturais
 
-O trabalho é apenas um dos três fatores de produção clássicos — ao lado do **capital** (tratado no Capítulo 18) e da **terra** (incluindo recursos naturais). Embora a teoria do mercado de trabalho receba a maior parte da atenção em cursos de microeconomia, uma análise completa dos mercados de fatores exige examinar a determinação da remuneração da terra — a **renda da terra** — e sua relação com os conceitos de renda econômica e renda de transferência.
+Trabalho e capital podem ser criados, acumulados e movidos de lugar. A terra, não — ela está ali, parada, esperando que alguém decida o que plantar ou construir em cima. Essa imobilidade teimosa faz da terra um fator de produção com propriedades únicas, e é por isso que economistas de David Ricardo a Henry George ficaram obcecados com ela. Uma análise completa dos mercados de fatores exige examinar a determinação da remuneração da terra — a **renda da terra** — e sua relação com os conceitos de renda econômica e renda de transferência.
 
 ### Renda da terra: de Ricardo à análise moderna
 

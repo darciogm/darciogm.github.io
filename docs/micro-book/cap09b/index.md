@@ -1,8 +1,8 @@
 # Capítulo 9b — Pensando de Trás para Frente: Jogos Dinâmicos com Informação Completa
 
-No módulo anterior (9a), todos os jogadores escolhiam suas ações simultaneamente. Muitas interações econômicas, porém, ocorrem em **sequência**: uma firma investe primeiro e a concorrente reage; um sindicato apresenta uma proposta e a empresa aceita ou recusa; um banco central anuncia uma meta e os agentes privados ajustam expectativas. Nesses contextos, a ordem das ações não é irrelevante — ela cria assimetrias de informação, possibilidades de comprometimento e oportunidades para o exercício estratégico de influência.
+No módulo anterior, todo mundo jogava ao mesmo tempo — como num "já!" de par ou ímpar. Agora, entra o tempo. Uma firma investe *antes* de a concorrente reagir. Um sindicato faz a proposta *primeiro* e a empresa responde *depois*. O Banco Central anuncia a meta de inflação *hoje* e os agentes ajustam expectativas *amanhã*. Quando a ordem importa, tudo muda.
 
-Quando as ações são observáveis e o jogo se desenrola ao longo do tempo, o conceito de equilíbrio de Nash pode sustentar resultados baseados em **ameaças não críveis** — promessas de ações que o jogador não teria incentivo para cumprir se o momento chegasse. O remédio é pensar "de trás para frente": a **indução retroativa** e o conceito de **Equilíbrio Perfeito em Subjogos** (EPS).
+O problema: o equilíbrio de Nash, que funcionava bem para jogos simultâneos, começa a aceitar blefes. Ele permite que jogadores "ameacem" com ações que nunca executariam de verdade — como a mãe que ameaça "se não comer o espinafre, ninguém vai para a Disney" sabendo que ela mesma quer ir. O remédio: pensar **de trás para frente**. Começar pelo fim do jogo, perguntar "nesse ponto, o que cada jogador *de fato* faria?" e retroceder até o início. Esse procedimento é a **indução retroativa**, e o resultado é o **Equilíbrio Perfeito em Subjogos** — um Nash que só aceita ameaças críveis.
 
 Este módulo cobre jogos sequenciais, jogos repetidos (finitos e infinitos) e barganha, completando a análise de informação completa da taxonomia de Gibbons (1992, Cap. 2). O material aqui conecta-se diretamente ao Módulo 9a (que trata dos fundamentos do equilíbrio de Nash em jogos estáticos) e prepara o terreno para os Módulos 9c e 9d, onde a informação deixa de ser completa e a análise se torna substancialmente mais complexa. A intuição central — racionalidade sequencial e credibilidade de ameaças — permanece, contudo, o fio condutor de toda a teoria dos jogos.
 
@@ -14,9 +14,9 @@ A dimensão temporal transforma radicalmente a análise estratégica. A sequenci
 
 ### Forma extensiva e indução retroativa
 
-Nos jogos sequenciais, os jogadores se movem em ordem cronológica, e jogadores posteriores podem observar as ações dos anteriores. A **forma extensiva** — representada por uma árvore de decisão — é a ferramenta natural para descrever esses jogos: cada nó corresponde a um momento de decisão, cada ramo a uma ação possível, e cada folha terminal a um vetor de payoffs. Diferentemente da forma normal (a matriz de payoffs do Módulo 9a), a forma extensiva captura explicitamente a sequência temporal das ações e a informação disponível em cada ponto do jogo.
+A ferramenta visual dos jogos sequenciais é a **árvore de decisão** (forma extensiva): nós são momentos de escolha, ramos são ações, folhas são payoffs. É como um fluxograma — mas onde cada "caixa de decisão" pertence a um jogador diferente, e cada um vê o que os anteriores fizeram.
 
-O conceito de solução apropriado é a **indução retroativa** (*backward induction*): resolve-se o jogo "de trás para frente", determinando as ações ótimas nos últimos nós de decisão e retrocedendo até o início. O procedimento é simples na prática: identificam-se os nós terminais do jogo, determina-se a ação ótima do último decisor em cada um deles, substitui-se esses nós pelo payoff correspondente, e repete-se o processo até o nó inicial. O resultado é um conjunto de ações — uma estratégia completa para cada jogador — que constitui o Equilíbrio Perfeito em Subjogos.
+Como resolver? **Comece pelo fim.** Olhe os últimos nós da árvore e pergunte: "o que o jogador faria aqui?" Anote a resposta, "pode" esses nós, suba um nível e repita. Quando chegar ao início, você tem a solução completa. Esse procedimento de "descascar a cebola de fora para dentro" é a **indução retroativa**, e o equilíbrio que ela produz é o EPS.
 
 !!! definition "Equilíbrio Perfeito em Subjogos (EPS)"
     Um perfil de estratégias constitui um **Equilíbrio Perfeito em Subjogos** se induz um equilíbrio de Nash em **todo subjogo** do jogo na forma extensiva.
@@ -112,7 +112,7 @@ No contexto de política econômica, o comprometimento assume diversas formas in
 
 ## 9b.2 Jogos Repetidos
 
-A análise de jogos sequenciais na seção anterior tratou de interações que ocorrem uma única vez. Mas a maioria das relações econômicas de interesse — entre firmas concorrentes, entre empregador e empregado, entre países que comerciam — envolve interações repetidas ao longo do tempo. Essa repetição muda fundamentalmente a lógica estratégica: quando os mesmos jogadores se encontram novamente amanhã, a possibilidade de **punição futura** pode sustentar a cooperação em equilíbrio, mesmo quando o jogo de estágio tem um único equilíbrio não cooperativo. Será que a cooperação pode emergir do puro autointeresse, sem necessidade de contratos ou regulação externa?
+A seção anterior tratou de interações que acontecem uma vez e acabam. Mas pense nas relações econômicas que realmente importam: Ambev e Heineken competem *todo mês*. Brasil e Argentina negociam comércio *todo ano*. Você e seu colega de trabalho interagem *todo dia*. Quando o jogo se repete, uma possibilidade fascinante emerge: **a sombra do futuro disciplina o presente**. Se eu sei que te encontro amanhã, tenho incentivo para não te trair hoje — porque amanhã você pode me punir. Será que a cooperação pode nascer do puro egoísmo, sem contratos, sem regulador, sem lei?
 
 É fundamental distinguir entre dois conceitos relacionados: o **jogo de estágio** (o jogo original, jogado a cada período) e o **jogo repetido** (a sequência de interações ao longo do tempo). O jogo de estágio captura a estrutura de incentivos de cada interação isolada; o jogo repetido adiciona a dimensão temporal e a possibilidade de condicionamento das ações à história passada. Estratégias no jogo repetido são, portanto, **planos contingentes** que podem depender de tudo que aconteceu até o período corrente — e essa riqueza estratégica é o que abre espaço para a cooperação.
 
@@ -278,7 +278,7 @@ Além do grim trigger, existem estratégias mais sofisticadas, comparadas na [Ta
 
 ## 9b.3 Barganha
 
-Os jogos repetidos mostram como a interação prolongada pode sustentar cooperação. Mas muitas situações econômicas envolvem um tipo diferente de dinâmica: não a repetição de um mesmo jogo, mas uma negociação sequencial sobre a divisão de um excedente. Compradores e vendedores, sindicatos e empresas, países em disputas comerciais — todos enfrentam o problema de como dividir os ganhos do acordo. Os modelos de barganha formalizam essa questão, e a análise por indução retroativa revela resultados que, embora matematicamente elegantes, frequentemente desafiam as intuições comportamentais.
+Última peça do módulo — e talvez a mais intuitiva. Jogos repetidos tratam de cooperação ao longo do tempo; **barganha** trata de *como dividir o bolo*. Compradores e vendedores pechinchando, sindicatos negociando salário, países dividindo quotas de pesca — todos enfrentam a mesma pergunta: "quanto fica para mim, quanto fica para você?" A teoria da barganha formaliza essa negociação, e o resultado depende de um fator que a sabedoria popular já conhece: **quem pode esperar mais, leva mais**. A paciência é poder.
 
 ### O Jogo do Ultimato
 

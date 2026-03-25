@@ -1,6 +1,6 @@
 # Capítulo 15 — Sem Concorrente, Sem Piedade
 
-O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.
+Se no Capítulo 14 vivíamos no paraíso da concorrência perfeita — milhares de firmas, ninguém mandando em nada —, agora entramos no lado sombrio do mercado: um único vendedor, zero concorrência e um sorriso no rosto de quem define o preço. O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.
 
 A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira — energia elétrica, saneamento, telecomunicações fixas —, e o exercício de poder de mercado é uma preocupação central da política antitruste em todo o mundo. A fusão que criou a Ambev, os contratos de concessão da ANEEL, o teto de preços da ANATEL — todos esses casos envolvem, em sua essência, a economia do monopólio apresentada neste capítulo. Compreender como o monopolista fixa preços, por que essa fixação gera ineficiência e quais instrumentos regulatórios podem mitigá-la é, portanto, indispensável tanto para o economista teórico quanto para o formulador de políticas públicas.
 
@@ -10,7 +10,7 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 
 ## 15.1 Barreiras à entrada
 
-Antes de analisarmos como o monopolista fixa preços e quantidades, cabe perguntar: por que os lucros extraordinários do monopolista não atraem concorrentes que, ao entrar no mercado, erosionariam seu poder de mercado? A resposta reside nas **barreiras à entrada**. Sem elas, o monopólio seria uma posição transitória, rapidamente contestada por rivais ávidos por lucro — como veremos na Seção 15.10 ao discutir mercados contestáveis. É precisamente a existência de obstáculos à entrada que permite ao monopolista sustentar sua posição privilegiada no longo prazo.
+Se o monopólio é tão lucrativo, por que todo mundo não entra nesse mercado e acaba com a festa? Imagine uma fortaleza medieval: o castelo só sobrevive porque tem muralhas, fossos e portões levadiços. O monopólio funciona da mesma forma — ele só se sustenta porque existem **barreiras à entrada**. Sem elas, o monopólio seria uma posição transitória, rapidamente contestada por rivais ávidos por lucro — como veremos na Seção 15.10 ao discutir mercados contestáveis. É precisamente a existência de obstáculos à entrada que permite ao monopolista sustentar sua posição privilegiada no longo prazo.
 
 Historicamente, a reflexão sobre barreiras à entrada remonta pelo menos a Joe Bain (1956), que as classificou em três categorias — vantagens absolutas de custo, economias de escala e diferenciação de produto. A taxonomia moderna, apresentada a seguir, preserva a essência dessa classificação enquanto incorpora contribuições posteriores de Stigler (1968) e da teoria dos jogos.
 
@@ -69,7 +69,7 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 ## 15.2 Maximização de lucro do monopolista
 
-Compreendidas as origens do monopólio, podemos agora analisar como o monopolista explora sua posição. A questão central é: dado que o monopolista é o único ofertante, como ele escolhe preço e quantidade para maximizar seu lucro? A resposta exige uma análise cuidadosa da relação entre receita marginal, custo marginal e elasticidade da demanda — relação esta que se tornará um instrumento analítico recorrente ao longo do restante do livro.
+Agora que sabemos *por que* o monopolista reina sozinho, vem a pergunta que realmente interessa: o que ele faz com todo esse poder? Imagine que você é o único vendedor de guarda-chuvas em uma cidade onde chove todos os dias. Você cobra quanto quiser? Não exatamente — se exagerar no preço, ninguém compra. O monopolista vive esse dilema: ele tem poder, mas não é onipotente. A resposta exige uma análise cuidadosa da relação entre receita marginal, custo marginal e elasticidade da demanda — relação esta que se tornará um instrumento analítico recorrente ao longo do restante do livro.
 
 Diferentemente da firma competitiva, que toma o preço como dado e escolhe apenas a quantidade, o monopolista reconhece que suas decisões de quantidade afetam o preço de mercado. Ao expandir a produção, ele enfrenta dois efeitos opostos sobre a receita: o *efeito quantidade* (vende mais unidades) e o *efeito preço* (precisa reduzir o preço de *todas* as unidades, inclusive as que já venderia ao preço mais alto). Essa tensão entre os dois efeitos é a essência do problema de monopólio e explica por que a receita marginal é sempre inferior ao preço.
 
@@ -261,7 +261,7 @@ A derivação formal a seguir explicita a conexão algébrica entre o poder de m
 
 ## 15.4 Ineficiência do monopólio
 
-Até aqui, analisamos o monopólio do ponto de vista da firma: como ela maximiza lucro, que preço cobra, que quantidade produz. Mas qual é o custo dessa estrutura de mercado para a sociedade como um todo? Em que medida o poder de mercado do monopolista compromete a eficiência alocativa que os Teoremas do Bem-Estar (Capítulo 14) garantem para mercados competitivos? A resposta a essas perguntas fundamenta a justificativa econômica para a regulação e a política antitruste — e, como veremos, envolve não apenas o conhecido "triângulo de Harberger", mas também custos mais sutis associados ao *rent-seeking* e à ineficiência organizacional.
+Até aqui, contamos a história do monopólio pelo ângulo do vilão — e, convenhamos, para o monopolista a vida é boa: ele escolhe preço, quantidade e vai dormir tranquilo. Mas e o resto da sociedade? Alguém está pagando a conta dessa tranquilidade. Em que medida o poder de mercado do monopolista compromete a eficiência alocativa que os Teoremas do Bem-Estar (Capítulo 14) garantem para mercados competitivos? A resposta a essas perguntas fundamenta a justificativa econômica para a regulação e a política antitruste — e, como veremos, envolve não apenas o conhecido "triângulo de Harberger", mas também custos mais sutis associados ao *rent-seeking* e à ineficiência organizacional.
 
 ### Perda de peso morto
 
@@ -460,7 +460,7 @@ O monopolista iguala a receita marginal da qualidade ao custo marginal da qualid
 
 ## 15.7 Discriminação de preços
 
-Uma das estratégias mais poderosas à disposição do monopolista consiste em abandonar a prática de preço único. Se o monopolista consegue identificar — ou induzir a autorevelação de — diferentes disposições a pagar entre consumidores, ele pode explorar essa heterogeneidade para extrair mais excedente do que seria possível com um preço uniforme. Essa prática, conhecida como discriminação de preços, é onipresente no mundo real e assume formas sofisticadas que variam de passagens aéreas a planos de software, de ingressos de cinema a tarifas de eletricidade.
+Você já se perguntou por que a mesma passagem de avião custa R$ 400 para quem compra com antecedência e R$ 2.000 para quem compra na véspera — sendo que os dois sentam no mesmo avião, comem o mesmo amendoim e chegam ao mesmo destino? A resposta é que o monopolista (ou quase-monopolista) aprendeu um truque poderoso: abandonar a prática de preço único. Se o monopolista consegue identificar — ou induzir a autorevelação de — diferentes disposições a pagar entre consumidores, ele pode explorar essa heterogeneidade para extrair mais excedente do que seria possível com um preço uniforme. Essa prática, conhecida como discriminação de preços, é onipresente no mundo real e assume formas sofisticadas que variam de passagens aéreas a planos de software, de ingressos de cinema a tarifas de eletricidade.
 
 A discriminação de preços exige duas condições: (i) algum grau de poder de mercado e (ii) impossibilidade de revenda (arbitragem) entre consumidores. A segunda condição é crucial: se consumidores que pagam preço baixo pudessem revender para os que pagam preço alto, a discriminação seria impossível. A taxonomia clássica, devida a Pigou (1920), distingue três graus de discriminação conforme a informação disponível ao monopolista.
 
@@ -622,7 +622,7 @@ O exercício a seguir aplica a discriminação de terceiro grau a um problema co
 
 ## 15.8 Tarifas em duas partes
 
-A tarifa em duas partes constitui uma das formas mais elegantes e difundidas de precificação não-linear. Diferentemente dos esquemas de discriminação discutidos na seção anterior, que exigem observar ou induzir a revelação de tipos, a tarifa em duas partes combina simplicidade operacional com capacidade de extração de excedente, razão pela qual é amplamente utilizada em setores que vão de telecomunicações a academias de ginástica, de parques de diversões a clubes de compras.
+Se você já pagou mensalidade de academia e *depois* pagou por aula extra, ou comprou o cartão do Sam's Club para ter o "privilégio" de comprar lá dentro, você já foi vítima (voluntária) de uma tarifa em duas partes. Essa é uma das formas mais elegantes e difundidas de precificação não-linear. Diferentemente dos esquemas de discriminação discutidos na seção anterior, que exigem observar ou induzir a revelação de tipos, a tarifa em duas partes combina simplicidade operacional com capacidade de extração de excedente, razão pela qual é amplamente utilizada em setores que vão de telecomunicações a academias de ginástica, de parques de diversões a clubes de compras.
 
 Uma tarifa em duas partes consiste em uma **taxa de entrada** (tarifa fixa \(T\)) e um **preço por unidade** (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\). O papel de cada componente é distinto: a taxa fixa extrai excedente inframarginal (que o consumidor obteria ao preço \(p\)); o preço por unidade governa a quantidade demandada e, portanto, a eficiência alocativa.
 
@@ -835,7 +835,7 @@ O exercício a seguir aplica os três regimes regulatórios a um caso numérico 
 
 ## 15.10 Visões dinâmicas do monopólio
 
-A análise conduzida até aqui é predominantemente estática: comparamos o monopólio com a concorrência perfeita em um dado momento do tempo. Entretanto, quando adotamos uma perspectiva dinâmica — incorporando inovação, progresso tecnológico e entrada potencial —, o julgamento sobre os custos e benefícios do monopólio torna-se mais nuançado. Será que o monopólio é sempre prejudicial à sociedade, ou pode ele desempenhar um papel positivo como motor de inovação e progresso técnico? Essa questão, levantada originalmente por Joseph Schumpeter no contexto da Grande Depressão, permanece no centro dos debates contemporâneos sobre política antitruste — especialmente em setores tecnológicos dominados por grandes plataformas como Google, Amazon e Meta.
+Hora de virar a mesa. Passamos o capítulo inteiro tratando o monopolista como o grande vilão da economia — e com razão: ele produz menos, cobra mais e destrói excedente. Mas e se o monopólio, visto com outros olhos, fosse também o motor que faz a economia avançar? A análise conduzida até aqui é predominantemente estática: comparamos o monopólio com a concorrência perfeita em um dado momento do tempo. Entretanto, quando adotamos uma perspectiva dinâmica — incorporando inovação, progresso tecnológico e entrada potencial —, o julgamento sobre os custos e benefícios do monopólio torna-se mais nuançado. Será que o monopólio é sempre prejudicial à sociedade, ou pode ele desempenhar um papel positivo como motor de inovação e progresso técnico? Essa questão, levantada originalmente por Joseph Schumpeter no contexto da Grande Depressão, permanece no centro dos debates contemporâneos sobre política antitruste — especialmente em setores tecnológicos dominados por grandes plataformas como Google, Amazon e Meta.
 
 ### Schumpeter e a destruição criativa
 

@@ -1,6 +1,8 @@
 # Capítulo 1 — Todos os Modelos Estão Errados — Alguns São Úteis
 
-A microeconomia é, antes de tudo, uma disciplina de **modelagem**. O mundo real é extraordinariamente complexo: bilhões de agentes tomam decisões simultâneas, mercados interagem entre si, instituições moldam incentivos e a informação se distribui de forma desigual. Diante dessa complexidade, o economista precisa de ferramentas que permitam isolar os mecanismos essenciais e compreender relações causais. Essas ferramentas são os **modelos econômicos**.
+Se você já brigou consigo mesmo sobre pedir a sobremesa ou resistir, já fez microeconomia — só não sabia. A microeconomia estuda como pessoas, empresas e governos tomam decisões quando os recursos são escassos e as vontades, infinitas. E o instrumento principal dessa investigação não é um microscópio nem um questionário: é um **modelo** — uma história simplificada sobre como o mundo funciona, escrita na linguagem da matemática.
+
+O mundo real, convenhamos, é uma bagunça: bilhões de agentes tomam decisões simultâneas, mercados interagem entre si, instituições moldam incentivos e a informação se distribui de forma desigual. Ninguém consegue processar tudo isso de uma vez. O economista, diante dessa complexidade, faz o que qualquer pessoa sensata faria: **simplifica**. E essa simplificação deliberada, longe de ser uma fraqueza, é a maior força da disciplina.
 
 Este capítulo apresenta a lógica da construção de modelos em economia, discute como verificá-los empiricamente, examina suas características fundamentais e traça um panorama histórico do desenvolvimento da teoria do valor — o problema central da microeconomia. A exposição segue Nicholson e Snyder (2017, Cap. 1), complementada por Mas-Colell, Whinston e Green (1995, Cap. 1) e Varian (2015, Cap. 1). Para uma discussão acessível e rica em aplicações, ver Pindyck e Rubinfeld (2013, Caps. 1–2).
 
@@ -10,7 +12,7 @@ Ao final, o leitor deverá compreender não apenas *o que* a microeconomia faz, 
 
 ## 1.1 Modelos teóricos: por que simplificar?
 
-A pergunta pode parecer estranha: por que um cientista *escolheria* simplificar? A resposta, embora contra-intuitiva, é que a simplificação não é uma fraqueza da análise econômica — é sua maior força. Para entender por quê, considere uma analogia.
+A pergunta pode parecer estranha: por que um cientista *escolheria* jogar informação fora? Não seria melhor incluir tudo? A resposta, embora contra-intuitiva, é que um modelo que inclui tudo não explica nada — assim como um GPS que mostrasse cada formiga na calçada seria inútil para chegar ao trabalho. Para entender por quê, considere uma analogia.
 
 ### A analogia do mapa
 
@@ -47,7 +49,7 @@ Mas como saber se um modelo é, de fato, útil? Se a qualidade não reside nas s
 
 ### Abordagem direta versus indireta
 
-Se um modelo é, por definição, uma simplificação, como julgar se a simplificação foi bem-feita? A resposta depende do critério adotado, e aqui a metodologia econômica se divide em duas tradições distintas. Existem duas estratégias fundamentais para avaliar um modelo:
+Se um modelo é, por definição, uma mentira útil, como saber se a mentira é *boa*? Aqui a profissão se divide em duas tribos:
 
 **Abordagem direta**: examina-se o realismo das suposições do modelo. Se as premissas são "razoáveis", confia-se nas conclusões. Essa abordagem tem a vantagem da transparência, mas apresenta uma limitação séria: suposições irrealistas podem, paradoxalmente, gerar previsões excelentes. A física newtoniana, por exemplo, ignora a curvatura do espaço-tempo — suposição "errada" segundo a relatividade geral — mas prevê com precisão suficiente a órbita dos planetas para o cálculo de viagens espaciais.
 
@@ -60,7 +62,7 @@ Na prática, a maioria dos economistas adota uma posição intermediária: embor
 
 ### Testes empíricos em economia
 
-Independentemente de se adotar a abordagem direta ou indireta, a verificação de modelos econômicos exige, em última instância, confronto com dados empíricos. No entanto, a verificação empírica em economia enfrenta desafios particulares que a distinguem das ciências experimentais:
+Seja qual for a tribo, em algum momento o modelo precisa encontrar a realidade — e aí começam os problemas. Verificar um modelo econômico é muito mais difícil do que verificar se uma ponte aguenta peso. A economia enfrenta desafios particulares:
 
 - **Impossibilidade de experimentos controlados** na maioria dos casos (embora a economia experimental e os ensaios controlados aleatorizados tenham avançado significativamente desde os anos 2000).
 - **Problemas de identificação**: distinguir correlação de causalidade é o desafio central da econometria. Observar que países com mais sorveterias têm maior renda per capita não significa que sorveterias causam riqueza — ambas as variáveis podem ser efeito de um terceiro fator (clima temperado, urbanização).
@@ -93,7 +95,7 @@ Agora que compreendemos como os modelos são construídos e avaliados, podemos n
 
 ### O princípio *ceteris paribus*
 
-Os modelos microeconômicos compartilham certas características metodológicas que os distinguem de outras formas de raciocínio sobre a economia. A primeira — e talvez a mais fundamental — é o recurso ao princípio *ceteris paribus*, que permite ao economista raciocinar sobre o efeito isolado de uma variável, mesmo em um mundo onde tudo muda ao mesmo tempo.
+Se a microeconomia fosse uma religião, teria três mandamentos. O primeiro — e talvez o mais sagrado — é o princípio *ceteris paribus*: a arte de fingir que o resto do universo parou enquanto você analisa uma única variável. Parece trapaceiro, mas é genial.
 
 !!! definition "Ceteris Paribus"
     A cláusula *ceteris paribus* ("tudo o mais constante") é um recurso metodológico que permite isolar o efeito de uma variável sobre outra, mantendo todas as demais grandezas relevantes inalteradas. Por exemplo: "um aumento no preço de um bem, *ceteris paribus*, reduz a quantidade demandada."
@@ -109,7 +111,7 @@ Esse princípio é análogo ao controle de variáveis em um experimento de labor
 
 ### A hipótese de otimização
 
-O *ceteris paribus* nos diz como analisar; mas o que os modelos supõem sobre o comportamento dos agentes? Aqui entra o segundo pilar metodológico. A maior parte da microeconomia repousa sobre a premissa de que os agentes econômicos são **otimizadores**:
+O *ceteris paribus* nos diz como analisar. Mas o que os modelos supõem sobre *quem* está sendo analisado? Aqui entra o segundo mandamento — e o mais polêmico. A microeconomia aposta que todo mundo, no fundo, está tentando fazer o melhor possível com o que tem. Formalmente: os agentes são **otimizadores**:
 
 - **Consumidores** maximizam utilidade sujeita a uma restrição orçamentária. No Capítulo 3, formalizaremos essa ideia por meio dos axiomas das preferências e da função de utilidade; no Capítulo 4, resolveremos o problema de otimização propriamente dito.
 - **Firmas** maximizam lucro (ou minimizam custo) sujeitas a restrições tecnológicas. A Seção 1.7 deste capítulo oferece uma primeira demonstração dessa lógica, que será desenvolvida em profundidade nos Capítulos 7–9.
@@ -126,7 +128,7 @@ Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentid
 
 ### Distinção entre análise positiva e normativa
 
-Os dois pilares anteriores — *ceteris paribus* e otimização — são ferramentas para construir modelos e derivar previsões. Mas há uma distinção conceitual igualmente importante que todo economista precisa manter em mente: a diferença entre descrever o que *é* e prescrever o que *deveria ser*. Essa distinção, formulada originalmente por David Hume no século XVIII e popularizada por John Neville Keynes (pai de John Maynard Keynes) em 1891, permanece como uma das pedras angulares da metodologia econômica. A [Tabela 1.1](#tabela-1-1) sintetiza essa distinção.
+Terceiro mandamento: **nunca confundir o que é com o que deveria ser**. Parece óbvio, mas a tentação é enorme — especialmente em economia, onde todo mundo tem opinião. David Hume já alertava no século XVIII: do fato de que "algo é" não se pode deduzir que "algo deveria ser". John Neville Keynes (pai do Keynes famoso) formalizou a distinção em 1891. Ela permanece como uma das pedras angulares da metodologia econômica — e como uma das mais violadas no debate público. A [Tabela 1.1](#tabela-1-1) sintetiza a ideia.
 
 <a id="tabela-1-1"></a>
 
@@ -144,7 +146,7 @@ Os dois pilares anteriores — *ceteris paribus* e otimização — são ferrame
 !!! tip "Importância da distinção"
     Embora a fronteira entre análise positiva e normativa nem sempre seja nítida, manter a distinção é essencial para o rigor intelectual. Muitas controvérsias em política econômica decorrem de confusões entre proposições positivas e normativas. Quando dois economistas "discordam", é fundamental perguntar: discordam sobre os *fatos* (questão positiva, resolúvel com dados) ou sobre os *valores* (questão normativa, irredutível a evidências)?
 
-Com os três pilares metodológicos em mãos — *ceteris paribus*, otimização e a distinção positivo/normativo —, estamos prontos para examinar mais de perto a estrutura formal de um modelo microeconômico típico. Como, concretamente, esses princípios se materializam em equações e variáveis?
+Com os três mandamentos em mãos — "mude uma coisa por vez", "todo mundo otimiza" e "não misture fatos com desejos" —, estamos prontos para examinar a estrutura concreta de um modelo. Como esses princípios se materializam em equações e variáveis?
 
 ??? exercicio-resolvido "Exercício Resolvido 1.1 — Análise positiva versus normativa"
 
@@ -174,7 +176,7 @@ Com os três pilares metodológicos em mãos — *ceteris paribus*, otimização
 
 ### Variáveis exógenas e endógenas
 
-O primeiro passo na construção de qualquer modelo é separar claramente o que será explicado daquilo que será tomado como dado. Essa distinção, aparentemente simples, é uma das decisões mais consequentes da modelagem: ela define o alcance — e os limites — do modelo. Um mesmo fenômeno pode ser tratado como exógeno em um modelo e endógeno em outro, dependendo da pergunta que se deseja responder. O preço do petróleo, por exemplo, é exógeno em um modelo do mercado de gasolina no Brasil, mas endógeno em um modelo do mercado mundial de commodities.
+O primeiro passo na construção de qualquer modelo é a decisão mais honesta que um cientista pode tomar: admitir o que ele *não* vai explicar. Todo modelo divide o mundo em duas caixas: o que está *dentro* (e será explicado) e o que está *fora* (e será tomado como dado). Essa decisão, aparentemente simples, é uma das mais consequentes da modelagem. O preço do petróleo, por exemplo, é "dado" (exógeno) se você está modelando o mercado de gasolina no Brasil — mas vira "incógnita" (endógeno) se você está modelando o mercado mundial de commodities. O mesmo ingrediente muda de papel dependendo da receita.
 
 !!! definition "Variáveis Exógenas e Endógenas"
     **Variáveis exógenas** são determinadas fora do modelo — são os dados, os parâmetros, as "causas". **Variáveis endógenas** são determinadas dentro do modelo — são as incógnitas, os "efeitos". A tarefa do modelo é explicar como as variáveis endógenas respondem a mudanças nas variáveis exógenas.
@@ -277,7 +279,9 @@ Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, p
 
 ## 1.5 Desenvolvimento da teoria do valor
 
-A história do pensamento econômico pode ser lida como uma longa investigação sobre uma pergunta aparentemente simples: **o que determina o valor de um bem?** Por que o diamante custa mais que a água, embora a água seja indispensável à vida? Por que um quadro de Picasso vale milhões, enquanto uma cópia perfeita vale quase nada? Diferentes gerações de economistas ofereceram respostas distintas para essas perguntas, e a evolução dessas respostas moldou a microeconomia tal como a conhecemos hoje. A [Tabela 1.2](#tabela-1-2) apresenta uma cronologia das principais contribuições.
+Se a microeconomia tivesse um enigma fundador — um mistério que manteve gerações de pensadores acordados à noite —, seria este: **por que o diamante custa mais que a água?** A água é indispensável à vida; o diamante, no máximo, decora um anel de noivado. No entanto, um litro de água na torneira custa centavos e um quilate de diamante custa uma fortuna. Algo está errado — ou algo está muito certo, e nós ainda não entendemos o quê.
+
+A história do pensamento econômico pode ser lida como a busca por essa resposta. E a resposta, quando finalmente veio, mudou não apenas a economia, mas a forma como pensamos sobre valor, preço e escolha. A [Tabela 1.2](#tabela-1-2) apresenta a cronologia dessa investigação.
 
 <a id="tabela-1-2"></a>
 
@@ -300,13 +304,13 @@ A história do pensamento econômico pode ser lida como uma longa investigação
 
 ### Os economistas clássicos: Smith e Ricardo
 
-Para compreender a revolução que a microeconomia moderna representou, é preciso conhecer o ponto de partida: a economia clássica dos séculos XVIII e XIX. Os economistas clássicos buscaram explicar o valor a partir do lado da produção — mais especificamente, a partir do trabalho.
+Antes da revolução, veio o impasse. Os economistas clássicos dos séculos XVIII e XIX tinham uma resposta elegante para o valor: **trabalho**. Um bem vale o que custou para produzi-lo. Faz sentido — até parar para pensar.
 
 Adam Smith (1776), em *A Riqueza das Nações*, propôs que o valor de troca de um bem é determinado pela quantidade de trabalho necessária para produzi-lo. Smith distinguiu entre **valor de uso** (utilidade) e **valor de troca** (poder de compra sobre outros bens), observando o famoso "paradoxo da água e do diamante": a água tem enorme valor de uso mas baixo valor de troca, enquanto o diamante tem pouco valor de uso prático mas alto valor de troca. Smith reconhecia que algo não se encaixava — se o valor depende do trabalho, por que a água, que exige pouco trabalho, tem valor de uso tão grande? —, mas não conseguiu resolver a tensão.
 
 David Ricardo (1817) refinou a teoria do valor-trabalho, reconhecendo o papel do capital como "trabalho incorporado" e desenvolvendo a teoria da **renda diferencial da terra**. A contribuição de Ricardo foi mostrar que o preço dos cereais não é alto porque a renda da terra é alta — ao contrário, a renda é alta porque o preço é alto. Terras menos férteis, cultivadas apenas porque a demanda crescente assim exige, não geram renda alguma; as terras mais férteis geram renda precisamente porque são mais produtivas que a margem de cultivo. Essa inversão causal — do preço para a renda, e não da renda para o preço — antecipou em décadas o pensamento marginalista.
 
-Apesar de suas contribuições fundamentais, os economistas clássicos não conseguiram resolver de modo satisfatório o problema do valor. O paradoxo da água e do diamante permanecia como uma incômoda lacuna teórica. A resolução viria de uma mudança radical de perspectiva, protagonizada quase simultaneamente por três pensadores em três países diferentes.
+O paradoxo da água e do diamante continuava lá, sorrindo cinicamente para os clássicos. Eles sabiam que algo não fechava, mas não conseguiam dizer o quê. A resolução viria de uma mudança radical de perspectiva — e, como toda boa revolução intelectual, aconteceu em três lugares ao mesmo tempo, com três pessoas que não se conheciam.
 
 ### A Revolução Marginalista
 
@@ -343,11 +347,11 @@ Os três chegaram à mesma conclusão fundamental: o valor de um bem é determin
 
 ### Marshall e a síntese neoclássica
 
-A revolução marginalista resolveu o paradoxo do valor, mas criou uma tensão: se o valor depende da utilidade marginal (do lado da demanda), qual é o papel dos custos de produção (do lado da oferta), tão enfatizados pelos clássicos? A síntese veio com Alfred Marshall. Marshall (1890), em seus *Principles of Economics*, realizou a grande síntese entre as tradições clássica e marginalista. Marshall argumentou que perguntar se é a oferta ou a demanda que determina o preço é como perguntar qual das duas lâminas de uma tesoura corta o papel — ambas são necessárias, e é vão debater qual é mais importante. No **curto prazo**, quando a oferta é relativamente fixa, a demanda (e portanto a utilidade marginal) é mais importante para determinar o preço; no **longo prazo**, quando a oferta se ajusta, os custos de produção predominam. A oferta e a demanda operam juntas, como as duas lâminas, para determinar o preço de equilíbrio — o conceito central formalizado nas equações $\eqref{eq:1.4.1}$–$\eqref{eq:1.4.3}$.
+A revolução marginalista resolveu o paradoxo do valor, mas criou uma briga nova: se o valor depende da utilidade marginal (demanda), então os custos de produção (oferta) não importam? Os clássicos se reviram nos túmulos. Quem pôs ordem na briga foi Alfred Marshall — o grande diplomata da economia. Marshall (1890), em seus *Principles of Economics*, ofereceu uma das metáforas mais perfeitas de toda a ciência: perguntar se é a oferta ou a demanda que determina o preço é como perguntar qual das duas lâminas de uma tesoura corta o papel. Óbvio: as duas. No **curto prazo**, quando a oferta é relativamente fixa, a demanda (e portanto a utilidade marginal) é mais importante para determinar o preço; no **longo prazo**, quando a oferta se ajusta, os custos de produção predominam. A oferta e a demanda operam juntas, como as duas lâminas, para determinar o preço de equilíbrio — o conceito central formalizado nas equações $\eqref{eq:1.4.1}$–$\eqref{eq:1.4.3}$.
 
 ### Equilíbrio geral walrasiano
 
-Marshall analisava cada mercado separadamente — café, trigo, aço — tratando os demais mercados como "pano de fundo" constante. Essa abordagem, chamada de *equilíbrio parcial*, é operacionalmente conveniente e será a principal ferramenta analítica ao longo deste livro. Mas e se quisermos entender como todos os mercados se determinam simultaneamente? Essa é a pergunta do equilíbrio geral. Walras foi além da análise de mercados isolados e formulou o problema do **equilíbrio geral**: a determinação simultânea de preços e quantidades em todos os mercados da economia. Em 1954, Kenneth Arrow e Gérard Debreu provaram rigorosamente a existência de um equilíbrio geral competitivo sob condições apropriadas — um dos maiores feitos intelectuais da ciência econômica (Mas-Colell, Whinston & Green, 1995, cap. 17). A prova mostrou que, sob hipóteses razoáveis sobre preferências e tecnologia, existe um conjunto de preços que equilibra todos os mercados simultaneamente — uma validação formal da intuição de Adam Smith sobre a "mão invisível".
+Marshall, pragmático, analisava um mercado de cada vez — café aqui, trigo ali, aço acolá — tratando os demais como cenário de fundo. É como estudar a Seleção Brasileira ignorando temporariamente que os clubes existem: simplifica, funciona para muitas perguntas, mas não para todas. Essa abordagem, chamada de *equilíbrio parcial*, é a principal ferramenta analítica deste livro. Mas e se quisermos entender como *todos* os mercados se determinam ao mesmo tempo? Aí precisamos de Walras. Walras foi além e formulou o problema do **equilíbrio geral**: a determinação simultânea de preços e quantidades em todos os mercados da economia. Em 1954, Kenneth Arrow e Gérard Debreu provaram rigorosamente a existência de um equilíbrio geral competitivo sob condições apropriadas — um dos maiores feitos intelectuais da ciência econômica (Mas-Colell, Whinston & Green, 1995, cap. 17). A prova mostrou que, sob hipóteses razoáveis sobre preferências e tecnologia, existe um conjunto de preços que equilibra todos os mercados simultaneamente — uma validação formal da intuição de Adam Smith sobre a "mão invisível".
 
 A teoria do valor percorreu, portanto, um arco que vai do valor-trabalho dos clássicos, passa pela utilidade marginal dos marginalistas, chega à síntese marshalliana e culmina na formalização rigorosa do equilíbrio geral. Mas a história não parou aí. Nas últimas décadas, a microeconomia expandiu seus horizontes para além do modelo competitivo básico, incorporando interações estratégicas, informação imperfeita e comportamento real dos agentes — desenvolvimentos que a próxima seção examina.
 
@@ -355,7 +359,7 @@ A teoria do valor percorreu, portanto, um arco que vai do valor-trabalho dos cl�
 
 ## 1.6 Desenvolvimentos modernos
 
-O modelo competitivo básico — agentes tomadores de preço, informação perfeita, racionalidade plena — forneceu por décadas o arcabouço central da microeconomia. Mas o mundo real apresenta situações que esse modelo não captura adequadamente: empresas que competem estrategicamente, mercados em que vendedores sabem mais que compradores, consumidores que sistematicamente se desviam das previsões do modelo racional. A microeconomia contemporânea expandiu-se em várias direções, relaxando as suposições do modelo competitivo básico:
+O modelo competitivo básico — todo mundo aceita o preço, todo mundo sabe tudo, todo mundo é perfeitamente racional — foi a estrela da microeconomia por décadas. E funcionou surpreendentemente bem. Mas o mundo real tem vícios que o modelo ignora: empresas que espiam umas às outras, vendedores que sabem mais que compradores, e consumidores que compram coisas no impulso e se arrependem no dia seguinte. A microeconomia contemporânea expandiu-se em várias direções, relaxando — uma a uma — as suposições do modelo básico:
 
 - **Teoria dos jogos**: modelagem de interações estratégicas entre agentes, quando as decisões de cada um afetam os resultados dos demais (Nash, 1950; Mas-Colell et al., 1995, parte IV). Quando a Ambev decide o preço de sua cerveja, ela considera a possível reação da Heineken — e vice-versa. Essa interdependência estratégica, ausente no modelo competitivo, é o objeto da teoria dos jogos, que será tema dos Capítulos 14–15.
 - **Economia da informação**: análise de mercados com informação assimétrica — seleção adversa (Akerlof, 1970), risco moral e sinalização (Spence, 1973). No mercado de carros usados, por exemplo, o vendedor sabe mais sobre a qualidade do veículo do que o comprador, o que pode levar ao colapso do mercado para carros de boa qualidade — o famoso "mercado de limões" de Akerlof.
@@ -404,7 +408,7 @@ Com esse panorama dos desenvolvimentos modernos, temos uma visão completa do qu
 
 ## 1.7 Demonstração: Condição de maximização de lucro P = CMg
 
-Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apresentamos a seguir uma demonstração formal completa de um dos resultados mais importantes da microeconomia: a condição de maximização de lucro da firma competitiva. Este resultado ilustra concretamente o roteiro da Seção 1.4 — definir objetivo, identificar restrições, resolver o problema de otimização e interpretar o resultado. É também o primeiro exemplo de como o cálculo diferencial — as ferramentas do Capítulo 2 — se aplica a problemas econômicos.
+Chega de filosofia — vamos ver um modelo em ação. A demonstração a seguir é o "Hello World" da microeconomia: a condição de maximização de lucro da firma competitiva. É simples, é elegante, e encapsula tudo o que discutimos até aqui: um agente com objetivo (lucro), uma restrição (tecnologia/custos), uma condição de ótimo (derivada igual a zero) e uma previsão testável (a curva de oferta). É também o primeiro exemplo de como o cálculo diferencial — ferramentas do Capítulo 2 — resolve problemas econômicos reais.
 
 !!! theorem "Teorema: Condição de Primeira Ordem para Maximização de Lucro"
     Considere uma firma tomadora de preços (*price taker*) em um mercado competitivo. Se a firma produz uma quantidade positiva \(q^* > 0\) que maximiza seu lucro, então o preço de mercado deve ser igual ao custo marginal avaliado nessa quantidade:
@@ -471,7 +475,7 @@ Para consolidar a lógica de modelagem discutida ao longo deste capítulo, apres
 **Figura 1.4 — Maximização de lucro da firma competitiva.** Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
 </div>
 
-O que essa demonstração nos revela? Do ponto de vista econômico, o resultado da equação $\eqref{eq:1.7.3}$ encapsula uma lógica elegante: a firma expande a produção enquanto cada unidade adicional gera receita (\(P\)) superior ao custo de produzi-la (\(CMg\)). No ponto ótimo, a última unidade produzida "se paga" exatamente — não há mais ganho possível na margem. Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos Capítulos 7–9, onde estudaremos a teoria da firma em profundidade.
+O que essa demonstração nos revela? Uma lógica de uma beleza quase desarmante: a firma continua produzindo enquanto "vale a pena" — isto é, enquanto vender mais uma unidade rende (\(P\)) mais do que custa (\(CMg\)). Ela para exatamente quando a última unidade "empata". A partir daí, produzir mais seria jogar dinheiro fora. É como comer em rodízio: você repete enquanto o prazer supera o desconforto. Na fatia de pizza em que os dois se igualam, você para. (Se for racional. Se não for, vem a Seção 8.1 para explicar por quê.) Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos Capítulos 7–9, onde estudaremos a teoria da firma em profundidade.
 
 Note também que a demonstração ilustra o poder da estática comparativa: como \(CMg\) é crescente no ótimo, um aumento no preço \(P\) exige um aumento em \(q^*\) para restaurar a igualdade \(P = CMg\). Isso fundamenta a **lei da oferta** — a relação positiva entre preço e quantidade ofertada — como consequência lógica da otimização, não como uma hipótese ad hoc. A relação \(q^*(P)\), que associa a cada preço a quantidade ótima, é a **curva de oferta individual** da firma.
 

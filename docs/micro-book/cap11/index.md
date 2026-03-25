@@ -1,6 +1,6 @@
 # Capítulo 11 — Por Que Nada É de Graça
 
-No capítulo anterior, examinamos a tecnologia da firma — como insumos são transformados em produtos, quais as propriedades das isoquantas, o que significam rendimentos de escala e como a taxa marginal de substituição técnica varia ao longo da curva de produção. Agora, damos o passo seguinte e perguntamos: **quanto custa** realizar essa transformação? A teoria dos custos conecta a esfera da produção à esfera dos preços, traduzindo as possibilidades tecnológicas em termos monetários que permitem comparações e decisões.
+Toda dona de padaria sabe uma coisa que muitos alunos de economia demoram a internalizar: não basta saber *fazer* — é preciso saber *quanto custa* fazer. No capítulo anterior, mapeamos a tecnologia da firma: isoquantas, rendimentos de escala, TMST. Era o cardápio das possibilidades. Agora vem a conta. A teoria dos custos traduz essas possibilidades tecnológicas em cifras — e é nessa tradução que decisões reais de produção acontecem.
 
 A distinção entre custos econômicos e contábeis, o conceito de custo de oportunidade, a relação entre minimização de custos e maximização de lucro, o papel das curvas de custo de curto e longo prazo e o elegante Lema de Shephard — que conecta a função custo às demandas condicionadas por insumos — são os temas centrais deste capítulo. Há uma simetria profunda com a teoria do consumidor: da mesma forma que o Capítulo 4 estudou a minimização de gasto para atingir dado nível de utilidade, aqui estudamos a minimização de custo para atingir dado nível de produto. Essa dualidade não é acidental — ela reflete a estrutura matemática comum dos dois problemas de otimização, e os resultados de um iluminam o outro.
 
@@ -93,7 +93,7 @@ A racionalidade econômica tem uma regra clara: ao tomar uma decisão, considere
 
 ## 11.2 Maximização de Lucro e Minimização de Custos
 
-Definidos os conceitos de custo econômico e custo de oportunidade, podemos agora perguntar: qual é a relação entre o objetivo da firma — maximizar lucro — e o problema de minimizar custos? À primeira vista, parecem ser dois lados da mesma moeda. E de fato são intimamente relacionados, mas a relação tem uma sutil assimetria que merece atenção cuidadosa.
+Maximizar lucro e minimizar custo parecem gêmeos idênticos — dois jeitos de dizer a mesma coisa. Quase. A relação entre eles é como a de um motorista de aplicativo e o Waze: o Waze encontra o caminho mais curto para qualquer destino, mas ainda é o motorista quem decide *para onde* ir. Há uma assimetria sutil aqui, e vale a pena desembalá-la com cuidado.
 
 A firma maximizadora de lucro resolve:
 
@@ -121,7 +121,7 @@ Essa proposição tem implicação prática importante. Ela significa que, ao ob
 
 ## 11.3 Minimização de Custos: Isocusto e Tangência
 
-Estabelecida a relação entre maximização de lucro e minimização de custos, mergulhamos agora na análise detalhada do problema de minimização. A estrutura é elegantemente simétrica à do problema do consumidor que minimiza gasto para atingir um dado nível de utilidade (Capítulo 4): aqui, a firma busca a combinação de insumos de menor custo que ainda permita atingir o nível de produto desejado. Essa simetria não é mera coincidência — ela reflete a dualidade fundamental entre produção e custos que percorre toda a teoria da firma.
+Hora de arregaçar as mangas e resolver o problema de verdade. A firma quer produzir uma quantidade fixa de produto gastando o mínimo possível — como quem monta a cesta do mês no supermercado tentando não estourar o orçamento, só que com capital e trabalho no carrinho. Se você sobreviveu à minimização de gasto do consumidor no Capítulo 4, vai sentir um *déjà vu* reconfortante: a estrutura é a mesma, só mudam os nomes. Isoquanta no lugar de curva de indiferença, isocusto no lugar de reta orçamentária — dualidade pura.
 
 No Capítulo 4, o consumidor minimizava o gasto \(wl + pm\) sujeito a atingir a curva de indiferença \(u(x_1, x_2) = \bar{u}\). Aqui, a firma minimiza o custo \(wL + vK\) sujeito a atingir a isoquanta \(f(K,L) = q_0\). As variáveis mudam de nome — utilidade vira quantidade produzida, curva de indiferença vira isoquanta, reta orçamentária vira reta de isocusto —, mas a estrutura matemática e a intuição econômica são idênticas. As demandas hicksianas de bens de consumo correspondem às demandas condicionadas por insumos; a função gasto corresponde à função custo; a identidade de Roy corresponde ao Lema de Shephard. Essa correspondência estrutural é uma das elegâncias da teoria microeconômica moderna.
 
@@ -260,7 +260,7 @@ Uma propriedade importante das demandas condicionadas, imediatamente derivada do
 
 ## 11.4 A Função Custo e o Lema de Shephard
 
-A minimização de custos nos forneceu as demandas condicionadas por insumos — as quantidades ótimas de capital e trabalho para cada nível de produto, dados os preços. Substituindo essas demandas de volta na expressão de custo, obtemos a **função custo**, que sintetiza toda a informação relevante sobre a tecnologia e os preços em uma única relação entre custo mínimo e quantidade produzida. Essa função é a peça central da análise dual da firma, e dela emerge um dos resultados mais elegantes da microeconomia: o Lema de Shephard.
+Na seção anterior, descobrimos *quanto* de cada insumo a firma usa para produzir ao menor custo. Agora vem o passo mágico: plugamos essas quantidades ótimas de volta na conta e obtemos a **função custo** — uma fórmula compacta que resume tudo o que a firma precisa saber sobre tecnologia e preços num único número: o custo mínimo para cada nível de produção. É o "extrato bancário" da firma eficiente. E dessa função brota um dos resultados mais bonitos da microeconomia: o Lema de Shephard, que permite recuperar as demandas por insumos simplesmente derivando a função custo.
 
 A importância da função custo vai além da conveniência analítica. Empiricamente, custos são observáveis (aparecem nos balanços das firmas), enquanto as funções de produção são difíceis de mensurar diretamente. Por isso, a abordagem dual — estimar a função custo a partir de dados observados e recuperar as propriedades da tecnologia de produção por meio de derivações — tornou-se o método predominante na economia industrial e na regulação. Christensen e Greene (1976), em um artigo clássico discutido na seção de pesquisa, estimaram funções de custo para firmas de energia elétrica nos EUA e extraíram informações sobre economias de escala sem nunca precisar observar a tecnologia de produção diretamente.
 
@@ -348,7 +348,7 @@ o que não é outra coisa senão a definição da função custo — uma verific
 
 ## 11.5 Curvas de Custo
 
-A função custo derivada na seção anterior é uma construção abstrata que relaciona custo mínimo a preços de insumos e nível de produto. Nesta seção, fixamos os preços dos insumos e examinamos como o custo varia com a quantidade produzida — obtendo as célebres curvas de custo total, custo médio e custo marginal que constituem o instrumental básico de análise da firma. Compreender as relações geométricas entre essas curvas — em particular, por que o custo marginal cruza o custo médio em seu ponto de mínimo — é fundamental para a análise da oferta nos Capítulos 12 e 13, e para a resolução de problemas da ANPEC.
+A função custo é poderosa, mas abstrata — depende de três variáveis ao mesmo tempo. Agora, congelamos os preços dos insumos e deixamos só a quantidade variar. O resultado são as famosas curvas de custo total, custo médio e custo marginal — o trio que aparece em toda prova de micro, toda análise de empresa e toda reunião de diretoria (mesmo que disfarçado com outros nomes). Entender por que o custo marginal sempre cruza o custo médio no seu ponto de mínimo — como um corredor que puxa a média do pelotão para baixo enquanto é mais rápido — é a chave para a análise da oferta nos Capítulos 12 e 13.
 
 Vale notar que, ao fixar os preços dos insumos, passamos de uma perspectiva tridimensional (\(C\) como função de \(w\), \(v\) e \(q\)) para a perspectiva usual (\(C\) como função apenas de \(q\)). Essa simplificação — perfeitamente justificada em um mercado de insumos competitivo onde a firma é tomadora de preços — nos permite focar na geometria das curvas de custo sem perda de generalidade.
 
@@ -460,7 +460,7 @@ O Brasil oferece um laboratório rico para analisar os efeitos de impostos sobre
 
 ## 11.7 Curto Prazo versus Longo Prazo: A Curva Envoltória
 
-Uma das distinções mais importantes da teoria dos custos é entre curto e longo prazo. No curto prazo, pelo menos um insumo está fixo, e a firma opera com uma "planta" dada — arcando com custos que poderiam ser menores se pudesse redimensionar suas instalações. No longo prazo, todos os insumos são ajustáveis, e a firma pode escolher a escala de planta que minimiza seus custos para cada nível de produção. A relação entre essas duas perspectivas temporais gera a célebre **curva envoltória** — uma das construções mais elegantes da teoria dos custos.
+Imagine que você comprou um apartamento de dois quartos e agora precisa hospedar dez parentes no Natal. No curto prazo, a planta do apê é fixa — você empilha colchões, improvisa, e o custo por hóspede dispara. No longo prazo, você poderia ter alugado uma casa maior pagando menos por cabeça. A firma enfrenta exatamente esse dilema: no curto prazo, pelo menos um insumo (tipicamente o capital) está travado, e ela faz o que pode; no longo prazo, tudo é ajustável. A relação entre esses dois horizontes produz a célebre **curva envoltória** — e entendê-la é entender por que firmas investem, desinvestem e, às vezes, fecham as portas.
 
 A curva envoltória tem uma história intelectual curiosa. Jacob Viner (1931), ao escrever seu artigo seminal sobre curvas de custo e oferta, pediu a seu assistente gráfico que desenhasse a curva de custo médio de longo prazo como a envoltória das curvas de curto prazo. O assistente acreditava que as curvas de curto prazo deveriam *cruzar* a curva de longo prazo no ponto de tangência (não tangenciá-la), o que é matematicamente incorreto. Viner percebeu o erro, mas o artigo foi publicado com uma nota de rodapé famosa explicando o problema — exemplo precioso de como conceitos aparentemente simples podem conter armadilhas até para os maiores economistas.
 

@@ -1,8 +1,8 @@
 # Capítulo 2 — O Manual de Sobrevivência Matemática
 
-A microeconomia moderna é uma disciplina intrinsecamente matemática. Os modelos apresentados no Capítulo 1 — maximização de utilidade, maximização de lucro, equilíbrio de mercado — requerem um aparato formal para serem formulados com precisão e para que suas implicações possam ser derivadas rigorosamente. Este capítulo apresenta as ferramentas matemáticas essenciais para o estudo da microeconomia em nível avançado.
+Se o Capítulo 1 era o "o quê" e o "por quê" da microeconomia, este é o "com quê". Matemática é a linguagem em que os modelos econômicos são escritos — e, como toda língua, ela pode parecer impenetrável até que você perceba que já a fala no dia a dia. Quando você decide se vale a pena pegar trânsito para economizar R$ 20 na gasolina, está fazendo otimização. Quando nota que "o café sobe quando a geada derruba a safra", está fazendo estática comparativa. A diferença é que aqui vamos fazer isso com precisão — e com a garantia de que as conclusões se sustentam logicamente.
 
-O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida dos resultados e técnicas que serão utilizados ao longo do livro. O leitor familiarizado com cálculo multivariado e álgebra linear pode percorrer este capítulo rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais, como o teorema do envelope e as condições de Kuhn-Tucker.
+Este capítulo é a caixa de ferramentas. O objetivo não é substituir um curso de matemática, mas fornecer uma referência autocontida e prática. O leitor familiarizado com cálculo multivariado pode avançar rapidamente, concentrando-se nas aplicações econômicas e nos resultados menos habituais (teorema do envelope, Kuhn-Tucker). O leitor que está vendo isso pela primeira vez: calma. Cada ferramenta será *usada* em um problema econômico concreto — nada aqui é decorativo.
 
 O capítulo segue uma progressão natural: partimos da otimização em uma dimensão (Seção 2.1), avançamos para funções de várias variáveis e o ferramental de estática comparativa (Seções 2.2–2.3), introduzimos o teorema do envelope (Seção 2.4), abordamos a otimização com restrições de igualdade e desigualdade (Seções 2.5–2.7), examinamos propriedades de curvatura e homogeneidade (Seções 2.8–2.9), cobrimos integração, otimização dinâmica e estatística (Seções 2.10–2.12), e encerramos com os teoremas de ponto fixo que garantem a existência de equilíbrios (Seção 2.13). Ao final, o leitor disporá de todo o aparato formal necessário para acompanhar os capítulos subsequentes sobre teoria do consumidor (Capítulos 3–5), teoria da firma (Capítulos 7–10), teoria dos jogos (Capítulo 9a) e equilíbrio de mercado (Capítulos 12–14).
 
@@ -12,7 +12,7 @@ A exposição segue Nicholson e Snyder (2017, Cap. 2), complementada pelo apênd
 
 ## 2.1 Maximização de funções de uma variável
 
-Começamos pelo caso mais simples: maximizar uma função de uma única variável. Embora a maioria dos problemas econômicos envolva múltiplas variáveis, o caso unidimensional é instrutivo porque nele as ideias centrais — condições de primeira ordem, condições de segunda ordem, interpretação econômica — aparecem em sua forma mais transparente. Os conceitos desta seção são a versão rigorosa do "roteiro de otimização" apresentado informalmente no Capítulo 1 (Seção 1.4): definir o objetivo, derivar, igualar a zero, verificar a segunda derivada.
+Antes de correr, caminhe. O caso de uma variável é o "arroz com feijão" da otimização: simples, nutritivo, e base de tudo que vem depois. Aqui, as ideias centrais — condições de primeira e segunda ordem — aparecem na sua forma mais nua, sem a complexidade de matrizes e restrições. Se você entender *de verdade* esta seção, o resto do capítulo é generalização. Se não entender, nenhuma quantidade de Lagrangeanos vai salvar.
 
 ### Condições de primeira ordem
 
@@ -62,7 +62,7 @@ O caso de uma variável é didático, mas limitado. Na prática, consumidores es
 
 ### Derivadas parciais
 
-Quando o problema envolve múltiplas variáveis — como a utilidade que depende de vários bens, ou a produção que depende de capital e trabalho —, a noção de derivada precisa ser generalizada. A ideia é simples: variamos *uma* variável de cada vez, mantendo as demais fixas, e medimos o efeito sobre o valor da função.
+A vida econômica raramente tem uma dimensão só. O consumidor escolhe entre cerveja *e* pizza. A firma combina capital *e* trabalho. O governo divide o orçamento entre saúde *e* educação *e* defesa *e*... Para lidar com esse mundo multidimensional, a derivada precisa de um upgrade. A ideia, felizmente, é a mesma: variar *uma* coisa de cada vez, ver o que acontece. A diferença é que agora há mais "coisas" para segurar no lugar.
 
 Seja \(f: \mathbb{R}^n \to \mathbb{R}\). A **derivada parcial** de \(f\) em relação a \(x_i\), denotada \(\frac{\partial f}{\partial x_i}\) ou \(f_i\), mede a taxa de variação de \(f\) quando apenas \(x_i\) varia, mantendo todas as demais variáveis constantes — é o equivalente matemático do *ceteris paribus* discutido no Capítulo 1 (Seção 1.3). No contexto do consumidor, \(\frac{\partial U}{\partial x_1}\) é a **utilidade marginal** do bem 1 — quanto a satisfação aumenta quando o consumidor adquire uma unidade adicional do bem 1, mantendo constantes as quantidades dos demais bens. No contexto da firma, \(\frac{\partial F}{\partial L}\) é a **produtividade marginal do trabalho**.
 
@@ -81,7 +81,7 @@ A diferencial total expressa a variação aproximada de \(f\) quando todas as va
 
 ### Teorema da função implícita
 
-Em muitos modelos econômicos, as variáveis endógenas não são expressas explicitamente como funções dos parâmetros. Em vez disso, elas são definidas implicitamente por uma condição de equilíbrio — por exemplo, a igualdade entre oferta e demanda \(D(P, Y) = S(P, w)\), onde \(P\) é determinado implicitamente pelos parâmetros \(Y\) e \(w\). Não conseguimos, em geral, "resolver para \(P^*\)" de forma fechada — a equação pode ser não-linear, ou a forma funcional pode ser desconhecida. Como, então, calcular o efeito de uma mudança paramétrica sobre a variável endógena? É aqui que entra o **teorema da função implícita** (TFI), uma das ferramentas mais utilizadas em estática comparativa — e, na verdade, em toda a economia matemática.
+Aqui está um problema prático que todo economista enfrenta: você sabe que o preço de equilíbrio depende da renda, dos custos e de uma dezena de outros parâmetros. Mas a equação de equilíbrio \(D(P, Y) = S(P, w)\) é implícita — você não consegue isolar \(P^*\) de forma fechada. É como saber que alguém está na festa, mas não ter o endereço. O **teorema da função implícita** (TFI) é o GPS: ele não te dá o endereço completo, mas te diz *em que direção andar* — e isso, em estática comparativa, é tudo que você precisa.
 
 !!! definition "Teorema da Função Implícita"
     Seja \(F(x, y) = 0\) uma relação implícita entre \(x\) e \(y\), com \(F\) continuamente diferenciável e \(F_y \neq 0\) em um ponto \((x_0, y_0)\). Então, em uma vizinhança de \((x_0, y_0)\), existe uma função \(y = g(x)\) tal que \(F(x, g(x)) = 0\), e:
@@ -126,7 +126,7 @@ A magnitude da resposta depende criticamente das inclinações das curvas de ofe
 
 ## 2.3 Maximização com várias variáveis
 
-Com as ferramentas de cálculo multivariado em mãos — derivadas parciais, diferencial total e teorema da função implícita —, podemos agora retomar o problema central: como encontrar o máximo de uma função de várias variáveis? Essa é a generalização natural da Seção 2.1 para o caso \(n\)-dimensional, e é essencial porque praticamente todos os problemas econômicos envolvem múltiplas variáveis de escolha: o consumidor escolhe quantidades de vários bens, a firma combina diversos insumos, o governo aloca orçamento entre múltiplas áreas.
+Agora sim: com derivadas parciais, diferencial total e TFI no bolso, podemos atacar o problema de verdade. Como achar o máximo de uma função quando há *muitas* alavancas para mexer? É o mesmo espírito da Seção 2.1 — derive, iguale a zero, verifique a curvatura — mas agora com \(n\) variáveis, o que transforma uma equação num *sistema* de equações e uma derivada segunda numa *matriz*.
 
 Para maximizar \(f(x_1, x_2, \ldots, x_n)\) sem restrições, as condições necessárias de primeira ordem são:
 
@@ -160,7 +160,7 @@ Até aqui, sabemos como *encontrar* o ótimo e *confirmar* que ele é de fato um
 
 ## 2.4 Teorema do envelope
 
-O teorema do envelope é um dos resultados mais úteis e elegantes da microeconomia — e, na opinião de muitos economistas, o resultado mais "sub-apreciado" do cálculo. Ele permite calcular como o valor ótimo de uma função objetivo muda quando um parâmetro varia, sem necessidade de recalcular a solução ótima. A utilidade desse atalho é enorme: em problemas complexos com muitas variáveis de escolha, recalcular o ótimo para cada mudança de parâmetro pode ser extremamente trabalhoso. O teorema do envelope mostra que, para mudanças marginais, essa recalculação é desnecessária — basta olhar o efeito direto do parâmetro sobre a função objetivo, ignorando os ajustes nas variáveis de escolha.
+Se houvesse um prêmio para o teorema mais subestimado da matemática aplicada, o teorema do envelope venceria sem concorrência. A premissa é quase boa demais para ser verdade: para saber como o valor ótimo muda quando um parâmetro muda, *você não precisa resolver tudo de novo*. Basta olhar o efeito direto do parâmetro, como se as variáveis de escolha estivessem congeladas no ótimo. Os ajustes que o agente faz nas quantidades? Podem ser ignorados — no ótimo, eles se cancelam (porque, bem, é o ótimo). É como perguntar "quanto meu bem-estar melhora se meu salário sobe 1%?" e descobrir que, *na margem*, a resposta é a mesma quer você ajuste ou não as quantidades que consome. Poderoso demais? Vejamos por quê.
 
 !!! theorem "Teorema do Envelope (caso irrestrito)"
     Seja \(f(x, a)\) uma função de \(x\) (variável de escolha) e \(a\) (parâmetro), e seja \(x^*(a)\) a solução do problema \(\max_x f(x, a)\). Defina a **função valor** como:
@@ -239,9 +239,9 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 
 ## 2.5 Maximização com restrições: o método de Lagrange
 
-Até agora, tratamos de problemas de otimização sem restrições: o agente pode escolher livremente qualquer valor para as variáveis de decisão. Mas os problemas econômicos quase sempre envolvem restrições — e é a presença dessas restrições que torna a economia interessante. O consumidor deseja maximizar sua satisfação, porém dispõe de renda limitada. A firma quer maximizar o lucro, mas enfrenta restrições tecnológicas (não pode produzir mais do que sua função de produção permite) e, eventualmente, restrições de capacidade. O governo deseja maximizar o bem-estar social, mas enfrenta restrições orçamentárias, informacionais e de incentivos. Em cada caso, a escassez de recursos é o que gera o *trade-off* — a necessidade de escolher entre alternativas —, e é essa escolha que a microeconomia estuda.
+Até agora, o agente podia escolher o que quisesse — um luxo que ninguém tem na vida real. Na prática, todo mundo enfrenta restrições: o consumidor tem renda limitada, a firma tem tecnologia limitada, o governo tem orçamento limitado, e o aluno tem tempo limitado para estudar este capítulo. É justamente a *restrição* que torna a economia interessante: se tivéssemos tudo, não haveria escolha; sem escolha, não haveria economia.
 
-O método de Lagrange é a ferramenta mais importante deste capítulo — e, possivelmente, de todo o curso de microeconomia. Desenvolvido pelo matemático ítalo-francês Joseph-Louis Lagrange no final do século XVIII, o método transforma um problema de otimização com restrição em um problema sem restrição em um espaço ampliado. Praticamente todos os modelos que estudaremos — consumidor (Capítulo 4), firma (Capítulos 7–10), equilíbrio geral (Capítulo 12) — envolvem otimizar uma função sujeita a restrições. O método é tão central que o multiplicador de Lagrange \(\lambda\) se tornará, ao longo do livro, um dos objetos mais interpretados economicamente: utilidade marginal da renda, custo marginal, preço-sombra de restrições regulatórias.
+O método de Lagrange é *a* ferramenta para lidar com restrições — e provavelmente a técnica mais importante que você aprenderá neste livro inteiro. Desenvolvido pelo matemático ítalo-francês Joseph-Louis Lagrange no final do século XVIII, o método transforma um problema de otimização com restrição em um problema sem restrição em um espaço ampliado. Praticamente todos os modelos que estudaremos — consumidor (Capítulo 4), firma (Capítulos 7–10), equilíbrio geral (Capítulo 12) — envolvem otimizar uma função sujeita a restrições. O método é tão central que o multiplicador de Lagrange \(\lambda\) se tornará, ao longo do livro, um dos objetos mais interpretados economicamente: utilidade marginal da renda, custo marginal, preço-sombra de restrições regulatórias.
 
 Esta seção apresenta o método em um passo a passo detalhado, para que o leitor possa aplicá-lo com confiança a qualquer problema.
 
@@ -884,7 +884,7 @@ O teorema do envelope na maximização restrita é tão central que reaparece ao
 
 ## 2.7 Restrições de desigualdade: condições de Kuhn-Tucker
 
-O método de Lagrange resolve problemas com restrições de *igualdade*: o consumidor gasta exatamente toda a sua renda, a firma usa exatamente a capacidade total de produção. Mas nem sempre a restrição é ativa. O consumidor pode não gastar toda a renda (se tiver preferências saciáveis), ou pode optar por não consumir nenhuma quantidade de um bem cujo preço é muito alto — por exemplo, uma família de baixa renda que não adquire nenhuma unidade de carne importada. Para lidar com essas situações, precisamos de uma generalização que admita restrições de desigualdade e soluções de canto.
+Lagrange é maravilhoso, mas tem um vício: assume que a restrição "morde" — que o consumidor gasta *exatamente* toda a renda, que a firma usa *exatamente* toda a capacidade. No mundo real, porém, às vezes sobra: o consumidor pode guardar dinheiro, a firma pode deixar uma máquina parada, e — crucialmente — a pessoa pode decidir não comprar *nada* de um bem cujo preço é absurdo. (Quem compra caviar quando o arroz está caro?) Essas "soluções de canto" exigem uma ferramenta mais flexível.
 
 Soluções de canto são extremamente comuns no mundo real, embora os livros-texto frequentemente as releguem a notas de rodapé. No contexto do consumidor, uma família que não viaja de avião está em uma solução de canto para "viagens aéreas". No contexto da firma, uma empresa que não investe em P&D está em uma solução de canto para "gastos com inovação". No contexto do governo, um município que não gasta nada com cultura está em uma solução de canto para "despesas culturais" — provavelmente porque o custo de oportunidade (em termos de saúde e educação) é muito alto. As condições de Kuhn-Tucker são a ferramenta matemática que formaliza essas situações.
 
@@ -1048,7 +1048,7 @@ Para o caso geral com \(n\) variáveis e \(m\) restrições (\(m < n\)), a CSO p
 
 ## 2.9 Funções homogêneas e Teorema de Euler
 
-Além da curvatura, outra propriedade das funções que desempenha um papel central em microeconomia é a *homogeneidade*. Uma função homogênea possui uma simetria especial: multiplicar todos os argumentos por uma mesma constante produz um efeito previsível sobre o valor da função. Essa propriedade — que pode parecer uma curiosidade matemática à primeira vista — tem implicações econômicas profundas e imediatas. É a homogeneidade que fundamenta conceitos como retornos de escala em produção, a ausência de ilusão monetária na demanda e a exaustão do produto pela remuneração dos fatores. Léon Walras, em seus *Éléments d'économie politique pure* (1874), já reconhecia que a homogeneidade é a propriedade matemática por trás da "lei de Walras" — a interdependência dos mercados que discutiremos no Capítulo 12.
+Se a concavidade é sobre *curvatura*, a homogeneidade é sobre *escala*. A pergunta: se eu dobrar *todos* os insumos, o que acontece com o produto? Se eu dobrar todos os preços e a renda, minha demanda muda? Essa propriedade — que pode parecer uma curiosidade de sala de aula — é, na verdade, uma das mais operacionais da microeconomia. É a homogeneidade que fundamenta conceitos como retornos de escala em produção, a ausência de ilusão monetária na demanda e a exaustão do produto pela remuneração dos fatores. Léon Walras, em seus *Éléments d'économie politique pure* (1874), já reconhecia que a homogeneidade é a propriedade matemática por trás da "lei de Walras" — a interdependência dos mercados que discutiremos no Capítulo 12.
 
 !!! definition "Função Homogênea"
     Uma função \(f: \mathbb{R}^n \to \mathbb{R}\) é **homogênea de grau \(k\)** se, para todo escalar \(t > 0\):
@@ -1107,7 +1107,7 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
 ## 2.10 Integração
 
-As seções anteriores concentraram-se em técnicas de diferenciação e otimização. Mas a operação inversa da diferenciação — a integração — também tem aplicações importantes em microeconomia, especialmente na análise de bem-estar. Quando queremos medir quanto um consumidor ou produtor ganha ou perde com uma mudança de preço, precisamos calcular áreas sob curvas, o que requer integração. Em microeconomia, a integração aparece em diversos contextos:
+Derivar é perguntar "quanto muda?". Integrar é perguntar "quanto acumulou?". Se a derivada é a velocidade, a integral é a distância percorrida. Em microeconomia, a integração aparece sempre que queremos medir *totais* a partir de *marginais* — quanto o consumidor ganhou, quanto o produtor perdeu, quanto bem-estar a sociedade desperdiçou. Em resumo: se o Capítulo 5 for medir excedente do consumidor, vai precisar calcular áreas sob curvas. E calcular áreas é integrar.
 
 - **Excedente do consumidor**: a área entre a curva de demanda inversa e o preço de equilíbrio, que mede o ganho líquido dos consumidores por poderem comprar ao preço de mercado:
 
@@ -1141,7 +1141,7 @@ Em análise de bem-estar, a integração permite calcular a **variação compens
 
 ## 2.11 Otimização dinâmica: uma breve introdução
 
-Todas as técnicas apresentadas até aqui tratam de decisões **estáticas**: o agente escolhe uma vez, em um único momento. Mas muitas das decisões econômicas mais importantes são *intertemporais* — envolvem trocas entre presente e futuro. Um estudante que decide quanto tempo dedicar a estudar hoje em vez de trabalhar está fazendo uma escolha intertemporal: o custo (renda perdida hoje) e o benefício (salário mais alto no futuro) ocorrem em momentos diferentes. Muitos problemas econômicos envolvem decisões ao longo do tempo:
+Até aqui, o mundo era atemporal: o agente acorda, otimiza, dorme. Mas a vida tem amanhã — e amanhã muda tudo. Poupar ou gastar? Estudar ou trabalhar? Extrair petróleo agora ou deixar para quando estiver mais caro? Essas decisões intertemporais exigem ferramentas que o Lagrange estático não oferece. O Capítulo 18 explorará a economia intertemporal em detalhe; aqui, plantamos as sementes matemáticas.
 
 - Quanto consumir hoje versus poupar para amanhã?
 - Quanto investir em capital em cada período?
@@ -1177,7 +1177,7 @@ Esses métodos são particularmente usados em teoria do crescimento (modelo de R
 
 ## 2.12 Estatística matemática: valor esperado e variância
 
-Para encerrar nosso manual de sobrevivência matemática, precisamos abordar o tratamento formal da *incerteza*. Os modelos de otimização apresentados até aqui supõem que o agente conhece com certeza os resultados de suas decisões. Mas na realidade, consumidores não sabem se ficarão doentes, investidores não sabem se o mercado subirá, e agricultores não sabem se choverá. A incerteza é onipresente em decisões econômicas. As ferramentas básicas de probabilidade são essenciais para a análise de escolha sob risco.
+Penúltimo item da caixa de ferramentas, e talvez o mais humano: incerteza. Todos os modelos até aqui supunham que o agente sabe exatamente o que vai acontecer. Na vida real? Ninguém sabe se vai chover na safra, se o dólar vai subir, se o emprego vai durar. A partir do Capítulo 7, a incerteza será protagonista. Aqui, apresentamos a linguagem mínima — valor esperado, variância — para não chegarmos lá de mãos abanando.
 
 ### Valor esperado
 
@@ -1236,7 +1236,7 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ## 2.13 Teoremas de ponto fixo
 
-Os teoremas apresentados até aqui fornecem ferramentas para *resolver* problemas de otimização — encontrar o ótimo, analisar sua sensibilidade a parâmetros, verificar condições de segunda ordem. Mas há uma questão logicamente anterior que nem sempre recebe a devida atenção: **a solução existe?** Em problemas simples (maximizar uma função contínua em um compacto), o teorema de Weierstrass garante a existência. Mas em problemas de equilíbrio — onde múltiplos agentes otimizam simultaneamente e as decisões de cada um dependem das decisões dos demais — a existência da solução é tudo menos óbvia. Os teoremas de ponto fixo são a ferramenta matemática que resolve essa questão.
+Último item da caixa de ferramentas — e o mais filosófico. Até aqui, todas as técnicas pressupõem que a solução *existe*. Mas será que existe sempre? Em problemas de equilíbrio — onde múltiplos agentes otimizam simultaneamente e a melhor resposta de cada um depende do que os outros fazem — a existência da solução é tudo menos óbvia. Imagine um jogo de "par ou ímpar" em que cada jogador tenta adivinhar o que o outro fará: existe alguma configuração estável? O teorema de Nash (1950) diz que sim — e a prova usa um **ponto fixo**. Essa seção é curta, mas é o alicerce lógico de todo o Capítulo 9a (teoria dos jogos) e do Capítulo 14 (equilíbrio geral).
 
 !!! definition "Ponto fixo"
     Seja \(f: X \to X\) uma função de um conjunto \(X\) nele mesmo. Um ponto \(x^* \in X\) é um **ponto fixo** de \(f\) se:

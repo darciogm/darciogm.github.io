@@ -1,6 +1,6 @@
 # Capítulo 13 — O Leiloeiro que Ninguém Vê
 
-Nos capítulos anteriores, construímos separadamente a teoria do consumidor e a teoria da firma. Do lado da demanda, vimos como preferências racionais e restrições orçamentárias determinam as escolhas ótimas de consumo (Capítulos 3–6); do lado da oferta, analisamos como firmas minimizam custos e maximizam lucros escolhendo níveis de produção ao longo de suas curvas de custo marginal (Capítulos 11–12). Agora é hora de reunir essas peças e examinar como compradores e vendedores interagem nos mercados competitivos para determinar preços e quantidades de equilíbrio. Este capítulo desenvolve a análise de **equilíbrio parcial marshalliano** — o estudo de um mercado individual tomando os demais como dados — e suas aplicações à análise de bem-estar e políticas públicas.
+Nos capítulos anteriores, construímos separadamente a teoria do consumidor e a teoria da firma — duas metades de uma história que, sozinhas, ficam incompletas como um sanduíche sem recheio. Do lado da demanda, vimos como preferências racionais e restrições orçamentárias determinam as escolhas ótimas de consumo (Capítulos 3–6); do lado da oferta, analisamos como firmas minimizam custos e maximizam lucros escolhendo níveis de produção ao longo de suas curvas de custo marginal (Capítulos 11–12). Agora é hora de finalmente juntar comprador e vendedor na mesma sala e ver o que acontece quando deixamos o mercado funcionar. Este capítulo desenvolve a análise de **equilíbrio parcial marshalliano** — o estudo de um mercado individual tomando os demais como dados — e suas aplicações à análise de bem-estar e políticas públicas.
 
 A metáfora do "leiloeiro walrasiano" — uma entidade fictícia que anuncia preços e ajusta-os até que oferta e demanda se igualem — nos ajuda a compreender o mecanismo de formação de preços. Léon Walras (1834–1910), economista francês da Escola de Lausanne, concebeu esse dispositivo teórico para explicar como mercados descentralizados podem atingir o equilíbrio sem nenhuma coordenação central. Embora nenhum leiloeiro real exista na maioria dos mercados, o resultado competitivo se assemelha ao que tal mecanismo produziria: milhões de agentes, cada um perseguindo seus próprios objetivos, produzem um resultado coerente e — como demonstraremos — eficiente. É uma das conclusões mais surpreendentes e poderosas da teoria econômica.
 
@@ -51,7 +51,7 @@ Com a demanda de mercado construída, precisamos agora do segundo ingrediente: a
 
 ## 13.2 Determinação de Preço no Curtíssimo Prazo
 
-O primeiro horizonte temporal que consideramos é o mais restritivo: o **curtíssimo prazo**, também chamado de período de mercado. Nesse horizonte, a quantidade ofertada é fixa — os produtores já trouxeram seus bens ao mercado e não podem alterar a produção. A curva de oferta é perfeitamente inelástica (vertical):
+O primeiro horizonte temporal que consideramos é o mais restritivo — e o mais dramático: o **curtíssimo prazo**, também chamado de período de mercado. Imagine o feirante que chegou de madrugada com seu caminhão de tomates. O que está no caminhão é o que ele tem para vender; não há como plantar mais tomates até o fim da tarde. A quantidade ofertada é fixa, ponto final. A curva de oferta é perfeitamente inelástica (vertical):
 
 \[
 S = \bar{Q}
@@ -79,7 +79,7 @@ Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio 
 
 ## 13.3 Determinação de Preço no Curto Prazo
 
-Passamos agora ao horizonte de **curto prazo**, em que as firmas ganham uma margem de ajuste: podem variar a quantidade produzida alterando insumos variáveis (trabalho, matérias-primas), mas o capital é fixo e o número de firmas no mercado é dado. É nesse horizonte que a análise de equilíbrio parcial marshalliano se manifesta em sua forma mais característica.
+Passamos agora ao horizonte de **curto prazo**, em que as firmas finalmente ganham algum espaço para respirar: podem variar a quantidade produzida contratando mais trabalhadores ou comprando mais matéria-prima, embora o capital continue fixo e o número de firmas no mercado seja dado. Se o curtíssimo prazo era um feirante preso ao seu caminhão, o curto prazo é uma fábrica que pode ligar mais turnos — mas não pode construir um galpão novo da noite para o dia. É nesse horizonte que a análise de equilíbrio parcial marshalliano se manifesta em sua forma mais característica.
 
 ### Equilíbrio parcial marshalliano
 
@@ -133,7 +133,7 @@ O equilíbrio de curto prazo, contudo, não é a palavra final: ele nos diz o qu
 
 ## 13.4 Estática Comparativa
 
-Determinado o equilíbrio, a pergunta natural é: o que acontece quando as condições mudam? Se a renda dos consumidores cresce, se o preço de um insumo se eleva, se uma nova tecnologia reduz os custos de produção — como o preço e a quantidade de equilíbrio se ajustam? A **estática comparativa** é a ferramenta que nos permite responder a essas perguntas de forma rigorosa, comparando dois equilíbrios: o inicial e o que prevalece após a mudança. O termo "estática" indica que não analisamos a dinâmica de transição entre os dois estados, apenas comparamos as posições de repouso — uma abordagem que, apesar de suas limitações, é extraordinariamente útil.
+Determinado o equilíbrio, a pergunta natural — e a que todo economista vive respondendo em entrevistas, relatórios e reuniões de diretoria — é: *e se as condições mudarem?* Se a renda dos consumidores cresce, se o preço de um insumo se eleva, se uma nova tecnologia reduz os custos de produção — como o preço e a quantidade de equilíbrio se ajustam? A **estática comparativa** é a ferramenta que nos permite responder a essas perguntas de forma rigorosa, comparando dois equilíbrios: o "antes" e o "depois". O termo "estática" indica que não analisamos a viagem entre os dois estados, apenas tiramos uma foto de cada posição de repouso — uma abordagem que, apesar de suas limitações, é o canivete suíço do microeconomista aplicado.
 
 A estática comparativa tem raízes profundas na economia. Paul Samuelson (1915–2009), em *Foundations of Economic Analysis* (1947), formalizou o método e mostrou que previsões testáveis em economia frequentemente derivam da combinação de condições de equilíbrio com hipóteses de estabilidade — o chamado "princípio de correspondência".
 
@@ -190,7 +190,7 @@ A estática comparativa do curto prazo toma o número de firmas como dado. No lo
 
 ## 13.5 Análise de Longo Prazo
 
-A análise de curto prazo toma como dado o número de firmas no mercado. Mas no longo prazo, essa restrição se dissolve: se as firmas existentes obtêm lucro econômico positivo, novas empresas são atraídas para o setor; se há prejuízo persistente, firmas saem. Esse mecanismo de **entrada e saída livre** é o motor fundamental que conduz o mercado ao seu equilíbrio de longo prazo — e compreendê-lo é essencial para entender por que, em concorrência perfeita, o lucro econômico tende a zero.
+A análise de curto prazo toma como dado o número de firmas no mercado — como se as portas da indústria estivessem trancadas. Mas no longo prazo, alguém encontra a chave: se as firmas existentes obtêm lucro econômico positivo, novas empresas cheiram o dinheiro e entram; se há prejuízo persistente, firmas empacotam suas coisas e saem. Esse mecanismo de **entrada e saída livre** é a força gravitacional que puxa o mercado para o equilíbrio de longo prazo — e compreendê-lo é essencial para entender por que, em concorrência perfeita, o lucro econômico tende a zero, como se uma mão invisível redistribuísse as cartas até que ninguém tivesse vantagem sobre os demais.
 
 A ideia central remonta a Adam Smith e à sua metáfora da "mão invisível": a busca do lucro individual, ao atrair concorrentes, dissipa o próprio lucro que a motivou. O equilíbrio de longo prazo é, assim, o ponto em que a força gravitacional da concorrência esgota as oportunidades de ganho extraordinário.
 
@@ -370,7 +370,7 @@ A análise de excedentes e renda ricardiana nos fornece as ferramentas para aval
 
 ## 13.9 Eficiência Econômica e Análise de Bem-Estar Aplicada
 
-Até aqui, a análise de equilíbrio parcial se concentrou em *como* os preços e quantidades são determinados — uma questão positiva. Agora, mudamos o foco para uma pergunta normativa: o resultado de mercado é *bom*? O equilíbrio competitivo gera o melhor resultado possível para a sociedade? Para responder, precisamos de critérios de avaliação — e os conceitos de excedente do consumidor e excedente do produtor fornecem as ferramentas para medir o bem-estar gerado pelas trocas de mercado.
+Até aqui, a análise de equilíbrio parcial se comportou como um repórter descrevendo os fatos: *como* os preços e quantidades são determinados. Agora, vestimos a toga de juiz e fazemos a pergunta que realmente incomoda: o resultado de mercado é *bom*? O equilíbrio competitivo gera o melhor resultado possível para a sociedade, ou estamos apenas celebrando o caos organizado? Para responder, precisamos de critérios de avaliação — e os conceitos de excedente do consumidor e excedente do produtor fornecem as ferramentas para medir o bem-estar gerado pelas trocas de mercado.
 
 A medida de bem-estar que utilizamos aqui — a soma dos excedentes — é uma versão aplicada do critério de eficiência de Pareto: se a soma dos excedentes é maximizada, não é possível melhorar a situação de um agente sem piorar a de outro (dado que transferências podem ser realizadas). Essa conexão será formalizada nos Capítulos 17–18, quando estudarmos os Teoremas Fundamentais do Bem-Estar no contexto de equilíbrio geral.
 
@@ -561,7 +561,7 @@ Os controles de preços representam uma intervenção direta e explícita no mec
 
 ## 13.11 Incidência Tributária: Quem Realmente Paga o Imposto?
 
-Outra forma de intervenção, onipresente em qualquer economia moderna, é a **tributação**. Quando o governo institui um imposto sobre um bem, quem de fato arca com o ônus? O senso comum sugere que é quem paga formalmente o imposto — o vendedor ou o comprador, conforme a legislação. A análise econômica revela, contudo, que a incidência efetiva do tributo independe completamente do lado legal: ela é determinada pelas elasticidades relativas de oferta e demanda. Esse resultado — um dos mais elegantes e contraintuitivos da microeconomia — tem implicações profundas para a formulação de políticas tributárias.
+Outra forma de intervenção, onipresente em qualquer economia moderna, é a **tributação** — e aqui a microeconomia guarda uma de suas maiores surpresas. Quando o governo institui um imposto sobre um bem, quem de fato arca com o ônus? O senso comum responde com confiança: quem paga é quem assina o cheque — o vendedor ou o comprador, conforme a legislação. Pois bem: o senso comum está redondamente enganado. A análise econômica revela que a incidência efetiva do tributo independe completamente do lado legal: ela é determinada pelas elasticidades relativas de oferta e demanda. Esse resultado — um dos mais elegantes e contraintuitivos da microeconomia, capaz de desarmar argumentos em qualquer debate sobre reforma tributária — tem implicações profundas para a formulação de políticas.
 
 A análise formal da incidência tributária tem raízes na obra de A. C. Pigou (*The Economics of Welfare*, 1920), mas foi sistematizada em seu formato moderno por Arnold Harberger (1962), cujo "triângulo de Harberger" se tornou sinônimo de perda de peso morto tributária.
 

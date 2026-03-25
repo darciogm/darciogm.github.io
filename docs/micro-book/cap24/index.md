@@ -26,6 +26,8 @@ A solução pigouviana, como vimos, é impor um imposto \(t = \text{CMgE}(q^*)\)
 
 ### 24.1.2 Comando e controle vs. instrumentos de mercado
 
+Quando o governo decide combater a poluição, ele enfrenta uma escolha que lembra a diferença entre um general e um leiloeiro. O general dá ordens: "Fábrica A, reduza 50 toneladas; Fábrica B, idem." O leiloeiro cria um preço e deixa cada um decidir quanto vale a pena reduzir. Na economia ambiental, essas duas filosofias recebem nomes técnicos — e a diferença entre elas pode significar bilhões de reais.
+
 As políticas ambientais podem ser classificadas em duas grandes categorias:
 
 !!! definition "Regulação de comando e controle (command-and-control)"
@@ -81,7 +83,7 @@ Essas dificuldades fundamentam a necessidade de intervenção governamental — 
 
 ### 24.2.1 Imposto pigouviano sobre poluição
 
-O imposto pigouviano aplicado à poluição funciona assim: o governo define um imposto \(t\) por unidade de emissão. Cada firma reduz suas emissões até o ponto em que o custo marginal de abatimento iguala o imposto:
+Voltamos ao velho Pigou — mas agora com as mangas arregaçadas, pronto para a implementação. A ideia, como vimos no Capítulo 20, é elegante: se poluir é de graça, todo mundo polui demais; se poluir custa dinheiro, cada um pensa duas vezes. O imposto pigouviano aplicado à poluição funciona assim: o governo define um imposto \(t\) por unidade de emissão. Cada firma reduz suas emissões até o ponto em que o custo marginal de abatimento iguala o imposto:
 
 \[
 \text{CMgA}_i(e_i^*) = t \quad \forall i \label{eq:24.2} \tag{24.2}
@@ -196,7 +198,7 @@ Na prática, sistemas híbridos são comuns: cap-and-trade com piso e teto de pr
 
 ### 24.3.1 A maior externalidade do mundo
 
-As mudanças climáticas representam, nas palavras de Nicholas Stern, "o maior fracasso de mercado que o mundo já viu". As características econômicas do problema são excepcionais:
+Se as externalidades que analisamos até aqui — a fábrica que polui o rio, a chaminé que suja o ar do bairro — são como buracos no telhado de uma casa, as mudanças climáticas são o equivalente a uma rachadura estrutural no planeta inteiro. As mudanças climáticas representam, nas palavras de Nicholas Stern, "o maior fracasso de mercado que o mundo já viu". As características econômicas do problema são excepcionais:
 
 1. **Externalidade global**: uma tonelada de \(\text{CO}_2\) emitida em Cubatão causa o mesmo dano climático que uma tonelada emitida em Xangai. Não há como "localizar" a poluição — o problema é inerentemente planetário.
 
@@ -309,7 +311,7 @@ Do ponto de vista da teoria econômica, o Acordo de Paris é uma tentativa de re
 
 ### 24.4.1 O EU ETS: o maior mercado de carbono do mundo
 
-O **European Union Emissions Trading System** (EU ETS), lançado em 2005, é o maior e mais antigo mercado de carbono obrigatório do mundo. Cobre cerca de 40% das emissões de gases de efeito estufa da UE, incluindo setores de energia, indústria pesada e, desde 2012, aviação intra-europeia.
+A teoria é bonita no quadro-negro — mas funciona na prática? A Europa decidiu descobrir. O **European Union Emissions Trading System** (EU ETS), lançado em 2005, é o maior e mais antigo mercado de carbono obrigatório do mundo. Cobre cerca de 40% das emissões de gases de efeito estufa da UE, incluindo setores de energia, indústria pesada e, desde 2012, aviação intra-europeia.
 
 **Fases do EU ETS:**
 
@@ -393,7 +395,7 @@ O CBAM funciona como uma **tarifa ambiental**: importadores de produtos cobertos
 
 ### 24.5.1 O valor econômico total
 
-Como atribuir valor econômico a bens que não têm preço de mercado — ar limpo, biodiversidade, paisagem natural, existência de espécies ameaçadas? Essa questão é central para a economia ambiental, pois sem mensuração do valor, não é possível comparar custos e benefícios de políticas de conservação.
+Quanto vale um pôr do sol? A pergunta soa absurda — e é exatamente esse desconforto que torna a valoração ambiental tão fascinante e tão necessária. Se não conseguimos expressar em reais (ou dólares) o valor de ar limpo, biodiversidade e paisagem natural, como justificar politicamente os custos de protegê-los? Essa questão é central para a economia ambiental, pois sem mensuração do valor, não é possível comparar custos e benefícios de políticas de conservação.
 
 A abordagem padrão decompõe o **valor econômico total** (VET) de um recurso ambiental em componentes:
 
@@ -458,7 +460,7 @@ Quando não há mercado real que revele preferências (caso de valores de não-u
 
 ### 24.6.1 A regra de Hotelling revisitada
 
-No Capítulo 18, apresentamos a regra de Hotelling para recursos não renováveis: o preço líquido (preço menos custo de extração) de um recurso exaurível deve crescer à taxa de juros no equilíbrio:
+Petróleo, minério de ferro, gás natural — são como uma herança que a Terra nos deixou, mas sem manual de instrução sobre o ritmo ideal de gastar. Extrair rápido demais esgota o recurso cedo; extrair devagar demais significa deixar riqueza parada no subsolo enquanto gente passa necessidade na superfície. A regra de Hotelling, que já encontramos no Capítulo 18, é a tentativa do economista de resolver esse dilema: o preço líquido (preço menos custo de extração) de um recurso exaurível deve crescer à taxa de juros no equilíbrio:
 
 \[
 \frac{\dot{p}_n}{p_n} = r \label{eq:24.13} \tag{24.13}

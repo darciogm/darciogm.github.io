@@ -90,7 +90,7 @@ Antes de aprofundar cada método, é útil ter uma visão panorâmica. A tabela 
 
 ### 22.2.1 Desenho experimental: elementos essenciais
 
-Um experimento de laboratório em economia segue uma estrutura padrão:
+Se a física tem o CERN e a biologia tem o microscópio, a economia experimental tem... uma sala de informática com estudantes de graduação ganhando R$ 30 para clicar em botões. Parece pouco glamouroso, mas essa modéstia esconde um poder enorme: o poder de *controlar* o que acontece, variando uma única condição de cada vez enquanto tudo o mais permanece igual. Um experimento de laboratório em economia segue uma estrutura padrão:
 
 1. **Participantes** (*subjects*): tipicamente estudantes universitários recrutados de um *subject pool*. Recebem instruções padronizadas e tomam decisões em um ambiente controlado (sala de informática, plataforma online).
 
@@ -228,7 +228,7 @@ A resposta depende da pergunta de pesquisa. Para testar *previsões teóricas* �
 
 ### 22.3.1 A taxonomia de Harrison e List
 
-Glenn Harrison e John List (2004) propuseram uma taxonomia influente que classifica os experimentos econômicos em um espectro contínuo entre laboratório puro e campo puro. A classificação organiza-se ao longo de seis dimensões: (i) natureza da amostra de participantes, (ii) natureza da informação disponível, (iii) natureza do bem transacionado, (iv) natureza das regras e da tarefa, (v) natureza do ambiente de decisão, e (vi) natureza das apostas (*stakes*).
+O laboratório é confortável, mas tem um problema incômodo: o mundo real não vem com instruções padronizadas nem com estudantes obedientes sentados em fileiras. Será que o que funciona numa sala climatizada da universidade sobrevive ao caos de um mercado de rua em Nairóbi ou à fila de uma creche em Haifa? Para responder, os economistas precisaram sair do laboratório — e levar o método científico na mochila. Glenn Harrison e John List (2004) propuseram uma taxonomia influente que classifica os experimentos econômicos em um espectro contínuo entre laboratório puro e campo puro. A classificação organiza-se ao longo de seis dimensões: (i) natureza da amostra de participantes, (ii) natureza da informação disponível, (iii) natureza do bem transacionado, (iv) natureza das regras e da tarefa, (v) natureza do ambiente de decisão, e (vi) natureza das apostas (*stakes*).
 
 Com base nessas dimensões, Harrison e List distinguem quatro tipos:
 
@@ -294,7 +294,7 @@ Uri Gneezy e Aldo Rustichini conduziram um dos mais famosos experimentos de camp
 
 ### 22.4.1 A lógica da randomização
 
-O **ensaio controlado randomizado** (RCT — *randomized controlled trial*) é a aplicação em larga escala da lógica experimental à avaliação de políticas públicas. O princípio é idêntico ao dos ensaios clínicos na medicina: dividir aleatoriamente uma população em grupo de **tratamento** (que recebe a intervenção) e grupo de **controle** (que não recebe), e comparar os resultados.
+Imagine que alguém lhe apresente um novo programa social e garanta: "Funciona maravilhosamente!" Sua resposta deveria ser: "Comparado a quê?" Essa pergunta — irritante, mas essencial — é a alma do ensaio controlado randomizado. O **ensaio controlado randomizado** (RCT — *randomized controlled trial*) é a aplicação em larga escala da lógica experimental à avaliação de políticas públicas. O princípio é o mesmo que faz um laboratório farmacêutico dividir pacientes em dois grupos antes de declarar que um remédio funciona: separar aleatoriamente uma população em grupo de **tratamento** (que recebe a intervenção) e grupo de **controle** (que não recebe), e comparar os resultados.
 
 Formalmente, queremos estimar o **efeito médio do tratamento** (*Average Treatment Effect*, ATE):
 
@@ -415,7 +415,7 @@ O Nobel de 2019 reconheceu a transformação que os RCTs trouxeram para a econom
 
 ### 22.5.1 Quando a natureza (ou a política) fornece o experimento
 
-Nem sempre é possível ou ético conduzir um experimento controlado. Mas às vezes a história, a geografia ou a política criam situações que *se assemelham* a um experimento: um grupo é "tratado" por circunstâncias que são plausivamente exógenas — isto é, não correlacionadas com as características dos indivíduos afetados. Esses são os **experimentos naturais** (*natural experiments*).
+E quando não é possível sortear ninguém? Quando seria absurdo (ou ilegal, ou cruel) dividir pessoas em grupos e negar tratamento a metade delas? Nessas horas, o economista faz o que todo bom detetive faz: procura pistas que a história deixou para trás. Às vezes a natureza, a geografia ou a política criam situações que *se assemelham* a um experimento — como se o destino tivesse feito a randomização por nós. Um grupo é "tratado" por circunstâncias que são plausivamente exógenas — isto é, não correlacionadas com as características dos indivíduos afetados. Esses são os **experimentos naturais** (*natural experiments*).
 
 A diferença fundamental em relação aos RCTs é que o pesquisador **não controla** a aleatorização — ela é fornecida por alguma variação "como se fosse aleatória" no ambiente. A validade do método depende crucialmente da **plausibilidade da exogeneidade** — uma hipótese que pode ser argumentada e testada parcialmente, mas nunca provada definitivamente.
 
@@ -500,7 +500,7 @@ O Nobel de 2021, concedido a Card, Angrist e Imbens, reconheceu não apenas resu
 
 ## 22.6 Desenho de Mecanismos Experimentais
 
-As seções anteriores mostraram como diferentes métodos experimentais identificam efeitos causais. Agora voltamos ao laboratório para examinar uma aplicação diferente: usar experimentos não apenas para *testar* teorias, mas para *desenhar* instituições econômicas melhores — leilões, mercados e mecanismos de alocação.
+Até aqui, usamos experimentos como um espelho: eles refletem a realidade de volta, mostrando se nossas teorias capturam ou não o comportamento humano. Agora, a lógica se inverte. Em vez de perguntar "o mundo funciona como o modelo prevê?", perguntamos "como *desenhar* o mundo para que funcione melhor?" É a diferença entre um biólogo que observa a natureza e um engenheiro que constrói uma ponte. Nesta seção, usamos experimentos não apenas para *testar* teorias, mas para *desenhar* instituições econômicas melhores — leilões, mercados e mecanismos de alocação.
 
 ### 22.6.1 Testando a teoria de leilões em laboratório
 
@@ -576,7 +576,7 @@ O caso mais emblemático é o sistema de **troca de rins** (*kidney exchange*). 
 
 ## 22.7 Limites e Controvérsias
 
-O entusiasmo com os métodos experimentais não deve obscurecer suas limitações. Nesta seção final, examinamos três fronts de crítica que todo pesquisador experimental deve enfrentar: a replicabilidade dos resultados, o alcance dos RCTs e as questões éticas da experimentação com seres humanos.
+Toda revolução científica chega ao momento em que precisa olhar no espelho e fazer autocrítica — e a revolução experimental em economia não é exceção. Depois de três Prêmios Nobel, centenas de RCTs e milhares de sessões de laboratório, a pergunta incômoda é inevitável: será que estamos medindo o que pensamos estar medindo? Nesta seção final, examinamos três fronts de crítica que todo pesquisador experimental deve enfrentar: a replicabilidade dos resultados, o alcance dos RCTs e as questões éticas da experimentação com seres humanos.
 
 ### 22.7.1 A crise de replicação
 

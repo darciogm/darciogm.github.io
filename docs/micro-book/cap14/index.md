@@ -1,6 +1,6 @@
 # Capítulo 14 — Quando Tudo se Encaixa (ou Quase Isso): Equilíbrio Geral
 
-No capítulo anterior, analisamos mercados isolados — o chamado equilíbrio parcial marshalliano. Mas os mercados não existem no vácuo: o preço do milho afeta a demanda por soja; o salário dos engenheiros influencia o custo de construção civil; uma política comercial que protege a indústria têxtil altera os preços relativos em toda a economia. A análise de **equilíbrio geral** busca compreender a interdependência simultânea de todos os mercados.
+Imagine que você puxa um único fio de uma teia de aranha. O que acontece? A teia inteira vibra. É exatamente isso que ocorre numa economia quando mexemos em um único mercado — e até aqui fingíamos que o resto da teia ficava parado. No capítulo anterior, analisamos mercados isolados — o chamado equilíbrio parcial marshalliano. Mas os mercados não existem no vácuo: o preço do milho afeta a demanda por soja; o salário dos engenheiros influencia o custo de construção civil; uma política comercial que protege a indústria têxtil altera os preços relativos em toda a economia. A análise de **equilíbrio geral** abandona a ficção do *ceteris paribus* e busca compreender a interdependência simultânea de todos os mercados — a teia inteira, vibrando de uma vez.
 
 Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a intuição gráfica da Caixa de Edgeworth até a formalização matemática via funções de excesso de demanda e a prova de existência pelo Teorema do Ponto Fixo de Brouwer. Estabeleceremos os dois teoremas fundamentais do bem-estar, que conectam eficiência de Pareto e concorrência perfeita, e concluiremos com uma visão dos modelos computáveis de equilíbrio geral (CGE), que permitem aplicar essa teoria à avaliação de políticas públicas.
 
@@ -41,7 +41,7 @@ A escolha do numerário é uma questão de conveniência — qualquer bem pode s
 
 ## 14.2 Modelo Gráfico: A Caixa de Edgeworth
 
-A definição formal de equilíbrio geral competitivo — um vetor de preços que equilibra simultaneamente todos os mercados — pode parecer abstrata à primeira vista. Para desenvolver intuição antes de mergulhar na formalização matemática, começamos por um modelo gráfico simples e profundamente iluminador: a Caixa de Edgeworth. Trata-se de uma economia mínima, com apenas dois consumidores e dois bens, mas que já captura a essência das trocas voluntárias, da eficiência e do papel dos preços relativos.
+A definição formal de equilíbrio geral competitivo — um vetor de preços que equilibra simultaneamente todos os mercados — pode soar como algo que só um computador amaria. Antes de mergulhar na formalização matemática, vamos fazer algo mais humano: desenhar uma caixa. Não qualquer caixa — a **Caixa de Edgeworth**, talvez o diagrama mais engenhoso de toda a microeconomia. Trata-se de uma economia mínima, com apenas dois consumidores e dois bens, mas que já captura a essência das trocas voluntárias, da eficiência e do papel dos preços relativos. É o tipo de modelo que faz você pensar: "por que não me mostraram isso antes?"
 
 ### Construção
 
@@ -93,7 +93,7 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 
 ## 14.3 Troca Pura: Curva de Contrato e Núcleo
 
-A Caixa de Edgeworth nos permitiu visualizar alocações e curvas de indiferença. Agora, podemos formular a pergunta central da economia do bem-estar: entre todas as alocações possíveis, quais são "boas"? Mais precisamente, quais alocações não desperdiçam oportunidades de trocas mutuamente benéficas? O conceito de eficiência de Pareto fornece o critério, e a curva de contrato identifica o locus de todas as alocações eficientes.
+A Caixa de Edgeworth nos deu o mapa. Agora precisamos de um critério para separar os tesouros dos becos sem saída. Entre todas as alocações possíveis naquela caixa, quais são "boas"? Mais precisamente, quais alocações não deixam dinheiro na mesa — oportunidades de trocas mutuamente benéficas que ninguém aproveitou? O conceito de eficiência de Pareto fornece o critério, e a curva de contrato traça o caminho dourado: o locus de todas as alocações em que não há mais nenhuma barganha capaz de melhorar a vida de alguém sem prejudicar outra pessoa.
 
 ### Eficiência de Pareto na troca
 
@@ -378,7 +378,7 @@ A transição das condições de eficiência para os teoremas do bem-estar é na
 
 ## 14.6 O Primeiro Teorema do Bem-Estar
 
-As condições de eficiência na troca, na produção e no mix de produtos — sintetizadas na tabela acima — são alcançadas simultaneamente pelo equilíbrio competitivo. Esse resultado não é óbvio: como é possível que milhões de agentes, cada um perseguindo seu próprio interesse, sem nenhuma coordenação central, cheguem a um resultado eficiente? O Primeiro Teorema do Bem-Estar formaliza essa intuição, constituindo o resultado mais importante de toda a teoria do equilíbrio geral.
+Chegamos ao grand finale da teoria do equilíbrio geral — o resultado que faz economistas perderem o fôlego desde 1954. As condições de eficiência na troca, na produção e no mix de produtos — sintetizadas na tabela acima — são alcançadas simultaneamente pelo equilíbrio competitivo. Pare e pense no que isso significa: milhões de agentes, cada um egoisticamente perseguindo seu próprio interesse, sem nenhum planejador central, sem nenhum algoritmo coordenador, chegam a um resultado que *ninguém conseguiria melhorar*. É como se uma orquestra tocasse perfeitamente sem maestro — cada músico ouvindo apenas o preço do ingresso. O Primeiro Teorema do Bem-Estar formaliza essa intuição quase mágica, constituindo o resultado mais importante de toda a teoria do equilíbrio geral.
 
 A ideia de que mercados livres podem produzir resultados socialmente desejáveis tem raízes profundas na história do pensamento econômico. Em 1776, **Adam Smith** escreveu em *A Riqueza das Nações* que cada indivíduo, ao buscar seu próprio interesse, é "conduzido como que por uma mão invisível a promover um fim que não fazia parte de suas intenções". Mas Smith não tinha as ferramentas matemáticas para formalizar essa intuição. Coube a Walras, Pareto e, finalmente, Arrow e Debreu transformar a metáfora da "mão invisível" em um teorema rigoroso — com hipóteses claramente identificadas e uma demonstração lógica precisa. A importância dessa formalização não pode ser subestimada: ao explicitar as *condições* sob as quais o mercado é eficiente, o teorema também identifica exatamente *quando* e *por que* o mercado falha — abrindo caminho para a teoria das falhas de mercado que estudaremos nos próximos capítulos.
 
@@ -779,7 +779,7 @@ Essa consequência é profundamente significativa do ponto de vista prático. El
 
 ## 14.9 Existência de Equilíbrio
 
-A formalização da seção anterior nos forneceu as funções de excesso de demanda e a Lei de Walras. Mas uma questão fundamental permanece em aberto: existe de fato um vetor de preços que equilibra todos os mercados simultaneamente? Não é *a priori* evidente que um sistema de \(n-1\) equações não lineares interdependentes tenha solução. A demonstração de existência, devida a Arrow e Debreu (1954), é uma das mais célebres da economia matemática e utiliza um resultado da topologia: o Teorema do Ponto Fixo de Brouwer.
+Temos as equações, temos a Lei de Walras, temos toda a maquinaria. Mas falta responder a pergunta que tirou o sono de economistas matemáticos por oitenta anos: esse equilíbrio que tanto discutimos *existe mesmo*, ou estamos construindo castelos sobre nuvens? Não é *a priori* evidente que um sistema de \(n-1\) equações não lineares interdependentes tenha solução — afinal, já tentou resolver um Sudoku que não tinha resposta? A demonstração de existência, devida a Arrow e Debreu (1954), é uma das mais célebres da economia matemática e recorre a um aliado inesperado vindo da topologia: o Teorema do Ponto Fixo de Brouwer.
 
 A questão da existência pode parecer puramente acadêmica, mas é de importância fundamental para a credibilidade de toda a teoria. Se não pudéssemos garantir que o sistema walrasiano admite pelo menos uma solução, todo o edifício teórico — os Teoremas do Bem-Estar, a análise de eficiência, os modelos CGE — estaria construído sobre areia. Afinal, de que adianta saber que "o equilíbrio é eficiente" se o equilíbrio talvez não exista?
 
@@ -943,7 +943,7 @@ A Lei de Walras generaliza-se naturalmente: o valor do excesso de demanda (agora
 
 ## 14.11 Modelos Computáveis de Equilíbrio Geral (CGE)
 
-A teoria walrasiana desenvolvida nas seções anteriores — com suas condições de equilíbrio, Teoremas do Bem-Estar e provas de existência — é matematicamente elegante, mas pode parecer distante da realidade de uma economia com milhares de setores, milhões de agentes e complexas interdependências. Como traduzir essa teoria em análises quantitativas capazes de avaliar o impacto de políticas públicas concretas, como a reforma tributária brasileira ou o acordo Mercosul-UE? A resposta está nos modelos computáveis de equilíbrio geral (CGE), que representam a ponte entre a teoria e a prática.
+Até aqui, construímos uma catedral teórica impressionante — Teoremas do Bem-Estar, provas de existência, condições de eficiência. Mas se você é o tipo de pessoa que pergunta "tudo bem, e na prática?", esta seção é para você. A teoria walrasiana é matematicamente elegante, porém uma economia real tem milhares de setores, milhões de agentes e interdependências que fariam Walras precisar de um computador (que ele, em 1874, evidentemente não tinha). Como traduzir essa teoria em números capazes de avaliar o impacto de políticas públicas concretas — a reforma tributária brasileira, o acordo Mercosul-UE, a precificação de carbono? A resposta está nos modelos computáveis de equilíbrio geral (CGE): a ponte que liga o quadro-negro ao gabinete do ministro da Fazenda.
 
 ### Da teoria à prática
 

@@ -1,6 +1,6 @@
 # Capítulo 9d — Sinais, Contratos e Credibilidade: Jogos Dinâmicos com Informação Incompleta
 
-No módulo anterior (9c), os jogadores faziam escolhas simultâneas sem observar as ações dos demais. Quando ações são **sequenciais** e a informação é **incompleta**, surge uma nova possibilidade: jogadores informados podem usar suas ações para **sinalizar** informação privada, e jogadores desinformados podem **atualizar crenças** via regra de Bayes. Essa transição — de jogos simultâneos para jogos sequenciais com informação incompleta — marca uma mudança qualitativa na análise: a *própria ação* do jogador informado passa a conter informação, e o receptor precisa interpretar essa ação como evidência sobre o tipo do remetente.
+No módulo anterior, jogadores com informação privada agiam ao mesmo tempo — cada um no escuro sobre os demais. Agora, adicionamos sequencialidade: alguém age *primeiro*, e os outros *observam*. Essa combinação muda tudo, porque a ação do primeiro jogador *fala*. Quando um candidato a emprego exibe um MBA de escola prestigiosa, ele não está apenas consumindo educação — está *dizendo* algo ao empregador sobre sua qualidade. Quando uma empresa oferece garantia de 5 anos no produto, está *comunicando* que confia na própria qualidade. A ação se torna **sinal** — e o jogo vira uma conversa estratégica onde cada movimento é uma mensagem.
 
 O conceito de equilíbrio é o **Equilíbrio Bayesiano Perfeito** (PBE), que combina otimalidade sequencial (como no EPS) com consistência bayesiana das crenças (como no BNE). As aplicações centrais são **sinalização** (Spence, 1973), **moral hazard** e **seleção adversa** — os problemas clássicos de informação assimétrica que George Akerlof, Michael Spence e Joseph Stiglitz formalizaram ao longo das décadas de 1970 e 1980, trabalho que culminou no Prêmio Nobel de Economia de 2001.
 
@@ -12,7 +12,7 @@ Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Ca
 
 ## 9d.1 Equilíbrio Bayesiano Perfeito (PBE)
 
-Quando combinamos ação sequencial com informação incompleta, precisamos de um conceito de equilíbrio que una as exigências do EPS (otimalidade em cada ponto do jogo) com as do BNE (consistência das crenças). O Equilíbrio Bayesiano Perfeito realiza essa síntese: cada jogador age otimamente em cada conjunto de informação, dado o que acredita sobre os tipos dos demais, e essas crenças são atualizadas pela regra de Bayes sempre que possível.
+Precisamos de um conceito de equilíbrio que faça duas coisas ao mesmo tempo: exigir que cada jogador aja racionalmente *em cada ponto do jogo* (herança do EPS, Seção 9b.1) e que as crenças sejam atualizadas de forma consistente quando nova informação chega (herança do BNE, Seção 9c.2). O **Equilíbrio Bayesiano Perfeito** é esse casamento: EPS + Bayes.
 
 !!! definition "Equilíbrio Bayesiano Perfeito"
     Um PBE consiste em:
@@ -33,9 +33,9 @@ A consistência bayesiana das crenças é, ao mesmo tempo, a virtude e a limita�
 
 ## 9d.2 Sinalização: O Modelo de Spence
 
-O PBE encontra sua aplicação mais célebre nos jogos de sinalização. A pergunta central é: pode uma parte informada *revelar credivelmente* sua informação privada por meio de ações observáveis? A resposta de Spence (1973) é que sim, desde que o custo da ação seja diferencialmente menor para os tipos de alta qualidade.
+Aqui está a aplicação mais famosa — e mais provocativa — do PBE. A pergunta de Spence (1973): por que as pessoas fazem faculdade? Resposta óbvia: para aprender. Resposta de Spence: *talvez não*. Talvez o diploma seja apenas um **sinal** — uma forma custosa de dizer ao empregador "sou do tipo produtivo", mesmo que o conteúdo do curso seja irrelevante. O truque: ir à faculdade é mais *fácil* (menos custoso) para quem é produtivo. Logo, o diploma funciona como filtro.
 
-O insight de Spence foi desenvolver esse argumento no contexto do mercado de trabalho, mas suas implicações alcançam muito além: garantias de carros usados, dividendos corporativos e desempenho no ENEM são todos exemplos de sinais cujo custo é inversamente proporcional à qualidade do agente. Em cada caso, o mecanismo central é o mesmo: uma ação custosa que o tipo de baixa qualidade acha proibitiva.
+Essa lógica se estende muito além da educação: garantia de 5 anos no carro usado (só quem confia oferece), dividendos altos (só firma saudável distribui caixa), e até o pavão com cauda absurdamente grande (só quem é geneticamente apto sobrevive com aquilo). O mecanismo é sempre o mesmo: uma ação custosa que o tipo ruim acha proibitiva demais para imitar.
 
 Formalmente, jogos de sinalização são jogos sequenciais com informação incompleta nos quais a parte informada (o "remetente") age primeiro, escolhendo um sinal observável.
 
@@ -161,7 +161,9 @@ Quanto maior o desalinhamento de interesses, mais grosseira é a partição e me
 
 ## 9d.4 Moral Hazard (Risco Moral)
 
-As seções anteriores trataram de informação privada sobre *características* (tipos) — o agente sabe algo sobre si que o receptor não sabe, e usa essa informação estrategicamente ao escolher sinais ou mensagens. Agora passamos a um problema qualitativamente distinto: o que acontece quando a assimetria se refere não a *quem o agente é*, mas a *o que ele faz* após a celebração de um contrato? Enquanto na sinalização e na seleção adversa o problema é de **tipos ocultos** (*hidden types*), no moral hazard o problema é de **ações ocultas** (*hidden actions*). A distinção é operacionalmente crucial: tipos ocultos exigem mecanismos de revelação (sinalização, screening); ações ocultas exigem mecanismos de incentivo (contratos contingentes a resultados). Se o principal não pode observar o esforço do agente, como desenhar incentivos que alinhem os interesses de ambos? Esse é o problema do moral hazard — ou risco moral — introduzido formalmente na literatura econômica por Arrow (1963) no contexto de seguros de saúde e formalizado em termos de teoria dos contratos por Holmström (1979).
+Mudança de cenário. Até aqui, o problema era de *tipo*: o agente sabe quem ele é, o receptor não. Agora o problema é de *ação*: o agente escolhe o que faz depois de assinar o contrato, e o principal não consegue ver. Você contrata um seguro de carro e passa a estacionar em lugar perigoso — porque, afinal, está segurado. A empresa contrata o gerente e não consegue verificar se ele está trabalhando duro ou navegando na internet. O governo empresta dinheiro ao banco e o banco assume riscos excessivos — sabendo que, se der errado, o governo socorre.
+
+Esse é o **moral hazard** (risco moral): a ação oculta que muda de comportamento *porque* alguém está protegido. O desafio: como desenhar um contrato que faça o agente *querer* se esforçar, mesmo quando ninguém está olhando?
 
 !!! definition "Moral Hazard"
     Situação em que uma parte (o **agente**) toma uma ação não observável que afeta o payoff de outra parte (o **principal**). O principal não pode monitorar diretamente o esforço do agente.
@@ -229,7 +231,7 @@ O Capítulo 8 (economia comportamental) acrescenta uma camada adicional: evidên
 
 ## 9d.5 Seleção Adversa
 
-O moral hazard, discutido na seção anterior, é um problema pós-contratual: o agente escolhe uma ação que o principal não pode observar *após* celebrar o contrato. A seleção adversa, por contraste, é pré-contratual: a parte informada já possui uma característica privada que afeta o valor da transação *antes* de o contrato ser firmado. Confundir os dois — como fazem os itens 0 e 1 da questão ANPEC ao final deste capítulo — é um erro frequente mas evitável: basta perguntar se a assimetria se refere a ações ocultas (moral hazard) ou a características ocultas (seleção adversa).
+Moral hazard é sobre o que o agente *faz* depois do contrato. Seleção adversa é sobre o que o agente *é* antes do contrato. A diferença: se o problema é que o motorista dirige mal *após* contratar o seguro, é moral hazard. Se o problema é que *quem procura seguro já é mau motorista*, é seleção adversa. Timing diferente, soluções diferentes. Confundir os dois é o erro mais clássico em provas de micro — e a distinção é sempre a mesma pergunta: ações ocultas (pós) ou tipos ocultos (pré)?
 
 !!! definition "Seleção Adversa"
     Situação em que uma parte tem informação privada sobre suas próprias características *antes* de firmar um contrato, e a parte desinformada não consegue distinguir os tipos. Em equilíbrio, a parte desinformada oferece condições baseadas na qualidade *média* do pool, o que:

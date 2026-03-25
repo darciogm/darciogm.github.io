@@ -1,6 +1,6 @@
 # Capítulo 18 — A Paciência Tem Preço
 
-A economia não se resume a decisões instantâneas. Agentes econômicos constantemente fazem escolhas que envolvem o **tempo**: poupar hoje para consumir amanhã, investir em uma fábrica cujos retornos virão ao longo de anos, extrair um recurso natural agora ou preservá-lo para o futuro. Neste capítulo, estudamos a teoria do capital e dos juros, que fornece o arcabouço analítico para compreender essas decisões intertemporais.
+Você já parcelou uma compra e sentiu aquele aperto ao ver o total com juros? Ou deixou dinheiro na poupança "para o futuro" sem saber exatamente quando esse futuro chegaria? Parabéns: você já fez economia intertemporal — só faltava o jargão. A verdade é que a economia não se resume a decisões instantâneas. Agentes econômicos constantemente fazem escolhas que envolvem o **tempo**: poupar hoje para consumir amanhã, investir em uma fábrica cujos retornos virão ao longo de anos, extrair um recurso natural agora ou preservá-lo para o futuro. Neste capítulo, estudamos a teoria do capital e dos juros, que fornece o arcabouço analítico para compreender essas decisões — e para entender por que, no Brasil, a paciência custa particularmente caro.
 
 Começamos com os conceitos fundamentais de capital e taxa de retorno (Seção 18.1), passamos à determinação da taxa de juros de equilíbrio no mercado de fundos emprestáveis (Seção 18.2) e formalizamos a decisão intertemporal do consumidor por meio do modelo de dois períodos de Irving Fisher (Seção 18.3). Em seguida, introduzimos a distinção entre taxa de juros nominal e real — um tema crucial para a economia brasileira — e o efeito Fisher (Seção 18.4). A Seção 18.5 estende o modelo para a precificação de ativos arriscados, conectando a escolha intertemporal à teoria financeira. As Seções 18.6 e 18.7 apresentam os dois critérios centrais de avaliação de investimentos — VPL e TIR —, seguidas pela demanda da firma por capital (Seção 18.8). A Seção 18.9 desenvolve as ferramentas matemáticas de juros compostos e tempo contínuo. A Seção 18.10 aplica os critérios de investimento a um exemplo numérico detalhado, e a Seção 18.11 conclui com a regra de Hotelling para recursos naturais exauríveis. Ao longo do capítulo, conectamos a teoria à experiência brasileira, marcada por décadas de juros reais elevados e seus efeitos sobre o investimento produtivo.
 
@@ -41,7 +41,7 @@ A convergência entre taxa de retorno do capital e taxa de juros é uma das pred
 
 ## 18.2 Determinação da Taxa de Retorno
 
-Visto o conceito de capital e sua taxa de retorno, surge naturalmente a questão: o que determina o nível dessa taxa? Em uma economia de mercado, a taxa de retorno do capital não é fixada por decreto — ela emerge da interação entre agentes que desejam poupar (ofertando fundos) e agentes que desejam investir (demandando fundos). Esse equilíbrio no mercado de fundos emprestáveis é a peça central da teoria dos juros.
+Se a taxa de juros é o preço da impaciência, quem define esse preço? Não é um burocrata com caneta vermelha (embora o presidente do Banco Central chegue perto). Em uma economia de mercado, a taxa de retorno do capital emerge de um cabo de guerra silencioso entre quem quer poupar — "segura aí que eu gasto depois" — e quem quer investir — "me empresta que eu multiplico". Esse equilíbrio no mercado de fundos emprestáveis é a peça central da teoria dos juros.
 
 ### Equilíbrio intertemporal
 
@@ -94,7 +94,7 @@ Historicamente, a teoria econômica ofereceu explicações distintas para a exis
 
 ## 18.3 Modelo de Dois Períodos de Fisher
 
-A seção anterior apresentou os determinantes da taxa de juros de equilíbrio de forma intuitiva. Agora, formalizamos a decisão intertemporal do consumidor por meio do modelo de dois períodos de Irving Fisher — a pedra angular da teoria do consumo intertemporal. As ferramentas aqui desenvolvidas — restrição orçamentária intertemporal, riqueza intertemporal, taxa de preferência intertemporal — serão empregadas novamente nos capítulos subsequentes e na macroeconomia.
+Gastar tudo no bar na sexta-feira ou guardar para a viagem de janeiro? Em essência, toda decisão financeira é uma briga entre o seu "eu de agora" e o seu "eu do futuro". Irving Fisher, em 1930, transformou essa briga existencial em um modelo elegante de dois períodos — a pedra angular da teoria do consumo intertemporal. As ferramentas aqui desenvolvidas — restrição orçamentária intertemporal, riqueza intertemporal, taxa de preferência intertemporal — serão empregadas novamente nos capítulos subsequentes e na macroeconomia.
 
 ### Estrutura do modelo
 
@@ -204,7 +204,7 @@ onde \(Y_1 - C_1^* = S\) é a poupança do consumidor. Se \(S > 0\) (poupador), 
 
 ## 18.4 Taxa de Juros Nominal vs. Real e o Efeito Fisher
 
-Até aqui, trabalhamos com uma única taxa de juros \(r\) sem nos preocupar com a inflação. Mas em economias reais — e especialmente no Brasil, que viveu décadas de inflação alta e indexação generalizada —, a distinção entre taxa de juros nominal e real é absolutamente central. Confundir as duas é um dos erros mais frequentes em análise econômica e pode levar a decisões de investimento gravemente equivocadas.
+Até aqui, vivemos no paraíso teórico de uma economia sem inflação — um luxo que qualquer brasileiro nascido antes de 1994 reconhece como ficção científica. Em economias reais — e especialmente no Brasil, onde os mais velhos lembram de remarcar preços de supermercado toda semana —, a distinção entre taxa de juros nominal e real é absolutamente central. Confundir as duas é como confundir velocidade com distância: o número pode parecer impressionante, mas sem o ajuste certo, você não chega a lugar nenhum.
 
 !!! definition "Taxa de juros nominal e real"
     A **taxa de juros nominal** (\(i\)) é a taxa observada no mercado, expressa em unidades monetárias correntes. A **taxa de juros real** (\(r\)) é a taxa ajustada pela inflação, expressa em poder de compra constante.
@@ -302,7 +302,7 @@ A equação $\eqref{eq:18.7}$ unifica toda a teoria de precificação de ativos:
 
 ## 18.6 Critério do Valor Presente Descontado (VPL)
 
-As seções anteriores formalizaram a escolha intertemporal do consumidor e a precificação de ativos. Mas como uma firma avalia, na prática, se um projeto específico de investimento vale a pena? O critério do Valor Presente Líquido (VPL) traduz a lógica intertemporal em uma regra operacional de decisão: um projeto deve ser aceito se, e somente se, o valor presente de todos os seus fluxos de caixa futuros excede o investimento inicial. Essa regra aparentemente simples é, na verdade, a aplicação direta do conceito de custo de oportunidade do capital.
+Toda a teoria intertemporal que construímos até aqui culmina em uma pergunta brutalmente prática: "devo ou não investir neste projeto?" O dono da padaria não quer saber de equações de Euler — ele quer saber se o forno novo compensa mais do que deixar o dinheiro rendendo no CDB. O critério do Valor Presente Líquido (VPL) é a resposta da microeconomia a essa pergunta: um projeto deve ser aceito se, e somente se, o valor presente de todos os seus fluxos de caixa futuros excede o investimento inicial. Essa regra aparentemente simples é, na verdade, a aplicação direta do conceito de custo de oportunidade do capital.
 
 ### Definição
 
@@ -435,7 +435,7 @@ A demanda por capital é decrescente no custo de uso \(c_K\) (e, portanto, na ta
 
 ## 18.9 Juros Compostos e Tempo Contínuo
 
-Para concluir o arcabouço técnico deste capítulo, apresentamos as ferramentas matemáticas de capitalização e desconto que fundamentam os cálculos de valor presente e futuro. Embora os conceitos de juros compostos e capitalização contínua sejam frequentemente abordados em cursos de matemática financeira, sua compreensão é indispensável para a análise econômica intertemporal — desde a avaliação de projetos de investimento até a modelagem de crescimento econômico.
+Albert Einstein provavelmente nunca disse que os juros compostos são "a oitava maravilha do mundo" — mas quem inventou a citação tinha razão. A mágica de juros sobre juros transforma centavos em fortunas (dado tempo suficiente) e dívidas pequenas em bolas de neve (dado descuido suficiente). Nesta seção, apresentamos as ferramentas matemáticas de capitalização e desconto que fundamentam todos os cálculos de valor presente e futuro do capítulo. Embora frequentemente abordados em cursos de matemática financeira, esses conceitos são indispensáveis para a análise econômica intertemporal — desde a avaliação de projetos de investimento até a modelagem de crescimento econômico.
 
 ### Juros compostos discretos
 
@@ -578,7 +578,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ## 18.11 Precificação de Recursos Naturais: A Regra de Hotelling
 
-Os critérios de VPL e TIR aplicam-se a investimentos em capital produzido — máquinas, fábricas, projetos de infraestrutura. Mas a economia também lida com recursos que não são produzidos: petróleo, minérios, florestas nativas. Esses recursos naturais não renováveis colocam uma questão intertemporal distinta: como o proprietário de um recurso finito decide quanto extrair hoje e quanto preservar para o futuro? A resposta, formalizada por Harold Hotelling em 1931, é uma das proposições mais elegantes da economia dos recursos naturais.
+VPL e TIR funcionam bem quando o ativo em questão foi construído por mãos humanas — uma fábrica, um galpão, um software. Mas o que fazer com aquilo que a natureza criou e que, uma vez consumido, não volta? Petróleo, minério de ferro, mogno nativo: são estoques finitos, e cada barril extraído hoje é um barril a menos para amanhã. Isso cria um dilema intertemporal que nenhum engenheiro de produção resolve sozinho: extrair agora e aplicar o dinheiro, ou deixar o recurso no solo apostando que valerá mais no futuro? A resposta, formalizada por Harold Hotelling em 1931, é uma das proposições mais elegantes da economia dos recursos naturais.
 
 ### O problema do recurso exaurível
 

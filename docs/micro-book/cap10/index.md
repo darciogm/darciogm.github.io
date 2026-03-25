@@ -1,6 +1,6 @@
 # Capítulo 10 — Mais Mãos, Mais Máquinas — Mais Produto?
 
-A teoria da produção constitui o alicerce sobre o qual se ergue toda a análise da oferta em microeconomia. Enquanto os capítulos anteriores trataram das decisões dos consumidores — agentes que buscam maximizar utilidade —, voltamos agora a atenção para as **firmas**, agentes cuja razão de existir é transformar insumos (trabalho, capital, terra, materiais) em produtos e serviços. Compreender *como* essa transformação ocorre, quais são suas regularidades empíricas e como representá-la matematicamente é o objetivo central deste capítulo.
+Se você já se perguntou por que uma padaria com três fornos não triplica a produção só de contratar mais padeiros, parabéns — você já intuiu o problema central deste capítulo. Até agora, estudamos consumidores tentando espremer o máximo de felicidade de cada real. Agora trocamos de lado do balcão: entramos no mundo das **firmas**, agentes cuja razão de existir é transformar insumos (trabalho, capital, terra, materiais) em produtos e serviços. Compreender *como* essa transformação ocorre, quais são suas regularidades empíricas e como representá-la matematicamente é o objetivo central deste capítulo.
 
 A **função de produção** é o instrumento analítico que sintetiza a tecnologia disponível para a firma. A partir dela, derivamos conceitos fundamentais — produtividade marginal, isoquantas, taxa marginal de substituição técnica (TMST), rendimentos de escala e elasticidade de substituição — que serão mobilizados nos capítulos seguintes para construir as curvas de custo e de oferta.
 
@@ -14,7 +14,7 @@ O material deste capítulo pressupõe familiaridade com as ferramentas matemáti
 
 ### A função de produção
 
-Por que algumas firmas produzem mais que outras com quantidades semelhantes de insumos? A resposta está na **tecnologia** — o conjunto de conhecimentos e processos que determinam como insumos são combinados para gerar produto. A função de produção é a representação matemática dessa tecnologia.
+Duas fábricas de cerveja, mesma quantidade de cevada e de funcionários — e uma produz o dobro da outra. Mágica? Não: **tecnologia**. A diferença está no conjunto de conhecimentos e processos que determinam como insumos são combinados para gerar produto. A função de produção é a representação matemática dessa "receita secreta".
 
 A teoria da produção ocupa na análise da firma o mesmo papel que a teoria das preferências ocupa na análise do consumidor: ela descreve o que é *tecnologicamente possível*, sem ainda incorporar considerações de preço ou custo. Assim como no Capítulo 2 aprendemos as ferramentas matemáticas de diferenciação e otimização com restrições, aqui as mobilizamos para caracterizar como o produto reage a variações nos insumos. E assim como no Capítulo 4 a função de utilidade descrevia as preferências do consumidor, a função de produção descreve as possibilidades tecnológicas da firma — os capítulos seguintes (11 e 12) irão adicionar os preços dos fatores para derivar custos e a oferta.
 
@@ -107,7 +107,7 @@ A relação entre produto marginal e produto médio revela um padrão importante
 
 ## 10.2 Isoquantas e a Taxa Marginal de Substituição Técnica
 
-A análise da Seção 10.1 tratou de situações em que apenas um insumo varia enquanto o outro permanece fixo — o cenário típico do curto prazo. Mas na prática, as firmas dispõem de margem para redesenhar seus processos produtivos: podem substituir máquinas por trabalhadores, ou vice-versa, buscando a combinação mais eficiente. Que instrumento analítico nos permite estudar essas possibilidades de troca entre insumos?
+Na Seção 10.1, mantivemos o capital preso no chão e só mexemos no trabalho — como um chef que só pode variar a quantidade de sal, sem tocar nos outros temperos. A vida real é mais generosa: firmas podem trocar máquinas por gente, robôs por operários, caixas de supermercado por totens de autoatendimento. Que instrumento analítico nos permite estudar essas possibilidades de troca entre insumos?
 
 A resposta está nas **isoquantas** e na **taxa marginal de substituição técnica (TMST)**, ferramentas que capturam, respectivamente, o conjunto de combinações de insumos que geram o mesmo produto e a "taxa de câmbio" entre um fator e outro ao longo desse conjunto. A analogia com a teoria do consumidor é direta — e proposital: as isoquantas são o equivalente produtivo das curvas de indiferença estudadas no Capítulo 4, e a TMST desempenha papel análogo à taxa marginal de substituição do consumidor. Mais do que uma analogia superficial, trata-se de uma dualidade profunda: a firma que minimiza custos para um dado produto resolve um problema formalmente idêntico ao do consumidor que maximiza utilidade para um dado orçamento. Essa simetria, explorada em detalhes nos Capítulos 11 e 12, permite importar diretamente os resultados do lado da demanda para o lado da oferta.
 
@@ -209,7 +209,7 @@ O que essa expressão nos diz economicamente? A TMST decrescente reflete a dific
 
 ## 10.3 Rendimentos de Escala
 
-Até aqui, nossa análise caminhou em duas direções complementares: primeiro, variamos um insumo com o outro fixo (Seção 10.1, rendimentos marginais); depois, trocamos um insumo por outro ao longo de uma isoquanta (Seção 10.2, substituição). Resta uma terceira pergunta, talvez a mais relevante para decisões estratégicas de longo prazo: o que acontece quando a firma aumenta **todos** os insumos proporcionalmente? Se uma empresa duplica suas fábricas, seus trabalhadores e toda a sua estrutura, o produto necessariamente dobra? A resposta, que define os rendimentos de escala, tem implicações profundas para a estrutura de mercado — pois determina se há vantagem em ser grande ou pequeno.
+Até aqui, mexemos em um insumo de cada vez (Seção 10.1) e trocamos um pelo outro (Seção 10.2). Agora vem a pergunta que todo dono de franquia se faz: se eu clonar a operação inteira — dobrar fábricas, máquinas, funcionários, tudo —, o faturamento dobra junto? Quem dera fosse tão simples. A resposta, que define os rendimentos de escala, tem implicações profundas para a estrutura de mercado — pois determina se há vantagem em ser grande ou pequeno, e por que algumas indústrias são dominadas por gigantes enquanto outras florescem com milhares de pequenas firmas.
 
 <iframe src="../graficos/cap10/rendimentos-escala.html" title="Figura 10.2 — Rendimentos de escala" class="graph-iframe"></iframe>
 
@@ -302,7 +302,7 @@ Note que, pela equação $\eqref{eq:10.7}$, uma função pode apresentar simulta
 
 ## 10.4 Elasticidade de Substituição
 
-Vimos que a TMST mede a taxa à qual a firma pode trocar um insumo por outro ao longo de uma isoquanta. Mas a TMST varia conforme nos movemos ao longo da curva. Surge então uma pergunta natural: quão sensível é a combinação de insumos a mudanças na TMST? Em outras palavras, quando os preços relativos dos fatores se alteram — por exemplo, quando o salário mínimo sobe ou o custo do capital cai —, a firma ajusta significativamente sua proporção capital-trabalho, ou a tecnologia impõe rigidez nessa escolha?
+Quando o salário mínimo sobe, o iFood substitui motoboys por drones? Quando o juro cai, a montadora troca robôs por operários? A TMST nos diz *que* a firma pode trocar um insumo por outro — mas não responde o quanto essa troca é fácil ou dolorosa. É aqui que entra a elasticidade de substituição: um único número que resume se a tecnologia da firma é flexível como um canivete suíço ou rígida como uma receita de bolo.
 
 A **elasticidade de substituição** é o parâmetro que responde a essa pergunta. Trata-se de uma medida adimensional que sintetiza a curvatura da isoquanta e, portanto, a facilidade de substituição entre insumos. Esse conceito é central não apenas para a teoria da produção, mas também para a análise da distribuição funcional da renda e o debate contemporâneo sobre automação e desigualdade.
 
@@ -410,7 +410,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
 ## 10.5 Funções de Produção Clássicas
 
-As seções anteriores desenvolveram os conceitos — produtividade marginal, isoquantas, TMST, rendimentos de escala e elasticidade de substituição — que caracterizam qualquer tecnologia de produção. Mas como esses conceitos se materializam em formas funcionais concretas, aplicáveis à modelagem empírica e à resolução de problemas? Apresentamos agora quatro famílias de funções de produção que cobrem todo o espectro de substituibilidade entre insumos, da rigidez absoluta (Leontief) à flexibilidade total (linear). Cada uma captura um padrão tecnológico distinto, e a escolha da forma funcional adequada depende do setor e do problema em análise. O domínio dessas quatro formas é indispensável tanto para provas da ANPEC quanto para trabalhos empíricos.
+Temos os conceitos — produtividade marginal, isoquantas, TMST, rendimentos de escala, elasticidade de substituição. Falta o corpo: quais equações concretas damos a essas ideias quando sentamos para resolver um problema ou estimar um modelo? Esta seção apresenta o "cardápio" clássico — quatro funções de produção que cobrem todo o espectro de substituibilidade, da rigidez absoluta (Leontief, o brigadeiro que só funciona com a proporção exata) à flexibilidade total (linear, o suco que aceita qualquer fruta). Cada uma captura um padrão tecnológico distinto, e a escolha da forma funcional adequada depende do setor e do problema em análise. Dominar essas quatro formas é indispensável tanto para provas da ANPEC quanto para trabalhos empíricos.
 
 ### Função de produção linear
 
@@ -537,7 +537,7 @@ As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a 
 
 ## 10.6 Progresso Técnico
 
-As quatro funções de produção apresentadas na seção anterior descrevem a tecnologia em um instante do tempo — uma "fotografia" das possibilidades produtivas. Contudo, a história econômica nos ensina que a tecnologia é dinâmica: a mesma quantidade de terra e trabalho que produzia 1.700 kg de soja por hectare na década de 1970 produz mais de 3.300 kg hoje. De onde vem esse ganho, se os insumos não mudaram proporcionalmente?
+Até aqui, cada função de produção era uma fotografia — um instantâneo congelado no tempo. Mas o Cerrado conta outra história: a mesma terra e o mesmo número de braços que arrancavam 1.700 kg de soja por hectare nos anos 1970 hoje entregam mais de 3.300 kg. Ninguém dobrou o Cerrado nem clonou os agricultores. De onde vem esse ganho?
 
 A resposta reside no **progresso técnico** — o deslocamento da própria função de produção ao longo do tempo. Incorporar essa dimensão temporal é essencial para conectar a microeconomia da produção à macroeconomia do crescimento, e o instrumento-chave para essa conexão é o **resíduo de Solow**, que mede a parcela do crescimento do produto não explicada pela acumulação de fatores.
 
