@@ -105,14 +105,16 @@ Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 **Figura 5.1 — Curva de Engel e caminho de expansão da renda.** Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
 </div>
 
-**Tabela 5.1 — Classificação dos bens pela resposta à renda**
-
 | Tipo de bem | Efeito da ↑ renda sobre demanda | Elasticidade-renda | Exemplo brasileiro |
 |---|---|---|---|
 | Normal | ↑ | \(\eta > 0\) | Carne bovina |
 | Inferior | ↓ | \(\eta < 0\) | Farinha de mandioca |
 | Luxo | ↑↑ (mais que proporcional) | \(\eta > 1\) | Serviços, viagens |
 | Necessidade | ↑ (menos que proporcional) | \(0 < \eta < 1\) | Alimentação básica |
+
+<div class="caption-obj" markdown>
+**Tabela 5.1 — Classificação dos bens pela resposta à renda.** A elasticidade-renda \(\eta\) determina se o bem é normal (\(\eta > 0\)), inferior (\(\eta < 0\)), de luxo (\(\eta > 1\)) ou necessidade (\(0 < \eta < 1\)).
+</div>
 
 Recapitulando: sabemos que bens normais sobem com a renda, inferiores caem, e luxos sobem mais que proporcionalmente. A curva de Engel mapeia tudo isso. Até aqui, a vida era simples — apenas renda variava, preços parados. Agora vem o prato principal: o que acontece quando o *preço* de um bem muda? A resposta é mais sutil, porque uma variação de preço faz *duas coisas ao mesmo tempo* — e separá-las é a contribuição central de Slutsky.
 
