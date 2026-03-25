@@ -115,7 +115,7 @@
     function getCurv() { return parseFloat(document.getElementById('slider-curv').value); }
 
     // CARA: normalized so u(0)≈0, u(10)≈10 — purely visual scaling
-    // Quadratic: b = c * 0.01 so bliss point >> graph range
+    // Quadratic: b = c * 0.05 so bliss point > graph range with visible curvature
     function uFunc(w) {
       var c = getCurv();
       if (w <= 0.01) w = 0.01;
@@ -128,7 +128,7 @@
           if (Math.abs(c - 1) < 0.01) return Math.log(w);
           return Math.pow(w, 1 - c) / (1 - c);
         case 'quad':
-          var b = c * 0.01;
+          var b = c * 0.05;
           return w - b * w * w;
       }
     }
@@ -145,7 +145,7 @@
           if (Math.abs(c - 1) < 0.01) return 1 / w;
           return Math.pow(w, -c);
         case 'quad':
-          var b = c * 0.01;
+          var b = c * 0.05;
           return 1 - 2 * b * w;
       }
     }
@@ -162,7 +162,7 @@
           if (Math.abs(c - 1) < 0.01) return -1 / (w * w);
           return -c * Math.pow(w, -c - 1);
         case 'quad':
-          var b = c * 0.01;
+          var b = c * 0.05;
           return -2 * b;
       }
     }
@@ -202,8 +202,13 @@
       document.getElementById('val-var').textContent = sig2.toFixed(2);
       document.getElementById('val-curv').textContent = c.toFixed(2);
 
-      // Utility curve
-      var curve = board.create('functiongraph', [function(x) { return uFunc(x); }, 0.05, 10.2], {
+      // Utility curve (clip quadratic at bliss point)
+      var xMax = 10.2;
+      if (getType() === 'quad') {
+        var b = c * 0.05;
+        xMax = Math.min(10.2, 1 / (2 * b) - 0.1);
+      }
+      var curve = board.create('functiongraph', [function(x) { return uFunc(x); }, 0.05, xMax], {
         strokeColor: '#C8102E', strokeWidth: 2.5
       });
       drawObjects.push(curve);
@@ -291,7 +296,7 @@
         case 'crra':
           if (Math.abs(c - 1) < 0.01) return '\\(\\ln(W)\\)';
           return '\\(\\frac{W^{' + (1-c).toFixed(2) + '}}{' + (1-c).toFixed(2) + '}\\)';
-        case 'quad': return '\\(W - ' + (c*0.01).toFixed(4) + 'W^2\\)';
+        case 'quad': return '\\(W - ' + (c*0.05).toFixed(3) + 'W^2\\)';
       }
     }
 
