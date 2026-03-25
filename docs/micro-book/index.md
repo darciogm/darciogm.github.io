@@ -77,6 +77,7 @@ Clique em qualquer parte para acessar os capítulos correspondentes.
 
 [Notação Matemática](notacao.md){ .md-button }
 [Glossário](glossario.md){ .md-button }
+[Índice Remissivo](indice-remissivo.md){ .md-button }
 [Referências](referencias.md){ .md-button }
 
 </div>

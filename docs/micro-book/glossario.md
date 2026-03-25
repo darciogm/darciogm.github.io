@@ -17,6 +17,12 @@
 **Aversão ao risco**
 : Característica de um agente cuja função de utilidade é côncava na riqueza, preferindo o valor esperado de uma loteria à própria loteria. Formalmente, \(u(E[W]) > E[u(W)]\).
 
+**Ajuste de risco (risk adjustment)**
+: Mecanismo regulatório que transfere recursos entre seguradoras conforme o perfil de risco dos segurados, neutralizando incentivos para seleção de riscos (*cream-skimming*). O pagamento de ajuste para a seguradora \(j\) é \(AR_j = \hat{m}_j - \bar{m}\). Cap. 23.
+
+**Atrito (attrition)**
+: Saída de participantes de um estudo experimental ao longo do tempo. Quando o atrito é diferencial entre grupos de tratamento e controle, pode comprometer a validade interna do experimento. Cap. 22.
+
 ## B
 
 **Backward-bending (curva de oferta de trabalho)**
@@ -40,10 +46,19 @@
 **Bem público**
 : Bem que é simultaneamente não-rival (o consumo por um agente não reduz a disponibilidade para outros) e não-excludente (não é possível impedir o acesso).
 
+**Bem de informação (information good)**
+: Bem cujo custo marginal de reprodução é próximo de zero, mas cujo custo fixo de criação é elevado. Exemplos: software, música digital, e-books. A estrutura de custos gera economias de escala extremas e tendência ao monopólio natural. Cap. 21.
+
+**Bem meritório (merit good)**
+: Bem cujo consumo a sociedade considera desejável independentemente das preferências individuais reveladas, justificando intervenção estatal que vai além da correção de falhas de mercado tradicionais. Exemplo: saúde e educação. Cap. 23.
+
 ## C
 
 **Competição monopolística**
 : Estrutura de mercado com muitas firmas vendendo produtos diferenciados e com livre entrada; no equilíbrio de longo prazo, cada firma tem lucro zero e opera com excesso de capacidade. Cap. 16.
+
+**Cap-and-trade (sistema de comércio de emissões)**
+: Instrumento de mercado para controle de poluição que fixa um teto (\(\bar{E}\)) de emissões totais e distribui permissões negociáveis entre firmas. A livre negociação garante que o abatimento ocorra nas firmas com menor custo marginal, alcançando eficiência de custos. Exemplos: EU ETS (Europa), RenovaBio/CBIOs (Brasil). Cap. 24.
 
 **Caixa de Edgeworth**
 : Diagrama retangular usado na análise de equilíbrio geral para representar as possibilidades de troca entre dois consumidores e dois bens.
@@ -62,6 +77,9 @@
 
 **Coeficiente de aversão relativa ao risco**
 : Medida de aversão ao risco proporcional à riqueza: \(R(W) = -W \cdot u''(W)/u'(W)\).
+
+**Colusão algorítmica**
+: Coordenação de preços entre firmas mediada por algoritmos de precificação, que podem aprender a sustentar preços supracompetitivos sem comunicação explícita entre as empresas. Levanta desafios novos para a política antitruste, pois a colusão pode emergir sem acordo humano identificável. Cap. 21.
 
 **Colusão tácita**
 : Coordenação de preços ou quantidades entre firmas oligopolistas sem acordo explícito, sustentada pela ameaça de retaliação em jogos repetidos. Ver *Folk Theorem*.
@@ -99,6 +117,9 @@
 **Custo de uso do capital**
 : Custo por período de utilizar uma unidade de capital: \(c_K = p_K(r + \delta)\), incluindo o custo de oportunidade financeiro e a depreciação física. Cap. 18.
 
+**Custo social do carbono (SCC)**
+: Valor monetário do dano causado por uma tonelada adicional de CO\(_2\) emitida, expresso em valor presente. Sintetiza os danos climáticos futuros descontados e serve de referência para a calibração de impostos sobre carbono e análises de custo-benefício de políticas climáticas. Estimativas variam amplamente conforme a taxa de desconto e a função de dano adotadas. Cap. 24.
+
 **Custo contábil**
 : Registro apenas dos desembolsos efetivamente realizados — custos explícitos. Não considera o custo de oportunidade dos recursos próprios da firma.
 
@@ -120,7 +141,16 @@
 **Custos irrecuperáveis (sunk costs)**
 : Despesas já realizadas e que não podem ser recuperadas. Do ponto de vista da tomada de decisão racional, não devem influenciar decisões correntes e futuras.
 
+**Custo de troca (switching cost)**
+: Custo incorrido pelo consumidor ao migrar de um fornecedor para outro, incluindo custos de dados, aprendizagem, rede e complementaridade. Formalmente, \(SC_i = c_{\text{dados}} + c_{\text{rede}} + c_{\text{aprend.}} + c_{\text{compl.}}\). Custos de troca elevados geram lock-in e barreiras à entrada. Cap. 21.
+
 ## D
+
+**DALY (Disability-Adjusted Life Year)**
+: Ano de vida ajustado por incapacidade. Métrica de carga de doença que soma os anos de vida perdidos por morte prematura (\(YLL\)) e os anos vividos com incapacidade (\(YLD\)): \(DALY = YLL + YLD\). Usada pela OMS para comparações internacionais de saúde. Cap. 23.
+
+**Demanda induzida pelo ofertante (SID)**
+: Situação na qual o médico, aproveitando sua superioridade informacional, recomenda ao paciente quantidade de serviços acima do clinicamente necessário, aumentando sua própria receita. Formalmente, o médico escolhe \(n > n^*(s)\) quando o benefício marginal da receita supera o custo de consciência \(\theta\). Cap. 23.
 
 **Decomposição de Oaxaca-Blinder**
 : Técnica econométrica que separa o diferencial salarial entre grupos em uma parte explicada (diferenças de características observáveis) e uma parte não explicada (diferenças nos retornos, potencialmente associada à discriminação). Cap. 17.
@@ -146,19 +176,34 @@
 **Desconto hiperbólico**
 : Modelo de preferências intertemporais em que a taxa de desconto é decrescente no tempo. Na formulação quasi-hiperbólica (\(\beta, \delta\)), o viés de presente é capturado por \(\beta < 1\).
 
+**Diferenças em diferenças (DiD)**
+: Método quase-experimental que estima o efeito causal de uma intervenção comparando a variação de resultados entre grupo tratado e grupo de controle antes e depois do tratamento: \(\tau_{DD} = (\bar{Y}_{T,\text{pós}} - \bar{Y}_{T,\text{pré}}) - (\bar{Y}_{C,\text{pós}} - \bar{Y}_{C,\text{pré}})\). Requer a hipótese de tendências paralelas. Cap. 22.
+
 **Dilema dos Prisioneiros**
 : Jogo canônico em que a estratégia dominante de cada jogador leva a um resultado Pareto-inferior à cooperação mútua.
 
 **Discriminação de preços**
 : Prática de cobrar preços diferentes por unidades do mesmo bem. Primeiro grau: preço personalizado. Segundo grau: menus de contratos (autosseleção). Terceiro grau: segmentação de mercados.
 
+**Duplo dividendo**
+: Argumento segundo o qual um imposto ambiental (e.g., sobre carbono) gera dois benefícios simultâneos: (i) redução da poluição e (ii) receita que permite reduzir impostos distorcivos preexistentes (sobre trabalho, renda), melhorando a eficiência do sistema tributário. Cap. 24.
+
 ## E
+
+**Economia da atenção**
+: Perspectiva segundo a qual, na era digital, o recurso escasso não é a informação, mas a atenção humana (Simon, 1971). Plataformas de mídia e redes sociais competem pela atenção dos usuários e a monetizam via publicidade, gerando trade-offs entre qualidade do conteúdo e volume de anúncios. Cap. 21.
 
 **Economias de escala**
 : Redução do custo médio de longo prazo à medida que a escala de produção aumenta. Presentes quando \(C(q)/q\) é decrescente em \(q\).
 
 **Economias de escopo**
 : Redução de custos obtida pela produção conjunta de dois ou mais bens: \(C(q_1, q_2) < C(q_1, 0) + C(0, q_2)\).
+
+**Efeito de rede (network effect)**
+: Situação em que o valor de um produto ou serviço para um usuário aumenta com o número de outros usuários. O efeito de rede é *direto* quando o benefício vem do mesmo lado (e.g., telefone) e *indireto* (ou cruzado) quando vem do outro lado de um mercado bilateral (e.g., mais vendedores atraem mais compradores). Cap. 21.
+
+**Efeito médio do tratamento (ATE)**
+: Diferença média nos resultados potenciais entre tratamento e controle: \(ATE = E[Y_i(1) - Y_i(0)]\). Identificação causal requer aleatorização ou métodos quase-experimentais. Cap. 22.
 
 **Efeito renda**
 : Variação na quantidade demandada de um bem causada pela mudança no poder de compra real do consumidor, mantida constante a razão de preços relativos.
@@ -177,6 +222,12 @@
 
 **Elasticidade-renda da demanda**
 : Variação percentual na quantidade demandada dividida pela variação percentual na renda: \(\varepsilon_{x,I} = \frac{\partial x}{\partial I} \cdot \frac{I}{x}\).
+
+**Ensaio controlado randomizado (RCT)**
+: Experimento no qual os participantes são aleatoriamente atribuídos a um grupo de tratamento ou controle, permitindo identificação causal do efeito da intervenção. Padrão-ouro da avaliação de impacto em economia do desenvolvimento, saúde e políticas públicas. Cap. 22.
+
+**Equação de Ramsey (taxa social de desconto)**
+: Fórmula que determina a taxa de desconto social: \(r = \rho + \eta g\), onde \(\rho\) é a taxa pura de preferência temporal, \(\eta\) a elasticidade da utilidade marginal e \(g\) a taxa de crescimento do consumo per capita. Central no debate sobre política climática (Stern vs. Nordhaus). Cap. 24.
 
 **Equação de Euler (do consumo)**
 : Condição de otimalidade intertemporal que iguala a utilidade marginal do consumo presente ao retorno descontado da utilidade marginal futura: \(u'(C_1) = \beta(1+r)\,u'(C_2)\). Rege a suavização do consumo ao longo do tempo. Cap. 18.
@@ -238,6 +289,9 @@
 **Externalidade**
 : Efeito da ação de um agente sobre o bem-estar de terceiros que não é mediado pelo sistema de preços. Pode ser positiva (benefício externo) ou negativa (custo externo). Constitui falha de mercado quando é tecnológica (e não meramente pecuniária).
 
+**Externalidade de privacidade**
+: Externalidade negativa que surge quando a decisão de um agente de compartilhar dados pessoais (\(d_i\)) afeta a utilidade de terceiros (\(U_j(x_j, d_i)\)), por exemplo ao permitir inferências sobre indivíduos que não consentiram. A quantidade de dados compartilhados no equilíbrio de mercado tende a ser excessiva em relação ao ótimo social. Cap. 21.
+
 ## F
 
 **Firma tomadora de preços**
@@ -272,6 +326,11 @@
 **Gorman (forma polar de)**
 : Condição sobre as preferências individuais que permite agregar demandas de forma que a demanda de mercado dependa apenas de preços e da renda agregada. Satisfeita quando as funções de utilidade indireta têm a forma \(V^h(\mathbf{p}, I^h) = a(\mathbf{p}) + b(\mathbf{p}) I^h\), o que equivale a curvas de Engel lineares e paralelas entre consumidores.
 
+## G
+
+**Gatekeeper (porteiro digital)**
+: Plataforma que controla o acesso a um mercado ou serviço digital essencial, detendo poder significativo sobre as condições de participação de empresas e consumidores. Conceito regulatório central no Digital Markets Act (DMA) da União Europeia, que impõe obrigações de interoperabilidade e não-discriminação a gatekeepers designados. Cap. 21.
+
 ## H
 
 **Herfindahl-Hirschman (índice — HHI)**
@@ -285,6 +344,9 @@
 
 ## I
 
+**ICER (Razão de custo-efetividade incremental)**
+: Métrica de avaliação de tecnologias em saúde definida como \(ICER = \Delta C / \Delta E\), onde \(\Delta C\) é o custo adicional e \(\Delta E\) o ganho de efetividade (tipicamente em QALYs) de uma intervenção em relação à alternativa. Intervenções com ICER abaixo do limiar de disposição a pagar são consideradas custo-efetivas. Cap. 23.
+
 **Identidade de Roy**
 : Relação que permite obter a demanda marshalliana a partir da utilidade indireta: \(x_i^* = -\frac{\partial V/\partial p_i}{\partial V/\partial I}\).
 
@@ -297,6 +359,9 @@
 **Índice de Lerner**
 : Medida de poder de mercado definida como \(L = \frac{p - CMg}{p} = -\frac{1}{\varepsilon}\), onde \(\varepsilon\) é a elasticidade-preço da demanda.
 
+**Imunidade de rebanho (herd immunity)**
+: Limiar de cobertura vacinal acima do qual a doença não consegue se propagar na população, protegendo inclusive os não vacinados. O limiar é \(1 - 1/R_0\), onde \(R_0\) é o número básico de reprodução. Como cada vacinação gera uma externalidade positiva, o nível de vacinação de mercado tende a ficar abaixo do socialmente ótimo. Cap. 23.
+
 **Informação assimétrica**
 : Situação em que uma das partes de uma transação possui informação privada relevante que a outra desconhece. Gera problemas de seleção adversa (informação oculta *ex ante*) e risco moral (ação oculta *ex post*).
 
@@ -307,6 +372,9 @@
 : Lugar geométrico de todas as combinações de insumos que geram o mesmo nível de produto.
 
 ## L
+
+**Lock-in (aprisionamento)**
+: Situação em que custos de troca elevados aprisionam o consumidor em um produto, plataforma ou ecossistema, mesmo que alternativas superiores existam. Resulta da combinação de custos de dados, aprendizagem, rede e complementaridade. Gera dependência de trajetória e pode sustentar poder de mercado. Cap. 21.
 
 **Lagrangeano**
 : Função auxiliar usada em problemas de otimização com restrições: \(\mathcal{L} = f(\mathbf{x}) + \lambda[g(\mathbf{x}) - c]\).
@@ -334,14 +402,26 @@
 **Mecanismo VCG (Vickrey-Clarke-Groves)**
 : Mecanismo de revelação direta que aloca eficientemente e cobra de cada agente a externalidade que sua participação impõe aos demais, generalizando o leilão de segundo preço de Vickrey para ambientes com múltiplos bens ou decisões coletivas. Cap. 9c.
 
+**Massa crítica (critical mass)**
+: Número mínimo de participantes necessário para que uma rede ou plataforma se torne auto-sustentável, superando o "problema do ovo e da galinha". Abaixo de \(n_c\), os benefícios de rede são insuficientes para atrair novos participantes e a plataforma tende a colapsar. Cap. 21.
+
 **Maximização de lucro**
 : Objetivo da firma de escolher o nível de produção que maximiza \(\pi = R(q) - C(q)\). Condição de primeira ordem: \(RMg = CMg\).
+
+**Mercado bilateral (two-sided market)**
+: Mercado intermediado por uma plataforma que conecta dois grupos distintos de usuários cujas demandas são interdependentes via externalidades cruzadas (\(\alpha_B, \alpha_S\)). A estrutura de preços (e não apenas o nível) importa: a plataforma pode subsidiar o lado mais sensível ao preço para atrair o outro lado. Exemplos: cartões de crédito, marketplaces, aplicativos de transporte. Cap. 21.
 
 **Mercado contestável**
 : Mercado em que a ameaça de entrada e saída sem custos irrecuperáveis disciplina o incumbente, mesmo que haja apenas uma firma. Requer: (i) ausência de custos irrecuperáveis de entrada e saída; (ii) acesso à mesma tecnologia; (iii) consumidores que respondem instantaneamente a diferenças de preço (Baumol, Panzar e Willig, 1982).
 
 **Modelo de Spence (sinalização)**
 : Modelo em que a parte mais bem informada (por exemplo, o trabalhador de alta produtividade) investe em um sinal observável e custoso (por exemplo, educação) para revelar credivelmente seu tipo ao mercado. A chave é que o custo do sinal é menor para os tipos de alta qualidade, tornando a imitação não lucrativa.
+
+**Modelo de Grossman**
+: Modelo em que a saúde é tratada como um estoque de capital durável (\(H_t\)) que se deprecia com a idade (\(\delta_t\)) e pode ser reposto via investimento (\(I_t\)) em cuidados médicos (\(m_t\)) e tempo (\(\tau_t^H\)). A demanda por cuidados médicos é derivada da demanda por saúde. Cap. 23.
+
+**Modelo DICE (Dynamic Integrated model of Climate and the Economy)**
+: Modelo integrado de avaliação climático-econômica desenvolvido por William Nordhaus, que combina um módulo econômico de crescimento com um módulo climático para avaliar custos e benefícios de políticas de mitigação. A função de dano \(\Omega(T)\) relaciona aumento de temperatura a perda de produto. Cap. 24.
 
 **Modelo econômico**
 : Representação simplificada de uma situação econômica real, expressa por meio de relações lógicas (frequentemente matemáticas) entre variáveis, construída com o objetivo de explicar fenômenos observados e gerar previsões testáveis.
@@ -368,6 +448,17 @@
 
 **Nudge (empurrão)**
 : Intervenção que altera a arquitetura de escolha para direcionar comportamentos sem restringir opções nem alterar incentivos econômicos (Thaler e Sunstein, 2008).
+
+## P
+
+**Pagamento por serviços ambientais (PSA)**
+: Instrumento pelo qual beneficiários de serviços ecossistêmicos (água limpa, sequestro de carbono, biodiversidade) remuneram provedores desses serviços, internalizando externalidades positivas. Exemplos: REDD+ (desmatamento evitado), Bolsa Floresta (Amazonas). Cap. 24.
+
+**Poupança genuína (adjusted net savings)**
+: Indicador de sustentabilidade que ajusta a poupança nacional bruta pela depreciação do capital produzido (\(D_K\)), esgotamento de recursos naturais (\(D_N\)), investimento em educação (\(E\)) e danos da poluição (\(P\)): \(S^* = S - D_K - D_N + E - P\). Países com \(S^* < 0\) estariam consumindo seu capital total. Cap. 24.
+
+**Preços hedônicos (hedonic pricing)**
+: Método de valoração que estima o preço implícito de atributos não-mercado (qualidade ambiental, segurança) a partir de preços de bens diferenciados (imóveis, salários): \(p_Q = \partial P / \partial Q\). Usado para mensurar disposição a pagar por qualidade do ar, proximidade de áreas verdes, etc. Cap. 24.
 
 ## O
 
@@ -420,6 +511,9 @@
 
 ## Q
 
+**QALY (Quality-Adjusted Life Year)**
+: Ano de vida ajustado pela qualidade. Métrica que pondera cada ano de vida por um peso de qualidade \(q_t \in [0, 1]\), onde 1 representa saúde perfeita e 0 representa morte. Calculado como \(QALY = \sum_t q_t / (1+r)^t\). Usado em avaliações de custo-efetividade de tecnologias em saúde. Cap. 23.
+
 **Quasi-concavidade**
 : Propriedade de uma função cujos conjuntos de nível superior \(\{x : f(x) \geq c\}\) são convexos para todo \(c\). Garante que curvas de indiferença e isoquantas sejam convexas.
 
@@ -434,8 +528,14 @@
 **Regras de Marshall (demanda derivada)**
 : Quatro condições que determinam a elasticidade da demanda por um fator de produção: (i) facilidade de substituição entre fatores, (ii) elasticidade-preço da demanda pelo produto, (iii) participação do fator no custo total e (iv) elasticidade da oferta dos demais fatores. Cap. 17.
 
+**Regressão descontínua (RDD)**
+: Método quase-experimental que explora uma regra de atribuição ao tratamento baseada em um limiar de uma variável contínua (\(X_i\)). O efeito causal é estimado pela descontinuidade nos resultados no ponto de corte: \(\tau_{RDD} = \lim_{x \downarrow c} E[Y|X=x] - \lim_{x \uparrow c} E[Y|X=x]\). Cap. 22.
+
+**Regra de Hartwick**
+: Regra de sustentabilidade que prescreve investir toda a renda de escassez extraída de recursos não-renováveis em capital produzido: \(I_K(t) = p_n(t) \cdot h(t)\). Se obedecida, o consumo per capita pode ser mantido constante ao longo do tempo (sustentabilidade fraca). Cap. 24.
+
 **Regra de Hotelling (recursos naturais)**
-: Em equilíbrio, o preço de um recurso exaurível deve crescer a uma taxa igual à taxa de juros: \(\dot{p}/p = r\).
+: Em equilíbrio, o preço de um recurso exaurível deve crescer a uma taxa igual à taxa de juros: \(\dot{p}/p = r\). Cap. 24.
 
 **Renda da terra**
 : Remuneração do fator terra, determinada integralmente pela demanda quando a oferta é perfeitamente inelástica (fixa). Conceito central na teoria ricardiana da distribuição. Cap. 17.
@@ -449,16 +549,28 @@
 **Renda ricardiana**
 : Pagamento a um fator de produção acima do mínimo necessário para mantê-lo em seu uso corrente (renda econômica). No longo prazo competitivo, o excedente do produtor da indústria reflete exclusivamente essas rendas, cuja magnitude depende do grau de heterogeneidade dos fatores.
 
+**Rendimento máximo sustentável (RMS)**
+: Maior taxa de extração de um recurso renovável que pode ser mantida indefinidamente, correspondente ao ponto máximo da função de crescimento natural: \(h^{RMS} = \max_S G(S)\). Extrações acima do RMS levam à depleção progressiva do estoque. Cap. 24.
+
 **Rendimentos de escala**
 : Propriedade da função de produção que descreve como o produto varia quando todos os insumos são multiplicados por um mesmo fator \(t > 1\). Constantes se \(f(tK, tL) = tf(K,L)\); crescentes se \(> t\); decrescentes se \(< t\). Não confundir com rendimentos marginais decrescentes (variação de um só insumo com os demais fixos).
 
 **Restrição orçamentária**
 : Conjunto de cestas de bens que o consumidor pode adquirir dada sua renda: \(p_1 x_1 + p_2 x_2 \leq I\).
 
+**Revolução da credibilidade**
+: Movimento na economia empírica, a partir dos anos 1990, que enfatiza a identificação causal rigorosa via experimentos aleatorizados, variáveis instrumentais, diferenças em diferenças e regressão descontínua, em contraste com abordagens puramente estruturais (Angrist e Pischke, 2010). Cap. 22.
+
 **Risco moral (moral hazard)**
 : Problema de informação assimétrica em que uma parte (agente) pode tomar ações ocultas que afetam o resultado, após a celebração do contrato.
 
+**Risco moral ex ante e ex post (saúde)**
+: No contexto de seguros de saúde, o risco moral *ex ante* refere-se à redução do esforço preventivo pelo segurado (menos exercício, dieta pior); o *ex post* refere-se ao aumento do consumo de serviços médicos após o sinistro, dada a redução do preço efetivo pela cobertura. Cap. 23.
+
 ## S
+
+**Sustentabilidade fraca e forte**
+: Na *sustentabilidade fraca*, capital natural e capital produzido são substituíveis — basta manter o estoque total de capital (critério: poupança genuína \(S^* \geq 0\)). Na *sustentabilidade forte*, certos ativos naturais são insubstituíveis ("capital natural crítico") e devem ser preservados independentemente da acumulação de capital produzido. Cap. 24.
 
 **Salário de reserva**
 : Salário mínimo a partir do qual o indivíduo passa a ofertar horas positivas de trabalho. Para salários abaixo do salário de reserva, o indivíduo prefere dedicar todo o tempo ao lazer. Formalmente, \(w_R\) é tal que \(h^*(w_R) = 0\).
@@ -504,6 +616,9 @@
 **Teoria dos jogos**
 : Ramo da matemática e da economia que estuda a interação estratégica entre agentes racionais.
 
+**Tipping (tombamento)**
+: Dinâmica de mercados com efeitos de rede em que, após ultrapassar a massa crítica, uma plataforma ou padrão tecnológico atrai rapidamente a maioria dos participantes, levando ao resultado *winner-take-all* (ou *winner-take-most*). O processo é auto-reforçante e gera dependência de trajetória. Cap. 21.
+
 **Tragédia dos comuns**
 : Situação em que o acesso livre a um recurso rival (recurso comum) leva à sua sobre-exploração: cada usuário iguala o produto médio ao custo privado, enquanto o ótimo social requer igualar o produto marginal ao custo. Formalizada por Garrett Hardin (1968) e qualificada por Elinor Ostrom (1990), que demonstrou que a governança comunitária pode ser uma alternativa à privatização ou à regulação estatal.
 
@@ -523,5 +638,17 @@
 **Variação equivalente (VE)**
 : Quantia de renda que, se recebida (ou retirada) antes de uma mudança de preço, deixaria o consumidor no mesmo nível de utilidade que ele atingiria após a mudança.
 
+**Valor econômico total (VET)**
+: Soma de todos os valores associados a um recurso ambiental: valor de uso direto (consumo, recreação), valor de uso indireto (regulação climática, polinização), valor de opção (preservação de uso futuro) e valor de não-uso (existência, legado). Formalmente, \(VET = VU + VNU\). Serve de base para métodos de valoração ambiental (hedônicos, custo de viagem, contingente). Cap. 24.
+
+**Valor estatístico de uma vida (VSL)**
+: Disposição a pagar agregada de uma população para reduzir marginalmente o risco de morte, calculada como \(VSL = \Delta WTP / \Delta p\), onde \(\Delta p\) é a redução na probabilidade de morte. Usado em análises de custo-benefício de políticas de saúde, segurança e meio ambiente. Cap. 23.
+
 **Valor presente líquido (VPL)**
 : Soma dos fluxos de caixa futuros descontados à taxa apropriada, menos o investimento inicial: \(VPL = \sum_{t=0}^{T} \frac{FC_t}{(1+r)^t}\).
+
+**Variáveis instrumentais (IV)**
+: Método econométrico para lidar com endogeneidade, utilizando uma variável \(Z\) que é correlacionada com o regressor endógeno mas não com o termo de erro. O estimador IV identifica o efeito causal local (LATE) para os indivíduos cuja participação no tratamento é afetada pelo instrumento. Cap. 22.
+
+**Vazamento de carbono (carbon leakage)**
+: Deslocamento de emissões de países com regulação ambiental restritiva para países com regulação mais branda, reduzindo a eficácia da política climática unilateral. Justifica mecanismos como o CBAM (Carbon Border Adjustment Mechanism) da União Europeia. Cap. 24.

@@ -305,17 +305,77 @@
 - Saboia, João. 2007. "[O Salário Mínimo e seu Potencial para a Melhoria da Distribuição de Renda no Brasil](https://www.ipea.gov.br)." In *Desigualdade de Renda no Brasil*. Brasília: IPEA.
 - Soares, Fábio Veras, e Natália Sátyro. 2009. [*O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*](https://repositorio.ipea.gov.br/handle/11058/1482). Texto para Discussão IPEA, n. 1424. Brasília: IPEA.
 - Ulyssea, Gabriel. 2018. "[Firms, Informality, and Development: Theory and Evidence from Brazil](https://doi.org/10.1257/aer.20141745)." *American Economic Review* 108 (8): 2015–2047.
+- Barbosa, Ana Luiza N. H., e Carlos Henrique Corseuil. 2014. "[Bolsa Família, Escolha Ocupacional e Informalidade no Brasil](https://repositorio.ipea.gov.br)." *Texto para Discussão*, IPEA.
+- Carrillo, Bladimir, e Jose Guilherme Feres. 2019. "[Provider Supply, Utilization, and Infant Health: Evidence from a Physician Distribution Policy](https://doi.org/10.1016/j.worlddev.2019.104623)." *World Development* 124: 104623.
+- De Brauw, Alan, Daniel O. Gilligan, John Hoddinott, e Shalini Roy. 2015. "[Bolsa Família and Household Labor Supply](https://doi.org/10.1086/681090)." *Economic Development and Cultural Change* 63 (3): 423–457.
+- Matos, Andrei, e Alexandre Nunes. 2020. "[Mais Médicos: avaliação do impacto sobre indicadores de saúde no Brasil](https://doi.org/10.1590/0102-311X00076219)." *Cadernos de Saúde Pública* 36 (1): e00076219.
+- Soares, Fábio Veras, Rafael Perez Ribas, e Rafael Guerreiro Osório. 2010. "[Evaluating the Impact of Brazil's Bolsa Família](https://doi.org/10.1353/lar.2010.0007)." *Latin American Research Review* 45 (2): 173–190.
 
-## Meio Ambiente e Mudança Climática
+
+## Economia Digital, Plataformas e Redes
+
+- Anderson, Simon P., e Stephen Coate. 2005. "[Market Provision of Broadcasting: A Welfare Analysis](https://doi.org/10.1111/j.1467-937X.2005.00356.x)." *Review of Economic Studies* 72 (4): 947–972.
+- Armstrong, Mark. 2006. "[Competition in Two-Sided Markets](https://doi.org/10.1111/j.1756-2171.2006.tb00037.x)." *RAND Journal of Economics* 37 (3): 668–691.
+- Calvano, Emilio, Giacomo Calzolari, Vincenzo Denicolò, e Sergio Pastorello. 2020. "[Artificial Intelligence, Algorithmic Pricing, and Collusion](https://doi.org/10.1257/aer.20190623)." *American Economic Review* 110 (10): 3267–3297.
+- Cremer, Jacques, Yves-Alexandre de Montjoye, e Heike Schweitzer. 2019. *Competition Policy for the Digital Era*. European Commission.
+- Edelman, Benjamin, Michael Ostrovsky, e Michael Schwarz. 2007. "[Internet Advertising and the Generalized Second-Price Auction](https://doi.org/10.1257/aer.97.1.242)." *American Economic Review* 97 (1): 242–259.
+- Eisenmann, Thomas, Geoffrey Parker, e Marshall W. Van Alstyne. 2011. "[Platform Envelopment](https://doi.org/10.1002/smj.935)." *Strategic Management Journal* 32 (12): 1270–1285.
+- Parker, Geoffrey G., Marshall W. Van Alstyne, e Sangeet Paul Choudary. 2016. [*Platform Revolution*](https://books.google.com/books?id=sV7yBwAAQBAJ). New York: W. W. Norton.
+- Rochet, Jean-Charles, e Jean Tirole. 2003. "[Platform Competition in Two-Sided Markets](https://doi.org/10.1162/154247603322493212)." *Journal of the European Economic Association* 1 (4): 990–1029.
+- Shapiro, Carl, e Hal R. Varian. 1999. [*Information Rules: A Strategic Guide to the Network Economy*](https://books.google.com/books?id=aE_J4Iv_CYEC). Boston: Harvard Business School Press.
+- Tirole, Jean. 2023. "[Digital Dystopia](https://doi.org/10.1257/aer.20221688)." *American Economic Review* 113 (8): 2007–2043.
+
+## Economia Experimental e Métodos Empíricos
+
+- Angrist, Joshua D., e Alan B. Krueger. 1991. "[Does Compulsory School Attendance Affect Schooling and Earnings?](https://doi.org/10.2307/2937954)" *Quarterly Journal of Economics* 106 (4): 979–1014.
+- Banerjee, Abhijit V., e Esther Duflo. 2011. [*Poor Economics: A Radical Rethinking of the Way to Fight Global Poverty*](https://books.google.com/books?id=cM6CA64n8CwC). New York: PublicAffairs.
+- Camerer, Colin F., et al. 2016. "[Evaluating Replicability of Laboratory Experiments in Economics](https://doi.org/10.1126/science.aaf0918)." *Science* 351 (6280): 1433–1436.
+- Chamberlin, Edward H. 1948. "An Experimental Imperfect Market." *Journal of Political Economy* 56 (2): 95–108.
+- Duflo, Esther, Rachel Glennerster, e Michael Kremer. 2007. "Using Randomization in Development Economics Research: A Toolkit." In *Handbook of Development Economics*, Vol. 4, 3895–3962.
+- Friedman, Daniel, e Alessandra Cassar. 2004. [*Economics Lab: An Intensive Course in Experimental Economics*](https://books.google.com/books?id=TfJhOQAACAAJ). London: Routledge.
+- Gale, David, e Lloyd S. Shapley. 1962. "[College Admissions and the Stability of Marriage](https://doi.org/10.2307/2312726)." *American Mathematical Monthly* 69 (1): 9–15.
+- Gneezy, Uri, e Aldo Rustichini. 2000. "[A Fine Is a Price](https://doi.org/10.1086/468061)." *Journal of Legal Studies* 29 (1): 1–17.
+- Harrison, Glenn W., e John A. List. 2004. "[Field Experiments](https://doi.org/10.1257/0022051043004577)." *Journal of Economic Literature* 42 (4): 1009–1055.
+- Kagel, John H., e Alvin E. Roth, orgs. 1995. [*The Handbook of Experimental Economics*](https://books.google.com/books?id=rlmfkDi7CEMC). Princeton: Princeton University Press.
+- Roth, Alvin E., Tayfun Sönmez, e M. Utku Ünver. 2004. "[Kidney Exchange](https://doi.org/10.1162/0033553041502225)." *Quarterly Journal of Economics* 119 (2): 457–488.
+- Smith, Vernon L. 1962. "[An Experimental Study of Competitive Market Behavior](https://doi.org/10.1086/258609)." *Journal of Political Economy* 70 (2): 111–137.
+
+## Economia da Saúde
+
+- Anderson, Gerard F., Uwe E. Reinhardt, Peter S. Hussey, e Varduhi Petrosyan. 2003. "[It's the Prices, Stupid: Why the United States Is So Different from Other Countries](https://doi.org/10.1377/hlthaff.22.3.89)." *Health Affairs* 22 (3): 89–105.
+- Arrow, Kenneth J. 1963. "[Uncertainty and the Welfare Economics of Medical Care](https://doi.org/10.1257/aer.53.5.941)." *American Economic Review* 53 (5): 941–973.
+- Cutler, David M. 2004. [*Your Money or Your Life: Strong Medicine for America's Health Care System*](https://books.google.com/books?id=NpJDqgv-aRkC). New York: Oxford University Press.
+- Cutler, David M., e Richard J. Zeckhauser. 2000. "The Anatomy of Health Insurance." In *Handbook of Health Economics*, Vol. 1A, 563–643.
+- Fisher, Elliott S., David E. Wennberg, Thérèse A. Stukel, Daniel J. Gottlieb, F. L. Lucas, e Étoile L. Pinder. 2003. "[The Implications of Regional Variations in Medicare Spending](https://doi.org/10.7326/0003-4819-138-4-200302180-00006)." *Annals of Internal Medicine* 138 (4): 273–298.
+- Folland, Sherman, Allen C. Goodman, e Miron Stano. 2017. [*The Economics of Health and Health Care*](https://books.google.com/books?id=JjxMDwAAQBAJ). 8ª ed. New York: Routledge.
+- Grossman, Michael. 1972. "[On the Concept of Health Capital and the Demand for Health](https://doi.org/10.1086/259880)." *Journal of Political Economy* 80 (2): 223–255.
+- Manning, Willard G., Joseph P. Newhouse, Naihua Duan, Emmett B. Keeler, Arleen Leibowitz, e M. Susan Marquis. 1987. "[Health Insurance and the Demand for Medical Care: Evidence from a Randomized Experiment](https://doi.org/10.2307/1804094)." *American Economic Review* 77 (3): 251–277.
+- Musgrave, Richard A. 1957. "A Multiple Theory of Budget Determination." *FinanzArchiv* 17 (3): 333–343.
+- Newhouse, Joseph P. 1970. "[Toward a Theory of Nonprofit Institutions: An Economic Model of a Hospital](https://doi.org/10.2307/1823138)." *American Economic Review* 60 (1): 64–74.
+- Viscusi, W. Kip, e Joseph E. Aldy. 2003. "[The Value of a Statistical Life: A Critical Review of Market Estimates Throughout the World](https://doi.org/10.1111/1467-6451.00171)." *Journal of Risk and Uncertainty* 27 (1): 5–76.
+- Zweifel, Peter, Friedrich Breyer, e Mathias Kifmann. 2009. [*Health Economics*](https://books.google.com/books?id=5MFpKqrqJdYC). 2ª ed. Berlin: Springer.
+
+## Economia Ambiental e Mudança Climática
 
 - Ellerman, A. Denny, Paul L. Joskow, Richard Schmalensee, Juan-Pablo Montero, e Elizabeth M. Bailey. 2000. *Markets for Clean Air: The U.S. Acid Rain Program*. Cambridge: Cambridge University Press.
-- Nordhaus, William D. 2017. "Revisiting the Social Cost of Carbon." *Proceedings of the National Academy of Sciences* 114 (7): 1518–1523.
-- Stern, Nicholas. 2006. *The Economics of Climate Change: The Stern Review*. Cambridge: Cambridge University Press.
+- Nordhaus, William D. 2017. "[Revisiting the Social Cost of Carbon](https://doi.org/10.1073/pnas.1609244114)." *Proceedings of the National Academy of Sciences* 114 (7): 1518–1523.
+- Stern, Nicholas. 2006. [*The Economics of Climate Change: The Stern Review*](https://books.google.com/books?id=U-jOGwAACAAJ). Cambridge: Cambridge University Press.
+- Bayer, Patrick, e Michaël Aklin. 2020. "[The European Union Emissions Trading System Reduced CO2 Emissions Despite Low Prices](https://doi.org/10.1073/pnas.1918128117)." *Proceedings of the National Academy of Sciences* 117 (16): 8804–8812.
+- Gordon, H. Scott. 1954. "The Economic Theory of a Common-Property Resource: The Fishery." *Journal of Political Economy* 62 (2): 124–142.
+- Greenstone, Michael, Elizabeth Kopits, e Ann Wolverton. 2013. "[Developing a Social Cost of Carbon for US Regulatory Analysis: A Methodology and Interpretation](https://doi.org/10.1093/reep/ret015)." *Review of Environmental Economics and Policy* 7 (1): 23–46.
+- Hartwick, John M. 1977. "[Intergenerational Equity and the Investing of Rents from Exhaustible Resources](https://doi.org/10.2307/1828079)." *American Economic Review* 67 (5): 972–974.
+- Kolstad, Charles D. 2011. [*Environmental Economics*](https://books.google.com/books?id=6jOmQgAACAAJ). 2ª ed. New York: Oxford University Press.
+- Perman, Roger, Yue Ma, James McGilvray, e Michael Common. 2011. [*Natural Resource and Environmental Economics*](https://books.google.com/books?id=AnyYPwAACAAJ). 4ª ed. Harlow: Pearson.
+- Schaefer, Milner B. 1957. "Some Considerations of Population Dynamics and Economics in Relation to the Management of the Commercial Marine Fisheries." *Journal of the Fisheries Research Board of Canada* 14 (5): 669–681.
+- Stavins, Robert N. 1998. "[What Can We Learn from the Grand Policy Experiment? Lessons from SO2 Allowance Trading](https://doi.org/10.1257/jep.12.3.69)." *Journal of Economic Perspectives* 12 (3): 69–88.
+- Tietenberg, Tom, e Lynne Lewis. 2018. [*Environmental and Natural Resource Economics*](https://books.google.com/books?id=i8yWDwAAQBAJ). 11ª ed. New York: Routledge.
+- Weitzman, Martin L. 2009. "[On Modeling and Interpreting the Economics of Catastrophic Climate Change](https://doi.org/10.1162/rest.91.1.1)." *Review of Economics and Statistics* 91 (1): 1–19.
 
 ## Energia e Recursos Naturais
 
 - Burke, Paul J., e Hua Yang. 2016. "The Price and Income Elasticities of Natural Gas Demand." *Energy Economics* 58: 466–474.
 - Linn, Joshua, e Lucija Muehlenbachs. 2018. "The Heterogeneous Impacts of Low Natural Gas Prices on Consumers and the Environment." *Journal of Environmental Economics and Management* 89: 1–28.
+- Nordhaus, William D. 2007. "[Two Centuries of Productivity Growth in Computing](https://doi.org/10.1017/S0022050707000058)." *Journal of Economic History* 67 (1): 128–159.
 
 ## Economia Brasileira — Manuais e Referências
 
@@ -335,6 +395,9 @@
 - IBGE — Instituto Brasileiro de Geografia e Estatística. [www.ibge.gov.br](https://www.ibge.gov.br)
 - IPEA — Instituto de Pesquisa Econômica Aplicada. [www.ipea.gov.br](https://www.ipea.gov.br)
 - IPEADATA — Base de dados macroeconômicos e regionais. [www.ipeadata.gov.br](http://www.ipeadata.gov.br)
+- ANPD — Autoridade Nacional de Proteção de Dados. [www.gov.br/anpd](https://www.gov.br/anpd)
+- DATASUS — Departamento de Informática do SUS. [datasus.saude.gov.br](https://datasus.saude.gov.br)
+- INPE — Instituto Nacional de Pesquisas Espaciais (PRODES/DETER). [www.gov.br/inpe](https://www.gov.br/inpe)
 - SEBRAE — Serviço Brasileiro de Apoio às Micro e Pequenas Empresas. [www.sebrae.com.br](https://www.sebrae.com.br)
 
 ## Fontes de Dados — Internacionais
@@ -347,4 +410,8 @@
 - FCC — Federal Communications Commission (EUA). [www.fcc.gov](https://www.fcc.gov)
 - OECD — Organisation for Economic Co-operation and Development. [www.oecd.org](https://www.oecd.org)
 - USDA-ERS — Economic Research Service, U.S. Department of Agriculture. [www.ers.usda.gov](https://www.ers.usda.gov)
+- J-PAL — Abdul Latif Jameel Poverty Action Lab (MIT). [www.povertyactionlab.org](https://www.povertyactionlab.org)
+- KFF — Kaiser Family Foundation. [www.kff.org](https://www.kff.org)
+- NHS England — National Health Service. [www.england.nhs.uk](https://www.england.nhs.uk)
+- UNEP — United Nations Environment Programme. [www.unep.org](https://www.unep.org)
 - World Bank — World Development Indicators. [data.worldbank.org](https://data.worldbank.org)

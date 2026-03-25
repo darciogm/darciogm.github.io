@@ -298,6 +298,86 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(T_H, T_L\) | Tarifa cobrada do tipo alto / baixo |
 | \(\lambda\) | Proporção de tipos no mercado (screening) |
 
+## Economia Digital e Plataformas
+
+| Símbolo | Significado |
+|---------|-------------|
+| \(f(n)\) | Função de benefício de rede (valor da rede em função de \(n\) participantes) |
+| \(n_B, n_S\) | Número de participantes do lado comprador / vendedor (mercado bilateral) |
+| \(\alpha_B, \alpha_S\) | Parâmetros de externalidade cruzada entre lados da plataforma (Rochet-Tirole) |
+| \(p_B, p_S\) | Preço cobrado pela plataforma de cada lado |
+| \(c_B, c_S\) | Custo marginal de servir cada lado |
+| \(SC_i\) | Custo de troca (switching cost) do agente \(i\) |
+| \(n_c\) | Massa crítica (ponto de tombamento / tipping) |
+| \(a\) | Quantidade de publicidade por unidade de conteúdo |
+| \(s_i = b_i \times q_i\) | Score do leilão GSP (lance \(\times\) qualidade) |
+| \(d_i\) | Quantidade de dados compartilhados pelo agente \(i\) (externalidade de privacidade) |
+
+## Econometria e Métodos Experimentais
+
+| Símbolo | Significado |
+|---------|-------------|
+| \(Y_i(1), Y_i(0)\) | Resultados potenciais do indivíduo \(i\) (com e sem tratamento) |
+| \(ATE = E[Y_i(1) - Y_i(0)]\) | Efeito médio do tratamento (Average Treatment Effect) |
+| \(\hat{ATE}\) | Estimador do efeito médio do tratamento |
+| \(ITT\) | Estimador de intenção de tratar (Intention-to-Treat) |
+| \(TOT\) | Efeito do tratamento sobre os tratados (Treatment on the Treated) |
+| \(LATE\) | Efeito local médio do tratamento (Local Average Treatment Effect) |
+| \(\tau_{DD}\) | Estimador de diferenças em diferenças |
+| \(\tau_{RDD}\) | Estimador de regressão descontínua |
+| \(D_i = \mathbf{1}(X_i \geq c)\) | Indicador de tratamento (RDD) |
+| \(X_i\) | Variável de atribuição (running variable, RDD) |
+| \(\hat{\beta}_{IV}\) | Estimador de variáveis instrumentais |
+| \(Z\) | Variável instrumental |
+| \(\varepsilon_i\) | Termo de erro da regressão |
+| \(\delta\) | Efeito mínimo detectável (MDE, cálculo de poder) |
+| \(z_{\alpha/2}, z_{\beta}\) | Valores críticos para nível de significância e poder estatístico |
+
+## Economia da Saúde
+
+| Símbolo | Significado |
+|---------|-------------|
+| \(H_t\) | Estoque de saúde no período \(t\) (modelo de Grossman) |
+| \(\delta_t\) | Taxa de depreciação do estoque de saúde (crescente com a idade) |
+| \(I_t\) | Investimento bruto em saúde |
+| \(m_t\) | Consumo de cuidados médicos |
+| \(\tau_t^H\) | Tempo dedicado à saúde |
+| \(h_t\) | Fluxo de "dias saudáveis" |
+| \(p_e\) | Preço efetivo pago pelo paciente (após cobertura do seguro) |
+| \(n^*(s)\) | Número clinicamente adequado de procedimentos dado o estado \(s\) |
+| \(AR_j\) | Pagamento de ajuste de risco para a seguradora \(j\) |
+| \(ICER = \Delta C / \Delta E\) | Razão de custo-efetividade incremental |
+| \(QALY\) | Ano de vida ajustado pela qualidade (Quality-Adjusted Life Year) |
+| \(DALY\) | Ano de vida ajustado por incapacidade (Disability-Adjusted Life Year) |
+| \(YLL, YLD\) | Anos de vida perdidos / anos vividos com incapacidade |
+| \(VSL\) | Valor estatístico de uma vida (Value of Statistical Life) |
+| \(R_0\) | Número básico de reprodução (limiar de imunidade de rebanho) |
+| \(B_p, B_e\) | Benefício privado / externo da vacinação |
+
+## Economia Ambiental e Recursos Naturais
+
+| Símbolo | Significado |
+|---------|-------------|
+| \(CMgS, CMgP, CMgE\) | Custo marginal social / privado / externo |
+| \(CMgA_i(e_i)\) | Custo marginal de abatimento da firma \(i\) |
+| \(\bar{E}\) | Teto de emissões (cap, sistema cap-and-trade) |
+| \(p_E\) | Preço da permissão de emissão |
+| \(SCC\) | Custo social do carbono (Social Cost of Carbon) |
+| \(D_t(\Delta E)\) | Dano marginal no período \(t\) de uma unidade adicional de emissão |
+| \(\Omega(T)\) | Função de dano climático (modelo DICE) |
+| \(r = \rho + \eta g\) | Equação de Ramsey para a taxa social de desconto |
+| \(\eta\) | Elasticidade da utilidade marginal / aversão à desigualdade (CRRA) |
+| \(g\) | Taxa de crescimento do consumo per capita |
+| \(VET = VU + VNU\) | Valor econômico total = valor de uso + valor de não-uso |
+| \(p_Q = \partial P / \partial Q\) | Preço implícito da qualidade ambiental (preços hedônicos) |
+| \(p_n\) | Preço líquido / renda de escassez (recurso exaurível) |
+| \(\dot{S} = G(S) - h\) | Dinâmica do recurso renovável (crescimento natural menos colheita) |
+| \(G(S)\) | Função de crescimento natural do recurso |
+| \(h\) | Taxa de colheita / extração |
+| \(h^{RMS}\) | Rendimento máximo sustentável |
+| \(S^*\) | Poupança genuína (adjusted net savings) |
+| \(I_K(t) = p_n(t) \cdot h(t)\) | Regra de Hartwick (investimento em capital produzido) |
+
 ## Operadores e Convenções
 
 | Símbolo | Significado |
@@ -326,4 +406,6 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 - **Tipo do agente**: sempre \(\theta\), com \(\theta_H\) (alto) e \(\theta_L\) (baixo).
 - **Fator de desconto**: \(\delta\) em jogos repetidos e colusão; \(\beta\) em escolha intertemporal e economia comportamental.
 - **Beta (\(\beta\))**: fator de desconto subjetivo (Cap. 18); parâmetros da função de produção (Cap. 4); coeficientes de regressão na equação de Mincer (Cap. 17); poder de barganha sindical (Cap. 17); beta do CAPM (Cap. 18); viés de presente (Cap. 12). O contexto dentro de cada capítulo é sempre explicitado.
-- **Delta (\(\delta\))**: fator de desconto em jogos repetidos (Caps. 9b, 16); taxa de depreciação do capital (Cap. 18); fator de desconto exponencial em preferências intertemporais (Cap. 12). Nunca reutilizado com sentido diferente dentro do mesmo capítulo.
+- **Delta (\(\delta\))**: fator de desconto em jogos repetidos (Caps. 9b, 16); taxa de depreciação do capital (Cap. 18); fator de desconto exponencial em preferências intertemporais (Cap. 12); taxa de depreciação do estoque de saúde (Cap. 23); efeito mínimo detectável em cálculos de poder (Cap. 22). Nunca reutilizado com sentido diferente dentro do mesmo capítulo.
+- **Eta (\(\eta\))**: elasticidade (notação alternativa, diversos capítulos); elasticidade da utilidade marginal / aversão à desigualdade na equação de Ramsey (Cap. 24).
+- **Alpha (\(\alpha\))**: parâmetros da função de produção (Cap. 10); expoentes da função de valor em economia comportamental (Cap. 8); externalidade cruzada em mercados bilaterais (Cap. 21); fator de multiplicação em jogos de bens públicos (Cap. 22).
