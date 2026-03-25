@@ -310,7 +310,7 @@ Qual lado subsidiar? A regra é subsidiar o lado cuja participação gera **maio
     \]
 
     \[
-    1{,}63 - 2p_B - 0{,}8p_S = 0 \label{eq:21.R1a} \tag{21.R1a}
+    1{,}63 - 2p_B - 0{,}8p_S = 0 \tag{i}
     \]
 
     \[
@@ -318,14 +318,14 @@ Qual lado subsidiar? A regra é subsidiar o lado cuja participação gera **maio
     \]
 
     \[
-    1{,}45 - 0{,}8p_B - 2p_S = 0 \label{eq:21.R1b} \tag{21.R1b}
+    1{,}45 - 0{,}8p_B - 2p_S = 0 \tag{ii}
     \]
 
-    Resolvendo o sistema $\eqref{eq:21.R1a}$–$\eqref{eq:21.R1b}$:
+    Resolvendo o sistema (i)–(ii):
 
-    De $\eqref{eq:21.R1a}$: \(p_S = (1{,}63 - 2p_B)/0{,}8\).
+    De (i): \(p_S = (1{,}63 - 2p_B)/0{,}8\).
 
-    Substituindo em $\eqref{eq:21.R1b}$:
+    Substituindo em (ii):
 
     \[
     1{,}45 - 0{,}8p_B - 2 \cdot \frac{1{,}63 - 2p_B}{0{,}8} = 0
