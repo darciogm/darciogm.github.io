@@ -32,16 +32,17 @@
     }
 .graph-container {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 1rem;
-      align-items: center;
+      align-items: stretch;
+      justify-content: center;
     }
     .panels {
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
-      width: 100%;
-      max-width: 620px;
+      flex: 1 1 480px;
+      max-width: 560px;
     }
     .panel-label {
       font-size: 0.8rem;
@@ -51,14 +52,12 @@
     }
     .jxgbox {
       width: 100%;
-      max-width: 620px;
-      height: 340px;
+      height: 300px;
       border: 1px solid #ddd;
       border-radius: 6px;
     }
     .controls {
-      width: 100%;
-      max-width: 620px;
+      flex: 0 1 260px;
       padding: 1rem;
       background: #f8f8f8;
       border-radius: 6px;
