@@ -50,7 +50,7 @@
         Equilíbrio: \(D(P,Y) - S(P) = 0\)
       </div>
       <div style="text-align:center;margin-bottom:.4rem;color:#555;font-size:.75rem">
-        \(D = 80 + 10\sqrt{Y} - 3P\) &nbsp;|&nbsp; \(S = -20 + 2P\)
+        \(D = 50 + 10\sqrt{Y} - 3P\) &nbsp;|&nbsp; \(S = -20 + 2P\)
       </div>
       <hr class="divider">
       <div class="info-row"><span class="info-label">\(P^*(Y)\)</span><span class="info-val accent" id="info-P">—</span></div>
@@ -69,14 +69,14 @@
 </div>
 <script>
 var Y0=40;
-// D(P,Y) = 80 + 10√Y - 3P,  S(P) = -20 + 2P
-// Eq: 80 + 10√Y - 3P = -20 + 2P  =>  100 + 10√Y = 5P
-// P*(Y) = 20 + 2√Y   (côncava — tangente se distingue da curva)
-// Q*(Y) = S(P*) = -20 + 2(20+2√Y) = 20 + 4√Y
+// D(P,Y) = 50 + 10√Y - 3P,  S(P) = -20 + 2P
+// Eq: 50 + 10√Y - 3P = -20 + 2P  =>  70 + 10√Y = 5P
+// P*(Y) = 14 + 2√Y   (côncava — tangente se distingue da curva)
+// Q*(Y) = S(P*) = -20 + 2(14+2√Y) = 8 + 4√Y
 // D_Y = 5/√Y,  D_P = -3,  S_P = 2
 // dP*/dY = -D_Y/(D_P - S_P) = -(5/√Y)/(-5) = 1/√Y
-function Pstar(y){return 20+2*Math.sqrt(y);}
-function Qstar(y){return 20+4*Math.sqrt(y);}
+function Pstar(y){return 14+2*Math.sqrt(y);}
+function Qstar(y){return 8+4*Math.sqrt(y);}
 function dPdY(y){return 1/Math.sqrt(y);}
 
 var board=JXG.JSXGraph.initBoard('jxgbox',{
