@@ -455,7 +455,7 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
     Esse padrão viola a UE de Savage. Se o agente atribui probabilidade subjetiva \(P(\text{vermelho em B}) < 0{,}5\), deveria atribuir \(P(\text{preto em B}) > 0{,}5\) e preferir a Urna B na aposta em preto. A preferência simultânea pela Urna A em ambas as apostas revela uma aversão à **ambiguidade** — à falta de informação sobre as probabilidades — que vai além da aversão ao risco (Dhami 2016, p. 321–324).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe" style="height:900px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="../graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe" style="height:960px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" style="margin-top:2rem;" markdown>
