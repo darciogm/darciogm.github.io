@@ -80,10 +80,10 @@ function Qstar(y){return 4+4*Math.sqrt(y);}
 function dPdY(y){return 1/Math.sqrt(y);}
 
 var board=JXG.JSXGraph.initBoard('jxgbox',{
-  boundingbox:[-5,48,90,-2],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:false
+  boundingbox:[-5,37,90,-2],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:false
 });
 board.create('axis',[[0,0],[85,0]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10},minorTicks:0,ticksDistance:10}});
-board.create('axis',[[0,0],[0,45]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:5}});
+board.create('axis',[[0,0],[0,35]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:5}});
 board.create('text',[45,-1.5,'<b><i>Y</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
 board.create('text',[-4,24,'<b><i>P*</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
 
