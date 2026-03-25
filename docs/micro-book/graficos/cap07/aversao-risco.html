@@ -187,12 +187,6 @@
       }
     }
 
-    // More risk-averse: u(W) = log(W) scaled to fit graph
-    function uFuncMore(w) {
-      if (w <= 0.01) return 0;
-      return Math.log(w) * (10 / Math.log(10));  // u(10) = 10
-    }
-
     // Draggable points on utility curve
     var ptW1 = board.create('point', [2, 0], {
       name: 'W_1', size: 4, color: '#1565c0', fillColor: '#1565c0',
@@ -241,21 +235,6 @@
         strokeColor: '#C8102E', strokeWidth: 2.5
       });
       drawObjects.push(curve);
-
-      // More risk-averse curve (only in averse mode)
-      if (mode === 'averse') {
-        var curveMore = board.create('functiongraph', [function(x) { return uFuncMore(x); }, 0.1, 10.5], {
-          strokeColor: '#7c4dff', strokeWidth: 2, dash: 2
-        });
-        drawObjects.push(curveMore);
-        var lblMore = board.create('text', [9.5, uFuncMore(9.5) + 0.5, '<span style="color:#7c4dff;font-size:11px;">ln(<i>W</i>) — mais avesso</span>'], {
-          fixed: true, anchorX: 'right', useMathJax: false
-        });
-        var lblBase = board.create('text', [9.5, uFunc(9.5) + 0.5, '<span style="color:#C8102E;font-size:11px;">&radic;<i>W</i> — avesso</span>'], {
-          fixed: true, anchorX: 'right', useMathJax: false
-        });
-        drawObjects.push(lblMore, lblBase);
-      }
 
       // Points on curve for W1 and W2
       var pU1 = board.create('point', [w1, uw1], {
