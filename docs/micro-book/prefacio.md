@@ -34,7 +34,7 @@ Além disso, **Boxes Mundo** trazem casos internacionais emblemáticos — da To
 
 ### Gráficos interativos: veja a teoria se mover
 
-Uma curva de indiferença é mais reveladora quando você pode arrastá-la. Uma decomposição de Slutsky faz mais sentido quando você vê o efeito substituição se separar do efeito renda em tempo real. O equilíbrio de Nash ganha vida quando você pode ajustar os payoffs e ver as funções de reação se deslocarem.
+Uma curva de indiferença é mais reveladora quando você pode arrastá-la. Uma decomposição de Slutsky faz mais sentido quando você vê o efeito substituição se separar do efeito renda em tempo real. O equilíbrio de Nash ganha vida quando você pode ajustar os payoffs e ver as funções de melhor-resposta se deslocarem.
 
 Este livro contém dezenas de **gráficos interativos** — construídos com JSXGraph e integrados diretamente ao texto. Cada gráfico permite ao leitor manipular parâmetros (preços, renda, elasticidades, coeficientes de aversão ao risco) e observar como curvas, equilíbrios e medidas de bem-estar respondem. Não se trata de ilustrações decorativas: são ferramentas de aprendizado ativo, projetadas para que o aluno *sinta* a teoria nos dedos — literalmente arrastando sliders e observando equações se atualizarem.
 

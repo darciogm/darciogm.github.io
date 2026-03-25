@@ -178,7 +178,7 @@ cat(sprintf("P*  = %.2f\n", P_star))
 cat(sprintf("π1  = %.2f,  π2  = %.2f\n",
     (P_star - c1)*q1_star, (P_star - c2)*q2_star))
 
-# Funções de reação
+# Funções de melhor-resposta
 q1_range <- seq(0, (a - c2)/b, length.out = 200)
 R2 <- pmax(0, (a - c2 - b*q1_range) / (2*b))
 
@@ -188,7 +188,7 @@ R1 <- pmax(0, (a - c1 - b*q2_range) / (2*b))
 # Gráfico
 plot(q1_range, R2, type = "l", col = "#C8102E", lwd = 2,
      xlab = "q1", ylab = "q2",
-     main = "Funções de Reação — Cournot",
+     main = "Funções de Melhor-Resposta — Cournot",
      xlim = c(0, 90), ylim = c(0, 90))
 lines(R1, q2_range, col = "#2a7f2a", lwd = 2)
 points(q1_star, q2_star, pch = 19, col = "#C8102E", cex = 1.5)

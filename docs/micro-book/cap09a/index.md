@@ -378,14 +378,14 @@ O lucro da firma \(i\) é:
 \label{eq:9a.4} \tag{9a.4}
 \]
 
-Observe que o lucro de cada firma depende não apenas da própria quantidade, mas também da quantidade produzida pela rival — a interdependência estratégica que motiva toda a teoria dos jogos. Cada firma maximiza seu lucro tomando como dada a quantidade da outra, o que gera a seguinte condição de primeira ordem e a correspondente **função de reação** (melhor resposta):
+Observe que o lucro de cada firma depende não apenas da própria quantidade, mas também da quantidade produzida pela rival — a interdependência estratégica que motiva toda a teoria dos jogos. Cada firma maximiza seu lucro tomando como dada a quantidade da outra, o que gera a seguinte condição de primeira ordem e a correspondente **função de melhor-resposta** (melhor resposta):
 
 \[
 q_i^*(q_j) = \frac{a - c - bq_j}{2b}
 \label{eq:9a.5} \tag{9a.5}
 \]
 
-A função de reação é decrescente: quanto mais a rival produz, menos é ótimo para a firma produzir. Em linguagem estratégica, as quantidades são **substitutos estratégicos** — o aumento da ação de um jogador reduz a melhor resposta do outro. O equilíbrio de Nash (Cournot-Nash) é obtido pela interseção das funções de reação:
+A função de melhor-resposta é decrescente: quanto mais a rival produz, menos é ótimo para a firma produzir. Em linguagem estratégica, as quantidades são **substitutos estratégicos** — o aumento da ação de um jogador reduz a melhor resposta do outro. O equilíbrio de Nash (Cournot-Nash) é obtido pela interseção das funções de melhor-resposta:
 
 \[
 q_1^* = q_2^* = \frac{a-c}{3b}, \qquad Q^* = \frac{2(a-c)}{3b}, \qquad P^* = \frac{a + 2c}{3}
@@ -446,10 +446,10 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 
     A resolução do paradoxo em contextos reais vem de três fontes: (i) **restrições de capacidade** — se cada firma não consegue atender toda a demanda sozinha, a competição Bertrand não leva mais ao custo marginal (resultado de Edgeworth-Kreps-Scheinkman); (ii) **diferenciação de produto** — com bens substitutos imperfeitos, os clientes não migram instantaneamente para o fornecedor mais barato, restaurando margens positivas; (iii) **custos de mudança** — lealdade do cliente e custos de troca (switching costs) tornam a demanda menos sensível a pequenas diferenças de preço. Nos mercados reais, os três fatores coexistem — e o julgamento de qual modelo é mais adequado é central para a análise antitruste.
 
-<iframe src="../graficos/cap09/cournot-reacao.html" title="Figura 9a.3 — Funções de reação de Cournot" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap09/cournot-reacao.html" title="Figura 9a.3 — Funções de melhor-resposta de Cournot" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 9a.3 — Funções de reação de Cournot.** Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.
+**Figura 9a.3 — Funções de melhor-resposta de Cournot.** Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.
 </div>
 
 ### Competição de Stackelberg (líder-seguidora)
@@ -500,7 +500,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 <iframe src="../graficos/cap09/stackelberg-reacao.html" title="Figura 9a.4 — Stackelberg vs Cournot" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 9a.4 — Stackelberg vs Cournot.** A isoprofit da líder tangencia a função de reação da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de reação). Altere os custos para ver o efeito de assimetrias.
+**Figura 9a.4 — Stackelberg vs Cournot.** A isoprofit da líder tangencia a função de melhor-resposta da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de melhor-resposta). Altere os custos para ver o efeito de assimetrias.
 </div>
 
 !!! box-brasil "Box Brasil — CADE, fusões e o mercado de cervejas: Ambev, Heineken e Petrópolis"
@@ -636,7 +636,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 ### R Interativo: Equilíbrio de Cournot com Simulação
 
 ??? code "R Interativo — Cournot Duopólio: equilíbrio analítico e gráfico (Adams, 2025, Cap. 3)"
-    O modelo de Cournot com demanda linear admite solução analítica. Neste box interativo, você pode alterar os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) para explorar como o equilíbrio muda. O R calcula quantidades, preço e lucros de equilíbrio e plota as funções de reação.
+    O modelo de Cournot com demanda linear admite solução analítica. Neste box interativo, você pode alterar os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)) para explorar como o equilíbrio muda. O R calcula quantidades, preço e lucros de equilíbrio e plota as funções de melhor-resposta.
 
     **Exercício sugerido:** mude \(c_2\) para 40 e compare com o caso simétrico. A firma de custo alto produz menos — qual é o efeito sobre o preço de mercado?
 
@@ -724,7 +724,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 | Estratégia mista | Distribuição de probabilidade sobre as estratégias puras de um jogador. |
 | Princípio da indiferença | Em equilíbrio misto, cada jogador randomiza de forma a tornar o oponente indiferente entre suas estratégias puras. |
 | EIED | Eliminação Iterada de Estratégias Estritamente Dominadas — procedimento de solução que reduz o jogo removendo estratégias que nunca são ótimas. |
-| Modelo de Cournot | Oligopólio em que firmas escolhem quantidades simultaneamente; o equilíbrio é a interseção das funções de reação. |
+| Modelo de Cournot | Oligopólio em que firmas escolhem quantidades simultaneamente; o equilíbrio é a interseção das funções de melhor-resposta. |
 | Modelo de Bertrand | Oligopólio em que firmas escolhem preços simultaneamente; com produtos homogêneos, o preço converge para o custo marginal. |
 | Modelo de Stackelberg | Oligopólio sequencial em que a líder se compromete com uma quantidade antes da seguidora, obtendo vantagem de primeiro movimento. |
 | Dilema dos Prisioneiros | Jogo em que a estratégia dominante de cada jogador leva a um resultado coletivamente inferior (Pareto-dominado). |
@@ -771,7 +771,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     **Resolução:**
 
-    **Passo 1 — Funções de reação**
+    **Passo 1 — Funções de melhor-resposta**
 
     CPO da firma 1: \(500 - 4q_1 - 2q_2 - 100 = 0 \implies q_1^*(q_2) = 100 - q_2/2\)
 
@@ -858,7 +858,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
 <a id="ex-9a-3"></a>**Exercício 9a.3.** No modelo de Bertrand com diferenciação, as demandas são \(q_1 = a - bp_1 + dp_2\) e \(q_2 = a - bp_2 + dp_1\), com \(b > d > 0\) e custo marginal \(c\).
 
-(a) Derive as funções de reação em preços e mostre que são crescentes (complementos estratégicos).
+(a) Derive as funções de melhor-resposta em preços e mostre que são crescentes (complementos estratégicos).
 
 (b) Encontre o equilíbrio de Nash e mostre que os lucros são positivos (diferentemente do Bertrand homogêneo).
 

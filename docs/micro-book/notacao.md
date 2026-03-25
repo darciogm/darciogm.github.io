@@ -116,7 +116,7 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 |---------|-------------|
 | \(P(Q) = a - bQ\) | Demanda inversa de mercado |
 | \(Q = q_1 + q_2\) | Produção total (Cournot) |
-| \(q_i^*(q_{-i})\) | Função de reação (melhor resposta em quantidades) |
+| \(q_i^*(q_{-i})\) | Função de melhor-resposta (melhor resposta em quantidades) |
 | \(Q_{-i}\) | Produção agregada dos demais competidores |
 | \(q_1^L\) | Quantidade da líder (Stackelberg) |
 | \(c\) | Custo marginal constante |

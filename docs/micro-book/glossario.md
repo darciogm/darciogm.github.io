@@ -251,7 +251,7 @@
 : Perfil de estratégias no qual nenhum jogador pode aumentar seu payoff alterando unilateralmente sua estratégia: \(u_i(s_i^*, s_{-i}^*) \geq u_i(s_i, s_{-i}^*)\) para todo \(s_i \in S_i\).
 
 **Equilíbrio de Stackelberg**
-: Equilíbrio em um jogo sequencial de oligopólio em que a firma líder escolhe sua quantidade primeiro, e a firma seguidora observa essa escolha e responde otimamente. Resolvido por indução retroativa: o líder maximiza seu lucro sobre a função de reação da seguidora.
+: Equilíbrio em um jogo sequencial de oligopólio em que a firma líder escolhe sua quantidade primeiro, e a firma seguidora observa essa escolha e responde otimamente. Resolvido por indução retroativa: o líder maximiza seu lucro sobre a função de melhor-resposta da seguidora.
 
 **Equilíbrio geral**
 : Estado em que todos os mercados de uma economia estão simultaneamente em equilíbrio, com preços que igualam oferta e demanda em cada mercado.

@@ -130,7 +130,7 @@ Resolvendo para \(q_1\):
 q_1^*(q_2) = \frac{a - c - bq_2}{2b} = \frac{a - c}{2b} - \frac{q_2}{2}
 \label{eq:16.4} \tag{16.4} \]
 
-A equação $\eqref{eq:16.4}$ é a **função de reação** (ou função de melhor resposta) da firma 1. Ela indica a quantidade ótima da firma 1 para cada nível de produção da firma 2. A função de reação é **decrescente**: as quantidades são **substitutos estratégicos** no modelo de Cournot.
+A equação $\eqref{eq:16.4}$ é a **função de melhor-resposta** (ou função de melhor resposta) da firma 1. Ela indica a quantidade ótima da firma 1 para cada nível de produção da firma 2. A função de melhor-resposta é **decrescente**: as quantidades são **substitutos estratégicos** no modelo de Cournot.
 
 !!! definition "Substitutos e Complementos Estratégicos"
     Variáveis de decisão são **substitutos estratégicos** se a melhor resposta de uma firma é decrescente na ação da rival: quando a rival produz mais, a firma reduz sua produção. São **complementos estratégicos** se a melhor resposta é crescente. No modelo de Cournot, quantidades são substitutos estratégicos. No modelo de Bertrand com produtos diferenciados, preços são tipicamente complementos estratégicos.
@@ -166,10 +166,10 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 
     O equilíbrio de Cournot **não** é colusão: cada firma maximiza seu próprio lucro *individualmente*, tomando a quantidade da rival como dada. O resultado conjunto é pior para as firmas do que a colusão (que maximizaria o lucro conjunto), mas melhor do que Bertrand com bens homogêneos. Formalmente: \(Q^{monopólio} < Q^{Cournot} < Q^{competitivo}\) e \(p^{competitivo} < p^{Cournot} < p^{monopólio}\). Outro erro frequente é trocar a variável estratégica: no Cournot as firmas escolhem **quantidades** (e o preço se ajusta pelo mercado), enquanto no Bertrand escolhem **preços**. Essa diferença gera resultados radicalmente distintos.
 
-<iframe src="../graficos/cap16/cournot.html" title="Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\)" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap16/cournot.html" title="Figura 16.2 — Funções de melhor-resposta de Cournot no espaço \((q_1, q_2)\)" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 16.2 — Funções de reação de Cournot no espaço \((q_1, q_2)\).** O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.
+**Figura 16.2 — Funções de melhor-resposta de Cournot no espaço \((q_1, q_2)\).** O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.
 </div>
 
 ---
@@ -180,7 +180,7 @@ Nos modelos de Bertrand e Cournot, as firmas tomam decisões simultaneamente —
 
 No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) **primeiro**, e a firma 2 (seguidora) observa \(q_1\) e depois escolhe \(q_2\). O jogo é resolvido por **indução retroativa**.
 
-A seguidora usa sua função de reação: \(q_2^*(q_1) = \frac{a-c-bq_1}{2b}\).
+A seguidora usa sua função de melhor-resposta: \(q_2^*(q_1) = \frac{a-c-bq_1}{2b}\).
 
 O líder antecipa essa reação e maximiza:
 
@@ -209,10 +209,10 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 ---
 
-<iframe src="../graficos/cap16/stackelberg.html" title="Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap16/stackelberg.html" title="Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de melhor-resposta da seguidora" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de reação da seguidora.** As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).
+**Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de melhor-resposta da seguidora.** As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).
 </div>
 
 ---
@@ -778,7 +778,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 | Interdependência estratégica | Situação em que o lucro de cada firma depende das decisões de todas as rivais, exigindo análise via equilíbrio de Nash |
 | Paradoxo de Bertrand | Resultado de que duas firmas com produtos homogêneos e custos iguais competindo em preços geram preço igual ao custo marginal e lucro zero |
 | Equilíbrio de Cournot | Equilíbrio de Nash em que cada firma escolhe a quantidade que maximiza seu lucro dada a quantidade da rival, com preços acima do custo marginal |
-| Função de reação (melhor resposta) | Função que indica a quantidade (ou preço) ótima de uma firma para cada nível de decisão da rival |
+| Função de melhor-resposta (melhor resposta) | Função que indica a quantidade (ou preço) ótima de uma firma para cada nível de decisão da rival |
 | Substitutos e complementos estratégicos | Quantidades são substitutos estratégicos (melhor resposta decrescente); preços diferenciados são tipicamente complementos estratégicos (melhor resposta crescente) |
 | Modelo de Stackelberg | Jogo sequencial em que o líder escolhe primeiro e obtém vantagem do primeiro movimento (first-mover advantage) |
 | Colusão tácita | Coordenação de preços acima do competitivo sustentada por interação repetida e ameaça de retaliação, sem acordo explícito |
@@ -798,11 +798,11 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 ## 🎯 Exercícios Resolvidos
 
 ??? exercicio-resolvido "Exercício Resolvido 16.1 — Equilíbrio de Cournot com custos assimétricos"
-    **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de reação; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
+    **Enunciado.** Duas firmas competem em quantidades (Cournot). A demanda inversa é \(p = 100 - Q\), onde \(Q = q_1 + q_2\). A firma 1 tem custo marginal \(c_1 = 10\) e a firma 2 tem custo marginal \(c_2 = 20\). Encontre: (a) as funções de melhor-resposta; (b) as quantidades, preço e lucros de equilíbrio; (c) o índice de Herfindahl-Hirschman (HHI).
 
     **Resolução.**
 
-    **(a) Funções de reação.**
+    **(a) Funções de melhor-resposta.**
 
     O lucro da firma 1 é:
 
@@ -873,7 +873,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     **(a) Equilíbrio de Stackelberg.**
 
-    A função de reação da seguidora (firma 2) é:
+    A função de melhor-resposta da seguidora (firma 2) é:
 
     \[
     q_2^*(q_1) = \frac{150 - 30 - q_1}{2} = \frac{120 - q_1}{2} = 60 - \frac{q_1}{2}
@@ -952,7 +952,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 ??? exercicio-proposto "Exercício 16.1"
     Considere um duopólio de Cournot com demanda \(p = 120 - Q\) e custos marginais \(c_1 = 20\) e \(c_2 = 30\).
 
-    a) Encontre as funções de reação de cada firma.
+    a) Encontre as funções de melhor-resposta de cada firma.
 
     b) Calcule as quantidades, o preço e os lucros de equilíbrio.
 
@@ -964,7 +964,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 ??? exercicio-proposto "Exercício 16.2"
     Duas firmas competem em preços (Bertrand) com produtos diferenciados. As demandas são \(q_1 = 100 - 2p_1 + p_2\) e \(q_2 = 100 - 2p_2 + p_1\). Os custos marginais são \(c = 10\).
 
-    a) Encontre as funções de reação em preços.
+    a) Encontre as funções de melhor-resposta em preços.
 
     b) Calcule o equilíbrio de Nash em preços e quantidades.
 
@@ -1000,7 +1000,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 ??? exercicio-proposto "Exercício 16.5"
     No modelo de Stackelberg, a firma líder tem custo marginal \(c_L = 10\) e a seguidora tem \(c_S = 20\). A demanda é \(p = 100 - q_L - q_S\).
 
-    a) Encontre a função de reação da seguidora.
+    a) Encontre a função de melhor-resposta da seguidora.
 
     b) Calcule as quantidades, o preço e os lucros de equilíbrio de Stackelberg.
 

@@ -14,7 +14,7 @@ title: "Soluções — Capítulo 16"
 
 Dados: \( P = 120 - Q \), onde \( Q = q_1 + q_2 \), \( c_1 = 20 \), \( c_2 = 30 \).
 
-### (a) Funções de reação
+### (a) Funções de melhor-resposta
 
 A firma 1 maximiza:
 
@@ -118,7 +118,7 @@ A assimetria de custos **reduz o excedente total**. Há dois efeitos negativos: 
 
 Dados: \( q_1 = 100 - 2p_1 + p_2 \), \( q_2 = 100 - 2p_2 + p_1 \), \( CMg = c = 10 \).
 
-### (a) Funções de reação em preços
+### (a) Funções de melhor-resposta em preços
 
 A firma 1 maximiza:
 
@@ -138,7 +138,7 @@ A firma 1 maximiza:
 120 + p_2 - 4p_1 = 0 \implies p_1^*(p_2) = \frac{120 + p_2}{4} = 30 + \frac{p_2}{4}
 \]
 
-Por simetria, a função de reação da firma 2 é:
+Por simetria, a função de melhor-resposta da firma 2 é:
 
 \[
 p_2^*(p_1) = 30 + \frac{p_1}{4}
@@ -168,7 +168,7 @@ Lucros de equilíbrio:
 
 No equilíbrio, \( p^* = 40 > 10 = c \). A diferenciação de produtos resolve o **paradoxo de Bertrand**: quando os bens não são substitutos perfeitos, cada firma possui algum poder de mercado sobre seus consumidores. Uma redução de preço pela firma rival atrai apenas parte dos consumidores da concorrente — a demanda não se desloca integralmente como no caso homogêneo. Assim, cortar preços até o custo marginal deixa de ser a estratégia ótima, e as firmas conseguem sustentar margens positivas em equilíbrio.
 
-Note que as funções de reação em preços têm inclinação positiva (\( \partial p_i^*/\partial p_j = 1/4 > 0 \)), característica da competição em preços com bens diferenciados: preços são **complementos estratégicos**. Quando a rival eleva seu preço, a melhor resposta é também elevar o próprio preço.
+Note que as funções de melhor-resposta em preços têm inclinação positiva (\( \partial p_i^*/\partial p_j = 1/4 > 0 \)), característica da competição em preços com bens diferenciados: preços são **complementos estratégicos**. Quando a rival eleva seu preço, a melhor resposta é também elevar o próprio preço.
 
 ↩ [Voltar ao enunciado](../cap16/index.md#ex-16-2)
 
@@ -405,7 +405,7 @@ Com três firmas, o fator de desconto mínimo sobe para \( \delta^* = \frac{2}{3
 
 Dados: \( P = 100 - q_L - q_S \), \( c_L = 10 \) (líder), \( c_S = 20 \) (seguidora).
 
-### (a) Função de reação da seguidora
+### (a) Função de melhor-resposta da seguidora
 
 A seguidora maximiza tomando \( q_L \) como dado:
 
@@ -471,7 +471,7 @@ Lucros:
 
 No Cournot simultâneo com \( c_1 = 10 \), \( c_2 = 20 \):
 
-Funções de reação:
+Funções de melhor-resposta:
 
 \[
 q_1^*(q_2) = \frac{90 - q_2}{2}, \quad q_2^*(q_1) = \frac{80 - q_1}{2}

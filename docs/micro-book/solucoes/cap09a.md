@@ -91,7 +91,7 @@ O líder produz mais e lucra mais que no Cournot; o seguidor produz menos e lucr
 
 CPO: \(a - 2bp_1 + dp_2 + bc = 0 \implies p_1 = \frac{a + bc + dp_2}{2b}\).
 
-A função de reação é crescente em \(p_2\) (coef. \(d/(2b) > 0\)): **complementos estratégicos** em preços. Se o rival eleva o preço, é ótimo para mim também elevar.
+A função de melhor-resposta é crescente em \(p_2\) (coef. \(d/(2b) > 0\)): **complementos estratégicos** em preços. Se o rival eleva o preço, é ótimo para mim também elevar.
 
 **(b)** Equilíbrio simétrico (\(p_1 = p_2 = p^*\)):
 
@@ -272,7 +272,7 @@ CPO em \(p_1\):
 
 Por simetria: \(p_2^*(p_1) = 20 + p_1/4\).
 
-A função de reação é **crescente** em \(p_2\) (inclinação positiva = \(1/4 > 0\)): os preços são **complementos estratégicos**. Se o rival aumenta seu preço, torna-se mais caro para os consumidores dele, que migram parcialmente para a firma 1 — que então pode aumentar o próprio preço sem perder toda a demanda.
+A função de melhor-resposta é **crescente** em \(p_2\) (inclinação positiva = \(1/4 > 0\)): os preços são **complementos estratégicos**. Se o rival aumenta seu preço, torna-se mais caro para os consumidores dele, que migram parcialmente para a firma 1 — que então pode aumentar o próprio preço sem perder toda a demanda.
 
 **(b) Equilíbrio de Nash:**
 
