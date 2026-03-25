@@ -190,7 +190,7 @@
     // Draggable points on utility curve
     var ptW1 = board.create('point', [2, 0], {
       name: 'W_1', size: 4, color: '#1565c0', fillColor: '#1565c0',
-      strokeColor: '#1565c0', label: { fontSize: 13, offset: [-5, -18] },
+      strokeColor: '#1565c0', label: { fontSize: 13, offset: [0, -28], anchorX: 'middle' },
       attractors: [], snatchDistance: 0
     });
     ptW1.on('drag', function() {
@@ -201,7 +201,7 @@
 
     var ptW2 = board.create('point', [8, 0], {
       name: 'W_2', size: 4, color: '#00897b', fillColor: '#00897b',
-      strokeColor: '#00897b', label: { fontSize: 13, offset: [-5, -18] },
+      strokeColor: '#00897b', label: { fontSize: 13, offset: [0, -28], anchorX: 'middle' },
       attractors: [], snatchDistance: 0
     });
     ptW2.on('drag', function() {
@@ -256,21 +256,21 @@
       // E[W] on x-axis
       var pEW = board.create('point', [EW, 0], {
         size: 3, color: '#C8102E', fillColor: '#C8102E', fixed: true, name: 'E[W]',
-        label: { fontSize: 11, offset: [-8, -16] }
+        label: { fontSize: 11, offset: [0, -28], anchorX: 'middle' }
       });
       drawObjects.push(pEW);
 
       // E[u(W)] on chord
       var pEuW = board.create('point', [EW, EuW], {
         size: 4, color: '#666', fillColor: '#666', fixed: true, name: 'E[u]',
-        label: { fontSize: 11, offset: [8, -12] }
+        label: { fontSize: 11, offset: [15, -5], anchorX: 'left' }
       });
       drawObjects.push(pEuW);
 
       // u(E[W]) on curve
       var puEW = board.create('point', [EW, uEW], {
         size: 4, color: '#C8102E', fillColor: '#C8102E', fixed: true, name: 'u(E[W])',
-        label: { fontSize: 11, offset: [8, 15] }
+        label: { fontSize: 11, offset: [15, 8], anchorX: 'left' }
       });
       drawObjects.push(puEW);
 
@@ -320,7 +320,7 @@
       if (isFinite(CE) && CE > 0 && CE < 11) {
         var pCE = board.create('point', [CE, 0], {
           size: 3, color: '#1565c0', fillColor: '#1565c0', fixed: true, name: 'EC',
-          label: { fontSize: 11, offset: [-5, -16] }
+          label: { fontSize: 11, offset: [0, -42], anchorX: 'middle' }
         });
         var hCE = board.create('segment', [[CE, 0], [CE, EuW]], {
           strokeColor: '#1565c0', strokeWidth: 1, dash: 3, fixed: true
