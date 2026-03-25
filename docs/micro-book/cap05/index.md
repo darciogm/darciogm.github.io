@@ -179,7 +179,7 @@ Ambas as decomposições — a de Hicks, expressa na equação $\eqref{eq:5.3.1}
 
     **Fontes**: ANEEL — Tarifas e Bandeiras Tarifárias; BCB — Relatório de Inflação; Agência Brasil (2022).
 
-<iframe src="../graficos/cap05/efeito-renda-substituicao.html" title="Figura 5.2 — Decomposição dos efeitos renda e substituição" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap05/efeito-renda-substituicao.html" title="Figura 5.2 — Decomposição dos efeitos renda e substituição" class="graph-iframe" style="height:693px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.2 — Decomposição dos efeitos renda e substituição.** Ajuste o novo preço \(p_1'\) e observe como o efeito total (vermelho) se decompõe em efeito substituição (verde, ao longo da curva de indiferença) e efeito renda (azul, entre curvas). Alterne entre as decomposições de Hicks e Slutsky.
