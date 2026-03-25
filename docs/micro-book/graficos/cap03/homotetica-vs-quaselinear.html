@@ -142,7 +142,7 @@
     <!-- Quasi-linear -->
     <div class="panel">
       <div class="panel-title" style="color:#e65100;">Quase-linear</div>
-      <div class="panel-eq">\(u = \sqrt{x_1} + x_2\)</div>
+      <div class="panel-eq">\(u = 2\sqrt{x_1} + x_2\)</div>
       <div id="box-ql" class="jxg-panel"></div>
       <div class="panel-note">Translação vertical — \(x_1\) fixo, renda extra vai para \(x_2\)</div>
     </div>
@@ -300,7 +300,7 @@
           function(t) { return t; },
           function(t) {
             if (t < 0.01) return NaN;
-            var val = U - Math.sqrt(t);
+            var val = U - 2 * Math.sqrt(t);
             return val >= 0 ? val : NaN;
           },
           0.01, 12
@@ -330,8 +330,8 @@
         var x1 = 1 / (p * p);
         var x2 = I - p * x1;
         if (x2 < 0) { x1 = I / p; x2 = 0; }
-        var U = Math.sqrt(x1) + x2;
-        var val = U - Math.sqrt(t);
+        var U = 2 * Math.sqrt(x1) + x2;
+        var val = U - 2 * Math.sqrt(t);
         return val >= 0 ? val : NaN;
       },
       0.01, 12
