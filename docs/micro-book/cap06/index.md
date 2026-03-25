@@ -1,7 +1,5 @@
 # Capítulo 6 — Substitutos, Complementos e Relações Complicadas
 
-> *"Nenhum bem é uma ilha: a demanda por cada produto depende dos preços de todos os outros."*
-
 O Capítulo 5 olhou para cada bem isoladamente: "o preço subiu, a demanda caiu". Mas no mundo real, bens não vivem sozinhos. Quando a gasolina sobe, o etanol sorri. Quando o preço do churrasco dispara, o frango agradece. E quando o governo taxa refrigerante, o dono da água de coco comemora. Este capítulo é sobre essas **relações entre bens**: quem é substituto de quem, quem é complemento, e por que a resposta depende de como você define a pergunta.
 
 A relevância é imediata: no Brasil, a decisão entre gasolina e etanol na bomba depende dos preços relativos (a regra dos 70%); o CADE avalia se duas marcas de cerveja são "substitutas próximas" antes de aprovar uma fusão; e a tributação seletiva sobre cigarros precisa saber se o cachimbo é substituto ou não. Tudo isso é elasticidade cruzada — o tema deste capítulo.
