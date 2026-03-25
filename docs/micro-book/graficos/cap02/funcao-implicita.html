@@ -105,7 +105,7 @@ board.create('segment',[[function(){return Y0;},0],[function(){return Y0;},funct
 board.create('segment',[[0,function(){return Pstar(Y0);}],[function(){return Y0;},function(){return Pstar(Y0);}]],{strokeColor:'#999',dash:2,strokeWidth:1});
 
 // Label
-board.create('text',[function(){return Y0+2;},function(){return Pstar(Y0)-2;},'\\(P^*(Y)\\)'],{fontSize:12,fixed:true,color:'#C8102E',highlight:false});
+board.create('text',[function(){return Y0+2;},function(){return Pstar(Y0)-2;},'<i>P</i>*(<i>Y</i>)'],{fontSize:12,fixed:true,color:'#C8102E',highlight:false,useMathJax:false});
 
 function updateAll(){
   Y0=+document.getElementById('sl-Y').value;
