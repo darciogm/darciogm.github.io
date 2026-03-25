@@ -119,10 +119,10 @@ legend("topright",
       btnRun.disabled = true; outputEl.textContent = 'Executando...'; plotEl.innerHTML = '';
       try {
         const shelter = await new webR.Shelter();
-        const wrapped = 'if (dev.cur() > 1) dev.off()\nwebr::canvas(width=520, height=380)\n' + code + '\ndev.off()';
+        const wrapped = code;
         const result = await shelter.captureR(wrapped, {
           withAutoprint: true, captureStreams: true, captureConditions: true,
-          captureGraphics: true
+          captureGraphics: { width: 520, height: 400 }
         });
         let textOut = '';
         for (const out of result.output) { if (out.type === 'stdout' || out.type === 'stderr') textOut += out.data + '\n'; }
