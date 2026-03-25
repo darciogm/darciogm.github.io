@@ -85,9 +85,9 @@ var board=JXG.JSXGraph.initBoard('jxgbox',{
 board.create('axis',[[0,0],[85,0]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10},minorTicks:0,ticksDistance:10}});
 board.create('axis',[[0,0],[0,35]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:5}});
 board.create('text',[45,-1.5,'<b><i>Y</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
-board.create('text',[-4,24,'<b><i>P*</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
+board.create('text',[-4,17.5,'<b><i>P*</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
 
-// Implicit curve P*(Y) = 20 + 2√Y
+// Implicit curve P*(Y) = 12 + 2√Y
 board.create('functiongraph',[function(y){return Pstar(y);},5,85],{strokeColor:'#C8102E',strokeWidth:2.5});
 
 // Current point
@@ -105,7 +105,7 @@ board.create('segment',[[function(){return Y0;},0],[function(){return Y0;},funct
 board.create('segment',[[0,function(){return Pstar(Y0);}],[function(){return Y0;},function(){return Pstar(Y0);}]],{strokeColor:'#999',dash:2,strokeWidth:1});
 
 // Label
-board.create('text',[function(){return Y0+2;},function(){return Pstar(Y0)+1.5;},'\\(P^*(Y)\\)'],{fontSize:12,fixed:true,color:'#C8102E',highlight:false});
+board.create('text',[function(){return Y0+2;},function(){return Pstar(Y0)-2;},'\\(P^*(Y)\\)'],{fontSize:12,fixed:true,color:'#C8102E',highlight:false});
 
 function updateAll(){
   Y0=+document.getElementById('sl-Y').value;
