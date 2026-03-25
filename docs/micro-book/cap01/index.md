@@ -203,7 +203,7 @@ Q^d = Q^s \quad \text{(equilíbrio)} \label{eq:1.4.3} \tag{1.4.3}
 !!! definition "Equilíbrio de Mercado"
     Um **equilíbrio de mercado** é uma configuração de preço \(P^*\) e quantidade \(Q^*\) na qual a quantidade que os consumidores desejam comprar é igual à quantidade que os produtores desejam vender: \(Q^d(P^*) = Q^s(P^*)\). No equilíbrio, não há pressão para que o preço mude — nenhum agente tem incentivo para alterar unilateralmente seu comportamento. Fora do equilíbrio, o excesso de demanda ou de oferta gera forças que empurram o preço de volta ao ponto de equilíbrio, como uma bola no fundo de uma tigela.
 
-<iframe src="../graficos/cap01/oferta-demanda.html" title="Figura 1.1 — Oferta e Demanda com Estática Comparativa" class="graph-iframe"></iframe>
+<iframe src="../graficos/cap01/oferta-demanda.html" title="Figura 1.1 — Oferta e Demanda com Estática Comparativa" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.1 — Oferta e Demanda com Estática Comparativa.** Ajuste a renda \(Y\), o custo dos insumos \(w\) e as inclinações das curvas para observar como \(P^*\) e \(Q^*\) se deslocam. O painel mostra as derivadas de estática comparativa \(\partial P^*/\partial Y\) e \(\partial P^*/\partial w\) em tempo real.
