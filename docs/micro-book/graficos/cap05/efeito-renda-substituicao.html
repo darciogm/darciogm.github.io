@@ -178,7 +178,7 @@
     var p1_init = 2.5, p2 = 1;
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-17, 170, 162, -17],
+      boundingbox: [-17, 170, 162, -50],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -202,7 +202,7 @@
 
     // X-axis label: centered horizontally, below ticks, bold italic
     board.create('text', [
-      162 / 2, -17 * 0.65,
+      162 / 2, -10,
       '<b><i>x</i><sub>1</sub></b>'
     ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
 
@@ -352,7 +352,7 @@
 
     // Arrows: SE (A->B green), IE (B->C blue), Total (A->C red)
     // We'll draw them as segments with arrows at y = -8
-    var arrowY = -8;
+    var arrowY = -20;
     // Substitution effect arrow (green)
     board.create('arrow', [
       function() { var s = getState(); return [cobbDouglas(s.alpha, s.M, p1_init).x1, arrowY]; },
@@ -371,7 +371,7 @@
       }
     ], { strokeColor: '#00897b', strokeWidth: 3, lastArrow: { type: 2, size: 6 } });
 
-    var esLabelYBase = arrowY - 5;
+    var esLabelYBase = arrowY - 7;
     var _lblES = board.create('text', [
       function() {
         var s = getState();
@@ -422,7 +422,7 @@
         var erLabelX = (bx + cobbDouglas(s.alpha, s.M, s.p1new).x1) / 2;
         // If ES and ER arrow midpoints are within 5 units of each other, stack vertically
         if (Math.abs(esLabelX - erLabelX) < 5) {
-          return esLabelYBase - 4;
+          return esLabelYBase - 6;
         }
         return esLabelYBase;
       },
@@ -430,7 +430,7 @@
     ], { fontSize: 11, color: '#1565c0', anchorX: 'middle' });
 
     // Total effect arrow (red, offset lower)
-    var arrowY2 = -13;
+    var arrowY2 = -34;
     board.create('arrow', [
       function() { var s = getState(); return [cobbDouglas(s.alpha, s.M, p1_init).x1, arrowY2]; },
       function() { var s = getState(); return [cobbDouglas(s.alpha, s.M, s.p1new).x1, arrowY2]; }
@@ -441,7 +441,7 @@
         var s = getState();
         return (cobbDouglas(s.alpha, s.M, p1_init).x1 + cobbDouglas(s.alpha, s.M, s.p1new).x1) / 2;
       },
-      arrowY2 - 5, 'Total'
+      arrowY2 - 7, 'Total'
     ], { fontSize: 11, color: '#C8102E', anchorX: 'middle' });
 
     var textLabels = [_lblES, _lblER, _lblTotal];
