@@ -83,11 +83,11 @@
 
   <script>
     var board1 = JXG.JSXGraph.initBoard('board1', {
-      boundingbox: [-0.15, 11, 1.12, -1.5],
+      boundingbox: [-0.15, 7, 1.12, -5],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
     var board2 = JXG.JSXGraph.initBoard('board2', {
-      boundingbox: [-0.15, 11, 1.12, -1.5],
+      boundingbox: [-0.15, 7, 1.12, -5],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
@@ -96,16 +96,16 @@
         ticks: { drawLabels: true, label: { fontSize: 10 }, ticksDistance: 0.25 },
         name: '', withLabel: false
       });
-      brd.create('axis', [[0,0],[0,10]], {
-        ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] } },
+      brd.create('axis', [[0,0],[0,6]], {
+        ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, ticksDistance: 2 },
         name: '', withLabel: false
       });
       // Y-axis: centered, rotated, bold
-      brd.create('text', [-0.12, 5, yLabel], {
+      brd.create('text', [-0.12, 1, yLabel], {
           fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
       });
       // X-axis: centered, bold
-      brd.create('text', [0.56, -1.2, xLabel], {
+      brd.create('text', [0.56, -4.5, xLabel], {
           fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
       });
     }
@@ -183,7 +183,7 @@
         pStar = (g.b11 - g.b10) / denomP;
         if (pStar >= 0 && pStar <= 1) {
           var eu2Star = pStar * g.b00 + (1-pStar) * g.b10;
-          var vline1 = board1.create('segment', [[pStar, 0], [pStar, 10]], {
+          var vline1 = board1.create('segment', [[pStar, -4], [pStar, 6]], {
             strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2, fixed: true
           });
           var pt1 = board1.create('point', [pStar, eu2Star], {
@@ -216,7 +216,7 @@
         qStar = (g.a11 - g.a10) / denomQ;
         if (qStar >= 0 && qStar <= 1) {
           var eu1Star = qStar * g.a00 + (1-qStar) * g.a01;
-          var vline2 = board2.create('segment', [[qStar, 0], [qStar, 10]], {
+          var vline2 = board2.create('segment', [[qStar, -4], [qStar, 6]], {
             strokeColor: '#1565c0', strokeWidth: 1.5, dash: 2, fixed: true
           });
           var pt2 = board2.create('point', [qStar, eu1Star], {
