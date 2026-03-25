@@ -88,6 +88,8 @@
       <button onclick="loadPreset('bos')">Batalha dos Sexos</button>
       <button onclick="loadPreset('hd')">Hawk-Dove</button>
       <button onclick="loadPreset('mp')">Matching Pennies</button>
+      <button onclick="loadPreset('rps')">Pedra-Papel-Tesoura</button>
+      <button onclick="loadPreset('coord3')">Coordenação 3x3</button>
     </div>
 
     <div id="matrix-container"></div>
@@ -122,6 +124,24 @@
         n: 2,
         names1: ['Cara', 'Coroa'], names2: ['Cara', 'Coroa'],
         data: [[{a:1,b:-1},{a:-1,b:1}],[{a:-1,b:1},{a:1,b:-1}]]
+      },
+      rps: {
+        n: 3,
+        names1: ['Pedra', 'Papel', 'Tesoura'], names2: ['Pedra', 'Papel', 'Tesoura'],
+        data: [
+          [{a:0,b:0},{a:-1,b:1},{a:1,b:-1}],
+          [{a:1,b:-1},{a:0,b:0},{a:-1,b:1}],
+          [{a:-1,b:1},{a:1,b:-1},{a:0,b:0}]
+        ]
+      },
+      coord3: {
+        n: 3,
+        names1: ['A', 'B', 'C'], names2: ['A', 'B', 'C'],
+        data: [
+          [{a:3,b:3},{a:0,b:0},{a:0,b:0}],
+          [{a:0,b:0},{a:2,b:2},{a:0,b:0}],
+          [{a:0,b:0},{a:0,b:0},{a:1,b:1}]
+        ]
       }
     };
 
@@ -131,6 +151,7 @@
       N = n;
       document.getElementById('btn-2x2').classList.toggle('active', n===2);
       document.getElementById('btn-3x3').classList.toggle('active', n===3);
+      if (n === 3) { loadPreset('rps'); return; }
       initMatrix();
     }
 
@@ -246,40 +267,19 @@
         }
       }
 
-      // Mixed strategy NE for 2x2
-      if (N === 2) {
-        html += '<hr style="margin:0.5rem 0">';
-        html += '<strong>EN em estrategias mistas (2x2):</strong><br>';
-
-        // Player 1 mixes with prob p on row 0
-        // Player 2 indifferent: p*b[0][j] + (1-p)*b[1][j] equal for j=0,1
-        // p*(b00 - b10) + b10 = p*(b01 - b11) + b11
-        // p*(b00-b10-b01+b11) = b11-b10
-        var b00 = payoffs[0][0].b, b01 = payoffs[0][1].b;
-        var b10 = payoffs[1][0].b, b11 = payoffs[1][1].b;
-        var denom_p = b00 - b10 - b01 + b11;
-
-        var a00 = payoffs[0][0].a, a01 = payoffs[0][1].a;
-        var a10 = payoffs[1][0].a, a11 = payoffs[1][1].a;
-        var denom_q = a00 - a01 - a10 + a11;
-
-        if (Math.abs(denom_p) > 1e-10 && Math.abs(denom_q) > 1e-10) {
-          var p = (b11 - b10) / denom_p;
-          var q = (a11 - a10) / denom_q;
-
-          if (p >= 0 && p <= 1 && q >= 0 && q <= 1) {
-            var eu1 = p * (q * a00 + (1-q) * a01) + (1-p) * (q * a10 + (1-q) * a11);
-            var eu2 = q * (p * b00 + (1-p) * b10) + (1-q) * (p * b01 + (1-p) * b11);
-
-            html += '\\(\\sigma_1^* = (' + p.toFixed(3) + ',\\; ' + (1-p).toFixed(3) + ')\\)<br>';
-            html += '\\(\\sigma_2^* = (' + q.toFixed(3) + ',\\; ' + (1-q).toFixed(3) + ')\\)<br>';
-            html += '\\(E[u_1] = ' + eu1.toFixed(3) + '\\), \\(E[u_2] = ' + eu2.toFixed(3) + '\\)';
-          } else {
-            html += 'Não existe EN completamente misto (probabilidades fora de [0,1]).';
-          }
-        } else {
-          html += 'Jogo possui estratégia dominante; EN misto degenera.';
-        }
+      // Mixed strategy NE via support enumeration (works for 2x2 and 3x3)
+      html += '<hr style="margin:0.5rem 0">';
+      html += '<strong>EN em estratégias mistas:</strong><br>';
+      var mixedNE = solveMixed();
+      if (mixedNE.length === 0) {
+        html += 'Nenhum EN completamente ou parcialmente misto encontrado.<br>';
+      }
+      for (var m = 0; m < mixedNE.length; m++) {
+        var ne = mixedNE[m];
+        html += '\\(\\sigma_1^* = (' + ne.p1.map(function(x){return x.toFixed(3);}).join(',\\;') + ')\\)<br>';
+        html += '\\(\\sigma_2^* = (' + ne.p2.map(function(x){return x.toFixed(3);}).join(',\\;') + ')\\)<br>';
+        html += '\\(E[u_1] = ' + ne.eu1.toFixed(3) + '\\), \\(E[u_2] = ' + ne.eu2.toFixed(3) + '\\)<br>';
+        if (m < mixedNE.length - 1) html += '<br>';
       }
 
       document.getElementById('info').innerHTML = html;
@@ -331,6 +331,136 @@
         }
       }
       return null;
+    }
+
+    // ---- General mixed NE solver via support enumeration ----
+    function getSubsets(n) {
+      var out = [];
+      for (var mask = 1; mask < (1 << n); mask++) {
+        var s = [];
+        for (var i = 0; i < n; i++) if (mask & (1 << i)) s.push(i);
+        out.push(s);
+      }
+      return out;
+    }
+
+    function gaussSolve(A, b) {
+      // Solve Ax = b via Gaussian elimination with partial pivoting
+      var n = A.length;
+      var M = [];
+      for (var i = 0; i < n; i++) {
+        M[i] = A[i].slice();
+        M[i].push(b[i]);
+      }
+      for (var col = 0; col < n; col++) {
+        var maxR = col, maxV = Math.abs(M[col][col]);
+        for (var r = col + 1; r < n; r++) {
+          if (Math.abs(M[r][col]) > maxV) { maxV = Math.abs(M[r][col]); maxR = r; }
+        }
+        if (maxV < 1e-12) return null;
+        var tmp = M[col]; M[col] = M[maxR]; M[maxR] = tmp;
+        for (var r = col + 1; r < n; r++) {
+          var f = M[r][col] / M[col][col];
+          for (var c = col; c <= n; c++) M[r][c] -= f * M[col][c];
+        }
+      }
+      var x = new Array(n);
+      for (var i = n - 1; i >= 0; i--) {
+        x[i] = M[i][n];
+        for (var c = i + 1; c < n; c++) x[i] -= M[i][c] * x[c];
+        x[i] /= M[i][i];
+      }
+      return x;
+    }
+
+    function solveMixed() {
+      var results = [];
+      var subs = getSubsets(N);
+      var seen = {};
+
+      for (var si = 0; si < subs.length; si++) {
+        for (var sj = 0; sj < subs.length; sj++) {
+          var S1 = subs[si], S2 = subs[sj];
+          if (S1.length !== S2.length) continue;
+          // Skip pure NE (size 1x1) — already reported above
+          if (S1.length === 1) continue;
+
+          var k = S1.length;
+
+          // Solve for p1: Player 1 mixes over S1 to make Player 2 indifferent over S2
+          var A1 = [], rhs1 = [];
+          for (var m = 1; m < k; m++) {
+            var row = [];
+            for (var idx = 0; idx < k; idx++) {
+              row.push(payoffs[S1[idx]][S2[0]].b - payoffs[S1[idx]][S2[m]].b);
+            }
+            A1.push(row); rhs1.push(0);
+          }
+          var sumR = []; for (var idx = 0; idx < k; idx++) sumR.push(1);
+          A1.push(sumR); rhs1.push(1);
+          var p1sol = gaussSolve(A1, rhs1);
+          if (!p1sol) continue;
+          var valid = true;
+          for (var idx = 0; idx < k; idx++) if (p1sol[idx] < -1e-8) { valid = false; break; }
+          if (!valid) continue;
+
+          // Solve for p2: Player 2 mixes over S2 to make Player 1 indifferent over S1
+          var A2 = [], rhs2 = [];
+          for (var m = 1; m < k; m++) {
+            var row = [];
+            for (var idx = 0; idx < k; idx++) {
+              row.push(payoffs[S1[0]][S2[idx]].a - payoffs[S1[m]][S2[idx]].a);
+            }
+            A2.push(row); rhs2.push(0);
+          }
+          var sumR2 = []; for (var idx = 0; idx < k; idx++) sumR2.push(1);
+          A2.push(sumR2); rhs2.push(1);
+          var p2sol = gaussSolve(A2, rhs2);
+          if (!p2sol) continue;
+          valid = true;
+          for (var idx = 0; idx < k; idx++) if (p2sol[idx] < -1e-8) { valid = false; break; }
+          if (!valid) continue;
+
+          // Build full prob vectors
+          var prob1 = new Array(N).fill(0), prob2 = new Array(N).fill(0);
+          for (var idx = 0; idx < k; idx++) {
+            prob1[S1[idx]] = Math.max(0, p1sol[idx]);
+            prob2[S2[idx]] = Math.max(0, p2sol[idx]);
+          }
+
+          // Compute expected payoffs in support
+          var v1 = 0;
+          for (var j = 0; j < N; j++) v1 += prob2[j] * payoffs[S1[0]][j].a;
+          var v2 = 0;
+          for (var i = 0; i < N; i++) v2 += prob1[i] * payoffs[i][S2[0]].b;
+
+          // Check no profitable deviation outside support
+          var devOk = true;
+          for (var i = 0; i < N; i++) {
+            if (prob1[i] > 1e-10) continue;
+            var eu = 0;
+            for (var j = 0; j < N; j++) eu += prob2[j] * payoffs[i][j].a;
+            if (eu > v1 + 1e-8) { devOk = false; break; }
+          }
+          if (!devOk) continue;
+          for (var j = 0; j < N; j++) {
+            if (prob2[j] > 1e-10) continue;
+            var eu = 0;
+            for (var i = 0; i < N; i++) eu += prob1[i] * payoffs[i][j].b;
+            if (eu > v2 + 1e-8) { devOk = false; break; }
+          }
+          if (!devOk) continue;
+
+          // Dedup
+          var key = prob1.map(function(x){return x.toFixed(4);}).join(',') + '|' +
+                    prob2.map(function(x){return x.toFixed(4);}).join(',');
+          if (seen[key]) continue;
+          seen[key] = true;
+
+          results.push({ p1: prob1, p2: prob2, eu1: v1, eu2: v2 });
+        }
+      }
+      return results;
     }
 
     function resetAll() {
