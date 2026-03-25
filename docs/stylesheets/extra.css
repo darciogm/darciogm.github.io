@@ -291,6 +291,12 @@ figcaption {
   font-size: 0.82rem;
   margin-top: 1.5rem;
   margin-bottom: 0.3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.md-typeset .md-typeset__scrollwrap {
+  display: flex;
+  justify-content: center;
 }
 
 .md-typeset table:not([class]) th {
