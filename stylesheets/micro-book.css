@@ -1,0 +1,585 @@
+/* ================================================================
+   MICRO BOOK — Styles specific to the Microeconomia textbook
+   ================================================================ */
+
+/* Tabelas centralizadas horizontalmente */
+.md-typeset table:not([class]) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Classe padrão para iframes de gráficos interativos */
+.graph-iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ================================================================
+   ADMONITIONS — 15 tipos padronizados
+   Regra: cor-base → borda 100%, fundo header ~10%, título cor-base,
+          conteúdo #333 (regra global no final)
+   ================================================================ */
+
+/* === TIPO 1: Intuição Econômica — âmbar escuro === */
+.md-typeset .admonition.idea,
+.md-typeset details.idea {
+  border-color: #E8A817;
+  color: #333;
+}
+.md-typeset .idea > .admonition-title,
+.md-typeset .idea > summary {
+  background-color: rgba(232, 168, 23, 0.10);
+  color: #E8A817;
+  border-bottom: 1px solid rgba(232, 168, 23, 0.15);
+}
+.md-typeset .idea > .admonition-title::before,
+.md-typeset .idea > summary::before {
+  background-color: #E8A817;
+  -webkit-mask-image: var(--md-admonition-icon--idea);
+  mask-image: var(--md-admonition-icon--idea);
+}
+
+/* === TIPO 2: Definição Formal — teal === */
+.md-typeset .admonition.definition,
+.md-typeset details.definition {
+  border-color: #00897B;
+  color: #333;
+}
+.md-typeset .definition > .admonition-title,
+.md-typeset .definition > summary {
+  background-color: rgba(0, 137, 123, 0.10);
+  color: #00897B;
+  border-bottom: 1px solid rgba(0, 137, 123, 0.15);
+}
+.md-typeset .definition > .admonition-title::before,
+.md-typeset .definition > summary::before {
+  background-color: #00897B;
+  -webkit-mask-image: var(--md-admonition-icon--definition);
+  mask-image: var(--md-admonition-icon--definition);
+}
+
+/* === TIPO 3: Teorema / Proposição — azul royal === */
+.md-typeset .admonition.theorem,
+.md-typeset details.theorem {
+  border-color: #1565C0;
+  color: #333;
+}
+.md-typeset .theorem > .admonition-title,
+.md-typeset .theorem > summary {
+  background-color: rgba(21, 101, 192, 0.10);
+  color: #1565C0;
+  border-bottom: 1px solid rgba(21, 101, 192, 0.15);
+}
+.md-typeset .theorem > .admonition-title::before,
+.md-typeset .theorem > summary::before {
+  background-color: #1565C0;
+  -webkit-mask-image: var(--md-admonition-icon--theorem);
+  mask-image: var(--md-admonition-icon--theorem);
+}
+
+/* === TIPO 4: Demonstração / Prova — roxo violeta === */
+.md-typeset .admonition.proof,
+.md-typeset details.proof {
+  border-color: #7C4DFF;
+  color: #333;
+}
+.md-typeset .proof > .admonition-title,
+.md-typeset .proof > summary {
+  background-color: rgba(124, 77, 255, 0.10);
+  color: #7C4DFF;
+  border-bottom: 1px solid rgba(124, 77, 255, 0.15);
+}
+.md-typeset .proof > .admonition-title::before,
+.md-typeset .proof > summary::before {
+  background-color: #7C4DFF;
+  -webkit-mask-image: var(--md-admonition-icon--proof);
+  mask-image: var(--md-admonition-icon--proof);
+}
+
+/* === TIPO 5: Dica / Macete — verde escuro === */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #2E7D32;
+  color: #333;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(46, 125, 50, 0.10);
+  color: #2E7D32;
+  border-bottom: 1px solid rgba(46, 125, 50, 0.15);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: #2E7D32;
+  -webkit-mask-image: var(--md-admonition-icon--tip);
+  mask-image: var(--md-admonition-icon--tip);
+}
+
+/* === TIPO 6: Cuidado / Erro Comum — laranja === */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: #EF6C00;
+  color: #333;
+}
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: rgba(239, 108, 0, 0.10);
+  color: #EF6C00;
+  border-bottom: 1px solid rgba(239, 108, 0, 0.15);
+}
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .warning > summary::before {
+  background-color: #EF6C00;
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+  mask-image: var(--md-admonition-icon--warning);
+}
+
+/* === TIPO 7: Exercício Resolvido — vermelho === */
+.md-typeset .admonition.exercicio-resolvido,
+.md-typeset details.exercicio-resolvido {
+  border-color: #C8102E;
+  color: #333;
+}
+.md-typeset .exercicio-resolvido > .admonition-title,
+.md-typeset .exercicio-resolvido > summary {
+  background-color: rgba(200, 16, 46, 0.10);
+  color: #C8102E;
+  border-bottom: 1px solid rgba(200, 16, 46, 0.15);
+}
+.md-typeset .exercicio-resolvido > .admonition-title::before,
+.md-typeset .exercicio-resolvido > summary::before {
+  background-color: #C8102E;
+  -webkit-mask-image: var(--md-admonition-icon--exercicio-resolvido);
+  mask-image: var(--md-admonition-icon--exercicio-resolvido);
+}
+
+/* === TIPO 8: Exercício Proposto — rosa escuro === */
+.md-typeset .admonition.exercicio-proposto,
+.md-typeset details.exercicio-proposto {
+  border-color: #AD1457;
+  color: #333;
+}
+.md-typeset .exercicio-proposto > .admonition-title,
+.md-typeset .exercicio-proposto > summary {
+  background-color: rgba(173, 20, 87, 0.10);
+  color: #AD1457;
+  border-bottom: 1px solid rgba(173, 20, 87, 0.15);
+}
+.md-typeset .exercicio-proposto > .admonition-title::before,
+.md-typeset .exercicio-proposto > summary::before {
+  background-color: #AD1457;
+  -webkit-mask-image: var(--md-admonition-icon--exercicio-proposto);
+  mask-image: var(--md-admonition-icon--exercicio-proposto);
+}
+
+/* === TIPO 9: Exemplo / Aplicação — ciano === */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-color: #00ACC1;
+  color: #333;
+}
+.md-typeset .example > .admonition-title,
+.md-typeset .example > summary {
+  background-color: rgba(0, 172, 193, 0.10);
+  color: #00ACC1;
+  border-bottom: 1px solid rgba(0, 172, 193, 0.15);
+}
+.md-typeset .example > .admonition-title::before,
+.md-typeset .example > summary::before {
+  background-color: #00ACC1;
+  -webkit-mask-image: var(--md-admonition-icon--example);
+  mask-image: var(--md-admonition-icon--example);
+}
+
+/* === TIPO 10: Box Brasil — verde bandeira === */
+.md-typeset .admonition.box-brasil,
+.md-typeset details.box-brasil {
+  border-color: #009C3B;
+  color: #333;
+}
+.md-typeset .box-brasil > .admonition-title,
+.md-typeset .box-brasil > summary {
+  background-color: rgba(0, 156, 59, 0.10);
+  color: #009C3B;
+  border-bottom: 1px solid rgba(0, 156, 59, 0.15);
+}
+.md-typeset .box-brasil > .admonition-title::before,
+.md-typeset .box-brasil > summary::before {
+  background-color: #009C3B;
+  -webkit-mask-image: var(--md-admonition-icon--box-brasil);
+  mask-image: var(--md-admonition-icon--box-brasil);
+}
+
+/* === TIPO 10b: Box Mundo — casos internacionais — azul-marinho === */
+.md-typeset .admonition.box-mundo,
+.md-typeset details.box-mundo {
+  border-color: #1B3A5C;
+  color: #333;
+}
+.md-typeset .box-mundo > .admonition-title,
+.md-typeset .box-mundo > summary {
+  background-color: rgba(27, 58, 92, 0.10);
+  color: #1B3A5C;
+  border-bottom: 1px solid rgba(27, 58, 92, 0.15);
+}
+.md-typeset .box-mundo > .admonition-title::before,
+.md-typeset .box-mundo > summary::before {
+  background-color: #1B3A5C;
+  -webkit-mask-image: var(--md-admonition-icon--box-mundo);
+  mask-image: var(--md-admonition-icon--box-mundo);
+}
+
+/* === TIPO 11: ANPEC / Prova — terracota === */
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  border-color: #D84315;
+  color: #333;
+}
+.md-typeset .question > .admonition-title,
+.md-typeset .question > summary {
+  background-color: rgba(216, 67, 21, 0.10);
+  color: #D84315;
+  border-bottom: 1px solid rgba(216, 67, 21, 0.15);
+}
+.md-typeset .question > .admonition-title::before,
+.md-typeset .question > summary::before {
+  background-color: #D84315;
+  -webkit-mask-image: var(--md-admonition-icon--question);
+  mask-image: var(--md-admonition-icon--question);
+}
+
+/* === TIPO 12: Nota / Observação — índigo === */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: #5C6BC0;
+  color: #333;
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(92, 107, 192, 0.10);
+  color: #5C6BC0;
+  border-bottom: 1px solid rgba(92, 107, 192, 0.15);
+}
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: #5C6BC0;
+  -webkit-mask-image: var(--md-admonition-icon--note);
+  mask-image: var(--md-admonition-icon--note);
+}
+
+/* === TIPO 13: Informação — azul céu === */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: #0288D1;
+  color: #333;
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: rgba(2, 136, 209, 0.10);
+  color: #0288D1;
+  border-bottom: 1px solid rgba(2, 136, 209, 0.15);
+}
+.md-typeset .info > .admonition-title::before,
+.md-typeset .info > summary::before {
+  background-color: #0288D1;
+  -webkit-mask-image: var(--md-admonition-icon--info);
+  mask-image: var(--md-admonition-icon--info);
+}
+
+/* === TIPO 14: R Interativo — púrpura === */
+.md-typeset .admonition.code,
+.md-typeset details.code {
+  border-color: #6A1B9A;
+  color: #333;
+}
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary {
+  background-color: rgba(106, 27, 154, 0.10);
+  color: #6A1B9A;
+  border-bottom: 1px solid rgba(106, 27, 154, 0.15);
+}
+.md-typeset .code > .admonition-title::before,
+.md-typeset .code > summary::before {
+  background-color: #6A1B9A;
+  -webkit-mask-image: var(--md-admonition-icon--code);
+  mask-image: var(--md-admonition-icon--code);
+}
+
+/* === TIPO 15: Pesquisa em Ação — grafite === */
+.md-typeset .admonition.pesquisa,
+.md-typeset details.pesquisa {
+  border-color: #37474F;
+  color: #333;
+}
+.md-typeset .pesquisa > .admonition-title,
+.md-typeset .pesquisa > summary {
+  background-color: rgba(55, 71, 79, 0.10);
+  color: #37474F;
+  border-bottom: 1px solid rgba(55, 71, 79, 0.15);
+}
+.md-typeset .pesquisa > .admonition-title::before,
+.md-typeset .pesquisa > summary::before {
+  background-color: #37474F;
+  -webkit-mask-image: var(--md-admonition-icon--pesquisa);
+  mask-image: var(--md-admonition-icon--pesquisa);
+}
+
+/* === REGRA GLOBAL: texto de conteúdo sempre preto === */
+.md-typeset .admonition > :not(.admonition-title),
+.md-typeset details > :not(summary) {
+  color: #333;
+}
+
+/* Equações em bloco (div.arithmatex) — fundo destacado */
+.md-typeset div.arithmatex {
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 4px;
+  margin: 1.5em 0;
+}
+
+/* Equações inline (span.arithmatex) — sempre transparente */
+.md-typeset span.arithmatex {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: inline !important;
+}
+
+/* MathJax inline — only reset visual decoration, never structural props */
+.md-typeset span.arithmatex mjx-container,
+.md-typeset mjx-container:not([display="true"]) {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* MathJax fraction bar — ensure visibility */
+.md-typeset mjx-line {
+  border-top: .06em solid !important;
+}
+
+
+/* Hub — Cards de navegação na página inicial */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.hub-card {
+  display: block;
+  padding: 1.3rem 1.4rem;
+  border-radius: 10px;
+  border-left: 5px solid #ccc;
+  background: var(--md-code-bg-color, #f5f5f5);
+  text-decoration: none !important;
+  color: inherit !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.25s ease, transform 0.2s ease, border-left-width 0.15s ease;
+  position: relative;
+}
+.hub-card::after {
+  content: "\2192";
+  position: absolute;
+  top: 1.3rem;
+  right: 1.2rem;
+  font-size: 1.1rem;
+  opacity: 0.25;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.hub-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+  transform: translateY(-3px);
+  border-left-width: 6px;
+}
+.hub-card:hover::after {
+  opacity: 0.6;
+  transform: translateX(3px);
+}
+.hub-card__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  margin-bottom: 0.25rem;
+}
+.hub-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+.hub-card__desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+.hub-card__caps {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.55;
+}
+.hub-card--fund  { border-left-color: #1565c0; }
+.hub-card--merc  { border-left-color: #00897b; }
+.hub-card--poder { border-left-color: #C8102E; }
+.hub-card--front { border-left-color: #7c4dff; }
+.hub-card--aplic { border-left-color: #e65100; }
+.hub-card--fund  .hub-card__title { color: #1565c0; }
+.hub-card--merc  .hub-card__title { color: #00897b; }
+.hub-card--poder .hub-card__title { color: #C8102E; }
+.hub-card--front .hub-card__title { color: #7c4dff; }
+.hub-card--aplic .hub-card__title { color: #e65100; }
+.hub-card--fund  .hub-card__label { color: #1565c0; }
+.hub-card--merc  .hub-card__label { color: #00897b; }
+.hub-card--poder .hub-card__label { color: #C8102E; }
+.hub-card--front .hub-card__label { color: #7c4dff; }
+.hub-card--aplic .hub-card__label { color: #e65100; }
+.hub-card--fund::after  { color: #1565c0; }
+.hub-card--merc::after  { color: #00897b; }
+.hub-card--poder::after { color: #C8102E; }
+.hub-card--front::after { color: #7c4dff; }
+.hub-card--aplic::after { color: #e65100; }
+
+/* ── Hero 2-column layout ── */
+.book-hero {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.book-hero__left {
+  flex: 3;
+}
+.book-hero__left h1 {
+  margin-top: 0;
+}
+.book-hero__right {
+  flex: 2;
+  min-width: 220px;
+}
+@media (max-width: 768px) {
+  .book-hero {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .book-hero__right {
+    width: 100%;
+  }
+}
+
+/* Contact / feedback bar (used inside hero right column) */
+.book-contact {
+  text-align: center;
+  margin: 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
+  background: rgba(200, 16, 46, 0.04);
+  border: 1px solid rgba(200, 16, 46, 0.12);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+}
+.book-contact a {
+  color: #C8102E;
+  font-weight: 600;
+  text-decoration: none;
+}
+.book-contact a:hover {
+  text-decoration: underline;
+}
+
+/* QR Code inside contact box */
+.book-contact__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+.book-contact__qr img {
+  width: 120px;
+  height: 120px;
+}
+.book-contact__qr-label {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 0.3rem;
+}
+
+/* Reference links row */
+.hub-ref-links {
+  text-align: center;
+  margin: 1rem 0;
+}
+.hub-ref-links .md-button {
+  margin: 0.3rem;
+}
+
+/* Hero features list */
+.hero-features ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.hero-features li {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+.hero-features li::before {
+  content: "—  ";
+  color: #C8102E;
+  font-weight: 700;
+}
+
+/* Section index pages — Part cards */
+.section-overview {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(200, 16, 46, 0.04);
+  border-radius: 6px;
+  border-left: 3px solid #C8102E;
+}
+.part-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin: 1rem 0;
+}
+.part-card {
+  padding: 1.2rem;
+  background: var(--md-code-bg-color, #f5f5f5);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.part-card h3 {
+  font-size: 1rem;
+  color: #C8102E;
+  margin-top: 0;
+}
+.part-card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+.part-card li {
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .hub-grid { grid-template-columns: 1fr; }
+  .part-grid { grid-template-columns: 1fr; }
+  .hero-features ul { flex-direction: column; gap: 0.3rem; }
+}

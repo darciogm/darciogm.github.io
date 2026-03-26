@@ -1,0 +1,15 @@
+TF	Se um bem é normal, então ele não pode ser um bem de Giffen.	true
+TF	Se um bem é de Giffen, então ele deve ser um bem inferior.	true
+TF	Suponha que existam apenas dois bens, cujas demandas são denotadas por x e y. Se x apresenta elasticidade-renda unitária e o consumidor gasta uma fração positiva de sua renda em cada bem, então y também apresenta elasticidade-renda unitária.	false
+TF	Suponha que existam apenas dois bens, 1 e 2. Suponha ainda que o bem 1 é um bem comum e que sua demanda é elástica relativamente ao seu próprio preço. Se o bem 1 é um complementar bruto do bem 2, então o bem 1 é um bem normal necessário.	false
+TF	Suponha que existam apenas dois bens, 1 e 2. Suponha ainda que o consumidor gasta metade de sua renda em cada bem e que o bem 1 é um bem normal de luxo, com elasticidade-renda estritamente maior que 2. Então o bem 2 deve ser um bem inferior.	true
+TF	Na situação inicial o consumidor alcança utilidade U = 3.	false
+TF	No segundo momento a cesta consumida será (x,y) = (1,3).	false
+TF	A variação compensadora (VC) é igual a vinte e cinco centavos, que devem ser dados ao consumidor após a mudança no preço.	false
+TF	A variação equivalente (VE) requer que se tire dinheiro do consumidor antes da variação no preço para que, neste caso, a utilidade se reduza em meia unidade.	true
+TF	Neste caso, as variações compensadora e equivalente são iguais ao excedente do consumidor.	true
+TF	A demanda marshalliana inicial é (X_0, Y_0) = (32, 288).	true
+TF	Dada a mudança de preço, a renda necessária para o indivíduo manter o nível de utilidade anterior é \$768.	true
+TF	O efeito-preço de Slutsky (sobre o bem X) decorrente da mudança de preço é EP = -16, ou seja, uma redução de 16 unidades no consumo de X.	false
+TF	O efeito-substituição de Slutsky (sobre o bem X) é ES = -6, ou seja, uma redução de 6 unidades no consumo de X.	false
+TF	O efeito-preço puro (sobre o bem X) é EP_{\text{puro}} = -7, ou seja, uma redução de 7 unidades no consumo de X.	true

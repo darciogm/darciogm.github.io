@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+  Edgeworth Box — Chapter 13
+  Library: JSXGraph
+  Features: Indifference curves from both corners, contract curve,
+            draggable allocation, Pareto improvements, endowment sliders
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caixa de Edgeworth</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 480px; height: 480px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .8rem; margin-bottom: .1rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .7rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .8rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 480px; height: auto; aspect-ratio: 1; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 480px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Dotações e Preferências</h3>
+      <div class="slider-group">
+        <label>Dotação A bem 1 (\(\omega_1^A\)): <span class="val" id="val-w1A">8</span></label>
+        <input type="range" id="sl-w1A" min="1" max="11" step="0.5" value="8">
+      </div>
+      <div class="slider-group">
+        <label>Dotação A bem 2 (\(\omega_2^A\)): <span class="val" id="val-w2A">3</span></label>
+        <input type="range" id="sl-w2A" min="1" max="11" step="0.5" value="3">
+      </div>
+      <div class="slider-group">
+        <label>Parâmetro A (\(\alpha\) Cobb-Douglas): <span class="val" id="val-aA">0.50</span></label>
+        <input type="range" id="sl-aA" min="0.15" max="0.85" step="0.05" value="0.5">
+      </div>
+      <div class="slider-group">
+        <label>Parâmetro B (\(\beta\) Cobb-Douglas): <span class="val" id="val-aB">0.50</span></label>
+        <input type="range" id="sl-aB" min="0.15" max="0.85" step="0.05" value="0.5">
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Total endowments: w1 = 12, w2 = 12 (fixed box size)
+    var W1 = 12, W2 = 12;
+    var w1A = 8, w2A = 3, alphaA = 0.5, alphaB = 0.5;
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1.5, W2 + 1.8, W1 + 1.8, -1.5],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: true
+    });
+
+    // Box border
+    board.create('polygon', [[0,0],[W1,0],[W1,W2],[0,W2]], {
+      fillColor: '#fafafa', fillOpacity: 1, borders: { strokeColor: '#333', strokeWidth: 1.5 },
+      vertices: { visible: false }, hasInnerPoints: false, highlight: false, fixed: true
+    });
+
+    // Labels
+    board.create('text', [-0.5, -0.5, 'A'], { fontSize: 14, cssStyle: 'font-weight:700;color:#1565c0;' });
+    board.create('text', [W1 + 0.3, W2 + 0.5, 'B'], { fontSize: 14, cssStyle: 'font-weight:700;color:#00897b;' });
+    board.create('text', [W1/2, -0.8, function(){ return '<b><i>Bem 1</i></b>'; }], { fontSize: 15, anchorX: 'middle', anchorY: 'middle', fixed: true, highlight: false });
+    board.create('text', [-1.0, W2/2, function(){ return '<b><i>Bem 2</i></b>'; }], { fontSize: 15, anchorX: 'middle', anchorY: 'middle', rotate: 90, fixed: true, highlight: false });
+
+    // Utility functions: U_A = x1^alpha * x2^(1-alpha), U_B = x1^beta * x2^(1-beta)
+    function UA(x1, x2) { return Math.pow(x1, alphaA) * Math.pow(x2, 1 - alphaA); }
+    function UB(x1, x2) { return Math.pow(x1, alphaB) * Math.pow(x2, 1 - alphaB); }
+
+    // Indifference curve for A at utility level u: x2 = (u / x1^alpha)^(1/(1-alpha))
+    function icA(u) {
+      return function(x1) {
+        if (x1 <= 0.01) return W2 + 10;
+        var val = Math.pow(u / Math.pow(x1, alphaA), 1 / (1 - alphaA));
+        return Math.min(val, W2 + 5);
+      };
+    }
+    // IC for B (measured from top-right): B's x1B = W1-x1A, x2B = W2-x2A
+    function icB(u) {
+      return function(x1A) {
+        var x1B = W1 - x1A;
+        if (x1B <= 0.01) return -10;
+        var x2B = Math.pow(u / Math.pow(x1B, alphaB), 1 / (1 - alphaB));
+        return W2 - Math.min(x2B, W2 + 5);
+      };
+    }
+
+    // Endowment point
+    var endowPt = board.create('point', [
+      function(){ return w1A; }, function(){ return w2A; }
+    ], { name: 'E', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [8, 5], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    // Draggable allocation point
+    var allocPt = board.create('point', [6, 6], {
+      name: 'X', size: 5, fillColor: '#333', strokeColor: '#333',
+      label: { offset: [8, 5], fontSize: 12 }
+    });
+    // Constrain to box
+    allocPt.on('drag', function() {
+      var x = Math.max(0.1, Math.min(W1 - 0.1, allocPt.X()));
+      var y = Math.max(0.1, Math.min(W2 - 0.1, allocPt.Y()));
+      allocPt.moveTo([x, y]);
+    });
+
+    // Indifference curves through allocation
+    var icACurves = [], icBCurves = [];
+    // A's IC through allocation
+    icACurves.push(board.create('functiongraph', [
+      function(x1) { var u = UA(allocPt.X(), allocPt.Y()); return icA(u)(x1); }
+    , 0.01, W1], { strokeColor: '#1565c0', strokeWidth: 1.8, dash: 0 }));
+    // B's IC through allocation
+    icBCurves.push(board.create('functiongraph', [
+      function(x1A) { var u = UB(W1 - allocPt.X(), W2 - allocPt.Y()); return icB(u)(x1A); }
+    , 0.01, W1 - 0.01], { strokeColor: '#00897b', strokeWidth: 1.8, dash: 0 }));
+
+    // ICs through endowment (dashed)
+    board.create('functiongraph', [
+      function(x1) { var u = UA(w1A, w2A); return icA(u)(x1); }
+    , 0.01, W1], { strokeColor: '#1565c0', strokeWidth: 1.2, dash: 3 });
+    board.create('functiongraph', [
+      function(x1A) { var u = UB(W1 - w1A, W2 - w2A); return icB(u)(x1A); }
+    , 0.01, W1 - 0.01], { strokeColor: '#00897b', strokeWidth: 1.2, dash: 3 });
+
+    // Contract curve: TMS_A = TMS_B
+    // TMS_A = alpha/(1-alpha) * x2A/x1A = beta/(1-beta) * x2B/x1B
+    // => alpha/(1-alpha) * x2A/x1A = beta/(1-beta) * (W2-x2A)/(W1-x1A)
+    // => x2A = [beta(1-alpha)*W2*x1A] / [alpha(1-beta)*(W1-x1A) + beta(1-alpha)*x1A]
+    var contractCurve = board.create('functiongraph', [
+      function(x1A) {
+        if (x1A <= 0.01 || x1A >= W1 - 0.01) return -10;
+        var rA = alphaA / (1 - alphaA);
+        var rB = alphaB / (1 - alphaB);
+        var num = rB * W2 * x1A;
+        var den = rA * (W1 - x1A) + rB * x1A;
+        return num / den;
+      }
+    , 0.01, W1 - 0.01], { strokeColor: '#C8102E', strokeWidth: 2, dash: 0, name: 'Curva de Contrato',
+      withLabel: true, label: { position: 'rt', offset: [-60, -15], fontSize: 10, cssStyle: 'color:#C8102E;' } });
+
+    function tmsA(x1, x2) { return alphaA / (1 - alphaA) * x2 / Math.max(x1, 0.01); }
+    function tmsB(x1, x2) { return alphaB / (1 - alphaB) * x2 / Math.max(x1, 0.01); }
+
+    function updateInfo() {
+      var x1A = allocPt.X(), x2A = allocPt.Y();
+      var x1B = W1 - x1A, x2B = W2 - x2A;
+      var uA = UA(x1A, x2A), uB = UB(x1B, x2B);
+      var uAe = UA(w1A, w2A), uBe = UB(W1 - w1A, W2 - w2A);
+      var tA = tmsA(x1A, x2A), tB = tmsB(x1B, x2B);
+      var pareto = (uA >= uAe - 0.001 && uB >= uBe - 0.001);
+      var onContract = Math.abs(tA - tB) < 0.15;
+
+      var html = '<b>Alocação X:</b> A=(' + x1A.toFixed(1) + ',' + x2A.toFixed(1) + '), B=(' + x1B.toFixed(1) + ',' + x2B.toFixed(1) + ')<br>';
+      html += '\\(U_A = ' + uA.toFixed(2) + '\\), \\(U_B = ' + uB.toFixed(2) + '\\)<br>';
+      html += '\\(TMS_A = ' + tA.toFixed(2) + '\\), \\(TMS_B = ' + tB.toFixed(2) + '\\)<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      if (pareto) html += '<span style="color:#00897b;font-weight:700;">Melhoria de Pareto em relação a E</span><br>';
+      else html += '<span style="color:#C8102E;">Não é melhoria de Pareto em relação a E</span><br>';
+      if (onContract) html += '<span style="color:#C8102E;font-weight:700;">Sobre a curva de contrato (eficiente)</span>';
+      else html += '<span style="color:#666;">Fora da curva de contrato (ineficiente)</span>';
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      w1A = parseFloat(document.getElementById('sl-w1A').value);
+      w2A = parseFloat(document.getElementById('sl-w2A').value);
+      alphaA = parseFloat(document.getElementById('sl-aA').value);
+      alphaB = parseFloat(document.getElementById('sl-aB').value);
+      document.getElementById('val-w1A').textContent = w1A.toFixed(1);
+      document.getElementById('val-w2A').textContent = w2A.toFixed(1);
+      document.getElementById('val-aA').textContent = alphaA.toFixed(2);
+      document.getElementById('val-aB').textContent = alphaB.toFixed(2);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-w1A').value = 8;
+      document.getElementById('sl-w2A').value = 3;
+      document.getElementById('sl-aA').value = 0.5;
+      document.getElementById('sl-aB').value = 0.5;
+      allocPt.moveTo([6, 6]);
+      update();
+    }
+
+    ['sl-w1A','sl-w2A','sl-aA','sl-aB'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    allocPt.on('drag', function(){ board.update(); updateInfo(); });
+    update();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

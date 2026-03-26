@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--
+  Utilidade de Fehr-Schmidt (Aversão à Inequidade)
+  Library: JSXGraph
+  Reason: Interactive sliders for α and β parameters
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilidade de Fehr-Schmidt — Aversão à Inequidade</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 420px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .info-box .eq {
+      text-align: center;
+      margin: 0.3rem 0;
+      color: #333;
+    }
+    .legend {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+    .legend-swatch {
+      width: 24px;
+      height: 3px;
+      margin-right: 8px;
+      border-radius: 2px;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros do jogador \(i\)</h3>
+      <div class="slider-group">
+        <label>\(\alpha_i\) (aversão à desvantagem): <span class="val" id="val-alpha">1.00</span></label>
+        <input type="range" id="slider-alpha" min="0.00" max="4.00" step="0.05" value="1.00">
+      </div>
+      <div class="slider-group">
+        <label>\(\beta_i\) (aversão à vantagem): <span class="val" id="val-beta">0.60</span></label>
+        <input type="range" id="slider-beta" min="0.00" max="0.95" step="0.05" value="0.60">
+      </div>
+      <div class="slider-group">
+        <label>\(y_i\) (payoff do jogador \(i\)): <span class="val" id="val-yi">50</span></label>
+        <input type="range" id="slider-yi" min="0" max="100" step="1" value="50">
+      </div>
+      <div class="info-box">
+        <div class="eq">\(U_i = y_i - \alpha_i \max(y_j - y_i, 0) - \beta_i \max(y_i - y_j, 0)\)</div>
+        <div style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+          Eixo horizontal: payoff do outro jogador \(y_j\)<br>
+          Eixo vertical: utilidade de \(i\)
+        </div>
+      </div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#C8102E;"></div>
+          Utilidade Fehr-Schmidt \(U_i(y_j)\)
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#ccc;"></div>
+          Utilidade autointeressada \(U_i = y_i\)
+        </div>
+      </div>
+      <div class="info-box" style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+        Utilidade máxima em: \(y_j\) = <span id="info-max">50</span><br>
+        \(U_i\) atual: <span id="info-util">50</span>
+      </div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-20, 115, 115, -160],
+      showCopyright: false,
+      showNavigation: false,
+      defaultAxes: {
+        x: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11 } } },
+        y: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
+      }
+    });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-20 * 0.55, 115 / 2, '<b><i>U</i><sub>i</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [115 / 2, -16 * 0.65, '<b><i>y</i><sub>j</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    var alphaP = 1.00, betaP = 0.60, yi = 50;
+
+    // Reference line: self-interested utility (constant at yi)
+    var selfLine = board.create('functiongraph', [
+      function(yj) { return yi; },
+      0, 100
+    ], { strokeColor: '#ccc', strokeWidth: 1, dash: 2 });
+
+    // Fehr-Schmidt utility curve
+    var fsCurve = board.create('functiongraph', [
+      function(yj) {
+        if (yj <= yi) {
+          // Disadvantageous: yj > yi doesn't apply here; yj <= yi means i is ahead
+          return yi - betaP * (yi - yj);
+        } else {
+          // Disadvantageous: yj > yi
+          return yi - alphaP * (yj - yi);
+        }
+      },
+      0, 100
+    ], { strokeColor: '#C8102E', strokeWidth: 3 });
+
+    // Vertical line at y_j = y_i (equality point)
+    var eqLine = board.create('segment', [[50, -4], [50, 110]], {
+      strokeColor: '#2a7f2a', strokeWidth: 1, dash: 3, fixed: true
+    });
+
+    var eqLabel = board.create('text', [52, 95, 'igualdade'], {
+      fontSize: 10, color: '#2a7f2a', fixed: true
+    });
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      eqLabel.setAttribute({ visible: show });
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-alpha').value = 1.00;
+      document.getElementById('slider-beta').value = 0.60;
+      document.getElementById('slider-yi').value = 50;
+      update();
+    }
+
+    function update() {
+      alphaP = parseFloat(document.getElementById('slider-alpha').value);
+      betaP = parseFloat(document.getElementById('slider-beta').value);
+      yi = parseInt(document.getElementById('slider-yi').value);
+
+      document.getElementById('val-alpha').textContent = alphaP.toFixed(2);
+      document.getElementById('val-beta').textContent = betaP.toFixed(2);
+      document.getElementById('val-yi').textContent = yi;
+
+      fsCurve.Y = function(yj) {
+        if (yj <= yi) {
+          return yi - betaP * (yi - yj);
+        } else {
+          return yi - alphaP * (yj - yi);
+        }
+      };
+
+      selfLine.Y = function() { return yi; };
+
+      eqLine.point1.moveTo([yi, -4]);
+      eqLine.point2.moveTo([yi, 110]);
+      eqLabel.moveTo([yi + 2, 95]);
+
+      document.getElementById('info-max').textContent = yi;
+      document.getElementById('info-util').textContent = yi;
+
+      board.update();
+    }
+
+    document.getElementById('slider-alpha').addEventListener('input', update);
+    document.getElementById('slider-beta').addEventListener('input', update);
+    document.getElementById('slider-yi').addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

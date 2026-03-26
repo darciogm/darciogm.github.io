@@ -1,0 +1,10 @@
+TF	A ordem em que estratégias fracamente dominadas são eliminadas é relevante, pois pode afetar o conjunto das estratégias sobreviventes.	true
+TF	No jogo abaixo, T, M, B são estratégias de J1 e E, C, D de J2. As estratégias racionalizáveis são T, M, E.	false
+TF	No equilíbrio de Nash em mistas do jogo abaixo, J1 joga T com probabilidade 1/3 e B com 2/3, J2 joga E com 2/3 e D com 1/3.	true
+TF	No jogo abaixo existe um único equilíbrio de Nash em puras.	false
+TF	Todo jogo na forma normal possui um equilíbrio de Nash em estratégias mistas.	false
+TF	Em um Duopólio de Cournot com c_1(q_1) = q_1^2/2, c_2(q_2) = q_2^2 e P(Q) = 11 - Q, o equilíbrio é (q_1^, q_2^; P^*) = (3, 2; 6).	true
+TF	Ao comparar oligopolização pelo Índice de Lerner, a indústria mais oligopolizada tem necessariamente maior HHI.	false
+TF	No equilíbrio de Stackelberg, a seguidora lucra mais que em Cournot.	false
+TF	No equilíbrio de Stackelberg, a isoprofit da líder tangencia a curva de reação da seguidora.	true
+TF	Duopólio de Bertrand repetido infinitamente: se competir dá lucro 0, cartel dá 40 cada, desviar dá 200, então a menor taxa de desconto para sustentar o cartel com GRIM é \delta = 0{,}25.	false

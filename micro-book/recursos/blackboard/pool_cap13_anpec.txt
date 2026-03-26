@@ -1,0 +1,15 @@
+TF	Se as curvas de demanda e oferta do mercado forem lineares, sendo p o preço do produto e t um imposto específico, então dp/dt = \eta/(\eta - \varepsilon), em que \eta é a elasticidade preço da oferta e \varepsilon é a elasticidade preço da demanda;	true
+TF	No caso de um imposto específico t, o equilíbrio do mercado será diferente se o imposto for cobrado dos vendedores ou dos compradores;	false
+TF	Se a elasticidade preço da demanda for 0 (zero) e a elasticidade preço da oferta for 1, o custo do imposto específico recairá totalmente sobre os produtores;	false
+TF	O peso morto decorrente da introdução de um imposto específico em um mercado com curvas de oferta e demanda lineares não depende do preço antes da incidência do imposto;	true
+TF	Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.	false
+TF	A função de demanda consistente com o preço e a quantidade antes do embargo é D_1(p) = 116 - 0{,}2p.	false
+TF	A função de oferta que é consistente com o equilíbrio antes do embargo é S_1(p) = 60 + 0{,}5p.	false
+TF	A função de oferta após o embargo é S_2(p) = 50 + 0{,}25p.	true
+TF	Após o embargo, o preço de equilíbrio será de \$120 dólares, e a quantidade de equilíbrio será de 80 milhões de barris/dia.	true
+TF	Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.	false
+TF	No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.	false
+TF	No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.	true
+TF	Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.	false
+TF	Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.	false
+TF	Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.	true

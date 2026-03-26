@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+  Production Possibilities Frontier — Chapter 13
+  Library: JSXGraph
+  Features: Concave PPF, draggable point on frontier, TMT display,
+            efficient/inefficient/infeasible regions, technology slider
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fronteira de Possibilidades de Produção</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 500px; height: 450px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .legend { font-size: .78rem; margin-top: .5rem; line-height: 1.5; }
+    .legend span { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 500px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 500px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Dotação de recursos (\(R\)): <span class="val" id="val-R">10</span></label>
+        <input type="range" id="sl-R" min="5" max="15" step="0.5" value="10">
+      </div>
+      <div class="slider-group">
+        <label>Posição na FPP (\(\theta\)): <span class="val" id="val-t">0.50</span></label>
+        <input type="range" id="sl-t" min="0.05" max="0.95" step="0.01" value="0.5">
+      </div>
+      <div class="info-box" id="info"></div>
+      <div class="legend">
+        <span style="background:#00897b;opacity:.3;"></span> Factível (eficiente na fronteira)<br>
+        <span style="background:#1565c0;opacity:.3;"></span> Factível (ineficiente, interior)<br>
+        <span style="background:#C8102E;opacity:.15;"></span> Infactível (exterior)
+      </div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var R = 10, theta = 0.5;
+    // PPF: x1^2/R^2 + x2^2/R^2 = 1 => quarter-ellipse, but let's use concave:
+    // x2 = R*sqrt(1 - (x1/R)^2) => circle quarter => concave to origin.
+    // More interesting: x2 = R*(1 - (x1/R)^n)^(1/n) with n>1 for concavity
+    var n = 2; // circle
+
+    function fpp(x1) {
+      if (x1 < 0 || x1 > R) return -1;
+      var ratio = x1 / R;
+      return R * Math.pow(1 - Math.pow(ratio, n), 1 / n);
+    }
+    // TMT = -dx2/dx1
+    function tmt(x1) {
+      if (x1 <= 0.01) return 0;
+      var ratio = x1 / R;
+      var inner = 1 - Math.pow(ratio, n);
+      if (inner <= 0.001) return Infinity;
+      return Math.pow(ratio, n - 1) / Math.pow(inner, (n - 1) / n);
+    }
+
+    function ptOnFPP() {
+      var x1 = theta * R;
+      return [x1, fpp(x1)];
+    }
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2, 19, 19, -2],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[17,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 },
+      name: '', withLabel: false });
+    board.create('text', [9.5, -1.3, '<b><i>Bem 1 (X<sub>1</sub>)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('axis', [[0,0],[0,17]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  },
+      name: '', withLabel: false });
+    board.create('text', [-1.1, 9.5, '<b><i>Bem 2 (X<sub>2</sub>)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    // Shade feasible region (under PPF)
+    var feasiblePts = [];
+    for (var i = 0; i <= 50; i++) feasiblePts.push(i);
+    // Use curve + fill via polygon approximation
+    var feasibleVerts = [];
+    function buildFeasible() {
+      var pts = [[0, 0]];
+      for (var i = 0; i <= 40; i++) {
+        var x1 = (i / 40) * R;
+        pts.push([x1, fpp(x1)]);
+      }
+      pts.push([R, 0]);
+      return pts;
+    }
+
+    // We'll draw the PPF as a curve and an interior point
+    var ppfCurve = board.create('functiongraph', [
+      function(x1) { return fpp(x1); }
+    , 0, function(){ return R; }], {
+      strokeColor: '#C8102E', strokeWidth: 2.5, name: 'FPP', withLabel: true,
+      label: { position: 'rt', offset: [-30, 10], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' }
+    });
+
+    // Point on frontier
+    var fppPt = board.create('point', [
+      function(){ return ptOnFPP()[0]; },
+      function(){ return ptOnFPP()[1]; }
+    ], { name: 'P', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [10, 5], fontSize: 12, cssStyle: 'font-weight:700;' } });
+
+    // Interior point (inefficient)
+    var intPt = board.create('point', [
+      function(){ return R * 0.3; },
+      function(){ return R * 0.3; }
+    ], { name: 'I', size: 4, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true,
+         label: { offset: [8, 5], fontSize: 11 } });
+    board.create('text', [
+      function(){ return R * 0.3 + 0.5; },
+      function(){ return R * 0.3 - 0.6; },
+      'Ineficiente'
+    ], { fontSize: 9, cssStyle: 'color:#1565c0;' });
+
+    // Exterior point (infeasible)
+    var extPt = board.create('point', [
+      function(){ return R * 0.8; },
+      function(){ return R * 0.8; }
+    ], { name: 'F', size: 4, fillColor: '#999', strokeColor: '#999', fixed: true,
+         label: { offset: [8, 5], fontSize: 11 } });
+    board.create('text', [
+      function(){ return R * 0.8 + 0.5; },
+      function(){ return R * 0.8 - 0.6; },
+      'Infactível'
+    ], { fontSize: 9, cssStyle: 'color:#999;' });
+
+    // Tangent line at P showing TMT slope
+    var tangentLine = board.create('line', [
+      function(){
+        var p = ptOnFPP();
+        var t = tmt(p[0]);
+        // line through P with slope -t: y - p[1] = -t*(x - p[0])
+        // => y = p[1] + t*p[0] - t*x => a*x + b*y + c = 0 => t*x + y - (p[1]+t*p[0]) = 0
+        return [-(p[1] + t * p[0]), t, 1];
+      }
+    ], { strokeColor: '#C8102E', strokeWidth: 1.2, dash: 3, fixed: true,
+         point1: { visible: false }, point2: { visible: false } });
+
+    function updateInfo() {
+      var p = ptOnFPP();
+      var t = tmt(p[0]);
+      var html = '<b>Ponto na FPP:</b> \\(X_1 = ' + p[0].toFixed(2) + '\\), \\(X_2 = ' + p[1].toFixed(2) + '\\)<br>';
+      html += '<b>Taxa Marginal de Transformação:</b><br>';
+      html += '<div style="text-align:center;margin:.3rem 0;">\\(TMT = \\frac{CMg_1}{CMg_2} = ' + t.toFixed(3) + '\\)</div>';
+      html += '<small>A TMT mede o custo de oportunidade de produzir uma unidade adicional do bem 1 em termos do bem 2.</small>';
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      R = parseFloat(document.getElementById('sl-R').value);
+      theta = parseFloat(document.getElementById('sl-t').value);
+      document.getElementById('val-R').textContent = R.toFixed(1);
+      document.getElementById('val-t').textContent = theta.toFixed(2);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-R').value = 10;
+      document.getElementById('sl-t').value = 0.5;
+      update();
+    }
+
+    ['sl-R','sl-t'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

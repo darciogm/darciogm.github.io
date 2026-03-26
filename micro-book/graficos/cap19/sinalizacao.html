@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+  Interactive Spence Signaling Model — Chapter 18
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinalização — Modelo de Spence</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+ #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Produtividade alta (\(\theta_H\)): <span class="val" id="val-tH">100</span></label>
+        <input type="range" id="sl-tH" min="60" max="150" step="1" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Produtividade baixa (\(\theta_L\)): <span class="val" id="val-tL">50</span></label>
+        <input type="range" id="sl-tL" min="20" max="80" step="1" value="50">
+      </div>
+      <div class="slider-group">
+        <label>Fração tipo H (\(\mu\)): <span class="val" id="val-mu">0.50</span></label>
+        <input type="range" id="sl-mu" min="0.05" max="0.95" step="0.01" value="0.50">
+      </div>
+      <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Spence model:
+    // Type H: productivity theta_H, education cost c_H(s) = s/theta_H
+    // Type L: productivity theta_L, education cost c_L(s) = s/theta_L
+    // Separating equilibrium: H gets s*, L gets 0
+    // s* in [theta_L*(theta_H-theta_L), theta_H*(theta_H-theta_L)]
+    // Least-cost separating: s* = theta_L*(theta_H-theta_L)
+    // Pooling wage: mu*theta_H + (1-mu)*theta_L
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-540, 190, 5040, -20],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[4300,0]], {
+      ticks: { drawLabels: true, ticksDistance: 1000, minorTicks: 1, label:{fontSize:10} },
+      name: '', withLabel: false
+    });
+    board.create('text', [2520.0, -13.0, '<b><i>Educação (s)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('axis', [[0,0],[0,165]], {
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      name: '', withLabel: false
+    });
+    board.create('text', [-297.0, 95.0, '<b><i>Salário / Payoff</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    var tH = 100, tL = 50, mu = 0.50;
+
+    function sStarMin() { return tL * (tH - tL); }
+    function sStarMax() { return tH * (tH - tL); }
+    function sStar() { return sStarMin(); } // least-cost
+    function wPool() { return mu * tH + (1-mu) * tL; }
+
+    // Cost curve for type H: c_H(s) = s/theta_H => net payoff if wage=w: w - s/theta_H
+    // Cost curve for type L: c_L(s) = s/theta_L => net payoff if wage=w: w - s/theta_L
+
+    // Education cost curves (as lines from origin)
+    var costH = board.create('functiongraph', [
+      function(s) { return s / tH; }
+    ], { strokeColor: '#1565c0', strokeWidth: 2, dash: 3,
+         name: 'Custo H: s/θ_H', withLabel: true,
+         label: { position: 'rt', offset: [-30, 10], fontSize: 10 } });
+
+    var costL = board.create('functiongraph', [
+      function(s) { return s / tL; }
+    ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 3,
+         name: 'Custo L: s/θ_L', withLabel: true,
+         label: { position: 'rt', offset: [-30, 10], fontSize: 10 } });
+
+    // Wage schedule in separating equilibrium: step function
+    // w = theta_L if s < s*, w = theta_H if s >= s*
+    var wageL = board.create('segment', [
+      [0, function(){ return tL; }],
+      [function(){ return sStar(); }, function(){ return tL; }]
+    ], { strokeColor: '#00897b', strokeWidth: 3, fixed: true });
+
+    var wageH = board.create('segment', [
+      [function(){ return sStar(); }, function(){ return tH; }],
+      [4300, function(){ return tH; }]
+    ], { strokeColor: '#00897b', strokeWidth: 3, fixed: true });
+
+    // Vertical step
+    var wageStep = board.create('segment', [
+      [function(){ return sStar(); }, function(){ return tL; }],
+      [function(){ return sStar(); }, function(){ return tH; }]
+    ], { strokeColor: '#00897b', strokeWidth: 2, dash: 2, fixed: true });
+
+    // Pooling wage horizontal line
+    var poolLine = board.create('functiongraph', [
+      function(s) { return wPool(); }
+    ], { strokeColor: '#999', strokeWidth: 1.5, dash: 4 });
+
+    var poolLabel = board.create('text', [
+      100, function(){ return wPool() + 4; },
+      function(){ return 'Pooling: ' + wPool().toFixed(0); }
+    ], { fontSize: 10, cssStyle: 'color:#999;' });
+
+    // Shade separating equilibrium region for s*
+    var sepRegion = board.create('polygon', [
+      [function(){ return sStarMin(); }, 0],
+      [function(){ return sStarMax(); }, 0],
+      [function(){ return sStarMax(); }, 3],
+      [function(){ return sStarMin(); }, 3]
+    ], {
+      fillColor: '#1565c0', fillOpacity: 0.15, borders: {strokeWidth: 0},
+      vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // s* marker (least cost)
+    var sStarLine = board.create('segment', [
+      [function(){ return sStar(); }, 0],
+      [function(){ return sStar(); }, function(){ return tH + 5; }]
+    ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2, fixed: true });
+
+    var sStarLabel = board.create('text', [
+      function(){ return sStar(); }, -8,
+      function(){ return 's*=' + sStar().toFixed(0); }
+    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    // Net payoff points for type H choosing s* and type L choosing 0
+    var ptH = board.create('point', [
+      function(){ return sStar(); }, function(){ return tH; }
+    ], { name: 'H', size: 4, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true,
+         label: { offset: [8, 5], fontSize: 11, cssStyle: 'color:#1565c0;font-weight:700;' } });
+
+    var ptL = board.create('point', [
+      0, function(){ return tL; }
+    ], { name: 'L', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [-15, 5], fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    // Indifference curve for type H through (s*, theta_H): theta_H - s*/theta_H = w - s/theta_H
+    // => w = theta_H - s*/theta_H + s/theta_H = theta_H + (s - s*)/theta_H
+    var icH = board.create('functiongraph', [
+      function(s) { return tH - sStar()/tH + s/tH; }
+    ], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 4 });
+
+    // Indifference curve for type L through (0, theta_L): theta_L = w - s/theta_L
+    // => w = theta_L + s/theta_L
+    var icL = board.create('functiongraph', [
+      function(s) { return tL + s/tL; }
+    ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 4 });
+
+    // Labels
+    var lblWH = board.create('text', [-150, function(){ return tH; },
+      function(){ return 'θ_H=' + tH; }
+    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;' });
+
+    var lblWL = board.create('text', [-150, function(){ return tL; },
+      function(){ return 'θ_L=' + tL; }
+    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    function updateInfo() {
+      var sMin = sStarMin();
+      var sMax = sStarMax();
+      var sLC = sMin;
+      var netH = tH - sLC / tH;
+      var netL = tL; // type L gets theta_L, no education
+      var costRatio = (1/tL) / (1/tH);
+
+      var html = '<b>Custo educação:</b> \\(c_H(s) = s/' + tH + '\\), \\(c_L(s) = s/' + tL + '\\)<br>';
+      html += '<b>Razao de custos:</b> \\(c_L/c_H = ' + costRatio.toFixed(2) + '\\)<br>';
+      html += '<b>Single-crossing:</b> ' + (tH > tL ? '<span style="color:#00897b;font-weight:700;">Satisfeita</span>' : '<span style="color:#C8102E;">Violada</span>') + '<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<b>Equilíbrio separador:</b><br>';
+      html += '\\(s^* \\in [' + sMin.toFixed(0) + ',\\,' + sMax.toFixed(0) + ']\\)<br>';
+      html += '<b>Menor custo:</b> \\(s^* = \\theta_L(\\theta_H - \\theta_L) = ' + sLC.toFixed(0) + '\\)<br>';
+      html += '<b>Payoff H:</b> \\(\\theta_H - s^*/\\theta_H = ' + netH.toFixed(1) + '\\)<br>';
+      html += '<b>Payoff L:</b> \\(\\theta_L = ' + netL.toFixed(0) + '\\)<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<b>Equilíbrio pooling:</b> \\(w = ' + wPool().toFixed(1) + '\\)<br>';
+      html += '<span style="font-size:.78rem;color:#666;">Regiao azul clara: intervalo de s* validos</span>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      tH = parseFloat(document.getElementById('sl-tH').value);
+      tL = parseFloat(document.getElementById('sl-tL').value);
+      mu = parseFloat(document.getElementById('sl-mu').value);
+      document.getElementById('val-tH').textContent = tH.toFixed(0);
+      document.getElementById('val-tL').textContent = tL.toFixed(0);
+      document.getElementById('val-mu').textContent = mu.toFixed(2);
+      board.update();
+      updateInfo();
+    }
+
+    var textLabels = [poolLabel, sStarLabel, lblWH, lblWL];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update(); 
+    }
+
+
+    function resetAll() {
+      document.getElementById('sl-tH').value = 100;
+      document.getElementById('sl-tL').value = 50;
+      document.getElementById('sl-mu').value = 0.50;
+      update();
+    }
+
+    ['sl-tH','sl-tL','sl-mu'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

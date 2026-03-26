@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--
+  Lump Sum Principle — Interactive Graph (Chapter 4)
+  Library: JSXGraph
+  Function types: Cobb-Douglas, Linear, Leontief, CES
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principio do Montante Fixo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .fn-btn.active { background: #C8102E; color: #fff; }
+    .fn-btn:hover:not(.active) { background: rgba(200,16,46,0.08); }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; line-height: 1.7; }
+    .info-box .eq { text-align: center; margin: 0.2rem 0; color: #333; }
+    .legend { font-size: 0.8rem; margin-top: 0.5rem; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 700px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+  <div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Função Utilidade</h3>
+      <div class="fn-selector">
+        <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
+        <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
+        <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
+        <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+      </div>
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Renda \(M\): <span class="val" id="val-M">80</span></label>
+        <input type="range" id="slider-M" min="20" max="100" step="1" value="80">
+      </div>
+      <div class="slider-group">
+        <label>Preço \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>Preço \(p_2\): <span class="val" id="val-p2">4</span></label>
+        <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>Imposto unitário \(t\): <span class="val" id="val-t">2.0</span></label>
+        <input type="range" id="slider-t" min="0.5" max="10" step="0.5" value="2">
+      </div>
+      <div class="slider-group" id="rho-group" style="display:none;">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">-1.00</span></label>
+        <input type="range" id="slider-rho" min="-5" max="0.9" step="0.1" value="-1">
+      </div>
+      <div class="legend">
+        <span style="background:#C8102E;"></span> Original &nbsp;
+        <span style="background:#1565c0;"></span> Imposto unitário &nbsp;
+        <span style="background:#00897b;"></span> <em>Lump sum</em>
+      </div>
+      <div class="info-box" id="info">
+        <div class="eq" id="eq-rev"></div>
+        <div class="eq" id="eq-ut"></div>
+        <div class="eq" id="eq-ul"></div>
+        <div class="eq" id="eq-diff"></div>
+      </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var ALPHA = 0.5;
+    var currentFn = 'cd';
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-3, 29.5, 28, -3],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5, label: { anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board.create('text', [
+      -3 * 0.55, 29.5 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board.create('text', [
+      28 / 2, -3 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+    function getP() {
+      return {
+        M: parseFloat(document.getElementById('slider-M').value),
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        p2: parseFloat(document.getElementById('slider-p2').value),
+        t: parseFloat(document.getElementById('slider-t').value)
+      };
+    }
+    function getRho() { return parseFloat(document.getElementById('slider-rho').value); }
+
+    function setFn(fn) {
+      currentFn = fn;
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === fn); });
+      document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      updateAll();
+    }
+
+    function utilVal(x1, x2) {
+      var a = ALPHA, b = 1-a;
+      if (x1 <= 0 || x2 <= 0) {
+        if (currentFn === 'linear') return a*Math.max(x1,0) + b*Math.max(x2,0);
+        return 0;
+      }
+      switch (currentFn) {
+        case 'cd': return Math.pow(x1,a)*Math.pow(x2,b);
+        case 'linear': return a*x1+b*x2;
+        case 'leontief': return Math.min(x1/a,x2/b);
+        case 'ces':
+          var r=getRho();
+          if (Math.abs(r)<0.05) return Math.pow(x1,a)*Math.pow(x2,b);
+          return Math.pow(a*Math.pow(x1,r)+b*Math.pow(x2,r),1/r);
+      }
+    }
+
+    function icX2(x1, U) {
+      var a=ALPHA, b=1-a;
+      switch (currentFn) {
+        case 'cd':
+          if (x1<=0.01||U<=0) return NaN;
+          return Math.pow(U/Math.pow(x1,a),1/b);
+        case 'linear':
+          var v=(U-a*x1)/b; return v>=0?v:NaN;
+        case 'leontief': return NaN;
+        case 'ces':
+          var r=getRho();
+          if (Math.abs(r)<0.05) { if(x1<=0.01||U<=0) return NaN; return Math.pow(U/Math.pow(x1,a),1/b); }
+          if (x1<=0.01) return NaN;
+          var s=Math.pow(U,r)-a*Math.pow(x1,r);
+          if (s<=0) return NaN;
+          return Math.pow(s/b,1/r);
+      }
+    }
+
+    function optBundle(M, p1, p2) {
+      var a=ALPHA, b=1-a;
+      switch (currentFn) {
+        case 'cd': return { x1: a*M/p1, x2: b*M/p2 };
+        case 'linear':
+          var b1=a/p1, b2=b/p2;
+          if (b1>b2+0.0001) return { x1: M/p1, x2: 0.001 };
+          if (b2>b1+0.0001) return { x1: 0.001, x2: M/p2 };
+          return { x1: M/p1/2, x2: M/p2/2 };
+        case 'leontief':
+          return { x1: a*M/(a*p1+b*p2), x2: b*M/(a*p1+b*p2) };
+        case 'ces':
+          var rho=getRho();
+          if (Math.abs(rho)<0.05) return { x1: a*M/p1, x2: b*M/p2 };
+          var sigma=1/(1-rho);
+          var R=Math.pow((b/a)*(p1/p2), sigma);
+          if (!isFinite(R)||R<0) return { x1: M/p1, x2: 0.01 };
+          return { x1: M/(p1+p2*R), x2: R*M/(p1+p2*R) };
+      }
+    }
+
+    function computeAll() {
+      var p = getP();
+      var p1t = p.p1 + p.t;
+
+      // Per-unit tax optimum
+      var ot = optBundle(p.M, p1t, p.p2);
+      var Ut = utilVal(ot.x1, ot.x2);
+      var Rev = p.t * ot.x1;
+
+      // Lump sum with same revenue
+      var Ml = p.M - Rev;
+      var ol = optBundle(Math.max(Ml, 0.1), p.p1, p.p2);
+      var Ul = utilVal(ol.x1, ol.x2);
+
+      return {
+        x1t: ot.x1, x2t: ot.x2, Ut: Ut,
+        x1l: ol.x1, x2l: ol.x2, Ul: Ul,
+        Rev: Rev, p1t: p1t, Ml: Ml
+      };
+    }
+
+    var dynObjs = [];
+    function clearDyn() { dynObjs.forEach(function(o){board.removeObject(o);}); dynObjs=[]; }
+
+    function toggleLabels() {
+      updateAll();
+    }
+
+    function drawAll() {
+      clearDyn();
+      var p = getP();
+      var c = computeAll();
+
+      // Original budget line (red)
+      dynObjs.push(board.create('segment', [[0, p.M/p.p2], [p.M/p.p1, 0]], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
+
+      // Per-unit tax budget line (blue)
+      dynObjs.push(board.create('segment', [[0, p.M/p.p2], [p.M/c.p1t, 0]], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+
+      // Lump sum budget line (teal)
+      if (c.Ml > 0) {
+        dynObjs.push(board.create('segment', [[0, c.Ml/p.p2], [c.Ml/p.p1, 0]], { strokeColor: '#00897b', strokeWidth: 2.5 }));
+      }
+
+      // ICs
+      function drawIC(U, color) {
+        if (currentFn === 'leontief') {
+          var vx = ALPHA*U, vy = (1-ALPHA)*U;
+          dynObjs.push(board.create('segment', [[vx,vy],[vx,50]], { strokeColor: color, strokeWidth: 2 }));
+          dynObjs.push(board.create('segment', [[vx,vy],[50,vy]], { strokeColor: color, strokeWidth: 2 }));
+        } else {
+          dynObjs.push(board.create('curve', [
+            function(t){return t;},
+            (function(Uval){return function(t){var v=icX2(t,Uval);return (v>0&&v<50)?v:NaN;};})(U),
+            0.05, 25
+          ], { strokeColor: color, strokeWidth: 2 }));
+        }
+      }
+      drawIC(c.Ut, '#1565c0');
+      drawIC(c.Ul, '#00897b');
+
+      // Optimal points
+      dynObjs.push(board.create('point', [c.x1t, c.x2t], { name:'', size:4, strokeColor:'#1565c0', fillColor:'#1565c0', fixed:true }));
+      dynObjs.push(board.create('point', [c.x1l, c.x2l], { name:'', size:4, strokeColor:'#00897b', fillColor:'#00897b', fixed:true }));
+      var _showLbl = document.getElementById('chk-labels').checked;
+      dynObjs.push(board.create('text', [c.x1t+0.5, c.x2t+0.8, 'Tax'], { fontSize:11, color:'#1565c0', fontWeight:'bold', visible: _showLbl }));
+      dynObjs.push(board.create('text', [c.x1l+0.5, c.x2l+0.8, 'LS'], { fontSize:11, color:'#00897b', fontWeight:'bold', visible: _showLbl }));
+    }
+
+    function updateAll() {
+      var p = getP();
+      var c = computeAll();
+      document.getElementById('val-M').textContent = p.M.toFixed(0);
+      document.getElementById('val-p1').textContent = p.p1.toFixed(1);
+      document.getElementById('val-p2').textContent = p.p2.toFixed(1);
+      document.getElementById('val-t').textContent = p.t.toFixed(1);
+      if (currentFn === 'ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
+
+      document.getElementById('eq-rev').innerHTML = 'Receita: \\(R = t \\cdot x_1^t = ' + c.Rev.toFixed(2) + '\\)';
+      document.getElementById('eq-ut').innerHTML = 'Utilidade (imposto unitário): \\(U^t = ' + c.Ut.toFixed(3) + '\\)';
+      document.getElementById('eq-ul').innerHTML = 'Utilidade (<em>lump sum</em>): \\(U^{LS} = ' + c.Ul.toFixed(3) + '\\)';
+      var diff = c.Ul - c.Ut;
+      document.getElementById('eq-diff').innerHTML =
+        '\\(U^{LS} - U^t = ' + diff.toFixed(3) + (diff >= -0.001 ? ' \\geq 0\\) &#10003;' : '\\)');
+
+      drawAll();
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-M').value = 80;
+      document.getElementById('slider-p1').value = 4;
+      document.getElementById('slider-p2').value = 4;
+      document.getElementById('slider-t').value = 2;
+      document.getElementById('slider-rho').value = -1;
+      currentFn = 'cd';
+      document.querySelectorAll('.fn-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.fn==='cd'); });
+      document.getElementById('rho-group').style.display = 'none';
+      updateAll();
+    }
+
+    ['slider-M','slider-p1','slider-p2','slider-t','slider-rho'].forEach(function(id){
+      document.getElementById(id).addEventListener('input', updateAll);
+    });
+    updateAll();
+  </script>
+</body>
+</html>

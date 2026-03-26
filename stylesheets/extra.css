@@ -59,7 +59,8 @@ code, pre, kbd, .highlight {
 /* ================================================================
    2. COR INSPER — Vermelho #C8102E
    ================================================================ */
-:root {
+:root,
+[data-md-color-primary="custom"] {
   --md-primary-fg-color:        #C8102E;
   --md-primary-fg-color--light: #e8394f;
   --md-primary-fg-color--dark:  #9a0c23;
@@ -68,8 +69,9 @@ code, pre, kbd, .highlight {
   --md-accent-fg-color:         #C8102E;
 }
 
-/* Barra superior */
-.md-header {
+/* Barra superior — desktop e mobile drawer */
+.md-header,
+.md-nav__title[for="__drawer"] {
   background-color: #C8102E !important;
 }
 
@@ -157,7 +159,7 @@ code, pre, kbd, .highlight {
 .author-info .author-bio {
   font-size: 0.9rem;
   text-align: left;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
 }
 
@@ -171,7 +173,7 @@ code, pre, kbd, .highlight {
 
 .author-links a {
   font-size: 0.82rem;
-  color: #C8102E !important;
+  color: #C8102E;
   text-decoration: none;
   border: 1px solid #C8102E;
   border-radius: 4px;
@@ -181,7 +183,7 @@ code, pre, kbd, .highlight {
 
 .author-links a:hover {
   background: #C8102E;
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 
@@ -287,12 +289,36 @@ figcaption {
 /* Table styling */
 .md-typeset table:not([class]) {
   font-size: 0.82rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.md-typeset .md-typeset__scrollwrap {
+  display: flex;
+  justify-content: center;
 }
 
 .md-typeset table:not([class]) th {
   background-color: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   font-weight: 600;
+}
+
+
+/* Caption de figuras e tabelas — colado ao elemento acima */
+.caption-obj {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-top: 0;
+  line-height: 1.5;
+}
+.caption-obj p {
+  margin: 0;
+  padding: 0;
 }
 
 /* JEL / Keywords badges */
@@ -344,7 +370,7 @@ figcaption {
 }
 
 .social-links a {
-  color: #C8102E !important;
+  color: #C8102E;
   text-decoration: none;
   font-size: 1.5rem;
   line-height: 1;
@@ -352,13 +378,33 @@ figcaption {
 }
 
 .social-links a:hover {
-  color: #9a0c23 !important;
+  color: #9a0c23;
   transform: scale(1.15);
 }
 
 .social-links .twemoji svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/* ================================================================
+   6. BOOK META — Author & version on micro-book home
+   ================================================================ */
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.book-author {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+}
+.book-version {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
 }
 
 @media (max-width: 768px) {
@@ -370,4 +416,32 @@ figcaption {
   .social-links {
     justify-content: center;
   }
+}
+
+/* ========================================
+   TOC COLAPSÁVEL NO SIDEBAR
+   (com toc.integrate ativo)
+   ======================================== */
+
+/* Estado colapsado — controlado via JS */
+.md-nav--secondary.toc--collapsed {
+  display: none !important;
+}
+
+/* Cursor pointer no link do capítulo ativo */
+.md-nav__item--active > a.md-nav__link--active {
+  cursor: pointer;
+}
+
+/* Wrapper de tabelas — remover margin-bottom extra */
+.md-typeset .md-typeset__scrollwrap {
+    margin-bottom: 0;
+}
+.md-typeset .md-typeset__table {
+    margin-bottom: 0;
+}
+
+/* Espaçamento acima dos iframes de figuras — igual às tabelas */
+.md-typeset iframe {
+    margin-top: 1.5rem;
 }

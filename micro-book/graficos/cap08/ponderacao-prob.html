@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--
+  Função de Ponderação de Probabilidades w(p)
+  Library: JSXGraph
+  Reason: Interactive slider for γ parameter (Prelec/Tversky-Kahneman)
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Função de Ponderação de Probabilidades</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 420px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .info-box .eq {
+      text-align: center;
+      margin: 0.3rem 0;
+      color: #333;
+    }
+    .legend {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+    .legend-swatch {
+      width: 24px;
+      height: 3px;
+      margin-right: 8px;
+      border-radius: 2px;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>\(\gamma^+\) (ganhos): <span class="val" id="val-gamma-gain">0.61</span></label>
+        <input type="range" id="slider-gamma-gain" min="0.20" max="1.00" step="0.01" value="0.61">
+      </div>
+      <div class="slider-group">
+        <label>\(\gamma^-\) (perdas): <span class="val" id="val-gamma-loss">0.69</span></label>
+        <input type="range" id="slider-gamma-loss" min="0.20" max="1.00" step="0.01" value="0.69">
+      </div>
+      <div class="info-box">
+        <div class="eq">\(w(p) = \dfrac{p^{\gamma}}{(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}}\)</div>
+        <div style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+          Tversky–Kahneman (1992): \(\gamma^+ = 0{,}61\), \(\gamma^- = 0{,}69\)
+        </div>
+      </div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#2a7f2a;"></div>
+          \(w^+(p)\) — ganhos
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#C8102E;"></div>
+          \(w^-(p)\) — perdas
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#ccc;"></div>
+          \(w(p) = p\) — ponderação linear (UE)
+        </div>
+      </div>
+      <div class="info-box" id="info-cross" style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+        Cruzamento (ganhos): <span id="cross-val">≈ 0.33</span>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar (TK 1992)</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.19, 1.12, 1.12, -0.16],
+      showCopyright: false,
+      showNavigation: false,
+      defaultAxes: {
+        x: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11 } } },
+        y: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
+      }
+    });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-0.19 * 0.55, 1.12 / 2, '<b><i>w</i>(<i>p</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [1.12 / 2, -0.16 * 0.65, '<b><i>p</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    // 45-degree line (linear weighting = EU)
+    board.create('line', [[0,0],[1,1]], {
+      strokeColor: '#ccc', strokeWidth: 1, dash: 2, fixed: true
+    });
+
+    var gammaGain = 0.61, gammaLoss = 0.69;
+
+    function w(p, gamma) {
+      if (p <= 0) return 0;
+      if (p >= 1) return 1;
+      var pg = Math.pow(p, gamma);
+      var qg = Math.pow(1 - p, gamma);
+      return pg / Math.pow(pg + qg, 1 / gamma);
+    }
+
+    // Gain weighting curve
+    var gainCurve = board.create('functiongraph', [
+      function(p) { return w(p, gammaGain); },
+      0, 1
+    ], { strokeColor: '#2a7f2a', strokeWidth: 2.5 });
+
+    // Loss weighting curve
+    var lossCurve = board.create('functiongraph', [
+      function(p) { return w(p, gammaLoss); },
+      0, 1
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    function findCrossing(gamma) {
+      // Find p where w(p) = p by bisection
+      var lo = 0.01, hi = 0.99;
+      for (var i = 0; i < 50; i++) {
+        var mid = (lo + hi) / 2;
+        if (w(mid, gamma) - mid > 0) lo = mid;
+        else hi = mid;
+      }
+      return (lo + hi) / 2;
+    }
+
+    function resetAll() {
+      document.getElementById('slider-gamma-gain').value = 0.61;
+      document.getElementById('slider-gamma-loss').value = 0.69;
+      update();
+    }
+
+    function update() {
+      gammaGain = parseFloat(document.getElementById('slider-gamma-gain').value);
+      gammaLoss = parseFloat(document.getElementById('slider-gamma-loss').value);
+
+      document.getElementById('val-gamma-gain').textContent = gammaGain.toFixed(2);
+      document.getElementById('val-gamma-loss').textContent = gammaLoss.toFixed(2);
+
+      gainCurve.Y = function(p) { return w(p, gammaGain); };
+      lossCurve.Y = function(p) { return w(p, gammaLoss); };
+
+      var cross = findCrossing(gammaGain);
+      document.getElementById('cross-val').textContent = '≈ ' + cross.toFixed(2);
+
+      board.update();
+    }
+
+    document.getElementById('slider-gamma-gain').addEventListener('input', update);
+    document.getElementById('slider-gamma-loss').addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

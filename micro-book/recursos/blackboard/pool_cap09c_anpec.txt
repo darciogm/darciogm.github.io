@@ -1,0 +1,10 @@
+TF	A estratégia de equilíbrio simétrico é b(v) = v/2.	true
+TF	A receita esperada do leiloeiro é 1/3.	true
+TF	No leilão de segundo preço, a receita esperada também é 1/3.	true
+TF	Com aversão ao risco dos licitantes, o leilão de primeiro preço gera mais receita que o de segundo.	true
+TF	A colusão é mais fácil de sustentar no leilão ascendente (inglês) do que no de envelope fechado.	true
+TF	No equilíbrio bayesiano de Nash, cada tipo de cada jogador maximiza seu payoff esperado, condicionando na distribuição dos tipos dos demais e nas estratégias de equilíbrio.	true
+TF	No leilão de segundo preço (Vickrey), lançar o valor verdadeiro é estratégia estritamente dominante.	false
+TF	O Teorema da Equivalência de Receita implica que a receita de qualquer leilão é sempre a mesma, independentemente do formato.	false
+TF	A maldição do vencedor é um fenômeno que ocorre exclusivamente em leilões de valor comum, não em leilões de valor privado.	true
+TF	O Princípio da Revelação afirma que, para qualquer mecanismo e qualquer BNE, existe um mecanismo de revelação direta equivalente em que reportar o tipo verdadeiro é equilíbrio.	true

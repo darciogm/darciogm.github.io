@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluxo Circular da Renda</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f9fa; color: #222; }
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+  h2 { text-align: center; margin-bottom: 0.3rem; color: #333; font-size: 1.3rem; }
+  .subtitle { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+  #diagram { width: 100%; background: #fff; border: 1px solid #ddd; border-radius: 8px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1rem 0; align-items: center; }
+  .toggle-btn { padding: 0.5rem 1.1rem; border: 2px solid #1565c0; border-radius: 6px; background: #fff; color: #1565c0; cursor: pointer; font-weight: 600; font-size: 0.88rem; transition: all 0.2s; }
+  .toggle-btn.active { background: #1565c0; color: #fff; }
+  .toggle-btn:hover { opacity: 0.85; }
+  button.reset { background: #C8102E; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
+  button.reset:hover { background: #a00d24; }
+  .tooltip-box { position: absolute; background: rgba(0,0,0,0.82); color: #fff; padding: 0.5rem 0.8rem; border-radius: 6px; font-size: 0.82rem; pointer-events: none; opacity: 0; transition: opacity 0.2s; max-width: 220px; line-height: 1.4; }
+  .note { text-align: center; font-size: 0.82rem; color: #666; margin-top: 0.6rem; font-style: italic; }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="controls">
+    <button class="toggle-btn" id="btnGov" onclick="toggleSector('gov')">+ Governo</button>
+    <button class="toggle-btn" id="btnIntl" onclick="toggleSector('intl')">+ Setor Externo</button>
+    <button class="reset" onclick="resetDiagram()">Reset</button>
+  </div>
+
+  <div style="position:relative">
+    <svg id="diagram"></svg>
+    <div class="tooltip-box" id="tooltip"></div>
+  </div>
+</div>
+
+<script>
+var showGov = false, showIntl = false;
+var W, H;
+var svg, defs;
+var animId = 0;
+
+var tooltip = document.getElementById('tooltip');
+
+function getSize() {
+  var cont = document.getElementById('diagram').parentElement;
+  W = Math.min(cont.clientWidth, 900);
+  H = showGov || showIntl ? 580 : 440;
+}
+
+function resetDiagram() {
+  showGov = false; showIntl = false;
+  document.getElementById('btnGov').classList.remove('active');
+  document.getElementById('btnIntl').classList.remove('active');
+  draw();
+}
+
+function toggleSector(s) {
+  if (s === 'gov') { showGov = !showGov; document.getElementById('btnGov').classList.toggle('active'); }
+  if (s === 'intl') { showIntl = !showIntl; document.getElementById('btnIntl').classList.toggle('active'); }
+  draw();
+}
+
+function draw() {
+  getSize();
+  d3.select('#diagram').selectAll('*').remove();
+  svg = d3.select('#diagram').attr('width', W).attr('height', H);
+  defs = svg.append('defs');
+
+  // Arrow markers
+  ['#C8102E','#1565c0','#00897b','#ff9800','#7b1fa2'].forEach(function(c, i) {
+    defs.append('marker').attr('id','arr'+i).attr('viewBox','0 0 10 6').attr('refX',10).attr('refY',3)
+      .attr('markerWidth',10).attr('markerHeight',6).attr('orient','auto')
+      .append('path').attr('d','M0,0 L10,3 L0,6 Z').attr('fill',c);
+  });
+
+  var cx = W/2, cy = H/2 - (showGov||showIntl ? 20 : 0);
+  var rx = W*0.35, ry = 120;
+
+  // Boxes
+  var boxW = 140, boxH = 50;
+  var agents = [
+    { id: 'households', label: 'Famílias', x: cx, y: cy - ry - 20, color: '#1565c0' },
+    { id: 'firms', label: 'Firmas', x: cx, y: cy + ry + 20, color: '#C8102E' },
+    { id: 'product', label: 'Mercado de\nProdutos', x: cx + rx, y: cy, color: '#00897b' },
+    { id: 'factor', label: 'Mercado de\nFatores', x: cx - rx, y: cy, color: '#ff9800' }
+  ];
+  if (showGov) agents.push({ id: 'gov', label: 'Governo', x: cx, y: cy + ry + 110, color: '#7b1fa2' });
+  if (showIntl) agents.push({ id: 'intl', label: 'Setor\nExterno', x: cx + rx + 10, y: cy + ry + 60, color: '#795548' });
+
+  // Draw boxes
+  agents.forEach(function(a) {
+    var g = svg.append('g').attr('class','agent');
+    g.append('rect').attr('x', a.x - boxW/2).attr('y', a.y - boxH/2).attr('width', boxW).attr('height', boxH)
+      .attr('rx', 10).attr('fill', a.color).attr('opacity', 0.12).attr('stroke', a.color).attr('stroke-width', 2);
+    var lines = a.label.split('\n');
+    lines.forEach(function(l, i) {
+      g.append('text').attr('x', a.x).attr('y', a.y + (i - (lines.length-1)/2)*16 + 5)
+        .attr('text-anchor','middle').attr('font-size','13px').attr('font-weight','700').attr('fill', a.color).text(l);
+    });
+  });
+
+  // Define flows (curved paths)
+  var flows = [];
+  var hx = cx, hy = cy - ry - 20; // households
+  var fx = cx, fy = cy + ry + 20; // firms
+  var px = cx + rx, py = cy; // product market
+  var fax = cx - rx, fay = cy; // factor market
+
+  // === QUADRANTE SUPERIOR-DIREITO (Famílias ↔ Mercado de Produtos) ===
+  // Arco externo (dinheiro): Famílias → Mercado de Produtos
+  flows.push({ path: arcPath(hx+boxW/2, hy, px, py-boxH/2, -80), color: '#C8102E', marker: 0,
+    tip: 'Gastos das famílias: pagamento por bens e serviços', label: 'Gastos ($)' });
+  // Arco interno (bens): Mercado de Produtos → Famílias
+  flows.push({ path: arcPath(px, py-boxH/2, hx+boxW/2, hy, -30), color: '#00897b', marker: 2, dash: '6,4',
+    tip: 'Bens e serviços fluem do mercado para as famílias', label: 'Bens/Serviços' });
+
+  // === QUADRANTE INFERIOR-DIREITO (Mercado de Produtos ↔ Firmas) ===
+  // Arco externo (dinheiro): Mercado de Produtos → Firmas
+  flows.push({ path: arcPath(px, py+boxH/2, fx+boxW/2, fy, -80), color: '#C8102E', marker: 0,
+    tip: 'Receita das firmas: venda de bens e serviços', label: 'Receita ($)' });
+  // Arco interno (bens): Firmas → Mercado de Produtos
+  flows.push({ path: arcPath(fx+boxW/2, fy, px, py+boxH/2, -30), color: '#00897b', marker: 2, dash: '6,4',
+    tip: 'Firmas oferecem bens e serviços ao mercado', label: 'Bens/Serviços' });
+
+  // === QUADRANTE INFERIOR-ESQUERDO (Firmas ↔ Mercado de Fatores) ===
+  // Arco externo (dinheiro): Firmas → Mercado de Fatores
+  flows.push({ path: arcPath(fx-boxW/2, fy, fax, fay+boxH/2, -80), color: '#C8102E', marker: 0,
+    tip: 'Pagamento por fatores de produção (salários, aluguéis, juros)', label: 'Pagamentos ($)' });
+  // Arco interno (fatores): Mercado de Fatores → Firmas
+  flows.push({ path: arcPath(fax, fay+boxH/2, fx-boxW/2, fy, -30), color: '#ff9800', marker: 3, dash: '6,4',
+    tip: 'Fatores de produção fluem para as firmas (trabalho, capital, terra)', label: 'Fatores' });
+
+  // === QUADRANTE SUPERIOR-ESQUERDO (Mercado de Fatores ↔ Famílias) ===
+  // Arco externo (dinheiro): Mercado de Fatores → Famílias
+  flows.push({ path: arcPath(fax, fay-boxH/2, hx-boxW/2, hy, -80), color: '#C8102E', marker: 0,
+    tip: 'Renda das famílias: salários, aluguéis, lucros, juros', label: 'Renda ($)' });
+  // Arco interno (fatores): Famílias → Mercado de Fatores
+  flows.push({ path: arcPath(hx-boxW/2, hy, fax, fay-boxH/2, -30), color: '#ff9800', marker: 3, dash: '6,4',
+    tip: 'Famílias oferecem fatores de produção ao mercado', label: 'Fatores' });
+
+  // Government flows
+  if (showGov) {
+    var gx = cx, gy = cy + ry + 110;
+    flows.push({ path: straightPath(gx-30, gy-boxH/2, hx-30, hy+boxH/2), color: '#7b1fa2', marker: 4,
+      tip: 'Transferências do governo para famílias (Bolsa Familia, aposentadorias)', label: 'Transferências' });
+    flows.push({ path: straightPath(hx+30, hy+boxH/2, gx+30, gy-boxH/2), color: '#7b1fa2', marker: 4,
+      tip: 'Impostos pagos pelas famílias ao governo', label: 'Impostos' });
+    flows.push({ path: arcPath(gx+boxW/2, gy, fx+boxW/2+10, fy+10, 50), color: '#7b1fa2', marker: 4, dash: '4,3',
+      tip: 'Impostos sobre produção e subsídios', label: 'Impostos/Subsídios' });
+  }
+
+  // International flows
+  if (showIntl) {
+    var ix = cx + rx + 10, iy = cy + ry + 60;
+    flows.push({ path: arcPath(ix-boxW/2, iy-10, px+10, py+boxH/2, -30), color: '#795548', marker: -1,
+      tip: 'Importações: bens estrangeiros entram no mercado de produtos', label: 'Importações' });
+    flows.push({ path: arcPath(px+10, py+boxH/2+5, ix-boxW/2, iy+10, 30), color: '#795548', marker: -1, dash: '6,4',
+      tip: 'Exportações: bens domesticos vendidos ao exterior', label: 'Exportações' });
+  }
+
+  // Draw flows
+  flows.forEach(function(f, idx) {
+    var markerUrl = f.marker >= 0 ? 'url(#arr'+f.marker+')' : '';
+    if (f.marker < 0) {
+      // custom brown marker
+      defs.append('marker').attr('id','arrB'+idx).attr('viewBox','0 0 10 6').attr('refX',10).attr('refY',3)
+        .attr('markerWidth',10).attr('markerHeight',6).attr('orient','auto')
+        .append('path').attr('d','M0,0 L10,3 L0,6 Z').attr('fill','#795548');
+      markerUrl = 'url(#arrB'+idx+')';
+    }
+    var p = svg.append('path').attr('d', f.path).attr('fill','none').attr('stroke', f.color)
+      .attr('stroke-width', 2.5).attr('marker-end', markerUrl).attr('opacity', 0.7);
+    if (f.dash) p.attr('stroke-dasharray', f.dash);
+
+    // Invisible wider path for hover
+    svg.append('path').attr('d', f.path).attr('fill','none').attr('stroke','transparent').attr('stroke-width',18)
+      .style('cursor','pointer')
+      .on('mouseover', function(ev) {
+        p.attr('stroke-width', 4.5).attr('opacity', 1);
+        tooltip.style.opacity = 1;
+        tooltip.textContent = f.tip;
+      })
+      .on('mousemove', function(ev) {
+        tooltip.style.left = (ev.pageX + 12) + 'px';
+        tooltip.style.top = (ev.pageY - 30) + 'px';
+      })
+      .on('mouseout', function() {
+        p.attr('stroke-width', 2.5).attr('opacity', 0.7);
+        tooltip.style.opacity = 0;
+      });
+
+    // Flow label — offset along the normal to avoid overlapping the curve
+    var pathNode = p.node();
+    var totalLen = pathNode.getTotalLength();
+    var midLen = totalLen / 2;
+    var midPt = pathNode.getPointAtLength(midLen);
+    // Compute tangent direction at midpoint
+    var eps = 2;
+    var ptBefore = pathNode.getPointAtLength(Math.max(0, midLen - eps));
+    var ptAfter = pathNode.getPointAtLength(Math.min(totalLen, midLen + eps));
+    var dx = ptAfter.x - ptBefore.x;
+    var dy = ptAfter.y - ptBefore.y;
+    var len = Math.sqrt(dx*dx + dy*dy) || 1;
+    // Normal vector (perpendicular, pointing outward from center)
+    var nx = -dy / len;
+    var ny = dx / len;
+    // Push label 16px along the normal (away from curve)
+    var labelOffset = 22;
+    svg.append('text')
+      .attr('x', midPt.x + nx * labelOffset)
+      .attr('y', midPt.y + ny * labelOffset)
+      .attr('text-anchor','middle').attr('dominant-baseline','middle')
+      .attr('font-size','10px').attr('fill', f.color).attr('font-weight','600')
+      .text(f.label);
+
+    // Animate dot along path
+    animateDot(p, f.color, pathNode);
+  });
+}
+
+function animateDot(pathEl, color, pathNode) {
+  var len = pathNode.getTotalLength();
+  var dot = svg.append('circle').attr('r', 4).attr('fill', color).attr('opacity', 0.9);
+  function run() {
+    dot.attr('opacity', 0.9);
+    var startOffset = Math.random() * len;
+    dot.transition().duration(0).attr('opacity',0)
+      .transition().duration(200).attr('opacity',0.9)
+      .attrTween('cx', function(){ return function(t){ var p = pathNode.getPointAtLength((startOffset + t*len) % len); return p.x; }; })
+      .attrTween('cy', function(){ return function(t){ var p = pathNode.getPointAtLength((startOffset + t*len) % len); return p.y; }; })
+      .duration(3000 + Math.random()*1500)
+      .ease(d3.easeLinear)
+      .on('end', run);
+  }
+  run();
+}
+
+function arcPath(x1, y1, x2, y2, bend) {
+  var mx = (x1+x2)/2 + bend * (y2-y1) / Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+  var my = (y1+y2)/2 - bend * (x2-x1) / Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+  return 'M'+x1+','+y1+' Q'+mx+','+my+' '+x2+','+y2;
+}
+
+function straightPath(x1, y1, x2, y2) {
+  return 'M'+x1+','+y1+' L'+x2+','+y2;
+}
+
+draw();
+window.addEventListener('resize', draw);
+</script>
+</body>
+</html>

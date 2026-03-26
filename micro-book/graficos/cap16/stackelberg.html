@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--
+  Stackelberg Leadership — Interactive Graph (Chapter 15)
+  Library: JSXGraph
+  Shows: follower's reaction function, leader's iso-profit, Stackelberg & Cournot equilibria
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lideranca de Stackelberg</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+ #jxgbox { flex: 1 1 420px; max-width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.83rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .info-box .section-title { font-weight: 700; color: #1565c0; margin-top: 0.3rem; }
+    .info-box .section-title:first-child { margin-top: 0; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 880px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Intercepto \(a\): <span class="val" id="val-a">100</span></label>
+        <input type="range" id="slider-a" min="40" max="200" step="1" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
+        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider-group">
+        <label>CMg Lider \(c_L\): <span class="val" id="val-cL">20</span></label>
+        <input type="range" id="slider-cL" min="0" max="80" step="1" value="20">
+      </div>
+      <div class="slider-group">
+        <label>CMg Seguidora \(c_S\): <span class="val" id="val-cS">20</span></label>
+        <input type="range" id="slider-cS" min="0" max="80" step="1" value="20">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Fixed bounding box: worst case a=200, b=0.2, c=0 → reaction intercept (a-c)/b = 1000,
+    // with 1.3 multiplier → 1300, plus 6% padding ≈ 78. Use 1300 with ~80 margin.
+    var FIXED_BB = [-120, 1120, 1120, -120];
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: FIXED_BB,
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+
+    function rebuildBoard() {
+      JXG.JSXGraph.freeBoard(board);
+      board = JXG.JSXGraph.initBoard('jxgbox', {
+        boundingbox: FIXED_BB,
+        axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+      });
+    }
+
+    function gp() {
+      return {
+        a: parseFloat(document.getElementById('slider-a').value),
+        b: parseFloat(document.getElementById('slider-b').value),
+        cL: parseFloat(document.getElementById('slider-cL').value),
+        cS: parseFloat(document.getElementById('slider-cS').value)
+      };
+    }
+
+    function updateGraph() {
+      var p = gp();
+      document.getElementById('val-a').textContent = p.a.toFixed(0);
+      document.getElementById('val-b').textContent = p.b.toFixed(1);
+      document.getElementById('val-cL').textContent = p.cL.toFixed(0);
+      document.getElementById('val-cS').textContent = p.cS.toFixed(0);
+
+      rebuildBoard();
+
+      // Follower's reaction function: q2 = R2(q1) = (a - cS - b*q1)/(2b)
+      // Stackelberg: leader maximizes profit subject to follower's RF
+      // pi_L = [a - b(q1 + R2(q1)) - cL] * q1
+      // R2(q1) = (a - cS)/(2b) - q1/2
+      // q1 + R2(q1) = q1 + (a-cS)/(2b) - q1/2 = q1/2 + (a-cS)/(2b)
+      // P = a - b[q1/2 + (a-cS)/(2b)] = a - bq1/2 - (a-cS)/2 = (a+cS)/2 - bq1/2
+      // pi_L = [(a+cS)/2 - bq1/2 - cL] * q1 = [(a+cS-2cL)/2 - bq1/2] * q1
+      // FOC: (a+cS-2cL)/2 - bq1 = 0 => q1L = (a+cS-2cL)/(2b)
+      // For symmetric costs (cL=cS=c): q1L = (a-c)/(2b), q2S = (a-c)/(4b)
+      var q1L = Math.max(0, (p.a + p.cS - 2 * p.cL) / (2 * p.b));
+      var q2S = Math.max(0, (p.a - p.cS - p.b * q1L) / (2 * p.b));
+      var QSt = q1L + q2S;
+      var PSt = p.a - p.b * QSt;
+      var piL = Math.max(0, (PSt - p.cL) * q1L);
+      var piS = Math.max(0, (PSt - p.cS) * q2S);
+
+      // Cournot equilibrium for comparison
+      var q1C = Math.max(0, (p.a - 2*p.cL + p.cS) / (3 * p.b));
+      var q2C = Math.max(0, (p.a - 2*p.cS + p.cL) / (3 * p.b));
+      var QC = q1C + q2C;
+      var PC = p.a - p.b * QC;
+      var piLC = Math.max(0, (PC - p.cL) * q1C);
+      var piSC = Math.max(0, (PC - p.cS) * q2C);
+
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+      board.create('text', [560.0, -78.0, '<b><i>q</i><sub>L</sub></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+      board.create('text', [-66.0, 560.0, '<b><i>q</i><sub>S</sub></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+      // Follower's reaction function: q2 = (a-cS)/(2b) - q1/2
+      var rfIntercept = Math.max(0, (p.a - p.cS) / (2 * p.b));
+      var rfQ1max = Math.max(0, (p.a - p.cS) / p.b);
+      if (rfIntercept > 0) {
+        board.create('segment', [[0, rfIntercept], [rfQ1max, 0]], {
+          strokeColor: '#C8102E', strokeWidth: 2.5
+        });
+        board.create('text', [rfQ1max * 0.85, rfIntercept * 0.1, '\\(R_S(q_L)\\)'], { fontSize: 13, color: '#C8102E' });
+      }
+
+      // Leader's reaction function (for Cournot comparison): q1 = (a-cL)/(2b) - q2/2
+      var rfL_int = Math.max(0, (p.a - p.cL) / (2 * p.b));
+      var rfL_q2max = Math.max(0, (p.a - p.cL) / p.b);
+      if (rfL_int > 0) {
+        board.create('segment', [[rfL_int, 0], [0, rfL_q2max]], {
+          strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3
+        });
+        board.create('text', [rfL_int * 0.9, FIXED_BB[2] * 0.04, '\\(R_L(q_S)\\)'], { fontSize: 12, color: '#1565c0' });
+      }
+
+      // Leader's iso-profit curves
+      // pi_L = [a - b(q1 + q2) - cL] * q1 = const
+      // q2 = (a - cL)/b - q1 - piTarget/(b*q1)
+      var piLevels = [piL * 0.5, piL, piL * 1.5];
+      var isoColors = ['#1565c0'];
+      for (var li = 0; li < piLevels.length; li++) {
+        var piTarget = piLevels[li];
+        if (piTarget <= 0) continue;
+        var opacity = li === 1 ? 0.8 : 0.3;
+        var width = li === 1 ? 2 : 1;
+        (function(pt, op, wd) {
+          board.create('functiongraph', [function(q1) {
+            if (q1 <= 0.1) return NaN;
+            var q2 = (p.a - p.cL) / p.b - q1 - pt / (p.b * q1);
+            return q2 >= 0 ? q2 : NaN;
+          }], { strokeColor: '#1565c0', strokeWidth: wd, strokeOpacity: op, dash: 0 });
+        })(piTarget, opacity, width);
+      }
+
+      // Stackelberg point
+      board.create('point', [q1L, q2S], {
+        name: 'Stackelberg', size: 5, strokeColor: '#00897b', fillColor: '#00897b',
+        label: { fontSize: 13, color: '#00897b', offset: [10, 5] }
+      });
+      board.create('segment', [[q1L, q2S],[q1L, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+      board.create('segment', [[q1L, q2S],[0, q2S]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+
+      // Cournot point
+      board.create('point', [q1C, q2C], {
+        name: 'Cournot', size: 4, strokeColor: '#9c27b0', fillColor: '#9c27b0',
+        label: { fontSize: 12, color: '#9c27b0', offset: [10, -10] }
+      });
+      board.create('segment', [[q1C, q2C],[q1C, 0]], { strokeColor: '#9c27b0', strokeWidth: 1, dash: 3 });
+      board.create('segment', [[q1C, q2C],[0, q2C]], { strokeColor: '#9c27b0', strokeWidth: 1, dash: 3 });
+
+      var html = '<div class="section-title">Stackelberg</div>';
+      html += '\\(q_L = ' + q1L.toFixed(2) + '\\), \\(q_S = ' + q2S.toFixed(2) + '\\)<br>';
+      html += '\\(Q = ' + QSt.toFixed(2) + '\\), \\(P = ' + PSt.toFixed(2) + '\\)<br>';
+      html += '\\(\\pi_L = ' + piL.toFixed(1) + '\\), \\(\\pi_S = ' + piS.toFixed(1) + '\\)';
+      html += '<div class="section-title">Cournot (comparação)</div>';
+      html += '\\(q_1 = ' + q1C.toFixed(2) + '\\), \\(q_2 = ' + q2C.toFixed(2) + '\\)<br>';
+      html += '\\(Q = ' + QC.toFixed(2) + '\\), \\(P = ' + PC.toFixed(2) + '\\)<br>';
+      html += '\\(\\pi_1 = ' + piLC.toFixed(1) + '\\), \\(\\pi_2 = ' + piSC.toFixed(1) + '\\)';
+      html += '<div class="section-title">Vantagem do 1o Movimento</div>';
+      html += '\\(\\Delta\\pi_L = ' + (piL - piLC).toFixed(1) + '\\) (lider ganha)<br>';
+      html += '\\(\\Delta\\pi_S = ' + (piS - piSC).toFixed(1) + '\\) (seguidora perde)';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-a').value = 100;
+      document.getElementById('slider-b').value = 1;
+      document.getElementById('slider-cL').value = 20;
+      document.getElementById('slider-cS').value = 20;
+      updateGraph();
+    }
+
+    document.querySelectorAll('input[type="range"]').forEach(function(el) {
+      el.addEventListener('input', updateGraph);
+    });
+    updateGraph();
+  </script>
+</body>
+</html>

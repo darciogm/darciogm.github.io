@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph
+  Reason: Cournot best response functions with animated convergence dynamics,
+  Nash equilibrium visualization with adjustable demand/cost parameters.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções de Melhor-Resposta de Cournot</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { width: 520px; height: 480px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { width: 320px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.5rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .btn-animate {
+      display: block; width: 100%; margin-top: 0.5rem; padding: 0.5rem;
+      background: #1565c0; color: #fff; border: none; border-radius: 4px;
+      cursor: pointer; font-size: 0.85rem; font-family: inherit;
+    }
+    .btn-animate:hover { background: #0d47a1; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { width: 100%; max-width: 520px; }
+      .controls { width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros de demanda e custo</h3>
+
+      <div class="slider-group">
+        <label>Intercepto \(a\): <span class="val" id="val-a">120</span></label>
+        <input type="range" id="slider-a" min="50" max="200" step="5" value="120">
+      </div>
+
+      <div class="slider-group">
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
+        <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
+      </div>
+
+      <div class="slider-group">
+        <label>Custo marg. Firma 1 \(c_1\): <span class="val" id="val-c1">30</span></label>
+        <input type="range" id="slider-c1" min="0" max="80" step="5" value="30">
+      </div>
+
+      <div class="slider-group">
+        <label>Custo marg. Firma 2 \(c_2\): <span class="val" id="val-c2">30</span></label>
+        <input type="range" id="slider-c2" min="0" max="80" step="5" value="30">
+      </div>
+
+      <button class="btn-animate" id="btn-anim" onclick="toggleAnim()">Animar convergência</button>
+
+      <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-47, 280, 280, -38],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+
+    board.create('axis', [[0,0],[100,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 11 } },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,100]], {
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-47 * 0.55, 280 / 2, '<b><i>q</i><sub>2</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [280 / 2, -38 * 0.65, '<b><i>q</i><sub>1</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    function getA() { return parseFloat(document.getElementById('slider-a').value); }
+    function getB() { return parseFloat(document.getElementById('slider-b').value); }
+    function getC1() { return parseFloat(document.getElementById('slider-c1').value); }
+    function getC2() { return parseFloat(document.getElementById('slider-c2').value); }
+
+    // BR1: q1*(q2) = (a - c1 - b*q2) / (2b)
+    function BR1(q2) {
+      var a = getA(), b = getB(), c1 = getC1();
+      var v = (a - c1 - b*q2) / (2*b);
+      return Math.max(0, v);
+    }
+
+    // BR2: q2*(q1) = (a - c2 - b*q1) / (2b)
+    function BR2(q1) {
+      var a = getA(), b = getB(), c2 = getC2();
+      var v = (a - c2 - b*q1) / (2*b);
+      return Math.max(0, v);
+    }
+
+    // Nash equilibrium
+    function nashQ() {
+      var a = getA(), b = getB(), c1 = getC1(), c2 = getC2();
+      var q1 = (a - 2*c1 + c2) / (3*b);
+      var q2 = (a - 2*c2 + c1) / (3*b);
+      return { q1: Math.max(0, q1), q2: Math.max(0, q2) };
+    }
+
+    var drawObjects = [];
+    var animObjects = [];
+    var animTimer = null;
+    var isAnimating = false;
+
+    function clearDraw() {
+      stopAnim();
+      for (var i = drawObjects.length-1; i >= 0; i--) board.removeObject(drawObjects[i]);
+      drawObjects = [];
+    }
+
+    function clearAnim() {
+      for (var i = animObjects.length-1; i >= 0; i--) board.removeObject(animObjects[i]);
+      animObjects = [];
+    }
+
+    function update() {
+      clearDraw();
+      var a = getA(), b = getB(), c1 = getC1(), c2 = getC2();
+
+      document.getElementById('val-a').textContent = a.toFixed(0);
+      document.getElementById('val-b').textContent = b.toFixed(1);
+      document.getElementById('val-c1').textContent = c1.toFixed(0);
+      document.getElementById('val-c2').textContent = c2.toFixed(0);
+
+      var ne = nashQ();
+      var maxQ = 250; // Fixed axis range to accommodate worst-case a=200, b=0.5, c=0
+
+      // BR1: q1 as function of q2 => plot q2 on y-axis, q1 on x-axis
+      // q1 = BR1(q2) => to plot: x = BR1(y), so parametric
+      var br1Curve = board.create('curve', [
+        function(t) { return BR1(t); },
+        function(t) { return t; },
+        0, maxQ
+      ], {
+        strokeColor: '#C8102E', strokeWidth: 2.5, numberPointsHigh: 300
+      });
+      drawObjects.push(br1Curve);
+
+      // BR2: q2 = BR2(q1) => plot q1 on x-axis, q2 on y-axis
+      var br2Curve = board.create('functiongraph', [function(q1) { return BR2(q1); }, 0, maxQ], {
+        strokeColor: '#1565c0', strokeWidth: 2.5
+      });
+      drawObjects.push(br2Curve);
+
+      // Labels
+      var lblBR1 = board.create('text', [BR1(0) * 0.85, 2, 'BR_1(q_2)'], { fontSize: 12, color: '#C8102E', fixed: true });
+      var lblBR2 = board.create('text', [2, BR2(0) * 0.85, 'BR_2(q_1)'], { fontSize: 12, color: '#1565c0', fixed: true });
+      drawObjects.push(lblBR1, lblBR2);
+
+      // Nash equilibrium point
+      if (ne.q1 >= 0 && ne.q2 >= 0) {
+        var nePoint = board.create('point', [ne.q1, ne.q2], {
+          size: 6, color: '#00897b', fillColor: '#00897b', fixed: true,
+          name: 'Nash', label: { fontSize: 13, offset: [10, 5], color: '#00897b' }
+        });
+        drawObjects.push(nePoint);
+
+        // Dashed lines to axes
+        var dashH = board.create('segment', [[0, ne.q2], [ne.q1, ne.q2]], { strokeColor: '#00897b', strokeWidth: 0.8, dash: 3, fixed: true });
+        var dashV = board.create('segment', [[ne.q1, 0], [ne.q1, ne.q2]], { strokeColor: '#00897b', strokeWidth: 0.8, dash: 3, fixed: true });
+        drawObjects.push(dashH, dashV);
+      }
+
+      // Info
+      var Q = ne.q1 + ne.q2;
+      var P = Math.max(0, a - b * Q);
+      var pi1 = (P - c1) * ne.q1;
+      var pi2 = (P - c2) * ne.q2;
+
+      document.getElementById('info').innerHTML =
+        '\\(P(Q) = ' + a.toFixed(0) + ' - ' + b.toFixed(1) + 'Q\\)<br>' +
+        '<strong style="color:#00897b">Equilíbrio de Nash:</strong><br>' +
+        '\\(q_1^* = ' + ne.q1.toFixed(2) + '\\), \\(q_2^* = ' + ne.q2.toFixed(2) + '\\)<br>' +
+        '\\(Q^* = ' + Q.toFixed(2) + '\\), \\(P^* = ' + P.toFixed(2) + '\\)<br>' +
+        '\\(\\pi_1 = ' + pi1.toFixed(1) + '\\), \\(\\pi_2 = ' + pi2.toFixed(1) + '\\)';
+
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('info')]);
+      }
+      board.update();
+    }
+
+    // Animation: best response dynamics
+    function toggleAnim() {
+      if (isAnimating) {
+        stopAnim();
+      } else {
+        startAnim();
+      }
+    }
+
+    function startAnim() {
+      clearAnim();
+      isAnimating = true;
+      document.getElementById('btn-anim').textContent = 'Parar animação';
+      document.getElementById('btn-anim').style.background = '#d32f2f';
+
+      var q1 = BR1(0) * 0.9; // start near BR1 intercept
+      var q2 = 0;
+      var step = 0;
+      var path = [[q1, q2]];
+
+      animTimer = setInterval(function() {
+        if (step > 30) { stopAnim(); return; }
+
+        if (step % 2 === 0) {
+          // Firm 2 responds
+          var newQ2 = BR2(q1);
+          // Draw segment
+          var seg = board.create('segment', [[q1, q2], [q1, newQ2]], {
+            strokeColor: '#e65100', strokeWidth: 1.5, dash: 1, fixed: true
+          });
+          animObjects.push(seg);
+          q2 = newQ2;
+        } else {
+          // Firm 1 responds
+          var newQ1 = BR1(q2);
+          var seg = board.create('segment', [[q1, q2], [newQ1, q2]], {
+            strokeColor: '#e65100', strokeWidth: 1.5, dash: 1, fixed: true
+          });
+          animObjects.push(seg);
+          q1 = newQ1;
+        }
+
+        var pt = board.create('point', [q1, q2], {
+          size: 3, color: '#e65100', fixed: true, name: '',
+          fillColor: '#e65100', strokeColor: '#e65100'
+        });
+        animObjects.push(pt);
+
+        step++;
+        board.update();
+
+        // Check convergence
+        var ne = nashQ();
+        if (Math.abs(q1 - ne.q1) < 0.3 && Math.abs(q2 - ne.q2) < 0.3) {
+          stopAnim();
+        }
+      }, 400);
+    }
+
+    function stopAnim() {
+      isAnimating = false;
+      if (animTimer) { clearInterval(animTimer); animTimer = null; }
+      document.getElementById('btn-anim').textContent = 'Animar convergência';
+      document.getElementById('btn-anim').style.background = '#1565c0';
+    }
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      drawObjects.forEach(function(obj) {
+        if (obj.hasLabel && obj.label) obj.label.setAttribute({ visible: show });
+        if (obj.elType === 'text') obj.setAttribute({ visible: show });
+      });
+      board.update();
+    }
+
+    document.getElementById('slider-a').addEventListener('input', update);
+    document.getElementById('slider-b').addEventListener('input', update);
+    document.getElementById('slider-c1').addEventListener('input', update);
+    document.getElementById('slider-c2').addEventListener('input', update);
+
+    function resetAll() {
+      document.getElementById('slider-a').value = 120;
+      document.getElementById('slider-b').value = 1;
+      document.getElementById('slider-c1').value = 30;
+      document.getElementById('slider-c2').value = 30;
+      clearAnim();
+      update();
+    }
+
+    update();
+  </script>
+</body>
+</html>

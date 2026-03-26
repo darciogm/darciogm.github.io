@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa do Livro — Dependências entre Capítulos</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #fff;
+    overflow: hidden;
+  }
+  svg { display: block; }
+
+  .node-group { cursor: pointer; }
+  .node-rect {
+    rx: 8; ry: 8;
+    stroke-width: 2;
+    transition: opacity 0.3s;
+  }
+  .node-label {
+    font-size: 11px;
+    font-weight: 600;
+    fill: #fff;
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: central;
+  }
+  .node-title {
+    font-size: 9px;
+    fill: #fff;
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: central;
+    opacity: 0.9;
+  }
+  .link {
+    fill: none;
+    stroke: #bbb;
+    stroke-width: 1.5;
+    marker-end: url(#arrowhead);
+    transition: stroke 0.3s, stroke-width 0.3s, opacity 0.3s;
+  }
+  .link.highlighted-pre {
+    stroke: #1565c0;
+    stroke-width: 3;
+  }
+  .link.highlighted-dep {
+    stroke: #C8102E;
+    stroke-width: 3;
+  }
+  .dimmed { opacity: 0.12; }
+
+  /* Tooltip */
+  .tooltip {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 300px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+  }
+  .tooltip .tt-chapter {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .tooltip .tt-section {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 6px;
+  }
+  .tooltip .tt-desc {
+    font-size: 12px;
+    color: #333;
+  }
+
+  /* Legend */
+  .legend {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11px;
+    line-height: 1.8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .legend-title {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="tooltip" id="tooltip"></div>
+
+<div class="legend">
+  <div class="legend-title">Partes do livro</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#607D8B"></span> Fundamentos (1-2)</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#1565c0"></span> Consumidor (3-8)</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#00897b"></span> Jogos (9a-9d)</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#C8102E"></span> Firma (10-12)</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#FF8F00"></span> Mercados (13-16)</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#6A1B9A"></span> Fatores/Tempo (17-18)</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#2E7D32"></span> Falhas (19-21)</div>
+</div>
+
+<svg id="graph"></svg>
+
+<script>
+const nodes = [
+  { id: "1",  label: "Cap. 1",  short: "Modelos",          title: "Todos os Modelos Estao Errados", section: "Fundamentos", color: "#607D8B",
+    desc: "Introducao ao raciocinio economico: modelos, hipoteses e o metodo cientifico em economia." },
+  { id: "2",  label: "Cap. 2",  short: "Matematica",       title: "Manual de Sobrevivencia Matematica", section: "Fundamentos", color: "#607D8B",
+    desc: "Ferramentas matematicas essenciais: otimizacao, derivadas, graficos e logica formal." },
+  { id: "3",  label: "Cap. 3",  short: "Preferencias",     title: "Mais e Melhor - Sera?", section: "Consumidor", color: "#1565c0",
+    desc: "Preferencias, utilidade e curvas de indiferenca: como representar gostos." },
+  { id: "4",  label: "Cap. 4",  short: "Restricao",        title: "Voce Quer Tudo. Mas Nao Pode.", section: "Consumidor", color: "#1565c0",
+    desc: "Restricao orcamentaria e escolha otima do consumidor." },
+  { id: "5",  label: "Cap. 5",  short: "Slutsky",          title: "Slutsky no Supermercado", section: "Consumidor", color: "#1565c0",
+    desc: "Efeito substituicao e renda: decomposicao de Slutsky e demanda." },
+  { id: "6",  label: "Cap. 6",  short: "Elasticidade",     title: "Substitutos e Complementos", section: "Consumidor", color: "#1565c0",
+    desc: "Elasticidades, bens substitutos, complementares e relacoes entre mercados." },
+  { id: "7",  label: "Cap. 7",  short: "Incerteza",        title: "O Preco do Talvez", section: "Consumidor", color: "#1565c0",
+    desc: "Decisao sob incerteza: utilidade esperada, aversao ao risco e seguros." },
+  { id: "8",  label: "Cap. 8",  short: "Comportamental",   title: "Nem Tao Racionais Assim", section: "Consumidor", color: "#1565c0",
+    desc: "Economia comportamental: vieses cognitivos, heuristicas e nudges." },
+  { id: "9a", label: "Cap. 9a", short: "Jogos Estaticos",  title: "Jogos Estaticos", section: "Jogos", color: "#00897b",
+    desc: "Nash, dominancia e jogos simultaneos com informacao completa." },
+  { id: "9b", label: "Cap. 9b", short: "Jogos Dinamicos",  title: "Jogos Dinamicos", section: "Jogos", color: "#00897b",
+    desc: "Inducao retroativa, subjogos e compromissos criveis." },
+  { id: "9c", label: "Cap. 9c", short: "Info Incompleta",  title: "Informacao Incompleta", section: "Jogos", color: "#00897b",
+    desc: "Equilibrio Bayesiano e jogos com tipos privados." },
+  { id: "9d", label: "Cap. 9d", short: "Sinais/Contratos", title: "Sinais e Contratos", section: "Jogos", color: "#00897b",
+    desc: "Sinalizacao, screening e mecanismos de revelacao." },
+  { id: "10", label: "Cap. 10", short: "Producao",         title: "Mais Maos, Mais Maquinas", section: "Firma", color: "#C8102E",
+    desc: "Funcao de producao, rendimentos de escala e produtividade marginal." },
+  { id: "11", label: "Cap. 11", short: "Custos",           title: "Nada e de Graca", section: "Firma", color: "#C8102E",
+    desc: "Custos fixos, variaveis, medio e marginal; curvas de custo." },
+  { id: "12", label: "Cap. 12", short: "Lucro",            title: "A Firma Nua", section: "Firma", color: "#C8102E",
+    desc: "Maximizacao de lucro, receita marginal e decisao de oferta." },
+  { id: "13", label: "Cap. 13", short: "Eq. Parcial",      title: "O Leiloeiro Invisivel", section: "Mercados", color: "#FF8F00",
+    desc: "Equilibrio de mercado competitivo: oferta, demanda e bem-estar." },
+  { id: "14", label: "Cap. 14", short: "Eq. Geral",        title: "Equilibrio Geral", section: "Mercados", color: "#FF8F00",
+    desc: "Equilibrio geral, caixa de Edgeworth e teoremas do bem-estar." },
+  { id: "15", label: "Cap. 15", short: "Monopolio",        title: "Sem Concorrente, Sem Piedade", section: "Mercados", color: "#FF8F00",
+    desc: "Monopolio: poder de mercado, discriminacao de precos e regulacao." },
+  { id: "16", label: "Cap. 16", short: "Oligopolio",       title: "Oligopolio e OI", section: "Mercados", color: "#FF8F00",
+    desc: "Cournot, Bertrand, Stackelberg e organizacao industrial." },
+  { id: "17", label: "Cap. 17", short: "Trabalho",         title: "Economia do Trabalho", section: "Fatores/Tempo", color: "#6A1B9A",
+    desc: "Oferta e demanda de trabalho, salarios e capital humano." },
+  { id: "18", label: "Cap. 18", short: "Capital/Tempo",    title: "A Paciencia Tem Preco", section: "Fatores/Tempo", color: "#6A1B9A",
+    desc: "Juros, valor presente, investimento e decisoes intertemporais." },
+  { id: "19", label: "Cap. 19", short: "Info Assimetrica",  title: "Limoes, Sinais e Contratos", section: "Falhas", color: "#2E7D32",
+    desc: "Selecao adversa, risco moral e mecanismos de incentivo." },
+  { id: "20", label: "Cap. 20", short: "Externalidades",   title: "Fumaca, Caronas e Tragedias", section: "Falhas", color: "#2E7D32",
+    desc: "Externalidades, bens publicos, Coase e solucoes de politica." },
+  { id: "21", label: "Cap. 21", short: "Economia Digital",  title: "Plataformas, Redes e Dados", section: "Falhas", color: "#2E7D32",
+    desc: "Efeitos de rede, plataformas, dados e microeconomia digital." }
+];
+
+const edges = [
+  { source: "1",  target: "2" },
+  { source: "2",  target: "3" },
+  { source: "3",  target: "4" },
+  { source: "4",  target: "5" },
+  { source: "5",  target: "6" },
+  { source: "3",  target: "7" },
+  { source: "7",  target: "8" },
+  { source: "4",  target: "10" },
+  { source: "10", target: "11" },
+  { source: "11", target: "12" },
+  { source: "2",  target: "9a" },
+  { source: "9a", target: "9b" },
+  { source: "9a", target: "9c" },
+  { source: "9a", target: "9d" },
+  { source: "12", target: "13" },
+  { source: "4",  target: "14" },
+  { source: "12", target: "14" },
+  { source: "14", target: "15" },
+  { source: "9a", target: "16" },
+  { source: "4",  target: "17" },
+  { source: "17", target: "18" },
+  { source: "9d", target: "19" },
+  { source: "7",  target: "19" },
+  { source: "13", target: "20" },
+  { source: "16", target: "21" },
+  { source: "19", target: "21" }
+];
+
+// ── Compute topological depth for layered layout ──
+const nodeMap = {};
+nodes.forEach(n => { nodeMap[n.id] = n; n.depth = 0; });
+
+// BFS from roots to assign depth
+function computeDepths() {
+  const adj = {};
+  const inDeg = {};
+  nodes.forEach(n => { adj[n.id] = []; inDeg[n.id] = 0; });
+  edges.forEach(e => { adj[e.source].push(e.target); inDeg[e.target]++; });
+  const queue = nodes.filter(n => inDeg[n.id] === 0).map(n => n.id);
+  while (queue.length) {
+    const cur = queue.shift();
+    adj[cur].forEach(t => {
+      nodeMap[t].depth = Math.max(nodeMap[t].depth, nodeMap[cur].depth + 1);
+      inDeg[t]--;
+      if (inDeg[t] === 0) queue.push(t);
+    });
+  }
+}
+computeDepths();
+
+const maxDepth = d3.max(nodes, n => n.depth);
+
+// ── Layout ──
+const width = Math.max(window.innerWidth, 900);
+const height = Math.max(window.innerHeight, 600);
+const marginX = 100, marginY = 60;
+
+const nodeW = 110, nodeH = 42;
+
+// Assign x by depth, y spread within each depth
+const depthGroups = d3.group(nodes, n => n.depth);
+depthGroups.forEach((group, depth) => {
+  const x = marginX + (depth / maxDepth) * (width - 2 * marginX);
+  const yStep = (height - 2 * marginY) / (group.length + 1);
+  group.sort((a, b) => {
+    const order = ["Fundamentos","Consumidor","Jogos","Firma","Mercados","Fatores/Tempo","Falhas"];
+    return order.indexOf(a.section) - order.indexOf(b.section);
+  });
+  group.forEach((n, i) => {
+    n.x = x;
+    n.y = marginY + (i + 1) * yStep;
+  });
+});
+
+// ── SVG setup ──
+const svg = d3.select("#graph")
+  .attr("width", width)
+  .attr("height", height);
+
+// Arrow marker
+svg.append("defs").append("marker")
+  .attr("id", "arrowhead")
+  .attr("viewBox", "0 0 10 6")
+  .attr("refX", 10)
+  .attr("refY", 3)
+  .attr("markerWidth", 8)
+  .attr("markerHeight", 6)
+  .attr("orient", "auto")
+  .append("path")
+  .attr("d", "M0,0 L10,3 L0,6 Z")
+  .attr("fill", "#999");
+
+// Highlighted arrow markers
+const defs = svg.select("defs");
+["#1565c0", "#C8102E"].forEach((col, i) => {
+  defs.append("marker")
+    .attr("id", "arrow-hl-" + i)
+    .attr("viewBox", "0 0 10 6")
+    .attr("refX", 10)
+    .attr("refY", 3)
+    .attr("markerWidth", 8)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,0 L10,3 L0,6 Z")
+    .attr("fill", col);
+});
+
+// ── Draw edges ──
+const linkG = svg.append("g");
+const linkSel = linkG.selectAll(".link")
+  .data(edges)
+  .join("path")
+  .attr("class", "link")
+  .attr("d", d => {
+    const s = nodeMap[d.source];
+    const t = nodeMap[d.target];
+    const sx = s.x + nodeW / 2;
+    const sy = s.y;
+    const tx = t.x - nodeW / 2;
+    const ty = t.y;
+    const mx = (sx + tx) / 2;
+    return `M${sx},${sy} C${mx},${sy} ${mx},${ty} ${tx},${ty}`;
+  });
+
+// ── Draw nodes ──
+const nodeG = svg.append("g");
+const nodeSel = nodeG.selectAll(".node-group")
+  .data(nodes)
+  .join("g")
+  .attr("class", "node-group")
+  .attr("transform", d => `translate(${d.x - nodeW/2}, ${d.y - nodeH/2})`);
+
+nodeSel.append("rect")
+  .attr("class", "node-rect")
+  .attr("width", nodeW)
+  .attr("height", nodeH)
+  .attr("fill", d => d.color)
+  .attr("stroke", d => d3.color(d.color).darker(0.5));
+
+nodeSel.append("text")
+  .attr("class", "node-label")
+  .attr("x", nodeW / 2)
+  .attr("y", nodeH / 2 - 6)
+  .text(d => d.label);
+
+nodeSel.append("text")
+  .attr("class", "node-title")
+  .attr("x", nodeW / 2)
+  .attr("y", nodeH / 2 + 8)
+  .text(d => d.short.length > 14 ? d.short.slice(0, 13) + "\u2026" : d.short);
+
+// ── Tooltip ──
+const tooltip = d3.select("#tooltip");
+
+// ── Adjacency helpers ──
+const prereqsOf = {};
+const depsOf = {};
+nodes.forEach(n => { prereqsOf[n.id] = new Set(); depsOf[n.id] = new Set(); });
+edges.forEach(e => { prereqsOf[e.target].add(e.source); depsOf[e.source].add(e.target); });
+
+// ── Interactions ──
+nodeSel
+  .on("mouseenter", function(event, d) {
+    const involved = new Set([d.id, ...prereqsOf[d.id], ...depsOf[d.id]]);
+
+    nodeSel.classed("dimmed", n => !involved.has(n.id));
+    linkSel.classed("dimmed", e => !(involved.has(e.source) && involved.has(e.target)));
+
+    linkSel
+      .classed("highlighted-pre", e => e.target === d.id && prereqsOf[d.id].has(e.source))
+      .classed("highlighted-dep", e => e.source === d.id && depsOf[d.id].has(e.target))
+      .attr("marker-end", e => {
+        if (e.target === d.id && prereqsOf[d.id].has(e.source)) return "url(#arrow-hl-0)";
+        if (e.source === d.id && depsOf[d.id].has(e.target)) return "url(#arrow-hl-1)";
+        return "url(#arrowhead)";
+      });
+
+    tooltip.style("opacity", 1)
+      .html(`<div class="tt-chapter">${d.label} &mdash; ${d.title}</div>
+             <div class="tt-section">${d.section}</div>
+             <div class="tt-desc">${d.desc}</div>`);
+  })
+  .on("mousemove", function(event) {
+    const tx = Math.min(event.pageX + 14, width - 320);
+    const ty = Math.min(event.pageY - 10, height - 120);
+    tooltip.style("left", tx + "px").style("top", ty + "px");
+  })
+  .on("mouseleave", function() {
+    nodeSel.classed("dimmed", false);
+    linkSel.classed("dimmed", false)
+      .classed("highlighted-pre", false)
+      .classed("highlighted-dep", false)
+      .attr("marker-end", "url(#arrowhead)");
+    tooltip.style("opacity", 0);
+  })
+  .on("click", function(event, d) {
+    // Keep tooltip visible on click (for mobile)
+    tooltip.style("opacity", 1)
+      .html(`<div class="tt-chapter">${d.label} &mdash; ${d.title}</div>
+             <div class="tt-section">${d.section}</div>
+             <div class="tt-desc">${d.desc}</div>
+             <div style="margin-top:6px;font-size:11px;color:#888">
+               Pre-requisitos: ${[...prereqsOf[d.id]].map(x=>"Cap."+x).join(", ") || "nenhum"}<br>
+               Dependentes: ${[...depsOf[d.id]].map(x=>"Cap."+x).join(", ") || "nenhum"}
+             </div>`);
+  });
+
+// ── Responsive resize ──
+window.addEventListener("resize", () => {
+  location.reload();
+});
+</script>
+</body>
+</html>

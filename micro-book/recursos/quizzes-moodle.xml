@@ -1,0 +1,2953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap01</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap01-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a principal diferença entre análise positiva e análise normativa em economia?</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A análise positiva usa dados empíricos, enquanto a normativa usa apenas teoria</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A análise positiva descreve &#x27;o que é&#x27;, enquanto a normativa prescreve &#x27;o que deveria ser&#x27;</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A análise positiva busca descrever e explicar fenômenos econômicos como eles são, gerando previsões testáveis. A análise normativa envolve juízos de valor sobre o que deveria ser feito. A alternativa (a) confunde método com natureza da análise; (c) mistura subáreas; (d) é incorreta pois toda análise envolve suposições.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A análise positiva trata de microeconomia e a normativa de macroeconomia</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A análise positiva é objetiva porque não envolve suposições</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap01-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Segundo a visão friedmaniana, um modelo econômico deve ser avaliado principalmente pela:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Fidelidade de suas premissas à realidade observada</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Complexidade matemática de suas equações</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Capacidade de gerar previsões úteis e testáveis</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Friedman (1953) argumentou que modelos devem ser julgados pela utilidade de suas previsões, não pelo realismo de suas suposições. Um mapa útil não precisa reproduzir cada detalhe do terreno. As demais alternativas confundem realismo das premissas (a), sofisticação formal (b) ou abrangência (d) com qualidade preditiva.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Quantidade de variáveis que incorpora</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap01-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A cláusula *ceteris paribus* em microeconomia corresponde, matematicamente, a:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Uma integral definida sobre a função de demanda</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Uma derivada parcial — variar uma variável mantendo as demais constantes</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>*Ceteris paribus* significa &#x27;tudo o mais constante&#x27;, o que equivale a calcular a derivada parcial de uma função em relação a uma variável, mantendo todas as outras fixas. Isso é o fundamento da estática comparativa. A alternativa (d) descreve justamente a abordagem oposta — equilíbrio geral, que abandona o *ceteris paribus*.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Uma transformação monotônica da função de utilidade</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Uma condição de equilíbrio geral com todos os mercados simultâneos</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap01-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em um modelo microeconômico, as variáveis endógenas são aquelas que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>São determinadas fora do modelo e tratadas como parâmetros</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>São determinadas dentro do modelo, como resultado da otimização dos agentes</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Variáveis endógenas são determinadas pelo próprio modelo (ex.: preço e quantidade de equilíbrio), enquanto variáveis exógenas (a) são determinadas fora dele (ex.: renda, tecnologia). A alternativa (c) é muito restritiva e (d) confunde endogeneidade com observabilidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Representam apenas variáveis monetárias como preço e renda</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Não podem ser observadas empiricamente</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap01-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A hipótese de otimização na microeconomia assume que os agentes:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Possuem informação perfeita sobre todos os mercados</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Agem &#x27;como se&#x27; maximizassem uma função objetivo, mesmo que não calculem explicitamente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A hipótese de otimização, no sentido &#x27;como se&#x27; (*as if*) de Friedman, não exige que os agentes façam cálculos conscientes — apenas que seu comportamento seja consistente com a maximização de uma função objetivo. A alternativa (a) confunde otimização com informação perfeita; (c) confunde ótimo privado com social; (d) ignora que erros sistemáticos são estudados pela economia comportamental.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Sempre alcançam o resultado socialmente ótimo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nunca cometem erros em suas decisões</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap02</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap02-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Para que um ponto crítico de uma função $f(x)$ seja um máximo local, é necessário que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f&#x27;(x) = 0$ e $f&#x27;&#x27;(x) &gt; 0$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$f&#x27;(x) = 0$ e $f&#x27;&#x27;(x) &lt; 0$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A condição de primeira ordem (CPO) exige $f&#x27;(x) = 0$ (ponto crítico) e a condição de segunda ordem (CSO) exige $f&#x27;&#x27;(x) &lt; 0$ (concavidade local), garantindo que o ponto é um máximo e não um mínimo. A alternativa (a) descreve um mínimo local; (c) e (d) não satisfazem a CPO.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f&#x27;(x) &gt; 0$ e $f&#x27;&#x27;(x) = 0$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f&#x27;(x) &lt; 0$ e $f&#x27;&#x27;(x) &lt; 0$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap02-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No método de Lagrange para maximizar $f(x,y)$ sujeito a $g(x,y) = 0$, o multiplicador $\lambda$ pode ser interpretado como:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O valor da função objetivo no ponto ótimo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A taxa de variação do valor ótimo de $f$ em relação a um relaxamento marginal da restrição</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O multiplicador de Lagrange $\lambda$ mede o &#x27;preço-sombra&#x27; da restrição: quanto o valor ótimo da função objetivo muda quando a restrição é relaxada marginalmente. Pelo Teorema do Envelope, $\lambda = \partial f^*/\partial c$ onde $c$ é o nível da restrição. As demais alternativas confundem $\lambda$ com outros conceitos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A derivada parcial de $g$ em relação a $x$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo total da restrição para o agente</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap02-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se $F(x, p) = 0$ define implicitamente $x(p)$, o Teorema da Função Implícita nos diz que $\frac{dx}{dp} =$</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$-\frac{\partial F / \partial p}{\partial F / \partial x}$, desde que $\frac{\partial F}{\partial x} \neq 0$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Diferenciando $F(x,p) = 0$ totalmente: $\frac{\partial F}{\partial x}dx + \frac{\partial F}{\partial p}dp = 0$, logo $\frac{dx}{dp} = -\frac{\partial F/\partial p}{\partial F/\partial x}$, exigindo que $\partial F/\partial x \neq 0$. A alternativa (b) erra o sinal e a condição; (c) inverte numerador e denominador; (d) confunde com a derivada cruzada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$\frac{\partial F / \partial p}{\partial F / \partial x}$, sem condições adicionais</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$-\frac{\partial F / \partial x}{\partial F / \partial p}$, desde que $\frac{\partial F}{\partial p} \neq 0$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$\frac{\partial^2 F}{\partial x \partial p}$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap02-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Uma função $f(x)$ é côncava em um intervalo se e somente se:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f&#x27;&#x27;(x) &gt; 0$ para todo $x$ no intervalo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$f&#x27;&#x27;(x) \leq 0$ para todo $x$ no intervalo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Concavidade significa que a derivada segunda é não positiva ($f&#x27;&#x27;(x) \leq 0$), ou equivalentemente, que qualquer segmento de reta conectando dois pontos do gráfico fica abaixo (ou sobre) a curva. A alternativa (a) descreve convexidade; (c) também descreve convexidade ($f&#x27;$ crescente $\Rightarrow f&#x27;&#x27; \geq 0$); (d) não tem relação com concavidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f&#x27;(x)$ é crescente no intervalo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f(x)$ é positiva no intervalo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap02-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Na otimização com restrição de desigualdade, as condições de Kuhn-Tucker exigem que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O multiplicador $\lambda$ pode ser negativo se a restrição for ativa</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Se a restrição não é ativa (folga), então $\lambda = 0$ (complementaridade)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A condição de complementaridade de Kuhn-Tucker estabelece que $\lambda \cdot g(x) = 0$: se a restrição tem folga ($g(x) &gt; 0$), então $\lambda = 0$; se $\lambda &gt; 0$, a restrição é ativa ($g(x) = 0$). A alternativa (a) é incorreta pois $\lambda \geq 0$ para restrições de desigualdade em problemas de maximização; (c) não é necessário; (d) confunde — para máximo, queremos concavidade, não convexidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todas as restrições devem ser ativas no ótimo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A função objetivo deve ser convexa</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap03</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap03-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O axioma de transitividade das preferências implica que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O consumidor sempre prefere mais a menos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Se $A \succsim B$ e $B \succsim C$, então $A \succsim C$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Transitividade exige consistência nas ordenações: se A é pelo menos tão bom quanto B, e B pelo menos tão bom quanto C, então A deve ser pelo menos tão bom quanto C. A alternativa (a) descreve monotonicidade; (c) descreve completude; (d) é uma propriedade da função de utilidade, não um axioma sobre preferências.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O consumidor consegue comparar quaisquer duas cestas</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A utilidade marginal é sempre decrescente</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap03-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se $u(x_1, x_2) = x_1^{0{,}5} x_2^{0{,}5}$ e $v = 2u + 10$, é correto afirmar que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$v$ representa preferências diferentes de $u$, pois os valores numéricos mudam</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$v$ representa as mesmas preferências, pois é uma transformação monotônica crescente de $u$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A função de utilidade é ordinal: qualquer transformação monotônica crescente $v = g(u)$ com $g&#x27; &gt; 0$ preserva a ordenação das cestas e, portanto, representa as mesmas preferências. A alternativa (a) confunde valores cardinais com ordinais; (c) adiciona condição inexistente; (d) seria verdade apenas para transformações decrescentes.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$v$ só representa as mesmas preferências se a renda do consumidor não mudar</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$v$ inverte a ordenação das cestas em relação a $u$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap03-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Taxa Marginal de Substituição (TMS) entre dois bens mede:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A razão entre os preços dos dois bens no mercado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A quantidade de um bem que o consumidor está disposto a abrir mão para obter uma unidade adicional do outro, mantendo a utilidade constante</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A TMS é a inclinação da curva de indiferença e mede a taxa subjetiva de troca entre bens que mantém o consumidor indiferente. Matematicamente, $\text{TMS}_{12} = -dx_2/dx_1|_{u=\bar{u}} = \text{UMg}_1/\text{UMg}_2$. A alternativa (a) descreve a inclinação da restrição orçamentária; (c) descreve elasticidade cruzada; (d) refere-se à produção.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A variação percentual na demanda de um bem quando o preço do outro varia</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo de oportunidade de produzir um bem em vez do outro</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap03-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>As curvas de indiferença de preferências estritamente convexas são:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Retas com inclinação constante</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Convexas em relação à origem (curvadas para fora)</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Côncavas em relação à origem (curvadas para dentro, &#x27;arqueadas&#x27;)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Preferências convexas implicam que médias são preferidas a extremos, gerando curvas de indiferença côncavas em relação à origem (convexas do ponto de vista do conjunto preferido). A TMS é decrescente em valor absoluto. A alternativa (a) descreve substitutos perfeitos; (b) descreve preferências côncavas (não convexas); (d) não é uma forma padrão.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Círculos concêntricos</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap03-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual das seguintes funções de utilidade representa preferências por complementos perfeitos?</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$u(x_1, x_2) = x_1 + x_2$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$u(x_1, x_2) = \min(x_1, x_2)$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Complementos perfeitos são consumidos em proporções fixas; a utilidade é determinada pelo bem em menor quantidade relativa, representada pela função $\min$. As curvas de indiferença são em L. A alternativa (a) representa substitutos perfeitos; (c) representa preferências Cobb-Douglas; (d) representa preferências côncavas (não convexas), onde o consumidor prefere extremos a médias.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$u(x_1, x_2) = x_1 \cdot x_2$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$u(x_1, x_2) = x_1^2 + x_2^2$</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap04</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap04-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No ótimo interior do consumidor, a condição de tangência exige que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A utilidade marginal de cada bem seja igual ao seu preço</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A TMS entre os bens seja igual à razão de preços $p_1/p_2$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No ótimo interior, a curva de indiferença é tangente à reta orçamentária, o que implica $\text{TMS}_{12} = p_1/p_2$, ou equivalentemente, $\text{UMg}_1/p_1 = \text{UMg}_2/p_2$ (utilidade marginal por real gasto equalizada). A alternativa (a) não é dimensionalmente correta; (c) só vale para casos especiais como Cobb-Douglas com expoentes iguais; (d) confunde utilidade com renda.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O consumidor gaste a mesma quantia em cada bem</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A utilidade total seja igual à renda</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap04-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O multiplicador de Lagrange $\lambda$ no problema do consumidor representa:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O preço do bem mais caro da cesta</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A utilidade marginal da renda — quanto a utilidade máxima aumenta com um real adicional de renda</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No problema $\max u(x_1,x_2)$ s.a. $p_1x_1 + p_2x_2 = I$, o multiplicador $\lambda = \partial V/\partial I$ é a utilidade marginal da renda, medindo o ganho de utilidade por unidade monetária adicional. A alternativa (d) descreve a TMS, que no ótimo iguala a razão de preços, não $\lambda$ diretamente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A quantidade ótima do primeiro bem</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A inclinação da curva de indiferença no ponto ótimo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap04-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Na decomposição de Slutsky, o efeito substituição de uma redução no preço de um bem:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pode ser positivo ou negativo, dependendo se o bem é normal ou inferior</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>É sempre não negativo — o consumidor nunca demanda menos do bem que ficou relativamente mais barato</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O efeito substituição é sempre não negativo pela convexidade das preferências: quando o preço relativo de um bem cai, a demanda compensada (hicksiana) desse bem não diminui. Isso é a Lei da Demanda Compensada. A alternativa (a) confunde com o efeito renda; (d) é incorreta — mesmo com complementos perfeitos, o efeito substituição é zero (não negativo), o que é consistente com (b).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Depende da elasticidade-renda do bem</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>É zero quando os bens são complementos perfeitos</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap04-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se o preço de um bem normal cai, o efeito renda e o efeito substituição sobre a demanda desse bem:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Atuam em direções opostas</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ambos atuam no sentido de aumentar a demanda, reforçando-se mutuamente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Para um bem normal com queda de preço: o efeito substituição aumenta a demanda (bem ficou relativamente mais barato) e o efeito renda também aumenta a demanda (poder de compra maior e o bem é normal). Os efeitos se reforçam. A alternativa (a) descreve o que ocorre com bens inferiores; (c) não é necessariamente verdade; (d) seria o caso de um bem de Giffen (efeito renda dominante e negativo).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O efeito renda é sempre maior que o efeito substituição</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ambos atuam no sentido de reduzir a demanda</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap04-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um consumidor com utilidade Cobb-Douglas $u = x_1^a x_2^b$ gasta, no ótimo, uma fração fixa da renda em cada bem. Se $a = 1$ e $b = 3$, qual fração da renda é gasta no bem 1?</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$1/3$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$3/4$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$1/4$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Na Cobb-Douglas $u = x_1^a x_2^b$, a fração gasta no bem $i$ é o expoente dividido pela soma dos expoentes. Para o bem 1: $a/(a+b) = 1/(1+3) = 1/4$. A alternativa (b) = $3/4$ é a fração gasta no bem 2; (a) e (d) usam cálculos incorretos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$1/2$</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap05</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap05-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A função de demanda marshalliana (não compensada) difere da hicksiana (compensada) porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A marshalliana mantém a utilidade constante; a hicksiana mantém a renda constante</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A marshalliana mantém a renda constante; a hicksiana mantém a utilidade constante</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A demanda marshalliana $x_i(\mathbf{p}, I)$ resulta da maximização de utilidade com renda fixa. A demanda hicksiana $h_i(\mathbf{p}, \bar{u})$ resulta da minimização de despesa com utilidade fixa, isolando o efeito substituição puro. A alternativa (a) inverte as definições; (d) pode não valer para bens inferiores.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A marshalliana só se aplica a bens normais; a hicksiana, a bens inferiores</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A marshalliana é sempre mais elástica que a hicksiana</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap05-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um bem de Giffen é necessariamente:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Um bem de luxo com elasticidade-renda maior que 1</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Um bem inferior cujo efeito renda (negativo) domina o efeito substituição</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Para um bem de Giffen, a quantidade demandada aumenta quando o preço sobe. Isso só ocorre se o bem é inferior (efeito renda negativo) e esse efeito é tão forte que domina o efeito substituição (sempre negativo). Nem todo bem inferior é de Giffen, mas todo bem de Giffen é inferior. As demais alternativas descrevem propriedades incompatíveis com bens de Giffen.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Um bem com elasticidade-preço cruzada negativa</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Um bem cuja curva de Engel é linear e positivamente inclinada</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap05-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A curva de Engel para um bem normal com elasticidade-renda constante igual a 2 tem formato:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Linear com inclinação positiva passando pela origem</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Côncava — cresce a taxas decrescentes</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Convexa — cresce a taxas crescentes</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Elasticidade-renda $\eta_I = 2 &gt; 1$ (bem de luxo): a demanda cresce mais que proporcionalmente à renda, gerando uma curva de Engel convexa. Se $\eta_I = 1$, a curva seria linear (a); se $0 &lt; \eta_I &lt; 1$ (necessidade), seria côncava (b). A alternativa (d) implicaria demanda insensível à renda.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Horizontal</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap05-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A identidade de Slutsky pode ser escrita como $\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}$. O termo $-x_j \frac{\partial x_i}{\partial I}$ representa:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O efeito substituição</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O efeito renda — a mudança na demanda devida à variação no poder de compra real</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Na equação de Slutsky, $\partial h_i/\partial p_j$ é o efeito substituição e $-x_j \cdot \partial x_i/\partial I$ é o efeito renda. Quando $p_j$ sobe, o poder de compra cai na proporção da quantidade consumida $x_j$, e o impacto sobre a demanda de $i$ depende de como $x_i$ responde à renda ($\partial x_i/\partial I$).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A elasticidade-preço cruzada</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A variação compensadora</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap05-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se a demanda marshalliana de um bem cai quando a renda aumenta, esse bem é classificado como:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bem de Giffen</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bem de luxo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Bem inferior</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Um bem inferior tem elasticidade-renda negativa: $\partial x/\partial I &lt; 0$. Quando a renda cresce, o consumidor substitui o bem por alternativas de qualidade superior. A alternativa (a) é um caso extremo de bem inferior (efeito renda domina o substituição), não apenas renda-negativo; (b) é o oposto; (d) descreve relação entre bens, não resposta à renda.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bem complementar</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap06</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap06-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se a elasticidade-preço da demanda é $\varepsilon_d = -0{,}5$ (em valor absoluto, 0,5), a demanda é dita:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Elástica — uma variação de 1% no preço causa mais de 1% de variação na quantidade</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Inelástica — uma variação de 1% no preço causa menos de 1% de variação na quantidade</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Quando $|\varepsilon_d| &lt; 1$, a demanda é inelástica: a quantidade demandada responde menos que proporcionalmente ao preço. Um aumento de 1% no preço reduz a quantidade em apenas 0,5%. A alternativa (a) descreve $|\varepsilon_d| &gt; 1$; (c) descreve $|\varepsilon_d| = 1$; (d) descreve $|\varepsilon_d| \to \infty$.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Unitária — variação percentual na quantidade iguala a do preço</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Perfeitamente elástica</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap06-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Quando a demanda é inelástica, um aumento no preço causa:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Queda na receita total, pois a quantidade cai muito</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Aumento na receita total, pois a queda na quantidade é proporcionalmente menor que o aumento no preço</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com demanda inelástica ($|\varepsilon_d| &lt; 1$), o aumento percentual no preço supera a queda percentual na quantidade, de modo que a receita total $R = p \cdot q$ aumenta. A relação entre receita marginal e elasticidade é $\text{RMg} = p(1 + 1/\varepsilon_d)$: com $\varepsilon_d$ entre $-1$ e $0$, a RMg é negativa, significando que reduzir a quantidade (subir o preço) aumenta a receita.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Receita total constante</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Impossibilidade de determinar o efeito sem mais informação</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap06-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se a elasticidade-preço cruzada entre dois bens é positiva ($\varepsilon_{ij} &gt; 0$), os bens são:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Complementares brutos (marshallianos)</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Substitutos brutos (marshallianos)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Elasticidade cruzada positiva significa que um aumento no preço do bem $j$ aumenta a demanda pelo bem $i$: quando um substituto fica mais caro, a demanda pelo outro sobe. A alternativa (a) descreve $\varepsilon_{ij} &lt; 0$; (d) descreve $\varepsilon_{ij} = 0$; (c) refere-se à relação com renda, não entre bens.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bens inferiores</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bens independentes</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap06-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A elasticidade-renda da demanda por alimentos tende a ser, segundo a Lei de Engel:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Maior que 1 — alimentos são bens de luxo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Negativa — alimentos são bens inferiores</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Positiva mas menor que 1 — alimentos são bens necessários</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A Lei de Engel estabelece que a participação dos gastos com alimentação na renda total cai à medida que a renda cresce. Isso implica elasticidade-renda positiva (bem normal) mas inferior a 1 (necessidade). A alternativa (a) seria típica de viagens e lazer; (b) valeria para bens como transporte público em faixas de renda alta; (d) implicaria participação constante.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exatamente igual a 1 para todas as faixas de renda</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap06-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Para uma curva de demanda linear $q = a - bp$, a elasticidade-preço:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>É constante ao longo de toda a curva</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Varia ao longo da curva: é elástica em preços altos e inelástica em preços baixos</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Embora a inclinação ($-b$) seja constante, a elasticidade $\varepsilon = -b \cdot p/q$ varia ao longo da curva. Em preços altos ($p$ grande, $q$ pequeno), $|\varepsilon| &gt; 1$ (elástica); em preços baixos ($p$ pequeno, $q$ grande), $|\varepsilon| &lt; 1$ (inelástica). O ponto médio tem elasticidade unitária. A alternativa (a) descreve funções do tipo $q = Ap^{-\varepsilon}$ (isoelástica), não linear.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>É sempre unitária</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Depende apenas da inclinação $b$, não do ponto da curva</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap07</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap07-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um agente com função de utilidade côncava sobre riqueza é classificado como:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Amante do risco — prefere a loteria ao valor esperado com certeza</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Neutro ao risco — é indiferente entre a loteria e seu valor esperado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Avesso ao risco — prefere o valor esperado com certeza à loteria</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Concavidade de $u(W)$ implica, pela desigualdade de Jensen, que $E[u(W)] &lt; u(E[W])$: a utilidade esperada da loteria é menor que a utilidade do valor esperado recebido com certeza. Portanto, o agente prefere a certeza — é avesso ao risco. A alternativa (a) requer convexidade; (b) requer linearidade; (d) é incorreta pois a aversão vale para qualquer loteria arriscada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Avesso ao risco apenas se a variância da loteria for alta</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap07-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O equivalente certeza de uma loteria é o valor $W_{CE}$ tal que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$u(W_{CE}) = E[W]$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$u(W_{CE}) = E[u(W)]$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O equivalente certeza é o montante certo que dá a mesma utilidade esperada que a loteria: $u(W_{CE}) = E[u(W)]$. Para um avesso ao risco, $W_{CE} &lt; E[W]$, e a diferença $E[W] - W_{CE}$ é o prêmio de risco. A alternativa (a) confunde utilidade do equivalente certeza com o valor esperado monetário; (c) só vale para neutralidade ao risco; (d) inverte a relação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$W_{CE} = E[W]$ sempre</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$W_{CE} = E[W] + \text{prêmio de risco}$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap07-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A medida de Arrow-Pratt de aversão absoluta ao risco é definida como:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$A(W) = -u&#x27;(W)/u&#x27;&#x27;(W)$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$A(W) = -u&#x27;&#x27;(W)/u&#x27;(W)$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O coeficiente de Arrow-Pratt $A(W) = -u&#x27;&#x27;(W)/u&#x27;(W)$ mede a curvatura relativa da função de utilidade. É positivo para avessos ao risco ($u&#x27;&#x27; &lt; 0$). A alternativa (a) inverte a fração; (c) dá valor negativo para avessos ao risco; (d) não tem interpretação econômica padrão.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$A(W) = u&#x27;&#x27;(W)/u&#x27;(W)$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$A(W) = -u&#x27;(W) \cdot u&#x27;&#x27;(W)$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap07-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No mercado de seguros com informação simétrica, um agente avesso ao risco e uma seguradora neutra ao risco alcançam eficiência quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O prêmio do seguro é igual ao dobro da perda esperada</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O agente compra seguro parcial para manter incentivo a ter cuidado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O agente compra seguro completo ao prêmio atuarialmente justo (igual à perda esperada)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com informação simétrica, a alocação eficiente transfere todo o risco do avesso ao risco para o neutro (seguradora). O prêmio atuarialmente justo $\pi = p \cdot L$ (probabilidade vezes perda) é suficiente para a seguradora cobrir as perdas esperadas, e o agente, sendo avesso ao risco, prefere pagar esse prêmio a enfrentar a incerteza. As demais alternativas descrevem situações subótimas ou incorretas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A seguradora cobra prêmio igual ao equivalente certeza do agente</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap07-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O axioma de independência na teoria da utilidade esperada afirma que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>As preferências por loterias dependem apenas dos payoffs, não das probabilidades</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Se $A \succ B$, então misturar $A$ e $B$ com uma terceira loteria $C$ preserva a preferência: $\alpha A + (1-\alpha)C \succ \alpha B + (1-\alpha)C$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O axioma de independência estabelece que a preferência entre duas loterias não é afetada pela mistura com uma terceira loteria comum. É o axioma mais distintivo (e controverso) da teoria de VNM, violado sistematicamente no Paradoxo de Allais. A alternativa (a) é absurda; (c) descreve neutralidade ao risco; (d) refere-se a preferências intertemporais.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Loterias com o mesmo valor esperado são sempre indiferentes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O agente é indiferente entre receber um prêmio agora ou no futuro</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap08</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap08-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Na Teoria do Prospecto de Kahneman e Tversky, a função valor é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Côncava para ganhos e côncava para perdas, com simetria</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Côncava para ganhos e convexa para perdas, com inclinação mais acentuada para perdas</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A função valor é definida sobre ganhos e perdas relativos a um ponto de referência: côncava para ganhos (aversão ao risco), convexa para perdas (busca de risco) e mais íngreme para perdas do que para ganhos (aversão à perda, $\lambda \approx 2{,}25$). A alternativa (a) ignora a convexidade para perdas e a assimetria; (c) inverte; (d) descreve utilidade esperada linear.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Convexa para ganhos e côncava para perdas</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Linear tanto para ganhos quanto para perdas</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap08-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A heurística de disponibilidade leva os agentes a:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Escolher sempre a opção mais recente apresentada</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Superestimar a probabilidade de eventos que são facilmente lembrados ou vívidos</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A heurística de disponibilidade faz com que eventos que vêm à mente com facilidade (por serem recentes, emocionais ou midiáticos) sejam julgados como mais prováveis do que realmente são. A alternativa (a) descreve viés de recência de forma muito restrita; (c) é incorreta — pode causar tanto super quanto subestimação; (d) descreve viés de confirmação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Subestimar sistematicamente todos os riscos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ignorar informações que contradizem suas crenças</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap08-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O desconto hiperbólico difere do desconto exponencial porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Implica taxa de desconto constante ao longo do tempo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Gera preferências consistentes no tempo — o agente nunca muda de plano</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Implica taxa de desconto decrescente — o agente é muito impaciente no curto prazo mas relativamente paciente no longo prazo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No desconto hiperbólico, a taxa de desconto entre períodos adjacentes cai à medida que ambos os períodos se afastam no futuro. Isso gera inconsistência temporal: o agente pode preferir hoje receber R$100 agora a R$110 amanhã, mas preferir R$110 em 31 dias a R$100 em 30 dias — invertendo a preferência quando o momento se aproxima. A alternativa (a) descreve desconto exponencial; (b) é o oposto do que ocorre.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Só se aplica a decisões financeiras, não a decisões de consumo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap08-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Paradoxo de Allais demonstra uma violação de qual axioma da utilidade esperada?</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Completude</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Transitividade</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Independência</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No Paradoxo de Allais, a maioria das pessoas faz escolhas entre loterias que violam o axioma de independência: a preferência entre duas opções muda quando se mistura uma terceira loteria comum. O &#x27;efeito certeza&#x27; — sobrevalorizar resultados garantidos — é a causa principal. Os demais axiomas não são violados nesse experimento.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Continuidade</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap08-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um &#x27;nudge&#x27; (empurrão) na arquitetura de escolhas é eficaz porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Proíbe escolhas ruins, forçando os agentes a agir racionalmente</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Altera o conjunto orçamentário, tornando opções ruins mais caras</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Explora vieses comportamentais previsíveis, como inércia e efeito default, sem eliminar a liberdade de escolha</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Nudges utilizam conhecimento sobre vieses cognitivos (inércia, ancoragem, aversão à perda) para direcionar escolhas sem restringir opções — o conceito de &#x27;paternalismo libertário&#x27; de Thaler e Sunstein. A alternativa (a) descreve proibição, não nudge; (b) descreve tributos/subsídios; (d) descreve incentivos econômicos tradicionais.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Oferece incentivos monetários diretos para comportamentos desejados</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap09a</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09a-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um equilíbrio de Nash é um perfil de estratégias no qual:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todos os jogadores obtêm o maior payoff possível</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Nenhum jogador pode melhorar seu payoff alterando unilateralmente sua estratégia</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O equilíbrio de Nash exige que cada jogador esteja fazendo a melhor resposta à estratégia dos demais — nenhum tem incentivo a desviar unilateralmente. Não exige que os payoffs sejam máximos (a), que existam estratégias dominantes (c) ou que o resultado seja socialmente ótimo (d). O Dilema dos Prisioneiros ilustra bem: o EN é mutuamente pior, mas ninguém desvia sozinho.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todos os jogadores usam estratégias dominantes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A soma dos payoffs é maximizada</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09a-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No Dilema dos Prisioneiros, o resultado de equilíbrio é ineficiente porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os jogadores não conseguem se comunicar</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cada jogador tem uma estratégia dominante que leva a um resultado Pareto-inferior à cooperação mútua</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Cada prisioneiro tem incentivo individual a confessar (estratégia dominante), independentemente do que o outro faz. Mas quando ambos confessam, obtêm um resultado pior do que se ambos calassem. O problema não é falta de comunicação (a) — mesmo com comunicação, sem enforcement, cada um desvia. O jogo tem EN (c é falsa); a simetria (d) é irrelevante.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O jogo não tem equilíbrio de Nash</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os payoffs são assimétricos entre os jogadores</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09a-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No duopólio de Cournot (competição em quantidades), comparado ao monopólio, o preço de equilíbrio é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Igual ao preço de monopólio</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Menor que o de monopólio e maior que o competitivo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No Cournot, cada firma produz considerando a produção da rival como dada. O resultado é intermediário: mais produção e menor preço que o monopólio, mas menos produção e maior preço que a concorrência perfeita. À medida que o número de firmas cresce, o resultado converge para o competitivo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Igual ao preço competitivo (custo marginal)</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Maior que o preço de monopólio devido à competição</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09a-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Paradoxo de Bertrand afirma que, com produtos homogêneos e custos marginais constantes iguais, duas firmas já bastam para:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Manter preços de monopólio indefinidamente</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Gerar o resultado competitivo: preço igual ao custo marginal e lucro econômico zero</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No modelo de Bertrand com produtos homogêneos, cada firma tem incentivo a cortar marginalmente o preço para capturar todo o mercado. O único equilíbrio é $p_1 = p_2 = c$ (custo marginal), com lucro zero — resultado idêntico à concorrência perfeita com apenas duas firmas. Isso é &#x27;paradoxal&#x27; porque esperaríamos algum poder de mercado com tão poucas firmas.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Produzir quantidades iguais às de Cournot</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eliminar o incentivo à entrada de novas firmas</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09a-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um equilíbrio de Nash em estratégias mistas existe:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas em jogos com estratégias dominantes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas quando não há equilíbrio em estratégias puras</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Em todo jogo finito (com número finito de jogadores e estratégias), pelo Teorema de Nash</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O Teorema de Nash (1950) garante que todo jogo finito possui pelo menos um equilíbrio de Nash, possivelmente em estratégias mistas. A alternativa (b) é incorreta — podem coexistir equilíbrios puros e mistos; (a) é muito restritiva; (d) ignora que o teorema se aplica a jogos gerais, não apenas soma zero.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas em jogos de soma zero</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap09b</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09b-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Equilíbrio Perfeito em Subjogos (EPS) refina o equilíbrio de Nash ao:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exigir que todos os jogadores usem estratégias dominantes</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Eliminar equilíbrios sustentados por ameaças não críveis em subjogos</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O EPS exige que a estratégia de cada jogador constitua um equilíbrio de Nash em todo subjogo do jogo, eliminando ameaças que o jogador não teria incentivo a cumprir se o momento chegasse. Todo EPS é EN, mas nem todo EN é EPS. A alternativa (d) é falsa — o EPS pode ser ineficiente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Permitir que jogadores revisem suas estratégias a cada rodada</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Garantir que o resultado seja Pareto-ótimo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09b-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A indução retroativa (backward induction) resolve jogos sequenciais começando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pelo primeiro nó de decisão e avançando para frente</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Pelos nós terminais, determinando a melhor ação em cada nó de trás para frente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A indução retroativa começa nos nós finais da árvore do jogo, determina a ação ótima do jogador que decide por último, substitui esse nó pelo payoff resultante e recua até o início. Isso garante credibilidade em cada estágio. A alternativa (a) descreve indução progressiva, que não elimina ameaças não críveis.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pelo jogador com mais estratégias disponíveis</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pela eliminação aleatória de estratégias dominadas</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09b-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No Folk Theorem para jogos repetidos infinitamente, a cooperação pode ser sustentada em equilíbrio se:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os jogadores são altruístas e se importam com o bem-estar dos outros</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O fator de desconto é suficientemente alto (jogadores são pacientes), permitindo que punições futuras disciplinem desvios presentes</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O Folk Theorem mostra que, se os jogadores são suficientemente pacientes ($\delta$ alto), qualquer payoff individualmente racional pode ser sustentado como equilíbrio do jogo repetido infinitamente, usando estratégias de punição (como trigger/grim). A alternativa (c) leva ao resultado oposto — pelo argumento de indução retroativa, a cooperação se desfaz; (a) não é necessário; (d) não é necessário quando a repetição fornece enforcement endógeno.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O jogo é jogado um número finito e conhecido de vezes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Existe um mecanismo externo de enforcement</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09b-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No modelo de barganha de Rubinstein com ofertas alternadas, o poder de barganha de um jogador aumenta quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Seu fator de desconto diminui (fica mais impaciente)</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Seu fator de desconto aumenta (fica mais paciente) em relação ao do oponente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No equilíbrio de Rubinstein, o jogador mais paciente obtém uma fatia maior do excedente. Paciência ($\delta$ alto) significa que o custo de esperar é menor, o que fortalece a posição de barganha. A alternativa (a) reduz o poder; (c) é irrelevante no modelo com horizonte infinito; (d) implica divisão simétrica, não aumento de poder.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O número total de rodadas aumenta</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ambos os jogadores têm o mesmo fator de desconto</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09b-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em um jogo finito repetido $T$ vezes (com $T$ conhecido), o argumento de &#x27;unraveling&#x27; (desvendamento) implica que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A cooperação é sustentável em todas as rodadas, desde que $T$ seja grande</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A cooperação se desfaz por indução retroativa: na última rodada não há incentivo a cooperar, logo na penúltima também não, e assim por diante</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com $T$ finito e conhecido, a indução retroativa parte da rodada $T$ (onde não há futuro para punir, logo ninguém coopera), propaga para $T-1$, e assim por diante até a rodada 1. O único EPS é a repetição do EN do jogo estático em todas as rodadas. A alternativa (c) pode ocorrer com incerteza sobre $T$ ou com tipos comportamentais, mas não no modelo padrão com $T$ conhecido.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os jogadores cooperam nas primeiras rodadas e desviam apenas nas últimas</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O resultado depende exclusivamente do número de jogadores</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap09c</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09c-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No Equilíbrio Bayesiano de Nash (BNE), cada jogador:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Conhece perfeitamente o tipo de todos os demais jogadores</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Maximiza seu payoff esperado condicionando nas crenças sobre os tipos dos demais e nas estratégias de equilíbrio</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No BNE, cada tipo de cada jogador escolhe a ação que maximiza seu payoff esperado, dado suas crenças (prior bayesiano) sobre os tipos dos demais e dado que os demais jogam suas estratégias de equilíbrio. A alternativa (a) descreve informação completa; (c) descreve maximin, não Nash bayesiano; (d) descreve jogos dinâmicos, não estáticos com informação incompleta.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Escolhe a estratégia que maximiza o payoff no pior cenário possível (maximin)</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Observa as ações anteriores dos demais antes de decidir</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09c-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em um leilão de segundo preço (Vickrey) com valores privados independentes, a estratégia dominante de cada participante é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ofertar abaixo do próprio valor para obter lucro positivo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ofertar exatamente o próprio valor verdadeiro</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No leilão de Vickrey, o vencedor paga o segundo maior lance. Ofertar o valor verdadeiro é estratégia fracamente dominante: ofertar menos reduz a chance de vencer sem alterar o preço pago; ofertar mais pode levar a vencer e pagar mais do que o bem vale. A alternativa (a) descreve bid shading, ótimo em leilão de primeiro preço; (c) gera &#x27;winner&#x27;s curse&#x27;.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ofertar acima do próprio valor para aumentar a chance de vencer</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ofertar a média entre seu valor e o valor esperado dos demais</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09c-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Teorema da Equivalência de Receita afirma que, sob certas condições, todos os formatos de leilão padrão geram:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O mesmo vencedor e o mesmo preço pago em cada realização</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A mesma receita esperada para o leiloeiro</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com valores privados independentes, simetria, aversão ao risco neutra e certas condições de regularidade, todos os leilões padrão (primeiro preço, segundo preço, inglês, holandês) geram a mesma receita esperada para o vendedor. O vencedor é sempre o mesmo (quem tem maior valor), mas o preço pago pode diferir em cada realização — a equivalência é em expectativa. A alternativa (a) confunde valores realizados com esperados.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O mesmo lance ótimo para cada participante</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eficiência alocativa apenas em leilões de segundo preço</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09c-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No leilão de primeiro preço com valores privados, o bid shading (ofertar abaixo do valor) é ótimo porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O participante quer minimizar seu gasto total</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ofertar o valor verdadeiro resultaria em lucro zero quando vencer, então vale a pena sacrificar alguma probabilidade de vencer por lucro positivo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No primeiro preço, o vencedor paga seu próprio lance. Ofertar $v_i$ garante lucro zero se vencer. Ao ofertar $b_i &lt; v_i$, o participante obtém lucro $v_i - b_i &gt; 0$ quando vence, ao custo de uma menor probabilidade de vitória. O lance ótimo equilibra esse trade-off. O grau de shading depende do número de competidores — com mais competidores, shading diminui.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>É ilegal ofertar o valor verdadeiro</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todos os outros participantes ofertam zero</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09c-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A &#x27;maldição do vencedor&#x27; (winner&#x27;s curse) ocorre tipicamente em leilões de:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Valores privados independentes</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Valor comum, onde o fato de ter o maior lance sugere que se superestimou o valor do objeto</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Em leilões de valor comum (ex.: leilão de direitos de exploração de petróleo), o objeto tem o mesmo valor para todos, mas cada um tem uma estimativa com ruído. O vencedor é quem teve a estimativa mais otimista, o que sistematicamente superestima o valor. Licitantes racionais antecipam isso e ajustam seus lances para baixo. Em valores privados (a), não há maldição do vencedor.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Segundo preço, onde o pagamento é sempre justo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Qualquer formato, independentemente da estrutura de valores</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap09d</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09d-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No modelo de sinalização de Spence, a educação funciona como sinal de habilidade porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A educação sempre aumenta a produtividade do trabalhador</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O custo de obter educação é menor para trabalhadores de alta habilidade (condição de single-crossing)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A sinalização funciona porque o custo do sinal é negativamente correlacionado com o tipo: trabalhadores de alta habilidade obtêm educação a custo menor. No equilíbrio separador, apenas os de alta habilidade se educam, revelando seu tipo. A alternativa (a) é irrelevante — no modelo de Spence, a educação pode ter produtividade zero; (c) eliminaria a necessidade de sinal; (d) descreve o equilíbrio pooling.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os empregadores observam diretamente a habilidade dos candidatos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todos os trabalhadores obtêm o mesmo nível de educação</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09d-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em um equilíbrio separador, diferentes tipos de agentes:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Escolhem a mesma ação, tornando impossível distingui-los</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Escolhem ações diferentes, permitindo que a parte desinformada infira o tipo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No equilíbrio separador, cada tipo escolhe uma ação distinta (ex.: nível de educação diferente), permitindo que o receptor do sinal identifique o tipo do emissor. A alternativa (a) descreve equilíbrio pooling; (c) também descreve pooling; (d) ignora que &#x27;cheap talk&#x27; sem custo não é crível.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>São agrupados e recebem o mesmo contrato</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Revelam seu tipo verbalmente antes de agir</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09d-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Equilíbrio Bayesiano Perfeito (PBE) exige:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas otimalidade das estratégias, sem restrições sobre crenças</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Que as crenças sejam consistentes com a regra de Bayes nos conjuntos de informação alcançados em equilíbrio, e que as estratégias sejam sequencialmente racionais</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O PBE combina otimalidade sequencial (cada jogador maximiza dado crenças e estratégias dos demais em cada conjunto de informação) com consistência bayesiana das crenças (atualizadas pela regra de Bayes onde possível). A alternativa (a) é insuficiente; (c) descreve jogos de informação completa; (d) é uma restrição desnecessária.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que os jogadores tenham informação completa sobre os payoffs</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Que o jogo seja de soma zero</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09d-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O risco moral (moral hazard) difere da seleção adversa porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>No risco moral, a assimetria informacional é sobre ações (pós-contrato); na seleção adversa, sobre tipos (pré-contrato)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A seleção adversa é um problema de informação oculta (hidden information) sobre características do agente antes da contratação. O risco moral é um problema de ação oculta (hidden action) após a contratação — o agente pode reduzir esforço ou tomar mais risco sem ser observado. A alternativa (b) é restritiva; (c) não é necessário; (d) contradiz a definição.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O risco moral ocorre apenas em mercados de seguros</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A seleção adversa sempre leva ao colapso total do mercado</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No risco moral, o principal conhece perfeitamente o tipo do agente e suas ações</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap09d-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O critério de Cho-Kreps (Critério de Dominância Intuitiva) refina o PBE ao:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eliminar todos os equilíbrios separadores, mantendo apenas os pooling</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Restringir crenças fora do caminho de equilíbrio, eliminando equilíbrios sustentados por crenças implausíveis sobre desvios</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Cho-Kreps restringe crenças off-path: se um desvio observado só poderia beneficiar um tipo específico (e nunca outro), a crença deve atribuir probabilidade 1 a esse tipo. Isso elimina equilíbrios pooling &#x27;ruins&#x27; e seleciona tipicamente o equilíbrio separador de menor custo. A alternativa (a) é o oposto do efeito usual; (c) descreve pooling; (d) não faz parte do conceito.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exigir que todos os tipos escolham a mesma ação</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Permitir comunicação direta entre os jogadores</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap10</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap10-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Uma função de produção $f(K,L)$ apresenta rendimentos crescentes de escala se:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$f(tK, tL) = t \cdot f(K,L)$ para todo $t &gt; 1$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$f(tK, tL) &gt; t \cdot f(K,L)$ para todo $t &gt; 1$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Rendimentos crescentes de escala significam que dobrar todos os insumos mais que dobra o produto. Formalmente, $f(tK,tL) &gt; t \cdot f(K,L)$ para $t &gt; 1$. A alternativa (a) descreve rendimentos constantes (homogeneidade de grau 1); (c) descreve rendimentos crescentes do fator trabalho, não de escala; (d) descreve substitutos perfeitos na produção.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O produto marginal do trabalho é crescente</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A TMST é constante ao longo de uma isoquanta</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap10-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Para a função Cobb-Douglas $f(K,L) = A K^\alpha L^\beta$, os rendimentos de escala são determinados por:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O valor de $A$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A soma $\alpha + \beta$: crescentes se $&gt; 1$, constantes se $= 1$, decrescentes se $&lt; 1$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Para Cobb-Douglas, $f(tK,tL) = t^{\alpha+\beta} f(K,L)$. Se $\alpha + \beta &gt; 1$, rendimentos crescentes; se $= 1$, constantes; se $&lt; 1$, decrescentes. O parâmetro $A$ (a) é um fator de produtividade que não afeta os rendimentos de escala; (c) e (d) não determinam a homogeneidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O produto $\alpha \cdot \beta$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A razão $\alpha / \beta$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap10-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Taxa Marginal de Substituição Técnica (TMST) entre capital e trabalho mede:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo de substituir uma unidade de capital por trabalho no mercado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A quantidade de capital que a firma pode dispensar ao empregar uma unidade adicional de trabalho, mantendo a produção constante</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A TMST é a inclinação da isoquanta: $\text{TMST}_{LK} = -dK/dL|_{q=\bar{q}} = \text{PMg}_L/\text{PMg}_K$. Mede a taxa à qual a firma pode trocar capital por trabalho mantendo o produto. A alternativa (c) descreve a inclinação da isocusto; (a) confunde TMST com custo de mercado; (d) é um conceito relacionado mas distinto ($\sigma$ mede a curvatura da isoquanta).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A razão entre os preços dos insumos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A elasticidade de substituição entre os insumos</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap10-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A lei dos rendimentos marginais decrescentes afirma que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Quando todos os insumos aumentam, o produto total eventualmente diminui</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Quando um insumo aumenta com os demais fixos, seu produto marginal eventualmente diminui</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A lei dos rendimentos marginais decrescentes aplica-se ao curto prazo: mantendo pelo menos um insumo fixo, o produto marginal do insumo variável eventualmente cai. Isso não diz que o produto total diminui (a) — apenas que cresce a taxas decrescentes. A alternativa (a) confunde rendimentos decrescentes do fator com rendimentos de escala; (c) não segue necessariamente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo médio é sempre crescente</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>As isoquantas se tornam retas à medida que a produção aumenta</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap10-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Uma função de produção é homotética quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os rendimentos de escala são sempre constantes</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A TMST depende apenas da razão $K/L$, não do nível de produção — as isoquantas são &#x27;cópias ampliadas&#x27; umas das outras</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Homoteticidade significa que a TMST em qualquer ponto da isoquanta depende apenas da razão capital-trabalho, não da escala. A expansão da produção ao longo de um raio a partir da origem mantém a proporção ótima dos insumos. A alternativa (a) é restritiva — funções homotéticas podem ter rendimentos variáveis; (c) descreve uma função linear nos insumos; (d) descreve substitutos perfeitos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O produto marginal de cada insumo é constante</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A elasticidade de substituição é infinita</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap11</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap11-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A diferença fundamental entre custo econômico e custo contábil é que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo econômico inclui apenas desembolsos monetários efetivos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O custo econômico inclui o custo de oportunidade dos recursos próprios (capital, tempo do empreendedor), enquanto o contábil não</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O custo econômico considera o custo de oportunidade de todos os recursos, incluindo os próprios do empresário (retorno que obteria em alternativas). O lucro contábil pode ser positivo enquanto o lucro econômico é zero ou negativo. A alternativa (a) descreve o custo contábil; (c) inverte — o econômico é pelo menos tão grande quanto o contábil.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo contábil é sempre maior que o econômico</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo econômico ignora os custos fixos</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap11-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No curto prazo, a curva de custo marginal (CMg) cruza a curva de custo variável médio (CVMe) em seu:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ponto de máximo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ponto de mínimo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Quando $\text{CMg} &lt; \text{CVMe}$, o CVMe está caindo; quando $\text{CMg} &gt; \text{CVMe}$, o CVMe está subindo. Portanto, o CMg cruza o CVMe exatamente no mínimo do CVMe. O mesmo raciocínio se aplica à relação entre CMg e CTMe. A alternativa (a) é incorreta — as curvas médias em U não têm máximo relevante neste contexto; (c) refere-se a outra propriedade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ponto de inflexão</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Intercepto vertical</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap11-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Economias de escala existem quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo marginal é crescente</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O custo médio de longo prazo é decrescente — produzir mais reduz o custo por unidade</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Economias de escala significam que o custo médio de longo prazo (CMeLP) cai à medida que a produção aumenta. Ocorrem por indivisibilidades, especialização do trabalho ou vantagens tecnológicas. A alternativa (a) é compatível com deseconomias de escala; (c) eliminaria parte das economias de escala (que vêm de diluir custos fixos); (d) implica custo médio constante (nem economias nem deseconomias).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo fixo é zero</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo total é proporcional à quantidade produzida</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap11-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No longo prazo, todos os insumos são variáveis. Isso implica que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os custos fixos de longo prazo são positivos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A curva de custo médio de longo prazo é a envoltória inferior das curvas de custo médio de curto prazo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No longo prazo, a firma escolhe a escala ótima para cada nível de produção. O CMeLP é a envoltória das curvas de CMeCP — para cada $q$, é o menor custo médio possível entre todas as escalas de planta. A alternativa (a) é falsa por definição; (c) inverte — o CMgLP é geralmente menor que o CMgCP porque há mais flexibilidade; (d) contradiz a definição de longo prazo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo marginal de longo prazo é sempre maior que o de curto prazo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A firma não pode ajustar a escala da planta</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap11-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A curva de custo total de curto prazo tem formato em S (sigmoide) porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os preços dos insumos variam com a quantidade produzida</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Inicialmente há rendimentos crescentes do fator variável (custo cresce a taxas decrescentes) e depois rendimentos decrescentes (custo cresce a taxas crescentes)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A forma em S reflete a lei dos rendimentos marginais: com pouco uso do fator variável, há ganhos de especialização (rendimentos crescentes → custo marginal decrescente); além de certo ponto, o congestionamento do fator fixo causa rendimentos decrescentes → custo marginal crescente. A alternativa (c) contradiz a definição de custos fixos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os custos fixos aumentam com a produção</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A firma sempre opera com excesso de capacidade</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap12</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap12-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A condição fundamental de maximização de lucro da firma é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Receita total igual ao custo total ($RT = CT$)</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Receita marginal igual ao custo marginal ($\text{RMg} = \text{CMg}$), com $\text{CMg}$ crescente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A firma maximiza lucro onde a receita adicional de uma unidade extra iguala o custo adicional, com a condição de segunda ordem exigindo que o CMg seja crescente nesse ponto ($\text{RMg}&#x27; &lt; \text{CMg}&#x27;$). A alternativa (a) descreve lucro zero, não maximização; (c) também descreve lucro zero no longo prazo competitivo; (d) é o ponto de eficiência produtiva, não necessariamente de lucro máximo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Preço igual ao custo médio ($p = \text{CMe}$)</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Produção no ponto de custo médio mínimo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap12-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em concorrência perfeita, a curva de oferta de curto prazo da firma individual é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Toda a curva de custo marginal</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A parte da curva de custo marginal acima do custo variável médio mínimo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A firma produz onde $p = \text{CMg}$, mas só opera se $p \geq \text{CVMe}_{\min}$ (ponto de fechamento). Abaixo desse preço, a firma fecha e a oferta é zero. A alternativa (a) inclui a parte irrelevante abaixo do CVMe mínimo; (c) não é a curva de oferta; (d) descreve a curva de demanda que a firma enfrenta, não sua oferta.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A curva de custo médio total</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Uma reta horizontal ao nível do preço de mercado</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap12-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No equilíbrio competitivo de longo prazo com livre entrada e saída, o lucro econômico de cada firma é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Positivo, pois as firmas sobreviventes são eficientes</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Zero — o preço iguala o custo médio mínimo de longo prazo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com livre entrada, lucros positivos atraem novas firmas, expandindo a oferta e reduzindo o preço até que $p = \text{CMe}_{\min}^{LP}$, eliminando os lucros econômicos. Simetricamente, prejuízos levam à saída. Lucro econômico zero não significa lucro contábil zero — inclui remuneração normal do capital. A alternativa (a) confunde lucro contábil com econômico.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Negativo para firmas marginais</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Indeterminado sem informação sobre elasticidades</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap12-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em uma indústria de custos crescentes, a curva de oferta de longo prazo é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Horizontal — o preço de equilíbrio de longo prazo é constante</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Negativamente inclinada</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Positivamente inclinada — a expansão da indústria eleva os custos dos insumos e, portanto, o preço de equilíbrio</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Em indústrias de custos crescentes, a entrada de novas firmas aumenta a demanda por insumos especializados, elevando seus preços e deslocando as curvas de custo das firmas para cima. O preço de equilíbrio de longo prazo sobe com a quantidade. A alternativa (a) descreve indústria de custos constantes; (d) descreve oferta perfeitamente inelástica.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Vertical — a quantidade ofertada é fixa no longo prazo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap12-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A decisão de fechar (shut down) no curto prazo é diferente da decisão de sair (exit) no longo prazo porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ao fechar, a firma elimina seus custos fixos; ao sair, não</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ao fechar, a firma ainda incorre em custos fixos mas evita custos variáveis; ao sair, elimina todos os custos</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No curto prazo, custos fixos são irrecuperáveis (sunk) — a firma os paga independentemente de operar ou não. A decisão de fechar compara receita com custos variáveis: fecha se $p &lt; \text{CVMe}_{\min}$. No longo prazo, todos os custos são evitáveis: a firma sai se $p &lt; \text{CMe}_{\min}^{LP}$. A alternativa (a) inverte — custos fixos são inescapáveis no curto prazo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Fechar e sair são decisões idênticas com nomes diferentes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A firma sempre prefere fechar a sair</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap13</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap13-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A incidência econômica de um imposto (quem realmente paga) depende:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exclusivamente de quem o governo designa como pagador legal</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Das elasticidades relativas de oferta e demanda — o lado mais inelástico suporta a maior parcela</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A incidência econômica independe da incidência legal (quem recolhe o tributo). O ônus recai mais sobre o lado do mercado com menor elasticidade, pois esse lado tem menor capacidade de ajustar quantidade em resposta ao preço. Se a oferta é perfeitamente elástica, o consumidor paga 100% do imposto; se a demanda é perfeitamente inelástica, idem.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas do valor absoluto do imposto</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Da eficiência do sistema de arrecadação</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap13-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O peso morto (deadweight loss) de um imposto por unidade $t$ em um mercado competitivo é aproximadamente:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Proporcional a $t$ — dobrar o imposto dobra o peso morto</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Proporcional a $t^2$ — dobrar o imposto quadruplica o peso morto</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O peso morto é a área do triângulo de Harberger, aproximadamente $\frac{1}{2} t \cdot \Delta q$. Como $\Delta q$ é proporcional a $t$, o peso morto é proporcional a $t^2$. Isso é a &#x27;regra do quadrado&#x27;: dobrar a alíquota quadruplica a perda de eficiência. A alternativa (a) subestima o dano de impostos altos; (d) é incorreta — o peso morto é sempre não negativo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Constante independentemente de $t$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Negativo quando a demanda é inelástica</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap13-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A regra de Ramsey para tributação ótima prescreve que, para minimizar o peso morto total:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todos os bens devem ser taxados com a mesma alíquota</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Bens com demanda mais inelástica devem receber alíquotas mais altas (regra da elasticidade inversa)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A regra de Ramsey mostra que o peso morto é minimizado quando as alíquotas são proporcionais ao inverso da elasticidade-preço: bens com demanda inelástica suportam alíquotas maiores porque a distorção na quantidade é menor. A alternativa (a) é subótima; (c) pode conflitar com eficiência; (d) descreve tributação corretiva (Pigou), não Ramsey.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bens de luxo devem ser isentos de impostos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas bens com externalidades negativas devem ser taxados</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap13-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um subsídio a um bem gera peso morto porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Reduz a receita do governo, o que é sempre ineficiente</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Estimula a produção além do nível eficiente — unidades cujo custo marginal excede o benefício marginal são produzidas</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Um subsídio reduz o preço efetivo, aumentando a quantidade acima do nível competitivo. As unidades adicionais têm custo social (CMg) superior ao benefício social (disposição a pagar), gerando ineficiência. O peso morto é o triângulo entre as curvas de oferta e demanda, análogo ao do imposto. A alternativa (d) inverte o efeito; (a) confunde custo fiscal com ineficiência.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Transfere renda dos pobres para os ricos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Aumenta o preço para o consumidor</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap13-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se a oferta de um bem é perfeitamente inelástica (vertical), a imposição de um imposto por unidade resulta em:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Peso morto máximo, pois toda a produção é eliminada</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Nenhum peso morto — o imposto é integralmente absorvido pelo produtor sem distorcer quantidades</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com oferta perfeitamente inelástica, a quantidade ofertada não muda com o preço. O imposto é 100% absorvido pelo produtor (preço ao consumidor não muda, preço ao produtor cai em $t$) e não há distorção na alocação, logo peso morto é zero. É um imposto sobre rendas econômicas puras. A alternativa (a) confunde inelasticidade com eliminação da produção.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Peso morto igual à receita tributária</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Divisão igualitária do ônus entre produtor e consumidor</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap14</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap14-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Na Caixa de Edgeworth, a curva de contrato conecta todas as alocações em que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os dois consumidores têm a mesma utilidade</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>As taxas marginais de substituição dos dois consumidores são iguais ($\text{TMS}_A = \text{TMS}_B$)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A curva de contrato é o conjunto de alocações Pareto-eficientes: não é possível melhorar um consumidor sem piorar o outro. Isso ocorre quando as curvas de indiferença são tangentes, ou seja, $\text{TMS}_A = \text{TMS}_B$. A alternativa (a) confunde eficiência com equidade; (c) descreve um ponto específico; (d) não define a curva de contrato.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A dotação inicial é igualmente dividida</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O preço de ambos os bens é igual</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap14-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Primeiro Teorema Fundamental do Bem-Estar afirma que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todo equilíbrio competitivo é equitativo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Todo equilíbrio walrasiano, sob certas condições, é Pareto-eficiente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O Primeiro Teorema afirma que mercados competitivos em equilíbrio geram alocações eficientes (sem desperdício). Não diz nada sobre equidade (a) — uma alocação onde um agente tem tudo e o outro nada pode ser eficiente. A alternativa (c) descreve o Segundo Teorema; (d) é o oposto da implicação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Toda alocação Pareto-eficiente pode ser alcançada como equilíbrio competitivo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O governo deve intervir para alcançar eficiência</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap14-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Segundo Teorema Fundamental do Bem-Estar afirma que, sob preferências convexas:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O equilíbrio competitivo é único</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Qualquer alocação Pareto-eficiente pode ser descentralizada como equilíbrio competitivo, desde que se façam transferências lump-sum adequadas das dotações</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O Segundo Teorema separa eficiência de equidade: pode-se primeiro redistribuir as dotações iniciais (lump-sum) e depois deixar o mercado operar, alcançando qualquer ponto da curva de contrato como equilíbrio competitivo. A alternativa (a) não é garantida; (c) é uma consequência parcial, mas não o enunciado; (d) contradiz o teorema — transferências lump-sum são suficientes.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A distribuição de renda é irrelevante para a eficiência</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Impostos distorcivos são necessários para alcançar equidade</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap14-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Lei de Walras estabelece que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Em equilíbrio geral, todos os mercados sempre se equilibram</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Se existem $n$ mercados e $n-1$ estão em equilíbrio, o $n$-ésimo também está</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A Lei de Walras decorre da identidade orçamentária dos agentes: a soma dos excessos de demanda, ponderada pelos preços, é identicamente zero. Portanto, se $n-1$ mercados estão equilibrados, o excesso de demanda no $n$-ésimo é automaticamente zero. A alternativa (a) descreve o equilíbrio, não a lei; (d) é verdadeira em valor mas não é o enunciado preciso da lei.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os preços de equilíbrio são sempre positivos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A oferta agregada é sempre igual à demanda agregada</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap14-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Uma alocação é Pareto-eficiente se:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Maximiza a soma das utilidades de todos os agentes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cada agente recebe exatamente o que merece segundo seus méritos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Não é possível melhorar a situação de nenhum agente sem piorar a de pelo menos um outro</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Eficiência de Pareto é um critério mínimo: não há &#x27;dinheiro na mesa&#x27;. Não implica equidade (a pessoa mais rica do mundo e um miserável podem estar em uma alocação Pareto-eficiente). A alternativa (a) assume comparabilidade cardinal e utilitarismo; (b) descreve justiça distributiva; (d) confunde eficiência com laissez-faire.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O governo não intervém no mercado</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap15</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap15-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O monopolista maximiza lucro igualando receita marginal ao custo marginal. A receita marginal é menor que o preço porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O monopolista opera com custos mais altos que firmas competitivas</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Para vender uma unidade adicional, o monopolista deve reduzir o preço de todas as unidades, gerando um efeito negativo sobre a receita das unidades inframarginais</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Diferentemente da firma competitiva (que é tomadora de preço), o monopolista enfrenta toda a curva de demanda. Vender mais exige reduzir o preço, o que diminui a receita das unidades já vendidas. Assim, $\text{RMg} = p + q \cdot dp/dq = p(1 + 1/\varepsilon_d) &lt; p$. A alternativa (d) descreve concorrência perfeita, não monopólio.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O governo taxa a receita do monopolista</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A demanda pelo bem do monopolista é perfeitamente elástica</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap15-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O índice de Lerner mede o poder de mercado como:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$L = (p - \text{CMe})/p$</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>$L = (p - \text{CMg})/p = -1/\varepsilon_d$</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O índice de Lerner $L = (p - \text{CMg})/p$ mede o markup percentual sobre o custo marginal. Em equilíbrio, $L = -1/\varepsilon_d$: quanto menos elástica a demanda, maior o poder de mercado. Em concorrência perfeita, $L = 0$ ($p = \text{CMg}$). A alternativa (a) usa custo médio em vez de marginal; (c) é uma medida de lucratividade, não de poder de mercado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$L = \text{lucro total}/\text{receita total}$</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>$L = \text{CMg}/p$</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap15-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Na discriminação de preços de primeiro grau (perfeita), o monopolista:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cobra o mesmo preço de todos os consumidores</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cobra de cada consumidor exatamente sua disposição a pagar, extraindo todo o excedente do consumidor</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Na discriminação perfeita, o monopolista conhece a disposição a pagar de cada consumidor e cobra preços personalizados. O excedente do consumidor é zero e todo o excedente vai para o monopolista. Curiosamente, a quantidade produzida é eficiente (igual à competitiva) — não há peso morto, embora a distribuição seja extremamente desigual. A alternativa (d) descreve o monopólio sem discriminação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Divide os consumidores em dois grupos e cobra preços diferentes</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Reduz a quantidade abaixo do nível competitivo</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap15-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um monopólio natural ocorre quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A firma detém uma patente sobre o produto</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O custo médio é decrescente em toda a faixa relevante de demanda, de modo que uma única firma atende o mercado a custo menor do que duas ou mais</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O monopólio natural surge de economias de escala extremas: subaditividade de custos na faixa relevante. Duplicar a infraestrutura (ex.: rede elétrica, saneamento) seria socialmente custoso. A alternativa (a) descreve monopólio por patente; (c) descreve monopólio legal; (d) descreve monopólio por controle de recurso — todos são fontes de monopólio, mas não &#x27;natural&#x27;.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O governo concede exclusividade legal à firma</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A firma possui o único recurso natural necessário à produção</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap15-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A regulação por preço-teto (price cap) de um monopólio natural, fixando $p = \text{CMe}$, resulta em:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Lucro econômico positivo para a firma</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Produção eficiente ao nível de custo marginal</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Lucro econômico zero (second-best), mas quantidade inferior ao ótimo de primeiro melhor ($p = \text{CMg}$)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Fixar $p = \text{CMe}$ garante viabilidade financeira (lucro zero) mas a quantidade é menor que a de $p = \text{CMg}$. A alternativa (d) descreve o que ocorre quando se tenta impor $p = \text{CMg}$ em monopólio natural com custos médios decrescentes — nesse caso, $\text{CMg} &lt; \text{CMe}$ e a firma tem prejuízo. A regulação por CMe é o second-best que evita esse problema.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Prejuízo para a firma, exigindo subsídio</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap16</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap16-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O que diferencia o oligopólio da concorrência perfeita e do monopólio é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O número de consumidores no mercado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A interdependência estratégica — o lucro de cada firma depende das decisões das rivais</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A característica definidora do oligopólio é a interdependência estratégica: cada firma deve considerar as reações das rivais ao tomar decisões. Na concorrência perfeita, as firmas são tão pequenas que ignoram as demais; no monopólio, não há rival. A alternativa (c) não é necessária — pode haver oligopólio com diferenciação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A homogeneidade dos produtos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A ausência de barreiras à entrada</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap16-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No modelo de Bertrand com produtos diferenciados, o equilíbrio de Nash resulta em preços que são:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Iguais ao custo marginal, como no Bertrand homogêneo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Acima do custo marginal, pois a diferenciação confere algum poder de mercado a cada firma</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A diferenciação de produto resolve o Paradoxo de Bertrand: cada firma enfrenta uma demanda residual com alguma elasticidade finita, permitindo markup positivo. Quanto maior a diferenciação, maior o poder de mercado e mais longe do resultado competitivo. A alternativa (a) descreve o caso limite de homogeneidade perfeita; (c) só ocorreria em colusão perfeita.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Iguais ao preço de monopólio</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Indeterminados</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap16-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A sustentabilidade de um cartel (colusão) em oligopólio é dificultada porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os custos de produção são muito baixos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cada membro tem incentivo individual a trair o acordo, produzindo mais que a cota para obter lucros maiores no curto prazo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O cartel enfrenta o clássico Dilema dos Prisioneiros: o lucro conjunto é maximizado com restrição de produção, mas cada firma individualmente lucra mais ao desviar (produzir acima da cota enquanto os demais restringem). A sustentabilidade depende de mecanismos de punição, transparência e paciência (Folk Theorem). A alternativa (d) ignora que muitos cartéis operam impunemente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os consumidores formam cartéis em resposta</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A legislação antitruste é sempre eficaz em impedir cartéis</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap16-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No modelo de Stackelberg (líder-seguidor), a firma líder obtém lucro maior que no Cournot porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Tem custos de produção menores</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Compromete-se com uma quantidade maior antes da seguidora, explorando a vantagem do primeiro movimento</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>No Stackelberg, a líder move primeiro e se compromete com uma quantidade elevada. A seguidora, observando isso, acomoda-se produzindo menos. A líder antecipa essa reação e explora a vantagem estratégica. O lucro da líder é maior e o da seguidora menor que no Cournot simétrico. A demanda é a mesma (d) — o que muda é a estrutura de decisão.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ambas as firmas cooperam no Stackelberg</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A demanda de mercado é maior no Stackelberg</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap16-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A análise antitruste de fusões horizontais entre oligopolistas tipicamente avalia se a fusão:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Aumenta o número de firmas no mercado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Gera poder de mercado unilateral ou coordenado que prejudica consumidores, considerando possíveis eficiências compensatórias</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A análise antitruste (ex.: pelo CADE no Brasil) avalia se a concentração resultante permite à firma fusionada elevar preços ou facilitar colusão tácita, ponderando eventuais eficiências (redução de custos, sinergias). A alternativa (a) é o oposto — fusões reduzem o número de firmas; (c) é parcial; (d) é irrelevante para a análise concorrencial.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Reduz os custos fixos da firma resultante</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>É aprovada unanimemente pelos acionistas</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap17</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap17-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No modelo trabalho-lazer, um aumento salarial tem efeito ambíguo sobre a oferta de trabalho porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O trabalhador não observa seu salário em tempo real</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O efeito substituição (lazer mais caro → trabalha mais) pode ser compensado pelo efeito renda (mais rico → quer mais lazer)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Quando o salário sobe, o custo de oportunidade do lazer aumenta (efeito substituição → mais trabalho), mas o poder de compra também aumenta (efeito renda → mais lazer, se lazer é bem normal). Quando o efeito renda domina, a curva de oferta de trabalho se torna backward-bending (negativamente inclinada). As demais alternativas não explicam a ambiguidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A produtividade marginal do trabalhador sempre cai com mais horas</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O imposto de renda anula completamente o aumento salarial</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap17-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O monopsônio no mercado de trabalho é caracterizado por:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Muitos empregadores competindo pelos mesmos trabalhadores</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Um único (ou poucos) empregador(es) com poder de mercado, que paga salário abaixo do produto marginal do trabalho</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O monopsonista enfrenta uma curva de oferta de trabalho positivamente inclinada: para contratar mais trabalhadores, deve elevar o salário de todos. O custo marginal do trabalho excede o salário, levando a emprego e salário menores que o competitivo. A alternativa (d) descreve o mercado competitivo; (c) descreve poder do lado do trabalhador, não do empregador.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Sindicatos que fixam salários acima do equilíbrio competitivo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Salários iguais ao produto marginal em equilíbrio</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap17-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A curva de oferta de trabalho backward-bending implica que, a partir de certo salário:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O trabalhador oferece mais horas de trabalho</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O trabalhador reduz suas horas de trabalho quando o salário sobe ainda mais</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Na região backward-bending, o efeito renda domina o efeito substituição: salários mais altos levam o trabalhador a &#x27;comprar&#x27; mais lazer, reduzindo horas trabalhadas. Evidência empírica mostra isso especialmente para trabalhadores de alta renda e para a oferta de trabalho secundária no domicílio.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A demanda por trabalho se torna infinitamente elástica</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O mercado de trabalho entra em equilíbrio permanente</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap17-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A elasticidade de Frisch mede a resposta da oferta de trabalho a:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Variações permanentes no salário</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Variações temporárias no salário, mantendo constante a utilidade marginal da riqueza</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A elasticidade de Frisch isola a resposta a variações salariais temporárias (substituição intertemporal do trabalho), mantendo fixa a utilidade marginal da riqueza. É central para modelos macroeconômicos de ciclos reais. Para variações permanentes (a), tanto efeito renda quanto substituição atuam; a Frisch captura apenas a substituição intertemporal.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Variações no nível geral de preços</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mudanças na legislação trabalhista</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap17-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A discriminação salarial estatística ocorre quando empregadores:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pagam salários diferentes a trabalhadores igualmente produtivos por preconceito pessoal</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Usam características observáveis do grupo (gênero, raça) como proxy para produtividade esperada, mesmo que isso penalize indivíduos produtivos do grupo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Na discriminação estatística, empregadores racionais usam informação imperfeita: quando não podem observar a produtividade individual, usam médias do grupo como estimativa. Isso pode perpetuar desigualdades mesmo sem preconceito pessoal (a). A alternativa (a) descreve discriminação por preferência (taste-based, modelo de Becker).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Oferecem salários iguais a todos os trabalhadores independentemente da produtividade</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Remuneram trabalhadores exclusivamente por desempenho individual</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap18</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap18-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Valor Presente Líquido (VPL) de um projeto de investimento é negativo quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O projeto gera fluxos de caixa positivos em todos os períodos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A soma dos fluxos de caixa futuros descontados à taxa de juros é menor que o investimento inicial</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O VPL é $\sum_{t=0}^{T} \frac{FC_t}{(1+r)^t}$. Se esse valor é negativo, o custo inicial supera o valor presente dos benefícios futuros — o projeto destrói valor à taxa de desconto $r$. A alternativa (a) não garante VPL positivo se os fluxos forem pequenos; (c) tornaria o VPL igual à soma simples dos fluxos; (d) não determina o sinal.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A taxa de juros é zero</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O projeto tem horizonte infinito</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap18-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Taxa Interna de Retorno (TIR) é a taxa de desconto que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Maximiza o VPL do projeto</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Torna o VPL igual a zero</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A TIR é definida como a taxa $r^*$ tal que $\text{VPL}(r^*) = 0$. Se a TIR excede o custo de capital, o projeto é viável. A alternativa (a) confunde — o VPL é maximizado quando $r = 0$; (c) descreve o critério de decisão, não a definição; (d) não tem relação com a TIR.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Iguala a taxa de juros de mercado</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Minimiza o risco do investimento</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap18-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A regra de Hotelling para recursos não renováveis afirma que, em equilíbrio:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O preço do recurso deve cair ao longo do tempo para estimular o consumo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A renda do recurso (preço menos custo de extração) deve crescer à taxa de juros</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A regra de Hotelling é a condição de arbitragem intertemporal: o proprietário deve ser indiferente entre extrair hoje e investir a receita ou esperar e extrair amanhã. Isso exige que a renda líquida do recurso cresça à taxa de juros. Se crescesse mais rápido, valeria esperar; se mais devagar, extrair tudo hoje. A alternativa (c) seria racional apenas se a renda nunca crescesse.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O recurso deve ser extraído o mais rápido possível</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O preço é determinado exclusivamente pelo custo de extração</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap18-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um agente com desconto exponencial e fator $\delta = 0{,}95$ por período valoriza R\\$100 daqui a 2 períodos como:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>R$100,00</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>R$95,00</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>R$90,25</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com desconto exponencial, o valor presente de $X$ em $t$ períodos é $\delta^t \cdot X = (0{,}95)^2 \times 100 = 0{,}9025 \times 100 = 90{,}25$. A alternativa (b) desconta apenas um período; (d) aplica taxa incorreta; (a) ignora o desconto.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>R$85,00</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap18-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A equação de Fisher $(1+i) = (1+r)(1+\pi)$ relaciona taxa nominal $i$, taxa real $r$ e inflação $\pi$. Se $i = 10\%$ e $\pi = 4\%$, a taxa real aproximada é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>14%</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>6%</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Pela aproximação de Fisher, $r \approx i - \pi = 10\% - 4\% = 6\%$. O valor exato é $r = (1{,}10/1{,}04) - 1 \approx 5{,}77\%$, próximo de 6%. A alternativa (a) soma em vez de subtrair; (c) ignora a inflação; (d) confunde taxa real com inflação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>10%</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>4%</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap19</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap19-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A seleção adversa ocorre quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O agente toma ações ocultas após a contratação</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A parte desinformada atrai desproporcionalmente os tipos &#x27;ruins&#x27; porque não consegue distinguir tipos antes da contratação</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Seleção adversa é um problema pré-contratual de informação oculta (hidden information): o principal não consegue distinguir tipos bons de ruins, oferece um contrato médio, e os bons se autosselecionam para fora. O caso clássico é o mercado de carros usados de Akerlof. A alternativa (a) descreve risco moral (moral hazard).</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O principal observa perfeitamente as ações do agente</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ambas as partes têm informação completa</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap19-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No modelo principal-agente com risco moral, o contrato ótimo tipicamente envolve:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Salário fixo, independente do resultado, para eliminar o risco do agente</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Remuneração integralmente variável, proporcional ao resultado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Um trade-off entre incentivos (remuneração variável) e seguro (salário fixo), dependendo da aversão ao risco do agente</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com risco moral, o principal quer motivar esforço (pagamento variável) mas o agente avesso ao risco prefere salário fixo (seguro). O contrato ótimo equilibra incentivos e seguro. Com agente neutro ao risco, a solução é &#x27;vender a firma&#x27; (100% variável); com agente infinitamente avesso ao risco, tende a salário fixo. A alternativa (a) não provê incentivos; (b) impõe risco excessivo ao agente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Pagamento igual para todos os agentes, independentemente do esforço</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap19-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O mecanismo de screening difere da sinalização porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No screening, é o lado informado que toma a iniciativa; na sinalização, o desinformado</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>No screening, é o lado desinformado que desenha o menu de contratos; na sinalização, o lado informado escolhe o sinal</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Na sinalização (Spence), o agente informado envia um sinal custoso (ex.: educação). No screening (Rothschild-Stiglitz), o principal desinformado oferece um menu de contratos desenhado para que os tipos se autosselecionem (ex.: franquias diferentes em seguros). A alternativa (a) inverte os papéis; (c) ignora a diferença fundamental na iniciativa.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Screening e sinalização são sinônimos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O screening só funciona em mercados de trabalho</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap19-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No mercado de seguros com seleção adversa, se a seguradora oferece uma única apólice ao prêmio médio:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Todos os tipos compram e o mercado funciona eficientemente</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Os tipos de baixo risco saem do mercado (prêmio alto demais para eles), piorando o pool e potencialmente levando ao colapso (espiral adversa)</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com informação assimétrica, o prêmio médio é alto demais para os bons riscos, que se autosselecionam para fora. O pool piora, o prêmio sobe, mais bons riscos saem — espiral adversa que pode destruir o mercado. É a lógica dos &#x27;lemons&#x27; de Akerlof aplicada a seguros. A alternativa (c) inverte — os altos riscos adoram o prêmio médio; (a) descreve o caso com informação simétrica.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os tipos de alto risco saem do mercado</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O lucro da seguradora é maximizado</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap19-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A restrição de compatibilidade de incentivos em um contrato de screening exige que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O agente aceite participar do contrato (utilidade ≥ reserva)</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cada tipo de agente prefira o contrato desenhado para seu tipo em vez do contrato desenhado para outro tipo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A restrição de compatibilidade de incentivos (IC) garante autorevelação: o tipo alto escolhe o contrato do tipo alto e vice-versa. A alternativa (a) descreve a restrição de participação (IR), que é necessária mas diferente; (c) ignora as restrições; (d) eliminaria a possibilidade de separação.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O principal maximize seu lucro sem restrições</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os pagamentos sejam iguais para todos os tipos</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap20</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap20-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Uma externalidade negativa de produção faz com que o mercado livre produza:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Menos que o nível socialmente ótimo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exatamente o nível socialmente ótimo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mais que o nível socialmente ótimo, pois o custo social excede o custo privado</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com externalidade negativa, o custo social marginal (CMg privado + custo externo) excede o custo privado. O mercado iguala preço ao custo privado, produzindo além do ótimo social (onde preço = custo social marginal). As unidades entre os dois equilíbrios geram perda de bem-estar líquida. A alternativa (a) descreve externalidade positiva.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Zero unidades do bem</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap20-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O Teorema de Coase afirma que, na ausência de custos de transação:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O governo deve sempre intervir para corrigir externalidades</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A negociação entre as partes levará ao resultado eficiente, independentemente da alocação inicial dos direitos de propriedade</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Coase mostrou que, se os direitos de propriedade são bem definidos e os custos de transação são zero, as partes negociarão até eliminar a ineficiência, independentemente de quem detém o direito. A alocação final de recursos é eficiente; o que muda é a distribuição de renda. A alternativa (a) é o oposto da implicação; (c) é falsa — a alocação de direitos afeta a distribuição, não a eficiência.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os direitos de propriedade não importam para a distribuição de renda</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Externalidades nunca existem</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap20-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O imposto pigouviano ótimo sobre uma externalidade negativa deve ser igual a:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo total da externalidade</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O custo marginal externo avaliado no nível de produção socialmente ótimo</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>O imposto de Pigou iguala $t = \text{CMg externo}(q^*)$, avaliado na quantidade ótima. Isso internaliza a externalidade, fazendo o produtor enfrentar o custo social completo. A alternativa (a) confunde custo total com marginal; (c) e (d) não têm relação com a externalidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O lucro do poluidor</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo marginal privado de produção</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap20-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Um bem público puro é caracterizado por:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ser produzido exclusivamente pelo governo</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Não rivalidade no consumo e não exclusão</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Não rivalidade significa que o consumo de um agente não reduz a disponibilidade para outros; não exclusão significa que é impossível (ou muito custoso) impedir o consumo de quem não paga. Exemplos: defesa nacional, iluminação pública. A alternativa (a) confunde provisão com propriedade definidora; (c) descreve recurso comum; (d) descreve bem de clube.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Rivalidade no consumo mas não exclusão</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Não rivalidade mas exclusão possível</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap20-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A condição de Samuelson para provisão ótima de um bem público estabelece que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cada consumidor deve pagar o mesmo valor pelo bem público</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A soma das disposições marginais a pagar de todos os consumidores deve igualar o custo marginal de provisão</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Para bem público, a demanda social é a soma vertical (não horizontal) das demandas individuais: $\sum_i \text{BMg}_i = \text{CMg}$. Isso reflete que todos consomem a mesma quantidade simultaneamente. A alternativa (a) confunde com tributação uniforme; (c) ignora custos; (d) descreve o problema do carona, não a condição de ótimo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O bem público deve ser produzido até que o custo marginal seja zero</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A provisão ótima é sempre zero, pois ninguém paga voluntariamente</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap21</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap21-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Bens de informação (software, música, conteúdo digital) apresentam estrutura de custos peculiar porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Seus custos fixos e marginais são ambos muito altos</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O custo fixo de criação é alto mas o custo marginal de reprodução é próximo de zero</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A produção da &#x27;primeira cópia&#x27; (custo fixo) é cara — compor uma música, desenvolver software. Mas cada cópia adicional custa praticamente zero (download, streaming). Isso gera economias de escala extremas e tendência a monopólio natural. A alternativa (a) contradiz a natureza digital; (d) é absurda — não há escassez na reprodução digital.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Não possuem custos fixos — a produção é inteiramente variável</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo marginal é crescente devido à escassez digital</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap21-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Externalidades de rede (efeitos de rede) ocorrem quando:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O custo de produção cai com o número de usuários</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O valor do produto para cada usuário aumenta com o número total de usuários na rede</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Efeitos de rede significam que a utilidade de um usuário é função crescente da base instalada: o telefone é mais valioso quanto mais pessoas o possuem. Isso gera dinâmicas de winner-takes-all e pode criar lock-in. A alternativa (a) descreve economias de escala na produção, não externalidade de rede; (c) descreve congestionamento (externalidade negativa); (d) descreve estratégia de preços.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A rede de internet fica mais lenta com mais usuários</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A firma reduz o preço para atrair mais clientes</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap21-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mercados de dois lados (two-sided markets/plataformas) são caracterizados por:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Apenas dois agentes participando da transação</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Externalidades cruzadas entre dois grupos de usuários, intermediados por uma plataforma que internaliza essas externalidades via estrutura de preços</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Plataformas como cartões de crédito (lojistas e consumidores), Uber (motoristas e passageiros) ou marketplaces conectam dois grupos cujo valor depende da participação do outro lado. A plataforma subsidia o lado mais sensível a preço para maximizar efeitos de rede cruzados. A alternativa (d) é tipicamente falsa — a assimetria de preços é uma característica central.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Competição entre exatamente duas firmas</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Preços iguais para ambos os lados</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap21-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O problema de lock-in tecnológico é agravado por:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Baixos custos de troca (switching costs) entre plataformas</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Altos custos de troca, efeitos de rede e incompatibilidade entre sistemas</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Lock-in ocorre quando o custo de migrar para uma alternativa é proibitivo: dados incompatíveis, aprendizado específico, perda de rede de contatos. Efeitos de rede reforçam o lock-in porque sair significa perder as externalidades. A alternativa (a) facilitaria a troca, reduzindo lock-in; (c) é uma política para combater lock-in.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Regulação governamental que garante interoperabilidade</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ausência de economias de escala</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap21-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Na economia de dados e plataformas digitais, a precificação pelo custo marginal (próximo de zero) é problemática porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Geraria receita insuficiente para cobrir os altos custos fixos de criação e manutenção da plataforma</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Com custo marginal próximo de zero, a precificação eficiente ($p = \text{CMg} \approx 0$) não cobre os custos fixos, inviabilizando o negócio. É o dilema fundamental dos bens de informação: eficiência alocativa exige preço zero, mas viabilidade econômica exige preço positivo. Modelos alternativos incluem bundling, freemium, publicidade e assinatura.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Levaria a preços excessivamente altos</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>É proibida pela legislação de concorrência</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os consumidores não aceitam pagar preço zero</p>]]></text>
+    </answer>
+  </question>
+  <question type="category">
+    <category><text>$course$/Microeconomia/Cap22</text></category>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap22-Q1</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O problema fundamental que motiva a economia experimental é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A falta de dados econômicos no mundo real</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A endogeneidade: em dados observacionais, correlação não implica causalidade</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Em dados observacionais, a variável de interesse (e.g., salário mínimo) é correlacionada com fatores não observados (e.g., condições econômicas locais) que também afetam o resultado (emprego). A randomização — seja em laboratório, campo ou por acidente histórico — resolve esse problema ao tornar o tratamento ortogonal aos fatores confundidores. As alternativas (a), (c) e (d) são problemas reais mas não são *o* problema fundamental que a economia experimental resolve.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A impossibilidade de medir variáveis econômicas com precisão</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A complexidade dos modelos teóricos</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap22-Q2</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A teoria do valor induzido de Vernon Smith funciona porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O pesquisador descobre as preferências verdadeiras dos participantes</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>O pesquisador controla as preferências dos participantes via pagamentos monetários reais</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>A teoria do valor induzido não tenta descobrir preferências &quot;verdadeiras&quot; — ela as *cria* por meio de incentivos monetários. Se o pesquisador define que o comprador recebe \(v_i - p\) ao comprar, então o comprador se comporta *como se* tivesse valor \(v_i\), independentemente de suas preferências &quot;reais&quot; pelo bem. Isso permite construir curvas de oferta e demanda conhecidas e testar se o mecanismo de mercado as iguala. A alternativa (c) é falsa — muitos experimentos mostram desvios da racionalidade.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os participantes sempre se comportam racionalmente em laboratório</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os resultados de laboratório sempre se generalizam para o mundo real</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap22-Q3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>No experimento de Gneezy e Rustichini (2000) sobre multas em creches, os atrasos aumentaram após a introdução da multa porque:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A multa era muito alta e os pais ficaram revoltados</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A multa transformou uma obrigação moral em transação de mercado, destruindo a norma social</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Antes da multa, o atraso era uma violação de norma social (&quot;não é correto incomodar os funcionários&quot;). A introdução da multa reframou o atraso como uma transação comercial (&quot;estou pagando pelo direito de atrasar&quot;). Como o incentivo financeiro era menor que o custo da inconveniência de chegar no horário, os atrasos aumentaram. Quando a multa foi removida, a norma social não retornou — o efeito foi irreversível.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os funcionários da creche passaram a liberar as crianças mais cedo</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os pais não foram informados sobre a multa</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap22-Q4</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A principal diferença entre um RCT e um experimento natural é:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O RCT usa dados reais e o experimento natural usa dados simulados</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>No RCT, o pesquisador controla a aleatorização; no experimento natural, a variação exógena é fornecida pela história ou pela política</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Em um RCT, o pesquisador decide quem recebe o tratamento (por sorteio). Em um experimento natural, a variação é fornecida por eventos exógenos — como a mudança do salário mínimo em New Jersey mas não na Pensilvânia (Card e Krueger, 1994) ou o trimestre de nascimento que afeta anos de escolaridade (Angrist e Krueger, 1991). A alternativa (c) é incorreta: um RCT mal desenhado pode ser menos confiável que um experimento natural bem explorado.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>O RCT é sempre mais confiável que o experimento natural</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Experimentos naturais só existem em ciências naturais</p>]]></text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name><text>Cap22-Q5</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A crise de replicação em economia experimental refere-se ao fato de que:</p>]]></text>
+    </questiontext>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nenhum experimento econômico foi replicado com sucesso</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cerca de 39% dos estudos testados por Camerer et al. (2016) não replicaram, levantando preocupações sobre viés de publicação e práticas questionáveis de pesquisa</p>]]></text>
+      <feedback format="html"><text><![CDATA[<p>Camerer et al. (2016) tentaram replicar 18 experimentos de laboratório publicados em periódicos top e obtiveram sucesso em apenas 11 (61%). As causas incluem viés de publicação (periódicos preferem resultados significativos), p-hacking (testar múltiplas especificações), e amostras pequenas. A profissão respondeu com pré-registro de hipóteses, relatórios registrados e compartilhamento obrigatório de dados e código.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Os economistas se recusam a compartilhar seus dados</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Experimentos em economia são mais caros que em outras ciências</p>]]></text>
+    </answer>
+  </question>
+</quiz>

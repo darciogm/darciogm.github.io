@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph + HTML
+  Reason: Normal form game solver with editable payoff matrix, Nash equilibrium
+  detection (pure and mixed), preset classic games.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriz de Payoffs e Equilíbrio de Nash</title>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.main-container { max-width: 750px; margin: 0 auto; padding-bottom: 2rem; }
+
+    .size-toggle { text-align: center; margin-bottom: 0.8rem; }
+    .size-toggle button {
+      padding: 0.4rem 1rem; margin: 0 0.3rem; font-family: inherit; font-size: 0.85rem;
+      border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff;
+    }
+    .size-toggle button.active { background: #C8102E; color: #fff; border-color: #C8102E; }
+
+    .preset-group { text-align: center; margin-bottom: 0.8rem; }
+    .preset-group button {
+      padding: 0.3rem 0.6rem; margin: 0.2rem; font-family: inherit; font-size: 0.78rem;
+      border: 1px solid #1565c0; border-radius: 4px; cursor: pointer;
+      background: #fff; color: #1565c0;
+    }
+    .preset-group button:hover { background: #1565c0; color: #fff; }
+
+    table.payoff-matrix {
+      border-collapse: collapse; margin: 0 auto 1rem auto;
+    }
+    table.payoff-matrix th, table.payoff-matrix td {
+      border: 1px solid #ccc; padding: 0.3rem; text-align: center; min-width: 80px;
+    }
+    table.payoff-matrix th { background: #f0f0f0; font-size: 0.85rem; }
+    table.payoff-matrix td { position: relative; }
+    table.payoff-matrix td.ne-cell { background: #fff3cd; }
+    table.payoff-matrix td.dom-cell { background: #e8f5e9; }
+    .payoff-input {
+      width: 32px; text-align: center; border: 1px solid #ddd; border-radius: 3px;
+      font-family: inherit; font-size: 0.85rem; padding: 0.2rem;
+    }
+    .payoff-pair { font-size: 0.85rem; }
+    .p1-val { color: #C8102E; font-weight: 700; }
+    .p2-val { color: #1565c0; font-weight: 700; }
+
+    .info-box {
+      padding: 0.8rem; background: #f8f8f8; border: 1px solid #ddd; border-radius: 4px;
+      font-size: 0.85rem; line-height: 1.8; margin-top: 0.5rem;
+    }
+    .btn-solve {
+      display: block; width: 200px; margin: 0.8rem auto;
+      padding: 0.5rem; background: #C8102E; color: #fff; border: none;
+      border-radius: 4px; cursor: pointer; font-size: 0.9rem; font-family: inherit;
+    }
+    .btn-solve:hover { background: #9a0c23; }
+    .btn-reset {
+      display: block; width: 200px; margin: 0.3rem auto;
+      padding: 0.4rem; background: #666; color: #fff; border: none;
+      border-radius: 4px; cursor: pointer; font-size: 0.82rem; font-family: inherit;
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="main-container">
+
+    <div class="size-toggle">
+      <button class="active" id="btn-2x2" onclick="setSize(2)">2 x 2</button>
+      <button id="btn-3x3" onclick="setSize(3)">3 x 3</button>
+    </div>
+
+    <div class="preset-group">
+      <button onclick="loadPreset('pd')">Dilema dos Prisioneiros</button>
+      <button onclick="loadPreset('bos')">Batalha dos Sexos</button>
+      <button onclick="loadPreset('hd')">Hawk-Dove</button>
+      <button onclick="loadPreset('mp')">Matching Pennies</button>
+      <button onclick="loadPreset('rps')">Pedra-Papel-Tesoura</button>
+      <button onclick="loadPreset('coord3')">Coordenação 3x3</button>
+    </div>
+
+    <div id="matrix-container"></div>
+
+    <button class="btn-solve" onclick="solve()">Resolver</button>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+
+    <div class="info-box" id="info">Clique em <strong>Resolver</strong> para encontrar equilíbrios.</div>
+  </div>
+
+  <script>
+    var N = 2; // matrix size
+    var payoffs = []; // payoffs[i][j] = {a: p1payoff, b: p2payoff}
+
+    var presets = {
+      pd: {
+        n: 2,
+        names1: ['Cooperar', 'Trair'], names2: ['Cooperar', 'Trair'],
+        data: [[{a:-1,b:-1},{a:-10,b:0}],[{a:0,b:-10},{a:-5,b:-5}]]
+      },
+      bos: {
+        n: 2,
+        names1: ['Futebol', 'Cinema'], names2: ['Futebol', 'Cinema'],
+        data: [[{a:3,b:1},{a:0,b:0}],[{a:0,b:0},{a:1,b:3}]]
+      },
+      hd: {
+        n: 2,
+        names1: ['Hawk', 'Dove'], names2: ['Hawk', 'Dove'],
+        data: [[{a:-1,b:-1},{a:4,b:0}],[{a:0,b:4},{a:2,b:2}]]
+      },
+      mp: {
+        n: 2,
+        names1: ['Cara', 'Coroa'], names2: ['Cara', 'Coroa'],
+        data: [[{a:1,b:-1},{a:-1,b:1}],[{a:-1,b:1},{a:1,b:-1}]]
+      },
+      rps: {
+        n: 3,
+        names1: ['Pedra', 'Papel', 'Tesoura'], names2: ['Pedra', 'Papel', 'Tesoura'],
+        data: [
+          [{a:0,b:0},{a:-1,b:1},{a:1,b:-1}],
+          [{a:1,b:-1},{a:0,b:0},{a:-1,b:1}],
+          [{a:-1,b:1},{a:1,b:-1},{a:0,b:0}]
+        ]
+      },
+      coord3: {
+        n: 3,
+        names1: ['A', 'B', 'C'], names2: ['A', 'B', 'C'],
+        data: [
+          [{a:3,b:3},{a:0,b:0},{a:0,b:0}],
+          [{a:0,b:0},{a:2,b:2},{a:0,b:0}],
+          [{a:0,b:0},{a:0,b:0},{a:1,b:1}]
+        ]
+      }
+    };
+
+    var stratNames1 = [], stratNames2 = [];
+
+    function setSize(n) {
+      N = n;
+      document.getElementById('btn-2x2').classList.toggle('active', n===2);
+      document.getElementById('btn-3x3').classList.toggle('active', n===3);
+      if (n === 3) { loadPreset('rps'); return; }
+      initMatrix();
+    }
+
+    function initMatrix() {
+      payoffs = [];
+      stratNames1 = []; stratNames2 = [];
+      for (var i = 0; i < N; i++) {
+        payoffs[i] = [];
+        stratNames1[i] = 'E' + (i+1);
+        stratNames2[i] = 'E' + (i+1);
+        for (var j = 0; j < N; j++) {
+          payoffs[i][j] = {a: 0, b: 0};
+        }
+      }
+      renderMatrix();
+    }
+
+    function renderMatrix() {
+      var html = '<table class="payoff-matrix"><tr><th></th>';
+      for (var j = 0; j < N; j++) {
+        html += '<th>J2: ' + stratNames2[j] + '</th>';
+      }
+      html += '</tr>';
+      for (var i = 0; i < N; i++) {
+        html += '<tr><th>J1: ' + stratNames1[i] + '</th>';
+        for (var j = 0; j < N; j++) {
+          html += '<td id="cell-' + i + '-' + j + '">' +
+            '(<input class="payoff-input p1-val" id="a-' + i + '-' + j + '" value="' + payoffs[i][j].a + '">, ' +
+            '<input class="payoff-input p2-val" id="b-' + i + '-' + j + '" value="' + payoffs[i][j].b + '">)' +
+            '</td>';
+        }
+        html += '</tr>';
+      }
+      html += '</table>';
+      document.getElementById('matrix-container').innerHTML = html;
+    }
+
+    function readMatrix() {
+      for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+          payoffs[i][j].a = parseFloat(document.getElementById('a-' + i + '-' + j).value) || 0;
+          payoffs[i][j].b = parseFloat(document.getElementById('b-' + i + '-' + j).value) || 0;
+        }
+      }
+    }
+
+    function loadPreset(key) {
+      var p = presets[key];
+      N = p.n;
+      document.getElementById('btn-2x2').classList.toggle('active', N===2);
+      document.getElementById('btn-3x3').classList.toggle('active', N===3);
+      stratNames1 = p.names1.slice();
+      stratNames2 = p.names2.slice();
+      payoffs = [];
+      for (var i = 0; i < N; i++) {
+        payoffs[i] = [];
+        for (var j = 0; j < N; j++) {
+          payoffs[i][j] = {a: p.data[i][j].a, b: p.data[i][j].b};
+        }
+      }
+      renderMatrix();
+      document.getElementById('info').innerHTML = 'Jogo carregado. Clique em <strong>Resolver</strong>.';
+    }
+
+    function solve() {
+      readMatrix();
+
+      // Clear highlights
+      for (var i = 0; i < N; i++)
+        for (var j = 0; j < N; j++)
+          document.getElementById('cell-' + i + '-' + j).className = '';
+
+      // Find dominant strategies
+      var dom1 = findDominant(1);
+      var dom2 = findDominant(2);
+
+      // Find pure strategy Nash equilibria
+      var pureNE = [];
+      for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+          if (isBR1(i, j) && isBR2(i, j)) {
+            pureNE.push([i, j]);
+            document.getElementById('cell-' + i + '-' + j).className = 'ne-cell';
+          }
+        }
+      }
+
+      var html = '';
+
+      // Dominant strategies
+      if (dom1 !== null) {
+        html += '<strong>Estrategia dominante J1:</strong> ' + stratNames1[dom1] + '<br>';
+      } else {
+        html += 'J1 não possui estratégia dominante.<br>';
+      }
+      if (dom2 !== null) {
+        html += '<strong>Estrategia dominante J2:</strong> ' + stratNames2[dom2] + '<br>';
+      } else {
+        html += 'J2 não possui estratégia dominante.<br>';
+      }
+
+      html += '<hr style="margin:0.5rem 0">';
+
+      // Pure NE
+      if (pureNE.length === 0) {
+        html += 'Nenhum EN em estrategias puras.<br>';
+      } else {
+        html += '<strong>EN em estrategias puras:</strong><br>';
+        for (var k = 0; k < pureNE.length; k++) {
+          var ne = pureNE[k];
+          html += '(' + stratNames1[ne[0]] + ', ' + stratNames2[ne[1]] + ') com payoffs (' +
+            payoffs[ne[0]][ne[1]].a + ', ' + payoffs[ne[0]][ne[1]].b + ')<br>';
+        }
+      }
+
+      // Mixed strategy NE via support enumeration (works for 2x2 and 3x3)
+      html += '<hr style="margin:0.5rem 0">';
+      html += '<strong>EN em estratégias mistas:</strong><br>';
+      var mixedNE = solveMixed();
+      if (mixedNE.length === 0) {
+        html += 'Nenhum EN completamente ou parcialmente misto encontrado.<br>';
+      }
+      for (var m = 0; m < mixedNE.length; m++) {
+        var ne = mixedNE[m];
+        html += '\\(\\sigma_1^* = (' + ne.p1.map(function(x){return x.toFixed(3);}).join(',\\;') + ')\\)<br>';
+        html += '\\(\\sigma_2^* = (' + ne.p2.map(function(x){return x.toFixed(3);}).join(',\\;') + ')\\)<br>';
+        html += '\\(E[u_1] = ' + ne.eu1.toFixed(3) + '\\), \\(E[u_2] = ' + ne.eu2.toFixed(3) + '\\)<br>';
+        if (m < mixedNE.length - 1) html += '<br>';
+      }
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('info')]);
+      }
+    }
+
+    function isBR1(i, j) {
+      var val = payoffs[i][j].a;
+      for (var ii = 0; ii < N; ii++) {
+        if (payoffs[ii][j].a > val) return false;
+      }
+      return true;
+    }
+
+    function isBR2(i, j) {
+      var val = payoffs[i][j].b;
+      for (var jj = 0; jj < N; jj++) {
+        if (payoffs[i][jj].b > val) return false;
+      }
+      return true;
+    }
+
+    function findDominant(player) {
+      if (player === 1) {
+        for (var i = 0; i < N; i++) {
+          var dominant = true;
+          for (var ii = 0; ii < N; ii++) {
+            if (ii === i) continue;
+            for (var j = 0; j < N; j++) {
+              if (payoffs[i][j].a <= payoffs[ii][j].a) { dominant = false; break; }
+            }
+            if (!dominant) break;
+          }
+          if (dominant) return i;
+        }
+      } else {
+        for (var j = 0; j < N; j++) {
+          var dominant = true;
+          for (var jj = 0; jj < N; jj++) {
+            if (jj === j) continue;
+            for (var i = 0; i < N; i++) {
+              if (payoffs[i][j].b <= payoffs[i][jj].b) { dominant = false; break; }
+            }
+            if (!dominant) break;
+          }
+          if (dominant) return j;
+        }
+      }
+      return null;
+    }
+
+    // ---- General mixed NE solver via support enumeration ----
+    function getSubsets(n) {
+      var out = [];
+      for (var mask = 1; mask < (1 << n); mask++) {
+        var s = [];
+        for (var i = 0; i < n; i++) if (mask & (1 << i)) s.push(i);
+        out.push(s);
+      }
+      return out;
+    }
+
+    function gaussSolve(A, b) {
+      // Solve Ax = b via Gaussian elimination with partial pivoting
+      var n = A.length;
+      var M = [];
+      for (var i = 0; i < n; i++) {
+        M[i] = A[i].slice();
+        M[i].push(b[i]);
+      }
+      for (var col = 0; col < n; col++) {
+        var maxR = col, maxV = Math.abs(M[col][col]);
+        for (var r = col + 1; r < n; r++) {
+          if (Math.abs(M[r][col]) > maxV) { maxV = Math.abs(M[r][col]); maxR = r; }
+        }
+        if (maxV < 1e-12) return null;
+        var tmp = M[col]; M[col] = M[maxR]; M[maxR] = tmp;
+        for (var r = col + 1; r < n; r++) {
+          var f = M[r][col] / M[col][col];
+          for (var c = col; c <= n; c++) M[r][c] -= f * M[col][c];
+        }
+      }
+      var x = new Array(n);
+      for (var i = n - 1; i >= 0; i--) {
+        x[i] = M[i][n];
+        for (var c = i + 1; c < n; c++) x[i] -= M[i][c] * x[c];
+        x[i] /= M[i][i];
+      }
+      return x;
+    }
+
+    function solveMixed() {
+      var results = [];
+      var subs = getSubsets(N);
+      var seen = {};
+
+      for (var si = 0; si < subs.length; si++) {
+        for (var sj = 0; sj < subs.length; sj++) {
+          var S1 = subs[si], S2 = subs[sj];
+          if (S1.length !== S2.length) continue;
+          // Skip pure NE (size 1x1) — already reported above
+          if (S1.length === 1) continue;
+
+          var k = S1.length;
+
+          // Solve for p1: Player 1 mixes over S1 to make Player 2 indifferent over S2
+          var A1 = [], rhs1 = [];
+          for (var m = 1; m < k; m++) {
+            var row = [];
+            for (var idx = 0; idx < k; idx++) {
+              row.push(payoffs[S1[idx]][S2[0]].b - payoffs[S1[idx]][S2[m]].b);
+            }
+            A1.push(row); rhs1.push(0);
+          }
+          var sumR = []; for (var idx = 0; idx < k; idx++) sumR.push(1);
+          A1.push(sumR); rhs1.push(1);
+          var p1sol = gaussSolve(A1, rhs1);
+          if (!p1sol) continue;
+          var valid = true;
+          for (var idx = 0; idx < k; idx++) if (p1sol[idx] < -1e-8) { valid = false; break; }
+          if (!valid) continue;
+
+          // Solve for p2: Player 2 mixes over S2 to make Player 1 indifferent over S1
+          var A2 = [], rhs2 = [];
+          for (var m = 1; m < k; m++) {
+            var row = [];
+            for (var idx = 0; idx < k; idx++) {
+              row.push(payoffs[S1[0]][S2[idx]].a - payoffs[S1[m]][S2[idx]].a);
+            }
+            A2.push(row); rhs2.push(0);
+          }
+          var sumR2 = []; for (var idx = 0; idx < k; idx++) sumR2.push(1);
+          A2.push(sumR2); rhs2.push(1);
+          var p2sol = gaussSolve(A2, rhs2);
+          if (!p2sol) continue;
+          valid = true;
+          for (var idx = 0; idx < k; idx++) if (p2sol[idx] < -1e-8) { valid = false; break; }
+          if (!valid) continue;
+
+          // Build full prob vectors
+          var prob1 = new Array(N).fill(0), prob2 = new Array(N).fill(0);
+          for (var idx = 0; idx < k; idx++) {
+            prob1[S1[idx]] = Math.max(0, p1sol[idx]);
+            prob2[S2[idx]] = Math.max(0, p2sol[idx]);
+          }
+
+          // Compute expected payoffs in support
+          var v1 = 0;
+          for (var j = 0; j < N; j++) v1 += prob2[j] * payoffs[S1[0]][j].a;
+          var v2 = 0;
+          for (var i = 0; i < N; i++) v2 += prob1[i] * payoffs[i][S2[0]].b;
+
+          // Check no profitable deviation outside support
+          var devOk = true;
+          for (var i = 0; i < N; i++) {
+            if (prob1[i] > 1e-10) continue;
+            var eu = 0;
+            for (var j = 0; j < N; j++) eu += prob2[j] * payoffs[i][j].a;
+            if (eu > v1 + 1e-8) { devOk = false; break; }
+          }
+          if (!devOk) continue;
+          for (var j = 0; j < N; j++) {
+            if (prob2[j] > 1e-10) continue;
+            var eu = 0;
+            for (var i = 0; i < N; i++) eu += prob1[i] * payoffs[i][j].b;
+            if (eu > v2 + 1e-8) { devOk = false; break; }
+          }
+          if (!devOk) continue;
+
+          // Dedup
+          var key = prob1.map(function(x){return x.toFixed(4);}).join(',') + '|' +
+                    prob2.map(function(x){return x.toFixed(4);}).join(',');
+          if (seen[key]) continue;
+          seen[key] = true;
+
+          results.push({ p1: prob1, p2: prob2, eu1: v1, eu2: v2 });
+        }
+      }
+      return results;
+    }
+
+    function resetAll() {
+      N = 2;
+      document.getElementById('btn-2x2').classList.add('active');
+      document.getElementById('btn-3x3').classList.remove('active');
+      initMatrix();
+      document.getElementById('info').innerHTML = 'Clique em <strong>Resolver</strong> para encontrar equilíbrios.';
+    }
+
+    initMatrix();
+
+    // Auto-resize: notify parent iframe of content height changes
+    (function() {
+      function sendHeight() {
+        var h = document.documentElement.scrollHeight;
+        window.parent.postMessage({ iframeHeight: h, src: location.href }, '*');
+      }
+      var ro = new ResizeObserver(sendHeight);
+      ro.observe(document.body);
+      sendHeight();
+    })();
+  </script>
+</body>
+</html>

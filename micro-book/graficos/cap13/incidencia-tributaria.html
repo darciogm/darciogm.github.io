@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+  Interactive Tax Incidence — Chapter 12
+  Library: JSXGraph
+  Features: Tax slider, buyer/seller burden, DWL, toggle tax on buyer vs seller
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incidência Tributária</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .toggle-group { margin-bottom: .7rem; display: flex; gap: .5rem; }
+    .toggle-btn { flex: 1; padding: .4rem; font-size: .8rem; border: 1px solid #C8102E; background: #fff; color: #C8102E; border-radius: 4px; cursor: pointer; font-family: inherit; text-align: center; }
+    .toggle-btn.active { background: #C8102E; color: #fff; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="toggle-group">
+        <button class="toggle-btn active" id="btn-seller" onclick="setTaxSide('seller')">Imposto sobre vendedor</button>
+        <button class="toggle-btn" id="btn-buyer" onclick="setTaxSide('buyer')">Imposto sobre comprador</button>
+      </div>
+      <div class="slider-group">
+        <label>Imposto por unidade (\(t\)): <span class="val" id="val-t">3.0</span></label>
+        <input type="range" id="sl-t" min="0" max="8" step="0.1" value="3">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação Demanda (\(b_D\)): <span class="val" id="val-bD">2.0</span></label>
+        <input type="range" id="sl-bD" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação Oferta (\(b_S\)): <span class="val" id="val-bS">1.5</span></label>
+        <input type="range" id="sl-bS" min="0.5" max="5" step="0.1" value="1.5">
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2, 18, 18, -2],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[16,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: '', withLabel: false });
+board.create('text', [9.0, -1.3, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('axis', [[0,0],[0,16]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  }, name: '', withLabel: false });
+board.create('text', [-1.1, 9.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    // D: Q = 20 - bD*p => p = (20-Q)/bD
+    // S: Q = -2 + bS*p => p = (Q+2)/bS
+    var aD = 20, aS = 2, bD = 2, bS = 1.5, tax = 3, taxSide = 'seller';
+
+    function pEq0() { return (aD + aS) / (bD + bS); }
+    function qEq0() { return aD - bD * pEq0(); }
+    // With tax: pc - pp = t; D(pc) = S(pp)
+    // aD - bD*pc = -aS + bS*(pc - t)
+    // aD + aS - bS*t = (bD+bS)*pc
+    function pcTax() { return (aD + aS + bS * tax) / (bD + bS); }
+    function ppTax() { return pcTax() - tax; }
+    function qTax() { return Math.max(0, aD - bD * pcTax()); }
+
+    // Original curves
+    var demandOrig = board.create('functiongraph', [function(q){ return (aD - q) / bD; }],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 13 } });
+    var supplyOrig = board.create('functiongraph', [function(q){ return (q + aS) / bS; }],
+      { strokeColor: '#00897b', strokeWidth: 2.5, name: 'S', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 13 } });
+
+    // Shifted curve (shown dashed)
+    var shiftedCurve = board.create('functiongraph', [function(q){
+      if (taxSide === 'seller') return (q + aS) / bS + tax; // S shifts up
+      else return (aD - q) / bD - tax; // D shifts down
+    }], { strokeColor: taxSide === 'seller' ? '#00897b' : '#1565c0', strokeWidth: 1.8, dash: 3,
+          name: '', withLabel: false });
+
+    // Buyer burden (between p0 and pc, from 0 to qt)
+    var buyerBurden = board.create('polygon', [
+      [function(){ return 0; }, function(){ return pEq0(); }],
+      [function(){ return qTax(); }, function(){ return pEq0(); }],
+      [function(){ return qTax(); }, function(){ return pcTax(); }],
+      [function(){ return 0; }, function(){ return pcTax(); }]
+    ], { fillColor: '#1565c0', fillOpacity: 0.2, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // Seller burden (between pp and p0, from 0 to qt)
+    var sellerBurden = board.create('polygon', [
+      [function(){ return 0; }, function(){ return ppTax(); }],
+      [function(){ return qTax(); }, function(){ return ppTax(); }],
+      [function(){ return qTax(); }, function(){ return pEq0(); }],
+      [function(){ return 0; }, function(){ return pEq0(); }]
+    ], { fillColor: '#00897b', fillOpacity: 0.2, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // DWL triangle
+    var dwlTri = board.create('polygon', [
+      [function(){ return qTax(); }, function(){ return pcTax(); }],
+      [function(){ return qTax(); }, function(){ return ppTax(); }],
+      [function(){ return qEq0(); }, function(){ return pEq0(); }]
+    ], { fillColor: '#C8102E', fillOpacity: 0.3, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // Equilibrium points
+    var eqOrig = board.create('point', [function(){ return qEq0(); }, function(){ return pEq0(); }],
+      { name: '', size: 3, fillColor: '#666', strokeColor: '#666', fixed: true });
+    var eqNew = board.create('point', [function(){ return qTax(); }, function(){ return pcTax(); }],
+      { name: 'pc', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true, label: { offset: [10, 8], fontSize: 11 } });
+    var eqPp = board.create('point', [function(){ return qTax(); }, function(){ return ppTax(); }],
+      { name: 'pp', size: 3, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true, label: { offset: [-18, -8], fontSize: 11 } });
+
+    // Dashed lines
+    board.create('segment', [[function(){ return qTax(); }, function(){ return pcTax(); }], [0, function(){ return pcTax(); }]], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [[function(){ return qTax(); }, function(){ return ppTax(); }], [0, function(){ return ppTax(); }]], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [[function(){ return qTax(); }, function(){ return ppTax(); }], [function(){ return qTax(); }, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    // Tax bracket
+    board.create('segment', [
+      [function(){ return qTax() + 0.5; }, function(){ return pcTax(); }],
+      [function(){ return qTax() + 0.5; }, function(){ return ppTax(); }]
+    ], { strokeColor: '#C8102E', strokeWidth: 2, fixed: true });
+    board.create('text', [
+      function(){ return qTax() + 1; },
+      function(){ return (pcTax() + ppTax()) / 2; },
+      function(){ return 't=' + tax.toFixed(1); }
+    ], { fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    function setTaxSide(side) {
+      taxSide = side;
+      document.getElementById('btn-seller').className = 'toggle-btn' + (side === 'seller' ? ' active' : '');
+      document.getElementById('btn-buyer').className = 'toggle-btn' + (side === 'buyer' ? ' active' : '');
+      shiftedCurve.setAttribute({ strokeColor: side === 'seller' ? '#00897b' : '#1565c0' });
+      update();
+    }
+
+    function updateInfo() {
+      var pc = pcTax(), pp = ppTax(), qt = qTax(), q0 = qEq0(), p0 = pEq0();
+      var revenue = tax * qt;
+      var dwl = 0.5 * tax * (q0 - qt);
+      var buyerShare = (pc - p0) / (tax || 1) * 100;
+      var sellerShare = (p0 - pp) / (tax || 1) * 100;
+      if (tax === 0) { buyerShare = 0; sellerShare = 0; }
+      document.getElementById('info').innerHTML =
+        '<b>Equilíbrio original:</b> \\(p_0 = ' + p0.toFixed(2) + '\\), \\(Q_0 = ' + q0.toFixed(2) + '\\)<br>' +
+        '<b>Com imposto:</b> \\(p_c = ' + pc.toFixed(2) + '\\), \\(p_p = ' + pp.toFixed(2) + '\\), \\(Q_t = ' + qt.toFixed(2) + '\\)<br>' +
+        '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">' +
+        '<span style="color:#1565c0;font-weight:700;">Carga do comprador: ' + buyerShare.toFixed(1) + '%</span><br>' +
+        '<span style="color:#00897b;font-weight:700;">Carga do vendedor: ' + sellerShare.toFixed(1) + '%</span><br>' +
+        '<b>Receita tributária:</b> ' + revenue.toFixed(2) + '<br>' +
+        '<span style="color:#C8102E;font-weight:700;">Peso morto (DWL): ' + dwl.toFixed(2) + '</span><br>' +
+        '<small>O lado legal (comprador vs vendedor) não altera a incidência econômica.</small>';
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      bD = parseFloat(document.getElementById('sl-bD').value);
+      bS = parseFloat(document.getElementById('sl-bS').value);
+      tax = parseFloat(document.getElementById('sl-t').value);
+      document.getElementById('val-t').textContent = tax.toFixed(1);
+      document.getElementById('val-bD').textContent = bD.toFixed(1);
+      document.getElementById('val-bS').textContent = bS.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-t').value = 3;
+      document.getElementById('sl-bD').value = 2;
+      document.getElementById('sl-bS').value = 1.5;
+      setTaxSide('seller');
+      update();
+    }
+
+    ['sl-t','sl-bD','sl-bS'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

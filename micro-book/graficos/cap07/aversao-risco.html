@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph
+  Reason: Interactive visualization of risk aversion via concave/linear/convex
+  utility functions with draggable wealth points and probability slider.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aversão ao Risco e Função de Utilidade</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 420px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    select {
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    .toggle-group { margin-bottom: 0.8rem; display: flex; gap: 0.3rem; }
+    .toggle-group button {
+      flex: 1;
+      padding: 0.4rem 0.2rem;
+      font-size: 0.78rem;
+      font-family: inherit;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #fff;
+      color: #333;
+    }
+    .toggle-group button.active {
+      background: #C8102E;
+      color: #fff;
+      border-color: #C8102E;
+    }
+    @media (max-width: 700px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+
+      <label style="font-size:0.85rem;margin-bottom:0.3rem;display:block;">Atitude frente ao risco:</label>
+      <div class="toggle-group" id="risk-toggle">
+        <button class="active" data-mode="averse">Avesso</button>
+        <button data-mode="neutral">Neutro</button>
+        <button data-mode="loving">Propenso</button>
+      </div>
+
+      <div class="slider-group">
+        <label>Probabilidade \(\pi\): <span class="val" id="val-pi">0.50</span></label>
+        <input type="range" id="slider-pi" min="0.05" max="0.95" step="0.05" value="0.50">
+      </div>
+
+      <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2.2, 12.5, 12.5, -1.8],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepAspectRatio: false
+    });
+
+    board.create('axis', [[0,0],[11,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 11 } },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,11]], {
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-2.2 * 0.55, 12.5 / 2, '<b><i>u</i>(<i>W</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [12.5 / 2, -1.8 * 0.65, '<b><i>W</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    var mode = 'averse';
+
+    function uFunc(w) {
+      if (w <= 0) return 0;
+      switch(mode) {
+        case 'averse':  return Math.sqrt(w) * (10 / Math.sqrt(10));
+        case 'neutral': return w;
+        case 'loving':  return (w * w) / 10;
+      }
+    }
+
+    // Draggable points on utility curve
+    var ptW1 = board.create('point', [2, 0], {
+      name: 'W_1', size: 4, color: '#1565c0', fillColor: '#1565c0',
+      strokeColor: '#1565c0', label: { fontSize: 13, offset: [0, -28], anchorX: 'middle' },
+      attractors: [], snatchDistance: 0
+    });
+    ptW1.on('drag', function() {
+      var x = Math.max(0.3, Math.min(10, ptW1.X()));
+      ptW1.moveTo([x, 0]);
+      update();
+    });
+
+    var ptW2 = board.create('point', [8, 0], {
+      name: 'W_2', size: 4, color: '#00897b', fillColor: '#00897b',
+      strokeColor: '#00897b', label: { fontSize: 13, offset: [0, -28], anchorX: 'middle' },
+      attractors: [], snatchDistance: 0
+    });
+    ptW2.on('drag', function() {
+      var x = Math.max(0.3, Math.min(10, ptW2.X()));
+      ptW2.moveTo([x, 0]);
+      update();
+    });
+
+    var drawObjects = [];
+
+    function clearDraw() {
+      for (var i = drawObjects.length - 1; i >= 0; i--) {
+        board.removeObject(drawObjects[i]);
+      }
+      drawObjects = [];
+    }
+
+    function getPi() { return parseFloat(document.getElementById('slider-pi').value); }
+
+    function update() {
+      clearDraw();
+      var pi = getPi();
+      var w1 = ptW1.X(), w2 = ptW2.X();
+      var uw1 = uFunc(w1), uw2 = uFunc(w2);
+      var EW = pi * w1 + (1 - pi) * w2;
+      var EuW = pi * uw1 + (1 - pi) * uw2;
+      var uEW = uFunc(EW);
+
+      // Utility curve
+      var curve = board.create('functiongraph', [function(x) { return uFunc(x); }, 0.01, 10.5], {
+        strokeColor: '#C8102E', strokeWidth: 2.5
+      });
+      drawObjects.push(curve);
+
+      // Points on curve for W1 and W2
+      var pU1 = board.create('point', [w1, uw1], {
+        size: 4, color: '#1565c0', fillColor: '#1565c0', fixed: true, name: '',
+        strokeColor: '#1565c0'
+      });
+      var pU2 = board.create('point', [w2, uw2], {
+        size: 4, color: '#00897b', fillColor: '#00897b', fixed: true, name: '',
+        strokeColor: '#00897b'
+      });
+      drawObjects.push(pU1, pU2);
+
+      // Chord (secant) between u(W1) and u(W2)
+      var chord = board.create('segment', [[w1, uw1], [w2, uw2]], {
+        strokeColor: '#999', strokeWidth: 1.5, dash: 2, fixed: true
+      });
+      drawObjects.push(chord);
+
+      // E[W] on x-axis
+      var pEW = board.create('point', [EW, 0], {
+        size: 3, color: '#C8102E', fillColor: '#C8102E', fixed: true, name: 'E[W]',
+        label: { fontSize: 11, offset: [0, -28], anchorX: 'middle' }
+      });
+      drawObjects.push(pEW);
+
+      // E[u(W)] on chord
+      var pEuW = board.create('point', [EW, EuW], {
+        size: 4, color: '#666', fillColor: '#666', fixed: true, name: 'E[u]',
+        label: { fontSize: 11, offset: [15, -5], anchorX: 'left' }
+      });
+      drawObjects.push(pEuW);
+
+      // u(E[W]) on curve
+      var puEW = board.create('point', [EW, uEW], {
+        size: 4, color: '#C8102E', fillColor: '#C8102E', fixed: true, name: 'u(E[W])',
+        label: { fontSize: 11, offset: [-15, 22], anchorX: 'right' }
+      });
+      drawObjects.push(puEW);
+
+      // Vertical dashed at E[W]
+      var vLine = board.create('segment', [[EW, 0], [EW, Math.max(uEW, EuW)]], {
+        strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true
+      });
+      drawObjects.push(vLine);
+
+      // Horizontal dashed for E[u(W)]
+      var hEu = board.create('segment', [[0, EuW], [EW, EuW]], {
+        strokeColor: '#666', strokeWidth: 1, dash: 3, fixed: true
+      });
+      drawObjects.push(hEu);
+
+      // Horizontal dashed for u(E[W])
+      var huE = board.create('segment', [[0, uEW], [EW, uEW]], {
+        strokeColor: '#C8102E', strokeWidth: 1, dash: 3, fixed: true
+      });
+      drawObjects.push(huE);
+
+      // Certainty equivalent: u(CE) = E[u(W)], so CE = u^{-1}(E[u(W)])
+      var CE = invertU(EuW);
+
+      // Risk premium shading
+      if (mode === 'averse' && CE < EW) {
+        var poly = board.create('polygon', [
+          [CE, 0], [EW, 0], [EW, EuW], [CE, EuW]
+        ], {
+          fillColor: '#C8102E', fillOpacity: 0.12,
+          borders: { strokeColor: '#C8102E', strokeWidth: 1, dash: 2 },
+          vertices: { visible: false }, fixed: true, name: ''
+        });
+        drawObjects.push(poly);
+      } else if (mode === 'loving' && CE > EW) {
+        var poly = board.create('polygon', [
+          [EW, 0], [CE, 0], [CE, EuW], [EW, EuW]
+        ], {
+          fillColor: '#00897b', fillOpacity: 0.12,
+          borders: { strokeColor: '#00897b', strokeWidth: 1, dash: 2 },
+          vertices: { visible: false }, fixed: true, name: ''
+        });
+        drawObjects.push(poly);
+      }
+
+      // CE marker
+      if (isFinite(CE) && CE > 0 && CE < 11) {
+        var pCE = board.create('point', [CE, 0], {
+          size: 3, color: '#1565c0', fillColor: '#1565c0', fixed: true, name: 'EC',
+          label: { fontSize: 11, offset: [0, -42], anchorX: 'middle' }
+        });
+        var hCE = board.create('segment', [[CE, 0], [CE, EuW]], {
+          strokeColor: '#1565c0', strokeWidth: 1, dash: 3, fixed: true
+        });
+        drawObjects.push(pCE, hCE);
+      }
+
+      // Update info
+      var rp = EW - CE;
+      document.getElementById('val-pi').textContent = pi.toFixed(2);
+      document.getElementById('info').innerHTML =
+        '\\(W_1 = ' + w1.toFixed(2) + '\\), \\(W_2 = ' + w2.toFixed(2) + '\\)<br>' +
+        '\\(E[W] = ' + EW.toFixed(2) + '\\)<br>' +
+        '\\(E[u(W)] = ' + EuW.toFixed(2) + '\\)<br>' +
+        '\\(u(E[W]) = ' + uEW.toFixed(2) + '\\)<br>' +
+        '\\(EC = ' + CE.toFixed(2) + '\\)<br>' +
+        '<strong style="color:#C8102E">Premio de risco \\(\\pi_R = E[W] - EC = ' + rp.toFixed(2) + '\\)</strong>';
+
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('info')]);
+      }
+      board.update();
+    }
+
+    function invertU(y) {
+      if (y <= 0) return 0;
+      switch(mode) {
+        case 'averse':
+          var k = 10 / Math.sqrt(10);
+          return (y / k) * (y / k);
+        case 'neutral': return y;
+        case 'loving':  return Math.sqrt(y * 10);
+      }
+    }
+
+    // Toggle buttons
+    document.querySelectorAll('#risk-toggle button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#risk-toggle button').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        mode = btn.getAttribute('data-mode');
+        update();
+      });
+    });
+
+    document.getElementById('slider-pi').addEventListener('input', update);
+
+    function resetAll() {
+      mode = 'averse';
+      document.querySelectorAll('#risk-toggle button').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelector('#risk-toggle button[data-mode="averse"]').classList.add('active');
+      document.getElementById('slider-pi').value = 0.5;
+      ptW1.moveTo([2, 0]);
+      ptW2.moveTo([8, 0]);
+      update();
+    }
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      drawObjects.forEach(function(obj) {
+        if (obj.hasLabel && obj.label) obj.label.setAttribute({ visible: show });
+      });
+      ptW1.label.setAttribute({ visible: show });
+      ptW2.label.setAttribute({ visible: show });
+      board.update();
+    }
+
+    update();
+  </script>
+</body>
+</html>

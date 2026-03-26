@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph
+  Reason: Side-by-side comparison of homothetic (radial expansion) vs quasi-linear
+  (vertical translation) indifference curves, with income expansion paths.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homotética vs Quase-linear</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-subtitle {
+      font-size: 0.85rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    .panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .panel {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.5rem;
+      background: #fafafa;
+    }
+    .panel-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+    .panel-eq {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 0.3rem;
+      color: #555;
+    }
+    .panel-note {
+      font-size: 0.75rem;
+      text-align: center;
+      color: #888;
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+    .jxg-panel {
+      width: 100%;
+      height: 320px;
+    }
+    .controls {
+      max-width: 760px;
+      margin: 0.8rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .controls label {
+      font-size: 0.85rem;
+      color: #555;
+    }
+    .controls input[type="range"] {
+      width: 140px;
+      accent-color: #C8102E;
+    }
+    .controls .val {
+      font-weight: 700;
+      color: #C8102E;
+      min-width: 2em;
+      display: inline-block;
+    }
+    .btn-reset {
+      padding: 0.4rem 1rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    .legend {
+      max-width: 760px;
+      margin: 0.6rem auto 0;
+      font-size: 0.78rem;
+      color: #666;
+      text-align: center;
+    }
+    .legend span.swatch {
+      display: inline-block;
+      width: 14px;
+      height: 3px;
+      vertical-align: middle;
+      margin: 0 3px;
+      border-radius: 1px;
+    }
+    @media (max-width: 768px) {
+      .panels { grid-template-columns: 1fr; }
+      .jxg-panel { height: 280px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+
+  <div class="panels">
+    <!-- Homothetic -->
+    <div class="panel">
+      <div class="panel-title" style="color:#1565c0;">Homotética (Cobb-Douglas)</div>
+      <div class="panel-eq">\(u = x_1^{0,5}\, x_2^{0,5}\)</div>
+      <div id="box-hom" class="jxg-panel"></div>
+      <div class="panel-note">Expansão radial — razão \(x_1/x_2\) constante</div>
+    </div>
+
+    <!-- Quasi-linear -->
+    <div class="panel">
+      <div class="panel-title" style="color:#e65100;">Quase-linear</div>
+      <div class="panel-eq">\(u = 2\sqrt{x_1} + x_2\)</div>
+      <div id="box-ql" class="jxg-panel"></div>
+      <div class="panel-note">Translação vertical — \(x_1\) fixo, renda extra vai para \(x_2\)</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <label>Renda \(I\): <input type="range" id="sl-income" min="3" max="14" step="0.5" value="6">
+    <span class="val" id="val-income">6</span></label>
+    <label>\(p_1/p_2\): <input type="range" id="sl-price" min="0.2" max="3" step="0.1" value="1">
+    <span class="val" id="val-price">1.0</span></label>
+    <button class="btn-reset" onclick="resetSliders()">Resetar</button>
+  </div>
+
+  <div class="legend">
+    <span class="swatch" style="background:#999;"></span> Curvas de indiferença &nbsp;
+    <span class="swatch" style="background:#C8102E;"></span> Restrição orçamentária &nbsp;
+    <span class="swatch" style="background:#2e7d32; height:2px; border-top:2px dashed #2e7d32;"></span> Caminho de expansão &nbsp;
+    ● Cesta ótima
+  </div>
+
+  <script>
+    var BB = [-2.1, 14, 13.5, -1.8];
+    var boardOpts = {
+      boundingbox: BB,
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepAspectRatio: false
+    };
+
+    function addAxes(brd) {
+      brd.create('axis', [[0,0],[12,0]], {
+        ticks: { drawLabels: true, label: { fontSize: 9 } },
+        name: '', withLabel: false
+      });
+      brd.create('axis', [[0,0],[0,12]], {
+        ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-8, 0] } },
+        name: '', withLabel: false
+      });
+
+      // Y-axis label: centered vertically, rotated 90°, bold italic
+      brd.create('text', [
+        BB[0] * 0.55, BB[1] / 2,
+        '<b><i>x</i><sub>2</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+      // X-axis label: centered horizontally, below ticks, bold italic
+      brd.create('text', [
+        BB[2] / 2, BB[3] * 0.65,
+        '<b><i>x</i><sub>1</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+    }
+
+    // ========== Homothetic (Cobb-Douglas) ==========
+    var bH = JXG.JSXGraph.initBoard('box-hom', boardOpts);
+    addAxes(bH);
+
+    // Indifference curves (background)
+    var hICurves = [];
+    var icLevels = [1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5];
+    for (var i = 0; i < icLevels.length; i++) {
+      (function(U) {
+        hICurves.push(bH.create('curve', [
+          function(t) { return t; },
+          function(t) {
+            if (t <= 0.05) return NaN;
+            var val = (U * U) / t;
+            return val > 12 ? NaN : val;
+          },
+          0.05, 12
+        ], { strokeColor: '#bbb', strokeWidth: 1.2, numberPointsHigh: 200 }));
+      })(icLevels[i]);
+    }
+
+    // Budget line
+    var hBudget = bH.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        var val = I - p * t;
+        return val >= 0 ? val : NaN;
+      },
+      0, 12
+    ], { strokeColor: '#C8102E', strokeWidth: 2, numberPointsHigh: 100 });
+
+    // Optimal IC (highlighted)
+    var hOptIC = bH.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        if (t <= 0.05) return NaN;
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        var x1 = I / (2 * p);
+        var x2 = I / 2;
+        var U = Math.sqrt(x1 * x2);
+        var val = (U * U) / t;
+        return val > 12 ? NaN : val;
+      },
+      0.05, 12
+    ], { strokeColor: '#1565c0', strokeWidth: 2.2, numberPointsHigh: 200 });
+
+    // Optimal point
+    var hOpt = bH.create('point', [
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        return I / (2 * p);
+      },
+      function() {
+        var I = parseFloat(document.getElementById('sl-income').value);
+        return I / 2;
+      }
+    ], { size: 4, color: '#1565c0', name: '', fixed: true });
+
+    // Expansion path (ray from origin through optimal)
+    bH.create('line', [[0,0], [
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        return 1 / (2 * p);
+      },
+      function() { return 0.5; }
+    ]], {
+      strokeColor: '#2e7d32', strokeWidth: 1.5, dash: 2, fixed: true,
+      straightFirst: true, straightLast: true,
+      point1: { visible: false }, point2: { visible: false }
+    });
+
+    // Label — offset to the right of the expansion ray
+    bH.create('text', [
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        return 9 / (2 * p) + 1.2;
+      },
+      function() { return 4; },
+      'Expansão radial'
+    ], { fontSize: 10, color: '#2e7d32', fixed: true, anchorX: 'left' });
+
+    // ========== Quasi-linear ==========
+    var bQ = JXG.JSXGraph.initBoard('box-ql', boardOpts);
+    addAxes(bQ);
+
+    // Indifference curves (background)
+    var qLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (var i = 0; i < qLevels.length; i++) {
+      (function(U) {
+        bQ.create('curve', [
+          function(t) { return t; },
+          function(t) {
+            if (t < 0.01) return NaN;
+            var val = U - 2 * Math.sqrt(t);
+            return val >= 0 ? val : NaN;
+          },
+          0.01, 12
+        ], { strokeColor: '#bbb', strokeWidth: 1.2, numberPointsHigh: 200 });
+      })(qLevels[i]);
+    }
+
+    // Budget line
+    var qBudget = bQ.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        var val = I - p * t;
+        return val >= 0 ? val : NaN;
+      },
+      0, 12
+    ], { strokeColor: '#C8102E', strokeWidth: 2, numberPointsHigh: 100 });
+
+    // Optimal IC (highlighted)
+    var qOptIC = bQ.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        if (t < 0.01) return NaN;
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        var x1 = 1 / (p * p);
+        var x2 = I - p * x1;
+        if (x2 < 0) { x1 = I / p; x2 = 0; }
+        var U = 2 * Math.sqrt(x1) + x2;
+        var val = U - 2 * Math.sqrt(t);
+        return val >= 0 ? val : NaN;
+      },
+      0.01, 12
+    ], { strokeColor: '#e65100', strokeWidth: 2.2, numberPointsHigh: 200 });
+
+    // Optimal point
+    var qOpt = bQ.create('point', [
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        var x1 = 1 / (p * p);
+        if (I - p * x1 < 0) return I / p;
+        return x1;
+      },
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        var I = parseFloat(document.getElementById('sl-income').value);
+        var x1 = 1 / (p * p);
+        var x2 = I - p * x1;
+        return x2 < 0 ? 0 : x2;
+      }
+    ], { size: 4, color: '#e65100', name: '', fixed: true });
+
+    // Expansion path (vertical line at x1*)
+    bQ.create('curve', [
+      function(t) {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        return 1 / (p * p);
+      },
+      function(t) { return t; },
+      0, 12
+    ], { strokeColor: '#2e7d32', strokeWidth: 1.5, dash: 2, numberPointsHigh: 50 });
+
+    // Label
+    bQ.create('text', [
+      function() {
+        var p = parseFloat(document.getElementById('sl-price').value);
+        return 1 / (p * p) + 0.3;
+      },
+      10.5,
+      'Caminho vertical'
+    ], { fontSize: 10, color: '#2e7d32', fixed: true });
+
+    // ========== Slider handlers ==========
+    var slIncome = document.getElementById('sl-income');
+    var slPrice = document.getElementById('sl-price');
+    var valIncome = document.getElementById('val-income');
+    var valPrice = document.getElementById('val-price');
+
+    function updateBoards() {
+      valIncome.textContent = slIncome.value;
+      valPrice.textContent = parseFloat(slPrice.value).toFixed(1);
+      bH.update();
+      bQ.update();
+    }
+
+    slIncome.addEventListener('input', updateBoards);
+    slPrice.addEventListener('input', updateBoards);
+
+    function resetSliders() {
+      slIncome.value = 6;
+      slPrice.value = 1;
+      updateBoards();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--
+  Interactive Akerlof Lemons Market — Chapter 18
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercado de Limões — Akerlof (1970)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+ #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .status-ok { color: #00897b; font-weight: 700; }
+    .status-fail { color: #C8102E; font-weight: 700; }
+    .step-box { margin-top: .6rem; padding: .6rem; background: #fafafa; border-left: 3px solid #1565c0; font-size: .8rem; line-height: 1.6; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Fração de limoes (\(\lambda\)): <span class="val" id="val-lam">0.50</span></label>
+        <input type="range" id="sl-lam" min="0" max="1" step="0.01" value="0.50">
+      </div>
+      <div class="slider-group">
+        <label>Valor bom p/ comprador (\(V_H\)): <span class="val" id="val-VH">30</span></label>
+        <input type="range" id="sl-VH" min="15" max="50" step="1" value="30">
+      </div>
+      <div class="slider-group">
+        <label>Valor ruim p/ comprador (\(V_L\)): <span class="val" id="val-VL">15</span></label>
+        <input type="range" id="sl-VL" min="5" max="25" step="1" value="15">
+      </div>
+      <div class="slider-group">
+        <label>Custo vendedor bom (\(C_H\)): <span class="val" id="val-CH">25</span></label>
+        <input type="range" id="sl-CH" min="10" max="40" step="1" value="25">
+      </div>
+      <div class="slider-group">
+        <label>Custo vendedor ruim (\(C_L\)): <span class="val" id="val-CL">10</span></label>
+        <input type="range" id="sl-CL" min="2" max="20" step="1" value="10">
+      </div>
+      <div class="info-box" id="info"></div>
+      <div class="step-box" id="steps"></div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.12, 1.15, 1.15, -0.12],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[1.1,0]], {
+      ticks: { drawLabels: true, ticksDistance: 0.2, minorTicks: 0, label: {fontSize:10} },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,1.1]], {
+      ticks: { drawLabels: false, ticksDistance: 0.2, minorTicks: 0 , label: { anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    board.create('text', [0.575, -0.078, '<b><i>λ</i> (fração limões)</b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('text', [-0.066, 0.575, '<b><i>Valor</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    var lam=0.5, VH=30, VL=15, CH=25, CL=10;
+    var maxVal = 50;
+
+    function n(v) { return v / maxVal; }
+
+    // Buyer willingness to pay: Vbar(lambda) = (1-lambda)*VH + lambda*VL
+    var buyerCurve = board.create('functiongraph', [
+      function(x) { return n((1-x)*VH + x*VL); }
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'WTP comprador', withLabel: true,
+         label: { position: 'rt', offset: [-30, 10], fontSize: 11 } });
+
+    // Seller reservation for good cars (horizontal)
+    var sellerH = board.create('functiongraph', [
+      function(x) { return n(CH); }
+    ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2, name: 'C_H (bom)', withLabel: true,
+         label: { position: 'rt', offset: [-20, 10], fontSize: 11 } });
+
+    // Seller reservation for bad cars (horizontal)
+    var sellerL = board.create('functiongraph', [
+      function(x) { return n(CL); }
+    ], { strokeColor: '#00897b', strokeWidth: 2, dash: 2, name: 'C_L (ruim)', withLabel: true,
+         label: { position: 'rt', offset: [-20, -15], fontSize: 11 } });
+
+    // Current lambda indicator
+    var lamLine = board.create('line', [
+      [function(){return lam;}, 0], [function(){return lam;}, 1]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3, straightFirst: false, straightLast: false, fixed: true });
+
+    // Intersection point: buyer WTP at current lambda
+    var wtpPt = board.create('point', [
+      function(){ return lam; },
+      function(){ return n((1-lam)*VH + lam*VL); }
+    ], { name: '', size: 4, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true });
+
+    // Critical lambda where WTP = CH => (1-lam_c)*VH + lam_c*VL = CH
+    // lam_c = (VH - CH)/(VH - VL)
+    function lamCrit() {
+      if (VH === VL) return VH >= CH ? 1 : 0;
+      var lc = (VH - CH) / (VH - VL);
+      return Math.max(0, Math.min(1, lc));
+    }
+
+    // Shade collapse region
+    var collapsePoly = board.create('polygon', [
+      [function(){ return Math.max(lamCrit(), 0); }, 0],
+      [1, 0],
+      [1, function(){ return n(VL); }],
+      [function(){ return Math.max(lamCrit(), 0); }, function(){ return n(VL); }]
+    ], {
+      fillColor: '#C8102E', fillOpacity: 0.1, borders: {strokeWidth: 0},
+      vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // Critical lambda vertical line
+    var critLine = board.create('segment', [
+      [function(){ return lamCrit(); }, 0],
+      [function(){ return lamCrit(); }, function(){ return n(CH); }]
+    ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 4, fixed: true });
+
+    var critLabel = board.create('text', [
+      function(){ return lamCrit(); }, -0.05,
+      function(){ return 'λ*=' + lamCrit().toFixed(2); }
+    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    // Y-axis value labels — with minimum gap to avoid overlap
+    var minGap = 0.06;
+
+    var lblCH = board.create('text', [-0.04, function(){
+      var yCH = n(CH), yVH = n(VH);
+      if (Math.abs(yCH - yVH) < minGap) { return yCH - minGap / 2; }
+      return yCH;
+    }, function(){ return 'C_H=' + CH.toFixed(0); }
+    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#C8102E;' });
+
+    var lblCL = board.create('text', [-0.04, function(){
+      var yCL = n(CL), yVL = n(VL);
+      if (Math.abs(yCL - yVL) < minGap) { return yCL - minGap / 2; }
+      return yCL;
+    }, function(){ return 'C_L=' + CL.toFixed(0); }
+    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#00897b;' });
+
+    var lblVH = board.create('text', [-0.12, function(){
+      var yCH = n(CH), yVH = n(VH);
+      if (Math.abs(yCH - yVH) < minGap) { return yVH + minGap / 2; }
+      return yVH;
+    }, function(){ return 'V_H=' + VH.toFixed(0); }
+    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
+
+    var lblVL = board.create('text', [-0.12, function(){
+      var yCL = n(CL), yVL = n(VL);
+      if (Math.abs(yCL - yVL) < minGap) { return yVL + minGap / 2; }
+      return yVL;
+    }, function(){ return 'V_L=' + VL.toFixed(0); }
+    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
+
+    function updateInfo() {
+      var wtp = (1 - lam) * VH + lam * VL;
+      var lc = lamCrit();
+      var goodTrade = wtp >= CH;
+      var badTrade = wtp >= CL;
+      var collapsed = lam > lc + 0.001 && !goodTrade;
+
+      var html = '<b>WTP comprador:</b> \\(\\bar{V} = (1-\\lambda)V_H + \\lambda V_L = ' + wtp.toFixed(1) + '\\)<br>';
+      html += '<b>Custo vendedor bom:</b> \\(C_H = ' + CH + '\\)<br>';
+      html += '<b>Custo vendedor ruim:</b> \\(C_L = ' + CL + '\\)<br>';
+      html += '<b>\\(\\lambda\\) crítico:</b> ' + lc.toFixed(2) + '<br>';
+
+      if (goodTrade) {
+        html += '<span class="status-ok">Ambos os tipos transacionam (WTP ≥ C_H)</span><br>';
+        html += '<b>Preço de equilíbrio:</b> ' + wtp.toFixed(1);
+      } else if (badTrade) {
+        html += '<span class="status-fail">Apenas limoes no mercado (WTP < C_H)</span><br>';
+        html += '<b>Preço:</b> ' + VL.toFixed(1) + ' (so carros ruins)';
+      } else {
+        html += '<span class="status-fail">Mercado colapsa completamente!</span>';
+      }
+      document.getElementById('info').innerHTML = html;
+
+      var steps = '<b>Processo de seleção adversa:</b><br>';
+      steps += '1. Comprador oferece \\(\\bar{V} = ' + wtp.toFixed(1) + '\\)<br>';
+      if (goodTrade) {
+        steps += '2. \\(\\bar{V} \\geq C_H\\): vendedores de carros bons aceitam<br>';
+        steps += '3. Mercado funciona com ambos os tipos';
+      } else {
+        steps += '2. \\(\\bar{V} < C_H = ' + CH + '\\): carros bons saem do mercado<br>';
+        steps += '3. So restam limoes; comprador ajusta para \\(V_L = ' + VL + '\\)<br>';
+        if (VL >= CL) {
+          steps += '4. Equilíbrio: apenas carros ruins a preço \\(V_L\\)';
+        } else {
+          steps += '4. \\(V_L < C_L\\): mercado desaparece completamente!';
+        }
+      }
+      document.getElementById('steps').innerHTML = steps;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      lam = parseFloat(document.getElementById('sl-lam').value);
+      VH = parseFloat(document.getElementById('sl-VH').value);
+      VL = parseFloat(document.getElementById('sl-VL').value);
+      CH = parseFloat(document.getElementById('sl-CH').value);
+      CL = parseFloat(document.getElementById('sl-CL').value);
+      document.getElementById('val-lam').textContent = lam.toFixed(2);
+      document.getElementById('val-VH').textContent = VH.toFixed(0);
+      document.getElementById('val-VL').textContent = VL.toFixed(0);
+      document.getElementById('val-CH').textContent = CH.toFixed(0);
+      document.getElementById('val-CL').textContent = CL.toFixed(0);
+      board.update();
+      updateInfo();
+    }
+
+    var textLabels = [critLabel, lblCH, lblCL, lblVH, lblVL];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      board.update(); 
+    }
+
+
+    function resetAll() {
+      document.getElementById('sl-lam').value = 0.50;
+      document.getElementById('sl-VH').value = 30;
+      document.getElementById('sl-VL').value = 15;
+      document.getElementById('sl-CH').value = 25;
+      document.getElementById('sl-CL').value = 10;
+      update();
+    }
+
+    ['sl-lam','sl-VH','sl-VL','sl-CH','sl-CL'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

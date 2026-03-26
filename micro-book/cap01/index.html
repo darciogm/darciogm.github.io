@@ -1,0 +1,3563 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic website — Darcio Genicolo-Martins, Assistant Professor of Economics at Insper">
+      
+      
+        <meta name="author" content="Darcio Genicolo-Martins">
+      
+      
+        <link rel="canonical" href="https://darciogm.github.io/micro-book/cap01/">
+      
+      
+        <link rel="prev" href="../prefacio/">
+      
+      
+        <link rel="next" href="../cap02/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Cap. 1 — Todos os Modelos Estão Errados - Darcio Genicolo-Martins</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--idea:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>');--md-admonition-icon--definition:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>');--md-admonition-icon--theorem:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 21 2-1 2 1v-7h-4m4-5V7l-2 1-2-1v2l-2 1 2 1v2l2-1 2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z"/></svg>');--md-admonition-icon--proof:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19.88V22l-1.8-1.17-4.79-9c.66-.21 1.26-.55 1.78-1zM15 7a3 3 0 0 1-3 3h-.44L5.8 20.83 4 22v-2.12L9.79 9c-1.1-1.23-1-3.13.24-4.24C10.57 4.28 11.27 4 12 4V2a1 1 0 0 1 1 1v1.18c1.2.42 2 1.55 2 2.82m-2 0a1 1 0 0 0-1-1 1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.6.6 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"/></svg>');--md-admonition-icon--exercicio-resolvido:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-1.16-.21-2.31-.61-3.39l-1.6 1.6c.14.59.21 1.19.21 1.79a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.6 0 1.2.07 1.79.21L15.4 2.6C14.31 2.21 13.16 2 12 2m7 0-4 4v1.5l-2.55 2.55C12.3 10 12.15 10 12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-.15 0-.3-.05-.45L16.5 9H18l4-4h-3zm-7 4a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6h-2a4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4z"/></svg>');--md-admonition-icon--exercicio-proposto:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.06 9 .94.94L5.92 19H5v-.92zm3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 19a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1c0-.21-.07-.41-.18-.57L13 8.35V4h-2v4.35L5.18 18.43c-.11.16-.18.36-.18.57m1 3a3 3 0 0 1-3-3c0-.6.18-1.16.5-1.63L9 7.81V6a1 1 0 0 1-1-1V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1v1.81l5.5 9.56c.32.47.5 1.03.5 1.63a3 3 0 0 1-3 3zm7-6 1.34-1.34L16.27 18H7.73l2.66-4.61zm-.5-4a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5"/></svg>');--md-admonition-icon--box-brasil:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 3a1 1 0 0 1 1 1v.88C8.06 4.44 9.5 4 11 4c3 0 3 2 5 2 3 0 4-2 4-2v8s-1 2-4 2-3-2-5-2c-3 0-4 2-4 2v7H5V4a1 1 0 0 1 1-1"/></svg>');--md-admonition-icon--box-mundo:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm10 .5c0 1.93-.58 3.5-4 3.5-3.41 0-4-1.57-4-3.5V6h8zm4-.5h-2V4h2z"/></svg>');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>');--md-admonition-icon--code:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.29c-5.5 0-10 3-10 6.71 0 3.28 3.56 6 8.24 6.58v2.13h3.41v-2.12c.85-.09 1.64-.25 2.39-.48l1.38 2.6h3.86l-2.32-3.91C20.83 14.58 22 12.87 22 11c0-3.71-4.5-6.71-10-6.71m1.53 2.62c4.2 0 7.3 1.4 7.3 4.59 0 1.71-.92 2.91-2.42 3.65-.09-.05-.17-.1-.22-.15-.36-.16-.96-.34-.96-.34s2.98-.22 2.98-3.19-3.12-3.02-3.12-3.02h-6.85v7.16c-2.55-.74-4.31-2.31-4.31-4.11 0-2.54 3.4-4.59 7.6-4.59m.15 3.98h2.07s.95-.05.95.94c0 .97-.95.97-.95.97h-2.07zm-.03 4.41h.92c.18 0 .27.05.43.2.13.1.27.29.39.46-.55.07-1.13.1-1.74.1z"/></svg>');--md-admonition-icon--pesquisa:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.05 8.05 0 0 1-2.46 4h2.71v2h-16v-2h2.71a8 8 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/micro-book.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-1-todos-os-modelos-estao-errados-alguns-sao-uteis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Darcio Genicolo-Martins" class="md-header__button md-logo" aria-label="Darcio Genicolo-Martins" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Darcio Genicolo-Martins
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap. 1 — Todos os Modelos Estão Errados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="red" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="red" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/working-papers/" class="md-tabs__link">
+          
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teaching/intermediate-microeconomics/" class="md-tabs__link">
+          
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Micro Book
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Darcio Genicolo-Martins" class="md-nav__button md-logo" aria-label="Darcio Genicolo-Martins" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg>
+
+    </a>
+    Darcio Genicolo-Martins
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/working-papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/works-in-progress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Works in Progress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/policy-papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policy Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teaching
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Teaching
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Insper Institute of Education and Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Insper Institute of Education and Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/intermediate-microeconomics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intermediate Microeconomics (Micro II)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/microeconomics-101-lawyers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microeconomics 101 for Lawyers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teaching/good-economics-hard-times/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Economics for Hard Times (DEDP - J-Pal / Insper)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Micro Book
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Micro Book
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prefacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefácio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ferramentas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ferramentas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cap. 1 — Todos os Modelos Estão Errados
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 1 — Todos os Modelos Estão Errados
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-modelos-teoricos-por-que-simplificar" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Modelos teóricos: por que simplificar?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Modelos teóricos: por que simplificar?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-analogia-do-mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      A analogia do mapa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementos-de-um-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elementos de um modelo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-verificacao-de-modelos-economicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Verificação de modelos econômicos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Verificação de modelos econômicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abordagem-direta-versus-indireta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abordagem direta versus indireta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes-empiricos-em-economia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testes empíricos em economia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-caracteristicas-gerais-dos-modelos-microeconomicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Características gerais dos modelos microeconômicos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Características gerais dos modelos microeconômicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-principio-ceteris-paribus" class="md-nav__link">
+    <span class="md-ellipsis">
+      O princípio ceteris paribus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-hipotese-de-otimizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      A hipótese de otimização
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distincao-entre-analise-positiva-e-normativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distinção entre análise positiva e normativa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-estrutura-dos-modelos-economicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Estrutura dos modelos econômicos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Estrutura dos modelos econômicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variaveis-exogenas-e-endogenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variáveis exógenas e endógenas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-hipotese-de-otimizacao-como-fundamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      A hipótese de otimização como fundamento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-desenvolvimento-da-teoria-do-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Desenvolvimento da teoria do valor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Desenvolvimento da teoria do valor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-economistas-classicos-smith-e-ricardo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os economistas clássicos: Smith e Ricardo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-revolucao-marginalista" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Revolução Marginalista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marshall-e-a-sintese-neoclassica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marshall e a síntese neoclássica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equilibrio-geral-walrasiano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equilíbrio geral walrasiano
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-desenvolvimentos-modernos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Desenvolvimentos modernos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-demonstracao-condicao-de-maximizacao-de-lucro-p-cmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Demonstração: Condição de maximização de lucro P = CMg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revisao-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Revisão Rápida
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-do-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Resumo do Capítulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-chave" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔑 Conceitos-Chave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ Exercícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vem-anpec" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Vem, ANPEC!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pesquisa-em-acao" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Pesquisa em Ação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-do-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Referências do Capítulo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 2 — O Manual de Sobrevivência Matemática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    O Consumidor
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            O Consumidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 3 — Mais É Melhor — Será?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 4 — Você Quer Tudo. Mas Não Pode.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 5 — Slutsky no Supermercado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 6 — Substitutos, Complementos e Relações Complicadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 7 — O Preço do Talvez
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 8 — Nem Tão Racionais Assim
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interação Estratégica
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Interação Estratégica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 9 — Quando Sua Escolha Não É Só Sua
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 9 — Quando Sua Escolha Não É Só Sua
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap09a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9a — Pedra, Papel, Nash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap09b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9b — Primeiro Você, Depois Eu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap09c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9c — Jogando no Escuro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap09d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9d — O Diploma É Caro, Mas O Sinal É Grátis?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A Firma e os Custos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            A Firma e os Custos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 11 — A Conta Sempre Chega
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 12 — Lucro = Receita − Custo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mercados Competitivos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Mercados Competitivos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 13 — O Leiloeiro que Ninguém Vê
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 14 — Equilíbrio Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Poder de Mercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Poder de Mercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 15 — Sozinho, Feliz e Cobrando Caro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap16/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 16 — Poucos — e Isso Muda Tudo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9">
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fatores e Tempo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Fatores e Tempo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap17/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap18/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 18 — A Paciência Tem Preço
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Falhas de Mercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Falhas de Mercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap19/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 19 — Quando Um Lado Sabe Mais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 20 — Fumaça, Caronas e Tragédias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11">
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia Digital
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Economia Digital
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 21 — Se É De Graça, O Produto É Você
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12">
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Métodos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Métodos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13">
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia da Saúde
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            Economia da Saúde
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap23/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 23 — Doutor, Quanto Custa?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14">
+        
+          
+          <label class="md-nav__link" for="__nav_4_14" id="__nav_4_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia Ambiental
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            Economia Ambiental
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap24/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cap. 24 — Quanto Vale Um Pôr do Sol?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cadernos Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios-ia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios com IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anpec-compilado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilado ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_18">
+        
+          
+          <label class="md-nav__link" for="__nav_4_18" id="__nav_4_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Referência
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_18">
+            <span class="md-nav__icon md-icon"></span>
+            Referência
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📚 Referência
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indice-remissivo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índice Remissivo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referências
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    
+                  
+
+
+<h1 id="capitulo-1-todos-os-modelos-estao-errados-alguns-sao-uteis">Capítulo 1 — Todos os Modelos Estão Errados — Alguns São Úteis<a class="headerlink" href="#capitulo-1-todos-os-modelos-estao-errados-alguns-sao-uteis" title="Permanent link">¶</a></h1>
+<p>Se você já brigou consigo mesmo sobre pedir a sobremesa ou resistir, já fez microeconomia — só não sabia. A microeconomia estuda como pessoas, empresas e governos tomam decisões quando os recursos são escassos e as vontades, infinitas. E o instrumento principal dessa investigação não é um microscópio nem um questionário: é um <strong>modelo</strong> — uma história simplificada sobre como o mundo funciona, escrita na linguagem da matemática.</p>
+<p>O mundo real, convenhamos, é uma bagunça: bilhões de agentes tomam decisões simultâneas, mercados interagem entre si, instituições moldam incentivos e a informação se distribui de forma desigual. Ninguém consegue processar tudo isso de uma vez. O economista, diante dessa complexidade, faz o que qualquer pessoa sensata faria: <strong>simplifica</strong>. E essa simplificação deliberada, longe de ser uma fraqueza, é a maior força da disciplina.</p>
+<p>Este capítulo apresenta a lógica da construção de modelos em economia, discute como verificá-los empiricamente, examina suas características fundamentais e traça um panorama histórico do desenvolvimento da teoria do valor — o problema central da microeconomia. A exposição segue Nicholson e Snyder (2017, Cap. 1), complementada por Mas-Colell, Whinston e Green (1995, Cap. 1) e Varian (2015, Cap. 1). Para uma discussão acessível e rica em aplicações, ver Pindyck e Rubinfeld (2013, Caps. 1–2).</p>
+<p>Ao final, o leitor deverá compreender não apenas <em>o que</em> a microeconomia faz, mas <em>como</em> e <em>por que</em> ela faz dessa forma — e estará preparado para mergulhar nas ferramentas matemáticas do Capítulo 2 e, em seguida, na teoria do consumidor (Capítulos 3 e 4), que traduz as ideias aqui apresentadas em modelos formais de escolha individual.</p>
+<hr>
+<h2 id="11-modelos-teoricos-por-que-simplificar">1.1 Modelos teóricos: por que simplificar?<a class="headerlink" href="#11-modelos-teoricos-por-que-simplificar" title="Permanent link">¶</a></h2>
+<p>A pergunta pode parecer estranha: por que um cientista <em>escolheria</em> jogar informação fora? Não seria melhor incluir tudo? A resposta, embora contra-intuitiva, é que um modelo que inclui tudo não explica nada — assim como um GPS que mostrasse cada formiga na calçada seria inútil para chegar ao trabalho. Para entender por quê, considere uma analogia.</p>
+<h3 id="a-analogia-do-mapa">A analogia do mapa<a class="headerlink" href="#a-analogia-do-mapa" title="Permanent link">¶</a></h3>
+<p>Um modelo econômico é, em essência, um <strong>mapa</strong>. Assim como um mapa cartográfico não pretende reproduzir cada árvore, cada pedra e cada curva de um rio, um modelo econômico não pretende capturar toda a riqueza do comportamento humano. Um mapa na escala 1:1 seria perfeitamente fiel à realidade — e perfeitamente inútil. O escritor argentino Jorge Luis Borges, em seu conto <em>Do rigor na ciência</em> (1946), imaginou um império onde os cartógrafos desenharam um mapa tão detalhado que coincidia ponto a ponto com o território. O mapa foi abandonado, destruído pelo sol e pelas chuvas — um monumento à inutilidade da representação total. A utilidade de um mapa reside precisamente no que ele <strong>omite</strong>: ao eliminar detalhes irrelevantes para a finalidade em questão, ele revela a estrutura subjacente do território.</p>
+<p>Da mesma forma, um modelo econômico é uma representação simplificada da realidade que retém apenas os elementos considerados essenciais para o problema investigado. Como observou o estatístico George Box, "todos os modelos estão errados, mas alguns são úteis." A arte da modelagem consiste em saber o que incluir e — igualmente importante — o que descartar. Um modelo de oferta e demanda para o mercado de café ignora as preferências dos consumidores por torrefação clara ou escura, a umidade relativa do ar nos cafezais e a cor das embalagens. Essas omissões não são defeitos: são escolhas deliberadas que permitem focar nos mecanismos causais relevantes — preço, renda, custos de produção — e derivar previsões testáveis.</p>
+<div class="admonition definition">
+<p class="admonition-title">Modelo Econômico</p>
+<p>Um <strong>modelo econômico</strong> é uma representação simplificada de uma situação econômica real, expressa por meio de relações lógicas (frequentemente matemáticas) entre variáveis, construída com o objetivo de explicar fenômenos observados e gerar previsões testáveis (Nicholson &amp; Snyder, 2017, p. 3).</p>
+</div>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> Um modelo econômico é uma receita que deixa de fora os ingredientes que não fazem diferença no sabor.</p>
+<p><strong>Pense assim:</strong> Quando o Waze calcula sua rota em São Paulo, ele ignora a cor dos prédios, o nome das padarias e se está chovendo na Bahia. Ele simplifica o mundo para resolver <em>seu</em> problema. Um modelo econômico faz o mesmo: descarta o que não importa para a pergunta que você está fazendo.</p>
+<p><strong>Por que isso importa:</strong> Toda política pública — do Bolsa Família à Selic — nasce de um modelo. Saber o que ele ignora é tão importante quanto saber o que ele inclui.</p>
+</div>
+<h3 id="elementos-de-um-modelo">Elementos de um modelo<a class="headerlink" href="#elementos-de-um-modelo" title="Permanent link">¶</a></h3>
+<p>Tendo compreendido <em>por que</em> simplificamos, cabe perguntar: <em>como</em> um modelo econômico é construído? Quais são seus componentes básicos? Assim como uma receita tem ingredientes, um modo de preparo e um resultado final, um modelo econômico possui elementos bem definidos que se articulam de forma lógica. Todo modelo econômico contém:</p>
+<ol>
+<li><strong>Suposições</strong> (<em>assumptions</em>): premissas sobre o comportamento dos agentes, a estrutura do mercado ou a tecnologia disponível. Por exemplo, a suposição de que consumidores maximizam utilidade ou de que firmas são tomadoras de preço.</li>
+<li><strong>Variáveis</strong>: grandezas que o modelo busca explicar (endógenas) ou que toma como dadas (exógenas). A distinção entre elas define o alcance e os limites do modelo.</li>
+<li><strong>Relações funcionais</strong>: equações ou desigualdades que conectam as variáveis — como uma função de demanda que relaciona quantidade ao preço.</li>
+<li><strong>Implicações</strong> (<em>predictions</em>): resultados derivados logicamente das suposições. São as previsões testáveis do modelo — o produto final que justifica todo o exercício de simplificação.</li>
+</ol>
+<p>A qualidade de um modelo não se mede pelo "realismo" de suas suposições, mas pela capacidade de suas implicações em organizar o pensamento e gerar previsões empiricamente relevantes. Esse critério pragmático — que prioriza a utilidade sobre o realismo — é um dos traços mais distintivos da metodologia econômica, e a próxima seção explora suas raízes filosóficas.</p>
+<p>Mas se um modelo é, por definição, uma mentira — uma simplificação deliberada —, como distinguir uma mentira <em>útil</em> de uma mentira <em>perigosa</em>? Essa pergunta não é acadêmica: modelos econômicos orientam decisões que afetam milhões de pessoas. Precisamos de um critério, e é exatamente isso que a próxima seção oferece.</p>
+<hr>
+<h2 id="12-verificacao-de-modelos-economicos">1.2 Verificação de modelos econômicos<a class="headerlink" href="#12-verificacao-de-modelos-economicos" title="Permanent link">¶</a></h2>
+<h3 id="abordagem-direta-versus-indireta">Abordagem direta versus indireta<a class="headerlink" href="#abordagem-direta-versus-indireta" title="Permanent link">¶</a></h3>
+<p>Se um modelo é, por definição, uma mentira útil, como saber se a mentira é <em>boa</em>? Aqui a profissão se divide em duas tribos:</p>
+<p><strong>Abordagem direta</strong>: examina-se o realismo das suposições do modelo. Se as premissas são "razoáveis", confia-se nas conclusões. Essa abordagem tem a vantagem da transparência, mas apresenta uma limitação séria: suposições irrealistas podem, paradoxalmente, gerar previsões excelentes. A física newtoniana, por exemplo, ignora a curvatura do espaço-tempo — suposição "errada" segundo a relatividade geral — mas prevê com precisão suficiente a órbita dos planetas para o cálculo de viagens espaciais.</p>
+<p><strong>Abordagem indireta</strong> (instrumentalismo): avalia-se o modelo exclusivamente pela qualidade de suas previsões, independentemente do realismo das suposições. Essa é a posição defendida por Milton Friedman em seu célebre ensaio "The Methodology of Positive Economics" (1953), um dos textos mais influentes e debatidos da história do pensamento econômico.</p>
+<div class="admonition note">
+<p class="admonition-title">A posição de Friedman</p>
+<p>Para Friedman, a questão relevante não é se as suposições de um modelo são "realistas" — elas nunca são —, mas se o modelo gera previsões suficientemente boas para o propósito em questão. Uma teoria sobre a trajetória de bolas de bilhar pode supor que os jogadores resolvem equações de física — suposição claramente falsa —, mas se as previsões forem acuradas, o modelo é útil.</p>
+</div>
+<p>Na prática, a maioria dos economistas adota uma posição intermediária: embora as previsões sejam o teste último, o realismo das suposições importa na medida em que afeta a robustez do modelo fora da amostra em que foi calibrado. Um modelo cujas suposições são grosseiramente irrealistas pode gerar boas previsões em condições normais, mas falhar espetacularmente quando as circunstâncias mudam — como ficou evidente na crise financeira de 2008, quando modelos de risco baseados em distribuições normais subestimaram catastroficamente a probabilidade de eventos extremos.</p>
+<h3 id="testes-empiricos-em-economia">Testes empíricos em economia<a class="headerlink" href="#testes-empiricos-em-economia" title="Permanent link">¶</a></h3>
+<p>Seja qual for a tribo, em algum momento o modelo precisa encontrar a realidade — e aí começam os problemas. Verificar um modelo econômico é muito mais difícil do que verificar se uma ponte aguenta peso. A economia enfrenta desafios particulares:</p>
+<ul>
+<li><strong>Impossibilidade de experimentos controlados</strong> na maioria dos casos (embora a economia experimental e os ensaios controlados aleatorizados tenham avançado significativamente desde os anos 2000).</li>
+<li><strong>Problemas de identificação</strong>: distinguir correlação de causalidade é o desafio central da econometria. Observar que países com mais sorveterias têm maior renda per capita não significa que sorveterias causam riqueza — ambas as variáveis podem ser efeito de um terceiro fator (clima temperado, urbanização).</li>
+<li><strong>Expectativas e reflexividade</strong>: os agentes econômicos reagem às próprias previsões dos modelos, criando um problema de endogeneidade sem paralelo nas ciências naturais. Se o Banco Central anuncia que a inflação será alta, consumidores e firmas ajustam comportamentos de modo que a previsão pode se autorrealizar.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Correlação não é causalidade</p>
+<p>Um dos erros mais comuns na interpretação de evidências econômicas é confundir correlação com causalidade. O fato de duas variáveis se moverem juntas não implica que uma <em>cause</em> a outra. Um exemplo clássico: entre 1999 e 2009, o número de filmes em que Nicolas Cage apareceu se correlacionou fortemente com o número de afogamentos em piscinas nos EUA. Obviamente, Nicolas Cage não causa afogamentos — ambas as séries seguem tendências temporais que, por acaso, coincidem.</p>
+<p>Em economia, o problema é ainda mais sutil. Países que adotam instituições de livre mercado tendem a ser mais ricos — mas isso ocorre porque as instituições <em>causam</em> riqueza, ou porque países ricos <em>escolhem</em> essas instituições? A direção da causalidade importa crucialmente para a recomendação de política.</p>
+<p>As técnicas de identificação causal da econometria moderna — variáveis instrumentais, diferenças em diferenças, regressão descontínua — foram desenvolvidas precisamente para enfrentar esse desafio. Como veremos na seção "Pesquisa em Ação", Angrist e Pischke (2010) documentam essa "revolução da credibilidade" que transformou a economia empírica.</p>
+</div>
+<p>A econometria moderna desenvolveu técnicas sofisticadas para lidar com esses problemas. No Brasil, pesquisas domiciliares como a <strong><a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html">PNAD Contínua</a></strong> (Pesquisa Nacional por Amostra de Domicílios) do <a href="https://www.ibge.gov.br">IBGE</a> e a <strong>Pesquisa de Orçamentos Familiares (POF)</strong> fornecem dados fundamentais para testar modelos microeconômicos — desde a estimação de elasticidades de oferta de trabalho até a avaliação do impacto de programas como o Bolsa Família sobre decisões de consumo das famílias. O Censo Demográfico, realizado a cada dez anos, oferece dados universais que permitem análises com granularidade municipal, essenciais para estudos de economia regional e avaliação de políticas descentralizadas.</p>
+<p>Agora que compreendemos como os modelos são construídos e avaliados, podemos nos perguntar: que características comuns compartilham os modelos microeconômicos? Quais são os princípios metodológicos que permeiam praticamente toda a disciplina? A próxima seção identifica três pilares que sustentam a análise microeconômica.</p>
+<div class="admonition box-mundo">
+<p class="admonition-title">Box Mundo 1.1 — Experimentos naturais e a verificação de modelos: Card &amp; Krueger e o salário mínimo</p>
+<p><strong>Contexto:</strong> Um dos maiores desafios da verificação empírica de modelos econômicos é a impossibilidade de realizar experimentos controlados: não se pode dividir aleatoriamente um país em "grupo de tratamento" e "grupo de controle" para testar políticas econômicas. Essa limitação levou, nas décadas de 1980 e 1990, ao desenvolvimento dos chamados <em>experimentos naturais</em> — situações em que variações exógenas de política ou de contexto institucional geram condições quase-experimentais. O trabalho seminal de David Card e Alan Krueger sobre o salário mínimo nos Estados Unidos tornou-se o exemplo paradigmático dessa abordagem e ilustra concretamente como modelos teóricos podem ser confrontados com dados.</p>
+<p><strong>Dados:</strong> Em 1992, o estado de Nova Jersey elevou o salário mínimo de US$ 4,25 para US$ 5,05 por hora, enquanto o vizinho estado da Pensilvânia manteve o salário mínimo federal inalterado. Card e Krueger (1994) coletaram dados de 410 restaurantes de fast-food em ambos os estados, antes e depois do aumento, e aplicaram um desenho de diferenças em diferenças (<em>difference-in-differences</em>). O resultado surpreendeu: o emprego nos restaurantes de Nova Jersey não caiu — na verdade, apresentou um leve aumento relativo ao grupo de controle da Pensilvânia. A magnitude estimada foi de um aumento de 2,76 empregos por restaurante em Nova Jersey vis-à-vis a Pensilvânia, contrariando a previsão do modelo competitivo padrão de oferta e demanda de trabalho.</p>
+<p><strong>Análise:</strong> O estudo de Card e Krueger não "refutou" o modelo de oferta e demanda, mas demonstrou que a previsão teórica depende crucialmente das hipóteses sobre a estrutura do mercado de trabalho. Em mercados com poder de monopsônio — onde empregadores têm algum poder para fixar salários abaixo do produto marginal —, um aumento moderado do salário mínimo pode elevar o emprego. A contribuição metodológica foi igualmente profunda: mostrou que a verificação indireta de modelos (Seção 1.2) pode ser rigorosa quando se exploram variações institucionais como experimentos naturais. Esse trabalho contribuiu decisivamente para a concessão do Prêmio Nobel de Economia de 2021 a David Card, Joshua Angrist e Guido Imbens, pela "revolução da credibilidade" na economia empírica.</p>
+<p><strong>Fonte:</strong> Card, D.; Krueger, A. B. (1994). Minimum wages and employment: A case study of the fast-food industry in New Jersey and Pennsylvania. <em>American Economic Review</em>, 84(4), 772–793. Angrist, J. D.; Pischke, J.-S. (2010). The credibility revolution in empirical economics. <em>Journal of Economic Perspectives</em>, 24(2), 3–30.</p>
+</div>
+<hr>
+<h2 id="13-caracteristicas-gerais-dos-modelos-microeconomicos">1.3 Características gerais dos modelos microeconômicos<a class="headerlink" href="#13-caracteristicas-gerais-dos-modelos-microeconomicos" title="Permanent link">¶</a></h2>
+<h3 id="o-principio-ceteris-paribus">O princípio <em>ceteris paribus</em><a class="headerlink" href="#o-principio-ceteris-paribus" title="Permanent link">¶</a></h3>
+<p>Se a microeconomia fosse uma religião, teria três mandamentos. O primeiro — e talvez o mais sagrado — é o princípio <em>ceteris paribus</em>: a arte de fingir que o resto do universo parou enquanto você analisa uma única variável. Parece trapaceiro, mas é genial.</p>
+<div class="admonition definition">
+<p class="admonition-title">Ceteris Paribus</p>
+<p>A cláusula <em>ceteris paribus</em> ("tudo o mais constante") é um recurso metodológico que permite isolar o efeito de uma variável sobre outra, mantendo todas as demais grandezas relevantes inalteradas. Por exemplo: "um aumento no preço de um bem, <em>ceteris paribus</em>, reduz a quantidade demandada."</p>
+</div>
+<p>Esse princípio é análogo ao controle de variáveis em um experimento de laboratório. Embora na realidade "tudo o mais" raramente permaneça constante, a análise <em>ceteris paribus</em> permite identificar relações causais parciais que, combinadas, fornecem uma compreensão do sistema como um todo. Matematicamente, o <em>ceteris paribus</em> corresponde à derivada parcial: quando escrevemos <span class="arithmatex">\(\partial Q^d / \partial P &lt; 0\)</span>, estamos afirmando que a quantidade demandada cai quando o preço sobe, mantendo renda, preferências e preços de outros bens constantes. No Capítulo 2, veremos como o diferencial total e o teorema da função implícita formalizam essa ideia com precisão.</p>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> <em>Ceteris paribus</em> é o "muda só uma coisa por vez" da economia.</p>
+<p><strong>Pense assim:</strong> Se você quer saber se sal melhora o feijão, não muda a panela, o fogo e o tipo de feijão ao mesmo tempo. Você muda <em>só</em> o sal e compara. Economistas fazem o mesmo: perguntam "o que acontece se o preço da gasolina subir, mas a renda, o preço do etanol e tudo mais ficarem iguais?"</p>
+<p><strong>Por que isso importa:</strong> Sem essa disciplina mental, é impossível separar causa de coincidência — e políticas públicas baseadas em coincidências costumam fracassar.</p>
+</div>
+<h3 id="a-hipotese-de-otimizacao">A hipótese de otimização<a class="headerlink" href="#a-hipotese-de-otimizacao" title="Permanent link">¶</a></h3>
+<p>O <em>ceteris paribus</em> nos diz como analisar. Mas o que os modelos supõem sobre <em>quem</em> está sendo analisado? Aqui entra o segundo mandamento — e o mais polêmico. A microeconomia aposta que todo mundo, no fundo, está tentando fazer o melhor possível com o que tem. Formalmente: os agentes são <strong>otimizadores</strong>:</p>
+<ul>
+<li><strong>Consumidores</strong> maximizam utilidade sujeita a uma restrição orçamentária. No Capítulo 3, formalizaremos essa ideia por meio dos axiomas das preferências e da função de utilidade; no Capítulo 4, resolveremos o problema de otimização propriamente dito.</li>
+<li><strong>Firmas</strong> maximizam lucro (ou minimizam custo) sujeitas a restrições tecnológicas. A Seção 1.7 deste capítulo oferece uma primeira demonstração dessa lógica, que será desenvolvida em profundidade nos Capítulos 7–9.</li>
+<li><strong>Governo</strong> (em modelos normativos) maximiza bem-estar social sujeito a restrições de informação e incentivos.</li>
+</ul>
+<p>Essa hipótese não exige que os agentes sejam perfeitamente racionais em sentido psicológico. Basta que se <strong>comportem como se</strong> otimizassem — a chamada abordagem "as if" de Friedman. Um agricultor no interior do Mato Grosso pode nunca ter ouvido falar de derivadas ou condições de primeira ordem, mas se suas decisões de plantio se aproximam sistematicamente da solução do problema de maximização de lucro, o modelo de otimização é uma descrição útil de seu comportamento. A economia comportamental, discutida na Seção 1.6, estuda os contextos em que essa aproximação é menos precisa — mas mesmo aí, o modelo otimizador permanece como <em>benchmark</em> indispensável.</p>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> A microeconomia não diz que as pessoas fazem contas — diz que elas <em>agem como se</em> fizessem.</p>
+<p><strong>Pense assim:</strong> Um jogador de sinuca experiente não resolve equações de física antes de cada tacada, mas suas jogadas se aproximam da trajetória que a física prevê. Da mesma forma, um consumidor no Mercado Municipal não calcula derivadas, mas tende a escolher uma cesta que se parece com a solução do problema de otimização.</p>
+<p><strong>Por que isso importa:</strong> A hipótese "como se" é o que permite à microeconomia gerar previsões testáveis sobre o comportamento de milhões de pessoas, sem precisar abrir a cabeça de cada uma.</p>
+</div>
+<h3 id="distincao-entre-analise-positiva-e-normativa">Distinção entre análise positiva e normativa<a class="headerlink" href="#distincao-entre-analise-positiva-e-normativa" title="Permanent link">¶</a></h3>
+<p>Terceiro mandamento: <strong>nunca confundir o que é com o que deveria ser</strong>. Parece óbvio, mas a tentação é enorme — especialmente em economia, onde todo mundo tem opinião. David Hume já alertava no século XVIII: do fato de que "algo é" não se pode deduzir que "algo deveria ser". John Neville Keynes (pai do Keynes famoso) formalizou a distinção em 1891. Ela permanece como uma das pedras angulares da metodologia econômica — e como uma das mais violadas no debate público. A <a href="#tabela-1-1">Tabela 1.1</a> sintetiza a ideia.</p>
+<p><a id="tabela-1-1"></a></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Análise Positiva</th>
+<th>Análise Normativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pergunta central</strong></td>
+<td>"O que é?" / "O que será?"</td>
+<td>"O que deveria ser?"</td>
+</tr>
+<tr>
+<td><strong>Natureza</strong></td>
+<td>Descritiva/preditiva</td>
+<td>Prescritiva</td>
+</tr>
+<tr>
+<td><strong>Verificação</strong></td>
+<td>Confronto com dados</td>
+<td>Julgamento de valor</td>
+</tr>
+<tr>
+<td><strong>Exemplo</strong></td>
+<td>"Um imposto sobre cigarro reduz o consumo em X%"</td>
+<td>"O governo deveria tributar cigarros"</td>
+</tr>
+</tbody>
+</table>
+<div class="caption-obj">
+<p><strong>Tabela 1.1 — Análise positiva vs. normativa.</strong></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Importância da distinção</p>
+<p>Embora a fronteira entre análise positiva e normativa nem sempre seja nítida, manter a distinção é essencial para o rigor intelectual. Muitas controvérsias em política econômica decorrem de confusões entre proposições positivas e normativas. Quando dois economistas "discordam", é fundamental perguntar: discordam sobre os <em>fatos</em> (questão positiva, resolúvel com dados) ou sobre os <em>valores</em> (questão normativa, irredutível a evidências)?</p>
+</div>
+<p>Com os três mandamentos em mãos — "mude uma coisa por vez", "todo mundo otimiza" e "não misture fatos com desejos" —, estamos prontos para examinar a estrutura concreta de um modelo. Como esses princípios se materializam em equações e variáveis?</p>
+<details class="exercicio-resolvido">
+<summary>Exercício Resolvido 1.1 — Análise positiva versus normativa</summary>
+<p><strong>Enunciado.</strong> Classifique cada afirmação como positiva ou normativa e justifique:</p>
+<p>(a) A taxa de desemprego no Brasil em 2023 foi de 7,8%.</p>
+<p>(b) O governo deveria reduzir impostos sobre a cesta básica para combater a desigualdade.</p>
+<p>(c) Um aumento de 10% na tarifa de importação de aço eleva o preço doméstico em aproximadamente 5%.</p>
+<p>(d) A política de cotas raciais nas universidades é justa.</p>
+<p><strong>Solução.</strong></p>
+<p><strong>(a) Positiva.</strong> Trata-se de uma afirmação descritiva sobre um fato observável, verificável por dados da PNAD Contínua/IBGE. Não envolve julgamento de valor.</p>
+<p><strong>(b) Normativa.</strong> Contém o verbo "deveria", indicando prescrição baseada em julgamento de valor sobre o que é desejável. Duas pessoas podem concordar sobre o efeito positivo da medida (análise positiva) e discordar sobre se ela <em>deve</em> ser adotada (análise normativa).</p>
+<p><strong>(c) Positiva.</strong> É uma previsão quantitativa testável empiricamente — por exemplo, via modelos de equilíbrio parcial ou métodos econométricos. Não envolve juízo sobre se o aumento tarifário é bom ou ruim.</p>
+<p><strong>(d) Normativa.</strong> O conceito de "justiça" envolve julgamento de valor — diferentes concepções de equidade (rawlsiana, utilitarista, libertária) conduziriam a conclusões distintas sobre a mesma política.</p>
+</details>
+<hr>
+<h2 id="14-estrutura-dos-modelos-economicos">1.4 Estrutura dos modelos econômicos<a class="headerlink" href="#14-estrutura-dos-modelos-economicos" title="Permanent link">¶</a></h2>
+<h3 id="variaveis-exogenas-e-endogenas">Variáveis exógenas e endógenas<a class="headerlink" href="#variaveis-exogenas-e-endogenas" title="Permanent link">¶</a></h3>
+<p>O primeiro passo na construção de qualquer modelo é a decisão mais honesta que um cientista pode tomar: admitir o que ele <em>não</em> vai explicar. Todo modelo divide o mundo em duas caixas: o que está <em>dentro</em> (e será explicado) e o que está <em>fora</em> (e será tomado como dado). Essa decisão, aparentemente simples, é uma das mais consequentes da modelagem. O preço do petróleo, por exemplo, é "dado" (exógeno) se você está modelando o mercado de gasolina no Brasil — mas vira "incógnita" (endógeno) se você está modelando o mercado mundial de commodities. O mesmo ingrediente muda de papel dependendo da receita.</p>
+<div class="admonition definition">
+<p class="admonition-title">Variáveis Exógenas e Endógenas</p>
+<p><strong>Variáveis exógenas</strong> são determinadas fora do modelo — são os dados, os parâmetros, as "causas". <strong>Variáveis endógenas</strong> são determinadas dentro do modelo — são as incógnitas, os "efeitos". A tarefa do modelo é explicar como as variáveis endógenas respondem a mudanças nas variáveis exógenas.</p>
+</div>
+<p>Considere o modelo clássico de oferta e demanda para um mercado competitivo:</p>
+<ul>
+<li><strong>Exógenas</strong>: renda dos consumidores (<span class="arithmatex">\(Y\)</span>), preços dos insumos (<span class="arithmatex">\(w\)</span>), tecnologia (<span class="arithmatex">\(A\)</span>), preferências dos consumidores.</li>
+<li><strong>Endógenas</strong>: preço de equilíbrio (<span class="arithmatex">\(P^*\)</span>) e quantidade de equilíbrio (<span class="arithmatex">\(Q^*\)</span>).</li>
+</ul>
+<p>As equações do modelo:</p>
+<div class="arithmatex">\[
+Q^d = D(P, Y) \quad \text{(demanda)} \label{eq:1.4.1} \tag{1.4.1}
+\]</div>
+<div class="arithmatex">\[
+Q^s = S(P, w, A) \quad \text{(oferta)} \label{eq:1.4.2} \tag{1.4.2}
+\]</div>
+<div class="arithmatex">\[
+Q^d = Q^s \quad \text{(equilíbrio)} \label{eq:1.4.3} \tag{1.4.3}
+\]</div>
+<div class="admonition definition">
+<p class="admonition-title">Equilíbrio de Mercado</p>
+<p>Um <strong>equilíbrio de mercado</strong> é uma configuração de preço <span class="arithmatex">\(P^*\)</span> e quantidade <span class="arithmatex">\(Q^*\)</span> na qual a quantidade que os consumidores desejam comprar é igual à quantidade que os produtores desejam vender: <span class="arithmatex">\(Q^d(P^*) = Q^s(P^*)\)</span>. No equilíbrio, não há pressão para que o preço mude — nenhum agente tem incentivo para alterar unilateralmente seu comportamento. Fora do equilíbrio, o excesso de demanda ou de oferta gera forças que empurram o preço de volta ao ponto de equilíbrio, como uma bola no fundo de uma tigela.</p>
+</div>
+<iframe src="../graficos/cap01/oferta-demanda.html" title="Figura 1.1 — Oferta e Demanda com Estática Comparativa" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj">
+<p><strong>Figura 1.1 — Oferta e Demanda com Estática Comparativa.</strong> Ajuste a renda <span class="arithmatex">\(Y\)</span>, o custo dos insumos <span class="arithmatex">\(w\)</span> e as inclinações das curvas para observar como <span class="arithmatex">\(P^*\)</span> e <span class="arithmatex">\(Q^*\)</span> se deslocam. O painel mostra as derivadas de estática comparativa <span class="arithmatex">\(\partial P^*/\partial Y\)</span> e <span class="arithmatex">\(\partial P^*/\partial w\)</span> em tempo real.</p>
+</div>
+<iframe src="../graficos/cap01/fluxo-circular.html" title="Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj">
+<p><strong>Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores.</strong> Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.</p>
+</div>
+<h3 id="a-hipotese-de-otimizacao-como-fundamento">A hipótese de otimização como fundamento<a class="headerlink" href="#a-hipotese-de-otimizacao-como-fundamento" title="Permanent link">¶</a></h3>
+<p>O sistema de equações <span class="arithmatex">\(\eqref{eq:1.4.1}\)</span>--<span class="arithmatex">\(\eqref{eq:1.4.3}\)</span> descreve o equilíbrio de um mercado, mas como chegamos a essas equações? A resposta está na hipótese de otimização discutida na Seção 1.3. Na prática, a construção de um modelo microeconômico segue um roteiro bem definido, que traduz a ideia de agentes otimizadores em um problema matemático concreto. A estrutura típica de um modelo microeconômico envolve:</p>
+<ol>
+<li><strong>Definir o objetivo</strong> do agente (função utilidade, função lucro).</li>
+<li><strong>Identificar as restrições</strong> (orçamentária, tecnológica, informacional).</li>
+<li><strong>Resolver o problema de otimização</strong> (condições de primeira e segunda ordem).</li>
+<li><strong>Derivar funções de resposta</strong> (demanda, oferta) como funções dos parâmetros exógenos.</li>
+<li><strong>Analisar estática comparativa</strong>: como as soluções ótimas mudam quando os parâmetros variam.</li>
+</ol>
+<div class="admonition definition">
+<p class="admonition-title">Estática Comparativa</p>
+<p>A <strong>estática comparativa</strong> consiste em comparar dois equilíbrios — um antes e outro depois de uma mudança em uma variável exógena — para determinar a <em>direção</em> e a <em>magnitude</em> da resposta das variáveis endógenas. O termo "estática" indica que se comparam dois pontos de repouso, sem descrever o caminho de ajuste entre eles; "comparativa" indica a comparação entre os dois estados. Formalmente, trata-se de calcular derivadas como <span class="arithmatex">\(\partial P^* / \partial Y\)</span> (efeito de uma variação na renda sobre o preço de equilíbrio). No Capítulo 2, o teorema da função implícita e o teorema do envelope fornecerão as ferramentas matemáticas para realizar estática comparativa de forma sistemática.</p>
+</div>
+<p>Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, para formalizar as preferências do consumidor; no Capítulo 4, para derivar as funções de demanda; nos Capítulos 7–9, para obter as curvas de custo e oferta da firma; e no Capítulo 12, para analisar o equilíbrio geral. Mas antes de mergulhar na análise formal, vale a pena situar as ideias que discutimos até aqui em uma perspectiva mais ampla. Como a ciência econômica chegou a esse modo de pensar? A resposta passa pela história da teoria do valor — o problema central que motivou o desenvolvimento da microeconomia.</p>
+<details class="exercicio-resolvido">
+<summary>Exercício Resolvido 1.2 — Variáveis exógenas, endógenas e estática comparativa</summary>
+<p><strong>Enunciado.</strong> Considere o seguinte modelo simplificado do mercado de café no Brasil:</p>
+<ul>
+<li>Demanda: <span class="arithmatex">\(Q^d = 200 - 4P + 2Y\)</span>, onde <span class="arithmatex">\(P\)</span> é o preço e <span class="arithmatex">\(Y\)</span> é a renda dos consumidores.</li>
+<li>Oferta: <span class="arithmatex">\(Q^s = -20 + 6P - 3C\)</span>, onde <span class="arithmatex">\(C\)</span> é o custo dos insumos agrícolas.</li>
+</ul>
+<p>(a) Identifique as variáveis exógenas e endógenas.</p>
+<p>(b) Encontre o preço e a quantidade de equilíbrio como funções dos parâmetros exógenos.</p>
+<p>(c) Se <span class="arithmatex">\(Y = 50\)</span> e <span class="arithmatex">\(C = 10\)</span>, calcule <span class="arithmatex">\(P^*\)</span> e <span class="arithmatex">\(Q^*\)</span>.</p>
+<p>(d) Realize estática comparativa: qual o efeito de um aumento da renda sobre o preço de equilíbrio?</p>
+<p><strong>Solução.</strong></p>
+<p><strong>(a)</strong> <strong>Exógenas:</strong> <span class="arithmatex">\(Y\)</span> (renda) e <span class="arithmatex">\(C\)</span> (custo dos insumos) — determinadas fora do modelo. <strong>Endógenas:</strong> <span class="arithmatex">\(P^*\)</span> (preço) e <span class="arithmatex">\(Q^*\)</span> (quantidade) — determinadas pelo equilíbrio do modelo.</p>
+<p><strong>(b)</strong> No equilíbrio, <span class="arithmatex">\(Q^d = Q^s\)</span>:</p>
+<div class="arithmatex">\[
+200 - 4P + 2Y = -20 + 6P - 3C
+\]</div>
+<div class="arithmatex">\[
+220 + 2Y + 3C = 10P
+\]</div>
+<div class="arithmatex">\[
+P^* = 22 + 0{,}2Y + 0{,}3C
+\]</div>
+<p>Substituindo na função de demanda:</p>
+<div class="arithmatex">\[
+Q^* = 200 - 4(22 + 0{,}2Y + 0{,}3C) + 2Y = 112 + 1{,}2Y - 1{,}2C
+\]</div>
+<p><strong>(c)</strong> <span class="arithmatex">\(P^* = 22 + 0{,}2 \times 50 + 0{,}3 \times 10 = 22 + 10 + 3 = 35\)</span></p>
+<p><span class="arithmatex">\(Q^* = 112 + 1{,}2 \times 50 - 1{,}2 \times 10 = 112 + 60 - 12 = 160\)</span></p>
+<p><strong>(d)</strong> <span class="arithmatex">\(\dfrac{\partial P^*}{\partial Y} = 0{,}2 &gt; 0\)</span>. Um aumento da renda eleva o preço de equilíbrio. Intuitivamente, mais renda desloca a curva de demanda para a direita (a cada preço dado, a quantidade demandada aumenta), pressionando o preço para cima. Este é um exercício de estática comparativa como descrito na Seção 1.4: variamos uma variável exógena (<span class="arithmatex">\(Y\)</span>) e observamos o efeito sobre a variável endógena (<span class="arithmatex">\(P^*\)</span>).</p>
+</details>
+<hr>
+<h2 id="15-desenvolvimento-da-teoria-do-valor">1.5 Desenvolvimento da teoria do valor<a class="headerlink" href="#15-desenvolvimento-da-teoria-do-valor" title="Permanent link">¶</a></h2>
+<p>Se a microeconomia fosse uma série, esta seção seria a temporada de flashbacks — aquela que mostra como os personagens chegaram até aqui.</p>
+<p>Se a microeconomia tivesse um enigma fundador — um mistério que manteve gerações de pensadores acordados à noite —, seria este: <strong>por que o diamante custa mais que a água?</strong> A água é indispensável à vida; o diamante, no máximo, decora um anel de noivado. No entanto, um litro de água na torneira custa centavos e um quilate de diamante custa uma fortuna. Algo está errado — ou algo está muito certo, e nós ainda não entendemos o quê.</p>
+<p>A história do pensamento econômico pode ser lida como a busca por essa resposta. E a resposta, quando finalmente veio, mudou não apenas a economia, mas a forma como pensamos sobre valor, preço e escolha. A <a href="#tabela-1-2">Tabela 1.2</a> apresenta a cronologia dessa investigação.</p>
+<p><a id="tabela-1-2"></a></p>
+<table>
+<thead>
+<tr>
+<th>Período</th>
+<th>Escola / Autor</th>
+<th>Contribuição Principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1776</td>
+<td>Adam Smith</td>
+<td>Teoria do valor-trabalho; mão invisível; divisão do trabalho</td>
+</tr>
+<tr>
+<td>1817</td>
+<td>David Ricardo</td>
+<td>Teoria do valor-trabalho refinada; vantagens comparativas; renda da terra</td>
+</tr>
+<tr>
+<td>1848</td>
+<td>John Stuart Mill</td>
+<td>Síntese clássica; custos de produção como determinante do valor de longo prazo</td>
+</tr>
+<tr>
+<td>1871</td>
+<td>Revolução Marginalista (Jevons, Menger, Walras)</td>
+<td>Valor determinado pela utilidade marginal; análise na margem</td>
+</tr>
+<tr>
+<td>1890</td>
+<td>Alfred Marshall</td>
+<td>Síntese neoclássica: oferta (custos) e demanda (utilidade) como "duas lâminas da tesoura"</td>
+</tr>
+<tr>
+<td>1874–1877</td>
+<td>Léon Walras</td>
+<td>Equilíbrio geral; interdependência dos mercados</td>
+</tr>
+<tr>
+<td>1939</td>
+<td>John Hicks</td>
+<td><em>Value and Capital</em>: formalização da teoria do consumidor e equilíbrio geral</td>
+</tr>
+<tr>
+<td>1947</td>
+<td>Paul Samuelson</td>
+<td><em>Foundations</em>: axiomatização da teoria econômica; preferência revelada</td>
+</tr>
+<tr>
+<td>1954</td>
+<td>Arrow &amp; Debreu</td>
+<td>Prova de existência do equilíbrio geral competitivo</td>
+</tr>
+<tr>
+<td>1970–</td>
+<td>Teoria dos jogos, informação assimétrica, economia comportamental</td>
+<td>Fronteiras modernas da microeconomia</td>
+</tr>
+</tbody>
+</table>
+<div class="caption-obj">
+<p><strong>Tabela 1.2 — Cronologia das principais escolas de pensamento.</strong></p>
+</div>
+<h3 id="os-economistas-classicos-smith-e-ricardo">Os economistas clássicos: Smith e Ricardo<a class="headerlink" href="#os-economistas-classicos-smith-e-ricardo" title="Permanent link">¶</a></h3>
+<p>Antes da revolução, veio o impasse. Os economistas clássicos dos séculos XVIII e XIX tinham uma resposta elegante para o valor: <strong>trabalho</strong>. Um bem vale o que custou para produzi-lo. Faz sentido — até parar para pensar.</p>
+<p>Adam Smith (1776), em <em>A Riqueza das Nações</em>, propôs que o valor de troca de um bem é determinado pela quantidade de trabalho necessária para produzi-lo. Smith distinguiu entre <strong>valor de uso</strong> (utilidade) e <strong>valor de troca</strong> (poder de compra sobre outros bens), observando o famoso "paradoxo da água e do diamante": a água tem enorme valor de uso mas baixo valor de troca, enquanto o diamante tem pouco valor de uso prático mas alto valor de troca. Smith reconhecia que algo não se encaixava — se o valor depende do trabalho, por que a água, que exige pouco trabalho, tem valor de uso tão grande? —, mas não conseguiu resolver a tensão.</p>
+<p>David Ricardo (1817) refinou a teoria do valor-trabalho, reconhecendo o papel do capital como "trabalho incorporado" e desenvolvendo a teoria da <strong>renda diferencial da terra</strong>. A contribuição de Ricardo foi mostrar que o preço dos cereais não é alto porque a renda da terra é alta — ao contrário, a renda é alta porque o preço é alto. Terras menos férteis, cultivadas apenas porque a demanda crescente assim exige, não geram renda alguma; as terras mais férteis geram renda precisamente porque são mais produtivas que a margem de cultivo. Essa inversão causal — do preço para a renda, e não da renda para o preço — antecipou em décadas o pensamento marginalista.</p>
+<p>O paradoxo da água e do diamante continuava lá, sorrindo cinicamente para os clássicos. Eles sabiam que algo não fechava, mas não conseguiam dizer o quê. A resolução viria de uma mudança radical de perspectiva — e, como toda boa revolução intelectual, aconteceu em três lugares ao mesmo tempo, com três pessoas que não se conheciam.</p>
+<h3 id="a-revolucao-marginalista">A Revolução Marginalista<a class="headerlink" href="#a-revolucao-marginalista" title="Permanent link">¶</a></h3>
+<p>A década de 1870 assistiu a uma revolução no pensamento econômico, protagonizada independentemente por três autores:</p>
+<ul>
+<li><strong>William Stanley Jevons</strong> (Inglaterra, 1871), em <em>The Theory of Political Economy</em>, formulou a ideia de que o valor de troca é determinado pela "utilidade final" — o que hoje chamamos de utilidade marginal.</li>
+<li><strong>Carl Menger</strong> (Áustria, 1871), em <em>Grundsätze der Volkswirtschaftslehre</em> (Princípios de Economia), desenvolveu uma teoria subjetiva do valor centrada nas necessidades do indivíduo e na escassez relativa dos bens.</li>
+<li><strong>Léon Walras</strong> (Suíça, 1874), em <em>Éléments d'économie politique pure</em>, formalizou matematicamente a determinação simultânea de preços em todos os mercados.</li>
+</ul>
+<p>Os três chegaram à mesma conclusão fundamental: o valor de um bem é determinado não pela quantidade total de utilidade que ele proporciona, mas pela <strong>utilidade marginal</strong> — a utilidade da última unidade consumida. Isso resolve o paradoxo da água e do diamante: a água é abundante, logo sua utilidade marginal é baixa; o diamante é escasso, logo sua utilidade marginal é alta. A resolução é elegante: Smith confundia utilidade <em>total</em> com utilidade <em>marginal</em>. A água tem enorme utilidade total (sem ela, morremos), mas a próxima unidade adicional (o centésimo litro do dia) acrescenta muito pouco. O diamante tem utilidade total modesta, mas como possuímos poucos, cada unidade adicional é altamente valorizada.</p>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> O valor de um bem não depende de quanto você precisa dele no total, mas de quanto precisa da <em>próxima</em> unidade.</p>
+<p><strong>Pense assim:</strong> No sertão nordestino, o primeiro litro de água do dia vale ouro. O centésimo litro serve para lavar a calçada. A água não mudou — o que mudou foi a <em>margem</em>. O diamante é caro não porque é mais útil que a água, mas porque você quase nunca tem um sobrando.</p>
+<p><strong>Por que isso importa:</strong> Essa ideia — pensar na margem — é a revolução que separou a economia moderna da clássica. Todo preço, todo custo, toda decisão se resolve na margem, não no total. No Capítulo 3, formalizaremos essa noção como a <em>utilidade marginal</em> e a <em>taxa marginal de substituição</em>.</p>
+</div>
+<iframe src="../graficos/cap01/utilidade-marginal.html" title="Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj">
+<p><strong>Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante.</strong> A curva <span class="arithmatex">\(UMg(x)\)</span> é decrescente: quanto mais abundante o bem, menor o valor da próxima unidade. Ajuste as quantidades de água e diamante para ver que a água tem maior utilidade <em>total</em> (área sob a curva), mas menor utilidade <em>marginal</em> (altura da curva) — resolvendo o paradoxo de Smith.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Prêmio Nobel — Paul Samuelson (1970)</p>
+<p><strong>Paul Anthony Samuelson</strong> (1915–2009) foi um economista norte-americano, formado pela Universidade de Chicago e com doutorado em Harvard. Atuou por décadas no MIT, onde fundou uma das mais influentes escolas de economia do mundo.</p>
+<p><strong>Por que ganhou o Nobel:</strong>
+Samuelson foi o primeiro laureado em Economia, premiado "pelo trabalho científico por meio do qual desenvolveu a teoria econômica estática e dinâmica e contribuiu ativamente para elevar o nível geral de análise na ciência econômica." Em <em>Foundations of Economic Analysis</em> (1947), Samuelson axiomatizou a teoria microeconômica, mostrando que praticamente todos os resultados da economia podiam ser derivados de problemas de otimização com restrição — formalizando o roteiro descrito na Seção 1.4.</p>
+<p><strong>Conexão com este capítulo:</strong>
+A abordagem de Samuelson é a espinha dorsal da metodologia descrita neste capítulo: definir uma função objetivo, impor restrições, resolver por condições de primeira ordem e derivar estática comparativa. Seu conceito de <em>preferência revelada</em> oferece ainda uma alternativa empírica aos axiomas de preferência do Capítulo 3, permitindo inferir as preferências do consumidor a partir de suas escolhas observadas.</p>
+</div>
+<h3 id="marshall-e-a-sintese-neoclassica">Marshall e a síntese neoclássica<a class="headerlink" href="#marshall-e-a-sintese-neoclassica" title="Permanent link">¶</a></h3>
+<p>A revolução marginalista resolveu o paradoxo do valor, mas criou uma briga nova: se o valor depende da utilidade marginal (demanda), então os custos de produção (oferta) não importam? Os clássicos se reviram nos túmulos. Quem pôs ordem na briga foi Alfred Marshall — o grande diplomata da economia. Marshall (1890), em seus <em>Principles of Economics</em>, ofereceu uma das metáforas mais perfeitas de toda a ciência: perguntar se é a oferta ou a demanda que determina o preço é como perguntar qual das duas lâminas de uma tesoura corta o papel. Óbvio: as duas. No <strong>curto prazo</strong>, quando a oferta é relativamente fixa, a demanda (e portanto a utilidade marginal) é mais importante para determinar o preço; no <strong>longo prazo</strong>, quando a oferta se ajusta, os custos de produção predominam. A oferta e a demanda operam juntas, como as duas lâminas, para determinar o preço de equilíbrio — o conceito central formalizado nas equações <span class="arithmatex">\(\eqref{eq:1.4.1}\)</span>–<span class="arithmatex">\(\eqref{eq:1.4.3}\)</span>.</p>
+<h3 id="equilibrio-geral-walrasiano">Equilíbrio geral walrasiano<a class="headerlink" href="#equilibrio-geral-walrasiano" title="Permanent link">¶</a></h3>
+<p>Marshall, pragmático, analisava um mercado de cada vez — café aqui, trigo ali, aço acolá — tratando os demais como cenário de fundo. É como estudar a Seleção Brasileira ignorando temporariamente que os clubes existem: simplifica, funciona para muitas perguntas, mas não para todas. Essa abordagem, chamada de <em>equilíbrio parcial</em>, é a principal ferramenta analítica deste livro. Mas e se quisermos entender como <em>todos</em> os mercados se determinam ao mesmo tempo? Aí precisamos de Walras. Walras foi além e formulou o problema do <strong>equilíbrio geral</strong>: a determinação simultânea de preços e quantidades em todos os mercados da economia. Em 1954, Kenneth Arrow e Gérard Debreu provaram rigorosamente a existência de um equilíbrio geral competitivo sob condições apropriadas — um dos maiores feitos intelectuais da ciência econômica (Mas-Colell, Whinston &amp; Green, 1995, cap. 17). A prova mostrou que, sob hipóteses razoáveis sobre preferências e tecnologia, existe um conjunto de preços que equilibra todos os mercados simultaneamente — uma validação formal da intuição de Adam Smith sobre a "mão invisível".</p>
+<p>A teoria do valor percorreu, portanto, um arco que vai do valor-trabalho dos clássicos, passa pela utilidade marginal dos marginalistas, chega à síntese marshalliana e culmina na formalização rigorosa do equilíbrio geral. Mas a história não parou aí. Nas últimas décadas, a microeconomia expandiu seus horizontes para além do modelo competitivo básico, incorporando interações estratégicas, informação imperfeita e comportamento real dos agentes — desenvolvimentos que a próxima seção examina.</p>
+<hr>
+<h2 id="16-desenvolvimentos-modernos">1.6 Desenvolvimentos modernos<a class="headerlink" href="#16-desenvolvimentos-modernos" title="Permanent link">¶</a></h2>
+<p>O modelo competitivo básico — todo mundo aceita o preço, todo mundo sabe tudo, todo mundo é perfeitamente racional — foi a estrela da microeconomia por décadas. E funcionou surpreendentemente bem. Mas o mundo real tem vícios que o modelo ignora: empresas que espiam umas às outras, vendedores que sabem mais que compradores, e consumidores que compram coisas no impulso e se arrependem no dia seguinte. A microeconomia contemporânea expandiu-se em várias direções, relaxando — uma a uma — as suposições do modelo básico:</p>
+<ul>
+<li><strong>Teoria dos jogos</strong>: modelagem de interações estratégicas entre agentes, quando as decisões de cada um afetam os resultados dos demais (Nash, 1950; Mas-Colell et al., 1995, parte IV). Quando a Ambev decide o preço de sua cerveja, ela considera a possível reação da Heineken — e vice-versa. Essa interdependência estratégica, ausente no modelo competitivo, é o objeto da teoria dos jogos, que será tema dos Capítulos 14–15.</li>
+<li><strong>Economia da informação</strong>: análise de mercados com informação assimétrica — seleção adversa (Akerlof, 1970), risco moral e sinalização (Spence, 1973). No mercado de carros usados, por exemplo, o vendedor sabe mais sobre a qualidade do veículo do que o comprador, o que pode levar ao colapso do mercado para carros de boa qualidade — o famoso "mercado de limões" de Akerlof.</li>
+<li><strong>Economia comportamental</strong>: incorporação de insights da psicologia — racionalidade limitada, vieses cognitivos, preferências dependentes de referência (Kahneman &amp; Tversky, 1979). No Brasil, princípios comportamentais vêm sendo aplicados em políticas públicas, como o uso de <em>nudges</em> (arquitetura de escolhas) na simplificação de formulários de acesso a benefícios sociais e na comunicação sobre educação financeira pelo Banco Central.</li>
+<li><strong>Teoria dos mecanismos</strong>: desenho de instituições e regras que alinham incentivos individuais com objetivos sociais (Hurwicz, Maskin, Myerson). Os leilões de concessão de petróleo conduzidos pela ANP no Brasil, por exemplo, são desenhados com base em princípios da teoria dos mecanismos para maximizar a arrecadação e garantir a eficiência alocativa.</li>
+<li><strong>Economia experimental</strong>: uso de experimentos controlados em laboratório e em campo para testar previsões teóricas e avaliar políticas públicas.</li>
+</ul>
+<div class="admonition box-brasil">
+<p class="admonition-title">Box Brasil — O CADE e a análise antitruste baseada em modelos</p>
+<p>O <strong>Conselho Administrativo de Defesa Econômica (CADE)</strong> é a autoridade antitruste brasileira, vinculada ao Ministério da Justiça. Quando duas empresas anunciam uma fusão ou aquisição, o CADE avalia se a operação pode prejudicar a concorrência — e, para isso, utiliza extensivamente modelos econômicos.</p>
+<p><strong>Como os modelos são usados.</strong> O CADE define o <em>mercado relevante</em> (que produtos competem entre si? em que região geográfica?) com base em testes como o SSNIP (<em>Small but Significant and Non-transitory Increase in Price</em>), que é essencialmente um exercício de estática comparativa: se uma firma hipotética monopolista elevasse o preço em 5–10%, os consumidores migrariam para outro produto? Se sim, os dois produtos pertencem ao mesmo mercado. Em seguida, o CADE estima a concentração de mercado (índice HHI), simula os efeitos da fusão sobre preços e quantidades usando modelos de oligopólio (como o modelo de Bertrand ou Cournot, temas dos Capítulos 14–15) e avalia se os possíveis ganhos de eficiência compensam os riscos concorrenciais.</p>
+<p><strong>Um exemplo concreto.</strong> Em 2012, o CADE analisou a aquisição da Sadia pela Perdigão (formando a BRF). Utilizando modelos de demanda e simulações de fusão, a equipe técnica estimou aumentos de preços potenciais em categorias como presuntos, salsichas e margarinas. A aprovação foi condicionada à venda de marcas para reduzir a concentração em mercados específicos — uma intervenção diretamente fundamentada nos resultados dos modelos.</p>
+<p><strong>Conexão com o capítulo.</strong> O caso do CADE ilustra todos os elementos discutidos neste capítulo: a construção de modelos com variáveis exógenas (elasticidades de demanda, custos marginais) e endógenas (preços pós-fusão); a verificação indireta (as previsões do modelo são comparadas com dados de preços após operações anteriores); e a distinção positivo/normativo (o modelo prevê o aumento de preço — análise positiva; a decisão de bloquear ou condicionar a fusão envolve juízo sobre eficiência e bem-estar — análise normativa).</p>
+<p><strong>Fonte:</strong> CADE, Ato de Concentração nº 08012.004423/2009-18 (BRF); Guia para Análise de Atos de Concentração Horizontal (CADE, 2016).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Microeconomia aplicada</p>
+<p>A microeconomia moderna é amplamente utilizada em políticas públicas, regulação de mercados, leilões (como os de espectro eletromagnético), desenho de mercados (como <em>matching</em> de médicos residentes ou doação de órgãos), e análise antitruste. Essas aplicações ilustram que os modelos discutidos ao longo deste livro não são abstrações desconectadas da realidade, mas ferramentas operacionais com impacto direto sobre decisões que afetam milhões de pessoas.</p>
+</div>
+<p>Com esse panorama dos desenvolvimentos modernos, temos uma visão completa do que a microeconomia faz e para onde se dirige. Retornemos agora ao terreno formal para consolidar, em uma demonstração concreta, a lógica de modelagem discutida ao longo deste capítulo.</p>
+<div class="admonition box-mundo">
+<p class="admonition-title">Box Mundo 1.2 — O Consenso de Washington e o ajuste estrutural: quando modelos teóricos moldam políticas internacionais</p>
+<p><strong>Contexto:</strong> Poucas vezes na história econômica a relação entre modelos teóricos e políticas públicas foi tão direta quanto no episódio do Consenso de Washington. Em 1989, o economista John Williamson cunhou o termo para descrever um conjunto de dez recomendações de política econômica que, segundo ele, refletiam o consenso entre as instituições sediadas em Washington — FMI, Banco Mundial e Departamento do Tesouro dos EUA — sobre as reformas necessárias para países em desenvolvimento. As recomendações incluíam disciplina fiscal, liberalização comercial e financeira, privatizações, desregulamentação e proteção de direitos de propriedade. Esses princípios derivavam diretamente de modelos microeconômicos de equilíbrio competitivo e da teoria do bem-estar: se mercados competitivos são eficientes (Primeiro Teorema do Bem-Estar), então a remoção de distorções governamentais deveria melhorar a alocação de recursos.</p>
+<p><strong>Dados:</strong> As políticas de ajuste estrutural foram implementadas em mais de 70 países entre as décadas de 1980 e 2000, frequentemente como condição para empréstimos do FMI e do Banco Mundial. Os resultados foram heterogêneos. Estudos como o de Easterly (2005) mostraram que os países que receberam mais empréstimos de ajuste estrutural não apresentaram crescimento significativamente maior: a mediana de crescimento per capita dos países africanos sob programas de ajuste foi de apenas 0,1% ao ano entre 1980 e 1999. Na América Latina, a "década perdida" dos anos 1980 foi seguida por reformas liberalizantes nos anos 1990 que produziram resultados mistos: a inflação foi controlada (no Brasil, de 2.477% em 1993 para menos de 10% após o Plano Real), mas a desigualdade e o desemprego aumentaram em vários países da região.</p>
+<p><strong>Análise:</strong> O episódio do Consenso de Washington ilustra tanto o poder quanto os limites dos modelos teóricos discutidos neste capítulo. Os modelos de equilíbrio competitivo que fundamentavam as recomendações pressupunham mercados completos, informação perfeita, direitos de propriedade bem definidos e instituições eficientes — hipóteses que frequentemente não se verificavam nos países em desenvolvimento. Dani Rodrik (2006) argumentou que o fracasso parcial das reformas não invalidou a teoria econômica, mas revelou que a "tradução" de modelos abstratos em políticas concretas exige atenção às condições locais e institucionais — exatamente a distinção entre pressupostos de um modelo e a realidade que ele pretende simplificar (Seção 1.1). O episódio tornou-se um caso emblemático sobre a responsabilidade dos economistas ao aplicar modelos teóricos a contextos complexos.</p>
+<p><strong>Fonte:</strong> Williamson, J. (1990). What Washington means by policy reform. In: <em>Latin American Adjustment: How Much Has Happened?</em>. Institute for International Economics. Easterly, W. (2005). What did structural adjustment adjust? The association of policies and growth with repeated IMF and World Bank adjustment loans. <em>Journal of Development Economics</em>, 76(1), 1–22. Rodrik, D. (2006). Goodbye Washington Consensus, hello Washington Confusion? <em>Journal of Economic Literature</em>, 44(4), 973–987.</p>
+</div>
+<div class="admonition box-mundo">
+<p class="admonition-title">Box Mundo 1.3 — A revolução da credibilidade: experimentos naturais e o Nobel de 2021</p>
+<p><strong>Contexto:</strong> Durante décadas, a economia empírica enfrentou uma limitação fundamental discutida na Seção 1.2: a impossibilidade de realizar experimentos controlados na maioria dos contextos de interesse. Como saber se um programa de treinamento realmente eleva os salários, ou se mais anos de escolaridade causam maior renda — e não apenas se correlacionam com ela? A partir dos anos 1990, uma geração de econometristas desenvolveu métodos rigorosos para extrair inferência causal a partir de dados observacionais, explorando variações institucionais e políticas como "experimentos naturais". Essa transformação metodológica ficou conhecida como a <strong>revolução da credibilidade</strong> e foi coroada com o Prêmio Nobel de Economia de 2021, concedido a David Card, Joshua Angrist e Guido Imbens.</p>
+<p><strong>Dados:</strong> Angrist e Krueger (1991, <em>Quarterly Journal of Economics</em>) utilizaram o trimestre de nascimento como variável instrumental para identificar o retorno causal da escolaridade: nos EUA, leis de frequência escolar obrigatória fazem com que alunos nascidos no primeiro trimestre do ano permaneçam menos tempo na escola do que os nascidos no quarto trimestre, gerando uma variação exógena nos anos de estudo. A estimativa por variáveis instrumentais indicou retorno de aproximadamente 7–10% por ano adicional de escolaridade. Imbens e Angrist (1994, <em>Econometrica</em>) formalizaram o conceito de <strong>efeito causal local médio</strong> (LATE), mostrando que variáveis instrumentais identificam o efeito do tratamento sobre os <em>compliers</em> — indivíduos cujo comportamento é efetivamente alterado pelo instrumento. O Banco Mundial reporta que, até 2023, mais de 350 avaliações de impacto de programas sociais em países em desenvolvimento utilizaram métodos de experimentos naturais (variáveis instrumentais, diferenças em diferenças, regressão descontínua), contra menos de 30 em 1990 (World Bank, <em>Development Impact Evaluation</em>, DIME).</p>
+<p><strong>Análise:</strong> A revolução da credibilidade ilustra concretamente o debate metodológico da Seção 1.2 entre abordagem direta e indireta na verificação de modelos. Os métodos de Card, Angrist e Imbens não substituem a teoria econômica — ao contrário, eles a complementam ao fornecer ferramentas para testar previsões teóricas com rigor causal. O modelo competitivo do mercado de trabalho prevê que aumentos do salário mínimo reduzem o emprego; Card e Krueger (Box Mundo 1.1) mostraram que essa previsão pode falhar quando a hipótese de mercado competitivo é violada. A lição metodológica é profunda: modelos teóricos geram previsões condicionais às suas hipóteses, e os experimentos naturais permitem identificar sob quais condições essas hipóteses são válidas — conectando a análise positiva à verificação empírica de forma operacional.</p>
+<p><strong>Fonte:</strong> Angrist, J. D.; Krueger, A. B. (1991). Does compulsory school attendance affect schooling and earnings? <em>Quarterly Journal of Economics</em>, 106(4), 979–1014. Imbens, G. W.; Angrist, J. D. (1994). Identification and estimation of local average treatment effects. <em>Econometrica</em>, 62(2), 467–476. Nobel Prize Committee (2021). <em>Scientific Background: Answering Causal Questions Using Observational Data</em>. Royal Swedish Academy of Sciences.</p>
+</div>
+<hr>
+<h2 id="17-demonstracao-condicao-de-maximizacao-de-lucro-p-cmg">1.7 Demonstração: Condição de maximização de lucro P = CMg<a class="headerlink" href="#17-demonstracao-condicao-de-maximizacao-de-lucro-p-cmg" title="Permanent link">¶</a></h2>
+<p>Chega de filosofia — vamos ver um modelo em ação. A demonstração a seguir é o "Hello World" da microeconomia: a condição de maximização de lucro da firma competitiva. É simples, é elegante, e encapsula tudo o que discutimos até aqui: um agente com objetivo (lucro), uma restrição (tecnologia/custos), uma condição de ótimo (derivada igual a zero) e uma previsão testável (a curva de oferta). É também o primeiro exemplo de como o cálculo diferencial — ferramentas do Capítulo 2 — resolve problemas econômicos reais.</p>
+<div class="admonition theorem">
+<p class="admonition-title">Teorema: Condição de Primeira Ordem para Maximização de Lucro</p>
+<p>Considere uma firma tomadora de preços (<em>price taker</em>) em um mercado competitivo. Se a firma produz uma quantidade positiva <span class="arithmatex">\(q^* &gt; 0\)</span> que maximiza seu lucro, então o preço de mercado deve ser igual ao custo marginal avaliado nessa quantidade:</p>
+<div class="arithmatex">\[
+P = CMg(q^*)
+\]</div>
+<p>Além disso, a condição de segunda ordem exige que o custo marginal seja crescente nesse ponto.</p>
+</div>
+<div class="admonition proof">
+<p class="admonition-title">Demonstração</p>
+<p>O lucro da firma é dado por:</p>
+<div class="arithmatex">\[
+\pi(q) = RT(q) - CT(q) = P \cdot q - CT(q) \label{eq:1.7.1} \tag{1.7.1}
+\]</div>
+<p>onde <span class="arithmatex">\(P\)</span> é o preço de mercado (dado, exógeno para a firma competitiva), <span class="arithmatex">\(RT(q)\)</span> é a receita total e <span class="arithmatex">\(CT(q)\)</span> é o custo total.</p>
+<p><strong>Condição de primeira ordem (CPO):</strong></p>
+<p>Para que <span class="arithmatex">\(q^*\)</span> seja um máximo interior, é necessário que a derivada do lucro em relação a <span class="arithmatex">\(q\)</span> seja zero:</p>
+<div class="arithmatex">\[
+\frac{d\pi}{dq}\bigg|_{q=q^*} = 0 \label{eq:1.7.2} \tag{1.7.2}
+\]</div>
+<div class="arithmatex">\[
+\frac{d}{dq}\left[P \cdot q - CT(q)\right]\bigg|_{q=q^*} = 0
+\]</div>
+<div class="arithmatex">\[
+P - \frac{dCT}{dq}\bigg|_{q=q^*} = 0
+\]</div>
+<div class="arithmatex">\[
+\boxed{P = CMg(q^*)} \label{eq:1.7.3} \tag{1.7.3}
+\]</div>
+<p>onde <span class="arithmatex">\(CMg(q) = \frac{dCT}{dq}\)</span> é o custo marginal.</p>
+<p><strong>Condição de segunda ordem (CSO):</strong></p>
+<p>Para que <span class="arithmatex">\(q^*\)</span> seja de fato um <strong>máximo</strong> (e não um mínimo ou ponto de inflexão), a segunda derivada do lucro deve ser negativa:</p>
+<div class="arithmatex">\[
+\frac{d^2\pi}{dq^2}\bigg|_{q=q^*} &lt; 0 \label{eq:1.7.4} \tag{1.7.4}
+\]</div>
+<div class="arithmatex">\[
+-\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} &lt; 0
+\]</div>
+<div class="arithmatex">\[
+\frac{d^2 CT}{dq^2}\bigg|_{q=q^*} &gt; 0 \implies \frac{dCMg}{dq}\bigg|_{q=q^*} &gt; 0 \label{eq:1.7.5} \tag{1.7.5}
+\]</div>
+<p>Portanto, a condição de segunda ordem <span class="arithmatex">\(\eqref{eq:1.7.5}\)</span> exige que o <strong>custo marginal seja crescente</strong> no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. <span class="arithmatex">\(\blacksquare\)</span></p>
+</div>
+<iframe src="../graficos/cap01/maximizacao-lucro.html" title="Figura 1.4 — Maximização de lucro da firma competitiva" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj">
+<p><strong>Figura 1.4 — Maximização de lucro da firma competitiva.</strong> Ajuste o preço <span class="arithmatex">\(P\)</span> e observe como <span class="arithmatex">\(q^*\)</span> se desloca ao longo da curva de custo marginal, confirmando que <span class="arithmatex">\(dq^*/dP &gt; 0\)</span> (oferta ascendente).</p>
+</div>
+<p>O que essa demonstração nos revela? Uma lógica de uma beleza quase desarmante: a firma continua produzindo enquanto "vale a pena" — isto é, enquanto vender mais uma unidade rende (<span class="arithmatex">\(P\)</span>) mais do que custa (<span class="arithmatex">\(CMg\)</span>). Ela para exatamente quando a última unidade "empata". A partir daí, produzir mais seria jogar dinheiro fora. É como comer em rodízio: você repete enquanto o prazer supera o desconforto. Na fatia de pizza em que os dois se igualam, você para. (Se for racional. Se não for, vem a Seção 8.1 para explicar por quê.) Note como a demonstração segue precisamente o roteiro descrito na Seção 1.4: partimos de um objetivo (maximizar lucro), de uma restrição implícita (a tecnologia da firma, expressa na função de custo), resolvemos via condições de primeira e segunda ordem e chegamos a uma função de resposta — a curva de oferta. Este resultado será desenvolvido com muito mais detalhe nos Capítulos 7–9, onde estudaremos a teoria da firma em profundidade.</p>
+<p>Note também que a demonstração ilustra o poder da estática comparativa: como <span class="arithmatex">\(CMg\)</span> é crescente no ótimo, um aumento no preço <span class="arithmatex">\(P\)</span> exige um aumento em <span class="arithmatex">\(q^*\)</span> para restaurar a igualdade <span class="arithmatex">\(P = CMg\)</span>. Isso fundamenta a <strong>lei da oferta</strong> — a relação positiva entre preço e quantidade ofertada — como consequência lógica da otimização, não como uma hipótese ad hoc. A relação <span class="arithmatex">\(q^*(P)\)</span>, que associa a cada preço a quantidade ótima, é a <strong>curva de oferta individual</strong> da firma.</p>
+<details class="exercicio-resolvido">
+<summary>Exercício Resolvido 1.3 — Maximização de lucro e a condição <span class="arithmatex">\(P = CMg\)</span></summary>
+<p><strong>Enunciado.</strong> Uma firma competitiva tem função de custo total <span class="arithmatex">\(CT(q) = 50 + 8q + 0{,}5q^2\)</span>. O preço de mercado é <span class="arithmatex">\(P = 28\)</span>.</p>
+<p>(a) Determine o custo marginal e o custo médio.</p>
+<p>(b) Encontre a quantidade que maximiza o lucro usando a condição <span class="arithmatex">\(P = CMg\)</span>.</p>
+<p>(c) Verifique a condição de segunda ordem.</p>
+<p>(d) Calcule o lucro máximo.</p>
+<p>(e) Identifique as variáveis exógenas e endógenas neste modelo.</p>
+<p><strong>Solução.</strong></p>
+<p><strong>(a)</strong></p>
+<div class="arithmatex">\[
+CMg(q) = \frac{dCT}{dq} = 8 + q
+\]</div>
+<div class="arithmatex">\[
+CMe(q) = \frac{CT(q)}{q} = \frac{50}{q} + 8 + 0{,}5q
+\]</div>
+<p><strong>(b)</strong> Pela condição de primeira ordem (<span class="arithmatex">\(P = CMg\)</span>):</p>
+<div class="arithmatex">\[
+28 = 8 + q \implies q^* = 20
+\]</div>
+<p><strong>(c)</strong> A condição de segunda ordem exige <span class="arithmatex">\(\dfrac{dCMg}{dq}\bigg|_{q^*} &gt; 0\)</span>:</p>
+<div class="arithmatex">\[
+\frac{dCMg}{dq} = 1 &gt; 0 \quad \checkmark
+\]</div>
+<p>O custo marginal é crescente em todo o domínio, confirmando que <span class="arithmatex">\(q^* = 20\)</span> é um máximo do lucro.</p>
+<p><strong>(d)</strong></p>
+<div class="arithmatex">\[
+\pi^* = P \cdot q^* - CT(q^*) = 28 \times 20 - (50 + 8 \times 20 + 0{,}5 \times 400)
+\]</div>
+<div class="arithmatex">\[
+\pi^* = 560 - 50 - 160 - 200 = 150
+\]</div>
+<p><strong>(e)</strong> <strong>Exógenas:</strong> preço de mercado <span class="arithmatex">\(P\)</span>, parâmetros da função de custo (50, 8, 0,5). <strong>Endógena:</strong> quantidade ótima <span class="arithmatex">\(q^*\)</span> (e, por consequência, o lucro <span class="arithmatex">\(\pi^*\)</span>).</p>
+</details>
+<hr>
+<div class="admonition box-brasil">
+<p class="admonition-title">Box Brasil — O Plano Real (1994): modelos econômicos em ação</p>
+<p>O <strong>Plano Real</strong>, implementado em 1994, é um dos exemplos mais notáveis de aplicação prática de modelos econômicos na história brasileira. Diferentemente dos planos de estabilização anteriores (Cruzado, Bresser, Verão, Collor), que recorreram a congelamentos de preços e confiscos — medidas ad hoc, sem fundamentação teórica sólida —, o Plano Real foi desenhado com base em modelos formais de <strong>expectativas racionais</strong>, <strong>teoria dos jogos</strong> e <strong>teoria monetária</strong>.</p>
+<p><strong>O problema da inércia inflacionária.</strong> O Brasil enfrentava uma inflação crônica que se autoalimentava: como os agentes esperavam inflação futura, reajustavam preventivamente seus preços, gerando a inflação que temiam. Modelos de expectativas mostravam que, em um equilíbrio com indexação generalizada, a inflação passada se projetava automaticamente para o futuro.</p>
+<p><strong>A solução da URV.</strong> A equipe econômica, liderada por Pérsio Arida, André Lara Resende, Edmar Bacha, Pedro Malan e Gustavo Franco, concebeu a <strong>Unidade Real de Valor (URV)</strong> — uma moeda indexada ao dólar que funcionava como unidade de conta, enquanto o cruzeiro real continuava como meio de pagamento. O mecanismo pode ser compreendido como um <strong>jogo de coordenação</strong>: a URV permitiu que todos os agentes "sincronizassem" seus preços relativos em uma unidade estável antes da conversão para a nova moeda.</p>
+<p><strong>A teoria por trás da transição.</strong> A ideia fundamental remonta à proposta "Larida" (Arida &amp; Resende, 1985), inspirada em modelos de hiperinflação de Cagan e na teoria de reforma monetária. O modelo previa que, se fosse possível desindexar a economia de forma coordenada e crível, o nível de preços se estabilizaria sem necessidade de congelamento.</p>
+<p><strong>Resultados.</strong> A inflação, que atingiu 2.477% nos 12 meses anteriores ao Real, caiu para cerca de 22% em 1995 e seguiu em trajetória descendente. O sucesso do plano ilustra como modelos econômicos bem construídos — mesmo sendo simplificações da realidade — podem orientar intervenções de política com resultados transformadores.</p>
+<p>Este caso demonstra a tese central deste capítulo: modelos são úteis não apesar de suas simplificações, mas <em>por causa</em> delas.</p>
+</div>
+<hr>
+<div class="admonition box-brasil">
+<p class="admonition-title">Box Brasil — COPOM e os modelos de projeção da inflação</p>
+<p>O <strong>Comitê de Política Monetária (COPOM)</strong> do Banco Central do Brasil decide, a cada 45 dias, a taxa básica de juros (<strong>Selic</strong>) com base em projeções geradas por modelos econômicos. O principal instrumento é o <strong>SAMBA</strong> (<em>Stochastic Analytical Model with a Bayesian Approach</em>), um modelo de equilíbrio geral dinâmico estocástico (DSGE) que representa a economia brasileira por meio de equações descrevendo o comportamento de famílias, firmas, governo e setor externo (Castro et al., 2015).</p>
+<p><strong>A lógica do modelo.</strong> O SAMBA contém variáveis exógenas (choques de oferta, variações cambiais, preços internacionais de commodities) e variáveis endógenas (inflação, produto, taxa de juros). A partir de suposições sobre o comportamento otimizador dos agentes — exatamente como descrito na Seção 1.3 — e de uma regra de política monetária (regra de Taylor), o modelo projeta trajetórias de inflação 6 a 8 trimestres à frente.</p>
+<p><strong>Modelos como "mapas".</strong> O BCB não utiliza apenas o SAMBA. Emprega também modelos semi-estruturais, VARs (vetores autorregressivos) e modelos de fatores. Cada modelo é um "mapa" diferente da mesma economia — como discutido na Seção 1.1, a escolha do modelo depende da pergunta: o SAMBA é útil para análise de política monetária, enquanto os VARs capturam melhor dinâmicas de curto prazo.</p>
+<p><strong>Verificação.</strong> O BCB publica trimestralmente o <em>Relatório de Inflação</em>, no qual confronta suas projeções passadas com os dados realizados — um exercício de verificação indireta de seus modelos, exatamente no espírito da Seção 1.2. Quando as projeções se desviam sistematicamente da realidade, os modelos são recalibrados.</p>
+<p>Este caso ilustra que modelos econômicos não são exercícios acadêmicos abstratos: são ferramentas operacionais que orientam decisões com impacto direto sobre a vida de milhões de brasileiros.</p>
+</div>
+<hr>
+<p>Lembra da sobremesa? Aquele conflito interno — prazer agora vs. culpa depois — é, no fundo, um problema de otimização com restrição (mandamento 2), analisável isolando variáveis <em>ceteris paribus</em> (mandamento 1), e cuja "solução correta" depende de se estamos descrevendo o que você <em>faz</em> ou prescrevendo o que <em>deveria</em> fazer (mandamento 3). Nos próximos capítulos, vamos formalizar essa intuição — começando pelas ferramentas matemáticas que transformam dilemas de supermercado em equações resolúveis.</p>
+<p><em>No próximo capítulo: as ferramentas que transformam intuição em demonstração. (Aviso: vai ter derivada.)</em></p>
+<hr>
+<h2 id="revisao-rapida">🧠 Revisão Rápida<a class="headerlink" href="#revisao-rapida" title="Permanent link">¶</a></h2>
+<p>Teste seu entendimento dos conceitos centrais deste capítulo.</p>
+<details class="question">
+<summary>1. Qual é a principal diferença entre análise positiva e análise normativa em economia?</summary>
+<ul>
+<li>(a) A análise positiva usa dados empíricos, enquanto a normativa usa apenas teoria</li>
+<li>(b) A análise positiva descreve 'o que é', enquanto a normativa prescreve 'o que deveria ser'</li>
+<li>(c) A análise positiva trata de microeconomia e a normativa de macroeconomia</li>
+<li>(d) A análise positiva é objetiva porque não envolve suposições</li>
+</ul>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>(b)</strong> A análise positiva busca descrever e explicar fenômenos econômicos como eles são, gerando previsões testáveis. A análise normativa envolve juízos de valor sobre o que deveria ser feito. A alternativa (a) confunde método com natureza da análise; (c) mistura subáreas; (d) é incorreta pois toda análise envolve suposições.</p>
+</details>
+</details>
+<details class="question">
+<summary>2. Segundo a visão friedmaniana, um modelo econômico deve ser avaliado principalmente pela:</summary>
+<ul>
+<li>(a) Fidelidade de suas premissas à realidade observada</li>
+<li>(b) Complexidade matemática de suas equações</li>
+<li>(c) Capacidade de gerar previsões úteis e testáveis</li>
+<li>(d) Quantidade de variáveis que incorpora</li>
+</ul>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>(c)</strong> Friedman (1953) argumentou que modelos devem ser julgados pela utilidade de suas previsões, não pelo realismo de suas suposições. Um mapa útil não precisa reproduzir cada detalhe do terreno. As demais alternativas confundem realismo das premissas (a), sofisticação formal (b) ou abrangência (d) com qualidade preditiva.</p>
+</details>
+</details>
+<details class="question">
+<summary>3. A cláusula <em>ceteris paribus</em> em microeconomia corresponde, matematicamente, a:</summary>
+<ul>
+<li>(a) Uma integral definida sobre a função de demanda</li>
+<li>(b) Uma derivada parcial — variar uma variável mantendo as demais constantes</li>
+<li>(c) Uma transformação monotônica da função de utilidade</li>
+<li>(d) Uma condição de equilíbrio geral com todos os mercados simultâneos</li>
+</ul>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>(b)</strong> <em>Ceteris paribus</em> significa 'tudo o mais constante', o que equivale a calcular a derivada parcial de uma função em relação a uma variável, mantendo todas as outras fixas. Isso é o fundamento da estática comparativa. A alternativa (d) descreve justamente a abordagem oposta — equilíbrio geral, que abandona o <em>ceteris paribus</em>.</p>
+</details>
+</details>
+<details class="question">
+<summary>4. Em um modelo microeconômico, as variáveis endógenas são aquelas que:</summary>
+<ul>
+<li>(a) São determinadas fora do modelo e tratadas como parâmetros</li>
+<li>(b) São determinadas dentro do modelo, como resultado da otimização dos agentes</li>
+<li>(c) Representam apenas variáveis monetárias como preço e renda</li>
+<li>(d) Não podem ser observadas empiricamente</li>
+</ul>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>(b)</strong> Variáveis endógenas são determinadas pelo próprio modelo (ex.: preço e quantidade de equilíbrio), enquanto variáveis exógenas (a) são determinadas fora dele (ex.: renda, tecnologia). A alternativa (c) é muito restritiva e (d) confunde endogeneidade com observabilidade.</p>
+</details>
+</details>
+<details class="question">
+<summary>5. A hipótese de otimização na microeconomia assume que os agentes:</summary>
+<ul>
+<li>(a) Possuem informação perfeita sobre todos os mercados</li>
+<li>(b) Agem 'como se' maximizassem uma função objetivo, mesmo que não calculem explicitamente</li>
+<li>(c) Sempre alcançam o resultado socialmente ótimo</li>
+<li>(d) Nunca cometem erros em suas decisões</li>
+</ul>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>(b)</strong> A hipótese de otimização, no sentido 'como se' (<em>as if</em>) de Friedman, não exige que os agentes façam cálculos conscientes — apenas que seu comportamento seja consistente com a maximização de uma função objetivo. A alternativa (a) confunde otimização com informação perfeita; (c) confunde ótimo privado com social; (d) ignora que erros sistemáticos são estudados pela economia comportamental.</p>
+</details>
+</details>
+<hr>
+<h2 id="resumo-do-capitulo">📋 Resumo do Capítulo<a class="headerlink" href="#resumo-do-capitulo" title="Permanent link">¶</a></h2>
+<ul>
+<li>A microeconomia utiliza <strong>modelos</strong> — representações simplificadas da realidade, análogas a mapas — para isolar mecanismos causais e gerar previsões testáveis. A qualidade de um modelo se mede pela utilidade de suas implicações, não pelo realismo de suas suposições.</li>
+<li>A verificação de modelos pode ser <strong>direta</strong> (examinar as premissas) ou <strong>indireta</strong> (avaliar as previsões, como propôs Friedman). A economia empírica moderna avançou com técnicas quase-experimentais para testar modelos com dados observacionais. A distinção entre correlação e causalidade é o desafio central.</li>
+<li>Os modelos microeconômicos repousam sobre três pilares metodológicos: a cláusula <em>ceteris paribus</em> (isolar o efeito de uma variável por vez, correspondendo matematicamente à derivada parcial), a <strong>hipótese de otimização</strong> (agentes se comportam "como se" maximizassem) e a distinção entre <strong>análise positiva</strong> (o que é) e <strong>normativa</strong> (o que deveria ser).</li>
+<li>A estrutura de um modelo envolve variáveis exógenas e endógenas, um problema de otimização, a derivação de funções de resposta e a análise de <strong>estática comparativa</strong> — como as soluções ótimas mudam quando os parâmetros variam.</li>
+<li>A teoria do valor evoluiu da teoria do valor-trabalho (Smith, Ricardo) para a <strong>revolução marginalista</strong> (Jevons, Menger, Walras), que resolveu o paradoxo da água e do diamante via utilidade marginal, culminando na síntese neoclássica de Marshall e no equilíbrio geral de Arrow-Debreu.</li>
+<li>Desenvolvimentos modernos — teoria dos jogos, economia da informação, economia comportamental, teoria dos mecanismos — relaxam as suposições do modelo competitivo básico e ampliam o alcance da microeconomia.</li>
+</ul>
+<h2 id="conceitos-chave">🔑 Conceitos-Chave<a class="headerlink" href="#conceitos-chave" title="Permanent link">¶</a></h2>
+<p><a id="tabela-1-3"></a></p>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modelo econômico</td>
+<td>Representação simplificada da realidade, expressa por relações lógicas entre variáveis, com o objetivo de explicar fenômenos e gerar previsões testáveis.</td>
+</tr>
+<tr>
+<td><em>Ceteris paribus</em></td>
+<td>Cláusula metodológica que mantém "tudo o mais constante" para isolar o efeito de uma variável sobre outra. Corresponde à derivada parcial.</td>
+</tr>
+<tr>
+<td>Hipótese de otimização</td>
+<td>Premissa de que os agentes econômicos se comportam como se maximizassem uma função objetivo (utilidade, lucro) sujeita a restrições.</td>
+</tr>
+<tr>
+<td>Análise positiva</td>
+<td>Investigação descritiva ou preditiva sobre "o que é", verificável por confronto com dados empíricos.</td>
+</tr>
+<tr>
+<td>Análise normativa</td>
+<td>Investigação prescritiva sobre "o que deveria ser", envolvendo julgamentos de valor.</td>
+</tr>
+<tr>
+<td>Variáveis exógenas e endógenas</td>
+<td>Exógenas são determinadas fora do modelo (dados/parâmetros); endógenas são determinadas dentro do modelo (incógnitas).</td>
+</tr>
+<tr>
+<td>Equilíbrio de mercado</td>
+<td>Configuração de preço e quantidade em que oferta iguala demanda: nenhum agente tem incentivo para alterar seu comportamento.</td>
+</tr>
+<tr>
+<td>Estática comparativa</td>
+<td>Comparação entre dois equilíbrios para determinar como as variáveis endógenas respondem a mudanças nas exógenas.</td>
+</tr>
+<tr>
+<td>Utilidade marginal</td>
+<td>Utilidade adicional obtida pelo consumo da última unidade de um bem; conceito central da revolução marginalista.</td>
+</tr>
+<tr>
+<td>Teoria do valor-trabalho</td>
+<td>Doutrina clássica (Smith, Ricardo) segundo a qual o valor de troca de um bem é determinado pela quantidade de trabalho necessária para produzi-lo.</td>
+</tr>
+<tr>
+<td>Equilíbrio geral</td>
+<td>Determinação simultânea de preços e quantidades em todos os mercados da economia, formalizado por Walras e provado por Arrow e Debreu.</td>
+</tr>
+</tbody>
+</table>
+<div class="caption-obj">
+<p><strong>Tabela 1.3 — Conceitos-chave.</strong></p>
+</div>
+<hr>
+<h2 id="exercicios">✏️ Exercícios<a class="headerlink" href="#exercicios" title="Permanent link">¶</a></h2>
+<p>Os exercícios a seguir cobrem os principais temas do capítulo: a lógica da modelagem, a verificação de modelos, os pilares metodológicos da microeconomia e a evolução histórica da teoria do valor. Alguns exercícios são conceituais, outros envolvem cálculos — todos exigem que o leitor articule as ideias discutidas ao longo do texto. Os exercícios progridem em dificuldade: os primeiros são mais diretos, os últimos exigem raciocínio mais elaborado e cálculos mais extensos.</p>
+<p><a id="ex-1-1"></a><strong>Exercício 1.1.</strong> Explique, usando a analogia do mapa, por que um modelo econômico que inclui todas as variáveis relevantes de uma economia real não seria necessariamente superior a um modelo mais simples. Em que sentido a simplificação pode ser uma virtude epistêmica?</p>
+<p><a href="../solucoes/cap01/#ex-1-1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-2"></a><strong>Exercício 1.2.</strong> Considere a afirmação: "O modelo de concorrência perfeita é inútil porque nenhum mercado real satisfaz todas as suas premissas." Avalie essa afirmação à luz da metodologia de Friedman (1953) e da distinção entre verificação direta e indireta de modelos.</p>
+<p><a href="../solucoes/cap01/#ex-1-2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-3"></a><strong>Exercício 1.3.</strong> Classifique cada uma das proposições abaixo como <strong>positiva</strong> ou <strong>normativa</strong> e justifique:</p>
+<p>a) Um aumento de 10% no salário mínimo reduz o emprego formal em 2%.</p>
+<p>b) O governo deveria aumentar o salário mínimo para reduzir a desigualdade.</p>
+<p>c) A elasticidade-preço da demanda por gasolina no Brasil é de aproximadamente <span class="arithmatex">\(-0{,}3\)</span> no curto prazo.</p>
+<p>d) O preço da gasolina é injustamente alto no Brasil.</p>
+<p>e) Políticas de transferência de renda aumentam o consumo das famílias beneficiárias.</p>
+<p><a href="../solucoes/cap01/#ex-1-3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-4"></a><strong>Exercício 1.4.</strong> Considere o modelo de maximização de lucro de uma firma competitiva com função de custo total <span class="arithmatex">\(CT(q) = 100 + 10q + q^2\)</span>.</p>
+<p>a) Determine a função de custo marginal <span class="arithmatex">\(CMg(q)\)</span>.</p>
+<p>b) Se o preço de mercado é <span class="arithmatex">\(P = 50\)</span>, encontre a quantidade ótima <span class="arithmatex">\(q^*\)</span>.</p>
+<p>c) Verifique que a condição de segunda ordem é satisfeita.</p>
+<p>d) Calcule o lucro máximo.</p>
+<p>e) Identifique as variáveis exógenas e endógenas neste modelo.</p>
+<p><a href="../solucoes/cap01/#ex-1-4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-5"></a><strong>Exercício 1.5.</strong> O paradoxo da água e do diamante foi um dos grandes quebra-cabeças da economia clássica.</p>
+<p>a) Enuncie o paradoxo.</p>
+<p>b) Explique por que a teoria do valor-trabalho de Smith não consegue resolvê-lo satisfatoriamente.</p>
+<p>c) Mostre como a revolução marginalista resolveu o paradoxo usando o conceito de utilidade marginal.</p>
+<p>d) Discuta como Marshall integraria ambas as perspectivas (clássica e marginalista) em sua síntese neoclássica.</p>
+<p><a href="../solucoes/cap01/#ex-1-5"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-6"></a><strong>Exercício 1.6.</strong> Dois economistas discordam sobre qual modelo usar para analisar o mercado de trabalho brasileiro. O Economista A propõe um modelo simples de oferta e demanda com salário mínimo (preço-piso). O Economista B propõe um modelo com informação assimétrica, busca por emprego (<em>search</em>) e heterogeneidade de trabalhadores.</p>
+<p>a) Identifique pelo menos duas variáveis exógenas e duas endógenas em cada modelo.</p>
+<p>b) Em que circunstância o modelo mais simples (A) pode ser preferível ao mais complexo (B)?</p>
+<p>c) Relacione sua resposta à analogia do mapa da Seção 1.1: que "detalhes do território" o Modelo A omite e o Modelo B inclui?</p>
+<p><a href="../solucoes/cap01/#ex-1-6"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-7"></a><strong>Exercício 1.7.</strong> Suponha que o governo brasileiro anuncia simultaneamente (i) um aumento na alíquota do ICMS sobre combustíveis e (ii) um programa de transferência de renda para famílias de baixa renda.</p>
+<p>a) Explique por que é difícil avaliar o efeito isolado de cada medida sobre o consumo de gasolina sem usar a cláusula <em>ceteris paribus</em>.</p>
+<p>b) Sugira um desenho de pesquisa empírica que aproximaria o <em>ceteris paribus</em> para isolar o efeito do aumento do ICMS sobre o consumo de gasolina. <em>(Dica: pense em variação regional ou temporal.)</em></p>
+<p><a href="../solucoes/cap01/#ex-1-7"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-8"></a><strong>Exercício 1.8.</strong> Considere o mercado de soja no Brasil, com as seguintes funções:</p>
+<ul>
+<li>Demanda: <span class="arithmatex">\(Q^d = 500 - 2P + 3Y - P_m\)</span>, onde <span class="arithmatex">\(Y\)</span> é a renda e <span class="arithmatex">\(P_m\)</span> é o preço do milho (substituto na ração animal).</li>
+<li>Oferta: <span class="arithmatex">\(Q^s = -100 + 4P - 2W\)</span>, onde <span class="arithmatex">\(W\)</span> é o custo do fertilizante.</li>
+</ul>
+<p>a) Identifique as variáveis exógenas e endógenas.</p>
+<p>b) Encontre <span class="arithmatex">\(P^*\)</span> e <span class="arithmatex">\(Q^*\)</span> como funções dos parâmetros exógenos.</p>
+<p>c) Se <span class="arithmatex">\(Y = 80\)</span>, <span class="arithmatex">\(P_m = 20\)</span> e <span class="arithmatex">\(W = 30\)</span>, calcule <span class="arithmatex">\(P^*\)</span> e <span class="arithmatex">\(Q^*\)</span>.</p>
+<p>d) Calcule e interprete <span class="arithmatex">\(\partial P^* / \partial P_m\)</span>: o que acontece com o preço da soja quando o preço do milho sobe?</p>
+<p>e) Calcule e interprete <span class="arithmatex">\(\partial P^* / \partial W\)</span>: o que acontece com o preço da soja quando o custo do fertilizante aumenta?</p>
+<p><a href="../solucoes/cap01/#ex-1-8"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-9"></a><strong>Exercício 1.9.</strong> O CADE (Conselho Administrativo de Defesa Econômica) utiliza modelos econômicos para avaliar fusões e aquisições. Considere uma fusão hipotética entre as duas maiores redes de supermercados de uma cidade média brasileira.</p>
+<p>a) Qual modelo de estrutura de mercado seria mais apropriado para analisar essa fusão: concorrência perfeita, oligopólio ou monopólio? Justifique.</p>
+<p>b) Liste três variáveis que o CADE deveria considerar como exógenas e três como endógenas na análise dos efeitos da fusão.</p>
+<p>c) A afirmação "A fusão elevará o preço dos alimentos em 8%" é positiva ou normativa? E "A fusão não deve ser aprovada"?</p>
+<p>d) Que tipo de evidência empírica — abordagem direta ou indireta, nos termos da Seção 1.2 — o CADE poderia usar para testar as previsões do modelo sobre os efeitos da fusão?</p>
+<p><a href="../solucoes/cap01/#ex-1-9"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<p><a id="ex-1-10"></a><strong>Exercício 1.10.</strong> Considere dois mercados inter-relacionados: o mercado de etanol e o mercado de açúcar no Brasil. A cana-de-açúcar é insumo para ambos, de modo que os dois mercados estão conectados pelo lado da oferta. Suponha:</p>
+<ul>
+<li>Demanda de etanol: <span class="arithmatex">\(Q_e^d = 300 - 5P_e\)</span></li>
+<li>Demanda de açúcar: <span class="arithmatex">\(Q_a^d = 200 - 3P_a\)</span></li>
+<li>A usina dispõe de uma oferta total de cana equivalente a <span class="arithmatex">\(\bar{S}\)</span> unidades de produto e deve alocar entre etanol (<span class="arithmatex">\(Q_e^s\)</span>) e açúcar (<span class="arithmatex">\(Q_a^s\)</span>), com <span class="arithmatex">\(Q_e^s + Q_a^s = \bar{S}\)</span>. A usina maximiza sua receita total <span class="arithmatex">\(P_e Q_e^s + P_a Q_a^s\)</span> sujeita a essa restrição.</li>
+</ul>
+<p>a) Mostre que, no ótimo da usina, a alocação exige <span class="arithmatex">\(P_e = P_a\)</span>. <em>(Dica: monte o lagrangeano.)</em></p>
+<p>b) Usando a condição de equilíbrio (<span class="arithmatex">\(Q^d = Q^s\)</span> em cada mercado) e o resultado de (a), encontre o preço de equilíbrio como função de <span class="arithmatex">\(\bar{S}\)</span>.</p>
+<p>c) Se <span class="arithmatex">\(\bar{S} = 280\)</span>, calcule os preços e quantidades de equilíbrio em ambos os mercados.</p>
+<p>d) Realize estática comparativa: calcule <span class="arithmatex">\(\partial P^* / \partial \bar{S}\)</span> e interprete economicamente. O que acontece com os preços quando uma supersafra de cana aumenta <span class="arithmatex">\(\bar{S}\)</span>?</p>
+<p><a href="../solucoes/cap01/#ex-1-10"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Ver solução</a></p>
+<hr>
+<h2 id="vem-anpec">🏆 Vem, ANPEC!<a class="headerlink" href="#vem-anpec" title="Permanent link">¶</a></h2>
+<details class="question">
+<summary>ANPEC 2019 — Questão 05</summary>
+<p>Com relação aos fundamentos da Microeconomia, julgue como verdadeiros ou falsos os itens a seguir:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Afirmação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Os preços relativos <span class="arithmatex">\(P_Y/P_X\)</span> livres de mercado dos bens <span class="arithmatex">\(Y\)</span> e <span class="arithmatex">\(X\)</span> refletem as taxas às quais a sociedade está disposta a sacrificar o bem <span class="arithmatex">\(Y\)</span> em troca de uma unidade marginal de <span class="arithmatex">\(X\)</span>.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>No curto prazo, um fator de produção é fixo apenas por razões tecnológicas, nunca porque seja simplesmente mais barato mantê-lo fixo do que ajustá-lo às novas condições de mercado.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Na ausência de externalidades marginais, os custos marginais privados podem ser interpretados como o valor que a sociedade atribui aos recursos deslocados da economia para a produção da unidade marginal.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Num mercado competitivo, com custos marginais constantes e capacidade máxima limitada, se a demanda agregada é grande o suficiente para fazer a firma atingir sua capacidade máxima, então o preço de equilíbrio é o custo marginal da última unidade acrescido do preço-sombra da capacidade máxima.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Suponha que o preço de um bem <span class="arithmatex">\(X\)</span> cai marginalmente de <span class="arithmatex">\(P_0\)</span> para <span class="arithmatex">\(P_1\)</span>. Ao se defrontar com o preço marginalmente mais baixo, o consumidor realiza uma economia de gastos relativamente à quantidade que usualmente comprava ao preço inicial. Se ele usa uma parte dessa economia para comprar mais unidades desse bem <span class="arithmatex">\(X\)</span>, mas aproveita outra parte dela para comprar outros bens, então, para esse consumidor, a demanda pelo bem <span class="arithmatex">\(X\)</span> é preço-elástica.</td>
+</tr>
+</tbody>
+</table>
+<details class="success">
+<summary>Gabarito</summary>
+<p><strong>Respostas: V F V V F</strong></p>
+<p><strong>Justificativa por item:</strong></p>
+<ul>
+<li><strong>Item 0 — V:</strong> Em um mercado competitivo sem distorções, os preços relativos refletem tanto a taxa marginal de substituição dos consumidores quanto a taxa marginal de transformação da economia. O preço relativo <span class="arithmatex">\(P_Y/P_X\)</span> indica quantas unidades de <span class="arithmatex">\(Y\)</span> a sociedade precisa sacrificar para obter uma unidade adicional de <span class="arithmatex">\(X\)</span>, refletindo o custo de oportunidade social.</li>
+<li><strong>Item 1 — F:</strong> Um fator pode ser fixo no curto prazo não apenas por impossibilidade tecnológica de ajuste, mas também porque os custos de ajustamento tornam mais barato mantê-lo fixo. Por exemplo, uma firma pode manter maquinário ocioso porque o custo de vendê-lo e readquiri-lo excede o custo de mantê-lo parado.</li>
+<li><strong>Item 2 — V:</strong> Na ausência de externalidades, o custo marginal privado coincide com o custo marginal social. Assim, o <span class="arithmatex">\(CMg\)</span> privado pode ser interpretado como o valor que a sociedade atribui aos recursos deslocados de outros usos para a produção da unidade marginal — é o custo de oportunidade social.</li>
+<li><strong>Item 3 — V:</strong> Quando a firma opera na capacidade máxima, a restrição de capacidade se torna ativa. O preço de equilíbrio deve compensar não apenas o custo marginal de produção, mas também o valor-sombra (<em>shadow price</em>) da capacidade escassa. Esse preço-sombra mede o valor marginal de relaxar a restrição de capacidade em uma unidade.</li>
+<li><strong>Item 4 — F:</strong> Se o consumidor usa apenas <em>parte</em> da economia para comprar mais de <span class="arithmatex">\(X\)</span> e desvia o restante para outros bens, então o gasto total com <span class="arithmatex">\(X\)</span> <em>diminui</em> após a queda de preço. Quando o gasto total cai com a redução do preço, a demanda é <strong>inelástica</strong> (<span class="arithmatex">\(|\varepsilon| &lt; 1\)</span>), não elástica.</li>
+</ul>
+</details>
+</details>
+<details class="question">
+<summary>ANPEC 2024 — Questão 05</summary>
+<p>Com base na lei de oferta e demanda e na determinação dos preços no mercado, julgue as afirmativas abaixo como verdadeiras ou falsas:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Afirmação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>No centro urbano de uma grande cidade não se permite, por razões arquitetônicas e políticas, a expansão da quantidade de imóveis residenciais. Considere a seguinte afirmação: "O aluguel de mercado do imóvel não é um pagamento para produção de imóveis (primeiro ponto); mas é um pagamento para obter o uso do imóvel (segundo ponto)". Pode-se afirmar que, do primeiro ponto de vista, o aluguel é uma renda pura e, do segundo ponto de vista, é um custo.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>A decisão de manter alguma capacidade ociosa nunca é uma decisão racional viável da empresa para lidar com a incerteza quanto a variações aleatórias de demanda.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>O preço-sombra da capacidade de produção máxima que a firma acrescenta ao custo marginal é uma medida monetária do valor que o mercado, na figura dos demandantes, está disposto a pagar pela expansão da capacidade máxima em uma unidade marginal.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Algumas empresas anunciam que seus produtos são mais baratos que os dos concorrentes porque elas compram diretamente dos fornecedores, eliminando integralmente o papel dos intermediários. Esse tipo de propaganda pressupõe que a intermediação é sem custos.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Custos quase-fixos não desaparecem no longo prazo.</td>
+</tr>
+</tbody>
+</table>
+<details class="success">
+<summary>Gabarito</summary>
+<p><strong>Respostas: V F V F V</strong></p>
+<p><strong>Justificativa por item:</strong></p>
+<ul>
+<li><strong>Item 0 — V:</strong> Quando a oferta de imóveis é perfeitamente inelástica (fixa), o aluguel é inteiramente determinado pela demanda e constitui uma <strong>renda pura</strong> do ponto de vista da oferta — o pagamento não induz produção adicional. Do ponto de vista do demandante, porém, o aluguel é um custo necessário para obter o uso do imóvel. Essa dualidade remete à distinção ricardiana entre renda e custo (Seção 1.5).</li>
+<li><strong>Item 1 — F:</strong> Manter capacidade ociosa pode ser perfeitamente racional quando a demanda é incerta: a firma mantém uma reserva de capacidade para atender picos de demanda sem perder clientes. Trata-se de uma decisão de otimização sob incerteza.</li>
+<li><strong>Item 2 — V:</strong> O preço-sombra de uma restrição de capacidade mede o aumento no lucro (ou, equivalentemente, o valor para o mercado) que resultaria de relaxar a restrição em uma unidade marginal. É o valor que os demandantes estão dispostos a pagar acima do custo marginal de produção pela expansão da capacidade.</li>
+<li><strong>Item 3 — F:</strong> A propaganda que alega preços mais baixos pela eliminação de intermediários pressupõe o contrário: que a intermediação <strong>tem custos</strong> (margens, logística) repassados ao consumidor. Se a intermediação fosse sem custos, eliminá-la não reduziria o preço. O que a propaganda ignora é que intermediários frequentemente geram valor real (informação, gestão de estoques, distribuição).</li>
+<li><strong>Item 4 — V:</strong> Custos quase-fixos são custos que independem do nível de produção mas que só existem quando a firma produz (<span class="arithmatex">\(q &gt; 0\)</span>). Diferentemente dos custos fixos tradicionais (como aluguéis contratuais), os custos quase-fixos persistem no longo prazo: sempre que a firma decide operar, ela os incorre, independentemente do horizonte temporal. Exemplos incluem custos mínimos de aquecimento de um forno industrial ou equipe mínima de operação.</li>
+</ul>
+</details>
+</details>
+<hr>
+<h2 id="pesquisa-em-acao">🔬 Pesquisa em Ação<a class="headerlink" href="#pesquisa-em-acao" title="Permanent link">¶</a></h2>
+<p>Esta seção apresenta pesquisas acadêmicas que aplicam os conceitos deste capítulo a problemas reais.</p>
+<details class="pesquisa">
+<summary>Angrist, J. D.; Pischke, J.-S. (2010). <a href="https://doi.org/10.1257/jep.24.2.3">The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics</a>. <em>Journal of Economic Perspectives</em>, 24(2), 3–30.</summary>
+<p><strong>O que investiga:</strong> Como a economia empírica evoluiu para produzir evidências mais confiáveis sobre relações causais? A verificação de modelos econômicos — tema central da Seção 1.2 — depende crucialmente da capacidade de distinguir correlação de causalidade nos dados observacionais.</p>
+<p><strong>Conexão com o capítulo:</strong> Angrist e Pischke documentam a "revolução da credibilidade" que transformou a economia empírica a partir dos anos 1990. A cláusula <em>ceteris paribus</em>, apresentada como recurso teórico neste capítulo, é também o objetivo prático da econometria moderna: as técnicas de identificação causal — variáveis instrumentais, diferenças em diferenças, regressão descontínua — foram desenvolvidas para aproximar o <em>ceteris paribus</em> com dados observacionais.</p>
+<p><strong>Principais resultados:</strong> A adoção dessas técnicas elevou substancialmente a qualidade da evidência empírica. Estudos sobre retornos da educação, efeito do salário mínimo e impacto de programas sociais passaram a produzir resultados mais robustos e replicáveis. Joshua Angrist recebeu o Prêmio Nobel de Economia em 2021 por essas contribuições.</p>
+<p><strong>Por que importa:</strong> A revolução da credibilidade mostra que a microeconomia empírica não se limita a testar modelos — ela os refina, revelando quais suposições são empiricamente sustentáveis e quais precisam ser revisadas.</p>
+</details>
+<details class="pesquisa">
+<summary>Thaler, R. H. (2016). <a href="https://doi.org/10.1257/aer.106.7.1577">Behavioral Economics: Past, Present, and Future</a>. <em>American Economic Review</em>, 106(7), 1577–1600.</summary>
+<p><strong>O que investiga:</strong> Até que ponto a hipótese de otimização racional — fundamento dos modelos microeconômicos discutidos na Seção 1.3 — descreve adequadamente o comportamento humano? E quando os desvios da racionalidade são sistemáticos, como devemos modificar nossos modelos?</p>
+<p><strong>Conexão com o capítulo:</strong> Em seu discurso presidencial na AEA, Thaler traça a trajetória da economia comportamental desde seus precursores até sua consolidação. O argumento central é que os agentes reais (<em>Humans</em>) diferem sistematicamente dos agentes perfeitamente racionais (<em>Econs</em>): exibem racionalidade limitada, autocontrole imperfeito e preferências sociais. A abordagem "as if" de Friedman funciona em muitos contextos, mas falha em decisões intertemporais, escolhas sob incerteza e situações com baixa experiência.</p>
+<p><strong>Principais resultados:</strong> Thaler documenta vieses robustos — efeito dotação, aversão à perda, desconto hiperbólico — e mostra como incorporá-los a modelos formais sem abandonar o arcabouço de otimização. A economia comportamental não rejeita a modelagem; propõe modelos alternativos que preservam o rigor formal.</p>
+<p><strong>Por que importa:</strong> Thaler recebeu o Nobel em 2017, consolidando a economia comportamental como parte do <em>mainstream</em> microeconômico. O artigo dialoga com as Seções 1.3 e 1.6 sobre os limites e extensões do modelo racional.</p>
+</details>
+<details class="pesquisa">
+<summary>Card, D.; Krueger, A. B. (1994). <a href="https://doi.org/10.2307/2118030">Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania</a>. <em>American Economic Review</em>, 84(4), 772–793.</summary>
+<p><strong>O que investiga:</strong> O modelo competitivo do mercado de trabalho prevê que um aumento no salário mínimo acima do equilíbrio reduz o emprego. Essa previsão é empiricamente verdadeira? Card e Krueger testam a previsão do modelo usando um "experimento natural" — um aumento do salário mínimo em New Jersey em 1992, enquanto a vizinha Pennsylvania manteve o valor inalterado.</p>
+<p><strong>Conexão com o capítulo:</strong> O estudo é um exemplo paradigmático de verificação indireta de modelos (Seção 1.2): os autores confrontam a previsão do modelo competitivo com dados empíricos, usando a estratégia de diferenças em diferenças — uma forma de aproximar o <em>ceteris paribus</em> (Seção 1.3) com dados observacionais. Pennsylvania funciona como "grupo de controle" para New Jersey.</p>
+<p><strong>Principais resultados:</strong> Contrariamente à previsão do modelo competitivo simples, o emprego no setor de fast-food em New Jersey <em>não caiu</em> após o aumento do salário mínimo — na verdade, cresceu ligeiramente em relação a Pennsylvania. O resultado sugere que o modelo competitivo de mercado de trabalho, embora útil como benchmark, pode ser incompleto: modelos com poder de monopsônio do empregador explicam melhor o resultado.</p>
+<p><strong>Por que importa:</strong> O artigo de Card e Krueger é um dos mais influentes da economia do trabalho e ilustra como a verificação empírica pode levar à revisão e ao refinamento de modelos teóricos — não ao abandono da modelagem, mas à busca por modelos melhores. David Card recebeu o Prêmio Nobel de Economia em 2021.</p>
+</details>
+<details class="pesquisa">
+<summary>Roth, A. E. (2002). <a href="https://doi.org/10.1111/1468-0262.00335">The Economist as Engineer: Game Theory, Experimentation, and Computation as Tools for Design Economics</a>. <em>Econometrica</em>, 70(4), 1341–1378.</summary>
+<p><strong>O que investiga:</strong> Os modelos econômicos podem ser usados não apenas para <em>entender</em> mercados existentes, mas para <em>projetar</em> novos mercados e instituições? Roth argumenta que sim, e apresenta o economista como "engenheiro" — alguém que usa modelos teóricos para construir mecanismos que funcionam na prática.</p>
+<p><strong>Conexão com o capítulo:</strong> O artigo conecta a discussão teórica sobre modelos (Seções 1.1–1.4) aos desenvolvimentos modernos da Seção 1.6 — especificamente, a teoria dos mecanismos e a economia experimental. A tese de Roth é que modelos abstratos de teoria dos jogos, quando combinados com experimentação e computação, tornam-se ferramentas de engenharia econômica.</p>
+<p><strong>Principais resultados:</strong> Roth documenta três casos de sucesso do design de mercados: (i) o <em>National Resident Matching Program</em> (NRMP), que aloca médicos residentes a hospitais nos EUA desde 1952; (ii) o redesenho de sistemas de admissão escolar em cidades como Nova York e Boston; e (iii) mecanismos de troca de rins entre doadores vivos incompatíveis. Em todos os casos, o design foi informado por modelos formais de matching e teoria dos jogos cooperativos.</p>
+<p><strong>Por que importa:</strong> O artigo demonstra que modelos econômicos não são apenas ferramentas de análise retrospectiva, mas instrumentos de <em>design prospectivo</em> — podem criar instituições e mercados que melhoram o bem-estar. Roth recebeu o Prêmio Nobel de Economia em 2012, juntamente com Lloyd Shapley, por seus trabalhos sobre a teoria de matching e design de mercados.</p>
+</details>
+<details class="pesquisa">
+<summary>Naritomi, J. (2019). <a href="https://doi.org/10.1257/aer.20160658">Consumers as Tax Auditors</a>. <em>American Economic Review</em>, 109(9), 3031–3072.</summary>
+<p><strong>O que investiga:</strong> Políticas públicas que incentivam consumidores a pedir nota fiscal podem reduzir a evasão tributária? Naritomi estuda o programa <em>Nota Fiscal Paulista</em> (NFP), implementado pelo governo de São Paulo em 2007, que devolve parte do ICMS a consumidores que incluem o CPF na nota fiscal — transformando consumidores em "auditores fiscais" involuntários.</p>
+<p><strong>Conexão com o capítulo:</strong> O estudo exemplifica a aplicação de modelos microeconômicos a políticas públicas brasileiras (Seção 1.6). O modelo teórico subjacente combina teoria dos incentivos — firmas decidem quanto evadir considerando a probabilidade de detecção — com a hipótese de otimização dos consumidores (Seção 1.3), que pedem nota quando o benefício esperado (devolução do ICMS) supera o custo (tempo, inconveniência). A autora utiliza variações no calendário de implementação e nos prêmios como fonte de identificação causal.</p>
+<p><strong>Principais resultados:</strong> O programa NFP aumentou a receita de ICMS declarada em 21% nos setores varejistas, com efeitos maiores em setores com muitas transações com consumidores finais. Firmas previamente subdeclarantes responderam mais fortemente, e os efeitos persistiram ao longo do tempo. O custo fiscal do programa (devoluções aos consumidores) foi significativamente inferior ao ganho de arrecadação.</p>
+<p><strong>Por que importa:</strong> O artigo demonstra, com dados brasileiros, que modelos econômicos bem construídos podem informar o desenho de políticas públicas eficazes. A NFP transformou um problema de informação assimétrica (o fisco não observa todas as transações) em um mecanismo de incentivos alinhados — um exemplo concreto de teoria dos mecanismos aplicada (Seção 1.6).</p>
+</details>
+<h2 id="referencias-do-capitulo">📚 Referências do Capítulo<a class="headerlink" href="#referencias-do-capitulo" title="Permanent link">¶</a></h2>
+<ul>
+<li>Friedman, Milton. 1953. "The Methodology of Positive Economics." In <a href="https://books.google.com/books?id=6Uhev5fmBgUC"><em>Essays in Positive Economics</em></a>. Chicago: University of Chicago Press.</li>
+<li>Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. <a href="https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC"><em>Microeconomic Theory</em></a>. New York: Oxford University Press. Cap. 1.</li>
+<li>Nicholson, Walter, e Christopher M. Snyder. 2017. <a href="https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ"><em>Microeconomic Theory: Basic Principles and Extensions</em></a>. 12ª ed. Boston: Cengage Learning. Cap. 1.</li>
+<li>Pindyck, Robert S., e Daniel L. Rubinfeld. 2013. <a href="https://books.google.com/books/about/Microeconomics.html?id=h6e7AAAAIAAJ"><em>Microeconomia</em></a>. 8ª ed. São Paulo: Pearson. Cap. 1–2.</li>
+<li>Samuelson, Paul A. 1947. <a href="https://books.google.com/books/about/Foundations_of_Economic_Analysis.html?id=lWV7HwolSeoC"><em>Foundations of Economic Analysis</em></a>. Cambridge: Harvard University Press.</li>
+<li>Varian, Hal R. 2015. <a href="https://books.google.com/books/about/Intermediate_Microeconomics_with_Calculu.html?id=9mabDwAAQBAJ"><em>Microeconomia: uma abordagem moderna</em></a>. 9ª ed. Rio de Janeiro: Elsevier. Cap. 1.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../prefacio/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prefácio">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Prefácio
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cap02/" class="md-footer__link md-footer__link--next" aria-label="Next: Cap. 2 — O Manual de Sobrevivência Matemática">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Cap. 2 — O Manual de Sobrevivência Matemática
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:darciogm1@insper.edu.br" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://scholar.google.com/citations?user=ywp2nq0AAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener" title="Google Scholar" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M390.9 298.5s0 .1.1.1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64 1.7-3.6 3.6-7.2 5.6-10.7q6.6-11.4 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3 33.6 0 64.6 11.1 89.6 29.9 9.1 6.9 17.4 14.7 24.8 23.5 5.6 6.6 10.6 13.8 15 21.3 2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0l256 202.7-94.7 77.1z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://orcid.org/0000-0003-2223-6930" target="_blank" rel="noopener" title="ORCID" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0M7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947m-.722 3.038h1.444v10.041H6.647zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/darciogm" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/darcio_martins" target="_blank" rel="noopener" title="Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/darcio-genicolo-martins-a7a3b7" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../javascripts/iframe-resize.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/toc-toggle.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

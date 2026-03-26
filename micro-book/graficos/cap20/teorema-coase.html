@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+  Interactive Coase Theorem — Chapter 19
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teorema de Coase</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+ #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: .7rem; display: flex; gap: .5rem; }
+    .toggle-group button { flex: 1; padding: .4rem; font-size: .8rem; font-family: inherit; border: 2px solid #ddd; border-radius: 4px; cursor: pointer; background: #fff; }
+    .toggle-group button.active { border-color: #C8102E; background: #C8102E; color: #fff; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Beneficio marginal poluição (\(a_{MB}\)): <span class="val" id="val-aMB">10</span></label>
+        <input type="range" id="sl-aMB" min="5" max="20" step="0.5" value="10">
+      </div>
+      <div class="slider-group">
+        <label>Dano marginal (\(b_{MD}\)): <span class="val" id="val-bMD">1.0</span></label>
+        <input type="range" id="sl-bMD" min="0.2" max="3" step="0.1" value="1.0">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação MB (\(c_{MB}\)): <span class="val" id="val-cMB">1.0</span></label>
+        <input type="range" id="sl-cMB" min="0.3" max="3" step="0.1" value="1.0">
+      </div>
+      <h3>Direito de Propriedade</h3>
+      <div class="toggle-group">
+        <button id="btn-polluter" class="active" onclick="setRights('polluter')">Poluidor</button>
+        <button id="btn-victim" onclick="setRights('victim')">Vitima</button>
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // MB of pollution (for polluter): MB(q) = aMB - cMB*q (decreasing)
+    // MD of pollution (to victim): MD(q) = bMD*q (increasing)
+    // Efficient: MB(q*) = MD(q*) => aMB - cMB*q* = bMD*q* => q* = aMB/(cMB + bMD)
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1.8, 16, 13.5, -2],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[11.5,0]], {
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      name: '', withLabel: false
+    });
+    board.create('text', [6.75, -1.3, '<b><i>Poluição (q)</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('axis', [[0,0],[0,13]], {
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      name: '', withLabel: false
+    });
+    board.create('text', [-0.9900000000000001, 8.0, '<b><i>$</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    var aMB = 10, bMD = 1.0, cMB = 1.0;
+    var rights = 'polluter'; // 'polluter' or 'victim'
+
+    function qStar() { return aMB / (cMB + bMD); }
+    function qMax() { return aMB / cMB; } // where MB = 0
+
+    // MB curve
+    board.create('functiongraph', [function(q){ return Math.max(aMB - cMB * q, 0); }],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'BMg poluidor', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // MD curve
+    board.create('functiongraph', [function(q){ return bMD * q; }],
+      { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'DMg vitima', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // Efficient point
+    var effPt = board.create('point', [
+      function(){ return qStar(); },
+      function(){ return bMD * qStar(); }
+    ], { name: 'q*', size: 5, fillColor: '#00897b', strokeColor: '#00897b', fixed: true,
+         label: { offset: [8, 5], fontSize: 12, cssStyle: 'color:#00897b;font-weight:700;' } });
+
+    // Dashed lines from efficient point
+    board.create('segment', [
+      [function(){ return qStar(); }, function(){ return bMD*qStar(); }],
+      [function(){ return qStar(); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [
+      [function(){ return qStar(); }, function(){ return bMD*qStar(); }],
+      [0, function(){ return bMD*qStar(); }]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    // Gains from trade shading (area between MB and MD from 0 to q*)
+    var nShade = 25;
+    for (var i = 0; i < nShade; i++) {
+      (function(idx) {
+        var t0 = idx / nShade, t1 = (idx+1) / nShade;
+        board.create('polygon', [
+          [function(){ return qStar()*t0; }, function(){ return bMD*qStar()*t0; }],
+          [function(){ return qStar()*t1; }, function(){ return bMD*qStar()*t1; }],
+          [function(){ return qStar()*t1; }, function(){ return Math.max(aMB - cMB*qStar()*t1, 0); }],
+          [function(){ return qStar()*t0; }, function(){ return Math.max(aMB - cMB*qStar()*t0, 0); }]
+        ], {
+          fillColor: '#00897b', fillOpacity: 0.12, borders: {strokeWidth: 0},
+          vertices: { visible: false }, hasInnerPoints: false, highlight: false
+        });
+      })(i);
+    }
+
+    // Arrow showing direction of negotiation
+    var arrowStart = board.create('point', [
+      function(){ return rights === 'polluter' ? qMax() : 0; }, -0.5
+    ], { visible: false });
+    var arrowEnd = board.create('point', [
+      function(){ return qStar(); }, -0.5
+    ], { visible: false });
+    var negArrow = board.create('arrow', [arrowStart, arrowEnd],
+      { strokeColor: '#C8102E', strokeWidth: 2.5, fixed: true });
+
+    var arrowLabel = board.create('text', [
+      function(){ return rights === 'polluter' ? (qMax() + qStar())/2 : qStar()/2; },
+      -0.8,
+      function(){ return rights === 'polluter' ? 'Vitima paga para reduzir' : 'Poluidor paga para poluir'; }
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;' });
+
+    // Starting point marker
+    var startPt = board.create('point', [
+      function(){ return rights === 'polluter' ? qMax() : 0; },
+      0
+    ], { name: '', size: 4, fillColor: '#999', strokeColor: '#999', fixed: true });
+
+    var startLabel = board.create('text', [
+      function(){ return rights === 'polluter' ? qMax() : 0; },
+      0.5,
+      function(){ return rights === 'polluter' ? 'Inicio' : 'Inicio'; }
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#999;' });
+
+    function setRights(r) {
+      rights = r;
+      document.getElementById('btn-polluter').className = r === 'polluter' ? 'active' : '';
+      document.getElementById('btn-victim').className = r === 'victim' ? 'active' : '';
+      board.update();
+      updateInfo();
+    }
+
+    function updateInfo() {
+      var qs = qStar();
+      var mbStar = aMB - cMB * qs;
+      var mdStar = bMD * qs;
+      // Gains from trade = area between MB and MD from 0 to q*
+      var gains = 0.5 * qs * aMB - 0.5 * qs * bMD * qs;
+
+      var html = '<b>Nível eficiente:</b> \\(q^* = ' + qs.toFixed(2) + '\\)<br>';
+      html += '\\(BMg(q^*) = DMg(q^*) = ' + mdStar.toFixed(2) + '\\)<br>';
+      html += '<b>Ganho total da negociação:</b> ' + gains.toFixed(2) + '<br>';
+      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+
+      if (rights === 'polluter') {
+        // Polluter has right to pollute qMax. Victim pays polluter to reduce.
+        // Transfer: area under MB from q* to qMax = polluter's forgone benefit
+        var qm = qMax();
+        var transfer = 0.5 * (qm - qs) * mbStar; // triangle
+        html += '<b>Direito:</b> poluidor pode poluir livremente<br>';
+        html += '<b>Negociação:</b> vitima paga ao poluidor para reduzir de ' + qm.toFixed(1) + ' para ' + qs.toFixed(1) + '<br>';
+        html += '<b>Transferência:</b> entre ' + (0.5*(qm-qs)*0).toFixed(1) + ' e ' + (0.5*(qm-qs)*(mbStar + mdStar)).toFixed(1) + '<br>';
+      } else {
+        // Victim has right to clean environment. Polluter pays for permission.
+        var transfer = 0.5 * qs * mdStar;
+        html += '<b>Direito:</b> vitima tem direito a ambiente limpo<br>';
+        html += '<b>Negociação:</b> poluidor paga a vitima para permitir ' + qs.toFixed(1) + ' de poluição<br>';
+        html += '<b>Transferência:</b> entre ' + (0.5*qs*0).toFixed(1) + ' e ' + gains.toFixed(1) + '<br>';
+      }
+      html += '<span style="color:#00897b;font-weight:700;">Resultado: q* = ' + qs.toFixed(2) + ' (mesmo em ambos os casos!)</span>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      aMB = parseFloat(document.getElementById('sl-aMB').value);
+      bMD = parseFloat(document.getElementById('sl-bMD').value);
+      cMB = parseFloat(document.getElementById('sl-cMB').value);
+      document.getElementById('val-aMB').textContent = aMB.toFixed(1);
+      document.getElementById('val-bMD').textContent = bMD.toFixed(1);
+      document.getElementById('val-cMB').textContent = cMB.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-aMB').value = 10;
+      document.getElementById('sl-bMD').value = 1.0;
+      document.getElementById('sl-cMB').value = 1.0;
+      rights = 'polluter';
+      document.getElementById('btn-polluter').className = 'active';
+      document.getElementById('btn-victim').className = '';
+      update();
+    }
+
+    ['sl-aMB','sl-bMD','sl-cMB'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

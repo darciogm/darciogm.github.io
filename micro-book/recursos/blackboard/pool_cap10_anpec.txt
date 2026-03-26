@@ -1,0 +1,30 @@
+TF	Se a função de produção for f(K, L) = [K^a + L^a]^{v/a}, com a \leq 1, a \neq 0 e v > 1, ela apresenta retornos crescentes de escala.	true
+TF	O coeficiente de elasticidade de substituição \sigma de uma função de produção como f(K, L) = [K^a + L^a]^{v/a}, com a 1, é \sigma = 1/(1-a).	true
+TF	Funções de produção com elasticidade de substituição \sigma = 0 possuem isoquantas em formato de L.	true
+TF	Se a tecnologia for monotônica, isso significa que não é possível produzir ao menos a mesma quantidade aumentando a quantidade de um dos insumos.	false
+TF	Funções de produção do tipo Cobb-Douglas possuem elasticidade de substituição \sigma = 1.	true
+TF	Se o produto médio do fator variável é crescente, o seu produto marginal é maior do que o seu produto médio.	true
+TF	A produtividade da mão de obra pode aumentar se houver progresso técnico, mesmo que o processo produtivo apresente rendimentos marginais decrescentes.	true
+TF	Quando o processo produtivo apresenta retornos constantes de escala, se a produção aumentar proporcionalmente, o espaço entre as isoquantas aumenta progressivamente.	false
+TF	Uma isoquanta nunca pode apresentar uma inclinação ascendente, se todos os insumos apresentam produtividades marginais positivas.	true
+TF	As isoquantas são convexas se a taxa marginal de substituição técnica for decrescente.	true
+TF	A elasticidade de substituição para uma função de produção Q = AL^a K^b é a/b.	false
+TF	Uma função de produção do tipo Q = (L^p + K^p)^{1/p}, com p > 0, apresenta no limite uma taxa marginal de substituição igual a -K/L, quando p tende a zero.	true
+TF	Quando a função de produção da empresa consegue produzir mais do que antes, com a quantidade de insumos na mesma proporção, diz-se que ela experimentou progresso técnico neutro.	true
+TF	Uma função de produção do tipo Q = (L^p + K^p)^{1/p}, com p > 0, no limite tende a uma Cobb-Douglas, quando p tende a zero.	true
+TF	Uma função de produção do tipo Q = (L^p + K^p)^{1/p}, com p > 0, apresenta uma elasticidade de substituição infinita, quando p = 1.	true
+TF	O produto marginal é zero quando o volume produzido é máximo.	true
+TF	O produto médio é decrescente quando o produto marginal é maior do que o produto médio.	false
+TF	O produto marginal deve ser igual ao produto médio quando este último é máximo.	true
+TF	A lei dos rendimentos marginais decrescentes resulta da queda na qualidade de unidades adicionais do insumo variável.	false
+TF	Avanços tecnológicos anulam a operação da lei dos rendimentos marginais decrescentes.	false
+TF	Em uma função de produção do tipo Q = Af(K, L), o parâmetro "A" representa o nível de produtividade total dos fatores.	true
+TF	Uma empresa emprega 100 trabalhadores e 50 unidades de capital. O preço do trabalho é \15/hora e o do capital é \30/hora. O produto marginal do trabalho é 60 e o produto marginal do capital é 90. A empresa está minimizando seus custos.	false
+TF	Se a taxa marginal de substituição técnica de uma empresa não varia ao longo da isoquanta, sendo sempre igual a -1, os insumos são substitutos perfeitos.	true
+TF	Custos fixos como proporção importante dos custos totais é uma fonte de retornos crescentes de escala.	true
+TF	A presença de "aprender fazendo" (learning by doing) de forma significativa no processo produtivo de uma empresa é uma fonte de retornos crescentes de escala.	true
+TF	Seja f(z_1,\ldots,z_m) = \gamma(\delta_1 z_1^{-\rho} + \cdots + \delta_m z_m^{-\rho})^{-\nu/\rho} uma função de produção CES, em que \gamma, \nu, \delta_1,\ldots,\delta_m > 0, \sum_{i=1}^{m} \delta_i = 1 e \rho \geq -1. Então o limite da CES quando a elasticidade de substituição diverge para +\infty é uma função de produção Leontief, independentemente do grau de homogeneidade de f.	false
+TF	Seja Q(t) = \gamma(t)K(t)^{\alpha}L(t)^{1-\alpha}, com 0 < \alpha < 1, uma função de produção Cobb-Douglas que varia continuamente no tempo. Suponha que as elasticidades-produto do capital e do trabalho são, respectivamente, 0,5 e 0,5. Se o produto cresce 2% ao ano, o capital cresce 1,8% ao ano e o trabalho cresce 1% ao ano, então o resíduo de Solow é de 0,6% ao ano.	true
+TF	Seja Q = \min\{K/2, L\} uma função de produção Leontief. Suponha que L está fixo e defina q = Q/L e k = K/L. Defina \varphi(k) = \min\{k/2, 1\}. Se k \in [0, 2), então a produção é tecnologicamente ineficiente.	true
+TF	Considere f(K,L) = (K-L)^2 se K \leq L, e f(K,L) = (K-L)^3 se K > L. Então, ao longo de linhas retas que partem da origem, a taxa técnica de substituição é constante, mas a função não é homotética.	true
+TF	Uma firma produz de acordo com dois processos de Leontief: \min\{K/3, L/2\} e \min\{K, L/3\}. Suponha que K = 5 e L = 8. Se o trabalhador adicional custa 70 e o preço da unidade do produto é 210, então não vale a pena contratar o trabalhador adicional.	true

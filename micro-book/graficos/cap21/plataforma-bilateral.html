@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+  Precificacao de Plataforma Bilateral — Interactive Graph
+  Library: JSXGraph
+  Chapter 21 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma Bilateral — Precificacao</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox1" class="jxgbox"></div>
+  <div class="controls">
+    <h3>Parametros</h3>
+    <div class="slider-group">
+      <label>Tam. mercado compradores \(a_B\): <span class="val" id="val-aB">50</span></label>
+      <input type="range" id="slider-aB" min="10" max="100" step="1" value="50">
+    </div>
+    <div class="slider-group">
+      <label>Tam. mercado vendedores \(a_S\): <span class="val" id="val-aS">50</span></label>
+      <input type="range" id="slider-aS" min="10" max="100" step="1" value="50">
+    </div>
+    <div class="slider-group">
+      <label>Extern. cruzada \(\gamma_B\): <span class="val" id="val-gB">0.50</span></label>
+      <input type="range" id="slider-gB" min="0" max="1.00" step="0.05" value="0.50">
+    </div>
+    <div class="slider-group">
+      <label>Extern. cruzada \(\gamma_S\): <span class="val" id="val-gS">0.30</span></label>
+      <input type="range" id="slider-gS" min="0" max="1.00" step="0.05" value="0.30">
+    </div>
+    <div class="slider-group">
+      <label>Custo marginal \(c\): <span class="val" id="val-c">5</span></label>
+      <input type="range" id="slider-c" min="0" max="20" step="1" value="5">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  /*
+    Model: Platform maximizes profit from two sides.
+    Demand: n_B = a_B - p_B + gamma_B * n_S
+            n_S = a_S - p_S + gamma_S * n_B
+    Solving simultaneously for n_B, n_S given prices:
+      n_B = (a_B - p_B + gamma_B*(a_S - p_S)) / (1 - gamma_B*gamma_S)
+      n_S = (a_S - p_S + gamma_S*(a_B - p_B)) / (1 - gamma_B*gamma_S)
+    (requires gamma_B*gamma_S < 1 for stability)
+
+    Profit: pi = (p_B - c)*n_B + (p_S - c)*n_S
+    FOC for profit-maximizing monopoly platform:
+      d(pi)/d(p_B) = 0, d(pi)/d(p_S) = 0
+
+    Solving (with D = 1 - gamma_B*gamma_S):
+      Let A_B = a_B, A_S = a_S for readability.
+      After substitution and differentiation:
+        p_B* = (a_B + c + gamma_B*gamma_S*c + gamma_B*a_S - gamma_B*gamma_S*a_B) / 2
+             ... this gets complicated. Let me use the standard approach.
+
+    Easier: substitute demands into profit, take FOC.
+    Let x = p_B, y = p_S, D = 1 - gB*gS
+    n_B = (aB - x + gB*(aS - y)) / D
+    n_S = (aS - y + gS*(aB - x)) / D
+
+    pi = (x-c)*n_B + (y-c)*n_S
+       = [(x-c)(aB - x + gB(aS-y)) + (y-c)(aS - y + gS(aB-x))] / D
+
+    d(pi)/dx = [(aB - x + gB(aS-y)) + (x-c)(-1) + (y-c)(-gS)] / D = 0
+    => aB - x + gB(aS-y) - (x-c) - gS(y-c) = 0
+    => aB - 2x + c + gB*aS - gB*y - gS*y + gS*c = 0
+    => 2x + (gB+gS)*y = aB + c(1+gS) + gB*aS  ... (I)
+
+    d(pi)/dy = [(x-c)(-gB) + (aS - y + gS(aB-x)) + (y-c)(-1)] / D = 0
+    => -gB(x-c) + aS - y + gS(aB-x) - (y-c) = 0
+    => aS - 2y + c + gS*aB - gS*x - gB*x + gB*c = 0
+    => (gB+gS)*x + 2y = aS + c(1+gB) + gS*aB  ... (II)
+
+    System:
+      2x + (gB+gS)y = aB + c(1+gS) + gB*aS       ... (I)
+      (gB+gS)x + 2y = aS + c(1+gB) + gS*aB       ... (II)
+
+    Let g = gB + gS
+    Solve by Cramer's rule: det = 4 - g^2
+      x* = [2*(aB + c(1+gS) + gB*aS) - g*(aS + c(1+gB) + gS*aB)] / (4 - g^2)
+      y* = [2*(aS + c(1+gB) + gS*aB) - g*(aB + c(1+gS) + gB*aS)] / (4 - g^2)
+  */
+
+  function getState() {
+    return {
+      aB: parseFloat(document.getElementById('slider-aB').value),
+      aS: parseFloat(document.getElementById('slider-aS').value),
+      gB: parseFloat(document.getElementById('slider-gB').value),
+      gS: parseFloat(document.getElementById('slider-gS').value),
+      c:  parseFloat(document.getElementById('slider-c').value)
+    };
+  }
+
+  function solve(s) {
+    var g = s.gB + s.gS;
+    var det = 4 - g * g;
+    if (det <= 0.01) return null; // unstable
+
+    var RHS1 = s.aB + s.c * (1 + s.gS) + s.gB * s.aS;
+    var RHS2 = s.aS + s.c * (1 + s.gB) + s.gS * s.aB;
+
+    var pB = (2 * RHS1 - g * RHS2) / det;
+    var pS = (2 * RHS2 - g * RHS1) / det;
+
+    var D = 1 - s.gB * s.gS;
+    var nB = (s.aB - pB + s.gB * (s.aS - pS)) / D;
+    var nS = (s.aS - pS + s.gS * (s.aB - pB)) / D;
+
+    var profit = (pB - s.c) * nB + (pS - s.c) * nS;
+    var csB = 0.5 * nB * nB / (1 / D); // approximate CS = 0.5 * n^2 (from linear demand)
+    var csS = 0.5 * nS * nS / (1 / D);
+    // More precise: CS_B = integral from 0 to nB of (inverse demand - pB) dn
+    // Since demand is n_B = (a_B - p_B + gB*nS)/1 (holding nS fixed at equilibrium)
+    // Inverse demand: p_B = a_B + gB*nS - n_B  (holding nS fixed)
+    // CS_B = integral_0^{nB} (a_B + gB*nS - n - pB) dn = nB*(a_B+gB*nS-pB) - nB^2/2 = nB^2/2
+    csB = 0.5 * nB * nB;
+    csS = 0.5 * nS * nS;
+
+    return {
+      pB: pB, pS: pS, nB: nB, nS: nS,
+      profit: profit, csB: csB, csS: csS
+    };
+  }
+
+  // --- JSXGraph bar chart ---
+  var board = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-1.5, 70, 10, -10],
+    axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+  });
+
+  // Y axis
+  board.create('axis', [[0, 0], [0, 65]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+    name: '', withLabel: false
+  });
+  board.create('text', [-1.1, 35, 'Valor'], {
+    fontSize: 13, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
+
+  // X axis
+  board.create('axis', [[0, 0], [10, 0]], {
+    ticks: { drawLabels: false, majorHeight: 0, minorTicks: 0 },
+    name: '', withLabel: false
+  });
+
+  // Bar width
+  var BW = 0.7;
+
+  // Helper: create a rectangle (bar)
+  function makeBar(x, colorFn, valFn) {
+    return board.create('polygon', [
+      [function() { return x - BW / 2; }, 0],
+      [function() { return x + BW / 2; }, 0],
+      [function() { return x + BW / 2; }, valFn],
+      [function() { return x - BW / 2; }, valFn]
+    ], {
+      fillColor: colorFn, fillOpacity: 0.75,
+      borders: { strokeColor: colorFn, strokeWidth: 1 },
+      vertices: { visible: false },
+      hasInnerPoints: false, highlight: false
+    });
+  }
+
+  // Positions: pB at x=1.5, cost at x=2.5, pS at x=5.5, cost at x=6.5
+  // Quantities: nB at x=8, nS at x=9
+
+  var curSol = null;
+
+  function getSol() {
+    if (!curSol) curSol = solve(getState());
+    return curSol;
+  }
+
+  // Price bars (Buyers)
+  makeBar(1.5, '#1565c0', function() { var r = getSol(); return r ? Math.max(r.pB, 0) : 0; });
+  // Cost bar (Buyers)
+  makeBar(2.5, '#90a4ae', function() { return getState().c; });
+  // Price bars (Sellers)
+  makeBar(5.0, '#C8102E', function() { var r = getSol(); return r ? Math.max(r.pS, 0) : 0; });
+  // Cost bar (Sellers)
+  makeBar(6.0, '#90a4ae', function() { return getState().c; });
+  // Quantity bars
+  makeBar(8.0, '#1565c0', function() { var r = getSol(); return r ? Math.max(r.nB, 0) : 0; });
+  makeBar(9.0, '#C8102E', function() { var r = getSol(); return r ? Math.max(r.nS, 0) : 0; });
+
+  // Value labels on top of bars
+  board.create('text', [1.5, function() { var r = getSol(); return r ? Math.max(r.pB, 0) + 2 : 2; },
+    function() { var r = getSol(); return r ? r.pB.toFixed(1) : ''; }],
+    { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [2.5, function() { return getState().c + 2; },
+    function() { return getState().c.toFixed(0); }],
+    { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [5.0, function() { var r = getSol(); return r ? Math.max(r.pS, 0) + 2 : 2; },
+    function() { var r = getSol(); return r ? r.pS.toFixed(1) : ''; }],
+    { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [6.0, function() { return getState().c + 2; },
+    function() { return getState().c.toFixed(0); }],
+    { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [8.0, function() { var r = getSol(); return r ? Math.max(r.nB, 0) + 2 : 2; },
+    function() { var r = getSol(); return r ? r.nB.toFixed(1) : ''; }],
+    { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [9.0, function() { var r = getSol(); return r ? Math.max(r.nS, 0) + 2 : 2; },
+    function() { var r = getSol(); return r ? r.nS.toFixed(1) : ''; }],
+    { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false });
+
+  // X-axis labels
+  board.create('text', [1.5, -3.5, '<i>p<sub>B</sub></i>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [2.5, -3.5, '<i>c</i>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [5.0, -3.5, '<i>p<sub>S</sub></i>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [6.0, -3.5, '<i>c</i>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [8.0, -3.5, '<i>n<sub>B</sub></i>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false });
+  board.create('text', [9.0, -3.5, '<i>n<sub>S</sub></i>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false });
+
+  // Group labels
+  board.create('text', [2.0, -7, '<b>Compradores</b>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false, cssStyle: 'color:#1565c0' });
+  board.create('text', [5.5, -7, '<b>Vendedores</b>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false, cssStyle: 'color:#C8102E' });
+  board.create('text', [8.5, -7, '<b>Qtd.</b>'], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false, cssStyle: 'color:#333' });
+
+  // Subsidy indicator arrow (will point to the subsidized side)
+  var subsidyText = board.create('text', [4.0, 62, function() {
+    var r = getSol();
+    if (!r) return '';
+    if (r.pB < r.pS - 0.5) return '\u2190 Lado subsidiado';
+    if (r.pS < r.pB - 0.5) return 'Lado subsidiado \u2192';
+    return 'Precos simetricos';
+  }], { fontSize: 11, anchorX: 'middle', fixed: true, highlight: false, cssStyle: 'color:#00897b;font-weight:bold' });
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-aB').textContent = s.aB.toFixed(0);
+    document.getElementById('val-aS').textContent = s.aS.toFixed(0);
+    document.getElementById('val-gB').textContent = s.gB.toFixed(2);
+    document.getElementById('val-gS').textContent = s.gS.toFixed(2);
+    document.getElementById('val-c').textContent = s.c.toFixed(0);
+
+    curSol = solve(s);
+    var r = curSol;
+
+    var html = '';
+    if (!r || r.nB < 0 || r.nS < 0) {
+      html = '<div style="color:#C8102E;text-align:center;"><strong>Equilibrio inviavel</strong><br>Ajuste os parametros.</div>';
+    } else {
+      var subsidySide = '—';
+      var subsidyColor = '#666';
+      if (r.pB < r.pS - 0.5) { subsidySide = 'Compradores'; subsidyColor = '#1565c0'; }
+      else if (r.pS < r.pB - 0.5) { subsidySide = 'Vendedores'; subsidyColor = '#C8102E'; }
+      else { subsidySide = 'Nenhum (simetrico)'; }
+
+      html = '<div style="text-align:center;">\\(n_B = a_B - p_B + \\gamma_B n_S\\)<br>\\(n_S = a_S - p_S + \\gamma_S n_B\\)</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += '\\(p_B^* = ' + r.pB.toFixed(1) + '\\), \\(p_S^* = ' + r.pS.toFixed(1) + '\\)<br>';
+      html += '\\(n_B^* = ' + r.nB.toFixed(1) + '\\), \\(n_S^* = ' + r.nS.toFixed(1) + '\\)<br>';
+      html += 'Lucro: \\(\\pi = ' + r.profit.toFixed(1) + '\\)<br>';
+      html += 'EC compradores: \\(' + r.csB.toFixed(1) + '\\)<br>';
+      html += 'EC vendedores: \\(' + r.csS.toFixed(1) + '\\)';
+      html += '</div>';
+      html += '<div style="margin-top:0.4rem;font-size:0.78rem;">';
+      html += 'Lado subsidiado: <strong style="color:' + subsidyColor + ';">' + subsidySide + '</strong><br>';
+      html += '<span style="color:#666;">Maior \\(\\gamma\\) &rarr; lado oposto recebe subsidio (preco menor).</span>';
+      html += '</div>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-aB').value = 50;
+    document.getElementById('slider-aS').value = 50;
+    document.getElementById('slider-gB').value = 0.50;
+    document.getElementById('slider-gS').value = 0.30;
+    document.getElementById('slider-c').value = 5;
+    update();
+  }
+
+  ['slider-aB', 'slider-aS', 'slider-gB', 'slider-gS', 'slider-c'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--
+  Interactive Negative Externality — Chapter 19
+  Library: JSXGraph + MathJax
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Externalidade Negativa e Imposto Pigouviano</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+ #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Custo externo por unidade (\(e\)): <span class="val" id="val-ext">3.0</span></label>
+        <input type="range" id="sl-ext" min="0" max="8" step="0.1" value="3.0">
+      </div>
+      <div class="slider-group">
+        <label>Intercepto demanda (\(a_D\)): <span class="val" id="val-aD">20</span></label>
+        <input type="range" id="sl-aD" min="10" max="30" step="0.5" value="20">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação oferta (\(b_S\)): <span class="val" id="val-bS">1.5</span></label>
+        <input type="range" id="sl-bS" min="0.5" max="4" step="0.1" value="1.5">
+      </div>
+      <div class="slider-group">
+        <label>Intercepto oferta (\(a_S\)): <span class="val" id="val-aS">2</span></label>
+        <input type="range" id="sl-aS" min="0" max="8" step="0.5" value="2">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Demand: P = aD - Q (inverse demand, bD=1 for simplicity in graph)
+    // Private MC: P = aS + bS*Q
+    // Social MC: P = aS + bS*Q + ext
+    // Market eq: aD - Q = aS + bS*Q => Q_m = (aD - aS)/(1 + bS)
+    // Social opt: aD - Q = aS + bS*Q + ext => Q_s = (aD - aS - ext)/(1 + bS)
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2, 28, 18, -3],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+
+    board.create('axis', [[0,0],[15,0]], {
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      name: '', withLabel: false
+    });
+board.create('text', [9.0, -1.9500000000000002, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('axis', [[0,0],[0,24]], {
+      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      name: '', withLabel: false
+    });
+board.create('text', [-1.1, 14.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    var ext = 3.0, aD = 20, bS = 1.5, aS = 2;
+
+    function qMarket() { return Math.max((aD - aS) / (1 + bS), 0); }
+    function qSocial() { return Math.max((aD - aS - ext) / (1 + bS), 0); }
+    function pAtQ(q) { return aD - q; } // demand price
+    function mcPriv(q) { return aS + bS * q; }
+    function mcSocial(q) { return aS + bS * q + ext; }
+
+    // Demand curve
+    board.create('functiongraph', [function(q){ return aD - q; }],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 12 } });
+
+    // Private MC
+    board.create('functiongraph', [function(q){ return aS + bS * q; }],
+      { strokeColor: '#00897b', strokeWidth: 2.5, name: 'CMg privado', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // Social MC
+    board.create('functiongraph', [function(q){ return aS + bS * q + ext; }],
+      { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'CMg social', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+
+    // DWL shading between Q_social and Q_market
+    var dwlN = 30;
+    for (var i = 0; i < dwlN; i++) {
+      (function(idx){
+        var t0 = idx / dwlN, t1 = (idx + 1) / dwlN;
+        board.create('polygon', [
+          [function(){ var qs=qSocial(), qm=qMarket(); return qs + t0*(qm-qs); },
+           function(){ var qs=qSocial(), qm=qMarket(); var q=qs+t0*(qm-qs); return mcSocial(q); }],
+          [function(){ var qs=qSocial(), qm=qMarket(); return qs + t1*(qm-qs); },
+           function(){ var qs=qSocial(), qm=qMarket(); var q=qs+t1*(qm-qs); return mcSocial(q); }],
+          [function(){ var qs=qSocial(), qm=qMarket(); return qs + t1*(qm-qs); },
+           function(){ var qs=qSocial(), qm=qMarket(); var q=qs+t1*(qm-qs); return pAtQ(q); }],
+          [function(){ var qs=qSocial(), qm=qMarket(); return qs + t0*(qm-qs); },
+           function(){ var qs=qSocial(), qm=qMarket(); var q=qs+t0*(qm-qs); return pAtQ(q); }]
+        ], {
+          fillColor: '#C8102E', fillOpacity: 0.18, borders: {strokeWidth: 0},
+          vertices: { visible: false }, hasInnerPoints: false, highlight: false
+        });
+      })(i);
+    }
+
+    // Market equilibrium point
+    board.create('point', [
+      function(){ return qMarket(); },
+      function(){ return pAtQ(qMarket()); }
+    ], { name: 'E_m', size: 4, fillColor: '#00897b', strokeColor: '#00897b', fixed: true,
+         label: { offset: [8, -12], fontSize: 11, cssStyle: 'color:#00897b;font-weight:700;' } });
+
+    // Social optimum point
+    board.create('point', [
+      function(){ return qSocial(); },
+      function(){ return pAtQ(qSocial()); }
+    ], { name: 'E*', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+         label: { offset: [-20, 10], fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;' } });
+
+    // Dashed lines
+    board.create('segment', [
+      [function(){ return qMarket(); }, function(){ return pAtQ(qMarket()); }],
+      [function(){ return qMarket(); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [
+      [function(){ return qSocial(); }, function(){ return pAtQ(qSocial()); }],
+      [function(){ return qSocial(); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+
+    // Tax bracket annotation
+    board.create('segment', [
+      [function(){ return qSocial(); }, function(){ return mcPriv(qSocial()); }],
+      [function(){ return qSocial(); }, function(){ return mcSocial(qSocial()); }]
+    ], { strokeColor: '#C8102E', strokeWidth: 3, fixed: true });
+
+    board.create('text', [
+      function(){ return qSocial() + 0.3; },
+      function(){ return (mcPriv(qSocial()) + mcSocial(qSocial())) / 2; },
+      function(){ return 't*=' + ext.toFixed(1); }
+    ], { fontSize: 10, cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    // Labels
+    board.create('text', [
+      function(){ return qMarket(); }, -0.5,
+      function(){ return 'Q_m=' + qMarket().toFixed(1); }
+    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#00897b;font-weight:700;' });
+    board.create('text', [
+      function(){ return qSocial(); },
+      function(){ return Math.abs(qMarket() - qSocial()) < 1.5 ? -1.5 : -0.5; },
+      function(){ return 'Q*=' + qSocial().toFixed(1); }
+    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    function updateInfo() {
+      var qm = qMarket(), qs = qSocial();
+      var pm = pAtQ(qm), ps = pAtQ(qs);
+      // DWL = 0.5 * (qm - qs) * (mcSocial(qm) - pAtQ(qm))
+      // More precisely: triangle between demand and social MC from qs to qm
+      var dwl = 0.5 * (qm - qs) * ((mcSocial(qm) - pm) + (mcSocial(qs) - ps));
+      // Actually for linear curves: DWL = 0.5 * (qm-qs) * ext (since at qs, D=SMC and at qm the gap is ext)
+      dwl = 0.5 * Math.abs(qm - qs) * ext;
+
+      var html = '<b>Equilíbrio de mercado:</b><br>';
+      html += '\\(Q_m = ' + qm.toFixed(2) + '\\), \\(P_m = ' + pm.toFixed(2) + '\\)<br>';
+      html += '<b>Ótimo social:</b><br>';
+      html += '\\(Q^* = ' + qs.toFixed(2) + '\\), \\(P^* = ' + ps.toFixed(2) + '\\)<br>';
+      html += '<b>Sobreprodução:</b> \\(\\Delta Q = ' + (qm - qs).toFixed(2) + '\\)<br>';
+      html += '<span style="color:#C8102E;font-weight:700;">Imposto pigouviano: \\(t^* = e = ' + ext.toFixed(1) + '\\)</span><br>';
+      html += '<span style="color:#C8102E;">DWL = ' + dwl.toFixed(2) + '</span>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function update() {
+      ext = parseFloat(document.getElementById('sl-ext').value);
+      aD = parseFloat(document.getElementById('sl-aD').value);
+      bS = parseFloat(document.getElementById('sl-bS').value);
+      aS = parseFloat(document.getElementById('sl-aS').value);
+      document.getElementById('val-ext').textContent = ext.toFixed(1);
+      document.getElementById('val-aD').textContent = aD.toFixed(1);
+      document.getElementById('val-bS').textContent = bS.toFixed(1);
+      document.getElementById('val-aS').textContent = aS.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-ext').value = 3.0;
+      document.getElementById('sl-aD').value = 20;
+      document.getElementById('sl-bS').value = 1.5;
+      document.getElementById('sl-aS').value = 2;
+      update();
+    }
+
+    ['sl-ext','sl-aD','sl-bS','sl-aS'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>
