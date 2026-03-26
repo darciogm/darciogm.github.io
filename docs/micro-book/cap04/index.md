@@ -273,7 +273,7 @@ A geometria do argumento é esclarecedora: o imposto específico rotaciona a ret
 <iframe src="../graficos/cap04/lump-sum-principle.html" title="Figura 4.3" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 4.3** — Princípio do Montante Fixo (*Lump Sum*). Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
+**Figura 4.3 — Princípio do Montante Fixo (*Lump Sum*).** Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
 </div>
 
 !!! box-brasil "Box Brasil — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
@@ -476,7 +476,7 @@ Se esta seção parece abstrata demais, relaxe: a dualidade é uma daquelas idei
 <iframe src="../graficos/cap04/dualidade.html" title="Figura 4.4 — Dualidade: Maximização de Utilidade vs" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 4.4 — Dualidade: Maximização de Utilidade vs.** Minimização do Dispêndio. Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.
+**Figura 4.4 — Dualidade: Maximização de Utilidade vs. Minimização do Dispêndio.** Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.
 </div>
 
 Além disso, as demandas marshalliana e hicksiana estão relacionadas:

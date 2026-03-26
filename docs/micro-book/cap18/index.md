@@ -674,7 +674,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 <iframe src="../graficos/cap18/desconto-exponencial-hiperbolico.html" title="Figura 18.3 — Desconto exponencial vs quasi-hiperbolico" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 18.3 — Desconto exponencial vs quasi-hiperbolico.** O desconto exponencial padrao (\(\delta^t\)) trata todos os periodos igualmente, enquanto o modelo quasi-hiperbolico (\(\beta\delta^t\)) desconta o futuro proximo mais fortemente que o distante, gerando vies pelo presente e inconsistencia temporal (Laibson, 1997).
+**Figura 18.3 — Desconto exponencial vs quasi-hiperbólico.** O desconto exponencial padrão (\(\delta^t\)) trata todos os períodos igualmente, enquanto o modelo quasi-hiperbólico (\(\beta\delta^t\)) desconta o futuro próximo mais fortemente que o distante, gerando viés pelo presente e inconsistência temporal (Laibson, 1997).
 </div>
 
 ---

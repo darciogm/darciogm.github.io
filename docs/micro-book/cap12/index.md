@@ -333,7 +333,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 <iframe src="../graficos/cap12/lucro-maximo.html" title="Figura 12.3 — Lucro maximo e excedente do produtor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 12.3 — Lucro maximo e excedente do produtor.** Ajuste o preco \(p\) para visualizar a quantidade otima \(q^*\) onde \(p = \mathrm{CMg}\), o retangulo de lucro (ou prejuizo) sombreado, o excedente do produtor (area entre \(p\) e CMg) e a condicao de fechamento. Compare os tres regimes: lucro positivo (\(p \geq \mathrm{CTMe}_{\min}\)), prejuizo com operacao (\(\mathrm{CVMe}_{\min} \leq p < \mathrm{CTMe}_{\min}\)) e fechamento (\(p < \mathrm{CVMe}_{\min}\)).
+**Figura 12.3 — Lucro máximo e excedente do produtor.** Ajuste o preço \(p\) para visualizar a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado, o excedente do produtor (área entre \(p\) e CMg) e a condição de fechamento. Compare os três regimes: lucro positivo (\(p \geq \mathrm{CTMe}_{\min}\)), prejuízo com operação (\(\mathrm{CVMe}_{\min} \leq p < \mathrm{CTMe}_{\min}\)) e fechamento (\(p < \mathrm{CVMe}_{\min}\)).
 </div>
 
 ---

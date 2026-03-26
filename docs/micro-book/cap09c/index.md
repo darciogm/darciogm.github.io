@@ -156,7 +156,7 @@ E[\text{Receita}] = \frac{N-1}{N+1}
 <iframe src="../graficos/cap09c/leilao-primeiro-preco.html" title="Figura 9c.2 — Leilao de primeiro preco com N licitantes" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 9c.2 — Leilao de primeiro preco com N licitantes.** A funcao de lance otimo \(b(v) = v \cdot (N-1)/N\) mostra o sombreamento (*bid shading*): cada licitante lanca abaixo do seu valor verdadeiro. Ajuste \(N\) para ver como o sombreamento diminui com mais concorrentes.
+**Figura 9c.2 — Leilão de primeiro preço com N licitantes.** A função de lance ótimo \(b(v) = v \cdot (N-1)/N\) mostra o sombreamento (*bid shading*): cada licitante lança abaixo do seu valor verdadeiro. Ajuste \(N\) para ver como o sombreamento diminui com mais concorrentes.
 </div>
 
 ### Teorema da Equivalência de Receita
