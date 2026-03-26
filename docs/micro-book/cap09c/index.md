@@ -379,8 +379,6 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 ---
 
-### R Interativo: Simulação de Leilões
-
 ??? code "R Interativo — Leilão de Valor Privado: Monte Carlo (Adams, 2025, Cap. 10)"
     Este box simula leilões de primeiro e segundo preço com N licitantes e valores uniformes. Compare as receitas e verifique o Teorema da Equivalência de Receita.
 
