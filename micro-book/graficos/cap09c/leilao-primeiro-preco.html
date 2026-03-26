@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Leilao de Primeiro Preco — Interactive Graph
+  Leilão de Primeiro Preço — Interactive Graph
   Library: JSXGraph
   Chapter 9c — Microeconomia
 -->
@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leilao de Primeiro Preco</title>
+  <title>Leilão de Primeiro Preço</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -45,17 +45,17 @@
 <div class="graph-container">
     <div id="jxgbox1" class="jxgbox"></div>
     <div class="controls">
-      <h3>Parametros do Leilao</h3>
+      <h3>Parâmetros do Leilão</h3>
       <div class="slider-group">
         <label>Licitantes \(N\): <span class="val" id="val-N">3</span></label>
         <input type="range" id="slider-N" min="2" max="10" step="1" value="3">
       </div>
       <div class="slider-group">
-        <label>Valoracao max \(\bar{v}\): <span class="val" id="val-vmax">100</span></label>
+        <label>Valoração máx \(\bar{v}\): <span class="val" id="val-vmax">100</span></label>
         <input type="range" id="slider-vmax" min="50" max="200" step="10" value="100">
       </div>
       <div class="slider-group">
-        <label>Seu valor \(v\): <span class="val" id="val-v">60</span></label>
+        <label>Valor \(v\): <span class="val" id="val-v">60</span></label>
         <input type="range" id="slider-v" min="0" max="200" step="1" value="60">
       </div>
       <div class="info-box" id="info"></div>
@@ -65,23 +65,23 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-15, 220, 220, -25],
-      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+      boundingbox: [-18, 120, 120, -18],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     // Axes
-    board.create('axis', [[0,0],[210,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 50 },
+    var xAxis = board.create('axis', [[0,0],[210,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 20 },
       name: '', withLabel: false
     });
-    board.create('text', [110, -18, '<b><i>Valoracao v</i></b>'], {
+    var xLabel = board.create('text', [50, -13, '<b><i>Valoração (v)</i></b>'], {
       fontSize: 13, fixed: true, anchorX: 'middle', highlight: false
     });
-    board.create('axis', [[0,0],[0,210]], {
-      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
+    var yAxis = board.create('axis', [[0,0],[0,210]], {
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
       name: '', withLabel: false
     });
-    board.create('text', [-12, 110, '<b><i>Lance b(v)</i></b>'], {
+    var yLabel = board.create('text', [-15, 50, '<b><i>Lance b(v)</i></b>'], {
       fontSize: 13, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
     });
 
@@ -90,7 +90,7 @@
       strokeColor: '#aaa', strokeWidth: 1, dash: 3, straightFirst: false, straightLast: true,
       point1: { visible: false }, point2: { visible: false }
     });
-    board.create('text', [185, 195, 'b = v'], { fontSize: 9, color: '#aaa', fixed: true });
+    var label45 = board.create('text', [95, 100, '<i>b</i> = <i>v</i>'], { fontSize: 10, color: '#999', fixed: true, highlight: false });
 
     var objs = [];
 
@@ -118,6 +118,16 @@
       document.getElementById('val-vmax').textContent = s.vmax;
       document.getElementById('val-v').textContent = s.v;
 
+      // Dynamic bounding box
+      var pad = s.vmax * 0.18;
+      var tickDist = s.vmax <= 80 ? 10 : s.vmax <= 120 ? 20 : 50;
+      board.setBoundingBox([-pad, s.vmax + pad * 0.6, s.vmax + pad * 0.6, -pad], false);
+      xAxis.ticks[0].setAttribute({ ticksDistance: tickDist });
+      yAxis.ticks[0].setAttribute({ ticksDistance: tickDist });
+      xLabel.moveTo([s.vmax / 2, -pad * 0.72]);
+      yLabel.moveTo([-pad * 0.85, s.vmax / 2]);
+      label45.moveTo([s.vmax * 0.92, s.vmax * 0.97]);
+
       var factor = (s.N - 1) / s.N;
 
       // Bid function line: b(v) = v * (N-1)/N
@@ -127,20 +137,21 @@
         ys.push(v * factor);
       }
       objs.push(board.create('curve', [xs, ys], { strokeColor: '#C8102E', strokeWidth: 3 }));
-      objs.push(board.create('text', [s.vmax * 0.85, s.vmax * factor * 0.88, 'b(v) = v(N-1)/N'], {
-        fontSize: 10, color: '#C8102E', fixed: true
+      objs.push(board.create('text', [s.vmax * 0.75, s.vmax * factor * 0.72,
+        '<i>b</i>(<i>v</i>) = <i>v</i>·(' + (s.N-1) + '/' + s.N + ')'], {
+        fontSize: 11, color: '#C8102E', fixed: true, highlight: false
       }));
 
       // "Your bid" point
       var myBid = s.v * factor;
       objs.push(board.create('point', [s.v, myBid], {
-        name: '', size: 6, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true
+        name: '', size: 5, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true
       }));
       // Dashed lines to axes
       objs.push(board.create('segment', [[s.v, 0], [s.v, myBid]], { strokeColor: '#1565c0', dash: 3, strokeWidth: 1 }));
       objs.push(board.create('segment', [[0, myBid], [s.v, myBid]], { strokeColor: '#1565c0', dash: 3, strokeWidth: 1 }));
-      objs.push(board.create('text', [s.v, -8, 'v=' + s.v.toFixed(0)], { fontSize: 9, color: '#1565c0', anchorX: 'middle', fixed: true }));
-      objs.push(board.create('text', [-2, myBid + 5, 'b=' + myBid.toFixed(1)], { fontSize: 9, color: '#1565c0', anchorX: 'right', fixed: true }));
+      objs.push(board.create('text', [s.v, -pad * 0.42, '<i>v</i> = ' + s.v.toFixed(0)], { fontSize: 10, color: '#1565c0', anchorX: 'middle', fixed: true, highlight: false }));
+      objs.push(board.create('text', [-pad * 0.12, myBid + pad * 0.15, '<i>b</i> = ' + myBid.toFixed(1)], { fontSize: 10, color: '#1565c0', anchorX: 'right', fixed: true, highlight: false }));
 
       // Shading area = bid shading (area between 45-degree and bid function up to v)
       var fillX = [], fillY = [];
@@ -165,21 +176,21 @@
       html += '\\(b(v) = v \\cdot \\frac{N-1}{N} = v \\cdot \\frac{' + (s.N-1) + '}{' + s.N + '}\\)';
       html += '</div>';
       html += '<div>';
-      html += '<strong style="color:#1565c0;">Seu lance:</strong> \\(b(' + s.v + ') = ' + myBid.toFixed(1) + '\\)<br>';
+      html += '<strong style="color:#1565c0;">Lance ótimo:</strong> \\(b(' + s.v + ') = ' + myBid.toFixed(1) + '\\)<br>';
       html += 'Sombreamento (<i>bid shading</i>): <strong>' + shading + '%</strong><br>';
       html += '\\(\\Pr(\\text{ganhar}) = (v/\\bar{v})^{N-1} = ' + probWin.toFixed(4) + '\\)<br>';
       html += 'Payoff esperado: \\(' + expectedPayoff.toFixed(2) + '\\)';
       html += '</div>';
       html += '<hr style="margin:0.3rem 0">';
       html += '<div>';
-      html += '<strong style="color:#C8102E;">Receita esperada do leiloeiro:</strong><br>';
+      html += '<strong style="color:#C8102E;">Receita esperada:</strong><br>';
       html += '\\(E[R] = \\frac{N-1}{N+1} \\cdot \\bar{v} = \\frac{' + (s.N-1) + '}{' + (s.N+1) + '} \\cdot ' + s.vmax + ' = ' + ER.toFixed(1) + '\\)';
       html += '</div>';
       html += '<hr style="margin:0.3rem 0">';
       html += '<div style="font-size:0.78rem;color:#666;">';
-      html += '<strong>2o preco (Vickrey):</strong> \\(b(v) = v\\) (verdade),<br>';
+      html += '<strong>2º preço (Vickrey):</strong> \\(b(v) = v\\) (verdade),<br>';
       html += 'mesma receita esperada \\(E[R] = ' + ER.toFixed(1) + '\\)<br>';
-      html += '(Teorema da Equivalencia de Receita)';
+      html += '(Teorema da Equivalência de Receita)';
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;
