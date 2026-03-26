@@ -101,12 +101,12 @@
       axis: false, showCopyright: false, showNavigation: false
     });
 
-    board.create('axis', [[0,0],[17,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 },
+    board.create('axis', [[0,0],[17,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label: { fontSize: 11 } },
       name: '', withLabel: false });
     board.create('text', [9.5, -1.3, '<b><i>Bem 1 (X<sub>1</sub>)</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
-    board.create('axis', [[0,0],[0,17]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  },
+    board.create('axis', [[0,0],[0,17]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label: { fontSize: 11 } },
       name: '', withLabel: false });
     board.create('text', [-1.1, 9.5, '<b><i>Bem 2 (X<sub>2</sub>)</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
@@ -152,7 +152,7 @@
       function(){ return R * 0.3 + 0.5; },
       function(){ return R * 0.3 - 0.6; },
       'Ineficiente'
-    ], { fontSize: 9, cssStyle: 'color:#1565c0;' });
+    ], { fontSize: 9, cssStyle: 'color:#1565c0;', highlight: false });
 
     // Exterior point (infeasible)
     var extPt = board.create('point', [
@@ -164,7 +164,7 @@
       function(){ return R * 0.8 + 0.5; },
       function(){ return R * 0.8 - 0.6; },
       'Infactível'
-    ], { fontSize: 9, cssStyle: 'color:#999;' });
+    ], { fontSize: 9, cssStyle: 'color:#999;', highlight: false });
 
     // Tangent line at P showing TMT slope
     var tangentLine = board.create('line', [

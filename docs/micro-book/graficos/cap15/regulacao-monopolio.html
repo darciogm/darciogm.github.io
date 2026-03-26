@@ -131,19 +131,19 @@
 
       // Demand
       board.create('functiongraph', [function(q){ return p.a - p.b*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
-      board.create('text', [maxQ*0.92, 4, 'D'], { fontSize: 13, color: '#1565c0' });
+      board.create('text', [maxQ*0.92, 4, '<i>D</i>'], { fontSize: 13, color: '#1565c0', highlight: false });
 
       // MR
       board.create('functiongraph', [function(q){ return p.a - 2*p.b*q; }], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2 });
-      board.create('text', [maxQ*0.45, 4, 'RMg'], { fontSize: 12, color: '#C8102E' });
+      board.create('text', [maxQ*0.45, 4, '<i>RMg</i>'], { fontSize: 12, color: '#C8102E', highlight: false });
 
       // MC
       board.create('functiongraph', [function(q){ return p.c; }], { strokeColor: '#00897b', strokeWidth: 2.5 });
-      board.create('text', [maxQ*0.92, p.c + 3, 'CMg'], { fontSize: 12, color: '#00897b' });
+      board.create('text', [maxQ*0.92, p.c + 3, '<i>CMg</i>'], { fontSize: 12, color: '#00897b', highlight: false });
 
       // AC = F/q + c (only for q > 0.5)
       board.create('functiongraph', [function(q){ return q > 0.5 ? p.F/q + p.c : NaN; }], { strokeColor: '#9c27b0', strokeWidth: 2, dash: 1 });
-      board.create('text', [maxQ*0.7, p.F/(maxQ*0.7) + p.c + 3, 'CMe'], { fontSize: 12, color: '#9c27b0' });
+      board.create('text', [maxQ*0.7, p.F/(maxQ*0.7) + p.c + 3, '<i>CMe</i>'], { fontSize: 12, color: '#9c27b0', highlight: false });
 
       // Monopoly outcome (always computed for reference)
       var qm = (p.a - p.c) / (2 * p.b);
@@ -208,7 +208,7 @@
         board.create('point', [qmc, pmc], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E' });
         board.create('segment', [[qmc,pmc],[qmc,0]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
 
-        board.create('text', [qmc*0.4, (pmc+acmc)/2, 'Subsidio'], { fontSize: 11, color: '#C8102E', fontWeight: 'bold' });
+        board.create('text', [qmc*0.4, (pmc+acmc)/2, 'Subsidio'], { fontSize: 11, color: '#C8102E', fontWeight: 'bold', highlight: false });
 
         var html = '<div class="section-title">Regulação P = CMg (First-Best)</div>';
         html += '\\(Q = ' + qmc.toFixed(2) + '\\), \\(P = CMg = ' + pmc.toFixed(0) + '\\)<br>';

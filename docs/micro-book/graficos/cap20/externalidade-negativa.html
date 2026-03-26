@@ -79,14 +79,14 @@
     });
 
     board.create('axis', [[0,0],[15,0]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:11} },
       name: '', withLabel: false
     });
 board.create('text', [9.0, -1.9500000000000002, '<b><i>Q</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,24]], {
-      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
 board.create('text', [-1.1, 14.0, '<b><i>P</i></b>'], {
@@ -171,18 +171,18 @@ board.create('text', [-1.1, 14.0, '<b><i>P</i></b>'], {
       function(){ return qSocial() + 0.3; },
       function(){ return (mcPriv(qSocial()) + mcSocial(qSocial())) / 2; },
       function(){ return 't*=' + ext.toFixed(1); }
-    ], { fontSize: 10, cssStyle: 'color:#C8102E;font-weight:700;' });
+    ], { fontSize: 10, cssStyle: 'color:#C8102E;font-weight:700;', highlight: false });
 
     // Labels
     board.create('text', [
       function(){ return qMarket(); }, -0.5,
       function(){ return 'Q_m=' + qMarket().toFixed(1); }
-    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#00897b;font-weight:700;' });
+    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#00897b;font-weight:700;', highlight: false });
     board.create('text', [
       function(){ return qSocial(); },
       function(){ return Math.abs(qMarket() - qSocial()) < 1.5 ? -1.5 : -0.5; },
       function(){ return 'Q*=' + qSocial().toFixed(1); }
-    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;', highlight: false });
 
     function updateInfo() {
       var qm = qMarket(), qs = qSocial();

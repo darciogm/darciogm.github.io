@@ -85,14 +85,14 @@
     });
 
     board.create('axis', [[0,0],[105,0]], {
-      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:11} },
       name: '', withLabel: false
     });
     board.create('text', [56.0, -7.800000000000001, '<b><i>w<sub>L</sub></i> (salário ruim)</b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,105]], {
-      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
     board.create('text', [-6.6000000000000005, 56.0, '<b><i>w<sub>H</sub></i> (salário bom)</b>'], {
@@ -156,7 +156,7 @@
       function(x) { return x; }
     ], { strokeColor: '#aaa', strokeWidth: 1, dash: 2 });
 
-    var lbl45 = board.create('text', [85, 88, 'w_H = w_L'], { fontSize: 10, cssStyle: 'color:#999;' });
+    var lbl45 = board.create('text', [85, 88, 'w_H = w_L'], { fontSize: 10, highlight: false, cssStyle: 'color:#999;' });
 
     // Optimal contract point
     var optPt = board.create('point', [

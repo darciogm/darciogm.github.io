@@ -103,13 +103,13 @@
 
     // Axes
     board.create('axis', [[0,0],[100,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 }
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 20 }
     });
     board.create('axis', [[0,0],[0,130]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 }
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 }
     });
-    board.create('text', [55, -7, 'Quantidade (Q)'], { fontSize: 11, anchorX: 'middle' });
-    board.create('text', [-6, 70, 'Preco / Custo'], { fontSize: 11, anchorX: 'middle', rotate: 90 });
+    board.create('text', [55, -7, '<b><i>Quantidade (Q)</i></b>'], { fontSize: 11, anchorX: 'middle', anchorY: 'middle', highlight: false });
+    board.create('text', [-6, 70, '<b><i>Preco / Custo</i></b>'], { fontSize: 11, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
   }
 
   function updateBoard() {
@@ -144,9 +144,9 @@
     board.create('functiongraph', [CMgS, 0, 100], { strokeColor: '#C8102E', strokeWidth: 2, name: 'CMgS' });
 
     // Labels
-    board.create('text', [98, D(96), 'D'], { fontSize: 11, color: '#1565c0' });
-    board.create('text', [88, PMgC(90) + 3, 'PMgC'], { fontSize: 10, color: '#333' });
-    board.create('text', [78, CMgS(80) + 3, 'CMgS'], { fontSize: 10, color: '#C8102E' });
+    board.create('text', [98, D(96), '<i>D</i>'], { fontSize: 11, color: '#1565c0', highlight: false });
+    board.create('text', [88, PMgC(90) + 3, '<i>PMgC</i>'], { fontSize: 10, color: '#333', highlight: false });
+    board.create('text', [78, CMgS(80) + 3, '<i>CMgS</i>'], { fontSize: 10, color: '#C8102E', highlight: false });
 
     // DWL of no intervention (triangle between CMgS and D, from Q* to Qm)
     if (Qstar < Qm && Qstar > 0) {
@@ -165,7 +165,7 @@
         borders: { strokeWidth: 0 }, vertices: { visible: false },
         hasInnerPoints: false, name: ''
       });
-      board.create('text', [(Qstar + Qm) / 2, (CMgS((Qstar + Qm) / 2) + D((Qstar + Qm) / 2)) / 2 - 3, 'DWL\ns/ interv.'], { fontSize: 9, color: '#666', anchorX: 'middle' });
+      board.create('text', [(Qstar + Qm) / 2, (CMgS((Qstar + Qm) / 2) + D((Qstar + Qm) / 2)) / 2 - 3, 'DWL\ns/ interv.'], { fontSize: 9, color: '#666', anchorX: 'middle', highlight: false });
     }
 
     if (mode === 'tax') {
@@ -177,7 +177,7 @@
       // Draw PMgC + t curve
       var PMgCt = function(q) { return 20 + 0.5 * q + tax; };
       board.create('functiongraph', [PMgCt, 0, 100], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, name: 'PMgC + t' });
-      board.create('text', [78, PMgCt(80) + 3, 'PMgC+t'], { fontSize: 9, color: '#00897b' });
+      board.create('text', [78, PMgCt(80) + 3, '<i>PMgC+t</i>'], { fontSize: 9, color: '#00897b', highlight: false });
 
       // Equilibrium point
       board.create('point', [Qt, Pt_consumer], { name: '', size: 3, color: '#00897b', fixed: true });
@@ -210,7 +210,7 @@
 
       // Vertical line at cap
       board.create('segment', [[Qc, 0], [Qc, 130]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
-      board.create('text', [Qc + 1, 125, 'Cap'], { fontSize: 10, color: '#00897b' });
+      board.create('text', [Qc + 1, 125, 'Cap'], { fontSize: 10, color: '#00897b', highlight: false });
 
       // Equilibrium points
       board.create('point', [Qc, Pc_consumer], { name: '', size: 3, color: '#1565c0', fixed: true });
@@ -219,7 +219,7 @@
       // Permit price bracket
       if (permitPrice > 2) {
         board.create('segment', [[Qc + 2, Pc_producer], [Qc + 2, Pc_consumer]], { strokeColor: '#C8102E', strokeWidth: 2 });
-        board.create('text', [Qc + 4, (Pc_producer + Pc_consumer) / 2, 'p_E'], { fontSize: 10, color: '#C8102E' });
+        board.create('text', [Qc + 4, (Pc_producer + Pc_consumer) / 2, '<i>p<sub>E</sub></i>'], { fontSize: 10, color: '#C8102E', highlight: false });
       }
 
       // Optimal point
