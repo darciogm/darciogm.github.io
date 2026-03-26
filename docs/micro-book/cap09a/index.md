@@ -627,9 +627,14 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     <script>
     window.addEventListener('message', function(e) {
-      if (e.data && e.data.iframeHeight && e.data.src && e.data.src.indexOf('webr-friend-foe') !== -1) {
-        var iframe = document.getElementById('iframe-9a5');
-        if (iframe) iframe.style.height = (e.data.iframeHeight + 40) + 'px';
+      if (e.data && e.data.iframeHeight && e.data.src) {
+        document.querySelectorAll('iframe.graph-iframe').forEach(function(iframe) {
+          var iframeSrc = iframe.getAttribute('src') || '';
+          var filename = iframeSrc.split('/').pop().replace('.html', '');
+          if (filename && e.data.src.indexOf(filename) !== -1) {
+            iframe.style.height = (e.data.iframeHeight + 40) + 'px';
+          }
+        });
       }
     });
     </script>

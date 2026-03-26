@@ -285,6 +285,17 @@ abline(0, 1, lty = 3, col = "gray")
     };
 
     initWebR();
+
+    // Auto-resize: notify parent iframe of content height changes
+    (function() {
+      function sendHeight() {
+        var h = document.documentElement.scrollHeight;
+        window.parent.postMessage({ iframeHeight: h, src: location.href }, '*');
+      }
+      var ro = new ResizeObserver(sendHeight);
+      ro.observe(document.body);
+      sendHeight();
+    })();
   </script>
 </body>
 </html>
