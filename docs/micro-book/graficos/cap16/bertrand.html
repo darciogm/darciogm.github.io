@@ -143,8 +143,8 @@
         // Show cost lines
         board.create('line', [[c1, 0],[c1, maxP]], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3, straightFirst: false, straightLast: false, point1: { visible: false }, point2: { visible: false } });
         board.create('line', [[0, c2],[maxP, c2]], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 3, straightFirst: false, straightLast: false, point1: { visible: false }, point2: { visible: false } });
-        board.create('text', [c1 + 1, maxP * 0.9, '\\(c_1\\)'], { fontSize: 12, color: '#1565c0' });
-        board.create('text', [maxP * 0.9, c2 + 2, '\\(c_2\\)'], { fontSize: 12, color: '#C8102E' });
+        board.create('text', [c1 + 1, maxP * 0.9, '<i>c</i><sub>1</sub>'], { fontSize: 12, color: '#1565c0' });
+        board.create('text', [maxP * 0.9, c2 + 2, '<i>c</i><sub>2</sub>'], { fontSize: 12, color: '#C8102E' });
 
         // Reaction functions (stylized): thick lines along p = c
         // R1: for p2 > c1, p1 = p2 - eps (just below 45 line); for p2 <= c1, p1 = c1
@@ -241,13 +241,13 @@
         board.create('segment', [[A1, 0], [A1 + k * maxP, maxP]], {
           strokeColor: '#1565c0', strokeWidth: 2.5, point1: { visible: false }, point2: { visible: false }
         });
-        board.create('text', [A1 + k * maxP * 0.8 + 2, maxP * 0.85, '\\(R_1(p_2)\\)'], { fontSize: 12, color: '#1565c0' });
+        board.create('text', [A1 + k * maxP * 0.8 + 2, maxP * 0.85, '<i>R</i><sub>1</sub>(<i>p</i><sub>2</sub>)'], { fontSize: 12, color: '#1565c0' });
 
         // R2(p1): p2 = A2 + k*p1 => segment: p1=0 => p2=A2; p1=maxP => p2=A2+k*maxP
         board.create('segment', [[0, A2], [maxP, A2 + k * maxP]], {
           strokeColor: '#C8102E', strokeWidth: 2.5, point1: { visible: false }, point2: { visible: false }
         });
-        board.create('text', [maxP * 0.85, A2 + k * maxP * 0.85 + 2, '\\(R_2(p_1)\\)'], { fontSize: 12, color: '#C8102E' });
+        board.create('text', [maxP * 0.85, A2 + k * maxP * 0.85 + 2, '<i>R</i><sub>2</sub>(<i>p</i><sub>1</sub>)'], { fontSize: 12, color: '#C8102E' });
 
         // Nash equilibrium point
         board.create('point', [p1s, p2s], {

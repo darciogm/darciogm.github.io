@@ -200,9 +200,9 @@
   ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
 
   // Labels
-  board.create('text', [-5, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }, function(){ return '\\(P^m\\)'; }],
+  board.create('text', [-5, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }, function(){ return '<i>P<sup>m</sup></i>'; }],
     { fontSize: 13, color: '#C8102E', anchorX: 'right' });
-  board.create('text', [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, -4, function(){ return '\\(Q^m\\)'; }],
+  board.create('text', [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, -4, function(){ return '<i>Q<sup>m</sup></i>'; }],
     { fontSize: 13, color: '#C8102E', anchorX: 'middle' });
 
   // Area labels
