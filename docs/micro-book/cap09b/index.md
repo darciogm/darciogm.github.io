@@ -79,7 +79,7 @@ Para tornar esses conceitos concretos, considere o problema clássico de deterr�
 
     A ameaça "se você entrar, eu luto" não é crível porque, no momento em que I precisa decidir, lutar é pior do que acomodar. O EPS descarta esse equilíbrio.
 
-<iframe src="../graficos/cap09/jogo-sequencial.html" title="Figura 9b.1 — Jogo sequencial na forma extensiva" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="../graficos/cap09/jogo-sequencial.html" title="Figura 9b.1 — Jogo sequencial na forma extensiva" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 9b.1 — Jogo sequencial na forma extensiva.** Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do EPS é destacado em vermelho.

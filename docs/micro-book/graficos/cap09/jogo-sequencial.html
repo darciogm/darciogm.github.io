@@ -24,7 +24,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
 .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #tree-svg { border: 1px solid #ddd; border-radius: 6px; background: #fafafa; }
+    #tree-svg { border: 1px solid #ddd; border-radius: 6px; background: #fafafa; width: 580px; height: 440px; }
     .controls { width: 320px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .preset-group { margin-bottom: 0.8rem; }
@@ -56,7 +56,7 @@
 </head>
 <body>
 <div class="graph-container">
-    <svg id="tree-svg" width="520" height="420"></svg>
+    <svg id="tree-svg" width="580" height="440" viewBox="0 0 580 440"></svg>
     <div class="controls">
       <h3>Jogos pre-definidos</h3>
       <div class="preset-group">
@@ -232,8 +232,8 @@
         var startX = x - dx * (n - 1) / 2;
         for (var i = 0; i < n; i++) {
           var childX = startX + dx * i;
-          var childY = y + 100;
-          var childPositions = layoutTree(node.children[i].node, childX, childY, dx / 2.2, depth + 1);
+          var childY = y + 120;
+          var childPositions = layoutTree(node.children[i].node, childX, childY, dx / 1.8, depth + 1);
           positions = positions.concat(childPositions);
         }
       }
@@ -244,8 +244,8 @@
       var svg = d3.select('#tree-svg');
       svg.selectAll('*').remove();
 
-      var width = 520, height = 420;
-      var positions = layoutTree(currentGame.tree, width / 2, 40, width / 4, 0);
+      var width = 580, height = 440;
+      var positions = layoutTree(currentGame.tree, width / 2, 50, width / 3.2, 0);
 
       var posMap = {};
       positions.forEach(function(p) { posMap[p.node.id] = p; });
@@ -271,13 +271,16 @@
               .attr('stroke-width', isBI ? 3.5 : 1.5)
               .attr('stroke-dasharray', isBI ? '' : '');
 
-            // Action label
+            // Action label — positioned to the outer side of each edge
             var mx = (p.x + cp.x) / 2;
             var my = (p.y + cp.y) / 2;
-            var offsetX = cp.x < p.x ? -10 : 10;
+            var goesLeft = cp.x < p.x;
+            var anchor = goesLeft ? 'end' : 'start';
+            var offsetX = goesLeft ? -12 : 12;
             svg.append('text')
-              .attr('x', mx + offsetX - 15)
-              .attr('y', my - 5)
+              .attr('x', mx + offsetX)
+              .attr('y', my - 6)
+              .attr('text-anchor', anchor)
               .attr('class', 'edge-label')
               .attr('fill', isBI ? '#C8102E' : '#555')
               .attr('font-weight', isBI ? '700' : '400')
