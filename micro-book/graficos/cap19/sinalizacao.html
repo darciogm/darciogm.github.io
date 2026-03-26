@@ -80,14 +80,14 @@
     });
 
     board.create('axis', [[0,0],[4300,0]], {
-      ticks: { drawLabels: true, ticksDistance: 1000, minorTicks: 1, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 1000, minorTicks: 1, label:{fontSize:11} },
       name: '', withLabel: false
     });
     board.create('text', [2520.0, -13.0, '<b><i>Educação (s)</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,165]], {
-      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
     board.create('text', [-297.0, 95.0, '<b><i>Salário / Payoff</i></b>'], {
@@ -143,7 +143,7 @@
     var poolLabel = board.create('text', [
       100, function(){ return wPool() + 4; },
       function(){ return 'Pooling: ' + wPool().toFixed(0); }
-    ], { fontSize: 10, cssStyle: 'color:#999;' });
+    ], { fontSize: 10, highlight: false, cssStyle: 'color:#999;' });
 
     // Shade separating equilibrium region for s*
     var sepRegion = board.create('polygon', [
@@ -165,7 +165,7 @@
     var sStarLabel = board.create('text', [
       function(){ return sStar(); }, -8,
       function(){ return 's*=' + sStar().toFixed(0); }
-    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+    ], { fontSize: 10, anchorX: 'middle', highlight: false, cssStyle: 'color:#C8102E;font-weight:700;' });
 
     // Net payoff points for type H choosing s* and type L choosing 0
     var ptH = board.create('point', [
@@ -193,11 +193,11 @@
     // Labels
     var lblWH = board.create('text', [-150, function(){ return tH; },
       function(){ return 'θ_H=' + tH; }
-    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;' });
+    ], { fontSize: 10, anchorX: 'right', highlight: false, cssStyle: 'color:#1565c0;font-weight:700;' });
 
     var lblWL = board.create('text', [-150, function(){ return tL; },
       function(){ return 'θ_L=' + tL; }
-    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#C8102E;font-weight:700;' });
+    ], { fontSize: 10, anchorX: 'right', highlight: false, cssStyle: 'color:#C8102E;font-weight:700;' });
 
     function updateInfo() {
       var sMin = sStarMin();

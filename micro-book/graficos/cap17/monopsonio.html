@@ -85,14 +85,14 @@
     });
 
     board.create('axis', [[0,0],[52,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 10 },
       name: '', withLabel: false
     });
 board.create('text', [31.0, -4.55, '<b><i>H</i> (trabalho)</b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,52]], {
-      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
       name: '', withLabel: false
     });
 board.create('text', [-3.8500000000000005, 31.0, '<b><i>w</i></b>'], {
@@ -170,15 +170,15 @@ board.create('text', [-3.8500000000000005, 31.0, '<b><i>w</i></b>'], {
       function() { return monopH() + 1.5; },
       function() { return (monopW() + monopMRP()) / 2; },
       function() { return '<span style="color:#C8102E;font-size:10px;">Exploração</span>'; }
-    ], { fontSize: 10, anchorX: 'left', useMathJax: false });
+    ], { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
 
     // Legend
-    board.create('text', [32, 50, '<span style="color:#1565c0;font-weight:bold">--- S(w)</span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false });
-    board.create('text', [32, 47, '<span style="color:#C8102E;font-weight:bold">--- MCL</span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false });
-    board.create('text', [32, 44, '<span style="color:#00897b;font-weight:bold">--- VPMgL</span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false });
+    board.create('text', [32, 50, '<span style="color:#1565c0;font-weight:bold">--- <i>S</i>(<i>w</i>)</span>'],
+      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
+    board.create('text', [32, 47, '<span style="color:#C8102E;font-weight:bold">--- <i>MCL</i></span>'],
+      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
+    board.create('text', [32, 44, '<span style="color:#00897b;font-weight:bold">--- <i>VPMgL</i></span>'],
+      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
 
     function getState() {
       return {

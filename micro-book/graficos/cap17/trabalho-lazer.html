@@ -95,14 +95,14 @@
       axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
     });
     board.create('axis', [[0,0],[26,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
       name: '', withLabel: false
     });
 board.create('text', [15.5, -26.0, '<b><i>L</i> (lazer)</b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,310]], {
-      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
       name: '', withLabel: false
     });
 board.create('text', [-1.9250000000000003, 480.0, '<b><i>C</i> (consumo)</b>'], {
@@ -279,7 +279,7 @@ board.create('text', [-1.9250000000000003, 480.0, '<b><i>C</i> (consumo)</b>'], 
       // Slope label
       dynObjs.push(board.create('text', [1, fullIncome-15,
         '<span style="font-size:10px;color:#1565c0;">incl. = -w</span>'
-      ], { fontSize:10, anchorX:'left', useMathJax:false }));
+      ], { fontSize:10, anchorX:'left', useMathJax:false, highlight:false }));
     }
 
     function update() {

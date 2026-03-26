@@ -101,25 +101,25 @@
 
       rebuildBoard();
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
+      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0, label: { fontSize: 11 } }, name: '', withLabel: false });
       board.create('text', [560.0, -15.600000000000001, '<b><i>Q</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
+      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0], fontSize: 11 } }, name: '', withLabel: false });
       board.create('text', [-66.0, 112.0, '<b><i>P</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
 });
 
       // Demand
       board.create('functiongraph', [function(q){ return p.a - p.b*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
-      board.create('text', [FIXED_BB[2] * 0.9, 4, 'D'], { fontSize: 13, color: '#1565c0' });
+      board.create('text', [FIXED_BB[2] * 0.9, 4, '<i>D</i>'], { fontSize: 13, color: '#1565c0', highlight: false });
 
       // MR
       board.create('functiongraph', [function(q){ return p.a - 2*p.b*q; }], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
 
       // MC
       board.create('functiongraph', [function(q){ return p.c; }], { strokeColor: '#00897b', strokeWidth: 2 });
-      board.create('text', [FIXED_BB[2] * 0.9, p.c + 3, 'CMg'], { fontSize: 12, color: '#00897b' });
+      board.create('text', [FIXED_BB[2] * 0.9, p.c + 3, '<i>CMg</i>'], { fontSize: 12, color: '#00897b', highlight: false });
 
       // Compute all outcomes (symmetric duopoly, costs c)
       var am = p.a - p.c; // a - c

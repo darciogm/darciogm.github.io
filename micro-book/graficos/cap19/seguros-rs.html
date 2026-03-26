@@ -83,14 +83,14 @@
     });
 
     board.create('axis', [[0,0],[maxAx+5,0]], {
-      ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:11} },
       name: '', withLabel: false
     });
     board.create('text', [112.0, -15.600000000000001, '<b><i>W<sub>bom</sub></i> (sem sinistro)</b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,maxAx+5]], {
-      ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 40, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
     board.create('text', [-13.200000000000001, 112.0, '<b><i>W<sub>mau</sub></i> (com sinistro)</b>'], {
@@ -101,7 +101,7 @@
     var line45 = board.create('line', [[0,0],[1,1]], {
       strokeColor: '#aaa', strokeWidth: 1, dash: 2, fixed: true
     });
-    board.create('text', [maxAx*0.85, maxAx*0.88, 'Seguro completo'], { fontSize: 9, cssStyle: 'color:#999;' });
+    board.create('text', [maxAx*0.85, maxAx*0.88, 'Seguro completo'], { fontSize: 9, highlight: false, cssStyle: 'color:#999;' });
 
     // Endowment point
     var endow = board.create('point', [
@@ -201,9 +201,9 @@
 
     // Labels for zero-profit lines
     board.create('text', [15, function(){ return (W-d) - ((1-pH)/pH)*(15-W); },
-      'ZP_H'], { fontSize: 10, cssStyle: 'color:#C8102E;', anchorX: 'left' });
+      'ZP_H'], { fontSize: 10, highlight: false, cssStyle: 'color:#C8102E;', anchorX: 'left' });
     board.create('text', [function(){ return W - 20; }, function(){ return (W-d) - ((1-pL)/pL)*(-20) + 5; },
-      'ZP_L'], { fontSize: 10, cssStyle: 'color:#1565c0;', anchorX: 'left' });
+      'ZP_L'], { fontSize: 10, highlight: false, cssStyle: 'color:#1565c0;', anchorX: 'left' });
 
     function updateInfo() {
       var betaL = findBetaL();

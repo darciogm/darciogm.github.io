@@ -85,14 +85,14 @@
     });
 
     board.create('axis', [[0,0],[55,0]], {
-      ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 1, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 10, minorTicks: 1, label:{fontSize:11} },
       name: '', withLabel: false
     });
     board.create('text', [145.5, -1.625, '<b><i>Uso total (E)</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,13]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
     board.create('text', [-17.05, 12.0, '<b><i>$/unidade</i></b>'], {
@@ -173,7 +173,7 @@
       function(){ return (ePriv() + eSoc()) / 2; },
       function(){ return w + 0.5; },
       'Sobreuso'
-    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;font-weight:700;' });
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;font-weight:700;', highlight: false });
 
     function updateInfo() {
       var ep = ePriv(), es = eSoc();

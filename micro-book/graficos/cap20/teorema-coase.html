@@ -81,14 +81,14 @@
     });
 
     board.create('axis', [[0,0],[11.5,0]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:11} },
       name: '', withLabel: false
     });
     board.create('text', [6.75, -1.3, '<b><i>Poluição (q)</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,13]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
     board.create('text', [-0.9900000000000001, 8.0, '<b><i>$</i></b>'], {
@@ -159,7 +159,7 @@
       function(){ return rights === 'polluter' ? (qMax() + qStar())/2 : qStar()/2; },
       -0.8,
       function(){ return rights === 'polluter' ? 'Vitima paga para reduzir' : 'Poluidor paga para poluir'; }
-    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;' });
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;', highlight: false });
 
     // Starting point marker
     var startPt = board.create('point', [
@@ -171,7 +171,7 @@
       function(){ return rights === 'polluter' ? qMax() : 0; },
       0.5,
       function(){ return rights === 'polluter' ? 'Inicio' : 'Inicio'; }
-    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#999;' });
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#999;', highlight: false });
 
     function setRights(r) {
       rights = r;

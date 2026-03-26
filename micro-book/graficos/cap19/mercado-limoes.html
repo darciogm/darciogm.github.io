@@ -85,7 +85,7 @@
 
     // Axes
     board.create('axis', [[0,0],[1.1,0]], {
-      ticks: { drawLabels: true, ticksDistance: 0.2, minorTicks: 0, label: {fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 0.2, minorTicks: 0, label: {fontSize:11} },
       name: '', withLabel: false
     });
     board.create('axis', [[0,0],[0,1.1]], {
@@ -161,7 +161,7 @@
     var critLabel = board.create('text', [
       function(){ return lamCrit(); }, -0.05,
       function(){ return 'λ*=' + lamCrit().toFixed(2); }
-    ], { fontSize: 10, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+    ], { fontSize: 10, anchorX: 'middle', highlight: false, cssStyle: 'color:#C8102E;font-weight:700;' });
 
     // Y-axis value labels — with minimum gap to avoid overlap
     var minGap = 0.06;
@@ -171,28 +171,28 @@
       if (Math.abs(yCH - yVH) < minGap) { return yCH - minGap / 2; }
       return yCH;
     }, function(){ return 'C_H=' + CH.toFixed(0); }
-    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#C8102E;' });
+    ], { fontSize: 10, anchorX: 'right', highlight: false, cssStyle: 'color:#C8102E;' });
 
     var lblCL = board.create('text', [-0.04, function(){
       var yCL = n(CL), yVL = n(VL);
       if (Math.abs(yCL - yVL) < minGap) { return yCL - minGap / 2; }
       return yCL;
     }, function(){ return 'C_L=' + CL.toFixed(0); }
-    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#00897b;' });
+    ], { fontSize: 10, anchorX: 'right', highlight: false, cssStyle: 'color:#00897b;' });
 
     var lblVH = board.create('text', [-0.12, function(){
       var yCH = n(CH), yVH = n(VH);
       if (Math.abs(yCH - yVH) < minGap) { return yVH + minGap / 2; }
       return yVH;
     }, function(){ return 'V_H=' + VH.toFixed(0); }
-    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
+    ], { fontSize: 10, anchorX: 'right', highlight: false, cssStyle: 'color:#1565c0;' });
 
     var lblVL = board.create('text', [-0.12, function(){
       var yCL = n(CL), yVL = n(VL);
       if (Math.abs(yCL - yVL) < minGap) { return yVL + minGap / 2; }
       return yVL;
     }, function(){ return 'V_L=' + VL.toFixed(0); }
-    ], { fontSize: 10, anchorX: 'right', cssStyle: 'color:#1565c0;' });
+    ], { fontSize: 10, anchorX: 'right', highlight: false, cssStyle: 'color:#1565c0;' });
 
     function updateInfo() {
       var wtp = (1 - lam) * VH + lam * VL;

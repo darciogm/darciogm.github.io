@@ -190,14 +190,14 @@
     });
 
     board1.create('axis', [[0,0],[26,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
       name: '', withLabel: false
     });
 board1.create('text', [15.5, -97.5, '<b><i>L</i></b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board1.create('axis', [[0,0],[0,600]], {
-      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 100 },
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 100 },
       name: '', withLabel: false
     });
 board1.create('text', [-1.9250000000000003, 700.0, '<b><i>C</i></b>'], {
@@ -223,14 +223,14 @@ board1.create('text', [-1.9250000000000003, 700.0, '<b><i>C</i></b>'], {
     });
 
     board2.create('axis', [[0,0],[19,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 4 },
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
       name: '', withLabel: false
     });
 board2.create('text', [11.0, -3.575, '<b><i>H</i> (trabalho)</b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board2.create('axis', [[0,0],[0,42]], {
-      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 5 },
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 5 },
       name: '', withLabel: false
     });
 board2.create('text', [-1.375, 25.0, '<b><i>w</i></b>'], {
@@ -277,8 +277,8 @@ board2.create('text', [-1.375, 25.0, '<b><i>w</i></b>'], {
       1, 40
     ], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, strokeOpacity: 0.5 });
 
-    board2.create('text', [15, 38, '<span style="color:#00897b;font-size:10px;">-- ES (compensada)</span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false });
+    board2.create('text', [15, 38, '<span style="color:#00897b;font-size:10px;">-- <i>ES</i> (compensada)</span>'],
+      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
 
     function getState() {
       return {

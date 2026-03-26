@@ -130,8 +130,8 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
       strokeColor: '#1565c0', strokeWidth: 2.5, name: 'Demanda'
     });
     board.create('text', [function(){ return gp().a/gp().b - 5; }, function(){ return 4; }], {
-      name: '', anchorX: 'middle', fontSize: 13, color: '#1565c0',
-      getText: function(){ return 'D'; }
+      name: '', anchorX: 'middle', fontSize: 13, color: '#1565c0', highlight: false,
+      getText: function(){ return '<i>D</i>'; }
     });
 
     // MR curve
@@ -139,8 +139,8 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
       strokeColor: '#C8102E', strokeWidth: 2, dash: 2, name: 'RMg'
     });
     board.create('text', [function(){ return gp().a/(2*gp().b) - 3; }, function(){ return 4; }], {
-      name: '', anchorX: 'middle', fontSize: 13, color: '#C8102E',
-      getText: function(){ return 'RMg'; }
+      name: '', anchorX: 'middle', fontSize: 13, color: '#C8102E', highlight: false,
+      getText: function(){ return '<i>RMg</i>'; }
     });
 
     // MC line
@@ -148,8 +148,8 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
       strokeColor: '#00897b', strokeWidth: 2.5, name: 'CMg'
     });
     board.create('text', [function(){ return gp().a/gp().b - 2; }, function(){ return gp().c + 4; }], {
-      name: '', anchorX: 'middle', fontSize: 13, color: '#00897b',
-      getText: function(){ return 'CMg'; }
+      name: '', anchorX: 'middle', fontSize: 13, color: '#00897b', highlight: false,
+      getText: function(){ return '<i>CMg</i>'; }
     });
 
     // Monopoly point
@@ -177,11 +177,11 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
     board.create('text', [
       -6, function(){ return (gp().a+gp().c)/2; },
       function(){ return '\\(P^m\\)'; }
-    ], { fontSize: 13, color: '#C8102E', anchorX: 'right' });
+    ], { fontSize: 13, color: '#C8102E', anchorX: 'right', highlight: false });
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, -4,
       function(){ return '\\(Q^m\\)'; }
-    ], { fontSize: 13, color: '#C8102E', anchorX: 'middle' });
+    ], { fontSize: 13, color: '#C8102E', anchorX: 'middle', highlight: false });
 
     // Competitive point
     var ptComp = board.create('point', [
@@ -196,28 +196,28 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/p.b; }, -4,
       function(){ return '\\(Q^c\\)'; }
-    ], { fontSize: 12, color: '#00897b', anchorX: 'middle' });
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', highlight: false });
 
     // Area labels — hidden when areas shrink too small
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
       function(){ var p=gp(); return (p.a+p.c)/2 + (p.a - (p.a+p.c)/2)/3; },
       'EC'
-    ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold',
+    ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold', highlight: false,
          visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
       function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)/2; },
       function(){ return '\\(\\pi\\)'; }
-    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold',
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', highlight: false,
          visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     board.create('text', [
       function(){ var p=gp(); var qm=(p.a-p.c)/(2*p.b); var qc=(p.a-p.c)/p.b; return qm + (qc-qm)*0.4; },
       function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)*0.3; },
       'PPM'
-    ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold',
+    ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold', highlight: false,
          visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
     function updateInfo() {

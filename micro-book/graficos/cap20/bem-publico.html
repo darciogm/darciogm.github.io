@@ -79,14 +79,14 @@
     });
 
     board.create('axis', [[0,0],[13,0]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:10} },
+      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:11} },
       name: '', withLabel: false
     });
     board.create('text', [8.0, -1.9500000000000002, '<b><i>G</i> (bem público)</b>'], {
     fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
 });
     board.create('axis', [[0,0],[0,21]], {
-      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:10, anchorX: 'right', offset: [-8, 0]} },
+      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
       name: '', withLabel: false
     });
     board.create('text', [-1.1, 12.5, '<b><i>$</i></b>'], {
@@ -170,7 +170,7 @@
       }
       return y1;
     }, function(){ return 'τ₁=' + mb1(gStar()).toFixed(1); }
-    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;' });
+    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;', highlight: false });
 
     var lblT2 = board.create('text', [-0.45, function(){
       var y1 = mb1(gStar()) + 0.3;
@@ -181,7 +181,7 @@
       }
       return y2;
     }, function(){ return 'τ₂=' + mb2(gStar()).toFixed(1); }
-    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#00897b;font-weight:700;' });
+    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#00897b;font-weight:700;', highlight: false });
 
     // Underprovision region
     board.create('segment', [
@@ -192,7 +192,7 @@
     board.create('text', [
       function(){ return (gPriv() + gStar()) / 2; }, -0.7,
       'Subprovisão'
-    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;' });
+    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;', highlight: false });
 
     function updateInfo() {
       var gs = gStar(), gp = gPriv();
