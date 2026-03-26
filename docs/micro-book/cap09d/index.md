@@ -423,23 +423,6 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
     <iframe src="../graficos/cap09/webr-spence.html" title="Figura 9d.1 — Modelo de Spence" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
-    <script>
-    if (!window._webrResizeListenerAdded) {
-      window._webrResizeListenerAdded = true;
-      window.addEventListener('message', function(e) {
-        if (e.data && e.data.iframeHeight && e.data.src) {
-          document.querySelectorAll('iframe.graph-iframe').forEach(function(iframe) {
-            var iframeSrc = iframe.getAttribute('src') || '';
-            var filename = iframeSrc.split('/').pop().replace('.html', '');
-            if (filename && e.data.src.indexOf(filename) !== -1) {
-              iframe.style.height = (e.data.iframeHeight + 40) + 'px';
-            }
-          });
-        }
-      });
-    }
-    </script>
-
     <div class="caption-obj" markdown>
     **Figura 9d.1 — Modelo de Spence: equilíbrio separador.** Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.
     </div>

@@ -388,23 +388,6 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     <iframe src="../graficos/cap09/webr-auction.html" title="Figura 9c.1 — Leilões" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
-    <script>
-    if (!window._webrResizeListenerAdded) {
-      window._webrResizeListenerAdded = true;
-      window.addEventListener('message', function(e) {
-        if (e.data && e.data.iframeHeight && e.data.src) {
-          document.querySelectorAll('iframe.graph-iframe').forEach(function(iframe) {
-            var iframeSrc = iframe.getAttribute('src') || '';
-            var filename = iframeSrc.split('/').pop().replace('.html', '');
-            if (filename && e.data.src.indexOf(filename) !== -1) {
-              iframe.style.height = (e.data.iframeHeight + 40) + 'px';
-            }
-          });
-        }
-      });
-    }
-    </script>
-
     <div class="caption-obj" markdown>
     **Figura 9c.1 — Simulação Monte Carlo de leilões de 1º e 2º preço.** Altere <code>N</code> (licitantes) e <code>n_sim</code> (simulações) para explorar o Teorema da Equivalência de Receita.
     </div>

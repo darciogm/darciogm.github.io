@@ -625,20 +625,6 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     <iframe id="iframe-9a5" src="../graficos/cap09/webr-friend-foe.html" title="Figura 9a.5 — Friend or Foe" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
-    <script>
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.iframeHeight && e.data.src) {
-        document.querySelectorAll('iframe.graph-iframe').forEach(function(iframe) {
-          var iframeSrc = iframe.getAttribute('src') || '';
-          var filename = iframeSrc.split('/').pop().replace('.html', '');
-          if (filename && e.data.src.indexOf(filename) !== -1) {
-            iframe.style.height = (e.data.iframeHeight + 40) + 'px';
-          }
-        });
-      }
-    });
-    </script>
-
     <div class="caption-obj" markdown>
     **Figura 9a.5 — Análise do game show Friend or Foe com dados reais.** O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.
     </div>

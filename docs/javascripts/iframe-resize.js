@@ -30,4 +30,17 @@
             });
         });
     }).observe(document.body, { childList: true, subtree: true });
+
+    // Dynamic resize via postMessage (WebR iframes after R code execution)
+    window.addEventListener('message', function(e) {
+        if (e.data && e.data.iframeHeight && e.data.src) {
+            document.querySelectorAll('iframe').forEach(function(iframe) {
+                var iframeSrc = iframe.getAttribute('src') || '';
+                var filename = iframeSrc.split('/').pop().replace('.html', '');
+                if (filename && e.data.src.indexOf(filename) !== -1) {
+                    iframe.style.height = (e.data.iframeHeight + 40) + 'px';
+                }
+            });
+        }
+    });
 })();
