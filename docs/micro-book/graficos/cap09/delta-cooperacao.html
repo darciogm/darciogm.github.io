@@ -109,8 +109,8 @@
     var threshLine = board.create('line', [[dstar, 0], [dstar, 1]], {
       strokeColor: '#333', strokeWidth: 1.5, dash: 2, fixed: true
     });
-    var threshLabel = board.create('text', [dstar, -3, function() { return '\\(\\delta^*\\)'; }], {
-      fontSize: 12, anchorX: 'middle', fixed: true, color: '#333'
+    var threshLabel = board.create('text', [dstar, -3, function() { return '<i>δ</i>*'; }], {
+      fontSize: 13, anchorX: 'middle', fixed: true, color: '#333', highlight: false
     });
 
     // Cooperation region shading
