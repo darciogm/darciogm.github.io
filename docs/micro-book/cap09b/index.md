@@ -397,8 +397,6 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-### R Interativo: Ultimatum Game — Evidência Experimental
-
 ??? code "R Interativo — Ultimatum Game: teoria vs. experimento (Adams, 2025, Cap. 8)"
     O jogo do ultimato é um dos mais estudados em economia experimental. A previsão teórica (oferta mínima, aceitação total) é sistematicamente violada: ofertas modais são 40-50% e ofertas abaixo de 20% são frequentemente rejeitadas.
 
@@ -411,8 +409,6 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
     </div>
 
 ---
-
-### R Interativo: Conluio em Postos de Gasolina
 
 ??? code "R Interativo — Dinâmica de preços e conluio em Perth (Adams, 2025, Cap. 7)"
     Wang (2009) e Clark e Roos (2019) documentaram padrões de preços cíclicos ("Edgeworth cycles") no mercado de gasolina de Perth, Austrália — evidência empírica da dinâmica cooperação/punição prevista pelos modelos de jogos repetidos.
