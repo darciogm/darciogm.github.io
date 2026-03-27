@@ -10,7 +10,7 @@ Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, anali
 
 ---
 
-## 19.1 Contratos Complexos como Resposta à Assimetria de Informação
+## 19.1 Ninguém Lê as Letras Miúdas por Acaso: Contratos Complexos e Assimetria de Informação
 
 Na presença de informação assimétrica, contratos simples de preço fixo frequentemente não são suficientes para garantir transações eficientes. Os agentes econômicos respondem desenhando **contratos complexos** que buscam alinhar incentivos, revelar informação privada ou mitigar comportamentos oportunistas. Esses contratos são onipresentes: de planos de saúde com coparticipação a stock options para executivos, de menus tarifários de operadoras de celular a garantias estendidas de eletrodomésticos — todos representam respostas racionais a problemas de informação assimétrica.
 
@@ -30,7 +30,7 @@ A análise econômica desses arranjos contratuais constitui o campo da **teoria 
 
 ---
 
-## 19.2 O Modelo Principal-Agente
+## 19.2 Será Que Ele Vai Se Esforçar?: O Modelo Principal-Agente
 
 Toda relação em que alguém pede a outrem que faça algo por ele carrega, em algum grau, o mesmo drama: "Será que essa pessoa vai agir no *meu* interesse — ou no dela?" Do chefe que contrata um gerente ao eleitor que elege um político, do paciente que confia no médico ao acionista que delega ao CEO, o roteiro se repete. A boa notícia é que a economia tem um arcabouço unificado para pensar todos esses casos: o **modelo principal-agente** — um dos frameworks mais versáteis da microeconomia moderna, com aplicações que vão de contratos de trabalho a regulação de monopólios (como visto no Cap. 15 com a contribuição de Tirole), de seguros a concessões de serviços públicos.
 
@@ -77,7 +77,7 @@ A distinção entre first-best e second-best permeia toda a economia da informa�
 
 ---
 
-## 19.3 Ações Ocultas: Risco Moral
+## 19.3 Seguro Total e Capinha no Bolso: Risco Moral
 
 Você já reparou que as pessoas dirigem com mais cautela quando o carro é emprestado de um amigo do que quando têm seguro total? Ou que o estagiário trabalha com mais afinco na semana da avaliação? Esse é o risco moral em estado puro — o problema que surge quando alguém pode agir de forma oculta depois que o acordo já foi fechado. O termo "risco moral" (*moral hazard*) tem origem no setor de seguros do século XIX, quando as seguradoras perceberam que clientes segurados tendiam a ser menos cuidadosos com seus bens. Por que o risco moral é tão difundido? Porque em praticamente toda relação de delegação — de um empregador que contrata um gerente a uma seguradora que cobre um segurado, de um acionista que contrata um CEO a um eleitor que elege um político — existe algum grau de ação oculta que escapa ao monitoramento direto.
 
@@ -241,6 +241,13 @@ O exercício a seguir aplica o modelo formal a um caso numérico, calculando os 
 
     **Interpretação econômica:** O principal precisa pagar um "prêmio por bom resultado" (\(w_H - w_L = 14\)) para compensar o custo do esforço. Como o agente é avesso ao risco (\(U = \sqrt{w}\)), expô-lo a essa variabilidade é custoso — o custo esperado do contrato sobe de 16 para 16,75. Esse trade-off entre incentivos e seguro é o cerne do problema de risco moral.
 
+<iframe src="../graficos/cap19/webr-risco-moral.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 19.1 — Contrato ótimo com risco moral.** Calcule os salários ótimos, o custo de agência e veja como a "informatividade" do resultado (pH − pL) afeta o trade-off entre incentivos e seguro.
+
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 19.2 — Risco moral em seguro: franquia mínima"
     **Enunciado:** Uma seguradora oferece seguro contra roubo de celular no valor de R$ 4.000. Sem cuidados (esforço baixo), a probabilidade de roubo é 30%. Com cuidados — usar capinha, não deixar exposto — (esforço alto), a probabilidade cai para 10%. O custo do esforço é R$ 100. (a) Se a seguradora oferece seguro completo ao prêmio atuarialmente justo (baseado em esforço alto), o segurado terá incentivo para manter os cuidados? (b) Qual é a franquia mínima necessária para incentivar esforço alto?
 
@@ -266,9 +273,16 @@ O exercício a seguir aplica o modelo formal a um caso numérico, calculando os 
 
     **Interpretação:** No mercado brasileiro, seguradoras de celular como Porto Seguro e Zurich tipicamente cobram franquias de 20–30% do valor do aparelho (R$ 800–1.200 para um celular de R$ 4.000), acima do mínimo teórico — refletindo outros fatores como custos administrativos e graus de aversão ao risco.
 
+<iframe src="../graficos/cap19/webr-franquia.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 19.2 — Franquia mínima e risco moral em seguros.** Altere a probabilidade de sinistro e o custo do esforço para ver como a franquia mínima necessária muda. Compare com as franquias praticadas no mercado brasileiro.
+
+</div>
+
 ---
 
-## 19.4 Tipos Ocultos: Seleção Adversa
+## 19.4 Só Sobram os Abacaxis: Seleção Adversa
 
 Se o risco moral é sobre o que a pessoa *faz* depois de assinar o contrato, a seleção adversa é sobre quem ela *é* antes de assinar. Pense no rodízio de pizza: quem frequenta mais o rodízio a R$ 49,90 — quem come duas fatias ou quem come doze? O restaurante atrai desproporcionalmente os glutões, e o preço médio do bufê não cobre o custo. No mundo dos seguros, dos carros usados e do crédito, a lógica é a mesma: quando o vendedor não consegue distinguir os "bons" dos "ruins", os ruins aparecem em peso — e os bons somem. Essa distinção temporal é fundamental: o risco moral é um problema pós-contratual, enquanto a seleção adversa é um problema pré-contratual. E as consequências podem ser ainda mais dramáticas — como demonstrou Akerlof, a seleção adversa pode levar ao desaparecimento completo de mercados.
 
@@ -350,6 +364,13 @@ O exercício a seguir aplica o modelo de Akerlof a um caso numérico.
     **(b)** Sob informação simétrica, haveria ganhos de troca de R$ 4.000 por carro bom e R$ 4.000 por carro ruim. Com seleção adversa, os ganhos dos carros bons (40% do mercado) são perdidos: \(0{,}4 \times 4.000 = \text{R\$}\, 1.600\) por carro em média.
 
     **(c)** Com vistoria, o carro bom pode ser vendido a até R$ 24.000. O vendedor ganha \(24.000 - 20.000 = 4.000\) na transação. O custo da vistoria (R$ 500) é amplamente compensado. **Sim, vale a pena** — o que explica a existência de serviços como a Cautelar Express e laudos do Detran.
+
+<iframe src="../graficos/cap19/webr-limoes.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 19.3 — Mercado de limões (Akerlof).** Altere a fração de carros bons e os valores de comprador/vendedor para ver quando a seleção adversa leva ao colapso do mercado. Encontre o limiar crítico de λ.
+
+</div>
 
 ### 19.4.2 Precificação não linear: menus de contratos
 
@@ -502,7 +523,7 @@ No gráfico interativo abaixo, explore o equilíbrio separador de Rothschild-Sti
 
 ---
 
-## 19.5 Sinalização no Mercado
+## 19.5 O Diploma Que Não Ensina Nada (Mas Vale Ouro): Sinalização
 
 Se você fosse um vendedor de carro impecável, preso num mercado cheio de abacaxis, como convenceria o comprador de que o *seu* carro é diferente? Dizer "confie em mim" não basta — todo vendedor de abacaxi diria o mesmo. A saída, como percebeu Michael Spence (1973), é fazer algo que *só* quem tem carro bom faria: oferecer uma garantia de um ano, por exemplo, ou pagar uma vistoria independente. Em certas condições, a parte informada pode tomar ações custosas e observáveis que funcionam como sinais críveis de suas características ocultas. A chave é que o custo do sinal deve diferir entre os tipos — caso contrário, todos sinalizariam da mesma forma e nenhuma informação seria transmitida. Essa condição é conhecida como *single-crossing* e é o que garante que a sinalização seja crível.
 
@@ -585,9 +606,16 @@ As restrições $\eqref{eq:19.12}$ e $\eqref{eq:19.13}$ delimitam o intervalo $\
 
     **Interpretação:** A sinalização é individualmente racional para o tipo H (ganho líquido positivo), mas socialmente custosa se a educação não tem valor produtivo. Esse resultado fundamenta o debate sobre se políticas de expansão universitária geram ganhos reais de produtividade ou apenas inflação de credenciais.
 
+<iframe src="../graficos/cap19/webr-sinalizacao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 19.4 — Sinalização por educação (Spence).** Modifique as produtividades θH e θL para visualizar a condição de single-crossing, o intervalo separador e o custo social da sinalização.
+
+</div>
+
 ---
 
-## 19.6 Screening (Triagem pelo Principal)
+## 19.6 O Cardápio Que Faz Você Se Revelar: Screening e Triagem
 
 A sinalização e a triagem são duas faces da mesma moeda: ambas buscam resolver o problema de tipos ocultos, mas diferem em quem toma a iniciativa. Na sinalização, a parte informada age primeiro, investindo em um sinal custoso; na triagem, é a parte desinformada que age primeiro, desenhando um menu de opções. Na prática, essa distinção é relevante porque define quem arca com os custos da revelação de informação e, portanto, como o excedente se distribui entre as partes.
 
@@ -630,7 +658,7 @@ Em equilíbrio, os dois mecanismos podem levar a alocações equivalentes (como 
 
 ---
 
-## 19.7 Leilões
+## 19.7 Quem Dá Mais? (E Quem Dá Demais): Leilões
 
 Poucas situações capturam tão bem a tensão da informação assimétrica quanto um leilão. Cada participante carrega um número secreto na cabeça — quanto aquele objeto vale *para ele* — e precisa decidir quanto revelar sem saber o que os rivais estão pensando. É um jogo de nervos, estratégia e informação incompleta, tudo comprimido em poucos minutos (ou segundos, no caso de leilões digitais). O leilão é, assim, um mecanismo de mercado que opera sob assimetria de informação bilateral: cada licitante sabe algo que os outros não sabem. O desenho das regras do leilão determina quão eficientemente a informação dispersa se traduz em alocação e preço — e, como demonstrou William Vickrey (Nobel 1996), regras bem desenhadas podem induzir os participantes a revelar suas verdadeiras valorações.
 
@@ -733,9 +761,16 @@ O exercício a seguir aplica a teoria de leilões a um caso numérico.
 
     **Interpretação:** No primeiro preço, os licitantes "escondem" parte de sua valoração para obter lucro. No segundo preço, revelam tudo porque o preço pago não depende do próprio lance. O resultado é o mesmo em expectativa — mas os caminhos são diferentes.
 
+<iframe src="../graficos/cap19/webr-leiloes.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 19.5 — Leilões: Vickrey vs. primeiro preço.** Compare estratégias, receitas e bid shading nos dois formatos. Verifique o Teorema da Equivalência de Receita com simulação Monte Carlo.
+
+</div>
+
 ---
 
-## 19.8 Taxonomia dos Problemas de Informação Assimétrica
+## 19.8 O Mapa da Ignorância: Taxonomia da Informação Assimétrica
 
 Limões, seguros, diplomas, leilões — percorremos um desfile de problemas que, à primeira vista, parecem ter pouco em comum. Mas todos compartilham a mesma raiz: alguém sabe algo que o outro não sabe, e essa assimetria distorce o resultado. Para consolidar a compreensão desse rico arcabouço conceitual, é útil organizá-los em uma taxonomia que destaque as dimensões essenciais: o timing da assimetria (pré ou pós-contratual), a natureza da informação oculta (ação ou tipo) e os mecanismos disponíveis para atenuá-la.
 
