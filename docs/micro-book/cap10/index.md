@@ -1,6 +1,8 @@
 # Capítulo 10 — Mais Mãos, Mais Máquinas — Mais Produto?
 
-Se você já se perguntou por que uma padaria com três fornos não triplica a produção só de contratar mais padeiros, parabéns — você já intuiu o problema central deste capítulo. Até agora, estudamos consumidores tentando espremer o máximo de felicidade de cada real. Agora trocamos de lado do balcão: entramos no mundo das **firmas**, agentes cuja razão de existir é transformar insumos (trabalho, capital, terra, materiais) em produtos e serviços. Compreender *como* essa transformação ocorre, quais são suas regularidades empíricas e como representá-la matematicamente é o objetivo central deste capítulo.
+Três padeiros, três fornos, mesma farinha — e um produz o dobro do outro. Os padeiros são parecidos, os fornos são iguais. O que difere? A *tecnologia*: a forma como insumos são combinados para gerar produto. Se você já se perguntou por que uma padaria com três fornos não triplica a produção só de contratar mais gente, parabéns — você já intuiu a lei mais testada da microeconomia.[^silly-walks-prod] Até agora, estudamos consumidores tentando espremer o máximo de felicidade de cada real. Agora trocamos de lado do balcão: entramos no mundo das **firmas**, agentes cuja razão de existir é transformar insumos (trabalho, capital, terra, materiais) em produtos e serviços. Compreender *como* essa transformação ocorre, quais são suas regularidades empíricas e como representá-la matematicamente é o objetivo central deste capítulo.
+
+[^silly-walks-prod]: Os devotos de Monty Python reconhecerão aqui a lógica do *Ministry of Silly Walks*: o ministério emprega cada vez mais burocratas para desenvolver caminhadas absurdas, mas o produto marginal de cada burocrata adicional é claramente decrescente. O décimo funcionário provavelmente está apenas replicando o andar do terceiro com variação mínima. John Cleese, como Ministro, é o único insumo genuinamente produtivo — o resto é rendimento marginal decrescente em ação.
 
 A **função de produção** é o instrumento analítico que sintetiza a tecnologia disponível para a firma. A partir dela, derivamos conceitos fundamentais — produtividade marginal, isoquantas, taxa marginal de substituição técnica (TMST), rendimentos de escala e elasticidade de substituição — que serão mobilizados nos capítulos seguintes para construir as curvas de custo e de oferta.
 
@@ -81,21 +83,14 @@ A relação entre produto marginal e produto médio revela um padrão importante
 É crucial observar que esta "lei" é uma regularidade empírica, não um resultado lógico necessário. Ela se aplica ao **curto prazo**, quando pelo menos um fator é fixo. Não deve ser confundida com rendimentos decrescentes de escala, que dizem respeito à variação simultânea de todos os insumos — uma distinção frequentemente cobrada em provas da ANPEC.
 
 !!! idea "Intuição Econômica"
-    **Em uma frase:** Cada trabalhador a mais produz menos que o anterior quando o espaço e os equipamentos são fixos.
+    **Em uma frase:** O 10º trabalhador produz menos que o 1º não porque é menos capaz, mas porque tem menos capital com que trabalhar.
 
-    **Pense assim:** Em uma cozinha de restaurante com quatro bocas de fogão, o primeiro cozinheiro é muito produtivo. O segundo ajuda bastante. O terceiro já começa a esbarrar nos outros. O quarto fica esperando uma boca liberar. O fogão não mudou — é o trabalhador extra que rende menos.
+    **Pense assim:** Em uma cozinha de restaurante com quatro bocas de fogão, o primeiro cozinheiro é muito produtivo. O segundo ajuda bastante. O terceiro já começa a esbarrar nos outros. O quarto fica esperando uma boca liberar. O fogão não mudou — é o trabalhador extra que rende menos. Numa linha de montagem com 5 máquinas de solda, o décimo operário fica ocioso boa parte do turno aguardando uma máquina liberar. O problema não é o trabalhador — é a proporção de máquinas por trabalhador, que cai com cada contratação. Matematicamente: \(\partial^2 f/\partial L^2 < 0\).
 
-    **Por que isso importa:** Esse princípio explica por que simplesmente contratar mais gente sem investir em equipamentos não resolve o problema de produtividade da economia brasileira.
+    **Por que isso importa:** Essa intuição explica tanto por que simplesmente contratar mais gente não resolve o problema de produtividade da economia brasileira quanto o retorno elevado à mecanização: cada máquina adicional "libera" o potencial de múltiplos trabalhadores. A Embrapa documentou esse efeito na agricultura do Cerrado, onde a introdução de maquinário pesado elevou substancialmente o produto por trabalhador mesmo sem aumentar o número de trabalhadores.
 
 !!! example "Exemplo: Rendimentos marginais na cafeicultura mineira"
     Considere uma fazenda de café em Minas Gerais com área fixa de 50 hectares. Com poucos trabalhadores, cada contratação adicional eleva significativamente a colheita — há muita terra por trabalhador. À medida que se adicionam trabalhadores, porém, eles passam a competir pelas mesmas fileiras de café, e o ganho marginal de cada um diminui. Em termos formais, o produto marginal do trabalho \(\mathrm{PMg}_L\) decresce com \(L\) para \(\bar{K}\) (terra) fixo. Esse padrão é amplamente documentado na agricultura brasileira, onde a mecanização da colheita (que efetivamente aumenta \(\bar{K}\)) deslocou a curva de produto marginal para cima, mitigando o efeito dos rendimentos decrescentes.
-
-!!! idea "Intuição Econômica"
-    **Em uma frase:** O 10º trabalhador produz menos que o 1º não porque é menos capaz, mas porque tem menos capital com que trabalhar.
-
-    **Pense assim:** Imagine uma linha de montagem com 5 máquinas de solda e uma equipe crescente de operários. O primeiro operário usa todas as máquinas em rodízio e é muito produtivo. O quinto já disputa tempo de máquina com os demais. O décimo fica ocioso boa parte do turno aguardando uma máquina liberar. O problema não é o trabalhador — é a proporção de máquinas por trabalhador, que cai com cada contratação. Matematicamente, a segunda derivada da função de produção em relação a \(L\) é negativa: \(\partial^2 f/\partial L^2 < 0\).
-
-    **Por que isso importa:** Essa intuição explica tanto a escassez de capital como fonte de baixa produtividade do trabalho no Brasil quanto o retorno elevado à mecanização: cada máquina adicional "libera" o potencial de múltiplos trabalhadores. A Embrapa documentou esse efeito na agricultura do Cerrado, onde a introdução de maquinário pesado elevou substancialmente o produto por trabalhador mesmo sem aumentar o número de trabalhadores.
 
 !!! box-brasil "Box Brasil: Produtividade do trabalho na indústria brasileira"
 
@@ -308,7 +303,9 @@ A **elasticidade de substituição** é o parâmetro que responde a essa pergunt
 
 É importante compreender a intuição geométrica por trás da definição: a elasticidade de substituição captura o quanto a isoquanta "se dobra". Uma isoquanta muito curvada (quase em forma de L) implica baixa elasticidade — mover-se ao longo dela exige uma grande variação percentual na TMST para obter uma pequena variação na razão \(K/L\). Uma isoquanta mais reta implica alta elasticidade — uma pequena mudança na TMST já provoca uma grande mudança na proporção de insumos. Matematicamente, \(\sigma\) é o inverso da elasticidade da TMST em relação à razão \(K/L\): quanto menos a isoquanta "resiste" ao movimento, maior é \(\sigma\).
 
-A ligação com a distribuição de renda é fundamental. Sob mercados competitivos, o salário real iguala o produto marginal do trabalho e o retorno ao capital iguala o produto marginal do capital. A participação do trabalho na renda é \(wL/q = \mathrm{PMg}_L \cdot L/q\). Para a Cobb-Douglas com CRS, essa participação é sempre \(\beta\) — constante, independentemente dos preços dos fatores. Para a CES com \(\sigma \neq 1\), a participação do trabalho varia com \(w/r\): se \(\sigma > 1\), uma queda no custo do capital eleva a participação do capital; se \(\sigma < 1\), ocorre o contrário. Esse mecanismo está no centro das preocupações de economistas como Lawrence Katz, Alan Krueger e, mais recentemente, Daron Acemoglu sobre os impactos distributivos da automação.
+A ligação com a distribuição de renda é fundamental. Sob mercados competitivos, o salário real iguala o produto marginal do trabalho e o retorno ao capital iguala o produto marginal do capital. A participação do trabalho na renda é \(wL/q = \mathrm{PMg}_L \cdot L/q\). Para a Cobb-Douglas com CRS, essa participação é sempre \(\beta\) — constante, independentemente dos preços dos fatores. Para a CES com \(\sigma \neq 1\), a participação do trabalho varia com \(w/r\): se \(\sigma > 1\), uma queda no custo do capital eleva a participação do capital; se \(\sigma < 1\), ocorre o contrário. Esse mecanismo está no centro das preocupações de economistas como Lawrence Katz, Alan Krueger e, mais recentemente, Daron Acemoglu sobre os impactos distributivos da automação. Acemoglu e Restrepo (2019) modelam o efeito da automação como substituição de *tarefas* antes realizadas por trabalho: quando \(\sigma\) é alto, a automação desloca trabalhadores para novas tarefas; quando \(\sigma\) é baixo, o deslocamento é mais doloroso e lento — exatamente a tensão que define o debate sobre IA e futuro do trabalho.[^black-knight-prod]
+
+[^black-knight-prod]: O Black Knight de Monty Python é o caso extremo de rendimentos marginais decrescentes do trabalho sob ataque tecnológico. A cada braço cortado pelo Rei Arthur (automação), sua capacidade produtiva de luta cai drasticamente. Mas ele insiste: "'Tis but a scratch!" — exatamente como o gerente que acredita que mais um funcionário numa fábrica já automatizada vai fazer diferença. O Black Knight é, essencialmente, um trabalhador com \(\sigma \approx 0\): não há substituição possível entre braços e determinação.
 
 !!! definition "Elasticidade de substituição"
     A **elasticidade de substituição** \(\sigma\) mede a facilidade com que a firma pode substituir um insumo por outro ao longo de uma isoquanta. Formalmente:
@@ -475,6 +472,12 @@ A CES **generaliza** as três funções anteriores:
 
     **Por que isso importa:** Na estimação empírica, a CES permite *testar* se a Cobb-Douglas é uma boa aproximação (\(\sigma = 1\)) ou se a tecnologia exige uma elasticidade diferente. Arrow et al. (1961) encontraram \(\sigma\) sistematicamente abaixo de 1 em dados industriais internacionais — o que motivou décadas de pesquisa sobre a verdadeira elasticidade de substituição nas economias modernas.
 
+!!! info "🏅 Prêmio Nobel — Kenneth J. Arrow (1972)"
+
+    **Kenneth Joseph Arrow** (1921–2017) dividiu o Nobel de 1972 com John Hicks por suas contribuições à teoria do equilíbrio geral e à economia do bem-estar. Mas suas contribuições vão muito além: o Teorema da Impossibilidade de Arrow (Capítulo 16), o modelo Arrow-Debreu de equilíbrio geral com mercados completos (Capítulo 14), os fundamentos da economia da informação e, diretamente relevante para este capítulo, a função de produção CES.
+
+    **Conexão com este capítulo:** Arrow, junto com Chenery, Minhas e Solow, derivou a CES (1961) como a forma funcional mais geral compatível com elasticidade de substituição constante — unificando linear, Leontief e Cobb-Douglas num único modelo. A CES é provavelmente o objeto mais versátil da caixa de ferramentas do economista empírico: de funções de produção a funções de utilidade, de modelos de comércio internacional a modelos de crescimento, ela aparece em toda parte. Arrow demonstrou que restringir \(\sigma = 1\) (Cobb-Douglas) era uma hipótese desnecessária — e a evidência empírica lhe deu razão.
+
 A [Tabela 10.1](#tabela-10-1) compara as propriedades das quatro funções de produção.
 
 <a id="tabela-10-1"></a>
@@ -588,7 +591,9 @@ A taxa de crescimento do produto pode ser decomposta como:
 \label{eq:10.12} \tag{10.12}
 \]
 
-O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**. Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
+O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentemente chamada de **resíduo de Solow**.[^ignorancia] Ele capta o crescimento do produto que não é explicado pelo crescimento dos insumos — isto é, o efeito puro do progresso técnico.
+
+[^ignorancia]: Moses Abramovitz chamou o resíduo de Solow de "a medida da nossa ignorância" — e não estava sendo modesto. Tudo o que não sabemos medir nos insumos acaba no resíduo: qualidade do trabalho, inovação organizacional, infraestrutura, clima institucional, estabilidade macroeconômica. É como atribuir a melhora de um prato a "tempero" — quando "tempero" inclui desde sal até o humor do chef. A história da contabilidade do crescimento, de Solow (1957) a Hsieh e Klenow (2009), é em grande parte uma tentativa de reduzir essa ignorância, decompondo o resíduo em componentes identificáveis. No caso brasileiro, a queda da PTF nos anos 1980 (Bonelli e Fonseca, 1998; Gomes, Pessôa e Veloso, 2003) provavelmente reflete menos uma "piora tecnológica" e mais a desorganização alocativa causada pela hiperinflação — uma forma particularmente destrutiva de "tempero ruim".
 
 !!! info "🏅 Prêmio Nobel — Robert M. Solow (1987)"
 
@@ -645,21 +650,20 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
 ---
 
-!!! box-brasil "Box Brasil: Produtividade agrícola brasileira — a revolução da Embrapa"
+!!! box-brasil "Box Brasil: A revolução da Embrapa — progresso técnico no Cerrado"
 
-    A agropecuária brasileira vivenciou, nas últimas cinco décadas, uma das mais impressionantes transformações produtivas do mundo. O protagonista dessa revolução foi a **Empresa Brasileira de Pesquisa Agropecuária (Embrapa)**, fundada em 1973, cuja atuação é um caso emblemático de progresso técnico aplicado à produção.
+    A agropecuária brasileira vivenciou, nas últimas cinco décadas, uma das mais impressionantes transformações produtivas do mundo. O protagonista dessa revolução foi a **Empresa Brasileira de Pesquisa Agropecuária ([Embrapa](https://www.embrapa.br))**, fundada em 1973, cuja atuação é um caso emblemático de progresso técnico aplicado à produção.
 
-    **Soja: de cultura marginal a líder mundial.**
-    Na safra 1976/77, o Brasil produzia cerca de 12 milhões de toneladas de soja em 7 milhões de hectares (produtividade de ~1.700 kg/ha). Na safra 2023/24, a produção superou **150 milhões de toneladas** em 46 milhões de hectares, com produtividade média de **3.300 kg/ha** (dados CONAB). A produtividade praticamente dobrou, enquanto a área expandiu-se aproximadamente 6,5 vezes — evidenciando que o crescimento do produto decorreu tanto da expansão extensiva quanto, crucialmente, do progresso técnico.
+    | Cultura | Produtividade ~1977 | Produtividade ~2024 | Fator de multiplicação |
+    |---------|-------------------:|-------------------:|:-----:|
+    | **Soja** | ~1.700 kg/ha | ~3.300 kg/ha | ×1,9 |
+    | **Milho** | ~1.600 kg/ha | ~6.000 kg/ha | ×3,8 |
 
-    **Milho: ganhos intensivos expressivos.**
-    A produtividade do milho saltou de cerca de 1.600 kg/ha na década de 1970 para mais de **6.000 kg/ha** nas safras recentes, um aumento de quase quatro vezes. Boa parte desse ganho deve-se ao desenvolvimento do milho safrinha (segunda safra) e de cultivares adaptados ao Cerrado.
+    *Fontes: [CONAB](https://www.conab.gov.br) (safras 2023/24); IBGE/PAM.*
 
-    **Cerrado: a fronteira tecnológica.**
-    A correção da acidez dos solos do Cerrado (calagem), o desenvolvimento de cultivares tropicais e técnicas de plantio direto permitiram transformar uma região antes considerada improdutiva no maior polo agropecuário do país. A Embrapa estima que a tecnologia gerada pela pesquisa agropecuária foi responsável por cerca de **60% do crescimento da produtividade total dos fatores** na agricultura brasileira entre 1975 e 2020.
+    A área de soja expandiu-se de 7 para 46 milhões de hectares no período, mas a produtividade por hectare quase dobrou — evidenciando que o crescimento do produto decorreu tanto da expansão extensiva (mais terra) quanto do progresso técnico (mais produto por unidade de terra). A transformação do Cerrado — via calagem, cultivares tropicais e plantio direto — converteu solos antes improdutivos no maior polo agropecuário do país.
 
-    **Interpretação microeconômica.**
-    Em termos da teoria da produção, a atuação da Embrapa representa um deslocamento da função de produção agrícola — um aumento do parâmetro \(A(t)\). Trata-se predominantemente de progresso técnico **aumentador de terra** (análogo ao neutro de Solow aplicado ao fator terra), pois a inovação principal foi tornar produtivos solos antes imprestáveis, equivalendo a multiplicar o fator terra efetivo disponível. A elasticidade de substituição entre terra e outros insumos (fertilizantes, maquinário) aumentou, refletindo a maior flexibilidade tecnológica na produção agrícola moderna. Goolsbee, Levitt & Syverson (2020, Cap. 6) documentam padrões similares de adoção tecnológica e ganhos de produtividade na agricultura estadunidense.
+    **Interpretação microeconômica.** Em termos da teoria da produção, a atuação da Embrapa representa um deslocamento da função de produção agrícola — um aumento do parâmetro \(A(t)\). Trata-se predominantemente de progresso técnico **aumentador de terra** (análogo ao neutro de Solow aplicado ao fator terra), pois a inovação principal foi tornar produtivos solos antes imprestáveis, multiplicando o fator terra efetivo. A Embrapa estima que a tecnologia gerada pela pesquisa agropecuária foi responsável por cerca de **60% do crescimento da PTF** na agricultura brasileira entre 1975 e 2020. Goolsbee, Levitt & Syverson (2020, Cap. 6) documentam padrões similares na agricultura estadunidense.
 
 !!! box-mundo "Box Mundo 10.3 — O resíduo de Solow e o milagre do Leste Asiático"
 
@@ -744,7 +748,64 @@ Ao longo de qualquer raio da origem (\(K = c \cdot L\)), a TMST é constante. As
 
 A padaria com três fornos que não triplica a produção — lembra? Agora sabemos exatamente por quê: rendimentos marginais decrescentes no curto prazo, rendimentos de escala no longo prazo, e uma elasticidade de substituição que determina se a firma pode trocar braços por máquinas ou está presa à receita original. Da Cobb-Douglas à CES, do resíduo de Solow à homoteticidade, mapeamos a "receita secreta" da firma. Falta um ingrediente crucial: o preço.
 
-*Sabemos produzir. Falta saber quanto custa. No próximo capítulo, a conta chega.*
+*Sabemos produzir. Falta saber quanto custa. And now for something completely different: o próximo capítulo, onde a conta chega.*
+
+---
+
+!!! classroom "Atividade 10.1 — Fábrica de aviões de papel: rendimentos marginais ao vivo (20 min)"
+    **Objetivo:** Demonstrar empiricamente a lei dos rendimentos marginais decrescentes — e a diferença entre produto marginal e produto médio.
+
+    **Material:** Folhas de papel A4 (muitas), 1 tesoura e 1 régua por grupo (capital fixo), cronômetro.
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Grupos de 6 alunos. Cada grupo é uma "firma" com capital fixo: 1 tesoura, 1 régua, 1 mesa. O "produto" é um avião de papel padronizado (deve voar pelo menos 2 metros). Um aluno fica de fora como "gerente de qualidade" (controle).
+    2. **Rodada 1 — 1 trabalhador** (2 min): Apenas 1 aluno do grupo produz aviões por 2 minutos. O gerente conta os aviões aprovados. Anote: TP₁.
+    3. **Rodadas 2–5** (8 min): Adicione 1 trabalhador por rodada (2 min cada). Com 2 trabalhadores, com 3, com 4, com 5. Anote TP₂, TP₃, TP₄, TP₅.
+    4. **Cálculos** (3 min): Cada grupo calcula PMg (= TPₙ - TPₙ₋₁) e PMe (= TPₙ/n) para cada rodada. Projete os resultados de todos os grupos.
+    5. **Debrief** (4 min):
+        - "O PMg cresceu ou caiu nas últimas rodadas?" → Tipicamente cai a partir do 3º ou 4º trabalhador (esbarrando na mesa, disputando a tesoura).
+        - "Em que rodada PMe atingiu o máximo? Era a rodada em que PMg = PMe?"  → Confirme a relação marginal-médio (Seção 10.1).
+        - "Se eu desse a cada grupo uma segunda tesoura (dobrasse o capital), o que aconteceria?" → O PMg se deslocaria para cima. Isso é investimento.
+        - Conecte: "Vocês acabaram de estimar uma função de produção de curto prazo. A Embrapa fez a mesma coisa com a soja — mas com dados de 50 anos."
+
+    **Conexão com o conteúdo:** Seção 10.1 (PMg, PMe, rendimentos marginais decrescentes). Inspirado em Bergstrom e Miller (2000, Cap. 3) e Holt (2007, Cap. 24).
+
+!!! classroom "Atividade 10.2 — Clonar a firma: rendimentos de escala por setor (10 min)"
+    **Objetivo:** Desenvolver intuição sobre quando rendimentos de escala são crescentes, constantes ou decrescentes — e por que isso determina a estrutura de mercado.
+
+    **Material:** Nenhum (projeção de cenários).
+
+    **Protocolo:**
+
+    1. **Cenários** (5 min): Projete quatro setores e pergunte para cada um: "Se você clonar a operação inteira — dobrar tudo (trabalhadores, máquinas, espaço) —, o produto mais que dobra, dobra exatamente, ou menos que dobra?" Vote com Mentimeter ou mão levantada.
+        - **(a) Barraca de açaí na praia** → CRS (dobrar tudo ≈ dobra o produto). Fácil replicar.
+        - **(b) Refinaria de petróleo** → IRS (o volume do tanque cresce com o cubo do raio, o custo com o quadrado). Por isso refinarias são enormes.
+        - **(c) Escritório de advocacia boutique** → DRS? O principal ativo é o capital humano do sócio-fundador, que não "dobra". Crescer dilui a qualidade.
+        - **(d) Plataforma digital (Netflix, Uber)** → IRS extremos. O custo marginal de um usuário adicional é quase zero; o custo fixo (conteúdo, algoritmo) é enorme.
+    2. **Debrief** (5 min):
+        - "Percebam o padrão: IRS → poucas firmas grandes (refinarias, plataformas). CRS → muitas firmas médias (barracas). DRS → muitas firmas pequenas especializadas (advocacia)."
+        - "Rendimentos de escala explicam *por que* alguns mercados são oligopólios naturais e outros são competitivos — tema do Capítulo 12."
+        - "O CADE analisa alegações de economias de escala em toda fusão — exatamente este cálculo que vocês fizeram de cabeça."
+
+    **Conexão com o conteúdo:** Seção 10.3 (rendimentos de escala), Box Brasil sobre CADE (Seção 10.3), preparação para Capítulos 12–13.
+
+!!! classroom "Atividade 10.3 — Quem substitui quem? Elasticidade de substituição na prática (10 min)"
+    **Objetivo:** Calibrar a intuição sobre σ — o parâmetro que determina se a automação é suave ou traumática.
+
+    **Material:** Nenhum (projeção).
+
+    **Protocolo:**
+
+    1. **Ranking** (4 min): Projete 5 setores e peça que os alunos os ordenem do *mais fácil* ao *mais difícil* de substituir trabalho por capital (automação):
+        - Caixa de supermercado → Motorista de caminhão → Cirurgião → Atendente de call center → Pedreiro
+    2. **Debate** (3 min): Compare os rankings. Tipicamente: call center > caixa > motorista > pedreiro > cirurgião. Pergunte: "Qual tem σ mais alto? Qual tem σ mais baixo?"
+    3. **Debrief** (3 min):
+        - "O σ alto (call center → chatbot) significa isoquanta quase reta: a firma facilmente troca pessoas por máquinas. O σ baixo (cirurgião) significa isoquanta quase em L: a máquina não substitui o humano."
+        - "Chirinko (2008) encontrou σ ≈ 0,4–0,6 para a manufatura como um todo. Mas varia enormemente entre setores — e é por isso que a automação não desloca todos os trabalhadores igualmente."
+        - Conecte com Acemoglu e Restrepo (2019) e o debate sobre IA e futuro do trabalho.
+
+    **Conexão com o conteúdo:** Seção 10.4 (elasticidade de substituição), Box Mundo 10.2 (labor share), Chirinko (2008).
 
 ---
 
@@ -1178,6 +1239,23 @@ Considere uma função de produção homotética \(f(K, L)\), que pode ser escri
 
 ## 📚 Referências do Capítulo
 
+- Acemoglu, Daron, e Pascual Restrepo. 2019. "[Automation and New Tasks: How Technology Displaces and Reinstates Labor](https://doi.org/10.1257/jep.33.2.3)." *Journal of Economic Perspectives* 33 (2): 3–30.
+- Arrow, Kenneth J., Hollis B. Chenery, Bagicha S. Minhas, e Robert M. Solow. 1961. "[Capital-Labor Substitution and Economic Efficiency](https://doi.org/10.2307/1926559)." *Review of Economics and Statistics* 43 (3): 225–250.
+- Bonelli, Regis, e Renato Fonseca. 1998. "[Ganhos de Produtividade e de Eficiência: Novos Resultados para a Economia Brasileira](https://repositorio.ipea.gov.br/entities/publication/c9dd506b-0768-4cac-9b67-aaa1fdbb159a)." Texto para Discussão No. 557. Rio de Janeiro: IPEA.
+- Bustos, Paula, Bruno Caprettini, e Jacopo Ponticelli. 2016. "[Agricultural Productivity and Structural Transformation: Evidence from Brazil](https://doi.org/10.1257/aer.20131061)." *American Economic Review* 106 (6): 1320–1365.
+- Chirinko, Robert S. 2008. "[σ: The Long and Short of It](https://doi.org/10.1016/j.jmacro.2007.10.010)." *Journal of Macroeconomics* 30 (2): 671–686.
+- Cobb, Charles W., e Paul H. Douglas. 1928. "[A Theory of Production](https://www.jstor.org/stable/1811556)." *American Economic Review* 18 (1): 139–165.
+- Friedlaender, Ann F., Clifford Winston, e Kung Wang. 1983. "Costs, Technology, and Productivity in the U.S. Automobile Industry." *Bell Journal of Economics* 14 (1): 1–20.
+- Gasques, José Garcia, Eliana Teles Bastos, Mirian Rumenos Piedade Bacchi, e Constanza Valdes. 2010. "Produtividade Total dos Fatores e Transformações da Agricultura Brasileira." In *A Agricultura Brasileira: Desempenho, Desafios e Perspectivas*, org. J. G. Gasques, J. E. R. Vieira Filho e Z. Navarro, 19–44. Brasília: IPEA.
+- Gomes, Viktoria, Samuel de Abreu Pessôa, e Fernando A. Veloso. 2003. "[Evolução da Produtividade Total dos Fatores na Economia Brasileira: Uma Análise Comparativa](https://bibliotecadigital.fgv.br/dspace/handle/10438/916)." *Pesquisa e Planejamento Econômico* 33 (3): 389–434.
+- Goolsbee, Austan, Steven Levitt, e Chad Syverson. 2020. [*Microeconomics*](https://www.macmillanlearning.com/college/us/product/Microeconomics/p/1319245420). 3ª ed. New York: Worth Publishers.
+- Griliches, Zvi. 1963. "[The Sources of Measured Productivity Growth: United States Agriculture, 1940–60](https://doi.org/10.1086/258782)." *Journal of Political Economy* 71 (4): 331–346.
+- Hsieh, Chang-Tai. 2002. "[What Explains the Industrial Revolution in East Asia? Evidence from the Factor Markets](https://doi.org/10.1257/00028280260136372)." *American Economic Review* 92 (3): 502–526.
+- Karabarbounis, Loukas, e Brent Neiman. 2014. "[The Global Decline of the Labor Share](https://doi.org/10.1093/qje/qjt032)." *Quarterly Journal of Economics* 129 (1): 61–103.
 - Mas-Colell, Andreu, Michael D. Whinston, e Jerry R. Green. 1995. [*Microeconomic Theory*](https://books.google.com/books/about/Microeconomic_Theory.html?id=KGtegVXqD8wC). New York: Oxford University Press. Cap. 5.
 - Nicholson, Walter, e Christopher M. Snyder. 2017. [*Microeconomic Theory: Basic Principles and Extensions*](https://books.google.com/books/about/Microeconomic_Theory_Basic_Principles_an.html?id=YdkhCwAAQBAJ). 12ª ed. Boston: Cengage Learning. Cap. 9.
+- Oberfield, Ezra, e Devesh Raval. 2021. "[Micro Data and Macro Technology](https://doi.org/10.3982/ECTA12807)." *Econometrica* 89 (2): 703–732.
+- Piketty, Thomas. 2014. [*O Capital no Século XXI*](https://www.intrinseca.com.br/livro/o-capital-no-seculo-xxi/). Trad. Monica Baumgarten de Bolle. Rio de Janeiro: Intrínseca.
+- Solow, Robert M. 1957. "[Technical Change and the Aggregate Production Function](https://doi.org/10.2307/1926047)." *Review of Economics and Statistics* 39 (3): 312–320.
 - Varian, Hal R. 1992. [*Microeconomic Analysis*](https://books.google.com/books/about/Microeconomic_Analysis.html?id=m20iQAAACAAJ). 3ª ed. New York: W. W. Norton. Cap. 1–4 (teoria da produção).
+- Young, Alwyn. 1995. "[The Tyranny of Numbers: Confronting the Statistical Realities of the East Asian Growth Experience](https://doi.org/10.2307/2946695)." *Quarterly Journal of Economics* 110 (3): 641–680.
