@@ -12,7 +12,7 @@ A análise de externalidades e bens públicos tem raízes profundas na história
 
 ---
 
-## 20.1 Definição de Externalidades
+## 20.1 O Vizinho Que Cria Galos às 5h da Manhã: Definição de Externalidades
 
 !!! definition "Externalidade"
     Uma **externalidade** ocorre quando a ação de um agente econômico afeta diretamente a utilidade ou a função de produção de outro agente, sem que essa interação seja mediada pelo sistema de preços. A externalidade representa um efeito **externo ao mercado** que não é capturado nas decisões privadas dos agentes.
@@ -61,7 +61,7 @@ A distinção entre externalidades pecuniárias e tecnológicas merece um exempl
 
 ---
 
-## 20.2 Externalidades e Ineficiência Alocativa
+## 20.2 O Preço Que Mente: Externalidades e Ineficiência Alocativa
 
 Definido o conceito, vem a pergunta que realmente importa: por que externalidades fazem o mercado errar? A resposta é quase ofensivamente simples. O preço — aquele mecanismo que Adam Smith celebrou como o grande coordenador da economia — mente. Ou melhor, conta apenas metade da história: reflete os custos e benefícios privados da transação, mas ignora solenemente os efeitos sobre terceiros. Como resultado, as decisões tomadas individualmente por agentes racionais conduzem a um nível de produção ou consumo que difere do socialmente ótimo — o mercado "erra" sistematicamente.
 
@@ -130,7 +130,7 @@ Como \(B'^{ext}(q) > 0\), o consumo privado fica **aquém do ótimo social**: \(
 
 ---
 
-## 20.3 Modelo de Equilíbrio Parcial de Externalidades
+## 20.3 Medindo a Mentira: Modelo de Equilíbrio Parcial de Externalidades
 
 Sabemos que o preço mente — mas quanto ele mente? A intuição da seção anterior nos disse que externalidades negativas levam à sobreprodução e positivas à subprodução. Agora, formalizamos essa análise em um modelo de equilíbrio parcial com duas firmas, o que nos permitirá medir exatamente o tamanho da mentira e, na seção seguinte, calibrar os instrumentos de política necessários para corrigi-la.
 
@@ -178,7 +178,7 @@ Geometricamente, essa integral corresponde à área do "triângulo" entre a curv
 **Figura 20.1 — Externalidade negativa e imposto pigouviano.** A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.
 </div>
 
-## 20.4 Soluções para Externalidades Negativas
+## 20.4 A Receita para a Fumaça: Soluções para Externalidades Negativas
 
 Diagnosticamos a doença — agora precisamos da receita. Se o problema é que o poluidor "exporta" custos para a sociedade sem pagar a conta, a solução lógica é apresentar-lhe essa conta. A teoria econômica oferece um cardápio de instrumentos para isso, cada um com sabor e efeitos colaterais distintos. A solução mais elegante — o imposto pigouviano — ataca o problema diretamente na raiz, alterando os incentivos privados para que a firma internalize o custo externo. Mas soluções alternativas, como a negociação privada (Coase), a regulação direta e os mercados de permissão de emissão, podem ser preferíveis em contextos específicos. A escolha entre esses instrumentos constitui um dos debates mais vivos da economia ambiental e regulatória, e seus desdobramentos vão muito além da teoria: afetam diretamente a forma como países enfrentam desafios como a mudança climática, a poluição hídrica e a degradação de ecossistemas.
 
@@ -309,6 +309,12 @@ Na prática, a principal dificuldade do imposto pigouviano reside na **informaç
 
     **Interpretação econômica:** Sem o imposto pigouviano, a siderúrgica produz 45 unidades em vez das 22,5 socialmente ótimas. As 22,5 unidades excedentes custam mais à sociedade do que valem, gerando um peso morto de R$ 1.012,50. O imposto de R$ 45 por unidade internaliza o custo da poluição e elimina completamente essa ineficiência.
 
+<iframe src="../graficos/cap20/webr-pigou.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 20.1 — Imposto pigouviano e perda de peso morto.** Calcule a produção privada vs. socialmente ótima, o imposto pigouviano e a DWL. Altere os parâmetros de custo externo para explorar a sensibilidade do resultado.
+</div>
+
 <iframe src="../graficos/cap20/teorema-coase.html" title="Figura 20.2 — Teorema de Coase" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
@@ -387,6 +393,12 @@ A influência do Teorema de Coase na **análise econômica do direito** (Law and
     **Resultado:** Em ambos os cenários, a produção converge para \(q^{soc} = 10\). O que muda é a direção e a magnitude da transferência — e, portanto, a distribuição de riqueza entre as partes.
 
     **Interpretação econômica:** Este exemplo confirma o Teorema de Coase: a atribuição dos direitos de propriedade não afeta a eficiência alocativa, apenas a distribuição de renda. Contudo, na prática, se houvesse centenas de pesqueiros afetados ou se a informação sobre os danos fosse assimétrica, os custos de negociação tornariam a solução privada inviável.
+
+<iframe src="../graficos/cap20/webr-coase.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 20.2 — Teorema de Coase: fábrica e pesqueiro.** Simule a negociação coaseana sob ambas as atribuições de direitos de propriedade. Compare bem-estar social e faixas de transferência.
+</div>
 
 !!! warning "⚠️ Erro Comum"
 
@@ -481,6 +493,12 @@ O resultado de Weitzman (1974) — formalmente desenvolvido em "Prices vs. Quant
 
     **Interpretação econômica:** A custo-efetividade do cap-and-trade decorre do princípio de que a redução de emissões deve ser alocada onde é mais barata. A firma 2, com menor custo marginal de abatimento, reduz mais; a firma 1, com custo mais alto, reduz menos e compensa comprando permissões. O resultado é o mesmo nível de abatimento total, mas a um custo 11% menor.
 
+<iframe src="../graficos/cap20/webr-cap-trade.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 20.3 — Cap-and-trade e custo-efetividade.** Compare a alocação custo-efetiva com o abatimento uniforme. Visualize como o mercado de permissões iguala os custos marginais de abatimento entre firmas.
+</div>
+
 !!! box-mundo "Box Mundo 20.2 — EU ETS: o maior mercado de carbono do mundo"
 
     **Contexto:** O Sistema de Comércio de Emissões da União Europeia (EU ETS), lançado em 2005, é o maior e mais antigo mercado de cap-and-trade de gases de efeito estufa do mundo. Cobre aproximadamente 40% das emissões de CO₂ da UE, abrangendo mais de 10.000 instalações nos setores de energia, indústria pesada e, desde 2012, aviação intraeuropeia.
@@ -513,7 +531,7 @@ O resultado de Weitzman (1974) — formalmente desenvolvido em "Prices vs. Quant
 
 ---
 
-## 20.5 Atributos dos Bens Públicos
+## 20.5 Quem Paga Pelo Poste de Luz?: Atributos dos Bens Públicos
 
 Quem paga pela iluminação da sua rua? Provavelmente você não sabe — e esse é exatamente o ponto. Ninguém acorda de manhã pensando "vou contribuir voluntariamente para o poste de luz". A luz está lá, você usa, e se seu vizinho também usa, não sobra menos luz para você. Esse tipo de bem — que todos consomem sem que ninguém consiga ser impedido de consumir — é o que os economistas chamam de **bem público**, e representa a segunda grande falha de mercado deste capítulo. Enquanto as externalidades envolvem efeitos colaterais de atividades privadas, os bens públicos representam um desafio ainda mais fundamental: são bens que, por suas próprias características intrínsecas — não-rivalidade e não-exclusão —, o mercado é incapaz de prover eficientemente.
 
@@ -596,7 +614,7 @@ A [Tabela 20.2](#tabela-20-2) apresenta exemplos brasileiros para cada categoria
 
 ---
 
-## 20.6 Bens Públicos e Alocação de Recursos
+## 20.6 Some Verticalmente, Não Horizontalmente: Bens Públicos e Alocação de Recursos
 
 Se para bens privados a regra de eficiencia e "preço igual para todos, quantidade diferente", para bens públicos a lógica se inverte: "quantidade igual para todos, preço diferente". Essa inversão, formalizada por Samuelson em 1954, e a chave para entender por que o mercado sistematicamente falha em prover bens públicos — e por que a solução exige somar, não igualar, as disposições a pagar. A resposta envolve uma mudança fundamental na lógica da eficiência em relação aos bens privados — uma mudança que Paul Samuelson formalizou em 1954 e que constitui uma das contribuições mais duradouras da economia do setor público.
 
@@ -690,9 +708,15 @@ A gravidade do problema do carona — e, portanto, da subprovisão — cresce co
 
     **Interpretação econômica:** O consumidor 2 paga mais (50% do custo) porque é quem mais valoriza o bem público em \(G^* = 30\). O consumidor 3 paga apenas 1/6 do custo. A soma vertical das disposições a pagar (e não a horizontal) reflete a não-rivalidade: todos consomem 30 unidades, mas cada um contribui proporcionalmente à sua valoração marginal. Na prática, o desafio é que nenhum consumidor tem incentivo para revelar verdadeiramente sua valoração — o consumidor 2 preferiria declarar uma valoração menor para pagar menos.
 
+<iframe src="../graficos/cap20/webr-samuelson.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 20.4 — Condição de Samuelson e preços de Lindahl.** Aplique a soma vertical dos benefícios marginais, calcule o nível ótimo de bem público e os preços personalizados de Lindahl. Compare com a provisão voluntária (Nash).
+</div>
+
 ---
 
-## 20.7 Preços de Lindahl
+## 20.7 Um Preço Para Cada Cidadão: Preços de Lindahl
 
 Sabemos agora que o mercado subprovê bens públicos porque cada indivíduo ignora o benefício que sua contribuição gera para os demais. Existe algum arranjo institucional que poderia atingir o nível eficiente de provisão? O economista sueco Erik Lindahl propôs, em 1919, um mecanismo engenhoso: cobrar de cada indivíduo um preço personalizado, proporcional ao benefício que ele extrai do bem público. Em teoria, esse mecanismo funciona perfeitamente. Na prática, como veremos, esbarra no problema mais antigo da economia pública.
 
@@ -764,7 +788,7 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
     **Conexão com este capítulo:**
     A tragédia dos comuns, apresentada neste capítulo como falha de mercado, pressupõe que a ausência de direitos de propriedade leva inevitavelmente à sobre-exploração. Ostrom mostrou que essa conclusão é incompleta: entre a privatização e a regulação estatal, existe um terceiro caminho — a governança comunitária — que funciona quando os usuários conseguem se organizar, monitorar e sancionar coletivamente.
 
-## 20.8 O Problema do Carona (Free Rider)
+## 20.8 Eu Não Pago, Mas Uso: O Problema do Carona (Free Rider)
 
 O equilíbrio de Lindahl pressupõe que os indivíduos revelam honestamente quanto valorizam o bem público. Mas convenhamos: se alguém lhe perguntasse "quanto você pagaria pela defesa nacional?" — sabendo que sua resposta determinaria sua conta —, você diria a verdade? Ou diria "ah, quase nada" e torceria para que seus 210 milhões de compatriotas bancassem o Exército? Se a contribuição de cada um é baseada em sua valoração declarada, cada indivíduo tem incentivo para subdeclarar — afirmando que valoriza pouco o bem público para pagar menos, mas usufruindo plenamente da provisão financiada pelos demais. Esse comportamento estratégico é o **problema do carona** (*free rider*), uma das falhas de mercado mais persistentes e de difícil solução — e a razão pela qual governos cobram impostos em vez de pedir doações.
 
@@ -799,7 +823,7 @@ Esses resultados experimentais iluminam fenômenos do mundo real. A **Wikipedia*
 
 ---
 
-## 20.9 Votação e Alocação de Recursos
+## 20.9 Enfiar 200 Milhões de Preferências Numa Urna: Votação e Alocação de Recursos
 
 O mercado falha, Lindahl é sabotado pelos caronas, e contribuições voluntárias murcham com o tempo. O que resta? A solução mais antiga da humanidade para decisões coletivas: votar. Quando uma cidade precisa decidir entre investir em saneamento ou em uma nova avenida, não há leiloeiro walrasiano que resolva — há uma urna. Mas será que enfiar 200 milhões de preferências heterogêneas dentro de uma cédula produz algo remotamente eficiente? A teoria da escolha pública analisa essa questão, revelando tanto as virtudes quanto as limitações da democracia como mecanismo de agregação de preferências.
 
@@ -908,7 +932,7 @@ O Teorema da Impossibilidade de Arrow não significa que a democracia seja "impo
 
 ---
 
-## 20.10 Mecanismos de Revelação de Preferências
+## 20.10 Fazendo Você Dizer a Verdade: Mecanismos de Revelação de Preferências
 
 O Teorema da Impossibilidade de Arrow e as limitações da votação por maioria mostram que não existe regra de agregação de preferências perfeita. Entretanto, para o caso específico de bens públicos, a teoria de desenho de mecanismos oferece uma solução parcial: mecanismos que tornam a revelação verdadeira das preferências uma estratégia dominante para cada indivíduo, eliminando o incentivo ao comportamento de carona.
 
@@ -987,6 +1011,12 @@ O mecanismo VCG tem aplicações práticas que vão além dos bens públicos. O 
     **Resultado:** O mecanismo VCG provê o bem eficientemente e arrecada \(t_A + t_B + t_C = 80\), com déficit de 40. Cada agente paga pelo "dano" que sua presença causa aos demais.
 
     **Interpretação econômica:** O imposto pivotal de A (50) reflete o fato de que, sem A, os demais agentes B e C teriam uma soma de valorações (70) insuficiente para cobrir o custo (120), e portanto não teriam o bem. A presença de A "força" B e C a financiar 70 de um custo de 120 — o imposto de A cobre exatamente a diferença (50) que B e C não cobririam sozinhos. Esse princípio — pagar pela externalidade que se impõe aos demais — é a essência da família VCG.
+
+<iframe src="../graficos/cap20/webr-vcg.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 20.5 — Mecanismo VCG para bem público discreto.** Identifique agentes pivotais, calcule impostos e verifique que a revelação verdadeira é estratégia dominante. Varie o custo da ponte para explorar como o mecanismo se adapta.
+</div>
 
 ---
 

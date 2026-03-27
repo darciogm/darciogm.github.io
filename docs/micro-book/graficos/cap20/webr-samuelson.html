@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Condicao de Samuelson e Precos de Lindahl</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Condicao de Samuelson e Precos de Lindahl
+# Exercicio Resolvido 20.6
+# ============================================
+
+cat("====== CONDICAO DE SAMUELSON (ER 20.6) ======\n\n")
+
+# 3 consumidores com valoracoes lineares:
+# V1(G) = 80 - 2G,  V2(G) = 60 - G,  V3(G) = 40 - G
+# CMg = 60
+
+a <- c(80, 60, 40)   # interceptos
+b <- c(2, 1, 1)       # inclinacoes
+CMg <- 60
+
+cat("Valoracoes marginais:\n")
+for (i in 1:3) cat(sprintf("  V%d(G) = %d - %dG\n", i, a[i], b[i]))
+cat(sprintf("CMg = %d\n\n", CMg))
+
+# --- (a) Beneficio marginal social ---
+# BMg_social(G) = sum(a) - sum(b)*G = 180 - 4G
+a_tot <- sum(a)
+b_tot <- sum(b)
+cat("--- (a) Beneficio marginal social ---\n")
+cat(sprintf("BMg_social(G) = %d - %dG\n\n", a_tot, b_tot))
+
+# --- (b) Condicao de Samuelson ---
+# 180 - 4G = 60  =>  G* = 30
+G_star <- (a_tot - CMg) / b_tot
+cat("--- (b) Condicao de Samuelson ---\n")
+cat(sprintf("sum BMg_i = CMg:  %d - %dG = %d\n", a_tot, b_tot, CMg))
+cat(sprintf("G* = (%d - %d) / %d = %.0f\n\n", a_tot, CMg, b_tot, G_star))
+
+# Verificacao
+BMg_star <- a_tot - b_tot * G_star
+cat(sprintf("Verif: BMg_social(%.0f) = %d - %d*%.0f = %.0f = CMg? %s\n\n",
+    G_star, a_tot, b_tot, G_star, BMg_star,
+    ifelse(abs(BMg_star - CMg) < 0.01, "SIM!", "NAO")))
+
+# --- (c) Precos de Lindahl ---
+tau <- a - b * G_star
+cat("--- (c) Precos de Lindahl ---\n")
+for (i in 1:3) {
+  cat(sprintf("tau_%d = V%d(%.0f) = %d - %d*%.0f = %.0f\n",
+      i, i, G_star, a[i], b[i], G_star, tau[i]))
+}
+cat(sprintf("Soma: %s = %d = CMg? %s\n\n",
+    paste(tau, collapse = " + "), sum(tau),
+    ifelse(abs(sum(tau) - CMg) < 0.01, "SIM!", "NAO")))
+
+# Participacao no custo
+cat("--- Participacao no custo ---\n")
+for (i in 1:3) {
+  cat(sprintf("Consumidor %d: R$ %.0f (%.1f%% do custo)\n",
+      i, tau[i], tau[i]/CMg*100))
+}
+
+# --- Provisao voluntaria (Nash) ---
+cat("\n--- Provisao voluntaria (comparacao) ---\n")
+# Cada um iguala seu BMg ao CMg (nao a soma)
+# a_i - b_i*G = CMg  =>  contribui ate G_i = (a_i - CMg)/b_i
+G_nash <- max(sapply(1:3, function(i) max(0, (a[i] - CMg)/b[i])))
+cat(sprintf("Contribuicao Nash (apenas maior valorador): G_Nash = %.0f\n", G_nash))
+cat(sprintf("Subprovisao: %.0f vs %.0f (%.0f%% do otimo)\n\n",
+    G_nash, G_star, G_nash/G_star*100))
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Soma vertical dos BMg
+G_seq <- seq(0, 45, length = 300)
+V1 <- pmax(a[1] - b[1]*G_seq, 0)
+V2 <- pmax(a[2] - b[2]*G_seq, 0)
+V3 <- pmax(a[3] - b[3]*G_seq, 0)
+BMg_soc <- V1 + V2 + V3
+
+plot(G_seq, BMg_soc, type = "l", lwd = 3, col = "#198754",
+     xlab = "Quantidade do bem publico (G)",
+     ylab = "Beneficio marginal (R$)",
+     main = "Soma vertical: Samuelson",
+     ylim = c(0, max(BMg_soc) * 1.05))
+lines(G_seq, V1, lwd = 1.5, col = "#dc3545", lty = 2)
+lines(G_seq, V2, lwd = 1.5, col = "#0d6efd", lty = 2)
+lines(G_seq, V3, lwd = 1.5, col = "#fd7e14", lty = 2)
+abline(h = CMg, col = "#6f42c1", lwd = 2, lty = 3)
+
+# Ponto otimo
+points(G_star, CMg, pch = 19, col = "#198754", cex = 2)
+abline(v = G_star, col = "#198754", lty = 3, lwd = 1)
+
+# Precos de Lindahl (setas)
+y_base <- 0
+for (i in 1:3) {
+  cols <- c("#dc3545", "#0d6efd", "#fd7e14")
+  rect(G_star - 1, y_base, G_star + 1, y_base + tau[i],
+       col = adjustcolor(cols[i], 0.2), border = cols[i])
+  text(G_star + 2, y_base + tau[i]/2,
+       sprintf("tau_%d=%d", i, tau[i]),
+       col = cols[i], cex = 0.55, font = 2)
+  y_base <- y_base + tau[i]
+}
+
+text(G_star - 5, CMg + 8, expression(G^"*" == 30),
+     col = "#198754", cex = 0.7, font = 2)
+text(40, CMg + 5, "CMg", col = "#6f42c1", cex = 0.6)
+
+legend("topright",
+       legend = c(expression(Sigma * BMg[i] ~ "(social)"),
+                  expression(V[1](G)), expression(V[2](G)),
+                  expression(V[3](G))),
+       col = c("#198754", "#dc3545", "#0d6efd", "#fd7e14"),
+       lwd = c(3, 1.5, 1.5, 1.5), lty = c(1, 2, 2, 2),
+       cex = 0.5, bg = "white")
+
+# Painel 2: Subprovisao vs N consumidores
+N_vals <- 1:20
+G_opt <- numeric(length(N_vals))
+G_vol <- numeric(length(N_vals))
+# Modelo simplificado: N consumidores identicos com BMg = 80 - 2G
+for (k in seq_along(N_vals)) {
+  Ni <- N_vals[k]
+  # Samuelson: N*(80 - 2G) = 60  =>  G* = (80N - 60)/(2N)
+  G_opt[k] <- max(0, (80*Ni - 60) / (2*Ni))
+  # Nash: 80 - 2G = 60  =>  G_nash = 10 (independe de N!)
+  G_vol[k] <- max(0, (80 - 60) / 2)
+}
+
+plot(N_vals, G_opt, type = "b", lwd = 3, col = "#198754", pch = 19,
+     xlab = "Numero de consumidores (N)",
+     ylab = "Quantidade do bem publico (G)",
+     main = "Subprovisao cresce com N",
+     ylim = c(0, max(G_opt) * 1.1))
+lines(N_vals, G_vol, lwd = 2, col = "#dc3545", lty = 2)
+points(N_vals, G_vol, pch = 17, col = "#dc3545", cex = 1)
+
+legend("right",
+       legend = c(expression(G^"*" ~ "(Samuelson)"),
+                  expression(G^{Nash} ~ "(voluntario)")),
+       col = c("#198754", "#dc3545"),
+       lwd = c(3, 2), lty = c(1, 2), pch = c(19, 17),
+       cex = 0.55, bg = "white")
+
+text(15, G_vol[1] + 3, "Free riding:\nG_Nash fixo!", col = "#dc3545",
+     cex = 0.6, font = 2)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>
