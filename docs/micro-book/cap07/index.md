@@ -4,7 +4,22 @@ Até agora, o consumidor do nosso livro vivia num mundo confortável: ele sabia 
 
 Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito de **loteria**, passando pela formulação axiomática da **utilidade esperada** de Von Neumann e Morgenstern, pela caracterização da **aversão ao risco** e suas medidas quantitativas, até os mecanismos institucionais que permitem reduzir ou redistribuir riscos. Ao final, introduzimos a abordagem de **estado-preferência** e oferecemos uma visão preliminar dos problemas de **informação assimétrica** que serão aprofundados em capítulos posteriores.
 
-**Roteiro do capítulo.** A leitura segue uma progressão natural: partimos do instrumental estatístico mais básico — a loteria e o valor esperado (Seção 7.1) — para mostrar por que ele é insuficiente como critério de decisão. Em seguida, construímos o arcabouço axiomático da utilidade esperada de Von Neumann e Morgenstern (Seção 7.2), que resolve o paradoxo de São Petersburgo e serve de fundação para todo o restante da teoria. Com essa ferramenta em mãos, classificamos atitudes frente ao risco (Seção 7.3) e as medimos com precisão por meio dos coeficientes de Arrow-Pratt (Seção 7.4). As Seções 7.5 e 7.6 traduzem essas medidas em quantidades monetárias observáveis — o equivalente de certeza e o prêmio de risco — e examinam como indivíduos e instituições lidam com a incerteza na prática. A Seção 7.7 reconecta a teoria do consumidor (Cap. 3) ao mundo da incerteza via abordagem estado-preferência, e a Seção 7.8 antecipa os temas de informação assimétrica que serão centrais nos capítulos seguintes.
+!!! abstract "Roteiro do capítulo"
+
+    <div class="chapter-roadmap" markdown>
+
+    | Seção | Tema | Ideia central |
+    |:------|:-----|:-------------|
+    | 7.1 | Loterias e valor esperado | Toda decisão sob incerteza é uma loteria — mas o valor esperado não basta (Paradoxo de São Petersburgo). |
+    | 7.2 | Utilidade esperada (VNM) | Quatro axiomas de coerência geram uma função que pondera utilidades, não dinheiro, pelas probabilidades. |
+    | 7.3 | Aversão ao risco | Concavidade da utilidade = preferir o certo ao duvidoso. A desigualdade de Jensen formaliza a intuição. |
+    | 7.4 | Medidas de Arrow-Pratt | O "termômetro" da aversão ao risco: ARA para riscos fixos, RRA para riscos proporcionais. |
+    | 7.5 | Prêmio de risco e equivalente de certeza | Traduzir curvatura em reais: quanto o agente pagaria para eliminar o risco. |
+    | 7.6 | Métodos para reduzir o risco | Seguros, diversificação, flexibilidade e informação — quatro estratégias complementares. |
+    | 7.7 | Abordagem estado-preferência | Incerteza como problema do consumidor: bens contingentes, ativos de Arrow-Debreu e mercados completos. |
+    | 7.8 | Informação assimétrica (introdução) | Seleção adversa e risco moral — quando a outra parte sabe mais que você. |
+
+    </div>
 
 **Conexões com outros capítulos.** O leitor que estudou a Seção 2.12 (estatística básica para economistas) encontrará aqui os conceitos de valor esperado e variância num papel protagonista, agora inseridos num modelo de escolha. Mais importante, o Capítulo 3 introduziu a utilidade como representação *ordinal* das preferências — o que importava era a ordenação, não o número em si. Neste capítulo, veremos que a utilidade VNM é fundamentalmente diferente: ela é uma representação *cardinal*, única a menos de transformações afins, e essa cardinalidade não é uma convenção matemática, mas uma exigência dos próprios axiomas de escolha racional sob incerteza. Compreender essa distinção é o primeiro passo para dominar a teoria do risco.
 
@@ -91,7 +106,7 @@ Quais são essas quatro regras de coerência? São exigências surpreendentement
 
     Além disso, \(u\) é única a menos de transformações afins positivas: se \(v(x) = a \cdot u(x) + b\), com \(a > 0\), então \(v\) representa as mesmas preferências.
 
-O axioma mais controverso é o de **independência**. Ele afirma, em essência, que se você prefere a loteria A à loteria B, então misturar ambas com uma mesma terceira loteria não deveria alterar essa preferência — a "adição" de uma alternativa irrelevante não contamina a comparação original. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979), que estudaremos no Capítulo 8.
+O axioma mais controverso é o de **independência**.[^spanish-inquisition-vnm] Ele afirma, em essência, que se você prefere a loteria A à loteria B, então misturar ambas com uma mesma terceira loteria não deveria alterar essa preferência — a "adição" de uma alternativa irrelevante não contamina a comparação original. O **Paradoxo de Allais** (1953) demonstra que, em certas situações, agentes reais violam sistematicamente esse axioma, o que motivou o desenvolvimento de teorias alternativas como a **teoria dos prospectos** de Kahneman e Tversky (1979), que estudaremos no Capítulo 8.
 
 O paradoxo de Allais pode ser apresentado de forma direta. Considere duas situações de escolha:
 
@@ -163,6 +178,23 @@ Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou d
     **Pense assim:** Um trabalhador brasileiro prefere um salário fixo de R$ 3.000 a um emprego que paga R$ 6.000 em meses bons e zero em meses ruins — mesmo que a média seja a mesma. A dor de ficar sem renda pesa mais do que a alegria do mês gordo.
 
     **Por que isso importa:** É por isso que existem seguros, previdência e CLT — instituições que transferem risco de quem não quer carregar para quem consegue absorvê-lo melhor.
+
+!!! atividade "Think-Pair-Share — Aceitar ou recusar a aposta?"
+
+    **Cenário:** Você tem R$ 10.000 na conta. Um amigo propõe a seguinte aposta: jogar uma moeda justa. Cara, você ganha R$ 5.000. Coroa, você perde R$ 5.000.
+
+    **Pergunta:** Você aceita?
+
+    **(a)** Sim — o valor esperado é zero, então tanto faz aceitar ou recusar.
+
+    **(b)** Não — mesmo com valor esperado zero, a dor de perder R$ 5.000 é maior que a alegria de ganhar R$ 5.000, porque minha utilidade marginal é decrescente.
+
+    **(c)** Depende — se eu puder jogar 100 vezes seguidas com apostas de R$ 50 cada, aceito; se for uma única aposta de R$ 5.000, recuso.
+
+    ??? success "Debrief"
+        **(b)** é a resposta correta no modelo VNM com aversão ao risco. Um agente com utilidade côncava rejeita toda aposta justa porque $u(E[W]) > E[u(W)]$ — a desigualdade de Jensen. Quem escolheu (a) está usando o critério do valor esperado puro, que o Paradoxo de São Petersburgo demoliu. Quem escolheu (c) levanta um ponto sofisticado: com muitas repetições independentes, a Lei dos Grandes Números faz a média convergir para zero e o risco total (em proporção) se reduz — é o argumento da diversificação temporal. Mas cuidado: a irreversibilidade de uma única aposta grande é qualitativamente diferente de muitas apostas pequenas. Rabin (2000) mostrou que a teoria VNM tem dificuldade de reconciliar aversão ao risco em pequenas e grandes apostas com uma mesma função de utilidade.
+
+        **Lição:** Aversão ao risco não é irracionalidade — é consequência lógica de utilidade marginal decrescente. E a escala da aposta importa.
 
 <iframe src="../graficos/cap07/aversao-risco.html" title="Figura 7.1 — Aversão ao risco e função de utilidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
@@ -429,7 +461,7 @@ A intuição por trás deste teorema é direta: quando o prêmio é justo, o age
 
 Na prática, os mercados de seguros brasileiros exibem carregamentos que variam amplamente. O seguro de automóvel pode ter \(\lambda\) entre 30% e 60% sobre o prêmio puro, enquanto resseguros de catástrofes naturais (como enchentes e secas) têm carregamentos ainda maiores, refletindo riscos sistemáticos que não se diversificam dentro da carteira da seguradora. Esse ponto é crucial: a diversificação pela seguradora só funciona quando os sinistros são *independentes* entre segurados. Uma seca que atinge todos os produtores de uma região simultaneamente não é diversificável na escala de uma única seguradora — o que explica o papel indispensável do resseguro e da participação do Estado em programas como o Proagro.
 
-!!! box-brasil "Box Brasil — Proagro e o seguro rural no Brasil"
+!!! box-brasil "Box Brasil 7.1: Proagro e o seguro rural no Brasil"
     O **Proagro** (Programa de Garantia da Atividade Agropecuária) é o principal instrumento de proteção à renda dos agricultores brasileiros contra perdas causadas por eventos climáticos adversos, pragas e doenças. Criado em 1973 (Lei 5.969/73) e operado pelo Banco Central do Brasil em parceria com agentes financeiros, o Proagro garante a cobertura de financiamentos rurais quando a lavoura sofre perdas que impedem o pagamento do crédito.
 
     **Como funciona na prática**
@@ -650,6 +682,8 @@ Uma distinção importante é que o valor da informação depende de *quão* boa
 
 ## 7.7 Abordagem Estado-Preferência (*State-Preference*)
 
+*And now for something completely different — ou melhor, completely determinístico.*[^completely-different-state]
+
 Até aqui, abordamos a incerteza pelo lado do agente individual: como ele avalia loterias, quão avesso ao risco ele é, quanto pagaria por um seguro. Mas existe uma perspectiva complementar e igualmente poderosa, que reconecta a teoria da incerteza à teoria do consumidor que já conhecemos dos capítulos anteriores. Em vez de pensar em "loterias", podemos pensar em "bens contingentes" — bens que existem condicionalmente à ocorrência de determinados estados do mundo. Essa reformulação, devida a Arrow e Debreu, revela uma elegância profunda: escolher sob incerteza é, no fundo, escolher um cesto de consumo, exatamente como no problema do consumidor determinístico.
 
 E se pudéssemos tratar a incerteza como... mais um problema de consumidor? A ideia — genial na sua simplicidade — é imaginar que existem "bens" especiais: um "guarda-chuva" que só entrega valor se chover, um "protetor solar" que só serve se fizer sol. Esses **ativos contingentes** transformam a escolha sob incerteza em uma escolha entre cestas — exatamente como nos Capítulos 3-4, mas agora as "mercadorias" são pagamentos condicionais a estados do mundo.
@@ -699,9 +733,7 @@ A abordagem estado-preferência tem implicações normativas importantes para a 
 
 ## 7.8 Introdução à Informação Assimétrica
 
-A análise até aqui pressupôs que todos os agentes compartilham a mesma informação sobre os riscos envolvidos. Mas o que acontece quando uma das partes sabe mais do que a outra? Essa assimetria de informação é, na prática, a regra — não a exceção. O vendedor de um carro usado conhece os defeitos ocultos; o paciente sabe mais sobre seus hábitos de saúde do que a seguradora; o gerente de uma empresa sabe mais sobre o desempenho de sua equipe do que o acionista. Essas assimetrias geram problemas que podem comprometer o funcionamento eficiente dos mercados de risco.
-
-Para fechar o capítulo, um aperitivo do que vem pela frente: e quando o problema não é *você* não saber o futuro, mas *a outra parte* saber mais que você? O vendedor de carro usado sabe se o motor é bom; a seguradora não sabe se você dirige rápido; o empregador não sabe se o candidato é preguiçoso. Essa **assimetria de informação** gera problemas que a teoria da utilidade esperada, sozinha, não resolve — mas que serão o tema central dos Capítulos 9d e 19. Aqui, plantamos as sementes.
+Para fechar o capítulo, um aperitivo do que vem pela frente: e quando o problema não é *você* não saber o futuro, mas *a outra parte* saber mais que você?[^dead-parrot-info] O vendedor de carro usado sabe se o motor é bom; a seguradora não sabe se você dirige rápido; o empregador não sabe se o candidato é preguiçoso. Essa **assimetria de informação** gera problemas que a teoria da utilidade esperada, sozinha, não resolve — mas que serão o tema central dos capítulos posteriores. Aqui, plantamos as sementes.
 
 ### 7.8.1 Seleção adversa
 
@@ -727,7 +759,7 @@ A compreensão desses mecanismos começa nesta seção, mas a análise formal �
 
 Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade esperada, aversão ao risco, prêmio de risco, diversificação e informação assimétrica — ganham vida quando aplicados a mercados reais. Os boxes a seguir ilustram como a teoria se manifesta em três contextos brasileiros: o mercado de seguros de automóvel, a Mega-Sena e o seguro agrícola.
 
-!!! box-brasil "Box Brasil — Seguros de automóvel: risco, precificação e regulação"
+!!! box-brasil "Box Brasil 7.2: Seguros de automóvel — risco, precificação e regulação"
     O mercado de seguros de automóvel no Brasil é um campo fértil para a aplicação dos conceitos de incerteza e aversão ao risco. Regulado pela **[SUSEP](https://www.susep.gov.br)** (Superintendência de Seguros Privados), esse mercado apresenta características que ilustram os desafios teóricos discutidos neste capítulo.
 
     **Estrutura de mercado e concentração**
@@ -765,7 +797,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-!!! box-brasil "Box Brasil — Mega-Sena: quando apostar é irracional (mas compreensível)"
+!!! box-brasil "Box Brasil 7.3: Mega-Sena — quando apostar é irracional (mas compreensível)"
     A **Mega-Sena**, operada pela Caixa Econômica Federal, é a maior loteria do Brasil e ilustra de maneira contundente o contraste entre valor esperado e comportamento observado.
 
     **Os números da Mega-Sena**
@@ -792,7 +824,7 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 
 ---
 
-!!! box-brasil "Box Brasil — Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
+!!! box-brasil "Box Brasil 7.4: Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
     O setor agropecuário brasileiro — responsável por cerca de 24% do PIB quando considerada toda a cadeia — está intrinsecamente exposto a riscos climáticos, fitossanitários e de preços. O **Programa de Subvenção ao Prêmio do Seguro Rural (PSR)**, criado em 2003, é a principal política pública de gestão de risco agrícola no país.
 
     **Como funciona**
@@ -818,6 +850,12 @@ Os conceitos desenvolvidos ao longo deste capítulo — loterias, utilidade espe
 ---
 
 No início deste capítulo, tiramos o tapete da certeza. Agora, o consumidor tem ferramentas para pisar firme mesmo no chão instável: utilidade esperada para avaliar loterias, Arrow-Pratt para medir aversão ao risco, seguros para transferi-lo, e ativos contingentes para negociá-lo. O tapete não voltou — mas o consumidor aprendeu a equilibrar-se sem ele.
+
+Se você sair deste capítulo com três convicções, que sejam estas:
+
+1. **Utilidade, não dinheiro.** O salto de \(E[x]\) para \(E[u(x)]\) é toda a diferença entre a estatística e a microeconomia da incerteza. A curvatura da utilidade — não o valor esperado — governa as decisões sob risco.
+2. **Risco tem preço.** O prêmio de risco de Arrow-Pratt converte aversão abstrata em reais concretos. É o fundamento de tudo: do seguro rural ao CAPM, do Proagro ao Tesouro Direto.
+3. **Informação é poder (e assimetria é falha).** Quando uma parte sabe mais que a outra, mercados de risco podem colapsar. Seleção adversa e risco moral são as sementes que florescerão nos capítulos seguintes.
 
 *O consumidor aprendeu a lidar com o risco. Mas será que ele realmente faz isso de forma racional? O próximo capítulo diz que não — e tem provas.*
 
@@ -869,6 +907,15 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     ??? success "Resposta"
         **(b)** O axioma de independência estabelece que a preferência entre duas loterias não é afetada pela mistura com uma terceira loteria comum. É o axioma mais distintivo (e controverso) da teoria de VNM, violado sistematicamente no Paradoxo de Allais. A alternativa (a) é absurda; (c) descreve neutralidade ao risco; (d) refere-se a preferências intertemporais.
+
+??? question "6. Na abordagem estado-preferência, se os preços dos ativos contingentes são atuarialmente justos ($\psi_s = \pi_s$) e o agente é avesso ao risco, a alocação ótima é:"
+    - (a) Consumir tudo no estado mais provável e nada nos demais
+    - (b) Igualar o consumo em todos os estados — suavização perfeita
+    - (c) Comprar apenas o ativo contingente ao estado de maior retorno
+    - (d) Distribuir a riqueza proporcionalmente às probabilidades, sem equalizar consumo
+
+    ??? success "Resposta"
+        **(b)** Quando $\psi_s = \pi_s$ (preços justos), a condição de primeira ordem $\pi_s u'(c_s) / \psi_s = \lambda$ implica $u'(c_s) = \lambda$ para todo $s$. Como $u$ é estritamente côncava ($u'' < 0$), $u'$ é estritamente decrescente, e a igualdade $u'(c_s) = \lambda$ exige $c_s = c_{s'}$ para todo par de estados. O agente equaliza o consumo, eliminando todo o risco — resultado análogo ao seguro total sob prêmio justo (Seção 7.6.1).
 
 ---
 
@@ -1164,6 +1211,12 @@ onde \(A(W_0) = -u''(W_0)/u'(W_0)\) é o coeficiente de Arrow-Pratt de aversão 
     **Por que isso importa:** Este artigo fornece evidência empírica direta de que a aversão ao risco — modelada nos termos deste capítulo — tem consequências reais para o investimento agrícola e o desenvolvimento econômico. Para o Brasil, onde pequenos e médios produtores representam a maioria das propriedades rurais e onde o risco climático (secas no Nordeste, geadas no Sul, El Niño/La Niña) é uma constante, as conclusões são diretamente relevantes: programas como o Proagro e o PSR não são apenas transferências de renda, mas instrumentos de eficiência que desbloqueiam o potencial produtivo de agricultores que, sem cobertura, preferem seguir a estratégia segura e de baixo retorno.
 
     **Relevância para o capítulo:** O artigo é a evidência empírica mais influente por trás do argumento teórico da Seção 7.6.1 (seguros como mecanismo de eficiência) e do Box Brasil sobre o Proagro (Seção 7.6.1). Ele conecta diretamente a teoria do prêmio de risco (Seção 7.5) ao comportamento observado de agricultores em países em desenvolvimento.
+
+[^spanish-inquisition-vnm]: "Nobody expects the Spanish Inquisition!" — e ninguém espera que o axioma da independência falhe. Mas ele falha, sistematicamente, como Allais demonstrou em 1953. O efeito certeza é a Inquisição Espanhola da teoria VNM: aparece quando menos se espera e derruba hipóteses que pareciam sólidas.
+
+[^dead-parrot-info]: No sketch *Dead Parrot* de Monty Python, o vendedor insiste que o papagaio morto está "descansando" — um caso perfeito de assimetria de informação em que o vendedor sabe perfeitamente o estado do produto e engana o comprador com *cheap talk*. Akerlof (1970) formalizou exatamente essa situação: quando o vendedor sabe mais do que o comprador, o mercado pode colapsar.
+
+[^completely-different-state]: Frase imortalizada pelo narrador de *Monty Python's Flying Circus*. A transição aqui é deliberada: depois de seis seções pensando em loterias e probabilidades, vamos reformular tudo como um problema do consumidor — com curvas de indiferença, restrição orçamentária e tudo mais. É *completely different*, mas estranhamente familiar.
 
 ## 📚 Referências do Capítulo
 
