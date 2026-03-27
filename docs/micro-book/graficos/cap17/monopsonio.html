@@ -154,9 +154,13 @@
 
   // Competitive point
   board.create('point', [compH, compW], {
-    size: 5, fillColor: '#00897b', strokeColor: '#fff', name: 'Competitivo', fixed: true,
-    label: { fontSize: 11, offset: [25, 16], color: '#00897b', highlight: false }
+    size: 5, fillColor: '#00897b', strokeColor: '#fff', name: '', fixed: true
   });
+  board.create('text', [
+    function(){ return compH() + 3; },
+    function(){ return (monopW() + monopMRP()) / 2; },
+    '<span style="color:#00897b;font-weight:bold;">Competitivo</span>'
+  ], { fontSize: 11, anchorX: 'left', fixed: true, highlight: false });
 
   // --- Dashed projection lines ---
 
