@@ -1147,6 +1147,8 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
 ## 2.10 Integração
 
+*And now for something completely different* — ou quase. As Seções 2.1–2.9 trataram de otimização e suas variantes. As três seções finais cobrem ferramentas complementares — integração, dinâmica e estatística — que completam o arsenal para os capítulos subsequentes.
+
 Derivar é perguntar "quanto muda?". Integrar é perguntar "quanto acumulou?".[^cheese-shop] Se a derivada é a velocidade, a integral é a distância percorrida.
 
 [^cheese-shop]: Se integrar é acumular, um mercado com oferta zero tem excedente do produtor igual a zero — a integral de nada é nada. O sketch *Cheese Shop* de Monty Python ilustra o caso extremo: um cliente tenta comprar queijo, mas a loja não tem nenhum tipo em estoque. A área sob a curva de oferta é... bem, não há curva. O excedente colapsa. "It's certainly uncontaminated by cheese." Em microeconomia, a integração aparece sempre que queremos medir *totais* a partir de *marginais* — quanto o consumidor ganhou, quanto o produtor perdeu, quanto bem-estar a sociedade desperdiçou. Em resumo: se o Capítulo 5 for medir excedente do consumidor, vai precisar calcular áreas sob curvas. E calcular áreas é integrar.
@@ -1414,6 +1416,15 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     ??? success "Resposta"
         **(b)** A condição de complementaridade de Kuhn-Tucker estabelece que $\lambda \cdot g(x) = 0$: se a restrição tem folga ($g(x) > 0$), então $\lambda = 0$; se $\lambda > 0$, a restrição é ativa ($g(x) = 0$). A alternativa (a) é incorreta pois $\lambda \geq 0$ para restrições de desigualdade em problemas de maximização; (c) não é necessário; (d) confunde — para máximo, queremos concavidade, não convexidade.
+
+??? question "6. Se uma função de produção $F(K,L)$ é homogênea de grau 1, o Teorema de Euler implica que:"
+    - (a) O lucro econômico puro é positivo quando os fatores são remunerados pela produtividade marginal
+    - (b) $K \cdot F_K + L \cdot F_L = F(K,L)$: o produto é integralmente esgotado pela remuneração dos fatores
+    - (c) As derivadas parciais $F_K$ e $F_L$ são homogêneas de grau 1
+    - (d) A função apresenta retornos crescentes de escala
+
+    ??? success "Resposta"
+        **(b)** O Teorema de Euler afirma que, para uma função homogênea de grau $k$, $\sum x_i f_i = k \cdot f$. Com $k=1$: $K \cdot F_K + L \cdot F_L = F(K,L)$. Se cada fator recebe sua produtividade marginal, o produto é exatamente esgotado — não há lucro econômico puro. A alternativa (a) contradiz o resultado; (c) é incorreta pois as derivadas parciais são homogêneas de grau $k-1 = 0$; (d) descreve $k > 1$, não $k = 1$.
 
 ---
 
