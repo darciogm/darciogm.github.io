@@ -4,14 +4,20 @@ Nos capítulos anteriores, construímos a teoria da escolha do consumidor sobre 
 
 A partir da década de 1970, uma série de experimentos conduzidos por psicólogos e economistas revelou **violações sistemáticas** dos axiomas de racionalidade. Não se trata de erros aleatórios — os desvios seguem padrões previsíveis, enraizados na arquitetura cognitiva humana. Daniel Kahneman e Amos Tversky foram os pioneiros desse programa de pesquisa, que culminou na **Teoria do Prospecto** (Kahneman e Tversky 1979) e rendeu a Kahneman o Prêmio Nobel de Economia em 2002.
 
-Este capítulo apresenta seis pilares da **economia comportamental**:
+!!! abstract "Roteiro do capítulo"
 
-1. As **heurísticas e vieses cognitivos** que distorcem nossos julgamentos — e a arquitetura dual (Sistema 1 e Sistema 2) que os produz.
-2. A **Teoria do Prospecto**, que substitui a utilidade esperada por uma descrição mais realista das decisões sob risco, incluindo a evolução da PT original à **PT Cumulativa** e o papel da **contabilidade mental**.
-3. A **aversão à ambiguidade** e o Paradoxo de Ellsberg, que desafiam a utilidade esperada subjetiva.
-4. As **preferências sociais** — aversão à inequidade, reciprocidade e cooperação — formalizadas pelo modelo de **Fehr-Schmidt**.
-5. O **desconto hiperbólico**, que explica por que sistematicamente priorizamos o presente em detrimento do futuro.
-6. Os ***nudges*** — intervenções que aproveitam esses vieses para melhorar as decisões sem restringir a liberdade de escolha.
+    <div class="chapter-roadmap" markdown>
+
+    | Seção | Tema | Ideia central |
+    |:------|:-----|:-------------|
+    | 8.1 | Heurísticas e vieses cognitivos | Atalhos mentais (representatividade, disponibilidade, ancoragem) geram erros previsíveis — e a arquitetura dual (Sistema 1 vs. Sistema 2) explica por quê. |
+    | 8.2 | Teoria do Prospecto | A utilidade esperada cede lugar a uma função valor sobre ganhos e perdas, com aversão à perda, ponderação não linear, contabilidade mental e a evolução para a PT Cumulativa. |
+    | 8.3 | Aversão à ambiguidade | O Paradoxo de Ellsberg mostra que agentes distinguem risco de ambiguidade — e preferem o diabo que conhecem. |
+    | 8.4 | Preferências sociais | Aversão à inequidade, reciprocidade e punição altruísta, formalizadas pelo modelo de Fehr-Schmidt, explicam por que o *homo economicus* perde no jogo do ultimato. |
+    | 8.5 | Desconto hiperbólico | O viés do presente gera inconsistência temporal: o "eu de hoje" faz planos que o "eu de amanhã" sabota sistematicamente. |
+    | 8.6 | Nudges | Intervenções na arquitetura de escolha aproveitam os vieses para melhorar decisões sem restringir liberdade — o paternalismo libertário de Thaler e Sunstein. |
+
+    </div>
 
 **Conexão com o restante do livro.** Este capítulo se situa em uma encruzilhada. Do lado do passado, dialoga diretamente com dois conjuntos de resultados já estabelecidos: os axiomas de racionalidade do Capítulo 3 (completude, transitividade, continuidade e, especialmente, independência) e a teoria da utilidade esperada de Von Neumann–Morgenstern do Capítulo 7 (o axioma da independência e a representação linear das probabilidades). A economia comportamental não descarta esses modelos — ela os usa como referência precisa para identificar *onde* e *por que* os agentes se afastam das previsões canônicas. Do lado do futuro, os conceitos deste capítulo são insumos diretos para tópicos avançados: no Capítulo 14, sobre teoria dos jogos, as preferências sociais (Seção 8.4) modificam os equilíbrios previstos em jogos de barganha e de cooperação. Em teoria de mecanismos e desenho de contratos — temas que surgem no Capítulo 15 e além —, a contabilidade mental, o desconto quasi-hiperbólico e a aversão à perda determinam que tipos de incentivos funcionam na prática. Um governo que projeta um programa de previdência complementar ou um regulador que define o formato de um rótulo nutricional precisa incorporar as regularidades documentadas aqui; caso contrário, o mecanismo pode funcionar elegantemente no papel e falhar com agentes reais.
 
@@ -24,9 +30,7 @@ A abordagem deste capítulo é deliberadamente cumulativa: começamos pelos fund
 
 ## 8.1 Heurísticas e Vieses Cognitivos
 
-Antes de examinar modelos alternativos de decisão, é preciso entender *por que* os agentes se desviam das previsões da teoria neoclássica. A resposta começa pela forma como o cérebro humano processa informações — não como uma calculadora bayesiana perfeita, mas como um sistema adaptativo que economiza recursos cognitivos por meio de atalhos mentais. Esses atalhos funcionam bem na maioria das vezes, mas em contextos específicos produzem erros previsíveis que a teoria econômica não pode ignorar.
-
-O cérebro humano processa informações usando **heurísticas** — regras simplificadas que permitem tomar decisões rápidas com informação limitada. Na maioria das vezes, essas regras produzem resultados satisfatórios. Porém, em contextos específicos, elas geram **vieses** — desvios previsíveis em relação ao julgamento estatisticamente correto.
+Antes de examinar modelos alternativos de decisão, é preciso entender *por que* os agentes se desviam das previsões da teoria neoclássica. A resposta começa pela forma como o cérebro humano processa informações — não como uma calculadora bayesiana perfeita, mas como um sistema adaptativo que economiza recursos cognitivos por meio de **heurísticas**: regras simplificadas que permitem tomar decisões rápidas com informação limitada. Na maioria das vezes, essas regras produzem resultados satisfatórios. Porém, em contextos específicos, elas geram **vieses** — desvios previsíveis em relação ao julgamento estatisticamente correto.
 
 O programa de pesquisa sobre heurísticas e vieses não surgiu do nada. Ele foi motivado por uma insatisfação profunda com o modelo do agente perfeitamente racional — o chamado *Homo economicus* — que dominava a teoria econômica no pós-guerra. Na psicologia, Herbert Simon havia cunhado o conceito de **racionalidade limitada** (*bounded rationality*) ainda nos anos 1950: os agentes não maximizam de forma global e irrestrita, mas se satisfazem com soluções "suficientemente boas" dada sua capacidade cognitiva finita. O trabalho de Tversky e Kahneman foi um passo adiante: identificou os mecanismos específicos pelos quais essa limitação se manifesta, transformando a racionalidade limitada de um princípio geral em um conjunto preciso de previsões testáveis.
 
@@ -80,7 +84,7 @@ A ancoragem tem implicações importantes para a economia: negociações salaria
 
 As heurísticas anteriores se referem a distorções no julgamento sobre eventos externos. Mas os agentes também cometem erros sistemáticos na avaliação de suas próprias capacidades e conhecimentos. O **excesso de confiança** (*overconfidence*) manifesta-se de várias formas: superestimação das próprias habilidades, calibração inadequada de intervalos de confiança e a ilusão de controle sobre eventos aleatórios. Quando perguntados, a maioria dos motoristas se declara "acima da média" — uma impossibilidade estatística. Investidores excessivamente confiantes tendem a negociar com frequência excessiva, reduzindo seus retornos líquidos (Barber e Odean 2001).
 
-!!! box-brasil "Box Brasil — Efeito disposição na B3"
+!!! box-brasil "Box Brasil 8.1: Efeito disposição na B3"
     O **efeito disposição** — a tendência a vender ações vencedoras cedo demais e manter ações perdedoras por tempo demais — é uma manifestação conjunta de aversão à perda e excesso de confiança. Estudos com dados de investidores pessoa física na B3 (antiga BM&FBovespa) documentam esse padrão de forma robusta. Estudos empíricos usando dados de corretoras brasileiras encontraram que investidores individuais realizam ganhos com frequência significativamente maior do que realizam perdas. Esse comportamento é custoso: as ações vendidas (vencedoras) tendem a ter desempenho futuro superior ao das ações mantidas (perdedoras), gerando retornos líquidos menores para o investidor.
 
 ### 8.1.5 Sistema 1 e Sistema 2: a arquitetura dual do pensamento
@@ -155,7 +159,7 @@ A **utilidade esperada** de Von Neumann e Morgenstern (Capítulo 7) pressupõe q
 
 Para motivar as inovações da Teoria do Prospecto, comecemos por um experimento mental que abalou a confiança no axioma da independência — o pilar mais controverso da utilidade esperada de Von Neumann e Morgenstern. Antes da Teoria do Prospecto, Maurice Allais (1953) já havia demonstrado uma violação elegante da utilidade esperada. Considere os seguintes problemas de decisão.
 
-Vale notar que o Paradoxo de Allais foi apresentado, de forma provocativa, ao próprio grupo de economistas que havia desenvolvido a utilidade esperada — incluindo nomes como Savage e Samuelson — durante uma conferência em Paris em 1952. Muitos deles, ao responder intuitivamente, violaram os próprios axiomas que defendiam. Quando Savage percebeu que havia respondido de forma inconsistente, disse algo notável: a inconsistência não resultava de irracionalidade, mas de um "erro de cálculo" que ele corrigiria ao raciocinar com mais cuidado. Isso é precisamente o que Kahneman documentaria décadas depois: o Sistema 2 pode corrigir as intuições do Sistema 1, mas só quando acionado. A questão de política relevante é: nas decisões reais de consumo, poupança e investimento, os agentes acionam o Sistema 2 com frequência suficiente?
+Vale notar que o Paradoxo de Allais foi apresentado, de forma provocativa, ao próprio grupo de economistas que havia desenvolvido a utilidade esperada — incluindo nomes como Savage e Samuelson — durante uma conferência em Paris em 1952. Muitos deles, ao responder intuitivamente, violaram os próprios axiomas que defendiam.[^spanish-inquisition-allais] Quando Savage percebeu que havia respondido de forma inconsistente, disse algo notável: a inconsistência não resultava de irracionalidade, mas de um "erro de cálculo" que ele corrigiria ao raciocinar com mais cuidado. Isso é precisamente o que Kahneman documentaria décadas depois: o Sistema 2 pode corrigir as intuições do Sistema 1, mas só quando acionado. A questão de política relevante é: nas decisões reais de consumo, poupança e investimento, os agentes acionam o Sistema 2 com frequência suficiente?
 
 !!! example "Paradoxo de Allais"
     **Problema 1:** Escolha entre:
@@ -169,6 +173,20 @@ Vale notar que o Paradoxo de Allais foi apresentado, de forma provocativa, ao pr
     - **D:** Ganhar R\$ 5.000.000 com probabilidade \(0{,}10\); nada com probabilidade \(0{,}90\).
 
     A maioria das pessoas escolhe **A** no Problema 1 e **D** no Problema 2. Mas essa combinação viola o axioma da independência da utilidade esperada. Se \(A \succ B\), então pela UE teríamos \(C \succ D\) — mas o padrão observado é o contrário. A preferência por A reflete o **efeito certeza**: a sobrevalorização de resultados certos em relação a resultados meramente prováveis.
+
+!!! atividade "Atividade — Think-Pair-Share: Você viola o axioma da independência?"
+
+    **Formato:** Think-Pair-Share | **Tempo:** 10 minutos | **Material:** slides ou quadro com os dois problemas do Paradoxo de Allais
+
+    **Etapa 1 — Think (2 min).** O professor projeta os Problemas 1 e 2 do Paradoxo de Allais *sem* revelar que existe uma "armadilha". Cada aluno anota suas escolhas individualmente (A ou B; C ou D) em silêncio.
+
+    **Etapa 2 — Votação (1 min).** O professor pede que a turma vote (mãos levantadas ou Mentimeter). Registra a distribuição no quadro: quantos escolheram A+D? Quantos A+C? B+D? B+C?
+
+    **Etapa 3 — Pair (3 min).** Em duplas, os alunos discutem: "Se eu escolhi A no Problema 1 e D no Problema 2, será que minhas escolhas são consistentes com a utilidade esperada?" O professor pode dar a dica: "Tente mostrar que A≻B implica C≻D sob a UE."
+
+    **Etapa 4 — Share (4 min).** O professor revela a inconsistência formal e mostra a proporção da turma que violou o axioma da independência. Debrief: "Vocês acabaram de reproduzir, ao vivo, o resultado de Allais (1953). A maioria de vocês — como Savage em Paris — violou o axioma que a teoria exige. A pergunta agora é: o modelo precisa mudar, ou vocês é que precisam melhorar?"
+
+    **Resultado esperado:** 60–80% da turma escolherá A+D, replicando o padrão clássico. A vivência pessoal da violação torna o axioma da independência — e sua falha — inesquecível.
 
 ### 8.2.2 A função valor
 
@@ -191,7 +209,7 @@ A Teoria do Prospecto propõe que os agentes avaliam resultados como **ganhos ou
 
     **Pense assim:** Uma moeda justa paga R\$ 150 na cara e cobra R\$ 100 na coroa. O valor esperado é +R\$ 25, mas com \(\lambda \approx 2{,}25\), a perda potencial "pesa" R\$ 225 em termos psicológicos — mais do que os R\$ 150 do ganho. A maioria das pessoas recusa a aposta.
 
-    **Por que isso importa:** A aversão à perda explica por que investidores seguram ações perdedoras tempo demais ("não quero realizar o prejuízo") e vendem vencedoras cedo demais ("melhor garantir o lucro") — o chamado efeito disposição, documentado na B3.
+    **Por que isso importa:** A aversão à perda explica por que investidores seguram ações perdedoras tempo demais ("não quero realizar o prejuízo") e vendem vencedoras cedo demais ("melhor garantir o lucro") — o chamado efeito disposição, documentado na B3.[^black-knight-loss]
 
 Uma especificação paramétrica comum é:
 
@@ -305,7 +323,7 @@ O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para gan
 
     **Por que isso importa:** A ponderação não linear de probabilidades é a peça que faltava para explicar simultaneamente comportamentos de risco (loterias, day trading) e aversão extrema a catástrofes (seguros caros, pânico financeiro).
 
-!!! box-brasil "Box Brasil — A Mega-Sena e a sobrevalorização de probabilidades pequenas"
+!!! box-brasil "Box Brasil 8.2: A Mega-Sena e a sobrevalorização de probabilidades pequenas"
     A probabilidade de acertar as seis dezenas da Mega-Sena é de aproximadamente 1 em 50 milhões. Mesmo assim, milhões de brasileiros apostam regularmente. O valor esperado de uma aposta de R\$ 5,00 é tipicamente negativo (parte da arrecadação financia programas sociais via Caixa Econômica Federal). Sob utilidade esperada com probabilidades lineares, apostar seria irracional para qualquer agente avesso ao risco. A Teoria do Prospecto oferece uma explicação: a função de ponderação transforma a probabilidade objetiva minúscula (\(p \approx 0{,}00000002\)) em um peso decisório substancialmente maior, tornando a aposta subjetivamente atraente. O prazer antecipatório de imaginar o ganho faz parte do "produto" consumido — algo que o modelo neoclássico não captura.
 
 ### 8.2.4 Da PT Original à PT Cumulativa (CPT)
@@ -357,7 +375,7 @@ Duas consequências diretas da Teoria do Prospecto têm grande relevância econ�
 !!! example "Canecas de Kahneman, Knetsch e Thaler"
     No experimento clássico de Kahneman, Knetsch e Thaler (1990), metade dos participantes recebeu uma caneca de café da universidade. Quando questionados sobre o preço mínimo para vendê-la, os "donos" pediram em média US\$ 7,12. Os "compradores" (que não receberam a caneca) ofereceram em média US\$ 2,87. A simples posse — a dotação — mais que dobrou a valoração do objeto.
 
-!!! box-brasil "Box Brasil — Efeito dotação no mercado imobiliário"
+!!! box-brasil "Box Brasil 8.3: Efeito dotação no mercado imobiliário"
     O mercado imobiliário brasileiro oferece uma ilustração vívida do efeito dotação. Dados do índice FipeZap mostram que, em períodos de desaceleração econômica, os preços de venda de imóveis residenciais resistem a cair mesmo quando o volume de transações despenca. Proprietários que compraram seus imóveis a preços elevados relutam em vender abaixo do preço de aquisição — o ponto de referência —, preferindo manter o imóvel fora do mercado por meses ou anos. Essa rigidez de preços para baixo é difícil de explicar pela teoria neoclássica pura, mas é uma previsão natural da aversão à perda: vender abaixo do preço de compra é codificado como "perda", e a dor dessa perda supera o benefício racional de liquidar o ativo e realocar o capital.
 
 **Efeito framing.** Se o efeito dotação mostra que a posse de um objeto altera sua valoração, o efeito framing revela algo ainda mais perturbador para o modelo neoclássico: a forma como uma decisão é apresentada afeta sistematicamente as escolhas, mesmo quando as opções são logicamente equivalentes. Não é apenas o *conteúdo* da decisão que importa — é a *moldura* em que ela é colocada.
@@ -401,7 +419,7 @@ Como a contabilidade mental afeta as decisões concretas dos consumidores? Thale
 
 Essas regras decorrem diretamente da curvatura da função valor da Teoria do Prospecto — concavidade para ganhos (ganhos separados são avaliados em regiões de maior sensibilidade) e convexidade para perdas (perdas combinadas são avaliadas em região de menor sensibilidade marginal).
 
-!!! box-brasil "Box Brasil — Cartão de crédito e contas mentais"
+!!! box-brasil "Box Brasil 8.4: Cartão de crédito e contas mentais"
     O uso intenso do cartão de crédito no Brasil — frequentemente como instrumento de parcelamento "sem juros" — ilustra a contabilidade mental em ação. O parcelamento separa uma grande perda (o preço total do bem) em pequenas perdas mensais, cada uma percebida como menos dolorosa. Além disso, a separação temporal entre o momento da compra (prazer imediato) e o pagamento (dor adiada) explora tanto a contabilidade mental quanto o viés do presente discutido na Seção 8.5. Prelec e Loewenstein (1998) modelaram formalmente essa "desvinculação" entre consumo e pagamento.
 
 !!! info "🏅 Prêmio Nobel — Richard H. Thaler (2017)"
@@ -528,7 +546,7 @@ Três jogos experimentais formam a base empírica das preferências sociais (Dha
 
     **Por que isso importa:** O equilíbrio de Nash por indução retroativa prevê que qualquer oferta positiva seja aceita — mas essa previsão falha sistematicamente. Qualquer modelo de barganha aplicado a negociações trabalhistas, contratos públicos ou fusões corporativas precisa levar em conta que os agentes reais têm um "preço da dignidade" — um limiar abaixo do qual preferem o impasse à capitulação.
 
-!!! box-brasil "Box Brasil — Preferências sociais e informalidade fiscal"
+!!! box-brasil "Box Brasil 8.5: Preferências sociais e informalidade fiscal"
     A alta tolerância à informalidade fiscal no Brasil pode ser interpretada à luz das preferências sociais. Quando os contribuintes percebem que o sistema tributário é **inequitativo** — com altas alíquotas sobre o trabalho formal e baixa tributação sobre lucros e dividendos —, a reciprocidade negativa pode reduzir a disposição a pagar impostos. Pesquisas de opinião do Ipea indicam que a percepção de injustiça fiscal é um dos principais fatores associados à tolerância com a evasão tributária. O modelo de Fehr-Schmidt (Seção 8.4.2) prevê exatamente esse padrão: agentes com alta aversão à desvantagem (\(\alpha_i\) elevado) podem preferir a "punição" de não cooperar a aceitar uma distribuição percebida como injusta.
 
 ### 8.4.2 O modelo de Fehr-Schmidt (aversão à inequidade)
@@ -795,7 +813,7 @@ No contexto brasileiro, as estratégias de compromisso aparecem de forma particu
 
 A distinção entre agentes sofisticados e ingênuos tem implicações práticas para o design de políticas. Nudges como a adesão automática são igualmente eficazes para ambos os tipos — tanto o agente que reconhece seu viés quanto o que não reconhece ficam no plano se o *default* for "aderir". Porém, mecanismos de compromisso mais sofisticados — como o *Save More Tomorrow*, em que o trabalhador se compromete a destinar aumentos salariais futuros à poupança — exigem um grau de sofisticação: o agente precisa reconhecer que seu "eu futuro" precisará de ajuda. Políticas bem calibradas combinam nudges universais (que funcionam para todos) com opções de compromisso voluntário (que beneficiam os sofisticados).
 
-!!! box-brasil "Box Brasil — Crédito rotativo e viés do presente"
+!!! box-brasil "Box Brasil 8.6: Crédito rotativo e viés do presente"
     O crédito rotativo do cartão de crédito no Brasil cobra taxas de juros que figuram entre as mais altas do mundo — segundo dados do Banco Central do Brasil, a taxa média do rotativo superou 400% ao ano em diversos momentos recentes. Muitos consumidores, ao optar por pagar apenas o valor mínimo da fatura, subestimam o custo total acumulado das parcelas futuras. Esse comportamento é consistente com o desconto quasi-hiperbólico: o alívio imediato de não pagar a fatura integral (benefício no período \(t = 0\)) é sobrevalorizado em relação ao custo dos juros compostos nos períodos seguintes (descontados por \(\beta\delta^t\) com \(\beta < 1\)). A Lei do Superendividamento (Lei nº 14.181/2021) reconheceu implicitamente esse padrão ao criar mecanismos de renegociação e preservação do mínimo existencial.
 
 !!! box-mundo "Box Mundo 8.3 — Nudges na poupança previdenciária ao redor do mundo: auto-enrollment e o viés do presente como ferramenta de política"
@@ -827,7 +845,7 @@ A filosofia por trás dos nudges é o **paternalismo libertário**: libertário 
 
 ### 8.6.2 Ferramentas de nudging
 
-Como traduzir a filosofia do paternalismo libertário em intervenções concretas? As principais ferramentas de nudging exploram precisamente os vieses documentados nas seções anteriores — a mesma inércia que impede as pessoas de poupar pode ser usada a seu favor, bastando mudar a opção-padrão:
+Como traduzir a filosofia do paternalismo libertário em intervenções concretas?[^holy-hand-grenade-nudge] As principais ferramentas de nudging exploram precisamente os vieses documentados nas seções anteriores — a mesma inércia que impede as pessoas de poupar pode ser usada a seu favor, bastando mudar a opção-padrão:
 
 **Default options (opções-padrão).** A inércia e o viés do *status quo* fazem com que a maioria das pessoas aceite a opção pré-selecionada. Mudar o *default* de "opt-in" para "opt-out" pode ter efeitos dramáticos.
 
@@ -902,10 +920,10 @@ O conceito de ***sludge*** — introduzido por Thaler e Sunstein — é particul
 
 Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertário assume que existe um "eu verdadeiro" cujas preferências de longo prazo devem ser favorecidas em relação às preferências de curto prazo. Mas quem decide quais são as preferências "verdadeiras"? Esse problema — às vezes chamado de o problema do *arquiteto sábio* — é a objeção filosófica central a toda a agenda de nudges. Camerer et al. (2003) propuseram uma versão mais modesta: o **paternalismo assimétrico**, que intervém apenas quando o custo da intervenção para agentes totalmente racionais é baixo, mas o benefício para agentes com vieses é alto. Essa versão é mais defensável filosoficamente, mas também mais difícil de implementar na prática.
 
-!!! box-brasil "Box Brasil — CPF na nota e previdência complementar: nudges brasileiros"
+!!! box-brasil "Box Brasil 8.7: CPF na nota e previdência complementar: nudges brasileiros"
     O Brasil dispõe de dois exemplos marcantes do poder dos nudges em políticas públicas. O primeiro é o programa **Nota Fiscal Paulista** (São Paulo, 2008), depois replicado em outros estados sob o nome "CPF na nota": ao incluir o CPF nas notas fiscais, os consumidores recebem créditos e participam de sorteios, tornando-se fiscalizadores involuntários da evasão fiscal. Do ponto de vista comportamental, o programa explora a *sobrevalorização de eventos raros* (a chance de ganhar num sorteio) para induzir um comportamento — exigir nota fiscal — que tem externalidade positiva sobre a arrecadação tributária. A Secretaria da Fazenda de São Paulo reportou queda significativa na informalidade comercial nas regiões de maior adesão ao programa. O segundo exemplo é a **Funpresp**, o regime de previdência complementar dos servidores públicos federais criado pela Emenda Constitucional nº 41/2003 e regulamentado em 2012. Novos servidores enquadrados no regime são automaticamente inscritos no plano com contribuição-padrão de 8,5% da parcela remuneratória acima do teto do RGPS, podendo fazer *opt-out*. A adesão automática explora o viés do *status quo* e o viés do presente: ao remover a necessidade de ação ativa, o *default* supera a procrastinação que levaria muitos servidores a adiar indefinidamente a decisão de aderir. Estudos de adesão à Funpresp mostram taxas de participação substancialmente acima das previstas para um regime de *opt-in* equivalente.
 
-!!! box-brasil "Box Brasil — Nudges em políticas públicas federais"
+!!! box-brasil "Box Brasil 8.8: Nudges em políticas públicas federais"
     O governo federal brasileiro tem incorporado gradualmente princípios de economia comportamental em políticas públicas. A rotulagem frontal com **lupa de advertência** da Anvisa (2022), para alimentos ricos em açúcar, gordura saturada e sódio, é um nudge clássico de saliência: destaca a informação mais relevante no momento da decisão de compra. O Programa Nacional de Imunizações (PNI) utiliza lembretes por SMS e notificações via aplicativo do SUS para aumentar a adesão a campanhas de vacinação — um exemplo de feedback e saliência. No sistema financeiro, o *Open Finance* do Banco Central (implementado a partir de 2021) facilita a comparação de produtos financeiros entre instituições, reduzindo a ancoragem ao banco de relacionamento e combatendo a inércia do *status quo* via portabilidade simplificada de crédito.
 
 !!! box-mundo "Box Mundo 8.2 — Unidades de nudge ao redor do mundo"
@@ -919,6 +937,12 @@ Uma crítica mais profunda vem da perspectiva normativa. O paternalismo libertá
     **Fonte:** Thaler, R. H.; Sunstein, C. R. (2008). *Nudge: Improving Decisions about Health, Wealth, and Happiness*. New Haven: Yale University Press. Johnson, E. J.; Goldstein, D. (2003). "Do Defaults Save Lives?" *Science*, 302(5649), 1338–1339. Madrian, B. C.; Shea, D. F. (2001). "The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior." *Quarterly Journal of Economics*, 116(4), 1149–1187. OECD (2017). *Behavioural Insights and Public Policy: Lessons from Around the World*. Paris: OECD Publishing.
 
 ---
+
+Se este capítulo fez seu trabalho, você sai com três convicções:
+
+1. **Vieses não são ruído — são sinal.** Os desvios da racionalidade neoclássica não são erros aleatórios que desaparecem com agregação. São padrões sistemáticos, previsíveis e documentados em dezenas de milhares de observações. Um modelo que os ignora não é parcimonioso — é incompleto.
+2. **O contexto é parte da decisão.** Ponto de referência, framing, default, norma social — nada disso deveria importar para o *homo economicus*, mas importa para o *homo sapiens*. Reconhecer que a arquitetura de escolha afeta o resultado é o primeiro passo para desenhá-la com responsabilidade.
+3. **Corrigir vieses é mais difícil do que identificá-los.** Nudges são ferramentas poderosas, mas não são panaceias. O arquiteto de escolhas precisa de humildade — porque o viés do paternalista pode ser tão real quanto o viés do paternalizado.
 
 *Sabemos onde a racionalidade falha. Agora, a pergunta muda: quando suas decisões afetam as minhas, o que acontece? Bem-vindo à teoria dos jogos.*
 
@@ -970,6 +994,15 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     ??? success "Resposta"
         **(c)** Nudges utilizam conhecimento sobre vieses cognitivos (inércia, ancoragem, aversão à perda) para direcionar escolhas sem restringir opções — o conceito de 'paternalismo libertário' de Thaler e Sunstein. A alternativa (a) descreve proibição, não nudge; (b) descreve tributos/subsídios; (d) descreve incentivos econômicos tradicionais.
+
+??? question "6. No modelo de Fehr-Schmidt, por que propostas injustas são rejeitadas no jogo do ultimato, mesmo quando a teoria neoclássica prevê aceitação de qualquer oferta positiva?"
+    - (a) Porque os respondentes não entendem o jogo e cometem erros aleatórios
+    - (b) Porque a utilidade do respondente depende não apenas do próprio payoff, mas da diferença entre os payoffs — e a aversão à desvantagem ($\alpha_i$) pode tornar a rejeição preferível a aceitar uma divisão muito desigual
+    - (c) Porque os respondentes têm preferências lexicográficas pela igualdade, independentemente do valor em jogo
+    - (d) Porque o jogo do ultimato é jogado uma única vez e os agentes não têm incentivo para aceitar
+
+    ??? success "Resposta"
+        **(b)** No modelo de Fehr-Schmidt, a utilidade do jogador $i$ é $U_i = x_i - \alpha_i \max(x_j - x_i, 0) - \beta_i \max(x_i - x_j, 0)$. Quando a oferta é muito desigual, o termo $\alpha_i(x_j - x_i)$ pode superar o ganho $x_i$, tornando a rejeição (payoff zero para ambos, sem desvantagem) preferível. A alternativa (a) ignora a sistematicidade do comportamento; (c) é forte demais — o modelo permite que agentes aceitem alguma desigualdade; (d) confunde one-shot com ausência de incentivo.
 
 ---
 
@@ -1299,6 +1332,12 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     O artigo de DellaVigna é a evidência de campo que valida as teorias das Seções 8.2, 8.4 e 8.5. Os exemplos do efeito dotação (Seção 8.2.5), do desconto quasi-hiperbólico (Seção 8.5.3) e dos nudges (Seção 8.6) ganham sustentação empírica com os dados revisados neste survey.
 
 ---
+
+[^spanish-inquisition-allais]: *Nobody expects the independence axiom to fail!* O sketch *Spanish Inquisition* de Monty Python captura perfeitamente o momento Allais: assim como ninguém espera a Inquisição Espanhola, Savage não esperava violar seu próprio axioma — até que as perguntas mudaram e a intuição do Sistema 1 traiu a lógica do Sistema 2. Em economia, como no sketch, as hipóteses "inesperadas" mudam tudo.
+
+[^black-knight-loss]: O investidor que segura uma ação em queda livre lembra o Cavaleiro Negro de Monty Python, que perde os braços e insiste: *"'Tis but a scratch!"* A aversão à perda transforma prejuízos reais em meros "arranhões" cognitivos — e o agente continua na luta muito depois de o momento racional de parar ter passado. O Cavaleiro Negro é a personificação perfeita da falácia do custo afundado turbinada por \(\lambda > 1\).
+
+[^holy-hand-grenade-nudge]: O desenho de um nudge eficaz exige a precisão da Santa Granada de Mão de Antioquia em *Monty Python and the Holy Grail*: "Primeiro, retirarás o pino sagrado. Então, contarás até três — nem mais, nem menos." Trocar "pino" por "default", "três" por "opt-out simples" e "granada" por "formulário de adesão", e temos o protocolo de um arquiteto de escolhas competente. Pular etapas — como o Sir Lancelot, que contou até cinco — transforma nudge em sludge.
 
 ## 📚 Referências do Capítulo
 
