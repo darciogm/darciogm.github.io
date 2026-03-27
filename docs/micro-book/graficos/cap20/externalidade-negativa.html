@@ -102,19 +102,19 @@ board.create('text', [-1.1, 14.0, '<b><i>P</i></b>'], {
     function mcSocial(q) { return aS + bS * q + ext; }
 
     // Demand curve
-    board.create('functiongraph', [function(q){ return aD - q; }],
-      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 12 } });
+    board.create('functiongraph', [function(q){ if (q < 0) return NaN; var v = aD - q; return v >= 0 ? v : NaN; }],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: '<i>D</i>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 12, highlight: false } });
 
     // Private MC
-    board.create('functiongraph', [function(q){ return aS + bS * q; }],
-      { strokeColor: '#00897b', strokeWidth: 2.5, name: 'CMg privado', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+    board.create('functiongraph', [function(q){ return q < 0 ? NaN : aS + bS * q; }],
+      { strokeColor: '#00897b', strokeWidth: 2.5, name: '<i>CMg privado</i>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
 
     // Social MC
-    board.create('functiongraph', [function(q){ return aS + bS * q + ext; }],
-      { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'CMg social', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+    board.create('functiongraph', [function(q){ return q < 0 ? NaN : aS + bS * q + ext; }],
+      { strokeColor: '#C8102E', strokeWidth: 2.5, name: '<i>CMg social</i>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
 
     // DWL shading between Q_social and Q_market
     var dwlN = 30;
