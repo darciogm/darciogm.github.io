@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Regulação de Monopólio Natural</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Regulacao de monopolio natural
+# Exercicio Resolvido 15.7
+# ============================================
+
+# --- Parametros ---
+CF <- 500  # custo fixo
+c <- 10    # custo marginal constante
+a <- 60    # demanda: p = a - 0.5*q
+b <- 0.5
+
+cat("====== REGULACAO DE MONOPOLIO NATURAL ======\n")
+cat("C(q) =", CF, "+", c, "*q\n")
+cat("Demanda: p =", a, "-", b, "*q\n\n")
+
+# --- 1. Monopolio nao regulado ---
+qm <- (a - c) / (2*b)
+pm <- a - b * qm
+lucro_m <- (pm - c) * qm - CF
+PPM_m <- 0.5 * (pm - c) * ((a-c)/b - qm)
+
+cat("--- 1. Monopolio nao regulado ---\n")
+cat("q^m =", qm, "  p^m =", pm, "\n")
+cat("Lucro =", lucro_m, "  PPM =", PPM_m, "\n\n")
+
+# --- 2. Regulacao first-best (p = CMg) ---
+qfb <- (a - c) / b
+pfb <- c
+lucro_fb <- pfb * qfb - (CF + c * qfb)
+PPM_fb <- 0
+
+cat("--- 2. First-best (p = CMg) ---\n")
+cat("q^fb =", qfb, "  p^fb =", pfb, "\n")
+cat("Lucro =", lucro_fb, " (prejuizo = custo fixo!)\n")
+cat("PPM =", PPM_fb, "\n")
+cat("Subsidio necessario: S =", abs(lucro_fb), "\n\n")
+
+# --- 3. Regulacao second-best (p = CMe) ---
+# p = CF/q + c = a - b*q
+# CF/q + c = a - b*q
+# CF + c*q = (a - b*q)*q = a*q - b*q^2
+# b*q^2 - (a-c)*q + CF = 0
+disc <- (a-c)^2 - 4*b*CF
+qsb <- ((a-c) + sqrt(disc)) / (2*b)  # raiz maior
+psb <- a - b * qsb
+CMe_sb <- CF/qsb + c
+lucro_sb <- 0  # por construcao
+PPM_sb <- 0.5 * (psb - c) * (qfb - qsb)
+
+cat("--- 3. Second-best (p = CMe) ---\n")
+cat("q^sb =", round(qsb, 2), "  p^sb =", round(psb, 2), "\n")
+cat("CMe =", round(CMe_sb, 2), " = p^sb?", abs(CMe_sb - psb) < 0.01, "\n")
+cat("Lucro = 0 (por construcao)\n")
+cat("PPM =", round(PPM_sb, 1), "\n\n")
+
+# --- Comparacao ---
+cat("--- Comparacao dos tres regimes ---\n")
+cat(sprintf("%-20s %-8s %-8s %-10s %-8s\n", "Regime", "q", "p", "Lucro", "PPM"))
+cat(strrep("-", 56), "\n")
+cat(sprintf("%-20s %-8.1f %-8.1f %-10.0f %-8.0f\n", "Monopolio", qm, pm, lucro_m, PPM_m))
+cat(sprintf("%-20s %-8.1f %-8.1f %-10.0f %-8.0f\n", "First-best (CMg)", qfb, pfb, lucro_fb, PPM_fb))
+cat(sprintf("%-20s %-8.1f %-8.1f %-10.0f %-8.1f\n", "Second-best (CMe)", qsb, round(psb, 1), lucro_sb, PPM_sb))
+
+cat("\nReducao da PPM (second-best vs monopolio):",
+    round((1 - PPM_sb/PPM_m)*100, 1), "%\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+q_seq <- seq(1, 120, length = 400)
+p_dem <- a - b * q_seq
+CMe_seq <- CF/q_seq + c
+RMg_seq <- a - 2*b * q_seq
+
+plot(q_seq, p_dem, type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, 65), xlim = c(0, 120),
+     xlab = "q", ylab = "p",
+     main = "Tres regimes de regulacao")
+lines(q_seq, CMe_seq, lwd = 2, col = "#fd7e14")
+lines(q_seq, RMg_seq, lwd = 2, col = "#6f42c1", lty = 2)
+abline(h = c, col = "#dc3545", lwd = 2)
+
+# Pontos dos tres regimes
+points(qm, pm, pch = 19, col = "#343a40", cex = 2)
+text(qm + 2, pm + 2.5, paste0("M (", qm, ", ", pm, ")"),
+     col = "#343a40", cex = 0.7, font = 2)
+
+points(qfb, pfb, pch = 17, col = "#198754", cex = 2)
+text(qfb - 5, pfb + 3, paste0("FB (", qfb, ", ", pfb, ")"),
+     col = "#198754", cex = 0.7, font = 2)
+
+points(qsb, psb, pch = 15, col = "#0d6efd", cex = 2)
+text(qsb + 2, psb + 2.5, paste0("SB (", round(qsb, 0), ", ", round(psb, 1), ")"),
+     col = "#0d6efd", cex = 0.7, font = 2)
+
+# Triangulo PPM monopolio
+polygon(c(qm, qm, qfb), c(pm, c, c),
+        col = rgb(0.85, 0.2, 0.2, 0.12), border = NA)
+
+# Triangulo PPM second-best
+polygon(c(qsb, qsb, qfb), c(psb, c, c),
+        col = rgb(0.05, 0.43, 0.98, 0.12), border = NA)
+
+legend("topright",
+       legend = c("Demanda", "RMg", "CMg", "CMe",
+                  "PPM monopolio", "PPM second-best"),
+       col = c("#0d6efd", "#6f42c1", "#dc3545", "#fd7e14",
+               rgb(0.85, 0.2, 0.2, 0.3), rgb(0.05, 0.43, 0.98, 0.3)),
+       lwd = c(3, 2, 2, 2, NA, NA), lty = c(1, 2, 1, 1, NA, NA),
+       pch = c(NA, NA, NA, NA, 15, 15), cex = 0.6, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

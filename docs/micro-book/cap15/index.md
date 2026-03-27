@@ -8,7 +8,7 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 
 ---
 
-## 15.1 Barreiras à entrada
+## 15.1 Muralhas, Fossos e Portões Levadiços: Barreiras à Entrada
 
 Se o monopólio é tão lucrativo, por que todo mundo não entra nesse mercado e acaba com a festa? Imagine uma fortaleza medieval: o castelo só sobrevive porque tem muralhas, fossos e portões levadiços. O monopólio funciona da mesma forma — ele só se sustenta porque existem **barreiras à entrada**. Sem elas, o monopólio seria uma posição transitória, rapidamente contestada por rivais ávidos por lucro — como veremos na Seção 15.10 ao discutir mercados contestáveis. É precisamente a existência de obstáculos à entrada que permite ao monopolista sustentar sua posição privilegiada no longo prazo.
 
@@ -67,7 +67,7 @@ Firmas incumbentes podem adotar comportamentos deliberados para dificultar a ent
 
 ---
 
-## 15.2 Maximização de lucro do monopolista
+## 15.2 O Sorriso de Quem Define o Preço: Maximização de Lucro do Monopolista
 
 Agora que sabemos *por que* o monopolista reina sozinho, vem a pergunta que realmente interessa: o que ele faz com todo esse poder? Imagine que você é o único vendedor de guarda-chuvas em uma cidade onde chove todos os dias. Você cobra quanto quiser? Não exatamente — se exagerar no preço, ninguém compra. O monopolista vive esse dilema: ele tem poder, mas não é onipotente. A resposta exige uma análise cuidadosa da relação entre receita marginal, custo marginal e elasticidade da demanda — relação esta que se tornará um instrumento analítico recorrente ao longo do restante do livro.
 
@@ -188,9 +188,15 @@ O exercício a seguir aplica as ferramentas recém-desenvolvidas a um problema n
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
+<iframe src="../graficos/cap15/webr-monopolio-basico.html" title="WebR — Monopólio com Demanda Linear" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 15.1 — Monopólio de ponta a ponta: do cálculo ao gráfico.** O código resolve o ER 15.1 completo em R: calcula preço, quantidade, lucro, índice de Lerner, excedentes e perda de peso morto, comparando monopólio com concorrência perfeita. Altere os parâmetros `a`, `b` e `c` e observe como o triângulo de Harberger se expande ou encolhe.
+</div>
+
 ---
 
-## 15.3 Demonstração: derivação do índice de Lerner
+## 15.3 A Régua do Poder: Demonstração do Índice de Lerner
 
 A derivação formal a seguir explicita a conexão algébrica entre o poder de mercado do monopolista — medido pelo índice de Lerner — e a elasticidade-preço da demanda que ele enfrenta. Embora o resultado já tenha sido antecipado na seção anterior, a demonstração rigorosa é instrutiva porque revela a estrutura lógica subjacente e prepara o terreno para generalizações em contextos de oligopólio (Capítulo 16), onde o índice de Lerner de cada firma dependerá não apenas da elasticidade de mercado, mas também de sua participação de mercado e do grau de colusão.
 
@@ -259,7 +265,7 @@ A derivação formal a seguir explicita a conexão algébrica entre o poder de m
 
 ---
 
-## 15.4 Ineficiência do monopólio
+## 15.4 Quem Paga a Conta: Ineficiência do Monopólio
 
 Até aqui, contamos a história do monopólio pelo ângulo do vilão — e, convenhamos, para o monopolista a vida é boa: ele escolhe preço, quantidade e vai dormir tranquilo. Mas e o resto da sociedade? Alguém está pagando a conta dessa tranquilidade. Em que medida o poder de mercado do monopolista compromete a eficiência alocativa que os Teoremas do Bem-Estar (Capítulo 14) garantem para mercados competitivos? A resposta a essas perguntas fundamenta a justificativa econômica para a regulação e a política antitruste — e, como veremos, envolve não apenas o conhecido "triângulo de Harberger", mas também custos mais sutis associados ao *rent-seeking* e à ineficiência organizacional.
 
@@ -368,7 +374,7 @@ O exercício a seguir formaliza o argumento de Posner sobre os custos de *rent-s
 
 ---
 
-## 15.5 Estática comparativa do monopólio
+## 15.5 Mexeu no Tabuleiro: Estática Comparativa do Monopólio
 
 Estabelecido o equilíbrio de monopólio, podemos agora investigar como ele se altera diante de mudanças nos parâmetros exógenos. Que efeito tem um imposto sobre o preço e a quantidade de monopólio? Como o monopolista responde a um deslocamento da demanda? Essas perguntas de estática comparativa são particularmente relevantes para a formulação de políticas públicas, pois revelam como instrumentos tributários e regulatórios interagem com o poder de mercado. Os resultados, como veremos, diferem qualitativamente do caso competitivo — o que implica que intuições desenvolvidas para mercados competitivos podem ser enganosas quando aplicadas a mercados com poder de mercado.
 
@@ -426,9 +432,15 @@ No gráfico interativo abaixo, experimente ajustar o slider do imposto \(t\) e o
 
     **Interpretação:** O consumidor perde R$ 88 de excedente. O monopolista absorve R$ 176 de perda de lucro (\(576 - 400\)). A receita fiscal é \(8 \times 20 = 160\). A soma \(88 + 176 = 264\) excede a receita fiscal de 160 em \(264 - 160 = 104\) — esta diferença é o aumento na perda de peso morto causado pelo imposto.
 
+<iframe src="../graficos/cap15/webr-imposto-monopolio.html" title="WebR — Imposto sobre o Monopolista" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 15.2 — O monopolista absorve metade do imposto.** O código implementa o ER 15.3: calcula o equilíbrio antes e depois do imposto, mostrando que o repasse é exatamente 50% com demanda linear. No gráfico da direita, observe que o lucro é uma parábola invertida no imposto — existe um $t$ que maximiza a receita fiscal. Experimente alterar `t` e compare o efeito sobre consumidor, produtor e governo.
+</div>
+
 ---
 
-## 15.6 Qualidade do produto sob monopólio
+## 15.6 Bom o Bastante para o Último Cliente: Qualidade sob Monopólio
 
 Até este ponto, tratamos o produto do monopolista como dado — variando apenas preço e quantidade. Na prática, porém, o monopolista também decide sobre a **qualidade** do que oferece. Será que um monopolista investe adequadamente em qualidade, ou a ausência de pressão competitiva o leva a oferecer produtos inferiores ao que seria socialmente desejável? A resposta, como veremos, é surpreendentemente ambígua — e depende de detalhes da distribuição de preferências entre os consumidores.
 
@@ -458,7 +470,7 @@ O monopolista iguala a receita marginal da qualidade ao custo marginal da qualid
 
 ---
 
-## 15.7 Discriminação de preços
+## 15.7 Um Preço para Cada Bolso: Discriminação de Preços
 
 Você já se perguntou por que a mesma passagem de avião custa R$ 400 para quem compra com antecedência e R$ 2.000 para quem compra na véspera — sendo que os dois sentam no mesmo avião, comem o mesmo amendoim e chegam ao mesmo destino? A resposta é que o monopolista (ou quase-monopolista) aprendeu um truque poderoso: abandonar a prática de preço único. Se o monopolista consegue identificar — ou induzir a autorevelação de — diferentes disposições a pagar entre consumidores, ele pode explorar essa heterogeneidade para extrair mais excedente do que seria possível com um preço uniforme. Essa prática, conhecida como discriminação de preços, é onipresente no mundo real e assume formas sofisticadas que variam de passagens aéreas a planos de software, de ingressos de cinema a tarifas de eletricidade.
 
@@ -595,6 +607,12 @@ O exercício a seguir aplica a discriminação de terceiro grau a um problema co
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
+<iframe src="../graficos/cap15/webr-discriminacao-3grau.html" title="WebR — Discriminação de Preços de 3º Grau" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 15.3 — Um preço para cada bolso: discriminação de 3º grau.** O código implementa o ER 15.4 com dois mercados segmentados. Observe que o mercado com demanda mais inelástica paga o preço mais alto — e verifique pela fórmula das elasticidades. Altere as inclinações `b1` e `b2` para ver como a diferença de preços responde à diferença de elasticidades.
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 15.5 — Comparação dos três regimes: concorrência, monopólio e discriminação perfeita"
     **Enunciado.** Considere demanda \(p = 50 - q\) e \(CMg = 10\) (constante, sem custos fixos). (a) Encontre \((p, q, \pi)\) sob: (i) concorrência perfeita; (ii) monopólio com preço único; (iii) discriminação de primeiro grau. (b) Para cada caso, calcule EC, EP e PPM.
 
@@ -620,7 +638,7 @@ O exercício a seguir aplica a discriminação de terceiro grau a um problema co
 
 ---
 
-## 15.8 Tarifas em duas partes
+## 15.8 Pague para Entrar, Pague para Brincar: Tarifas em Duas Partes
 
 Se você já pagou mensalidade de academia e *depois* pagou por aula extra, ou comprou o cartão do Sam's Club para ter o "privilégio" de comprar lá dentro, você já foi vítima (voluntária) de uma tarifa em duas partes. Essa é uma das formas mais elegantes e difundidas de precificação não-linear. Diferentemente dos esquemas de discriminação discutidos na seção anterior, que exigem observar ou induzir a revelação de tipos, a tarifa em duas partes combina simplicidade operacional com capacidade de extração de excedente, razão pela qual é amplamente utilizada em setores que vão de telecomunicações a academias de ginástica, de parques de diversões a clubes de compras.
 
@@ -686,7 +704,7 @@ A solução ótima tipicamente envolve \(p > CMg\) e \(T < EC\) do consumidor co
 
 ---
 
-## 15.9 Regulação de monopólios
+## 15.9 Domar a Fera: Regulação de Monopólios
 
 As seções anteriores documentaram os custos sociais do monopólio — perda de peso morto, distorção de preços e quantidades — e as estratégias que o monopolista utiliza para maximizar a extração de excedente. Diante dessas ineficiências, surge naturalmente a questão: o que a sociedade pode fazer? Em mercados onde o monopólio pode ser eliminado (por exemplo, removendo barreiras legais desnecessárias), a promoção da concorrência é o caminho mais direto. Mas em monopólios naturais — nos quais a tecnologia torna ineficiente a presença de múltiplas firmas — a regulação torna-se o instrumento central de política pública.
 
@@ -831,9 +849,15 @@ O exercício a seguir aplica os três regimes regulatórios a um caso numérico 
 
     **Interpretação:** A regulação por custo médio é o modelo adotado pela ANEEL para distribuidoras de energia no Brasil. Ela garante lucro zero para a concessionária enquanto expande significativamente o acesso, a um custo de eficiência relativamente baixo.
 
+<iframe src="../graficos/cap15/webr-regulacao.html" title="WebR — Regulação de Monopólio Natural" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 15.4 — Três regimes de regulação: do monopólio ao first-best.** O código resolve o ER 15.7 completo: monopólio não regulado, regulação por custo marginal (first-best, com prejuízo) e regulação por custo médio (second-best, lucro zero). Compare os três pontos no gráfico e observe como a PPM cai 95% com a regulação second-best. Altere `CF` para ver como o custo fixo afeta a viabilidade do first-best.
+</div>
+
 ---
 
-## 15.10 Visões dinâmicas do monopólio
+## 15.10 O Vilão Também Inova: Visões Dinâmicas do Monopólio
 
 Hora de virar a mesa. Passamos o capítulo inteiro tratando o monopolista como o grande vilão da economia — e com razão: ele produz menos, cobra mais e destrói excedente. Mas e se o monopólio, visto com outros olhos, fosse também o motor que faz a economia avançar? A análise conduzida até aqui é predominantemente estática: comparamos o monopólio com a concorrência perfeita em um dado momento do tempo. Entretanto, quando adotamos uma perspectiva dinâmica — incorporando inovação, progresso tecnológico e entrada potencial —, o julgamento sobre os custos e benefícios do monopólio torna-se mais nuançado. Será que o monopólio é sempre prejudicial à sociedade, ou pode ele desempenhar um papel positivo como motor de inovação e progresso técnico? Essa questão, levantada originalmente por Joseph Schumpeter no contexto da Grande Depressão, permanece no centro dos debates contemporâneos sobre política antitruste — especialmente em setores tecnológicos dominados por grandes plataformas como Google, Amazon e Meta.
 
@@ -887,6 +911,12 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
     **(b)** Sob concorrência com spillover total, qualquer redução de custo é imediatamente copiada. Como \(p = CMg\) e \(\pi = 0\), nenhuma firma recupera o investimento. Logo \(I^* = 0\).
 
     **(c)** Este resultado ilustra a hipótese schumpeteriana: o monopolista investe 400 em P&D (reduzindo o custo marginal pela metade), enquanto o mercado competitivo não investe nada. O poder de mercado é a "recompensa" que viabiliza a inovação. Contudo, o argumento depende criticamente da hipótese de spillover total; na prática, patentes e segredos industriais permitem que firmas competitivas também se apropriem de inovações, atenuando a vantagem schumpeteriana do monopólio.
+
+<iframe src="../graficos/cap15/webr-inovacao-schumpeter.html" title="WebR — Inovação sob Monopólio vs. Concorrência" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 15.5 — O vilão também inova: P&D sob monopólio.** O código implementa o ER 15.8: o monopolista escolhe quanto investir em P&D para reduzir seu custo marginal. Compare o investimento ótimo ($I^* = 400$) com o investimento zero da concorrência com spillover total. Altere `c0` e observe como o incentivo à inovação muda com o nível inicial de custo.
+</div>
 
 ---
 

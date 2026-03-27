@@ -11,7 +11,7 @@ Este capítulo parte dos modelos clássicos de oligopólio — Bertrand, Cournot
 
 ---
 
-## 16.1 Decisões de curto prazo: preço e quantidade
+## 16.1 Preço ou Quantidade — Eis a Questão: Decisões de Curto Prazo
 
 Em um oligopólio, as firmas devem decidir simultaneamente (ou sequencialmente) sobre preço, quantidade, qualidade, publicidade e outras variáveis. Os modelos clássicos concentram-se em duas variáveis fundamentais:
 
@@ -35,7 +35,7 @@ A escolha da variável estratégica não é trivial e produz resultados dramatic
 
 ---
 
-## 16.2 Modelo de Bertrand: concorrência em preços
+## 16.2 Dois Bastam para a Guerra: Modelo de Bertrand
 
 Comecemos pela pergunta mais natural: o que acontece quando duas firmas com produtos idênticos competem em preços? A resposta de Bertrand é tão brutal que mereceu o apelido de "paradoxo": basta *uma* rival para transformar qualquer duopolista em refém da guerra de preços. É como se dois vendedores de guarda-chuva idêntico se instalassem lado a lado na saída do metrô em dia de temporal — a corrida para o fundo começa imediatamente. Como veremos, bastam duas firmas para que o resultado de mercado se assemelhe ao da concorrência perfeita, um resultado com implicações profundas para a teoria da organização industrial.
 
@@ -104,7 +104,7 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 
 ---
 
-## 16.3 Modelo de Cournot: concorrência em quantidades
+## 16.3 Quanto Produzir Quando o Rival Pensa o Mesmo: Modelo de Cournot
 
 O paradoxo de Bertrand sugere que a concorrência em preços é devastadora para as firmas. Mas e se as firmas competissem em quantidades, em vez de preços? Essa é a pergunta que Antoine Augustin Cournot formulou já em 1838, meio século antes de Bertrand. O modelo de Cournot produz resultados radicalmente diferentes: mesmo com apenas duas firmas, o preço de equilíbrio permanece acima do custo marginal, e ambas obtêm lucros positivos. Essa sensibilidade do resultado à variável de decisão é uma das lições centrais da teoria dos oligopólios.
 
@@ -217,7 +217,7 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 ---
 
-## 16.4 Demonstração: Equilíbrio de Cournot com n firmas
+## 16.4 De Monopólio a Concorrência em n Passos: Cournot com n Firmas
 
 Os resultados obtidos para o duopólio de Cournot levantam uma questão natural: como o equilíbrio se comporta à medida que o número de firmas aumenta? A generalização para \(n\) firmas revela uma propriedade notável — o modelo de Cournot interpola continuamente entre os extremos de monopólio e concorrência perfeita, com a intensidade da competição crescendo suavemente no número de participantes.
 
@@ -290,7 +290,7 @@ Os resultados obtidos para o duopólio de Cournot levantam uma questão natural:
 
 ---
 
-## 16.5 Restrições de capacidade
+## 16.5 Não Dá para Atender Todo Mundo: Restrições de Capacidade
 
 O paradoxo de Bertrand repousa sobre uma hipótese implícita que merece escrutínio: a de que a firma que cobra o menor preço pode atender toda a demanda do mercado. Na prática, firmas operam com capacidade limitada — não podem duplicar sua produção instantaneamente para capturar todos os clientes da rival. Que consequências essa restrição tem para o equilíbrio? A resposta, formalizada por Edgeworth e depois por Kreps e Scheinkman, estabelece uma ponte surpreendente entre os modelos de Bertrand e Cournot.
 
@@ -309,7 +309,7 @@ Esse resultado fornece uma fundamentação microeconômica para o modelo de Cour
 
 ---
 
-## 16.6 Diferenciação de produto
+## 16.6 Nem Todo Café É Igual: Diferenciação de Produto
 
 Se o paradoxo de Bertrand fosse a última palavra, toda firma lucrativa seria um mistério. A saída mais poderosa do paradoxo está em um fato óbvio para qualquer consumidor: produtos raramente são idênticos. Você não é indiferente entre um café no Starbucks e um café no boteco da esquina, mesmo que ambos contenham cafeína. Essa heterogeneidade de preferências — sabor, localização, design, funcionalidades — confere às firmas algum grau de poder de mercado mesmo na presença de concorrentes. A diferenciação de produto — horizontal (quando os consumidores discordam sobre qual produto é melhor) ou vertical (quando todos concordam, mas diferem na disposição a pagar pela qualidade) — é talvez a resolução empiricamente mais relevante do paradoxo.
 
@@ -345,7 +345,7 @@ onde \(f\) é o custo fixo de entrada. O número de firmas em equilíbrio é cre
 
 ---
 
-## 16.7 Colusão tácita
+## 16.7 Vizinhos de Condomínio: Colusão Tácita
 
 Nos modelos anteriores, as firmas se encontram uma vez, tomam suas decisões e nunca mais se veem — como estranhos que dividem um táxi e depois seguem caminhos separados. Mas firmas reais são mais parecidas com vizinhos de condomínio: cruzam-se no elevador todo dia, e sabem que a retaliação de hoje pode cobrar seu preço amanhã. Essa repetição abre a possibilidade de cooperação: firmas podem coordenar-se tacitamente para manter preços elevados, sustentando a cooperação pela ameaça de retaliação futura. Como esse mecanismo funciona, e sob que condições ele é sustentável?
 
@@ -420,7 +420,7 @@ A [Tabela 16.1](#tabela-16-1) lista os principais fatores que facilitam a susten
 
 ---
 
-## 16.8 Decisões de longo prazo: investimento, entrada e saída
+## 16.8 Redesenhando o Tabuleiro: Investimento, Entrada e Saída
 
 Até aqui, tratamos o oligopólio como um jogo de tabuleiro com regras fixas — o número de jogadores, as peças disponíveis e o mapa já estavam dados, e as firmas só decidiam onde mover. Agora elevamos o nível: no longo prazo, as firmas podem redesenhar o próprio tabuleiro. Investir em capacidade, P&D, localização e publicidade, ou adotar posicionamentos que mudam as regras da competição futura — tudo isso é estratégia de longo prazo. Essas decisões alteram a estrutura do jogo e o comportamento de equilíbrio, e são frequentemente mais importantes do que as escolhas de curto prazo, pois definem as condições sob as quais a competição se desenrolará.
 
@@ -439,7 +439,7 @@ A estratégia ótima depende de dois fatores: (i) se o investimento torna a firm
 
 ---
 
-## 16.9 Dissuasão estratégica de entrada
+## 16.9 Fábrica Grande Antes do Rival Chegar: Dissuasão de Entrada
 
 O conceito de compromisso estratégico adquire especial importância quando o incumbente enfrenta a possibilidade de entrada de um novo concorrente. Nesse contexto, a firma estabelecida pode investir de forma a tornar a entrada não lucrativa para o rival potencial — uma prática conhecida como dissuasão estratégica de entrada. A questão central, contudo, é se essa estratégia é ótima para o incumbente: investir em dissuasão tem custos, e em alguns casos pode ser mais lucrativo simplesmente acomodar a entrada.
 
@@ -460,7 +460,7 @@ onde \(\pi_E\) é o lucro bruto do entrante no equilíbrio pós-entrada e \(f\) 
 
 ---
 
-## 16.10 Sinalização
+## 16.10 Mostrar para Não Precisar Provar: Sinalização
 
 Às vezes, a melhor arma de uma firma não é o que ela produz, mas o que ela *mostra* saber. Em mercados com **informação assimétrica**, as ações observáveis de uma firma podem transmitir informação privada sobre suas características (custos, qualidade, intenções).
 
@@ -477,7 +477,7 @@ O preço de sinalização é tipicamente **inferior** ao preço de monopólio de
 
 ---
 
-## 16.11 Quantas firmas entram? Entrada livre em Cournot
+## 16.11 Lotação Máxima: Entrada Livre em Cournot
 
 As seções anteriores trataram o número de firmas como dado. Mas em mercados com entrada livre, o próprio número de competidores é uma variável endógena, determinada pela condição de lucro zero no equilíbrio de longo prazo. Quantas firmas o mercado comporta? E o número de firmas que efetivamente entram é socialmente ótimo, ou há excesso de entrada?
 
@@ -503,7 +503,7 @@ Mankiw e Whinston (1986) demonstraram que, sob condições gerais, o equilíbrio
 
 ---
 
-## 16.12 Inovação sob oligopólio
+## 16.12 Quem Inventa Quando Poucos Competem: Inovação sob Oligopólio
 
 Além das decisões de preço e quantidade, os oligopolistas enfrentam uma dimensão igualmente central: a inovação tecnológica. Será que firmas em mercados concentrados investem mais ou menos em pesquisa e desenvolvimento do que firmas em mercados competitivos? A resposta envolve um confronto entre duas forças opostas, identificadas respectivamente por Arrow e por Gilbert e Newbery, cuja resultante depende das características específicas de cada mercado.
 
@@ -523,7 +523,7 @@ Em modelos de corrida por patentes (patent race), múltiplas firmas investem em 
 
 ---
 
-## 16.13 Comparação dos modelos de oligopólio
+## 16.13 Todos na Mesa: Comparação dos Modelos de Oligopólio
 
 Bertrand, Cournot, Stackelberg, colusão — são tantos modelos que é fácil perder o fio. Hora de colocar todos lado a lado e ver quem cobra mais, quem produz menos e quem deixa o consumidor em pior situação. A [Tabela 16.2](#tabela-16-2) resume os principais resultados dos modelos clássicos para o caso de demanda linear \(p = a - bQ\), custos marginais constantes \(c\) e duas firmas simétricas.
 
@@ -602,7 +602,7 @@ Bertrand, Cournot, Stackelberg, colusão — são tantos modelos que é fácil p
 
 ---
 
-## 16.14 Competição Monopolística
+## 16.14 Muitos Restaurantes, Nenhum Igual: Competição Monopolística
 
 Pense na rua de restaurantes do seu bairro: dezenas de opções, nenhuma igual à outra, e cada uma com seu cardápio, seu tempero e sua clientela fiel. Os modelos de oligopólio analisados até aqui tratam de mercados com poucos produtores. No outro extremo, a concorrência perfeita assume muitos produtores de bens idênticos. Mas existe uma estrutura intermediária que combina muitas firmas com diferenciação de produto: a **competição monopolística**, formalizada por Edward Chamberlin (1933) e Joan Robinson (1933).
 
@@ -661,7 +661,7 @@ A competição monopolística é empiricamente relevante para muitos mercados: r
 
 ---
 
-## 16.15 Fusões e Política Antitruste
+## 16.15 Quando Dois Viram Um: Fusões e Política Antitruste
 
 Quando duas firmas rivais decidem virar uma só, a pergunta que todo regulador antitruste perde o sono para responder é: isso vai ser bom ou ruim para o consumidor? As fusões horizontais — entre firmas que competem no mesmo mercado — são o campo mais ativo da política de defesa da concorrência, e a análise econômica envolve um trade-off fundamental identificado por Oliver Williamson (1968): de um lado, a fusão aumenta o poder de mercado (preços sobem); de outro, pode gerar ganhos de eficiência (custos caem). A fusão é benéfica ao consumidor quando o efeito eficiência domina o efeito poder de mercado.
 
@@ -687,7 +687,7 @@ Fusões entre firmas em estágios diferentes da cadeia produtiva (fornecedor e c
 
 ---
 
-## 16.16 Regulação de Oligopólios
+## 16.16 O Juiz na Mesa de Pôquer: Regulação de Oligopólios
 
 Quando a concorrência é insuficiente para disciplinar o comportamento das firmas — seja por barreiras naturais à entrada (monopólio natural) ou por tendência à colusão — a regulação governamental se torna necessária. A teoria da regulação moderna, desenvolvida por Jean-Jacques Laffont e Jean Tirole (Nobel 2014), reconhece que o regulador tipicamente possui menos informação que a firma regulada, gerando um problema de assimetria de informação.
 
