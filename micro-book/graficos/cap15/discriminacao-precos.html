@@ -217,11 +217,48 @@
     var csAtC = 0.5 * (a - c) * qOpt;
     var effectiveT = Math.min(T, csAtC);
 
-    // CS triangle shaded
-    board.create('polygon', [[0, a], [0, c], [qOpt, c]], {
-      fillColor: '#00897b', fillOpacity: 0.15,
-      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
-    });
+    // The CS triangle has height (a-c) and base qOpt.
+    // T captures a fraction of it. For linear demand, T captures from the bottom:
+    // the "price floor" that makes the remaining CS = csAtC - T.
+    // Remaining CS = 0.5 * (a - pT) * qT where pT = a - b*qT
+    // We need: 0.5*(a - pT)*(a-pT)/b = csAtC - effectiveT
+    // => (a-pT)^2 / (2b) = csAtC - effectiveT
+    // => pT = a - sqrt(2*b*(csAtC - effectiveT))
+    var residualCS = csAtC - effectiveT;
+    var pT = residualCS > 0 ? a - Math.sqrt(2 * b * residualCS) : a;
+    var qT = residualCS > 0 ? (a - pT) / b : 0;
+
+    if (T <= csAtC) {
+      // Residual EC (lighter, upper triangle)
+      if (residualCS > 0.1) {
+        board.create('polygon', [[0, a], [0, pT], [qT, pT]], {
+          fillColor: '#1565c0', fillOpacity: 0.15,
+          borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+        });
+        board.create('text', [qT * 0.3, pT + (a - pT) * 0.35, 'EC'], {
+          fontSize: 11, color: '#1565c0', fontWeight: 'bold', fixed: true, highlight: false
+        });
+      }
+      // T captured (darker, lower trapezoid between pT and c)
+      var ptsTrap = [[0, pT], [qT, pT]];
+      // follow demand curve from qT down to qOpt
+      for (var qq = qT; qq <= qOpt; qq += (qOpt - qT) / 30) {
+        ptsTrap.push([qq, a - b * qq]);
+      }
+      ptsTrap.push([qOpt, c]);
+      ptsTrap.push([0, c]);
+      board.create('polygon', ptsTrap, {
+        fillColor: '#00897b', fillOpacity: 0.25,
+        borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+      });
+      board.create('text', [qOpt * 0.3, c + (pT - c) * 0.45, '<i>T</i>'], {
+        fontSize: 13, color: '#00897b', fontWeight: 'bold', fixed: true, highlight: false
+      });
+      // Dashed line at pT
+      board.create('segment', [[0, pT], [qT, pT]], {
+        strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true
+      });
+    }
 
     // Curves
     board.create('functiongraph', [function(q) { return (q >= 0 && a - b*q >= 0) ? a - b*q : NaN; }],
@@ -234,7 +271,6 @@
     board.create('text', [a/b + 3, c + 4, '<i>CMg</i>'], { fontSize: 13, color: '#00897b', fixed: true, highlight: false });
     board.create('point', [qOpt, c], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E', fixed: true });
     board.create('segment', [[qOpt, c],[qOpt, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
-    board.create('text', [qOpt / 3, c + (a - c) * 0.35, '<i>T</i>'], { fontSize: 13, color: '#00897b', fontWeight: 'bold', fixed: true, highlight: false });
 
     var html = '<div class="section-title">Curvas</div>';
     html += '\\(P = ' + a.toFixed(0) + ' - ' + b.toFixed(1) + '\\,Q\\), &ensp;\\(CMg = ' + c.toFixed(0) + '\\)';
