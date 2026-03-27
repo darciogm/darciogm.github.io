@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
-  Interactive Public Good Provision — Chapter 19
-  Library: JSXGraph + MathJax
+  Provisão de Bem Público — Chapter 20
+  Library: JSXGraph
 -->
 <html lang="pt-BR">
 <head>
@@ -20,8 +20,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
-.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
- #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
     .slider-group { margin-bottom: .7rem; }
@@ -33,10 +33,9 @@
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) {
       .graph-container { flex-direction: column; align-items: center; }
-      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
-      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 540px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
     }
-    /* anti-inflation-fix */
     html,body{margin:0!important;padding:0!important;overflow:visible!important}
   </style>
 </head>
@@ -58,193 +57,180 @@
         <input type="range" id="sl-c" min="2" max="20" step="0.5" value="8">
       </div>
       <div class="info-box" id="info"></div>
-      <label style="font-size:0.82rem; cursor:pointer;">
-        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
-      </label>
       <button class="btn-reset" onclick="resetAll()">Resetar</button>
     </div>
   </div>
 
-  <script>
-    // Consumer 1: MB_1(G) = a1 - G (linear, decreasing)
-    // Consumer 2: MB_2(G) = a2 - G (linear, decreasing)
-    // Social MB = MB_1 + MB_2 (vertical sum)
-    // MC = c (constant)
-    // Samuelson condition: MB_1 + MB_2 = MC
-    // Private provision: max(MB_1, MB_2) = MC => underprovision
+<script>
+  // MB_1(G) = max(a1 - G, 0), MB_2(G) = max(a2 - G, 0)
+  // SMB = MB_1 + MB_2 (vertical sum)
+  // MC = c (constant)
+  // Samuelson: MB_1 + MB_2 = MC => G* = (a1 + a2 - c) / 2
+  // Private: max individual => G_priv = max(a1, a2) - c
 
-    var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-2, 25, 16, -3],
-      axis: false, showCopyright: false, showNavigation: false
-    });
+  var a1 = 10, a2 = 6, c = 8;
 
-    board.create('axis', [[0,0],[13,0]], {
-      ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0, label:{fontSize:11} },
-      name: '', withLabel: false
-    });
-    board.create('text', [8.0, -1.9500000000000002, '<b><i>G</i> (bem público)</b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
-    board.create('axis', [[0,0],[0,21]], {
-      ticks: { drawLabels: true, ticksDistance: 4, minorTicks: 0, label:{fontSize:11, anchorX: 'right', offset: [-8, 0]} },
-      name: '', withLabel: false
-    });
-    board.create('text', [-1.1, 12.5, '<b><i>$</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
+  function mb1(g) { return Math.max(a1 - g, 0); }
+  function mb2(g) { return Math.max(a2 - g, 0); }
+  function smb(g) { return mb1(g) + mb2(g); }
+  function gStar() { return Math.max((a1 + a2 - c) / 2, 0); }
+  function gPriv() { return Math.max(Math.max(a1, a2) - c, 0); }
 
-    var a1 = 10, a2 = 6, c = 8;
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-3, 40, 25, -4],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
 
-    function mb1(g) { return Math.max(a1 - g, 0); }
-    function mb2(g) { return Math.max(a2 - g, 0); }
-    function smb(g) { return mb1(g) + mb2(g); }
+  // Axes
+  board.create('axis', [[0,0],[22,0]], {
+    ticks: { drawLabels: true, ticksDistance: 5, minorTicks: 0, label: { fontSize: 11 } },
+    name: '', withLabel: false
+  });
+  board.create('text', [12, -2.8, '<b><i>G</i> (bem público)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board.create('axis', [[0,0],[0,38]], {
+    ticks: { drawLabels: true, ticksDistance: 5, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+    name: '', withLabel: false
+  });
+  board.create('text', [-2, 20, '<b><i>$</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
 
-    // Optimal: a1 - G + a2 - G = c => G* = (a1 + a2 - c) / 2
-    function gStar() { return Math.max((a1 + a2 - c) / 2, 0); }
-    // Private (highest individual): a1 - G = c => G_priv = a1 - c (if a1 > c)
-    function gPriv() { return Math.max(Math.max(a1, a2) - c, 0); }
+  // --- Curves (1st quadrant only) ---
 
-    // MB_1
-    board.create('functiongraph', [function(g){ if (g < 0) return NaN; var v = mb1(g); return v >= 0 ? v : NaN; }],
-      { strokeColor: '#1565c0', strokeWidth: 2, dash: 3, name: '<i>BMg</i><sub>1</sub>', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
+  // BMg_1
+  board.create('functiongraph', [function(g) {
+    if (g < 0) return NaN; var v = mb1(g); return v > 0 ? v : NaN;
+  }], { strokeColor: '#1565c0', strokeWidth: 2, dash: 3 });
 
-    // MB_2
-    board.create('functiongraph', [function(g){ if (g < 0) return NaN; var v = mb2(g); return v >= 0 ? v : NaN; }],
-      { strokeColor: '#00897b', strokeWidth: 2, dash: 3, name: '<i>BMg</i><sub>2</sub>', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
+  // BMg_2
+  board.create('functiongraph', [function(g) {
+    if (g < 0) return NaN; var v = mb2(g); return v > 0 ? v : NaN;
+  }], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
 
-    // Social MB (vertical sum)
-    board.create('functiongraph', [function(g){ if (g < 0) return NaN; var v = smb(g); return v >= 0 ? v : NaN; }],
-      { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'ΣBMg', withLabel: true,
-        label: { position: 'rt', offset: [5, 5], fontSize: 11, highlight: false } });
+  // ΣBMg (social)
+  board.create('functiongraph', [function(g) {
+    if (g < 0) return NaN; var v = smb(g); return v > 0 ? v : NaN;
+  }], { strokeColor: '#C8102E', strokeWidth: 2.5 });
 
-    // MC horizontal line
-    board.create('functiongraph', [function(g){ return g < 0 ? NaN : c; }],
-      { strokeColor: '#333', strokeWidth: 2, name: '<i>CMg</i>', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 11, highlight: false } });
+  // CMg
+  board.create('functiongraph', [function(g) {
+    return g >= 0 ? c : NaN;
+  }], { strokeColor: '#333', strokeWidth: 2 });
 
-    // Optimal point
-    board.create('point', [
-      function(){ return gStar(); },
-      function(){ return c; }
-    ], { name: 'G*', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
-         label: { offset: [8, -12], fontSize: 12, cssStyle: 'color:#C8102E;font-weight:700;' } });
+  // --- Curve labels (near left side, above each curve) ---
+  board.create('text', [0.5, function(){ return a1 + 1.5; }, '<i>BMg</i><sub>1</sub>'], {
+    fontSize: 11, color: '#1565c0', fixed: true, highlight: false
+  });
+  board.create('text', [0.5, function(){ return a2 + 1.5; }, '<i>BMg</i><sub>2</sub>'], {
+    fontSize: 11, color: '#00897b', fixed: true, highlight: false
+  });
+  board.create('text', [0.5, function(){ return a1 + a2 + 1.5; }, 'Σ<i>BMg</i>'], {
+    fontSize: 12, color: '#C8102E', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return Math.max(a1, a2) + 2; }, function(){ return c + 1.5; }, '<i>CMg</i>'], {
+    fontSize: 12, color: '#333', fixed: true, highlight: false
+  });
 
-    // Private provision point
-    board.create('point', [
-      function(){ return gPriv(); },
-      function(){ return c; }
-    ], { name: 'G_priv', size: 4, fillColor: '#999', strokeColor: '#999', fixed: true,
-         label: { offset: [-15, 10], fontSize: 10, cssStyle: 'color:#999;font-weight:700;' } });
+  // --- Equilibrium points ---
 
-    // Dashed lines
-    board.create('segment', [
-      [function(){ return gStar(); }, function(){ return c; }],
-      [function(){ return gStar(); }, 0]
-    ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 2, fixed: true });
+  // G* (optimal - Samuelson)
+  board.create('point', [
+    function(){ return gStar(); }, function(){ return c; }
+  ], { name: '<i>G</i>*', size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+       label: { offset: [12, -15], fontSize: 12, highlight: false, cssStyle: 'color:#C8102E;font-weight:700;' } });
 
-    board.create('segment', [
-      [function(){ return gPriv(); }, function(){ return c; }],
-      [function(){ return gPriv(); }, 0]
-    ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
+  // G_priv (private provision)
+  board.create('point', [
+    function(){ return gPriv(); }, function(){ return c; }
+  ], { name: '<i>G</i><sub>priv</sub>', size: 4, fillColor: '#999', strokeColor: '#999', fixed: true,
+       label: { offset: [-20, -15], fontSize: 10, highlight: false, cssStyle: 'color:#999;font-weight:700;' } });
 
-    // Lindahl prices: tau_1 = MB_1(G*), tau_2 = MB_2(G*)
-    // Show as horizontal dashed lines at G*
-    board.create('segment', [
-      [0, function(){ return mb1(gStar()); }],
-      [function(){ return gStar(); }, function(){ return mb1(gStar()); }]
-    ], { strokeColor: '#1565c0', strokeWidth: 1, dash: 4, fixed: true });
+  // --- Dashed projection lines ---
+  board.create('segment', [
+    [function(){ return gStar(); }, function(){ return c; }],
+    [function(){ return gStar(); }, 0]
+  ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 2, fixed: true });
 
-    board.create('segment', [
-      [0, function(){ return mb2(gStar()); }],
-      [function(){ return gStar(); }, function(){ return mb2(gStar()); }]
-    ], { strokeColor: '#00897b', strokeWidth: 1, dash: 4, fixed: true });
+  board.create('segment', [
+    [function(){ return gPriv(); }, function(){ return c; }],
+    [function(){ return gPriv(); }, 0]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true });
 
-    var lblT1 = board.create('text', [-0.15, function(){
-      var y1 = mb1(gStar()) + 0.3;
-      var y2 = mb2(gStar()) - 0.3;
-      if (Math.abs(y1 - y2) < 0.8) {
-        var mid = (mb1(gStar()) + mb2(gStar())) / 2;
-        return mid + 0.5;
-      }
-      return y1;
-    }, function(){ return 'τ₁=' + mb1(gStar()).toFixed(1); }
-    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#1565c0;font-weight:700;', highlight: false });
+  // --- Lindahl prices ---
+  board.create('segment', [
+    [0, function(){ return mb1(gStar()); }],
+    [function(){ return gStar(); }, function(){ return mb1(gStar()); }]
+  ], { strokeColor: '#1565c0', strokeWidth: 1, dash: 4, fixed: true });
 
-    var lblT2 = board.create('text', [-0.45, function(){
-      var y1 = mb1(gStar()) + 0.3;
-      var y2 = mb2(gStar()) - 0.3;
-      if (Math.abs(y1 - y2) < 0.8) {
-        var mid = (mb1(gStar()) + mb2(gStar())) / 2;
-        return mid - 0.5;
-      }
-      return y2;
-    }, function(){ return 'τ₂=' + mb2(gStar()).toFixed(1); }
-    ], { fontSize: 9, anchorX: 'right', cssStyle: 'color:#00897b;font-weight:700;', highlight: false });
+  board.create('segment', [
+    [0, function(){ return mb2(gStar()); }],
+    [function(){ return gStar(); }, function(){ return mb2(gStar()); }]
+  ], { strokeColor: '#00897b', strokeWidth: 1, dash: 4, fixed: true });
 
-    // Underprovision region
-    board.create('segment', [
-      [function(){ return gPriv(); }, -0.3],
-      [function(){ return gStar(); }, -0.3]
-    ], { strokeColor: '#C8102E', strokeWidth: 3, fixed: true, lastArrow: true });
+  // Lindahl price labels on y-axis
+  board.create('text', [-0.3, function(){ return mb1(gStar()) + 1; },
+    function(){ return '<span style="color:#1565c0;font-size:9px;font-weight:700;">τ₁=' + mb1(gStar()).toFixed(1) + '</span>'; }
+  ], { fontSize: 9, anchorX: 'right', fixed: true, highlight: false });
 
-    board.create('text', [
-      function(){ return (gPriv() + gStar()) / 2; }, -0.7,
-      'Subprovisão'
-    ], { fontSize: 9, anchorX: 'middle', cssStyle: 'color:#C8102E;font-style:italic;', highlight: false });
+  board.create('text', [-0.3, function(){ return mb2(gStar()) - 1; },
+    function(){ return '<span style="color:#00897b;font-size:9px;font-weight:700;">τ₂=' + mb2(gStar()).toFixed(1) + '</span>'; }
+  ], { fontSize: 9, anchorX: 'right', fixed: true, highlight: false });
 
-    function updateInfo() {
-      var gs = gStar(), gp = gPriv();
-      var t1 = mb1(gs), t2 = mb2(gs);
+  // --- Underprovision arrow ---
+  board.create('segment', [
+    [function(){ return gPriv(); }, -1.2],
+    [function(){ return gStar(); }, -1.2]
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5, fixed: true, lastArrow: true });
 
-      var html = '<b>Condição de Samuelson:</b><br>';
-      html += '\\(\\sum BMg_i = CMg\\)<br>';
-      html += '\\(' + t1.toFixed(1) + ' + ' + t2.toFixed(1) + ' = ' + c.toFixed(1) + '\\)<br>';
-      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<span style="color:#C8102E;font-weight:700;">Provisão ótima: \\(G^* = ' + gs.toFixed(2) + '\\)</span><br>';
-      html += '<span style="color:#999;font-weight:700;">Provisão privada: \\(G_{priv} = ' + gp.toFixed(2) + '\\)</span><br>';
-      html += '<b>Subprovisão:</b> \\(\\Delta G = ' + (gs - gp).toFixed(2) + '\\)<br>';
-      html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-      html += '<b>Preços de Lindahl:</b><br>';
-      html += '<span style="color:#1565c0;">\\(\\tau_1 = ' + t1.toFixed(2) + '\\)</span><br>';
-      html += '<span style="color:#00897b;">\\(\\tau_2 = ' + t2.toFixed(2) + '\\)</span><br>';
-      html += '\\(\\tau_1 + \\tau_2 = ' + (t1+t2).toFixed(2) + ' = CMg\\)';
+  board.create('text', [
+    function(){ return (gPriv() + gStar()) / 2; }, -2.2,
+    'Subprovisão'
+  ], { fontSize: 9, anchorX: 'middle', fixed: true, highlight: false,
+       cssStyle: 'color:#C8102E;font-style:italic;' });
 
-      document.getElementById('info').innerHTML = html;
-      if (window.MathJax && MathJax.typeset) MathJax.typeset();
-    }
+  // --- Update ---
+  function update() {
+    a1 = parseFloat(document.getElementById('sl-a1').value);
+    a2 = parseFloat(document.getElementById('sl-a2').value);
+    c = parseFloat(document.getElementById('sl-c').value);
+    document.getElementById('val-a1').textContent = a1.toFixed(1);
+    document.getElementById('val-a2').textContent = a2.toFixed(1);
+    document.getElementById('val-c').textContent = c.toFixed(1);
 
-    function update() {
-      a1 = parseFloat(document.getElementById('sl-a1').value);
-      a2 = parseFloat(document.getElementById('sl-a2').value);
-      c = parseFloat(document.getElementById('sl-c').value);
-      document.getElementById('val-a1').textContent = a1.toFixed(1);
-      document.getElementById('val-a2').textContent = a2.toFixed(1);
-      document.getElementById('val-c').textContent = c.toFixed(1);
-      board.update();
-      updateInfo();
-    }
+    var gs = gStar(), gp = gPriv();
+    var t1 = mb1(gs), t2 = mb2(gs);
 
-    var textLabels = [lblT1, lblT2];
-    function toggleLabels() {
-      var show = document.getElementById('chk-labels').checked;
-      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
-      board.update(); 
-    }
+    var html = '<b>Condição de Samuelson:</b><br>';
+    html += '\\(\\sum BMg_i = CMg\\)<br>';
+    html += '\\(' + t1.toFixed(1) + ' + ' + t2.toFixed(1) + ' = ' + c.toFixed(1) + '\\)<br>';
+    html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+    html += '<span style="color:#C8102E;font-weight:700;">Provisão ótima: \\(G^* = ' + gs.toFixed(2) + '\\)</span><br>';
+    html += '<span style="color:#999;font-weight:700;">Provisão privada: \\(G_{priv} = ' + gp.toFixed(2) + '\\)</span><br>';
+    html += '<b>Subprovisão:</b> \\(\\Delta G = ' + (gs - gp).toFixed(2) + '\\)<br>';
+    html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+    html += '<b>Preços de Lindahl:</b><br>';
+    html += '<span style="color:#1565c0;">\\(\\tau_1 = ' + t1.toFixed(2) + '\\)</span><br>';
+    html += '<span style="color:#00897b;">\\(\\tau_2 = ' + t2.toFixed(2) + '\\)</span><br>';
+    html += '\\(\\tau_1 + \\tau_2 = ' + (t1 + t2).toFixed(2) + ' = CMg\\)';
 
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
 
-    function resetAll() {
-      document.getElementById('sl-a1').value = 10;
-      document.getElementById('sl-a2').value = 6;
-      document.getElementById('sl-c').value = 8;
-      update();
-    }
-
-    ['sl-a1','sl-a2','sl-c'].forEach(function(id) {
-      document.getElementById(id).addEventListener('input', update);
-    });
+  function resetAll() {
+    document.getElementById('sl-a1').value = 10;
+    document.getElementById('sl-a2').value = 6;
+    document.getElementById('sl-c').value = 8;
     update();
-  </script>
+  }
+
+  ['sl-a1','sl-a2','sl-c'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
 </body>
 </html>
