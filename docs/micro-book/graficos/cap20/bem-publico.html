@@ -105,24 +105,24 @@
     function gPriv() { return Math.max(Math.max(a1, a2) - c, 0); }
 
     // MB_1
-    board.create('functiongraph', [function(g){ return mb1(g); }],
-      { strokeColor: '#1565c0', strokeWidth: 2, dash: 3, name: 'BMg_1', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+    board.create('functiongraph', [function(g){ if (g < 0) return NaN; var v = mb1(g); return v >= 0 ? v : NaN; }],
+      { strokeColor: '#1565c0', strokeWidth: 2, dash: 3, name: '<i>BMg</i><sub>1</sub>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
 
     // MB_2
-    board.create('functiongraph', [function(g){ return mb2(g); }],
-      { strokeColor: '#00897b', strokeWidth: 2, dash: 3, name: 'BMg_2', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+    board.create('functiongraph', [function(g){ if (g < 0) return NaN; var v = mb2(g); return v >= 0 ? v : NaN; }],
+      { strokeColor: '#00897b', strokeWidth: 2, dash: 3, name: '<i>BMg</i><sub>2</sub>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
 
     // Social MB (vertical sum)
-    board.create('functiongraph', [function(g){ return smb(g); }],
+    board.create('functiongraph', [function(g){ if (g < 0) return NaN; var v = smb(g); return v >= 0 ? v : NaN; }],
       { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'ΣBMg', withLabel: true,
-        label: { position: 'rt', offset: [5, 5], fontSize: 11 } });
+        label: { position: 'rt', offset: [5, 5], fontSize: 11, highlight: false } });
 
     // MC horizontal line
-    board.create('functiongraph', [function(g){ return c; }],
-      { strokeColor: '#333', strokeWidth: 2, name: 'CMg', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 11 } });
+    board.create('functiongraph', [function(g){ return g < 0 ? NaN : c; }],
+      { strokeColor: '#333', strokeWidth: 2, name: '<i>CMg</i>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 11, highlight: false } });
 
     // Optimal point
     board.create('point', [
