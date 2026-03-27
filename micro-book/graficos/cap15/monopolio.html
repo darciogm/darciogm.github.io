@@ -146,14 +146,14 @@
       return q >= 0 ? c : NaN;
     }], { strokeColor: '#00897b', strokeWidth: 2.5 });
 
-    // --- Curve labels ---
-    board.create('text', [function(){ return a/b * 0.92; }, 5, '<i>D</i>'], {
+    // --- Curve labels (positioned beside the end of each curve) ---
+    board.create('text', [function(){ return a/b + 3; }, 3, '<i>D</i>'], {
       fontSize: 13, color: '#1565c0', fixed: true, highlight: false
     });
-    board.create('text', [function(){ return a/(2*b) * 0.92; }, 5, '<i>RMg</i>'], {
+    board.create('text', [function(){ return a/(2*b) + 3; }, 3, '<i>RMg</i>'], {
       fontSize: 13, color: '#C8102E', fixed: true, highlight: false
     });
-    board.create('text', [function(){ return a/b * 0.92; }, function(){ return c + 5; }, '<i>CMg</i>'], {
+    board.create('text', [function(){ return a/b + 3; }, function(){ return c; }, '<i>CMg</i>'], {
       fontSize: 13, color: '#00897b', fixed: true, highlight: false
     });
 
