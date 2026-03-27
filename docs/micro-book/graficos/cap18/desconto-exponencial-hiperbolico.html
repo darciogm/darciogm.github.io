@@ -85,9 +85,9 @@
         x: tValues.concat(tValues.slice().reverse()),
         y: expValues.concat(hypValues.slice().reverse()),
         fill: 'toself',
-        fillcolor: 'rgba(200,16,46,0.08)',
-        line: { color: 'transparent' },
-        name: 'Viés presente',
+        fillcolor: 'rgba(200,16,46,0.15)',
+        line: { color: 'rgba(200,16,46,0.4)', width: 1 },
+        name: 'Viés presente (gap)',
         showlegend: true,
         type: 'scatter',
         hoverinfo: 'skip'
@@ -123,14 +123,14 @@
         paper_bgcolor: '#fff',
         plot_bgcolor: '#fafafa',
         annotations: [{
-          x: 1,
-          y: (expValues[1] + hypValues[1]) / 2,
-          text: '<b>Vies<br>presente</b>',
+          x: 3,
+          y: (expValues[3] + hypValues[3]) / 2,
+          text: '<b>Viés<br>presente</b>',
           showarrow: true,
-          arrowhead: 0,
-          ax: 40,
-          ay: 0,
-          font: { size: 10, color: '#C8102E' }
+          arrowhead: 2,
+          ax: 50,
+          ay: -30,
+          font: { size: 11, color: '#C8102E' }
         }]
       };
 
