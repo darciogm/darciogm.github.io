@@ -654,7 +654,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ## 🧪 Atividades de Sala de Aula
 
-!!! classroom "Experimento 9a.1 — Dilema dos Prisioneiros ao vivo (20 min)"
+!!! classroom "Atividade 9a.1 — Dilema dos Prisioneiros ao vivo (20 min)"
     **Objetivo:** Demonstrar a tensão entre racionalidade individual e eficiência coletiva — e testar se a cooperação emerge com repetição.
 
     **Material:** Cartões com "C" (Cooperar) e "T" (Trair) para cada aluno, tabela de payoffs projetada.
@@ -674,7 +674,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Conexão com o conteúdo:** Dilema dos Prisioneiros (Seção 9a.2), Folk Theorem e cooperação em jogos repetidos (Módulo 9b). Evidência experimental: Axelrod (1984), *The Evolution of Cooperation*.
 
-!!! classroom "Experimento 9a.2 — Leilão de primeiro preço vs. segundo preço (25 min)"
+!!! classroom "Atividade 9a.2 — Leilão de primeiro preço vs. segundo preço (25 min)"
     **Objetivo:** Verificar empiricamente o Teorema da Equivalência de Receita e o sombreamento de lances (*bid shading*).
 
     **Material:** Baralho de cartas (ou geradores aleatórios no celular); envelopes de papel; planilha projetada.
@@ -692,7 +692,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Conexão com o conteúdo:** Leilões IPV (Módulo 9c, Seção 9c.3), Teorema da Equivalência de Receita (Myerson, 1981; Riley e Samuelson, 1981). Inspirado em Holt (2007, Cap. 19).
 
-!!! classroom "Experimento 9a.3 — Competição de Cournot com post-its (15 min)"
+!!! classroom "Atividade 9a.3 — Competição de Cournot com post-its (15 min)"
     **Objetivo:** Demonstrar o equilíbrio de Cournot e a tentação do conluio.
 
     **Material:** Post-its, quadro branco.

@@ -731,6 +731,42 @@ Três convicções para levar deste capítulo:
 
 ---
 
+!!! classroom "Atividade 3.1 — Desenhando suas próprias curvas de indiferença (20 min)"
+    **Objetivo:** Descobrir, por introspecção guiada, que preferências pessoais geram curvas de indiferença — e que a TMS varia ao longo delas.
+
+    **Material:** Folha quadriculada, caneta colorida.
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): "Eixo horizontal = horas de Netflix por semana. Eixo vertical = horas de academia por semana. Marque o ponto (10, 2) — sua dotação atual."
+    2. **Revelação de preferências** (7 min): "Agora responda honestamente: se eu tirasse 2 horas de Netflix, quantas horas a mais de academia você precisaria para ficar *igualmente feliz*?" Marque o novo ponto. Repita para tirar mais 2 horas. E mais 2. Conecte os pontos — isso é sua curva de indiferença.
+    3. **Comparação em duplas** (4 min): Duplas comparam curvas. Pergunte: "As curvas são iguais? Deveriam ser?" → Não! Preferências são subjetivas. "Qual é a TMS de cada um no ponto (10, 2)?"
+    4. **Debrief** (6 min):
+        - "A curva ficou convexa (curvada para a origem)? Por quê?" → TMS decrescente: quando você já tem pouca Netflix, cada hora a menos dói mais.
+        - "Alguém desenhou uma reta?" → Substitutos perfeitos. "Alguém fez um L?" → Complementos perfeitos.
+        - "Se eu multiplicar todos os números de utilidade por 2, a curva muda?" → Não. Transformação monotônica (Seção 3.7).
+        - Conecte: o exercício que vocês fizeram é exatamente como Edgeworth imaginou as curvas em 1881 — só que ele não tinha Netflix.
+
+    **Conexão com o conteúdo:** Seções 3.3 (curvas de indiferença), 3.4 (TMS), 3.6 (formas funcionais), 3.7 (transformações monotônicas).
+
+!!! classroom "Atividade 3.2 — O teste da transitividade: flagrando incoerência (10 min)"
+    **Objetivo:** Testar se as preferências declaradas dos alunos satisfazem os axiomas — e mostrar que violações existem (e importam).
+
+    **Material:** 3 cartões por aluno com opções escritas (ou projeção no slide).
+
+    **Protocolo:**
+
+    1. **As opções** (2 min): Apresente três "cestas" de lazer para o fim de semana: (A) Cinema + pizza, (B) Futebol + churrasco, (C) Praia + açaí. Cada aluno vota nas comparações dois a dois: A vs. B, B vs. C, A vs. C (levantar a mão ou usar Mentimeter).
+    2. **Contagem** (3 min): O professor registra as proporções. Tipicamente, com preferências heterogêneas na turma, o resultado *agregado* pode violar transitividade: A > B, B > C, mas C > A (Paradoxo de Condorcet!).
+    3. **Debrief** (5 min):
+        - "Se a *turma* fosse uma pessoa, ela seria irracional — prefere A a B, B a C, e C a A. Isso é possível para um indivíduo?" → Não, se satisfaz o axioma de transitividade.
+        - "Mas o *grupo* violou. O que isso significa?" → Agregação de preferências individuais racionais pode gerar intransitividade coletiva — antecipe o Teorema de Arrow (Capítulo 16).
+        - Feche: "Os axiomas do Capítulo 3 são sobre *indivíduos*. Para *sociedades*, a coisa complica — e Arrow ganhou o Nobel por explicar por quê."
+
+    **Conexão com o conteúdo:** Seções 3.1 (axiomas de completude e transitividade), antecipação do Capítulo 16 (Escolha Social e Teorema de Arrow).
+
+---
+
 
 ## 🧠 Revisão Rápida
 

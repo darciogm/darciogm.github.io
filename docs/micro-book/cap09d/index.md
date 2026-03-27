@@ -510,7 +510,7 @@ A progressão dos módulos segue a taxonomia de Gibbons (1992): cada módulo rel
 
 ## 🧪 Atividades de Sala de Aula
 
-!!! classroom "Experimento 9d.1 — Role-play: mercado de limões com garantias (25 min)"
+!!! classroom "Atividade 9d.1 — Role-play: mercado de limões com garantias (25 min)"
     **Objetivo:** Demonstrar ao vivo como a seleção adversa destrói um mercado e como a sinalização (garantia) o restaura.
 
     **Material:** Cartas de baralho (qualidades 1-10); fichas de dinheiro; adesivos "GARANTIA" (para a Fase 2).
@@ -528,7 +528,7 @@ A progressão dos módulos segue a taxonomia de Gibbons (1992): cada módulo rel
 
     **Conexão com o conteúdo:** Seleção adversa (Seção 9d.5), sinalização (Seção 9d.2), mecanismos de mitigação (Tabela 9d.1). Inspirado em Bergstrom e Miller (2000, Cap. 32).
 
-!!! classroom "Experimento 9d.2 — Contrato de incentivos: quanto pagar pelo esforço? (15 min)"
+!!! classroom "Atividade 9d.2 — Contrato de incentivos: quanto pagar pelo esforço? (15 min)"
     **Objetivo:** Mostrar o trade-off entre incentivos e seguro no problema do principal-agente.
 
     **Material:** Dados (1 dado por grupo); planilha projetada.

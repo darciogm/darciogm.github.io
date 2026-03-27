@@ -400,7 +400,7 @@ Começamos este módulo com uma pergunta que paralisou a teoria dos jogos: como 
 
 ## 🧪 Atividades de Sala de Aula
 
-!!! classroom "Experimento 9c.1 — Leilão de envelopes: primeiro preço vs. segundo preço (25 min)"
+!!! classroom "Atividade 9c.1 — Leilão de envelopes: primeiro preço vs. segundo preço (25 min)"
     **Objetivo:** Verificar empiricamente o *bid shading* no primeiro preço, a revelação de verdade no segundo preço, e o Teorema da Equivalência de Receita.
 
     **Material:** Envelopes numerados contendo "fichas" de valores conhecidos apenas pelo titular (cartões com números de 1 a 100, sorteados aleatoriamente); formulários de lance; planilha projetada.
@@ -419,7 +419,7 @@ Começamos este módulo com uma pergunta que paralisou a teoria dos jogos: como 
 
     **Conexão com o conteúdo:** Leilões IPV (Seção 9c.3), *bid shading* (eq. 9c.3), Teorema da Equivalência de Receita (Seção 9c.3). Inspirado em Holt (2007, Cap. 19) e Kagel (1995).
 
-!!! classroom "Experimento 9c.2 — Desenhando um mecanismo: o problema do bolo (15 min)"
+!!! classroom "Atividade 9c.2 — Desenhando um mecanismo: o problema do bolo (15 min)"
     **Objetivo:** Introduzir intuitivamente o desenho de mecanismos — mostrar que as *regras do jogo* determinam o resultado.
 
     **Material:** Nenhum (apenas projeção e discussão).

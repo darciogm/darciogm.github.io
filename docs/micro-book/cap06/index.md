@@ -680,6 +680,43 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 
 *Nenhum bem é uma ilha — e agora sabemos mapear as pontes entre eles. No próximo capítulo, tiramos a última certeza: o consumidor descobre que não sabe o que o futuro reserva.*
 
+---
+
+!!! classroom "Atividade 6.1 — Substitutos ou complementos? O jogo da classificação (15 min)"
+    **Objetivo:** Treinar a distinção entre substitutos/complementos brutos e líquidos usando pares de bens reais brasileiros.
+
+    **Material:** Cartões (ou Mentimeter) com pares de bens.
+
+    **Protocolo:**
+
+    1. **Setup** (2 min): Distribua (ou projete) 8 pares de bens: (1) Gasolina e etanol, (2) Café e açúcar, (3) iPhone e capinha, (4) Carne bovina e frango, (5) Uber e metrô, (6) Arroz e feijão, (7) Netflix e cinema, (8) Cerveja e amendoim.
+    2. **Votação individual** (3 min): Para cada par, o aluno vota: "Substituto bruto", "Complemento bruto" ou "Depende". Use Mentimeter ou cartões coloridos (verde = substituto, vermelho = complemento, amarelo = depende).
+    3. **Revelação e debate** (5 min): Mostre os resultados. Foque nos pares controversos. Tipicamente: (6) Arroz e feijão dividem a turma — são complementos no prato, mas substitutos como fontes de carboidrato/proteína? (8) Cerveja e amendoim — complementos no bar, mas a classificação *hicksiana* pode diferir.
+    4. **Debrief** (5 min):
+        - "A resposta depende de qual pergunta fazemos: a classificação *bruta* (marshalliana) inclui o efeito renda; a *líquida* (hicksiana) isola a substituição pura."
+        - "Arroz e feijão: se o arroz encarece e sua renda é compensada, você come mais feijão? Se sim, são substitutos líquidos — mesmo que no prato sejam 'complementos culturais'."
+        - Conecte com a Seção 6.2 (brutos) vs. 6.3 (líquidos) e com a assimetria dos efeitos brutos.
+
+    **Conexão com o conteúdo:** Seções 6.1–6.3 (classificação de bens), 6.8 (tabela de classificação com dados brasileiros).
+
+!!! classroom "Atividade 6.2 — O Teorema do Bem Composto na prática: quando simplificar é legítimo? (10 min)"
+    **Objetivo:** Entender intuitivamente quando é válido agregar vários bens em um único "bem composto" — e quando não é.
+
+    **Material:** Nenhum (projeção).
+
+    **Protocolo:**
+
+    1. **Cenário 1** (3 min): "O preço de *todas* as frutas subiu 15% por causa da seca. Faz sentido tratar 'frutas' como um único bem na análise?" → Sim! Os preços relativos *dentro* do grupo não mudaram. Condição de Hicks satisfeita.
+    2. **Cenário 2** (3 min): "O preço da banana subiu 30%, mas o da maçã caiu 5%. Posso tratar 'frutas' como um bem composto?" → Não! Os preços relativos mudaram. A condição do Teorema do Bem Composto falha.
+    3. **Debrief** (4 min):
+        - "Quando os preços dentro do grupo se movem proporcionalmente, a composição interna do grupo não muda — então podemos ignorar os detalhes e trabalhar com o grupo como unidade."
+        - "Esse teorema é o que justifica tratar 'alimentação', 'transporte' ou 'lazer' como bens únicos em modelos aplicados — desde que a condição valha."
+        - "O IPCA brasileiro decompõe o consumo em 9 grupos. Cada grupo funciona como bem composto? Quando?"
+
+    **Conexão com o conteúdo:** Seção 6.5 (Teorema do Bem Composto de Hicks).
+
+---
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

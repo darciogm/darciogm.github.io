@@ -1367,6 +1367,42 @@ A partir do próximo capítulo, essas ferramentas saem da caixa e vão para a ba
 
 ---
 
+!!! classroom "Atividade 2.1 — O Lagrangeano no supermercado: otimização com restrição ao vivo (20 min)"
+    **Objetivo:** Resolver um problema de otimização com restrição usando o método de Lagrange — mas com as mãos, não com o livro.
+
+    **Material:** Folha quadriculada, caneta, calculadora (celular).
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Projete: "Você tem R$ 30 para gastar em pizza (\(p_1 = 10\)) e refrigerante (\(p_2 = 5\)). Sua 'felicidade' é \(U = x_1 \cdot x_2\) (pizza × refri). Quanto comprar de cada?"
+    2. **Resolução individual** (7 min): Cada aluno monta o Lagrangeano, deriva as CPOs e encontra a solução. O professor circula e ajuda quem travar.
+    3. **Verificação coletiva** (3 min): Projete a solução passo a passo. Resposta: \(x_1^* = 1{,}5\), \(x_2^* = 3\), \(\lambda^* = 0{,}3\).
+    4. **O twist do \(\lambda\)** (3 min): "Se sua mãe te desse mais R$ 1, quanto sua felicidade aumentaria?" → \(\lambda = 0{,}3\). Verifiquem: \(U(31) - U(30) \approx 0{,}3\). O \(\lambda\) é o preço-sombra da restrição!
+    5. **Debrief** (4 min):
+        - "Por que o ótimo não é gastar tudo em pizza?" → Utilidade marginal decrescente.
+        - "O que acontece se o preço da pizza dobrar?" → Estática comparativa (Seção 2.2).
+        - Conecte: este é exatamente o problema do consumidor do Capítulo 4, simplificado.
+
+    **Conexão com o conteúdo:** Seções 2.5 (Lagrange), 2.6 (interpretação de \(\lambda\)), preparação para o Capítulo 4.
+
+!!! classroom "Atividade 2.2 — Ponto fixo com as mãos: encontrando o equilíbrio (10 min)"
+    **Objetivo:** Visualizar intuitivamente o que é um ponto fixo — base para existência de equilíbrio de Nash e equilíbrio geral.
+
+    **Material:** Folha de papel, caneta.
+
+    **Protocolo:**
+
+    1. **A demonstração** (3 min): Peça que cada aluno desenhe em um papel um quadrado unitário \([0,1] \times [0,1]\), a diagonal (\(y = x\)), e *qualquer* curva contínua que comece na borda esquerda e termine na borda direita sem "pular" (sem levantar a caneta). Peça: "Sua curva cruza a diagonal?"
+    2. **Resultado** (3 min): Todos vão responder "sim". Pergunte: "Alguém consegue desenhar uma curva contínua que *não* cruze?" → Impossível. Isso é o Teorema do Ponto Fixo de Brouwer, versão geométrica.
+    3. **Debrief** (4 min):
+        - "O cruzamento é o ponto fixo: \(f(x^*) = x^*\). Nash usou este teorema (via Kakutani) para provar que todo jogo finito tem equilíbrio."
+        - "O teorema garante *existência*, não *unicidade* — sua curva pode cruzar a diagonal várias vezes."
+        - Conecte com Seção 2.13 e antecipe o Capítulo 9a (existência do equilíbrio de Nash).
+
+    **Conexão com o conteúdo:** Seção 2.13 (Teoremas de ponto fixo), preparação para Cap. 9a (Nash) e Cap. 14 (equilíbrio geral).
+
+---
+
 
 ## 🧠 Revisão Rápida
 

@@ -859,6 +859,45 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 
 *O consumidor aprendeu a lidar com o risco. Mas será que ele realmente faz isso de forma racional? O próximo capítulo diz que não — e tem provas.*
 
+---
+
+!!! classroom "Atividade 7.1 — A aposta do café: revelando aversão ao risco (15 min)"
+    **Objetivo:** Revelar empiricamente a aversão ao risco dos alunos — e conectar com a curvatura da função de utilidade.
+
+    **Material:** Moeda, quadro branco.
+
+    **Protocolo:**
+
+    1. **A oferta** (3 min): "Eu vou jogar uma moeda. Cara: você ganha R$ 100. Coroa: você não ganha nada. Valor esperado = R$ 50. Mas eu te ofereço R$ 50 garantidos para *não* jogar. Quem aceita os R$ 50 certos?" → A maioria levanta a mão (aversão ao risco).
+    2. **Baixando o preço** (5 min): "E se eu oferecer R$ 40 certos? R$ 30? R$ 20?" Registre no quadro a proporção que aceita a cada valor. O menor valor que um aluno aceita é seu **equivalente de certeza**. A diferença entre R$ 50 e o EC é o **prêmio de risco**.
+    3. **Variação** (3 min): "Agora: Cara = R$ 10.000, Coroa = nada. Valor esperado = R$ 5.000. Quanto você aceitaria para não jogar?" → Os prêmios de risco tendem a ser proporcionalmente maiores. Conecte com ARA vs. RRA (Seção 7.4).
+    4. **Debrief** (4 min):
+        - "Quem aceitou R$ 50 certos no lugar de E[x] = 50 é avesso ao risco. A moeda oferece o mesmo valor esperado, mas com incerteza — e vocês pagaram (em esperança perdida) para evitá-la."
+        - "A diferença entre R$ 50 e seu EC é literalmente o prêmio de risco de Arrow-Pratt."
+        - "Alguém rejeitou os R$ 50 certos? Isso é preferência pelo risco — utilidade *convexa*."
+        - Conecte com a desigualdade de Jensen (Seção 7.3): \(E[u(x)] < u(E[x])\) para avessos ao risco.
+
+    **Conexão com o conteúdo:** Seções 7.3 (aversão ao risco), 7.4 (Arrow-Pratt), 7.5 (prêmio de risco e equivalente de certeza). Inspirado em Holt e Laury (2002).
+
+!!! classroom "Atividade 7.2 — Diversificação com dados: não coloque todos os ovos na mesma cesta (15 min)"
+    **Objetivo:** Demonstrar empiricamente que diversificação reduz risco sem reduzir retorno esperado.
+
+    **Material:** 2 dados de seis faces por grupo (ou app simulador de dados no celular).
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Grupos de 3. "Ativo A = resultado do dado 1 (payoff em R$). Ativo B = resultado do dado 2 (payoff em R$). Cada um tem E[x] = 3,5 e variância = 2,92."
+    2. **Estratégia concentrada** (4 min): "Joguem o dado A dez vezes. Anotem os resultados. Calculem a média e o desvio padrão." → Média perto de 3,5, mas muita variação entre rodadas.
+    3. **Estratégia diversificada** (4 min): "Agora joguem *ambos* os dados e usem a *média* dos dois como payoff. Dez rodadas." → Média similar (~3,5), mas desvio padrão menor. Os resultados extremos (1 e 6) quase desaparecem.
+    4. **Debrief** (4 min):
+        - Compare as distribuições no quadro. "O retorno esperado é o mesmo. Mas o risco caiu. Isso é diversificação."
+        - "Se os dados fossem *correlacionados* (os dois sempre dando o mesmo número), a diversificação não funcionaria. A correlação entre ativos é a chave."
+        - Conecte com Seção 7.6 (diversificação como método de redução de risco) e com a intuição do CAPM (risco diversificável vs. sistemático).
+
+    **Conexão com o conteúdo:** Seção 7.6 (métodos para reduzir o risco — diversificação). Extensão natural: Seção 7.7 (estado-preferência e ativos Arrow-Debreu).
+
+---
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

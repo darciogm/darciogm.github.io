@@ -779,6 +779,43 @@ Se este capítulo funcionou, você sai dele com três convicções:
 
 *Até aqui, cada bem vivia sozinho. No próximo capítulo, eles se encontram — e a relação é complicada.*
 
+---
+
+!!! classroom "Atividade 5.1 — Slutsky no bolso: decompondo o aumento da gasolina (20 min)"
+    **Objetivo:** Aplicar a decomposição de Slutsky a um exemplo real vivenciado pelos alunos — o aumento no preço da gasolina.
+
+    **Material:** Calculadora (celular), dados projetados.
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Projete: "Consumidor com \(U = x_1^{0{,}4} x_2^{0{,}6}\), onde \(x_1\) = litros de gasolina/mês e \(x_2\) = todos os outros bens. Renda \(m = 3000\), \(p_1 = 5\), \(p_2 = 1\)." Peça que encontrem as demandas marshallianas: \(x_1^* = 240\) litros, \(x_2^* = 1800\).
+    2. **O choque** (5 min): "A gasolina sobe para \(p_1' = 6\). Encontre a nova cesta." → \(x_1' = 200\), \(x_2' = 1800\). Queda de 40 litros. "Quanto disso é efeito substituição e quanto é efeito renda?"
+    3. **Decomposição de Hicks** (7 min): Peça que calculem a renda compensada \(m^c\) que mantém a utilidade original (dica: usar a função dispêndio ou resolver numericamente). Compare com a decomposição de Slutsky (renda que permite comprar a cesta original: \(m^S = 6 \times 240 + 1 \times 1800 = 3240\)). Ao preço novo e renda \(m^S\): \(x_1^{Slutsky} = 0{,}4 \times 3240 / 6 = 216\). ES = \(216 - 240 = -24\), ER = \(200 - 216 = -16\).
+    4. **Debrief** (5 min):
+        - "O efeito substituição diz: gasolina ficou relativamente mais cara, troco por ônibus/bike. O efeito renda diz: fiquei mais pobre, compro menos de tudo."
+        - "Para famílias de baixa renda, o ER domina — é por isso que o aumento da gasolina é tão regressivo."
+        - Conecte com a política de preços da Petrobras e a discussão sobre subsídios a combustíveis no Brasil.
+
+    **Conexão com o conteúdo:** Seções 5.3 (decomposição de Hicks e Slutsky), 5.4 (Equação de Slutsky), 5.8 (medidas de bem-estar).
+
+!!! classroom "Atividade 5.2 — Caça ao Giffen: existe ou é lenda? (10 min)"
+    **Objetivo:** Debater se bens de Giffen existem empiricamente — e entender por que são teoricamente possíveis mas empiricamente raros.
+
+    **Material:** Projeção de um slide com o resultado de Jensen e Miller (2008).
+
+    **Protocolo:**
+
+    1. **Provocação** (2 min): "Um bem de Giffen é como o Yeti da microeconomia: todo mundo conhece a definição, mas quase ninguém viu um. Alguém consegue dar um exemplo?"
+    2. **Think-Pair-Share** (4 min): Individualmente (1 min), em duplas (2 min): "Use a equação de Slutsky para explicar que condições um bem precisa satisfazer para ser Giffen." → Bem inferior (ER > 0 quando preço sobe) E efeito renda domina efeito substituição E grande parcela do orçamento.
+    3. **A evidência** (2 min): Projete o resultado de Jensen e Miller (2008, *American Economic Review*): arroz na China como bem de Giffen. Subsidiaram arroz para famílias pobres → consumo de arroz *caiu*. Removeram o subsídio → consumo *subiu*. O arroz era tão grande no orçamento das famílias mais pobres que o efeito renda dominava.
+    4. **Debrief** (2 min):
+        - "O Giffen não viola a racionalidade — é uma consequência perfeitamente lógica da Slutsky quando as condições se alinham."
+        - "A raridade empírica mostra que essas condições quase nunca se alinham no mundo real — mas quando se alinham, o efeito é real."
+
+    **Conexão com o conteúdo:** Seção 5.4 (Equação de Slutsky e bens de Giffen). Referência: Jensen e Miller (2008).
+
+---
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

@@ -433,7 +433,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ## 🧪 Atividades de Sala de Aula
 
-!!! classroom "Experimento 9b.1 — Jogo do Ultimato com dinheiro real (20 min)"
+!!! classroom "Atividade 9b.1 — Jogo do Ultimato com dinheiro real (20 min)"
     **Objetivo:** Confrontar a previsão teórica (proponente oferece quase nada, respondedor aceita) com o comportamento observado — e motivar a discussão sobre preferências sociais (Capítulo 8) e limites da racionalidade.
 
     **Material:** Envelopes com R$ 10 em moedas de R$ 1 (ou fichas/pontos equivalentes); formulários de proposta e resposta.
@@ -453,7 +453,7 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     **Conexão com o conteúdo:** Jogo do ultimato (Seção 9b.3), EPS vs. comportamento observado, ponte com economia comportamental (Cap. 8). Referência: Güth, Schmittberger e Schwarze (1982), "An Experimental Analysis of Ultimatum Bargaining", *Journal of Economic Behavior & Organization*.
 
-!!! classroom "Experimento 9b.2 — Mercado de limões ao vivo (25 min)"
+!!! classroom "Atividade 9b.2 — Mercado de limões ao vivo (25 min)"
     **Objetivo:** Demonstrar visualmente o *market unraveling* de Akerlof — observar a seleção adversa destruindo o mercado em tempo real.
 
     **Material:** Cartas de baralho (Ás a 10 = qualidades 1 a 10); fichas de "dinheiro"; quadro para registrar transações.

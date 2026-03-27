@@ -946,6 +946,47 @@ Se este capítulo fez seu trabalho, você sai com três convicções:
 
 *Sabemos onde a racionalidade falha. Agora, a pergunta muda: quando suas decisões afetam as minhas, o que acontece? Bem-vindo à teoria dos jogos.*
 
+---
+
+!!! classroom "Atividade 8.1 — O Paradoxo de Allais ao vivo: flagrando o axioma da independência (15 min)"
+    **Objetivo:** Reproduzir o Paradoxo de Allais em sala e mostrar que a maioria dos alunos viola o axioma da independência da utilidade esperada.
+
+    **Material:** Slides com as duas loterias (ou Mentimeter para votação anônima).
+
+    **Protocolo:**
+
+    1. **Decisão 1** (2 min): Projete: Loteria A = R$ 1.000.000 com certeza. Loteria B = 89% de R$ 1M, 10% de R$ 5M, 1% de R$ 0. Vote: A ou B?
+    2. **Decisão 2** (2 min): Loteria C = 11% de R$ 1M, 89% de R$ 0. Loteria D = 10% de R$ 5M, 90% de R$ 0. Vote: C ou D?
+    3. **Resultado** (3 min): Registre as proporções. Tipicamente: maioria escolhe A na primeira decisão (efeito certeza) e D na segunda (os 89% de zero são "iguais" entre C e D, então comparam 11% de R$ 1M vs. 10% de R$ 5M). Mas A e D juntos *violam* o axioma da independência!
+    4. **A demonstração** (3 min): Mostre algebricamente: se você prefere A a B, deveria preferir C a D (basta cancelar a parte comum de 89%). "Escolher A *e* D é logicamente inconsistente com a teoria de VNM."
+    5. **Debrief** (5 min):
+        - "Levante a mão quem escolheu A e D." → Maioria. "Parabéns, vocês acabaram de replicar o Paradoxo de Allais (1953). Ele usou exatamente este tipo de experimento para desafiar a utilidade esperada."
+        - "A Teoria do Prospecto explica isso: a função de ponderação \(\pi(p)\) sobrepondera probabilidades pequenas (1% de zero na decisão 1 *parece* enorme) e subestima probabilidades moderadas."
+        - Conecte com Seção 8.2 (Teoria do Prospecto) e Seção 7.2 (axioma da independência de VNM).
+
+    **Conexão com o conteúdo:** Seção 8.2 (Teoria do Prospecto), Seção 7.2 (utilidade esperada e axioma da independência). Referência: Allais (1953), Kahneman e Tversky (1979).
+
+!!! classroom "Atividade 8.2 — O jogo do ultimato: preferências sociais em ação (20 min)"
+    **Objetivo:** Demonstrar que agentes reais rejeitam divisões "injustas" mesmo quando isso é irracional segundo o modelo padrão — evidência de preferências sociais.
+
+    **Material:** Notas de papel (fictícias) ou pontos extras como incentivo; envelopes.
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Forme duplas aleatórias. Em cada dupla, um é "proponente" e outro é "respondedor". Proponente recebe R$ 100 (fictícios ou pontos) e propõe uma divisão (ex: "Eu fico com R$ 70, você recebe R$ 30"). Respondedor aceita (ambos recebem) ou rejeita (ambos recebem zero).
+    2. **Rodada 1 — Anônima** (5 min): Proponentes escrevem a oferta em papel dobrado. Respondedores decidem sem ver quem propôs. Registre os resultados.
+    3. **Rodada 2 — Face a face** (5 min): Repita com duplas novas, agora olhando nos olhos. Compare: as ofertas são mais generosas?
+    4. **Debrief** (7 min):
+        - "O *homo economicus* aceitaria R$ 1, porque R$ 1 > R$ 0. Quantos respondedores rejeitaram ofertas abaixo de R$ 20?" → Muitos.
+        - "O *homo economicus* ofereceria R$ 1, sabendo que seria aceito. Quanto os proponentes ofereceram em média?" → Tipicamente 35–45%.
+        - "A rejeição é 'irracional'? Ou revela que a utilidade inclui *justiça*?" → Modelo de Fehr-Schmidt (Seção 8.4): \(U_i = x_i - \alpha \max(x_j - x_i, 0) - \beta \max(x_i - x_j, 0)\).
+        - "Na rodada face a face, as ofertas subiram? Por quê?" → Normas sociais e reciprocidade são mais fortes com identidade revelada.
+        - Conecte com o Jogo do Ultimato (Seção 8.4) e antecipe barganha de Rubinstein (Módulo 9b).
+
+    **Conexão com o conteúdo:** Seção 8.4 (preferências sociais, Fehr-Schmidt). Referências: Güth, Schmittberger e Schwarze (1982); Fehr e Schmidt (1999). Inspirado em Holt (2007, Cap. 14).
+
+---
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

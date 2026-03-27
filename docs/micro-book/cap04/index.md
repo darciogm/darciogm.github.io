@@ -1050,6 +1050,43 @@ O consumidor encontrou sua cesta ótima. Mas o mundo não fica parado: preços m
 
 ---
 
+!!! classroom "Atividade 4.1 — Lump sum vs. imposto específico: o duelo tributário (20 min)"
+    **Objetivo:** Demonstrar visualmente e numericamente que um imposto *lump sum* domina um imposto específico de mesma receita — o Princípio do Montante Fixo.
+
+    **Material:** Folha quadriculada, régua, caneta (duas cores).
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Projete: \(U = x_1^{1/2} \cdot x_2^{1/2}\), \(p_1 = 2\), \(p_2 = 1\), \(m = 120\). Peça que encontrem a cesta ótima. Resposta: \(x_1^* = 30\), \(x_2^* = 60\), \(U^* = \sqrt{1800} \approx 42{,}4\).
+    2. **Imposto específico** (5 min): "O governo taxa o bem 1 em R$ 1 por unidade (\(p_1' = 3\)). Encontre a nova cesta e a receita tributária." → \(x_1' = 20\), \(x_2' = 60\), receita = \(1 \times 20 = 20\), \(U' = \sqrt{1200} \approx 34{,}6\).
+    3. **Lump sum de mesma receita** (5 min): "Agora o governo cobra R$ 20 de imposto fixo. Preços voltam ao original, renda cai para \(m' = 100\)." → \(x_1'' = 25\), \(x_2'' = 50\), \(U'' = \sqrt{1250} \approx 35{,}4\).
+    4. **Comparação** (3 min): Projete lado a lado: mesma receita (R$ 20), mas \(U'' > U'\). O *lump sum* é melhor para o consumidor!
+    5. **Debrief** (4 min):
+        - "Por que o imposto específico é pior?" → Distorce preços relativos, gerando perda de peso morto. O *lump sum* desloca a reta orçamentária paralelamente — sem distorção.
+        - "Se o *lump sum* é sempre melhor, por que os governos não usam só ele?" → Equidade, viabilidade política, informação (o governo não sabe a renda verdadeira de cada um). Antecipe mecanismos (Cap. 9c).
+        - Peça que desenhem os dois cenários no gráfico: reta original, reta com imposto específico (rotação) e reta com *lump sum* (deslocamento paralelo).
+
+    **Conexão com o conteúdo:** Seção 4.5 (Princípio do Montante Fixo). Inspirado em Nicholson e Snyder (2017, Cap. 4).
+
+!!! classroom "Atividade 4.2 — O \(\lambda\) misterioso: quanto vale um real a mais? (10 min)"
+    **Objetivo:** Construir intuição para o multiplicador de Lagrange como utilidade marginal da renda.
+
+    **Material:** Calculadora (celular).
+
+    **Protocolo:**
+
+    1. **Pergunta** (2 min): Usando a mesma utilidade \(U = x_1^{1/2} x_2^{1/2}\), \(p_1 = 2\), \(p_2 = 1\): "Quanto vale \(\lambda^*\) no ótimo com \(m = 120\)?"
+    2. **Cálculo** (3 min): Dos slides ou do exercício anterior, \(\lambda^* = U^*/m = \sqrt{1800}/120 \approx 0{,}354\). Agora peça: "Se \(m\) subir para 121, quanto \(U\) aumenta?"
+    3. **Verificação** (2 min): \(U(121) = \sqrt{121^2/8} = 121/\sqrt{8} \approx 42{,}79\). Diferença: \(\approx 0{,}35\). É o \(\lambda\)!
+    4. **Debrief** (3 min):
+        - "O \(\lambda\) é o 'preço' de afrouxar a restrição. Economistas chamam de *preço-sombra*."
+        - "Se \(\lambda\) fosse alto, significaria que a restrição *aperta muito* — o consumidor ganharia muito com mais renda. Se fosse baixo, a restrição 'quase não morde'."
+        - Conecte com a Identidade de Roy (Seção 4.9) e com o Teorema do Envelope (Seção 2.4/2.6).
+
+    **Conexão com o conteúdo:** Seções 4.3 (Lagrangeano), 4.4 (utilidade indireta), 2.6 (envelope restrito).
+
+---
+
 
 ## 🧠 Revisão Rápida
 

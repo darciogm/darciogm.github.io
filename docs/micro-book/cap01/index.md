@@ -635,6 +635,43 @@ Nos próximos capítulos, vamos formalizar essa intuição — começando pelas 
 
 ---
 
+!!! classroom "Atividade 1.1 — O modelo do almoço: simplificar para enxergar (20 min)"
+    **Objetivo:** Vivenciar a lógica de construção de modelos — e entender que omitir não é ignorar.
+
+    **Material:** Folha de papel e caneta para cada grupo.
+
+    **Protocolo:**
+
+    1. **Formação de grupos** (2 min): Grupos de 3–4 alunos.
+    2. **O problema** (3 min): "Vocês precisam prever onde os alunos da turma almoçam hoje. Têm 5 minutos e só podem usar **3 variáveis** (exemplo: preço, distância, tempo de espera). Quais 3 vocês escolhem? Anotem e justifiquem."
+    3. **Apresentação** (8 min): Cada grupo apresenta seu "modelo de almoço" em 1 minuto. O professor anota as variáveis escolhidas no quadro. Tipicamente: preço, distância, qualidade da comida, tempo de espera, se amigos vão junto.
+    4. **Debrief** (7 min):
+        - Pergunte: "Algum grupo incluiu 'cor da parede do restaurante'? 'Signo do cozinheiro'? Não? Por que não?" → *Ceteris paribus* como decisão deliberada de omissão.
+        - Pergunte: "Se eu disser que 80% da turma almoça no RU, seu modelo acertou? Ele precisa acertar o nome exato do restaurante de cada pessoa?" → Verificação indireta vs. direta (Seção 1.2).
+        - Pergunte: "Se o preço do RU dobrasse amanhã, o que seu modelo prevê? Ele consegue fazer *estática comparativa*?" → Conecte com Seção 1.4.
+        - Feche: "Parabéns, vocês acabaram de construir um modelo microeconômico. Ele está errado — todos os modelos estão. Mas é útil?"
+
+    **Conexão com o conteúdo:** Seções 1.1 (por que simplificar), 1.2 (verificação), 1.3 (*ceteris paribus*), 1.4 (estática comparativa).
+
+!!! classroom "Atividade 1.2 — Positivo vs. normativo: o debate do salário mínimo (15 min)"
+    **Objetivo:** Distinguir na prática afirmações positivas de normativas — e perceber como pressupostos mudam conclusões.
+
+    **Material:** Nenhum (apenas projeção de duas frases).
+
+    **Protocolo:**
+
+    1. **Estímulo** (2 min): Projete duas frases: (A) "Um aumento de 10% no salário mínimo reduz o emprego formal em 1,5%." (B) "O salário mínimo deveria ser de R$ 3.000 para garantir dignidade."
+    2. **Think-Pair-Share** (5 min): Individualmente (1 min), depois em duplas (2 min), depois compartilham (2 min): "Qual frase é positiva e qual é normativa? Por quê?"
+    3. **Twist** (3 min): Projete uma terceira frase: (C) "Card e Krueger (1994) encontraram que um aumento no salário mínimo em New Jersey *não* reduziu o emprego." Pergunte: "A frase (A) ficou falsa? Ou o modelo que a gerou precisa de hipóteses adicionais?"
+    4. **Debrief** (5 min):
+        - "A frase (C) invalida (A)?" → Não necessariamente — são contextos, períodos e magnitudes diferentes. Modelos fazem previsões *condicionais*.
+        - "A frase (B) é 'melhor' que (A) porque se preocupa com pessoas?" → Ambas são necessárias; políticas sem evidência positiva podem causar mais mal do que bem.
+        - Conecte com a distinção positivo/normativo (Seção 1.3) e com a importância de testar modelos (Seção 1.2).
+
+    **Conexão com o conteúdo:** Seções 1.2 (verificação empírica) e 1.3 (análise positiva vs. normativa).
+
+---
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.
