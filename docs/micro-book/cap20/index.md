@@ -898,7 +898,7 @@ O Teorema da Impossibilidade de Arrow não significa que a democracia seja "impo
 
 !!! info "🏅 Prêmio Nobel — Kenneth J. Arrow (1972)"
 
-    **Kenneth Joseph Arrow** (1921–2017) foi um economista americano. Doutorou-se na Universidade de Columbia sob orientação de Harold Hotelling e Abraham Wald, e foi professor em Stanford e Harvard. Recebeu o Nobel aos 51 anos — o mais jovem laureado em Economia até hoje. Dividiu o prêmio com John Hicks.
+    **Kenneth Joseph Arrow** (1921–2017) foi um economista americano. Doutorou-se na Universidade de Columbia sob orientação de Harold Hotelling e Abraham Wald, e foi professor em Stanford e Harvard. Recebeu o Nobel aos 51 anos, sendo na época o mais jovem laureado em Economia — recorde superado por Esther Duflo em 2019, aos 46 anos. Dividiu o prêmio com John Hicks.
 
     **Por que ganhou o Nobel:**
     Premiado por suas contribuições pioneiras à teoria do equilíbrio geral e à teoria do bem-estar. O Teorema da Impossibilidade, publicado em *Social Choice and Individual Values* (1951), demonstrou que nenhuma regra de agregação de preferências pode satisfazer simultaneamente um conjunto mínimo de condições democráticas — um resultado que fundou a teoria moderna da escolha social. Juntamente com Gérard Debreu, Arrow também provou a existência do equilíbrio geral competitivo, outro pilar da teoria econômica.
