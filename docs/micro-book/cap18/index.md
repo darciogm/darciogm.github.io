@@ -8,7 +8,7 @@ Começamos com os conceitos fundamentais de capital e taxa de retorno (Seção 1
 
 ---
 
-## 18.1 Capital e Taxa de Retorno
+## 18.1 Máquinas Não Caem do Céu: Capital e Taxa de Retorno
 
 ### O conceito de capital
 
@@ -39,7 +39,7 @@ A convergência entre taxa de retorno do capital e taxa de juros é uma das pred
 
 ---
 
-## 18.2 Determinação da Taxa de Retorno
+## 18.2 O Preço da Impaciência: Determinação da Taxa de Juros
 
 Se a taxa de juros é o preço da impaciência, quem define esse preço? Não é um burocrata com caneta vermelha (embora o presidente do Banco Central chegue perto). Em uma economia de mercado, a taxa de retorno do capital emerge de um cabo de guerra silencioso entre quem quer poupar — "segura aí que eu gasto depois" — e quem quer investir — "me empresta que eu multiplico". Esse equilíbrio no mercado de fundos emprestáveis é a peça central da teoria dos juros.
 
@@ -92,7 +92,7 @@ Historicamente, a teoria econômica ofereceu explicações distintas para a exis
 
 ---
 
-## 18.3 Modelo de Dois Períodos de Fisher
+## 18.3 Gastar Agora ou Guardar para Janeiro: O Modelo de Fisher
 
 Gastar tudo no bar na sexta-feira ou guardar para a viagem de janeiro? Em essência, toda decisão financeira é uma briga entre o seu "eu de agora" e o seu "eu do futuro". Irving Fisher, em 1930, transformou essa briga existencial em um modelo elegante de dois períodos — a pedra angular da teoria do consumo intertemporal. As ferramentas aqui desenvolvidas — restrição orçamentária intertemporal, riqueza intertemporal, taxa de preferência intertemporal — serão empregadas novamente nos capítulos subsequentes e na macroeconomia.
 
@@ -202,7 +202,7 @@ onde \(Y_1 - C_1^* = S\) é a poupança do consumidor. Se \(S > 0\) (poupador), 
 
 ---
 
-## 18.4 Taxa de Juros Nominal vs. Real e o Efeito Fisher
+## 18.4 Nem Tudo Que Reluz É Juro Real: Nominal vs. Real e o Efeito Fisher
 
 Até aqui, vivemos no paraíso teórico de uma economia sem inflação — um luxo que qualquer brasileiro nascido antes de 1994 reconhece como ficção científica. Em economias reais — e especialmente no Brasil, onde os mais velhos lembram de remarcar preços de supermercado toda semana —, a distinção entre taxa de juros nominal e real é absolutamente central. Confundir as duas é como confundir velocidade com distância: o número pode parecer impressionante, mas sem o ajuste certo, você não chega a lugar nenhum.
 
@@ -238,7 +238,7 @@ O **efeito Fisher** é a proposição de que, no longo prazo, a taxa de juros no
 
 ---
 
-## 18.5 Precificação de Ativos Arriscados
+## 18.5 Quanto Vale uma Promessa Incerta: Precificação de Ativos
 
 O modelo de Fisher analisa a escolha intertemporal sob certeza — o consumidor conhece com exatidão suas rendas futuras e a taxa de juros. Na realidade, porém, a maioria das decisões de investimento envolve incerteza: retornos futuros são aleatórios, e ativos diferentes carregam níveis distintos de risco. Como precificar ativos cujos retornos são incertos? E qual é a relação entre risco e retorno esperado? Essas perguntas fundamentais são respondidas pelos modelos de precificação de ativos, que estendem a lógica intertemporal de Fisher para um mundo com incerteza.
 
@@ -300,7 +300,7 @@ A equação $\eqref{eq:18.7}$ unifica toda a teoria de precificação de ativos:
 
 ---
 
-## 18.6 Critério do Valor Presente Descontado (VPL)
+## 18.6 O Forno Novo Compensa Mais Que o CDB?: Valor Presente Líquido
 
 Toda a teoria intertemporal que construímos até aqui culmina em uma pergunta brutalmente prática: "devo ou não investir neste projeto?" O dono da padaria não quer saber de equações de Euler — ele quer saber se o forno novo compensa mais do que deixar o dinheiro rendendo no CDB. O critério do Valor Presente Líquido (VPL) é a resposta da microeconomia a essa pergunta: um projeto deve ser aceito se, e somente se, o valor presente de todos os seus fluxos de caixa futuros excede o investimento inicial. Essa regra aparentemente simples é, na verdade, a aplicação direta do conceito de custo de oportunidade do capital.
 
@@ -342,7 +342,7 @@ O VPL é uma função decrescente de \(r\). Projetos com fluxos de caixa mais di
 
 ---
 
-## 18.7 Taxa Interna de Retorno (TIR)
+## 18.7 O Projeto Rende Quanto Por Cento?: Taxa Interna de Retorno
 
 Enquanto o VPL fornece o valor monetário gerado por um projeto a uma dada taxa de desconto, a Taxa Interna de Retorno (TIR) responde a uma pergunta complementar: qual é a taxa de retorno implícita do projeto? Em outras palavras, a TIR é a taxa de desconto que torna o investimento exatamente neutro — nem criando nem destruindo valor. Embora amplamente utilizada na prática, a TIR apresenta limitações que tornam o VPL o critério teoricamente superior.
 
@@ -393,7 +393,7 @@ Por essas razões, o VPL é considerado o critério superior para avaliação de
 
 ---
 
-## 18.8 Demanda da Firma por Capital
+## 18.8 Mais Um Caminhão ou Deixa no Banco: Demanda por Capital
 
 O VPL e a TIR avaliam projetos de investimento a partir dos fluxos de caixa. Mas qual a regra que a firma segue para decidir quanto capital empregar? A resposta conecta a teoria da produção — já estudada nos Capítulos 9–12 — à teoria dos juros: a firma investe em capital até que o retorno marginal do investimento iguale seu custo de oportunidade, determinado pela taxa de juros e pela depreciação.
 
@@ -431,9 +431,16 @@ A demanda por capital é decrescente no custo de uso \(c_K\) (e, portanto, na ta
 
     **Por que isso importa:** No Brasil, a combinação de juros reais altos e depreciação acelerada (especialmente para equipamentos importados sujeitos a variação cambial) eleva substancialmente o custo de uso do capital, desincentivando a formação de capital fixo.
 
+<iframe src="../graficos/cap18/webr-custo-capital.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 18.1 — Custo de uso do capital e demanda por K.** Altere a taxa de juros e a depreciação para ver como o custo de uso do capital afeta a demanda por investimento. Compare cenários Brasil vs. EUA.
+
+</div>
+
 ---
 
-## 18.9 Juros Compostos e Tempo Contínuo
+## 18.9 A Oitava Maravilha do Mundo: Juros Compostos e Tempo Contínuo
 
 Albert Einstein provavelmente nunca disse que os juros compostos são "a oitava maravilha do mundo" — mas quem inventou a citação tinha razão. A mágica de juros sobre juros transforma centavos em fortunas (dado tempo suficiente) e dívidas pequenas em bolas de neve (dado descuido suficiente). Nesta seção, apresentamos as ferramentas matemáticas de capitalização e desconto que fundamentam todos os cálculos de valor presente e futuro do capítulo. Embora frequentemente abordados em cursos de matemática financeira, esses conceitos são indispensáveis para a análise econômica intertemporal — desde a avaliação de projetos de investimento até a modelagem de crescimento econômico.
 
@@ -488,9 +495,16 @@ Para valores pequenos de \(r_d\), a aproximação \(r_c \approx r_d\) é razoáv
 
     A fórmula da perpetuidade é surpreendentemente útil em finanças. Ela implica que, se a taxa de juros é 5%, um ativo que paga R$ 100 por ano para sempre vale R$ 2.000 hoje. Se a taxa cai para 2%, o mesmo ativo vale R$ 5.000 — um aumento de 150% no valor do ativo. Essa sensibilidade explica por que quedas na taxa de juros provocam altas expressivas nos preços dos ativos financeiros e imobiliários.
 
+<iframe src="../graficos/cap18/webr-juros-compostos.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 18.2 — Juros compostos, perpetuidades e anuidades.** Explore o efeito da frequência de capitalização, compare juros simples vs. compostos vs. contínuos, e veja como a taxa de juros afeta o valor presente de perpetuidades.
+
+</div>
+
 ---
 
-## 18.10 VPL, Taxa de Desconto e Decisão de Investimento
+## 18.10 Os Números na Mesa: VPL, Taxa de Desconto e Decisão
 
 A teoria é bonita, mas o empresário quer números. Nesta seção, pegamos o VPL e a TIR e os colocamos para trabalhar num cenário concreto — um projeto de investimento avaliado a diferentes taxas de desconto. O resultado é uma lição visual sobre por que o Brasil, com juros historicamente altos, é um país hostil a projetos de longa maturação.
 
@@ -578,7 +592,7 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ---
 
-## 18.11 Precificação de Recursos Naturais: A Regra de Hotelling
+## 18.11 Extrair Hoje ou Deixar no Solo: A Regra de Hotelling
 
 VPL e TIR funcionam bem quando o ativo em questão foi construído por mãos humanas — uma fábrica, um galpão, um software. Mas o que fazer com aquilo que a natureza criou e que, uma vez consumido, não volta? Petróleo, minério de ferro, mogno nativo: são estoques finitos, e cada barril extraído hoje é um barril a menos para amanhã. Isso cria um dilema intertemporal que nenhum engenheiro de produção resolve sozinho: extrair agora e aplicar o dinheiro, ou deixar o recurso no solo apostando que valerá mais no futuro? A resposta, formalizada por Harold Hotelling em 1931, é uma das proposições mais elegantes da economia dos recursos naturais.
 
@@ -804,6 +818,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
 
+<iframe src="../graficos/cap18/webr-fisher.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 18.3 — Modelo de Fisher: consumo intertemporal.** Modifique rendas, taxa de juros e taxa de desconto subjetiva para visualizar a restrição orçamentária intertemporal, a curva de indiferença e a escolha ótima entre poupar e tomar emprestado.
+
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 18.2 — VPL, TIR e decisão de investimento"
     **Enunciado.** Uma empresa avalia instalar painéis solares por R$ 200.000, com economia anual de R$ 55.000 durante 5 anos. O custo de oportunidade do capital é 12% a.a. (a) Calcule o VPL. (b) Calcule a TIR por interpolação. (c) O projeto deve ser aceito?
 
@@ -841,6 +862,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
 
+<iframe src="../graficos/cap18/webr-vpl-tir.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 18.4 — VPL, TIR e decisão de investimento.** Altere o investimento inicial, fluxos de caixa e custo de oportunidade para ver como a curva VPL(r) determina a viabilidade do projeto. Compare decisões a taxas brasileiras e americanas.
+
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 18.3 — Regra de Hotelling e trajetória de preços"
     **Enunciado.** Um depósito de lítio tem estoque \(S_0 = 5.000\) toneladas. O preço inicial é \(p_0 = 80\) mil reais/tonelada, o custo de extração é \(c = 20\) mil reais/tonelada e a taxa de juros real é \(r = 4\%\) ao ano. (a) Qual a renda de escassez inicial? (b) Segundo Hotelling, qual será o preço em 10 e 20 anos? (c) Se uma nova tecnologia de reciclagem de baterias surgir em 15 anos, tornando disponível um substituto perfeito a R$ 100 mil/tonelada, como isso afeta a trajetória?
 
@@ -867,6 +895,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     A renda de escassez inicial se ajusta: \(R_0' = R_{15}/(1{,}04)^{15} = 80/1{,}8009 = 44{,}42\). Logo o preço inicial cairia para \(p_0' = 44{,}42 + 20 = 64{,}42\) mil reais — menor que os R$ 80 mil originais.
 
     **Interpretação:** A perspectiva de um substituto futuro reduz o valor presente do recurso e acelera sua extração. Isso é relevante para o Brasil, maior produtor de nióbio e com reservas significativas de lítio no Vale do Jequitinhonha (MG): o desenvolvimento de tecnologias alternativas para baterias afeta diretamente a estratégia ótima de exploração desses recursos.
+
+<iframe src="../graficos/cap18/webr-hotelling.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 18.5 — Regra de Hotelling e trajetória de preços.** Explore como a taxa de juros e a backstop technology afetam a trajetória ótima de preços de recursos não renováveis. Modifique os parâmetros para simular cenários de lítio, petróleo ou nióbio.
+
+</div>
 
 ---
 
