@@ -820,10 +820,83 @@ O Teorema do Eleitor Mediano tem implicações amplas para a compreensão da pol
 
 **Paradoxo de Condorcet**: Quando as preferências não são unimodais ou a escolha é multidimensional, a votação por maioria pode produzir **ciclos** (A vence B, B vence C, C vence A), não existindo um vencedor de Condorcet.
 
-!!! theorem "Teorema da Impossibilidade de Arrow"
-    Não existe regra de agregação de preferências (com três ou mais alternativas e dois ou mais indivíduos) que satisfaça simultaneamente: (i) domínio irrestrito; (ii) princípio de Pareto; (iii) independência de alternativas irrelevantes; (iv) não-ditadura.
+### O Teorema da Impossibilidade de Arrow
 
-O Teorema da Impossibilidade de Arrow (1951) é um dos resultados mais profundos das ciências sociais. Ele demonstra que o problema da agregação de preferências individuais em uma preferência social não admite solução geral satisfatória. Qualquer regra de votação que satisfaça as quatro condições aparentemente razoáveis listadas acima simplesmente não existe. A implicação prática não é que a democracia seja impossível, mas que toda regra de votação necessariamente viola pelo menos uma dessas propriedades desejáveis. A votação por maioria viola a transitividade (Paradoxo de Condorcet); regras de pontuação (como o voto de Borda) violam a independência de alternativas irrelevantes; e a unanimidade é impraticável. Kenneth Arrow recebeu o Prêmio Nobel de Economia em 1972 em parte por essa contribuição, que estabeleceu os fundamentos da teoria da escolha social.
+O Paradoxo de Condorcet revela que a regra da maioria pode falhar. A pergunta natural é: *existe alguma outra regra de votação que evite esses problemas?* Poderíamos usar o voto de Borda (atribuir pontos)? O voto por aprovação? A unanimidade? Kenneth Arrow, em sua tese de doutorado de 1951, respondeu a essa pergunta com um resultado devastador: **nenhuma** regra de votação consegue satisfazer simultaneamente um conjunto mínimo de propriedades que qualquer pessoa razoável consideraria desejáveis.
+
+Para compreender a força desse resultado, é preciso primeiro entender exatamente o que cada condição exige — e por que cada uma parece tão natural que seria impensável abandoná-la.
+
+#### As quatro condições de Arrow
+
+**Condição 1 — Domínio irrestrito (universalidade).** A regra deve funcionar para *qualquer* perfil de preferências individuais. Não podemos proibir que alguém tenha determinada ordenação de preferências. Se Ana prefere saneamento a iluminação a transporte, e Bruno prefere transporte a saneamento a iluminação, a regra deve ser capaz de processar essas preferências — e quaisquer outras combinações possíveis. Restringir o domínio (como exigir preferências unimodais) pode resolver o problema, mas à custa de excluir perfis de preferência legítimos.
+
+**Condição 2 — Princípio de Pareto (unanimidade fraca).** Se *todos* os indivíduos preferem a alternativa A à alternativa B, então a sociedade também deve preferir A a B. Esta é talvez a condição mais incontroversa: se a comunidade inteira concorda que saneamento é mais urgente que um novo estádio, a regra social não deveria contrariar essa unanimidade.
+
+**Condição 3 — Independência de alternativas irrelevantes (IAI).** A ordenação social entre duas alternativas A e B deve depender *exclusivamente* de como os indivíduos ordenam A em relação a B — e não de como eles classificam outras alternativas C, D, E. Se a comunidade prefere socialmente saneamento a transporte, essa preferência não deveria mudar pelo simples fato de que alguém alterou sua opinião sobre iluminação. Essa condição é a mais sutil e, ao mesmo tempo, a que mais frequentemente é violada por regras reais de votação.
+
+**Condição 4 — Não-ditadura.** Não existe um indivíduo cuja preferência determine *sempre* a preferência social, independentemente do que todos os outros pensam. Se sempre que o prefeito prefere A a B a sociedade também prefere A a B, independentemente de todos os demais cidadãos preferirem B a A, então o prefeito é um ditador — e a regra viola esta condição.
+
+!!! theorem "Teorema da Impossibilidade de Arrow (1951)"
+    Para três ou mais alternativas e dois ou mais indivíduos, **não existe** regra de agregação de preferências individuais em uma ordenação social completa e transitiva que satisfaça simultaneamente:
+
+    1. **Domínio irrestrito** — a regra aceita qualquer perfil de preferências;
+    2. **Princípio de Pareto** — unanimidade é respeitada;
+    3. **Independência de alternativas irrelevantes** — a ordenação entre A e B não depende de C;
+    4. **Não-ditadura** — nenhum indivíduo sozinho determina a escolha social.
+
+#### Por que o resultado é tão profundo?
+
+A força do teorema não está em mostrar que *uma* regra específica falha — isso o Paradoxo de Condorcet já fazia. A força está em demonstrar que **toda regra concebível** falha. Não importa quão engenhosa seja a regra inventada: se ela respeita as condições 1–3 e produz uma ordenação social transitiva, ela necessariamente concentra todo o poder de decisão em um único indivíduo. Dito de outra forma: transitividade, racionalidade e democracia são matematicamente incompatíveis na presença de três ou mais alternativas.
+
+#### Intuição da demonstração
+
+A prova formal de Arrow (refinada por autores subsequentes como Geanakoplos, 2005) procede por contradição e envolve dois passos-chave:
+
+1. **Da unanimidade ao poder de veto.** A condição de Pareto garante que se todos concordam, a sociedade segue. Arrow mostra que, combinando essa condição com a IAI, é possível provar que existe pelo menos um indivíduo que é *decisivo* sobre algum par de alternativas — ou seja, quando ele prefere A a B, a sociedade também prefere A a B, independentemente dos demais.
+
+2. **Do poder de veto à ditadura.** O passo crucial é demonstrar que esse poder decisivo sobre *um* par de alternativas se "espalha" para *todos* os pares. Se o indivíduo é decisivo sobre A vs. B, a IAI e a transitividade da ordenação social forçam que ele também seja decisivo sobre A vs. C, e sobre B vs. C, e assim por diante — até que ele seja decisivo sobre todas as alternativas. Esse indivíduo é, por definição, um ditador.
+
+A intuição geométrica é reveladora: a IAI cria "paredes" que isolam as comparações entre pares, mas a transitividade cria "pontes" que conectam essas comparações. O ditador emerge porque é o único indivíduo que pode sustentar a consistência (transitividade) da ordenação social através de todas as "paredes" da IAI.
+
+#### Um exemplo numérico: por que toda regra falha
+
+Considere três eleitores (1, 2, 3) e três alternativas (A, B, C):
+
+| Eleitor | 1ª preferência | 2ª preferência | 3ª preferência |
+|:--------|:---------------|:---------------|:---------------|
+| 1       | A              | B              | C              |
+| 2       | B              | C              | A              |
+| 3       | C              | A              | B              |
+
+- **Maioria simples**: A vence B (2 a 1), B vence C (2 a 1), C vence A (2 a 1) — ciclo! Viola transitividade.
+- **Voto de Borda** (3 pontos para 1º, 2 para 2º, 1 para 3º): cada alternativa recebe 6 pontos — empate total. Mas se o eleitor 3 muda sua 2ª e 3ª preferência (B e A), a classificação entre A e B muda — violando a IAI.
+- **Ditadura**: funciona perfeitamente (a ordenação do ditador é transitiva e respeita Pareto e IAI) — mas viola não-ditadura.
+- **Unanimidade**: só ordena pares sobre os quais todos concordam — no exemplo acima, não ordena *nenhum* par.
+
+Esse perfil de preferências (chamado *perfil cíclico* ou *perfil de Condorcet*) é o caso patológico que nenhuma regra democrática consegue resolver satisfatoriamente.
+
+#### Regras reais e quais condições elas violam
+
+| Regra de votação | Condição violada | Consequência prática |
+|:-----------------|:-----------------|:---------------------|
+| **Maioria simples** | Transitividade (ciclos) | Paradoxo de Condorcet; resultado depende da agenda |
+| **Voto de Borda** | IAI | Incluir ou excluir candidato irrelevante altera o resultado |
+| **Pluralidade** (1º turno) | IAI + Pareto em alguns casos | Spoiler effect; candidato vence sem apoio majoritário |
+| **Unanimidade** | Domínio irrestrito (incompleta) | Quase nunca produz decisão |
+| **Ditadura** | Não-ditadura | Inaceitável democraticamente |
+| **Votação por aprovação** | IAI (na versão cardinal) | Resultado depende do limiar estratégico de cada eleitor |
+
+#### Implicações e legado
+
+O Teorema da Impossibilidade de Arrow não significa que a democracia seja "impossível" ou inútil. A implicação correta é mais sutil e profunda:
+
+1. **Toda regra de votação é imperfeita.** A escolha de uma regra envolve um *trade-off* inevitável entre propriedades desejáveis. Sociedades diferentes podem legitimamente escolher quais condições sacrificar.
+
+2. **O poder da agenda.** Se a maioria pode gerar ciclos, então quem controla a *ordem* em que as alternativas são votadas pode manipular o resultado. Isso dá ao presidente de uma assembleia ou ao relator de uma comissão um poder desproporcional — um insight fundamental da teoria da escolha pública.
+
+3. **Extensões e saídas parciais.** Trabalhos subsequentes relaxaram as condições de Arrow e obtiveram possibilidades: Amartya Sen (Nobel 1998) mostrou que permitir comparações interpessoais de utilidade abre soluções; a restrição de domínio a preferências unimodais restaura a maioria (Teorema do Eleitor Mediano); e mecanismos de revelação (como o VCG, discutido na seção seguinte) contornam o problema em contextos específicos.
+
+Kenneth Arrow recebeu o Prêmio Nobel de Economia em 1972, em parte por essa contribuição que estabeleceu os fundamentos da teoria da escolha social e alterou permanentemente nossa compreensão dos limites da agregação democrática de preferências.
 
 ---
 
