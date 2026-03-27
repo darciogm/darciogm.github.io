@@ -51,6 +51,7 @@ theme:
       info: material/information
       code: material/language-r
       pesquisa: material/microscope
+      classroom: material/flask
 
 nav:
   - Home: index.md

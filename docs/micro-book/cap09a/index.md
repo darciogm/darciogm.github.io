@@ -109,9 +109,6 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
     **Por que isso importa:** A guerra fiscal entre estados brasileiros, os cartéis de postos de gasolina e o desmatamento da Amazônia são versões reais desse dilema — situações em que o interesse individual corrói o bem coletivo. A repetição do jogo (Módulo 9b) e o desenho institucional são os mecanismos para escapar da armadilha.
 
-!!! note "Relevância do Dilema dos Prisioneiros"
-    O Dilema dos Prisioneiros aparece em inúmeros contextos econômicos: corrida armamentista entre nações, concorrência predatória entre firmas, tragédia dos comuns na exploração de recursos naturais e guerra fiscal entre entes federativos (como veremos no Box Brasil deste capítulo). A compreensão desse jogo é fundamental para o desenho de mecanismos e instituições que alinhem incentivos individuais e coletivos.
-
 <iframe id="iframe-9a1" src="../graficos/cap09/matriz-payoffs.html" title="Figura 9a.1 — Matriz de payoffs e equilíbrio de Nash" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
 
 <script>
@@ -138,7 +135,7 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 | Jogo | Payoffs (genéricos) | EN em puras | EN em mistas | Característica | Aplicação |
 |:-----|:-------------------|:------------|:------------|:---------------|:----------|
 | **Dilema dos Prisioneiros** | \(T > R > P > S\); \(2R > T+S\) | (Trair, Trair) — único | — | Dominância estrita; ineficiência | Cartéis, corrida armamentista |
-| **Batalha dos Sexos** | Coordenação com preferências divergentes | (F,F) e (C,C) | \(\sigma_1=(3/4, 1/4)\), \(\sigma_2=(1/4, 3/4)\) | Múltiplos equilíbrios | Padrões tecnológicos |
+| **Batalha dos Sexos** | Coordenação com preferências divergentes | (F,F) e (C,C) | Sim — ver Seção 9a.4 | Múltiplos equilíbrios | Padrões tecnológicos |
 | **Hawk-Dove** | \(V>0\), \(C > V\) | (H,D) e (D,H) | \(p_H = V/C\) | Anti-coordenação | Disputas territoriais |
 | **Coordenação Pura** | Payoffs altos na diagonal | (A,A) e (B,B) | Sim (instável) | Seleção de equilíbrio | Convenções sociais |
 | **Matching Pennies** | Soma zero; interesses opostos | Nenhum | \((1/2, 1/2)\) cada | Jogo estritamente competitivo | Estratégias militares, esportes |
@@ -153,9 +150,11 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 
 No Dilema dos Prisioneiros, a solução era fácil: trair domina cooperar, aconteça o que acontecer. Mas a maioria dos jogos não é tão generosa. Na Batalha dos Sexos, por exemplo, a melhor ação depende do que o outro jogador faz — não existe "bala de prata". Como prever o resultado quando nenhuma estratégia é obviamente superior?
 
-O Nash equilibrium é a ferramenta que generaliza essa lógica: em vez de exigir que uma estratégia ganhe *de tudo*, exige apenas que cada jogador esteja fazendo o melhor *dado o que o outro faz*. É menos ambicioso que dominância — e por isso funciona em muito mais jogos.
+O equilíbrio de Nash é a ferramenta que generaliza essa lógica: em vez de exigir que uma estratégia ganhe *de tudo*, exige apenas que cada jogador esteja fazendo o melhor *dado o que o outro faz*. É menos ambicioso que dominância — e por isso funciona em muito mais jogos.
 
-A resposta de Nash — elegante a ponto de caber numa tese de 28 páginas — é trocar de pergunta. Em vez de buscar uma estratégia boa *contra tudo*, buscar estratégias que sejam boas *umas contra as outras*. O equilíbrio de Nash é um perfil de estratégias que se sustenta sozinho: ninguém quer desviar, dado o que os outros estão fazendo. Essa mudança de perspectiva — de dominância absoluta para consistência mútua — é o salto conceitual que permitiu a Nash generalizar a análise para qualquer jogo. John Nash formulou esse conceito em sua tese de doutorado em Princeton, defendida em 1950 sob orientação de Albert Tucker, com apenas 28 páginas — um dos trabalhos mais concisos e impactantes da história da ciência econômica. A ideia central é que um equilíbrio é um perfil de estratégias que se *sustenta a si próprio*: se cada jogador acredita que os demais jogarão as estratégias de equilíbrio, então é de fato ótimo para ele jogar sua estratégia de equilíbrio — e a crença se confirma.
+A resposta de Nash — elegante a ponto de caber numa tese de doutorado de 28 páginas, defendida em Princeton em 1950 sob orientação de Albert Tucker[^nash-tese] — é trocar de pergunta. Em vez de buscar uma estratégia boa *contra tudo*, buscar estratégias que sejam boas *umas contra as outras*. O equilíbrio de Nash é um perfil de estratégias que se *sustenta a si próprio*: se cada jogador acredita que os demais jogarão as estratégias de equilíbrio, então é de fato ótimo para ele jogar sua estratégia de equilíbrio — e a crença se confirma. Essa mudança de perspectiva — de dominância absoluta para consistência mútua — é o salto conceitual que permitiu a Nash generalizar a análise para qualquer jogo.
+
+[^nash-tese]: A tese de Nash, *Non-Cooperative Games* (1950), é possivelmente o documento mais conciso e impactante da história da ciência econômica — 28 páginas que revolucionaram três campos simultaneamente (economia, matemática e ciência política). Para comparação, a tese média de doutorado em economia tem cerca de 150 páginas. Nash estava, aparentemente, demasiado ocupado sendo genial para ser prolixo.
 
 Essa propriedade de auto-sustentação tem uma leitura econômica poderosa: o equilíbrio de Nash é uma **previsão estável** de como agentes racionais e informados jogarão. Não é necessário supor que os jogadores se comuniquem ou façam acordos vinculantes — basta que cada um raciocine corretamente sobre o comportamento dos demais. Em mercados financeiros, os preços de ativos tendem a refletir equilíbrios de Nash entre investidores que simultaneamente tentam explorar desvios de preços e, ao fazê-lo, os eliminam. Em leilões (Capítulo 9c), os lances de equilíbrio são funções das informações privadas de cada participante que formam um equilíbrio bayesiano — generalização direta do conceito de Nash.
 
@@ -237,7 +236,7 @@ Dois animais (ou firmas) disputam um recurso de valor \(V\). Cada um pode ser ag
 **Tabela 9a.4 — Hawk-Dove (Falcão-Pomba).**
 </div>
 
-Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equilíbrios em puras — \((H, D)\) e \((D, H)\) — e um em mistas. Note que, diferentemente da Batalha dos Sexos, o Hawk-Dove é um jogo de **anti-coordenação**: os equilíbrios em puras envolvem jogadores fazendo escolhas *diferentes* (um agressivo, outro passivo). Em mercados, essa estrutura aparece quando firmas segmentam nichos para evitar concorrência destrutiva. A versão biológica desse jogo (Maynard Smith e Price, 1973) está na origem da **teoria dos jogos evolutiva**, que estuda como populações de agentes convertem para padrões estáveis de comportamento sem assumir racionalidade individual.
+Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equilíbrios em puras — \((H, D)\) e \((D, H)\) — e um em mistas. Note que, diferentemente da Batalha dos Sexos, o Hawk-Dove é um jogo de **anti-coordenação**: os equilíbrios em puras envolvem jogadores fazendo escolhas *diferentes* (um agressivo, outro passivo). Em mercados, essa estrutura aparece quando firmas segmentam nichos para evitar concorrência destrutiva. A versão biológica desse jogo (Maynard Smith e Price, 1973) está na origem da **teoria dos jogos evolutiva**, que estuda como populações de agentes convergem para padrões estáveis de comportamento sem assumir racionalidade individual.
 
 ---
 
@@ -309,7 +308,9 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 O exemplo da Batalha dos Sexos ilustra como calcular o equilíbrio misto em um jogo específico. Mas será que *todo* jogo finito possui ao menos um equilíbrio? A resposta afirmativa — o Teorema de Nash — é um dos resultados mais importantes da matemática aplicada do século XX. Sua demonstração utiliza o Teorema do Ponto Fixo de Kakutani e, embora a apresentação formal possa parecer abstrata, a intuição geométrica é elegante: as correspondências de melhor resposta dos jogadores devem necessariamente se "cruzar" em algum ponto.
 
 !!! theorem "Teorema de Nash (1950)"
-    Todo jogo finito (número finito de jogadores e de estratégias puras para cada jogador) possui pelo menos um **equilíbrio de Nash em estratégias mistas**.
+    Todo jogo finito (número finito de jogadores e de estratégias puras para cada jogador) possui pelo menos um **equilíbrio de Nash em estratégias mistas**.[^kakutani]
+
+[^kakutani]: A demonstração usa o Teorema do Ponto Fixo de Kakutani — o que pode intimidar o leitor na primeira leitura. Uma confissão: a maioria dos economistas aplicados nunca precisou refazer essa prova depois da pós-graduação. O que importa é a *implicação*: todo jogo finito tem solução. Se você está procurando o equilíbrio de um jogo e não encontra em estratégias puras, não desista — ele está escondido nas mistas. Kakutani garante.
 
 !!! proof "Demonstração: Existência de equilíbrio de Nash (caso 2×2)"
     **Objetivo**: Demonstrar a existência de equilíbrio de Nash em estratégias mistas para um jogo com dois jogadores, cada um com duas estratégias puras.
@@ -365,7 +366,7 @@ O conceito de oligopólio remonta, pelo menos, a Cournot (1838), que analisou a 
 
 A pergunta central desta seção é: como a forma da competição (preço vs. quantidade) e a ordem do movimento (simultâneo vs. sequencial) afetam o resultado de mercado? Extensões desses modelos — diferenciação de produto, colusão tácita, dissuasão de entrada, fusões e regulação — são tratadas no Capítulo 16.
 
-### Competição de Cournot (quantidades)
+### Competição de Cournot: quanto produzir quando o vizinho também está produzindo
 
 Começamos pelo modelo mais antigo e, em muitos sentidos, mais intuitivo de oligopólio. No modelo de Cournot (1838), cada firma decide *quanto* produzir, e o preço de mercado se ajusta para equilibrar a oferta total com a demanda. A variável estratégica é a quantidade, e o jogo é simultâneo: nenhuma firma observa a decisão da outra antes de se comprometer com sua produção.
 
@@ -416,7 +417,7 @@ q_1^* = \frac{a - 2c_1 + c_2}{3b}, \qquad q_2^* = \frac{a - 2c_2 + c_1}{3b}
 
 Comparando com o equilíbrio simétrico $\eqref{eq:9a.6}$, a firma com menor custo produz mais e obtém lucro maior. Esse resultado tem implicação direta para a análise de fusões: se uma fusão reduz custos (gera eficiências), a firma resultante aumenta sua produção e pode até reduzir o preço de mercado. O CADE precisa ponderar esse efeito de eficiência contra o aumento de poder de mercado.
 
-### Competição de Bertrand (preços)
+### Competição de Bertrand: o paradoxo de que dois é multidão
 
 O que acontece quando as firmas competem em preços em vez de quantidades? A resposta, surpreendente e provocadora, é conhecida como o *paradoxo de Bertrand*: bastam duas firmas para que o preço caia até o custo marginal, eliminando completamente os lucros econômicos. A mudança da variável estratégica — de quantidade para preço — transforma radicalmente a natureza da competição.
 
@@ -452,11 +453,14 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 **Figura 9a.3 — Funções de melhor-resposta de Cournot.** Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.
 </div>
 
-### Competição de Stackelberg (líder-seguidora)
+### Competição de Stackelberg: a vantagem de jogar primeiro
 
 Os modelos de Cournot e Bertrand pressupõem decisões simultâneas. Mas em muitos mercados, uma firma estabelecida — por tamanho, reputação ou capacidade instalada — age como líder, tomando sua decisão antes das concorrentes. Existe vantagem em mover primeiro? E como a seguidora deve reagir? O modelo de Stackelberg (1934) responde a essas perguntas, introduzindo a dimensão temporal na competição por quantidades.
 
-No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) *primeiro*, e a firma 2 (seguidora) observa \(q_1\) e escolhe \(q_2\). A solução é por **indução retroativa** (conceito detalhado no Módulo 9b).
+!!! note "Por que Stackelberg está neste módulo?"
+    Stackelberg é, rigorosamente, um jogo *sequencial* — e portanto pertenceria ao Módulo 9b. Apresentamo-lo aqui por uma razão pedagógica: a comparação direta com Cournot e Bertrand (mesma estrutura de mercado, variável diferente) é mais iluminadora do que tratá-lo isoladamente. O leitor deve saber, porém, que a justificativa formal para o resultado de Stackelberg — a indução retroativa e o equilíbrio perfeito em subjogos — será desenvolvida no Módulo 9b (Seção 9b.1). Em particular, a "vantagem do primeiro movimento" só existe porque a líder se *compromete credivelmente* com uma quantidade; se pudesse mudar de ideia, o resultado voltaria a ser Cournot. A credibilidade desse comprometimento é o tema central do próximo módulo.
+
+No modelo de Stackelberg, a firma 1 (líder) escolhe \(q_1\) *primeiro*, e a firma 2 (seguidora) observa \(q_1\) e escolhe \(q_2\). A solução é por **indução retroativa** (conceito formalizado no Módulo 9b, Seção 9b.1).
 
 **Passo 1 — Seguidora.** Dado \(q_1\), a firma 2 maximiza \(\pi_2\):
 
@@ -644,7 +648,67 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
 ---
 
-*Nos jogos simultâneos, todos apostam no escuro. No próximo módulo, alguém move primeiro — e isso muda tudo.*
+*Nos jogos simultâneos, todos apostam no escuro. No próximo módulo, alguém move primeiro — e isso muda tudo. And now for something completely different.*
+
+---
+
+## 🧪 Atividades de Sala de Aula
+
+!!! classroom "Experimento 9a.1 — Dilema dos Prisioneiros ao vivo (20 min)"
+    **Objetivo:** Demonstrar a tensão entre racionalidade individual e eficiência coletiva — e testar se a cooperação emerge com repetição.
+
+    **Material:** Cartões com "C" (Cooperar) e "T" (Trair) para cada aluno, tabela de payoffs projetada.
+
+    **Protocolo:**
+
+    1. **Formação de duplas** (2 min): Alunos formam pares aleatórios. Cada dupla recebe 2 cartões (C e T).
+    2. **Rodada única** (3 min): Sem comunicação, cada aluno escolhe C ou T simultaneamente (cartões virados para baixo, revelados ao mesmo tempo). Payoffs: (C,C) = 3 pontos cada; (C,T) = 0 e 5; (T,T) = 1 cada. Anote os resultados.
+    3. **5 rodadas com o mesmo parceiro** (8 min): Repita o jogo 5 vezes com o mesmo par. Permita que vejam as escolhas anteriores do parceiro (mas **não** permitam conversa). Anote rodada a rodada.
+    4. **Debrief coletivo** (7 min):
+        - Projete a distribuição de escolhas (% cooperação) por rodada. Tipicamente, cooperação cresce nas rodadas 2–4 e cai na rodada 5 (efeito de endgame).
+        - Pergunte: "Quem cooperou mais nas rodadas intermediárias? Por quê?" → Conecte com o *shadow of the future* (Módulo 9b).
+        - Pergunte: "Quem traiu na última rodada sabendo que não haveria 'amanhã'?" → Conecte com *unraveling* em jogos finitos.
+        - Compare a taxa de cooperação observada com a previsão teórica (0% em jogo de uma rodada; 0% em jogo finito por indução retroativa).
+
+    **Variação avançada:** Após o debrief, jogue mais 5 rodadas com parceiro *aleatório* (rematching a cada rodada). Preveja: a cooperação vai cair drasticamente. Por quê? Porque a repetição com parceiro fixo cria reputação; com parceiro aleatório, cada rodada é efetivamente um jogo de uma vez.
+
+    **Conexão com o conteúdo:** Dilema dos Prisioneiros (Seção 9a.2), Folk Theorem e cooperação em jogos repetidos (Módulo 9b). Evidência experimental: Axelrod (1984), *The Evolution of Cooperation*.
+
+!!! classroom "Experimento 9a.2 — Leilão de primeiro preço vs. segundo preço (25 min)"
+    **Objetivo:** Verificar empiricamente o Teorema da Equivalência de Receita e o sombreamento de lances (*bid shading*).
+
+    **Material:** Baralho de cartas (ou geradores aleatórios no celular); envelopes de papel; planilha projetada.
+
+    **Protocolo:**
+
+    1. **Sorteio de valores** (2 min): Cada aluno sorteia uma carta de um baralho (Ás = 1, ..., Rei = 13). Esse é seu valor privado \(v_i\). Ninguém mostra a carta.
+    2. **Leilão de primeiro preço** (8 min): Grupos de 4 alunos. Cada um escreve seu lance \(b_i\) em papel dobrado e entrega ao "leiloeiro" (um colega). O maior lance ganha e paga o próprio lance. Lucro = \(v_i - b_i\) se ganhou, 0 se perdeu. Façam 3 rodadas (re-sorteio de cartas a cada rodada).
+    3. **Leilão de segundo preço** (8 min): Mesmos grupos. Agora o maior lance ganha, mas paga o *segundo* maior lance. Façam 3 rodadas.
+    4. **Debrief** (7 min):
+        - Calcule a receita média em cada formato. São próximas? → Equivalência de receita.
+        - Pergunte: "Quanto você sombreou no primeiro preço?" → Compare com a fórmula teórica \(b(v) = v \cdot (N-1)/N = v \cdot 3/4\).
+        - Pergunte: "No segundo preço, alguém lançou abaixo do valor? Acima?" → Discuta por que \(b_i = v_i\) é dominante.
+        - Alunos que lançaram acima do valor no segundo preço cometeram a *maldição do vencedor* em miniatura.
+
+    **Conexão com o conteúdo:** Leilões IPV (Módulo 9c, Seção 9c.3), Teorema da Equivalência de Receita (Myerson, 1981; Riley e Samuelson, 1981). Inspirado em Holt (2007, Cap. 19).
+
+!!! classroom "Experimento 9a.3 — Competição de Cournot com post-its (15 min)"
+    **Objetivo:** Demonstrar o equilíbrio de Cournot e a tentação do conluio.
+
+    **Material:** Post-its, quadro branco.
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Projete: demanda inversa \(P = 100 - Q\), custo marginal \(c = 10\). Alunos formam duplas (firmas). Cada firma escolhe quantidade \(q_i \in \{0, 5, 10, ..., 45\}\).
+    2. **Rodada 1 — Sem comunicação** (4 min): Cada firma escreve \(q_i\) no post-it, entrega ao professor. Calcule \(Q\), \(P\) e lucros. Projete os resultados.
+    3. **Rodada 2 — Com comunicação** (4 min): Permita que as duplas conversem por 1 minuto antes de decidir (separadamente). Observe: muitas tentarão conluio (\(q_1 = q_2 = 22{,}5\)), mas sem enforcement, a tentação de desviar é forte.
+    4. **Debrief** (4 min):
+        - Compare as quantidades observadas com Cournot (\(q^* = 30\) cada), monopólio dividido (\(q = 22{,}5\) cada) e Bertrand (\(q = 45\) cada).
+        - Pergunte: "Quem prometeu produzir 22,5 mas colocou 30 no post-it?" → Dilema dos Prisioneiros no oligopólio.
+
+    **Conexão com o conteúdo:** Modelo de Cournot (Seção 9a.5), conluio e incentivo a desviar (Módulo 9b).
+
+---
 
 ## 🧠 Revisão Rápida
 
@@ -1053,7 +1117,7 @@ e custo marginal \(c = 10\) para ambas.
 
     **Relevância:** Para o Brasil, os resultados têm implicações diretas para análise do CADE em atos de concentração. A metodologia é aplicável a mercados de combustíveis, farmácias e serviços de saúde no interior. O artigo testa empiricamente as previsões de Cournot e Bertrand (Seção 9a.5).
 
-??? pesquisa "Adams, Brian W. (2025). *Game Theory for Applied Econometricians: Data Analytics with R*. Boca Raton: CRC Press. Capítulos 1–5."
+??? pesquisa "Adams, Christopher P. (2025). *Game Theory for Applied Econometricians: Data Analytics with R*. Boca Raton: CRC Press. Capítulos 1–5."
     **Escopo:** Parte I do livro cobre jogos estáticos com informação completa — a matéria deste módulo — com ênfase em aplicações empíricas e análise de dados em R.
 
     **Contribuição pedagógica:** Adams conecta cada conceito teórico a um dataset e um script R. O Capítulo 1 analisa o game show *Friend or Foe* (Dilema dos Prisioneiros com dinheiro real); o Capítulo 2 estuda entrada de firmas no mercado de pneus; o Capítulo 3 modela competição de hambúrgueres; o Capítulo 5 testa estratégias mistas com dados de pênaltis.
@@ -1109,7 +1173,7 @@ e custo marginal \(c = 10\) para ambas.
 
 ## 📚 Referências do Capítulo
 
-- Adams, Brian W. 2025. [*Game Theory for Applied Econometricians: Data Analytics with R*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press.
+- Adams, Christopher P. 2025. [*Game Theory for Applied Econometricians: Data Analytics with R*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press.
 - Bajari, Patrick, C. Lanier Benkard, e Jonathan Levin. 2007. "Estimating Dynamic Models of Imperfect Competition." *Econometrica* 75 (5): 1331–1370. [DOI](https://doi.org/10.1111/j.1468-0262.2007.00796.x)
 - Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books.
 - Bertrand, Joseph. 1883. "Théorie mathématique de la richesse sociale." *Journal des Savants* 67: 499–508.

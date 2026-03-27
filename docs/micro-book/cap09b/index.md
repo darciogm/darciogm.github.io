@@ -16,7 +16,9 @@ A dimensão temporal transforma radicalmente a análise estratégica. A sequenci
 
 A ferramenta visual dos jogos sequenciais é a **árvore de decisão** (forma extensiva): nós são momentos de escolha, ramos são ações, folhas são payoffs. É como um fluxograma — mas onde cada "caixa de decisão" pertence a um jogador diferente, e cada um vê o que os anteriores fizeram.
 
-Como resolver? **Comece pelo fim.** Olhe os últimos nós da árvore e pergunte: "o que o jogador faria aqui?" Anote a resposta, "pode" esses nós, suba um nível e repita. Quando chegar ao início, você tem a solução completa. Esse procedimento de "descascar a cebola de fora para dentro" é a **indução retroativa**, e o equilíbrio que ela produz é o EPS.
+Como resolver? **Comece pelo fim.** Olhe os últimos nós da árvore e pergunte: "o que o jogador faria aqui?" Anote a resposta, "pode" esses nós, suba um nível e repita. Quando chegar ao início, você tem a solução completa. Esse procedimento de "descascar a cebola de fora para dentro" é a **indução retroativa**, e o equilíbrio que ela produz é o EPS.[^spanish-inquisition]
+
+[^spanish-inquisition]: *"Nobody expects the Spanish Inquisition!"* — Os fãs de Monty Python reconhecerão a analogia: no famoso sketch, os cardeais aparecem *depois* que alguém os menciona, repetidamente, cada vez com um conjunto diferente de "armas" ("fear, surprise, and a ruthless efficiency..."). A indução retroativa funciona ao contrário: você *antecipa* o que vai acontecer em cada nó futuro — inclusive nos que ninguém espera alcançar — e usa essa antecipação para decidir o que fazer agora. Nobody expects backward induction, mas ela funciona.
 
 !!! definition "Equilíbrio Perfeito em Subjogos (EPS)"
     Um perfil de estratégias constitui um **Equilíbrio Perfeito em Subjogos** se induz um equilíbrio de Nash em **todo subjogo** do jogo na forma extensiva.
@@ -95,9 +97,7 @@ O exemplo anterior mostra que ameaças vazias são descartadas pela indução re
 
 A lógica do comprometimento conecta-se diretamente aos resultados do Módulo 9a sobre estratégias dominantes e ao Módulo 9d sobre sinalização: em todos esses contextos, ações cujo custo direto parece injustificado adquirem racionalidade quando se considera seu efeito sobre as crenças e ações do oponente.
 
-O conceito de **dispositivo de comprometimento** (*commitment device*) vai além do contexto estratégico e permeia a economia comportamental. No Capítulo 18, sobre escolha intertemporal, veremos que indivíduos com preferências inconsistentes no tempo (desconto hiperbólico) podem se beneficiar de mecanismos que restringem suas próprias escolhas futuras — como contas de poupança com penalidade por saque antecipado, ou metas públicas de política fiscal que limitam a discricionariedade futura dos governantes. A analogia com o comprometimento estratégico é direta: tanto no jogo de entrada quanto na escolha intertemporal, o agente *ganha* ao restringir suas próprias opções, porque essa restrição altera o comportamento dos outros (no jogo de entrada) ou do seu "eu futuro" (na escolha intertemporal). Hernán Cortés, ao queimar seus navios na costa do México em 1519, eliminou a opção de retirada — e com isso tornou crível para seus soldados (e para os astecas) que a única opção era avançar. O princípio é o mesmo: reduzir o conjunto de ações disponíveis pode ser estrategicamente vantajoso quando essa redução altera as expectativas dos demais agentes.
-
-No contexto de política econômica, o comprometimento assume diversas formas institucionais: a independência do Banco Central (Lei Complementar 179/2021 no Brasil) é um dispositivo de comprometimento que retira do governo a capacidade de manipular a política monetária para fins eleitorais; as regras fiscais (teto de gastos, arcabouço fiscal) comprometem o governo a trajetórias de gastos que, sem a regra, ele teria incentivo para abandonar. Em todos esses casos, o paradoxo é o mesmo: a restrição voluntária aumenta o poder do agente porque torna suas ações futuras previsíveis e suas ameaças (ou promessas) críveis.
+O conceito de **dispositivo de comprometimento** (*commitment device*) vai além do contexto estratégico. No Capítulo 18, sobre escolha intertemporal, veremos que indivíduos com preferências inconsistentes no tempo (desconto hiperbólico) ganham ao restringir suas próprias opções futuras — contas de poupança com penalidade por saque, metas públicas de política fiscal. O princípio é o mesmo: reduzir o conjunto de ações disponíveis pode ser estrategicamente vantajoso quando essa redução altera as expectativas dos demais agentes (ou do "eu futuro"). Na política econômica, a independência do Banco Central (LC 179/2021) e as regras fiscais (arcabouço fiscal) são dispositivos de comprometimento: a restrição voluntária torna as ações futuras previsíveis e as promessas críveis.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Comprometer-se é ganhar poder ao restringir suas próprias opções — um paradoxo que está no coração da estratégia.
@@ -138,7 +138,7 @@ O resultado de *unraveling* em jogos finitos é desanimador para quem espera coo
 !!! definition "Estratégia de gatilho (*Grim Trigger*)"
     A estratégia de gatilho prescreve: coopere no primeiro período e continue cooperando enquanto todos cooperarem. Se qualquer jogador desviar, puna jogando a estratégia não cooperativa **para sempre**.
 
-No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta \in (0,1)\) e payoffs \(T > R > P > S\), a cooperação é sustentável pela estratégia de gatilho se e somente se:
+No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta \in (0,1)\) e payoffs \(T > R > P > S\) (onde \(T\) = tentação de trair, \(R\) = recompensa da cooperação mútua, \(P\) = punição da traição mútua e \(S\) = *sucker's payoff* — conforme definido no Módulo 9a, Seção 9a.2), a cooperação é sustentável pela estratégia de gatilho se e somente se:
 
 \[
 \frac{R}{1 - \delta} \geq T + \frac{\delta P}{1 - \delta} \quad \Longleftrightarrow \quad \delta \geq \frac{T - R}{T - P} \equiv \delta^*
@@ -199,7 +199,7 @@ Uma resposta à multiplicidade de equilíbrios do Folk Theorem é o conceito de 
 
     **Dados — Aviação comercial:**
 
-    A guerra de preços entre companhias aéreas americanas no início dos anos 1990 é um dos casos mais estudados. Em 1992, American Airlines lançou a promoção "Value Pricing" que reduziu tarifas em até 38%. As rivais (United, Delta, Northwest) retaliaram com descontos agressivos, gerando perdas estimadas em US$ 4 bilhões para o setor em um único ano (Morrison e Winston, 1996). A dinâmica seguiu o padrão previsto pelo modelo de Green e Porter (1984): um choque (queda de demanda pós-recessão) tornou impossível distinguir entre queda legítima de demanda e desvio do conluio, desencadeando a fase de punição. O episódio terminou com retorno gradual aos preços pré-guerra — exatamente como prevê o tit-for-tat.
+    A guerra de preços entre companhias aéreas americanas no início dos anos 1990 é um dos casos mais estudados. Em 1992, American Airlines lançou a promoção "Value Pricing" que reduziu tarifas em até 38%. As rivais (United, Delta, Northwest) retaliaram com descontos agressivos, gerando perdas estimadas em US$ 4 bilhões para o setor em um único ano (Morrison e Winston, 1996). A dinâmica seguiu o padrão previsto pelo modelo de Green e Porter (1984): um choque (queda de demanda pós-recessão) tornou impossível distinguir entre queda legítima de demanda e desvio do conluio, desencadeando a fase de punição. O episódio terminou com retorno gradual aos preços pré-guerra — exatamente como prevê o *tit-for-tat*.
 
     No Brasil, a entrada da Gol em 2001 como companhia *low-cost* desencadeou respostas agressivas de TAM e Varig. A Varig, incapaz de sustentar as perdas da guerra de preços (seu \(\delta\) efetivo era baixo devido à crise financeira), foi a primeira a sair do mercado — falindo em 2006. Esse resultado é consistente com o modelo: em guerras de preços, sobrevive quem é mais paciente (maior \(\delta\)).
 
@@ -268,9 +268,9 @@ Além do grim trigger, existem estratégias mais sofisticadas, comparadas na [Ta
 
     **Dados:** Fajgelbaum et al. (2020), em estudo publicado no *Quarterly Journal of Economics*, estimaram que as tarifas da guerra comercial EUA-China custaram aos consumidores e importadores americanos US$ 51 bilhões por ano (em preços de 2018), com perda líquida de bem-estar de US$ 7,2 bilhões anuais — uma estimativa conservadora que não inclui efeitos de incerteza sobre investimento. Amiti, Redding e Weinstein (2019) mostraram que a incidência das tarifas recaiu quase integralmente sobre consumidores e firmas americanas, não sobre exportadores chineses — contradizendo a narrativa política de que "a China paga as tarifas". Do lado chinês, Handley, Kamal e Monarch (2020) documentaram redução de 25% nas exportações chinesas nos produtos tarifados, com desvio de comércio significativo para Vietnã, México e outros países — evidência de substituição estratégica no comércio internacional.
 
-    Bagwell e Staiger (1999, 2002) formalizaram a OMC como mecanismo de sustentação cooperativa em jogos repetidos entre governos: as regras de reciprocidade e de nação mais favorecida funcionam como estratégias de cooperação condicional (análogas ao tit-for-tat), e o Órgão de Solução de Controvérsias (OSC) da OMC como mecanismo de enforcement que reduz o limiar \(\delta^*\) necessário para sustentar a cooperação. A paralisia do Órgão de Apelação da OMC desde dezembro de 2019 — resultado do bloqueio americano à nomeação de novos juízes — enfraqueceu precisamente esse mecanismo de punição, elevando o \(\delta^*\) efetivo e tornando a cooperação mais difícil de sustentar.
+    Bagwell e Staiger (1999, 2002) formalizaram a OMC como mecanismo de sustentação cooperativa em jogos repetidos entre governos: as regras de reciprocidade e de nação mais favorecida funcionam como estratégias de cooperação condicional (análogas ao *tit-for-tat*), e o Órgão de Solução de Controvérsias (OSC) da OMC como mecanismo de enforcement que reduz o limiar \(\delta^*\) necessário para sustentar a cooperação. A paralisia do Órgão de Apelação da OMC desde dezembro de 2019 — resultado do bloqueio americano à nomeação de novos juízes — enfraqueceu precisamente esse mecanismo de punição, elevando o \(\delta^*\) efetivo e tornando a cooperação mais difícil de sustentar.
 
-    **Análise:** A guerra comercial EUA-China ilustra a fragilidade do equilíbrio cooperativo quando os fatores de desconto se alteram. Do lado americano, a percepção de que a China não cumpria compromissos de abertura (propriedade intelectual, subsídios a estatais) equivale a uma reavaliação do payoff de cooperação \(R\), reduzindo-o relativamente ao payoff de desvio \(T\) — o que eleva o \(\delta^*\) mínimo para sustentar cooperação. Do lado chinês, a retaliação proporcional segue a lógica exata do tit-for-tat: punir a defecção alheia para sinalizar que a cooperação futura exige reciprocidade. A teoria prevê que o retorno à cooperação é possível (tit-for-tat "perdoa" após punir), mas a acumulação de retaliações e a erosão institucional da OMC criam histerese — o custo de reconstruir a confiança excede o custo de um simples retorno ao status quo ante. Para o Brasil, as implicações são diretas: como beneficiário líquido do sistema multilateral (exportações de commodities dependem de regras estáveis), o enfraquecimento da OMC aumenta a incerteza e reduz o valor esperado do comércio — um custo que não aparece nas estimativas de impacto direto das tarifas bilaterais.
+    **Análise:** A guerra comercial EUA-China ilustra a fragilidade do equilíbrio cooperativo quando os fatores de desconto se alteram. Do lado americano, a percepção de que a China não cumpria compromissos de abertura (propriedade intelectual, subsídios a estatais) equivale a uma reavaliação do payoff de cooperação \(R\), reduzindo-o relativamente ao payoff de desvio \(T\) — o que eleva o \(\delta^*\) mínimo para sustentar cooperação. Do lado chinês, a retaliação proporcional segue a lógica exata do *tit-for-tat*: punir a defecção alheia para sinalizar que a cooperação futura exige reciprocidade. A teoria prevê que o retorno à cooperação é possível (*tit-for-tat* "perdoa" após punir), mas a acumulação de retaliações e a erosão institucional da OMC criam histerese — o custo de reconstruir a confiança excede o custo de um simples retorno ao status quo ante. Para o Brasil, as implicações são diretas: como beneficiário líquido do sistema multilateral (exportações de commodities dependem de regras estáveis), o enfraquecimento da OMC aumenta a incerteza e reduz o valor esperado do comércio — um custo que não aparece nas estimativas de impacto direto das tarifas bilaterais.
 
     **Fonte:** Fajgelbaum, Pablo D. et al. (2020). "The Return to Protectionism." *Quarterly Journal of Economics*, 135(1), 1–55. Amiti, Mary, Redding, Stephen J. e Weinstein, David E. (2019). "The Impact of the 2018 Tariffs on Prices and Welfare." *Journal of Economic Perspectives*, 33(4), 187–210. Bagwell, Kyle e Staiger, Robert W. (2002). *The Economics of the World Trading System*. Cambridge, MA: MIT Press.
 
@@ -310,11 +310,15 @@ x_1^* = \frac{1}{1 + \delta} \quad \text{(share do proponente)}
 A derivação do resultado de Rubinstein ilustra com precisão a força da indução retroativa: para que o jogador 2 aceite a proposta do jogador 1 no período 1, deve receber ao menos tanto quanto receberia sendo o proponente no período 2 (descontado por \(\delta_2\)). Mas o que o jogador 2 obteria como proponente no período 2 depende do que o jogador 1 aceitaria no período 3 (descontado por \(\delta_1\)). Esse encadeamento de condições de indiferença — repetido para todas as rodadas possíveis — determina unicamente a divisão do excedente. O resultado é notável: um jogo com infinitas rodadas possíveis tem um único equilíbrio, encontrado pela aplicação sistemática do princípio de racionalidade retrospectiva.
 
 !!! idea "Intuição Econômica"
-    **Em uma frase:** Na barganha de Rubinstein, quem é mais paciente (maior \(\delta\)) fica com a maior fatia.
+    **Em uma frase:** Na barganha de Rubinstein, quem é mais paciente (maior \(\delta\)) fica com a maior fatia — mas o proponente sempre tem uma ligeira vantagem.
+
+    **Dois efeitos em ação:** O resultado de Rubinstein reflete a interação de dois determinantes do poder de barganha:
+
+    1. **Vantagem do proponente** (*first-mover advantage*): mesmo com desconto simétrico (\(\delta_1 = \delta_2 = \delta\)), o jogador que faz a primeira proposta obtém \(1/(1+\delta) > 1/2\) — mais do que a metade. Essa vantagem vem do fato de que o respondedor enfrenta a escolha entre aceitar *agora* e esperar (perdendo \(\delta\) do valor pelo atraso). A vantagem é pequena quando ambos são pacientes (\(\delta \to 1 \implies 1/(1+\delta) \to 1/2\)) e grande quando são impacientes (\(\delta \to 0 \implies 1/(1+\delta) \to 1\), como no jogo do ultimato).
+
+    2. **Vantagem da paciência** (*patience advantage*): quando \(\delta_1 \neq \delta_2\), o jogador mais paciente extrai mais do bolo, independentemente de quem propõe primeiro. Pela equação $\eqref{eq:9b.2}$, se \(\delta_1 > \delta_2\), o jogador 1 obtém um share maior. A paciência funciona como poder de barganha porque quem pode esperar mais sem custos elevados é mais difícil de pressionar.
 
     **Pense assim:** Numa negociação salarial entre o sindicato dos metalúrgicos e uma montadora, cada rodada sem acordo custa para ambos (trabalhadores perdem salário, empresa perde produção). Quem aguenta mais tempo sem acordo — quem tem mais "reservas" — consegue extrair mais valor.
-
-    **Limite:** Quando \(\delta \to 1\) (ambos muito pacientes), a divisão converge para 50/50 — o resultado "justo". Quando \(\delta \to 0\) (ambos impacientes), o proponente fica com quase tudo — como no jogo do ultimato.
 
     **Conexão com Nash Bargaining:** Rubinstein (1982) mostrou que o EPS de ofertas alternadas converge para a solução de barganha de Nash quando o intervalo entre ofertas vai a zero — uma fundamentação não cooperativa para o modelo cooperativo.
 
@@ -423,7 +427,51 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
 ---
 
-*Jogos repetidos e barganha revelam o poder do tempo. No próximo módulo, tiramos a última certeza: os jogadores nem sabem contra quem estão jogando.*
+*Jogos repetidos e barganha revelam o poder do tempo. No próximo módulo, tiramos a última certeza: os jogadores nem sabem contra quem estão jogando. And now for something completely different.*
+
+---
+
+## 🧪 Atividades de Sala de Aula
+
+!!! classroom "Experimento 9b.1 — Jogo do Ultimato com dinheiro real (20 min)"
+    **Objetivo:** Confrontar a previsão teórica (proponente oferece quase nada, respondedor aceita) com o comportamento observado — e motivar a discussão sobre preferências sociais (Capítulo 8) e limites da racionalidade.
+
+    **Material:** Envelopes com R$ 10 em moedas de R$ 1 (ou fichas/pontos equivalentes); formulários de proposta e resposta.
+
+    **Protocolo:**
+
+    1. **Formação de pares anônimos** (3 min): Divida a turma em proponentes e respondedores. Pares são formados anonimamente (proponente não sabe quem é seu respondedor e vice-versa). Use números aleatórios.
+    2. **Proposta** (3 min): Cada proponente decide como dividir R$ 10: escreve em papel fechado "Ofereço R$ X ao respondedor, fico com R$ (10 - X)".
+    3. **Resposta** (3 min): Cada respondedor recebe a oferta (sem saber quem fez) e decide: Aceitar (ambos recebem conforme a divisão) ou Rejeitar (ambos recebem R$ 0).
+    4. **Coleta de dados** (3 min): Registre todas as ofertas e respostas. Projete a distribuição.
+    5. **Debrief** (8 min):
+        - **Previsão teórica**: proponente oferece R$ 0 (ou R$ 1), respondedor aceita. Quantas ofertas foram ≤ R$ 2? Quantas foram rejeitadas?
+        - **Resultado típico**: ofertas modais entre R$ 4 e R$ 5; ofertas abaixo de R$ 2 frequentemente rejeitadas.
+        - **Discussão**: "Por que respondedores rejeitam ofertas positivas (recusam dinheiro grátis)?" → Aversão à inequidade (Fehr-Schmidt, Cap. 8), punição altruísta, normas de fairness.
+        - "Se fossem dois bots racionais, qual seria o resultado?" → EPS por indução retroativa.
+        - "O que muda se o proponente sabe o nome do respondedor?" → Normas sociais, identidade, efeito do anonimato.
+
+    **Conexão com o conteúdo:** Jogo do ultimato (Seção 9b.3), EPS vs. comportamento observado, ponte com economia comportamental (Cap. 8). Referência: Güth, Schmittberger e Schwarze (1982), "An Experimental Analysis of Ultimatum Bargaining", *Journal of Economic Behavior & Organization*.
+
+!!! classroom "Experimento 9b.2 — Mercado de limões ao vivo (25 min)"
+    **Objetivo:** Demonstrar visualmente o *market unraveling* de Akerlof — observar a seleção adversa destruindo o mercado em tempo real.
+
+    **Material:** Cartas de baralho (Ás a 10 = qualidades 1 a 10); fichas de "dinheiro"; quadro para registrar transações.
+
+    **Protocolo:**
+
+    1. **Setup** (5 min): Metade da turma são vendedores, metade compradores. Cada vendedor sorteia uma carta (qualidade \(q\), secreta). Valor do carro para o vendedor = \(q\); valor para o comprador = \(1{,}5q\). Há ganhos de troca em *toda* transação (comprador valoriza mais).
+    2. **Rodada 1 — Informação simétrica** (5 min): Vendedores mostram a carta. Compradores e vendedores negociam livremente. Registre preços e qualidades transacionadas. Resultado esperado: todas as transações ocorrem a preços entre \(q\) e \(1{,}5q\).
+    3. **Rodada 2 — Informação assimétrica** (8 min): Vendedores *não* mostram a carta. O comprador sabe apenas a distribuição (uniforme de 1 a 10). Negociação livre. Registre o que acontece.
+    4. **Debrief** (7 min):
+        - Compare a quantidade de transações nas Rodadas 1 e 2. Na Rodada 2, carros de alta qualidade foram vendidos?
+        - "Quem saiu do mercado primeiro?" → Vendedores de carros bons (o preço médio era baixo demais).
+        - "Isso acontece no mundo real?" → Carros usados, planos de saúde individuais (Box Brasil ANS, Cap. 9d).
+        - "Que mecanismo poderia resolver?" → Garantias (sinalização), vistoria (certificação), obrigatoriedade (regulação).
+
+    **Conexão com o conteúdo:** Seleção adversa de Akerlof (Módulo 9d, Seção 9d.5), *market unraveling*, mecanismos de mitigação. Inspirado em Holt (2007, Cap. 24) e Bergstrom e Miller (2000, Cap. 32).
+
+---
 
 ## 🧠 Revisão Rápida
 
@@ -481,7 +529,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 - Jogos dinâmicos com informação completa envolvem jogadores que agem em sequência, podendo observar as ações anteriores. O conceito de solução central é o **Equilíbrio Perfeito em Subjogos (EPS)**, obtido por **indução retroativa**.
 - O EPS refina o equilíbrio de Nash ao eliminar equilíbrios sustentados por **ameaças não críveis** — ações que o jogador não teria incentivo para executar se o momento chegasse. Todo EPS é NE, mas a recíproca é falsa.
 - Em **jogos finitamente repetidos** com equilíbrio de estágio único, a indução retroativa implica repetição do equilíbrio de estágio em todos os períodos (*unraveling*).
-- Em **jogos repetidos infinitamente**, a cooperação pode ser sustentada em equilíbrio via estratégias de punição (grim trigger, tit-for-tat), desde que os jogadores sejam suficientemente pacientes (\(\delta \geq \delta^*\)). A "sombra do futuro" é o mecanismo disciplinador.
+- Em **jogos repetidos infinitamente**, a cooperação pode ser sustentada em equilíbrio via estratégias de punição (grim trigger, *tit-for-tat*), desde que os jogadores sejam suficientemente pacientes (\(\delta \geq \delta^*\)). A "sombra do futuro" é o mecanismo disciplinador.
 - O **Folk Theorem** mostra que, com \(\delta\) suficientemente alto, qualquer payoff individualmente racional e factível pode ser sustentado como equilíbrio — gerando multiplicidade de equilíbrios e limitando o poder preditivo.
 - Na **barganha de Rubinstein** (ofertas alternadas), o único EPS gera uma divisão determinada pelos fatores de desconto: o jogador mais paciente obtém a maior fatia.
 - O **comprometimento** — investimento irreversível, contratos vinculantes ou reputação — é o mecanismo que torna ameaças críveis e confere vantagem estratégica. Dispositivos de comprometimento restringem as próprias opções do agente para alterar as expectativas dos demais — um princípio que se estende à escolha intertemporal (Capítulo 18).
@@ -566,7 +614,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     (a) Qual é o \(\delta^*\) mínimo para sustentar cooperação com TF2T?
 
-    (b) Compare com o grim trigger e o tit-for-tat padrão. Qual estratégia é mais "permissiva"?
+    (b) Compare com o grim trigger e o *tit-for-tat* padrão. Qual estratégia é mais "permissiva"?
 
     (c) Discuta a vantagem da TF2T em termos de prova de renegociação.
 
@@ -608,7 +656,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     6 \geq 10 - 8\delta^2 \implies 8\delta^2 \geq 4 \implies \delta \geq \frac{1}{\sqrt{2}} \approx 0{,}707
     \]
 
-    **(b)** Com grim trigger: \(\delta^* = (T-R)/(T-P) = 4/8 = 0{,}5\). Com tit-for-tat padrão: \(\delta^* = 0{,}5\) (mesma fórmula). Com TF2T: \(\delta^* \approx 0{,}707\).
+    **(b)** Com grim trigger: \(\delta^* = (T-R)/(T-P) = 4/8 = 0{,}5\). Com *tit-for-tat* padrão: \(\delta^* = 0{,}5\) (mesma fórmula). Com TF2T: \(\delta^* \approx 0{,}707\).
 
     A TF2T é **mais exigente** em termos de paciência — requer \(\delta\) mais alto para sustentar cooperação, porque a punição é mais branda (tolera um desvio), o que reduz a deterrência.
 
@@ -834,7 +882,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 ## 📚 Referências do Capítulo
 
-- Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 6–8.
+- Adams, Christopher P. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 6–8.
 - Andersen, Steffen, Seda Ertaç, Uri Gneezy, Moshe Hoffman, e John A. List. 2011. "Stakes Matter in Ultimatum Games." *American Economic Review* 101 (7): 3427–3439. [DOI](https://doi.org/10.1257/aer.101.7.3427)
 - Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books.
 - Bernheim, B. Douglas, e Debraj Ray. 1989. "Collective Dynamic Consistency in Repeated Games." *Games and Economic Behavior* 1 (4): 295–326. [DOI](https://doi.org/10.1016/0899-8256(89)90024-3)

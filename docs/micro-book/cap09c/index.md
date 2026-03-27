@@ -34,7 +34,7 @@ A transformação de Harsanyi converte um jogo com informação incompleta em um
 
 Essa distinção tem consequências profundas para a modelagem econômica. Em jogos com informação completa (Cap. 9a), basta especificar uma ação para cada jogador. Em jogos bayesianos, uma estratégia é um *mapeamento* do espaço de tipos para o espaço de ações: \(\sigma_i: \Theta_i \to S_i\) (ou, em estratégias mistas, \(\sigma_i: \Theta_i \to \Delta(S_i)\)). Essa mudança de perspectiva — de ações para planos contingentes — é o que torna possível analisar mercados com informação assimétrica, leilões com licitantes heterogêneos, e toda a gama de problemas de economia da informação que exploraremos ao longo deste livro.
 
-A hipótese de *prior comum* — de que todos os jogadores compartilham a mesma distribuição de probabilidade sobre os tipos — merece atenção especial. Essa hipótese, formalmente \(p(\theta)\) na equação $\eqref{eq:9c.1}$, significa que a incerteza dos jogadores não vem de discordância sobre o modelo do mundo, mas apenas de *informação privada*: cada um sabe algo que os outros não sabem, mas todos concordam sobre a estrutura probabilística subjacente. Sem essa hipótese, seria necessário modelar crenças sobre crenças sobre crenças ad infinitum — o que Harsanyi mostrou ser equivalente a uma hierarquia infinita de tipos que pode ser colapsada em uma prior comum sob condições razoáveis.
+A hipótese de **distribuição a priori comum** (*common prior*) — de que todos os jogadores compartilham a mesma distribuição de probabilidade sobre os tipos — merece atenção especial. Essa hipótese, formalmente \(p(\theta)\) na equação $\eqref{eq:9c.1}$, significa que a incerteza dos jogadores não vem de discordância sobre o modelo do mundo, mas apenas de *informação privada*: cada um sabe algo que os outros não sabem, mas todos concordam sobre a estrutura probabilística subjacente. Sem essa hipótese, seria necessário modelar crenças sobre crenças sobre crenças ad infinitum — o que Harsanyi mostrou ser equivalente a uma hierarquia infinita de tipos que pode ser colapsada em uma prior comum sob condições razoáveis.
 
 Com a formalização do jogo bayesiano e a noção de estratégias contingentes ao tipo, estamos em posição de definir o conceito de equilíbrio — o Equilíbrio Bayesiano de Nash — que captura o comportamento racional quando cada jogador utiliza sua informação privada de forma ótima.
 
@@ -394,7 +394,50 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
 Começamos este módulo com uma pergunta que paralisou a teoria dos jogos: como analisar um jogo quando os jogadores nem concordam sobre *qual jogo* estão jogando? O truque de Harsanyi — um lance da natureza que distribui tipos privados — transformou ignorância genuína em incerteza tratável, e dessa transformação nasceram o BNE, a teoria de leilões e o desenho de mecanismos. Do leilão do pré-sal à alocação de espectro, as cartas continuam escondidas — mas agora sabemos jogar.
 
-*Leilões revelam tipos; no próximo módulo, os tipos tentam se esconder — ou se exibir. Sinalização, moral hazard e seleção adversa entram em cena.*
+*Leilões revelam tipos; no próximo módulo, os tipos tentam se esconder — ou se exibir. Sinalização, moral hazard e seleção adversa entram em cena. And now for something completely different.*
+
+---
+
+## 🧪 Atividades de Sala de Aula
+
+!!! classroom "Experimento 9c.1 — Leilão de envelopes: primeiro preço vs. segundo preço (25 min)"
+    **Objetivo:** Verificar empiricamente o *bid shading* no primeiro preço, a revelação de verdade no segundo preço, e o Teorema da Equivalência de Receita.
+
+    **Material:** Envelopes numerados contendo "fichas" de valores conhecidos apenas pelo titular (cartões com números de 1 a 100, sorteados aleatoriamente); formulários de lance; planilha projetada.
+
+    **Protocolo:**
+
+    1. **Sorteio de valores** (3 min): Cada aluno sorteia um número de 1 a 100 (sem revelar). Esse é seu valor privado \(v_i\). Forme grupos de 4 licitantes.
+    2. **Fase 1 — Leilão de segundo preço** (8 min): Cada licitante escreve seu lance em papel fechado. O maior lance ganha e paga o *segundo* maior lance. Repita 3 vezes (re-sorteio a cada rodada). Registre: lance, valor, quem ganhou, quanto pagou.
+    3. **Fase 2 — Leilão de primeiro preço** (8 min): Mesmo procedimento, mas agora o vencedor paga o *próprio* lance. Repita 3 rodadas.
+    4. **Debrief** (6 min):
+        - Projete os dados: lance médio vs. valor médio em cada formato.
+        - **Segundo preço**: os alunos lançaram \(b_i \approx v_i\)? Quem lançou acima do valor? (Erro — potencial lucro negativo!)
+        - **Primeiro preço**: quanto sombrearam? Calcule \(b_i/v_i\) médio e compare com \((N-1)/N = 3/4 = 0{,}75\).
+        - **Equivalência de receita**: a receita média foi similar nos dois formatos? (Tipicamente sim, com amostra grande.)
+        - Pergunte: "Se vocês fossem a ANP leiloando um bloco do pré-sal, qual formato escolheriam? O que muda se houver *valor comum*?"
+
+    **Conexão com o conteúdo:** Leilões IPV (Seção 9c.3), *bid shading* (eq. 9c.3), Teorema da Equivalência de Receita (Seção 9c.3). Inspirado em Holt (2007, Cap. 19) e Kagel (1995).
+
+!!! classroom "Experimento 9c.2 — Desenhando um mecanismo: o problema do bolo (15 min)"
+    **Objetivo:** Introduzir intuitivamente o desenho de mecanismos — mostrar que as *regras do jogo* determinam o resultado.
+
+    **Material:** Nenhum (apenas projeção e discussão).
+
+    **Protocolo:**
+
+    1. **O problema** (2 min): "Dois irmãos precisam dividir um bolo. Cada um acha que merece mais da metade. Vocês são o *designer de mecanismo*: inventem uma regra de divisão que seja justa e à prova de manipulação."
+    2. **Brainstorm em pares** (5 min): Duplas propõem mecanismos. Registre no quadro.
+    3. **Discussão coletiva** (8 min):
+        - Mecanismo clássico: "Um corta, o outro escolhe." Por que funciona? → Quem corta tem incentivo a dividir igualmente (senão o outro pega o pedaço maior). É um mecanismo *incentivo-compatível*: a ação egoísta gera o resultado eficiente.
+        - Compare com: "Cada um diz quanto quer e o juiz decide." → Incentivo a exagerar (cheap talk!).
+        - Compare com: "Leilão: quem paga mais fica com o bolo." → Eficiente mas não justo para quem é mais pobre.
+        - Conecte ao Princípio da Revelação: o mecanismo "um corta, outro escolhe" *induz* revelação verdadeira das preferências sem exigi-la explicitamente — como o leilão de Vickrey induz lances verdadeiros.
+        - Referência pythonesca[^holy-grenade]: *"First shalt thou take out the Holy Pin. Then shalt thou count to three. No more. No less."* — A Santa Granada de Antioquia só funciona se o protocolo for seguido exatamente. Mecanismos são assim: a especificação precisa das regras é o que garante o resultado desejado. Conte até quatro e tudo explode (literalmente).
+
+    **Conexão com o conteúdo:** Desenho de mecanismos (Seção 9c.4), Princípio da Revelação, mecanismo VCG.
+
+[^holy-grenade]: *Monty Python and the Holy Grail* (1975). A cena da Holy Hand Grenade of Antioch é, inadvertidamente, a melhor metáfora para desenho de mecanismos já filmada. O protocolo (tirar o pino, contar até três, lançar) é a "função de resultado" \(g\); o erro de contagem do Rei Arthur ("Three, sir!") é a implementação imperfeita; e o resultado (explosão do Coelho Assassino) é a alocação eficiente — mas *somente* se o protocolo for seguido corretamente.
 
 ---
 
@@ -735,7 +778,7 @@ Encontre todos os BNEs puros. Justifique o procedimento de solução passo a pas
 
 ## 📚 Referências do Capítulo
 
-- Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 9–11.
+- Adams, Christopher P. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 9–11.
 - Athey, Susan, e Philip A. Haile. 2007. "Nonparametric Approaches to Auctions." In *Handbook of Econometrics*, Vol. 6A, 3847–3965. [DOI](https://doi.org/10.1016/S1573-4412(07)06060-6)
 - Capen, Edward C., Robert V. Clapp, e William M. Campbell. 1971. "Competitive Bidding in High-Risk Situations." *Journal of Petroleum Technology* 23 (6): 641–653.
 - Clarke, Edward H. 1971. "Multipart Pricing of Public Goods." *Public Choice* 11: 17–33.

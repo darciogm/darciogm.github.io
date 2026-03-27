@@ -63,7 +63,7 @@ Formalmente, jogos de sinalização são jogos sequenciais com informação inco
     **Exemplos práticos:**
 
     - *Garantia estendida de carro:* um vendedor de "limão" não oferece porque sabe que vai ter que honrá-la.
-    - *Dividendos elevados:* uma firma com fluxo de caixa fraco não poderia distribui-los de forma sustentável.
+    - *Dividendos elevados:* uma firma com fluxo de caixa fraco não poderia distribuí-los de forma sustentável.
     - *ENEM de alto desempenho:* o custo de obter a nota exige capacidade que o candidato fraco não tem, ou tem a um custo muito maior de esforço.
 
     **A eficiência importa:** No equilíbrio separador, a informação privada é revelada — o que é bom para a parte desinformada. Mas o custo da sinalização é puro desperdício social se o sinal não cria valor (educação que não aumenta produtividade, garantias que nunca são acionadas). Esse é o dilema de Spence: credibilidade tem um custo.
@@ -119,7 +119,7 @@ Nem todo jogo de sinalização produz separação. No equilíbrio agregador, amb
 
 Formalmente, no equilíbrio pooling em \(e_P\), ambos os tipos escolhem o mesmo sinal e o receptor paga o salário da produtividade média: \(w_P = p \cdot \theta_H + (1-p) \cdot \theta_L\), onde \(p\) é a probabilidade prior de tipo H. Para que o pooling seja sustentável, é necessário que nenhum tipo desvie para outro nível de sinal. Isso requer crenças off-path suficientemente pessimistas: se o receptor acredita que qualquer desvio de \(e_P\) provém do tipo L, o salário pós-desvio é \(\theta_L\), o que pode tornar o desvio não lucrativo para ambos os tipos.
 
-No exemplo acima, se \(\theta_H = 1{,}2\) e \(\theta_L = 1\) (tipos muito próximos), a diferença de custo entre os tipos é pequena. As ICs se tornam incompatíveis num sentido prático: o nível de educação que deters o tipo L de imitar o tipo H exige um custo tão alto que o tipo H prefere não sinalizar. O resultado é um equilíbrio agregador em que ambos os tipos escolhem \(e = 0\) e recebem o salário da produtividade média — exatamente como no problema de informação oculta sem sinalização.
+No exemplo acima, se \(\theta_H = 1{,}2\) e \(\theta_L = 1\) (tipos muito próximos), a diferença de custo entre os tipos é pequena. As ICs se tornam incompatíveis num sentido prático: o nível de educação que dissuadiria o tipo L de imitar o tipo H exige um custo tão alto que o tipo H prefere não sinalizar. O resultado é um equilíbrio agregador em que ambos os tipos escolhem \(e = 0\) e recebem o salário da produtividade média — exatamente como no problema de informação oculta sem sinalização.
 
 A comparação entre os dois tipos de equilíbrio revela um trade-off fundamental: o equilíbrio separador é informacionalmente eficiente (revela os tipos) mas alocativamente ineficiente (o custo da sinalização é puro desperdício); o equilíbrio pooling é informacionalmente ineficiente (não revela tipos) mas pode ser alocativamente menos custoso (evita o gasto com sinalização). Qual equilíbrio prevalece depende da magnitude da diferença de produtividade entre os tipos, do custo da sinalização e das crenças fora do caminho de equilíbrio. Quando o Critério de Dominância Intuitiva elimina o pooling, o equilíbrio separador de menor custo é a previsão teórica selecionada — mas isso não significa que o equilíbrio separador seja socialmente ótimo.
 
@@ -148,14 +148,44 @@ O modelo brasileiro oferece um exemplo instrutivo. O diploma universitário no B
 
 ## 9d.3 Cheap Talk e Comunicação Estratégica
 
-No modelo de Spence, o sinal é crível porque é custoso. Mas o que acontece quando a comunicação não envolve custo direto? Crawford e Sobel (1982) mostraram que, quando o sinal é sem custo (*cheap talk*), a quantidade de informação transmitida em equilíbrio depende do **alinhamento de interesses** entre remetente e receptor.
+No modelo de Spence, o sinal é crível porque é *custoso*. Mas grande parte da comunicação no mundo real é gratuita: publicidade, discursos políticos, promessas de campanha, relatórios de analistas de mercado, descrições em apps de namoro. Quando a comunicação não envolve custo direto — o que a teoria chama de **cheap talk** — a pergunta central é: *alguém deveria acreditar?*[^dead-parrot]
 
-- Se os interesses são perfeitamente alinhados: revelação completa é possível.
-- Se os interesses divergem: a comunicação é parcial — o remetente envia "intervalos" de informação (*partition equilibrium*).
+[^dead-parrot]: Os fãs de Monty Python reconhecerão o problema imediatamente. No sketch do *Dead Parrot*, o vendedor (Michael Palin) insiste que o papagaio claramente morto está "apenas descansando" (*"He's resting!"*), "contemplando os fiordes noruegueses" e "stunned". O comprador (John Cleese) não acredita em nada. Por quê? Porque o vendedor tem incentivo óbvio para mentir — seus interesses estão completamente desalinhados com os do comprador. Na linguagem de Crawford-Sobel, o viés do vendedor é tão grande que nenhuma informação é transmitida em equilíbrio: a comunicação é puro ruído. Se o vendedor fosse um veterinário independente (interesses mais alinhados), sua declaração teria credibilidade. O sketch é, inadvertidamente, a demonstração mais clara de cheap talk com viés máximo já encenada.
 
-Quanto maior o desalinhamento de interesses, mais grosseira é a partição e menos informação é transmitida — o receptor racionalmente desconta mensagens de um remetente com incentivo para exagerar.
+Crawford e Sobel (1982) formalizaram essa intuição num modelo elegante. Um remetente (*sender*) observa o estado do mundo \(\theta \sim U[0, 1]\) e envia uma mensagem \(m\) (sem custo) ao receptor (*receiver*), que então escolhe uma ação \(a\). O remetente quer que o receptor escolha \(a = \theta + b\), onde \(b > 0\) é o **viés** — a distância entre a ação ideal do remetente e a do receptor (que quer \(a = \theta\)). O viés captura o desalinhamento de interesses: quanto maior \(b\), mais o remetente quer "empurrar" a ação do receptor para cima.
 
-**Aplicação:** Comunicação entre o Banco Central e o mercado (*forward guidance*). O BCB tem incentivo para comunicar claramente suas intenções de política monetária, mas o grau de credibilidade depende do alinhamento percebido entre os objetivos do BCB e do mercado.
+### O resultado central: equilíbrio de partição
+
+O resultado de Crawford-Sobel é que, em equilíbrio, a comunicação assume a forma de uma **partição** do espaço de estados. O remetente não diz o valor exato de \(\theta\), mas indica em qual *intervalo* \(\theta\) se encontra. O receptor, sabendo o intervalo, escolhe a ação ótima dado esse conhecimento parcial.
+
+- Se o **viés é zero** (\(b = 0\)): interesses perfeitamente alinhados. Revelação completa é possível — o remetente diz a verdade e o receptor acredita. É o caso do consultor imparcial.
+- Se o **viés é pequeno**: a partição é fina — muitos intervalos, muita informação transmitida. O receptor aprende bastante, embora não tudo.
+- Se o **viés é grande**: a partição é grosseira — poucos intervalos, pouca informação. No limite, quando \(b\) é suficientemente grande, a única partição é o intervalo inteiro \([0, 1]\) — o remetente não transmite *nenhuma* informação, e a mensagem é puro ruído (como o vendedor do papagaio morto).
+
+O número máximo de intervalos na partição de equilíbrio é decrescente em \(b\): quanto maior o desalinhamento, menos informação é credível. Formalmente, existe um equilíbrio com \(N\) intervalos se e somente se \(b < 1/(2N(N-1))\). Para \(b \geq 1/4\), apenas o equilíbrio "babbling" (nenhuma informação) existe.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** Quando falar é de graça, a credibilidade depende inteiramente de quanto os interesses do emissor estão alinhados com os do receptor.
+
+    **Pense assim:** Um corretor de imóveis diz que o apartamento é "uma oportunidade imperdível". Você acredita? O corretor ganha comissão na venda (viés positivo) — logo, tem incentivo para exagerar a qualidade. Mas ele não mente *completamente*, porque tem reputação a zelar e você pode verificar informações básicas. O resultado é comunicação parcial: o corretor transmite *alguma* informação (localização, metragem, preço), mas o comprador racionalmente desconta a avaliação subjetiva de qualidade.
+
+    **Exemplos de cheap talk com viés variável:**
+
+    | Remetente | Receptor | Viés | Informação transmitida |
+    |:----------|:---------|:-----|:----------------------|
+    | Meteorologista | Público | ~Zero | Quase completa (previsão precisa) |
+    | Médico do SUS | Paciente | Baixo | Alta (interesse alinhado na saúde) |
+    | Vendedor de carro | Comprador | Alto | Muito parcial (desconta elogios) |
+    | Político em campanha | Eleitor | Variável | Depende do histórico e da instituição |
+    | Analista de sell-side | Investidores | Moderado-alto | Parcial (viés de recomendação) |
+
+### Aplicações
+
+**Forward guidance do Banco Central.** A comunicação do BCB com o mercado é um caso paradigmático de cheap talk institucional. Quando o Copom sinaliza "manutenção da taxa Selic na próxima reunião", o mercado precisa avaliar: essa comunicação é informativa ou estratégica? A resposta depende do viés percebido. Se o mercado acredita que o BCB tem viés inflacionário (interesses desalinhados), desconta a comunicação e a curva de juros não se move. Se confia na autonomia institucional (interesses mais alinhados), a comunicação é eficaz e as expectativas se ajustam. A LC 179/2021, ao formalizar a autonomia do BCB, reduziu o viés percebido e aumentou a informatividade do forward guidance — evidenciada pela redução da volatilidade da curva de juros em torno dos comunicados do Copom (ver Box Brasil 9d sobre forward guidance).
+
+**Publicidade e regulação.** A propaganda comercial é cheap talk com viés: o anunciante tem incentivo para exagerar as qualidades do produto. A regulação de publicidade (Conar, Procon) funciona como mecanismo que *aumenta o custo* de mentir, convertendo cheap talk em comunicação parcialmente custosa — e, portanto, mais crível. Quando a Anvisa exige que embalagens de cigarro carreguem imagens de advertência, está forçando a revelação de informação que o remetente (fabricante) preferiria omitir.
+
+**Promessas de campanha.** Promessas eleitorais são cheap talk por excelência: o candidato fala antes da eleição, e a ação (governar) ocorre depois. O modelo prevê que eleitores deveriam descontar promessas na proporção do viés percebido — e é exatamente o que dados de confiança institucional mostram: em países com alto grau de desconfiança em políticos (como o Brasil, onde apenas ~15% confiam nos partidos, segundo o Latinobarómetro), promessas de campanha têm baixíssima informatividade.
 
 ---
 
@@ -218,6 +248,18 @@ A conexão com o Capítulo 7 é direta: o moral hazard existe, na sua forma mais
 
 O Capítulo 8 (economia comportamental) acrescenta uma camada adicional: evidências experimentais de Kahneman e Tversky sugerem que agentes são mais sensíveis a perdas do que a ganhos de mesma magnitude (aversão à perda). Isso afeta o design de contratos: penalidades pecuniárias por baixo desempenho podem ter poder de incentivo desproporcional ao seu valor monetário, o que tem implicações para contratos de gestores e para políticas de bônus.
 
+!!! info "🏅 Prêmio Nobel — Bengt Holmström e Oliver Hart (2016)"
+
+    **Bengt Holmström** (1949–presente) é um economista finlandês, PhD em Stanford, professor no MIT. **Oliver Hart** (1948–presente) é um economista britânico-americano, PhD em Princeton, professor em Harvard.
+
+    **Por que ganharam o Nobel:**
+    Premiados por suas contribuições à **teoria dos contratos**. Holmström formalizou o problema do principal-agente com moral hazard (1979), derivou o Princípio da Informatividade (o contrato ótimo deve usar toda informação disponível sobre o esforço), e mostrou com Milgrom (1991) que incentivos fortes em tarefas mensuráveis distorcem o esforço para longe de tarefas não mensuráveis (multitarefa). Hart, com Grossman e Moore, desenvolveu a teoria dos **contratos incompletos** — a ideia de que, como é impossível prever e contratar todas as contingências futuras, a alocação de **direitos de propriedade** determina quem tem poder de decisão residual e, portanto, quem tem incentivos para investir. A teoria de contratos incompletos fundamenta a análise de fronteiras da firma ("make or buy"), fusões, privatizações e parcerias público-privadas.
+
+    **Conexão com este capítulo:**
+    O modelo de principal-agente, o Princípio da Informatividade e o problema de multitarefa — todos desenvolvidos por Holmström — são os pilares da Seção 9d.4. A teoria de contratos incompletos de Hart complementa a análise ao explicar por que muitas relações econômicas *não* são governadas por contratos explícitos (como prevê o modelo de Holmström), mas por estruturas de propriedade e governança que alocam poder de decisão residual. Os dois frameworks — contratos completos de Holmström e contratos incompletos de Hart — são complementares e, juntos, formam a base da economia organizacional moderna.
+
+    **Nota para o estudante:** Se Holmström responde "como desenhar o contrato ótimo *dentro* de uma relação", Hart responde "como estruturar a relação *em si*". Os Capítulos 16 (organização industrial) e 19 (contratos e mecanismos) desenvolvem ambas as perspectivas.
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Quando alguém não arca com as consequências de suas ações, tende a agir de forma mais arriscada.
 
@@ -246,13 +288,17 @@ Moral hazard é sobre o que o agente *faz* depois do contrato. Seleção adversa
 
     **George A. Akerlof** (1940–presente) e **Joseph E. Stiglitz** (1943–presente) dividiram o Nobel de 2001 com Michael Spence, pelos trabalhos fundadores sobre mercados com informação assimétrica.
 
-    **Akerlof:** Em "The Market for 'Lemons'" (1970), mostrou que informação assimétrica sobre qualidade pode levar ao colapso completo de mercados. O artigo foi rejeitado por três grandes revistas antes de ser publicado no *Quarterly Journal of Economics* — ironia frequentemente citada como exemplo de seleção adversa no mercado editorial acadêmico. Além de carros usados, Akerlof aplicou o framework a seguros de saúde para idosos e ao mercado de crédito em países em desenvolvimento.
+    **Akerlof:** Em "The Market for 'Lemons'" (1970), mostrou que informação assimétrica sobre qualidade pode levar ao colapso completo de mercados. O artigo foi rejeitado por três grandes revistas antes de ser publicado no *Quarterly Journal of Economics*[^akerlof-rejeicao] — ironia frequentemente citada como exemplo de seleção adversa no mercado editorial acadêmico.
 
     **Stiglitz:** Com Michael Rothschild, desenvolveu a teoria do equilíbrio em mercados de seguros competitivos com informação assimétrica (Rothschild e Stiglitz, 1976), mostrando que o equilíbrio de mercado — quando existe — envolve separação de tipos por menus de contratos, e que pode não existir equilíbrio pooling estável. Stiglitz também contribuiu para a teoria de screening em mercados de crédito e trabalho.
 
     **Conexão com este capítulo:** O trabalho conjunto desses três pesquisadores forma o núcleo teórico deste capítulo: Akerlof (seleção adversa), Spence (sinalização) e Stiglitz (screening e equilíbrio de mercados com informação assimétrica).
 
-Akerlof ilustrou o mecanismo com o mercado de carros usados — o artigo que lhe valeu o Nobel de 2001. O argumento é elegante: o vendedor sabe se o carro é confiável ("pêssego") ou defeituoso ("limão"). O comprador não sabe. O preço que o comprador aceita pagar reflete a qualidade *média* do mercado. Mas, a esse preço, os vendedores de "pêssegos" (cujo carro vale mais do que o preço médio) saem do mercado. O que resta é predominantemente "limões". O comprador, antecipando isso, reduz seu preço de reserva. Mais "pêssegos" saem. O processo pode continuar até que o mercado colapse completamente — nenhuma transação ocorre, embora existam vendedores e compradores dispostos a negociar ao preço correto. A ineficiência é gerada inteiramente pela assimetria de informação, não por falhas no mecanismo de preços em si.
+[^akerlof-rejeicao]: A saga de rejeições do paper dos limões é uma das melhores anedotas da profissão. A *American Economic Review* rejeitou-o por ser "trivial"; o *Journal of Political Economy* rejeitou-o por ser "incorreto" (o mercado não pode colapsar se os agentes forem racionais!); a *Review of Economic Studies* simplesmente não se interessou. Três décadas depois, o paper rendeu o Nobel. Se isso não é evidência de seleção adversa no mercado editorial — onde os referees não observam a qualidade do artigo com precisão e frequentemente rejeitam "pêssegos" — nada é. Akerlof provavelmente apreciou a ironia.
+
+Akerlof ilustrou o mecanismo com o mercado de carros usados — o artigo que lhe valeu o Nobel de 2001.[^cheese-shop] O argumento é elegante: o vendedor sabe se o carro é confiável ("pêssego") ou defeituoso ("limão"). O comprador não sabe.
+
+[^cheese-shop]: Os devotos de Monty Python reconhecerão a seleção adversa levada ao extremo no sketch do *Cheese Shop*. John Cleese entra em uma loja de queijos e tenta comprar queijo — qualquer queijo. O vendedor (Michael Palin) informa educadamente que não tem Cheddar, nem Stilton, nem Brie, nem Camembert, nem Gruyère, nem nenhum dos 40+ queijos solicitados. O comprador progressivamente desiste de cada opção, exatamente como no modelo de Akerlof os tipos bons progressivamente abandonam o mercado. No final, a loja não tem *nenhum* queijo — o market unraveling é completo. A diferença é que no modelo de Akerlof o colapso é endógeno (causado pela assimetria de informação); no Cheese Shop, é simplesmente uma loja de queijos sem queijos. Mas a frustração do comprador é idêntica. O preço que o comprador aceita pagar reflete a qualidade *média* do mercado. Mas, a esse preço, os vendedores de "pêssegos" (cujo carro vale mais do que o preço médio) saem do mercado. O que resta é predominantemente "limões". O comprador, antecipando isso, reduz seu preço de reserva. Mais "pêssegos" saem. O processo pode continuar até que o mercado colapse completamente — nenhuma transação ocorre, embora existam vendedores e compradores dispostos a negociar ao preço correto. A ineficiência é gerada inteiramente pela assimetria de informação, não por falhas no mecanismo de preços em si.
 
 O mecanismo de desintegração do mercado (*market unraveling*) pode ser descrito em etapas formais. Considere um contínuo de qualidades \(q \sim U[0, 1]\), onde o vendedor conhece \(q\) e o comprador não. O valor do carro para o vendedor é \(v_S(q) = q\), e para o comprador é \(v_B(q) = \alpha q\) com \(\alpha > 1\) (o comprador valoriza mais). Se o comprador acredita que todos os tipos estão no mercado, o valor esperado é \(\alpha / 2\). Mas a esse preço, apenas vendedores com \(q \leq \alpha / 2\) aceitam vender. O comprador antecipa isso e revisa o valor esperado para \(\alpha \cdot E[q \mid q \leq \alpha / 2] = \alpha^2 / 4\). Vendedores com \(q > \alpha^2 / 4\) saem. O processo converge iterativamente: a cada rodada, o pior vendedor remanescente é o melhor da rodada anterior, e o preço que o comprador aceita pagar cai. Se \(\alpha < 2\), o mercado colapsa completamente — nenhuma transação ocorre. Quando \(\alpha \geq 2\) (ganho de troca suficientemente grande), o mercado sobrevive parcialmente, mas sempre com ineficiência: transações que beneficiariam ambas as partes não se realizam.
 
@@ -440,7 +486,65 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 
 Abrimos este módulo com uma observação simples: quando alguém age primeiro e os outros observam, a ação *fala*. O MBA de Spence, a garantia do carro usado, o contrato do seguro — em cada caso, a ação é mensagem, e o equilíbrio é uma conversa estratégica entre quem sabe e quem precisa adivinhar. Do PBE à seleção adversa, mapeamos as três faces da assimetria informacional: sinalização (o informado grita), moral hazard (o informado se esconde) e seleção adversa (o informado aparece demais).
 
-*Informação assimétrica não é só teoria dos jogos — é o tecido do mercado. Os Capítulos 10–12 voltam à firma; o Capítulo 19 aprofunda contratos e mecanismos.*
+*Informação assimétrica não é só teoria dos jogos — é o tecido do mercado. Os Capítulos 10–12 voltam à firma; o Capítulo 19 aprofunda contratos e mecanismos. And now for something completely different — a firma.*
+
+---
+
+## 📊 Visão Geral do Capítulo 9: Os Quatro Módulos
+
+A tabela abaixo sintetiza os quatro módulos de teoria dos jogos, fechando o arco narrativo iniciado no Módulo 9a. Cada linha corresponde a uma combinação de timing (estático/dinâmico) e informação (completa/incompleta), com o conceito de equilíbrio correspondente e a aplicação-âncora.
+
+| | **9a — Pedra, Papel, Nash** | **9b — Primeiro Você, Depois Eu** | **9c — Jogando no Escuro** | **9d — O Diploma É Caro** |
+|:--|:--|:--|:--|:--|
+| **Timing** | Estático (simultâneo) | Dinâmico (sequencial) | Estático (simultâneo) | Dinâmico (sequencial) |
+| **Informação** | Completa | Completa | Incompleta | Incompleta |
+| **Equilíbrio** | Nash (EN) | Perfeito em Subjogos (EPS) | Bayesiano de Nash (BNE) | Bayesiano Perfeito (PBE) |
+| **Ideia central** | Melhor resposta mútua | Ameaças críveis | Otimização com tipos privados | Sinais e crenças |
+| **Aplicação-âncora** | Oligopólio (Cournot/Bertrand) | Barganha, jogos repetidos | Leilões, desenho de mecanismos | Sinalização, moral hazard, seleção adversa |
+| **Box Brasil** | CADE e cervejas | Guerra fiscal do ICMS | ANP e ANEEL | ANS e planos de saúde |
+| **Monty Python** | — | Spanish Inquisition (indução retroativa) | Holy Hand Grenade (mecanismos) | Dead Parrot (cheap talk), Cheese Shop (market unraveling) |
+
+A progressão dos módulos segue a taxonomia de Gibbons (1992): cada módulo relaxa uma hipótese e introduz o conceito de equilíbrio correspondente. O leitor que domina os quatro módulos está equipado para a análise de qualquer interação estratégica — de leilões de petróleo a negociações salariais, de cartéis a contratos de seguro.
+
+---
+
+## 🧪 Atividades de Sala de Aula
+
+!!! classroom "Experimento 9d.1 — Role-play: mercado de limões com garantias (25 min)"
+    **Objetivo:** Demonstrar ao vivo como a seleção adversa destrói um mercado e como a sinalização (garantia) o restaura.
+
+    **Material:** Cartas de baralho (qualidades 1-10); fichas de dinheiro; adesivos "GARANTIA" (para a Fase 2).
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Metade da turma são vendedores, metade compradores. Cada vendedor sorteia uma carta de qualidade \(q\) (secreta). Valor para o vendedor = \(q\); valor para o comprador = \(1{,}5q\).
+    2. **Fase 1 — Sem sinalização** (8 min): Vendedores e compradores negociam livremente. Vendedores *não* revelam a qualidade. Compradores oferecem preço; vendedores aceitam ou recusam. Registre todas as transações (preço, qualidade real). Após 4 minutos, observe: vendedores de carros bons (q ≥ 7) conseguem vender? Provavelmente não — o preço médio é baixo demais.
+    3. **Fase 2 — Com sinalização** (8 min): Agora, vendedores podem oferecer "garantia" (adesivo). O custo da garantia: se o comprador acionar (sorteio de dado: 1-2 = aciona, 3-6 = não aciona), o vendedor paga \(q_{\text{defeito}} = 10 - q\) ao comprador. Para carros bons (q alto), o custo esperado da garantia é *baixo*; para limões (q baixo), é *alto*. Condição de single-crossing satisfeita!
+    4. **Debrief** (6 min):
+        - Compare transações nas Fases 1 e 2: mais carros bons vendidos na Fase 2?
+        - Quem ofereceu garantia? Os vendedores de carros bons ou de limões? → Equilíbrio separador.
+        - Conecte com Spence (1973): a garantia funciona como o diploma — sinal custoso que o tipo bom acha barato e o tipo ruim acha caro.
+        - "A Tabela FIPE e o laudo cautelar funcionam como que tipo de mecanismo?" → Certificação (terceiro).
+
+    **Conexão com o conteúdo:** Seleção adversa (Seção 9d.5), sinalização (Seção 9d.2), mecanismos de mitigação (Tabela 9d.1). Inspirado em Bergstrom e Miller (2000, Cap. 32).
+
+!!! classroom "Experimento 9d.2 — Contrato de incentivos: quanto pagar pelo esforço? (15 min)"
+    **Objetivo:** Mostrar o trade-off entre incentivos e seguro no problema do principal-agente.
+
+    **Material:** Dados (1 dado por grupo); planilha projetada.
+
+    **Protocolo:**
+
+    1. **Setup** (3 min): Grupos de 3: 1 principal, 1 agente, 1 observador/registrador. O agente pode escolher "esforço alto" (custo = 2 fichas) ou "esforço baixo" (custo = 0). Esforço alto: dado ≥ 3 → resultado bom (10 fichas); dado ≤ 2 → resultado ruim (0). Esforço baixo: dado ≥ 5 → resultado bom; dado ≤ 4 → resultado ruim.
+    2. **Fase 1 — Salário fixo** (3 min): Principal oferece salário fixo de 3 fichas, independente do resultado. O agente escolhe esforço (secretamente — esconde a ficha de custo). Jogue o dado.
+    3. **Fase 2 — Contrato variável** (3 min): Principal propõe: "Pago \(w_B\) se bom, \(w_R\) se ruim". O agente aceita ou recusa. Se aceitar, escolhe esforço (secretamente). Jogue o dado.
+    4. **Debrief** (6 min):
+        - Na Fase 1, o agente se esforçou? (Provavelmente não — salário fixo, sem incentivo.)
+        - Na Fase 2, que contrato funcionou? Calcule: a IC exige \(w_B - w_R \geq\) quanto?
+        - "Se o agente é avesso ao risco, o que muda?" → O principal precisa compensar o risco com salário esperado maior → custo de agência.
+        - Conecte com Holmström (1979): o resultado (dado) é um sinal ruidoso do esforço.
+
+    **Conexão com o conteúdo:** Moral hazard (Seção 9d.4), primeiro melhor vs. segundo melhor, Princípio da Informatividade (Holmström, 1979).
 
 ---
 
@@ -782,7 +886,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
     **Relevância para o Brasil:** Mercados de carros usados, crédito (spread bancário elevado reflete seleção adversa) e planos de saúde (cobertura obrigatória como resposta ao problema de seleção). Cross-reference com Capítulo 19.
 
-??? pesquisa "Adams, Brian W. (2025). *Game Theory for Applied Econometricians*. Caps. 12–13."
+??? pesquisa "Adams, Christopher P. (2025). *Game Theory for Applied Econometricians*. Caps. 12–13."
     **Escopo:** Parte IV cobre moral hazard (Cap. 12: corporações baleeiras como principal-agente) e seleção adversa (Cap. 13: seguros de saúde). Ambos com datasets e scripts R.
 
     **Relevância:** Os R Boxes deste módulo são inspirados nos scripts de Adams, demonstrando como estimar empiricamente o efeito de informação assimétrica em dados reais.
@@ -801,7 +905,7 @@ Pratique com questões reais do Exame Nacional da ANPEC (Associação Nacional d
 
 ## 📚 Referências do Capítulo
 
-- Adams, Brian W. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 12–13.
+- Adams, Christopher P. 2025. [*Game Theory for Applied Econometricians*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press. Caps. 12–13.
 - Akerlof, George A. 1970. "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." *Quarterly Journal of Economics* 84 (3): 488–500. [DOI](https://doi.org/10.2307/1879431)
 - Becker, Gary S. 1964. [*Human Capital*](https://books.google.com/books?id=9t69iICmrZ0C). New York: Columbia University Press.
 - Cho, In-Koo, e David M. Kreps. 1987. "Signaling Games and Stable Equilibria." *Quarterly Journal of Economics* 102 (2): 179–221. [DOI](https://doi.org/10.2307/1885060)

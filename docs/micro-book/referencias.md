@@ -22,7 +22,7 @@
 
 ## Teoria dos Jogos e Organização Industrial
 
-- Adams, Brian W. 2025. [*Game Theory for Applied Econometricians: Data Analytics with R*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press.
+- Adams, Christopher P. 2025. [*Game Theory for Applied Econometricians: Data Analytics with R*](https://doi.org/10.1201/b23262). Boca Raton: CRC Press.
 - Axelrod, Robert. 1984. [*The Evolution of Cooperation*](https://books.google.com/books?id=NJZBCGbNs98C). New York: Basic Books.
 - Bain, Joe S. 1956. [*Barriers to New Competition*](https://books.google.com/books/about/Barriers_to_New_Competition.html?id=KyFCAAAAIAAJ). Cambridge: Harvard University Press.
 - Bajari, Patrick, C. Lanier Benkard, e Jonathan Levin. 2007. "[Estimating Dynamic Models of Imperfect Competition](https://doi.org/10.1111/j.1468-0262.2007.00796.x)." *Econometrica* 75 (5): 1331–1370.
