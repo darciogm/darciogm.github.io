@@ -135,8 +135,8 @@
       getText: function(){ return '<i>D</i>'; }
     });
 
-    // MR curve (1st quadrant only)
-    board.create('functiongraph', [function(q) { var p=gp(); if (q < 0) return NaN; var v = p.a - 2*p.b*q; return v >= 0 ? v : NaN; }], {
+    // MR curve (q >= 0, can go negative)
+    board.create('functiongraph', [function(q) { var p=gp(); if (q < 0) return NaN; return p.a - 2*p.b*q; }], {
       strokeColor: '#C8102E', strokeWidth: 2, dash: 2, name: 'RMg'
     });
     board.create('text', [function(){ return gp().a/(2*gp().b) - 3; }, function(){ return 4; }], {
@@ -259,7 +259,7 @@
       html += '\\(EC^c = ' + csComp.toFixed(1) + '\\), \\(PPM = 0\\)';
 
       document.getElementById('info').innerHTML = html;
-      board.update();
+      board.fullUpdate();
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
 
