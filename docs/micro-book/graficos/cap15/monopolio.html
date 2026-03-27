@@ -67,25 +67,26 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-100, 185, 920, -20],
+      boundingbox: [-15, 120, 120, -15],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
-    board.create('axis', [[0,0],[1,0]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+    var xAxis = board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
       name: '', withLabel: false
     });
-board.create('text', [460.0, -13.0, '<b><i>Q</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
-    board.create('axis', [[0,0],[0,1]], {
-      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20  },
+    var xLabel = board.create('text', [60, -10, '<b><i>Q</i></b>'], {
+      fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+    var yAxis = board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
       name: '', withLabel: false
     });
-board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
+    var yLabel = board.create('text', [-11, 60, '<b><i>P</i></b>'], {
+      fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
 
+    var pad = 15;
     function gp() {
       return {
         a: parseFloat(document.getElementById('slider-a').value),
@@ -176,12 +177,12 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
     // Monopoly labels
     board.create('text', [
       -6, function(){ return (gp().a+gp().c)/2; },
-      function(){ return '\\(P^m\\)'; }
-    ], { fontSize: 13, color: '#C8102E', anchorX: 'right', highlight: false });
+      function(){ return '<i>P<sup>m</sup></i>'; }
+    ], { fontSize: 12, color: '#C8102E', anchorX: 'right', highlight: false });
     board.create('text', [
-      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, -4,
-      function(){ return '\\(Q^m\\)'; }
-    ], { fontSize: 13, color: '#C8102E', anchorX: 'middle', highlight: false });
+      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return -pad * 0.3; },
+      function(){ return '<i>Q<sup>m</sup></i>'; }
+    ], { fontSize: 12, color: '#C8102E', anchorX: 'middle', highlight: false });
 
     // Competitive point
     var ptComp = board.create('point', [
@@ -195,7 +196,7 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
     ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/p.b; }, -4,
-      function(){ return '\\(Q^c\\)'; }
+      function(){ return '<i>Q<sup>c</sup></i>'; }
     ], { fontSize: 12, color: '#00897b', anchorX: 'middle', highlight: false });
 
     // Area labels — hidden when areas shrink too small
@@ -209,7 +210,7 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
     board.create('text', [
       function(){ var p=gp(); return (p.a-p.c)/(4*p.b); },
       function(){ var p=gp(); return p.c + ((p.a+p.c)/2 - p.c)/2; },
-      function(){ return '\\(\\pi\\)'; }
+      function(){ return '<i>π</i>'; }
     ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', highlight: false,
          visible: function(){ var p=gp(); return (p.a - p.c) > 10; } });
 
@@ -225,6 +226,19 @@ board.create('text', [-55.00000000000001, 92.5, '<b><i>P</i></b>'], {
       document.getElementById('val-a').textContent = p.a.toFixed(0);
       document.getElementById('val-b').textContent = p.b.toFixed(1);
       document.getElementById('val-c').textContent = p.c.toFixed(0);
+
+      // Dynamic bounding box
+      var qcMax = Math.max(10, (p.a - p.c) / p.b);
+      var pMax = Math.max(10, p.a);
+      pad = Math.max(qcMax, pMax) * 0.15;
+      var xMax = qcMax + pad;
+      var yMax = pMax + pad * 0.5;
+      var tickDist = xMax <= 60 ? 10 : xMax <= 150 ? 20 : 50;
+      board.setBoundingBox([-pad, yMax, xMax, -pad], false);
+      xAxis.ticks[0].setAttribute({ ticksDistance: tickDist });
+      yAxis.ticks[0].setAttribute({ ticksDistance: tickDist <= 20 ? 20 : tickDist });
+      xLabel.moveTo([xMax / 2, -pad * 0.65]);
+      yLabel.moveTo([-pad * 0.75, yMax / 2]);
 
       var qm = (p.a - p.c) / (2 * p.b);
       var pm = (p.a + p.c) / 2;
