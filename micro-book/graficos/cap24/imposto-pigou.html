@@ -144,9 +144,9 @@
     board.create('functiongraph', [CMgS, 0, 100], { strokeColor: '#C8102E', strokeWidth: 2, name: 'CMgS' });
 
     // Labels
-    board.create('text', [98, D(96), '<i>D</i>'], { fontSize: 11, color: '#1565c0', highlight: false });
-    board.create('text', [88, PMgC(90) + 3, '<i>PMgC</i>'], { fontSize: 10, color: '#333', highlight: false });
-    board.create('text', [78, CMgS(80) + 3, '<i>CMgS</i>'], { fontSize: 10, color: '#C8102E', highlight: false });
+    board.create('text', [98, D(96) + 5, '<i>D</i>'], { fontSize: 11, color: '#1565c0', highlight: false });
+    board.create('text', [88, PMgC(90) + 5, '<i>PMgC</i>'], { fontSize: 10, color: '#333', highlight: false });
+    board.create('text', [78, CMgS(80) + 5, '<i>CMgS</i>'], { fontSize: 10, color: '#C8102E', highlight: false });
 
     // DWL of no intervention (triangle between CMgS and D, from Q* to Qm)
     if (Qstar < Qm && Qstar > 0) {
@@ -177,7 +177,7 @@
       // Draw PMgC + t curve
       var PMgCt = function(q) { return 20 + 0.5 * q + tax; };
       board.create('functiongraph', [PMgCt, 0, 100], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, name: 'PMgC + t' });
-      board.create('text', [78, PMgCt(80) + 3, '<i>PMgC+t</i>'], { fontSize: 9, color: '#00897b', highlight: false });
+      board.create('text', [78, PMgCt(80) + 5, '<i>PMgC+t</i>'], { fontSize: 9, color: '#00897b', highlight: false });
 
       // Equilibrium point
       board.create('point', [Qt, Pt_consumer], { name: '', size: 3, color: '#00897b', fixed: true });
