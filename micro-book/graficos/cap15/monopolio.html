@@ -234,7 +234,11 @@
       var dwl = 0.5 * (pm - p.c) * (qc - qm);
       var lerner = (pm - p.c) / pm;
 
-      var html = '<div class="section-title">Monopólio</div>';
+      var html = '<div class="section-title">Curvas</div>';
+      html += '\\(P = ' + p.a.toFixed(0) + ' - ' + p.b.toFixed(1) + 'Q\\) (Demanda)<br>';
+      html += '\\(RMg = ' + p.a.toFixed(0) + ' - ' + (2*p.b).toFixed(1) + 'Q\\)<br>';
+      html += '\\(CMg = ' + p.c.toFixed(0) + '\\)';
+      html += '<div class="section-title">Monopólio</div>';
       html += '\\(Q^m = ' + qm.toFixed(2) + '\\), \\(P^m = ' + pm.toFixed(2) + '\\)<br>';
       html += '\\(\\pi = ' + profit.toFixed(1) + '\\)<br>';
       html += '\\(EC = ' + cs.toFixed(1) + '\\), \\(PPM = ' + dwl.toFixed(1) + '\\)<br>';
