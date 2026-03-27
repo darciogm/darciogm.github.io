@@ -102,14 +102,14 @@
     function qMax() { return aMB / cMB; } // where MB = 0
 
     // MB curve
-    board.create('functiongraph', [function(q){ return Math.max(aMB - cMB * q, 0); }],
-      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'BMg poluidor', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+    board.create('functiongraph', [function(q){ if (q < 0) return NaN; return Math.max(aMB - cMB * q, 0); }],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: '<i>BMg poluidor</i>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
 
     // MD curve
-    board.create('functiongraph', [function(q){ return bMD * q; }],
-      { strokeColor: '#C8102E', strokeWidth: 2.5, name: 'DMg vitima', withLabel: true,
-        label: { position: 'rt', offset: [5, 0], fontSize: 10 } });
+    board.create('functiongraph', [function(q){ return q < 0 ? NaN : bMD * q; }],
+      { strokeColor: '#C8102E', strokeWidth: 2.5, name: '<i>DMg vítima</i>', withLabel: true,
+        label: { position: 'rt', offset: [5, 0], fontSize: 10, highlight: false } });
 
     // Efficient point
     var effPt = board.create('point', [
