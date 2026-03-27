@@ -106,6 +106,10 @@
     var avgRisk = risks.reduce(function(a,b){return a+b;}, 0) / risks.length;
     var premium = s.lambda * avgRisk * s.L;
 
+    // Small-pool volatility: smaller N => more variance in avg cost
+    // Adds a loading proportional to 1/sqrt(N) to simulate sampling noise
+    var poolVolatility = 1 / Math.sqrt(s.N);
+
     for (var t = 0; t < MAX_ROUNDS; t++) {
       rounds.push(t + 1);
       premiums.push(premium);
@@ -135,8 +139,10 @@
       }
 
       // New premium: loading * average cost of insured pool
+      // Small pools add volatility surcharge (insurer charges more to cover variance)
       var avgCost = insured.reduce(function(a,b){return a+b;}, 0) / insured.length * s.L;
-      var newPremium = s.lambda * avgCost;
+      var volatilitySurcharge = avgCost * poolVolatility * 0.5;
+      var newPremium = s.lambda * (avgCost + volatilitySurcharge);
 
       // Check convergence
       if (Math.abs(newPremium - premium) < 1) {
