@@ -896,7 +896,15 @@ O Teorema da Impossibilidade de Arrow não significa que a democracia seja "impo
 
 3. **Extensões e saídas parciais.** Trabalhos subsequentes relaxaram as condições de Arrow e obtiveram possibilidades: Amartya Sen (Nobel 1998) mostrou que permitir comparações interpessoais de utilidade abre soluções; a restrição de domínio a preferências unimodais restaura a maioria (Teorema do Eleitor Mediano); e mecanismos de revelação (como o VCG, discutido na seção seguinte) contornam o problema em contextos específicos.
 
-Kenneth Arrow recebeu o Prêmio Nobel de Economia em 1972, em parte por essa contribuição que estabeleceu os fundamentos da teoria da escolha social e alterou permanentemente nossa compreensão dos limites da agregação democrática de preferências.
+!!! info "🏅 Prêmio Nobel — Kenneth J. Arrow (1972)"
+
+    **Kenneth Joseph Arrow** (1921–2017) foi um economista americano. Doutorou-se na Universidade de Columbia sob orientação de Harold Hotelling e Abraham Wald, e foi professor em Stanford e Harvard. Recebeu o Nobel aos 51 anos — o mais jovem laureado em Economia até hoje. Dividiu o prêmio com John Hicks.
+
+    **Por que ganhou o Nobel:**
+    Premiado por suas contribuições pioneiras à teoria do equilíbrio geral e à teoria do bem-estar. O Teorema da Impossibilidade, publicado em *Social Choice and Individual Values* (1951), demonstrou que nenhuma regra de agregação de preferências pode satisfazer simultaneamente um conjunto mínimo de condições democráticas — um resultado que fundou a teoria moderna da escolha social. Juntamente com Gérard Debreu, Arrow também provou a existência do equilíbrio geral competitivo, outro pilar da teoria econômica.
+
+    **Conexão com este capítulo:**
+    O Teorema da Impossibilidade é diretamente relevante para a provisão de bens públicos: se não existe mecanismo de votação perfeito para agregar preferências, como decidir democraticamente quanto gastar em defesa, saneamento ou meio ambiente? Essa limitação fundamental motiva a busca por mecanismos de revelação de preferências (como o VCG, discutido na Seção 20.10) que contornam o problema em contextos específicos. A contribuição de Arrow também conecta-se ao Teorema de Coase (Seção 20.3): enquanto Coase mostra que a negociação privada pode resolver externalidades, Arrow identifica os limites das soluções coletivas via votação.
 
 ---
 
