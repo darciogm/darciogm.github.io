@@ -126,8 +126,8 @@
       borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
     });
 
-    // Demand curve
-    board.create('functiongraph', [function(q) { var p=gp(); return p.a - p.b*q; }], {
+    // Demand curve (1st quadrant only)
+    board.create('functiongraph', [function(q) { var p=gp(); if (q < 0) return NaN; var v = p.a - p.b*q; return v >= 0 ? v : NaN; }], {
       strokeColor: '#1565c0', strokeWidth: 2.5, name: 'Demanda'
     });
     board.create('text', [function(){ return gp().a/gp().b - 5; }, function(){ return 4; }], {
@@ -135,8 +135,8 @@
       getText: function(){ return '<i>D</i>'; }
     });
 
-    // MR curve
-    board.create('functiongraph', [function(q) { var p=gp(); return p.a - 2*p.b*q; }], {
+    // MR curve (1st quadrant only)
+    board.create('functiongraph', [function(q) { var p=gp(); if (q < 0) return NaN; var v = p.a - 2*p.b*q; return v >= 0 ? v : NaN; }], {
       strokeColor: '#C8102E', strokeWidth: 2, dash: 2, name: 'RMg'
     });
     board.create('text', [function(){ return gp().a/(2*gp().b) - 3; }, function(){ return 4; }], {
