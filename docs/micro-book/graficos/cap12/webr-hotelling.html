@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Lema de Hotelling: Verificação</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Lema de Hotelling: verificacao numerica
+# q = K^(1/3) * L^(1/3) (retornos decrescentes)
+# ============================================
+
+# --- Funcao lucro analitica ---
+# pi(p, w, v) = p^3 / (27*w*v)
+pi_fun <- function(p, w, v) p^3 / (27 * w * v)
+
+# --- Demandas otimas analiticas ---
+q_star <- function(p, w, v) p^2 / (9 * w * v)
+L_star <- function(p, w, v) p^3 / (27 * w^2 * v)
+K_star <- function(p, w, v) p^3 / (27 * w * v^2)
+
+# --- Verificacao numerica do Lema ---
+p0 <- 12; w0 <- 1; v0 <- 1
+eps <- 1e-6
+
+# Derivadas numericas
+dpi_dp <- (pi_fun(p0+eps, w0, v0) - pi_fun(p0-eps, w0, v0)) / (2*eps)
+dpi_dw <- (pi_fun(p0, w0+eps, v0) - pi_fun(p0, w0-eps, v0)) / (2*eps)
+dpi_dv <- (pi_fun(p0, w0, v0+eps) - pi_fun(p0, w0, v0-eps)) / (2*eps)
+
+cat("====== LEMA DE HOTELLING: VERIFICACAO ======\n")
+cat("Tecnologia: q = K^(1/3) * L^(1/3)\n")
+cat("Precos: p =", p0, " w =", w0, " v =", v0, "\n\n")
+
+cat("--- Solucao otima ---\n")
+cat("K* =", K_star(p0, w0, v0), "\n")
+cat("L* =", L_star(p0, w0, v0), "\n")
+cat("q* =", q_star(p0, w0, v0), "\n")
+cat("pi* =", pi_fun(p0, w0, v0), "\n\n")
+
+cat("--- Lema de Hotelling ---\n")
+cat("d(pi)/dp (numerico) =", round(dpi_dp, 4), "\n")
+cat("q* (analitico)      =", q_star(p0, w0, v0), "\n")
+cat("  Diferenca:", abs(dpi_dp - q_star(p0, w0, v0)), "\n\n")
+
+cat("d(pi)/dw (numerico) =", round(dpi_dw, 4), "\n")
+cat("-L* (analitico)     =", -L_star(p0, w0, v0), "\n")
+cat("  Diferenca:", abs(dpi_dw - (-L_star(p0, w0, v0))), "\n\n")
+
+cat("d(pi)/dv (numerico) =", round(dpi_dv, 4), "\n")
+cat("-K* (analitico)     =", -K_star(p0, w0, v0), "\n")
+cat("  Diferenca:", abs(dpi_dv - (-K_star(p0, w0, v0))), "\n\n")
+
+cat("=> Lema de Hotelling verificado!\n\n")
+
+# --- Propriedades da funcao lucro ---
+cat("--- Propriedades de pi ---\n")
+cat("Homogeneidade: pi(2p, 2w, 2v) / (2*pi(p,w,v)) =",
+    pi_fun(2*p0, 2*w0, 2*v0) / (2*pi_fun(p0, w0, v0)),
+    " (= 1 => grau 1)\n")
+cat("d2(pi)/dp2 =", round((pi_fun(p0+eps,w0,v0) - 2*pi_fun(p0,w0,v0) + pi_fun(p0-eps,w0,v0))/eps^2, 2),
+    " > 0 => CONVEXA em p (lei da oferta)\n")
+
+# --- Grafico: oferta q*(p) e pi(p) ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+p_seq <- seq(1, 30, length = 200)
+
+# Painel 1: Oferta q*(p) = p^2/(9wv)
+plot(p_seq, q_star(p_seq, w0, v0), type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "p (preco do produto)", ylab = "q*",
+     main = "Oferta: q* = dpi/dp", cex.lab = 1.1)
+points(p0, q_star(p0, w0, v0), pch = 19, col = "#dc3545", cex = 1.5)
+text(p0, q_star(p0, w0, v0),
+     paste0("  p=", p0, ", q*=", q_star(p0, w0, v0)),
+     pos = 4, cex = 0.8, col = "#dc3545", font = 2)
+text(15, q_star(15, w0, v0)*0.8, "q* = p^2/(9wv)\ncrescente em p\n(lei da oferta!)",
+     cex = 0.8, col = "#0d6efd")
+
+# Painel 2: Funcao lucro pi(p)
+plot(p_seq, pi_fun(p_seq, w0, v0), type = "l", lwd = 3, col = "#198754",
+     xlab = "p (preco do produto)", ylab = "pi*",
+     main = "Funcao lucro: convexa em p", cex.lab = 1.1)
+points(p0, pi_fun(p0, w0, v0), pch = 19, col = "#dc3545", cex = 1.5)
+
+# Tangente (inclinacao = q*)
+tang <- pi_fun(p0, w0, v0) + q_star(p0, w0, v0) * (p_seq - p0)
+lines(p_seq, tang, lwd = 1.5, col = "#dc3545", lty = 2)
+text(p0, pi_fun(p0, w0, v0),
+     paste0("  incl = q* = ", q_star(p0, w0, v0)),
+     pos = 4, cex = 0.8, col = "#dc3545", font = 2)
+
+legend("topleft",
+       legend = c("pi*(p)", "Tangente (Hotelling)"),
+       col = c("#198754", "#dc3545"),
+       lwd = c(3, 1.5), lty = c(1, 2), cex = 0.8, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:360}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

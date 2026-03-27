@@ -8,7 +8,7 @@ Mas antes de mergulhar na análise formal, vale perguntar: **por que existem fir
 
 ---
 
-## 12.1 A Natureza e o Comportamento das Firmas
+## 12.1 Por que Você Não Contrata Tudo pelo Mercado: A Natureza da Firma
 
 ### Por que firmas existem?
 
@@ -71,7 +71,7 @@ Embora existam teorias alternativas — maximização de receita (Baumol), maxim
 
 ---
 
-## 12.2 Maximização de Lucro
+## 12.2 O GPS do Empresário: Maximização de Lucro
 
 Muito bem, a firma quer lucro. Mas querer não basta — ela precisa de um GPS para chegar lá. Quais são as regras práticas que dizem "produza *exatamente* esta quantidade"? E como ter certeza de que chegamos ao topo da montanha e não ao fundo do vale? As condições de primeira e segunda ordem são esse GPS. A CPO conecta-se diretamente às funções de custo derivadas no Capítulo 11: o custo marginal \(\mathrm{CMg}(q) = C'(q)\) é o mesmo objeto que caracterizou a curva de oferta de curto prazo, e agora aparece como o lado direito da condição de otimalidade. A CSO, por sua vez, está ligada à convexidade do custo marginal — que, como vimos no Capítulo 11, decorre dos rendimentos marginais decrescentes dos fatores.
 
@@ -125,6 +125,12 @@ A condição de primeira ordem (CPO) é:
 
     **Regra mnemônica — CSO (Condição Suficiente de Ordem 2):** Para que \(q^*\) seja um máximo local de lucro, é preciso que \(\mathrm{CMg}'(q^*) > \mathrm{RMg}'(q^*)\), ou seja, o CMg deve estar *subindo* mais rápido do que o RMg no ponto ótimo. Em concorrência perfeita (\(\mathrm{RMg}' = 0\)), isso se reduz simplesmente a \(\mathrm{CMg}'(q^*) > 0\): o custo marginal deve ser crescente no ótimo.
 
+<iframe src="../graficos/cap12/webr-max-lucro.html" title="WebR — Maximização de Lucro" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 12.1 — Maximização de lucro: \(p = \mathrm{CMg}\).** O código resolve a CPO, verifica a CSO, avalia a decisão de operar e plota as curvas de custo com o ponto ótimo. Altere o preço `p` para ver os três regimes: lucro positivo, prejuízo com operação e fechamento.
+</div>
+
 ### Condição de segunda ordem
 
 Para que \(q^*\) seja um máximo (e não um mínimo), exige-se:
@@ -161,7 +167,7 @@ Esse resultado conecta-se diretamente à teoria da distribuição funcional da r
 
 ---
 
-## 12.3 Receita Marginal e Elasticidade
+## 12.3 O Balde Furado da Receita: Receita Marginal e Elasticidade
 
 A regra "RMg = CMg" é linda, mas esconde uma assimetria traiçoeira no lado da receita. Para a firma tomadora de preços, a vida é simples: cada unidade extra rende exatamente o preço de mercado, sem drama. Já para a firma com poder de mercado, vender mais é como encher um balde furado — colocar uma unidade extra na prateleira exige *baixar o preço de todas as outras*, e essa "conta-gotas de receita perdida" torna a receita marginal menor que o preço. A relação entre receita marginal e elasticidade-preço da demanda, que derivamos a seguir, é uma das mais úteis de toda a microeconomia, pois conecta a decisão de produção da firma à sensibilidade dos consumidores ao preço. Essa relação é o elo central entre os capítulos 12 e 15: quando chegarmos ao monopólio, a fórmula \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) será a chave para derivar o markup de Lerner e quantificar a ineficiência do poder de mercado. Antes de chegar lá, é útil notar que a distinção entre firma tomadora de preços e firma com poder de mercado não é binária — ela é um espectro parametrizado pela elasticidade da demanda individual da firma, que por sua vez depende da estrutura do mercado estudada nos Capítulos 13 a 15.
 
@@ -260,9 +266,15 @@ mede o grau de poder de mercado da firma: varia de zero (concorrência perfeita,
 
     **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 12.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o [CADE](https://www.gov.br/cade) utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
 
+<iframe src="../graficos/cap12/webr-rmg-elasticidade.html" title="WebR — RMg, Elasticidade e Lerner" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 12.2 — Receita marginal, elasticidade e índice de Lerner.** O código compara monopolista vs. competitivo para uma demanda linear, calcula o DWL e plota RT junto com a elasticidade. Altere `CMg_c` e os parâmetros da demanda para ver como o markup e o peso morto respondem.
+</div>
+
 ---
 
-## 12.4 Oferta de Curto Prazo da Firma Tomadora de Preços
+## 12.4 Operar ou Fechar as Portas: Oferta de Curto Prazo
 
 Firmas com poder de mercado são fascinantes, mas voltemos agora ao personagem mais humilde — e mais fundamental — da história: a firma tomadora de preços, a peça de Lego com que se monta toda a curva de oferta. A pergunta central desta seção é: dado o cardápio de custos que herdamos do Capítulo 11, para quais preços a firma decide produzir, e quanto? A resposta envolve não apenas a condição \(p = \mathrm{CMg}\), mas também uma decisão prévia que muitos estudantes esquecem na prova (e que todo empresário conhece de cor): a firma deve operar ou fechar as portas? Essa decisão de "shutdown" — para usar o termo consagrado na literatura anglófona — é analiticamente distinta da condição de otimalidade. Ela compara dois estados alternativos (operar vs. não operar) em vez de identificar um máximo em um conjunto contínuo. A curva de oferta que derivamos nesta seção é justamente o insumo fundamental para construir a oferta de mercado do Capítulo 13 e, por extensão, para analisar o equilíbrio competitivo de longo prazo. O Box Mundo 12.1 ao final desta seção documenta, com dados empíricos da pandemia de COVID-19, como firmas reais tomam essa decisão em situações extremas.
 
@@ -407,6 +419,12 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
     **Interpretação econômica:** Este é o dilema enfrentado por muitas MPEs brasileiras: operar com prejuízo no curto prazo para cobrir custos variáveis (salários, insumos) enquanto os custos fixos (aluguel, financiamentos) são parcialmente absorvidos. A pesquisa do SEBRAE mostra que empresas nessa faixa (\(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\)) sobrevivem por algum tempo, mas fecham quando os contratos fixos vencem — exatamente como prevê a teoria.
 
+<iframe src="../graficos/cap12/webr-shutdown.html" title="WebR — Decisão de Shutdown" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 12.3 — Decisão de operar ou fechar: três regimes de preço.** O código reproduz o Exercício Resolvido 12.2 e mapeia graficamente as três zonas de decisão (lucro positivo, prejuízo com operação, fechamento). Altere `CF` e os preços para explorar como a estrutura de custos fixos afeta a resiliência da firma.
+</div>
+
 ---
 
 !!! box-mundo "Box Mundo 12.1 — Decisões de fechamento durante a COVID-19: o setor de restaurantes dos EUA"
@@ -482,7 +500,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
 ---
 
-## 12.5 A Função Lucro e o Lema de Hotelling
+## 12.5 O Truque de Mágica do Lucro: Função Lucro e Lema de Hotelling
 
 No Capítulo 11, o Lema de Shephard fez um truque de mágica: extraiu as demandas por insumos apenas derivando a função custo. Será que existe um truque análogo do lado do lucro? A resposta é um sonoro *sim* — e o mágico se chama **Lema de Hotelling** (1932). A ideia é quase boa demais para ser verdade: a função lucro, sozinha, carrega toda a informação necessária para reconstruir as funções de oferta do produto e de demanda por insumos. Basta derivar. Hotelling (1932) foi o primeiro a reconhecer que a simetria entre o problema do consumidor e o da firma se estende além da dualidade custo-produção: a função lucro é o análogo da função dispêndio no lado da demanda, e suas derivadas têm a mesma estrutura interpretativa. Para chegar a esse resultado, precisamos primeiro definir e caracterizar a função lucro.
 
@@ -662,9 +680,15 @@ A função lucro possui propriedades notáveis:
 
     **Interpretação econômica:** A função lucro \(\pi = p^3/(27wv)\) é homogênea de grau 1 em \((p, w, v)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wv) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
 
+<iframe src="../graficos/cap12/webr-hotelling.html" title="WebR — Lema de Hotelling" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 12.4 — Lema de Hotelling: verificação numérica.** O código calcula a função lucro para \(q = K^{1/3}L^{1/3}\), verifica numericamente que \(\partial\pi/\partial p = q^*\) e \(\partial\pi/\partial w = -L^*\), e ilustra a convexidade de \(\pi\) em \(p\). A tangente no gráfico tem inclinação igual à oferta ótima — exatamente o lema em ação.
+</div>
+
 ---
 
-## 12.6 Maximização de Lucro e Demanda por Insumos
+## 12.6 Dois Remadores Sincronizados: Demanda por Insumos
 
 O Lema de Hotelling abriu um atalho elegante: derivar a função lucro e *voilà*, as demandas por insumos aparecem. Mas de onde vêm suas propriedades? Nesta seção, abrimos o capô dessas demandas e encontramos uma decomposição familiar — efeito substituição e efeito produto —, prima-irmã da decomposição de Slutsky do Capítulo 5. A diferença? Aqui não há espaço para "insumos de Giffen" — os dois efeitos sempre puxam na mesma direção, como dois remadores sincronizados. Este resultado tem implicações diretas para a análise empírica da demanda por trabalho no Brasil: um aumento do salário mínimo, por exemplo, afeta a demanda por trabalho tanto pelo efeito substituição (trabalho fica relativamente mais caro que capital) quanto pelo efeito produto (custos maiores reduzem a produção ótima e, portanto, o emprego). Ambos os efeitos apontam na mesma direção, o que explica por que não há análogo de "insumo de Giffen" na teoria da firma.
 
@@ -707,6 +731,12 @@ A magnitude relativa desses dois efeitos é empiricamente relevante. Em indústr
 
 !!! theorem "Proposição: Inexistência de 'insumo de Giffen'"
     Na teoria da firma maximizadora de lucro, a demanda por um insumo é sempre não crescente em seu próprio preço. Não existe o análogo de um "bem de Giffen" para insumos, pois tanto o efeito substituição quanto o efeito produto reduzem a demanda quando o preço do insumo aumenta.
+
+<iframe src="../graficos/cap12/webr-decomposicao-insumos.html" title="WebR — Decomposição da Demanda por Insumos" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 12.5 — Efeito substituição vs. efeito produto na demanda por trabalho.** O código decompõe a variação na demanda por trabalho quando \(w\) sobe: o efeito substituição (ao longo da isoquanta) e o efeito produto (redução de \(q^*\)) vão na mesma direção — confirmando que não existe "insumo de Giffen". Altere `dw` para ver como a magnitude do choque afeta cada componente.
+</div>
 
 ---
 

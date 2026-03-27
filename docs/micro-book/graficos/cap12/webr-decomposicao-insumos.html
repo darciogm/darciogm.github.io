@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Efeito Substituição vs. Efeito Produto na Demanda por Insumos</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Decomposicao da demanda por trabalho:
+# Efeito substituicao + Efeito produto
+# q = K^alpha * L^beta (retornos decrescentes)
+# ============================================
+
+alpha <- 1/3;  beta_p <- 1/3
+p0 <- 12; w0 <- 1; v0 <- 1
+
+# --- Demandas analiticas (DRS: alpha+beta < 1) ---
+s <- alpha + beta_p
+
+# Demanda INCONDICIONAL por L (max lucro)
+L_inc <- function(p, w, v) {
+  (p * beta_p)^(1/(1-s)) * (alpha/v)^(alpha/(1-s)) * w^(-(1-alpha)/(1-s))
+}
+
+# Producao otima
+q_opt <- function(p, w, v) {
+  K <- (p * alpha)^(1/(1-s)) * (beta_p/w)^(beta_p/(1-s)) * v^(-(1-beta_p)/(1-s))
+  L <- L_inc(p, w, v)
+  K^alpha * L^beta_p
+}
+
+# Demanda CONDICIONAL por L (min custo para q fixo)
+Lc <- function(w, v, q) {
+  q^(1/s) * (beta_p * v / (alpha * w))^(alpha/s)
+}
+
+# --- Efeito de aumento em w ---
+dw <- 0.5  # aumento no salario
+
+L0 <- L_inc(p0, w0, v0)
+L1 <- L_inc(p0, w0 + dw, v0)
+q0 <- q_opt(p0, w0, v0)
+q1 <- q_opt(p0, w0 + dw, v0)
+
+# Demanda condicional avaliada em q0 com novo w
+Lc_sub <- Lc(w0 + dw, v0, q0)
+
+efeito_total <- L1 - L0
+efeito_sub   <- Lc_sub - Lc(w0, v0, q0)
+efeito_prod  <- L1 - Lc_sub
+
+cat("====== DECOMPOSICAO DA DEMANDA POR TRABALHO ======\n")
+cat("q = K^", alpha, " * L^", beta_p, " (s =", s, "< 1, DRS)\n")
+cat("Precos iniciais: p =", p0, " w =", w0, " v =", v0, "\n")
+cat("Choque: w sobe de", w0, "para", w0 + dw, "\n\n")
+
+cat("--- Antes do choque ---\n")
+cat("L* =", round(L0, 2), "  q* =", round(q0, 2), "\n\n")
+
+cat("--- Apos o choque ---\n")
+cat("L* =", round(L1, 2), "  q* =", round(q1, 2), "\n\n")
+
+cat("--- Decomposicao ---\n")
+cat("Efeito total    = dL* =", round(efeito_total, 4), "\n")
+cat("Efeito substit. =", round(efeito_sub, 4), " (q fixo em", round(q0, 2), ")\n")
+cat("Efeito produto  =", round(efeito_prod, 4), " (q cai de", round(q0, 2), "para", round(q1, 2), ")\n")
+cat("Soma            =", round(efeito_sub + efeito_prod, 4), "\n\n")
+
+cat("AMBOS negativos => nao existe 'insumo de Giffen'!\n")
+cat("  Ef. substituicao:", round(efeito_sub, 4), "< 0\n")
+cat("  Ef. produto:     ", round(efeito_prod, 4), "< 0\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+
+w_seq <- seq(0.2, 4, length = 200)
+L_seq <- sapply(w_seq, function(w) L_inc(p0, w, v0))
+Lc_seq <- sapply(w_seq, function(w) Lc(w, v0, q0))
+
+plot(w_seq, L_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "w (salario)", ylab = "L (demanda por trabalho)",
+     main = "Demanda por trabalho: condicional vs. incondicional",
+     ylim = c(0, max(L_seq) * 1.1), cex.lab = 1.1)
+lines(w_seq, Lc_seq, lwd = 2, col = "#dc3545", lty = 2)
+
+# Marcar decomposicao
+points(w0, L0, pch = 19, col = "#198754", cex = 1.8)
+points(w0 + dw, Lc_sub, pch = 17, col = "#fd7e14", cex = 1.5)
+points(w0 + dw, L1, pch = 19, col = "#6f42c1", cex = 1.8)
+
+# Setas de decomposicao
+arrows(w0 + dw + 0.05, L0, w0 + dw + 0.05, Lc_sub,
+       code = 3, col = "#dc3545", lwd = 2, length = 0.06)
+text(w0 + dw + 0.15, (L0 + Lc_sub)/2, "Ef.\nsubst.",
+     col = "#dc3545", cex = 0.7, font = 2)
+
+arrows(w0 + dw + 0.3, Lc_sub, w0 + dw + 0.3, L1,
+       code = 3, col = "#6f42c1", lwd = 2, length = 0.06)
+text(w0 + dw + 0.4, (Lc_sub + L1)/2, "Ef.\nprod.",
+     col = "#6f42c1", cex = 0.7, font = 2)
+
+text(w0, L0, paste0("  A (w=", w0, ")"), pos = 4, cex = 0.75, col = "#198754", font = 2)
+text(w0+dw, L1, paste0("  C (w=", w0+dw, ")"), pos = 4, cex = 0.75, col = "#6f42c1", font = 2)
+
+legend("topright",
+       legend = c("L* incondicional (max lucro)",
+                  paste0("L^c condicional (q=", round(q0, 1), ")")),
+       col = c("#0d6efd", "#dc3545"),
+       lwd = c(3, 2), lty = c(1, 2), cex = 0.75, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Receita Marginal, Elasticidade e Índice de Lerner</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# RMg, Elasticidade e Indice de Lerner
+# Demanda linear: p = a - b*q
+# ============================================
+
+# --- Parametros ---
+a_dem <- 100     # intercepto da demanda
+b_dem <- 2       # inclinacao da demanda
+CMg_c <- 20      # custo marginal constante
+
+# --- Funcoes ---
+p_dem  <- function(q) a_dem - b_dem * q
+RMg    <- function(q) a_dem - 2 * b_dem * q
+RT     <- function(q) (a_dem - b_dem * q) * q
+elast  <- function(q) -(a_dem - b_dem * q) / (b_dem * q)  # dq/dp * p/q
+
+# --- Monopolista: RMg = CMg ---
+q_mon <- (a_dem - CMg_c) / (2 * b_dem)
+p_mon <- p_dem(q_mon)
+e_mon <- elast(q_mon)
+lerner <- (p_mon - CMg_c) / p_mon
+
+# --- Competitivo: p = CMg ---
+q_comp <- (a_dem - CMg_c) / b_dem
+p_comp <- CMg_c
+
+# --- Receita maxima: RMg = 0 ---
+q_rt_max <- a_dem / (2 * b_dem)
+
+cat("====== MONOPOLISTA vs. COMPETITIVO ======\n")
+cat("Demanda: p =", a_dem, "-", b_dem, "q  |  CMg =", CMg_c, "\n\n")
+
+cat("--- Monopolio (RMg = CMg) ---\n")
+cat("q_mon =", q_mon, "  p_mon =", p_mon, "\n")
+cat("Elasticidade no otimo: e =", round(e_mon, 2), "\n")
+cat("  |e| =", round(abs(e_mon), 2), ifelse(abs(e_mon) > 1, " > 1 (elastica) OK!", " ERRO"), "\n")
+cat("Verificacao: RMg = p*(1 + 1/e) =", round(p_mon*(1 + 1/e_mon), 2),
+    " = CMg =", CMg_c, "\n")
+cat("Indice de Lerner = (p - CMg)/p =", round(lerner, 4), "\n")
+cat("  Pela formula: 1/|e| =", round(1/abs(e_mon), 4), "\n")
+cat("Lucro = (p - CMg)*q =", (p_mon - CMg_c) * q_mon, "\n\n")
+
+cat("--- Concorrencia perfeita (p = CMg) ---\n")
+cat("q_comp =", q_comp, "  p_comp =", p_comp, "\n")
+cat("Lucro = 0 (p = CMg = CMe)\n\n")
+
+cat("--- Peso morto do monopolio ---\n")
+cat("DWL = 0.5 * (p_mon - CMg) * (q_comp - q_mon) =",
+    0.5 * (p_mon - CMg_c) * (q_comp - q_mon), "\n")
+
+# --- Graficos ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+q_seq <- seq(0.1, a_dem/b_dem - 0.1, length = 500)
+
+# Painel 1: Demanda, RMg, CMg
+plot(q_seq, p_dem(q_seq), type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "q", ylab = "$",
+     main = "Demanda, RMg e CMg",
+     ylim = c(0, a_dem * 1.05), cex.lab = 1.1)
+lines(q_seq, RMg(q_seq), lwd = 2, col = "#dc3545", lty = 2)
+abline(h = CMg_c, col = "#198754", lwd = 2)
+
+# Area de DWL
+q_dwl <- seq(q_mon, q_comp, length = 100)
+polygon(c(q_dwl, rev(q_dwl)),
+        c(p_dem(q_dwl), rep(CMg_c, length(q_dwl))),
+        col = rgb(0.86, 0.21, 0.27, 0.15), border = NA)
+
+# Pontos
+points(q_mon, p_mon, pch = 19, col = "#6f42c1", cex = 1.8)
+points(q_comp, p_comp, pch = 19, col = "#198754", cex = 1.5)
+points(q_rt_max, 0, pch = 17, col = "#fd7e14", cex = 1.3)
+
+text(q_mon, p_mon, paste0("  Mon: q=", q_mon, ", p=", p_mon),
+     pos = 4, cex = 0.75, col = "#6f42c1", font = 2)
+text(q_comp, p_comp + 3, paste0("  Comp: q=", q_comp),
+     pos = 4, cex = 0.75, col = "#198754", font = 2)
+
+# Seta markup
+arrows(q_mon*0.3, CMg_c, q_mon*0.3, p_mon, code = 3, col = "#6f42c1", lwd = 1.5, length = 0.06)
+text(q_mon*0.3, (CMg_c + p_mon)/2, "markup", col = "#6f42c1", cex = 0.7, srt = 90)
+
+legend("topright",
+       legend = c("Demanda", "RMg", paste0("CMg = ", CMg_c), "DWL"),
+       col = c("#0d6efd", "#dc3545", "#198754", rgb(0.86, 0.21, 0.27, 0.5)),
+       lwd = c(3, 2, 2, NA), lty = c(1, 2, 1, NA),
+       pch = c(NA, NA, NA, 15), cex = 0.75, bg = "white")
+
+# Painel 2: RT e elasticidade
+plot(q_seq, RT(q_seq), type = "l", lwd = 3, col = "#fd7e14",
+     xlab = "q", ylab = "$",
+     main = "Receita Total e Elasticidade",
+     cex.lab = 1.1)
+
+# Elasticidade no eixo secundario
+par(new = TRUE)
+e_seq <- abs(elast(q_seq))
+e_seq[e_seq > 10] <- NA
+plot(q_seq, e_seq, type = "l", lwd = 2, col = "#6f42c1", lty = 2,
+     axes = FALSE, xlab = "", ylab = "", ylim = c(0, 5))
+axis(4, col = "#6f42c1", col.axis = "#6f42c1")
+mtext("|elasticidade|", side = 4, line = 2.5, col = "#6f42c1", cex = 0.8)
+
+abline(h = 1, col = "#adb5bd", lty = 3)
+points(q_rt_max, 1, pch = 19, col = "#fd7e14", cex = 1.5)
+text(q_rt_max, 1.3, paste0("RT max\n|e|=1\nq=", q_rt_max),
+     cex = 0.7, col = "#fd7e14", font = 2)
+points(q_mon, abs(e_mon), pch = 19, col = "#6f42c1", cex = 1.3)
+text(q_mon, abs(e_mon) + 0.3, paste0("|e|=", round(abs(e_mon), 1)),
+     cex = 0.7, col = "#6f42c1", font = 2)
+
+legend("topleft",
+       legend = c("RT", "|Elasticidade|"),
+       col = c("#fd7e14", "#6f42c1"),
+       lwd = c(3, 2), lty = c(1, 2), cex = 0.8, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>
