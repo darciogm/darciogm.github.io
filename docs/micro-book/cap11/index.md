@@ -10,7 +10,7 @@ Do ponto de vista histórico, a formalização moderna da teoria dos custos deve
 
 ---
 
-## 11.1 Definições de Custos
+## 11.1 O Preço de Não Fazer Outra Coisa: Definições de Custos
 
 ### Custo econômico versus custo contábil
 
@@ -89,9 +89,15 @@ A racionalidade econômica tem uma regra clara: ao tomar uma decisão, considere
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
+<iframe src="../graficos/cap11/webr-custo-oportunidade.html" title="WebR — Custo Econômico vs. Contábil" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 11.1 — Custo econômico vs. custo contábil.** O código reproduz o Exercício Resolvido 11.1 computacionalmente. Altere os valores de receita, custos explícitos e custos de oportunidade para simular outros cenários — por exemplo, o que acontece se a oferta salarial alternativa subir para R$ 120.000?
+</div>
+
 ---
 
-## 11.2 Maximização de Lucro e Minimização de Custos
+## 11.2 Gêmeos (Quase) Idênticos: Maximização de Lucro e Minimização de Custos
 
 Maximizar lucro e minimizar custo parecem gêmeos idênticos — dois jeitos de dizer a mesma coisa. Quase. A relação entre eles é como a de um motorista de aplicativo e o Waze: o Waze encontra o caminho mais curto para qualquer destino, mas ainda é o motorista quem decide *para onde* ir. Há uma assimetria sutil aqui, e vale a pena desembalá-la com cuidado.
 
@@ -119,7 +125,7 @@ Essa proposição tem implicação prática importante. Ela significa que, ao ob
 
 ---
 
-## 11.3 Minimização de Custos: Isocusto e Tangência
+## 11.3 O Déjà Vu do Consumidor: Minimização de Custos e Tangência
 
 Hora de arregaçar as mangas e resolver o problema de verdade. A firma quer produzir uma quantidade fixa de produto gastando o mínimo possível — como quem monta a cesta do mês no supermercado tentando não estourar o orçamento, só que com capital e trabalho no carrinho. Se você sobreviveu à minimização de gasto do consumidor no Capítulo 4, vai sentir um *déjà vu* reconfortante: a estrutura é a mesma, só mudam os nomes. Isoquanta no lugar de curva de indiferença, isocusto no lugar de reta orçamentária — dualidade pura.
 
@@ -256,9 +262,15 @@ Uma propriedade importante das demandas condicionadas, imediatamente derivada do
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
+<iframe src="../graficos/cap11/webr-minimizacao-custo.html" title="WebR — Minimização de Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 11.2 — Minimização de custo: isoquanta e isocusto.** O código resolve o problema de minimização de custo para uma Cobb-Douglas genérica e plota a isoquanta, a isocusto ótima e o caminho de expansão. Altere `alpha`, `beta`, `w`, `v` e `q0` para ver como a combinação ótima de insumos responde a mudanças nos parâmetros.
+</div>
+
 ---
 
-## 11.4 A Função Custo e o Lema de Shephard
+## 11.4 O Extrato Bancário da Firma Eficiente: Função Custo e Lema de Shephard
 
 Na seção anterior, descobrimos *quanto* de cada insumo a firma usa para produzir ao menor custo. Agora vem o passo mágico: plugamos essas quantidades ótimas de volta na conta e obtemos a **função custo** — uma fórmula compacta que resume tudo o que a firma precisa saber sobre tecnologia e preços num único número: o custo mínimo para cada nível de produção. É o "extrato bancário" da firma eficiente. E dessa função brota um dos resultados mais bonitos da microeconomia: o Lema de Shephard, que permite recuperar as demandas por insumos simplesmente derivando a função custo.
 
@@ -336,6 +348,12 @@ A função custo possui as seguintes propriedades:
 
     **Por que isso importa:** Na prática, é muito mais fácil observar custos e preços do que medir diretamente a tecnologia de produção. O Lema de Shephard permite que economistas estimem demandas por insumos a partir de dados contábeis — algo essencial para política tributária e regulação no Brasil.
 
+<iframe src="../graficos/cap11/webr-shephard.html" title="WebR — Lema de Shephard e Concavidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 11.3 — Lema de Shephard e concavidade da função custo.** O código verifica numericamente o Lema de Shephard (derivada da função custo = demanda condicional) e ilustra a concavidade de \(C\) nos preços dos insumos. A tangente em cada ponto tem inclinação igual à demanda condicional — exatamente o que o lema afirma.
+</div>
+
 Um corolário imediato do Lema de Shephard e da homogeneidade de grau 1 da função custo nos preços é a **identidade de Euler** para a função custo:
 
 \[
@@ -346,7 +364,7 @@ o que não é outra coisa senão a definição da função custo — uma verific
 
 ---
 
-## 11.5 Curvas de Custo
+## 11.5 O Trio que Manda na Oferta: Curvas de Custo
 
 A função custo é poderosa, mas abstrata — depende de três variáveis ao mesmo tempo. Agora, congelamos os preços dos insumos e deixamos só a quantidade variar. O resultado são as famosas curvas de custo total, custo médio e custo marginal — o trio que aparece em toda prova de micro, toda análise de empresa e toda reunião de diretoria (mesmo que disfarçado com outros nomes). Entender por que o custo marginal sempre cruza o custo médio no seu ponto de mínimo — como um corredor que puxa a média do pelotão para baixo enquanto é mais rápido — é a chave para a análise da oferta nos Capítulos 12 e 13.
 
@@ -427,9 +445,15 @@ Com rendimentos marginais inicialmente crescentes e depois decrescentes (o forma
 
 A relação \(\mathrm{CMg} = w / PMg_L\) merece atenção especial porque faz a ponte explícita com o Capítulo 10. Quando o produto marginal do trabalho \(PMg_L\) é crescente (trecho inicial da função de produção), o custo marginal é decrescente — cada nova unidade de trabalho produz mais do que a anterior, tornando o custo por unidade menor. Quando \(PMg_L\) começa a cair (lei dos rendimentos marginais decrescentes), o custo marginal começa a subir. O ponto de mínimo do CMg corresponde exatamente ao ponto de máximo do \(PMg_L\) — as duas curvas são literalmente o reflexo uma da outra com relação a um espelho horizontal.
 
+<iframe src="../graficos/cap11/webr-curvas-custo.html" title="WebR — Curvas de Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 11.4 — Curvas de custo: CT, CMe, CMg e CVMe.** O código plota as curvas de custo a partir de uma função cúbica \(CT(q) = CF + aq + bq^2 + cq^3\) e calcula automaticamente os pontos de mínimo do CMe e CVMe. Altere os parâmetros `CF`, `a`, `b` e `c` para ver como o formato das curvas muda — e confirme que o CMg sempre cruza o CMe e o CVMe em seus mínimos.
+</div>
+
 ---
 
-## 11.6 Deslocamentos nas Curvas de Custo
+## 11.6 Quando o Chão se Move: Deslocamentos nas Curvas de Custo
 
 As curvas de custo analisadas até aqui foram derivadas para preços de insumos e tecnologia fixos. Mas o mundo real é dinâmico: salários sobem, o preço da energia flutua, novas tecnologias surgem e a regulação muda. Como essas mudanças afetam as curvas de custo da firma? Esta seção examina três fontes de deslocamento: variações nos preços dos insumos, progresso técnico e tributação. Essa análise é essencial para o Capítulo 12, onde veremos como deslocamentos nas curvas de custo se traduzem em deslocamentos na curva de oferta da firma competitiva.
 
@@ -458,7 +482,7 @@ O Brasil oferece um laboratório rico para analisar os efeitos de impostos sobre
 
 ---
 
-## 11.7 Curto Prazo versus Longo Prazo: A Curva Envoltória
+## 11.7 O Apartamento de Dois Quartos no Natal: Curto Prazo, Longo Prazo e a Envoltória
 
 Imagine que você comprou um apartamento de dois quartos e agora precisa hospedar dez parentes no Natal. No curto prazo, a planta do apê é fixa — você empilha colchões, improvisa, e o custo por hóspede dispara. No longo prazo, você poderia ter alugado uma casa maior pagando menos por cabeça. A firma enfrenta exatamente esse dilema: no curto prazo, pelo menos um insumo (tipicamente o capital) está travado, e ela faz o que pode; no longo prazo, tudo é ajustável. A relação entre esses dois horizontes produz a célebre **curva envoltória** — e entendê-la é entender por que firmas investem, desinvestem e, às vezes, fecham as portas.
 
@@ -596,6 +620,12 @@ Uma última propriedade relevante da envoltória é que, no mínimo da curva de 
 
     A diferença é sempre não negativa, com igualdade quando \(q^2 = 1\), ou seja, \(q = 1\). Nesse ponto, \(K^*(q=1) = 1 = \bar{K}\) — o capital fixo coincide com o ótimo de longo prazo. Para qualquer outro nível de produto, o curto prazo é mais caro, pois a firma não pode ajustar o capital.
 
+<iframe src="../graficos/cap11/webr-envoltoria.html" title="WebR — Curva Envoltória" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 11.5 — Curva envoltória: curto prazo vs. longo prazo.** O código reproduz o Exercício Resolvido 11.3 (\(q = K^{1/4}L^{1/4}\)) e plota as curvas de custo total e custo médio de curto prazo para diferentes valores de \(\bar{K}\), junto com a envoltória de longo prazo. Os pontos vermelhos marcam as tangências — confirme que \(CT_{LP} \leq CT_{CP}\) sempre.
+</div>
+
 ---
 
 !!! box-brasil "Box Brasil: O peso do 'custo Brasil' na indústria de alimentos"
@@ -662,7 +692,7 @@ Uma última propriedade relevante da envoltória é que, no mínimo da curva de 
 
 ---
 
-## 11.8 Demandas Condicionais e Função Custo por Tipo de Função de Produção
+## 11.8 O Catálogo de Custos: Funções de Produção e suas Funções Custo
 
 As seções anteriores desenvolveram os conceitos gerais de minimização de custos, função custo e curvas de custo. Agora é hora de aplicar esses conceitos de forma sistemática às quatro funções de produção clássicas estudadas no Capítulo 10 — Cobb-Douglas, linear, Leontief e CES. Para cada uma, derivamos explicitamente as demandas condicionais por insumos, a função custo resultante e, quando a solução existe, as demandas por insumos via maximização de lucro. Esse catálogo de resultados será referência constante nos capítulos seguintes e nos exercícios da ANPEC.
 
@@ -855,6 +885,12 @@ s_K = \frac{\alpha^\sigma v^{1-\sigma}}{W^{1-\sigma}}
 \]
 
 Quando \(\sigma > 1\) (alta elasticidade de substituição), um aumento em \(v/w\) reduz a participação do capital no custo mais do que proporcionalmente — a firma substitui fortemente capital por trabalho. Quando \(\sigma < 1\), a substituição é mais limitada e a participação do capital pode até *aumentar* com o aumento de seu preço relativo (efeito gasto domina o efeito substituição). Esse fenômeno, análogo ao paradoxo de Giffen no consumo mas para insumos, raramente é observado na prática, mas é teoricamente possível.
+
+<iframe src="../graficos/cap11/webr-custos-funcoes.html" title="WebR — Funções Custo por Tipo de Tecnologia" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 11.6 — Catálogo de funções custo: CD, linear e Leontief.** O código compara lado a lado o custo total e o custo médio para cinco tecnologias diferentes (CD com CRS, DRS e IRS; linear; Leontief). Observe como os rendimentos de escala determinam se o CMe é constante, crescente ou decrescente — e confirme que a Leontief e a linear sempre geram CMe constante.
+</div>
 
 !!! info "Prêmio Nobel — Ronald Coase (1991)"
     **Ronald Harry Coase** (1910–2013) recebeu o Nobel de Economia em 1991 "pela descoberta e esclarecimento do significado dos custos de transação e dos direitos de propriedade para a estrutura institucional e funcionamento da economia".
