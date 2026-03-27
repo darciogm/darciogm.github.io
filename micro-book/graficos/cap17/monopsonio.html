@@ -117,14 +117,14 @@
     return v >= 0 ? v : NaN;
   }], { strokeColor: '#00897b', strokeWidth: 2.5 });
 
-  // --- Curve labels (at endpoints, offset to avoid overlap) ---
-  board.create('text', [function(){ return mrp0/mrp1 + 2; }, 3, '<i>VPMgL</i>'], {
+  // --- Curve labels (positioned above each curve, near left side) ---
+  board.create('text', [3, function(){ return mrp0 + 3; }, '<i>VPMgL</i>'], {
     fontSize: 12, color: '#00897b', fixed: true, highlight: false
   });
-  board.create('text', [function(){ return mrp0/mrp1 + 2; }, function(){ return a + b * mrp0/mrp1 + 5; }, '<i>S</i>(<i>w</i>)'], {
+  board.create('text', [function(){ return compH() + 5; }, function(){ return a + b * (compH() + 5) + 5; }, '<i>S</i>(<i>w</i>)'], {
     fontSize: 12, color: '#1565c0', fixed: true, highlight: false
   });
-  board.create('text', [function(){ return (mrp0 - a) / (2*b) + 2; }, function(){ return mrp0 + 5; }, '<i>MCL</i>'], {
+  board.create('text', [function(){ return monopH() + 5; }, function(){ return a + 2 * b * (monopH() + 5) + 5; }, '<i>MCL</i>'], {
     fontSize: 12, color: '#C8102E', fixed: true, highlight: false
   });
 
@@ -147,13 +147,13 @@
   // Monopsony wage (on supply)
   board.create('point', [monopH, monopW], {
     size: 5, fillColor: '#C8102E', strokeColor: '#fff', name: 'Monopsônio', fixed: true,
-    label: { fontSize: 11, offset: [10, -15], color: '#C8102E', highlight: false }
+    label: { fontSize: 11, offset: [12, -18], color: '#C8102E', highlight: false }
   });
 
   // Competitive point
   board.create('point', [compH, compW], {
     size: 5, fillColor: '#00897b', strokeColor: '#fff', name: 'Competitivo', fixed: true,
-    label: { fontSize: 11, offset: [10, 10], color: '#00897b', highlight: false }
+    label: { fontSize: 11, offset: [12, 14], color: '#00897b', highlight: false }
   });
 
   // --- Dashed projection lines ---
