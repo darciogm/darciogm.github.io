@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <!--
-  Imposto Pigouviano vs Cap-and-Trade — Simulacao Interativa
+  Imposto Pigouviano vs Cap-and-Trade — Chapter 24
   Library: JSXGraph
-  Chapter 24 — Microeconomia
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Imposto Pigouviano vs Cap-and-Trade</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
-  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
     window.MathJax = {
       tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
@@ -22,7 +21,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
     .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
-    #jsxbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.6rem; }
@@ -37,15 +36,15 @@
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) {
       .graph-container { flex-direction: column; align-items: center; }
-      #jsxbox { flex-basis: 100%; width: 100%; max-width: 520px; }
-      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 540px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
     }
     html,body{margin:0!important;padding:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
 <div class="graph-container">
-  <div id="jsxbox"></div>
+  <div id="jxgbox"></div>
   <div class="controls">
     <h3>Instrumento</h3>
     <div class="toggle-group">
@@ -61,7 +60,7 @@
       <input type="range" id="slider-cap" min="10" max="100" step="5" value="60">
     </div>
     <div class="slider-group">
-      <label>Custo externo unitario \(e\): <span class="val" id="val-e">30</span></label>
+      <label>Custo externo unitário \(e\): <span class="val" id="val-e">30</span></label>
       <input type="range" id="slider-e" min="5" max="60" step="5" value="30">
     </div>
     <div class="info-box" id="info"></div>
@@ -70,58 +69,54 @@
 </div>
 
 <script>
-  var mode = 'tax';
-  var board;
+  // P(Q) = 120 - Q,  PMgC(Q) = 20 + 0.5Q,  CMgS(Q) = PMgC(Q) + e
+  // Market eq: Q_m = 200/3 ≈ 66.7
+  // Social opt: Q* = (100 - e) / 1.5
 
-  // Model:
-  // Demand (inverse): P(Q) = 120 - Q
-  // PMgC (private marginal cost): PMgC(Q) = 20 + 0.5*Q
-  // External cost per unit: e (constant)
-  // CMgS (social marginal cost): CMgS(Q) = PMgC(Q) + e = 20 + 0.5*Q + e
+  var curMode = 'tax';
+  var BB = [-12, 140, 130, -12];
 
-  // Market equilibrium (no intervention): P = PMgC => 120 - Q = 20 + 0.5Q => Q_m = 200/3 ~ 66.7
-  // Social optimum: P = CMgS => 120 - Q = 20 + 0.5Q + e => Q* = (100-e)/1.5
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  function addAxes() {
+    board.create('axis', [[0,0],[125,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 20 },
+      name: '', withLabel: false
+    });
+    board.create('text', [65, -8, '<b><i>Q</i> (quantidade)</b>'], {
+      fontSize: 13, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+    board.create('axis', [[0,0],[0,135]], {
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 },
+      name: '', withLabel: false
+    });
+    board.create('text', [-8, 70, '<b><i>P</i> / Custo</b>'], {
+      fontSize: 13, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+  }
+
+  function rebuildBoard() {
+    JXG.JSXGraph.freeBoard(board);
+    board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+  }
 
   function setMode(m) {
-    mode = m;
+    curMode = m;
     document.getElementById('btn-tax').className = 'toggle-btn' + (m === 'tax' ? ' active' : '');
     document.getElementById('btn-cap').className = 'toggle-btn' + (m === 'cap' ? ' active' : '');
     document.getElementById('group-tax').style.display = m === 'tax' ? 'block' : 'none';
     document.getElementById('group-cap').style.display = m === 'cap' ? 'block' : 'none';
-    updateBoard();
+    update();
   }
 
-  function initBoard() {
-    board = JXG.JSXGraph.initBoard('jsxbox', {
-      boundingbox: [-8, 135, 110, -10],
-      axis: false,
-      showNavigation: false,
-      showCopyright: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-
-    // Axes
-    board.create('axis', [[0,0],[100,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 20 }
-    });
-    board.create('axis', [[0,0],[0,130]], {
-      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 }
-    });
-    board.create('text', [55, -7, '<b><i>Quantidade (Q)</i></b>'], { fontSize: 11, anchorX: 'middle', anchorY: 'middle', highlight: false });
-    board.create('text', [-6, 70, '<b><i>Preco / Custo</i></b>'], { fontSize: 11, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
-  }
-
-  function updateBoard() {
-    // Clear dynamic elements
-    while (board.objectsList.length > 6) {
-      board.removeObject(board.objectsList[board.objectsList.length - 1]);
-    }
-
+  function update() {
     var e = parseFloat(document.getElementById('slider-e').value);
     var tax = parseFloat(document.getElementById('slider-t').value);
     var cap = parseFloat(document.getElementById('slider-cap').value);
-
     document.getElementById('val-e').textContent = e.toFixed(0);
     document.getElementById('val-t').textContent = tax.toFixed(0);
     document.getElementById('val-cap').textContent = cap.toFixed(0);
@@ -130,165 +125,202 @@
     var PMgC = function(q) { return 20 + 0.5 * q; };
     var CMgS = function(q) { return 20 + 0.5 * q + e; };
 
-    // Market eq (no intervention)
-    var Qm = (120 - 20) / 1.5; // 66.67
-    var Pm = D(Qm);
-
-    // Social optimum
-    var Qstar = (120 - 20 - e) / 1.5;
+    var Qm = 200 / 3; // market eq
+    var Qstar = Math.max(0, (100 - e) / 1.5); // social opt
     var Pstar = D(Qstar);
 
-    // Draw curves
-    board.create('functiongraph', [D, 0, 120], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'Demanda' });
-    board.create('functiongraph', [PMgC, 0, 100], { strokeColor: '#333', strokeWidth: 2, name: 'PMgC', dash: 0 });
-    board.create('functiongraph', [CMgS, 0, 100], { strokeColor: '#C8102E', strokeWidth: 2, name: 'CMgS' });
+    rebuildBoard();
+    addAxes();
 
-    // Labels
-    board.create('text', [98, D(96) + 5, '<i>D</i>'], { fontSize: 11, color: '#1565c0', highlight: false });
-    board.create('text', [88, PMgC(90) + 5, '<i>PMgC</i>'], { fontSize: 10, color: '#333', highlight: false });
-    board.create('text', [78, CMgS(80) + 5, '<i>CMgS</i>'], { fontSize: 10, color: '#C8102E', highlight: false });
+    // --- Curves (1st quadrant) ---
+    board.create('functiongraph', [function(q) {
+      if (q < 0) return NaN; var v = D(q); return v >= 0 ? v : NaN;
+    }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
 
-    // DWL of no intervention (triangle between CMgS and D, from Q* to Qm)
+    board.create('functiongraph', [function(q) {
+      return q >= 0 ? PMgC(q) : NaN;
+    }], { strokeColor: '#333', strokeWidth: 2 });
+
+    board.create('functiongraph', [function(q) {
+      return q >= 0 ? CMgS(q) : NaN;
+    }], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    // --- Curve labels (at right end, above each curve) ---
+    board.create('text', [122, D(118) + 6, '<i>D</i>'], {
+      fontSize: 12, color: '#1565c0', fixed: true, highlight: false
+    });
+    board.create('text', [90, PMgC(88) + 6, '<i>PMgC</i>'], {
+      fontSize: 11, color: '#333', fixed: true, highlight: false
+    });
+    board.create('text', [75, CMgS(73) + 6, '<i>CMgS</i>'], {
+      fontSize: 11, color: '#C8102E', fixed: true, highlight: false
+    });
+
+    // --- DWL without intervention ---
     if (Qstar < Qm && Qstar > 0) {
-      var dwlPoly = [];
-      var steps = 30;
-      for (var i = 0; i <= steps; i++) {
-        var q = Qstar + (Qm - Qstar) * i / steps;
-        dwlPoly.push([q, CMgS(q)]);
+      var dwlPts = [];
+      for (var i = 0; i <= 30; i++) {
+        var q = Qstar + (Qm - Qstar) * i / 30;
+        dwlPts.push([q, CMgS(q)]);
       }
-      for (var i = steps; i >= 0; i--) {
-        var q = Qstar + (Qm - Qstar) * i / steps;
-        dwlPoly.push([q, D(q)]);
+      for (var i = 30; i >= 0; i--) {
+        var q = Qstar + (Qm - Qstar) * i / 30;
+        dwlPts.push([q, D(q)]);
       }
-      board.create('polygon', dwlPoly, {
-        fillColor: '#666', fillOpacity: 0.15,
+      board.create('polygon', dwlPts, {
+        fillColor: '#999', fillOpacity: 0.12,
         borders: { strokeWidth: 0 }, vertices: { visible: false },
-        hasInnerPoints: false, name: ''
+        hasInnerPoints: false, highlight: false
       });
-      board.create('text', [(Qstar + Qm) / 2, (CMgS((Qstar + Qm) / 2) + D((Qstar + Qm) / 2)) / 2 - 3, 'DWL\ns/ interv.'], { fontSize: 9, color: '#666', anchorX: 'middle', highlight: false });
+      board.create('text', [(Qstar + Qm) / 2, (CMgS((Qstar + Qm) / 2) + D((Qstar + Qm) / 2)) / 2,
+        '<span style="font-size:9px;color:#666;">PPM<br>s/ interv.</span>'], {
+        fontSize: 9, anchorX: 'middle', fixed: true, highlight: false
+      });
     }
 
-    if (mode === 'tax') {
-      // With tax: firm faces PMgC + t. New eq: D(Q) = PMgC(Q) + t => 120 - Q = 20 + 0.5Q + t => Q_tax = (100-t)/1.5
+    // --- Social optimum point ---
+    if (Qstar > 0) {
+      board.create('point', [Qstar, Pstar], {
+        name: '<i>Q</i>*', size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', fixed: true,
+        label: { offset: [-20, 12], fontSize: 11, highlight: false, cssStyle: 'color:#C8102E;font-weight:700;' }
+      });
+    }
+
+    // --- Market eq point ---
+    board.create('point', [Qm, D(Qm)], {
+      name: '<i>Q<sub>m</sub></i>', size: 3, fillColor: '#666', strokeColor: '#666', fixed: true,
+      label: { offset: [10, 10], fontSize: 10, highlight: false, cssStyle: 'color:#666;' }
+    });
+
+    if (curMode === 'tax') {
+      // --- Tax mode ---
       var Qt = Math.max(0, (100 - tax) / 1.5);
-      var Pt_consumer = D(Qt);
-      var Pt_producer = PMgC(Qt);
+      var Pt_c = D(Qt);
+      var Pt_p = PMgC(Qt);
 
-      // Draw PMgC + t curve
-      var PMgCt = function(q) { return 20 + 0.5 * q + tax; };
-      board.create('functiongraph', [PMgCt, 0, 100], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, name: 'PMgC + t' });
-      board.create('text', [78, PMgCt(80) + 5, '<i>PMgC+t</i>'], { fontSize: 9, color: '#00897b', highlight: false });
+      // PMgC + t curve
+      board.create('functiongraph', [function(q) {
+        return q >= 0 ? 20 + 0.5 * q + tax : NaN;
+      }], { strokeColor: '#00897b', strokeWidth: 1.8, dash: 2 });
+      board.create('text', [90, 20 + 0.5 * 88 + tax + 6, '<i>PMgC + t</i>'], {
+        fontSize: 10, color: '#00897b', fixed: true, highlight: false
+      });
 
-      // Equilibrium point
-      board.create('point', [Qt, Pt_consumer], { name: '', size: 3, color: '#00897b', fixed: true });
+      // Tax equilibrium point
+      board.create('point', [Qt, Pt_c], {
+        name: '', size: 4, fillColor: '#00897b', strokeColor: '#00897b', fixed: true
+      });
 
-      // Dashed lines to axes
-      board.create('segment', [[Qt, 0], [Qt, Pt_consumer]], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
-      board.create('segment', [[0, Pt_consumer], [Qt, Pt_consumer]], { strokeColor: '#00897b', dash: 2, strokeWidth: 1 });
+      // Dashed lines
+      board.create('segment', [[Qt, 0], [Qt, Pt_c]], { strokeColor: '#00897b', dash: 2, strokeWidth: 1, fixed: true });
+      board.create('segment', [[0, Pt_c], [Qt, Pt_c]], { strokeColor: '#00897b', dash: 2, strokeWidth: 1, fixed: true });
 
-      // Tax revenue rectangle
+      // Tax revenue shading
       if (Qt > 0) {
-        board.create('polygon', [[0, Pt_producer], [Qt, Pt_producer], [Qt, Pt_consumer], [0, Pt_consumer]], {
+        board.create('polygon', [[0, Pt_p], [Qt, Pt_p], [Qt, Pt_c], [0, Pt_c]], {
           fillColor: '#00897b', fillOpacity: 0.1,
           borders: { strokeWidth: 0 }, vertices: { visible: false },
-          name: ''
+          hasInnerPoints: false, highlight: false
+        });
+        board.create('text', [Qt / 2, (Pt_p + Pt_c) / 2, 'Receita'], {
+          fontSize: 9, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false
         });
       }
 
-      // Optimal point
-      if (Qstar > 0) {
-        board.create('point', [Qstar, Pstar], { name: 'Q*', size: 3, color: '#C8102E', fixed: true, label: { fontSize: 10, color: '#C8102E', offset: [5, 5] } });
+      // Axis annotations
+      board.create('text', [Qt, -4, '<i>Q<sub>t</sub></i>'], {
+        fontSize: 10, color: '#00897b', anchorX: 'middle', fixed: true, highlight: false
+      });
+
+      // Info panel
+      var dwlNo = 0.5 * (Qm - Qstar) * e;
+      var dwlTax = (Qt !== Qstar) ? 0.5 * Math.abs(Qt - Qstar) * Math.abs(tax - e) : 0;
+      var taxRev = tax * Qt;
+      var optimal = Math.abs(tax - e) < 2;
+
+      var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Imposto Pigouviano</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += '\\(P = 120 - Q\\), &ensp;\\(PMgC = 20 + 0{,}5Q\\)<br>';
+      html += '\\(CMgS = PMgC + e = PMgC + ' + e.toFixed(0) + '\\)<br>';
+      html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+      html += '\\(Q_m = ' + Qm.toFixed(1) + '\\), &ensp;\\(Q^* = ' + Qstar.toFixed(1) + '\\)<br>';
+      html += '\\(Q_t = ' + Qt.toFixed(1) + '\\)<br>';
+      html += 'PPM s/ intervenção: ' + dwlNo.toFixed(0) + '<br>';
+      if (optimal) {
+        html += '<b style="color:#00897b;">Imposto ótimo! (\\(t = e\\))</b><br>';
+      } else {
+        html += 'PPM residual: ' + dwlTax.toFixed(0) + '<br>';
+        html += (tax < e ? 'Imposto baixo demais' : 'Imposto alto demais') + '<br>';
       }
+      html += 'Receita tributária: ' + taxRev.toFixed(0);
+      html += '</div>';
+      html += '<div style="margin-top:0.3rem;font-size:0.78rem;color:#666;">';
+      html += 'Ajuste \\(t = e\\) para restaurar eficiência.';
+      html += '</div>';
 
-      updateInfoTax(Qt, Pt_consumer, Pt_producer, tax, Qm, Qstar, e);
+      document.getElementById('info').innerHTML = html;
+
     } else {
-      // Cap-and-trade: quantity fixed at cap, price of permit adjusts
+      // --- Cap-and-Trade mode ---
       var Qc = Math.min(cap, Qm);
-      var Pc_consumer = D(Qc);
-      var Pc_producer = PMgC(Qc);
-      var permitPrice = Pc_consumer - Pc_producer;
+      var Pc_c = D(Qc);
+      var Pc_p = PMgC(Qc);
+      var pE = Math.max(0, Pc_c - Pc_p);
 
-      // Vertical line at cap
-      board.create('segment', [[Qc, 0], [Qc, 130]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
-      board.create('text', [Qc + 1, 125, 'Cap'], { fontSize: 10, color: '#00897b', highlight: false });
+      // Cap vertical line
+      board.create('segment', [[Qc, 0], [Qc, D(Qc) + 10]], {
+        strokeColor: '#00897b', strokeWidth: 2, dash: 3, fixed: true
+      });
+      board.create('text', [Qc + 3, D(Qc) + 14, 'Cap'], {
+        fontSize: 10, color: '#00897b', fontWeight: 'bold', fixed: true, highlight: false
+      });
 
-      // Equilibrium points
-      board.create('point', [Qc, Pc_consumer], { name: '', size: 3, color: '#1565c0', fixed: true });
-      board.create('point', [Qc, Pc_producer], { name: '', size: 3, color: '#333', fixed: true });
+      // Equilibrium points on D and PMgC
+      board.create('point', [Qc, Pc_c], { name: '', size: 4, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true });
+      board.create('point', [Qc, Pc_p], { name: '', size: 4, fillColor: '#333', strokeColor: '#333', fixed: true });
 
       // Permit price bracket
-      if (permitPrice > 2) {
-        board.create('segment', [[Qc + 2, Pc_producer], [Qc + 2, Pc_consumer]], { strokeColor: '#C8102E', strokeWidth: 2 });
-        board.create('text', [Qc + 4, (Pc_producer + Pc_consumer) / 2, '<i>p<sub>E</sub></i>'], { fontSize: 10, color: '#C8102E', highlight: false });
+      if (pE > 2) {
+        board.create('segment', [[Qc + 4, Pc_p], [Qc + 4, Pc_c]], {
+          strokeColor: '#C8102E', strokeWidth: 2.5, fixed: true
+        });
+        board.create('text', [Qc + 7, (Pc_p + Pc_c) / 2, '<i>p<sub>E</sub></i>'], {
+          fontSize: 11, color: '#C8102E', fixed: true, highlight: false
+        });
       }
 
-      // Optimal point
-      if (Qstar > 0) {
-        board.create('point', [Qstar, Pstar], { name: 'Q*', size: 3, color: '#C8102E', fixed: true, label: { fontSize: 10, color: '#C8102E', offset: [5, 5] } });
-      }
+      // Dashed projections
+      board.create('segment', [[0, Pc_c], [Qc, Pc_c]], { strokeColor: '#999', dash: 2, strokeWidth: 1, fixed: true });
+      board.create('segment', [[0, Pc_p], [Qc, Pc_p]], { strokeColor: '#999', dash: 2, strokeWidth: 1, fixed: true });
 
-      updateInfoCap(Qc, Pc_consumer, Pc_producer, permitPrice, Qm, Qstar, e, cap);
+      // Info panel
+      var dwlNo = 0.5 * (Qm - Qstar) * e;
+      var optimal = Math.abs(Qc - Qstar) < 2;
+
+      var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Cap-and-Trade</div>';
+      html += '<div style="margin-top:0.4rem;">';
+      html += '\\(P = 120 - Q\\), &ensp;\\(PMgC = 20 + 0{,}5Q\\)<br>';
+      html += '\\(CMgS = PMgC + e = PMgC + ' + e.toFixed(0) + '\\)<br>';
+      html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+      html += '\\(Q_m = ' + Qm.toFixed(1) + '\\), &ensp;\\(Q^* = ' + Qstar.toFixed(1) + '\\)<br>';
+      html += 'Cap: <b>' + cap + '</b><br>';
+      html += 'Preço da permissão \\(p_E\\): ' + pE.toFixed(1) + '<br>';
+      html += 'PPM s/ intervenção: ' + dwlNo.toFixed(0) + '<br>';
+      if (optimal) {
+        html += '<b style="color:#00897b;">Cap ótimo! (\\(\\bar{E} = Q^*\\))</b><br>';
+      } else {
+        html += (Qc > Qstar ? 'Cap frouxo demais' : 'Cap restritivo demais') + '<br>';
+      }
+      html += 'Receita (se leiloado): ' + (pE * Qc).toFixed(0);
+      html += '</div>';
+      html += '<div style="margin-top:0.3rem;font-size:0.78rem;color:#666;">';
+      html += 'Ajuste o cap para \\(Q^*\\). Note: \\(p_E\\) equivale ao imposto ótimo.';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
     }
 
     board.update();
-  }
-
-  function updateInfoTax(Qt, Pc, Pp, tax, Qm, Qstar, e) {
-    var dwlNoInterv = 0.5 * (Qm - Qstar) * e; // approximate triangle
-    var dwlTax = 0;
-    if (Qt !== Qstar) {
-      dwlTax = 0.5 * Math.abs(Qt - Qstar) * Math.abs(tax - e);
-    }
-    var taxRev = tax * Qt;
-    var optimal = Math.abs(tax - e) < 2;
-
-    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Imposto Pigouviano</div>';
-    html += '<div style="margin-top:0.4rem;">';
-    html += 'Q mercado (s/ interv.): ' + (200/3).toFixed(1) + '<br>';
-    html += 'Q otimo social: ' + Qstar.toFixed(1) + '<br>';
-    html += 'Q com imposto: <b>' + Qt.toFixed(1) + '</b><br>';
-    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
-    html += 'DWL s/ intervencao: ' + dwlNoInterv.toFixed(0) + '<br>';
-    if (optimal) {
-      html += '<b style="color:#00897b;">Imposto otimo! (t = e)</b><br>';
-    } else {
-      html += 'DWL residual: ' + dwlTax.toFixed(0) + '<br>';
-      html += (tax < e ? 'Imposto baixo demais' : 'Imposto alto demais') + '<br>';
-    }
-    html += 'Receita tributaria: ' + taxRev.toFixed(0) + '<br>';
-    html += '</div>';
-    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
-    html += 'Ajuste \\(t = e\\) para restaurar eficiencia.';
-    html += '</div>';
-
-    document.getElementById('info').innerHTML = html;
-    if (window.MathJax && MathJax.typeset) MathJax.typeset();
-  }
-
-  function updateInfoCap(Qc, Pc, Pp, pE, Qm, Qstar, e, cap) {
-    var dwlNoInterv = 0.5 * (Qm - Qstar) * e;
-    var optimal = Math.abs(Qc - Qstar) < 2;
-
-    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Cap-and-Trade</div>';
-    html += '<div style="margin-top:0.4rem;">';
-    html += 'Q mercado (s/ interv.): ' + (200/3).toFixed(1) + '<br>';
-    html += 'Q otimo social: ' + Qstar.toFixed(1) + '<br>';
-    html += 'Cap: <b>' + cap + '</b><br>';
-    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
-    html += 'Preco da permissao \\(p_E\\): ' + pE.toFixed(1) + '<br>';
-    html += 'DWL s/ intervencao: ' + dwlNoInterv.toFixed(0) + '<br>';
-    if (optimal) {
-      html += '<b style="color:#00897b;">Cap otimo!</b><br>';
-    } else {
-      html += (Qc > Qstar ? 'Cap frouxo demais' : 'Cap restritivo demais') + '<br>';
-    }
-    html += 'Receita (se leiloado): ' + (pE * Qc).toFixed(0) + '<br>';
-    html += '</div>';
-    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
-    html += 'Ajuste o cap para \\(Q^*\\) para restaurar eficiencia. Note: \\(p_E\\) equivale ao imposto otimo.';
-    html += '</div>';
-
-    document.getElementById('info').innerHTML = html;
     if (window.MathJax && MathJax.typeset) MathJax.typeset();
   }
 
@@ -300,11 +332,9 @@
   }
 
   ['slider-t','slider-cap','slider-e'].forEach(function(id) {
-    document.getElementById(id).addEventListener('input', updateBoard);
+    document.getElementById(id).addEventListener('input', update);
   });
-
-  initBoard();
-  updateBoard();
+  update();
 </script>
 </body>
 </html>
