@@ -2,7 +2,7 @@
 <!--
   VPL e TIR — Interactive Graph
   Library: Plotly.js
-  Chapter 17 — Microeconomia
+  Chapter 18 — Microeconomia
 -->
 <html lang="pt-BR">
 <head>
@@ -51,12 +51,12 @@
     <div id="plotly-chart"></div>
     <div class="controls">
       <h3>Fluxos de Caixa (R$)</h3>
-      <div class="cf-row"><label>\\(F_0\\):</label><input type="number" id="cf0" value="-100000" step="1000"></div>
-      <div class="cf-row"><label>\\(F_1\\):</label><input type="number" id="cf1" value="30000" step="1000"></div>
-      <div class="cf-row"><label>\\(F_2\\):</label><input type="number" id="cf2" value="35000" step="1000"></div>
-      <div class="cf-row"><label>\\(F_3\\):</label><input type="number" id="cf3" value="40000" step="1000"></div>
-      <div class="cf-row"><label>\\(F_4\\):</label><input type="number" id="cf4" value="45000" step="1000"></div>
-      <div class="cf-row"><label>\\(F_5\\):</label><input type="number" id="cf5" value="0" step="1000"></div>
+      <div class="cf-row"><label>\(F_0\):</label><input type="number" id="cf0" value="-100000" step="1000"></div>
+      <div class="cf-row"><label>\(F_1\):</label><input type="number" id="cf1" value="30000" step="1000"></div>
+      <div class="cf-row"><label>\(F_2\):</label><input type="number" id="cf2" value="35000" step="1000"></div>
+      <div class="cf-row"><label>\(F_3\):</label><input type="number" id="cf3" value="40000" step="1000"></div>
+      <div class="cf-row"><label>\(F_4\):</label><input type="number" id="cf4" value="45000" step="1000"></div>
+      <div class="cf-row"><label>\(F_5\):</label><input type="number" id="cf5" value="0" step="1000"></div>
 
       <h3 style="margin-top:0.8rem;">Taxa de Desconto</h3>
       <div class="slider-group">
@@ -223,7 +223,7 @@
       } else {
         html += 'TIR: não encontrada no intervalo<br>';
       }
-      html += '<strong style="color:' + decColor + ';">Decisao: ' + decision + '</strong>';
+      html += '<strong style="color:' + decColor + ';">Decisão: ' + decision + '</strong>';
       if (npvAtR > 0.5) html += ' (VPL > 0)';
       else if (npvAtR < -0.5) html += ' (VPL < 0)';
       html += '</div>';
