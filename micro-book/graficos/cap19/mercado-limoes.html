@@ -106,7 +106,7 @@
 
     // Buyer willingness to pay: Vbar(lambda) = (1-lambda)*VH + lambda*VL
     var buyerCurve = board.create('functiongraph', [
-      function(x) { return n((1-x)*VH + x*VL); }
+      function(x) { return x < 0 ? NaN : n((1-x)*VH + x*VL); }
     ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
     board.create('text', [0.02, function(){ return n(VH) + 0.05; }, '<i>WTP comprador</i>'], {
       fontSize: 11, color: '#1565c0', fixed: true, highlight: false
@@ -114,7 +114,7 @@
 
     // Seller reservation for good cars (horizontal)
     var sellerH = board.create('functiongraph', [
-      function(x) { return n(CH); }
+      function(x) { return x < 0 ? NaN : n(CH); }
     ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2 });
     board.create('text', [0.55, function(){ return n(CH) + 0.04; }, '<i>C<sub>H</sub></i> (bom)'], {
       fontSize: 11, color: '#C8102E', fixed: true, highlight: false
@@ -122,7 +122,7 @@
 
     // Seller reservation for bad cars (horizontal)
     var sellerL = board.create('functiongraph', [
-      function(x) { return n(CL); }
+      function(x) { return x < 0 ? NaN : n(CL); }
     ], { strokeColor: '#00897b', strokeWidth: 2, dash: 2 });
     board.create('text', [0.55, function(){ return n(CL) - 0.05; }, '<i>C<sub>L</sub></i> (ruim)'], {
       fontSize: 11, color: '#00897b', fixed: true, highlight: false
