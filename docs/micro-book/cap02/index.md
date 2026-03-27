@@ -32,7 +32,7 @@ A exposição segue Nicholson e Snyder (2017, Cap. 2), complementada pelo apênd
 
 ---
 
-## 2.1 Maximização de funções de uma variável
+## 2.1 O Topo da Montanha: Maximização em Uma Variável
 
 Antes de correr, caminhe. O caso de uma variável é o "arroz com feijão" da otimização: simples, nutritivo, e base de tudo que vem depois. Aqui, as ideias centrais — condições de primeira e segunda ordem — aparecem na sua forma mais nua, sem a complexidade de matrizes e restrições. Se você entender *de verdade* esta seção, o resto do capítulo é generalização. Se não entender, nenhuma quantidade de Lagrangeanos vai salvar.
 
@@ -80,7 +80,7 @@ O caso de uma variável é didático, mas limitado. Na prática, consumidores es
 
 ---
 
-## 2.2 Funções de várias variáveis
+## 2.2 Mais de Um Botão para Girar: Funções de Várias Variáveis
 
 ### Derivadas parciais
 
@@ -146,7 +146,7 @@ A magnitude da resposta depende criticamente das inclinações das curvas de ofe
 
 ---
 
-## 2.3 Maximização com várias variáveis
+## 2.3 O Topo em *n* Dimensões: Hessianas e Condições de Máximo
 
 Agora sim: com derivadas parciais, diferencial total e TFI no bolso, podemos atacar o problema de verdade. Como achar o máximo de uma função quando há *muitas* alavancas para mexer? É o mesmo espírito da Seção 2.1 — derive, iguale a zero, verifique a curvatura — mas agora com \(n\) variáveis, o que transforma uma equação num *sistema* de equações e uma derivada segunda numa *matriz*.
 
@@ -180,7 +180,7 @@ Até aqui, sabemos como *encontrar* o ótimo e *confirmar* que ele é de fato um
 
 ---
 
-## 2.4 Teorema do envelope
+## 2.4 O Atalho do Preguiçoso: Teorema do Envelope
 
 Se houvesse um prêmio para o teorema mais subestimado da matemática aplicada, o teorema do envelope venceria sem concorrência. A premissa é quase boa demais para ser verdade: para saber como o valor ótimo muda quando um parâmetro muda, *você não precisa resolver tudo de novo*. Basta olhar o efeito direto do parâmetro, como se as variáveis de escolha estivessem congeladas no ótimo. Os ajustes que o agente faz nas quantidades? Podem ser ignorados — no ótimo, eles se cancelam (porque, bem, é o ótimo). É como perguntar "quanto meu bem-estar melhora se meu salário sobe 1%?" e descobrir que, *na margem*, a resposta é a mesma quer você ajuste ou não as quantidades que consome. Poderoso demais? Vejamos por quê.
 
@@ -259,7 +259,7 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 
 ---
 
-## 2.5 Maximização com restrições: o método de Lagrange
+## 2.5 O Melhor Que o Dinheiro Compra: O Método de Lagrange
 
 Até agora, o agente podia escolher o que quisesse — um luxo que ninguém tem na vida real. Na prática, todo mundo enfrenta restrições: o consumidor tem renda limitada, a firma tem tecnologia limitada, o governo tem orçamento limitado, e o aluno tem tempo limitado para estudar este capítulo. É justamente a *restrição* que torna a economia interessante: se tivéssemos tudo, não haveria escolha; sem escolha, não haveria economia.
 
@@ -823,7 +823,7 @@ Na Seção 2.4, apresentamos o teorema do envelope para o caso irrestrito. Como 
 
 ---
 
-## 2.6 Teorema do envelope na maximização restrita
+## 2.6 O Envelope Encontra a Restrição: λ como Preço-Sombra
 
 !!! theorem "Teorema do Envelope (caso restrito)"
     Considere o problema \(\max_{\mathbf{x}} f(\mathbf{x}, a)\) sujeito a \(g(\mathbf{x}, a) = c\), e defina a função valor \(V(a) = f(\mathbf{x}^*(a), a)\). Então:
@@ -920,7 +920,7 @@ O teorema do envelope na maximização restrita é tão central que reaparece ao
 
 ---
 
-## 2.7 Restrições de desigualdade: condições de Kuhn-Tucker
+## 2.7 Quando o Muro Aparece: Kuhn-Tucker e Soluções de Canto
 
 Lagrange é maravilhoso, mas tem um vício: assume que a restrição "morde" — que o consumidor gasta *exatamente* toda a renda, que a firma usa *exatamente* toda a capacidade. No mundo real, porém, às vezes sobra: o consumidor pode guardar dinheiro, a firma pode deixar uma máquina parada, e — crucialmente — a pessoa pode decidir não comprar *nada* de um bem cujo preço é absurdo. (Quem compra caviar quando o arroz está caro?) Essas "soluções de canto" exigem uma ferramenta mais flexível.
 
@@ -1026,7 +1026,7 @@ As condições KKT são:[^holy-hand-grenade]
 
 ---
 
-## 2.8 Condições de segunda ordem e curvatura
+## 2.8 Montanha ou Vale? Condições de Segunda Ordem e Curvatura
 
 Nas seções anteriores, as condições de segunda ordem apareceram como requisitos técnicos — a hessiana negativa definida, o custo marginal crescente. Mas qual é o significado mais profundo dessas condições? Elas estão intimamente ligadas à *curvatura* da função objetivo: conceitos como concavidade e convexidade, que determinam se pontos críticos são máximos globais e se as condições de Lagrange são suficientes. A importância prática é enorme: se a função objetivo é côncava, qualquer solução das CPOs é automaticamente um máximo global — dispensando a verificação laboriosa do hessiano orlado. A maior parte dos problemas que encontraremos neste livro satisfará essa condição, o que simplifica substancialmente a resolução.
 
@@ -1086,7 +1086,7 @@ Para o caso geral com \(n\) variáveis e \(m\) restrições (\(m < n\)), a CSO p
 
 ---
 
-## 2.9 Funções homogêneas e Teorema de Euler
+## 2.9 Dobrou Tudo — E Agora? Funções Homogêneas e Euler
 
 Se a concavidade é sobre *curvatura*, a homogeneidade é sobre *escala*. A pergunta: se eu dobrar *todos* os insumos, o que acontece com o produto? Se eu dobrar todos os preços e a renda, minha demanda muda? Essa propriedade — que pode parecer uma curiosidade de sala de aula — é, na verdade, uma das mais operacionais da microeconomia. É a homogeneidade que fundamenta conceitos como retornos de escala em produção, a ausência de ilusão monetária na demanda e a exaustão do produto pela remuneração dos fatores. Léon Walras, em seus *Éléments d'économie politique pure* (1874), já reconhecia que a homogeneidade é a propriedade matemática por trás da "lei de Walras" — a interdependência dos mercados que discutiremos no Capítulo 12.
 
@@ -1145,7 +1145,7 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
 ---
 
-## 2.10 Integração
+## 2.10 A Conta Inversa: Integração
 
 *And now for something completely different* — ou quase. As Seções 2.1–2.9 trataram de otimização e suas variantes. As três seções finais cobrem ferramentas complementares — integração, dinâmica e estatística — que completam o arsenal para os capítulos subsequentes.
 
@@ -1183,7 +1183,7 @@ Em análise de bem-estar, a integração permite calcular a **variação compens
 
 ---
 
-## 2.11 Otimização dinâmica: uma breve introdução
+## 2.11 O Tempo Entra na Equação: Otimização Dinâmica
 
 Até aqui, o mundo era atemporal: o agente acorda, otimiza, dorme. Mas a vida tem amanhã — e amanhã muda tudo. Poupar ou gastar? Estudar ou trabalhar? Extrair petróleo agora ou deixar para quando estiver mais caro? Essas decisões intertemporais exigem ferramentas que o Lagrange estático não oferece. O Capítulo 18 explorará a economia intertemporal em detalhe; aqui, plantamos as sementes matemáticas.
 
@@ -1219,7 +1219,7 @@ Esses métodos são particularmente usados em teoria do crescimento (modelo de R
 
 ---
 
-## 2.12 Estatística matemática: valor esperado e variância
+## 2.12 Quando o Mundo é Incerto: Valor Esperado e Variância
 
 Penúltimo item da caixa de ferramentas, e talvez o mais humano: incerteza. Todos os modelos até aqui supunham que o agente sabe exatamente o que vai acontecer. Na vida real? Ninguém sabe se vai chover na safra, se o dólar vai subir, se o emprego vai durar. A partir do Capítulo 7, a incerteza será protagonista. Aqui, apresentamos a linguagem mínima — valor esperado, variância — para não chegarmos lá de mãos abanando.
 
@@ -1278,7 +1278,7 @@ Observe como os conceitos de concavidade da Seção 2.8 reaparecem aqui em um co
 
 ---
 
-## 2.13 Teoremas de ponto fixo
+## 2.13 A Solução Existe? Teoremas de Ponto Fixo
 
 Último item da caixa de ferramentas — e o mais filosófico. Até aqui, todas as técnicas pressupõem que a solução *existe*. Mas será que existe sempre? Em problemas de equilíbrio — onde múltiplos agentes otimizam simultaneamente e a melhor resposta de cada um depende do que os outros fazem — a existência da solução é tudo menos óbvia. Imagine um jogo de "par ou ímpar" em que cada jogador tenta adivinhar o que o outro fará: existe alguma configuração estável? O teorema de Nash (1950) diz que sim — e a prova usa um **ponto fixo**. Essa seção é curta, mas é o alicerce lógico de todo o Capítulo 9a (teoria dos jogos) e do Capítulo 14 (equilíbrio geral).
 
@@ -1314,7 +1314,7 @@ Os teoremas de ponto fixo são utilizados em dois contextos centrais neste livro
 
 ---
 
-## 2.14 Condições de otimização
+## 2.14 O Resumo que Salva na Prova: Condições de Otimização
 
 Ao longo das seções anteriores, apresentamos uma diversidade de problemas de otimização: sem restrição, com restrição de igualdade, com restrição de desigualdade, em tempo discreto e contínuo. Cada tipo de problema tem suas próprias condições de otimalidade, mas a lógica subjacente é sempre a mesma: igualar o benefício marginal ao custo marginal, avaliados na direção correta. A [Tabela 2.1](#tabela-2-1) reúne as condições de otimização para os principais tipos de problemas discutidos neste capítulo, servindo como referência rápida para o restante do livro.
 
@@ -1364,6 +1364,14 @@ A caixa de ferramentas está completa. Derivadas, Lagrange, envelope, KKT, ponto
 A partir do próximo capítulo, essas ferramentas saem da caixa e vão para a bancada: o Capítulo 3 formaliza as preferências do consumidor, e o Capítulo 4 resolve o problema de otimização que motivou todo este aparato. A viagem da teoria começa agora.
 
 *And now for something completely different: o consumidor.*
+
+---
+
+<iframe src="../graficos/cap02/webr-lagrange.html" title="WebR — Lagrangeano Numérico" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 2.1 — Lagrangeano numérico.** Maximize uma Cobb-Douglas sujeita à restrição orçamentária. Altere expoentes, preços e renda para ver como a cesta ótima e o multiplicador λ mudam — e verifique o Teorema do Envelope em tempo real.
+</div>
 
 ---
 

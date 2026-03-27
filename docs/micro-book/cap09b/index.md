@@ -10,7 +10,7 @@ A dimensão temporal transforma radicalmente a análise estratégica. A sequenci
 
 ---
 
-## 9b.1 Jogos Sequenciais e Indução Retroativa
+## 9b.1 Pense de Trás para Frente: Jogos Sequenciais e Indução Retroativa
 
 ### Forma extensiva e indução retroativa
 
@@ -110,7 +110,7 @@ O conceito de **dispositivo de comprometimento** (*commitment device*) vai além
 
 ---
 
-## 9b.2 Jogos Repetidos
+## 9b.2 Amanhã Nos Encontramos de Novo: Jogos Repetidos e Cooperação
 
 A seção anterior tratou de interações que acontecem uma vez e acabam. Mas pense nas relações econômicas que realmente importam: Ambev e Heineken competem *todo mês*. Brasil e Argentina negociam comércio *todo ano*. Você e seu colega de trabalho interagem *todo dia*. Quando o jogo se repete, uma possibilidade fascinante emerge: **a sombra do futuro disciplina o presente**. Se eu sei que te encontro amanhã, tenho incentivo para não te trair hoje — porque amanhã você pode me punir. Será que a cooperação pode nascer do puro egoísmo, sem contratos, sem regulador, sem lei?
 
@@ -276,7 +276,7 @@ Além do grim trigger, existem estratégias mais sofisticadas, comparadas na [Ta
 
 ---
 
-## 9b.3 Barganha
+## 9b.3 Dividir o Bolo: Modelos de Barganha
 
 Última peça do módulo — e talvez a mais intuitiva. Jogos repetidos tratam de cooperação ao longo do tempo; **barganha** trata de *como dividir o bolo*. Compradores e vendedores pechinchando, sindicatos negociando salário, países dividindo quotas de pesca — todos enfrentam a mesma pergunta: "quanto fica para mim, quanto fica para você?" A teoria da barganha formaliza essa negociação, e o resultado depende de um fator que a sabedoria popular já conhece: **quem pode esperar mais, leva mais**. A paciência é poder.
 

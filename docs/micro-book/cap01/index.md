@@ -26,7 +26,7 @@ Este capítulo apresenta a lógica da construção de modelos em economia, discu
 
 ---
 
-## 1.1 Modelos teóricos: por que simplificar?
+## 1.1 Todos os Mapas Mentem: Por Que Simplificar?
 
 A pergunta pode parecer estranha: por que um cientista *escolheria* jogar informação fora? Não seria melhor incluir tudo? A resposta, embora contraintuitiva, é que um modelo que inclui tudo não explica nada — assim como um GPS que mostrasse cada formiga na calçada seria inútil para chegar ao trabalho. Para entender por quê, considere uma analogia.
 
@@ -61,7 +61,7 @@ Até aqui, tudo elegante. Mas se um modelo é, por definição, uma mentira — 
 
 ---
 
-## 1.2 Verificação de modelos econômicos
+## 1.2 Como Saber se a Mentira É Boa? Verificação de Modelos
 
 ### Abordagem direta versus indireta
 
@@ -107,7 +107,7 @@ OK, sabemos construir e testar modelos. Mas todo modelo microeconômico segue os
 
 ---
 
-## 1.3 Características gerais dos modelos microeconômicos
+## 1.3 As Regras do Jogo: *Ceteris Paribus*, Otimização e a Linha Positivo–Normativo
 
 ### O princípio *ceteris paribus*
 
@@ -188,7 +188,7 @@ Com os três mandamentos em mãos — "mude uma coisa por vez", "todo mundo otim
 
 ---
 
-## 1.4 Estrutura dos modelos econômicos
+## 1.4 Anatomia de um Modelo: Exógenas, Endógenas e Equilíbrio
 
 ### Variáveis exógenas e endógenas
 
@@ -304,7 +304,7 @@ Esse roteiro será seguido repetidamente ao longo deste livro: no Capítulo 3, p
 
 ---
 
-## 1.5 Desenvolvimento da teoria do valor
+## 1.5 Água ou Diamante? A História da Teoria do Valor
 
 !!! atividade "Atividade — Antes de ler, pense (2 min)"
     Imagine duas situações. **Situação A:** você está perdido no deserto do Saara, sem beber água há dois dias. Alguém aparece e oferece uma escolha: um balde de água ou um diamante de 3 quilates. **Situação B:** você está no shopping, confortável e hidratado. Mesma oferta.
@@ -406,7 +406,7 @@ A teoria do valor percorreu, portanto, um arco que vai do valor-trabalho dos cl�
 
 ---
 
-## 1.6 Desenvolvimentos modernos
+## 1.6 Para Onde a Micro Está Indo? Jogos, Informação e Comportamento
 
 O modelo competitivo básico — todo mundo aceita o preço, todo mundo sabe tudo, todo mundo é perfeitamente racional — foi a estrela da microeconomia por décadas. E funcionou surpreendentemente bem. Mas o mundo real tem vícios que o modelo ignora: empresas que espiam umas às outras, vendedores que sabem mais que compradores, e consumidores que compram coisas no impulso e se arrependem no dia seguinte. A microeconomia contemporânea expandiu-se em várias direções, relaxando — uma a uma — as suposições do modelo básico:
 
@@ -456,7 +456,7 @@ Com esse panorama dos desenvolvimentos modernos, temos uma visão completa do qu
 
 ---
 
-## 1.7 Demonstração: A firma para quando a pizza empata — lições de um rodízio sobre maximização de lucro
+## 1.7 A Firma Para Quando a Pizza Empata: Maximização de Lucro ao Vivo
 
 Chega de filosofia — vamos ver um modelo em ação. A demonstração a seguir é o "Hello World" da microeconomia: a condição de maximização de lucro da firma competitiva. É simples, é elegante, e encapsula tudo o que discutimos até aqui: um agente com objetivo (lucro), uma restrição (tecnologia/custos), uma condição de ótimo (derivada igual a zero) e uma previsão testável (a curva de oferta). É também o primeiro exemplo de como o cálculo diferencial — ferramentas do Capítulo 2 — resolve problemas econômicos reais.
 
@@ -632,6 +632,14 @@ Se este capítulo cumpriu sua missão, você saiu dele com três convicções:
 Nos próximos capítulos, vamos formalizar essa intuição — começando pelas ferramentas matemáticas que transformam dilemas de supermercado em equações resolúveis.
 
 *No próximo capítulo: as ferramentas que transformam intuição em demonstração. (Aviso: vai ter derivada. Nobody expects the chain rule!)*
+
+---
+
+<iframe src="../graficos/cap01/webr-oferta-demanda.html" title="WebR — Oferta e Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 1.1 — Oferta e Demanda: estática comparativa.** Altere os parâmetros de oferta, demanda e o choque de renda para ver como o equilíbrio se desloca. O código R executa diretamente no navegador via WebAssembly.
+</div>
 
 ---
 

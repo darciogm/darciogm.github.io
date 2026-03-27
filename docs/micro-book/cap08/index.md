@@ -28,7 +28,7 @@ A abordagem deste capítulo é deliberadamente cumulativa: começamos pelos fund
 
 ---
 
-## 8.1 Heurísticas e Vieses Cognitivos
+## 8.1 O Cérebro Trapaceiro: Heurísticas e Vieses Cognitivos
 
 Antes de examinar modelos alternativos de decisão, é preciso entender *por que* os agentes se desviam das previsões da teoria neoclássica. A resposta começa pela forma como o cérebro humano processa informações — não como uma calculadora bayesiana perfeita, mas como um sistema adaptativo que economiza recursos cognitivos por meio de **heurísticas**: regras simplificadas que permitem tomar decisões rápidas com informação limitada. Na maioria das vezes, essas regras produzem resultados satisfatórios. Porém, em contextos específicos, elas geram **vieses** — desvios previsíveis em relação ao julgamento estatisticamente correto.
 
@@ -147,7 +147,7 @@ Com as heurísticas e vieses mapeados, passamos agora à teoria que reformula a 
 
 ---
 
-## 8.2 Teoria do Prospecto
+## 8.2 Perder Dói Mais Que Ganhar Alegra: Teoria do Prospecto
 
 A Seção 8.1 mostrou *onde* o modelo racional tropeça. Agora precisamos de um modelo que tropeça menos — sem perder a capacidade de gerar previsões. Esse modelo existe, tem nome, e rendeu um Nobel: a **Teoria do Prospecto**. Não é um remendo ad hoc; é uma teoria completa, com axiomas próprios e previsões testáveis. E a história de como ela surgiu é uma das melhores da ciência.
 
@@ -434,7 +434,7 @@ Essas regras decorrem diretamente da curvatura da função valor da Teoria do Pr
 
 ---
 
-## 8.3 Ambiguidade e o Paradoxo de Ellsberg
+## 8.3 A Urna Misteriosa: Ambiguidade e o Paradoxo de Ellsberg
 
 A Teoria do Prospecto pressupõe que você *conhece* as probabilidades — só as processa de forma distorcida. Mas e quando você não faz *ideia* das probabilidades? Qual é a chance de uma pandemia? De um golpe de Estado? De a inteligência artificial substituir seu emprego? Nesses casos, não estamos diante de risco (probabilidades conhecidas) nem de ignorância total — estamos na terra da **ambiguidade**: sabemos que não sabemos, e isso nos assusta de um jeito que a teoria padrão não captura. Daniel Ellsberg mostrou isso de forma brilhante com duas urnas e umas bolinhas coloridas.
 
@@ -503,7 +503,7 @@ No Brasil, a instabilidade do marco regulatório e fiscal ao longo das últimas 
 
 ---
 
-## 8.4 Preferências Sociais
+## 8.4 Eu Me Importo Com Você (Às Vezes): Preferências Sociais
 
 Até aqui, discutimos como o agente erra ao avaliar riscos e probabilidades. Mas há uma suposição ainda mais básica que merece ser testada: a de que as pessoas *só se importam consigo mesmas*. Faça o teste: se alguém lhe oferecesse R$ 100, mas com a condição de que outra pessoa (que você não conhece) receba R$ 1.000, você aceitaria? A maioria aceita. Agora inverta: alguém recebe R$ 100, mas *você* ganha R$ 0. Justo? A maioria rejeita — mesmo que rejeitar signifique que *ninguém* recebe nada.
 
@@ -652,7 +652,7 @@ A reciprocidade também tem implicações para o design de contratos de incentiv
 
 ---
 
-## 8.5 Escolha Intertemporal e Desconto Hiperbólico
+## 8.5 "Amanhã Eu Começo a Dieta": Desconto Hiperbólico e Autocontrole
 
 Agora vem o domínio onde o ser humano mais tropeça — e onde as consequências são mais dolorosas: o **tempo**. Você *sabe* que deveria poupar para a aposentadoria, mas gasta o bônus num iPhone. Você *sabe* que deveria estudar para a prova, mas assiste mais um episódio. Você *planeja* começar a dieta na segunda-feira — e na segunda-feira, planeja começar na *próxima* segunda. Esse padrão universal — querer uma coisa para o futuro e fazer outra no presente — é o **viés do presente**, e a microeconomia tem um modelo para ele.
 
@@ -828,7 +828,7 @@ A distinção entre agentes sofisticados e ingênuos tem implicações práticas
 
 ---
 
-## 8.6 Nudges e Arquitetura de Escolhas
+## 8.6 O Empurrãozinho Certo: Nudges e Arquitetura de Escolhas
 
 Chegamos à seção mais prática do capítulo — e talvez a mais controversa. As seções anteriores mostraram que erramos de formas previsíveis: distorcemos probabilidades, odiamos perdas mais do que amamos ganhos, punimos injustiça mesmo a nosso custo e sacrificamos o futuro pelo presente. Diante disso, o que fazer? Proibir escolhas ruins (paternalismo)? Deixar que cada um se vire (laissez-faire)? Ou existe uma terceira via — que use os *próprios vieses* a favor das pessoas?
 
@@ -945,6 +945,14 @@ Se este capítulo fez seu trabalho, você sai com três convicções:
 3. **Corrigir vieses é mais difícil do que identificá-los.** Nudges são ferramentas poderosas, mas não são panaceias. O arquiteto de escolhas precisa de humildade — porque o viés do paternalista pode ser tão real quanto o viés do paternalizado.
 
 *Sabemos onde a racionalidade falha. Agora, a pergunta muda: quando suas decisões afetam as minhas, o que acontece? Bem-vindo à teoria dos jogos.*
+
+---
+
+<iframe src="../graficos/cap08/webr-prospecto.html" title="WebR — Teoria do Prospecto" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 8.1 — Função valor e ponderação de probabilidades.** Visualize a assimetria ganhos/perdas (λ > 1) e o sobrepeso de eventos raros. Altere λ para "desligar" a aversão à perda e compare com a utilidade esperada clássica.
+</div>
 
 ---
 

@@ -12,7 +12,7 @@ A estrutura do capítulo reflete uma progressão lógica. Começamos pela formal
 
 ---
 
-## 9c.1 Informação Incompleta e Tipos
+## 9c.1 Quem É Quem? Informação Incompleta e Tipos
 
 A mecânica da transformação de Harsanyi é simples. Cada jogador recebe um **tipo** — uma característica privada (custo, valor, produtividade) sorteada pela natureza. Cada um vê seu tipo, mas não o dos outros. A distribuição de probabilidade sobre os tipos é conhecida por todos (é a "prior comum"). Com essa reformulação, o jogo se torna analisável: cada jogador escolhe uma estratégia que depende do seu tipo, maximizando o payoff esperado dadas suas crenças sobre os tipos alheios.
 
@@ -40,7 +40,7 @@ Com a formalização do jogo bayesiano e a noção de estratégias contingentes 
 
 ---
 
-## 9c.2 Equilíbrio Bayesiano de Nash
+## 9c.2 Chutar Com Base no Que Você Sabe: Equilíbrio Bayesiano de Nash
 
 O jogo está definido; falta o conceito de equilíbrio. A ideia é natural: cada *tipo* de cada jogador deve estar jogando a melhor resposta, dadas suas crenças sobre os tipos dos adversários. É um equilíbrio de Nash, mas "por tipo" — como se cada tipo fosse um jogador separado que sabe seu próprio tipo e forma expectativas sobre os demais usando a prior. Esse é o **Equilíbrio Bayesiano de Nash** (BNE). O jogador tipo \(\theta_i\) não sabe quais tipos os outros receberam, mas pode calcular a expectativa de seu payoff usando a distribuição condicional \(p(\theta_{-i} | \theta_i)\) e as estratégias de equilíbrio \(\sigma_{-i}^*(\theta_{-i})\). Se tipos são independentes — como ocorre no modelo de valores privados independentes que será central na teoria de leilões — a distribuição condicional coincide com a prior marginal, simplificando consideravelmente o cálculo.
 
@@ -95,7 +95,7 @@ Com o conceito de BNE firmemente estabelecido, passamos à aplicação que mais 
 
 ---
 
-## 9c.3 Leilões de Valor Privado
+## 9c.3 Quem Dá Mais? Leilões de Valor Privado
 
 Agora a aplicação mais espetacular dos jogos bayesianos: **leilões**. Quando a Petrobras disputa um bloco do pré-sal, ela sabe quanto vale para *ela* — mas não faz ideia de quanto vale para a Shell ou a TotalEnergies. Cada licitante tem informação privada sobre seu próprio valor e precisa decidir quanto oferecer sem ver as cartas dos adversários. Um jogo bayesiano puro, com bilhões de dólares na mesa. Não por acaso, leilões são o campo onde a teoria dos jogos provou ser mais útil — e mais lucrativa — na prática.
 
@@ -261,7 +261,7 @@ A passagem dos leilões de valor privado para os de valor comum — e, mais gera
 
 ---
 
-## 9c.4 Desenho de Mecanismos
+## 9c.4 Projetando o Jogo: Desenho de Mecanismos
 
 Se formatos diferentes rendem receitas diferentes, a pergunta inevitável: qual formato é *o melhor*? Mas essa pergunta é um caso especial de algo muito maior. Até aqui, o jogo era dado e nós buscávamos o equilíbrio. Agora *invertemos*: o resultado desejado é dado, e nós **projetamos o jogo** que o produz. Essa inversão — de jogador para *arquiteto de jogos* — é o **desenho de mecanismos**, e rendeu o Nobel de 2007 a Hurwicz, Maskin e Myerson. É a teoria por trás de tudo, desde leilões de espectro até matching de médicos residentes e doação de órgãos.
 

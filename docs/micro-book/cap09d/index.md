@@ -10,7 +10,7 @@ Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Ca
 
 ---
 
-## 9d.1 Equilíbrio Bayesiano Perfeito (PBE)
+## 9d.1 Crenças Que Fazem Sentido: Equilíbrio Bayesiano Perfeito
 
 Precisamos de um conceito de equilíbrio que faça duas coisas ao mesmo tempo: exigir que cada jogador aja racionalmente *em cada ponto do jogo* (herança do EPS, Seção 9b.1) e que as crenças sejam atualizadas de forma consistente quando nova informação chega (herança do BNE, Seção 9c.2). O **Equilíbrio Bayesiano Perfeito** é esse casamento: EPS + Bayes.
 
@@ -31,7 +31,7 @@ A consistência bayesiana das crenças é, ao mesmo tempo, a virtude e a limita�
 
 ---
 
-## 9d.2 Sinalização: O Modelo de Spence
+## 9d.2 O MBA Não Ensina Nada — Mas Sinaliza Tudo: O Modelo de Spence
 
 Aqui está a aplicação mais famosa — e mais provocativa — do PBE. A pergunta de Spence (1973): por que as pessoas fazem faculdade? Resposta óbvia: para aprender. Resposta de Spence: *talvez não*. Talvez o diploma seja apenas um **sinal** — uma forma custosa de dizer ao empregador "sou do tipo produtivo", mesmo que o conteúdo do curso seja irrelevante. O truque: ir à faculdade é mais *fácil* (menos custoso) para quem é produtivo. Logo, o diploma funciona como filtro.
 
@@ -146,7 +146,7 @@ O modelo brasileiro oferece um exemplo instrutivo. O diploma universitário no B
 
 ---
 
-## 9d.3 Cheap Talk e Comunicação Estratégica
+## 9d.3 Conversa Barata: *Cheap Talk* e Comunicação Estratégica
 
 No modelo de Spence, o sinal é crível porque é *custoso*. Mas grande parte da comunicação no mundo real é gratuita: publicidade, discursos políticos, promessas de campanha, relatórios de analistas de mercado, descrições em apps de namoro. Quando a comunicação não envolve custo direto — o que a teoria chama de **cheap talk** — a pergunta central é: *alguém deveria acreditar?*[^dead-parrot]
 
@@ -189,7 +189,7 @@ O número máximo de intervalos na partição de equilíbrio é decrescente em \
 
 ---
 
-## 9d.4 Moral Hazard (Risco Moral)
+## 9d.4 Quando o Seguro Incentiva o Descuido: *Moral Hazard*
 
 Mudança de cenário. Até aqui, o problema era de *tipo*: o agente sabe quem ele é, o receptor não. Agora o problema é de *ação*: o agente escolhe o que faz depois de assinar o contrato, e o principal não consegue ver. Você contrata um seguro de carro e passa a estacionar em lugar perigoso — porque, afinal, está segurado. A empresa contrata o gerente e não consegue verificar se ele está trabalhando duro ou navegando na internet. O governo empresta dinheiro ao banco e o banco assume riscos excessivos — sabendo que, se der errado, o governo socorre.
 
@@ -271,7 +271,7 @@ O Capítulo 8 (economia comportamental) acrescenta uma camada adicional: evidên
 
 ---
 
-## 9d.5 Seleção Adversa
+## 9d.5 O Mercado dos Limões: Seleção Adversa
 
 Moral hazard é sobre o que o agente *faz* depois do contrato. Seleção adversa é sobre o que o agente *é* antes do contrato. A diferença: se o problema é que o motorista dirige mal *após* contratar o seguro, é moral hazard. Se o problema é que *quem procura seguro já é mau motorista*, é seleção adversa. Timing diferente, soluções diferentes. Confundir os dois é o erro mais clássico em provas de micro — e a distinção é sempre a mesma pergunta: ações ocultas (pós) ou tipos ocultos (pré)?
 

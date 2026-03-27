@@ -28,7 +28,7 @@ O capítulo segue uma progressão deliberada: partimos da formulação do proble
 
 ---
 
-## 4.1 O Problema do Consumidor
+## 4.1 A Conta Que Não Fecha: O Problema do Consumidor
 
 O problema central da teoria do consumidor pode ser enunciado de forma surpreendentemente simples: dado um orçamento limitado, como o consumidor distribui seus gastos para obter a maior satisfação possível? Essa pergunta, formulada pela primeira vez de modo rigoroso por Alfred Marshall (1890) e formalizada por John Hicks (1939) e Paul Samuelson (1947), é o ponto de partida de toda a análise de demanda.
 
@@ -79,7 +79,7 @@ A formulação em \eqref{eq:4.1.1} admite generalizações naturais: para \(n\) 
 
 ---
 
-## 4.2 Análise Gráfica com Dois Bens
+## 4.2 O Ponto de Tangência: Análise Gráfica com Dois Bens
 
 Antes de soltar o Lagrangeano, vamos *ver* o problema. A abordagem gráfica, aperfeiçoada por Edgeworth e Hicks, é tão boa que muitos economistas resolvem problemas no guardanapo antes de abrir o caderno. A ideia é visualmente irresistível: pegue o mapa de curvas de indiferença (Seção 3.3) e sobreponha a reta orçamentária. O consumidor quer chegar à curva mais alta possível — mas sem sair do triângulo que o bolso permite. A solução? O ponto onde a curva de indiferença *tangencia* a reta orçamentária. É como um alpinista que sobe o mais alto que consegue sem ultrapassar a cerca.
 
@@ -141,7 +141,7 @@ Por exemplo, se uma família gasta R$ 200 por mês em streaming e R$ 50 em livro
 
 ---
 
-## 4.3 O Caso com n Bens — O Lagrangeano
+## 4.3 Do Desenho à Equação: O Lagrangeano com *n* Bens
 
 A intuição gráfica da Seção 4.2 e a solução algébrica que segue são *duas formas de dizer a mesma coisa*: tangência = TMS igual à razão de preços = condição de Lagrange. A geometria dá a intuição; a álgebra dá a precisão. Nenhuma substitui a outra.
 
@@ -211,7 +211,7 @@ Essas propriedades não são meras curiosidades teóricas: elas impõem restriç
 
 ---
 
-## 4.4 Função de Utilidade Indireta
+## 4.4 A Felicidade Que o Dinheiro Compra: Utilidade Indireta
 
 Agora sabemos *o que* o consumidor compra. A próxima pergunta: *quão feliz* ele fica? E — mais importante — como essa felicidade muda quando o mundo muda? Se a gasolina sobe 20%, quanto cai o bem-estar máximo do consumidor? A **função de utilidade indireta** responde: ela é o "termômetro de felicidade" que traduz preços e renda em satisfação máxima alcançável. O nome "indireta" é preciso: a utilidade não vem diretamente das quantidades, mas indiretamente, via os preços e a renda que *determinam* as quantidades ótimas. Mude os preços, muda a cesta ótima, muda a felicidade.
 
@@ -283,7 +283,7 @@ A seguir, no Exercício Resolvido 4.1, aplicamos esses conceitos ao caso Cobb-Do
 
 ---
 
-## 4.5 O Princípio do Montante Fixo (*Lump Sum Principle*)
+## 4.5 Por Que Imposto Distorce: O Princípio *Lump Sum*
 
 Com a função de utilidade indireta em mãos, estamos em condições de analisar uma das questões mais relevantes da microeconomia aplicada a políticas públicas. Antes de apresentar o resultado formal, considere a seguinte pergunta de política pública: se o governo precisa arrecadar uma determinada receita de um consumidor, qual tipo de imposto causa **menor perda de bem-estar**?[^shrubbery-tax] A resposta revela uma das implicações mais poderosas da teoria do consumidor — e justifica, do ponto de vista teórico, a preferência por transferências diretas de renda sobre subsídios específicos.
 
@@ -361,7 +361,7 @@ A geometria do argumento é esclarecedora: o imposto específico rotaciona a ret
 
 ---
 
-## 4.6 Minimização do Dispêndio — O Problema Dual
+## 4.6 O Lado B do Consumidor: Minimização do Dispêndio
 
 Até aqui, o consumidor entrava no supermercado com R$ 300 e perguntava: "como maximizar minha felicidade?" Agora, viramos a pergunta de cabeça para baixo: "qual é o **mínimo** que preciso gastar para ficar tão feliz quanto estou agora?" Parece a mesma coisa — e em certo sentido é. Mas essa reformulação, chamada de **problema dual**, é uma das jogadas mais astutas da teoria econômica. Ela gera ferramentas (demanda hicksiana, função dispêndio) que o problema original não entrega diretamente — e que serão indispensáveis quando, no Capítulo 5, quisermos separar o efeito de uma mudança de preço em "substituição" e "renda".
 
@@ -432,7 +432,7 @@ A demanda hicksiana recebe o nome de "compensada" porque mantém o nível de uti
 
 ---
 
-## 4.7 Função Dispêndio
+## 4.7 Quanto Custa Ser Feliz? A Função Dispêndio
 
 Assim como a função de utilidade indireta sintetiza o *valor ótimo* do problema primal (a utilidade máxima dados preços e renda), a **função dispêndio** sintetiza o valor ótimo do problema dual: o gasto mínimo necessário para atingir um determinado nível de utilidade. A função dispêndio é um dos conceitos mais versáteis de toda a microeconomia: dela derivam-se as demandas hicksianas (via Lema de Shephard), as medidas de variação de bem-estar (variação compensatória e equivalente, Capítulo 5) e os índices de custo de vida (como o IPCA discutido no Box Brasil do Capítulo 2). Juntas, \(V\) e \(E\) formam um par dual que será a base de toda a análise de bem-estar desenvolvida no Capítulo 5. A elegância da estrutura dual reside no fato de que tanto \(V\) quanto \(E\) podem ser estimadas empiricamente — e a partir delas, via Identidade de Roy e Lema de Shephard, recuperamos as funções de demanda sem precisar resolver o problema de otimização original novamente.
 
@@ -477,7 +477,7 @@ Assim como a função de utilidade indireta sintetiza o *valor ótimo* do proble
 
 ---
 
-## 4.8 Dualidade entre Utilidade Indireta e Função Dispêndio
+## 4.8 Dois Lados da Mesma Moeda: A Dualidade V ↔ E
 
 Temos agora duas funções que resumem o consumidor: \(V\) (utilidade indireta, do primal) e \(E\) (função dispêndio, do dual). Uma fala em "reais" e devolve "felicidade"; a outra fala em "felicidade" e devolve "reais". Não é coincidência que pareçam espelhos — elas *são* inversas uma da outra.[^dead-parrot-dual] Essa simetria é o coração da dualidade, e as identidades abaixo são o certificado de casamento:
 
@@ -567,7 +567,7 @@ A equação $\eqref{eq:4.8.17}$ diz que avaliar a demanda hicksiana no nível de
 
 ---
 
-## 4.9 Identidade de Roy
+## 4.9 O Atalho Mais Elegante: Identidade de Roy
 
 Eis o passe de mágica mais satisfatório da teoria do consumidor. Suponha que alguém lhe dê a função \(V(\mathbf{p}, I)\) — o "termômetro de felicidade". Será que você consegue, *só com ela*, descobrir as demandas, sem resolver Lagrangeano nenhum? A resposta: sim. Basta derivar \(V\) e dividir. Esse atalho espetacular é a **Identidade de Roy** — e ela funciona porque \(V\) já contém, comprimida, toda a informação sobre o comportamento ótimo do consumidor. É como extrair a receita do bolo a partir do sabor.
 
@@ -634,7 +634,7 @@ A Identidade de Roy também tem uma interpretação em termos do multiplicador \
 
 ---
 
-## 4.10 Demandas por Tipo de Função Utilidade
+## 4.10 Cada Preferência, uma Demanda: O Catálogo Completo
 
 *And now for something completely different* — ou melhor, *completely concrete*. Teoria bonita, mas funciona na prática? Hora de sujar as mãos. Vamos pegar cada "personagem" do Capítulo 3 — Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES, quase-linear — e resolver o problema do consumidor do começo ao fim: Lagrangeano, CPO, demanda marshalliana, demanda hicksiana, utilidade indireta, função dispêndio. É trabalhoso, mas o payoff é enorme: ao final desta seção, você terá um catálogo de soluções prontas que reaparecerão em *todos* os exercícios e provas deste livro.
 
@@ -984,7 +984,7 @@ Os boxes a seguir ilustram como esses modelos se conectam a questões concretas 
 
 ---
 
-## 4.11 Funções do Consumidor: Quadro Resumo
+## 4.11 O GPS do Consumidor: Quadro Resumo de Todas as Funções
 
 A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do consumidor e suas propriedades. Este quadro serve tanto como referência rápida quanto como mapa conceitual das relações desenvolvidas ao longo do capítulo. Cada linha da tabela corresponde a um conceito fundamental; cada coluna, a uma dimensão analítica relevante. Ao percorrer a tabela, observe como as funções se organizam em pares duais — \(x_i\) e \(h_i\); \(V\) e \(E\) — e como as propriedades de homogeneidade, monotonia e curvatura refletem a estrutura subjacente das preferências.
 
@@ -1047,6 +1047,14 @@ Se este capítulo funcionou, você sai dele com três convicções:
 O consumidor encontrou sua cesta ótima. Mas o mundo não fica parado: preços mudam, rendas flutuam, governos criam impostos. O que acontece com a cesta ótima quando o chão se move? Essa é a pergunta do Capítulo 5 — onde Slutsky entra em cena.
 
 *O consumidor está em paz no seu ótimo. No próximo capítulo, perturbamos essa paz — e Slutsky nos ensina a decompor o caos.*
+
+---
+
+<iframe src="../graficos/cap04/webr-demandas.html" title="WebR — Demandas e Dualidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 4.1 — Marshalliana vs. Hicksiana.** Visualize como as duas curvas de demanda se cruzam no ponto base (a dualidade em ação). Altere α para ver como a fração de gastos muda e como as demandas respondem.
+</div>
 
 ---
 

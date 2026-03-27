@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+  WebR — Decomposição de Slutsky
+  Cap. 5: Efeito Renda e Efeito Substituição
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Interativo — Slutsky</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:340px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Decomposição de Slutsky — Cobb-Douglas
+# Cap. 5: Efeito Renda e Efeito Substituição
+
+# Parâmetros (altere!)
+alpha <- 0.5     # preferência pelo bem 1
+m     <- 100     # renda
+p1    <- 5       # preço original do bem 1
+p1_new <- 10     # preço novo do bem 1
+p2    <- 5       # preço do bem 2
+
+# === Cesta original (A) ===
+x1_A <- alpha * m / p1
+x2_A <- (1 - alpha) * m / p2
+U_A  <- x1_A^alpha * x2_A^(1-alpha)
+
+# === Cesta final (C) ===
+x1_C <- alpha * m / p1_new
+x2_C <- (1 - alpha) * m / p2
+U_C  <- x1_C^alpha * x2_C^(1-alpha)
+
+# === Slutsky: renda compensada ===
+m_comp <- p1_new * x1_A + p2 * x2_A  # renda para comprar A a novos preços
+x1_B <- alpha * m_comp / p1_new
+x2_B <- (1 - alpha) * m_comp / p2
+
+# Efeitos
+ES <- x1_B - x1_A   # efeito substituição (Slutsky)
+ER <- x1_C - x1_B   # efeito renda
+ET <- x1_C - x1_A   # efeito total
+
+cat("=== Decomposição de Slutsky ===\n")
+cat(sprintf("  A (original):    x1=%.2f, x2=%.2f, U=%.3f\n", x1_A, x2_A, U_A))
+cat(sprintf("  B (compensada):  x1=%.2f, x2=%.2f\n", x1_B, x2_B))
+cat(sprintf("  C (final):       x1=%.2f, x2=%.2f, U=%.3f\n", x1_C, x2_C, U_C))
+cat(sprintf("\n  Efeito Substituição = %.2f\n", ES))
+cat(sprintf("  Efeito Renda        = %.2f\n", ER))
+cat(sprintf("  Efeito Total        = %.2f  (= ES + ER)\n", ET))
+cat(sprintf("  Verificação: %.2f + %.2f = %.2f ✓\n", ES, ER, ES + ER))
+
+# Gráfico
+x <- seq(0.3, 25, length.out = 300)
+y_CI_A <- (U_A / x^alpha)^(1/(1-alpha))
+y_CI_C <- (U_C / x^alpha)^(1/(1-alpha))
+y_RO1  <- (m - p1 * x) / p2
+y_RO2  <- (m - p1_new * x) / p2
+y_comp <- (m_comp - p1_new * x) / p2
+
+plot(NULL, xlim = c(0, 22), ylim = c(0, 22),
+     xlab = expression(x[1]), ylab = expression(x[2]),
+     main = "Slutsky: Efeito Substituição + Efeito Renda")
+
+lines(x, pmax(y_RO1, 0),  col = "#2a7f2a", lwd = 2)
+lines(x, pmax(y_RO2, 0),  col = "#2a7f2a", lwd = 2, lty = 2)
+lines(x, pmax(y_comp, 0),  col = "#ff9800", lwd = 1.5, lty = 3)
+lines(x, y_CI_A, col = "#C8102E", lwd = 2)
+lines(x, y_CI_C, col = "#C8102E", lwd = 1.5, lty = 2)
+
+points(x1_A, x2_A, pch = 19, col = "#333", cex = 1.5)
+points(x1_B, x2_B, pch = 17, col = "#ff9800", cex = 1.5)
+points(x1_C, x2_C, pch = 15, col = "#C8102E", cex = 1.5)
+
+text(x1_A + 0.6, x2_A + 0.8, "A", font = 2, cex = 1)
+text(x1_B + 0.6, x2_B + 0.8, "B", font = 2, col = "#ff9800", cex = 1)
+text(x1_C + 0.6, x2_C + 0.8, "C", font = 2, col = "#C8102E", cex = 1)
+
+legend("topright", cex = 0.75,
+       legend = c("RO original", "RO nova", "RO compensada",
+                  sprintf("CI: U=%.2f", U_A), sprintf("CI: U=%.2f", U_C)),
+       col = c("#2a7f2a","#2a7f2a","#ff9800","#C8102E","#C8102E"),
+       lty = c(1,2,3,1,2), lwd = c(2,2,1.5,2,1.5))
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Altere <code>p1_new</code> para simular choques de preço diferentes. Tente <code>alpha = 0.9</code> para um bem essencial — o efeito renda domina!
+  </div>
+</div>
+<script type="module">
+  import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -25,7 +25,7 @@ Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessári
 
 ---
 
-## 6.1 O Caso com Dois Bens: Efeitos Cruzados de Preço
+## 6.1 A Gasolina Subiu — O Etanol Sorriu: Efeitos Cruzados
 
 Comecemos pelo caso mais simples — e mais traiçoeiro: uma economia com apenas dois bens. A surpresa: com só dois bens, *não existe complementaridade* (no sentido hicksiano). Se o arroz fica caro e compensamos sua renda, você *necessariamente* come mais macarrão — porque não há mais nada no cardápio. A complementaridade — café e açúcar, por exemplo — só aparece quando existe uma terceira opção. Essa armadilha conceitual já enganou muita gente boa.
 
@@ -68,7 +68,7 @@ Vale notar que esse resultado tem uma conexão direta com o Teorema da Função 
 
 ---
 
-## 6.2 Substitutos e Complementos Brutos (Marshallianos)
+## 6.2 Amigos ou Rivais? Substitutos e Complementos Brutos
 
 OK, com dois bens o resultado é trivial. Mas no supermercado real existem milhares de bens, e as relações são ricas: café sobe → açúcar cai (complementos); gasolina sobe → etanol sobe (substitutos); gasolina sobe → carros usados... caem? (complementos distantes). A classificação mais intuitiva — a que você "vê" diretamente nos dados de vendas — usa as derivadas cruzadas da demanda marshalliana, e é a que apresentamos agora.
 
@@ -148,7 +148,7 @@ A palavra "bruta" na expressão "substituto bruto" evoca justamente essa contami
 
 ---
 
-## 6.3 Substitutos e Complementos Líquidos (Hicksianos)
+## 6.3 A Versão Sem Efeito Renda: Substitutos e Complementos Líquidos
 
 A classificação marshalliana tem um defeito: ela está "suja" pelo efeito renda. Quando a gasolina sobe, o consumidor fica mais pobre — e esse empobrecimento afeta a demanda por *todos* os bens, não apenas pelo substituto natural (etanol). O efeito renda pode fazer dois bens que são genuinamente substitutos parecerem complementos nos dados brutos. É como tentar ouvir uma música com ruído de fundo: o sinal está lá, mas contaminado. A classificação **hicksiana** (compensada) é o filtro que remove o ruído — ela usa a demanda hicksiana, que isola o efeito substituição puro.
 
@@ -261,7 +261,7 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 
 ---
 
-## 6.4 Substituibilidade com Muitos Bens
+## 6.4 Quando o Mundo Tem Mais de Dois Bens: Substituibilidade Geral
 
 Até aqui, trabalhamos predominantemente com dois bens — um cenário que, embora didático, impõe restrições fortes sobre as relações de substituição e complementaridade. No mundo real, os consumidores escolhem entre centenas de bens, e as relações cruzadas formam uma teia complexa. O que muda quando passamos de dois para muitos bens? A resposta envolve a **matriz de substituição de Slutsky**, uma ferramenta que organiza todos os efeitos cruzados em uma única estrutura algébrica.
 
@@ -301,7 +301,7 @@ A matriz de Slutsky também tem implicações empíricas diretas. Suas proprieda
 
 ---
 
-## 6.5 Bens Compostos (Teorema do Bem Composto de Hicks)
+## 6.5 "Todo o Resto": O Teorema do Bem Composto de Hicks
 
 Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10.000 elasticidades cruzadas. Ninguém tem dados suficientes para estimar tudo isso.[^cheese-shop] A solução prática: agrupar bens em categorias ("alimentação", "transporte", "lazer") e tratar cada categoria como um único "super-bem". Mas cuidado: agrupar bens arbitrariamente pode gerar erros graves. O **Teorema do Bem Composto de Hicks** diz *quando* a agregação é legítima — e a condição é surpreendentemente simples.
 
@@ -389,7 +389,7 @@ O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o be
 
 ---
 
-## 6.6 Produção Doméstica, Atributos dos Bens e Preços Implícitos
+## 6.6 Você Não Compra Comida — Compra Nutrição: Produção Doméstica e Preços Implícitos
 
 Pergunta incômoda: por que alguém "deseja" arroz? Ninguém acorda de manhã sonhando com grãos brancos. O que a pessoa quer são nutrientes, saciedade, sabor — *atributos* do arroz, não o arroz em si. Da mesma forma, ninguém compra um apartamento pelo concreto: compra metragem, localização, vista, silêncio. Essa observação aparentemente trivial inspira duas reformulações radicais da teoria do consumidor.
 
@@ -463,7 +463,7 @@ Essa perspectiva também conecta este capítulo ao Capítulo 12, sobre equilíbr
 
 ---
 
-## 6.7 Agregação da Demanda: Do Individual ao Mercado
+## 6.7 Da Pessoa ao País: Agregação da Demanda
 
 Até aqui, estudamos um consumidor solitário fazendo escolhas perfeitas. Mas o mercado tem milhões de consumidores — velhos e jovens, ricos e pobres, racionais e impulsivos. A operação óbvia é somar todas as demandas individuais. Mas somar é inocente? A demanda de mercado herda as boas propriedades (Slutsky, homogeneidade) da demanda individual? Podemos fingir que existe um "brasileiro médio" cujas preferências representam as de todos? A resposta curta: depende. A resposta longa é esta seção.
 
@@ -577,7 +577,7 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 
 ---
 
-## 6.8 Classificação de Pares de Bens no Contexto Brasileiro
+## 6.8 Carne e Cerveja, Uber e Táxi: Classificação no Contexto Brasileiro
 
 *And now for something completely different — ou melhor, completely concreto.*[^completely-different-table]
 
@@ -679,6 +679,14 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 3. **Distribuição importa.** A demanda de mercado não depende só da renda total, mas de como ela é distribuída. Ignorar a heterogeneidade dos consumidores é assumir a condição de Gorman — e a evidência empírica rejeita essa hipótese sistematicamente.
 
 *Nenhum bem é uma ilha — e agora sabemos mapear as pontes entre eles. No próximo capítulo, tiramos a última certeza: o consumidor descobre que não sabe o que o futuro reserva.*
+
+---
+
+<iframe src="../graficos/cap06/webr-elasticidades.html" title="WebR — Elasticidades Cruzadas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 6.1 — Elasticidades cruzadas com CES.** Altere ρ para ver bens se transformarem de substitutos (ρ positivo, elasticidade cruzada > 0) em complementos (ρ negativo). O painel direito mostra a elasticidade cruzada mudando de sinal.
+</div>
 
 ---
 

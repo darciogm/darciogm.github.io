@@ -22,7 +22,7 @@ A equação central deste capítulo — a Equação de Slutsky — deve seu nome
 
 ---
 
-## 5.1 Funções de Demanda e Suas Propriedades
+## 5.1 O Que Entra no Carrinho? Funções de Demanda e Suas Propriedades
 
 Antes de perturbar o sistema, vale conferir o que a solução ótima do Capítulo 4 nos garante. As funções de demanda que emergem da otimização não são funções quaisquer — elas obedecem a três propriedades que refletem a lógica da racionalidade. Violar qualquer uma delas seria como encontrar um rio que flui morro acima: possível em teoria, mas forte evidência de que algo está errado no modelo.
 
@@ -53,7 +53,7 @@ A Lei de Walras, por sua vez, tem um significado econômico preciso: com prefer�
 
 ---
 
-## 5.2 Variações na Renda
+## 5.2 Ficou Rico ou Ficou Pobre? Variações na Renda
 
 Primeira perturbação: o consumidor ficou mais rico (ou mais pobre). O que ele faz com a renda extra? Compra mais de tudo, ou abandona alguns itens e se joga em outros? A resposta depende do *tipo* de bem — e aqui a teoria ganha seu vocabulário mais intuitivo: bens normais, bens inferiores, bens de luxo. As Pesquisas de Orçamentos Familiares (POF) do IBGE, realizadas a cada cinco anos, oferecem precisamente o tipo de variação de renda necessária para traçar empiricamente as curvas de Engel: ao observar famílias em diferentes faixas de renda, podemos inferir como o consumo de cada bem responde ao enriquecimento.
 
@@ -148,7 +148,7 @@ Recapitulando: sabemos que bens normais sobem com a renda, inferiores caem, e lu
 
 ---
 
-## 5.3 Variações no Preço: Efeitos Renda e Substituição
+## 5.3 Preço Subiu — E Agora? Efeitos Renda e Substituição
 
 Agora vem a jogada mais importante da teoria do consumidor — e uma das ideias mais bonitas de toda a economia. Quando o preço da carne cai, você compra mais carne. Óbvio. Mas *por quê*? Há duas razões misturadas, e separá-las é fundamental:
 
@@ -208,7 +208,7 @@ Ambas as decomposições — a de Hicks, expressa na equação $\eqref{eq:5.3.1}
 
 ---
 
-## 5.4 Equação de Slutsky
+## 5.4 A Equação Que Separa Tudo: Slutsky
 
 Os gráficos deram a intuição; agora a álgebra dá a precisão. A **Equação de Slutsky** é, sem exagero, *a* equação da teoria do consumidor — aquela que aparece em toda prova de micro, em todo paper de demanda, em toda análise de política tributária. Ela decompõe a resposta da demanda a uma variação de preço em dois pedaços cirurgicamente separados, conectando as funções marshalliana e hicksiana numa identidade elegante. Se este livro fosse uma peça de teatro, a Equação de Slutsky seria o monólogo do ato final.
 
@@ -384,7 +384,7 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
 
 ---
 
-## 5.5 A Curva de Demanda Individual
+## 5.5 De Cima a Baixo: A Curva de Demanda Individual
 
 A Equação de Slutsky nos permitiu decompor o efeito de uma variação de preço em suas partes constitutivas. Agora, podemos construir e comparar as duas curvas de demanda que emergem dessa análise: a marshalliana, que observamos nos mercados reais, e a hicksiana, que isola o efeito substituição puro. Compreender as diferenças entre elas é essencial tanto para a análise positiva (o que acontece) quanto para a análise normativa (como medir o bem-estar). Uma analogia útil: a curva marshalliana é o "preço de mercado" — o que de fato se observa; a curva hicksiana é o "preço verdadeiro" — o que o economista usa para análise de bem-estar.
 
@@ -419,7 +419,7 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 
 ---
 
-## 5.6 Demanda Compensada: Propriedades Formais
+## 5.6 A Demanda Sem Ilusão de Renda: Hicksiana e Suas Propriedades
 
 A seção anterior apresentou as curvas de demanda marshalliana e hicksiana de forma intuitiva e gráfica. Agora, aprofundamos as propriedades formais da demanda compensada, que desempenham papel central tanto na teoria pura quanto na análise empírica. Essas propriedades geram restrições testáveis sobre o comportamento observado do consumidor — permitindo verificar se os dados são compatíveis com a hipótese de racionalidade. O Exercício 5.10 ao final do capítulo convida o leitor a demonstrar formalmente que a matriz de Slutsky é simétrica e negativa semidefinida.
 
@@ -441,7 +441,7 @@ A propriedade 4 é particularmente poderosa: dela decorrem restrições testáve
 
 ---
 
-## 5.7 Elasticidades da Demanda
+## 5.7 O Termômetro da Sensibilidade: Elasticidades da Demanda
 
 Até aqui, discutimos os efeitos de variações de preço e renda em termos de derivadas — grandezas que dependem das unidades de medida. Mas como comparar a sensibilidade da demanda por gasolina (medida em litros) com a da demanda por arroz (medida em quilos)? Ou a resposta do consumidor brasileiro com a do consumidor americano, cujas rendas e preços são expressos em moedas diferentes? É aqui que entram as **elasticidades**, que medem a sensibilidade percentual da demanda a variações em preços e renda, sendo adimensionais e, portanto, comparáveis entre bens e mercados distintos.
 
@@ -573,7 +573,7 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 
 ---
 
-## 5.8 Excedente do Consumidor
+## 5.8 O Lucro Invisível do Comprador: Excedente do Consumidor
 
 *And now for something completely different* — ou melhor, *completely practical*. Elasticidades dizem *como* a demanda reage. Mas o ministro da Fazenda quer saber outra coisa: *quanto* o consumidor perde (em reais!) quando a gasolina sobe R$ 0,50? E quanto ganha quando o governo zera o ICMS sobre a cesta básica? Para isso, precisamos de uma régua monetária de bem-estar — e é exatamente isso que o **excedente do consumidor** fornece. É a ferramenta que traduz utilidade abstrata em valores que cabem numa planilha de orçamento público.
 
@@ -702,7 +702,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
 ---
 
-## 5.9 Preferência Revelada e o Efeito Substituição
+## 5.9 Suas Compras Falam por Você: Preferência Revelada
 
 Tudo que fizemos até aqui partiu de um objeto invisível: a função de utilidade. Ninguém jamais viu uma, mediu uma ou tropeçou numa. Será que é possível chegar às mesmas conclusões usando apenas o que *é* observável — preços pagos e quantidades compradas?[^spanish-inquisition-rp] Em 1938, Paul Samuelson, aos 22 anos, mostrou que sim. A ideia: se o consumidor escolheu a cesta A quando podia comprar a cesta B, ele *revelou* que prefere A a B. Nenhuma função de utilidade necessária — apenas o comportamento observado. Essa inversão de lógica — das escolhas para as preferências, em vez do contrário — é a **teoria da preferência revelada**, e ela deu a Samuelson o Nobel.
 
@@ -778,6 +778,14 @@ Se este capítulo funcionou, você sai dele com três convicções:
 3. **Medir bem-estar exige cuidado com a régua.** O excedente do consumidor marshalliano é prático, mas a VC e a VE são as medidas teoricamente corretas. A diferença entre elas depende do tamanho do efeito renda — e para famílias pobres, essa diferença pode ser enorme.
 
 *Até aqui, cada bem vivia sozinho. No próximo capítulo, eles se encontram — e a relação é complicada.*
+
+---
+
+<iframe src="../graficos/cap05/webr-slutsky.html" title="WebR — Decomposição de Slutsky" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 5.1 — Decomposição de Slutsky.** Visualize os pontos A (original), B (Slutsky-compensado) e C (final), e calcule os efeitos substituição e renda. Altere o choque de preço e o parâmetro α para ver quando o efeito renda domina.
+</div>
 
 ---
 

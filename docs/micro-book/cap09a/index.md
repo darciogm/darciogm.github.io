@@ -20,7 +20,7 @@ Este módulo apresenta os jogos **estáticos** (simultâneos) com **informação
 
 ---
 
-## 9a.1 Conceitos Básicos
+## 9a.1 As Regras do Tabuleiro: Jogadores, Estratégias e Payoffs
 
 Antes de jogar, precisamos aprender as regras. A teoria dos jogos exige uma descrição completa do ambiente: quem joga, o que cada um pode fazer, e o que cada combinação de ações rende para cada jogador. Parece burocrático, mas é libertador — uma vez que o jogo está bem definido, a análise se torna mecânica. Duas representações capturam essa informação: a **forma normal** (uma tabela, ideal para jogos simultâneos como os deste capítulo) e a **forma extensiva** (uma árvore, ideal para jogos sequenciais do Módulo 9b).
 
@@ -74,7 +74,7 @@ Este é um procedimento de solução que não requer o conceito de equilíbrio: 
 
 ---
 
-## 9a.2 Dilema dos Prisioneiros
+## 9a.2 Por Que Mafiosos Confessam: O Dilema dos Prisioneiros
 
 Com a linguagem formal estabelecida, podemos agora examinar os jogos que deram forma à teoria. Começamos pelo mais influente de todos — um jogo tão simples que pode ser descrito em uma frase, mas tão profundo que suas implicações permeiam a economia, a ciência política e a biologia.
 
@@ -146,7 +146,7 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 
 ---
 
-## 9a.3 Equilíbrio de Nash
+## 9a.3 Ninguém Quer Mudar: O Equilíbrio de Nash
 
 No Dilema dos Prisioneiros, a solução era fácil: trair domina cooperar, aconteça o que acontecer. Mas a maioria dos jogos não é tão generosa. Na Batalha dos Sexos, por exemplo, a melhor ação depende do que o outro jogador faz — não existe "bala de prata". Como prever o resultado quando nenhuma estratégia é obviamente superior?
 
@@ -240,7 +240,7 @@ Quando \(C > V\) (custo do conflito excede o valor do recurso), existem dois equ
 
 ---
 
-## 9a.4 Estratégias Mistas
+## 9a.4 O Blefe Calculado: Estratégias Mistas
 
 Alguns jogos simplesmente não têm equilíbrio — se os jogadores são obrigados a escolher uma ação fixa. No Matching Pennies, qualquer escolha determinística é explorada pelo adversário. Parece um beco sem saída. A solução de Nash: **jogar cara ou coroa** — literalmente. Se você randomiza entre suas ações com as probabilidades certas, o adversário não consegue explorar sua estratégia. E Nash provou algo impressionante: *todo* jogo finito tem equilíbrio, se permitirmos aleatorização. Essa é a ideia de **estratégia mista** — e ela transforma jogos aparentemente sem solução em jogos com solução garantida.
 
@@ -358,7 +358,7 @@ Misturar é racional — pergunte a qualquer cobrador de pênaltis. Se ele sempr
 
 ---
 
-## 9a.5 Jogos com Ações Contínuas: Oligopólio
+## 9a.5 Quanto Produzir Quando o Rival Está Olhando: Cournot e Oligopólio
 
 Até agora, os jogos tinham botões: "cooperar ou trair", "futebol ou cinema". Clique numa opção, fim. Mas a Ambev não escolhe entre "produzir" e "não produzir" — ela escolhe *quantos milhões de litros* produzir. E o iFood não escolhe entre "cobrar caro" e "cobrar barato" — ele fixa um preço *exato*. Os jogos economicamente mais importantes têm estratégias contínuas: números reais, não botões. E os três modelos clássicos de oligopólio — Cournot (quantidades), Bertrand (preços) e Stackelberg (líder-seguidor) — são os exemplos paradigmáticos.
 

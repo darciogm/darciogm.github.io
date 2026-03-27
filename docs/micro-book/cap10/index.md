@@ -12,7 +12,7 @@ O material deste capítulo pressupõe familiaridade com as ferramentas matemáti
 
 ---
 
-## 10.1 Produtividade Marginal
+## 10.1 O Trabalhador Extra: Herói ou Peso Morto?
 
 ### A função de produção
 
@@ -100,7 +100,7 @@ A relação entre produto marginal e produto médio revela um padrão importante
 
 ---
 
-## 10.2 Isoquantas e a Taxa Marginal de Substituição Técnica
+## 10.2 A Curva da Troca: Isoquantas e TMST
 
 Na Seção 10.1, mantivemos o capital preso no chão e só mexemos no trabalho — como um chef que só pode variar a quantidade de sal, sem tocar nos outros temperos. A vida real é mais generosa: firmas podem trocar máquinas por gente, robôs por operários, caixas de supermercado por totens de autoatendimento. Que instrumento analítico nos permite estudar essas possibilidades de troca entre insumos?
 
@@ -202,7 +202,7 @@ O que essa expressão nos diz economicamente? A TMST decrescente reflete a dific
 
 ---
 
-## 10.3 Rendimentos de Escala
+## 10.3 Clonar a Firma: Quando o Tamanho Compensa
 
 Até aqui, mexemos em um insumo de cada vez (Seção 10.1) e trocamos um pelo outro (Seção 10.2). Agora vem a pergunta que todo dono de franquia se faz: se eu clonar a operação inteira — dobrar fábricas, máquinas, funcionários, tudo —, o faturamento dobra junto? Quem dera fosse tão simples. A resposta, que define os rendimentos de escala, tem implicações profundas para a estrutura de mercado — pois determina se há vantagem em ser grande ou pequeno, e por que algumas indústrias são dominadas por gigantes enquanto outras florescem com milhares de pequenas firmas.
 
@@ -295,7 +295,7 @@ Note que, pela equação $\eqref{eq:10.7}$, uma função pode apresentar simulta
 
 ---
 
-## 10.4 Elasticidade de Substituição
+## 10.4 Braços ou Máquinas? A Elasticidade de Substituição
 
 Quando o salário mínimo sobe, o iFood substitui motoboys por drones? Quando o juro cai, a montadora troca robôs por operários? A TMST nos diz *que* a firma pode trocar um insumo por outro — mas não responde o quanto essa troca é fácil ou dolorosa. É aqui que entra a elasticidade de substituição: um único número que resume se a tecnologia da firma é flexível como um canivete suíço ou rígida como uma receita de bolo.
 
@@ -405,7 +405,7 @@ A elasticidade de substituição é um parâmetro central na análise da distrib
 
 ---
 
-## 10.5 Funções de Produção Clássicas
+## 10.5 O Cardápio Tecnológico: Quatro Receitas para uma Firma
 
 Temos os conceitos — produtividade marginal, isoquantas, TMST, rendimentos de escala, elasticidade de substituição. Falta o corpo: quais equações concretas damos a essas ideias quando sentamos para resolver um problema ou estimar um modelo? Esta seção apresenta o "cardápio" clássico — quatro funções de produção que cobrem todo o espectro de substituibilidade, da rigidez absoluta (Leontief, o brigadeiro que só funciona com a proporção exata) à flexibilidade total (linear, o suco que aceita qualquer fruta). Cada uma captura um padrão tecnológico distinto, e a escolha da forma funcional adequada depende do setor e do problema em análise. Dominar essas quatro formas é indispensável tanto para provas da ANPEC quanto para trabalhos empíricos.
 
@@ -538,7 +538,7 @@ As quatro funções acima descrevem a tecnologia em um instante do tempo. Mas a 
 
 ---
 
-## 10.6 Progresso Técnico
+## 10.6 A Mão Invisível do Tempo: Progresso Técnico e o Resíduo de Solow
 
 Até aqui, cada função de produção era uma fotografia — um instantâneo congelado no tempo. Mas o Cerrado conta outra história: a mesma terra e o mesmo número de braços que arrancavam 1.700 kg de soja por hectare nos anos 1970 hoje entregam mais de 3.300 kg. Ninguém dobrou o Cerrado nem clonou os agricultores. De onde vem esse ganho?
 
@@ -675,11 +675,15 @@ O termo \(\dot{A}/A\) é a **produtividade total dos fatores** (PTF), frequentem
 
     **Fonte:** Young, A. (1995). "The Tyranny of Numbers: Confronting the Statistical Realities of the East Asian Growth Experience." *Quarterly Journal of Economics*, 110(3), 641–680. Hsieh, C.-T. (2002). "What Explains the Industrial Revolution in East Asia?" *American Economic Review*, 92(3), 502–526. Solow, R. M. (1957). "Technical Change and the Aggregate Production Function." *Review of Economics and Statistics*, 39(3), 312–320.
 
-## 10.7 Funções de Produção Homotéticas
+## 10.7 A Receita que Não Muda: Funções Homotéticas e o Caminho de Expansão
 
-Ao longo deste capítulo, notamos que certas propriedades das funções de produção — como o fato de a TMST depender apenas da razão \(K/L\), e não dos níveis absolutos dos insumos — simplificam enormemente a análise. Essas propriedades não são acidentais: elas decorrem de uma estrutura matemática particular chamada **homoteticidade**. Compreender essa estrutura é importante porque ela determina se o caminho de expansão da firma é linear (o que simplifica a função custo) e se firmas de diferentes tamanhos utilizam a mesma "receita" de insumos.
+Imagine uma rede de cafeterias que usa exatamente 20 g de café para cada 200 ml de água em todo espresso — seja na loja do centro que serve 500 cafés por dia, seja na do aeroporto que serve 3.000. A receita não muda com a escala. Se os preços do café e da água se alterarem, a proporção pode mudar; mas se os preços permanecerem os mesmos, a loja grande é uma cópia ampliada da pequena. Essa é a essência da **homoteticidade**: a "receita" ótima de insumos depende dos preços relativos, não do tamanho da operação.[^receita-zoom]
 
-A relevância econômica da homoteticidade vai além da elegância matemática. Quando a função de produção é homotética, a separação entre as decisões de *quais insumos usar* (determinada pelos preços relativos) e *quanto produzir* (determinada pela demanda e pelos preços dos produtos) é total. Em outras palavras, uma firma homotética que decide dobrar sua produção simplesmente dobra todas as quantidades de insumos na mesma proporção — ela não altera sua "receita". Essa propriedade é a chave que conecta a teoria da produção (Capítulo 10) à teoria dos custos (Capítulo 11): funções de custo derivadas de tecnologias homotéticas têm a forma \(C(w, r, q) = c(w, r) \cdot g(q)\), onde os custos se separam em um componente de preços e um componente de quantidade. Sem homoteticidade, a análise de custos se torna muito mais complexa, pois a proporção ótima de insumos muda a cada nível de produção.
+[^receita-zoom]: Tecnicamente, "dar zoom" na combinação de insumos é exatamente o que o caminho de expansão linear faz: a firma segue um raio a partir da origem no espaço \((K, L)\), mantendo \(K/L\) constante. Se isso lembra uma homotetia da geometria euclidiana — transformação que preserva ângulos e multiplica distâncias por um fator constante — não é coincidência: é literalmente de onde vem o nome.
+
+Ao longo deste capítulo, notamos que certas propriedades das funções de produção — como o fato de a TMST depender apenas da razão \(K/L\), e não dos níveis absolutos dos insumos — simplificam enormemente a análise. Essas propriedades não são acidentais: elas decorrem de uma estrutura matemática particular chamada **homoteticidade**. Compreender essa estrutura é importante por uma razão muito prática: ela determina se a firma que cresce mantém a mesma combinação de insumos ou precisa redesenhar toda a sua operação.
+
+A relevância econômica da homoteticidade vai além da elegância matemática — ela é a ponte entre este capítulo e o próximo. Quando a função de produção é homotética, as decisões de *quais insumos usar* (determinada pelos preços relativos) e *quanto produzir* (determinada pela demanda) são completamente separáveis. Traduzindo: a firma que decide dobrar sua produção simplesmente dobra todas as quantidades de insumos na mesma proporção — ela não altera sua "receita". Essa propriedade é a chave que conecta a teoria da produção (Capítulo 10) à teoria dos custos (Capítulo 11): funções de custo derivadas de tecnologias homotéticas têm a forma \(C(w, r, q) = c(w, r) \cdot g(q)\), onde os custos se separam limpa e elegantemente em um componente de preços e um componente de quantidade. Sem homoteticidade, a análise de custos se torna consideravelmente mais complexa, pois a proporção ótima de insumos muda a cada nível de produção — e a função custo perde essa estrutura separável que tanto facilita a vida do economista.
 
 Uma função de produção \(f(K, L)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
 
@@ -806,6 +810,14 @@ A padaria com três fornos que não triplica a produção — lembra? Agora sabe
         - Conecte com Acemoglu e Restrepo (2019) e o debate sobre IA e futuro do trabalho.
 
     **Conexão com o conteúdo:** Seção 10.4 (elasticidade de substituição), Box Mundo 10.2 (labor share), Chirinko (2008).
+
+---
+
+<iframe src="../graficos/cap10/webr-cobb-douglas.html" title="WebR — Estimando Cobb-Douglas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 10.1 — Estimando uma Cobb-Douglas com dados estilizados da PIA/IBGE.** O código estima α, β e A por MQO, testa rendimentos constantes de escala (H₀: α + β = 1) e plota isoquantas estimadas. Altere os parâmetros verdadeiros e re-execute para ver como a estimação se comporta.
+</div>
 
 ---
 

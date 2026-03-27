@@ -25,7 +25,7 @@ Este capítulo desenvolve a teoria da escolha sob incerteza a partir do conceito
 
 ---
 
-## 7.1 Loterias e Valor Esperado
+## 7.1 Cara ou Coroa com Dinheiro Real: Loterias e Valor Esperado
 
 O primeiro passo é surpreendentemente simples: toda decisão sob incerteza é uma **loteria**. Comprar ações da Petrobras? Loteria (pode subir ou cair). Abrir uma padaria? Loteria (pode dar certo ou quebrar). Até atravessar a rua sem olhar é uma loteria — com probabilidades que você prefere não calcular. Essa metáfora não é apenas poética: é literal. O conceito matemático de loteria é geral o suficiente para representar qualquer situação cujo resultado depende do acaso.
 
@@ -77,7 +77,7 @@ O paradoxo de São Petersburgo continua relevante dois séculos e meio depois de
 
 ---
 
-## 7.2 Hipótese da Utilidade Esperada (Von Neumann–Morgenstern)
+## 7.2 O Axioma do Cassino: Utilidade Esperada de Von Neumann–Morgenstern
 
 O Paradoxo de São Petersburgo destruiu o valor esperado como critério de decisão. Precisamos de algo melhor — algo que capture não só "quanto, em média" mas "quanto *vale para mim*". A solução veio de um lugar inesperado: um livro de teoria dos jogos. Em 1944, o matemático John von Neumann e o economista Oskar Morgenstern mostraram que, se o agente obedece a quatro regras de coerência (axiomas), suas preferências sobre loterias podem ser representadas por uma função que pondera utilidades — não dinheiro — pelas probabilidades. A ideia é devastadoramente simples: em vez de calcular \(E[\text{dinheiro}]\), calcule \(E[\text{felicidade}]\). Essa mudança de uma letra — de \(x\) para \(u(x)\) — é toda a diferença.
 
@@ -135,7 +135,7 @@ Apesar dessas críticas comportamentais, a teoria VNM permanece o padrão normat
 
 ---
 
-## 7.3 Aversão ao Risco
+## 7.3 Por Que Você Recusa Apostas Justas: Aversão ao Risco
 
 Agora a pergunta que define a personalidade econômica de cada um: diante de uma aposta justa — cara ganha R$ 100, coroa perde R$ 100 —, você aceita ou recusa? A maioria das pessoas recusa. Prefere o certo ao duvidoso, mesmo quando a média é a mesma. Essa preferência pela estabilidade tem um nome (aversão ao risco) e uma causa geométrica (a curvatura da função de utilidade). A conexão entre um conceito abstrato (concavidade) e um comportamento observável (contratar seguro, diversificar investimentos, preferir salário fixo) é uma das pontes mais elegantes de toda a microeconomia.
 
@@ -204,7 +204,7 @@ Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou d
 
 ---
 
-## 7.4 Medidas de Aversão ao Risco (Arrow-Pratt)
+## 7.4 Quanto Medo Você Tem? As Medidas de Arrow-Pratt
 
 "Sou avesso ao risco" — OK, mas *quanto*? Mais que você? Mais agora (quando estou pobre) do que depois (quando ficar rico)? Dizer "sou avesso" é como dizer "faz calor" sem ter termômetro. As medidas de **Arrow-Pratt** são esse termômetro: convertem a curvatura da função de utilidade — um objeto geométrico — em um número que pode ser comparado entre pessoas, entre momentos e entre níveis de riqueza.
 
@@ -279,7 +279,7 @@ A [Tabela 7.1](#tabela-7-1) apresenta as classes mais utilizadas de funções de
 
 ---
 
-## 7.5 Prêmio de Risco e Equivalente de Certeza
+## 7.5 Quanto Você Pagaria para Dormir Tranquilo? Prêmio de Risco e EC
 
 As medidas de Arrow-Pratt descrevem a aversão ao risco em termos da curvatura da função de utilidade — uma grandeza matemática. Mas como traduzir essa curvatura em termos econômicos concretos? Quanto, em reais, um agente pagaria para se livrar de um risco? É exatamente isso que os conceitos de **equivalente de certeza** e **prêmio de risco** fazem: eles transformam a informação contida na função de utilidade em valores monetários que podem ser diretamente observados ou estimados no mercado.
 
@@ -443,7 +443,7 @@ A distinção entre prêmio de risco *exato* e *aproximado* merece atenção. A 
 
 ---
 
-## 7.6 Métodos para Reduzir o Risco
+## 7.6 Seguro, Diversificação e Informação: A Caixa de Ferramentas Contra o Risco
 
 Até aqui, tratamos o risco como algo dado — uma propriedade das loterias que o agente enfrenta. Mas, na prática, agentes e instituições desenvolvem mecanismos engenhosos para **reduzir**, **redistribuir** ou **gerenciar** os riscos a que estão expostos. Esses mecanismos não eliminam a incerteza do mundo; eles a realocam para quem pode suportá-la melhor ou a diluem entre muitos agentes. Nesta seção, examinamos quatro estratégias fundamentais: seguros, diversificação, flexibilidade e informação.
 
@@ -680,7 +680,7 @@ Uma distinção importante é que o valor da informação depende de *quão* boa
 
 ---
 
-## 7.7 Abordagem Estado-Preferência (*State-Preference*)
+## 7.7 Universos Paralelos no Mercado: A Abordagem Estado-Preferência
 
 *And now for something completely different — ou melhor, completely determinístico.*[^completely-different-state]
 
@@ -731,7 +731,7 @@ A abordagem estado-preferência tem implicações normativas importantes para a 
 
 ---
 
-## 7.8 Introdução à Informação Assimétrica
+## 7.8 Quando Um Sabe Mais Que o Outro: Informação Assimétrica
 
 Para fechar o capítulo, um aperitivo do que vem pela frente: e quando o problema não é *você* não saber o futuro, mas *a outra parte* saber mais que você?[^dead-parrot-info] O vendedor de carro usado sabe se o motor é bom; a seguradora não sabe se você dirige rápido; o empregador não sabe se o candidato é preguiçoso. Essa **assimetria de informação** gera problemas que a teoria da utilidade esperada, sozinha, não resolve — mas que serão o tema central dos capítulos posteriores. Aqui, plantamos as sementes.
 
@@ -858,6 +858,14 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 3. **Informação é poder (e assimetria é falha).** Quando uma parte sabe mais que a outra, mercados de risco podem colapsar. Seleção adversa e risco moral são as sementes que florescerão nos capítulos seguintes.
 
 *O consumidor aprendeu a lidar com o risco. Mas será que ele realmente faz isso de forma racional? O próximo capítulo diz que não — e tem provas.*
+
+---
+
+<iframe src="../graficos/cap07/webr-risco.html" title="WebR — Aversão ao Risco" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 7.1 — Prêmio de risco e aversão ao risco.** Visualize a função CRRA, o equivalente de certeza e o prêmio de risco. Altere γ para ver como a curvatura (concavidade) afeta a disposição a pagar por seguro.
+</div>
 
 ---
 
