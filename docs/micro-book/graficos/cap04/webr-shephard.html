@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Lema de Shephard e Função Dispêndio</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Lema de Shephard: dE/dp_i = h_i (demanda hicksiana)
+# Cap. 4 — A dualidade em ação
+
+# Cobb-Douglas: U = x^a * y^(1-a)
+a <- 0.4;  px <- 3;  py <- 2;  u_bar <- 10
+
+# Funcao Dispendio (analitica)
+E <- function(px, py, u) {
+  (px/a)^a * (py/(1-a))^(1-a) * u
+}
+
+# Demanda Hicksiana (analitica)
+hx <- function(px, py, u) {
+  u * (a * py / ((1-a) * px))^(1-a)
+}
+hy <- function(px, py, u) {
+  u * ((1-a) * px / (a * py))^a
+}
+
+# Lema de Shephard (numerico)
+dp <- 0.001
+dE_dpx <- (E(px+dp, py, u_bar) - E(px-dp, py, u_bar)) / (2*dp)
+dE_dpy <- (E(px, py+dp, u_bar) - E(px, py-dp, u_bar)) / (2*dp)
+
+cat("=== Lema de Shephard ===\n\n")
+cat(sprintf("Parametros: a=%.1f, px=%.0f, py=%.0f, u=%.0f\n\n", a, px, py, u_bar))
+cat(sprintf("E(p,u) = %.4f\n\n", E(px, py, u_bar)))
+cat("Bem x:\n")
+cat(sprintf("  h_x (analitico) = %.4f\n", hx(px, py, u_bar)))
+cat(sprintf("  dE/dpx (numerico) = %.4f\n\n", dE_dpx))
+cat("Bem y:\n")
+cat(sprintf("  h_y (analitico) = %.4f\n", hy(px, py, u_bar)))
+cat(sprintf("  dE/dpy (numerico) = %.4f\n\n", dE_dpy))
+cat("Shephard confirmado: dE/dp_i = h_i!\n\n")
+
+# Propriedade: E é côncava em preços
+cat("E e concava em precos (pela envoltoria):\n")
+d2E_dpx2 <- (E(px+dp,py,u_bar)-2*E(px,py,u_bar)+E(px-dp,py,u_bar))/dp^2
+cat(sprintf("  d2E/dpx2 = %.4f < 0\n", d2E_dpx2))
+
+# Gráfico
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+
+# E(px) — côncava
+px_vec <- seq(0.5, 8, length.out = 200)
+E_vec  <- sapply(px_vec, function(p) E(p, py, u_bar))
+plot(px_vec, E_vec, type = "l", col = "steelblue", lwd = 2,
+     xlab = "px", ylab = "E(px, py, u)",
+     main = "Funcao Dispendio (concava)")
+# Tangente (Shephard)
+tang <- E(px, py, u_bar) + dE_dpx * (px_vec - px)
+lines(px_vec, tang, col = "#C8102E", lwd = 1.5, lty = 2)
+points(px, E(px, py, u_bar), pch = 19, col = "#333", cex = 1.5)
+text(px + 1, E(px, py, u_bar) - 3,
+     sprintf("incl = h_x = %.1f", hx(px, py, u_bar)),
+     col = "#C8102E", font = 2, cex = 0.8)
+
+# h_x(px) — negativamente inclinada
+hx_vec <- sapply(px_vec, function(p) hx(p, py, u_bar))
+plot(hx_vec, px_vec, type = "l", col = "#C8102E", lwd = 2,
+     xlab = "h_x (demanda hicksiana)", ylab = "px",
+     main = "Demanda Hicksiana de x")
+points(hx(px, py, u_bar), px, pch = 19, col = "#333", cex = 1.5)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. O Lema de Shephard conecta a função dispêndio à demanda hicksiana: dE/dp_i = h_i. A concavidade de E em preços garante que h é negativamente inclinada.
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:340}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

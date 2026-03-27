@@ -380,6 +380,12 @@ Os três chegaram à mesma conclusão fundamental: o valor de um bem é determin
 **Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante.** A curva \(UMg(x)\) é decrescente: quanto mais abundante o bem, menor o valor da próxima unidade. Ajuste as quantidades de água e diamante para ver que a água tem maior utilidade *total* (área sob a curva), mas menor utilidade *marginal* (altura da curva) — resolvendo o paradoxo de Smith.
 </div>
 
+<iframe src="../graficos/cap01/webr-valor-marginal.html" title="WebR — Paradoxo do Valor" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 1.3 — O paradoxo de Smith em números.** Calcule utilidade total e marginal para água (abundante) e diamante (escasso). O código mostra que UMg(diamante) >> UMg(água), mesmo com U_total(água) >> U_total(diamante). Altere as quantidades e veja a UMg mudar.
+</div>
+
 !!! info "Prêmio Nobel — Paul Samuelson (1970)"
 
     **Paul Anthony Samuelson** (1915–2009) foi um economista norte-americano, formado pela Universidade de Chicago e com doutorado em Harvard. Atuou por décadas no MIT, onde fundou uma das mais influentes escolas de economia do mundo.
@@ -525,6 +531,12 @@ Chega de filosofia — vamos ver um modelo em ação. A demonstração a seguir 
 **Figura 1.4 — Maximização de lucro da firma competitiva.** Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
 </div>
 
+<iframe src="../graficos/cap01/webr-maximizacao-lucro.html" title="WebR — Maximização de Lucro" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 1.2 — Maximização de lucro: CPO e CSO ao vivo.** Altere o preço P e veja q* mudar. O código verifica a CPO (P = CMg) e a CSO (d²π/dq² < 0). Se P cair abaixo de quanto, a firma tem prejuízo?
+</div>
+
 O que essa demonstração nos revela? Uma lógica de uma beleza quase desarmante: a firma continua produzindo enquanto "vale a pena" — isto é, enquanto vender mais uma unidade rende (\(P\)) mais do que custa (\(CMg\)). Ela para exatamente quando a última unidade "empata". A partir daí, produzir mais seria jogar dinheiro fora. É como comer em rodízio: você repete enquanto o prazer supera o desconforto. Na fatia de pizza em que os dois se igualam, você para. (Se for racional. Se não for, vem a Seção 8.1 para explicar por quê.)
 
 Note um detalhe crucial: o custo fixo (\(50\), no Exercício Resolvido 1.3) *não aparece* na condição de ótimo. A firma decide quanto produzir olhando apenas para o custo *marginal* — os \(50\) já foram gastos e são irrecuperáveis. É a lógica dos *sunk costs*: custos passados não devem influenciar decisões futuras. O Black Knight do Monty Python, que continua lutando após perder os dois braços ("'Tis but a scratch!"), é o exemplo perfeito do agente que ignora essa regra — ele já investiu demais na luta para desistir, mesmo quando a decisão racional é parar.[^sunk-cost-knight]
@@ -639,6 +651,18 @@ Nos próximos capítulos, vamos formalizar essa intuição — começando pelas 
 
 <div class="caption-obj" markdown>
 **WebR 1.1 — Oferta e Demanda: estática comparativa.** Altere os parâmetros de oferta, demanda e o choque de renda para ver como o equilíbrio se desloca. O código R executa diretamente no navegador via WebAssembly.
+</div>
+
+<iframe src="../graficos/cap01/webr-equilibrio-imposto.html" title="WebR — Incidência Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 1.4 — Quem paga o imposto?** Simule um imposto por unidade e veja como ele se divide entre consumidor e produtor. O peso morto (DWL) aparece como triângulo vermelho. Altere as inclinações: quem paga mais, o lado mais elástico ou o mais inelástico?
+</div>
+
+<iframe src="../graficos/cap01/webr-elasticidade.html" title="WebR — Elasticidade ao Longo da Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 1.5 — Elasticidade ao longo de uma curva de demanda.** A mesma curva linear tem trechos elásticos e inelásticos. O código calcula |E| em vários pontos e mostra onde a receita total é máxima (|E|=1). Altere os parâmetros e descubra: onde a firma quer operar?
 </div>
 
 ---

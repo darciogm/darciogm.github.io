@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Paradoxo de Allais</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Paradoxo de Allais: violando o axioma de independência
+# Cap. 8 — Por que 100% seguro "pesa" mais que a teoria prevê?
+
+# Loterias de Allais (versão clássica, em milhões)
+# Escolha 1: A = 1M com certeza   vs  B = (0.89, 1M; 0.10, 5M; 0.01, 0)
+# Escolha 2: C = (0.11, 1M; 0.89, 0) vs D = (0.10, 5M; 0.90, 0)
+
+gamma <- 0.5  # CRRA gamma (altere: 0.5, 1, 2, 5)
+
+u <- function(x) ifelse(gamma == 1, log(x + 1), (x+1)^(1-gamma)/(1-gamma))
+
+# EU sob vNM
+EU_A <- u(1)
+EU_B <- 0.89*u(1) + 0.10*u(5) + 0.01*u(0)
+EU_C <- 0.11*u(1) + 0.89*u(0)
+EU_D <- 0.10*u(5) + 0.90*u(0)
+
+cat("=== Paradoxo de Allais (gamma =", gamma, ") ===\n\n")
+cat("Escolha 1: A = 1M certeza vs B = (89% 1M, 10% 5M, 1% 0)\n")
+cat(sprintf("  EU(A) = %.4f\n  EU(B) = %.4f\n", EU_A, EU_B))
+cat(sprintf("  vNM prefere: %s\n\n", ifelse(EU_A > EU_B, "A (seguro)", "B (arriscado)")))
+
+cat("Escolha 2: C = (11% 1M, 89% 0) vs D = (10% 5M, 90% 0)\n")
+cat(sprintf("  EU(C) = %.4f\n  EU(D) = %.4f\n", EU_C, EU_D))
+cat(sprintf("  vNM prefere: %s\n\n", ifelse(EU_C > EU_D, "C", "D")))
+
+# Checar consistência
+pref1 <- ifelse(EU_A > EU_B, "A", "B")
+pref2 <- ifelse(EU_C > EU_D, "C", "D")
+consistent <- (pref1 == "A" & pref2 == "C") | (pref1 == "B" & pref2 == "D")
+
+cat("Consistencia vNM:\n")
+cat(sprintf("  A>B => deve C>D; B>A => deve D>C\n"))
+cat(sprintf("  Escolhas: %s e %s -> %s\n\n",
+    pref1, pref2, ifelse(consistent, "CONSISTENTE", "VIOLACAO!")))
+
+cat("Padrao tipico (A e D) viola independencia!\n")
+cat("A certeza tem um 'peso extra' psicologico.\n")
+cat("=> Efeito Certeza (Kahneman & Tversky, 1979)\n")
+
+# Gráfico: triângulo de Marschak-Machina
+par(mar = c(4, 4, 3, 1))
+
+# No espaço (p1, p3) com p2 = 1 - p1 - p3
+# p1 = prob(0), p2 = prob(1M), p3 = prob(5M)
+# A: (0, 1, 0)  B: (0.01, 0.89, 0.10)
+# C: (0.89, 0.11, 0)  D: (0.90, 0, 0.10)
+
+plot(NA, xlim = c(0, 1), ylim = c(0, 0.15),
+     xlab = "p1 = Prob(0)", ylab = "p3 = Prob(5M)",
+     main = "Triangulo de Marschak-Machina")
+
+# Curvas de indiferença EU (retas paralelas)
+# EU = p1*u(0) + (1-p1-p3)*u(1) + p3*u(5) = const
+# p3 = (const - u(1) + p1*(u(1)-u(0))) / (u(5)-u(1))
+slope_EU <- (u(1) - u(0)) / (u(5) - u(1))
+for (k in seq(EU_A * 0.8, EU_A * 1.2, length.out = 5)) {
+  p1_line <- seq(0, 1, length.out = 100)
+  p3_line <- (k - u(1) + p1_line*(u(1)-u(0))) / (u(5)-u(1))
+  keep <- p3_line >= 0 & p3_line <= 0.15 & p1_line + p3_line <= 1
+  lines(p1_line[keep], p3_line[keep], col = "lightblue", lwd = 1)
+}
+
+# Pontos
+points(0, 0, pch = 19, col = "#2a7f2a", cex = 1.5)  # A
+points(0.01, 0.10, pch = 19, col = "#C8102E", cex = 1.5)  # B
+points(0.89, 0, pch = 17, col = "#2a7f2a", cex = 1.5)  # C
+points(0.90, 0.10, pch = 17, col = "#C8102E", cex = 1.5)  # D
+text(0.02, -0.005, "A", font = 2, col = "#2a7f2a")
+text(0.03, 0.105, "B", font = 2, col = "#C8102E")
+text(0.89, -0.005, "C", font = 2, col = "#2a7f2a")
+text(0.92, 0.105, "D", font = 2, col = "#C8102E")
+
+# Setas das escolhas típicas (Allais)
+arrows(0.01, 0.10, 0, 0, length = 0.08, col = "#ff9800", lwd = 2)
+arrows(0.89, 0, 0.90, 0.10, length = 0.08, col = "#ff9800", lwd = 2)
+text(0.45, 0.12, "Padrao Allais: A > B mas D > C\n(curvas de indiferenca NAO paralelas!)",
+     col = "#ff9800", font = 2, cex = 0.75)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. O paradoxo de Allais mostra que pessoas sobrepesam certeza vs probabilidade alta — violando o axioma de independência de vNM. Altere gamma para ver se algum nível de aversão "resolve" o paradoxo (spoiler: não resolve).
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

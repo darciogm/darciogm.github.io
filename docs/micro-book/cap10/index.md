@@ -819,6 +819,24 @@ A padaria com três fornos que não triplica a produção — lembra? Agora sabe
 **WebR 10.1 — Estimando uma Cobb-Douglas com dados estilizados da PIA/IBGE.** O código estima α, β e A por MQO, testa rendimentos constantes de escala (H₀: α + β = 1) e plota isoquantas estimadas. Altere os parâmetros verdadeiros e re-execute para ver como a estimação se comporta.
 </div>
 
+<iframe src="../graficos/cap10/webr-pmg-pme.html" title="WebR — Produto Marginal e Médio" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 10.2 — Produto total, marginal e médio.** A tangente à curva de PT dá o PMg; a secante dá o PMe. Com α < 1, rendimentos marginais decrescentes — o PMg puxa o PMe para baixo. Altere α para 1.2 e veja rendimentos crescentes!
+</div>
+
+<iframe src="../graficos/cap10/webr-rendimentos.html" title="WebR — Rendimentos de Escala" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 10.3 — CRS, IRS e DRS lado a lado.** Três painéis de isoquantas mostram como o espaçamento muda com α + β. Com CRS, espaçamento uniforme; com IRS, isoquantas se aproximam; com DRS, se afastam.
+</div>
+
+<iframe src="../graficos/cap10/webr-elasticidade-substituicao.html" title="WebR — Elasticidade de Substituição" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 10.4 — Elasticidade de substituição σ: de Leontief a substitutos perfeitos.** Quatro valores de σ geram isoquantas de formas radicalmente diferentes. Cobb-Douglas (σ=1) é um caso especial da família CES.
+</div>
+
 ---
 
 ## 🧠 Revisão Rápida

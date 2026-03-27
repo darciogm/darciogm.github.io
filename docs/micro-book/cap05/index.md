@@ -787,6 +787,24 @@ Se este capítulo funcionou, você sai dele com três convicções:
 **WebR 5.1 — Decomposição de Slutsky.** Visualize os pontos A (original), B (Slutsky-compensado) e C (final), e calcule os efeitos substituição e renda. Altere o choque de preço e o parâmetro α para ver quando o efeito renda domina.
 </div>
 
+<iframe src="../graficos/cap05/webr-engel.html" title="WebR — Curvas de Engel" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 5.2 — Curvas de Engel e Lei de Engel.** Compare bens de luxo (E>1), necessidade (0<E<1) e inferior (E<0). O segundo painel mostra a Lei de Engel: famílias pobres gastam maior parcela da renda com alimentação.
+</div>
+
+<iframe src="../graficos/cap05/webr-excedente.html" title="WebR — Excedente do Consumidor" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 5.3 — Três medidas de bem-estar: EC, VC e VE.** Com utilidade quase-linear, VC = VE = EC (sem efeito-renda). Com Cobb-Douglas, VE ≤ EC ≤ VC. Veja a comparação numérica e gráfica.
+</div>
+
+<iframe src="../graficos/cap05/webr-giffen.html" title="WebR — Simulação de Bem de Giffen" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 5.4 — Bem de Giffen: quando a demanda sobe com o preço.** Simule um bem de subsistência e veja a Slutsky em ação: o efeito-renda (positivo, pois o bem é inferior) domina o efeito-substituição. Altere b_pref para transitar entre normal e Giffen.
+</div>
+
 ---
 
 !!! classroom "Atividade 5.1 — Slutsky no bolso: decompondo o aumento da gasolina (20 min)"

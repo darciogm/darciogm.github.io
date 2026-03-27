@@ -867,6 +867,24 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 **WebR 7.1 — Prêmio de risco e aversão ao risco.** Visualize a função CRRA, o equivalente de certeza e o prêmio de risco. Altere γ para ver como a curvatura (concavidade) afeta a disposição a pagar por seguro.
 </div>
 
+<iframe src="../graficos/cap07/webr-portfolio.html" title="WebR — Diversificação de Portfólio" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 7.2 — Fronteira eficiente e diversificação.** Combine dois ativos e veja a fronteira risco-retorno. Altere a correlação ρ: com ρ negativa, a diversificação pode reduzir o risco abaixo do ativo menos arriscado!
+</div>
+
+<iframe src="../graficos/cap07/webr-seguro.html" title="WebR — Mercado de Seguros" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 7.3 — Mercado de seguros: cobertura ótima.** Com seguro atuarialmente justo, o avesso ao risco compra cobertura total. Aumente o loading (custo administrativo) e veja a cobertura ótima cair. Diagrama estado-contingente incluso.
+</div>
+
+<iframe src="../graficos/cap07/webr-cara-crra.html" title="WebR — CARA vs CRRA" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 7.4 — CARA vs. CRRA: absoluto vs. relativo.** CARA: aversão absoluta constante (bilionário teme a mesma perda absoluta que assalariado). CRRA: aversão relativa constante (mais realista). Compare Arrow-Pratt e prêmio de risco.
+</div>
+
 ---
 
 !!! classroom "Atividade 7.1 — A aposta do café: revelando aversão ao risco (15 min)"

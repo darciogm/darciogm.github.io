@@ -954,6 +954,24 @@ Se este capítulo fez seu trabalho, você sai com três convicções:
 **WebR 8.1 — Função valor e ponderação de probabilidades.** Visualize a assimetria ganhos/perdas (λ > 1) e o sobrepeso de eventos raros. Altere λ para "desligar" a aversão à perda e compare com a utilidade esperada clássica.
 </div>
 
+<iframe src="../graficos/cap08/webr-allais.html" title="WebR — Paradoxo de Allais" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 8.2 — Paradoxo de Allais: quebrando vNM.** O código compara EU(A) vs. EU(B) e EU(C) vs. EU(D). O padrão típico (A e D) viola a independência — nenhum nível de aversão ao risco γ resolve. O triângulo de Marschak-Machina visualiza o paradoxo.
+</div>
+
+<iframe src="../graficos/cap08/webr-desconto.html" title="WebR — Desconto Hiperbólico" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 8.3 — Desconto hiperbólico vs. exponencial.** Com β < 1 (viés do presente), o "eu do presente" é mais impaciente que o "eu do futuro" — gerando procrastinação e reversão de preferências. Compare as funções de desconto e descubra por que a academia perde clientes em março.
+</div>
+
+<iframe src="../graficos/cap08/webr-fehr-schmidt.html" title="WebR — Fehr-Schmidt" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 8.4 — Fehr-Schmidt: aversão à desigualdade no ultimato.** Com α = 0 (egoísta puro), o respondedor aceita qualquer oferta > 0. Com α alto, rejeita ofertas "injustas" — mesmo perdendo dinheiro. Simule o jogo do ultimato para diferentes perfis.
+</div>
+
 ---
 
 !!! classroom "Atividade 8.1 — O Paradoxo de Allais ao vivo: flagrando o axioma da independência (15 min)"

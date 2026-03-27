@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Simulação de Bem de Giffen</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Simulação: Bem de Giffen via Slutsky
+# Cap. 5 — Quando o efeito-renda domina o efeito-substituição
+
+# Preferências quasi-côncavas com possível Giffen:
+# U(x,y) = a*x + b*ln(y) — "quase-linear em y"
+# x = subsistência (arroz), y = luxo
+
+# Demanda: max a*x + b*ln(y) s.a. px*x + py*y = m
+# CPO: a/px = b/(py*y) => y = b*px/(a*py)
+# x = (m - py*y)/px = m/px - b/a
+
+a_pref <- 1    # peso de x (subsistência)
+b_pref <- 15   # peso de y (altere: 15 -> Giffen; 5 -> normal)
+py <- 5;  m <- 50
+
+cat("=== Simulacao Giffen via Slutsky ===\n\n")
+
+# Demanda de x como funcao de px
+x_dem <- function(px) m/px - b_pref/a_pref
+y_dem <- function(px) b_pref * px / (a_pref * py)
+
+# Testar para vários px
+px_vec <- seq(1, 8, by = 0.5)
+cat(sprintf("%-6s %-8s %-8s %-10s\n", "px", "x*", "y*", "Giffen?"))
+cat(paste(rep("-", 35), collapse=""), "\n")
+for (p in px_vec) {
+  x <- x_dem(p); y <- y_dem(p)
+  if (x > 0 & y > 0) {
+    cat(sprintf("%-6.1f %-8.2f %-8.2f %-10s\n",
+        p, x, y, ifelse(x > x_dem(p-0.5) & p > 1.5, "SIM!", "")))
+  }
+}
+
+# Slutsky em px0
+px0 <- 3; px1 <- 4
+xA <- x_dem(px0); yA <- y_dem(px0)
+xC <- x_dem(px1); yC <- y_dem(px1)
+
+# Efeito substituicao (Slutsky): compensar renda
+m_comp <- px1 * xA + py * yA  # renda para comprar cesta A a novos precos
+xB <- m_comp/px1 - b_pref/a_pref
+ES <- xB - xA  # efeito substituição
+ER <- xC - xB  # efeito renda
+ET <- xC - xA  # efeito total
+
+cat(sprintf("\nSlutsky: px %.0f -> %.0f\n", px0, px1))
+cat(sprintf("  A(%.1f, %.1f) -> C(%.1f, %.1f)\n", xA, yA, xC, yC))
+cat(sprintf("  Ef. Substituicao = %.2f (sempre <= 0)\n", ES))
+cat(sprintf("  Ef. Renda        = %.2f %s\n", ER,
+    ifelse(ER > 0, "(positivo -> inferior!)", "")))
+cat(sprintf("  Ef. Total        = %.2f %s\n", ET,
+    ifelse(ET > 0, "-> GIFFEN!", "(normal)")))
+
+# Gráfico: demanda "anômala"
+par(mar = c(4, 4, 3, 1))
+px_plot <- seq(1, 8, length.out = 200)
+x_plot <- sapply(px_plot, x_dem)
+valid <- x_plot > 0
+
+plot(x_plot[valid], px_plot[valid], type = "l", col = "#C8102E", lwd = 2,
+     xlab = "x* (quantidade)", ylab = "px (preco)",
+     main = "Demanda de Giffen: dx/dp > 0!")
+# Marcar trecho Giffen (se existir)
+dx <- diff(x_plot[valid])
+dp <- diff(px_plot[valid])
+giffen_idx <- which(dx > 0 & dp > 0)
+if (length(giffen_idx) > 0) {
+  lines(x_plot[valid][giffen_idx], px_plot[valid][giffen_idx],
+        col = "#ff9800", lwd = 4)
+  text(mean(x_plot[valid][giffen_idx]), mean(px_plot[valid][giffen_idx]) + 0.5,
+       "Trecho Giffen!", col = "#ff9800", font = 2, cex = 0.9)
+}
+points(xA, px0, pch = 19, col = "#333", cex = 1.3)
+points(xC, px1, pch = 17, col = "#C8102E", cex = 1.3)
+text(xA + 1, px0, "A", font = 2); text(xC + 1, px1, "C", font = 2)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Um bem de Giffen exige: (1) bem inferior e (2) efeito-renda dominando o efeito-substituição. Altere b_pref: com b=5 é normal; com b=15, x vira Giffen!
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

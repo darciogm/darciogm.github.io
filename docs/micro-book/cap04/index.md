@@ -1056,6 +1056,24 @@ O consumidor encontrou sua cesta ótima. Mas o mundo não fica parado: preços m
 **WebR 4.1 — Marshalliana vs. Hicksiana.** Visualize como as duas curvas de demanda se cruzam no ponto base (a dualidade em ação). Altere α para ver como a fração de gastos muda e como as demandas respondem.
 </div>
 
+<iframe src="../graficos/cap04/webr-roy.html" title="WebR — Identidade de Roy" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 4.2 — Identidade de Roy: da V(p,m) à demanda.** Recupere a demanda marshalliana a partir da utilidade indireta, sem resolver o problema de otimização novamente. O código verifica numericamente que x* = −(∂V/∂pₓ)/(∂V/∂m).
+</div>
+
+<iframe src="../graficos/cap04/webr-lump-sum.html" title="WebR — Princípio Lump Sum" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 4.3 — Princípio Lump Sum.** Compare um imposto específico (que distorce preços relativos) com um lump sum de mesma receita. O consumidor sempre prefere o lump sum — veja a diferença em utilidade e no gráfico.
+</div>
+
+<iframe src="../graficos/cap04/webr-shephard.html" title="WebR — Lema de Shephard" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 4.4 — Lema de Shephard e função dispêndio.** Verifique que ∂E/∂pᵢ = hᵢ (demanda hicksiana). A concavidade de E em preços garante que a demanda compensada é negativamente inclinada — a lei da demanda sem exceções.
+</div>
+
 ---
 
 !!! classroom "Atividade 4.1 — Lump sum vs. imposto específico: o duelo tributário (20 min)"

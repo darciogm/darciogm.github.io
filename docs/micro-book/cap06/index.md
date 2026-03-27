@@ -688,6 +688,24 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 **WebR 6.1 — Elasticidades cruzadas com CES.** Altere ρ para ver bens se transformarem de substitutos (ρ positivo, elasticidade cruzada > 0) em complementos (ρ negativo). O painel direito mostra a elasticidade cruzada mudando de sinal.
 </div>
 
+<iframe src="../graficos/cap06/webr-receita-elasticidade.html" title="WebR — Elasticidade e Receita" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 6.2 — Elasticidade e receita total.** A regra de ouro: dRT/dP = Q(1 + 1/E). Com demanda elástica, subir preço reduz receita; com inelástica, aumenta. Altere E para ver o efeito na receita.
+</div>
+
+<iframe src="../graficos/cap06/webr-agregacao.html" title="WebR — Agregação de Demandas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 6.3 — Soma horizontal: da demanda individual à de mercado.** Três consumidores com demandas diferentes geram uma demanda de mercado com kinks nos preços de exclusão. Veja como consumidores "saem" do mercado em preços diferentes.
+</div>
+
+<iframe src="../graficos/cap06/webr-bem-composto.html" title="WebR — Teorema do Bem Composto" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 6.4 — Teorema do Bem Composto de Hicks.** Se os preços de um grupo de bens se movem proporcionalmente, o grupo inteiro pode ser tratado como um único bem. O código mostra que y/z permanece constante.
+</div>
+
 ---
 
 !!! classroom "Atividade 6.1 — Substitutos ou complementos? O jogo da classificação (15 min)"

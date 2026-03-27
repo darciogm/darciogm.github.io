@@ -1373,6 +1373,24 @@ A partir do próximo capítulo, essas ferramentas saem da caixa e vão para a ba
 **WebR 2.1 — Lagrangeano numérico.** Maximize uma Cobb-Douglas sujeita à restrição orçamentária. Altere expoentes, preços e renda para ver como a cesta ótima e o multiplicador λ mudam — e verifique o Teorema do Envelope em tempo real.
 </div>
 
+<iframe src="../graficos/cap02/webr-otimizacao-1var.html" title="WebR — Otimização em Uma Variável" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 2.2 — CPO e CSO em uma variável.** Maximize uma função cúbica e veja como f'(x)=0 encontra candidatos e f''(x) classifica máximos e mínimos. Altere os coeficientes — o que acontece se c=0 (parábola)?
+</div>
+
+<iframe src="../graficos/cap02/webr-envelope.html" title="WebR — Teorema do Envelope" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 2.3 — Teorema do Envelope em ação.** Verifique numericamente que dV/dm = λ: a inclinação da utilidade indireta é exatamente o multiplicador de Lagrange. Altere preços e renda para ver λ mudar.
+</div>
+
+<iframe src="../graficos/cap02/webr-kuhn-tucker.html" title="WebR — Kuhn-Tucker" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 2.4 — Kuhn-Tucker: soluções de canto vs. interior.** Com Cobb-Douglas (condição de Inada), a solução é sempre interior. Mas com substitutos perfeitos? O código compara os dois casos. Teste alpha = 0.5 vs. 0.08.
+</div>
+
 ---
 
 !!! classroom "Atividade 2.1 — O Lagrangeano no supermercado: otimização com restrição ao vivo (20 min)"

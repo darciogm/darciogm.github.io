@@ -737,6 +737,24 @@ Três convicções para levar deste capítulo:
 **WebR 3.1 — Curvas de indiferença comparadas.** Troque entre Cobb-Douglas, CES, quaselinear e substitutos perfeitos. Altere o parâmetro ρ na CES para ver a transição de substitutos (isoquantas retas) a complementos (formato de L).
 </div>
 
+<iframe src="../graficos/cap03/webr-tms.html" title="WebR — Taxa Marginal de Substituição" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 3.2 — TMS ao longo da curva de indiferença.** Calcule a TMS em vários pontos de uma Cobb-Douglas e veja a tangente mudar. Observe: quanto mais x você tem, menos y está disposto a trocar — convexidade em ação.
+</div>
+
+<iframe src="../graficos/cap03/webr-preferencias.html" title="WebR — Zoológico de Preferências" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 3.3 — Zoológico de preferências.** Quatro famílias em 4 painéis: Cobb-Douglas (suave), substitutos perfeitos (retas), Leontief (L) e quase-linear (paralelas). Cada forma de CI conta uma história diferente sobre como o consumidor troca bens.
+</div>
+
+<iframe src="../graficos/cap03/webr-transf-monotonica.html" title="WebR — Transformação Monotônica" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 3.4 — Transformação monotônica preserva tudo.** Três funções utilidade (U, ln U, U²) geram a *mesma* curva de indiferença e a *mesma* TMS. A utilidade é ordinal: só o ranking importa, não o número.
+</div>
+
 ---
 
 !!! classroom "Atividade 3.1 — Desenhando suas próprias curvas de indiferença (20 min)"

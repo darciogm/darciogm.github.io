@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Taxa Marginal de Substituição</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# TMS — Taxa Marginal de Substituição
+# Cap. 3: Quanto café vale uma cerveja?
+
+# Cobb-Douglas: U = x^a * y^(1-a)
+# TMS = (a/(1-a)) * (y/x) — depende do ponto!
+
+a <- 0.4   # altere!
+
+# Pontos para calcular TMS
+pontos <- data.frame(
+  x = c(2, 5, 10, 20),
+  y = c(20, 10, 5, 2)
+)
+
+cat("=== TMS para U = x^a * y^(1-a),  a =", a, "===\n\n")
+cat(sprintf("%-6s %-6s %-10s %-8s\n", "x", "y", "TMS", "|TMS|"))
+cat(paste(rep("-", 35), collapse=""), "\n")
+for (i in 1:nrow(pontos)) {
+  x <- pontos$x[i]; y <- pontos$y[i]
+  tms <- -(a / (1-a)) * (y / x)
+  cat(sprintf("%-6.0f %-6.0f %-10.3f %-8.3f\n", x, y, tms, abs(tms)))
+}
+cat("\nObserve: TMS decrescente em valor absoluto\n")
+cat("ao longo da CI (convexidade estrita).\n")
+cat("Quanto mais x voce tem, menos y esta\n")
+cat("disposto a trocar por mais x.\n")
+
+# Gráfico
+par(mar = c(4, 4, 3, 1))
+x_grid <- seq(0.3, 25, length.out = 300)
+
+# Curva de indiferença passando por (5, 10)
+U_bar <- 5^a * 10^(1-a)
+y_ci <- (U_bar / x_grid^a)^(1/(1-a))
+
+plot(x_grid, y_ci, type = "l", col = "steelblue", lwd = 2,
+     xlim = c(0, 25), ylim = c(0, 30),
+     xlab = "Bem x (café)", ylab = "Bem y (cerveja)",
+     main = sprintf("TMS ao longo da CI (a = %.1f)", a))
+
+# Tangentes nos pontos
+for (i in 1:nrow(pontos)) {
+  xi <- pontos$x[i]; yi <- pontos$y[i]
+  # Projetar na CI real
+  yi_ci <- (U_bar / xi^a)^(1/(1-a))
+  tms <- -(a/(1-a)) * (yi_ci / xi)
+
+  # Linha tangente curta
+  dx <- 3
+  segments(xi - dx, yi_ci - tms*(-dx),
+           xi + dx, yi_ci - tms*(dx),
+           col = "#C8102E", lwd = 1.5, lty = 2)
+  points(xi, yi_ci, pch = 19, col = "#C8102E", cex = 1.3)
+  text(xi + 1.5, yi_ci + 1.5,
+       sprintf("|TMS|=%.1f", abs(tms)),
+       col = "#C8102E", cex = 0.75, font = 2)
+}
+
+legend("topright",
+       legend = c("Curva de indiferença", "Tangente (TMS)"),
+       col = c("steelblue", "#C8102E"), lwd = c(2, 1.5),
+       lty = c(1, 2), cex = 0.85)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. A TMS mede "quanto y estou disposto a dar por mais uma unidade de x". Ela cai ao longo da curva de indiferença (convexidade). Altere <code>a</code> para ver como as preferências mudam!
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>
