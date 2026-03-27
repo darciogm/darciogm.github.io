@@ -10,7 +10,7 @@ Ao longo do capítulo, analisaremos: a agregação de demandas individuais em de
 
 ---
 
-## 13.1 Demanda de Mercado
+## 13.1 A Multidão Tem Razão? Demanda de Mercado
 
 Antes de analisar o equilíbrio de mercado, precisamos construir seus dois componentes: a demanda de mercado e a oferta de mercado. Começamos pelo lado da demanda. Nos capítulos sobre a teoria do consumidor (Capítulos 4–6), derivamos a demanda individual de cada agente a partir da maximização de utilidade sujeita à restrição orçamentária. Mas como passar da decisão de um consumidor isolado para o comportamento agregado de milhões de compradores? A operação é surpreendentemente simples, mas suas implicações são ricas — e a possibilidade de realizá-la depende de pressupostos que merecem atenção.
 
@@ -47,9 +47,15 @@ Essa fórmula revela um ponto sutil: a elasticidade de mercado depende não apen
 
 Com a demanda de mercado construída, precisamos agora do segundo ingrediente: a oferta. Recordemos que, no Capítulo 12, derivamos a curva de oferta da firma individual a partir da condição de maximização de lucro (\(p = CMg\)). A oferta de mercado é construída de forma análoga à demanda: somamos horizontalmente as ofertas individuais das firmas. Com ambos os componentes em mãos, podemos finalmente analisar a formação de preços — o que faremos distinguindo três horizontes temporais, cada um com graus de ajuste progressivamente maiores.
 
+<iframe src="../graficos/cap13/webr-agregacao-demanda.html" title="WebR — Agregação de Demandas Individuais" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 13.1 — Agregação de demandas individuais e equilíbrio de mercado.** O código soma horizontalmente as demandas de três tipos de consumidores (A, B, C) e calcula o equilíbrio. Altere o número de consumidores ou as funções de demanda para ver como a composição do mercado afeta a elasticidade agregada.
+</div>
+
 ---
 
-## 13.2 Determinação de Preço no Curtíssimo Prazo
+## 13.2 O Feirante e o Caminhão de Tomates: Curtíssimo Prazo
 
 O primeiro horizonte temporal que consideramos é o mais restritivo — e o mais dramático: o **curtíssimo prazo**, também chamado de período de mercado. Imagine o feirante que chegou de madrugada com seu caminhão de tomates. O que está no caminhão é o que ele tem para vender; não há como plantar mais tomates até o fim da tarde. A quantidade ofertada é fixa, ponto final. A curva de oferta é perfeitamente inelástica (vertical):
 
@@ -77,7 +83,7 @@ Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio 
 
 ---
 
-## 13.3 Determinação de Preço no Curto Prazo
+## 13.3 Quando a Fábrica Liga o Segundo Turno: Curto Prazo
 
 Passamos agora ao horizonte de **curto prazo**, em que as firmas finalmente ganham algum espaço para respirar: podem variar a quantidade produzida contratando mais trabalhadores ou comprando mais matéria-prima, embora o capital continue fixo e o número de firmas no mercado seja dado. Se o curtíssimo prazo era um feirante preso ao seu caminhão, o curto prazo é uma fábrica que pode ligar mais turnos — mas não pode construir um galpão novo da noite para o dia. É nesse horizonte que a análise de equilíbrio parcial marshalliano se manifesta em sua forma mais característica.
 
@@ -131,7 +137,7 @@ O equilíbrio de curto prazo, contudo, não é a palavra final: ele nos diz o qu
 
 ---
 
-## 13.4 Estática Comparativa
+## 13.4 E Se o Mundo Mudar? Estática Comparativa
 
 Determinado o equilíbrio, a pergunta natural — e a que todo economista vive respondendo em entrevistas, relatórios e reuniões de diretoria — é: *e se as condições mudarem?* Se a renda dos consumidores cresce, se o preço de um insumo se eleva, se uma nova tecnologia reduz os custos de produção — como o preço e a quantidade de equilíbrio se ajustam? A **estática comparativa** é a ferramenta que nos permite responder a essas perguntas de forma rigorosa, comparando dois equilíbrios: o "antes" e o "depois". O termo "estática" indica que não analisamos a viagem entre os dois estados, apenas tiramos uma foto de cada posição de repouso — uma abordagem que, apesar de suas limitações, é o canivete suíço do microeconomista aplicado.
 
@@ -186,9 +192,15 @@ A estática comparativa do curto prazo toma o número de firmas como dado. No lo
 
     **Fonte:** Ezekiel, M. (1938). "The Cobweb Theorem". *Quarterly Journal of Economics*, 52(2), 255–280; USDA-ERS, Feed Grains Database; Eurostat, Agricultural Price Statistics; Roberts & Schlenker (2013), *AER*.
 
+<iframe src="../graficos/cap13/webr-estatica-comparativa.html" title="WebR — Estática Comparativa" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 13.2 — Estática comparativa: choques de oferta e demanda.** Simulação baseada na questão ANPEC 2023 (mercado de petróleo). O código calcula os efeitos de um embargo (choque de oferta) e de novas tecnologias (choque de demanda) sobre preço e quantidade. Altere os parâmetros para explorar cenários diferentes.
+</div>
+
 ---
 
-## 13.5 Análise de Longo Prazo
+## 13.5 Quem Cheira o Dinheiro Entra: Longo Prazo
 
 A análise de curto prazo toma como dado o número de firmas no mercado — como se as portas da indústria estivessem trancadas. Mas no longo prazo, alguém encontra a chave: se as firmas existentes obtêm lucro econômico positivo, novas empresas cheiram o dinheiro e entram; se há prejuízo persistente, firmas empacotam suas coisas e saem. Esse mecanismo de **entrada e saída livre** é a força gravitacional que puxa o mercado para o equilíbrio de longo prazo — e compreendê-lo é essencial para entender por que, em concorrência perfeita, o lucro econômico tende a zero, como se uma mão invisível redistribuísse as cartas até que ninguém tivesse vantagem sobre os demais.
 
@@ -227,7 +239,7 @@ A condição de lucro zero no longo prazo é poderosa, mas levanta uma questão 
 
 ---
 
-## 13.6 Equilíbrio de Longo Prazo: Custos Constantes, Crescentes e Decrescentes
+## 13.6 Três Destinos para uma Indústria: Custos Constantes, Crescentes e Decrescentes
 
 Lucro zero — e daí? O preço volta ao patamar original ou se estabelece em um novo nível? A condição de lucro zero no longo prazo nos diz que \(p = CMe_{\min}\), mas qual será o nível desse preço após um aumento na demanda? A resposta depende de como a entrada de novas firmas afeta os preços dos insumos. Se os preços dos insumos permanecem inalterados, o \(CMe_{\min}\) não muda e o preço retorna ao nível original. Mas se a expansão da indústria pressiona os preços dos insumos para cima, o equilíbrio de longo prazo se estabelece a um preço mais elevado. Essa distinção dá origem a três tipos de indústria, cada um com uma forma diferente de curva de oferta de longo prazo.
 
@@ -272,9 +284,15 @@ A [Tabela 13.1](#tabela-13-1) resume os três tipos de indústria.
 **Tabela 13.1 — Tipos de indústria e oferta de longo prazo.**
 </div>
 
+<iframe src="../graficos/cap13/webr-longo-prazo.html" title="WebR — Equilíbrio de Longo Prazo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 13.3 — Equilíbrio de longo prazo: custos constantes, crescentes e decrescentes.** O código compara os três tipos de indústria, mostrando como um choque de demanda afeta o preço de longo prazo em cada caso. Altere os parâmetros da firma individual para explorar como a estrutura de custos determina o formato da oferta de longo prazo.
+</div>
+
 ---
 
-## 13.7 Elasticidade de Oferta de Longo Prazo
+## 13.7 O Elástico que Estica no Longo Prazo: Elasticidade de Oferta
 
 Sabemos que a curva de oferta de longo prazo pode ser horizontal, ascendente ou até descendente. Mas quão íngreme é essa inclinação? Para quantificar essa responsividade da oferta ao preço, recorremos à **elasticidade de oferta de longo prazo** — uma medida que incorpora não apenas o ajuste de produção das firmas existentes, mas também a dinâmica de entrada e saída e o efeito sobre os preços dos insumos. Enquanto a elasticidade de oferta de curto prazo reflete apenas o movimento ao longo da curva de CMg com planta fixa (Capítulo 12), a elasticidade de longo prazo captura também a resposta extensiva: novas firmas que entram no mercado.
 
@@ -295,7 +313,7 @@ Com as ferramentas de equilíbrio de longo prazo em mãos, podemos agora abordar
 
 ---
 
-## 13.8 Excedente do Produtor no Longo Prazo
+## 13.8 O Fantasma do Lucro Zero: Excedente do Produtor no Longo Prazo
 
 ### Renda ricardiana
 
@@ -364,11 +382,17 @@ onde \(p_S(Q)\) é a curva de oferta inversa de longo prazo. Geometricamente, tr
 
     A renda ricardiana aumentou de 4.000 para 7.111 — um acréscimo de **3.111**, refletindo a valorização dos fatores inframarginais (como terras mais produtivas) em resposta à expansão da demanda. Note que o preço de equilíbrio subiu (de 40 para 46,67) porque se trata de uma indústria de custos crescentes.
 
+<iframe src="../graficos/cap13/webr-renda-ricardiana.html" title="WebR — Renda Ricardiana" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 13.4 — Renda ricardiana em indústria de custos crescentes.** O código reproduz o Exercício Resolvido 13.1, calculando a renda ricardiana antes e depois de um choque de demanda. Altere a inclinação da oferta de longo prazo para ver como a heterogeneidade dos fatores afeta a magnitude das rendas.
+</div>
+
 A análise de excedentes e renda ricardiana nos fornece as ferramentas para avaliar se o equilíbrio de mercado é, em algum sentido, *bom*. Passamos agora à análise normativa: o equilíbrio competitivo é eficiente?
 
 ---
 
-## 13.9 Eficiência Econômica e Análise de Bem-Estar Aplicada
+## 13.9 O Juiz Veste Toga: Eficiência e Bem-Estar
 
 Até aqui, a análise de equilíbrio parcial se comportou como um repórter descrevendo os fatos: *como* os preços e quantidades são determinados. Agora, vestimos a toga de juiz e fazemos a pergunta que realmente incomoda: o resultado de mercado é *bom*? O equilíbrio competitivo gera o melhor resultado possível para a sociedade, ou estamos apenas celebrando o caos organizado? Para responder, precisamos de critérios de avaliação — e os conceitos de excedente do consumidor e excedente do produtor fornecem as ferramentas para medir o bem-estar gerado pelas trocas de mercado.
 
@@ -438,11 +462,17 @@ Note que essa medida de bem-estar social atribui pesos iguais a consumidores e p
 
     **Por que isso importa:** Qualquer política que distorce preços — tabelamento, imposto, subsídio — redistribui ou destrói esses excedentes, e a perda de peso morto é justamente a parte que ninguém aproveita.
 
+<iframe src="../graficos/cap13/webr-bem-estar.html" title="WebR — Análise de Bem-Estar" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 13.5 — Análise de bem-estar: preço máximo vs. imposto.** O código compara os efeitos sobre EC, EP e PPM de duas intervenções — um teto de preço e um imposto por unidade — no mesmo mercado. Altere o valor do teto ou do imposto para ver como a PPM varia em cada caso.
+</div>
+
 A eficiência do equilíbrio competitivo é um resultado poderoso, mas depende de pressupostos que convém explicitar: ausência de externalidades, ausência de poder de mercado, informação simétrica e mercados completos. Quando qualquer dessas condições é violada, o equilíbrio de mercado pode ser ineficiente, abrindo espaço para intervenção governamental potencialmente benéfica. Os Capítulos 19–20 tratarão dessas "falhas de mercado". Por ora, analisemos duas formas específicas de intervenção: controles de preços e tributação.
 
 ---
 
-## 13.10 Controles de Preços e Escassez
+## 13.10 Quando o Governo Puxa o Freio: Controles de Preços
 
 A demonstração de que o equilíbrio competitivo maximiza o bem-estar social tem um corolário imediato e poderoso: qualquer intervenção que force o preço para fora do equilíbrio gera perda de peso morto. Governos, no entanto, frequentemente impõem controles de preços — por razões distributivas, políticas ou sociais. Quais são as consequências econômicas dessas intervenções? A experiência brasileira oferece exemplos particularmente vívidos, e a análise teórica nos ajuda a compreender por que tais políticas frequentemente produzem resultados opostos aos pretendidos.
 
@@ -559,7 +589,7 @@ Os controles de preços representam uma intervenção direta e explícita no mec
 
 ---
 
-## 13.11 Incidência Tributária: Quem Realmente Paga o Imposto?
+## 13.11 O Imposto Não Cai Onde Você Pensa: Incidência Tributária
 
 Outra forma de intervenção, onipresente em qualquer economia moderna, é a **tributação** — e aqui a microeconomia guarda uma de suas maiores surpresas. Quando o governo institui um imposto sobre um bem, quem de fato arca com o ônus? O senso comum responde com confiança: quem paga é quem assina o cheque — o vendedor ou o comprador, conforme a legislação. Pois bem: o senso comum está redondamente enganado. A análise econômica revela que a incidência efetiva do tributo independe completamente do lado legal: ela é determinada pelas elasticidades relativas de oferta e demanda. Esse resultado — um dos mais elegantes e contraintuitivos da microeconomia, capaz de desarmar argumentos em qualquer debate sobre reforma tributária — tem implicações profundas para a formulação de políticas.
 
@@ -728,9 +758,15 @@ Visualize como um imposto por unidade afeta o equilíbrio de mercado. Ajuste o v
 
     **Verificação:** \(\Delta EC = 900 - \frac{1}{2}(60-36)(48) = 900 - 576 = 324\). \(\Delta EP = 600 - \frac{1}{2}(26-10)(48) = 600 - 384 = 216\). Perda total = \(324 + 216 = 540 = R + PPM = 480 + 60\). ✓
 
+<iframe src="../graficos/cap13/webr-incidencia-tributaria.html" title="WebR — Incidência Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 13.6 — Incidência tributária e elasticidades.** O código reproduz o Exercício Resolvido 13.3, calculando a divisão do ônus tributário entre consumidor e produtor a partir das elasticidades. Altere `b_d`, `d_s` e `t` para verificar que o lado mais inelástico sempre arca com a maior parcela — e que a PPM cresce com o quadrado do imposto.
+</div>
+
 ---
 
-## 13.12 Efeitos de Políticas sobre EC, EP e PPM
+## 13.12 O Placar Final: Efeitos de Políticas sobre EC, EP e PPM
 
 Teto de preço, piso de preço, imposto, subsídio, tarifa — o governo tem um arsenal inteiro de intervenções. Mas qual custa mais para a sociedade? A análise de bem-estar desenvolvida nas seções anteriores pode ser sintetizada em um quadro comparativo que resume os efeitos das principais políticas de intervenção sobre os excedentes e o bem-estar total. A [Tabela 13.2](#tabela-13-2) apresenta essa síntese. Observe que todas as intervenções geram perda de peso morto positiva — um resultado que decorre diretamente do teorema de eficiência do equilíbrio competitivo. A diferença entre as políticas reside na forma como redistribuem os excedentes entre consumidores, produtores e governo.
 

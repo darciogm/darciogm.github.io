@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Bem-Estar: EC, EP e Perda de Peso Morto</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Analise de bem-estar: preco maximo vs. imposto
+# Exercicio Resolvido 13.2
+# ============================================
+
+# --- Mercado ---
+# Qd = 500 - 10p   => p_D = 50 - Q/10
+# Qs = 20p - 100    => p_S = 5 + Q/20
+
+a_d <- 500; b_d <- 10
+c_s <- -100; d_s <- 20
+
+p_D <- function(Q) (a_d - Q) / b_d
+p_S <- function(Q) (Q - c_s) / d_s
+
+# --- Equilibrio livre ---
+p0 <- (a_d - c_s) / (b_d + d_s)
+Q0 <- a_d - b_d * p0
+EC0 <- 0.5 * (p_D(0) - p0) * Q0
+EP0 <- 0.5 * (p0 - p_S(0)) * Q0
+W0 <- EC0 + EP0
+
+cat("====== ANALISE DE BEM-ESTAR ======\n")
+cat("Demanda: Qd = 500 - 10p | Oferta: Qs = 20p - 100\n")
+cat("Equilibrio livre: p* =", p0, " Q* =", Q0, "\n")
+cat("EC =", EC0, " EP =", EP0, " W =", W0, "\n\n")
+
+# --- Cenario 1: Preco maximo p_bar = 15 ---
+p_bar <- 15
+Qd_bar <- a_d - b_d * p_bar
+Qs_bar <- c_s + d_s * p_bar
+Qt1 <- min(Qd_bar, Qs_bar)
+escassez <- Qd_bar - Qs_bar
+
+# Com racionamento eficiente
+EC1 <- 0.5 * (p_D(0) - p_bar + p_D(Qt1) - p_bar) * Qt1
+EP1 <- 0.5 * (p_bar - p_S(0)) * Qt1
+PPM1 <- W0 - EC1 - EP1
+
+cat("--- CENARIO 1: Preco maximo p_bar =", p_bar, "---\n")
+cat("Qd =", Qd_bar, " Qs =", Qs_bar, " Escassez =", escassez, "\n")
+cat("Qt (transacionada) =", Qt1, "\n")
+cat("EC =", EC1, " EP =", EP1, "\n")
+cat("W =", EC1 + EP1, "\n")
+cat("PPM =", PPM1, "\n")
+cat("PPM (triangulo) = 0.5*(p_D(Qt) - p_S(Qt))*(Q0 - Qt) = ",
+    0.5 * (p_D(Qt1) - p_S(Qt1)) * (Q0 - Qt1), "\n\n")
+
+# --- Cenario 2: Imposto t = 5 ---
+t2 <- 5
+pc2 <- (a_d/b_d + c_s/d_s + t2) / (1/b_d + 1/d_s)
+# Mais diretamente:
+pc2 <- (a_d - c_s + d_s * t2) / (b_d + d_s)
+pp2 <- pc2 - t2
+Qt2 <- a_d - b_d * pc2
+
+EC2 <- 0.5 * (p_D(0) - pc2) * Qt2
+EP2 <- 0.5 * (pp2 - p_S(0)) * Qt2
+R2 <- t2 * Qt2
+PPM2 <- W0 - EC2 - EP2 - R2
+
+cat("--- CENARIO 2: Imposto t =", t2, "---\n")
+cat("pc =", round(pc2, 2), " pp =", round(pp2, 2), " Qt =", round(Qt2, 2), "\n")
+cat("EC =", round(EC2, 1), " EP =", round(EP2, 1), "\n")
+cat("Receita =", round(R2, 1), "\n")
+cat("PPM =", round(PPM2, 1), "\n\n")
+
+# --- Comparacao ---
+cat("====== COMPARACAO ======\n")
+cat("                  Livre   Teto    Imposto\n")
+cat(sprintf("EC             %7.0f %7.0f %7.0f\n", EC0, EC1, EC2))
+cat(sprintf("EP             %7.0f %7.0f %7.0f\n", EP0, EP1, EP2))
+cat(sprintf("Receita gov    %7.0f %7.0f %7.0f\n", 0, 0, R2))
+cat(sprintf("W total        %7.0f %7.0f %7.0f\n", W0, EC1+EP1, EC2+EP2+R2))
+cat(sprintf("PPM            %7.0f %7.0f %7.0f\n", 0, PPM1, PPM2))
+
+# --- Graficos ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+Q_seq <- seq(0, 500, length = 300)
+
+# Painel 1: Preco maximo
+plot(Q_seq, p_D(Q_seq), type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, 55), xlab = "Q", ylab = "p",
+     main = paste0("Preco maximo (p_bar = ", p_bar, ")"))
+lines(Q_seq, p_S(Q_seq), lwd = 3, col = "#dc3545")
+abline(h = p_bar, col = "#fd7e14", lwd = 2, lty = 2)
+
+# PPM
+polygon(c(Qt1, Q0, Qt1), c(p_D(Qt1), p0, p_S(Qt1)),
+        col = rgb(0.86, 0.21, 0.27, 0.25), border = "#dc3545")
+text((Qt1+Q0)/2, p0, paste0("PPM=", round(PPM1)), cex = 0.7, col = "#dc3545", font = 2)
+
+# Transferencia EP -> EC
+rect(0, p_bar, Qt1, p0, col = rgb(0.05, 0.43, 0.99, 0.08), border = NA)
+
+points(Q0, p0, pch = 19, col = "#198754", cex = 1.5)
+points(Qt1, p_bar, pch = 17, col = "#fd7e14", cex = 1.3)
+text(Qt1, p_bar, paste0("  Qt=", Qt1), pos = 4, cex = 0.7, col = "#fd7e14", font = 2)
+
+# Escassez
+arrows(Qs_bar, p_bar - 2, Qd_bar, p_bar - 2, code = 3,
+       col = "#6f42c1", lwd = 2, length = 0.06)
+text((Qs_bar+Qd_bar)/2, p_bar - 3.5, paste0("Escassez=", escassez),
+     col = "#6f42c1", cex = 0.7, font = 2)
+
+legend("topright", legend = c("D", "S", "Teto", "PPM"),
+       col = c("#0d6efd", "#dc3545", "#fd7e14", rgb(0.86,.21,.27,.5)),
+       lwd = c(3, 3, 2, NA), lty = c(1, 1, 2, NA), pch = c(NA,NA,NA,15),
+       cex = 0.65, bg = "white")
+
+# Painel 2: Imposto
+plot(Q_seq, p_D(Q_seq), type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, 55), xlab = "Q", ylab = "p",
+     main = paste0("Imposto (t = ", t2, ")"))
+lines(Q_seq, p_S(Q_seq), lwd = 3, col = "#dc3545")
+lines(Q_seq, p_S(Q_seq) + t2, lwd = 2, col = "#dc3545", lty = 2)
+
+# Receita
+rect(0, pp2, Qt2, pc2, col = rgb(0.43, 0.26, 0.76, 0.1), border = "#6f42c1", lty = 2)
+text(Qt2/2, (pc2+pp2)/2, paste0("R=", round(R2)), col = "#6f42c1", cex = 0.8, font = 2)
+
+# PPM
+polygon(c(Qt2, Q0, Qt2), c(pc2, p0, pp2),
+        col = rgb(0.86, 0.21, 0.27, 0.25), border = "#dc3545")
+text(Qt2 + (Q0-Qt2)*0.6, p0, paste0("PPM=", round(PPM2,1)),
+     col = "#dc3545", cex = 0.7, font = 2)
+
+points(Q0, p0, pch = 19, col = "#198754", cex = 1.5)
+
+legend("topright", legend = c("D", "S", "S+t", "Receita", "PPM"),
+       col = c("#0d6efd", "#dc3545", "#dc3545", "#6f42c1", rgb(0.86,.21,.27,.5)),
+       lwd = c(3, 3, 2, NA, NA), lty = c(1, 1, 2, NA, NA),
+       pch = c(NA,NA,NA,15,15), cex = 0.65, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>
