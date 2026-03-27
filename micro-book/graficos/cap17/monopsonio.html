@@ -117,7 +117,18 @@
     return v >= 0 ? v : NaN;
   }], { strokeColor: '#00897b', strokeWidth: 2.5 });
 
-  // --- Curve labels (positioned above each curve, near left side) ---
+  // --- Equilibrium functions (defined before labels that reference them) ---
+
+  // Monopsony: MCL = MRP
+  var monopH = function() { return Math.max(0, (mrp0 - a) / (2 * b + mrp1)); };
+  var monopW = function() { return a + b * monopH(); };
+  var monopMRP = function() { return mrp0 - mrp1 * monopH(); };
+
+  // Competitive: S = MRP
+  var compH = function() { return Math.max(0, (mrp0 - a) / (b + mrp1)); };
+  var compW = function() { return a + b * compH(); };
+
+  // --- Curve labels (positioned above each curve) ---
   board.create('text', [3, function(){ return mrp0 + 3; }, '<i>VPMgL</i>'], {
     fontSize: 12, color: '#00897b', fixed: true, highlight: false
   });
@@ -129,15 +140,6 @@
   });
 
   // --- Equilibrium points ---
-
-  // Monopsony: MCL = MRP
-  var monopH = function() { return Math.max(0, (mrp0 - a) / (2 * b + mrp1)); };
-  var monopW = function() { return a + b * monopH(); };
-  var monopMRP = function() { return mrp0 - mrp1 * monopH(); };
-
-  // Competitive: S = MRP
-  var compH = function() { return Math.max(0, (mrp0 - a) / (b + mrp1)); };
-  var compW = function() { return a + b * compH(); };
 
   // MCL = MRP intersection
   board.create('point', [monopH, monopMRP], {
