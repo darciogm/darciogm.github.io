@@ -239,15 +239,8 @@
           fontSize: 11, color: '#1565c0', fontWeight: 'bold', fixed: true, highlight: false
         });
       }
-      // T captured (darker, lower trapezoid between pT and c)
-      var ptsTrap = [[0, pT], [qT, pT]];
-      // follow demand curve from qT down to qOpt
-      for (var qq = qT; qq <= qOpt; qq += (qOpt - qT) / 30) {
-        ptsTrap.push([qq, a - b * qq]);
-      }
-      ptsTrap.push([qOpt, c]);
-      ptsTrap.push([0, c]);
-      board.create('polygon', ptsTrap, {
+      // T captured (darker, trapezoid: pT line → demand curve → CMg)
+      board.create('polygon', [[0, pT], [qT, pT], [qOpt, c], [0, c]], {
         fillColor: '#00897b', fillOpacity: 0.25,
         borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
       });
