@@ -143,9 +143,9 @@
         board.create('segment', [[0, rfIntercept], [rfQ1max, 0]], {
           strokeColor: '#C8102E', strokeWidth: 2.5
         });
-        board.create('text', [rfQ1max * 0.85, rfIntercept * 0.1,
+        board.create('text', [rfQ1max + 2, -3,
           '<i>R</i><sub>S</sub>(<i>q</i><sub>L</sub>)'], {
-          fontSize: 13, color: '#C8102E', highlight: false
+          fontSize: 13, color: '#C8102E', fixed: true, highlight: false
         });
       }
 
@@ -156,9 +156,9 @@
         board.create('segment', [[rfL_int, 0], [0, rfL_q2max]], {
           strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3
         });
-        board.create('text', [rfL_int * 0.9, BB[1] * 0.04,
+        board.create('text', [rfL_int + 2, -3,
           '<i>R</i><sub>L</sub>(<i>q</i><sub>S</sub>)'], {
-          fontSize: 12, color: '#1565c0', highlight: false
+          fontSize: 12, color: '#1565c0', fixed: true, highlight: false
         });
       }
 

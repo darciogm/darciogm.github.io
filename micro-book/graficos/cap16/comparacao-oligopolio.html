@@ -56,7 +56,7 @@
       </div>
       <div class="slider-group">
         <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
-        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+        <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
         <label>Custo marginal \(c\): <span class="val" id="val-c">20</span></label>
@@ -70,7 +70,7 @@
   <script>
     // Fixed bounding box: worst case a=200, b=0.2, c=0 → maxQ=(a-c)/b*1.15=1150, maxP=a*1.1=220.
     // Padding: x=-92 (maxQ*0.08), y=-18 (maxP*0.08).
-    var FIXED_BB = [-120, 224, 1120, -24];
+    var FIXED_BB = [-18, 140, 140, -18];
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
       boundingbox: FIXED_BB,
@@ -102,24 +102,24 @@
       rebuildBoard();
 
       board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0, label: { fontSize: 11 } }, name: '', withLabel: false });
-      board.create('text', [560.0, -15.600000000000001, '<b><i>Q</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
+      board.create('text', [70, -12, '<b><i>Q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+      });
       board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0], fontSize: 11 } }, name: '', withLabel: false });
-      board.create('text', [-66.0, 112.0, '<b><i>P</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
+      board.create('text', [-13, 70, '<b><i>P</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+      });
 
       // Demand
       board.create('functiongraph', [function(q){ return p.a - p.b*q; }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
-      board.create('text', [FIXED_BB[2] * 0.9, 4, '<i>D</i>'], { fontSize: 13, color: '#1565c0', highlight: false });
+      board.create('text', [p.a / p.b + 3, 3, '<i>D</i>'], { fontSize: 13, color: '#1565c0', fixed: true, highlight: false });
 
       // MR
       board.create('functiongraph', [function(q){ return p.a - 2*p.b*q; }], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
 
       // MC
       board.create('functiongraph', [function(q){ return p.c; }], { strokeColor: '#00897b', strokeWidth: 2 });
-      board.create('text', [FIXED_BB[2] * 0.9, p.c + 3, '<i>CMg</i>'], { fontSize: 12, color: '#00897b', highlight: false });
+      board.create('text', [p.a / p.b + 3, p.c + 5, '<i>CMg</i>'], { fontSize: 12, color: '#00897b', fixed: true, highlight: false });
 
       // Compute all outcomes (symmetric duopoly, costs c)
       var am = p.a - p.c; // a - c

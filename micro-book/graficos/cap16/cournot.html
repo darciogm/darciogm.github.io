@@ -142,7 +142,7 @@
         strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false,
         point1: { visible: false }, point2: { visible: false }
       });
-      board.create('text', [r1max * 0.9, 3, '<i>R</i><sub>1</sub>(<i>q</i><sub>2</sub>)'], {
+      board.create('text', [r1max + 2, -3, '<i>R</i><sub>1</sub>(<i>q</i><sub>2</sub>)'], {
         fontSize: 13, color: '#1565c0', fixed: true, highlight: false
       });
     }
@@ -154,8 +154,8 @@
         strokeColor: '#C8102E', strokeWidth: 2.5, straightFirst: false, straightLast: false,
         point1: { visible: false }, point2: { visible: false }
       });
-      board.create('text', [3, r2max * 0.95, '<i>R</i><sub>2</sub>(<i>q</i><sub>1</sub>)'], {
-        fontSize: 13, color: '#C8102E', fixed: true, highlight: false
+      board.create('text', [-3, r2max + 2, '<i>R</i><sub>2</sub>(<i>q</i><sub>1</sub>)'], {
+        fontSize: 13, color: '#C8102E', anchorX: 'right', fixed: true, highlight: false
       });
     }
 
