@@ -87,19 +87,25 @@
       var rounds = [];
       var noPunish = [];
       var withPunish = [];
+      var mpcr = s.alpha / s.N; // marginal per-capita return
+
+      // Higher MPCR (fewer players or higher alpha) sustains cooperation longer
+      // Decay is amplified when MPCR is low (more free-riding incentive)
+      var mpcrFactor = Math.min(mpcr, 1); // 0 to 1
+      var effectiveDecay = s.decay * (1.5 - mpcrFactor); // higher MPCR => less decay
 
       for (var t = 0; t < T; t++) {
         rounds.push(t + 1);
 
-        // Without punishment: contribution decays each round
-        var contribNP = s.initPct * s.w * Math.pow(1 - s.decay, t);
+        // Without punishment: contribution decays, faster with low MPCR
+        var contribNP = s.initPct * s.w * Math.pow(1 - effectiveDecay, t);
         contribNP = Math.max(0, Math.min(s.w, contribNP));
         noPunish.push(contribNP);
 
-        // With punishment: much slower decay (20% of the decay rate), floor at 60% of initial
-        var punishDecay = s.decay * 0.2;
+        // With punishment: much slower decay, floor depends on MPCR
+        var punishDecay = effectiveDecay * 0.2;
         var contribP = s.initPct * s.w * Math.pow(1 - punishDecay, t);
-        var floor = s.initPct * s.w * 0.6;
+        var floor = s.initPct * s.w * (0.4 + 0.4 * mpcrFactor); // higher MPCR => higher floor
         contribP = Math.max(floor, Math.min(s.w, contribP));
         withPunish.push(contribP);
       }
