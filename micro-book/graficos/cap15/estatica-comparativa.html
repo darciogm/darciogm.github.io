@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
   Estática Comparativa do Monopólio — Efeito de Imposto Unitário
-  Library: JSXGraph
-  Shows: demand, MR, MC, MC+t, before/after tax equilibria, tax revenue, DWL
+  Library: JSXGraph  |  Chapter 15
 -->
 <html lang="pt-BR">
 <head>
@@ -64,202 +63,230 @@
       <input type="range" id="slider-t" min="0" max="30" step="1" value="0">
     </div>
     <div class="info-box" id="info"></div>
+    <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+      <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+    </label>
     <button class="btn-reset" onclick="resetAll()">Resetar</button>
   </div>
 </div>
 
 <script>
+  // Global parameters (updated by sliders)
+  var a = 80, b = 1, c = 10, t = 0;
+
   var board = JXG.JSXGraph.initBoard('jxgbox', {
-    boundingbox: [-60, 130, 500, -15],
+    boundingbox: [-18, 130, 130, -18],
     axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
   });
 
+  // Axes
   board.create('axis', [[0,0],[1,0]], {
-    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
     name: '', withLabel: false
   });
-  board.create('text', [250, -9, '<b><i>Q</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', highlight: false
+  board.create('text', [65, -12, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
   });
   board.create('axis', [[0,0],[0,1]], {
-    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20 },
+    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
     name: '', withLabel: false
   });
-  board.create('text', [-35, 65, '<b><i>P</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', highlight: false
+  board.create('text', [-13, 65, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
   });
 
-  function gp() {
-    return {
-      a: parseFloat(document.getElementById('slider-a').value),
-      b: parseFloat(document.getElementById('slider-b').value),
-      c: parseFloat(document.getElementById('slider-c').value),
-      t: parseFloat(document.getElementById('slider-t').value)
-    };
-  }
+  // --- Helper functions ---
+  function qm0() { return (a - c) / (2 * b); }
+  function pm0() { return (a + c) / 2; }
+  function qmt() { return Math.max(0, (a - c - t) / (2 * b)); }
+  function pmt() { return (a + c + t) / 2; }
 
-  // Tax revenue rectangle (between CMg and CMg+t, from 0 to qm(t))
-  var taxPoly = board.create('polygon', [
-    [0, function(){ return gp().c; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ return gp().c; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return p.c+p.t; }],
-    [0, function(){ var p=gp(); return p.c+p.t; }]
+  // --- Shaded areas (drawn first) ---
+
+  // Tax revenue rectangle
+  board.create('polygon', [
+    [0, function(){ return c; }],
+    [function(){ return qmt(); }, function(){ return c; }],
+    [function(){ return qmt(); }, function(){ return c + t; }],
+    [0, function(){ return c + t; }]
   ], {
     fillColor: '#ff9800', fillOpacity: 0.15,
-    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false,
-    visible: function(){ return gp().t > 0; }
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false,
+    visible: function(){ return t > 0; }
   });
 
-  // DWL triangle (after tax)
-  var dwlPoly = board.create('polygon', [
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/p.b); }, function(){ var p=gp(); return p.c+p.t; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return p.c+p.t; }]
+  // DWL triangle
+  board.create('polygon', [
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [function(){ return Math.max(0, (a - c - t) / b); }, function(){ return c + t; }],
+    [function(){ return qmt(); }, function(){ return c + t; }]
   ], {
     fillColor: '#ff9800', fillOpacity: 0.25,
-    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
   });
 
-  // Profit rectangle (after tax)
-  var profitPoly = board.create('polygon', [
-    [0, function(){ var p=gp(); return p.c+p.t; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return p.c+p.t; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
-    [0, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }]
+  // Profit rectangle
+  board.create('polygon', [
+    [0, function(){ return c + t; }],
+    [function(){ return qmt(); }, function(){ return c + t; }],
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [0, function(){ return pmt(); }]
   ], {
     fillColor: '#00897b', fillOpacity: 0.18,
-    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
   });
 
   // CS triangle
-  var csPoly = board.create('polygon', [
-    [0, function(){ return gp().a; }],
-    [0, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }]
+  board.create('polygon', [
+    [0, function(){ return a; }],
+    [0, function(){ return pmt(); }],
+    [function(){ return qmt(); }, function(){ return pmt(); }]
   ], {
     fillColor: '#1565c0', fillOpacity: 0.18,
-    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
   });
 
-  // Demand curve
-  board.create('functiongraph', [function(q) { var p=gp(); return p.a - p.b*q; }], {
-    strokeColor: '#1565c0', strokeWidth: 2.5
+  // --- Curves ---
+
+  // Demand (1st quadrant)
+  board.create('functiongraph', [function(q) {
+    if (q < 0) return NaN;
+    var v = a - b * q;
+    return v >= 0 ? v : NaN;
+  }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // MR (q >= 0)
+  board.create('functiongraph', [function(q) {
+    if (q < 0) return NaN;
+    return a - 2 * b * q;
+  }], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2 });
+
+  // CMg (q >= 0)
+  board.create('functiongraph', [function(q) {
+    return q >= 0 ? c : NaN;
+  }], { strokeColor: '#00897b', strokeWidth: 2.5 });
+
+  // CMg + t (dashed, only when t > 0)
+  board.create('functiongraph', [function(q) {
+    return (q >= 0 && t > 0) ? c + t : NaN;
+  }], { strokeColor: '#ff9800', strokeWidth: 2, dash: 3 });
+
+  // --- Curve labels (to the right of each curve's end) ---
+  board.create('text', [function(){ return a / b + 3; }, 3, '<i>D</i>'], {
+    fontSize: 13, color: '#1565c0', fixed: true, highlight: false
   });
-  board.create('text', [function(){ return gp().a/gp().b - 5; }, 4], {
-    anchorX: 'middle', fontSize: 13, color: '#1565c0', getText: function(){ return 'D'; }
+  board.create('text', [function(){ return a / (2 * b) + 3; }, 3, '<i>RMg</i>'], {
+    fontSize: 13, color: '#C8102E', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return a / b + 3; }, function(){ return c + 4; }, '<i>CMg</i>'], {
+    fontSize: 13, color: '#00897b', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return a / b + 3; }, function(){ return c + t + 4; }, '<i>CMg + t</i>'], {
+    fontSize: 12, color: '#ff9800', fixed: true, highlight: false,
+    visible: function(){ return t > 0; }
   });
 
-  // MR curve
-  board.create('functiongraph', [function(q) { var p=gp(); return p.a - 2*p.b*q; }], {
-    strokeColor: '#C8102E', strokeWidth: 2, dash: 2
-  });
-  board.create('text', [function(){ return gp().a/(2*gp().b) - 3; }, 4], {
-    anchorX: 'middle', fontSize: 13, color: '#C8102E', getText: function(){ return 'RMg'; }
-  });
+  // --- Equilibrium points ---
 
-  // MC line
-  board.create('functiongraph', [function(q) { return gp().c; }], {
-    strokeColor: '#00897b', strokeWidth: 2.5
-  });
-  board.create('text', [function(){ return gp().a/gp().b - 2; }, function(){ return gp().c + 3; }], {
-    anchorX: 'middle', fontSize: 13, color: '#00897b', getText: function(){ return 'CMg'; }
-  });
-
-  // MC + t line (dashed orange)
-  board.create('functiongraph', [function(q) { var p=gp(); return p.c + p.t; }], {
-    strokeColor: '#ff9800', strokeWidth: 2, dash: 3,
-    visible: function(){ return gp().t > 0; }
-  });
-  board.create('text', [function(){ return gp().a/gp().b - 2; }, function(){ var p=gp(); return p.c+p.t+3; }], {
-    anchorX: 'middle', fontSize: 13, color: '#ff9800',
-    getText: function(){ return 'CMg+t'; },
-    visible: function(){ return gp().t > 0; }
-  });
-
-  // Before-tax equilibrium (ghost point, lighter)
+  // Before-tax (ghost, only when t > 0)
   board.create('point', [
-    function(){ var p=gp(); return (p.a-p.c)/(2*p.b); },
-    function(){ var p=gp(); return (p.a+p.c)/2; }
+    function(){ return qm0(); }, function(){ return pm0(); }
   ], { name: '', size: 3, strokeColor: '#999', fillColor: '#999', strokeOpacity: 0.5, fillOpacity: 0.5,
-       visible: function(){ return gp().t > 0; } });
+       fixed: true, visible: function(){ return t > 0; } });
 
-  // After-tax equilibrium (solid)
+  // After-tax (or current if t=0)
   board.create('point', [
-    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); },
-    function(){ var p=gp(); return (p.a+p.c+p.t)/2; }
-  ], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E' });
+    function(){ return qmt(); }, function(){ return pmt(); }
+  ], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E', fixed: true });
 
-  // Dashed lines from equilibrium
+  // --- Dashed projection lines ---
   board.create('segment', [
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
-    [0, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }]
-  ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [0, function(){ return pmt(); }]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
   board.create('segment', [
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }],
-    [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, 0]
-  ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [function(){ return qmt(); }, 0]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
 
-  // Labels
-  board.create('text', [-5, function(){ var p=gp(); return (p.a+p.c+p.t)/2; }, function(){ return '<i>P<sup>m</sup></i>'; }],
-    { fontSize: 13, color: '#C8102E', anchorX: 'right' });
-  board.create('text', [function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(2*p.b)); }, -4, function(){ return '<i>Q<sup>m</sup></i>'; }],
-    { fontSize: 13, color: '#C8102E', anchorX: 'middle' });
+  // --- Axis annotations ---
+  board.create('text', [-3, function(){ return pmt(); }, '<i>P<sup>m</sup></i>'], {
+    fontSize: 11, color: '#C8102E', anchorX: 'right', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return qmt(); }, -7, '<i>Q<sup>m</sup></i>'], {
+    fontSize: 11, color: '#C8102E', anchorX: 'middle', fixed: true, highlight: false
+  });
 
-  // Area labels
+  // --- Area labels ---
   board.create('text', [
-    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(4*p.b)); },
-    function(){ var p=gp(); return (p.a+p.c+p.t)/2 + (p.a - (p.a+p.c+p.t)/2)/3; }, 'EC'
-  ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold',
-       visible: function(){ var p=gp(); return (p.a - p.c - p.t) > 10; } });
-
-  board.create('text', [
-    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(4*p.b)); },
-    function(){ var p=gp(); return (p.c+p.t) + ((p.a+p.c+p.t)/2 - (p.c+p.t))/2; },
-    function(){ return '\\(\\pi\\)'; }
-  ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold',
-       visible: function(){ var p=gp(); return (p.a - p.c - p.t) > 10; } });
+    function(){ return qmt() / 2; },
+    function(){ return pmt() + (a - pmt()) / 3; },
+    'EC'
+  ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
 
   board.create('text', [
-    function(){ var p=gp(); return Math.max(0,(p.a-p.c-p.t)/(4*p.b)); },
-    function(){ var p=gp(); return p.c + (p.t)/2; }, 'Receita fiscal'
-  ], { fontSize: 10, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold',
-       visible: function(){ var p=gp(); return gp().t > 3; } });
+    function(){ return qmt() / 2; },
+    function(){ return (c + t) + (pmt() - c - t) / 2; },
+    '<i>π</i>'
+  ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
 
-  function updateInfo() {
-    var p = gp();
-    document.getElementById('val-a').textContent = p.a.toFixed(0);
-    document.getElementById('val-b').textContent = p.b.toFixed(1);
-    document.getElementById('val-c').textContent = p.c.toFixed(0);
-    document.getElementById('val-t').textContent = p.t.toFixed(0);
+  board.create('text', [
+    function(){ return qmt() / 2; },
+    function(){ return c + t / 2; },
+    'Receita fiscal'
+  ], { fontSize: 10, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false,
+       visible: function(){ return t > 3; } });
 
-    var qm0 = (p.a - p.c) / (2 * p.b);
-    var pm0 = (p.a + p.c) / 2;
-    var qm = Math.max(0, (p.a - p.c - p.t) / (2 * p.b));
-    var pm = (p.a + p.c + p.t) / 2;
-    var profit = (pm - p.c - p.t) * qm;
-    var cs = 0.5 * (p.a - pm) * qm;
-    var taxRev = p.t * qm;
-    var lerner = pm > 0 ? (pm - p.c - p.t) / pm : 0;
-    var passThrough = p.t > 0 ? (pm - pm0) / p.t : 0;
+  board.create('text', [
+    function(){ var qc = Math.max(0, (a - c - t) / b); return qmt() + (qc - qmt()) * 0.4; },
+    function(){ return (c + t) + (pmt() - c - t) * 0.3; },
+    'PPM'
+  ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
 
-    var html = '';
-    if (p.t > 0) {
-      html += '<div class="section-title">Antes do imposto</div>';
-      html += '\\(Q^m = ' + qm0.toFixed(1) + '\\), \\(P^m = ' + pm0.toFixed(1) + '\\)<br>';
-      html += '\\(\\pi = ' + ((pm0-p.c)*qm0).toFixed(1) + '\\)';
-      html += '<div class="section-title">Depois do imposto (\\(t = ' + p.t + '\\))</div>';
-    } else {
-      html += '<div class="section-title">Monopólio (sem imposto)</div>';
+  // --- Info panel ---
+  function update() {
+    a = parseFloat(document.getElementById('slider-a').value);
+    b = parseFloat(document.getElementById('slider-b').value);
+    c = parseFloat(document.getElementById('slider-c').value);
+    t = parseFloat(document.getElementById('slider-t').value);
+
+    document.getElementById('val-a').textContent = a.toFixed(0);
+    document.getElementById('val-b').textContent = b.toFixed(1);
+    document.getElementById('val-c').textContent = c.toFixed(0);
+    document.getElementById('val-t').textContent = t.toFixed(0);
+
+    var _qm0 = qm0(), _pm0 = pm0();
+    var _qmt = qmt(), _pmt = pmt();
+    var profit = (_pmt - c - t) * _qmt;
+    var cs = 0.5 * (a - _pmt) * _qmt;
+    var taxRev = t * _qmt;
+    var lerner = _pmt > 0 ? (_pmt - c - t) / _pmt : 0;
+    var passThrough = t > 0 ? (_pmt - _pm0) / t : 0;
+
+    var html = '<div class="section-title">Curvas</div>';
+    html += '\\(P = ' + a.toFixed(0) + ' - ' + b.toFixed(1) + '\\,Q\\) &ensp;(Demanda)<br>';
+    html += '\\(CMg = ' + c.toFixed(0) + '\\)';
+    if (t > 0) {
+      html += ', &ensp;\\(CMg + t = ' + (c + t).toFixed(0) + '\\)';
     }
-    html += '\\(Q^m = ' + qm.toFixed(1) + '\\), \\(P^m = ' + pm.toFixed(1) + '\\)<br>';
-    html += '\\(\\pi = ' + profit.toFixed(1) + '\\)<br>';
-    html += '\\(EC = ' + cs.toFixed(1) + '\\)<br>';
+
+    if (t > 0) {
+      html += '<div class="section-title">Antes do imposto</div>';
+      html += '\\(Q^m = ' + _qm0.toFixed(1) + '\\), \\(P^m = ' + _pm0.toFixed(1) + '\\)<br>';
+      html += '\\(\\pi = ' + ((_pm0 - c) * _qm0).toFixed(1) + '\\)';
+      html += '<div class="section-title">Com imposto (\\(t = ' + t.toFixed(0) + '\\))</div>';
+    } else {
+      html += '<div class="section-title">Monopólio</div>';
+    }
+    html += '\\(Q^m = ' + _qmt.toFixed(1) + '\\), \\(P^m = ' + _pmt.toFixed(1) + '\\)<br>';
+    html += '\\(\\pi = ' + profit.toFixed(1) + '\\), \\(EC = ' + cs.toFixed(1) + '\\)<br>';
     html += '\\(L = ' + lerner.toFixed(3) + '\\)';
-    if (p.t > 0) {
-      html += '<div class="section-title">Incidência tributária</div>';
+    if (t > 0) {
+      html += '<div class="section-title">Incidência</div>';
       html += 'Receita fiscal: \\(' + taxRev.toFixed(1) + '\\)<br>';
-      html += 'Repasse ao consumidor: \\(\\Delta P / t = ' + passThrough.toFixed(2) + '\\) (' + (passThrough*100).toFixed(0) + '%)<br>';
-      html += '\\(\\Delta Q = ' + (qm - qm0).toFixed(1) + '\\)';
+      html += 'Repasse: \\(\\Delta P / t = ' + passThrough.toFixed(2) + '\\) (' + (passThrough * 100).toFixed(0) + '%)<br>';
+      html += '\\(\\Delta Q = ' + (_qmt - _qm0).toFixed(1) + '\\)';
     }
 
     document.getElementById('info').innerHTML = html;
@@ -272,13 +299,24 @@
     document.getElementById('slider-b').value = 1;
     document.getElementById('slider-c').value = 10;
     document.getElementById('slider-t').value = 0;
-    updateInfo();
+    update();
   }
 
   ['slider-a','slider-b','slider-c','slider-t'].forEach(function(id) {
-    document.getElementById(id).addEventListener('input', updateInfo);
+    document.getElementById(id).addEventListener('input', update);
   });
-  updateInfo();
+  update();
+
+  function toggleLabels() {
+    var show = document.getElementById('chk-labels').checked;
+    var objs = board.objectsList;
+    for (var i = 0; i < objs.length; i++) {
+      if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+        objs[i].setProperty({visible: show});
+      }
+    }
+    board.update();
+  }
 </script>
 </body>
 </html>
