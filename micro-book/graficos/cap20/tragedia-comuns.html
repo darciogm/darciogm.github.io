@@ -45,15 +45,15 @@
     <div class="controls">
       <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>Capacidade do recurso (\(K\)): <span class="val" id="val-K">100</span></label>
+        <label>Capacidade (\(K\)): <span class="val" id="val-K">100</span></label>
         <input type="range" id="sl-K" min="40" max="200" step="5" value="100">
       </div>
       <div class="slider-group">
-        <label>Número de usuários (\(N\)): <span class="val" id="val-N">10</span></label>
+        <label>Usuários (\(N\)): <span class="val" id="val-N">10</span></label>
         <input type="range" id="sl-N" min="2" max="50" step="1" value="10">
       </div>
       <div class="slider-group">
-        <label>Custo por unidade (\(w\)): <span class="val" id="val-w">2.0</span></label>
+        <label>Custo (\(w\)): <span class="val" id="val-w">2.0</span></label>
         <input type="range" id="sl-w" min="0.5" max="5" step="0.1" value="2.0">
       </div>
       <div class="info-box" id="info"></div>
@@ -62,41 +62,49 @@
   </div>
 
 <script>
-  // F(E) = aE - bE²,  AP = a - bE,  MP = a - 2bE
-  // Private: AP = w => E_priv = (a-w)/b
-  // Social:  MP = w => E_soc  = (a-w)/(2b)
+  /*
+    F(E) = aE - bE²,  a = K/10,  b = 0.1
+    AP(E) = a - bE,  MP(E) = a - 2bE
+
+    Social optimum: MP = w  =>  E* = (a-w)/(2b)
+    Open access (N→∞): AP = w  =>  E_oa = (a-w)/b
+    Nash (N users): FOC => AP + e_i·AP' = w  =>  E_N = N(a-w) / [b(N+1)]
+
+    As N grows, E_N → E_oa. For small N, E_N < E_oa.
+  */
 
   var K = 100, N = 10, w = 2.0;
 
-  function aa() { return K / 10; }
-  function bb() { return 0.1; }
-  function ap(e) { return Math.max(aa() - bb() * e, 0); }
-  function mp(e) { return aa() - 2 * bb() * e; }
-  function ePriv() { return Math.max((aa() - w) / bb(), 0); }
-  function eSoc() { return Math.max((aa() - w) / (2 * bb()), 0); }
+  function a() { return K / 10; }
+  var b = 0.1;
+  function ap(e) { return Math.max(a() - b * e, 0); }
+  function mp(e) { return a() - 2 * b * e; }
+  function eSoc() { return Math.max((a() - w) / (2 * b), 0); }
+  function eNash() { return Math.max(N * (a() - w) / (b * (N + 1)), 0); }
+  function eOA() { return Math.max((a() - w) / b, 0); }
 
   var board = JXG.JSXGraph.initBoard('jxgbox', {
-    boundingbox: [-15, 25, 120, -4],
+    boundingbox: [-12, 22, 110, -4],
     axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
   });
 
   // Axes
-  board.create('axis', [[0,0],[115,0]], {
+  board.create('axis', [[0,0],[105,0]], {
     ticks: { drawLabels: true, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11 } },
     name: '', withLabel: false
   });
-  board.create('text', [60, -2.8, '<b><i>E</i> (uso total)</b>'], {
+  board.create('text', [55, -2.8, '<b><i>E</i> (uso total)</b>'], {
     fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
   });
-  board.create('axis', [[0,0],[0,23]], {
+  board.create('axis', [[0,0],[0,20]], {
     ticks: { drawLabels: true, ticksDistance: 5, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
     name: '', withLabel: false
   });
-  board.create('text', [-10, 12, '<b><i>$/unidade</i></b>'], {
+  board.create('text', [-8, 11, '<b><i>$/unid.</i></b>'], {
     fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
   });
 
-  // --- Curves (1st quadrant, q >= 0) ---
+  // --- Curves (1st quadrant) ---
 
   // AP
   board.create('functiongraph', [function(e) {
@@ -113,29 +121,29 @@
     return e >= 0 ? w : NaN;
   }], { strokeColor: '#333', strokeWidth: 2 });
 
-  // --- Curve labels (near left side, above each curve) ---
-  board.create('text', [2, function(){ return aa() + 1.5; }, '<i>AP</i> (produto médio)'], {
-    fontSize: 11, color: '#1565c0', fixed: true, highlight: false
+  // --- Curve labels (at x-intercept + offset, clearly separated) ---
+  board.create('text', [function(){ return eOA() + 3; }, 1.5, '<i>AP</i>'], {
+    fontSize: 12, color: '#1565c0', fixed: true, highlight: false
   });
-  board.create('text', [2, function(){ return aa() - 1.5; }, '<i>MP</i> (produto marginal)'], {
-    fontSize: 11, color: '#C8102E', fixed: true, highlight: false
+  board.create('text', [function(){ return a() / (2*b) + 3; }, 1.5, '<i>MP</i>'], {
+    fontSize: 12, color: '#C8102E', fixed: true, highlight: false
   });
-  board.create('text', [function(){ return ePriv() + 5; }, function(){ return w + 1.2; }, '<i>w</i> (custo)'], {
-    fontSize: 11, color: '#333', fixed: true, highlight: false
+  board.create('text', [function(){ return eOA() + 3; }, function(){ return w + 1.2; }, '<i>w</i>'], {
+    fontSize: 12, color: '#333', fixed: true, highlight: false
   });
 
-  // --- Overuse shading (between E_soc and E_priv, AP to w) ---
+  // --- Overuse shading (between E* and E_N) ---
   var nShade = 20;
   for (var i = 0; i < nShade; i++) {
     (function(idx) {
       var t0 = idx / nShade, t1 = (idx + 1) / nShade;
       board.create('polygon', [
-        [function(){ return eSoc() + t0 * (ePriv() - eSoc()); }, function(){ return w; }],
-        [function(){ return eSoc() + t1 * (ePriv() - eSoc()); }, function(){ return w; }],
-        [function(){ return eSoc() + t1 * (ePriv() - eSoc()); },
-         function(){ var e = eSoc() + t1 * (ePriv() - eSoc()); return ap(e); }],
-        [function(){ return eSoc() + t0 * (ePriv() - eSoc()); },
-         function(){ var e = eSoc() + t0 * (ePriv() - eSoc()); return ap(e); }]
+        [function(){ return eSoc() + t0 * (eNash() - eSoc()); }, function(){ return w; }],
+        [function(){ return eSoc() + t1 * (eNash() - eSoc()); }, function(){ return w; }],
+        [function(){ return eSoc() + t1 * (eNash() - eSoc()); },
+         function(){ var e = eSoc() + t1 * (eNash() - eSoc()); return ap(e); }],
+        [function(){ return eSoc() + t0 * (eNash() - eSoc()); },
+         function(){ var e = eSoc() + t0 * (eNash() - eSoc()); return ap(e); }]
       ], {
         fillColor: '#C8102E', fillOpacity: 0.15, borders: { strokeWidth: 0 },
         vertices: { visible: false }, hasInnerPoints: false, highlight: false
@@ -145,36 +153,42 @@
 
   // --- Equilibrium points ---
 
-  // Private (AP = w)
+  // Nash (depends on N)
   board.create('point', [
-    function(){ return ePriv(); }, function(){ return w; }
-  ], { name: '<i>E</i><sub>priv</sub>', size: 5, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true,
-       label: { offset: [12, 12], fontSize: 11, highlight: false, cssStyle: 'color:#1565c0;font-weight:700;' } });
+    function(){ return eNash(); }, function(){ return w; }
+  ], { name: '', size: 5, fillColor: '#1565c0', strokeColor: '#1565c0', fixed: true });
+  board.create('text', [
+    function(){ return eNash() + 2; }, function(){ return w + 2; },
+    function(){ return '<span style="color:#1565c0;font-weight:700;"><i>E</i><sub>N</sub></span>'; }
+  ], { fontSize: 11, fixed: true, highlight: false });
 
-  // Social (MP = w)
+  // Social optimum
   board.create('point', [
     function(){ return eSoc(); }, function(){ return w; }
-  ], { name: '<i>E</i>*', size: 5, fillColor: '#00897b', strokeColor: '#00897b', fixed: true,
-       label: { offset: [-25, 12], fontSize: 11, highlight: false, cssStyle: 'color:#00897b;font-weight:700;' } });
+  ], { name: '', size: 5, fillColor: '#00897b', strokeColor: '#00897b', fixed: true });
+  board.create('text', [
+    function(){ return eSoc() - 2; }, function(){ return w + 2; },
+    function(){ return '<span style="color:#00897b;font-weight:700;"><i>E</i>*</span>'; }
+  ], { fontSize: 11, anchorX: 'right', fixed: true, highlight: false });
 
   // --- Dashed projection lines ---
   board.create('segment', [
-    [function(){ return ePriv(); }, function(){ return w; }],
-    [function(){ return ePriv(); }, 0]
+    [function(){ return eNash(); }, function(){ return w; }],
+    [function(){ return eNash(); }, 0]
   ], { strokeColor: '#1565c0', strokeWidth: 1, dash: 2, fixed: true });
   board.create('segment', [
     [function(){ return eSoc(); }, function(){ return w; }],
     [function(){ return eSoc(); }, 0]
   ], { strokeColor: '#00897b', strokeWidth: 1, dash: 2, fixed: true });
 
-  // --- Overuse arrow and label ---
+  // --- Sobreuso arrow ---
   board.create('segment', [
     [function(){ return eSoc(); }, -1.5],
-    [function(){ return ePriv(); }, -1.5]
+    [function(){ return eNash(); }, -1.5]
   ], { strokeColor: '#C8102E', strokeWidth: 2.5, fixed: true, lastArrow: true });
 
   board.create('text', [
-    function(){ return (ePriv() + eSoc()) / 2; }, -2.8,
+    function(){ return (eNash() + eSoc()) / 2; }, -2.8,
     'Sobreuso'
   ], { fontSize: 10, anchorX: 'middle', fixed: true, highlight: false,
        cssStyle: 'color:#C8102E;font-style:italic;font-weight:700;' });
@@ -188,26 +202,27 @@
     document.getElementById('val-N').textContent = N.toFixed(0);
     document.getElementById('val-w').textContent = w.toFixed(1);
 
-    var ep = ePriv(), es = eSoc();
-    var perUserPriv = ep / N, perUserSoc = es / N;
-    var outputPriv = aa() * ep - bb() * ep * ep;
-    var outputSoc = aa() * es - bb() * es * es;
-    var profitPriv = outputPriv - w * ep;
-    var profitSoc = outputSoc - w * es;
+    var en = eNash(), es = eSoc(), eoa = eOA();
+    var perUser = en / N;
+    var outputN = a() * en - b * en * en;
+    var outputS = a() * es - b * es * es;
+    var profitN = outputN - w * en;
+    var profitS = outputS - w * es;
 
     var html = '<b>Curvas:</b><br>';
-    html += '\\(AP(E) = ' + aa().toFixed(0) + ' - ' + bb().toFixed(1) + 'E\\)<br>';
-    html += '\\(MP(E) = ' + aa().toFixed(0) + ' - ' + (2 * bb()).toFixed(1) + 'E\\)<br>';
+    html += '\\(AP(E) = ' + a().toFixed(0) + ' - ' + b.toFixed(1) + 'E\\)<br>';
+    html += '\\(MP(E) = ' + a().toFixed(0) + ' - ' + (2*b).toFixed(1) + 'E\\)<br>';
     html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-    html += '<span style="color:#1565c0;font-weight:700;">Equilíbrio privado (AP = w):</span><br>';
-    html += '\\(E_{priv} = ' + ep.toFixed(1) + '\\) (' + perUserPriv.toFixed(1) + ' por usuário)<br>';
-    html += 'Produção: ' + outputPriv.toFixed(1) + ', Lucro: ' + profitPriv.toFixed(1) + '<br>';
+    html += '<span style="color:#1565c0;font-weight:700;">Nash (' + N + ' usuários):</span><br>';
+    html += '\\(E_N = \\frac{N(a-w)}{b(N+1)} = ' + en.toFixed(1) + '\\)<br>';
+    html += 'Por usuário: ' + perUser.toFixed(1) + '<br>';
+    html += 'Produção: ' + outputN.toFixed(1) + ', Lucro: ' + profitN.toFixed(1) + '<br>';
     html += '<span style="color:#00897b;font-weight:700;">Ótimo social (MP = w):</span><br>';
-    html += '\\(E^* = ' + es.toFixed(1) + '\\) (' + perUserSoc.toFixed(1) + ' por usuário)<br>';
-    html += 'Produção: ' + outputSoc.toFixed(1) + ', Lucro: ' + profitSoc.toFixed(1) + '<br>';
+    html += '\\(E^* = ' + es.toFixed(1) + '\\)<br>';
+    html += 'Produção: ' + outputS.toFixed(1) + ', Lucro: ' + profitS.toFixed(1) + '<br>';
     html += '<hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
-    html += '<span style="color:#C8102E;font-weight:700;">Sobreuso: ' + (ep - es).toFixed(1) + ' (' + (100 * (ep - es) / es).toFixed(0) + '% acima do ótimo)</span><br>';
-    html += '<b>Perda de lucro:</b> ' + (profitSoc - profitPriv).toFixed(1);
+    html += '<span style="color:#C8102E;font-weight:700;">Sobreuso: ' + (en - es).toFixed(1) + '</span><br>';
+    html += '<span style="font-size:0.78rem;color:#666;">Acesso aberto (\\(N \\to \\infty\\)): \\(E_{OA} = ' + eoa.toFixed(1) + '\\)</span>';
 
     document.getElementById('info').innerHTML = html;
     board.update();
