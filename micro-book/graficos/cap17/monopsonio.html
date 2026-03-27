@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <!--
-  Monopsonio no Mercado de Trabalho — Interactive Graph
+  Monopsônio no Mercado de Trabalho — Chapter 17
   Library: JSXGraph
-  Chapter 17 — Microeconomia
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monopsonio no Mercado de Trabalho</title>
+  <title>Monopsônio no Mercado de Trabalho</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -21,8 +20,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
-.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
- .jxgbox { flex: 1 1 420px; max-width: 500px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }
@@ -34,16 +33,15 @@
     .btn-reset:hover { background: #9a0c23; }
     @media (max-width: 860px) {
       .graph-container { flex-direction: column; align-items: center; }
-      .jxgbox { flex-basis: 100%; width: 100%; max-width: 500px; }
-      .controls { flex-basis: 100%; width: 100%; max-width: 500px; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 540px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
     }
-    /* anti-inflation-fix */
     html,body{margin:0!important;padding:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
 <div class="graph-container">
-    <div id="jxgbox1" class="jxgbox"></div>
+    <div id="jxgbox"></div>
     <div class="controls">
       <h3>Parâmetros</h3>
       <div class="slider-group">
@@ -67,172 +65,191 @@
     </div>
   </div>
 
-  <script>
-    /*
-      Labor supply: w = a + b*H  =>  H = (w - a)/b
-      Total labor cost: TCL = w*H = (a + bH)*H = aH + bH^2
-      Marginal cost of labor: MCL = a + 2bH
-      MRP (demand): VPMgL = mrp0 - mrp1*H
-      Monopsony: MCL = MRP => a + 2bH = mrp0 - mrp1*H => H* = (mrp0 - a)/(2b + mrp1)
-      Monopsony wage: w* = a + b*H*
-      Competitive: S = MRP => a + bH = mrp0 - mrp1*H => Hc = (mrp0 - a)/(b + mrp1)
-      Competitive wage: wc = a + b*Hc
-    */
+<script>
+  /*
+    Supply: w = a + bH
+    TCL = wH = (a+bH)H => MCL = a + 2bH
+    MRP: w = mrp0 - mrp1*H
+    Monopsony: MCL = MRP => H* = (mrp0-a)/(2b+mrp1), w* = a + bH*
+    Competitive: S = MRP => Hc = (mrp0-a)/(b+mrp1), wc = a + bHc
+  */
+  var a = 5, b = 0.5, mrp0 = 40, mrp1 = 0.5;
 
-    var board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-7, 62, 62, -7],
-      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
-    });
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-8, 70, 90, -8],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
 
-    board.create('axis', [[0,0],[52,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 10 },
-      name: '', withLabel: false
-    });
-    board.create('text', [31, -5, '<b><i>H</i> (trabalho)</b>'], {
-      fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-    });
-    board.create('axis', [[0,0],[0,52]], {
-      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
-      name: '', withLabel: false
-    });
-    board.create('text', [-4, 31, '<b><i>w</i></b>'], {
-      fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-    });
+  // Axes
+  board.create('axis', [[0,0],[85,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 10 },
+    name: '', withLabel: false
+  });
+  board.create('text', [45, -5.5, '<b><i>H</i> (trabalho)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board.create('axis', [[0,0],[0,65]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+    name: '', withLabel: false
+  });
+  board.create('text', [-5.5, 35, '<b><i>w</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
 
-    // Supply curve: w = a + bH
-    var supplyCurve = board.create('functiongraph', [
-      function(x) { var s = getState(); return s.a + s.b * x; }
-    ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+  // --- Curves (1st quadrant) ---
 
-    // MCL curve: w = a + 2bH
-    var mclCurve = board.create('functiongraph', [
-      function(x) { var s = getState(); return s.a + 2 * s.b * x; }
-    ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+  // Supply: w = a + bH
+  board.create('functiongraph', [function(H) {
+    if (H < 0) return NaN;
+    return a + b * H;
+  }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
 
-    // MRP (demand) curve: w = mrp0 - mrp1*H
-    var mrpCurve = board.create('functiongraph', [
-      function(x) { var s = getState(); return s.mrp0 - s.mrp1 * x; }
-    ], { strokeColor: '#00897b', strokeWidth: 2.5 });
+  // MCL: w = a + 2bH
+  board.create('functiongraph', [function(H) {
+    if (H < 0) return NaN;
+    return a + 2 * b * H;
+  }], { strokeColor: '#C8102E', strokeWidth: 2.5 });
 
-    // Monopsony equilibrium point: MCL = MRP
-    var monopH = function() { var s = getState(); return Math.max(0, (s.mrp0 - s.a) / (2 * s.b + s.mrp1)); };
-    var monopW = function() { var s = getState(); return s.a + s.b * monopH(); };
-    var monopMRP = function() { var s = getState(); return s.mrp0 - s.mrp1 * monopH(); };
+  // VPMgL: w = mrp0 - mrp1*H
+  board.create('functiongraph', [function(H) {
+    if (H < 0) return NaN;
+    var v = mrp0 - mrp1 * H;
+    return v >= 0 ? v : NaN;
+  }], { strokeColor: '#00897b', strokeWidth: 2.5 });
 
-    // Competitive equilibrium
-    var compH = function() { var s = getState(); return Math.max(0, (s.mrp0 - s.a) / (s.b + s.mrp1)); };
-    var compW = function() { var s = getState(); return s.a + s.b * compH(); };
+  // --- Curve labels (at endpoints, offset to avoid overlap) ---
+  board.create('text', [function(){ return mrp0/mrp1 + 2; }, 3, '<i>VPMgL</i>'], {
+    fontSize: 12, color: '#00897b', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return mrp0/mrp1 + 2; }, function(){ return a + b * mrp0/mrp1 + 5; }, '<i>S</i>(<i>w</i>)'], {
+    fontSize: 12, color: '#1565c0', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return (mrp0 - a) / (2*b) + 2; }, function(){ return mrp0 + 5; }, '<i>MCL</i>'], {
+    fontSize: 12, color: '#C8102E', fixed: true, highlight: false
+  });
 
-    // Monopsony intersection point (MCL = MRP)
-    var monopIntPt = board.create('point', [monopH, monopMRP],
-      { size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', name: 'MCL=VPMg', fixed: true,
-        label: { fontSize: 9, offset: [5, 10] } });
+  // --- Equilibrium points ---
 
-    // Monopsony wage point (on supply curve)
-    var monopWPt = board.create('point', [monopH, monopW],
-      { size: 5, fillColor: '#C8102E', strokeColor: '#fff', name: 'Monopsônio', fixed: true,
-        label: { fontSize: 10, offset: [5, -12], color: '#C8102E' } });
+  // Monopsony: MCL = MRP
+  var monopH = function() { return Math.max(0, (mrp0 - a) / (2 * b + mrp1)); };
+  var monopW = function() { return a + b * monopH(); };
+  var monopMRP = function() { return mrp0 - mrp1 * monopH(); };
 
-    // Competitive equilibrium point
-    var compPt = board.create('point', [compH, compW],
-      { size: 5, fillColor: '#00897b', strokeColor: '#fff', name: 'Competitivo', fixed: true,
-        label: { fontSize: 10, offset: [5, 10], color: '#00897b' } });
+  // Competitive: S = MRP
+  var compH = function() { return Math.max(0, (mrp0 - a) / (b + mrp1)); };
+  var compW = function() { return a + b * compH(); };
 
-    // Dashed lines for monopsony
-    board.create('segment', [
-      function() { return [monopH(), 0]; },
-      function() { return [monopH(), monopMRP()]; }
-    ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 3 });
-    board.create('segment', [
-      function() { return [0, monopW()]; },
-      function() { return [monopH(), monopW()]; }
-    ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 3 });
+  // MCL = MRP intersection
+  board.create('point', [monopH, monopMRP], {
+    size: 4, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true
+  });
 
-    // Dashed lines for competitive
-    board.create('segment', [
-      function() { return [compH(), 0]; },
-      function() { return [compH(), compW()]; }
-    ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3 });
-    board.create('segment', [
-      function() { return [0, compW()]; },
-      function() { return [compH(), compW()]; }
-    ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3 });
+  // Monopsony wage (on supply)
+  board.create('point', [monopH, monopW], {
+    size: 5, fillColor: '#C8102E', strokeColor: '#fff', name: 'Monopsônio', fixed: true,
+    label: { fontSize: 11, offset: [10, -15], color: '#C8102E', highlight: false }
+  });
 
-    // Exploitation shading: area between MRP and w* at H*
-    // Vertical line showing exploitation gap
-    board.create('segment', [
-      function() { return [monopH(), monopW()]; },
-      function() { return [monopH(), monopMRP()]; }
-    ], { strokeColor: '#C8102E', strokeWidth: 3, strokeOpacity: 0.5 });
+  // Competitive point
+  board.create('point', [compH, compW], {
+    size: 5, fillColor: '#00897b', strokeColor: '#fff', name: 'Competitivo', fixed: true,
+    label: { fontSize: 11, offset: [10, 10], color: '#00897b', highlight: false }
+  });
 
-    // Exploitation bracket label
-    board.create('text', [
-      function() { return monopH() + 1.5; },
-      function() { return (monopW() + monopMRP()) / 2; },
-      function() { return '<span style="color:#C8102E;font-size:10px;">Exploração</span>'; }
-    ], { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
+  // --- Dashed projection lines ---
 
-    // Legend
-    board.create('text', [32, 50, '<span style="color:#1565c0;font-weight:bold">--- <i>S</i>(<i>w</i>)</span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
-    board.create('text', [32, 47, '<span style="color:#C8102E;font-weight:bold">--- <i>MCL</i></span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
-    board.create('text', [32, 44, '<span style="color:#00897b;font-weight:bold">--- <i>VPMgL</i></span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
+  // Monopsony
+  board.create('segment', [
+    [function(){ return monopH(); }, 0],
+    [function(){ return monopH(); }, function(){ return monopMRP(); }]
+  ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 3, fixed: true });
+  board.create('segment', [
+    [0, function(){ return monopW(); }],
+    [function(){ return monopH(); }, function(){ return monopW(); }]
+  ], { strokeColor: '#C8102E', strokeWidth: 1, dash: 3, fixed: true });
 
-    function getState() {
-      return {
-        a: parseFloat(document.getElementById('slider-a').value),
-        b: parseFloat(document.getElementById('slider-b').value),
-        mrp0: parseFloat(document.getElementById('slider-mrp0').value),
-        mrp1: parseFloat(document.getElementById('slider-mrp1').value)
-      };
-    }
+  // Competitive
+  board.create('segment', [
+    [function(){ return compH(); }, 0],
+    [function(){ return compH(); }, function(){ return compW(); }]
+  ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3, fixed: true });
+  board.create('segment', [
+    [0, function(){ return compW(); }],
+    [function(){ return compH(); }, function(){ return compW(); }]
+  ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3, fixed: true });
 
-    function update() {
-      var s = getState();
-      document.getElementById('val-a').textContent = s.a.toFixed(1);
-      document.getElementById('val-b').textContent = s.b.toFixed(2);
-      document.getElementById('val-mrp0').textContent = s.mrp0.toFixed(0);
-      document.getElementById('val-mrp1').textContent = s.mrp1.toFixed(2);
+  // --- Exploitation bracket ---
+  board.create('segment', [
+    [function(){ return monopH(); }, function(){ return monopW(); }],
+    [function(){ return monopH(); }, function(){ return monopMRP(); }]
+  ], { strokeColor: '#C8102E', strokeWidth: 3, strokeOpacity: 0.5, fixed: true });
 
-      var Hm = Math.max(0, (s.mrp0 - s.a) / (2 * s.b + s.mrp1));
-      var wm = s.a + s.b * Hm;
-      var mrpAtHm = s.mrp0 - s.mrp1 * Hm;
-      var Hc = Math.max(0, (s.mrp0 - s.a) / (s.b + s.mrp1));
-      var wc = s.a + s.b * Hc;
-      var exploitation = mrpAtHm - wm;
+  board.create('text', [
+    function(){ return monopH() + 2; },
+    function(){ return (monopW() + monopMRP()) / 2; },
+    '<span style="color:#C8102E;font-size:10px;">Exploração</span>'
+  ], { fontSize: 10, anchorX: 'left', fixed: true, highlight: false });
 
-      var html = '<div style="font-size:0.8rem;">';
-      html += '<strong>Oferta:</strong> \\(w = ' + s.a.toFixed(1) + ' + ' + s.b.toFixed(2) + 'H\\)<br>';
-      html += '<strong>MCL:</strong> \\(w = ' + s.a.toFixed(1) + ' + ' + (2*s.b).toFixed(2) + 'H\\)<br>';
-      html += '<strong>VPMg:</strong> \\(w = ' + s.mrp0.toFixed(0) + ' - ' + s.mrp1.toFixed(2) + 'H\\)';
-      html += '</div>';
-      html += '<div style="margin-top:0.5rem;border-top:1px solid #ddd;padding-top:0.4rem;">';
-      html += '<span style="color:#C8102E;font-weight:bold;">Monopsonio:</span><br>';
-      html += '\\(H^* = ' + Hm.toFixed(1) + '\\), \\(w^* = ' + wm.toFixed(1) + '\\)<br>';
-      html += '<span style="color:#00897b;font-weight:bold;">Competitivo:</span><br>';
-      html += '\\(H_c = ' + Hc.toFixed(1) + '\\), \\(w_c = ' + wc.toFixed(1) + '\\)<br>';
-      html += '<strong>Exploração:</strong> \\(VPMg - w^* = ' + exploitation.toFixed(1) + '\\)';
-      html += '</div>';
+  // --- Axis annotations ---
+  board.create('text', [function(){ return monopH(); }, -2.5, function(){ return '<i>H</i>*'; }], {
+    fontSize: 10, color: '#C8102E', anchorX: 'middle', fixed: true, highlight: false
+  });
+  board.create('text', [-1.5, function(){ return monopW(); }, function(){ return '<i>w</i>*'; }], {
+    fontSize: 10, color: '#C8102E', anchorX: 'right', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return compH(); }, -2.5, function(){ return '<i>H</i><sub>c</sub>'; }], {
+    fontSize: 10, color: '#00897b', anchorX: 'middle', fixed: true, highlight: false
+  });
+  board.create('text', [-1.5, function(){ return compW(); }, function(){ return '<i>w</i><sub>c</sub>'; }], {
+    fontSize: 10, color: '#00897b', anchorX: 'right', fixed: true, highlight: false
+  });
 
-      document.getElementById('info').innerHTML = html;
-      board.update();
-      if (window.MathJax && MathJax.typeset) MathJax.typeset();
-    }
+  // --- Update ---
+  function update() {
+    a = parseFloat(document.getElementById('slider-a').value);
+    b = parseFloat(document.getElementById('slider-b').value);
+    mrp0 = parseFloat(document.getElementById('slider-mrp0').value);
+    mrp1 = parseFloat(document.getElementById('slider-mrp1').value);
 
-    function resetAll() {
-      document.getElementById('slider-a').value = 5;
-      document.getElementById('slider-b').value = 0.50;
-      document.getElementById('slider-mrp0').value = 40;
-      document.getElementById('slider-mrp1').value = 0.50;
-      update();
-    }
+    document.getElementById('val-a').textContent = a.toFixed(1);
+    document.getElementById('val-b').textContent = b.toFixed(2);
+    document.getElementById('val-mrp0').textContent = mrp0.toFixed(0);
+    document.getElementById('val-mrp1').textContent = mrp1.toFixed(2);
 
-    ['slider-a','slider-b','slider-mrp0','slider-mrp1'].forEach(function(id) {
-      document.getElementById(id).addEventListener('input', update);
-    });
+    var Hm = monopH(), wm = monopW(), mrpHm = monopMRP();
+    var Hc = compH(), wc = compW();
+    var exploitation = mrpHm - wm;
+
+    var html = '<div style="font-size:0.8rem;">';
+    html += '<strong>Oferta:</strong> \\(w = ' + a.toFixed(1) + ' + ' + b.toFixed(2) + 'H\\)<br>';
+    html += '<strong>MCL:</strong> \\(w = ' + a.toFixed(1) + ' + ' + (2*b).toFixed(2) + 'H\\)<br>';
+    html += '<strong>VPMg:</strong> \\(w = ' + mrp0.toFixed(0) + ' - ' + mrp1.toFixed(2) + 'H\\)';
+    html += '</div>';
+    html += '<div style="margin-top:0.5rem;border-top:1px solid #ddd;padding-top:0.4rem;">';
+    html += '<span style="color:#C8102E;font-weight:bold;">Monopsônio:</span><br>';
+    html += '\\(H^* = ' + Hm.toFixed(1) + '\\), \\(w^* = ' + wm.toFixed(1) + '\\)<br>';
+    html += '<span style="color:#00897b;font-weight:bold;">Competitivo:</span><br>';
+    html += '\\(H_c = ' + Hc.toFixed(1) + '\\), \\(w_c = ' + wc.toFixed(1) + '\\)<br>';
+    html += '<strong>Exploração:</strong> \\(VPMg - w^* = ' + exploitation.toFixed(1) + '\\)';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-a').value = 5;
+    document.getElementById('slider-b').value = 0.50;
+    document.getElementById('slider-mrp0').value = 40;
+    document.getElementById('slider-mrp1').value = 0.50;
     update();
-  </script>
+  }
+
+  ['slider-a','slider-b','slider-mrp0','slider-mrp1'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
 </body>
 </html>
