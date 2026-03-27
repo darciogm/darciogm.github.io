@@ -67,26 +67,25 @@
 
   <script>
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-15, 120, 120, -15],
+      boundingbox: [-18, 165, 165, -18],
       axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
-    var xAxis = board.create('axis', [[0,0],[1,0]], {
+    board.create('axis', [[0,0],[1,0]], {
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
       name: '', withLabel: false
     });
-    var xLabel = board.create('text', [60, -10, '<b><i>Q</i></b>'], {
+    board.create('text', [82, -12, '<b><i>Q</i></b>'], {
       fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
     });
-    var yAxis = board.create('axis', [[0,0],[0,1]], {
+    board.create('axis', [[0,0],[0,1]], {
       ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
       name: '', withLabel: false
     });
-    var yLabel = board.create('text', [-11, 60, '<b><i>P</i></b>'], {
+    board.create('text', [-13, 82, '<b><i>P</i></b>'], {
       fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
     });
 
-    var pad = 15;
     function gp() {
       return {
         a: parseFloat(document.getElementById('slider-a').value),
@@ -180,7 +179,7 @@
       function(){ return '<i>P<sup>m</sup></i>'; }
     ], { fontSize: 12, color: '#C8102E', anchorX: 'right', highlight: false });
     board.create('text', [
-      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, function(){ return -pad * 0.3; },
+      function(){ var p=gp(); return (p.a-p.c)/(2*p.b); }, -5,
       function(){ return '<i>Q<sup>m</sup></i>'; }
     ], { fontSize: 12, color: '#C8102E', anchorX: 'middle', highlight: false });
 
@@ -227,19 +226,6 @@
       document.getElementById('val-b').textContent = p.b.toFixed(1);
       document.getElementById('val-c').textContent = p.c.toFixed(0);
 
-      // Dynamic bounding box
-      var qcMax = Math.max(10, (p.a - p.c) / p.b);
-      var pMax = Math.max(10, p.a);
-      pad = Math.max(qcMax, pMax) * 0.15;
-      var xMax = qcMax + pad;
-      var yMax = pMax + pad * 0.5;
-      var tickDist = xMax <= 60 ? 10 : xMax <= 150 ? 20 : 50;
-      board.setBoundingBox([-pad, yMax, xMax, -pad], false);
-      xAxis.ticks[0].setAttribute({ ticksDistance: tickDist });
-      yAxis.ticks[0].setAttribute({ ticksDistance: tickDist <= 20 ? 20 : tickDist });
-      xLabel.moveTo([xMax / 2, -pad * 0.65]);
-      yLabel.moveTo([-pad * 0.75, yMax / 2]);
-
       var qm = (p.a - p.c) / (2 * p.b);
       var pm = (p.a + p.c) / 2;
       var profit = (pm - p.c) * qm;
@@ -259,7 +245,7 @@
       html += '\\(EC^c = ' + csComp.toFixed(1) + '\\), \\(PPM = 0\\)';
 
       document.getElementById('info').innerHTML = html;
-      board.fullUpdate();
+      board.update();
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
 
