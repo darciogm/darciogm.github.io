@@ -6,9 +6,22 @@ A relevância é imediata: no Brasil, a decisão entre gasolina e etanol na bomb
 
 Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda. A jornada que fizemos até aqui nos trouxe de preferências e restrições orçamentárias (Capítulo 2) até a decomposição de Slutsky (Capítulo 5), que separou os efeitos de uma variação de preço em dois componentes interpretáveis. O instrumental de Slutsky é precisamente o que precisamos agora: o efeito substituição cruzado — o elemento fora da diagonal da matriz de Slutsky — é o núcleo analítico das classificações de substitutos e complementos que estudaremos aqui.
 
-**Roteiro do capítulo.** A Seção 6.1 começa com o caso mais simples — dois bens —, mostrando que a estrutura de dois bens impõe restrições fortes sobre as relações cruzadas. A Seção 6.2 introduz a classificação marshalliana (bruta), diretamente observável nos dados, e discute sua contaminação pelo efeito renda. A Seção 6.3 apresenta a classificação hicksiana (líquida), mais pura teoricamente, e mostra quando as duas classificações divergem. A Seção 6.4 generaliza a análise para muitos bens, introduzindo a matriz de Slutsky completa e suas propriedades algébricas. As Seções 6.5 e 6.6 oferecem dois caminhos para lidar com a complexidade de economias com muitos bens: o Teorema do Bem Composto de Hicks (que agrega bens em categorias tratáveis) e os modelos de Lancaster e Becker (que reformulam o próprio objeto de escolha). Por fim, a Seção 6.7 aborda a agregação da demanda do plano individual para o mercado — um problema que conecta este capítulo ao estudo do equilíbrio geral (Capítulo 12).
+!!! abstract "Roteiro do capítulo"
 
-Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda.
+    <div class="chapter-roadmap" markdown>
+
+    | Seção | Tema | Ideia central |
+    |:------|:-----|:-------------|
+    | 6.1 | Caso com dois bens | Com apenas dois bens, a complementaridade hicksiana é impossível — eles são sempre substitutos líquidos. |
+    | 6.2 | Substitutos e complementos brutos | A classificação marshalliana é observável nos dados, mas "contaminada" pelo efeito renda — e pode ser assimétrica. |
+    | 6.3 | Substitutos e complementos líquidos | A classificação hicksiana isola a substituição pura: é simétrica e teoricamente mais limpa. |
+    | 6.4 | Muitos bens e matriz de Slutsky | Todo bem tem pelo menos um substituto líquido — a substituibilidade é o fenômeno dominante. |
+    | 6.5 | Teorema do Bem Composto | Quando preços variam proporcionalmente, o grupo pode ser tratado como um único bem — a simplificação que viabiliza modelos aplicados. |
+    | 6.6 | Lancaster e Becker | Consumidores desejam atributos (Lancaster) e combinam bens com tempo (Becker) — não os bens em si. |
+    | 6.7 | Agregação da demanda | Somar demandas individuais parece inocente, mas a distribuição de renda importa — a condição de Gorman raramente vale. |
+    | 6.8 | Tabela de classificação | Pares de bens brasileiros classificados como substitutos ou complementos, brutos e líquidos. |
+
+    </div>
 
 ---
 
@@ -183,6 +196,23 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
     **Por que isso importa:** Políticas que subsidiam um bem (como isenção de IR para planos de saúde) podem afetar a demanda por outros bens de formas que só a decomposição de Slutsky revela corretamente.
 
+!!! atividade "Think-Pair-Share — Substitutos brutos ou líquidos?"
+
+    **Cenário:** O preço dos planos de saúde sobe 20%. Nos dados de consumo, observa-se que as famílias reduzem simultaneamente o gasto com planos de saúde *e* com educação privada.
+
+    **Pergunta:** Plano de saúde e educação privada são complementos ou substitutos?
+
+    **(a)** Complementos brutos *e* complementos líquidos — sempre que o preço de um sobe, a demanda do outro cai, independentemente do motivo.
+
+    **(b)** Complementos brutos, mas possivelmente substitutos líquidos — a queda conjunta pode refletir o empobrecimento da família (efeito renda), e não uma complementaridade genuína nas preferências.
+
+    **(c)** Substitutos brutos — se o plano de saúde ficou caro, as famílias gastam mais com educação privada para "compensar".
+
+    ??? success "Debrief"
+        **(b)** é a resposta correta. A queda simultânea nos dois gastos é consistente com um efeito renda forte: planos de saúde representam parcela significativa do orçamento das famílias de classe média, e o aumento de preço as empobrece, reduzindo o consumo de *todos* os bens normais — inclusive educação privada. Isolando o efeito renda (análise hicksiana), descobre-se que saúde e educação competem pelo mesmo orçamento disponível: são substitutos líquidos. Quem escolheu (a) confundiu a observação de mercado com a estrutura de preferências. Quem escolheu (c) ignorou que os dados *brutos* mostram queda conjunta, não aumento.
+
+        **Lição:** Nunca confie na classificação bruta para inferir preferências. A Equação de Slutsky é a ferramenta que separa o sinal (substituição) do ruído (renda).
+
 ---
 
 O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
@@ -273,7 +303,7 @@ A matriz de Slutsky também tem implicações empíricas diretas. Suas proprieda
 
 ## 6.5 Bens Compostos (Teorema do Bem Composto de Hicks)
 
-Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10.000 elasticidades cruzadas. Ninguém tem dados suficientes para estimar tudo isso. A solução prática: agrupar bens em categorias ("alimentação", "transporte", "lazer") e tratar cada categoria como um único "super-bem". Mas cuidado: agrupar bens arbitrariamente pode gerar erros graves. O **Teorema do Bem Composto de Hicks** diz *quando* a agregação é legítima — e a condição é surpreendentemente simples.
+Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10.000 elasticidades cruzadas. Ninguém tem dados suficientes para estimar tudo isso.[^cheese-shop] A solução prática: agrupar bens em categorias ("alimentação", "transporte", "lazer") e tratar cada categoria como um único "super-bem". Mas cuidado: agrupar bens arbitrariamente pode gerar erros graves. O **Teorema do Bem Composto de Hicks** diz *quando* a agregação é legítima — e a condição é surpreendentemente simples.
 
 !!! theorem "Teorema do Bem Composto de Hicks"
     Se um grupo de bens tem seus preços variando na mesma proporção, então esse grupo pode ser tratado como um único **bem composto**, cujo "preço" é um índice dos preços do grupo e cuja "quantidade" é o gasto real com o grupo.
@@ -337,7 +367,7 @@ Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10
 
     **Por que isso importa:** Modelos macroeconômicos usam frequentemente a dicotomia "bem tradeable versus bem non-tradeable" ou "bem importado versus bem doméstico" — ambas são aplicações implícitas do Teorema do Bem Composto. A validade dessas dicotomias depende de que os preços relativos dentro de cada grupo sejam razoavelmente estáveis, o que pode não se verificar durante choques assimétricos como os causados pela pandemia de 2020 ou pelo conflito na Ucrânia em 2022.
 
-!!! box-brasil "Box Brasil: Preços administrados e o Bem Composto no IPCA"
+!!! box-brasil "Box Brasil 6.1: Preços administrados e o Bem Composto no IPCA"
     O IPCA, calculado pelo IBGE, distingue entre **preços livres** (cerca de 75% do índice) e **preços administrados** (cerca de 25%), que incluem combustíveis, energia elétrica, planos de saúde e tarifas de transporte público. Os preços administrados são reajustados por fórmulas contratuais vinculadas a índices como o IGP-M ou o IPCA do período anterior.
 
     Essa distinção ilustra quando o Teorema do Bem Composto **funciona** e quando **falha**:
@@ -406,7 +436,7 @@ A **análise de preços hedônicos** — desenvolvida formalmente por Sherwin Ro
 
 No Brasil, a abordagem hedônica tem sido amplamente aplicada ao mercado imobiliário, onde os atributos locacionais — proximidade de estações de metrô, escola de alta qualidade, parques urbanos, índices de criminalidade — podem ser precificados implicitamente a partir dos diferenciais de preço entre imóveis com características físicas semelhantes mas localizações distintas. Essa mesma lógica é usada pelo Banco Central do Brasil para construir índices de preços imobiliários ajustados por qualidade, evitando que uma melhora na composição dos imóveis vendidos seja confundida com inflação de preços.
 
-!!! box-brasil "Box Brasil: Preços hedônicos e o índice FipeZap no mercado imobiliário"
+!!! box-brasil "Box Brasil 6.2: Preços hedônicos e o índice FipeZap no mercado imobiliário"
     O índice FipeZap, calculado pela Fundação Instituto de Pesquisas Econômicas (FIPE) em parceria com o portal Zap Imóveis, acompanha os preços de venda e aluguel de imóveis residenciais em mais de 50 cidades brasileiras. A metodologia central é baseada em **modelos de preços hedônicos** — uma implementação direta do arcabouço de Rosen (1974), que por sua vez operacionaliza o modelo de Lancaster: o preço de cada imóvel é regredido sobre seus atributos físicos (área útil, número de quartos e banheiros, vagas de garagem, andar, presença de elevador) e locacionais (bairro, distância de transporte público, índice de walkability).
 
     O índice FipeZap de março de 2024 registrava preço médio de venda de R$ 9.082/m² em São Paulo e R$ 11.032/m² no Rio de Janeiro. Mas a diferença entre bairros dentro de uma mesma cidade é ainda mais reveladora: no Rio de Janeiro, o preço médio no Leblon superava R$ 20.000/m², enquanto em Campo Grande (zona oeste) ficava abaixo de R$ 4.000/m². Essa diferença de cinco vezes não reflete apenas metragem ou número de quartos — ela embute o "preço implícito" de atributos locacionais como amenidades urbanas (proximidade de praias, parques, estabelecimentos de saúde e educação), segurança e acesso a transporte.
@@ -450,7 +480,7 @@ X_i(p_1, \ldots, p_n, I^1, \ldots, I^H) = \sum_{h=1}^H x_i^h(p_1, \ldots, p_n, I
 A soma horizontal parece inocente, mas esconde uma armadilha. A simples soma de demandas individuais racionais não garante que a demanda agregada se comporte como se fosse gerada por um "consumidor representativo". Sob que condições podemos ignorar a distribuição de renda e trabalhar apenas com a renda total? Para isso, são necessárias condições adicionais:
 
 !!! definition "Condição de Gorman"
-    A demanda de mercado pode ser escrita como função de preços e renda **agregada** \(I = \sum_h I^h\) se, e somente se, todas as curvas de Engel individuais forem lineares e paralelas. Isso ocorre quando as preferências são **quase-homotéticas** (preferências homotéticas mais uma translação) ou, de modo mais geral, quando as funções de utilidade indireta têm a forma de Gorman:
+    A demanda de mercado pode ser escrita como função de preços e renda **agregada** \(I = \sum_h I^h\) se, e somente se, todas as curvas de Engel individuais forem lineares e paralelas.[^silly-walks-gorman] Isso ocorre quando as preferências são **quase-homotéticas** (preferências homotéticas mais uma translação) ou, de modo mais geral, quando as funções de utilidade indireta têm a forma de Gorman:
 
     \[
     V^h(\mathbf{p}, I^h) = a(\mathbf{p}) + b(\mathbf{p}) \cdot I^h \label{eq:6.7.10} \tag{6.7.10}
@@ -464,7 +494,7 @@ Vale notar que a condição de Gorman é bastante restritiva: ela exige não ape
 
 Isso não significa que o conceito de consumidor representativo seja inútil — modelos macroeconômicos com consumidor representativo continuam sendo ferramentas analíticas poderosas. Mas o economista deve estar consciente de que esses modelos impõem implicitamente a condição de Gorman, e que suas previsões sobre os efeitos distributivos de políticas econômicas serão sistematicamente tendenciosas quando essa condição é violada. A falha de Gorman implica que não é possível separar a análise de eficiência (tamanho do bolo) da análise distributiva (divisão do bolo) — ambas interagem de forma inextricável na determinação da demanda de mercado.
 
-!!! box-brasil "Box Brasil: Distribuição de renda e demanda agregada"
+!!! box-brasil "Box Brasil 6.3: Distribuição de renda e demanda agregada"
     O programa Bolsa Família, que em 2024 atendia cerca de 21 milhões de famílias, ilustra por que a condição de Gorman importa na prática. As famílias beneficiárias têm propensões marginais a consumir alimentos, gás de cozinha e vestuário muito superiores às das famílias de renda mais alta. Segundo dados da POF/IBGE 2017-2018, famílias com renda per capita de até 1 salário mínimo destinam cerca de 22% do orçamento a alimentação, enquanto famílias com renda acima de 15 salários mínimos destinam cerca de 7,6%.
 
     Se as curvas de Engel fossem lineares e paralelas (condição de Gorman), transferir R$ 1 de uma família rica para uma pobre não alteraria a demanda agregada por nenhum bem — apenas a composição individual mudaria. Mas como as curvas de Engel diferem entre classes de renda, a redistribuição aumenta a demanda agregada por alimentos básicos e reduz a demanda por bens de luxo, mesmo com renda total constante. A elasticidade-renda da demanda por alimentos é substancialmente maior nas classes de renda mais baixa.
@@ -548,6 +578,8 @@ Quando a condição de Gorman não é satisfeita — e a evidência empírica su
 ---
 
 ## 6.8 Classificação de Pares de Bens no Contexto Brasileiro
+
+*And now for something completely different — ou melhor, completely concreto.*[^completely-different-table]
 
 Para consolidar as classificações discutidas nas seções anteriores, a [Tabela 6.1](#tabela-6-1) reúne pares de bens relevantes para o consumidor brasileiro, distinguindo entre a relação bruta (marshalliana) e a relação líquida (hicksiana). Note como, em alguns casos, as duas classificações divergem — reflexo direto do efeito renda que a Equação de Slutsky separa.
 
@@ -640,29 +672,35 @@ Para ilustrar concretamente as relações de substituição e complementaridade 
 
 Nenhum bem é uma ilha — e este capítulo mapeou o arquipélago. Substitutos, complementos, elasticidades cruzadas e a matriz de Slutsky são as ferramentas que revelam como os bens se conectam. Com elas, o economista pode prever não apenas o que acontece quando o preço de *um* bem muda, mas o efeito cascata sobre *todos* os demais.
 
+Se você sair deste capítulo com três convicções, que sejam estas:
+
+1. **A classificação depende da lente.** Substituto bruto e substituto líquido são perguntas diferentes — a primeira mistura efeito renda, a segunda isola a substituição pura. Nunca confunda observação de mercado com estrutura de preferências.
+2. **Simplificar é arte, não preguiça.** O Teorema do Bem Composto e o modelo de Lancaster são formas disciplinadas de reduzir a complexidade de uma economia com milhares de bens sem perder o essencial — desde que suas condições sejam satisfeitas.
+3. **Distribuição importa.** A demanda de mercado não depende só da renda total, mas de como ela é distribuída. Ignorar a heterogeneidade dos consumidores é assumir a condição de Gorman — e a evidência empírica rejeita essa hipótese sistematicamente.
+
 *Nenhum bem é uma ilha — e agora sabemos mapear as pontes entre eles. No próximo capítulo, tiramos a última certeza: o consumidor descobre que não sabe o que o futuro reserva.*
 
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.
 
-??? question "1. Se a elasticidade-preço da demanda é $\varepsilon_d = -0{,}5$ (em valor absoluto, 0,5), a demanda é dita:"
-    - (a) Elástica — uma variação de 1% no preço causa mais de 1% de variação na quantidade
-    - (b) Inelástica — uma variação de 1% no preço causa menos de 1% de variação na quantidade
-    - (c) Unitária — variação percentual na quantidade iguala a do preço
-    - (d) Perfeitamente elástica
+??? question "1. Com apenas dois bens, o efeito substituição cruzado hicksiano é:"
+    - (a) Sempre negativo — dois bens são sempre complementos líquidos
+    - (b) Sempre não negativo — dois bens são sempre substitutos líquidos
+    - (c) Pode ter qualquer sinal, dependendo das preferências
+    - (d) Zero, pois com dois bens não há efeito cruzado
 
     ??? success "Resposta"
-        **(b)** Quando $|\varepsilon_d| < 1$, a demanda é inelástica: a quantidade demandada responde menos que proporcionalmente ao preço. Um aumento de 1% no preço reduz a quantidade em apenas 0,5%. A alternativa (a) descreve $|\varepsilon_d| > 1$; (c) descreve $|\varepsilon_d| = 1$; (d) descreve $|\varepsilon_d| \to \infty$.
+        **(b)** Com apenas dois bens, a homogeneidade de grau zero da demanda hicksiana impõe $p_1 \frac{\partial h_1}{\partial p_1} + p_2 \frac{\partial h_1}{\partial p_2} = 0$. Como $\frac{\partial h_1}{\partial p_1} \leq 0$, o efeito cruzado $\frac{\partial h_1}{\partial p_2}$ deve ser não negativo. A complementaridade líquida só é possível com três ou mais bens.
 
-??? question "2. Quando a demanda é inelástica, um aumento no preço causa:"
-    - (a) Queda na receita total, pois a quantidade cai muito
-    - (b) Aumento na receita total, pois a queda na quantidade é proporcionalmente menor que o aumento no preço
-    - (c) Receita total constante
-    - (d) Impossibilidade de determinar o efeito sem mais informação
+??? question "2. A classificação marshalliana (bruta) de substitutos e complementos pode ser assimétrica. Isso ocorre porque:"
+    - (a) A função utilidade não é simétrica nos dois bens
+    - (b) O efeito renda cruzado contamina a derivada marshalliana de forma diferente em cada direção
+    - (c) A demanda hicksiana não é diferenciável
+    - (d) A matriz de Slutsky não é simétrica
 
     ??? success "Resposta"
-        **(b)** Com demanda inelástica ($|\varepsilon_d| < 1$), o aumento percentual no preço supera a queda percentual na quantidade, de modo que a receita total $R = p \cdot q$ aumenta. A relação entre receita marginal e elasticidade é $\text{RMg} = p(1 + 1/\varepsilon_d)$: com $\varepsilon_d$ entre $-1$ e $0$, a RMg é negativa, significando que reduzir a quantidade (subir o preço) aumenta a receita.
+        **(b)** Pela Equação de Slutsky, $\frac{\partial x_1}{\partial p_2} - \frac{\partial x_2}{\partial p_1} = x_2 \frac{\partial x_1}{\partial I} - x_1 \frac{\partial x_2}{\partial I}$. O efeito renda depende da quantidade consumida e da elasticidade-renda de cada bem, que em geral diferem. A classificação hicksiana é garantidamente simétrica ($s_{ij} = s_{ji}$), mas a marshalliana não.
 
 ??? question "3. Se a elasticidade-preço cruzada entre dois bens é positiva ($\varepsilon_{ij} > 0$), os bens são:"
     - (a) Complementares brutos (marshallianos)
@@ -673,23 +711,32 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     ??? success "Resposta"
         **(b)** Elasticidade cruzada positiva significa que um aumento no preço do bem $j$ aumenta a demanda pelo bem $i$: quando um substituto fica mais caro, a demanda pelo outro sobe. A alternativa (a) descreve $\varepsilon_{ij} < 0$; (d) descreve $\varepsilon_{ij} = 0$; (c) refere-se à relação com renda, não entre bens.
 
-??? question "4. A elasticidade-renda da demanda por alimentos tende a ser, segundo a Lei de Engel:"
-    - (a) Maior que 1 — alimentos são bens de luxo
-    - (b) Negativa — alimentos são bens inferiores
-    - (c) Positiva mas menor que 1 — alimentos são bens necessários
-    - (d) Exatamente igual a 1 para todas as faixas de renda
+??? question "4. O Teorema do Bem Composto de Hicks permite agregar um grupo de bens em um único 'super-bem'. A condição necessária é:"
+    - (a) Que os bens do grupo sejam substitutos perfeitos entre si
+    - (b) Que os preços dos bens do grupo variem na mesma proporção
+    - (c) Que o consumidor gaste a mesma quantia com cada bem do grupo
+    - (d) Que as elasticidades-preço cruzadas dentro do grupo sejam todas iguais
 
     ??? success "Resposta"
-        **(c)** A Lei de Engel estabelece que a participação dos gastos com alimentação na renda total cai à medida que a renda cresce. Isso implica elasticidade-renda positiva (bem normal) mas inferior a 1 (necessidade). A alternativa (a) seria típica de viagens e lazer; (b) valeria para bens como transporte público em faixas de renda alta; (d) implicaria participação constante.
+        **(b)** O Teorema de Hicks exige que $p_j = \alpha \bar{p}_j$ para todo $j$ no grupo — ou seja, os preços variem proporcionalmente, mantendo os preços relativos internos constantes. Isso permite definir um bem composto $y = \sum_j \bar{p}_j x_j$ com preço $\alpha$. A alternativa (a) é suficiente mas não necessária; (c) e (d) não são condições do teorema.
 
-??? question "5. Para uma curva de demanda linear $q = a - bp$, a elasticidade-preço:"
-    - (a) É constante ao longo de toda a curva
-    - (b) Varia ao longo da curva: é elástica em preços altos e inelástica em preços baixos
-    - (c) É sempre unitária
-    - (d) Depende apenas da inclinação $b$, não do ponto da curva
+??? question "5. A condição de Gorman garante a existência de um consumidor representativo. Ela exige que:"
+    - (a) Todos os consumidores tenham a mesma renda
+    - (b) Todos os consumidores tenham preferências Cobb-Douglas
+    - (c) As curvas de Engel individuais sejam lineares e paralelas (mesma propensão marginal a consumir cada bem)
+    - (d) A demanda de mercado seja homogênea de grau zero em preços e rendas
 
     ??? success "Resposta"
-        **(b)** Embora a inclinação ($-b$) seja constante, a elasticidade $\varepsilon = -b \cdot p/q$ varia ao longo da curva. Em preços altos ($p$ grande, $q$ pequeno), $|\varepsilon| > 1$ (elástica); em preços baixos ($p$ pequeno, $q$ grande), $|\varepsilon| < 1$ (inelástica). O ponto médio tem elasticidade unitária. A alternativa (a) descreve funções do tipo $q = Ap^{-\varepsilon}$ (isoelástica), não linear.
+        **(c)** A condição de Gorman exige que as funções de utilidade indireta tenham a forma $V^h(\mathbf{p}, I^h) = a(\mathbf{p}) + b(\mathbf{p}) \cdot I^h$, com $b(\mathbf{p})$ idêntico para todos. Isso implica curvas de Engel lineares e paralelas. A alternativa (d) é uma propriedade que vale sempre (não é uma condição especial); (a) é desnecessária; (b) é suficiente mas muito mais restritiva do que Gorman exige.
+
+??? question "6. No modelo de Lancaster, o consumidor deriva utilidade de:"
+    - (a) Os bens de mercado diretamente, como na teoria clássica
+    - (b) Os **atributos** (características) contidos nos bens, não dos bens em si
+    - (c) A quantidade total de bens consumidos, independentemente de quais bens
+    - (d) O preço pago pelos bens, refletindo sinalização de status
+
+    ??? success "Resposta"
+        **(b)** Lancaster (1966) propôs que os bens são desejados pelos atributos que contêm: um automóvel fornece potência, conforto e eficiência; um alimento fornece calorias, proteínas e sabor. A utilidade é $U(z_1, \ldots, z_m)$ onde $z_k = \sum_j b_{kj} x_j$ — os atributos são "produzidos" pelo consumo dos bens. Isso explica a diferenciação de produto, a introdução de novos bens e a precificação hedônica (Rosen, 1974).
 
 ---
 
@@ -972,6 +1019,12 @@ Suponha que o governo eleve o ICMS sobre gasolina em 10%, mantendo o preço do e
     **Resultado principal:** A maior parte das diferenças internacionais nas cestas alimentares é explicada por diferenças nos preços e na disponibilidade de atributos — não por diferenças nas preferências. Se franceses, americanos e britânicos enfrentassem os mesmos preços e as mesmas opções de produtos disponíveis, suas cestas alimentares seriam muito mais semelhantes do que as observadas. Em particular, os americanos compram mais alimentos processados e calóricos não porque preferem esses atributos, mas porque são relativamente mais baratos nos EUA. Esse resultado tem implicações importantes para políticas de saúde pública: uma tributação sobre alimentos processados (similar ao imposto seletivo proposto no Brasil) pode ser eficaz em alterar a composição da cesta, pois as diferenças nos padrões alimentares respondem ao sistema de preços.
 
     **Relevância para o capítulo:** O artigo é uma implementação empírica direta do modelo de Lancaster (Seção 6.6.1) em grande escala, com dados reais de múltiplos países. Ele demonstra que o framework de atributos não é apenas uma construção teórica abstrata, mas uma ferramenta empírica poderosa para entender padrões de demanda. Para o Brasil, o resultado sugere que as diferenças regionais e inter-classes nos padrões alimentares — documentadas pela POF/IBGE e discutidas nas Seções 6.2 e 6.7 — podem refletir principalmente diferenças nos preços relativos dos atributos (calorias, proteínas, conveniência) entre regiões e classes de renda, e não diferenças intrínsecas nas preferências. Isso implica que políticas de preços — subsídios a alimentos saudáveis, tributação de ultraprocessados — poderiam ser instrumentos eficazes para alterar a composição das cestas alimentares das famílias brasileiras.
+
+[^cheese-shop]: No sketch *Cheese Shop* de Monty Python, um cliente tenta comprar queijo numa loja que se diz especializada — mas não tem nenhum tipo em estoque. "Venezuelan beaver cheese?" "Not today, sir." A situação do econometrista diante de uma matriz de Slutsky 100×100 é análoga: ele precisa de 10.000 elasticidades, mas o mercado de dados não tem estoque para nenhuma delas. O Teorema do Bem Composto é a solução elegante: reduzir a lista de "queijos" a um punhado de categorias tratáveis.
+
+[^silly-walks-gorman]: A condição de Gorman exige que *todos* os consumidores tenham curvas de Engel lineares e paralelas — uma exigência tão burocrática quanto o *Ministry of Silly Walks* de Monty Python, que demandava formulários em triplicata para financiar andares excêntricos. Na prática, a condição quase nunca é satisfeita, mas isso não impediu gerações de macroeconomistas de fingir que sim — como funcionários obedientes do Ministério.
+
+[^completely-different-table]: Frase imortalizada pelo narrador de *Monty Python's Flying Circus*, usada para transições abruptas entre sketches. Na microeconomia, a transição da teoria abstrata (Seções 6.1–6.7) para a aplicação empírica é igualmente abrupta — mas necessária.
 
 ## 📚 Referências do Capítulo
 

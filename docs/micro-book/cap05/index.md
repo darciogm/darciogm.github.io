@@ -130,6 +130,20 @@ Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 **Tabela 5.1 — Classificação dos bens pela resposta à renda.** A elasticidade-renda \(\eta\) determina se o bem é normal (\(\eta > 0\)), inferior (\(\eta < 0\)), de luxo (\(\eta > 1\)) ou necessidade (\(0 < \eta < 1\)).
 </div>
 
+!!! atividade "Think-Pair-Share — Normal, inferior ou Giffen?"
+    **Vote individualmente (1 minuto):**
+
+    Uma família muito pobre gasta 80% da renda em arroz e 20% em carne. O preço do arroz sobe 20%. O que acontece com a quantidade de arroz consumida?
+
+    - (a) Cai — a Lei da Demanda sempre vale
+    - (b) Sobe — a família fica tão mais pobre que precisa comer *mais* arroz e cortar a carne
+    - (c) Não muda — o arroz é inelástico
+
+    **Discuta com um colega (2 minutos) e revote.**
+
+    ??? success "Debrief"
+        A resposta é **(b)** — se o arroz for um bem de Giffen. Quando o preço do arroz sobe, o efeito renda é devastador (80% do orçamento!): a família fica tão mais pobre que precisa cortar a carne e comer ainda mais arroz. O efeito substituição diz "troque por outra coisa", mas por quê? Não há substituto mais barato. O efeito renda domina, e a demanda *sobe* com o preço. Esse é exatamente o mecanismo documentado por Jensen e Miller (2008) na China — e a Equação de Slutsky da Seção 5.4 explica por quê.
+
 Recapitulando: sabemos que bens normais sobem com a renda, inferiores caem, e luxos sobem mais que proporcionalmente. A curva de Engel mapeia tudo isso. Até aqui, a vida era simples — apenas renda variava, preços parados. Agora vem o prato principal: o que acontece quando o *preço* de um bem muda? A resposta é mais sutil, porque uma variação de preço faz *duas coisas ao mesmo tempo* — e separá-las é a contribuição central de Slutsky.
 
 ---
@@ -275,7 +289,7 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
 
 1. **Para o próprio preço** (\(i = j\)): \(\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - x_i \frac{\partial x_i}{\partial I}\). O efeito substituição é sempre não-positivo (pela concavidade da função dispêndio). Logo, se o bem for normal (\(\frac{\partial x_i}{\partial I} > 0\)), a demanda cai quando o preço sobe — a **Lei da Demanda** vale sem ambiguidade.
 
-2. **Bens de Giffen**: se o bem for inferior e o efeito renda dominar o efeito substituição, \(\frac{\partial x_i}{\partial p_i} > 0\), e temos um **bem de Giffen**. Esses casos são raros e exigem que o bem represente parcela significativa do orçamento — condição necessária para que o efeito renda seja suficientemente forte.
+2. **Bens de Giffen**: se o bem for inferior e o efeito renda dominar o efeito substituição, \(\frac{\partial x_i}{\partial p_i} > 0\), e temos um **bem de Giffen**.[^black-knight-giffen] Esses casos são raros e exigem que o bem represente parcela significativa do orçamento — condição necessária para que o efeito renda seja suficientemente forte.
 
 !!! definition "Bem de Giffen"
     Um bem \(i\) é dito **de Giffen** se sua demanda marshalliana é positivamente inclinada no próprio preço:
@@ -290,6 +304,8 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
     - (b) \(\left| x_i \frac{\partial x_i}{\partial I} \right| > \left| \frac{\partial h_i}{\partial p_i} \right|\) — o efeito renda (em valor absoluto) **supera** o efeito substituição.
 
     A condição (b) tende a ser satisfeita apenas quando o bem representa parcela muito elevada do orçamento, de modo que \(x_i\) seja grande o suficiente para amplificar o efeito renda. Em particular, todo bem de Giffen é inferior, mas a recíproca é falsa: um bem pode ser inferior sem ser de Giffen se o efeito substituição ainda dominar.
+
+[^black-knight-giffen]: O bem de Giffen é o Black Knight da microeconomia: o preço sobe (perde um braço), e o consumidor compra *mais* ("'Tis but a scratch!"). O preço sobe de novo (perde outro braço), e ele insiste ("Just a flesh wound!"). A analogia falha, porém, num ponto crucial: o Black Knight é irracional; o consumidor de Giffen é perfeitamente racional — ele compra mais porque ficou tão mais pobre que não pode se dar ao luxo de *não* comprar o bem básico.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Um bem de Giffen é tão essencial e ocupa tanta parte do orçamento que, quando seu preço sobe, o consumidor fica tão mais pobre que acaba comprando *mais* dele, não menos.
@@ -559,7 +575,7 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 
 ## 5.8 Excedente do Consumidor
 
-Elasticidades dizem *como* a demanda reage. Mas o ministro da Fazenda quer saber outra coisa: *quanto* o consumidor perde (em reais!) quando a gasolina sobe R$ 0,50? E quanto ganha quando o governo zera o ICMS sobre a cesta básica? Para isso, precisamos de uma régua monetária de bem-estar — e é exatamente isso que o **excedente do consumidor** fornece. É a ferramenta que traduz utilidade abstrata em valores que cabem numa planilha de orçamento público.
+*And now for something completely different* — ou melhor, *completely practical*. Elasticidades dizem *como* a demanda reage. Mas o ministro da Fazenda quer saber outra coisa: *quanto* o consumidor perde (em reais!) quando a gasolina sobe R$ 0,50? E quanto ganha quando o governo zera o ICMS sobre a cesta básica? Para isso, precisamos de uma régua monetária de bem-estar — e é exatamente isso que o **excedente do consumidor** fornece. É a ferramenta que traduz utilidade abstrata em valores que cabem numa planilha de orçamento público.
 
 ### 5.8.1 O conceito marshalliano
 
@@ -688,7 +704,9 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
 ## 5.9 Preferência Revelada e o Efeito Substituição
 
-Tudo que fizemos até aqui partiu de um objeto invisível: a função de utilidade. Ninguém jamais viu uma, mediu uma ou tropeçou numa. Será que é possível chegar às mesmas conclusões usando apenas o que *é* observável — preços pagos e quantidades compradas? Em 1938, Paul Samuelson, aos 22 anos, mostrou que sim. A ideia: se o consumidor escolheu a cesta A quando podia comprar a cesta B, ele *revelou* que prefere A a B. Nenhuma função de utilidade necessária — apenas o comportamento observado. Essa inversão de lógica — das escolhas para as preferências, em vez do contrário — é a **teoria da preferência revelada**, e ela deu a Samuelson o Nobel.
+Tudo que fizemos até aqui partiu de um objeto invisível: a função de utilidade. Ninguém jamais viu uma, mediu uma ou tropeçou numa. Será que é possível chegar às mesmas conclusões usando apenas o que *é* observável — preços pagos e quantidades compradas?[^spanish-inquisition-rp] Em 1938, Paul Samuelson, aos 22 anos, mostrou que sim. A ideia: se o consumidor escolheu a cesta A quando podia comprar a cesta B, ele *revelou* que prefere A a B. Nenhuma função de utilidade necessária — apenas o comportamento observado. Essa inversão de lógica — das escolhas para as preferências, em vez do contrário — é a **teoria da preferência revelada**, e ela deu a Samuelson o Nobel.
+
+[^spanish-inquisition-rp]: *Nobody expects the Spanish Inquisition!* — e ninguém esperava que fosse possível derivar a Lei da Demanda sem postular uma função de utilidade. A preferência revelada é a Inquisição Espanhola da microeconomia: chega sem aviso, armada apenas com dados observáveis, e extrai confissões (preferências) que nenhuma outra abordagem conseguia.
 
 !!! definition "Axioma Fraco da Preferência Revelada (AFPR)"
     Se a cesta \(\mathbf{x}^0\) é escolhida quando \(\mathbf{x}^1\) era acessível (isto é, \(\mathbf{p}^0 \cdot \mathbf{x}^1 \leq \mathbf{p}^0 \cdot \mathbf{x}^0\)), então \(\mathbf{x}^1\) não pode ser escolhida quando \(\mathbf{x}^0\) é acessível (isto é, \(\mathbf{p}^1 \cdot \mathbf{x}^0 > \mathbf{p}^1 \cdot \mathbf{x}^1\)).
@@ -753,7 +771,11 @@ As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slut
 
 ---
 
-A epígrafe deste capítulo dizia que toda variação de preço carrega duas forças opostas. Agora sabemos nomeá-las: o efeito substituição redireciona o consumo (sempre contra o bem que encareceu), e o efeito renda empobrece ou enriquece (dependendo da posição do consumidor). Slutsky nos ensinou a separá-las cirurgicamente — e essa cirurgia é a base de toda análise de política tributária, tarifária e regulatória que veremos daqui para frente.
+Se este capítulo funcionou, você sai dele com três convicções:
+
+1. **Toda mudança de preço é duas mudanças.** O efeito substituição redireciona o consumo (sempre contra o bem que encareceu); o efeito renda empobrece ou enriquece. Slutsky nos ensinou a separá-los — e essa cirurgia é a base de toda análise de política tributária, tarifária e regulatória.
+2. **A Lei da Demanda não é uma lei — é um teorema condicional.** Ela vale para bens normais (e para a maioria dos inferiores), mas pode falhar nos raríssimos casos de Giffen. Saber *quando* ela falha importa mais do que saber que "geralmente vale".
+3. **Medir bem-estar exige cuidado com a régua.** O excedente do consumidor marshalliano é prático, mas a VC e a VE são as medidas teoricamente corretas. A diferença entre elas depende do tamanho do efeito renda — e para famílias pobres, essa diferença pode ser enorme.
 
 *Até aqui, cada bem vivia sozinho. No próximo capítulo, eles se encontram — e a relação é complicada.*
 
@@ -805,6 +827,15 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     ??? success "Resposta"
         **(c)** Um bem inferior tem elasticidade-renda negativa: $\partial x/\partial I < 0$. Quando a renda cresce, o consumidor substitui o bem por alternativas de qualidade superior. A alternativa (a) é um caso extremo de bem inferior (efeito renda domina o substituição), não apenas renda-negativo; (b) é o oposto; (d) descreve relação entre bens, não resposta à renda.
+
+??? question "6. Para uma utilidade quase-linear $u = v(x_1) + x_2$, a variação compensatória (VC), a variação equivalente (VE) e o excedente do consumidor marshalliano ($\Delta EC$):"
+    - (a) São sempre diferentes, pois usam curvas de demanda distintas
+    - (b) Coincidem, porque o efeito renda sobre $x_1$ é zero
+    - (c) Coincidem apenas quando o preço não muda
+    - (d) Seguem a ordenação $VC < \Delta EC < VE$ para qualquer variação de preço
+
+    ??? success "Resposta"
+        **(b)** Na utilidade quase-linear, a demanda por $x_1$ não depende da renda ($\partial x_1/\partial I = 0$), portanto as curvas marshalliana e hicksiana de $x_1$ são idênticas. Como VC e VE são áreas sob curvas hicksianas (com utilidades de referência diferentes), e essas curvas coincidem entre si e com a marshalliana, as três medidas são iguais: $VC = VE = \Delta EC$. A alternativa (d) vale para bens normais com efeito renda não nulo.
 
 ---
 
