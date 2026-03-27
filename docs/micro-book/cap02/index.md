@@ -10,6 +10,26 @@ O capítulo segue uma progressão natural: partimos da otimização em uma dimen
 
 A exposição segue Nicholson e Snyder (2017, Cap. 2), complementada pelo apêndice matemático de Mas-Colell, Whinston e Green (1995) e por Simon e Blume (1994). Para uma abordagem passo a passo especialmente acessível, ver Chiang e Wainwright (2005). As ferramentas apresentadas aqui não são ornamentos formais: são a linguagem em que toda a microeconomia é escrita. Dominá-las é condição necessária — e, em grande medida, suficiente — para acompanhar o restante do livro.
 
+!!! abstract "Roteiro do capítulo"
+
+    <div class="chapter-roadmap" markdown>
+
+    | Seção | Ferramenta | Para que serve | Onde reaparece |
+    |:---:|---|---|---|
+    | **2.1** | Otimização em 1 variável | CPO e CSO: o "arroz com feijão" | Caps. 4, 10–12 |
+    | **2.2** | Derivadas parciais, TFI | *Ceteris paribus* formal; estática comparativa | Caps. 4–5, 8, 12 |
+    | **2.3** | Otimização multivariada | Hessiana e condições de máximo em \(n\) dimensões | Caps. 4, 10 |
+    | **2.4** | Teorema do envelope | No ótimo, só importa o efeito direto | Roy, Shephard, Hotelling |
+    | **2.5** | Método de Lagrange | Otimização com restrição — *a* ferramenta do livro | Todo o livro |
+    | **2.6** | Envelope restrito | \(\lambda\) como preço-sombra | Caps. 4–5, 10–12 |
+    | **2.7** | Kuhn-Tucker | Soluções de canto e restrições de desigualdade | Caps. 4, 10, 14 |
+    | **2.8** | Concavidade / quase-concavidade | Quando as CPOs bastam | Caps. 3–4 |
+    | **2.9** | Homogeneidade / Euler | Retornos de escala; ausência de ilusão monetária | Caps. 4, 10, 12 |
+    | **2.10–2.12** | Integração, dinâmica, estatística | Excedentes, equação de Euler, utilidade esperada | Caps. 5–6, 18 |
+    | **2.13** | Ponto fixo | A solução *existe*? | Caps. 9a, 14 |
+
+    </div>
+
 ---
 
 ## 2.1 Maximização de funções de uma variável
@@ -203,7 +223,7 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 
     **Por que isso importa:** O Teorema da Envoltória simplifica drasticamente a estática comparativa: em vez de recalcular todo o ótimo, basta olhar o efeito direto do parâmetro sobre a função objetivo.
 
-??? exercicio-resolvido "Exercício Resolvido 2.2 — Teorema do envelope aplicado ao monopolista"
+??? exercicio-resolvido "Exercício Resolvido 2.1 — Teorema do envelope aplicado ao monopolista"
 
     **Enunciado:** Uma firma monopolista enfrenta demanda \(P = a - Q\) e tem custo \(CT = cQ\), com \(a > c > 0\). Use o teorema do envelope para determinar como o lucro máximo varia quando o custo marginal \(c\) aumenta.
 
@@ -243,11 +263,25 @@ O que esse resultado nos diz? A demonstração revela por que o teorema funciona
 
 Até agora, o agente podia escolher o que quisesse — um luxo que ninguém tem na vida real. Na prática, todo mundo enfrenta restrições: o consumidor tem renda limitada, a firma tem tecnologia limitada, o governo tem orçamento limitado, e o aluno tem tempo limitado para estudar este capítulo. É justamente a *restrição* que torna a economia interessante: se tivéssemos tudo, não haveria escolha; sem escolha, não haveria economia.
 
-O método de Lagrange é *a* ferramenta para lidar com restrições — e provavelmente a técnica mais importante que você aprenderá neste livro inteiro. Desenvolvido pelo matemático ítalo-francês Joseph-Louis Lagrange no final do século XVIII, o método transforma um problema de otimização com restrição em um problema sem restrição em um espaço ampliado. Praticamente todos os modelos que estudaremos — consumidor (Capítulo 4), firma (Capítulos 7–10), equilíbrio geral (Capítulo 12) — envolvem otimizar uma função sujeita a restrições. O método é tão central que o multiplicador de Lagrange \(\lambda\) se tornará, ao longo do livro, um dos objetos mais interpretados economicamente: utilidade marginal da renda, custo marginal, preço-sombra de restrições regulatórias.
+O método de Lagrange é *a* ferramenta para lidar com restrições — e provavelmente a técnica mais importante que você aprenderá neste livro inteiro.[^none-shall-pass]
+
+[^none-shall-pass]: Em *Monty Python and the Holy Grail*, o Black Knight brada "None shall pass!" a quem tenta cruzar a ponte. O multiplicador de Lagrange é o equivalente matemático: a restrição orçamentária é a ponte, e \(\lambda\) mede exatamente o custo de tentar passar — quanto custa, em utilidade, cada real que a restrição impede de gastar. Desenvolvido pelo matemático ítalo-francês Joseph-Louis Lagrange no final do século XVIII, o método transforma um problema de otimização com restrição em um problema sem restrição em um espaço ampliado. Praticamente todos os modelos que estudaremos — consumidor (Capítulo 4), firma (Capítulos 7–10), equilíbrio geral (Capítulo 12) — envolvem otimizar uma função sujeita a restrições. O método é tão central que o multiplicador de Lagrange \(\lambda\) se tornará, ao longo do livro, um dos objetos mais interpretados economicamente: utilidade marginal da renda, custo marginal, preço-sombra de restrições regulatórias.
 
 E o multiplicador \(\lambda\) que o método produz é talvez o número mais interpretado de toda a economia: você vai encontrá-lo disfarçado de "utilidade marginal da renda" no Capítulo 4, de "custo marginal" no Capítulo 11, de "preço-sombra" em problemas regulatórios — e sempre dizendo a mesma coisa: quanto vale relaxar a restrição em um pouquinho.
 
 Esta seção apresenta o método em um passo a passo detalhado, para que o leitor possa aplicá-lo com confiança a qualquer problema.
+
+!!! atividade "Atividade — Adivinhe antes de calcular"
+
+    **Antes de ler o passo a passo**, tente resolver intuitivamente:
+
+    > Um consumidor com utilidade \(U = x_1 \cdot x_2\) e renda \(m = 100\) enfrenta preços \(p_1 = 2\) e \(p_2 = 5\). Quanto ele gasta em cada bem?
+
+    **Passo 1 (individual, 2 min):** Escreva sua resposta em um papel — sem Lagrangeano, apenas intuição.
+
+    **Passo 2 (em dupla, 3 min):** Compare com o colega. Vocês concordam? Se não, convençam um ao outro.
+
+    **Passo 3 (turma):** O professor revela que a Cobb-Douglas com expoentes iguais divide a renda igualmente entre os bens: R\$ 50 em cada. Quem acertou? Agora: *por que* esse resultado funciona? A seção a seguir formaliza a resposta.
 
 !!! info "Referências para aprofundamento"
     Para uma exposição mais detalhada dos fundamentos matemáticos do método de Lagrange, consulte Chiang & Wainwright (2005, Cap. 12) e Simon & Blume (1994, Cap. 18–19). Para aplicações econômicas, veja Nicholson & Snyder (2017, Cap. 2) e Jehle & Reny (2011, Cap. 1).
@@ -434,7 +468,7 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 
 <a id="exercicio-ces"></a>
 
-!!! exercicio-resolvido "Exercício Resolvido 2.1 — Maximização de utilidade CES via Lagrangeano"
+!!! exercicio-resolvido "Exercício Resolvido 2.2 — Maximização de utilidade CES via Lagrangeano"
 
     Aplicamos agora o passo a passo completo a um problema que será recorrente ao longo do livro: a maximização de utilidade com preferências CES.
 
@@ -735,7 +769,7 @@ Para **mínimo** com restrição, a condição é \(\det(\bar{H}) < 0\).
 
 O exercício com a CES é um investimento que se pagará ao longo de todo o livro: as demandas marshallianas CES reaparecerão no Capítulo 4 (escolha do consumidor), no Capítulo 5 (equação de Slutsky), e na análise de comércio internacional baseada no modelo de Armington. O leitor que dominar a álgebra da CES estará preparado para esses desenvolvimentos.
 
-??? exercicio-resolvido "Exercício Resolvido 2.1 — Maximização de utilidade via Lagrange"
+??? exercicio-resolvido "Exercício Resolvido 2.3 — Maximização de utilidade Cobb-Douglas via Lagrange"
 
     **Enunciado:** Um consumidor tem função utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) e enfrenta preços \(p_1 = 4\) e \(p_2 = 1\), com renda \(I = 100\). Encontre a cesta ótima, o multiplicador de Lagrange e interprete o resultado.
 
@@ -906,7 +940,7 @@ O Lagrangeano generalizado é:
 \mathcal{L} = f(\mathbf{x}) + \sum_{j=1}^{m} \lambda_j \left[c_j - g_j(\mathbf{x})\right]
 \]
 
-As condições KKT são:
+As condições KKT são:[^holy-hand-grenade]
 
 \[
 \frac{\partial \mathcal{L}}{\partial x_i} \leq 0, \quad x_i \geq 0, \quad x_i \cdot \frac{\partial \mathcal{L}}{\partial x_i} = 0 \quad \forall \, i
@@ -915,6 +949,8 @@ As condições KKT são:
 \[
 \lambda_j \geq 0, \quad c_j - g_j(\mathbf{x}) \geq 0, \quad \lambda_j \left[c_j - g_j(\mathbf{x})\right] = 0 \quad \forall \, j
 \]
+
+[^holy-hand-grenade]: As condições KKT lembram as instruções da Santa Granada de Mão de Antioquia em *Monty Python and the Holy Grail*: "First shalt thou take out the Holy Pin. Then shalt thou count to three, no more, no less." Há um protocolo preciso — verificar \(\partial \mathcal{L}/\partial x_i \leq 0\), depois \(x_i \geq 0\), depois a folga complementar — e pular uma etapa invalida tudo. "Three shall be the number thou shalt count" — nem duas condições, nem quatro.
 
 !!! definition "Condições de folga complementar"
     As condições \(x_i \cdot \frac{\partial \mathcal{L}}{\partial x_i} = 0\) e \(\lambda_j [c_j - g_j(\mathbf{x})] = 0\) são chamadas de **condições de folga complementar** (*complementary slackness*). Elas expressam que:
@@ -952,7 +988,7 @@ As condições KKT são:
 
     **Folga complementar na prática.** Na maioria dos exercícios fiscais desde 2017, o teto foi uma restrição ativa (vinculante), com \(\lambda > 0\). A transição para o novo arcabouço fiscal em 2023 modificou os parâmetros da restrição, mas preservou a lógica de otimização sob restrição de desigualdade. As pressões por ampliação do teto revelam, na prática, que o multiplicador \(\lambda\) é percebido como significativamente positivo — o custo social da restrição é elevado.
 
-??? exercicio-resolvido "Exercício Resolvido 2.3 — Condições de Kuhn-Tucker com solução de canto"
+??? exercicio-resolvido "Exercício Resolvido 2.4 — Condições de Kuhn-Tucker com solução de canto"
 
     **Enunciado:** Um consumidor com utilidade \(U(x_1, x_2) = 2\sqrt{x_1} + x_2\) enfrenta preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I\). Encontre a cesta ótima para \(I = 20\) e \(I = 0{,}5\), identificando soluções interiores e de canto.
 
@@ -1111,7 +1147,9 @@ Se cada fator recebe sua produtividade marginal (\(r = F_K\) e \(w = F_L\)), ent
 
 ## 2.10 Integração
 
-Derivar é perguntar "quanto muda?". Integrar é perguntar "quanto acumulou?". Se a derivada é a velocidade, a integral é a distância percorrida. Em microeconomia, a integração aparece sempre que queremos medir *totais* a partir de *marginais* — quanto o consumidor ganhou, quanto o produtor perdeu, quanto bem-estar a sociedade desperdiçou. Em resumo: se o Capítulo 5 for medir excedente do consumidor, vai precisar calcular áreas sob curvas. E calcular áreas é integrar.
+Derivar é perguntar "quanto muda?". Integrar é perguntar "quanto acumulou?".[^cheese-shop] Se a derivada é a velocidade, a integral é a distância percorrida.
+
+[^cheese-shop]: Se integrar é acumular, um mercado com oferta zero tem excedente do produtor igual a zero — a integral de nada é nada. O sketch *Cheese Shop* de Monty Python ilustra o caso extremo: um cliente tenta comprar queijo, mas a loja não tem nenhum tipo em estoque. A área sob a curva de oferta é... bem, não há curva. O excedente colapsa. "It's certainly uncontaminated by cheese." Em microeconomia, a integração aparece sempre que queremos medir *totais* a partir de *marginais* — quanto o consumidor ganhou, quanto o produtor perdeu, quanto bem-estar a sociedade desperdiçou. Em resumo: se o Capítulo 5 for medir excedente do consumidor, vai precisar calcular áreas sob curvas. E calcular áreas é integrar.
 
 - **Excedente do consumidor**: a área entre a curva de demanda inversa e o preço de equilíbrio, que mede o ganho líquido dos consumidores por poderem comprar ao preço de mercado:
 
@@ -1313,9 +1351,17 @@ Ao longo das seções anteriores, apresentamos uma diversidade de problemas de o
 
     O IPCA é, portanto, um exemplo concreto de como funções de agregação, teoria dos números-índice e conceitos de otimização do consumidor se combinam para produzir uma estatística que afeta diretamente a vida de milhões de brasileiros — desde a meta de juros fixada pelo Copom até o reajuste de contratos de aluguel e tarifas públicas.
 
-A caixa de ferramentas está completa. Derivadas, Lagrange, envelope, KKT, ponto fixo — cada item foi apresentado com uma aplicação econômica, porque neste livro nenhuma matemática é gratuita. A partir do próximo capítulo, essas ferramentas saem da caixa e vão para a bancada: o Capítulo 3 formaliza as preferências do consumidor, e o Capítulo 4 resolve o problema de otimização que motivou todo este aparato. A viagem da teoria começa agora.
+A caixa de ferramentas está completa. Derivadas, Lagrange, envelope, KKT, ponto fixo — cada item foi apresentado com uma aplicação econômica, porque neste livro nenhuma matemática é gratuita. Três convicções para levar daqui:
 
-*Caixa de ferramentas pronta. No próximo capítulo, o primeiro cliente: o consumidor.*
+1. **O multiplicador conta a história.** De todos os números que você calculará neste livro, \(\lambda\) é o mais eloquente. Ele aparecerá como utilidade marginal da renda (Cap. 4), custo marginal (Cap. 10), preço-sombra do carbono (este capítulo) e custo social de uma restrição fiscal. Sempre com o mesmo significado: quanto vale relaxar a restrição em uma unidade.
+
+2. **O envelope é o atalho do século.** O teorema do envelope transformará cálculos que pareciam exigir re-otimização completa em derivadas parciais avaliadas no ótimo. Roy, Shephard e Hotelling são o mesmo resultado com roupas diferentes — e os três sustentam a dualidade que unificará os Capítulos 4–5 e 10–12.
+
+3. **A matemática não é o destino — é o veículo.** Cada ferramenta deste capítulo existe para responder a uma pergunta econômica. Se você dominar a técnica mas esquecer a pergunta, o investimento se perde. Se lembrar da pergunta, a técnica sempre pode ser revisitada.
+
+A partir do próximo capítulo, essas ferramentas saem da caixa e vão para a bancada: o Capítulo 3 formaliza as preferências do consumidor, e o Capítulo 4 resolve o problema de otimização que motivou todo este aparato. A viagem da teoria começa agora.
+
+*And now for something completely different: o consumidor.*
 
 ---
 
