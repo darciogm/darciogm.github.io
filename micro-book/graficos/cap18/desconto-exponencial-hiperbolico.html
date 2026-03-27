@@ -44,13 +44,13 @@
 <div class="graph-container">
     <div id="plotly-chart"></div>
     <div class="controls">
-      <h3>Parametros</h3>
+      <h3>Parâmetros</h3>
       <div class="slider-group">
         <label>\(\delta\) (fator de desconto): <span class="val" id="val-delta">0.95</span></label>
         <input type="range" id="slider-delta" min="0.80" max="1.00" step="0.01" value="0.95">
       </div>
       <div class="slider-group">
-        <label>\(\beta\) (vies presente): <span class="val" id="val-beta">0.70</span></label>
+        <label>\(\beta\) (viés presente): <span class="val" id="val-beta">0.70</span></label>
         <input type="range" id="slider-beta" min="0.50" max="1.00" step="0.01" value="0.70">
       </div>
       <div class="info-box" id="info"></div>
@@ -87,7 +87,7 @@
         fill: 'toself',
         fillcolor: 'rgba(200,16,46,0.08)',
         line: { color: 'transparent' },
-        name: 'Vies presente',
+        name: 'Viés presente',
         showlegend: true,
         type: 'scatter',
         hoverinfo: 'skip'
@@ -98,7 +98,7 @@
         y: expValues,
         type: 'scatter',
         mode: 'lines+markers',
-        name: 'Exponencial: delta^t',
+        name: 'Exponencial: δᵗ',
         line: { color: '#1565c0', width: 3 },
         marker: { color: '#1565c0', size: 5 }
       };
@@ -108,14 +108,14 @@
         y: hypValues,
         type: 'scatter',
         mode: 'lines+markers',
-        name: 'Quasi-hiperbolico: beta*delta^t',
+        name: 'Quasi-hiperbólico: βδᵗ',
         line: { color: '#C8102E', width: 3, dash: 'dash' },
         marker: { color: '#C8102E', size: 5 }
       };
 
       var layout = {
         margin: { l: 55, r: 20, t: 30, b: 50 },
-        xaxis: { title: { text: '<b><i>Periodos (t)</i></b>', font: { size: 13 } }, range: [-0.5, tMax + 0.5], dtick: 5 },
+        xaxis: { title: { text: '<b><i>Períodos (t)</i></b>', font: { size: 13 } }, range: [-0.5, tMax + 0.5], dtick: 5 },
         yaxis: { title: { text: '<b><i>Fator de desconto</i></b>', font: { size: 13 } }, range: [0, 1.05] },
         showlegend: true,
         legend: { x: 0.35, y: 0.98, font: { size: 9 } },
@@ -164,7 +164,7 @@
       html += '&nbsp; Exp: \\(' + delta.toFixed(2) + '\\) &nbsp; Q-Hip: \\(' + delta.toFixed(2) + '\\)';
       html += '</div>';
       html += '<div style="margin-top:0.3rem;font-size:0.78rem;color:#C8102E;">';
-      html += '<strong>Inconsistencia temporal:</strong> o agente quasi-hiperbolico desconta o futuro proximo (\\(t=0 \\to 1\\)) muito mais do que periodos distantes (\\(t=5 \\to 6\\)).';
+      html += '<strong>Inconsistência temporal:</strong> o agente quasi-hiperbólico desconta o futuro próximo (\\(t=0 \\to 1\\)) muito mais do que períodos distantes (\\(t=5 \\to 6\\)).';
       html += '</div>';
 
       document.getElementById('info').innerHTML = html;
