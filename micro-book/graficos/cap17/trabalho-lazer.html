@@ -86,34 +86,30 @@
   // Budget: C + wL = wT + V => C = w(T-L) + V
   var currentFn = 'cd';
 
-  var BB = [-3, 300, 30, -25];
   var board = JXG.JSXGraph.initBoard('jxgbox1', {
-    boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    boundingbox: [-3.5, 850, 32, -45],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
   });
 
-  function rebuildBoard() {
-    JXG.JSXGraph.freeBoard(board);
-    board = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
-    });
-  }
+  // Fixed axes
+  board.create('axis', [[0,0],[30,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
+    name: '', withLabel: false
+  });
+  board.create('text', [16, -30, '<b><i>L</i> (lazer)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board.create('axis', [[0,0],[0,850]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 100 },
+    name: '', withLabel: false
+  });
+  board.create('text', [-2.5, 425, '<b><i>C</i> (consumo)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
 
-  function addAxes() {
-    board.create('axis', [[0,0],[26,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
-      name: '', withLabel: false
-    });
-    board.create('text', [15, -17, '<b><i>L</i> (lazer)</b>'], {
-      fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-    });
-    board.create('axis', [[0,0],[0,310]], {
-      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 },
-      name: '', withLabel: false
-    });
-    board.create('text', [-2.2, 150, '<b><i>C</i> (consumo)</b>'], {
-      fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-    });
-  }
+  // Dynamic objects array
+  var dynObjs = [];
+  function clearDyn() { dynObjs.forEach(function(o) { board.removeObject(o); }); dynObjs = []; }
 
   function getState() {
     return {
@@ -211,57 +207,52 @@
     var hs = s.T - opt.L;
     var U = utilVal(opt.C, opt.L, s.alpha);
 
-    // Dynamic bounding box
-    var yMax = fullIncome * 1.15;
-    var xMax = Math.min(s.T + s.V / s.w + 3, 30);
-    BB = [-3, yMax, xMax, -yMax * 0.06];
-    rebuildBoard();
-    addAxes();
+    clearDyn();
 
     // Budget line: C = w(T-L)+V = fullIncome - wL
-    board.create('segment', [
+    dynObjs.push(board.create('segment', [
       [0, fullIncome], [s.T + s.V / s.w, 0]
-    ], { strokeColor: '#1565c0', strokeWidth: 2.5, fixed: true });
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5, fixed: true }));
 
-    // Budget line slope label (offset from line)
-    board.create('text', [1.5, fullIncome * 0.85,
+    // Budget line slope label
+    dynObjs.push(board.create('text', [1.5, fullIncome * 0.85,
       '<span style="font-size:10px;color:#1565c0;">incl. = −<i>w</i></span>'
-    ], { fontSize: 10, anchorX: 'left', fixed: true, highlight: false });
+    ], { fontSize: 10, anchorX: 'left', fixed: true, highlight: false }));
 
     // Endowment point
-    board.create('point', [s.T, s.V], {
+    dynObjs.push(board.create('point', [s.T, s.V], {
       size: 4, fillColor: '#666', strokeColor: '#666', name: '(<i>T</i>, <i>V</i>)', fixed: true,
       label: { fontSize: 10, offset: [8, -8], highlight: false }
-    });
+    }));
 
     // Optimal point
-    board.create('point', [opt.L, opt.C], {
+    dynObjs.push(board.create('point', [opt.L, opt.C], {
       size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(<i>L</i>*, <i>C</i>*)', fixed: true,
       label: { fontSize: 11, offset: [10, 8], highlight: false }
-    });
+    }));
 
     // IC through optimal
     if (currentFn === 'leontief') {
       var vL = (1 - s.alpha) * U, vC = s.alpha * U;
-      board.create('segment', [[vL, vC], [vL, yMax]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3, fixed: true });
-      board.create('segment', [[vL, vC], [xMax, vC]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3, fixed: true });
+      dynObjs.push(board.create('segment', [[vL, vC], [vL, 850]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3, fixed: true }));
+      dynObjs.push(board.create('segment', [[vL, vC], [32, vC]], { strokeColor: '#00897b', strokeWidth: 2, dash: 3, fixed: true }));
     } else {
-      board.create('curve', [
+      dynObjs.push(board.create('curve', [
         function(t) { return t; },
         (function(Uval, a) {
           return function(t) {
             if (t < 0.1) return NaN;
             var v = icC(t, Uval, a);
-            return (v > 0 && v < yMax) ? v : NaN;
+            return (v > 0 && v < 850) ? v : NaN;
           };
         })(U, s.alpha),
-        0.1, xMax
-      ], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
+        0.1, 32
+      ], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 }));
     }
 
     // Dashed projection lines
-    board.create('segment', [[opt.L, 0], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true });
-    board.create('segment', [[0, opt.C], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true });
+    dynObjs.push(board.create('segment', [[opt.L, 0], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+    dynObjs.push(board.create('segment', [[0, opt.C], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
 
     // Info panel
     var html = '<div style="text-align:center;">';
