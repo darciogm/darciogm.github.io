@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-  Oferta de Trabalho Backward-Bending — Interactive Graph
+  Oferta de Trabalho Backward-Bending — Chapter 17
   Library: JSXGraph
-  Chapter 16 — Microeconomia
+  Two panels: Lazer-Consumo + Curva de oferta h*(w)
 -->
 <html lang="pt-BR">
 <head>
@@ -21,10 +21,10 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
-.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
     .boards-wrapper { display: flex; flex-direction: column; gap: 0.5rem; }
     .board-label { font-size: 0.8rem; font-weight: 700; color: #555; text-align: center; }
- .jxgbox { flex: 1 1 420px; max-width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
+    .jxgbox { flex: 1 1 420px; max-width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.8rem; }
@@ -39,14 +39,13 @@
       .jxgbox { flex-basis: 100%; width: 100%; max-width: 420px; }
       .controls { flex-basis: 100%; width: 100%; max-width: 420px; }
     }
-    /* anti-inflation-fix */
     html,body{margin:0!important;padding:0!important;overflow:visible!important}
   </style>
 </head>
 <body>
 <div class="graph-container">
     <div class="boards-wrapper">
-      <div class="board-label">Lazer-Consumo (para o salário selecionado)</div>
+      <div class="board-label">Lazer–Consumo (para o salário selecionado)</div>
       <div id="jxgbox1" class="jxgbox"></div>
       <div class="board-label">Curva de oferta de trabalho \(h^*(w)\)</div>
       <div id="jxgbox2" class="jxgbox"></div>
@@ -70,270 +69,190 @@
     </div>
   </div>
 
-  <script>
-    /*
-      Use a Stone-Geary-like utility to generate backward bending:
-      U(C,L) = ln(C) + gamma * ln(L)
-      Budget: C = w(T - L) + V, T = 24.
-      FOC: 1/C = gamma * w / (wL), i.e. wL/C = gamma => wL = gamma * C
-      Substituting: C = w(T-L)+V, wL = gamma*(w(T-L)+V)
-      => L = gamma*(wT+V-wL)/w + ... let's solve:
-      wL = gamma*(wT + V - wL) => wL(1+gamma) = gamma*(wT+V)
-      => L* = gamma*(wT+V) / (w*(1+gamma))
-      => h* = T - L* = T - gamma*(wT+V)/(w*(1+gamma))
-           = T/(1+gamma) - gamma*V/(w*(1+gamma))
-           = (wT - gamma*V) / (w*(1+gamma))
+<script>
+  var TT = 24; // total hours
 
-      dh*/dw = gamma*V / (w^2*(1+gamma))
-      This is always >= 0 when V >= 0. For backward bending, we need V > 0 and high w
-      Actually with this utility h* = T/(1+gamma) - gamma*V/(w*(1+gamma))
-      dh*/dw = gamma*V/(w^2*(1+gamma)) > 0 always. Not backward bending.
+  // CES utility: U = [a*C^rho + (1-a)*L^rho]^(1/rho)
+  // sigma = 1/gamma (gamma > 1 => sigma < 1 => backward bending possible)
+  function computeOptimal(w, V, gamma) {
+    var sigma = 1 / gamma;
+    var a = 0.5;
+    var fullIncome = w * TT + V;
+    var ratio = Math.pow(a / (w * (1 - a)), sigma);
+    var Lstar = fullIncome / (ratio + w);
+    Lstar = Math.min(Math.max(Lstar, 0.5), TT - 0.1);
+    var hstar = TT - Lstar;
+    var Cstar = w * hstar + V;
+    return { L: Lstar, h: hstar, C: Cstar };
+  }
 
-      Let's use a different utility: U(C,L) = C^a * L^(1-a) with a = a(w) varying
-      Or better: use CES utility U = (C^rho + gamma * L^rho)^(1/rho) with rho < 0
+  function getState() {
+    return {
+      w: parseFloat(document.getElementById('slider-w').value),
+      V: parseFloat(document.getElementById('slider-V').value),
+      gamma: parseFloat(document.getElementById('slider-gamma').value)
+    };
+  }
 
-      Actually, simplest approach: use a known backward-bending functional form.
-      Use: h*(w) = A * w^(1-gamma) * (wT+V)^(gamma-1) * T * ...
+  // ========== Board 1: Leisure-Consumption ==========
+  var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-3, 1150, 30, -60],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
 
-      Let's just use the log utility directly with a twist.
-      U(C,L) = ln(C - C0) + gamma * ln(L) where C0 is subsistence consumption.
-      This generates backward bending.
+  board1.create('axis', [[0,0],[28,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
+    name: '', withLabel: false
+  });
+  board1.create('text', [15, -40, '<b><i>L</i> (lazer)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board1.create('axis', [[0,0],[0,1100]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 200 },
+    name: '', withLabel: false
+  });
+  board1.create('text', [-2.2, 575, '<b><i>C</i> (consumo)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
 
-      FOC: 1/(C-C0) = gamma*w/(wL) => ... too complex.
+  // Dynamic objects for board 1
+  var dyn1 = [];
+  function clearDyn1() { dyn1.forEach(function(o) { board1.removeObject(o); }); dyn1 = []; }
 
-      Let me use a simple parametric approach:
-      h*(w) = T * w^a / (w^a + b) where a and b control the shape.
-      This gives h->0 as w->0 and h->T as w->inf. Not backward bending.
+  // ========== Board 2: Labor supply h*(w) ==========
+  var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
+    boundingbox: [-2, 45, 22, -4],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
 
-      Better: h*(w) = k * w / (1 + c*w^2)  — backward bending parabola
-      Peak at w = 1/sqrt(c), h_max = k/(2*sqrt(c))
+  board2.create('axis', [[0,0],[20,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
+    name: '', withLabel: false
+  });
+  board2.create('text', [11, -2.8, '<b><i>h</i> (trabalho)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board2.create('axis', [[0,0],[0,42]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 5 },
+    name: '', withLabel: false
+  });
+  board2.create('text', [-1.4, 22, '<b><i>w</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
 
-      Let me use the actual model with subsistence:
-      U = (C - C0)^alpha * L^(1-alpha), C0 = subsistence
-      Budget: C = w(T-L) + V
-      FOC: alpha/(C-C0) * L = (1-alpha)/w * (C-C0)... let me redo.
+  // Dynamic objects for board 2
+  var dyn2 = [];
+  function clearDyn2() { dyn2.forEach(function(o) { board2.removeObject(o); }); dyn2 = []; }
 
-      Actually let me just use: U = ln(C) + gamma*ln(L) with the standard result
-      and add subsistence to make it backward bending.
+  // ========== Update ==========
+  function update() {
+    var s = getState();
+    document.getElementById('val-w').textContent = s.w.toFixed(1);
+    document.getElementById('val-V').textContent = s.V.toFixed(0);
+    document.getElementById('val-gamma').textContent = s.gamma.toFixed(2);
 
-      Simplest backward bending:
-      U(C,L) = ln(C) + gamma * ln(L - L0) where L0 = minimum leisure (sleep etc)
-      Budget: C = w(T-L) + V
-      FOC: gamma/[w(L-L0)] = 1/C => C = w(L-L0)/gamma ... no, let me redo.
+    var opt = computeOptimal(s.w, s.V, s.gamma);
+    var fullIncome = s.w * TT + s.V;
 
-      Lagrangean: max ln(C) + gamma*ln(L-L0) s.t. C + wL = wT + V
-      FOC: 1/C = lambda, gamma/(L-L0) = lambda*w
-      => gamma/(L-L0) = w/C => C = w(L-L0)/gamma
-      Budget: w(L-L0)/gamma + wL = wT + V
-      => wL(1 + 1/gamma) = wT + V + wL0/gamma  ... let me just solve:
-      C = wT + V - wL, and C = w(L-L0)/gamma
-      => wT + V - wL = w(L - L0)/gamma
-      => gamma*(wT + V - wL) = w(L - L0)
-      => gamma*wT + gamma*V - gamma*wL = wL - wL0
-      => gamma*wT + gamma*V + wL0 = wL(1 + gamma)
-      => L* = [gamma*(wT + V) + wL0] / [w*(1+gamma)]
-      => L* = gamma*T/(1+gamma) + gamma*V/[w*(1+gamma)] + L0/(1+gamma)
-
-      h* = T - L* = T - gamma*T/(1+gamma) - gamma*V/[w*(1+gamma)] - L0/(1+gamma)
-         = T/(1+gamma) - gamma*V/[w*(1+gamma)] - L0/(1+gamma)
-         = (T - L0)/(1+gamma) - gamma*V/[w*(1+gamma)]
-
-      dh*/dw = gamma*V / [w^2*(1+gamma)]  -- still always positive when V>0!
-
-      The issue is that with log utility, income and substitution effects exactly offset on the w*T term.
-
-      For genuine backward bending, I need the income effect to dominate. Let me use a CES approach:
-      U = [alpha*C^rho + (1-alpha)*L^rho]^(1/rho)
-
-      With rho < 0 (complementarity between C and L), when sigma = 1/(1-rho) < 1,
-      the income effect dominates at high wages. Let me just compute numerically.
-    */
-
-    var T = 24;
-
-    // CES utility: U = [a*C^rho + (1-a)*L^rho]^(1/rho)
-    // FOC: a*C^(rho-1) / [(1-a)*L^(rho-1)] = w
-    // => (a/(1-a)) * (C/L)^(rho-1) = w
-    // => C/L = [w*(1-a)/a]^(1/(rho-1)) = [w*(1-a)/a]^(1/(rho-1))
-    // Let s = 1/(1-rho) = elasticity of substitution
-    // C/L = [w*(1-a)/a]^s ... no, let me redo.
-    // From FOC: (a/(1-a))*(C/L)^(rho-1) = w
-    // (C/L)^(rho-1) = w*(1-a)/a
-    // C/L = [w*(1-a)/a]^(1/(rho-1))
-    // Since sigma = 1/(1-rho), we have 1/(rho-1) = -sigma
-    // C/L = [w*(1-a)/a]^(-sigma) = [a/(w*(1-a))]^sigma
-    // C = L * [a/(w*(1-a))]^sigma
-    // Budget: C + wL = wT + V
-    // L * [a/(w*(1-a))]^sigma + wL = wT + V
-    // L * {[a/(w*(1-a))]^sigma + w} = wT + V
-    // L* = (wT + V) / {[a/(w*(1-a))]^sigma + w}
-    // h* = T - L*
-
-    function computeOptimal(w, V, gamma, a_param) {
-      // gamma controls sigma (elasticity of substitution)
-      // Use sigma = 1/gamma (so gamma > 1 means sigma < 1 => backward bending)
-      var sigma = 1 / gamma;
-      var a = a_param || 0.5;
-      var fullIncome = w * T + V;
-      var ratio = Math.pow(a / (w * (1 - a)), sigma);
-      var Lstar = fullIncome / (ratio + w);
-      Lstar = Math.min(Math.max(Lstar, 0.5), T - 0.1);
-      var hstar = T - Lstar;
-      var Cstar = w * hstar + V;
-      return { L: Lstar, h: hstar, C: Cstar };
-    }
-
-    // Board 1: Leisure-Consumption space
-    var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
-      boundingbox: [-3.5, 1400, 31, -150],
-      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
-    });
-
-    board1.create('axis', [[0,0],[26,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
-      name: '', withLabel: false
-    });
-board1.create('text', [15.5, -97.5, '<b><i>L</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
-    board1.create('axis', [[0,0],[0,600]], {
-      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 100 },
-      name: '', withLabel: false
-    });
-board1.create('text', [-1.9250000000000003, 700.0, '<b><i>C</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
+    // --- Board 1: redraw dynamic objects ---
+    clearDyn1();
 
     // Budget line
-    board1.create('segment', [
-      function() { var s = getState(); return [0, s.w * T + s.V]; },
-      function() { var s = getState(); return [T + s.V / s.w, 0]; }
-    ], { strokeColor: '#1565c0', strokeWidth: 2 });
+    var xIntercept = Math.min(TT + s.V / s.w, 29);
+    dyn1.push(board1.create('segment', [
+      [0, fullIncome], [xIntercept, 0]
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5, fixed: true }));
+
+    // Slope label (above the line, not on it)
+    dyn1.push(board1.create('text', [2, fullIncome * 0.82,
+      '<span style="font-size:10px;color:#1565c0;">incl. = −<i>w</i></span>'
+    ], { fontSize: 10, anchorX: 'left', fixed: true, highlight: false }));
+
+    // Endowment point
+    dyn1.push(board1.create('point', [TT, s.V], {
+      size: 4, fillColor: '#666', strokeColor: '#666', name: '(<i>T</i>, <i>V</i>)', fixed: true,
+      label: { fontSize: 10, offset: [-50, 8], highlight: false }
+    }));
 
     // Optimal point
-    var optPt1 = board1.create('point', [
-      function() { var s = getState(); return computeOptimal(s.w, s.V, s.gamma).L; },
-      function() { var s = getState(); return computeOptimal(s.w, s.V, s.gamma).C; }
-    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
+    dyn1.push(board1.create('point', [opt.L, opt.C], {
+      size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(<i>L</i>*, <i>C</i>*)', fixed: true,
+      label: { fontSize: 11, offset: [10, 8], highlight: false }
+    }));
 
-    // Board 2: Labor supply curve h*(w)
-    var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
-      boundingbox: [-2.5, 50, 22, -5.5],
-      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
-    });
+    // Dashed projection lines
+    dyn1.push(board1.create('segment', [[opt.L, 0], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+    dyn1.push(board1.create('segment', [[0, opt.C], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
 
-    board2.create('axis', [[0,0],[19,0]], {
-      ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
-      name: '', withLabel: false
-    });
-board2.create('text', [11.0, -3.575, '<b><i>H</i> (trabalho)</b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
-    board2.create('axis', [[0,0],[0,42]], {
-      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 5 },
-      name: '', withLabel: false
-    });
-board2.create('text', [-1.375, 25.0, '<b><i>w</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
+    // --- Board 2: redraw dynamic objects ---
+    clearDyn2();
 
-    // Labor supply curve (parametric: w on y-axis, h on x-axis)
-    var supplyCurve = board2.create('curve', [
-      function(t) { var s = getState(); return computeOptimal(t, s.V, s.gamma).h; },
+    // Labor supply curve (parametric: h on x-axis, w on y-axis)
+    dyn2.push(board2.create('curve', [
+      function(t) { return computeOptimal(t, s.V, s.gamma).h; },
       function(t) { return t; },
-      1, 40
-    ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+      0.5, 42
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
 
-    // Current point
-    var supplyPt = board2.create('point', [
-      function() { var s = getState(); return computeOptimal(s.w, s.V, s.gamma).h; },
-      function() { return getState().w; }
-    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
-
-    // Dashed lines
-    board2.create('segment', [
-      function() { var s = getState(); return [computeOptimal(s.w, s.V, s.gamma).h, 0]; },
-      function() { var s = getState(); return [computeOptimal(s.w, s.V, s.gamma).h, s.w]; }
-    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
-    board2.create('segment', [
-      function() { var s = getState(); return [0, s.w]; },
-      function() { var s = getState(); return [computeOptimal(s.w, s.V, s.gamma).h, s.w]; }
-    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
-
-    // SE/IE decomposition lines
-    // Show compensated supply as reference
-    var compCurve = board2.create('curve', [
-      function(t) {
-        // Compensated (Hicksian) supply: only substitution effect
-        // Approximate: at base wage w0, compute utility, then find h at wage t holding utility constant
-        // Simplified: use Slutsky. Just show the tangent line at current wage as SE direction
-        var s = getState();
-        var opt0 = computeOptimal(s.w, s.V, s.gamma);
-        // Numerical SE: dh/dw|compensated ≈ dh/dw + h * dL/dV
-        // For display, show a line from the current point with positive slope (SE always positive)
-        return opt0.h + 0.3 * (t - s.w);
-      },
+    // Compensated supply (SE only — approximate with positive slope from current point)
+    dyn2.push(board2.create('curve', [
+      function(t) { return opt.h + 0.3 * (t - s.w); },
       function(t) { return t; },
-      1, 40
-    ], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, strokeOpacity: 0.5 });
+      0.5, 42
+    ], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, strokeOpacity: 0.5 }));
 
-    board2.create('text', [15, 38, '<span style="color:#00897b;font-size:10px;">-- <i>ES</i> (compensada)</span>'],
-      { fontSize: 10, anchorX: 'left', useMathJax: false, highlight: false });
+    dyn2.push(board2.create('text', [16, 40, '<span style="color:#00897b;font-size:10px;"><i>ES</i> (compensada)</span>'], {
+      fontSize: 10, anchorX: 'left', fixed: true, highlight: false
+    }));
 
-    function getState() {
-      return {
-        w: parseFloat(document.getElementById('slider-w').value),
-        V: parseFloat(document.getElementById('slider-V').value),
-        gamma: parseFloat(document.getElementById('slider-gamma').value)
-      };
-    }
+    // Current point on supply curve
+    dyn2.push(board2.create('point', [opt.h, s.w], {
+      size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true
+    }));
 
-    function update() {
-      var s = getState();
-      document.getElementById('val-w').textContent = s.w.toFixed(1);
-      document.getElementById('val-V').textContent = s.V.toFixed(0);
-      document.getElementById('val-gamma').textContent = s.gamma.toFixed(2);
+    // Dashed projection lines
+    dyn2.push(board2.create('segment', [[opt.h, 0], [opt.h, s.w]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+    dyn2.push(board2.create('segment', [[0, s.w], [opt.h, s.w]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
 
-      var opt = computeOptimal(s.w, s.V, s.gamma);
+    // --- Info panel ---
+    var dw = 0.1;
+    var hplus = computeOptimal(s.w + dw, s.V, s.gamma).h;
+    var hminus = computeOptimal(s.w - dw, s.V, s.gamma).h;
+    var dhdw = (hplus - hminus) / (2 * dw);
 
-      // Numerical derivative
-      var dw = 0.1;
-      var hplus = computeOptimal(s.w + dw, s.V, s.gamma).h;
-      var hminus = computeOptimal(s.w - dw, s.V, s.gamma).h;
-      var dhdw = (hplus - hminus) / (2 * dw);
+    var region = dhdw > 0.01 ? 'ES domina (trecho ascendente)' :
+                 (dhdw < -0.01 ? 'ER domina (backward-bending)' : 'ES \\(\\approx\\) ER');
+    var regionColor = dhdw > 0.01 ? '#00897b' : '#C8102E';
 
-      var region = dhdw > 0.01 ? 'ES domina (trecho ascendente)' :
-                   (dhdw < -0.01 ? 'ER domina (trecho backward-bending)' : 'ES \\(\\approx\\) ER');
-      var regionColor = dhdw > 0.01 ? '#00897b' : '#C8102E';
+    var html = '<div style="margin-top:0.2rem;">';
+    html += 'Renda plena: \\(M^* = ' + fullIncome.toFixed(0) + '\\)<br>';
+    html += '\\(h^* = ' + opt.h.toFixed(1) + '\\) horas de trabalho<br>';
+    html += '\\(L^* = ' + opt.L.toFixed(1) + '\\) horas de lazer<br>';
+    html += '\\(C^* = ' + opt.C.toFixed(0) + '\\)<br>';
+    html += '\\(\\partial h^*/\\partial w = ' + dhdw.toFixed(3) + '\\)<br>';
+    html += '<strong style="color:' + regionColor + ';">' + region + '</strong>';
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    html += '\\(\\gamma > 1\\): baixa elasticidade de substituição (\\(\\sigma = 1/\\gamma < 1\\)), favorece backward-bending.';
+    html += '</div>';
 
-      var html = '<div style="margin-top:0.2rem;">';
-      html += '\\(h^* = ' + opt.h.toFixed(1) + '\\) horas<br>';
-      html += '\\(L^* = ' + opt.L.toFixed(1) + '\\) horas<br>';
-      html += '\\(C^* = ' + opt.C.toFixed(0) + '\\)<br>';
-      html += '\\(\\partial h^*/\\partial w = ' + dhdw.toFixed(3) + '\\)<br>';
-      html += '<strong style="color:' + regionColor + ';">' + region + '</strong>';
-      html += '</div>';
-      html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
-      html += '\\(\\gamma > 1\\): baixa elasticidade de substituição (\\(\\sigma = 1/\\gamma < 1\\)), favorece backward-bending.';
-      html += '</div>';
+    document.getElementById('info').innerHTML = html;
+    board1.update();
+    board2.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
 
-      document.getElementById('info').innerHTML = html;
-      board1.update();
-      board2.update();
-      if (window.MathJax && MathJax.typeset) MathJax.typeset();
-    }
-
-    function resetAll() {
-      document.getElementById('slider-w').value = 10;
-      document.getElementById('slider-V').value = 20;
-      document.getElementById('slider-gamma').value = 1.50;
-      update();
-    }
-
-    ['slider-w','slider-V','slider-gamma'].forEach(function(id) {
-      document.getElementById(id).addEventListener('input', update);
-    });
+  function resetAll() {
+    document.getElementById('slider-w').value = 10;
+    document.getElementById('slider-V').value = 20;
+    document.getElementById('slider-gamma').value = 1.50;
     update();
-  </script>
+  }
+
+  ['slider-w','slider-V','slider-gamma'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
 </body>
 </html>
