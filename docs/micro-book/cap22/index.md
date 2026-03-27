@@ -161,6 +161,10 @@ Se \(1 < \alpha < N\), a contribuição é socialmente eficiente (\(\alpha/N < 1
 
 <iframe src="../graficos/cap22/bens-publicos-experimento.html" title="Figura 22.1 — Jogo de Bens Públicos: Simulação com e sem Punição" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
+<div class="caption-obj" markdown>
+**Figura 22.1 — Jogo de Bens Públicos: Simulação com e sem Punição.** Simule rodadas do jogo de bens públicos com N jogadores. Compare a contribuição média ao longo do tempo nos cenários com e sem punição por pares. O tratamento com punição sustenta cooperação significativamente mais alta, confirmando os resultados experimentais de Fehr e Gächter (2000).
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 22.1 — Equilíbrio de Nash no jogo de bens públicos"
     **Enunciado.** Em um jogo de bens públicos, \(N = 4\) jogadores recebem dotação \(w = 20\) cada. Cada jogador \(i\) escolhe quanto contribuir \(g_i \in [0, 20]\) ao fundo público. O retorno total do fundo é \(1{,}6 \sum g_i\), dividido igualmente entre os 4 jogadores. O payoff do jogador \(i\) é:
 
@@ -408,6 +412,10 @@ O Nobel de 2019 reconheceu a transformação que os RCTs trouxeram para a econom
     Na prática, deve-se adicionar 15–20% para compensar atrito esperado: \(714 / 0{,}85 \approx 840\) participantes, custo de US\$ 12.600. Este é um RCT relativamente barato — o estudo original de desparasitação de Kremer custou menos de US\$ 50.000 e influenciou políticas que alcançaram milhões de crianças.
 
 <iframe src="../graficos/cap22/poder-estatistico.html" title="Figura 22.2 — Poder Estatístico, Tamanho da Amostra e Tamanho do Efeito" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 22.2 — Poder Estatístico, Tamanho da Amostra e Tamanho do Efeito.** Ajuste o tamanho do efeito esperado e o nível de significância para ver como o poder estatístico varia com o tamanho da amostra. A linha tracejada indica o limiar convencional de 80% de poder.
+</div>
 
 ---
 
