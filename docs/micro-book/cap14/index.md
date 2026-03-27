@@ -6,7 +6,7 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
 
 ---
 
-## 14.1 O Sistema de Preços Competitivo
+## 14.1 Vasos Comunicantes: O Sistema de Preços Competitivo
 
 ### Interdependência de mercados
 
@@ -39,7 +39,7 @@ A escolha do numerário é uma questão de conveniência — qualquer bem pode s
 
 ---
 
-## 14.2 Modelo Gráfico: A Caixa de Edgeworth
+## 14.2 Um Retângulo Vale Mais que Mil Palavras: A Caixa de Edgeworth
 
 A definição formal de equilíbrio geral competitivo — um vetor de preços que equilibra simultaneamente todos os mercados — pode soar como algo que só um computador amaria. Antes de mergulhar na formalização matemática, vamos fazer algo mais humano: desenhar uma caixa. Não qualquer caixa — a **Caixa de Edgeworth**, talvez o diagrama mais engenhoso de toda a microeconomia. Trata-se de uma economia mínima, com apenas dois consumidores e dois bens, mas que já captura a essência das trocas voluntárias, da eficiência e do papel dos preços relativos. É o tipo de modelo que faz você pensar: "por que não me mostraram isso antes?"
 
@@ -91,7 +91,7 @@ Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotaç
 
 ---
 
-## 14.3 Troca Pura: Curva de Contrato e Núcleo
+## 14.3 O Caminho Dourado: Curva de Contrato e Núcleo
 
 A Caixa de Edgeworth nos deu o mapa. Agora precisamos de um critério para separar os tesouros dos becos sem saída. Entre todas as alocações possíveis naquela caixa, quais são "boas"? Mais precisamente, quais alocações não deixam dinheiro na mesa — oportunidades de trocas mutuamente benéficas que ninguém aproveitou? O conceito de eficiência de Pareto fornece o critério, e a curva de contrato traça o caminho dourado: o locus de todas as alocações em que não há mais nenhuma barganha capaz de melhorar a vida de alguém sem prejudicar outra pessoa.
 
@@ -262,9 +262,15 @@ Esse resultado tem um significado profundo: é a versão mais rigorosa da ideia 
 
     **Interpretação econômica:** A troca melhora ambos os agentes: A, que tinha mais do bem 1 do que do bem 2, vende parte de sua dotação do bem 1 e compra bem 2. B faz o oposto. O Primeiro Teorema do Bem-Estar garante que o resultado é eficiente — não há recomposição das cestas que beneficie um sem prejudicar o outro. Na analogia com o comércio internacional, A é como o Brasil (abundante em commodities) e B como a UE (abundante em manufaturas): a troca beneficia ambos.
 
+<iframe src="../graficos/cap14/webr-equilibrio-walrasiano.html" title="WebR — Equilíbrio Walrasiano na Caixa de Edgeworth" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 14.1 — Equilíbrio walrasiano: das equações ao gráfico.** O código resolve o ER 14.2 completo em R: calcula o preço de equilíbrio, as alocações, verifica $TMS_A = TMS_B = p^*$ e testa a Lei de Walras a preços arbitrários. O gráfico mostra a função de excesso de demanda $Z^1(p)$ — onde ela cruza zero é o equilíbrio. Altere os parâmetros `aA` e `aB` e observe como o preço de equilíbrio se desloca.
+</div>
+
 ---
 
-## 14.4 Produção e Troca: Fronteira de Possibilidades de Produção
+## 14.4 Quem Produz o Quê: Fronteira de Possibilidades de Produção
 
 A análise da Caixa de Edgeworth tratou de uma economia de troca pura — os bens já existem e a única questão é como distribuí-los. Mas em economias reais, os bens precisam ser produzidos, e a alocação de insumos entre setores produtivos é uma decisão tão importante quanto a distribuição de bens entre consumidores. Ao introduzir produção no modelo, surge uma nova dimensão de eficiência e um novo instrumento gráfico fundamental: a **fronteira de possibilidades de produção** (FPP).
 
@@ -312,7 +318,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ---
 
-## 14.5 Condições de Eficiência de Pareto
+## 14.5 Três Peças do Quebra-Cabeça: Condições de Eficiência de Pareto
 
 Eficiência na troca, eficiência na produção, eficiência no mix de produtos — três peças de um quebra-cabeça que só funciona quando encaixam ao mesmo tempo. As seções anteriores identificaram cada peça separadamente. A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A [Tabela 14.1](#tabela-14-1) sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
 
@@ -376,7 +382,7 @@ A transição das condições de eficiência para os teoremas do bem-estar é na
 
 ---
 
-## 14.6 O Primeiro Teorema do Bem-Estar
+## 14.6 A Orquestra sem Maestro: Primeiro Teorema do Bem-Estar
 
 Chegamos ao grand finale da teoria do equilíbrio geral — o resultado que faz economistas perderem o fôlego desde 1954. As condições de eficiência na troca, na produção e no mix de produtos — sintetizadas na tabela acima — são alcançadas simultaneamente pelo equilíbrio competitivo. Pare e pense no que isso significa: milhões de agentes, cada um egoisticamente perseguindo seu próprio interesse, sem nenhum planejador central, sem nenhum algoritmo coordenador, chegam a um resultado que *ninguém conseguiria melhorar*. É como se uma orquestra tocasse perfeitamente sem maestro — cada músico ouvindo apenas o preço do ingresso. O Primeiro Teorema do Bem-Estar formaliza essa intuição quase mágica, constituindo o resultado mais importante de toda a teoria do equilíbrio geral.
 
@@ -458,7 +464,7 @@ Do ponto de vista da política pública, o Primeiro Teorema fornece o fundamento
 
 ---
 
-## 14.7 O Segundo Teorema do Bem-Estar
+## 14.7 Redistribuir sem Estragar: Segundo Teorema do Bem-Estar
 
 O Primeiro Teorema nos diz que o equilíbrio competitivo é eficiente — mas *qual* equilíbrio eficiente? A curva de contrato contém infinitas alocações Pareto-eficientes, e algumas delas são altamente desiguais. O mercado seleciona um ponto específico na curva de contrato, determinado pelas dotações iniciais dos agentes. Se a sociedade considera a distribuição resultante injusta, será necessário sacrificar a eficiência para obter equidade? O Segundo Teorema do Bem-Estar responde a essa pergunta com um resultado surpreendentemente otimista.
 
@@ -561,6 +567,12 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
     **Interpretação econômica:** O Segundo Teorema demonstra que eficiência e equidade são objetivos separáveis: basta redistribuir a riqueza inicial e deixar os mercados funcionarem. No Brasil, o **Bolsa Família** e o **BPC** (Benefício de Prestação Continuada) são exemplos de transferências diretas que buscam alterar a distribuição sem distorcer preços relativos — embora, na prática, nenhuma transferência seja perfeitamente *lump-sum* (sempre há custos administrativos e incentivos adversos).
 
+<iframe src="../graficos/cap14/webr-segundo-teorema.html" title="WebR — Segundo Teorema e Transferências Lump-Sum" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 14.2 — Segundo Teorema: redistribuir sem estragar.** O código implementa o ER 14.4 completo: verifica que a alocação-meta é eficiente, calcula o preço de suporte e a transferência lump-sum necessária. No gráfico, observe a seta da dotação original à meta — essa é a transferência que separa eficiência de equidade. Mude `xA_target` para outra alocação sobre a curva de contrato e veja como a transferência se ajusta.
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 14.5 — Imposto sobre produção e perda de eficiência no equilíbrio geral"
     **Enunciado:** Em uma economia com dois bens (1 e 2), dois consumidores idênticos com utilidade \(U = x_1^{1/2} x_2^{1/2}\) e um setor produtivo com FPP dada por \(X_1^2 + X_2^2 = 200\), o governo introduz um imposto *ad valorem* de taxa \(t\) sobre o bem 1, de modo que o preço pago pelo consumidor é \(p_1(1+t)\) enquanto o produtor recebe \(p_1\). Mostre que o equilíbrio com imposto viola a condição de eficiência no mix de produtos e calcule a perda de bem-estar para \(t = 0{,}5\).
 
@@ -618,6 +630,12 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
     **Interpretação econômica:** O imposto sobre o bem 1 encarece-o relativamente, fazendo consumidores demandarem menos e a economia produzir menos desse bem. A TMT deixa de igualar a TMS: a economia está "dentro" da fronteira de utilidades possíveis, produzindo uma combinação de bens que não corresponde às preferências dos consumidores. Essa é a essência da perda de peso morto da tributação em equilíbrio geral — e a razão pela qual o Segundo Teorema insiste em transferências *lump-sum*: elas não criam essa cunha entre TMS e TMT.
 
+<iframe src="../graficos/cap14/webr-fpp-eficiencia.html" title="WebR — FPP e Distorção Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 14.5 — FPP, imposto e perda de eficiência.** O código calcula o equilíbrio na FPP circular com e sem imposto, mostrando como a cunha tributária viola $TMS = TMT$. Experimente alterar a taxa `t` no vetor `taxas` e observe como a perda de bem-estar cresce de forma convexa — impostos pequenos custam pouco, mas a conta explode rapidamente.
+</div>
+
 ---
 
 !!! box-brasil "Box Brasil — Acordo Mercosul–União Europeia: equilíbrio geral em escala continental"
@@ -668,7 +686,7 @@ Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo 
 
 ---
 
-## 14.8 Modelo Matemático de Troca
+## 14.8 Das Caixas às Equações: Modelo Matemático de Troca
 
 Diagramas e intuições nos trouxeram até aqui — agora é hora de traduzir tudo em equações que um computador (ou um aluno de pós-graduação) consiga resolver. Formalizamos o modelo matematicamente, introduzindo as funções de excesso de demanda e a Lei de Walras — ferramentas que nos permitirão, na seção seguinte, demonstrar a existência do equilíbrio walrasiano.
 
@@ -775,9 +793,15 @@ Essa consequência é profundamente significativa do ponto de vista prático. El
 
     **Interpretação econômica:** Ao preço \(\mathbf{p} = (2, 1)\), há excesso de oferta no mercado do bem 1 (\(Z^1 < 0\)) e excesso de demanda no mercado do bem 2 (\(Z^2 > 0\)). A Lei de Walras garante que o *valor* desses desequilíbrios se cancela exatamente. Isso ocorre porque cada consumidor gasta exatamente sua renda — o que não é gasto em um bem é gasto no outro. Para alcançar o equilíbrio, o preço relativo \(p_1/p_2\) precisa cair (reduzindo o excesso de oferta do bem 1 e o excesso de demanda do bem 2). Note que a Lei de Walras vale mesmo fora do equilíbrio — ela não é uma condição de equilíbrio, mas uma identidade contábil.
 
+<iframe src="../graficos/cap14/webr-lei-walras.html" title="WebR — Lei de Walras e Excesso de Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 14.3 — Lei de Walras: identidade contábil universal.** O código calcula o excesso de demanda $Z^1$ e $Z^2$ a vários preços e verifica que $p_1 Z^1 + p_2 Z^2 = 0$ em *todos* eles — não apenas no equilíbrio. Altere as dotações `wA` e `wB` e confirme que a identidade continua valendo.
+</div>
+
 ---
 
-## 14.9 Existência de Equilíbrio
+## 14.9 O Castelo Existe? Prova de Existência do Equilíbrio
 
 Temos as equações, temos a Lei de Walras, temos toda a maquinaria. Mas falta responder a pergunta que tirou o sono de economistas matemáticos por oitenta anos: esse equilíbrio que tanto discutimos *existe mesmo*, ou estamos construindo castelos sobre nuvens? Não é *a priori* evidente que um sistema de \(n-1\) equações não lineares interdependentes tenha solução — afinal, já tentou resolver um Sudoku que não tinha resposta? A demonstração de existência, devida a Arrow e Debreu (1954), é uma das mais célebres da economia matemática e recorre a um aliado inesperado vindo da topologia: o Teorema do Ponto Fixo de Brouwer.
 
@@ -834,6 +858,12 @@ Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \ma
 
     **Conexão com este capítulo:**
     O modelo Arrow-Debreu é a estrutura formal que sustenta toda a análise de equilíbrio geral deste capítulo. A prova de existência do equilíbrio walrasiano, a Caixa de Edgeworth, os Teoremas do Bem-Estar e o conceito de mercados contingentes — todos são contribuições diretas ou derivações do framework desenvolvido por Arrow e Debreu.
+
+<iframe src="../graficos/cap14/webr-existencia.html" title="WebR — Tâtonnement e Ponto Fixo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**WebR 14.4 — Tâtonnement e ponto fixo de Brouwer.** O código implementa a função de ajuste de preços $g(\mathbf{p})$ da equação $\eqref{eq:14.13}$ e itera até convergir ao equilíbrio. Observe no gráfico da esquerda como $g(s)$ cruza a linha de 45° — esse é o ponto fixo garantido pelo Teorema de Brouwer. Experimente mudar o ponto inicial `s0` e veja que a convergência ocorre de qualquer lugar do simplex.
+</div>
 
 ??? exercicio-resolvido "Exercício Resolvido 14.7 — Excesso de demanda e equilíbrio com preferências CES"
     **Enunciado:** Considere uma economia de troca com 2 bens e 2 consumidores idênticos com preferências CES: \(U_i = (x_{1i}^{0{,}5} + x_{2i}^{0{,}5})^2\). As dotações são \(\boldsymbol{\omega}_1 = (3, 1)\) e \(\boldsymbol{\omega}_2 = (1, 3)\). Encontre as funções de excesso de demanda, verifique suas propriedades e determine o equilíbrio walrasiano.
@@ -900,7 +930,7 @@ Pelo Teorema de Brouwer, existe \(\mathbf{p}^*\) tal que \(g(\mathbf{p}^*) = \ma
 
 ---
 
-## 14.10 Modelo Matemático de Produção e Troca
+## 14.10 Quando Alguém Precisa Fabricar: Produção e Troca
 
 Provamos que o equilíbrio existe quando as pessoas apenas trocam bens entre si. Mas economias reais não são feiras de escambo — alguém precisa fabricar as coisas. Como o modelo se generaliza quando incorporamos firmas que produzem bens a partir de insumos? A estrutura conceitual é a mesma — buscar um ponto fixo no mapeamento de preços —, mas a definição de equilíbrio precisa agora incluir as decisões de produção das firmas e a distribuição de seus lucros entre os consumidores acionistas.
 
@@ -941,7 +971,7 @@ A Lei de Walras generaliza-se naturalmente: o valor do excesso de demanda (agora
 
 ---
 
-## 14.11 Modelos Computáveis de Equilíbrio Geral (CGE)
+## 14.11 Do Quadro-Negro ao Gabinete: Modelos CGE
 
 Até aqui, construímos uma catedral teórica impressionante — Teoremas do Bem-Estar, provas de existência, condições de eficiência. Mas se você é o tipo de pessoa que pergunta "tudo bem, e na prática?", esta seção é para você. A teoria walrasiana é matematicamente elegante, porém uma economia real tem milhares de setores, milhões de agentes e interdependências que fariam Walras precisar de um computador (que ele, em 1874, evidentemente não tinha). Como traduzir essa teoria em números capazes de avaliar o impacto de políticas públicas concretas — a reforma tributária brasileira, o acordo Mercosul-UE, a precificação de carbono? A resposta está nos modelos computáveis de equilíbrio geral (CGE): a ponte que liga o quadro-negro ao gabinete do ministro da Fazenda.
 

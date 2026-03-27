@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Tatonnement e Ponto Fixo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Tatonnement e ponto fixo de Brouwer
+# Convergencia ao equilibrio walrasiano
+# ============================================
+
+# --- Economia (mesma do ER 14.2) ---
+wA <- c(8, 2); wB <- c(2, 8)
+aA <- 0.5; aB <- 1/3
+totais <- wA + wB
+
+# --- Excesso de demanda ---
+Z1 <- function(p1, p2 = 1) {
+  IA <- p1*wA[1] + p2*wA[2]
+  IB <- p1*wB[1] + p2*wB[2]
+  aA*IA/p1 + aB*IB/p1 - totais[1]
+}
+
+# --- Funcao de ajuste (simplex com 2 bens) ---
+# p = (p1, p2) normalizado: p1 + p2 = 1
+# g_k(p) = (p_k + max(0, Z_k)) / (1 + sum max(0, Z_j))
+g <- function(s) {
+  # s = p1/(p1+p2), entao p1 = s, p2 = 1-s
+  p1 <- s; p2 <- 1 - s
+  if (p1 < 1e-8 || p2 < 1e-8) return(s)
+  # Excesso de demanda
+  IA <- p1*wA[1] + p2*wA[2]; IB <- p1*wB[1] + p2*wB[2]
+  z1 <- aA*IA/p1 + aB*IB/p1 - totais[1]
+  z2 <- (1-aA)*IA/p2 + (1-aB)*IB/p2 - totais[2]
+  num <- p1 + max(0, z1)
+  den <- 1 + max(0, z1) + max(0, z2)
+  return(num / den)
+}
+
+cat("====== TATONNEMENT E PONTO FIXO ======\n\n")
+
+# --- Equilibrio analitico ---
+num_eq <- aA*wA[2] + aB*wB[2]
+den_eq <- totais[1] - aA*wA[1] - aB*wB[1]
+p_ratio <- num_eq / den_eq  # p1/p2
+s_star <- p_ratio / (1 + p_ratio)  # no simplex
+
+cat("Equilibrio analitico: p1/p2 =", round(p_ratio, 4), "\n")
+cat("No simplex: s* = p1/(p1+p2) =", round(s_star, 4), "\n\n")
+
+# --- Iteracao do tatonnement ---
+s0 <- 0.2  # ponto inicial (longe do equilibrio)
+n_iter <- 25
+trajetoria <- numeric(n_iter + 1)
+trajetoria[1] <- s0
+
+cat("--- Iteracoes do tatonnement ---\n")
+cat(sprintf("%-5s %-10s %-10s %-12s\n", "iter", "s (p1)", "g(s)", "|s-s*|"))
+cat(strrep("-", 40), "\n")
+
+for (i in 1:n_iter) {
+  s_old <- trajetoria[i]
+  s_new <- g(s_old)
+  trajetoria[i+1] <- s_new
+  if (i <= 15 || i == n_iter) {
+    cat(sprintf("%-5d %-10.6f %-10.6f %-12.2e\n",
+        i, s_old, s_new, abs(s_new - s_star)))
+  }
+  if (i == 16 && n_iter > 16) cat("  ...\n")
+}
+
+cat("\nConvergiu para s =", round(trajetoria[n_iter+1], 6),
+    " (analitico:", round(s_star, 6), ")\n")
+cat("Erro final:", formatC(abs(trajetoria[n_iter+1] - s_star),
+    format = "e", digits = 3), "\n\n")
+
+cat("CONCLUSAO: A funcao g mapeia o simplex nele mesmo.\n")
+cat("Pelo Teorema de Brouwer, existe s* tal que g(s*) = s*.\n")
+cat("Esse ponto fixo e' o equilibrio walrasiano.\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: g(s) vs s e linha 45 graus
+s_seq <- seq(0.01, 0.99, length = 300)
+g_seq <- sapply(s_seq, g)
+
+plot(s_seq, g_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = expression(s == p[1]/(p[1]+p[2])),
+     ylab = expression(g(s)),
+     main = "Ponto fixo: g(s) = s")
+abline(a = 0, b = 1, col = "#adb5bd", lwd = 2, lty = 2)
+points(s_star, s_star, pch = 19, col = "#dc3545", cex = 2)
+text(s_star + 0.03, s_star - 0.04,
+     paste0("s* = ", round(s_star, 3)),
+     col = "#dc3545", cex = 0.85, font = 2)
+
+# Cobweb (primeiras iteracoes)
+for (i in 1:min(8, n_iter)) {
+  s_old <- trajetoria[i]
+  s_new <- trajetoria[i+1]
+  segments(s_old, s_old, s_old, s_new,
+           col = rgb(0.1, 0.6, 0.3, 0.5), lwd = 1)
+  segments(s_old, s_new, s_new, s_new,
+           col = rgb(0.1, 0.6, 0.3, 0.5), lwd = 1)
+}
+points(s0, s0, pch = 15, col = "#198754", cex = 1.5)
+text(s0, s0 + 0.04, "inicio", col = "#198754", cex = 0.7, font = 2)
+
+legend("topleft",
+       legend = c("g(s)", "Linha 45", "Ponto fixo", "Tatonnement"),
+       col = c("#0d6efd", "#adb5bd", "#dc3545", rgb(0.1, 0.6, 0.3, 0.7)),
+       lwd = c(3, 2, NA, 1), lty = c(1, 2, NA, 1),
+       pch = c(NA, NA, 19, NA), cex = 0.7, bg = "white")
+
+# Painel 2: Convergencia
+plot(0:n_iter, abs(trajetoria - s_star), type = "o",
+     pch = 19, col = "#6f42c1", lwd = 2, cex = 0.8,
+     xlab = "Iteracao", ylab = expression("|s - s*|"),
+     main = "Convergencia do tatonnement",
+     log = "y")
+abline(h = 1e-10, col = "#adb5bd", lty = 3)
+text(n_iter * 0.6, 1e-9, "tolerancia", col = "#adb5bd", cex = 0.7)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

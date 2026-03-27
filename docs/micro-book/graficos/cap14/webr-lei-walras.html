@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Lei de Walras e Excesso de Demanda</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Lei de Walras: verificacao numerica
+# Exercicio Resolvido 14.6
+# ============================================
+
+# --- Economia ---
+wA <- c(4, 6); wB <- c(6, 4)
+aA <- 0.5   # U_A = x1^(1/2) * x2^(1/2)
+aB <- 1/3   # U_B = x1^(1/3) * x2^(2/3)
+totais <- wA + wB
+
+cat("====== LEI DE WALRAS ======\n")
+cat("Dotacoes: wA =", wA, "  wB =", wB, "\n")
+cat("Totais:", totais, "\n\n")
+
+# --- Funcao de excesso de demanda ---
+Z <- function(p1, p2 = 1) {
+  IA <- p1 * wA[1] + p2 * wA[2]
+  IB <- p1 * wB[1] + p2 * wB[2]
+  # Demandas Cobb-Douglas
+  xA <- c(aA * IA / p1, (1-aA) * IA / p2)
+  xB <- c(aB * IB / p1, (1-aB) * IB / p2)
+  z <- (xA + xB) - totais
+  return(z)
+}
+
+# --- Testar a varios precos ---
+precos <- c(0.3, 0.5, 0.8, 1.0, 1.5, 2.0, 3.0)
+cat("--- Verificacao: p*Z1 + Z2 = 0 para todo p ---\n")
+cat(sprintf("%-8s %-10s %-10s %-12s\n", "p1", "Z1", "Z2", "p1*Z1+Z2"))
+cat(strrep("-", 42), "\n")
+
+for (p in precos) {
+  z <- Z(p)
+  walras <- p * z[1] + 1 * z[2]
+  cat(sprintf("%-8.2f %-10.4f %-10.4f %-12.2e\n", p, z[1], z[2], walras))
+}
+
+# --- Equilibrio ---
+# aA*IA/p + aB*IB/p = total_1
+# Resolver: p*(aA*wA[1]+aB*wB[1]-T1) + aA*wA[2]+aB*wB[2] = 0
+num <- aA * wA[2] + aB * wB[2]
+den <- totais[1] - aA * wA[1] - aB * wB[1]
+p_star <- num / den
+
+cat("\n--- Equilibrio ---\n")
+cat("p* =", round(p_star, 4), "\n")
+z_eq <- Z(p_star)
+cat("Z1(p*) =", round(z_eq[1], 10), "  Z2(p*) =", round(z_eq[2], 10), "\n\n")
+
+cat("CONCLUSAO: A Lei de Walras (p*Z = 0) vale para TODO\n")
+cat("vetor de precos, nao apenas no equilibrio.\n")
+cat("E' uma identidade contabil, nao uma condicao de equilibrio.\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+p_seq <- seq(0.1, 4, length = 400)
+
+Z1_seq <- sapply(p_seq, function(p) Z(p)[1])
+Z2_seq <- sapply(p_seq, function(p) Z(p)[2])
+walras_seq <- p_seq * Z1_seq + Z2_seq
+
+plot(p_seq, Z1_seq, type = "l", lwd = 3, col = "#0d6efd",
+     ylim = range(c(Z1_seq, Z2_seq)),
+     xlab = expression(p[1] ~~ (p[2] == 1)),
+     ylab = "Excesso de demanda",
+     main = "Lei de Walras: Z(p) e identidade contabil")
+lines(p_seq, Z2_seq, lwd = 3, col = "#dc3545")
+lines(p_seq, walras_seq, lwd = 2, col = "#198754", lty = 3)
+abline(h = 0, col = "#adb5bd", lty = 2)
+abline(v = p_star, col = "#6f42c1", lty = 2, lwd = 1.5)
+points(p_star, 0, pch = 19, col = "#6f42c1", cex = 2)
+text(p_star + 0.1, Z1_seq[1] * 0.2,
+     paste0("p* = ", round(p_star, 3)),
+     col = "#6f42c1", cex = 0.9, font = 2)
+
+legend("topright",
+       legend = c(expression(Z^1*(p)), expression(Z^2*(p)),
+                  expression(p[1]*Z^1 + Z^2 == 0)),
+       col = c("#0d6efd", "#dc3545", "#198754"),
+       lwd = c(3, 3, 2), lty = c(1, 1, 3),
+       cex = 0.75, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>
