@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Stackelberg Leadership — Interactive Graph (Chapter 15)
+  Stackelberg Leadership — Chapter 16
   Library: JSXGraph
   Shows: follower's reaction function, leader's iso-profit, Stackelberg & Cournot equilibria
 -->
@@ -8,21 +8,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lideranca de Stackelberg</title>
+  <title>Liderança de Stackelberg</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
-      options: { enableMenu: false }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
-.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
- #jxgbox { flex: 1 1 420px; max-width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.7rem; }
@@ -49,19 +42,19 @@
     <div class="controls">
       <h3>Parâmetros</h3>
       <div class="slider-group">
-        <label>Intercepto \(a\): <span class="val" id="val-a">100</span></label>
+        <label>Intercepto <i>a</i>: <span class="val" id="val-a">100</span></label>
         <input type="range" id="slider-a" min="40" max="200" step="1" value="100">
       </div>
       <div class="slider-group">
-        <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
-        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+        <label>Inclinação <i>b</i>: <span class="val" id="val-b">1.0</span></label>
+        <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
-        <label>CMg Lider \(c_L\): <span class="val" id="val-cL">20</span></label>
+        <label>CMg Líder <i>c<sub>L</sub></i>: <span class="val" id="val-cL">20</span></label>
         <input type="range" id="slider-cL" min="0" max="80" step="1" value="20">
       </div>
       <div class="slider-group">
-        <label>CMg Seguidora \(c_S\): <span class="val" id="val-cS">20</span></label>
+        <label>CMg Seguidora <i>c<sub>S</sub></i>: <span class="val" id="val-cS">20</span></label>
         <input type="range" id="slider-cS" min="0" max="80" step="1" value="20">
       </div>
       <div class="info-box" id="info"></div>
@@ -70,20 +63,33 @@
   </div>
 
   <script>
-    // Fixed bounding box: worst case a=200, b=0.2, c=0 → reaction intercept (a-c)/b = 1000,
-    // with 1.3 multiplier → 1300, plus 6% padding ≈ 78. Use 1300 with ~80 margin.
-    var FIXED_BB = [-120, 1120, 1120, -120];
+    var BB = [-12, 120, 120, -12];
 
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: FIXED_BB,
-      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+      boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     function rebuildBoard() {
       JXG.JSXGraph.freeBoard(board);
       board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: FIXED_BB,
-        axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+        boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+      });
+    }
+
+    function addAxes() {
+      board.create('axis', [[0,0],[1,0]], {
+        ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
+        name: '', withLabel: false
+      });
+      board.create('text', [60, -8, '<b><i>q</i><sub>L</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+      });
+      board.create('axis', [[0,0],[0,1]], {
+        ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+        name: '', withLabel: false
+      });
+      board.create('text', [-8, 60, '<b><i>q</i><sub>S</sub></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
       });
     }
 
@@ -104,6 +110,7 @@
       document.getElementById('val-cS').textContent = p.cS.toFixed(0);
 
       rebuildBoard();
+      addAxes();
 
       // Follower's reaction function: q2 = R2(q1) = (a - cS - b*q1)/(2b)
       // Stackelberg: leader maximizes profit subject to follower's RF
@@ -129,15 +136,6 @@
       var piLC = Math.max(0, (PC - p.cL) * q1C);
       var piSC = Math.max(0, (PC - p.cS) * q2C);
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [560.0, -78.0, '<b><i>q</i><sub>L</sub></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-66.0, 560.0, '<b><i>q</i><sub>S</sub></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
-
       // Follower's reaction function: q2 = (a-cS)/(2b) - q1/2
       var rfIntercept = Math.max(0, (p.a - p.cS) / (2 * p.b));
       var rfQ1max = Math.max(0, (p.a - p.cS) / p.b);
@@ -145,7 +143,10 @@
         board.create('segment', [[0, rfIntercept], [rfQ1max, 0]], {
           strokeColor: '#C8102E', strokeWidth: 2.5
         });
-        board.create('text', [rfQ1max * 0.85, rfIntercept * 0.1, '<i>R</i><sub>S</sub>(<i>q</i><sub>L</sub>)'], { fontSize: 13, color: '#C8102E' });
+        board.create('text', [rfQ1max * 0.85, rfIntercept * 0.1,
+          '<i>R</i><sub>S</sub>(<i>q</i><sub>L</sub>)'], {
+          fontSize: 13, color: '#C8102E', highlight: false
+        });
       }
 
       // Leader's reaction function (for Cournot comparison): q1 = (a-cL)/(2b) - q2/2
@@ -155,14 +156,16 @@
         board.create('segment', [[rfL_int, 0], [0, rfL_q2max]], {
           strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3
         });
-        board.create('text', [rfL_int * 0.9, FIXED_BB[2] * 0.04, '<i>R</i><sub>L</sub>(<i>q</i><sub>S</sub>)'], { fontSize: 12, color: '#1565c0' });
+        board.create('text', [rfL_int * 0.9, BB[1] * 0.04,
+          '<i>R</i><sub>L</sub>(<i>q</i><sub>S</sub>)'], {
+          fontSize: 12, color: '#1565c0', highlight: false
+        });
       }
 
       // Leader's iso-profit curves
       // pi_L = [a - b(q1 + q2) - cL] * q1 = const
       // q2 = (a - cL)/b - q1 - piTarget/(b*q1)
       var piLevels = [piL * 0.5, piL, piL * 1.5];
-      var isoColors = ['#1565c0'];
       for (var li = 0; li < piLevels.length; li++) {
         var piTarget = piLevels[li];
         if (piTarget <= 0) continue;
@@ -180,7 +183,7 @@
       // Stackelberg point
       board.create('point', [q1L, q2S], {
         name: 'Stackelberg', size: 5, strokeColor: '#00897b', fillColor: '#00897b',
-        label: { fontSize: 13, color: '#00897b', offset: [10, 5] }
+        label: { fontSize: 13, color: '#00897b', offset: [10, 5], highlight: false }
       });
       board.create('segment', [[q1L, q2S],[q1L, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
       board.create('segment', [[q1L, q2S],[0, q2S]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
@@ -188,26 +191,28 @@
       // Cournot point
       board.create('point', [q1C, q2C], {
         name: 'Cournot', size: 4, strokeColor: '#9c27b0', fillColor: '#9c27b0',
-        label: { fontSize: 12, color: '#9c27b0', offset: [10, -10] }
+        label: { fontSize: 12, color: '#9c27b0', offset: [10, -10], highlight: false }
       });
       board.create('segment', [[q1C, q2C],[q1C, 0]], { strokeColor: '#9c27b0', strokeWidth: 1, dash: 3 });
       board.create('segment', [[q1C, q2C],[0, q2C]], { strokeColor: '#9c27b0', strokeWidth: 1, dash: 3 });
 
-      var html = '<div class="section-title">Stackelberg</div>';
-      html += '\\(q_L = ' + q1L.toFixed(2) + '\\), \\(q_S = ' + q2S.toFixed(2) + '\\)<br>';
-      html += '\\(Q = ' + QSt.toFixed(2) + '\\), \\(P = ' + PSt.toFixed(2) + '\\)<br>';
-      html += '\\(\\pi_L = ' + piL.toFixed(1) + '\\), \\(\\pi_S = ' + piS.toFixed(1) + '\\)';
+      // Info panel
+      var html = '<div class="section-title">Demanda inversa</div>';
+      html += '<i>P</i> = <i>a</i> &minus; <i>b</i>(<i>q</i><sub>L</sub> + <i>q</i><sub>S</sub>)';
+      html += '<div class="section-title">Stackelberg</div>';
+      html += '<i>q</i><sub>L</sub> = ' + q1L.toFixed(2) + ', <i>q</i><sub>S</sub> = ' + q2S.toFixed(2) + '<br>';
+      html += '<i>Q</i> = ' + QSt.toFixed(2) + ', <i>P</i> = ' + PSt.toFixed(2) + '<br>';
+      html += '&pi;<sub>L</sub> = ' + piL.toFixed(1) + ', &pi;<sub>S</sub> = ' + piS.toFixed(1);
       html += '<div class="section-title">Cournot (comparação)</div>';
-      html += '\\(q_1 = ' + q1C.toFixed(2) + '\\), \\(q_2 = ' + q2C.toFixed(2) + '\\)<br>';
-      html += '\\(Q = ' + QC.toFixed(2) + '\\), \\(P = ' + PC.toFixed(2) + '\\)<br>';
-      html += '\\(\\pi_1 = ' + piLC.toFixed(1) + '\\), \\(\\pi_2 = ' + piSC.toFixed(1) + '\\)';
-      html += '<div class="section-title">Vantagem do 1o Movimento</div>';
-      html += '\\(\\Delta\\pi_L = ' + (piL - piLC).toFixed(1) + '\\) (lider ganha)<br>';
-      html += '\\(\\Delta\\pi_S = ' + (piS - piSC).toFixed(1) + '\\) (seguidora perde)';
+      html += '<i>q</i><sub>1</sub> = ' + q1C.toFixed(2) + ', <i>q</i><sub>2</sub> = ' + q2C.toFixed(2) + '<br>';
+      html += '<i>Q</i> = ' + QC.toFixed(2) + ', <i>P</i> = ' + PC.toFixed(2) + '<br>';
+      html += '&pi;<sub>1</sub> = ' + piLC.toFixed(1) + ', &pi;<sub>2</sub> = ' + piSC.toFixed(1);
+      html += '<div class="section-title">Vantagem do 1º Movimento</div>';
+      html += '&Delta;&pi;<sub>L</sub> = ' + (piL - piLC).toFixed(1) + ' (líder ganha)<br>';
+      html += '&Delta;&pi;<sub>S</sub> = ' + (piS - piSC).toFixed(1) + ' (seguidora perde)';
 
       document.getElementById('info').innerHTML = html;
       board.update();
-      if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
 
     function resetAll() {

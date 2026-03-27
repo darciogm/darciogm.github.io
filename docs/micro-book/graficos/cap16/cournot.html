@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Cournot Duopoly — Interactive Graph (Chapter 15)
+  Cournot Duopoly — Interactive Graph (Chapter 16)
   Library: JSXGraph
   Shows: reaction functions, Nash equilibrium, monopoly & competitive points
 -->
@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duopolio de Cournot</title>
+  <title>Duopólio de Cournot</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
   <script>
@@ -21,8 +21,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
-.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
- #jxgbox { flex: 1 1 420px; max-width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 460px; border: 1px solid #ddd; border-radius: 6px; }
     .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
     .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
     .slider-group { margin-bottom: 0.7rem; }
@@ -56,7 +56,7 @@
       </div>
       <div class="slider-group">
         <label>Inclinação \(b\): <span class="val" id="val-b">1.0</span></label>
-        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+        <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
       </div>
       <div class="slider-group">
         <label>CMg Firma 1 \(c_1\): <span class="val" id="val-c1">20</span></label>
@@ -74,172 +74,177 @@
     </div>
   </div>
 
-  <script>
-    // Fixed bounding box: worst case a=200, b=0.2, c=0 → r2q1max=(a-c)/b=1000, maxAxis=1150.
-    // Padding: 1150*0.06 ≈ 69. Use 1150 axis extent with ~70 margin.
-    var FIXED_BB = [-120, 1120, 1120, -120];
+<script>
+  var BB = [-12, 120, 120, -12];
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
 
-    var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: FIXED_BB,
-      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  function rebuildBoard() {
+    JXG.JSXGraph.freeBoard(board);
+    board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: BB, axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
+  }
 
-    function rebuildBoard() {
-      JXG.JSXGraph.freeBoard(board);
-      board = JXG.JSXGraph.initBoard('jxgbox', {
-        boundingbox: FIXED_BB,
-        axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
-      });
-    }
+  function addAxes() {
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
+      name: '', withLabel: false
+    });
+    board.create('text', [60, -8, '<b><i>q</i><sub>1</sub></b>'], {
+      fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    board.create('text', [-8, 60, '<b><i>q</i><sub>2</sub></b>'], {
+      fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // 45-degree line for reference
+    board.create('line', [[0,0],[1,1]], {
+      strokeColor: '#ddd', strokeWidth: 1, dash: 4,
+      point1: { visible: false }, point2: { visible: false }
+    });
+  }
 
-    function gp() {
-      return {
-        a: parseFloat(document.getElementById('slider-a').value),
-        b: parseFloat(document.getElementById('slider-b').value),
-        c1: parseFloat(document.getElementById('slider-c1').value),
-        c2: parseFloat(document.getElementById('slider-c2').value)
-      };
-    }
+  function gp() {
+    return {
+      a: parseFloat(document.getElementById('slider-a').value),
+      b: parseFloat(document.getElementById('slider-b').value),
+      c1: parseFloat(document.getElementById('slider-c1').value),
+      c2: parseFloat(document.getElementById('slider-c2').value)
+    };
+  }
 
-    function updateGraph() {
-      var p = gp();
-      document.getElementById('val-a').textContent = p.a.toFixed(0);
-      document.getElementById('val-b').textContent = p.b.toFixed(1);
-      document.getElementById('val-c1').textContent = p.c1.toFixed(0);
-      document.getElementById('val-c2').textContent = p.c2.toFixed(0);
+  function updateGraph() {
+    var p = gp();
+    document.getElementById('val-a').textContent = p.a.toFixed(0);
+    document.getElementById('val-b').textContent = p.b.toFixed(1);
+    document.getElementById('val-c1').textContent = p.c1.toFixed(0);
+    document.getElementById('val-c2').textContent = p.c2.toFixed(0);
 
-      rebuildBoard();
+    rebuildBoard();
+    addAxes();
 
-      // R1(q2) = (a - c1 - b*q2) / (2b) = (a-c1)/(2b) - q2/2
-      // R2(q1) = (a - c2 - b*q1) / (2b) = (a-c2)/(2b) - q1/2
-      var r1max = Math.max(0, (p.a - p.c1) / (2 * p.b)); // q1 intercept of R1 (when q2=0)
-      var r1q2max = Math.max(0, (p.a - p.c1) / p.b);     // q2 intercept of R1 (when q1=0)
-      var r2max = Math.max(0, (p.a - p.c2) / (2 * p.b)); // q2 intercept of R2
-      var r2q1max = Math.max(0, (p.a - p.c2) / p.b);     // q1 intercept of R2
+    // R1(q2) = (a - c1 - b*q2) / (2b) = (a-c1)/(2b) - q2/2
+    // R2(q1) = (a - c2 - b*q1) / (2b) = (a-c2)/(2b) - q1/2
+    var r1max = Math.max(0, (p.a - p.c1) / (2 * p.b)); // q1 intercept of R1 (when q2=0)
+    var r1q2max = Math.max(0, (p.a - p.c1) / p.b);     // q2 intercept of R1 (when q1=0)
+    var r2max = Math.max(0, (p.a - p.c2) / (2 * p.b)); // q2 intercept of R2
+    var r2q1max = Math.max(0, (p.a - p.c2) / p.b);     // q1 intercept of R2
 
-      board.create('axis', [[0,0],[1,0]], { ticks: { drawLabels: true, minorTicks: 0 }, name: '', withLabel: false });
-      board.create('text', [560.0, -78.0, '<b><i>q</i><sub>1</sub></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
-      board.create('axis', [[0,0],[0,1]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } }, name: '', withLabel: false });
-      board.create('text', [-66.0, 560.0, '<b><i>q</i><sub>2</sub></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
-
-      // Reaction function 1: q1 = R1(q2) => plot as (R1(q2), q2)
-      // In (q1, q2) space: q1 = (a-c1)/(2b) - q2/2
-      // Rearrange: q2 = (a-c1)/b - 2*q1  ... so R1 line goes from (r1max, 0) to (0, r1q2max)
-      if (r1max > 0 && r1q2max > 0) {
-        board.create('line', [[r1max, 0], [0, r1q2max]], {
-          strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false,
-          point1: { visible: false }, point2: { visible: false }
-        });
-        board.create('text', [r1max * 0.9, FIXED_BB[2] * 0.06, '<i>R</i><sub>1</sub>(<i>q</i><sub>2</sub>)'], { fontSize: 13, color: '#1565c0' });
-      }
-
-      // Reaction function 2: q2 = R2(q1) = (a-c2)/(2b) - q1/2
-      // Line from (0, r2max) to (r2q1max, 0)
-      if (r2max > 0 && r2q1max > 0) {
-        board.create('line', [[0, r2max], [r2q1max, 0]], {
-          strokeColor: '#C8102E', strokeWidth: 2.5, straightFirst: false, straightLast: false,
-          point1: { visible: false }, point2: { visible: false }
-        });
-        board.create('text', [FIXED_BB[2] * 0.04, r2max * 0.95, '<i>R</i><sub>2</sub>(<i>q</i><sub>1</sub>)'], { fontSize: 13, color: '#C8102E' });
-      }
-
-      // Cournot-Nash equilibrium: solve simultaneously
-      // q1 = (a - c1 - b*q2)/(2b), q2 = (a - c2 - b*q1)/(2b)
-      // q1 = (a - c1)/(2b) - q2/2
-      // q2 = (a - c2)/(2b) - q1/2
-      // Substituting: q1 = (a-c1)/(2b) - (1/2)*[(a-c2)/(2b) - q1/2]
-      // q1 = (a-c1)/(2b) - (a-c2)/(4b) + q1/4
-      // 3q1/4 = (2(a-c1) - (a-c2))/(4b) = (a - 2c1 + c2)/(4b)
-      // q1* = (a - 2c1 + c2)/(3b)
-      var q1s = Math.max(0, (p.a - 2*p.c1 + p.c2) / (3 * p.b));
-      var q2s = Math.max(0, (p.a - 2*p.c2 + p.c1) / (3 * p.b));
-      var Qs = q1s + q2s;
-      var Ps = p.a - p.b * Qs;
-      var pi1 = (Ps - p.c1) * q1s;
-      var pi2 = (Ps - p.c2) * q2s;
-
-      // Cournot point
-      board.create('point', [q1s, q2s], {
-        name: 'Cournot', size: 5, strokeColor: '#00897b', fillColor: '#00897b',
-        label: { fontSize: 13, color: '#00897b', offset: [10, 5] }
-      });
-      board.create('segment', [[q1s, q2s],[q1s, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
-      board.create('segment', [[q1s, q2s],[0, q2s]], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
-
-      // Monopoly point (joint profit max): q_total = (a-c)/(2b) with c = (c1+c2)/2 approx
-      // For simplicity, monopoly splits production equally at lowest cost
-      var cAvg = (p.c1 + p.c2) / 2;
-      var qMon = (p.a - cAvg) / (2 * p.b);
-      board.create('point', [qMon/2, qMon/2], {
-        name: 'Colusao', size: 4, strokeColor: '#9c27b0', fillColor: '#9c27b0',
-        label: { fontSize: 12, color: '#9c27b0', offset: [10, 5] }
-      });
-
-      // Competitive point: P = c, each firm produces (a-c)/(2b) if symmetric
-      var qComp = (p.a - cAvg) / p.b;
-      board.create('point', [qComp/2, qComp/2], {
-        name: 'Competitivo', size: 4, strokeColor: '#ff9800', fillColor: '#ff9800',
-        label: { fontSize: 12, color: '#ff9800', offset: [10, -10] }
-      });
-
-      // Cobweb convergence path
-      if (document.getElementById('chk-cobweb').checked) {
-        var cwPts = [];
-        var cq1 = 0; // start at q1=0
-        for (var i = 0; i < 12; i++) {
-          var cq2 = Math.max(0, (p.a - p.c2 - p.b * cq1) / (2 * p.b));
-          cwPts.push([cq1, cq2]);
-          cq1 = Math.max(0, (p.a - p.c1 - p.b * cq2) / (2 * p.b));
-          cwPts.push([cq1, cq2]);
-        }
-        for (var i = 0; i < cwPts.length - 1; i++) {
-          board.create('segment', [cwPts[i], cwPts[i+1]], {
-            strokeColor: '#999', strokeWidth: 1, dash: 2
-          });
-          if (i > 0) {
-            board.create('point', cwPts[i], { size: 2, strokeColor: '#666', fillColor: '#666', name: '', withLabel: false });
-          }
-        }
-      }
-
-      // 45-degree line for reference
-      board.create('line', [[0,0],[1,1]], {
-        strokeColor: '#ddd', strokeWidth: 1, dash: 4,
-        straightFirst: true, straightLast: true,
+    // Reaction function 1: q1 = (a-c1)/(2b) - q2/2
+    // Line from (r1max, 0) to (0, r1q2max)
+    if (r1max > 0 && r1q2max > 0) {
+      board.create('line', [[r1max, 0], [0, r1q2max]], {
+        strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false,
         point1: { visible: false }, point2: { visible: false }
       });
-
-      var html = '<div class="section-title">Equilíbrio de Cournot-Nash</div>';
-      html += '\\(q_1^* = ' + q1s.toFixed(2) + '\\), \\(q_2^* = ' + q2s.toFixed(2) + '\\)<br>';
-      html += '\\(Q^* = ' + Qs.toFixed(2) + '\\), \\(P^* = ' + Ps.toFixed(2) + '\\)<br>';
-      html += '\\(\\pi_1 = ' + pi1.toFixed(1) + '\\), \\(\\pi_2 = ' + pi2.toFixed(1) + '\\)';
-      html += '<div class="section-title">Comparação</div>';
-      html += 'Colusao: \\(Q = ' + qMon.toFixed(2) + '\\), \\(P = ' + ((p.a+cAvg)/2).toFixed(2) + '\\)<br>';
-      html += 'Competitivo: \\(Q = ' + qComp.toFixed(2) + '\\), \\(P = ' + cAvg.toFixed(0) + '\\)';
-
-      document.getElementById('info').innerHTML = html;
-      board.update();
-      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+      board.create('text', [r1max * 0.9, 3, '<i>R</i><sub>1</sub>(<i>q</i><sub>2</sub>)'], {
+        fontSize: 13, color: '#1565c0', fixed: true, highlight: false
+      });
     }
 
-    function resetAll() {
-      document.getElementById('slider-a').value = 100;
-      document.getElementById('slider-b').value = 1;
-      document.getElementById('slider-c1').value = 20;
-      document.getElementById('slider-c2').value = 20;
-      document.getElementById('chk-cobweb').checked = false;
-      updateGraph();
+    // Reaction function 2: q2 = (a-c2)/(2b) - q1/2
+    // Line from (0, r2max) to (r2q1max, 0)
+    if (r2max > 0 && r2q1max > 0) {
+      board.create('line', [[0, r2max], [r2q1max, 0]], {
+        strokeColor: '#C8102E', strokeWidth: 2.5, straightFirst: false, straightLast: false,
+        point1: { visible: false }, point2: { visible: false }
+      });
+      board.create('text', [3, r2max * 0.95, '<i>R</i><sub>2</sub>(<i>q</i><sub>1</sub>)'], {
+        fontSize: 13, color: '#C8102E', fixed: true, highlight: false
+      });
     }
 
-    document.querySelectorAll('input[type="range"]').forEach(function(el) {
-      el.addEventListener('input', updateGraph);
+    // Cournot-Nash equilibrium: solve simultaneously
+    // q1* = (a - 2c1 + c2)/(3b)
+    // q2* = (a - 2c2 + c1)/(3b)
+    var q1s = Math.max(0, (p.a - 2*p.c1 + p.c2) / (3 * p.b));
+    var q2s = Math.max(0, (p.a - 2*p.c2 + p.c1) / (3 * p.b));
+    var Qs = q1s + q2s;
+    var Ps = p.a - p.b * Qs;
+    var pi1 = (Ps - p.c1) * q1s;
+    var pi2 = (Ps - p.c2) * q2s;
+
+    // Cournot point
+    board.create('point', [q1s, q2s], {
+      name: 'Cournot', size: 5, strokeColor: '#00897b', fillColor: '#00897b', fixed: true,
+      label: { fontSize: 13, color: '#00897b', offset: [10, 5], highlight: false }
     });
-    document.getElementById('chk-cobweb').addEventListener('change', updateGraph);
+    board.create('segment', [[q1s, q2s],[q1s, 0]], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+    board.create('segment', [[q1s, q2s],[0, q2s]], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
+    // Monopoly / collusion point: q_total = (a-cAvg)/(2b), split equally
+    var cAvg = (p.c1 + p.c2) / 2;
+    var qMon = (p.a - cAvg) / (2 * p.b);
+    board.create('point', [qMon/2, qMon/2], {
+      name: 'Colusão', size: 4, strokeColor: '#9c27b0', fillColor: '#9c27b0', fixed: true,
+      label: { fontSize: 12, color: '#9c27b0', offset: [10, 5], highlight: false }
+    });
+
+    // Competitive point: P = c, each produces (a-cAvg)/(2b) if symmetric
+    var qComp = (p.a - cAvg) / p.b;
+    board.create('point', [qComp/2, qComp/2], {
+      name: 'Competitivo', size: 4, strokeColor: '#ff9800', fillColor: '#ff9800', fixed: true,
+      label: { fontSize: 12, color: '#ff9800', offset: [10, -10], highlight: false }
+    });
+
+    // Cobweb convergence path
+    if (document.getElementById('chk-cobweb').checked) {
+      var cwPts = [];
+      var cq1 = 0; // start at q1=0
+      for (var i = 0; i < 12; i++) {
+        var cq2 = Math.max(0, (p.a - p.c2 - p.b * cq1) / (2 * p.b));
+        cwPts.push([cq1, cq2]);
+        cq1 = Math.max(0, (p.a - p.c1 - p.b * cq2) / (2 * p.b));
+        cwPts.push([cq1, cq2]);
+      }
+      for (var i = 0; i < cwPts.length - 1; i++) {
+        board.create('segment', [cwPts[i], cwPts[i+1]], {
+          strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true
+        });
+        if (i > 0) {
+          board.create('point', cwPts[i], {
+            size: 2, strokeColor: '#666', fillColor: '#666', name: '', withLabel: false, fixed: true
+          });
+        }
+      }
+    }
+
+    // Info panel
+    var html = '<div class="section-title">Modelo</div>';
+    html += '<i>P</i> = <i>a</i> &minus; <i>b</i>(<i>q</i><sub>1</sub> + <i>q</i><sub>2</sub>), ';
+    html += 'CMg<sub>1</sub> = <i>c</i><sub>1</sub>, CMg<sub>2</sub> = <i>c</i><sub>2</sub>';
+    html += '<div class="section-title">Equilíbrio de Cournot-Nash</div>';
+    html += '\\(q_1^* = ' + q1s.toFixed(2) + '\\), \\(q_2^* = ' + q2s.toFixed(2) + '\\)<br>';
+    html += '\\(Q^* = ' + Qs.toFixed(2) + '\\), \\(P^* = ' + Ps.toFixed(2) + '\\)<br>';
+    html += '\\(\\pi_1 = ' + pi1.toFixed(1) + '\\), \\(\\pi_2 = ' + pi2.toFixed(1) + '\\)';
+    html += '<div class="section-title">Comparação</div>';
+    html += 'Colusão: \\(Q = ' + qMon.toFixed(2) + '\\), \\(P = ' + ((p.a + cAvg) / 2).toFixed(2) + '\\)<br>';
+    html += 'Competitivo: \\(Q = ' + qComp.toFixed(2) + '\\), \\(P = ' + cAvg.toFixed(0) + '\\)';
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-a').value = 100;
+    document.getElementById('slider-b').value = 1;
+    document.getElementById('slider-c1').value = 20;
+    document.getElementById('slider-c2').value = 20;
+    document.getElementById('chk-cobweb').checked = false;
     updateGraph();
-  </script>
+  }
+
+  document.querySelectorAll('input[type="range"]').forEach(function(el) {
+    el.addEventListener('input', updateGraph);
+  });
+  document.getElementById('chk-cobweb').addEventListener('change', updateGraph);
+  updateGraph();
+</script>
 </body>
 </html>
