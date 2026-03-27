@@ -288,6 +288,13 @@ Os resultados obtidos para o duopólio de Cournot levantam uma questão natural:
 
     Portanto, o equilíbrio de Cournot converge para o resultado de concorrência perfeita quando o número de firmas cresce sem limite. O modelo de Cournot é, assim, uma interpolação contínua entre monopólio e concorrência perfeita, parametrizada pelo número de firmas. \(\blacksquare\)
 
+<iframe src="../graficos/cap16/webr-cournot-n-firmas.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 16.1 — Cournot com n firmas: convergência para concorrência perfeita.** Altere os parâmetros de demanda e custo e observe como preço, quantidade, lucro e HHI convergem para o resultado competitivo à medida que $n$ cresce.
+
+</div>
+
 ---
 
 ## 16.5 Não Dá para Atender Todo Mundo: Restrições de Capacidade
@@ -685,6 +692,13 @@ Uma fusão que eleva o HHI em mais de 200 pontos em um mercado já concentrado r
 
 Fusões entre firmas em estágios diferentes da cadeia produtiva (fornecedor e cliente) não aumentam diretamente a concentração horizontal, mas podem gerar preocupações de **foreclosure**: a firma integrada pode negar insumos a concorrentes ou discriminar em favor de sua divisão downstream.
 
+<iframe src="../graficos/cap16/webr-hhi-fusao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 16.5 — Análise de fusão via HHI.** Simule diferentes cenários de fusão horizontal: altere os market shares, escolha quais firmas se fundem e verifique se a fusão aciona os alarmes antitruste do CADE/DOJ.
+
+</div>
+
 ---
 
 ## 16.16 O Juiz na Mesa de Pôquer: Regulação de Oligopólios
@@ -866,6 +880,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
 
+<iframe src="../graficos/cap16/webr-cournot-assimetrico.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 16.2 — Cournot com custos assimétricos.** Modifique os custos marginais das firmas e veja como a assimetria redistribui produção, lucros e market shares. Compare com o equilíbrio simétrico.
+
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 16.2 — Stackelberg com custos simétricos"
     **Enunciado.** No modelo de Stackelberg, a demanda é \(p = 150 - Q\) e ambas as firmas têm custo marginal \(c = 30\). A firma 1 é a líder. (a) Determine o equilíbrio de Stackelberg. (b) Compare com o equilíbrio de Cournot. (c) A vantagem do primeiro movimento é Pareto-eficiente para as firmas?
 
@@ -911,6 +932,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
 
+<iframe src="../graficos/cap16/webr-stackelberg.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 16.3 — Stackelberg vs. Cournot.** Compare os dois equilíbrios visualmente: curvas de melhor-resposta, curvas de iso-lucro e os pontos de Nash. Altere os parâmetros para verificar como a vantagem do primeiro movimento varia.
+
+</div>
+
 ??? exercicio-resolvido "Exercício Resolvido 16.3 — Sustentação de colusão com trigger strategy"
     **Enunciado.** Três firmas idênticas competem em Bertrand com custo marginal \(c = 20\) e demanda \(Q = 200 - p\). Considere um jogo infinitamente repetido com fator de desconto \(\delta\) e estratégia de gatilho (grim trigger) para sustentar o preço de monopólio. (a) Calcule o preço de monopólio e o lucro dividido por firma. (b) Calcule o ganho do desvio. (c) Determine o \(\delta\) mínimo para sustentação da colusão.
 
@@ -943,6 +971,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     \]
 
     Isso confirma a fórmula geral \(\delta \geq 1 - 1/n\): com \(n = 3\), \(\delta \geq 2/3\). Note que com 2 firmas bastaria \(\delta \geq 1/2\); com 3 firmas a colusão exige mais paciência. Quanto mais firmas no cartel, mais difícil sustentá-lo — cada firma tem incentivo maior para desviar, pois captura toda a demanda ao invés de apenas \(1/n\) dela.
+
+<iframe src="../graficos/cap16/webr-colusao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 16.4 — Sustentação de colusão com trigger strategy.** Explore como o $\delta$ mínimo cresce com o número de firmas e compare o valor presente de cooperar vs. desviar ao longo do tempo.
+
+</div>
 
 ---
 
