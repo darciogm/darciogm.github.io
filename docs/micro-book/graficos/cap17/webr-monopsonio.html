@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Monopsônio no Mercado de Trabalho</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Monopsonio no Mercado de Trabalho
+# Exercicio Resolvido 17.2
+# ============================================
+
+# Oferta de trabalho: w = a + b*H
+# VPMgL = d - e*H
+a <- 4; b <- 2     # w(H) = 4 + 2H
+d <- 100; e <- 2   # VPMgL = 100 - 2H
+
+cat("====== MONOPSONIO ======\n")
+cat("Oferta: w =", a, "+", b, "* H\n")
+cat("VPMgL =", d, "-", e, "* H\n\n")
+
+# --- Equilibrio competitivo ---
+# VPMgL = w => d - e*H = a + b*H
+Hc <- (d - a) / (e + b)
+wc <- a + b * Hc
+cat("--- Equilibrio competitivo ---\n")
+cat(sprintf("H_c = %.1f   w_c = %.1f\n\n", Hc, wc))
+
+# --- Monopsonio ---
+# CMgL = a + 2b*H (derivada do custo total wH = (a+bH)H)
+# VPMgL = CMgL => d - e*H = a + 2b*H
+Hm <- (d - a) / (e + 2*b)
+wm <- a + b * Hm
+VPMg_m <- d - e * Hm
+exploração <- VPMg_m - wm
+
+cat("--- Monopsonio ---\n")
+cat(sprintf("H_m = %.1f   w_m = %.1f\n", Hm, wm))
+cat(sprintf("VPMgL(H_m) = %.1f\n", VPMg_m))
+cat(sprintf("Exploracao monopsonistica = %.1f\n\n", exploração))
+
+# --- Salario minimo = w_c ---
+w_min <- wc
+# CMgL = w_min ate onde oferta = w_min, depois CMgL normal
+# VPMgL = w_min => d - e*H = w_min
+H_min <- (d - w_min) / e
+cat("--- Salario minimo = w_c ---\n")
+cat(sprintf("w_min = %.1f => H = %.1f\n", w_min, H_min))
+cat(sprintf("Variacao emprego: %.1f -> %.1f (+%.0f%%)\n",
+    Hm, H_min, (H_min/Hm - 1)*100))
+cat(sprintf("Variacao salario: %.1f -> %.1f (+%.0f%%)\n\n",
+    wm, w_min, (w_min/wm - 1)*100))
+
+# --- Comparacao ---
+cat("--- Resumo ---\n")
+cat(sprintf("%-20s %-10s %-10s\n", "", "Monopsonio", "Competitivo"))
+cat(strrep("-", 42), "\n")
+cat(sprintf("%-20s %-10.1f %-10.1f\n", "Emprego (H)", Hm, Hc))
+cat(sprintf("%-20s %-10.1f %-10.1f\n", "Salario (w)", wm, wc))
+cat(sprintf("%-20s %-10.1f %-10.1f\n", "VPMgL", VPMg_m, wc))
+cat(sprintf("%-20s %-10.1f %-10.1f\n", "Exploracao", exploração, 0))
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+H_seq <- seq(0, 30, length = 300)
+w_oferta <- a + b * H_seq
+CMgL <- a + 2*b * H_seq
+VPMgL <- d - e * H_seq
+
+plot(H_seq, VPMgL, type = "l", lwd = 3, col = "#0d6efd",
+     xlim = c(0, 30), ylim = c(0, 110),
+     xlab = "Emprego (H)", ylab = "w, VPMgL, CMgL",
+     main = "Monopsonio vs. Competitivo")
+lines(H_seq, w_oferta, lwd = 3, col = "#198754")
+lines(H_seq, CMgL, lwd = 3, col = "#dc3545", lty = 2)
+
+# Salario minimo
+segments(0, w_min, H_min, w_min, lwd = 2, col = "#fd7e14", lty = 4)
+
+# Pontos
+points(Hm, wm, pch = 19, col = "#dc3545", cex = 2)
+text(Hm + 1, wm + 3, paste0("Monop. (", Hm, ", ", wm, ")"),
+     col = "#dc3545", cex = 0.7, font = 2)
+
+points(Hc, wc, pch = 17, col = "#198754", cex = 2)
+text(Hc + 1, wc + 3, paste0("Compet. (", Hc, ", ", wc, ")"),
+     col = "#198754", cex = 0.7, font = 2)
+
+# Exploracao (segmento vertical)
+segments(Hm, wm, Hm, VPMg_m, lwd = 2, col = "#6f42c1", lty = 3)
+text(Hm - 2, (wm + VPMg_m)/2, paste0("Expl. = ", exploração),
+     col = "#6f42c1", cex = 0.7, font = 2)
+
+# PPM (triangulo)
+polygon(c(Hm, Hc, Hc, Hm),
+        c(wm, wc, VPMg_m, VPMg_m),
+        col = rgb(0.85, 0.2, 0.2, 0.1), border = NA)
+
+legend("topright",
+       legend = c("VPMgL (demanda)", "Oferta (w)",
+                  "CMgL", "Salario minimo"),
+       col = c("#0d6efd", "#198754", "#dc3545", "#fd7e14"),
+       lwd = 3, lty = c(1, 1, 2, 4),
+       cex = 0.65, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>
