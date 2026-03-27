@@ -2,7 +2,7 @@
 <!--
   Monopsonio no Mercado de Trabalho — Interactive Graph
   Library: JSXGraph
-  Chapter 16 — Microeconomia
+  Chapter 17 — Microeconomia
 -->
 <html lang="pt-BR">
 <head>
@@ -81,23 +81,23 @@
 
     var board = JXG.JSXGraph.initBoard('jxgbox1', {
       boundingbox: [-7, 62, 62, -7],
-      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
     });
 
     board.create('axis', [[0,0],[52,0]], {
       ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 10 },
       name: '', withLabel: false
     });
-board.create('text', [31.0, -4.55, '<b><i>H</i> (trabalho)</b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
-});
+    board.create('text', [31, -5, '<b><i>H</i> (trabalho)</b>'], {
+      fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
     board.create('axis', [[0,0],[0,52]], {
       ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
       name: '', withLabel: false
     });
-board.create('text', [-3.8500000000000005, 31.0, '<b><i>w</i></b>'], {
-    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
-});
+    board.create('text', [-4, 31, '<b><i>w</i></b>'], {
+      fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
 
     // Supply curve: w = a + bH
     var supplyCurve = board.create('functiongraph', [
@@ -130,7 +130,7 @@ board.create('text', [-3.8500000000000005, 31.0, '<b><i>w</i></b>'], {
 
     // Monopsony wage point (on supply curve)
     var monopWPt = board.create('point', [monopH, monopW],
-      { size: 5, fillColor: '#C8102E', strokeColor: '#fff', name: 'Monopsonio', fixed: true,
+      { size: 5, fillColor: '#C8102E', strokeColor: '#fff', name: 'Monopsônio', fixed: true,
         label: { fontSize: 10, offset: [5, -12], color: '#C8102E' } });
 
     // Competitive equilibrium point
