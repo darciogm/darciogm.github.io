@@ -106,13 +106,13 @@
 
     // Education cost curves (as lines from origin)
     var costH = board.create('functiongraph', [
-      function(s) { return s / tH; }
+      function(s) { return s < 0 ? NaN : s / tH; }
     ], { strokeColor: '#1565c0', strokeWidth: 2, dash: 3,
          name: 'Custo H: s/θ_H', withLabel: true,
          label: { position: 'rt', offset: [-30, 10], fontSize: 10 } });
 
     var costL = board.create('functiongraph', [
-      function(s) { return s / tL; }
+      function(s) { return s < 0 ? NaN : s / tL; }
     ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 3,
          name: 'Custo L: s/θ_L', withLabel: true,
          label: { position: 'rt', offset: [-30, 10], fontSize: 10 } });
@@ -137,7 +137,7 @@
 
     // Pooling wage horizontal line
     var poolLine = board.create('functiongraph', [
-      function(s) { return wPool(); }
+      function(s) { return s < 0 ? NaN : wPool(); }
     ], { strokeColor: '#999', strokeWidth: 1.5, dash: 4 });
 
     var poolLabel = board.create('text', [
@@ -181,13 +181,13 @@
     // Indifference curve for type H through (s*, theta_H): theta_H - s*/theta_H = w - s/theta_H
     // => w = theta_H - s*/theta_H + s/theta_H = theta_H + (s - s*)/theta_H
     var icH = board.create('functiongraph', [
-      function(s) { return tH - sStar()/tH + s/tH; }
+      function(s) { return s < 0 ? NaN : tH - sStar()/tH + s/tH; }
     ], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 4 });
 
     // Indifference curve for type L through (0, theta_L): theta_L = w - s/theta_L
     // => w = theta_L + s/theta_L
     var icL = board.create('functiongraph', [
-      function(s) { return tL + s/tL; }
+      function(s) { return s < 0 ? NaN : tL + s/tL; }
     ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 4 });
 
     // Labels
