@@ -1,5 +1,21 @@
 # Capítulo 5 — Slutsky no Supermercado
 
+!!! abstract "Roteiro do capítulo"
+    <div class="chapter-roadmap" markdown>
+
+    | Seção | Tema | Ideia central |
+    |-------|------|---------------|
+    | 5.1 | Propriedades da demanda | Homogeneidade de grau zero, Lei de Walras, negatividade do ES |
+    | 5.2 | Variações na renda | Curva de Engel; bens normais, inferiores, de luxo, necessidade |
+    | 5.3 | Efeitos renda e substituição | Decomposições de Hicks e Slutsky |
+    | 5.4 | Equação de Slutsky | *A* equação da teoria do consumidor; bens de Giffen |
+    | 5.5–5.6 | Curvas de demanda | Marshalliana vs. hicksiana; propriedades formais |
+    | 5.7 | Elasticidades | Preço, renda, cruzada; agregação de Engel e Cournot |
+    | 5.8 | Excedente do consumidor | EC, variação compensatória (VC), variação equivalente (VE) |
+    | 5.9 | Preferência revelada | AFPR e negatividade do ES sem função de utilidade |
+
+    </div>
+
 No Capítulo 4, o consumidor resolveu o problema: dada a renda e os preços, encontrou a cesta ótima. Fim da história? Nem perto. A vida é feita de *mudanças* — o preço da gasolina sobe, o salário cai, o governo cria um imposto. O que acontece com as escolhas do consumidor? *Esse* é o capítulo em que a teoria realmente começa a morder: por que a curva de demanda desce, como separar o efeito "ficou mais caro" do efeito "fiquei mais pobre", e como medir em reais quanto o consumidor perdeu com um aumento de preço.
 
 A equação central deste capítulo — a Equação de Slutsky — deve seu nome ao economista ucraniano Eugen Slutsky (1880–1948), que a publicou em 1915 no artigo "Sulla teoria del bilancio del consumatore", em italiano. O trabalho permaneceu praticamente ignorado até ser redescoberto por John Hicks e R. G. D. Allen nos anos 1930, tornando-se então peça fundamental da microeconomia moderna. A estrutura do capítulo reflete essa trajetória: partimos das propriedades estáticas das funções de demanda (Seção 5.1), passamos pelas respostas a variações de renda (5.2) e preço (5.3), chegamos à formalização pela Equação de Slutsky (5.4) e suas implicações em termos de elasticidades (5.7), medidas de bem-estar (5.8) e preferência revelada (5.9). Cada seção constrói sobre a anterior, formando uma cadeia lógica que conecta intuição econômica, formalismo matemático e aplicações empíricas ao contexto brasileiro.
@@ -77,7 +93,7 @@ Exemplos clássicos de bens inferiores no contexto brasileiro incluem a farinha 
 
     **Por que isso importa:** Programas de transferência de renda, como o Bolsa Família, elevam a renda das famílias mais pobres. Se o bem-alvo de uma política de segurança alimentar for inferior para essa faixa de renda, a política pode inadvertidamente *reduzir* seu consumo — exatamente o oposto do objetivo. Conhecer a elasticidade-renda do bem-alvo é, portanto, pré-requisito para desenho eficaz de políticas públicas.
 
-!!! box-brasil "Box Brasil — Farinha de mandioca: um bem inferior em números"
+!!! box-brasil "Box Brasil 5.1 — Farinha de mandioca: um bem inferior em números"
     A farinha de mandioca é talvez o exemplo mais emblemático de bem inferior no Brasil. Dados do [IBGE](https://www.ibge.gov.br) mostram uma queda expressiva no consumo domiciliar per capita: de 7,76 kg/ano na POF 2002–2003 para 2,33 kg/ano na POF 2017–2018, uma redução de 70% em quinze anos.
 
     **Padrão por faixa de renda:** tanto a frequência de consumo quanto a quantidade média per capita diária de farinha de mandioca são maiores nos quartis de renda mais baixos. A diferença entre o primeiro e o último quartil de renda é acentuada, confirmando o comportamento de bem inferior (\(\varepsilon_{x,I} < 0\)).
@@ -159,14 +175,7 @@ Ambas as decomposições — a de Hicks, expressa na equação $\eqref{eq:5.3.1}
 
     **Por que isso importa:** A decomposição de Slutsky é a base para avaliar o impacto de impostos e subsídios sobre o consumo — e para distinguir quando uma queda de preço beneficia os consumidores pelo barateamento relativo ou pelo aumento do poder de compra.
 
-!!! idea "Intuição Econômica"
-    **Em uma frase:** Quando um preço muda, duas coisas acontecem ao mesmo tempo: você troca de produto (efeito substituição) e seu poder de compra muda (efeito renda).
-
-    **Pense assim:** Quando o preço da carne bovina sobe no supermercado, você faz duas coisas: troca parte da carne por frango (efeito substituição) e, como seu dinheiro agora compra menos, acaba reduzindo o consumo de outros itens também (efeito renda). A Equação de Slutsky separa matematicamente essas duas forças que, no carrinho de compras, aparecem misturadas.
-
-    **Por que isso importa:** Separar esses efeitos é essencial para política pública — por exemplo, para saber se um aumento no preço da gasolina empurra as pessoas para o etanol (substituição) ou simplesmente as empobrece (renda).
-
-!!! box-brasil "Box Brasil — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
+!!! box-brasil "Box Brasil 5.2 — Preços administrados e o efeito substituição: energia elétrica e bandeiras tarifárias"
     No Brasil, diversos preços são fixados ou regulados por agências governamentais — os chamados **preços administrados**, que representam cerca de 25% do IPCA. A energia elétrica é um caso particularmente interessante para a teoria do consumidor, pois o sistema de **bandeiras tarifárias** (verde, amarela e vermelha) funciona como uma variação exógena de preço com periodicidade mensal.
 
     **Mecanismo:** quando a bandeira muda de verde para vermelha (patamar 2), a tarifa residencial pode subir mais de R$ 0,07/kWh, o que equivale a um aumento de 8–10% no custo da energia. Essa variação é exógena ao consumidor (depende de condições hidrológicas), criando um experimento natural para observar efeitos substituição e renda.
@@ -713,7 +722,7 @@ A preferência revelada fecha o círculo: partimos de preferências para derivar
 
 As ferramentas desenvolvidas ao longo deste capítulo — decomposição de Slutsky, elasticidades, excedente do consumidor, preferência revelada — ganham vida quando aplicadas a problemas concretos. O estudo de caso a seguir ilustra como essas ferramentas são utilizadas na análise do mercado brasileiro de combustíveis, um dos mais estudados empiricamente no país.
 
-!!! box-brasil "Box Brasil — Elasticidade-preço da gasolina no Brasil"
+!!! box-brasil "Box Brasil 5.3 — Elasticidade-preço da gasolina no Brasil"
     A gasolina é um dos bens mais estudados empiricamente no Brasil, tanto pela relevância fiscal (ICMS, CIDE, PIS/COFINS) quanto pelo impacto no custo de vida. A Agência Nacional do Petróleo (ANP) coleta semanalmente preços em postos de todo o país, fornecendo uma base de dados rica para estimações econométricas.
 
     **Principais achados empíricos:**

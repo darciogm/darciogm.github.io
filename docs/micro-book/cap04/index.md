@@ -1,5 +1,21 @@
 # Capítulo 4 — Você Quer Tudo. Mas Não Pode.
 
+!!! abstract "Roteiro do capítulo"
+    <div class="chapter-roadmap" markdown>
+
+    | Seção | Tema | Ideia central |
+    |-------|------|---------------|
+    | 4.1–4.2 | Problema do consumidor | Maximizar utilidade sujeita ao orçamento; tangência = TMS igual à razão de preços |
+    | 4.3 | Lagrangeano com *n* bens | O multiplicador λ é a utilidade marginal da renda |
+    | 4.4 | Utilidade indireta *V* | O "termômetro de felicidade" como função de preços e renda |
+    | 4.5 | Princípio do montante fixo | Imposto *lump sum* domina imposto específico de mesma receita |
+    | 4.6–4.7 | Problema dual e função dispêndio | Minimizar gasto para atingir utilidade fixa; Lema de Shephard |
+    | 4.8 | Dualidade | *V* e *E* são inversas; demandas marshalliana e hicksiana se conectam |
+    | 4.9 | Identidade de Roy | Recuperar demandas a partir de *V*, sem resolver Lagrangeano |
+    | 4.10–4.11 | Catálogo de soluções | Cobb-Douglas, substitutos, Leontief, CES, quase-linear |
+
+    </div>
+
 O Capítulo 3 respondeu "o que o consumidor quer?" — mais de tudo, obrigado. Este capítulo enfrenta a resposta do universo: "com que dinheiro?"
 
 Aqui está o conflito central da microeconomia — e, convenhamos, da vida adulta: desejos ilimitados versus recursos limitados. O consumidor quer maximizar sua felicidade, mas o bolso tem fundo. O resultado é um problema de otimização com restrição — e se você dominou o Lagrange da Seção 2.5, já tem a ferramenta. O que este capítulo acrescenta é a *interpretação econômica*: cada multiplicador, cada condição de ótimo, cada derivada vai ganhar um nome e um significado que você usará pelo resto do livro.
@@ -52,7 +68,7 @@ A formulação em \eqref{eq:4.1.1} admite generalizações naturais: para \(n\) 
 **Figura 4.1 — Restrição Orçamentária.** Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
 </div>
 
-!!! box-brasil "Box Brasil — Combustíveis e a reta orçamentária das famílias brasileiras"
+!!! box-brasil "Box Brasil 4.1 — Combustíveis e a reta orçamentária das famílias brasileiras"
     Um exemplo concreto de como preços afetam a restrição orçamentária vem do mercado de combustíveis no Brasil. Segundo dados da [ANP](https://www.gov.br/anp) (Agência Nacional do Petróleo), o preço médio da gasolina comum ao consumidor passou de cerca de R$ 4,50/litro no início de 2020 para R$ 7,26/litro em março de 2022 — um aumento superior a 60%. Esse aumento expressivo alterou significativamente a reta orçamentária das famílias, especialmente as de renda mais baixa.
 
     De acordo com a POF 2017–2018 ([IBGE](https://www.ibge.gov.br)), famílias com renda de até 2 salários mínimos destinavam cerca de 3,5% de seus gastos a combustíveis, enquanto famílias com renda acima de 25 salários mínimos destinavam 6,1%. Porém, como proporção da renda disponível para outros bens, o impacto é relativamente maior para as famílias mais pobres.
@@ -94,6 +110,25 @@ Por exemplo, se uma família gasta R$ 200 por mês em streaming e R$ 50 em livro
     **Pense assim:** Suponha que o último real gasto em café no supermercado te dá mais prazer que o último real gasto em pão. Então faz sentido comprar menos pão e mais café, até que a satisfação marginal por real se iguale nos dois. É como distribuir água entre vasos: você para quando o nível está igual em todos.
 
     **Por que isso importa:** Essa condição de tangência (TMS = razão de preços) é a base de toda a análise de demanda — dela derivamos as curvas de demanda e avaliamos o impacto de mudanças de preços.
+
+!!! atividade "Think-Pair-Share — Lump sum ou imposto específico?"
+    **Antes de prosseguir, vote individualmente (1 minuto):**
+
+    Um governo precisa arrecadar exatamente R$ 500 de cada família. Considere duas opções:
+
+    - **Opção A:** Imposto de R$ 2 por litro de gasolina.
+    - **Opção B:** Imposto fixo de R$ 500 descontado da renda, sem alterar preço nenhum.
+
+    **Pergunta:** Qual opção deixa a família *mais satisfeita* (maior utilidade)?
+
+    - (a) Opção A — porque pelo menos ela pode decidir dirigir menos
+    - (b) Opção B — porque não distorce nenhum preço
+    - (c) Tanto faz — ambas tiram R$ 500
+
+    **Depois de votar, discuta com um colega (2 minutos) e revote.**
+
+    ??? success "Debrief"
+        A resposta é **(b)**. A Opção A arrecada R$ 500 *e* distorce a razão de preços, forçando uma substituição artificial contra a gasolina. A Opção B arrecada os mesmos R$ 500 sem mexer nos preços relativos — a família "perde" o mesmo poder de compra, mas pode realocar livremente. Esse é o **Princípio do Montante Fixo** (Seção 4.5). A alternativa (c) é a armadilha: mesma receita *não* significa mesmo bem-estar. A Seção 4.5 demonstra formalmente por quê.
 
 !!! tip "Soluções de canto"
     Nem todas as soluções são interiores. Para substitutos perfeitos, por exemplo, o consumidor tipicamente consome apenas o bem com maior razão \(a_i/p_i\). Soluções de canto ocorrem quando a TMS no ponto \(x_i = 0\) já é inferior (ou superior) à razão de preços, de modo que a condição de tangência não se verifica em nenhum ponto interior.
@@ -250,7 +285,7 @@ A seguir, no Exercício Resolvido 4.1, aplicamos esses conceitos ao caso Cobb-Do
 
 ## 4.5 O Princípio do Montante Fixo (*Lump Sum Principle*)
 
-Com a função de utilidade indireta em mãos, estamos em condições de analisar uma das questões mais relevantes da microeconomia aplicada a políticas públicas. Antes de apresentar o resultado formal, considere a seguinte pergunta de política pública: se o governo precisa arrecadar uma determinada receita de um consumidor, qual tipo de imposto causa **menor perda de bem-estar**? A resposta revela uma das implicações mais poderosas da teoria do consumidor — e justifica, do ponto de vista teórico, a preferência por transferências diretas de renda sobre subsídios específicos.
+Com a função de utilidade indireta em mãos, estamos em condições de analisar uma das questões mais relevantes da microeconomia aplicada a políticas públicas. Antes de apresentar o resultado formal, considere a seguinte pergunta de política pública: se o governo precisa arrecadar uma determinada receita de um consumidor, qual tipo de imposto causa **menor perda de bem-estar**?[^shrubbery-tax] A resposta revela uma das implicações mais poderosas da teoria do consumidor — e justifica, do ponto de vista teórico, a preferência por transferências diretas de renda sobre subsídios específicos.
 
 !!! theorem "Proposição 4.1 — Princípio do montante fixo"
     Um imposto sobre a renda (montante fixo, *lump sum*) que arrecada a mesma receita que um imposto específico sobre um bem deixa o consumidor em um nível de utilidade **pelo menos tão alto** quanto o imposto específico.
@@ -270,13 +305,15 @@ A geometria do argumento é esclarecedora: o imposto específico rotaciona a ret
 !!! note "Limitações do princípio"
     O resultado pressupõe informação perfeita, ausência de custos administrativos e que o imposto *lump sum* seja viável. Na prática, impostos *lump sum* são frequentemente considerados injustos ou politicamente inviáveis. A tributação ótima (Ramsey, Mirrlees) busca conciliar eficiência e equidade sob restrições informacionais.
 
+[^shrubbery-tax]: O governo, neste problema, se comporta como os Cavaleiros que Dizem "Ni!" em *Monty Python and the Holy Grail*: exige uma receita fixa ("*Bring me a shrubbery!*") e não negocia o valor. A questão é *como* o consumidor prefere entregar essa receita — com distorção de preços (imposto específico) ou sem (lump sum). A demanda do governo por receita é perfeitamente inelástica; a do consumidor por bem-estar, não.
+
 <iframe src="../graficos/cap04/lump-sum-principle.html" title="Figura 4.3" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.3 — Princípio do Montante Fixo (*Lump Sum*).** Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
 </div>
 
-!!! box-brasil "Box Brasil — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
+!!! box-brasil "Box Brasil 4.2 — Subsídio ao gás de cozinha: lump sum vs. controle de preço"
     O debate entre transferência direta e subsídio a preços tem um exemplo emblemático no Brasil: o gás de cozinha (GLP). Durante anos, o governo subsidiou o preço do GLP diretamente, o que beneficiava todos os consumidores, inclusive os de alta renda. A partir de 2016, com o programa Gás para Todos (e depois o Auxílio Gás, criado em 2021), o governo passou a adotar uma transferência monetária direta às famílias inscritas no [Cadastro Único](https://www.gov.br/mds).
 
     Do ponto de vista do princípio do montante fixo, a mudança vai na direção correta. O subsídio ao preço distorce preços relativos, incentivando consumo excessivo de GLP em relação a outras fontes de energia. A transferência direta, por não alterar o preço relativo do gás, permite que a família aloque os recursos conforme suas preferências, gerando utilidade pelo menos igual — e tipicamente maior — para a mesma despesa pública.
@@ -442,7 +479,7 @@ Assim como a função de utilidade indireta sintetiza o *valor ótimo* do proble
 
 ## 4.8 Dualidade entre Utilidade Indireta e Função Dispêndio
 
-Temos agora duas funções que resumem o consumidor: \(V\) (utilidade indireta, do primal) e \(E\) (função dispêndio, do dual). Uma fala em "reais" e devolve "felicidade"; a outra fala em "felicidade" e devolve "reais". Não é coincidência que pareçam espelhos — elas *são* inversas uma da outra. Essa simetria é o coração da dualidade, e as identidades abaixo são o certificado de casamento:
+Temos agora duas funções que resumem o consumidor: \(V\) (utilidade indireta, do primal) e \(E\) (função dispêndio, do dual). Uma fala em "reais" e devolve "felicidade"; a outra fala em "felicidade" e devolve "reais". Não é coincidência que pareçam espelhos — elas *são* inversas uma da outra.[^dead-parrot-dual] Essa simetria é o coração da dualidade, e as identidades abaixo são o certificado de casamento:
 
 \[
 V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u} \qquad \text{(a renda mínima para atingir } \bar{u} \text{ gera utilidade exatamente } \bar{u}\text{)}, \label{eq:4.8.15} \tag{4.8.15}
@@ -455,6 +492,8 @@ E(\mathbf{p}, V(\mathbf{p}, I)) = I \qquad \text{(o custo mínimo de atingir a u
 Essas identidades implicam que \(V(\mathbf{p}, \cdot)\) e \(E(\mathbf{p}, \cdot)\) são **inversas** uma da outra (fixados os preços).
 
 Se esta seção parece abstrata demais, relaxe: a dualidade é uma daquelas ideias que só fazem sentido depois de usá-la três vezes. Prossiga, volte aqui no Capítulo 5, e ela vai "clicar".
+
+[^dead-parrot-dual]: A dualidade entre \(V\) e \(E\) lembra o *Dead Parrot sketch* de Monty Python — mas ao contrário. No sketch, o vendedor insiste que o papagaio morto está apenas "descansando" (mesma coisa descrita de formas diferentes, mas uma delas é *mentira*). Na dualidade, primal e dual descrevem a mesma cesta ótima de formas genuinamente diferentes — e ambas estão *certas*. É o Dead Parrot honesto da microeconomia.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Maximizar a felicidade com um orçamento fixo e minimizar o gasto para atingir uma felicidade fixa são dois lados da mesma moeda.
@@ -597,7 +636,7 @@ A Identidade de Roy também tem uma interpretação em termos do multiplicador \
 
 ## 4.10 Demandas por Tipo de Função Utilidade
 
-Teoria bonita, mas funciona na prática? Hora de sujar as mãos. Vamos pegar cada "personagem" do Capítulo 3 — Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES, quase-linear — e resolver o problema do consumidor do começo ao fim: Lagrangeano, CPO, demanda marshalliana, demanda hicksiana, utilidade indireta, função dispêndio. É trabalhoso, mas o payoff é enorme: ao final desta seção, você terá um catálogo de soluções prontas que reaparecerão em *todos* os exercícios e provas deste livro.
+*And now for something completely different* — ou melhor, *completely concrete*. Teoria bonita, mas funciona na prática? Hora de sujar as mãos. Vamos pegar cada "personagem" do Capítulo 3 — Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES, quase-linear — e resolver o problema do consumidor do começo ao fim: Lagrangeano, CPO, demanda marshalliana, demanda hicksiana, utilidade indireta, função dispêndio. É trabalhoso, mas o payoff é enorme: ao final desta seção, você terá um catálogo de soluções prontas que reaparecerão em *todos* os exercícios e provas deste livro.
 
 ### 4.10.1 Cobb-Douglas: U(x₁, x₂) = x₁ᵃ x₂ᵇ
 
@@ -972,7 +1011,7 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
 
 ---
 
-!!! box-brasil "Box Brasil — Transferências condicionadas e escolhas de consumo"
+!!! box-brasil "Box Brasil 4.3 — Transferências condicionadas e escolhas de consumo"
     O Programa Bolsa Família (PBF), criado em 2003 e reestruturado como Auxílio Brasil em 2021 e novamente como Bolsa Família em 2023, constitui o maior programa de transferência condicionada de renda da América Latina, atingindo cerca de 21 milhões de famílias em 2023.
 
     **Efeito sobre a restrição orçamentária**: A transferência mensal \(T\) desloca a reta orçamentária paralelamente para cima, de \(p_1 x_1 + p_2 x_2 = I\) para \(p_1 x_1 + p_2 x_2 = I + T\). Note que, ao contrário de subsídios a bens específicos, a transferência em dinheiro **não altera preços relativos**, funcionando como um *lump sum*. Pelo princípio do montante fixo (Seção 4.5), essa forma de transferência é mais eficiente do que subsídios a bens específicos, permitindo ao beneficiário maximizar sua utilidade de acordo com suas preferências individuais.
@@ -990,7 +1029,7 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
 
     **Fontes**: SOARES, F. V.; SÁTYRO, N. *O Programa Bolsa Família: desenho institucional, impactos e possibilidades futuras*. Texto para Discussão IPEA, n. 1424, 2009. RESENDE, A. C. C.; OLIVEIRA, A. M. H. C. Avaliando resultados de um programa de transferência de renda: o impacto do Bolsa-Escola sobre os gastos das famílias brasileiras. *Estudos Econômicos*, v. 38, n. 2, p. 235–265, 2008. [MDS](https://www.gov.br/mds) — Ministério do Desenvolvimento Social, dados administrativos.
 
-!!! box-brasil "Box Brasil — Endividamento das famílias e a restrição orçamentária intertemporal"
+!!! box-brasil "Box Brasil 4.4 — Endividamento das famílias e a restrição orçamentária intertemporal"
     O crédito permite que famílias consumam além de sua renda corrente, expandindo a restrição orçamentária no presente à custa de contraí-la no futuro. No Brasil, o endividamento das famílias cresceu expressivamente nas últimas décadas. Segundo o [Banco Central do Brasil](https://www.bcb.gov.br) (BCB), o nível de endividamento das famílias — medido pela razão entre o saldo de dívidas com o Sistema Financeiro Nacional e a renda acumulada em 12 meses — alcançou 53,1% em meados de 2022, o maior patamar da série histórica.
 
     Do ponto de vista da teoria do consumidor, o acesso ao crédito modifica o conjunto orçamentário. Sem crédito, a restrição é \(p_1 x_1 + p_2 x_2 \leq I\). Com crédito a uma taxa de juros \(r\), a família pode consumir no presente um valor superior a \(I\), desde que o valor presente dos pagamentos futuros não exceda o valor presente da renda futura. A Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC/[CNC](https://www.portaldocomercio.org.br)) indicou que, em 2022, 77,9% das famílias brasileiras possuíam algum tipo de dívida, sendo o cartão de crédito a principal modalidade.
@@ -999,9 +1038,15 @@ A [Tabela 4.2](#tabela-4-2) resume as cinco funções centrais da teoria do cons
 
     **Fonte**: BCB, Relatório de Economia Bancária, 2022; CNC, Pesquisa de Endividamento e Inadimplência do Consumidor (PEIC), 2022.
 
+Se este capítulo funcionou, você sai dele com três convicções:
+
+1. **Tangência é tudo.** A condição TMS = razão de preços não é um resultado técnico — é a afirmação de que, no ótimo, o valor subjetivo de um bem (para o consumidor) coincide com seu valor objetivo (no mercado). Quando os dois divergem, há ganho não explorado.
+2. **A dualidade não é abstração — é poder.** Saber que \(V\) e \(E\) são inversas significa que você pode atacar qualquer problema do consumidor pelo lado que for mais conveniente. Na prática empírica, isso faz toda a diferença: estimar \(E\) e aplicar Shephard é frequentemente mais fácil do que resolver o problema primal.
+3. **Lump sum domina — em teoria.** O princípio do montante fixo é uma das implicações mais limpas da teoria, e sua lógica está por trás do argumento em favor de transferências diretas de renda. Mas as ressalvas (informação, equidade, viabilidade política) são tão importantes quanto o resultado.
+
 O consumidor encontrou sua cesta ótima. Mas o mundo não fica parado: preços mudam, rendas flutuam, governos criam impostos. O que acontece com a cesta ótima quando o chão se move? Essa é a pergunta do Capítulo 5 — onde Slutsky entra em cena.
 
-*O consumidor está em paz no seu ótimo. No próximo capítulo, perturbamos essa paz.*
+*O consumidor está em paz no seu ótimo. No próximo capítulo, perturbamos essa paz — e Slutsky nos ensina a decompor o caos.*
 
 ---
 
@@ -1028,23 +1073,23 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     ??? success "Resposta"
         **(b)** No problema $\max u(x_1,x_2)$ s.a. $p_1x_1 + p_2x_2 = I$, o multiplicador $\lambda = \partial V/\partial I$ é a utilidade marginal da renda, medindo o ganho de utilidade por unidade monetária adicional. A alternativa (d) descreve a TMS, que no ótimo iguala a razão de preços, não $\lambda$ diretamente.
 
-??? question "3. Na decomposição de Slutsky, o efeito substituição de uma redução no preço de um bem:"
-    - (a) Pode ser positivo ou negativo, dependendo se o bem é normal ou inferior
-    - (b) É sempre não negativo — o consumidor nunca demanda menos do bem que ficou relativamente mais barato
-    - (c) Depende da elasticidade-renda do bem
-    - (d) É zero quando os bens são complementos perfeitos
+??? question "3. O princípio do montante fixo (*lump sum principle*) afirma que:"
+    - (a) Impostos *lump sum* são sempre mais justos que impostos específicos
+    - (b) Um imposto *lump sum* que arrecada a mesma receita que um imposto específico deixa o consumidor com utilidade pelo menos igual
+    - (c) Impostos específicos arrecadam mais que impostos *lump sum*
+    - (d) A perda de bem-estar é a mesma nos dois casos, pois a receita é igual
 
     ??? success "Resposta"
-        **(b)** O efeito substituição é sempre não negativo pela convexidade das preferências: quando o preço relativo de um bem cai, a demanda compensada (hicksiana) desse bem não diminui. Isso é a Lei da Demanda Compensada. A alternativa (a) confunde com o efeito renda; (d) é incorreta — mesmo com complementos perfeitos, o efeito substituição é zero (não negativo), o que é consistente com (b).
+        **(b)** O imposto *lump sum* desloca a reta orçamentária paralelamente, preservando preços relativos. O imposto específico rotaciona a reta, distorcendo a razão de preços. Para a mesma receita, o *lump sum* gera utilidade maior porque o consumidor pode realocar livremente. A alternativa (a) confunde eficiência com equidade; (c) é falsa por construção (mesma receita); (d) é a armadilha — mesma receita *não* significa mesmo bem-estar.
 
-??? question "4. Se o preço de um bem normal cai, o efeito renda e o efeito substituição sobre a demanda desse bem:"
-    - (a) Atuam em direções opostas
-    - (b) Ambos atuam no sentido de aumentar a demanda, reforçando-se mutuamente
-    - (c) O efeito renda é sempre maior que o efeito substituição
-    - (d) Ambos atuam no sentido de reduzir a demanda
+??? question "4. A dualidade entre $V(\mathbf{p}, I)$ e $E(\mathbf{p}, \bar{u})$ implica que:"
+    - (a) $V$ e $E$ são a mesma função, apenas com nomes diferentes
+    - (b) $V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u}$ e $E(\mathbf{p}, V(\mathbf{p}, I)) = I$
+    - (c) As demandas marshalliana e hicksiana são sempre iguais
+    - (d) A função dispêndio é homogênea de grau zero em preços
 
     ??? success "Resposta"
-        **(b)** Para um bem normal com queda de preço: o efeito substituição aumenta a demanda (bem ficou relativamente mais barato) e o efeito renda também aumenta a demanda (poder de compra maior e o bem é normal). Os efeitos se reforçam. A alternativa (a) descreve o que ocorre com bens inferiores; (c) não é necessariamente verdade; (d) seria o caso de um bem de Giffen (efeito renda dominante e negativo).
+        **(b)** As identidades de dualidade afirmam que $V$ e $E$ são inversas uma da outra (fixados os preços): gastar o mínimo para atingir a utilidade máxima devolve a renda original, e maximizar utilidade com a renda mínima devolve a utilidade original. A alternativa (a) é imprecisa — são funções diferentes com argumentos diferentes; (c) só vale para utilidade quase-linear; (d) é falsa — $E$ é homogênea de grau *1* em preços.
 
 ??? question "5. Um consumidor com utilidade Cobb-Douglas $u = x_1^a x_2^b$ gasta, no ótimo, uma fração fixa da renda em cada bem. Se $a = 1$ e $b = 3$, qual fração da renda é gasta no bem 1?"
     - (a) $1/3$
@@ -1054,6 +1099,15 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     ??? success "Resposta"
         **(c)** Na Cobb-Douglas $u = x_1^a x_2^b$, a fração gasta no bem $i$ é o expoente dividido pela soma dos expoentes. Para o bem 1: $a/(a+b) = 1/(1+3) = 1/4$. A alternativa (b) = $3/4$ é a fração gasta no bem 2; (a) e (d) usam cálculos incorretos.
+
+??? question "6. A Identidade de Roy e o Lema de Shephard são úteis porque:"
+    - (a) Permitem resolver o problema do consumidor sem usar Lagrangeano
+    - (b) Recuperam as demandas marshalliana e hicksiana a partir de $V$ e $E$, respectivamente, usando apenas derivadas parciais
+    - (c) Demonstram que as demandas marshalliana e hicksiana são sempre iguais
+    - (d) São válidos apenas para a função Cobb-Douglas
+
+    ??? success "Resposta"
+        **(b)** A Identidade de Roy recupera a demanda marshalliana a partir de $V$: $x_i = -(\partial V/\partial p_i)/(\partial V/\partial I)$. O Lema de Shephard recupera a demanda hicksiana a partir de $E$: $h_i = \partial E/\partial p_i$. Ambos evitam *re-resolver* o problema de otimização — basta derivar funções já conhecidas. A alternativa (a) é imprecisa: o Lagrangeano é necessário para obter $V$ e $E$ inicialmente; (c) só vale para utilidade quase-linear; (d) são resultados gerais.
 
 ---
 
