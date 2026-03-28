@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 21"
 
 # Soluções dos Exercícios — Capítulo 21
 
-[← Voltar ao Capítulo 21](../cap21/index.md)
+[← Voltar ao Capítulo 21](../cap21/exercicios.md)
 
 ---
 

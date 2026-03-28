@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titulos dos Cards da Capa</title>
+<style>
+  :root { --bg: #1a1a2e; --card: #16213e; --accent: #e94560; --text: #eee; --muted: #aaa; --keep: #2d6a4f; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 1.5rem; max-width: 820px; margin: 0 auto; }
+  h1 { text-align: center; margin: 1rem 0 .3rem; font-size: 1.4rem; }
+  .subtitle { text-align: center; color: var(--muted); margin-bottom: 1.5rem; font-size: .85rem; }
+  .progress-bar { position: sticky; top: 0; z-index: 10; background: var(--bg); padding: .5rem 0; }
+  .progress-bar .track { background: #333; border-radius: 6px; height: 12px; overflow: hidden; }
+  .progress-bar .fill { background: linear-gradient(90deg, var(--accent), #ff6b6b); height: 100%; width: 0; transition: width .3s; border-radius: 6px; }
+  .progress-text { text-align: center; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  .item { background: var(--card); border-radius: 10px; margin: .8rem 0; padding: 1rem 1.2rem; }
+  .item-label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: .1rem; }
+  .item-current { font-size: .95rem; font-weight: 700; color: var(--accent); margin-bottom: .2rem; }
+  .item-caps { font-size: .78rem; color: var(--muted); margin-bottom: .6rem; font-style: italic; }
+  .options { display: flex; flex-direction: column; gap: 5px; }
+  .opt { display: flex; align-items: center; gap: .6rem; padding: 7px 11px; border-radius: 6px; cursor: pointer; transition: background .15s; }
+  .opt:hover { background: rgba(233,69,96,.12); }
+  .opt.keep-opt:hover { background: rgba(45,106,79,.2); }
+  .opt input { accent-color: var(--accent); transform: scale(1.15); }
+  .opt.keep-opt input { accent-color: var(--keep); }
+  .opt span { font-size: .9rem; }
+  .tag { font-size: .68rem; padding: 1px 5px; border-radius: 3px; margin-left: 5px; font-weight: 600; }
+  .tag-atual { background: var(--keep); color: #fff; }
+  .tag-novo { background: #e9456033; color: var(--accent); }
+  .actions { text-align: center; margin: 2rem 0; }
+  .btn { background: var(--accent); color: #fff; border: none; padding: .7rem 1.8rem; font-size: .95rem; border-radius: 8px; cursor: pointer; margin: .3rem; }
+  .btn:hover { opacity: .85; }
+  .btn.secondary { background: #0f3460; }
+  #output { display: none; background: var(--card); border-radius: 10px; padding: 1.2rem; margin: 1rem 0; white-space: pre-wrap; font-family: monospace; font-size: .85rem; }
+  .copied-msg { color: #4caf50; font-weight: bold; display: none; margin-top: .5rem; }
+</style>
+</head>
+<body>
+
+<h1>Titulos dos Cards — Capa</h1>
+<p class="subtitle">Escolha o titulo de cada card. Ao final, copie e cole no chat.</p>
+
+<div class="progress-bar">
+  <div class="track"><div class="fill" id="progressFill"></div></div>
+  <div class="progress-text" id="progressText">0 / 12</div>
+</div>
+
+<div id="formContainer"></div>
+
+<div class="actions">
+  <button class="btn" onclick="generateOutput()">Gerar Resultado</button>
+  <button class="btn secondary" onclick="copyOutput()">Copiar</button>
+  <div class="copied-msg" id="copiedMsg">Copiado!</div>
+</div>
+<div id="output"></div>
+
+<script>
+const CARDS = [
+  { id: "card1", label: "Parte I — Fundamentos", current: "Introdução",
+    caps: "Cap 1: Todos os Modelos Estão Errados — Alguns São Úteis | Cap 2: O Manual de Sobrevivência Matemática",
+    opts: [
+      "Modelos Errados, Derivadas Certas",
+      "Sobrevivendo ao Cálculo (E aos Modelos)",
+      "Antes de Jogar, Leia o Manual"
+    ]},
+  { id: "card2", label: "Parte II — Consumidor", current: "Escolha e Demanda",
+    caps: "Cap 3: Mais É Melhor — Será? | Cap 4: Você Quer Tudo. Mas Não Pode. | Cap 5: Slutsky no Supermercado | Cap 6: Substitutos, Complementos e Relações Complicadas",
+    opts: [
+      "Você Quer Tudo, Slutsky Explica Por Que Não Pode",
+      "Desejos, Orçamentos e Relações Complicadas",
+      "Do Carrinho ao Lagrangeano"
+    ]},
+  { id: "card3", label: "Parte III — Decisão sob Risco", current: "Incerteza e Estratégia",
+    caps: "Cap 7: O Preço do Talvez | Cap 8: Nem Tão Racionais Assim | Cap 9a–d: Pedra Papel Nash / Jogando no Escuro / ...",
+    opts: [
+      "Talvez, Vieses e Pedra-Papel-Nash",
+      "Nem Racionais, Nem Seguros, Mas Jogando",
+      "O Preço do Talvez (E do Blefe)"
+    ]},
+  { id: "card4", label: "Parte IV — Firma", current: "Produção e Oferta",
+    caps: "Cap 10: Mais Mãos, Mais Máquinas — Mais Produto? | Cap 11: A Conta Sempre Chega (E Vem em Formato de U) | Cap 12: Lucro = Receita − Custo",
+    opts: [
+      "Mais Mãos, Mais Custo, Menos Lucro?",
+      "Da Fábrica à Conta em Formato de U",
+      "Receita − Custo = Drama"
+    ]},
+  { id: "card5", label: "Parte V — Equilíbrio", current: "Mercados Competitivos",
+    caps: "Cap 13: O Leiloeiro que Ninguém Vê | Cap 14: Quando Tudo se Encaixa (ou Quase Isso)",
+    opts: [
+      "O Leiloeiro Invisível e o Quebra-Cabeça Geral",
+      "Quando Tudo se Encaixa (Ou Quase)",
+      "Ninguém Vê, Mas Funciona"
+    ]},
+  { id: "card6", label: "Parte VI — Poder de Mercado", current: "Monopólio e Oligopólio",
+    caps: "Cap 15: Sozinho, Feliz e Cobrando Caro | Cap 16: Poucos — e Isso Muda Tudo",
+    opts: [
+      "Sozinho ou em Poucos — E Cobrando Caro",
+      "Um Cobra Caro, Poucos Complicam Tudo",
+      "Do Rei Solitário ao Clube dos Poucos"
+    ]},
+  { id: "card7", label: "Parte VII — Fatores", current: "Mercados de Insumos",
+    caps: "Cap 17: O Salário Subiu e Você… Trabalhou Menos? | Cap 18: A Paciência Tem Preço",
+    opts: [
+      "O Salário Subiu, a Paciência Tem Preço",
+      "Suor, Juros e Aquela Vontade de Não Trabalhar",
+      "Trabalho Menos, Poupo Mais (Ou o Contrário)"
+    ]},
+  { id: "card8", label: "Parte VIII — Fronteiras", current: "Falhas de Mercado",
+    caps: "Cap 19: Quando Um Lado Sabe Mais (E Isso Estraga Tudo) | Cap 20: Fumaça, Caronas e Tragédias",
+    opts: [
+      "Limões, Fumaça e Caronas Grátis",
+      "Quando o Mercado Estraga Tudo",
+      "Informação Escondida e Contas Que Ninguém Paga"
+    ]},
+  { id: "card9", label: "Parte IX — Economia Digital", current: "Se É De Graça, O Produto É Você",
+    caps: "Cap 21: Se É De Graça, O Produto É Você",
+    opts: [
+      "Likes, Dados e Você Como Produto",
+      "Grátis? Seu Feed Discorda",
+      "Plataformas: O Almoço Grátis Que Custa Seus Dados"
+    ]},
+  { id: "card10", label: "Parte X — Métodos", current: "RCTs, Diff-in-Diff e Outras Siglas",
+    caps: "Cap 22: RCTs, Diff-in-Diff e Outras Siglas que Mudaram a Economia",
+    opts: [
+      "Prove ou Cale-se: O Lab do Economista",
+      "Siglas Que Mudaram a Economia",
+      "Causalidade: Não Basta Correlacionar"
+    ]},
+  { id: "card11", label: "Parte XI — Economia da Saúde", current: "Doutor, Quanto Custa?",
+    caps: "Cap 23: Doutor, Quanto Custa? (Arrow Já Sabia Que Ia Dar Problema)",
+    opts: [
+      "Arrow Avisou: Saúde Não É Mercado Normal",
+      "O Paciente, o Médico e a Conta",
+      "Aspirina a 25 Dólares (E Arrow Explica Por Quê)"
+    ]},
+  { id: "card12", label: "Parte XII — Economia Ambiental", current: "Quanto Vale Um Pôr do Sol?",
+    caps: "Cap 24: Quanto Vale Um Pôr do Sol? (Não, Sério, Quanto?)",
+    opts: [
+      "Carbono, Pigou e a Conta do Planeta",
+      "O Planeta Manda a Fatura",
+      "Pôr do Sol: Bonito, Mas Quanto Custa?"
+    ]},
+];
+
+const total = CARDS.length;
+const container = document.getElementById('formContainer');
+
+CARDS.forEach(c => {
+  const div = document.createElement('div');
+  div.className = 'item';
+  let html = `<div class="item-label">${c.label}</div>`;
+  html += `<div class="item-current">${c.current}</div>`;
+  html += `<div class="item-caps">${c.caps}</div>`;
+  html += `<div class="options">`;
+  html += `<label class="opt keep-opt"><input type="radio" name="${c.id}" value="0" onchange="up()"><span>Manter: "${c.current}" <span class="tag tag-atual">ATUAL</span></span></label>`;
+  c.opts.forEach((o, i) => {
+    html += `<label class="opt"><input type="radio" name="${c.id}" value="${i+1}" onchange="up()"><span>${o} <span class="tag tag-novo">NOVO</span></span></label>`;
+  });
+  html += `</div>`;
+  div.innerHTML = html;
+  container.appendChild(div);
+});
+
+function up() {
+  const n = document.querySelectorAll('input[type=radio]:checked').length;
+  document.getElementById('progressFill').style.width = (n/total*100)+'%';
+  document.getElementById('progressText').textContent = n+' / '+total;
+}
+
+function generateOutput() {
+  let lines = [];
+  CARDS.forEach(c => {
+    const sel = document.querySelector(`input[name="${c.id}"]:checked`);
+    if (sel) {
+      const v = parseInt(sel.value);
+      if (v === 0) lines.push(`${c.id}: MANTER → "${c.current}"`);
+      else lines.push(`${c.id}: TROCAR → "${c.opts[v-1]}"`);
+    } else lines.push(`${c.id}: NAO SELECIONADO`);
+  });
+  const out = document.getElementById('output');
+  out.textContent = lines.join('\n');
+  out.style.display = 'block';
+  out.scrollIntoView({behavior:'smooth'});
+}
+
+function copyOutput() {
+  const out = document.getElementById('output');
+  if (!out.textContent) generateOutput();
+  navigator.clipboard.writeText(out.textContent).then(() => {
+    const msg = document.getElementById('copiedMsg');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2000);
+  });
+}
+</script>
+</body>
+</html>

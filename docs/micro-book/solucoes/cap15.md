@@ -136,7 +136,7 @@ DWL = \frac{1}{2}(p^M - CMg)(q^{CP} - q^M) = \frac{1}{2}(30 - 10)(20 - 10) = \fr
 
 **Interpretação:** O peso morto do monopólio é igual ao lucro do monopolista neste caso. A perda de bem-estar decorre da restrição de quantidade: o monopolista produz apenas metade da quantidade competitiva (\( q^M = 10 \) vs. \( q^{CP} = 20 \)).
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-1)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-1)
 
 ---
 
@@ -268,7 +268,7 @@ O lucro com preço uniforme:
 
 **Interpretação:** A discriminação de preços aumenta o lucro em \( \frac{400}{3} \approx 133{,}33 \). A firma se beneficia ao cobrar preços diferenciados. Note que a quantidade total é a mesma (\( Q = 50 \)) em ambos os casos (resultado geral para demandas lineares), mas a discriminação realoca unidades do mercado 1 (mais valorizado) para o mercado 2, cobrando mais de quem tem menor elasticidade.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-2)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-2)
 
 ---
 
@@ -356,7 +356,7 @@ RF = 32 > \Delta DWL = 22
 
 **Interpretação:** A receita fiscal (32) excede o aumento no peso morto (22), o que significa que o imposto gera um ganho líquido de bem-estar se a receita fiscal for devolvida à sociedade como transferência lump-sum. Contudo, o DWL total aumentou: a tributação do monopólio agrava a distorção preexistente, pois a quantidade cai de 10 para 8, afastando-se ainda mais do ótimo social (\( q^{CP} = 20 \)).
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-3)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-3)
 
 ---
 
@@ -462,7 +462,7 @@ EC^{CMg} = \frac{1}{2}(45 - 5)(40) = 800
 
 Como \( EC^{CMg} = 800 < 1000 = \text{custo fixo} \), o benefício social não justifica o custo, e a produção é socialmente ineficiente neste caso.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-4)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-4)
 
 ---
 
@@ -640,7 +640,7 @@ Lucro:
 
 **Interpretação:** A estratégia mais lucrativa é servir apenas o tipo 1, cobrando preço igual ao custo marginal (\( p = 2 \)) e extraindo todo o excedente via taxa fixa (\( T = 162 \)). Ao excluir o tipo 2, a firma pode fixar a taxa fixa no nível do excedente do tipo 1, que é muito maior. O trade-off da tarifa em duas partes com dois tipos é: servir ambos limita \( T \) ao excedente do tipo com menor disposição a pagar, enquanto excluir o tipo menor permite capturar todo o excedente do tipo maior. Neste caso, a perda de receita dos 100 consumidores do tipo 2 é mais do que compensada pela taxa fixa muito mais alta cobrada dos 100 consumidores do tipo 1.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-5)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-5)
 
 ---
 
@@ -740,7 +740,7 @@ O preço e o Lerner são idênticos nos dois casos, pois ambas as demandas têm 
 
 **Interpretação:** A inclinação da demanda afeta a escala de produção e o lucro absoluto, mas não o markup relativo nem a elasticidade no ótimo, quando a interceptação é a mesma.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-6)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-6)
 
 ---
 
@@ -811,7 +811,7 @@ DWL^U = \frac{1}{2}(p^M - c)(Q^{CP} - Q^M) = \frac{1}{2}(6 - 2)(400 - 200) = 400
 
 **Interpretação:** A discriminação de primeiro grau elimina completamente a perda de peso morto, pois o monopolista produz a quantidade eficiente (\( Q = 400 \), como em concorrência perfeita). Contudo, todo o excedente é capturado pelo produtor: os consumidores ficam com excedente zero. A discriminação perfeita é eficiente no sentido de Pareto em relação à situação de monopólio (o produtor ganha mais e nenhum consumidor perde em relação a não consumir), mas levanta questões distributivas.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-7)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-7)
 
 ---
 
@@ -904,7 +904,7 @@ Lucro: \( \pi^{CMe} = 0 \) (por construção, \( p = CMe \)).
 
 **Interpretação:** Neste caso, diferentemente do Exercício 15.4, a demanda é suficiente para viabilizar a regulação por custo médio. A solução \( p = CMe \) é um compromisso: produz mais do que o monopólio não regulado (36,18 vs. 25), cobra menos (15,82 vs. 27) e não requer subsídio. A regulação por CMg é a mais eficiente (maximiza o excedente total), mas exige um subsídio de 500. A escolha entre os regimes depende do custo de financiamento público do subsídio.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-8)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-8)
 
 ---
 
@@ -995,7 +995,7 @@ W'^{CP} = \frac{1}{2}(100 - 30)(35) = \frac{1}{2} \times 70 \times 35 = 1225
 
 **Interpretação:** A DWL absoluta diminui quando o custo marginal sobe (pois o mercado encolhe), mas a DWL como fração do excedente competitivo permanece constante em 25%. Este é um resultado geral para demanda linear \( p = a - bq \) e CMg constante: pode-se mostrar que \( DWL/W^{CP} = 1/4 \), independentemente dos parâmetros. Isso ocorre porque o monopolista sempre restringe a produção à metade da quantidade competitiva (\( q^M = q^{CP}/2 \)), gerando um triângulo de Harberger que é sempre 1/4 do triângulo de excedente total.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-9)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-9)
 
 ---
 
@@ -1123,4 +1123,4 @@ Se houvesse \( N \) consumidores de cada tipo, o lucro total seria \( 50N \).
 
 **Comparação:** Com consumidores idênticos (tipo A), o lucro por consumidor era 100. Com dois tipos, o lucro por par cai para 50 (ou 25 por consumidor). A heterogeneidade dos consumidores reduz o poder de extração da tarifa em duas partes, pois a taxa fixa deve acomodar o tipo com menor disposição a pagar. O preço unitário sobe acima do CMg (\( p = 5 > 2 \)) para compensar parcialmente a taxa fixa mais baixa.
 
-↩ [Voltar ao enunciado](../cap15/index.md#ex-15-10)
+↩ [Voltar ao enunciado](../cap15/exercicios.md#ex-15-10)

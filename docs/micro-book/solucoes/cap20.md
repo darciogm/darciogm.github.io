@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 20"
 
 # Soluções dos Exercícios — Capítulo 20
 
-[← Voltar ao Capítulo 20](../cap20/index.md)
+[← Voltar ao Capítulo 20](../cap20/exercicios.md)
 
 ---
 
@@ -108,7 +108,7 @@ DWL = \int_{q^{**}}^{q^*} \left[ CMgS(q) - P \right] dq = \int_{50/3}^{50} (6q -
 
 Interpretação: essa é a perda líquida de bem-estar social provocada pela produção de 50 toneladas em vez das 16,67 toneladas eficientes. A firma ignora o dano ambiental que impõe a terceiros, gerando superprodução significativa.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-1)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-1)
 
 ---
 
@@ -196,7 +196,7 @@ A soma dos preços de Lindahl (75) **excede** o custo marginal (60). Isso ocorre
 
 Para a solução discreta \( G^* = 2 \), os preços de Lindahl geram um **superávit** de \( 75 - 60 = 15 \), que poderia ser redistribuído entre os indivíduos como um desconto proporcional, mantendo a eficiência da provisão.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-2)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-2)
 
 ---
 
@@ -282,7 +282,7 @@ p = CMgA_2(a_2^*) = 2 \cdot 40 = 80 \checkmark
 
 Interpretação: a firma 1 (custo marginal alto) compraria permissões da firma 2 (custo marginal baixo) até que os custos marginais se igualem. O mercado de permissões atinge automaticamente a alocação custo-efetiva, independentemente da distribuição inicial das permissões (resultado análogo ao Teorema de Coase).
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-3)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-3)
 
 ---
 
@@ -369,7 +369,7 @@ S_{-i} = \sum_{j \neq i} (\hat{v}_j - c_j)
 
 **Limitação:** O mecanismo de Clarke não é orçamentariamente equilibrado — a receita dos impostos pivotais é um excedente que não pode ser redistribuído aos participantes sem comprometer os incentivos.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-4)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-4)
 
 ---
 
@@ -550,7 +550,7 @@ Cada um "pega carona" parcialmente no outro, e o resultado é que ambos subinves
 
 Este resultado fundamenta a necessidade de mecanismos coletivos (tributação, mecanismos de revelação) para atingir a provisão eficiente de bens públicos.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-5)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-5)
 
 ---
 
@@ -666,7 +666,7 @@ DWL_{res} = \int_{20}^{30} (3q - 60)\, dq = \left[ \frac{3q^2}{2} - 60q \right]_
 
 **Com imposto incorreto \( t = 30 \), a firma produz \( q = 30 \) (acima do ótimo), e o peso morto residual é 150.** O imposto subótimo elimina a maior parte da ineficiência (reduz DWL de 2400 para 150, ou seja, remove 93,75% do peso morto), mas não a totalidade, pois o imposto é inferior ao dano marginal externo na quantidade eficiente.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-6)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-6)
 
 ---
 
@@ -760,7 +760,7 @@ O lavrador aceita se recebe ao menos 288 (compensação integral pelo dano). O f
 
 **A negociação novamente conduz a \( n = 12 \), com compensação \( T' \in [288, 1008] \).** Isso confirma o Teorema de Coase: a alocação eficiente é alcançada independentemente da distribuição inicial dos direitos de propriedade. A diferença está apenas na distribuição do excedente — quem detém o direito obtém maior parcela do ganho.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-7)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-7)
 
 ---
 
@@ -844,7 +844,7 @@ G^* = (200 \times 5)^2 = 1\,000\,000, \quad G^{Nash} = 25 \text{ (inalterado)}
 
 **A razão diminui dramaticamente.** O nível de Nash não muda (cada consumidor resolve o mesmo problema individual), mas o nível eficiente cresce com \( N^2 \). À medida que o grupo aumenta, o free-riding se agrava: cada consumidor é uma fração menor do total, seu impacto na provisão é insignificante, e o incentivo a contribuir diminui. Este é o resultado clássico de Olson (1965): **grupos maiores enfrentam problemas de ação coletiva mais severos**, pois o benefício individual da contribuição é diluído entre mais membros.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-8)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-8)
 
 ---
 
@@ -944,7 +944,7 @@ O imposto corrige a cunha entre produto médio e produto marginal, fazendo cada 
 
 **Política 2 — Sistema de quotas individuais transferíveis (ITQ).** O regulador fixa o esforço total em \( E^{soc} = 45 \) e distribui permissões de pesca. Cada pescador recebe uma quota de \( 45/10 = 4{,}5 \) unidades de esforço. As quotas são transferíveis, permitindo que pescadores mais eficientes comprem quotas dos menos eficientes. Com pescadores idênticos, não há comércio, mas o cap garante o nível eficiente. O preço de equilíbrio da quota reflete o produto marginal social da pesca no ótimo.
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-9)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-9)
 
 ---
 
@@ -1056,4 +1056,4 @@ O resultado de Weitzman (1974) mostra que a escolha entre preços (imposto) e qu
 
 No nosso exercício, com dano marginal constante e custos subestimados: o imposto errou na quantidade (abateu 46,67 em vez de 100), mas manteve a eficiência marginal. O cap-and-trade atingiu a meta, mas a um custo marginal de 85,71, muito acima do dano marginal de 40 — gerando ineficiência por abatimento excessivo em termos de custo-benefício. **O imposto domina porque a curva de dano é plana.**
 
-↩ [Voltar ao enunciado](../cap20/index.md#ex-20-10)
+↩ [Voltar ao enunciado](../cap20/exercicios.md#ex-20-10)

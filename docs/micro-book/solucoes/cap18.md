@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 18"
 
 # Soluções dos Exercícios — Capítulo 18
 
-[← Voltar ao Capítulo 18](../cap18/index.md)
+[← Voltar ao Capítulo 18](../cap18/exercicios.md)
 
 ---
 
@@ -119,7 +119,7 @@ Resumindo:
 
 Para o tomador de empréstimo, o aumento dos juros tem efeito renda negativo e efeito substituição que favorece consumo futuro. O consumo presente cai inequivocamente; o consumo futuro sobe porque o efeito substituição supera o efeito renda neste caso.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-1)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-1)
 
 ---
 
@@ -204,7 +204,7 @@ Como \( \text{VPL} > 0 \) (equivalentemente, \( \text{TIR} = 15{,}24\% > 12\% \)
 
 **Interpretação:** Mesmo incorporando o prêmio de risco setorial, o projeto gera valor econômico positivo de aproximadamente R\$40.720 em termos de valor presente. A TIR de 15,24% supera o custo de capital ajustado ao risco de 12%, confirmando a viabilidade.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-2)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-2)
 
 ---
 
@@ -266,7 +266,7 @@ O estoque se esgota em um horizonte menor.
 
 **Interpretação:** Taxas de juros altas favorecem a extração presente e penalizam a conservação. Isso tem implicações profundas para política ambiental: países com altas taxas de juros reais tendem a explorar mais rapidamente seus recursos naturais, uma previsão testável da teoria de Hotelling.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-3)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-3)
 
 ---
 
@@ -357,7 +357,7 @@ O VPL é considerado o critério superior ao da TIR por diversas razões:
 
 5. **Aditividade:** O VPL é aditivo — o VPL de uma carteira é a soma dos VPLs individuais. A TIR não possui essa propriedade.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-4)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-4)
 
 ---
 
@@ -450,7 +450,7 @@ Mesmo com taxa real menor, a instabilidade regulatória eleva o custo de capital
 
 **Conclusão:** O governo deveria priorizar a estabilidade regulatória. Uma taxa de juros real baixa é condição necessária mas não suficiente para atrair investimento em infraestrutura de longo prazo. O prêmio de risco regulatório, ao ser aplicado sobre fluxos de caixa de 20-30 anos, tem efeito cumulativo devastador sobre o VPL. Marcos regulatórios claros, contratos críveis e instituições sólidas reduzem \( \pi_{\text{reg}} \) e são, portanto, tão ou mais importantes que a política monetária para viabilizar grandes projetos de infraestrutura.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-5)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-5)
 
 ---
 
@@ -510,7 +510,7 @@ O consumidor continua poupador (\( S' > 0 \)), mas poupa menos (R$ 26,90 vs. R$ 
 
 **Interpretação:** O efeito substituição da queda de \( r \) reduz o incentivo a poupar (o retorno da poupança caiu). O efeito renda é ambíguo para o poupador, mas aqui ele é positivo porém insuficiente para compensar o efeito substituição. O resultado líquido é menos poupança — o consumidor "antecipa" mais consumo.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-6)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-6)
 
 ---
 
@@ -560,7 +560,7 @@ A redução do risco regulatório melhora muito o VPL (de -2,05 mi para -0,67 mi
 
 **Comparação:** O subsídio direto de R$ 3 milhões é mais eficaz neste caso (+R$ 947 mil de VPL) do que a redução de risco (-R$ 669 mil). Porém, a redução de risco regulatório beneficia **todos** os projetos do setor, enquanto o subsídio beneficia apenas este projeto específico. A longo prazo, melhorar o ambiente regulatório é a política mais eficiente.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-7)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-7)
 
 ---
 
@@ -608,7 +608,7 @@ O **equivalente de certeza** do Tesouro Prefixado para um agente avesso ao risco
 
 Na prática, a forte demanda por Tesouro IPCA+ no Brasil sugere que muitos investidores são suficientemente avessos ao risco inflacionário para aceitar o retorno real garantido menor.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-8)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-8)
 
 ---
 
@@ -648,7 +648,7 @@ Restrições de crédito são altamente relevantes na economia brasileira. Segun
 - Famílias de baixa renda frequentemente não têm acesso a crédito formal, dependendo de crédito informal a taxas ainda mais altas.
 - A consequência é que muitos consumidores brasileiros não conseguem suavizar o consumo intertemporalmente, ficando presos a variações de renda — exatamente o oposto do que o modelo de Fisher prevê sob mercados perfeitos.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-9)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-9)
 
 ---
 
@@ -716,4 +716,4 @@ Efeitos:
 
 A taxa de carbono é, portanto, consistente com a lógica de Hotelling: altera o custo efetivo de extração e, por conseguinte, toda a trajetória ótima, desacelerando a exaustão e favorecendo a transição para fontes de energia limpas.
 
-↩ [Voltar ao enunciado](../cap18/index.md#ex-18-10)
+↩ [Voltar ao enunciado](../cap18/exercicios.md#ex-18-10)

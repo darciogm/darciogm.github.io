@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 22"
 
 # Soluções dos Exercícios — Capítulo 22
 
-[← Voltar ao Capítulo 22](../cap22/index.md)
+[← Voltar ao Capítulo 22](../cap22/exercicios.md)
 
 ---
 

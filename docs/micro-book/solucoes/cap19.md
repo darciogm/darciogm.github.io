@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 19"
 
 # Soluções dos Exercícios — Capítulo 19
 
-[← Voltar ao Capítulo 19](../cap19/index.md)
+[← Voltar ao Capítulo 19](../cap19/exercicios.md)
 
 ---
 
@@ -55,7 +55,7 @@ Diversas instituições podem mitigar o problema:
 
 A ideia central é que qualquer mecanismo que permita aos vendedores de carros bons **revelar seu tipo de forma crível** restaura, ao menos parcialmente, a eficiência do mercado.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-1)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-1)
 
 ---
 
@@ -139,7 +139,7 @@ Se o esforço é observável, basta satisfazer a RP. O principal pode oferecer s
 
 A diferença \( 36{,}64 - 36 = 0{,}64 \) é o **custo da assimetria informacional** (ou "custo de agência"). Ele surge porque, para incentivar o agente, o principal precisa expô-lo a risco (\( w_H \neq w_L \)), o que é custoso dado que o agente é avesso ao risco (\( U = \sqrt{w} \) é côncava).
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-2)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-2)
 
 ---
 
@@ -204,7 +204,7 @@ No equilíbrio separador de menor custo, o tipo H gasta \( s^*/2 = 25 \) em sina
 
 Contudo, na prática, a educação pode ter efeitos produtivos reais (acumulação de capital humano), o que muda parcialmente a análise. Se a educação for parcialmente produtiva e parcialmente sinalizadora, o custo social é menor que no modelo puro, mas ainda há ineficiência na margem.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-3)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-3)
 
 ---
 
@@ -274,7 +274,7 @@ b_i(v_i) = \frac{2}{3}\, v_i
 
 Confirmando a equivalência de receitas.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-4)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-4)
 
 ---
 
@@ -379,7 +379,7 @@ Formalmente, existe um limiar \( \bar{\lambda} \) para a proporção de tipo A t
 
 Esse resultado é um dos achados mais importantes de **Rothschild e Stiglitz (1976)**: em mercados competitivos com seleção adversa, o equilíbrio pode simplesmente não existir, dependendo da composição da população. Isso contrasta com o resultado de mercados com informação simétrica, nos quais o equilíbrio competitivo sempre existe sob condições padrão.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-5)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-5)
 
 ---
 
@@ -448,7 +448,7 @@ Se o mercado sem garantia oferece \( P_{sem} \leq 30 \) (apenas tipo B), o tipo 
 
 Entretanto, o tipo M continua excluído. Para resolver completamente, seria necessário um segundo nível de sinal (por exemplo, garantia de duração intermediária). A garantia **resolve parcialmente** o problema, restaurando o mercado para carros de alta qualidade mas não necessariamente para os de qualidade média.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-6)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-6)
 
 ---
 
@@ -557,7 +557,7 @@ Minimizando: \( \frac{dW}{d\alpha} = 100\alpha = 0 \implies \alpha^* = 0 \).
 
 **Interpretação:** Neste modelo simplificado com segurado neutro ao risco (custos lineares em riqueza), o seguro não traz benefício de suavização de risco, e o risco moral torna qualquer cobertura custosa. Na prática, com aversão ao risco, a cobertura ótima é positiva mas parcial (\( 0 < \alpha^* < 1 \)), refletindo o trade-off clássico entre seguro e incentivos.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-7)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-7)
 
 ---
 
@@ -635,7 +635,7 @@ Um imposto sobre educação \( \tau \) por unidade de \( s \) aumenta o custo pa
 
 **Resultado paradoxal:** no modelo puro de sinalização (educação improdutiva), um imposto moderado sobre educação **melhora** o bem-estar, pois reduz o desperdício de recursos em sinalização sem destruir completamente a separação. Contudo, na prática, a educação tem componente produtivo real, o que torna essa política desaconselhável. A prescrição depende crucialmente de quanto da educação é sinalização vs. capital humano — uma questão empírica aberta.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-8)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-8)
 
 ---
 
@@ -762,7 +762,7 @@ RI_H = (\theta_H - \theta_L) q_L = 6q_L
 
 Comparação com first-best: \( \Pi^{FB} = 29 \). A perda de \( 29 - 25 = 4 \) é o custo da assimetria informacional: o monopolista abre mão de vender ao tipo L para evitar pagar renda informacional excessiva ao tipo H.
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-9)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-9)
 
 ---
 
@@ -826,4 +826,4 @@ A diferença \( \frac{2}{3} - \frac{1}{3} = \frac{1}{3} \) é a **renda informac
 
 **Trade-off fundamental (Myerson-Satterthwaite):** O Teorema de Myerson-Satterthwaite (1983) mostra que, em geral, não existe mecanismo que seja simultaneamente eficiente, incentivo-compatível, individualmente racional e orçamentariamente equilibrado quando há informação privada bilateral. O VCG sacrifica o equilíbrio orçamentário para garantir eficiência e incentivo-compatibilidade. Na prática, o governo pode usar leilões de primeiro preço (que reduzem a renda informacional à custa de menor eficiência) ou mecanismos ótimos de Myerson (que maximizam a receita/minimizam o pagamento, mas podem excluir firmas eficientes).
 
-↩ [Voltar ao enunciado](../cap19/index.md#ex-19-10)
+↩ [Voltar ao enunciado](../cap19/exercicios.md#ex-19-10)

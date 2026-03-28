@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 16"
 
 # Soluções dos Exercícios — Capítulo 16
 
-[← Voltar ao Capítulo 16](../cap16/index.md)
+[← Voltar ao Capítulo 16](../cap16/exercicios.md)
 
 ---
 
@@ -108,7 +108,7 @@ CT_{\text{sim}} = 20 \cdot \frac{200}{3} = \frac{4000}{3} \approx 1333{,}33
 
 A assimetria de custos **reduz o excedente total**. Há dois efeitos negativos: (i) a produção total cai, reduzindo o excedente do consumidor; (ii) a produção é alocada de forma ineficiente — a firma menos eficiente (firma 2) produz uma parcela significativa do total, elevando o custo médio de produção da indústria. A eficiência produtiva exigiria que toda a produção fosse feita pela firma de menor custo.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-1)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-1)
 
 ---
 
@@ -170,7 +170,7 @@ No equilíbrio, \( p^* = 40 > 10 = c \). A diferenciação de produtos resolve o
 
 Note que as funções de melhor-resposta em preços têm inclinação positiva (\( \partial p_i^*/\partial p_j = 1/4 > 0 \)), característica da competição em preços com bens diferenciados: preços são **complementos estratégicos**. Quando a rival eleva seu preço, a melhor resposta é também elevar o próprio preço.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-2)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-2)
 
 ---
 
@@ -299,7 +299,7 @@ O bem-estar é maximizado com **\( n^{**} = 3 \) firmas** (ou possivelmente 4, a
 
 **Sim, há excesso de entrada.** O equilíbrio de livre entrada produz \( n^* = 8 \) firmas, enquanto o ótimo social requer apenas \( n^{**} = 3 \). Isso ocorre porque firmas entrantes capturam parte do excedente de firmas já instaladas (efeito de "roubo de negócio"), mas cada entrante gera custos fixos adicionais. A contribuição marginal de cada firma para o bem-estar social é decrescente, enquanto o custo fixo é constante. As firmas entram até zerar seus lucros privados, desconsiderando a externalidade negativa que impõem às demais — resultado clássico de **excesso de entrada** em oligopólios com custos fixos.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-3)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-3)
 
 ---
 
@@ -395,7 +395,7 @@ Com três firmas, o fator de desconto mínimo sobe para \( \delta^* = \frac{2}{3
 
 **Interpretação:** com mais firmas, a colusão é mais difícil de sustentar. Cada firma recebe uma fatia menor do lucro de monopólio durante a cooperação, mas o ganho do desvio continua sendo a captura de todo o mercado. Assim, a tentação relativa de desviar cresce. Em geral, para \( n \) firmas, \( \delta^* = \frac{n-1}{n} \), convergindo para 1 à medida que \( n \to \infty \) — tornando a colusão praticamente impossível em mercados com muitas firmas.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-4)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-4)
 
 ---
 
@@ -516,7 +516,7 @@ O **Stackelberg gera maior excedente total** por duas razões:
 
 O custo total de produção no Stackelberg é \( 10 \cdot 50 + 20 \cdot 15 = 800 \), enquanto no Cournot é \( 10 \cdot 100/3 + 20 \cdot 70/3 = 1000/3 + 1400/3 = 2400/3 = 800 \). Os custos totais são iguais neste caso, então o ganho de bem-estar do Stackelberg vem inteiramente do maior volume de produção e, consequentemente, do maior excedente do consumidor. A vantagem de primeiro movimento permite à líder expandir sua produção de forma crível, disciplinando a seguidora e aproximando o resultado do competitivo.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-5)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-5)
 
 ---
 
@@ -542,7 +542,7 @@ Com menor diferenciação, preços e lucros caem. No limite \( t \to 0 \), o mer
 
 O consumidor indiferente: \( p_1 + t|x - 1/4| = p_2 + t|x - 1| \). No equilíbrio simétrico em preços, isso se resolve numericamente. A firma 1, ao se aproximar do centro, captura mais consumidores e força a firma 2 a reduzir preços. Em geral, a firma que se aproxima do centro ganha market share mas intensifica a competição (princípio de diferenciação mínima vs. máxima de Hotelling).
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-6)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-6)
 
 ---
 
@@ -566,7 +566,7 @@ Lucro: \( \pi = (p - c)q - f = (250/n)(1000/n) - 100 = 250.000/n^2 - 100 \).
 
 No equilíbrio: \( q^* = 1000/50 = 20 \). O custo médio mínimo ocorre onde \( CMe = 100/q + 10 \) é minimizado, ou seja, quando o custo fixo por unidade é arbitrariamente pequeno — formalmente, \( q_{eff} \to \infty \). Na prática, \( q = 20 \) implica \( CMe = 100/20 + 10 = 15 \), que excede o custo marginal (10). A firma opera com excesso de capacidade: produz menos do que minimizaria seu custo médio.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-7)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-7)
 
 ---
 
@@ -594,7 +594,7 @@ Note: \( \Delta HHI = 2 \times s_1 \times s_2 = 2 \times 35 \times 25 = 1.750 \)
 
 A redução de 5% no custo marginal da firma combinada precisa ser confrontada com o aumento esperado de preço. Com demanda linear e Cournot, a firma com custo menor produz mais, e o preço de equilíbrio cai. Contudo, a concentração de 60% confere poder de mercado substancial. Qualitativamente, uma redução de custos de 5% é improvável que compense um aumento de participação de 35% para 60%. A autoridade antitruste provavelmente exigiria eficiências maiores ou remédios estruturais (desinvestimento de marcas/ativos).
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-8)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-8)
 
 ---
 
@@ -622,7 +622,7 @@ No cartel eficiente, toda a produção é feita pela firma 1 (custo menor). A fi
 
 A firma 1 (eficiente) tem **maior incentivo para desviar** (precisa de \( \delta \geq 0{,}5 \)), pois seu lucro de desvio é maior (captura toda a demanda ao preço de monopólio com custo baixo). O \( \delta \) mínimo para sustentação é \( \delta = 0{,}5 \), determinado pela restrição da firma 1.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-9)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-9)
 
 ---
 
@@ -654,4 +654,4 @@ CPO: \( f - 1/(4n^2) = 0 \implies n^{**} = 1/(2\sqrt{f}) = n^*/2 \). ✓
 
 Há **excesso de entrada** (\( n^* = 2 n^{**} \)). A externalidade é o **efeito roubo de negócios** (business stealing): cada entrante captura clientes de firmas existentes, reduzindo seus lucros, sem internalizar essa perda. A entrada privada é excessiva porque cada firma conta apenas o lucro que ganha, ignorando o lucro que rouba das vizinhas.
 
-↩ [Voltar ao enunciado](../cap16/index.md#ex-16-10)
+↩ [Voltar ao enunciado](../cap16/exercicios.md#ex-16-10)

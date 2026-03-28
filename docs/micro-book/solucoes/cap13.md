@@ -31,7 +31,7 @@ EP: Da oferta inversa: \(p = 2{,}5 + Q/200\). \(EP = \frac{1}{2}(6{,}25 - 2{,}5)
 PPM: \(\frac{1}{2} \times 2 \times (750 - 550) = 200\).
 
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-1)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-1)
 
 ---
 
@@ -52,7 +52,7 @@ Na verdade, \(PPM = EC_{\text{antes}} + EP_{\text{antes}} - EC_{\text{depois}} -
 **(c)** Antes: \(EC = \frac{1}{2}(20-16)(200) = 400\). Depois (com racionamento eficiente): consumidores que compram a \(p = 10\) ganham excedente, mas os 150 que não conseguem comprar perdem. O EC líquido depende da alocação, mas é menor que o EC original + EP original combinados, com a diferença sendo o PPM.
 
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-2)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-2)
 
 ---
 
@@ -89,7 +89,7 @@ Estas fórmulas são **idênticas** às do imposto específico. O lado mais inel
 **Interpretação econômica:** A incidência econômica de um imposto depende exclusivamente das elasticidades relativas, não da forma legal (específico vs. *ad valorem*) nem de quem remete o pagamento ao governo (incidência legal vs. econômica).
 
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-3)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-3)
 
 ---
 
@@ -114,7 +114,7 @@ Variação: \(\Delta EP = 8888{,}9 - 5000 = 3888{,}9\).
 **Interpretação econômica:** Em indústrias de custos crescentes, o aumento da demanda eleva o preço e gera renda ricardiana: lucro puro que remunera a escassez de insumos específicos (terra fértil, localização, recursos naturais). No Brasil, o boom de commodities pós-2003 gerou renda ricardiana expressiva no agronegócio.
 
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-4)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-4)
 
 ---
 
@@ -144,7 +144,7 @@ PPM = \frac{1}{2} \times 0{,}30 \times Q \times 0{,}3 \times \frac{0{,}30}{p} = 
 
 Com valores plausíveis (\(p \approx 5{,}50\), \(Q\) em bilhões de litros), o peso morto é relativamente pequeno em percentual — consequência da baixa elasticidade.
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-5)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-5)
 
 ---
 
@@ -196,7 +196,7 @@ Perda de peso morto: \(PPM = \frac{1}{2} \times 8 \times (90 - 75) = \frac{1}{2}
 
 O subsídio estimula a produção além do nível eficiente (90 > 75). As 15 unidades adicionais têm custo marginal superior à disposição a pagar dos consumidores, gerando um triângulo de ineficiência de 60.
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-6)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-6)
 
 ---
 
@@ -254,7 +254,7 @@ EP_1 = \frac{1}{2}(150 - 53{,}33)(29) = \frac{1}{2}(96{,}67)(29) = 1401{,}67
 
 **(d)** No curto prazo, a oferta de café orgânico é muito inelástica: os cafezais existentes levam 3–4 anos para atingir a maturidade produtiva e a conversão para orgânico requer certificação demorada. Com oferta quase vertical no curto prazo, o deslocamento da demanda se traduz quase inteiramente em aumento de preço (e pouco em quantidade). Isso amplifica tanto o ganho dos produtores quanto a perda dos consumidores domésticos em relação ao cenário com oferta mais elástica (longo prazo). À medida que novos plantios maturam, a oferta se torna mais elástica, o preço recua parcialmente e a quantidade se ajusta mais.
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-7)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-7)
 
 ---
 
@@ -318,7 +318,7 @@ PPM' = \frac{1}{2} \cdot \frac{2{,}0 \times 1{,}4}{2{,}0 + 1{,}4} \cdot \frac{25
 
 A PPM quase dobra (de 21 para 41,2). **Princípio de Ramsey:** para minimizar o peso morto total da tributação, impostos devem ser mais elevados sobre bens com demanda mais inelástica. A demanda inelástica original (\(|\varepsilon_D| = 0{,}6\)) gerava PPM menor porque a quantidade reagia pouco ao imposto. Com demanda elástica (\(|\varepsilon_D| = 2{,}0\)), a distorção quantitativa é maior e o peso morto cresce substancialmente.
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-8)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-8)
 
 ---
 
@@ -366,7 +366,7 @@ Graficamente: (i) há uma transferência de excedente dos proprietários para os
 
 (iv) *Equidade distributiva:* O teto beneficia quem consegue alugar (200 mil) mas prejudica os 100 mil que ficam sem imóvel e os proprietários que retiram imóveis do mercado. Além disso, sem mecanismo de focalização, o teto beneficia inclusive inquilinos de alta renda. A transferência *lump-sum*, se bem focalizada, direciona o benefício apenas às famílias de baixa renda, sendo superior em equidade e eficiência — ilustrando o princípio de que transferências diretas dominam controles de preço como instrumento redistributivo.
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-9)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-9)
 
 ---
 
@@ -498,4 +498,4 @@ Com \(q_A = 1 + \sqrt{10}\) e \(p_{LP} = 4 + 2\sqrt{10}\):
 
 Portanto, \(\pi_A = 1\) no longo prazo. As firmas tipo A mantêm uma renda ricardiana positiva de exatamente R\$ 1 por firma, que remunera o fator escasso não replicável que lhes confere vantagem de custo. As firmas tipo B, com livre entrada, têm lucro zero no longo prazo.
 
-↩ [Voltar ao enunciado](../cap13/index.md#ex-13-10)
+↩ [Voltar ao enunciado](../cap13/exercicios.md#ex-13-10)

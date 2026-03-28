@@ -88,26 +88,123 @@ nav:
         - "9d — O Diploma É Caro, Mas O Sinal É Grátis?": micro-book/cap09d/index.md
     - A Firma e os Custos:
       - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap10/index.md
-      - "Cap. 11 — A Conta Sempre Chega": micro-book/cap11/index.md
-      - "Cap. 12 — Lucro = Receita − Custo": micro-book/cap12/index.md
+      - "Cap. 11 — A Conta Sempre Chega":
+        - "Visão Geral": micro-book/cap11/index.md
+        - "11.1 Definições de Custos": micro-book/cap11/definicoes.md
+        - "11.2–11.4 Minimização e Shephard": micro-book/cap11/minimizacao.md
+        - "11.5–11.6 Curvas de Custo": micro-book/cap11/curvas.md
+        - "11.7 Envoltória": micro-book/cap11/envoltoria.md
+        - "11.8 Catálogo de Custos": micro-book/cap11/catalogo.md
+        - "Exercícios e ANPEC": micro-book/cap11/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap11/pesquisa.md
+      - "Cap. 12 — Lucro = Receita − Custo":
+        - "Visão Geral": micro-book/cap12/index.md
+        - "12.1 Natureza da Firma": micro-book/cap12/natureza-firma.md
+        - "12.2–12.3 Maximização e Receita": micro-book/cap12/maximizacao.md
+        - "12.4 Oferta de Curto Prazo": micro-book/cap12/oferta.md
+        - "12.5–12.6 Função Lucro e Insumos": micro-book/cap12/funcao-lucro.md
+        - "Exercícios e ANPEC": micro-book/cap12/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap12/pesquisa.md
     - Mercados Competitivos:
-      - "Cap. 13 — O Leiloeiro que Ninguém Vê": micro-book/cap13/index.md
-      - "Cap. 14 — Equilíbrio Geral": micro-book/cap14/index.md
+      - "Cap. 13 — O Leiloeiro que Ninguém Vê":
+        - "Visão Geral": micro-book/cap13/index.md
+        - "13.1 Demanda de Mercado": micro-book/cap13/demanda-mercado.md
+        - "13.2–13.4 Equilíbrio e Estática Comparativa": micro-book/cap13/equilibrio.md
+        - "13.5–13.8 Longo Prazo e Renda Ricardiana": micro-book/cap13/longo-prazo.md
+        - "13.9 Eficiência e Bem-Estar": micro-book/cap13/eficiencia.md
+        - "13.10–13.12 Políticas Públicas": micro-book/cap13/politicas.md
+        - "Exercícios e ANPEC": micro-book/cap13/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap13/pesquisa.md
+      - "Cap. 14 — Equilíbrio Geral":
+          - "Visão Geral": micro-book/cap14/index.md
+          - "14.1–14.2 Sistema de Preços e Edgeworth": micro-book/cap14/sistema-precos.md
+          - "14.3–14.5 Eficiência de Pareto": micro-book/cap14/eficiencia-pareto.md
+          - "14.6–14.7 Teoremas do Bem-Estar": micro-book/cap14/teoremas-bem-estar.md
+          - "14.8–14.10 Modelo Matemático": micro-book/cap14/modelo-matematico.md
+          - "14.11 Modelos CGE": micro-book/cap14/cge.md
+          - "Exercícios e ANPEC": micro-book/cap14/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap14/pesquisa.md
     - Poder de Mercado:
-      - "Cap. 15 — Sozinho, Feliz e Cobrando Caro": micro-book/cap15/index.md
-      - "Cap. 16 — Poucos — e Isso Muda Tudo": micro-book/cap16/index.md
+      - "Cap. 15 — Sozinho, Feliz e Cobrando Caro":
+          - "Visão Geral": micro-book/cap15/index.md
+          - "15.1–15.2 Barreiras e Maximização": micro-book/cap15/barreiras-maximizacao.md
+          - "15.3–15.5 Lerner, Ineficiência e Estática Comparativa": micro-book/cap15/lerner-ineficiencia.md
+          - "15.6–15.8 Qualidade, Discriminação e Tarifas": micro-book/cap15/qualidade-discriminacao.md
+          - "15.9–15.10 Regulação e Visão Dinâmica": micro-book/cap15/regulacao-dinamica.md
+          - "Exercícios e ANPEC": micro-book/cap15/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap15/pesquisa.md
+      - "Cap. 16 — Poucos — e Isso Muda Tudo":
+          - "Visão Geral": micro-book/cap16/index.md
+          - "16.1–16.4 Bertrand, Cournot e Stackelberg": micro-book/cap16/fundamentos.md
+          - "16.5–16.6 Capacidade e Diferenciação": micro-book/cap16/capacidade-diferenciacao.md
+          - "16.7–16.10 Colusão e Entrada": micro-book/cap16/colusao-entrada.md
+          - "16.11–16.13 Entrada Livre e Inovação": micro-book/cap16/entrada-inovacao.md
+          - "16.14–16.16 Competição Monopolística e Fusões": micro-book/cap16/monopolistica-fusoes.md
+          - "Exercícios e ANPEC": micro-book/cap16/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap16/pesquisa.md
     - Fatores e Tempo:
-      - "Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?": micro-book/cap17/index.md
-      - "Cap. 18 — A Paciência Tem Preço": micro-book/cap18/index.md
+      - "Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?":
+          - "Visão Geral": micro-book/cap17/index.md
+          - "17.1–17.3 Oferta de Trabalho": micro-book/cap17/oferta-trabalho.md
+          - "17.4–17.6 Equilíbrio e Diferenciais": micro-book/cap17/equilibrio-diferenciais.md
+          - "17.7–17.8 Monopsônio e Sindicatos": micro-book/cap17/monopsonio-sindicatos.md
+          - "17.9–17.10 Fatores e Terra": micro-book/cap17/fatores-terra.md
+          - "Exercícios e ANPEC": micro-book/cap17/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap17/pesquisa.md
+      - "Cap. 18 — A Paciência Tem Preço":
+          - "Visão Geral": micro-book/cap18/index.md
+          - "18.1–18.2 Capital e Juros": micro-book/cap18/capital-juros.md
+          - "18.3–18.4 Fisher e Inflação": micro-book/cap18/fisher-inflacao.md
+          - "18.5–18.7 Ativos e Investimento": micro-book/cap18/ativos-investimento.md
+          - "18.8–18.9 Demanda e Juros Compostos": micro-book/cap18/demanda-capital.md
+          - "18.10–18.11 Hotelling e Recursos": micro-book/cap18/hotelling.md
+          - "Exercícios e ANPEC": micro-book/cap18/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap18/pesquisa.md
     - Falhas de Mercado:
-      - "Cap. 19 — Quando Um Lado Sabe Mais": micro-book/cap19/index.md
-      - "Cap. 20 — Fumaça, Caronas e Tragédias": micro-book/cap20/index.md
+      - "Cap. 19 — Quando Um Lado Sabe Mais":
+          - "Visão Geral": micro-book/cap19/index.md
+          - "19.1–19.2 Contratos e Principal-Agente": micro-book/cap19/principal-agente.md
+          - "19.3 Risco Moral": micro-book/cap19/risco-moral.md
+          - "19.4 Seleção Adversa": micro-book/cap19/selecao-adversa.md
+          - "19.5–19.6 Sinalização e Screening": micro-book/cap19/sinalizacao-screening.md
+          - "19.7–19.8 Leilões e Taxonomia": micro-book/cap19/leiloes-taxonomia.md
+          - "Exercícios e ANPEC": micro-book/cap19/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap19/pesquisa.md
+      - "Cap. 20 — Fumaça, Caronas e Tragédias":
+          - "Visão Geral": micro-book/cap20/index.md
+          - "20.1–20.2 Externalidades": micro-book/cap20/externalidades.md
+          - "20.3–20.4 Modelo e Soluções": micro-book/cap20/modelo-solucoes.md
+          - "20.5–20.6 Bens Públicos": micro-book/cap20/bens-publicos.md
+          - "20.7–20.8 Lindahl e Carona": micro-book/cap20/lindahl-carona.md
+          - "20.9–20.10 Votação e Mecanismos": micro-book/cap20/votacao-mecanismos.md
+          - "Exercícios e ANPEC": micro-book/cap20/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap20/pesquisa.md
     - Economia Digital:
-      - "Cap. 21 — Se É De Graça, O Produto É Você": micro-book/cap21/index.md
+      - "Cap. 21 — Se É De Graça, O Produto É Você":
+          - "Visão Geral": micro-book/cap21/index.md
+          - "21.1–21.2 Bens de Informação e Redes": micro-book/cap21/bens-info-redes.md
+          - "21.3 Mercados Bilaterais": micro-book/cap21/mercados-bilaterais.md
+          - "21.4–21.5 Competição e Atenção": micro-book/cap21/competicao-atencao.md
+          - "21.6–21.7 Dados e Leilões": micro-book/cap21/dados-leiloes.md
+          - "Exercícios e ANPEC": micro-book/cap21/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap21/pesquisa.md
     - Métodos:
-      - "Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas": micro-book/cap22/index.md
+      - "Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas":
+          - "Visão Geral": micro-book/cap22/index.md
+          - "22.1–22.2 Experimentação e Laboratório": micro-book/cap22/experimentacao-lab.md
+          - "22.3–22.4 Campo e RCTs": micro-book/cap22/campo-rcts.md
+          - "22.5–22.7 Naturais, Mecanismos e Limites": micro-book/cap22/naturais-mecanismos-limites.md
+          - "Exercícios e ANPEC": micro-book/cap22/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap22/pesquisa.md
     - Economia da Saúde:
-      - "Cap. 23 — Doutor, Quanto Custa?": micro-book/cap23/index.md
+      - "Cap. 23 — Doutor, Quanto Custa?":
+          - "Visão Geral": micro-book/cap23/index.md
+          - "23.1 Arrow e Grossman": micro-book/cap23/arrow-grossman.md
+          - "23.2–23.3 Demanda e Oferta": micro-book/cap23/demanda-oferta.md
+          - "23.4–23.5 Seguros e Sistemas": micro-book/cap23/seguros-sistemas.md
+          - "23.6 Avaliação e Externalidades": micro-book/cap23/avaliacao-externalidades.md
+          - "Exercícios e ANPEC": micro-book/cap23/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap23/pesquisa.md
     - Economia Ambiental:
       - "Cap. 24 — Quanto Vale Um Pôr do Sol?": micro-book/cap24/index.md
     - "Cadernos Python": micro-book/notebooks/index.md

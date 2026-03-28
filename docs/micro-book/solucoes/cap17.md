@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 17"
 
 # Soluções dos Exercícios — Capítulo 17
 
-[← Voltar ao Capítulo 17](../cap17/index.md)
+[← Voltar ao Capítulo 17](../cap17/exercicios.md)
 
 ---
 
@@ -108,7 +108,7 @@ Para valores baixos de \( w \), o trabalhador pode até não ofertar trabalho. A
 
 Portanto, o salário de reserva é \( w_R = 4 \). Abaixo desse valor, o trabalhador não participa do mercado de trabalho — a renda não-laboral é suficiente para que o custo de oportunidade do lazer não compense.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-1)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-1)
 
 ---
 
@@ -182,7 +182,7 @@ DWL = \frac{1}{2} \times (2000 - 1500) \times (25 - 15) = \frac{1}{2} \times 500
 
 O peso morto do salário mínimo é \( DWL = 2{.}500 \) unidades monetárias. Esse valor representa a perda líquida de bem-estar social — transações mutuamente benéficas que deixam de ocorrer porque o salário mínimo impede que o mercado atinja o equilíbrio.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-2)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-2)
 
 ---
 
@@ -251,7 +251,7 @@ A **exploração monopsonística** é definida como a diferença entre o valor d
 
 Cada trabalhador recebe um salário 10 unidades monetárias abaixo de sua contribuição marginal ao valor da produção. Essa diferença é a medida da exploração monopsonística no sentido de Joan Robinson: o poder de mercado do empregador permite que ele pague menos que a produtividade marginal dos trabalhadores, apropriando-se de parte do excedente.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-3)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-3)
 
 ---
 
@@ -319,7 +319,7 @@ O sindicato eleva o salário de 15 para 25 (aumento de 66,7%), mas ao custo de r
 
 Esse resultado ilustra o **trade-off fundamental** da ação sindical: o sindicato consegue elevar os salários acima do nível competitivo, porém à custa de desemprego entre seus membros. Os 500 trabalhadores empregados ganham mais, mas 200 trabalhadores que estariam empregados no equilíbrio competitivo ficam desempregados. Há, portanto, um conflito distributivo dentro da própria classe trabalhadora entre insiders (empregados ao salário sindical) e outsiders (desempregados involuntários).
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-4)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-4)
 
 ---
 
@@ -388,7 +388,7 @@ Os principais canais são:
 
 Evidências empíricas brasileiras (Firpo e Reis, 2007; Saboia, 2007) sugerem que a política de valorização do salário mínimo adotada a partir de 2004 contribuiu significativamente para a redução da desigualdade de renda no Brasil, principalmente através dos canais 1, 2 e 3. O coeficiente de Gini brasileiro caiu de 0,572 em 2004 para 0,519 em 2014, e estudos de decomposição atribuem parte relevante dessa queda aos efeitos diretos e indiretos do salário mínimo.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-5)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-5)
 
 ---
 
@@ -454,7 +454,7 @@ Como \(h^*(w)\) é estritamente decrescente para todo \(w > 0\) (conforme mostra
 
 Se tivéssemos \(\sigma > 1\) (por exemplo, \(\rho > 0\)), a oferta seria inicialmente crescente e depois decrescente, com um máximo interior. Para o caso geral com \(V > 0\), a decomposição de Slutsky mostra que o ponto de inflexão ocorre onde \(\left|h^* \cdot \frac{\partial L^*}{\partial V}\right| = \left|\frac{\partial L^c}{\partial w}\right|\). No caso CES com \(\sigma < 1\), o efeito substituição é estruturalmente fraco, e o efeito renda domina em todas as faixas salariais.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-6)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-6)
 
 ---
 
@@ -520,7 +520,7 @@ Como \(\gamma > 0\) (habilidade eleva salários) e \(\text{Cov}(S, A) > 0\) (mai
 
 Estratégias empíricas para lidar com esse viés incluem: variáveis instrumentais (usando, por exemplo, proximidade a universidades como instrumento para educação), estimação com gêmeos (comparando gêmeos idênticos com escolaridade diferente) e descontinuidades em políticas educacionais. Estimativas com essas correções tendem a reduzir o retorno da educação em 1–3 pontos percentuais.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-7)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-7)
 
 ---
 
@@ -602,7 +602,7 @@ Igualando a 15:
 
 Se o salário mínimo for fixado em \(\bar{w} = 35\), o emprego volta a ser 15 — igual ao monopsônio, mas com salário muito maior (35 vs. 20). Para qualquer \(\bar{w} > 35\), o emprego cai abaixo do nível monopsonístico. Isso ilustra que salários mínimos muito altos podem ser contraproducentes mesmo em mercados monopsonísticos.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-8)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-8)
 
 ---
 
@@ -732,7 +732,7 @@ w = 55
 
 Confirmando que \(\beta \to 1\) reproduz o monopólio sindical. A interpretação econômica é clara: quando o sindicato detém todo o poder de barganha, ele maximiza a renda líquida de seus membros sem considerar o lucro da firma, gerando o resultado de monopólio sindical — salário muito acima do competitivo e emprego significativamente menor. O parâmetro \(\beta\) permite uma transição contínua entre o resultado competitivo (\(\beta = 0\)) e o monopólio sindical (\(\beta = 1\)).
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-9)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-9)
 
 ---
 
@@ -784,6 +784,6 @@ Políticas recomendadas incluem:
 - **Renda básica universal (RBU)**: em cenário de automação massiva, pode ser necessária uma transferência incondicional financiada pela tributação do capital e de recursos naturais.
 - **Políticas de concorrência no mercado de trabalho**: combater a concentração de empregadores (seção 17.7) e garantir que os ganhos de produtividade da automação sejam compartilhados com os trabalhadores, não apenas apropriados pelas firmas.
 
-↩ [Voltar ao enunciado](../cap17/index.md#ex-17-10)
+↩ [Voltar ao enunciado](../cap17/exercicios.md#ex-17-10)
 
 ---

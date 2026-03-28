@@ -51,7 +51,7 @@ Alocações: \(x_1^A = (50/6 + 2)/(10/6) = (62/6)/(10/6) = 6{,}2\), \(x_2^A = (5
 **(d)** No núcleo, nenhuma coalizão pode melhorar. Para 2 agentes, o núcleo coincide com a curva de contrato entre as alocações individuais racionais. Verificando: \(U_A(6{,}2; 5{,}17) = 32{,}05 > U_A(10, 2) = 20\). \(U_B(5{,}8; 4{,}83) = 28{,}01 > U_B(2, 8) = 16\). Ambos melhoram. ✓
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-1)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-1)
 
 ---
 
@@ -66,7 +66,7 @@ Alocações: \(x_1^A = (50/6 + 2)/(10/6) = (62/6)/(10/6) = 6{,}2\), \(x_2^A = (5
 **(c)** Se \(TMT \neq TMS\), pode-se realinhar a composição do produto e melhorar o bem-estar. Suponha \(TMS > TMT\): os consumidores valorizam o bem 1 relativamente mais que o custo de produzi-lo. Produzir mais de 1 e menos de 2 melhora o bem-estar. Contradição. ✓
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-2)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-2)
 
 ---
 
@@ -107,7 +107,7 @@ Substituindo (ii) em (i): \(3p_2 + 2(p_2 - 1) = 5 \implies 5p_2 = 7 \implies p_2
 \(\mathbf{p}^* = (1;\ 1{,}4;\ 0{,}4)\).
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-3)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-3)
 
 ---
 
@@ -126,7 +126,7 @@ Em concorrência perfeita:
 Cada condição emerge naturalmente da otimização individual diante de preços uniformes — a "mão invisível" de Smith formalizada.
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-4)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-4)
 
 ---
 
@@ -142,7 +142,7 @@ Cada condição emerge naturalmente da otimização individual diante de preços
 
 **(d)** Hipóteses problemáticas para o Brasil: (i) **Pleno emprego:** o Brasil tem desemprego estrutural significativo; a liberalização pode agravar o desemprego em setores protegidos sem absorção imediata em outros. (ii) **Concorrência perfeita:** muitos setores industriais brasileiros são oligopolísticos; a abertura pode afetar comportamento estratégico (não capturado pelo modelo competitivo). (iii) **Retornos constantes:** a indústria brasileira pode ter rendimentos crescentes em alguns setores, onde a proteção permite escala.
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-5)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-5)
 
 ---
 
@@ -213,7 +213,7 @@ Alocações: \(y_A = \frac{8(0{,}651) + 2}{2(0{,}651) + 1} = \frac{7{,}211}{2{,}
 **(d)** Verificação: \(x_A \approx 6{,}263\) e \(2y_A \approx 6{,}263\), logo \(x_A = 2y_A\). A alocação de equilíbrio está sobre a curva de contrato. ✓
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-6)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-6)
 
 ---
 
@@ -258,7 +258,7 @@ Com \(p = 1/3\): \(x_A = 0\), \(y_A = 16/3\); \(x_B = (16/3)/(2/3) = 8\), \(y_B 
 Todos estão sobre a curva de contrato (verificável: nos dois equilíbrios de canto, B está em \(y_B = x_B\) apenas no caso \(p=1\); nos outros, as alocações estão nas fronteiras da caixa, que fazem parte do conjunto eficiente).
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-7)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-7)
 
 ---
 
@@ -339,7 +339,7 @@ TMT = -\frac{dq_2}{dq_1} = \frac{dq_2/dL_1}{-dq_1/dL_1}
 Ao longo da curva de contrato (onde \(K_1 = 100L_1/(200 - L_1)\)), o cálculo envolve derivar \(q_1(L_1, K_1(L_1))\) e \(q_2(100 - L_1, 100 - K_1(L_1))\) com respeito a \(L_1\). A TMT depende de \(L_1\) porque as funções de produção têm diferentes intensidades fatoriais: o setor 1 é simétrico em \(L\) e \(K\), enquanto o setor 2 é capital-intensivo (\(\alpha_K = 2/3\)). Mover insumos entre setores altera as produtividades marginais de forma diferente, fazendo com que o custo de oportunidade (TMT) varie ao longo da FPP. A FPP é, portanto, côncava (e não linear).
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-8)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-8)
 
 ---
 
@@ -374,7 +374,7 @@ Verificação para B: \(I_B^0 = 10\), recebe transferência de 4, \(I_B = 14\). 
 A transfere 4 unidades de renda a B. Com os preços \(p_x = p_y = 1\), ambos maximizam utilidade e os mercados se equilibram na alocação desejada.
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-9)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-9)
 
 ---
 
@@ -450,4 +450,4 @@ Nota: o enunciado propõe \(p_T/p_V = 1\), mas o preço de equilíbrio correto c
 Os ganhos do comércio (\(U = 600\) vs. \(U = 300\) para cada país) refletem a passagem de uma alocação ineficiente (autarquia, onde os custos de oportunidade diferem entre países) para uma alocação mais eficiente (comércio, onde os preços relativos se equalizam). Isso é exatamente o que o Primeiro Teorema do Bem-Estar prevê: quando os mercados funcionam sem distorções (livre comércio, tomada de preços), o equilíbrio resultante é Pareto-eficiente. A autarquia impõe uma "restrição" artificial que impede a realização dos ganhos de troca — removê-la move a economia mundial em direção à fronteira de Pareto.
 
 
-↩ [Voltar ao enunciado](../cap14/index.md#ex-14-10)
+↩ [Voltar ao enunciado](../cap14/exercicios.md#ex-14-10)
