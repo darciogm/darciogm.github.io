@@ -80,6 +80,26 @@ O pré-requisito formal é cálculo de uma e várias variáveis. O Capítulo 2 r
 
 **Os gráficos interativos** funcionam melhor em tela de computador ou tablet. Nos smartphones, a experiência é aceitável mas limitada. Recomendamos que o leitor dedique tempo a manipular os gráficos — não apenas olhar para eles. A diferença entre observar uma demonstração e *interagir* com ela é a diferença entre ler sobre nadar e entrar na água.
 
+### Elementos do livro: o que é cada box
+
+Ao longo do texto, você encontrará vários tipos de caixas coloridas. Cada uma tem uma função específica — aqui está o mapa:
+
+| Elemento | O que você encontra ali |
+|:---------|:------------------------|
+| 📐 **Definição** | Definição formal de um conceito. Leia com atenção — a notação será usada depois. |
+| 📏 **Teorema / Proposição** | Resultado formal com enunciado preciso. A demonstração vem logo abaixo (ou em nota). |
+| 💡 **Intuição Econômica** | Tradução do formalismo em linguagem humana. Se você só lembrar de uma coisa, lembre disso. |
+| 🔢 **Exercício Resolvido** | Problema trabalhado passo a passo, logo após o conceito que aplica. |
+| 🇧🇷 **Box Brasil** | Aplicação com dados brasileiros reais (IBGE, IPEA, ANP, CADE, ANS, DATASUS). |
+| 🌍 **Box Mundo** | Caso internacional emblemático — da Toyota ao NHS, do Uber à TSMC. |
+| 🏅 **Prêmio Nobel** | Mini-biografia do laureado e conexão com o conteúdo do capítulo. |
+| ⚠️ **Erro Comum** | Armadilhas conceituais que pegam até estudantes avançados — e que a ANPEC adora explorar. |
+| 🧪 **Lab** | Mini-laboratório computacional com código em Python ou R para replicar resultados. |
+| 🎓 **Atividade de Sala** | Simulação, experimento ou debate estruturado para uso em aula (com timing e debrief). |
+| 🔗 **Conexão** | Referência cruzada a outro capítulo — indica que o conceito é desenvolvido ou aplicado em outra parte do livro. |
+
+**Sobre o humor:** Sim, há notas de rodapé com referências a Monty Python. Não, elas não são decorativas. Cada uma ilumina um conceito econômico — se você entender a piada, entendeu a economia. Se não viu Monty Python... esta é uma excelente desculpa para assistir.
+
 ---
 
 ## Agradecimentos

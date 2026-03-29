@@ -51,6 +51,16 @@ O Princípio da Informatividade tem implicações práticas surpreendentes e de 
 
 Segundo, variáveis que *não* contêm informação sobre o esforço devem ser *excluídas* do contrato, mesmo que estejam disponíveis — incluí-las apenas adicionaria ruído e risco desnecessário ao agente. Terceiro, o princípio explica por que esquemas de remuneração multidimensionais (que condicionam o pagamento a múltiplos indicadores de desempenho) podem ser superiores a esquemas unidimensionais: cada indicador adicional informativo sobre o esforço permite reduzir o risco imposto ao agente, diminuindo o custo de agência. Bengt Holmström recebeu o Prêmio Nobel de Economia em 2016 (junto com Oliver Hart) em grande parte por essa contribuição.
 
+!!! info "🏅 Prêmio Nobel — Oliver Hart e Bengt Holmström (2016)"
+
+    **Oliver Hart** (1948–presente) é um economista britânico-americano, professor em Harvard. **Bengt Holmström** (1949–2024) foi um economista finlandês, professor no MIT.
+
+    **Por que ganharam o Nobel:**
+    Premiados por suas contribuições à **teoria dos contratos**. Holmström formalizou o princípio da informatividade (1979): o contrato ótimo deve vincular o pagamento a *qualquer* variável que contenha informação sobre o esforço do agente. Desenvolveu também a análise de incentivos multitarefa — quando o agente tem múltiplas atividades, medir e recompensar apenas algumas pode distorcer o esforço para longe das atividades não mensuradas. Hart, por sua vez, desenvolveu a teoria dos **contratos incompletos**: como é impossível prever todas as contingências futuras, os contratos reais são inevitavelmente incompletos, e a **alocação de direitos de propriedade** determina quem tem poder de decisão nas situações não cobertas pelo contrato — com consequências profundas para a integração vertical, a privatização e os limites da firma.
+
+    **Conexão com este capítulo:**
+    O princípio da informatividade de Holmström fundamenta toda a Seção 19.3 sobre risco moral. A teoria dos contratos incompletos de Hart complementa a análise ao explicar por que, na prática, os contratos observados são mais simples do que o modelo ótimo prevê — e por que a propriedade dos ativos importa quando a renegociação é inevitável. A integração vertical (por que a firma faz internamente em vez de contratar no mercado?) é uma aplicação direta da teoria de Hart, conectando este capítulo ao Capítulo 12 (natureza da firma, Coase-Williamson).
+
 ### 19.3.2 Risco moral em seguros
 
 O caso clássico de risco moral — e historicamente o primeiro a ser identificado — ocorre no mercado de seguros. A própria expressão *moral hazard* surgiu no setor segurador inglês do século XIX, quando se observou que prédios segurados contra incêndio tinham maior probabilidade de pegar fogo — não por coincidência, mas porque os proprietários reduziam investimentos em prevenção. Após contratar um seguro contra roubo, o segurado pode reduzir os cuidados com a prevenção (não trancar o carro, não instalar alarme), aumentando a probabilidade de sinistro. O mecanismo é geral: qualquer contrato que proteja uma parte das consequências de suas ações tende a alterar essas ações na direção de maior risco.

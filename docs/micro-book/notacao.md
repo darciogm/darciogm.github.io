@@ -112,9 +112,11 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 
 ## Oligopólio
 
+*Nota:* A demanda inversa de mercado usa letra maiúscula \(P(Q)\) quando se refere à quantidade agregada \(Q = \sum q_i\), distinguindo-se de \(p(q)\) (minúsculo), usada para a firma individual no monopólio.
+
 | Símbolo | Significado |
 |---------|-------------|
-| \(P(Q) = a - bQ\) | Demanda inversa de mercado |
+| \(P(Q) = a - bQ\) | Demanda inversa de mercado (quantidade agregada) |
 | \(Q = q_1 + q_2\) | Produção total (Cournot) |
 | \(q_i^*(q_{-i})\) | Função de melhor-resposta (melhor resposta em quantidades) |
 | \(Q_{-i}\) | Produção agregada dos demais competidores |
@@ -138,6 +140,12 @@ Este livro utiliza a seguinte notação de forma consistente ao longo de todos o
 | \(\sigma_i \in \Delta(S_i)\) | Estratégia mista do jogador \(i\) |
 | \(\sigma^* = (\sigma_1^*, \ldots, \sigma_n^*)\) | Perfil de equilíbrio de Nash em estratégias mistas |
 | \(\delta\) | Fator de desconto (jogos repetidos) |
+| \(\Gamma^B = \langle N, (S_i), (\Theta_i), (u_i), p \rangle\) | Jogo bayesiano (9c) |
+| \(\Theta_i\) | Conjunto de tipos do jogador \(i\) |
+| \(\theta_i\) | Tipo realizado do jogador \(i\) |
+| \(p(\theta)\) | Distribuição *a priori* conjunta sobre tipos (prior comum) |
+| \(\mu\) | Crenças *a posteriori* (PBE, 9d) |
+| \(m \in M\) | Sinal/mensagem (jogos de sinalização, 9d) |
 
 ## Incerteza
 

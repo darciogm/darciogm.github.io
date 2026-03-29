@@ -17,7 +17,33 @@ O problema: para o tipo \(L\), o prêmio do pool \(\bar{P}\) pode exceder sua di
 !!! definition "Espiral da morte (death spiral)"
     A **espiral da morte** é um processo de retroalimentação positiva em que: (1) o prêmio de seguro sobe; (2) os indivíduos de menor risco saem do pool; (3) o risco médio dos segurados aumenta; (4) o prêmio sobe novamente. No limite, apenas os indivíduos de altíssimo risco permanecem segurados — ou o mercado colapsa completamente. É a versão dinâmica do resultado de Rothschild e Stiglitz (1976, Capítulo 19).
 
-O modelo de Rothschild e Stiglitz (1976), estudado no Capítulo 19, mostra que o equilíbrio competitivo com seleção adversa — quando existe — envolve **contratos separadores**: o tipo alto risco recebe cobertura completa a prêmio alto; o tipo baixo risco recebe cobertura parcial a prêmio baixo. Nenhuma firma lucra, mas o tipo baixo risco sofre uma externalidade negativa: seu contrato é distorcido pela presença do tipo alto risco.
+!!! box-brasil "Box Brasil 23.4 — Seleção adversa nos planos de saúde brasileiros: evidência com dados ANS e DATASUS"
+
+    O mercado brasileiro de planos de saúde oferece um laboratório natural para estudar seleção adversa. A regulação da [ANS](https://www.gov.br/ans) impõe *community rating* parcial (variação máxima de 6:1 entre faixas etárias) e proíbe exclusão por condição preexistente — exatamente as condições que a teoria de Rothschild-Stiglitz prevê como geradoras de seleção adversa.
+
+    **Evidências empíricas:**
+
+    | Indicador | Planos individuais | Planos coletivos | Fonte |
+    |:----------|:------------------:|:----------------:|:------|
+    | Sinistralidade média | 88–92% | 78–83% | ANS, 2024 |
+    | Reajuste médio anual (2020–2024) | 9,6–15,5% | 12–18% (sem teto) | ANS/DIPRO |
+    | Idade média do beneficiário | 42 anos | 35 anos | ANS TabNet |
+    | Taxa de utilização (consultas/beneficiário/ano) | 6,2 | 4,8 | DATASUS/SIB |
+
+    **O que os dados revelam:**
+
+    - **Planos individuais sofrem mais seleção adversa.** A sinistralidade consistentemente acima de 85% indica que os beneficiários que permanecem nesses planos são, em média, de maior risco. Muitos jovens saudáveis migraram para planos coletivos por adesão (via sindicatos, associações), onde os prêmios são menores — exatamente o comportamento previsto pela teoria.
+    - **A espiral da morte é real.** O número de beneficiários de planos individuais caiu de 9,5 milhões (2014) para ~8,1 milhões (2024), enquanto planos coletivos cresceram de 37 para ~42 milhões. A fuga dos baixo risco para coletivos eleva o risco médio dos individuais, forçando reajustes maiores — o mecanismo clássico da espiral.
+    - **Regulação amplifica o problema.** O teto de reajuste para individuais (fixado pela ANS abaixo do custo atuarial) desincentiva operadoras a vender planos individuais. Muitas operadoras simplesmente pararam de ofertá-los — um colapso de mercado parcial.
+    - **Faixa etária como proxy imperfeito.** A variação de 6:1 entre a faixa mais jovem (0–18) e a mais idosa (59+) é insuficiente para refletir a diferença real de custos (que pode chegar a 10:1 ou mais). Isso gera subsidio cruzado dos jovens para os idosos dentro do mesmo plano — e incentiva a saída dos jovens saudáveis.
+
+    **Conexão com a teoria:**
+
+    O caso brasileiro é uma ilustração quase perfeita do trade-off entre eficiência e equidade na regulação de seguros. O *community rating* parcial é pró-equidade (protege idosos e doentes), mas anti-eficiência (distorce os preços, gerando seleção adversa). A coexistência de planos individuais regulados (com seleção adversa) e planos coletivos menos regulados (com menor seleção) reproduz, no mundo real, a distinção entre equilíbrio separador e pooling do modelo de Rothschild-Stiglitz.
+
+    **Fonte:** ANS, *Dados Gerais do Setor*, 2024; ANS TabNet; [DATASUS](https://datasus.saude.gov.br/), Sistema de Informações de Beneficiários (SIB); Andrade, M.V. e Maia, A.C. (2009), "Diferenciais de utilização do cuidado de saúde no sistema suplementar brasileiro", *Estudos Econômicos*, 39(1), 7–38.
+
+O modelo de Rothschild e Stiglitz (1976), estudado no Capítulo 19, mostra que o equilíbrio competitivo com seleção adversa — quando existe — envolve **contratos separadores**: o tipo alto risco recebe cobertura completa a prêmio alto; o tipo baixo risco recebe cobertura parcial a prêmio baixo. Nenhuma firma lucra, mas o tipo baixo risco sofre uma externalidade negativa: seu contrato é distorcido pela presen��a do tipo alto risco.
 
 No gráfico interativo abaixo, simule a espiral da morte: ajuste a proporção de tipos e a disposição a pagar, e observe como o mercado de seguros colapsa iteração a iteração.
 

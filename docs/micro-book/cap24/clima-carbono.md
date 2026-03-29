@@ -192,3 +192,32 @@ O CBAM funciona como uma **tarifa ambiental**: importadores de produtos cobertos
     **Análise:** O CBAM pode ser interpretado como uma internalização da externalidade de carbono na fronteira — impedindo que a diferença de preços de carbono entre jurisdições distorça o comércio internacional. Críticos argumentam que viola princípios da OMC (discriminação entre produtos baseada em processos de produção) e funciona como protecionismo disfarçado. Defensores respondem que, sem o CBAM, o preço de carbono europeu simplesmente desloca emissões para países sem precificação — piorando o problema climático global. Para o Brasil, o CBAM cria incentivos para implementar precificação doméstica de carbono: emissões já "precificadas" no país de origem podem ser descontadas do CBAM.
 
     **Fonte:** European Commission. 2023. *Carbon Border Adjustment Mechanism — Factsheet*. Brussels: European Commission.
+
+### 24.4.5 Mercado voluntário de carbono e greenwashing: quando a sinalização falha
+
+Além dos mercados regulados (EU ETS, RGGI, RenovaBio), existe um mercado **voluntário** de créditos de carbono, no qual empresas compram créditos para compensar suas emissões e reivindicar o rótulo "carbono neutro" ou "net zero". Esse mercado movimentou aproximadamente US$ 2 bilhões em 2023 (Ecosystem Marketplace, 2024) e é especialmente relevante para o Brasil, que concentra grande parte da oferta global de créditos de conservação florestal (REDD+).
+
+O problema econômico é clássico — e conecta este capítulo diretamente ao Capítulo 19 (informação assimétrica). Um crédito de carbono é um **bem de crença** (*credence good*): o comprador não pode verificar diretamente se o crédito representa uma redução real de emissões. Isso cria um mercado de *limões* à la Akerlof:
+
+- **Assimetria de informação:** O vendedor do crédito sabe se o projeto florestal é real, adicional e permanente. O comprador — tipicamente uma empresa que quer marketing verde — frequentemente não sabe.
+- **Seleção adversa:** Créditos de baixa qualidade (projetos que existiriam de qualquer forma, ou florestas que não estavam realmente ameaçadas) são mais baratos de produzir. Se compradores não distinguem qualidade, os créditos baratos e ruins expulsam os caros e bons — o mecanismo clássico de Akerlof.
+- **Greenwashing como sinalização falsa:** Empresas usam créditos baratos para *sinalizar* responsabilidade ambiental sem reduzir emissões reais. Isso é o oposto da sinalização de Spence (Cap. 9d): em vez de um sinal custoso que revela qualidade, é um sinal barato que *oculta* a falta de qualidade.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** O mercado voluntário de carbono sofre de seleção adversa porque créditos ruins são indistinguíveis de créditos bons — e mais baratos de produzir.
+
+    **Pense assim:** Imagine que "compensar carbono" fosse como comprar um carro usado. Alguns créditos são Corollas impecáveis (projetos rigorosos com adicionalidade verificada). Outros são limões (projetos que existiriam de qualquer forma, contabilidades infladas). Se o comprador não distingue, paga preço médio — e os Corollas saem do mercado.
+
+    **Por que isso importa:** Sem mecanismos de certificação crível (Verra, Gold Standard) e regulação transparente, o mercado voluntário pode ser contraproducente: permite que empresas substituam reduções reais de emissões por compras baratas de créditos duvidosos, retardando a descarbonização efetiva.
+
+!!! box-brasil "Box Brasil 24.2 — O Brasil no mercado voluntário de carbono: oportunidade e risco"
+
+    O Brasil é um dos maiores ofertantes potenciais de créditos de carbono do mundo, graças à sua cobertura florestal (~60% do território) e ao potencial de projetos REDD+ na Amazônia. Em 2023, o país respondeu por ~15% dos créditos florestais emitidos globalmente no mercado voluntário (Ecosystem Marketplace).
+
+    **Oportunidades:** O Artigo 6 do Acordo de Paris abre espaço para o comércio internacional de créditos de carbono. Com o avanço do SBCE (Sistema Brasileiro de Comércio de Emissões, PL 182/2024), o Brasil pode se posicionar como grande exportador de créditos florestais de alta qualidade — a preços significativamente acima dos R$ 90/CBIO do RenovaBio.
+
+    **Riscos:** Investigações jornalísticas e acadêmicas (West et al., 2023, *Science*) revelaram que até 94% dos créditos de conservação florestal certificados pela Verra não representaram reduções reais de emissões. Isso mina a credibilidade do mercado inteiro e pode transformar o "ativo verde" brasileiro em um passivo reputacional.
+
+    **Conexão com a teoria:** O caso é uma aplicação direta de seleção adversa (Cap. 19): sem informação verificável sobre adicionalidade, o mercado colapsa em direção à baixa qualidade. A solução passa por mecanismos de *screening* (certificação independente, monitoramento por satélite, registro blockchain) e regulação que imponha padrões mínimos — exatamente os mecanismos que Rothschild e Stiglitz (1976) preveem como resposta à assimetria informacional.
+
+    **Fonte:** West, T.A.P. et al. (2023). "Action needed to make carbon offsets from tropical forest conservation work for climate change mitigation." *Science*, 381(6660), 873–877. Ecosystem Marketplace (2024). *State of the Voluntary Carbon Market*.

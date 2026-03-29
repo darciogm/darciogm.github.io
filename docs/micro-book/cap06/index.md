@@ -607,6 +607,36 @@ Para consolidar as classificações discutidas nas seções anteriores, a [Tabel
 !!! note "Divergência entre classificações"
     Note o caso de carne bovina e sal: embora sejam complementos brutos (o sal é usado para temperar a carne), quando isolamos o efeito substituição, a relação é praticamente nula — a "complementaridade" observada nos dados marshallianos decorre em grande parte do efeito renda (famílias mais ricas consomem mais de ambos).
 
+!!! box-brasil "Box Brasil 6.4 — Elasticidades-renda da demanda no Brasil: quem é luxo, quem é necessidade?"
+
+    A classificação de bens como normais, inferiores, de luxo ou necessidade depende da **elasticidade-renda da demanda** (\(\varepsilon_I = \frac{\partial x}{\partial I} \cdot \frac{I}{x}\)). Estimativas empíricas para o Brasil, baseadas na POF 2017–2018 do [IBGE](https://www.ibge.gov.br), revelam um retrato nítido da estrutura de consumo das famílias brasileiras.
+
+    **Elasticidades-renda estimadas para categorias selecionadas:**
+
+    | Categoria de despesa | Elasticidade-renda (\(\varepsilon_I\)) | Classificação |
+    |:---------------------|:--------------------------------------:|:--------------|
+    | Alimentação no domicílio | 0,30–0,40 | Necessidade |
+    | Arroz e feijão | 0,10–0,20 | Necessidade (quase inelástico) |
+    | Carne bovina | 0,50–0,70 | Necessidade |
+    | Alimentação fora do domicílio | 0,80–1,10 | Próximo a luxo |
+    | Transporte público | 0,20–0,35 | Necessidade |
+    | Transporte por aplicativo | 1,20–1,50 | Luxo |
+    | Saúde (planos privados) | 1,30–1,60 | Luxo |
+    | Educação privada | 1,40–1,70 | Luxo |
+    | Habitação (aluguel) | 0,70–0,90 | Necessidade |
+    | Vestuário | 0,90–1,10 | Próximo a unitário |
+    | Serviços de streaming | 1,10–1,40 | Luxo |
+    | Fumo | –0,10 a 0,10 | Inferior/necessidade |
+
+    **O que os números revelam:**
+
+    - **Lei de Engel confirmada:** A participação de alimentação no orçamento cai sistematicamente com a renda — de 22% para famílias com renda até R$ 1.908/mês a 7,6% para famílias acima de R$ 23.850/mês (POF 2017–2018). Isso é consistente com \(\varepsilon_I < 1\) para alimentos.
+    - **Serviços são o "luxo" brasileiro:** Saúde privada, educação privada, transporte por aplicativo e streaming apresentam elasticidades acima de 1 — à medida que a renda cresce, essas categorias ganham peso no orçamento.
+    - **Fumo como bem inferior:** O consumo de tabaco diminui ou estagna com aumentos de renda, refletindo tanto mudanças de preferências quanto políticas antitabagismo.
+    - **Implicações para tributação:** A reforma tributária (EC 132/2023) e o imposto seletivo devem considerar essas elasticidades: tributar bens com \(\varepsilon_I\) baixa (alimentos) é regressivo; tributar bens com \(\varepsilon_I\) alta (luxo) é progressivo.
+
+    **Fontes:** IBGE, Pesquisa de Orçamentos Familiares 2017–2018; Almeida e Azzoni (2016), *Estudos Econômicos*; Hoffmann, R. (2010), "Estimativas das elasticidades-renda de várias categorias de despesa e de consumo, especialmente alimentos, no Brasil, com base na POF de 2008-2009", *Revista de Economia Agrícola*, 57(2), 49–62; Silveira et al. (2019), "Impactos distributivos da tributação no Brasil", IPEA.
+
 ---
 
 Para ilustrar concretamente as relações de substituição e complementaridade discutidas neste capítulo, apresentamos a seguir dois estudos de caso detalhados do mercado brasileiro — o primeiro sobre combustíveis (substituição quase pura) e o segundo sobre bebidas (um mosaico de relações cruzadas).

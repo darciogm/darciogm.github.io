@@ -73,6 +73,24 @@ A [Tabela 16.1](#tabela-16-1) lista os principais fatores que facilitam a susten
 
     O caso foi descoberto graças ao **Programa de Leniência** do [CADE](https://www.gov.br/cade/pt-br/assuntos/noticias/cade-multa-em-r-535-1-milhoes-cartel-de-trens-e-metros), inspirado no modelo americano. A Siemens, primeira empresa a confessar a participação e fornecer provas, obteve imunidade total de multas. As demais firmas foram condenadas a multas que somaram mais de R$ 530 milhões. O programa de leniência funciona como um mecanismo de quebra da colusão: ao oferecer imunidade ao primeiro delator, reduz o fator de desconto efetivo e torna o desvio (delação) mais atrativo do que a cooperação com o cartel — exatamente o que a teoria dos jogos repetidos prevê.
 
+!!! box-mundo "Box Mundo 16.2 — Colusão algorítmica: quando a IA aprende a fazer cartel"
+
+    A revolução digital levanta uma questão perturbadora para a política antitruste: algoritmos de precificação baseados em IA podem aprender a coordenar preços *sem* instruções explícitas dos programadores?
+
+    **A evidência experimental de Calvano et al. (2020):**
+
+    Em "Artificial Intelligence, Algorithmic Pricing, and Collusion" (*American Economic Review*, 110(10), 3267–3297), Emilio Calvano e coautores demonstraram que algoritmos de *Q-learning* (uma forma de aprendizado por reforço), treinados em ambientes de oligopólio repetido, convergem de forma independente para preços **supra-competitivos** — sem comunicação entre si e sem que os programadores tenham codificado qualquer instrução de colusão. Mais surpreendente: os algoritmos desenvolvem espontaneamente **estratégias de punição** similares ao *grim trigger* — quando um rival baixa o preço, o algoritmo retalia por alguns períodos antes de retornar à cooperação. Isso é exatamente o que a teoria de jogos repetidos (Seção 16.7) prevê como mecanismo de sustentação da colusão.
+
+    **Implicações para política antitruste:**
+
+    - O direito concorrencial tradicional exige **acordo explícito** para configurar cartel. Se algoritmos coordenam preços sem comunicação, sem acordo e sem intenção humana, como enquadrar legalmente?
+    - O CADE, a Comissão Europeia e a FTC americana estão ativamente debatendo se a "colusão algorítmica" configura ilícito antitruste.
+    - Assad et al. (2024) documentaram que a adoção de algoritmos de precificação idênticos por postos de gasolina na Alemanha elevou preços em 9–28% — evidência de campo consistente com os resultados de laboratório de Calvano et al.
+
+    **Conexão com a teoria:** Este caso demonstra que a condição de sustentabilidade da colusão (\(\delta \geq \frac{n-1}{n}\), Equação 16.14) é mais facilmente satisfeita por algoritmos: eles são infinitamente pacientes (\(\delta \approx 1\)), observam preços em tempo real e ajustam estratégias instantaneamente. O oligopólio algorítmico é o cenário mais favorável à colusão tácita que a teoria já concebeu.
+
+    **Fonte:** Calvano, E., Calzolari, G., Denicolò, V. e Pastorello, S. (2020). ["Artificial Intelligence, Algorithmic Pricing, and Collusion."](https://doi.org/10.1257/aer.20190623) *AER*, 110(10), 3267–3297. Assad, S., Clark, R., Ershov, D. e Xu, L. (2024). ["Algorithmic Pricing and Competition: Empirical Evidence from the German Retail Gasoline Market."](https://doi.org/10.1086/726906) *Journal of Political Economy*, 132(3).
+
 ---
 
 ## 16.8 Redesenhando o Tabuleiro: Investimento, Entrada e Saída {#168}
