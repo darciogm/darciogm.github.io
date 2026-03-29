@@ -70,14 +70,54 @@ nav:
     - micro-book/index.md
     - "Prefácio": micro-book/prefacio.md
     - Ferramentas:
-      - "Cap. 1 — Todos os Modelos Estão Errados": micro-book/cap01/index.md
+      - "Cap. 1 — Todos os Modelos Estão Errados":
+        - "Visão Geral": micro-book/cap01/index.md
+        - "1.1–1.2 Modelos e Verificação": micro-book/cap01/modelos.md
+        - "1.3–1.4 Regras do Jogo e Anatomia": micro-book/cap01/fundamentos.md
+        - "1.5–1.6 Teoria do Valor e Fronteiras": micro-book/cap01/valor.md
+        - "1.7 Maximização de Lucro": micro-book/cap01/maximizacao.md
+        - "Exercícios e ANPEC": micro-book/cap01/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap01/pesquisa.md
       - "Cap. 2 — O Manual de Sobrevivência Matemática": micro-book/cap02/index.md
     - O Consumidor:
-      - "Cap. 3 — Mais É Melhor — Será?": micro-book/cap03/index.md
-      - "Cap. 4 — Você Quer Tudo. Mas Não Pode.": micro-book/cap04/index.md
-      - "Cap. 5 — Slutsky no Supermercado": micro-book/cap05/index.md
-      - "Cap. 6 — Substitutos, Complementos e Relações Complicadas": micro-book/cap06/index.md
-      - "Cap. 7 — O Preço do Talvez": micro-book/cap07/index.md
+      - "Cap. 3 — Mais É Melhor — Será?":
+        - "Visão Geral": micro-book/cap03/index.md
+        - "3.1–3.3 Axiomas, Utilidade e Curvas": micro-book/cap03/axiomas.md
+        - "3.4–3.5 TMS e Utilidade Marginal": micro-book/cap03/tms.md
+        - "3.6–3.7 Formas Funcionais e Transformações": micro-book/cap03/preferencias.md
+        - "Exercícios e ANPEC": micro-book/cap03/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap03/pesquisa.md
+      - "Cap. 4 — Você Quer Tudo. Mas Não Pode.":
+        - "Visão Geral": micro-book/cap04/index.md
+        - "4.1–4.3 Problema do Consumidor": micro-book/cap04/problema.md
+        - "4.4–4.5 Utilidade Indireta e Lump Sum": micro-book/cap04/utilidade-indireta.md
+        - "4.6–4.9 Dualidade e Identidade de Roy": micro-book/cap04/dualidade.md
+        - "4.10–4.11 Catálogo de Soluções": micro-book/cap04/catalogo.md
+        - "Exercícios e ANPEC": micro-book/cap04/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap04/pesquisa.md
+      - "Cap. 5 — Slutsky no Supermercado":
+        - "Visão Geral": micro-book/cap05/index.md
+        - "5.1–5.2 Propriedades e Variações na Renda": micro-book/cap05/propriedades.md
+        - "5.3–5.6 Slutsky e Curvas de Demanda": micro-book/cap05/slutsky.md
+        - "5.7 Elasticidades": micro-book/cap05/elasticidades.md
+        - "5.8–5.9 Excedente e Preferência Revelada": micro-book/cap05/excedente.md
+        - "Exercícios e ANPEC": micro-book/cap05/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap05/pesquisa.md
+      - "Cap. 6 — Substitutos, Complementos e Relações Complicadas":
+        - "Visão Geral": micro-book/cap06/index.md
+        - "6.1–6.4 Efeitos Cruzados e Matriz de Slutsky": micro-book/cap06/relacoes.md
+        - "6.5–6.6 Bem Composto, Lancaster e Becker": micro-book/cap06/composto.md
+        - "6.7–6.8 Agregação e Classificação": micro-book/cap06/agregacao.md
+        - "Exercícios e ANPEC": micro-book/cap06/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap06/pesquisa.md
+      - "Cap. 7 — O Preço do Talvez":
+        - "Visão Geral": micro-book/cap07/index.md
+        - "7.1–7.2 Loterias e Utilidade Esperada": micro-book/cap07/loterias.md
+        - "7.3–7.5 Aversão ao Risco e Arrow-Pratt": micro-book/cap07/risco.md
+        - "7.6 Ferramentas Contra o Risco": micro-book/cap07/ferramentas.md
+        - "7.7–7.8 Estado-Preferência e Informação Assimétrica": micro-book/cap07/estado.md
+        - "Exercícios e ANPEC": micro-book/cap07/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap07/pesquisa.md
       - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
     - Interação Estratégica:
       - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
