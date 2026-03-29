@@ -62,7 +62,7 @@ O teorema de Arrow demonstra que qualquer sistema de votação com três ou mais
 
 ## 20.10 Fazendo Você Dizer a Verdade: Mecanismos de Revelação de Preferências {#2010}
 
-O desafio central na provisão de bens públicos é induzir os indivíduos a **revelar truthfully** suas preferências. O mecanismo de Vickrey-Clarke-Groves (VCG) fornece uma solução elegante.
+O desafio central na provisão de bens públicos é induzir os indivíduos a **revelar honestamente** suas preferências. O mecanismo de Vickrey-Clarke-Groves (VCG) fornece uma solução elegante.
 
 !!! definition "Mecanismo VCG (Vickrey-Clarke-Groves)"
     Classe de mecanismos de revelação de preferências em que cada indivíduo paga um imposto igual ao **custo externo** que sua participação impõe sobre os demais membros do grupo. Sob esse mecanismo, é estratégia dominante para cada indivíduo revelar sua verdadeira valoração.

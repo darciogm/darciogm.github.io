@@ -95,8 +95,8 @@ A estrutura de payoffs satisfaz: \(T > R > P > S\) (onde \(T\) = tentação, \(R
 
 Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbrio (Trair, Trair) com payoffs \((-5, -5)\) é o único equilíbrio de Nash, mas é **Pareto-dominado** pelo resultado (Cooperar, Cooperar) com payoffs \((-1, -1)\). Essa tensão entre racionalidade individual e eficiência coletiva é o cerne do dilema. Vale notar que o resultado (Cooperar, Cooperar), embora superior para ambos, *não* é um equilíbrio de Nash: cada jogador teria incentivo unilateral para desviar e trair. O equilíbrio de Nash é um ponto de estabilidade — ninguém deseja mover-se sozinho — mas estabilidade não implica eficiência.
 
-!!! warning "Cuidado"
-    **Equilíbrio de Nash ≠ resultado ótimo.** O Dilema dos Prisioneiros demonstra, de forma definitiva, que o equilíbrio de Nash pode ser **Pareto-dominado**: existe outro resultado factível em que *todos* os jogadores estão melhor, mas esse resultado não é sustentável pela racionalidade individual.
+!!! warning "⚠️ Erro Comum"
+    **Supor que o equilíbrio de Nash é sempre eficiente (Pareto-ótimo).** O Dilema dos Prisioneiros demonstra, de forma definitiva, que o equilíbrio de Nash pode ser **Pareto-dominado**: existe outro resultado factível em que *todos* os jogadores estão melhor, mas esse resultado não é sustentável pela racionalidade individual.
 
     Em linguagem econômica: o equilíbrio de Nash é uma condição de **estabilidade** (ninguém quer desviar unilateralmente), não de **eficiência** (ninguém poderia estar melhor sem prejudicar alguém). As duas propriedades coincidem em mercados perfeitamente competitivos (Primeiro Teorema do Bem-Estar, Capítulo 7), mas divergem em situações de externalidades, poder de mercado ou interação estratégica. A distinção importa na prática: reguladores como o CADE, ao reprimir cartéis, estão precisamente forçando a transição de um equilíbrio de Nash eficiente para as firmas (conluio) para um equilíbrio menos lucrativo para elas, mas superior do ponto de vista do bem-estar social.
 
@@ -109,7 +109,7 @@ Cada jogador tem uma **estratégia estritamente dominante**: Trair. O equilíbri
 
     **Por que isso importa:** A guerra fiscal entre estados brasileiros, os cartéis de postos de gasolina e o desmatamento da Amazônia são versões reais desse dilema — situações em que o interesse individual corrói o bem coletivo. A repetição do jogo (Módulo 9b) e o desenho institucional são os mecanismos para escapar da armadilha.
 
-<iframe id="iframe-9a1" src="../graficos/cap09/matriz-payoffs.html" title="Figura 9a.1 — Matriz de payoffs e equilíbrio de Nash" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
+<iframe id="iframe-9a1" src="/micro-book/graficos/cap09/matriz-payoffs.html" title="Figura 9a.1 — Matriz de payoffs e equilíbrio de Nash" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
 
 <script>
 window.addEventListener('message', function(e) {
@@ -297,7 +297,7 @@ U_i(s_i^k, \sigma_{-i}^*) = U_i(s_i^l, \sigma_{-i}^*) \quad \text{para todo } s_
 
     Logo, o equilíbrio em estratégias mistas é \(\sigma_1 = (3/4, 1/4)\), \(\sigma_2 = (1/4, 3/4)\). O payoff esperado de cada jogador é \(3/4\), inferior ao payoff em qualquer dos dois equilíbrios puros — a incerteza sobre a coordenação é custosa.
 
-<iframe src="../graficos/cap09/estrategias-mistas.html" title="Figura 9a.2 — Equilíbrio em estratégias mistas" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap09/estrategias-mistas.html" title="Figura 9a.2 — Equilíbrio em estratégias mistas" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 9a.2 — Equilíbrio em estratégias mistas.** Para um jogo 2×2, os gráficos mostram o payoff esperado de cada jogador em função da probabilidade de mistura do oponente. O ponto de interseção determina a probabilidade de equilíbrio (princípio da indiferença). Edite os payoffs e selecione jogos predefinidos.
@@ -447,7 +447,7 @@ O **paradoxo de Bertrand**: o único equilíbrio de Nash é \(p_1^* = p_2^* = c\
 
     A resolução do paradoxo em contextos reais vem de três fontes: (i) **restrições de capacidade** — se cada firma não consegue atender toda a demanda sozinha, a competição Bertrand não leva mais ao custo marginal (resultado de Edgeworth-Kreps-Scheinkman); (ii) **diferenciação de produto** — com bens substitutos imperfeitos, os clientes não migram instantaneamente para o fornecedor mais barato, restaurando margens positivas; (iii) **custos de mudança** — lealdade do cliente e custos de troca (switching costs) tornam a demanda menos sensível a pequenas diferenças de preço. Nos mercados reais, os três fatores coexistem — e o julgamento de qual modelo é mais adequado é central para a análise antitruste.
 
-<iframe src="../graficos/cap09/cournot-reacao.html" title="Figura 9a.3 — Funções de melhor-resposta de Cournot" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap09/cournot-reacao.html" title="Figura 9a.3 — Funções de melhor-resposta de Cournot" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 9a.3 — Funções de melhor-resposta de Cournot.** Ajuste os parâmetros de demanda (\(a\), \(b\)) e os custos marginais (\(c_1\), \(c_2\)). O equilíbrio de Nash é a interseção. Clique em "Animar convergência" para visualizar a dinâmica de melhores respostas alternadas.
@@ -501,7 +501,7 @@ A líder em Stackelberg produz *mais* e lucra *mais* que em Cournot. A seguidora
 !!! tip "Vantagem do primeiro movimento"
     A vantagem da líder em Stackelberg vem do **comprometimento crível** com uma quantidade alta. Se a líder pudesse mudar de ideia depois de observar \(q_2\), o resultado voltaria a ser Cournot. O comprometimento (ex: investimento irreversível em capacidade) é o que confere poder à líder.
 
-<iframe src="../graficos/cap09/stackelberg-reacao.html" title="Figura 9a.4 — Stackelberg vs Cournot" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap09/stackelberg-reacao.html" title="Figura 9a.4 — Stackelberg vs Cournot" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 9a.4 — Stackelberg vs Cournot.** A isoprofit da líder tangencia a função de melhor-resposta da seguidora no ponto de Stackelberg. Compare com o equilíbrio de Cournot (interseção das funções de melhor-resposta). Altere os custos para ver o efeito de assimetrias.
@@ -627,7 +627,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     Os dados de 227 episódios (Kalist, 2004; List, 2006) estão disponíveis no pacote R `Ecdat`. Explore: qual fração coopera? A decisão depende do valor em jogo? Da idade?
 
-    <iframe id="iframe-9a5" src="../graficos/cap09/webr-friend-foe.html" title="Figura 9a.5 — Friend or Foe" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+    <iframe id="iframe-9a5" src="/micro-book/graficos/cap09/webr-friend-foe.html" title="Figura 9a.5 — Friend or Foe" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9a.5 — Análise do game show Friend or Foe com dados reais.** O WebR executa R diretamente no navegador (sem servidor). Altere o código para explorar: adicione <code>glm(play == "friend" ~ age + cash, family=binomial, data=df)</code> para estimar um modelo logit.
@@ -640,7 +640,7 @@ Se o mercado de combustíveis ilustra a dinâmica de cartéis em mercados locais
 
     **Exercício sugerido:** mude \(c_2\) para 40 e compare com o caso simétrico. A firma de custo alto produz menos — qual é o efeito sobre o preço de mercado?
 
-    <iframe src="../graficos/cap09/webr-proto.html" title="Figura 9a.6 — Proto" class="graph-iframe" style="height:1060px;overflow:hidden" scrolling="no"></iframe>
+    <iframe src="/micro-book/graficos/cap09/webr-proto.html" title="Figura 9a.6 — Proto" class="graph-iframe" style="height:1060px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9a.6 — Equilíbrio de Cournot com parâmetros editáveis.** Altere <code>a</code>, <code>b</code>, <code>c1</code>, <code>c2</code> e re-execute. Baseado em Adams (2025, Cap. 3).

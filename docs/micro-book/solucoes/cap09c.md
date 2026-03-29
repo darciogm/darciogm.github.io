@@ -383,7 +383,7 @@ O segundo termo é \(E[v^{(N-1)} | v^{(N-1)} \leq v]\) — a esperança da maior
 \boxed{b(v) = E\left[\max_{j \neq i} v_j \;\middle|\; \max_{j \neq i} v_j \leq v\right]}
 \]
 
-**Interpretação:** O licitante lança exatamente o que esperaria pagar no leilão de segundo preço — a esperança do segundo maior valor. Isso é a Equivalência de Receita em ação a nível individual.
+**Interpretação:** O licitante lança exatamente o que esperaria pagar no leilão de segundo preço — a esperança do segundo maior valor. Isso é a Equivalência de Receita em ação no nível individual.
 
 **(c) Demonstração da equivalência via envelope theorem:**
 

@@ -32,13 +32,13 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
         **(b)** Na discriminação perfeita, o monopolista conhece a disposição a pagar de cada consumidor e cobra preços personalizados. O excedente do consumidor é zero e todo o excedente vai para o monopolista. Curiosamente, a quantidade produzida é eficiente (igual à competitiva) — não há peso morto, embora a distribuição seja extremamente desigual. A alternativa (d) descreve o monopólio sem discriminação.
 
 ??? question "4. Um monopólio natural ocorre quando:"
-    - (a) A firma det��m uma patente sobre o produto
+    - (a) A firma detém uma patente sobre o produto
     - (b) O custo médio é decrescente em toda a faixa relevante de demanda, de modo que uma única firma atende o mercado a custo menor do que duas ou mais
     - (c) O governo concede exclusividade legal à firma
     - (d) A firma possui o único recurso natural necessário à produção
 
     ??? success "Resposta"
-        **(b)** O monopólio natural surge de economias de escala extremas: subaditividade de custos na faixa relevante. Duplicar a infraestrutura (ex.: rede elétrica, saneamento) seria socialmente custoso. A alternativa (a) descreve monopólio por patente; (c) descreve monopólio legal; (d) descreve monopólio por controle de recurso ��� todos são fontes de monopólio, mas não 'natural'.
+        **(b)** O monopólio natural surge de economias de escala extremas: subaditividade de custos na faixa relevante. Duplicar a infraestrutura (ex.: rede elétrica, saneamento) seria socialmente custoso. A alternativa (a) descreve monopólio por patente; (c) descreve monopólio legal; (d) descreve monopólio por controle de recurso — todos são fontes de monopólio, mas não 'natural'.
 
 ??? question "5. A regulação por preço-teto (price cap) de um monopólio natural, fixando $p = \\text{CMe}$, resulta em:"
     - (a) Lucro econômico positivo para a firma
@@ -117,7 +117,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     b) Qual fração do imposto é repassada ao consumidor?
 
-    c) Compare a receita fiscal com a varia��ão na perda de peso morto.
+    c) Compare a receita fiscal com a variação na perda de peso morto.
 
     [:material-arrow-right: Ver solução](../solucoes/cap15.md#ex-15-3)
 

@@ -191,6 +191,9 @@ O número máximo de intervalos na partição de equilíbrio é decrescente em \
 
 ## 9d.4 Quando o Seguro Incentiva o Descuido: *Moral Hazard*
 
+!!! tip "Como este capítulo se relaciona com o Capítulo 19"
+    Os Capítulos 9d e 19 tratam dos mesmos fenômenos — moral hazard, seleção adversa, sinalização — mas com ênfases complementares. **Aqui (9d)**, o foco é a **teoria dos jogos**: definimos o PBE, formalizamos jogos de sinalização, derivamos equilíbrios separadores e agregadores, e discutimos refinamentos (Cho-Kreps). **No Capítulo 19**, o foco é a **economia de mercado**: como a seleção adversa destrói mercados (Akerlof), como contratos ótimos equilibram incentivos e seguro (Holmström), como o screening opera em seguros (Rothschild-Stiglitz) e como leilões e matching funcionam na prática. O leitor pode seguir duas rotas: (i) primeiro a teoria dos jogos (9d), depois as aplicações de mercado (19) — a rota recomendada para pós-graduação; ou (ii) primeiro as aplicações intuitivas (19), depois a formalização em jogos (9d) — a rota recomendada para graduação.
+
 Mudança de cenário. Até aqui, o problema era de *tipo*: o agente sabe quem ele é, o receptor não. Agora o problema é de *ação*: o agente escolhe o que faz depois de assinar o contrato, e o principal não consegue ver. Você contrata um seguro de carro e passa a estacionar em lugar perigoso — porque, afinal, está segurado. A empresa contrata o gerente e não consegue verificar se ele está trabalhando duro ou navegando na internet. O governo empresta dinheiro ao banco e o banco assume riscos excessivos — sabendo que, se der errado, o governo socorre.
 
 Esse é o **moral hazard** (risco moral): a ação oculta que muda de comportamento *porque* alguém está protegido. O desafio: como desenhar um contrato que faça o agente *querer* se esforçar, mesmo quando ninguém está olhando?
@@ -198,8 +201,8 @@ Esse é o **moral hazard** (risco moral): a ação oculta que muda de comportame
 !!! definition "Moral Hazard"
     Situação em que uma parte (o **agente**) toma uma ação não observável que afeta o payoff de outra parte (o **principal**). O principal não pode monitorar diretamente o esforço do agente.
 
-!!! warning "Cuidado"
-    **Moral hazard não é fraude.** Um equívoco frequente — mesmo em provas e concursos — é tratar risco moral como sinônimo de comportamento desonesto ou fraudulento. A distinção é precisa e juridicamente relevante.
+!!! warning "⚠️ Erro Comum"
+    **Tratar risco moral (moral hazard) como sinônimo de fraude.** Um equívoco frequente — mesmo em provas e concursos — é tratar risco moral como sinônimo de comportamento desonesto ou fraudulento. A distinção é precisa e juridicamente relevante.
 
     **Moral hazard:** O agente age *racionalmente* em resposta a incentivos gerados pelo próprio contrato. Não há intenção de enganar: o agente simplesmente maximiza sua utilidade dado o ambiente que o seguro, o emprego ou o crédito criou. O comportamento é previsível e, em tese, evitável com o redesenho do contrato.
 
@@ -465,7 +468,7 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 ??? code "R Interativo — Modelo de Spence: custo da sinalização e equilíbrio separador"
     Este box permite explorar o modelo de Spence variando os parâmetros de produtividade e custo da educação. Veja como o equilíbrio separador muda quando a diferença de custos entre tipos diminui.
 
-    <iframe src="../graficos/cap09/webr-spence.html" title="Figura 9d.1 — Modelo de Spence" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
+    <iframe src="/micro-book/graficos/cap09/webr-spence.html" title="Figura 9d.1 — Modelo de Spence" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9d.1 — Modelo de Spence: equilíbrio separador.** Altere as produtividades e custos para ver o nível de educação mínimo que separa os tipos.
@@ -476,7 +479,7 @@ A [Tabela 9d.1](#tabela-9d-1) resume os mecanismos de mitigação:
 ??? code "R Interativo — Seleção adversa: simulação de mercado de seguros (Adams, 2025, Cap. 13)"
     Este box simula um mercado de seguros de saúde com tipos heterogêneos (risco alto/baixo). Veja como a seleção adversa pode levar ao colapso do mercado quando o prêmio é calculado pela média.
 
-    <iframe src="../graficos/cap09/webr-insurance.html" title="Figura 9d.2 — Mercado de seguros com seleção adversa" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
+    <iframe src="/micro-book/graficos/cap09/webr-insurance.html" title="Figura 9d.2 — Mercado de seguros com seleção adversa" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9d.2 — Seleção adversa no mercado de seguros.** Varie a proporção de tipos de alto risco para ver quando o mercado colapsa. Baseado em Adams (2025, Cap. 13).

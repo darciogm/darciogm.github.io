@@ -122,6 +122,7 @@ nav:
           - "14.6–14.7 Teoremas do Bem-Estar": micro-book/cap14/teoremas-bem-estar.md
           - "14.8–14.10 Modelo Matemático": micro-book/cap14/modelo-matematico.md
           - "14.11 Modelos CGE": micro-book/cap14/cge.md
+          - "14.12 Escolha Social e Arrow": micro-book/cap14/escolha-social.md
           - "Exercícios e ANPEC": micro-book/cap14/exercicios.md
           - "Pesquisa em Ação": micro-book/cap14/pesquisa.md
     - Poder de Mercado:
@@ -168,6 +169,7 @@ nav:
           - "19.4 Seleção Adversa": micro-book/cap19/selecao-adversa.md
           - "19.5–19.6 Sinalização e Screening": micro-book/cap19/sinalizacao-screening.md
           - "19.7–19.8 Leilões e Taxonomia": micro-book/cap19/leiloes-taxonomia.md
+          - "19.9 Matching Markets": micro-book/cap19/matching-markets.md
           - "Exercícios e ANPEC": micro-book/cap19/exercicios.md
           - "Pesquisa em Ação": micro-book/cap19/pesquisa.md
       - "Cap. 20 — Fumaça, Caronas e Tragédias":

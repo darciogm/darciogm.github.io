@@ -23,7 +23,9 @@ A partir da década de 1970, uma série de experimentos conduzidos por psicólog
 
 A abordagem deste capítulo é deliberadamente cumulativa: começamos pelos fundamentos psicológicos das heurísticas (Seção 8.1), passamos para o modelo formal mais influente de decisão sob risco (Teoria do Prospecto, Seção 8.2), estendemos a análise para situações com probabilidades desconhecidas (Seção 8.3) e para contextos de interação (preferências sociais, Seção 8.4), examinamos o eixo temporal (desconto hiperbólico, Seção 8.5) e concluímos com as implicações de política pública (nudges, Seção 8.6). A cada passo, privilegiamos a conexão entre o rigor formal e as evidências empíricas — porque a economia comportamental é, acima de tudo, uma ciência empírica.
 
-!!! warning "Viés não é irracionalidade"
+!!! warning "⚠️ Erro Comum"
+    **Equiparar "viés cognitivo" a "irracionalidade".**
+
     A economia comportamental **não** afirma que os agentes são irracionais. Ela identifica **desvios sistemáticos** em relação ao modelo de racionalidade perfeita e propõe modelos alternativos que descrevem melhor o comportamento observado. Como observam Wilkinson e Klaes (2012, p. 17), os vieses cognitivos muitas vezes são subprodutos de heurísticas que funcionam bem na maioria das situações cotidianas — são atalhos adaptativos, não falhas de projeto.
 
 ---
@@ -225,7 +227,7 @@ x^{\alpha} & \text{se } x \geq 0 \\
 onde \(\alpha, \beta \in (0,1)\) capturam a concavidade/convexidade e \(\lambda > 1\) captura a aversão à perda. Na equação $\eqref{eq:8.1}$, as estimativas originais de Tversky e Kahneman (1992) são \(\alpha = \beta = 0{,}88\) e \(\lambda = 2{,}25\).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/funcao-valor-pt.html" title="Figura 8.1 — Função Valor em Prospect Theory" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/funcao-valor-pt.html" title="Figura 8.1 — Função Valor em Prospect Theory" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -309,7 +311,7 @@ onde \(\gamma \in (0,1)\) controla o grau de distorção. As propriedades princi
 O valor estimado por Tversky e Kahneman (1992) é \(\gamma^+ = 0{,}61\) para ganhos e \(\gamma^- = 0{,}69\) para perdas. Prelec (1998) propôs uma forma axiomática alternativa, \(w(p) = \exp(-(-\ln p)^{\alpha})\), com propriedades de auto-similitude (Dhami 2016, p. 153–157).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ponderacao-prob.html" title="Figura 8.2 — Ponderação de Probabilidades" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/ponderacao-prob.html" title="Figura 8.2 — Ponderação de Probabilidades" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -473,7 +475,7 @@ Daniel Ellsberg — o mesmo que mais tarde ficaria famoso pelos *Pentagon Papers
     Esse padrão viola a UE de Savage. Se o agente atribui probabilidade subjetiva \(P(\text{vermelho em B}) < 0{,}5\), deveria atribuir \(P(\text{preto em B}) > 0{,}5\) e preferir a Urna B na aposta em preto. A preferência simultânea pela Urna A em ambas as apostas revela uma aversão à **ambiguidade** — à falta de informação sobre as probabilidades — que vai além da aversão ao risco (Dhami 2016, p. 321–324).
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe" style="height:960px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/ellsberg-urnas.html" title="Figura 8.3 — Paradoxo de Ellsberg" class="graph-iframe" style="height:960px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" style="margin-top:2rem;" markdown>
@@ -587,7 +589,7 @@ x < \frac{\alpha_R}{ 1 + 2\alpha_R} \cdot S
 Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são rejeitadas. Com \(\alpha_R = 4\), o limiar sobe para \(x^* \approx 0{,}44 \cdot S\). O modelo prevê corretamente que respondedores com maior aversão à desvantagem exigem ofertas mais generosas.
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/fehr-schmidt.html" title="Figura 8.4 — Modelo Fehr-Schmidt" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/fehr-schmidt.html" title="Figura 8.4 — Modelo Fehr-Schmidt" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -595,7 +597,7 @@ Com \(\alpha_R = 1\), o limiar é \(x^* = S/3\) — ofertas abaixo de 33% são r
 </div>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/ultimatum-game.html" title="Figura 8.5 — Jogo do Ultimato" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/ultimatum-game.html" title="Figura 8.5 — Jogo do Ultimato" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -747,7 +749,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
     **Por que isso importa:** O desconto hiperbólico explica por que pessoas aderem a planos de previdência com desconto em folha (mecanismo de comprometimento) e por que políticas de "opt-out" — como a inscrição automática no FGTS — são mais eficazes que "opt-in" para promover poupança.
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/funcoes-desconto.html" title="Figura 8.6 — Funções de Desconto" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/funcoes-desconto.html" title="Figura 8.6 — Funções de Desconto" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -755,7 +757,7 @@ A tabela a seguir resume estimativas dos parâmetros \(\beta\) e \(\delta\) em d
 </div>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/indiferenca-intertemporal.html" title="Figura 8.7 — Indiferença Intertemporal" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/indiferenca-intertemporal.html" title="Figura 8.7 — Indiferença Intertemporal" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -870,7 +872,7 @@ A tabela a seguir organiza as principais ferramentas de nudging:
 </div>
 
 <div class="graph-container" markdown>
-  <iframe src="../graficos/cap08/nudge-default.html" title="Figura 8.8 — Efeito Padrão (Default)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+  <iframe src="/micro-book/graficos/cap08/nudge-default.html" title="Figura 8.8 — Efeito Padrão (Default)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 </div>
 
 <div class="caption-obj" markdown>
@@ -948,25 +950,25 @@ Se este capítulo fez seu trabalho, você sai com três convicções:
 
 ---
 
-<iframe src="../graficos/cap08/webr-prospecto.html" title="WebR — Teoria do Prospecto" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap08/webr-prospecto.html" title="WebR — Teoria do Prospecto" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 8.1 — Função valor e ponderação de probabilidades.** Visualize a assimetria ganhos/perdas (λ > 1) e o sobrepeso de eventos raros. Altere λ para "desligar" a aversão à perda e compare com a utilidade esperada clássica.
 </div>
 
-<iframe src="../graficos/cap08/webr-allais.html" title="WebR — Paradoxo de Allais" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap08/webr-allais.html" title="WebR — Paradoxo de Allais" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 8.2 — Paradoxo de Allais: quebrando vNM.** O código compara EU(A) vs. EU(B) e EU(C) vs. EU(D). O padrão típico (A e D) viola a independência — nenhum nível de aversão ao risco γ resolve. O triângulo de Marschak-Machina visualiza o paradoxo.
 </div>
 
-<iframe src="../graficos/cap08/webr-desconto.html" title="WebR — Desconto Hiperbólico" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap08/webr-desconto.html" title="WebR — Desconto Hiperbólico" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 8.3 — Desconto hiperbólico vs. exponencial.** Com β < 1 (viés do presente), o "eu do presente" é mais impaciente que o "eu do futuro" — gerando procrastinação e reversão de preferências. Compare as funções de desconto e descubra por que a academia perde clientes em março.
 </div>
 
-<iframe src="../graficos/cap08/webr-fehr-schmidt.html" title="WebR — Fehr-Schmidt" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap08/webr-fehr-schmidt.html" title="WebR — Fehr-Schmidt" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 8.4 — Fehr-Schmidt: aversão à desigualdade no ultimato.** Com α = 0 (egoísta puro), o respondedor aceita qualquer oferta > 0. Com α alto, rejeita ofertas "injustas" — mesmo perdendo dinheiro. Simule o jogo do ultimato para diferentes perfis.

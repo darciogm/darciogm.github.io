@@ -161,8 +161,8 @@ As implicações econômicas da aversão ao risco são vastas. No mercado de seg
 
 Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou décadas ao estudo empírico da aversão ao risco e de suas irregularidades. Uma de suas contribuições mais influentes, desenvolvida com Amos Tversky, é a ideia de que agentes reais não são igualmente avessos ao risco em todos os domínios: eles são mais sensíveis a perdas do que a ganhos de mesma magnitude — o que ficou conhecido como *loss aversion* (aversão à perda). Essa assimetria, que viola a teoria VNM padrão, é modelada na teoria dos prospectos e será discutida no Capítulo 8. Por ora, o importante é reconhecer que a aversão ao risco, no sentido VNM de concavidade da utilidade, é uma hipótese robusta e amplamente respaldada pelos dados, mesmo que não capture todas as nuances do comportamento humano.
 
-!!! warning "Cuidado"
-    **Aversão ao risco não significa evitar todo risco.**
+!!! warning "⚠️ Erro Comum"
+    **Interpretar aversão ao risco como "evitar todo risco".**
 
     Um equívoco comum, especialmente em contextos de finanças e gestão, é interpretar "aversão ao risco" como sinônimo de "recusar qualquer aposta". Essa leitura é incorreta.
 
@@ -196,7 +196,7 @@ Daniel Kahneman, Prêmio Nobel de Economia de 2002 (com Vernon Smith), dedicou d
 
         **Lição:** Aversão ao risco não é irracionalidade — é consequência lógica de utilidade marginal decrescente. E a escala da aposta importa.
 
-<iframe src="../graficos/cap07/aversao-risco.html" title="Figura 7.1 — Aversão ao risco e função de utilidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/aversao-risco.html" title="Figura 7.1 — Aversão ao risco e função de utilidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 7.1 — Aversão ao risco e função de utilidade.** Arraste os pontos \(W_1\) e \(W_2\), ajuste a probabilidade \(\pi\) e alterne entre agente avesso, neutro e propenso ao risco. A área sombreada indica o prêmio de risco.
@@ -384,7 +384,7 @@ Para ilustrar com números concretos: um cafeicultor do Sul de Minas com riqueza
 
 A distinção entre prêmio de risco *exato* e *aproximado* merece atenção. A fórmula de Arrow-Pratt é uma aproximação de segunda ordem válida para riscos "pequenos" em relação à riqueza. Quando o risco é grande (como nos exemplos dos exercícios, em que o desvio padrão pode representar 30–50% da riqueza), o prêmio exato deve ser calculado diretamente da equação \(\eqref{eq:7.7}\). A aproximação sistematicamente subestima o prêmio para agentes com utilidade côncava crescentemente rápida (como \(\ln W\)) e o superestima para agentes com utilidade menos côncava.
 
-<iframe src="../graficos/cap07/premio-risco.html" title="Figura 7.2 — Prêmio de risco de Arrow-Pratt" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/premio-risco.html" title="Figura 7.2 — Prêmio de risco de Arrow-Pratt" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 7.2 — Prêmio de risco de Arrow-Pratt.** Ajuste a riqueza \(W\), a variância \(\sigma^2\) e a curvatura da função de utilidade. Alterne entre CARA, CRRA e quadrática para comparar o prêmio de risco exato com a aproximação \(\tfrac{1}{2}\sigma^2 A(W)\).
@@ -480,7 +480,7 @@ Na prática, os mercados de seguros brasileiros exibem carregamentos que variam 
 
     **Fonte**: Banco Central do Brasil, Manual de Crédito Rural (MCR), Capítulo 16; Ministério da Agricultura e Pecuária, Relatório Proagro 2023.
 
-<iframe src="../graficos/cap07/seguro.html" title="Figura 7.3 — Mercado de seguros no espaço estado-contingente" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/seguro.html" title="Figura 7.3 — Mercado de seguros no espaço estado-contingente" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 7.3 — Mercado de seguros no espaço estado-contingente.** Ajuste a riqueza inicial, a perda, a probabilidade de sinistro e o carregamento. Observe como a cobertura ótima se move em direção à linha de 45 graus (seguro total) quando o prêmio é atuarialmente justo (\(\lambda = 0\)).
@@ -861,25 +861,25 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 
 ---
 
-<iframe src="../graficos/cap07/webr-risco.html" title="WebR — Aversão ao Risco" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/webr-risco.html" title="WebR — Aversão ao Risco" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 7.1 — Prêmio de risco e aversão ao risco.** Visualize a função CRRA, o equivalente de certeza e o prêmio de risco. Altere γ para ver como a curvatura (concavidade) afeta a disposição a pagar por seguro.
 </div>
 
-<iframe src="../graficos/cap07/webr-portfolio.html" title="WebR — Diversificação de Portfólio" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/webr-portfolio.html" title="WebR — Diversificação de Portfólio" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 7.2 — Fronteira eficiente e diversificação.** Combine dois ativos e veja a fronteira risco-retorno. Altere a correlação ρ: com ρ negativa, a diversificação pode reduzir o risco abaixo do ativo menos arriscado!
 </div>
 
-<iframe src="../graficos/cap07/webr-seguro.html" title="WebR — Mercado de Seguros" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/webr-seguro.html" title="WebR — Mercado de Seguros" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 7.3 — Mercado de seguros: cobertura ótima.** Com seguro atuarialmente justo, o avesso ao risco compra cobertura total. Aumente o loading (custo administrativo) e veja a cobertura ótima cair. Diagrama estado-contingente incluso.
 </div>
 
-<iframe src="../graficos/cap07/webr-cara-crra.html" title="WebR — CARA vs CRRA" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap07/webr-cara-crra.html" title="WebR — CARA vs CRRA" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 7.4 — CARA vs. CRRA: absoluto vs. relativo.** CARA: aversão absoluta constante (bilionário teme a mesma perda absoluta que assalariado). CRRA: aversão relativa constante (mais realista). Compare Arrow-Pratt e prêmio de risco.

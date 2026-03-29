@@ -23,6 +23,7 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
 | 14.9 | O Castelo Existe? Prova de Existência do Equilíbrio | [Modelo Matemático](modelo-matematico.md#149) |
 | 14.10 | Quando Alguém Precisa Fabricar: Produção e Troca | [Modelo Matemático](modelo-matematico.md#1410) |
 | 14.11 | Do Quadro-Negro ao Gabinete: Modelos CGE | [Modelos CGE](cge.md) |
+| 14.12 | A Democracia Impossível: Escolha Social e o Teorema de Arrow | [Escolha Social e Arrow](escolha-social.md#1412) |
 | — | Revisão, Exercícios e ANPEC | [Exercícios e ANPEC](exercicios.md) |
 | — | Pesquisa em Ação e Referências | [Pesquisa em Ação](pesquisa.md) |
 
@@ -62,7 +63,7 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
     - Calcule a utilidade de cada agente em cada rodada. Houve melhoria de Pareto?
     - Por que as alocações da Rodada 1 variam entre pares (poder de barganha!), enquanto a Rodada 2 converge a um único ponto?
     - Conecte com o Teorema do Limite do Núcleo: se tivéssemos muitos pares, o núcleo se contrairia ao equilíbrio walrasiano.
-    - Referência Monty Python: "Bring me a shrubbery!" — o Knights Who Say Ni têm demanda perfeitamente inel��stica e poder de barganha total. No mercado walrasiano, ninguém tem poder de barganha.
+    - Referência Monty Python: "Bring me a shrubbery!" — o Knights Who Say Ni têm demanda perfeitamente inelástica e poder de barganha total. No mercado walrasiano, ninguém tem poder de barganha.
 
     **Variante para turmas grandes:** Faça 4 pares por "economia" (2 de cada tipo) e observe como a competição entre agentes do mesmo tipo reduz o poder de barganha — ilustração direta do Teorema do Limite do Núcleo.
 

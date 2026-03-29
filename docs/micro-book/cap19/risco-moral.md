@@ -16,6 +16,9 @@ Você já reparou que as pessoas dirigem com mais cautela quando o carro é empr
 
 O risco moral é um problema **pós-contratual**: a assimetria de informação diz respeito a ações tomadas pelo agente *depois* de firmado o acordo. Isso o distingue da seleção adversa (Seção 19.4), que é pré-contratual — o agente já possui informação privada *antes* do contrato ser celebrado.
 
+!!! tip "Conexão com o Capítulo 9d"
+    A formalização do moral hazard como jogo sequencial com informação incompleta, incluindo a derivação do contrato ótimo linear de Holmström e a discussão do trade-off incentivos vs. seguro no framework de jogos bayesianos, encontra-se na Seção 9d.4. Aqui, o foco é a aplicação a contratos reais e políticas públicas brasileiras.
+
 ### 19.3.1 A relação proprietário-gerente
 
 Considere um proprietário (principal) que contrata um gerente (agente) para administrar sua empresa. O lucro \(\pi\) depende do esforço \(e\) do gerente e de um choque aleatório \(\varepsilon\):

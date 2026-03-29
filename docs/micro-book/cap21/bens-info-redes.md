@@ -141,3 +141,44 @@ A intervenção regulatória enfrenta, portanto, um dilema: **fragmentar** a pla
 <div class="caption-obj" markdown>
 **Figura 21.1 — Efeitos de Rede e Ponto de Virada.** A curva mostra a disposição a pagar \(u(n) = v + \alpha\,n^{\beta}\) como função do número de usuários. O cruzamento com a linha de preço determina a massa crítica \(n^*\): abaixo dela a rede colapsa (armadilha de adoção); acima, a adoção decola rumo ao equilíbrio alto.
 </div>
+
+---
+
+## 21.2.6 IA Generativa: quando o custo marginal de criar conteúdo vai a zero {#2126}
+
+Se bens de informação tradicionais têm custo marginal de *reprodução* próximo de zero (Seção 21.1), a inteligência artificial generativa dá um passo além: reduz o custo marginal de *criação* a quase zero. Quando o ChatGPT escreve um artigo, o Midjourney gera uma ilustração ou o Suno compõe uma música, o custo de produzir a "primeira cópia" — que sempre foi a barreira econômica central nos mercados de informação — desmorona. As implicações para a estrutura de mercado são profundas.
+
+### A economia de modelos de linguagem
+
+Os **Large Language Models (LLMs)** como GPT-4, Claude e Gemini apresentam uma estrutura de custos extrema:
+
+- **Custo fixo de treinamento**: na ordem de US\$ 50–200 milhões por modelo frontier (2024), incluindo hardware (GPUs), energia e dados. O GPT-4 da OpenAI custou estimados US\$ 100 milhões para treinar.
+- **Custo marginal de inferência**: centavos por consulta. Uma resposta do ChatGPT-4 custa à OpenAI entre US\$ 0,01 e US\$ 0,10 em computação — e esse custo cai com avanços em hardware e otimização de modelos.
+- **Economias de escala em dados**: modelos treinados com mais dados e mais feedback de usuários (RLHF — *Reinforcement Learning from Human Feedback*) são melhores. Isso cria um ciclo análogo ao dos efeitos de rede: mais usuários → mais dados de feedback → modelo melhor → mais usuários.
+
+A estrutura de mercado resultante tende ao **oligopólio com altas barreiras à entrada**: o custo de treinar um modelo frontier é proibitivo para a maioria das empresas, mas os incumbentes (OpenAI, Google DeepMind, Anthropic, Meta AI) competem agressivamente em qualidade e preço. A dinâmica se assemelha ao modelo de Sutton (1991) de **custos fixos endógenos**: quando a competição se dá por qualidade (e não por preço), os custos fixos de P&D são escalados endogenamente pelas firmas, e o mercado permanece concentrado mesmo com entrada livre.
+
+### Impactos sobre mercados de conteúdo e trabalho
+
+A IA generativa altera a cadeia de valor de indústrias inteiras:
+
+- **Mercado de conteúdo**: se um modelo gera texto, imagem e código a custo marginal quase zero, o valor econômico migra da *criação* para a *curadoria* e a *distribuição*. O modelo clássico de direitos autorais — que recompensa o criador pelo custo fixo da primeira cópia — enfrenta uma crise existencial quando a "primeira cópia" é gerada por um algoritmo treinado com bilhões de obras de terceiros.
+
+- **Mercado de trabalho**: a automação por IA generativa afeta desproporcionalmente tarefas cognitivas de rotina (redação, tradução, programação básica, análise de dados) — exatamente o segmento que a teoria do capital humano (Seção 17.2) previa estar protegido pela educação formal. Acemoglu e Restrepo (2020) formalizam o trade-off entre automação (que desloca trabalho) e criação de novas tarefas (que demanda trabalho), e a IA generativa intensifica ambos os lados dessa dinâmica.
+
+- **Propriedade intelectual**: quem detém os direitos sobre conteúdo gerado por IA? Se o modelo foi treinado com obras protegidas por copyright, os autores originais têm direito a compensação? Esses são problemas de externalidade (Capítulo 20) e de desenho de mecanismos (Seção 9c.5) que o framework legal ainda não resolveu.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A IA generativa não automatiza apenas a reprodução de informação — automatiza a *criação*, colapsando a última barreira de custo que protegia os mercados de conteúdo.
+
+    **Pense assim:** Imagine que a máquina de escrever tivesse sido inventada junto com um robô que escreve romances razoáveis. O custo fixo de criar a "primeira cópia" — que justificava o copyright, o avanço editorial, o salário do jornalista — desaparece. O que resta de valioso? Originalidade genuína, curadoria humana e confiança — bens que são, por natureza, escassos e difíceis de automatizar.
+
+    **O paradoxo econômico:** Se todos podem gerar conteúdo de qualidade razoável a custo zero, o valor marginal de conteúdo "bom" colapsa, mas o valor de conteúdo *excelente* — que requer insight, criatividade e julgamento humano — pode *aumentar*. A IA generativa pode, paradoxalmente, valorizar mais o trabalho cognitivo de alto nível ao desvalorizar o de nível médio.
+
+!!! box-brasil "Box Brasil — IA generativa e o mercado de trabalho brasileiro"
+
+    **Contexto:** O impacto da IA generativa sobre o mercado de trabalho brasileiro tem características próprias. Segundo dados da RAIS/CAGED (2024), cerca de 30% dos empregos formais no Brasil envolvem tarefas que podem ser parcialmente automatizadas por modelos de linguagem — incluindo assistentes administrativos, analistas de dados, redatores, tradutores e programadores juniores.
+
+    **Dados:** O Brasil tinha, em 2024, mais de 1 milhão de desenvolvedores de software (segundo a BrazilLab e Stack Overflow). A adoção de ferramentas como GitHub Copilot (que usa IA para sugerir código) cresceu mais de 200% no país entre 2023 e 2025. Estimativas do McKinsey Global Institute (2023) sugerem que 25–35% das horas de trabalho no setor de serviços brasileiro poderiam ser complementadas ou substituídas por IA generativa até 2030.
+
+    **Análise:** A exposição brasileira à automação por IA é concentrada no setor de serviços urbanos — exatamente o segmento que mais cresceu nas últimas décadas. A questão distributiva é central: se a IA substitui trabalho cognitivo de rotina (classe média), mas complementa trabalho criativo de alto nível e trabalho manual de baixa qualificação (menos expostos à automação por linguagem), o efeito pode ser uma **compressão da classe média** com ampliação da desigualdade — um padrão oposto ao previsto pela teoria tradicional de capital humano.

@@ -7,6 +7,9 @@ Se o risco moral é sobre o que a pessoa *faz* depois de assinar o contrato, a s
 !!! definition "Seleção Adversa (Adverse Selection)"
     Problema de informação assimétrica que surge quando uma parte de uma transação possui **informação privada sobre suas características** (seu "tipo") antes da celebração do contrato, e essa informação não é observável pela outra parte. A seleção adversa é um problema **pré-contratual**.
 
+!!! tip "Conexão com o Capítulo 9d"
+    A Seção 9d.5 apresenta o modelo de seleção adversa no framework de teoria dos jogos, incluindo a formalização do market unraveling como processo iterativo e a conexão com o desenho de mecanismos (Princípio da Revelação). Aqui, o foco é a análise de mercado: o modelo de Akerlof com exemplos numéricos, as soluções institucionais (sinalização, screening, certificação, regulação) e as aplicações brasileiras.
+
 ### 19.4.1 O mercado de limões (Akerlof, 1970)
 
 George Akerlof demonstrou, em um dos artigos mais influentes de toda a história da economia, que a assimetria de informação pode levar ao colapso de mercados inteiros. O artigo, inicialmente rejeitado por três journals (incluindo AER e JPE) por ser "trivial" ou "errado", acabou publicado no *Quarterly Journal of Economics* e viria a render a Akerlof o Nobel em 2001. Considere um mercado de carros usados com dois tipos:

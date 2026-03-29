@@ -70,9 +70,9 @@ Estudantes que pagam R$ 500 por um curso e depois percebem que não está servin
 
     (c) A proprietária deve manter a confeitaria?
 
-    **Soluç��o.**
+    **Solução.**
 
-    **(a)** Custos contábeis (expl��citos) = R$ 120.000 + R$ 60.000 + R$ 96.000 + R$ 48.000 = R$ 324.000.
+    **(a)** Custos contábeis (explícitos) = R$ 120.000 + R$ 60.000 + R$ 96.000 + R$ 48.000 = R$ 324.000.
 
     \[
     \pi_{\text{contábil}} = 480.000 - 324.000 = \text{R\$}\; 156.000
@@ -89,7 +89,7 @@ Estudantes que pagam R$ 500 por um curso e depois percebem que não está servin
     \pi_{\text{econômico}} = 480.000 - 324.000 - 56.000 = \text{R\$}\; 100.000
     \]
 
-    **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária ��� acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
+    **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária — acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
 <iframe src="/micro-book/graficos/cap11/webr-custo-oportunidade.html" title="WebR — Custo Econômico vs. Contábil" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 

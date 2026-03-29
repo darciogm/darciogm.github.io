@@ -1,6 +1,6 @@
 # Capítulo 15 — Sozinho, Feliz e Cobrando Caro
 
-Se no Capítulo 14 vivíamos no paraíso da concorrência perfeita — milhares de firmas, ninguém mandando em nada —, agora entramos no lado sombrio do mercado: um único vendedor, zero concorrência e um sorriso no rosto de quem define o preço. O monop��lio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.[^black-knight-monopolio]
+Se no Capítulo 14 vivíamos no paraíso da concorrência perfeita — milhares de firmas, ninguém mandando em nada —, agora entramos no lado sombrio do mercado: um único vendedor, zero concorrência e um sorriso no rosto de quem define o preço. O monopólio representa a antítese da concorrência perfeita. Enquanto no modelo competitivo cada firma é uma tomadora de preço, incapaz de influenciar individualmente as condições de mercado, o monopolista é o único ofertante e, portanto, enfrenta toda a curva de demanda do mercado. Essa posição privilegiada lhe confere **poder de mercado** — a capacidade de fixar preços acima do custo marginal e obter lucros econômicos persistentes.[^black-knight-monopolio]
 
 A análise do monopólio não é meramente teórica: monopólios naturais regulados dominam setores fundamentais da economia brasileira — energia elétrica, saneamento, telecomunicações fixas —, e o exercício de poder de mercado é uma preocupação central da política antitruste em todo o mundo. A fusão que criou a Ambev, os contratos de concessão da ANEEL, o teto de preços da ANATEL — todos esses casos envolvem, em sua essência, a economia do monopólio apresentada neste capítulo. Compreender como o monopolista fixa preços, por que essa fixação gera ineficiência e quais instrumentos regulatórios podem mitigá-la é, portanto, indispensável tanto para o economista teórico quanto para o formulador de políticas públicas.
 
@@ -31,7 +31,7 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 
 ---
 
-!!! classroom "Atividade de Sala — O Leilão do Monopólio: Poder de Mercado, Discriminação e Regula��ão"
+!!! classroom "Atividade de Sala — O Leilão do Monopólio: Poder de Mercado, Discriminação e Regulação"
 
     **Formato:** Simulação de mercado + debrief analítico (45–55 min)
 
@@ -75,6 +75,6 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 
     **Referência:** Holt, C.A. (2007). *Markets, Games, and Strategic Behavior*, Cap. 24 (Monopoly).
 
-[^black-knight-monopolio]: O monopolista é como o Black Knight de *Monty Python and the Holy Grail*: "'Tis but a scratch!" — ele insiste que está tudo bem enquanto o CADE corta suas margens. A diferença �� que, no caso do monopólio, o cavaleiro negro realmente tem uma espada grande o suficiente para fazer estrago. E ao contrário do sketch, ele não perde os braços: a barreira à entrada os protege.
+[^black-knight-monopolio]: O monopolista é como o Black Knight de *Monty Python and the Holy Grail*: "'Tis but a scratch!" — ele insiste que está tudo bem enquanto o CADE corta suas margens. A diferença é que, no caso do monopólio, o cavaleiro negro realmente tem uma espada grande o suficiente para fazer estrago. E ao contrário do sketch, ele não perde os braços: a barreira à entrada os protege.
 
 [^spanish-inquisition-oligopolio]: "Nobody expects the Spanish Inquisition!" E ninguém espera que um capítulo sobre monopólio termine com a preparação para o oligopólio. Mas como os Pythons, nós vamos ao próximo capítulo com três armas: medo, surpresa e uma devoção quase fanática pela interação estratégica.

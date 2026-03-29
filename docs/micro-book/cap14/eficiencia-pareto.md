@@ -88,7 +88,7 @@ Esse resultado tem um significado profundo: é a versão mais rigorosa da ideia 
 
     **Resultado:** A curva de contrato é a diagonal \(x_2^A = x_1^A\), para \(0 \leq x_1^A \leq 10\).
 
-    **Interpretação econômica:** Quando os dois consumidores têm preferências idênticas (mesma função de utilidade Cobb-Douglas com parâmetros iguais), a curva de contrato é a diagonal da Caixa de Edgeworth. Isso faz sentido intuitivamente: como ambos valorizam os bens na mesma proporção, a eficiência exige que ambos recebam cestas com a mesma razão entre os bens. Ao longo da diagonal, a questão é puramente distributiva �� *quanto* cada um recebe, não *como* a composição difere. Se os parâmetros das Cobb-Douglas fossem diferentes, a curva se curvaria, refletindo as diferenças nas valorações relativas.
+    **Interpretação econômica:** Quando os dois consumidores têm preferências idênticas (mesma função de utilidade Cobb-Douglas com parâmetros iguais), a curva de contrato é a diagonal da Caixa de Edgeworth. Isso faz sentido intuitivamente: como ambos valorizam os bens na mesma proporção, a eficiência exige que ambos recebam cestas com a mesma razão entre os bens. Ao longo da diagonal, a questão é puramente distributiva — *quanto* cada um recebe, não *como* a composição difere. Se os parâmetros das Cobb-Douglas fossem diferentes, a curva se curvaria, refletindo as diferenças nas valorações relativas.
 
 ??? exercicio-resolvido "Exercício Resolvido 14.2 — Equilíbrio walrasiano na Caixa de Edgeworth"
     **Enunciado:** Considere uma economia de troca pura com dois consumidores (A e B) e dois bens. As dotações são \(\boldsymbol{\omega}_A = (8, 2)\) e \(\boldsymbol{\omega}_B = (2, 8)\). As funções de utilidade são \(U_A = x_1^A \cdot x_2^A\) e \(U_B = (x_1^B)^{1/3} \cdot (x_2^B)^{2/3}\). Encontre o equilíbrio walrasiano e verifique a eficiência de Pareto.
@@ -203,7 +203,7 @@ A inclinação da FPP é a **taxa marginal de transformação** (TMT):
 TMT = -\frac{dX_2}{dX_1} = \frac{CMg_1}{CMg_2}
 \label{eq:14.6} \tag{14.6} \]
 
-A TMT mede o custo de oportunidade social de produzir uma unidade adicional do bem 1, expresso em termos do bem 2 que deve ser sacrificado. A forma da FPP depende da tecnologia disponível. Se ambos os setores têm retornos constantes de escala e usam os insumos nas mesmas proporções, a FPP é uma reta �� o custo de oportunidade é constante. Mas quando os setores diferem em intensidade fatorial (por exemplo, o setor 1 é trabalho-intensivo e o setor 2 é capital-intensivo), a FPP é côncava em relação à origem — o custo de oportunidade é crescente. Essa concavidade reflete o fato de que, à medida que a economia se especializa em um bem, ela é forçada a realocar insumos cada vez menos adequados para aquele setor, elevando progressivamente o custo marginal. Quanto mais diferentes forem as tecnologias dos dois setores, mais pronunciada será a curvatura da FPP.
+A TMT mede o custo de oportunidade social de produzir uma unidade adicional do bem 1, expresso em termos do bem 2 que deve ser sacrificado. A forma da FPP depende da tecnologia disponível. Se ambos os setores têm retornos constantes de escala e usam os insumos nas mesmas proporções, a FPP é uma reta — o custo de oportunidade é constante. Mas quando os setores diferem em intensidade fatorial (por exemplo, o setor 1 é trabalho-intensivo e o setor 2 é capital-intensivo), a FPP é côncava em relação à origem — o custo de oportunidade é crescente. Essa concavidade reflete o fato de que, à medida que a economia se especializa em um bem, ela é forçada a realocar insumos cada vez menos adequados para aquele setor, elevando progressivamente o custo marginal. Quanto mais diferentes forem as tecnologias dos dois setores, mais pronunciada será a curvatura da FPP.
 
 A relação entre a forma da FPP e a **vantagem comparativa** é direta. Dois países com FPPs diferentes terão custos de oportunidade diferentes, o que cria incentivos para o comércio. O país com menor TMT para o bem 1 tem vantagem comparativa nesse bem e deveria se especializar nele. Essa é a conexão entre a teoria de equilíbrio geral e a teoria do comércio internacional que exploraremos mais adiante.
 
@@ -215,7 +215,7 @@ A eficiência econômica plena requer que a TMT iguale a TMS comum aos consumido
 TMT = TMS_A^{12} = TMS_B^{12}
 \label{eq:14.7} \tag{14.7} \]
 
-Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis. Se, por exemplo, os consumidores estivessem dispostos a trocar 3 unidades do bem 2 por 1 do bem 1 (TMS = 3), mas a economia só precisasse sacrificar 1 unidade do bem 2 para produzir 1 do bem 1 (TMT = 1), seria eficiente produzir mais do bem 1 — pois o benef��cio para os consumidores superaria o custo de oportunidade. A igualdade TMT = TMS elimina essas oportunidades de melhoria.
+Isso garante que a combinação de bens produzida é exatamente aquela que os consumidores desejam, dados os recursos disponíveis. Se, por exemplo, os consumidores estivessem dispostos a trocar 3 unidades do bem 2 por 1 do bem 1 (TMS = 3), mas a economia só precisasse sacrificar 1 unidade do bem 2 para produzir 1 do bem 1 (TMT = 1), seria eficiente produzir mais do bem 1 — pois o benefício para os consumidores superaria o custo de oportunidade. A igualdade TMT = TMS elimina essas oportunidades de melhoria.
 
 Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
 
@@ -227,7 +227,7 @@ Visualize a fronteira de possibilidades de produção e a taxa marginal de trans
 
 ---
 
-## 14.5 Três Pe��as do Quebra-Cabeça: Condições de Eficiência de Pareto {#145}
+## 14.5 Três Peças do Quebra-Cabeça: Condições de Eficiência de Pareto {#145}
 
 Eficiência na troca, eficiência na produção, eficiência no mix de produtos — três peças de um quebra-cabeça que só funciona quando encaixam ao mesmo tempo. As seções anteriores identificaram cada peça separadamente. A eficiência de Pareto plena requer que todas as três sejam satisfeitas simultaneamente. A [Tabela 14.1](#tabela-14-1) sintetiza as condições marginais correspondentes em uma economia com dois consumidores (A, B), dois bens (1, 2) e dois insumos (L, K).
 
@@ -237,13 +237,13 @@ Eficiência na troca, eficiência na produção, eficiência no mix de produtos 
 |---|---|---|
 | **Eficiência na troca** | \(TMS_A^{12} = TMS_B^{12}\) | Os consumidores valorizam os bens na mesma proporção marginal; não há trocas mutuamente benéficas. |
 | **Eficiência na produção** | \(TMST_1^{LK} = TMST_2^{LK}\) | Os insumos são alocados entre setores de modo que é impossível aumentar a produção de um bem sem reduzir a do outro. |
-| **Eficiência no mix de produtos** | \(TMT^{12} = TMS_A^{12} = TMS_B^{12}\) | A combinação de bens produzida corresponde ��s preferências dos consumidores; o custo de oportunidade social iguala a valoração marginal. |
+| **Eficiência no mix de produtos** | \(TMT^{12} = TMS_A^{12} = TMS_B^{12}\) | A combinação de bens produzida corresponde às preferências dos consumidores; o custo de oportunidade social iguala a valoração marginal. |
 
 <div class="caption-obj" markdown>
 **Tabela 14.1 — Condições de eficiência de Pareto.**
 </div>
 
-Cada uma dessas três condi��ões tem uma interpretação intuitiva clara. A eficiência na troca diz que os consumidores exauriram todos os ganhos de comércio entre si — como dois colegas que já trocaram tudo o que fazia sentido trocar. A eficiência na produção diz que os insumos estão no lugar certo — não há como reorganizar o chão de fábrica para produzir mais de um bem sem produzir menos de outro. A eficiência no mix de produtos conecta as duas: garante que o que a economia produz é o que as pessoas querem consumir. É essa última condição que exige a comunicação entre consumidores e produtores — e é o sistema de preços que realiza essa comunicação.
+Cada uma dessas três condições tem uma interpretação intuitiva clara. A eficiência na troca diz que os consumidores exauriram todos os ganhos de comércio entre si — como dois colegas que já trocaram tudo o que fazia sentido trocar. A eficiência na produção diz que os insumos estão no lugar certo — não há como reorganizar o chão de fábrica para produzir mais de um bem sem produzir menos de outro. A eficiência no mix de produtos conecta as duas: garante que o que a economia produz é o que as pessoas querem consumir. É essa última condição que exige a comunicação entre consumidores e produtores — e é o sistema de preços que realiza essa comunicação.
 
 Para ilustrar a violação de cada condição, considere três exemplos. Primeiro, se dois consumidores têm TMS diferentes (digamos, A estaria disposto a trocar 2 unidades de café por 1 de açúcar, enquanto B trocaria 1 de café por 1 de açúcar), uma troca entre eles — A cede 1,5 cafés a B em troca de 1 açúcar — deixaria ambos melhores. Segundo, se uma fábrica de sapatos usa muitas máquinas e pouco trabalho enquanto uma fábrica de roupas usa muito trabalho e poucas máquinas, e suas TMST diferem, transferir algum capital da fábrica de sapatos para a de roupas e trabalho na direção oposta aumentaria a produção total. Terceiro, se os consumidores valorizam uma camiseta adicional em 3 quilos de arroz (TMS = 3) mas o custo de oportunidade de produzir uma camiseta é apenas 1 quilo de arroz (TMT = 1), a economia deveria produzir mais camisetas — o benefício excede o custo.
 

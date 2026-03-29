@@ -52,7 +52,7 @@ A condição de primeira ordem (CPO) é:
 
     1. **Mínimo disfarçado de máximo:** Se na solução da CPO o custo marginal está *decrescente* (CMg' < 0), a condição \(\pi''(q^*) = \mathrm{RMg}' - \mathrm{CMg}' > 0\) indica um *mínimo* de lucro, não máximo. Graficamente, o CMg cruza o preço de cima para baixo — e não de baixo para cima.
 
-    2. **Solução de canto:** O máximo de lucro pode estar em \(q = 0\) (firmar fecha) se \(p < \mathrm{CVMe}_{\min}\), mesmo que exista um ponto interior onde CPO é satisfeita.
+    2. **Solução de canto:** O máximo de lucro pode estar em \(q = 0\) (firma fecha) se \(p < \mathrm{CVMe}_{\min}\), mesmo que exista um ponto interior onde CPO é satisfeita.
 
     **Regra mnemônica — CSO (Condição Suficiente de Ordem 2):** Para que \(q^*\) seja um máximo local de lucro, é preciso que \(\mathrm{CMg}'(q^*) > \mathrm{RMg}'(q^*)\), ou seja, o CMg deve estar *subindo* mais rápido do que o RMg no ponto ótimo. Em concorrência perfeita (\(\mathrm{RMg}' = 0\)), isso se reduz simplesmente a \(\mathrm{CMg}'(q^*) > 0\): o custo marginal deve ser crescente no ótimo.
 

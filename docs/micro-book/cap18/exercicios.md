@@ -20,7 +20,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     - (d) Minimiza o risco do investimento
 
     ??? success "Resposta"
-        **(b)** A TIR é definida como a taxa $r^*$ tal que $\text{VPL}(r^*) = 0$. Se a TIR excede o custo de capital, o projeto é viável. A alternativa (a) confunde — o VPL é maximizado quando $r = 0$; (c) descreve o critério de decisão, não a definição; (d) n��o tem relação com a TIR.
+        **(b)** A TIR é definida como a taxa $r^*$ tal que $\text{VPL}(r^*) = 0$. Se a TIR excede o custo de capital, o projeto é viável. A alternativa (a) confunde — o VPL é maximizado quando $r = 0$; (c) descreve o critério de decisão, não a definição; (d) não tem relação com a TIR.
 
 ??? question "3. A regra de Hotelling para recursos não renováveis afirma que, em equilíbrio:"
     - (a) O preço do recurso deve cair ao longo do tempo para estimular o consumo
@@ -67,7 +67,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
 | Conceito | Definição |
 |----------|-----------|
-| Capital | Estoque de bens produzidos utilizados como insumos na produção; fator de produç��o produzido (máquinas, equipamentos, infraestrutura) |
+| Capital | Estoque de bens produzidos utilizados como insumos na produção; fator de produção produzido (máquinas, equipamentos, infraestrutura) |
 | Taxa de juros de equilíbrio | Taxa que iguala oferta de poupança e demanda de investimento no mercado de fundos emprestáveis |
 | Equação de Fisher | Relação entre taxa nominal, real e inflação: \(1+i = (1+r)(1+\pi)\) |
 | Riqueza intertemporal | Valor presente de toda a renda futura: \(W = Y_1 + Y_2/(1+r)\) |

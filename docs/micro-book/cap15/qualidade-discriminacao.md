@@ -26,7 +26,7 @@ O monopolista iguala a receita marginal da qualidade ao custo marginal da qualid
 
     **Pense assim:** Imagine uma operadora de TV a cabo monopolista decidindo quantos canais oferecer. Ela não pergunta "quantos canais o cinéfilo fanático quer?", mas "quantos canais preciso para convencer a última família a assinar?". Se as famílias que assinam mais facilmente (alta disposição a pagar) também são as que mais valorizam variedade de canais, a operadora oferecerá *menos* canais do que seria socialmente ótimo — porque está calibrando pelo consumidor marginal, menos exigente.
 
-    **Por que isso importa:** Esse resultado é relevante para a regula��ão de serviços monopolísticos no Brasil: a ANATEL, ao regular planos de telecomunicações, precisa considerar não apenas preços, mas também padrões mínimos de qualidade — porque o monopolista não tem incentivos automáticos para fornecer a qualidade socialmente desejável.
+    **Por que isso importa:** Esse resultado é relevante para a regulação de serviços monopolísticos no Brasil: a ANATEL, ao regular planos de telecomunicações, precisa considerar não apenas preços, mas também padrões mínimos de qualidade — porque o monopolista não tem incentivos automáticos para fornecer a qualidade socialmente desejável.
 
 ---
 
@@ -75,13 +75,13 @@ Essa distorção no consumo do tipo baixo é o custo da **compatibilidade de inc
 
     **Discriminação de segundo grau (autosseleção):**
 
-    As companhias oferecem múltiplas classes tarifárias para o mesmo voo — desde tarifas promocionais sem direito a bagagem ou remarcação até tarifas flex��veis com reembolso integral. Passageiros corporativos, com alta disposição a pagar e demanda inelástica (viagens de última hora), autosselecionam-se para tarifas mais caras. Passageiros a lazer, com demanda elástica e flexibilidade de datas, escolhem as tarifas promocionais. Essa estrutura replica o menu de contratos descrito na teoria: o tipo de alta valoração paga mais, mas recebe serviços adicionais.
+    As companhias oferecem múltiplas classes tarifárias para o mesmo voo — desde tarifas promocionais sem direito a bagagem ou remarcação até tarifas flexíveis com reembolso integral. Passageiros corporativos, com alta disposição a pagar e demanda inelástica (viagens de última hora), autosselecionam-se para tarifas mais caras. Passageiros a lazer, com demanda elástica e flexibilidade de datas, escolhem as tarifas promocionais. Essa estrutura replica o menu de contratos descrito na teoria: o tipo de alta valoração paga mais, mas recebe serviços adicionais.
 
     **Discriminação de terceiro grau (segmentação observável):**
 
     Companhias oferecem tarifas diferenciadas para idosos (desconto de 5% obrigatório pela ANAC), estudantes e militares. A segmentação por antecedência de compra (preços mais baixos para compras com 30-60 dias de antecedência) também funciona como discriminação de terceiro grau, separando viajantes a lazer (antecedência) de viajantes corporativos (última hora).
 
-    Segundo dados da ANAC, a tarifa a��rea média dom��stica por km variou entre R$ 0,35 e R$ 0,55 em 2023, mas a dispersão de preços dentro de um mesmo voo pode facilmente superar 300% — evidência direta de discriminação de preços.
+    Segundo dados da ANAC, a tarifa aérea média doméstica por km variou entre R$ 0,35 e R$ 0,55 em 2023, mas a dispersão de preços dentro de um mesmo voo pode facilmente superar 300% — evidência direta de discriminação de preços.
 
 ### 15.7.3 Discriminação de terceiro grau (segmentação de mercados)
 
@@ -105,7 +105,7 @@ A equação $\eqref{eq:15.12}$ mostra que o monopolista iguala as receitas margi
 \frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}
 \label{eq:15.13} \tag{15.13} \]
 
-Essa equação formaliza a intuição de que o monopolista "espreme" mais os consumidores com poucas alternativas. A razão de preços entre mercados depende exclusivamente da razão de elasticidades — e não dos custos, que são comuns. É por isso que passagens aéreas para executivos custam mais do que para turistas: não porque custe mais transportar um executivo, mas porque ele é menos sensível ao pre��o.
+Essa equação formaliza a intuição de que o monopolista "espreme" mais os consumidores com poucas alternativas. A razão de preços entre mercados depende exclusivamente da razão de elasticidades — e não dos custos, que são comuns. É por isso que passagens aéreas para executivos custam mais do que para turistas: não porque custe mais transportar um executivo, mas porque ele é menos sensível ao preço.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** Discriminar preços significa cobrar mais de quem está mais disposto a pagar e menos de quem é mais sensível ao preço.
@@ -135,7 +135,7 @@ No gráfico interativo abaixo, alterne entre os três graus de discriminação e
 O exercício a seguir aplica a discriminação de terceiro grau a um problema com dois mercados.
 
 ??? exercicio-resolvido "Exercício Resolvido 15.4 — Discriminação de terceiro grau com dois mercados"
-    **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discrimina��ão de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
+    **Enunciado.** Um monopolista vende em dois mercados: \(p_1 = 120 - 2q_1\) e \(p_2 = 80 - q_2\). O custo marginal é constante \(CMg = 20\). (a) Com discriminação de 3º grau, encontre preços e quantidades em cada mercado. (b) Calcule os índices de Lerner e relacione com as elasticidades. (c) Calcule o lucro total.
 
     ---
 
@@ -200,7 +200,7 @@ O exercício a seguir aplica a discriminação de terceiro grau a um problema co
 
 ## 15.8 Pague para Entrar, Pague para Brincar: Tarifas em Duas Partes {#158}
 
-Se você já pagou mensalidade de academia e *depois* pagou por aula extra, ou comprou o cartão do Sam's Club para ter o "privilégio" de comprar lá dentro, você já foi vítima (voluntária) de uma tarifa em duas partes. Essa é uma das formas mais elegantes e difundidas de precificação não-linear. Diferentemente dos esquemas de discriminação discutidos na seção anterior, que exigem observar ou induzir a revelação de tipos, a tarifa em duas partes combina simplicidade operacional com capacidade de extração de excedente, razão pela qual �� amplamente utilizada em setores que vão de telecomunicações a academias de ginástica, de parques de diversões a clubes de compras.
+Se você já pagou mensalidade de academia e *depois* pagou por aula extra, ou comprou o cartão do Sam's Club para ter o "privilégio" de comprar lá dentro, você já foi vítima (voluntária) de uma tarifa em duas partes. Essa é uma das formas mais elegantes e difundidas de precificação não-linear. Diferentemente dos esquemas de discriminação discutidos na seção anterior, que exigem observar ou induzir a revelação de tipos, a tarifa em duas partes combina simplicidade operacional com capacidade de extração de excedente, razão pela qual é amplamente utilizada em setores que vão de telecomunicações a academias de ginástica, de parques de diversões a clubes de compras.
 
 Uma tarifa em duas partes consiste em uma **taxa de entrada** (tarifa fixa \(T\)) e um **preço por unidade** (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\). O papel de cada componente é distinto: a taxa fixa extrai excedente inframarginal (que o consumidor obteria ao preço \(p\)); o preço por unidade governa a quantidade demandada e, portanto, a eficiência alocativa.
 
@@ -240,7 +240,7 @@ A solução ótima tipicamente envolve \(p > CMg\) e \(T < EC\) do consumidor co
 
     Lucro total: \(\Pi = 50 \times [\text{lucro por A}] + 50 \times [\text{lucro por B}]\), onde o lucro por consumidor é \(T + (p-2) \cdot q_i\).
 
-    Após simplificação e otimizaç��o (derivando em relação a \(p\)):
+    Após simplificação e otimização (derivando em relação a \(p\)):
 
     \[
     \frac{d\Pi}{dp} = 0 \implies p^* = 7

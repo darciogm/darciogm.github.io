@@ -113,7 +113,7 @@ L^c = L^c(w, v, q), \qquad K^c = K^c(w, v, q)
 \label{eq:11.5} \tag{11.5}
 \]
 
-Estas funções expressam as quantidades ótimas de cada insumo como funções dos preços dos insumos e do nível de produto desejado. O adjetivo "condicionado" refere-se ao condicionamento sobre o nível de produto: diferentemente das demandas por insumos irrestrita (que resultam da maximização direta de lucro), as demandas condicionadas tomam \(q\) como dado e resolvem o problema de minimização de custos. Essa distinção é crucial: a demanda condicional por trabalho pode *aumentar* quando o salário sobe, se a firma também ajusta o capital — isso não é paradoxo, é consequência de estar condicionando sobre \(q\).
+Estas funções expressam as quantidades ótimas de cada insumo como funções dos preços dos insumos e do nível de produto desejado. O adjetivo "condicionado" refere-se ao condicionamento sobre o nível de produto: diferentemente das demandas por insumos irrestritas (que resultam da maximização direta de lucro), as demandas condicionadas tomam \(q\) como dado e resolvem o problema de minimização de custos. Essa distinção é crucial: a demanda condicional por trabalho pode *aumentar* quando o salário sobe, se a firma também ajusta o capital — isso não é paradoxo, é consequência de estar condicionando sobre \(q\).
 
 Uma propriedade importante das demandas condicionadas, imediatamente derivada do Capítulo 10, é que elas são homogêneas de grau zero nos preços dos insumos: \(L^c(tw, tv, q) = L^c(w, v, q)\). Se todos os preços dos insumos dobram, a combinação ótima de insumos não muda — apenas o custo mínimo dobra. Isso é consistente com a homogeneidade de grau 1 da função custo nos preços, que derivaremos na seção seguinte.
 

@@ -153,7 +153,7 @@ E[\text{Receita}] = \frac{N-1}{N+1}
 \label{eq:9c.4} \tag{9c.4}
 \]
 
-<iframe src="../graficos/cap09c/leilao-primeiro-preco.html" title="Figura 9c.2 — Leilao de primeiro preco com N licitantes" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap09c/leilao-primeiro-preco.html" title="Figura 9c.2 — Leilao de primeiro preco com N licitantes" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 9c.2 — Leilão de primeiro preço com N licitantes.** A função de lance ótimo \(b(v) = v \cdot (N-1)/N\) mostra o sombreamento (*bid shading*): cada licitante lança abaixo do seu valor verdadeiro. Ajuste \(N\) para ver como o sombreamento diminui com mais concorrentes.
@@ -182,8 +182,8 @@ Como o excedente total (valor do vencedor) é o mesmo e os payoffs dos licitante
 
 Cada uma dessas violações merece um comentário. A **aversão ao risco** faz com que licitantes no primeiro preço sombreiem *menos* seus lances — preferem pagar um pouco mais para reduzir o risco de perder, aumentando a receita. A **assimetria** — quando licitantes têm distribuições de valor diferentes — quebra a condição de que a alocação eficiente depende apenas do formato; licitantes mais "fracos" tendem a lançar mais agressivamente no primeiro preço, e o efeito líquido sobre a receita é ambíguo. Os **valores afiliados** introduzem uma ligação informacional entre os valores dos licitantes: quando os valores são correlacionados, o *linkage principle* de Milgrom e Weber (1982) mostra que leilões que revelam mais informação (como o inglês) geram mais receita do que leilões de envelope fechado. Por fim, a **colusão** — em que licitantes coordenam para suprimir a competição — é mais facilmente sustentável em certos formatos do que em outros, como discutiremos no Box Brasil sobre cartéis.
 
-!!! warning "Cuidado"
-    **A maldição do vencedor não é sobre má sorte — é sobre seleção adversa**
+!!! warning "⚠️ Erro Comum"
+    **Atribuir a "maldição do vencedor" a má sorte, quando na verdade é um problema de seleção adversa.**
 
     Um erro comum ao estudar leilões de valor comum é pensar que a "maldição do vencedor" é apenas um desvio comportamental ou resultado de irracionalidade. Na verdade, trata-se de um **problema estrutural de seleção adversa**: vencer um leilão de valor comum revela que sua estimativa era a mais alta entre todos os participantes, o que é uma *má notícia* sobre o valor real do objeto.
 
@@ -384,7 +384,7 @@ Se os leilões de petróleo e energia ilustram o lado virtuoso da competição e
 
     **Exercício:** Mude `N` de 3 para 10. O que acontece com a receita? E com o surplus do vencedor?
 
-    <iframe src="../graficos/cap09/webr-auction.html" title="Figura 9c.1 — Leilões" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
+    <iframe src="/micro-book/graficos/cap09/webr-auction.html" title="Figura 9c.1 — Leilões" class="graph-iframe" style="height:1100px;overflow:hidden" scrolling="no"></iframe>
 
     <div class="caption-obj" markdown>
     **Figura 9c.1 — Simulação Monte Carlo de leilões de 1º e 2º preço.** Altere <code>N</code> (licitantes) e <code>n_sim</code> (simulações) para explorar o Teorema da Equivalência de Receita.

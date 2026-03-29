@@ -182,3 +182,184 @@ O Nobel de 2019 reconheceu a transformação que os RCTs trouxeram para a econom
     Na prática, deve-se adicionar 15–20% para compensar atrito esperado: \(714 / 0{,}85 \approx 840\) participantes, custo de US\$ 12.600. Este é um RCT relativamente barato — o estudo original de desparasitação de Kremer custou menos de US\$ 50.000 e influenciou políticas que alcançaram milhões de crianças.
 
 <iframe src="/micro-book/graficos/cap22/poder-estatistico.html" title="Figura 22.2 — Poder Estatístico, Tamanho da Amostra e Tamanho do Efeito" class="graph-iframe"></iframe>
+
+---
+
+!!! lab "Mini-Lab Computacional — Diferenças-em-Diferenças com Dados Simulados"
+
+    **Objetivo:** Implementar o estimador de diferenças-em-diferenças (DiD) em Python, simular um painel com efeito de tratamento conhecido e verificar que o estimador recupera o efeito verdadeiro. O aluno também testa as consequências da violação da hipótese de tendências paralelas.
+
+    **Pré-requisitos:** Python 3, NumPy, Pandas, Matplotlib, statsmodels.
+
+    **Tempo estimado:** 45–60 minutos.
+
+    ---
+
+    **Parte 1 — O cenário**
+
+    Considere dois grupos de municípios brasileiros — **tratados** (que receberam um programa de transferência de renda em $t = 1$) e **controles** (que não receberam). A variável de resultado é a taxa de frequência escolar (%). Você observa os dois grupos em dois períodos: $t = 0$ (antes) e $t = 1$ (depois).
+
+    O modelo de dados é:
+
+    \[
+    Y_{it} = \alpha + \beta \cdot \text{Tratado}_i + \gamma \cdot \text{Pos}_t + \delta \cdot (\text{Tratado}_i \times \text{Pos}_t) + \varepsilon_{it}
+    \]
+
+    onde $\delta$ é o **efeito causal do tratamento** (o parâmetro DiD).
+
+    ---
+
+    **Parte 2 — Código Python**
+
+    ```python
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import statsmodels.formula.api as smf
+
+    np.random.seed(42)
+
+    # ── Parâmetros da simulação ─────────────────────────────
+    N = 200            # municípios por grupo
+    alpha = 75.0       # intercepto (frequência base, %)
+    beta = -5.0        # diferença de nível entre grupos (tratados partem de menos)
+    gamma = 3.0        # tendência temporal comum
+    delta_true = 8.0   # efeito causal verdadeiro do programa
+    sigma = 4.0        # desvio-padrão do erro
+
+    # ── Gerar painel ────────────────────────────────────────
+    tratado = np.repeat([0, 1], N)
+    pos = np.tile([0, 1], N)
+    # Expandir para painel completo: cada município aparece 2 vezes
+    municipio = np.repeat(np.arange(2 * N), 1)
+
+    # Na verdade, precisamos de painel: cada município em t=0 e t=1
+    ids = np.arange(2 * N)
+    tratado_i = np.where(ids < N, 0, 1)  # primeiros N = controle
+
+    rows = []
+    for i in ids:
+        for t in [0, 1]:
+            y = (alpha
+                 + beta * tratado_i[i]
+                 + gamma * t
+                 + delta_true * tratado_i[i] * t
+                 + np.random.normal(0, sigma))
+            rows.append({
+                'municipio': i,
+                'tratado': tratado_i[i],
+                'pos': t,
+                'frequencia': y
+            })
+
+    df = pd.DataFrame(rows)
+    df['tratado_pos'] = df['tratado'] * df['pos']
+
+    print("Primeiras linhas do painel:")
+    print(df.head(10))
+    print(f"\nDimensões: {df.shape[0]} observações, {len(ids)} municípios, 2 períodos")
+
+    # ── Estimação DiD por regressão ─────────────────────────
+    modelo = smf.ols('frequencia ~ tratado + pos + tratado_pos', data=df).fit()
+    print("\n" + "═" * 60)
+    print("ESTIMAÇÃO DIFERENÇAS-EM-DIFERENÇAS")
+    print("═" * 60)
+    print(modelo.summary().tables[1])
+    print(f"\n  δ estimado = {modelo.params['tratado_pos']:.3f}")
+    print(f"  δ verdadeiro = {delta_true:.3f}")
+    print(f"  Erro = {abs(modelo.params['tratado_pos'] - delta_true):.3f}")
+
+    # ── Verificação manual ──────────────────────────────────
+    medias = df.groupby(['tratado', 'pos'])['frequencia'].mean().unstack()
+    print("\n  Tabela de médias:")
+    print(medias.round(2))
+    did_manual = ((medias.loc[1, 1] - medias.loc[1, 0])
+                  - (medias.loc[0, 1] - medias.loc[0, 0]))
+    print(f"\n  DiD manual = {did_manual:.3f}")
+
+    # ── Gráfico clássico DiD ───────────────────────────────
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    for g, label, cor in [(0, 'Controle', '#2196F3'), (1, 'Tratado', '#F44336')]:
+        sub = medias.loc[g]
+        ax.plot([0, 1], [sub[0], sub[1]], 'o-', color=cor,
+                linewidth=2.5, markersize=10, label=label)
+
+    # Contrafactual
+    cf = medias.loc[1, 0] + (medias.loc[0, 1] - medias.loc[0, 0])
+    ax.plot([0, 1], [medias.loc[1, 0], cf], 's--', color='#F44336',
+            alpha=0.4, linewidth=2, markersize=8, label='Contrafactual (tratado)')
+
+    # Seta mostrando o efeito
+    ax.annotate('', xy=(1.05, medias.loc[1, 1]), xytext=(1.05, cf),
+                arrowprops=dict(arrowstyle='<->', color='green', lw=2))
+    ax.text(1.1, (medias.loc[1, 1] + cf) / 2, f'δ = {did_manual:.1f}',
+            fontsize=12, color='green', fontweight='bold', va='center')
+
+    ax.set_xticks([0, 1])
+    ax.set_xticklabels(['Antes (t=0)', 'Depois (t=1)'])
+    ax.set_ylabel('Frequência escolar (%)')
+    ax.set_title('Diferenças-em-Diferenças: Efeito do Programa')
+    ax.legend(loc='upper left')
+    ax.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.savefig('did_resultado.png', dpi=150, bbox_inches='tight')
+    plt.show()
+
+    # ═══════════════════════════════════════════════════════
+    # PARTE 3 — VIOLAÇÃO DE TENDÊNCIAS PARALELAS
+    # ═══════════════════════════════════════════════════════
+
+    print(f"\n{'═' * 60}")
+    print("VIOLAÇÃO DE TENDÊNCIAS PARALELAS")
+    print("═" * 60)
+
+    # Agora o grupo tratado tem tendência pré-tratamento diferente
+    gamma_controle = 3.0
+    gamma_tratado = 6.0  # tratados já estavam melhorando mais rápido
+
+    rows_v = []
+    for i in ids:
+        for t in [0, 1]:
+            g_i = gamma_tratado if tratado_i[i] == 1 else gamma_controle
+            y = (alpha
+                 + beta * tratado_i[i]
+                 + g_i * t
+                 + delta_true * tratado_i[i] * t
+                 + np.random.normal(0, sigma))
+            rows_v.append({
+                'municipio': i, 'tratado': tratado_i[i],
+                'pos': t, 'frequencia': y
+            })
+
+    df_v = pd.DataFrame(rows_v)
+    df_v['tratado_pos'] = df_v['tratado'] * df_v['pos']
+
+    modelo_v = smf.ols('frequencia ~ tratado + pos + tratado_pos', data=df_v).fit()
+    delta_viesado = modelo_v.params['tratado_pos']
+
+    print(f"  δ estimado (com violação) = {delta_viesado:.3f}")
+    print(f"  δ verdadeiro              = {delta_true:.3f}")
+    print(f"  Viés                      = {delta_viesado - delta_true:.3f}")
+    print(f"\n  ⚠️  O DiD SUPERESTIMA o efeito porque o grupo tratado")
+    print(f"     já tinha tendência ascendente mais forte ANTES do programa.")
+    print(f"     Viés = γ_tratado - γ_controle = {gamma_tratado - gamma_controle:.1f}")
+    ```
+
+    ---
+
+    **Parte 3 — Perguntas para o relatório**
+
+    1. **Interpretação dos coeficientes:** No modelo $Y = \alpha + \beta \cdot T + \gamma \cdot P + \delta \cdot (T \times P) + \varepsilon$, interprete cada coeficiente em termos da tabela 2×2 de médias.
+
+    2. **Tendências paralelas:** Por que a violação de tendências paralelas gera viés positivo no exemplo acima? Em que direção seria o viés se $\gamma_{\text{tratado}} < \gamma_{\text{controle}}$?
+
+    3. **Teste placebo:** Modifique o código para criar um "tratamento falso" em $t = 0$ (antes do programa real) usando dados de três períodos ($t = -1, 0, 1$). Se o DiD no período pré-tratamento for significativo, o que isso sugere sobre a validade da identificação?
+
+    4. **Clusters:** Na prática, municípios dentro de um mesmo estado podem ter erros correlacionados. Reestime o modelo com erros clusterizados por estado (crie uma variável `estado` que agrupe municípios) e compare os erros-padrão.
+
+    5. **Conexão com RCTs:** Explique por que, se o programa fosse atribuído por RCT (aleatorização pura), a hipótese de tendências paralelas seria automaticamente satisfeita. Em que situações o DiD é necessário *em vez de* um RCT?
+
+    ---
+
+    **Conexão com o capítulo:** Este exercício implementa o estimador DiD discutido na Seção 22.5 (Experimentos Naturais) e conecta com a lógica de resultados potenciais da Seção 22.4 (RCTs). A violação de tendências paralelas ilustra por que métodos quase-experimentais exigem hipóteses de identificação que os RCTs dispensam — o trade-off entre validade interna e viabilidade prática discutido ao longo de todo o capítulo.

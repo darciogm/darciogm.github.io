@@ -78,7 +78,7 @@ Qual lado subsidiar? A regra é subsidiar o lado cuja participação gera **maio
 
     **Pense assim:** Imagine uma casa noturna. Se cobrar R$ 100 de todos, pode ficar vazia. Se deixar mulheres entrarem de graça (lado subsidiado) e cobrar R$ 200 dos homens (lado pagante), pode lotar — porque a presença de mais pessoas de cada grupo atrai o outro. A "discriminação de preços" não é exploração; é a internalização de uma externalidade cruzada. O Google faz exatamente isso: a presença de bilhões de usuários torna o Google irresistivelmente atraente para anunciantes, que estão dispostos a pagar caro pela atenção desses usuários.
 
-    **Por que isso importa:** A estrutura de pre��os de plataformas bilaterais viola a intuição de que "preço abaixo do custo marginal é predatório" (Capítulo 15, Seção sobre barreiras à entrada). Em mercados bilaterais, subsidiar um lado pode ser a estratégia ótima — e eficiente do ponto de vista social — porque internaliza a externalidade cruzada.
+    **Por que isso importa:** A estrutura de preços de plataformas bilaterais viola a intuição de que "preço abaixo do custo marginal é predatório" (Capítulo 15, Seção sobre barreiras à entrada). Em mercados bilaterais, subsidiar um lado pode ser a estratégia ótima — e eficiente do ponto de vista social — porque internaliza a externalidade cruzada.
 
 ??? exercicio-resolvido "Exercício Resolvido 21.1 — Plataforma monopolista bilateral"
     **Enunciado.** Uma plataforma digital conecta compradores (B) e vendedores (S). A demanda de cada lado é dada por:
@@ -211,3 +211,50 @@ onde \(k \in \{B, S\}\), \(\varepsilon_k\) é a elasticidade-preço da demanda d
 <div class="caption-obj" markdown>
 **Figura 21.2 — Precificação de Plataforma Bilateral.** O gráfico de barras compara os preços ótimos \(p_B^*\) e \(p_S^*\) cobrados pela plataforma a cada lado com o custo marginal \(c\). O lado que gera maior externalidade cruzada (\(\gamma\) mais alto) tende a ser subsidiado — recebendo preço abaixo do custo — enquanto o lado oposto paga mais.
 </div>
+
+---
+
+### 21.3.5 TikTok e a economia da recomendação algorítmica {#2135}
+
+O TikTok (ByteDance) introduziu uma ruptura no modelo de plataformas bilaterais que merece atenção analítica: enquanto plataformas tradicionais (Facebook, Instagram) distribuem conteúdo com base no **grafo social** (quem você segue), o TikTok distribui conteúdo com base em **recomendação algorítmica pura** (o que o algoritmo prevê que você vai assistir). Isso altera a dinâmica competitiva de forma fundamental.
+
+**Implicações microeconômicas:**
+
+1. **Efeitos de rede enfraquecidos**: em plataformas baseadas em grafo social, o lock-in é forte porque migrar significa perder conexões (custo de troca alto, equação $\eqref{eq:21.6}$). No TikTok, o valor vem do algoritmo de recomendação, não da rede de contatos — o que significa que o custo de troca do lado do usuário é *menor*. A plataforma retém usuários pela qualidade do algoritmo, não pelo aprisionamento social.
+
+2. **Competição por atenção, não por rede**: o TikTok compete diretamente com Netflix, YouTube e Instagram pelo recurso mais escasso da economia digital — a atenção (Seção 21.5). Com mais de 1,5 bilhão de usuários ativos mensais globalmente e tempo médio de uso de 95 minutos/dia (2024), o TikTok captura uma fração crescente do "orçamento de atenção" dos jovens, reduzindo a atenção disponível para plataformas incumbentes.
+
+3. **Mercado de criadores como mercado bilateral**: o TikTok opera como plataforma bilateral entre criadores de conteúdo e audiência, com o algoritmo funcionando como mecanismo de matching. A monetização segue a lógica de subsídio cruzado: criadores recebem incentivos (Fundo de Criadores, TikTok Shop), e a plataforma monetiza via anúncios direcionados à audiência.
+
+---
+
+### 21.3.6 Regulação de plataformas: DMA, DSA e o PL das plataformas no Brasil {#2136}
+
+A concentração de poder de mercado nas grandes plataformas digitais (*Big Tech*) gerou uma onda global de regulação que pode ser a transformação mais significativa na política antitruste desde o Sherman Act (1890). As três iniciativas regulatórias mais relevantes são:
+
+**Digital Markets Act (DMA) — União Europeia (2022/2024):**
+
+O DMA classifica plataformas com mais de 45 milhões de usuários mensais na UE e receita superior a €7,5 bilhões como **gatekeepers** (porteiros digitais), sujeitos a obrigações específicas:
+
+- **Interoperabilidade**: serviços de mensagens (WhatsApp, iMessage) devem permitir interoperação com concorrentes — reduzindo o lock-in por efeitos de rede diretos.
+- **Proibição de auto-preferência**: plataformas não podem favorecer seus próprios serviços em resultados de busca ou app stores (endereça o caso Google Shopping).
+- **Portabilidade de dados**: usuários devem poder migrar seus dados entre plataformas — reduzindo custos de troca.
+- **Proibição de tying**: plataformas não podem condicionar o acesso a um serviço à adoção de outro (endereça práticas de envelopment).
+
+Foram designados como gatekeepers em 2024: Alphabet (Google), Amazon, Apple, ByteDance (TikTok), Meta e Microsoft.
+
+**Digital Services Act (DSA) — União Europeia (2022/2024):**
+
+O DSA complementa o DMA regulando o *conteúdo* das plataformas: transparência de algoritmos de recomendação, proibição de publicidade direcionada a menores, e obrigação de combater desinformação — temas que conectam diretamente com a economia da atenção (Seção 21.5) e a externalidade de privacidade (Seção 21.6).
+
+!!! box-brasil "Box Brasil — PL das Plataformas e regulação digital brasileira"
+
+    **Contexto:** O Brasil discute, desde 2020, um marco regulatório para plataformas digitais. O **PL 2630/2020** (Lei Brasileira de Liberdade, Responsabilidade e Transparência na Internet), popularmente conhecido como "PL das Fake News" ou "PL das Plataformas", é a iniciativa mais avançada.
+
+    **Principais disposições (versão 2024):** (i) obrigação de transparência sobre algoritmos de recomendação e moderação de conteúdo; (ii) responsabilidade das plataformas por conteúdo que viole a lei quando notificadas e não atuarem; (iii) criação de uma entidade reguladora autônoma para plataformas digitais; (iv) proibição de publicidade direcionada a menores de 18 anos; (v) obrigação de interoperabilidade para serviços de mensagens com mais de 50 milhões de usuários.
+
+    **Análise econômica:** O PL tenta equilibrar dois objetivos em tensão: (a) proteger consumidores e a democracia contra externalidades negativas das plataformas (desinformação, manipulação algorítmica, exploração de dados de menores) e (b) preservar a eficiência dos efeitos de rede e a inovação. A obrigação de interoperabilidade para mensageiros, em particular, é uma aplicação direta da teoria discutida na Seção 21.2.5: ao reduzir os custos de troca sem fragmentar a rede, a interoperabilidade pode manter os benefícios de rede enquanto contesta o poder de mercado do incumbente (WhatsApp, com mais de 170 milhões de usuários no Brasil). O desafio de implementação é significativo: quem arca com o custo técnico da interoperabilidade? Como garantir privacidade end-to-end entre plataformas diferentes? O DMA europeu enfrenta os mesmos desafios.
+
+    **Fonte:** Câmara dos Deputados — PL 2630/2020. CADE — Cadernos do CADE: Concorrência em Mercados Digitais (2022).
+
+A regulação de plataformas digitais ilustra um princípio geral do desenho de mecanismos (Seção 9c.5): todo desenho regulatório envolve trade-offs entre objetivos conflitantes — eficiência alocativa, inovação, proteção ao consumidor e competição —, e a solução ótima depende de parâmetros empíricos (intensidade dos efeitos de rede, magnitude dos custos de troca, velocidade de inovação) que variam entre mercados e jurisdições.

@@ -71,7 +71,7 @@ O Nobel de 2021, concedido a Card, Angrist e Imbens, reconheceu não apenas resu
 
     **Pense assim:** Antes da revolução, economistas frequentemente argumentavam: "Controlei por renda, escolaridade, idade, região, e o coeficiente do salário mínimo sobre emprego é X." A crítica é: "Mas e os fatores que você *não* controlou? E se esses fatores estão correlacionados com o salário mínimo?" Depois da revolução, o padrão é: "Usei a variação exógena do limiar de New Jersey como quase-experimento, comparando com a Pensilvânia que não teve mudança. As tendências paralelas pré-tratamento confirmam a validade do design." A diferença não é técnica — é de *cultura científica*.
 
-    **Por que isso importa:** Para o estudante de economia, a mensagem é: nunca confie em um estudo que reporta uma relação causal sem explicar *por que* a estimativa é causal. Pergunte sempre: "Qual é a estratégia de identificação? Quais são as hip��teses necessárias? Essas hipóteses são plausíveis?"
+    **Por que isso importa:** Para o estudante de economia, a mensagem é: nunca confie em um estudo que reporta uma relação causal sem explicar *por que* a estimativa é causal. Pergunte sempre: "Qual é a estratégia de identificação? Quais são as hipóteses necessárias? Essas hipóteses são plausíveis?"
 
 !!! box-mundo "Box Mundo 22.2 — A crise de replicação em economia experimental"
 

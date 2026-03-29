@@ -113,7 +113,7 @@ Dentro da categoria dos bens normais, existe uma segunda distinção relevante: 
 
 Note que todo bem de luxo é normal, mas nem todo bem normal é de luxo.
 
-<iframe src="../graficos/cap05/curva-engel.html" title="Figura 5.1 — Curva de Engel e caminho de expansão da renda" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/curva-engel.html" title="Figura 5.1 — Curva de Engel e caminho de expansão da renda" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.1 — Curva de Engel e caminho de expansão da renda.** Painel superior: espaço de bens com restrições orçamentárias para diferentes níveis de renda e o caminho de expansão (azul). Painel inferior: curvas de Engel para \(x_1\) e \(x_2\). Alterne entre Cobb-Douglas (bens normais) e utilidade quase-linear (efeito renda zero para \(x_1\)).
@@ -200,7 +200,7 @@ Ambas as decomposições — a de Hicks, expressa na equação $\eqref{eq:5.3.1}
 
     **Fontes**: ANEEL — Tarifas e Bandeiras Tarifárias; BCB — Relatório de Inflação; Agência Brasil (2022).
 
-<iframe src="../graficos/cap05/efeito-renda-substituicao.html" title="Figura 5.2 — Decomposição dos efeitos renda e substituição" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/efeito-renda-substituicao.html" title="Figura 5.2 — Decomposição dos efeitos renda e substituição" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.2 — Decomposição dos efeitos renda e substituição.** Ajuste o novo preço \(p_1'\) e observe como o efeito total (vermelho) se decompõe em efeito substituição (verde, ao longo da curva de indiferença) e efeito renda (azul, entre curvas). Alterne entre as decomposições de Hicks e Slutsky.
@@ -270,8 +270,8 @@ Uma nota sobre convenção de sinais, que frequentemente gera confusão: na Equa
 
 Vale notar a elegância da derivação: bastaram a identidade entre demandas hicksiana e marshalliana e o Lema de Shephard para conectar duas funções de demanda aparentemente distintas em uma única equação. O resultado revela que a quantidade consumida do bem cujo preço variou (\(x_j\)) atua como um "multiplicador" do efeito renda — quanto mais o consumidor gasta com esse bem, maior o impacto sobre seu poder de compra.
 
-!!! warning "Cuidado"
-    **Erro comum: confundir o sinal do efeito renda na Equação de Slutsky.**
+!!! warning "⚠️ Erro Comum"
+    **Confundir o sinal do efeito renda na Equação de Slutsky.**
 
     A Equação de Slutsky é escrita como:
 
@@ -411,7 +411,7 @@ Como captura apenas o efeito substituição, é **sempre** negativamente inclina
 !!! note "Relação geométrica"
     As curvas marshalliana e hicksiana se cruzam no ponto correspondente ao preço e à renda iniciais. A partir desse ponto, a marshalliana diverge conforme o efeito renda se acumula.
 
-<iframe src="../graficos/cap05/demanda-marshalliana-hicksiana.html" title="Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul)" class="graph-iframe" style="height:720px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/demanda-marshalliana-hicksiana.html" title="Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul)" class="graph-iframe" style="height:720px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.3 — Demanda marshalliana (vermelha) vs hicksiana (azul).** Painel superior: curvas de indiferença e restrição orçamentária no espaço de bens. Painel inferior: curvas de demanda derivadas. Para bens normais, a hicksiana é mais inclinada. A área sombreada representa o excedente do consumidor.
@@ -684,7 +684,7 @@ As três medidas coincidem quando o efeito renda é nulo (utilidade quase-linear
 
     **Interpretação econômica:** as três medidas coincidem porque a utilidade é quase-linear — o efeito renda sobre \(x\) é zero, e as curvas marshalliana e hicksiana de \(x\) são idênticas. Em aplicações práticas, quando o bem em questão representa parcela pequena do orçamento (como um produto específico), o efeito renda é negligível e o EC marshalliano é uma boa aproximação das medidas exatas de bem-estar.
 
-<iframe src="../graficos/cap05/excedente-consumidor.html" title="Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/excedente-consumidor.html" title="Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 5.4 — Excedente do consumidor (EC), variação compensatória (VC) e variação equivalente (VE).** Ajuste os preços \(p_0\) e \(p_1\) e ative/desative cada medida. Para uma queda de preço de bem normal: \(VC < \Delta EC < VE\). O EC usa a demanda marshalliana (linear); VC e VE usam demandas hicksianas (Cobb-Douglas).
@@ -781,25 +781,25 @@ Se este capítulo funcionou, você sai dele com três convicções:
 
 ---
 
-<iframe src="../graficos/cap05/webr-slutsky.html" title="WebR — Decomposição de Slutsky" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/webr-slutsky.html" title="WebR — Decomposição de Slutsky" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 5.1 — Decomposição de Slutsky.** Visualize os pontos A (original), B (Slutsky-compensado) e C (final), e calcule os efeitos substituição e renda. Altere o choque de preço e o parâmetro α para ver quando o efeito renda domina.
 </div>
 
-<iframe src="../graficos/cap05/webr-engel.html" title="WebR — Curvas de Engel" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/webr-engel.html" title="WebR — Curvas de Engel" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 5.2 — Curvas de Engel e Lei de Engel.** Compare bens de luxo (E>1), necessidade (0<E<1) e inferior (E<0). O segundo painel mostra a Lei de Engel: famílias pobres gastam maior parcela da renda com alimentação.
 </div>
 
-<iframe src="../graficos/cap05/webr-excedente.html" title="WebR — Excedente do Consumidor" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/webr-excedente.html" title="WebR — Excedente do Consumidor" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 5.3 — Três medidas de bem-estar: EC, VC e VE.** Com utilidade quase-linear, VC = VE = EC (sem efeito-renda). Com Cobb-Douglas, VE ≤ EC ≤ VC. Veja a comparação numérica e gráfica.
 </div>
 
-<iframe src="../graficos/cap05/webr-giffen.html" title="WebR — Simulação de Bem de Giffen" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap05/webr-giffen.html" title="WebR — Simulação de Bem de Giffen" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 5.4 — Bem de Giffen: quando a demanda sobe com o preço.** Simule um bem de subsistência e veja a Slutsky em ação: o efeito-renda (positivo, pois o bem é inferior) domina o efeito-substituição. Altere b_pref para transitar entre normal e Giffen.

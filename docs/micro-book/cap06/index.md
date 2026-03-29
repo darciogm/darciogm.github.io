@@ -82,7 +82,9 @@ OK, com dois bens o resultado é trivial. Mas no supermercado real existem milha
 !!! note "Assimetria da classificação bruta"
     A classificação marshalliana **não é necessariamente simétrica**: pode ocorrer que \(\frac{\partial x_1}{\partial p_2} > 0\) enquanto \(\frac{\partial x_2}{\partial p_1} < 0\). Isso decorre da interferência do efeito renda, que contamina a relação cruzada de forma assimétrica. Essa é uma das razões pelas quais a classificação hicksiana é teoricamente preferida.
 
-!!! warning "Cuidado: a classificação bruta pode ser assimétrica"
+!!! warning "⚠️ Erro Comum"
+    **Supor que a relação de substitutibilidade bruta é simétrica.**
+
     Um erro frequente é supor que, se \(x_1\) é substituto bruto de \(x_2\), então \(x_2\) também é substituto bruto de \(x_1\). Isso não é garantido. Considere dois bens normais com efeitos renda muito diferentes: suponha que o bem 2 tenha elasticidade-renda alta (um luxo), enquanto o bem 1 tenha elasticidade-renda baixa (uma necessidade). Um aumento em \(p_2\) empobrece o consumidor substancialmente (ele gastava muito em bem 2), reduzindo a demanda por \(x_1\) via efeito renda — o que pode fazer \(\frac{\partial x_1}{\partial p_2} < 0\) mesmo que o efeito substituição seja positivo. No sentido oposto, um aumento em \(p_1\) empobrece menos o consumidor (ele gastava pouco em bem 1), e o efeito substituição pode dominar, gerando \(\frac{\partial x_2}{\partial p_1} > 0\).
 
     Em termos formais, da Equação de Slutsky temos:
@@ -217,7 +219,7 @@ Dois bens podem ser substitutos líquidos mas complementos brutos se o efeito re
 
 O gráfico abaixo permite explorar os efeitos cruzados de preço com a função de utilidade CES. Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem, alternando entre substitutos e complementos.
 
-<iframe src="../graficos/cap06/substitutos-complementos.html" title="Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço" class="graph-iframe" style="height:830px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/substitutos-complementos.html" title="Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço" class="graph-iframe" style="height:830px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
@@ -381,7 +383,7 @@ Com \(n\) bens, a matriz de Slutsky tem \(n^2\) entradas. Para 100 bens, são 10
 
 O gráfico abaixo ilustra o Teorema do Bem Composto. O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)), que agrega os demais bens cujos preços variam proporcionalmente. Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
 
-<iframe src="../graficos/cap06/bem-composto.html" title="Figura 6.2 — Teorema do Bem Composto de Hicks" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/bem-composto.html" title="Figura 6.2 — Teorema do Bem Composto de Hicks" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.2 — Teorema do Bem Composto de Hicks.** O eixo horizontal mede o bem 1 (\(x_1\)) e o eixo vertical mede o bem composto (\(y\)). Ajuste \(\alpha\) para simular variações proporcionais nos preços do grupo composto.
@@ -682,25 +684,25 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 
 ---
 
-<iframe src="../graficos/cap06/webr-elasticidades.html" title="WebR — Elasticidades Cruzadas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/webr-elasticidades.html" title="WebR — Elasticidades Cruzadas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 6.1 — Elasticidades cruzadas com CES.** Altere ρ para ver bens se transformarem de substitutos (ρ positivo, elasticidade cruzada > 0) em complementos (ρ negativo). O painel direito mostra a elasticidade cruzada mudando de sinal.
 </div>
 
-<iframe src="../graficos/cap06/webr-receita-elasticidade.html" title="WebR — Elasticidade e Receita" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/webr-receita-elasticidade.html" title="WebR — Elasticidade e Receita" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 6.2 — Elasticidade e receita total.** A regra de ouro: dRT/dP = Q(1 + 1/E). Com demanda elástica, subir preço reduz receita; com inelástica, aumenta. Altere E para ver o efeito na receita.
 </div>
 
-<iframe src="../graficos/cap06/webr-agregacao.html" title="WebR — Agregação de Demandas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/webr-agregacao.html" title="WebR — Agregação de Demandas" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 6.3 — Soma horizontal: da demanda individual à de mercado.** Três consumidores com demandas diferentes geram uma demanda de mercado com kinks nos preços de exclusão. Veja como consumidores "saem" do mercado em preços diferentes.
 </div>
 
-<iframe src="../graficos/cap06/webr-bem-composto.html" title="WebR — Teorema do Bem Composto" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/webr-bem-composto.html" title="WebR — Teorema do Bem Composto" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 6.4 — Teorema do Bem Composto de Hicks.** Se os preços de um grupo de bens se movem proporcionalmente, o grupo inteiro pode ser tratado como um único bem. O código mostra que y/z permanece constante.

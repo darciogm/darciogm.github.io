@@ -62,7 +62,7 @@ A formulação em \eqref{eq:4.1.1} admite generalizações naturais: para \(n\) 
 
     **Por que isso importa:** Todo debate sobre política de preços — subsídios ao gás de cozinha, tarifa zero no transporte público — é, no fundo, sobre como deslocar ou rotacionar essa reta orçamentária das famílias.
 
-<iframe src="../graficos/cap04/restricao-orcamentaria.html" title="Figura 4.1 — Restrição Orçamentária" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/restricao-orcamentaria.html" title="Figura 4.1 — Restrição Orçamentária" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.1 — Restrição Orçamentária.** Ajuste renda e preços com os sliders. Observe como a reta orçamentária se desloca e como a inclinação reflete o custo de oportunidade.
@@ -133,7 +133,7 @@ Por exemplo, se uma família gasta R$ 200 por mês em streaming e R$ 50 em livro
 !!! tip "Soluções de canto"
     Nem todas as soluções são interiores. Para substitutos perfeitos, por exemplo, o consumidor tipicamente consome apenas o bem com maior razão \(a_i/p_i\). Soluções de canto ocorrem quando a TMS no ponto \(x_i = 0\) já é inferior (ou superior) à razão de preços, de modo que a condição de tangência não se verifica em nenhum ponto interior.
 
-<iframe src="../graficos/cap04/equilibrio-consumidor.html" title="Figura 4.2 — Equilíbrio do Consumidor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/equilibrio-consumidor.html" title="Figura 4.2 — Equilíbrio do Consumidor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.2 — Equilíbrio do Consumidor.** Varie os preços, a renda e o parâmetro α para visualizar a tangência entre a curva de indiferença e a reta orçamentária. O ponto ótimo é calculado analiticamente.
@@ -232,8 +232,10 @@ Agora sabemos *o que* o consumidor compra. A próxima pergunta: *quão feliz* el
 
 A propriedade de quase-convexidade merece atenção especial, pois frequentemente gera confusão. A função de utilidade indireta é quase-*convexa* em preços — e não quase-côncava —, o que pode parecer contraintuitivo à primeira vista.
 
-!!! warning "Cuidado"
-    A **quase-convexidade** de \(V\) em \(\mathbf{p}\) **não** significa que \(V\) seja convexa em preços. Confundir as duas propriedades é um erro comum.
+!!! warning "⚠️ Erro Comum"
+    **Confundir quase-convexidade com convexidade da função utilidade indireta.**
+
+    A **quase-convexidade** de \(V\) em \(\mathbf{p}\) **não** significa que \(V\) seja convexa em preços.
 
     Quase-convexidade em \(\mathbf{p}\) significa que o conjunto de preços que geram utilidade **baixa** — \(\{\mathbf{p} : V(\mathbf{p}, I) \leq \bar{v}\}\) — é convexo. Em outras palavras, preços "ruins" formam conjuntos convexos. Isso é bem diferente de dizer que \(V\) é convexa, o que exigiria que uma média ponderada de preços gerasse utilidade maior ou igual à média ponderada das utilidades — afirmação que não é verdadeira em geral.
 
@@ -307,7 +309,7 @@ A geometria do argumento é esclarecedora: o imposto específico rotaciona a ret
 
 [^shrubbery-tax]: O governo, neste problema, se comporta como os Cavaleiros que Dizem "Ni!" em *Monty Python and the Holy Grail*: exige uma receita fixa ("*Bring me a shrubbery!*") e não negocia o valor. A questão é *como* o consumidor prefere entregar essa receita — com distorção de preços (imposto específico) ou sem (lump sum). A demanda do governo por receita é perfeitamente inelástica; a do consumidor por bem-estar, não.
 
-<iframe src="../graficos/cap04/lump-sum-principle.html" title="Figura 4.3" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/lump-sum-principle.html" title="Figura 4.3" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.3 — Princípio do Montante Fixo (*Lump Sum*).** Compare o imposto unitário com o imposto lump sum de mesma receita. Note que o lump sum sempre gera utilidade igual ou superior.
@@ -512,7 +514,7 @@ Se esta seção parece abstrata demais, relaxe: a dualidade é uma daquelas idei
     **Conexão com este capítulo:**
     A estrutura de dualidade entre \(V\) e \(E\) está no coração do modelo Arrow-Debreu de equilíbrio geral. As demandas marshallianas derivadas neste capítulo são as peças individuais que, agregadas, formam a demanda de mercado no modelo Arrow-Debreu. Além disso, a distinção entre eficiência alocativa (equilíbrio competitivo) e bem-estar (representado por \(V\) e \(E\)) é central ao programa de pesquisa de Arrow sobre economia do bem-estar, que reaparece nos Capítulos 9 e 10.
 
-<iframe src="../graficos/cap04/dualidade.html" title="Figura 4.4 — Dualidade: Maximização de Utilidade vs" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/dualidade.html" title="Figura 4.4 — Dualidade: Maximização de Utilidade vs" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 4.4 — Dualidade: Maximização de Utilidade vs. Minimização do Dispêndio.** Alterne entre os problemas primal e dual. Observe que o mesmo ponto de tangência resolve ambos, e que as identidades de dualidade se verificam numericamente.
@@ -1050,25 +1052,25 @@ O consumidor encontrou sua cesta ótima. Mas o mundo não fica parado: preços m
 
 ---
 
-<iframe src="../graficos/cap04/webr-demandas.html" title="WebR — Demandas e Dualidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/webr-demandas.html" title="WebR — Demandas e Dualidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 4.1 — Marshalliana vs. Hicksiana.** Visualize como as duas curvas de demanda se cruzam no ponto base (a dualidade em ação). Altere α para ver como a fração de gastos muda e como as demandas respondem.
 </div>
 
-<iframe src="../graficos/cap04/webr-roy.html" title="WebR — Identidade de Roy" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/webr-roy.html" title="WebR — Identidade de Roy" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 4.2 — Identidade de Roy: da V(p,m) à demanda.** Recupere a demanda marshalliana a partir da utilidade indireta, sem resolver o problema de otimização novamente. O código verifica numericamente que x* = −(∂V/∂pₓ)/(∂V/∂m).
 </div>
 
-<iframe src="../graficos/cap04/webr-lump-sum.html" title="WebR — Princípio Lump Sum" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/webr-lump-sum.html" title="WebR — Princípio Lump Sum" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 4.3 — Princípio Lump Sum.** Compare um imposto específico (que distorce preços relativos) com um lump sum de mesma receita. O consumidor sempre prefere o lump sum — veja a diferença em utilidade e no gráfico.
 </div>
 
-<iframe src="../graficos/cap04/webr-shephard.html" title="WebR — Lema de Shephard" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap04/webr-shephard.html" title="WebR — Lema de Shephard" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 4.4 — Lema de Shephard e função dispêndio.** Verifique que ∂E/∂pᵢ = hᵢ (demanda hicksiana). A concavidade de E em preços garante que a demanda compensada é negativamente inclinada — a lei da demanda sem exceções.

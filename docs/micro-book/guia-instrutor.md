@@ -109,6 +109,76 @@ Este guia fornece recursos para professores que adotam o livro em cursos de Micr
 
 ---
 
+## Classificação dos Capítulos: Core / Intermediário / Avançado
+
+A tabela abaixo classifica cada capítulo em três níveis, permitindo ao professor montar cursos com diferentes profundidades. Os ícones indicam:
+
+- 🟢 **Core** — essencial para qualquer curso de microeconomia (graduação ou pós).
+- 🔵 **Intermediário** — recomendado para cursos de graduação avançada e pós-graduação. Pode ser omitido em cursos introdutórios sem perda de continuidade.
+- 🔴 **Avançado** — material de pós-graduação ou tópicos especiais. Pode ser usado como leitura complementar em cursos de graduação.
+
+| Cap. | Título | Nível | Pré-requisitos | Observações |
+|:-----|:-------|:-----:|:---------------|:------------|
+| 1 | Pensando como Economista | 🟢 Core | — | Abrir qualquer curso com este capítulo. |
+| 2 | Ferramentas Matemáticas | 🟢 Core | — | Revisão de cálculo e otimização. Turmas com base forte podem cobrir em 1 aula; turmas com base fraca precisam de 2–3. |
+| 3 | Preferências e Utilidade | 🟢 Core | Cap. 2 | Axiomas + funções de utilidade. Fundamental para todo o bloco do consumidor. |
+| 4 | Escolha do Consumidor | 🟢 Core | Caps. 2–3 | Lagrangeano, demandas marshallianas e hicksianas, dualidade. |
+| 5 | Efeitos de Preço: Slutsky | 🟢 Core | Cap. 4 | Equação de Slutsky, bens de Giffen, decomposição. |
+| 6 | Elasticidades e Demanda de Mercado | 🟢 Core | Caps. 4–5 | Elasticidades, substitutos/complementos brutos e líquidos. |
+| 7 | Escolha sob Incerteza | 🔵 Intermediário | Caps. 3–4 | Utilidade esperada, aversão ao risco, prêmio de risco. Essencial para quem vai cobrir Cap. 19 (info assimétrica). |
+| 8 | Economia Comportamental | 🔵 Intermediário | Caps. 3–6 | Vieses, prospect theory, nudges. Excelente como contraponto ao bloco racional. |
+| 9a | Jogos Estáticos | 🟢 Core | Cap. 2 | Nash, dominância, estratégias mistas. Base para todo oligopólio e info assimétrica. |
+| 9b | Jogos Dinâmicos | 🔵 Intermediário | Cap. 9a | Subjogo perfeito, indução retroativa, jogos repetidos. |
+| 9c | Jogos Bayesianos e Mecanismos | 🔴 Avançado | Caps. 9a–9b | Equilíbrio Bayesiano de Nash, VCG, leilões ótimos. Pós-graduação. |
+| 9d | Info Incompleta Dinâmica | 🔴 Avançado | Caps. 9a–9c | PBE, sinalização, cheap talk, Holmström. Pós-graduação. |
+| 10 | Tecnologia e Produção | 🟢 Core | Cap. 2 | Função de produção, rendimentos de escala, isoquantas. |
+| 11 | Custos de Produção | 🟢 Core | Cap. 10 | Custos de curto e longo prazo, Lema de Shephard. |
+| 12 | Oferta da Firma Competitiva | 🟢 Core | Cap. 11 | Maximização de lucro, decisão de operar/fechar. |
+| 13 | Equilíbrio Parcial | 🟢 Core | Caps. 6, 12 | Oferta e demanda, excedentes, impostos, comércio. |
+| 14 | Equilíbrio Geral | 🔵 Intermediário | Caps. 4, 13 | Edgeworth, Teoremas do Bem-Estar, existência. Essencial em pós; opcional em graduação introdutória. |
+| 15 | Monopólio | 🟢 Core | Cap. 13 | Poder de mercado, discriminação de preços, regulação. |
+| 16 | Oligopólio | 🟢 Core | Caps. 9a, 13 | Cournot, Bertrand, Stackelberg, diferenciação. |
+| 17 | Mercado de Trabalho | 🔵 Intermediário | Caps. 4, 12–13 | Oferta de trabalho, capital humano, discriminação, salário mínimo. |
+| 18 | Escolha Intertemporal | 🔵 Intermediário | Caps. 4, 7 | VPL, Fisher, mercados de ativos, Hotelling. |
+| 19 | Informação Assimétrica | 🟢 Core | Caps. 7, 9a | Seleção adversa, risco moral, sinalização, leilões, matching. Seções 19.1–19.6 são core; 19.7–19.9 são intermediárias. |
+| 20 | Externalidades e Bens Públicos | 🟢 Core | Cap. 13 | Pigou, Coase, bens públicos, votação, Arrow. |
+| 21 | Economia Digital | 🔵 Intermediário | Caps. 15–16 | Plataformas, redes, economia da atenção, IA. |
+| 22 | Economia Experimental | 🔴 Avançado | Caps. 9a, 19 | Laboratório, RCTs, diff-in-diff, experimentos naturais. |
+| 23 | Economia da Saúde | 🔴 Avançado | Caps. 7, 19 | Arrow (1963), SUS, regulação de planos, farma. |
+| 24 | Economia Ambiental | 🔵 Intermediário | Cap. 20 | Valoração ambiental, carbono, ESG. Extensão natural do Cap. 20. |
+
+---
+
+## Trilhas de Aprendizagem
+
+As trilhas abaixo permitem que o professor selecione um subconjunto coerente de capítulos para diferentes perfis de curso. Os números entre parênteses indicam o número aproximado de aulas de 2h necessárias.
+
+### Trilha 1 — Graduação Introdutória (30 aulas)
+
+A trilha padrão para um curso de Microeconomia I ou II. Cobre os 🟢 Core completos e introduz tópicos selecionados de 🔵 Intermediário.
+
+**Sequência:** 1 (1) → 2 (2) → 3 (2) → 4 (2) → 5 (1) → 6 (1) → **Prova 1** → 9a (2) → 10 (2) → 11 (2) → 12 (1) → 13 (2) → **Prova 2** → 15 (2) → 16 (2) → 19 [seções 19.1–19.6] (2) → 20 (2) → **Prova 3** → Revisão + **Prova Final** (2)
+
+**Total:** ~30 aulas. Capítulos 7, 8, 14, 17, 18, 21–24 ficam como leitura complementar.
+
+### Trilha 2 — Pós-Graduação / Mestrado (30 aulas)
+
+Comprime o bloco introdutório e aprofunda teoria dos jogos, equilíbrio geral e informação assimétrica. Ideal para mestrado em economia ou preparação ANPEC.
+
+**Sequência:** 2 (1) → 3+4 (2) → 5+6 (2) → 7 (1) → **Prova 1** → 9a (1) → 9b (1) → 9c (2) → 9d (2) → **Prova 2** → 10+11 (2) → 12+13 (2) → 14 (3) → **Prova 3** → 15 (1) → 16 (1) → 19 [completo] (3) → 20 (2) → **Prova Final** (2)
+
+**Total:** ~30 aulas. Capítulos 1, 8, 17, 18, 21–24 como leitura complementar. O foco está nos blocos de equilíbrio geral (14), teoria dos jogos avançada (9c–9d) e informação assimétrica (19).
+
+### Trilha 3 — Tópicos Aplicados (15 aulas)
+
+Para cursos de "Microeconomia Aplicada", "Economia e Políticas Públicas" ou "Tópicos em Micro". Assume que o aluno já cursou Micro I (Caps. 1–6, 10–13).
+
+**Sequência:** 8 (1) → 17 (2) → 18 (2) → 19 [seções 19.1–19.6 + 19.9] (2) → 21 (2) → 22 (2) → 23 (2) → 24 (2)
+
+**Total:** ~15 aulas. Focada em aplicações: comportamental, trabalho, finanças, informação, digital, experimental, saúde e meio ambiente.
+
+---
+
 ## Dicas Pedagógicas
 
 ### 1. Comece cada aula com uma pergunta provocativa do mundo real

@@ -84,7 +84,8 @@ Seja qual for a tribo, em algum momento o modelo precisa encontrar a realidade �
 - **Problemas de identificação**: distinguir correlação de causalidade é o desafio central da econometria. Observar que países com mais sorveterias têm maior renda per capita não significa que sorveterias causam riqueza — ambas as variáveis podem ser efeito de um terceiro fator (clima temperado, urbanização).
 - **Expectativas e reflexividade**: os agentes econômicos reagem às próprias previsões dos modelos, criando um problema de endogeneidade sem paralelo nas ciências naturais. Se o Banco Central anuncia que a inflação será alta, consumidores e firmas ajustam comportamentos de modo que a previsão pode se autorrealizar.
 
-!!! warning "Correlação não é causalidade"
+!!! warning "⚠️ Erro Comum"
+    **Confundir correlação com causalidade.**
     Um dos erros mais comuns na interpretação de evidências econômicas é confundir correlação com causalidade. O fato de duas variáveis se moverem juntas não implica que uma *cause* a outra. Um exemplo clássico: entre 1999 e 2009, o número de filmes em que Nicolas Cage apareceu se correlacionou fortemente com o número de afogamentos em piscinas nos EUA. Obviamente, Nicolas Cage não causa afogamentos — ambas as séries seguem tendências temporais que, por acaso, coincidem.
 
     Em economia, o problema é ainda mais sutil. Países que adotam instituições de livre mercado tendem a ser mais ricos — mas isso ocorre porque as instituições *causam* riqueza, ou porque países ricos *escolhem* essas instituições? A direção da causalidade importa crucialmente para a recomendação de política.
@@ -219,13 +220,13 @@ Q^d = Q^s \quad \text{(equilíbrio)} \label{eq:1.4.3} \tag{1.4.3}
 !!! definition "Equilíbrio de Mercado"
     Um **equilíbrio de mercado** é uma configuração de preço \(P^*\) e quantidade \(Q^*\) na qual a quantidade que os consumidores desejam comprar é igual à quantidade que os produtores desejam vender: \(Q^d(P^*) = Q^s(P^*)\). No equilíbrio, não há pressão para que o preço mude — nenhum agente tem incentivo para alterar unilateralmente seu comportamento. Fora do equilíbrio, o excesso de demanda ou de oferta gera forças que empurram o preço de volta ao ponto de equilíbrio, como uma bola no fundo de uma tigela.
 
-<iframe src="../graficos/cap01/oferta-demanda.html" title="Figura 1.1 — Oferta e Demanda com Estática Comparativa" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/oferta-demanda.html" title="Figura 1.1 — Oferta e Demanda com Estática Comparativa" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.1 — Oferta e Demanda com Estática Comparativa.** Ajuste a renda \(Y\), o custo dos insumos \(w\) e as inclinações das curvas para observar como \(P^*\) e \(Q^*\) se deslocam. O painel mostra as derivadas de estática comparativa \(\partial P^*/\partial Y\) e \(\partial P^*/\partial w\) em tempo real.
 </div>
 
-<iframe src="../graficos/cap01/fluxo-circular.html" title="Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/fluxo-circular.html" title="Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.2 — Diagrama de fluxo circular: famílias e firmas interagem nos mercados de produto e de fatores.** Ative o governo e o setor externo para visualizar fluxos adicionais. Passe o mouse sobre as setas para detalhes.
@@ -374,13 +375,13 @@ Os três chegaram à mesma conclusão fundamental: o valor de um bem é determin
 
     **Debrief da atividade:** Se você fez a atividade do início da seção, compare sua resposta com a explicação acima. A maioria dos alunos intui corretamente que "algo muda entre o deserto e o shopping" — mas poucos conseguem articular que o que muda é a *margem*. Essa é exatamente a intuição que os clássicos tinham mas não conseguiam formalizar.
 
-<iframe src="../graficos/cap01/utilidade-marginal.html" title="Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/utilidade-marginal.html" title="Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.3 — Utilidade Marginal e o Paradoxo Água × Diamante.** A curva \(UMg(x)\) é decrescente: quanto mais abundante o bem, menor o valor da próxima unidade. Ajuste as quantidades de água e diamante para ver que a água tem maior utilidade *total* (área sob a curva), mas menor utilidade *marginal* (altura da curva) — resolvendo o paradoxo de Smith.
 </div>
 
-<iframe src="../graficos/cap01/webr-valor-marginal.html" title="WebR — Paradoxo do Valor" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/webr-valor-marginal.html" title="WebR — Paradoxo do Valor" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 1.3 — O paradoxo de Smith em números.** Calcule utilidade total e marginal para água (abundante) e diamante (escasso). O código mostra que UMg(diamante) >> UMg(água), mesmo com U_total(água) >> U_total(diamante). Altere as quantidades e veja a UMg mudar.
@@ -525,13 +526,13 @@ Chega de filosofia — vamos ver um modelo em ação. A demonstração a seguir 
 
     Portanto, a condição de segunda ordem $\eqref{eq:1.7.5}$ exige que o **custo marginal seja crescente** no ponto ótimo. Geometricamente, a curva de oferta da firma corresponde ao trecho ascendente de sua curva de custo marginal. \(\blacksquare\)
 
-<iframe src="../graficos/cap01/maximizacao-lucro.html" title="Figura 1.4 — Maximização de lucro da firma competitiva" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/maximizacao-lucro.html" title="Figura 1.4 — Maximização de lucro da firma competitiva" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 1.4 — Maximização de lucro da firma competitiva.** Ajuste o preço \(P\) e observe como \(q^*\) se desloca ao longo da curva de custo marginal, confirmando que \(dq^*/dP > 0\) (oferta ascendente).
 </div>
 
-<iframe src="../graficos/cap01/webr-maximizacao-lucro.html" title="WebR — Maximização de Lucro" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/webr-maximizacao-lucro.html" title="WebR — Maximização de Lucro" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 1.2 — Maximização de lucro: CPO e CSO ao vivo.** Altere o preço P e veja q* mudar. O código verifica a CPO (P = CMg) e a CSO (d²π/dq² < 0). Se P cair abaixo de quanto, a firma tem prejuízo?
@@ -647,19 +648,19 @@ Nos próximos capítulos, vamos formalizar essa intuição — começando pelas 
 
 ---
 
-<iframe src="../graficos/cap01/webr-oferta-demanda.html" title="WebR — Oferta e Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/webr-oferta-demanda.html" title="WebR — Oferta e Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 1.1 — Oferta e Demanda: estática comparativa.** Altere os parâmetros de oferta, demanda e o choque de renda para ver como o equilíbrio se desloca. O código R executa diretamente no navegador via WebAssembly.
 </div>
 
-<iframe src="../graficos/cap01/webr-equilibrio-imposto.html" title="WebR — Incidência Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/webr-equilibrio-imposto.html" title="WebR — Incidência Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 1.4 — Quem paga o imposto?** Simule um imposto por unidade e veja como ele se divide entre consumidor e produtor. O peso morto (DWL) aparece como triângulo vermelho. Altere as inclinações: quem paga mais, o lado mais elástico ou o mais inelástico?
 </div>
 
-<iframe src="../graficos/cap01/webr-elasticidade.html" title="WebR — Elasticidade ao Longo da Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap01/webr-elasticidade.html" title="WebR — Elasticidade ao Longo da Demanda" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 1.5 — Elasticidade ao longo de uma curva de demanda.** A mesma curva linear tem trechos elásticos e inelásticos. O código calcula |E| em vários pontos e mostra onde a receita total é máxima (|E|=1). Altere os parâmetros e descubra: onde a firma quer operar?

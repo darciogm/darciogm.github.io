@@ -8,7 +8,10 @@ A **informação assimétrica** — situação em que uma parte de uma transaç�
 
 O estudo sistemático dessas questões rendeu o Prêmio Nobel de Economia a George Akerlof, Michael Spence e Joseph Stiglitz em 2001, e permanece como uma das áreas mais férteis da microeconomia moderna. A teoria da informação assimétrica conecta-se diretamente a temas já tratados neste livro — discriminação de preços (Capítulo 15), regulação de monopólios (Capítulo 15, Seção 15.9), e teoria dos jogos — e fornece as bases para campos aplicados como economia do trabalho, economia financeira, economia da saúde e regulação.
 
-Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, analisamos os dois problemas fundamentais — **risco moral** (ações ocultas) e **seleção adversa** (tipos ocultos) — e discutimos mecanismos de mercado e contratuais que atenuam essas falhas, incluindo **sinalização**, **triagem** e **leilões**. A fundamentação em teoria dos jogos — Equilíbrio Bayesiano Perfeito, jogos de sinalização e screening — encontra-se no Capítulo 9d.
+Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, analisamos os dois problemas fundamentais — **risco moral** (ações ocultas) e **seleção adversa** (tipos ocultos) — e discutimos mecanismos de mercado e contratuais que atenuam essas falhas, incluindo **sinalização**, **triagem** e **leilões**. O capítulo encerra com uma introdução ao **market design** e à teoria de **matching** (Gale-Shapley), mostrando como a economia da informação evoluiu de diagnosticar falhas para *projetar* mecanismos que funcionam mesmo quando preços não podem ser usados. A fundamentação em teoria dos jogos — Equilíbrio Bayesiano Perfeito, jogos de sinalização e screening — encontra-se no Capítulo 9d.
+
+!!! tip "Como este capítulo se relaciona com o Capítulo 9d"
+    Este capítulo e o Capítulo 9d são **complementares**, não redundantes. **Aqui (Cap. 19)**, o foco é a **economia de mercado e contratos**: como a seleção adversa destrói mercados (Akerlof), como desenhar contratos que equilibram incentivos e seguro (Holmström), como o screening opera em seguros (Rothschild-Stiglitz), como leilões alocam recursos e como o market design projeta mecanismos sem preços (Roth-Shapley). **No Capítulo 9d**, o foco é a **teoria dos jogos subjacente**: a definição formal do PBE, a derivação de equilíbrios separadores e agregadores em jogos de sinalização, os refinamentos de Cho-Kreps e o modelo de cheap talk de Crawford-Sobel. **Recomendação para o professor:** em cursos de graduação, comece pelo Cap. 19 (as aplicações motivam a formalização) e use o Cap. 9d como aprofundamento opcional. Em pós-graduação, siga a ordem 9d → 19 (a teoria dos jogos fundamenta as aplicações).
 
 ---
 
@@ -26,6 +29,7 @@ Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, anali
 | 19.6 | [Screening e Triagem](sinalizacao-screening.md#196) | [→](sinalizacao-screening.md#196) |
 | 19.7 | [Leilões](leiloes-taxonomia.md#197) | [→](leiloes-taxonomia.md#197) |
 | 19.8 | [Taxonomia da Informação Assimétrica](leiloes-taxonomia.md#198) | [→](leiloes-taxonomia.md#198) |
+| 19.9 | [Matching Markets e Design de Mercado](matching-markets.md#199) | [→](matching-markets.md#199) |
 | | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
 | | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
 

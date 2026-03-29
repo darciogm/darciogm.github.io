@@ -185,6 +185,38 @@ Esse resultado tem implicações profundas para a política antitruste: como res
 
     **Fonte:** Mercado Libre Inc. — Annual Report 2023 (SEC Filing 20-F). CADE — Inquérito Administrativo sobre Mercados Digitais (2022).
 
+### 21.7.4 Leilões de espectro e o 5G brasileiro {#2174}
+
+Os leilões de espectro eletromagnético para telecomunicações são talvez a aplicação mais espetacular e consequente da teoria de leilões (Capítulo 9c) no mundo real. A cada geração tecnológica (3G, 4G, 5G), governos leiloam faixas de frequência para operadoras — e o desenho do leilão tem implicações bilionárias.
+
+**O leilão do 5G no Brasil (2021):**
+
+O leilão de frequências para o 5G, conduzido pela Anatel em novembro de 2021, foi o maior da história das telecomunicações brasileiras, arrecadando R\$ 47,2 bilhões (R\$ 8,6 bilhões em outorgas + R\$ 38,6 bilhões em compromissos de investimento). O desenho do leilão incorporou elementos sofisticados da teoria de mecanismos:
+
+- **Formato**: leilão de múltiplos itens com rodadas ascendentes (*Simultaneous Multiple Round Ascending* — SMRA), semelhante ao formato usado pelo FCC americano desde 1994 e desenhado por Paul Milgrom e Robert Wilson (Nobel 2020).
+- **Bandas leiloadas**: 700 MHz (cobertura rural), 2,3 GHz, 3,5 GHz (banda principal do 5G) e 26 GHz (ondas milimétricas para alta densidade urbana).
+- **Compromissos de investimento**: além do preço da outorga, os vencedores assumiram obrigações de cobertura — levar 4G a municípios sem cobertura, construir rede privativa para o governo federal e instalar fibra óptica em escolas públicas.
+
+!!! info "Prêmio Nobel 2020 — Paul Milgrom e Robert Wilson"
+
+    **Paul Milgrom** (1948–presente) e **Robert Wilson** (1937–presente), ambos da Stanford University, foram premiados por melhorias na teoria de leilões e invenções de novos formatos de leilão.
+
+    **Por que ganharam o Nobel:**
+    Wilson desenvolveu a teoria para leilões de objetos com valor comum (onde compradores incertos estimam um valor compartilhado — como direitos minerais). Milgrom generalizou o framework para valores privados e comuns combinados e, crucialmente, inventou novos formatos de leilão (como o *Simultaneous Multiple Round Auction*) que foram adotados por governos do mundo inteiro para leiloar espectro, energia e outros recursos.
+
+    **Conexão com este capítulo:**
+    Os leilões de espectro 5G são a aplicação direta do trabalho de Milgrom-Wilson: o formato SMRA permite que os licitantes observem os lances dos concorrentes entre rodadas, reduzindo a "maldição do vencedor" (Seção 9c.3) e aumentando a eficiência alocativa — exatamente como a teoria prevê.
+
+**Desafio de design**: o leilão do 5G brasileiro precisou equilibrar três objetivos em tensão — (a) maximizar a arrecadação (receita do governo), (b) promover a competição (evitar concentração excessiva de espectro) e (c) garantir cobertura universal (obrigações de investimento). Esse trade-off tripartite é uma instância do problema geral de desenho de mecanismos (Seção 9c.5): nenhum mecanismo pode maximizar simultaneamente todos os objetivos, e a escolha do formato reflete prioridades de política pública.
+
+!!! box-brasil "Box Brasil — Resultados do leilão 5G e impacto econômico"
+
+    **Dados:** As três grandes operadoras (Vivo, Claro, TIM) arremataram as faixas principais. A Vivo levou o maior lote de 3,5 GHz por R\$ 1,4 bilhão em outorga. A surpresa foi a entrada da Brisanet e da Cloud2U em faixas regionais, sinalizando contestabilidade no mercado. O compromisso de cobertura inclui: 5G em todas as capitais até julho de 2025; cobertura 4G em 100% dos municípios até 2028; e fibra óptica em 35.000 escolas públicas.
+
+    **Análise:** O formato com compromissos de investimento é uma inovação de design que reconhece que, no contexto brasileiro, a cobertura universal é um bem público que o mercado sozinho não provê (Capítulo 20). Ao vincular a concessão de espectro a obrigações de investimento, o regulador usa o leilão como mecanismo de provisão de bem público — os ganhos de eficiência do 5G nas áreas urbanas financiam a expansão de cobertura em áreas rurais onde o retorno privado seria insuficiente.
+
+    **Fonte:** Anatel — Resultado do Leilão 5G (2021). Teleco — Dados do Setor de Telecomunicações (2024).
+
 ---
 
 A economia digital que analisamos neste capítulo — de bens de informação com custo marginal zero a leilões em milissegundos, de plataformas bilaterais a algoritmos que aprendem a coludir — não é um apêndice da microeconomia tradicional. É, cada vez mais, *a* microeconomia do século XXI. Os modelos formalizados aqui — efeitos de rede (Seção 21.2), mercados bilaterais (Seção 21.3), economia da atenção (Seção 21.5) — estendem e, em alguns casos, desafiam os resultados clássicos dos Capítulos 13–16. A boa notícia é que o arsenal analítico que construímos ao longo do livro — teoria dos jogos, monopólio, oligopólio, informação assimétrica, mecanismos — fornece as ferramentas certas para enfrentar esses desafios. A notícia desafiadora é que a velocidade de transformação dos mercados digitais exige que economistas atualizem seus modelos tão rápido quanto os algoritmos atualizam seus preços.

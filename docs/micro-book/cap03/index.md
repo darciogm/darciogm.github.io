@@ -147,7 +147,7 @@ A forma das curvas conta uma história: se são quase retas, os bens são facilm
 
     O **mapa de indiferença** é a família de todas as curvas de indiferença. Ele oferece uma representação visual completa das preferências do consumidor no espaço bidimensional.
 
-<iframe src="../graficos/cap03/curvas-indiferenca.html" title="Figura 3.1 — Mapa de curvas de indiferença" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/curvas-indiferenca.html" title="Figura 3.1 — Mapa de curvas de indiferença" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.1 — Mapa de curvas de indiferença.** Arraste o ponto sobre a curva para ver a TMS. Use os sliders para alterar os parâmetros e o menu para trocar o tipo de preferência (Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES, quase-linear).
@@ -156,8 +156,8 @@ A forma das curvas conta uma história: se são quase retas, os bens são facilm
 !!! tip "Convexidade estrita"
     Se as preferências forem **estritamente convexas** — isto é, se \(\mathbf{x} \sim \mathbf{y}\) e \(\mathbf{x} \neq \mathbf{y}\) implicarem \(t\mathbf{x} + (1-t)\mathbf{y} \succ \mathbf{x}\) para todo \(t \in (0,1)\) — então as curvas de indiferença são estritamente convexas em relação à origem. Isso reflete a ideia de que consumidores preferem variedade: uma cesta "mista" é preferida a cestas extremas. A seção sobre a TMS (a seguir) mostrará que essa propriedade equivale a uma TMS decrescente.
 
-!!! warning "Convexidade das preferências ≠ concavidade da função de utilidade"
-    Um erro frequente é confundir **preferências convexas** com **função de utilidade côncava**. São conceitos relacionados, mas distintos:
+!!! warning "⚠️ Erro Comum"
+    **Confundir preferências convexas com função de utilidade côncava.** São conceitos relacionados, mas distintos:
 
     - **Preferências convexas** significam que os *conjuntos superiores* \(\{\mathbf{x} : u(\mathbf{x}) \geq \bar{u}\}\) são convexos — geometricamente, as curvas de indiferença são "abauladas" em direção à origem.
     - **Função côncava** é uma condição sobre a própria função \(u\), mais forte que a convexidade das preferências.
@@ -266,7 +266,7 @@ A relação fundamental entre a utilidade marginal, definida pela equação $\eq
     \text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{\text{UMg}_1}{\text{UMg}_2}. \qquad \blacksquare
     \]
 
-<iframe src="../graficos/cap03/tms-ponto.html" title="Figura 3.2 — Taxa Marginal de Substituição (TMS)" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/tms-ponto.html" title="Figura 3.2 — Taxa Marginal de Substituição (TMS)" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.2 — Taxa Marginal de Substituição (TMS).** Arraste o ponto P ao longo da curva de indiferença para ver a reta tangente e o cálculo da \(\text{TMS} = \text{UMg}_1/\text{UMg}_2\) em tempo real. Selecione entre Cobb-Douglas, linear, Leontief, CES e quase-linear.
@@ -398,7 +398,7 @@ A TMS para a CES assume uma forma compacta e elegante:
 
 Note que, quando \(\rho < 1\) (o caso economicamente relevante), o expoente \(\rho - 1\) é negativo, de modo que a TMS é decrescente em \(x_1/x_2\) — confirmando a convexidade das curvas de indiferença.
 
-<iframe src="../graficos/cap03/ces-continua.html" title="Figura 3.3 — CES Contínua: de Leontief a Substitutos Perfeitos" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/ces-continua.html" title="Figura 3.3 — CES Contínua: de Leontief a Substitutos Perfeitos" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.3 — CES Contínua: de Leontief a Substitutos Perfeitos.** Arraste o slider de \(\rho\) para observar a transformação contínua das curvas de indiferença: de ângulos retos (\(\rho \to -\infty\), complementos perfeitos) a hipérboles suaves (\(\rho = 0\), Cobb-Douglas) a retas (\(\rho \to 1\), substitutos perfeitos). A elasticidade de substituição \(\sigma = 1/(1-\rho)\) é exibida em tempo real.
@@ -551,19 +551,19 @@ A [Tabela 3.1](#tabela-3-1) a seguir sintetiza as principais formas funcionais d
 
     **Regra prática:** comece com a forma mais simples que capture o fenômeno de interesse. Se a Cobb-Douglas for suficiente, não use a CES.
 
-<iframe src="../graficos/cap03/tipos-preferencias.html" title="Figura 3.4 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais)" class="graph-iframe" style="height:680px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/tipos-preferencias.html" title="Figura 3.4 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais)" class="graph-iframe" style="height:680px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.4 — Comparação dos quatro tipos de preferências: Cobb-Douglas (hipérboles convexas), substitutos perfeitos (retas), complementos perfeitos (ângulo reto) e quase-linear (translações verticais).**
 </div>
 
-<iframe src="../graficos/cap03/funcoes-utilidade.html" title="Figura 3.5 — Superfície 3D da função de utilidade" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/funcoes-utilidade.html" title="Figura 3.5 — Superfície 3D da função de utilidade" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.5 — Superfície 3D da função de utilidade.** Rotacione e aplique zoom com o mouse. Use o menu para trocar entre Cobb-Douglas, substitutos perfeitos (plano), complementos perfeitos (superfície em cunha), CES e quase-linear. Ajuste os parâmetros nos sliders.
 </div>
 
-<iframe src="../graficos/cap03/homotetica-vs-quaselinear.html" title="Figura 3.6 — Homotética vs quase-linear: compare a expansão da renda" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/homotetica-vs-quaselinear.html" title="Figura 3.6 — Homotética vs quase-linear: compare a expansão da renda" class="graph-iframe" style="height:750px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.6 — Homotética vs quase-linear: compare a expansão da renda.** À esquerda (Cobb-Douglas), o caminho de expansão é um raio da origem — a razão \(x_1/x_2\) é constante. À direita (quase-linear), o caminho é vertical — \(x_1\) não muda com a renda. Ajuste \(I\) e \(p_1/p_2\) nos sliders.
@@ -637,7 +637,7 @@ A demonstração é direta e vale a pena percorrer, pois ilustra a simplicidade 
 - A Cobb-Douglas \(u = x_1^a x_2^b\) pode ser transformada em \(\hat{u} = a \ln x_1 + b \ln x_2\) via \(f(u) = \ln(u)\). O logaritmo transforma o produto em soma, eliminando os expoentes e simplificando consideravelmente as derivadas parciais e a resolução das condições de primeira ordem.
 - Qualquer Cobb-Douglas pode ser normalizada de modo que \(\hat{u} = \frac{a}{a+b} \ln x_1 + \frac{b}{a+b} \ln x_2\), com coeficientes somando 1. Essa normalização é conveniente porque os coeficientes passam a coincidir com as participações na despesa — tornando a interpretação econômica imediata.
 
-<iframe src="../graficos/cap03/transformacao-monotonica.html" title="Figura 3.7 — Transformação Monotônica e Invariância Ordinal" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/transformacao-monotonica.html" title="Figura 3.7 — Transformação Monotônica e Invariância Ordinal" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 3.7 — Transformação Monotônica e Invariância Ordinal.** Esquerda: curvas de indiferença de \(U = x_1 x_2\). Direita: curvas da transformada \(\hat{U} = f(U)\). As curvas são **idênticas** — apenas os rótulos numéricos mudam. Escolha entre \(\ln\), \(\sqrt{}\), \(U^2\), \(U^3\) e \(-1/U\). Mova o ponto de referência para verificar que a TMS é a mesma em ambos os painéis.
@@ -657,6 +657,11 @@ A demonstração é direta e vale a pena percorrer, pois ilustra a simplicidade 
     \]
 
     E a TMS se obtém diretamente: \(\text{TMS}_{12} = (x_1/x_2)^{\rho-1}\) — o mesmo resultado da equação $\eqref{eq:3.6.12}$, mas com cálculo muito mais rápido. Essa é a essência da invariância ordinal: simplificar a álgebra sem alterar a economia.
+
+!!! warning "⚠️ Erro Comum"
+    **Tratar a utilidade como grandeza cardinal — dizer que "Maria tem utilidade 2 vezes maior que João".**
+
+    A função de utilidade ordinal mede apenas *ordem*, não *intensidade*. Se \(u(\text{pizza}) = 10\) e \(u(\text{salada}) = 5\), isso significa apenas que pizza é preferida a salada — **não** que pizza é "duas vezes melhor". Qualquer transformação monotônica (como \(\hat{u} = \ln u\)) preserva as preferências mas muda a razão entre os valores numéricos. Comparações interpessoais ("Maria gosta mais de pizza que João") também são impossíveis com utilidade ordinal — um ponto que se torna crucial na economia do bem-estar (Capítulo 17).
 
 !!! tip "Implicações práticas da ordinalidade"
     A TMS é invariante sob transformações monotônicas. A utilidade marginal, porém, **não é invariante**: ela muda com a transformação. Por isso, a utilidade marginal não tem significado cardinal — apenas a razão entre utilidades marginais (a TMS) possui significado econômico bem definido.
@@ -731,25 +736,25 @@ Três convicções para levar deste capítulo:
 
 ---
 
-<iframe src="../graficos/cap03/webr-utilidade.html" title="WebR — Funções de Utilidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/webr-utilidade.html" title="WebR — Funções de Utilidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 3.1 — Curvas de indiferença comparadas.** Troque entre Cobb-Douglas, CES, quaselinear e substitutos perfeitos. Altere o parâmetro ρ na CES para ver a transição de substitutos (isoquantas retas) a complementos (formato de L).
 </div>
 
-<iframe src="../graficos/cap03/webr-tms.html" title="WebR — Taxa Marginal de Substituição" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/webr-tms.html" title="WebR — Taxa Marginal de Substituição" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 3.2 — TMS ao longo da curva de indiferença.** Calcule a TMS em vários pontos de uma Cobb-Douglas e veja a tangente mudar. Observe: quanto mais x você tem, menos y está disposto a trocar — convexidade em ação.
 </div>
 
-<iframe src="../graficos/cap03/webr-preferencias.html" title="WebR — Zoológico de Preferências" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/webr-preferencias.html" title="WebR — Zoológico de Preferências" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 3.3 — Zoológico de preferências.** Quatro famílias em 4 painéis: Cobb-Douglas (suave), substitutos perfeitos (retas), Leontief (L) e quase-linear (paralelas). Cada forma de CI conta uma história diferente sobre como o consumidor troca bens.
 </div>
 
-<iframe src="../graficos/cap03/webr-transf-monotonica.html" title="WebR — Transformação Monotônica" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap03/webr-transf-monotonica.html" title="WebR — Transformação Monotônica" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 3.4 — Transformação monotônica preserva tudo.** Três funções utilidade (U, ln U, U²) geram a *mesma* curva de indiferença e a *mesma* TMS. A utilidade é ordinal: só o ranking importa, não o número.

@@ -10,6 +10,9 @@ Este capítulo constrói progressivamente o arcabouço analítico necessário pa
 
 A literatura acadêmica sobre economia digital é vasta e em rápida expansão. As referências centrais são Tirole (2023) para a análise de plataformas e regulação, Shapiro e Varian (1999) para a economia da informação, e Parker, Van Alstyne e Choudary (2016) para a estratégia de plataformas. O modelo de mercados bilaterais segue Rochet e Tirole (2003), que é discutido em detalhe na Seção 21.3 e na seção "Pesquisa em Ação". Para uma perspectiva regulatória europeia, ver Crémer, de Montjoye e Schweitzer (2019); para o contexto brasileiro, a análise do CADE (2020) sobre plataformas digitais é referência obrigatória.
 
+!!! warning "Atualização 2025"
+    Este capítulo foi atualizado para incorporar desenvolvimentos recentes na economia digital: (i) **IA generativa** e seus impactos sobre mercados de conteúdo e trabalho (Seção 21.2.6); (ii) **TikTok** e a economia da recomendação algorítmica (Seção 21.3.5); (iii) **regulação de plataformas** — DMA/DSA europeus e o PL das Plataformas brasileiro (Seção 21.3.6); (iv) **leilões de espectro 5G** no Brasil e o Nobel 2020 de Milgrom e Wilson (Seção 21.7.4). A velocidade de transformação dos mercados digitais exige que este capítulo seja revisado periodicamente — o leitor deve complementar o texto com notícias e papers recentes.
+
 ---
 
 ## Roteiro do Capítulo

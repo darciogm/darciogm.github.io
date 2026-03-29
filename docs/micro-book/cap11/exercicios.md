@@ -51,11 +51,11 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
 ## 📋 Resumo do Capítulo
 
-- O **custo econômico** difere do custo cont��bil por incluir o custo de oportunidade dos recursos próprios da firma (capital do proprietário, tempo do empreendedor), enquanto o custo contábil registra apenas desembolsos efetivos. Essa distinção é fundamental para avaliar corretamente a lucratividade de um neg��cio.
+- O **custo econômico** difere do custo contábil por incluir o custo de oportunidade dos recursos próprios da firma (capital do proprietário, tempo do empreendedor), enquanto o custo contábil registra apenas desembolsos efetivos. Essa distinção é fundamental para avaliar corretamente a lucratividade de um negócio.
 - No **curto prazo**, a firma opera com pelo menos um insumo fixo, gerando custos fixos e variáveis. As curvas de custo marginal (CMg), custo variável médio (CVMe) e custo total médio (CTMe) possuem formato em U — reflexo da lei dos rendimentos marginais decrescentes — e se relacionam de maneira precisa: o CMg cruza o CVMe e o CTMe em seus respectivos pontos de mínimo.
 - No **longo prazo**, todos os insumos são variáveis e a firma resolve o problema de **minimização de custos** sujeita à restrição tecnológica, o que gera a condição de tangência entre a isocusto e a isoquanta: $\mathrm{TMST} = w/v$.
 - O **Lema de Shephard** estabelece que as demandas condicionadas por insumos podem ser obtidas como derivadas parciais da função custo em relação aos preços dos insumos, conectando a dualidade entre produção e custos.
-- As **economias de escala** e as **economias de escopo** explicam por que firmas maiores ou diversificadas podem ter custos médios menores, sendo conceitos centrais para a organização industrial. A curva de custo m��dio de longo prazo é a envoltória das curvas de curto prazo.
+- As **economias de escala** e as **economias de escopo** explicam por que firmas maiores ou diversificadas podem ter custos médios menores, sendo conceitos centrais para a organização industrial. A curva de custo médio de longo prazo é a envoltória das curvas de curto prazo.
 - No contexto brasileiro, o chamado **"custo Brasil"** — carga tributária, logística deficiente, burocracia — representa um deslocamento para cima da curva de custos das firmas nacionais, reduzindo sua competitividade internacional.
 
 ## 🔑 Conceitos-Chave
@@ -255,7 +255,7 @@ C(\lambda w_1 + (1-\lambda) w_2, \; \lambda r_1 + (1-\lambda) r_2, \; q) \;\geq\
         - **Item 1 — V:** Custo de oportunidade do trabalho do proprietário: $150k (melhor oferta) − $120k (pró-labore já pago) = $30k adicional implícito. Custo de oportunidade das instalações: $200k (aluguel). Custos implícitos = $30k + $200k = $230k. Custo econômico = $550k + $230k = **$780k**.
         - **Item 2 — F:** Lucro econômico = $1.000k − $780k = **$220k**, não $100k.
         - **Item 3 — V:** Como o lucro econômico é $220k > 0, a empresa remunera todos os fatores acima de seu custo de oportunidade. O proprietário deve continuar operando.
-        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua $220k > 0 independentemente de custos já afundados. A decisão racional �� continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva ([Seção 11.1](definicoes.md)).
+        - **Item 4 — F:** Custos irrecuperáveis (*sunk costs*) **não devem influenciar** decisões correntes. O lucro econômico continua $220k > 0 independentemente de custos já afundados. A decisão racional é continuar operando — o custo irrecuperável é irrelevante para a decisão prospectiva ([Seção 11.1](definicoes.md)).
 
 ??? question "ANPEC 2018 — Questão 5"
     Com relação aos custos de produção, indique quais das afirmações abaixo são verdadeiras e quais são falsas:

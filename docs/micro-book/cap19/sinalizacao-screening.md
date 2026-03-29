@@ -7,6 +7,9 @@ Se você fosse um vendedor de carro impecável, preso num mercado cheio de abaca
 !!! definition "Sinalização (Signaling)"
     Mecanismo pelo qual a parte informada (agente) toma uma **ação custosa e observável** para transmitir credibilmente sua informação privada à parte desinformada (principal). Para que o sinal seja efetivo, ele deve ser **diferencialmente custoso** entre os tipos.
 
+!!! tip "Conexão com o Capítulo 9d"
+    A derivação completa dos equilíbrios separadores e agregadores como Equilíbrios Bayesianos Perfeitos, o Critério de Dominância Intuitiva de Cho-Kreps e a comparação formal entre tipos de equilíbrio encontram-se na Seção 9d.2. Aqui, o foco é a aplicação econômica e as implicações para mercados e políticas públicas.
+
 ### 19.5.1 Educação como sinal (Spence, 1973)
 
 Michael Spence propôs, em sua tese de doutorado em Harvard (1972, publicada em 1973 no QJE), que a educação pode funcionar como sinal de produtividade, mesmo que não aumente diretamente as habilidades do trabalhador. A ideia central — provocativa e influente — é que adquirir educação é **menos custoso** para trabalhadores de alta produtividade. Mesmo que a faculdade não ensine nada diretamente útil para o trabalho, o fato de o trabalhador ter conseguido completá-la transmite informação sobre disciplina, inteligência e capacidade de aprendizado — todas características correlacionadas com produtividade.

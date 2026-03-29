@@ -11,7 +11,7 @@
 
     Cada indivíduo, enfrentando seu preço personalizado, demanda a mesma quantidade \(G^*\), e a condição de Samuelson é satisfeita.
 
-O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar truthfully**, conforme discutiremos na seção sobre o problema do carona.
+O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar de forma verdadeira**, conforme discutiremos na seção sobre o problema do carona.
 
 ??? exercicio-resolvido "ER 20.7 — Preços de Lindahl com três consumidores"
 
