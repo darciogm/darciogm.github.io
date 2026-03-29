@@ -87,7 +87,15 @@ nav:
         - "9c — Jogando no Escuro": micro-book/cap09c/index.md
         - "9d — O Diploma É Caro, Mas O Sinal É Grátis?": micro-book/cap09d/index.md
     - A Firma e os Custos:
-      - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?": micro-book/cap10/index.md
+      - "Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?":
+        - "Visão Geral": micro-book/cap10/index.md
+        - "10.1 Produto Marginal e Médio": micro-book/cap10/produtividade.md
+        - "10.2–10.3 Isoquantas e Rendimentos de Escala": micro-book/cap10/isoquantas.md
+        - "10.4 Elasticidade de Substituição": micro-book/cap10/elasticidade.md
+        - "10.5 Catálogo de Funções": micro-book/cap10/funcoes.md
+        - "10.6–10.7 Progresso Técnico e Homotéticas": micro-book/cap10/progresso.md
+        - "Exercícios e ANPEC": micro-book/cap10/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap10/pesquisa.md
       - "Cap. 11 — A Conta Sempre Chega":
         - "Visão Geral": micro-book/cap11/index.md
         - "11.1 Definições de Custos": micro-book/cap11/definicoes.md
