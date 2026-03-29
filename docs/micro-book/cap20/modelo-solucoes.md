@@ -42,7 +42,7 @@ Geometricamente, essa integral corresponde à área do "triângulo" entre a curv
 
 ---
 
-<iframe src="../graficos/cap20/externalidade-negativa.html" title="Figura 20.1 — Externalidade negativa e imposto pigouviano" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/externalidade-negativa.html" title="Figura 20.1 — Externalidade negativa e imposto pigouviano" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.1 — Externalidade negativa e imposto pigouviano.** A curva vermelha (CMg social) inclui o custo externo. A área sombreada representa a perda de peso morto da sobreprodução. O imposto pigouviano ótimo iguala o custo marginal externo no ótimo social.
@@ -147,7 +147,7 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 
 ---
 
-<iframe src="../graficos/cap20/webr-pigou.html" title="WebR — Simulação de imposto pigouviano" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/webr-pigou.html" title="WebR — Simulação de imposto pigouviano" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 20.1 — Simulação de imposto pigouviano.** Altere os parâmetros de custo e externalidade e observe como o imposto ótimo e o DWL se ajustam.
@@ -193,7 +193,7 @@ C'(q) + E'(q) = P
 
 ---
 
-<iframe src="../graficos/cap20/teorema-coase.html" title="Figura 20.2 — Teorema de Coase" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/teorema-coase.html" title="Figura 20.2 — Teorema de Coase" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.2 — Teorema de Coase.** Alterne entre atribuir o direito de propriedade ao poluidor ou à vítima. Em ambos os casos, a negociação leva ao mesmo nível eficiente de poluição onde BMg = DMg. Apenas a direção da transferência muda.
@@ -201,7 +201,7 @@ C'(q) + E'(q) = P
 
 ---
 
-<iframe src="../graficos/cap20/webr-coase.html" title="WebR — Simulação do Teorema de Coase" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/webr-coase.html" title="WebR — Simulação do Teorema de Coase" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 20.2 — Simulação do Teorema de Coase.** Varie os parâmetros de lucro e dano e observe o intervalo de compensação viável.
@@ -258,7 +258,7 @@ A equivalência entre imposto e cap-and-trade sob certeza (Weitzman, 1974) é um
 
 ---
 
-<iframe src="../graficos/cap20/webr-cap-trade.html" title="WebR — Cap-and-trade e alocação custo-efetiva" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/webr-cap-trade.html" title="WebR — Cap-and-trade e alocação custo-efetiva" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 20.3 — Cap-and-trade e alocação custo-efetiva.** Ajuste os custos de abatimento das firmas e a meta de redução para ver como o mercado de permissões aloca o esforço.

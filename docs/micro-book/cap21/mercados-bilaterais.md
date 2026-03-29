@@ -207,7 +207,7 @@ onde \(k \in \{B, S\}\), \(\varepsilon_k\) é a elasticidade-preço da demanda d
 
     **Fonte:** iFood Report 2024. Uber Brasil — Relatório de Impacto Econômico 2023.
 
-<iframe src="../graficos/cap21/plataforma-bilateral.html" title="Figura 21.2 — Precificação de Plataforma Bilateral" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap21/plataforma-bilateral.html" title="Figura 21.2 — Precificação de Plataforma Bilateral" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 <div class="caption-obj" markdown>
 **Figura 21.2 — Precificação de Plataforma Bilateral.** O gráfico de barras compara os preços ótimos \(p_B^*\) e \(p_S^*\) cobrados pela plataforma a cada lado com o custo marginal \(c\). O lado que gera maior externalidade cruzada (\(\gamma\) mais alto) tende a ser subsidiado — recebendo preço abaixo do custo — enquanto o lado oposto paga mais.
 </div>

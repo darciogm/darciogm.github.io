@@ -91,7 +91,7 @@ Note que a expressão \(RMg = p + q \cdot p'(q)\) tem uma interpretação econô
 
 No gráfico interativo abaixo, ajuste os parâmetros da demanda e do custo marginal para visualizar como o equilíbrio de monopólio se modifica. Observe que o monopolista sempre escolhe a quantidade onde a curva de \(RMg\) cruza a de \(CMg\), e o preço é lido sobre a curva de demanda — acima do \(CMg\).
 
-<iframe src="../graficos/cap15/monopolio.html" title="Figura 15.1 — Equilíbrio de monopólio" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/monopolio.html" title="Figura 15.1 — Equilíbrio de monopólio" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.1 — Equilíbrio de monopólio.** Ajuste os parâmetros da demanda (\(a\), \(b\)) e do custo marginal (\(c\)) para visualizar o equilíbrio de monopólio, o lucro, o excedente do consumidor, a perda de peso morto e o índice de Lerner. Compare com o resultado competitivo.
@@ -180,7 +180,7 @@ O exercício a seguir aplica as ferramentas recém-desenvolvidas a um problema n
 
     **Interpretação:** O monopolista captura R$ 648 de excedente, mas destrói R$ 324 de bem-estar social que ninguém captura — o triângulo de Harberger.
 
-<iframe src="../graficos/cap15/webr-monopolio-basico.html" title="WebR — Monopólio com Demanda Linear" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/webr-monopolio-basico.html" title="WebR — Monopólio com Demanda Linear" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 15.1 — Monopólio de ponta a ponta: do cálculo ao gráfico.** O código resolve o ER 15.1 completo em R: calcula preço, quantidade, lucro, índice de Lerner, excedentes e perda de peso morto, comparando monopólio com concorrência perfeita. Altere os parâmetros `a`, `b` e `c` e observe como o triângulo de Harberger se expande ou encolhe.

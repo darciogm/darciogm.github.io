@@ -19,6 +19,14 @@ O problema: para o tipo \(L\), o prêmio do pool \(\bar{P}\) pode exceder sua di
 
 O modelo de Rothschild e Stiglitz (1976), estudado no Capítulo 19, mostra que o equilíbrio competitivo com seleção adversa — quando existe — envolve **contratos separadores**: o tipo alto risco recebe cobertura completa a prêmio alto; o tipo baixo risco recebe cobertura parcial a prêmio baixo. Nenhuma firma lucra, mas o tipo baixo risco sofre uma externalidade negativa: seu contrato é distorcido pela presença do tipo alto risco.
 
+No gráfico interativo abaixo, simule a espiral da morte: ajuste a proporção de tipos e a disposição a pagar, e observe como o mercado de seguros colapsa iteração a iteração.
+
+<iframe src="/micro-book/graficos/cap23/espiral-morte.html" title="Figura 23.2 — Espiral da Morte em Seguros de Saúde" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 23.2 — Espiral da Morte em Seguros de Saúde.** Ajuste a proporção de tipos alto e baixo risco e observe o processo iterativo: a cada rodada, os baixo risco saem, o prêmio sobe e o pool encolhe — até restar apenas alto risco ou o mercado colapsar.
+</div>
+
 ### 23.4.2 Risco moral em seguros de saúde
 
 O **risco moral** (Capítulo 19) assume duas formas em saúde:

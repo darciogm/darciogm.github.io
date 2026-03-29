@@ -137,7 +137,7 @@ Os efeitos de rede geram uma tensão entre eficiência estática e dinâmica que
 
 A intervenção regulatória enfrenta, portanto, um dilema: **fragmentar** a plataforma dominante (para aumentar a concorrência) pode **reduzir** o bem-estar se os efeitos de rede forem fortes. A solução mais discutida na literatura e na prática regulatória é exigir **interoperabilidade**: obrigar plataformas a permitir comunicação entre redes rivais (assim como operadoras de telefone são obrigadas a completar chamadas de outras operadoras). A interoperabilidade preserva os benefícios de rede ao mesmo tempo que reduz os custos de troca e, portanto, o poder de mercado.
 
-<iframe src="../graficos/cap21/efeitos-rede.html" title="Figura 21.1 — Efeitos de Rede e Ponto de Virada" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap21/efeitos-rede.html" title="Figura 21.1 — Efeitos de Rede e Ponto de Virada" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 <div class="caption-obj" markdown>
 **Figura 21.1 — Efeitos de Rede e Ponto de Virada.** A curva mostra a disposição a pagar \(u(n) = v + \alpha\,n^{\beta}\) como função do número de usuários. O cruzamento com a linha de preço determina a massa crítica \(n^*\): abaixo dela a rede colapsa (armadilha de adoção); acima, a adoção decola rumo ao equilíbrio alto.
 </div>

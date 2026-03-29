@@ -85,7 +85,7 @@ O paradoxo de Bertrand pode ser resolvido relaxando qualquer uma de suas hipóte
 
 ---
 
-<iframe src="../graficos/cap16/bertrand.html" title="Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap16/bertrand.html" title="Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 16.1 — Visualize o paradoxo de Bertrand com produtos homogêneos (equilíbrio a preço = custo marginal) e alterne para produtos diferenciados, onde preços de equilíbrio superam o custo marginal.** Ajuste elasticidades e custos.
@@ -155,7 +155,7 @@ q_1^* = q_2^* = \frac{a-c}{3b}, \quad Q^* = \frac{2(a-c)}{3b}, \quad p^* = \frac
 
     O equilíbrio de Cournot **não** é colusão: cada firma maximiza seu próprio lucro *individualmente*, tomando a quantidade da rival como dada. O resultado conjunto é pior para as firmas do que a colusão (que maximizaria o lucro conjunto), mas melhor do que Bertrand com bens homogêneos. Formalmente: \(Q^{monopólio} < Q^{Cournot} < Q^{competitivo}\) e \(p^{competitivo} < p^{Cournot} < p^{monopólio}\). Outro erro frequente é trocar a variável estratégica: no Cournot as firmas escolhem **quantidades** (e o preço se ajusta pelo mercado), enquanto no Bertrand escolhem **preços**. Essa diferença gera resultados radicalmente distintos.
 
-<iframe src="../graficos/cap16/cournot.html" title="Figura 16.2 — Funções de melhor-resposta de Cournot" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap16/cournot.html" title="Figura 16.2 — Funções de melhor-resposta de Cournot" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 16.2 — Funções de melhor-resposta de Cournot no espaço \((q_1, q_2)\).** O equilíbrio de Nash está na interseção. Ajuste custos assimétricos, ative a convergência cobweb e compare com os pontos de colusão e competitivo.
@@ -198,7 +198,7 @@ O líder produz mais e lucra mais do que no Cournot; a seguidora produz menos e 
 
 ---
 
-<iframe src="../graficos/cap16/stackelberg.html" title="Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de melhor-resposta da seguidora" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap16/stackelberg.html" title="Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de melhor-resposta da seguidora" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 16.3 — O líder de Stackelberg escolhe o ponto de maior lucro sobre a função de melhor-resposta da seguidora.** As curvas de iso-lucro do líder são mostradas em azul. Compare com o equilíbrio de Cournot (roxo).
@@ -277,7 +277,7 @@ Os resultados obtidos para o duopólio de Cournot levantam uma questão natural:
 
     Portanto, o equilíbrio de Cournot converge para o resultado de concorrência perfeita quando o número de firmas cresce sem limite. O modelo de Cournot é, assim, uma interpolação contínua entre monopólio e concorrência perfeita, parametrizada pelo número de firmas. \(\blacksquare\)
 
-<iframe src="../graficos/cap16/webr-cournot-n-firmas.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap16/webr-cournot-n-firmas.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 16.1 — Cournot com n firmas: convergência para concorrência perfeita.** Altere os parâmetros de demanda e custo e observe como preço, quantidade, lucro e HHI convergem para o resultado competitivo à medida que $n$ cresce.

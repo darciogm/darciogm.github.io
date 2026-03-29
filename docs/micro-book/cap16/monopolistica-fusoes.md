@@ -83,7 +83,7 @@ Uma fusão que eleva o HHI em mais de 200 pontos em um mercado já concentrado r
 
 Fusões entre firmas em estágios diferentes da cadeia produtiva (fornecedor e cliente) não aumentam diretamente a concentração horizontal, mas podem gerar preocupações de **foreclosure**: a firma integrada pode negar insumos a concorrentes ou discriminar em favor de sua divisão downstream.
 
-<iframe src="../graficos/cap16/webr-hhi-fusao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap16/webr-hhi-fusao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 16.5 — Análise de fusão via HHI.** Simule diferentes cenários de fusão horizontal: altere os market shares, escolha quais firmas se fundem e verifique se a fusão aciona os alarmes antitruste do CADE/DOJ.

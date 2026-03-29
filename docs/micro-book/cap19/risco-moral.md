@@ -64,7 +64,7 @@ Com seguro completo (\(I = L\)), o segurado recebe \(W_0 - q\) em qualquer estad
 
 No gráfico interativo abaixo, explore o trade-off entre incentivos e seguro no modelo principal-agente. Observe como o contrato ótimo equilibra os pagamentos nos estados bom e ruim para induzir esforço, e como o custo de agência cresce quando a incerteza aumenta.
 
-<iframe src="../graficos/cap19/principal-agente.html" title="Figura 19.1 — Modelo principal-agente com risco moral" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap19/principal-agente.html" title="Figura 19.1 — Modelo principal-agente com risco moral" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.1 — Modelo principal-agente com risco moral.** O gráfico mostra a restrição de participação (RP) e a restrição de compatibilidade de incentivos (RCI) no espaço de salários. O ponto verde indica o contrato ótimo que induz esforço alto.
@@ -164,7 +164,7 @@ O exercício a seguir aplica o modelo formal a um caso numérico, calculando os 
 
     **Interpretação econômica:** O principal precisa pagar um "prêmio por bom resultado" (\(w_H - w_L = 14\)) para compensar o custo do esforço. Como o agente é avesso ao risco (\(U = \sqrt{w}\)), expô-lo a essa variabilidade é custoso — o custo esperado do contrato sobe de 16 para 16,75. Esse trade-off entre incentivos e seguro é o cerne do problema de risco moral.
 
-<iframe src="../graficos/cap19/webr-risco-moral.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap19/webr-risco-moral.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 19.1 — Contrato ótimo com risco moral.** Calcule os salários ótimos, o custo de agência e veja como a "informatividade" do resultado (pH − pL) afeta o trade-off entre incentivos e seguro.
@@ -196,7 +196,7 @@ O exercício a seguir aplica o modelo formal a um caso numérico, calculando os 
 
     **Interpretação:** No mercado brasileiro, seguradoras de celular como Porto Seguro e Zurich tipicamente cobram franquias de 20–30% do valor do aparelho (R$ 800–1.200 para um celular de R$ 4.000), acima do mínimo teórico — refletindo outros fatores como custos administrativos e graus de aversão ao risco.
 
-<iframe src="../graficos/cap19/webr-franquia.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap19/webr-franquia.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 19.2 — Franquia mínima e risco moral em seguros.** Altere a probabilidade de sinistro e o custo do esforço para ver como a franquia mínima necessária muda. Compare com as franquias praticadas no mercado brasileiro.

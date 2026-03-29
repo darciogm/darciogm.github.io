@@ -4,7 +4,7 @@ Firmas com poder de mercado são fascinantes, mas voltemos agora ao personagem m
 
 [^black-knight-shutdown]: O Black Knight dos Monty Python é o patrono espiritual de toda firma que insiste em operar com prejuízo. Depois de perder os dois braços, ele grita "'Tis but a scratch!" e continua lutando. É a sunk cost fallacy em sua forma mais pura: os braços já foram (custo irrecuperável), mas ele avalia a situação pelo investimento passado, não pelo retorno futuro. A firma racional, diferentemente do Black Knight, fecha as portas quando $p < \mathrm{CVMe}_{\min}$ — porque os braços que restam (custos variáveis) custam mais do que a luta rende.
 
-<iframe src="../graficos/cap12/maximizacao-lucro.html" title="Figura 12.2 — Maximização de lucro para firma tomadora de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/maximizacao-lucro.html" title="Figura 12.2 — Maximização de lucro para firma tomadora de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 12.2 — Maximização de lucro para firma tomadora de preços.** Ajuste o preço \(p\) e os parâmetros de custo. O gráfico mostra a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado e a condição de fechamento (\(p < \mathrm{CVMe}_{\min}\)).
@@ -68,7 +68,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
     **Por que isso importa:** Essa lógica explica por que tantas MPEs brasileiras operam com prejuízo por meses antes de fechar — e por que o SEBRAE monitora a taxa de mortalidade empresarial nos primeiros cinco anos.
 
-<iframe src="../graficos/cap12/lucro-maximo.html" title="Figura 12.3 — Lucro maximo e excedente do produtor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/lucro-maximo.html" title="Figura 12.3 — Lucro maximo e excedente do produtor" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 12.3 — Lucro máximo e excedente do produtor.** Ajuste o preço \(p\) para visualizar a quantidade ótima \(q^*\) onde \(p = \mathrm{CMg}\), o retângulo de lucro (ou prejuízo) sombreado, o excedente do produtor (área entre \(p\) e CMg) e a condição de fechamento. Compare os três regimes: lucro positivo (\(p \geq \mathrm{CTMe}_{\min}\)), prejuízo com operação (\(\mathrm{CVMe}_{\min} \leq p < \mathrm{CTMe}_{\min}\)) e fechamento (\(p < \mathrm{CVMe}_{\min}\)).
@@ -145,7 +145,7 @@ A [Tabela 12.1](#tabela-12-1) resume as condições de oferta da firma no curto 
 
     **Interpretação econômica:** Este é o dilema enfrentado por muitas MPEs brasileiras: operar com prejuízo no curto prazo para cobrir custos variáveis (salários, insumos) enquanto os custos fixos (aluguel, financiamentos) são parcialmente absorvidos. A pesquisa do SEBRAE mostra que empresas nessa faixa (\(\mathrm{CVMe}_{\min} < p < \mathrm{CMe}_{\min}\)) sobrevivem por algum tempo, mas fecham quando os contratos fixos vencem — exatamente como prevê a teoria.
 
-<iframe src="../graficos/cap12/webr-shutdown.html" title="WebR — Decisão de Shutdown" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/webr-shutdown.html" title="WebR — Decisão de Shutdown" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 12.3 — Decisão de operar ou fechar: três regimes de preço.** O código reproduz o Exercício Resolvido 12.2 e mapeia graficamente as três zonas de decisão (lucro positivo, prejuízo com operação, fechamento). Altere `CF` e os preços para explorar como a estrutura de custos fixos afeta a resiliência da firma.

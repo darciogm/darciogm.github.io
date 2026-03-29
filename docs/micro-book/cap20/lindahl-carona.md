@@ -31,7 +31,7 @@ O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema
 
 ---
 
-<iframe src="../graficos/cap20/tragedia-comuns.html" title="Figura 20.4 — Tragédia dos comuns" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/tragedia-comuns.html" title="Figura 20.4 — Tragédia dos comuns" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.4 — Tragédia dos comuns.** Cada usuário iguala o produto médio ao custo (equilíbrio privado), enquanto o ótimo social requer igualar o produto marginal ao custo. A área sombreada indica a região de sobreuso do recurso comum.

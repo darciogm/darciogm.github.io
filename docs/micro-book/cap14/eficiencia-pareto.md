@@ -171,7 +171,7 @@ Esse resultado tem um significado profundo: é a versão mais rigorosa da ideia 
 
     **Interpretação econômica:** A troca melhora ambos os agentes: A, que tinha mais do bem 1 do que do bem 2, vende parte de sua dotação do bem 1 e compra bem 2. B faz o oposto. O Primeiro Teorema do Bem-Estar garante que o resultado é eficiente — não há recomposição das cestas que beneficie um sem prejudicar o outro. Na analogia com o comércio internacional, A é como o Brasil (abundante em commodities) e B como a UE (abundante em manufaturas): a troca beneficia ambos.
 
-<iframe src="../graficos/cap14/webr-equilibrio-walrasiano.html" title="WebR — Equilíbrio Walrasiano na Caixa de Edgeworth" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/webr-equilibrio-walrasiano.html" title="WebR — Equilíbrio Walrasiano na Caixa de Edgeworth" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 14.1 — Equilíbrio walrasiano: das equações ao gráfico.** O código resolve o ER 14.2 completo em R: calcula o preço de equilíbrio, as alocações, verifica $TMS_A = TMS_B = p^*$ e testa a Lei de Walras a preços arbitrários. O gráfico mostra a função de excesso de demanda $Z^1(p)$ — onde ela cruza zero é o equilíbrio. Altere os parâmetros `aA` e `aB` e observe como o preço de equilíbrio se desloca.
@@ -219,7 +219,7 @@ Isso garante que a combinação de bens produzida é exatamente aquela que os co
 
 Visualize a fronteira de possibilidades de produção e a taxa marginal de transformação (TMT). Ajuste a dotação de recursos para expandir ou contrair a FPP, e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia. Pontos interiores são ineficientes; pontos exteriores são infactíveis.
 
-<iframe src="../graficos/cap14/fpp.html" title="Figura 14.2 — Fronteira de possibilidades de produção (FPP)" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/fpp.html" title="Figura 14.2 — Fronteira de possibilidades de produção (FPP)" class="graph-iframe" style="height:620px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 14.2 — Fronteira de possibilidades de produção (FPP).** Ajuste a dotação de recursos e mova o ponto ao longo da fronteira para observar como o custo de oportunidade (TMT) varia.

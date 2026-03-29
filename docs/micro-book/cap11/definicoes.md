@@ -91,7 +91,7 @@ Estudantes que pagam R$ 500 por um curso e depois percebem que não está servin
 
     **(c)** Sim. O lucro econômico é positivo (R$ 100.000 > 0), o que significa que a confeitaria remunera todos os fatores — inclusive o tempo e o capital da proprietária ��� acima de seu custo de oportunidade. Se o lucro econômico fosse zero, ela seria indiferente; se fosse negativo, deveria considerar fechar.
 
-<iframe src="../graficos/cap11/webr-custo-oportunidade.html" title="WebR — Custo Econômico vs. Contábil" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/webr-custo-oportunidade.html" title="WebR — Custo Econômico vs. Contábil" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 11.1 — Custo econômico vs. custo contábil.** O código reproduz o Exercício Resolvido 11.1 computacionalmente. Altere os valores de receita, custos explícitos e custos de oportunidade para simular outros cenários — por exemplo, o que acontece se a oferta salarial alternativa subir para R$ 120.000?

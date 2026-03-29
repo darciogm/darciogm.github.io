@@ -64,7 +64,7 @@ O novo monopsônio tem implicações diretas para políticas públicas. Se as fi
 
 O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho \(S(w)\), o custo marginal do trabalho (CMgL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
 
-<iframe src="../graficos/cap17/monopsonio.html" title="Figura 17.3 — Equilíbrio monopsonístico versus competitivo no mercado de trabalho" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap17/monopsonio.html" title="Figura 17.3 — Equilíbrio monopsonístico versus competitivo no mercado de trabalho" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj">
 
@@ -151,7 +151,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
     **Interpretação econômica:** O salário mínimo elimina o poder monopsonístico ao tornar o custo marginal do trabalho constante. Este resultado contrasta com o modelo competitivo, no qual o salário mínimo sempre reduz o emprego — e ajuda a entender por que estudos empíricos (como Card e Krueger, 1994) encontram efeitos nulos ou positivos do salário mínimo sobre o emprego em mercados com concentração de empregadores.
 
-<iframe src="../graficos/cap17/webr-monopsonio.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap17/webr-monopsonio.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 17.3 — Monopsônio vs. competição.** Altere os parâmetros da oferta de trabalho e da VPMgL para comparar os equilíbrios e visualizar a exploração monopsonística.
@@ -226,7 +226,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
 
     A decomposição de Oaxaca-Blinder (equação \(\eqref{eq:17.13b}\)) é uma extensão natural desta análise: permite separar formalmente a parte do diferencial que se deve a diferenças de características versus diferenças de retornos.
 
-<iframe src="../graficos/cap17/webr-mincer.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap17/webr-mincer.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 17.4 — Equação de Mincer.** Altere os coeficientes e visualize como educação, experiência e dummies de gênero/raça afetam o perfil salarial previsto.
@@ -281,7 +281,7 @@ A relação entre o declínio sindical e o aumento da desigualdade é um dos deb
 
 No Brasil, a queda foi ainda mais acentuada: a Reforma Trabalhista de 2017, ao eliminar a contribuição sindical obrigatória, acelerou o declínio da sindicalização para níveis historicamente baixos (ver Box Brasil a seguir). Esse "experimento natural" permite avaliar se o enfraquecimento sindical está associado a maior dispersão salarial nos setores afetados — uma questão empiricamente relevante e ainda em investigação.
 
-<iframe src="../graficos/cap17/webr-sindicato.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap17/webr-sindicato.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 17.5 — Barganha sindical.** Ajuste o poder de barganha \(\beta\) e visualize como o salário negociado e o emprego variam entre o resultado competitivo e o monopólio sindical.

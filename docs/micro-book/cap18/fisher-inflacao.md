@@ -102,7 +102,7 @@ onde \(Y_1 - C_1^* = S\) é a poupança do consumidor. Se \(S > 0\) (poupador), 
 
     Muitos alunos escrevem a restrição como \(C_1 + C_2 = Y_1 + Y_2\), esquecendo o fator de desconto. Essa formulação ignora completamente o papel da taxa de juros e implica que um real hoje vale o mesmo que um real amanhã. A restrição correta em **valor presente** é \(C_1 + C_2/(1+r) = W\), e em **valor futuro** é \((1+r)C_1 + C_2 = (1+r)Y_1 + Y_2\). Ambas são equivalentes, mas a primeira é a mais utilizada. O erro é particularmente grave quando se pede para analisar o efeito de uma variação em \(r\): sem o fator de desconto, a taxa de juros sequer aparece na restrição, tornando impossível qualquer análise comparativa.
 
-<iframe src="../graficos/cap18/consumo-intertemporal.html" title="Figura 18.1 — Modelo de consumo intertemporal de dois períodos" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap18/consumo-intertemporal.html" title="Figura 18.1 — Modelo de consumo intertemporal de dois períodos" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 18.1 — Modelo de consumo intertemporal de dois períodos.** Observe como variações na taxa de juros \(r\) alteram a inclinação da reta orçamentária e a classificação do agente como poupador ou devedor.

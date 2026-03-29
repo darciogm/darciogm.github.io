@@ -71,7 +71,7 @@ Ou seja, o indivíduo iguala a taxa marginal de substituição ao salário real.
 
 O gráfico abaixo mostra a escolha ótima entre lazer e consumo. A reta orçamentária tem inclinação \(-w\) e o ponto ótimo ocorre na tangência com a curva de indiferença. Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
 
-<iframe src="../graficos/cap17/trabalho-lazer.html" title="Figura 17.1 — Escolha ótima entre lazer e consumo" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap17/trabalho-lazer.html" title="Figura 17.1 — Escolha ótima entre lazer e consumo" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 17.1 — Escolha ótima entre lazer e consumo.** Ajuste o salário \(w\), a renda não salarial \(V\) e as preferências para ver como a alocação de tempo se altera.
@@ -218,7 +218,7 @@ Os exercícios resolvidos a seguir aplicam os conceitos desenvolvidos neste cap�
 
     **Interpretação econômica:** Quando \(V = 0\), a Cobb-Douglas gera oferta perfeitamente inelástica (\(h^* = \alpha T = 8\)). A renda não salarial \(V > 0\) quebra essa propriedade: com \(V = 32\), o trabalhador pode "se dar ao luxo" de trabalhar menos em salários baixos, mas aumenta suas horas à medida que o salário sobe — o efeito substituição domina o efeito renda da variação em \(w\).
 
-<iframe src="../graficos/cap17/webr-trabalho-lazer.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap17/webr-trabalho-lazer.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 17.1 — Modelo trabalho-lazer com Cobb-Douglas.** Altere $\alpha$, $T$ e $V$ para ver como a escolha ótima entre lazer e consumo muda. Compare a oferta de trabalho com e sem renda não salarial.
@@ -273,13 +273,13 @@ Ou seja, o efeito renda (em valor absoluto) supera o efeito substituição. Isso
 
 O gráfico abaixo ilustra a curva de oferta de trabalho individual e a possibilidade de backward-bending. No painel superior, veja a escolha lazer-consumo para o salário selecionado. No painel inferior, a curva de oferta de trabalho \(h^*(w)\). Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
 
-<iframe src="../graficos/cap17/oferta-trabalho.html" title="Figura 17.2 — Curva de oferta de trabalho individual e a possibilidade de backward-bending" class="graph-iframe" style="height:1150px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap17/oferta-trabalho.html" title="Figura 17.2 — Curva de oferta de trabalho individual e a possibilidade de backward-bending" class="graph-iframe" style="height:1150px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 17.2 — Curva de oferta de trabalho individual e a possibilidade de backward-bending.** Aumente \(\gamma\) para reduzir a elasticidade de substituição e observar o trecho onde o efeito renda domina.
 </div>
 
-<iframe src="../graficos/cap17/webr-backward-bending.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap17/webr-backward-bending.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 17.2 — Backward-bending com utilidade CES.** Compare curvas de oferta de trabalho para diferentes elasticidades de substituição ($\sigma$). Observe como $\sigma < 1$ gera a curva que "volta para trás".

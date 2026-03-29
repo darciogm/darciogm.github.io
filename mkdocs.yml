@@ -206,7 +206,13 @@ nav:
           - "Exercícios e ANPEC": micro-book/cap23/exercicios.md
           - "Pesquisa em Ação": micro-book/cap23/pesquisa.md
     - Economia Ambiental:
-      - "Cap. 24 — Quanto Vale Um Pôr do Sol?": micro-book/cap24/index.md
+      - "Cap. 24 — Quanto Vale Um Pôr do Sol?":
+          - "Visão Geral": micro-book/cap24/index.md
+          - "24.1–24.2 Política e Instrumentos": micro-book/cap24/politica-instrumentos.md
+          - "24.3–24.4 Clima e Carbono": micro-book/cap24/clima-carbono.md
+          - "24.5–24.6 Valoração e Recursos": micro-book/cap24/valoracao-recursos.md
+          - "Exercícios e ANPEC": micro-book/cap24/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap24/pesquisa.md
     - "Cadernos Python": micro-book/notebooks/index.md
     - "Exercícios com IA": micro-book/exercicios-ia.md
     - "Compilado ANPEC": micro-book/anpec-compilado.md

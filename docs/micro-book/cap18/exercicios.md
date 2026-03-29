@@ -121,7 +121,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     O consumidor é **poupador**. Ele transfere R$ 6,7 do período 1 para o período 2. Isso ocorre porque sua renda é relativamente mais concentrada no período 1, enquanto suas preferências (com \(\beta = 1/1{,}1 \approx 0{,}91\), ou seja, taxa de desconto subjetiva \(\rho = 10\%\) igual à taxa de juros) induzem consumo suave ao longo do tempo.
 
-<iframe src="../graficos/cap18/webr-fisher.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap18/webr-fisher.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 18.3 — Modelo de Fisher: consumo intertemporal.** Modifique rendas, taxa de juros e taxa de desconto subjetiva para visualizar a restrição orçamentária intertemporal, a curva de indiferença e a escolha ótima entre poupar e tomar emprestado.
@@ -165,7 +165,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Como \(VPL < 0\) (equivalentemente, \(TIR \approx 11{,}65\% < 12\% = r\)), o projeto **não deve ser aceito**. No contexto brasileiro, onde a taxa Selic real historicamente supera 5%, muitos projetos de infraestrutura e energia limpa que seriam viáveis em países com juros baixos tornam-se marginais ou inviáveis — ilustrando o impacto dos juros elevados sobre o investimento produtivo.
 
-<iframe src="../graficos/cap18/webr-vpl-tir.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap18/webr-vpl-tir.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 18.4 — VPL, TIR e decisão de investimento.** Altere o investimento inicial, fluxos de caixa e custo de oportunidade para ver como a curva VPL(r) determina a viabilidade do projeto. Compare decisões a taxas brasileiras e americanas.
@@ -199,7 +199,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     **Interpretação:** A perspectiva de um substituto futuro reduz o valor presente do recurso e acelera sua extração. Isso é relevante para o Brasil, maior produtor de nióbio e com reservas significativas de lítio no Vale do Jequitinhonha (MG): o desenvolvimento de tecnologias alternativas para baterias afeta diretamente a estratégia ótima de exploração desses recursos.
 
-<iframe src="../graficos/cap18/webr-hotelling.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap18/webr-hotelling.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 18.5 — Regra de Hotelling e trajetória de preços.** Explore como a taxa de juros e a backstop technology afetam a trajetória ótima de preços de recursos não renováveis. Modifique os parâmetros para simular cenários de lítio, petróleo ou nióbio.

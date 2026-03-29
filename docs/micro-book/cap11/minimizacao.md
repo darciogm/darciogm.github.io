@@ -36,7 +36,7 @@ Hora de arregaçar as mangas e resolver o problema de verdade. A firma quer prod
 
 No Capítulo 4, o consumidor minimizava o gasto \(wl + pm\) sujeito a atingir a curva de indiferença \(u(x_1, x_2) = \bar{u}\). Aqui, a firma minimiza o custo \(wL + vK\) sujeito a atingir a isoquanta \(f(K,L) = q_0\). As variáveis mudam de nome — utilidade vira quantidade produzida, curva de indiferença vira isoquanta, reta orçamentária vira reta de isocusto —, mas a estrutura matemática e a intuição econômica são idênticas. As demandas hicksianas de bens de consumo correspondem às demandas condicionadas por insumos; a função gasto corresponde à função custo; a identidade de Roy corresponde ao Lema de Shephard. Essa correspondência estrutural é uma das elegâncias da teoria microeconômica moderna.
 
-<iframe src="../graficos/cap11/minimizacao-custo.html" title="Figura 11.1 — Minimização de custo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/minimizacao-custo.html" title="Figura 11.1 — Minimização de custo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.1 — Minimização de custo.** A isoquanta (azul) e a reta de isocusto (vermelha) tangenciam-se no ponto ótimo. Ajuste \(w\), \(v\), \(q\) e \(\alpha\) para observar como a combinação ótima de insumos e o custo mínimo se alteram.
@@ -167,7 +167,7 @@ Uma propriedade importante das demandas condicionadas, imediatamente derivada do
 
     O custo médio e o custo marginal são constantes e iguais — consequência direta dos retornos constantes de escala.
 
-<iframe src="../graficos/cap11/webr-minimizacao-custo.html" title="WebR — Minimização de Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/webr-minimizacao-custo.html" title="WebR — Minimização de Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 11.2 — Minimização de custo: isoquanta e isocusto.** O código resolve o problema de minimização de custo para uma Cobb-Douglas genérica e plota a isoquanta, a isocusto ótima e o caminho de expansão. Altere `alpha`, `beta`, `w`, `v` e `q0` para ver como a combinação ótima de insumos responde a mudanças nos parâmetros.
@@ -255,7 +255,7 @@ A função custo possui as seguintes propriedades:
 
     **Por que isso importa:** Na prática, é muito mais fácil observar custos e preços do que medir diretamente a tecnologia de produção. O Lema de Shephard permite que economistas estimem demandas por insumos a partir de dados contábeis — algo essencial para política tributária e regulação no Brasil.
 
-<iframe src="../graficos/cap11/webr-shephard.html" title="WebR — Lema de Shephard e Concavidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/webr-shephard.html" title="WebR — Lema de Shephard e Concavidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 11.3 — Lema de Shephard e concavidade da função custo.** O código verifica numericamente o Lema de Shephard (derivada da função custo = demanda condicional) e ilustra a concavidade de \(C\) nos preços dos insumos. A tangente em cada ponto tem inclinação igual à demanda condicional — exatamente o que o lema afirma.

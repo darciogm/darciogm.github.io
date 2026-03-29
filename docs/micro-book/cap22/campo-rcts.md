@@ -181,4 +181,4 @@ O Nobel de 2019 reconheceu a transformação que os RCTs trouxeram para a econom
 
     Na prática, deve-se adicionar 15–20% para compensar atrito esperado: \(714 / 0{,}85 \approx 840\) participantes, custo de US\$ 12.600. Este é um RCT relativamente barato — o estudo original de desparasitação de Kremer custou menos de US\$ 50.000 e influenciou políticas que alcançaram milhões de crianças.
 
-<iframe src="../graficos/cap22/poder-estatistico.html" title="Figura 22.2 — Poder Estatístico, Tamanho da Amostra e Tamanho do Efeito" class="graph-iframe"></iframe>
+<iframe src="/micro-book/graficos/cap22/poder-estatistico.html" title="Figura 22.2 — Poder Estatístico, Tamanho da Amostra e Tamanho do Efeito" class="graph-iframe"></iframe>

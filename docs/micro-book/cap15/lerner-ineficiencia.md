@@ -207,7 +207,7 @@ O lucro do monopolista é crescente e convexo na demanda, o que implica que o mo
 
 No gráfico interativo abaixo, experimente ajustar o slider do imposto \(t\) e observe como o equilíbrio de monopólio se desloca. Note que o preço sobe apenas metade do valor do imposto, enquanto a quantidade cai. Observe também o retângulo de receita fiscal e como a perda de peso morto se altera.
 
-<iframe src="../graficos/cap15/estatica-comparativa.html" title="Figura 15.2 — Estática comparativa: efeito de um imposto sobre o monopólio" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/estatica-comparativa.html" title="Figura 15.2 — Estática comparativa: efeito de um imposto sobre o monopólio" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.2 — Estática comparativa: efeito de um imposto sobre o monopólio.** Ajuste o imposto unitário \(t\) e os parâmetros da demanda para visualizar como o equilíbrio se desloca. Observe que o monopolista repassa apenas metade do imposto (com demanda linear) e compare com o resultado competitivo.
@@ -236,7 +236,7 @@ No gráfico interativo abaixo, experimente ajustar o slider do imposto \(t\) e o
 
     **Interpretação:** O consumidor perde R$ 88 de excedente. O monopolista absorve R$ 176 de perda de lucro (\(576 - 400\)). A receita fiscal é \(8 \times 20 = 160\). A soma \(88 + 176 = 264\) excede a receita fiscal de 160 em \(264 - 160 = 104\) — esta diferença é o aumento na perda de peso morto causado pelo imposto.
 
-<iframe src="../graficos/cap15/webr-imposto-monopolio.html" title="WebR — Imposto sobre o Monopolista" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/webr-imposto-monopolio.html" title="WebR — Imposto sobre o Monopolista" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 15.2 — O monopolista absorve metade do imposto.** O código implementa o ER 15.3: calcula o equilíbrio antes e depois do imposto, mostrando que o repasse é exatamente 50% com demanda linear. No gráfico da direita, observe que o lucro é uma parábola invertida no imposto — existe um $t$ que maximiza a receita fiscal. Experimente alterar `t` e compare o efeito sobre consumidor, produtor e governo.

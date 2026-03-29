@@ -107,7 +107,7 @@ A TIR é intuitivamente atraente — todo mundo entende "este projeto rende 15% 
 
     Dois projetos: A tem investimento de R$ 10.000 e TIR de 30%; B tem investimento de R$ 500.000 e TIR de 18%. O projeto A tem TIR maior, mas o projeto B cria muito mais valor (VPL maior). A TIR é útil como indicador de eficiência, mas o VPL é o critério decisório.
 
-<iframe src="../graficos/cap18/vpl-tir.html" title="Figura 18.2 — Curva VPL × taxa de desconto e TIR" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap18/vpl-tir.html" title="Figura 18.2 — Curva VPL × taxa de desconto e TIR" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 18.2 — Curva VPL × taxa de desconto.** O VPL é decrescente na taxa de desconto. A TIR é o ponto em que a curva cruza o eixo horizontal. Observe como projetos viáveis a juros baixos podem se tornar inviáveis quando a taxa sobe — especialmente relevante para o contexto brasileiro.

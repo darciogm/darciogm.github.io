@@ -77,7 +77,7 @@ Quando as curvas de indiferença se *cruzam* (em vez de se tangenciar), forma-se
 
 Explore a Caixa de Edgeworth com dois consumidores e dois bens. Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação X para verificar se ele representa uma melhoria de Pareto em relação à dotação inicial e se está sobre a curva de contrato (eficiência). As curvas de indiferença tracejadas passam pela dotação E; as contínuas passam pela alocação X.
 
-<iframe src="../graficos/cap14/caixa-edgeworth.html" title="Figura 14.1 — Caixa de Edgeworth" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/caixa-edgeworth.html" title="Figura 14.1 — Caixa de Edgeworth" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 14.1 — Caixa de Edgeworth.** Ajuste as dotações iniciais e os parâmetros de preferências Cobb-Douglas. Arraste o ponto de alocação para verificar melhorias de Pareto e eficiência sobre a curva de contrato.

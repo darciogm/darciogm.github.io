@@ -126,7 +126,7 @@ Essa equação formaliza a intuição de que o monopolista "espreme" mais os con
 
 No gráfico interativo abaixo, alterne entre os três graus de discriminação e observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
 
-<iframe src="../graficos/cap15/discriminacao-precos.html" title="Figura 15.3 — Discriminação de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/discriminacao-precos.html" title="Figura 15.3 — Discriminação de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.3 — Discriminação de preços.** Alterne entre discriminação de 1º grau (perfeita), 2º grau (tarifa em duas partes) e 3º grau (dois mercados). Observe como cada tipo afeta a extração de excedente e a eficiência alocativa.
@@ -167,7 +167,7 @@ O exercício a seguir aplica a discriminação de terceiro grau a um problema co
     \pi = (70 - 20)(25) + (50 - 20)(30) = 1.250 + 900 = 2.150
     \]
 
-<iframe src="../graficos/cap15/webr-discriminacao-3grau.html" title="WebR — Discriminação de Preços de 3º Grau" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/webr-discriminacao-3grau.html" title="WebR — Discriminação de Preços de 3º Grau" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 15.3 — Um preço para cada bolso: discriminação de 3º grau.** O código implementa o ER 15.4 com dois mercados segmentados. Observe que o mercado com demanda mais inelástica paga o preço mais alto — e verifique pela fórmula das elasticidades. Altere as inclinações `b1` e `b2` para ver como a diferença de preços responde à diferença de elasticidades.

@@ -70,13 +70,13 @@ O polo tecnológico de São José dos Campos ou o polo calçadista de Franca ilu
 !!! warning "Cuidado com a inclinação negativa"
     Uma curva de oferta de longo prazo negativamente inclinada pode parecer violar a condição de estabilidade walrasiana. Na verdade, a estabilidade é preservada porque o mecanismo opera via **deslocamento** da curva de custo (com a entrada de firmas), e não por um movimento **ao longo** de uma curva de oferta negativamente inclinada. A distinção é crucial.
 
-<iframe src="../graficos/cap13/equilibrio-longo-prazo.html" title="Figura 13.2 — Equilíbrio de longo prazo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/equilibrio-longo-prazo.html" title="Figura 13.2 — Equilíbrio de longo prazo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.2 — Equilíbrio de longo prazo: custos constantes, crescentes e decrescentes.** Observe como deslocamentos de demanda produzem efeitos radicalmente diferentes sobre o preço de equilíbrio dependendo do tipo de indústria.
 </div>
 
-<iframe src="../graficos/cap13/webr-longo-prazo.html" title="WebR — Longo Prazo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/webr-longo-prazo.html" title="WebR — Longo Prazo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 13.3 — Equilíbrio de longo prazo com entrada de firmas.** Simule a dinâmica de entrada e saída variando o número de firmas e observe como o lucro econômico converge a zero. Compare indústrias de custos constantes e crescentes.
@@ -143,7 +143,7 @@ Em outras palavras: a renda ricardiana aparece como lucro quando medimos com bas
 
     Segundo dados da CONAB (Companhia Nacional de Abastecimento), o custo de produção da soja por hectare varia até 40% entre regiões produtoras. A renda ricardiana correspondente se capitaliza no preço da terra: terras no Mato Grosso valorizaram-se mais de 300% em termos reais entre 2000 e 2020 (FNP/Informa Economics), refletindo a captura da renda pela escassez de terra de alta produtividade.
 
-<iframe src="../graficos/cap13/webr-renda-ricardiana.html" title="WebR — Renda Ricardiana" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/webr-renda-ricardiana.html" title="WebR — Renda Ricardiana" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 13.4 — Renda ricardiana em indústria de custos crescentes.** Visualize como firmas inframarginais (com custos mais baixos) obtêm renda ricardiana quando o preço é determinado pela firma marginal. Altere o número de firmas e a heterogeneidade de custos para observar como a renda se distribui.

@@ -35,7 +35,7 @@ Essa fórmula revela um ponto sutil: a elasticidade de mercado depende não apen
 
 Com a demanda de mercado construída, precisamos agora do segundo ingrediente: a oferta. Recordemos que, no Capítulo 12, derivamos a curva de oferta da firma individual a partir da condição de maximiza��ão de lucro (\(p = CMg\)). A oferta de mercado é construída de forma análoga à demanda: somamos horizontalmente as ofertas individuais das firmas. Com ambos os componentes em mãos, podemos finalmente analisar a formação de preços — o que faremos distinguindo três horizontes temporais, cada um com graus de ajuste progressivamente maiores.
 
-<iframe src="../graficos/cap13/webr-agregacao-demanda.html" title="WebR — Agregação de Demandas Individuais" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/webr-agregacao-demanda.html" title="WebR — Agregação de Demandas Individuais" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 13.1 — Agregação de demandas individuais e equilíbrio de mercado.** O código soma horizontalmente as demandas de três tipos de consumidores (A, B, C) e calcula o equilíbrio. Altere o número de consumidores ou as funções de demanda para ver como a composição do mercado afeta a elasticidade agregada.

@@ -181,7 +181,7 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
     **Para refletir:** O pré-sal brasileiro gera um dilema intertemporal análogo. Que mecanismos institucionais poderiam garantir que os royalties do pré-sal sejam convertidos em ativos produtivos, e não em gasto corrente?
 
-<iframe src="../graficos/cap18/desconto-exponencial-hiperbolico.html" title="Figura 18.3 — Desconto exponencial vs quasi-hiperbolico" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap18/desconto-exponencial-hiperbolico.html" title="Figura 18.3 — Desconto exponencial vs quasi-hiperbolico" class="graph-iframe" style="height:580px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 18.3 — Desconto exponencial vs quasi-hiperbólico.** O desconto exponencial padrão (\(\delta^t\)) trata todos os períodos igualmente, enquanto o modelo quasi-hiperbólico (\(\beta\delta^t\)) desconta o futuro próximo mais fortemente que o distante, gerando viés pelo presente e inconsistência temporal (Laibson, 1997).

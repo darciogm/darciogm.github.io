@@ -56,7 +56,7 @@ A condição de primeira ordem (CPO) é:
 
     **Regra mnemônica — CSO (Condição Suficiente de Ordem 2):** Para que \(q^*\) seja um máximo local de lucro, é preciso que \(\mathrm{CMg}'(q^*) > \mathrm{RMg}'(q^*)\), ou seja, o CMg deve estar *subindo* mais rápido do que o RMg no ponto ótimo. Em concorrência perfeita (\(\mathrm{RMg}' = 0\)), isso se reduz simplesmente a \(\mathrm{CMg}'(q^*) > 0\): o custo marginal deve ser crescente no ótimo.
 
-<iframe src="../graficos/cap12/webr-max-lucro.html" title="WebR — Maximização de Lucro" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/webr-max-lucro.html" title="WebR — Maximização de Lucro" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 12.1 — Maximização de lucro: \(p = \mathrm{CMg}\).** O código resolve a CPO, verifica a CSO, avalia a decisão de operar e plota as curvas de custo com o ponto ótimo. Altere o preço `p` para ver os três regimes: lucro positivo, prejuízo com operação e fechamento.
@@ -102,7 +102,7 @@ Esse resultado conecta-se diretamente à teoria da distribuição funcional da r
 
 A regra "RMg = CMg" é linda, mas esconde uma assimetria traiçoeira no lado da receita. Para a firma tomadora de preços, a vida é simples: cada unidade extra rende exatamente o preço de mercado, sem drama. Já para a firma com poder de mercado, vender mais é como encher um balde furado — colocar uma unidade extra na prateleira exige *baixar o preço de todas as outras*, e essa "conta-gotas de receita perdida" torna a receita marginal menor que o preço. A relação entre receita marginal e elasticidade-preço da demanda, que derivamos a seguir, é uma das mais úteis de toda a microeconomia, pois conecta a decisão de produção da firma à sensibilidade dos consumidores ao preço. Essa relação é o elo central entre os capítulos 12 e 15: quando chegarmos ao monopólio, a fórmula \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) será a chave para derivar o markup de Lerner e quantificar a ineficiência do poder de mercado. Antes de chegar lá, é útil notar que a distinção entre firma tomadora de preços e firma com poder de mercado não é binária — ela é um espectro parametrizado pela elasticidade da demanda individual da firma, que por sua vez depende da estrutura do mercado estudada nos Capítulos 13 a 15.
 
-<iframe src="../graficos/cap12/receita-marginal.html" title="Figura 12.1 — Receita marginal, demanda e elasticidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/receita-marginal.html" title="Figura 12.1 — Receita marginal, demanda e elasticidade" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 12.1 — Receita marginal, demanda e elasticidade.** A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca onde \(\mathrm{RMg} = 0\) (elasticidade unitária). Mova o slider \(q\) para ver a relação \(\mathrm{RMg} = p(1 + 1/\varepsilon_d)\) em cada ponto.
@@ -197,7 +197,7 @@ mede o grau de poder de mercado da firma: varia de zero (concorrência perfeita,
 
     **Interpretação econômica:** O monopolista opera na região elástica da demanda (\(|\varepsilon_d| = 1{,}5 > 1\)), confirmando o resultado teórico da Seção 12.3. O índice de Lerner de 0,67 indica poder de mercado substancial — o preço é três vezes o custo marginal. No Brasil, o [CADE](https://www.gov.br/cade) utiliza o índice de Lerner como uma das métricas para avaliar poder de mercado em análises de concentração.
 
-<iframe src="../graficos/cap12/webr-rmg-elasticidade.html" title="WebR — RMg, Elasticidade e Lerner" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/webr-rmg-elasticidade.html" title="WebR — RMg, Elasticidade e Lerner" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 12.2 — Receita marginal, elasticidade e índice de Lerner.** O código compara monopolista vs. competitivo para uma demanda linear, calcula o DWL e plota RT junto com a elasticidade. Altere `CMg_c` e os parâmetros da demanda para ver como o markup e o peso morto respondem.

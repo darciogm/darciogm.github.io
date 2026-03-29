@@ -4,7 +4,7 @@ title: "Soluções — Capítulo 24"
 
 # Soluções dos Exercícios — Capítulo 24
 
-[← Voltar ao Capítulo 24](../cap24/index.md)
+[← Voltar ao Capítulo 24](../cap24/exercicios.md)
 
 ---
 

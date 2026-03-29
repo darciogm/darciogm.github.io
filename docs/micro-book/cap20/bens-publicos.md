@@ -80,7 +80,7 @@ Diferentemente, para um bem privado, a eficiência requer \(TMS_i = TMT\) para c
 
 ---
 
-<iframe src="../graficos/cap20/bem-publico.html" title="Figura 20.3 — Provisão ótima de bem público" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/bem-publico.html" title="Figura 20.3 — Provisão ótima de bem público" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 20.3 — Provisão ótima de bem público.** A soma vertical dos benefícios marginais individuais determina o benefício marginal social. O nível ótimo (Samuelson) ocorre onde a soma dos BMg iguala o CMg. Os preços de Lindahl mostram a contribuição personalizada de cada consumidor.
@@ -120,7 +120,7 @@ Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/
 
 ---
 
-<iframe src="../graficos/cap20/webr-samuelson.html" title="WebR — Condição de Samuelson e subprovisão" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/webr-samuelson.html" title="WebR — Condição de Samuelson e subprovisão" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 20.4 — Condição de Samuelson e subprovisão.** Compare o nível ótimo (Samuelson) com o nível de contribuição voluntária (Nash) variando o número de consumidores.

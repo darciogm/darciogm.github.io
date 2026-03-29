@@ -38,7 +38,7 @@ A demanda por capital é decrescente no custo de uso \(c_K\) (e, portanto, na ta
 
     **Por que isso importa:** No Brasil, a combinação de juros reais altos e depreciação acelerada (especialmente para equipamentos importados sujeitos a variação cambial) eleva substancialmente o custo de uso do capital, desincentivando a formação de capital fixo.
 
-<iframe src="../graficos/cap18/webr-custo-capital.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap18/webr-custo-capital.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 18.1 — Custo de uso do capital e demanda por K.** Altere a taxa de juros e a depreciação para ver como o custo de uso do capital afeta a demanda por investimento. Compare cenários Brasil vs. EUA.
@@ -102,7 +102,7 @@ Para valores pequenos de \(r_d\), a aproximação \(r_c \approx r_d\) é razoáv
 
     A fórmula da perpetuidade é surpreendentemente útil em finanças. Ela implica que, se a taxa de juros é 5%, um ativo que paga R$ 100 por ano para sempre vale R$ 2.000 hoje. Se a taxa cai para 2%, o mesmo ativo vale R$ 5.000 — um aumento de 150% no valor do ativo. Essa sensibilidade explica por que quedas na taxa de juros provocam altas expressivas nos preços dos ativos financeiros e imobiliários.
 
-<iframe src="../graficos/cap18/webr-juros-compostos.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap18/webr-juros-compostos.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 18.2 — Juros compostos, perpetuidades e anuidades.** Explore o efeito da frequência de capitalização, compare juros simples vs. compostos vs. contínuos, e veja como a taxa de juros afeta o valor presente de perpetuidades.

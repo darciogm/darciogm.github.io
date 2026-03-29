@@ -33,7 +33,7 @@ Um **preço mínimo** $\underline{p}$ é um limite inferior: nenhum comprador po
 
 O exemplo clássico é o **salário mínimo** no mercado de trabalho: se fixado acima do salário de equilíbrio, gera desemprego (excesso de oferta de trabalho). No agronegócio brasileiro, a **Política de Garantia de Preços Mínimos** (PGPM) da CONAB funciona como piso de preço para commodities agrícolas. Quando o preço de mercado cai abaixo do mínimo, o governo compra o excedente (Aquisições do Governo Federal — AGF) ou paga a diferença ao produtor (Prêmio para Escoamento de Produto — PEP).
 
-<iframe src="../graficos/cap13/controles-precos.html" title="Figura 13.3 — Controles de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/controles-precos.html" title="Figura 13.3 — Controles de preços" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.3 — Controles de preços: teto e piso.** Compare os efeitos de preços máximos e mínimos sobre a quantidade transacionada, os excedentes e a perda de peso morto. Ajuste o nível do controle para observar como a distorção varia com a distância ao equilíbrio.
@@ -107,13 +107,13 @@ A fórmula aproximada (para imposto pequeno) revela dois fatos importantes:
 !!! box-mundo "Box Mundo 13.2 — O Princípio de Ramsey e a tributação de cigarros"
     Frank Ramsey (1903–1930), matemático e filósofo de Cambridge que morreu tragicamente aos 26 anos, demonstrou em 1927 que a tributação ótima de commodities deve ser inversamente proporcional às elasticidades: bens com demanda mais inelástica devem ter alíquotas mais altas, pois a distorção é menor. Isso parece justificar tributar fortemente bens como cigarros (demanda muito inelástica, $|\varepsilon_D| \approx 0{,}3$–$0{,}5$). Mas há um conflito: a regra de Ramsey é *regressiva* — bens de primeira necessidade tendem a ter demanda inelástica, e tributá-los mais pesadamente penaliza os mais pobres. A solução moderna (Diamond & Mirrlees, 1971) incorpora considerações distributivas, e a prática tributária brasileira — com alíquotas diferenciadas para bens essenciais na reforma do IBS/CBS — reflete exatamente esse *trade-off*.
 
-<iframe src="../graficos/cap13/incidencia-tributaria.html" title="Figura 13.4 — Incidência tributária" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/incidencia-tributaria.html" title="Figura 13.4 — Incidência tributária" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.4 — Incidência tributária: quem paga o imposto?** Ajuste as elasticidades de oferta e demanda para ver como a carga tributária se distribui entre consumidores e produtores. Observe que a incidência legal (sobre quem o imposto recai formalmente) é irrelevante para o resultado econômico.
 </div>
 
-<iframe src="../graficos/cap13/webr-incidencia-tributaria.html" title="WebR — Incidência Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/webr-incidencia-tributaria.html" title="WebR — Incidência Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 13.6 — Incidência tributária e perda de peso morto.** O código calcula a incidência econômica, a receita tributária e a PPM para diferentes valores de imposto e elasticidades. Teste o Princípio de Ramsey: compare a PPM quando se tributa um bem elástico versus um inelástico.

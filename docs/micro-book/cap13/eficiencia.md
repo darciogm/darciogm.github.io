@@ -76,7 +76,7 @@ onde $Q_t < Q^*$ é a quantidade transacionada sob a distorção.
 
 A PPM é o custo de eficiência da intervenção — o valor que simplesmente desaparece, sem ser capturado por nenhum agente (nem consumidores, nem produtores, nem o governo). É o "dinheiro queimado" da economia — ninguém fica com ele.
 
-<iframe src="../graficos/cap13/webr-bem-estar.html" title="WebR — Bem-Estar" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/webr-bem-estar.html" title="WebR — Bem-Estar" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 13.5 — Excedente do consumidor, excedente do produtor e perda de peso morto.** Visualize como impostos e controles de preços alteram a divisão do excedente e geram perda de peso morto. O código calcula EC, EP e PPM para diferentes cenários.

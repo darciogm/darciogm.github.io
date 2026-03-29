@@ -30,7 +30,7 @@ CT_{LP}(q) = \min_{K, L} \{wL + vK \mid f(K, L) = q\}
 
 A Figura 11.3 mostra a envoltória em termos de **custo total**. Cada curva colorida representa o \(CT_{CP}(q; \bar{K}) = wq^2/\bar{K} + v\bar{K}\) para um nível fixo de capital, assumindo a tecnologia Cobb-Douglas \(q = K^{0{,}5}L^{0{,}5}\). A curva azul — o custo total de longo prazo — é calculada **numericamente** como \(CT_{LP}(q) = \min_{\bar{K}} CT_{CP}(q; \bar{K})\) para cada \(q\), confirmando que a envoltória inferior emerge da minimização ponto a ponto. Nos pontos de tangência (marcadores verdes), a inclinação do \(CT_{CP}\) é igual à do \(CT_{LP}\) — uma aplicação direta do **Teorema do Envelope**: a derivada da função valor em relação ao parâmetro (\(q\)) coincide com a derivada parcial do objetivo avaliada no ótimo.
 
-<iframe src="../graficos/cap11/envoltoria-custo-total.html" title="Figura 11.3 — Envoltória de custo total" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/envoltoria-custo-total.html" title="Figura 11.3 — Envoltória de custo total" class="graph-iframe" style="height:630px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.3 — Envoltória de custo total: cada curva colorida é um \(CT_{CP}\) para um nível fixo de capital \(\bar{K}\); a curva azul (\(CT_{LP}\)) é a envoltória inferior, obtida numericamente.** Os pontos verdes indicam onde cada \(CT_{CP}\) tangencia a envoltória. Use os controles para alterar \(w\) e \(v\), e as caixas de seleção para mostrar/ocultar curvas individuais e pontos de tangência.
@@ -69,7 +69,7 @@ Propriedade importante: no ponto de tangência, conforme a equação $\eqref{eq:
 
 A Figura 11.4 complementa a visão anterior, agora em termos de **custo médio**. Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória.
 
-<iframe src="../graficos/cap11/curto-longo-prazo.html" title="Figura 11.4 — Curva envoltória: CMe de curto e longo prazo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/curto-longo-prazo.html" title="Figura 11.4 — Curva envoltória: CMe de curto e longo prazo" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.4 — Curva envoltória: CMe de curto e longo prazo.** Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória. Selecione \(\bar{K}\) para destacar o SRAC correspondente e ver o ponto de tangência.
@@ -138,7 +138,7 @@ Uma última propriedade relevante da envoltória é que, no mínimo da curva de 
 
     A diferença é sempre não negativa, com igualdade quando \(q^2 = 1\), ou seja, \(q = 1\). Nesse ponto, \(K^*(q=1) = 1 = \bar{K}\) — o capital fixo coincide com o ótimo de longo prazo. Para qualquer outro nível de produto, o curto prazo é mais caro, pois a firma não pode ajustar o capital.
 
-<iframe src="../graficos/cap11/webr-envoltoria.html" title="WebR — Envoltória de Custos" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/webr-envoltoria.html" title="WebR — Envoltória de Custos" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 11.5 — Envoltória de custos: curto prazo versus longo prazo.** O código plota as curvas de CMe de curto prazo para diferentes níveis de capital fixo e a envoltória de longo prazo. Altere os parâmetros da Cobb-Douglas e os preços dos insumos para ver como a envoltória muda de forma.

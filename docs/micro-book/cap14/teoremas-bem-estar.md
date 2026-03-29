@@ -185,7 +185,7 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
     **Interpretação econômica:** O Segundo Teorema demonstra que eficiência e equidade são objetivos separáveis: basta redistribuir a riqueza inicial e deixar os mercados funcionarem. No Brasil, o **Bolsa Família** e o **BPC** (Benefício de Prestação Continuada) são exemplos de transferências diretas que buscam alterar a distribuição sem distorcer preços relativos — embora, na prática, nenhuma transferência seja perfeitamente *lump-sum* (sempre há custos administrativos e incentivos adversos).
 
-<iframe src="../graficos/cap14/webr-segundo-teorema.html" title="WebR — Segundo Teorema e Transferências Lump-Sum" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/webr-segundo-teorema.html" title="WebR — Segundo Teorema e Transferências Lump-Sum" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 14.2 — Segundo Teorema: redistribuir sem estragar.** O código implementa o ER 14.4 completo: verifica que a alocação-meta é eficiente, calcula o preço de suporte e a transferência lump-sum necessária. No gráfico, observe a seta da dotação original à meta — essa é a transferência que separa eficiência de equidade. Mude `xA_target` para outra alocação sobre a curva de contrato e veja como a transferência se ajusta.
@@ -248,7 +248,7 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
     **Interpretação econômica:** O imposto sobre o bem 1 encarece-o relativamente, fazendo consumidores demandarem menos e a economia produzir menos desse bem. A TMT deixa de igualar a TMS: a economia está "dentro" da fronteira de utilidades possíveis, produzindo uma combinação de bens que não corresponde às preferências dos consumidores. Essa é a essência da perda de peso morto da tributação em equilíbrio geral — e a razão pela qual o Segundo Teorema insiste em transferências *lump-sum*: elas não criam essa cunha entre TMS e TMT.
 
-<iframe src="../graficos/cap14/webr-fpp-eficiencia.html" title="WebR — FPP e Distorção Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/webr-fpp-eficiencia.html" title="WebR — FPP e Distorção Tributária" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 14.5 — FPP, imposto e perda de eficiência.** O código calcula o equilíbrio na FPP circular com e sem imposto, mostrando como a cunha tributária viola $TMS = TMT$. Experimente alterar a taxa `t` no vetor `taxas` e observe como a perda de bem-estar cresce de forma convexa — impostos pequenos custam pouco, mas a conta explode rapidamente.
@@ -296,7 +296,7 @@ O debate entre eficiência e equidade está no centro da economia do setor públ
 
 Combine a Caixa de Edgeworth com uma linha de preços. Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda resultante. O equilíbrio walrasiano ocorre quando o excesso de demanda é zero -- o gráfico indica o preço de equilíbrio e sinaliza a direção de ajuste necessária.
 
-<iframe src="../graficos/cap14/equilibrio-geral.html" title="Figura 14.3 — Equilíbrio geral walrasiano" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/equilibrio-geral.html" title="Figura 14.3 — Equilíbrio geral walrasiano" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 14.3 — Equilíbrio geral walrasiano.** Ajuste o preço relativo \(p_1/p_2\) para observar as demandas ótimas de cada agente e o excesso de demanda. O equilíbrio ocorre quando o excesso de demanda é zero.

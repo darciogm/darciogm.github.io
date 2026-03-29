@@ -91,6 +91,14 @@ onde \(c^*\) é o copagamento ótimo, \(|\varepsilon|\) é a elasticidade-preço
 
 Na prática, isso implica que internações hospitalares (demanda inelástica, consequências graves) devem ter copagamento baixo, enquanto consultas eletivas (demanda mais elástica) podem ter copagamento mais alto. É exatamente assim que a maioria dos planos modernos é desenhada.
 
+No gráfico interativo abaixo, ajuste a taxa de cobertura do seguro e observe como o risco moral afeta a quantidade demandada de cuidados médicos e a perda de bem-estar associada.
+
+<iframe src="/micro-book/graficos/cap23/demanda-saude.html" title="Figura 23.1 — Seguro de Saúde e Risco Moral" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 23.1 — Seguro de Saúde e Risco Moral.** Ajuste a taxa de cobertura \(\alpha\) do seguro e observe como o preço percebido pelo paciente cai, a quantidade demandada aumenta além do ótimo e o triângulo de perda de bem-estar (risco moral) se expande.
+</div>
+
 ---
 
 ## 23.3 Oferta de serviços de saúde {#233}

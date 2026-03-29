@@ -105,7 +105,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 
 ---
 
-<iframe src="../graficos/cap20/webr-vcg.html" title="WebR — Mecanismo VCG e imposto pivotal" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap20/webr-vcg.html" title="WebR — Mecanismo VCG e imposto pivotal" class="graph-iframe" style="height:700px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 20.5 — Mecanismo VCG e imposto pivotal.** Insira as valorações dos participantes e o custo do bem público para ver quem é pivotal e os impostos correspondentes.

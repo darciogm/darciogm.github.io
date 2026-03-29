@@ -22,7 +22,7 @@ com \(\theta_H > \theta_L\), de modo que \(c_H(s) < c_L(s)\) para todo \(s > 0\)
 
 No gráfico interativo abaixo, visualize as curvas de custo de educação para ambos os tipos e o intervalo de sinais que sustenta um equilíbrio separador.
 
-<iframe src="../graficos/cap19/sinalizacao.html" title="Figura 19.4 — Sinalização por educação (Spence, 1973)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap19/sinalizacao.html" title="Figura 19.4 — Sinalização por educação (Spence, 1973)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.4 — Sinalização por educação (Spence, 1973).** Visualize as curvas de custo de educação para ambos os tipos, o salário de equilíbrio e a condição de single-crossing. A região azul indica o intervalo de níveis de educação que sustentam um equilíbrio separador.
@@ -83,7 +83,7 @@ As restrições $\eqref{eq:19.12}$ e $\eqref{eq:19.13}$ delimitam o intervalo $\
 
     **Interpretação:** A sinalização é individualmente racional para o tipo H (ganho líquido positivo), mas socialmente custosa se a educação não tem valor produtivo. Esse resultado fundamenta o debate sobre se políticas de expansão universitária geram ganhos reais de produtividade ou apenas inflação de credenciais.
 
-<iframe src="../graficos/cap19/webr-sinalizacao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap19/webr-sinalizacao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 19.4 — Sinalização por educação (Spence).** Modifique as produtividades θH e θL para visualizar a condição de single-crossing, o intervalo separador e o custo social da sinalização.

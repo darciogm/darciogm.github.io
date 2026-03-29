@@ -103,7 +103,7 @@ O exercício a seguir aplica a teoria de leilões a um caso numérico.
 
     **Interpretação:** No primeiro preço, os licitantes "escondem" parte de sua valoração para obter lucro. No segundo preço, revelam tudo porque o preço pago não depende do próprio lance. O resultado é o mesmo em expectativa — mas os caminhos são diferentes.
 
-<iframe src="../graficos/cap19/webr-leiloes.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap19/webr-leiloes.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 19.5 — Leilões: Vickrey vs. primeiro preço.** Compare estratégias, receitas e bid shading nos dois formatos. Verifique o Teorema da Equivalência de Receita com simulação Monte Carlo.

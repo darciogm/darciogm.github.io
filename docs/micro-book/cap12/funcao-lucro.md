@@ -180,7 +180,7 @@ A função lucro possui propriedades notáveis:
 
     **Interpretação econômica:** A função lucro \(\pi = p^3/(27wv)\) é homogênea de grau 1 em \((p, w, v)\) — se todos os preços dobram, o lucro dobra. Ela é convexa em \(p\) (pois \(\partial^2\pi/\partial p^2 = 2p/(9wv) > 0\)), confirmando que a oferta é crescente no preço do produto. No contexto brasileiro, o Lema de Hotelling é usado em modelos de equilíbrio geral computável (como os do IPEA) para calibrar funções de oferta setorial a partir de dados de lucro.
 
-<iframe src="../graficos/cap12/webr-hotelling.html" title="WebR — Lema de Hotelling" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/webr-hotelling.html" title="WebR — Lema de Hotelling" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 12.4 — Lema de Hotelling: verificação numérica.** O código calcula a função lucro para \(q = K^{1/3}L^{1/3}\), verifica numericamente que \(\partial\pi/\partial p = q^*\) e \(\partial\pi/\partial w = -L^*\), e ilustra a convexidade de \(\pi\) em \(p\). A tangente no gráfico tem inclinação igual à oferta ótima — exatamente o lema em ação.
@@ -234,7 +234,7 @@ A magnitude relativa desses dois efeitos é empiricamente relevante. Em indústr
 !!! theorem "Proposição: Inexistência de 'insumo de Giffen'"
     Na teoria da firma maximizadora de lucro, a demanda por um insumo é sempre não crescente em seu próprio preço. Não existe o análogo de um "bem de Giffen" para insumos, pois tanto o efeito substituição quanto o efeito produto reduzem a demanda quando o preço do insumo aumenta.
 
-<iframe src="../graficos/cap12/webr-decomposicao-insumos.html" title="WebR — Decomposição da Demanda por Insumos" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap12/webr-decomposicao-insumos.html" title="WebR — Decomposição da Demanda por Insumos" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 12.5 — Efeito substituição vs. efeito produto na demanda por trabalho.** O código decompõe a variação na demanda por trabalho quando \(w\) sobe: o efeito substituição (ao longo da isoquanta) e o efeito produto (redução de \(q^*\)) vão na mesma direção — confirmando que não existe "insumo de Giffen". Altere `dw` para ver como a magnitude do choque afeta cada componente.

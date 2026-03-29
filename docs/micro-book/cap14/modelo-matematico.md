@@ -114,7 +114,7 @@ Em outras palavras: observando apenas o comportamento agregado dos mercados, nã
 
 **WebR 14.3 — Lei de Walras: a contabilidade que nunca falha.** O código calcula as funções de excesso de demanda \(Z^1(p)\) e \(Z^2(p)\) para o ER 14.6 e plota ambas no mesmo gráfico. Observe que \(Z^1\) e \(Z^2\) cruzam o zero no mesmo preço — consequência direta da Lei de Walras. Mude os parâmetros `aA` e `aB` (expoentes Cobb-Douglas) e observe como o preço de equilíbrio se desloca, mas a Lei de Walras continua valendo em *todos* os preços.
 
-<iframe src="../graficos/cap14/webr-lei-walras.html" title="WebR 14.3 — Funções de excesso de demanda e Lei de Walras" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/webr-lei-walras.html" title="WebR 14.3 — Funções de excesso de demanda e Lei de Walras" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 14.3 — Lei de Walras: a contabilidade que nunca falha.** Funções de excesso de demanda e verificação da Lei de Walras. Altere os expoentes Cobb-Douglas para explorar como o equilíbrio se desloca.
@@ -221,7 +221,7 @@ Logo, \(\mathbf{p}^*\) é um equilíbrio walrasiano. \(\blacksquare\)
 
 **WebR 14.4 — Existência do equilíbrio: vendo Brouwer em ação.** O código resolve numericamente o equilíbrio para o ER 14.7 com preferências CES. O gráfico mostra a função \(g(p)\) do algoritmo de ajuste de preços e a diagonal — o ponto fixo (onde \(g(p) = p\)) é o equilíbrio. Altere \(\rho\) para ver como a elasticidade de substituição afeta o preço de equilíbrio: quando \(\rho \to 0\) (Cobb-Douglas), o equilíbrio converge ao caso analítico; quando \(\rho \to -\infty\) (Leontief), os preços se ajustam mais drasticamente.
 
-<iframe src="../graficos/cap14/webr-existencia.html" title="WebR 14.4 — Existência do equilíbrio com preferências CES" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap14/webr-existencia.html" title="WebR 14.4 — Existência do equilíbrio com preferências CES" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 14.4 — Existência do equilíbrio: vendo Brouwer em ação.** Resolução numérica do equilíbrio com preferências CES. Altere \(\rho\) para explorar diferentes elasticidades de substituição.

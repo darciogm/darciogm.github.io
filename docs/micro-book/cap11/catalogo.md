@@ -186,7 +186,7 @@ s_K = \frac{\alpha^\sigma v^{1-\sigma}}{W^{1-\sigma}}
 
 Quando \(\sigma > 1\) (alta elasticidade de substituição), um aumento em \(v/w\) reduz a participação do capital no custo mais do que proporcionalmente — a firma substitui fortemente capital por trabalho. Quando \(\sigma < 1\), a substituição é mais limitada e a participação do capital pode até *aumentar* com o aumento de seu preço relativo (efeito gasto domina o efeito substituição). Esse fenômeno, análogo ao paradoxo de Giffen no consumo mas para insumos, raramente é observado na prática, mas é teoricamente possível.
 
-<iframe src="../graficos/cap11/webr-custos-funcoes.html" title="WebR — Catálogo de Funções Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/webr-custos-funcoes.html" title="WebR — Catálogo de Funções Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 11.6 — Catálogo de funções custo.** O código compara as funções custo derivadas de Cobb-Douglas, Leontief, linear e CES para os mesmos preços de insumos. Altere os parâmetros para ver como a elasticidade de substituição afeta a forma da função custo e a composição de insumos.

@@ -115,7 +115,7 @@ Note a simetria com a equação $\eqref{eq:24.2}$: o preço da permissão funcio
 
 No gráfico interativo abaixo, compare o imposto pigouviano com o cap-and-trade. Alterne entre os dois instrumentos e ajuste os parâmetros para ver como cada um corrige a externalidade.
 
-<iframe src="../graficos/cap24/imposto-pigou.html" title="Figura 24.1 — Imposto Pigouviano vs Cap-and-Trade" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap24/imposto-pigou.html" title="Figura 24.1 — Imposto Pigouviano vs Cap-and-Trade" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 24.1 — Imposto Pigouviano vs Cap-and-Trade.** Alterne entre os dois instrumentos. No modo imposto, ajuste \(t\) até igualar o custo externo \(e\) para restaurar a eficiência. No modo cap-and-trade, ajuste o cap até \(Q^*\) e observe que o preço da permissão converge para o imposto ótimo.

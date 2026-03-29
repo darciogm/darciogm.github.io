@@ -48,7 +48,7 @@ Se \(\bar{V} < C_H\), os donos de carros bons não aceitam vender pelo preço m�
 
 No gráfico interativo abaixo, ajuste a fração de limões e observe como a seleção adversa pode levar ao colapso do mercado.
 
-<iframe src="../graficos/cap19/mercado-limoes.html" title="Figura 19.2 — Mercado de limões (Akerlof, 1970)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap19/mercado-limoes.html" title="Figura 19.2 — Mercado de limões (Akerlof, 1970)" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.2 — Mercado de limões (Akerlof, 1970).** Ajuste a fração de limões e observe como a seleção adversa leva ao colapso do mercado quando a disposição a pagar do comprador cai abaixo do custo de reserva dos vendedores de carros bons.
@@ -83,7 +83,7 @@ O exercício a seguir aplica o modelo de Akerlof a um caso numérico.
 
     **(c)** Com vistoria, o carro bom pode ser vendido a até R$ 24.000. O vendedor ganha \(24.000 - 20.000 = 4.000\) na transação. O custo da vistoria (R$ 500) é amplamente compensado. **Sim, vale a pena** — o que explica a existência de serviços como a Cautelar Express e laudos do Detran.
 
-<iframe src="../graficos/cap19/webr-limoes.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap19/webr-limoes.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 19.3 — Mercado de limões (Akerlof).** Altere a fração de carros bons e os valores de comprador/vendedor para ver quando a seleção adversa leva ao colapso do mercado. Encontre o limiar crítico de λ.
@@ -193,7 +193,7 @@ Um contrato de seguro é representado por um par \((\alpha_1, \alpha_2)\), onde 
 
 No gráfico interativo abaixo, explore o equilíbrio separador de Rothschild-Stiglitz no espaço de riqueza contingente.
 
-<iframe src="../graficos/cap19/seguros-rs.html" title="Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap19/seguros-rs.html" title="Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz" class="graph-iframe" style="height:650px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 19.3 — Modelo de seguros de Rothschild-Stiglitz.** No espaço de riqueza contingente, observe o equilíbrio separador: o tipo de alto risco recebe seguro completo (sobre a linha de 45°) enquanto o tipo de baixo risco recebe seguro parcial. As curvas de indiferença refletem as diferentes probabilidades de sinistro.

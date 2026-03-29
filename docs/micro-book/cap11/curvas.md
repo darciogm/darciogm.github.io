@@ -6,7 +6,7 @@ A função custo é poderosa, mas abstrata — depende de três variáveis ao me
 
 Vale notar que, ao fixar os preços dos insumos, passamos de uma perspectiva tridimensional (\(C\) como função de \(w\), \(v\) e \(q\)) para a perspectiva usual (\(C\) como função apenas de \(q\)). Essa simplificação — perfeitamente justificada em um mercado de insumos competitivo onde a firma é tomadora de preços — nos permite focar na geometria das curvas de custo sem perda de generalidade.
 
-<iframe src="../graficos/cap11/curvas-custo.html" title="Figura 11.2 — Curvas de custo total, médio e marginal" class="graph-iframe" style="height:680px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/curvas-custo.html" title="Figura 11.2 — Curvas de custo total, médio e marginal" class="graph-iframe" style="height:680px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 11.2 — Curvas de custo total, médio e marginal.** Ajuste os parâmetros da função cúbica de custo e observe as relações entre CT, CMe, CMg e CVMe. O ponto vermelho no CMg é arrastável. Destaque para o ponto de fechamento (mín CVMe) e o cruzamento CMg–CMe no mínimo do CMe.
@@ -81,7 +81,7 @@ Com rendimentos marginais inicialmente crescentes e depois decrescentes (o forma
 
 A relação \(\mathrm{CMg} = w / PMg_L\) merece atenção especial porque faz a ponte explícita com o Capítulo 10. Quando o produto marginal do trabalho \(PMg_L\) é crescente (trecho inicial da função de produção), o custo marginal é decrescente — cada nova unidade de trabalho produz mais do que a anterior, tornando o custo por unidade menor. Quando \(PMg_L\) começa a cair (lei dos rendimentos marginais decrescentes), o custo marginal começa a subir. O ponto de mínimo do CMg corresponde exatamente ao ponto de máximo do \(PMg_L\) — as duas curvas são literalmente o reflexo uma da outra com relação a um espelho horizontal.
 
-<iframe src="../graficos/cap11/webr-curvas-custo.html" title="WebR — Curvas de Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap11/webr-curvas-custo.html" title="WebR — Curvas de Custo" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 11.4 — Curvas de custo: CT, CMe, CMg e CVMe.** O código plota as curvas de custo a partir de uma função cúbica \(CT(q) = CF + aq + bq^2 + cq^3\) e calcula automaticamente os pontos de mínimo do CMe e CVMe. Altere os parâmetros `CF`, `a`, `b` e `c` para ver como o formato das curvas muda — e confirme que o CMg sempre cruza o CMe e o CVMe em seus mínimos.

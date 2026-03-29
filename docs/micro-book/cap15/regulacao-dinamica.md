@@ -80,7 +80,7 @@ Averch e Johnson (1962) demonstraram que esse esquema induz a firma a **sobreinv
 
 No gráfico interativo abaixo, visualize como diferentes regimes regulatórios afetam preço, quantidade e bem-estar em um monopólio natural com custo médio decrescente. Alterne entre os três regimes e observe os trade-offs.
 
-<iframe src="../graficos/cap15/regulacao-monopolio.html" title="Figura 15.4 — Regulação de monopólio natural" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/regulacao-monopolio.html" title="Figura 15.4 — Regulação de monopólio natural" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 15.4 — Regulação de monopólio natural.** Alterne entre monopólio não regulado, regulação pelo custo marginal (first-best, com subsídio) e regulação pelo custo médio (second-best, lucro zero). Compare preços, quantidades e perda de peso morto em cada regime.
@@ -145,7 +145,7 @@ O exercício a seguir aplica os três regimes regulatórios a um caso numérico 
 
     **Interpretação:** A regulação por custo médio é o modelo adotado pela ANEEL para distribuidoras de energia no Brasil. Ela garante lucro zero para a concessionária enquanto expande significativamente o acesso, a um custo de eficiência relativamente baixo.
 
-<iframe src="../graficos/cap15/webr-regulacao.html" title="WebR — Regulação de Monopólio Natural" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/webr-regulacao.html" title="WebR — Regulação de Monopólio Natural" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 15.4 — Três regimes de regulação: do monopólio ao first-best.** O código resolve o ER 15.7 completo: monopólio não regulado, regulação por custo marginal (first-best, com prejuízo) e regulação por custo médio (second-best, lucro zero). Compare os três pontos no gráfico e observe como a PPM cai 95% com a regulação second-best. Altere `CF` para ver como o custo fixo afeta a viabilidade do first-best.
@@ -208,7 +208,7 @@ Na prática, poucos mercados satisfazem essas condições rigorosas. Custos irre
 
     **(c)** Este resultado ilustra a hipótese schumpeteriana: o monopolista investe 400 em P&D (reduzindo o custo marginal pela metade), enquanto o mercado competitivo não investe nada. O poder de mercado é a "recompensa" que viabiliza a inovação. Contudo, o argumento depende criticamente da hipótese de spillover total; na prática, patentes e segredos industriais permitem que firmas competitivas também se apropriem de inovações, atenuando a vantagem schumpeteriana do monopólio.
 
-<iframe src="../graficos/cap15/webr-inovacao-schumpeter.html" title="WebR — Inovação sob Monopólio vs. Concorrência" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap15/webr-inovacao-schumpeter.html" title="WebR — Inovação sob Monopólio vs. Concorrência" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 15.5 — O vilão também inova: P&D sob monopólio.** O código implementa o ER 15.8: o monopolista escolhe quanto investir em P&D para reduzir seu custo marginal. Compare o investimento ótimo ($I^* = 400$) com o investimento zero da concorrência com spillover total. Altere `c0` e observe como o incentivo à inovação muda com o nível inicial de custo.

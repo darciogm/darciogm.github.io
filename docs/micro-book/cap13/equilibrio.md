@@ -20,7 +20,7 @@ A implicação prática é imediata: quanto mais inelástica a oferta, maior a v
 
 Explore como mudanças nos parâmetros de oferta e demanda afetam o equilíbrio de mercado. Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor (azul) e do produtor (verde).
 
-<iframe src="../graficos/cap13/oferta-demanda.html" title="Figura 13.1 — Equilíbrio de oferta e demanda" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/oferta-demanda.html" title="Figura 13.1 — Equilíbrio de oferta e demanda" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 13.1 — Equilíbrio de oferta e demanda.** Ajuste os interceptos e inclinações para observar as variações no preço e quantidade de equilíbrio, bem como nos excedentes do consumidor e do produtor.
@@ -137,7 +137,7 @@ A estática comparativa do curto prazo toma o número de firmas como dado. No lo
 
     **Fonte:** Ezekiel, M. (1938). "The Cobweb Theorem". *Quarterly Journal of Economics*, 52(2), 255–280; USDA-ERS, Feed Grains Database; Eurostat, Agricultural Price Statistics; Roberts & Schlenker (2013), *AER*.
 
-<iframe src="../graficos/cap13/webr-estatica-comparativa.html" title="WebR — Estática Comparativa" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap13/webr-estatica-comparativa.html" title="WebR — Estática Comparativa" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **WebR 13.2 — Estática comparativa: choques de oferta e demanda.** Simulação baseada na questão ANPEC 2023 (mercado de petróleo). O código calcula os efeitos de um embargo (choque de oferta) e de novas tecnologias (choque de demanda) sobre preço e quantidade. Altere os parâmetros para explorar cenários diferentes.

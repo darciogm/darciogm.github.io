@@ -117,7 +117,7 @@ Bertrand, Cournot, Stackelberg, colusão — são tantos modelos que é fácil p
 
 ---
 
-<iframe src="../graficos/cap16/comparacao-oligopolio.html" title="Figura 16.4 — Comparação dos modelos de oligopólio" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap16/comparacao-oligopolio.html" title="Figura 16.4 — Comparação dos modelos de oligopólio" class="graph-iframe" style="height:610px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 16.4 — Todos os modelos de oligopólio em um único diagrama \((Q, P)\).** A tabela compara preços, quantidades, lucros, excedente do consumidor e bem-estar total para cada estrutura de mercado.

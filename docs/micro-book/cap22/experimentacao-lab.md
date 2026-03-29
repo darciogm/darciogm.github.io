@@ -145,7 +145,7 @@ Se \(1 < \alpha < N\), a contribuição é socialmente eficiente (\(\alpha/N < 1
 !!! tip "Conexão com Teoria dos Jogos"
     Os quatro experimentos acima testam previsões centrais da teoria dos jogos (Capítulos 9a–9d). O leilão de dupla confirma a convergência ao equilíbrio competitivo (Capítulo 13). O jogo do ultimato testa indução retroativa (Capítulo 9b) e revela preferências sociais que a teoria padrão ignora. O jogo de bens públicos testa o problema do carona (Capítulo 20) e mostra que cooperação é possível — especialmente com mecanismos de punição (conectando com o *folk theorem* do Capítulo 9b). O jogo do ditador testa diretamente a hipótese de preferências egoístas.
 
-<iframe src="../graficos/cap22/bens-publicos-experimento.html" title="Figura 22.1 — Jogo de Bens Públicos: Simulação com e sem Punição" class="graph-iframe"></iframe>
+<iframe src="/micro-book/graficos/cap22/bens-publicos-experimento.html" title="Figura 22.1 — Jogo de Bens Públicos: Simulação com e sem Punição" class="graph-iframe"></iframe>
 
 ??? exercicio-resolvido "Exercício Resolvido 22.1 — Equilíbrio de Nash no jogo de bens públicos"
     **Enunciado.** Em um jogo de bens públicos, \(N = 4\) jogadores recebem dotação \(w = 20\) cada. Cada jogador \(i\) escolhe quanto contribuir \(g_i \in [0, 20]\) ao fundo público. O retorno total do fundo é \(1{,}6 \sum g_i\), dividido igualmente entre os 4 jogadores. O payoff do jogador \(i\) é:

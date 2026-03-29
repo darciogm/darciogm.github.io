@@ -161,7 +161,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Em escala de 10.000 pontos: \(HHI \approx 5.155\), indicando um mercado altamente concentrado.
 
-<iframe src="../graficos/cap16/webr-cournot-assimetrico.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap16/webr-cournot-assimetrico.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 16.2 — Cournot com custos assimétricos.** Modifique os custos marginais das firmas e veja como a assimetria redistribui produção, lucros e market shares. Compare com o equilíbrio simétrico.
@@ -213,7 +213,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Não. A líder ganha (de 1.600 para 1.800), mas a seguidora perde (de 1.600 para 900). O lucro total da indústria cai de 3.200 para 2.700. A vantagem do primeiro movimento beneficia a líder à custa da seguidora e da indústria — mas beneficia os consumidores, que pagam preço menor (\(p=60 < 70\)) e consomem mais (\(Q=90 > 80\)).
 
-<iframe src="../graficos/cap16/webr-stackelberg.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap16/webr-stackelberg.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 16.3 — Stackelberg vs. Cournot.** Compare os dois equilíbrios visualmente: curvas de melhor-resposta, curvas de iso-lucro e os pontos de Nash. Altere os parâmetros para verificar como a vantagem do primeiro movimento varia.
@@ -253,7 +253,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
     Isso confirma a fórmula geral \(\delta \geq 1 - 1/n\): com \(n = 3\), \(\delta \geq 2/3\). Note que com 2 firmas bastaria \(\delta \geq 1/2\); com 3 firmas a colusão exige mais paciência. Quanto mais firmas no cartel, mais difícil sustentá-lo — cada firma tem incentivo maior para desviar, pois captura toda a demanda ao invés de apenas \(1/n\) dela.
 
-<iframe src="../graficos/cap16/webr-colusao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<iframe src="/micro-book/graficos/cap16/webr-colusao.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">
 
 **WebR 16.4 — Sustentação de colusão com trigger strategy.** Explore como o $\delta$ mínimo cresce com o número de firmas e compare o valor presente de cooperar vs. desviar ao longo do tempo.
