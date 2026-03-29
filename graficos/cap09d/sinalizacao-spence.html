@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+  Sinalização de Spence — Equilíbrio separador e agregador
+  Library: JSXGraph
+  Reason: Sliders para custo diferencial, produtividades e prior permitem
+          visualizar a transição entre equilíbrio separador e pooling.
+  Chapter 9d — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinalização de Spence</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+    .graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 440px;
+      max-width: 540px;
+      height: 440px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 300px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; margin-bottom: 0.2rem;
+    }
+    .legend-swatch {
+      width: 20px; height: 3px; display: inline-block;
+    }
+    .btn-reset {
+      display: block; width: 100%; margin-top: 0.8rem;
+      padding: 0.5rem; background: #C8102E; color: #fff;
+      border: none; border-radius: 4px; cursor: pointer;
+      font-size: 0.85rem; font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    .eq { text-align: center; margin: 0.3rem 0; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 540px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Parâmetros do Modelo de Spence</h3>
+
+    <div class="slider-group">
+      <label>Produtividade alta \(\theta_H\): <span class="val" id="val-tH">2.00</span></label>
+      <input type="range" id="slider-tH" min="1.2" max="4" step="0.1" value="2">
+    </div>
+
+    <div class="slider-group">
+      <label>Produtividade baixa \(\theta_L\): <span class="val" id="val-tL">1.00</span></label>
+      <input type="range" id="slider-tL" min="0.5" max="2" step="0.1" value="1">
+    </div>
+
+    <div class="slider-group">
+      <label>Prior tipo H (\(p\)): <span class="val" id="val-p">0.50</span></label>
+      <input type="range" id="slider-p" min="0.05" max="0.95" step="0.05" value="0.5">
+    </div>
+
+    <div style="margin-top:0.6rem; margin-bottom:0.6rem;">
+      <div class="legend-item"><span class="legend-swatch" style="background:#C8102E;"></span> IC tipo L (limite inferior de \(e^*\))</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#1565c0;"></span> IC tipo H (limite superior de \(e^*\))</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#00897b;"></span> Região de equilíbrios separadores</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#ff9800; height:3px; border-top:2px dashed #ff9800;"></span> Salário pooling</div>
+    </div>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Modelo de Spence com custo c(e,theta) = e/theta
+  // Eq separador: tipo L escolhe e=0, salário=thetaL
+  //               tipo H escolhe e=e*, salário=thetaH
+  // IC_L: thetaL >= thetaH - e*/thetaL  =>  e* >= thetaL*(thetaH - thetaL)
+  // IC_H: thetaH - e*/thetaH >= thetaL  =>  e* <= thetaH*(thetaH - thetaL)
+  // Cho-Kreps selects e* = e_min = thetaL*(thetaH - thetaL)
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-0.3, 5, 5.5, -0.5],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false,
+    keepaspectratio: false
+  });
+
+  // Axes
+  board.create('axis', [[0,0],[5,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 1 },
+    name: '', withLabel: false
+  });
+  board.create('axis', [[0,0],[0,5]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 1 },
+    name: '', withLabel: false
+  });
+
+  board.create('text', [-0.3*0.6, 5/2, '<b><i>w</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
+  board.create('text', [5.5/2, -0.35, '<b><i>e</i></b> (educação)'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+
+  function getState() {
+    return {
+      tH: parseFloat(document.getElementById('slider-tH').value),
+      tL: parseFloat(document.getElementById('slider-tL').value),
+      p:  parseFloat(document.getElementById('slider-p').value)
+    };
+  }
+
+  // Indifference curve of type theta through point (e0, w0): w = w0 + (e - e0)/theta
+  // => w(e) = w0 + (e - e0)/theta
+  // Type L indifference curve through (0, thetaL): w = thetaL + e/thetaL
+  var icL = board.create('functiongraph', [
+    function(e) {
+      var s = getState();
+      return s.tL + e / s.tL;
+    }, 0, 5
+  ], { strokeColor: '#C8102E', strokeWidth: 2, name: '' });
+
+  // Type H indifference curve through (0, thetaL): w = thetaL + e/thetaH
+  var icH = board.create('functiongraph', [
+    function(e) {
+      var s = getState();
+      return s.tL + e / s.tH;
+    }, 0, 5
+  ], { strokeColor: '#1565c0', strokeWidth: 2, name: '' });
+
+  // Wage lines
+  // w = thetaH (separating wage for H)
+  var wH_line = board.create('functiongraph', [
+    function(e) { return getState().tH; }, 0, 5
+  ], { strokeColor: '#333', strokeWidth: 1, dash: 3 });
+
+  // w = thetaL (separating wage for L)
+  var wL_line = board.create('functiongraph', [
+    function(e) { return getState().tL; }, 0, 5
+  ], { strokeColor: '#333', strokeWidth: 1, dash: 3 });
+
+  // w = pooling wage
+  var wPool_line = board.create('functiongraph', [
+    function(e) {
+      var s = getState();
+      return s.p * s.tH + (1-s.p) * s.tL;
+    }, 0, 5
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  // Shaded region of separating equilibria (between e_min and e_max on the w=thetaH line)
+  // e_min = thetaL * (thetaH - thetaL)
+  // e_max = thetaH * (thetaH - thetaL)
+  var sepRegion = board.create('curve', [[], []], {
+    strokeWidth: 0, fillColor: '#00897b', fillOpacity: 0.2, vertices: []
+  });
+
+  // We'll draw the region as a polygon
+  var sepPoly = board.create('polygon', [
+    function() { var s = getState(); var eMin = s.tL*(s.tH-s.tL); return [eMin, s.tH]; },
+    function() { var s = getState(); var eMax = s.tH*(s.tH-s.tL); return [eMax, s.tH]; },
+    function() { var s = getState(); var eMax = s.tH*(s.tH-s.tL); return [eMax, s.tH - 0.05]; },
+    function() { var s = getState(); var eMin = s.tL*(s.tH-s.tL); return [eMin, s.tH - 0.05]; }
+  ], {
+    fillColor: '#00897b', fillOpacity: 0.2,
+    borders: { strokeWidth: 0 },
+    vertices: { visible: false }
+  });
+
+  // Point A: type L at (0, thetaL)
+  var ptA = board.create('point', [
+    0,
+    function() { return getState().tL; }
+  ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: 'L',
+       fixed: true, label: { fontSize: 13, offset: [-18, 5], color: '#C8102E' } });
+
+  // Point B: type H at (e*, thetaH) — Cho-Kreps selection (e_min)
+  var ptB = board.create('point', [
+    function() { var s = getState(); return s.tL*(s.tH - s.tL); },
+    function() { return getState().tH; }
+  ], { size: 5, fillColor: '#00897b', strokeColor: '#00897b', name: 'H (Cho-Kreps)',
+       fixed: true, label: { fontSize: 12, offset: [8, 10], color: '#00897b' } });
+
+  // Point P: pooling at (0, w_pool)
+  var ptP = board.create('point', [
+    0,
+    function() { var s = getState(); return s.p*s.tH + (1-s.p)*s.tL; }
+  ], { size: 4, fillColor: '#ff9800', strokeColor: '#ff9800', name: 'Pool',
+       fixed: true, label: { fontSize: 11, offset: [-30, -5], color: '#ff9800' } });
+
+  // Labels on wage lines
+  board.create('text', [
+    5.1, function() { return getState().tH; }, function() { return '\\(w = \\theta_H\\)'; }
+  ], { fontSize: 11, color: '#555', fixed: true });
+
+  board.create('text', [
+    5.1, function() { return getState().tL; }, function() { return '\\(w = \\theta_L\\)'; }
+  ], { fontSize: 11, color: '#555', fixed: true });
+
+  board.create('text', [
+    5.1, function() { var s = getState(); return s.p*s.tH + (1-s.p)*s.tL; },
+    function() { return '\\(w_P\\)'; }
+  ], { fontSize: 11, color: '#ff9800', fixed: true });
+
+  // Dashed vertical at e*
+  board.create('segment', [
+    function() { var s = getState(); return [s.tL*(s.tH-s.tL), 0]; },
+    function() { var s = getState(); return [s.tL*(s.tH-s.tL), s.tH]; }
+  ], { strokeColor: '#00897b', strokeWidth: 1, dash: 3 });
+
+  board.create('text', [
+    function() { var s = getState(); return s.tL*(s.tH-s.tL); },
+    -0.25, function() { var s = getState(); return '\\(e^*=' + (s.tL*(s.tH-s.tL)).toFixed(1) + '\\)'; }
+  ], { fontSize: 10, color: '#00897b', anchorX: 'middle', fixed: true });
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-tH').textContent = s.tH.toFixed(2);
+    document.getElementById('val-tL').textContent = s.tL.toFixed(2);
+    document.getElementById('val-p').textContent = s.p.toFixed(2);
+
+    // Ensure tH > tL
+    if (s.tH <= s.tL) {
+      document.getElementById('slider-tH').value = s.tL + 0.1;
+      s.tH = s.tL + 0.1;
+      document.getElementById('val-tH').textContent = s.tH.toFixed(2);
+    }
+
+    var eMin = s.tL * (s.tH - s.tL);
+    var eMax = s.tH * (s.tH - s.tL);
+    var wPool = s.p * s.tH + (1 - s.p) * s.tL;
+    var costSig = eMin / s.tH;
+
+    var separates = eMin < eMax && eMin >= 0;
+    var eqType = separates ? 'Separador (Cho-Kreps: \\(e^* = ' + eMin.toFixed(2) + '\\))' : 'Sem separação possível';
+
+    var html = '<strong>Equilíbrio:</strong> ' + eqType + '<br>';
+    html += '\\(e_{\\min} = \\theta_L(\\theta_H - \\theta_L) = ' + eMin.toFixed(2) + '\\)<br>';
+    html += '\\(e_{\\max} = \\theta_H(\\theta_H - \\theta_L) = ' + eMax.toFixed(2) + '\\)<br>';
+    html += 'Custo da sinalização (H): \\(' + costSig.toFixed(2) + '\\)<br>';
+    html += 'Salário pooling: \\(w_P = ' + wPool.toFixed(2) + '\\)<br>';
+    if (separates) {
+      var gain = s.tH - wPool;
+      html += '<span style="color:#00897b;">Ganho do separador vs pool (H): \\(' + gain.toFixed(2) + ' - ' + costSig.toFixed(2) + ' = ' + (gain - costSig).toFixed(2) + '\\)</span>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-tH').value = 2;
+    document.getElementById('slider-tL').value = 1;
+    document.getElementById('slider-p').value = 0.5;
+    update();
+  }
+
+  document.getElementById('slider-tH').addEventListener('input', update);
+  document.getElementById('slider-tL').addEventListener('input', update);
+  document.getElementById('slider-p').addEventListener('input', update);
+
+  update();
+</script>
+</body>
+</html>

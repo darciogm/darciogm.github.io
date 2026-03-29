@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+  Curva de Custo Marginal de Abatimento (MAC) — Economia Ambiental
+  Library: JSXGraph
+  Reason: Slider para meta de redução e imposto mostra equivalência Pigou vs cap-and-trade.
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custo Marginal de Abatimento</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: 0.6rem; }
+    .toggle-group label { font-size: 0.82rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Custo Marginal de Abatimento</h3>
+
+    <div class="slider-group">
+      <label>Meta de abatimento \(\bar{A}\): <span class="val" id="val-abar">50</span>%</label>
+      <input type="range" id="slider-abar" min="10" max="90" step="5" value="50">
+    </div>
+    <div class="slider-group">
+      <label>Imposto carbono \(t\): <span class="val" id="val-tax">0</span></label>
+      <input type="range" id="slider-tax" min="0" max="100" step="5" value="0">
+    </div>
+
+    <div class="toggle-group">
+      <strong style="font-size:0.82rem;">Instrumento:</strong>
+      <label><input type="radio" name="inst" value="cap" checked style="accent-color:#C8102E;"> Cap-and-trade (meta de quantidade)</label>
+      <label><input type="radio" name="inst" value="tax" style="accent-color:#C8102E;"> Imposto Pigouviano (meta de preço)</label>
+    </div>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // MAC curve: MAC(A) = 2*A (linear, simple)
+  // where A = abatement in % of total emissions (0-100)
+  // Total cost = integral of MAC from 0 to A = A^2
+  // Under cap: firm abates until MAC = permit price
+  // Under tax: firm abates until MAC = t
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-8, 220, 108, -20],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+
+  board.create('axis', [[0,0],[105,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 }
+  });
+  board.create('axis', [[0,0],[0,210]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 }
+  });
+  board.create('text', [-7, 105, '<b>MAC<br>(R$/ton)</b>'], { fontSize: 11, fixed: true, anchorX: 'middle', rotate: 90 });
+  board.create('text', [52, -14, '<b>Abatimento (%)</b>'], { fontSize: 11, fixed: true, anchorX: 'middle' });
+
+  // MAC curve
+  board.create('functiongraph', [function(A) { return 2 * A; }, 0, 100], {
+    strokeColor: '#C8102E', strokeWidth: 2.5
+  });
+  board.create('text', [95, 195, 'MAC'], { fontSize: 11, color: '#C8102E', fixed: true });
+
+  // Cap-and-trade: vertical at Abar, price = MAC(Abar) = 2*Abar
+  var capLine = board.create('segment', [
+    function() { var a = parseFloat(document.getElementById('slider-abar').value); return [a, 0]; },
+    function() { var a = parseFloat(document.getElementById('slider-abar').value); return [a, 2*a]; }
+  ], { strokeColor: '#00897b', strokeWidth: 2, dash: 3 });
+
+  // Tax: horizontal at t
+  var taxLine = board.create('functiongraph', [
+    function(A) { return parseFloat(document.getElementById('slider-tax').value); }, 0, 100
+  ], { strokeColor: '#1565c0', strokeWidth: 2, dash: 3 });
+
+  // Cost area (under MAC up to abatement level)
+  board.create('curve', [
+    function(t) {
+      var inst = document.querySelector('input[name="inst"]:checked').value;
+      var abar = parseFloat(document.getElementById('slider-abar').value);
+      var tax = parseFloat(document.getElementById('slider-tax').value);
+      var A = inst === 'cap' ? abar : Math.min(tax/2, 100);
+      return A * t;
+    },
+    function(t) {
+      var inst = document.querySelector('input[name="inst"]:checked').value;
+      var abar = parseFloat(document.getElementById('slider-abar').value);
+      var tax = parseFloat(document.getElementById('slider-tax').value);
+      var A = inst === 'cap' ? abar : Math.min(tax/2, 100);
+      return 2 * A * t;
+    },
+    0, 1
+  ], { strokeWidth: 0, fillColor: '#ff9800', fillOpacity: 0.15 });
+
+  // Intersection point
+  board.create('point', [
+    function() {
+      var inst = document.querySelector('input[name="inst"]:checked').value;
+      var abar = parseFloat(document.getElementById('slider-abar').value);
+      var tax = parseFloat(document.getElementById('slider-tax').value);
+      return inst === 'cap' ? abar : Math.min(tax/2, 100);
+    },
+    function() {
+      var inst = document.querySelector('input[name="inst"]:checked').value;
+      var abar = parseFloat(document.getElementById('slider-abar').value);
+      var tax = parseFloat(document.getElementById('slider-tax').value);
+      var A = inst === 'cap' ? abar : Math.min(tax/2, 100);
+      return 2 * A;
+    }
+  ], { size: 5, fillColor: '#ff9800', strokeColor: '#ff9800', name: '', fixed: true });
+
+  function update() {
+    var abar = parseFloat(document.getElementById('slider-abar').value);
+    var tax = parseFloat(document.getElementById('slider-tax').value);
+    var inst = document.querySelector('input[name="inst"]:checked').value;
+    document.getElementById('val-abar').textContent = abar;
+    document.getElementById('val-tax').textContent = tax;
+
+    var A, price, totalCost;
+    if (inst === 'cap') {
+      A = abar;
+      price = 2 * A;
+      totalCost = A * A;
+    } else {
+      A = Math.min(tax / 2, 100);
+      price = tax;
+      totalCost = A * A;
+    }
+
+    var html = '<strong>Instrumento: ' + (inst === 'cap' ? 'Cap-and-trade' : 'Imposto Pigouviano') + '</strong><br>';
+    html += 'Abatimento efetivo: \\(' + A.toFixed(0) + '\\%\\)<br>';
+    html += 'Preço do carbono: \\(R\\$ ' + price.toFixed(0) + '\\)/ton<br>';
+    html += '<span style="color:#ff9800;">Custo total de abatimento: \\(R\\$ ' + totalCost.toFixed(0) + '\\)</span><br>';
+
+    if (inst === 'cap') {
+      html += '<em>Quantidade é certa; preço se ajusta.</em>';
+    } else {
+      html += '<em>Preço é certo; quantidade se ajusta.</em>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-abar').value = 50;
+    document.getElementById('slider-tax').value = 0;
+    document.querySelector('input[name="inst"][value="cap"]').checked = true;
+    update();
+  }
+
+  ['slider-abar','slider-tax'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  document.querySelectorAll('input[name="inst"]').forEach(function(el) {
+    el.addEventListener('change', update);
+  });
+  update();
+</script>
+</body>
+</html>

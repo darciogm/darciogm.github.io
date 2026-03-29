@@ -30,6 +30,14 @@ O SCC é, em essência, o **imposto pigouviano ótimo** sobre carbono — o valo
 
 As estimativas do SCC variam enormemente dependendo de três parâmetros cruciais: (i) a sensibilidade climática (quanto o aquecimento responde às emissões); (ii) a função de dano (quanto o aquecimento reduz o PIB); e (iii) a taxa de desconto. A estimativa do governo dos EUA (IWG, 2021) é de aproximadamente **US\$ 51 por tonelada de \(\text{CO}_2\)** (em dólares de 2020, taxa de desconto de 3%). Estimativas com taxas de desconto mais baixas podem ultrapassar US\$ 200/tCO₂.
 
+No gráfico interativo abaixo, ajuste a taxa de desconto para ver como o SCC varia dramaticamente — o coração do debate Nordhaus vs. Stern. A mesma ciência climática produz prescrições de política radicalmente diferentes dependendo de quanto pesamos o futuro.
+
+<iframe src="/micro-book/graficos/cap24/sccc-desconto.html" title="Figura 24.3 — Custo Social do Carbono e Taxa de Desconto" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 24.3 — O SCC como Função da Taxa de Desconto.** A curva cai dramaticamente com \(r\): Stern (\(r \approx 1{,}4\%\)) obtém SCC várias vezes maior que Nordhaus (\(r \approx 3\%\)). O debate sobre a taxa de desconto é, na essência, um debate ético sobre quanto pesamos o bem-estar de gerações futuras.
+</div>
+
 !!! definition "Custo social do carbono (SCC)"
     O **custo social do carbono** é o valor presente dos danos econômicos futuros causados pela emissão de uma tonelada adicional de \(\text{CO}_2\). Equivale ao imposto pigouviano ótimo sobre carbono. A estimação do SCC requer um **modelo de avaliação integrada** (IAM) que combine modelos climáticos (relação emissões → aquecimento) com modelos econômicos (relação aquecimento → danos). As estimativas são extremamente sensíveis à taxa de desconto, à sensibilidade climática e à especificação da função de dano.
 

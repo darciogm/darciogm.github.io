@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+  Jogos Repetidos — Limiar de cooperação δ*
+  Library: JSXGraph
+  Reason: Sliders para payoffs T, R, P mostram como δ* muda e
+          a região de cooperação no espaço (δ, payoff).
+  Chapter 9b — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limiar de Cooperação em Jogos Repetidos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; margin-bottom: 0.2rem; }
+    .legend-swatch { width: 20px; height: 3px; display: inline-block; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Limiar de Cooperação \(\delta^*\)</h3>
+
+    <div class="slider-group">
+      <label>Tentação \(T\): <span class="val" id="val-T">5</span></label>
+      <input type="range" id="slider-T" min="2" max="10" step="0.5" value="5">
+    </div>
+    <div class="slider-group">
+      <label>Cooperação \(R\): <span class="val" id="val-R">3</span></label>
+      <input type="range" id="slider-R" min="1" max="8" step="0.5" value="3">
+    </div>
+    <div class="slider-group">
+      <label>Punição \(P\): <span class="val" id="val-P">1</span></label>
+      <input type="range" id="slider-P" min="0" max="5" step="0.5" value="1">
+    </div>
+
+    <p style="font-size:0.78rem; color:#666; margin-top:0.3rem;">
+      Payoffs: \(T > R > P > S\) (Dilema dos Prisioneiros).<br>
+      Cooperação sustentável se \(\delta \geq \delta^* = \frac{T-R}{T-P}\).
+    </p>
+
+    <div style="margin-top:0.6rem; margin-bottom:0.6rem;">
+      <div class="legend-item"><span class="legend-swatch" style="background:#00897b; height:10px; opacity:0.3;"></span> Região de cooperação</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#C8102E;"></span> Limiar \(\delta^*\)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#1565c0;"></span> Payoff de cooperação \(R/(1-\delta)\)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#ff9800;"></span> Payoff de desvio \(T + \delta P/(1-\delta)\)</div>
+    </div>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Cooperation payoff: R/(1-δ)
+  // Deviation payoff: T + δP/(1-δ)
+  // Cooperation iff δ >= δ* = (T-R)/(T-P)
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-0.08, 55, 1.08, -5],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+
+  board.create('axis', [[0,0],[1,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 0.2 }
+  });
+  board.create('axis', [[0,0],[0,50]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 }
+  });
+  board.create('text', [-0.06, 27, '<b>Payoff</b>'], { fontSize: 11, fixed: true, anchorX: 'middle', rotate: 90 });
+  board.create('text', [0.5, -3.5, '<b>\\(\\delta\\) (fator de desconto)</b>'], { fontSize: 11, fixed: true, anchorX: 'middle' });
+
+  function getS() {
+    return {
+      T: parseFloat(document.getElementById('slider-T').value),
+      R: parseFloat(document.getElementById('slider-R').value),
+      P: parseFloat(document.getElementById('slider-P').value)
+    };
+  }
+
+  // Cooperation region (shaded)
+  var nPts = 80;
+  board.create('curve', [
+    function() {
+      var s = getS();
+      var ds = Math.max(0.01, (s.T - s.R) / (s.T - s.P));
+      var pts = [];
+      // Bottom edge: from δ* to 0.99 at y=0
+      for (var i = 0; i <= nPts; i++) {
+        var d = ds + (0.99 - ds) * i / nPts;
+        pts.push(d);
+      }
+      // Top edge: from 0.99 back to δ*
+      for (var i = nPts; i >= 0; i--) {
+        var d = ds + (0.99 - ds) * i / nPts;
+        pts.push(d);
+      }
+      return pts;
+    },
+    function() {
+      var s = getS();
+      var ds = Math.max(0.01, (s.T - s.R) / (s.T - s.P));
+      var pts = [];
+      for (var i = 0; i <= nPts; i++) {
+        pts.push(0);
+      }
+      for (var i = nPts; i >= 0; i--) {
+        var d = ds + (0.99 - ds) * i / nPts;
+        pts.push(Math.min(50, s.R / (1 - d)));
+      }
+      return pts;
+    }
+  ], { strokeWidth: 0, fillColor: '#00897b', fillOpacity: 0.15, vertices: { visible: false } });
+
+  // Cooperation payoff curve: R/(1-δ)
+  board.create('functiongraph', [
+    function(d) { var s = getS(); return (d >= 0.01 && d < 0.99) ? s.R / (1 - d) : NaN; }, 0.01, 0.95
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Deviation payoff curve: T + δP/(1-δ)
+  board.create('functiongraph', [
+    function(d) { var s = getS(); return (d >= 0.01 && d < 0.99) ? s.T + d * s.P / (1 - d) : NaN; }, 0.01, 0.95
+  ], { strokeColor: '#ff9800', strokeWidth: 2.5 });
+
+  // δ* vertical line
+  board.create('line', [
+    function() { var s = getS(); return [(s.T - s.R) / (s.T - s.P), 0]; },
+    function() { var s = getS(); return [(s.T - s.R) / (s.T - s.P), 50]; }
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2, straightFirst: false, straightLast: false, point1: { visible: false }, point2: { visible: false } });
+
+  // δ* label
+  board.create('text', [
+    function() { return getS().T > getS().P ? (getS().T - getS().R) / (getS().T - getS().P) : 0.5; },
+    47,
+    function() { var s = getS(); return '\\(\\delta^* = ' + ((s.T - s.R) / (s.T - s.P)).toFixed(2) + '\\)'; }
+  ], { fontSize: 11, color: '#C8102E', fixed: true, anchorX: 'middle' });
+
+  // Intersection point
+  board.create('point', [
+    function() { var s = getS(); return (s.T - s.R) / (s.T - s.P); },
+    function() { var s = getS(); var ds = (s.T - s.R) / (s.T - s.P); return s.R / (1 - ds); }
+  ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
+
+  function update() {
+    var s = getS();
+    // Enforce T > R > P
+    if (s.R >= s.T) { s.R = s.T - 0.5; document.getElementById('slider-R').value = s.R; }
+    if (s.P >= s.R) { s.P = s.R - 0.5; document.getElementById('slider-P').value = s.P; }
+
+    document.getElementById('val-T').textContent = s.T.toFixed(1);
+    document.getElementById('val-R').textContent = s.R.toFixed(1);
+    document.getElementById('val-P').textContent = s.P.toFixed(1);
+
+    var dstar = (s.T - s.R) / (s.T - s.P);
+
+    var html = '<strong>Grim Trigger:</strong><br>';
+    html += '\\(\\delta^* = \\frac{T-R}{T-P} = \\frac{' + (s.T - s.R).toFixed(1) + '}{' + (s.T - s.P).toFixed(1) + '} = ' + dstar.toFixed(3) + '\\)<br>';
+    if (dstar < 0.5) {
+      html += '<span style="color:#00897b;">Cooperação relativamente fácil de sustentar.</span><br>';
+    } else if (dstar < 0.8) {
+      html += '<span style="color:#ff9800;">Cooperação requer paciência moderada.</span><br>';
+    } else {
+      html += '<span style="color:#C8102E;">Cooperação muito difícil — requer \(\\delta\) alto.</span><br>';
+    }
+    html += '<em>A cooperação emerge quando a curva azul cruza a laranja.</em>';
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-T').value = 5;
+    document.getElementById('slider-R').value = 3;
+    document.getElementById('slider-P').value = 1;
+    update();
+  }
+
+  ['slider-T','slider-R','slider-P'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+  VPL e Taxa de Juros — Sensibilidade do investimento
+  Library: JSXGraph
+  Reason: Sliders para taxa de juros e fluxos de caixa mostram VPL
+          e como juros altos "esmagam" projetos de longo prazo.
+  Chapter 18 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPL e Taxa de Juros</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>VPL e Taxa de Juros</h3>
+
+    <div class="slider-group">
+      <label>Investimento \(I_0\) (mil): <span class="val" id="val-I">100</span></label>
+      <input type="range" id="slider-I" min="50" max="200" step="10" value="100">
+    </div>
+    <div class="slider-group">
+      <label>Fluxo anual \(FC\) (mil): <span class="val" id="val-FC">25</span></label>
+      <input type="range" id="slider-FC" min="10" max="60" step="1" value="25">
+    </div>
+    <div class="slider-group">
+      <label>Horizonte \(T\) (anos): <span class="val" id="val-T">10</span></label>
+      <input type="range" id="slider-T" min="3" max="30" step="1" value="10">
+    </div>
+
+    <p style="font-size:0.78rem; color:#666; margin-top:0.3rem;">
+      O gráfico mostra o VPL como função de \(r\).<br>
+      A TIR é o \(r\) onde a curva cruza zero.
+    </p>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // VPL(r) = -I0 + FC * [1 - (1+r)^{-T}] / r  (anuidade)
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-0.02, 250, 0.32, -120],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+
+  board.create('axis', [[0,0],[0.3,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 0.05,
+      generateLabelText: function(tick, zero) { return (tick.usrCoords[1]*100).toFixed(0) + '%'; }
+    }
+  });
+  board.create('axis', [[0,-100],[0,240]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 50 }
+  });
+  board.create('text', [-0.015, 70, '<b>VPL (mil R$)</b>'], { fontSize: 10, fixed: true, anchorX: 'middle', rotate: 90 });
+  board.create('text', [0.15, -100, '<b>Taxa de juros \\(r\\)</b>'], { fontSize: 10, fixed: true, anchorX: 'middle' });
+
+  // Zero line
+  board.create('line', [[0,0],[0.3,0]], {
+    strokeColor: '#999', strokeWidth: 1, dash: 3,
+    straightFirst: false, straightLast: false,
+    point1: { visible: false }, point2: { visible: false }
+  });
+
+  function getS() {
+    return {
+      I: parseFloat(document.getElementById('slider-I').value),
+      FC: parseFloat(document.getElementById('slider-FC').value),
+      T: parseInt(document.getElementById('slider-T').value)
+    };
+  }
+
+  function vpl(r, s) {
+    if (r < 0.001) return -s.I + s.FC * s.T;
+    return -s.I + s.FC * (1 - Math.pow(1 + r, -s.T)) / r;
+  }
+
+  // VPL curve
+  board.create('functiongraph', [
+    function(r) { return vpl(r, getS()); }, 0.001, 0.3
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  // TIR point (find by bisection)
+  function findIRR(s) {
+    var lo = 0, hi = 1, mid;
+    for (var i = 0; i < 50; i++) {
+      mid = (lo + hi) / 2;
+      if (vpl(mid, s) > 0) lo = mid; else hi = mid;
+    }
+    return mid;
+  }
+
+  board.create('point', [
+    function() { return findIRR(getS()); },
+    0
+  ], { size: 6, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true });
+
+  board.create('text', [
+    function() { return findIRR(getS()) + 0.01; },
+    15,
+    function() { return 'TIR = ' + (findIRR(getS()) * 100).toFixed(1) + '%'; }
+  ], { fontSize: 10, color: '#00897b', fixed: true });
+
+  // Brazil rate marker
+  board.create('line', [
+    function() { return [0.07, -100]; },
+    function() { return [0.07, 240]; }
+  ], { strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2, straightFirst: false, straightLast: false, point1: { visible: false }, point2: { visible: false } });
+  board.create('text', [0.075, 220, 'Brasil (~7%)'], { fontSize: 9, color: '#ff9800', fixed: true });
+
+  // US rate marker
+  board.create('line', [
+    function() { return [0.02, -100]; },
+    function() { return [0.02, 240]; }
+  ], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 2, straightFirst: false, straightLast: false, point1: { visible: false }, point2: { visible: false } });
+  board.create('text', [0.025, 230, 'EUA (~2%)'], { fontSize: 9, color: '#1565c0', fixed: true });
+
+  function update() {
+    var s = getS();
+    document.getElementById('val-I').textContent = s.I.toFixed(0);
+    document.getElementById('val-FC').textContent = s.FC.toFixed(0);
+    document.getElementById('val-T').textContent = s.T;
+
+    var irr = findIRR(s);
+    var vplBR = vpl(0.07, s);
+    var vplUS = vpl(0.02, s);
+
+    var html = '<strong>TIR:</strong> \\(' + (irr * 100).toFixed(1) + '\\%\\)<br>';
+    html += '<span style="color:#1565c0;">VPL nos EUA (\\(r=2\\%\\)): R\\$ ' + vplUS.toFixed(0) + ' mil</span><br>';
+    html += '<span style="color:#ff9800;">VPL no Brasil (\\(r=7\\%\\)): R\\$ ' + vplBR.toFixed(0) + ' mil</span><br>';
+    if (vplBR > 0 && vplUS > 0) {
+      html += '<span style="color:#00897b;">Viável nos dois países.</span>';
+    } else if (vplBR <= 0 && vplUS > 0) {
+      html += '<span style="color:#C8102E;"><strong>Viável nos EUA, inviável no Brasil!</strong></span><br>';
+      html += '<em>Juros altos "esmagam" projetos de longo prazo.</em>';
+    } else {
+      html += '<span style="color:#C8102E;">Inviável em ambos — fluxos insuficientes.</span>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-I').value = 100;
+    document.getElementById('slider-FC').value = 25;
+    document.getElementById('slider-T').value = 10;
+    update();
+  }
+
+  ['slider-I','slider-FC','slider-T'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

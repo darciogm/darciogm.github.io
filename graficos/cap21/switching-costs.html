@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+  Switching Costs e Lock-in — Economia Digital
+  Library: JSXGraph
+  Reason: Slider de custo de troca mostra como o lock-in sustenta preços acima do competitivo.
+  Chapter 21 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custos de Troca e Lock-in</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Custos de Troca e Lock-in</h3>
+
+    <div class="slider-group">
+      <label>Custo de troca \(s\): <span class="val" id="val-s">3.00</span></label>
+      <input type="range" id="slider-s" min="0" max="8" step="0.25" value="3">
+    </div>
+    <div class="slider-group">
+      <label>Custo marginal \(c\): <span class="val" id="val-c">2.00</span></label>
+      <input type="range" id="slider-c" min="0.5" max="5" step="0.25" value="2">
+    </div>
+    <div class="slider-group">
+      <label>Valor do produto \(v\): <span class="val" id="val-v">10.00</span></label>
+      <input type="range" id="slider-v" min="5" max="15" step="0.5" value="10">
+    </div>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Model: incumbent can charge up to c + s (rival's price + switching cost)
+  // Consumer switches if p_incumbent > p_rival + s
+  // In Bertrand with switching costs: p* = c + s (for locked-in consumers)
+  // New consumers: Bertrand price = c (no lock-in)
+  // Profit from locked-in: (p* - c) * Q_locked = s * Q_locked
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-1.5, 16, 12, -1.5],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+
+  board.create('axis', [[0,0],[11,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 2 }
+  });
+  board.create('axis', [[0,0],[0,15]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 2 }
+  });
+  board.create('text', [-1.2, 7.5, '<b><i>p</i></b>'], { fontSize: 14, fixed: true, anchorX: 'middle', rotate: 90 });
+  board.create('text', [5.5, -1, '<b><i>Q</i></b>'], { fontSize: 14, fixed: true, anchorX: 'middle' });
+
+  function getS() {
+    return {
+      s: parseFloat(document.getElementById('slider-s').value),
+      c: parseFloat(document.getElementById('slider-c').value),
+      v: parseFloat(document.getElementById('slider-v').value)
+    };
+  }
+
+  // Demand: Q = v - p (for simplicity, linear)
+  board.create('functiongraph', [
+    function(Q) { return getS().v - Q; }, 0, function() { return getS().v; }
+  ], { strokeColor: '#C8102E', strokeWidth: 2 });
+
+  // MC line
+  board.create('functiongraph', [
+    function(Q) { return getS().c; }, 0, 11
+  ], { strokeColor: '#888', strokeWidth: 1.5, dash: 3 });
+
+  // Lock-in price: p = c + s
+  board.create('functiongraph', [
+    function(Q) { return getS().c + getS().s; }, 0, 11
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2 });
+
+  // Competitive price: p = c
+  board.create('text', [10.5, function() { return getS().c + 0.3; }, '\\(c\\)'], { fontSize: 10, color: '#888', fixed: true });
+  board.create('text', [10.5, function() { return getS().c + getS().s + 0.3; }, '\\(c + s\\)'], { fontSize: 10, color: '#C8102E', fixed: true });
+
+  // Lock-in profit area
+  board.create('polygon', [
+    function() { return [0, getS().c]; },
+    function() { var st = getS(); return [st.v - st.c - st.s, st.c]; },
+    function() { var st = getS(); return [st.v - st.c - st.s, st.c + st.s]; },
+    function() { return [0, getS().c + getS().s]; }
+  ], {
+    fillColor: '#C8102E', fillOpacity: 0.15,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }
+  });
+
+  // Deadweight loss triangle
+  board.create('polygon', [
+    function() { var st = getS(); return [st.v - st.c - st.s, st.c]; },
+    function() { var st = getS(); return [st.v - st.c, st.c]; },
+    function() { var st = getS(); return [st.v - st.c - st.s, st.c + st.s]; }
+  ], {
+    fillColor: '#333', fillOpacity: 0.1,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }
+  });
+
+  // Quantity points
+  board.create('point', [
+    function() { var st = getS(); return st.v - st.c - st.s; },
+    function() { return getS().c + getS().s; }
+  ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: 'Lock-in', fixed: true,
+       label: { fontSize: 11, offset: [8, 8], color: '#C8102E' } });
+
+  board.create('point', [
+    function() { return getS().v - getS().c; },
+    function() { return getS().c; }
+  ], { size: 4, fillColor: '#00897b', strokeColor: '#00897b', name: 'Sem troca', fixed: true,
+       label: { fontSize: 10, offset: [8, -10], color: '#00897b' } });
+
+  // Arrow showing s
+  board.create('arrow', [
+    function() { var st = getS(); return [-0.5, st.c]; },
+    function() { var st = getS(); return [-0.5, st.c + st.s]; }
+  ], { strokeColor: '#1565c0', strokeWidth: 2, lastArrow: { type: 2, size: 5 } });
+  board.create('text', [-1.3, function() { return getS().c + getS().s/2; }, '\\(s\\)'], {
+    fontSize: 11, color: '#1565c0', fixed: true, anchorX: 'middle'
+  });
+
+  function update() {
+    var st = getS();
+    document.getElementById('val-s').textContent = st.s.toFixed(2);
+    document.getElementById('val-c').textContent = st.c.toFixed(2);
+    document.getElementById('val-v').textContent = st.v.toFixed(2);
+
+    var pLock = st.c + st.s;
+    var qLock = Math.max(0, st.v - pLock);
+    var qComp = st.v - st.c;
+    var profitLock = st.s * qLock;
+    var dwl = 0.5 * st.s * (qComp - qLock);
+
+    var html = '<strong>Equilíbrio:</strong><br>';
+    html += 'Preço competitivo: \\(p = c = ' + st.c.toFixed(1) + '\\)<br>';
+    html += 'Preço lock-in: \\(p = c + s = ' + pLock.toFixed(1) + '\\)<br>';
+    html += '<span style="color:#C8102E;">Lucro do incumbente: \\(' + profitLock.toFixed(1) + '\\)</span><br>';
+    html += 'Peso morto: \\(' + dwl.toFixed(1) + '\\)<br>';
+    if (st.s === 0) {
+      html += '<span style="color:#00897b;">Sem custo de troca: preço = CMg (Bertrand)</span>';
+    } else {
+      html += '<em>O custo de troca cria poder de mercado para o incumbente.</em>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-s').value = 3;
+    document.getElementById('slider-c').value = 2;
+    document.getElementById('slider-v').value = 10;
+    update();
+  }
+
+  ['slider-s','slider-c','slider-v'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

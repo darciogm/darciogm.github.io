@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+  Regra de Hotelling — Extração ótima de recurso exaurível
+  Library: JSXGraph
+  Reason: Sliders para taxa de juros e estoque mostram trajetória de preço e extração.
+  Chapter 18 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regra de Hotelling</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .panels { flex: 1 1 440px; max-width: 540px; }
+    #jxgbox1 { width: 100%; height: 220px; border: 1px solid #ddd; border-radius: 6px 6px 0 0; }
+    #jxgbox2 { width: 100%; height: 220px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .panels, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div class="panels">
+    <div id="jxgbox1"></div>
+    <div id="jxgbox2"></div>
+  </div>
+  <div class="controls">
+    <h3>Regra de Hotelling</h3>
+
+    <div class="slider-group">
+      <label>Taxa de juros \(r\): <span class="val" id="val-r">0.05</span></label>
+      <input type="range" id="slider-r" min="0.01" max="0.15" step="0.005" value="0.05">
+    </div>
+    <div class="slider-group">
+      <label>Preço inicial \(p_0\): <span class="val" id="val-p0">20</span></label>
+      <input type="range" id="slider-p0" min="5" max="50" step="1" value="20">
+    </div>
+    <div class="slider-group">
+      <label>Preço de backstop \(\bar{p}\): <span class="val" id="val-pbar">100</span></label>
+      <input type="range" id="slider-pbar" min="50" max="200" step="5" value="100">
+    </div>
+
+    <p style="font-size:0.8rem; color:#555; margin-top:0.4rem;">
+      Painel superior: Trajetória do preço<br>
+      Painel inferior: Extração ao longo do tempo
+    </p>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Hotelling: p(t) = p0 * exp(r*t)
+  // Extraction stops when p(t) = pbar (backstop price)
+  // T = ln(pbar/p0) / r
+  // Demand: Q(t) = max(0, 100 - p(t))
+
+  // Panel 1: Price path
+  var b1 = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-5, 220, 80, -15],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+  b1.create('axis', [[0,0],[75,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 10 }
+  });
+  b1.create('axis', [[0,0],[0,210]], {
+    ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6, 0] }, minorTicks: 0, ticksDistance: 50 }
+  });
+  b1.create('text', [-4, 105, '<b><i>p(t)</i></b>'], { fontSize: 11, fixed: true, anchorX: 'middle', rotate: 90 });
+  b1.create('text', [37, -10, '<b><i>t</i></b> (anos)'], { fontSize: 11, fixed: true, anchorX: 'middle' });
+
+  function getS() {
+    return {
+      r: parseFloat(document.getElementById('slider-r').value),
+      p0: parseFloat(document.getElementById('slider-p0').value),
+      pbar: parseFloat(document.getElementById('slider-pbar').value)
+    };
+  }
+
+  // Price path
+  b1.create('functiongraph', [
+    function(t) { var s = getS(); return Math.min(s.p0 * Math.exp(s.r * t), s.pbar); }, 0, 75
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  // Backstop line
+  b1.create('functiongraph', [function(t) { return getS().pbar; }, 0, 75], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 3
+  });
+  b1.create('text', [72, function() { return getS().pbar + 8; }, '\\(\\bar{p}\\)'], { fontSize: 10, color: '#ff9800', fixed: true });
+
+  // T* point
+  b1.create('point', [
+    function() { var s = getS(); return Math.log(s.pbar / s.p0) / s.r; },
+    function() { return getS().pbar; }
+  ], { size: 5, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true });
+
+  // Panel 2: Extraction
+  var b2 = JXG.JSXGraph.initBoard('jxgbox2', {
+    boundingbox: [-5, 100, 80, -10],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+  b2.create('axis', [[0,0],[75,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 10 }
+  });
+  b2.create('axis', [[0,0],[0,95]], {
+    ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6, 0] }, minorTicks: 0, ticksDistance: 20 }
+  });
+  b2.create('text', [-4, 47, '<b><i>Q(t)</i></b>'], { fontSize: 11, fixed: true, anchorX: 'middle', rotate: 90 });
+  b2.create('text', [37, -7, '<b><i>t</i></b> (anos)'], { fontSize: 11, fixed: true, anchorX: 'middle' });
+
+  b2.create('functiongraph', [
+    function(t) {
+      var s = getS();
+      var pt = s.p0 * Math.exp(s.r * t);
+      return Math.max(0, 100 - pt);
+    }, 0, 75
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  function update() {
+    var s = getS();
+    document.getElementById('val-r').textContent = s.r.toFixed(3);
+    document.getElementById('val-p0').textContent = s.p0.toFixed(0);
+    document.getElementById('val-pbar').textContent = s.pbar.toFixed(0);
+
+    var T = Math.log(s.pbar / s.p0) / s.r;
+
+    var html = '<strong>Regra de Hotelling:</strong><br>';
+    html += '\\(p(t) = p_0 e^{rt} = ' + s.p0 + ' \\cdot e^{' + s.r.toFixed(3) + 't}\\)<br>';
+    html += 'Exaustão em \\(T^* = ' + T.toFixed(1) + '\\) anos<br>';
+    html += '\\(\\dot{p}/p = r = ' + (s.r * 100).toFixed(1) + '\\%\\) a.a.<br>';
+    html += '<em>O preço do recurso cresce à taxa de juros — arbitragem intertemporal.</em>';
+
+    document.getElementById('info').innerHTML = html;
+    b1.update();
+    b2.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-r').value = 0.05;
+    document.getElementById('slider-p0').value = 20;
+    document.getElementById('slider-pbar').value = 100;
+    update();
+  }
+
+  ['slider-r','slider-p0','slider-pbar'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+  Weitzman (1974) — Preços vs Quantidades sob Incerteza
+  Library: JSXGraph
+  Reason: Sliders para inclinações de BMg e CMgA mostram quando
+          imposto (preço) domina cap-and-trade (quantidade) e vice-versa.
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weitzman — Preços vs Quantidades</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; margin-bottom: 0.2rem; }
+    .legend-swatch { width: 20px; height: 3px; display: inline-block; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Weitzman: Preços vs Quantidades</h3>
+
+    <div class="slider-group">
+      <label>Inclinação BMg (dano): <span class="val" id="val-bm">1.0</span></label>
+      <input type="range" id="slider-bm" min="0.2" max="5" step="0.2" value="1.0">
+    </div>
+    <div class="slider-group">
+      <label>Inclinação CMgA (custo): <span class="val" id="val-cm">2.0</span></label>
+      <input type="range" id="slider-cm" min="0.5" max="5" step="0.2" value="2.0">
+    </div>
+    <div class="slider-group">
+      <label>Choque de custo \(\varepsilon\): <span class="val" id="val-eps">20</span></label>
+      <input type="range" id="slider-eps" min="0" max="50" step="2" value="20">
+    </div>
+
+    <p style="font-size:0.78rem; color:#666; margin-top:0.3rem;">
+      BMg: benefício marginal da redução (dano evitado).<br>
+      CMgA: custo marginal de abatimento.<br>
+      O choque desloca CMgA para cima.
+    </p>
+
+    <div style="margin-top:0.6rem; margin-bottom:0.6rem;">
+      <div class="legend-item"><span class="legend-swatch" style="background:#00897b;"></span> BMg (benefício marginal)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#C8102E;"></span> CMgA (esperado)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#C8102E; height:1px; border-top:2px dashed #C8102E;"></span> CMgA (com choque)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#1565c0; height:10px; opacity:0.3;"></span> DWL imposto</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#ff9800; height:10px; opacity:0.3;"></span> DWL cap</div>
+    </div>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // BMg(A) = b0 - bm*A (decreasing benefit)
+  // CMgA(A) = cm*A (increasing cost)
+  // With shock: CMgA(A) = cm*A + eps
+  // Optimal: BMg = CMgA => b0 - bm*A = cm*A => A* = b0/(bm+cm)
+  // Tax: set t = BMg(A*) = cm*A*, firm chooses CMgA = t => cm*A + eps = t => A_tax = (t-eps)/cm
+  // Cap: set A = A*, price = CMgA(A*) + eps
+
+  var b0 = 100; // BMg intercept
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-5, 130, 110, -15],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+
+  board.create('axis', [[0,0],[105,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 20 }
+  });
+  board.create('axis', [[0,0],[0,125]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 20 }
+  });
+  board.create('text', [-4, 60, '<b>\\(\\$\\)/ton</b>'], { fontSize: 10, fixed: true, anchorX: 'middle', rotate: 90 });
+  board.create('text', [50, -10, '<b>Abatimento \\(A\\)</b>'], { fontSize: 10, fixed: true, anchorX: 'middle' });
+
+  function getS() {
+    return {
+      bm: parseFloat(document.getElementById('slider-bm').value),
+      cm: parseFloat(document.getElementById('slider-cm').value),
+      eps: parseFloat(document.getElementById('slider-eps').value)
+    };
+  }
+
+  // BMg curve
+  board.create('functiongraph', [
+    function(A) { var s = getS(); return Math.max(0, b0 - s.bm * A); }, 0, 105
+  ], { strokeColor: '#00897b', strokeWidth: 2.5 });
+
+  // CMgA expected
+  board.create('functiongraph', [
+    function(A) { return getS().cm * A; }, 0, 105
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  // CMgA with shock
+  board.create('functiongraph', [
+    function(A) { var s = getS(); return s.cm * A + s.eps; }, 0, 105
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 3 });
+
+  // Optimal point (no shock)
+  board.create('point', [
+    function() { var s = getS(); return b0 / (s.bm + s.cm); },
+    function() { var s = getS(); var A = b0 / (s.bm + s.cm); return s.cm * A; }
+  ], { size: 6, fillColor: '#333', strokeColor: '#333', name: '', fixed: true });
+
+  // DWL triangles (shown as polygons)
+  // Tax: firm does A_tax = (t*-eps)/cm where t* = cm*A*
+  // DWL_tax = 0.5 * |BMg(A_tax) - CMgA_shock(A_tax)| * |A_tax - A*_shock|
+  // ... simplified: show visually
+
+  function update() {
+    var s = getS();
+    document.getElementById('val-bm').textContent = s.bm.toFixed(1);
+    document.getElementById('val-cm').textContent = s.cm.toFixed(1);
+    document.getElementById('val-eps').textContent = s.eps.toFixed(0);
+
+    var Astar = b0 / (s.bm + s.cm);
+    var tstar = s.cm * Astar;
+
+    // With shock: optimal A_shock where BMg = CMgA+eps => b0-bm*A = cm*A+eps
+    var Ashock = (b0 - s.eps) / (s.bm + s.cm);
+
+    // Tax instrument: t = tstar fixed, firm does cm*A+eps = tstar => A_tax = (tstar-eps)/cm
+    var Atax = Math.max(0, (tstar - s.eps) / s.cm);
+    var dwlTax = 0.5 * Math.abs(Atax - Ashock) * Math.abs((b0 - s.bm * Atax) - (s.cm * Atax + s.eps));
+
+    // Cap instrument: A = Astar fixed, price = cm*Astar + eps
+    var dwlCap = 0.5 * Math.abs(Astar - Ashock) * Math.abs((b0 - s.bm * Astar) - (s.cm * Astar + s.eps));
+
+    var html = '<strong>Sem incerteza:</strong> \\(A^* = ' + Astar.toFixed(1) + '\\), \\(t^* = ' + tstar.toFixed(1) + '\\)<br>';
+    html += '<strong>Com choque:</strong> \\(A^{opt} = ' + Ashock.toFixed(1) + '\\)<br>';
+    html += '<span style="color:#1565c0;">DWL imposto: ' + dwlTax.toFixed(0) + '</span> | ';
+    html += '<span style="color:#ff9800;">DWL cap: ' + dwlCap.toFixed(0) + '</span><br>';
+
+    if (s.bm > s.cm) {
+      html += '<span style="color:#ff9800;"><strong>BMg íngreme → cap domina!</strong></span><br>';
+      html += '<em>Dano marginal cresce rápido: melhor fixar quantidade.</em>';
+    } else if (s.cm > s.bm) {
+      html += '<span style="color:#1565c0;"><strong>CMgA íngreme → imposto domina!</strong></span><br>';
+      html += '<em>Custo de abatimento cresce rápido: melhor fixar preço.</em>';
+    } else {
+      html += '<em>Inclinações iguais: instrumentos equivalentes.</em>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-bm').value = 1.0;
+    document.getElementById('slider-cm').value = 2.0;
+    document.getElementById('slider-eps').value = 20;
+    update();
+  }
+
+  ['slider-bm','slider-cm','slider-eps'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

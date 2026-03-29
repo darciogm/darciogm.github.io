@@ -98,6 +98,12 @@ A condição de **single-crossing** da equação $\eqref{eq:9d.1}$ é o ingredie
 
 ### Equilíbrio separador: derivação
 
+<iframe src="/micro-book/graficos/cap09d/sinalizacao-spence.html" title="Figura 9d.3 — Sinalização de Spence: equilíbrio separador e agregador" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9d.3 — Sinalização de Spence.** Ajuste as produtividades \(\theta_H\) e \(\theta_L\) e a prior \(p\) para ver como a região de equilíbrios separadores se expande ou contrai. Quando os tipos são próximos, a separação exige sinalização cara — e o equilíbrio pooling pode dominar.
+</div>
+
 Como encontrar formalmente o equilíbrio? O método consiste em determinar o nível mínimo de educação que separa os tipos, usando duas restrições de compatibilidade de incentivos (IC) que delimitam o intervalo de equilíbrios separadores.
 
 Com \(\theta_H = 2\), \(\theta_L = 1\), \(c(e, \theta) = e/\theta\), e firmas competitivas que pagam salário igual à produtividade esperada:
@@ -155,6 +161,12 @@ No modelo de Spence, o sinal é crível porque é *custoso*. Mas grande parte da
 Crawford e Sobel (1982) formalizaram essa intuição num modelo elegante. Um remetente (*sender*) observa o estado do mundo \(\theta \sim U[0, 1]\) e envia uma mensagem \(m\) (sem custo) ao receptor (*receiver*), que então escolhe uma ação \(a\). O remetente quer que o receptor escolha \(a = \theta + b\), onde \(b > 0\) é o **viés** — a distância entre a ação ideal do remetente e a do receptor (que quer \(a = \theta\)). O viés captura o desalinhamento de interesses: quanto maior \(b\), mais o remetente quer "empurrar" a ação do receptor para cima.
 
 ### O resultado central: equilíbrio de partição
+
+<iframe src="/micro-book/graficos/cap09d/cheap-talk.html" title="Figura 9d.4 — Cheap Talk: modelo de Crawford-Sobel" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9d.4 — Cheap Talk (Crawford-Sobel).** Aumente o viés \(b\) e observe a partição ficar mais grosseira: menos intervalos, menos informação transmitida. Com \(b = 0\), revelação completa; com \(b \geq 0.25\), babbling — nenhuma informação.
+</div>
 
 O resultado de Crawford-Sobel é que, em equilíbrio, a comunicação assume a forma de uma **partição** do espaço de estados. O remetente não diz o valor exato de \(\theta\), mas indica em qual *intervalo* \(\theta\) se encontra. O receptor, sabendo o intervalo, escolhe a ação ótima dado esse conhecimento parcial.
 
@@ -220,6 +232,12 @@ O modelo básico de principal-agente formaliza essa situação: o principal ofer
 - O principal quer maximizar \(E[q - w(q)]\); o agente quer maximizar \(E[w(q)] - c(e)\).
 
 **Trade-off central:** Para incentivar esforço, o contrato deve vincular pagamento ao resultado. Mas isso expõe o agente (avesso ao risco) a risco — gerando custo de seguro. O contrato ótimo equilibra incentivos e seguro. Esse dilema entre risco e incentivos é onipresente na economia.
+
+<iframe src="/micro-book/graficos/cap09d/moral-hazard.html" title="Figura 9d.5 — Moral Hazard: trade-off incentivos vs seguro" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9d.5 — Principal-Agente: trade-off incentivos vs seguro.** O slider \(\beta\) controla a participação do agente no resultado. Aumente a aversão ao risco \(r\) ou o ruído \(\sigma\) e observe o \(\beta^*\) ótimo encolher — o custo de agência cresce. No primeiro melhor (FB), \(\beta = 1\) e não há custo de agência.
+</div>
 
 ### Primeiro melhor vs. segundo melhor
 
@@ -300,6 +318,12 @@ Moral hazard é sobre o que o agente *faz* depois do contrato. Seleção adversa
 [^akerlof-rejeicao]: A saga de rejeições do paper dos limões é uma das melhores anedotas da profissão. A *American Economic Review* rejeitou-o por ser "trivial"; o *Journal of Political Economy* rejeitou-o por ser "incorreto" (o mercado não pode colapsar se os agentes forem racionais!); a *Review of Economic Studies* simplesmente não se interessou. Três décadas depois, o paper rendeu o Nobel. Se isso não é evidência de seleção adversa no mercado editorial — onde os referees não observam a qualidade do artigo com precisão e frequentemente rejeitam "pêssegos" — nada é. Akerlof provavelmente apreciou a ironia.
 
 Akerlof ilustrou o mecanismo com o mercado de carros usados — o artigo que lhe valeu o Nobel de 2001.[^cheese-shop] O argumento é elegante: o vendedor sabe se o carro é confiável ("pêssego") ou defeituoso ("limão"). O comprador não sabe.
+
+<iframe src="/micro-book/graficos/cap09d/selecao-adversa.html" title="Figura 9d.6 — Seleção adversa e market unraveling" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9d.6 — Market unraveling (Akerlof).** Ajuste o ganho de troca \(\alpha\) e observe o mercado colapsar iterativamente quando \(\alpha < 2\): a cada rodada, os vendedores de melhor qualidade saem, o preço cai, e mais vendedores saem. Com \(\alpha \geq 2\), o ganho de troca é suficiente para sustentar o mercado.
+</div>
 
 [^cheese-shop]: Os devotos de Monty Python reconhecerão a seleção adversa levada ao extremo no sketch do *Cheese Shop*. John Cleese entra em uma loja de queijos e tenta comprar queijo — qualquer queijo. O vendedor (Michael Palin) informa educadamente que não tem Cheddar, nem Stilton, nem Brie, nem Camembert, nem Gruyère, nem nenhum dos 40+ queijos solicitados. O comprador progressivamente desiste de cada opção, exatamente como no modelo de Akerlof os tipos bons progressivamente abandonam o mercado. No final, a loja não tem *nenhum* queijo — o market unraveling é completo. A diferença é que no modelo de Akerlof o colapso é endógeno (causado pela assimetria de informação); no Cheese Shop, é simplesmente uma loja de queijos sem queijos. Mas a frustração do comprador é idêntica. O preço que o comprador aceita pagar reflete a qualidade *média* do mercado. Mas, a esse preço, os vendedores de "pêssegos" (cujo carro vale mais do que o preço médio) saem do mercado. O que resta é predominantemente "limões". O comprador, antecipando isso, reduz seu preço de reserva. Mais "pêssegos" saem. O processo pode continuar até que o mercado colapse completamente — nenhuma transação ocorre, embora existam vendedores e compradores dispostos a negociar ao preço correto. A ineficiência é gerada inteiramente pela assimetria de informação, não por falhas no mecanismo de preços em si.
 

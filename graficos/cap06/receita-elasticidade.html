@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+  Relação Elasticidade-Receita — teste da receita total
+  Library: JSXGraph
+  Reason: Slider move preço e mostra receita como área, com coloração
+          dinâmica (verde = cresce, vermelho = cai).
+  Chapter 6 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receita Total e Elasticidade</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .panels { flex: 1 1 440px; max-width: 540px; }
+    #jxgbox1 { width: 100%; height: 260px; border: 1px solid #ddd; border-radius: 6px 6px 0 0; }
+    #jxgbox2 { width: 100%; height: 180px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .panels, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div class="panels">
+    <div id="jxgbox1"></div>
+    <div id="jxgbox2"></div>
+  </div>
+  <div class="controls">
+    <h3>Elasticidade e Receita</h3>
+
+    <div class="slider-group">
+      <label>Preço \(p\): <span class="val" id="val-p">5.00</span></label>
+      <input type="range" id="slider-p" min="0.5" max="9.5" step="0.1" value="5">
+    </div>
+
+    <p style="font-size:0.8rem; color:#555; margin-top:0.3rem;">
+      Painel superior: Demanda e receita (área)<br>
+      Painel inferior: Curva de receita total
+    </p>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Demand: Q = 10 - p (inverse: p = 10 - Q)
+  // Revenue: R = p*Q = p*(10-p)
+  // Elasticity: eps = -p/(10-p)
+  // Marginal Revenue: MR = 10 - 2Q
+
+  var a = 10;
+
+  // Panel 1: Demand curve with revenue rectangle
+  var b1 = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-1, 11, 12, -1],
+    axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+  });
+
+  b1.create('axis', [[0,0],[11,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 2 }
+  });
+  b1.create('axis', [[0,0],[0,10.5]], {
+    ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6, 0] }, minorTicks: 0, ticksDistance: 2 }
+  });
+  b1.create('text', [-0.8, 5.2, '<b><i>p</i></b>'], { fontSize: 12, fixed: true, anchorX: 'middle', rotate: 90 });
+  b1.create('text', [6, -0.7, '<b><i>Q</i></b>'], { fontSize: 12, fixed: true, anchorX: 'middle' });
+
+  // Demand
+  b1.create('functiongraph', [function(Q) { return a - Q; }, 0, a], { strokeColor: '#C8102E', strokeWidth: 2 });
+  // MR
+  b1.create('functiongraph', [function(Q) { return a - 2*Q; }, 0, a/2], { strokeColor: '#1565c0', strokeWidth: 1.5, dash: 3 });
+
+  b1.create('text', [10.3, 0.3, '\\(D\\)'], { fontSize: 10, color: '#C8102E', fixed: true });
+  b1.create('text', [5.3, 0.3, '\\(RMg\\)'], { fontSize: 10, color: '#1565c0', fixed: true });
+
+  // Revenue rectangle
+  b1.create('polygon', [
+    [0, 0],
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return [a-p, 0]; },
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return [a-p, p]; },
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return [0, p]; }
+  ], {
+    fillColor: function() {
+      var p = parseFloat(document.getElementById('slider-p').value);
+      var eps = Math.abs(p / (a - p));
+      return eps > 1 ? '#00897b' : '#ff9800';
+    },
+    fillOpacity: 0.15,
+    borders: { strokeWidth: 0 },
+    vertices: { visible: false }
+  });
+
+  b1.create('point', [
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return a - p; },
+    function() { return parseFloat(document.getElementById('slider-p').value); }
+  ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
+
+  // Panel 2: Revenue curve R(p)
+  var b2 = JXG.JSXGraph.initBoard('jxgbox2', {
+    boundingbox: [-1, 28, 12, -3],
+    axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+  });
+
+  b2.create('axis', [[0,0],[11,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 2 }
+  });
+  b2.create('axis', [[0,0],[0,27]], {
+    ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6, 0] }, minorTicks: 0, ticksDistance: 5 }
+  });
+  b2.create('text', [-0.8, 13, '<b><i>R</i></b>'], { fontSize: 12, fixed: true, anchorX: 'middle', rotate: 90 });
+  b2.create('text', [6, -2, '<b><i>p</i></b>'], { fontSize: 12, fixed: true, anchorX: 'middle' });
+
+  // R(p) = p*(a-p)
+  b2.create('functiongraph', [function(p) { return p*(a-p); }, 0, a], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Vertical line at p
+  b2.create('segment', [
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return [p, 0]; },
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return [p, p*(a-p)]; }
+  ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 3 });
+
+  // Max revenue point
+  b2.create('point', [a/2, a*a/4], { size: 4, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true });
+  b2.create('text', [a/2 + 0.3, a*a/4 + 1.5, '\\(R_{max}\\)'], { fontSize: 10, color: '#00897b', fixed: true });
+
+  // Current revenue point
+  b2.create('point', [
+    function() { return parseFloat(document.getElementById('slider-p').value); },
+    function() { var p = parseFloat(document.getElementById('slider-p').value); return p*(a-p); }
+  ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
+
+  function update() {
+    var p = parseFloat(document.getElementById('slider-p').value);
+    document.getElementById('val-p').textContent = p.toFixed(2);
+
+    var Q = a - p;
+    var R = p * Q;
+    var eps = -p / Q;
+    var Rmax = a * a / 4;
+    var dRdp = a - 2*p; // = Q(1 + 1/eps)
+
+    var html = '\\(Q = ' + Q.toFixed(1) + '\\), ';
+    html += '\\(R = ' + R.toFixed(1) + '\\)<br>';
+    html += '\\(\\varepsilon = ' + eps.toFixed(2) + '\\), ';
+    html += '\\(|\\varepsilon| = ' + Math.abs(eps).toFixed(2) + '\\)<br>';
+    html += '\\(dR/dp = ' + dRdp.toFixed(2) + '\\)<br>';
+
+    if (Math.abs(eps) > 1.05) {
+      html += '<span style="color:#00897b;"><strong>Elástica:</strong> ↓p → ↑R</span>';
+    } else if (Math.abs(eps) < 0.95) {
+      html += '<span style="color:#ff9800;"><strong>Inelástica:</strong> ↓p → ↓R</span>';
+    } else {
+      html += '<span style="color:#C8102E;"><strong>Unitária:</strong> \\(R\\) é máxima!</span>';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    b1.update();
+    b2.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-p').value = 5;
+    update();
+  }
+
+  document.getElementById('slider-p').addEventListener('input', update);
+  update();
+</script>
+</body>
+</html>

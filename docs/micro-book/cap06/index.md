@@ -154,6 +154,18 @@ A palavra "bruta" na expressão "substituto bruto" evoca justamente essa contami
 
 ---
 
+<iframe src="/micro-book/graficos/cap06/elasticidade-ponto.html" title="Figura 6.4 — Elasticidade-preço ao longo da demanda linear" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 6.4 — Elasticidade ao longo da demanda linear.** Arraste o preço e observe: no topo da curva, demanda elástica (\(|\varepsilon|>1\)); na base, inelástica (\(|\varepsilon|<1\)). No ponto médio, elasticidade unitária — exatamente onde a receita total (área do retângulo azul) é máxima.
+</div>
+
+<iframe src="/micro-book/graficos/cap06/receita-elasticidade.html" title="Figura 6.5 — Receita total e elasticidade: o teste da receita" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 6.5 — Receita total e elasticidade.** O painel superior mostra a receita como área; o inferior mostra a curva de receita total \(R(p)\). Na região elástica, reduzir o preço aumenta a receita; na inelástica, o oposto.
+</div>
+
 ## 6.3 A Versão Sem Efeito Renda: Substitutos e Complementos Líquidos
 
 A classificação marshalliana tem um defeito: ela está "suja" pelo efeito renda. Quando a gasolina sobe, o consumidor fica mais pobre — e esse empobrecimento afeta a demanda por *todos* os bens, não apenas pelo substituto natural (etanol). O efeito renda pode fazer dois bens que são genuinamente substitutos parecerem complementos nos dados brutos. É como tentar ouvir uma música com ruído de fundo: o sinal está lá, mas contaminado. A classificação **hicksiana** (compensada) é o filtro que remove o ruído — ela usa a demanda hicksiana, que isola o efeito substituição puro.
@@ -227,6 +239,12 @@ O gráfico abaixo permite explorar os efeitos cruzados de preço com a função 
 
 <div class="caption-obj" markdown>
 **Figura 6.1 — Substitutos e Complementos: Efeitos Cruzados de Preço.** Ajuste o preço de \(p_2\) e o parâmetro \(\rho\) para visualizar como a demanda por \(x_1\) responde a variações no preço do outro bem.
+</div>
+
+<iframe src="/micro-book/graficos/cap06/elasticidade-cruzada.html" title="Figura 6.3 — Elasticidade-preço cruzada: substitutos vs complementos" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 6.3 — Elasticidade cruzada.** Ajuste o grau de relação \(\gamma\): valores positivos geram substituição (demanda se desloca para a direita quando \(p_2\) sobe), negativos geram complementaridade. Observe como a elasticidade cruzada muda de sinal.
 </div>
 
 !!! box-mundo "Box Mundo 6.1 — Elasticidades cruzadas nos mercados de energia: gás natural, carvão e a transição energética"
@@ -474,6 +492,12 @@ Essa perspectiva também conecta este capítulo ao Capítulo 12, sobre equilíbr
 Até aqui, estudamos um consumidor solitário fazendo escolhas perfeitas. Mas o mercado tem milhões de consumidores — velhos e jovens, ricos e pobres, racionais e impulsivos. A operação óbvia é somar todas as demandas individuais. Mas somar é inocente? A demanda de mercado herda as boas propriedades (Slutsky, homogeneidade) da demanda individual? Podemos fingir que existe um "brasileiro médio" cujas preferências representam as de todos? A resposta curta: depende. A resposta longa é esta seção.
 
 ### 6.7.1 Demanda de mercado
+
+<iframe src="/micro-book/graficos/cap06/agregacao-demandas.html" title="Figura 6.6 — Agregação de demandas: soma horizontal" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 6.6 — Agregação de demandas individuais.** Três consumidores com preços de reserva diferentes. A demanda de mercado (preta, espessa) é a soma horizontal — note os "kinks" nos preços onde cada consumidor entra ou sai do mercado.
+</div>
 
 A **demanda de mercado** é obtida pela soma horizontal das demandas individuais. Se há \(H\) consumidores, cada um com demanda \(x_i^h(p_1, \ldots, p_n, I^h)\), a demanda de mercado pelo bem \(i\) é:
 

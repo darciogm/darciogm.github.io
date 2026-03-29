@@ -125,6 +125,14 @@ O modelo IPV é a bancada de trabalho (*workhorse*) da teoria de leilões porque
 
     Portanto, \(b_i = v_i\) é fracamente dominante. \(\blacksquare\)
 
+No gráfico interativo abaixo, experimente o leilão de Vickrey: ajuste seu valor, seu lance e o lance rival. Observe que o payoff depende do lance rival, mas a estratégia ótima (lançar o valor) não.
+
+<iframe src="/micro-book/graficos/cap09c/leilao-segundo-preco.html" title="Figura 9c.2 — Leilão de Segundo Preço (Vickrey): Verdade como Estratégia Dominante" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9c.2 — Leilão de Vickrey.** O payoff (azul) é uma função degrau no lance rival: ganha \(v_i - b_{-i}\) se \(b_i > b_{-i}\), zero caso contrário. Como o payoff ao ganhar não depende de \(b_i\), lançar \(b_i = v_i\) é sempre (fracamente) ótimo.
+</div>
+
 No leilão de Vickrey, portanto, a verdade é ótima independentemente do que os outros fazem. A elegância dessa propriedade não pode ser subestimada: o licitante não precisa se preocupar com quantos concorrentes tem, quais são suas distribuições de valor, ou se eles são racionais. A estratégia ótima é a mesma em todos os cenários — lançar o valor verdadeiro. Essa robustez é a razão pela qual o leilão de segundo preço é o ponto de partida natural para a teoria. Mas e quando o vencedor paga seu *próprio* lance? Nesse caso, lançar o valor verdadeiro seria desastroso, e a estratégia ótima exige *sombreamento*.
 
 **Leilão de primeiro preço:** O vencedor paga seu próprio lance. BNE simétrico com \(v_i \sim U[0, \bar{v}]\):
@@ -176,6 +184,14 @@ A intuição por trás da equivalência de receita é uma das mais elegantes da 
 \]
 
 Como o excedente total (valor do vencedor) é o mesmo e os payoffs dos licitantes são os mesmos, a receita do leiloeiro — que é a diferença — também deve ser a mesma. O argumento formal é desenvolvido no Exercício 9c.8(c), mas a lógica é transparente: se a alocação e os payoffs dos agentes são fixados, o "resíduo" para o principal (leiloeiro) está determinado.
+
+No gráfico interativo abaixo, compare visualmente as funções de lance dos dois formatos e observe que a receita esperada é idêntica — apesar de os lances serem completamente diferentes.
+
+<iframe src="/micro-book/graficos/cap09c/receita-equivalente.html" title="Figura 9c.3 — Equivalência de Receita: 1º Preço vs 2º Preço" class="graph-iframe" style="height:540px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9c.3 — Equivalência de Receita.** Painel superior: funções de lance — no 1º preço (vermelho), o lance é sombreado; no 2º preço (azul), coincide com o valor. Painel inferior: a receita esperada \(E[Rev] = \bar{v}(N-1)/(N+1)\) é a mesma em ambos os formatos.
+</div>
 
 !!! note "Quando a equivalência falha"
     A equivalência de receita falha com: (i) aversão ao risco (1º preço gera mais receita); (ii) assimetria entre licitantes; (iii) valores afiliados/comuns; (iv) colusão. Nesses casos, o formato do leilão importa — e o desenho ótimo de mecanismo (Myerson, 1981) se torna relevante.

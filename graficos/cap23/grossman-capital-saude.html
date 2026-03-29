@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+  Modelo de Grossman — Capital de saúde
+  Library: JSXGraph
+  Reason: Sliders para depreciação, investimento e idade mostram
+          trajetória do estoque de saúde e decisão ótima de investimento.
+  Chapter 23 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Grossman — Capital de Saúde</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']] }, options: { enableMenu: false } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .panels { flex: 1 1 440px; max-width: 540px; }
+    #jxgbox1 { width: 100%; height: 220px; border: 1px solid #ddd; border-radius: 6px 6px 0 0; }
+    #jxgbox2 { width: 100%; height: 220px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 6px 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .panels, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div class="panels">
+    <div id="jxgbox1"></div>
+    <div id="jxgbox2"></div>
+  </div>
+  <div class="controls">
+    <h3>Modelo de Grossman</h3>
+
+    <div class="slider-group">
+      <label>Depreciação base \(\delta_0\): <span class="val" id="val-d0">0.03</span></label>
+      <input type="range" id="slider-d0" min="0.01" max="0.08" step="0.005" value="0.03">
+    </div>
+    <div class="slider-group">
+      <label>Aceleração com idade: <span class="val" id="val-acc">0.002</span></label>
+      <input type="range" id="slider-acc" min="0" max="0.005" step="0.0005" value="0.002">
+    </div>
+    <div class="slider-group">
+      <label>Investimento em saúde \(I\): <span class="val" id="val-I">3.0</span></label>
+      <input type="range" id="slider-I" min="0" max="8" step="0.5" value="3.0">
+    </div>
+
+    <p style="font-size:0.78rem; color:#666; margin-top:0.3rem;">
+      Sup.: Estoque de saúde \(H(t)\).<br>
+      Inf.: Investimento ótimo \(I(t)\).<br>
+      \(H_{t+1} = H_t - \delta(t) H_t + I\)<br>
+      \(\delta(t) = \delta_0 + \text{acc} \cdot t\) (cresce com idade).
+    </p>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Grossman: H_{t+1} = (1 - δ(t)) * H_t + I
+  // δ(t) = δ0 + acc * t (depreciation increases with age)
+  // H_min = threshold (death)
+  // Initial H0 = 100
+
+  var H0 = 100, Hmin = 20, T = 60;
+
+  function getS() {
+    return {
+      d0: parseFloat(document.getElementById('slider-d0').value),
+      acc: parseFloat(document.getElementById('slider-acc').value),
+      I: parseFloat(document.getElementById('slider-I').value)
+    };
+  }
+
+  function computePath(s) {
+    var H = [H0];
+    var dep = [];
+    for (var t = 0; t < T; t++) {
+      var dt = s.d0 + s.acc * t;
+      dep.push(dt);
+      var next = (1 - dt) * H[t] + s.I;
+      H.push(Math.max(0, next));
+    }
+    return { H: H, dep: dep };
+  }
+
+  // Panel 1: Health stock
+  var b1 = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-4, 120, 62, -10],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+  b1.create('axis', [[0,0],[60,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 10 }
+  });
+  b1.create('axis', [[0,0],[0,115]], {
+    ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6, 0] }, minorTicks: 0, ticksDistance: 20 }
+  });
+  b1.create('text', [-3, 55, '<b>\\(H(t)\\)</b>'], { fontSize: 10, fixed: true, anchorX: 'middle', rotate: 90 });
+  b1.create('text', [30, -7, '<b>Idade</b>'], { fontSize: 10, fixed: true, anchorX: 'middle' });
+
+  // Death threshold
+  b1.create('functiongraph', [function() { return Hmin; }, 0, 60], {
+    strokeColor: '#C8102E', strokeWidth: 1.5, dash: 3
+  });
+  b1.create('text', [55, Hmin + 5, '\\(H_{\\min}\\)'], { fontSize: 9, color: '#C8102E', fixed: true });
+
+  // Health path
+  b1.create('functiongraph', [
+    function(t) {
+      var s = getS();
+      var path = computePath(s);
+      var ti = Math.floor(t);
+      if (ti < 0 || ti >= path.H.length - 1) return NaN;
+      var frac = t - ti;
+      return path.H[ti] * (1 - frac) + path.H[ti + 1] * frac;
+    }, 0, T
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Panel 2: Depreciation rate and required investment
+  var b2 = JXG.JSXGraph.initBoard('jxgbox2', {
+    boundingbox: [-4, 0.20, 62, -0.02],
+    axis: false, showCopyright: false, showNavigation: false
+  });
+  b2.create('axis', [[0,0],[60,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 10 }
+  });
+  b2.create('axis', [[0,0],[0,0.18]], {
+    ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6, 0] }, minorTicks: 0, ticksDistance: 0.05,
+      generateLabelText: function(tick) { return (tick.usrCoords[2]*100).toFixed(0) + '%'; }
+    }
+  });
+  b2.create('text', [-3, 0.09, '<b>\\(\\delta(t)\\)</b>'], { fontSize: 10, fixed: true, anchorX: 'middle', rotate: 90 });
+  b2.create('text', [30, -0.012, '<b>Idade</b>'], { fontSize: 10, fixed: true, anchorX: 'middle' });
+
+  // Depreciation rate
+  b2.create('functiongraph', [
+    function(t) { var s = getS(); return s.d0 + s.acc * t; }, 0, T
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  function update() {
+    var s = getS();
+    document.getElementById('val-d0').textContent = s.d0.toFixed(3);
+    document.getElementById('val-acc').textContent = s.acc.toFixed(4);
+    document.getElementById('val-I').textContent = s.I.toFixed(1);
+
+    var path = computePath(s);
+    var deathAge = T;
+    for (var t = 0; t <= T; t++) {
+      if (path.H[t] <= Hmin) { deathAge = t; break; }
+    }
+
+    var html = '<strong>Estoque inicial:</strong> \\(H_0 = ' + H0 + '\\)<br>';
+    html += '<strong>Depreciação aos 30:</strong> \\(' + ((s.d0 + s.acc * 30) * 100).toFixed(1) + '\\%\\)/ano<br>';
+    html += '<strong>Depreciação aos 50:</strong> \\(' + ((s.d0 + s.acc * 50) * 100).toFixed(1) + '\\%\\)/ano<br>';
+    if (deathAge < T) {
+      html += '<span style="color:#C8102E;"><strong>\\(H\\) cruza limiar aos ' + deathAge + ' anos.</strong></span><br>';
+      html += '<em>Investimento insuficiente para compensar depreciação crescente.</em>';
+    } else {
+      html += '<span style="color:#00897b;"><strong>Saúde sustentável até os 60.</strong></span><br>';
+      html += '\\(H(60) = ' + path.H[T].toFixed(0) + '\\)';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    b1.update();
+    b2.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-d0').value = 0.03;
+    document.getElementById('slider-acc').value = 0.002;
+    document.getElementById('slider-I').value = 3.0;
+    update();
+  }
+
+  ['slider-d0','slider-acc','slider-I'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

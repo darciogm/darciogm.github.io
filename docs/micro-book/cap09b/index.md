@@ -89,7 +89,21 @@ Para tornar esses conceitos concretos, considere o problema clássico de deterr�
 **Figura 9b.1 — Jogo sequencial na forma extensiva.** Selecione um jogo predefinido (Deterrência de Entrada ou Stackelberg), edite os payoffs nos nós terminais e resolva por indução retroativa. O caminho do EPS é destacado em vermelho.
 </div>
 
+<iframe src="/micro-book/graficos/cap09b/backward-induction.html" title="Figura 9b.3 — Indução retroativa: jogo de entrada com payoffs ajustáveis" class="graph-iframe" style="height:560px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9b.3 — Indução retroativa interativa.** Ajuste os payoffs do entrante e do incumbente e veja a indução retroativa em ação: o EPS muda em tempo real. Quando a ameaça de guerra não é crível, o algoritmo identifica e sinaliza.
+</div>
+
 ### Comprometimento e vantagem estratégica
+
+No gráfico interativo abaixo, visualize o modelo de Stackelberg vs. Cournot. A líder escolhe \(q_1\) primeiro e a seguidora responde sobre sua curva de melhor resposta.
+
+<iframe src="/micro-book/graficos/cap09b/commitment-stackelberg.html" title="Figura 9b.5 — Stackelberg vs. Cournot: Comprometimento e Vantagem de Primeiro Movimento" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9b.5 — Stackelberg vs. Cournot.** As curvas são as melhores respostas das firmas 1 (vermelho) e 2 (azul). O ponto verde é o equilíbrio de Cournot (simultâneo); o ponto laranja é o de Stackelberg (sequencial). A líder produz mais e lucra mais — o comprometimento de mover primeiro confere vantagem.
+</div>
 
 O exemplo anterior mostra que ameaças vazias são descartadas pela indução retroativa. Mas será que a incumbente está condenada a acomodar a entrada? Não necessariamente. Se ela puder tomar ações *antes* do jogo que alterem seus próprios payoffs futuros, a ameaça pode se tornar crível. Esse é o papel do **comprometimento** — a arte de restringir as próprias opções para ganhar poder estratégico. Parece paradoxal: como se limitar pode ser vantajoso? A resposta é que, ao eliminar a possibilidade de recuar, o jogador torna sua ameaça inevitável aos olhos do rival. Na prática, o comprometimento assume diversas formas:
 
@@ -148,6 +162,14 @@ No Dilema dos Prisioneiros repetido infinitamente com fator de desconto \(\delta
 \]
 
 O fator de desconto \(\delta\) na equação $\eqref{eq:9b.1}$ pode ser interpretado como a "paciência" dos jogadores ou a probabilidade de que o jogo continue. A condição é intuitivamente clara: a cooperação exige que o ganho imediato de trair (\(T - R\)) seja compensado pela perda futura de ser punido (diferença entre \(R\) e \(P\), descontada por \(\delta\)). Quanto mais pacientes os jogadores (maior \(\delta\)), mais fácil é sustentar a cooperação.
+
+No gráfico interativo abaixo, ajuste os payoffs do Dilema dos Prisioneiros e observe como o limiar \(\delta^*\) se move — e como as curvas de payoff de cooperação e desvio se cruzam.
+
+<iframe src="/micro-book/graficos/cap09b/repeated-game-threshold.html" title="Figura 9b.4 — Limiar de Cooperação em Jogos Repetidos" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 9b.4 — Limiar de Cooperação \(\delta^*\).** A curva azul é o payoff de cooperar para sempre; a curva laranja é o payoff de trair e ser punido. Quando \(\delta > \delta^*\), a cooperação compensa — a sombra do futuro é longa o suficiente.
+</div>
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** A cooperação é sustentável quando a "sombra do futuro" é longa o suficiente para que a ameaça de punição supere o ganho imediato de trair.

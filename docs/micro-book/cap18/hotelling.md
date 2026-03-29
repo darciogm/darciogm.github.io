@@ -161,6 +161,12 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
     **Por que isso importa:** A regra de Hotelling é a base para pensar a exploração sustentável de petróleo, minérios e outros recursos finitos — e ajuda a entender por que juros altos aceleram o desmatamento e a extração mineral.
 
+<iframe src="/micro-book/graficos/cap18/hotelling-recurso.html" title="Figura 18.4 — Regra de Hotelling: trajetória de preço e extração de recurso exaurível" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 18.4 — Regra de Hotelling.** O preço do recurso cresce à taxa de juros \(r\) até atingir o preço da tecnologia substituta (\(\bar{p}\)). Aumente \(r\) e observe a extração se acelerar — juros altos devoram o futuro.
+</div>
+
 ### Implicações
 
 1. **O preço do recurso tende a subir ao longo do tempo**, refletindo sua crescente escassez;
@@ -185,6 +191,14 @@ Se o preço do recurso é \(p_t\), o custo marginal de extração é \(c\) (cons
 
 <div class="caption-obj" markdown>
 **Figura 18.3 — Desconto exponencial vs quasi-hiperbólico.** O desconto exponencial padrão (\(\delta^t\)) trata todos os períodos igualmente, enquanto o modelo quasi-hiperbólico (\(\beta\delta^t\)) desconta o futuro próximo mais fortemente que o distante, gerando viés pelo presente e inconsistência temporal (Laibson, 1997).
+</div>
+
+No gráfico abaixo, ajuste \(\beta\) e \(\delta\) para visualizar a reversão de preferências: um agente que hoje prefere R$110 amanhã a R$100 hoje pode, quando amanhã chega, mudar de ideia — o viés do presente é a queda abrupta entre \(t=0\) e \(t=1\).
+
+<iframe src="/micro-book/graficos/cap18/desconto-hiperbolico.html" title="Figura 18.3b — Desconto Quasi-Hiperbólico: Viés do Presente e Reversão de Preferências" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 18.3b — Viés do Presente.** A queda entre \(t=0\) e \(t=1\) (curva vermelha) é o viés do presente \(\beta\). Com \(\beta = 1\), as curvas coincidem (desconto exponencial puro). Com \(\beta < 1\), o agente é impaciente no curto prazo mas paciente no longo — gerando inconsistência temporal.
 </div>
 
 ---

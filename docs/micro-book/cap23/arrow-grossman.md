@@ -76,3 +76,11 @@ O modelo gera várias previsões testáveis:
 3. **Aumentos no salário têm efeito ambíguo**: aumentam o custo de oportunidade do tempo dedicado à saúde (efeito substituição negativo), mas também aumentam a renda (efeito renda positivo).
 
 4. **A demanda por cuidados médicos é demanda derivada**: depende do preço dos cuidados, mas também da taxa de depreciação, do salário, e da educação.
+
+No gráfico interativo abaixo, simule a trajetória do estoque de saúde ao longo da vida. Ajuste a depreciação e o investimento em saúde para ver quando \(H(t)\) cruza o limiar mínimo — e como o envelhecimento (depreciação crescente) exige investimentos cada vez maiores.
+
+<iframe src="/micro-book/graficos/cap23/grossman-capital-saude.html" title="Figura 23.1 — Modelo de Grossman: Capital de Saúde ao Longo da Vida" class="graph-iframe" style="height:540px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 23.1 — Capital de Saúde no Modelo de Grossman.** Painel superior: estoque de saúde \(H(t)\) que decresce com a idade à medida que a depreciação \(\delta(t)\) acelera (painel inferior). O investimento \(I\) retarda a queda, mas eventualmente a depreciação vence — a menos que o investimento cresça com a idade.
+</div>

@@ -69,6 +69,14 @@ A intuição é direta: o VPL mede quanto valor o projeto cria acima e além do 
 
 O VPL é sensível à taxa de desconto \(r\): quanto maior a taxa, menor o VPL de qualquer projeto com fluxos de caixa positivos no futuro. Essa sensibilidade é particularmente dramática para projetos de longa maturação — infraestrutura, pesquisa e desenvolvimento, reflorestamento — cujos benefícios se concentram em períodos distantes. A [Seção 18.10](hotelling.md#1810) ilustra numericamente essa sensibilidade.
 
+No gráfico interativo abaixo, ajuste o investimento inicial, os fluxos de caixa e o horizonte para visualizar como o VPL varia com a taxa de juros — e por que o mesmo projeto pode ser viável nos EUA e inviável no Brasil.
+
+<iframe src="/micro-book/graficos/cap18/taxa-juros-investimento.html" title="Figura 18.5 — VPL e Taxa de Juros: Por Que o Brasil Investe Pouco" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 18.5 — VPL e Taxa de Juros.** A curva mostra o VPL do projeto como função da taxa de desconto \(r\). A TIR é onde a curva cruza zero. As linhas tracejadas marcam as taxas reais típicas dos EUA (~2%) e do Brasil (~7%). Muitos projetos viáveis a 2% tornam-se inviáveis a 7%.
+</div>
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** O VPL responde: "Se eu descontar todos os benefícios futuros do projeto pela taxa que eu ganharia no mercado financeiro, ainda sobra alguma coisa?"
 

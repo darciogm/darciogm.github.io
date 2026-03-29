@@ -38,6 +38,14 @@ Bens digitais são **não-rivais** por natureza — a transmissão de um vídeo 
 
     **Por que isso importa:** A estrutura de custos dos bens digitais gera economias de escala tão extremas que mercados digitais tendem naturalmente ao monopólio ou oligopólio — tornando a análise do Capítulo 15 não uma exceção, mas a regra.
 
+No gráfico interativo abaixo, explore a estratégia de **versioning** (Shapiro & Varian, 1999): criar versões "premium" e "basic" de um bem de informação — onde a versão basic é deliberadamente degradada para segmentar o mercado.
+
+<iframe src="/micro-book/graficos/cap21/versioning.html" title="Figura 21.0 — Versioning: Discriminação de Preços em Bens de Informação" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 21.0 — Versioning de Bens de Informação.** Dois tipos de consumidores (\(\theta_H\) e \(\theta_L\)) com WTP diferentes. A firma cria uma versão premium (\(q=1\)) e uma basic (\(q_L < 1\)) com custo marginal zero. O versioning extrai mais excedente que o preço único — mesmo "desperdiçando" qualidade na versão basic.
+</div>
+
 ---
 
 ## 21.2 Efeitos de Rede {#212}
@@ -140,6 +148,18 @@ A intervenção regulatória enfrenta, portanto, um dilema: **fragmentar** a pla
 <iframe src="/micro-book/graficos/cap21/efeitos-rede.html" title="Figura 21.1 — Efeitos de Rede e Ponto de Virada" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 <div class="caption-obj" markdown>
 **Figura 21.1 — Efeitos de Rede e Ponto de Virada.** A curva mostra a disposição a pagar \(u(n) = v + \alpha\,n^{\beta}\) como função do número de usuários. O cruzamento com a linha de preço determina a massa crítica \(n^*\): abaixo dela a rede colapsa (armadilha de adoção); acima, a adoção decola rumo ao equilíbrio alto.
+</div>
+
+<iframe src="/micro-book/graficos/cap21/winner-takes-all.html" title="Figura 21.2 — Winner-Takes-All: Massa Crítica e Tipping" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 21.2 — Winner-Takes-All e Tipping.** Três equilíbrios: ninguém adota (\(n=0\)), massa crítica instável (\(n_c\)) e adoção universal (\(n=1\)). Reduza o preço ou aumente a força da rede \(\alpha\) para ver a massa crítica encolher — facilitando o "efeito bola de neve".
+</div>
+
+<iframe src="/micro-book/graficos/cap21/switching-costs.html" title="Figura 21.3 — Custos de troca e lock-in: poder de mercado do incumbente" class="graph-iframe" style="height:570px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 21.3 — Custos de troca e lock-in.** O custo de troca \(s\) permite ao incumbente cobrar acima do custo marginal. Aumente \(s\) e observe o preço subir, a quantidade cair e o peso morto crescer — a anatomia do poder de mercado digital.
 </div>
 
 ---

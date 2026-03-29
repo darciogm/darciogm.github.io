@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--
+  Agregação de Demandas — Soma horizontal de demandas individuais
+  Library: JSXGraph
+  Reason: Sliders para interceptos e inclinações de 3 consumidores mostram
+          como a demanda de mercado é a soma horizontal (kinked).
+  Chapter 6 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregação de Demandas</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 440px; max-width: 540px; height: 440px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 290px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.1rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.6rem; padding: 0.6rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.5; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; margin-bottom: 0.15rem; }
+    .legend-swatch { width: 20px; height: 3px; display: inline-block; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.6rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox, .controls { flex-basis: 100%; width: 100%; max-width: 540px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Agregação de Demandas</h3>
+
+    <div class="slider-group">
+      <label>Preço reserva A: <span class="val" id="val-a1">8</span></label>
+      <input type="range" id="slider-a1" min="2" max="12" step="0.5" value="8">
+    </div>
+    <div class="slider-group">
+      <label>Preço reserva B: <span class="val" id="val-a2">6</span></label>
+      <input type="range" id="slider-a2" min="2" max="12" step="0.5" value="6">
+    </div>
+    <div class="slider-group">
+      <label>Preço reserva C: <span class="val" id="val-a3">4</span></label>
+      <input type="range" id="slider-a3" min="2" max="12" step="0.5" value="4">
+    </div>
+    <div class="slider-group">
+      <label>Preço \(p\): <span class="val" id="val-p">3.00</span></label>
+      <input type="range" id="slider-p" min="0.5" max="12" step="0.25" value="3">
+    </div>
+
+    <div style="margin-top:0.4rem; margin-bottom:0.4rem;">
+      <div class="legend-item"><span class="legend-swatch" style="background:#C8102E;"></span> Consumidor A</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#1565c0;"></span> Consumidor B</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#ff9800;"></span> Consumidor C</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#333; height:4px;"></span> Demanda de mercado</div>
+    </div>
+
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Three linear demands: Q_i = a_i - p for p < a_i, else 0
+  // Market demand: Q_M = sum of max(0, a_i - p)
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-1.5, 13, 28, -1],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false,
+    keepaspectratio: false
+  });
+
+  board.create('axis', [[0,0],[26,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 5 },
+    name: '', withLabel: false
+  });
+  board.create('axis', [[0,0],[0,12]], {
+    ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 2 },
+    name: '', withLabel: false
+  });
+
+  board.create('text', [-1.2, 6, '<b><i>p</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
+  board.create('text', [14, -0.7, '<b><i>Q</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', highlight: false
+  });
+
+  function getA() {
+    return [
+      parseFloat(document.getElementById('slider-a1').value),
+      parseFloat(document.getElementById('slider-a2').value),
+      parseFloat(document.getElementById('slider-a3').value)
+    ];
+  }
+
+  function getP() { return parseFloat(document.getElementById('slider-p').value); }
+
+  // Individual demands (dashed)
+  var colors = ['#C8102E', '#1565c0', '#ff9800'];
+  for (var i = 0; i < 3; i++) {
+    (function(idx) {
+      board.create('functiongraph', [
+        function(Q) {
+          var a = getA()[idx];
+          return a - Q; // inverse demand: p = a - Q
+        }, 0, function() { return getA()[idx]; }
+      ], { strokeColor: colors[idx], strokeWidth: 1.5, dash: 3 });
+    })(i);
+  }
+
+  // Market demand (thick, plotting Q as function of p — we need inverse)
+  // Market Q(p) = sum max(0, a_i - p)
+  // We plot as inverse demand: for each Q, find p
+  // Easier: plot parametrically with p as parameter
+  board.create('curve', [
+    function(p) {
+      var a = getA();
+      var Q = 0;
+      for (var i = 0; i < 3; i++) Q += Math.max(0, a[i] - p);
+      return Q;
+    },
+    function(p) { return p; },
+    0.01, 12
+  ], { strokeColor: '#333', strokeWidth: 3 });
+
+  // Price line
+  board.create('functiongraph', [
+    function(Q) { return getP(); }, 0, 26
+  ], { strokeColor: '#888', strokeWidth: 1, dash: 4 });
+
+  // Points at individual quantities
+  for (var i = 0; i < 3; i++) {
+    (function(idx) {
+      board.create('point', [
+        function() { var a = getA()[idx]; var p = getP(); return Math.max(0, a - p); },
+        function() { return getP(); }
+      ], { size: 4, fillColor: colors[idx], strokeColor: colors[idx], name: '', fixed: true });
+    })(i);
+  }
+
+  // Market quantity point
+  board.create('point', [
+    function() {
+      var a = getA(); var p = getP(); var Q = 0;
+      for (var i = 0; i < 3; i++) Q += Math.max(0, a[i] - p);
+      return Q;
+    },
+    function() { return getP(); }
+  ], { size: 6, fillColor: '#333', strokeColor: '#333', name: '', fixed: true });
+
+  function update() {
+    var a = getA();
+    var p = getP();
+    document.getElementById('val-a1').textContent = a[0].toFixed(1);
+    document.getElementById('val-a2').textContent = a[1].toFixed(1);
+    document.getElementById('val-a3').textContent = a[2].toFixed(1);
+    document.getElementById('val-p').textContent = p.toFixed(2);
+
+    var qA = Math.max(0, a[0] - p);
+    var qB = Math.max(0, a[1] - p);
+    var qC = Math.max(0, a[2] - p);
+    var qM = qA + qB + qC;
+
+    var active = (qA > 0 ? 1 : 0) + (qB > 0 ? 1 : 0) + (qC > 0 ? 1 : 0);
+
+    var html = 'A \\(p = ' + p.toFixed(1) + '\\):<br>';
+    html += '<span style="color:#C8102E;">\\(Q_A = ' + qA.toFixed(1) + '\\)</span>, ';
+    html += '<span style="color:#1565c0;">\\(Q_B = ' + qB.toFixed(1) + '\\)</span>, ';
+    html += '<span style="color:#ff9800;">\\(Q_C = ' + qC.toFixed(1) + '\\)</span><br>';
+    html += '<strong>\\(Q_M = ' + qM.toFixed(1) + '\\)</strong> (' + active + ' consumidor' + (active !== 1 ? 'es' : '') + ' ativo' + (active !== 1 ? 's' : '') + ')<br>';
+    html += '<em>Soma horizontal: \\(Q_M = Q_A + Q_B + Q_C\\)</em>';
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-a1').value = 8;
+    document.getElementById('slider-a2').value = 6;
+    document.getElementById('slider-a3').value = 4;
+    document.getElementById('slider-p').value = 3;
+    update();
+  }
+
+  ['slider-a1','slider-a2','slider-a3','slider-p'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+
+  update();
+</script>
+</body>
+</html>

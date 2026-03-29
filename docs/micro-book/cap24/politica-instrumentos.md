@@ -48,6 +48,14 @@ Custo total: **6.671** — uma economia de 11% em relação ao comando e control
 
 O resultado é geral: quando os custos marginais de abatimento diferem entre firmas, a alocação de menor custo requer que a redução seja maior nas firmas com custos menores. Instrumentos de mercado alcançam essa alocação automaticamente, sem que o regulador precise conhecer os custos individuais de cada firma.
 
+No gráfico interativo abaixo, visualize a curva de custo marginal de abatimento e compare o custo total sob imposto pigouviano vs. cap-and-trade. Ajuste a meta de abatimento ou a alíquota do imposto e observe como o custo de abatimento cresce convexamente.
+
+<iframe src="/micro-book/graficos/cap24/custo-marginal-abatimento.html" title="Figura 24.0 — Curva de Custo Marginal de Abatimento" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 24.0 — Custo Marginal de Abatimento.** A curva MAC cresce com o volume de abatimento: as primeiras toneladas são baratas (eficiência energética, substituição de combustíveis), as últimas são caríssimas (captura de carbono, mudança estrutural). A área sob a curva é o custo total de abatimento.
+</div>
+
 !!! idea "Intuição Econômica"
     **Em uma frase:** Instrumentos de mercado são superiores à regulação direta porque permitem que as firmas com menor custo de abatimento façam a maior parte da redução — minimizando o custo total para a sociedade.
 
@@ -146,6 +154,14 @@ A lógica é elegante:
 - Se a curva de **benefício marginal é relativamente plana** (o dano de poluição varia pouco com a quantidade), errar na quantidade não é tão custoso — mas errar no custo para as firmas pode ser muito caro. Nesse caso, é melhor fixar o preço (imposto) e deixar a quantidade flutuar.
 
 - Se a curva de **benefício marginal é muito inclinada** (há um limiar de dano catastrófico), errar na quantidade é muito perigoso — é melhor fixar a quantidade (cap) e aceitar volatilidade de preço.
+
+No gráfico interativo abaixo, ajuste as inclinações do benefício marginal (BMg) e do custo marginal de abatimento (CMgA) e aplique um choque de custo. Observe como o instrumento com menor perda de peso morto muda conforme as inclinações relativas.
+
+<iframe src="/micro-book/graficos/cap24/incerteza-preco-quantidade.html" title="Figura 24.1b — Weitzman: Preços vs Quantidades sob Incerteza" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj" markdown>
+**Figura 24.1b — Weitzman (1974).** Quando CMgA é mais íngreme que BMg, o imposto (preço) domina: fixar o preço e deixar a quantidade flutuar gera menor perda. Quando BMg é mais íngreme (limiares de dano), o cap (quantidade) domina.
+</div>
 
 !!! warning "Mudanças climáticas e o argumento de Weitzman para quantidades"
     O caso das mudanças climáticas apresenta um argumento poderoso para instrumentos de quantidade (cap). Se existem **limiares climáticos** (*tipping points*) — pontos a partir dos quais o aquecimento desencadeia processos irreversíveis (colapso da calota polar, liberação de metano do permafrost) —, a curva de dano marginal torna-se extremamente inclinada próximo a esses limiares. Nessa situação, a equação $\eqref{eq:24.5}$ se aplica: é preferível garantir o teto de emissões (mesmo com volatilidade de preço) do que fixar o preço e arriscar ultrapassar um limiar catastrófico. Esse argumento foi formalmente desenvolvido por Weitzman (2009) no contexto de "fat tails" (caudas pesadas) na distribuição de danos climáticos.
