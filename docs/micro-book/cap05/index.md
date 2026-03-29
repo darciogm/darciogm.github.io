@@ -339,6 +339,27 @@ Com a Equação de Slutsky em mãos, podemos extrair consequências cruciais par
 
     **Fonte:** Jensen, R. T.; Miller, N. H. (2008). "Giffen Behavior and Subsistence Consumption." *The American Economic Review*, 98(4), 1553–1577.
 
+!!! box-brasil "Box Brasil 5.3 — Slutsky na bomba: gasolina, etanol e a decomposição que o motorista faz sem saber"
+
+    Quando o preço da gasolina sobe no Brasil, o motorista flex faz — inconscientemente — a decomposição de Slutsky em tempo real. A regra prática é conhecida: se o etanol custa menos de 70% do preço da gasolina, compensa abastecer com etanol. Essa regra é, na essência, uma heurística de *efeito substituição*.
+
+    **Dados ANP (2019–2024):**
+
+    | Período | Gasolina (R$/L) | Etanol (R$/L) | Razão E/G | Comportamento observado |
+    |---|---|---|---|---|
+    | Jan 2020 | 4,54 | 3,16 | 0,70 | Indiferente |
+    | Jun 2022 (pico) | 7,39 | 5,47 | 0,74 | Gasolina preferida (ES fraco) |
+    | Dez 2023 | 5,79 | 3,72 | 0,64 | Etanol preferido (ES forte) |
+    | Dez 2024 | 6,15 | 4,07 | 0,66 | Etanol preferido |
+
+    **Efeito substituição:** Quando a razão etanol/gasolina cai abaixo de 0,70, o consumo de etanol sobe e o de gasolina cai — substituição pura entre combustíveis. A ANP documenta que, em estados produtores como São Paulo, Goiás e Minas Gerais, a participação do etanol nas vendas de combustíveis varia de 35% a 55%, respondendo diretamente aos preços relativos.
+
+    **Efeito renda:** O combustível representa 4–8% do orçamento das famílias brasileiras (POF 2017-2018). Para motoristas de aplicativo e caminhoneiros, essa participação pode chegar a 25–40% da receita bruta. Nesses casos, o efeito renda de um aumento de combustível é significativo: o motorista de aplicativo não apenas substitui gasolina por etanol (ES), mas também *reduz* o número de corridas porque o lucro líquido por corrida diminuiu (ER negativo sobre lazer). É a Equação de Slutsky em ação na gig economy.
+
+    **Conexão com a teoria:** Combustível é um bem normal para a maioria das famílias (\(\partial x / \partial I > 0\)), de modo que ES e ER se reforçam: quando o preço sobe, a demanda cai tanto pela substituição por etanol/transporte público quanto pelo empobrecimento. A elasticidade-preço da demanda por gasolina no Brasil é estimada entre −0,3 e −0,5 no curto prazo e entre −0,7 e −1,0 no longo prazo (Santos, 2013) — consistente com substituição limitada no curto prazo (poucas alternativas imediatas) e ampla no longo prazo (troca de veículo, mudança de rota, transporte público).
+
+    **Fontes:** ANP — Levantamento de Preços de Combustíveis; IBGE — POF 2017-2018; Santos, G. F. (2013). "Fuel demand in Brazil in a dynamic panel data approach." *Energy Economics*, 36, 229–240.
+
 ??? exercicio-resolvido "Exercício Resolvido 5.3"
     **Enunciado:** Um consumidor tem utilidade \(U(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), com preços \(p_1 = 4\), \(p_2 = 1\) e renda \(I = 80\). O preço do bem 1 cai para \(p_1' = 1\). (a) Encontre as cestas ótimas antes e depois da variação de preço. (b) Decomponha o efeito total sobre \(x_1\) em efeito substituição e efeito renda (Hicks). (c) Verifique a decomposição com a Equação de Slutsky.
 

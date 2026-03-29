@@ -133,6 +133,28 @@ Apesar dessas críticas comportamentais, a teoria VNM permanece o padrão normat
 
     **Implicação prática:** Comparar as funções de utilidade de dois agentes faz sentido — dizer que o agente A tem ARA mais alta que o agente B é uma afirmação invariante à classe de transformações afins. Já perguntar "quem tem mais utilidade no estado 1?" não faz sentido sem fixar a normalização. A cardinalidade da utilidade VNM é, portanto, uma propriedade *relacional* (entre loterias e probabilidades), não uma afirmação sobre o nível absoluto de bem-estar.
 
+!!! box-brasil "Box Brasil 7.2 — A Mega-Sena e o paradoxo da busca por risco: por que 100 milhões de brasileiros jogam na loteria?"
+
+    Segundo a Caixa Econômica Federal, mais de 100 milhões de brasileiros apostam regularmente em loterias. Em 2023, as loterias da Caixa arrecadaram R$ 23 bilhões — receita que financia programas sociais, cultura e esporte. Mas a teoria VNM tem um problema com isso: se os agentes são avessos ao risco, *não deveriam* jogar.
+
+    **Os números da Mega-Sena:**
+
+    - Probabilidade de acertar as 6 dezenas: 1 em 50.063.860
+    - Aposta mínima: R$ 5,00
+    - Prêmio médio acumulado: ~R$ 50 milhões
+    - Valor esperado da aposta: \(E = \frac{50.000.000}{50.063.860} \approx \text{R\$ } 1{,}00\)
+    - **Retorno esperado por real apostado: R$ 0,20** (perda esperada de 80%)
+
+    Um agente avesso ao risco com utilidade côncava *jamais* compraria esse bilhete — o valor esperado é muito inferior ao custo. Então por que jogam?
+
+    **Três explicações microeconômicas:**
+
+    1. **Friedman-Savage (1948):** A função de utilidade pode ser côncava para riquezas próximas ao nível atual (aversão ao risco para perdas pequenas) mas *convexa* para ganhos muito grandes (busca por risco para a "chance de mudar de vida"). A Mega-Sena ativa exatamente a porção convexa.
+    2. **Teoria do Prospecto (Cap 8):** Kahneman e Tversky mostraram que agentes *sobre-ponderam* probabilidades pequenas. Se \(\pi(p)\) é a função de ponderação, então \(\pi(1/50.000.000) \gg 1/50.000.000\) — o cérebro trata "chance minúscula" como "chance razoável".
+    3. **Utilidade do sonho:** A aposta pode gerar utilidade *antes* do resultado — o prazer de imaginar o que faria com R$ 50 milhões. Essa "utilidade de antecipação" (Loewenstein, 1987) não aparece no modelo VNM padrão.
+
+    **Conexão com a teoria:** A loteria é o teste empírico mais acessível da teoria VNM. Sua ubiquidade no Brasil — de faxineiras a executivos — sugere que a aversão ao risco não é um traço monolítico, e que o Capítulo 8 (economia comportamental) oferece explicações mais realistas do que o modelo canônico para certas classes de decisão.
+
 ---
 
 ## 7.3 Por Que Você Recusa Apostas Justas: Aversão ao Risco

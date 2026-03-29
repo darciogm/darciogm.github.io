@@ -80,4 +80,36 @@ A [Tabela 18.1](#tabela-18-1) resume os principais fatores que afetam a taxa de 
 **Tabela 18.1 — Fatores que afetam a taxa de juros.**
 </div>
 
+!!! box-brasil "Box Brasil 18.1 — O preço da paciência no Brasil: por que a Selic real é outlier global?"
+
+    O Brasil é, há décadas, um dos países com a maior taxa de juros real do mundo. Isso não é apenas uma curiosidade macroeconômica — é um fenômeno microeconômico com consequências profundas para as decisões de consumo intertemporal, investimento e poupança estudadas neste capítulo.
+
+    **Dados comparativos (taxa de juros real *ex ante*, dez/2024):**
+
+    | País | Taxa nominal | Inflação esperada | Taxa real |
+    |---|---|---|---|
+    | **Brasil** | **12,25%** | **4,5%** | **≈ 7,4%** |
+    | México | 10,00% | 4,2% | ≈ 5,6% |
+    | Colômbia | 9,50% | 5,3% | ≈ 4,0% |
+    | EUA | 4,50% | 2,4% | ≈ 2,1% |
+    | Zona do Euro | 3,00% | 2,1% | ≈ 0,9% |
+    | Japão | 0,25% | 2,5% | ≈ −2,2% |
+
+    *Fontes: BCB, Fed, ECB, BoJ. Taxa real aproximada pela equação de Fisher (Seção 18.4).*
+
+    **Por que o Brasil é outlier?** A teoria oferece várias explicações complementares, todas conectadas aos fatores da Tabela 18.1:
+
+    - **Risco percebido elevado** (↑ prêmio de risco): histórico de moratória (1987), hiperinflação (1980–94) e crises fiscais recorrentes elevam o prêmio exigido por credores. A dívida pública bruta acima de 75% do PIB e a trajetória fiscal incerta amplificam esse efeito.
+    - **Taxa de poupança doméstica baixa** (~15% do PIB vs. ~45% na China): a oferta de fundos emprestáveis é relativamente escassa, pressionando \(r^*\) para cima.
+    - **Crédito direcionado e BNDES**: parte significativa do crédito no Brasil é concedida a taxas subsidiadas (TLP), criando segmentação no mercado de fundos. A Selic precisa ser mais alta para equilibrar o segmento livre, onde a demanda residual é concentrada.
+    - **Dominância fiscal**: expectativas de expansão fiscal futura elevam a inflação esperada e, via equação de Fisher, a taxa nominal — mas o componente real também sobe pela incerteza associada.
+
+    **Consequências microeconômicas:**
+
+    - **Investimento:** Com taxa real de 7%, o VPL de projetos de longo prazo (infraestrutura, P&D) é dramaticamente reduzido — a Seção 18.6 mostra que o VPL é \(\sum \frac{R_t}{(1+r)^t} - C_0\), e juros altos "esmagam" os fluxos futuros. Um projeto que seria viável nos EUA (r = 2%) pode ter VPL negativo no Brasil (r = 7%).
+    - **Consumo intertemporal:** No modelo de Fisher (Seção 18.3), juros reais elevados incentivam a poupança (efeito substituição domina para poupadores) mas encarecem drasticamente o crédito ao consumidor. A taxa média de juros do cartão de crédito rotativo no Brasil atingiu 431% a.a. em 2024 (BCB) — quase certamente a maior do mundo.
+    - **Custo de oportunidade:** Para o investidor brasileiro, o Tesouro Selic oferece retorno real de ~7% com risco praticamente zero. Isso eleva o custo de oportunidade de qualquer investimento produtivo e ajuda a explicar por que o Brasil investe apenas ~16% do PIB (vs. 25–30% em economias asiáticas).
+
+    **Fontes:** BCB — SGS (séries temporais); Arida, Bacha e Lara-Resende (2005). "Credit, Interest, and Jurisdictional Uncertainty." In: Giavazzi, Goldfajn e Herrera (eds.), *Inflation Targeting, Debt, and the Brazilian Experience*. MIT Press.
+
 Historicamente, a teoria econômica ofereceu explicações distintas para a existência de juros positivos. Para os economistas clássicos (Böhm-Bawerk, Fisher), os juros refletem a **preferência temporal** — o fato de que as pessoas valorizam mais o presente que o futuro — combinada com a **produtividade do capital** — o fato de que métodos de produção mais demorados (roundabout) são mais produtivos. Keynes enfatizou o papel da **preferência pela liquidez**: como reter moeda proporciona flexibilidade, os agentes exigem uma compensação (juros) para abrir mão dessa liquidez. Na síntese moderna, todos esses fatores interagem no mercado de fundos emprestáveis.

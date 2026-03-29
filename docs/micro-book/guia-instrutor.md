@@ -244,4 +244,33 @@ O livro oferece um conjunto integrado de recursos para apoiar o ensino e o estud
 
 ---
 
+## Micro em 60 Segundos: Roteiros para Reels e TikTok
+
+Cada capítulo do livro contém um gancho narrativo que pode ser transformado em conteúdo de 60 segundos para redes sociais. Os roteiros abaixo seguem a estrutura **hook (3s) → tensão (20s) → virada (20s) → chamada (10s)** e podem ser gravados pelo professor, por monitores ou pelos próprios alunos como atividade avaliativa.
+
+### Roteiros prontos
+
+| # | Capítulo | Título do Reel | Hook (3s) | Roteiro resumido |
+|---|---|---|---|---|
+| 1 | Cap 1 | "Todo modelo mente" | "O GPS ignora as formigas na calçada — e isso é genial." | Analogia mapa 1:1 de Borges → modelos econômicos simplificam *de propósito* → "O Bolsa Família nasceu de um modelo. Saber o que ele ignora importa tanto quanto saber o que ele inclui." |
+| 2 | Cap 3 | "Netflix te quebrou" | "Netflix, Disney+ ou HBO Max — só pode assinar um. Você prefere A a B, B a C, e C a A. Parabéns: suas preferências são intransitivas." | Paradoxo do streaming → axioma de transitividade → "Sem ele, a micro não funciona. Com ele, todo o resto do livro é consequência." |
+| 3 | Cap 5 | "Slutsky no posto" | "Gasolina subiu. Você abasteceu com etanol. Mas por quê?" | Dois efeitos misturados: ficou mais caro (substituição) e você ficou mais pobre (renda). Slutsky separa os dois → "Sem essa decomposição, o governo não sabe se o imposto empobrece ou apenas redireciona." |
+| 4 | Cap 7 | "Quanto vale sua vida?" | "Seguradoras calculam. E o número vai te incomodar." | Valor esperado vs. utilidade esperada → aversão ao risco → prêmio de risco → "Por isso você paga seguro mesmo sabendo que provavelmente não vai usar." |
+| 5 | Cap 8 | "Seu cérebro trapaceia" | "Linda é ativista, inteligente e franca. Ela é mais provavelmente caixa de banco ou caixa de banco E feminista?" | Falácia da conjunção → Sistema 1 vs. Sistema 2 → "Kahneman ganhou o Nobel por provar que você erra essa pergunta. E que isso não é burrice — é design." |
+| 6 | Cap 9a | "Nash no bar" | "Dois postos de gasolina lado a lado. Se um baixa o preço, o outro copia. Se os dois baixam, ninguém lucra." | Dilema do prisioneiro → Equilíbrio de Nash → "O resultado que ninguém quer, mas ninguém consegue evitar sozinho." |
+| 7 | Cap 12 | "O papagaio morto de Monty Python" | "'This parrot is no more!' O comprador sabe. O vendedor finge." | Assimetria de informação na pet shop → custos de transação → "Coase explicou por que o cara volta pra MESMA loja em vez de procurar outra: o custo de busca é alto demais." |
+| 8 | Cap 15 | "A Coca de R$ 12" | "No aeroporto, Coca custa R$ 12. Na esquina, R$ 5. Mesma lata." | Poder de mercado sem substituto → Lerner → "Sem concorrência por perto, o monopólio sorri. Com uma máquina de água grátis ao lado, o preço desaba." |
+| 9 | Cap 16 | "Quando a IA faz cartel" | "Algoritmos de precificação aprendem a cooperar. Sem instrução. Sem conversa. Sem humanos." | Calvano et al. (2020) → Q-learning → grim trigger emergente → "É o cartel que nenhuma lei antitruste sabe como enquadrar." |
+| 10 | Cap 19 | "O mercado de limões" | "Você quer comprar um carro usado. O vendedor sabe se é bom. Você não." | Akerlof → seleção adversa → "Os carros bons somem do mercado. Sobram os limões. E o Tinder funciona igual." |
+| 11 | Cap 20 | "O que os romanos fizeram por nós?" | "*Life of Brian*: rebeldes listam bens públicos dos romanos por 2 minutos sem parar." | Condição de Samuelson → free rider → "Aqueduto, estradas, saneamento... A soma dos benefícios supera o custo. Até os rebeldes concordam." |
+| 12 | Cap 24 | "Quanto vale um pôr do sol?" | "Economistas tentam precificar ar limpo. Parece absurdo — mas a alternativa é tratar como se valesse zero." | Valoração contingente → custo social do carbono → "Um pôr do sol sem preço é um pôr do sol sem proteção." |
+
+### Como usar em sala
+
+- **Atividade avaliativa:** Divida a turma em duplas. Cada dupla recebe um capítulo e deve produzir um Reel de 60 segundos que explique *um* conceito com precisão técnica e linguagem acessível. Avalie em três dimensões: (i) correção conceitual (50%); (ii) capacidade de comunicação (30%); (iii) criatividade (20%).
+- **Engajamento:** Publique os melhores no perfil da disciplina (com autorização). Alunos que publicam em seus próprios perfis e obtêm >500 visualizações ganham 0,5 ponto extra — incentivo alinhado à teoria de sinalização do Cap 9d.
+- **Curadoria semanal:** Crie uma newsletter ou grupo de WhatsApp da disciplina com a rubrica "O que aconteceu esta semana que a micro explica?" — 3 parágrafos conectando uma notícia real a um conceito do livro.
+
+---
+
 *Este guia é um recurso vivo. Sugestões e contribuições de professores são bem-vindas — entre em contato pelo e-mail disponível no rodapé do site.*

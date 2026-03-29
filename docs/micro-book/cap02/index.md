@@ -300,6 +300,16 @@ Esta seção apresenta o método em um passo a passo detalhado, para que o leito
     **Conexão com este capítulo:**
     O método de Lagrange e as condições KKT desta seção são, em essência, a versão diferenciável dos resultados de programação linear de Kantorovich e Koopmans. O multiplicador \(\lambda\) — o "valor-sombra" da restrição — é exatamente o conceito que Kantorovich chamou de "avaliação resolvente" (*resolving multiplier*) em seu trabalho original. A equivalência entre a solução do problema de otimização com restrições e os preços de equilíbrio competitivo é uma das ideias mais profundas da teoria econômica, formalizada no segundo teorema do bem-estar (Capítulo 13).
 
+!!! box-brasil "Box Brasil 2.1 — O Lagrangeano no Bolsa Família: quanto vale R$ 1 a mais de transferência?"
+
+    Em 2023, o programa Bolsa Família transferiu em média R$ 681/mês por família beneficiária. Uma pergunta central de política pública é: qual o impacto marginal de aumentar essa transferência em R$ 1? A resposta é, em essência, o multiplicador de Lagrange \(\lambda\) do problema de otimização da família.
+
+    **O problema formal:** Uma família beneficiária maximiza \(U(x_1, x_2)\) — utilidade derivada do consumo de alimentos (\(x_1\)) e outros bens (\(x_2\)) — sujeita à restrição \(p_1 x_1 + p_2 x_2 = I + T\), onde \(I\) é a renda do trabalho e \(T\) é a transferência do Bolsa Família. O multiplicador de Lagrange \(\lambda^* = \partial V / \partial (I + T)\) mede a utilidade marginal da renda — exatamente o valor de R$ 1 adicional para essa família.
+
+    **Por que isso importa:** Famílias com renda muito baixa têm \(\lambda\) alto (cada real extra tem impacto grande no bem-estar), enquanto famílias de renda média-alta têm \(\lambda\) baixo (um real a mais quase não se nota). Essa é a base teórica da focalização: transferir renda para quem tem \(\lambda\) alto gera o maior aumento de bem-estar social por real gasto. Estudos de avaliação do Bolsa Família — como Soares, Ribas e Soares (2010), *Latin American Research Review*, 45(2), 173–190 — estimam que o programa reduziu significativamente a pobreza extrema e que a propensão marginal a consumir alimentos é substancialmente maior entre beneficiários do que entre famílias de renda média. Em termos do Lagrangeano: o \(\lambda\) dos beneficiários é muitas vezes maior que o das famílias não beneficiárias — justificando a focalização.
+
+    **Conexão com o método:** Quando o estudante resolver o Lagrangeano do consumidor no Capítulo 4, estará formalizando exatamente esse raciocínio. O multiplicador \(\lambda\) não é um artefato matemático — é o *preço-sombra da pobreza*.
+
 ### Passo 0 — Identificar o problema
 
 O problema canônico da microeconomia pode ser escrito na forma:
