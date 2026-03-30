@@ -40,7 +40,7 @@ Esta seção reúne as soluções detalhadas de todos os exercícios propostos a
 | Capítulo | Tema | Exercícios |
 |:---------|:-----|:----------:|
 | [Cap. 15](cap15.md) | Sem Concorrente, Sem Piedade | 5 |
-| [Cap. 16](cap16.md) | Quando Gigantes Competem | 5 |
+| [Caps. 16a–16b](cap16.md) | Oligopólio e IO | 10 |
 | [Cap. 17](cap17.md) | Economia do Trabalho | 5 |
 | [Cap. 18](cap18.md) | A Paciência Tem Preço | 5 |
 

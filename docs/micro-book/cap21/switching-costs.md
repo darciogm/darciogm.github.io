@@ -6,7 +6,7 @@ Você já tentou trocar de banco? Se a resposta é sim, sabe que o processo envo
 
 A análise dos custos de troca complementa os efeitos de rede (Seção 21.2) e os mercados bilaterais (Seção 21.3) ao formalizar um mecanismo adicional de poder de mercado em economias digitais: o **lock-in**. Enquanto os efeitos de rede geram poder de mercado pelo lado da *demanda* (mais usuários tornam o produto mais valioso), os custos de troca geram poder de mercado pelo lado da *oferta* (uma vez adotado, trocar é caro). Frequentemente, ambos os mecanismos operam simultaneamente — e essa combinação é o que torna plataformas digitais tão difíceis de contestar.
 
-O modelo seminal de Klemperer (1987) demonstra que custos de troca, mesmo pequenos, podem ter efeitos dramáticos sobre preços e bem-estar. A formalização conecta-se diretamente com a teoria de oligopólio do [Capítulo 16](../cap16/index.md) e com a análise de barreiras à entrada do [Capítulo 15](../cap15/index.md).
+O modelo seminal de Klemperer (1987) demonstra que custos de troca, mesmo pequenos, podem ter efeitos dramáticos sobre preços e bem-estar. A formalização conecta-se diretamente com a teoria de oligopólio do [Capítulos 16a–16b](../cap16a/index.md) e com a análise de barreiras à entrada do [Capítulo 15](../cap15/index.md).
 
 ---
 
@@ -55,7 +55,7 @@ p^*_2 = c + s
 \label{eq:21.19} \tag{21.19}
 $$
 
-onde \(c\) é o custo marginal. O resultado é poderoso: **mesmo com produtos homogêneos e duas firmas, o preço de equilíbrio excede o custo marginal por exatamente \(s\)**. Compare com o resultado de Bertrand sem custos de troca ([Seção 16.2](../cap16/fundamentos.md#162)), onde \(p^* = c\). O switching cost transforma um mercado Bertrand-competitivo em um mercado com poder de mercado.
+onde \(c\) é o custo marginal. O resultado é poderoso: **mesmo com produtos homogêneos e duas firmas, o preço de equilíbrio excede o custo marginal por exatamente \(s\)**. Compare com o resultado de Bertrand sem custos de troca ([Seção 16a.2](../cap16a/fundamentos.md#16a2)), onde \(p^* = c\). O switching cost transforma um mercado Bertrand-competitivo em um mercado com poder de mercado.
 
 !!! theorem "Proposição 21.1 — Custos de troca e markup de equilíbrio (Klemperer, 1987)"
     Em um duopólio com produtos homogêneos e custos de troca simétricos \(s > 0\), o preço de equilíbrio do período 2 é \(p^* = c + s\). O markup sobre o custo marginal é exatamente igual ao custo de troca. A perda de peso morto é crescente em \(s\).

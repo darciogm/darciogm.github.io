@@ -23,8 +23,8 @@ Roteiro para uma disciplina típica de Microeconomia I ou II na graduação. Cob
 | 11 | Maximização de lucro da firma | Cap. 12 | 12.1–12.5 |
 | 12 | Equilíbrio competitivo parcial | Cap. 13 | 13.1–13.5 |
 | 13 | Monopólio | Cap. 15 | 15.1–15.5 |
-| 14 | Oligopólio (introdução) | Cap. 16 (seções 16.1–16.3) | 16.1–16.3 |
-| 15 | **Prova 2** — Revisão Caps. 10–16 | Caps. 10–16 | Exercícios de revisão |
+| 14 | Oligopólio (introdução) | Cap. 16a (seções 16a.1–16a.3) | 16a.1–16a.3 |
+| 15 | **Prova 2** — Revisão Caps. 10–16b | Caps. 10–16b | Exercícios de revisão |
 
 **Capítulos complementares (leitura recomendada):** Cap. 8 (Economia Comportamental), Cap. 14 (Equilíbrio Geral), Caps. 19–20 (Falhas de Mercado).
 

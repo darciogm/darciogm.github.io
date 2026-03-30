@@ -22,6 +22,9 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
 | 14.8 | Como traduzir a Caixa de Edgeworth em equações? | Modelo walrasiano de troca pura | [Modelo](modelo-matematico.md#148) |
 | 14.9 | O equilíbrio geral existe — ou é só uma ideia bonita? | Ponto fixo, Teorema de Arrow-Debreu | [Existência](modelo-matematico.md#149) |
 | 14.10 | E quando alguém precisa fabricar, não só trocar? | Produção e equilíbrio geral | [Produção](modelo-matematico.md#1410) |
+!!! info "Material Avançado"
+    As seções 14.11 (CGE) e 14.12 (Escolha Social) são **material complementar** — podem ser omitidas numa primeira leitura sem perda de continuidade. São recomendadas para cursos de pós-graduação e para a Trilha Completa.
+
 | 14.11 | Como simular o impacto de uma reforma tributária na economia inteira? | Modelos CGE (equilíbrio geral computável) | [CGE](cge.md) |
 | 14.12 | Existe regra de votação perfeita — ou a democracia tem limites lógicos? | Teorema de Arrow, escolha social | [Arrow](escolha-social.md#1412) |
 | **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |

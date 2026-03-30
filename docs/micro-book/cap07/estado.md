@@ -242,6 +242,15 @@ Se você sair deste capítulo com três convicções, que sejam estas:
 
     **Conexão com o conteúdo:** Seção 7.6 (métodos para reduzir o risco — diversificação). Extensão natural: Seção 7.7 (estado-preferência e ativos Arrow-Debreu).
 
+!!! abstract "Para onde estes conceitos vão"
+    As seções 7.7–7.8 plantaram a semente da **informação assimétrica**: o que acontece quando um lado do mercado sabe mais que o outro? Este tema será desenvolvido em profundidade em dois capítulos posteriores:
+
+    - **[Cap. 9d — O Diploma É Caro](../cap09d/index.md):** A abordagem de **teoria dos jogos**. Sinalização (Spence), seleção adversa (Akerlof), moral hazard e cheap talk — todos como jogos sequenciais com informação incompleta, resolvidos via Equilíbrio Bayesiano Perfeito.
+
+    - **[Cap. 19 — Quando Um Lado Sabe Mais](../cap19/index.md):** A abordagem de **mercados e contratos**. Os mesmos fenômenos (sinalização, screening, seleção adversa, moral hazard), mas com foco em como mercados, seguradoras, empregadores e reguladores **desenham mecanismos** para lidar com a assimetria.
+
+    **Resumo:** Cap. 9d = "como modelar o problema"; Cap. 19 = "como resolver o problema na prática". Ambos usam o arcabouço de estado-preferência que você acabou de aprender como ponto de partida.
+
 [^completely-different-state]: Frase imortalizada pelo narrador de *Monty Python's Flying Circus*. A transição aqui é deliberada: depois de seis seções pensando em loterias e probabilidades, vamos reformular tudo como um problema do consumidor — com curvas de indiferença, restrição orçamentária e tudo mais. É *completely different*, mas estranhamente familiar.
 
 [^dead-parrot-info]: No sketch *Dead Parrot* de Monty Python, o vendedor insiste que o papagaio morto está "descansando" — um caso perfeito de assimetria de informação em que o vendedor sabe perfeitamente o estado do produto e engana o comprador com *cheap talk*. Akerlof (1970) formalizou exatamente essa situação: quando o vendedor sabe mais do que o comprador, o mercado pode colapsar.

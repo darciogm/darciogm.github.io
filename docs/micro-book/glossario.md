@@ -55,7 +55,7 @@
 ## C
 
 **Competição monopolística**
-: Estrutura de mercado com muitas firmas vendendo produtos diferenciados e com livre entrada; no equilíbrio de longo prazo, cada firma tem lucro zero e opera com excesso de capacidade. [Cap. 16](cap16/index.md).
+: Estrutura de mercado com muitas firmas vendendo produtos diferenciados e com livre entrada; no equilíbrio de longo prazo, cada firma tem lucro zero e opera com excesso de capacidade. [Caps. 16a–16b](cap16a/index.md).
 
 **Cap-and-trade (sistema de comércio de emissões)**
 : Instrumento de mercado para controle de poluição que fixa um teto (\(\bar{E}\)) de emissões totais e distribui permissões negociáveis entre firmas. A livre negociação garante que o abatimento ocorra nas firmas com menor custo marginal, alcançando eficiência de custos. Exemplos: EU ETS (Europa), RenovaBio/CBIOs (Brasil). [Cap. 24](cap24/index.md).
@@ -504,7 +504,7 @@
 : Preço personalizado para um bem público, igual ao benefício marginal de cada consumidor, de modo que a soma iguala o custo marginal.
 
 **Price cap (preço-teto regulatório)**
-: Regulação de monopólio natural que fixa um teto de preço ajustado pela fórmula \(RPI - X\) (inflação menos ganho de produtividade esperado), incentivando eficiência produtiva ao permitir que a firma retenha lucros de reduções de custo. [Cap. 16](cap16/index.md).
+: Regulação de monopólio natural que fixa um teto de preço ajustado pela fórmula \(RPI - X\) (inflação menos ganho de produtividade esperado), incentivando eficiência produtiva ao permitir que a firma retenha lucros de reduções de custo. [Caps. 16a–16b](cap16a/index.md).
 
 **Primeiro Teorema do Bem-Estar**
 : Em uma economia com mercados completos e concorrência perfeita, qualquer equilíbrio competitivo é uma alocação eficiente de Pareto.

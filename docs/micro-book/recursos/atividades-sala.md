@@ -45,7 +45,7 @@ As atividades abaixo estão integradas nos capítulos do livro. Use esta página
 | 29 | [Cap. 13](../cap13/index.md) | O Mercado de Chocolate: Leilão Duplo e Incidência Tributária | Equilíbrio competitivo e impostos | 45 min | 20 |
 | 30 | [Cap. 14](../cap14/index.md) | A Caixa de Edgeworth ao Vivo | Trocas bilaterais e eficiência de Pareto | 45 min | 8 |
 | 31 | [Cap. 15](../cap15/index.md) | O Leilão do Monopólio: Poder de Mercado e Discriminação | Monopólio e discriminação de preços | 50 min | 10 |
-| 32 | [Cap. 16](../cap16/index.md) | O Torneio de Oligopólio: Bertrand, Cournot e Colusão | Concorrência oligopolística | 55 min | 8 |
+| 32 | [Cap. 16a](../cap16a/index.md) | O Torneio de Oligopólio: Bertrand, Cournot e Colusão | Concorrência oligopolística | 55 min | 8 |
 | 33 | [Cap. 17](../cap17/index.md) | O Mercado de Trabalho ao Vivo | Oferta de trabalho, monopsônio e salário mínimo | 40 min | 12 |
 | 34 | [Cap. 18](../cap18/index.md) | O Leilão do Futuro: Desconto Intertemporal | Escolha intertemporal e viés de presente | 36 min | 8 |
 | 35 | [Cap. 19](../cap19/index.md) | O Mercado de Limões ao Vivo | Informação assimétrica e seleção adversa | 40 min | 10 |

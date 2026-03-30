@@ -1,5 +1,8 @@
 # 14.11 Do Quadro-Negro ao Gabinete: Modelos CGE
 
+!!! info "Seção avançada"
+    Esta seção é material complementar. Pode ser omitida sem perda de continuidade no restante do livro. Recomendada para: pós-graduação, economistas aplicados, pesquisadores que usam CGE.
+
 ## 14.11 Do Quadro-Negro ao Gabinete: Modelos CGE {#1411}
 
 Tudo o que vimos até aqui neste capítulo — Caixa de Edgeworth, Teoremas do Bem-Estar, prova de existência — pertence ao domínio da teoria pura. São resultados fundamentais, mas nenhum deles, isoladamente, diz a um ministro da Fazenda quanto uma reforma tributária vai afetar o emprego no setor têxtil. Para isso, precisamos de **modelos computáveis de equilíbrio geral** (CGE, na sigla em inglês), que traduzem a estrutura teórica walrasiana em sistemas numéricos calibrados com dados reais e resolvidos por computador.[^ministry-cge-bis]

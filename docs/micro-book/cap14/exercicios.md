@@ -90,6 +90,10 @@
 
     [Ver solução](../solucoes/cap14.md#ex-14-4)
 
+## Exercícios — Material Avançado (Seções 14.11–14.12)
+
+*Estes exercícios cobrem as seções complementares. Podem ser omitidos em cursos que não incluem CGE e Escolha Social.*
+
 !!! exercicio-proposto "Exercício 14.5 — CGE e o acordo Mercosul-UE" {#ex-14-5}
 
     O acordo comercial Mercosul-UE prevê redução de tarifas sobre bens industrializados europeus exportados ao Brasil, em troca de maior acesso europeu a commodities agrícolas brasileiras.

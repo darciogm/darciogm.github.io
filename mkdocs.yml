@@ -182,15 +182,19 @@ nav:
           - "15.9–15.10 Regulação e Visão Dinâmica": micro-book/cap15/regulacao-dinamica.md
           - "Exercícios e ANPEC": micro-book/cap15/exercicios.md
           - "Pesquisa em Ação": micro-book/cap15/pesquisa.md
-      - "Cap. 16 — Poucos — e Isso Muda Tudo":
-          - "Visão Geral": micro-book/cap16/index.md
-          - "16.1–16.4 Bertrand, Cournot e Stackelberg": micro-book/cap16/fundamentos.md
-          - "16.5–16.6 Capacidade e Diferenciação": micro-book/cap16/capacidade-diferenciacao.md
-          - "16.7–16.10 Colusão e Entrada": micro-book/cap16/colusao-entrada.md
-          - "16.11–16.13 Entrada Livre e Inovação": micro-book/cap16/entrada-inovacao.md
-          - "16.14–16.16 Competição Monopolística e Fusões": micro-book/cap16/monopolistica-fusoes.md
-          - "Exercícios e ANPEC": micro-book/cap16/exercicios.md
-          - "Pesquisa em Ação": micro-book/cap16/pesquisa.md
+      - "Cap. 16a — Poucos — e Isso Muda Tudo":
+          - "Visão Geral": micro-book/cap16a/index.md
+          - "16a.1–16a.4 Bertrand, Cournot e Stackelberg": micro-book/cap16a/fundamentos.md
+          - "16a.5–16a.6 Capacidade e Diferenciação": micro-book/cap16a/capacidade-diferenciacao.md
+          - "Exercícios e ANPEC": micro-book/cap16a/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap16a/pesquisa.md
+      - "Cap. 16b — Colusão, Entrada e o Árbitro":
+          - "Visão Geral": micro-book/cap16b/index.md
+          - "16b.1–16b.4 Colusão e Entrada": micro-book/cap16b/colusao-entrada.md
+          - "16b.5–16b.7 Entrada Livre e Inovação": micro-book/cap16b/entrada-inovacao.md
+          - "16b.8–16b.10 Competição Monopolística e Fusões": micro-book/cap16b/monopolistica-fusoes.md
+          - "Exercícios e ANPEC": micro-book/cap16b/exercicios.md
+          - "Pesquisa em Ação": micro-book/cap16b/pesquisa.md
     - Fatores e Tempo:
       - "Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?":
           - "Visão Geral": micro-book/cap17/index.md
@@ -264,7 +268,7 @@ nav:
           - "24.5–24.6 Valoração e Recursos": micro-book/cap24/valoracao-recursos.md
           - "Exercícios e ANPEC": micro-book/cap24/exercicios.md
           - "Pesquisa em Ação": micro-book/cap24/pesquisa.md
-    - "Cadernos Python": micro-book/notebooks/index.md
+    - "Cadernos Computacionais": micro-book/notebooks/index.md
     - "Exercícios com IA": micro-book/exercicios-ia.md
     - "Compilado ANPEC": micro-book/anpec-compilado.md
     - Referência:

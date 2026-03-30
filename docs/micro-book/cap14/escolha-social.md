@@ -1,5 +1,8 @@
 # 14.12 A Democracia Impossível: Escolha Social e o Teorema de Arrow {#1412}
 
+!!! info "Seção avançada"
+    Esta seção é material complementar. Para uma introdução mais aplicada à escolha social (votação, paradoxo de Condorcet, eleitor mediano), veja o [Cap. 20, Seção 20.9](../cap20/index.md).
+
 Os dois teoremas do bem-estar (Seções 14.6–14.7) estabelecem uma conexão elegante entre equilíbrio competitivo e eficiência de Pareto. Mas eficiência é uma condição fraca — diz que não há desperdício, não que a alocação é *justa*. Uma economia com um bilionário e milhões de miseráveis pode ser Pareto-eficiente. A pergunta inevitável é: se a sociedade quer ir além da eficiência e *escolher* entre alocações — cada uma eficiente, mas com distribuições diferentes —, existe uma forma de agregar as preferências individuais numa "preferência social" coerente?
 
 Kenneth Arrow respondeu a essa pergunta em 1951. A resposta é devastadora: **não**.

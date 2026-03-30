@@ -99,7 +99,7 @@ Este guia fornece recursos para professores que adotam o livro em cursos de Micr
 | 23 | — | **Revisão e Prova 2** | Resolver exercícios propostos selecionados em sala | — |
 | 24 | Cap. 15 (parte 1) | Monopólio: barreira à entrada, preço e quantidade | Comparar com o caso competitivo lado a lado | Receita marginal vs. preço para price-maker |
 | 25 | Cap. 15 (parte 2) | Discriminação de preços e regulação | Trazer exemplos brasileiros (ANEEL, concessões) | Condições para discriminação na prática |
-| 26 | Cap. 16 | Oligopólio: Cournot, Bertrand e Stackelberg | Comparar os três modelos com mesmos parâmetros | Diferença entre variável estratégica (preço vs. quantidade) |
+| 26 | Caps. 16a–16b | Oligopólio: Cournot, Bertrand e Stackelberg | Comparar os três modelos com mesmos parâmetros | Diferença entre variável estratégica (preço vs. quantidade) |
 | 27 | Cap. 19 | Informação assimétrica: seleção adversa e risco moral | Usar mercado de carros usados e seguros como motivação | Confusão entre seleção adversa e risco moral |
 | 28 | Cap. 20 (parte 1) | Externalidades: Pigou e Coase | Discutir política ambiental brasileira como caso | Quando Coase funciona e quando não funciona |
 | 29 | Cap. 20 (parte 2) | Bens públicos: Samuelson e mecanismos | Discutir provisão de segurança, iluminação pública | Free-rider como conceito vs. formalização |

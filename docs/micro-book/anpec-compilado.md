@@ -190,9 +190,9 @@ Este compilado reúne todas as **68 questões estilo ANPEC** presentes no livro,
 
 | Questão | Capítulo | Tema |
 |---------|----------|------|
-| [ANPEC 2022 — Questão 11](cap16/index.md#vem-anpec) | Cap. 16 | Duopólio de Cournot e índice HHI |
-| [ANPEC 2021 — Questão 09](cap16/index.md#vem-anpec) | Cap. 16 | Melhores respostas e equilíbrio de Cournot |
-| [ANPEC 2018 — Questão 09](cap16/index.md#vem-anpec) | Cap. 16 | Demanda quebrada e concorrência monopolística |
+| [ANPEC 2022 — Questão 11](cap16a/exercicios.md) | Cap. 16a | Duopólio de Cournot e índice HHI |
+| [ANPEC 2021 — Questão 09](cap16a/exercicios.md) | Cap. 16a | Melhores respostas e equilíbrio de Cournot |
+| [ANPEC 2018 — Questão 09](cap16b/exercicios.md) | Cap. 16b | Demanda quebrada e concorrência monopolística |
 
 ---
 

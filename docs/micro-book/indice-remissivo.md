@@ -38,7 +38,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Carona** (*free riding*) — [Cap. 20 (bens públicos)](cap20/index.md)
 
-**Cartel** — [Cap. 9b (jogos repetidos)](cap09b/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Cartel** — [Cap. 9b (jogos repetidos)](cap09b/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Cheap talk** — [Cap. 9d (Crawford-Sobel)](cap09d/cheap-talk.md)
 
@@ -52,15 +52,15 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Coeficiente de aversão relativa ao risco** — [Cap. 7 (definição)](cap07/index.md), [Cap. 18 (CAPM)](cap18/index.md)
 
-**Colusão tácita** — [Cap. 9b (jogos repetidos)](cap09b/index.md), [Cap. 16 (oligopólio)](cap16/index.md); ver também *Folk Theorem*
+**Colusão tácita** — [Cap. 9b (jogos repetidos)](cap09b/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md); ver também *Folk Theorem*
 
-**Competição monopolística** (*monopolistic competition*) — [Cap. 16 (definição)](cap16/index.md)
+**Competição monopolística** (*monopolistic competition*) — [Caps. 16a–16b (definição)](cap16a/index.md)
 
 **Complementos** (bens) — [Cap. 6 (definição)](cap06/index.md); ver também *Substitutos*
 
-**Concorrência de Bertrand** — [Cap. 9a (formulação)](cap09a/index.md), [Cap. 16 (oligopólio)](cap16/index.md), [Cap. 21 (plataformas)](cap21/index.md)
+**Concorrência de Bertrand** — [Cap. 9a (formulação)](cap09a/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
-**Concorrência de Cournot** — [Cap. 9a (formulação)](cap09a/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Concorrência de Cournot** — [Cap. 9a (formulação)](cap09a/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Concorrência perfeita** (*perfect competition*) — [Cap. 1 (introdução)](cap01/index.md), [Cap. 12 (firma)](cap12/index.md), [Cap. 13 (equilíbrio)](cap13/index.md), [Cap. 14 (equilíbrio geral)](cap14/index.md)
 
@@ -88,9 +88,9 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Custo econômico** — [Cap. 11 (definição)](cap11/index.md)
 
-**Custo marginal** (CMg) — [Cap. 11 (definição)](cap11/index.md), [Cap. 12 (firma)](cap12/index.md), [Cap. 13 (equilíbrio)](cap13/index.md), [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Custo marginal** (CMg) — [Cap. 11 (definição)](cap11/index.md), [Cap. 12 (firma)](cap12/index.md), [Cap. 13 (equilíbrio)](cap13/index.md), [Cap. 15 (monopólio)](cap15/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
-**Custo médio** (CMe) — [Cap. 11 (definição)](cap11/index.md), [Cap. 12 (firma)](cap12/index.md), [Cap. 13 (equilíbrio)](cap13/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Custo médio** (CMe) — [Cap. 11 (definição)](cap11/index.md), [Cap. 12 (firma)](cap12/index.md), [Cap. 13 (equilíbrio)](cap13/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Custos irrecuperáveis** (*sunk costs*) — [Cap. 11 (definição)](cap11/index.md), [Cap. 15 (barreiras à entrada)](cap15/index.md)
 
@@ -118,7 +118,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 ## E
 
-**Economias de escala** (*economies of scale*) — [Cap. 10 (produção)](cap10/index.md), [Cap. 11 (custos)](cap11/index.md), [Cap. 15 (monopólio natural)](cap15/index.md), [Cap. 16 (OI)](cap16/index.md), [Cap. 21 (plataformas)](cap21/index.md)
+**Economias de escala** (*economies of scale*) — [Cap. 10 (produção)](cap10/index.md), [Cap. 11 (custos)](cap11/index.md), [Cap. 15 (monopólio natural)](cap15/index.md), [Caps. 16a–16b (OI)](cap16a/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
 **Economias de escopo** (*economies of scope*) — [Cap. 11 (definição)](cap11/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
@@ -144,17 +144,17 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Equilíbrio bayesiano perfeito** (EBP) — [Cap. 9d (definição)](cap09d/pbe.md), [Cap. 19 (sinalização)](cap19/index.md)
 
-**Equilíbrio de Cournot** — [Cap. 9a (formulação)](cap09a/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Equilíbrio de Cournot** — [Cap. 9a (formulação)](cap09a/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
-**Equilíbrio de Nash** — [Cap. 9a (definição)](cap09a/index.md), [Cap. 9b (jogos repetidos)](cap09b/index.md), [Cap. 9c (bayesiano)](cap09c/index.md), [Cap. 16 (oligopólio)](cap16/index.md), [Cap. 20 (bens públicos)](cap20/index.md)
+**Equilíbrio de Nash** — [Cap. 9a (definição)](cap09a/index.md), [Cap. 9b (jogos repetidos)](cap09b/index.md), [Cap. 9c (bayesiano)](cap09c/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md), [Cap. 20 (bens públicos)](cap20/index.md)
 
-**Equilíbrio de Stackelberg** — [Cap. 9b (definição)](cap09b/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Equilíbrio de Stackelberg** — [Cap. 9b (definição)](cap09b/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Equilíbrio geral** (*general equilibrium*) — [Cap. 14 (definição)](cap14/index.md)
 
 **Equilíbrio parcial** (*partial equilibrium*) — [Cap. 13 (definição)](cap13/index.md), [Cap. 14 (comparação)](cap14/index.md)
 
-**Equilíbrio perfeito em subjogos** (*subgame perfect equilibrium*) — [Cap. 9b (definição)](cap09b/index.md), [Cap. 16 (Stackelberg)](cap16/index.md)
+**Equilíbrio perfeito em subjogos** (*subgame perfect equilibrium*) — [Cap. 9b (definição)](cap09b/index.md), [Cap. 16a (Stackelberg)](cap16a/index.md)
 
 **Equilíbrio separador e equilíbrio agrupador** (*separating / pooling*) — [Cap. 9d (sinalização)](cap09d/sinalizacao.md), [Cap. 19 (sinalização)](cap19/index.md)
 
@@ -206,7 +206,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 ## H
 
-**Herfindahl-Hirschman** (índice — HHI) — [Cap. 16 (concentração)](cap16/index.md)
+**Herfindahl-Hirschman** (índice — HHI) — [Cap. 16b (concentração)](cap16b/index.md)
 
 **Hold-up** (problema de) — [Cap. 12 (teoria da firma)](cap12/index.md), [Cap. 20 (externalidades)](cap20/index.md)
 
@@ -220,11 +220,11 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Incidência tributária** — [Cap. 13 (definição)](cap13/index.md)
 
-**Índice de Lerner** — [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Índice de Lerner** — [Cap. 15 (monopólio)](cap15/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Informação assimétrica** (*asymmetric information*) — [Cap. 9c (jogos bayesianos)](cap09c/index.md), [Cap. 9d (sinalização, seleção adversa)](cap09d/selecao-adversa.md), [Cap. 19 (definição)](cap19/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
-**Interdependência estratégica** — [Cap. 9a (teoria dos jogos)](cap09a/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Interdependência estratégica** — [Cap. 9a (teoria dos jogos)](cap09a/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Isoquanta** — [Cap. 10 (definição)](cap10/index.md), [Cap. 11 (custos)](cap11/index.md)
 
@@ -252,15 +252,15 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Mecanismo VCG** (Vickrey-Clarke-Groves) — [Cap. 9c (definição)](cap09c/index.md), [Cap. 20 (bens públicos)](cap20/index.md)
 
-**Mercado contestável** — [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (OI)](cap16/index.md)
+**Mercado contestável** — [Cap. 15 (monopólio)](cap15/index.md), [Caps. 16a–16b (OI)](cap16a/index.md)
 
 **Modelo de Spence** (sinalização) — [Cap. 9d (sinalização)](cap09d/sinalizacao.md), [Cap. 19 (sinalização)](cap19/index.md)
 
 **Modelo econômico** — [Cap. 1 (definição)](cap01/index.md)
 
-**Monopólio** (*monopoly*) — [Cap. 15 (definição)](cap15/index.md), [Cap. 16 (OI)](cap16/index.md)
+**Monopólio** (*monopoly*) — [Cap. 15 (definição)](cap15/index.md), [Caps. 16a–16b (OI)](cap16a/index.md)
 
-**Monopólio natural** — [Cap. 15 (definição)](cap15/index.md), [Cap. 16 (regulação)](cap16/index.md)
+**Monopólio natural** — [Cap. 15 (definição)](cap15/index.md), [Cap. 16b (regulação)](cap16b/index.md)
 
 **Monopsônio** (*monopsony*) — [Cap. 15 (definição)](cap15/index.md), [Cap. 17 (mercado de trabalho)](cap17/index.md)
 
@@ -276,7 +276,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 ## O
 
-**Oligopólio** (*oligopoly*) — [Cap. 9a (teoria dos jogos)](cap09a/index.md), [Cap. 16 (definição)](cap16/index.md), [Cap. 21 (plataformas)](cap21/index.md)
+**Oligopólio** (*oligopoly*) — [Cap. 9a (teoria dos jogos)](cap09a/index.md), [Caps. 16a–16b (definição)](cap16a/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
 **Opção externa** (*outside option*) — [Cap. 9b (definição)](cap09b/index.md)
 
@@ -286,7 +286,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Perda de peso morto** (PPM, *deadweight loss*) — [Cap. 13 (impostos)](cap13/index.md), [Cap. 15 (monopólio)](cap15/index.md), [Cap. 20 (externalidades)](cap20/index.md)
 
-**Poder de mercado** (*market power*) — [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (oligopólio)](cap16/index.md), [Cap. 17 (monopsônio)](cap17/index.md), [Cap. 21 (plataformas)](cap21/index.md)
+**Poder de mercado** (*market power*) — [Cap. 15 (monopólio)](cap15/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md), [Cap. 17 (monopsônio)](cap17/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
 **Preferência revelada** (axioma fraco — AFPR) — [Cap. 3 (preferências)](cap03/index.md), [Cap. 5 (demanda)](cap05/index.md)
 
@@ -294,7 +294,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Preço de Lindahl** — [Cap. 20 (bens públicos)](cap20/index.md)
 
-**Price cap** (preço-teto regulatório) — [Cap. 16 (regulação)](cap16/index.md)
+**Price cap** (preço-teto regulatório) — [Cap. 16b (regulação)](cap16b/index.md)
 
 **Primeiro Teorema do Bem-Estar** — [Cap. 14 (definição)](cap14/index.md), [Cap. 20 (falhas de mercado)](cap20/index.md)
 
@@ -318,7 +318,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 ## R
 
-**Receita marginal** (RMg) — [Cap. 12 (firma)](cap12/index.md), [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
+**Receita marginal** (RMg) — [Cap. 12 (firma)](cap12/index.md), [Cap. 15 (monopólio)](cap15/index.md), [Caps. 16a–16b (oligopólio)](cap16a/index.md)
 
 **Recurso comum** (*common-pool resource*) — [Cap. 20 (definição)](cap20/index.md)
 
