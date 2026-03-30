@@ -19,17 +19,17 @@ A literatura acadêmica sobre economia digital é vasta e em rápida expansão. 
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tópico | Página |
-|:------|:-------|:-------|
-| 21.1 | [Bens de Informação](bens-info-redes.md#211) | [→](bens-info-redes.md#211) |
-| 21.2 | [Efeitos de Rede](bens-info-redes.md#212) | [→](bens-info-redes.md#212) |
-| 21.3 | [Mercados Bilaterais e Plataformas](mercados-bilaterais.md#213) | [→](mercados-bilaterais.md#213) |
-| 21.4 | [Competição entre Plataformas](competicao-atencao.md#214) | [→](competicao-atencao.md#214) |
-| 21.5 | [Economia da Atenção](competicao-atencao.md#215) | [→](competicao-atencao.md#215) |
-| 21.6 | [Economia de Dados e Privacidade](dados-leiloes.md#216) | [→](dados-leiloes.md#216) |
-| 21.7 | [Leilões Online e Mecanismos Digitais](dados-leiloes.md#217) | [→](dados-leiloes.md#217) |
-| | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
-| | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 21.1 | Por que copiar um arquivo custa zero mas produzir o primeiro custa milhões? | Bens de informação, custo marginal zero | [Bens de informação](bens-info-redes.md#211) |
+| 21.2 | O WhatsApp é mais útil porque todo mundo usa — como modelar isso? | Efeitos de rede, massa crítica, lock-in | [Redes](bens-info-redes.md#212) |
+| 21.3 | O iFood conecta dois lados — como cobrar de cada um? | Mercados bilaterais, plataformas, subsídio cruzado | [Plataformas](mercados-bilaterais.md#213) |
+| 21.4 | Por que é tão difícil competir com uma plataforma dominante? | Competição entre plataformas, winner-takes-most | [Competição](competicao-atencao.md#214) |
+| 21.5 | Se o produto é gratuito, você é o produto? | Economia da atenção, publicidade, two-sided | [Atenção](competicao-atencao.md#215) |
+| 21.6 | Seus dados valem quanto — e quem deveria ser dono deles? | Economia de dados, privacidade, LGPD | [Dados](dados-leiloes.md#216) |
+| 21.7 | Como o Google vende anúncios em milissegundos? | Leilões online, GSP, mecanismos digitais | [Leilões online](dados-leiloes.md#217) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

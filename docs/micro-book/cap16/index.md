@@ -15,26 +15,26 @@ Este capítulo parte dos modelos clássicos de oligopólio — Bertrand, Cournot
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 16.1 | Preço ou Quantidade — Eis a Questão | [Fundamentos](fundamentos.md#161) |
-| 16.2 | Dois Bastam para a Guerra: Modelo de Bertrand | [Fundamentos](fundamentos.md#162) |
-| 16.3 | Quanto Produzir Quando o Rival Pensa o Mesmo: Modelo de Cournot | [Fundamentos](fundamentos.md#163) |
-| 16.4 | De Monopólio a Concorrência em n Passos: Cournot com n Firmas | [Fundamentos](fundamentos.md#164) |
-| 16.5 | Não Dá para Atender Todo Mundo: Restrições de Capacidade | [Capacidade e Diferenciação](capacidade-diferenciacao.md#165) |
-| 16.6 | Nem Todo Café É Igual: Diferenciação de Produto | [Capacidade e Diferenciação](capacidade-diferenciacao.md#166) |
-| 16.7 | Vizinhos de Condomínio: Colusão Tácita | [Colusão e Entrada](colusao-entrada.md#167) |
-| 16.8 | Redesenhando o Tabuleiro: Investimento, Entrada e Saída | [Colusão e Entrada](colusao-entrada.md#168) |
-| 16.9 | Fábrica Grande Antes do Rival Chegar: Dissuasão de Entrada | [Colusão e Entrada](colusao-entrada.md#169) |
-| 16.10 | Mostrar para Não Precisar Provar: Sinalização | [Colusão e Entrada](colusao-entrada.md#1610) |
-| 16.11 | Lotação Máxima: Entrada Livre em Cournot | [Entrada e Inovação](entrada-inovacao.md#1611) |
-| 16.12 | Quem Inventa Quando Poucos Competem: Inovação sob Oligopólio | [Entrada e Inovação](entrada-inovacao.md#1612) |
-| 16.13 | Todos na Mesa: Comparação dos Modelos de Oligopólio | [Entrada e Inovação](entrada-inovacao.md#1613) |
-| 16.14 | Muitos Restaurantes, Nenhum Igual: Competição Monopolística | [Competição Monopolística e Fusões](monopolistica-fusoes.md#1614) |
-| 16.15 | Quando Dois Viram Um: Fusões e Política Antitruste | [Competição Monopolística e Fusões](monopolistica-fusoes.md#1615) |
-| 16.16 | O Juiz na Mesa de Pôquer: Regulação de Oligopólios | [Competição Monopolística e Fusões](monopolistica-fusoes.md#1616) |
-| — | Exercícios e ANPEC | [Exercícios](exercicios.md) |
-| — | Pesquisa em Ação | [Pesquisa](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 16.1 | A firma compete em preço ou em quantidade? | Bertrand vs. Cournot: a escolha da variável estratégica | [Fundamentos](fundamentos.md#161) |
+| 16.2 | Dois concorrentes bastam para gerar preço competitivo? | Modelo de Bertrand e o paradoxo | [Bertrand](fundamentos.md#162) |
+| 16.3 | Como decidir quanto produzir quando o rival pensa o mesmo? | Cournot, funções de reação, EN | [Cournot](fundamentos.md#163) |
+| 16.4 | O que acontece quando o número de firmas cresce de 2 para n? | Cournot com n firmas, convergência para competição | [Cournot-n](fundamentos.md#164) |
+| 16.5 | E se a fábrica não consegue atender todo mundo? | Restrições de capacidade, Edgeworth | [Capacidade](capacidade-diferenciacao.md#165) |
+| 16.6 | Por que nem todo café é igual — e como isso muda a concorrência? | Diferenciação horizontal/vertical, Hotelling | [Diferenciação](capacidade-diferenciacao.md#166) |
+| 16.7 | Como rivais sustentam preços altos sem combinar nada? | Colusão tácita, superjogo, gatilho | [Colusão](colusao-entrada.md#167) |
+| 16.8 | Quem investe antes do rival define as regras do jogo? | Investimento estratégico, comprometimento | [Investimento](colusao-entrada.md#168) |
+| 16.9 | Construir fábrica grande antes do rival chegar dissuade a entrada? | Dissuasão de entrada, capacidade ociosa | [Dissuasão](colusao-entrada.md#169) |
+| 16.10 | Quando a firma sinaliza força para não precisar lutar? | Sinalização estratégica em IO | [Sinalização](colusao-entrada.md#1610) |
+| 16.11 | Quantas firmas cabem no mercado com entrada livre? | Entrada livre em Cournot, excesso de entrada | [Entrada livre](entrada-inovacao.md#1611) |
+| 16.12 | Poucos concorrentes inovam mais ou menos que muitos? | Inovação sob oligopólio, Arrow vs. Schumpeter | [Inovação](entrada-inovacao.md#1612) |
+| 16.13 | Qual modelo prevê melhor o comportamento real das firmas? | Comparação Bertrand/Cournot/Stackelberg/colusão | [Comparação](entrada-inovacao.md#1613) |
+| 16.14 | Muitos restaurantes, nenhum igual — competição ou monopólio? | Competição monopolística, Chamberlin, Dixit-Stiglitz | [Comp. monopolística](monopolistica-fusoes.md#1614) |
+| 16.15 | Quando dois viram um, o consumidor ganha ou perde? | Fusões, eficiência de Williamson, simulação de preços | [Fusões](monopolistica-fusoes.md#1615) |
+| 16.16 | Como o CADE decide se uma fusão é boa ou ruim? | Regulação de oligopólios, política antitruste | [Antitruste](monopolistica-fusoes.md#1616) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

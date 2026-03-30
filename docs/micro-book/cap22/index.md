@@ -18,17 +18,17 @@ A literatura acadêmica sobre economia experimental é vasta. As referências ce
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tópico | Página |
-|:------|:-------|:-------|
-| 22.1 | [Por Que Experimentar?](experimentacao-lab.md#221) | [→](experimentacao-lab.md#221) |
-| 22.2 | [Experimentos de Laboratório](experimentacao-lab.md#222) | [→](experimentacao-lab.md#222) |
-| 22.3 | [Experimentos de Campo](campo-rcts.md#223) | [→](campo-rcts.md#223) |
-| 22.4 | [Ensaios Controlados Randomizados](campo-rcts.md#224) | [→](campo-rcts.md#224) |
-| 22.5 | [Experimentos Naturais e Quase-Experimentos](naturais-mecanismos-limites.md#225) | [→](naturais-mecanismos-limites.md#225) |
-| 22.6 | [Desenho de Mecanismos Experimentais](naturais-mecanismos-limites.md#226) | [→](naturais-mecanismos-limites.md#226) |
-| 22.7 | [Limites e Controvérsias](naturais-mecanismos-limites.md#227) | [→](naturais-mecanismos-limites.md#227) |
-| | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
-| | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 22.1 | Por que testar a teoria com dados de laboratório? | Motivação para economia experimental | [Por que experimentar](experimentacao-lab.md#221) |
+| 22.2 | O que acontece quando colocamos humanos reais num jogo de mercado? | Experimentos de laboratório, Vernon Smith | [Laboratório](experimentacao-lab.md#222) |
+| 22.3 | Dá para fazer experimento fora do laboratório — no mundo real? | Experimentos de campo, validade externa | [Campo](campo-rcts.md#223) |
+| 22.4 | Sorteio é a melhor maneira de medir impacto? | RCTs, Duflo-Banerjee, avaliação de políticas | [RCTs](campo-rcts.md#224) |
+| 22.5 | Quando a natureza faz o experimento por nós? | Experimentos naturais, DiD, RD | [Naturais](naturais-mecanismos-limites.md#225) |
+| 22.6 | Como desenhar mecanismos que revelam preferências verdadeiras? | Mecanismos experimentais, BDM, leilão de Vickrey | [Mecanismos](naturais-mecanismos-limites.md#226) |
+| 22.7 | O que o experimento não consegue responder? | Limites, validade interna vs. externa, controvérsias | [Limites](naturais-mecanismos-limites.md#227) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

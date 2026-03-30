@@ -12,17 +12,17 @@ O material deste capítulo pressupõe familiaridade com as ferramentas matemáti
 
     <div class="chapter-roadmap" markdown>
 
-    | Seção | Tema | Ideia central | Página |
-    |:---:|---|---|---|
-    | **10.1** | [Produto marginal e médio](produtividade.md) | PMg, PMe, rendimentos marginais decrescentes | [→](produtividade.md) |
-    | **10.2** | [Isoquantas e TMST](isoquantas.md#102) | Curvas de nível da função de produção; taxa de troca entre insumos | [→](isoquantas.md#102) |
-    | **10.3** | [Rendimentos de escala](isoquantas.md#103) | CRS, IRS, DRS — clonar a firma dobra o produto? | [→](isoquantas.md#103) |
-    | **10.4** | [Elasticidade de substituição](elasticidade.md) | σ: quão fácil é trocar braços por máquinas? | [→](elasticidade.md) |
-    | **10.5** | [Catálogo de funções de produção](funcoes.md) | Linear, Leontief, Cobb-Douglas, CES | [→](funcoes.md) |
-    | **10.6** | [Progresso técnico e resíduo de Solow](progresso.md#106) | A(t), PTF, neutralidade de Hicks/Harrod/Solow | [→](progresso.md#106) |
-    | **10.7** | [Funções homotéticas](progresso.md#107) | Caminho de expansão linear e separabilidade da função custo | [→](progresso.md#107) |
-    | | [Exercícios e ANPEC](exercicios.md) | Atividades, WebR, revisão rápida, exercícios propostos, questões ANPEC | [→](exercicios.md) |
-    | | [Pesquisa em Ação](pesquisa.md) | Gasques et al., Oberfield & Raval, Solow, Griliches, Bustos et al. | [→](pesquisa.md) |
+    | Seção | Pergunta-guia | O que você vai aprender | Página |
+    |:---:|---|---|:---:|
+    | 10.1 | Contratar mais um padeiro aumenta a produção em quanto? | PMg, PMe, rendimentos marginais decrescentes | [Produtividade](produtividade.md) |
+    | 10.2 | Que combinações de trabalho e capital geram o mesmo produto? | Isoquantas, TMST, taxa de troca entre insumos | [Isoquantas](isoquantas.md#102) |
+    | 10.3 | Clonar a firma dobra o produto? | CRS, IRS, DRS — rendimentos de escala | [Rendimentos de escala](isoquantas.md#103) |
+    | 10.4 | Quão fácil é trocar braços por máquinas? | Elasticidade de substituição σ | [Elasticidade](elasticidade.md) |
+    | 10.5 | Que funções a profissão usa — e quando usar cada uma? | Linear, Leontief, Cobb-Douglas, CES | [Funções de produção](funcoes.md) |
+    | 10.6 | De onde vem o crescimento que não é trabalho nem capital? | A(t), PTF, resíduo de Solow, neutralidade | [Progresso técnico](progresso.md#106) |
+    | 10.7 | Quando o caminho de expansão é uma reta? | Funções homotéticas e separabilidade da função custo | [Homotéticas](progresso.md#107) |
+    | 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Atividades, WebR, revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+    | 🔬 | O que a pesquisa recente diz? | Gasques et al., Oberfield & Raval, Solow, Griliches, Bustos et al. | [Pesquisa](pesquisa.md) |
 
     </div>
 

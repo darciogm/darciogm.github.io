@@ -63,6 +63,15 @@
 **Caixa de Edgeworth**
 : Diagrama retangular usado na análise de equilíbrio geral para representar as possibilidades de troca entre dois consumidores e dois bens.
 
+**Cheap talk**
+: Comunicação não-custosa e não-vinculante entre agentes em jogos de informação assimétrica. No modelo de Crawford e Sobel (1982), o emissor envia uma mensagem \(m \in M\) ao receptor, que então escolhe uma ação. Como a mensagem é gratuita e o emissor pode mentir sem custo, o equilíbrio pode envolver apenas transmissão parcial de informação (equilíbrio de partição). Quanto maior o alinhamento de interesses entre emissor e receptor, mais fina a partição e maior a informação transmitida. Cap. 9d.
+
+**Condição de single-crossing** (*single-crossing condition*)
+: Propriedade fundamental em modelos de sinalização e screening: a taxa marginal de substituição entre o sinal e o pagamento difere entre tipos de agente, de modo que as curvas de indiferença dos diferentes tipos se cruzam no máximo uma vez. Formalmente, \(\partial^2 c(e, \theta)/\partial e \, \partial \theta < 0\) — ou seja, o custo marginal do sinal é menor para o tipo de alta qualidade. Sem essa condição, a separação por sinalização é impossível. Cap. 9d.
+
+**Critério de Cho-Kreps** (*Intuitive Criterion*)
+: Refinamento de equilíbrios bayesianos perfeitos em jogos de sinalização que elimina equilíbrios sustentados por crenças "não razoáveis" fora do caminho de equilíbrio. Se um desvio para uma mensagem \(m'\) só poderia beneficiar o tipo \(\theta_H\), o receptor deve atribuir probabilidade 1 a \(\theta_H\) ao observar \(m'\). Em geral, o critério seleciona o equilíbrio separador de Riley como único sobrevivente, eliminando equilíbrios agrupadores ineficientes. Cap. 9d.
+
 **Carona (free riding)**
 : Comportamento de um agente que se beneficia de um bem público sem contribuir para seu financiamento, explorando a não-excludência.
 
@@ -496,6 +505,9 @@
 
 **Principal-agente (modelo)**
 : Arcabouço teórico para analisar situações em que uma parte (principal) delega uma tarefa a outra (agente) sob informação assimétrica.
+
+**Princípio da Informatividade** (*Informativeness Principle*)
+: Resultado de Holmström (1979) segundo o qual o contrato ótimo entre principal e agente deve incorporar qualquer sinal que contenha informação sobre o esforço do agente, mesmo que imperfeitamente. Formalmente, uma variável \(y\) deve ser incluída no contrato se \(p(q|e, y) \neq p(q|e)\) — isto é, se observar \(y\) altera a inferência sobre o esforço. Isso fundamenta o uso de benchmarks de desempenho relativo em contratos de executivos. Cap. 9d.
 
 **Produto marginal**
 : Variação do produto total decorrente de uma unidade adicional de um insumo, mantidos os demais constantes: \(\mathrm{PMg}_L = \partial f(K, L)/\partial L\).

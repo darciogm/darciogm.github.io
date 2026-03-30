@@ -10,21 +10,21 @@ Você já parcelou uma compra e sentiu aquele aperto ao ver o total com juros? O
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 18.1 | Máquinas Não Caem do Céu: Capital e Taxa de Retorno | [Capital e Juros](capital-juros.md#181) |
-| 18.2 | O Preço da Impaciência: Determinação da Taxa de Juros | [Capital e Juros](capital-juros.md#182) |
-| 18.3 | Gastar Agora ou Guardar para Janeiro: O Modelo de Fisher | [Fisher e Inflação](fisher-inflacao.md#183) |
-| 18.4 | Nem Tudo Que Reluz É Juro Real: Nominal vs. Real e o Efeito Fisher | [Fisher e Inflação](fisher-inflacao.md#184) |
-| 18.5 | Quanto Vale uma Promessa Incerta: Precificação de Ativos | [Ativos e Investimento](ativos-investimento.md#185) |
-| 18.6 | O Forno Novo Compensa Mais Que o CDB?: Valor Presente Líquido | [Ativos e Investimento](ativos-investimento.md#186) |
-| 18.7 | O Projeto Rende Quanto Por Cento?: Taxa Interna de Retorno | [Ativos e Investimento](ativos-investimento.md#187) |
-| 18.8 | Mais Um Caminhão ou Deixa no Banco: Demanda por Capital | [Demanda e Juros Compostos](demanda-capital.md#188) |
-| 18.9 | A Oitava Maravilha do Mundo: Juros Compostos e Tempo Contínuo | [Demanda e Juros Compostos](demanda-capital.md#189) |
-| 18.10 | Os Números na Mesa: VPL, Taxa de Desconto e Decisão | [Hotelling e Recursos](hotelling.md#1810) |
-| 18.11 | Extrair Hoje ou Deixar no Solo: A Regra de Hotelling | [Hotelling e Recursos](hotelling.md#1811) |
-| — | Exercícios e ANPEC | [Exercícios](exercicios.md) |
-| — | Pesquisa em Ação | [Pesquisa](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 18.1 | De onde vêm as máquinas — e quanto rendem? | Capital físico, taxa de retorno | [Capital](capital-juros.md#181) |
+| 18.2 | O que determina o preço da impaciência? | Determinação da taxa de juros | [Juros](capital-juros.md#182) |
+| 18.3 | Gastar agora ou guardar para janeiro? | Modelo de Fisher, escolha intertemporal | [Fisher](fisher-inflacao.md#183) |
+| 18.4 | Qual é a diferença entre o juro que você vê e o que você sente? | Juro nominal vs. real, efeito Fisher | [Inflação](fisher-inflacao.md#184) |
+| 18.5 | Quanto vale uma promessa incerta de pagamento futuro? | Precificação de ativos, valor presente | [Ativos](ativos-investimento.md#185) |
+| 18.6 | O forno novo compensa mais que o CDB? | Valor presente líquido (VPL) | [VPL](ativos-investimento.md#186) |
+| 18.7 | O projeto rende quanto por cento ao ano? | Taxa interna de retorno (TIR) | [TIR](ativos-investimento.md#187) |
+| 18.8 | Mais um caminhão ou deixa o dinheiro no banco? | Demanda por capital, custo de uso | [Demanda K](demanda-capital.md#188) |
+| 18.9 | Por que Einstein chamou juros compostos de oitava maravilha? | Juros compostos e tempo contínuo | [Compostos](demanda-capital.md#189) |
+| 18.10 | Como colocar todos os números na mesa para decidir? | VPL aplicado, taxa de desconto | [Decisão](hotelling.md#1810) |
+| 18.11 | Extrair petróleo hoje ou deixar no solo para amanhã? | Regra de Hotelling, recursos exauríveis | [Hotelling](hotelling.md#1811) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

@@ -83,6 +83,7 @@
 - Chiappori, Pierre-André, e Bernard Salanié. 2000. "[Testing for Asymmetric Information in Insurance Markets](https://doi.org/10.1086/317671)." *Journal of Political Economy* 108 (1): 56–78.
 - Einav, Liran, Amy Finkelstein, e Mark R. Cullen. 2010. "[Estimating Welfare in Insurance Markets Using Variation in Prices](https://doi.org/10.1162/qjec.2010.125.3.877)." *Quarterly Journal of Economics* 125 (3): 877–921.
 - Holmström, Bengt. 1979. "[Moral Hazard and Observability](https://doi.org/10.2307/3003320)." *Bell Journal of Economics* 10 (1): 74–91.
+- Holmström, Bengt, e Paul Milgrom. 1991. "[Multitask Principal-Agent Analyses: Incentive Contracts, Asset Ownership, and Job Design](https://doi.org/10.1093/jleo/7.special_issue.24)." *Journal of Law, Economics, & Organization* 7 (Special Issue): 24–52.
 - Rothschild, Michael, e Joseph E. Stiglitz. 1976. "[Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information](https://doi.org/10.2307/1885326)." *Quarterly Journal of Economics* 90 (4): 629–649.
 - Spence, Michael. 1973. "[Job Market Signaling](https://doi.org/10.2307/1882010)." *Quarterly Journal of Economics* 87 (3): 355–374.
 - Spence, Michael. 1975. "[Monopoly, Quality, and Regulation](https://doi.org/10.2307/3003237)." *Bell Journal of Economics* 6 (2): 417–429.

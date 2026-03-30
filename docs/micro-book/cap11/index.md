@@ -18,18 +18,18 @@ Do ponto de vista histórico, a formalização moderna da teoria dos custos deve
 
     <div class="chapter-roadmap" markdown>
 
-    | Seção | Tema | Ideia central | Página |
-    |:---:|---|---|---|
-    | **11.1** | [Definições de custos](definicoes.md) | Custo econômico ≠ contábil; custo de oportunidade; sunk costs | [→](definicoes.md) |
-    | **11.2** | [Maximização de lucro e minimização de custos](minimizacao.md#112) | Max lucro implica min custo — mas não o contrário | [→](minimizacao.md#112) |
-    | **11.3** | [Minimização de custos e tangência](minimizacao.md#113) | TMST = w/v; isocusto e isoquanta; demandas condicionadas | [→](minimizacao.md#113) |
-    | **11.4** | [Função custo e Lema de Shephard](minimizacao.md#114) | ∂C/∂w = Lᶜ — recuperar demandas derivando custo | [→](minimizacao.md#114) |
-    | **11.5** | [Curvas de custo](curvas.md#115) | CT, CMe, CMg, CVMe — o trio que manda na oferta | [→](curvas.md#115) |
-    | **11.6** | [Deslocamentos nas curvas](curvas.md#116) | Preços de insumos, tecnologia e impostos | [→](curvas.md#116) |
-    | **11.7** | [Curto prazo, longo prazo e envoltória](envoltoria.md) | A envoltória de Viner e as economias de escala | [→](envoltoria.md) |
-    | **11.8** | [Catálogo de custos](catalogo.md) | Cobb-Douglas, linear, Leontief, CES | [→](catalogo.md) |
-    | | [Exercícios e ANPEC](exercicios.md) | Revisão rápida, exercícios propostos, questões ANPEC | [→](exercicios.md) |
-    | | [Pesquisa em Ação](pesquisa.md) | Christensen & Greene, Bustos et al., Syverson, Benkard, Ferreira & Rossi | [→](pesquisa.md) |
+    | Seção | Pergunta-guia | O que você vai aprender | Página |
+    |:---:|---|---|:---:|
+    | 11.1 | Por que o custo do economista é diferente do custo do contador? | Custo econômico vs. contábil, custo de oportunidade, sunk costs | [Definições](definicoes.md) |
+    | 11.2 | Maximizar lucro implica minimizar custo — mas o contrário vale? | Relação entre max lucro e min custo | [Minimização](minimizacao.md#112) |
+    | 11.3 | Como a firma encontra a combinação mais barata de insumos? | TMST = w/v, isocusto, isoquanta, demandas condicionadas | [Tangência](minimizacao.md#113) |
+    | 11.4 | Dá para recuperar as demandas por insumos só derivando a função custo? | Função custo, Lema de Shephard | [Shephard](minimizacao.md#114) |
+    | 11.5 | Que curvas de custo mandam na decisão de oferta? | CT, CMe, CMg, CVMe | [Curvas de custo](curvas.md#115) |
+    | 11.6 | O que desloca as curvas de custo? | Preços de insumos, tecnologia e impostos | [Deslocamentos](curvas.md#116) |
+    | 11.7 | Por que o custo de longo prazo nunca supera o de curto prazo? | Envoltória de Viner, economias de escala | [Envoltória](envoltoria.md) |
+    | 11.8 | Que funções de custo a profissão usa? | Cobb-Douglas, linear, Leontief, CES | [Catálogo](catalogo.md) |
+    | 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+    | 🔬 | O que a pesquisa recente diz? | Christensen & Greene, Bustos et al., Syverson, Benkard, Ferreira & Rossi | [Pesquisa](pesquisa.md) |
 
     </div>
 

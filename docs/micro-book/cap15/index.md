@@ -12,20 +12,20 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 15.1 | Muralhas, Fossos e Portões Levadiços: Barreiras à Entrada | [Barreiras e Maximização](barreiras-maximizacao.md#151) |
-| 15.2 | O Sorriso de Quem Define o Preço: Maximização de Lucro do Monopolista | [Barreiras e Maximização](barreiras-maximizacao.md#152) |
-| 15.3 | A Régua do Poder: Demonstração do Índice de Lerner | [Lerner, Ineficiência e Estática Comparativa](lerner-ineficiencia.md#153) |
-| 15.4 | Quem Paga a Conta: Ineficiência do Monopólio | [Lerner, Ineficiência e Estática Comparativa](lerner-ineficiencia.md#154) |
-| 15.5 | Mexeu no Tabuleiro: Estática Comparativa do Monopólio | [Lerner, Ineficiência e Estática Comparativa](lerner-ineficiencia.md#155) |
-| 15.6 | Bom o Bastante para o Último Cliente: Qualidade sob Monopólio | [Qualidade, Discriminação e Tarifas](qualidade-discriminacao.md#156) |
-| 15.7 | Um Preço para Cada Bolso: Discriminação de Preços | [Qualidade, Discriminação e Tarifas](qualidade-discriminacao.md#157) |
-| 15.8 | Pague para Entrar, Pague para Brincar: Tarifas em Duas Partes | [Qualidade, Discriminação e Tarifas](qualidade-discriminacao.md#158) |
-| 15.9 | Domar a Fera: Regulação de Monopólios | [Regulação e Visão Dinâmica](regulacao-dinamica.md#159) |
-| 15.10 | O Vilão Também Inova: Visões Dinâmicas do Monopólio | [Regulação e Visão Dinâmica](regulacao-dinamica.md#1510) |
-| — | Revisão, Exercícios e ANPEC | [Exercícios e ANPEC](exercicios.md) |
-| — | Pesquisa em Ação e Referências | [Pesquisa em Ação](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 15.1 | O que impede a concorrência de derrubar o monopolista? | Barreiras à entrada: legais, tecnológicas, estratégicas | [Barreiras](barreiras-maximizacao.md#151) |
+| 15.2 | Como o monopolista escolhe preço e quantidade? | Maximização de lucro, RMg = CMg | [Maximização](barreiras-maximizacao.md#152) |
+| 15.3 | Como medir o poder de mercado com uma fórmula? | Índice de Lerner e elasticidade | [Lerner](lerner-ineficiencia.md#153) |
+| 15.4 | Quanto a sociedade perde com o monopólio? | Peso morto, ineficiência alocativa | [Ineficiência](lerner-ineficiencia.md#154) |
+| 15.5 | O que acontece com o monopólio quando a demanda ou os custos mudam? | Estática comparativa, pass-through | [Estática comp.](lerner-ineficiencia.md#155) |
+| 15.6 | O monopolista escolhe qualidade alta ou baixa? | Qualidade endógena sob monopólio | [Qualidade](qualidade-discriminacao.md#156) |
+| 15.7 | Por que a Netflix cobra preços diferentes em países diferentes? | Discriminação de preços: 1º, 2º e 3º graus | [Discriminação](qualidade-discriminacao.md#157) |
+| 15.8 | Por que o parque cobra entrada e depois cobra por brinquedo? | Tarifa em duas partes, bundling | [Tarifas](qualidade-discriminacao.md#158) |
+| 15.9 | Como o regulador doma o monopolista sem destruir o incentivo a investir? | Regulação: preço teto, taxa de retorno, price cap | [Regulação](regulacao-dinamica.md#159) |
+| 15.10 | O monopólio pode ser bom para a inovação? | Schumpeter, destruição criativa, patentes | [Visão dinâmica](regulacao-dinamica.md#1510) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

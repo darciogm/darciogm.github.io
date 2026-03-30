@@ -10,22 +10,22 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 14.1 | Vasos Comunicantes: O Sistema de Preços Competitivo | [Sistema de Preços e Edgeworth](sistema-precos.md#141) |
-| 14.2 | Um Retângulo Vale Mais que Mil Palavras: A Caixa de Edgeworth | [Sistema de Preços e Edgeworth](sistema-precos.md#142) |
-| 14.3 | O Caminho Dourado: Curva de Contrato e Núcleo | [Eficiência de Pareto](eficiencia-pareto.md#143) |
-| 14.4 | Quem Produz o Quê: Fronteira de Possibilidades de Produção | [Eficiência de Pareto](eficiencia-pareto.md#144) |
-| 14.5 | Três Peças do Quebra-Cabeça: Condições de Eficiência de Pareto | [Eficiência de Pareto](eficiencia-pareto.md#145) |
-| 14.6 | A Orquestra sem Maestro: Primeiro Teorema do Bem-Estar | [Teoremas do Bem-Estar](teoremas-bem-estar.md#146) |
-| 14.7 | Redistribuir sem Estragar: Segundo Teorema do Bem-Estar | [Teoremas do Bem-Estar](teoremas-bem-estar.md#147) |
-| 14.8 | Das Caixas às Equações: Modelo Matemático de Troca | [Modelo Matemático](modelo-matematico.md#148) |
-| 14.9 | O Castelo Existe? Prova de Existência do Equilíbrio | [Modelo Matemático](modelo-matematico.md#149) |
-| 14.10 | Quando Alguém Precisa Fabricar: Produção e Troca | [Modelo Matemático](modelo-matematico.md#1410) |
-| 14.11 | Do Quadro-Negro ao Gabinete: Modelos CGE | [Modelos CGE](cge.md) |
-| 14.12 | A Democracia Impossível: Escolha Social e o Teorema de Arrow | [Escolha Social e Arrow](escolha-social.md#1412) |
-| — | Revisão, Exercícios e ANPEC | [Exercícios e ANPEC](exercicios.md) |
-| — | Pesquisa em Ação e Referências | [Pesquisa em Ação](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 14.1 | O que conecta o preço do café ao salário do barista? | Sistema de preços como vasos comunicantes | [Sistema de preços](sistema-precos.md#141) |
+| 14.2 | Como visualizar todas as trocas possíveis entre duas pessoas? | Caixa de Edgeworth | [Edgeworth](sistema-precos.md#142) |
+| 14.3 | Que alocações esgotam todos os ganhos de troca? | Curva de contrato, núcleo, eficiência de Pareto | [Contrato](eficiencia-pareto.md#143) |
+| 14.4 | Quanto de cada bem a economia pode produzir? | Fronteira de possibilidades de produção | [FPP](eficiencia-pareto.md#144) |
+| 14.5 | Quais são as três condições para que ninguém melhore sem piorar alguém? | Eficiência na troca, produção e mix | [Condições de Pareto](eficiencia-pareto.md#145) |
+| 14.6 | O mercado competitivo produz eficiência sem ninguém mandar? | 1º Teorema do Bem-Estar | [1º TBE](teoremas-bem-estar.md#146) |
+| 14.7 | Dá para redistribuir sem destruir a eficiência? | 2º Teorema do Bem-Estar, transferências lump-sum | [2º TBE](teoremas-bem-estar.md#147) |
+| 14.8 | Como traduzir a Caixa de Edgeworth em equações? | Modelo walrasiano de troca pura | [Modelo](modelo-matematico.md#148) |
+| 14.9 | O equilíbrio geral existe — ou é só uma ideia bonita? | Ponto fixo, Teorema de Arrow-Debreu | [Existência](modelo-matematico.md#149) |
+| 14.10 | E quando alguém precisa fabricar, não só trocar? | Produção e equilíbrio geral | [Produção](modelo-matematico.md#1410) |
+| 14.11 | Como simular o impacto de uma reforma tributária na economia inteira? | Modelos CGE (equilíbrio geral computável) | [CGE](cge.md) |
+| 14.12 | Existe regra de votação perfeita — ou a democracia tem limites lógicos? | Teorema de Arrow, escolha social | [Arrow](escolha-social.md#1412) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

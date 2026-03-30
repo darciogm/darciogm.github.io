@@ -18,20 +18,20 @@ A análise de externalidades e bens públicos tem raízes profundas na história
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tópico | Página |
-|:------|:-------|:-------|
-| 20.1 | [Definição de Externalidades](externalidades.md#201) | [→](externalidades.md#201) |
-| 20.2 | [Externalidades e Ineficiência Alocativa](externalidades.md#202) | [→](externalidades.md#202) |
-| 20.3 | [Modelo de Equilíbrio Parcial](modelo-solucoes.md#203) | [→](modelo-solucoes.md#203) |
-| 20.4 | [Soluções para Externalidades](modelo-solucoes.md#204) | [→](modelo-solucoes.md#204) |
-| 20.5 | [Atributos dos Bens Públicos](bens-publicos.md#205) | [→](bens-publicos.md#205) |
-| 20.6 | [Bens Públicos e Alocação de Recursos](bens-publicos.md#206) | [→](bens-publicos.md#206) |
-| 20.7 | [Preços de Lindahl](lindahl-carona.md#207) | [→](lindahl-carona.md#207) |
-| 20.8 | [O Problema do Carona](lindahl-carona.md#208) | [→](lindahl-carona.md#208) |
-| 20.9 | [Votação e Alocação](votacao-mecanismos.md#209) | [→](votacao-mecanismos.md#209) |
-| 20.10 | [Mecanismos de Revelação](votacao-mecanismos.md#2010) | [→](votacao-mecanismos.md#2010) |
-| | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
-| | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 20.1 | Quando a ação de um afeta o bem-estar de outro sem passar pelo mercado? | Definição e tipologia de externalidades | [Externalidades](externalidades.md#201) |
+| 20.2 | Por que a poluição é excessiva se ninguém paga por ela? | Externalidades e ineficiência alocativa | [Ineficiência](externalidades.md#202) |
+| 20.3 | Como medir o custo social de uma externalidade? | Modelo de equilíbrio parcial com externalidade | [Modelo](modelo-solucoes.md#203) |
+| 20.4 | Imposto, negociação ou regulação — o que resolve melhor? | Pigou, Coase, cap-and-trade | [Soluções](modelo-solucoes.md#204) |
+| 20.5 | O que torna um bem "público" — e por que o mercado falha em provê-lo? | Não rivalidade, não exclusibilidade | [Bens públicos](bens-publicos.md#205) |
+| 20.6 | Quanto de bem público a sociedade deveria produzir? | Condição de Samuelson, soma vertical | [Alocação](bens-publicos.md#206) |
+| 20.7 | Existe um preço personalizado que faz todo mundo pagar pelo que valoriza? | Preços de Lindahl | [Lindahl](lindahl-carona.md#207) |
+| 20.8 | Por que todo mundo quer pegar carona e ninguém quer pagar? | Free-rider, provisão voluntária | [Carona](lindahl-carona.md#208) |
+| 20.9 | A maioria vota bem — ou vota mal? | Votação, teorema do eleitor mediano | [Votação](votacao-mecanismos.md#209) |
+| 20.10 | Como fazer as pessoas revelarem quanto realmente valorizam o bem público? | Mecanismos de revelação, VCG | [Revelação](votacao-mecanismos.md#2010) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

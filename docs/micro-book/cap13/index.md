@@ -18,22 +18,22 @@ Ao longo do capítulo, analisaremos: a agregação de demandas individuais em de
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 13.1 | A Multidão Tem Razão? Demanda de Mercado | [Demanda de Mercado](demanda-mercado.md) |
-| 13.2 | O Feirante e o Caminhão de Tomates: Curtíssimo Prazo | [Equilíbrio de Curto Prazo](equilibrio.md#132) |
-| 13.3 | Quando a Fábrica Liga o Segundo Turno: Curto Prazo | [Equilíbrio de Curto Prazo](equilibrio.md#133) |
-| 13.4 | E Se o Mundo Mudar? Estática Comparativa | [Equilíbrio de Curto Prazo](equilibrio.md#134) |
-| 13.5 | Quem Cheira o Dinheiro Entra: Longo Prazo | [Longo Prazo e Renda Ricardiana](longo-prazo.md#135) |
-| 13.6 | Três Destinos para uma Indústria | [Longo Prazo e Renda Ricardiana](longo-prazo.md#136) |
-| 13.7 | O Elástico que Estica no Longo Prazo | [Longo Prazo e Renda Ricardiana](longo-prazo.md#137) |
-| 13.8 | O Fantasma do Lucro Zero: Renda Ricardiana | [Longo Prazo e Renda Ricardiana](longo-prazo.md#138) |
-| 13.9 | O Juiz Veste Toga: Eficiência e Bem-Estar | [Eficiência e Bem-Estar](eficiencia.md) |
-| 13.10 | Quando o Governo Puxa o Freio: Controles de Preços | [Políticas Públicas](politicas.md#1310) |
-| 13.11 | O Imposto Não Cai Onde Você Pensa: Incidência Tributária | [Políticas Públicas](politicas.md#1311) |
-| 13.12 | O Placar Final: EC, EP e PPM | [Políticas Públicas](politicas.md#1312) |
-| — | Revisão, Exercícios e ANPEC | [Exercícios e ANPEC](exercicios.md) |
-| — | Pesquisa em Ação e Referências | [Pesquisa em Ação](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 13.1 | Como somar milhões de decisões individuais numa única curva de demanda? | Demanda de mercado, agregação | [Demanda](demanda-mercado.md) |
+| 13.2 | O que acontece quando o caminhão de tomates chega na feira e o estoque é fixo? | Equilíbrio de curtíssimo prazo | [Curtíssimo prazo](equilibrio.md#132) |
+| 13.3 | Quando a fábrica liga o segundo turno — como o preço se ajusta? | Equilíbrio de curto prazo competitivo | [Curto prazo](equilibrio.md#133) |
+| 13.4 | E se a demanda ou os custos mudarem? | Estática comparativa do equilíbrio | [Estática comparativa](equilibrio.md#134) |
+| 13.5 | Se tem lucro, por que todo mundo não entra? | Livre entrada e equilíbrio de longo prazo | [Longo prazo](longo-prazo.md#135) |
+| 13.6 | Custos sobem, descem ou ficam iguais quando a indústria cresce? | Indústrias de custo constante, crescente e decrescente | [Três destinos](longo-prazo.md#136) |
+| 13.7 | Por que a oferta é mais elástica no longo prazo? | Elasticidade de oferta e ajuste temporal | [Elasticidade LP](longo-prazo.md#137) |
+| 13.8 | Se o lucro é zero, para que serve ser eficiente? | Renda ricardiana, lucro econômico vs. contábil | [Renda ricardiana](longo-prazo.md#138) |
+| 13.9 | O mercado competitivo é "justo"? | Eficiência de Pareto, EC, EP, 1º TBE | [Eficiência](eficiencia.md) |
+| 13.10 | Tabelar preço resolve ou piora? | Controles de preços, teto e piso | [Controles](politicas.md#1310) |
+| 13.11 | Quem realmente paga o imposto — produtor ou consumidor? | Incidência tributária e elasticidade | [Impostos](politicas.md#1311) |
+| 13.12 | Qual é o custo social do imposto? | Peso morto, EC, EP e PPM | [Peso morto](politicas.md#1312) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

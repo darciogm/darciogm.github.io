@@ -16,16 +16,16 @@ Mas antes de mergulhar na análise formal, vale perguntar: **por que existem fir
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 12.1 | Por que Você Não Contrata Tudo pelo Mercado: A Natureza da Firma | [Natureza da Firma](natureza-firma.md) |
-| 12.2 | O GPS do Empresário: Maximização de Lucro | [Maximização e Receita](maximizacao.md#122) |
-| 12.3 | O Balde Furado da Receita: Receita Marginal e Elasticidade | [Maximização e Receita](maximizacao.md#123) |
-| 12.4 | Operar ou Fechar as Portas: Oferta de Curto Prazo | [Oferta de Curto Prazo](oferta.md) |
-| 12.5 | O Truque de Mágica do Lucro: Função Lucro e Lema de Hotelling | [Função Lucro e Insumos](funcao-lucro.md#125) |
-| 12.6 | Dois Remadores Sincronizados: Demanda por Insumos | [Função Lucro e Insumos](funcao-lucro.md#126) |
-| — | Revisão, Exercícios e ANPEC | [Exercícios e ANPEC](exercicios.md) |
-| — | Pesquisa em Ação e Referências | [Pesquisa em Ação](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 12.1 | Por que a firma existe — por que não contratamos tudo pelo mercado? | Coase, custos de transação, natureza da firma | [Natureza da Firma](natureza-firma.md) |
+| 12.2 | Como a firma decide quanto produzir? | Maximização de lucro, CPO e CSO | [Maximização](maximizacao.md#122) |
+| 12.3 | Por que a receita marginal é menor que o preço quando a firma tem poder de mercado? | Receita marginal, elasticidade e markup | [Receita](maximizacao.md#123) |
+| 12.4 | Quando vale a pena fechar as portas em vez de operar no prejuízo? | Oferta de curto prazo, ponto de fechamento | [Oferta CP](oferta.md) |
+| 12.5 | Dá para extrair oferta e demanda por insumos apenas da função lucro? | Função lucro, Lema de Hotelling | [Função Lucro](funcao-lucro.md#125) |
+| 12.6 | Como o preço do insumo afeta quanto a firma contrata? | Demanda por insumos, estática comparativa | [Insumos](funcao-lucro.md#126) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

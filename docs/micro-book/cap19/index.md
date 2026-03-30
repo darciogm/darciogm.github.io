@@ -19,19 +19,19 @@ Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, anali
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tópico | Página |
-|:------|:-------|:-------|
-| 19.1 | [Contratos Complexos e Assimetria de Informação](principal-agente.md#191) | [→](principal-agente.md#191) |
-| 19.2 | [O Modelo Principal-Agente](principal-agente.md#192) | [→](principal-agente.md#192) |
-| 19.3 | [Risco Moral](risco-moral.md#193) | [→](risco-moral.md#193) |
-| 19.4 | [Seleção Adversa](selecao-adversa.md#194) | [→](selecao-adversa.md#194) |
-| 19.5 | [Sinalização](sinalizacao-screening.md#195) | [→](sinalizacao-screening.md#195) |
-| 19.6 | [Screening e Triagem](sinalizacao-screening.md#196) | [→](sinalizacao-screening.md#196) |
-| 19.7 | [Leilões](leiloes-taxonomia.md#197) | [→](leiloes-taxonomia.md#197) |
-| 19.8 | [Taxonomia da Informação Assimétrica](leiloes-taxonomia.md#198) | [→](leiloes-taxonomia.md#198) |
-| 19.9 | [Matching Markets e Design de Mercado](matching-markets.md#199) | [→](matching-markets.md#199) |
-| | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
-| | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 19.1 | Por que contratos reais são tão complicados? | Assimetria de informação e contratos | [Contratos](principal-agente.md#191) |
+| 19.2 | Como modelar a relação entre chefe e empregado? | Modelo principal-agente | [Principal-agente](principal-agente.md#192) |
+| 19.3 | Quando o seguro incentiva o descuido, como redesenhar o contrato? | Risco moral, IC, IR, contrato ótimo | [Risco moral](risco-moral.md#193) |
+| 19.4 | Por que os piores riscos são os que mais querem seguro? | Seleção adversa, Akerlof, Rothschild-Stiglitz | [Seleção adversa](selecao-adversa.md#194) |
+| 19.5 | Como provar que você é bom sem que ninguém precise acreditar na sua palavra? | Sinalização, Spence, single-crossing | [Sinalização](sinalizacao-screening.md#195) |
+| 19.6 | Como desenhar um menu de contratos que separa os tipos? | Screening, menus, autosseleção | [Screening](sinalizacao-screening.md#196) |
+| 19.7 | Qual formato de leilão gera mais receita? | Leilões: IPV, valor comum, equivalência de receita | [Leilões](leiloes-taxonomia.md#197) |
+| 19.8 | Moral hazard, seleção adversa, sinalização — qual é qual? | Taxonomia unificada da informação assimétrica | [Taxonomia](leiloes-taxonomia.md#198) |
+| 19.9 | Como alocar médicos a hospitais sem usar preços? | Matching markets, Gale-Shapley, design de mercado | [Matching](matching-markets.md#199) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

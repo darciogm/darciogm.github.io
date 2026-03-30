@@ -14,16 +14,16 @@ O tratamento combina formalização rigorosa com exemplos reais e conexões expl
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tópico | Página |
-|:------|:-------|:-------|
-| 24.1 | [Das Externalidades à Política Ambiental](politica-instrumentos.md#241) | [→](politica-instrumentos.md#241) |
-| 24.2 | [Instrumentos de Mercado: Impostos vs. Cap-and-Trade](politica-instrumentos.md#242) | [→](politica-instrumentos.md#242) |
-| 24.3 | [Economia das Mudanças Climáticas](clima-carbono.md#243) | [→](clima-carbono.md#243) |
-| 24.4 | [Mercados de Carbono](clima-carbono.md#244) | [→](clima-carbono.md#244) |
-| 24.5 | [Valoração Ambiental](valoracao-recursos.md#245) | [→](valoracao-recursos.md#245) |
-| 24.6 | [Recursos Naturais e Sustentabilidade](valoracao-recursos.md#246) | [→](valoracao-recursos.md#246) |
-| | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
-| | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 24.1 | Poluição é externalidade — qual a política certa? | Pigou, Coase, regulação ambiental | [Política](politica-instrumentos.md#241) |
+| 24.2 | Imposto ou cap-and-trade — qual funciona melhor? | Instrumentos de mercado, Weitzman | [Instrumentos](politica-instrumentos.md#242) |
+| 24.3 | Quanto custa (e quanto vale) evitar 2°C de aquecimento? | Economia das mudanças climáticas, Nordhaus, Stern | [Clima](clima-carbono.md#243) |
+| 24.4 | Dá para comprar e vender o direito de poluir? | Mercados de carbono, EU-ETS | [Carbono](clima-carbono.md#244) |
+| 24.5 | Quanto vale uma floresta em pé — e como medir? | Valoração ambiental: preferências reveladas e declaradas | [Valoração](valoracao-recursos.md#245) |
+| 24.6 | Crescer para sempre é sustentável? | Recursos naturais, sustentabilidade, Hotelling | [Sustentabilidade](valoracao-recursos.md#246) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

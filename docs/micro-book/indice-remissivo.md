@@ -40,6 +40,12 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Cartel** — [Cap. 9b (jogos repetidos)](cap09b/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
 
+**Cheap talk** — [Cap. 9d (Crawford-Sobel)](cap09d/cheap-talk.md)
+
+**Cho-Kreps** (critério / Intuitive Criterion) — [Cap. 9d (sinalização)](cap09d/sinalizacao.md)
+
+**Condição de single-crossing** — [Cap. 9d (sinalização)](cap09d/sinalizacao.md), [Cap. 19 (screening)](cap19/index.md)
+
 **Ceteris paribus** — [Cap. 1 (definição)](cap01/index.md)
 
 **Coeficiente de aversão absoluta ao risco** (Arrow-Pratt) — [Cap. 7 (definição)](cap07/index.md), [Cap. 18 (CAPM)](cap18/index.md)
@@ -134,7 +140,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Equilíbrio bayesiano de Nash** (EBN) — [Cap. 9c (definição)](cap09c/index.md)
 
-**Equilíbrio bayesiano perfeito** (EBP) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (sinalização)](cap19/index.md)
+**Equilíbrio bayesiano perfeito** (EBP) — [Cap. 9d (definição)](cap09d/pbe.md), [Cap. 19 (sinalização)](cap19/index.md)
 
 **Equilíbrio de Cournot** — [Cap. 9a (formulação)](cap09a/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
 
@@ -148,7 +154,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Equilíbrio perfeito em subjogos** (*subgame perfect equilibrium*) — [Cap. 9b (definição)](cap09b/index.md), [Cap. 16 (Stackelberg)](cap16/index.md)
 
-**Equilíbrio separador e equilíbrio agrupador** (*separating / pooling*) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (sinalização)](cap19/index.md)
+**Equilíbrio separador e equilíbrio agrupador** (*separating / pooling*) — [Cap. 9d (sinalização)](cap09d/sinalizacao.md), [Cap. 19 (sinalização)](cap19/index.md)
 
 **Equivalência de receita** (*revenue equivalence*) — [Cap. 9c (leilões)](cap09c/index.md)
 
@@ -208,7 +214,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Índice de Lerner** — [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
 
-**Informação assimétrica** (*asymmetric information*) — [Cap. 9c (jogos bayesianos)](cap09c/index.md), [Cap. 9d (sinalização)](cap09d/index.md), [Cap. 19 (definição)](cap19/index.md), [Cap. 21 (plataformas)](cap21/index.md)
+**Informação assimétrica** (*asymmetric information*) — [Cap. 9c (jogos bayesianos)](cap09c/index.md), [Cap. 9d (sinalização, seleção adversa)](cap09d/selecao-adversa.md), [Cap. 19 (definição)](cap19/index.md), [Cap. 21 (plataformas)](cap21/index.md)
 
 **Interdependência estratégica** — [Cap. 9a (teoria dos jogos)](cap09a/index.md), [Cap. 16 (oligopólio)](cap16/index.md)
 
@@ -230,7 +236,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Maldição do vencedor** (*winner's curse*) — [Cap. 9c (leilões)](cap09c/index.md)
 
-**Market unraveling** — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (seleção adversa)](cap19/index.md)
+**Market unraveling** — [Cap. 9d (seleção adversa)](cap09d/selecao-adversa.md), [Cap. 19 (seleção adversa)](cap19/index.md)
 
 **Maximização de lucro** — [Cap. 12 (definição)](cap12/index.md), [Cap. 13 (equilíbrio)](cap13/index.md), [Cap. 15 (monopólio)](cap15/index.md)
 
@@ -238,7 +244,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Mercado contestável** — [Cap. 15 (monopólio)](cap15/index.md), [Cap. 16 (OI)](cap16/index.md)
 
-**Modelo de Spence** (sinalização) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (sinalização)](cap19/index.md)
+**Modelo de Spence** (sinalização) — [Cap. 9d (sinalização)](cap09d/sinalizacao.md), [Cap. 19 (sinalização)](cap19/index.md)
 
 **Modelo econômico** — [Cap. 1 (definição)](cap01/index.md)
 
@@ -248,7 +254,7 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Monopsônio** (*monopsony*) — [Cap. 15 (definição)](cap15/index.md), [Cap. 17 (mercado de trabalho)](cap17/index.md)
 
-**Multitarefa** (*multitasking*) — [Cap. 9d (incentivos)](cap09d/index.md)
+**Multitarefa** (*multitasking*) — [Cap. 9d (moral hazard)](cap09d/moral-hazard.md)
 
 **Multiplicador de Lagrange** (\(\lambda\)) — [Cap. 2 (otimização)](cap02/index.md), [Cap. 4 (escolha)](cap04/index.md)
 
@@ -282,7 +288,9 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Primeiro Teorema do Bem-Estar** — [Cap. 14 (definição)](cap14/index.md), [Cap. 20 (falhas de mercado)](cap20/index.md)
 
-**Principal-agente** (modelo) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (contratos)](cap19/index.md)
+**Principal-agente** (modelo) — [Cap. 9d (moral hazard)](cap09d/moral-hazard.md), [Cap. 19 (contratos)](cap19/index.md)
+
+**Princípio da Informatividade** (*Informativeness Principle*) — [Cap. 9d (moral hazard)](cap09d/moral-hazard.md)
 
 **Produto marginal** — [Cap. 10 (definição)](cap10/index.md), [Cap. 17 (demanda por trabalho)](cap17/index.md)
 
@@ -318,19 +326,19 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Restrição orçamentária** — [Cap. 4 (definição)](cap04/index.md), [Cap. 17 (trabalho-lazer)](cap17/index.md), [Cap. 18 (intertemporal)](cap18/index.md)
 
-**Risco moral** (*moral hazard*) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (contratos)](cap19/index.md)
+**Risco moral** (*moral hazard*) — [Cap. 9d (definição)](cap09d/moral-hazard.md), [Cap. 19 (contratos)](cap19/index.md)
 
 ## S
 
 **Salário de reserva** (*reservation wage*) — [Cap. 17 (definição)](cap17/index.md)
 
-**Screening** (triagem) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (contratos)](cap19/index.md)
+**Screening** (triagem) — [Cap. 9d (seleção adversa)](cap09d/selecao-adversa.md), [Cap. 19 (contratos)](cap19/index.md)
 
 **Segundo Teorema do Bem-Estar** — [Cap. 14 (definição)](cap14/index.md)
 
-**Seleção adversa** (*adverse selection*) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (limões)](cap19/index.md)
+**Seleção adversa** (*adverse selection*) — [Cap. 9d (Akerlof, screening)](cap09d/selecao-adversa.md), [Cap. 19 (limões)](cap19/index.md), [Cap. 23 (seguros de saúde)](cap23/index.md)
 
-**Sinalização** (*signaling*) — [Cap. 9d (definição)](cap09d/index.md), [Cap. 19 (Spence)](cap19/index.md); ver também *Modelo de Spence*
+**Sinalização** (*signaling*) — [Cap. 9d (Spence, PBE)](cap09d/sinalizacao.md), [Cap. 19 (Spence)](cap19/index.md); ver também *Modelo de Spence*
 
 **Substitutos** (bens) — [Cap. 6 (definição)](cap06/index.md); ver também *Complementos*
 

@@ -14,16 +14,16 @@ A literatura acadêmica sobre economia da saúde é vasta. As referências centr
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tópico | Página |
-|:------|:-------|:-------|
-| 23.1 | [Por Que a Saúde É Diferente?](arrow-grossman.md#231) | [→](arrow-grossman.md#231) |
-| 23.2 | [Demanda por Saúde e por Cuidados Médicos](demanda-oferta.md#232) | [→](demanda-oferta.md#232) |
-| 23.3 | [Oferta de Serviços de Saúde](demanda-oferta.md#233) | [→](demanda-oferta.md#233) |
-| 23.4 | [Seguros de Saúde](seguros-sistemas.md#234) | [→](seguros-sistemas.md#234) |
-| 23.5 | [Sistemas de Saúde Comparados](seguros-sistemas.md#235) | [→](seguros-sistemas.md#235) |
-| 23.6 | [Avaliação Econômica em Saúde](avaliacao-externalidades.md#236) | [→](avaliacao-externalidades.md#236) |
-| | [Exercícios e ANPEC](exercicios.md) | [→](exercicios.md) |
-| | [Pesquisa em Ação](pesquisa.md) | [→](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 23.1 | Por que o mercado de saúde não funciona como o de sapatos? | Arrow (1963), falhas de mercado em saúde | [Arrow e Grossman](arrow-grossman.md#231) |
+| 23.2 | Demandamos saúde ou demandamos consultas médicas? | Modelo de Grossman, demanda derivada | [Demanda](demanda-oferta.md#232) |
+| 23.3 | O médico recomenda o que é bom para você ou o que é bom para ele? | Oferta de saúde, demanda induzida | [Oferta](demanda-oferta.md#233) |
+| 23.4 | Como segurar saúde quando o segurado sabe mais que a seguradora? | Moral hazard e seleção adversa em seguros de saúde | [Seguros](seguros-sistemas.md#234) |
+| 23.5 | SUS, NHS, Medicare — qual sistema funciona melhor? | Sistemas de saúde comparados | [Sistemas](seguros-sistemas.md#235) |
+| 23.6 | Quanto vale um ano de vida a mais — e como medir isso? | Avaliação econômica: ACE, ACU, QALY | [Avaliação](avaliacao-externalidades.md#236) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

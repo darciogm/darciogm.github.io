@@ -10,20 +10,20 @@ Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre co
 
 <div class="chapter-roadmap" markdown>
 
-| Seção | Tema | Página |
-|:------|:-----|:-------|
-| 17.1 | Travesseiro ou Salário — Eis a Questão: Alocação do Tempo | [Oferta de Trabalho](oferta-trabalho.md#171) |
-| 17.2 | Apertando os Parafusos com Álgebra: Oferta de Trabalho | [Oferta de Trabalho](oferta-trabalho.md#172) |
-| 17.3 | Ganhar Mais e Trabalhar Menos: A Curva Backward-Bending | [Oferta de Trabalho](oferta-trabalho.md#173) |
-| 17.4 | De Milhões de Despertadores a Uma Curva Só: Oferta Agregada | [Equilíbrio e Diferenciais](equilibrio-diferenciais.md#174) |
-| 17.5 | Onde Oferta e Demanda se Encontram: Equilíbrio no Mercado de Trabalho | [Equilíbrio e Diferenciais](equilibrio-diferenciais.md#175) |
-| 17.6 | Por Que o Médico Ganha Mais Que o Professor: Diferenciais Salariais | [Equilíbrio e Diferenciais](equilibrio-diferenciais.md#176) |
-| 17.7 | Quando Só Tem Um Patrão na Cidade: Monopsônio | [Monopsônio e Sindicatos](monopsonio-sindicatos.md#177) |
-| 17.8 | A Força do Coletivo: Sindicatos e Barganha Salarial | [Monopsônio e Sindicatos](monopsonio-sindicatos.md#178) |
-| 17.9 | Cabo de Guerra entre Dois Efeitos: Substituição vs. Renda | [Fatores e Terra](fatores-terra.md#179) |
-| 17.10 | O Chão Não Vai a Lugar Nenhum: Terra e Recursos Naturais | [Fatores e Terra](fatores-terra.md#1710) |
-| — | Exercícios e ANPEC | [Exercícios](exercicios.md) |
-| — | Pesquisa em Ação | [Pesquisa](pesquisa.md) |
+| Seção | Pergunta-guia | O que você vai aprender | Página |
+|:---:|---|---|:---:|
+| 17.1 | Mais uma hora de sono ou mais uma hora de salário? | Alocação do tempo, lazer vs. consumo | [Alocação](oferta-trabalho.md#171) |
+| 17.2 | Como formalizar a decisão de quantas horas trabalhar? | Oferta de trabalho, problema do consumidor-trabalhador | [Oferta](oferta-trabalho.md#172) |
+| 17.3 | Ganhar mais pode fazer alguém trabalhar menos? | Curva backward-bending, substituição vs. renda | [Backward-bending](oferta-trabalho.md#173) |
+| 17.4 | Como somar milhões de decisões individuais numa oferta de mercado? | Oferta agregada de trabalho | [Agregação](equilibrio-diferenciais.md#174) |
+| 17.5 | O que determina o salário de equilíbrio? | Equilíbrio no mercado de trabalho | [Equilíbrio](equilibrio-diferenciais.md#175) |
+| 17.6 | Por que o médico ganha mais que o professor? | Diferenciais compensatórios, capital humano | [Diferenciais](equilibrio-diferenciais.md#176) |
+| 17.7 | O que acontece quando só tem um patrão na cidade? | Monopsônio, salário abaixo do PMg | [Monopsônio](monopsonio-sindicatos.md#177) |
+| 17.8 | O sindicato melhora ou piora o mercado de trabalho? | Barganha salarial, modelos de sindicato | [Sindicatos](monopsonio-sindicatos.md#178) |
+| 17.9 | Subir o salário atrai mais trabalho ou mais lazer? | Efeito substituição vs. renda na oferta de fatores | [Substituição vs. renda](fatores-terra.md#179) |
+| 17.10 | Se a terra não vai a lugar nenhum, quem captura o valor? | Renda da terra, recursos naturais | [Terra](fatores-terra.md#1710) |
+| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 
