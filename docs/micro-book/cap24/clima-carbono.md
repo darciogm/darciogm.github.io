@@ -97,6 +97,173 @@ Com \(r = 5{,}5\%\), danos daqui a 100 anos têm valor presente de apenas 0,5% d
 
     **Por que isso importa:** O debate Nordhaus–Stern não é técnico — é fundamentalmente ético. Nordhaus adota uma abordagem "descritiva" (a taxa de desconto reflete o comportamento observado dos mercados financeiros). Stern adota uma abordagem "prescritiva" (é eticamente injustificável descontar o bem-estar de gerações futuras). Ambos estão certos dentro de suas premissas — e a escolha entre eles depende de valores, não de ciência.
 
+### 24.3.4b A crítica de Weitzman: caudas grossas e precaução
+
+Martin Weitzman (2009) introduziu um argumento que muda fundamentalmente os termos do debate. Mesmo que adotemos a taxa de desconto alta de Nordhaus, se a distribuição de danos climáticos tiver **caudas grossas** (*fat tails*) — isto é, probabilidade não-desprezível de catástrofes extremas — a análise custo-benefício convencional colapsa.
+
+O argumento formal: seja $D(T)$ o dano como fração do PIB, onde $T$ é o aquecimento. Se a distribuição de $T$ tem cauda pesada (e.g., probabilidade de 5% de $T > 6°C$) e a função de dano é convexa ($D'' > 0$), então:
+
+$$
+E[D(T)] \gg D(E[T]) \label{eq:24.9b} \tag{24.9b}
+$$
+
+O dano esperado é dominado pelos cenários catastróficos de baixa probabilidade, não pelo cenário mediano. Isso é a **desigualdade de Jensen** (Capítulo 2) aplicada à política climática: quando a função de dano é convexa e a incerteza é grande, a média dos danos excede o dano na média.
+
+!!! definition "Taxa de desconto social"
+    A **taxa de desconto social** ($r$) determina o peso relativo dado ao bem-estar de gerações futuras em relação ao presente. Pela equação de Ramsey: $r = \rho + \eta \cdot g$, onde $\rho$ é a taxa pura de preferência temporal (desconto "por ser futuro"), $\eta$ é a elasticidade marginal da utilidade (aversão à desigualdade entre gerações) e $g$ é a taxa de crescimento do consumo per capita. Taxas altas ($r > 5\%$) tornam danos futuros quase irrelevantes; taxas baixas ($r < 2\%$) justificam investimentos massivos em mitigação hoje. A escolha de $r$ é o parâmetro mais consequente — e mais disputado — da economia climática.
+
+!!! example "Exercício Resolvido 24.1 — Custo social do carbono: Nordhaus vs. Stern vs. EPA"
+    **Enunciado.** Três estimativas do custo social do carbono (SCC):
+
+    | Fonte | SCC (US$/tCO₂) | Taxa de desconto |
+    |:------|:---:|:---:|
+    | Nordhaus (2017) | 31 | 4,25% |
+    | Stern (2007) | 85 | 1,4% |
+    | EPA/IWG (2021) | 51 | 3,0% |
+
+    (a) Se o Brasil emite ~2,2 bilhões de tCO₂e/ano (incluindo desmatamento), calcule o "dano social" anual das emissões brasileiras segundo cada estimativa.
+
+    (b) Se o Brasil implementasse um imposto pigouviano igual ao SCC médio dessas estimativas, qual seria a receita anual? Compare com o PIB brasileiro (~US$ 2 trilhões).
+
+    (c) Weitzman argumenta que o SCC pode ser "infinito" sob caudas grossas. Explique por que a análise custo-benefício convencional falha nesse caso.
+
+    **Solução.**
+
+    **(a)** Dano social anual = SCC × emissões:
+
+    - Nordhaus: $31 \times 2{,}2 \times 10^9 = $ US$ 68,2 bilhões
+    - Stern: $85 \times 2{,}2 \times 10^9 = $ US$ 187 bilhões
+    - EPA: $51 \times 2{,}2 \times 10^9 = $ US$ 112,2 bilhões
+
+    A faixa vai de US$ 68 a US$ 187 bilhões — entre 3,4% e 9,4% do PIB brasileiro.
+
+    **(b)** SCC médio: $(31 + 85 + 51)/3 \approx $ US$ 56/tCO₂e. Receita: $56 \times 2{,}2 \times 10^9 = $ US$ 123 bilhões = ~6,2% do PIB. Para comparação, a receita tributária total do governo federal é ~22% do PIB. Um imposto de carbono a US$ 56/tCO₂ seria o segundo maior imposto do país.
+
+    **(c)** Se a distribuição de danos tem caudas grossas, o valor esperado do SCC pode ser infinito (ou indefinido): $E[\text{SCC}] = \int_0^\infty D(T) \cdot f(T) \, dT \to \infty$ quando $D(T)$ cresce mais rápido que $f(T)$ decai. Nesse caso, nenhuma taxa de desconto finita resolve o problema — a análise custo-benefício retorna "invista tudo em mitigação", o que é obviamente impossível. A resposta de Weitzman: em vez de custo-benefício, use o **princípio de precaução** — trate a política climática como um seguro contra catástrofe, não como otimização marginal.
+
+!!! example "Exercício Resolvido 24.2 — EU ETS vs. CBIO brasileiro: comparação de mercados de carbono"
+    **Enunciado.** Compare os dois mercados de carbono:
+
+    | Característica | EU ETS | RenovaBio (CBIOs) |
+    |:---|:---|:---|
+    | Preço médio (2023) | €70/tCO₂ (~US$ 77) | R$ 90/CBIO (~US$ 18) |
+    | Emissões cobertas | ~1,4 GtCO₂/ano | ~0,7 GtCO₂e/ano |
+    | Setores | Energia, indústria, aviação | Biocombustíveis |
+    | Alocação | Leilão (maioria) | Emissão por produtores |
+
+    (a) Por que o preço do EU ETS é ~4× maior que o dos CBIOs?
+
+    (b) Se o preço do EU ETS subisse para €100, qual seria o impacto esperado sobre as exportações brasileiras de aço para a UE (via CBAM)?
+
+    (c) O Brasil deveria alinhar o preço dos CBIOs ao preço internacional? Argumente prós e contras.
+
+    **Solução.**
+
+    **(a)** Três fatores: (i) **oferta mais restritiva** — o cap do EU ETS foi progressivamente apertado, enquanto a meta do RenovaBio é menos ambiciosa; (ii) **custos de abatimento mais altos** na Europa — a margem de descarbonização "barata" (troca carvão→gás) já foi explorada; (iii) **maior demanda institucional** — empresas europeias enfrentam metas vinculantes com penalidades por descumprimento.
+
+    **(b)** Com CBAM, exportadores brasileiros de aço pagariam ~€100 × (emissões por tonelada de aço). O aço brasileiro emite ~1,5–2,0 tCO₂/tonelada. Custo adicional: €150–200/ton de aço. Com preço FOB de ~€600/ton, isso representa 25–33% do preço — potencialmente inviabilizando exportações menos eficientes. Siderúrgicas a carvão seriam mais afetadas que as a gás natural ou a carvão vegetal (que pode ser carbono-neutro).
+
+    **(c)** **Prós:** Alinhamento cria "crédito" no CBAM (emissões já precificadas domesticamente são descontadas na fronteira europeia), protege competitividade exportadora, gera receita fiscal. **Contras:** Preço alto (€70+) teria impacto regressivo (energia e transporte ficam mais caros), indústria brasileira tem menos capacidade de ajuste rápido, e o custo marginal de abatimento no Brasil é menor que na Europa — portanto o preço ótimo brasileiro é menor.
+
+!!! box-brasil "Brasil na Prática — Fundo Amazônia e pagamento por serviços ambientais"
+
+    **O modelo.** O Fundo Amazônia, criado em 2008, é o maior mecanismo de pagamento por resultados de redução de desmatamento (REDD+) do mundo. A lógica econômica é elegante: países doadores (principalmente Noruega e Alemanha) pagam ao Brasil por tonelada de CO₂ evitada pela redução do desmatamento — transformando uma externalidade positiva (floresta em pé) em receita.
+
+    **Dados.** Entre 2008 e 2023, o Fundo recebeu ~R$ 3,4 bilhões em doações e apoiou ~100 projetos de combate ao desmatamento, monitoramento ambiental e desenvolvimento sustentável. A Noruega contribuiu com ~93% dos recursos. O fundo foi suspenso em 2019 e reativado em 2023.
+
+    **Análise custo-efetividade.** O custo implícito por tCO₂ evitada via Fundo Amazônia é estimado em US$ 5–10/tCO₂ — muito abaixo do SCC (~US$ 51) e do preço do EU ETS (~US$ 77). Isso significa que reduzir desmatamento na Amazônia é uma das formas mais custo-efetivas de mitigar emissões no planeta. O "retorno" para a Noruega: a um custo de ~US$ 1 bilhão, ajudou a evitar emissões equivalentes a ~3,5 bilhões de tCO₂ (associadas à redução do desmatamento de 2004 a 2012) — um ICER de ~US$ 0,30/tCO₂.
+
+    **Fonte:** Fundo Amazônia, *Relatório de Atividades 2023*. Disponível em [fundoamazonia.gov.br](http://www.fundoamazonia.gov.br).
+
+??? r-interactive "R Interativo — Modelo DICE Simplificado: Taxa de Desconto e Trajetória Ótima"
+    ```r
+    # Modelo DICE ultra-simplificado
+    # Demonstra: impacto da taxa de desconto sobre política ótima de mitigação
+
+    # Parâmetros (altere para explorar!)
+    rho   <- 0.015   # taxa pura de preferência temporal (Stern: 0.001; Nordhaus: 0.015)
+    eta   <- 2.0     # elasticidade marginal da utilidade (aversão à desigualdade)
+    g     <- 0.02    # crescimento do consumo per capita
+    T_max <- 200     # horizonte em anos
+    Y0    <- 100     # PIB base (trilhões US$)
+    E0    <- 40      # emissões iniciais (GtCO2/ano)
+    pi2   <- 0.00236 # parâmetro da função de dano (Nordhaus 2017)
+    sens  <- 3.0     # sensibilidade climática (°C por duplicação CO2)
+
+    # Taxa de desconto de Ramsey
+    r <- rho + eta * g
+    cat(sprintf("Taxa de desconto social (Ramsey): r = %.1f%% + %.1f × %.1f%% = %.2f%%\n",
+                rho*100, eta, g*100, r*100))
+
+    # Simulação simplificada
+    anos <- 0:T_max
+    n <- length(anos)
+
+    # Cenário 1: Business as usual (sem mitigação)
+    T_bau <- sens * log2(1 + 0.005 * anos)  # aquecimento aproximado
+    dano_bau <- pi2 * T_bau^2               # fração do PIB perdida
+    Y_bau <- Y0 * (1 + g)^anos * (1 - dano_bau)
+
+    # Cenário 2: Mitigação ótima (redução gradual de emissões)
+    abate <- pmin(1, 0.01 * anos)            # fração abatida (0 a 100% em 100 anos)
+    T_mit <- sens * log2(1 + 0.005 * anos * (1 - abate))
+    dano_mit <- pi2 * T_mit^2
+    custo_abate <- 0.01 * abate^2            # custo de abatimento (convexo)
+    Y_mit <- Y0 * (1 + g)^anos * (1 - dano_mit - custo_abate)
+
+    # Valor presente dos danos
+    desconto <- 1 / (1 + r)^anos
+    VP_dano_bau <- sum(dano_bau * Y0 * (1+g)^anos * desconto, na.rm = TRUE)
+    VP_dano_mit <- sum((dano_mit + custo_abate) * Y0 * (1+g)^anos * desconto, na.rm = TRUE)
+    beneficio_liquido <- VP_dano_bau - VP_dano_mit
+
+    # SCC aproximado
+    SCC_aprox <- VP_dano_bau / sum(E0 * (1-abate) * desconto, na.rm = TRUE) * 1e3
+
+    cat(sprintf("\n═══ RESULTADOS ═══\n"))
+    cat(sprintf("VP dano (BAU):       US$ %.0f trilhões\n", VP_dano_bau / 1e3))
+    cat(sprintf("VP custo (mitigação): US$ %.0f trilhões\n", VP_dano_mit / 1e3))
+    cat(sprintf("Benefício líquido:    US$ %.0f trilhões\n", beneficio_liquido / 1e3))
+    cat(sprintf("SCC aproximado:       US$ %.0f/tCO2\n", SCC_aprox))
+    cat(sprintf("Aquecimento BAU em 2100: %.1f°C\n", T_bau[101]))
+    cat(sprintf("Aquecimento mitigado em 2100: %.1f°C\n", T_mit[101]))
+
+    # Gráficos
+    par(mfrow = c(2, 2), mar = c(4, 4, 3, 1))
+
+    # 1. Temperatura
+    plot(2024 + anos, T_bau, type = "l", lwd = 2, col = "#F44336",
+         xlab = "Ano", ylab = "Aquecimento (°C)",
+         main = "Trajetória de Temperatura", ylim = c(0, max(T_bau) * 1.1))
+    lines(2024 + anos, T_mit, lwd = 2, col = "#4CAF50")
+    legend("topleft", c("BAU", "Mitigação"), col = c("#F44336", "#4CAF50"), lwd = 2)
+    abline(h = 2.0, lty = 2, col = "gray50")
+    text(2050, 2.2, "Meta Paris (2°C)", cex = 0.7, col = "gray50")
+    grid(col = "gray90")
+
+    # 2. PIB
+    plot(2024 + anos[1:150], Y_bau[1:150], type = "l", lwd = 2, col = "#F44336",
+         xlab = "Ano", ylab = "PIB (trilhões US$)", main = "Trajetória do PIB")
+    lines(2024 + anos[1:150], Y_mit[1:150], lwd = 2, col = "#4CAF50")
+    legend("topleft", c("BAU", "Mitigação"), col = c("#F44336", "#4CAF50"), lwd = 2)
+    grid(col = "gray90")
+
+    # 3. Fração de dano
+    plot(2024 + anos[1:150], dano_bau[1:150] * 100, type = "l", lwd = 2, col = "#F44336",
+         xlab = "Ano", ylab = "Perda de PIB (%)", main = "Danos Climáticos")
+    lines(2024 + anos[1:150], dano_mit[1:150] * 100, lwd = 2, col = "#4CAF50")
+    legend("topleft", c("BAU", "Mitigação"), col = c("#F44336", "#4CAF50"), lwd = 2)
+    grid(col = "gray90")
+
+    # 4. Fatores de desconto
+    plot(2024 + anos[1:150], desconto[1:150], type = "l", lwd = 2, col = "#2196F3",
+         xlab = "Ano", ylab = "Fator de desconto",
+         main = paste0("Desconto (r = ", round(r*100, 1), "%)"))
+    grid(col = "gray90")
+    ```
+
+    **Experimente:** Mude `rho` para 0.001 (Stern) e observe o SCC saltar — com desconto baixo, os danos futuros pesam muito mais. Aumente `sens` para 4.5 (cenário pessimista) e veja os danos explodirem. Mude `eta` para 1 (menos aversão à desigualdade) e o desconto cai, justificando mais mitigação.
+
 ### 24.3.5 O Acordo de Paris e as NDCs
 
 O **Acordo de Paris** (2015) estabeleceu o framework internacional para ação climática:

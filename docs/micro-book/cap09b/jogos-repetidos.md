@@ -171,3 +171,54 @@ Além do grim trigger, existem estratégias mais sofisticadas, comparadas na [Ta
     **Análise:** A guerra comercial EUA-China ilustra a fragilidade do equilíbrio cooperativo quando os fatores de desconto se alteram. Do lado americano, a percepção de que a China não cumpria compromissos de abertura (propriedade intelectual, subsídios a estatais) equivale a uma reavaliação do payoff de cooperação \(R\), reduzindo-o relativamente ao payoff de desvio \(T\) — o que eleva o \(\delta^*\) mínimo para sustentar cooperação. Do lado chinês, a retaliação proporcional segue a lógica exata do *tit-for-tat*: punir a defecção alheia para sinalizar que a cooperação futura exige reciprocidade. A teoria prevê que o retorno à cooperação é possível (*tit-for-tat* "perdoa" após punir), mas a acumulação de retaliações e a erosão institucional da OMC criam histerese — o custo de reconstruir a confiança excede o custo de um simples retorno ao status quo ante. Para o Brasil, as implicações são diretas: como beneficiário líquido do sistema multilateral (exportações de commodities dependem de regras estáveis), o enfraquecimento da OMC aumenta a incerteza e reduz o valor esperado do comércio — um custo que não aparece nas estimativas de impacto direto das tarifas bilaterais.
 
     **Fonte:** Fajgelbaum, Pablo D. et al. (2020). "The Return to Protectionism." *Quarterly Journal of Economics*, 135(1), 1–55. Amiti, Mary, Redding, Stephen J. e Weinstein, David E. (2019). "The Impact of the 2018 Tariffs on Prices and Welfare." *Journal of Economic Perspectives*, 33(4), 187–210. Bagwell, Kyle e Staiger, Robert W. (2002). *The Economics of the World Trading System*. Cambridge, MA: MIT Press.
+
+??? r-interactive "R Interativo — Dinâmica de Cournot com melhor resposta iterativa"
+
+    Simule a convergência para o equilíbrio de Nash-Cournot via dinâmica de melhor resposta (*best-response dynamics*). Duas firmas ajustam suas quantidades iterativamente, cada uma respondendo de forma ótima à produção da outra no período anterior.
+
+    ```r
+    # Parâmetros
+    a <- 100   # Intercepto da demanda inversa: P = a - b*Q
+    b <- 1     # Inclinação
+    c1 <- 10   # Custo marginal firma 1
+    c2 <- 20   # Custo marginal firma 2
+
+    # Funções de melhor resposta: q_i = (a - c_i - b*q_j) / (2*b)
+    br1 <- function(q2) max(0, (a - c1 - b * q2) / (2 * b))
+    br2 <- function(q1) max(0, (a - c2 - b * q1) / (2 * b))
+
+    # Dinâmica iterativa
+    T <- 20
+    q1 <- q2 <- numeric(T)
+    q1[1] <- 0; q2[1] <- 0  # Ponto inicial
+
+    for(t in 2:T) {
+      q1[t] <- br1(q2[t-1])
+      q2[t] <- br2(q1[t-1])
+    }
+
+    # Equilíbrio analítico
+    q1_star <- (a - 2*c1 + c2) / (3*b)
+    q2_star <- (a - 2*c2 + c1) / (3*b)
+
+    # Gráfico da convergência
+    par(mfrow = c(1,2))
+    plot(1:T, q1, type = "b", pch = 16, col = "blue", ylim = c(0, 50),
+         xlab = "Iteração", ylab = "Quantidade", main = "Convergência para Nash-Cournot")
+    lines(1:T, q2, type = "b", pch = 17, col = "red")
+    abline(h = q1_star, lty = 2, col = "blue")
+    abline(h = q2_star, lty = 2, col = "red")
+    legend("right", c("Firma 1", "Firma 2"), col = c("blue","red"), pch = c(16,17))
+
+    # Funções de melhor resposta no espaço (q1, q2)
+    q_range <- seq(0, 50, length.out = 100)
+    plot(q_range, sapply(q_range, br1), type = "l", col = "blue", lwd = 2,
+         xlab = "q2", ylab = "q1", main = "Funções de Melhor Resposta")
+    lines(sapply(q_range, br2), q_range, col = "red", lwd = 2)
+    points(q2_star, q1_star, pch = 19, cex = 2)
+    text(q2_star + 3, q1_star, paste0("Nash (", round(q1_star,1), ", ", round(q2_star,1), ")"))
+    for(t in 1:(T-1)) arrows(q2[t], q1[t], q2[t+1], q1[t+1], length = 0.08, col = "gray40")
+    legend("topright", c("BR Firma 1", "BR Firma 2"), col = c("blue","red"), lwd = 2)
+    ```
+
+    **Experimente:** Altere os custos marginais `c1` e `c2`. Quando as firmas são simétricas ($c_1 = c_2$), o equilíbrio é simétrico. Quando uma firma tem custo muito maior, ela pode ser expulsa do mercado ($q_i^* = 0$). Teste com $c_2 = 80$.

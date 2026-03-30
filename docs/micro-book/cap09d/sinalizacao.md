@@ -2,6 +2,9 @@
 
 ## 9d.2 O MBA Não Ensina Nada — Mas Sinaliza Tudo: O Modelo de Spence
 
+!!! tip "Onde estou no livro?"
+    Este capítulo desenvolve a **teoria dos jogos** por trás da sinalização: derivação formal do PBE separador e agregador, *single-crossing condition*, refinamento de Cho-Kreps. Para **aplicações a mercados de trabalho, educação e políticas públicas**, incluindo dados da PNAD e do Enem/Sisu, veja o [Capítulo 19 — Sinalização e Screening](../cap19/sinalizacao-screening.md).
+
 Aqui está a aplicação mais famosa — e mais provocativa — do PBE. A pergunta de Spence (1973): por que as pessoas fazem faculdade? Resposta óbvia: para aprender. Resposta de Spence: *talvez não*. Talvez o diploma seja apenas um **sinal** — uma forma custosa de dizer ao empregador "sou do tipo produtivo", mesmo que o conteúdo do curso seja irrelevante. O truque: ir à faculdade é mais *fácil* (menos custoso) para quem é produtivo. Logo, o diploma funciona como filtro.
 
 Essa lógica se estende muito além da educação: garantia de 5 anos no carro usado (só quem confia oferece), dividendos altos (só firma saudável distribui caixa), e até o pavão com cauda absurdamente grande (só quem é geneticamente apto sobrevive com aquilo). O mecanismo é sempre o mesmo: uma ação custosa que o tipo ruim acha proibitiva demais para imitar.
@@ -99,6 +102,26 @@ No exemplo acima, se \(\theta_H = 1{,}2\) e \(\theta_L = 1\) (tipos muito próxi
 A comparação entre os dois tipos de equilíbrio revela um trade-off fundamental: o equilíbrio separador é informacionalmente eficiente (revela os tipos) mas alocativamente ineficiente (o custo da sinalização é puro desperdício); o equilíbrio pooling é informacionalmente ineficiente (não revela tipos) mas pode ser alocativamente menos custoso (evita o gasto com sinalização). Qual equilíbrio prevalece depende da magnitude da diferença de produtividade entre os tipos, do custo da sinalização e das crenças fora do caminho de equilíbrio. Quando o Critério de Dominância Intuitiva elimina o pooling, o equilíbrio separador de menor custo é a previsão teórica selecionada — mas isso não significa que o equilíbrio separador seja socialmente ótimo.
 
 O modelo brasileiro oferece um exemplo instrutivo. O diploma universitário no Brasil tornou-se, nas últimas décadas, progressivamente mais difundido. Se no final dos anos 1980 apenas uma fração pequena dos trabalhadores tinha formação superior, hoje a proporção é consideravelmente maior. A teoria de Spence prevê que, com isso, o valor de sinalização do diploma genérico diminuiu: como mais pessoas o detêm, ele discrimina menos entre tipos. A resposta do mercado foi buscar sinais de maior resolução — pós-graduação, certificações técnicas, universidades de prestígio — num processo de corrida armamentista informacional que o modelo formaliza com precisão.
+
+!!! box-brasil "Brasil na Prática — O diploma universitário no Brasil como sinal: dados da PNAD"
+
+    **Contexto.** O Brasil tem um dos maiores prêmios salariais para educação superior do mundo: em 2023, trabalhadores com diploma de graduação ganhavam em média 2,5× mais que trabalhadores com ensino médio completo — um prêmio de ~150% (PNAD Contínua/IBGE, 2023). Nos EUA, o prêmio equivalente é ~65%; na OCDE, ~45%.
+
+    **Sinalização ou capital humano?** O prêmio elevado é consistente com *ambas* as teorias. Se sinalização: alta assimetria de informação no mercado de trabalho brasileiro (poucas referências profissionais, baixa qualidade de informação sobre candidatos) torna o diploma um sinal valioso. Se capital humano: a escassez de trabalhadores qualificados (apenas ~21% dos adultos têm diploma superior, vs. ~50% na OCDE) eleva o retorno marginal da educação.
+
+    **Evidência discriminante.** A expansão das universidades privadas pós-2005 (FIES/PROUNI) aumentou o número de graduados de ~3 milhões para ~9 milhões de matriculados (2023). Se o diploma fosse *apenas* sinal, o prêmio deveria ter caído proporcionalmente (inflação de diplomas). A queda foi modesta (~10–15 p.p.), sugerindo que parte significativa do retorno é capital humano genuíno — mas a compressão nos retornos de diplomas de instituições de menor prestígio é consistente com a teoria de sinalização.
+
+    **Fonte:** IBGE, PNAD Contínua 2023; Barbosa Filho e Pessôa (2008), "Retorno da educação no Brasil", *Pesquisa e Planejamento Econômico*, 38(1), 97–125.
+
+!!! box-brasil "Brasil na Prática — Enem/Sisu como mecanismo de screening"
+
+    **Contexto.** O Sistema de Seleção Unificada (Sisu), criado em 2010, usa a nota do Enem como critério de entrada em universidades federais. O sistema é um mecanismo de **screening** (Capítulo 19): a universidade (parte desinformada) usa a nota do Enem como filtro para selecionar alunos de maior habilidade (parte informada).
+
+    **Conexão com a teoria.** No modelo de Rothschild-Stiglitz, o principal (universidade) oferece um "menu de contratos" (cursos com notas de corte diferentes) e o agente (aluno) se autoseleciona. Cursos mais concorridos (Medicina, Engenharia em federais de elite) funcionam como contratos com "prêmio alto e exigência alta" — atraindo alunos de tipo alto. Cursos com nota de corte baixa funcionam como contratos com "prêmio modesto" — atraindo tipos menos competitivos. A condição de single-crossing é satisfeita: alunos mais habilidosos têm custo menor de obter nota alta no Enem.
+
+    **Dados.** Em 2024, a nota de corte para Medicina na USP/Sisu foi ~820/1000; para Pedagogia na mesma universidade, ~620. A diferença de 200 pontos funciona como a "educação custosa" do modelo de Spence: só quem é genuinamente preparado consegue ultrapassar o limiar. O Sisu resolveu um problema de coordenação do vestibular tradicional (alunos tinham que "apostar" em uma única universidade), mas criou novos problemas — como a migração de alunos de alta nota para vagas em universidades distantes, gerando evasão.
+
+    **Fonte:** MEC/INEP, *Relatório do Sisu*, 2024.
 
 !!! tip "Sinalização vs. Capital Humano"
     Na realidade, a educação provavelmente combina sinalização e capital humano: parte do retorno é habilidades genuinamente adquiridas, e parte é sinalização. Separar empiricamente os dois canais é um dos desafios metodológicos centrais da economia da educação — tema que o Box Mundo 9d.1, a seguir, explora em profundidade.

@@ -48,7 +48,7 @@ Apesar dessas limitações, os modelos CGE são a ferramenta padrão para avalia
 
     **Dados brasileiros para CGE:** As Contas Nacionais do IBGE (Tabelas de Recursos e Usos — TRU) são a base para a construção de SAMs brasileiras. A Matriz Insumo-Produto, derivada das TRU, detalha as relações intersetoriais que alimentam os modelos.
 
-[^ministry-cge-bis]: Lembre-se: os modelos CGE são o *Ministry of Silly Walks* da economia aplicada — mas um ministry que efetivamente funciona. Cada modelo tem suas idiossincrasias (funções de produção aninhadas com quatro níveis de CES? Sério?), mas os resultados são surpreendentemente úteis quando interpretados com o devido ceticismo.
+[^ministry-cge-bis]: Cada modelo CGE tem suas idiossincrasias — funções de produção aninhadas com quatro níveis de CES, regras de fechamento que dariam inveja a um regulamento fiscal, calibrações que dependem de SAMs com idade legal para votar. Mas os resultados são surpreendentemente úteis quando interpretados com o devido ceticismo: o ponto é o sinal e a magnitude, não a terceira casa decimal.
 
 ---
 

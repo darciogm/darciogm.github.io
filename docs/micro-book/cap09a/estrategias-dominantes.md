@@ -106,6 +106,33 @@ window.addEventListener('message', function(e) {
 **Figura 9a.1 — Matriz de payoffs e equilíbrio de Nash.** Edite os payoffs ou selecione um jogo clássico (Dilema dos Prisioneiros, Batalha dos Sexos, Hawk-Dove, Matching Pennies). O solver detecta estratégias dominantes, equilíbrios de Nash em puras e mistas.
 </div>
 
+!!! box-brasil "Brasil na Prática — Operação Lava Jato: o dilema do prisioneiro na delação premiada"
+
+    **Contexto.** A Operação Lava Jato (2014–2021) utilizou extensivamente a **colaboração premiada** (Lei 12.850/2013), em que réus recebem redução de pena em troca de informação sobre co-conspiradores. A estrutura é *exatamente* um dilema dos prisioneiros: dois executivos acusados de corrupção, interrogados separadamente, devem decidir se colaboram (delatam) ou permanecem calados.
+
+    **Payoffs estilizados.** Suponha dois executivos da empreiteira, A e B:
+
+    |  | B: Calar | B: Delatar |
+    |:---|:---:|:---:|
+    | **A: Calar** | (−5, −5) — pena média | (−15, −1) |
+    | **A: Delatar** | (−1, −15) — A sai leve | (−8, −8) — ambos delatam |
+
+    Se ambos calam, a investigação tem menos provas (pena intermediária). Se um delata e o outro cala, o delator recebe grande redução; o calado recebe pena máxima. Se ambos delatam, as provas se acumulam, mas ambos recebem benefício parcial. **Delatar é estratégia dominante** — exatamente como no modelo. Resultado: ~180 acordos de delação até 2019.
+
+    **Conexão com a teoria.** O mecanismo da delação premiada é um design de mecanismos (Capítulo 9c) que *explora* a estrutura do dilema do prisioneiro: cria um incentivo individual tão forte para delatar que a cooperação entre criminosos se torna insustentável. É Trair como equilíbrio de Nash — mas agora a "traição" serve ao interesse público.
+
+    **Fonte:** MPF, *Caso Lava Jato — Resultados*, 2021; Lei 12.850/2013 (Lei das Organizações Criminosas).
+
+!!! box-brasil "Brasil na Prática — Licitações públicas e conluio: o jogo se repete"
+
+    **Contexto.** O CADE (Conselho Administrativo de Defesa Econômica) investiga regularmente cartéis em licitações públicas, onde empresas coordenam lances para garantir preços altos. Entre 2006 e 2024, o CADE condenou cartéis em licitações de obras públicas (metrô de SP, Petrobras), material hospitalar, ambulâncias e merenda escolar.
+
+    **A estrutura do jogo.** Em uma licitação de menor preço, $N$ empresas decidem simultaneamente seus lances. Sem conluio, a competição à la Bertrand (Seção 9a.5) levaria o preço para o custo marginal. Com conluio, as empresas designam um "vencedor" que cobra preço alto, e as demais apresentam propostas "de fachada" (lance de cobertura). A divisão do sobrepreço é combinada em rodízio ao longo de múltiplas licitações — um jogo repetido (Módulo 9b) sustentado pelo *folk theorem*.
+
+    **Dados.** No cartel do metrô de São Paulo (2013), seis construtoras combinaram lances por mais de uma década. O sobrepreço estimado foi de 20–30% em obras que totalizaram R$ 7+ bilhões. A multa aplicada pelo CADE totalizou R$ 534 milhões. No cartel de ambulâncias (2022), 14 empresas dividiram licitações em 14 estados por 8 anos.
+
+    **Fonte:** CADE, *Relatório de Gestão*, 2024; TCU, *Relatórios de auditoria em licitações*.
+
 O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação estratégica. Diferentes configurações de payoffs capturam problemas econômicos fundamentalmente distintos — coordenação, anti-coordenação, competição pura. A [Tabela 9a.2](#tabela-9a-2) sistematiza os jogos clássicos que servirão de referência ao longo dos quatro módulos de teoria dos jogos.
 
 ### Taxonomia dos Jogos Clássicos
@@ -123,3 +150,63 @@ O Dilema dos Prisioneiros não é, contudo, o único arquétipo de interação e
 <div class="caption-obj" markdown>
 **Tabela 9a.2 — Taxonomia dos jogos clássicos.**
 </div>
+
+??? r-interactive "R Interativo — Simulação do Dilema dos Prisioneiros Repetido"
+
+    Simule um torneio entre estratégias clássicas no Dilema dos Prisioneiros repetido (à la Axelrod, 1984). Compare *tit-for-tat*, *always cooperate*, *always defect*, *grim trigger* e *random*.
+
+    ```r
+    # Torneio do Dilema dos Prisioneiros Repetido
+    set.seed(42)
+    n_rodadas <- 50
+
+    # Payoffs: (R, R) = (3,3); (T, S) = (5,0); (S, T) = (0,5); (P, P) = (1,1)
+    payoff <- function(a, b) {
+      ifelse(a == "C" & b == "C", 3,
+        ifelse(a == "C" & b == "D", 0,
+          ifelse(a == "D" & b == "C", 5, 1)))
+    }
+
+    # Estratégias
+    always_c  <- function(hist_me, hist_opp, t) "C"
+    always_d  <- function(hist_me, hist_opp, t) "D"
+    tit4tat   <- function(hist_me, hist_opp, t) ifelse(t == 1, "C", hist_opp[t-1])
+    grim      <- function(hist_me, hist_opp, t) {
+      if(t == 1) return("C")
+      ifelse(any(hist_opp[1:(t-1)] == "D"), "D", "C")
+    }
+    random_s  <- function(hist_me, hist_opp, t) sample(c("C","D"), 1)
+
+    estrategias <- list(
+      "Tit-for-Tat" = tit4tat, "Always Cooperate" = always_c,
+      "Always Defect" = always_d, "Grim Trigger" = grim, "Random" = random_s
+    )
+
+    # Simular duelo
+    duelo <- function(s1, s2, n) {
+      h1 <- h2 <- character(n)
+      p1 <- p2 <- numeric(n)
+      for(t in 1:n) {
+        h1[t] <- s1(h1, h2, t); h2[t] <- s2(h2, h1, t)
+        p1[t] <- payoff(h1[t], h2[t]); p2[t] <- payoff(h2[t], h1[t])
+      }
+      c(sum(p1), sum(p2))
+    }
+
+    # Torneio round-robin
+    nomes <- names(estrategias)
+    scores <- setNames(rep(0, 5), nomes)
+    for(i in 1:5) for(j in 1:5) {
+      res <- duelo(estrategias[[i]], estrategias[[j]], n_rodadas)
+      scores[i] <- scores[i] + res[1]
+    }
+
+    # Resultado
+    barplot(sort(scores, decreasing = TRUE), col = "steelblue",
+            main = "Torneio Axelrod — Pontuação Total",
+            ylab = "Payoff acumulado", las = 2, cex.names = 0.8)
+    cat("Ranking:\n")
+    print(sort(scores, decreasing = TRUE))
+    ```
+
+    **Experimente:** Altere `n_rodadas` para 5 ou 200. Com poucas rodadas, *Always Defect* se sai melhor? Com muitas, *Tit-for-Tat* domina? Essa é a intuição do folk theorem: cooperação emerge quando o futuro importa.

@@ -303,6 +303,9 @@
 
 ## F
 
+**Farmácia Popular** (Programa)
+: Programa federal brasileiro (desde 2004) que subsidia ou oferece gratuitamente medicamentos essenciais em farmácias credenciadas. Em 2024, beneficiou 24,7 milhões de pessoas com 41 medicamentos gratuitos para hipertensão, diabetes, asma e outras condições crônicas. Funciona como subsídio direto ao consumo: $p_{\text{consumidor}} = \max\{0, p_{\text{mercado}} - s\}$. Evidências indicam que é *cost-saving* — a economia em internações evitadas supera o custo do programa. Cap. 23.
+
 **Firma tomadora de preços**
 : Firma que, por ser pequena em relação ao mercado, não tem capacidade de influenciar o preço de mercado; aceita o preço vigente como dado. Nesse caso, a receita marginal iguala o preço: \(RMg = p\).
 
@@ -339,6 +342,9 @@
 
 **Gatekeeper (porteiro digital)**
 : Plataforma que controla o acesso a um mercado ou serviço digital essencial, detendo poder significativo sobre as condições de participação de empresas e consumidores. Conceito regulatório central no Digital Markets Act (DMA) da União Europeia, que impõe obrigações de interoperabilidade e não-discriminação a gatekeepers designados. Cap. 21.
+
+**Genérico (medicamento)**
+: Medicamento com o mesmo princípio ativo, forma farmacêutica, dosagem e indicação terapêutica de um medicamento de referência cuja patente expirou. Deve demonstrar bioequivalência (absorção e concentração sanguínea equivalentes ao original). No Brasil, a Lei 9.787/1999 exige desconto mínimo de 35% sobre o medicamento de referência. A entrada de genéricos transforma um monopólio temporário (patente) em concorrência, reduzindo preços em 55–65% em média. Cap. 23.
 
 ## H
 
@@ -606,6 +612,9 @@
 
 **Tarifa em duas partes (two-part tariff)**
 : Esquema de precificação que combina uma taxa fixa de entrada (\(T\)) com um preço por unidade consumida (\(p\)). O gasto total do consumidor é \(G = T + p \cdot q\). A taxa fixa extrai excedente inframarginal; o preço unitário governa a quantidade e a eficiência alocativa. Amplamente utilizada em telecomunicações, academias e parques de diversões.
+
+**Taxa de desconto social**
+: Taxa que determina o peso relativo dado ao bem-estar de gerações futuras. Pela equação de Ramsey: $r = \rho + \eta \cdot g$, onde $\rho$ é preferência temporal pura, $\eta$ é elasticidade marginal da utilidade e $g$ é crescimento do consumo. Nordhaus ($r \approx 5{,}5\%$) e Stern ($r \approx 1{,}4\%$) divergem radicalmente, gerando prescrições opostas para política climática. Cap. 24.
 
 **Taxa marginal de substituição (TMS)**
 : Taxa à qual o consumidor está disposto a trocar um bem pelo outro mantendo a utilidade constante: \(TMS = -\frac{dx_2}{dx_1}\bigg|_{U=\bar{U}} = \frac{UMg_1}{UMg_2}\).

@@ -9,6 +9,13 @@ Este capítulo parte dos modelos clássicos de oligopólio — Bertrand, Cournot
 !!! note "Pré-requisito: Capítulo 9a"
     Os modelos de Cournot, Bertrand e Stackelberg foram introduzidos no Capítulo 9a (Seção 9a.5) como aplicações da teoria dos jogos. Aqui, retomamos esses modelos com foco em suas implicações para a organização industrial e avançamos para extensões — diferenciação de produto, colusão, dissuasão de entrada, fusões e regulação.
 
+!!! tip "Como navegar este capítulo"
+    Este capítulo é extenso (16 seções). Use o roadmap abaixo para ir direto ao tema desejado.
+
+    **Bloco A — Fundamentos (Seções 16.1–16.6):** modelos básicos de oligopólio — Bertrand, Cournot, Stackelberg, restrições de capacidade e diferenciação de produto. Se você está em Micro II ou IO introdutória, comece aqui.
+
+    **Bloco B — IO Avançada (Seções 16.7–16.16):** colusão tácita, investimento estratégico, dissuasão de entrada, inovação, competição monopolística, fusões e regulação antitruste. Se você já domina os modelos básicos ou está em pós-graduação, avance direto para este bloco.
+
 ---
 
 ## Roteiro do Capítulo

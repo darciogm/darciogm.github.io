@@ -138,7 +138,7 @@ Aplicação direta: atualização de crenças nos jogos bayesianos ([Capítulo 9
 
 O equilíbrio de Nash ([Capítulo 9a](../cap09a/index.md)) e o equilíbrio geral walrasiano ([Capítulo 14](../cap14/index.md)) são **pontos fixos** de certas funções. Provar que eles *existem* requer teoremas de ponto fixo — ferramentas que garantem que uma função "se intercepta consigo mesma".[^ministry-ponto-fixo]
 
-[^ministry-ponto-fixo]: O *Ministry of Silly Walks* é um ponto fixo institucional: uma burocracia cujo único produto é justificar a própria existência. O input (financiamento público) gera o output (caminhadas absurdas) que gera a demanda (por mais financiamento) que gera o input. O Teorema de Brouwer garante que tais ciclos autorreferentes possuem pelo menos um ponto estacionário — que, no caso do Ministério, é o orçamento de equilíbrio.
+[^ministry-ponto-fixo]: A ideia de ponto fixo pode parecer abstrata, mas é surpreendentemente cotidiana. Quando você ajusta o termostato do ar-condicionado para 22°C, o sistema converge para uma temperatura onde a taxa de resfriamento iguala a taxa de aquecimento externo — um ponto fixo. Quando o mapa de um shopping exibe "Você está aqui" com uma seta, o ponto indicado é, por definição, um ponto fixo do mapa: o lugar que se mapeia para si mesmo. Brouwer provou que, sob condições suaves, tais pontos *sempre* existem.
 
 ### Teorema de Brouwer
 

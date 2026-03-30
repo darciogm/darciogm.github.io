@@ -149,4 +149,14 @@ Em outras palavras: a renda ricardiana aparece como lucro quando medimos com bas
 **WebR 13.4 — Renda ricardiana em indústria de custos crescentes.** Visualize como firmas inframarginais (com custos mais baixos) obtêm renda ricardiana quando o preço é determinado pela firma marginal. Altere o número de firmas e a heterogeneidade de custos para observar como a renda se distribui.
 </div>
 
+!!! box-brasil "Brasil na Prática — Convergência de preços entre supermercados: a lei do preço único funciona?"
+
+    **Contexto.** A lei do preço único (Seção 13.3) prevê que bens homogêneos devem ter o mesmo preço em mercados integrados — descontados custos de transação e transporte. Os supermercados brasileiros oferecem um teste natural: o mesmo pacote de arroz deveria custar (quase) o mesmo em qualquer rede.
+
+    **Dados.** Pesquisa do PROCON-SP (2024) comparou preços de uma cesta de 35 produtos idênticos (mesma marca, mesma quantidade) em 30 supermercados da Grande São Paulo. Resultado: a variação de preços entre o supermercado mais barato e o mais caro foi de **38%** para a cesta completa. Para produtos individuais, a variação chegou a 120% (ex.: azeite de oliva extra-virgem).
+
+    **Análise.** A variação persistente viola a lei do preço único — mas não a teoria. A teoria prevê convergência *descontados custos de transação*. No caso dos supermercados, os custos de transação para o consumidor são significativos: tempo para comparar preços, custo de deslocamento entre lojas, e o fato de que poucos consumidores compram item a item no mais barato. Além disso, supermercados praticam **discriminação de preços** (Capítulo 15): o mesmo produto pode ter preço diferente em bairros de renda alta vs. baixa. Apps de comparação (Zoom, Menor Preço) estão reduzindo gradualmente essa variação — confirmando que informação é o ingrediente faltante para a convergência.
+
+    **Fonte:** PROCON-SP, *Pesquisa Comparativa de Preços em Supermercados*, 2024.
+
 [^cheese-shop-longo-prazo]: O longo prazo competitivo é o oposto do Cheese Shop dos Monty Python. No sketch, o cliente pede dezenas de tipos de queijo e o vendedor não tem nenhum — oferta zero, preço indefinido, equilíbrio inexistente. No longo prazo competitivo, a entrada livre garante que a oferta se ajusta à demanda. Se há lucro vendendo queijo, novos vendedores aparecem até que o mercado esteja abastecido e o lucro se evapore. O Cheese Shop só sobrevive porque, aparentemente, não há livre entrada no mercado de queijos britânicos.

@@ -71,3 +71,15 @@ O comportamento de carona é mais severo quando:
     **Dados:** Na bacia do rio Paraíba do Sul (RJ/SP/MG), a cobrança arrecadou mais de R$ 200 milhões entre 2003 e 2023. O valor cobrado por metro cúbico varia entre R$ 0,01 e R$ 0,02 — baixo em termos absolutos, mas simbolicamente importante como sinal de escassez.
 
     **Análise:** A cobrança combina dois instrumentos: um preço pigouviano (internalizar o custo do uso sobre outros usuários) e governança coaseana descentralizada (os próprios usuários definem as regras via comitê). É um dos exemplos mais sofisticados de gestão de recursos comuns no mundo em desenvolvimento.
+
+!!! box-brasil "Brasil na Prática — Tragédia dos comuns na pesca artesanal do Nordeste"
+
+    **Contexto.** O litoral nordestino abriga mais de **500 mil pescadores artesanais** — a maior concentração do país (MPA/IBGE, 2023). A pesca artesanal opera em regime de **acesso aberto**: qualquer pescador pode lançar redes no mesmo trecho de mar ou estuário, sem direitos de propriedade definidos sobre o estoque pesqueiro. Essa é a configuração clássica da **tragédia dos comuns** de Hardin (1968).
+
+    **Dados.** A produção pesqueira extrativa marinha do Nordeste caiu de ~350 mil toneladas/ano (anos 2000) para ~230 mil toneladas/ano (2020) — uma redução de 34% em duas décadas (IBGE, *Pesquisa da Pecuária Municipal*). A lagosta vermelha (*Panulirus argus*), espécie de alto valor comercial, teve sua captura reduzida em mais de 80% desde os anos 1990. O ICMBio estima que 15% das espécies marinhas exploradas comercialmente estão **sobreexplotadas**.
+
+    **O modelo em ação.** Cada pescador iguala seu benefício marginal privado (receita da captura) ao custo marginal privado (combustível, mão de obra), ignorando o **custo externo** que impõe sobre os demais: a redução do estoque pesqueiro futuro. O equilíbrio privado ocorre onde $PMe = w/p$ (produto médio = custo por unidade de esforço), mas o ótimo social requer $PMg = w/p$ (produto marginal = custo) — exatamente como mostra a Figura 20.4. Como $PMe > PMg$ para recursos congestionáveis, o esforço de pesca no equilíbrio privado excede sistematicamente o nível sustentável.
+
+    **Soluções tentadas.** O *defeso* (período de proibição da pesca, com seguro-defeso pago pelo governo) tenta limitar o esforço total. Reservas extrativistas marinhas (RESEX) — como a RESEX de Canavieiras (BA) e a RESEX Acaú-Goiana (PB/PE) — implementam governança à la Ostrom, com regras comunitárias de uso. Evidências sugerem que RESEX com gestão participativa efetiva conseguem manter estoques pesqueiros 25-40% acima de áreas não protegidas (Lopes et al., 2013).
+
+    **Fonte:** IBGE, *Pesquisa da Pecuária Municipal*, 2020; ICMBio, *Livro Vermelho da Fauna Brasileira*, 2018; Lopes, P.F.M. et al. (2013). Sugestões para melhorar a gestão de unidades de conservação costeiras e marinhas no Brasil. *Ambiente & Sociedade*, 16(4), 93-112.

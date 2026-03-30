@@ -202,3 +202,97 @@ A IA generativa altera a cadeia de valor de indústrias inteiras:
     **Dados:** O Brasil tinha, em 2024, mais de 1 milhão de desenvolvedores de software (segundo a BrazilLab e Stack Overflow). A adoção de ferramentas como GitHub Copilot (que usa IA para sugerir código) cresceu mais de 200% no país entre 2023 e 2025. Estimativas do McKinsey Global Institute (2023) sugerem que 25–35% das horas de trabalho no setor de serviços brasileiro poderiam ser complementadas ou substituídas por IA generativa até 2030.
 
     **Análise:** A exposição brasileira à automação por IA é concentrada no setor de serviços urbanos — exatamente o segmento que mais cresceu nas últimas décadas. A questão distributiva é central: se a IA substitui trabalho cognitivo de rotina (classe média), mas complementa trabalho criativo de alto nível e trabalho manual de baixa qualificação (menos expostos à automação por linguagem), o efeito pode ser uma **compressão da classe média** com ampliação da desigualdade — um padrão oposto ao previsto pela teoria tradicional de capital humano.
+
+---
+
+!!! example "Exercício Resolvido 21.2 — Algoritmo de recomendação como discriminação de preços"
+    **Enunciado.** A Netflix oferece o mesmo catálogo a todos os assinantes, mas usa um algoritmo de recomendação que personaliza a experiência. Suponha dois tipos de consumidor: cinéfilos (\(\theta_H\)) com disposição a pagar \(v_H = 60\) e casuais (\(\theta_L\)) com \(v_L = 25\). Sem personalização, o catálogo tem valor intrínseco \(q_0 = 0{,}5\) para ambos (utilidade \(u_i = \theta_i \cdot q - p\)). O algoritmo eleva a qualidade percebida para \(q_A = 0{,}9\) (ao recomendar conteúdo relevante). O custo marginal é zero.
+
+    (a) Sem personalização (\(q = 0{,}5\)): qual o preço ótimo de preço único?
+
+    (b) Com personalização (\(q = 0{,}9\)): qual o novo preço ótimo?
+
+    (c) A personalização funciona como que tipo de discriminação de preços?
+
+    **Solução.**
+
+    **(a)** Sem personalização: \(u_H = 60 \times 0{,}5 - p = 30 - p\); \(u_L = 25 \times 0{,}5 - p = 12{,}5 - p\). Se cobra \(p = 12{,}5\): vende para ambos, \(\pi = 12{,}5 \times 2 = 25\). Se cobra \(p = 30\): vende só para \(\theta_H\), \(\pi = 30\). **Preço ótimo: \(p^* = 30\)** (exclui o casual).
+
+    **(b)** Com personalização: \(u_H = 60 \times 0{,}9 - p = 54 - p\); \(u_L = 25 \times 0{,}9 - p = 22{,}5 - p\). Se cobra \(p = 22{,}5\): vende para ambos, \(\pi = 22{,}5 \times 2 = 45\). Se cobra \(p = 54\): vende só para \(\theta_H\), \(\pi = 54\). **Preço ótimo: \(p^* = 54\)**. Mas note: se a personalização permite cobrar preços diferentes (ou oferecer planos com qualidade de recomendação diferente), a plataforma pode extrair \(54 + 22{,}5 = 76{,}5\).
+
+    **(c)** A personalização algorítmica funciona como **discriminação de preços de segundo grau** (versioning, [Seção 15.7](../cap15/qualidade-discriminacao.md#157)): a plataforma oferece experiências de qualidade diferente (recomendações genéricas vs. personalizadas) e os consumidores se autosselecionam. Na prática, quando a personalização é igual para todos mas aumenta o valor percebido, ela **eleva a disposição a pagar média**, permitindo preços maiores — uma forma indireta de aproximação à discriminação de primeiro grau.
+
+!!! example "Exercício Resolvido 21.3 — Modelo de negócios Nubank vs. bancões"
+    **Enunciado.** O Nubank opera como plataforma bilateral: conecta depositantes (lado 1) a tomadores de crédito (lado 2). Compare o modelo com o de um banco tradicional, sabendo que:
+
+    - Nubank: custo fixo de plataforma \(F = 500\) milhões; custo marginal por cliente \(c = 5\); sem agências; efeito de rede indireto \(\alpha = 0{,}2\) (mais clientes → mais dados → melhor *credit scoring* → menores spreads → mais clientes).
+    - Banco tradicional: custo fixo \(F = 5.000\) milhões (agências); custo marginal por cliente \(c = 50\) (atendimento presencial); sem efeito de rede significativo.
+
+    (a) Compare o custo médio para 10 milhões e 100 milhões de clientes.
+
+    (b) Por que o Nubank pode oferecer conta gratuita enquanto bancos tradicionais cobram tarifas?
+
+    **Solução.**
+
+    **(a)** Custo médio = \(F/n + c\).
+
+    | | 10 milhões | 100 milhões |
+    |:--|:---:|:---:|
+    | Nubank | \(500/10 + 5 = 55\) | \(500/100 + 5 = 10\) |
+    | Tradicional | \(5.000/10 + 50 = 550\) | \(5.000/100 + 50 = 100\) |
+
+    A 100 milhões de clientes, o Nubank tem CMe 10× menor.
+
+    **(b)** O Nubank segue a lógica de plataforma bilateral com subsídio cruzado (Seção 21.3.3). A conta gratuita é o lado subsidiado — atrai depositantes cuja presença gera dados e funding para o lado pagante (crédito, onde as margens são altas). O efeito de rede indireto (\(\alpha = 0{,}2\)) cria um ciclo virtuoso: mais clientes → melhor *scoring* → menor inadimplência → menores taxas → mais clientes. Bancos tradicionais, sem esse efeito de rede e com custos fixos estruturais (agências), precisam cobrar tarifas para cobrir \(c = 50\) por cliente.
+
+??? r-interactive "R Interativo — Simulação de Efeitos de Rede e Massa Crítica"
+    ```r
+    # Simulação de adoção com efeitos de rede
+    # Modelo: u_i = v_i + alpha * n - p
+    # v_i ~ Uniforme[0, v_max]
+
+    # Parâmetros (altere para explorar)
+    v_max  <- 10    # valor intrínseco máximo
+    alpha  <- 0.08  # força do efeito de rede
+    p      <- 4     # preço do produto
+    N      <- 1000  # população total
+
+    # Função de equilíbrio: encontra n* tal que v* + alpha*n* = p
+    # onde n* = N * (1 - v*/v_max)
+    # Substituindo: v* = p - alpha * N * (1 - v*/v_max)
+    find_equilibria <- function(v_max, alpha, p, N) {
+      v_star <- seq(0, v_max, length.out = 1000)
+      n_star <- N * (1 - v_star / v_max)
+      lhs <- v_star + alpha * n_star  # benefício do agente marginal
+      rhs <- rep(p, length(v_star))   # preço
+
+      # Plotar
+      plot(n_star, lhs, type = "l", lwd = 3, col = "#2196F3",
+           xlab = "Número de adotantes (n)",
+           ylab = "Benefício do agente marginal",
+           main = "Efeitos de Rede: Equilíbrios de Adoção",
+           xlim = c(0, N), ylim = c(0, max(lhs) * 1.2))
+      abline(h = p, col = "#F44336", lwd = 2, lty = 2)
+      text(N * 0.85, p + 0.3, paste0("Preço = ", p), col = "#F44336", cex = 0.9)
+
+      # Encontrar interseções (equilíbrios)
+      crossings <- which(diff(sign(lhs - rhs)) != 0)
+      for (cr in crossings) {
+        points(n_star[cr], p, pch = 19, cex = 2, col = "#4CAF50")
+        text(n_star[cr], p - 0.5, paste0("n* = ", round(n_star[cr])),
+             col = "#4CAF50", cex = 0.8)
+      }
+
+      legend("topleft",
+             legend = c("Benefício marginal v* + α·n", "Preço p", "Equilíbrios"),
+             col = c("#2196F3", "#F44336", "#4CAF50"),
+             lwd = c(3, 2, NA), pch = c(NA, NA, 19), lty = c(1, 2, NA),
+             bg = "white")
+
+      grid(col = "gray90")
+    }
+
+    find_equilibria(v_max, alpha, p, N)
+    ```
+
+    **Experimente:** Aumente `alpha` de 0,08 para 0,15 e observe como a curva de benefício se inclina — a massa crítica diminui e o equilíbrio alto salta. Reduza `p` de 4 para 2 e veja o equilíbrio baixo desaparecer: a estratégia de "preço de penetração" elimina a armadilha de baixa adoção.

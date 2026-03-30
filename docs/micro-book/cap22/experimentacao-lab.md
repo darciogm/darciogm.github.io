@@ -145,6 +145,48 @@ Se \(1 < \alpha < N\), a contribuição é socialmente eficiente (\(\alpha/N < 1
 !!! tip "Conexão com Teoria dos Jogos"
     Os quatro experimentos acima testam previsões centrais da teoria dos jogos (Capítulos 9a–9d). O leilão de dupla confirma a convergência ao equilíbrio competitivo (Capítulo 13). O jogo do ultimato testa indução retroativa (Capítulo 9b) e revela preferências sociais que a teoria padrão ignora. O jogo de bens públicos testa o problema do carona (Capítulo 20) e mostra que cooperação é possível — especialmente com mecanismos de punição (conectando com o *folk theorem* do Capítulo 9b). O jogo do ditador testa diretamente a hipótese de preferências egoístas.
 
+!!! example "Exercício Resolvido 22.4 — Jogo de bens públicos com punição altruísta"
+    **Enunciado.** Considere o jogo de bens públicos da Equação $\eqref{eq:22.4}$ com $N = 4$, $w = 20$ e $\alpha = 1{,}6$. Agora, após observar as contribuições de todos, cada jogador $i$ pode escolher **punir** qualquer jogador $j$ pagando um custo $c = 1$ para reduzir o payoff de $j$ em $p = 3$ (punição "3-para-1"). Um jogador pode punir múltiplos free-riders.
+
+    (a) No jogo sem punição, o equilíbrio de Nash é $g_i^* = 0$ (Exercício 22.1). Suponha que, na primeira rodada, os jogadores 1, 2 e 3 contribuem $g = 15$ cada, mas o jogador 4 contribui $g_4 = 0$ (carona puro). Calcule o payoff de cada jogador.
+
+    (b) Agora suponha que os jogadores 1, 2 e 3 decidem punir o jogador 4. Cada um paga $c = 1$ para infligir $p = 3$ de perda. Qual é o payoff final de cada jogador após a punição?
+
+    (c) A punição é racional para um agente egoísta? Por que, então, Fehr e Gächter (2000) observaram punição massiva em laboratório?
+
+    **Solução.**
+
+    **(a) Payoffs sem punição.**
+
+    Total contribuído: $\sum g_j = 15 + 15 + 15 + 0 = 45$. Retorno do fundo por pessoa: $\frac{1{,}6 \times 45}{4} = 18$.
+
+    - Jogadores 1, 2, 3: $\pi_i = (20 - 15) + 18 = 23$
+    - Jogador 4 (carona): $\pi_4 = (20 - 0) + 18 = 38$
+
+    O free-rider ganha 65% a mais que os cooperadores — o incentivo para "pegar carona" é enorme.
+
+    **(b) Payoffs com punição.**
+
+    Cada um dos 3 punidores paga $c = 1$. O jogador 4 recebe $3 \times p = 3 \times 3 = 9$ de penalidade.
+
+    - Jogadores 1, 2, 3: $\pi_i = 23 - 1 = 22$
+    - Jogador 4: $\pi_4 = 38 - 9 = 29$
+
+    Mesmo após punição pesada, o carona *ainda* ganha mais que os cooperadores. Mas a diferença caiu de 15 para 7 — e, crucialmente, o carona sabe que será punido nas rodadas seguintes.
+
+    **(c) Racionalidade da punição.**
+
+    Para um agente egoísta, punir é irracional: custa $c = 1$ e não traz benefício material ao punidor (apenas reduz o payoff do punido). Em jogo de rodada única, a punição é um equilíbrio de Nash **não**. Porém, Fehr e Gächter (2000, *AER* 90(4): 980–994) observaram punição massiva mesmo em jogos de rodada única (*one-shot*) com anonimato total. A explicação reside nas **preferências sociais**: muitas pessoas sentem indignação genuína diante de comportamento oportunista e estão dispostas a pagar para "ensinar uma lição" — mesmo sem benefício futuro. Esse padrão, chamado *reciprocidade forte* (*strong reciprocity*), sustenta a cooperação em grupos porque cria uma **ameaça crível** contra o oportunismo. Em jogos repetidos com punição, as contribuições convergem para ~90% da dotação (quase ótimo social), versus ~10% sem punição.
+
+    **Conexão:** O resultado conecta com o *folk theorem* (Capítulo 9b) — mas vai além, porque a cooperação emerge mesmo em jogos *finitos* e de rodada única, onde o folk theorem não se aplica. A explicação não é estratégica (reputação); é motivacional (preferências por justiça).
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A punição altruísta resolve o problema do carona não porque é racional, mas porque a maioria das pessoas *não tolera* injustiça — e os caronas sabem disso.
+
+    **Pense assim:** Imagine uma república de estudantes onde cada um deveria lavar a louça uma vez por semana. Se ninguém pune quem fura a escala, todo mundo para de lavar. Mas se o grupo ostraciza o folgado — mesmo que isso dê trabalho — a escala funciona. O custo de punir é real (confronto, estresse), mas o benefício coletivo é enorme. É exatamente o que Fehr e Gächter mediram no laboratório: pessoas pagam para punir caronas, e isso sustenta a cooperação.
+
+    **Por que isso importa:** A existência de punição altruísta tem implicações profundas para o desenho de instituições. Políticas que facilitam a punição descentralizada (avaliações públicas, sistemas de reputação, *naming and shaming*) podem ser mais eficazes do que incentivos monetários puros. O Uber funciona em parte porque passageiros avaliam motoristas — e vice-versa. A Wikipedia funciona porque editores voluntários revertem vandalismos. A cooperação humana é mais robusta do que o *Homo economicus* sugere.
+
 <iframe src="/micro-book/graficos/cap22/bens-publicos-experimento.html" title="Figura 22.1 — Jogo de Bens Públicos: Simulação com e sem Punição" class="graph-iframe"></iframe>
 
 ??? exercicio-resolvido "Exercício Resolvido 22.1 — Equilíbrio de Nash no jogo de bens públicos"

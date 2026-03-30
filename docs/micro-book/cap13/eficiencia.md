@@ -76,6 +76,16 @@ onde $Q_t < Q^*$ é a quantidade transacionada sob a distorção.
 
 A PPM é o custo de eficiência da intervenção — o valor que simplesmente desaparece, sem ser capturado por nenhum agente (nem consumidores, nem produtores, nem o governo). É o "dinheiro queimado" da economia — ninguém fica com ele.
 
+!!! box-brasil "Brasil na Prática — O mercado de café: o Brasil como tomador de preço... que define o preço"
+
+    **Contexto.** O Brasil é o maior produtor e exportador mundial de café, responsável por ~35% da produção global (~65 milhões de sacas em 2023/24). Apesar dessa dominância, o preço internacional do café é determinado pela bolsa de Nova York (ICE Futures US) — onde milhares de produtores, torrefadores e especuladores negociam contratos futuros.
+
+    **Dados.** O preço do café arábica na ICE variou de ~US$ 1,00/lb (2019) a ~US$ 2,40/lb (2024) — uma volatilidade de 140% em 5 anos. Produtores brasileiros são, individualmente, **tomadores de preço** (Seção 13.1): nenhuma fazenda isolada afeta o preço mundial. Porém, coletivamente, uma geada no Sul de Minas ou uma seca no Cerrado pode mover o mercado inteiro — como em julho de 2021, quando geadas elevaram o preço 40% em semanas.
+
+    **Conexão com a teoria.** O café é o exemplo brasileiro mais puro de mercado perfeitamente competitivo: produto homogêneo (dentro de cada tipo/qualidade), muitos produtores (>300 mil no Brasil), informação transparente (preços da bolsa em tempo real), livre entrada e saída. A lei do preço único (Seção 13.3) funciona aqui: o preço no porto de Santos converge para o preço em Nova York menos custos de transporte e câmbio. Quando o preço cai abaixo do custo médio, produtores menos eficientes saem do mercado — exatamente como prevê o modelo de longo prazo (Seção 13.5).
+
+    **Fonte:** CONAB, *Acompanhamento da Safra Brasileira de Café*, 2024; ICE Futures US.
+
 <iframe src="/micro-book/graficos/cap13/webr-bem-estar.html" title="WebR — Bem-Estar" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>

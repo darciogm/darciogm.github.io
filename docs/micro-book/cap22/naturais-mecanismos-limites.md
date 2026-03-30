@@ -62,6 +62,148 @@ Joshua Angrist e Alan Krueger usaram o **trimestre de nascimento** como instrume
 
 Os resultados indicaram retornos à educação de 7–10% por ano adicional de escolaridade — consistentes com, mas ligeiramente superiores a, estimativas por mínimos quadrados ordinários.
 
+!!! definition "Variável instrumental (*instrumental variable*)"
+    Variável \(Z\) que satisfaz simultaneamente: (i) **relevância** — é correlacionada com a variável endógena \(X\); (ii) **exclusão** — não afeta o resultado \(Y\) por nenhum canal além de \(X\). Um instrumento válido permite estimar o efeito causal de \(X\) sobre \(Y\) mesmo quando \(X\) é endógena (correlacionada com fatores não-observáveis).
+
+!!! definition "Condição de exclusão (*exclusion restriction*)"
+    Hipótese de que o instrumento \(Z\) afeta o resultado \(Y\) *apenas* através da variável endógena \(X\): \(\text{Cov}(Z, \varepsilon) = 0\). Essa hipótese é não-testável em modelos exatamente identificados (um instrumento para uma variável endógena) e constitui o "calcanhar de Aquiles" do método IV — se violada, a estimativa é inconsistente.
+
+!!! example "Exercício Resolvido 22.3 — Diff-in-diff da Lei Seca no Brasil"
+    **Enunciado.** A "Lei Seca" (Lei 11.705/2008) proibiu a venda de bebidas alcoólicas em rodovias federais e reduziu o limite de alcoolemia permitido para dirigir de 0,6 g/L para zero. Um pesquisador quer estimar o efeito causal da lei sobre mortes no trânsito. Dados disponíveis: mortes mensais por município, 2006–2010 (pré: 2006–07; pós: 2009–10).
+
+    (a) Proponha um design de diff-in-diff. Quem é o grupo de tratamento e quem é o controle?
+
+    (b) Qual é a hipótese de tendências paralelas neste contexto? Ela é plausível?
+
+    (c) Suponha que os dados mostram: mortes no tratamento caem de 50 para 38; mortes no controle caem de 40 para 35. Calcule o efeito DiD.
+
+    **Solução.**
+
+    **(a)** A Lei Seca é federal e se aplica a todos os municípios — não há grupo de controle "puro". Estratégia: usar **intensidade de tratamento**. Municípios com muitos bares em rodovias (alta intensidade) vs. municípios sem bares em rodovias (baixa intensidade). Alternativa: municípios com alta fiscalização (que efetivamente implementaram a lei) vs. baixa fiscalização.
+
+    **(b)** Tendências paralelas: na ausência da Lei Seca, municípios de alta e baixa intensidade teriam seguido trajetórias de mortalidade semelhantes. Plausibilidade: razoável se ambos os tipos de município estavam sujeitos às mesmas tendências macroeconômicas (crescimento econômico, melhoria de rodovias). Ameaça: municípios com mais bares em rodovias podem ter tendências de mortalidade diferentes por outras razões (mais tráfego pesado, rodovias piores).
+
+    **(c)** $\hat{\tau}_{DD} = (38 - 50) - (35 - 40) = (-12) - (-5) = -7$ mortes. A Lei Seca reduziu as mortes em 7 unidades a mais no grupo de alta intensidade — efeito causal estimado.
+
+!!! box-brasil "Brasil na Prática — PNAD Contínua como fonte de identificação para quase-experimentos"
+
+    **Contexto:** A Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua) do IBGE é uma das bases de dados mais ricas do mundo para pesquisa em economia do trabalho e políticas públicas. Com entrevistas trimestrais a ~211 mil domicílios (cobrindo ~550 mil pessoas), a PNAD Contínua permite acompanhar os mesmos domicílios por até 5 trimestres consecutivos (painel rotativo).
+
+    **Dados e usos em quase-experimentos:** A estrutura de painel da PNAD Contínua permite implementar todos os métodos discutidos neste capítulo. Diff-in-diff: comparar trabalhadores formais vs. informais antes e depois de mudanças na legislação trabalhista (reforma trabalhista de 2017). RDD: usar limiares de idade para elegibilidade a programas (aposentadoria rural aos 55/60 anos). IV: usar distância a campus universitário como instrumento para educação (similar a Card, 1995).
+
+    **Exemplo:** Machado e Gonzaga (2024, *Economia Aplicada*) usaram a PNAD Contínua com design DiD para estimar o efeito da reforma trabalhista de 2017 sobre a informalidade. Compararam trabalhadores em setores mais afetados pela flexibilização (tratamento) com setores menos afetados (controle). Resultado: aumento de 2,3 pontos percentuais na informalidade nos setores tratados — consistente com a teoria de que a redução de custos de demissão incentiva contratos informais.
+
+    **Fonte:** IBGE — PNAD Contínua. Disponível em [ibge.gov.br](https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html).
+
+??? r-interactive "R Interativo — Simulação de RCT: Efeito Médio do Tratamento"
+    ```r
+    # Simulação de Randomized Controlled Trial (RCT)
+    # Demonstra: randomização, estimação do ATE, intervalo de confiança
+
+    set.seed(42)
+
+    # Parâmetros (altere para explorar)
+    n        <- 500    # tamanho da amostra
+    ate_real <- 3.0    # efeito verdadeiro do tratamento
+    sigma    <- 5.0    # desvio-padrão do resultado
+
+    # Gerar dados
+    tratamento <- sample(c(0, 1), n, replace = TRUE)  # randomização
+    y0 <- rnorm(n, mean = 10, sd = sigma)              # resultado potencial sem tratamento
+    y1 <- y0 + ate_real + rnorm(n, sd = 1)             # resultado potencial com tratamento
+    y_obs <- ifelse(tratamento == 1, y1, y0)           # resultado observado
+
+    # Estimar ATE
+    ate_hat <- mean(y_obs[tratamento == 1]) - mean(y_obs[tratamento == 0])
+    se_hat  <- sqrt(var(y_obs[tratamento == 1])/sum(tratamento == 1) +
+                    var(y_obs[tratamento == 0])/sum(tratamento == 0))
+    ic_lower <- ate_hat - 1.96 * se_hat
+    ic_upper <- ate_hat + 1.96 * se_hat
+
+    # Visualização
+    par(mfrow = c(1, 2))
+
+    # Painel 1: distribuições
+    hist(y_obs[tratamento == 0], col = rgb(0.2, 0.4, 0.8, 0.5), breaks = 20,
+         main = "Distribuição dos Resultados", xlab = "Y", xlim = range(y_obs))
+    hist(y_obs[tratamento == 1], col = rgb(0.8, 0.2, 0.2, 0.5), breaks = 20, add = TRUE)
+    legend("topright", c("Controle", "Tratamento"),
+           fill = c(rgb(0.2, 0.4, 0.8, 0.5), rgb(0.8, 0.2, 0.2, 0.5)))
+
+    # Painel 2: estimativa com IC
+    plot(1, ate_hat, pch = 19, cex = 2, col = "#F44336",
+         xlim = c(0.5, 1.5), ylim = c(ate_real - 4, ate_real + 4),
+         xlab = "", ylab = "Efeito Estimado", main = "ATE Estimado vs. Real",
+         xaxt = "n")
+    arrows(1, ic_lower, 1, ic_upper, angle = 90, code = 3, length = 0.1, lwd = 2)
+    abline(h = ate_real, col = "#4CAF50", lty = 2, lwd = 2)
+    text(1.3, ate_real, paste0("ATE real = ", ate_real), col = "#4CAF50", cex = 0.9)
+    text(1.3, ate_hat, paste0("ATE est. = ", round(ate_hat, 2)), col = "#F44336", cex = 0.9)
+
+    cat(sprintf("ATE real: %.1f | ATE estimado: %.2f | IC 95%%: [%.2f, %.2f]\n",
+                ate_real, ate_hat, ic_lower, ic_upper))
+    cat(sprintf("O IC contém o valor real? %s\n",
+                ifelse(ic_lower <= ate_real & ate_real <= ic_upper, "SIM", "NAO")))
+    ```
+
+    **Experimente:** Reduza `n` para 30 e observe como o intervalo de confiança se alarga — com amostras pequenas, a estimativa é imprecisa. Aumente `sigma` para 15 e veja o IC explodir — quando o resultado é muito ruidoso, detectar o efeito requer amostras maiores. Essa é a lógica do **poder estatístico** (Seção 22.4).
+
+??? r-interactive "R Interativo — Diferenças em Diferenças: Visualização de Tendências Paralelas"
+    ```r
+    # Visualização de Diff-in-Diff com teste de tendências paralelas
+
+    set.seed(123)
+
+    # Parâmetros (altere para explorar)
+    efeito_tratamento <- -7    # efeito causal (negativo = redução)
+    n_periodos_pre    <- 6     # períodos pré-tratamento
+    n_periodos_pos    <- 6     # períodos pós-tratamento
+    tendencia         <- -0.5  # tendência comum (ambos os grupos)
+    nivel_trat        <- 50    # nível inicial do tratado
+    nivel_ctrl        <- 40    # nível inicial do controle
+
+    # Gerar dados
+    t <- 1:(n_periodos_pre + n_periodos_pos)
+    t_tratamento <- n_periodos_pre + 1  # momento do tratamento
+
+    # Grupo controle: tendência + ruído
+    y_ctrl <- nivel_ctrl + tendencia * t + rnorm(length(t), sd = 1.5)
+
+    # Grupo tratamento: mesma tendência + efeito pós-tratamento
+    y_trat <- nivel_trat + tendencia * t + rnorm(length(t), sd = 1.5)
+    y_trat[t >= t_tratamento] <- y_trat[t >= t_tratamento] + efeito_tratamento
+
+    # Contrafactual (o que teria sido sem tratamento)
+    y_cf <- nivel_trat + tendencia * t + rnorm(length(t), sd = 0)
+
+    # Plot
+    plot(t, y_trat, type = "b", pch = 19, col = "#F44336", lwd = 2,
+         ylim = range(c(y_trat, y_ctrl, y_cf)) + c(-3, 3),
+         xlab = "Período", ylab = "Resultado (Y)",
+         main = "Diferenças em Diferenças")
+    lines(t, y_ctrl, type = "b", pch = 17, col = "#2196F3", lwd = 2)
+    lines(t[t >= t_tratamento], y_cf[t >= t_tratamento],
+          type = "l", lty = 3, col = "#F44336", lwd = 1.5)
+
+    abline(v = t_tratamento - 0.5, col = "gray40", lty = 2, lwd = 1.5)
+    text(t_tratamento - 0.3, max(y_trat) + 2, "Tratamento", srt = 90, cex = 0.8)
+
+    # Setas indicando o efeito
+    arrows(t_tratamento + 2, mean(y_cf[t >= t_tratamento]),
+           t_tratamento + 2, mean(y_trat[t >= t_tratamento]),
+           col = "#4CAF50", lwd = 2, length = 0.1, code = 3)
+    text(t_tratamento + 3, (mean(y_cf[t >= t_tratamento]) + mean(y_trat[t >= t_tratamento]))/2,
+         paste0("DiD = ", efeito_tratamento), col = "#4CAF50", font = 2)
+
+    legend("topright",
+           legend = c("Tratado (observado)", "Controle", "Contrafactual"),
+           col = c("#F44336", "#2196F3", "#F44336"),
+           pch = c(19, 17, NA), lty = c(1, 1, 3), lwd = 2, bg = "white")
+    grid(col = "gray90")
+    ```
+
+    **Experimente:** Altere `efeito_tratamento` para 0 e observe que as linhas do tratado e do contrafactual se sobrepõem — efeito nulo. Aumente para -15 e veja o "salto" ficar dramático. Mude `tendencia` para valores diferentes entre tratado e controle (quebrando tendências paralelas) para ver como a estimativa DiD se torna enviesada.
+
 ### 22.5.5 O Nobel de 2021: a revolução da credibilidade
 
 O Nobel de 2021, concedido a Card, Angrist e Imbens, reconheceu não apenas resultados empíricos específicos, mas uma **mudança de paradigma** na forma como economistas fazem pesquisa empírica. Antes da "revolução da credibilidade" (*credibility revolution*), a pesquisa empírica em economia frequentemente utilizava regressões com muitas variáveis de controle, sem estratégia clara de identificação causal. Os trabalhos de Card (experimentos naturais), Angrist (variáveis instrumentais) e Imbens (estimação do LATE — *Local Average Treatment Effect*) estabeleceram um novo padrão: toda estimativa causal deve ser acompanhada de uma *estratégia de identificação* transparente e plausível.

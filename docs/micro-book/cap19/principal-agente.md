@@ -2,6 +2,9 @@
 
 ## 19.1 Ninguém Lê as Letras Miúdas por Acaso: Contratos Complexos e Assimetria de Informação {#191}
 
+!!! tip "Onde estou no livro?"
+    Este capítulo aplica a informação assimétrica a **mercados e contratos reais**: seguros, crédito, mercado de trabalho, saúde. Para os **fundamentos de teoria dos jogos** — PBE, single-crossing, refinamentos, modelo canônico de moral hazard — veja o [Capítulo 9d](../cap09d/index.md).
+
 Na presença de informação assimétrica, contratos simples de preço fixo frequentemente não são suficientes para garantir transações eficientes. Os agentes econômicos respondem desenhando **contratos complexos** que buscam alinhar incentivos, revelar informação privada ou mitigar comportamentos oportunistas. Esses contratos são onipresentes: de planos de saúde com coparticipação a stock options para executivos, de menus tarifários de operadoras de celular a garantias estendidas de eletrodomésticos — todos representam respostas racionais a problemas de informação assimétrica.
 
 !!! definition "Informação Assimétrica"

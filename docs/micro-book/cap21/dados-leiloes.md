@@ -65,6 +65,23 @@ O **General Data Protection Regulation (GDPR)** da União Europeia (2018) é a r
 
     **Fonte:** Banco Central do Brasil — Relatório de Economia Bancária 2023. ANPD — Relatório Anual 2023.
 
+!!! example "Exercício Resolvido 21.6 — Quanto valem seus dados pessoais?"
+    **Enunciado.** O mercado negro de dados pessoais no Brasil opera com preços observáveis. Em 2023, investigações da ANPD e da Polícia Federal revelaram que um CPF completo (com nome, endereço e score de crédito) era vendido por R$ 0,50–2,00; uma base de 1 milhão de registros, por R$ 5.000–15.000. Simultaneamente, o Google gerou receita média de US$ 60/usuário/ano globalmente (Alphabet 10-K, 2023).
+
+    (a) Se o Google tem 150 milhões de usuários no Brasil, estime a receita anual gerada pelos dados de um brasileiro típico.
+
+    (b) Compare o valor do "dado bruto" (CPF no mercado negro) com o "dado processado" (receita por usuário do Google). Qual a origem da diferença?
+
+    (c) Essa diferença de valor justifica regulação? Analise usando o conceito de externalidade de privacidade (equação $\eqref{eq:21.17}$).
+
+    **Solução.**
+
+    **(a)** Receita total Brasil ≈ US$ 60 × 150 milhões = US$ 9 bilhões. A R$ 5/US$: R$ 45 bilhões/ano, ou **R$ 300/usuário/ano**.
+
+    **(b)** CPF bruto: R$ 0,50–2,00. Dado processado (Google): R$ 300/ano. A razão é **600:1 a 150:1**. A diferença vem das *economias de escopo em dados*: o Google não vende o CPF isolado — ele combina histórico de busca + localização + e-mail + YouTube para criar um perfil comportamental que permite *discriminação de preços quase-perfeita* no mercado de anúncios. O valor está na **inferência**, não no dado bruto.
+
+    **(c)** Sim, justifica. Quando o usuário compartilha dados, ele gera uma externalidade negativa sobre pessoas similares (equação $\eqref{eq:21.17}$): o perfil de um usuário permite inferir preferências de pessoas demograficamente semelhantes que *não* consentiram. O valor privado do compartilhamento (conveniência) é inferior ao custo social (perda de privacidade coletiva + poder de mercado reforçado). A LGPD atua como uma taxa pigouviana sobre o compartilhamento excessivo — limitando a coleta ao "necessário" e exigindo consentimento.
+
 ---
 
 ## 21.7 Leilões em Milissegundos: Leilões Online e Desenho de Mecanismos Digitais {#217}

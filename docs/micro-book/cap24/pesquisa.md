@@ -45,6 +45,15 @@
 
     **Relevância para o capítulo:** O artigo documenta como o SCC passou de conceito acadêmico a ferramenta operacional de política pública. A metodologia do IWG foi usada em centenas de regulações federais dos EUA. A discussão sobre a escolha da taxa de desconto conecta diretamente com a Seção 24.3.4 e com o Capítulo 18.
 
+??? pesquisa "[Carleton, T.; Greenstone, M. (2022). A Guide to Updating the US Government's Social Cost of Carbon. *Review of Environmental Economics and Policy*, 16(2), 196–218.](https://doi.org/10.1086/720988)"
+    **Pergunta central:** Como atualizar o Custo Social do Carbono (SCC) oficial dos EUA para refletir os avanços em ciência climática e economia dos últimos 10 anos?
+
+    **Método:** Os autores propõem um processo em duas etapas: (i) aplicar imediatamente o framework do Interagency Working Group (IWG) original com taxa de desconto de 2% (em vez dos 3% usados anteriormente), e (ii) em paralelo, incorporar os avanços recentes em modelagem de danos climáticos — incluindo danos desagregados por setor e região, efeitos de adaptação, e fat tails na distribuição de sensibilidade climática. A contribuição central é mapear sistematicamente *quais* avanços científicos mais importam para o SCC.
+
+    **Resultado principal:** Com taxa de desconto de 2% e o framework IWG existente, o SCC sobe para ~US$ 125/tCO₂ (preços de 2020) — mais que o dobro da estimativa anterior de US$ 51 (a 3%). Os autores argumentam que mesmo essa estimativa é conservadora: a incorporação de danos setoriais recentemente quantificados (mortalidade por calor, produtividade agrícola, danos a infraestrutura costeira) sugere um SCC ainda mais alto. O artigo destaca que a *escolha* da taxa de desconto continua sendo o fator mais influente — exatamente como no debate Nordhaus-Stern.
+
+    **Relevância para o capítulo.** Atualiza diretamente a discussão da Seção 24.3.4 sobre o debate Nordhaus-Stern e as estimativas do SCC. O artigo demonstra que o SCC é uma variável em constante revisão — e que a direção das revisões tem sido consistentemente para cima, à medida que a ciência climática quantifica mais danos do que os modelos antigos capturavam.
+
 ---
 
 !!! tip "Exercício com IA"
@@ -59,6 +68,7 @@
 ## Referências
 
 - Bayer, P.; Aklin, M. 2020. The European Union Emissions Trading System Reduced CO₂ Emissions Despite Low Prices. *Proceedings of the National Academy of Sciences*, 117(16), 8804–8812.
+- Carleton, T.; Greenstone, M. 2022. A Guide to Updating the US Government's Social Cost of Carbon. *Review of Environmental Economics and Policy*, 16(2), 196–218.
 - Coase, R. H. 1960. The Problem of Social Cost. *Journal of Law and Economics*, 3, 1–44.
 - Costanza, R.; d'Arge, R.; de Groot, R.; et al. 1997. The Value of the World's Ecosystem Services and Natural Capital. *Nature*, 387, 253–260.
 - European Commission. 2024. *EU Emissions Trading System (EU ETS) data viewer*. European Environment Agency.

@@ -108,6 +108,42 @@ As trilhas abaixo organizam o livro por curso ou tema. Cada trilha é autocontid
 
 ---
 
+## Trilhas por Público
+
+!!! abstract "Trilha Graduação (1 semestre, ~30 aulas)"
+    **Público:** Graduação em Economia ou áreas afins. Primeiro contato com Micro intermediária.
+
+    1 → 2 → 3 → 4 → 5 → 6 → 10 → 11 → 12 → 13 → 15
+
+    **Pré-requisito:** Cálculo I. **Resultado:** domínio de consumidor, firma e mercados competitivos + monopólio.
+
+!!! abstract "Trilha Graduação Avançada (2 semestres)"
+    **Público:** Graduação em Economia com formação matemática sólida.
+
+    **Semestre 1:** 1 → 2 → 3 → 4 → 5 → 6 → 10 → 11 → 12 → 13 → 15
+
+    **Semestre 2:** 7 → 8 → 9a → 9b → 14 → 16 → 17 → 19 → 20
+
+    **Pré-requisito:** Micro I + Cálculo II. **Resultado:** fundações completas incluindo jogos e informação.
+
+!!! abstract "Trilha Pós-Graduação — Mestrado"
+    **Público:** Mestrado acadêmico em Economia.
+
+    2 → 3 → 4 → 5 → 6 → 9a → 9b → 9c → 9d → 10 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → (21–24)
+
+    **Pré-requisito:** Análise Real desejável. **Resultado:** cobertura integral com fronteira de pesquisa.
+
+!!! abstract "Trilha ANPEC"
+    **Público:** Candidatos ao exame ANPEC de Microeconomia.
+
+    Seleção transversal: usar as seções "Vem, ANPEC!" de cada capítulo.
+
+    **Ordem sugerida:** 3 → 4 → 5 → 10 → 11 → 12 → 13 → 15 → 16 → 9a → 14 → 6 → 7 → 17 → 18
+
+    **Foco:** exercícios tipo ANPEC + provas resolvidas + conceitos-chave. A trilha prioriza os temas com maior peso histórico no exame.
+
+---
+
 ## Trilhas Rápidas de Leitura
 
 !!! tip "Trilha Express: Micro Introdutória (1 semestre, ~30 aulas)"

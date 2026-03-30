@@ -70,6 +70,20 @@
 
     **Conexão com o capítulo:** Seção 22.5.2 (diferenças-em-diferenças, equação 22.10) e conexão com Capítulo 17 (monopsônio).
 
+??? pesquisa "Paper 6 — Athey, S.; Imbens, G. W. (2022). Design-based Analysis in Difference-In-Differences Settings with Staggered Adoption"
+
+    **Referência:** Athey, S.; Imbens, G. W. (2022). Design-based Analysis in Difference-In-Differences Settings with Staggered Adoption. *Journal of Econometrics*, 226(1), 62–79. DOI: [10.1016/j.jeconom.2020.10.012](https://doi.org/10.1016/j.jeconom.2020.10.012)
+
+    **Contexto:** A maioria das aplicações de diferenças-em-diferenças na prática envolve **adoção escalonada** (*staggered adoption*): diferentes unidades adotam o tratamento em momentos diferentes. Os estimadores tradicionais de DD com efeitos fixos de unidade e tempo podem produzir estimativas enviesadas quando os efeitos do tratamento são heterogêneos — um problema que só ganhou atenção na literatura recente.
+
+    **Método:** Athey e Imbens adotam uma perspectiva de **desenho** (*design-based*), analisando as propriedades dos estimadores condicionais ao mecanismo de atribuição do tratamento (em vez de depender de modelos para os resultados potenciais). Eles mostram que, sob atribuição aleatória da data de adoção, o estimador DD convencional é não-enviesado para uma média ponderada específica de efeitos causais — mas os pesos podem ser negativos quando os efeitos são heterogêneos.
+
+    **Resultado principal:** Quando os efeitos do tratamento variam entre unidades ou ao longo do tempo, o estimador DD com TWFE (two-way fixed effects) pode atribuir **pesos negativos** a certos efeitos causais, gerando estimativas que não representam nenhuma média causal interpretável. Os autores propõem estimadores alternativos com pesos não-negativos que são robustos à heterogeneidade.
+
+    **Impacto:** Este paper, junto com Goodman-Bacon (2021), de Chaisemartin & D'Haultfoeuille (2020) e Callaway & Sant'Anna (2021), inaugurou uma revisão profunda da prática de DD. Muitos estudos empíricos publicados antes de 2020 estão sendo reavaliados com os novos estimadores. A contribuição é metodológica e com implicações práticas diretas para a avaliação de políticas públicas com adoção escalonada (expansão do Bolsa Família, adesão de municípios a programas federais, etc.).
+
+    **Conexão com o capítulo:** Seção 22.5 (diferenças-em-diferenças) — complementa o tratamento clássico de Card e Krueger com a fronteira metodológica.
+
 ---
 
 ??? tip "Exercício com Inteligência Artificial"
@@ -81,6 +95,7 @@
 
 ## Referências
 
+- Athey, S.; Imbens, G. W. (2022). Design-based Analysis in Difference-In-Differences Settings with Staggered Adoption. *Journal of Econometrics*, 226(1), 62–79.
 - Angrist, J. D.; Krueger, A. B. (1991). Does Compulsory School Attendance Affect Schooling and Earnings? *Quarterly Journal of Economics*, 106(4), 979–1014.
 - Angrist, J. D.; Pischke, J.-S. (2009). *Mostly Harmless Econometrics*. Princeton University Press.
 - Banerjee, A.; Duflo, E. (2011). *Poor Economics*. PublicAffairs.

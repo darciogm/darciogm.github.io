@@ -352,3 +352,47 @@ onde \(P_i\) é o preço do imóvel (em R\$), PM\(_{2,5}\) é a concentração m
         - **Item 2 — V:** A regra de Hartwick: \(I_K = p_n \cdot h\).
         - **Item 3 — V:** Poupança genuína pode ser negativa com PIB crescente se a depleção de recursos superar a poupança.
         - **Item 4 — F:** O acesso livre resulta em estoque *abaixo* (não acima) do nível do RMS — sobreexploração.
+
+??? question "Questão ANPEC 24.3 — Teorema de Coase e Externalidades"
+    Sobre o Teorema de Coase e soluções para externalidades, julgue os itens:
+
+    **(0)** O Teorema de Coase afirma que, na ausência de custos de transação, a alocação eficiente dos recursos é alcançada independentemente da distribuição inicial dos direitos de propriedade — embora a distribuição de renda entre as partes dependa dessa atribuição.
+
+    **(1)** Uma implicação do Teorema de Coase é que a intervenção governamental via imposto pigouviano é sempre desnecessária para corrigir externalidades, bastando que os direitos de propriedade estejam bem definidos.
+
+    **(2)** O Teorema de Coase é particularmente difícil de aplicar em externalidades que afetam muitos agentes (como poluição do ar), porque os custos de transação de negociação coletiva crescem com o número de partes envolvidas.
+
+    **(3)** A diferença entre um imposto pigouviano e um sistema cap-and-trade reside exclusivamente na distribuição de renda: ambos geram a mesma quantidade de abatimento e o mesmo preço de equilíbrio para as emissões, sob certeza plena.
+
+    **(4)** O vazamento de carbono (*carbon leakage*) ocorre quando a regulação ambiental em um país reduz as emissões domésticas mas aumenta as emissões em países sem regulação, devido à relocação da produção — podendo resultar em aumento líquido das emissões globais.
+
+    ??? success "Gabarito"
+        **Respostas: V-F-V-V-V**
+
+        - **Item 0 — V:** Resultado central de Coase (1960). A eficiência é invariante à atribuição de direitos; a distribuição não é.
+        - **Item 1 — F:** O Teorema assume custos de transação zero — hipótese violada na maioria dos casos reais (especialmente com muitos agentes, como poluição). Em presença de custos de transação, a intervenção pode ser necessária.
+        - **Item 2 — V:** Com $N$ partes, os custos de coordenação, barganha e enforcement crescem, tornando a solução coaseana impraticável para externalidades difusas.
+        - **Item 3 — V:** Sob certeza, imposto e cap são equivalentes: o imposto fixa o preço e o cap fixa a quantidade, mas ambos convergem para o mesmo equilíbrio. A equivalência se rompe sob incerteza (Weitzman, 1974).
+        - **Item 4 — V:** O vazamento de carbono é o principal argumento para mecanismos de ajuste de fronteira como o CBAM europeu.
+
+??? question "Questão ANPEC 24.4 — Valoração Contingente e Métodos de Preferência Declarada"
+    Sobre métodos de valoração ambiental, julgue os itens:
+
+    **(0)** O método de valoração contingente estima a disposição a pagar (DAP) por bens ambientais através de cenários hipotéticos, sendo classificado como método de preferência declarada — em contraste com preços hedônicos e custo de viagem, que são métodos de preferência revelada.
+
+    **(1)** O viés hipotético (*hypothetical bias*) na valoração contingente refere-se à tendência dos respondentes de declarar uma DAP superior à que efetivamente pagariam, pois a pesquisa não envolve transação real.
+
+    **(2)** O método de custo de viagem estima o valor recreativo de um sítio natural a partir dos gastos que os visitantes incorrem para acessá-lo, tratando o custo de deslocamento como um "preço" implícito que varia entre os visitantes conforme sua localização.
+
+    **(3)** A poupança genuína de um país pode ser negativa mesmo com poupança bruta positiva, desde que a soma da depreciação do capital produzido e da depleção de recursos naturais exceda a poupança bruta.
+
+    **(4)** O Protocolo de Nagoya (2010) estabeleceu metas quantitativas de redução de emissões de gases de efeito estufa para países em desenvolvimento, substituindo o Protocolo de Kyoto.
+
+    ??? success "Gabarito"
+        **Respostas: V-V-V-V-F**
+
+        - **Item 0 — V:** Classificação padrão dos métodos de valoração ambiental.
+        - **Item 1 — V:** O viés hipotético é a principal crítica à valoração contingente. Soluções incluem *cheap talk scripts*, formato referendo e calibração ex post.
+        - **Item 2 — V:** O custo de viagem (Clawson, 1959; Knetsch, 1963) usa a variação espacial nos custos de acesso como variação de preço para estimar a curva de demanda pelo sítio.
+        - **Item 3 — V:** Poupança genuína = Poupança bruta − Depreciação capital − Depleção recursos − Dano poluição + Investimento educação. Se os termos negativos dominam, a poupança genuína é negativa (trajetória insustentável).
+        - **Item 4 — F:** O Protocolo de Nagoya (2010) trata de biodiversidade e acesso a recursos genéticos, não de emissões. As metas de emissões foram definidas pelo Protocolo de Kyoto (1997) e pelo Acordo de Paris (2015).

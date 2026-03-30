@@ -233,3 +233,43 @@
         2. **FALSO.** O SID ocorre sob fee-for-service. Sob capitation, o incentivo é para subtratamento.
         3. **VERDADEIRO.**
         4. **FALSO.** No modelo de Newhouse, hospitais sem fins lucrativos maximizam uma combinação de qualidade e quantidade, sujeitos a equilíbrio orçamentário — não maximizam lucro.
+
+!!! question "Questão ANPEC 23.3"
+    **Julgue as afirmativas (V ou F):**
+
+    0. A seleção adversa no mercado de seguros de saúde ocorre quando os indivíduos de alto risco (que possuem mais informação sobre seu estado de saúde) compram seguros desproporcionalmente, elevando o prêmio médio e expulsando os de baixo risco — fenômeno análogo ao mercado de limões de Akerlof.
+
+    1. O mandato individual de seguro de saúde (obrigatoriedade de cobertura) resolve o problema de seleção adversa ao impedir a saída dos baixo risco do pool, mas introduz uma perda de bem-estar para indivíduos que prefeririam não se segurar.
+
+    2. No modelo de Grossman, indivíduos mais educados demandam *mais* cuidados médicos porque a educação aumenta a produtividade do investimento em saúde, reduzindo o custo efetivo de produzir saúde.
+
+    3. O copagamento ótimo em seguros de saúde iguala o benefício marginal de *risk-sharing* (suavização do consumo) ao custo marginal do risco moral ex post (sobreutilização induzida pela redução do preço percebido).
+
+    4. A regulação de preços de medicamentos pela CMED no Brasil segue a lógica de preço-teto (*price cap*), com reajustes limitados por uma fórmula que incorpora inflação, produtividade e fator de ajuste de preços relativos.
+
+    ??? note "Gabarito"
+        0. **VERDADEIRO.** A analogia com Akerlof é direta: informação assimétrica sobre a qualidade (risco) leva à desintegração do mercado.
+        1. **VERDADEIRO.** O mandato resolve a seleção adversa mas impõe cobertura a quem preferiria auto-segurar. O ganho de eficiência pela eliminação da espiral da morte tipicamente supera a perda de liberdade de escolha.
+        2. **FALSO.** No modelo de Grossman, indivíduos mais educados demandam *menos* cuidados médicos (insumo), não mais, porque produzem saúde de forma mais eficiente. Eles demandam mais *saúde* (produto final), mas usam menos insumos por unidade de saúde produzida.
+        3. **VERDADEIRO.** Resultado clássico de Zeckhauser (1970) e Arrow (1963). O copagamento zero maximiza risk-sharing mas maximiza risco moral; o copagamento total elimina risco moral mas elimina o seguro. O ótimo é interior.
+        4. **VERDADEIRO.** A fórmula da CMED ($\Delta P \leq \text{IPCA} - X + Z$) é um mecanismo de price cap à la Littlechild, adaptado para o setor farmacêutico.
+
+!!! question "Questão ANPEC 23.4"
+    **Julgue as afirmativas (V ou F):**
+
+    0. A demanda induzida pelo ofertante (SID) é mais provável em sistemas de remuneração por fee-for-service do que em sistemas de capitation, pois no primeiro o médico tem incentivo financeiro para prescrever procedimentos adicionais.
+
+    1. O QALY (Quality-Adjusted Life Year) e o DALY (Disability-Adjusted Life Year) medem essencialmente a mesma coisa: o QALY mede saúde produzida (quanto maior, melhor) enquanto o DALY mede carga de doença (quanto menor, melhor).
+
+    2. Um programa com ICER de R$ 80.000/QALY é custo-efetivo se o limiar de disposição a pagar da sociedade for de R$ 50.000/QALY.
+
+    3. A política de genéricos no Brasil, ao permitir a substituição do medicamento de referência por equivalente bioequivalente de menor preço, aumenta a elasticidade-preço da demanda enfrentada pelo laboratório detentor da patente.
+
+    4. O conceito de VSL (Valor de uma Vida Estatística) estima a disposição a pagar de um indivíduo por uma redução marginal no risco de morte, não o "valor" de uma vida identificada — distinção ética fundamental.
+
+    ??? note "Gabarito"
+        0. **VERDADEIRO.** No fee-for-service, cada procedimento gera receita; no capitation, a receita é fixa independentemente do volume — gerando incentivo para subtratamento.
+        1. **VERDADEIRO.** São métricas espelhadas: 1 QALY ganho ≈ 1 DALY evitado. O QALY é preferido em análise de custo-efetividade; o DALY é usado pela OMS para mensurar carga de doença global.
+        2. **FALSO.** Se o ICER (R$ 80.000/QALY) excede o limiar de disposição a pagar (R$ 50.000/QALY), o programa *não* é custo-efetivo — o custo por unidade de saúde produzida supera o que a sociedade está disposta a pagar.
+        3. **VERDADEIRO.** Os genéricos atuam como substitutos quase perfeitos do medicamento de referência, aumentando a elasticidade-preço da demanda enfrentada pelo laboratório original e reduzindo seu poder de mercado.
+        4. **VERDADEIRO.** O VSL é derivado de escolhas marginais (aceitar emprego mais arriscado por salário maior), não de atribuições de valor a vidas específicas.

@@ -45,6 +45,20 @@
 
     **Impacto:** Referência padrão para pesquisadores e formuladores de política em economia de seguros de saúde.
 
+??? pesquisa "Finkelstein, Hendren & Shepard (2019) — Subsidizing Health Insurance for Low-Income Adults"
+
+    **Referência:** Finkelstein, A.; Hendren, N.; Shepard, M. (2019). Subsidizing Health Insurance for Low-Income Adults: Evidence from Massachusetts. *American Economic Review*, 109(4), 1530–1567. DOI: [10.1257/aer.20171455](https://doi.org/10.1257/aer.20171455)
+
+    **Contexto.** Quanto vale um seguro de saúde para quem é pobre? A pergunta é central para o desenho de políticas de cobertura universal, mas a resposta empírica era escassa até este estudo. Os autores exploram dados administrativos do *Massachusetts Health Connector* — o mercado de seguros subsidiados de Massachusetts, precursor do Obamacare — para estimar a disposição a pagar por seguro e os custos impostos ao sistema por diferentes perfis de segurados.
+
+    **Método.** Exploram descontinuidades na fórmula de subsídio (que varia com a renda) para identificar como a demanda por seguro varia com o preço enfrentado pelo consumidor. A variação exógena nos subsídios permite estimar a curva de demanda e a curva de custo de forma causal.
+
+    **Resultado principal.** A demanda por seguro é muito sensível ao preço: um aumento de US$ 40/mês no prêmio reduz a adesão em ~25%. Os entrantes marginais (que só compram com subsídio alto) impõem custos *menores* que a média — evidência de **seleção adversa atenuada** neste contexto. Mesmo assim, a disposição a pagar dos segurados é sempre *menos da metade* do custo esperado que impõem à seguradora. Sem subsídios substanciais, a cobertura voluntária é muito baixa.
+
+    **Impacto.** O paper fornece a base empírica mais sólida para calibrar políticas de subsídio à saúde em mercados com cobertura voluntária. Influenciou diretamente o debate sobre Medicaid expansion nos EUA e é relevante para o Brasil: o SUS oferece cobertura universal gratuita, mas a saúde suplementar (25% da população) opera com lógica similar — quem não percebe valor no plano privado sai, e os que ficam são mais custosos.
+
+    **Conexão com o capítulo.** Seções 23.4–23.5 (seleção adversa e espiral da morte, modelo de Rothschild-Stiglitz aplicado a seguros de saúde).
+
 ---
 
 ## Exercício com IA
@@ -71,6 +85,7 @@
 - Cutler, D.M. & Zeckhauser, R.J. (2000). The Anatomy of Health Insurance. In A.J. Culyer & J.P. Newhouse (Eds.), *Handbook of Health Economics*, Vol. 1A, pp. 563–643. Elsevier.
 - Devlin, R.A. & Sarma, S. (2008). Do Physician Remuneration Schemes Matter? The Case of Canadian Family Physicians. *Journal of Health Economics*, 27(5), 1168–1181.
 - Fisher, E.S., Wennberg, D.E., Stukel, T.A., Gottlieb, D.J., Lucas, F.L. & Pinder, É.L. (2003). The Implications of Regional Variations in Medicare Spending. Part 1: The Content, Quality, and Accessibility of Care. *Annals of Internal Medicine*, 138(4), 273–287.
+- Finkelstein, A., Hendren, N. & Shepard, M. (2019). Subsidizing Health Insurance for Low-Income Adults: Evidence from Massachusetts. *American Economic Review*, 109(4), 1530–1567.
 - Folland, S., Goodman, A.C. & Stano, M. (2017). *The Economics of Health and Health Care*. 8th ed. Routledge.
 - Grossman, M. (1972). On the Concept of Health Capital and the Demand for Health. *Journal of Political Economy*, 80(2), 223–255.
 - KFF — Kaiser Family Foundation (2024). *Health Insurance Coverage of the Total Population*. Disponível em: https://www.kff.org.

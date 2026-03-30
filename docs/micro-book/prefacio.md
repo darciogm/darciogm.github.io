@@ -128,7 +128,7 @@ O pré-requisito formal é cálculo de uma e várias variáveis. O Capítulo 2 r
 
 **Leitura linear**: os capítulos foram organizados numa sequência pedagógica deliberada — cada conceito se constrói sobre os anteriores. O leitor que seguir a ordem dos capítulos encontrará uma narrativa coerente, com referências cruzadas que criam uma rede de conexões. É como uma série com arcos narrativos: se você pular episódios, ainda entende, mas perde as Easter eggs.
 
-**Leitura seletiva**: cada capítulo é razoavelmente autocontido, com referências explícitas aos pré-requisitos. Um leitor que domine a teoria do consumidor pode saltar diretamente para a teoria da firma ou para a teoria dos jogos, consultando capítulos anteriores quando necessário. O [Mapa do Livro](mapa-livro.md) mostra exatamente quais capítulos dependem de quais — siga as setas e não se perderá.
+**Leitura seletiva**: cada capítulo é razoavelmente autocontido, com referências explícitas aos pré-requisitos. Um leitor que domine a teoria do consumidor pode saltar diretamente para a teoria da firma ou para a teoria dos jogos, consultando capítulos anteriores quando necessário. O [Mapa do Livro](mapa-livro.md) mostra exatamente quais capítulos dependem de quais — siga as setas e não se perderá. Lá você encontrará também **trilhas organizadas por público** (graduação, pós-graduação, ANPEC), **trilhas temáticas** (IO, Comportamental, Experimental) e **trilhas rápidas** para quem tem pressa ou curiosidade seletiva.
 
 **Para a ANPEC**: as seções "Vem, ANPEC!" de cada capítulo formam, juntas, um banco de questões comentadas que pode ser percorrido independentemente. É a coisa mais próxima de um tutor particular que um livro pode oferecer — sem o custo horário.
 

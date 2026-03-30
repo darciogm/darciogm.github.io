@@ -28,6 +28,7 @@ A literatura acadêmica sobre economia digital é vasta e em rápida expansão. 
 | 21.5 | Se o produto é gratuito, você é o produto? | Economia da atenção, publicidade, two-sided | [Atenção](competicao-atencao.md#215) |
 | 21.6 | Seus dados valem quanto — e quem deveria ser dono deles? | Economia de dados, privacidade, LGPD | [Dados](dados-leiloes.md#216) |
 | 21.7 | Como o Google vende anúncios em milissegundos? | Leilões online, GSP, mecanismos digitais | [Leilões online](dados-leiloes.md#217) |
+| 21.8 | Por que trocar de banco dá tanto trabalho — e quem lucra com isso? | Switching costs, lock-in, Klemperer, portabilidade, interoperabilidade | [Switching Costs](switching-costs.md#218) |
 | 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
 | 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 

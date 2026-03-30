@@ -253,3 +253,49 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
     **(3) F** — A maldição do vencedor é amplamente documentada em experimentos de laboratório, especialmente em leilões com muitos competidores.
 
     **(4) V** — O pré-registro obriga o pesquisador a definir as hipóteses e o plano de análise antes de ver os dados, impedindo a seleção ex post de resultados significativos.
+
+<a id="questao-anpec-22-3"></a>**Questão 3.** Classifique as afirmações como **Verdadeiro (V)** ou **Falso (F)**:
+
+(0) O ATE (Average Treatment Effect) e o ATT (Average Treatment Effect on the Treated) são numericamente idênticos quando o tratamento é atribuído de forma completamente aleatória a toda a população elegível.
+
+(1) Em um desenho de regressão descontínua (RDD), a validade da estimativa causal depende da hipótese de que os agentes não manipulam a variável de atribuição (*running variable*) para se posicionarem estrategicamente em relação ao limiar.
+
+(2) O estimador de variáveis instrumentais (IV) converge para o ATE quando o instrumento afeta todos os indivíduos de forma homogênea. No caso de efeitos heterogêneos, o IV estima o LATE (Local Average Treatment Effect), válido apenas para os *compliers*.
+
+(3) Em jogos de ultimato, a previsão do equilíbrio de Nash por indução retroativa é que o propositor oferece a menor unidade monetária possível e o respondente aceita — previsão confirmada sistematicamente pela evidência experimental.
+
+(4) O viés de publicação (*publication bias*) ocorre quando periódicos acadêmicos publicam preferencialmente resultados estatisticamente significativos, distorcendo a literatura em favor de efeitos positivos e inflando as estimativas publicadas.
+
+??? success "Gabarito"
+    **(0) V** — Com randomização completa, o grupo de controle é representativo de toda a população, portanto $E[Y(0)|D=1] = E[Y(0)]$ e ATE = ATT.
+
+    **(1) V** — A condição de não-manipulação é essencial para RDD. Se os agentes podem manipular a running variable (e.g., declarar renda abaixo do limiar), a comparação na vizinhança do corte é contaminada por seleção. O teste de McCrary verifica descontinuidades na densidade da running variable.
+
+    **(2) V** — Resultado central de Imbens e Angrist (1994). O LATE é o efeito causal para os *compliers* — indivíduos cuja decisão de tratamento muda em resposta ao instrumento. Para *always-takers* e *never-takers*, o instrumento não fornece informação.
+
+    **(3) F** — A previsão teórica é correta (equilíbrio de subjogo perfeito), mas a evidência experimental a rejeita sistematicamente. Em média, propostas abaixo de 20-30% são rejeitadas, e ofertas modais ficam em torno de 40-50% — evidência de preferências sociais (aversão à desigualdade, reciprocidade).
+
+    **(4) V** — O viés de publicação é uma das causas centrais da crise de replicação. Soluções incluem pré-registro, relatórios registrados (*registered reports*) e meta-análises que corrigem pelo viés (funnel plots, trim-and-fill).
+
+<a id="questao-anpec-22-4"></a>**Questão 4.** Classifique as afirmações como **Verdadeiro (V)** ou **Falso (F)**:
+
+(0) A validade externa de um RCT conduzido em vilas rurais do Quênia é automaticamente assegurada para o Brasil urbano, desde que o desenho experimental tenha validade interna comprovada.
+
+(1) No método de diferenças-em-diferenças, um teste de falsificação (*placebo test*) comum consiste em estimar o efeito do tratamento em períodos anteriores à intervenção: se for estatisticamente diferente de zero, a hipótese de tendências paralelas é questionável.
+
+(2) A maldição do vencedor em leilões de valor comum decorre do fato de que o vencedor é sistematicamente o licitante que mais superestimou o valor do objeto — um caso de viés de seleção condicional à vitória.
+
+(3) Em um jogo de bens públicos repetido com punição entre pares (*peer punishment*), as contribuições tipicamente convergem para zero ao longo das rodadas, exatamente como prevê o equilíbrio de Nash do jogo estático.
+
+(4) A "revolução da credibilidade" em econometria aplicada (Nobel 2021, Angrist-Imbens-Card) priorizou a identificação causal via variação exógena sobre a estimação de modelos estruturais completos — substituindo a pergunta "qual é o modelo correto?" por "qual é a fonte de variação exógena?".
+
+??? success "Gabarito"
+    **(0) F** — Validade interna e validade externa são dimensões independentes. Um RCT pode ter excelente validade interna (identificação causal limpa) mas validade externa limitada (resultados não generalizáveis para outros contextos culturais, institucionais ou econômicos). Essa é uma das críticas centrais de Deaton (2010).
+
+    **(1) V** — Se o "efeito" aparece antes do tratamento, é evidência de que as tendências pré-tratamento já divergiam — violando a hipótese identificadora do DD.
+
+    **(2) V** — Em leilões de valor comum, todos os licitantes estimam o mesmo valor desconhecido. Condicional à vitória, o lance vencedor é o mais otimista — gerando viés para cima na estimativa do valor.
+
+    **(3) F** — Com punição entre pares, as contribuições tipicamente *aumentam* ao longo das rodadas, não convergem para zero. A punição altruísta sustenta a cooperação ao tornar o free-riding custoso (Fehr & Gächter, 2000).
+
+    **(4) V** — Descrição precisa da revolução da credibilidade. A mudança metodológica enfatizou desenhos de pesquisa que exploram variações quasi-experimentais (experimentos naturais, RDD, IV) em vez de depender de hipóteses de identificação derivadas de modelos teóricos.

@@ -63,7 +63,7 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
     - Calcule a utilidade de cada agente em cada rodada. Houve melhoria de Pareto?
     - Por que as alocações da Rodada 1 variam entre pares (poder de barganha!), enquanto a Rodada 2 converge a um único ponto?
     - Conecte com o Teorema do Limite do Núcleo: se tivéssemos muitos pares, o núcleo se contrairia ao equilíbrio walrasiano.
-    - Referência Monty Python: "Bring me a shrubbery!" — o Knights Who Say Ni têm demanda perfeitamente inelástica e poder de barganha total. No mercado walrasiano, ninguém tem poder de barganha.
+    - Note o contraste: nas trocas livres, quem negocia melhor se dá bem (poder de barganha importa). No mercado walrasiano, todos aceitam o preço dado — ninguém tem poder de barganha.
 
     **Variante para turmas grandes:** Faça 4 pares por "economia" (2 de cada tipo) e observe como a competição entre agentes do mesmo tipo reduz o poder de barganha — ilustração direta do Teorema do Limite do Núcleo.
 
@@ -71,4 +71,4 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
 
 [^holy-grail-equilibrio]: A busca pelo equilíbrio geral walrasiano tem algo do *Quest for the Holy Grail* dos Monty Python. Walras sabia que o Graal existia (o sistema de equações parecia fechar), mas não conseguiu provar. Oitenta anos e muitas aventuras matemáticas depois, Arrow e Debreu finalmente encontraram o cálice — usando não uma espada, mas o Teorema do Ponto Fixo de Brouwer. E, como no filme, a jornada foi mais instrutiva que o destino.
 
-[^ministry-cge]: Os modelos CGE são o *Ministry of Silly Walks* da economia aplicada: cada modelo tem sua própria forma excêntrica de caminhar (especificação funcional, regra de fechamento, calibração), nenhum caminha exatamente como outro, mas todos chegam — mais ou menos — ao mesmo destino. A diferença é que, ao contrário do Ministry, os CGEs produzem resultados que ministros da Fazenda realmente usam para tomar decisões.
+[^ministry-cge]: Os modelos CGE são a haute couture da economia aplicada: cada modelo tem sua própria especificação funcional, regra de fechamento e calibração, nenhum é exatamente igual ao outro, mas todos tentam vestir a mesma teoria. A diferença é que, ao contrário da haute couture, os CGEs produzem resultados que ministros da Fazenda realmente usam para tomar decisões.

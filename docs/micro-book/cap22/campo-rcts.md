@@ -134,6 +134,47 @@ O Nobel de 2019 reconheceu a transformação que os RCTs trouxeram para a econom
 
 **Abhijit Banerjee e Esther Duflo** expandiram essa abordagem para dezenas de temas: microcrédito, vacinação, participação política, poupança, saúde preventiva e empreendedorismo. Seu livro *Poor Economics* (2011) sintetiza os achados em uma narrativa acessível: a pobreza não resulta de uma única causa macro, mas de uma multiplicidade de **armadilhas** (*poverty traps*) que podem ser identificadas e quebradas por intervenções micro bem desenhadas.
 
+!!! example "Exercício Resolvido 22.5 — Avaliando o impacto do Bolsa Família com RDD"
+    **Enunciado.** O Programa Bolsa Família (PBF) concede transferências a famílias com renda per capita abaixo de R\$ 218/mês (valor de 2024). Um pesquisador quer estimar o efeito causal do PBF sobre a frequência escolar de crianças de 6 a 15 anos usando regressão descontínua (*RDD*).
+
+    (a) Identifique a *running variable*, o *cutoff* e a variável de resultado. Por que a RDD é preferível a comparar simplesmente famílias beneficiárias e não beneficiárias?
+
+    (b) Suponha que os dados mostram: frequência escolar média para famílias com renda per capita logo abaixo de R\$ 218 é 94,2%; logo acima, 91,5%. Estime o efeito local do tratamento.
+
+    (c) Quais são as duas principais ameaças à validade dessa estimativa?
+
+    **Solução.**
+
+    **(a) Componentes da RDD.**
+
+    - *Running variable* ($X$): renda per capita familiar declarada ao Cadastro Único.
+    - *Cutoff* ($c$): R\$ 218/mês.
+    - Tratamento: $D_i = \mathbb{1}(X_i \leq 218)$ — receber o Bolsa Família.
+    - Resultado ($Y$): taxa de frequência escolar (%).
+
+    Comparar diretamente beneficiárias vs. não beneficiárias é enviesado porque famílias mais pobres diferem sistematicamente das mais ricas em dezenas de dimensões (escolaridade dos pais, acesso a transporte, condições de moradia). A RDD resolve isso comparando famílias *muito similares* — aquelas logo acima e logo abaixo do limiar — que diferem essencialmente apenas pelo recebimento do benefício.
+
+    **(b) Efeito local do tratamento.**
+
+    $$\hat{\tau}_{RDD} = \lim_{x \uparrow 218} E[Y \mid X = x] - \lim_{x \downarrow 218} E[Y \mid X = x] = 94{,}2 - 91{,}5 = +2{,}7 \text{ p.p.}$$
+
+    O PBF aumenta a frequência escolar em 2,7 pontos percentuais para famílias na vizinhança do limiar. Esse efeito é **local** — válido apenas para famílias próximas ao cutoff, não para as mais pobres nem para as mais ricas.
+
+    **(c) Ameaças à validade.**
+
+    1. **Manipulação da running variable (*bunching*):** Famílias podem subdeclarar renda para ficar abaixo do limiar. Se isso ocorre, as famílias "logo abaixo" não são comparáveis às "logo acima" — são estrategicamente diferentes. Teste: verificar se há descontinuidade na densidade da running variable no cutoff (teste de McCrary).
+
+    2. **Descontinuidade em outros programas:** Se outros benefícios sociais usam o mesmo limiar de renda (e.g., isenção de tarifa de energia, acesso prioritário ao SUS), o efeito estimado mistura Bolsa Família com os demais programas. Solução: verificar se há saltos em covariáveis pré-determinadas no cutoff.
+
+    **Referência:** Soares, Ribas e Osório (2010, *Latin American Research Review*, 45(2): 173–190) documentaram que o PBF aumentou a frequência escolar em 3–5 p.p. e reduziu o trabalho infantil em 10–15%, usando métodos quase-experimentais com dados do Cadastro Único.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A randomização não é a única forma de encontrar causalidade — às vezes, uma regra burocrática faz o trabalho do sorteio.
+
+    **Pense assim:** Quando o governo diz "famílias com renda abaixo de R\$ 218 recebem o benefício", ele está — sem querer — criando um experimento. A família que ganha R\$ 215 recebe; a que ganha R\$ 221 não. Essas duas famílias são praticamente idênticas em tudo, exceto pelo benefício. A diferença nos seus resultados revela o efeito causal do programa, pela mesma lógica de um RCT — mas sem precisar sortear ninguém.
+
+    **Por que isso importa:** A RDD é uma das ferramentas mais elegantes da econometria moderna. Ela transforma regras administrativas arbitrárias — limiares de renda, notas de corte, limites de idade — em *quasi-experimentos*. O resultado de Card, Angrist e Imbens (Nobel 2021) foi mostrar que, com a estratégia certa, dados observacionais podem ser tão informativos quanto um RCT. No Brasil, o Cadastro Único, o Enem/Sisu e os limiares do SUS oferecem dezenas de descontinuidades prontas para serem exploradas.
+
 ??? exercicio-resolvido "Exercício Resolvido 22.2 — Cálculo de poder de um RCT"
     **Enunciado.** Um pesquisador quer avaliar se a distribuição de mosquiteiros reduz a incidência de malária em uma região rural da África. A taxa base de malária é de 40% (sem tratamento). O pesquisador acredita que o mosquiteiro pode reduzir a incidência para 30% (efeito de 10 pontos percentuais). Deseja detectar esse efeito com nível de significância \(\alpha = 0{,}05\) e poder de 80% (\(\beta = 0{,}20\)).
 

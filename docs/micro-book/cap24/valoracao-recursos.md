@@ -58,6 +58,112 @@ Quando não há mercado real que revele preferências (caso de valores de não-u
 
 **Experimentos de escolha** (*choice experiments*). Em vez de perguntar diretamente "quanto você pagaria?", apresentam-se conjuntos de opções que variam em múltiplos atributos (qualidade da água, biodiversidade, custo) e pede-se ao respondente que escolha a opção preferida. A partir das escolhas, estima-se a disposição a pagar por cada atributo — uma aplicação direta da teoria da utilidade aleatória (conectando com o Capítulo 3).
 
+!!! example "Exercício Resolvido 24.3 — Valoração contingente do Parque Nacional da Tijuca"
+    **Enunciado.** Um pesquisador realiza uma pesquisa de valoração contingente com 500 moradores do Rio de Janeiro para estimar a disposição a pagar (DAP) pela preservação do Parque Nacional da Tijuca. A pergunta: "Quanto você estaria disposto a pagar por mês, na sua conta de luz, para garantir a manutenção e ampliação do Parque Nacional da Tijuca?" Resultados:
+
+    | DAP mensal (R$) | Proporção que aceita |
+    |:---:|:---:|
+    | 5 | 85% |
+    | 10 | 68% |
+    | 20 | 42% |
+    | 50 | 15% |
+    | 100 | 4% |
+
+    (a) Estime a DAP média usando o método de integração da curva de sobrevivência.
+
+    (b) Se o Rio de Janeiro tem ~2,8 milhões de domicílios, estime o valor de preservação anual agregado.
+
+    (c) Compare com o orçamento anual do ICMBio para o Parque (~R$ 15 milhões). A preservação é custo-efetiva?
+
+    **Solução.**
+
+    **(a)** A "curva de sobrevivência" mostra a proporção que aceita cada valor. A DAP média é a área sob essa curva. Usando integração por trapézios:
+
+    $$\text{DAP}_{\text{média}} \approx \frac{(5-0)(1+0{,}85)}{2} + \frac{(10-5)(0{,}85+0{,}68)}{2} + \frac{(20-10)(0{,}68+0{,}42)}{2} + \frac{(50-20)(0{,}42+0{,}15)}{2} + \frac{(100-50)(0{,}15+0{,}04)}{2}$$
+
+    $$= 4{,}63 + 3{,}83 + 5{,}50 + 8{,}55 + 4{,}75 = \text{R\$}\;27{,}25\text{/mês}$$
+
+    **(b)** Valor anual agregado: $27{,}25 \times 12 \times 2.800.000 = $ R$ 915,6 milhões/ano.
+
+    **(c)** O benefício estimado (R$ 916 milhões) é ~61× o orçamento de manutenção (R$ 15 milhões). A preservação é enormemente custo-efetiva — cada R$ 1 gasto gera R$ 61 em benefícios declarados. Caveat: a DAP declarada tipicamente superestima a DAP real (viés hipotético) — um fator de correção de 0,3–0,5 ainda resultaria em benefício/custo de 18–30:1.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** Valoração contingente pergunta às pessoas quanto pagariam por algo que não tem preço — e, apesar de todas as limitações, é a única forma de capturar o valor de existência de bens ambientais.
+
+    **Pense assim:** Você nunca vai à Amazônia. Nunca verá uma onça-pintada ao vivo. Mas se alguém perguntasse "quanto você pagaria por mês para garantir que a Amazônia e a onça continuem existindo?", sua resposta provavelmente não seria zero. Esse é o valor de existência — e ele não aparece em nenhum preço de mercado, em nenhuma transação, em nenhum PIB. A valoração contingente é a ferramenta que permite transformar essa preferência silenciosa em número.
+
+    **Por que isso importa:** No julgamento do caso Exxon Valdez (derramamento de petróleo no Alasca, 1989), a Exxon argumentou que o dano ambiental era apenas o custo de limpeza. Os economistas contratados pelo governo usaram valoração contingente para mostrar que a disposição a pagar dos americanos pela preservação do ecossistema do Alasca excedia em muito o custo de limpeza. O júri concordou. A ferramenta é imperfeita — mas a alternativa (valor zero para bens sem preço de mercado) é muito pior.
+
+??? r-interactive "R Interativo — Valoração Contingente: Estimando a Disposição a Pagar"
+    ```r
+    # Simulação de pesquisa de valoração contingente
+    # Estima DAP com distribuição log-normal
+
+    set.seed(42)
+
+    # Parâmetros (altere para explorar!)
+    n_respondentes <- 500
+    mu_log         <- 2.5    # média do log da DAP (exp(2.5) ~ R$ 12)
+    sigma_log      <- 1.0    # dispersão (heterogeneidade)
+    valores_oferta <- c(5, 10, 20, 50, 100)  # valores oferecidos
+
+    # Gerar DAP verdadeira (log-normal)
+    dap_verdadeira <- rlnorm(n_respondentes, meanlog = mu_log, sdlog = sigma_log)
+
+    # Simular respostas dicotômicas ("sim/não" para cada valor)
+    resultados <- data.frame(valor = valores_oferta)
+    resultados$prop_sim <- sapply(valores_oferta, function(v) {
+      mean(dap_verdadeira >= v)
+    })
+
+    # DAP média por integração (trapézios)
+    # Adicionar pontos extremos
+    x <- c(0, valores_oferta, max(valores_oferta) * 2)
+    y <- c(1, resultados$prop_sim, 0)
+    dap_media <- sum(diff(x) * (y[-length(y)] + y[-1]) / 2)
+
+    # DAP verdadeira (da distribuição)
+    dap_real <- mean(dap_verdadeira)
+
+    cat("═══ RESULTADOS DA PESQUISA ═══\n\n")
+    cat("  Valor (R$) | Aceitam (%)\n")
+    cat("  -----------|----------\n")
+    for (i in 1:nrow(resultados)) {
+      cat(sprintf("  %10.0f | %6.1f%%\n", resultados$valor[i], resultados$prop_sim[i] * 100))
+    }
+    cat(sprintf("\n  DAP média (trapézios): R$ %.2f/mês\n", dap_media))
+    cat(sprintf("  DAP média (verdadeira): R$ %.2f/mês\n", dap_real))
+    cat(sprintf("  Viés da estimativa: %.1f%%\n", (dap_media / dap_real - 1) * 100))
+
+    # Gráficos
+    par(mfrow = c(1, 2))
+
+    # 1. Curva de sobrevivência
+    plot(c(0, valores_oferta, max(valores_oferta) * 1.5),
+         c(1, resultados$prop_sim, 0),
+         type = "b", pch = 19, col = "#2196F3", lwd = 2,
+         xlab = "Valor oferecido (R$/mês)", ylab = "Proporção que aceita",
+         main = "Curva de Sobrevivência da DAP")
+    polygon(c(x, rev(x)), c(y, rep(0, length(y))),
+            col = rgb(0.13, 0.59, 0.95, 0.2), border = NA)
+    text(30, 0.6, paste0("DAP média\n≈ R$ ", round(dap_media, 1)),
+         col = "#2196F3", font = 2, cex = 0.9)
+    grid(col = "gray90")
+
+    # 2. Distribuição da DAP verdadeira
+    hist(dap_verdadeira[dap_verdadeira < 200], breaks = 40,
+         col = rgb(0.3, 0.7, 0.3, 0.5), border = "white",
+         main = "Distribuição da DAP (log-normal)",
+         xlab = "DAP (R$/mês)", ylab = "Frequência")
+    abline(v = dap_real, col = "#F44336", lwd = 2, lty = 2)
+    text(dap_real + 10, n_respondentes * 0.08,
+         paste0("Média = R$ ", round(dap_real, 1)),
+         col = "#F44336", cex = 0.8)
+    grid(col = "gray90")
+    ```
+
+    **Experimente:** Aumente `sigma_log` para 1.5 (população mais heterogênea) e observe a cauda direita se estender — poucos ricos com DAP muito alta puxam a média para cima. Reduza `n_respondentes` para 50 e veja a curva ficar ruidosa — pesquisas pequenas são imprecisas. Mude `mu_log` para 3.5 (população mais rica) e veja a DAP média dobrar.
+
 !!! note "Limitações dos métodos de preferência declarada"
     Métodos de preferência declarada sofrem de vieses conhecidos: (i) **viés de protesto** — respondentes que se recusam a "precificar" a natureza por razões morais; (ii) **viés hipotético** — a diferença entre o que as pessoas *dizem* que pagariam e o que *de fato* pagariam (conectando com o Capítulo 8, economia comportamental); (iii) **insensibilidade ao escopo** — a DAP não varia proporcionalmente com a escala do bem avaliado (proteger 1.000 vs. 100.000 hectares). Apesar dessas limitações, a valoração contingente foi aceita como evidência em tribunais americanos (caso Exxon Valdez, 1989) e permanece o único método capaz de capturar valores de não-uso.
 

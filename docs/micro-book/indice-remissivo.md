@@ -66,6 +66,8 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Condições de Kuhn-Tucker** (KKT) — [Cap. 2 (otimização)](cap02/index.md)
 
+**CMED** (Câmara de Regulação do Mercado de Medicamentos) — [Cap. 23 (regulação farmacêutica)](cap23/regulacao-farmaceutica.md)
+
 **Cunha tributária** — [Cap. 13 (impostos e bem-estar)](cap13/index.md)
 
 **Curva de contrato** — [Cap. 14 (equilíbrio geral)](cap14/index.md)
@@ -174,11 +176,15 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 ## F
 
+**Farmácia Popular** (programa) — [Cap. 23 (subsídio ao consumo de medicamentos)](cap23/regulacao-farmaceutica.md)
+
 **Firma tomadora de preços** (*price taker*) — [Cap. 12 (definição)](cap12/index.md), [Cap. 13 (concorrência perfeita)](cap13/index.md)
 
 **Folk Theorem** — [Cap. 9b (definição)](cap09b/index.md)
 
 **Fronteira de possibilidades de produção** (FPP) — [Cap. 14 (equilíbrio geral)](cap14/index.md)
+
+**Fundo Amazônia** — [Cap. 24 (pagamento por serviços ambientais, REDD+)](cap24/clima-carbono.md)
 
 **Função de custo** — [Cap. 11 (definição)](cap11/index.md), [Cap. 12 (aplicações)](cap12/index.md)
 
@@ -193,6 +199,8 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 **Função dispêndio** (*expenditure function*) — [Cap. 4 (definição)](cap04/index.md), [Cap. 5 (Slutsky)](cap05/index.md), [Cap. 6 (dualidade)](cap06/index.md)
 
 ## G
+
+**Genérico** (medicamento) — [Cap. 23 (definição, política de genéricos)](cap23/regulacao-farmaceutica.md)
 
 **Gorman** (forma polar de) — [Cap. 6 (agregação)](cap06/index.md)
 
@@ -231,6 +239,8 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 **Lema de Hotelling** — [Cap. 12 (definição)](cap12/index.md)
 
 **Lema de Shephard** — [Cap. 5 (definição)](cap05/index.md), [Cap. 11 (custos)](cap11/index.md), [Cap. 12 (dualidade)](cap12/index.md)
+
+**Lock-in** (aprisionamento tecnológico) — [Cap. 21 (efeitos de rede)](cap21/bens-info-redes.md), [Cap. 21 (switching costs)](cap21/switching-costs.md)
 
 ## M
 
@@ -298,6 +308,8 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Prêmio de risco** (*risk premium*) — [Cap. 7 (definição)](cap07/index.md), [Cap. 18 (CAPM)](cap18/index.md)
 
+**Pesca artesanal** (tragédia dos comuns) — [Cap. 20 (recurso comum, Nordeste)](cap20/lindahl-carona.md)
+
 **Prova de renegociação** (*renegotiation-proofness*) — [Cap. 9b (jogos repetidos)](cap09b/index.md)
 
 ## Q
@@ -322,6 +334,8 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Renda ricardiana** — [Cap. 13 (excedente)](cap13/index.md), [Cap. 17 (fatores)](cap17/index.md)
 
+**Regulação de preços** (medicamentos) — [Cap. 23 (CMED, referenciamento, teto)](cap23/regulacao-farmaceutica.md); ver também *CMED*
+
 **Rendimentos de escala** (*returns to scale*) — [Cap. 10 (definição)](cap10/index.md), [Cap. 11 (custos)](cap11/index.md)
 
 **Restrição orçamentária** — [Cap. 4 (definição)](cap04/index.md), [Cap. 17 (trabalho-lazer)](cap17/index.md), [Cap. 18 (intertemporal)](cap18/index.md)
@@ -342,9 +356,15 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 
 **Substitutos** (bens) — [Cap. 6 (definição)](cap06/index.md); ver também *Complementos*
 
+**SUS** (Sistema Único de Saúde) — [Cap. 20 (bem público, congestionamento)](cap20/bens-publicos.md)
+
+**Switching costs** (custos de troca) — [Cap. 21 (definição, Klemperer)](cap21/switching-costs.md); ver também *Lock-in*
+
 ## T
 
 **Tarifa em duas partes** (*two-part tariff*) — [Cap. 15 (monopólio)](cap15/index.md)
+
+**Taxa de desconto social** — [Cap. 18 (escolha intertemporal)](cap18/index.md), [Cap. 24 (Ramsey, Nordhaus vs. Stern)](cap24/clima-carbono.md)
 
 **Taxa marginal de substituição** (TMS) — [Cap. 3 (definição)](cap03/index.md), [Cap. 4 (escolha ótima)](cap04/index.md), [Cap. 14 (equilíbrio geral)](cap14/index.md)
 
@@ -369,6 +389,8 @@ Navegue diretamente para a discussão de cada conceito no livro. As referências
 **Utilidade marginal** (UMg) — [Cap. 3 (definição)](cap03/index.md), [Cap. 4 (escolha)](cap04/index.md), [Cap. 7 (risco)](cap07/index.md), [Cap. 18 (Euler)](cap18/index.md)
 
 ## V
+
+**Valoração contingente** (*contingent valuation*) — [Cap. 24 (definição, métodos de preferência declarada)](cap24/valoracao-recursos.md)
 
 **Valor presente líquido** (VPL, *net present value*) — [Cap. 18 (definição)](cap18/index.md)
 

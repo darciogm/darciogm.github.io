@@ -2,6 +2,9 @@
 
 ## 9d.5 O Mercado dos Limões: Seleção Adversa
 
+!!! tip "Onde estou no livro?"
+    Este capítulo formaliza a seleção adversa como **jogo de informação incompleta**: o mecanismo de desintegração do mercado, o *market unraveling* iterativo e a conexão com o desenho de mecanismos (Princípio da Revelação). Para **aplicações a mercados reais** — limões, seguros, crédito, mercado de trabalho — com exemplos numéricos e dados brasileiros, veja o [Capítulo 19 — Seleção Adversa](../cap19/selecao-adversa.md).
+
 Moral hazard é sobre o que o agente *faz* depois do contrato. Seleção adversa é sobre o que o agente *é* antes do contrato. A diferença: se o problema é que o motorista dirige mal *após* contratar o seguro, é moral hazard. Se o problema é que *quem procura seguro já é mau motorista*, é seleção adversa. Timing diferente, soluções diferentes. Confundir os dois é o erro mais clássico em provas de micro — e a distinção é sempre a mesma pergunta: ações ocultas (pós) ou tipos ocultos (pré)?
 
 !!! definition "Seleção Adversa"

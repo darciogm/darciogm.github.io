@@ -31,6 +31,18 @@ A tabela abaixo apresenta exemplos brasileiros para cada categoria:
 | **Bem de clube** | Não-rival (até congestionamento) e excludente | Netflix, rodovia com pedágio (Via Dutra, Rodovia dos Bandeirantes), clube recreativo, sistema de streaming de futebol |
 | **Recurso comum** | Rival e não-excludente | Peixes no rio Amazonas, pastagem no semiárido, água do Aquífero Guarani, vagas de estacionamento público |
 
+!!! box-brasil "Brasil na Prática — O SUS como bem público: universalidade, free-riding e congestionamento"
+
+    **Contexto.** O Sistema Único de Saúde (SUS) — criado pela Constituição de 1988 — é o maior sistema público de saúde do mundo, cobrindo **150 milhões de brasileiros** que dependem exclusivamente dele (IBGE/PNS, 2019). O SUS opera sob o princípio da **universalidade**: qualquer pessoa, independentemente de contribuição, pode acessar seus serviços. Isso o torna, por desenho institucional, **não-excludente**.
+
+    **É bem público?** Tecnicamente, o SUS é um caso limítrofe na Tabela 20.1. Consultas e cirurgias são **rivais** — se o médico atende um paciente, não pode atender outro simultaneamente. Mas o *acesso ao sistema* tem características de bem público: o direito à saúde é não-excludente e a cobertura universal gera **externalidades positivas** (vacinação, vigilância epidemiológica, controle de endemias). Na prática, o SUS funciona como um **recurso comum congestionável** — não-excludente, mas rival quando a demanda excede a capacidade instalada.
+
+    **Dados.** O Brasil gasta ~3,9% do PIB em saúde pública (2023) — abaixo da média da OCDE (~6,5%). O SUS realizou **4,1 bilhões de procedimentos ambulatoriais** e **11,3 milhões de internações** em 2022 (DATASUS). O tempo médio de espera para cirurgia eletiva chega a **180 dias** em alguns estados (TCU, 2023). Em 2019, 28,5% da população possuía plano de saúde privado — um mecanismo de **auto-exclusão** que alivia a pressão sobre o recurso comum.
+
+    **Conexão com a teoria.** O SUS ilustra o dilema central da Seção 20.6: a provisão pública de um bem (quase) público financiado por impostos gerais enfrenta inevitavelmente o **problema do carona** — quem paga mais impostos financia desproporcionalmente o sistema, e não há como condicionar acesso à contribuição. A subprovisão (filas, falta de leitos, defasagem salarial de profissionais) é a manifestação empírica da inequação $G^{priv} < G^*$.
+
+    **Fonte:** IBGE, *Pesquisa Nacional de Saúde*, 2019; DATASUS, *Informações de Saúde*, 2022; TCU, *Relatório de Auditoria Operacional — Saúde*, 2023.
+
 !!! note "Bens Públicos Locais e Globais"
     A provisão de bens públicos pode ter escala local (iluminação de uma rua), regional (defesa costeira), nacional (sistema judiciário) ou global (estabilidade climática, erradicação de doenças). A escala determina qual nível de governo (ou cooperação internacional) é mais adequado para a provisão.
 

@@ -22,6 +22,7 @@ A literatura acadêmica sobre economia da saúde é vasta. As referências centr
 | 23.4 | Como segurar saúde quando o segurado sabe mais que a seguradora? | Moral hazard e seleção adversa em seguros de saúde | [Seguros](seguros-sistemas.md#234) |
 | 23.5 | SUS, NHS, Medicare — qual sistema funciona melhor? | Sistemas de saúde comparados | [Sistemas](seguros-sistemas.md#235) |
 | 23.6 | Quanto vale um ano de vida a mais — e como medir isso? | Avaliação econômica: ACE, ACU, QALY | [Avaliação](avaliacao-externalidades.md#236) |
+| 23.7 | Quanto custa um comprimido — e quem decide o preço? | CMED, genéricos, Farmácia Popular, regulação de preços | [Regulação Farmacêutica](regulacao-farmaceutica.md#237) |
 | 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
 | 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 

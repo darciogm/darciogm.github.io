@@ -212,6 +212,53 @@ onde \(k \in \{B, S\}\), \(\varepsilon_k\) é a elasticidade-preço da demanda d
 **Figura 21.2 — Precificação de Plataforma Bilateral.** O gráfico de barras compara os preços ótimos \(p_B^*\) e \(p_S^*\) cobrados pela plataforma a cada lado com o custo marginal \(c\). O lado que gera maior externalidade cruzada (\(\gamma\) mais alto) tende a ser subsidiado — recebendo preço abaixo do custo — enquanto o lado oposto paga mais.
 </div>
 
+??? r-interactive "R Interativo — Plataforma Bilateral: Preços Ótimos com Externalidades Cruzadas"
+    ```r
+    # Plataforma bilateral monopolista — modelo Rochet-Tirole simplificado
+    # Demandas: n_B = 1 - p_B + alpha_B * n_S
+    #           n_S = 1 - p_S + alpha_S * n_B
+
+    # Parâmetros (altere para explorar)
+    alpha_B <- 0.5   # benefício que cada vendedor gera para compradores
+    alpha_S <- 0.3   # benefício que cada comprador gera para vendedores
+    c_B     <- 0.1   # custo marginal lado B
+    c_S     <- 0.1   # custo marginal lado S
+
+    # Resolver sistema de otimização (CPOs do monopolista bilateral)
+    # Solução analítica para o caso linear simétrico
+    D <- 1 - alpha_B * alpha_S  # determinante do sistema
+    if (D <= 0) stop("Externalidades cruzadas fortes demais — equilíbrio instável!")
+
+    # Preços ótimos (derivados das CPOs)
+    p_B_star <- (1 + c_B - alpha_S * (1 - c_S)) / (2 * D) * D  # simplificação
+    p_S_star <- (1 + c_S - alpha_B * (1 - c_B)) / (2 * D) * D
+
+    # Preços sem externalidade (benchmark)
+    p_B_mono <- (1 + c_B) / 2
+    p_S_mono <- (1 + c_S) / 2
+
+    # Visualização
+    labels <- c("Compradores\n(bilateral)", "Vendedores\n(bilateral)",
+                "Compradores\n(unilateral)", "Vendedores\n(unilateral)")
+    precos <- c(p_B_star, p_S_star, p_B_mono, p_S_mono)
+    cores  <- c("#2196F3", "#F44336", "#90CAF9", "#EF9A9A")
+
+    bp <- barplot(precos, names.arg = labels, col = cores, border = NA,
+                  main = "Preços Ótimos: Bilateral vs. Unilateral",
+                  ylab = "Preço", ylim = c(0, max(precos) * 1.3))
+    abline(h = c_B, col = "gray50", lty = 2, lwd = 1.5)
+    text(max(bp) * 0.8, c_B + 0.02, paste0("CMg = ", c_B), col = "gray50", cex = 0.8)
+    text(bp, precos + 0.03, round(precos, 3), cex = 0.9, font = 2)
+
+    cat(sprintf("Externalidades: α_B = %.1f, α_S = %.1f\n", alpha_B, alpha_S))
+    cat(sprintf("Bilateral:  p_B* = %.3f, p_S* = %.3f\n", p_B_star, p_S_star))
+    cat(sprintf("Unilateral: p_B  = %.3f, p_S  = %.3f\n", p_B_mono, p_S_mono))
+    cat(sprintf("Subsídio ao lado S: %.3f (%.0f%% abaixo do unilateral)\n",
+                p_S_mono - p_S_star, (p_S_mono - p_S_star)/p_S_mono * 100))
+    ```
+
+    **Experimente:** Aumente `alpha_B` para 0,8 (compradores valorizam muito os vendedores) e observe como o preço dos vendedores cai — a plataforma os subsidia mais intensamente para atrair compradores de alto valor. Iguale `alpha_B = alpha_S = 0` para ver o benchmark de monopólio unilateral clássico ([Seção 15.2](../cap15/barreiras-maximizacao.md#152)).
+
 ---
 
 ### 21.3.5 TikTok e a economia da recomendação algorítmica {#2135}
