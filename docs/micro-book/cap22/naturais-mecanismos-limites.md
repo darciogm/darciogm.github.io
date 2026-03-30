@@ -261,7 +261,7 @@ O caso mais emblemático é o sistema de **troca de rins** (*kidney exchange*). 
 
     **Fonte:** Roth, A. E.; Sönmez, T.; Ünver, M. U. 2004. Kidney Exchange. *Quarterly Journal of Economics*, 119(2), 457–488.
 
-??? exercicio-resolvido "Exercício Resolvido 22.3 — Overbidding em leilão de segundo preço"
+??? exercicio-resolvido "Exercício Resolvido 22.6 — Overbidding em leilão de segundo preço"
     **Enunciado.** Em um leilão de segundo preço com dois participantes, os valores são sorteados independentemente de uma distribuição uniforme em \([0, 100]\). O jogador 1 tem valor \(v_1 = 60\).
 
     (a) Mostre que, no equilíbrio de Nash, a estratégia dominante é \(b_i = v_i\) (dar lance igual ao valor).

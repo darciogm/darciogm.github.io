@@ -46,7 +46,7 @@ A tabela abaixo apresenta exemplos brasileiros para cada categoria:
 !!! note "Bens Públicos Locais e Globais"
     A provisão de bens públicos pode ter escala local (iluminação de uma rua), regional (defesa costeira), nacional (sistema judiciário) ou global (estabilidade climática, erradicação de doenças). A escala determina qual nível de governo (ou cooperação internacional) é mais adequado para a provisão.
 
-??? exercicio-resolvido "ER 20.5 — Classificação de bens"
+??? exercicio-resolvido "Exercício Resolvido 20.5 — Classificação de bens"
 
     **Enunciado.** Classifique os seguintes bens como privado, público puro, de clube ou recurso comum: (a) Wi-Fi aberto em praça pública; (b) Vacina contra febre amarela; (c) Peixe no Rio São Francisco; (d) Pedágio da Rodovia dos Bandeirantes; (e) Código-fonte do Linux.
 
@@ -116,7 +116,7 @@ u'(W_i - g_i) = v'(G) \implies TMS_i = 1
 
 Mas a condição de eficiência requer \(\sum TMS_i = 1\), ou seja, \(TMS_i = 1/N\) para indivíduos idênticos. Como \(1 > 1/N\), cada indivíduo demanda benefício marginal excessivamente alto, resultando em \(G^{priv} < G^*\): o bem público é **subprovido**.
 
-??? exercicio-resolvido "ER 20.6 — Condição de Samuelson com utilidade Cobb-Douglas"
+??? exercicio-resolvido "Exercício Resolvido 20.6 — Condição de Samuelson com utilidade Cobb-Douglas"
 
     **Enunciado.** Dois consumidores com utilidade \(U_i = x_i^{1/2} \cdot G^{1/2}\) e renda \(W_i = 100\). Custo do bem público: \(C(G) = G\). Derive a condição de Samuelson e encontre \(G^*\).
 

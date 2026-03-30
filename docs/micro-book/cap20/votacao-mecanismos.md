@@ -85,7 +85,7 @@ Esse imposto corresponde ao "custo" que a presença de \(i\) impõe sobre os dem
 !!! note "Limitações do VCG"
     O mecanismo VCG não é equilibrado orçamentariamente (os impostos pivotais não cobrem o custo total), pode ser vulnerável a coalizões, e requer que as valorações sejam **quase-lineares** (utilidade transferível). Na prática, sua aplicação direta é rara, mas o princípio inspira mecanismos em leilões (como o leilão de Vickrey) e em design de mercados.
 
-??? exercicio-resolvido "ER 20.8 — Mecanismo de Clarke para bem público discreto"
+??? exercicio-resolvido "Exercício Resolvido 20.8 — Mecanismo de Clarke para bem público discreto"
 
     **Enunciado.** Três vizinhos decidem se constroem uma calçada (custo = R$900, dividido igualmente em R$300 cada). Valorações: \(v_A = 400\), \(v_B = 350\), \(v_C = 100\). (a) A calçada deve ser construída? (b) Quem é pivotal? (c) Calcule os impostos pivotais.
 

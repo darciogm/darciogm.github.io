@@ -8,7 +8,7 @@ O diagrama abaixo mostra as dependências entre capítulos. Setas indicam pré-r
 
 - Capítulos à esquerda são mais fundamentais; à direita, mais avançados
 - Cores indicam a parte do livro (ver legenda no diagrama)
-- Siga qualquer caminho de setas para uma sequência de leitura v��lida
+- Siga qualquer caminho de setas para uma sequência de leitura válida
 
 ---
 
@@ -150,7 +150,7 @@ As trilhas abaixo organizam o livro por curso ou tema. Cada trilha é autocontid
     1 → 3 → 4 → 5 → 6 → 10 → 11 → 12 → 13 → 15 → 16 → 9a → 20
 
 !!! tip "Trilha Completa: Pós-Graduação (~30 aulas)"
-    2 → 3 → 4 �� 5 → 9a → 9b → 9c → 9d → 10 → 11 → 13 → 14 → 15 → 16 → 19
+    2 → 3 → 4 → 5 → 9a → 9b → 9c → 9d → 10 → 11 → 13 → 14 → 15 → 16 → 19
 
 !!! tip "Trilha Aplicada: Tópicos Contemporâneos (~15 aulas)"
     8 → 19 → 20 → 21 → 22 → 23 → 24

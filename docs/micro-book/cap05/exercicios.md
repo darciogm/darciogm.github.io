@@ -91,7 +91,7 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 | Preferência revelada | Abordagem que infere racionalidade e relações de preferência a partir de escolhas observadas, sem postular funções de utilidade. |
 
 <div class="caption-obj" markdown>
-**Tabela 5.2 — Conceitos-chave.**
+**Tabela 5.3 — Conceitos-chave.**
 </div>
 
 ## Exercícios

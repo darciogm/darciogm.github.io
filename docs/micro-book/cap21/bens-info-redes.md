@@ -205,7 +205,7 @@ A IA generativa altera a cadeia de valor de indústrias inteiras:
 
 ---
 
-!!! example "Exercício Resolvido 21.2 — Algoritmo de recomendação como discriminação de preços"
+!!! example "Exercício Resolvido 21.7 — Algoritmo de recomendação como discriminação de preços"
     **Enunciado.** A Netflix oferece o mesmo catálogo a todos os assinantes, mas usa um algoritmo de recomendação que personaliza a experiência. Suponha dois tipos de consumidor: cinéfilos (\(\theta_H\)) com disposição a pagar \(v_H = 60\) e casuais (\(\theta_L\)) com \(v_L = 25\). Sem personalização, o catálogo tem valor intrínseco \(q_0 = 0{,}5\) para ambos (utilidade \(u_i = \theta_i \cdot q - p\)). O algoritmo eleva a qualidade percebida para \(q_A = 0{,}9\) (ao recomendar conteúdo relevante). O custo marginal é zero.
 
     (a) Sem personalização (\(q = 0{,}5\)): qual o preço ótimo de preço único?
@@ -222,7 +222,7 @@ A IA generativa altera a cadeia de valor de indústrias inteiras:
 
     **(c)** A personalização algorítmica funciona como **discriminação de preços de segundo grau** (versioning, [Seção 15.7](../cap15/qualidade-discriminacao.md#157)): a plataforma oferece experiências de qualidade diferente (recomendações genéricas vs. personalizadas) e os consumidores se autosselecionam. Na prática, quando a personalização é igual para todos mas aumenta o valor percebido, ela **eleva a disposição a pagar média**, permitindo preços maiores — uma forma indireta de aproximação à discriminação de primeiro grau.
 
-!!! example "Exercício Resolvido 21.3 — Modelo de negócios Nubank vs. bancões"
+!!! example "Exercício Resolvido 21.8 — Modelo de negócios Nubank vs. bancões"
     **Enunciado.** O Nubank opera como plataforma bilateral: conecta depositantes (lado 1) a tomadores de crédito (lado 2). Compare o modelo com o de um banco tradicional, sabendo que:
 
     - Nubank: custo fixo de plataforma \(F = 500\) milhões; custo marginal por cliente \(c = 5\); sem agências; efeito de rede indireto \(\alpha = 0{,}2\) (mais clientes → mais dados → melhor *credit scoring* → menores spreads → mais clientes).

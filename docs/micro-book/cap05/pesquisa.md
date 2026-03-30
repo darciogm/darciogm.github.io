@@ -31,7 +31,7 @@
 
     **Por que isso importa:** Em países em desenvolvimento, incluindo o Brasil, os microdados de pesquisas domiciliares (POF/IBGE) são muitas vezes a única fonte disponível para estimar demanda. O método de Deaton tornou-se o padrão para extrair elasticidades desses dados — conectando diretamente as restrições teóricas da Seção 5.7 (simetria, homogeneidade, agregação de Engel) à prática econométrica.
 
-    **Relevância para o capítulo:** O artigo operacionaliza empiricamente as elasticidades definidas na Seção 5.7, mostrando como as restrições teóricas (simetria de Slutsky, condição de homogeneidade) são impostas na estimação. É também a base metodológica de muitas estimativas da Tabela 5.1.
+    **Relevância para o capítulo:** O artigo operacionaliza empiricamente as elasticidades definidas na Seção 5.7, mostrando como as restrições teóricas (simetria de Slutsky, condição de homogeneidade) são impostas na estimação. É também a base metodológica de muitas estimativas da Tabela 5.2.
 
 ??? pesquisa "Attanasio, O.; Pistaferri, L. (2016). [Consumption Inequality](https://doi.org/10.1257/jep.30.2.3). *Journal of Economic Perspectives*, 30(2), 3–28."
     **Pergunta central:** O que os dados de consumo nos dizem sobre a evolução da desigualdade econômica — e por que as medidas baseadas em consumo frequentemente diferem das medidas baseadas em renda?

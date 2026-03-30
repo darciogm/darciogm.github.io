@@ -129,7 +129,7 @@ Como \(t^* = E'(q^{soc})\), a firma internaliza o custo externo e produz \(q_1^{
 !!! tip "Subsídio Pigouviano"
     De forma simétrica, para externalidades positivas, o instrumento pigouviano é um **subsídio** por unidade igual ao benefício marginal externo: \(s^* = B'^{ext}(q^{soc})\). Isso eleva a quantidade produzida/consumida até o nível socialmente eficiente.
 
-??? exercicio-resolvido "ER 20.1 — Imposto pigouviano ótimo com custo quadrático"
+??? exercicio-resolvido "Exercício Resolvido 20.1 —Imposto pigouviano ótimo com custo quadrático"
 
     **Enunciado.** Uma firma produz \(q\) unidades ao preço \(P = 100\), com custo \(C(q) = 10q + q^2\). A produção gera custo externo \(E(q) = 0{,}5q^2\). (a) Encontre \(q^{priv}\) e \(q^{soc}\). (b) Calcule o imposto pigouviano ótimo. (c) Calcule o DWL eliminado.
 
@@ -177,7 +177,7 @@ C'(q) + E'(q) = P
 !!! question "Nobel de Economia 1991 — Ronald Coase"
     Ronald Coase recebeu o Prêmio Nobel "por sua descoberta e elucidação do significado dos custos de transação e dos direitos de propriedade para a estrutura institucional e o funcionamento da economia." O artigo seminal "The Problem of Social Cost" (1960) desafiou a prescrição pigouviana dominante, mostrando que a atribuição de direitos de propriedade e a barganha privada podem, sob certas condições, resolver o problema das externalidades sem intervenção estatal. Coase também introduziu o conceito de custos de transação como determinante da fronteira entre firma e mercado em "The Nature of the Firm" (1937).
 
-??? exercicio-resolvido "ER 20.2 — Negociação coaseana: fazendeiro vs. apicultor"
+??? exercicio-resolvido "Exercício Resolvido 20.2 —Negociação coaseana: fazendeiro vs. apicultor"
 
     **Enunciado.** Um fazendeiro cria gado (\(n\) cabeças) com lucro \(\pi_F(n) = 80n - 2n^2\). O gado danifica a lavoura vizinha em \(D(n) = n^2\). (a) Encontre \(n^{priv}\) e \(n^{soc}\). (b) Mostre que a negociação leva a \(n^{soc}\) independentemente de quem detém o direito.
 
@@ -232,7 +232,7 @@ p_E = t^* = E'(q^{soc})
 
 A equivalência entre imposto e cap-and-trade sob certeza (Weitzman, 1974) é um resultado fundamental. Sob **incerteza**, porém, os instrumentos diferem: o imposto fixa o preço e deixa a quantidade flutuar; o cap fixa a quantidade e deixa o preço flutuar. A escolha ótima depende das elasticidades relativas dos custos de abatimento e dos danos marginais.
 
-??? exercicio-resolvido "ER 20.3 — Cap-and-trade com duas firmas"
+??? exercicio-resolvido "Exercício Resolvido 20.3 —Cap-and-trade com duas firmas"
 
     **Enunciado.** Duas firmas emitem 100 ton cada. Custos de abatimento: \(CA_1(a_1) = 3a_1^2\), \(CA_2(a_2) = a_2^2\). O regulador impõe redução total de 80 ton. (a) Encontre a alocação custo-efetiva. (b) Calcule o preço de equilíbrio da permissão. (c) Compare com abatimento uniforme.
 
@@ -244,7 +244,7 @@ A equivalência entre imposto e cap-and-trade sob certeza (Weitzman, 1974) é um
 
     **(c)** Custo eficiente: \(3(20)^2 + (60)^2 = 1200 + 3600 = 4800\). Uniforme (\(a_i = 40\)): \(3(40)^2 + (40)^2 = 4800 + 1600 = 6400\). Economia: \(6400 - 4800 = 1600\) (25%).
 
-??? exercicio-resolvido "ER 20.4 — Imposto vs. cap-and-trade sob incerteza (Weitzman)"
+??? exercicio-resolvido "Exercício Resolvido 20.4 —Imposto vs. cap-and-trade sob incerteza (Weitzman)"
 
     **Enunciado.** O regulador estima o custo marginal de abatimento como \(CMgA = 2a\), mas o verdadeiro é \(CMgA = 4a\). O dano marginal é constante: \(D' = 60\). Compare os resultados sob imposto \(t = 60\) e cap \(\bar{a} = 30\).
 

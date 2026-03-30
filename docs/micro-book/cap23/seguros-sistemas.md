@@ -43,22 +43,22 @@ O problema: para o tipo \(L\), o prêmio do pool \(\bar{P}\) pode exceder sua di
 
     **Fonte:** ANS, *Dados Gerais do Setor*, 2024; ANS TabNet; [DATASUS](https://datasus.saude.gov.br/), Sistema de Informações de Beneficiários (SIB); Andrade, M.V. e Maia, A.C. (2009), "Diferenciais de utilização do cuidado de saúde no sistema suplementar brasileiro", *Estudos Econômicos*, 39(1), 7–38.
 
-O modelo de Rothschild e Stiglitz (1976), estudado no Capítulo 19, mostra que o equilíbrio competitivo com seleção adversa — quando existe — envolve **contratos separadores**: o tipo alto risco recebe cobertura completa a prêmio alto; o tipo baixo risco recebe cobertura parcial a prêmio baixo. Nenhuma firma lucra, mas o tipo baixo risco sofre uma externalidade negativa: seu contrato é distorcido pela presen��a do tipo alto risco.
+O modelo de Rothschild e Stiglitz (1976), estudado no Capítulo 19, mostra que o equilíbrio competitivo com seleção adversa — quando existe — envolve **contratos separadores**: o tipo alto risco recebe cobertura completa a prêmio alto; o tipo baixo risco recebe cobertura parcial a prêmio baixo. Nenhuma firma lucra, mas o tipo baixo risco sofre uma externalidade negativa: seu contrato é distorcido pela presença do tipo alto risco.
 
 No gráfico interativo abaixo, simule a espiral da morte: ajuste a proporção de tipos e a disposição a pagar, e observe como o mercado de seguros colapsa iteração a iteração.
 
-<iframe src="/micro-book/graficos/cap23/espiral-morte.html" title="Figura 23.2 — Espiral da Morte em Seguros de Saúde" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap23/espiral-morte.html" title="Figura 23.3 — Espiral da Morte em Seguros de Saúde" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 23.2 — Espiral da Morte em Seguros de Saúde.** Ajuste a proporção de tipos alto e baixo risco e observe o processo iterativo: a cada rodada, os baixo risco saem, o prêmio sobe e o pool encolhe — até restar apenas alto risco ou o mercado colapsar.
+**Figura 23.3 — Espiral da Morte em Seguros de Saúde.** Ajuste a proporção de tipos alto e baixo risco e observe o processo iterativo: a cada rodada, os baixo risco saem, o prêmio sobe e o pool encolhe — até restar apenas alto risco ou o mercado colapsar.
 </div>
 
 No diagrama de Rothschild-Stiglitz abaixo, visualize o equilíbrio separador no espaço riqueza-estado: linhas de lucro zero para cada tipo e o resultado de que o tipo baixo risco é forçado a aceitar cobertura parcial.
 
-<iframe src="/micro-book/graficos/cap23/selecao-adversa-saude.html" title="Figura 23.2b — Seleção Adversa: Diagrama de Rothschild-Stiglitz" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap23/selecao-adversa-saude.html" title="Figura 23.3b — Seleção Adversa: Diagrama de Rothschild-Stiglitz" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 23.2b — Rothschild-Stiglitz em Saúde.** As retas de lucro zero (vermelho para alto risco, azul para baixo risco) partem da dotação inicial \(E\). O tipo H recebe seguro completo (sobre a linha de 45°); o tipo L recebe cobertura parcial — o custo informacional da assimetria.
+**Figura 23.3b — Rothschild-Stiglitz em Saúde.** As retas de lucro zero (vermelho para alto risco, azul para baixo risco) partem da dotação inicial \(E\). O tipo H recebe seguro completo (sobre a linha de 45°); o tipo L recebe cobertura parcial — o custo informacional da assimetria.
 </div>
 
 ### 23.4.2 Risco moral em seguros de saúde
@@ -85,10 +85,10 @@ DWL = \frac{1}{2} \cdot \alpha \cdot p \cdot \Delta Q \tag{23.14}
 
 No gráfico interativo abaixo, ajuste a taxa de coparticipação e o custo por consulta para visualizar a cunha do seguro, o excesso de utilização e a perda de peso morto do risco moral.
 
-<iframe src="/micro-book/graficos/cap23/moral-hazard-saude.html" title="Figura 23.3 — Risco Moral em Saúde: Copagamento e Peso Morto" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap23/moral-hazard-saude.html" title="Figura 23.4 — Risco Moral em Saúde: Copagamento e Peso Morto" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 23.3 — Risco Moral em Saúde.** Ajuste a coparticipação \(r\) de 0 (cobertura total) a 1 (sem seguro). Com \(r = 0\), o paciente paga nada e consome até onde a demanda cruza o eixo — gerando máximo peso morto. Com \(r = 1\), consome no nível eficiente, mas perde toda a proteção contra risco.
+**Figura 23.4 — Risco Moral em Saúde.** Ajuste a coparticipação \(r\) de 0 (cobertura total) a 1 (sem seguro). Com \(r = 0\), o paciente paga nada e consome até onde a demanda cruza o eixo — gerando máximo peso morto. Com \(r = 1\), consome no nível eficiente, mas perde toda a proteção contra risco.
 </div>
 
 ### 23.4.3 Ajuste de risco e mecanismos de estabilização
@@ -125,7 +125,7 @@ Outros mecanismos de estabilização incluem:
 
     **Lição microeconômica:** Nenhum pilar funciona isoladamente. Sem mandato, os subsídios atraem alto risco. Sem subsídios, o mandato é regressivo. Sem community rating, as seguradoras fogem dos doentes. O pacote é complementar — exatamente como previsto pela teoria de Rothschild-Stiglitz.
 
-!!! exercicio-resolvido "ER 23.2 — Copagamento ótimo"
+!!! exercicio-resolvido "Exercício Resolvido 23.2 — Copagamento ótimo"
     **Problema:** Um seguro de saúde cobre consultas médicas. A demanda por consultas é \(Q = 20 - 0{,}1p\), onde \(p\) é o preço percebido pelo paciente. O custo por consulta é \(c = 100\). O seguro cobre uma fração \(\alpha\) do custo, de modo que o paciente paga \(p = (1-\alpha) \cdot c\).
 
     (a) Quantas consultas o paciente demanda com cobertura total (\(\alpha = 1\))?

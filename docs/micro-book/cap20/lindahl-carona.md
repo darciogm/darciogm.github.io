@@ -13,7 +13,7 @@
 
 O equilíbrio de Lindahl é eficiente por construção, mas enfrenta um problema prático fundamental: para implementá-lo, o governo (ou o mecanismo) precisa conhecer as preferências individuais de cada cidadão — informação que os cidadãos têm incentivo para **não revelar de forma verdadeira**, conforme discutiremos na seção sobre o problema do carona.
 
-??? exercicio-resolvido "ER 20.7 — Preços de Lindahl com três consumidores"
+??? exercicio-resolvido "Exercício Resolvido 20.7 — Preços de Lindahl com três consumidores"
 
     **Enunciado.** Três consumidores com benefícios marginais \(BMg_A = 50 - 2G\), \(BMg_B = 40 - G\), \(BMg_C = 30 - G\). O custo marginal é \(CMg = 60\). Encontre o nível eficiente e os preços de Lindahl.
 

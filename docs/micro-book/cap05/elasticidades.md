@@ -70,9 +70,9 @@ As elasticidades definidas acima não são independentes entre si. As restriçõ
 
 ### 5.7.5 Elasticidades estimadas para o Brasil
 
-As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. Essa propriedade de interdependência tem implicações práticas: em pesquisas que estimam sistemas de demanda com poucos graus de liberdade, as condições de Engel e Cournot permitem "emprestar" informação de um bem para refinar a estimação de outro. A [Tabela 5.1](#tabela-5-1) apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
+As relações de agregação acima não são apenas curiosidades teóricas — elas podem ser usadas para verificar a consistência de estimativas empíricas e para inferir elasticidades desconhecidas a partir de elasticidades estimadas, como ilustra o Exercício Resolvido 5.1 adiante. Essa propriedade de interdependência tem implicações práticas: em pesquisas que estimam sistemas de demanda com poucos graus de liberdade, as condições de Engel e Cournot permitem "emprestar" informação de um bem para refinar a estimação de outro. A [Tabela 5.2](#tabela-5-2) apresenta estimativas de elasticidades-preço e elasticidade-renda para categorias selecionadas de bens no Brasil, com base em estudos da POF/IBGE e pesquisas do IPEA.
 
-<a id="tabela-5-1"></a>
+<a id="tabela-5-2"></a>
 
 | Categoria de Bem | Elasticidade-preço (\(\varepsilon_{x,p}\)) | Elasticidade-renda (\(\varepsilon_{x,I}\)) | Classificação |
 |:---|:---:|:---:|:---|
@@ -88,7 +88,7 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 | Cigarros e tabaco | \(-0{,}35\) | \(0{,}25\) | Inelástica; necessidade |
 
 <div class="caption-obj" markdown>
-**Tabela 5.1 — Elasticidades estimadas para o Brasil.** Fontes: POF/IBGE (2017-2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.
+**Tabela 5.2 — Elasticidades estimadas para o Brasil.** Fontes: POF/IBGE (2017-2018); Almeida e Azzoni (2016); Cardoso et al. (2019); Notas Técnicas IPEA.
 </div>
 
 !!! note "Observações sobre a tabela"

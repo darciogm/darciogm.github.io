@@ -51,7 +51,7 @@ Os resultados principais:
 
     **Por que isso importa:** O RAND é a base empírica para o design de praticamente todos os planos de saúde modernos. A ideia de franquias, copagamentos e tetos de gastos (*out-of-pocket maximums*) vem diretamente dos achados do RAND.
 
-!!! exercicio-resolvido "ER 23.1 — Elasticidade e gasto com saúde"
+!!! exercicio-resolvido "Exercício Resolvido 23.1 — Elasticidade e gasto com saúde"
     **Problema:** Se a elasticidade-preço da demanda por cuidados médicos é \(\varepsilon = -0{,}2\) e o governo introduz um copagamento de 20% (o preço efetivo para o paciente passa de 0 para 20% do custo), qual a variação percentual esperada no gasto?
 
     **Solução:**
@@ -93,10 +93,10 @@ Na prática, isso implica que internações hospitalares (demanda inelástica, c
 
 No gráfico interativo abaixo, ajuste a taxa de cobertura do seguro e observe como o risco moral afeta a quantidade demandada de cuidados médicos e a perda de bem-estar associada.
 
-<iframe src="/micro-book/graficos/cap23/demanda-saude.html" title="Figura 23.1 — Seguro de Saúde e Risco Moral" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap23/demanda-saude.html" title="Figura 23.2 — Seguro de Saúde e Risco Moral" class="graph-iframe" style="height:600px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
-**Figura 23.1 — Seguro de Saúde e Risco Moral.** Ajuste a taxa de cobertura \(\alpha\) do seguro e observe como o preço percebido pelo paciente cai, a quantidade demandada aumenta além do ótimo e o triângulo de perda de bem-estar (risco moral) se expande.
+**Figura 23.2 — Seguro de Saúde e Risco Moral.** Ajuste a taxa de cobertura \(\alpha\) do seguro e observe como o preço percebido pelo paciente cai, a quantidade demandada aumenta além do ótimo e o triângulo de perda de bem-estar (risco moral) se expande.
 </div>
 
 ---

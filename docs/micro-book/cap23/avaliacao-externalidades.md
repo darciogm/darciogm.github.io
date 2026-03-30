@@ -59,7 +59,7 @@ A literatura empírica estima VSL entre US$ 4–10 milhões em países de alta r
 !!! warning "Cuidado"
     O VSL **não** significa que "uma vida vale X reais". Significa que, *na margem*, as pessoas revelam estar dispostas a pagar X para reduzir em 1 unidade o risco estatístico de morte. É uma medida de preferências reveladas, não uma declaração ética sobre o valor intrínseco da vida. Mas como depende da renda (ricos podem pagar mais por segurança), o VSL levanta questões sérias de equidade — o VSL dos ricos é maior, mas suas vidas não "valem mais".
 
-!!! exercicio-resolvido "ER 23.3 — QALYs e decisão de investimento"
+!!! exercicio-resolvido "Exercício Resolvido 23.3 — QALYs e decisão de investimento"
     **Problema:** O governo avalia duas campanhas de saúde pública:
 
     - **Campanha A** (rastreamento de câncer): custa R$ 50 milhões e gera 5.000 QALYs.
