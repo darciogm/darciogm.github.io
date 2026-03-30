@@ -289,6 +289,10 @@
 
 ## Metodologia e Econometria Aplicada
 
+- Angrist, Joshua D., e Jörn-Steffen Pischke. 2009. [*Mostly Harmless Econometrics: An Empiricist's Companion*](https://books.google.com/books?id=ztXL21Xd8v8C). Princeton: Princeton University Press.
+- Cunningham, Scott. 2021. [*Causal Inference: The Mixtape*](https://mixtape.scunning.com/). New Haven: Yale University Press.
+- Duflo, Esther. 2017. "[The Economist as Plumber](https://doi.org/10.1257/aer.p20171153)." *American Economic Review* 107 (5): 1–26.
+- Levitt, Steven D., e Stephen J. Dubner. 2005. [*Freakonomics: A Rogue Economist Explores the Hidden Side of Everything*](https://books.google.com/books?id=3LQ1l7SsezgC). New York: William Morrow.
 - Angrist, Joshua D., e Jörn-Steffen Pischke. 2010. "[The Credibility Revolution in Empirical Economics: How Better Research Design Is Taking the Con out of Econometrics](https://doi.org/10.1257/jep.24.2.3)." *Journal of Economic Perspectives* 24 (2): 3–30.
 - Friedman, Milton. 1953. "The Methodology of Positive Economics." In [*Essays in Positive Economics*](https://books.google.com/books?id=6Uhev5fmBgUC). Chicago: University of Chicago Press.
 
