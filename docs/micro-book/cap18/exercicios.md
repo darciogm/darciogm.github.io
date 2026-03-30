@@ -1,5 +1,11 @@
 # Exercícios — Capítulo 18
 
+!!! tip "Dados para exercicios empiricos"
+    - **BCB/SGS (taxa Selic):** [bcb.gov.br](https://www.bcb.gov.br/estatisticas) — Serie 432 (Selic acumulada) para calcular VPL de projetos a diferentes taxas de desconto e analisar o impacto dos juros altos sobre investimento de longa maturacao no Brasil.
+    - **ANP (petroleo e gas):** [gov.br/anp](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos) — Dados de producao e reservas de petroleo para testar a regra de Hotelling: o preco do petroleo cresce a taxa de juros?
+    - **IPEA (taxa de juros real):** [ipeadata.gov.br](https://www.ipeadata.gov.br) — Series de juros reais para comparar VPL de projetos no Brasil vs. paises com juros baixos.
+    - **Notebook:** [N15 — Desconto intertemporal](../notebooks/index.md) (exponencial vs. quasi-hiperbolico).
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

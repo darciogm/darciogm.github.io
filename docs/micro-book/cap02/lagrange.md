@@ -68,6 +68,17 @@ Substituindo na restrição: $p_1 x_1 + p_1 x_1 = m \Rightarrow x_1^* = m/(2p_1)
 
 **Resultado:** Com Cobb-Douglas simétrica, o consumidor gasta metade da renda em cada bem — independentemente dos preços! Esse resultado é generalizado no [Capítulo 4, Seção 4.10](../cap04/catalogo.md).
 
+!!! brasil "Lagrange no Salário Mínimo Brasileiro"
+    **Aplicação numérica com dados reais.** Em 2024, o salário mínimo brasileiro era $m = \text{R\$ }1.412$. Suponha que uma família de baixa renda aloca sua cesta entre *alimentação* ($x_1$, preço médio por "unidade-cesta" de R$ 450/mês segundo a POF 2017–2018 atualizada pelo IPCA) e *todos os demais bens* ($x_2$, preço normalizado $p_2 = 1$, de modo que $x_2$ mede o gasto em reais).
+
+    Com preferências Cobb-Douglas $U = x_1^\alpha x_2^{1-\alpha}$, a solução do Lagrange produz:
+
+    $$x_1^* = \frac{\alpha \, m}{p_1} = \frac{0{,}22 \times 1412}{450} \approx 0{,}69 \quad ; \quad x_2^* = (1 - \alpha)\,m = 0{,}78 \times 1412 \approx \text{R\$ }1.101$$
+
+    onde $\alpha \approx 0{,}22$ é a participação alimentar estimada pela POF para o primeiro quintil de renda. O preço-sombra $\lambda^* = \alpha^{\alpha}(1-\alpha)^{1-\alpha} m^{-1} p_1^{-\alpha}$ mede o ganho de bem-estar por real adicional de renda. Para essa família, cada R$ 1 a mais de salário vale significativamente mais em utilidade do que para famílias de renda alta — formalização direta da utilidade marginal decrescente da renda.
+
+    **Fonte de dados:** POF 2017–2018 (IBGE/SIDRA, Tabela 7169); IPCA/IBGE; salário mínimo (Decreto 11.864/2023).
+
 ---
 
 ## 2.6 O Preço-Sombra: O Que $\lambda$ Realmente Significa {#26}

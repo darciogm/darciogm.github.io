@@ -90,6 +90,9 @@ A tabela ilustra dois pontos fundamentais: (i) o VPL é decrescente na taxa de d
 
 ## 18.11 Extrair Hoje ou Deixar no Solo: A Regra de Hotelling {#1811}
 
+!!! info "Material Avançado"
+    O modelo completo de Hotelling com custo de extração crescente, backstop technology e incerteza sobre reservas é **material complementar** — pode ser omitido numa primeira leitura sem perda de continuidade. A versão básica (regra $\dot{p}/p = r$) é suficiente para a maioria dos cursos de graduação. A versão completa é recomendada para cursos de pós-graduação e para a conexão com o [Capítulo 24 (Economia Ambiental)](../cap24/index.md).
+
 VPL e TIR funcionam bem quando o ativo em questão foi construído por mãos humanas — uma fábrica, um galpão, um software. Mas o que fazer com aquilo que a natureza criou e que, uma vez consumido, não volta? Petróleo, minério de ferro, mogno nativo: são estoques finitos, e cada barril extraído hoje é um barril a menos para amanhã. Isso cria um dilema intertemporal que nenhum engenheiro de produção resolve sozinho: extrair agora e aplicar o dinheiro, ou deixar o recurso no solo apostando que valerá mais no futuro? A resposta, formalizada por Harold Hotelling em 1931, é uma das proposições mais elegantes da economia dos recursos naturais.
 
 ### O problema do recurso exaurível

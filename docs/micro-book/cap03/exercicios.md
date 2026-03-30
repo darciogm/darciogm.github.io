@@ -1,5 +1,10 @@
 # Exercícios e ANPEC
 
+!!! tip "Dados para exercicios empiricos"
+    - **POF/IBGE (cestas de consumo):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br) — Tabelas 7169–7175 (POF 2017-2018). Explore como familias de diferentes faixas de renda alocam gastos entre alimentacao, transporte e lazer — revelando preferencias diferentes.
+    - **PNAD Continua (consumo e renda):** [ibge.gov.br/pnadc](https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html) — Series trimestrais para analisar como a composicao do consumo muda com a renda (curvas de Engel).
+    - **Notebook:** [N1 — Elasticidades de alimentos](../notebooks/index.md) (POF 2017-2018, metodo de Deaton).
+
 <iframe src="/micro-book/graficos/cap03/webr-utilidade.html" title="WebR — Funções de Utilidade" class="graph-iframe" style="height:1080px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
@@ -55,10 +60,10 @@
     2. **Contagem** (3 min): O professor registra as proporções. Tipicamente, com preferências heterogêneas na turma, o resultado *agregado* pode violar transitividade: A > B, B > C, mas C > A (Paradoxo de Condorcet!).
     3. **Debrief** (5 min):
         - "Se a *turma* fosse uma pessoa, ela seria irracional — prefere A a B, B a C, e C a A. Isso é possível para um indivíduo?" → Não, se satisfaz o axioma de transitividade.
-        - "Mas o *grupo* violou. O que isso significa?" → Agregação de preferências individuais racionais pode gerar intransitividade coletiva — antecipe o Teorema de Arrow (Capítulo 16).
+        - "Mas o *grupo* violou. O que isso significa?" → Agregação de preferências individuais racionais pode gerar intransitividade coletiva — antecipe o Teorema de Arrow (Capítulo 14, Seção 14.12).
         - Feche: "Os axiomas do Capítulo 3 são sobre *indivíduos*. Para *sociedades*, a coisa complica — e Arrow ganhou o Nobel por explicar por quê."
 
-    **Conexão com o conteúdo:** Seções 3.1 (axiomas de completude e transitividade), antecipação do Capítulo 16 (Escolha Social e Teorema de Arrow).
+    **Conexão com o conteúdo:** Seções 3.1 (axiomas de completude e transitividade), antecipação do Capítulo 14, Seção 14.12 (Escolha Social e Teorema de Arrow).
 
 ---
 

@@ -138,6 +138,9 @@ A ferramenta matemática que permite provar a existência do equilíbrio é o **
 
 A intuição é surpreendentemente simples em uma dimensão: se \(f: [0,1] \to [0,1]\) é contínua, então o gráfico de \(f\) necessariamente cruza a diagonal \(y = x\) em pelo menos um ponto — pelo Teorema do Valor Intermediário. Em dimensões superiores, a prova é mais sofisticada (usa o Lema de Sperner ou técnicas de topologia algébrica), mas a intuição permanece: uma função contínua que "mexe" pontos dentro de uma caixa fechada não pode evitar deixar pelo menos um ponto parado.
 
+!!! idea "Intuição Econômica"
+    **A analogia do café com leite.** Pegue uma xícara de café e mexa com uma colher. Cada molécula de café se move — mas Brouwer garante que *pelo menos uma molécula* está exatamente na mesma posição onde começou. Não importa quão vigorosamente você mexa: a continuidade do movimento dentro de um espaço fechado força a existência de um ponto fixo. Arrow e Debreu fizeram a mesma coisa com preços: "mexeram" os preços de todos os bens usando a função de ajuste walrasiano e mostraram que pelo menos uma configuração de preços permanece parada — e essa é o equilíbrio.
+
 ### Estratégia da prova de existência
 
 A prova de existência do equilíbrio segue uma estratégia engenhosa: construímos uma função de ajuste de preços que "corrige" os desequilíbrios e mostramos que seu ponto fixo é o equilíbrio.

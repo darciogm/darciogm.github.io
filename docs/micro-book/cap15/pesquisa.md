@@ -44,7 +44,7 @@
 
     **Resultados.** O resultado central é surpreendente: rotas mais competitivas apresentam *maior* dispersão de preços, não menor. A dispersão de preços aumenta cerca de 10% quando a concentração cai de monopólio para duopólio. Os autores interpretam isso como evidência de que a concorrência intensifica a discriminação de preços: em rotas competitivas, companhias aéreas oferecem tarifas promocionais agressivas para preencher assentos, enquanto mantêm tarifas altas para viajantes de última hora — gerando ampla dispersão.
 
-    **Conexão com o capítulo.** O artigo desafia a intuição de que mais concorrência sempre reduz diferenças de preço. Ele mostra que a discriminação de preços ([Seção 15.7](qualidade-discriminacao.md#157)) não é exclusividade do monopólio — firmas com algum poder de mercado em oligopólios também a praticam intensamente. Esse resultado antecipa temas do Capítulo 16 (Oligopólio) e conecta-se diretamente ao Box Brasil sobre passagens aéreas.
+    **Conexão com o capítulo.** O artigo desafia a intuição de que mais concorrência sempre reduz diferenças de preço. Ele mostra que a discriminação de preços ([Seção 15.7](qualidade-discriminacao.md#157)) não é exclusividade do monopólio — firmas com algum poder de mercado em oligopólios também a praticam intensamente. Esse resultado antecipa temas dos Capítulos 16a–16b (Oligopólio) e conecta-se diretamente ao Box Brasil sobre passagens aéreas.
 
 ??? pesquisa "Wallsten, S. (2001). An Econometric Analysis of Telecom Competition, Privatization, and Regulation in Africa and Latin America. *Journal of Industrial Economics*, 49(1), 1–19."
     **DOI:** [10.1111/1468-2354.t01-1-00106](https://doi.org/10.1111/1468-2354.t01-1-00106)

@@ -1,5 +1,10 @@
 # Exercícios e ANPEC — Capítulo 15
 
+!!! tip "Dados para exercicios empiricos"
+    - **ANEEL (tarifas de energia):** [aneel.gov.br/dados-abertos](https://www.aneel.gov.br/dados-abertos) — Tarifas por distribuidora para calcular indices de Lerner e avaliar regulacao de monopolio natural (price cap vs. taxa de retorno).
+    - **CADE (atos de concentracao):** [cade.gov.br](https://www.gov.br/cade/pt-br) — Pareceres publicos sobre monopolio e abuso de posicao dominante. Analise o caso Ambev ou da Souza Cruz.
+    - **ANS (planos de saude):** [ans.gov.br/dados-abertos](https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-saude-suplementar-ans) — Dados de concentracao de mercado por municipio para identificar monopolios regionais em saude.
+
 ## Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

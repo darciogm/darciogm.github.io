@@ -87,4 +87,5 @@
 - Parker, G.; Van Alstyne, M.; Choudary, S.P. (2016). *Platform Revolution*. W.W. Norton.
 - Rochet, J.-C.; Tirole, J. (2003). Platform Competition in Two-Sided Markets. *Journal of the European Economic Association*, 1(4), 990–1029.
 - Shapiro, C.; Varian, H. (1999). *Information Rules: A Strategic Guide to the Network Economy*. Harvard Business School Press.
-- Tirole, J. (2023). *Competition and Regulation in the Digital Era*. MIT Press.
+- Tirole, J. (2021). Digital Dystopia. *American Economic Review*, 111(6), 2007–2048.
+- Tirole, J. (2023). Competition and the Industrial Challenge for the Digital Age. *Annual Review of Economics*, 15, 573–605.

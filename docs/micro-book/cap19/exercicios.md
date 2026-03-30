@@ -1,5 +1,11 @@
 # Exercícios e ANPEC — Capítulo 19
 
+!!! tip "Dados para exercicios empiricos"
+    - **SUSEP (seguros):** [susep.gov.br/dados-abertos](https://www.gov.br/susep/pt-br/acesso-a-informacao/dados-abertos) — Dados de sinistralidade por tipo de seguro para analisar selecao adversa (segurados de maior risco compram mais cobertura?).
+    - **ANS (planos de saude):** [ans.gov.br](https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-saude-suplementar-ans) — Taxas de sinistralidade por faixa etaria e tipo de plano. Teste a predicao de Rothschild-Stiglitz: planos mais generosos atraem clientes de maior risco.
+    - **CNRM (residencia medica):** Dados do matching de residencia medica para analisar o algoritmo de Gale-Shapley em acao no Brasil.
+    - **Notebook:** [N8 — Gale-Shapley](../notebooks/index.md) (matching de residencia medica).
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

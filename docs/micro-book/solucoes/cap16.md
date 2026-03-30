@@ -1,10 +1,10 @@
 ---
-title: "Soluções — Capítulo 16"
+title: "Soluções — Capítulos 16a–16b"
 ---
 
-# Soluções dos Exercícios — Capítulo 16
+# Soluções dos Exercícios — Capítulos 16a–16b
 
-[← Voltar ao Capítulo 16](../cap16/exercicios.md)
+[← Voltar ao Cap. 16a](../cap16a/exercicios.md) | [← Voltar ao Cap. 16b](../cap16b/exercicios.md)
 
 ---
 

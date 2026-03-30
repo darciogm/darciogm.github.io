@@ -121,7 +121,7 @@ O RTB processa mais de 500 bilhões de impressões por dia globalmente. A escala
 
 A precificação algorítmica — em que algoritmos de machine learning ajustam preços automaticamente com base em dados de mercado — levanta uma preocupação antitruste nova e fascinante: é possível que algoritmos "aprendam" a coludir sem que seus programadores explicitamente combinem preços?
 
-Calvano et al. (2020) demonstram, em simulações com algoritmos de Q-learning (aprendizado por reforço), que algoritmos de precificação podem convergir para preços supracompetitivos — acima do nível de Nash — sem qualquer programação explícita de colusão. Os algoritmos "descobrem" estratégias de punição implícitas (semelhantes a trigger strategies do Capítulo 16) que sustentam preços elevados.
+Calvano et al. (2020) demonstram, em simulações com algoritmos de Q-learning (aprendizado por reforço), que algoritmos de precificação podem convergir para preços supracompetitivos — acima do nível de Nash — sem qualquer programação explícita de colusão. Os algoritmos "descobrem" estratégias de punição implícitas (semelhantes a trigger strategies do Capítulo 16b) que sustentam preços elevados.
 
 Esse resultado tem implicações profundas para a política antitruste: como responsabilizar firmas por "colusão algorítmica" quando nenhum ser humano instruiu o algoritmo a coludir? O framework legal atual, construído em torno de "acordos" e "comunicação" entre concorrentes, pode ser inadequado para um mundo em que a coordenação emerge de forma descentralizada via algoritmos autônomos.
 

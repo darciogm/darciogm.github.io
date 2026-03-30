@@ -39,6 +39,9 @@ As propriedades dependem dos parâmetros: rendimentos constantes se \(\alpha + \
 
 ### Função de produção CES (Elasticidade de Substituição Constante)
 
+!!! info "Material Avançado"
+    A derivação completa da CES a partir dos axiomas de Arrow et al. (1961), a estimação de $\sigma$ com dados industriais brasileiros (PIA/IBGE) e as extensões CES aninhada (*nested CES*) usadas em modelos CGE são **material complementar** — podem ser omitidas numa primeira leitura. Recomendadas para cursos de pós-graduação e para o [Notebook N9](../notebooks/index.md).
+
 A função CES (*Constant Elasticity of Substitution*), introduzida por Arrow, Chenery, Minhas e Solow no seminal artigo de 1961 no *American Economic Review*, representa o passo decisivo na direção de uma forma funcional verdadeiramente geral. A motivação era clara: a Cobb-Douglas impõe \(\sigma = 1\) por construção, mas não há razão teórica para que todas as tecnologias apresentem essa elasticidade específica. Arrow et al. derivaram a CES mostrando que ela é a única forma funcional compatível com três hipóteses: (i) isoquantas convexas, (ii) homogeneidade de grau \(\gamma\), e (iii) elasticidade de substituição **constante** (não necessariamente igual a 1) ao longo de qualquer isoquanta. O resultado é uma família paramétrica que engloba todas as formas anteriores como casos limite ou especiais — um teorema de unificação para a teoria da produção.
 
 \[
@@ -67,7 +70,7 @@ A CES **generaliza** as três funções anteriores:
 
 !!! info "Prêmio Nobel — Kenneth J. Arrow (1972)"
 
-    **Kenneth Joseph Arrow** (1921–2017) dividiu o Nobel de 1972 com John Hicks por suas contribuições à teoria do equilíbrio geral e à economia do bem-estar. Mas suas contribuições vão muito além: o Teorema da Impossibilidade de Arrow (Capítulo 16), o modelo Arrow-Debreu de equilíbrio geral com mercados completos (Capítulo 14), os fundamentos da economia da informação e, diretamente relevante para este capítulo, a função de produção CES.
+    **Kenneth Joseph Arrow** (1921–2017) dividiu o Nobel de 1972 com John Hicks por suas contribuições à teoria do equilíbrio geral e à economia do bem-estar. Mas suas contribuições vão muito além: o Teorema da Impossibilidade de Arrow (Capítulo 14, Seção 14.12), o modelo Arrow-Debreu de equilíbrio geral com mercados completos (Capítulo 14), os fundamentos da economia da informação e, diretamente relevante para este capítulo, a função de produção CES.
 
     **Conexão com este capítulo:** Arrow, junto com Chenery, Minhas e Solow, derivou a CES (1961) como a forma funcional mais geral compatível com elasticidade de substituição constante — unificando linear, Leontief e Cobb-Douglas num único modelo. A CES é provavelmente o objeto mais versátil da caixa de ferramentas do economista empírico: de funções de produção a funções de utilidade, de modelos de comércio internacional a modelos de crescimento, ela aparece em toda parte. Arrow demonstrou que restringir \(\sigma = 1\) (Cobb-Douglas) era uma hipótese desnecessária — e a evidência empírica lhe deu razão.
 

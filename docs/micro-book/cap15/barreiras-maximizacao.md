@@ -38,7 +38,7 @@ Exemplos clássicos incluem redes de distribuição de água, gás, eletricidade
 
 ### Barreiras estratégicas
 
-Além das barreiras criadas pela natureza da tecnologia ou pela ação do Estado, as próprias firmas incumbentes podem erguer obstáculos deliberados à entrada de concorrentes. Essas barreiras estratégicas refletem o comportamento racional de uma firma que antecipa a possibilidade de entrada e age preventivamente para torná-la não lucrativa. A análise formal dessas estratégias envolve teoria dos jogos e será aprofundada no Capítulo 16; aqui, destacamos os principais mecanismos.
+Além das barreiras criadas pela natureza da tecnologia ou pela ação do Estado, as próprias firmas incumbentes podem erguer obstáculos deliberados à entrada de concorrentes. Essas barreiras estratégicas refletem o comportamento racional de uma firma que antecipa a possibilidade de entrada e age preventivamente para torná-la não lucrativa. A análise formal dessas estratégias envolve teoria dos jogos e será aprofundada nos Capítulos 16a–16b; aqui, destacamos os principais mecanismos.
 
 Firmas incumbentes podem adotar comportamentos deliberados para dificultar a entrada de rivais:
 

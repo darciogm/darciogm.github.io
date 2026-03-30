@@ -59,7 +59,7 @@ W = EC + EP = \int_0^{Q^*} \left[ p^d(Q) - CMg(Q) \right] dQ
 
     Portanto, $Q^*$ é um máximo. $\blacksquare$
 
-A versão de equilíbrio geral deste teorema — que analisaremos nos Capítulos 17–18 — mostra que, sob hipóteses mais gerais, *todo* equilíbrio walrasiano é Pareto-eficiente. A versão parcial que provamos aqui é o caso especial para um único mercado, e já é suficientemente poderosa para fundamentar a análise de políticas públicas.
+A versão de equilíbrio geral deste teorema — que analisaremos no Capítulo 14 — mostra que, sob hipóteses mais gerais, *todo* equilíbrio walrasiano é Pareto-eficiente. A versão parcial que provamos aqui é o caso especial para um único mercado, e já é suficientemente poderosa para fundamentar a análise de políticas públicas.
 
 !!! tip "Hipóteses cruciais"
     O Primeiro Teorema requer: (i) comportamento tomador de preço; (ii) ausência de externalidades; (iii) informação completa; (iv) ausência de poder de mercado. A violação de qualquer uma dessas hipóteses abre espaço para **falhas de mercado** — tema dos Capítulos 19–20. Como diria o Monty Python: *"Nobody expects the market failure!"* — mas um bom economista deveria.

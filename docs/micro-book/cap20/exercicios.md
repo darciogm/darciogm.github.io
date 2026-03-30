@@ -1,5 +1,11 @@
 # Exercícios e ANPEC — Capítulo 20
 
+!!! tip "Dados para exercicios empiricos"
+    - **SEEG (emissoes de GEE):** [seeg.eco.br](https://seeg.eco.br/) — Sistema de Estimativas de Emissoes de Gases de Efeito Estufa do Observatorio do Clima. Dados por setor e estado para estimar custos sociais de externalidades.
+    - **INPE (desmatamento):** [terrabrasilis.dpi.inpe.br](http://terrabrasilis.dpi.inpe.br/) — Dados PRODES e DETER para analisar a tragedia dos comuns na Amazonia.
+    - **ANA (recursos hidricos):** [snirh.gov.br](https://www.snirh.gov.br/) — Dados sobre outorgas e cobranca pelo uso da agua — precificacao de externalidade em acao.
+    - **Notebook:** [N17 — Modelo DICE simplificado](../notebooks/index.md) (trajetorias otimas de emissao).
+
 ## 🧠 Revisão Rápida
 
 ??? question "1. O que distingue uma externalidade tecnológica de uma externalidade pecuniária?"

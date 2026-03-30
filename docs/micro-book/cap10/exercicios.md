@@ -1,5 +1,10 @@
 # Exercícios, Revisão e ANPEC — Capítulo 10
 
+!!! tip "Dados para exercicios empiricos"
+    - **PIA/IBGE (Pesquisa Industrial Anual):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br) — Dados de valor adicionado, pessoal ocupado e ativo imobilizado por setor industrial. Estime funcoes de producao Cobb-Douglas e teste retornos de escala.
+    - **Censo Agropecuario/IBGE:** [sidra.ibge.gov.br](https://sidra.ibge.gov.br) — Dados por municipio para estimar PTF agricola (resíduo de Solow aplicado ao agro brasileiro).
+    - **Notebook:** [N9 — Funcao de producao Cobb-Douglas](../notebooks/index.md) (dados da PIA/IBGE).
+
 !!! classroom "Atividade 10.2 — Clonar a firma: rendimentos de escala por setor (10 min)"
     **Objetivo:** Desenvolver intuição sobre quando rendimentos de escala são crescentes, constantes ou decrescentes — e por que isso determina a estrutura de mercado.
 

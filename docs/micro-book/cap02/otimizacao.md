@@ -147,6 +147,15 @@ A estática comparativa — "como o ótimo muda quando um parâmetro muda?" — 
 
     Se $C''(q^*) > 0$ (custo marginal crescente — CSO), então $dq^*/dt < 0$: o imposto **reduz** a produção. O resultado antecipa a análise de incidência tributária do [Capítulo 13](../cap13/index.md).
 
+!!! brasil "Estática Comparativa na Bomba: Gasolina vs. Etanol"
+    **Aplicação com dados reais.** No Brasil, a regra prática do consumidor na bomba de combustível é: abasteça com etanol se o preço do etanol for menor que 70% do preço da gasolina (pois o etanol rende ~70% da quilometragem). Formalize: seja $q_E^*(p_E, p_G)$ a demanda por etanol.
+
+    A estática comparativa via TFI nos diz que $\partial q_E^* / \partial p_G > 0$ (gasolina e etanol são substitutos: quando a gasolina sobe, a demanda por etanol cresce). Dados da ANP mostram que em julho de 2022, quando a gasolina atingiu R$ 7,39/litro (preço médio nacional), a participação do etanol nas vendas de combustíveis de ciclo Otto saltou de 34% para 41% em dois meses — exatamente o sinal que a estática comparativa prevê.
+
+    O exercício completo, com dados da ANP por estado e estimação de $\partial q_E^*/\partial p_G$ usando séries temporais, está no [Notebook N12](../notebooks/index.md).
+
+    **Fonte:** ANP — Série histórica de preços de combustíveis (dados abertos).
+
 ---
 
 ## 2.3 Otimização Multivariada: A Hessiana {#23}

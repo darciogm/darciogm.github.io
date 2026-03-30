@@ -20,6 +20,14 @@ Material complementar do livro em formatos prontos para uso em sala de aula.
 - **Total: 475 questões** prontas para importação
 - **Script de regeneração:** [`gerar_blackboard.py`](gerar_blackboard.py) (re-executa se o livro for atualizado)
 
+## Materiais Pedagogicos
+
+- **[Atividades de Sala](atividades-sala.md)** — Inventario completo das 40+ atividades de aprendizagem ativa do livro
+- **[Spin-offs e Complementos](spin-offs.md)** — Planejamento de materiais derivados (caderno de exercicios, guia computacional, etc.)
+- **[Mapas Conceituais por Parte](mapas-conceituais.md)** — Mini-mapas Mermaid para projetar no inicio de cada parte do livro
+- **[Template de Newsletter](newsletter-template.md)** — Estrutura fixa + exemplos prontos para a newsletter semanal "Micro no Mundo Real"
+- **[Guia Pythonesco](guia-pythonesco.md)** — Indice de todas as referencias a Monty Python no livro, por sketch e conceito economico
+
 ## Versão para Impressão / PDF
 
 - **[Como gerar o PDF do livro](versao-impressao.md)** — Instruções para exportar o livro (ou capítulos individuais) em formato PDF, incluindo impressão pelo navegador, mkdocs-print-site e Pandoc.

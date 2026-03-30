@@ -271,6 +271,13 @@ nav:
     - "Cadernos Computacionais": micro-book/notebooks/index.md
     - "Exercícios com IA": micro-book/exercicios-ia.md
     - "Compilado ANPEC": micro-book/anpec-compilado.md
+    - Recursos:
+      - micro-book/recursos/index.md
+      - "Mapas Conceituais": micro-book/recursos/mapas-conceituais.md
+      - "Guia Pythonesco": micro-book/recursos/guia-pythonesco.md
+      - "Newsletter Template": micro-book/recursos/newsletter-template.md
+      - "Atividades de Sala": micro-book/recursos/atividades-sala.md
+      - "Spin-offs": micro-book/recursos/spin-offs.md
     - Referência:
       - micro-book/referencia/index.md
       - Notação: micro-book/notacao.md

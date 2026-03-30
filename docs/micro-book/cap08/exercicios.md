@@ -1,5 +1,10 @@
 # Exercícios e ANPEC
 
+!!! tip "Dados para exercicios empiricos"
+    - **Previc / Previdencia complementar:** [gov.br/previc](https://www.gov.br/previc/pt-br) — Dados sobre adesao a planos de previdencia complementar para analisar o efeito de *defaults* (opt-in vs. opt-out) — nudge classico.
+    - **Efeito disposicao na B3:** [b3.com.br](https://www.b3.com.br/pt_br/market-data-e-indices/) — Dados de volume e preco para testar se investidores vendem winners cedo demais e seguram losers (aversao a perda em acao).
+    - **Notebook:** [N5 — Vieses cognitivos em dados](../notebooks/index.md) (experimento de ancoragem simulado).
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

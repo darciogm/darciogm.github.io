@@ -1,5 +1,10 @@
 # Exercícios e ANPEC
 
+!!! tip "Dados para exercicios empiricos"
+    - **Mega-Sena / Loterias Caixa:** [loterias.caixa.gov.br](https://loterias.caixa.gov.br/Paginas/Mega-Sena.aspx) — Historico completo de sorteios. Calcule o valor esperado, o premio de risco e o CRRA implicito na decisao de comprar um bilhete.
+    - **B3 / Dados de mercado:** [b3.com.br](https://www.b3.com.br/pt_br/market-data-e-indices/) — Retornos diarios do Ibovespa para estimar volatilidade e calcular premios de risco de ativos reais.
+    - **Notebook:** [N4 — Loteria e aversao ao risco](../notebooks/index.md) (dados da Mega-Sena).
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

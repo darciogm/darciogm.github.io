@@ -6,7 +6,7 @@ Até agora, os jogos tinham botões: "cooperar ou trair", "futebol ou cinema". C
 
 O conceito de oligopólio remonta, pelo menos, a Cournot (1838), que analisou a competição entre duas firmas que extraem água de um poço mineral — o duopólio de Cournot. Cinquenta anos depois, o matemático Joseph Bertrand (1883) publicou uma resenha do trabalho de Cournot sugerindo que, se as firmas competem em preços em vez de quantidades, o resultado é radicalmente diferente: o preço cai para o custo marginal mesmo com apenas dois concorrentes. O debate Cournot-Bertrand — mesma estrutura de mercado, variável estratégica diferente, resultados opostos — é um dos mais frutíferos da história do pensamento econômico e continua relevante para a análise antitruste moderna. Stackelberg (1934) acrescentou a dimensão da sequencialidade: o que acontece se uma firma é líder e move antes das demais? O resultado, como veremos, depende crucialmente da capacidade de comprometimento crível — tema que será aprofundado no Módulo 9b com o conceito de equilíbrio perfeito em subjogos.
 
-A pergunta central desta seção é: como a forma da competição (preço vs. quantidade) e a ordem do movimento (simultâneo vs. sequencial) afetam o resultado de mercado? Extensões desses modelos — diferenciação de produto, colusão tácita, dissuasão de entrada, fusões e regulação — são tratadas no Capítulo 16.
+A pergunta central desta seção é: como a forma da competição (preço vs. quantidade) e a ordem do movimento (simultâneo vs. sequencial) afetam o resultado de mercado? Extensões desses modelos — diferenciação de produto, colusão tácita, dissuasão de entrada, fusões e regulação — são tratadas nos Capítulos 16a e 16b.
 
 ### Competição de Cournot: quanto produzir quando o vizinho também está produzindo
 

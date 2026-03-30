@@ -1,5 +1,11 @@
 # Exercícios e ANPEC — Capítulo 21
 
+!!! tip "Dados para exercicios empiricos"
+    - **CADE (plataformas digitais):** [gov.br/cade](https://www.gov.br/cade/pt-br) — Estudo "Concorrencia em Mercados Digitais" (CADE, 2020) com dados de concentracao de mercado em plataformas no Brasil.
+    - **Anatel (telecomunicacoes e 5G):** [anatel.gov.br/dados](https://www.anatel.gov.br/dados/) — Dados de acessos por operadora para medir concentracao (HHI) e efeitos de rede no mercado de telecom.
+    - **Google Trends Brasil:** [trends.google.com.br](https://trends.google.com.br/) — Dados de volume de busca para analisar economia da atencao e tipping points em adocao de plataformas.
+    - **Leilao do 5G (2021):** Dados publicos do leilao da Anatel para aplicar teoria de leiloes (Cap. 9c) ao contexto digital.
+
 ## Perguntas de Revisão
 
 ??? question "1. Por que bens de informação têm custo marginal próximo de zero?"

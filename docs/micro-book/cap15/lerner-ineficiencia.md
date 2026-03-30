@@ -2,7 +2,7 @@
 
 ## 15.3 A Régua do Poder: Demonstração do Índice de Lerner {#153}
 
-A derivação formal a seguir explicita a conexão algébrica entre o poder de mercado do monopolista — medido pelo índice de Lerner — e a elasticidade-preço da demanda que ele enfrenta. Embora o resultado já tenha sido antecipado na seção anterior, a demonstração rigorosa é instrutiva porque revela a estrutura lógica subjacente e prepara o terreno para generalizações em contextos de oligopólio (Capítulo 16), onde o índice de Lerner de cada firma dependerá não apenas da elasticidade de mercado, mas também de sua participação de mercado e do grau de colusão.
+A derivação formal a seguir explicita a conexão algébrica entre o poder de mercado do monopolista — medido pelo índice de Lerner — e a elasticidade-preço da demanda que ele enfrenta. Embora o resultado já tenha sido antecipado na seção anterior, a demonstração rigorosa é instrutiva porque revela a estrutura lógica subjacente e prepara o terreno para generalizações em contextos de oligopólio (Capítulos 16a–16b), onde o índice de Lerner de cada firma dependerá não apenas da elasticidade de mercado, mas também de sua participação de mercado e do grau de colusão.
 
 !!! proof "Demonstração"
     Seja \(p(q)\) a demanda inversa do mercado e \(C(q)\) a função de custo do monopolista. O problema de maximização de lucro é:

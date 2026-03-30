@@ -8,7 +8,7 @@ O Capítulo 5 olhou para cada bem isoladamente: "o preço subiu, a demanda caiu"
 
 A relevância é imediata: no Brasil, a decisão entre gasolina e etanol na bomba depende dos preços relativos (a regra dos 70%); o CADE avalia se duas marcas de cerveja são "substitutas próximas" antes de aprovar uma fusão; e a tributação seletiva sobre cigarros precisa saber se o cachimbo é substituto ou não. Tudo isso é elasticidade cruzada — o tema deste capítulo.
 
-Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda. A jornada que fizemos até aqui nos trouxe de preferências e restrições orçamentárias (Capítulo 2) até a decomposição de Slutsky (Capítulo 5), que separou os efeitos de uma variação de preço em dois componentes interpretáveis. O instrumental de Slutsky é precisamente o que precisamos agora: o efeito substituição cruzado — o elemento fora da diagonal da matriz de Slutsky — é o núcleo analítico das classificações de substitutos e complementos que estudaremos aqui.
+Este capítulo encerra a Parte II do livro, fornecendo as ferramentas necessárias para a análise completa do lado da demanda. A jornada que fizemos até aqui nos trouxe de preferências e restrições orçamentárias (Capítulos 3–4) até a decomposição de Slutsky (Capítulo 5), que separou os efeitos de uma variação de preço em dois componentes interpretáveis. O instrumental de Slutsky é precisamente o que precisamos agora: o efeito substituição cruzado — o elemento fora da diagonal da matriz de Slutsky — é o núcleo analítico das classificações de substitutos e complementos que estudaremos aqui.
 
 !!! abstract "Roteiro do capítulo"
 

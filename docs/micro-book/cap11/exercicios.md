@@ -1,5 +1,10 @@
 # Exercícios, Revisão e ANPEC — Capítulo 11
 
+!!! tip "Dados para exercicios empiricos"
+    - **PIA/IBGE (custos industriais):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br) — Tabelas da Pesquisa Industrial Anual com custos de producao, gastos com pessoal e energia por setor. Estime curvas de custo medio e identifique a escala eficiente minima por industria.
+    - **ANEEL (custos de distribuicao de energia):** [aneel.gov.br](https://www.aneel.gov.br/dados-abertos) — Dados de custos operacionais de distribuidoras para analisar economias de escala em monopolio natural.
+    - **Notebook:** [N10 — Curvas de custo](../notebooks/index.md) (CMg, CMe, CVMe e shutdown point).
+
 ## 🧠 Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

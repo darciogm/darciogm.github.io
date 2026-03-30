@@ -328,7 +328,8 @@
 - Parker, Geoffrey G., Marshall W. Van Alstyne, e Sangeet Paul Choudary. 2016. [*Platform Revolution*](https://books.google.com/books?id=sV7yBwAAQBAJ). New York: W. W. Norton.
 - Rochet, Jean-Charles, e Jean Tirole. 2003. "[Platform Competition in Two-Sided Markets](https://doi.org/10.1162/154247603322493212)." *Journal of the European Economic Association* 1 (4): 990–1029.
 - Shapiro, Carl, e Hal R. Varian. 1999. [*Information Rules: A Strategic Guide to the Network Economy*](https://books.google.com/books?id=aE_J4Iv_CYEC). Boston: Harvard Business School Press.
-- Tirole, Jean. 2023. "[Digital Dystopia](https://doi.org/10.1257/aer.20221688)." *American Economic Review* 113 (8): 2007–2043.
+- Tirole, Jean. 2021. "[Digital Dystopia](https://doi.org/10.1257/aer.20201214)." *American Economic Review* 111 (6): 2007–2048.
+- Tirole, Jean. 2023. "[Competition and the Industrial Challenge for the Digital Age](https://doi.org/10.1146/annurev-economics-090622-024222)." *Annual Review of Economics* 15: 573–605.
 
 ## Economia Experimental e Métodos Empíricos
 

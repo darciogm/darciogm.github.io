@@ -85,6 +85,13 @@ O Teorema do Envelope é a mãe de vários resultados célebres que aparecerão 
 
     O envelope nos deu a resposta sem precisar substituir $q^*(p)$ na função objetivo — a economia de trabalho é enorme em problemas mais complexos.
 
+!!! brasil "Envelope e a Taxa Selic"
+    **Aplicação macroeconômica com sabor micro.** Considere uma firma brasileira que maximiza lucro intertemporal descontando fluxos futuros à taxa Selic $r$. O valor ótimo do investimento é $V^*(r)$. Pelo Teorema do Envelope, o impacto de uma mudança marginal na Selic sobre o valor da firma é simplesmente a derivada parcial em relação a $r$ avaliada no plano ótimo de investimento — **sem precisar recalcular o plano inteiro**.
+
+    Quando o Copom elevou a Selic de 2,0% (mínima histórica em 2020) para 13,75% (pico em 2023), o envelope nos diz que $dV^*/dr < 0$ (cada ponto percentual destrói valor). Mas a magnitude depende da duração dos projetos: firmas de infraestrutura (fluxos em 20 anos) sofrem mais que comércios varejistas (fluxos em 2 anos) — formalização direta da relação entre $\partial^2 V^*/\partial r \partial T$ e a maturidade $T$ dos projetos.
+
+    **Fonte:** BCB/SGS (série 432 — Taxa Selic acumulada).
+
 ??? r-interactive "R Interativo"
     ```r
     # Demonstração visual do Teorema do Envelope

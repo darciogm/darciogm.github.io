@@ -6,6 +6,8 @@ title: "Capítulo 16a — Poucos — e Isso Muda Tudo"
 
 *Modelos Básicos de Oligopólio*
 
+Em 2018, a Gol lançou uma promoção-relâmpago com passagens a R$ 200 para Nordeste. Em menos de 24 horas, a LATAM igualou os preços. A Azul respondeu no dia seguinte. Em 48 horas, os preços voltaram ao patamar anterior — como se nada tivesse acontecido. Nenhuma empresa agiu isoladamente; cada uma calibrou seu movimento observando os rivais. Bem-vindo ao oligopólio, onde cada decisão é um lance num jogo de xadrez com poucos jogadores e apostas altas.
+
 Quando o mercado tem poucos vendedores, cada firma sabe que suas decisões afetam — e são afetadas por — as decisões das rivais. Essa **interdependência estratégica** é o que torna o oligopólio fundamentalmente diferente da concorrência perfeita e do monopólio. Neste módulo, construímos os modelos clássicos: Bertrand (competição em preços), Cournot (competição em quantidades), Stackelberg (líder-seguidora), e suas extensões com restrições de capacidade e diferenciação de produto.[^spanish-inquisition-oligopolio]
 
 A teoria dos oligopólios recorre extensivamente à **teoria dos jogos** para modelar a interação estratégica entre firmas. Os resultados são extremamente sensíveis às hipóteses sobre a variável de decisão (preço ou quantidade), a sequência de movimentos (simultâneo ou sequencial) e a natureza da informação.
@@ -21,12 +23,12 @@ A teoria dos oligopólios recorre extensivamente à **teoria dos jogos** para mo
 
 | Seção | Pergunta-guia | O que você vai aprender | Página |
 |:---:|---|---|:---:|
-| 16a.1 | A firma compete em preço ou em quantidade? | Bertrand vs. Cournot: a escolha da variável estratégica | [Fundamentos](fundamentos.md#16a1) |
-| 16a.2 | Dois concorrentes bastam para gerar preço competitivo? | Modelo de Bertrand e o paradoxo | [Bertrand](fundamentos.md#16a2) |
-| 16a.3 | Como decidir quanto produzir quando o rival pensa o mesmo? | Cournot, funções de reação, EN | [Cournot](fundamentos.md#16a3) |
-| 16a.4 | O que acontece quando o número de firmas cresce de 2 para n? | Cournot com n firmas, convergência para competição | [Cournot-n](fundamentos.md#16a4) |
-| 16a.5 | E se a fábrica não consegue atender todo mundo? | Restrições de capacidade, Edgeworth | [Capacidade](capacidade-diferenciacao.md#16a5) |
-| 16a.6 | Por que nem todo café é igual — e como isso muda a concorrência? | Diferenciação horizontal/vertical, Hotelling | [Diferenciação](capacidade-diferenciacao.md#16a6) |
+| 16a.1 | Espadas ou flechas? A primeira decisão do oligopolista | Bertrand vs. Cournot: a escolha da variável estratégica | [Fundamentos](fundamentos.md#16a1) |
+| 16a.2 | Dois bastam para a guerra? O paradoxo de Bertrand | Modelo de Bertrand e o paradoxo | [Bertrand](fundamentos.md#16a2) |
+| 16a.3 | "Quanto eu produzo se ele pensa a mesma coisa?" | Cournot, funções de reação, EN | [Cournot](fundamentos.md#16a3) |
+| 16a.4 | De monopólio a concorrência em $n$ passos | Cournot com n firmas, convergência para competição | [Cournot-n](fundamentos.md#16a4) |
+| 16a.5 | A fábrica tem limite — e o rival sabe disso | Restrições de capacidade, Edgeworth | [Capacidade](capacidade-diferenciacao.md#16a5) |
+| 16a.6 | Nem todo café é igual — e a localização importa | Diferenciação horizontal/vertical, Hotelling | [Diferenciação](capacidade-diferenciacao.md#16a6) |
 | **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
 | **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
