@@ -114,7 +114,7 @@ O objetivo é duplo: mostrar ao aluno que a teoria tem consequências empíricas
 
 Este livro foi concebido para:
 
-- **Graduandos avançados em Economia** que cursam Microeconomia II ou III e precisam de tratamento formal mas acessível.
+- **Graduandos avançados em Economia** que cursam Microeconomia e precisam de tratamento formal mas acessível.
 - **Estudantes de mestrado** que buscam uma referência em português com nível intermediário-avançado, entre Varian e Mas-Colell.
 - **Candidatos à ANPEC** que precisam de uma preparação rigorosa com exercícios no formato da prova.
 - **Profissionais** de regulação, política pública, consultoria e mercado financeiro que querem revisitar os fundamentos microeconômicos com aplicações contemporâneas.
