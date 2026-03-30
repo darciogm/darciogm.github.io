@@ -1,0 +1,287 @@
+---
+title: "Políticas Públicas e Peso Morto no Brasil"
+subtitle: "Microeconomia II — Aula 20"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 20"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Imposto Específico vs. Ad Valorem
+
+**Imposto específico:** valor fixo por unidade ($t$ reais por unidade).
+
+$$P_C = P_P + t$$
+
+. . .
+
+**Imposto *ad valorem*:** percentual sobre o preço ($\tau\%$).
+
+$$P_C = P_P(1 + \tau)$$
+
+. . .
+
+| Critério | Específico | *Ad valorem* |
+|:--|:--|:--|
+| Receita com inflação | Cai em termos reais | Acompanha preços |
+| Qualidade do produto | Incentiva baixa qualidade | Neutro |
+| Exemplo BR | IPI sobre cigarros (fixo/maço) | ICMS (% sobre preço) |
+
+:::{.callout-note}
+No Brasil, a maioria dos tributos sobre consumo é *ad valorem* (ICMS, PIS, COFINS).
+:::
+
+## Incidência Tributária: Quem Realmente Paga?
+
+:::: {.columns}
+::: {.column width="45%"}
+
+A incidência **legal** (quem recolhe) difere da incidência **econômica** (quem arca).
+
+. . .
+
+**Resultado central:**
+
+$$\frac{\text{Parcela do consumidor}}{\text{Parcela do produtor}} = \frac{\varepsilon_S}{|\varepsilon_D|}$$
+
+. . .
+
+- Demanda inelástica → consumidor paga mais
+- Oferta inelástica → produtor paga mais
+
+**Exemplo:** gasolina no Brasil — demanda inelástica ($|\varepsilon_D| \approx 0{,}3$), logo o consumidor arca com ~77% do imposto.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap13/incidencia-tributaria.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Teto de Preços: Consequências
+
+:::: {.columns}
+::: {.column width="45%"}
+
+Um **teto de preço** $\bar{P} < P^*$ gera:
+
+. . .
+
+1. **Escassez:** $Q^D(\bar{P}) > Q^S(\bar{P})$
+2. **Filas e racionamento** não baseado em preço
+3. **Mercado negro** a preços superiores a $P^*$
+4. **Perda de peso morto**
+
+. . .
+
+:::{.callout-warning title="Caso brasileiro"}
+Tabelamento da gasolina (1980s): filas nos postos, adulteração, mercado paralelo.
+:::
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap13/controles-precos.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Piso de Preços: Consequências
+
+Um **piso de preço** $\underline{P} > P^*$ gera:
+
+. . .
+
+1. **Excedente de oferta:** $Q^S(\underline{P}) > Q^D(\underline{P})$
+2. Governo precisa **comprar o excesso** ou restringir oferta
+3. **Perda de peso morto** + custo fiscal
+
+. . .
+
+**Exemplos no Brasil:**
+
+| Política | Mecanismo | Efeito |
+|:--|:--|:--|
+| Salário mínimo | Piso no mercado de trabalho | Desemprego entre menos qualificados |
+| Preço mínimo agrícola (PGPM) | Governo compra excedente | Estoque público, custo fiscal |
+
+. . .
+
+:::{.callout-tip}
+O efeito do salário mínimo depende de quão acima do equilíbrio ele está — em mercados onde o piso não é *binding*, o efeito é neutro.
+:::
+
+## Subsídios: Imagem Espelhada do Imposto
+
+Um subsídio de $s$ reais por unidade é um "imposto negativo":
+
+$$P_C = P_P - s$$
+
+. . .
+
+**Efeitos:**
+
+- Quantidade transacionada **aumenta** acima do ótimo social
+- Gera **peso morto** (sobreconsumo / sobreprodução)
+- Custo fiscal: $s \times Q_{\text{subsidiado}}$
+
+. . .
+
+**Incidência do subsídio:** segue a mesma lógica — o lado mais inelástico captura maior parcela do benefício.
+
+:::{.callout-note title="Exemplo"}
+Subsídio à energia elétrica residencial: consumidores capturam a maior parte quando a demanda é inelástica — o subsídio vira "desconto", não aumento de consumo.
+:::
+
+## Princípio de Ramsey: Tributação Ótima
+
+> "Se o governo precisa arrecadar $R$, como minimizar o peso morto total?"
+
+. . .
+
+**Regra de Ramsey (taxa inversa de elasticidade):**
+
+$$\frac{t_i}{P_i} \propto \frac{1}{|\varepsilon_D^i|}$$
+
+Taxe mais os bens com demanda **mais inelástica** — menor distorção.
+
+. . .
+
+**Problema de equidade:** bens inelásticos (alimentos, energia, transporte) pesam mais no orçamento dos pobres.
+
+. . .
+
+:::{.callout-important title="Trade-off eficiência vs. equidade"}
+Ramsey é ótimo em eficiência, mas pode ser **regressivo**. Por isso, na prática, combinamos com transferências diretas (Bolsa Família, NIT).
+:::
+
+## Comparação de Bem-Estar: Tabela Resumo
+
+| Intervenção | $Q$ | $P_C$ | $P_P$ | EC | EP | Receita Gov. | DWL |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Livre mercado | $Q^*$ | $P^*$ | $P^*$ | Máx | Máx | 0 | 0 |
+| Imposto $t$ | $\downarrow$ | $\uparrow$ | $\downarrow$ | $\downarrow$ | $\downarrow$ | $>0$ | $>0$ |
+| Teto $\bar{P}$ | $\downarrow$ | $\downarrow$ | $\downarrow$ | Ambíguo | $\downarrow$ | 0 | $>0$ |
+| Piso $\underline{P}$ | $\downarrow$ | $\uparrow$ | $\uparrow$ | $\downarrow$ | Ambíguo | 0 ou custo | $>0$ |
+| Subsídio $s$ | $\uparrow$ | $\downarrow$ | $\uparrow$ | $\uparrow$ | $\uparrow$ | $<0$ (custo) | $>0$ |
+
+. . .
+
+:::{.callout-important}
+Em **todos** os casos de intervenção, $ET = EC + EP + \text{Receita líquida}$ cai — o DWL é sempre positivo.
+:::
+
+## Dados Reais: Tributação sobre Combustíveis no Brasil
+
+**Composição do preço da gasolina (ANP, 2024):**
+
+| Componente | Parcela |
+|:--|:--:|
+| Preço na refinaria (Petrobras) | ~34% |
+| ICMS | ~28% |
+| CIDE + PIS/COFINS | ~14% |
+| Custo de distribuição e revenda | ~12% |
+| Custo do etanol anidro | ~12% |
+
+. . .
+
+**Carga tributária total:** ~42% do preço final.
+
+. . .
+
+:::{.callout-tip title="Reflexão"}
+Com $|\varepsilon_D| \approx 0{,}3$ para gasolina, o DWL por real arrecadado é relativamente baixo — coerente com Ramsey. Mas o imposto é **regressivo** (pesa mais na renda dos mais pobres).
+:::
+
+## Atividade em Grupo: Debate de Políticas Públicas {.smaller}
+
+:::{.callout-tip title="Instruções — 4 grupos, 4 políticas"}
+:::
+
+| Grupo | Política | Tarefa |
+|:--:|:--|:--|
+| 1 | Teto no preço do aluguel em SP | Analisar EC, EP, DWL, efeitos distributivos |
+| 2 | Piso salarial para motoristas de app | Comparar com salário mínimo tradicional |
+| 3 | Imposto sobre bebidas açucaradas | Calcular incidência e DWL com dados fictícios |
+| 4 | Subsídio à energia solar residencial | Quem captura o subsídio? Há sobreconsumo? |
+
+. . .
+
+**Cada grupo recebe:**
+
+- Curvas de oferta e demanda (lineares, com parâmetros)
+- 15 minutos para análise + cálculo de DWL
+- 5 minutos para apresentação com gráfico no quadro
+
+## Regras de Apresentação e Avaliação
+
+**Formato da apresentação (5 min/grupo):**
+
+1. Descreva a política e identifique o tipo de intervenção
+2. Desenhe o gráfico com as áreas de EC, EP e DWL
+3. Calcule numericamente o DWL
+4. Argumente: a política é justificável mesmo com DWL?
+
+. . .
+
+**Critérios de avaliação (peer review):**
+
+- Correção técnica da análise (40%)
+- Qualidade da argumentação (30%)
+- Clareza da apresentação gráfica (30%)
+
+. . .
+
+:::{.callout-note}
+Após todas as apresentações, votação: **qual política tem a melhor relação benefício/DWL?**
+:::
+
+## Votação: Melhor Política Pública
+
+**Após as 4 apresentações:**
+
+. . .
+
+Cada aluno vota na política que considera **mais justificável** do ponto de vista de bem-estar social, considerando:
+
+- Magnitude do DWL vs. benefício social
+- Efeitos distributivos
+- Viabilidade de implementação
+
+. . .
+
+:::{.callout-warning title="Não existe resposta "certa""}
+O objetivo é exercitar a análise de trade-offs — toda política tem custos e benefícios.
+:::
+
+. . .
+
+**Resultado da votação:** discussão coletiva sobre os critérios usados.
+
+## Próxima Aula: Monopólio e Discriminação de Preços
+
+**Saímos da concorrência perfeita!**
+
+. . .
+
+Na Aula 21, veremos:
+
+- Por que o monopolista produz menos e cobra mais?
+- Como a discriminação de preços pode aumentar o bem-estar?
+- Uber, Spotify e a precificação algorítmica
+
+. . .
+
+:::{.callout-tip title="Para casa"}
+1. Complete os exercícios do Capítulo 13 (itens 6–10)
+2. Pesquise: quanto o consumidor paga de imposto no seu produto favorito? (use calculadora do IBPT)
+3. Leia a Seção 15.1 (Monopólio: definição e fontes de poder de mercado)
+:::

@@ -1,0 +1,328 @@
+---
+title: "Oligopólio — Cournot, Bertrand, Stackelberg"
+subtitle: "Microeconomia II — Aula 23"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 23"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Gol vs. Azul: como duas empresas decidem o preço da passagem?
+
+> Em janeiro de 2024, a passagem SP–RJ custava R\$350 na Gol e R\$360 na Azul. Coincidência?
+
+. . .
+
+**No oligopólio, cada firma precisa considerar a reação das rivais.** Isso é o que torna o problema fundamentalmente diferente da concorrência perfeita e do monopólio.
+
+. . .
+
+**Hoje veremos três modelos:**
+
+1. **Bertrand** — competição em preços
+2. **Cournot** — competição em quantidades
+3. **Stackelberg** — líder e seguidora
+
+:::{.callout-tip title="Objetivo da Aula"}
+Formalizar os três modelos de oligopólio e comparar seus resultados de equilíbrio.
+:::
+
+## Oligopólio: Definição e Características
+
+**Oligopólio:** mercado com **poucos vendedores**, cujas decisões são **interdependentes**.
+
+. . .
+
+**Características:**
+
+| Dimensão | Oligopólio |
+|:--|:--|
+| Número de firmas | Poucas (2 = duopólio, 3–10 típico) |
+| Produto | Homogêneo ou diferenciado |
+| Barreiras à entrada | Significativas |
+| Decisão estratégica | Central — cada firma antecipa reações |
+| Ferramenta analítica | **Teoria dos Jogos** |
+
+. . .
+
+:::{.callout-important title="Interdependência estratégica"}
+No monopólio, a firma ignora rivais (não há). Na competição perfeita, ignora rivais (são irrelevantes). No oligopólio, **a reação do rival é a variável central**.
+:::
+
+## Bertrand: Competição em Preços e o Paradoxo
+
+:::: {.columns}
+::: {.column width="45%"}
+
+**Hipóteses:**
+
+- 2 firmas, produto **homogêneo**, custos iguais $c$
+- Cada firma escolhe **preço** simultaneamente
+- Consumidores compram da firma mais barata
+
+. . .
+
+**Equilíbrio de Nash:**
+
+$$P_1^* = P_2^* = c$$
+
+. . .
+
+**Paradoxo de Bertrand:** apenas 2 firmas e já temos o resultado **competitivo**!
+
+$$\pi_1 = \pi_2 = 0$$
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap16/bertrand.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+. . .
+
+:::{.callout-note}
+O paradoxo se resolve com: diferenciação de produto, restrições de capacidade, ou interação repetida.
+:::
+
+## Resolvendo o Paradoxo de Bertrand
+
+Por que o resultado $P = c$ com apenas 2 firmas parece irrealista?
+
+. . .
+
+| Extensão | Mecanismo | Resultado |
+|:--|:--|:--|
+| Diferenciação de produto | Consumidores têm preferências → demanda não migra 100% | $P > c$, lucro positivo |
+| Restrições de capacidade (Edgeworth) | Firma não consegue atender todo o mercado | Resultado próximo a Cournot |
+| Custos assimétricos ($c_1 \neq c_2$) | Firma eficiente cobra $P = c_2 - \epsilon$ | Vencedor leva tudo |
+| Jogos repetidos | Ameaça de guerra de preços sustenta colusão | $P > c$ se $\delta$ alto |
+
+. . .
+
+:::{.callout-tip title="Na prática"}
+O modelo de Bertrand puro é um *benchmark* teórico. Mercados reais combinam elementos de Bertrand (preço como variável) com restrições que elevam o preço acima do custo.
+:::
+
+## Cournot: Competição em Quantidades — Setup
+
+**Hipóteses:**
+
+- 2 firmas, produto homogêneo
+- Cada firma escolhe **quantidade** simultaneamente
+- Preço determinado pela demanda inversa: $P = a - b(q_1 + q_2)$
+- Custos: $C_i(q_i) = c \cdot q_i$
+
+. . .
+
+**Lucro da firma 1:**
+
+$$\pi_1 = [a - b(q_1 + q_2)] \cdot q_1 - c \cdot q_1$$
+
+. . .
+
+**Melhor resposta (best response):** derivar $\pi_1$ em relação a $q_1$:
+
+$$\frac{\partial \pi_1}{\partial q_1} = a - 2bq_1 - bq_2 - c = 0$$
+
+$$\boxed{q_1^*(q_2) = \frac{a - c}{2b} - \frac{q_2}{2}}$$
+
+## Equilíbrio de Cournot-Nash
+
+:::: {.columns}
+::: {.column width="45%"}
+
+Por simetria, $q_2^*(q_1) = \frac{a-c}{2b} - \frac{q_1}{2}$.
+
+. . .
+
+**No equilíbrio:** $q_1^* = q_2^* = q^C$:
+
+$$q^C = \frac{a - c}{3b}$$
+
+$$Q^C = 2q^C = \frac{2(a-c)}{3b}$$
+
+$$P^C = \frac{a + 2c}{3}$$
+
+. . .
+
+**Lucro de cada firma:**
+
+$$\pi^C = \frac{(a-c)^2}{9b}$$
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap16/cournot.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+. . .
+
+:::{.callout-note}
+As curvas de melhor resposta se cruzam no equilíbrio de Nash — nenhuma firma quer desviar unilateralmente.
+:::
+
+## Exemplo Numérico: $P = 100 - Q$, $c = 10$
+
+**Dados:** $a = 100$, $b = 1$, $c = 10$.
+
+. . .
+
+| Variável | Fórmula | Valor |
+|:--|:--|:--:|
+| $q^C$ | $\frac{a-c}{3b}$ | $30$ |
+| $Q^C$ | $\frac{2(a-c)}{3b}$ | $60$ |
+| $P^C$ | $\frac{a+2c}{3}$ | $40$ |
+| $\pi_i$ | $\frac{(a-c)^2}{9b}$ | $900$ |
+| $\pi_{\text{total}}$ | $2 \times 900$ | $1800$ |
+
+. . .
+
+**Compare com monopólio:** $Q^M = 45$, $P^M = 55$, $\pi^M = 2025$.
+
+. . .
+
+:::{.callout-tip}
+O Cournot produz **mais** e cobra **menos** que o monopólio, mas ainda está longe da concorrência perfeita ($Q^{CP} = 90$, $P^{CP} = 10$).
+:::
+
+## Stackelberg: Líder e Seguidora
+
+:::: {.columns}
+::: {.column width="45%"}
+
+**Diferença:** a firma 1 (líder) escolhe $q_1$ **primeiro**; a firma 2 (seguidora) observa e responde.
+
+. . .
+
+**Indução retroativa:**
+
+1. Firma 2 usa sua melhor resposta: $q_2^*(q_1)$
+2. Firma 1 substitui na sua função lucro e maximiza
+
+. . .
+
+**Resultado ($a=100$, $b=1$, $c=10$):**
+
+$$q_1^S = \frac{a-c}{2b} = 45, \quad q_2^S = \frac{a-c}{4b} = 22{,}5$$
+
+$$Q^S = 67{,}5, \quad P^S = 32{,}5$$
+
+. . .
+
+**Vantagem do primeiro movimento:** o líder lucra mais que no Cournot.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap16/stackelberg.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Comparação: Todos os Modelos ($P = 100 - Q$, $c = 10$)
+
+:::: {.columns}
+::: {.column width="50%"}
+
+| Modelo | $Q$ | $P$ | $\pi_{\text{total}}$ | DWL |
+|:--|:--:|:--:|:--:|:--:|
+| Monopólio | 45 | 55 | 2025 | 1012,5 |
+| Cournot | 60 | 40 | 1800 | 450 |
+| Stackelberg | 67,5 | 32,5 | 1518,75 | 253,1 |
+| Bertrand | 90 | 10 | 0 | 0 |
+| Conc. Perfeita | 90 | 10 | 0 | 0 |
+
+. . .
+
+**Ordenação por bem-estar:**
+
+$$W_{CP} = W_{Bert} > W_{Stack} > W_{Cournot} > W_{Mon}$$
+
+:::
+::: {.column width="50%"}
+
+<iframe src="../../graficos/cap16/comparacao-oligopolio.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Cournot com $N$ Firmas: Convergência à Competição
+
+Generalizando para $N$ firmas simétricas:
+
+$$q_i^* = \frac{a - c}{(N+1)b}, \quad Q^* = \frac{N(a-c)}{(N+1)b}, \quad P^* = \frac{a + Nc}{N+1}$$
+
+. . .
+
+**Quando $N \to \infty$:**
+
+$$Q^* \to \frac{a-c}{b} = Q^{CP}, \quad P^* \to c = P^{CP}$$
+
+. . .
+
+| $N$ | $Q$ | $P$ | $\pi_i$ | Lerner |
+|:--:|:--:|:--:|:--:|:--:|
+| 1 | 45 | 55 | 2025 | 0,82 |
+| 2 | 60 | 40 | 900 | 0,75 |
+| 5 | 75 | 25 | 225 | 0,60 |
+| 10 | 81,8 | 18,2 | 67,4 | 0,45 |
+| $\infty$ | 90 | 10 | 0 | 0 |
+
+## Colusão e o Dilema do Prisioneiro
+
+**Se as firmas cooperam** (cartel), produzem a quantidade de monopólio e dividem:
+
+$$q_i^{cartel} = \frac{Q^M}{2} = 22{,}5, \quad \pi_i^{cartel} = \frac{\pi^M}{2} = 1012{,}5$$
+
+. . .
+
+**Mas cada firma tem incentivo a desviar!** Se firma 1 desvia enquanto firma 2 coopera:
+
+$$q_1^{desvio} = BR_1(22{,}5) = 33{,}75 \implies \pi_1^{desvio} = 1139{,}06 > 1012{,}5$$
+
+. . .
+
+|  | Firma 2: Coopera | Firma 2: Desvia |
+|:--|:--:|:--:|
+| **Firma 1: Coopera** | (1012,5 ; 1012,5) | (759,4 ; 1139,1) |
+| **Firma 1: Desvia** | (1139,1 ; 759,4) | (900 ; 900) |
+
+. . .
+
+:::{.callout-important}
+Equilíbrio de Nash: **(Desvia, Desvia)** = Cournot. O cartel é **instável** em jogo de uma rodada.
+:::
+
+## Peer Instruction + Próxima Aula
+
+**Vote individualmente:**
+
+> "A Ambev (cerveja) e a Petrobras (gasolina) operam em mercados oligopolísticos. Qual modelo melhor descreve cada um?"
+
+. . .
+
+- (A) Ambev: Bertrand; Petrobras: Cournot
+- (B) Ambev: Cournot (capacidade importa); Petrobras: Stackelberg (líder)
+- (C) Ambos Cournot — quantidade é a variável estratégica em ambos
+- (D) Ambev: Bertrand diferenciado; Petrobras: Stackelberg
+
+. . .
+
+*Discuta com seu vizinho (2 min). Revote.*
+
+. . .
+
+:::{.callout-tip title="Próxima Aula (24): Torneio de Oligopólio"}
+Jogos repetidos, colusão tácita, folk theorem — e um **torneio em sala** onde vocês serão as firmas! Leia as seções 16.5–16.7.
+:::

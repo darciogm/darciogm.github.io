@@ -1,0 +1,318 @@
+---
+title: "Loterias + Seguro"
+subtitle: "Microeconomia II — Aula 12"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 12"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Diversificação — Não Coloque Todos os Ovos na Mesma Cesta
+
+Considere dois ativos com retornos $\tilde{R}_1$ e $\tilde{R}_2$, ambos com $E[R] = \mu$ e $\text{Var}(R) = \sigma^2$.
+
+. . .
+
+**Portfólio com peso $\alpha$ no ativo 1:**
+
+$$\text{Var}(\alpha \tilde{R}_1 + (1-\alpha)\tilde{R}_2) = \sigma^2[1 - 2\alpha(1-\alpha)(1-\rho)]$$
+
+. . .
+
+Se $\rho < 1$, o portfólio tem variância **menor** que cada ativo individual, sem sacrificar retorno esperado.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Diversificação é um "almoço grátis": reduz o risco sem reduzir o retorno esperado, desde que os ativos não sejam perfeitamente correlacionados.
+:::
+
+## Abordagem Estado-Preferência
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Dois estados da natureza:** "bom" e "ruim", com probabilidades $(1-p)$ e $p$.
+
+- Consumo contingente: $(c_b, c_r)$
+- Utilidade esperada: $(1-p)\,u(c_b) + p\,u(c_r)$
+
+. . .
+
+**Curvas de indiferença** no espaço $(c_b, c_r)$:
+
+$$\text{TMS} = \frac{(1-p)\,u'(c_b)}{p\,u'(c_r)}$$
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Linha de certeza:** $c_b = c_r$
+
+Sobre a linha de certeza:
+
+$$\text{TMS} = \frac{(1-p)}{p}$$
+
+. . .
+
+> Para avesso ao risco, o ótimo com seguro atuarialmente justo está **sobre a linha de certeza** (cobertura total).
+
+:::
+::::
+
+## Paradoxo de Allais — A Independência Falha?
+
+**Escolha 1:** Prefere A ou B?
+
+| Loteria | Resultado | | |
+|:--|:--:|:--:|:--:|
+| A | R\$ 1M com certeza | | |
+| B | R\$ 5M (10%), R\$ 1M (89%), R\$ 0 (1%) | | |
+
+. . .
+
+**Escolha 2:** Prefere C ou D?
+
+| Loteria | Resultado | | |
+|:--|:--:|:--:|:--:|
+| C | R\$ 1M (11%), R\$ 0 (89%) | | |
+| D | R\$ 5M (10%), R\$ 0 (90%) | | |
+
+. . .
+
+> Maioria escolhe **A** e **D**. Mas $A \succ B$ e $D \succ C$ violam o axioma de independência!
+
+## Paradoxo de Allais — Prova Formal
+
+Se $A \succ B$:
+
+$$u(1M) > 0{,}10\,u(5M) + 0{,}89\,u(1M) + 0{,}01\,u(0)$$
+
+$$\implies 0{,}11\,u(1M) > 0{,}10\,u(5M) + 0{,}01\,u(0)$$
+
+. . .
+
+Se $D \succ C$:
+
+$$0{,}10\,u(5M) + 0{,}90\,u(0) > 0{,}11\,u(1M) + 0{,}89\,u(0)$$
+
+$$\implies 0{,}10\,u(5M) + 0{,}01\,u(0) > 0{,}11\,u(1M)$$
+
+. . .
+
+**Contradição!** As duas desigualdades são incompatíveis.
+
+:::{.callout-tip title="Intuição Econômica"}
+O "efeito certeza" de Allais: as pessoas sobrevalorizam resultados certos em relação a resultados muito prováveis, violando a linearidade nas probabilidades.
+:::
+
+## Teoria da Perspectiva — Função Valor
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Kahneman & Tversky (1979):** as pessoas avaliam **ganhos e perdas** em relação a um ponto de referência, não riqueza total.
+
+. . .
+
+**Função valor $v(x)$:**
+
+- Côncava para ganhos (aversão ao risco)
+- Convexa para perdas (propensão ao risco)
+- Mais íngreme para perdas (**aversão a perdas**)
+
+. . .
+
+$$v(x) = \begin{cases} x^\alpha & \text{se } x \geq 0 \\ -\lambda(-x)^\beta & \text{se } x < 0 \end{cases}$$
+
+com $\lambda \approx 2{,}25$ e $\alpha \approx \beta \approx 0{,}88$.
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Propriedades:**
+
+1. Dependência de referência
+2. Sensibilidade decrescente
+3. Aversão a perdas ($\lambda > 1$)
+
+> "Perder R\$ 100 dói ~2,25x mais do que ganhar R\$ 100 agrada."
+
+:::
+::::
+
+## Ponderação de Probabilidades
+
+Na teoria da perspectiva, as probabilidades são transformadas por uma função peso $\pi(p)$:
+
+. . .
+
+$$V(\mathcal{L}) = \sum_i \pi(p_i) \, v(x_i)$$
+
+. . .
+
+**Padrão empírico de $\pi(p)$:**
+
+- Sobreponderam probabilidades **pequenas** ($\pi(0{,}01) > 0{,}01$)
+- Subponderam probabilidades **moderadas a altas** ($\pi(0{,}90) < 0{,}90$)
+
+. . .
+
+| Fenômeno | Probabilidade | Explicação |
+|:--|:--:|:--|
+| Loteria (compra bilhete) | Pequena de ganhar | Sobrepondera $p$ pequeno × ganho |
+| Seguro (compra apólice) | Pequena de perder | Sobrepondera $p$ pequeno × perda |
+
+## Equilíbrio no Mercado de Seguros
+
+<iframe src="../../graficos/cap07/seguro.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Seguro atuarialmente justo:** $\gamma = p$
+
+- Lucro esperado da seguradora = 0
+- Avesso ao risco compra cobertura **total**
+
+:::
+::: {.column width="50%"}
+
+**Seguro com carregamento:** $\gamma = (1+\theta)p$
+
+- Lucro esperado positivo
+- Cobertura parcial ótima
+
+:::
+::::
+
+## CARA vs. CRRA — Comparação
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**CARA:** $u(x) = -e^{-ax}$
+
+- $A(x) = a$ (constante)
+- Prêmio de risco **não depende** da riqueza
+- Útil para modelos com riqueza variável
+
+. . .
+
+**CRRA:** $u(x) = \frac{x^{1-\gamma}}{1-\gamma}$
+
+- $R(x) = \gamma$ (constante)
+- Prêmio de risco **proporcional** à riqueza
+- Mais usado em macroeconomia e finanças
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap07/aversao-risco.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+. . .
+
+> Evidência empírica favorece CRRA com $\gamma \in [1, 5]$ para a maioria das aplicações.
+
+## Jogo de Loterias em Sala
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 12 minutos | **Formato:** Jogo interativo com toda a turma
+:::
+
+. . .
+
+**Rodada 1 — Revelando preferências:**
+
+Cada aluno recebe R\$ 100 fictícios. Escolha entre:
+
+- **Loteria A:** R\$ 200 (50%) ou R\$ 0 (50%)
+- **Loteria B:** R\$ 130 com certeza
+- **Loteria C:** R\$ 300 (30%) ou R\$ 50 (70%)
+
+. . .
+
+**Rodada 2 — Teste de Allais:** responda às Escolhas 1 e 2. Verifique se *você* viola o axioma de independência.
+
+**Rodada 3 — Leilão pelo EC:** lance o máximo que pagaria pela Loteria A. O maior lance vence e paga o segundo maior lance (Vickrey).
+
+## Design de Seguro — PBL
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 15 minutos | **Formato:** Aprendizagem Baseada em Problemas (grupos de 4)
+:::
+
+. . .
+
+**Cenário:** Vocês são a equipe atuarial de uma seguradora. Dados:
+
+- População: 10.000 motoristas
+- Probabilidade de sinistro: $p = 0{,}05$
+- Perda média por sinistro: R\$ 30.000
+- Custo administrativo: 15% do prêmio
+
+. . .
+
+**Tarefas:**
+
+1. Calcule o prêmio atuarialmente justo e o prêmio com carregamento
+2. Se motoristas têm $u(x) = \ln(x)$ e riqueza R\$ 200.000, qual a cobertura ótima?
+3. Proponha uma apólice com franquia. Como ela afeta o risco moral?
+4. Apresentem a apólice em 2 minutos para a turma
+
+## Debate — Somos Racionais?
+
+:::{.callout-tip title="Peer Instruction"}
+**Tempo:** 10 minutos | **Formato:** Debate estruturado
+:::
+
+. . .
+
+**Grupo A — Defende a Utilidade Esperada:**
+
+- Axiomas são normativamente razoáveis
+- Violações desaparecem com aprendizado e experiência
+- Mercados financeiros se aproximam da racionalidade
+
+. . .
+
+**Grupo B — Defende a Teoria da Perspectiva:**
+
+- Evidência experimental robusta (Allais, framing effects)
+- Aversão a perdas explica fenômenos reais (equity premium puzzle)
+- Racionalidade limitada é a norma, não a exceção
+
+. . .
+
+> Após 4 min por lado + 2 min de réplicas, a turma vota: qual teoria é mais **útil**?
+
+## Próxima Aula
+
+**Aula 13 — Teoria da Produção**
+
+. . .
+
+- Função de produção e isoquantas
+- Rendimentos de escala
+- Custos de curto e longo prazo
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise a analogia entre **isoquantas** (produção) e **curvas de indiferença** (consumo). A matemática da otimização é a mesma — o que muda é a interpretação econômica.
+:::

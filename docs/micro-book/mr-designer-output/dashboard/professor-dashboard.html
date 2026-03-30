@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard do Professor — Microeconomia II</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --bg: #f5f6fa;
+  --card: #fff;
+  --text: #2c3e50;
+  --text-muted: #7f8c8d;
+  --border: #dcdde1;
+  --radius: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--text); }
+
+/* NAV */
+.topbar { background:var(--primary); color:#fff; padding:0.8rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+.topbar h1 { font-size:1.1rem; font-weight:600; }
+.topbar .semester { font-size:0.85rem; opacity:0.8; }
+.nav-tabs { display:flex; gap:0.5rem; }
+.nav-tabs button { background:rgba(255,255,255,0.15); color:#fff; border:none; padding:0.5rem 1rem; border-radius:var(--radius); cursor:pointer; font-size:0.85rem; transition:0.2s; }
+.nav-tabs button:hover, .nav-tabs button.active { background:var(--accent); }
+
+/* LAYOUT */
+.container { max-width:1200px; margin:0 auto; padding:1.5rem; }
+.screen { display:none; }
+.screen.active { display:block; }
+
+/* CARDS */
+.cards-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; margin-bottom:1.5rem; }
+.card { background:var(--card); border-radius:var(--radius); padding:1.2rem; border:1px solid var(--border); }
+.card-title { font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px; margin-bottom:0.3rem; }
+.card-value { font-size:1.8rem; font-weight:700; }
+.card-sub { font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem; }
+
+/* CHARTS */
+.charts-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; }
+.chart-box { background:var(--card); border-radius:var(--radius); padding:1.2rem; border:1px solid var(--border); }
+.chart-box h3 { font-size:0.9rem; margin-bottom:0.8rem; color:var(--text); }
+.chart-box canvas { max-height:280px; }
+
+/* ALERTS */
+.alerts { background:var(--card); border-radius:var(--radius); padding:1.2rem; border:1px solid var(--border); margin-bottom:1.5rem; }
+.alerts h3 { font-size:0.9rem; margin-bottom:0.8rem; }
+.alert-item { padding:0.6rem 0.8rem; border-radius:6px; margin-bottom:0.5rem; font-size:0.85rem; display:flex; align-items:center; gap:0.5rem; }
+.alert-item.high { background:#fde8e8; color:var(--danger); border-left:3px solid var(--danger); }
+.alert-item.medium { background:#fef3e2; color:#c0720a; border-left:3px solid var(--warning); }
+.alert-item.ok { background:#e8f8ef; color:var(--success); border-left:3px solid var(--success); }
+
+/* TABLE */
+.table-wrap { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); overflow-x:auto; }
+.table-wrap h3 { padding:1rem 1.2rem 0.5rem; font-size:0.9rem; }
+table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+th { background:#f8f9fa; text-align:left; padding:0.6rem 0.8rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; font-size:0.7rem; letter-spacing:0.5px; border-bottom:2px solid var(--border); }
+td { padding:0.6rem 0.8rem; border-bottom:1px solid #f0f0f0; }
+tr:hover td { background:#f8f9ff; }
+tr.risk-high td { background:#fff5f5; }
+tr.risk-medium td { background:#fffbf0; }
+.badge { display:inline-block; padding:0.15rem 0.5rem; border-radius:10px; font-size:0.7rem; font-weight:600; }
+.badge-high { background:#fde8e8; color:var(--danger); }
+.badge-medium { background:#fef3e2; color:#c0720a; }
+.badge-low { background:#e8f8ef; color:var(--success); }
+.clickable { cursor:pointer; color:var(--accent); text-decoration:underline; }
+
+/* STUDENT VIEW */
+.student-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+.student-header h2 { font-size:1.3rem; }
+.btn-back { background:var(--accent); color:#fff; border:none; padding:0.5rem 1rem; border-radius:var(--radius); cursor:pointer; font-size:0.85rem; }
+.btn-back:hover { background:#2980b9; }
+.student-meta { display:flex; gap:2rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.meta-item { text-align:center; }
+.meta-item .val { font-size:1.5rem; font-weight:700; }
+.meta-item .lbl { font-size:0.75rem; color:var(--text-muted); }
+.pattern-list { list-style:none; padding:0; }
+.pattern-list li { padding:0.4rem 0; font-size:0.85rem; border-bottom:1px solid #f0f0f0; }
+.pattern-list li:before { content:''; display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:0.5rem; }
+.pattern-list li.good:before { background:var(--success); }
+.pattern-list li.warn:before { background:var(--warning); }
+.pattern-list li.bad:before { background:var(--danger); }
+
+/* NEXT CLASS */
+.question-bar { display:flex; align-items:center; gap:0.8rem; padding:0.5rem 0; border-bottom:1px solid #f0f0f0; font-size:0.85rem; }
+.question-bar .q-label { min-width:40px; font-weight:600; }
+.bar-bg { flex:1; height:20px; background:#ecf0f1; border-radius:10px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:10px; transition:width 0.5s; }
+.bar-pct { min-width:45px; text-align:right; font-weight:600; font-size:0.8rem; }
+
+/* IMPORT */
+.import-section { background:var(--card); border-radius:var(--radius); padding:1.5rem; border:2px dashed var(--border); text-align:center; margin-bottom:1.5rem; }
+.import-section input[type=file] { margin:0.5rem 0; }
+.import-section p { font-size:0.85rem; color:var(--text-muted); }
+.btn-demo { background:var(--success); color:#fff; border:none; padding:0.6rem 1.2rem; border-radius:var(--radius); cursor:pointer; font-size:0.85rem; margin-top:0.5rem; }
+.btn-demo:hover { background:#219a52; }
+.btn-export { background:var(--primary); color:#fff; border:none; padding:0.4rem 0.8rem; border-radius:var(--radius); cursor:pointer; font-size:0.8rem; }
+
+/* RESPONSIVE */
+@media (max-width:768px) {
+  .charts-row { grid-template-columns:1fr; }
+  .cards-row { grid-template-columns:1fr 1fr; }
+  .nav-tabs { flex-wrap:wrap; }
+  .topbar { flex-wrap:wrap; gap:0.5rem; }
+}
+@media print {
+  .topbar, .import-section, .nav-tabs, .btn-back, .btn-demo, .btn-export { display:none!important; }
+  .screen { display:block!important; page-break-after:always; }
+  body { background:#fff; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>
+    <h1>Microeconomia II — Dashboard do Professor</h1>
+    <span class="semester">Insper | 2026.2 | <span id="current-week">Semana 8</span></span>
+  </div>
+  <div class="nav-tabs">
+    <button class="active" onclick="showScreen('overview')">Visao Geral</button>
+    <button onclick="showScreen('students')">Alunos</button>
+    <button onclick="showScreen('nextclass')">Proxima Aula</button>
+    <button onclick="showScreen('import')">Dados</button>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ========== SCREEN 1: OVERVIEW ========== -->
+<div id="screen-overview" class="screen active">
+
+  <div class="cards-row" id="kpi-cards"></div>
+
+  <div class="charts-row">
+    <div class="chart-box">
+      <h3>Preparacao Pre-Aula por Semana</h3>
+      <canvas id="chart-prep"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Distribuicao de Notas Correntes</h3>
+      <canvas id="chart-grades"></canvas>
+    </div>
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-box">
+      <h3>Media dos Quizzes Pre-Aula</h3>
+      <canvas id="chart-quiz-avg"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Entregas de Problem Sets</h3>
+      <canvas id="chart-ps"></canvas>
+    </div>
+  </div>
+
+  <div class="alerts" id="alerts-box">
+    <h3>Alertas</h3>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Ranking da Turma <button class="btn-export" onclick="exportCSV()">Exportar CSV</button></h3>
+    <table id="table-ranking">
+      <thead><tr>
+        <th>#</th><th>Aluno</th><th>Quiz Pre</th><th>PS</th><th>P1</th>
+        <th>Particip.</th><th>Media</th><th>Tendencia</th><th>Risco</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========== SCREEN 2: INDIVIDUAL STUDENT ========== -->
+<div id="screen-student" class="screen">
+  <div class="student-header">
+    <h2 id="student-name">—</h2>
+    <button class="btn-back" onclick="showScreen('overview')">Voltar</button>
+  </div>
+  <div class="student-meta" id="student-meta"></div>
+  <div class="charts-row">
+    <div class="chart-box">
+      <h3>Notas por Componente</h3>
+      <canvas id="chart-student-radar"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Preparacao Semanal</h3>
+      <canvas id="chart-student-prep"></canvas>
+    </div>
+  </div>
+  <div class="charts-row">
+    <div class="chart-box">
+      <h3>Evolucao da Media</h3>
+      <canvas id="chart-student-trend"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Padrao de Comportamento</h3>
+      <ul class="pattern-list" id="student-patterns"></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SCREEN 3: STUDENTS LIST ========== -->
+<div id="screen-students" class="screen">
+  <h2 style="margin-bottom:1rem;">Lista de Alunos</h2>
+  <div class="cards-row">
+    <div class="card"><div class="card-title">Risco Alto</div><div class="card-value" id="count-high" style="color:var(--danger)">0</div></div>
+    <div class="card"><div class="card-title">Risco Medio</div><div class="card-value" id="count-med" style="color:var(--warning)">0</div></div>
+    <div class="card"><div class="card-title">Risco Baixo</div><div class="card-value" id="count-low" style="color:var(--success)">0</div></div>
+    <div class="card"><div class="card-title">Total</div><div class="card-value" id="count-total">0</div></div>
+  </div>
+  <div class="table-wrap">
+    <table id="table-students">
+      <thead><tr>
+        <th>Aluno</th><th>Matricula</th><th>Quiz</th><th>PS</th><th>P1</th>
+        <th>Particip.</th><th>Media</th><th>Risco</th><th>Acao</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========== SCREEN 4: NEXT CLASS ========== -->
+<div id="screen-nextclass" class="screen">
+  <h2 style="margin-bottom:0.3rem;" id="next-class-title">Proxima Aula: Semana 9 — Efeitos Renda e Substituicao</h2>
+  <p style="color:var(--text-muted);margin-bottom:1.5rem;" id="next-quiz-status">Quiz pre-aula: 32/45 responderam (71%)</p>
+
+  <div class="cards-row">
+    <div class="card"><div class="card-title">Responderam Quiz</div><div class="card-value" id="nc-responded">32</div><div class="card-sub" id="nc-pct">71%</div></div>
+    <div class="card"><div class="card-title">Nota Media Quiz</div><div class="card-value" id="nc-avg">3.2</div><div class="card-sub">de 5 questoes</div></div>
+    <div class="card"><div class="card-title">Acesso Material</div><div class="card-value" id="nc-access">28</div><div class="card-sub">acessaram o capitulo</div></div>
+    <div class="card"><div class="card-title">Tempo Medio</div><div class="card-value" id="nc-time">38</div><div class="card-sub">minutos</div></div>
+  </div>
+
+  <div class="chart-box" style="margin-bottom:1.5rem;">
+    <h3>Acerto por Questao do Quiz Pre-Aula</h3>
+    <div id="question-bars"></div>
+  </div>
+
+  <div class="alerts">
+    <h3>Sugestoes para a Aula</h3>
+    <div id="next-suggestions"></div>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Alunos que NAO fizeram o quiz</h3>
+    <table id="table-missing">
+      <thead><tr><th>Aluno</th><th>Matricula</th><th>Risco</th><th>Ultima Atividade</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========== SCREEN 5: IMPORT ========== -->
+<div id="screen-import" class="screen">
+  <h2 style="margin-bottom:1rem;">Importar Dados</h2>
+  <div class="import-section">
+    <h3>Carregar CSV do LMS</h3>
+    <p>Exporte os dados do Blackboard/Google Classroom em formato CSV e importe aqui.</p>
+    <p>Formato esperado: <code>nome, matricula, quiz1..quiz24, ps1..ps11, p1, participacao</code></p>
+    <input type="file" id="csv-upload" accept=".csv">
+    <br>
+    <button class="btn-demo" onclick="loadDemoData()">Carregar Dados Demo (45 alunos)</button>
+  </div>
+  <div class="card" style="margin-top:1rem;">
+    <h3 style="margin-bottom:0.5rem;">Formato CSV</h3>
+    <pre style="font-size:0.75rem;overflow-x:auto;background:#f8f9fa;padding:1rem;border-radius:6px;">nome,matricula,quiz_avg,ps_avg,p1,participacao,tendencia
+Ana Silva,2024001,8.5,7.2,7.8,9.0,subindo
+Bruno Costa,2024002,6.0,5.5,4.2,7.0,caindo
+...</pre>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+// ==================== STATE ====================
+var STATE = { students: [], week: 8, charts: {} };
+
+// ==================== DEMO DATA ====================
+function generateDemoStudents(n) {
+  var nomes = ['Ana Silva','Bruno Costa','Carla Dias','Daniel Ferreira','Elena Gomes',
+    'Felipe Henrique','Gabriela Ito','Hugo Junior','Isabela Klein','Joao Lima',
+    'Karen Martins','Lucas Nascimento','Maria Oliveira','Nathan Pereira','Olivia Queiroz',
+    'Pedro Ribeiro','Quiteria Santos','Rafael Torres','Sofia Ueno','Thiago Vieira',
+    'Ursula Werneck','Vitor Xavier','Wanda Yamamoto','Xenia Zanetti','Yuri Almeida',
+    'Zara Barbosa','Andre Campos','Bianca Duarte','Caio Esteves','Diana Farias',
+    'Eduardo Garcia','Fernanda Haddad','Gustavo Inacio','Helena Jardim','Igor Kato',
+    'Julia Leal','Kevin Machado','Laura Nogueira','Marcos Otavio','Nina Pimentel',
+    'Oscar Reis','Patricia Souza','Quintino Tavares','Renata Uchoa','Sergio Vargas'];
+  var students = [];
+  for (var i = 0; i < Math.min(n, nomes.length); i++) {
+    var base = 5 + Math.random() * 4.5;
+    var quiz = Math.min(10, Math.max(0, base + (Math.random()-0.5)*3));
+    var ps = Math.min(10, Math.max(0, base + (Math.random()-0.5)*3));
+    var p1 = Math.min(10, Math.max(0, base + (Math.random()-0.5)*4));
+    var part = Math.min(10, Math.max(0, base + (Math.random()-0.3)*2));
+    var trends = ['subindo','estavel','caindo'];
+    var trend = p1 > 6 ? (Math.random()>0.3?'subindo':'estavel') : (Math.random()>0.5?'caindo':'estavel');
+    var weeklyPrep = [];
+    for (var w = 0; w < STATE.week; w++) {
+      weeklyPrep.push(Math.random() > (0.15 + (base<6?0.2:0)) ? 1 : 0);
+    }
+    var quizScores = [];
+    for (var w = 0; w < STATE.week; w++) {
+      quizScores.push(weeklyPrep[w] ? Math.min(5, Math.max(0, 2.5 + base/4 + (Math.random()-0.5)*2)) : 0);
+    }
+    students.push({
+      nome: nomes[i],
+      matricula: '2024' + String(i+1).padStart(3,'0'),
+      quiz: +quiz.toFixed(1),
+      ps: +ps.toFixed(1),
+      p1: +p1.toFixed(1),
+      participacao: +part.toFixed(1),
+      tendencia: trend,
+      weeklyPrep: weeklyPrep,
+      quizScores: quizScores,
+      didNextQuiz: Math.random() > 0.29
+    });
+  }
+  return students;
+}
+
+function calcMedia(s) {
+  return +(s.quiz*0.1 + s.ps*0.2 + s.p1*0.25 + s.participacao*0.1 + (s.p1*0.25) + (s.quiz*0.1)).toFixed(1);
+}
+function calcRisk(s) {
+  var m = calcMedia(s);
+  var prepRate = s.weeklyPrep.reduce(function(a,b){return a+b},0) / s.weeklyPrep.length;
+  if (prepRate < 0.5 || m < 5.0 || s.tendencia==='caindo') return 'alto';
+  if (prepRate < 0.7 || m < 6.0) return 'medio';
+  return 'baixo';
+}
+
+// ==================== RENDER ====================
+function renderOverview() {
+  var ss = STATE.students;
+  if (!ss.length) return;
+  var n = ss.length;
+  var avgQuiz = ss.reduce(function(a,s){return a+s.quiz},0)/n;
+  var avgPS = ss.reduce(function(a,s){return a+s.ps},0)/n;
+  var avgMedia = ss.reduce(function(a,s){return a+calcMedia(s)},0)/n;
+  var prepRate = ss.reduce(function(a,s){
+    return a + s.weeklyPrep.reduce(function(x,y){return x+y},0)/s.weeklyPrep.length;
+  },0)/n*100;
+
+  document.getElementById('kpi-cards').innerHTML =
+    card('Alunos',n,'') + card('Preparacao Pre-Aula',prepRate.toFixed(0)+'%','media semanal') +
+    card('Media Quizzes',avgQuiz.toFixed(1),'de 10') + card('Media Geral',avgMedia.toFixed(1),'de 10');
+
+  // Chart: prep by week
+  var weekLabels = []; var weekData = [];
+  for (var w=0; w<STATE.week; w++) {
+    weekLabels.push('S'+(w+1));
+    var wk = ss.reduce(function(a,s){return a+s.weeklyPrep[w]},0)/n*100;
+    weekData.push(+wk.toFixed(0));
+  }
+  destroyChart('chart-prep');
+  STATE.charts['chart-prep'] = new Chart(document.getElementById('chart-prep'), {
+    type:'bar', data:{labels:weekLabels, datasets:[{label:'% Preparados',data:weekData,
+      backgroundColor:weekData.map(function(v){return v>=70?'#27ae60':v>=50?'#f39c12':'#e74c3c';}),
+      borderRadius:4}]},
+    options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:100,
+      ticks:{callback:function(v){return v+'%'}}}}}
+  });
+
+  // Chart: grade distribution
+  var bins = [0,0,0,0,0,0,0,0,0,0]; // 0-1,1-2,...,9-10
+  ss.forEach(function(s){var m=calcMedia(s); var b=Math.min(9,Math.floor(m)); bins[b]++;});
+  destroyChart('chart-grades');
+  STATE.charts['chart-grades'] = new Chart(document.getElementById('chart-grades'), {
+    type:'bar', data:{labels:['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9','9-10'],
+      datasets:[{label:'Alunos',data:bins,backgroundColor:bins.map(function(_,i){
+        return i<5?'#e74c3c':i<7?'#f39c12':'#27ae60';}),borderRadius:4}]},
+    options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1}}}}
+  });
+
+  // Chart: quiz averages by week
+  var quizAvgs = [];
+  for (var w=0;w<STATE.week;w++){
+    var sum=0,cnt=0;
+    ss.forEach(function(s){if(s.quizScores[w]>0){sum+=s.quizScores[w];cnt++;}});
+    quizAvgs.push(cnt?+(sum/cnt).toFixed(1):0);
+  }
+  destroyChart('chart-quiz-avg');
+  STATE.charts['chart-quiz-avg'] = new Chart(document.getElementById('chart-quiz-avg'), {
+    type:'line', data:{labels:weekLabels, datasets:[{label:'Media Quiz (de 5)',data:quizAvgs,
+      borderColor:'#3498db',backgroundColor:'rgba(52,152,219,0.1)',fill:true,tension:0.3,pointRadius:4}]},
+    options:{responsive:true,scales:{y:{beginAtZero:true,max:5}}}
+  });
+
+  // Chart: PS delivery rate
+  var psRates = [];
+  for (var w=0;w<STATE.week;w++){
+    var delivered = ss.filter(function(s){return s.weeklyPrep[w];}).length;
+    psRates.push(+(delivered/n*100).toFixed(0));
+  }
+  destroyChart('chart-ps');
+  STATE.charts['chart-ps'] = new Chart(document.getElementById('chart-ps'), {
+    type:'line', data:{labels:weekLabels, datasets:[{label:'% Entregas',data:psRates,
+      borderColor:'#27ae60',backgroundColor:'rgba(39,174,96,0.1)',fill:true,tension:0.3,pointRadius:4}]},
+    options:{responsive:true,scales:{y:{beginAtZero:true,max:100,ticks:{callback:function(v){return v+'%'}}}}}
+  });
+
+  // Alerts
+  var highs = ss.filter(function(s){return calcRisk(s)==='alto';});
+  var meds = ss.filter(function(s){return calcRisk(s)==='medio';});
+  var alertsHtml = '';
+  if (highs.length) alertsHtml += '<div class="alert-item high">&#9888; '+highs.length+' aluno(s) com risco ALTO de reprovacao: '+highs.map(function(s){return s.nome;}).join(', ')+'</div>';
+  if (meds.length) alertsHtml += '<div class="alert-item medium">&#9888; '+meds.length+' aluno(s) com risco MEDIO: observar nas proximas semanas</div>';
+  var noQuiz = ss.filter(function(s){return !s.didNextQuiz;});
+  if (noQuiz.length) alertsHtml += '<div class="alert-item medium">&#9888; '+noQuiz.length+' aluno(s) nao fizeram o quiz pre-aula da proxima semana</div>';
+  if (avgMedia >= 6) alertsHtml += '<div class="alert-item ok">&#10004; Media da turma ('+avgMedia.toFixed(1)+') acima do minimo de aprovacao</div>';
+  document.getElementById('alerts-box').innerHTML = '<h3>Alertas</h3>' + alertsHtml;
+
+  // Ranking table
+  var sorted = ss.slice().sort(function(a,b){return calcMedia(b)-calcMedia(a);});
+  var tbody = '';
+  sorted.forEach(function(s,i) {
+    var m = calcMedia(s);
+    var risk = calcRisk(s);
+    var riskClass = risk==='alto'?'risk-high':risk==='medio'?'risk-medium':'';
+    var badge = risk==='alto'?'badge-high':risk==='medio'?'badge-medium':'badge-low';
+    var trendIcon = s.tendencia==='subindo'?'&#8599;':s.tendencia==='caindo'?'&#8600;':'&#8594;';
+    tbody += '<tr class="'+riskClass+'"><td>'+(i+1)+'</td><td class="clickable" onclick="viewStudent(\''+s.matricula+'\')">'
+      +s.nome+'</td><td>'+s.quiz+'</td><td>'+s.ps+'</td><td>'+s.p1+'</td><td>'
+      +s.participacao+'</td><td><strong>'+m+'</strong></td><td>'+trendIcon+' '+s.tendencia
+      +'</td><td><span class="badge '+badge+'">'+risk.toUpperCase()+'</span></td></tr>';
+  });
+  document.querySelector('#table-ranking tbody').innerHTML = tbody;
+}
+
+function renderStudentsList() {
+  var ss = STATE.students;
+  var highs=0,meds=0,lows=0;
+  ss.forEach(function(s){var r=calcRisk(s);if(r==='alto')highs++;else if(r==='medio')meds++;else lows++;});
+  document.getElementById('count-high').textContent=highs;
+  document.getElementById('count-med').textContent=meds;
+  document.getElementById('count-low').textContent=lows;
+  document.getElementById('count-total').textContent=ss.length;
+
+  var sorted = ss.slice().sort(function(a,b){
+    var ra={'alto':0,'medio':1,'baixo':2};
+    return (ra[calcRisk(a)]||2)-(ra[calcRisk(b)]||2) || calcMedia(b)-calcMedia(a);
+  });
+  var tbody='';
+  sorted.forEach(function(s){
+    var m=calcMedia(s); var risk=calcRisk(s);
+    var badge=risk==='alto'?'badge-high':risk==='medio'?'badge-medium':'badge-low';
+    tbody+='<tr class="'+(risk==='alto'?'risk-high':risk==='medio'?'risk-medium':'')
+      +'"><td>'+s.nome+'</td><td>'+s.matricula+'</td><td>'+s.quiz+'</td><td>'+s.ps
+      +'</td><td>'+s.p1+'</td><td>'+s.participacao+'</td><td><strong>'+m+'</strong></td><td><span class="badge '
+      +badge+'">'+risk.toUpperCase()+'</span></td><td><span class="clickable" onclick="viewStudent(\''
+      +s.matricula+'\')">Ver</span></td></tr>';
+  });
+  document.querySelector('#table-students tbody').innerHTML=tbody;
+}
+
+function viewStudent(mat) {
+  var s = STATE.students.find(function(x){return x.matricula===mat;});
+  if(!s) return;
+  showScreen('student-detail');
+  document.getElementById('screen-student').classList.add('active');
+  document.getElementById('student-name').textContent = s.nome + ' (' + s.matricula + ')';
+
+  var m = calcMedia(s);
+  var risk = calcRisk(s);
+  var rank = STATE.students.slice().sort(function(a,b){return calcMedia(b)-calcMedia(a);}).findIndex(function(x){return x.matricula===mat;})+1;
+  var badge = risk==='alto'?'badge-high':risk==='medio'?'badge-medium':'badge-low';
+  var trendIcon = s.tendencia==='subindo'?'&#8599; melhorando':s.tendencia==='caindo'?'&#8600; caindo':'&#8594; estavel';
+
+  document.getElementById('student-meta').innerHTML =
+    '<div class="meta-item"><div class="val">'+m+'</div><div class="lbl">Nota Corrente</div></div>'
+    +'<div class="meta-item"><div class="val">'+rank+'/'+STATE.students.length+'</div><div class="lbl">Ranking</div></div>'
+    +'<div class="meta-item"><div class="val">'+trendIcon+'</div><div class="lbl">Tendencia</div></div>'
+    +'<div class="meta-item"><div class="val"><span class="badge '+badge+'">'+risk.toUpperCase()+'</span></div><div class="lbl">Risco</div></div>';
+
+  // Radar
+  destroyChart('chart-student-radar');
+  STATE.charts['chart-student-radar'] = new Chart(document.getElementById('chart-student-radar'), {
+    type:'radar', data:{labels:['Quiz Pre','Problem Set','Prova 1','Participacao','Preparacao'],
+      datasets:[{label:s.nome,data:[s.quiz,s.ps,s.p1,s.participacao,
+        s.weeklyPrep.reduce(function(a,b){return a+b},0)/s.weeklyPrep.length*10],
+        backgroundColor:'rgba(52,152,219,0.2)',borderColor:'#3498db',pointRadius:4},
+        {label:'Media Turma',data:[
+          STATE.students.reduce(function(a,x){return a+x.quiz},0)/STATE.students.length,
+          STATE.students.reduce(function(a,x){return a+x.ps},0)/STATE.students.length,
+          STATE.students.reduce(function(a,x){return a+x.p1},0)/STATE.students.length,
+          STATE.students.reduce(function(a,x){return a+x.participacao},0)/STATE.students.length,
+          STATE.students.reduce(function(a,x){return a+x.weeklyPrep.reduce(function(c,d){return c+d},0)/x.weeklyPrep.length*10},0)/STATE.students.length],
+        backgroundColor:'rgba(149,165,166,0.1)',borderColor:'#95a5a6',borderDash:[5,5],pointRadius:3}]},
+    options:{responsive:true,scales:{r:{beginAtZero:true,max:10}}}
+  });
+
+  // Weekly prep
+  var wLabels=[]; var wData=[];
+  for(var w=0;w<STATE.week;w++){wLabels.push('S'+(w+1)); wData.push(s.weeklyPrep[w]?s.quizScores[w]:0);}
+  destroyChart('chart-student-prep');
+  STATE.charts['chart-student-prep'] = new Chart(document.getElementById('chart-student-prep'), {
+    type:'bar', data:{labels:wLabels, datasets:[{label:'Quiz Score',data:wData,
+      backgroundColor:wData.map(function(v){return v>3?'#27ae60':v>0?'#f39c12':'#e74c3c';}),borderRadius:4}]},
+    options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:5}}}
+  });
+
+  // Trend
+  var trendData=[];var cumSum=0;
+  for(var w=0;w<STATE.week;w++){cumSum+=wData[w]; trendData.push(+(cumSum/(w+1)).toFixed(1));}
+  destroyChart('chart-student-trend');
+  STATE.charts['chart-student-trend'] = new Chart(document.getElementById('chart-student-trend'), {
+    type:'line', data:{labels:wLabels, datasets:[{label:'Media Acumulada Quiz',data:trendData,
+      borderColor:s.tendencia==='caindo'?'#e74c3c':'#27ae60',tension:0.3,pointRadius:4,fill:false}]},
+    options:{responsive:true,scales:{y:{beginAtZero:true,max:5}}}
+  });
+
+  // Patterns
+  var prepRate = s.weeklyPrep.reduce(function(a,b){return a+b},0)/s.weeklyPrep.length;
+  var patterns = [];
+  if(prepRate>0.8) patterns.push({cls:'good',txt:'Faz quiz pre-aula com regularidade ('+Math.round(prepRate*100)+'%)'});
+  else if(prepRate>0.5) patterns.push({cls:'warn',txt:'Quiz pre-aula irregular ('+Math.round(prepRate*100)+'%)'});
+  else patterns.push({cls:'bad',txt:'Baixa adesao ao quiz pre-aula ('+Math.round(prepRate*100)+'%)'});
+  if(s.ps>=7) patterns.push({cls:'good',txt:'Problem sets com boa qualidade (media '+s.ps+')'});
+  else if(s.ps>=5) patterns.push({cls:'warn',txt:'Problem sets medianos (media '+s.ps+')'});
+  else patterns.push({cls:'bad',txt:'Problem sets abaixo do esperado (media '+s.ps+')'});
+  if(s.tendencia==='subindo') patterns.push({cls:'good',txt:'Tendencia de melhora nas ultimas semanas'});
+  else if(s.tendencia==='caindo') patterns.push({cls:'bad',txt:'Tendencia de queda — recomendado conversa individual'});
+  else patterns.push({cls:'warn',txt:'Desempenho estavel'});
+  if(s.participacao>=8) patterns.push({cls:'good',txt:'Alta participacao em aula'});
+  else if(s.participacao<6) patterns.push({cls:'bad',txt:'Baixa participacao — verificar engajamento'});
+
+  document.getElementById('student-patterns').innerHTML = patterns.map(function(p){
+    return '<li class="'+p.cls+'">'+p.txt+'</li>';
+  }).join('');
+}
+
+function renderNextClass() {
+  var ss = STATE.students;
+  var responded = ss.filter(function(s){return s.didNextQuiz;}).length;
+  var pct = Math.round(responded/ss.length*100);
+  document.getElementById('nc-responded').textContent = responded;
+  document.getElementById('nc-pct').textContent = pct+'%';
+  document.getElementById('next-quiz-status').textContent = 'Quiz pre-aula: '+responded+'/'+ss.length+' responderam ('+pct+'%)';
+
+  // Simulated question accuracy
+  var questions = [
+    {id:'Q1',text:'Classificacao de bens por elasticidade-renda',pct:78},
+    {id:'Q2',text:'Curva de Engel para bem normal',pct:72},
+    {id:'Q3',text:'Efeito substituicao e sempre negativo',pct:45},
+    {id:'Q4',text:'Decomposicao Hicks vs Slutsky',pct:61},
+    {id:'Q5',text:'Condicoes para bem de Giffen',pct:52}
+  ];
+  var barsHtml = '';
+  questions.forEach(function(q){
+    var color = q.pct>=70?'#27ae60':q.pct>=50?'#f39c12':'#e74c3c';
+    barsHtml += '<div class="question-bar"><span class="q-label">'+q.id+'</span>'
+      +'<div style="flex:1"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:2px;">'+q.text+'</div>'
+      +'<div class="bar-bg"><div class="bar-fill" style="width:'+q.pct+'%;background:'+color+'"></div></div></div>'
+      +'<span class="bar-pct" style="color:'+color+'">'+q.pct+'%</span></div>';
+  });
+  document.getElementById('question-bars').innerHTML = barsHtml;
+
+  // Suggestions
+  var sugHtml = '';
+  var lowQs = questions.filter(function(q){return q.pct<60;});
+  if(lowQs.length) {
+    sugHtml += '<div class="alert-item medium">&#128161; Dedicar mais tempo em aula a: '
+      +lowQs.map(function(q){return '<strong>'+q.text+'</strong> ('+q.pct+'% acerto)';}).join(', ')+'</div>';
+  }
+  if(pct<70) sugHtml += '<div class="alert-item high">&#9888; Menos de 70% responderam o quiz. Considerar reforcar a importancia da preparacao.</div>';
+  else sugHtml += '<div class="alert-item ok">&#10004; Boa taxa de preparacao ('+pct+'%). Turma pronta para atividade ativa.</div>';
+  sugHtml += '<div class="alert-item ok">&#128218; Sugestao de abertura: usar Peer Instruction nas questoes Q3 e Q5 (menor acerto).</div>';
+  document.getElementById('next-suggestions').innerHTML = sugHtml;
+
+  // Missing students
+  var missing = ss.filter(function(s){return !s.didNextQuiz;});
+  var tbody = '';
+  missing.forEach(function(s){
+    var risk = calcRisk(s);
+    var badge = risk==='alto'?'badge-high':risk==='medio'?'badge-medium':'badge-low';
+    tbody += '<tr><td>'+s.nome+'</td><td>'+s.matricula+'</td><td><span class="badge '+badge+'">'+risk.toUpperCase()+'</span></td><td>Semana '+(STATE.week-1)+'</td></tr>';
+  });
+  document.querySelector('#table-missing tbody').innerHTML = tbody;
+}
+
+// ==================== NAVIGATION ====================
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.nav-tabs button').forEach(function(b){b.classList.remove('active');});
+  if(name==='overview'){
+    document.getElementById('screen-overview').classList.add('active');
+    document.querySelectorAll('.nav-tabs button')[0].classList.add('active');
+    renderOverview();
+  } else if(name==='students'){
+    document.getElementById('screen-students').classList.add('active');
+    document.querySelectorAll('.nav-tabs button')[1].classList.add('active');
+    renderStudentsList();
+  } else if(name==='nextclass'){
+    document.getElementById('screen-nextclass').classList.add('active');
+    document.querySelectorAll('.nav-tabs button')[2].classList.add('active');
+    renderNextClass();
+  } else if(name==='import'){
+    document.getElementById('screen-import').classList.add('active');
+    document.querySelectorAll('.nav-tabs button')[3].classList.add('active');
+  } else if(name==='student-detail'){
+    document.querySelectorAll('.screen').forEach(function(el){el.classList.remove('active');});
+  }
+}
+
+// ==================== HELPERS ====================
+function card(title,value,sub){
+  return '<div class="card"><div class="card-title">'+title+'</div><div class="card-value">'+value+'</div>'
+    +(sub?'<div class="card-sub">'+sub+'</div>':'')+'</div>';
+}
+function destroyChart(id){if(STATE.charts[id]){STATE.charts[id].destroy();delete STATE.charts[id];}}
+
+function loadDemoData(){
+  STATE.students = generateDemoStudents(45);
+  showScreen('overview');
+}
+
+function exportCSV(){
+  var rows = [['Nome','Matricula','Quiz','PS','P1','Participacao','Media','Tendencia','Risco']];
+  STATE.students.forEach(function(s){
+    rows.push([s.nome,s.matricula,s.quiz,s.ps,s.p1,s.participacao,calcMedia(s),s.tendencia,calcRisk(s)]);
+  });
+  var csv = rows.map(function(r){return r.join(',');}).join('\n');
+  var blob = new Blob([csv],{type:'text/csv'});
+  var a = document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='microII-dashboard-export.csv';
+  a.click();
+}
+
+// CSV upload
+document.getElementById('csv-upload').addEventListener('change',function(e){
+  var file=e.target.files[0]; if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var lines=ev.target.result.split('\n');
+    var header=lines[0].split(',').map(function(h){return h.trim().toLowerCase();});
+    STATE.students=[];
+    for(var i=1;i<lines.length;i++){
+      var cols=lines[i].split(',');
+      if(cols.length<7)continue;
+      var s={
+        nome:cols[0].trim(),
+        matricula:cols[1].trim(),
+        quiz:parseFloat(cols[2])||0,
+        ps:parseFloat(cols[3])||0,
+        p1:parseFloat(cols[4])||0,
+        participacao:parseFloat(cols[5])||0,
+        tendencia:(cols[6]||'estavel').trim(),
+        weeklyPrep:Array.from({length:STATE.week},function(){return Math.random()>0.2?1:0;}),
+        quizScores:Array.from({length:STATE.week},function(){return 2+Math.random()*3;}),
+        didNextQuiz:Math.random()>0.3
+      };
+      STATE.students.push(s);
+    }
+    showScreen('overview');
+  };
+  reader.readAsText(file);
+});
+
+// ==================== INIT ====================
+loadDemoData();
+</script>
+</body>
+</html>

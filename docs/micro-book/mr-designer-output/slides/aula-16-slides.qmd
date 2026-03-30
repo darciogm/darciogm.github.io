@@ -1,0 +1,209 @@
+---
+title: "Custos CP vs LP + Envelope"
+subtitle: "Microeconomia II — Aula 16"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 16"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Custos Fixos e Variáveis no Curto Prazo
+
+No curto prazo ($K = \bar{K}$):
+
+$$CT_{CP}(q) = \underbrace{v\bar{K}}_{CF} + \underbrace{wL(q)}_{CV(q)}$$
+
+. . .
+
+**Custos médios:**
+
+$$CMe = \frac{CT}{q} = \underbrace{\frac{CF}{q}}_{CFMe} + \underbrace{\frac{CV}{q}}_{CVMe}$$
+
+. . .
+
+**Observações:**
+
+- $CFMe$ é decrescente em $q$ (diluição dos fixos)
+- $CVMe$ eventualmente cresce (rendimentos decrescentes)
+- $CMe$ tem formato de **U**
+
+## Curvas de Custo Médio e Marginal no CP
+
+**Relações fundamentais:**
+
+$$CMg = \frac{dCT}{dq} = \frac{dCV}{dq} = \frac{w}{PMg_L}$$
+
+. . .
+
+**O CMg cruza no mínimo:**
+
+1. $CMg$ cruza $CVMe$ no mínimo de $CVMe$
+2. $CMg$ cruza $CMe$ no mínimo de $CMe$
+3. O mínimo de $CMe$ ocorre à **direita** do mínimo de $CVMe$
+
+. . .
+
+> **Por quê?** Quando $CMg = CVMe$, os custos fixos ainda diluem — o $CMe$ continua caindo por mais um trecho.
+
+## CMg cruza CMe no mínimo: demonstração
+
+$$\frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{q \cdot CMg - CT}{q^2} = \frac{CMg - CMe}{q}$$
+
+. . .
+
+**Logo:**
+
+- $CMg < CMe \Rightarrow \frac{dCMe}{dq} < 0$ (CMe cai)
+- $CMg = CMe \Rightarrow \frac{dCMe}{dq} = 0$ (CMe mínimo)
+- $CMg > CMe \Rightarrow \frac{dCMe}{dq} > 0$ (CMe sobe)
+
+. . .
+
+**Relação dual com a produção:**
+
+$$CMg = \frac{w}{PMg_L} \quad \text{e} \quad CVMe = \frac{w}{PMe_L}$$
+
+$PMg_L$ máximo $\Leftrightarrow$ $CMg$ mínimo; $PMe_L$ máximo $\Leftrightarrow$ $CVMe$ mínimo.
+
+## A Envoltória de Longo Prazo
+
+Para cada nível de capital $\bar{K}$, existe uma curva $CMe_{CP}(\bar{K})$.
+
+A curva de $CMe_{LP}$ é a **envoltória** de todas as curvas de $CMe_{CP}$:
+
+$$CMe_{LP}(q) = \min_{\bar{K}} CMe_{CP}(q, \bar{K})$$
+
+<iframe src="../../graficos/cap11/envoltoria-custo-total.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Economias e Deseconomias de Escala
+
+**Economias de escala:** $CMe_{LP}$ decrescente
+
+$$S(q) = \frac{CMe_{LP}(q)}{CMg_{LP}(q)} > 1$$
+
+. . .
+
+**Deseconomias de escala:** $CMe_{LP}$ crescente ($S < 1$)
+
+. . .
+
+**Fontes de economias de escala:**
+
+- Indivisibilidades (custos fixos de setup)
+- Especialização do trabalho
+- Regra dos dois terços (engenharia)
+
+**Fontes de deseconomias:**
+
+- Custos de coordenação e burocracia
+- Congestionamento de recursos
+- Problemas de agência
+
+## Escala Mínima Eficiente (EME)
+
+A **EME** é o menor nível de produção para o qual $CMe_{LP}$ atinge seu mínimo:
+
+$$q_{EME} = \arg\min_q CMe_{LP}(q)$$
+
+. . .
+
+**Implicações para a estrutura de mercado:**
+
+| $q_{EME}$ relativo ao mercado | Estrutura provável |
+|---|---|
+| Muito pequeno | Concorrência perfeita |
+| Moderado | Oligopólio |
+| Próximo da demanda total | Monopólio natural |
+
+. . .
+
+> A EME ajuda a prever **quantas firmas** cabem no mercado.
+
+## Custos de Curto vs. Longo Prazo — Interativo
+
+Compare as curvas de custo nos dois horizontes:
+
+<iframe src="../../graficos/cap11/curto-longo-prazo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+Observe: a curva de LP é sempre **igual ou inferior** à de CP para qualquer $q$.
+
+## Lema de Shephard: Verificação
+
+O **Lema de Shephard** afirma que as demandas condicionais são as derivadas da função custo:
+
+$$L^*(w, v, q) = \frac{\partial C(w, v, q)}{\partial w} \qquad K^*(w, v, q) = \frac{\partial C(w, v, q)}{\partial v}$$
+
+. . .
+
+**Verificação Cobb-Douglas** ($q = K^{1/2}L^{1/2}$):
+
+$$C(w,v,q) = 2q\sqrt{wv}$$
+
+$$\frac{\partial C}{\partial w} = q\sqrt{\frac{v}{w}} = L^* \quad \checkmark \qquad \frac{\partial C}{\partial v} = q\sqrt{\frac{w}{v}} = K^* \quad \checkmark$$
+
+## Atividade: Construindo a Envoltória
+
+**Instruções (15 min):**
+
+1. Cada grupo recebe **3 plantas** com $\bar{K}_1 < \bar{K}_2 < \bar{K}_3$
+2. Para cada planta, calcule $CMe_{CP}(q)$ em $q \in \{10, 20, 30, 40, 50\}$
+
+. . .
+
+3. No papel milimetrado:
+   - Trace as 3 curvas de $CMe_{CP}$
+   - Identifique a **envoltória** (menor CMe para cada $q$)
+   - Marque a **EME**
+
+. . .
+
+4. **Pergunta-guia:** Para $q = 25$, qual planta a firma escolheria no LP? E se já tivesse $\bar{K}_1$ instalado?
+
+## Problema das Estações
+
+**Estação 1:** Dado $CT(q) = 100 + 10q + q^2$, encontre $CMe$, $CVMe$, $CMg$ e os mínimos.
+
+**Estação 2:** Dada função de produção $q = K^{1/3}L^{2/3}$ com $w = 8$ e $v = 2$, derive $C(q)$.
+
+**Estação 3:** Explique graficamente por que $CT_{LP} \leq CT_{CP}$ usando o conceito de otimização restrita vs. irrestrita em $K$.
+
+. . .
+
+> **Tempo:** 5 minutos por estação. Rodem ao sinal do professor.
+
+## Peer Instruction: CMg < CMe implica CMe decrescente?
+
+> **Questão:** "Se o custo marginal é menor que o custo médio, então o custo médio está necessariamente decrescendo."
+
+**Vote:**
+
+- **(A)** Verdadeiro — segue diretamente da fórmula $\frac{dCMe}{dq} = \frac{CMg - CMe}{q}$
+- **(B)** Falso — depende se estamos no curto ou longo prazo
+- **(C)** Falso — só vale para custos variáveis médios
+- **(D)** Verdadeiro — mas apenas para a função Cobb-Douglas
+
+. . .
+
+**Discuta com seu vizinho por 2 minutos e vote novamente.**
+
+## Próxima Aula: Maximização de Lucro
+
+**Aula 17 — Maximização de Lucro e Oferta**
+
+- Da minimização de custos à maximização de lucro
+- Condição $P = CMg$ e decisão de operação
+- Curva de oferta da firma competitiva
+
+. . .
+
+**Preparação:**
+
+- Ler capítulo 12 (lucro e oferta)
+- Pensar: por que a firma competitiva não escolhe o preço?

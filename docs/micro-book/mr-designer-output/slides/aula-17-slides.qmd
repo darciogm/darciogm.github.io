@@ -1,0 +1,211 @@
+---
+title: "Maximização de Lucro e Oferta"
+subtitle: "Microeconomia II — Aula 17"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 17"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## A padaria da esquina e o preço do pão
+
+- A padaria decide **quantos pães** produzir, mas **não decide o preço**
+- Se cobrar acima do mercado, perde todos os clientes
+- Se cobrar abaixo, tem fila mas perde dinheiro
+
+. . .
+
+> Uma firma **tomadora de preço** resolve: dado $P$, qual $q$ maximiza o lucro?
+
+## A Firma Competitiva: Price-Taker
+
+**Hipóteses da concorrência perfeita:**
+
+1. Muitos compradores e vendedores
+2. Produto homogêneo
+3. Livre entrada e saída
+4. Informação perfeita
+
+. . .
+
+**Consequência:** a firma individual enfrenta uma **curva de demanda horizontal** ao preço de mercado $P$.
+
+$$RT(q) = P \cdot q \qquad RMg = \frac{dRT}{dq} = P$$
+
+. . .
+
+> A firma é tão pequena relativamente ao mercado que suas decisões não afetam $P$.
+
+## Condição P = CMg
+
+**Problema:**
+
+$$\max_q \; \pi(q) = P \cdot q - CT(q)$$
+
+. . .
+
+**Condição de primeira ordem:**
+
+$$\frac{d\pi}{dq} = P - CMg(q) = 0 \implies \boxed{P = CMg(q^*)}$$
+
+<iframe src="../../graficos/cap12/maximizacao-lucro.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Condições de Primeira e Segunda Ordem
+
+**CPO:** $P = CMg(q^*)$
+
+**CSO:** $\frac{d^2\pi}{dq^2} = -\frac{dCMg}{dq} < 0 \implies \frac{dCMg}{dq} > 0$
+
+. . .
+
+**A CSO exige que o CMg seja crescente no ponto ótimo.**
+
+Isso elimina a interseção no trecho decrescente do CMg.
+
+. . .
+
+**Resumo das condições necessárias:**
+
+1. $P = CMg(q^*)$ — receita marginal = custo marginal
+2. $CMg$ crescente em $q^*$ — máximo, não mínimo
+3. $\pi(q^*) \geq \pi(0)$ — produzir é melhor que fechar
+
+## Lucro como Área
+
+O lucro pode ser visualizado geometricamente:
+
+$$\pi(q^*) = (P - CMe(q^*)) \cdot q^*$$
+
+. . .
+
+**Três cenários:**
+
+| Condição | Lucro | Decisão |
+|---|---|---|
+| $P > CMe$ | $\pi > 0$ | Lucro econômico positivo |
+| $P = CMe$ | $\pi = 0$ | Lucro econômico zero (normal) |
+| $P < CMe$ | $\pi < 0$ | Prejuízo — avaliar operação |
+
+. . .
+
+> **Lucro zero** não significa que o empresário não ganha nada — significa que ganha exatamente o custo de oportunidade.
+
+## Excedente do Produtor
+
+O **excedente do produtor** (EP) mede o ganho da firma acima de seus custos variáveis:
+
+$$EP = RT - CV = \int_0^{q^*} [P - CMg(q)] \, dq$$
+
+. . .
+
+**Relação com o lucro:**
+
+$$EP = \pi + CF$$
+
+. . .
+
+**Interpretações equivalentes:**
+
+- Área entre $P$ e a curva de $CMg$
+- $RT - CV = (P - CVMe) \cdot q$
+- No longo prazo (sem custos fixos): $EP = \pi$
+
+## Decisão de Encerramento (Shutdown)
+
+**Fluxograma de decisão da firma no curto prazo:**
+
+. . .
+
+1. Calcule $q^*$ tal que $P = CMg(q^*)$
+2. Se $P \geq CMe(q^*)$: **opere** (lucro $\geq 0$)
+3. Se $CVMe(q^*) \leq P < CMe(q^*)$: **opere** (prejuízo, mas cobre parte dos fixos)
+4. Se $P < CVMe(q^*)$: **encerre** (prejuízo = $CF$ é menor que operando)
+
+. . .
+
+$$\text{Ponto de encerramento:} \quad P = \min_q CVMe(q)$$
+
+> **No LP:** como não há custos fixos, a condição vira $P \geq \min CMe_{LP}$.
+
+## Curva de Oferta = CMg acima de CVMe
+
+A **curva de oferta** da firma competitiva no CP:
+
+$$q^S(P) = \begin{cases} CMg^{-1}(P) & \text{se } P \geq \min CVMe \\ 0 & \text{se } P < \min CVMe \end{cases}$$
+
+<iframe src="../../graficos/cap12/lucro-maximo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Lema de Hotelling
+
+O **Lema de Hotelling** conecta a função lucro às decisões ótimas:
+
+$$\pi^*(P, w, v) = \max_q \; Pq - C(w, v, q)$$
+
+. . .
+
+**Resultado:**
+
+$$\frac{\partial \pi^*}{\partial P} = q^*(P) \qquad \text{(oferta)}$$
+
+$$\frac{\partial \pi^*}{\partial w} = -L^*(P) \qquad \text{(demanda de trabalho, com sinal negativo)}$$
+
+. . .
+
+> Análogo ao Lema de Shephard, mas para a função lucro em vez da função custo.
+
+## Longo Prazo com Livre Entrada
+
+**Dinâmica de longo prazo:**
+
+- $\pi > 0$: firmas **entram** $\Rightarrow$ oferta aumenta $\Rightarrow$ $P$ cai
+- $\pi < 0$: firmas **saem** $\Rightarrow$ oferta diminui $\Rightarrow$ $P$ sobe
+
+. . .
+
+**Equilíbrio de longo prazo:**
+
+$$P^* = \min_q CMe_{LP}(q) \qquad \pi^* = 0$$
+
+. . .
+
+**Implicações:**
+
+- Todas as firmas produzem na **escala eficiente**
+- O preço iguala o custo médio mínimo
+- Não há incentivo para entrada nem saída
+
+## Analogia Consumidor vs. Firma
+
+| Consumidor | Firma |
+|---|---|
+| Utilidade $U(x_1, x_2)$ | Produção $f(K, L)$ |
+| Curvas de indiferença | Isoquantas |
+| TMS | TMST |
+| Restrição orçamentária | Isocusto |
+| $\max U$ s.a. renda | $\min C$ s.a. $q = \bar{q}$ |
+| Demanda marshalliana | Oferta do produto |
+| Demanda hicksiana | Demanda condicional de insumo |
+| Gasto mínimo $e(p, \bar{u})$ | Custo mínimo $C(w, v, \bar{q})$ |
+| Lema de Shephard (gasto) | Lema de Shephard (custo) |
+
+## Próxima Aula: Simulação de Decisão de Produção
+
+**Aula 18 — Simulação: Decisão de Produção**
+
+- Teoria da firma de Coase e custos de transação
+- Oferta de mercado e equilíbrio de longo prazo
+- Simulação: sua startup de delivery sobrevive?
+
+. . .
+
+**Preparação:**
+
+- Revisar condições de operação/encerramento
+- Pensar: o que acontece com as padarias quando o preço da farinha sobe 50%?

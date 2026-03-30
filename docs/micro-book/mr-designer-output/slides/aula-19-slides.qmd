@@ -1,0 +1,274 @@
+---
+title: "Equilíbrio Competitivo e Bem-Estar"
+subtitle: "Microeconomia II — Aula 19"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 19"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## O tomate na Ceasa: de onde vem o preço?
+
+> Toda manhã, milhares de caixas de tomate chegam à Ceasa. Ninguém "decide" o preço — ele **emerge** da interação de ofertantes e demandantes.
+
+. . .
+
+**Perguntas que vamos responder hoje:**
+
+- Como a oferta de mercado nasce das decisões individuais das firmas?
+- O que garante que o equilíbrio competitivo é eficiente?
+- O que acontece quando o governo intervém?
+
+. . .
+
+:::{.callout-tip title="Objetivo da Aula"}
+Derivar o equilíbrio competitivo via agregação horizontal e analisar suas propriedades de bem-estar.
+:::
+
+## Agregação Horizontal de Oferta e Demanda
+
+**Demanda de mercado:** soma horizontal das demandas individuais.
+
+$$Q^D(P) = \sum_{i=1}^{n} q_i^D(P)$$
+
+. . .
+
+**Oferta de mercado:** soma horizontal das ofertas individuais (cada firma oferta onde $P = CMg$).
+
+$$Q^S(P) = \sum_{j=1}^{m} q_j^S(P)$$
+
+. . .
+
+:::{.callout-note title="Cuidado"}
+A soma é **horizontal**: para cada preço, somamos as quantidades. Não some as curvas verticalmente!
+:::
+
+## Condição de Equilíbrio
+
+O equilíbrio competitivo ocorre quando:
+
+$$Q^D(P^*) = Q^S(P^*)$$
+
+. . .
+
+**Propriedades do equilíbrio:**
+
+| Propriedade | Significado |
+|:--|:--|
+| Preço único | Lei do preço único (arbitragem) |
+| Market clearing | Nenhum excesso de oferta ou demanda |
+| Estabilidade | Forças de mercado restauram o equilíbrio |
+
+. . .
+
+**Graficamente:** interseção das curvas de oferta e demanda agregadas.
+
+$$P^* \text{ tal que } \sum_i q_i^D(P^*) = \sum_j q_j^S(P^*)$$
+
+## Condições da Concorrência Perfeita
+
+Para que o modelo funcione, precisamos de **quatro condições**:
+
+. . .
+
+1. **Muitos compradores e vendedores** — nenhum agente individual influencia o preço
+2. **Produto homogêneo** — os bens são substitutos perfeitos
+3. **Livre entrada e saída** — sem barreiras
+4. **Informação perfeita** — todos conhecem preços e qualidades
+
+. . .
+
+:::{.callout-warning title="Implicação central"}
+Cada firma é **tomadora de preço** ($price\ taker$): a curva de demanda individual é perfeitamente elástica.
+
+$$P = RMg = RMe$$
+:::
+
+## Horizontes Temporais: Curtíssimo, Curto e Longo Prazo
+
+:::: {.columns}
+::: {.column width="50%"}
+
+| Horizonte | Oferta | Ajuste |
+|:--|:--|:--|
+| Curtíssimo | Vertical | Estoque fixo |
+| Curto prazo | Positiva | Firmas ajustam $q$ |
+| Longo prazo | Mais elástica | Entrada/saída |
+
+. . .
+
+**No longo prazo:**
+
+$$P = CMg = CMe_{\min}$$
+
+Lucro econômico zero.
+
+:::
+::: {.column width="50%"}
+
+<iframe src="../../graficos/cap13/oferta-demanda.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Exercício Numérico: Encontrando o Equilíbrio
+
+**Dados:**
+
+- Demanda: $Q^D = 200 - 4P$
+- Oferta: $Q^S = -40 + 2P$
+
+. . .
+
+**Solução:**
+
+$$200 - 4P = -40 + 2P \implies 6P = 240 \implies P^* = 40$$
+
+$$Q^* = 200 - 4(40) = 40$$
+
+. . .
+
+**Verifique:** $Q^S = -40 + 2(40) = 40$ ✓
+
+:::{.callout-tip title="Elasticidades no equilíbrio"}
+$\varepsilon_D = \frac{dQ^D}{dP}\cdot\frac{P}{Q} = -4 \cdot \frac{40}{40} = -4$ e $\varepsilon_S = 2 \cdot \frac{40}{40} = 2$
+:::
+
+## Excedente do Consumidor e do Produtor
+
+**Excedente do Consumidor (EC):** diferença entre disposição a pagar e preço pago.
+
+$$EC = \int_0^{Q^*} P^D(Q)\,dQ - P^* Q^*$$
+
+. . .
+
+**Excedente do Produtor (EP):** diferença entre receita e custo variável.
+
+$$EP = P^* Q^* - \int_0^{Q^*} P^S(Q)\,dQ$$
+
+. . .
+
+**No exercício anterior:**
+
+$$EC = \frac{1}{2}(50 - 40)(40) = 200$$
+
+$$EP = \frac{1}{2}(40 - 20)(40) = 400$$
+
+## Excedente Total e Eficiência de Pareto
+
+**Excedente Total (ET):**
+
+$$ET = EC + EP$$
+
+. . .
+
+O equilíbrio competitivo **maximiza** o excedente total. Este é o **Primeiro Teorema Fundamental do Bem-Estar**.
+
+. . .
+
+:::{.callout-important title="Eficiência de Pareto"}
+Uma alocação é Pareto-eficiente se não é possível melhorar a situação de nenhum agente sem piorar a de outro.
+
+No equilíbrio competitivo: $BMg = CMg$ para a última unidade transacionada — **condição de eficiência**.
+:::
+
+. . .
+
+**Nota:** eficiência $\neq$ equidade. O mercado pode ser eficiente mas desigual.
+
+## Peso Morto (Deadweight Loss)
+
+Qualquer desvio do equilíbrio competitivo gera **perda de peso morto** (DWL):
+
+$$DWL = ET_{\text{competitivo}} - ET_{\text{com intervenção}}$$
+
+. . .
+
+**Fontes de DWL:**
+
+- Impostos e subsídios
+- Controles de preços (teto/piso)
+- Poder de mercado (monopólio, oligopólio)
+- Externalidades
+
+. . .
+
+**Geometricamente:** triângulo entre as curvas de oferta e demanda, na região das transações perdidas.
+
+$$DWL = \frac{1}{2} \cdot t \cdot \Delta Q$$
+
+onde $t$ é a cunha e $\Delta Q$ é a redução de quantidade.
+
+## Incidência Tributária
+
+Quem paga o imposto **de fato**? Depende das **elasticidades relativas**.
+
+. . .
+
+:::: {.columns}
+::: {.column width="45%"}
+
+**Parcela do consumidor:**
+
+$$\frac{\Delta P_C}{t} = \frac{\varepsilon_S}{\varepsilon_S - \varepsilon_D}$$
+
+**Parcela do produtor:**
+
+$$\frac{\Delta P_P}{t} = \frac{-\varepsilon_D}{\varepsilon_S - \varepsilon_D}$$
+
+. . .
+
+O lado **mais inelástico** arca com a maior parcela do imposto.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap13/incidencia-tributaria.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Equilíbrio de Longo Prazo
+
+Com **livre entrada e saída**, o longo prazo impõe lucro econômico zero:
+
+$$P = CMg = CMe_{\min}$$
+
+. . .
+
+**Mecanismo de ajuste:**
+
+1. $\pi > 0$ → entrada de firmas → oferta $\uparrow$ → preço $\downarrow$
+2. $\pi < 0$ → saída de firmas → oferta $\downarrow$ → preço $\uparrow$
+3. Equilíbrio: $\pi = 0$ para a firma marginal
+
+. . .
+
+<iframe src="../../graficos/cap13/equilibrio-longo-prazo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Próxima Aula: Políticas Públicas e Peso Morto
+
+**O que vem pela frente (Aula 20):**
+
+- Impostos específicos vs. *ad valorem*
+- Teto e piso de preços no Brasil
+- Princípio de Ramsey para tributação ótima
+
+. . .
+
+:::{.callout-tip title="Para casa"}
+1. Resolva os exercícios do Capítulo 13 (itens 1–5)
+2. Pesquise: qual a alíquota do ICMS sobre gasolina no seu estado?
+3. Reflita: o preço do arroz subiu 70% em 2020 — quem "pagou" esse choque?
+:::
+
+. . .
+
+> "O sistema de preços é o mecanismo mais eficiente já inventado para coordenar decisões descentralizadas." — F. A. Hayek

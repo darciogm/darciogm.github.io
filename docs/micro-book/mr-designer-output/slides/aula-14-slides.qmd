@@ -1,0 +1,220 @@
+---
+title: "Lab Isoquantas e Funções de Produção"
+subtitle: "Microeconomia II — Aula 14"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 14"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Quase-Concavidade e Produção
+
+Uma função $f$ é **quase-côncava** se os conjuntos de nível superior são convexos:
+
+$$\{(K,L) : f(K,L) \geq \bar{q}\} \text{ é convexo } \forall \bar{q}$$
+
+. . .
+
+**Implicações para a produção:**
+
+- Isoquantas são **convexas** em direção à origem
+- TMST é **decrescente** ao longo da isoquanta
+- Garante que a minimização de custos tem solução **única**
+
+. . .
+
+> Quase-concavidade **não** exige concavidade — a função pode ter rendimentos crescentes de escala.
+
+## Produção CES: Aninhamento
+
+A função CES aninha os casos polares:
+
+$$q = A\bigl[\delta K^{\rho} + (1-\delta)L^{\rho}\bigr]^{r/\rho}$$
+
+. . .
+
+**Casos especiais via $\rho$:**
+
+| $\rho$ | $\sigma = \frac{1}{1-\rho}$ | Função |
+|---|---|---|
+| $\to 0$ | $1$ | Cobb-Douglas |
+| $1$ | $\infty$ | Linear |
+| $\to -\infty$ | $0$ | Leontief |
+
+. . .
+
+O parâmetro $r$ controla rendimentos de escala independentemente de $\sigma$.
+
+## Elasticidade de Substituição na Prática
+
+Explore como $\sigma$ altera a forma das isoquantas:
+
+<iframe src="../../graficos/cap10/isoquantas.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+**Observe:** quando $\sigma \to 0$, as isoquantas se tornam angulosas; quando $\sigma \to \infty$, tornam-se retas.
+
+## Cobb-Douglas em Detalhe
+
+$$q = AK^{\alpha}L^{\beta}$$
+
+**Propriedades algébricas:**
+
+- $PMg_L = \beta A K^{\alpha} L^{\beta - 1} = \beta \frac{q}{L}$
+- $PMg_K = \alpha A K^{\alpha - 1} L^{\beta} = \alpha \frac{q}{K}$
+- $TMST_{L,K} = \frac{\beta}{\alpha} \cdot \frac{K}{L}$
+
+. . .
+
+**Rendimentos de escala:** $\alpha + \beta$
+
+| $\alpha + \beta$ | Rendimentos |
+|---|---|
+| $> 1$ | Crescentes |
+| $= 1$ | Constantes |
+| $< 1$ | Decrescentes |
+
+<iframe src="../../graficos/cap10/rendimentos-escala.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Relações entre PMg e PMe
+
+**Resultado fundamental:** o produto marginal cruza o produto médio no ponto de máximo do produto médio.
+
+$$\frac{d}{dL}\left(\frac{q}{L}\right) = \frac{PMg_L - PMe_L}{L}$$
+
+. . .
+
+**Três fases da produção:**
+
+- **Fase I:** $PMg_L > PMe_L$ — ineficiente (PMe ainda crescente)
+- **Fase II:** $PMg_L < PMe_L$ mas $PMg_L > 0$ — região econômica
+- **Fase III:** $PMg_L < 0$ — absurda (mais insumo, menos produto)
+
+<iframe src="../../graficos/cap10/progresso-tecnico.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Efeitos Cruzados de Produtividade
+
+O que acontece com $PMg_L$ quando $K$ aumenta?
+
+$$\frac{\partial PMg_L}{\partial K} = \frac{\partial^2 f}{\partial K \partial L} = f_{KL}$$
+
+. . .
+
+**Complementaridade dos insumos:**
+
+- $f_{KL} > 0$: insumos são **complementares** — mais capital torna o trabalho mais produtivo
+- $f_{KL} < 0$: insumos são **substitutos** na produção
+- $f_{KL} = 0$: produtividades independentes (ex.: função aditiva)
+
+. . .
+
+> **Cobb-Douglas:** $f_{KL} = \alpha\beta AK^{\alpha-1}L^{\beta-1} > 0$ — sempre complementares!
+
+## Tipos de Progresso Técnico
+
+**Classificação de Hicks** — como a inovação altera a razão $K/L$ ótima a preços constantes:
+
+| Tipo | Efeito | Exemplo |
+|---|---|---|
+| **Neutro** | Não altera $K/L$ | TFP geral |
+| **Poupador de L** | Aumenta $K/L$ | Automação |
+| **Poupador de K** | Reduz $K/L$ | Software aberto |
+
+. . .
+
+**Progresso Hicks-neutro:**
+
+$$q = A(t) \cdot f(K, L)$$
+
+**Progresso Harrod-neutro (aumentador de trabalho):**
+
+$$q = f(K, A(t) \cdot L)$$
+
+## Funções de Produção na Prática
+
+**Estimação empírica:**
+
+- Solow (1957): resíduo de Solow = progresso técnico
+- Griliches (1967): capital humano na Cobb-Douglas
+- Arrow, Chenery, Minhas, Solow (1961): introdução da CES
+
+. . .
+
+**Evidência sobre $\sigma$:**
+
+| Setor | $\hat{\sigma}$ estimado |
+|---|---|
+| Manufatura (EUA) | $0{,}8 - 1{,}0$ |
+| Agricultura | $0{,}3 - 0{,}6$ |
+| Serviços | $1{,}0 - 1{,}5$ |
+
+> Antony (2010): a maioria das estimativas situa $\sigma < 1$.
+
+## Atividade Jigsaw: 4 Funções de Produção
+
+**Instruções (15 min):**
+
+1. Formem **4 grupos** — cada um recebe uma função:
+   - **Grupo A:** Linear $q = aK + bL$
+   - **Grupo B:** Leontief $q = \min\{aK, bL\}$
+   - **Grupo C:** Cobb-Douglas $q = K^{0{,}5}L^{0{,}5}$
+   - **Grupo D:** CES com $\rho = -1$ ($\sigma = 0{,}5$)
+
+. . .
+
+2. Cada grupo deve determinar: isoquantas, TMST, rendimentos de escala, $\sigma$
+3. **Reagrupem** (um de cada grupo) e ensinem uns aos outros
+
+## Desafio Diagnóstico
+
+**Cenário:** Uma firma usa $K=100$, $L=200$ e produz $q=500$.
+
+Após duplicar ambos os insumos: $K=200$, $L=400$, produz $q=1200$.
+
+. . .
+
+**Perguntas:**
+
+1. Que tipo de rendimentos de escala essa firma apresenta? **Justifique.**
+2. Essa firma pode ter função Cobb-Douglas com $\alpha + \beta = 1$? **Por quê?**
+3. Se $w$ (salário) dobrar, o que acontece com a razão $K/L$ ótima na Cobb-Douglas?
+
+. . .
+
+> **Tempo:** 8 minutos em duplas. Preparem argumentos para discussão.
+
+## Peer Instruction: IRS implica monopólio?
+
+> **Questão:** "Se uma indústria apresenta rendimentos crescentes de escala, ela necessariamente se tornará um monopólio natural."
+
+**Vote:**
+
+- **(A)** Verdadeiro — IRS sempre leva a monopólio
+- **(B)** Falso — IRS é condição necessária mas não suficiente
+- **(C)** Falso — IRS não tem relação com monopólio
+- **(D)** Depende do intervalo relevante de produção
+
+. . .
+
+**Discuta com seu vizinho por 2 minutos e vote novamente.**
+
+## Próxima Aula: Custos de Produção
+
+**Aula 15 — Custos de Produção**
+
+- Do problema da firma ao custo: minimização de custos
+- Isocustos, tangência e demandas condicionais
+- Curvas de custo total, médio e marginal
+
+. . .
+
+**Preparação:**
+
+- Ler capítulo 11 (custos)
+- Pensar: qual a relação entre a TMST e os preços dos insumos?

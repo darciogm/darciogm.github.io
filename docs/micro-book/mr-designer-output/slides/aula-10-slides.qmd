@@ -1,0 +1,296 @@
+---
+title: "Simulação: Mercado de Trabalho"
+subtitle: "Microeconomia II — Aula 10"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 10"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Salário de Reserva
+
+O **salário de reserva** $w^*$ é o menor salário pelo qual o trabalhador aceita ofertar trabalho.
+
+. . .
+
+Formalmente, é o salário tal que $L^*(w^*) = 0$, ou seja:
+
+$$\text{TMS}_{\ell, C}\Big|_{\ell = \bar{T}} = w^*$$
+
+. . .
+
+**Determinantes do salário de reserva:**
+
+- Renda não-salarial $V$ (quanto maior, maior $w^*$)
+- Preferências por lazer
+- Programas de transferência de renda (elevam $V$ efetivo)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O salário de reserva é o custo de oportunidade da *primeira* hora de trabalho: quanto vale aquela última hora de lazer.
+:::
+
+## Demanda por Trabalho — Demanda Derivada
+
+A firma maximizadora de lucro contrata trabalho até:
+
+$$w = p \cdot PM_L = VPM_L$$
+
+. . .
+
+onde $VPM_L$ é o **valor do produto marginal do trabalho**.
+
+. . .
+
+**Propriedades:**
+
+- Inclinação negativa (PMg decrescente)
+- Desloca-se com preço do produto $p$, tecnologia, e quantidade de capital $K$
+- É uma **demanda derivada**: depende do mercado do produto final
+
+## Equilíbrio Competitivo no Mercado de Trabalho
+
+:::: {.columns}
+::: {.column width="50%"}
+
+No equilíbrio:
+
+$$L^S(w^*) = L^D(w^*)$$
+
+. . .
+
+**Características:**
+
+- Salário igual ao $VPM_L$
+- Trabalhadores e firmas são tomadores de preço
+- Sem desemprego involuntário
+
+. . .
+
+> Na prática, fricções, informação imperfeita e poder de mercado geram desvios.
+
+:::
+::: {.column width="50%"}
+
+**Estática comparativa:**
+
+| Choque | Efeito em $w^*$ | Efeito em $L^*$ |
+|:--|:--:|:--:|
+| ↑ produtividade | ↑ | ↑ |
+| ↑ oferta de trabalho | ↓ | ↑ |
+| ↑ preço do produto | ↑ | ↑ |
+| ↑ renda não-salarial | ↑ | ↓ |
+
+:::
+::::
+
+## Diferenciais Salariais
+
+Por que salários diferem entre trabalhadores e setores?
+
+. . .
+
+**Teoria dos diferenciais compensatórios (Adam Smith):**
+
+$$w_{\text{perigo}} - w_{\text{seguro}} = \text{compensação pelo risco}$$
+
+. . .
+
+**Outros fatores:**
+
+- Capital humano (educação, experiência)
+- Barreiras à entrada (licenças, sindicatos)
+- Discriminação estatística
+- Eficiência salarial (salário acima do equilíbrio para incentivar esforço)
+
+## Poder de Monopsônio
+
+:::: {.columns}
+::: {.column width="45%"}
+
+Um **monopsonista** é o único comprador de trabalho.
+
+. . .
+
+Enfrenta oferta $w(L)$ crescente:
+
+$$CMg_L = w(L) + w'(L) \cdot L > w(L)$$
+
+. . .
+
+**Resultado:**
+
+- Contrata onde $VPM_L = CMg_L$
+- Paga $w(L^M) < VPM_L$
+- Emprego menor que no competitivo
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap17/oferta-trabalho.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+:::{.callout-tip title="Intuição Econômica"}
+O monopsonista sabe que, para contratar mais um trabalhador, precisa elevar o salário de *todos* — por isso o custo marginal do trabalho excede o salário.
+:::
+
+## Salário Mínimo — Efeitos Ambíguos
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Mercado competitivo:**
+
+- Se $w_{\min} > w^*$ → desemprego
+- Perda de peso morto
+
+. . .
+
+**Monopsônio:**
+
+- Se $w_{\min} \in (w^M, w^*)$ → **aumenta emprego e salário**
+- Efeito positivo possível!
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Evidência empírica (Card & Krueger, 1994):**
+
+- Aumento do salário mínimo em New Jersey não reduziu emprego em fast-food
+- Consistente com modelo de monopsônio
+
+. . .
+
+> Debate continua: depende da magnitude do aumento e do grau de poder de monopsônio.
+
+:::
+::::
+
+## Backward-Bending — Derivação Formal
+
+Para $U(C, \ell)$, a oferta de trabalho $L(w) = \bar{T} - \ell(w)$.
+
+. . .
+
+Aplicando Slutsky com dotações ($\omega_\ell = \bar{T}$):
+
+$$\frac{\partial \ell}{\partial w} = \underbrace{\frac{\partial h_\ell}{\partial w}}_{< 0 \text{ (ES)}} + \underbrace{L \cdot \frac{\partial \ell}{\partial m}}_{> 0 \text{ se lazer normal (ER)}}$$
+
+. . .
+
+Portanto:
+
+$$\frac{\partial L}{\partial w} = -\frac{\partial \ell}{\partial w} = \underbrace{|ES|}_{> 0} - \underbrace{L \cdot \frac{\partial \ell}{\partial m}}_{> 0}$$
+
+. . .
+
+> Quando $L$ é grande (salário alto), o ER domina → $\frac{\partial L}{\partial w} < 0$ → **backward-bending**.
+
+<iframe src="../../graficos/cap17/trabalho-lazer.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## FIES e Escolha Intertemporal
+
+O **FIES** é um empréstimo subsidiado para estudantes universitários.
+
+. . .
+
+No modelo de Fisher com investimento em capital humano:
+
+- **Sem FIES:** restrição de crédito → $c_1$ limitado, não investe em educação
+- **Com FIES:** relaxa restrição → pode investir hoje, pagando com renda futura maior
+
+. . .
+
+$$\text{VPL da educação} = -\text{custo} + \sum_{t=1}^{T} \frac{\Delta m_t}{(1+r)^t} > 0$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O FIES funciona como um "mercado de capitais para capital humano" — permite que o estudante suavize consumo e invista na própria produtividade futura.
+:::
+
+## Role-Play — Negociação Salarial
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 15 minutos | **Formato:** Simulação em pares
+:::
+
+. . .
+
+**Regras:**
+
+1. **Metade da turma = Firmas** (recebem cartão com $VPM_L$ e número de vagas)
+2. **Metade = Trabalhadores** (recebem cartão com salário de reserva $w^*$)
+3. Negociação livre por 5 minutos
+4. Registre o salário acordado (ou "não contratado")
+
+. . .
+
+**Rodada 2:** Introduza salário mínimo de R\$ 1.800. Compare os resultados.
+
+**Rodada 3:** Reduza o número de firmas para 1 (monopsônio). O que acontece?
+
+## Think-Pair-Share — Bolsa Família e Oferta de Trabalho
+
+:::{.callout-tip title="Think-Pair-Share"}
+**Tempo:** 8 minutos | Pense (2 min) → Discuta (3 min) → Compartilhe (3 min)
+:::
+
+. . .
+
+> O Bolsa Família aumenta a renda não-salarial $V$ das famílias beneficiárias. Usando o modelo trabalho-lazer:
+
+. . .
+
+**(a)** Represente graficamente o efeito do programa sobre a restrição orçamentária.
+
+**(b)** O programa necessariamente reduz a oferta de trabalho? Discuta as condições.
+
+**(c)** Se o programa é condicionado à frequência escolar dos filhos, como isso altera sua análise?
+
+## Case — O FIES do Universitário
+
+:::{.callout-tip title="Peer Instruction"}
+**Tempo:** 10 minutos | **Formato:** Grupos de 3–4 alunos
+:::
+
+. . .
+
+**Cenário:** Ana tem renda $m_1 = 30.000$/ano (estágio) e espera $m_2 = 120.000$/ano após a graduação. A taxa de juros de mercado é $r = 10\%$/ano, mas o FIES cobra $r_{FIES} = 3\%$/ano.
+
+. . .
+
+**Tarefas:**
+
+1. Desenhe a restrição intertemporal **sem** e **com** FIES
+2. Calcule o valor presente da riqueza em cada caso
+3. Ana é poupadora ou devedora? Justifique
+4. Discuta: o subsídio do FIES beneficia mais quem tem renda alta ou baixa no período 1?
+
+## Próxima Aula
+
+**Aula 11 — Incerteza e Utilidade Esperada**
+
+. . .
+
+- Loterias e valor esperado
+- Axiomas de Von Neumann-Morgenstern
+- Aversão ao risco, equivalente certo e prêmio de risco
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Você pagaria R\$ 50 para participar de uma loteria que paga R\$ 100 com 60% de chance e R\$ 0 com 40%? O valor esperado é R\$ 60 > R\$ 50. Se hesitou, você provavelmente é **avesso ao risco**.
+:::

@@ -1,0 +1,203 @@
+---
+title: "Custos de Produção"
+subtitle: "Microeconomia II — Aula 15"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 15"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Amazon: 750 mil robôs e contando
+
+- Em 2024, a Amazon opera mais de 750.000 robôs em seus centros de distribuição
+- Cada robô substituiu tarefas humanas — mas **não eliminou** empregos
+- A firma escolhe a **combinação de insumos que minimiza o custo** para um dado nível de produto
+
+. . .
+
+> Nesta aula: como a firma traduz tecnologia em custos?
+
+## Custo Econômico vs. Custo Contábil
+
+**Custo contábil:** despesas explícitas registradas (salários, aluguel, materiais)
+
+**Custo econômico:** custo contábil + **custos de oportunidade**
+
+. . .
+
+$$C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{oportunidade}}$$
+
+**Exemplo:** empresário que ganha R\$ 0 de salário na própria firma, mas poderia ganhar R\$ 15.000/mês como empregado.
+
+- Custo contábil do seu trabalho: R\$ 0
+- Custo econômico do seu trabalho: R\$ 15.000/mês
+
+## Custo de Oportunidade e Custo Irrecuperável
+
+**Custo de oportunidade:** valor da melhor alternativa sacrificada
+
+$$C_{\text{oportunidade}}(x) = \max_{y \neq x} V(y)$$
+
+. . .
+
+**Custo irrecuperável (sunk cost):** gasto já realizado, irreversível
+
+- **Não** deve influenciar decisões futuras
+- Erro comum: "já gastei tanto, não posso parar agora" (falácia do custo irrecuperável)
+
+. . .
+
+> **Regra:** apenas custos que **variam** com a decisão são relevantes para escolhas econômicas.
+
+## O Problema de Minimização de Custos
+
+A firma escolhe $(K, L)$ para:
+
+$$\min_{K,L} \; wL + vK \quad \text{s.a.} \quad f(K,L) \geq \bar{q}$$
+
+onde $w$ = salário e $v$ = custo de uso do capital.
+
+. . .
+
+**Lagrangeano:**
+
+$$\mathcal{L} = wL + vK + \lambda[\bar{q} - f(K,L)]$$
+
+**CPOs:**
+
+$$w = \lambda \cdot PMg_L \qquad v = \lambda \cdot PMg_K$$
+
+## Reta Isocusto e Tangência
+
+**Reta isocusto:** combinações $(K,L)$ com mesmo custo total $C$:
+
+$$C = wL + vK \implies K = \frac{C}{v} - \frac{w}{v}L$$
+
+. . .
+
+**Condição de tangência** (solução interior):
+
+$$\frac{PMg_L}{PMg_K} = \frac{w}{v} \quad \Longleftrightarrow \quad TMST_{L,K} = \frac{w}{v}$$
+
+. . .
+
+> **Intuição:** a firma iguala a taxa à qual a tecnologia permite trocar insumos à taxa de troca do mercado.
+
+## Minimização de Custos — Interativo
+
+Explore a tangência entre isoquanta e isocusto:
+
+<iframe src="../../graficos/cap11/minimizacao-custo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+Mova os preços dos insumos e observe como a combinação ótima se ajusta.
+
+## Demandas Condicionais e Função Custo
+
+Das CPOs, obtemos as **demandas condicionais** de insumos:
+
+$$K^*(w, v, q) \qquad L^*(w, v, q)$$
+
+. . .
+
+Substituindo na função objetivo:
+
+$$C(w, v, q) = wL^*(w, v, q) + vK^*(w, v, q)$$
+
+. . .
+
+**Propriedades da função custo:**
+
+- Crescente em $w$, $v$ e $q$
+- Homogênea de grau 1 em $(w, v)$
+- Côncava em $(w, v)$ (Lema de Shephard)
+
+## Exemplo: Cobb-Douglas
+
+$$q = K^{\alpha}L^{\beta} \qquad \alpha + \beta = 1 \text{ (CRS)}$$
+
+**CPO de tangência:**
+
+$$\frac{\beta K}{\alpha L} = \frac{w}{v} \implies K = \frac{\alpha w}{\beta v} L$$
+
+. . .
+
+**Demandas condicionais:**
+
+$$L^* = q \left(\frac{\alpha w}{\beta v}\right)^{-\alpha} \qquad K^* = q \left(\frac{\alpha w}{\beta v}\right)^{\beta}$$
+
+. . .
+
+**Função custo (CRS):**
+
+$$C(w,v,q) = q \cdot \underbrace{\frac{w^\beta v^\alpha}{\alpha^\alpha \beta^\beta}}_{\text{custo unitário}}$$
+
+## Curvas CT, CMe e CMg
+
+**Definições:**
+
+$$CT(q) = C(w,v,q) \qquad CMe(q) = \frac{CT(q)}{q} \qquad CMg(q) = \frac{dCT}{dq}$$
+
+<iframe src="../../graficos/cap11/curvas-custo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Relação CMg–CMe
+
+$$\frac{d\,CMe}{dq} = \frac{CMg - CMe}{q}$$
+
+. . .
+
+**Implicações:**
+
+| Condição | Efeito |
+|---|---|
+| $CMg < CMe$ | $CMe$ decrescente |
+| $CMg = CMe$ | $CMe$ mínimo |
+| $CMg > CMe$ | $CMe$ crescente |
+
+. . .
+
+> **Regra:** a curva de CMg **sempre** cruza a curva de CMe em seu ponto de mínimo — mesma lógica da relação PMg-PMe, invertida.
+
+## Custos no Curto Prazo vs. Longo Prazo
+
+**Curto prazo** ($K = \bar{K}$ fixo):
+
+$$CT_{CP}(q) = v\bar{K} + wL(q, \bar{K})$$
+
+- Custos fixos: $CF = v\bar{K}$
+- Custos variáveis: $CV = wL(q, \bar{K})$
+
+. . .
+
+**Longo prazo** (todos os insumos variáveis):
+
+$$CT_{LP}(q) = C(w, v, q)$$
+
+. . .
+
+**Resultado fundamental:**
+
+$$CT_{LP}(q) \leq CT_{CP}(q) \quad \forall q$$
+
+com igualdade apenas no nível $q$ para o qual $\bar{K}$ é ótimo.
+
+## Próxima Aula: Custos CP vs LP + Envelope
+
+**Aula 16 — Custos de Curto e Longo Prazo**
+
+- Curvas de custo no curto prazo: CF, CV, CMe, CVMe, CMg
+- A envoltória: como o longo prazo "abraça" os curtos prazos
+- Economias e deseconomias de escala
+
+. . .
+
+**Preparação:**
+
+- Revisar as relações CMg-CMe
+- Pensar: por que $CT_{LP} \leq CT_{CP}$ sempre?

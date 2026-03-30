@@ -1,0 +1,262 @@
+---
+title: "Escolha Ótima do Consumidor"
+subtitle: "Microeconomia II — Aula 05"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 05"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## O Problema Central da Teoria do Consumidor
+
+> Todo consumidor resolve, conscientemente ou não, o seguinte problema:
+
+$$\max_{x_1, x_2} \; U(x_1, x_2) \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 \leq m$$
+
+. . .
+
+**Três ingredientes:**
+
+| Componente | Vem de onde? |
+|:--|:--|
+| $U(x_1, x_2)$ | Preferências (Aulas 03–04) |
+| $p_1 x_1 + p_2 x_2 \leq m$ | Mercado (preços e renda) |
+| $\max$ | Racionalidade (Axiomas) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A teoria do consumidor une o **desejável** (preferências) com o **possível** (orçamento).
+:::
+
+## Restrição Orçamentária
+
+$$p_1 x_1 + p_2 x_2 = m$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Propriedades:**
+
+- Inclinação: $-\frac{p_1}{p_2}$ (preço relativo)
+- Intercepto em $x_1$: $m/p_1$
+- Intercepto em $x_2$: $m/p_2$
+- Deslocamentos: $m \uparrow$ desloca para fora; $p_1 \uparrow$ gira para dentro
+:::
+::: {.column width="50%"}
+Explore as mudanças na restrição:
+
+<iframe src="../../graficos/cap04/restricao-orcamentaria.html" width="100%" height="380" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+:::
+::::
+
+## Condição de Tangência
+
+No ótimo interior, a curva de indiferença é **tangente** à restrição orçamentária:
+
+$$TMS_{12} = \frac{p_1}{p_2}$$
+
+. . .
+
+**Equivalentemente:**
+
+$$\frac{U_1}{U_2} = \frac{p_1}{p_2} \quad \iff \quad \frac{U_1}{p_1} = \frac{U_2}{p_2}$$
+
+. . .
+
+A utilidade marginal **por real gasto** deve ser igual para todos os bens.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se $U_1/p_1 > U_2/p_2$, o consumidor ganha mais "utilidade por real" comprando o bem 1 — logo, ainda não está no ótimo.
+:::
+
+## Por que Tangência? Três Intuições
+
+:::: {.columns}
+::: {.column width="33%"}
+**Geométrica**
+
+No ótimo, as inclinações da curva de indiferença e da reta orçamentária coincidem. Qualquer outro ponto factível está numa curva de indiferença inferior.
+:::
+::: {.column width="34%"}
+**Econômica**
+
+A taxa à qual o consumidor *quer* trocar ($TMS$) é igual à taxa à qual o mercado *permite* trocar ($p_1/p_2$). Não há "barganha" possível.
+:::
+::: {.column width="33%"}
+**Analítica**
+
+A condição $\nabla U = \lambda \nabla g$ (Lagrangeano) implica que os gradientes são paralelos — exatamente a condição de tangência.
+:::
+::::
+
+. . .
+
+> As três vias levam ao mesmo resultado — e isso é uma confirmação de robustez da teoria.
+
+## Lagrangeano do Consumidor
+
+$$\mathcal{L} = U(x_1, x_2) - \lambda(p_1 x_1 + p_2 x_2 - m)$$
+
+. . .
+
+**CPOs:**
+
+$$\frac{\partial U}{\partial x_1} = \lambda p_1 \qquad (1)$$
+
+$$\frac{\partial U}{\partial x_2} = \lambda p_2 \qquad (2)$$
+
+$$p_1 x_1 + p_2 x_2 = m \qquad (3)$$
+
+. . .
+
+De (1)/(2): $\frac{U_1}{U_2} = \frac{p_1}{p_2}$ — a condição de tangência.
+
+De (1): $\lambda = \frac{U_1}{p_1}$ — a utilidade marginal da renda.
+
+## Demandas Marshallianas
+
+Resolvendo as CPOs, obtemos as **funções de demanda marshalliana**:
+
+$$x_i^* = x_i(p_1, p_2, m)$$
+
+. . .
+
+**Propriedades gerais:**
+
+1. **Homogeneidade de grau 0** em $(p_1, p_2, m)$: dobrar todos os preços e a renda não altera as quantidades
+2. **Somando o orçamento:** $p_1 x_1^* + p_2 x_2^* = m$ (Lei de Walras)
+3. **Simetria e negatividade** da matriz de Slutsky (veremos na Aula 06)
+
+## Exemplo: Cobb-Douglas Resolvido
+
+$$\max \; U = x_1^\alpha x_2^{1-\alpha} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m$$
+
+. . .
+
+**CPO (tangência):**
+
+$$\frac{\alpha x_2}{(1-\alpha) x_1} = \frac{p_1}{p_2} \implies x_2 = \frac{(1-\alpha)p_1 x_1}{\alpha p_2}$$
+
+. . .
+
+**Substituindo na restrição:**
+
+$$p_1 x_1 + p_2 \cdot \frac{(1-\alpha)p_1 x_1}{\alpha p_2} = m \implies x_1^* = \frac{\alpha m}{p_1}$$
+
+$$x_2^* = \frac{(1-\alpha) m}{p_2}$$
+
+> Parcelas de gasto constantes: $\frac{p_1 x_1^*}{m} = \alpha$ e $\frac{p_2 x_2^*}{m} = 1-\alpha$, independente dos preços!
+
+## Utilidade Indireta
+
+Substituindo as demandas ótimas em $U$, obtemos a **função de utilidade indireta**:
+
+$$V(p_1, p_2, m) = U\big(x_1^*(p), x_2^*(p)\big)$$
+
+. . .
+
+**Para Cobb-Douglas:**
+
+$$V = \left(\frac{\alpha m}{p_1}\right)^\alpha \left(\frac{(1-\alpha)m}{p_2}\right)^{1-\alpha} = \alpha^\alpha(1-\alpha)^{1-\alpha} \cdot \frac{m}{p_1^\alpha p_2^{1-\alpha}}$$
+
+. . .
+
+**Propriedades de $V$:**
+
+- Crescente em $m$, decrescente em $p_i$
+- Homogênea de grau 0 em $(p_1, p_2, m)$
+- Quase-convexa em preços
+
+## Soluções de Canto: Substitutos Perfeitos
+
+$$U = ax_1 + bx_2 \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m$$
+
+. . .
+
+A TMS é **constante** = $a/b$, mas o preço relativo é $p_1/p_2$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+**Se $\frac{a}{b} > \frac{p_1}{p_2}$:**
+
+$x_1^* = \frac{m}{p_1}, \; x_2^* = 0$
+
+Só consome bem 1.
+:::
+::: {.column width="34%"}
+**Se $\frac{a}{b} < \frac{p_1}{p_2}$:**
+
+$x_1^* = 0, \; x_2^* = \frac{m}{p_2}$
+
+Só consome bem 2.
+:::
+::: {.column width="33%"}
+**Se $\frac{a}{b} = \frac{p_1}{p_2}$:**
+
+Qualquer ponto sobre a reta orçamentária é ótimo.
+:::
+::::
+
+> A tangência falha — o Lagrangeano padrão dá condições necessárias mas não suficientes aqui.
+
+## Soluções de Canto: Complementares Perfeitos
+
+$$U = \min\{ax_1, bx_2\} \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m$$
+
+. . .
+
+No ótimo, o consumidor sempre está no **vértice** do L: $ax_1^* = bx_2^*$.
+
+. . .
+
+$$x_1^* = \frac{bm}{bp_1 + ap_2}, \qquad x_2^* = \frac{am}{bp_1 + ap_2}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Não adianta ter mais sapatos esquerdos sem mais sapatos direitos — o consumidor sempre compra na proporção fixa $x_1/x_2 = b/a$.
+:::
+
+> Aqui também não há tangência — a curva de indiferença tem uma "quina" no ótimo.
+
+## Equilíbrio do Consumidor — Síntese Visual
+
+Veja como a solução ótima muda com preços e renda para diferentes funções de utilidade:
+
+<iframe src="../../graficos/cap04/equilibrio-consumidor.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O ponto de equilíbrio é onde o consumidor "exaure" todo o seu orçamento na curva de indiferença mais alta possível.
+:::
+
+## Próxima Aula
+
+**Aula 06 — Dualidade: Hicksiana e Função Gasto**
+
+. . .
+
+- O problema dual: minimizar gasto sujeito a um nível de utilidade
+- Demanda hicksiana (compensada) vs. marshalliana
+- Identidade de Roy e Lema de Shephard
+- **Atividade prática:** PBL — construir o "dossiê completo" de um consumidor
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise o conceito de dualidade do Capítulo 4 e tente responder: por que precisamos de *duas* funções de demanda?
+:::

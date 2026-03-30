@@ -1,0 +1,264 @@
+---
+title: "Incerteza e Utilidade Esperada"
+subtitle: "Microeconomia II — Aula 11"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 11"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## A Aposta
+
+> Você tem R\$ 100.000. Alguém oferece uma aposta: cara, você ganha R\$ 50.000; coroa, você perde R\$ 50.000. O valor esperado é **zero**. Você aceita?
+
+. . .
+
+A maioria das pessoas **recusa**. Por quê?
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A dor de perder R\$ 50 mil é maior que o prazer de ganhar R\$ 50 mil. Precisamos de uma teoria que capture essa assimetria — a **utilidade esperada**.
+:::
+
+## Loterias e Valor Esperado
+
+Uma **loteria** $\mathcal{L}$ é uma distribuição de probabilidade sobre resultados:
+
+$$\mathcal{L} = (x_1, p_1; \; x_2, p_2; \; \ldots; \; x_n, p_n), \quad \sum_i p_i = 1$$
+
+. . .
+
+**Valor esperado:**
+
+$$E[\mathcal{L}] = \sum_{i=1}^n p_i \cdot x_i$$
+
+. . .
+
+**Exemplo:** $\mathcal{L} = (100, \; 0{,}5; \; 0, \; 0{,}5)$
+
+$$E[\mathcal{L}] = 0{,}5 \times 100 + 0{,}5 \times 0 = 50$$
+
+. . .
+
+> O valor esperado é um bom critério de decisão? Nem sempre...
+
+## O Paradoxo de São Petersburgo
+
+**Jogo:** lance uma moeda até sair cara. Se cara sai na jogada $n$, você recebe $2^n$ reais.
+
+. . .
+
+$$E[\text{ganho}] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty$$
+
+. . .
+
+**Problema:** o valor esperado é **infinito**, mas ninguém pagaria R\$ 1 milhão para jogar.
+
+. . .
+
+**Solução de Bernoulli (1738):** as pessoas maximizam a **utilidade esperada**, não o valor esperado. Com $u(x) = \ln(x)$:
+
+$$E[u] = \sum_{n=1}^{\infty} \frac{1}{2^n} \ln(2^n) = \ln 2 \sum_{n=1}^{\infty} \frac{n}{2^n} = 2\ln 2 \approx 1{,}39$$
+
+## Axiomas de Von Neumann-Morgenstern
+
+Para que exista uma função de utilidade esperada, precisamos de quatro axiomas sobre preferências $\succsim$ definidas em loterias:
+
+. . .
+
+1. **Completude:** para quaisquer $\mathcal{L}_1, \mathcal{L}_2$, ou $\mathcal{L}_1 \succsim \mathcal{L}_2$ ou $\mathcal{L}_2 \succsim \mathcal{L}_1$
+
+2. **Transitividade:** se $\mathcal{L}_1 \succsim \mathcal{L}_2$ e $\mathcal{L}_2 \succsim \mathcal{L}_3$, então $\mathcal{L}_1 \succsim \mathcal{L}_3$
+
+. . .
+
+3. **Continuidade:** se $\mathcal{L}_1 \succ \mathcal{L}_2 \succ \mathcal{L}_3$, existe $\alpha \in (0,1)$ tal que $\mathcal{L}_2 \sim \alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3$
+
+4. **Independência:** se $\mathcal{L}_1 \succsim \mathcal{L}_2$, então $\alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3 \succsim \alpha \mathcal{L}_2 + (1-\alpha)\mathcal{L}_3$
+
+## Teorema da Utilidade Esperada
+
+**Teorema (VNM):** Se $\succsim$ satisfaz os quatro axiomas, existe $u: \mathbb{R} \to \mathbb{R}$ tal que:
+
+$$\mathcal{L}_1 \succsim \mathcal{L}_2 \iff E[u(\mathcal{L}_1)] \geq E[u(\mathcal{L}_2)]$$
+
+. . .
+
+onde:
+
+$$E[u(\mathcal{L})] = \sum_{i=1}^n p_i \, u(x_i)$$
+
+. . .
+
+**Propriedade:** $u$ é única a menos de transformação **afim positiva**: se $u$ representa $\succsim$, então $v = a + b \cdot u$ (com $b > 0$) também representa.
+
+. . .
+
+> Diferente da utilidade ordinal, aqui as *diferenças* de utilidade importam.
+
+## Três Atitudes em Relação ao Risco
+
+<iframe src="../../graficos/cap07/aversao-risco.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+| Atitude | $u''(x)$ | Formato | Comportamento |
+|:--|:--:|:--:|:--|
+| Avesso | $< 0$ | Côncava | Recusa apostas justas |
+| Neutro | $= 0$ | Linear | Indiferente a apostas justas |
+| Amante | $> 0$ | Convexa | Aceita apostas injustas |
+
+## Desigualdade de Jensen
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Teorema (Jensen):** Se $u$ é côncava:
+
+$$u(E[X]) \geq E[u(X)]$$
+
+. . .
+
+**Interpretação:** o agente avesso ao risco prefere receber o valor esperado com certeza a enfrentar a loteria.
+
+. . .
+
+**Consequência:** para aposta justa ($E[\text{ganho}] = 0$):
+
+$$E[u(w + \tilde{\varepsilon})] < u(w)$$
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Prova gráfica:**
+
+A corda ligando $u(x_1)$ e $u(x_2)$ fica **abaixo** da curva $u$.
+
+O ponto sobre a corda em $E[X]$ é $E[u(X)]$.
+
+O ponto sobre a curva em $E[X]$ é $u(E[X])$.
+
+Logo $u(E[X]) > E[u(X)]$.
+
+:::
+::::
+
+## Equivalente Certo e Prêmio de Risco
+
+<iframe src="../../graficos/cap07/premio-risco.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Equivalente certo (EC):**
+
+$$u(EC) = E[u(\mathcal{L})]$$
+
+:::
+::: {.column width="50%"}
+
+**Prêmio de risco ($\pi$):**
+
+$$\pi = E[\mathcal{L}] - EC > 0$$
+
+(para avesso ao risco)
+
+:::
+::::
+
+## Medidas de Arrow-Pratt
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Aversão absoluta ao risco (ARA):**
+
+$$A(x) = -\frac{u''(x)}{u'(x)}$$
+
+. . .
+
+**Aversão relativa ao risco (RRA):**
+
+$$R(x) = -\frac{x \, u''(x)}{u'(x)} = x \cdot A(x)$$
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Exemplos clássicos:**
+
+| Função | $A(x)$ | $R(x)$ |
+|:--|:--:|:--:|
+| $-e^{-ax}$ (CARA) | $a$ | $ax$ |
+| $\frac{x^{1-\gamma}}{1-\gamma}$ (CRRA) | $\gamma/x$ | $\gamma$ |
+| $\ln x$ | $1/x$ | $1$ |
+
+. . .
+
+> CARA: mesma aversão em \$ para qualquer riqueza. CRRA: mesma aversão *proporcional* para qualquer riqueza.
+
+:::
+::::
+
+## Seguro — Aplicação Fundamental
+
+<iframe src="../../graficos/cap07/seguro.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+**Setup:** riqueza $W$, perda $L$ com probabilidade $p$, prêmio $\gamma$ por unidade de cobertura $q$.
+
+$$E[u] = (1-p)\,u(W - \gamma q) + p\,u(W - L - \gamma q + q)$$
+
+## Exemplo Numérico — Decisão de Seguro
+
+$u(x) = \sqrt{x}$, $W = 100.000$, $L = 75.000$, $p = 0{,}2$, $\gamma = 0{,}25$/unidade.
+
+. . .
+
+**Sem seguro:**
+
+$$E[u] = 0{,}8 \sqrt{100.000} + 0{,}2 \sqrt{25.000} = 0{,}8 \times 316{,}2 + 0{,}2 \times 158{,}1 = 284{,}6$$
+
+$$EC = 284{,}6^2 = 80.997$$
+
+. . .
+
+**Com seguro atuarialmente justo** ($\gamma = p = 0{,}2$, cobertura total $q = L$):
+
+$$u = \sqrt{100.000 - 0{,}2 \times 75.000} = \sqrt{85.000} = 291{,}5$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O agente avesso ao risco prefere pagar R\$ 15.000 de prêmio e ter R\$ 85.000 certos do que enfrentar a loteria com $EC = 80.997$. A diferença de R\$ 4.003 é o prêmio de risco.
+:::
+
+## Próxima Aula
+
+**Aula 12 — Loterias + Seguro (Prática)**
+
+. . .
+
+- Diversificação e abordagem estado-preferência
+- Paradoxo de Allais e teoria da perspectiva
+- Jogo de loterias em sala e design de seguro
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Pesquise o **Paradoxo de Allais**: dois pares de escolhas que parecem razoáveis individualmente mas violam o axioma de independência. Traga sua opinião: somos *realmente* racionais sob incerteza?
+:::

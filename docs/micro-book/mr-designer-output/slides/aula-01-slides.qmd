@@ -1,0 +1,259 @@
+---
+title: "Ferramentas Matemáticas do Economista"
+subtitle: "Microeconomia II — Aula 01"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 01"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Por que matemática importa em Micro?
+
+> "A economia é a ciência que estuda como agentes racionais fazem escolhas sob escassez."
+
+. . .
+
+Toda escolha econômica é, no fundo, um **problema de otimização**:
+
+- Consumidor: maximizar utilidade sujeito a orçamento
+- Firma: minimizar custo sujeito a produção
+- Governo: maximizar bem-estar sujeito a restrições políticas
+
+. . .
+
+:::{.callout-tip title="Objetivo da Aula"}
+Revisar e consolidar as ferramentas matemáticas que sustentam toda a análise microeconômica do curso.
+:::
+
+## Revisão: Otimização sem Restrição
+
+Problema fundamental: encontrar $x^*$ tal que
+
+$$\max_{x} f(x)$$
+
+. . .
+
+**Condições necessárias (1ª ordem):**
+
+$$f'(x^*) = 0$$
+
+**Condições suficientes (2ª ordem):**
+
+$$f''(x^*) < 0 \quad \text{(máximo)}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No ótimo, o ganho marginal de "mais um pouquinho" é exatamente zero — não há como melhorar.
+:::
+
+## Otimização Multivariável e Gradiente
+
+Com $n$ variáveis de escolha: $\max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n)$
+
+. . .
+
+**Gradiente** — vetor de derivadas parciais:
+
+$$\nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n}\right)$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**CPO (1ª ordem):**
+
+$$\nabla f(x^*) = \mathbf{0}$$
+:::
+::: {.column width="50%"}
+**CSO (2ª ordem):**
+
+Matriz Hessiana $H$ deve ser negativa definida:
+
+$$H = \begin{bmatrix} f_{11} & f_{12} \\ f_{21} & f_{22} \end{bmatrix}$$
+:::
+::::
+
+## Por que Precisamos do Lagrangeano?
+
+Na economia, quase nunca otimizamos **livremente**.
+
+. . .
+
+Sempre há restrições:
+
+- Orçamento do consumidor: $p_1 x_1 + p_2 x_2 = m$
+- Capacidade da firma: $g(K, L) = \bar{q}$
+
+. . .
+
+**Problema genérico:**
+
+$$\max_{x_1, x_2} f(x_1, x_2) \quad \text{s.a.} \quad g(x_1, x_2) = c$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O Lagrangeano transforma um problema restrito em um problema "como se fosse livre" — ao custo de adicionar uma variável extra, $\lambda$.
+:::
+
+## Montando o Lagrangeano
+
+$$\mathcal{L}(x_1, x_2, \lambda) = f(x_1, x_2) - \lambda\big[g(x_1, x_2) - c\big]$$
+
+. . .
+
+**Três ingredientes:**
+
+| Componente | Papel |
+|:--|:--|
+| $f(x_1,x_2)$ | Função objetivo |
+| $g(x_1,x_2) = c$ | Restrição |
+| $\lambda$ | Multiplicador de Lagrange |
+
+. . .
+
+A ideia geométrica: no ótimo, as **curvas de nível** de $f$ são tangentes à restrição $g = c$.
+
+## Condições de Primeira Ordem (CPOs)
+
+Derivando $\mathcal{L}$ em relação a cada variável:
+
+$$\frac{\partial \mathcal{L}}{\partial x_1} = \frac{\partial f}{\partial x_1} - \lambda \frac{\partial g}{\partial x_1} = 0$$
+
+$$\frac{\partial \mathcal{L}}{\partial x_2} = \frac{\partial f}{\partial x_2} - \lambda \frac{\partial g}{\partial x_2} = 0$$
+
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = -(g(x_1, x_2) - c) = 0$$
+
+. . .
+
+Dividindo as duas primeiras:
+
+$$\frac{f_1}{f_2} = \frac{g_1}{g_2}$$
+
+> **Taxa marginal de substituição = preço relativo** (no caso do consumidor).
+
+## O Multiplicador $\lambda$ e o Teorema do Envelope
+
+**Interpretação de $\lambda$:**
+
+$$\lambda^* = \frac{\partial f^*}{\partial c}$$
+
+. . .
+
+O multiplicador mede o **valor marginal de relaxar** a restrição em uma unidade.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o consumidor ganha R\$1 a mais de renda, $\lambda^*$ diz quanto sua utilidade máxima cresce. É o "preço-sombra" da restrição.
+:::
+
+. . .
+
+**Teorema do Envelope:** no ótimo, o efeito de uma mudança paramétrica sobre o valor ótimo depende **apenas** do efeito direto, não do reajuste das variáveis de escolha.
+
+## Exemplo Interativo: O Lagrangeano em Ação
+
+Considere o problema:
+
+$$\max_{x,y} \; U(x,y) = x^{0{,}5} y^{0{,}5} \quad \text{s.a.} \quad 2x + 3y = 120$$
+
+. . .
+
+Explore o gráfico abaixo — mova os controles para ver como a solução ótima se ajusta:
+
+<iframe src="../../graficos/cap02/lagrangeano.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Estática Comparativa e Otimização em Uma Variável
+
+**Estática comparativa:** como $x^*$ muda quando um parâmetro $\alpha$ se altera?
+
+. . .
+
+Da CPO $f_x(x^*, \alpha) = 0$, pelo Teorema da Função Implícita:
+
+$$\frac{dx^*}{d\alpha} = -\frac{f_{x\alpha}}{f_{xx}}$$
+
+. . .
+
+Explore a otimização em uma variável e veja como o ótimo se desloca:
+
+<iframe src="../../graficos/cap02/otimizacao-1var.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Elasticidade e Funções Homogêneas
+
+**Elasticidade** — medida adimensional de sensibilidade:
+
+$$\varepsilon_{y,x} = \frac{\partial y}{\partial x} \cdot \frac{x}{y} = \frac{d \ln y}{d \ln x}$$
+
+. . .
+
+**Funções homogêneas de grau $k$:**
+
+$$f(tx_1, tx_2) = t^k f(x_1, x_2), \quad \forall t > 0$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Teorema de Euler:**
+
+$$\sum_i x_i \frac{\partial f}{\partial x_i} = k \cdot f$$
+:::
+::: {.column width="50%"}
+**Aplicação:**
+
+Cobb-Douglas $x^\alpha y^\beta$ é homogênea de grau $\alpha + \beta$.
+:::
+::::
+
+## Mapa do Curso: De Ferramentas a Mercados
+
+:::: {.columns}
+::: {.column width="50%"}
+**Bloco 1 — Consumidor**
+
+1. Ferramentas matemáticas
+2. Preferências e utilidade
+3. Escolha ótima
+4. Demanda e bem-estar
+:::
+::: {.column width="50%"}
+**Bloco 2 — Firma e Mercados**
+
+5. Produção e custos
+6. Concorrência perfeita
+7. Monopólio e oligopólio
+8. Equilíbrio geral
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Fio Condutor"}
+Cada bloco usa as **mesmas ferramentas** desta aula — o que muda é o contexto econômico.
+:::
+
+## Próxima Aula
+
+**Aula 02 — Oficina Lagrangiano**
+
+. . .
+
+- Teorema do Envelope: aplicações detalhadas
+- Condições de Kuhn-Tucker para desigualdades
+- **Atividade prática:** Gallery Walk com problemas de otimização
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise os exercícios do Capítulo 2 e traga dúvidas sobre as CPOs do Lagrangeano.
+:::

@@ -1,0 +1,266 @@
+---
+title: "Dotações, Trabalho e Escolha Intertemporal"
+subtitle: "Microeconomia II — Aula 09"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 09"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## O Consumidor Não Tem Só Renda — Ele Tem Dotações
+
+> Até agora, a renda $m$ era fixa. Mas na realidade, boa parte da "renda" vem da **venda** de algo que já possuímos: tempo, imóvel, poupança passada.
+
+. . .
+
+**Três aplicações fundamentais:**
+
+1. **Economia de trocas** — consumidor com dotação de bens
+2. **Oferta de trabalho** — consumidor "vende" seu tempo
+3. **Escolha intertemporal** — consumidor "vende" consumo futuro por consumo presente
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando os preços mudam, o consumidor com dotações sofre um efeito adicional: o valor da sua riqueza também muda.
+:::
+
+## Economia com Dotações
+
+O consumidor possui dotação $(\omega_1, \omega_2)$ e enfrenta preços $(p_1, p_2)$.
+
+. . .
+
+**Restrição orçamentária:**
+
+$$p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2 \equiv W$$
+
+. . .
+
+**Observação:** a dotação $(\omega_1, \omega_2)$ sempre é acessível, independentemente dos preços.
+
+. . .
+
+- Se $x_i > \omega_i$: consumidor é **comprador líquido** do bem $i$
+- Se $x_i < \omega_i$: consumidor é **vendedor líquido** do bem $i$
+
+## Demanda Bruta vs. Demanda Líquida
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Demanda bruta:** $x_i(\mathbf{p}, W)$ — quantidade total consumida
+
+**Demanda líquida:** $x_i - \omega_i$ — quantidade comprada ou vendida no mercado
+
+. . .
+
+> A demanda líquida pode ser **negativa** (o consumidor é vendedor).
+
+:::
+::: {.column width="50%"}
+
+**Exemplo:** Agricultor com dotação $(10, 2)$.
+
+Se $p_1/p_2 = 1$ e escolhe $(6, 6)$:
+
+- Demanda líquida de bem 1: $6 - 10 = -4$ (vende 4)
+- Demanda líquida de bem 2: $6 - 2 = +4$ (compra 4)
+
+:::
+::::
+
+## Equação de Slutsky com Dotações
+
+A decomposição inclui um **efeito dotação** adicional:
+
+. . .
+
+$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES}} - \underbrace{(x_j - \omega_j) \frac{\partial x_i}{\partial m}}_{\text{ER modificado}}$$
+
+. . .
+
+**Diferença crucial:** o efeito renda agora depende da **demanda líquida** $(x_j - \omega_j)$, não da demanda bruta.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o consumidor é **vendedor líquido** de $j$ e $p_j$ sobe, ele fica *mais rico* — o efeito renda vai na direção oposta ao caso sem dotações.
+:::
+
+## Oferta de Trabalho — O Modelo Trabalho-Lazer
+
+:::: {.columns}
+::: {.column width="45%"}
+
+O consumidor tem dotação de $\bar{T}$ horas (ex.: 24h/dia).
+
+- **Lazer:** $\ell$ horas
+- **Trabalho:** $L = \bar{T} - \ell$ horas
+- **Salário:** $w$ por hora
+- **Renda não-salarial:** $V$
+
+. . .
+
+**Restrição:**
+
+$$C = w(\bar{T} - \ell) + V = w\bar{T} + V - w\ell$$
+
+. . .
+
+> O preço do lazer é o **salário** $w$ (custo de oportunidade).
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap17/trabalho-lazer.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Condição Ótima — TMS = Salário
+
+No ótimo interior:
+
+$$\text{TMS}_{\ell, C} = \frac{U_\ell}{U_C} = w$$
+
+. . .
+
+**Interpretação:** o valor marginal de uma hora adicional de lazer deve igualar o salário.
+
+. . .
+
+**Estática comparativa** — efeito de um aumento em $w$:
+
+- **ES:** lazer fica mais caro → trabalha **mais**
+- **ER:** trabalhador é vendedor líquido de tempo → mais rico → consome **mais lazer** (trabalha menos)
+
+. . .
+
+> O resultado líquido é ambíguo: depende de qual efeito domina.
+
+## Curva de Oferta de Trabalho — Backward-Bending
+
+<iframe src="../../graficos/cap17/oferta-trabalho.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Para salários baixos, o ES domina (curva positiva). Para salários altos, o ER domina (curva se inclina para trás). Isso explica por que países ricos trabalham menos horas.
+:::
+
+## Modelo de Fisher — Dois Períodos
+
+:::: {.columns}
+::: {.column width="50%"}
+
+O consumidor vive 2 períodos com rendas $(m_1, m_2)$ e taxa de juros $r$.
+
+. . .
+
+**Restrição intertemporal:**
+
+$$c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r} \equiv W$$
+
+. . .
+
+**Preço relativo:** o "preço" do consumo presente em termos do futuro é $(1+r)$.
+
+:::
+::: {.column width="50%"}
+
+Maximizar: $U(c_1, c_2)$
+
+. . .
+
+**Condição de ótimo:**
+
+$$\text{TMS}_{c_1, c_2} = 1 + r$$
+
+. . .
+
+> A taxa marginal de substituição intertemporal iguala o preço relativo do consumo nos dois períodos.
+
+:::
+::::
+
+## Restrição Intertemporal — Visualização
+
+<iframe src="../../graficos/cap18/consumo-intertemporal.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+**Efeito de um aumento em $r$:**
+
+- **ES:** consumo presente fica mais caro → **poupa mais** (substitui $c_1$ por $c_2$)
+- **ER:** depende se é poupador ou devedor
+
+## Poupador vs. Devedor
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Poupador** ($c_1 < m_1$):
+
+- Aumento em $r$ → fica **mais rico** (recebe mais juros)
+- ER → consome mais em ambos os períodos
+- ES + ER: $c_2$ sobe; $c_1$ ambíguo
+
+. . .
+
+> Um poupador **nunca** se torna devedor quando $r$ sobe (preferência revelada).
+
+:::
+::: {.column width="50%"}
+
+**Devedor** ($c_1 > m_1$):
+
+- Aumento em $r$ → fica **mais pobre** (paga mais juros)
+- ER → consome menos em ambos os períodos
+- ES + ER: $c_1$ cai inequivocamente
+
+. . .
+
+> Um devedor pode se tornar poupador quando $r$ sobe (ambos os efeitos reduzem $c_1$).
+
+:::
+::::
+
+## Comparação dos Três Modelos
+
+| Aspecto | Trocas | Trabalho-Lazer | Intertemporal |
+|:--|:--:|:--:|:--:|
+| Dotação | $(\omega_1, \omega_2)$ | $(\bar{T}, V)$ | $(m_1, m_2)$ |
+| "Preço" | $p_1/p_2$ | $w$ | $1+r$ |
+| Vende | Bem em excesso | Tempo | Consumo futuro |
+| Compra | Bem desejado | Consumo | Consumo presente |
+| Backward-bending? | Possível | Sim (trabalho) | Sim (poupança) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Nos três casos, a equação de Slutsky com dotações se aplica: o efeito renda depende de se o agente é comprador ou vendedor líquido.
+:::
+
+## Próxima Aula
+
+**Aula 10 — Simulação: Mercado de Trabalho**
+
+. . .
+
+- Salário de reserva e demanda por trabalho
+- Equilíbrio competitivo vs. monopsônio
+- Salário mínimo e backward-bending na prática
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Pesquise o salário mínimo atual no Brasil e compare com o custo de vida na sua cidade. Qual seria o seu **salário de reserva** para aceitar um estágio?
+:::

@@ -1,0 +1,257 @@
+---
+title: "Lab Curvas de Indiferença"
+subtitle: "Microeconomia II — Aula 04"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 04"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Quase-Concavidade e Preferências Convexas
+
+Uma função $U$ é **quase-côncava** se seus conjuntos de nível superior são convexos:
+
+$$\{(x_1, x_2) : U(x_1, x_2) \geq \bar{u}\} \text{ é convexo } \forall \bar{u}$$
+
+. . .
+
+**Equivalentemente:**
+
+$$U\big(\lambda x + (1-\lambda)y\big) \geq \min\{U(x), U(y)\}, \quad \forall \lambda \in [0,1]$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Preferências convexas significam que o consumidor prefere **variedade** — uma cesta mista é pelo menos tão boa quanto as cestas extremas.
+:::
+
+> Quase-concavidade $\neq$ concavidade! $U = x_1 x_2$ é quase-côncava mas não é côncava.
+
+## Elasticidade de Substituição $\sigma$
+
+A elasticidade de substituição mede como a **razão ótima** $x_2/x_1$ responde a mudanças na TMS:
+
+$$\sigma = \frac{d \ln(x_2/x_1)}{d \ln(TMS_{12})} = \frac{\%\Delta(x_2/x_1)}{\%\Delta(TMS)}$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**$\sigma$ alto (ex.: $\sigma \to \infty$)**
+
+- Bens muito substituíveis
+- Curvas quase retas
+- Pequena mudança na TMS $\implies$ grande mudança na razão
+:::
+::: {.column width="50%"}
+**$\sigma$ baixo (ex.: $\sigma \to 0$)**
+
+- Bens pouco substituíveis
+- Curvas quase em L
+- Grande mudança na TMS $\implies$ pequena mudança na razão
+:::
+::::
+
+## CES: Casos Especiais — Visualização
+
+$$U = \left(\alpha x_1^\rho + (1-\alpha)x_2^\rho\right)^{1/\rho}, \qquad \sigma = \frac{1}{1-\rho}$$
+
+. . .
+
+Use o controle deslizante para variar $\rho$ e observe a transição entre os casos:
+
+<iframe src="../../graficos/cap03/ces-continua.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+> Note como a forma das curvas muda continuamente de retas ($\rho \to 1$) a L's ($\rho \to -\infty$).
+
+## Transformações Monotônicas
+
+Se $\phi: \mathbb{R} \to \mathbb{R}$ é estritamente crescente, então $V = \phi(U)$ representa as **mesmas preferências** que $U$.
+
+. . .
+
+**Exemplos úteis:**
+
+| $U$ original | Transformação $\phi$ | $V = \phi(U)$ | Vantagem |
+|:--|:--|:--|:--|
+| $x_1^\alpha x_2^\beta$ | $\ln$ | $\alpha \ln x_1 + \beta \ln x_2$ | Separa variáveis |
+| $(x_1^\rho + x_2^\rho)^{1/\rho}$ | $(\cdot)^\rho$ | $x_1^\rho + x_2^\rho$ | Remove expoente externo |
+
+. . .
+
+Veja como a transformação preserva a ordenação das curvas:
+
+<iframe src="../../graficos/cap03/transformacao-monotonica.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Tabela Comparativa: Funções de Utilidade
+
+| Propriedade | Linear | Leontief | Cobb-Douglas | CES |
+|:--|:--|:--|:--|:--|
+| Fórmula | $ax_1 + bx_2$ | $\min\{ax_1, bx_2\}$ | $x_1^\alpha x_2^\beta$ | $(ax_1^\rho + bx_2^\rho)^{1/\rho}$ |
+| $\sigma$ | $\infty$ | $0$ | $1$ | $\frac{1}{1-\rho}$ |
+| TMS | Constante | $0$ ou $\infty$ | $\frac{\alpha x_2}{\beta x_1}$ | $\frac{a}{b}\left(\frac{x_2}{x_1}\right)^{1-\rho}$ |
+| Curvas | Retas | L | Hipérboles | Intermediárias |
+| Convexidade | Fraca | Forte | Estrita | Depende de $\rho$ |
+
+. . .
+
+:::{.callout-tip title="Dica de Prova"}
+Na prova, identifique primeiro o tipo de função antes de calcular — isso poupa tempo e evita erros.
+:::
+
+## Cobb-Douglas: Propriedades Avançadas
+
+$$U = x_1^\alpha x_2^\beta$$
+
+. . .
+
+**Resultado-chave — Parcelas de gasto constantes:**
+
+No ótimo (como veremos na Aula 05):
+
+$$s_1 = \frac{p_1 x_1^*}{m} = \frac{\alpha}{\alpha+\beta}, \qquad s_2 = \frac{p_2 x_2^*}{m} = \frac{\beta}{\alpha+\beta}$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Independência dos preços:**
+
+A fração da renda gasta em cada bem **não depende** dos preços — apenas dos expoentes.
+:::
+::: {.column width="50%"}
+**Elasticidade-renda unitária:**
+
+$$\varepsilon_{x_i, m} = 1 \quad \forall i$$
+
+Todos os bens são "normais" e com elasticidade-renda = 1.
+:::
+::::
+
+## Tipos de Preferências — Galeria Visual
+
+Cada função de utilidade corresponde a um "tipo" de consumidor:
+
+<iframe src="../../graficos/cap03/tipos-preferencias.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A escolha da função de utilidade não é apenas técnica — ela reflete hipóteses sobre o comportamento do consumidor. Escolher "Leontief" para café e suco seria irreal; escolher "Linear" para sapato esquerdo e direito, também.
+:::
+
+## Quadro-Resumo: Do Axioma à Função
+
+| Etapa | Resultado |
+|:--|:--|
+| Axiomas ($\succsim$) | Preferências racionais e contínuas |
+| Teorema de Debreu | $\exists \; U$ contínua que representa $\succsim$ |
+| Monotonicidade | Curvas com inclinação negativa |
+| Convexidade | Curvas convexas, TMS decrescente |
+| Escolha funcional | Linear, Leontief, CD, CES, quase-linear |
+| Transformação monotônica | Mesmas preferências, cálculo mais fácil |
+
+> Este é o **pipeline completo** que usaremos no restante do curso.
+
+## Jigsaw — Especialistas em Funções de Utilidade
+
+**Formato:** Jigsaw (25 min)
+
+. . .
+
+**Fase 1 — Grupos de especialistas (10 min):**
+
+| Grupo | Função | Tarefa |
+|:--|:--|:--|
+| A | Linear | Desenhar curvas, calcular TMS, dar 2 exemplos reais |
+| B | Leontief | Idem |
+| C | Cobb-Douglas | Idem + mostrar parcelas de gasto |
+| D | CES ($\rho = 0{,}5$) | Idem + calcular $\sigma$ |
+
+. . .
+
+**Fase 2 — Grupos mistos (10 min):** cada especialista ensina sua função aos colegas.
+
+**Fase 3 — Síntese (5 min):** grupo misto preenche tabela comparativa completa.
+
+## Agora com Vocês — Identifique a Função
+
+**Quiz rápido!** Para cada gráfico, identifique a função de utilidade.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Caso 1:** Curvas de indiferença são retas paralelas com inclinação $-2$.
+
+**(A)** $U = 2x_1 + x_2$
+
+**(B)** $U = x_1^2 x_2$
+
+**(C)** $U = \min\{2x_1, x_2\}$
+:::
+::: {.column width="50%"}
+**Caso 2:** Curvas em L com vértice sobre a reta $x_2 = 3x_1$.
+
+**(A)** $U = x_1 + 3x_2$
+
+**(B)** $U = \min\{3x_1, x_2\}$
+
+**(C)** $U = x_1^3 x_2$
+:::
+::::
+
+. . .
+
+**Respostas:** Caso 1 $\to$ **(A)**; Caso 2 $\to$ **(B)**
+
+## Peer Instruction — Transformação Monotônica
+
+**Pergunta:** Considere $U = x_1^2 x_2^2$ e $V = \ln x_1 + \ln x_2$. As duas funções representam as mesmas preferências?
+
+. . .
+
+:::: {.columns}
+::: {.column width="25%"}
+**(A)** Sim
+:::
+::: {.column width="25%"}
+**(B)** Não
+:::
+::: {.column width="25%"}
+**(C)** Depende dos valores de $x_1, x_2$
+:::
+::: {.column width="25%"}
+**(D)** Só se $x_1, x_2 > 0$
+:::
+::::
+
+. . .
+
+**Resposta:** **(D)** — Para $x_1, x_2 > 0$, temos $V = \frac{1}{2}\ln U$, que é transformação monotônica crescente. Mas para $x_i = 0$, $\ln$ não está definido.
+
+> Think-Pair-Share: discuta 2 min com seu vizinho antes de votar!
+
+## Próxima Aula
+
+**Aula 05 — Escolha Ótima do Consumidor**
+
+. . .
+
+- Restrição orçamentária e conjunto factível
+- Condição de tangência: $TMS = p_1/p_2$
+- Demandas marshallianas e utilidade indireta
+- Soluções de canto para substitutos e complementares
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Leia o Capítulo 4 do livro. Tente resolver o problema: $\max \; x_1^{0{,}3}x_2^{0{,}7}$ s.a. $5x_1 + 10x_2 = 200$ antes da aula.
+:::

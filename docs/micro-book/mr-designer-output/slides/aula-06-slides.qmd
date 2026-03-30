@@ -1,0 +1,289 @@
+---
+title: "Dualidade — Hicksiana e Função Gasto"
+subtitle: "Microeconomia II — Aula 06"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 06"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## O Problema Dual do Consumidor
+
+:::: {.columns}
+::: {.column width="50%"}
+**Primal (Max Utilidade):**
+
+$$\max_{x_1, x_2} \; U(x_1, x_2)$$
+$$\text{s.a.} \quad p_1 x_1 + p_2 x_2 \leq m$$
+
+Resultado: demandas marshallianas $x_i^M(p, m)$
+
+Valor ótimo: utilidade indireta $V(p, m)$
+:::
+::: {.column width="50%"}
+**Dual (Min Gasto):**
+
+$$\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2$$
+$$\text{s.a.} \quad U(x_1, x_2) \geq \bar{u}$$
+
+Resultado: demandas hicksianas $h_i(p, \bar{u})$
+
+Valor ótimo: função gasto $E(p, \bar{u})$
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Primal: "dado o orçamento, qual a maior utilidade?" Dual: "dada a utilidade desejada, qual o menor custo?"
+:::
+
+## Demanda Hicksiana (Compensada)
+
+$$h_i(p_1, p_2, \bar{u}) = \arg\min_{x} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad U(x_1, x_2) = \bar{u}$$
+
+. . .
+
+**Diferença fundamental em relação à marshalliana:**
+
+| Propriedade | Marshalliana $x_i^M(p, m)$ | Hicksiana $h_i(p, \bar{u})$ |
+|:--|:--|:--|
+| Mantém fixa | Renda $m$ | Utilidade $\bar{u}$ |
+| Captura | Efeito total (preço) | Apenas efeito substituição |
+| Observável? | Sim (dados de mercado) | Não diretamente |
+
+> A hicksiana isola o **efeito substituição** ao "compensar" a variação de renda.
+
+## Função Gasto
+
+$$E(p_1, p_2, \bar{u}) = \min_{x} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad U(x) \geq \bar{u}$$
+
+. . .
+
+**Propriedades de $E$:**
+
+1. **Crescente** em $p_i$ e em $\bar{u}$
+2. **Homogênea de grau 1** em preços: $E(tp, \bar{u}) = tE(p, \bar{u})$
+3. **Côncava** em preços (crucial para bem-estar)
+4. $E(p, V(p, m)) = m$ — gastar o mínimo para atingir a utilidade ótima custa exatamente $m$
+
+. . .
+
+**Exemplo Cobb-Douglas** ($U = x_1^\alpha x_2^{1-\alpha}$):
+
+$$E(p_1, p_2, \bar{u}) = \bar{u} \cdot \frac{p_1^\alpha p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}$$
+
+## Identidade de Roy
+
+A demanda marshalliana pode ser recuperada a partir de $V(p, m)$:
+
+$$x_i^M(p, m) = -\frac{\partial V / \partial p_i}{\partial V / \partial m}$$
+
+. . .
+
+**Por que funciona?**
+
+- $\frac{\partial V}{\partial p_i}$ mede quanto a utilidade cai quando $p_i$ sobe (efeito negativo)
+- $\frac{\partial V}{\partial m} = \lambda$ é a utilidade marginal da renda
+- A razão nos dá exatamente a quantidade demandada
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Roy nos diz: "quanto de renda eu precisaria para compensar o aumento de preço?" — dividido pela utilidade marginal da renda, isso é exatamente a quantidade consumida.
+:::
+
+## Lema de Shephard
+
+A demanda hicksiana pode ser recuperada a partir de $E(p, \bar{u})$:
+
+$$h_i(p, \bar{u}) = \frac{\partial E(p, \bar{u})}{\partial p_i}$$
+
+. . .
+
+**Este é o Teorema do Envelope aplicado ao problema dual:**
+
+- O efeito de $p_i$ sobre o gasto mínimo é exatamente a quantidade compensada $h_i$
+- Não precisamos resolver o problema de minimização novamente!
+
+. . .
+
+**Verificação para Cobb-Douglas:**
+
+$$h_1 = \frac{\partial E}{\partial p_1} = \alpha \cdot \bar{u} \cdot \frac{p_1^{\alpha-1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}$$
+
+Confere com a solução direta do problema dual.
+
+## Diagrama de Dualidade — Visualização
+
+Todas as relações se conectam num diagrama elegante:
+
+<iframe src="../../graficos/cap04/dualidade.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+**Conexões-chave:**
+
+- $V$ e $E$ são **inversas** uma da outra (fixando $p$)
+- Roy liga $V \to x^M$; Shephard liga $E \to h$
+- No ótimo: $x_i^M(p, m) = h_i(p, V(p, m))$
+
+## O Lump-Sum Principle
+
+**Pergunta de política:** um imposto sobre o bem 1 ou um imposto lump-sum (fixo) arrecadando o mesmo valor — qual é melhor para o consumidor?
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Imposto específico:** $p_1 \to p_1 + t$
+
+Arrecadação: $R = t \cdot x_1^*(p_1+t, p_2, m)$
+
+O consumidor enfrenta preços distorcidos.
+:::
+::: {.column width="50%"}
+**Lump-sum:** $m \to m - R$
+
+Arrecadação: mesma $R$
+
+Preços relativos preservados.
+:::
+::::
+
+. . .
+
+<iframe src="../../graficos/cap04/lump-sum-principle.html" width="100%" height="350" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Marshalliana vs. Hicksiana — Síntese
+
+:::: {.columns}
+::: {.column width="50%"}
+**Marshalliana $x_i^M(p, m)$:**
+
+- Renda fixa, utilidade varia
+- Efeito total = substituição + renda
+- Pode ter inclinação positiva (bem de Giffen)
+- Observável nos dados
+- Obtida via Roy: $-\frac{V_{p_i}}{V_m}$
+:::
+::: {.column width="50%"}
+**Hicksiana $h_i(p, \bar{u})$:**
+
+- Utilidade fixa, gasto varia
+- Apenas efeito substituição
+- Sempre inclinação negativa ($\partial h_i/\partial p_i < 0$)
+- Construção teórica
+- Obtida via Shephard: $\frac{\partial E}{\partial p_i}$
+:::
+::::
+
+. . .
+
+**Equação de Slutsky** (conecta as duas):
+
+$$\frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i^M}{\partial m}$$
+
+## Agora com Vocês — PBL: Dossiê Completo do Consumidor
+
+**Exercício em duplas** (20 min):
+
+. . .
+
+Dado: $U = x_1^{1/2} x_2^{1/2}$, $p_1 = 4$, $p_2 = 8$, $m = 160$.
+
+Construa o **dossiê completo**:
+
+1. Demandas marshallianas $x_1^M, x_2^M$
+2. Utilidade indireta $V(p, m)$
+3. Função gasto $E(p, \bar{u})$
+4. Demandas hicksianas $h_1, h_2$
+5. Verifique Roy: $x_1^M = -V_{p_1}/V_m$
+6. Verifique Shephard: $h_1 = E_{p_1}$
+7. Verifique: $E(p, V(p,m)) = m$
+
+. . .
+
+:::{.callout-tip title="Dica"}
+Comece resolvendo o primal. Todo o resto se obtém por substituição e derivação.
+:::
+
+## Peer Instruction — Interpretação de $\lambda$
+
+**Pergunta:** No problema do consumidor, $\lambda^* = 0{,}05$. Se a renda aumenta de R\$200 para R\$210, a utilidade máxima aumenta aproximadamente:
+
+. . .
+
+:::: {.columns}
+::: {.column width="25%"}
+**(A)** 0,05
+:::
+::: {.column width="25%"}
+**(B)** 0,50
+:::
+::: {.column width="25%"}
+**(C)** 5,00
+:::
+::: {.column width="25%"}
+**(D)** 10,50
+:::
+::::
+
+. . .
+
+**Resposta:** **(B)** — Pelo Teorema do Envelope, $\Delta V \approx \lambda^* \cdot \Delta m = 0{,}05 \times 10 = 0{,}50$.
+
+> Think-Pair-Share: discuta 2 min com seu vizinho. Qual a unidade de $\lambda$? (úteis/R\$)
+
+## Exercício de Fixação — Mapa da Dualidade
+
+**Agora com vocês!** (5 min)
+
+. . .
+
+Preencha o diagrama abaixo com as fórmulas corretas:
+
+```
+     V(p, m)  ───Roy───>   x_i^M(p, m)
+       │                        │
+    inversa                  Slutsky
+       │                        │
+     E(p, ū)  ──Shephard──>  h_i(p, ū)
+```
+
+. . .
+
+**Para cada seta, escreva:**
+
+- A fórmula que conecta os dois objetos
+- A interpretação econômica em uma frase
+
+. . .
+
+:::{.callout-tip title="Verificação"}
+Se você consegue preencher todo o diagrama partindo apenas de $U(x_1, x_2)$, você dominou a dualidade!
+:::
+
+## Próxima Aula
+
+**Aula 07 — Efeito Renda, Efeito Substituição e Equação de Slutsky**
+
+. . .
+
+- Decomposição de Slutsky completa
+- Bens normais, inferiores e de Giffen
+- Variação compensatória e variação equivalente
+- Excedente do consumidor e medidas de bem-estar
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Traga o dossiê completo da atividade de hoje — vamos usá-lo como ponto de partida para a decomposição de Slutsky.
+:::

@@ -1,0 +1,235 @@
+---
+title: "Simulação: Decisão de Produção"
+subtitle: "Microeconomia II — Aula 18"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 18"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Coase e a Natureza da Firma
+
+> "Por que existem firmas?" — Ronald Coase, *The Nature of the Firm* (1937)
+
+. . .
+
+**Resposta:** o mercado tem **custos de transação**
+
+- Busca de parceiros comerciais
+- Negociação e elaboração de contratos
+- Monitoramento e enforcement
+
+. . .
+
+**A firma existe quando:**
+
+$$C_{\text{transação no mercado}} > C_{\text{coordenação interna}}$$
+
+> A fronteira da firma é determinada pelo **trade-off** entre custos de transação e custos de coordenação.
+
+## Custos de Transação e Fronteira da Firma
+
+**Tipos de custos de transação (Williamson):**
+
+1. **Racionalidade limitada:** contratos incompletos
+2. **Oportunismo:** risco de hold-up
+3. **Especificidade de ativos:** investimentos não-redeployáveis
+
+. . .
+
+**Decisão make-or-buy:**
+
+| Fator | Favorece "make" | Favorece "buy" |
+|---|---|---|
+| Especificidade | Alta | Baixa |
+| Frequência | Alta | Baixa |
+| Incerteza | Alta | Baixa |
+
+. . .
+
+> **Exemplo:** Por que a Apple projeta chips mas terceiriza montagem?
+
+## Oferta de Mercado: Agregação
+
+A **oferta de mercado** é a soma horizontal das ofertas individuais:
+
+$$Q^S(P) = \sum_{i=1}^{n} q_i^S(P)$$
+
+. . .
+
+**Com $n$ firmas idênticas:**
+
+$$Q^S(P) = n \cdot q^S(P)$$
+
+. . .
+
+**Propriedades:**
+
+- Mais elástica que a oferta individual (mais opções de ajuste)
+- Inclinação positiva: $P$ maior $\Rightarrow$ cada firma produz mais **e** mais firmas operam
+- No LP: elasticidade depende das condições de entrada
+
+## Equilíbrio de Longo Prazo: P = CMe mínimo
+
+**Livre entrada e saída** garante lucro zero no equilíbrio:
+
+$$P^* = \min_q CMe_{LP}(q) = CMg_{LP}(q^*_{EME})$$
+
+. . .
+
+**Dinâmica de ajuste:**
+
+1. **Curto prazo:** $P > CMe_{LP}^{\min}$ $\Rightarrow$ $\pi > 0$ $\Rightarrow$ entrada de firmas
+2. **Transição:** oferta se desloca para a direita, $P$ cai
+3. **Longo prazo:** $P = CMe_{LP}^{\min}$, $\pi = 0$, $n^*$ firmas no mercado
+
+. . .
+
+$$n^* = \frac{Q^D(P^*)}{q^*_{EME}}$$
+
+## Curvas de Oferta da Indústria no LP
+
+A inclinação da oferta de LP depende de como os custos mudam com a entrada:
+
+. . .
+
+| Tipo | Preços dos insumos | Oferta LP |
+|---|---|---|
+| **Custos constantes** | Não mudam com $n$ | Horizontal ($P = CMe^{\min}$) |
+| **Custos crescentes** | Sobem com $n$ | Positivamente inclinada |
+| **Custos decrescentes** | Caem com $n$ | Negativamente inclinada |
+
+. . .
+
+**Custos crescentes** (caso mais comum): entrada de firmas pressiona preços de insumos especializados.
+
+**Custos decrescentes** (raro): economias externas — mais firmas $\Rightarrow$ melhor infraestrutura, fornecedores especializados.
+
+## Receita Marginal: Conceitos
+
+Para uma firma com **algum poder de mercado** (antecipando monopólio):
+
+$$RMg = \frac{dRT}{dq} = P + q\frac{dP}{dq} = P\left(1 + \frac{1}{\varepsilon_D}\right)$$
+
+. . .
+
+**Casos:**
+
+- Firma competitiva: $\varepsilon_D \to -\infty \Rightarrow RMg = P$
+- Monopolista: $RMg < P$ (para vender mais, reduz o preço de todas as unidades)
+
+<iframe src="../../graficos/cap12/receita-marginal.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Regiões de Operação e Encerramento
+
+**Mapa completo de decisão da firma:**
+
+| Preço | Decisão CP | Decisão LP |
+|---|---|---|
+| $P > CMe$ | Operar: $\pi > 0$ | Operar: $\pi > 0$ |
+| $CMe > P > CVMe$ | Operar: $\pi < 0$, mas cobre parte do CF | Sair |
+| $P = CVMe_{\min}$ | Indiferente entre operar e fechar | Sair |
+| $P < CVMe_{\min}$ | Fechar | Sair |
+
+<iframe src="../../graficos/cap12/lucro-maximo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Dinâmica de Entrada e Saída
+
+**Modelo de ajuste:**
+
+$$\frac{dn}{dt} = \phi \cdot \pi(P, w, v)$$
+
+onde $\phi > 0$ é a velocidade de ajuste.
+
+. . .
+
+**Sequência de eventos após choque positivo de demanda:**
+
+1. $D$ se desloca para a direita $\Rightarrow$ $P$ sobe no CP
+2. $P > CMe^{\min}$ $\Rightarrow$ $\pi > 0$ $\Rightarrow$ firmas entram
+3. $S$ se desloca para a direita $\Rightarrow$ $P$ cai gradualmente
+4. Novo equilíbrio LP: mais firmas, $P$ volta a $CMe^{\min}$ (custos constantes)
+
+. . .
+
+> No mundo real, ajuste é lento — construir fábricas leva tempo. Lucros persistem no **médio prazo**.
+
+## Simulação: Mercado Competitivo
+
+**Regras do jogo (20 min):**
+
+- Cada grupo é uma **firma** no mercado de café artesanal
+- Função de custo: $CT(q) = 50 + 2q + 0{,}1q^2$
+- Rodada 1: preço de mercado $P = 12$
+- Rodada 2: choque — $P$ cai para $P = 6$
+- Rodada 3: longo prazo — livre entrada/saída
+
+. . .
+
+**Cada grupo deve decidir:**
+
+1. Quanto produzir? (encontre $q^*$ onde $P = CMg$)
+2. Calcule o lucro. Opera ou encerra?
+3. No LP, quantas firmas sobrevivem se $Q^D = 500$?
+
+## PBL: Startup de Delivery
+
+**Cenário:** Vocês são fundadores de uma startup de delivery em São Paulo.
+
+. . .
+
+**Dados:**
+
+- Custo fixo mensal: R\$ 80.000 (aluguel, tecnologia, salários fixos)
+- Custo variável por entrega: R\$ 8
+- Preço médio por entrega: R\$ 15
+- Demanda atual: 10.000 entregas/mês
+- Concorrentes: iFood, Rappi, 99Food (preço médio R\$ 14)
+
+. . .
+
+**Questões para discussão (10 min):**
+
+1. Calcule o lucro mensal. A firma é viável no CP?
+2. O que acontece se um concorrente baixar o preço para R\$ 12?
+3. No LP, qual é o preço de equilíbrio? Sua firma sobrevive?
+
+## Think-Pair-Share: Lucro zero é ruim?
+
+> **Questão:** "No equilíbrio de longo prazo, as firmas competitivas obtêm lucro econômico zero. Isso significa que o empreendedorismo não vale a pena?"
+
+. . .
+
+**Think (2 min):** Reflita individualmente.
+
+**Pair (3 min):** Discuta com seu vizinho. Considere:
+
+- Diferença entre lucro econômico e lucro contábil
+- O que está embutido no "custo" econômico
+- Lucros durante a transição para o equilíbrio
+
+. . .
+
+**Share:** Dois voluntários apresentam argumentos opostos.
+
+## Próxima Aula: Equilíbrio Geral
+
+**Bloco 4 — Equilíbrio e Bem-Estar**
+
+- Passamos da firma individual para o **mercado como um todo**
+- Equilíbrio parcial vs. equilíbrio geral
+- Eficiência de Pareto e os dois teoremas do bem-estar
+
+. . .
+
+**Preparação:**
+
+- Revisar oferta e demanda de mercado
+- Pensar: quando o equilíbrio parcial é insuficiente?

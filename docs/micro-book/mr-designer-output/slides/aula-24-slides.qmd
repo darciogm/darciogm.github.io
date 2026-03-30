@@ -1,0 +1,314 @@
+---
+title: "Torneio de Oligopólio + Encerramento"
+subtitle: "Microeconomia II — Aula 24"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 24"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Jogos Repetidos: Formalização
+
+No dilema do prisioneiro de uma rodada, a colusão é instável. Mas e se o jogo se **repete**?
+
+. . .
+
+**Jogo repetido infinitamente** (ou com probabilidade $\delta$ de continuação):
+
+$$V_i = \sum_{t=0}^{\infty} \delta^t \cdot \pi_i^t$$
+
+onde $\delta \in (0,1)$ é o **fator de desconto** (paciência da firma).
+
+. . .
+
+**Ideia central:** a ameaça de **punição futura** pode sustentar a cooperação no presente.
+
+:::{.callout-important title="Distinção crucial"}
+- Jogo de uma rodada: cooperação é irracional
+- Jogo repetido: cooperação pode ser um equilíbrio de Nash, se $\delta$ for alto o suficiente
+:::
+
+## Estratégia Grim Trigger (Gatilho)
+
+**Definição da estratégia:**
+
+> "Coopero enquanto todos cooperam. Se alguém desviar, **puno para sempre** (jogo Cournot/Nash para sempre)."
+
+. . .
+
+**Payoffs no duopólio ($P = 100 - Q$, $c = 10$):**
+
+| Cenário | $\pi_i$ por rodada |
+|:--|:--:|
+| Cooperação (cartel) | $1012{,}5$ |
+| Desvio (uma rodada) | $1139{,}1$ |
+| Punição (Cournot) | $900$ |
+
+. . .
+
+**O desvio vale a pena?** Depende de $\delta$:
+
+$$\underbrace{1139{,}1 + \frac{\delta}{1-\delta} \cdot 900}_{\text{Desviar}} \leq \underbrace{\frac{1}{1-\delta} \cdot 1012{,}5}_{\text{Cooperar}}$$
+
+## Condição para Colusão Sustentável
+
+:::: {.columns}
+::: {.column width="45%"}
+
+Simplificando a desigualdade:
+
+$$\delta \geq \frac{\pi^{desvio} - \pi^{cartel}}{\pi^{desvio} - \pi^{Nash}}$$
+
+. . .
+
+**Com nossos números:**
+
+$$\delta \geq \frac{1139{,}1 - 1012{,}5}{1139{,}1 - 900} = \frac{126{,}6}{239{,}1} \approx 0{,}53$$
+
+. . .
+
+:::{.callout-tip}
+Se as firmas são suficientemente **pacientes** ($\delta > 0{,}53$), a colusão tácita é sustentável como equilíbrio de Nash do jogo repetido.
+:::
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap16/webr-colusao.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Folk Theorem: Muitos Equilíbrios Possíveis
+
+**Teorema Folk:** em jogos repetidos com $\delta$ suficientemente alto, **qualquer** payoff que domine o payoff de Nash pode ser sustentado como equilíbrio.
+
+. . .
+
+**Implicações:**
+
+- Há **infinitos** equilíbrios possíveis (não só cartel e Cournot)
+- Qualquer divisão de mercado entre colusão total e Nash é sustentável
+- A teoria não prevê **qual** equilíbrio será selecionado
+
+. . .
+
+:::{.callout-warning title="Limitação prática"}
+O folk theorem explica por que a colusão **pode** existir, mas não prevê **quando** ocorrerá. Fatores como transparência de preços, número de firmas e homogeneidade do produto importam.
+:::
+
+. . .
+
+**Quanto mais firmas, mais difícil a colusão:** o $\delta$ crítico cresce com $N$.
+
+## Concorrência Monopolística
+
+**Meio-termo** entre competição perfeita e monopólio:
+
+. . .
+
+| Característica | Conc. Perfeita | Conc. Monopolística | Monopólio |
+|:--|:--:|:--:|:--:|
+| Firmas | Muitas | Muitas | Uma |
+| Produto | Homogêneo | **Diferenciado** | Único |
+| Entrada | Livre | Livre | Bloqueada |
+| Poder de mercado | Nenhum | Algum | Total |
+
+. . .
+
+**Exemplos:** restaurantes, salões de beleza, apps de delivery, marcas de roupa.
+
+. . .
+
+Cada firma enfrenta uma demanda **negativamente inclinada** (poder de mercado limitado):
+
+$$P_i = P_i(q_i, \mathbf{p}_{-i})$$
+
+## Longo Prazo: Lucro Zero com $P > CMg$
+
+**Curto prazo:** a firma monopolisticamente competitiva age como monopolista no seu nicho.
+
+$$RMg = CMg \implies P > CMg, \quad \pi > 0$$
+
+. . .
+
+**Longo prazo:** livre entrada atrai concorrentes → demanda individual se desloca para a esquerda até:
+
+$$\pi = 0 \implies P = CMe$$
+
+. . .
+
+**Mas $P > CMg$!** A firma opera com **capacidade ociosa** — produz menos que a escala eficiente.
+
+:::{.callout-important title="Custo da diferenciação"}
+O consumidor "paga" pela variedade: preço acima do CMg e firmas operando abaixo da escala ótima.
+:::
+
+## Teorema do Excesso de Capacidade
+
+No equilíbrio de longo prazo da concorrência monopolística:
+
+$$P = CMe > CMg = CMe_{\min}$$
+
+. . .
+
+**Excesso de capacidade:** $Q_{\text{firma}} < Q_{\text{escala eficiente}}$.
+
+. . .
+
+**Comparação visual:**
+
+| | Conc. Perfeita (LP) | Conc. Monopolística (LP) |
+|:--|:--|:--|
+| Preço | $P = CMg = CMe_{\min}$ | $P = CMe > CMg$ |
+| Lucro | Zero | Zero |
+| Eficiência produtiva | Sim ($CMe_{\min}$) | Não (excesso de capacidade) |
+| Eficiência alocativa | Sim ($P = CMg$) | Não ($P > CMg$) |
+
+. . .
+
+:::{.callout-note}
+O excesso de capacidade é o "preço" da **variedade** — e consumidores frequentemente preferem variedade a preço mínimo.
+:::
+
+## Convergência: Cournot com $N$ Firmas → Competição Perfeita
+
+:::: {.columns}
+::: {.column width="45%"}
+
+À medida que $N \to \infty$:
+
+$$P^C(N) = \frac{a + Nc}{N+1} \xrightarrow{N \to \infty} c$$
+
+$$L(N) = \frac{1}{N \cdot |\varepsilon_D|} \xrightarrow{N \to \infty} 0$$
+
+. . .
+
+**Insight unificador:**
+
+- $N = 1$: monopólio
+- $N = 2$: duopólio de Cournot
+- $N$ grande: aproxima concorrência perfeita
+- $N \to \infty$: competição perfeita
+
+O oligopólio é o **caso geral**; monopólio e CP são **casos limite**.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap16/webr-cournot-n-firmas.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Torneio de Oligopólio: Regras {.smaller}
+
+:::{.callout-tip title="Instruções do Torneio (30 min)"}
+:::
+
+**Setup:** Grupos de 2 formam "firmas" em um duopólio. Demanda: $P = 100 - Q$, $c = 10$.
+
+. . .
+
+**Mecânica — 10 rodadas:**
+
+1. Cada firma escolhe $q_i \in [0, 45]$ **simultaneamente** (escrito em papel)
+2. Professor calcula $Q = q_1 + q_2$, $P = 100 - Q$, $\pi_i = (P - 10) \cdot q_i$
+3. Resultados anunciados publicamente
+
+. . .
+
+**Sistema de pontuação:**
+
+| Métrica | Peso |
+|:--|:--:|
+| Lucro total acumulado (10 rodadas) | 70% |
+| Estabilidade (menor variância de $q$) | 15% |
+| Relatório estratégico (2 parágrafos) | 15% |
+
+. . .
+
+:::{.callout-warning}
+Comunicação entre firmas é **proibida** — colusão deve ser tácita!
+:::
+
+## Sistema de Pontuação e Estratégias Esperadas
+
+**Pontuação detalhada:**
+
+| Critério | Peso | Métrica |
+|:--|:--:|:--|
+| Lucro acumulado | 70% | $\sum_{t=1}^{10} \pi_i^t$ |
+| Estabilidade | 15% | $1/\text{Var}(q_i^t)$ — penaliza oscilação |
+| Relatório estratégico | 15% | 2 parágrafos: qual foi sua estratégia e por quê? |
+
+. . .
+
+**Estratégias comuns que vocês podem tentar:**
+
+- **Tit-for-tat:** coopere na rodada 1; depois copie a ação do rival
+- **Grim trigger:** coopere até o primeiro desvio; depois Cournot para sempre
+- **Sempre Cournot:** jogue Nash desde o início (seguro, mas não ótimo)
+- **Teste e ajuste:** desvie uma vez para testar a reação do rival
+
+:::{.callout-tip title="Dica"}
+O relatório vale 15% — explique sua lógica mesmo se o lucro não foi alto!
+:::
+
+## Retrospectiva do Curso: Mapa Conceitual
+
+**Mapa conceitual — o que aprendemos:**
+
+| Bloco | Capítulos | Conceito central |
+|:--|:--:|:--|
+| Consumidor | 1–6 | Escolha racional sob restrição |
+| Firma | 7–12 | Minimização de custo, oferta |
+| Equilíbrio | 13–14 | Eficiência, bem-estar |
+| Poder de mercado | 15–16 | Monopólio, oligopólio, regulação |
+
+. . .
+
+**Fio condutor:** do agente individual ao mercado, e do mercado eficiente às falhas de mercado.
+
+. . .
+
+**Conexões que atravessam o curso:**
+
+- Elasticidade (Cap. 2) → incidência tributária (Cap. 13) → Lerner (Cap. 15)
+- Custos (Cap. 8–9) → oferta (Cap. 12) → entrada/saída LP (Cap. 13) → monopólio natural (Cap. 15)
+- Teoria dos jogos (Cap. 16) ← maximização com interdependência
+
+## Próximos Passos: P2, Projeto e Micro III
+
+**Preparação para a P2:**
+
+- Capítulos 13–16 (equilíbrio competitivo, monopólio, oligopólio)
+- Foco em: derivações algébricas, interpretação gráfica, comparação de modelos
+- Dica: refaça os exercícios numéricos das aulas 19–24
+
+. . .
+
+**Projeto final:**
+
+- Análise de um mercado real com dados (CADE, ANP, ANEEL)
+- Identifique a estrutura de mercado e aplique o modelo adequado
+- Entrega: relatório + apresentação (15 min)
+
+. . .
+
+**O que vem em Micro III:**
+
+- Externalidades e bens públicos
+- Informação assimétrica (seleção adversa, risco moral)
+- Mecanismos de incentivo e leilões
+
+:::{.callout-tip}
+> "A teoria sem prática é estéril; a prática sem teoria é cega." — Kant (adaptado para economistas)
+:::

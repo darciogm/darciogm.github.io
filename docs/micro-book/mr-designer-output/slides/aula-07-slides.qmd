@@ -1,0 +1,232 @@
+---
+title: "Efeitos Renda e Substituição"
+subtitle: "Microeconomia II — Aula 07"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 07"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Por que bens inferiores existem?
+
+> Quando o preço da carne sobe, famílias compram **mais frango**. Mas quando a *renda* sobe, elas compram **menos frango**. Como separar esses dois efeitos?
+
+. . .
+
+**Objetivo da aula:** decompor a variação na quantidade demandada em **efeito substituição** e **efeito renda**.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Toda mudança de preço faz duas coisas ao mesmo tempo: altera o preço *relativo* e altera o *poder de compra* real do consumidor.
+:::
+
+## Demanda Marshalliana — Propriedades
+
+A demanda Marshalliana $x_i(\mathbf{p}, m)$ é obtida da maximização da utilidade sujeita à restrição orçamentária.
+
+. . .
+
+**Propriedades fundamentais:**
+
+- Homogeneidade de grau zero: $x_i(\lambda\mathbf{p}, \lambda m) = x_i(\mathbf{p}, m)$
+- Esgotamento do orçamento (Lei de Walras): $\sum_i p_i x_i = m$
+- Simetria e negatividade da matriz de Slutsky
+
+. . .
+
+$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{efeito substituição}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{efeito renda}}$$
+
+## Curvas de Engel e Classificação de Bens
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Curvas de Engel** relacionam $m \to x_i$:
+
+- **Bem normal:** $\frac{\partial x_i}{\partial m} > 0$
+- **Bem inferior:** $\frac{\partial x_i}{\partial m} < 0$
+- **Bem de luxo:** $\varepsilon_m > 1$
+- **Bem necessário:** $0 < \varepsilon_m < 1$
+
+:::
+::: {.column width="50%"}
+
+<iframe src="../../graficos/cap05/curva-engel.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Efeito Total de uma Variação de Preço
+
+Quando $p_1$ cai, o consumidor se move de $A$ para $C$ na nova restrição orçamentária.
+
+. . .
+
+$$\Delta x_1^{\text{total}} = x_1(p_1', m) - x_1(p_1, m)$$
+
+. . .
+
+**Decomposição de Hicks:**
+
+1. Manter a utilidade constante em $\bar{u}$ e variar $p_1$ → ponto $B$
+2. Manter $p_1'$ constante e ajustar a renda de volta → de $B$ para $C$
+
+. . .
+
+$$\Delta x_1^{\text{total}} = \underbrace{\Delta x_1^{ES}}_{\text{de } A \to B} + \underbrace{\Delta x_1^{ER}}_{\text{de } B \to C}$$
+
+## Decomposição de Hicks — Visualização
+
+<iframe src="../../graficos/cap05/efeito-renda-substituicao.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O ponto $B$ é a cesta que o consumidor escolheria se enfrentasse os novos preços mas mantivesse o nível de utilidade original.
+:::
+
+## O Efeito Substituição É Sempre Negativo
+
+**Teorema:** Para a demanda Hicksiana $h_i(\mathbf{p}, \bar{u})$:
+
+$$\frac{\partial h_i}{\partial p_i} \leq 0 \quad \text{sempre}$$
+
+. . .
+
+**Demonstração (intuitiva):**
+
+- A curva de indiferença é convexa → quando $p_1$ cai, $\text{TMS}$ deve cair
+- Isso exige mover-se para a direita ao longo da curva → $x_1$ sobe
+
+. . .
+
+> O efeito substituição **sempre** empurra o consumo na direção oposta à variação de preço.
+
+## O Efeito Renda Depende do Tipo de Bem
+
+:::: {.columns}
+::: {.column width="50%"}
+
+| Tipo de bem | $\frac{\partial x}{\partial m}$ | Efeito Renda |
+|:--|:--:|:--:|
+| Normal | $> 0$ | Reforça ES |
+| Inferior | $< 0$ | Contraria ES |
+| Giffen | $< 0$ e domina | Inverte ES |
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Bem normal:** queda em $p_1$ → aumento no poder de compra → consome mais $x_1$
+
+. . .
+
+**Bem inferior:** queda em $p_1$ → aumento no poder de compra → consome *menos* $x_1$
+
+:::
+::::
+
+## A Equação de Slutsky
+
+$$\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial m}$$
+
+. . .
+
+Em termos de **elasticidades:**
+
+$$\varepsilon_{ij}^{M} = \varepsilon_{ij}^{H} - s_j \, \varepsilon_{i}^{m}$$
+
+onde $s_j = \frac{p_j x_j}{m}$ é a parcela orçamentária do bem $j$.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quanto maior a parcela do orçamento gasta no bem ($s_j$ grande), maior o efeito renda. Por isso, bens "caros" têm efeitos renda mais relevantes.
+:::
+
+## Exemplo Numérico — Cobb-Douglas
+
+$U(x_1, x_2) = x_1^{0{,}4} x_2^{0{,}6}$, com $p_1 = 10$, $p_2 = 5$, $m = 100$.
+
+. . .
+
+**Demanda Marshalliana:** $x_1^* = \frac{0{,}4 \times 100}{10} = 4$, $x_2^* = \frac{0{,}6 \times 100}{5} = 12$
+
+. . .
+
+**Se $p_1$ cai para 5:**
+
+- Nova demanda: $x_1' = \frac{0{,}4 \times 100}{5} = 8$ → $\Delta x_1^{\text{total}} = +4$
+- Renda compensada (Hicks): $m^H \approx 79{,}4$ → $x_1^H = 6{,}35$ → $ES = +2{,}35$
+- $ER = 4 - 2{,}35 = +1{,}65$
+
+. . .
+
+> Para Cobb-Douglas, ambos os efeitos vão na mesma direção (bem normal).
+
+## Bens de Giffen — Quando a Demanda "Sobe" com o Preço
+
+**Condição necessária** para um bem de Giffen:
+
+1. O bem deve ser **inferior** ($\frac{\partial x}{\partial m} < 0$)
+2. O efeito renda deve **dominar** o efeito substituição
+3. O bem deve representar **grande parte** do orçamento
+
+. . .
+
+$$\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{< 0} - \underbrace{x_i \frac{\partial x_i}{\partial m}}_{> 0 \text{ (pois } \frac{\partial x}{\partial m} < 0)} > 0$$
+
+. . .
+
+> Exemplo histórico: batatas na Irlanda do séc. XIX; arroz em províncias chinesas (Jensen & Miller, 2008).
+
+## Fluxograma de Classificação de Bens
+
+:::: {.columns}
+::: {.column width="45%"}
+
+```
+           ∂x/∂m > 0?
+          /          \
+        Sim          Não
+       Normal      Inferior
+      /     \         |
+   εm>1   εm<1    |ER|>|ES|?
+   Luxo  Necess.   /     \
+                 Sim      Não
+                Giffen  Inferior
+                        comum
+```
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap05/demanda-marshalliana-hicksiana.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Próxima Aula
+
+**Aula 08 — Decomposição de Slutsky + Case Brasil**
+
+. . .
+
+- Efeitos preço-cruzados e substitutos/complementos líquidos
+- Variação compensadora e equivalente
+- Agregação de demanda e elasticidade-receita
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise o conceito de elasticidade-preço cruzada e traga exemplos de bens que você considera substitutos ou complementos no seu dia a dia.
+:::

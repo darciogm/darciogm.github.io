@@ -1,0 +1,195 @@
+---
+title: "Função de Produção e Tecnologia"
+subtitle: "Microeconomia II — Aula 13"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 13"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Por que a Embrapa mudou a agricultura brasileira?
+
+- Produtividade da soja no Brasil: de 1,5 t/ha (1970) para 3,5 t/ha (2020)
+- **Mesma terra, mais produto** — o que mudou foi a **tecnologia**
+- Nesta aula: como modelar a relação entre insumos e produto?
+
+. . .
+
+> "A função de produção é o DNA econômico da firma."
+
+## Função de Produção: Definição
+
+A **função de produção** mapeia insumos em produto máximo:
+
+$$q = f(x_1, x_2, \ldots, x_n)$$
+
+**Propriedades usuais:**
+
+- $f(0, 0) = 0$ (sem insumos, sem produto)
+- $f$ é contínua e diferenciável
+- $f$ é crescente em cada $x_i$ (monotonicidade)
+
+. . .
+
+**Caso clássico com dois insumos:**
+
+$$q = f(K, L)$$
+
+onde $K$ = capital e $L$ = trabalho.
+
+## Curto Prazo vs. Longo Prazo
+
+| | Curto Prazo (CP) | Longo Prazo (LP) |
+|---|---|---|
+| **Capital** | Fixo: $\bar{K}$ | Variável |
+| **Trabalho** | Variável | Variável |
+| **Função** | $q = f(\bar{K}, L)$ | $q = f(K, L)$ |
+
+. . .
+
+**No curto prazo**, definimos:
+
+- **Produto Total:** $q = f(\bar{K}, L)$
+- **Produto Marginal:** $PMg_L = \frac{\partial f}{\partial L}$
+- **Produto Médio:** $PMe_L = \frac{f(\bar{K}, L)}{L}$
+
+## Produto Marginal e Produto Médio
+
+**Relação fundamental:**
+
+$$PMe_L = \frac{q}{L} \implies \frac{d\,PMe_L}{dL} = \frac{PMg_L - PMe_L}{L}$$
+
+. . .
+
+**Três regiões:**
+
+1. $PMg_L > PMe_L \Rightarrow PMe_L$ crescente
+2. $PMg_L = PMe_L \Rightarrow PMe_L$ máximo
+3. $PMg_L < PMe_L \Rightarrow PMe_L$ decrescente
+
+. . .
+
+> **Analogia:** se sua nota na próxima prova (marginal) for maior que sua média, a média sobe.
+
+## Lei dos Rendimentos Marginais Decrescentes
+
+> Mantendo os demais insumos fixos, aumentos sucessivos de um insumo variável eventualmente geram acréscimos decrescentes de produto.
+
+$$\frac{\partial^2 f}{\partial L^2} < 0 \quad \text{(a partir de certo ponto)}$$
+
+. . .
+
+**Atenção:** a lei se aplica ao **curto prazo** (pelo menos um insumo fixo).
+
+- Não diz que $PMg_L$ é sempre decrescente
+- Não se aplica quando **todos** os insumos variam proporcionalmente
+
+## Isoquantas
+
+A **isoquanta** é o conjunto de combinações $(K, L)$ que produzem o mesmo nível de produto:
+
+$$\{(K, L) : f(K, L) = \bar{q}\}$$
+
+<iframe src="../../graficos/cap10/isoquantas.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Taxa Marginal de Substituição Técnica (TMST)
+
+A TMST mede a taxa à qual a firma pode trocar $K$ por $L$ mantendo $q$ constante:
+
+$$TMST_{L,K} = -\frac{dK}{dL}\bigg|_{q=\bar{q}} = \frac{PMg_L}{PMg_K}$$
+
+. . .
+
+**Propriedades:**
+
+- Decrescente ao longo da isoquanta (convexidade)
+- Reflete a **substituibilidade** entre insumos
+- Análoga à TMS do consumidor
+
+. . .
+
+$$df = PMg_L \, dL + PMg_K \, dK = 0 \implies \frac{dK}{dL} = -\frac{PMg_L}{PMg_K}$$
+
+## Rendimentos de Escala
+
+O que acontece quando **todos** os insumos variam proporcionalmente?
+
+$$f(tK, tL) \text{ vs. } t \cdot f(K, L), \quad t > 1$$
+
+| Tipo | Condição | Exemplo |
+|---|---|---|
+| **Crescentes (IRS)** | $f(tK,tL) > t \cdot f(K,L)$ | Especialização |
+| **Constantes (CRS)** | $f(tK,tL) = t \cdot f(K,L)$ | Replicação |
+| **Decrescentes (DRS)** | $f(tK,tL) < t \cdot f(K,L)$ | Coordenação |
+
+<iframe src="../../graficos/cap10/rendimentos-escala.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Menu de Funções de Produção
+
+| Função | Fórmula | $\sigma$ | Rendimentos |
+|---|---|---|---|
+| **Cobb-Douglas** | $AK^\alpha L^\beta$ | $1$ | $\alpha + \beta$ |
+| **CES** | $A[\delta K^\rho + (1-\delta)L^\rho]^{r/\rho}$ | $\frac{1}{1-\rho}$ | $r$ |
+| **Linear** | $aK + bL$ | $\infty$ | CRS |
+| **Leontief** | $\min\{aK, bL\}$ | $0$ | CRS |
+
+. . .
+
+- A **CES** aninha todas as demais como casos especiais
+- $\rho \to 0$: Cobb-Douglas; $\rho \to -\infty$: Leontief; $\rho = 1$: Linear
+
+## Elasticidade de Substituição
+
+A **elasticidade de substituição** mede quão facilmente a firma troca insumos:
+
+$$\sigma = \frac{d\ln(K/L)}{d\ln(TMST_{L,K})}$$
+
+. . .
+
+**Interpretação:**
+
+- $\sigma$ alto $\Rightarrow$ insumos facilmente substituíveis (isoquantas "achatadas")
+- $\sigma$ baixo $\Rightarrow$ insumos complementares (isoquantas "angulosas")
+- $\sigma = 1$ $\Rightarrow$ Cobb-Douglas (curvatura intermediária)
+
+. . .
+
+**Na prática:** $\sigma$ determina como a firma responde a mudanças nos preços relativos dos insumos.
+
+## Progresso Técnico
+
+O progresso técnico desloca a função de produção **para cima**: mais produto com os mesmos insumos.
+
+$$q_1 = A_1 \cdot f(K,L) \to q_2 = A_2 \cdot f(K,L), \quad A_2 > A_1$$
+
+. . .
+
+**Classificação (Hicks):**
+
+- **Neutro:** não altera a razão $K/L$ ótima
+- **Poupador de trabalho:** aumenta $PMg_K$ relativamente
+- **Poupador de capital:** aumenta $PMg_L$ relativamente
+
+<iframe src="../../graficos/cap10/progresso-tecnico.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Próxima Aula: Lab Isoquantas
+
+**Aula 14 — Lab Isoquantas e Funções de Produção**
+
+- Exploração interativa de funções Cobb-Douglas e CES
+- Jigsaw: cada grupo analisa uma função de produção diferente
+- Peer Instruction: rendimentos crescentes implicam monopólio?
+
+. . .
+
+**Preparação:**
+
+- Revisar propriedades da Cobb-Douglas
+- Pensar: por que diferentes indústrias usam diferentes tecnologias?

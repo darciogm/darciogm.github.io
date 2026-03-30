@@ -1,0 +1,314 @@
+---
+title: "Discriminação + Regulação de Monopólios"
+subtitle: "Microeconomia II — Aula 22"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 22"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Monopólio Natural: Custos Subaditivos
+
+**Definição:** uma firma é monopólio natural se, para toda quantidade relevante:
+
+$$C(Q) < C(Q_1) + C(Q_2) \quad \text{para todo } Q_1 + Q_2 = Q$$
+
+. . .
+
+Isto ocorre quando há **altos custos fixos** e **custos marginais baixos/constantes**:
+
+$$CMe(Q) = \frac{CF}{Q} + CVMe \quad \text{(decrescente no intervalo relevante)}$$
+
+. . .
+
+**Exemplos clássicos:**
+
+- Distribuição de água, gás e eletricidade
+- Ferrovias e metrô
+- Rede de telecomunicações (infraestrutura física)
+
+:::{.callout-important}
+Se $CMe$ é decrescente, duplicar a infraestrutura seria **desperdício social**. Mas sem regulação, o monopolista cobra $P^M > CMg$.
+:::
+
+## Regulação pelo Custo Marginal: $P = CMg$
+
+A regulação "first-best" impõe:
+
+$$P_{reg} = CMg$$
+
+. . .
+
+**Vantagem:** eficiência alocativa — $Q_{reg} = Q^{CP}$, $DWL = 0$.
+
+. . .
+
+**Problema fatal:** como $CMe > CMg$ no monopólio natural, a firma tem **prejuízo**:
+
+$$\pi = (P_{reg} - CMe) \cdot Q < 0$$
+
+. . .
+
+**Soluções possíveis:**
+
+| Solução | Problema |
+|:--|:--|
+| Subsídio governamental | Custo fiscal + incentivo a inflar custos |
+| Tarifa em duas partes ($F + CMg \cdot Q$) | Pode excluir consumidores de baixa renda |
+| Estatização | Sem incentivo a eficiência |
+
+## Regulação pelo Custo Médio: Second-Best
+
+:::: {.columns}
+::: {.column width="45%"}
+
+A regulação "second-best" impõe:
+
+$$P_{reg} = CMe \implies \pi = 0$$
+
+. . .
+
+**Trade-off:**
+
+- Firma **sobrevive** sem subsídio
+- Mas $P_{CMe} > CMg$ → ainda há DWL
+- $DWL_{CMe} < DWL_{\text{monopólio}}$
+
+. . .
+
+:::{.callout-note}
+Na prática, a maioria das agências reguladoras usa uma variação da regulação por custo médio (ANEEL, ANATEL).
+:::
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap15/regulacao-monopolio.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Tarifa em Duas Partes como Regulação
+
+Combinação que busca eficiência **e** viabilidade financeira:
+
+$$T(Q) = F + CMg \cdot Q$$
+
+. . .
+
+**Mecanismo:**
+
+1. Preço por unidade = $CMg$ → eficiência alocativa
+2. Taxa fixa $F$ cobre o déficit: $F \cdot N = CF$ → $F = CF/N$
+
+. . .
+
+**Vantagens:**
+
+- Consumo eficiente na margem
+- Firma cobre custos
+
+. . .
+
+**Desvantagens:**
+
+- $F$ pode ser **barreira** para consumidores de baixa renda
+- Requer conhecimento dos custos (assimetria de informação)
+
+:::{.callout-tip}
+A tarifa social de energia no Brasil é uma versão: isenção de taxa fixa para famílias de baixa renda.
+:::
+
+## Price Cap: Regulação RPI-X
+
+**Fórmula:** o preço máximo cresce pela inflação menos um fator de eficiência:
+
+$$\Delta P \leq RPI - X$$
+
+. . .
+
+- $RPI$: índice de inflação (*Retail Price Index*)
+- $X$: ganho de produtividade esperado
+
+. . .
+
+**Vantagens sobre regulação por custo:**
+
+| Critério | Rate of Return | Price Cap (RPI-X) |
+|:--|:--|:--|
+| Incentivo à eficiência | Fraco (custo é repassado) | Forte (lucro = eficiência) |
+| Risco | Firma protegida | Firma assume risco |
+| Informação necessária | Custos detalhados | Projeção de produtividade |
+| Captura regulatória | Alto risco | Menor risco |
+
+. . .
+
+:::{.callout-note}
+Usado pela ANEEL nas revisões tarifárias periódicas da distribuição de energia.
+:::
+
+## CADE e Defesa da Concorrência
+
+O **CADE** (Conselho Administrativo de Defesa Econômica) atua em três frentes:
+
+. . .
+
+1. **Controle de fusões:** aprovar, reprovar ou impor remédios
+2. **Condutas anticompetitivas:** cartel, preços predatórios, venda casada
+3. **Estudos de mercado:** promover concorrência
+
+. . .
+
+**Critérios para análise de fusão:**
+
+$$\Delta HHI > 100 \text{ e } HHI > 1500 \implies \text{análise aprofundada}$$
+
+onde $HHI = \sum_i s_i^2$ (em pontos-base).
+
+. . .
+
+:::{.callout-warning title="Caso emblemático"}
+Fusão Sadia-Perdigão (2009) → BRF. CADE aprovou com restrições: venda de marcas em mercados concentrados.
+:::
+
+## Estática Comparativa do Monopólio
+
+:::: {.columns}
+::: {.column width="45%"}
+
+**O que acontece quando...**
+
+. . .
+
+| Choque | $Q^M$ | $P^M$ | $\pi$ | DWL |
+|:--|:--:|:--:|:--:|:--:|
+| $\uparrow$ Demanda | $\uparrow$ | $\uparrow$ | $\uparrow$ | $\uparrow$ |
+| $\uparrow$ CMg | $\downarrow$ | $\uparrow$ | $\downarrow$ | Ambíguo |
+| $\uparrow$ Elasticidade | $\uparrow$ | $\downarrow$ | $\downarrow$ | $\downarrow$ |
+| Imposto $t$ | $\downarrow$ | $\uparrow^*$ | $\downarrow$ | $\uparrow$ |
+
+. . .
+
+$^*$Com demanda linear, o monopolista repassa **menos da metade** do imposto ao consumidor — diferente da competição perfeita.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap15/estatica-comparativa.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Comparação de Bem-Estar: Regulado vs. Não Regulado
+
+| Cenário | Preço | Quantidade | EC | EP | ET | DWL |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|
+| Monopólio puro | $P^M$ | $Q^M$ | Baixo | Alto | Médio | Alto |
+| Reg. $CMg$ | $CMg$ | $Q^{CP}$ | Máximo | Negativo | Máximo | 0 |
+| Reg. $CMe$ | $CMe$ | $Q_{CMe}$ | Médio-alto | 0 | Alto | Baixo |
+| Discrim. 1º grau | Variável | $Q^{CP}$ | 0 | Máximo | Máximo | 0 |
+
+. . .
+
+:::{.callout-important title="Paradoxo"}
+A discriminação de 1º grau e a regulação por $CMg$ alcançam a mesma quantidade eficiente — mas distribuem o excedente de formas opostas!
+:::
+
+. . .
+
+A escolha regulatória depende do **objetivo social**: eficiência pura ou equidade.
+
+## Simulação: Discriminação de Preços em Ação {.smaller}
+
+:::{.callout-tip title="Atividade — Simulação de Mercado (20 min)"}
+:::
+
+**Setup:** Cada aluno recebe um cartão com sua **disposição a pagar** (entre R\$5 e R\$50).
+
+. . .
+
+**Rodadas:**
+
+| Rodada | Regime | Regra |
+|:--:|:--|:--|
+| 1 | Preço único | Monopolista anuncia $P$; quem aceita, compra |
+| 2 | 3º grau | Dois grupos (azul/vermelho); preços diferentes |
+| 3 | 2º grau | Menu: "básico" (R\$X) e "premium" (R\$Y) |
+
+. . .
+
+**Após cada rodada:** calcule EC, EP e DWL. Compare os três regimes.
+
+## Tribunal do CADE: Role-Play
+
+**Caso fictício:** Fusão entre as duas maiores redes de farmácias de São Paulo.
+
+. . .
+
+**Papéis (5 min de preparação, 10 min de debate):**
+
+| Papel | Grupo | Argumento central |
+|:--|:--:|:--|
+| Empresas (defesa da fusão) | A | Ganhos de eficiência, redução de custos |
+| Consumidores (contra) | B | Aumento de concentração, risco de preço alto |
+| Conselheiros do CADE | C | Analisar $\Delta HHI$, definir remédios |
+
+. . .
+
+:::{.callout-note title="Dados fornecidos"}
+- Market shares pré-fusão: Empresa 1 (25%), Empresa 2 (20%), outras (55%)
+- $HHI_{antes}$, $HHI_{depois}$, sinergias estimadas
+:::
+
+## Resultados e Discussão das Atividades
+
+**Após as rodadas da simulação e o tribunal:**
+
+. . .
+
+| Atividade | Pergunta-chave |
+|:--|:--|
+| Simulação de discriminação | Qual regime gerou maior ET? E maior EC? |
+| Tribunal do CADE | Os remédios propostos reduzem o $\Delta HHI$ o suficiente? |
+
+. . .
+
+**Conexão com a teoria:**
+
+- A discriminação de 3º grau **pode** aumentar o ET se abre mercados antes não atendidos
+- Fusões com sinergias reais podem compensar o aumento de concentração
+- O regulador precisa comparar $DWL_{\text{antes}}$ vs. $DWL_{\text{depois}}$ da fusão
+
+:::{.callout-note title="Lição central"}
+Regulação é um exercício de **trade-offs** — não existe política sem custo.
+:::
+
+## Peer Instruction + Próxima Aula
+
+**Peer Instruction — Vote individualmente:**
+
+> "A meia-entrada para estudantes é uma política que **melhora** o bem-estar social?"
+
+. . .
+
+- (A) Sim, sempre — mais gente acessa cultura
+- (B) Sim, se os não-estudantes não pagam mais
+- (C) Não necessariamente — depende da elasticidade cruzada
+- (D) Não — é transferência de EC entre grupos, sem ganho líquido
+
+. . .
+
+*Discuta com seu vizinho (2 min). Revote.*
+
+. . .
+
+:::{.callout-tip title="Próxima Aula (23): Oligopólio"}
+Cournot, Bertrand, Stackelberg — o que muda quando há **poucos** competidores? Prepare-se: leia o Capítulo 16.
+:::

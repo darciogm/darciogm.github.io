@@ -1,0 +1,310 @@
+---
+title: "Monopólio e Discriminação de Preços"
+subtitle: "Microeconomia II — Aula 21"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 21"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Uber Surge, Spotify Premium, Meia-Entrada: o que têm em comum?
+
+> A Uber cobra mais na chuva. O Spotify oferece plano família. O cinema cobra metade do estudante.
+
+. . .
+
+Todas são formas de **discriminação de preços** — cobrar preços diferentes de consumidores diferentes pelo mesmo bem.
+
+. . .
+
+**Perguntas da aula:**
+
+- Por que um monopolista pode fazer isso e uma firma competitiva não?
+- Isso é bom ou ruim para o bem-estar?
+- Quais condições permitem a discriminação?
+
+:::{.callout-tip title="Objetivo da Aula"}
+Derivar a decisão ótima do monopolista e analisar os três graus de discriminação de preços.
+:::
+
+## Monopólio: Definição e Barreiras à Entrada
+
+**Monopólio:** um único vendedor no mercado, sem substitutos próximos.
+
+. . .
+
+**Fontes de poder de monopólio (barreiras à entrada):**
+
+| Tipo | Exemplo |
+|:--|:--|
+| Legal/patente | Farmacêuticas (20 anos de exclusividade) |
+| Controle de recurso essencial | De Beers (diamantes, histórico) |
+| Economias de escala (monopólio natural) | Distribuição de água, eletricidade |
+| Efeitos de rede | WhatsApp, Google Search |
+| Capacidade instalada estratégica | Grandes siderúrgicas |
+
+. . .
+
+:::{.callout-important}
+A diferença central: o monopolista é **formador de preço** (*price maker*), não tomador.
+:::
+
+## Receita Marginal Menor que o Preço: $RMg < P$
+
+Para vender uma unidade adicional, o monopolista precisa **reduzir o preço de todas as unidades**.
+
+. . .
+
+Se a demanda inversa é $P(Q)$:
+
+$$RT = P(Q) \cdot Q$$
+
+$$RMg = \frac{dRT}{dQ} = P(Q) + Q \cdot P'(Q)$$
+
+. . .
+
+Como $P'(Q) < 0$ (demanda negativamente inclinada):
+
+$$\boxed{RMg = P + Q \cdot P'(Q) < P}$$
+
+. . .
+
+**Exemplo linear:** Se $P = a - bQ$, então $RMg = a - 2bQ$ — o dobro da inclinação da demanda.
+
+## Otimização do Monopolista: $RMg = CMg$
+
+:::: {.columns}
+::: {.column width="45%"}
+
+A firma maximiza lucro onde:
+
+$$RMg(Q^M) = CMg(Q^M)$$
+
+. . .
+
+**Passo a passo:**
+
+1. Derive $RMg$ a partir da demanda
+2. Iguale $RMg = CMg$
+3. Encontre $Q^M$
+4. Substitua na demanda: $P^M = P(Q^M)$
+
+. . .
+
+**Resultado:**
+
+$$Q^M < Q^{CP} \quad \text{e} \quad P^M > P^{CP}$$
+
+O monopolista **restringe** quantidade e **eleva** preço.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap15/monopolio.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Índice de Lerner: Medindo Poder de Mercado
+
+O **markup** do monopolista sobre o custo marginal é:
+
+$$L = \frac{P - CMg}{P} = -\frac{1}{\varepsilon_D}$$
+
+. . .
+
+onde $\varepsilon_D$ é a elasticidade-preço da demanda (em valor absoluto no denominador quando negativa).
+
+. . .
+
+**Interpretação:**
+
+| $|\varepsilon_D|$ | Lerner | Markup |
+|:--:|:--:|:--|
+| 2 | 0,50 | Preço = 2x o CMg |
+| 5 | 0,20 | Preço = 1,25x o CMg |
+| 10 | 0,10 | Preço ≈ CMg |
+| $\infty$ | 0 | Concorrência perfeita |
+
+. . .
+
+:::{.callout-note}
+Quanto mais **inelástica** a demanda, maior o poder de mercado.
+:::
+
+## O Monopolista Opera Apenas na Região Elástica
+
+Da condição $RMg = CMg > 0$:
+
+$$RMg = P\left(1 + \frac{1}{\varepsilon_D}\right) > 0$$
+
+. . .
+
+Como $P > 0$, precisamos:
+
+$$1 + \frac{1}{\varepsilon_D} > 0 \implies \varepsilon_D < -1 \implies |\varepsilon_D| > 1$$
+
+. . .
+
+:::{.callout-important title="Resultado fundamental"}
+O monopolista **nunca** opera na região inelástica da demanda ($|\varepsilon_D| < 1$).
+
+Na região inelástica, reduzir a quantidade **aumenta** tanto a receita quanto reduz o custo — logo, não pode ser ótimo.
+:::
+
+## Peso Morto do Monopólio
+
+Comparado ao equilíbrio competitivo ($P = CMg$), o monopólio gera:
+
+. . .
+
+- **Menos quantidade:** $Q^M < Q^{CP}$
+- **Preço maior:** $P^M > P^{CP}$
+- **Transferência de EC para lucro** do monopolista
+- **Perda líquida (DWL):** transações mutuamente benéficas que não ocorrem
+
+. . .
+
+$$DWL = \int_{Q^M}^{Q^{CP}} [P^D(Q) - CMg(Q)]\,dQ$$
+
+. . .
+
+**Com curvas lineares:**
+
+$$DWL = \frac{1}{2}(P^M - CMg^M)(Q^{CP} - Q^M)$$
+
+:::{.callout-warning}
+O DWL é a medida do custo social do poder de mercado — a "conta" que a sociedade paga.
+:::
+
+## Discriminação de Preços: Visão Geral
+
+**Condições necessárias:**
+
+1. **Poder de mercado** (formador de preço)
+2. **Capacidade de segmentar** consumidores
+3. **Impossibilidade de revenda** (arbitragem)
+
+. . .
+
+| Grau | O que o monopolista sabe | Exemplo |
+|:--|:--|:--|
+| 1º (perfeita) | Disposição a pagar de cada consumidor | Leilão, negociação individual |
+| 2º (autoselection) | Menu; consumidor se revela | Versioning (básico/premium) |
+| 3º (segmentação) | Grupo do consumidor (não individual) | Meia-entrada, tarifa idoso |
+
+. . .
+
+:::{.callout-tip}
+A discriminação **pode** aumentar o bem-estar total — depende do grau e do contexto.
+:::
+
+## 1º Grau: Discriminação Perfeita
+
+O monopolista cobra de cada consumidor exatamente sua **disposição máxima a pagar**.
+
+. . .
+
+**Resultado:**
+
+- $Q^{1\text{º}} = Q^{CP}$ — quantidade eficiente!
+- $EC = 0$ — todo o excedente vai para o monopolista
+- $DWL = 0$ — eficiência alocativa
+- $EP = ET_{\text{competitivo}}$ — captura total
+
+. . .
+
+:::{.callout-note}
+Discriminação perfeita é **eficiente** (Pareto) mas extremamente **desigual**. Na prática, é impossível — requer informação perfeita sobre cada consumidor.
+:::
+
+. . .
+
+**Aproximações modernas:** precificação algorítmica (Amazon, companhias aéreas) se aproxima do 1º grau com big data.
+
+## 2º Grau: Autoselecção e Tarifa em Duas Partes
+
+O monopolista oferece um **menu** e o consumidor se autoseleciona.
+
+. . .
+
+**Tarifa em duas partes:** $T(q) = F + p \cdot q$
+
+- $F$: taxa fixa (entrada, assinatura)
+- $p$: preço por unidade
+
+. . .
+
+**Ótimo com consumidores idênticos:**
+
+$$p = CMg, \quad F = EC_{\text{individual}}$$
+
+O monopolista cobra preço eficiente e extrai todo o excedente via taxa fixa.
+
+. . .
+
+**Exemplos:**
+
+- Costco: anuidade + preço baixo
+- Parque de diversões: ingresso + brinquedos
+- Spotify: assinatura mensal + streaming ilimitado
+
+## 3º Grau: Segmentação de Mercado
+
+:::: {.columns}
+::: {.column width="45%"}
+
+O monopolista identifica **grupos** com elasticidades diferentes e cobra preços distintos.
+
+. . .
+
+**Regra ótima:** igualar $RMg$ em todos os segmentos ao $CMg$:
+
+$$RMg_1(Q_1) = RMg_2(Q_2) = CMg$$
+
+. . .
+
+**Implicação (via Lerner):**
+
+$$\frac{P_1}{P_2} = \frac{1 + 1/\varepsilon_2}{1 + 1/\varepsilon_1}$$
+
+Cobra-se **mais** do grupo com demanda mais inelástica.
+
+. . .
+
+**Exemplo:** meia-entrada — estudantes têm demanda mais elástica (menor renda, mais substitutos).
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap15/discriminacao-precos.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Próxima Aula: Regulação de Monopólios
+
+**Na Aula 22, veremos:**
+
+- Como regular monopólios naturais?
+- Regulação por custo marginal vs. custo médio
+- *Price cap* (RPI-X) e o papel do CADE
+
+. . .
+
+:::{.callout-tip title="Para casa"}
+1. Exercícios do Capítulo 15 (itens 1–6)
+2. Calcule: se $P = 100 - 2Q$ e $CMg = 20$, encontre $Q^M$, $P^M$, lucro e DWL
+3. Pesquise: cite 3 exemplos de discriminação de preços que você enfrenta no dia a dia
+:::
+
+. . .
+
+> "O monopólio é o grande inimigo da boa gestão." — Adam Smith

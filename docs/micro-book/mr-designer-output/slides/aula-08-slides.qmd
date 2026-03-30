@@ -1,0 +1,240 @@
+---
+title: "Decomposição Slutsky + Case Brasil"
+subtitle: "Microeconomia II — Aula 08"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 08"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Efeitos Preço-Cruzados
+
+Como a variação no preço de $j$ afeta a demanda pelo bem $i$?
+
+. . .
+
+$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES cruzado}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{ER cruzado}}$$
+
+. . .
+
+**Propriedade de simetria:** $\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A simetria dos efeitos cruzados Hicksianos é uma consequência direta do Teorema de Young aplicado à função dispêndio.
+:::
+
+## Substitutos e Complementos — Brutos vs. Líquidos
+
+:::: {.columns}
+::: {.column width="45%"}
+
+**Substitutos brutos (Marshalliana):**
+
+$$\frac{\partial x_i}{\partial p_j} > 0$$
+
+**Substitutos líquidos (Hicksiana):**
+
+$$\frac{\partial h_i}{\partial p_j} > 0$$
+
+. . .
+
+> A classificação líquida é mais confiável, pois isola o efeito renda.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap06/substitutos-complementos.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Simetria Hicksiana e Integrabilidade
+
+A demanda Hicksiana satisfaz:
+
+$$\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i} = \frac{\partial^2 e(\mathbf{p}, \bar{u})}{\partial p_i \, \partial p_j}$$
+
+. . .
+
+**Consequência prática:** se café e chá são substitutos líquidos, a intensidade da substituição é a *mesma* em ambas as direções.
+
+. . .
+
+**Matriz de Slutsky** $\mathbf{S}$:
+
+- Simétrica: $s_{ij} = s_{ji}$
+- Semidefinida negativa: $\mathbf{z'Sz} \leq 0$ para todo $\mathbf{z}$
+
+## Curvas de Engel para o Brasil
+
+:::: {.columns}
+::: {.column width="45%"}
+
+Dados da **POF (IBGE)** mostram:
+
+| Bem | $\varepsilon_m$ | Tipo |
+|:--|:--:|:--|
+| Arroz | 0,3 | Necessário |
+| Carne bovina | 0,9 | Necessário |
+| Refeição fora | 1,4 | Luxo |
+| Transporte | 1,1 | Luxo |
+
+. . .
+
+> À medida que a renda cresce, a parcela gasta em alimentos básicos cai — **Lei de Engel**.
+
+:::
+::: {.column width="55%"}
+
+<iframe src="../../graficos/cap05/curva-engel.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+:::
+::::
+
+## Variação Compensadora e Equivalente
+
+Duas medidas monetárias de bem-estar para uma queda em $p_1$:
+
+. . .
+
+**Variação Compensadora (VC):** quanto dinheiro tirar do consumidor, *após* a mudança, para que ele volte ao nível de utilidade original?
+
+$$VC = e(\mathbf{p'}, u_0) - e(\mathbf{p'}, u_1) = m - e(\mathbf{p'}, u_0)$$
+
+. . .
+
+**Variação Equivalente (VE):** quanto dinheiro dar ao consumidor, *antes* da mudança, para que ele atinja o novo nível de utilidade?
+
+$$VE = e(\mathbf{p}, u_1) - e(\mathbf{p}, u_0) = e(\mathbf{p}, u_1) - m$$
+
+. . .
+
+> Para quase-linear: $VC = VE = \Delta EC$ (excedente do consumidor).
+
+## Medidas de Bem-Estar — Resumo
+
+| Medida | Preços base | Utilidade referência | Uso principal |
+|:--|:--:|:--:|:--|
+| $\Delta EC$ | Observados | — | Aproximação rápida |
+| $VC$ | Novos $\mathbf{p'}$ | Antiga $u_0$ | Compensação ex-post |
+| $VE$ | Antigos $\mathbf{p}$ | Nova $u_1$ | Avaliação ex-ante |
+
+. . .
+
+**Relação de ordem** (para queda de preço de bem normal):
+
+$$VE \geq \Delta EC \geq VC$$
+
+:::{.callout-tip title="Intuição Econômica"}
+A diferença entre VC e VE reflete o efeito renda. Se o efeito renda for zero, as três medidas coincidem.
+:::
+
+## Agregação de Demanda e Receita
+
+A demanda de mercado é $X(p) = \sum_{i=1}^{n} x_i(p, m_i)$.
+
+. . .
+
+**Receita total:**
+
+$$R(p) = p \cdot X(p) \implies \frac{dR}{dp} = X(p)\left[1 + \frac{1}{\varepsilon}\right]$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se $|\varepsilon| > 1$ (demanda elástica), reduzir o preço **aumenta** a receita. Se $|\varepsilon| < 1$, reduzir o preço **diminui** a receita.
+:::
+
+## Elasticidade e Receita — Interativo
+
+<iframe src="../../graficos/cap06/elasticidade-receita.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+. . .
+
+| Região | $|\varepsilon|$ | $\frac{dR}{dp}$ | Estratégia |
+|:--|:--:|:--:|:--|
+| Elástica | $> 1$ | $< 0$ | Reduzir preço |
+| Unitária | $= 1$ | $= 0$ | Receita máxima |
+| Inelástica | $< 1$ | $> 0$ | Aumentar preço |
+
+## Gallery Walk — Efeitos Cruzados
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 12 minutos | **Formato:** Gallery Walk com 4 estações
+:::
+
+. . .
+
+**Estação 1:** Dados da POF — classifique 5 pares de bens como substitutos ou complementos brutos.
+
+**Estação 2:** Repita a classificação usando a definição de substitutos/complementos *líquidos*. Compare.
+
+**Estação 3:** Calcule $VC$ e $VE$ para $U = x_1^{0{,}5} x_2^{0{,}5}$ com $p_1: 4 \to 2$.
+
+**Estação 4:** Para demanda linear $X = 100 - 2p$, encontre o preço que maximiza a receita.
+
+## Case Brasil — Arroz, Feijão e Carne
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 15 minutos | **Formato:** Case em grupos de 3–4 alunos
+:::
+
+. . .
+
+**Contexto:** Entre 2003 e 2014, a renda real das famílias brasileiras cresceu ~40%. A POF registrou:
+
+- Consumo per capita de arroz: **caiu 20%**
+- Consumo per capita de carne bovina: **subiu 15%**
+- Consumo per capita de refeições fora: **subiu 60%**
+
+. . .
+
+**Tarefas:**
+
+1. Estime a elasticidade-renda para cada categoria
+2. Classifique cada bem (inferior, necessário, luxo)
+3. Um aumento no preço do arroz pode gerar efeito Giffen? Argumente usando Slutsky
+
+## Peer Instruction — Giffen ou Não?
+
+:::{.callout-tip title="Think-Pair-Share"}
+**Tempo:** 5 minutos | Vote → Discuta → Revote
+:::
+
+. . .
+
+> Em 2007, Jensen & Miller encontraram que, em Hunan (China), quando o preço do arroz **subiu**, o consumo de arroz também **subiu**. Nas províncias de Gansu, o mesmo padrão foi observado para o trigo.
+
+. . .
+
+**Pergunta:** Qual condição da equação de Slutsky **falha** para que o arroz em Hunan seja um bem de Giffen legítimo?
+
+- **(A)** O efeito substituição é positivo
+- **(B)** O efeito renda domina o efeito substituição
+- **(C)** O arroz é um bem normal naquela faixa de renda
+- **(D)** A demanda Hicksiana tem inclinação positiva
+
+## Próxima Aula
+
+**Aula 09 — Dotações, Trabalho e Escolha Intertemporal**
+
+. . .
+
+- Economia com dotações e Slutsky generalizado
+- Oferta de trabalho e o trade-off trabalho–lazer
+- Modelo de Fisher de dois períodos
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Pense: se seu salário dobrasse, você trabalharia *mais* ou *menos* horas? A resposta revela se o efeito substituição ou o efeito renda domina na sua decisão.
+:::

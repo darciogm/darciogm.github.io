@@ -1,0 +1,271 @@
+---
+title: "Preferências, Axiomas e Utilidade"
+subtitle: "Microeconomia II — Aula 03"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 03"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Por que Precisamos de Axiomas?
+
+Queremos modelar **escolhas** de consumidores. Mas como transformar preferências subjetivas em matemática?
+
+. . .
+
+**Estratégia:**
+
+1. Postular axiomas "razoáveis" sobre preferências $\succsim$
+2. Provar que existe uma função $U$ que representa $\succsim$
+3. Usar $U$ para resolver problemas de otimização
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Os axiomas não dizem *o que* o consumidor prefere — dizem que ele é **consistente** o suficiente para que possamos representar suas preferências com números.
+:::
+
+## Os Quatro Axiomas Fundamentais
+
+:::: {.columns}
+::: {.column width="50%"}
+**1. Completude**
+
+Para quaisquer cestas $A$ e $B$:
+
+$$A \succsim B \;\text{ ou }\; B \succsim A \;\text{ (ou ambos)}$$
+
+O consumidor sempre consegue comparar.
+
+. . .
+
+**2. Transitividade**
+
+$$A \succsim B \;\text{ e }\; B \succsim C \implies A \succsim C$$
+
+Preferências não são "circulares".
+:::
+::: {.column width="50%"}
+**3. Continuidade**
+
+Os conjuntos $\{x : x \succsim A\}$ e $\{x : A \succsim x\}$ são fechados.
+
+Pequenas mudanças nas cestas não causam "saltos" nas preferências.
+
+. . .
+
+**4. Monotonicidade (não saciedade)**
+
+$$x \geq y \;\text{ e }\; x \neq y \implies x \succ y$$
+
+Mais é melhor (pelo menos fracamente).
+:::
+::::
+
+## Teorema de Debreu e Utilidade Ordinal
+
+:::{.callout-tip title="Teorema de Debreu (1954)"}
+Se $\succsim$ satisfaz completude, transitividade e continuidade, então **existe** uma função contínua $U: \mathbb{R}^n_+ \to \mathbb{R}$ tal que:
+
+$$A \succsim B \iff U(A) \geq U(B)$$
+:::
+
+. . .
+
+**Utilidade é ordinal, não cardinal:**
+
+- $U(A) = 10$ e $U(B) = 5$ **não** significa que $A$ é "duas vezes melhor"
+- Qualquer transformação monotônica crescente $V = \phi(U)$ representa as mesmas preferências
+- Exemplo: $U = xy$ e $V = \ln x + \ln y$ são equivalentes
+
+## Curvas de Indiferença: Propriedades
+
+**Definição:** curva de indiferença é o conjunto $\{(x_1, x_2) : U(x_1, x_2) = \bar{u}\}$.
+
+. . .
+
+**Propriedades fundamentais:**
+
+1. **Preenchem o espaço** — por completude, todo ponto pertence a alguma curva
+2. **Inclinação negativa** — por monotonicidade (se $x_1 \uparrow$, precisa $x_2 \downarrow$ para manter $\bar{u}$)
+3. **Não se cruzam** — consequência da transitividade
+4. **Convexas** — preferências convexas $\implies$ médias são preferidas a extremos
+
+. . .
+
+Curvas "mais ao nordeste" representam utilidades maiores.
+
+## Por que Curvas de Indiferença Não se Cruzam?
+
+**Prova por contradição:**
+
+. . .
+
+Suponha que duas curvas ($\bar{u}_1 \neq \bar{u}_2$) se cruzam no ponto $P$.
+
+:::: {.columns}
+::: {.column width="50%"}
+- Ponto $A$ está na curva $\bar{u}_1$: $A \sim P$
+- Ponto $B$ está na curva $\bar{u}_2$: $B \sim P$
+- Por transitividade: $A \sim B$
+:::
+::: {.column width="50%"}
+- Mas $A$ e $B$ estão em curvas diferentes!
+- Se $\bar{u}_1 > \bar{u}_2$: $A \succ B$
+- **Contradição** com $A \sim B$
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se as curvas se cruzassem, o consumidor seria "inconsistente" — violaria a transitividade.
+:::
+
+## Taxa Marginal de Substituição (TMS)
+
+A TMS mede a **disposição a trocar** $x_2$ por $x_1$ mantendo a utilidade constante.
+
+. . .
+
+**Definição formal:** ao longo de uma curva de indiferença ($dU = 0$):
+
+$$TMS_{12} = -\frac{dx_2}{dx_1}\bigg|_{U = \bar{u}} = \frac{U_1}{U_2} = \frac{\partial U / \partial x_1}{\partial U / \partial x_2}$$
+
+. . .
+
+Explore a TMS em diferentes pontos da curva de indiferença:
+
+<iframe src="../../graficos/cap03/tms-ponto.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## Calculando a TMS — Exemplos
+
+:::: {.columns}
+::: {.column width="50%"}
+**Cobb-Douglas:** $U = x_1^\alpha x_2^\beta$
+
+$$TMS = \frac{\alpha x_2}{\beta x_1}$$
+
+. . .
+
+TMS decrescente: curvas "bem comportadas".
+:::
+::: {.column width="50%"}
+**CES:** $U = (x_1^\rho + x_2^\rho)^{1/\rho}$
+
+$$TMS = \left(\frac{x_2}{x_1}\right)^{1-\rho}$$
+
+. . .
+
+O parâmetro $\rho$ controla a curvatura.
+:::
+::::
+
+. . .
+
+**TMS decrescente** $\implies$ preferências convexas $\implies$ curvas de indiferença convexas.
+
+:::{.callout-tip title="Intuição Econômica"}
+Quanto mais $x_1$ você já tem, menos $x_2$ está disposto a abrir mão por mais uma unidade de $x_1$.
+:::
+
+## Menu de Funções de Utilidade
+
+| Função | Fórmula | Características |
+|:--|:--|:--|
+| Linear | $U = ax_1 + bx_2$ | Substitutos perfeitos, $TMS = a/b$ constante |
+| Leontief | $U = \min\{ax_1, bx_2\}$ | Complementares perfeitos, curvas em L |
+| Cobb-Douglas | $U = x_1^\alpha x_2^\beta$ | Caso intermediário, curvas suaves |
+| CES | $U = (ax_1^\rho + bx_2^\rho)^{1/\rho}$ | Generaliza todos os anteriores |
+| Quase-linear | $U = v(x_1) + x_2$ | Sem efeito renda para $x_2$ |
+
+## Substitutos Perfeitos e Complementares Perfeitos
+
+:::: {.columns}
+::: {.column width="50%"}
+**Linear (Substitutos Perfeitos)**
+
+$$U = ax_1 + bx_2$$
+
+- Curvas de indiferença: **retas** com inclinação $-a/b$
+- TMS constante: o consumidor troca a uma taxa fixa
+- Exemplos: café marca A vs. marca B, notas de R\$10 vs. R\$5
+:::
+::: {.column width="50%"}
+**Leontief (Complementares Perfeitos)**
+
+$$U = \min\{ax_1, bx_2\}$$
+
+- Curvas de indiferença: **L** com vértice em $ax_1 = bx_2$
+- TMS: 0 ou $\infty$ (indefinida no vértice)
+- Exemplos: sapato esquerdo e direito, café e açúcar (proporção fixa)
+:::
+::::
+
+. . .
+
+> Esses são os casos polares — a realidade geralmente está no meio.
+
+## Cobb-Douglas e Curvas de Indiferença
+
+$$U = x_1^\alpha x_2^\beta \quad (\alpha, \beta > 0)$$
+
+. . .
+
+**Propriedades:**
+
+- TMS = $\frac{\alpha x_2}{\beta x_1}$ — decrescente ao longo da curva
+- Parcelas de gasto constantes: $\frac{p_1 x_1}{m} = \frac{\alpha}{\alpha + \beta}$
+- Homogênea de grau $\alpha + \beta$
+
+. . .
+
+Explore diferentes combinações de $\alpha$ e $\beta$:
+
+<iframe src="../../graficos/cap03/curvas-indiferenca.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+
+## CES: A Função que Generaliza Tudo
+
+$$U = \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}, \quad \rho \leq 1$$
+
+. . .
+
+**Elasticidade de substituição:** $\sigma = \frac{1}{1 - \rho}$
+
+. . .
+
+| $\rho$ | $\sigma$ | Caso especial |
+|:--|:--|:--|
+| $\rho \to 1$ | $\sigma \to \infty$ | Substitutos perfeitos (linear) |
+| $\rho \to 0$ | $\sigma \to 1$ | Cobb-Douglas |
+| $\rho \to -\infty$ | $\sigma \to 0$ | Complementares perfeitos (Leontief) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+$\sigma$ mede quão fácil é substituir um bem pelo outro. Quanto maior $\sigma$, mais "substituíveis" são os bens.
+:::
+
+## Próxima Aula
+
+**Aula 04 — Lab Curvas de Indiferença**
+
+. . .
+
+- Quase-concavidade e por que ela importa
+- Elasticidade de substituição $\sigma$ em detalhe
+- Transformações monotônicas: por que $\ln U$ é tão útil
+- **Atividade prática:** Jigsaw com funções de utilidade
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Traga calculadora e revise os casos especiais da CES — você vai precisar identificá-los rapidamente na atividade.
+:::

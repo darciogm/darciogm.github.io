@@ -1,3 +1,5 @@
 site/
 livro-micro/site/
 __pycache__/
+.Rhistory
+*.deb
