@@ -128,6 +128,9 @@ Temos um sistema de equações — mas será que ele tem solução? A pergunta p
 
 ### O Teorema do Ponto Fixo de Brouwer
 
+!!! tip "Ferramentas do Cap. 2"
+    Esta seção usa [teoremas de ponto fixo e conjuntos convexos](../cap02/complementos.md). Se precisar relembrar, volte lá — leva 10 minutos.
+
 A ferramenta matemática que permite provar a existência do equilíbrio é o **Teorema do Ponto Fixo de Brouwer** (1911): toda função contínua de um conjunto convexo e compacto nele mesmo possui pelo menos um ponto fixo.
 
 !!! theorem "Teorema do Ponto Fixo de Brouwer"

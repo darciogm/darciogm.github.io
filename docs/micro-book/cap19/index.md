@@ -30,8 +30,8 @@ Neste capítulo, apresentamos o arcabouço do **modelo principal-agente**, anali
 | 19.7 | Qual formato de leilão gera mais receita? | Leilões: IPV, valor comum, equivalência de receita | [Leilões](leiloes-taxonomia.md#197) |
 | 19.8 | Moral hazard, seleção adversa, sinalização — qual é qual? | Taxonomia unificada da informação assimétrica | [Taxonomia](leiloes-taxonomia.md#198) |
 | 19.9 | Como alocar médicos a hospitais sem usar preços? | Matching markets, Gale-Shapley, design de mercado | [Matching](matching-markets.md#199) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

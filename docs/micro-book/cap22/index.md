@@ -27,8 +27,8 @@ A literatura acadêmica sobre economia experimental é vasta. As referências ce
 | 22.5 | Quando a natureza faz o experimento por nós? | Experimentos naturais, DiD, RD | [Naturais](naturais-mecanismos-limites.md#225) |
 | 22.6 | Como desenhar mecanismos que revelam preferências verdadeiras? | Mecanismos experimentais, BDM, leilão de Vickrey | [Mecanismos](naturais-mecanismos-limites.md#226) |
 | 22.7 | O que o experimento não consegue responder? | Limites, validade interna vs. externa, controvérsias | [Limites](naturais-mecanismos-limites.md#227) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

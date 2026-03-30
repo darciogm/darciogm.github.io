@@ -1,5 +1,9 @@
 # Exercícios e ANPEC
 
+!!! tip "Dados para exercícios empíricos"
+    - **POF/IBGE (microdados de consumo):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br) — Tabelas 7170–7175 (POF 2017-2018)
+    - **IPEADATA (séries históricas de preços):** [ipeadata.gov.br](https://www.ipeadata.gov.br)
+
 ## Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.

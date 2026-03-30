@@ -24,8 +24,8 @@ Este capítulo desenvolve a teoria walrasiana de equilíbrio geral — desde a i
 | 14.10 | E quando alguém precisa fabricar, não só trocar? | Produção e equilíbrio geral | [Produção](modelo-matematico.md#1410) |
 | 14.11 | Como simular o impacto de uma reforma tributária na economia inteira? | Modelos CGE (equilíbrio geral computável) | [CGE](cge.md) |
 | 14.12 | Existe regra de votação perfeita — ou a democracia tem limites lógicos? | Teorema de Arrow, escolha social | [Arrow](escolha-social.md#1412) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

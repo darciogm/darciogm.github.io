@@ -21,8 +21,8 @@ O material deste capítulo pressupõe familiaridade com as ferramentas matemáti
     | 10.5 | Que funções a profissão usa — e quando usar cada uma? | Linear, Leontief, Cobb-Douglas, CES | [Funções de produção](funcoes.md) |
     | 10.6 | De onde vem o crescimento que não é trabalho nem capital? | A(t), PTF, resíduo de Solow, neutralidade | [Progresso técnico](progresso.md#106) |
     | 10.7 | Quando o caminho de expansão é uma reta? | Funções homotéticas e separabilidade da função custo | [Homotéticas](progresso.md#107) |
-    | 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Atividades, WebR, revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-    | 🔬 | O que a pesquisa recente diz? | Gasques et al., Oberfield & Raval, Solow, Griliches, Bustos et al. | [Pesquisa](pesquisa.md) |
+    | **Exercícios** | Teste, pratique, resolva | Atividades, WebR, revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+    | **Pesquisa** | O que a pesquisa recente diz? | Gasques et al., Oberfield & Raval, Solow, Griliches, Bustos et al. | [Pesquisa](pesquisa.md) |
 
     </div>
 

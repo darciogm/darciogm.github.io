@@ -23,8 +23,8 @@ Você já parcelou uma compra e sentiu aquele aperto ao ver o total com juros? O
 | 18.9 | Por que Einstein chamou juros compostos de oitava maravilha? | Juros compostos e tempo contínuo | [Compostos](demanda-capital.md#189) |
 | 18.10 | Como colocar todos os números na mesa para decidir? | VPL aplicado, taxa de desconto | [Decisão](hotelling.md#1810) |
 | 18.11 | Extrair petróleo hoje ou deixar no solo para amanhã? | Regra de Hotelling, recursos exauríveis | [Hotelling](hotelling.md#1811) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

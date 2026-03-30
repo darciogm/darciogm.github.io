@@ -22,8 +22,8 @@ Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre co
 | 17.8 | O sindicato melhora ou piora o mercado de trabalho? | Barganha salarial, modelos de sindicato | [Sindicatos](monopsonio-sindicatos.md#178) |
 | 17.9 | Subir o salário atrai mais trabalho ou mais lazer? | Efeito substituição vs. renda na oferta de fatores | [Substituição vs. renda](fatores-terra.md#179) |
 | 17.10 | Se a terra não vai a lugar nenhum, quem captura o valor? | Renda da terra, recursos naturais | [Terra](fatores-terra.md#1710) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

@@ -1,6 +1,11 @@
 # Exercícios e ANPEC — Capítulo 17
 
-## 🧠 Revisão Rápida
+!!! tip "Dados para exercícios empíricos"
+    - **RAIS/MTE (dados salariais e de emprego formal):** [bi.mte.gov.br](https://bi.mte.gov.br/bgcaged/)
+    - **PNAD Contínua/IBGE (mercado de trabalho):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br) — Tabelas 4092–4099
+    - **IPEADATA (séries de salário mínimo e emprego):** [ipeadata.gov.br](https://www.ipeadata.gov.br)
+
+## Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.
 

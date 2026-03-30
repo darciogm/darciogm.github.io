@@ -1,3 +1,9 @@
+!!! tip "Dados para exercícios empíricos"
+    - **INPE/PRODES (desmatamento na Amazônia):** [terrabrasilis.dpi.inpe.br](http://terrabrasilis.dpi.inpe.br)
+    - **SEEG (emissões de GEE do Brasil):** [seeg.eco.br](https://seeg.eco.br)
+    - **SIDRA/IBGE (contas ambientais):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br)
+    - **IPEADATA (indicadores ambientais):** [ipeadata.gov.br](https://www.ipeadata.gov.br)
+
 ## Revisão rápida
 
 ??? question "1. A principal vantagem de instrumentos de mercado (imposto/cap-and-trade) sobre regulação de comando e controle é:"

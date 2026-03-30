@@ -30,8 +30,8 @@ A análise de externalidades e bens públicos tem raízes profundas na história
 | 20.8 | Por que todo mundo quer pegar carona e ninguém quer pagar? | Free-rider, provisão voluntária | [Carona](lindahl-carona.md#208) |
 | 20.9 | A maioria vota bem — ou vota mal? | Votação, teorema do eleitor mediano | [Votação](votacao-mecanismos.md#209) |
 | 20.10 | Como fazer as pessoas revelarem quanto realmente valorizam o bem público? | Mecanismos de revelação, VCG | [Revelação](votacao-mecanismos.md#2010) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

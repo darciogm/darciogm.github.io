@@ -115,6 +115,9 @@ Por exemplo, se uma família gasta R$ 200 por mês em streaming e R$ 50 em livro
 
 ## 4.3 Do Desenho à Equação: O Lagrangeano com *n* Bens
 
+!!! tip "Ferramentas do Cap. 2"
+    Esta seção usa o [método de Lagrange e preço-sombra](../cap02/lagrange.md). Se precisar relembrar, volte lá — leva 10 minutos.
+
 A intuição gráfica da Seção 4.2 e a solução algébrica que segue são *duas formas de dizer a mesma coisa*: tangência = TMS igual à razão de preços = condição de Lagrange. A geometria dá a intuição; a álgebra dá a precisão. Nenhuma substitui a outra.
 
 A análise gráfica, contudo, é limitada a dois bens. No mundo real, consumidores escolhem entre dezenas ou centenas de categorias de bens e serviços — a POF 2017-2018 do IBGE classifica o consumo das famílias brasileiras em mais de 1.500 itens. Como generalizar a condição de tangência para esse cenário multidimensional? Para isso, precisamos do **método de Lagrange**, que traduz a condição geométrica de tangência em um sistema de equações algébricas resolvível para qualquer número de bens. Para uma revisão detalhada do método, incluindo o passo a passo completo e um exercício resolvido com a função CES, veja a [Seção 2.5](../cap02/index.md#25-maximizacao-com-restricoes-o-metodo-de-lagrange).

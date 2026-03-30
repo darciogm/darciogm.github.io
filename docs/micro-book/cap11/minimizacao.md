@@ -65,6 +65,9 @@ A inclinação da isocusto é \(-w/v\), a razão dos preços dos insumos.
 
 ### Condição de tangência
 
+!!! tip "Ferramentas do Cap. 2"
+    Esta seção usa o [método de Lagrange](../cap02/lagrange.md) para minimização com restrições. Se precisar relembrar, volte lá — leva 10 minutos.
+
 Pelo método de Lagrange, a condição de primeira ordem para a minimização de custos é:
 
 \[

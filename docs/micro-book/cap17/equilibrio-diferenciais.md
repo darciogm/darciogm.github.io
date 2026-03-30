@@ -243,3 +243,14 @@ Aplicações da decomposição de Oaxaca-Blinder ao Brasil (por exemplo, Giubert
     A teoria do capital humano (seção 17.6) explica parte substancial dos diferenciais salariais observados: mais educação → maior produtividade → salário mais alto. Contudo, os hiatos persistentes de gênero e raça, mesmo controlando por escolaridade, apontam para a relevância dos modelos de discriminação (Becker, 1957) e de barreiras estruturais no acesso a ocupações de alta remuneração.
 
     *Fonte: PNAD Contínua/IBGE, 2.º tri 2024; MTE, 3.º Relatório de Transparência Salarial, 2025.*
+
+!!! box-brasil "Brasil na Prática — RAIS: O Raio-X do Mercado Formal"
+    A Relação Anual de Informações Sociais (RAIS) é o maior painel empregador-empregado do Brasil — cobre virtualmente 100% dos vínculos formais (CLT + estatutários), com informações sobre salário, ocupação, escolaridade, idade, gênero, raça e município. É o equivalente brasileiro aos *matched employer-employee datasets* usados na literatura internacional (Abowd, Kramarz & Margolis, 1999).
+
+    **Por que importa para o Cap 17:** A RAIS permite decompor a variação salarial em componentes de trabalhador (capital humano, habilidade) e de firma (produtividade, poder de mercado). Estudos com RAIS mostram que:
+
+    - O prêmio salarial de um diploma universitário é ~100% no setor formal (vs. ~126% na PNAD, que inclui informais)
+    - A dispersão salarial *entre* firmas explica ~40% da queda na desigualdade total entre 1996 e 2012 — firmas mais produtivas pagam mais *a todos* os trabalhadores
+    - Diferenciais compensatórios (Seção 17.6) são identificáveis: trabalhadores em ocupações de risco recebem 8–15% a mais, controlando por educação e experiência
+
+    **Fonte:** Alvarez, Benguria, Engbom & Moser (2018), "Firms and the Decline in Earnings Inequality in Brazil", *AEJ: Macroeconomics*, 10(1), 149–189. Gerard, Lagos, Severnini & Card (2021), "Assortative Matching or Exclusionary Hiring?", *American Economic Review*, 111(10), 3418–3457.

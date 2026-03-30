@@ -32,8 +32,8 @@ Ao longo do capítulo, analisaremos: a agregação de demandas individuais em de
 | 13.10 | Tabelar preço resolve ou piora? | Controles de preços, teto e piso | [Controles](politicas.md#1310) |
 | 13.11 | Quem realmente paga o imposto — produtor ou consumidor? | Incidência tributária e elasticidade | [Impostos](politicas.md#1311) |
 | 13.12 | Qual é o custo social do imposto? | Peso morto, EC, EP e PPM | [Peso morto](politicas.md#1312) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

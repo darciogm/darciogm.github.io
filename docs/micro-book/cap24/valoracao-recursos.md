@@ -167,6 +167,19 @@ Quando não há mercado real que revele preferências (caso de valores de não-u
 !!! note "Limitações dos métodos de preferência declarada"
     Métodos de preferência declarada sofrem de vieses conhecidos: (i) **viés de protesto** — respondentes que se recusam a "precificar" a natureza por razões morais; (ii) **viés hipotético** — a diferença entre o que as pessoas *dizem* que pagariam e o que *de fato* pagariam (conectando com o Capítulo 8, economia comportamental); (iii) **insensibilidade ao escopo** — a DAP não varia proporcionalmente com a escala do bem avaliado (proteger 1.000 vs. 100.000 hectares). Apesar dessas limitações, a valoração contingente foi aceita como evidência em tribunais americanos (caso Exxon Valdez, 1989) e permanece o único método capaz de capturar valores de não-uso.
 
+!!! box-brasil "Brasil na Prática — Valoração Contingente: Quanto Você Pagaria por Ar Limpo em São Paulo?"
+    Estudos de valoração contingente (VC) no Brasil revelam disposição a pagar (DAP) significativa por melhorias ambientais:
+
+    - **Qualidade do ar em São Paulo:** Estudos estimam DAP média de R$ 15–40/mês por família para redução de 30% na concentração de material particulado (PM₂.₅). Com ~4 milhões de domicílios na RMSP, isso implica um benefício agregado de R$ 720 milhões–1,9 bilhão/ano
+    - **Parque Nacional da Tijuca (RJ):** Valor recreativo estimado pelo método de custo de viagem: R$ 180–350/visita. Com ~3 milhões de visitantes/ano, o valor recreativo total é R$ 540 milhões–1 bilhão/ano — mais que o orçamento anual do ICMBio inteiro
+    - **Saneamento básico:** DAP para acesso a esgoto tratado em municípios nordestinos: R$ 25–60/mês por família. O valor é compatível com as tarifas praticadas por concessionárias, mas a cobertura é de apenas ~28% no Nordeste
+
+    **Limitações da VC no Brasil:** viés hipotético (declarar é fácil, pagar é outra história), viés estratégico (super ou subdeclarar para influenciar política) e o "problema do *embedding*" (a DAP para "salvar a Amazônia" não é muito diferente da DAP para "salvar o Pantanal" — os respondentes não processam escala).
+
+    **Conexão com a teoria:** A VC é uma tentativa de revelar preferências para bens sem mercado — exatamente o que o mecanismo de Vickrey-Clarke-Groves (Seção 20.10) faz em teoria, mas com questionários em vez de leilões.
+
+    **Fonte:** Seroa da Motta, R. (2006). *Economia Ambiental*. Rio de Janeiro: FGV Editora. Valores aproximados para fins didáticos; estimativas precisas variam conforme especificação, região e período.
+
 ---
 
 ## 24.6 Recursos Naturais e Sustentabilidade {#246}
@@ -262,6 +275,21 @@ Se \(S^* < 0\), a economia está efetivamente *consumindo* seu capital total —
     **Análise:** Do ponto de vista da economia ambiental, o desmatamento da Amazônia é um caso extremo de divergência entre retorno privado e custo social. O retorno privado (pecuária extensiva, soja, grilagem de terras) é positivo para o desmatador — mas os custos sociais (perda de carbono, redução de chuvas, extinção de espécies, danos à saúde por queimadas) recaem sobre toda a sociedade brasileira e sobre o planeta. O Código Florestal (Lei 12.651/2012) exige que proprietários na Amazônia mantenham 80% de reserva legal, mas a fiscalização é insuficiente e a grilagem em terras públicas permanece generalizada. A economia ambiental sugere que a solução eficiente combina enforcement da legislação existente (punição ao desmatamento ilegal) com instrumentos econômicos que remunerem os serviços ecossistêmicos da floresta em pé — pagamentos por serviços ambientais (PSA), créditos de carbono por desmatamento evitado (REDD+) e acesso preferencial a mercados para produtos de desmatamento zero.
 
     **Fonte:** INPE. 2024. [*PRODES — Monitoramento do desmatamento da Amazônia*](http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes). São José dos Campos: Instituto Nacional de Pesquisas Espaciais.
+
+!!! box-brasil "Brasil na Prática — Quanto Vale a Amazônia em Pé?"
+    A pergunta soa absurda, mas é exatamente o tipo de questão que a economia ambiental precisa responder para orientar política pública. Estimativas variam enormemente conforme o método:
+
+    **Serviços ecossistêmicos (fluxo anual):**
+
+    - *Regulação climática* (sequestro de carbono): ~150–200 GtC armazenadas × SCC de US$ 50–190/tCO₂e. O valor do *estoque* de carbono amazônico situa-se entre US$ 27 e US$ 139 trilhões — faixa enorme que reflete a incerteza sobre o custo social do carbono (Seção 24.3.4)
+    - *Regulação hídrica* ("rios voadores"): a evapotranspiração amazônica exporta ~20 bilhões de toneladas de vapor d'água por dia, sustentando as chuvas do Centro-Oeste. Sem estimativa consolidada de valor, mas o agronegócio da região fatura ~R$ 800 bilhões/ano — uma fração significativa depende diretamente dessa umidade
+    - *Biodiversidade* (bioprospecção e valor de opção): estimativas sugerem US$ 0,3–3 bilhões/ano em valor potencial de bioprospecção, mas o "valor de opção" — usos futuros ainda desconhecidos — é, por definição, imenso e não quantificável
+
+    **O paradoxo:** O PIB do estado do Amazonas é ~R$ 130 bilhões/ano (2023). A floresta em pé gera serviços ecossistêmicos ordens de magnitude maiores — mas esses serviços não têm preço de mercado. É o maior caso de externalidade positiva não precificada do planeta.
+
+    **Conexão teórica:** Este é o problema clássico do Cap 20 (bens públicos) combinado com o Cap 24 (valoração): a Amazônia é um bem público global com externalidades positivas que nenhum país individualmente tem incentivo para proteger na escala ótima. A solução passa por pagamentos internacionais por serviços ambientais — exatamente o mecanismo do Fundo Amazônia (ver box anterior).
+
+    **Fonte:** Costanza, R. et al. (2014). Changes in the global value of ecosystem services. *Global Environmental Change*, 26, 152–158. Nobre, C.A. et al. (2016). Land-use and climate change risks in the Amazon. *PNAS*, 113(39), 10759–10768.
 
 ### 24.6.5 Tragédia dos comuns revisitada: pescarias e florestas
 

@@ -94,6 +94,24 @@ As relações de agregação acima não são apenas curiosidades teóricas — e
 !!! note "Observações sobre a tabela"
     A classificação como "luxo" ou "necessidade" refere-se à elasticidade-renda, enquanto "elástica" ou "inelástica" refere-se à elasticidade-preço. Note que saúde e educação, embora essenciais, apresentam elasticidade-renda elevada no Brasil — fenômeno associado à migração de serviços públicos para privados conforme a renda cresce.
 
+!!! box-brasil "Brasil na Prática — Elasticidades-preço de alimentos (POF 2017–2018)"
+    A tabela abaixo sintetiza estimativas de elasticidade-preço da demanda para categorias selecionadas de alimentos, obtidas a partir dos microdados da POF 2017–2018 (IBGE) usando sistemas de demanda do tipo AIDS (*Almost Ideal Demand System*).
+
+    | Categoria | Elasticidade-preço | Classificação |
+    |---|:---:|---|
+    | Arroz | −0,45 | Inelástica |
+    | Feijão | −0,52 | Inelástica |
+    | Carne bovina (1ª) | −0,78 | Inelástica |
+    | Carne bovina (2ª) | −1,05 | Elástica |
+    | Frango | −0,62 | Inelástica |
+    | Leite | −0,55 | Inelástica |
+    | Frutas | −1,20 | Elástica |
+    | Refrigerante | −1,35 | Elástica |
+
+    **Leitura econômica:** Alimentos básicos (arroz, feijão) são inelásticos — famílias de baixa renda não podem reduzir muito o consumo quando o preço sobe. Carnes de segunda e refrigerantes são elásticos — há substitutos acessíveis. Essa heterogeneidade é exatamente o que a Equação de Slutsky prevê: bens com alta participação no orçamento e poucos substitutos terão efeito-renda dominante.
+
+    **Fonte:** Estimativas baseadas em POF/IBGE 2017–2018. Valores aproximados para fins didáticos; estimativas precisas variam conforme especificação e região. Ver Silveira, Menezes, Magalhães & Diniz (2007) para a metodologia AIDS aplicada à POF, e Vaz & Hoffmann (2020) para comparação entre POFs.
+
 ??? exercicio-resolvido "Exercício Resolvido 5.1"
     **Enunciado:** Considere uma economia com dois bens: alimentação (bem 1) e serviços (bem 2). A parcela orçamentária da alimentação é \(w_1 = 0{,}35\) e a dos serviços é \(w_2 = 0{,}65\). A elasticidade-renda da alimentação é \(\varepsilon_{1,I} = 0{,}42\), e a elasticidade-preço própria da alimentação é \(\varepsilon_{1,p_1} = -0{,}55\). (a) Calcule a elasticidade-renda dos serviços. (b) Classifique cada bem. (c) Calcule a elasticidade-preço cruzada da alimentação em relação ao preço dos serviços.
 

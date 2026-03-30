@@ -22,8 +22,8 @@ O tratamento combina formalização rigorosa com exemplos reais e conexões expl
 | 24.4 | Dá para comprar e vender o direito de poluir? | Mercados de carbono, EU-ETS | [Carbono](clima-carbono.md#244) |
 | 24.5 | Quanto vale uma floresta em pé — e como medir? | Valoração ambiental: preferências reveladas e declaradas | [Valoração](valoracao-recursos.md#245) |
 | 24.6 | Crescer para sempre é sustentável? | Recursos naturais, sustentabilidade, Hotelling | [Sustentabilidade](valoracao-recursos.md#246) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

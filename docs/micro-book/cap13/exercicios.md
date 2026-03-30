@@ -1,6 +1,11 @@
 # Revisão, Exercícios e ANPEC
 
-## 📝 Perguntas de Revisão
+!!! tip "Dados para exercícios empíricos"
+    - **IPEADATA (preços de commodities e índices):** [ipeadata.gov.br](https://www.ipeadata.gov.br)
+    - **Comex Stat (comércio exterior):** [comexstat.mdic.gov.br](http://comexstat.mdic.gov.br)
+    - **SIDRA/IBGE (produção agrícola e industrial):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br)
+
+## Perguntas de Revisão
 
 1. Explique por que a curva de oferta de mercado de curto prazo pode apresentar descontinuidades, mas a de longo prazo tende a ser contínua.
 2. Por que o lucro econômico de longo prazo é zero em concorrência perfeita, mas o lucro contábil pode ser positivo? Dê um exemplo numérico.

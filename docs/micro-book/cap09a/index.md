@@ -29,5 +29,5 @@ Este módulo apresenta os jogos **estáticos** (simultâneos) com **informação
 | 9a.3 | Se ninguém quer mudar, estamos no equilíbrio? | Equilíbrio de Nash, Batalha dos Sexos, Hawk-Dove | [Equilíbrio de Nash](nash.md) |
 | 9a.4 | Quando jogar cara ou coroa é a melhor estratégia? | Estratégias mistas, princípio da indiferença, Teorema de Nash | [Estratégias mistas](estrategias-mistas.md) |
 | 9a.5 | Quanto cerveja a Ambev deve produzir se a Heineken está olhando? | Cournot, Bertrand, Stackelberg, paradoxo de Bertrand | [Oligopólio](oligopolio.md) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |

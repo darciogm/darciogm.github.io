@@ -17,5 +17,5 @@ Este módulo cobre três grandes temas: jogos sequenciais e comprometimento (Se�
 | 9b.1 | Quando uma ameaça é blefe — e como pensar de trás para frente revela isso? | Forma extensiva, indução retroativa, EPS, comprometimento, Stackelberg | [Indução retroativa](backward-induction.md) |
 | 9b.2 | Se eu te encontro de novo amanhã, será que cooperamos hoje? | Jogos repetidos, grim trigger, tit-for-tat, Folk Theorem, conluio | [Jogos repetidos](jogos-repetidos.md) |
 | 9b.3 | Quem leva a maior fatia do bolo — e por quê? | Ultimato, barganha de Rubinstein, opções externas, poder de barganha | [Barganha](barganha.md) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |

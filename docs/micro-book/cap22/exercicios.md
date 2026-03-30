@@ -1,4 +1,9 @@
-## Revisao Rapida
+!!! tip "Dados para exercícios empíricos"
+    - **SIDRA/IBGE (microdados de censos e pesquisas):** [sidra.ibge.gov.br](https://sidra.ibge.gov.br)
+    - **IPEADATA (séries macroeconômicas e sociais):** [ipeadata.gov.br](https://www.ipeadata.gov.br)
+    - **BCB/SGS (séries financeiras e monetárias):** [bcb.gov.br/estatisticas](https://www.bcb.gov.br/estatisticas)
+
+## Revisão Rápida
 
 Teste seu entendimento dos conceitos centrais deste capítulo.
 

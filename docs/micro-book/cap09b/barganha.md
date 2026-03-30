@@ -123,6 +123,17 @@ Os modelos de jogos repetidos e barganha desenvolvidos neste capítulo encontram
 
     **Fonte**: DIEESE, Subsistema de Negociações Coletivas; Sindicato dos Metalúrgicos do ABC.
 
+!!! box-brasil "Brasil na Prática — Acordo de Leniência e o Fim do Cartel"
+    O programa de leniência do CADE (Lei 12.529/2011) é uma aplicação direta da teoria de jogos repetidos à política antitruste. O mecanismo funciona assim: a primeira empresa do cartel que denunciar os parceiros recebe imunidade administrativa e redução de 1/3 a 2/3 da multa criminal. As demais pagam multas de até 20% do faturamento.
+
+    **Modelagem:** O cartel é um equilíbrio cooperativo sustentado por punição (folk theorem). O programa de leniência altera os payoffs do jogo: o ganho de desviar (denunciar) passa a superar o ganho de cooperar (manter o cartel), especialmente quando há risco de que outro membro denuncie primeiro. O resultado é uma corrida para denunciar — exatamente o que o regulador deseja.
+
+    **Caso emblemático:** O cartel de cimentos (condenado em 2014) envolveu Votorantim, Nassau, Itabira, Cimpor e outras empresas. Multas totais: R$ 3,1 bilhões — a maior da história do CADE até então. A investigação revelou que o cartel operou por cerca de 20 anos, coordenando preços e dividindo mercados regionais. A Votorantim, identificada como líder do esquema, recebeu a maior multa individual: R$ 1,5 bilhão.
+
+    **Conexão teórica:** O programa de leniência transforma um jogo repetido (onde cooperar = manter cartel é equilíbrio sustentável) em um jogo com incentivo unilateral a desviar (onde denunciar primeiro é estratégia dominante). É o dilema do prisioneiro aplicado à vida real — e o regulador explora exatamente a instabilidade do equilíbrio cooperativo para desmontá-lo.
+
+    **Fonte:** CADE (2014). [Cade multa em R$ 3,1 bilhões o cartel do cimento](http://antigo.cade.gov.br/noticias/cade-multa-em-r-3-1-bilhoes-o-cartel-do-cimento).
+
 ---
 
 ??? code "R Interativo — Ultimatum Game: teoria vs. experimento (Adams, 2025, Cap. 8)"

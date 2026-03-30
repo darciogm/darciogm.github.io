@@ -15,5 +15,5 @@ Este módulo cobre jogos bayesianos estáticos e sua principal aplicação: a **
 | 9c.1–9c.2 | Como jogar um jogo quando você não sabe contra quem está jogando? | Tipos, transformação de Harsanyi, Equilíbrio Bayesiano de Nash | [Tipos e BNE](tipos-bayesiano.md) |
 | 9c.3 | Quem dá mais — e quanto deveria oferecer? | Leilões IPV, Vickrey, primeiro preço, equivalência de receita, maldição do vencedor | [Leilões](leiloes.md) |
 | 9c.4 | Se o resultado depende das regras, quem projeta as regras? | Desenho de mecanismos, Princípio da Revelação, VCG, leilão ótimo de Myerson | [Mecanismos](mecanismos.md) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |

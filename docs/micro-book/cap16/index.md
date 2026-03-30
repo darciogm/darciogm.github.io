@@ -40,8 +40,8 @@ Este capítulo parte dos modelos clássicos de oligopólio — Bertrand, Cournot
 | 16.14 | Muitos restaurantes, nenhum igual — competição ou monopólio? | Competição monopolística, Chamberlin, Dixit-Stiglitz | [Comp. monopolística](monopolistica-fusoes.md#1614) |
 | 16.15 | Quando dois viram um, o consumidor ganha ou perde? | Fusões, eficiência de Williamson, simulação de preços | [Fusões](monopolistica-fusoes.md#1615) |
 | 16.16 | Como o CADE decide se uma fusão é boa ou ruim? | Regulação de oligopólios, política antitruste | [Antitruste](monopolistica-fusoes.md#1616) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

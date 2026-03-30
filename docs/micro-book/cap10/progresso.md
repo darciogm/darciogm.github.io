@@ -149,6 +149,9 @@ Ao longo deste capítulo, notamos que certas propriedades das funções de produ
 
 A relevância econômica da homoteticidade vai além da elegância matemática — ela é a ponte entre este capítulo e o próximo. Quando a função de produção é homotética, as decisões de *quais insumos usar* (determinada pelos preços relativos) e *quanto produzir* (determinada pela demanda) são completamente separáveis. Traduzindo: a firma que decide dobrar sua produção simplesmente dobra todas as quantidades de insumos na mesma proporção — ela não altera sua "receita". Essa propriedade é a chave que conecta a teoria da produção (Capítulo 10) à teoria dos custos (Capítulo 11): funções de custo derivadas de tecnologias homotéticas têm a forma \(C(w, r, q) = c(w, r) \cdot g(q)\), onde os custos se separam limpa e elegantemente em um componente de preços e um componente de quantidade. Sem homoteticidade, a análise de custos se torna consideravelmente mais complexa, pois a proporção ótima de insumos muda a cada nível de produção — e a função custo perde essa estrutura separável que tanto facilita a vida do economista.
 
+!!! tip "Ferramentas do Cap. 2"
+    Esta seção usa [homogeneidade de funções e o Teorema de Euler](../cap02/curvatura.md). Se precisar relembrar, volte lá — leva 10 minutos.
+
 Uma função de produção \(f(K, L)\) é **homotética** se pode ser escrita como uma transformação monotônica crescente de uma função homogênea de grau 1:
 
 \[

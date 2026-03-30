@@ -19,5 +19,5 @@ Este módulo completa a taxonomia de Gibbons (1992, Cap. 4) e faz ponte com o Ca
 | 9d.3 | Quando falar é de graça, alguém deveria acreditar? | Cheap talk, Crawford-Sobel, forward guidance do BCB, publicidade | [Cheap Talk](cheap-talk.md) |
 | 9d.4 | Como fazer alguém se esforçar quando ninguém está olhando? | Principal-agente, IC/IR, Holmström, multitarefa, custo de agência | [Moral Hazard](moral-hazard.md) |
 | 9d.5 | Por que carros usados valem tão menos — e mercados podem colapsar? | Akerlof, market unraveling, Rothschild-Stiglitz, sinalização vs. screening vs. regulação | [Seleção Adversa](selecao-adversa.md) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Atividades, revisão, exercícios resolvidos e propostos, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |

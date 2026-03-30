@@ -2,6 +2,9 @@
 
 ## 12.5 O Truque de Mágica do Lucro: Função Lucro e Lema de Hotelling {#125}
 
+!!! tip "Ferramentas do Cap. 2"
+    Esta seção usa o [Teorema do Envelope](../cap02/envelope.md) para derivar o Lema de Hotelling. Se precisar relembrar, volte lá — leva 10 minutos.
+
 No Capítulo 11, o Lema de Shephard fez um truque de mágica: extraiu as demandas por insumos apenas derivando a função custo. Será que existe um truque análogo do lado do lucro? A resposta é um sonoro *sim* — e o mágico se chama **Lema de Hotelling** (1932). A ideia é quase boa demais para ser verdade: a função lucro, sozinha, carrega toda a informação necessária para reconstruir as funções de oferta do produto e de demanda por insumos. Basta derivar. Hotelling (1932) foi o primeiro a reconhecer que a simetria entre o problema do consumidor e o da firma se estende além da dualidade custo-produção: a função lucro é o análogo da função dispêndio no lado da demanda, e suas derivadas têm a mesma estrutura interpretativa. Para chegar a esse resultado, precisamos primeiro definir e caracterizar a função lucro.
 
 É instrutivo comparar os dois lemas: o Lema de Shephard diz que a derivada da função custo mínimo em relação ao preço de um insumo, mantendo o produto fixo, é a demanda condicionada por esse insumo. O Lema de Hotelling diz que a derivada da função lucro máximo em relação ao preço do produto é a oferta ótima, e a derivada em relação ao preço de um insumo (com sinal negativo) é a demanda *incondicional* por esse insumo. A diferença entre as demandas condicionada e incondicional é exatamente o tema da Seção 12.6.

@@ -28,8 +28,8 @@ Do ponto de vista histórico, a formalização moderna da teoria dos custos deve
     | 11.6 | O que desloca as curvas de custo? | Preços de insumos, tecnologia e impostos | [Deslocamentos](curvas.md#116) |
     | 11.7 | Por que o custo de longo prazo nunca supera o de curto prazo? | Envoltória de Viner, economias de escala | [Envoltória](envoltoria.md) |
     | 11.8 | Que funções de custo a profissão usa? | Cobb-Douglas, linear, Leontief, CES | [Catálogo](catalogo.md) |
-    | 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-    | 🔬 | O que a pesquisa recente diz? | Christensen & Greene, Bustos et al., Syverson, Benkard, Ferreira & Rossi | [Pesquisa](pesquisa.md) |
+    | **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+    | **Pesquisa** | O que a pesquisa recente diz? | Christensen & Greene, Bustos et al., Syverson, Benkard, Ferreira & Rossi | [Pesquisa](pesquisa.md) |
 
     </div>
 

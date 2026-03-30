@@ -24,8 +24,8 @@ Este capítulo examina as causas do monopólio, a lógica de sua maximização d
 | 15.8 | Por que o parque cobra entrada e depois cobra por brinquedo? | Tarifa em duas partes, bundling | [Tarifas](qualidade-discriminacao.md#158) |
 | 15.9 | Como o regulador doma o monopolista sem destruir o incentivo a investir? | Regulação: preço teto, taxa de retorno, price cap | [Regulação](regulacao-dinamica.md#159) |
 | 15.10 | O monopólio pode ser bom para a inovação? | Schumpeter, destruição criativa, patentes | [Visão dinâmica](regulacao-dinamica.md#1510) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 

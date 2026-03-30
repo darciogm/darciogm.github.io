@@ -24,8 +24,8 @@ Mas antes de mergulhar na análise formal, vale perguntar: **por que existem fir
 | 12.4 | Quando vale a pena fechar as portas em vez de operar no prejuízo? | Oferta de curto prazo, ponto de fechamento | [Oferta CP](oferta.md) |
 | 12.5 | Dá para extrair oferta e demanda por insumos apenas da função lucro? | Função lucro, Lema de Hotelling | [Função Lucro](funcao-lucro.md#125) |
 | 12.6 | Como o preço do insumo afeta quanto a firma contrata? | Demanda por insumos, estática comparativa | [Insumos](funcao-lucro.md#126) |
-| 🧪🧠🎯✏️🏆 | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
-| 🔬 | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
+| **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
+| **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 
 </div>
 
