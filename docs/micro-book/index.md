@@ -8,7 +8,7 @@ hide:
     <h1>Microeconomia: Do Zero ao Equilíbrio (e Além)</h1>
     <div class="book-meta">
       <span class="book-author">Darcio Genicolo-Martins</span>
-      <span class="book-version">Versão 1.0 — Março 2026</span>
+      <span class="book-version">Versão 1.3 — Março 2026</span>
     </div>
     <p>Livro didático interativo de <strong>Microeconomia</strong> para graduação avançada e pós-graduação. Rigor matemático, intuição econômica e aplicações ao Brasil em cada capítulo.</p>
     <a href="prefacio/" class="md-button md-button--primary">Ler o Prefácio</a>
