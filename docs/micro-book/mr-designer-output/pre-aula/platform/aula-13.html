@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 13 — — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-13-função-de-produção-e-tecnologia">Pré-Aula 13 —
+Função de Produção e Tecnologia</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 9, Seções 9.1–9.4</strong> do livro interativo | Tempo
+estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 9, Seções 9.1–9.4** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Definir a função de produção, calcular produto marginal e produto
+médio, e identificar rendimentos marginais decrescentes</li>
+<li>Traçar isoquantas, calcular a TMST e interpretar seu significado
+econômico</li>
+<li>Classificar rendimentos de escala (crescentes, constantes,
+decrescentes) para funções de produção clássicas</li>
+</ol>
+<hr />
+<h2 id="a-função-de-produção">1. A função de produção</h2>
+<p>A <strong>função de produção</strong> descreve a relação tecnológica
+entre insumos e produto:</p>
+<p><span class="math display">\[q = f(L, K)\]</span></p>
+<p>onde <span class="math inline">\(L\)</span> = trabalho, <span
+class="math inline">\(K\)</span> = capital, e <span
+class="math inline">\(q\)</span> = quantidade produzida.</p>
+<p>Pressupostos básicos:</p>
+<ul>
+<li><span class="math inline">\(f(0, K) = f(L, 0) = 0\)</span> (ambos os
+insumos são essenciais)</li>
+<li><span class="math inline">\(f\)</span> é crescente em cada insumo
+(<span class="math inline">\(f_L &gt; 0\)</span>, <span
+class="math inline">\(f_K &gt; 0\)</span>)</li>
+<li><span class="math inline">\(f\)</span> é côncava (tecnologia
+“bem-comportada”)</li>
+</ul>
+<hr />
+<h2 id="curto-prazo-vs.-longo-prazo">2. Curto prazo vs. longo prazo</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Horizonte</th>
+<th style="text-align: left;">Definição</th>
+<th style="text-align: left;">Variáveis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Curto prazo</strong></td>
+<td style="text-align: left;">Pelo menos um insumo é fixo</td>
+<td style="text-align: left;"><span class="math inline">\(K =
+\bar{K}\)</span>; só <span class="math inline">\(L\)</span> varia</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Longo prazo</strong></td>
+<td style="text-align: left;">Todos os insumos podem variar</td>
+<td style="text-align: left;"><span class="math inline">\(L\)</span> e
+<span class="math inline">\(K\)</span> variam</td>
+</tr>
+</tbody>
+</table>
+<p>No curto prazo, a função de produção se reduz a:</p>
+<p><span class="math display">\[q = f(L, \bar{K}) \equiv
+g(L)\]</span></p>
+<hr />
+<h2 id="produto-marginal-e-produto-médio">3. Produto marginal e produto
+médio</h2>
+<p><strong>Produto Marginal do Trabalho (PMgL):</strong></p>
+<p><span class="math display">\[PMgL = \frac{\partial f}{\partial L} =
+f_L\]</span></p>
+<blockquote>
+<p>“Quanto produto adicional se obtém com 1 unidade a mais de trabalho,
+mantendo <span class="math inline">\(K\)</span> fixo.”</p>
+</blockquote>
+<p><strong>Produto Médio do Trabalho (PMeL):</strong></p>
+<p><span class="math display">\[PMeL = \frac{f(L, K)}{L}\]</span></p>
+<blockquote>
+<p>“Produto por trabalhador.”</p>
+</blockquote>
+<p>Relação fundamental: <strong>o PMgL corta o PMeL no ponto máximo do
+PMeL</strong>.</p>
+<ul>
+<li>Se <span class="math inline">\(PMgL &gt; PMeL\)</span>: o PMeL está
+subindo</li>
+<li>Se <span class="math inline">\(PMgL &lt; PMeL\)</span>: o PMeL está
+caindo
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo numérico
+</div>
+</div></li>
+</ul>
+<p><span class="math inline">\(f(L, K) = 10 L^{0{,}5} K^{0{,}5}\)</span>
+com <span class="math inline">\(K = 25\)</span>.</p>
+<p><span class="math inline">\(g(L) = 10 L^{0{,}5} \cdot 5 = 50
+L^{0{,}5}\)</span></p>
+<p><span class="math inline">\(PMgL = 25 L^{-0{,}5} =
+\frac{25}{\sqrt{L}}\)</span></p>
+<p><span class="math inline">\(PMeL = 50 L^{-0{,}5} =
+\frac{50}{\sqrt{L}}\)</span></p>
+<p>Para <span class="math inline">\(L = 100\)</span>: <span
+class="math inline">\(PMgL = 2{,}5\)</span> e <span
+class="math inline">\(PMeL = 5\)</span>. O PMgL está abaixo do PMeL.</p>
+</div>
+<pre><code>$f(L, K) = 10 L^{0{,}5} K^{0{,}5}$ com $K = 25$.
+
+$g(L) = 10 L^{0{,}5} \cdot 5 = 50 L^{0{,}5}$
+
+$PMgL = 25 L^{-0{,}5} = \frac{25}{\sqrt{L}}$
+
+$PMeL = 50 L^{-0{,}5} = \frac{50}{\sqrt{L}}$
+
+Para $L = 100$: $PMgL = 2{,}5$ e $PMeL = 5$. O PMgL está abaixo do PMeL.</code></pre>
+<hr />
+<h2 id="lei-dos-rendimentos-marginais-decrescentes">4. Lei dos
+rendimentos marginais decrescentes</h2>
+<p><span class="math display">\[\frac{\partial^2 f}{\partial L^2} =
+f_{LL} &lt; 0\]</span></p>
+<blockquote>
+<p>“Cada trabalhador adicional produz <strong>menos</strong> que o
+anterior, mantendo o capital fixo.”</p>
+</blockquote>
+Isso <strong>não</strong> significa que a produção total cai — apenas
+que os <strong>acréscimos</strong> ficam menores.
+<div class="admonition warning">
+<div class="admonition-title">
+Atenção
+</div>
+<p>A lei dos rendimentos marginais decrescentes é um fenômeno de
+<strong>curto prazo</strong> (um insumo fixo). Não confundir com
+rendimentos de escala (longo prazo, todos os insumos variam).</p>
+</div>
+<pre><code>A lei dos rendimentos marginais decrescentes é um fenômeno de **curto prazo** (um insumo fixo). Não confundir com rendimentos de escala (longo prazo, todos os insumos variam).</code></pre>
+<hr />
+<h2 id="isoquantas">5. Isoquantas</h2>
+<p>Uma <strong>isoquanta</strong> é o conjunto de combinações <span
+class="math inline">\((L, K)\)</span> que produzem a mesma quantidade
+<span class="math inline">\(\bar{q}\)</span>:</p>
+<p><span class="math display">\[\{(L, K) : f(L, K) =
+\bar{q}\}\]</span></p>
+<p>Propriedades (análogas às curvas de indiferença):</p>
+<ol type="1">
+<li><strong>Decrescentes</strong> (PMgL, PMgK &gt; 0)</li>
+<li><strong>Não se cruzam</strong></li>
+<li><strong>Convexas</strong> (substituição entre insumos é possível mas
+cada vez mais difícil)</li>
+</ol>
+<hr />
+<h2 id="taxa-marginal-de-substituição-técnica-tmst">6. Taxa Marginal de
+Substituição Técnica (TMST)</h2>
+<p><span class="math display">\[\text{TMST}_{L,K} =
+-\frac{dK}{dL}\bigg|_{\bar{q}} = \frac{PMgL}{PMgK} =
+\frac{f_L}{f_K}\]</span></p>
+<blockquote>
+<p>“Quanto de capital a firma pode <strong>dispensar</strong> se
+contratar 1 trabalhador a mais, mantendo a produção constante.”</p>
+</blockquote>
+<p>A TMST é <strong>decrescente</strong> ao longo da isoquanta: à medida
+que se usa mais trabalho e menos capital, cada trabalhador adicional
+substitui menos capital.</p>
+<hr />
+<h2 id="gráfico-interativo-isoquantas">Gráfico interativo:
+isoquantas</h2>
+<div id="graph-isoquants" style="min-height: 450px;">
+<iframe src="../../graficos/cap09/isoquantas.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Mude os parâmetros da função de produção e observe como as
+isoquantas se alteram</li>
+<li>Arraste um ponto ao longo da isoquanta e observe a TMST mudar</li>
+<li>Compare as formas de isoquantas para Cobb-Douglas, Leontief e
+Linear</li>
+</ul>
+</div>
+<pre><code>- Mude os parâmetros da função de produção e observe como as isoquantas se alteram
+- Arraste um ponto ao longo da isoquanta e observe a TMST mudar
+- Compare as formas de isoquantas para Cobb-Douglas, Leontief e Linear</code></pre>
+<hr />
+<h2 id="rendimentos-de-escala">7. Rendimentos de escala</h2>
+<p>Se multiplicamos <strong>todos</strong> os insumos por <span
+class="math inline">\(t &gt; 1\)</span>:</p>
+<p><span class="math display">\[f(tL, tK) \begin{cases} &gt; t \cdot
+f(L,K) &amp; \text{Rendimentos crescentes} \\ = t \cdot f(L,K) &amp;
+\text{Rendimentos constantes} \\ &lt; t \cdot f(L,K) &amp;
+\text{Rendimentos decrescentes} \end{cases}\]</span></p>
+<p>Equivalentemente, se <span class="math inline">\(f\)</span> é
+<strong>homogênea de grau <span
+class="math inline">\(k\)</span></strong>: <span
+class="math inline">\(f(tL, tK) = t^k f(L,K)\)</span></p>
+<ul>
+<li><span class="math inline">\(k &gt; 1\)</span>: crescentes (dobrar
+insumos mais que dobra produção)</li>
+<li><span class="math inline">\(k = 1\)</span>: constantes (dobrar
+insumos dobra produção)</li>
+<li><span class="math inline">\(k &lt; 1\)</span>: decrescentes (dobrar
+insumos menos que dobra produção)</li>
+</ul>
+<hr />
+<h2 id="as-funções-de-produção-clássicas">8. As funções de produção
+clássicas</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Função</th>
+<th style="text-align: left;">Forma</th>
+<th style="text-align: left;">TMST</th>
+<th style="text-align: left;">Isoquantas</th>
+<th style="text-align: left;">Rend. escala</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Cobb-Douglas</strong></td>
+<td style="text-align: left;"><span class="math inline">\(A L^a
+K^b\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{aK}{bL}\)</span></td>
+<td style="text-align: left;">Hipérboles</td>
+<td style="text-align: left;"><span class="math inline">\(a +
+b\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Linear</strong></td>
+<td style="text-align: left;"><span class="math inline">\(aL +
+bK\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{a}{b}\)</span> (cte)</td>
+<td style="text-align: left;">Retas</td>
+<td style="text-align: left;">Constantes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leontief</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\min\{aL,
+bK\}\)</span></td>
+<td style="text-align: left;">0 ou <span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;">L’s</td>
+<td style="text-align: left;">Constantes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CES</strong></td>
+<td style="text-align: left;"><span class="math inline">\(A(\alpha
+L^\rho + (1-\alpha)K^\rho)^{1/\rho}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{\alpha}{1-\alpha}\left(\frac{K}{L}\right)^{1-\rho}\)</span></td>
+<td style="text-align: left;">Variável</td>
+<td style="text-align: left;">Depende de <span
+class="math inline">\(A\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>A função de produção como um “mapa tecnológico”</strong></p>
+<p>Assim como as curvas de indiferença representam as preferências do
+consumidor, as isoquantas representam a <strong>tecnologia</strong> da
+firma. A TMST é o análogo da TMS: mede a taxa na qual um insumo pode
+substituir outro.</p>
+<p>A grande diferença: enquanto preferências são subjetivas (cada
+consumidor tem as suas), a tecnologia é <strong>objetiva</strong> — dada
+pela engenharia, pela física, pela organização do processo produtivo.
+Duas firmas no mesmo setor, com a mesma tecnologia, têm as mesmas
+isoquantas.</p>
+<p>Porém, a escolha de <strong>onde operar</strong> na isoquanta depende
+dos preços dos insumos — e isso é o problema de minimização de custos,
+tema das próximas aulas.</p>
+</div>
+<pre><code>**A função de produção como um &quot;mapa tecnológico&quot;**
+
+Assim como as curvas de indiferença representam as preferências do consumidor, as isoquantas representam a **tecnologia** da firma. A TMST é o análogo da TMS: mede a taxa na qual um insumo pode substituir outro.
+
+A grande diferença: enquanto preferências são subjetivas (cada consumidor tem as suas), a tecnologia é **objetiva** — dada pela engenharia, pela física, pela organização do processo produtivo. Duas firmas no mesmo setor, com a mesma tecnologia, têm as mesmas isoquantas.
+
+Porém, a escolha de **onde operar** na isoquanta depende dos preços dos insumos — e isso é o problema de minimização de custos, tema das próximas aulas.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Para <span class="math inline">\(f(L,K) =
+4L^{0{,}3}K^{0{,}7}\)</span>: (a) calcule <span
+class="math inline">\(PMgL\)</span> e <span
+class="math inline">\(PMgK\)</span>; (b) determine a TMST; (c)
+classifique os rendimentos de escala.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li><span class="math inline">\(PMgL = 4 \cdot 0{,}3 \cdot L^{-0{,}7}
+K^{0{,}7} = 1{,}2 L^{-0{,}7} K^{0{,}7}\)</span></li>
+</ol>
+<p><span class="math inline">\(PMgK = 4 \cdot 0{,}7 \cdot L^{0{,}3}
+K^{-0{,}3} = 2{,}8 L^{0{,}3} K^{-0{,}3}\)</span></p>
+<ol start="2" type="a">
+<li><p><span class="math inline">\(\text{TMST} = \frac{PMgL}{PMgK} =
+\frac{1{,}2 L^{-0{,}7} K^{0{,}7}}{2{,}8 L^{0{,}3} K^{-0{,}3}} =
+\frac{1{,}2}{2{,}8} \cdot \frac{K}{L} = \frac{3K}{7L}\)</span></p></li>
+<li><p><span class="math inline">\(a + b = 0{,}3 + 0{,}7 = 1\)</span>.
+<strong>Rendimentos constantes de escala.</strong></p></li>
+</ol>
+</div>
+</details>
+<pre><code>(a) $PMgL = 4 \cdot 0{,}3 \cdot L^{-0{,}7} K^{0{,}7} = 1{,}2 L^{-0{,}7} K^{0{,}7}$
+
+$PMgK = 4 \cdot 0{,}7 \cdot L^{0{,}3} K^{-0{,}3} = 2{,}8 L^{0{,}3} K^{-0{,}3}$
+
+(b) $\text{TMST} = \frac{PMgL}{PMgK} = \frac{1{,}2 L^{-0{,}7} K^{0{,}7}}{2{,}8 L^{0{,}3} K^{-0{,}3}} = \frac{1{,}2}{2{,}8} \cdot \frac{K}{L} = \frac{3K}{7L}$
+
+(c) $a + b = 0{,}3 + 0{,}7 = 1$. **Rendimentos constantes de escala.**</code></pre>
+<strong>Exercício 2.</strong> Explique por que a Lei dos Rendimentos
+Marginais Decrescentes não contradiz rendimentos crescentes de escala.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>A lei dos rendimentos marginais decrescentes diz que <span
+class="math inline">\(f_{LL} &lt; 0\)</span> quando <span
+class="math inline">\(K\)</span> é <strong>fixo</strong> (curto prazo).
+Rendimentos crescentes de escala dizem que <span
+class="math inline">\(f(tL, tK) &gt; tf(L,K)\)</span> quando
+<strong>ambos</strong> os insumos crescem proporcionalmente (longo
+prazo).</p>
+<p>Exemplo: <span class="math inline">\(f(L,K) = L^{0{,}7}
+K^{0{,}7}\)</span>. Temos <span class="math inline">\(f_{LL} = -0{,}21
+L^{-1{,}3}K^{0{,}7} &lt; 0\)</span> (rendimentos marginais
+decrescentes), mas <span class="math inline">\(a + b = 1{,}4 &gt;
+1\)</span> (rendimentos crescentes de escala).</p>
+<p>No curto prazo, adicionar mais trabalho com capital fixo é cada vez
+menos eficiente. No longo prazo, aumentar ambos proporcionalmente gera
+ganhos de especialização e escala.</p>
+</div>
+</details>
+<pre><code>A lei dos rendimentos marginais decrescentes diz que $f_{LL} &lt; 0$ quando $K$ é **fixo** (curto prazo). Rendimentos crescentes de escala dizem que $f(tL, tK) &gt; tf(L,K)$ quando **ambos** os insumos crescem proporcionalmente (longo prazo).
+
+Exemplo: $f(L,K) = L^{0{,}7} K^{0{,}7}$. Temos $f_{LL} = -0{,}21 L^{-1{,}3}K^{0{,}7} &lt; 0$ (rendimentos marginais decrescentes), mas $a + b = 1{,}4 &gt; 1$ (rendimentos crescentes de escala).
+
+No curto prazo, adicionar mais trabalho com capital fixo é cada vez menos eficiente. No longo prazo, aumentar ambos proporcionalmente gera ganhos de especialização e escala.</code></pre>
+<strong>Exercício 3.</strong> Para a função Leontief <span
+class="math inline">\(f(L,K) = \min\{3L, 2K\}\)</span>, qual a
+combinação eficiente para produzir <span class="math inline">\(q =
+12\)</span>?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Eficiência requer <span class="math inline">\(3L = 2K =
+q\)</span>:</p>
+<p><span class="math inline">\(3L = 12 \implies L = 4\)</span></p>
+<p><span class="math inline">\(2K = 12 \implies K = 6\)</span></p>
+<p>Combinação eficiente: <span class="math inline">\((L, K) = (4,
+6)\)</span>. Qualquer desvio desperdiça um insumo.</p>
+</div>
+</details>
+<pre><code>Eficiência requer $3L = 2K = q$:
+
+$3L = 12 \implies L = 4$
+
+$2K = 12 \implies K = 6$
+
+Combinação eficiente: $(L, K) = (4, 6)$. Qualquer desvio desperdiça um insumo.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. O produto marginal do trabalho (<span
+class="math inline">\(PMgL\)</span>) mede:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A produção total dividida pelo número de trabalhadores
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A produção adicional gerada pelo último trabalhador contratado
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>A inclinação da isoquanta
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O custo de contratar um trabalhador
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">
+Q2. A Lei dos Rendimentos Marginais Decrescentes se aplica ao:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Curto prazo, com pelo menos um insumo fixo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Longo prazo, com todos os insumos variáveis
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Qualquer horizonte temporal
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Apenas à função Cobb-Douglas
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">
+Q3. Se <span class="math inline">\(f(L,K) = L^{0{,}4}K^{0{,}8}\)</span>,
+os rendimentos de escala são:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Crescentes (<span class="math inline">\(0{,}4 + 0{,}8 = 1{,}2 &gt;
+1\)</span>)
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Constantes
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Decrescentes
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Impossível determinar
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">
+Q4. A TMST mede:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Quanto a produção muda quando se contrata mais trabalho
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Quanto de capital a firma pode dispensar por 1 trabalhador
+adicional, mantendo produção constante
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O preço relativo dos insumos
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A elasticidade de substituição
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">
+Q5. Na função Leontief <span class="math inline">\(f = \min\{aL,
+bK\}\)</span>, as isoquantas têm formato:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Hipérboles
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Retas
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Ângulos retos (L)
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Círculos
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 13</strong>: Mini-lecture sobre função de produção e
+isoquantas + exercícios guiados de TMST e rendimentos de escala.
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 13**: Mini-lecture sobre função de produção e isoquantas + exercícios guiados de TMST e rendimentos de escala.</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-13');
+MicroQuiz.init('aula-13');
+</script>
+</body>
+</html>
+

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-06-dualidade-hicksiana-e-função-gasto-prática">Pré-Aula
+06 — Dualidade: Hicksiana e Função Gasto (Prática)</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 4, Seções 4.4–4.6</strong> do livro interativo | Tempo
+estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 4, Seções 4.4–4.6** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<ol type="1">
+<li>Formular e resolver o problema dual do consumidor (minimização do
+gasto)</li>
+<li>Derivar a demanda Hicksiana e a função gasto, conectando-as ao
+primal via identidades de dualidade</li>
+<li>Aplicar a identidade de Roy e o lema de Shephard para obter demandas
+sem resolver novamente o Lagrangeano</li>
+</ol>
+<hr />
+<h2 id="o-problema-dual-minimização-do-gasto">1. O problema dual:
+minimização do gasto</h2>
+<p>Enquanto o problema primal maximiza utilidade dada a renda, o
+<strong>dual</strong> minimiza o gasto necessário para atingir um nível
+de utilidade alvo <span class="math inline">\(\bar{U}\)</span>:</p>
+<p><span class="math display">\[\min_{x,y} \ p_x x + p_y y \quad
+\text{s.a.} \quad U(x,y) \geq \bar{U}\]</span></p>
+<h3 id="lagrangeano-do-dual">Lagrangeano do dual</h3>
+<p><span class="math display">\[\mathcal{L} = p_x x + p_y y -
+\mu\left(U(x,y) - \bar{U}\right)\]</span></p>
+<p>CPOs:</p>
+<p><span class="math display">\[p_x = \mu \frac{\partial U}{\partial x},
+\qquad p_y = \mu \frac{\partial U}{\partial y}, \qquad U(x,y) =
+\bar{U}\]</span></p>
+<p>A condição de tangência é <strong>a mesma</strong>: <span
+class="math inline">\(\text{TMS} = p_x / p_y\)</span>. Apenas o que é
+fixo muda (renda no primal, utilidade no dual).</p>
+<hr />
+<h2 id="demanda-hicksiana-compensada">2. Demanda Hicksiana
+(compensada)</h2>
+<p>A solução do dual gera a <strong>demanda Hicksiana</strong> (ou
+compensada):</p>
+<p><span class="math display">\[h_x(p_x, p_y, \bar{U}) \qquad h_y(p_x,
+p_y, \bar{U})\]</span></p>
+<p>Diferença fundamental em relação à Marshalliana:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Marshalliana <span
+class="math inline">\(x^*(p, m)\)</span></th>
+<th style="text-align: left;">Hicksiana <span class="math inline">\(h(p,
+\bar{U})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Fixa</strong></td>
+<td style="text-align: left;">Renda <span
+class="math inline">\(m\)</span></td>
+<td style="text-align: left;">Utilidade <span
+class="math inline">\(\bar{U}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mede</strong></td>
+<td style="text-align: left;">Efeito total do preço</td>
+<td style="text-align: left;">Efeito substituição puro</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Observável?</strong></td>
+<td style="text-align: left;">Sim (dados de mercado)</td>
+<td style="text-align: left;">Não diretamente</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que precisamos da Hicksiana se não a
+observamos?</strong></p>
+<p>Porque ela isola o <strong>efeito substituição</strong> puro — a
+resposta do consumidor a preços mantendo o bem-estar constante. Isso é
+essencial para política pública: quando o governo taxa um bem, quanto da
+redução de consumo vem da mudança de preços relativos (substituição) e
+quanto vem da perda de poder de compra (renda)? A Hicksiana responde à
+primeira pergunta.</p>
+</div>
+<pre><code>**Por que precisamos da Hicksiana se não a observamos?**
+
+Porque ela isola o **efeito substituição** puro — a resposta do consumidor a preços mantendo o bem-estar constante. Isso é essencial para política pública: quando o governo taxa um bem, quanto da redução de consumo vem da mudança de preços relativos (substituição) e quanto vem da perda de poder de compra (renda)? A Hicksiana responde à primeira pergunta.</code></pre>
+<hr />
+<h2 id="função-gasto">3. Função gasto</h2>
+<p>A <strong>função gasto</strong> é o valor ótimo do problema dual:</p>
+<p><span class="math display">\[E(p_x, p_y, \bar{U}) = p_x h_x(p_x, p_y,
+\bar{U}) + p_y h_y(p_x, p_y, \bar{U})\]</span></p>
+<p>Propriedades:</p>
+<ol type="1">
+<li><strong>Crescente</strong> em <span
+class="math inline">\(p_x\)</span>, <span
+class="math inline">\(p_y\)</span> e <span
+class="math inline">\(\bar{U}\)</span></li>
+<li><strong>Homogênea de grau 1</strong> em preços: <span
+class="math inline">\(E(tp, \bar{U}) = t \cdot E(p,
+\bar{U})\)</span></li>
+<li><strong>Côncava</strong> em preços
+<div class="admonition example">
+<div class="admonition-title">
+Cobb-Douglas: <span class="math inline">\(U = x^a y^{1-a}\)</span>
+</div>
+</div></li>
+</ol>
+<p>Demandas Hicksianas:</p>
+<p><span class="math inline">\(h_x = \bar{U} \left(\frac{(1-a)p_x}{a \,
+p_y}\right)^{-(1-a)}\)</span></p>
+<p><span class="math inline">\(h_y = \bar{U} \left(\frac{a \,
+p_y}{(1-a)p_x}\right)^{-a}\)</span></p>
+<p>Função gasto:</p>
+<p><span class="math inline">\(E(p_x, p_y, \bar{U}) = \bar{U}
+\left(\frac{p_x}{a}\right)^a
+\left(\frac{p_y}{1-a}\right)^{1-a}\)</span></p>
+</div>
+<pre><code>Demandas Hicksianas:
+
+$h_x = \bar{U} \left(\frac{(1-a)p_x}{a \, p_y}\right)^{-(1-a)}$
+
+$h_y = \bar{U} \left(\frac{a \, p_y}{(1-a)p_x}\right)^{-a}$
+
+Função gasto:
+
+$E(p_x, p_y, \bar{U}) = \bar{U} \left(\frac{p_x}{a}\right)^a \left(\frac{p_y}{1-a}\right)^{1-a}$</code></pre>
+<hr />
+<h2 id="identidades-de-dualidade">4. Identidades de dualidade</h2>
+<p>O primal e o dual são <strong>dois lados da mesma moeda</strong>. As
+conexões fundamentais são:</p>
+<p><span class="math display">\[h_x(p, \bar{U}) = x^*(p, E(p,
+\bar{U}))\]</span></p>
+<p><span class="math display">\[x^*(p, m) = h_x(p, V(p, m))\]</span></p>
+<p><span class="math display">\[E(p, V(p, m)) = m \qquad \text{e} \qquad
+V(p, E(p, \bar{U})) = \bar{U}\]</span></p>
+<blockquote>
+<p>Tradução: se você fixar a utilidade no nível que o consumidor atinge
+com renda <span class="math inline">\(m\)</span>, a Hicksiana coincide
+com a Marshalliana.</p>
+</blockquote>
+<hr />
+<h2 id="atalhos-poderosos">5. Atalhos poderosos</h2>
+<h3 id="lema-de-shephard">Lema de Shephard</h3>
+<p><span class="math display">\[h_x(p, \bar{U}) = \frac{\partial E(p,
+\bar{U})}{\partial p_x}\]</span></p>
+<blockquote>
+<p>“A derivada da função gasto em relação ao preço dá diretamente a
+demanda Hicksiana.”</p>
+</blockquote>
+<h3 id="identidade-de-roy">Identidade de Roy</h3>
+<p><span class="math display">\[x^*(p, m) = -\frac{\partial V / \partial
+p_x}{\partial V / \partial m}\]</span></p>
+<blockquote>
+“A derivada da utilidade indireta em relação ao preço, dividida pela
+derivada em relação à renda (com sinal negativo), dá a demanda
+Marshalliana.”
+<div class="admonition tip">
+<div class="admonition-title">
+Quando usar cada atalho
+</div>
+</div>
+</blockquote>
+<ul>
+<li>Tem a <strong>função gasto</strong> <span
+class="math inline">\(E\)</span>? Use <strong>Shephard</strong> para
+obter Hicksianas.</li>
+<li>Tem a <strong>utilidade indireta</strong> <span
+class="math inline">\(V\)</span>? Use <strong>Roy</strong> para obter
+Marshallianas.</li>
+<li>Evite resolver o Lagrangeano do zero quando já tem <span
+class="math inline">\(V\)</span> ou <span
+class="math inline">\(E\)</span>!</li>
+</ul>
+</div>
+<pre><code>- Tem a **função gasto** $E$? Use **Shephard** para obter Hicksianas.
+- Tem a **utilidade indireta** $V$? Use **Roy** para obter Marshallianas.
+- Evite resolver o Lagrangeano do zero quando já tem $V$ ou $E$!</code></pre>
+<hr />
+<h2 id="gráfico-interativo-diagrama-de-dualidade">Gráfico interativo:
+diagrama de dualidade</h2>
+<div id="graph-duality" style="min-height: 450px;">
+<iframe src="../../graficos/cap04/dualidade.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Compare os problemas primal e dual lado a lado</li>
+<li>Observe como o ponto ótimo é o mesmo nos dois problemas</li>
+<li>Mude <span class="math inline">\(\bar{U}\)</span> no dual e veja
+como <span class="math inline">\(E\)</span> se ajusta</li>
+</ul>
+</div>
+<pre><code>- Compare os problemas primal e dual lado a lado
+- Observe como o ponto ótimo é o mesmo nos dois problemas
+- Mude $\bar{U}$ no dual e veja como $E$ se ajusta</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Para <span class="math inline">\(U =
+x^{1/2} y^{1/2}\)</span> com <span class="math inline">\(p_x =
+2\)</span>, <span class="math inline">\(p_y = 8\)</span>, encontre as
+demandas Hicksianas e a função gasto para atingir <span
+class="math inline">\(\bar{U} = 10\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Tangência: <span class="math inline">\(\frac{y}{x} = \frac{p_x}{p_y}
+= \frac{2}{8} = \frac{1}{4}\)</span>, logo <span class="math inline">\(y
+= x/4\)</span>.</p>
+<p>Restrição: <span class="math inline">\(x^{1/2}(x/4)^{1/2} = 10
+\Rightarrow x \cdot \frac{1}{2} = 10 \Rightarrow x = 20\)</span>.</p>
+<p><span class="math inline">\(h_x = 20, \quad h_y = 5\)</span></p>
+<p><span class="math inline">\(E = 2(20) + 8(5) = 40 + 40 =
+80\)</span></p>
+</div>
+</details>
+<pre><code>Tangência: $\frac{y}{x} = \frac{p_x}{p_y} = \frac{2}{8} = \frac{1}{4}$, logo $y = x/4$.
+
+Restrição: $x^{1/2}(x/4)^{1/2} = 10 \Rightarrow x \cdot \frac{1}{2} = 10 \Rightarrow x = 20$.
+
+$h_x = 20, \quad h_y = 5$
+
+$E = 2(20) + 8(5) = 40 + 40 = 80$</code></pre>
+<strong>Exercício 2.</strong> Verifique o lema de Shephard para o
+exercício anterior: calcule <span class="math inline">\(\partial E /
+\partial p_x\)</span> e confirme que é igual a <span
+class="math inline">\(h_x\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Para Cobb-Douglas com <span class="math inline">\(a =
+1/2\)</span>:</p>
+<p><span class="math inline">\(E = \bar{U}
+\left(\frac{p_x}{1/2}\right)^{1/2}\left(\frac{p_y}{1/2}\right)^{1/2} =
+\bar{U} \cdot 2\sqrt{p_x}\cdot 2\sqrt{p_y} = 4\bar{U}\sqrt{p_x
+p_y}\)</span></p>
+<p><span class="math inline">\(\frac{\partial E}{\partial p_x} =
+4\bar{U} \cdot \frac{\sqrt{p_y}}{2\sqrt{p_x}} =
+\frac{2\bar{U}\sqrt{p_y}}{\sqrt{p_x}}\)</span></p>
+<p>Com <span class="math inline">\(p_x = 2\)</span>, <span
+class="math inline">\(p_y = 8\)</span>, <span
+class="math inline">\(\bar{U} = 10\)</span>: <span
+class="math inline">\(\frac{2(10)\sqrt{8}}{\sqrt{2}} = 20 \cdot 2 =
+40\)</span>… Verificando: na verdade, usando a fórmula geral <span
+class="math inline">\(E = 2p_x^{1/2}p_y^{1/2}\bar{U}\)</span>:</p>
+<p><span class="math inline">\(\frac{\partial E}{\partial p_x} =
+p_x^{-1/2}p_y^{1/2}\bar{U} = \frac{\sqrt{8}}{\sqrt{2}}\cdot 10 = 2 \cdot
+10 = 20 = h_x\)</span> ✓</p>
+</div>
+</details>
+<pre><code>Para Cobb-Douglas com $a = 1/2$:
+
+$E = \bar{U} \left(\frac{p_x}{1/2}\right)^{1/2}\left(\frac{p_y}{1/2}\right)^{1/2} = \bar{U} \cdot 2\sqrt{p_x}\cdot 2\sqrt{p_y} = 4\bar{U}\sqrt{p_x p_y}$
+
+$\frac{\partial E}{\partial p_x} = 4\bar{U} \cdot \frac{\sqrt{p_y}}{2\sqrt{p_x}} = \frac{2\bar{U}\sqrt{p_y}}{\sqrt{p_x}}$
+
+Com $p_x = 2$, $p_y = 8$, $\bar{U} = 10$: $\frac{2(10)\sqrt{8}}{\sqrt{2}} = 20 \cdot 2 = 40$... Verificando: na verdade, usando a fórmula geral $E = 2p_x^{1/2}p_y^{1/2}\bar{U}$:
+
+$\frac{\partial E}{\partial p_x} = p_x^{-1/2}p_y^{1/2}\bar{U} = \frac{\sqrt{8}}{\sqrt{2}}\cdot 10 = 2 \cdot 10 = 20 = h_x$ ✓</code></pre>
+<strong>Exercício 3.</strong> Explique em palavras: por que <span
+class="math inline">\(E(p, V(p,m)) = m\)</span>?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Se o consumidor tem renda <span class="math inline">\(m\)</span> e
+atinge utilidade <span class="math inline">\(V(p,m)\)</span>, o gasto
+mínimo para atingir essa mesma utilidade é exatamente <span
+class="math inline">\(m\)</span>. Gastar menos não seria suficiente (não
+atingiria <span class="math inline">\(V\)</span>), e gastar mais seria
+desnecessário (já resolve o problema primal com <span
+class="math inline">\(m\)</span>). A identidade diz que primal e dual
+são <strong>consistentes</strong>: a renda disponível é exatamente o
+gasto mínimo para o nível de utilidade que ela permite.</p>
+</div>
+</details>
+<pre><code>Se o consumidor tem renda $m$ e atinge utilidade $V(p,m)$, o gasto mínimo para atingir essa mesma utilidade é exatamente $m$. Gastar menos não seria suficiente (não atingiria $V$), e gastar mais seria desnecessário (já resolve o problema primal com $m$). A identidade diz que primal e dual são **consistentes**: a renda disponível é exatamente o gasto mínimo para o nível de utilidade que ela permite.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. O problema dual do consumidor é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Maximizar utilidade sujeito à restrição orçamentária
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Minimizar gasto sujeito a atingir utilidade mínima <span
+class="math inline">\(\bar{U}\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Maximizar gasto sujeito à restrição de utilidade
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Minimizar utilidade sujeito à restrição orçamentária
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">
+Q2. A demanda Hicksiana difere da Marshalliana porque:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Usa preços diferentes
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Mantém utilidade constante em vez de renda
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Sempre é maior que a Marshalliana
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Não depende de preços
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">
+Q3. O lema de Shephard afirma que:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(x^* = -\frac{\partial V}{\partial p_x} /
+\frac{\partial V}{\partial m}\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(h_x = \frac{\partial E}{\partial
+p_x}\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(\lambda = \frac{\partial V}{\partial
+m}\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(E = p_x h_x + p_y h_y\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="a">
+<div class="q-text">
+Q4. A função gasto é homogênea de grau ___ em preços:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>1
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>0
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>2
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>-1
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">
+Q5. Se a utilidade indireta é <span class="math inline">\(V = m /
+(2\sqrt{p_x p_y})\)</span>, a demanda Marshalliana de <span
+class="math inline">\(x\)</span> (por Roy) é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(m / (2p_x)\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(m / (2p_y)\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(2p_x / m\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(\sqrt{p_y / p_x}\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 06</strong>: Lab prático — resolver primal e dual lado a
+lado para CES, construir diagrama de dualidade e verificar identidades
+numericamente.
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 06**: Lab prático — resolver primal e dual lado a lado para CES, construir diagrama de dualidade e verificar identidades numericamente.</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-06');
+MicroQuiz.init('aula-06');
+</script>
+</body>
+</html>
+

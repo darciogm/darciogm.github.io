@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 02 — Oficina — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-02-oficina-de-otimização-prática">Pré-Aula 02 — Oficina
+de Otimização (Prática)</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 2, Seções 2.5–2.7</strong> (teorema do envelope,
+elasticidade, homogeneidade) + Rever soluções do PS0 | Tempo estimado:
+<strong>40 min</strong></p>
+</div>
+<pre><code>**Cap. 2, Seções 2.5–2.7** (teorema do envelope, elasticidade, homogeneidade) + Rever soluções do PS0 | Tempo estimado: **40 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<ol type="1">
+<li>Aplicar o teorema do envelope para avaliar impactos de mudanças
+paramétricas</li>
+<li>Calcular elasticidades e verificar grau de homogeneidade</li>
+<li>Identificar e corrigir erros comuns na resolução de
+Lagrangianos</li>
+</ol>
+<hr />
+<h2 id="teorema-do-envelope">1. Teorema do Envelope</h2>
+<p>Suponha que resolvemos <span class="math inline">\(\max_x f(x;
+a)\)</span> sujeito a alguma restrição, onde <span
+class="math inline">\(a\)</span> é um parâmetro. O valor ótimo é <span
+class="math inline">\(V(a) = f(x^*(a); a)\)</span>.</p>
+<p><strong>Teorema do Envelope:</strong></p>
+<p><span class="math display">\[\frac{dV}{da} = \frac{\partial
+\mathcal{L}}{\partial a}\bigg|_{x^*, \lambda^*}\]</span></p>
+<blockquote>
+Para saber como o valor ótimo muda quando <span
+class="math inline">\(a\)</span> muda, basta derivar o Lagrangiano em
+relação a <span class="math inline">\(a\)</span> <strong>no ponto
+ótimo</strong> — sem precisar re-resolver o problema!
+<div class="admonition example">
+<div class="admonition-title">
+Aplicação
+</div>
+</div>
+</blockquote>
+<p>No problema do consumidor, <span class="math inline">\(V(I) =
+U(x^*(I), y^*(I))\)</span>.</p>
+<p>Pelo envelope: <span class="math inline">\(\frac{dV}{dI} =
+\lambda^*\)</span></p>
+<p>Se <span class="math inline">\(\lambda^* = 0{,}05\)</span>, um
+aumento de R$ 1 na renda eleva a utilidade em ~0,05.</p>
+</div>
+<pre><code>No problema do consumidor, $V(I) = U(x^*(I), y^*(I))$.
+
+Pelo envelope: $\frac{dV}{dI} = \lambda^*$
+
+Se $\lambda^* = 0{,}05$, um aumento de R$ 1 na renda eleva a utilidade em ~0,05.</code></pre>
+<hr />
+<h2 id="elasticidade">2. Elasticidade</h2>
+<p>A elasticidade mede a <strong>sensibilidade percentual</strong> de
+uma variável a outra:</p>
+<p><span class="math display">\[\varepsilon_{x,p} = \frac{\partial
+x}{\partial p} \cdot \frac{p}{x} = \frac{\% \Delta x}{\% \Delta
+p}\]</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Valor</th>
+<th style="text-align: left;">Classificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(|\varepsilon| = 0\)</span></td>
+<td style="text-align: left;">Perfeitamente inelástica</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(0 &lt;
+|\varepsilon| &lt; 1\)</span></td>
+<td style="text-align: left;">Inelástica</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(|\varepsilon| = 1\)</span></td>
+<td style="text-align: left;">Elasticidade unitária</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(|\varepsilon| &gt; 1\)</span></td>
+<td style="text-align: left;">Elástica</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(|\varepsilon| = \infty\)</span></td>
+<td style="text-align: left;">Perfeitamente elástica</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="homogeneidade">3. Homogeneidade</h2>
+<p>Uma função <span class="math inline">\(f(x,y)\)</span> é
+<strong>homogênea de grau <span
+class="math inline">\(k\)</span></strong> se:</p>
+<p><span class="math display">\[f(tx, ty) = t^k \cdot f(x,y) \quad
+\forall t &gt; 0\]</span></p>
+<p><strong>Teorema de Euler:</strong> Se <span
+class="math inline">\(f\)</span> é homogênea de grau <span
+class="math inline">\(k\)</span>:</p>
+<span class="math display">\[x \frac{\partial f}{\partial x} + y
+\frac{\partial f}{\partial y} = k \cdot f(x,y)\]</span>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A demanda Marshalliana é homogênea de grau <strong>zero</strong> em
+preços e renda: <span class="math inline">\(x^*(tp_x, tp_y, tI) =
+x^*(p_x, p_y, I)\)</span>.</p>
+<p>Significado: se todos os preços e a renda dobram, as quantidades
+demandadas <strong>não mudam</strong>. Não há ilusão monetária!</p>
+</div>
+<pre><code>A demanda Marshalliana é homogênea de grau **zero** em preços e renda: $x^*(tp_x, tp_y, tI) = x^*(p_x, p_y, I)$.
+
+Significado: se todos os preços e a renda dobram, as quantidades demandadas **não mudam**. Não há ilusão monetária!</code></pre>
+<hr />
+<h2 id="preparação-para-a-oficina">Preparação para a oficina</h2>
+<p>A Aula 02 será uma <strong>oficina prática</strong> com:</p>
+<ul>
+<li><strong>Think-Pair-Share</strong>: resolver problemas do PS0 que
+geraram mais dúvidas</li>
+<li><strong>Gallery Walk</strong>: 4 estações com problemas de
+Lagrangiano diferentes</li>
+<li><strong>Desafio cronometrado</strong>: 3 problemas em 15 minutos —
+ranking ao vivo!</li>
+</ul>
+<h3 id="para-se-preparar">Para se preparar:</h3>
+<ol type="1">
+<li>Revise as soluções do <strong>Problem Set 0</strong></li>
+<li>Identifique <strong>2 dúvidas</strong> que teve ao resolver</li>
+<li>Pratique montar o Lagrangiano rapidamente (objetivo: &lt; 2 minutos
+por problema)</li>
+</ol>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="a">
+<div class="q-text">
+Q1. O que o teorema do envelope afirma sobre o valor ótimo de uma
+função?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Sua sensibilidade a parâmetros pode ser calculada sem re-resolver o
+problema
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O valor ótimo é sempre crescente nos parâmetros
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O multiplicador de Lagrange é sempre positivo
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A CSO é automaticamente satisfeita
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">
+Q2. Se <span class="math inline">\(f(tx, ty) = t^2 f(x,y)\)</span>, qual
+é o grau de homogeneidade de <span class="math inline">\(f\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>0
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>1
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>2
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(1/2\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">
+Q3. Qual a elasticidade-preço da demanda se <span
+class="math inline">\(Q = 100/P\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(-1\)</span> (unitária)
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(-100\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(0\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(-P/100\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="a">
+<div class="q-text">
+Q4. V/F: “No ótimo, o efeito de uma mudança no parâmetro sobre o valor
+da função objetivo pode ser calculado sem re-resolver o problema.”
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Verdadeiro — é exatamente o teorema do envelope
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Falso
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. O teorema de Euler para <span class="math inline">\(f\)</span>
+homogênea de grau <span class="math inline">\(k\)</span> afirma que:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(f(tx, ty) = t^k\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(x f_x + y f_y = k f\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(f_x + f_y = k\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(\nabla f = k \cdot (x, y)\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 02</strong>: Oficina prática com Gallery Walk + desafio
+cronometrado. Traga calculadora e disposição para competir!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 02**: Oficina prática com Gallery Walk + desafio cronometrado. Traga calculadora e disposição para competir!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-02');
+MicroQuiz.init('aula-02');
+</script>
+</body>
+</html>
+

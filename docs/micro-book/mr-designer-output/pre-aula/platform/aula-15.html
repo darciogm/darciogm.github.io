@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 15 — Custos de — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-15-custos-de-produção">Pré-Aula 15 — Custos de
+Produção</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 10, Seções 10.1–10.5</strong> do livro interativo |
+Tempo estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 10, Seções 10.1–10.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Distinguir custo econômico de custo contábil e identificar custos de
+oportunidade</li>
+<li>Resolver o problema de minimização de custos usando o Lagrangiano e
+derivar as demandas condicionais de fatores</li>
+<li>Derivar e relacionar as curvas de custo total, custo médio e custo
+marginal</li>
+</ol>
+<hr />
+<h2 id="custo-econômico-vs.-custo-contábil">1. Custo econômico vs. custo
+contábil</h2>
+O <strong>custo contábil</strong> registra apenas despesas explícitas —
+salários, aluguel, matérias-primas. O <strong>custo econômico</strong>
+inclui também o <strong>custo de oportunidade</strong>: o valor da
+melhor alternativa sacrificada.
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo rápido
+</div>
+<p>Um empresário que poderia ganhar <span
+class="math inline">\(\text{R\$}\,8.000\)</span>/mês como empregado, mas
+obtém receita de <span class="math inline">\(\text{R\$}\,15.000\)</span>
+e tem despesas de <span
+class="math inline">\(\text{R\$}\,5.000\)</span>:</p>
+<ul>
+<li>Lucro contábil: <span class="math inline">\(15.000 - 5.000 =
+\text{R\$}\,10.000\)</span></li>
+<li>Lucro econômico: <span class="math inline">\(15.000 - 5.000 - 8.000
+= \text{R\$}\,2.000\)</span></li>
+</ul>
+</div>
+<pre><code>Um empresário que poderia ganhar $\text{R\$}\,8.000$/mês como empregado, mas obtém receita de $\text{R\$}\,15.000$ e tem despesas de $\text{R\$}\,5.000$:
+
+- Lucro contábil: $15.000 - 5.000 = \text{R\$}\,10.000$
+- Lucro econômico: $15.000 - 5.000 - 8.000 = \text{R\$}\,2.000$</code></pre>
+<p><strong>Custos irrecuperáveis (sunk costs):</strong> gastos já
+realizados que <strong>não</strong> devem influenciar decisões futuras.
+Se você pagou R$ 50.000 por uma máquina que não tem valor de revenda,
+esse custo é irrelevante para a decisão de continuar ou parar a
+produção.</p>
+<hr />
+<h2 id="o-problema-de-minimização-de-custos">2. O problema de
+minimização de custos</h2>
+<p>A firma quer produzir uma quantidade <span
+class="math inline">\(q\)</span> ao menor custo possível, dados os
+preços dos insumos — salário <span class="math inline">\(w\)</span>
+(trabalho <span class="math inline">\(L\)</span>) e aluguel do capital
+<span class="math inline">\(v\)</span> (capital <span
+class="math inline">\(K\)</span>):</p>
+<p><span class="math display">\[\min_{L,K} \; wL + vK \quad \text{s.a.}
+\quad f(L,K) = q\]</span></p>
+<h3 id="linhas-de-isocusto">Linhas de isocusto</h3>
+<p>Para um dado gasto total <span class="math inline">\(C\)</span>, a
+combinação de insumos que custa exatamente <span
+class="math inline">\(C\)</span> satisfaz:</p>
+<p><span class="math display">\[C = wL + vK \implies K = \frac{C}{v} -
+\frac{w}{v}L\]</span></p>
+<p>A inclinação da isocusto é <span class="math inline">\(-w/v\)</span>
+— a <strong>razão de preços dos fatores</strong>.</p>
+<h3 id="condição-de-tangência">Condição de tangência</h3>
+<p>No ótimo, a isoquanta é tangente à isocusto:</p>
+<p><span class="math display">\[\text{TMST}_{L,K} = \frac{PMg_L}{PMg_K}
+= \frac{w}{v}\]</span></p>
+<p>Isso significa que o último real gasto em trabalho gera a mesma
+produção adicional que o último real gasto em capital.</p>
+<hr />
+<h2 id="solução-pelo-lagrangiano">3. Solução pelo Lagrangiano</h2>
+<p>Montamos o Lagrangiano:</p>
+<p><span class="math display">\[\mathcal{L}(L, K, \lambda) = wL + vK +
+\lambda\big[q - f(L,K)\big]\]</span></p>
+<p>As CPOs são:</p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L}
+= w - \lambda f_L = 0 \implies \lambda = \frac{w}{f_L}\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial K}
+= v - \lambda f_K = 0 \implies \lambda = \frac{v}{f_K}\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial
+\lambda} = q - f(L,K) = 0\]</span></p>
+<p>Igualando as duas primeiras: <span
+class="math inline">\(\frac{f_L}{f_K} = \frac{w}{v}\)</span> — a
+condição de tangência.</p>
+<h3 id="demandas-condicionais-de-fatores">Demandas condicionais de
+fatores</h3>
+<p>Resolvendo as CPOs, obtemos as <strong>demandas
+condicionais</strong>:</p>
+<p><span class="math display">\[L^* = L^c(w, v, q) \qquad K^* = K^c(w,
+v, q)\]</span></p>
+Essas funções nos dizem quanto de cada fator usar para produzir <span
+class="math inline">\(q\)</span> ao menor custo.
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo: Cobb-Douglas <span class="math inline">\(f(L,K) =
+L^{1/2}K^{1/2}\)</span>
+</div>
+<p>Da tangência: <span class="math inline">\(\frac{K}{L} = \frac{w}{v}
+\implies K = \frac{w}{v}L\)</span></p>
+<p>Substituindo na restrição: <span
+class="math inline">\(L^{1/2}\left(\frac{w}{v}L\right)^{1/2} =
+q\)</span></p>
+<p><span class="math display">\[L^c = q\left(\frac{v}{w}\right)^{1/2},
+\qquad K^c = q\left(\frac{w}{v}\right)^{1/2}\]</span></p>
+</div>
+<pre><code>Da tangência: $\frac{K}{L} = \frac{w}{v} \implies K = \frac{w}{v}L$
+
+Substituindo na restrição: $L^{1/2}\left(\frac{w}{v}L\right)^{1/2} = q$
+
+$$L^c = q\left(\frac{v}{w}\right)^{1/2}, \qquad K^c = q\left(\frac{w}{v}\right)^{1/2}$$</code></pre>
+<hr />
+<h2 id="a-função-custo-e-suas-derivadas">4. A função custo e suas
+derivadas</h2>
+<p>Substituindo as demandas condicionais na função objetivo:</p>
+<p><span class="math display">\[C(w,v,q) = wL^c(w,v,q) +
+vK^c(w,v,q)\]</span></p>
+<p>Para a Cobb-Douglas do exemplo: <span class="math inline">\(C(w,v,q)
+= 2q\sqrt{wv}\)</span>.</p>
+<h3 id="custo-médio-e-custo-marginal">Custo Médio e Custo Marginal</h3>
+<p><span class="math display">\[\text{CMe}(q) = \frac{C(q)}{q} \qquad
+\text{CMg}(q) = \frac{dC}{dq}\]</span></p>
+<p><strong>Relação fundamental CMg–CMe:</strong></p>
+<ul>
+<li>Se <span class="math inline">\(\text{CMg} &lt; \text{CMe}\)</span>:
+o custo médio está <strong>caindo</strong></li>
+<li>Se <span class="math inline">\(\text{CMg} &gt; \text{CMe}\)</span>:
+o custo médio está <strong>subindo</strong></li>
+<li>Se <span class="math inline">\(\text{CMg} = \text{CMe}\)</span>: o
+custo médio está no seu <strong>mínimo</strong>
+<div class="admonition tip">
+<div class="admonition-title">
+Analogia útil
+</div>
+</div></li>
+</ul>
+<p>Pense na sua média de notas. Se a próxima prova (marginal) for abaixo
+da média, a média cai. Se for acima, sobe. Se for igual, a média fica
+constante. A mesma lógica vale para custos.</p>
+</div>
+<pre><code>Pense na sua média de notas. Se a próxima prova (marginal) for abaixo da média, a média cai. Se for acima, sobe. Se for igual, a média fica constante. A mesma lógica vale para custos.</code></pre>
+<hr />
+<h2 id="gráfico-interativo-minimização-de-custos">Gráfico interativo:
+minimização de custos</h2>
+<div id="graph-min-custos" style="min-height: 450px;">
+<iframe src="../../graficos/cap10/minimizacao-custos.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Altere os preços dos fatores (<span
+class="math inline">\(w\)</span>, <span
+class="math inline">\(v\)</span>) e observe como a isocusto
+rotaciona</li>
+<li>Mude a quantidade-alvo <span class="math inline">\(q\)</span> e veja
+a isoquanta se deslocar</li>
+<li>Note que o ótimo está sempre na <strong>tangência</strong> entre
+isoquanta e isocusto</li>
+</ul>
+</div>
+<pre><code>- Altere os preços dos fatores ($w$, $v$) e observe como a isocusto rotaciona
+- Mude a quantidade-alvo $q$ e veja a isoquanta se deslocar
+- Note que o ótimo está sempre na **tangência** entre isoquanta e isocusto</code></pre>
+<hr />
+<h2 id="box-custos-de-oportunidade-e-decisão">Box: Custos de
+oportunidade e decisão</h2>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que economistas insistem em custos de
+oportunidade?</strong></p>
+<p>Porque toda decisão envolve uma alternativa sacrificada. Ao alocar
+trabalho na linha de produção A, a firma abre mão de usá-lo na linha B.
+A condição de tangência <span class="math inline">\(\text{TMST} =
+w/v\)</span> garante que a firma não está “desperdiçando” nenhum fator —
+cada real gasto gera a mesma produção marginal, independentemente de
+onde é alocado. Ignorar custos de oportunidade leva a decisões
+ineficientes, mesmo quando o lucro contábil parece positivo.</p>
+</div>
+<pre><code>**Por que economistas insistem em custos de oportunidade?**
+
+Porque toda decisão envolve uma alternativa sacrificada. Ao alocar trabalho na linha de produção A, a firma abre mão de usá-lo na linha B. A condição de tangência $\text{TMST} = w/v$ garante que a firma não está &quot;desperdiçando&quot; nenhum fator — cada real gasto gera a mesma produção marginal, independentemente de onde é alocado. Ignorar custos de oportunidade leva a decisões ineficientes, mesmo quando o lucro contábil parece positivo.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Uma firma tem função de produção <span
+class="math inline">\(f(L,K) = L^{1/3}K^{2/3}\)</span>, com <span
+class="math inline">\(w = 4\)</span> e <span class="math inline">\(v =
+8\)</span>. Encontre as demandas condicionais <span
+class="math inline">\(L^c\)</span> e <span
+class="math inline">\(K^c\)</span> para produzir <span
+class="math inline">\(q = 10\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Tangência: <span class="math inline">\(\frac{PMg_L}{PMg_K} =
+\frac{w}{v}\)</span></p>
+<p><span class="math inline">\(PMg_L =
+\frac{1}{3}L^{-2/3}K^{2/3}\)</span>, <span class="math inline">\(\quad
+PMg_K = \frac{2}{3}L^{1/3}K^{-1/3}\)</span></p>
+<p><span class="math display">\[\frac{K}{2L} = \frac{4}{8} = \frac{1}{2}
+\implies K = L\]</span></p>
+<p>Substituindo: <span class="math inline">\(L^{1/3}L^{2/3} = L = 10
+\implies L^c = 10, \; K^c = 10\)</span></p>
+<p>Custo total: <span class="math inline">\(C = 4(10) + 8(10) =
+120\)</span></p>
+</div>
+</details>
+<pre><code>Tangência: $\frac{PMg_L}{PMg_K} = \frac{w}{v}$
+
+$PMg_L = \frac{1}{3}L^{-2/3}K^{2/3}$, $\quad PMg_K = \frac{2}{3}L^{1/3}K^{-1/3}$
+
+$$\frac{K}{2L} = \frac{4}{8} = \frac{1}{2} \implies K = L$$
+
+Substituindo: $L^{1/3}L^{2/3} = L = 10 \implies L^c = 10, \; K^c = 10$
+
+Custo total: $C = 4(10) + 8(10) = 120$</code></pre>
+<strong>Exercício 2.</strong> Para a função custo <span
+class="math inline">\(C(q) = q^3 - 6q^2 + 15q\)</span>, encontre o custo
+marginal e o custo médio. Em que quantidade <span
+class="math inline">\(q\)</span> o CMe atinge seu mínimo?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\text{CMg} = 3q^2 - 12q + 15\)</span></p>
+<p><span class="math inline">\(\text{CMe} = q^2 - 6q + 15\)</span></p>
+<p>No mínimo do CMe: <span
+class="math inline">\(\frac{d(\text{CMe})}{dq} = 2q - 6 = 0 \implies q =
+3\)</span></p>
+<p><span class="math inline">\(\text{CMe}(3) = 9 - 18 + 15 =
+6\)</span></p>
+<p>Verificação: <span class="math inline">\(\text{CMg}(3) = 27 - 36 + 15
+= 6 = \text{CMe}(3)\)</span> ✓</p>
+</div>
+</details>
+<pre><code>$\text{CMg} = 3q^2 - 12q + 15$
+
+$\text{CMe} = q^2 - 6q + 15$
+
+No mínimo do CMe: $\frac{d(\text{CMe})}{dq} = 2q - 6 = 0 \implies q = 3$
+
+$\text{CMe}(3) = 9 - 18 + 15 = 6$
+
+Verificação: $\text{CMg}(3) = 27 - 36 + 15 = 6 = \text{CMe}(3)$ ✓</code></pre>
+<strong>Exercício 3.</strong> Explique por que custos irrecuperáveis não
+devem afetar decisões racionais. Dê um exemplo cotidiano.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Custos irrecuperáveis (sunk costs) já foram incorridos e não podem
+ser recuperados, independentemente da decisão futura. Como decisões
+racionais se baseiam em comparar custos e benefícios
+<strong>marginais</strong> (futuros), incluir custos passados distorce a
+análise.</p>
+<p>Exemplo: você pagou R$ 80 por um ingresso de cinema, mas após 30
+minutos percebe que o filme é péssimo. O custo do ingresso é
+irrecuperável — a decisão racional é sair se o benefício de ficar
+(prazer restante) for menor que o custo de oportunidade do seu tempo.
+Ficar “para não desperdiçar o ingresso” é a falácia do custo
+irrecuperável.</p>
+</div>
+</details>
+<pre><code>Custos irrecuperáveis (sunk costs) já foram incorridos e não podem ser recuperados, independentemente da decisão futura. Como decisões racionais se baseiam em comparar custos e benefícios **marginais** (futuros), incluir custos passados distorce a análise.
+
+Exemplo: você pagou R$ 80 por um ingresso de cinema, mas após 30 minutos percebe que o filme é péssimo. O custo do ingresso é irrecuperável — a decisão racional é sair se o benefício de ficar (prazer restante) for menor que o custo de oportunidade do seu tempo. Ficar &quot;para não desperdiçar o ingresso&quot; é a falácia do custo irrecuperável.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. Qual a diferença entre custo econômico e custo contábil?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Não há diferença; são sinônimos
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O custo econômico inclui custos de oportunidade; o contábil, não
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O custo contábil inclui custos de oportunidade; o econômico, não
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O custo econômico desconsidera custos fixos
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">
+Q2. No problema de minimização de custos, a condição de tangência exige
+que:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(PMg_L = PMg_K\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(PMg_L / w = PMg_K \cdot v\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(PMg_L / PMg_K = w / v\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(PMg_L \cdot PMg_K = w \cdot v\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">
+Q3. Se o custo marginal está abaixo do custo médio, o que acontece com o
+CMe à medida que <span class="math inline">\(q\)</span> aumenta?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O CMe está caindo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O CMe está subindo
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O CMe permanece constante
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Depende do custo fixo
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">
+Q4. No ótimo do Lagrangiano de minimização de custos, o multiplicador
+<span class="math inline">\(\lambda^*\)</span> representa:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O custo total de produção
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O custo marginal — quanto custa produzir uma unidade adicional
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O preço do trabalho dividido pelo preço do capital
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A produtividade marginal do trabalho
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. V ou F: “Custos irrecuperáveis devem ser incluídos na análise
+marginal de decisões futuras.”
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Verdadeiro
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Falso — custos irrecuperáveis não afetam decisões racionais futuras
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 15</strong>: Mini-lecture sobre custos de produção +
+minimização de custos com exercícios práticos. Traga calculadora!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 15**: Mini-lecture sobre custos de produção + minimização de custos com exercícios práticos. Traga calculadora!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-15');
+MicroQuiz.init('aula-15');
+</script>
+</body>
+</html>
+

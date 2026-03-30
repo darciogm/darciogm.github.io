@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><h1 — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1
+id="pré-aula-14-lab-isoquantas-e-rendimentos-de-escala-prática">Pré-Aula
+14 — Lab: Isoquantas e Rendimentos de Escala (Prática)</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 9, Seções 9.5–9.7</strong> do livro interativo | Tempo
+estimado: <strong>40 min</strong></p>
+</div>
+<pre><code>**Cap. 9, Seções 9.5–9.7** do livro interativo | Tempo estimado: **40 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Definir e calcular a elasticidade de substituição <span
+class="math inline">\(\sigma\)</span> para diferentes funções de
+produção</li>
+<li>Explicar como o progresso técnico desloca isoquantas e suas
+implicações para a demanda de insumos</li>
+<li>Preparar a “ficha técnica” de uma função de produção para o Jigsaw
+da próxima aula</li>
+</ol>
+<hr />
+<h2 id="elasticidade-de-substituição-sigma">1. Elasticidade de
+substituição <span class="math inline">\(\sigma\)</span></h2>
+<p>A TMST nos diz <strong>a taxa</strong> de substituição entre insumos.
+Mas quão <strong>fácil</strong> é substituir? A <strong>elasticidade de
+substituição</strong> <span class="math inline">\(\sigma\)</span> mede
+isso:</p>
+<p><span class="math display">\[\sigma =
+\frac{d\ln(K/L)}{d\ln(\text{TMST})}\]</span></p>
+<p>Em termos mais intuitivos:</p>
+<blockquote>
+<p>“Se a TMST muda 1%, em quanto (%) muda a razão capital/trabalho?”</p>
+</blockquote>
+<p><span class="math inline">\(\sigma\)</span> alto: fácil substituir
+(isoquantas mais “achatadas”)</p>
+<p><span class="math inline">\(\sigma\)</span> baixo: difícil substituir
+(isoquantas mais “angulosas”)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Função</th>
+<th style="text-align: left;"><span
+class="math inline">\(\sigma\)</span></th>
+<th style="text-align: left;">Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Linear</strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;">Substituição perfeita</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cobb-Douglas</strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(1\)</span></td>
+<td style="text-align: left;">Substituição intermediária</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CES</strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{1}{1-\rho}\)</span></td>
+<td style="text-align: left;">Variável</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leontief</strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;">Sem substituição</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="a-família-ces-como-unificadora">2. A família CES como
+unificadora</h2>
+<p>A função <strong>CES</strong> (Constant Elasticity of Substitution)
+generaliza todas as funções clássicas:</p>
+<p><span class="math display">\[f(L, K) = A\big[\alpha L^\rho +
+(1-\alpha) K^\rho\big]^{1/\rho}\]</span></p>
+<p>onde <span class="math inline">\(\rho \in (-\infty, 1]\)</span> e
+<span class="math inline">\(\sigma = \frac{1}{1-\rho}\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Limite</th>
+<th style="text-align: left;"><span
+class="math inline">\(\rho\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(\sigma\)</span></th>
+<th style="text-align: left;">Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\rho \to
+1\)</span></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;">Linear</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\rho \to
+0\)</span></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Cobb-Douglas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\rho \to
+-\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(-\infty\)</span></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Leontief</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<div class="admonition-title">
+Verificação: CES para <span class="math inline">\(\\rho \\to 0\)</span>
+gera Cobb-Douglas
+</div>
+<p>Tome <span class="math inline">\(\ln f = \frac{1}{\rho}\ln[\alpha
+L^\rho + (1-\alpha)K^\rho]\)</span>.</p>
+<p>Usando L’Hôpital quando <span class="math inline">\(\rho \to
+0\)</span>:</p>
+<p><span class="math inline">\(\ln f \to \alpha \ln L + (1-\alpha) \ln K
++ \ln A\)</span></p>
+<p><span class="math inline">\(f \to A L^\alpha
+K^{1-\alpha}\)</span></p>
+<p>Que é a Cobb-Douglas!</p>
+</div>
+<pre><code>Tome $\ln f = \frac{1}{\rho}\ln[\alpha L^\rho + (1-\alpha)K^\rho]$.
+
+Usando L&#39;Hôpital quando $\rho \to 0$:
+
+$\ln f \to \alpha \ln L + (1-\alpha) \ln K + \ln A$
+
+$f \to A L^\alpha K^{1-\alpha}$
+
+Que é a Cobb-Douglas!</code></pre>
+<hr />
+<h2 id="progresso-técnico">3. Progresso técnico</h2>
+<p>O progresso técnico permite produzir <strong>mais com os mesmos
+insumos</strong>. Graficamente, as isoquantas se deslocam <strong>para a
+origem</strong>.</p>
+<p>Tipos de progresso técnico:</p>
+<h3 id="progresso-neutro-de-hicks">3.1 Progresso neutro de Hicks</h3>
+<p><span class="math display">\[f(L, K, t) = A(t) \cdot g(L,
+K)\]</span></p>
+<p>Todas as isoquantas se contraem proporcionalmente. A TMST em qualquer
+ponto <span class="math inline">\((K/L)\)</span> permanece
+inalterada.</p>
+<h3 id="progresso-poupador-de-trabalho-labor-saving">3.2 Progresso
+poupador de trabalho (labor-saving)</h3>
+<p><span class="math display">\[f(L, K, t) = g(L, B(t) \cdot
+K)\]</span></p>
+<p>O progresso torna o capital mais eficiente. As isoquantas se
+“achatam” — a firma precisa de relativamente menos trabalho.</p>
+<h3 id="progresso-poupador-de-capital-capital-saving">3.3 Progresso
+poupador de capital (capital-saving)</h3>
+<p><span class="math display">\[f(L, K, t) = g(A(t) \cdot L,
+K)\]</span></p>
+O progresso torna o trabalho mais eficiente. As isoquantas se “inclinam”
+— a firma precisa de relativamente menos capital.
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Automação e a elasticidade de substituição</strong></p>
+<p>O debate sobre automação e emprego depende crucialmente de <span
+class="math inline">\(\sigma\)</span>. Se <span
+class="math inline">\(\sigma\)</span> é alto (como na função linear),
+robôs substituem trabalhadores facilmente — e a automação pode reduzir
+dramaticamente o emprego. Se <span class="math inline">\(\sigma\)</span>
+é baixo (como na Leontief), homens e máquinas são complementares — mais
+robôs exigem mais trabalhadores qualificados para operá-los.</p>
+<p>Empiricamente, <span class="math inline">\(\sigma\)</span> varia
+entre setores: na manufatura, a automação avança rápido (<span
+class="math inline">\(\sigma\)</span> moderado a alto). Em serviços
+pessoais (saúde, educação), <span class="math inline">\(\sigma\)</span>
+é baixo — a tecnologia complementa, não substitui.</p>
+<p>Entender <span class="math inline">\(\sigma\)</span> é, portanto,
+essencial para prever o impacto da inteligência artificial no mercado de
+trabalho.</p>
+</div>
+<pre><code>**Automação e a elasticidade de substituição**
+
+O debate sobre automação e emprego depende crucialmente de $\sigma$. Se $\sigma$ é alto (como na função linear), robôs substituem trabalhadores facilmente — e a automação pode reduzir dramaticamente o emprego. Se $\sigma$ é baixo (como na Leontief), homens e máquinas são complementares — mais robôs exigem mais trabalhadores qualificados para operá-los.
+
+Empiricamente, $\sigma$ varia entre setores: na manufatura, a automação avança rápido ($\sigma$ moderado a alto). Em serviços pessoais (saúde, educação), $\sigma$ é baixo — a tecnologia complementa, não substitui.
+
+Entender $\sigma$ é, portanto, essencial para prever o impacto da inteligência artificial no mercado de trabalho.</code></pre>
+<hr />
+<h2 id="gráfico-interativo-funções-de-produção">Gráfico interativo:
+funções de produção</h2>
+<div id="graph-production-functions" style="min-height: 450px;">
+<iframe src="../../graficos/cap09/funcoes-producao.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Varie o parâmetro <span class="math inline">\(\rho\)</span> e
+observe a transição entre Linear, Cobb-Douglas e Leontief</li>
+<li>Compare como a razão <span class="math inline">\(K/L\)</span> muda
+ao longo da isoquanta para diferentes <span
+class="math inline">\(\sigma\)</span></li>
+<li>Ative o progresso técnico e veja as isoquantas se deslocarem</li>
+</ul>
+</div>
+<pre><code>- Varie o parâmetro $\rho$ e observe a transição entre Linear, Cobb-Douglas e Leontief
+- Compare como a razão $K/L$ muda ao longo da isoquanta para diferentes $\sigma$
+- Ative o progresso técnico e veja as isoquantas se deslocarem</code></pre>
+<hr />
+<h2 id="preparação-para-o-jigsaw-fichas-técnicas">4. Preparação para o
+Jigsaw: fichas técnicas</h2>
+<p>Na próxima aula, faremos um <strong>Jigsaw</strong> sobre funções de
+produção. Cada grupo será especialista em uma função e depois ensinará
+aos outros.</p>
+<h3 id="sua-tarefa-preparar-a-ficha-técnica">Sua tarefa: preparar a
+“ficha técnica”</h3>
+<p>Para a função que lhe foi atribuída (veja no LMS), preencha:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">O que calcular</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. Forma funcional</td>
+<td style="text-align: left;">Escrever <span class="math inline">\(f(L,
+K)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2. Produto marginal</td>
+<td style="text-align: left;"><span class="math inline">\(PMgL\)</span>
+e <span class="math inline">\(PMgK\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3. TMST</td>
+<td style="text-align: left;"><span class="math inline">\(f_L /
+f_K\)</span> (simplificar)</td>
+</tr>
+<tr>
+<td style="text-align: left;">4. Rendimentos de escala</td>
+<td style="text-align: left;">Calcular <span class="math inline">\(f(tL,
+tK)\)</span> vs. <span class="math inline">\(t \cdot
+f(L,K)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5. Elasticidade de substituição</td>
+<td style="text-align: left;">Valor de <span
+class="math inline">\(\sigma\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6. Formato das isoquantas</td>
+<td style="text-align: left;">Desenho esquemático</td>
+</tr>
+<tr>
+<td style="text-align: left;">7. Exemplo real</td>
+<td style="text-align: left;">Setor/indústria onde essa função se
+aplica</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<div class="admonition-title">
+Importante
+</div>
+<p>Cada membro do grupo deve ter a ficha pronta <strong>antes</strong>
+da aula. No Jigsaw, você será o “especialista” que ensina sua função aos
+colegas de outros grupos.</p>
+</div>
+<pre><code>Cada membro do grupo deve ter a ficha pronta **antes** da aula. No Jigsaw, você será o &quot;especialista&quot; que ensina sua função aos colegas de outros grupos.</code></pre>
+<hr />
+<h2 id="resumo-comparativo">5. Resumo comparativo</h2>
+<p>Para facilitar sua preparação, a tabela abaixo compara as quatro
+funções:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Propriedade</th>
+<th style="text-align: left;">Linear</th>
+<th style="text-align: left;">Cobb-Douglas</th>
+<th style="text-align: left;">CES (<span class="math inline">\(\rho =
+-1\)</span>)</th>
+<th style="text-align: left;">Leontief</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Forma</td>
+<td style="text-align: left;"><span class="math inline">\(aL +
+bK\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(AL^a
+K^b\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(A(\alpha
+L^{-1} + (1-\alpha)K^{-1})^{-1}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\min\{aL,
+bK\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(1\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0{,}5\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Isoquantas</td>
+<td style="text-align: left;">Retas</td>
+<td style="text-align: left;">Hipérboles</td>
+<td style="text-align: left;">Curvas suaves</td>
+<td style="text-align: left;">Ângulos retos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Substituição</td>
+<td style="text-align: left;">Perfeita</td>
+<td style="text-align: left;">Parcial</td>
+<td style="text-align: left;">Limitada</td>
+<td style="text-align: left;">Impossível</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exemplo</td>
+<td style="text-align: left;">Energia (gás vs. elétrica)</td>
+<td style="text-align: left;">Manufatura geral</td>
+<td style="text-align: left;">Indústria química</td>
+<td style="text-align: left;">Montagem (parafusos + porcas)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Para a função CES com <span
+class="math inline">\(\rho = -1\)</span>, <span
+class="math inline">\(\alpha = 0{,}5\)</span> e <span
+class="math inline">\(A = 1\)</span>: (a) escreva a função
+explicitamente; (b) calcule <span class="math inline">\(f(4, 4)\)</span>
+e <span class="math inline">\(f(8, 8)\)</span>; (c) verifique os
+rendimentos de escala.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li><p><span class="math inline">\(f(L,K) = (0{,}5 L^{-1} + 0{,}5
+K^{-1})^{-1} = \frac{LK}{0{,}5K + 0{,}5L} =
+\frac{2LK}{L+K}\)</span></p></li>
+<li><p><span class="math inline">\(f(4,4) = \frac{2 \cdot 4 \cdot 4}{4 +
+4} = \frac{32}{8} = 4\)</span></p></li>
+</ol>
+<p><span class="math inline">\(f(8,8) = \frac{2 \cdot 8 \cdot 8}{8 + 8}
+= \frac{128}{16} = 8\)</span></p>
+<ol start="3" type="a">
+<li><span class="math inline">\(f(8,8) = 8 = 2 \cdot f(4,4)\)</span>.
+Dobramos os insumos e a produção dobrou: <strong>rendimentos constantes
+de escala</strong>.</li>
+</ol>
+<p>Formalmente: <span class="math inline">\(f(tL, tK) =
+\frac{2(tL)(tK)}{tL + tK} = t \cdot \frac{2LK}{L+K} = t \cdot
+f(L,K)\)</span>. Homogênea de grau 1.</p>
+</div>
+</details>
+<pre><code>(a) $f(L,K) = (0{,}5 L^{-1} + 0{,}5 K^{-1})^{-1} = \frac{LK}{0{,}5K + 0{,}5L} = \frac{2LK}{L+K}$
+
+(b) $f(4,4) = \frac{2 \cdot 4 \cdot 4}{4 + 4} = \frac{32}{8} = 4$
+
+$f(8,8) = \frac{2 \cdot 8 \cdot 8}{8 + 8} = \frac{128}{16} = 8$
+
+(c) $f(8,8) = 8 = 2 \cdot f(4,4)$. Dobramos os insumos e a produção dobrou: **rendimentos constantes de escala**.
+
+Formalmente: $f(tL, tK) = \frac{2(tL)(tK)}{tL + tK} = t \cdot \frac{2LK}{L+K} = t \cdot f(L,K)$. Homogênea de grau 1.</code></pre>
+<strong>Exercício 2.</strong> Calcule a elasticidade de substituição
+para <span class="math inline">\(f(L,K) = L^{0{,}3}K^{0{,}7}\)</span> e
+interprete.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>A Cobb-Douglas sempre tem <span class="math inline">\(\sigma =
+1\)</span>.</p>
+<p>Verificação: <span class="math inline">\(\text{TMST} = \frac{0{,}3
+K}{0{,}7 L} = \frac{3K}{7L}\)</span></p>
+<p>Seja <span class="math inline">\(k = K/L\)</span>. Então <span
+class="math inline">\(\text{TMST} = \frac{3k}{7}\)</span>, logo <span
+class="math inline">\(k = \frac{7}{3}\text{TMST}\)</span>.</p>
+<p><span class="math inline">\(\sigma = \frac{d\ln k}{d\ln \text{TMST}}
+= 1\)</span>.</p>
+<p>Interpretação: uma mudança de 1% na TMST (= preço relativo dos
+insumos) gera exatamente 1% de mudança na razão <span
+class="math inline">\(K/L\)</span>. A substituição é “unitária” — nem
+rígida demais, nem fácil demais.</p>
+</div>
+</details>
+<pre><code>A Cobb-Douglas sempre tem $\sigma = 1$.
+
+Verificação: $\text{TMST} = \frac{0{,}3 K}{0{,}7 L} = \frac{3K}{7L}$
+
+Seja $k = K/L$. Então $\text{TMST} = \frac{3k}{7}$, logo $k = \frac{7}{3}\text{TMST}$.
+
+$\sigma = \frac{d\ln k}{d\ln \text{TMST}} = 1$.
+
+Interpretação: uma mudança de 1% na TMST (= preço relativo dos insumos) gera exatamente 1% de mudança na razão $K/L$. A substituição é &quot;unitária&quot; — nem rígida demais, nem fácil demais.</code></pre>
+<strong>Exercício 3.</strong> Classifique o tipo de progresso técnico:
+uma nova máquina permite que cada unidade de capital produza o
+equivalente a 1,5 unidade da máquina anterior, sem afetar a
+produtividade do trabalho.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>A nova tecnologia aumenta a eficiência do capital: <span
+class="math inline">\(K_{\text{efetivo}} = 1{,}5K\)</span>.</p>
+<p><span class="math inline">\(f(L, K, t) = g(L, 1{,}5K)\)</span></p>
+<p>Isso é <strong>progresso poupador de trabalho</strong>
+(labor-saving), ou equivalentemente, <strong>aumento da eficiência do
+capital</strong> (capital-augmenting).</p>
+<p>A firma pode produzir o mesmo usando menos trabalho relativo ao
+capital. As isoquantas se “achatam” na direção do eixo <span
+class="math inline">\(L\)</span>.</p>
+</div>
+</details>
+<pre><code>A nova tecnologia aumenta a eficiência do capital: $K_{\text{efetivo}} = 1{,}5K$.
+
+$f(L, K, t) = g(L, 1{,}5K)$
+
+Isso é **progresso poupador de trabalho** (labor-saving), ou equivalentemente, **aumento da eficiência do capital** (capital-augmenting).
+
+A firma pode produzir o mesmo usando menos trabalho relativo ao capital. As isoquantas se &quot;achatam&quot; na direção do eixo $L$.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. A elasticidade de substituição <span
+class="math inline">\(\sigma\)</span> mede:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A taxa na qual um insumo substitui outro
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A facilidade com que a firma substitui um insumo por outro
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Os rendimentos de escala
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O produto marginal
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">
+Q2. Para a função Cobb-Douglas, <span
+class="math inline">\(\sigma\)</span> é sempre igual a:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>0
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>1
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(\infty\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Depende dos expoentes
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">
+Q3. Quando <span class="math inline">\(\rho \to -\infty\)</span> na CES,
+a função converge para:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Linear
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Cobb-Douglas
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Leontief
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Quadrática
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">
+Q4. O progresso técnico neutro de Hicks:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Altera a TMST
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Contrai as isoquantas proporcionalmente sem alterar a TMST
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Beneficia apenas o fator trabalho
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Reduz a produção
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">
+Q5. Se <span class="math inline">\(\sigma\)</span> é muito alto em um
+setor, a automação tende a:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Substituir trabalho por capital com facilidade
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Aumentar a demanda por trabalho
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Não ter efeito sobre a razão <span
+class="math inline">\(K/L\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Reduzir a eficiência do capital
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 14</strong>: Jigsaw sobre funções de produção — cada grupo
+apresenta a ficha técnica de sua função e depois ensina aos colegas.
+Traga sua ficha preenchida!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 14**: Jigsaw sobre funções de produção — cada grupo apresenta a ficha técnica de sua função e depois ensina aos colegas. Traga sua ficha preenchida!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-14');
+MicroQuiz.init('aula-14');
+</script>
+</body>
+</html>
+

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 23 — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-23-oligopólio-cournot-bertrand-stackelberg">Pré-Aula 23
+— Oligopólio: Cournot, Bertrand, Stackelberg</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 15, Seções 15.1–15.5</strong> do livro interativo |
+Tempo estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 15, Seções 15.1–15.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Derivar as funções de melhor resposta no modelo de Cournot e
+encontrar o equilíbrio de Nash</li>
+<li>Explicar o paradoxo de Bertrand e as condições sob as quais ele se
+aplica</li>
+<li>Resolver o modelo de Stackelberg por indução retroativa e
+identificar a vantagem do primeiro movimento</li>
+</ol>
+<hr />
+<h2 id="oligopólio-e-interdependência-estratégica">1. Oligopólio e
+interdependência estratégica</h2>
+<p>No <strong>oligopólio</strong>, poucas firmas dominam o mercado. A
+decisão de cada firma afeta as demais — há <strong>interdependência
+estratégica</strong>. Essa é a diferença fundamental em relação à
+concorrência perfeita (firmas são insignificantes) e ao monopólio (uma
+só firma).</p>
+<p>A ferramenta central para analisar oligopólios é a <strong>teoria dos
+jogos</strong>: cada firma escolhe uma estratégia levando em conta o que
+as outras farão.</p>
+<hr />
+<h2 id="modelo-de-bertrand-competição-em-preços">2. Modelo de Bertrand —
+competição em preços</h2>
+<p>Duas firmas vendem um produto <strong>homogêneo</strong> e escolhem
+<strong>preços</strong> simultaneamente. Os consumidores compram da
+firma mais barata.</p>
+<p><strong>Resultado (Paradoxo de Bertrand):</strong></p>
+<p><span class="math display">\[P_1^* = P_2^* = \text{CMg} =
+c\]</span></p>
+Mesmo com apenas <strong>duas</strong> firmas, o resultado é
+competitivo! Cada firma tem incentivo para cortar o preço marginalmente
+abaixo da rival. O processo só para em <span class="math inline">\(P =
+c\)</span>.
+<div class="admonition warning">
+<div class="admonition-title">
+Condições do paradoxo
+</div>
+<p>O resultado depende de: (1) produto homogêneo, (2) capacidade
+ilimitada, (3) jogo simultâneo e de uma rodada. Relaxando qualquer
+condição, o resultado muda.</p>
+</div>
+<pre><code>O resultado depende de: (1) produto homogêneo, (2) capacidade ilimitada, (3) jogo simultâneo e de uma rodada. Relaxando qualquer condição, o resultado muda.</code></pre>
+<hr />
+<h2 id="modelo-de-cournot-competição-em-quantidades">3. Modelo de
+Cournot — competição em quantidades</h2>
+<p>Duas firmas escolhem <strong>quantidades</strong> simultaneamente. O
+preço de mercado é determinado pela demanda inversa:</p>
+<p><span class="math display">\[P = a - b(q_1 + q_2)\]</span></p>
+<h3 id="derivação-das-funções-de-melhor-resposta">Derivação das funções
+de melhor resposta</h3>
+<p>A firma 1 maximiza:</p>
+<p><span class="math display">\[\pi_1 = P \cdot q_1 - c \cdot q_1 = [a -
+b(q_1 + q_2)]q_1 - cq_1\]</span></p>
+<p>CPO (<span class="math inline">\(\partial \pi_1 / \partial q_1 =
+0\)</span>):</p>
+<p><span class="math display">\[a - 2bq_1 - bq_2 - c = 0\]</span></p>
+<p><span class="math display">\[\boxed{q_1^*(q_2) = \frac{a - c}{2b} -
+\frac{q_2}{2}}\]</span></p>
+<p>Por simetria:</p>
+<p><span class="math display">\[q_2^*(q_1) = \frac{a - c}{2b} -
+\frac{q_1}{2}\]</span></p>
+<h3 id="equilíbrio-de-nash">Equilíbrio de Nash</h3>
+<p>Resolvemos o sistema substituindo uma na outra:</p>
+<p><span class="math display">\[q_1^* = q_2^* = \frac{a -
+c}{3b}\]</span></p>
+<span class="math display">\[Q^* = \frac{2(a-c)}{3b}, \quad P^* =
+\frac{a + 2c}{3}\]</span>
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo numérico completo
+</div>
+<p><span class="math inline">\(P = 100 - (q_1 + q_2)\)</span>, <span
+class="math inline">\(c = 10\)</span> (ou seja, <span
+class="math inline">\(a = 100\)</span>, <span class="math inline">\(b =
+1\)</span>, <span class="math inline">\(c = 10\)</span>).</p>
+<p><strong>Melhor resposta da firma 1:</strong></p>
+<p><span class="math inline">\(q_1^*(q_2) = \frac{100 - 10}{2} -
+\frac{q_2}{2} = 45 - \frac{q_2}{2}\)</span></p>
+<p><strong>Equilíbrio:</strong> <span class="math inline">\(q_1^* = 45 -
+q_2^*/2\)</span> e <span class="math inline">\(q_2^* = 45 -
+q_1^*/2\)</span></p>
+<p>Substituindo: <span class="math inline">\(q_1^* = 45 - (45 -
+q_1^*/2)/2 = 45 - 22{,}5 + q_1^*/4\)</span></p>
+<p><span class="math inline">\(\frac{3}{4}q_1^* = 22{,}5 \implies q_1^*
+= 30\)</span></p>
+<p><span class="math inline">\(q_2^* = 30\)</span>; <span
+class="math inline">\(Q^* = 60\)</span>; <span class="math inline">\(P^*
+= 40\)</span></p>
+<p><span class="math inline">\(\pi_i = (40 - 10) \times 30 =
+900\)</span></p>
+</div>
+<pre><code>$P = 100 - (q_1 + q_2)$, $c = 10$ (ou seja, $a = 100$, $b = 1$, $c = 10$).
+
+**Melhor resposta da firma 1:**
+
+$q_1^*(q_2) = \frac{100 - 10}{2} - \frac{q_2}{2} = 45 - \frac{q_2}{2}$
+
+**Equilíbrio:** $q_1^* = 45 - q_2^*/2$ e $q_2^* = 45 - q_1^*/2$
+
+Substituindo: $q_1^* = 45 - (45 - q_1^*/2)/2 = 45 - 22{,}5 + q_1^*/4$
+
+$\frac{3}{4}q_1^* = 22{,}5 \implies q_1^* = 30$
+
+$q_2^* = 30$; $Q^* = 60$; $P^* = 40$
+
+$\pi_i = (40 - 10) \times 30 = 900$</code></pre>
+<hr />
+<h2 id="modelo-de-stackelberg-competição-sequencial">4. Modelo de
+Stackelberg — competição sequencial</h2>
+<p>A firma <strong>líder</strong> (firma 1) escolhe <span
+class="math inline">\(q_1\)</span> primeiro; a firma
+<strong>seguidora</strong> (firma 2) observa <span
+class="math inline">\(q_1\)</span> e então escolhe <span
+class="math inline">\(q_2\)</span>.</p>
+<h3 id="resolução-por-indução-retroativa">Resolução por indução
+retroativa</h3>
+<p><strong>Passo 1 — Seguidora:</strong> a firma 2 usa sua melhor
+resposta de Cournot:</p>
+<p><span class="math display">\[q_2^*(q_1) = \frac{a - c}{2b} -
+\frac{q_1}{2}\]</span></p>
+<p><strong>Passo 2 — Líder:</strong> a firma 1 antecipa a reação de 2 e
+substitui na sua função lucro:</p>
+<p><span class="math display">\[\pi_1 = \left[a - b\left(q_1 +
+\frac{a-c}{2b} - \frac{q_1}{2}\right)\right]q_1 - cq_1\]</span></p>
+<p>Simplificando e aplicando a CPO:</p>
+<span class="math display">\[q_1^S = \frac{a - c}{2b}, \quad q_2^S =
+\frac{a - c}{4b}\]</span>
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo numérico (continuação)
+</div>
+<p><span class="math inline">\(P = 100 - (q_1 + q_2)\)</span>, <span
+class="math inline">\(c = 10\)</span>.</p>
+<p><span class="math inline">\(q_1^S = \frac{90}{2} = 45\)</span>; <span
+class="math inline">\(q_2^S = \frac{90}{4} = 22{,}5\)</span></p>
+<p><span class="math inline">\(Q^S = 67{,}5\)</span>; <span
+class="math inline">\(P^S = 32{,}5\)</span></p>
+<p><span class="math inline">\(\pi_1^S = (32{,}5 - 10) \times 45 =
+1.012{,}5\)</span></p>
+<p><span class="math inline">\(\pi_2^S = (32{,}5 - 10) \times 22{,}5 =
+506{,}25\)</span></p>
+<p>A líder produz mais e lucra mais — <strong>vantagem do primeiro
+movimento</strong>.</p>
+</div>
+<pre><code>$P = 100 - (q_1 + q_2)$, $c = 10$.
+
+$q_1^S = \frac{90}{2} = 45$; $q_2^S = \frac{90}{4} = 22{,}5$
+
+$Q^S = 67{,}5$; $P^S = 32{,}5$
+
+$\pi_1^S = (32{,}5 - 10) \times 45 = 1.012{,}5$
+
+$\pi_2^S = (32{,}5 - 10) \times 22{,}5 = 506{,}25$
+
+A líder produz mais e lucra mais — **vantagem do primeiro movimento**.</code></pre>
+<hr />
+<h2 id="comparação-entre-modelos">5. Comparação entre modelos</h2>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 38%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th>Modelo</th>
+<th><span class="math inline">\(Q\)</span></th>
+<th><span class="math inline">\(P\)</span></th>
+<th><span class="math inline">\(\pi_{\text{total}}\)</span></th>
+<th>Tipo de competição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monopólio</strong></td>
+<td><span class="math inline">\(45\)</span></td>
+<td><span class="math inline">\(55\)</span></td>
+<td><span class="math inline">\(2.025\)</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Cournot</strong></td>
+<td><span class="math inline">\(60\)</span></td>
+<td><span class="math inline">\(40\)</span></td>
+<td><span class="math inline">\(1.800\)</span></td>
+<td>Quantidade, simultâneo</td>
+</tr>
+<tr>
+<td><strong>Stackelberg</strong></td>
+<td><span class="math inline">\(67{,}5\)</span></td>
+<td><span class="math inline">\(32{,}5\)</span></td>
+<td><span class="math inline">\(1.518{,}75\)</span></td>
+<td>Quantidade, sequencial</td>
+</tr>
+<tr>
+<td><strong>Bertrand</strong></td>
+<td><span class="math inline">\(90\)</span></td>
+<td><span class="math inline">\(10\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td>Preço, simultâneo</td>
+</tr>
+<tr>
+<td><strong>Conc. Perfeita</strong></td>
+<td><span class="math inline">\(90\)</span></td>
+<td><span class="math inline">\(10\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td>Preço, muitas firmas</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[Q_{\text{monopólio}} &lt;
+Q_{\text{Cournot}} &lt; Q_{\text{Stackelberg}} \leq Q_{\text{Bertrand}}
+= Q_{\text{competitivo}}\]</span></p>
+<hr />
+<h2
+id="gráfico-interativo-funções-de-melhor-resposta-de-cournot">Gráfico
+interativo: funções de melhor resposta de Cournot</h2>
+<div id="graph-cournot" style="min-height: 450px;">
+<iframe src="../../graficos/cap15/cournot-best-response.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Observe como as duas funções de melhor resposta se cruzam no
+equilíbrio de Nash</li>
+<li>Altere o custo marginal e veja como o equilíbrio se desloca</li>
+<li>Compare com o ponto de monopólio e o ponto competitivo</li>
+</ul>
+</div>
+<pre><code>- Observe como as duas funções de melhor resposta se cruzam no equilíbrio de Nash
+- Altere o custo marginal e veja como o equilíbrio se desloca
+- Compare com o ponto de monopólio e o ponto competitivo</code></pre>
+<hr />
+<h2 id="box-a-lógica-da-interdependência">Box: A lógica da
+interdependência</h2>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que Cournot gera resultado entre monopólio e
+concorrência?</strong></p>
+<p>No monopólio, uma única firma internaliza todo o efeito preço. Em
+Cournot, cada firma internaliza apenas <strong>sua parcela</strong> do
+efeito preço: ao produzir mais, firma 1 reduz o preço para todos, mas
+ela se importa apenas com a perda sobre <strong>suas</strong> <span
+class="math inline">\(q_1\)</span> unidades, não sobre as <span
+class="math inline">\(q_2\)</span> da rival.</p>
+<p>Quanto mais firmas no mercado, menor a parcela individual e menor o
+efeito internalizado. Com <span class="math inline">\(n\)</span> firmas
+de Cournot simétricas: <span class="math inline">\(Q = \frac{n}{n+1}
+\cdot \frac{a-c}{b}\)</span>. Quando <span class="math inline">\(n \to
+\infty\)</span>, o resultado converge para o competitivo.</p>
+</div>
+<pre><code>**Por que Cournot gera resultado entre monopólio e concorrência?**
+
+No monopólio, uma única firma internaliza todo o efeito preço. Em Cournot, cada firma internaliza apenas **sua parcela** do efeito preço: ao produzir mais, firma 1 reduz o preço para todos, mas ela se importa apenas com a perda sobre **suas** $q_1$ unidades, não sobre as $q_2$ da rival.
+
+Quanto mais firmas no mercado, menor a parcela individual e menor o efeito internalizado. Com $n$ firmas de Cournot simétricas: $Q = \frac{n}{n+1} \cdot \frac{a-c}{b}$. Quando $n \to \infty$, o resultado converge para o competitivo.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Duas firmas competem à la Cournot com
+<span class="math inline">\(P = 120 - 2(q_1 + q_2)\)</span> e <span
+class="math inline">\(c_1 = c_2 = 20\)</span>. Encontre as quantidades e
+o preço de equilíbrio.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Melhor resposta da firma 1: <span class="math inline">\(q_1^* =
+\frac{120 - 20}{2 \times 2} - \frac{q_2}{2} = 25 -
+\frac{q_2}{2}\)</span></p>
+<p>Simetria: <span class="math inline">\(q_1^* = q_2^* =
+q^*\)</span></p>
+<p><span class="math inline">\(q^* = 25 - q^*/2 \implies \frac{3}{2}q^*
+= 25 \implies q^* = \frac{50}{3} \approx 16{,}67\)</span></p>
+<p><span class="math inline">\(Q^* = \frac{100}{3} \approx
+33{,}33\)</span>; <span class="math inline">\(P^* = 120 - 2 \times
+\frac{100}{3} = \frac{160}{3} \approx 53{,}33\)</span></p>
+</div>
+</details>
+<pre><code>Melhor resposta da firma 1: $q_1^* = \frac{120 - 20}{2 \times 2} - \frac{q_2}{2} = 25 - \frac{q_2}{2}$
+
+Simetria: $q_1^* = q_2^* = q^*$
+
+$q^* = 25 - q^*/2 \implies \frac{3}{2}q^* = 25 \implies q^* = \frac{50}{3} \approx 16{,}67$
+
+$Q^* = \frac{100}{3} \approx 33{,}33$; $P^* = 120 - 2 \times \frac{100}{3} = \frac{160}{3} \approx 53{,}33$</code></pre>
+<strong>Exercício 2.</strong> No mesmo mercado do Exercício 1, suponha
+que a firma 1 é líder de Stackelberg. Encontre <span
+class="math inline">\(q_1^S\)</span>, <span
+class="math inline">\(q_2^S\)</span> e <span
+class="math inline">\(P^S\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Melhor resposta da seguidora: <span class="math inline">\(q_2^*(q_1)
+= 25 - q_1/2\)</span></p>
+<p>Líder substitui: <span class="math inline">\(\pi_1 = [120 - 2(q_1 +
+25 - q_1/2)]q_1 - 20q_1\)</span></p>
+<p><span class="math inline">\(\pi_1 = [120 - 2q_1 - 50 + q_1]q_1 -
+20q_1 = [70 - q_1]q_1 - 20q_1 = (50 - q_1)q_1\)</span></p>
+<p>CPO: <span class="math inline">\(50 - 2q_1 = 0 \implies q_1^S =
+25\)</span></p>
+<p><span class="math inline">\(q_2^S = 25 - 25/2 = 12{,}5\)</span></p>
+<p><span class="math inline">\(Q^S = 37{,}5\)</span>; <span
+class="math inline">\(P^S = 120 - 75 = 45\)</span></p>
+<p><span class="math inline">\(\pi_1^S = (45 - 20) \times 25 =
+625\)</span>; <span class="math inline">\(\pi_2^S = (45 - 20) \times
+12{,}5 = 312{,}5\)</span></p>
+</div>
+</details>
+<pre><code>Melhor resposta da seguidora: $q_2^*(q_1) = 25 - q_1/2$
+
+Líder substitui: $\pi_1 = [120 - 2(q_1 + 25 - q_1/2)]q_1 - 20q_1$
+
+$\pi_1 = [120 - 2q_1 - 50 + q_1]q_1 - 20q_1 = [70 - q_1]q_1 - 20q_1 = (50 - q_1)q_1$
+
+CPO: $50 - 2q_1 = 0 \implies q_1^S = 25$
+
+$q_2^S = 25 - 25/2 = 12{,}5$
+
+$Q^S = 37{,}5$; $P^S = 120 - 75 = 45$
+
+$\pi_1^S = (45 - 20) \times 25 = 625$; $\pi_2^S = (45 - 20) \times 12{,}5 = 312{,}5$</code></pre>
+<strong>Exercício 3.</strong> Explique intuitivamente por que o paradoxo
+de Bertrand não se aplica quando os produtos são diferenciados.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Com produtos homogêneos, cortar o preço marginalmente abaixo do rival
+captura <strong>todo</strong> o mercado — o incentivo é enorme. Com
+diferenciação, um corte de preço atrai apenas <strong>alguns</strong>
+consumidores da rival (aqueles que estão “na margem” entre as duas
+marcas). Os consumidores leais à outra marca não migram.</p>
+<p>Formalmente, a elasticidade-preço cruzada é finita (não infinita como
+no caso homogêneo). Isso dá a cada firma algum poder de mercado, e o
+equilíbrio resulta em <span class="math inline">\(P &gt;
+\text{CMg}\)</span>, com margens positivas para ambas.</p>
+</div>
+</details>
+<pre><code>Com produtos homogêneos, cortar o preço marginalmente abaixo do rival captura **todo** o mercado — o incentivo é enorme. Com diferenciação, um corte de preço atrai apenas **alguns** consumidores da rival (aqueles que estão &quot;na margem&quot; entre as duas marcas). Os consumidores leais à outra marca não migram.
+
+Formalmente, a elasticidade-preço cruzada é finita (não infinita como no caso homogêneo). Isso dá a cada firma algum poder de mercado, e o equilíbrio resulta em $P &gt; \text{CMg}$, com margens positivas para ambas.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. No modelo de Cournot, as firmas escolhem:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Preços, simultaneamente
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Quantidades, simultaneamente
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Quantidades, sequencialmente
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Preços, sequencialmente
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">
+Q2. O paradoxo de Bertrand afirma que com duas firmas e produto
+homogêneo:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O lucro é igual ao de monopólio dividido por dois
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O preço fica entre o competitivo e o monopolista
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O preço é igual ao custo marginal (resultado competitivo)
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>As firmas colundem para maximizar lucro conjunto
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">
+Q3. No equilíbrio de Cournot com <span class="math inline">\(P = 100 -
+(q_1 + q_2)\)</span> e <span class="math inline">\(c = 10\)</span>, a
+quantidade total é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>45
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>60
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>90
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>30
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. No modelo de Stackelberg, a vantagem do primeiro movimento ocorre
+porque:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A líder tem custos menores
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A seguidora não maximiza lucro
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>A líder se compromete com uma quantidade alta, e a seguidora se
+acomoda
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O jogo é repetido infinitas vezes
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. Ordene os modelos do menor para o maior nível de produção total:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Bertrand &lt; Cournot &lt; Stackelberg &lt; Monopólio
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Monopólio &lt; Cournot &lt; Stackelberg &lt; Bertrand
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Monopólio &lt; Stackelberg &lt; Cournot &lt; Bertrand
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Cournot &lt; Monopólio &lt; Stackelberg &lt; Bertrand
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 23</strong>: Derivação formal dos modelos de oligopólio com
+exercícios numéricos. Traga calculadora!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 23**: Derivação formal dos modelos de oligopólio com exercícios numéricos. Traga calculadora!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-23');
+MicroQuiz.init('aula-23');
+</script>
+</body>
+</html>
+

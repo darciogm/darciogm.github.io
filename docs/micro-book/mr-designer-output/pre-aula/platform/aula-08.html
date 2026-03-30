@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-08-decomposição-slutsky-case-brasil-prática">Pré-Aula
+08 — Decomposição Slutsky + Case Brasil (Prática)</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 6 completo</strong> do livro interativo + Box Brasil |
+Tempo estimado: <strong>45 min</strong></p>
+</div>
+<pre><code>**Cap. 6 completo** do livro interativo + Box Brasil | Tempo estimado: **45 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<ol type="1">
+<li>Distinguir substitutos/complementares brutos (Marshallianos) de
+líquidos (Hicksianos) e explicar por que a distinção importa</li>
+<li>Aplicar a simetria dos efeitos cruzados Hicksianos e a equação de
+Slutsky cruzada</li>
+<li>Analisar padrões de consumo brasileiros (arroz-feijão, carne-frango,
+gasolina-etanol) usando o ferramental de demanda</li>
+</ol>
+<hr />
+<h2 id="efeitos-preço-cruzados">1. Efeitos preço-cruzados</h2>
+<p>Quando o preço de <span class="math inline">\(y\)</span> muda, o que
+acontece com a demanda de <span class="math inline">\(x\)</span>? A
+resposta depende de <strong>qual demanda</strong> estamos usando.</p>
+<h3 id="substitutos-e-complementares-brutos-marshallianos">Substitutos e
+complementares brutos (Marshallianos)</h3>
+<p>Baseados na demanda Marshalliana <span class="math inline">\(x^*(p_x,
+p_y, m)\)</span>:</p>
+<p><span class="math display">\[\text{Substitutos brutos:} \quad
+\frac{\partial x^*}{\partial p_y} &gt; 0 \qquad \text{(preço de } y
+\text{ sobe } \Rightarrow \text{ demanda de } x \text{
+sobe)}\]</span></p>
+<span class="math display">\[\text{Complementares brutos:} \quad
+\frac{\partial x^*}{\partial p_y} &lt; 0 \qquad \text{(preço de } y
+\text{ sobe } \Rightarrow \text{ demanda de } x \text{ cai)}\]</span>
+<div class="admonition warning">
+<div class="admonition-title">
+Problema dos brutos
+</div>
+<p>A relação <strong>não é necessariamente simétrica</strong>: é
+possível que <span class="math inline">\(x\)</span> seja substituto
+bruto de <span class="math inline">\(y\)</span>, mas <span
+class="math inline">\(y\)</span> seja complementar bruto de <span
+class="math inline">\(x\)</span>. Isso ocorre porque a Marshalliana
+mistura efeitos substituição e renda.</p>
+</div>
+<pre><code>A relação **não é necessariamente simétrica**: é possível que $x$ seja substituto bruto de $y$, mas $y$ seja complementar bruto de $x$. Isso ocorre porque a Marshalliana mistura efeitos substituição e renda.</code></pre>
+<hr />
+<h2 id="substitutos-e-complementares-líquidos-hicksianos">2. Substitutos
+e complementares líquidos (Hicksianos)</h2>
+<p>Baseados na demanda Hicksiana <span class="math inline">\(h_x(p_x,
+p_y, \bar{U})\)</span>:</p>
+<p><span class="math display">\[\text{Substitutos líquidos:} \quad
+\frac{\partial h_x}{\partial p_y} &gt; 0\]</span></p>
+<p><span class="math display">\[\text{Complementares líquidos:} \quad
+\frac{\partial h_x}{\partial p_y} &lt; 0\]</span></p>
+<h3 id="a-grande-vantagem-simetria">A grande vantagem: simetria</h3>
+<p><span class="math display">\[\boxed{\frac{\partial h_x}{\partial p_y}
+= \frac{\partial h_y}{\partial p_x}}\]</span></p>
+<blockquote>
+<p>Se <span class="math inline">\(x\)</span> é substituto líquido de
+<span class="math inline">\(y\)</span>, então <span
+class="math inline">\(y\)</span> é substituto líquido de <span
+class="math inline">\(x\)</span>. Sempre!</p>
+</blockquote>
+<p>Essa simetria vem do <strong>lema de Shephard</strong> e do teorema
+de Young:</p>
+<p><span class="math display">\[\frac{\partial h_x}{\partial p_y} =
+\frac{\partial^2 E}{\partial p_y \partial p_x} = \frac{\partial^2
+E}{\partial p_x \partial p_y} = \frac{\partial h_y}{\partial
+p_x}\]</span></p>
+<hr />
+<h2 id="equação-de-slutsky-cruzada">3. Equação de Slutsky cruzada</h2>
+<p>A decomposição de Slutsky também vale para efeitos cruzados:</p>
+<p><span class="math display">\[\frac{\partial x^*}{\partial p_y} =
+\frac{\partial h_x}{\partial p_y} - y^* \frac{\partial x^*}{\partial
+m}\]</span></p>
+<span class="math display">\[\underbrace{\text{Efeito
+bruto}}_{\text{observável}} = \underbrace{\text{Efeito
+líquido}}_{\text{substituição pura}} - \underbrace{\text{Efeito renda
+cruzado}}_{y^* \cdot \partial x^*/\partial m}\]</span>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Frango e carne bovina no Brasil.</strong></p>
+<p>Quando o preço da carne bovina sobe, os brasileiros compram mais
+frango (substituto bruto). Mas parte desse aumento é efeito renda: carne
+cara “empobrece” a família, que migra para proteína mais barata. O
+efeito líquido (compensado) isola a pura substituição: mesmo mantendo o
+poder de compra, o consumidor trocaria carne por frango porque o preço
+relativo mudou.</p>
+</div>
+<pre><code>**Frango e carne bovina no Brasil.**
+
+Quando o preço da carne bovina sobe, os brasileiros compram mais frango (substituto bruto). Mas parte desse aumento é efeito renda: carne cara &quot;empobrece&quot; a família, que migra para proteína mais barata. O efeito líquido (compensado) isola a pura substituição: mesmo mantendo o poder de compra, o consumidor trocaria carne por frango porque o preço relativo mudou.</code></pre>
+<hr />
+<h2 id="elasticidade-preço-cruzado">4. Elasticidade preço-cruzado</h2>
+<p><span class="math display">\[\varepsilon_{x, p_y} = \frac{\partial
+x^*}{\partial p_y} \cdot \frac{p_y}{x^*}\]</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sinal de <span
+class="math inline">\(\varepsilon_{x, p_y}\)</span></th>
+<th style="text-align: left;">Classificação (bruta)</th>
+<th style="text-align: left;">Exemplo BR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(&gt;
+0\)</span></td>
+<td style="text-align: left;">Substitutos brutos</td>
+<td style="text-align: left;">Gasolina e etanol</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+0\)</span></td>
+<td style="text-align: left;">Complementares brutos</td>
+<td style="text-align: left;">Arroz e feijão</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(=
+0\)</span></td>
+<td style="text-align: left;">Independentes</td>
+<td style="text-align: left;">Sapato e sorvete</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="agregação-da-demanda-individual-à-demanda-de-mercado">5.
+Agregação: da demanda individual à demanda de mercado</h2>
+<p>A demanda de mercado é a <strong>soma horizontal</strong> das
+demandas individuais:</p>
+<p><span class="math display">\[X^D(p) = \sum_{i=1}^{n} x_i^*(p,
+m_i)\]</span></p>
+<p>Propriedades:</p>
+<ul>
+<li>Se cada <span class="math inline">\(x_i^*\)</span> é decrescente em
+<span class="math inline">\(p_x\)</span>, a demanda de mercado também é
+(a menos de Giffen)</li>
+<li>A <strong>distribuição de renda</strong> afeta a demanda de mercado
+(mesmo com renda agregada igual)</li>
+<li>A elasticidade de mercado é uma <strong>média ponderada</strong> das
+elasticidades individuais</li>
+</ul>
+<hr />
+<h2 id="case-brasil-padrões-de-consumo">6. Case Brasil: padrões de
+consumo</h2>
+<div class="admonition example">
+<div class="admonition-title">
+Exemplos empíricos brasileiros
+</div>
+<p><strong>Arroz e feijão</strong> (<span
+class="math inline">\(\varepsilon_{cross} &lt; 0\)</span>):
+complementares clássicos na dieta brasileira. Quando o preço do feijão
+sobe, o consumo de arroz também cai — são consumidos juntos.</p>
+<p><strong>Carne bovina e frango</strong> (<span
+class="math inline">\(\varepsilon_{cross} &gt; 0\)</span>): substitutos.
+Nas crises, o brasileiro migra de carne bovina para frango. A
+elasticidade cruzada estimada é <span class="math inline">\(\approx
+0{,}3\)</span> a <span class="math inline">\(0{,}5\)</span>.</p>
+<p><strong>Gasolina e etanol</strong> (<span
+class="math inline">\(\varepsilon_{cross} &gt; 0\)</span>): no Brasil,
+graças aos carros flex, são substitutos quase perfeitos quando a relação
+de preço cruza o limiar de 70%. A elasticidade cruzada é alta (<span
+class="math inline">\(\approx 0{,}8\)</span> a <span
+class="math inline">\(1{,}2\)</span>).</p>
+</div>
+<pre><code>**Arroz e feijão** ($\varepsilon_{cross} &lt; 0$): complementares clássicos na dieta brasileira. Quando o preço do feijão sobe, o consumo de arroz também cai — são consumidos juntos.
+
+**Carne bovina e frango** ($\varepsilon_{cross} &gt; 0$): substitutos. Nas crises, o brasileiro migra de carne bovina para frango. A elasticidade cruzada estimada é $\approx 0{,}3$ a $0{,}5$.
+
+**Gasolina e etanol** ($\varepsilon_{cross} &gt; 0$): no Brasil, graças aos carros flex, são substitutos quase perfeitos quando a relação de preço cruza o limiar de 70%. A elasticidade cruzada é alta ($\approx 0{,}8$ a $1{,}2$).</code></pre>
+<hr />
+<h2 id="gráfico-interativo-substitutos-e-complementares">Gráfico
+interativo: substitutos e complementares</h2>
+<div id="graph-cross-effects" style="min-height: 450px;">
+<iframe src="../../graficos/cap06/substitutos-complementares.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Aumente <span class="math inline">\(p_y\)</span> e observe se <span
+class="math inline">\(x^*\)</span> sobe (substitutos) ou cai
+(complementares)</li>
+<li>Compare o efeito bruto (Marshalliano) com o líquido (Hicksiano)</li>
+<li>Teste o caso gasolina-etanol com elasticidade cruzada alta</li>
+</ul>
+</div>
+<pre><code>- Aumente $p_y$ e observe se $x^*$ sobe (substitutos) ou cai (complementares)
+- Compare o efeito bruto (Marshalliano) com o líquido (Hicksiano)
+- Teste o caso gasolina-etanol com elasticidade cruzada alta</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Para <span class="math inline">\(U =
+x^{0{,}5} y^{0{,}5}\)</span>, os bens são substitutos ou complementares
+brutos? E líquidos? Justifique.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><strong>Marshallianas:</strong> <span class="math inline">\(x^* =
+m/(2p_x)\)</span> e <span class="math inline">\(y^* =
+m/(2p_y)\)</span>.</p>
+<p><span class="math inline">\(\frac{\partial x^*}{\partial p_y} =
+0\)</span> — bens <strong>independentes</strong> no sentido bruto
+(Cobb-Douglas tem elasticidade cruzada zero).</p>
+<p><strong>Hicksianas:</strong> <span class="math inline">\(h_x =
+\bar{U}\sqrt{p_y/p_x}\)</span>.</p>
+<p><span class="math inline">\(\frac{\partial h_x}{\partial p_y} =
+\frac{\bar{U}}{2\sqrt{p_x p_y}} &gt; 0\)</span> — <strong>substitutos
+líquidos</strong>.</p>
+<p>A Cobb-Douglas esconde a substituição líquida porque o efeito renda
+cruzado compensa exatamente o efeito substituição na Marshalliana.</p>
+</div>
+</details>
+<pre><code>**Marshallianas:** $x^* = m/(2p_x)$ e $y^* = m/(2p_y)$.
+
+$\frac{\partial x^*}{\partial p_y} = 0$ — bens **independentes** no sentido bruto (Cobb-Douglas tem elasticidade cruzada zero).
+
+**Hicksianas:** $h_x = \bar{U}\sqrt{p_y/p_x}$.
+
+$\frac{\partial h_x}{\partial p_y} = \frac{\bar{U}}{2\sqrt{p_x p_y}} &gt; 0$ — **substitutos líquidos**.
+
+A Cobb-Douglas esconde a substituição líquida porque o efeito renda cruzado compensa exatamente o efeito substituição na Marshalliana.</code></pre>
+<strong>Exercício 2.</strong> Se a elasticidade cruzada entre gasolina e
+etanol é <span class="math inline">\(\varepsilon_{g,e} = 1{,}0\)</span>
+e o preço do etanol sobe 20%, em quanto varia a demanda de gasolina?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\Delta\% \, x_g \approx \varepsilon_{g,e}
+\times \Delta\% \, p_e = 1{,}0 \times 20\% = 20\%\)</span></p>
+<p>A demanda de gasolina sobe 20% (são substitutos brutos).</p>
+</div>
+</details>
+<pre><code>$\Delta\% \, x_g \approx \varepsilon_{g,e} \times \Delta\% \, p_e = 1{,}0 \times 20\% = 20\%$
+
+A demanda de gasolina sobe 20% (são substitutos brutos).</code></pre>
+<strong>Exercício 3.</strong> Verifique a simetria Hicksiana: se <span
+class="math inline">\(\partial h_x / \partial p_y = 3\)</span>, quanto
+vale <span class="math inline">\(\partial h_y / \partial p_x\)</span>?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Pela simetria da matriz de Slutsky: <span
+class="math inline">\(\frac{\partial h_y}{\partial p_x} = \frac{\partial
+h_x}{\partial p_y} = 3\)</span>.</p>
+<p>Isso decorre do teorema de Young aplicado à função gasto (derivadas
+cruzadas de <span class="math inline">\(E\)</span> são simétricas).</p>
+</div>
+</details>
+<pre><code>Pela simetria da matriz de Slutsky: $\frac{\partial h_y}{\partial p_x} = \frac{\partial h_x}{\partial p_y} = 3$.
+
+Isso decorre do teorema de Young aplicado à função gasto (derivadas cruzadas de $E$ são simétricas).</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. Bens substitutos brutos são aqueles para os quais:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(\partial x^* / \partial p_y &lt;
+0\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(\partial x^* / \partial p_y &gt;
+0\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(\partial h_x / \partial p_y &lt;
+0\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(\partial x^* / \partial m &gt;
+0\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">
+Q2. A simetria <span class="math inline">\(\partial h_x / \partial p_y =
+\partial h_y / \partial p_x\)</span> vale para:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Demandas Marshallianas
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Demandas Hicksianas
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Ambas
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Nenhuma
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">
+Q3. Qual é a elasticidade preço-cruzado esperada entre arroz e feijão no
+Brasil?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Positiva (substitutos)
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Negativa (complementares)
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Zero (independentes)
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Infinita
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. No Brasil, a relação gasolina-etanol é de substitutibilidade alta
+porque:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Ambos são derivados de petróleo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O preço é tabelado pelo governo
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Carros flex permitem trocar entre os combustíveis
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A elasticidade-renda é unitária
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">
+Q5. Na Cobb-Douglas, a elasticidade cruzada Marshalliana entre os bens
+é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Zero
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Positiva
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Negativa
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Unitária
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 08</strong>: Lab prático — decomposição de Slutsky cruzada
+com dados brasileiros + debate sobre classificação de pares de bens e
+implicações para política tributária.
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 08**: Lab prático — decomposição de Slutsky cruzada com dados brasileiros + debate sobre classificação de pares de bens e implicações para política tributária.</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-08');
+MicroQuiz.init('aula-08');
+</script>
+</body>
+</html>
+

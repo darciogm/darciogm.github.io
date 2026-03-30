@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 04 — — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-04-lab-curvas-de-indiferença-prática">Pré-Aula 04 —
+Lab: Curvas de Indiferença (Prática)</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 3, Seções 3.4–3.6</strong> do livro interativo | Tempo
+estimado: <strong>40 min</strong></p>
+</div>
+<pre><code>**Cap. 3, Seções 3.4–3.6** do livro interativo | Tempo estimado: **40 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<ol type="1">
+<li>Calcular e interpretar a elasticidade de substituição <span
+class="math inline">\(\sigma\)</span> para as funções clássicas</li>
+<li>Demonstrar como a CES aninha Linear, Cobb-Douglas e Leontief via
+parâmetro <span class="math inline">\(\rho\)</span></li>
+<li>Preparar uma “ficha técnica” completa para uma função utilidade
+atribuída (atividade Jigsaw)</li>
+</ol>
+<hr />
+<h2 id="elasticidade-de-substituição">1. Elasticidade de
+substituição</h2>
+<p>A elasticidade de substituição <span
+class="math inline">\(\sigma\)</span> mede a <strong>facilidade</strong>
+com que o consumidor troca um bem pelo outro ao longo da curva de
+indiferença:</p>
+<p><span class="math display">\[\sigma =
+\frac{d\ln(y/x)}{d\ln(\text{TMS})}\]</span></p>
+<ul>
+<li><span class="math inline">\(\sigma\)</span> alto: curvas “suaves” —
+o consumidor substitui facilmente (ex.: Coca vs. Pepsi)</li>
+<li><span class="math inline">\(\sigma\)</span> baixo: curvas
+“angulosas” — o consumidor exige proporções fixas (ex.: café e
+açúcar)</li>
+<li><span class="math inline">\(\sigma = \infty\)</span>: substitutos
+perfeitos (Linear)</li>
+<li><span class="math inline">\(\sigma = 1\)</span>: Cobb-Douglas</li>
+<li><span class="math inline">\(\sigma = 0\)</span>: complementares
+perfeitos (Leontief)</li>
+</ul>
+<hr />
+<h2 id="a-função-ces-a-grande-unificadora">2. A função CES: a grande
+unificadora</h2>
+<p>A função CES (Constant Elasticity of Substitution) é:</p>
+<p><span class="math display">\[U(x,y) = \left(\alpha x^{\rho} +
+(1-\alpha) y^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \ \rho \neq
+0\]</span></p>
+<p>onde:</p>
+<ul>
+<li><span class="math inline">\(\alpha \in (0,1)\)</span>: peso relativo
+do bem <span class="math inline">\(x\)</span></li>
+<li><span class="math inline">\(\rho\)</span>: parâmetro de
+substituição, com <span class="math inline">\(\sigma =
+\frac{1}{1-\rho}\)</span></li>
+</ul>
+<h3 id="tms-da-ces">TMS da CES</h3>
+<p><span class="math display">\[\text{TMS}_{x,y} =
+\frac{\alpha}{1-\alpha} \left(\frac{y}{x}\right)^{1-\rho}\]</span></p>
+<hr />
+<h2 id="casos-especiais-da-ces">3. Casos especiais da CES</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Parâmetro</th>
+<th style="text-align: left;"><span
+class="math inline">\(\sigma\)</span></th>
+<th style="text-align: left;">Função</th>
+<th style="text-align: left;">Curvas de indiferença</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\rho \to
+1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma \to
+\infty\)</span></td>
+<td style="text-align: left;"><strong>Linear</strong>: <span
+class="math inline">\(\alpha x + (1-\alpha)y\)</span></td>
+<td style="text-align: left;">Retas paralelas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\rho \to
+0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma =
+1\)</span></td>
+<td style="text-align: left;"><strong>Cobb-Douglas</strong>: <span
+class="math inline">\(x^{\alpha} y^{1-\alpha}\)</span></td>
+<td style="text-align: left;">Hipérboles convexas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\rho \to
+-\infty\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sigma \to
+0\)</span></td>
+<td style="text-align: left;"><strong>Leontief</strong>: <span
+class="math inline">\(\min\{\alpha x, (1-\alpha)y\}\)</span></td>
+<td style="text-align: left;">L’s com vértice na ray</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que a CES é tão importante?</strong></p>
+<p>Porque ela captura um <strong>espectro contínuo</strong> de
+comportamentos de substituição com um único parâmetro <span
+class="math inline">\(\rho\)</span>. Em vez de escolher entre modelos
+separados, o economista estima <span class="math inline">\(\rho\)</span>
+e os dados “escolhem” se os bens são mais parecidos com substitutos
+perfeitos ou complementares perfeitos. Na prática empírica, quase todos
+os modelos de demanda partem da CES.</p>
+</div>
+<pre><code>**Por que a CES é tão importante?**
+
+Porque ela captura um **espectro contínuo** de comportamentos de substituição com um único parâmetro $\rho$. Em vez de escolher entre modelos separados, o economista estima $\rho$ e os dados &quot;escolhem&quot; se os bens são mais parecidos com substitutos perfeitos ou complementares perfeitos. Na prática empírica, quase todos os modelos de demanda partem da CES.</code></pre>
+<hr />
+<h2 id="quase-concavidade-e-preferências-convexas">4. Quase-concavidade
+e preferências convexas</h2>
+<p>Uma função <span class="math inline">\(U\)</span> é
+<strong>quase-côncava</strong> se seus conjuntos de nível superior são
+convexos:</p>
+<p><span class="math display">\[\{(x,y) : U(x,y) \geq \bar{U}\} \text{ é
+convexo para todo } \bar{U}\]</span></p>
+<p>Quase-concavidade garante que:</p>
+<ul>
+<li>As curvas de indiferença são <strong>convexas</strong> (arqueiam em
+direção à origem)</li>
+<li>A TMS é <strong>decrescente</strong> ao longo da curva</li>
+<li>A solução do problema do consumidor é um <strong>máximo</strong>
+(não mínimo)
+<div class="admonition tip">
+<div class="admonition-title">
+Teste prático
+</div>
+</div></li>
+</ul>
+<p>Verifique quase-concavidade calculando o <strong>Hessiano
+Orlado</strong>. Se o determinante do Hessiano orlado for positivo, a
+função é quase-côncava na região relevante.</p>
+</div>
+<pre><code>Verifique quase-concavidade calculando o **Hessiano Orlado**. Se o determinante do Hessiano orlado for positivo, a função é quase-côncava na região relevante.</code></pre>
+<hr />
+<h2 id="preparação-para-o-jigsaw-ficha-técnica">5. Preparação para o
+Jigsaw: ficha técnica</h2>
+Na aula, cada grupo será “especialista” em uma função. Prepare sua
+ficha:
+<div class="admonition example">
+<div class="admonition-title">
+Modelo de ficha técnica
+</div>
+<p><strong>Função:</strong> Cobb-Douglas <span class="math inline">\(U =
+x^{0{,}4} y^{0{,}6}\)</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TMS</td>
+<td style="text-align: left;"><span class="math inline">\(\frac{0{,}4
+\cdot y}{0{,}6 \cdot x} = \frac{2y}{3x}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1\)</span>
+(sempre)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Curvas</td>
+<td style="text-align: left;">Hipérboles convexas, nunca tocam os
+eixos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Quase-côncava?</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;">Particularidade</td>
+<td style="text-align: left;">Gasto fixo: fração <span
+class="math inline">\(a=0{,}4\)</span> da renda em <span
+class="math inline">\(x\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>**Função:** Cobb-Douglas $U = x^{0{,}4} y^{0{,}6}$
+
+| Item | Resultado |
+|:---|:---|
+| TMS | $\frac{0{,}4 \cdot y}{0{,}6 \cdot x} = \frac{2y}{3x}$ |
+| $\sigma$ | $1$ (sempre) |
+| Curvas | Hipérboles convexas, nunca tocam os eixos |
+| Quase-côncava? | Sim |
+| Particularidade | Gasto fixo: fração $a=0{,}4$ da renda em $x$ |</code></pre>
+<hr />
+<h2 id="gráfico-interativo-famílias-de-funções-utilidade">Gráfico
+interativo: famílias de funções utilidade</h2>
+<div id="graph-utility-functions" style="min-height: 450px;">
+<iframe src="../../graficos/cap03/funcoes-utilidade.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Varie <span class="math inline">\(\rho\)</span> de <span
+class="math inline">\(-5\)</span> até <span
+class="math inline">\(0{,}9\)</span> e observe a transição de Leontief a
+Linear</li>
+<li>Compare as curvas com <span class="math inline">\(\alpha =
+0{,}3\)</span> vs. <span class="math inline">\(\alpha =
+0{,}7\)</span></li>
+<li>Identifique visualmente a elasticidade de substituição pela
+“curvatura”</li>
+</ul>
+</div>
+<pre><code>- Varie $\rho$ de $-5$ até $0{,}9$ e observe a transição de Leontief a Linear
+- Compare as curvas com $\alpha = 0{,}3$ vs. $\alpha = 0{,}7$
+- Identifique visualmente a elasticidade de substituição pela &quot;curvatura&quot;</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Para a CES com <span
+class="math inline">\(\rho = 0{,}5\)</span> e <span
+class="math inline">\(\alpha = 0{,}5\)</span>, calcule <span
+class="math inline">\(\sigma\)</span> e a TMS no ponto <span
+class="math inline">\((4, 1)\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\sigma = \frac{1}{1-\rho} =
+\frac{1}{1-0{,}5} = 2\)</span></p>
+<p><span class="math inline">\(\text{TMS} =
+\frac{0{,}5}{0{,}5}\left(\frac{1}{4}\right)^{1-0{,}5} =
+\left(\frac{1}{4}\right)^{0{,}5} = \frac{1}{2} = 0{,}5\)</span></p>
+<p>O consumidor aceita perder 0,5 unidade de <span
+class="math inline">\(y\)</span> por 1 unidade a mais de <span
+class="math inline">\(x\)</span>.</p>
+</div>
+</details>
+<pre><code>$\sigma = \frac{1}{1-\rho} = \frac{1}{1-0{,}5} = 2$
+
+$\text{TMS} = \frac{0{,}5}{0{,}5}\left(\frac{1}{4}\right)^{1-0{,}5} = \left(\frac{1}{4}\right)^{0{,}5} = \frac{1}{2} = 0{,}5$
+
+O consumidor aceita perder 0,5 unidade de $y$ por 1 unidade a mais de $x$.</code></pre>
+<strong>Exercício 2.</strong> Mostre que quando <span
+class="math inline">\(\rho \to 0\)</span>, a CES converge para
+Cobb-Douglas.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Tomando <span class="math inline">\(\ln U = \frac{1}{\rho}\ln(\alpha
+x^{\rho} + (1-\alpha)y^{\rho})\)</span>. Quando <span
+class="math inline">\(\rho \to 0\)</span>, aplicamos L’Hôpital: <span
+class="math inline">\(x^{\rho} = e^{\rho \ln x} \approx 1 + \rho \ln
+x\)</span>. Substituindo:</p>
+<p><span class="math inline">\(\ln U \approx \frac{1}{\rho}\ln\left(1 +
+\rho[\alpha \ln x + (1-\alpha)\ln y]\right) \to \alpha \ln x +
+(1-\alpha)\ln y\)</span></p>
+<p>Portanto <span class="math inline">\(U \to x^{\alpha}
+y^{1-\alpha}\)</span>, que é Cobb-Douglas.</p>
+</div>
+</details>
+<pre><code>Tomando $\ln U = \frac{1}{\rho}\ln(\alpha x^{\rho} + (1-\alpha)y^{\rho})$. Quando $\rho \to 0$, aplicamos L&#39;Hôpital: $x^{\rho} = e^{\rho \ln x} \approx 1 + \rho \ln x$. Substituindo:
+
+$\ln U \approx \frac{1}{\rho}\ln\left(1 + \rho[\alpha \ln x + (1-\alpha)\ln y]\right) \to \alpha \ln x + (1-\alpha)\ln y$
+
+Portanto $U \to x^{\alpha} y^{1-\alpha}$, que é Cobb-Douglas.</code></pre>
+<strong>Exercício 3.</strong> Na Leontief <span class="math inline">\(U
+= \min\{2x, 3y\}\)</span>, se o consumidor tem <span
+class="math inline">\((6, 4)\)</span>, quanto de <span
+class="math inline">\(x\)</span> está sendo “desperdiçado”?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>O vértice ocorre quando <span class="math inline">\(2x = 3y\)</span>,
+ou seja, <span class="math inline">\(x = \frac{3y}{2}\)</span>. Com
+<span class="math inline">\(y = 4\)</span>: <span
+class="math inline">\(x^* = 6\)</span>. Neste caso, <span
+class="math inline">\(2(6) = 12 = 3(4) = 12\)</span>. O consumidor está
+<strong>exatamente no vértice</strong> — nada é desperdiçado. A
+utilidade é <span class="math inline">\(U = \min\{12, 12\} =
+12\)</span>.</p>
+</div>
+</details>
+<pre><code>O vértice ocorre quando $2x = 3y$, ou seja, $x = \frac{3y}{2}$. Com $y = 4$: $x^* = 6$. Neste caso, $2(6) = 12 = 3(4) = 12$. O consumidor está **exatamente no vértice** — nada é desperdiçado. A utilidade é $U = \min\{12, 12\} = 12$.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">
+Q1. Na CES, o que acontece com as curvas de indiferença quando <span
+class="math inline">\(\rho \to -\infty\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Tornam-se retas paralelas
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Tornam-se hipérboles
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Tornam-se L’s (ângulo reto)
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Desaparecem
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">
+Q2. Qual é a elasticidade de substituição da Cobb-Douglas?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>0
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>1
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(\infty\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Depende dos expoentes
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">
+Q3. Se <span class="math inline">\(U = \min\{3x, 2y\}\)</span>, qual é a
+proporção ótima de consumo <span class="math inline">\(x/y\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(3/2\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(2/3\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(1\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(6\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. A quase-concavidade de <span class="math inline">\(U\)</span>
+garante que:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A utilidade é cardinal
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A TMS é crescente
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Os conjuntos de nível superior são convexos
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A função é diferenciável
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. Na CES com <span class="math inline">\(\rho = 0{,}5\)</span>, a
+elasticidade de substituição vale:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>0,5
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>2
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>1
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(\infty\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 04</strong>: Lab Jigsaw — cada grupo apresenta sua função
+utilidade e ensina os demais. Traga sua ficha técnica preparada!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 04**: Lab Jigsaw — cada grupo apresenta sua função utilidade e ensina os demais. Traga sua ficha técnica preparada!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-04');
+MicroQuiz.init('aula-04');
+</script>
+</body>
+</html>
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Dados de Tracking | Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<style>
+.admin-wrapper{max-width:1000px;margin:0 auto;padding:1.5rem}
+.admin-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.admin-card h3{margin-bottom:0.8rem;color:var(--primary)}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-export{padding:0.7rem 1.2rem;border:none;border-radius:var(--radius);font-size:0.9rem;font-weight:600;cursor:pointer;margin:0.3rem}
+.btn-csv{background:#38a169;color:#fff}.btn-csv:hover{background:#2f855a}
+.btn-json{background:#3182ce;color:#fff}.btn-json:hover{background:#2b6cb0}
+.btn-danger{background:#e53e3e;color:#fff}.btn-danger:hover{background:#c53030}
+.btn-import{background:#805ad5;color:#fff}.btn-import:hover{background:#6b46c1}
+.stat-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin:1rem 0}
+.stat-box{text-align:center;padding:1rem 1.5rem;background:#f7fafc;border-radius:var(--radius);border:1px solid var(--border)}
+.stat-box .v{font-size:2rem;font-weight:700;color:var(--accent)}
+.stat-box .l{font-size:0.75rem;color:var(--text-muted)}
+pre.json-preview{background:#1a202c;color:#e2e8f0;padding:1rem;border-radius:6px;max-height:300px;overflow:auto;font-size:0.75rem}
+table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:0.5rem}
+th{background:#edf2f7;padding:0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
+.badge{padding:0.15rem 0.5rem;border-radius:10px;font-size:0.65rem;font-weight:700}
+.badge-high{background:#fed7d7;color:#c53030}
+.badge-med{background:#fefcbf;color:#744210}
+.badge-low{background:#c6f6d5;color:#276749}
+.copy-msg{display:none;color:var(--success);font-size:0.8rem;margin-left:0.5rem}
+@media(max-width:768px){.admin-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>&#128272; Admin — Dados de Tracking</h1>
+  <div class="user-info">
+    <a href="portal.html" style="color:#fff;font-size:0.85rem">Voltar ao portal</a>
+  </div>
+</div>
+
+<div class="admin-wrapper">
+
+  <!-- STATS -->
+  <div class="admin-card">
+    <h3>Visao Geral</h3>
+    <div class="stat-row" id="admin-stats"></div>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="admin-grid">
+    <div class="admin-card">
+      <h3>Exportar Dados</h3>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">
+        Exporte os dados de tracking para usar no Dashboard do Professor.
+      </p>
+      <button class="btn-export btn-csv" onclick="downloadCSV()">&#128190; Exportar CSV</button>
+      <button class="btn-export btn-json" onclick="downloadJSON()">&#128190; Exportar JSON</button>
+      <button class="btn-export" style="background:#d69e2e;color:#fff" onclick="copyDashboardCSV()">
+        &#128203; Copiar CSV p/ Dashboard
+      </button>
+      <span class="copy-msg" id="copy-msg">Copiado!</span>
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem">
+        O CSV exportado pode ser importado diretamente no <strong>Dashboard do Professor</strong>
+        (tela "Dados" → "Carregar CSV").
+      </p>
+    </div>
+
+    <div class="admin-card">
+      <h3>Gerenciar Alunos</h3>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">
+        Importar lista de alunos ou carregar dados demo.
+      </p>
+      <button class="btn-export btn-import" onclick="importStudents()">&#128194; Importar CSV de alunos</button>
+      <button class="btn-export btn-csv" onclick="loadDemo()">&#128101; Carregar 45 Alunos Demo</button>
+      <input type="file" id="students-csv" accept=".csv" style="display:none">
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem">
+        Formato CSV: <code>matricula,senha,nome</code> (1 aluno por linha, com header)
+      </p>
+    </div>
+  </div>
+
+  <!-- DETAILED TABLE -->
+  <div class="admin-card">
+    <h3>Dados Detalhados por Aluno</h3>
+    <div style="overflow-x:auto">
+      <table id="detail-table">
+        <thead><tr>
+          <th>Matricula</th><th>Nome</th><th>Paginas</th><th>Visitas</th>
+          <th>Tempo (min)</th><th>Quizzes</th><th>Media Quiz</th><th>Risco</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- QUIZ DETAILS -->
+  <div class="admin-card">
+    <h3>Detalhamento de Quizzes</h3>
+    <div style="overflow-x:auto">
+      <table id="quiz-table">
+        <thead><tr>
+          <th>Matricula</th><th>Nome</th><th>Aula</th><th>Tentativas</th>
+          <th>Melhor Score</th><th>Acertos</th><th>Total Q</th><th>Ultimo</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- RAW DATA -->
+  <div class="admin-card">
+    <h3>Dados Brutos (JSON)</h3>
+    <pre class="json-preview" id="json-preview"></pre>
+  </div>
+
+  <!-- DANGER ZONE -->
+  <div class="admin-card" style="border-color:#e53e3e">
+    <h3 style="color:#e53e3e">Zona de Perigo</h3>
+    <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os dados de tracking?')){MicroTracker.clearAll();location.reload();}">
+      &#128465; Limpar Todos os Dados de Tracking
+    </button>
+    <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os usuarios cadastrados?')){localStorage.removeItem('microII_users');location.reload();}">
+      &#128465; Limpar Todos os Usuarios
+    </button>
+  </div>
+
+</div>
+
+<script src="js/tracker.js"></script>
+<script>
+function renderAdmin() {
+  var summary = MicroTracker.getSummary();
+  var data = MicroTracker.getData();
+  var users = MicroAuth.getUsers();
+
+  // Stats
+  var totalStudents = Object.keys(users).length;
+  var activeStudents = summary.length;
+  var totalTime = summary.reduce(function(a,s){return a+s.totalTimeMin},0);
+  var avgQuiz = summary.length > 0 ? summary.reduce(function(a,s){return a+s.avgQuizScore},0)/summary.length : 0;
+
+  document.getElementById('admin-stats').innerHTML =
+    '<div class="stat-box"><div class="v">'+totalStudents+'</div><div class="l">Cadastrados</div></div>'
+    +'<div class="stat-box"><div class="v">'+activeStudents+'</div><div class="l">Com Atividade</div></div>'
+    +'<div class="stat-box"><div class="v">'+Math.round(totalTime)+'</div><div class="l">Min. Totais</div></div>'
+    +'<div class="stat-box"><div class="v">'+Math.round(avgQuiz)+'%</div><div class="l">Media Quizzes</div></div>';
+
+  // Detail table
+  var tbody = '';
+  summary.sort(function(a,b){return b.totalTimeMin-a.totalTimeMin});
+  summary.forEach(function(s) {
+    var risk = s.avgQuizScore < 40 || s.pagesVisited < 5 ? 'high' :
+              s.avgQuizScore < 60 || s.pagesVisited < 12 ? 'med' : 'low';
+    var badge = risk==='high'?'badge-high':risk==='med'?'badge-med':'badge-low';
+    var label = risk==='high'?'ALTO':risk==='med'?'MEDIO':'BAIXO';
+    tbody += '<tr><td>'+s.matricula+'</td><td>'+s.nome+'</td><td>'+s.pagesVisited+'</td>'
+      +'<td>'+s.totalVisits+'</td><td>'+s.totalTimeMin+'</td><td>'+s.quizzesCompleted+'</td>'
+      +'<td>'+s.avgQuizScore+'%</td><td><span class="badge '+badge+'">'+label+'</span></td></tr>';
+  });
+  document.querySelector('#detail-table tbody').innerHTML = tbody || '<tr><td colspan="8" style="text-align:center;color:#aaa">Nenhum dado ainda</td></tr>';
+
+  // Quiz table
+  var qRows = '';
+  Object.keys(data).forEach(function(mat) {
+    var s = data[mat];
+    Object.keys(s.quizzes || {}).forEach(function(page) {
+      var q = s.quizzes[page];
+      var total = Object.keys(q.questions||{}).length;
+      var right = Object.values(q.questions||{}).filter(function(x){return x.correct}).length;
+      qRows += '<tr><td>'+mat+'</td><td>'+s.nome+'</td><td>'+page+'</td>'
+        +'<td>'+q.attempts+'</td><td>'+q.bestScore+'%</td><td>'+right+'</td>'
+        +'<td>'+total+'</td><td>'+(q.lastAttempt?q.lastAttempt.substring(0,16):'—')+'</td></tr>';
+    });
+  });
+  document.querySelector('#quiz-table tbody').innerHTML = qRows || '<tr><td colspan="8" style="text-align:center;color:#aaa">Nenhum quiz respondido</td></tr>';
+
+  // JSON preview
+  document.getElementById('json-preview').textContent = MicroTracker.exportJSON();
+}
+
+function downloadCSV() {
+  var csv = MicroTracker.exportCSV();
+  var blob = new Blob([csv], {type:'text/csv'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'microII-tracking-'+new Date().toISOString().substring(0,10)+'.csv';
+  a.click();
+}
+
+function downloadJSON() {
+  var json = MicroTracker.exportJSON();
+  var blob = new Blob([json], {type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'microII-tracking-'+new Date().toISOString().substring(0,10)+'.json';
+  a.click();
+}
+
+function copyDashboardCSV() {
+  // Generate dashboard-compatible CSV
+  var summary = MicroTracker.getSummary();
+  var rows = ['nome,matricula,quiz_avg,ps_avg,p1,participacao,tendencia'];
+  summary.forEach(function(s) {
+    var quizAvg = (s.avgQuizScore / 10).toFixed(1); // convert 0-100 to 0-10
+    var trend = s.avgQuizScore >= 60 ? 'subindo' : s.avgQuizScore >= 40 ? 'estavel' : 'caindo';
+    rows.push([s.nome,s.matricula,quizAvg,'0','0','0',trend].join(','));
+  });
+  navigator.clipboard.writeText(rows.join('\n')).then(function() {
+    var msg = document.getElementById('copy-msg');
+    msg.style.display = 'inline';
+    setTimeout(function(){msg.style.display='none'},2000);
+  });
+}
+
+function importStudents() {
+  document.getElementById('students-csv').click();
+}
+document.getElementById('students-csv').addEventListener('change', function(e) {
+  var file = e.target.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var n = MicroAuth.importStudents(ev.target.result);
+    alert(n + ' alunos importados.');
+    renderAdmin();
+  };
+  reader.readAsText(file);
+});
+
+function loadDemo() {
+  var n = MicroAuth.loadDemoStudents();
+  alert(n + ' alunos demo cadastrados.');
+  renderAdmin();
+}
+
+renderAdmin();
+</script>
+</body>
+</html>

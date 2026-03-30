@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 01 — — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-01-ferramentas-matemáticas-do-economista">Pré-Aula 01 —
+Ferramentas Matemáticas do Economista</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 2, Seções 2.1–2.4</strong> do livro interativo | Tempo
+estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 2, Seções 2.1–2.4** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Resolver problemas de otimização sem restrição (CPO e CSO)</li>
+<li>Calcular derivadas parciais e montar o gradiente</li>
+<li>Formular o Lagrangiano para problemas com restrição de
+igualdade</li>
+</ol>
+<hr />
+<h2 id="por-que-otimização">1. Por que otimização?</h2>
+<p>Quase todo problema em Microeconomia se reduz a uma forma:</p>
+<p><span class="math display">\[\max_{x} f(x) \quad \text{sujeito a}
+\quad g(x) \leq c\]</span></p>
+<p>O consumidor maximiza <strong>utilidade</strong> sujeito ao
+orçamento. A firma minimiza <strong>custos</strong> sujeita a uma meta
+de produção. O monopolista maximiza <strong>lucro</strong> escolhendo
+preço ou quantidade.</p>
+<p>As ferramentas desta aula são o motor matemático de todo o curso.</p>
+<hr />
+<h2 id="otimização-univariada-revisão">2. Otimização univariada —
+revisão</h2>
+<p>Dada <span class="math inline">\(f(x)\)</span>, queremos encontrar
+<span class="math inline">\(x^*\)</span> que maximiza (ou minimiza)
+<span class="math inline">\(f\)</span>.</p>
+<p><strong>Condição de Primeira Ordem (CPO):</strong></p>
+<p><span class="math display">\[f&#39;(x^*) = 0\]</span></p>
+<p>A CPO identifica os <strong>candidatos</strong> — pontos onde a
+inclinação é zero.</p>
+<p><strong>Condição de Segunda Ordem (CSO):</strong></p>
+<span class="math display">\[f&#39;&#39;(x^*) &lt; 0 \implies
+\text{máximo local}\]</span> <span
+class="math display">\[f&#39;&#39;(x^*) &gt; 0 \implies \text{mínimo
+local}\]</span>
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo rápido
+</div>
+<p><span class="math inline">\(f(x) = -2x^2 + 12x - 10\)</span></p>
+<p>CPO: <span class="math inline">\(f&#39;(x) = -4x + 12 = 0 \implies
+x^* = 3\)</span></p>
+<p>CSO: <span class="math inline">\(f&#39;&#39;(x) = -4 &lt; 0\)</span>
+✓ É máximo.</p>
+<p><span class="math inline">\(f(3) = -18 + 36 - 10 = 8\)</span></p>
+</div>
+<pre><code>$f(x) = -2x^2 + 12x - 10$
+
+CPO: $f&#39;(x) = -4x + 12 = 0 \implies x^* = 3$
+
+CSO: $f&#39;&#39;(x) = -4 &lt; 0$ ✓ É máximo.
+
+$f(3) = -18 + 36 - 10 = 8$</code></pre>
+<hr />
+<h2 id="funções-multivariáveis">3. Funções multivariáveis</h2>
+<p>Quando a função depende de mais de uma variável — <span
+class="math inline">\(f(x, y)\)</span> — usamos <strong>derivadas
+parciais</strong>:</p>
+<p><span class="math display">\[\frac{\partial f}{\partial x} \quad
+\text{(derivada em relação a } x \text{, mantendo } y \text{
+constante)}\]</span></p>
+<p>O <strong>gradiente</strong> é o vetor de todas as parciais:</p>
+<p><span class="math display">\[\nabla f = \left(\frac{\partial
+f}{\partial x}, \frac{\partial f}{\partial y}\right)\]</span></p>
+<p>A <strong>Hessiana</strong> é a matriz de derivadas segundas:</p>
+<p><span class="math display">\[H = \begin{pmatrix} f_{xx} &amp; f_{xy}
+\\ f_{yx} &amp; f_{yy} \end{pmatrix}\]</span></p>
+<p>Para um máximo sem restrição: <span class="math inline">\(\nabla f =
+\mathbf{0}\)</span> e <span class="math inline">\(H\)</span> definida
+negativa.</p>
+<hr />
+<h2 id="o-lagrangiano-a-ferramenta-central">4. O Lagrangiano — a
+ferramenta central</h2>
+<p>Quando há uma <strong>restrição</strong> (por exemplo, orçamento
+limitado), não podemos simplesmente fazer <span
+class="math inline">\(\nabla f = 0\)</span>. Precisamos incorporar a
+restrição.</p>
+<p><strong>O método</strong>: criar uma nova função que combina o
+objetivo com a restrição:</p>
+<p><span class="math display">\[\mathcal{L}(x, y, \lambda) = f(x, y) +
+\lambda \big[ c - g(x, y) \big]\]</span></p>
+<p>Onde <span class="math inline">\(\lambda\)</span> é o
+<strong>multiplicador de Lagrange</strong>.</p>
+<p><strong>As CPOs</strong> (3 equações, 3 incógnitas — <span
+class="math inline">\(x, y, \lambda\)</span>):</p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial x}
+= f_x - \lambda g_x = 0\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial y}
+= f_y - \lambda g_y = 0\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial
+\lambda} = c - g(x,y) = 0\]</span></p>
+<p>Das duas primeiras equações: <span
+class="math inline">\(\frac{f_x}{f_y} = \frac{g_x}{g_y}\)</span> —
+<strong>condição de tangência</strong>.</p>
+<hr />
+<h2 id="gráfico-interativo-otimização-com-restrição">Gráfico interativo:
+otimização com restrição</h2>
+<div id="graph-lagrange" style="min-height: 450px;">
+<iframe src="../../graficos/cap02/lagrangiano.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Mova os sliders de preço (<span class="math inline">\(p_x\)</span>,
+<span class="math inline">\(p_y\)</span>) e renda (<span
+class="math inline">\(I\)</span>)</li>
+<li>Observe como a restrição orçamentária rotaciona e desloca</li>
+<li>Note que o ponto ótimo está sempre na
+<strong>tangência</strong></li>
+</ul>
+</div>
+<pre><code>- Mova os sliders de preço ($p_x$, $p_y$) e renda ($I$)
+- Observe como a restrição orçamentária rotaciona e desloca
+- Note que o ponto ótimo está sempre na **tangência**</code></pre>
+<hr />
+<h2 id="interpretação-de-lambda">5. Interpretação de <span
+class="math inline">\(\lambda\)</span></h2>
+<p>O multiplicador <span class="math inline">\(\lambda^*\)</span> tem
+uma interpretação econômica poderosa:</p>
+<p><span class="math display">\[\lambda^* = \frac{\partial f^*}{\partial
+c}\]</span></p>
+<blockquote>
+<p><strong><span class="math inline">\(\lambda^*\)</span> mede quanto o
+valor ótimo melhora se a restrição relaxar em 1 unidade.</strong></p>
+</blockquote>
+<p>No problema do consumidor: <span class="math inline">\(\lambda^* =
+\frac{\partial U^*}{\partial I}\)</span> — a <strong>utilidade marginal
+da renda</strong>.</p>
+<p>Se <span class="math inline">\(\lambda^* = 0{,}05\)</span> e a renda
+sobe de <span class="math inline">\(100\)</span> para <span
+class="math inline">\(101\)</span>: a utilidade sobe aproximadamente
+<span class="math inline">\(0{,}05\)</span>.</p>
+<hr />
+<h2 id="box-o-lagrangiano-na-prática">Box: O Lagrangiano na prática</h2>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que o Lagrangiano funciona?</strong></p>
+<p>Geometricamente, o ótimo com restrição ocorre onde as curvas de nível
+de <span class="math inline">\(f\)</span> são <strong>tangentes</strong>
+à curva de restrição. Nesse ponto, os gradientes de <span
+class="math inline">\(f\)</span> e <span
+class="math inline">\(g\)</span> são paralelos:</p>
+<p><span class="math display">\[\nabla f = \lambda \nabla g\]</span></p>
+<p>O <span class="math inline">\(\lambda\)</span> é o “fator de
+proporcionalidade” entre os gradientes. Economicamente, ele nos diz o
+<strong>preço-sombra</strong> da restrição — quanto pagaríamos para
+relaxá-la.</p>
+</div>
+<pre><code>**Por que o Lagrangiano funciona?**
+
+Geometricamente, o ótimo com restrição ocorre onde as curvas de nível de $f$ são **tangentes** à curva de restrição. Nesse ponto, os gradientes de $f$ e $g$ são paralelos:
+
+$$\nabla f = \lambda \nabla g$$
+
+O $\lambda$ é o &quot;fator de proporcionalidade&quot; entre os gradientes. Economicamente, ele nos diz o **preço-sombra** da restrição — quanto pagaríamos para relaxá-la.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Encontre o máximo de <span
+class="math inline">\(f(x) = -x^2 + 8x - 12\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(f&#39;(x) = -2x + 8 = 0 \implies x^* =
+4\)</span></p>
+<p><span class="math inline">\(f&#39;&#39;(x) = -2 &lt; 0\)</span> ✓
+Máximo.</p>
+<p><span class="math inline">\(f(4) = -16 + 32 - 12 = 4\)</span></p>
+</div>
+</details>
+<pre><code>$f&#39;(x) = -2x + 8 = 0 \implies x^* = 4$
+
+$f&#39;&#39;(x) = -2 &lt; 0$ ✓ Máximo.
+
+$f(4) = -16 + 32 - 12 = 4$</code></pre>
+<strong>Exercício 2.</strong> Para <span class="math inline">\(f(x,y) =
+x^2 y + xy^2\)</span>, calcule <span
+class="math inline">\(\frac{\partial f}{\partial x}\)</span> e <span
+class="math inline">\(\frac{\partial f}{\partial y}\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(f_x = 2xy + y^2\)</span></p>
+<p><span class="math inline">\(f_y = x^2 + 2xy\)</span></p>
+</div>
+</details>
+<pre><code>$f_x = 2xy + y^2$
+
+$f_y = x^2 + 2xy$</code></pre>
+<strong>Exercício 3.</strong> Maximize <span class="math inline">\(U =
+x^{1/2} y^{1/2}\)</span> sujeito a <span class="math inline">\(2x + 4y =
+100\)</span>. Encontre <span class="math inline">\(x^*\)</span>, <span
+class="math inline">\(y^*\)</span> e <span
+class="math inline">\(\lambda^*\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\mathcal{L} = x^{1/2}y^{1/2} +
+\lambda(100 - 2x - 4y)\)</span></p>
+<p>CPOs: <span class="math inline">\(\frac{1}{2}x^{-1/2}y^{1/2} =
+2\lambda\)</span> e <span
+class="math inline">\(\frac{1}{2}x^{1/2}y^{-1/2} = 4\lambda\)</span></p>
+<p>Dividindo: <span class="math inline">\(y/x = 1/2 \implies x =
+2y\)</span></p>
+<p>Substituindo: <span class="math inline">\(4y + 4y = 100 \implies y^*
+= 12{,}5\)</span>, <span class="math inline">\(x^* = 25\)</span></p>
+<p><span class="math inline">\(U^* = 5\sqrt{5} \approx 11{,}18\)</span>;
+<span class="math inline">\(\lambda^* \approx 0{,}056\)</span></p>
+</div>
+</details>
+<pre><code>$\mathcal{L} = x^{1/2}y^{1/2} + \lambda(100 - 2x - 4y)$
+
+CPOs: $\frac{1}{2}x^{-1/2}y^{1/2} = 2\lambda$ e $\frac{1}{2}x^{1/2}y^{-1/2} = 4\lambda$
+
+Dividindo: $y/x = 1/2 \implies x = 2y$
+
+Substituindo: $4y + 4y = 100 \implies y^* = 12{,}5$, $x^* = 25$
+
+$U^* = 5\sqrt{5} \approx 11{,}18$; $\lambda^* \approx 0{,}056$</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. Dada <span class="math inline">\(f(x) = 3x^2 - 12x + 5\)</span>,
+qual é o ponto crítico e é máximo ou mínimo?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(x = 2\)</span>, máximo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(x = 2\)</span>, mínimo
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(x = 4\)</span>, máximo
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(x = 4\)</span>, mínimo
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">
+Q2. Para <span class="math inline">\(f(x,y) = x^2 y + xy^2\)</span>,
+qual é <span class="math inline">\(\frac{\partial f}{\partial
+x}\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(2x + y^2\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(2xy + y^2\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(x^2 + 2xy\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(2xy + 2y\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">
+Q3. O que significa a CSO <span class="math inline">\(f&#39;&#39;(x^*)
+&lt; 0\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O ponto é um mínimo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O ponto é um máximo
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O ponto é um ponto de inflexão
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A função é côncava em todo domínio
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. No Lagrangiano, o que o multiplicador <span
+class="math inline">\(\lambda\)</span> representa?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O valor ótimo da função objetivo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A inclinação da restrição
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>A sensibilidade do ótimo a mudanças na restrição
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O número de variáveis do problema
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. V ou F: “Se a CPO é satisfeita, o ponto é necessariamente um
+máximo.”
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Verdadeiro
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Falso — a CPO é condição necessária, não suficiente
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 01</strong>: Mini-lecture sobre otimização + Lagrangiano
+com exercícios guiados. Traga calculadora!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 01**: Mini-lecture sobre otimização + Lagrangiano com exercícios guiados. Traga calculadora!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-01');
+MicroQuiz.init('aula-01');
+</script>
+</body>
+</html>
+

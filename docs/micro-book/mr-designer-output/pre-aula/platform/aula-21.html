@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 21 — — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-21-monopólio-e-discriminação-de-preços">Pré-Aula 21 —
+Monopólio e Discriminação de Preços</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 14, Seções 14.1–14.5</strong> do livro interativo |
+Tempo estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 14, Seções 14.1–14.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Derivar a receita marginal do monopolista e explicar por que <span
+class="math inline">\(\text{RMg} &lt; P\)</span></li>
+<li>Calcular preço, quantidade e lucro do monopólio usando a condição
+<span class="math inline">\(\text{RMg} = \text{CMg}\)</span></li>
+<li>Distinguir os três graus de discriminação de preços e suas
+implicações sobre bem-estar</li>
+</ol>
+<hr />
+<h2 id="o-que-define-um-monopólio">1. O que define um monopólio?</h2>
+<p>Um <strong>monopólio</strong> é uma estrutura de mercado com um único
+vendedor que enfrenta toda a curva de demanda do mercado. Diferentemente
+da firma competitiva (que é tomadora de preço), o monopolista é
+<strong>formador de preço</strong>: ao escolher a quantidade <span
+class="math inline">\(q\)</span>, ele determina o preço <span
+class="math inline">\(P(q)\)</span>.</p>
+<p><strong>Barreiras à entrada</strong> sustentam o monopólio:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Legal</strong></td>
+<td>Patentes farmacêuticas, concessões de TV</td>
+</tr>
+<tr>
+<td><strong>Natural</strong></td>
+<td>Redes de distribuição de energia (custo fixo elevado)</td>
+</tr>
+<tr>
+<td><strong>Estratégica</strong></td>
+<td>Contratos de exclusividade, preços predatórios</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="receita-marginal-do-monopolista">2. Receita marginal do
+monopolista</h2>
+<p>A receita total é <span class="math inline">\(R(q) = P(q) \cdot
+q\)</span>. A receita marginal:</p>
+<p><span class="math display">\[\text{RMg} = \frac{dR}{dq} = P + q
+\frac{dP}{dq}\]</span></p>
+<p>Como a demanda é negativamente inclinada (<span
+class="math inline">\(dP/dq &lt; 0\)</span>), temos sempre:</p>
+<span class="math display">\[\text{RMg} &lt; P\]</span>
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo numérico
+</div>
+<p>Demanda linear <span class="math inline">\(P = 100 - 2q\)</span>.</p>
+<p><span class="math inline">\(R(q) = 100q - 2q^2\)</span></p>
+<p><span class="math inline">\(\text{RMg} = 100 - 4q\)</span></p>
+<p>Note que a RMg tem o <strong>mesmo intercepto</strong> e o
+<strong>dobro da inclinação</strong> da demanda inversa.</p>
+</div>
+<pre><code>Demanda linear $P = 100 - 2q$.
+
+$R(q) = 100q - 2q^2$
+
+$\text{RMg} = 100 - 4q$
+
+Note que a RMg tem o **mesmo intercepto** e o **dobro da inclinação** da demanda inversa.</code></pre>
+<hr />
+<h2 id="otimização-do-monopolista">3. Otimização do monopolista</h2>
+<p>O monopolista maximiza o lucro <span class="math inline">\(\pi = R(q)
+- C(q)\)</span>:</p>
+<p><span class="math display">\[\text{RMg}(q^*) =
+\text{CMg}(q^*)\]</span></p>
+O preço é então lido na curva de demanda: <span
+class="math inline">\(P^* = P(q^*)\)</span>.
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo completo
+</div>
+<p>Demanda: <span class="math inline">\(P = 100 - 2q\)</span>, Custo:
+<span class="math inline">\(C(q) = 10q + 50\)</span>.</p>
+<p><span class="math inline">\(\text{RMg} = 100 - 4q = 10 =
+\text{CMg}\)</span></p>
+<p><span class="math inline">\(q^* = 22{,}5\)</span>; <span
+class="math inline">\(P^* = 100 - 45 = 55\)</span></p>
+<p><span class="math inline">\(\pi = 55 \times 22{,}5 - (10 \times
+22{,}5 + 50) = 1.012{,}50 - 275 = 962{,}50\)</span></p>
+</div>
+<pre><code>Demanda: $P = 100 - 2q$, Custo: $C(q) = 10q + 50$.
+
+$\text{RMg} = 100 - 4q = 10 = \text{CMg}$
+
+$q^* = 22{,}5$; $P^* = 100 - 45 = 55$
+
+$\pi = 55 \times 22{,}5 - (10 \times 22{,}5 + 50) = 1.012{,}50 - 275 = 962{,}50$</code></pre>
+<hr />
+<h2 id="o-índice-de-lerner">4. O índice de Lerner</h2>
+<p>O <strong>poder de mercado</strong> é medido pelo índice de
+Lerner:</p>
+<p><span class="math display">\[L = \frac{P -
+\text{CMg}}{P}\]</span></p>
+<p>Usando a condição de otimização, pode-se mostrar que:</p>
+<p><span class="math display">\[L =
+\frac{1}{|\varepsilon_d|}\]</span></p>
+onde <span class="math inline">\(|\varepsilon_d|\)</span> é a
+elasticidade-preço da demanda (em valor absoluto).
+<div class="admonition warning">
+<div class="admonition-title">
+Região elástica
+</div>
+<p>O monopolista <strong>nunca opera na região inelástica</strong> da
+demanda (<span class="math inline">\(|\varepsilon_d| &lt; 1\)</span>),
+pois ali <span class="math inline">\(\text{RMg} &lt; 0\)</span>: reduzir
+a quantidade aumentaria a receita e diminuiria o custo — seria
+lucrativo.</p>
+</div>
+<pre><code>O monopolista **nunca opera na região inelástica** da demanda ($|\varepsilon_d| &lt; 1$), pois ali $\text{RMg} &lt; 0$: reduzir a quantidade aumentaria a receita e diminuiria o custo — seria lucrativo.</code></pre>
+<hr />
+<h2 id="peso-morto-do-monopólio">5. Peso morto do monopólio</h2>
+<p>Comparando com a concorrência perfeita (onde <span
+class="math inline">\(P = \text{CMg}\)</span>):</p>
+<ul>
+<li>O monopolista produz <strong>menos</strong> (<span
+class="math inline">\(q_m &lt; q_c\)</span>) e cobra
+<strong>mais</strong> (<span class="math inline">\(P_m &gt;
+P_c\)</span>)</li>
+<li>Surge um <strong>peso morto</strong> (DWL) — triângulo entre as
+curvas de demanda e CMg, de <span class="math inline">\(q_m\)</span> a
+<span class="math inline">\(q_c\)</span>:</li>
+</ul>
+<p><span class="math display">\[\text{DWL} = \frac{1}{2}(P_m -
+\text{CMg})(q_c - q_m)\]</span></p>
+<hr />
+<h2 id="discriminação-de-preços">6. Discriminação de preços</h2>
+<p>O monopolista pode aumentar o lucro cobrando preços diferentes:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 37%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Grau</th>
+<th>Mecanismo</th>
+<th>Exemplo BR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.° grau</strong> (perfeita)</td>
+<td>Cobra a disposição a pagar de cada consumidor</td>
+<td>Negociação de carro usado</td>
+</tr>
+<tr>
+<td><strong>2.° grau</strong></td>
+<td>Menu de opções (auto-seleção)</td>
+<td>Spotify Free vs. Premium, passagens aéreas</td>
+</tr>
+<tr>
+<td><strong>3.° grau</strong></td>
+<td>Segmenta por grupo observável</td>
+<td>Meia-entrada para estudantes, tarifa de idosos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tarifa em duas partes:</strong> cobra uma taxa fixa <span
+class="math inline">\(T\)</span> (que extrai o excedente) + preço por
+unidade <span class="math inline">\(p\)</span>. Exemplo: clube de
+compras (anuidade + preço por item).</p>
+<strong>Bundling (venda casada):</strong> combina dois bens num único
+pacote quando as disposições a pagar são negativamente correlacionadas.
+Exemplo: pacotes de TV + internet.
+<div class="admonition tip">
+<div class="admonition-title">
+Uber e preço dinâmico
+</div>
+<p>O <em>surge pricing</em> da Uber é uma forma de discriminação de
+preços que varia conforme o <strong>momento</strong> (pico de demanda).
+Economicamente, aproxima-se de uma discriminação de 3.° grau com
+segmentação temporal.</p>
+</div>
+<pre><code>O *surge pricing* da Uber é uma forma de discriminação de preços que varia conforme o **momento** (pico de demanda). Economicamente, aproxima-se de uma discriminação de 3.° grau com segmentação temporal.</code></pre>
+<hr />
+<h2 id="gráfico-interativo-monopólio">Gráfico interativo: monopólio</h2>
+<div id="graph-monopolio" style="min-height: 450px;">
+<iframe src="../../graficos/cap14/monopolio.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Observe como <span class="math inline">\(\text{RMg}\)</span> fica
+abaixo da demanda</li>
+<li>Mova os parâmetros de custo e veja como <span
+class="math inline">\(q^*\)</span> e <span
+class="math inline">\(P^*\)</span> se ajustam</li>
+<li>Identifique visualmente o triângulo de peso morto</li>
+</ul>
+</div>
+<pre><code>- Observe como $\text{RMg}$ fica abaixo da demanda
+- Mova os parâmetros de custo e veja como $q^*$ e $P^*$ se ajustam
+- Identifique visualmente o triângulo de peso morto</code></pre>
+<hr />
+<h2 id="box-intuição-do-poder-de-mercado">Box: Intuição do poder de
+mercado</h2>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que o monopolista cobra mais e produz menos?</strong></p>
+<p>O monopolista enfrenta um <em>trade-off</em> ao vender uma unidade
+adicional: ganha a receita daquela unidade, mas precisa <strong>baixar o
+preço de todas as unidades anteriores</strong> (efeito preço). Esse
+custo implícito faz com que <span class="math inline">\(\text{RMg} &lt;
+P\)</span>, e a firma para de produzir antes do ponto competitivo.</p>
+<p>A fórmula <span class="math inline">\(L = 1/|\varepsilon_d|\)</span>
+revela: quanto menos elástica a demanda (consumidores sem alternativas),
+maior o poder de mercado. Políticas antitruste buscam justamente
+aumentar <span class="math inline">\(|\varepsilon_d|\)</span> — abrindo
+mercados, reduzindo barreiras.</p>
+</div>
+<pre><code>**Por que o monopolista cobra mais e produz menos?**
+
+O monopolista enfrenta um *trade-off* ao vender uma unidade adicional: ganha a receita daquela unidade, mas precisa **baixar o preço de todas as unidades anteriores** (efeito preço). Esse custo implícito faz com que $\text{RMg} &lt; P$, e a firma para de produzir antes do ponto competitivo.
+
+A fórmula $L = 1/|\varepsilon_d|$ revela: quanto menos elástica a demanda (consumidores sem alternativas), maior o poder de mercado. Políticas antitruste buscam justamente aumentar $|\varepsilon_d|$ — abrindo mercados, reduzindo barreiras.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Um monopolista enfrenta <span
+class="math inline">\(P = 200 - 5q\)</span> e tem <span
+class="math inline">\(\text{CMg} = 20\)</span>. Encontre <span
+class="math inline">\(q^*\)</span>, <span
+class="math inline">\(P^*\)</span> e o índice de Lerner.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\text{RMg} = 200 - 10q = 20 =
+\text{CMg}\)</span></p>
+<p><span class="math inline">\(10q = 180 \implies q^* = 18\)</span></p>
+<p><span class="math inline">\(P^* = 200 - 90 = 110\)</span></p>
+<p><span class="math inline">\(L = \frac{110 - 20}{110} = \frac{90}{110}
+\approx 0{,}818\)</span></p>
+<p>O monopolista tem alto poder de mercado — o preço está 82% acima do
+custo marginal.</p>
+</div>
+</details>
+<pre><code>$\text{RMg} = 200 - 10q = 20 = \text{CMg}$
+
+$10q = 180 \implies q^* = 18$
+
+$P^* = 200 - 90 = 110$
+
+$L = \frac{110 - 20}{110} = \frac{90}{110} \approx 0{,}818$
+
+O monopolista tem alto poder de mercado — o preço está 82% acima do custo marginal.</code></pre>
+<strong>Exercício 2.</strong> Explique por que a discriminação de preços
+de 1.° grau elimina o peso morto, mas não é eficiente no sentido de
+equidade.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Na discriminação perfeita, cada consumidor paga exatamente sua
+disposição a pagar. Isso faz com que o monopolista produza <span
+class="math inline">\(q_c\)</span> (a quantidade competitiva),
+eliminando o DWL. Toda transação com benefício líquido positivo
+ocorre.</p>
+<p>Contudo, <strong>todo o excedente</strong> vai para o produtor — o
+excedente do consumidor é zero. Embora seja eficiente no sentido de
+Pareto (ninguém pode melhorar sem piorar outro), a distribuição é
+extremamente desigual.</p>
+</div>
+</details>
+<pre><code>Na discriminação perfeita, cada consumidor paga exatamente sua disposição a pagar. Isso faz com que o monopolista produza $q_c$ (a quantidade competitiva), eliminando o DWL. Toda transação com benefício líquido positivo ocorre.
+
+Contudo, **todo o excedente** vai para o produtor — o excedente do consumidor é zero. Embora seja eficiente no sentido de Pareto (ninguém pode melhorar sem piorar outro), a distribuição é extremamente desigual.</code></pre>
+<strong>Exercício 3.</strong> Um monopolista serve dois mercados com
+demandas <span class="math inline">\(P_1 = 80 - q_1\)</span> e <span
+class="math inline">\(P_2 = 60 - 2q_2\)</span>, com <span
+class="math inline">\(\text{CMg} = 10\)</span> constante. Calcule preço
+e quantidade em cada mercado sob discriminação de 3.° grau.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><strong>Mercado 1:</strong> <span class="math inline">\(\text{RMg}_1
+= 80 - 2q_1 = 10 \implies q_1^* = 35\)</span>, <span
+class="math inline">\(P_1^* = 45\)</span></p>
+<p><strong>Mercado 2:</strong> <span class="math inline">\(\text{RMg}_2
+= 60 - 4q_2 = 10 \implies q_2^* = 12{,}5\)</span>, <span
+class="math inline">\(P_2^* = 35\)</span></p>
+<p>O mercado com demanda mais inelástica (mercado 1) recebe o preço mais
+alto.</p>
+</div>
+</details>
+<pre><code>**Mercado 1:** $\text{RMg}_1 = 80 - 2q_1 = 10 \implies q_1^* = 35$, $P_1^* = 45$
+
+**Mercado 2:** $\text{RMg}_2 = 60 - 4q_2 = 10 \implies q_2^* = 12{,}5$, $P_2^* = 35$
+
+O mercado com demanda mais inelástica (mercado 1) recebe o preço mais alto.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. A receita marginal do monopolista é menor que o preço porque:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O custo marginal é crescente
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Para vender mais uma unidade, ele precisa reduzir o preço de todas
+as unidades
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>A demanda é perfeitamente elástica
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O monopolista tem custos fixos elevados
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">
+Q2. O índice de Lerner de uma firma competitiva é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Zero
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>1
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Depende da elasticidade
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Igual a <span class="math inline">\(1/|\varepsilon_d|\)</span>, mas
+positivo
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">
+Q3. Um monopolista enfrenta demanda com <span
+class="math inline">\(|\varepsilon_d| = 0{,}5\)</span>. Ele deve:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Manter a produção, pois está maximizando lucro
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Aumentar a produção para ganhar escala
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Reduzir a produção para alcançar a região elástica
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Sair do mercado
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. Qual tipo de discriminação de preços o programa de meia-entrada
+brasileiro exemplifica?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>1.° grau
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>2.° grau
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>3.° grau
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Tarifa em duas partes
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. V ou F: “O peso morto do monopólio surge porque o monopolista produz
+mais do que o socialmente ótimo.”
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Verdadeiro
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Falso — o monopolista produz menos do que o socialmente ótimo
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 21</strong>: Derivação formal do equilíbrio de monopólio +
+análise de bem-estar com exercícios guiados. Traga calculadora!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 21**: Derivação formal do equilíbrio de monopólio + análise de bem-estar com exercícios guiados. Traga calculadora!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-21');
+MicroQuiz.init('aula-21');
+</script>
+</body>
+</html>
+

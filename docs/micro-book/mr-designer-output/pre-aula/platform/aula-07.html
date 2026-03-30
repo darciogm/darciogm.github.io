@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 07 — Efeitos — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-07-efeitos-renda-e-substituição">Pré-Aula 07 — Efeitos
+Renda e Substituição</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 5, Seções 5.1–5.4</strong> do livro interativo | Tempo
+estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 5, Seções 5.1–5.4** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<ol type="1">
+<li>Classificar bens como normais/inferiores e de luxo/necessidade
+usando curvas de Engel e elasticidade-renda</li>
+<li>Decompor o efeito total de uma variação de preço em efeitos
+substituição (Hicks) e renda</li>
+<li>Enunciar a equação de Slutsky e identificar as condições para a
+existência de bens de Giffen</li>
+</ol>
+<hr />
+<h2 id="propriedades-da-demanda-marshalliana">1. Propriedades da demanda
+Marshalliana</h2>
+<p>A demanda Marshalliana <span class="math inline">\(x^*(p_x, p_y,
+m)\)</span> satisfaz:</p>
+<p><strong>Homogeneidade de grau zero:</strong></p>
+<p><span class="math display">\[x^*(tp_x, tp_y, tm) = x^*(p_x, p_y, m)
+\quad \forall \, t &gt; 0\]</span></p>
+<blockquote>
+<p>Se todos os preços e a renda mudam na mesma proporção, a demanda não
+se altera — o que importa são <strong>preços relativos</strong> e
+<strong>renda real</strong>.</p>
+</blockquote>
+<p><strong>Lei de Walras (esgotamento da renda):</strong></p>
+<p><span class="math display">\[p_x x^* + p_y y^* = m\]</span></p>
+<blockquote>
+<p>O consumidor sempre gasta toda a renda (monotonicidade).</p>
+</blockquote>
+<hr />
+<h2 id="curvas-de-engel-e-classificação-de-bens">2. Curvas de Engel e
+classificação de bens</h2>
+<p>A <strong>curva de Engel</strong> mostra como a demanda de um bem
+varia com a renda, mantendo preços fixos:</p>
+<p><span class="math display">\[x^*(m) = x^*(p_x, p_y, m) \quad
+\text{com } p_x, p_y \text{ fixos}\]</span></p>
+<p>A <strong>elasticidade-renda</strong> classifica os bens:</p>
+<p><span class="math display">\[\eta_m = \frac{\partial x^*}{\partial m}
+\cdot \frac{m}{x^*}\]</span></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Classificação</th>
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;">Curva de Engel</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Normal</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\partial
+x^*/\partial m &gt; 0\)</span> (<span class="math inline">\(\eta_m &gt;
+0\)</span>)</td>
+<td style="text-align: left;">Inclinação positiva</td>
+<td style="text-align: left;">Maioria dos bens</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inferior</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\partial
+x^*/\partial m &lt; 0\)</span> (<span class="math inline">\(\eta_m &lt;
+0\)</span>)</td>
+<td style="text-align: left;">Inclinação negativa</td>
+<td style="text-align: left;">Macarrão instantâneo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Necessidade</strong></td>
+<td style="text-align: left;"><span class="math inline">\(0 &lt; \eta_m
+&lt; 1\)</span></td>
+<td style="text-align: left;">Côncava (cresce menos que renda)</td>
+<td style="text-align: left;">Alimentos básicos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Luxo</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\eta_m &gt;
+1\)</span></td>
+<td style="text-align: left;">Convexa (cresce mais que renda)</td>
+<td style="text-align: left;">Viagens internacionais</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="decomposição-de-hicks">3. Decomposição de Hicks</h2>
+<p>Quando <span class="math inline">\(p_x\)</span> sobe, acontecem
+<strong>dois efeitos simultâneos</strong>:</p>
+<h3 id="efeito-substituição-es">Efeito Substituição (ES)</h3>
+<p>Movimento <strong>ao longo</strong> da curva de indiferença original:
+o consumidor substitui <span class="math inline">\(x\)</span> (agora
+relativamente mais caro) por <span class="math inline">\(y\)</span>.</p>
+<ul>
+<li><strong>Sempre negativo</strong>: <span class="math inline">\(\Delta
+x_{ES} &lt; 0\)</span> quando <span class="math inline">\(p_x\)</span>
+sobe (lei da demanda compensada)</li>
+</ul>
+<h3 id="efeito-renda-er">Efeito Renda (ER)</h3>
+<p>Deslocamento <strong>entre</strong> curvas de indiferença: o aumento
+de <span class="math inline">\(p_x\)</span> reduz o poder de compra
+real.</p>
+<ul>
+<li><strong>Bem normal</strong>: <span class="math inline">\(\Delta
+x_{ER} &lt; 0\)</span> (reforça o ES)</li>
+<li><strong>Bem inferior</strong>: <span class="math inline">\(\Delta
+x_{ER} &gt; 0\)</span> (contraria o ES)</li>
+</ul>
+<h3 id="efeito-total-et">Efeito Total (ET)</h3>
+<span class="math display">\[\Delta x_{ET} = \underbrace{\Delta
+x_{ES}}_{&lt;0} + \underbrace{\Delta x_{ER}}_{\text{depende}}\]</span>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Pense em gasolina a R$ 7,00/litro.</strong></p>
+<p>Efeito substituição: você troca carro por ônibus, bicicleta ou carona
+— consome menos gasolina porque ficou relativamente mais cara.</p>
+<p>Efeito renda: com gasolina mais cara, seu orçamento “encolheu” — como
+se tivesse ficado mais pobre. Se gasolina é um bem normal, esse efeito
+também reduz o consumo. Ambos puxam na mesma direção: você compra menos
+gasolina.</p>
+<p>Mas se fosse arroz (bem inferior para famílias ricas)? O efeito renda
+poderia ir na direção oposta.</p>
+</div>
+<pre><code>**Pense em gasolina a R\$ 7,00/litro.**
+
+Efeito substituição: você troca carro por ônibus, bicicleta ou carona — consome menos gasolina porque ficou relativamente mais cara.
+
+Efeito renda: com gasolina mais cara, seu orçamento &quot;encolheu&quot; — como se tivesse ficado mais pobre. Se gasolina é um bem normal, esse efeito também reduz o consumo. Ambos puxam na mesma direção: você compra menos gasolina.
+
+Mas se fosse arroz (bem inferior para famílias ricas)? O efeito renda poderia ir na direção oposta.</code></pre>
+<hr />
+<h2 id="a-equação-de-slutsky">4. A Equação de Slutsky</h2>
+<p>A decomposição formal é expressa pela <strong>equação de
+Slutsky</strong>:</p>
+<p><span class="math display">\[\boxed{\frac{\partial x^*}{\partial p_x}
+= \frac{\partial h_x}{\partial p_x} - x^* \frac{\partial x^*}{\partial
+m}}\]</span></p>
+<p><span class="math display">\[\underbrace{\text{Efeito
+Total}}_{\partial x^*/\partial p_x} = \underbrace{\text{Efeito
+Substituição}}_{\partial h_x/\partial p_x} - \underbrace{\text{Efeito
+Renda}}_{x^* \cdot \partial x^*/\partial m}\]</span></p>
+<p>Em termos de elasticidades:</p>
+<p><span class="math display">\[\varepsilon_{x, p_x} = \varepsilon^h_{x,
+p_x} - s_x \cdot \eta_m\]</span></p>
+<p>onde <span class="math inline">\(s_x = p_x x^* / m\)</span> é a
+participação orçamentária de <span class="math inline">\(x\)</span>.</p>
+<hr />
+<h2 id="bens-de-giffen">5. Bens de Giffen</h2>
+<p>Um <strong>bem de Giffen</strong> é aquele cuja demanda Marshalliana
+<strong>sobe</strong> quando o preço sobe:</p>
+<p><span class="math display">\[\frac{\partial x^*}{\partial p_x} &gt;
+0\]</span></p>
+<p>Pela equação de Slutsky, isso requer:</p>
+<ol type="1">
+<li>Bem <strong>inferior</strong> (<span class="math inline">\(\partial
+x^*/\partial m &lt; 0\)</span>)</li>
+<li>Efeito renda <strong>maior em módulo</strong> que o efeito
+substituição</li>
+<li>Geralmente: bem que ocupa <strong>grande parcela</strong> do
+orçamento (<span class="math inline">\(s_x\)</span> alto)
+<div class="admonition warning">
+<div class="admonition-title">
+Giffen é raro, mas existe
+</div>
+</div></li>
+</ol>
+<p>Jensen e Miller (2008) documentaram comportamento Giffen para arroz
+em regiões pobres da China: quando o preço do arroz subiu, famílias
+muito pobres compraram <strong>mais</strong> arroz (cortando carne, que
+ficou inalcançável) para sobreviver.</p>
+</div>
+<pre><code>Jensen e Miller (2008) documentaram comportamento Giffen para arroz em regiões pobres da China: quando o preço do arroz subiu, famílias muito pobres compraram **mais** arroz (cortando carne, que ficou inalcançável) para sobreviver.</code></pre>
+<hr />
+<h2 id="gráfico-interativo-decomposição-de-slutsky">Gráfico interativo:
+decomposição de Slutsky</h2>
+<div id="graph-slutsky" style="min-height: 450px;">
+<iframe src="../../graficos/cap05/decomposicao-slutsky.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Aumente <span class="math inline">\(p_x\)</span> e observe os três
+pontos: original, compensado (Hicks) e final</li>
+<li>Identifique visualmente ES (azul) e ER (vermelho)</li>
+<li>Alterne entre bem normal e inferior para ver como o ER muda de
+direção</li>
+</ul>
+</div>
+<pre><code>- Aumente $p_x$ e observe os três pontos: original, compensado (Hicks) e final
+- Identifique visualmente ES (azul) e ER (vermelho)
+- Alterne entre bem normal e inferior para ver como o ER muda de direção</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Para <span class="math inline">\(U =
+x^{0{,}5} y^{0{,}5}\)</span> com <span class="math inline">\(m =
+100\)</span>, se <span class="math inline">\(p_x\)</span> sobe de 2 para
+4 (com <span class="math inline">\(p_y = 2\)</span>), decomponha o
+efeito total em ES e ER.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><strong>Situação inicial</strong> (<span class="math inline">\(p_x =
+2\)</span>): <span class="math inline">\(x^* = \frac{0{,}5 \times
+100}{2} = 25\)</span>, <span class="math inline">\(y^* = 25\)</span>,
+<span class="math inline">\(U^* = 25\)</span>.</p>
+<p><strong>Situação final</strong> (<span class="math inline">\(p_x =
+4\)</span>): <span class="math inline">\(x^* = \frac{0{,}5 \times
+100}{4} = 12{,}5\)</span>, <span class="math inline">\(y^* =
+25\)</span>.</p>
+<p><strong>Ponto compensado</strong> (Hicks): manter <span
+class="math inline">\(\bar{U} = 25\)</span> com <span
+class="math inline">\(p_x = 4\)</span>.</p>
+<p><span class="math inline">\(h_x = 25\sqrt{p_y/p_x} = 25\sqrt{2/4} =
+25/\sqrt{2} \approx 17{,}68\)</span></p>
+<p><strong>Decomposição:</strong></p>
+<ul>
+<li>ET: <span class="math inline">\(12{,}5 - 25 = -12{,}5\)</span></li>
+<li>ES: <span class="math inline">\(17{,}68 - 25 = -7{,}32\)</span></li>
+<li>ER: <span class="math inline">\(12{,}5 - 17{,}68 =
+-5{,}18\)</span></li>
+</ul>
+<p>Ambos negativos (bem normal): ES + ER = ET ✓</p>
+</div>
+</details>
+<pre><code>**Situação inicial** ($p_x = 2$): $x^* = \frac{0{,}5 \times 100}{2} = 25$, $y^* = 25$, $U^* = 25$.
+
+**Situação final** ($p_x = 4$): $x^* = \frac{0{,}5 \times 100}{4} = 12{,}5$, $y^* = 25$.
+
+**Ponto compensado** (Hicks): manter $\bar{U} = 25$ com $p_x = 4$.
+
+$h_x = 25\sqrt{p_y/p_x} = 25\sqrt{2/4} = 25/\sqrt{2} \approx 17{,}68$
+
+**Decomposição:**
+
+- ET: $12{,}5 - 25 = -12{,}5$
+- ES: $17{,}68 - 25 = -7{,}32$
+- ER: $12{,}5 - 17{,}68 = -5{,}18$
+
+Ambos negativos (bem normal): ES + ER = ET ✓</code></pre>
+<strong>Exercício 2.</strong> Explique por que o efeito substituição é
+sempre negativo (quando o preço sobe).
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>O efeito substituição move o consumidor <strong>ao longo</strong> da
+mesma curva de indiferença. Quando <span
+class="math inline">\(p_x\)</span> sobe, a reta de gasto tangente “gira”
+— fica mais íngreme. Pela convexidade das curvas de indiferença, o novo
+ponto de tangência sempre terá <strong>menos <span
+class="math inline">\(x\)</span></strong> e <strong>mais <span
+class="math inline">\(y\)</span></strong>. Formalmente, a matriz de
+Slutsky é negativa semidefinida, garantindo <span
+class="math inline">\(\partial h_x / \partial p_x \leq 0\)</span>.</p>
+</div>
+</details>
+<pre><code>O efeito substituição move o consumidor **ao longo** da mesma curva de indiferença. Quando $p_x$ sobe, a reta de gasto tangente &quot;gira&quot; — fica mais íngreme. Pela convexidade das curvas de indiferença, o novo ponto de tangência sempre terá **menos $x$** e **mais $y$**. Formalmente, a matriz de Slutsky é negativa semidefinida, garantindo $\partial h_x / \partial p_x \leq 0$.</code></pre>
+<strong>Exercício 3.</strong> Dê um exemplo de bem que seja de
+necessidade para famílias de baixa renda e de luxo para famílias de alta
+renda. É possível?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Sim, a classificação pode depender da faixa de renda. <strong>Carne
+bovina</strong> pode ser necessidade para classe média (já consome
+regularmente, elasticidade-renda &lt; 1) e luxo para famílias de baixa
+renda (começam a consumir quando renda sobe, elasticidade-renda &gt; 1).
+A curva de Engel teria formato em S: convexa para rendas baixas (luxo) e
+côncava para rendas altas (necessidade).</p>
+</div>
+</details>
+<pre><code>Sim, a classificação pode depender da faixa de renda. **Carne bovina** pode ser necessidade para classe média (já consome regularmente, elasticidade-renda &lt; 1) e luxo para famílias de baixa renda (começam a consumir quando renda sobe, elasticidade-renda &gt; 1). A curva de Engel teria formato em S: convexa para rendas baixas (luxo) e côncava para rendas altas (necessidade).</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. Um bem inferior é aquele cuja demanda:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Cai quando o preço sobe
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Cai quando a renda sobe
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Tem elasticidade-preço positiva
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Tem curva de Engel convexa
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">
+Q2. O efeito substituição de Hicks, quando <span
+class="math inline">\(p_x\)</span> sobe, é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Sempre negativo (reduz <span class="math inline">\(x\)</span>)
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Sempre positivo (aumenta <span class="math inline">\(x\)</span>)
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Positivo para bens normais, negativo para inferiores
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Zero para Cobb-Douglas
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">
+Q3. Para que um bem seja de Giffen, ele deve ser:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Normal e de luxo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Normal e de necessidade
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Inferior com efeito renda dominando o efeito substituição
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Inferior com efeito substituição dominando o efeito renda
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. A curva de Engel de um bem de luxo é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Reta horizontal
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Côncava (cresce a taxas decrescentes)
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Convexa (cresce a taxas crescentes)
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Decrescente
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. Na equação de Slutsky, <span class="math inline">\(\frac{\partial
+x^*}{\partial p_x} = \frac{\partial h_x}{\partial p_x} - x^*
+\frac{\partial x^*}{\partial m}\)</span>, o termo <span
+class="math inline">\(x^* \frac{\partial x^*}{\partial m}\)</span> é o:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Efeito substituição
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Efeito renda
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Efeito total
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Efeito preço-cruzado
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 07</strong>: Mini-lecture sobre decomposição de Slutsky +
+simulação interativa com Peer Instruction sobre classificação de bens e
+condições de Giffen.
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 07**: Mini-lecture sobre decomposição de Slutsky + simulação interativa com Peer Instruction sobre classificação de bens e condições de Giffen.</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-07');
+MicroQuiz.init('aula-07');
+</script>
+</body>
+</html>
+

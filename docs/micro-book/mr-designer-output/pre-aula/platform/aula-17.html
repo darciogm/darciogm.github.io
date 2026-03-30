@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 17 — — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-17-maximização-de-lucro-e-oferta">Pré-Aula 17 —
+Maximização de Lucro e Oferta</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 11, Seções 11.1–11.5</strong> do livro interativo |
+Tempo estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 11, Seções 11.1–11.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Derivar a condição de maximização de lucro <span
+class="math inline">\(P = CMg\)</span> para uma firma competitiva e
+verificar a condição de segunda ordem</li>
+<li>Explicar a decisão de fechamento e identificar a curva de oferta
+individual como o trecho do CMg acima do CVMe mínimo</li>
+<li>Calcular o excedente do produtor e enunciar o Lema de Hotelling</li>
+</ol>
+<hr />
+<h2 id="lucro-e-a-firma-competitiva">1. Lucro e a firma competitiva</h2>
+<p>O <strong>lucro econômico</strong> é a diferença entre receita total
+e custo total (incluindo custos de oportunidade):</p>
+<p><span class="math display">\[\pi(q) = RT(q) - CT(q) = Pq -
+C(q)\]</span></p>
+<p>Uma firma <strong>competitiva</strong> (tomadora de preço) não pode
+influenciar <span class="math inline">\(P\)</span> — trata o preço de
+mercado como dado. Sua receita marginal é simplesmente:</p>
+<p><span class="math display">\[RMg = \frac{dRT}{dq} = P\]</span></p>
+<hr />
+<h2 id="condições-de-ótimo">2. Condições de ótimo</h2>
+<h3 id="condição-de-primeira-ordem-cpo">Condição de Primeira Ordem
+(CPO)</h3>
+<p><span class="math display">\[\frac{d\pi}{dq} = P - CMg(q) = 0
+\implies \boxed{P = CMg(q^*)}\]</span></p>
+<p>A firma produz até o ponto em que o preço iguala o custo
+marginal.</p>
+<h3 id="condição-de-segunda-ordem-cso">Condição de Segunda Ordem
+(CSO)</h3>
+<p><span class="math display">\[\frac{d^2\pi}{dq^2} = -\frac{dCMg}{dq}
+&lt; 0 \implies \frac{dCMg}{dq} &gt; 0\]</span></p>
+O CMg deve ser <strong>crescente</strong> no ponto ótimo. Isso garante
+que estamos num máximo, não num mínimo.
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo numérico
+</div>
+<p><span class="math inline">\(C(q) = q^3 - 4q^2 + 8q + 5\)</span> e
+<span class="math inline">\(P = 11\)</span>.</p>
+<p>CPO: <span class="math inline">\(P = CMg \implies 11 = 3q^2 - 8q +
+8\)</span></p>
+<p><span class="math inline">\(3q^2 - 8q - 3 = 0 \implies q = \frac{8
+\pm \sqrt{64 + 36}}{6} = \frac{8 \pm 10}{6}\)</span></p>
+<p><span class="math inline">\(q^* = 3\)</span> (descartamos <span
+class="math inline">\(q = -1/3 &lt; 0\)</span>)</p>
+<p>CSO: <span class="math inline">\(\frac{dCMg}{dq} = 6q - 8 = 6(3) - 8
+= 10 &gt; 0\)</span> ✓</p>
+<p><span class="math inline">\(\pi = 11(3) - (27 - 36 + 24 + 5) = 33 -
+20 = 13\)</span></p>
+</div>
+<pre><code>$C(q) = q^3 - 4q^2 + 8q + 5$ e $P = 11$.
+
+CPO: $P = CMg \implies 11 = 3q^2 - 8q + 8$
+
+$3q^2 - 8q - 3 = 0 \implies q = \frac{8 \pm \sqrt{64 + 36}}{6} = \frac{8 \pm 10}{6}$
+
+$q^* = 3$ (descartamos $q = -1/3 &lt; 0$)
+
+CSO: $\frac{dCMg}{dq} = 6q - 8 = 6(3) - 8 = 10 &gt; 0$ ✓
+
+$\pi = 11(3) - (27 - 36 + 24 + 5) = 33 - 20 = 13$</code></pre>
+<hr />
+<h2 id="a-decisão-de-fechamento">3. A decisão de fechamento</h2>
+<p>Mesmo com <span class="math inline">\(P = CMg\)</span>, a firma pode
+ter <strong>prejuízo</strong> (<span class="math inline">\(\pi &lt;
+0\)</span>). Deve continuar operando?</p>
+<p><strong>No curto prazo</strong>, a firma compara duas opções:</p>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produzir <span class="math inline">\(q^*\)</span></td>
+<td><span class="math inline">\(\pi = Pq^* - CV(q^*) - CF\)</span></td>
+</tr>
+<tr>
+<td>Fechar (<span class="math inline">\(q = 0\)</span>)</td>
+<td><span class="math inline">\(\pi = -CF\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Produzir é melhor se <span class="math inline">\(Pq^* - CV(q^*) - CF
+&gt; -CF\)</span>, ou seja:</p>
+<p><span class="math display">\[P &gt; \frac{CV(q^*)}{q^*} =
+CVMe(q^*)\]</span></p>
+<p>Como <span class="math inline">\(q^*\)</span> é o ponto onde <span
+class="math inline">\(P = CMg\)</span>, a condição de operação se resume
+a:</p>
+<p><span class="math display">\[\boxed{P \geq CVMe_{\min}}\]</span></p>
+<p>Se <span class="math inline">\(P &lt; CVMe_{\min}\)</span>, a firma
+fecha no curto prazo (produz <span class="math inline">\(q =
+0\)</span>).</p>
+<hr />
+<h2 id="a-curva-de-oferta-individual">4. A curva de oferta
+individual</h2>
+<p>Combinando as condições de ótimo e fechamento:</p>
+<p><span class="math display">\[q^S(P) = \begin{cases} CMg^{-1}(P) &amp;
+\text{se } P \geq CVMe_{\min} \\ 0 &amp; \text{se } P &lt; CVMe_{\min}
+\end{cases}\]</span></p>
+A <strong>curva de oferta</strong> é o trecho da curva de CMg
+<strong>acima</strong> do ponto mínimo do CVMe.
+<div class="admonition tip">
+<div class="admonition-title">
+Resumo visual
+</div>
+<ul>
+<li>Para <span class="math inline">\(P\)</span> acima do <span
+class="math inline">\(CVMe_{\min}\)</span>: a firma produz onde <span
+class="math inline">\(P = CMg\)</span></li>
+<li>Para <span class="math inline">\(P\)</span> entre <span
+class="math inline">\(CVMe_{\min}\)</span> e <span
+class="math inline">\(CMe_{\min}\)</span>: a firma produz com prejuízo,
+mas cobre parte dos custos fixos</li>
+<li>Para <span class="math inline">\(P\)</span> abaixo do <span
+class="math inline">\(CVMe_{\min}\)</span>: a firma fecha</li>
+</ul>
+</div>
+<pre><code>- Para $P$ acima do $CVMe_{\min}$: a firma produz onde $P = CMg$
+- Para $P$ entre $CVMe_{\min}$ e $CMe_{\min}$: a firma produz com prejuízo, mas cobre parte dos custos fixos
+- Para $P$ abaixo do $CVMe_{\min}$: a firma fecha</code></pre>
+<hr />
+<h2 id="excedente-do-produtor">5. Excedente do produtor</h2>
+<p>O <strong>excedente do produtor</strong> (EP) é a diferença entre a
+receita e o custo variável:</p>
+<p><span class="math display">\[EP = RT - CV = Pq^* -
+CV(q^*)\]</span></p>
+<p>Graficamente, é a área entre a linha de preço e a curva de CMg (que é
+a curva de oferta):</p>
+<p><span class="math display">\[EP = \int_0^{q^*} \big[P - CMg(q)\big]
+\, dq\]</span></p>
+<p>O EP mede o ganho da firma acima do mínimo necessário para induzi-la
+a produzir.</p>
+<hr />
+<h2 id="lema-de-hotelling">6. Lema de Hotelling</h2>
+<p>O <strong>Lema de Hotelling</strong> estabelece que a oferta pode ser
+obtida diretamente da função lucro:</p>
+<p><span class="math display">\[q^*(P) = \frac{\partial
+\pi^*(P)}{\partial P}\]</span></p>
+<p>Onde <span class="math inline">\(\pi^*(P) = \max_q [Pq -
+C(q)]\)</span> é a <strong>função lucro</strong> (lucro máximo como
+função do preço).</p>
+<p>Analogamente, as demandas de fatores são:</p>
+<p><span class="math display">\[L^*(P, w, v) = -\frac{\partial
+\pi^*}{\partial w}, \qquad K^*(P, w, v) = -\frac{\partial
+\pi^*}{\partial v}\]</span></p>
+<hr />
+<h2 id="gráfico-interativo-maximização-de-lucro">Gráfico interativo:
+maximização de lucro</h2>
+<div id="graph-max-lucro" style="min-height: 450px;">
+<iframe src="../../graficos/cap11/maximizacao-lucro.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Varie o preço <span class="math inline">\(P\)</span> e observe como
+<span class="math inline">\(q^*\)</span> se ajusta ao longo do CMg</li>
+<li>Reduza <span class="math inline">\(P\)</span> abaixo do <span
+class="math inline">\(CVMe_{\min}\)</span> e veja a firma fechar</li>
+<li>Note a área do excedente do produtor (entre <span
+class="math inline">\(P\)</span> e CMg)</li>
+</ul>
+</div>
+<pre><code>- Varie o preço $P$ e observe como $q^*$ se ajusta ao longo do CMg
+- Reduza $P$ abaixo do $CVMe_{\min}$ e veja a firma fechar
+- Note a área do excedente do produtor (entre $P$ e CMg)</code></pre>
+<hr />
+<h2 id="box-por-que-preço-igual-a-custo-marginal">Box: Por que preço
+igual a custo marginal?</h2>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>A lógica marginalista da decisão de produção</strong></p>
+<p>Se <span class="math inline">\(P &gt; CMg\)</span>, a última unidade
+vendida gera mais receita do que custa — vale a pena produzir mais. Se
+<span class="math inline">\(P &lt; CMg\)</span>, a última unidade custa
+mais do que rende — é melhor produzir menos. Somente quando <span
+class="math inline">\(P = CMg\)</span> a firma não tem incentivo para
+ajustar. Essa lógica é o coração da teoria da oferta: o preço de mercado
+“sinaliza” à firma exatamente quanto produzir, e a firma responde
+seguindo sua curva de custo marginal.</p>
+</div>
+<pre><code>**A lógica marginalista da decisão de produção**
+
+Se $P &gt; CMg$, a última unidade vendida gera mais receita do que custa — vale a pena produzir mais. Se $P &lt; CMg$, a última unidade custa mais do que rende — é melhor produzir menos. Somente quando $P = CMg$ a firma não tem incentivo para ajustar. Essa lógica é o coração da teoria da oferta: o preço de mercado &quot;sinaliza&quot; à firma exatamente quanto produzir, e a firma responde seguindo sua curva de custo marginal.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Uma firma competitiva tem <span
+class="math inline">\(C(q) = 2q^2 + 4q + 50\)</span>. O preço de mercado
+é <span class="math inline">\(P = 20\)</span>. Encontre <span
+class="math inline">\(q^*\)</span>, o lucro e determine se a firma deve
+operar no curto prazo.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(CMg = 4q + 4\)</span></p>
+<p>CPO: <span class="math inline">\(20 = 4q + 4 \implies q^* =
+4\)</span></p>
+<p>CSO: <span class="math inline">\(\frac{dCMg}{dq} = 4 &gt; 0\)</span>
+✓</p>
+<p><span class="math inline">\(\pi = 20(4) - [2(16) + 4(4) + 50] = 80 -
+[32 + 16 + 50] = 80 - 98 = -18\)</span></p>
+<p>A firma tem prejuízo. Deve operar?</p>
+<p><span class="math inline">\(CV(q) = 2q^2 + 4q \implies CVMe = 2q +
+4\)</span></p>
+<p><span class="math inline">\(CVMe_{\min} = 4\)</span> (quando <span
+class="math inline">\(q \to 0^+\)</span>, mas como CVMe é crescente, o
+mínimo é <span class="math inline">\(4\)</span>)</p>
+<p>Como <span class="math inline">\(P = 20 &gt; CVMe(4) = 12\)</span>, a
+firma <strong>deve operar</strong>. O prejuízo de <span
+class="math inline">\(-18\)</span> é menor que o prejuízo de <span
+class="math inline">\(-50\)</span> (custo fixo) se fechar.</p>
+</div>
+</details>
+<pre><code>$CMg = 4q + 4$
+
+CPO: $20 = 4q + 4 \implies q^* = 4$
+
+CSO: $\frac{dCMg}{dq} = 4 &gt; 0$ ✓
+
+$\pi = 20(4) - [2(16) + 4(4) + 50] = 80 - [32 + 16 + 50] = 80 - 98 = -18$
+
+A firma tem prejuízo. Deve operar?
+
+$CV(q) = 2q^2 + 4q \implies CVMe = 2q + 4$
+
+$CVMe_{\min} = 4$ (quando $q \to 0^+$, mas como CVMe é crescente, o mínimo é $4$)
+
+Como $P = 20 &gt; CVMe(4) = 12$, a firma **deve operar**. O prejuízo de $-18$ é menor que o prejuízo de $-50$ (custo fixo) se fechar.</code></pre>
+<strong>Exercício 2.</strong> Para a firma do exercício anterior, qual é
+o preço de fechamento? Qual é o preço de lucro zero?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Preço de fechamento = <span
+class="math inline">\(CVMe_{\min}\)</span>.</p>
+<p><span class="math inline">\(CVMe = 2q + 4\)</span> é linear e
+crescente, então <span class="math inline">\(CVMe_{\min} = 4\)</span>
+(em <span class="math inline">\(q \to 0\)</span>). Na prática, o ponto
+relevante é onde <span class="math inline">\(CMg = CVMe\)</span>: <span
+class="math inline">\(4q + 4 = 2q + 4 \implies q = 0\)</span>,
+confirmando <span class="math inline">\(CVMe_{\min} = 4\)</span>.</p>
+<p>Preço de lucro zero = <span
+class="math inline">\(CMe_{\min}\)</span>.</p>
+<p><span class="math inline">\(CMe = 2q + 4 + \frac{50}{q}\)</span></p>
+<p><span class="math inline">\(\frac{d(CMe)}{dq} = 2 - \frac{50}{q^2} =
+0 \implies q = 5\)</span></p>
+<p><span class="math inline">\(CMe(5) = 10 + 4 + 10 = 24\)</span></p>
+<p>Verificação: <span class="math inline">\(CMg(5) = 24 =
+CMe(5)\)</span> ✓</p>
+<p>Preço de fechamento: <span class="math inline">\(P = 4\)</span>.
+Preço de lucro zero: <span class="math inline">\(P = 24\)</span>.</p>
+</div>
+</details>
+<pre><code>Preço de fechamento = $CVMe_{\min}$.
+
+$CVMe = 2q + 4$ é linear e crescente, então $CVMe_{\min} = 4$ (em $q \to 0$). Na prática, o ponto relevante é onde $CMg = CVMe$: $4q + 4 = 2q + 4 \implies q = 0$, confirmando $CVMe_{\min} = 4$.
+
+Preço de lucro zero = $CMe_{\min}$.
+
+$CMe = 2q + 4 + \frac{50}{q}$
+
+$\frac{d(CMe)}{dq} = 2 - \frac{50}{q^2} = 0 \implies q = 5$
+
+$CMe(5) = 10 + 4 + 10 = 24$
+
+Verificação: $CMg(5) = 24 = CMe(5)$ ✓
+
+Preço de fechamento: $P = 4$. Preço de lucro zero: $P = 24$.</code></pre>
+<strong>Exercício 3.</strong> Explique geometricamente por que o
+excedente do produtor é a área acima da curva de oferta e abaixo do
+preço.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>A curva de oferta é o trecho crescente do CMg acima do CVMe mínimo.
+Para cada unidade <span class="math inline">\(q\)</span>, o CMg
+representa o custo adicional de produzi-la. O preço <span
+class="math inline">\(P\)</span> é a receita adicional por unidade.</p>
+<p>A diferença <span class="math inline">\(P - CMg(q)\)</span> é o
+“excedente marginal” daquela unidade. Somando (integrando) sobre todas
+as unidades de <span class="math inline">\(0\)</span> a <span
+class="math inline">\(q^*\)</span>, obtemos o excedente total do
+produtor:</p>
+<p><span class="math display">\[EP = \int_0^{q^*}[P - CMg(q)]\,dq = Pq^*
+- CV(q^*)\]</span></p>
+<p>Graficamente, é exatamente a área entre a linha horizontal de preço e
+a curva de CMg (oferta), do eixo vertical até <span
+class="math inline">\(q^*\)</span>.</p>
+</div>
+</details>
+<pre><code>A curva de oferta é o trecho crescente do CMg acima do CVMe mínimo. Para cada unidade $q$, o CMg representa o custo adicional de produzi-la. O preço $P$ é a receita adicional por unidade.
+
+A diferença $P - CMg(q)$ é o &quot;excedente marginal&quot; daquela unidade. Somando (integrando) sobre todas as unidades de $0$ a $q^*$, obtemos o excedente total do produtor:
+
+$$EP = \int_0^{q^*}[P - CMg(q)]\,dq = Pq^* - CV(q^*)$$
+
+Graficamente, é exatamente a área entre a linha horizontal de preço e a curva de CMg (oferta), do eixo vertical até $q^*$.</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. A condição de maximização de lucro para uma firma competitiva é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(RMg = CMe\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(P = CMg\)</span> com CMg crescente
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(P = CMe\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(CMg = CVMe\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">
+Q2. Uma firma deve fechar no curto prazo quando:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O lucro econômico é negativo
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(P &lt; CMe_{\min}\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(P &lt; CVMe_{\min}\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(P &lt; CMg\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">
+Q3. A curva de oferta individual de curto prazo é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A curva de CMe acima do CMg
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A curva de CMg inteira
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O trecho do CMg acima do CVMe mínimo
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O trecho do CMg acima do CMe mínimo
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="a">
+<div class="q-text">
+Q4. O excedente do produtor é igual a:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Receita total menos custo variável
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Receita total menos custo total
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Lucro econômico
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Custo fixo
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. Pelo Lema de Hotelling, a quantidade ofertada pode ser obtida como:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li><span class="math inline">\(q^* = -\partial \pi^*/\partial
+P\)</span>
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li><span class="math inline">\(q^* = \partial \pi^*/\partial P\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li><span class="math inline">\(q^* = \partial C/\partial P\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li><span class="math inline">\(q^* = \partial RT/\partial q\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 17</strong>: Mini-lecture sobre maximização de lucro +
+construção da curva de oferta com exercícios aplicados. Traga
+calculadora!
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 17**: Mini-lecture sobre maximização de lucro + construção da curva de oferta com exercícios aplicados. Traga calculadora!</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-17');
+MicroQuiz.init('aula-17');
+</script>
+</body>
+</html>
+

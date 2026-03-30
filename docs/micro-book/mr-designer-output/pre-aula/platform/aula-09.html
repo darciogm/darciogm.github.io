@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-09-dotações-trabalho-e-escolha-intertemporal">Pré-Aula
+09 — Dotações, Trabalho e Escolha Intertemporal</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 5 (seções sobre dotações) + Cap. 17 (escolha
+intertemporal)</strong> do livro interativo | Tempo estimado: <strong>50
+min</strong></p>
+</div>
+<pre><code>**Cap. 5 (seções sobre dotações) + Cap. 17 (escolha intertemporal)** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
+<ol type="1">
+<li>Distinguir demanda bruta de demanda líquida em uma economia com
+dotações</li>
+<li>Derivar a oferta de trabalho a partir do trade-off lazer-consumo e
+explicar a curva de oferta backward-bending</li>
+<li>Resolver o problema de Fisher (2 períodos) e classificar o agente
+como poupador ou devedor</li>
+</ol>
+<hr />
+<h2 id="economia-com-dotações">1. Economia com dotações</h2>
+<p>Até agora, o consumidor recebia uma renda monetária <span
+class="math inline">\(I\)</span> e comprava cestas no mercado. Agora,
+ele <strong>já possui</strong> uma cesta inicial — a
+<strong>dotação</strong> <span class="math inline">\(\omega = (\omega_1,
+\omega_2)\)</span>.</p>
+<p>O valor da dotação aos preços de mercado define a renda:</p>
+<p><span class="math display">\[I = p_1 \omega_1 + p_2
+\omega_2\]</span></p>
+<p>A restrição orçamentária continua:</p>
+<p><span class="math display">\[p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2
+\omega_2\]</span></p>
+<p>Mas agora a reta orçamentária <strong>sempre passa pela
+dotação</strong> — independentemente dos preços, o consumidor sempre
+pode consumir o que já tem.</p>
+<hr />
+<h2 id="demanda-bruta-vs.-demanda-líquida">2. Demanda bruta vs. demanda
+líquida</h2>
+<ul>
+<li><strong>Demanda bruta</strong>: <span
+class="math inline">\(x_i^*\)</span> — quanto o consumidor efetivamente
+consome do bem <span class="math inline">\(i\)</span>.</li>
+<li><strong>Demanda líquida</strong>: <span class="math inline">\(x_i^*
+- \omega_i\)</span> — quanto <strong>compra</strong> (se positivo) ou
+<strong>vende</strong> (se negativo) no mercado.</li>
+</ul>
+<span class="math display">\[x_i^* - \omega_i &gt; 0 \implies
+\text{comprador líquido do bem } i\]</span> <span
+class="math display">\[x_i^* - \omega_i &lt; 0 \implies \text{vendedor
+líquido do bem } i\]</span>
+<div class="admonition example">
+<div class="admonition-title">
+Exemplo numérico
+</div>
+<p>Dotação <span class="math inline">\(\omega = (10, 4)\)</span>, preços
+<span class="math inline">\(p_1 = 2\)</span>, <span
+class="math inline">\(p_2 = 3\)</span>. Renda: <span
+class="math inline">\(I = 20 + 12 = 32\)</span>.</p>
+<p>Se a escolha ótima é <span class="math inline">\(x^* = (7,
+6)\)</span>:</p>
+<ul>
+<li>Bem 1: demanda líquida <span class="math inline">\(= 7 - 10 =
+-3\)</span> (vende 3 unidades)</li>
+<li>Bem 2: demanda líquida <span class="math inline">\(= 6 - 4 =
++2\)</span> (compra 2 unidades)</li>
+</ul>
+</div>
+<pre><code>Dotação $\omega = (10, 4)$, preços $p_1 = 2$, $p_2 = 3$. Renda: $I = 20 + 12 = 32$.
+
+Se a escolha ótima é $x^* = (7, 6)$:
+
+- Bem 1: demanda líquida $= 7 - 10 = -3$ (vende 3 unidades)
+- Bem 2: demanda líquida $= 6 - 4 = +2$ (compra 2 unidades)</code></pre>
+<hr />
+<h2 id="oferta-de-trabalho-lazer-vs.-consumo">3. Oferta de trabalho:
+lazer vs. consumo</h2>
+<p>O modelo de oferta de trabalho é um caso especial de dotações. O
+consumidor possui uma dotação de <strong>tempo</strong> <span
+class="math inline">\(\bar{T}\)</span> (por exemplo, 24 horas por
+dia).</p>
+<ul>
+<li><strong>Lazer</strong>: <span class="math inline">\(R\)</span>
+(horas de descanso)</li>
+<li><strong>Trabalho</strong>: <span class="math inline">\(L = \bar{T} -
+R\)</span> (horas trabalhadas)</li>
+<li><strong>Salário</strong>: <span class="math inline">\(w\)</span> por
+hora</li>
+<li><strong>Renda não-salarial</strong>: <span
+class="math inline">\(m\)</span></li>
+</ul>
+<p>A restrição orçamentária:</p>
+<p><span class="math display">\[C = w(\bar{T} - R) + m = w\bar{T} + m -
+wR\]</span></p>
+<p>Rearranjando para a forma “dotação”:</p>
+<p><span class="math display">\[C + wR = w\bar{T} + m \equiv \text{renda
+plena (full income)}\]</span></p>
+<p>A <strong>renda plena</strong> é o máximo que o consumidor poderia
+gastar se trabalhasse todas as <span
+class="math inline">\(\bar{T}\)</span> horas.</p>
+<hr />
+<h2 id="a-curva-de-oferta-de-trabalho-backward-bending">4. A curva de
+oferta de trabalho backward-bending</h2>
+<p>Um aumento no salário <span class="math inline">\(w\)</span> gera
+dois efeitos:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Efeito</th>
+<th style="text-align: left;">Direção</th>
+<th style="text-align: left;">Mecanismo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Substituição</strong></td>
+<td style="text-align: left;">Mais trabalho</td>
+<td style="text-align: left;">Lazer ficou mais caro (custo de
+oportunidade subiu)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Renda</strong></td>
+<td style="text-align: left;">Menos trabalho</td>
+<td style="text-align: left;">Consumidor está mais rico; lazer é bem
+normal</td>
+</tr>
+</tbody>
+</table>
+<p>Para <strong>salários baixos</strong>, o efeito substituição domina:
+<span class="math inline">\(w \uparrow \implies L \uparrow\)</span>.</p>
+<p>Para <strong>salários altos</strong>, o efeito renda domina: <span
+class="math inline">\(w \uparrow \implies L \downarrow\)</span>.</p>
+<p>Isso gera a famosa curva de oferta de trabalho
+<strong>backward-bending</strong> (inclinada para trás).</p>
+<hr />
+<h2 id="gráfico-interativo-oferta-de-trabalho">Gráfico interativo:
+oferta de trabalho</h2>
+<div id="graph-labor-supply" style="min-height: 450px;">
+<iframe src="../../graficos/cap05/oferta-trabalho.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Aumente o salário <span class="math inline">\(w\)</span>
+gradualmente e observe a escolha ótima</li>
+<li>Identifique o ponto em que a oferta de trabalho começa a
+diminuir</li>
+<li>Compare os efeitos substituição e renda no diagrama de Slutsky</li>
+</ul>
+</div>
+<pre><code>- Aumente o salário $w$ gradualmente e observe a escolha ótima
+- Identifique o ponto em que a oferta de trabalho começa a diminuir
+- Compare os efeitos substituição e renda no diagrama de Slutsky</code></pre>
+<hr />
+<h2 id="escolha-intertemporal-modelo-de-fisher">5. Escolha
+intertemporal: modelo de Fisher</h2>
+<p>Agora a “dotação” é <strong>renda ao longo do tempo</strong>: <span
+class="math inline">\((m_1, m_2)\)</span> — renda no período 1 e no
+período 2.</p>
+<p>O consumidor pode <strong>poupar</strong> ou <strong>tomar
+emprestado</strong> à taxa de juros <span
+class="math inline">\(r\)</span>.</p>
+<p><strong>Restrição orçamentária intertemporal:</strong></p>
+<p><span class="math display">\[c_1 + \frac{c_2}{1+r} = m_1 +
+\frac{m_2}{1+r} \equiv W\]</span></p>
+<p>Onde <span class="math inline">\(W\)</span> é a
+<strong>riqueza</strong> (valor presente da renda).</p>
+<p>Equivalentemente, em valor futuro:</p>
+<p><span class="math display">\[c_1(1+r) + c_2 = m_1(1+r) +
+m_2\]</span></p>
+<hr />
+<h2 id="poupador-vs.-devedor">6. Poupador vs. devedor</h2>
+<ul>
+<li><strong>Poupador</strong>: <span class="math inline">\(c_1 &lt;
+m_1\)</span> (consome menos do que ganha no período 1, transfere renda
+para o futuro)</li>
+<li><strong>Devedor</strong>: <span class="math inline">\(c_1 &gt;
+m_1\)</span> (consome mais do que ganha no período 1, antecipa renda
+futura)</li>
+</ul>
+<p>Um <strong>aumento na taxa de juros</strong> <span
+class="math inline">\(r\)</span>:</p>
+<ul>
+<li>Para o <strong>poupador</strong>: efeito substituição (mais
+poupança) + efeito renda (renda efetiva sobe, pode consumir mais). Pode
+ir para qualquer lado, mas permanece poupador.</li>
+<li>Para o <strong>devedor</strong>: efeito substituição (menos
+empréstimo) + efeito renda (fica mais pobre). Ambos reduzem <span
+class="math inline">\(c_1\)</span> — pode até virar poupador.
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+</div></li>
+</ul>
+<p><strong>Dotações e a equação de Slutsky revisitada</strong></p>
+<p>Com dotações, a equação de Slutsky ganha um termo extra — o
+<strong>efeito dotação</strong>:</p>
+<p><span class="math display">\[\frac{\partial x_i}{\partial p_i} =
+\underbrace{\frac{\partial x_i^s}{\partial p_i}}_{\text{substituição}} +
+\underbrace{(\omega_i - x_i)\frac{\partial x_i}{\partial
+I}}_{\text{renda + dotação}}\]</span></p>
+<p>Quando o consumidor é <strong>vendedor líquido</strong> do bem (<span
+class="math inline">\(\omega_i &gt; x_i\)</span>), um aumento de preço o
+torna mais rico. Quando é <strong>comprador líquido</strong> (<span
+class="math inline">\(\omega_i &lt; x_i\)</span>), o aumento de preço o
+empobrece. Isso explica por que trabalhadores podem ofertar
+<strong>menos</strong> trabalho quando o salário sobe — o efeito renda
+da dotação de tempo domina.</p>
+</div>
+<pre><code>**Dotações e a equação de Slutsky revisitada**
+
+Com dotações, a equação de Slutsky ganha um termo extra — o **efeito dotação**:
+
+$$\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial x_i^s}{\partial p_i}}_{\text{substituição}} + \underbrace{(\omega_i - x_i)\frac{\partial x_i}{\partial I}}_{\text{renda + dotação}}$$
+
+Quando o consumidor é **vendedor líquido** do bem ($\omega_i &gt; x_i$), um aumento de preço o torna mais rico. Quando é **comprador líquido** ($\omega_i &lt; x_i$), o aumento de preço o empobrece. Isso explica por que trabalhadores podem ofertar **menos** trabalho quando o salário sobe — o efeito renda da dotação de tempo domina.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Um consumidor tem dotação <span
+class="math inline">\(\omega = (6, 8)\)</span> e preferências <span
+class="math inline">\(U = x_1 x_2\)</span>. Os preços são <span
+class="math inline">\(p_1 = 3\)</span> e <span class="math inline">\(p_2
+= 2\)</span>. Encontre a demanda bruta e a demanda líquida de cada bem.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Renda: <span class="math inline">\(I = 3(6) + 2(8) = 34\)</span></p>
+<p>Para Cobb-Douglas <span class="math inline">\(U = x_1 x_2\)</span>
+(expoentes iguais), a demanda marshalliana é:</p>
+<p><span class="math inline">\(x_1^* = \frac{I}{2p_1} = \frac{34}{6}
+\approx 5{,}67\)</span>; <span class="math inline">\(x_2^* =
+\frac{I}{2p_2} = \frac{34}{4} = 8{,}5\)</span></p>
+<p>Demanda líquida: <span class="math inline">\(\Delta x_1 = 5{,}67 - 6
+= -0{,}33\)</span> (vende bem 1); <span class="math inline">\(\Delta x_2
+= 8{,}5 - 8 = +0{,}5\)</span> (compra bem 2)</p>
+</div>
+</details>
+<pre><code>Renda: $I = 3(6) + 2(8) = 34$
+
+Para Cobb-Douglas $U = x_1 x_2$ (expoentes iguais), a demanda marshalliana é:
+
+$x_1^* = \frac{I}{2p_1} = \frac{34}{6} \approx 5{,}67$; $x_2^* = \frac{I}{2p_2} = \frac{34}{4} = 8{,}5$
+
+Demanda líquida: $\Delta x_1 = 5{,}67 - 6 = -0{,}33$ (vende bem 1); $\Delta x_2 = 8{,}5 - 8 = +0{,}5$ (compra bem 2)</code></pre>
+<strong>Exercício 2.</strong> Um trabalhador tem <span
+class="math inline">\(\bar{T} = 16\)</span> horas disponíveis, utilidade
+<span class="math inline">\(U(C, R) = C^{0{,}5} R^{0{,}5}\)</span>,
+salário <span class="math inline">\(w = 20\)</span> e renda não-salarial
+<span class="math inline">\(m = 40\)</span>. Quantas horas ele trabalha?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Renda plena: <span class="math inline">\(w\bar{T} + m = 20(16) + 40 =
+360\)</span></p>
+<p>Para Cobb-Douglas com expoentes iguais: <span
+class="math inline">\(R^* = \frac{360}{2 \times 20} = 9\)</span> horas
+de lazer.</p>
+<p>Horas trabalhadas: <span class="math inline">\(L^* = 16 - 9 =
+7\)</span> horas.</p>
+<p>Consumo: <span class="math inline">\(C^* = \frac{360}{2} =
+180\)</span>.</p>
+</div>
+</details>
+<pre><code>Renda plena: $w\bar{T} + m = 20(16) + 40 = 360$
+
+Para Cobb-Douglas com expoentes iguais: $R^* = \frac{360}{2 \times 20} = 9$ horas de lazer.
+
+Horas trabalhadas: $L^* = 16 - 9 = 7$ horas.
+
+Consumo: $C^* = \frac{360}{2} = 180$.</code></pre>
+<strong>Exercício 3.</strong> Um agente tem renda <span
+class="math inline">\((m_1, m_2) = (100, 110)\)</span> e taxa de juros
+<span class="math inline">\(r = 10\%\)</span>. Ele é poupador ou devedor
+se suas preferências geram <span class="math inline">\(c_1^* =
+105\)</span>?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Riqueza: <span class="math inline">\(W = 100 + \frac{110}{1{,}1} =
+100 + 100 = 200\)</span></p>
+<p>Como <span class="math inline">\(c_1^* = 105 &gt; m_1 = 100\)</span>,
+ele consome mais do que ganha no período 1.</p>
+<p>Portanto, é <strong>devedor</strong>. Toma emprestado <span
+class="math inline">\(105 - 100 = 5\)</span> no período 1.</p>
+<p>Consumo no período 2: <span class="math inline">\(c_2 = (W -
+c_1)(1+r) = (200 - 105)(1{,}1) = 104{,}5\)</span></p>
+</div>
+</details>
+<pre><code>Riqueza: $W = 100 + \frac{110}{1{,}1} = 100 + 100 = 200$
+
+Como $c_1^* = 105 &gt; m_1 = 100$, ele consome mais do que ganha no período 1.
+
+Portanto, é **devedor**. Toma emprestado $105 - 100 = 5$ no período 1.
+
+Consumo no período 2: $c_2 = (W - c_1)(1+r) = (200 - 105)(1{,}1) = 104{,}5$</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">
+Q1. Em uma economia com dotações, a reta orçamentária sempre passa por:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A origem
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O ponto de dotação
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O ponto de demanda ótima
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O ponto <span class="math inline">\((I/p_1, 0)\)</span>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">
+Q2. Se um consumidor é vendedor líquido do bem 1 e o preço de 1 sobe, o
+que acontece com sua renda real?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Aumenta — ele está vendendo algo que ficou mais caro
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Diminui — ele está pagando mais caro
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Não muda — a dotação é fixa
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Depende do preço do bem 2
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">
+Q3. A curva de oferta de trabalho é backward-bending porque:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O efeito substituição sempre domina
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O efeito renda sempre domina
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Para salários altos, o efeito renda domina o efeito substituição
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O lazer é um bem inferior
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">
+Q4. Na escolha intertemporal, a “riqueza” <span
+class="math inline">\(W\)</span> é:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A renda do período 1
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A soma <span class="math inline">\(m_1 + m_2\)</span>
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>O valor presente de toda a renda futura
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>A poupança acumulada
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">
+Q5. Se a taxa de juros sobe e o agente era poupador, ele:
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Necessariamente se torna devedor
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Necessariamente poupa menos
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Continua poupador, mas o efeito sobre o consumo presente é ambíguo
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Sempre aumenta a poupança
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 09</strong>: Mini-lecture sobre dotações e escolha
+intertemporal + exercícios guiados de Slutsky com dotações e modelo de
+Fisher.
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 09**: Mini-lecture sobre dotações e escolha intertemporal + exercícios guiados de Slutsky com dotações e modelo de Fisher.</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-09');
+MicroQuiz.init('aula-09');
+</script>
+</body>
+</html>
+

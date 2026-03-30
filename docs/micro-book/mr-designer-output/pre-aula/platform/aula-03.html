@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 03 — — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-03-preferências-axiomas-e-utilidade">Pré-Aula 03 —
+Preferências, Axiomas e Utilidade</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 3, Seções 3.1–3.3</strong> do livro interativo | Tempo
+estimado: <strong>50 min</strong></p>
+</div>
+<pre><code>**Cap. 3, Seções 3.1–3.3** do livro interativo | Tempo estimado: **50 min**</code></pre>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<ol type="1">
+<li>Enunciar e interpretar os 4 axiomas de preferência racional</li>
+<li>Explicar por que curvas de indiferença não se cruzam</li>
+<li>Calcular a TMS para funções utilidade clássicas</li>
+</ol>
+<hr />
+<h2 id="o-ponto-de-partida-preferências">1. O ponto de partida:
+preferências</h2>
+<p>Antes de falar em “utilidade” ou “demanda”, precisamos de uma base:
+como o consumidor <strong>compara</strong> cestas de bens?</p>
+<p>Dado duas cestas <span class="math inline">\(A = (x_A, y_A)\)</span>
+e <span class="math inline">\(B = (x_B, y_B)\)</span>:</p>
+<ul>
+<li><span class="math inline">\(A \succ B\)</span>: “prefere <span
+class="math inline">\(A\)</span> estritamente a <span
+class="math inline">\(B\)</span>”</li>
+<li><span class="math inline">\(A \sim B\)</span>: “indiferente entre
+<span class="math inline">\(A\)</span> e <span
+class="math inline">\(B\)</span>”</li>
+<li><span class="math inline">\(A \succeq B\)</span>: “prefere <span
+class="math inline">\(A\)</span> ou é indiferente”</li>
+</ul>
+<hr />
+<h2 id="os-axiomas-de-racionalidade">2. Os axiomas de racionalidade</h2>
+<p>Para que preferências gerem comportamento previsível, assumimos:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Axioma</th>
+<th style="text-align: left;">Significado</th>
+<th style="text-align: left;">Consequência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Completude</strong></td>
+<td style="text-align: left;">Para quaisquer <span
+class="math inline">\(A, B\)</span>: ou <span class="math inline">\(A
+\succeq B\)</span> ou <span class="math inline">\(B \succeq A\)</span>
+(ou ambos)</td>
+<td style="text-align: left;">Sempre consegue comparar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Transitividade</strong></td>
+<td style="text-align: left;">Se <span class="math inline">\(A \succeq
+B\)</span> e <span class="math inline">\(B \succeq C\)</span>, então
+<span class="math inline">\(A \succeq C\)</span></td>
+<td style="text-align: left;">Sem ciclos de preferência</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Continuidade</strong></td>
+<td style="text-align: left;">Pequenas mudanças na cesta não causam
+“saltos” de preferência</td>
+<td style="text-align: left;">Garante utilidade contínua</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Monotonicidade</strong></td>
+<td style="text-align: left;">Se <span class="math inline">\(A\)</span>
+tem mais de tudo que <span class="math inline">\(B\)</span>, então <span
+class="math inline">\(A \succ B\)</span></td>
+<td style="text-align: left;">“Mais é melhor”</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Por que transitividade importa?</strong></p>
+<p>Sem ela, alguém poderia preferir A a B, B a C, e C a A. Um vendedor
+esperto cobraria para “trocar” entre as opções infinitamente — o
+consumidor perderia dinheiro sem ganhar nada. A transitividade impede
+esse tipo de exploração.</p>
+</div>
+<pre><code>**Por que transitividade importa?**
+
+Sem ela, alguém poderia preferir A a B, B a C, e C a A. Um vendedor esperto cobraria para &quot;trocar&quot; entre as opções infinitamente — o consumidor perderia dinheiro sem ganhar nada. A transitividade impede esse tipo de exploração.</code></pre>
+<hr />
+<h2 id="de-preferências-a-utilidade">3. De preferências a utilidade</h2>
+<p><strong>Teorema de Debreu (1954):</strong> Se <span
+class="math inline">\(\succeq\)</span> satisfaz completude,
+transitividade e continuidade, existe uma função contínua <span
+class="math inline">\(U: \mathbb{R}^n_+ \to \mathbb{R}\)</span> tal
+que:</p>
+<p><span class="math display">\[x \succeq y \iff U(x) \geq
+U(y)\]</span></p>
+<p>A utilidade é <strong>ordinal</strong> (não cardinal): se <span
+class="math inline">\(U\)</span> representa <span
+class="math inline">\(\succeq\)</span>, qualquer transformação
+monotônica <span class="math inline">\(V = f(U)\)</span> (com <span
+class="math inline">\(f&#39; &gt; 0\)</span>) também representa.</p>
+<blockquote>
+<p><span class="math inline">\(U = xy\)</span> e <span
+class="math inline">\(V = \ln x + \ln y\)</span> representam as
+<strong>mesmas preferências</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="curvas-de-indiferença">4. Curvas de indiferença</h2>
+<p>Uma curva de indiferença é o conjunto de cestas que dão a
+<strong>mesma utilidade</strong>:</p>
+<p><span class="math display">\[\{(x, y) : U(x,y) =
+\bar{U}\}\]</span></p>
+<h3 id="propriedades">Propriedades</h3>
+<ol type="1">
+<li><strong>Preenchem todo o espaço</strong> (completude)</li>
+<li><strong>Não se cruzam</strong> (transitividade)</li>
+<li><strong>Decrescentes</strong> (monotonicidade)</li>
+<li><strong>Convexas</strong> (preferências convexas — diversificação é
+boa)</li>
+</ol>
+<hr />
+<h2 id="gráfico-interativo-mapa-de-curvas-de-indiferença">Gráfico
+interativo: mapa de curvas de indiferença</h2>
+<div id="graph-indifference" style="min-height: 450px;">
+<iframe src="../../graficos/cap03/curvas-indiferenca.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Mude os parâmetros <span class="math inline">\(a\)</span> e <span
+class="math inline">\(\rho\)</span> com os sliders</li>
+<li>Observe como as curvas mudam de retas (substitutos) para L’s
+(complementares)</li>
+<li>Arraste um ponto ao longo da curva e observe a TMS mudar</li>
+</ul>
+</div>
+<pre><code>- Mude os parâmetros $a$ e $\rho$ com os sliders
+- Observe como as curvas mudam de retas (substitutos) para L&#39;s (complementares)
+- Arraste um ponto ao longo da curva e observe a TMS mudar</code></pre>
+<hr />
+<h2 id="taxa-marginal-de-substituição-tms">5. Taxa Marginal de
+Substituição (TMS)</h2>
+<p><span class="math display">\[\text{TMS}_{x,y} =
+-\frac{dy}{dx}\bigg|_{\bar{U}} = \frac{UMg_x}{UMg_y} = \frac{\partial U
+/ \partial x}{\partial U / \partial y}\]</span></p>
+<blockquote>
+<p>“Quanto de <span class="math inline">\(y\)</span> o consumidor aceita
+<strong>perder</strong> por 1 unidade a mais de <span
+class="math inline">\(x\)</span>, mantendo utilidade constante.”</p>
+</blockquote>
+A TMS é <strong>decrescente</strong> ao longo da curva (para
+preferências convexas): quanto mais <span
+class="math inline">\(x\)</span> já tem, menos <span
+class="math inline">\(y\)</span> aceita trocar.
+<div class="admonition example">
+<div class="admonition-title">
+Cálculo da TMS
+</div>
+<p>Para <span class="math inline">\(U(x,y) = x \cdot y\)</span>:</p>
+<p><span class="math inline">\(UMg_x = y\)</span>, <span
+class="math inline">\(UMg_y = x\)</span></p>
+<p><span class="math inline">\(\text{TMS} = \frac{y}{x}\)</span></p>
+<p>No ponto <span class="math inline">\((4, 2)\)</span>: TMS <span
+class="math inline">\(= 2/4 = 0{,}5\)</span></p>
+<p>“Aceita perder 0,5 unidades de <span class="math inline">\(y\)</span>
+por 1 unidade a mais de <span class="math inline">\(x\)</span>.”</p>
+</div>
+<pre><code>Para $U(x,y) = x \cdot y$:
+
+$UMg_x = y$, $UMg_y = x$
+
+$\text{TMS} = \frac{y}{x}$
+
+No ponto $(4, 2)$: TMS $= 2/4 = 0{,}5$
+
+&quot;Aceita perder 0,5 unidades de $y$ por 1 unidade a mais de $x$.&quot;</code></pre>
+<hr />
+<h2 id="as-funções-utilidade-clássicas">6. As funções utilidade
+clássicas</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Função</th>
+<th style="text-align: left;">Forma</th>
+<th style="text-align: left;">TMS</th>
+<th style="text-align: left;">Curvas</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Linear</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\alpha x +
+\beta y\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha/\beta\)</span> (constante)</td>
+<td style="text-align: left;">Retas</td>
+<td style="text-align: left;">Marcas de arroz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Leontief</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\min\{\alpha
+x, \beta y\}\)</span></td>
+<td style="text-align: left;">0 ou ∞</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">Sapato E/D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cobb-Douglas</strong></td>
+<td style="text-align: left;"><span class="math inline">\(x^a
+y^{1-a}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{ay}{(1-a)x}\)</span></td>
+<td style="text-align: left;">Hipérboles</td>
+<td style="text-align: left;">Caso geral</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CES</strong></td>
+<td style="text-align: left;"><span class="math inline">\((x^\rho +
+y^\rho)^{1/\rho}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\((y/x)^{1-\rho}\)</span></td>
+<td style="text-align: left;">Variável</td>
+<td style="text-align: left;">Generaliza tudo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2
+id="box-preferências-reveladas-o-que-suas-compras-dizem-sobre-você">Box:
+Preferências reveladas — o que suas compras dizem sobre você</h2>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Na prática, não observamos preferências diretamente — observamos
+<strong>escolhas</strong>. O economista Paul Samuelson mostrou que, sob
+certas condições, as escolhas observadas <strong>revelam</strong> as
+preferências subjacentes.</p>
+<p>Se João escolheu a cesta <span class="math inline">\(A\)</span>
+quando <span class="math inline">\(B\)</span> estava disponível e
+custava menos, podemos inferir que <span class="math inline">\(A \succeq
+B\)</span>.</p>
+<p>Essa ideia é a base da <strong>teoria das preferências
+reveladas</strong> — extraímos preferências a partir de dados de
+consumo, sem perguntar nada ao consumidor.</p>
+</div>
+<pre><code>Na prática, não observamos preferências diretamente — observamos **escolhas**. O economista Paul Samuelson mostrou que, sob certas condições, as escolhas observadas **revelam** as preferências subjacentes.
+
+Se João escolheu a cesta $A$ quando $B$ estava disponível e custava menos, podemos inferir que $A \succeq B$.
+
+Essa ideia é a base da **teoria das preferências reveladas** — extraímos preferências a partir de dados de consumo, sem perguntar nada ao consumidor.</code></pre>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<strong>Exercício 1.</strong> Se um consumidor prefere A a B e B a C,
+mas prefere C a A, qual axioma é violado?
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><strong>Transitividade.</strong> <span class="math inline">\(A \succ
+B\)</span> e <span class="math inline">\(B \succ C\)</span> deveriam
+implicar <span class="math inline">\(A \succ C\)</span>, mas temos <span
+class="math inline">\(C \succ A\)</span>.</p>
+</div>
+</details>
+<pre><code>**Transitividade.** $A \succ B$ e $B \succ C$ deveriam implicar $A \succ C$, mas temos $C \succ A$.</code></pre>
+<strong>Exercício 2.</strong> Prove que curvas de indiferença não podem
+se cruzar.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p>Suponha cruzamento no ponto <span class="math inline">\(C\)</span>.
+Então <span class="math inline">\(C \in CI_A\)</span> e <span
+class="math inline">\(C \in CI_B\)</span>, logo <span
+class="math inline">\(U(C) = U(A)\)</span> e <span
+class="math inline">\(U(C) = U(B)\)</span>, o que implica <span
+class="math inline">\(U(A) = U(B)\)</span>. Mas <span
+class="math inline">\(A\)</span> e <span
+class="math inline">\(B\)</span> estão em curvas diferentes (por
+hipótese). Contradição com a definição.</p>
+</div>
+</details>
+<pre><code>Suponha cruzamento no ponto $C$. Então $C \in CI_A$ e $C \in CI_B$, logo $U(C) = U(A)$ e $U(C) = U(B)$, o que implica $U(A) = U(B)$. Mas $A$ e $B$ estão em curvas diferentes (por hipótese). Contradição com a definição.</code></pre>
+<strong>Exercício 3.</strong> Calcule a TMS para <span
+class="math inline">\(U(x,y) = x^{0.3} y^{0.7}\)</span> no ponto <span
+class="math inline">\((10, 5)\)</span>.
+<details>
+<summary>
+success
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\text{TMS} = \frac{0{,}3 \cdot y}{0{,}7
+\cdot x} = \frac{0{,}3(5)}{0{,}7(10)} = \frac{1{,}5}{7} \approx
+0{,}214\)</span></p>
+</div>
+</details>
+<pre><code>$\text{TMS} = \frac{0{,}3 \cdot y}{0{,}7 \cdot x} = \frac{0{,}3(5)}{0{,}7(10)} = \frac{1{,}5}{7} \approx 0{,}214$</code></pre>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da
+aula.</p>
+</div>
+<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
+<div class="quiz-container">
+<div class="quiz-header">
+<h3>
+Quiz Pre-Aula
+</h3>
+<div class="quiz-score">
+Pontuacao: <span id="quiz-score">0/0</span>
+</div>
+</div>
+<div class="quiz-question" data-question="q1" data-correct="a">
+<div class="q-text">
+Q1. O que o axioma de completude garante?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>O consumidor sempre consegue comparar duas cestas
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>O consumidor sempre prefere mais a menos
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>As preferências são contínuas
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Não existem ciclos de preferência
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">
+Q2. Se <span class="math inline">\(A \succ B\)</span> e <span
+class="math inline">\(B \succ C\)</span>, mas <span
+class="math inline">\(C \succ A\)</span>, qual axioma é violado?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Completude
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Transitividade
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Continuidade
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Monotonicidade
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">
+Q3. Curvas de indiferença de um consumidor racional podem se cruzar?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>Sim, se as preferências são convexas
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>Não — violaria transitividade
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>Sim, no ponto de saciedade
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>Depende da função utilidade
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">
+Q4. O que a TMS mede?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>A inclinação da restrição orçamentária
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>A taxa à qual o consumidor troca <span
+class="math inline">\(y\)</span> por <span
+class="math inline">\(x\)</span> mantendo utilidade constante
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>A utilidade marginal de <span class="math inline">\(x\)</span>
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>O preço relativo dos bens
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">
+Q5. Se <span class="math inline">\(U(x,y) = x \cdot y\)</span>, qual é a
+TMS no ponto <span class="math inline">\((4, 2)\)</span>?
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<div class="quiz-option" data-value="a">
+<ol type="a">
+<li>2
+</div>
+<div class="quiz-option" data-value="b">
+<ol start="2" type="a">
+<li>0,5
+</div>
+<div class="quiz-option" data-value="c">
+<ol start="3" type="a">
+<li>8
+</div>
+<div class="quiz-option" data-value="d">
+<ol start="4" type="a">
+<li>1
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<div class="quiz-feedback">
+
+</div>
+</div>
+<strong>Aula 03</strong>: Mini-lecture sobre axiomas e utilidade + 3
+questões de Peer Instruction sobre propriedades de preferências.
+<div class="quiz-feedback">
+
+</div>
+</div>
+</div>
+<pre><code>**Aula 03**: Mini-lecture sobre axiomas e utilidade + 3 questões de Peer Instruction sobre propriedades de preferências.</code></pre>
+<div class="quiz-feedback">
+
+</div>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-03');
+MicroQuiz.init('aula-03');
+</script>
+</body>
+</html>
+
