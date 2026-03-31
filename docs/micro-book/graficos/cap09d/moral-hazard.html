@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+  Moral Hazard: Trade-off Incentivos vs Seguro
+  Library: Plotly.js
+  Chapter 9d — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moral Hazard — Principal-Agente</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .plot-box { flex: 1 1 420px; max-width: 520px; height: 380px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .plot-box { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Principal-Agente</h3>
+    <div class="slider-group">
+      <label>Aversao ao risco \(r\): <span class="val" id="val-r">2.0</span></label>
+      <input type="range" id="slider-r" min="0" max="10" step="0.5" value="2">
+    </div>
+    <div class="slider-group">
+      <label>Ruido \(\sigma\): <span class="val" id="val-sigma">1.0</span></label>
+      <input type="range" id="slider-sigma" min="0.1" max="5" step="0.1" value="1">
+    </div>
+    <div class="slider-group">
+      <label>Participacao \(\beta\): <span class="val" id="val-beta">0.50</span></label>
+      <input type="range" id="slider-beta" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  function update() {
+    var r = parseFloat(document.getElementById('slider-r').value);
+    var sigma = parseFloat(document.getElementById('slider-sigma').value);
+    var beta = parseFloat(document.getElementById('slider-beta').value);
+
+    document.getElementById('val-r').textContent = r.toFixed(1);
+    document.getElementById('val-sigma').textContent = sigma.toFixed(1);
+    document.getElementById('val-beta').textContent = beta.toFixed(2);
+
+    // Model: w = alpha + beta * q, q = e + epsilon, epsilon ~ N(0, sigma^2)
+    // Agent chooses e to max E[w] - c(e) - risk_cost = alpha + beta*e - e^2/2 - (r/2)*beta^2*sigma^2
+    // FOC: beta = e (effort = beta)
+    // Optimal beta* = 1 / (1 + r*sigma^2)
+    var betaStar = 1 / (1 + r * sigma * sigma);
+
+    // Effort as function of beta
+    // Risk cost as function of beta
+    var betas = [], efforts = [], riskCosts = [], surplus = [];
+    for (var b = 0; b <= 1; b += 0.01) {
+      betas.push(b);
+      var e = b; // FOC
+      var rc = (r / 2) * b * b * sigma * sigma;
+      var s = e - e * e / 2 - rc; // net surplus = e - c(e) - risk_cost
+      efforts.push(e);
+      riskCosts.push(rc);
+      surplus.push(s);
+    }
+
+    var traces = [
+      { x: betas, y: surplus, mode: 'lines', line: { color: '#1565c0', width: 2.5 },
+        name: 'Excedente liquido' },
+      { x: betas, y: efforts, mode: 'lines', line: { color: '#00897b', width: 1.5, dash: 'dash' },
+        name: 'Esforco (e = beta)' },
+      { x: betas, y: riskCosts, mode: 'lines', line: { color: '#C8102E', width: 1.5, dash: 'dot' },
+        name: 'Custo de risco' }
+    ];
+
+    // Current beta marker
+    var curSurplus = beta - beta * beta / 2 - (r / 2) * beta * beta * sigma * sigma;
+    traces.push({
+      x: [beta], y: [curSurplus], mode: 'markers',
+      marker: { size: 10, color: '#e65100', symbol: 'circle' },
+      name: 'beta atual'
+    });
+
+    // Optimal beta marker
+    var optSurplus = betaStar - betaStar * betaStar / 2 - (r / 2) * betaStar * betaStar * sigma * sigma;
+    traces.push({
+      x: [betaStar], y: [optSurplus], mode: 'markers',
+      marker: { size: 10, color: '#C8102E', symbol: 'diamond' },
+      name: 'beta* otimo'
+    });
+
+    var shapes = [{
+      type: 'line', x0: betaStar, x1: betaStar, y0: -0.5, y1: optSurplus,
+      line: { color: '#C8102E', width: 1, dash: 'dot' }
+    }];
+
+    // First-best marker (beta = 1, r = 0)
+    traces.push({
+      x: [1], y: [0.5], mode: 'markers',
+      marker: { size: 8, color: '#999', symbol: 'star' },
+      name: 'Primeiro melhor (beta=1)'
+    });
+
+    Plotly.react('plotDiv', traces, {
+      margin: { l: 55, r: 20, t: 25, b: 50 },
+      xaxis: { title: 'Participacao do agente (beta)', range: [0, 1.05] },
+      yaxis: { title: 'Valor' },
+      showlegend: true,
+      legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 9 } },
+      shapes: shapes,
+      font: { family: 'CMU Serif, Georgia, serif' }
+    }, { responsive: true, displayModeBar: false });
+
+    var agencyCost = 0.5 - optSurplus; // FB surplus (0.5) - SB surplus
+    var html = '<div style="text-align:center;margin-bottom:0.3rem;">';
+    html += '\\(\\beta^* = \\frac{1}{1 + r\\sigma^2} = ' + betaStar.toFixed(3) + '\\)';
+    html += '</div>';
+    html += 'Esforco otimo: \\(e^* = ' + betaStar.toFixed(3) + '\\)<br>';
+    html += 'Custo de agencia: \\(' + agencyCost.toFixed(3) + '\\)<br>';
+    if (r < 0.1) {
+      html += '<span style="color:#00897b;">Risco-neutro: \\(\\beta^* \\approx 1\\) (primeiro melhor)</span>';
+    }
+    html += '<hr style="margin:0.3rem 0">';
+    html += '<div style="font-size:0.78rem;color:#666;">Aumente \\(r\\) ou \\(\\sigma\\) e observe \\(\\beta^*\\) encolher — o custo de agencia cresce quando segurar o agente e caro.</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-r').value = 2;
+    document.getElementById('slider-sigma').value = 1;
+    document.getElementById('slider-beta').value = 0.5;
+    update();
+  }
+
+  ['slider-r','slider-sigma','slider-beta'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

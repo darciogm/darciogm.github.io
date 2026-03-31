@@ -131,7 +131,7 @@ A palavra "bruta" na expressão "substituto bruto" evoca justamente essa contami
 **Figura 6.4 — Elasticidade ao longo da demanda linear.** Arraste o preço e observe: no topo da curva, demanda elástica (\(|\varepsilon|>1\)); na base, inelástica (\(|\varepsilon|<1\)). No ponto médio, elasticidade unitária — exatamente onde a receita total (área do retângulo azul) é máxima.
 </div>
 
-<iframe src="/micro-book/graficos/cap06/receita-elasticidade.html" title="Figura 6.5 — Receita total e elasticidade: o teste da receita" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+<iframe src="/micro-book/graficos/cap06/elasticidade-receita.html" title="Figura 6.5 — Receita total e elasticidade: o teste da receita" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
 
 <div class="caption-obj" markdown>
 **Figura 6.5 — Receita total e elasticidade.** O painel superior mostra a receita como área; o inferior mostra a curva de receita total \(R(p)\). Na região elástica, reduzir o preço aumenta a receita; na inelástica, o oposto.

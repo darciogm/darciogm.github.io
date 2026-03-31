@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  Versioning: Discriminação de Preços em Bens de Informação
+  Library: Plotly.js
+  Chapter 21 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versioning de Bens de Informação</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.plot-box{flex:1 1 420px;max-width:520px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.plot-box,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Versioning</h3>
+    <div class="slider-group">
+      <label>WTP alto \(\theta_H\): <span class="val" id="val-tH">10</span></label>
+      <input type="range" id="slider-tH" min="5" max="20" step="0.5" value="10">
+    </div>
+    <div class="slider-group">
+      <label>WTP baixo \(\theta_L\): <span class="val" id="val-tL">4</span></label>
+      <input type="range" id="slider-tL" min="1" max="10" step="0.5" value="4">
+    </div>
+    <div class="slider-group">
+      <label>Proporcao tipo H \(\lambda\): <span class="val" id="val-lam">0.40</span></label>
+      <input type="range" id="slider-lam" min="0.1" max="0.9" step="0.05" value="0.4">
+    </div>
+    <div class="slider-group">
+      <label>Qualidade basic \(q_L\): <span class="val" id="val-qL">0.50</span></label>
+      <input type="range" id="slider-qL" min="0.1" max="0.9" step="0.05" value="0.5">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  function update(){
+    var tH=parseFloat(document.getElementById('slider-tH').value);
+    var tL=parseFloat(document.getElementById('slider-tL').value);
+    var lam=parseFloat(document.getElementById('slider-lam').value);
+    var qL=parseFloat(document.getElementById('slider-qL').value);
+    document.getElementById('val-tH').textContent=tH.toFixed(1);
+    document.getElementById('val-tL').textContent=tL.toFixed(1);
+    document.getElementById('val-lam').textContent=lam.toFixed(2);
+    document.getElementById('val-qL').textContent=qL.toFixed(2);
+    // Premium: q=1, price pH. Basic: q=qL, price pL.
+    // IC_H: tH*1 - pH >= tH*qL - pL => pH - pL <= tH*(1-qL)
+    // IC_L: tL*qL - pL >= tL*1 - pH => pH - pL >= tL*(1-qL)
+    // IR_L: tL*qL - pL >= 0 => pL <= tL*qL
+    // Optimal: pL = tL*qL, pH = pL + tH*(1-qL) = tL*qL + tH*(1-qL)
+    var pL=tL*qL;
+    var pH=pL+tH*(1-qL);
+    // Uniform pricing: price = max(tL, tH choice to serve both or just H)
+    var revBoth=tL*1; // serve both at tL
+    var revHonly=lam*tH; // serve only H at tH
+    var uniformRev=Math.max(revBoth,revHonly);
+    var uniformP=(revBoth>=revHonly)?tL:tH;
+    // Versioning revenue: lam*pH + (1-lam)*pL
+    var versionRev=lam*pH+(1-lam)*pL;
+    var traces=[
+      {x:['Uniforme','Versioning'],y:[uniformRev,versionRev],type:'bar',
+       marker:{color:['#1565c0','#C8102E']},text:[uniformRev.toFixed(1),versionRev.toFixed(1)],textposition:'outside'}
+    ];
+    Plotly.react('plotDiv',traces,{
+      margin:{l:55,r:20,t:30,b:50},
+      yaxis:{title:'Receita por consumidor'},
+      showlegend:false,
+      font:{family:'CMU Serif, Georgia, serif'},
+      annotations:[
+        {x:'Uniforme',y:uniformRev,text:'p='+uniformP.toFixed(1),showarrow:false,yshift:15,font:{size:10}},
+        {x:'Versioning',y:versionRev,text:'pH='+pH.toFixed(1)+', pL='+pL.toFixed(1),showarrow:false,yshift:15,font:{size:10}}
+      ]
+    },{responsive:true,displayModeBar:false});
+    var gain=((versionRev-uniformRev)/uniformRev*100);
+    var html='<div style="text-align:center;margin-bottom:0.3rem;"><strong>Custo marginal = 0</strong></div>';
+    html+='<strong>Premium:</strong> \\(q=1\\), \\(p_H='+pH.toFixed(1)+'\\)<br>';
+    html+='<strong>Basic:</strong> \\(q='+qL.toFixed(2)+'\\), \\(p_L='+pL.toFixed(1)+'\\)<br>';
+    html+='Receita versioning: <strong>'+versionRev.toFixed(1)+'</strong><br>';
+    html+='Receita uniforme: '+uniformRev.toFixed(1)+' (\\(p='+uniformP.toFixed(1)+'\\))<br>';
+    html+='Ganho: <strong style="color:'+(gain>0?'#00897b':'#C8102E')+';">'+gain.toFixed(1)+'%</strong>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">A versao basic e deliberadamente degradada para extrair mais do tipo H — a "destruicao de valor" e estrategica.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-tH').value=10;document.getElementById('slider-tL').value=4;document.getElementById('slider-lam').value=0.4;document.getElementById('slider-qL').value=0.5;update();}
+  ['slider-tH','slider-tL','slider-lam','slider-qL'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

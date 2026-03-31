@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+  Winner-Takes-All: Massa Crítica e Tipping
+  Library: Plotly.js
+  Chapter 21 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winner-Takes-All e Tipping</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.plot-box{flex:1 1 420px;max-width:520px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.plot-box,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Tipping e Massa Critica</h3>
+    <div class="slider-group">
+      <label>Forca de rede \(\alpha\): <span class="val" id="val-alpha">1.00</span></label>
+      <input type="range" id="slider-alpha" min="0.1" max="3" step="0.05" value="1">
+    </div>
+    <div class="slider-group">
+      <label>Preco \(p\): <span class="val" id="val-p">0.30</span></label>
+      <input type="range" id="slider-p" min="0" max="1" step="0.01" value="0.3">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  function update(){
+    var alpha=parseFloat(document.getElementById('slider-alpha').value);
+    var p=parseFloat(document.getElementById('slider-p').value);
+    document.getElementById('val-alpha').textContent=alpha.toFixed(2);
+    document.getElementById('val-p').textContent=p.toFixed(2);
+    // Model: users have v_i ~ U[0,1], utility = v_i + alpha*n - p
+    // Marginal user: v* = p - alpha*n, where n = 1-v* (fraction adopting)
+    // So v* = p - alpha*(1-v*) => v*(1+alpha) = p - alpha + alpha => v* = (p)/(1+alpha)...
+    // Actually let's use: WTP(n) = (1-n) + alpha*n = 1 + (alpha-1)*n for the marginal consumer
+    // Equilibrium: WTP(n) = p => 1 + (alpha-1)*n = p => n = (p-1)/(alpha-1) if alpha != 1
+    // Better model: benefit of nth user = alpha*n*(1-n) (S-shaped), net benefit = alpha*n*(1-n) - p*n
+    // Let's use simpler: f(n) = n - n^2/alpha (inverse-U shaped net benefit)
+    // Net benefit per user: v(n) = alpha*n*(1-n). Equilibria where v(n)=p*n => alpha*(1-n)=p => n=1-p/alpha
+    // Actually, let me model it clearly:
+    // Payoff of adoption for fraction n: pi(n) = alpha*n - p (for the marginal user at position n)
+    // Heterogeneous: user i with standalone value v_i ~ U[0,1] adopts if v_i + alpha*n >= p
+    // Fraction adopting: n = Pr(v >= p - alpha*n) = 1-(p-alpha*n) if p-alpha*n in [0,1]
+    // Fixed point: n = max(0, min(1, 1-p+alpha*n))
+    // => n(1-alpha) = 1-p => n = (1-p)/(1-alpha) if alpha < 1
+    // If alpha >= 1: multiple equilibria possible
+    // Let's plot g(n) = 1 - p + alpha*n vs n (45-degree line)
+    var ns=[],gn=[],diag=[];
+    for(var n=0;n<=1;n+=0.005){
+      ns.push(n);
+      gn.push(Math.max(0,Math.min(1,1-p+alpha*n)));
+      diag.push(n);
+    }
+    // Find equilibria: n = g(n)
+    var eqs=[];
+    for(var i=1;i<ns.length;i++){
+      var prev=gn[i-1]-ns[i-1];
+      var cur=gn[i]-ns[i];
+      if(prev*cur<=0) eqs.push(ns[i]);
+    }
+    // Also check boundaries
+    if(1-p<=0) eqs.unshift(0);
+    if(1-p+alpha>=1&&eqs.indexOf(1)<0) eqs.push(1);
+    if(eqs.length===0) eqs=[0];
+    var traces=[
+      {x:ns,y:gn,mode:'lines',line:{color:'#C8102E',width:2.5},name:'g(n) = max(0, 1-p+alpha*n)'},
+      {x:ns,y:diag,mode:'lines',line:{color:'#999',width:1.5,dash:'dash'},name:'45-degree'}
+    ];
+    // Mark equilibria
+    for(var i=0;i<eqs.length;i++){
+      var stable=(i===0&&eqs.length>1)||(i===eqs.length-1&&eqs.length>1&&eqs.length%2===1)||(eqs.length===1);
+      traces.push({
+        x:[eqs[i]],y:[eqs[i]],mode:'markers',
+        marker:{size:10,color:stable?'#00897b':'#C8102E',symbol:stable?'circle':'diamond-open',line:{width:2,color:stable?'#00897b':'#C8102E'}},
+        name:(stable?'Estavel':'Instavel')+' n='+eqs[i].toFixed(2),showlegend:true
+      });
+    }
+    Plotly.react('plotDiv',traces,{
+      margin:{l:55,r:20,t:25,b:50},
+      xaxis:{title:'Fracao de adotantes (n)',range:[0,1.05]},
+      yaxis:{title:'g(n)',range:[0,1.05]},
+      showlegend:true,legend:{x:0.02,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+    var nCrit=eqs.length>=2?eqs[1]:null;
+    var html='<div style="text-align:center;margin-bottom:0.3rem;">Equilibrios: <strong>'+eqs.length+'</strong></div>';
+    for(var i=0;i<eqs.length;i++) html+='\\(n_{'+i+'} = '+eqs[i].toFixed(3)+'\\)<br>';
+    if(nCrit) html+='Massa critica: \\(n_c \\approx '+nCrit.toFixed(3)+'\\)<br>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">Com \\(\\alpha\\) alto, a curva g(n) e mais inclinada — mais facil gerar tipping. Reduza o preco para encolher a massa critica.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-alpha').value=1;document.getElementById('slider-p').value=0.3;update();}
+  ['slider-alpha','slider-p'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

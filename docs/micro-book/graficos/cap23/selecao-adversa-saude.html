@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  Seleção Adversa: Diagrama de Rothschild-Stiglitz em Saúde
+  Library: JSXGraph
+  Chapter 23 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rothschild-Stiglitz em Saúde</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.jxgbox{flex:1 1 400px;max-width:460px;height:400px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.jxgbox,.controls{flex-basis:100%;width:100%;max-width:460px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox1" class="jxgbox"></div>
+  <div class="controls">
+    <h3>Rothschild-Stiglitz</h3>
+    <div class="slider-group">
+      <label>Prob. sinistro H \(\pi_H\): <span class="val" id="val-pH">0.60</span></label>
+      <input type="range" id="slider-pH" min="0.3" max="0.9" step="0.05" value="0.6">
+    </div>
+    <div class="slider-group">
+      <label>Prob. sinistro L \(\pi_L\): <span class="val" id="val-pL">0.20</span></label>
+      <input type="range" id="slider-pL" min="0.05" max="0.4" step="0.05" value="0.2">
+    </div>
+    <div class="slider-group">
+      <label>Perda \(d\): <span class="val" id="val-d">40</span></label>
+      <input type="range" id="slider-d" min="10" max="60" step="5" value="40">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  var W=100; // initial wealth
+  var board=JXG.JSXGraph.initBoard('jxgbox1',{boundingbox:[-10,110,110,-10],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:false});
+  board.create('axis',[[0,0],[110,0]],{ticks:{drawLabels:true,label:{fontSize:11},minorTicks:0,ticksDistance:20}});
+  board.create('text',[55,-7,'<b>\\(W_{\\text{doente}}\\)</b>'],{fontSize:12,fixed:true,anchorX:'middle',highlight:false});
+  board.create('axis',[[0,0],[0,110]],{ticks:{drawLabels:true,label:{fontSize:11,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:20}});
+  board.create('text',[-8,95,'<b>\\(W_{\\text{saudavel}}\\)</b>'],{fontSize:12,fixed:true,highlight:false});
+  var objs=[];
+  function draw(){
+    for(var i=0;i<objs.length;i++)board.removeObject(objs[i]);objs=[];
+    var piH=parseFloat(document.getElementById('slider-pH').value);
+    var piL=parseFloat(document.getElementById('slider-pL').value);
+    var d=parseFloat(document.getElementById('slider-d').value);
+    document.getElementById('val-pH').textContent=piH.toFixed(2);
+    document.getElementById('val-pL').textContent=piL.toFixed(2);
+    document.getElementById('val-d').textContent=d;
+    var Ws=W, Wd=W-d; // endowment: (W_sick, W_healthy) = (W-d, W)
+    // 45-degree line (full insurance)
+    objs.push(board.create('line',[[0,0],[1,1]],{strokeColor:'#999',strokeWidth:1,dash:3,point1:{visible:false},point2:{visible:false}}));
+    objs.push(board.create('text',[92,97,'45°'],{fontSize:9,color:'#999',fixed:true,highlight:false}));
+    // Endowment point E
+    objs.push(board.create('point',[Wd,Ws],{name:'E',size:6,fillColor:'#333',strokeColor:'#333',fixed:true,label:{fontSize:12,offset:[8,5]}}));
+    // Zero-profit lines (fair odds)
+    // H type: slope = -(1-piH)/piH from E
+    var slopeH=-(1-piH)/piH;
+    var endHx=Wd+50, endHy=Ws+50*slopeH;
+    objs.push(board.create('segment',[[Wd,Ws],[endHx,endHy]],{strokeColor:'#C8102E',strokeWidth:2}));
+    objs.push(board.create('text',[endHx+2,endHy+5,'ZP<sub>H</sub>'],{fontSize:10,color:'#C8102E',fixed:true,highlight:false}));
+    // L type: slope = -(1-piL)/piL from E
+    var slopeL=-(1-piL)/piL;
+    var endLx=Wd+50, endLy=Ws+50*slopeL;
+    objs.push(board.create('segment',[[Wd,Ws],[endLx,endLy]],{strokeColor:'#1565c0',strokeWidth:2}));
+    objs.push(board.create('text',[endLx+2,endLy+5,'ZP<sub>L</sub>'],{fontSize:10,color:'#1565c0',fixed:true,highlight:false}));
+    // Full insurance point for H (on 45-degree line along H's fair odds)
+    // Full insurance: W_sick = W_healthy = W - piH*d
+    var fullH=W-piH*d;
+    objs.push(board.create('point',[fullH,fullH],{name:'',size:5,fillColor:'#C8102E',strokeColor:'#C8102E',fixed:true}));
+    objs.push(board.create('text',[fullH+3,fullH+5,'H: seguro total'],{fontSize:9,color:'#C8102E',fixed:true,highlight:false}));
+    // L gets partial insurance (below 45-degree line on L's fair odds)
+    // In separating eq, L's contract is on ZP_L but below 45-degree
+    var partialX=Wd+d*piL*0.6, partialY=Ws+d*piL*0.6*slopeL;
+    objs.push(board.create('point',[partialX,partialY],{name:'',size:5,fillColor:'#1565c0',strokeColor:'#1565c0',fixed:true}));
+    objs.push(board.create('text',[partialX+3,partialY-8,'L: cobertura parcial'],{fontSize:9,color:'#1565c0',fixed:true,highlight:false}));
+    var html='<strong style="color:#C8102E;">Alto risco (H):</strong> seguro total, premio justo \\(\\pi_H d = '+(piH*d).toFixed(0)+'\\)<br>';
+    html+='<strong style="color:#1565c0;">Baixo risco (L):</strong> cobertura parcial — custo informacional<br>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">O tipo L sofre uma externalidade da presenca do tipo H: seu contrato e distorcido para garantir separacao (incentive compatibility).</div>';
+    document.getElementById('info').innerHTML=html;board.update();
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-pH').value=0.6;document.getElementById('slider-pL').value=0.2;document.getElementById('slider-d').value=40;draw();}
+  ['slider-pH','slider-pL','slider-d'].forEach(function(id){document.getElementById(id).addEventListener('input',draw);});
+  draw();
+</script>
+</body>
+</html>
