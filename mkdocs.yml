@@ -80,7 +80,8 @@ nav:
         - "1.7 Maximização de Lucro": micro-book/cap01/maximizacao.md
         - "Exercícios e ANPEC": micro-book/cap01/exercicios.md
         - "Pesquisa em Ação": micro-book/cap01/pesquisa.md
-      - "Cap. 2 — O Manual de Sobrevivência Matemática": micro-book/cap02/index.md
+      - "Cap. 2 — O Manual de Sobrevivência Matemática":
+        - "Visão Geral": micro-book/cap02/index.md
     - O Consumidor:
       - "Cap. 3 — Mais É Melhor — Será?":
         - "Visão Geral": micro-book/cap03/index.md
@@ -120,7 +121,8 @@ nav:
         - "7.7–7.8 Estado-Preferência e Informação Assimétrica": micro-book/cap07/estado.md
         - "Exercícios e ANPEC": micro-book/cap07/exercicios.md
         - "Pesquisa em Ação": micro-book/cap07/pesquisa.md
-      - "Cap. 8 — Nem Tão Racionais Assim": micro-book/cap08/index.md
+      - "Cap. 8 — Nem Tão Racionais Assim":
+        - "Visão Geral": micro-book/cap08/index.md
     - Interação Estratégica:
       - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
         - "Visão Geral": micro-book/cap09/index.md
